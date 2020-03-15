@@ -21,13 +21,13 @@
 + (id)normalizedAddressForValue:(id)arg1;
 + (id)stringForHashingValue:(id)arg1;
 + (id)resultValueWithAddress:(id)arg1 addressType:(long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringForHashingMemo; // @synthesize stringForHashingMemo=_stringForHashingMemo;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *instantMessageAddressService; // @synthesize instantMessageAddressService=_instantMessageAddressService;
 @property long long addressType; // @synthesize addressType=_addressType;
 @property(copy) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)addressTypeDescription;
 - (id)description;
 - (_Bool)addressExactlyMatchesSearchTerm:(id)arg1;

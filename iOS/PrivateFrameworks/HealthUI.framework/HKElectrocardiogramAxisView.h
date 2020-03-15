@@ -18,13 +18,13 @@
     struct CGSize _lastBoundsSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastBoundsSize; // @synthesize lastBoundsSize=_lastBoundsSize;
 @property(nonatomic) long long startingIndex; // @synthesize startingIndex=_startingIndex;
 @property(retain, nonatomic) UIFontMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) CAReplicatorLayer *ticksLayer; // @synthesize ticksLayer=_ticksLayer;
 @property(retain, nonatomic) HKElectrocardiogramAxisOptions *options; // @synthesize options=_options;
 @property(nonatomic) double axisSpacing; // @synthesize axisSpacing=_axisSpacing;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *lineColor;
 @property(readonly, nonatomic) double lineWidth;
 @property(readonly, nonatomic) UIFont *axisLabelFont;

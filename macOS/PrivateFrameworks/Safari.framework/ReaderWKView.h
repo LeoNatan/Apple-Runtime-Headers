@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)articleScrolled:(id)arg1;
 - (void)contentIsReadyForDisplayWithScrollOffset:(double)arg1 languageTag:(id)arg2;
 - (void)didChangeNextPageLoadingState;
-- (void)effectiveAppearanceDidChange;
+- (void)viewDidChangeEffectiveAppearance;
 @property(readonly, nonatomic) id <ReaderBundlePageMessageReceiver> readerBundlePageMessageReceiver;
 - (id)presentingBrowserViewController;
 - (id)tabContentView;

@@ -64,6 +64,7 @@
     struct _PXGEngineScrollState _scrollState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXGAccessibilityContentInfoManager *contentInfoManager; // @synthesize contentInfoManager=_contentInfoManager;
 @property(readonly, nonatomic) PXGAccessibilityRenderer *accessibilityRenderer; // @synthesize accessibilityRenderer=_accessibilityRenderer;
 @property(nonatomic, getter=isAccessibilityEnabled) _Bool accessibilityEnabled; // @synthesize accessibilityEnabled=_accessibilityEnabled;
@@ -90,7 +91,6 @@
 @property(retain, nonatomic) PXGLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) PXScrollViewSpeedometer *scrollViewSpeedometer; // @synthesize scrollViewSpeedometer=_scrollViewSpeedometer;
 @property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool debugEngineUpdates;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)tilingScrollControllerDidScroll:(id)arg1;

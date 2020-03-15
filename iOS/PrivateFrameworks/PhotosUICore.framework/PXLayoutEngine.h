@@ -26,13 +26,13 @@
     id <PXLayoutDataSourceChangeDetails> _changeDetails;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXLayoutDataSourceChangeDetails> changeDetails; // @synthesize changeDetails=_changeDetails;
 @property(retain, nonatomic) PXLayoutGenerator *layoutGenerator; // @synthesize layoutGenerator=_layoutGenerator;
 @property(readonly, nonatomic) id <PXLayoutItem> seedItem; // @synthesize seedItem=_seedItem;
 @property(readonly, nonatomic) id <PXLayoutEngineDataSourceSnapshot> dataSourceSnapshot; // @synthesize dataSourceSnapshot=_dataSourceSnapshot;
 @property(retain, nonatomic) PXLayoutSnapshot *layoutSnapshot; // @synthesize layoutSnapshot=_layoutSnapshot;
 @property(nonatomic) __weak id <PXLayoutEngineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)computeLayoutSnapshot;
 - (void)updateLayoutDataWithChangeDetails:(id)arg1;
 - (_Bool)canComputeLayoutSnapshot;

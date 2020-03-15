@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_divSizesByPosition;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *divSizesByPosition; // @synthesize divSizesByPosition=_divSizesByPosition;
 @property(copy, nonatomic) NSDictionary *divsByPosition; // @synthesize divsByPosition=_divsByPosition;
 @property(copy, nonatomic) NSArray *components; // @synthesize components=_components;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool columnDividersEnabled; // @synthesize columnDividersEnabled=_columnDividersEnabled;
 @property(nonatomic) double columnDividerPadding; // @synthesize columnDividerPadding=_columnDividerPadding;
 @property(retain, nonatomic) UIView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
-- (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (long long)_positionFromView:(id)arg1;
 - (struct CGSize)_contentSizeThatFits:(struct CGSize)arg1;

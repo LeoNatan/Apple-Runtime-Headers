@@ -19,12 +19,12 @@
     SWNavigationPreview *_currentPreview;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SWNavigationPreview *currentPreview; // @synthesize currentPreview=_currentPreview;
 @property(readonly, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSMutableDictionary *extensionHandlers; // @synthesize extensionHandlers=_extensionHandlers;
 @property(readonly, nonatomic) NSMutableDictionary *schemeHandlers; // @synthesize schemeHandlers=_schemeHandlers;
 @property(readonly, nonatomic) NSMutableArray *handlers; // @synthesize handlers=_handlers;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)registerHandler:(id)arg1 extension:(id)arg2;

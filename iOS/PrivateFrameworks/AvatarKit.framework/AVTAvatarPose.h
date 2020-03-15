@@ -22,12 +22,12 @@
 
 + (id)friendlyPose;
 + (id)neutralPose;
+- (void).cxx_destruct;
 @property(nonatomic) double bakedAnimationBlendFactor; // @synthesize bakedAnimationBlendFactor=_bakedAnimationBlendFactor;
 @property(nonatomic) struct neckOrientation; // @synthesize neckOrientation=_neckOrientation;
 // Error parsing type for property neckPosition:
 // Property attributes: T,N,V_neckPosition
 
-- (void).cxx_destruct;
 - (id)description;
 - (id)poseByMergingPose:(id)arg1;
 - (_Bool)affectsPhysicsSimulation;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _TVImageView *_badgeView;
 }
 
-@property(retain, nonatomic) _TVImageView *badgeView; // @synthesize badgeView=_badgeView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TVImageView *badgeView; // @synthesize badgeView=_badgeView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

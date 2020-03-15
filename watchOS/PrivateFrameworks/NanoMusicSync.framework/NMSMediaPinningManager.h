@@ -34,8 +34,8 @@
 + (id)_tokenForInstance:(id)arg1;
 + (_Bool)playlistPIDValidForPinning:(id)arg1;
 + (id)sharedManager;
-@property(retain, nonatomic) NMSMediaQuotaManager *quotaManager; // @synthesize quotaManager=_quotaManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NMSMediaQuotaManager *quotaManager; // @synthesize quotaManager=_quotaManager;
 - (_Bool)isPodcastWithIdentifiersPinned:(id)arg1;
 - (void)unpinPodcastWithIdentifiers:(id)arg1;
 - (void)pinPodcastWithIdentifiers:(id)arg1;

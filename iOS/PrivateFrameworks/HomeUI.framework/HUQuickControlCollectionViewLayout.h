@@ -20,6 +20,7 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUQuickControlCollectionViewLayoutInfo *layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 @property(readonly, nonatomic) NSMutableDictionary *cachedSectionHeaderLayoutAttributes; // @synthesize cachedSectionHeaderLayoutAttributes=_cachedSectionHeaderLayoutAttributes;
 @property(readonly, nonatomic) NSMutableDictionary *cachedLayoutAttributesByIndexPath; // @synthesize cachedLayoutAttributesByIndexPath=_cachedLayoutAttributesByIndexPath;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) HUQuickControlGridLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 @property(retain, nonatomic) HUQuickControlCollectionViewControllerLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (void)_computeGridLayoutAttributesForLayoutInfo:(id)arg1;
 - (id)_computeRowLayoutOriginsFromLayoutDetails:(id)arg1 forSectionSettings:(id)arg2;
 - (void)_computeLayoutInfo;

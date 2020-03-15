@@ -16,8 +16,8 @@
 
 + (void)preloadActionRegistryIfNeeded;
 + (void)preloadHomeManager;
-@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void)didTapDone;
 - (id)doneBarButtonItem;
 - (void)dismissForTutorial:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

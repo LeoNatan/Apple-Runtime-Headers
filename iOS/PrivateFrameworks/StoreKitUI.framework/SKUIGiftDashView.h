@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _dashSpacing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double dashSpacing; // @synthesize dashSpacing=_dashSpacing;
 @property(nonatomic) struct CGSize dashSize; // @synthesize dashSize=_dashSize;
 @property(copy, nonatomic) UIColor *dashColor; // @synthesize dashColor=_dashColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

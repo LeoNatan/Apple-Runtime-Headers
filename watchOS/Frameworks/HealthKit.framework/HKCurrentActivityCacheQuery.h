@@ -19,8 +19,8 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
-@property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 - (void)queue_deliverError:(id)arg1;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;

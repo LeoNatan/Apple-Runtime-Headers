@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSNumber *_timeStamp;
 }
 
-@property(copy, nonatomic) NSNumber *timeStamp; // @synthesize timeStamp=_timeStamp;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *timeStamp; // @synthesize timeStamp=_timeStamp;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestClass:(Class)arg1;
 

@@ -13,8 +13,8 @@
     IMNickname *_nickname;
 }
 
-@property(retain, nonatomic) IMNickname *nickname; // @synthesize nickname=_nickname;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMNickname *nickname; // @synthesize nickname=_nickname;
 - (struct CGSize)_expectedSize;
 - (void)viewDidLayoutSubviews;
 - (void)loadView;

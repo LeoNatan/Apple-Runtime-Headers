@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSString *_sectionID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(nonatomic) _Bool canRemoveContentFromHierarchyWhenNotVisible; // @synthesize canRemoveContentFromHierarchyWhenNotVisible=_canRemoveContentFromHierarchyWhenNotVisible;
 @property(retain, nonatomic) NSArray *viewsToDisappearWhenHighlighted; // @synthesize viewsToDisappearWhenHighlighted=_viewsToDisappearWhenHighlighted;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool ownsActionContent; // @synthesize ownsActionContent=_ownsActionContent;
 @property(readonly, nonatomic) UIInterfaceAction *action; // @synthesize action=_action;
 @property(nonatomic, setter=_setContentsInsertedIntoViewHierarchy:) _Bool _contentsInsertedIntoViewHierarchy; // @synthesize _contentsInsertedIntoViewHierarchy;
-- (void).cxx_destruct;
 - (id)_actionViewState;
 - (void)_clearBackgroundPressedState;
 - (id)_viewDisplayingBackground;
@@ -78,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (_Bool)canBecomeFocused;
 - (_Bool)_showsFocusForFocusedView:(id)arg1;
 - (struct CGRect)_fittingContentSizingViewFrameInBounds:(struct CGRect)arg1;

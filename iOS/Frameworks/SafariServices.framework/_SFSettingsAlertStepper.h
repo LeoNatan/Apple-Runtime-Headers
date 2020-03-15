@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     long long _value;
 }
 
-@property(readonly, nonatomic) long long value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long value; // @synthesize value=_value;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_button:(long long)arg1;
 - (void)setEnabled:(_Bool)arg1 forButton:(long long)arg2;

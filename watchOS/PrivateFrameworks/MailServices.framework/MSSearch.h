@@ -20,8 +20,8 @@
 + (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(_Bool)arg3 onServer:(_Bool)arg4 delegate:(id)arg5;
 + (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned int)arg3 delegate:(id)arg4;
 + (void)setUnitTestingResultsArray:(id)arg1;
-@property(nonatomic) __weak id <MSSearchDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MSSearchDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id *)arg3;
 - (_Bool)_unitTestsAreEnabled;

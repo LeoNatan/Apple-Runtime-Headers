@@ -19,11 +19,11 @@
     id <SVVideoLoadingStateObserving> _loadingStateObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserving> loadingStateObserver; // @synthesize loadingStateObserver=_loadingStateObserver;
 @property(readonly, nonatomic) id <SVVideoAdProviding> videoAdProvider; // @synthesize videoAdProvider=_videoAdProvider;
 @property(copy, nonatomic, setter=onAvailabilityChanged:) CDUnknownBlockType availabilityChangedBlock; // @synthesize availabilityChangedBlock=_availabilityChangedBlock;
 @property(nonatomic) _Bool hasActionAvailable; // @synthesize hasActionAvailable=_hasActionAvailable;
-- (void).cxx_destruct;
 - (id)initWithVideoAdProvider:(id)arg1 loadingStateObserver:(id)arg2;
 
 // Remaining properties

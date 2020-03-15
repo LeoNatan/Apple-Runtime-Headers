@@ -38,8 +38,8 @@
     id <SBStarkNotificationViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBStarkNotificationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBStarkNotificationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)starkBannerTarget:(id)arg1 didChangeContextWithDismissReason:(int)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_performSwipeGesture:(id)arg1;

@@ -20,10 +20,6 @@
     _Bool _apSubscription;
     _Bool _shouldTrackPlayActivity;
     _Bool _appInstalled;
-    _Bool _requiresAccountLevelConsent;
-    _Bool _requiresSubscriptionForConsent;
-    _Bool _shouldPromptForConsentOnSubscriptionChange;
-    _Bool _shouldIncludeInConsent;
     NSString *_channelID;
     NSString *_name;
     NSArray *_appAdamIDs;
@@ -36,11 +32,8 @@
     NSString *_appStoreURLString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appStoreURLString; // @synthesize appStoreURLString=_appStoreURLString;
-@property(readonly, nonatomic) _Bool shouldIncludeInConsent; // @synthesize shouldIncludeInConsent=_shouldIncludeInConsent;
-@property(readonly, nonatomic) _Bool shouldPromptForConsentOnSubscriptionChange; // @synthesize shouldPromptForConsentOnSubscriptionChange=_shouldPromptForConsentOnSubscriptionChange;
-@property(readonly, nonatomic) _Bool requiresSubscriptionForConsent; // @synthesize requiresSubscriptionForConsent=_requiresSubscriptionForConsent;
-@property(readonly, nonatomic) _Bool requiresAccountLevelConsent; // @synthesize requiresAccountLevelConsent=_requiresAccountLevelConsent;
 @property(readonly, nonatomic, getter=isAppInstalled) _Bool appInstalled; // @synthesize appInstalled=_appInstalled;
 @property(readonly, nonatomic) NSString *minRequiredAppVersion; // @synthesize minRequiredAppVersion=_minRequiredAppVersion;
 @property(readonly, nonatomic) unsigned int channelType; // @synthesize channelType=_channelType;
@@ -58,7 +51,6 @@
 @property(readonly, copy, nonatomic) NSArray *appAdamIDs; // @synthesize appAdamIDs=_appAdamIDs;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSURL *appStoreURL;
 - (id)init;

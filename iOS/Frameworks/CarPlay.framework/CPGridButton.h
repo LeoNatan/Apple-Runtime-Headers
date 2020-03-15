@@ -23,13 +23,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CPImageSet *imageSet; // @synthesize imageSet=_imageSet;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) NSArray *titleVariants; // @synthesize titleVariants=_titleVariants;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *image;
 - (void)handlePrimaryAction;
 @property(readonly, copy) NSString *description;

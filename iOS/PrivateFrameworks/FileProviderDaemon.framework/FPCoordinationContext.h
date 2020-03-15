@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (id)initWithProgress:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

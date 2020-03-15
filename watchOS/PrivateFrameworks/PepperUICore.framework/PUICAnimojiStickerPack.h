@@ -19,11 +19,11 @@
 }
 
 + (id)stickerPackID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *orderedConfigurations; // @synthesize orderedConfigurations=_orderedConfigurations;
 @property(retain, nonatomic) NSDictionary *stickers; // @synthesize stickers=_stickers;
 @property(readonly, nonatomic) _Bool isMemoji; // @synthesize isMemoji=_isMemoji;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_load;
 @property(readonly, nonatomic) UIImage *thumbnail;
 - (id)accessibilityLabel;

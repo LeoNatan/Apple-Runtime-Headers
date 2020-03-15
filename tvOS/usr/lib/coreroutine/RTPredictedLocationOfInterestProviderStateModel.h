@@ -24,6 +24,7 @@
     long long _encryptedDataAvailability;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool encryptedDataAvailabilityNotificationNeeded; // @synthesize encryptedDataAvailabilityNotificationNeeded=_encryptedDataAvailabilityNotificationNeeded;
 @property(nonatomic) long long encryptedDataAvailability; // @synthesize encryptedDataAvailability=_encryptedDataAvailability;
 @property(readonly, nonatomic) RTNextPredictedLocationsOfInterestCache *nextPredictedLocationsOfInterestCache; // @synthesize nextPredictedLocationsOfInterestCache=_nextPredictedLocationsOfInterestCache;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(readonly, nonatomic) RTDataProtectionManager *dataProtectionManager; // @synthesize dataProtectionManager=_dataProtectionManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)fetchPredictedExitDatesWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchNextPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;

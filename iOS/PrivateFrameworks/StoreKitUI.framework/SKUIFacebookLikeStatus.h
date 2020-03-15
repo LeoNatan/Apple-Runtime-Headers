@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     _Bool _userLiked;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUserLiked) _Bool userLiked; // @synthesize userLiked=_userLiked;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(copy, nonatomic) NSArray *friendNames; // @synthesize friendNames=_friends;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithURL:(id)arg1 likeStatusDictionary:(id)arg2;
 

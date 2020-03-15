@@ -15,10 +15,10 @@
     NSDate *_maximumDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *maximumDate; // @synthesize maximumDate=_maximumDate;
 @property(retain, nonatomic) NSDate *minimumDate; // @synthesize minimumDate=_minimumDate;
 @property(nonatomic) long long datePickerMode; // @synthesize datePickerMode=_datePickerMode;
-- (void).cxx_destruct;
 - (id)defaultSupportedVariableTypes;
 - (id)initWithDefinition:(id)arg1;
 - (Class)singleStateClass;

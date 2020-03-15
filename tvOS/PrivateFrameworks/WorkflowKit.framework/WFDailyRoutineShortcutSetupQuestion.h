@@ -14,9 +14,9 @@
     NSString *_subtitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 - (id)initWithPrompt:(id)arg1 subtitle:(id)arg2;
 
 @end

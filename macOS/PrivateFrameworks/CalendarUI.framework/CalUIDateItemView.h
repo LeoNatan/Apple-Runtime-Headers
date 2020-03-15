@@ -21,13 +21,13 @@
 
 + (id)dateRangeForDate:(id)arg1 unit:(unsigned long long)arg2 delegate:(id)arg3;
 + (id)titleForDelegate:(id)arg1 date:(id)arg2 unit:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSTextField *dateText; // @synthesize dateText=_dateText;
 @property(readonly) BOOL containsToday; // @synthesize containsToday=_containsToday;
 @property(readonly) CalDateRange *dateRange; // @synthesize dateRange=_dateRange;
 @property(readonly) NSDate *date; // @synthesize date=_date;
 @property(readonly) unsigned long long unit; // @synthesize unit=_unit;
 @property(readonly) __weak id <CalUIDateItemViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_axTodayDescriptionForUnit:(unsigned long long)arg1;
 - (id)initWithDelegate:(id)arg1 date:(id)arg2 unit:(unsigned long long)arg3;
 

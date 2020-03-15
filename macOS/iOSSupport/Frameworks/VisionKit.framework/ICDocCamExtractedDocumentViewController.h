@@ -95,6 +95,7 @@
 }
 
 + (struct CGRect)targetRectForOrientation:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *darkenedCollectionViewTitleTintColor; // @synthesize darkenedCollectionViewTitleTintColor=_darkenedCollectionViewTitleTintColor;
 @property(retain, nonatomic) UIColor *defaultCollectionViewTitleTintColor; // @synthesize defaultCollectionViewTitleTintColor=_defaultCollectionViewTitleTintColor;
 @property(nonatomic) BOOL layoutHasHappened; // @synthesize layoutHasHappened=_layoutHasHappened;
@@ -161,7 +162,6 @@
 @property(retain, nonatomic) ICDocCamFilterViewController *filterViewController; // @synthesize filterViewController=_filterViewController;
 @property(nonatomic) __weak UIToolbar *bottomToolbar; // @synthesize bottomToolbar=_bottomToolbar;
 @property(nonatomic) __weak UIView *topToolbar; // @synthesize topToolbar=_topToolbar;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (void)resetImageCentering;
 - (id)indexPathForCurrentDocument;

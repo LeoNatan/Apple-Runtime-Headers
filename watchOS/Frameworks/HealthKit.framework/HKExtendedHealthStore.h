@@ -18,8 +18,8 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 - (void)setCurrentActivityCacheOverrideDate:(id)arg1 timeZone:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)daemonDidStart;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;

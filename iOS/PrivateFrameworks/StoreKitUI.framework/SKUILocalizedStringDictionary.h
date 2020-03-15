@@ -15,8 +15,8 @@
     NSString *_localeName;
 }
 
-@property(readonly, nonatomic) NSString *localeName; // @synthesize localeName=_localeName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *localeName; // @synthesize localeName=_localeName;
 - (id)_stringTableForBundle:(id)arg1 tableName:(id)arg2;
 - (id)localizedStringForKey:(id)arg1 inTable:(id)arg2;
 - (id)localizedStringForKey:(id)arg1;

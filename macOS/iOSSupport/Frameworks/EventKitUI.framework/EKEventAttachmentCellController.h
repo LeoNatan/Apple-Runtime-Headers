@@ -26,10 +26,10 @@
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2 sourceIsManaged:(BOOL)arg3;
 + (id)_keyForAttachment:(id)arg1;
 + (BOOL)_attachmentIsViewable:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <EKEventAttachmentCellControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EKAttachment *attachment; // @synthesize attachment=_attachment;
 @property(readonly) EKEventAttachmentCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (void)documentInteractionControllerWillEndPreview:(id)arg1;
 - (id)documentInteractionControllerViewForPreview:(id)arg1;
 - (id)documentInteractionControllerViewControllerForPreview:(id)arg1;

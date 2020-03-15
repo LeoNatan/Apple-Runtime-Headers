@@ -15,8 +15,8 @@
     id <AMPArtworkEventsProtocol> _eventsDelegate;
 }
 
-@property(nonatomic) __weak id <AMPArtworkEventsProtocol> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AMPArtworkEventsProtocol> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 - (void)notifyArtworkStatusChangedWithInfoArray:(id)arg1;
 
 @end

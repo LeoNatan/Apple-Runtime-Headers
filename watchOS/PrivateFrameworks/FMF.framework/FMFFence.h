@@ -37,6 +37,7 @@
 + (_Bool)isAllowedAtLocation:(struct CLLocationCoordinate2D)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)genericFriendName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pendingIdentifier; // @synthesize pendingIdentifier=_pendingIdentifier;
 @property(retain, nonatomic) NSString *createdByIdentifier; // @synthesize createdByIdentifier=_createdByIdentifier;
 @property(retain, nonatomic) NSString *friendIdentifier; // @synthesize friendIdentifier=_friendIdentifier;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)handlesForArray:(id)arg1;
 - (id)locationForDictionary:(id)arg1;

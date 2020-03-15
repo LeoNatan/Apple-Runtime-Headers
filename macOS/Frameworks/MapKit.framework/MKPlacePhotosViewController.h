@@ -10,11 +10,12 @@
 #import <MapKit/MKPlaceAttributionCellDelegate-Protocol.h>
 #import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
-@class MKMapItem, MKPhotoSmallAttributionView, MKPlaceAttributionCell, NSArray, NSLayoutConstraint, NSScrollView, NSString, NSView, _MKPlaceViewController;
+@class MKMapItem, MKPhotoBigAttributionView, MKPhotoSmallAttributionView, MKPlaceAttributionCell, NSArray, NSLayoutConstraint, NSScrollView, NSString, NSView, _MKPlaceViewController;
 @protocol MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate;
 
 @interface MKPlacePhotosViewController : _MKUIViewController <MKPlaceAttributionCellDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
 {
+    MKPhotoBigAttributionView *_attributionView;
     NSArray *_photoViews;
     NSScrollView *_photosContainerScrollView;
     NSView *_photosContainer;
@@ -23,7 +24,6 @@
     BOOL _photoScrollViewScrollingLeft;
     BOOL _photoScrollViewScrollingRight;
     BOOL _canUseFullscreenViewer;
-    BOOL _canUseGallery;
     BOOL _photoLoaded;
     BOOL _loadAppImageCanceledOrFailed;
     BOOL _isRTL;
@@ -42,13 +42,13 @@
     id <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> _photosControllerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> photosControllerDelegate; // @synthesize photosControllerDelegate=_photosControllerDelegate;
 @property(nonatomic) __weak _MKPlaceViewController *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)viewDidLayout;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
-- (void)_callPhotoDelegateForPhotoAt:(unsigned long long)arg1;
+- (void)didTapAttributionViewWithPresentingViewController:(id)arg1;
 - (void)_photoTappedAtIndex:(unsigned long long)arg1;
 - (void)_photoSelected:(id)arg1;
 - (void)_loadPhotos;
@@ -73,6 +73,9 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (BOOL)isSafariProcess;
+- (BOOL)isParsecProcess;
+- (BOOL)isSiriProcess;
 - (BOOL)_canShowWhileLocked;
 
 // Remaining properties

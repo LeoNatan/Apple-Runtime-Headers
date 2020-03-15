@@ -15,9 +15,9 @@
     NSString *_fileType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileType; // @synthesize fileType=_fileType;
 @property(nonatomic) __weak id <HMDDataStreamBulkSendListener> listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (id)initWithListener:(id)arg1 fileType:(id)arg2;
 
 @end

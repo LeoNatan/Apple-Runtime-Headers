@@ -26,8 +26,10 @@
 + (id)stringRepresentationForService:(long long)arg1;
 + (BOOL)isAccountsFrameworkAvailable;
 + (id)sharedInstance;
-@property(retain, nonatomic) ACAccountStore *store; // @synthesize store=_accountStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccountStore *store; // @synthesize store=_accountStore;
+- (void)setAdditionalInfo:(id)arg1 forAccount:(id)arg2;
+- (id)additionalInfoForAccount:(id)arg1;
 @property(readonly, nonatomic) ACAccountType *appleIDAccountType;
 @property(readonly, nonatomic) ACAccountType *iCloudAccountType;
 - (id)_altDSIDForiCloudAccount:(id)arg1;
@@ -99,6 +101,8 @@
 - (BOOL)authorizationUsedForAccount:(id)arg1;
 - (void)setAgeOfMajority:(id)arg1 forAccount:(id)arg2;
 - (id)ageOfMajorityForAccount:(id)arg1;
+- (void)setDemoAccount:(BOOL)arg1 forAccount:(id)arg2;
+- (BOOL)demoAccountForAccount:(id)arg1;
 - (void)setUserUnderage:(BOOL)arg1 forAccount:(id)arg2;
 - (BOOL)userUnderAgeForAccount:(id)arg1;
 - (void)setPhoneAsAppleID:(BOOL)arg1 forAccount:(id)arg2;

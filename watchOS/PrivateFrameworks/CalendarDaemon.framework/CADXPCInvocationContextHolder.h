@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     id _proxy;
 }
 
-@property(readonly, nonatomic) id proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id proxy; // @synthesize proxy=_proxy;
 - (void)clear;
 - (void)retainProxy:(id)arg1 andArgumentsInInvocation:(id)arg2;
 

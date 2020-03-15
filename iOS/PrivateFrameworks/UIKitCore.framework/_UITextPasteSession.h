@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     UITextRange *_hiddenRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(retain, nonatomic) UITextRange *hiddenRange; // @synthesize hiddenRange=_hiddenRange;
 @property(copy, nonatomic) NSArray *originalItems; // @synthesize originalItems=_originalItems;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITextPasteCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(nonatomic) __weak UITextPasteController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <UITextPasteSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)animationCompleted;
 - (void)animationStarted;
 - (id)positionedPasteResult;

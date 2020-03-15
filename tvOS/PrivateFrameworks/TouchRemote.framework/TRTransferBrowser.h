@@ -21,9 +21,9 @@
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <TRTransferBrowserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)_runVerifyStepWithInput:(const void *)arg1 inputLength:(unsigned long long)arg2 outputData:(id *)arg3;
 - (int)_runSetupStepWithInput:(const void *)arg1 inputLength:(unsigned long long)arg2 outputData:(id *)arg3;
 - (id)_didReceiveEncryptedData:(id)arg1;

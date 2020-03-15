@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <QLCustomItemViewControllerHost> _delegate;
 }
 
-@property(nonatomic) __weak id <QLCustomItemViewControllerHost> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <QLCustomItemViewControllerHost> delegate; // @synthesize delegate=_delegate;
 - (void)forwardMessageToHostOfCustomViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dismissQuickLook;
 - (void)setFullScreen:(_Bool)arg1;

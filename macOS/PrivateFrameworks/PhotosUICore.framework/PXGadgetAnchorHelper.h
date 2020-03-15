@@ -18,12 +18,12 @@
     PXGadgetDataSourceManager *_dataSourceManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXGadgetDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(retain, nonatomic) PXGadgetNavigationHelper *navigationHelper; // @synthesize navigationHelper=_navigationHelper;
 @property(retain, nonatomic) id <PXGadget> currentAnchor; // @synthesize currentAnchor=_currentAnchor;
 @property(nonatomic) long long anchorPosition; // @synthesize anchorPosition=_anchorPosition;
 @property(nonatomic) __weak id <PXGadgetAnchorHelperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_convertIndexPathToGadget:(id)arg1;
 - (id)_generateAnchor;
 - (void)navigateToAnchorIfNeeded;

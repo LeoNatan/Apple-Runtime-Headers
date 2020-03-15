@@ -16,11 +16,11 @@
     NSTextContainer *_textContainerForLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextContainer *textContainerForLayout; // @synthesize textContainerForLayout=_textContainerForLayout;
 @property(retain) NSLayoutManager *layoutManagerForLayout; // @synthesize layoutManagerForLayout=_layoutManagerForLayout;
 @property(retain) NSTextStorage *textStorageForLayout; // @synthesize textStorageForLayout=_textStorageForLayout;
 @property(readonly) NSArray *movies; // @synthesize movies=_movies;
-- (void).cxx_destruct;
 - (void)openMovie:(id)arg1;
 - (void)openMovieError;
 - (id)truncateAttrString:(id)arg1 width:(double)arg2 maxLines:(unsigned long long)arg3;

@@ -22,6 +22,7 @@
     NSNumber *_bookmarkOverrideTime;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *bookmarkOverrideTime; // @synthesize bookmarkOverrideTime=_bookmarkOverrideTime;
 @property(retain, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(retain, nonatomic) TVPPlayer *scrubPlayer; // @synthesize scrubPlayer=_scrubPlayer;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) TVCKMutableBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(copy, nonatomic) NSURL *fpsKeyServerURL; // @synthesize fpsKeyServerURL=_fpsKeyServerURL;
 @property(copy, nonatomic) NSURL *fpsCertificateURL; // @synthesize fpsCertificateURL=_fpsCertificateURL;
-- (void).cxx_destruct;
 - (void)_scrubPlayerItemDidLoad:(id)arg1;
 - (id)replacementErrorForPlaybackError:(id)arg1;
 - (void)secureKeyDeliveryCoordinator:(id)arg1 didReceiveUpdatedRentalExpirationDate:(id)arg2;

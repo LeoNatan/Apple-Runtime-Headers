@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class UIFont, UITraitCollection;
+@class UIFont, UIImageSymbolConfiguration, UITraitCollection;
 
 __attribute__((visibility("hidden")))
 @interface SFNavigationBarMetrics : NSObject
 {
+    _Bool _usesNavigationBarHeightForSheetPresentation;
     UITraitCollection *_traitCollectionForFontMetrics;
     float _minimumBarHeight;
     UIFont *_defaultLabelFont;
@@ -23,6 +24,8 @@ __attribute__((visibility("hidden")))
     float _safariSquishHeightQuantizationOffset;
     float _safariViewControllerSquishHeightQuantizationOffset;
     float _statusBarHeight;
+    UIImageSymbolConfiguration *_accessoryImageSymbolConfiguration;
+    UIImageSymbolConfiguration *_squishedAccessoryImageSymbolConfiguration;
     float _accessibilityImageScale;
     float _urlOutlineCornerRadius;
     float _defaultBarHeight;
@@ -34,6 +37,7 @@ __attribute__((visibility("hidden")))
     float _distanceFromLabelBaselineToURLOutlineBottom;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float distanceFromLabelBaselineToURLOutlineBottom; // @synthesize distanceFromLabelBaselineToURLOutlineBottom=_distanceFromLabelBaselineToURLOutlineBottom;
 @property(readonly, nonatomic) float urlLabelAccessoryLockItemVerticalOffset; // @synthesize urlLabelAccessoryLockItemVerticalOffset=_urlLabelAccessoryLockItemVerticalOffset;
 @property(readonly, nonatomic) float urlLabelAccessoryItemSquishedVerticalOffset; // @synthesize urlLabelAccessoryItemSquishedVerticalOffset=_urlLabelAccessoryItemSquishedVerticalOffset;
@@ -44,7 +48,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) float defaultBarHeight; // @synthesize defaultBarHeight=_defaultBarHeight;
 @property(readonly, nonatomic) float urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(readonly, nonatomic) float accessibilityImageScale; // @synthesize accessibilityImageScale=_accessibilityImageScale;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageSymbolConfiguration *squishedAccessoryImageSymbolConfiguration;
+@property(readonly, nonatomic) UIImageSymbolConfiguration *accessoryImageSymbolConfiguration;
 @property(readonly, nonatomic) float narrowEditingScaleFactor;
 @property(readonly, nonatomic) UIFont *narrowEditingLabelFont;
 @property(readonly, nonatomic) UIFont *defaultBoldFont;
@@ -53,7 +58,9 @@ __attribute__((visibility("hidden")))
 - (float)barHeightWithBarMetricsCategory:(int)arg1;
 - (void)_updateMetrics;
 - (_Bool)updateForStatusBarHeight:(float)arg1;
-- (_Bool)updateForContentSizeCategory:(id)arg1;
+- (_Bool)_updateForContentSizeCategory:(id)arg1;
+- (_Bool)_updateForPresentationSemanticContext:(int)arg1;
+- (_Bool)updateForTraitCollection:(id)arg1;
 - (id)init;
 - (id)_contentSizeCategoryWithPreferredCategory:(id)arg1;
 

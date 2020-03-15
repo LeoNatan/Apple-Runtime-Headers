@@ -18,13 +18,13 @@
     NSArray *_pages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 @property(nonatomic) _Bool allowsCopying; // @synthesize allowsCopying=_allowsCopying;
 @property(nonatomic) _Bool allowsPrinting; // @synthesize allowsPrinting=_allowsPrinting;
 @property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(nonatomic, getter=isEncrypted) _Bool encrypted; // @synthesize encrypted=_encrypted;
 @property(readonly, nonatomic) struct CGPDFDocument *documentRef; // @synthesize documentRef=_documentRef;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) Class pageClass;
 @property(readonly, nonatomic) unsigned long long expectedPageCount;
 - (_Bool)unlockWithPassword:(id)arg1;

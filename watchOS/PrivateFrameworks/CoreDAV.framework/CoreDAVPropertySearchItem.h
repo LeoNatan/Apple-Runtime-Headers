@@ -15,10 +15,10 @@
     NSString *_matchTypeAttribute;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *matchTypeAttribute; // @synthesize matchTypeAttribute=_matchTypeAttribute;
 @property(retain, nonatomic) NSString *match; // @synthesize match=_match;
 @property(retain, nonatomic) CoreDAVLeafItem *prop; // @synthesize prop=_prop;
-- (void).cxx_destruct;
 - (void)write:(id)arg1;
 - (id)description;
 - (id)initWithSearchPropertyNameSpace:(id)arg1 andName:(id)arg2;

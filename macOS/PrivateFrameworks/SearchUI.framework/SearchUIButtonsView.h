@@ -15,8 +15,8 @@
 
 + (BOOL)playActionNeedsPlayButton:(id)arg1;
 + (id)adamIdForOffer:(id)arg1;
-@property __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 - (void).cxx_destruct;
+@property __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 - (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 punchoutURL:(id)arg3;
 - (void)sendErrorFeedbackIfNecessary:(id)arg1;
 - (void)fetchButtonsWithCompletionHandler:(CDUnknownBlockType)arg1;

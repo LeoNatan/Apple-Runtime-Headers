@@ -14,9 +14,9 @@
     NSMutableDictionary *_mutableEpisodeSizeInfoDict;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *mutableEpisodeSizeInfoDict; // @synthesize mutableEpisodeSizeInfoDict=_mutableEpisodeSizeInfoDict;
 @property(retain) NSMutableDictionary *mutableRelationshipDict; // @synthesize mutableRelationshipDict=_mutableRelationshipDict;
-- (void).cxx_destruct;
 - (id)_currentPodcastSizeDictionary;
 - (void)synchronize;
 - (void)setEpisodeSizeInfo:(id)arg1 forEpisode:(id)arg2;

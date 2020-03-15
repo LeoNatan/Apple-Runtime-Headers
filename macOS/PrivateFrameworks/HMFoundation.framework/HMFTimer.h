@@ -24,11 +24,11 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property __weak id <HMFTimerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
-- (void).cxx_destruct;
 - (void)__handleExpiration;
 - (void)__fire;
 - (void)fire;

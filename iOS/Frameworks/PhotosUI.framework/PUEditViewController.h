@@ -13,8 +13,8 @@
     UIImage *_placeholderImage;
 }
 
-@property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 
 @end
 

@@ -22,6 +22,7 @@
 }
 
 + (_Bool)isTest;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSMutableArray *actionableReasons; // @synthesize actionableReasons=_actionableReasons;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 @property(retain, nonatomic) NSMutableArray *errorsEncountered; // @synthesize errorsEncountered=_errorsEncountered;
 @property(retain) NSMutableSet *outstandingTasks; // @synthesize outstandingTasks=_outstandingTasks;
-- (void).cxx_destruct;
 - (id)actionForNSURLSessionActivation:(id)arg1 session:(id)arg2;
 - (id)actionForIntentDidRun:(id)arg1 options:(id)arg2;
 - (id)actionForRelevantActions:(id)arg1 options:(id)arg2;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_facilityName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *facilityName; // @synthesize facilityName=_facilityName;
 @property(readonly, nonatomic) NSObject<OS_os_log> *facility; // @synthesize facility=_facility;
-- (void).cxx_destruct;
 - (id)initWithFacility:(id)arg1 facilityName:(id)arg2;
 
 @end

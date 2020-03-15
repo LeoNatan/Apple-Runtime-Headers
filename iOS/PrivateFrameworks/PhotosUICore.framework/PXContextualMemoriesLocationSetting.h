@@ -28,13 +28,13 @@
 + (id)keyPathsForValuesAffectingTitle;
 + (id)keyPathsForValuesAffectingPlacemark;
 + (_Bool)automaticallyNotifiesObserversOfCoordinate;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool monitorsCurrentLocation; // @synthesize monitorsCurrentLocation=_monitorsCurrentLocation;
 @property(retain, nonatomic) _PXCompletionHandlerManager *completionHandlerManager; // @synthesize completionHandlerManager=_completionHandlerManager;
 @property(retain, nonatomic) PXLocationStream *locationStream; // @synthesize locationStream=_locationStream;
 @property(nonatomic) unsigned long long locationState; // @synthesize locationState=_locationState;
 @property(retain, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (void)requestLocationUpdateWithAccuracy:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didCallLastCompletionHandlerForCompletionHandlerManager:(id)arg1;
 - (void)_updatePlacemarkForCoordinate:(struct CLLocationCoordinate2D)arg1;

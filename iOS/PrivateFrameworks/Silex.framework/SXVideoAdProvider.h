@@ -26,6 +26,7 @@
     id <SXVASTAnalyticsEventInfoFactory> _analyticsEventInfoFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXVASTAnalyticsEventInfoFactory> analyticsEventInfoFactory; // @synthesize analyticsEventInfoFactory=_analyticsEventInfoFactory;
 @property(readonly, nonatomic) id <SVVisibilityMonitoring> videoPlayerVisibilityMonitor; // @synthesize videoPlayerVisibilityMonitor=_videoPlayerVisibilityMonitor;
 @property(readonly, nonatomic) id <SVVisibilityMonitoring> videoVisibilityMonitor; // @synthesize videoVisibilityMonitor=_videoVisibilityMonitor;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) SXPrerollAdResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) id <SXAnalyticsReporting> analyticsReporter; // @synthesize analyticsReporter=_analyticsReporter;
 @property(nonatomic) __weak id <SXVideoAdProviderDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)viewControllerForStoryboardPresentationFromBannerView:(id)arg1;
 - (void)adVisibilityStateChanged;
 - (void)reportEngagementEventWithType:(unsigned long long)arg1;

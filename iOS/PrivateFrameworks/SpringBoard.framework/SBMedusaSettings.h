@@ -75,6 +75,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) double vibrantColorMatrixM45; // @synthesize vibrantColorMatrixM45=_vibrantColorMatrixM45;
 @property(nonatomic) double vibrantColorMatrixM44; // @synthesize vibrantColorMatrixM44=_vibrantColorMatrixM44;
 @property(nonatomic) double vibrantColorMatrixM43; // @synthesize vibrantColorMatrixM43=_vibrantColorMatrixM43;
@@ -137,7 +138,6 @@
 @property(nonatomic) double numberOfRecents; // @synthesize numberOfRecents=_numberOfRecents;
 @property(nonatomic) _Bool persistentDock; // @synthesize persistentDock=_persistentDock;
 @property(retain, nonatomic) SBMedusa1oSettings *medusa1oSettings; // @synthesize medusa1oSettings=_medusa1oSettings;
-- (void).cxx_destruct;
 - (double)effectiveBlurFadeAnimationDuration;
 - (struct CAColorMatrix)coronaVibrantColorMatrixInput;
 - (void)setDefaultValues;

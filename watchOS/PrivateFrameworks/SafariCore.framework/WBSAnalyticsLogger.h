@@ -17,8 +17,10 @@
 }
 
 + (id)sharedLogger;
-@property(readonly, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
+- (void)userDidReceiveSharedPasswordWithOutcome:(int)arg1;
+- (void)userDidSharePasswordWithOutcome:(int)arg1;
 - (void)submitVersioningMetricWithVersion:(id)arg1 variant:(int)arg2;
 - (void)submitAutomaticReaderActivation:(int)arg1;
 - (void)didToggleDomainSpecificAutomaticReader:(_Bool)arg1;

@@ -19,16 +19,16 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(retain, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(retain, nonatomic) NSNumber *defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(nonatomic) long long maximumUnit; // @synthesize maximumUnit=_maximumUnit;
 @property(nonatomic) long long minimumUnit; // @synthesize minimumUnit=_minimumUnit;
 @property(nonatomic) long long defaultUnit; // @synthesize defaultUnit=_defaultUnit;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

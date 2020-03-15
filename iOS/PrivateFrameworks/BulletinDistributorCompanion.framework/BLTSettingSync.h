@@ -58,7 +58,7 @@
 - (void)dealloc;
 - (void)siriActionAppListUpdated:(id)arg1;
 - (void)handleAllSyncComplete;
-- (void)_sendSiriAppListWithInstalled:(struct NSDictionary *)arg1 removed:(id)arg2;
+- (void)_sendSiriAppListWithInstalled:(id)arg1 removed:(id)arg2;
 - (void)_sendSpooledSyncWithCompletion:(CDUnknownBlockType)arg1 withProgress:(CDUnknownBlockType)arg2;
 - (void)_logNotificationSettings;
 - (void)_spoolInitialSync;

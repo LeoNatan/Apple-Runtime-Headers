@@ -39,11 +39,11 @@
     AKTSDLineEnd *_tailLineEnd;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKTSDLineEnd *tailLineEnd; // @synthesize tailLineEnd=_tailLineEnd;
 @property(retain, nonatomic) AKTSDLineEnd *headLineEnd; // @synthesize headLineEnd=_headLineEnd;
 @property(retain, nonatomic) AKTSDBrushStroke *stroke; // @synthesize stroke=_stroke;
 @property(retain, nonatomic) AKTSDBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)_newClippedPath;
 - (void)p_computeAngle:(double *)arg1 point:(struct CGPoint *)arg2 cutSegment:(long long *)arg3 cutT:(double *)arg4 forLineEndAtHead:(_Bool)arg5;
 - (void)p_validateTailLineEnd;

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)presenter:(id)arg1 withItemID:(id)arg2 pid:(int)arg3 urlHint:(id)arg4 domain:(id)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FPDDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSURL *presentedItemURL; // @synthesize presentedItemURL=_presentedItemURL;
 @property(nonatomic) _Bool isFrontmost; // @synthesize isFrontmost=_isFrontmost;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isEnumeratorActive; // @synthesize isEnumeratorActive=_isEnumeratorActive;
 @property(copy, nonatomic) id filePresenterID; // @synthesize filePresenterID=_filePresenterID;
 @property(readonly) int requestEffectivePID; // @synthesize requestEffectivePID=_requestEffectivePID;
-- (void).cxx_destruct;
 @property(readonly) NSString *prettyDescription;
 - (void)dumpStateTo:(id)arg1;
 - (void)_fetchUpdates;

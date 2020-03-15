@@ -23,12 +23,12 @@
     double _subActionHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double subActionHeight; // @synthesize subActionHeight=_subActionHeight;
 @property(nonatomic) double subActionPadding; // @synthesize subActionPadding=_subActionPadding;
 @property(nonatomic) struct UIEdgeInsets subActionsInsets; // @synthesize subActionsInsets=_subActionsInsets;
 @property(nonatomic) double transitionSpacing; // @synthesize transitionSpacing=_transitionSpacing;
 @property(nonatomic) double notificationHeight; // @synthesize notificationHeight=_notificationHeight;
-- (void).cxx_destruct;
 - (id)finalLayoutAttributesForDisappearingDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initialLayoutAttributesForAppearingDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;

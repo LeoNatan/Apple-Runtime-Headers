@@ -13,8 +13,8 @@
     ACAccountStore *_accountStore;
 }
 
-@property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void)_upgradeSyncedFilesInfo;
 - (id)_upgradeLocalAccountOutbox;
 - (void)_moveAccountDirectories;

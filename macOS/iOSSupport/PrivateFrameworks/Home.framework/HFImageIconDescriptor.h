@@ -17,10 +17,10 @@
     NSString *_imageIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDemoModeDescriptor; // @synthesize isDemoModeDescriptor=_isDemoModeDescriptor;
 @property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
 @property(readonly, nonatomic) BOOL shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
-- (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *identifier;

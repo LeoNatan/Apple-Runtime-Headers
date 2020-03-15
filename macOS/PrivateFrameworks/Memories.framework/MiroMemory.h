@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 + (id)_saveURL;
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) long long allAssetCount; // @synthesize allAssetCount=_allAssetCount;
 @property(retain, nonatomic) NSArray *featuredPeople; // @synthesize featuredPeople=_featuredPeople;
 @property(retain, nonatomic) NSDictionary *loadedFreezeRanges; // @synthesize loadedFreezeRanges=_loadedFreezeRanges;
@@ -101,7 +102,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long schema; // @synthesize schema=_schema;
 @property(retain, nonatomic) NSURL *localPersistentFile; // @synthesize localPersistentFile=_localPersistentFile;
 @property(retain, nonatomic) MiroBlueprint *customBlueprint; // @synthesize customBlueprint=_customBlueprint;
-- (void).cxx_destruct;
 - (id)trimRangesForAsset:(id)arg1;
 - (id)featuredPersonsInMemoryAsFaceRangesInAsset:(id)arg1;
 - (BOOL)memoryFeaturesPersonInAsset:(id)arg1;

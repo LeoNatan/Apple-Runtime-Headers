@@ -6,7 +6,7 @@
 
 #import <HMFoundation/HMFMessage.h>
 
-@class HMDHomeKitVersion, NSUUID;
+@class HMDHomeKitVersion, HMFLogEventSession, NSUUID;
 
 @interface HMDRemoteMessage : HMFMessage
 {
@@ -18,10 +18,10 @@
 
 + (id)secureMessageWithName:(id)arg1 qualityOfService:(int)arg2 destination:(id)arg3 messagePayload:(id)arg4;
 + (id)secureMessageWithName:(id)arg1 destination:(id)arg2 messagePayload:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDHomeKitVersion *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
 @property(copy, nonatomic) NSUUID *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int restriction;
 - (void)setInternalResponseHandler:(CDUnknownBlockType)arg1;
 - (void)setResponseHandler:(CDUnknownBlockType)arg1;
@@ -38,6 +38,9 @@
 - (id)initWithName:(id)arg1 qualityOfService:(int)arg2 destination:(id)arg3 userInfo:(id)arg4 headers:(id)arg5 payload:(id)arg6;
 - (id)initWithName:(id)arg1 qualityOfService:(int)arg2 destination:(id)arg3 payload:(id)arg4;
 - (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3;
+
+// Remaining properties
+@property(retain, nonatomic) HMFLogEventSession *logEventSession; // @dynamic logEventSession;
 
 @end
 

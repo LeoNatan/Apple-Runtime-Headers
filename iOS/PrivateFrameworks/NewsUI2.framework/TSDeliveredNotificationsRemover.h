@@ -6,10 +6,8 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSDeliveredNotificationsRemoverType-Protocol.h>
-
 __attribute__((visibility("hidden")))
-@interface TSDeliveredNotificationsRemover : NSObject <TSDeliveredNotificationsRemoverType>
+@interface TSDeliveredNotificationsRemover : NSObject
 {
     // Error parsing type: , name: notificationService
 }

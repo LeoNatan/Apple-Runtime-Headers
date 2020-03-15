@@ -31,6 +31,7 @@
     UILabel *_positionQRCodeLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *positionQRCodeLabel; // @synthesize positionQRCodeLabel=_positionQRCodeLabel;
 @property(nonatomic) __weak UILabel *scanQRCodeLabel; // @synthesize scanQRCodeLabel=_scanQRCodeLabel;
 @property(nonatomic) __weak UIButton *enterDetailsManuallyButton; // @synthesize enterDetailsManuallyButton=_enterDetailsManuallyButton;
@@ -40,7 +41,6 @@
 @property(readonly) _Bool confirmationCodeRequired; // @synthesize confirmationCodeRequired=_confirmationCodeRequired;
 @property(readonly) NSString *fauxCardData; // @synthesize fauxCardData=_fauxCardData;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)_addNewPlanWithCardData:(id)arg1 confirmationCode:(id)arg2;

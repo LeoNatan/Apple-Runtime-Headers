@@ -28,6 +28,7 @@
 - (void)_removeLocalTransaction:(id)arg1;
 - (void)_refreshPaymentsWithPolicy:(long long)arg1;
 - (void)_processUpdates:(id)arg1 trimUnmatched:(_Bool)arg2 sendUpdatedDownloads:(_Bool)arg3;
+- (void)_processTransaction:(id)arg1;
 - (void)_notifyObserversAboutPurchaseIntentsForProducts:(id)arg1;
 - (void)_notifyObserversRestoreTransactionsFinished;
 - (void)_notifyObserversRestoreTransactionsFailedWithError:(id)arg1;
@@ -44,6 +45,7 @@
 - (id)_copyDownloadIDsForDownloads:(id)arg1;
 - (void)_sendAppStorePendingPaymentsRequestForMessage:(id)arg1;
 - (void)_completeRestoreWithMessage:(id)arg1;
+- (void)_checkForMessages;
 - (id)_applyDownloadChangeset:(id)arg1;
 - (void)_daemonLaunchedNotification;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
@@ -54,12 +56,14 @@
 - (void)downloadAdded:(id)arg1;
 - (void)removedTransactions:(id)arg1;
 - (void)updatedTransactions:(id)arg1;
+- (void)askToShowMessageWithReplyBlock:(CDUnknownBlockType)arg1;
 - (void)forceSandboxForBundleIdentifier:(id)arg1 untilDate:(id)arg2;
 @property(readonly, nonatomic) SKPaymentQueueClient *paymentQueueClient;
 - (id)initWithPaymentQueueClient:(id)arg1;
 @property(readonly, nonatomic) NSArray *transactions;
 @property(readonly, nonatomic) SKStorefront *storefront;
 - (void)startDownloads:(id)arg1;
+- (void)showPriceConsentIfNeeded;
 @property(nonatomic) __weak id <SKPaymentQueueDelegate> delegate;
 - (void)resumeDownloads:(id)arg1;
 - (void)restoreCompletedTransactionsWithApplicationUsername:(id)arg1;

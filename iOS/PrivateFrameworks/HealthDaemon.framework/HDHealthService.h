@@ -33,6 +33,7 @@
 + (id)implementedProperties;
 + (id)serviceUUID;
 + (long long)serviceType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingWrites; // @synthesize pendingWrites=_pendingWrites;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
 @property(retain, nonatomic) NSMutableDictionary *writableCharacteristics; // @synthesize writableCharacteristics=_writableCharacteristics;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSUUID *peripheralUUID; // @synthesize peripheralUUID=_peripheralUUID;
 @property(readonly, nonatomic) __weak HDHealthPeripheral *healthPeripheral; // @synthesize healthPeripheral=_healthPeripheral;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (_Bool)processAdvertisementData:(id)arg1;
 - (_Bool)_shouldNotifyReceivedData;
 - (void)_bufferCharacteristicToBeNotified:(id)arg1;

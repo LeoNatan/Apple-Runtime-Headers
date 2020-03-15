@@ -22,9 +22,11 @@
 - (oneway void)addExpressKeyID:(NSString *)arg1 forApplet:(NFApplet *)arg2 type:(unsigned char)arg3 authorization:(NSData *)arg4 expressInfo:(NSDictionary *)arg5 callback:(void (^)(NSError *))arg6;
 - (oneway void)addExpressApplet:(NFApplet *)arg1 type:(unsigned char)arg2 authorization:(NSData *)arg3 expressInfo:(NSDictionary *)arg4 callback:(void (^)(NSError *))arg5;
 - (oneway void)expressModesInfo:(void (^)(BOOL, NSDictionary *))arg1;
+- (oneway void)getAndResetLPEMCounter:(void (^)(long long, NSError *))arg1;
 - (oneway void)getTransitAppletState:(NFApplet *)arg1 callback:(void (^)(NSDictionary *, NSError *))arg2;
 - (oneway void)getFelicaAppletState:(NFApplet *)arg1 callback:(void (^)(NSDictionary *, NSError *))arg2;
-- (oneway void)disableAuthorizationForApplet:(NFApplet *)arg1 andKeys:(NSSet *)arg2 authorization:(NSData *)arg3 callback:(void (^)(NSError *))arg4;
+- (oneway void)disableAuthorizationForApplet:(NFApplet *)arg1 andKey:(NSString *)arg2 authorization:(NSData *)arg3 callback:(void (^)(NSError *))arg4;
+- (oneway void)restoreAuthorizarionForKeys:(NSSet *)arg1 onApplet:(NSString *)arg2 callback:(void (^)(NSError *))arg3;
 - (oneway void)restoreAuthorizationForAllAppletsExcept:(NSSet *)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)setExpressModesEnabled:(BOOL)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)getCryptogram:(void (^)(NSData *, NSData *, NSError *))arg1;
@@ -41,6 +43,7 @@
 - (oneway void)signChallenge:(NSData *)arg1 forAID:(NSString *)arg2 callback:(void (^)(NSData *, NFSignatureInfo *, NSError *))arg3;
 - (oneway void)signChallenge:(NSData *)arg1 useOSVersion:(BOOL)arg2 callback:(void (^)(NSData *, NFSignatureInfo *, NSError *))arg3;
 - (oneway void)signChallenge:(NSData *)arg1 callback:(void (^)(NSData *, NSDictionary *, NSError *))arg2;
+- (oneway void)stateInformationWithRedirectInfo:(NSDictionary *)arg1 callback:(void (^)(NSArray *, NSError *))arg2;
 - (oneway void)stateInformation:(void (^)(NSArray *, NSError *))arg1;
 @end
 

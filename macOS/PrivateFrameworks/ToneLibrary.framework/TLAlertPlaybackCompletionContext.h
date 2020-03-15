@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long playbackCompletionType; // @synthesize playbackCompletionType=_playbackCompletionType;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 
 @end
 

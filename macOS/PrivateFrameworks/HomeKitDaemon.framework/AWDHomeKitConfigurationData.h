@@ -16,25 +16,34 @@
     unsigned int _databaseSize;
     NSMutableArray *_homeConfigurations;
     unsigned int _metadataVersion;
+    BOOL _hasActiveWatchDevice;
+    BOOL _hasWatchDevice;
+    BOOL _isDemoConfiguration;
     BOOL _isResidentCapable;
     BOOL _isResidentEnabled;
     struct {
         unsigned int timestamp:1;
         unsigned int databaseSize:1;
         unsigned int metadataVersion:1;
+        unsigned int hasActiveWatchDevice:1;
+        unsigned int hasWatchDevice:1;
+        unsigned int isDemoConfiguration:1;
         unsigned int isResidentCapable:1;
         unsigned int isResidentEnabled:1;
     } _has;
 }
 
 + (Class)homeConfigurationsType;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL hasActiveWatchDevice; // @synthesize hasActiveWatchDevice=_hasActiveWatchDevice;
+@property(nonatomic) BOOL hasWatchDevice; // @synthesize hasWatchDevice=_hasWatchDevice;
+@property(nonatomic) BOOL isDemoConfiguration; // @synthesize isDemoConfiguration=_isDemoConfiguration;
 @property(retain, nonatomic) NSMutableArray *homeConfigurations; // @synthesize homeConfigurations=_homeConfigurations;
 @property(nonatomic) BOOL isResidentEnabled; // @synthesize isResidentEnabled=_isResidentEnabled;
 @property(nonatomic) BOOL isResidentCapable; // @synthesize isResidentCapable=_isResidentCapable;
 @property(nonatomic) unsigned int metadataVersion; // @synthesize metadataVersion=_metadataVersion;
 @property(nonatomic) unsigned int databaseSize; // @synthesize databaseSize=_databaseSize;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -44,6 +53,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasHasActiveWatchDevice;
+@property(nonatomic) BOOL hasHasWatchDevice;
+@property(nonatomic) BOOL hasIsDemoConfiguration;
 - (id)homeConfigurationsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)homeConfigurationsCount;
 - (void)addHomeConfigurations:(id)arg1;

@@ -17,11 +17,11 @@
     struct CGSize _referenceSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;
 @property(retain, nonatomic) PXGSublayoutDataStore *sublayoutDataStore; // @synthesize sublayoutDataStore=_sublayoutDataStore;
 @property(nonatomic) __weak PXGCompositeLayout *compositeLayout; // @synthesize compositeLayout=_compositeLayout;
 @property(nonatomic) long long lastSublayoutDataStoreVersion; // @synthesize lastSublayoutDataStoreVersion=_lastSublayoutDataStoreVersion;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect contentBounds;
 - (void)updateSublayoutGeometriesFromAnchorSublayoutIndex:(long long)arg1 usingSublayoutUpdateBlock:(CDUnknownBlockType)arg2;
 - (long long)anchorSublayoutIndexForAnchoredContentEdges:(unsigned long long)arg1;
@@ -32,6 +32,7 @@
 - (void)invalidateSublayoutAttributes;
 - (void)updateEstimate;
 - (void)enumerateSublayoutProvidersForRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (struct UIEdgeInsets)sublayoutInsetsForStylableType:(long long)arg1;
 @property(readonly, nonatomic) CDStruct_ff9a7497 *sublayoutGeometries;
 @property(readonly, nonatomic) long long numberOfSublayouts;
 - (void)referenceSizeDidChange;

@@ -11,7 +11,7 @@
 @interface PXCMMSpec : PXFeatureSpec
 {
     unsigned long long _activityType;
-    struct UIColor *_reviewBackgroundColor;
+    UIColor *_reviewBackgroundColor;
     long long _reviewGridContentMode;
     double _reviewHeaderTopInset;
     double _reviewHeaderCornerRadius;
@@ -38,6 +38,7 @@
 }
 
 + (double)maxBubbleWidthForDisplayScale:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double bubbleStatusIconCornerRadius; // @synthesize bubbleStatusIconCornerRadius=_bubbleStatusIconCornerRadius;
 @property(readonly, nonatomic) struct UIEdgeInsets composeFooterMargins; // @synthesize composeFooterMargins=_composeFooterMargins;
 @property(readonly, nonatomic) struct UIEdgeInsets composeFooterInsets; // @synthesize composeFooterInsets=_composeFooterInsets;
@@ -63,7 +64,6 @@
 @property(readonly, nonatomic) struct UIEdgeInsets reviewContentInsets; // @synthesize reviewContentInsets=_reviewContentInsets;
 @property(readonly, nonatomic) UIColor *reviewBackgroundColor; // @synthesize reviewBackgroundColor=_reviewBackgroundColor;
 @property(readonly, nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (double)_composeTableViewCellHeight;
 - (double)_reviewSectionHeaderHeightForContentSize:(id)arg1;
 @property(readonly, nonatomic) UIColor *bubbleBackgroundColor;

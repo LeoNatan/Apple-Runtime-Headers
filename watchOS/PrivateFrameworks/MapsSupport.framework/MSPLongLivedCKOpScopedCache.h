@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     MSPLongLivedCKOpCache *_cache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPLongLivedCKOpCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
-- (void).cxx_destruct;
 - (_Bool)isCurrentOperationID:(id)arg1;
 - (_Bool)isAwareOfOperationID:(id)arg1;
 - (_Bool)hasOperationID:(id)arg1;

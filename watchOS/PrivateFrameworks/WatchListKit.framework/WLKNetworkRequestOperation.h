@@ -12,6 +12,7 @@
 {
     NSString *_identifier;
     NSNumber *_DSID;
+    id _authenticationDelegate;
     NSURLRequest *_request;
     int _options;
     NSHTTPURLResponse *_httpResponse;
@@ -25,6 +26,7 @@
     unsigned long long _signpostIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long signpostIdentifier; // @synthesize signpostIdentifier=_signpostIdentifier;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
@@ -36,9 +38,9 @@
 @property(retain, nonatomic) NSHTTPURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;
 @property(readonly, nonatomic) int options; // @synthesize options=_options;
 @property(copy, nonatomic) NSURLRequest *request; // @synthesize request=_request;
+@property(nonatomic) __weak id authenticationDelegate; // @synthesize authenticationDelegate=_authenticationDelegate;
 @property(copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)finishExecutionIfPossible;
 - (void)executionDidBegin;

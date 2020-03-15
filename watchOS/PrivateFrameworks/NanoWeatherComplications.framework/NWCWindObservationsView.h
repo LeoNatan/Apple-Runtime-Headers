@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     UILabel *_windUnitLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *windUnitLabel; // @synthesize windUnitLabel=_windUnitLabel;
 @property(retain, nonatomic) UILabel *windSpeedLabel; // @synthesize windSpeedLabel=_windSpeedLabel;
 @property(retain, nonatomic) UILabel *windDirectionAbbreviationLabel; // @synthesize windDirectionAbbreviationLabel=_windDirectionAbbreviationLabel;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)resumeLiveFullColorImageView;

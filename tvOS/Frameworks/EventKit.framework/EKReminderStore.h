@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSArray *_calendars;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *calendars; // @synthesize calendars=_calendars;
 @property(readonly) NSArray *sources; // @synthesize sources=_sources;
 @property(readonly) __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(readonly, nonatomic) REMStore *remStore; // @synthesize remStore=_remStore;
-- (void).cxx_destruct;
 - (id)initWithEventStore:(id)arg1 token:(id)arg2;
 
 // Remaining properties

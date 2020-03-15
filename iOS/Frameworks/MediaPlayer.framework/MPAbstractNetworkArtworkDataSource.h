@@ -19,19 +19,19 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSCache *_fallbackArtworkRepresentationCache;
     NSMapTable *_catalogTaskMap;
-    NSMutableDictionary *_pendingRequestToCompletionHandlers;
+    NSMutableDictionary *_pendingRequestURLToCompletionHandlers;
     NSURLSession *_URLSession;
 }
 
 + (void)_applyURLCachePolicy:(unsigned long long)arg1 cacheDiskPath:(id)arg2 toConfiguration:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
-@property(retain, nonatomic) NSMutableDictionary *pendingRequestToCompletionHandlers; // @synthesize pendingRequestToCompletionHandlers=_pendingRequestToCompletionHandlers;
+@property(retain, nonatomic) NSMutableDictionary *pendingRequestURLToCompletionHandlers; // @synthesize pendingRequestURLToCompletionHandlers=_pendingRequestURLToCompletionHandlers;
 @property(retain, nonatomic) NSMapTable *catalogTaskMap; // @synthesize catalogTaskMap=_catalogTaskMap;
 @property(retain, nonatomic) NSCache *fallbackArtworkRepresentationCache; // @synthesize fallbackArtworkRepresentationCache=_fallbackArtworkRepresentationCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(nonatomic) _Bool usesFallbackCache; // @synthesize usesFallbackCache=_usesFallbackCache;
-- (void).cxx_destruct;
 - (void)_performSyncBlock:(CDUnknownBlockType)arg1;
 - (void)_performAsyncBarrierBlock:(CDUnknownBlockType)arg1;
 - (id)_requestForCatalog:(id)arg1 size:(struct CGSize)arg2;

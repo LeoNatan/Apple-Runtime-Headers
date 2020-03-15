@@ -6,9 +6,14 @@
 
 #import <objc/NSObject.h>
 
+@class TSgPTPClock;
+@protocol OS_dispatch_queue;
+
 @interface AVBNub : NSObject
 {
     unsigned int connection;
+    NSObject<OS_dispatch_queue> *_domainQueue;
+    TSgPTPClock *_avbDomain;
 }
 
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
@@ -16,6 +21,7 @@
 + (id)sharedNub;
 + (void)notifyWhenNubIsAvailable:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+@property(readonly) TSgPTPClock *avbDomain;
 - (void)finalize;
 - (id)description;
 - (BOOL)deactivateAVBOnInterfaceNamed:(id)arg1 error:(id *)arg2;

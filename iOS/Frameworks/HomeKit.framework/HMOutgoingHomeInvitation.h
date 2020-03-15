@@ -17,8 +17,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)homeInvitationsFromData:(id)arg1 home:(id)arg2;
 + (id)homeInvitationsFromEncodedData:(id)arg1 home:(id)arg2;
-@property(readonly, nonatomic) HMUser *invitee; // @synthesize invitee=_invitee;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMUser *invitee; // @synthesize invitee=_invitee;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

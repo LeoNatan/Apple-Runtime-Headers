@@ -13,8 +13,8 @@
     BCSBusinessItemPersistentStore *_businessItemPersistentStore;
 }
 
-@property(readonly, nonatomic) BCSBusinessItemPersistentStore *businessItemPersistentStore; // @synthesize businessItemPersistentStore=_businessItemPersistentStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BCSBusinessItemPersistentStore *businessItemPersistentStore; // @synthesize businessItemPersistentStore=_businessItemPersistentStore;
 - (_Bool)chatSuggestVisibilityForBusinessItem:(id)arg1;
 - (_Bool)deleteBusinessItemFromPersistentStore;
 - (_Bool)deleteBusinessItemIfExpiredWithBusinessItemObject:(id)arg1;

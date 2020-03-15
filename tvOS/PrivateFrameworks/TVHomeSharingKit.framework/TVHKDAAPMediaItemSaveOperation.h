@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSOperation *_currentSubOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *currentSubOperation; // @synthesize currentSubOperation=_currentSubOperation;
 @property(retain, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
 @property(retain, nonatomic) NSMutableArray *remainingAttributeCodes; // @synthesize remainingAttributeCodes=_remainingAttributeCodes;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(copy, nonatomic) NSDictionary *changedAttributeValues; // @synthesize changedAttributeValues=_changedAttributeValues;
-- (void).cxx_destruct;
 - (id)_requestForAttributeCode:(id)arg1;
 - (void)cancel;
 - (void)_saveNextAttribute;

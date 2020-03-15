@@ -21,8 +21,8 @@
 + (id)graphWithNodes:(id)arg1;
 + (id)graph;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableDictionary *_info; // @synthesize _info=__info;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *_info; // @synthesize _info=__info;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
 - (void)encodeWithCoder:(id)arg1;

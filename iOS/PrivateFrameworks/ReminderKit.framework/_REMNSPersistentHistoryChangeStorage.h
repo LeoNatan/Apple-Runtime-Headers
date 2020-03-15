@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *updatedProperties; // @synthesize updatedProperties=_updatedProperties;
 @property(copy, nonatomic) REMNSPersistentHistoryChangeTombstone *tombstone; // @synthesize tombstone=_tombstone;
 @property(nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(copy, nonatomic) REMObjectID *changedObjectID; // @synthesize changedObjectID=_changedObjectID;
 @property(nonatomic) long long changeID; // @synthesize changeID=_changeID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

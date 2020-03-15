@@ -168,6 +168,7 @@
 + (id)_inq_highestImageManagerRequestIDsObserved;
 + (id)_inq_imageManagerRequestLogsByAssetUUID;
 + (id)_imageManagerRequestLoggingQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double highlightVisibilityScore; // @synthesize highlightVisibilityScore=_highlightVisibilityScore;
 @property(readonly, nonatomic) double highlightPromotionScore; // @synthesize highlightPromotionScore=_highlightPromotionScore;
 @property(readonly, nonatomic) _Bool isPhotoIris; // @synthesize isPhotoIris=_isPhotoIris;
@@ -225,7 +226,6 @@
 @property(readonly, nonatomic) unsigned int mediaSubtypes; // @synthesize mediaSubtypes=_mediaSubtypes;
 @property(readonly, nonatomic) int mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly, nonatomic) int playbackStyle; // @synthesize playbackStyle=_playbackStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContextForFetchingResources;
 - (void)_reportUsage;
 @property(readonly, nonatomic) NSString *variationSuggestionStatesDetails;

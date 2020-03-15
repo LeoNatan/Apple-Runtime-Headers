@@ -18,11 +18,11 @@
     NSString *_previousSearchString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSearchComplete) _Bool searchComplete; // @synthesize searchComplete=_searchComplete;
 @property(copy, nonatomic) NSString *previousSearchString; // @synthesize previousSearchString=_previousSearchString;
 @property(retain, nonatomic) NSMutableArray *currentResultsList; // @synthesize currentResultsList=_currentResultsList;
 @property __weak TUSearchController *searchController; // @synthesize searchController=_searchController;
-- (void).cxx_destruct;
 @property(readonly) TUSearchResults *searchResults;
 - (void)cancelSearch;
 - (void)searchForString:(id)arg1 completion:(CDUnknownBlockType)arg2;

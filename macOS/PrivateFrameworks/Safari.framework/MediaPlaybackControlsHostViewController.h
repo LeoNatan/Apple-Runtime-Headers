@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     id <MediaPlaybackControlsHostViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MediaPlaybackControlsHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AVTouchBarScrubber *mediaPlaybackControlsView; // @synthesize mediaPlaybackControlsView=_mediaPlaybackControlsView;
 @property(readonly, nonatomic, getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) __weak id <AccordionHostableExpansionRequestHandler> expansionRequestHandler; // @synthesize expansionRequestHandler;
-- (void).cxx_destruct;
 - (void)touchBarScrubberExpandButtonTapped:(id)arg1;
 - (void)accordionHost:(id)arg1 viewWillCollapse:(BOOL)arg2;
 - (void)accordionHost:(id)arg1 viewWillExpand:(BOOL)arg2;

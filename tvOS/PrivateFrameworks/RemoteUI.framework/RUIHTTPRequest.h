@@ -22,8 +22,8 @@
 + (id)invalidResponseErrorWithResponse:(id)arg1;
 + (id)serviceUnavailableError;
 + (id)errorWithCode:(unsigned long long)arg1;
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (_Bool)receivedValidResponse:(id)arg1;
 - (void)failWithError:(id)arg1;
 - (void)parseData:(id)arg1;

@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     struct __CFRunLoop *_runLoop;
 }
 
-@property(retain, nonatomic) UIEventEnvironment *mainEnvironment; // @synthesize mainEnvironment=_mainEnvironment;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIEventEnvironment *mainEnvironment; // @synthesize mainEnvironment=_mainEnvironment;
 - (void)dealloc;
 - (void)eventFetcherDidReceiveEvents:(id)arg1;
 - (void)signalNextDelivery;

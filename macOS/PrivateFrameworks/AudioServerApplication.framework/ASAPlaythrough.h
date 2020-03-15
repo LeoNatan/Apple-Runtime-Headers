@@ -19,9 +19,9 @@
     ASAAudioDevice *_audioDevice;
 }
 
+- (void).cxx_destruct;
 @property BOOL playing; // @synthesize playing=_playing;
 @property(retain) ASAAudioDevice *audioDevice; // @synthesize audioDevice=_audioDevice;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_freeIOContext:(CDStruct_3e00b629 *)arg1;
 - (void)_destroyIOContext;

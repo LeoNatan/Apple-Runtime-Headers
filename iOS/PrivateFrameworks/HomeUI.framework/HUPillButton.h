@@ -24,12 +24,12 @@
 
 + (_Bool)requiresConstraintBasedLayout;
 + (CDStruct_d2b197d1)defaultMetrics;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *buttonLabel; // @synthesize buttonLabel=_buttonLabel;
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) NAUILayoutConstraintSet *constraintSet; // @synthesize constraintSet=_constraintSet;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) CDStruct_d2b197d1 metrics; // @synthesize metrics=_metrics;
-- (void).cxx_destruct;
 - (void)_didTap:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)tintColorDidChange;

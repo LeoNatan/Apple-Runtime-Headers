@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ICURLBagLibraryDAAPConfiguration, ICURLBagRadioConfiguration, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString;
+@class ICURLBagLibraryDAAPConfiguration, ICURLBagRadioConfiguration, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface ICURLBag : NSObject
@@ -16,16 +16,25 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSArray *_GUIDURLRegexPatterns;
     NSSet *_GUIDURLSchemes;
+    NSDate *_expirationDate;
+    NSString *_serverCorrelationKey;
+    NSString *_serverEnvironment;
 }
 
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *serverEnvironment; // @synthesize serverEnvironment=_serverEnvironment;
+@property(readonly, copy, nonatomic) NSString *serverCorrelationKey; // @synthesize serverCorrelationKey=_serverCorrelationKey;
+@property(copy, nonatomic, setter=_setExpirationDate:) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *convertedActionsCache; // @synthesize convertedActionsCache=_convertedActionsCache;
-@property(retain, nonatomic) NSDictionary *bagValues; // @synthesize bagValues=_bagValues;
-- (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *bagValues; // @synthesize bagValues=_bagValues;
 - (void)_validateGUIDURLConfigIfNeeded;
 - (_Bool)_shouldMescalSignBodyForURL:(id)arg1 withSignatureConfiguration:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *_propertyListRepresentation;
+- (id)_initWithPropertyListRepresentation:(id)arg1;
 @property(retain, nonatomic) NSSet *GUIDURLSchemes; // @synthesize GUIDURLSchemes=_GUIDURLSchemes;
 @property(retain, nonatomic) NSArray *GUIDURLRegexPatterns; // @synthesize GUIDURLRegexPatterns=_GUIDURLRegexPatterns;
+@property(readonly, nonatomic, getter=isExpired) _Bool expired;
 @property(readonly, nonatomic) _Bool canPostKeybagSyncData;
 @property(readonly, copy, nonatomic) NSString *storefrontHeaderSuffix;
 @property(readonly, nonatomic) ICURLBagLibraryDAAPConfiguration *libraryDAAPConfiguration;
@@ -42,7 +51,7 @@
 - (_Bool)hasValueForBagKey:(id)arg1;
 - (id)valueForBagKey:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *allValues;
-- (id)initWithDictionary:(id)arg1;
+- (id)_initWithDictionary:(id)arg1 expirationDate:(id)arg2 serverCorrelationKey:(id)arg3 serverEnvironment:(id)arg4;
 
 @end
 

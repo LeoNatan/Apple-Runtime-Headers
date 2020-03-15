@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *imageViewToImageResourceCacheKey; // @synthesize imageViewToImageResourceCacheKey=_imageViewToImageResourceCacheKey;
 @property(copy, nonatomic) NSArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(retain, nonatomic) SKUIAttributedStringView *textView; // @synthesize textView=_textView;
 @property(retain, nonatomic) SKUIViewElementLayoutContext *lastContext; // @synthesize lastContext=_lastContext;
 @property(retain, nonatomic) SKUIStackItemViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)viewForElementIdentifier:(id)arg1;

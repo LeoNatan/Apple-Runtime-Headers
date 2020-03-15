@@ -16,9 +16,9 @@
 
 + (id)eventStoreForConversionForEntityType:(unsigned long long)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long entityType; // @synthesize entityType=_entityType;
 @property(retain) NSString *calendarItemIdentifier; // @synthesize calendarItemIdentifier=_calendarItemIdentifier;
-- (void).cxx_destruct;
 - (id)_am_convertFromXPCWithWorkflow:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

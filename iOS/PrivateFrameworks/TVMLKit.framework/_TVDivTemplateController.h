@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_viewControllers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(retain, nonatomic) _TVOrganizerView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) TVImageProxy *backgroundImageProxy; // @synthesize backgroundImageProxy=_backgroundImageProxy;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_updateContentView;
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (id)_backgroundImageProxy;

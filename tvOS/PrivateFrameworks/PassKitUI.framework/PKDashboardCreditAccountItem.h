@@ -23,6 +23,7 @@
     NSArray *_upcomingScheduledPayments;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *upcomingScheduledPayments; // @synthesize upcomingScheduledPayments=_upcomingScheduledPayments;
 @property(retain, nonatomic) NSArray *mostRecentTransactions; // @synthesize mostRecentTransactions=_mostRecentTransactions;
 @property(retain, nonatomic) PKSpendingSummaryFetcher *summaryFetcher; // @synthesize summaryFetcher=_summaryFetcher;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithAccount:(id)arg1 pass:(id)arg2 type:(unsigned long long)arg3;
 
 // Remaining properties

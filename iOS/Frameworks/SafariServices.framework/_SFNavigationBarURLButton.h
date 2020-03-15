@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     double _urlOutlineCornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=setURLOutlineCornerRadius:) double urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(nonatomic) __weak id <_SFNavigationBarURLButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) _SFNavigationBarTheme *theme; // @synthesize theme=_theme;
 @property(nonatomic) double backgroundAlphaFactor; // @synthesize backgroundAlphaFactor=_backgroundAlphaFactor;
-- (void).cxx_destruct;
 - (id)_accessibilityQuickSpeakContent;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;

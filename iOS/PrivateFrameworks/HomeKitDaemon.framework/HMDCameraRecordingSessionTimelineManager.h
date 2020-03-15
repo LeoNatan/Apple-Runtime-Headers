@@ -22,13 +22,13 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly) NSMutableArray *doorbellActiveDateIntervals; // @synthesize doorbellActiveDateIntervals=_doorbellActiveDateIntervals;
 @property(readonly) NSMutableArray *motionActiveDateIntervals; // @synthesize motionActiveDateIntervals=_motionActiveDateIntervals;
 @property(readonly, copy) NSDate *fragmentCreationReferenceDate; // @synthesize fragmentCreationReferenceDate=_fragmentCreationReferenceDate;
 @property(readonly) double fragmentDuration; // @synthesize fragmentDuration=_fragmentDuration;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (_Bool)isMotionTriggerActiveAtAnyTimeAfterOffset:(double)arg1;
 - (_Bool)isDoorbellTriggerActiveAtAnyTimeAfterOffset:(double)arg1;
 - (void)handleDoorbellDidActivateAtDate:(id)arg1;

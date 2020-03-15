@@ -13,8 +13,8 @@
     PXGLayout *_layout;
 }
 
-@property(nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
 - (void)performUserInteractionTask;
 - (BOOL)performerResetsAfterCompletion;
 

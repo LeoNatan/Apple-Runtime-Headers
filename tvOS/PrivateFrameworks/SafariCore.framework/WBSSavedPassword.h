@@ -21,12 +21,12 @@
 
 + (_Bool)stringMatchesPatternWithTokenizer:(struct __CFStringTokenizer *)arg1 string:(id)arg2 pattern:(id)arg3 matchingType:(long long)arg4;
 + (void)enumerateRangesMatchingPatternWithTokenizer:(struct __CFStringTokenizer *)arg1 string:(id)arg2 pattern:(id)arg3 matchingType:(long long)arg4 withBlock:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *earliestModifiedDateForSites; // @synthesize earliestModifiedDateForSites=_earliestModifiedDateForSites;
 @property(readonly, nonatomic) _Bool userIsNeverSaveMarker; // @synthesize userIsNeverSaveMarker=_userIsNeverSaveMarker;
 @property(readonly, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, nonatomic) NSString *user; // @synthesize user=_user;
 @property(readonly, nonatomic) NSString *highLevelDomain; // @synthesize highLevelDomain=_highLevelDomain;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_matchesSearchPattern:(id)arg1 matchAgainstUser:(_Bool)arg2 associatedDomains:(id)arg3;

@@ -14,9 +14,9 @@
     NSArray *_actionDescriptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *actionDescriptions; // @synthesize actionDescriptions=_actionDescriptions;
 @property(retain, nonatomic) NSArray *actionNames; // @synthesize actionNames=_actionNames;
-- (void).cxx_destruct;
 
 @end
 

@@ -21,8 +21,8 @@
     RERelevanceEngine *_relevanceEngine;
 }
 
-@property(readonly, nonatomic) __weak RERelevanceEngine *relevanceEngine; // @synthesize relevanceEngine=_relevanceEngine;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak RERelevanceEngine *relevanceEngine; // @synthesize relevanceEngine=_relevanceEngine;
 - (void)activityTracker:(id)arg1 didEndActivity:(id)arg2;
 - (void)activityTracker:(id)arg1 didBeginActivity:(id)arg2;
 - (void)endActivity:(id)arg1 forObject:(id)arg2;

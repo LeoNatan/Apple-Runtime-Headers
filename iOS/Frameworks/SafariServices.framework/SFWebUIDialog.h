@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WebUIAlert *_alert;
 }
 
-@property(readonly, nonatomic) WebUIAlert *alert; // @synthesize alert=_alert;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WebUIAlert *alert; // @synthesize alert=_alert;
 - (void)didCompleteWithResponse:(id)arg1;
 - (id)newViewControllerRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (long long)presentationStyle;

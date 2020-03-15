@@ -14,9 +14,9 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) SYStartSyncSession *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)initWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

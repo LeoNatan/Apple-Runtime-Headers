@@ -16,9 +16,9 @@
     HKActivitySummary *_activitySummary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKActivitySummary *activitySummary; // @synthesize activitySummary=_activitySummary;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)setActivitySummary:(id)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
 - (id)initWithType:(unsigned long long)arg1;

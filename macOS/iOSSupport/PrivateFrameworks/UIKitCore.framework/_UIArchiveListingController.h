@@ -17,10 +17,10 @@
     long long _appleDoubleIdentificationType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL excludeDotFilesFromResults; // @synthesize excludeDotFilesFromResults=_excludeDotFilesFromResults;
 @property(nonatomic) long long appleDoubleIdentificationType; // @synthesize appleDoubleIdentificationType=_appleDoubleIdentificationType;
 @property(readonly, nonatomic) NSString *archivePath; // @synthesize archivePath=_archivePath;
-- (void).cxx_destruct;
 - (BOOL)_shouldVisitItem:(id)arg1;
 - (BOOL)enumerateLogicalItemsWithBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (BOOL)determineIsReadableArchive;

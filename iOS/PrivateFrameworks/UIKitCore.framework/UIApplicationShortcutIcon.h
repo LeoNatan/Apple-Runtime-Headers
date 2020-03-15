@@ -21,8 +21,8 @@
 + (id)iconWithSystemImageName:(id)arg1;
 + (id)iconWithType:(long long)arg1;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) SBSApplicationShortcutIcon *sbsShortcutIcon; // @synthesize sbsShortcutIcon=_sbsShortcutIcon;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBSApplicationShortcutIcon *sbsShortcutIcon; // @synthesize sbsShortcutIcon=_sbsShortcutIcon;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

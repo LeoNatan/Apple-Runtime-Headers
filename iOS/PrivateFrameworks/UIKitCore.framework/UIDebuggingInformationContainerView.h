@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
     _Bool _shadowHidden;
 }
 
-@property(nonatomic) _Bool shadowHidden; // @synthesize shadowHidden=_shadowHidden;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shadowHidden; // @synthesize shadowHidden=_shadowHidden;
 - (void)layoutSubviews;
 
 @end

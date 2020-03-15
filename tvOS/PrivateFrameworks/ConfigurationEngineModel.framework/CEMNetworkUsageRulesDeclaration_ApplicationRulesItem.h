@@ -18,10 +18,10 @@
 + (id)buildRequiredOnly;
 + (id)buildWithAppIdentifierMatches:(id)arg1 withAllowRoamingCellularData:(id)arg2 withAllowCellularData:(id)arg3;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowCellularData; // @synthesize payloadAllowCellularData=_payloadAllowCellularData;
 @property(copy, nonatomic) NSNumber *payloadAllowRoamingCellularData; // @synthesize payloadAllowRoamingCellularData=_payloadAllowRoamingCellularData;
 @property(copy, nonatomic) NSArray *payloadAppIdentifierMatches; // @synthesize payloadAppIdentifierMatches=_payloadAppIdentifierMatches;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -16,11 +16,11 @@
     WKInterfaceController *_controller;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WKInterfaceController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) NSMutableArray *rowControllerProperties; // @synthesize rowControllerProperties=_rowControllerProperties;
 @property(retain, nonatomic) NSMutableArray *rowControllers; // @synthesize rowControllers=_rowControllers;
 @property(copy, nonatomic) NSDictionary *rowDescriptions; // @synthesize rowDescriptions=_rowDescriptions;
-- (void).cxx_destruct;
 - (void)scrollToRowAtIndex:(long long)arg1;
 - (void)performSegueForRow:(long long)arg1;
 - (void)resequenceRowControllerPropertyIndexes;

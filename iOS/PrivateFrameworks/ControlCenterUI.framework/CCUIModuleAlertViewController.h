@@ -22,10 +22,10 @@
     id <CCUIModuleAlertViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CCUIModuleAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *moduleIdentifier; // @synthesize moduleIdentifier=_moduleIdentifier;
 @property(readonly, copy, nonatomic) CCSModulePresentationOptions *presentationOptions; // @synthesize presentationOptions=_presentationOptions;
-- (void).cxx_destruct;
 - (void)contentModuleContainerViewControllerDismissPresentedContent:(id)arg1;
 - (void)contentModuleContainerViewController:(id)arg1 willDismissViewController:(id)arg2;
 - (void)contentModuleContainerViewController:(id)arg1 willPresentViewController:(id)arg2;

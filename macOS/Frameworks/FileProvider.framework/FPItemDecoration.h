@@ -28,11 +28,11 @@
 + (void)initialize;
 + (void)_loadBuiltinDecorationTypes;
 + (id)_decorationCache;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *imageType; // @synthesize imageType=_imageType;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *decorationIdentifier; // @synthesize decorationIdentifier=_decorationIdentifier;
-- (void).cxx_destruct;
 - (void)folderStatusForItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)labelsWithItem:(id)arg1 error:(id *)arg2;
 - (id)labelsWithInfo:(id)arg1 error:(id *)arg2;

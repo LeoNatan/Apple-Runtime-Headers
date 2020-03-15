@@ -13,8 +13,8 @@
     NSArray *_trustProperties;
 }
 
-@property(retain, nonatomic) NSArray *trustProperties; // @synthesize trustProperties=_trustProperties;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *trustProperties; // @synthesize trustProperties=_trustProperties;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_setupNavItem;
 - (void)loadView;

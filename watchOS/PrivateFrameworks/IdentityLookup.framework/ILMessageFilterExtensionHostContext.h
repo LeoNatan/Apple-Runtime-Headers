@@ -18,9 +18,9 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deferReportRequestToNetwork; // @synthesize deferReportRequestToNetwork=_deferReportRequestToNetwork;
 @property(copy, nonatomic) CDUnknownBlockType deferQueryRequestToNetwork; // @synthesize deferQueryRequestToNetwork=_deferQueryRequestToNetwork;
-- (void).cxx_destruct;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (oneway void)deferReportRequestToNetworkWithReply:(CDUnknownBlockType)arg1;
 - (oneway void)deferQueryRequestToNetworkWithReply:(CDUnknownBlockType)arg1;

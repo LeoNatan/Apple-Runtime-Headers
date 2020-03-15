@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) FPItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly) FPItem *item; // @synthesize item=_item;
 - (BOOL)shouldProvideFoldedGenericIcon;
 - (id)computeContentType;
 - (id)copyWithZone:(struct _NSZone *)arg1;

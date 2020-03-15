@@ -14,9 +14,9 @@
     NSMapTable *_representedObjectChangeTargetSelectorTable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *representedObjectChangeTargetSelectorTable; // @synthesize representedObjectChangeTargetSelectorTable=_representedObjectChangeTargetSelectorTable;
 @property(readonly, copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (void)addRepresentedObjectChangeObserver:(id)arg1 action:(SEL)arg2;
 - (void)setRepresentedObject:(id)arg1 updatingCell:(_Bool)arg2;

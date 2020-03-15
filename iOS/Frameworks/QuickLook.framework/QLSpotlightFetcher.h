@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) QLSpotlightSearchableItemInfo *info; // @synthesize info=_info;
 - (void).cxx_destruct;
+@property(readonly) QLSpotlightSearchableItemInfo *info; // @synthesize info=_info;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isLongFetchOperation;

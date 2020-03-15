@@ -13,8 +13,8 @@
     id <SiriTVUISnippetViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SiriTVUISnippetViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriTVUISnippetViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)initWithFrame:(struct CGRect)arg1 delegate:(id)arg2;
 
 @end

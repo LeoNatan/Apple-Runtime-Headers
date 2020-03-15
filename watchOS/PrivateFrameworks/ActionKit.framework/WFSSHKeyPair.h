@@ -27,12 +27,12 @@
 + (void)setSharedKeyPair:(id)arg1;
 + (id)sharedKeyPair;
 + (id)keyFormats;
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class format; // @synthesize format=_format;
 @property(readonly, nonatomic) NSData *publicKeyData; // @synthesize publicKeyData=_publicKeyData;
 @property(readonly, nonatomic) NSData *privateKeyData; // @synthesize privateKeyData=_privateKeyData;
 @property(readonly, nonatomic) NSString *comment; // @synthesize comment=_comment;
 @property(readonly, nonatomic) NSNumber *keySize; // @synthesize keySize=_keySize;
-- (void).cxx_destruct;
 - (id)publicKeyFingerprintWithType:(unsigned int)arg1;
 @property(readonly, nonatomic) NSString *localizedDescription;
 @property(readonly, nonatomic) NSString *localizedType;

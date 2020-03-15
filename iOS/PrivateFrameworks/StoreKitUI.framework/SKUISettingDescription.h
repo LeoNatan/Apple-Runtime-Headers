@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (Class)_viewClassForSettingDescription:(id)arg1;
 + (Class)viewClassForSettingDescription:(id)arg1;
 + (_Bool)allowsEdit;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) __weak SKUISettingsGroupDescription *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (void)_setEditsValid:(_Bool)arg1;
 - (void)_revealSetting;
 - (void)_reloadSetting;

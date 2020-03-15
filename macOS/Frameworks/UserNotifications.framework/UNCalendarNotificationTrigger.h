@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)triggerWithDateMatchingComponents:(id)arg1 repeats:(BOOL)arg2;
-@property(readonly, copy) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
 - (void).cxx_destruct;
+@property(readonly, copy) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)nextTriggerDateAfterDate:(id)arg1 withRequestedDate:(id)arg2;

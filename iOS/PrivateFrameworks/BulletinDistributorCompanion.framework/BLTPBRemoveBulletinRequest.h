@@ -17,10 +17,10 @@
     NSString *_sectionID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(retain, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
 @property(retain, nonatomic) NSString *publisherBulletinID; // @synthesize publisherBulletinID=_publisherBulletinID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

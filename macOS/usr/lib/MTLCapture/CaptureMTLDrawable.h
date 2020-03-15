@@ -20,6 +20,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)presentAfterMinimumDuration:(double)arg1;
 - (void)presentAtTime:(double)arg1;
 - (void)present;
 - (id)texture;
@@ -38,7 +39,9 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) unsigned long long drawableID;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) double presentedTime;
 @property(readonly) Class superclass;
 
 @end

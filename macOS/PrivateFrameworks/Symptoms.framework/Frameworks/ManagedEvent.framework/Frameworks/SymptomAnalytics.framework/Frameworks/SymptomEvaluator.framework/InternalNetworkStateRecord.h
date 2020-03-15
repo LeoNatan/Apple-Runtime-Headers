@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     long long _stateSlotLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long stateSlotLength; // @synthesize stateSlotLength=_stateSlotLength;
 @property(readonly) long long stateDurationSeconds; // @synthesize stateDurationSeconds=_stateDurationSeconds;
 @property(readonly) long long stateNetworkLQM; // @synthesize stateNetworkLQM=_stateNetworkLQM;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) long long stateSlotId; // @synthesize stateSlotId=_stateSlotId;
 @property(readonly) long long stateDayOfWeek; // @synthesize stateDayOfWeek=_stateDayOfWeek;
 @property(readonly) long long stateAge; // @synthesize stateAge=_stateAge;
-- (void).cxx_destruct;
 - (void)mergeState:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

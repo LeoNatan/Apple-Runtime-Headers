@@ -18,13 +18,13 @@
     BOOL _useKerberosV5;
 }
 
+- (void).cxx_destruct;
 @property BOOL useKerberosV5; // @synthesize useKerberosV5=_useKerberosV5;
 @property BOOL useSSL; // @synthesize useSSL=_useSSL;
 @property long long serverPort; // @synthesize serverPort=_serverPort;
 @property(retain) NSString *serverName; // @synthesize serverName=_serverName;
 @property(retain) NSString *loginName; // @synthesize loginName=_loginName;
 @property(retain) NSString *accountType; // @synthesize accountType=_accountType;
-- (void).cxx_destruct;
 
 @end
 

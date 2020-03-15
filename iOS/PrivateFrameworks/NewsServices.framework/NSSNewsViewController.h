@@ -16,10 +16,10 @@
 }
 
 + (_Bool)canOpenURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIResilientRemoteViewContainerViewController *remoteViewContainerViewController; // @synthesize remoteViewContainerViewController=_remoteViewContainerViewController;
 @property(copy, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(nonatomic, getter=isLinkPreviewing) _Bool linkPreviewing; // @synthesize linkPreviewing=_linkPreviewing;
-- (void).cxx_destruct;
 - (void)setupRemoteViewController:(id)arg1;
 - (void)requestRemoteViewController;
 - (void)viewDidLayoutSubviews;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)uniqueToolbarItemIdentifier:(id)arg1 toolbarIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFSafariExtensionRemoteViewController *remotePopoverViewController; // @synthesize remotePopoverViewController=_remotePopoverViewController;
 @property(readonly, copy, nonatomic) NSString *action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSImage *image; // @synthesize image=_image;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSUUID *extensionUUID; // @synthesize extensionUUID=_extensionUUID;
 @property(readonly, copy, nonatomic) NSString *toolbarItemUniqueIdentifier; // @synthesize toolbarItemUniqueIdentifier=_toolbarItemUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *toolbarIdentifier; // @synthesize toolbarIdentifier=_toolbarIdentifier;
-- (void).cxx_destruct;
 - (void)safariExtensionRemoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillShow:(id)arg1;

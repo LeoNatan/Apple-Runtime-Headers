@@ -33,9 +33,9 @@
 + (id)currentContext;
 + (id)_nameForService:(id)arg1 instance:(id)arg2 host:(BOOL)arg3;
 + (id)_currentConnection;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *instance; // @synthesize instance=_instance;
 @property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_clientContext;
 - (void)_configureConnection:(CDUnknownBlockType)arg1;

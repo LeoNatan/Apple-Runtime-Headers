@@ -14,9 +14,9 @@
     NSString *servicePrincipal;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *servicePrincipal; // @synthesize servicePrincipal;
 @property(copy) NSString *clientPrincipal; // @synthesize clientPrincipal;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

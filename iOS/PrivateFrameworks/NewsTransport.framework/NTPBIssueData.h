@@ -18,9 +18,9 @@
     CDStruct_e072d072 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isBundlePaid; // @synthesize isBundlePaid=_isBundlePaid;
 @property(retain, nonatomic) NSString *issueId; // @synthesize issueId=_issueId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSArray *_contactsHandles;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *contactsHandles; // @synthesize contactsHandles=_contactsHandles;
 @property(retain) STConversationContext *conversationContext; // @synthesize conversationContext=_conversationContext;
 @property(retain) STConversation *conversation; // @synthesize conversation=_conversation;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSURL *websiteURL; // @synthesize websiteURL=_websiteURL;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
-- (void).cxx_destruct;
 - (void)_askForTimeResponseWithState:(long long)arg1 respondingParent:(id)arg2 amountGranted:(id)arg3 error:(id)arg4;
 - (id)_makeAskForTimeResource;
 - (BOOL)_actionIgnoreLimitForTodayWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -62,12 +62,14 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL needsToSetRestrictionsPasscode;
 - (BOOL)_isRestrictionsPasscodeSet;
 - (BOOL)_shouldRequestMoreTime;
-- (void)_updateAllowedByScreenTime:(BOOL)arg1 applicationCurrentlyLimited:(BOOL)arg2;
+- (void)_updateAllowedByScreenTime:(BOOL)arg1 applicationCurrentlyLimited:(BOOL)arg2 allowedByContactsHandle:(id)arg3;
+- (void)_allowedByContactsHandleDidChange:(id)arg1 conversationContext:(id)arg2;
 - (void)_applicationCurrentlyLimitedDidChange:(BOOL)arg1 conversationContext:(id)arg2;
 - (void)_allowedByScreenTimeDidChange:(BOOL)arg1 conversationContext:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_setupWebsitePolicyMonitorForURL:(id)arg1;
 - (void)_setupCategoryPolicyMonitorForIdentifier:(id)arg1;
+@property(readonly) BOOL contactsEditable;
 @property(readonly) CNContainer *iCloudContainer;
 @property(readonly, copy) NSSet *blockedContactsHandles;
 - (void)dealloc;

@@ -14,9 +14,9 @@
     NSMutableDictionary *_mutableIndexes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *mutableIndexes; // @synthesize mutableIndexes=_mutableIndexes;
 @property(readonly, nonatomic) NSSet *columnNames; // @synthesize columnNames=_columnNames;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *indexes;
 - (id)initWithColumnNames:(id)arg1;

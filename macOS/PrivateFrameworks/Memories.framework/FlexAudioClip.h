@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)backgroundClipWithSong:(id)arg1;
 + (id)optionsForSong:(id)arg1 withDuration:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL lockedRendition; // @synthesize lockedRendition=_lockedRendition;
 @property(retain, nonatomic) FMSong *song; // @synthesize song=_song;
 @property(retain, nonatomic) FMSongRendition *songRendition; // @synthesize songRendition=_songRendition;
-- (void).cxx_destruct;
 - (void)outroStingerTime:(CDStruct_1b6d18a9 *)arg1 earlyFadeStartTime:(CDStruct_1b6d18a9 *)arg2 endTime:(CDStruct_1b6d18a9 *)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (int)duration;

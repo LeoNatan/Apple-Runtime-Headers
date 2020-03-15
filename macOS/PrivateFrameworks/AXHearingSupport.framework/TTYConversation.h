@@ -19,9 +19,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)conversationWithID:(id)arg1 andUtterances:(id)arg2;
 + (id)conversationWithCall:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *utterances; // @synthesize utterances=_utterances;
 @property(retain, nonatomic) NSString *callIdentifier; // @synthesize callIdentifier=_callIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)cleanup;
 - (unsigned long long)utteranceCountForMe:(BOOL)arg1;

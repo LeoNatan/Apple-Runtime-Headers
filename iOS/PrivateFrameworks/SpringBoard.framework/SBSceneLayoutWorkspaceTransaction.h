@@ -40,6 +40,7 @@
     id <FBSynchronizedTransactionDelegate> _synchronizationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBWorkspaceApplicationSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) __weak id <FBSynchronizedTransactionDelegate> synchronizationDelegate; // @synthesize synchronizationDelegate=_synchronizationDelegate;
 @property(readonly, nonatomic) NSSet *backgroundingApplicationSceneEntities; // @synthesize backgroundingApplicationSceneEntities=_backgroundingAppSceneEntities;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_isTransitioning;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) __weak id <SBSceneLayoutWorkspaceTransactionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)synchronizedTransactionGroup:(id)arg1 shouldFailForSynchronizedTransaction:(id)arg2;
 - (void)synchronizedTransaction:(id)arg1 didCommitSynchronizedTransactions:(id)arg2;
 - (void)synchronizedTransaction:(id)arg1 willCommitSynchronizedTransactions:(id)arg2;

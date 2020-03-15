@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)paymentUpdateWithProtobuf:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentMethod *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
 @property(readonly, nonatomic) PKShippingMethod *shippingMethod; // @synthesize shippingMethod=_shippingMethod;
 @property(readonly, nonatomic) PKContact *shippingContact; // @synthesize shippingContact=_shippingContact;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContact:(id)arg1 shippingMethod:(id)arg2 paymentMethod:(id)arg3;

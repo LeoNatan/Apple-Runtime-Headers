@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     long long _textAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(nonatomic, getter=isDestructiveText) BOOL destructiveText; // @synthesize destructiveText=_destructiveText;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateSubviews;

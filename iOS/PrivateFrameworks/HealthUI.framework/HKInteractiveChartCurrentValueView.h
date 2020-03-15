@@ -21,6 +21,7 @@
     NSTimer *_deferredNoDataTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *deferredNoDataTimer; // @synthesize deferredNoDataTimer=_deferredNoDataTimer;
 @property(retain, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool showsInfoButton; // @synthesize showsInfoButton=_showsInfoButton;
 @property(nonatomic) __weak id <HKInteractiveChartCurrentValueViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <HKInteractiveChartCurrentValueViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)handleInfographicTapGesture:(id)arg1;
 - (void)handleCurrentTimeGesture:(id)arg1;
 - (void)scheduleDeferredDataReload;

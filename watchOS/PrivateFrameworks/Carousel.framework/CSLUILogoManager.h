@@ -25,8 +25,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CSLUILogoManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLUILogoManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_lock_updateTextLayer;

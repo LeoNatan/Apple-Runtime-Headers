@@ -14,9 +14,9 @@
     AKHighlightAnnotation *_continuousHighlight;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKHighlightAnnotation *continuousHighlight; // @synthesize continuousHighlight=_continuousHighlight;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (_Bool)_clearHighlightsWithStyleMatchingMask:(unsigned long long)arg1 except:(id)arg2 inRange:(struct _NSRange)arg3 onPageController:(id)arg4;
 - (_Bool)_adaptExistingHighlightsToNewHighlight:(id)arg1 onPageController:(id)arg2 firstModifiedHighlight:(id *)arg3;
 - (id)_highlightsInCharacterIndexRange:(struct _NSRange)arg1 onPageController:(id)arg2;

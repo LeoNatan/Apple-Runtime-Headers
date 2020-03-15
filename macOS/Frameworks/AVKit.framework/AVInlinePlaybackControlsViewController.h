@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSStackView *_timelineControl;
 }
 
-@property(retain) NSStackView *timelineControl; // @synthesize timelineControl=_timelineControl;
 - (void).cxx_destruct;
+@property(retain) NSStackView *timelineControl; // @synthesize timelineControl=_timelineControl;
 - (void)volumeButtonPressed:(id)arg1;
 - (id)initialFirstResponder;
 - (CDStruct_83cd8af5)controlsContentViewMargin;

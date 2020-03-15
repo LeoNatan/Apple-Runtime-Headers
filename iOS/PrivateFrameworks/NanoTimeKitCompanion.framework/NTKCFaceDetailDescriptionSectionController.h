@@ -19,9 +19,9 @@
 
 + (id)_descriptionForFace:(id)arg1 inGallery:(_Bool)arg2 orExternal:(_Bool)arg3;
 + (_Bool)hasDescriptionSectionForFace:(id)arg1 inGallery:(_Bool)arg2 orExternal:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool external; // @synthesize external=_external;
 @property(nonatomic) __weak id <NTKCFaceDetailDescriptionSectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)descriptionCellDidExpand:(id)arg1;
 - (id)_faceDescription;
 @property(nonatomic) _Bool expanded;

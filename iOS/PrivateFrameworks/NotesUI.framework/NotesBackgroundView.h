@@ -28,6 +28,7 @@
     id <ICAccessibilityChildReparentingProvider> _elementForAccessibilityReparenting;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ICAccessibilityChildReparentingProvider> elementForAccessibilityReparenting; // @synthesize elementForAccessibilityReparenting=_elementForAccessibilityReparenting;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
@@ -40,7 +41,6 @@
 @property(nonatomic, getter=isTopViewVisible) _Bool topViewVisible; // @synthesize topViewVisible=_topViewVisible;
 @property(nonatomic, getter=isContentViewVisible) _Bool contentViewVisible; // @synthesize contentViewVisible=_contentViewVisible;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (_Bool)_accessibilityIsScannerGroup;
 - (void)reparentAccessibilityChildrenOfElement:(id)arg1;
 - (id)accessibilityElements;

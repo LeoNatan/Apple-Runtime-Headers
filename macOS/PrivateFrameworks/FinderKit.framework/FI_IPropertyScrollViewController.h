@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSView *_subview;
 }
 
-@property(retain, nonatomic) NSView *subview; // @synthesize subview=_subview;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *subview; // @synthesize subview=_subview;
 - (void)aboutToTearDown;
 
 @end

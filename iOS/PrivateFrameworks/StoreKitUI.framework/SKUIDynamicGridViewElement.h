@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     long long _minimumEntityCountForSections;
 }
 
-@property(readonly, nonatomic) long long minimumEntityCountForSections; // @synthesize minimumEntityCountForSections=_minimumEntityCountForSections;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long minimumEntityCountForSections; // @synthesize minimumEntityCountForSections=_minimumEntityCountForSections;
 - (void)_unfilteredEnumerateChildrenUsingBlock:(CDUnknownBlockType)arg1;
 - (id)_templateDefinitionTypeToModeValueMap;
 - (id)templateDefinitionViewElementsForType:(id)arg1 mode:(id)arg2;

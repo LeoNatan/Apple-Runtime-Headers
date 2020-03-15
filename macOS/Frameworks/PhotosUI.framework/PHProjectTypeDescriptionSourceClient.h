@@ -20,12 +20,12 @@
     NSMutableDictionary *_projectTypeDescriptionInvalidationDates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *projectTypeDescriptionInvalidationDates; // @synthesize projectTypeDescriptionInvalidationDates=_projectTypeDescriptionInvalidationDates;
 @property(readonly, nonatomic) NSOperationQueue *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(readonly, nonatomic) NSHashTable *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 @property(retain, nonatomic) id <PHProjectTypeDescriptionSourceXPCService> service; // @synthesize service=_service;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)invalidateFooterTextForSubtypesOfProjectType:(id)arg1;
 - (void)invalidateTypeDescriptionForProjectType:(id)arg1;
 @property(copy) CDUnknownBlockType interruptionHandler;

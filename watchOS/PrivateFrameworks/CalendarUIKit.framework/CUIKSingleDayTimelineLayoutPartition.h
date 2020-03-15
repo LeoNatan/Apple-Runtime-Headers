@@ -16,10 +16,10 @@
     double _topBoundaryTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float endBoundary; // @synthesize endBoundary=_endBoundary;
 @property(nonatomic) float initialStartBoundary; // @synthesize initialStartBoundary=_initialStartBoundary;
 @property(nonatomic) double topBoundaryTime; // @synthesize topBoundaryTime=_topBoundaryTime;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float totalWidth;
 @property(readonly, nonatomic) float freeSpaceWidth;
 @property(readonly, nonatomic) float freeSpaceStartBoundary;

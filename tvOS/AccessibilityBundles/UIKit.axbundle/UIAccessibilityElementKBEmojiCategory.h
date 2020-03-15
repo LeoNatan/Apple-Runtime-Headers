@@ -13,10 +13,10 @@
     unsigned long long _categoryIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long categoryIndex; // @synthesize categoryIndex=_categoryIndex;
 @property(retain, nonatomic) id categoryView; // @synthesize categoryView=_categoryView;
 @property(retain, nonatomic) id category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (struct CGRect)accessibilityFrame;
 

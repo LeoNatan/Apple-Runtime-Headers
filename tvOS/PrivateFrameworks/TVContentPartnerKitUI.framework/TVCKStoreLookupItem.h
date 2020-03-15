@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
 @property(copy, nonatomic) TVCKBookmark *bookmark; // @synthesize bookmark=_bookmark;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSSet *childLookupItems; // @synthesize childLookupItems=_childLookupItems;
 @property(copy, nonatomic) NSSet *childrenIDs; // @synthesize childrenIDs=_childrenIDs;
 @property(copy, nonatomic) NSNumber *ITunesStoreIdentifier; // @synthesize ITunesStoreIdentifier=_ITunesStoreIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

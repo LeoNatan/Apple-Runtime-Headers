@@ -21,9 +21,9 @@
     NSString *_appSpecificHomeSetPropName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *containerURLs; // @synthesize containerURLs=_containerURLs;
 @property(nonatomic) int containerInfoDepth; // @synthesize containerInfoDepth=_containerInfoDepth;
-- (void).cxx_destruct;
 - (id)_copyContainerParserMappings;
 - (id)_copyContainerWithURL:(id)arg1 andProperties:(id)arg2;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;

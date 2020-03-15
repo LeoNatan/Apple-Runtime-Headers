@@ -25,6 +25,7 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *shadowImageView; // @synthesize shadowImageView=_shadowImageView;
 @property(retain, nonatomic) UIVisualEffectView *materialView; // @synthesize materialView=_materialView;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
@@ -37,7 +38,6 @@
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_updateForStyleChange;
 - (id)_maskImageForProgressBar;
 - (void)_layoutMaterialView;

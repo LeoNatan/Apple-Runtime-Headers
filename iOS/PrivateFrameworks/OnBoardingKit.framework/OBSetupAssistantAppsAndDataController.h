@@ -14,9 +14,9 @@
     NSString *_detailedLabelBody;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *detailedLabelBody; // @synthesize detailedLabelBody=_detailedLabelBody;
 @property(retain, nonatomic) NSString *detailedLabelHeader; // @synthesize detailedLabelHeader=_detailedLabelHeader;
-- (void).cxx_destruct;
 - (void)setTableView:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 symbolName:(id)arg3;

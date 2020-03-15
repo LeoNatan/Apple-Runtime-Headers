@@ -18,10 +18,10 @@
 }
 
 + (id)siriQueryResultWithQid:(id)arg1 domain:(id)arg2 confidence:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *qid; // @synthesize qid=_qid;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

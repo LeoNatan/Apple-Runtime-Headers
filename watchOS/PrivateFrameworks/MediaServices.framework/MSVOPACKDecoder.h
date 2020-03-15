@@ -22,11 +22,11 @@
 + (id)decodedObjectOfClasses:(id)arg1 fromData:(id)arg2 error:(id *)arg3;
 + (id)decodedObjectOfClass:(Class)arg1 fromData:(id)arg2 userInfo:(id)arg3 error:(id *)arg4;
 + (id)decodedObjectOfClass:(Class)arg1 fromData:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSMutableArray *wrapperStack; // @synthesize wrapperStack=_wrapperStack;
 @property(readonly, nonatomic) NSMapTable *objectLookupTable; // @synthesize objectLookupTable=_objectLookupTable;
 @property(readonly, nonatomic) NSArray *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (id)_decodeNumberForKey:(id)arg1;
 - (void)msv_setUserInfo:(id)arg1;
 - (id)msv_userInfo;

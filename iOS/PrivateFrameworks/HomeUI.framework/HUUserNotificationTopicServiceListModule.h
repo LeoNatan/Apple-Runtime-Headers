@@ -12,16 +12,16 @@
 {
     HMHome *_home;
     HFUserNotificationServiceTopic *_topic;
-    struct HFTransformItemProvider *_transformServiceItemProvider;
-    struct HFTransformItemProvider *_transformCameraItemProvider;
+    HFTransformItemProvider *_transformServiceItemProvider;
+    HFTransformItemProvider *_transformCameraItemProvider;
 }
 
 + (id)_createTransformItemForItem:(id)arg1 notificationSettingsProvider:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFTransformItemProvider *transformCameraItemProvider; // @synthesize transformCameraItemProvider=_transformCameraItemProvider;
 @property(readonly, nonatomic) HFTransformItemProvider *transformServiceItemProvider; // @synthesize transformServiceItemProvider=_transformServiceItemProvider;
 @property(readonly, nonatomic) HFUserNotificationServiceTopic *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)serviceLikeItemForItem:(id)arg1;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;

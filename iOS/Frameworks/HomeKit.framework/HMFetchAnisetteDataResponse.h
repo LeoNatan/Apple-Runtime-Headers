@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (id)objWithMessage:(id)arg1;
 + (id)objWithDict:(id)arg1;
-@property(copy, nonatomic) AKAnisetteData *anisetteData; // @synthesize anisetteData=_anisetteData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) AKAnisetteData *anisetteData; // @synthesize anisetteData=_anisetteData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 
 + (id)recommendedAdditionalAspects;
 + (id)recommendedAspects;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AltAspect> parentClip; // @synthesize parentClip=_parentClip;
 @property(retain, nonatomic) NSMutableDictionary *clips; // @synthesize clips=_clips;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectClosestToKeyedSubscript:(id)arg1;

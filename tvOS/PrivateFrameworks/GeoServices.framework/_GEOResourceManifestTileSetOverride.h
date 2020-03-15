@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *localizationURL; // @synthesize localizationURL=_localizationURL;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSNumber *version; // @synthesize version=_version;
 @property(readonly, nonatomic) int scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) int size; // @synthesize size=_size;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;

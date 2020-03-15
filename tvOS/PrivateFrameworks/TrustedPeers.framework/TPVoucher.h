@@ -19,12 +19,12 @@
 
 + (id)voucherInfoWithData:(id)arg1 sig:(id)arg2;
 + (id)voucherWithReason:(unsigned long long)arg1 beneficiaryID:(id)arg2 sponsorID:(id)arg3 signingKeyPair:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sig; // @synthesize sig=_sig;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *sponsorID; // @synthesize sponsorID=_sponsorID;
 @property(retain, nonatomic) NSString *beneficiaryID; // @synthesize beneficiaryID=_beneficiaryID;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToVoucher:(id)arg1;
 - (id)description;

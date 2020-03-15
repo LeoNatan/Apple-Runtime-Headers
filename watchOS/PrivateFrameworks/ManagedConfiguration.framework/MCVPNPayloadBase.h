@@ -21,6 +21,7 @@
     NSString *_pinKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pinKey; // @synthesize pinKey=_pinKey;
 @property(retain, nonatomic) NSString *sharedSecretKey; // @synthesize sharedSecretKey=_sharedSecretKey;
 @property(retain, nonatomic) NSString *proxyPasswordKey; // @synthesize proxyPasswordKey=_proxyPasswordKey;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *vpnType; // @synthesize vpnType=_vpnType;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSMutableDictionary *configurationDictionary; // @synthesize configurationDictionary=_configurationDictionary;
-- (void).cxx_destruct;
 - (id)payloadDescriptionKeyValueSections;
 - (id)installationWarnings;
 - (id)description;

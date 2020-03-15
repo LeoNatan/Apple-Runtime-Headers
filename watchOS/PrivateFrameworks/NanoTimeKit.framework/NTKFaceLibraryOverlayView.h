@@ -27,10 +27,10 @@
     UIButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 @property(nonatomic) float pageVOffset; // @synthesize pageVOffset=_pageVOffset;
-- (void).cxx_destruct;
 - (id)_newTitleLabel;
 - (id)_newButton;
 - (void)_adjustAnchorPoint;

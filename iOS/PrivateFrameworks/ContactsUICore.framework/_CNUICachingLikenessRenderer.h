@@ -26,6 +26,7 @@
 + (id)_cacheKeyForContacts:(id)arg1 scope:(id)arg2;
 + (id)createMainThreadSchedulerProviderWithSchedulerProvider:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNSchedulerProvider> mainThreadSchedulerProvider; // @synthesize mainThreadSchedulerProvider=_mainThreadSchedulerProvider;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryMonitoringSource; // @synthesize memoryMonitoringSource=_memoryMonitoringSource;
 @property(retain, nonatomic) CNQueue *evictionQueue; // @synthesize evictionQueue=_evictionQueue;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) _Bool shouldRequireMainThread; // @synthesize shouldRequireMainThread=_shouldRequireMainThread;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) _CNUILikenessRenderer *renderer; // @synthesize renderer=_renderer;
-- (void).cxx_destruct;
 - (id)renderedBasicMonogramFromString:(id)arg1 scope:(id)arg2;
 - (id)loadingPlaceholderForContactCount:(unsigned long long)arg1 scope:(id)arg2;
 - (void)refreshCacheKey:(id)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *assetKey; // @synthesize assetKey=_assetKey;
 @property(copy, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;
 @property(copy, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)CKPropertiesDescription;

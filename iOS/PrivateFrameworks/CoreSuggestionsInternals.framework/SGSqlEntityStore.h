@@ -77,12 +77,12 @@
 + (id)cnContactIdentifiersForContact:(id)arg1;
 + (id)cnContactIdentifiersSpotlightQueryStringForContact:(id)arg1;
 + (id)journalNameForDbPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) SGKeyValueCacheManager *kvCacheManager; // @synthesize kvCacheManager=_kvCacheManager;
 @property(readonly) SGSGtoCNContactsCacheUpdateAdapter *sgToCNContactsCacheUpdateAdapter; // @synthesize sgToCNContactsCacheUpdateAdapter=_sgToCNContactsCacheUpdateAdapter;
 @property(readonly) SGSpotlightContactsAdapter *spotlightContactsAdapter; // @synthesize spotlightContactsAdapter=_spotlightContactsAdapter;
 @property(readonly, nonatomic) _Bool waitForMigrations; // @synthesize waitForMigrations=_waitForMigrations;
 @property(readonly, nonatomic) _Bool isEphemeral; // @synthesize isEphemeral=_isEphemeral;
-- (void).cxx_destruct;
 - (void)resolveFullDownloadRequests:(id)arg1;
 - (id)loadFullDownloadRequestBatch:(unsigned long long)arg1;
 - (id)journal;

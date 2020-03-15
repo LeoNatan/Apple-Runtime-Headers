@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_changeSetFromMediaItemEntityTypes:(id)arg1 toMediaItemEntityTypes:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIMediaItemEntityTypesFetchControllerResult *result; // @synthesize result=_result;
 @property(retain, nonatomic) VUIMediaItemEntityTypesFetchResponse *currentFetchResponse; // @synthesize currentFetchResponse=_currentFetchResponse;
 @property(nonatomic) long long fetchReason; // @synthesize fetchReason=_fetchReason;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithMediaLibrary:(id)arg1 fetchReason:(long long)arg2;
 - (id)initWithMediaLibrary:(id)arg1;

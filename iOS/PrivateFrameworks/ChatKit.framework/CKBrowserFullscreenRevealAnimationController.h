@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIViewPropertyAnimator *_ascentDescentAnimator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 @property(retain, nonatomic) UIViewPropertyAnimator *ascentDescentAnimator; // @synthesize ascentDescentAnimator=_ascentDescentAnimator;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)initWithDirection:(_Bool)arg1;

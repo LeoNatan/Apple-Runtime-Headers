@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool predictsBasedOnOutgoingInteraction; // @synthesize predictsBasedOnOutgoingInteraction=_predictsBasedOnOutgoingInteraction;
 @property(copy) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(copy) NSString *title; // @synthesize title=_title;
@@ -36,7 +37,6 @@
 @property(copy) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(copy) NSString *sendingAddressAccountIdentifier; // @synthesize sendingAddressAccountIdentifier=_sendingAddressAccountIdentifier;
 @property(copy) NSString *sendingAddress; // @synthesize sendingAddress=_sendingAddress;
-- (void).cxx_destruct;
 - (_Bool)isValid:(id *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

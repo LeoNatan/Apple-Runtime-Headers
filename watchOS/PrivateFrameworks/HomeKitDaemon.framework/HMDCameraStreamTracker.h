@@ -19,9 +19,9 @@
 
 + (id)logCategory;
 + (id)sharedTracker;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) NSMutableSet *currentStreamIdentifiers; // @synthesize currentStreamIdentifiers=_currentStreamIdentifiers;
-- (void).cxx_destruct;
 - (void)endStream:(id)arg1;
 - (_Bool)startStream:(id)arg1;
 - (id)init;

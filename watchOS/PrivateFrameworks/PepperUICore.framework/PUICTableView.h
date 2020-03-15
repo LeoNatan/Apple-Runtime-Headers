@@ -55,6 +55,7 @@
     unsigned int _numberOfBatchUpdatesInFlight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool deviceSupportsHardwareDetents; // @synthesize deviceSupportsHardwareDetents=_deviceSupportsHardwareDetents;
 @property(nonatomic) unsigned int numberOfBatchUpdatesInFlight; // @synthesize numberOfBatchUpdatesInFlight=_numberOfBatchUpdatesInFlight;
 @property(nonatomic) unsigned int numberOfTableAlteringOperationsInFlight; // @synthesize numberOfTableAlteringOperationsInFlight=_numberOfTableAlteringOperationsInFlight;
@@ -62,7 +63,6 @@
 @property(nonatomic) _Bool showsSectionIndexOverlayOnCrownScroll; // @synthesize showsSectionIndexOverlayOnCrownScroll=_showsSectionIndexOverlayOnCrownScroll;
 @property(retain, nonatomic) NSIndexPath *swipedIndexPath; // @synthesize swipedIndexPath=_swipedIndexPath;
 @property(retain, nonatomic) PUICTableViewNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
-- (void).cxx_destruct;
 - (void)_disableDefaultUITableViewIndexBar;
 - (id)_swipeAccessoryButtonForRowAtIndexPath:(id)arg1;
 - (id)_titleForSwipeAccessoryButtonForRowAtIndexPath:(id)arg1;

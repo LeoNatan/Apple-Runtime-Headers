@@ -18,11 +18,11 @@
     int _toStep;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKProtoStandalonePaymentProvisioningFlowStepContext *context; // @synthesize context=_context;
 @property(nonatomic) int toStep; // @synthesize toStep=_toStep;
 @property(nonatomic) int fromStep; // @synthesize fromStep=_fromStep;
 @property(retain, nonatomic) NPKProtoStandaloneResponseHeader *responseHeader; // @synthesize responseHeader=_responseHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -24,6 +24,7 @@
     struct _NSRange _lowRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isOngoingMenstruation; // @synthesize isOngoingMenstruation=_isOngoingMenstruation;
 @property(nonatomic) struct _NSRange lowRange; // @synthesize lowRange=_lowRange;
 @property(nonatomic) double convolvedProbabilityStdDev; // @synthesize convolvedProbabilityStdDev=_convolvedProbabilityStdDev;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSArray *endProbability; // @synthesize endProbability=_endProbability;
 @property(retain, nonatomic) NSArray *startProbability; // @synthesize startProbability=_startProbability;
 @property(nonatomic) unsigned int julianDayOfWindowStart; // @synthesize julianDayOfWindowStart=_julianDayOfWindowStart;
-- (void).cxx_destruct;
 
 @end
 

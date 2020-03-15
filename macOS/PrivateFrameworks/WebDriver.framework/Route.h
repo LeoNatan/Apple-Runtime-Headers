@@ -17,12 +17,12 @@
     NSArray *keys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keys; // @synthesize keys;
 @property(nonatomic) SEL selector; // @synthesize selector;
 @property(nonatomic) __weak id target; // @synthesize target;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler;
 @property(retain, nonatomic) NSRegularExpression *regex; // @synthesize regex;
-- (void).cxx_destruct;
 
 @end
 

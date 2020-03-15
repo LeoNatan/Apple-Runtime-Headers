@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) CLPlacemark *restaurantLocation; // @synthesize restaurantLocation=_restaurantLocation;
 @property(readonly, copy) NSNumber *partySize; // @synthesize partySize=_partySize;
 @property(readonly, copy) INDateComponentsRange *reservationDuration; // @synthesize reservationDuration=_reservationDuration;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -15,10 +15,10 @@
     NSMutableArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) double time; // @synthesize time=_time;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)executeActionsForTime:(double)arg1 withDuration:(double)arg2;
 - (double)executionTimeOfTime:(double)arg1 withinDuration:(double)arg2;
 - (_Bool)hasPassedTimeOffset:(double)arg1;

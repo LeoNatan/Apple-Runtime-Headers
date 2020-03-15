@@ -38,6 +38,7 @@
 + (id)knownRelationshipSingleValueKeys;
 + (Class)frozenClass;
 + (id)_locationStringForLocations:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int clearModifiedFlags; // @synthesize clearModifiedFlags=_clearModifiedFlags;
 @property(nonatomic) _Bool requiresDetachDueToSnoozedAlarm; // @synthesize requiresDetachDueToSnoozedAlarm=_requiresDetachDueToSnoozedAlarm;
 @property(copy, nonatomic) NSNumber *originalOccurrenceIsAllDay; // @synthesize originalOccurrenceIsAllDay=_originalOccurrenceIsAllDay;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) EKCalendarDate *occurrenceEndDate; // @synthesize occurrenceEndDate=_occurrenceEndDate;
 @property(copy, nonatomic) EKCalendarDate *occurrenceStartDate; // @synthesize occurrenceStartDate=_occurrenceStartDate;
 @property(readonly, nonatomic) NSString *birthdayPersonUniqueID; // @synthesize birthdayPersonUniqueID=_birthdayPersonUniqueID;
-- (void).cxx_destruct;
 - (void)_clearAttendeeChangedFlags;
 - (void)dismissAcceptedProposeNewTimeNotification;
 @property(readonly, nonatomic) NSURL *launchURL;

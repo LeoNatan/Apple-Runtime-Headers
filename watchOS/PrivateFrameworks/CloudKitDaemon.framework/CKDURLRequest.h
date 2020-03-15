@@ -79,6 +79,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_redirectHistory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *redirectHistory; // @synthesize redirectHistory=_redirectHistory;
 @property(retain, nonatomic) NSMutableDictionary *overriddenHeaders; // @synthesize overriddenHeaders=_overriddenHeaders;
 @property(retain, nonatomic) NSMutableDictionary *countsByRequestOperationType; // @synthesize countsByRequestOperationType=_countsByRequestOperationType;
@@ -130,7 +131,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <CKDContextInfoProvider> contextInfoProvider; // @synthesize contextInfoProvider=_contextInfoProvider;
 @property(retain, nonatomic) id <CKDAccountAccessInfoProvider> accountAccessInfoProvider; // @synthesize accountAccessInfoProvider=_accountAccessInfoProvider;
 @property(retain, nonatomic) id <CKDAccountInfoProvider> accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
-- (void).cxx_destruct;
 - (id)createAssetAuthorizeGetRequestOptionsHeaderInfoWithKey:(id)arg1 value:(id)arg2;
 - (id)statusReportWithIndent:(unsigned int)arg1;
 - (id)_CFNetworkTaskIdentifierString;

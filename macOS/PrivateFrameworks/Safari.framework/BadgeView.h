@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _maxWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (BOOL)canSmoothFontsInLayer;
 - (void)sizeToFit;
 - (void)drawRect:(struct CGRect)arg1;

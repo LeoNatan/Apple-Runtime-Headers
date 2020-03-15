@@ -28,6 +28,7 @@
     WFHomeManager *_homeManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(retain, nonatomic) WFConfiguredTriggerRecord *triggerRecord; // @synthesize triggerRecord=_triggerRecord;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
 @property(nonatomic) __weak id <WFCreateAutomationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)automationSummaryViewController:(id)arg1 didFinishWithTrigger:(id)arg2;
 - (void)triggerComposeViewController:(id)arg1 didFinishWithWorkflow:(id)arg2;
 - (void)triggerConfigurationViewController:(id)arg1 didFinishWithTrigger:(id)arg2;

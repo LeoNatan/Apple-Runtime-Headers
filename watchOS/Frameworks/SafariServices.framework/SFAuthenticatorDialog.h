@@ -21,18 +21,18 @@ __attribute__((visibility("hidden")))
     NSArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *relyingPartyID; // @synthesize relyingPartyID=_relyingPartyID;
-- (void).cxx_destruct;
 - (void)didCompleteWithResponse:(id)arg1;
-- (void)transitionToState:(int)arg1;
+- (void)transitionToState:(int)arg1 forPanel:(id)arg2;
 - (void)_shake;
 - (int)presentationStyle;
 - (id)newDialogViewRepresentation;
-- (id)initWithRelyingPartyID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithPanel:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

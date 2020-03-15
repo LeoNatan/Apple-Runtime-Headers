@@ -17,10 +17,10 @@
 }
 
 + (id)launchRequest:(id)arg1 completion:(CDUnknownBlockType)arg2 workspace:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FBSystemServiceDelegate> workspace; // @synthesize workspace=_workspace;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) FBSystemServiceOpenApplicationRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

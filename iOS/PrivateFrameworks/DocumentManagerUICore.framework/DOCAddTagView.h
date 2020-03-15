@@ -20,12 +20,12 @@
     CAShapeLayer *_borderLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(readonly, nonatomic) UITextField *tagNameTextField; // @synthesize tagNameTextField=_tagNameTextField;
 @property(readonly, nonatomic) UILabel *addNewTagLabel; // @synthesize addNewTagLabel=_addNewTagLabel;
 @property(readonly, nonatomic) DOCTagDotView *tagDotView; // @synthesize tagDotView=_tagDotView;
 @property(nonatomic) __weak id <DOCAddTagTextFieldDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *text;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;

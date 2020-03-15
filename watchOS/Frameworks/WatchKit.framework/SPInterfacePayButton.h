@@ -34,6 +34,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) id target; // @synthesize target=_target;
 @property(retain, nonatomic) PKPaymentButton *buttonControl; // @synthesize buttonControl=_buttonControl;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)setWKInterfaceObject:(id)arg1;
 - (void)doButton;
 - (void)setTarget:(id)arg1 forInterfaceItemAction:(SEL)arg2;

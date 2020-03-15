@@ -13,8 +13,8 @@
     CAMPanoramaConfiguration *__configuration;
 }
 
-@property(readonly, nonatomic) CAMPanoramaConfiguration *_configuration; // @synthesize _configuration=__configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CAMPanoramaConfiguration *_configuration; // @synthesize _configuration=__configuration;
 - (void)executeWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

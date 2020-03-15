@@ -13,8 +13,8 @@
     NSMutableArray *_policies;
 }
 
-@property(retain, nonatomic) NSMutableArray *policies; // @synthesize policies=_policies;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *policies; // @synthesize policies=_policies;
 - (id)description;
 @property(readonly, copy, nonatomic) NSArray *alertPolicies;
 - (id)_alertPolicyMatchingExistingAlertItem:(id)arg1 incomingAlertItem:(id)arg2;

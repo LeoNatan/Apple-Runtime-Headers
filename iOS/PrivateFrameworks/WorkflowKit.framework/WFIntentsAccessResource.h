@@ -16,8 +16,8 @@
 + (_Bool)isSystemResource;
 + (id)bundleIdentifierFromPersistentIdentifier:(id)arg1;
 + (id)persistentIdentifierFromBundleIdentifier:(id)arg1;
-- (id)associatedAppIdentifier;
 - (void).cxx_destruct;
+- (id)associatedAppIdentifier;
 - (id)localizedWorkflowLevelMessageTemplate;
 - (id)localizedWorkflowLevelPromptTemplate;
 - (id)localizedWorkflowLevelDeniedStatusMessage;

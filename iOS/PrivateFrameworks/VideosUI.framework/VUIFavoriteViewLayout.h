@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVImageLayout *accessoryImageLayout; // @synthesize accessoryImageLayout=_accessoryImageLayout;
 @property(readonly, nonatomic) TVImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
 @property(readonly, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 @property(readonly, nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
-- (void).cxx_destruct;
 - (id)initWithType:(long long)arg1;
 
 @end

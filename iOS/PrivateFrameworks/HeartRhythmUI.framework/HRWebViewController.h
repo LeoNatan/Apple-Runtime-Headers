@@ -17,10 +17,10 @@
     struct UIEdgeInsets _bodyInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) struct UIEdgeInsets bodyInsets; // @synthesize bodyInsets=_bodyInsets;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (void)_adjustWebView:(id)arg1 bodyInsets:(struct UIEdgeInsets)arg2;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)viewDidLoad;

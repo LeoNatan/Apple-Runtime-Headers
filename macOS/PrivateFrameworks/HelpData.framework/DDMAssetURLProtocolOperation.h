@@ -13,10 +13,10 @@
     CDUnknownBlockType _resumeBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
 @property(nonatomic) BOOL executing; // @synthesize executing=_executing;
 @property(copy) CDUnknownBlockType resumeBlock; // @synthesize resumeBlock=_resumeBlock;
-- (void).cxx_destruct;
 - (void)finishOperation;
 - (void)start;
 - (BOOL)isFinished;

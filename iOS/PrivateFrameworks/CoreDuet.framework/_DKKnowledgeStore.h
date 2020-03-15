@@ -30,12 +30,12 @@
 + (id)knowledgeStoreWithDirectReadOnlyAccess;
 + (id)userKnowledgeStore;
 + (id)knowledgeStore;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *defaultQueue; // @synthesize defaultQueue=_defaultQueue;
 @property(readonly) _DKPrivacyPolicyEnforcer *privacyEnforcer; // @synthesize privacyEnforcer=_privacyEnforcer;
 @property(readonly) _DKRateLimitPolicyEnforcer *rateLimitEnforcer; // @synthesize rateLimitEnforcer=_rateLimitEnforcer;
 @property(retain, nonatomic) _DKQueryDispatcher *queryDispatcher; // @synthesize queryDispatcher=_queryDispatcher;
 @property(retain, nonatomic) NSObject<_DKKnowledgeQuerying><_DKKnowledgeSaving><_DKKnowledgeDeleting><_DKKnowledgeEventStreamDeleting> *knowledgeStoreHandle; // @synthesize knowledgeStoreHandle=_knowledgeStoreHandle;
-- (void).cxx_destruct;
 - (id)deviceUUID;
 - (id)sourceDeviceIdentityWithError:(id *)arg1;
 - (id)sourceDeviceIdentityFromObject:(id)arg1 error:(id *)arg2;

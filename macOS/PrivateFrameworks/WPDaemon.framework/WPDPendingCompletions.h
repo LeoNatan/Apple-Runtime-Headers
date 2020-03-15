@@ -15,10 +15,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property unsigned long long lastID; // @synthesize lastID=_lastID;
 @property(retain) NSMutableArray *pendingCompletions; // @synthesize pendingCompletions=_pendingCompletions;
-- (void).cxx_destruct;
 - (void)completeID:(unsigned long long)arg1 success:(BOOL)arg2;
 - (unsigned long long)addCompletion:(id)arg1;
 - (id)description;

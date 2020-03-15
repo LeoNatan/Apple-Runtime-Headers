@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *passKitUIImageName; // @synthesize passKitUIImageName=_passKitUIImageName;
 @property(readonly, nonatomic) PKColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
 @property(readonly, nonatomic) double width; // @synthesize width=_width;
 @property(readonly, nonatomic) NSDictionary *urls; // @synthesize urls=_urls;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

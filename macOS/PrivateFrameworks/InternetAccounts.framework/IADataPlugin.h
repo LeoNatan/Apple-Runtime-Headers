@@ -13,8 +13,8 @@
     id <IADataPluginDelegate> _delegate;
 }
 
-@property(retain) id <IADataPluginDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <IADataPluginDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)deleteAccountUID:(id)arg1 error:(id *)arg2;
 - (void)aosAccountStartedMigration:(id)arg1;
 - (void)deactivateAccountUID:(id)arg1;

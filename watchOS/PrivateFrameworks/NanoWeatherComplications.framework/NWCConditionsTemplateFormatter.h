@@ -17,9 +17,9 @@
 }
 
 + (id)sharedFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKTextProvider *noDataTextProvider; // @synthesize noDataTextProvider=_noDataTextProvider;
 @property(retain, nonatomic) NWMTemperatureFormatter *temperatureFormatter; // @synthesize temperatureFormatter=_temperatureFormatter;
-- (void).cxx_destruct;
 - (id)_graphicRectangularTemplateWithTextProvider:(id)arg1 hourlyForecastedConditions:(id)arg2 timeZone:(id)arg3;
 - (void)_utilitarianSmallTemplateForEntryDate:(id)arg1 isLoading:(_Bool)arg2 forecast:(id)arg3 templateBlock:(CDUnknownBlockType)arg4;
 - (void)_modularSmallTemplateForEntryDate:(id)arg1 isLoading:(_Bool)arg2 forecast:(id)arg3 templateBlock:(CDUnknownBlockType)arg4;

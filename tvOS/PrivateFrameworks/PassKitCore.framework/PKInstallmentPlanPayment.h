@@ -20,6 +20,7 @@
     NSDecimalNumber *_amountDue;
     NSDecimalNumber *_amountPaid;
     NSDate *_dueDate;
+    NSDate *_statementDate;
     NSArray *_lineItems;
     unsigned long long _paymentNumber;
     unsigned long long _paymentCount;
@@ -27,10 +28,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKCreditAccountStatement *statement; // @synthesize statement=_statement;
 @property(nonatomic) unsigned long long paymentCount; // @synthesize paymentCount=_paymentCount;
 @property(nonatomic) unsigned long long paymentNumber; // @synthesize paymentNumber=_paymentNumber;
 @property(copy, nonatomic) NSArray *lineItems; // @synthesize lineItems=_lineItems;
+@property(retain, nonatomic) NSDate *statementDate; // @synthesize statementDate=_statementDate;
 @property(retain, nonatomic) NSDate *dueDate; // @synthesize dueDate=_dueDate;
 @property(retain, nonatomic) NSDecimalNumber *amountPaid; // @synthesize amountPaid=_amountPaid;
 @property(retain, nonatomic) NSDecimalNumber *amountDue; // @synthesize amountDue=_amountDue;
@@ -38,7 +41,6 @@
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(copy, nonatomic) NSString *statementIdentifier; // @synthesize statementIdentifier=_statementIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

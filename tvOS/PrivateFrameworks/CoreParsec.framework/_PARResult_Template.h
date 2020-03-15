@@ -16,13 +16,17 @@ __attribute__((visibility("hidden")))
 {
     NSString *_completion;
     NSString *_title;
+    NSData *_completionIcon;
+    NSData *_thumbnail;
     NSData *_cardData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *cardData; // @synthesize cardData=_cardData;
+@property(copy, nonatomic) NSData *thumbnail; // @synthesize thumbnail=_thumbnail;
+@property(copy, nonatomic) NSData *completionIcon; // @synthesize completionIcon=_completionIcon;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

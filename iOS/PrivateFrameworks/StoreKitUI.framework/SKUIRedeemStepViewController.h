@@ -17,11 +17,11 @@
     id <SKUIRedeemStepDelegate> _redeemStepDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIRedeemStepDelegate> redeemStepDelegate; // @synthesize redeemStepDelegate=_redeemStepDelegate;
 @property(retain, nonatomic) SKUIRedeemConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldShowPassbookLearnMore;
 
 @end

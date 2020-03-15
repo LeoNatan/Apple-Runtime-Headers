@@ -19,9 +19,9 @@
 + (id)typeWithClassName:(id)arg1 frameworkName:(id)arg2 location:(unsigned int)arg3;
 + (id)typesWithClasses:(id)arg1;
 + (id)typeWithClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;

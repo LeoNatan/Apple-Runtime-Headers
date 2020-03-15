@@ -17,10 +17,10 @@
     NPKPaymentLabelAndAccessoryView *_pendingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKPaymentLabelAndAccessoryView *pendingView; // @synthesize pendingView=_pendingView;
 @property(retain, nonatomic) UILabel *balanceLabel; // @synthesize balanceLabel=_balanceLabel;
 @property(retain, nonatomic) NSString *balance; // @synthesize balance=_balance;
-- (void).cxx_destruct;
 - (void)stopAnimations;
 - (void)startAnimationsAtMediaTime:(double)arg1 repeatInterval:(double)arg2;
 - (void)layoutSubviews;

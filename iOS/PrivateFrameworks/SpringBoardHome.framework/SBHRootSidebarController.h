@@ -24,6 +24,7 @@
     NSLayoutConstraint *_dockHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *dockHeightConstraint; // @synthesize dockHeightConstraint=_dockHeightConstraint;
 @property(copy, nonatomic) NSMutableArray *widgetViewControllerConstraints; // @synthesize widgetViewControllerConstraints=_widgetViewControllerConstraints;
 @property(nonatomic) __weak id <SBHSidebarProviderDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) SBHSidebarVisualConfiguration *sidebarVisualConfiguration; // @synthesize sidebarVisualConfiguration=_sidebarVisualConfiguration;
 @property(retain, nonatomic) WGWidgetGroupViewController *widgetViewController; // @synthesize widgetViewController=_widgetViewController;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (void)_updateDockHeightConstraint;
 - (void)_configureLayoutMargins;
 - (void)_addEditButton;

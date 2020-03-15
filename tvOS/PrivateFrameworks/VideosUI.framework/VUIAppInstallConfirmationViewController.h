@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     SSLookupItemOffer *_itemOffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSLookupItemOffer *itemOffer; // @synthesize itemOffer=_itemOffer;
 @property(retain, nonatomic) id <WLKInstallable> installable; // @synthesize installable=_installable;
 @property(retain, nonatomic) VUIAppInstallConfirmationView *confirmationView; // @synthesize confirmationView=_confirmationView;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType appStoreHandler; // @synthesize appStoreHandler=_appStoreHandler;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(copy, nonatomic) CDUnknownBlockType cancelationHandler; // @synthesize cancelationHandler=_cancelationHandler;
-- (void).cxx_destruct;
 - (id)_namedRatingWithRatings:(id)arg1;
 - (id)_fileSizeWithDeviceSizes:(id)arg1;
 - (void)_fetchStoreInfoForAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -37,12 +37,12 @@
 + (id)aceObjectWithDictionary:(id)arg1;
 + (id)aceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *dict; // @synthesize dict=_dict;
 @property(readonly, nonatomic) NSData *plistData; // @synthesize plistData=_plistData;
 @property(copy, nonatomic) NSNumber *usefulnessScore; // @synthesize usefulnessScore=_usefulnessScore;
 @property(copy, nonatomic) NSString *refId; // @synthesize refId=_refId;
 @property(copy, nonatomic) NSString *aceId; // @synthesize aceId=_aceId;
-- (void).cxx_destruct;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)deserializationDuration;
 @property(readonly) unsigned long long hash;

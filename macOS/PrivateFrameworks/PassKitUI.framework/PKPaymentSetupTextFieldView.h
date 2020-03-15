@@ -15,8 +15,8 @@
     NSTextField *_textField;
 }
 
-@property(retain) NSTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(retain) NSTextField *textField; // @synthesize textField=_textField;
 - (id)textView:(id)arg1 willDisplayToolTip:(id)arg2 forCharacterAtIndex:(unsigned long long)arg3;
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)label;

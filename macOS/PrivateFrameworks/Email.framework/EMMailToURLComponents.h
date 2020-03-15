@@ -18,12 +18,12 @@
 }
 
 + (id)componentsWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(readonly, nonatomic) NSArray *bccRecipients; // @synthesize bccRecipients=_bccRecipients;
 @property(readonly, nonatomic) NSArray *ccRecipients; // @synthesize ccRecipients=_ccRecipients;
 @property(readonly, nonatomic) NSArray *toRecipients; // @synthesize toRecipients=_toRecipients;
-- (void).cxx_destruct;
 - (void)_decomposeURL:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)init;

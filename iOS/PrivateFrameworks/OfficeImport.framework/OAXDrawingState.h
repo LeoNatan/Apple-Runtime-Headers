@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _clientChartGraphicPropertyDefaultsBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clientChartGraphicPropertyDefaultsBlock; // @synthesize clientChartGraphicPropertyDefaultsBlock=_clientChartGraphicPropertyDefaultsBlock;
 @property(retain, nonatomic) NSMutableDictionary *sourceURLToTargetBulletBlipIndexMap; // @synthesize sourceURLToTargetBulletBlipIndexMap=mSrcURLToTgtBulletBlipIndexMap;
 @property(retain, nonatomic) NSMutableDictionary *sourceURLToTargetBlipIndexMap; // @synthesize sourceURLToTargetBlipIndexMap=mSrcURLToTgtBlipIndexMap;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CXNamespace *OAXChartDrawingNamespace; // @synthesize OAXChartDrawingNamespace=mOAXChartDrawingNamespace;
 @property(retain, nonatomic) CXNamespace *OAXChartNamespace; // @synthesize OAXChartNamespace=mOAXChartNamespace;
 @property(retain, nonatomic) CXNamespace *OAXMainNamespace; // @synthesize OAXMainNamespace=mOAXMainNamespace;
-- (void).cxx_destruct;
 - (void)setupNSForXMLFormat:(int)arg1;
 - (void)replaceGroupStack:(id)arg1;
 - (_Bool)isInsideGroup;

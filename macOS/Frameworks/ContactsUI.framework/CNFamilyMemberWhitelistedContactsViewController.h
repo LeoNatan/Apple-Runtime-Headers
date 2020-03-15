@@ -13,7 +13,7 @@
 #import <ContactsUI/NSTableViewDataSource-Protocol.h>
 #import <ContactsUI/NSTableViewDelegate-Protocol.h>
 
-@class CNContactStore, FAFamilyMember, NSArray, NSButton, NSScrollView, NSSegmentedControl, NSString, NSTableView;
+@class CNContactFormatter, CNContactStore, FAFamilyMember, NSArray, NSScrollView, NSSegmentedControl, NSString, NSTableView;
 @protocol CNFamilyMemberWhitelistedContactsViewControllerDelegate, CNSchedulerProvider, CNUICoreContactManagementConsentCheck, CNUICoreFamilyMemberWhitelistedContactsDataSource;
 
 @interface CNFamilyMemberWhitelistedContactsViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, NSMenuDelegate, CNFamilyMemberEditControlsViewControllerDelegate, CNFamilyMemberWhitelistedContactViewCellDelegate, CNUICoreFamilyMemberContactsObserver>
@@ -26,20 +26,22 @@
     id <CNSchedulerProvider> _schedulerProvider;
     CNContactStore *_familyMemberScopedContactStore;
     CNContactStore *_mainContactStore;
+    CNContactFormatter *_contactCardWarningFormatter;
     NSTableView *_tableView;
     NSScrollView *_scrollView;
     NSSegmentedControl *_segmentedControl;
-    NSButton *_helpButton;
     NSViewController *_presentedContactPicker;
     NSArray *_previouslyFetchedFamilyMemberContactItems;
 }
 
++ (id)localizedStringForString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *previouslyFetchedFamilyMemberContactItems; // @synthesize previouslyFetchedFamilyMemberContactItems=_previouslyFetchedFamilyMemberContactItems;
 @property(nonatomic) __weak NSViewController *presentedContactPicker; // @synthesize presentedContactPicker=_presentedContactPicker;
-@property(readonly, nonatomic) NSButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(readonly, nonatomic) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(readonly, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
+@property(readonly, nonatomic) CNContactFormatter *contactCardWarningFormatter; // @synthesize contactCardWarningFormatter=_contactCardWarningFormatter;
 @property(readonly, nonatomic) CNContactStore *mainContactStore; // @synthesize mainContactStore=_mainContactStore;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
@@ -48,15 +50,17 @@
 @property(readonly, nonatomic) __weak id <CNFamilyMemberWhitelistedContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL downtimeRestictionsEnabled; // @synthesize downtimeRestictionsEnabled=_downtimeRestictionsEnabled;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
-- (void).cxx_destruct;
+- (id)warningMessageWhenDisplayingConact:(id)arg1 cell:(id)arg2;
 - (void)cell:(id)arg1 didDismissDetailsOfFamilyMemberContactItem:(id)arg2 withResult:(id)arg3;
 - (void)presentContact:(id)arg1 matchingItemFamilyMemberContactItem:(id)arg2 forCell:(id)arg3;
 - (void)cell:(id)arg1 didRequestDetailsOfFamilyMemberContactItem:(id)arg2;
 - (void)didPressCancelFamilyMemberEditControlsViewController:(id)arg1;
 - (void)didPressDoneFamilyMemberEditControlsViewController:(id)arg1;
+- (void)tableViewSelectionDidChange:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
+@property(readonly, nonatomic) unsigned long long countOfWhitelistedContacts;
 @property(readonly, nonatomic) long long fetchStatus;
 - (void)removeSelectedContactFromWhitelist;
 - (void)addNewContact:(id)arg1;
@@ -70,13 +74,14 @@
 - (void)setupViewHierarchy;
 - (void)viewDidLoad;
 - (void)loadView;
-- (void)setupHelpButton;
 - (void)setupSegmentedControl;
 - (void)setupScrollView;
 - (void)setupTableView;
 - (void)setupUI;
 - (BOOL)contactManagementEnabled;
 - (id)familyMemberContactItems;
+- (void)notifyDelegate;
+- (void)reloadInterface;
 - (void)familyMemberContactItemsDidChange;
 - (void)commitChangesToWhitelistedContacts;
 - (id)initWithFamilyMember:(id)arg1 delegate:(id)arg2;

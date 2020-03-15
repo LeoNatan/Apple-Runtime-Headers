@@ -15,8 +15,8 @@
     NSArray *_intentsSpecifiers;
 }
 
-@property(retain, nonatomic) NSArray *intentsSpecifiers; // @synthesize intentsSpecifiers=_intentsSpecifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *intentsSpecifiers; // @synthesize intentsSpecifiers=_intentsSpecifiers;
 - (void)viewDidTapLearnMore:(id)arg1;
 - (id)accesssForSpecifier:(id)arg1;
 - (void)setAccess:(id)arg1 forSpecifier:(id)arg2;

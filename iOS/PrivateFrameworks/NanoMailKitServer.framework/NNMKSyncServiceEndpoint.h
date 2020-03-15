@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_source> *_repeatPreventionCleanupTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *repeatPreventionCleanupTimer; // @synthesize repeatPreventionCleanupTimer=_repeatPreventionCleanupTimer;
 @property(retain, nonatomic) NSMutableDictionary *repeatPreventionRecords; // @synthesize repeatPreventionRecords=_repeatPreventionRecords;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serviceQueue; // @synthesize serviceQueue=_serviceQueue;
 @property(retain, nonatomic) NSString *idsServiceName; // @synthesize idsServiceName=_idsServiceName;
 @property(retain, nonatomic) id <NNMKSyncServiceTransport> serviceTransport; // @synthesize serviceTransport=_serviceTransport;
-- (void).cxx_destruct;
 - (void)_removeExpiredRepeatPreventionRecords;
 - (void)_storeRepeatPreventionId:(id)arg1 priority:(unsigned long long)arg2;
 - (_Bool)_willIdRepeat:(id)arg1;

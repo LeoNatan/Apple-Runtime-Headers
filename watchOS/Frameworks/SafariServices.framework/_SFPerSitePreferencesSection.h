@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_preferences;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *preferences; // @synthesize preferences=_preferences;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 preferences:(id)arg2;
 
 @end

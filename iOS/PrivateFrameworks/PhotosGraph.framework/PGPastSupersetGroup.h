@@ -18,12 +18,12 @@
 }
 
 + (id)pastSupersetGroupWithMoments:(id)arg1 dateInterval:(id)arg2 supersetCityNode:(id)arg3 densestCloseLocationNode:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) PGGraphLocationNode *stateNode; // @synthesize stateNode=_stateNode;
 @property(retain) NSMutableSet *densestCloseLocationNodes; // @synthesize densestCloseLocationNodes=_densestCloseLocationNodes;
 @property(retain) NSMutableSet *supersetCityNodes; // @synthesize supersetCityNodes=_supersetCityNodes;
 @property(retain) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(retain) NSMutableArray *moments; // @synthesize moments=_moments;
-- (void).cxx_destruct;
 
 @end
 

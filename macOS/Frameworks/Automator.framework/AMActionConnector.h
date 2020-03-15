@@ -21,6 +21,7 @@
     NSError *_conversionError;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *conversionError; // @synthesize conversionError=_conversionError;
 @property(retain, nonatomic) NSArray *conversions; // @synthesize conversions=_conversions;
 @property(retain) AMConversion *selectedConversion; // @synthesize selectedConversion=_selectedConversion;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) AMConnectionPoint *pointB; // @synthesize pointB=_pointB;
 @property(retain, nonatomic) AMConnectionPoint *pointA; // @synthesize pointA=_pointA;
 @property(copy) NSString *UUID; // @synthesize UUID=_uuid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)runWithInput:(id)arg1 error:(id *)arg2;
 - (void)disconnect;

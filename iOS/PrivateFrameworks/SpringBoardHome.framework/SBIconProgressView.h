@@ -35,6 +35,7 @@
 
 + (id)_pieImageAtFraction:(double)arg1;
 + (id)_pieImagesMemoryPool;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SBIconProgressFractionTransition *activeFractionTransition; // @synthesize activeFractionTransition=_activeFractionTransition;
 @property(retain, nonatomic) _SBIconProgressPausedTransition *activePausedTransition; // @synthesize activePausedTransition=_activePausedTransition;
 @property(retain, nonatomic) _SBIconProgressStateTransition *activeStateTransition; // @synthesize activeStateTransition=_activeStateTransition;
@@ -49,7 +50,6 @@
 @property(nonatomic) _Bool canAnimate; // @synthesize canAnimate=_canAnimate;
 @property(retain, nonatomic) UIImage *overlayImage; // @synthesize overlayImage=_overlayImage;
 @property(nonatomic) __weak id <SBIconProgressViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)description;

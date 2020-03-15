@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     double _saturationDeltaFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double saturationDeltaFactor; // @synthesize saturationDeltaFactor=_saturationDeltaFactor;
 @property(nonatomic) long long privateBackdropStyle; // @synthesize privateBackdropStyle=_privateBackdropStyle;
-- (void).cxx_destruct;
 - (struct CGSize)expectedSize;
 - (_Bool)loaderCropToFit;
 - (struct CGSize)loaderScaleToSize;

@@ -21,9 +21,9 @@
 + (id)medicalDateIntervalWithStartDate:(id)arg1 endDate:(id)arg2 error:(out id *)arg3;
 + (id)medicalDateIntervalWithEndDate:(id)arg1;
 + (id)medicalDateIntervalWithStartDate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKMedicalDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, copy, nonatomic) HKMedicalDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

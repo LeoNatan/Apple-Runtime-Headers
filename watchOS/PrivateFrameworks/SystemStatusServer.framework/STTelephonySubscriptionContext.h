@@ -26,6 +26,7 @@
     STMutableTelephonyMobileEquipmentInfo *_mobileEquipmentInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) STMutableTelephonyMobileEquipmentInfo *mobileEquipmentInfo; // @synthesize mobileEquipmentInfo=_mobileEquipmentInfo;
 @property(retain, nonatomic) STMutableTelephonyCarrierBundleInfo *carrierBundleInfo; // @synthesize carrierBundleInfo=_carrierBundleInfo;
 @property(copy, nonatomic) NSArray *statusBarImages; // @synthesize statusBarImages=_statusBarImages;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool *fakeRegistrationCanceled; // @synthesize fakeRegistrationCanceled=_fakeRegistrationCanceled;
 @property(nonatomic) _Bool *fakeServiceCanceled; // @synthesize fakeServiceCanceled=_fakeServiceCanceled;
 @property(retain, nonatomic) STMutableTelephonySubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
-- (void).cxx_destruct;
 - (id)debugDescriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)debugDescriptionWithMultilinePrefix:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

@@ -25,12 +25,12 @@
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4 targetSceneIdentifier:(id)arg5;
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4;
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *targetSceneIdentifier; // @synthesize targetSceneIdentifier=_targetSceneIdentifier;
 @property(readonly) BSServiceConnectionEndpoint *targetConnectionEndpoint; // @synthesize targetConnectionEndpoint=_targetConnectionEndpoint;
 @property(readonly, copy) NSString *originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(readonly, copy) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, copy) UNNotification *notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

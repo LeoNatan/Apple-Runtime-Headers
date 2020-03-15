@@ -14,15 +14,16 @@
     CNContact *_originalContact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *originalContact; // @synthesize originalContact=_originalContact;
 @property(retain, nonatomic) CNContact *updatedContact; // @synthesize updatedContact=_updatedContact;
-- (void).cxx_destruct;
 - (id)mutableUpdatedContactWithSelfAsSnapshot;
 - (id)diffUpdatedContactToOriginalContact;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
 - (id)actionName;
-- (id)initWithContact:(id)arg1 contactStore:(id)arg2;
+- (id)initWithContact:(id)arg1 contactStore:(id)arg2 ignoresGuardianRestrictions:(BOOL)arg3;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

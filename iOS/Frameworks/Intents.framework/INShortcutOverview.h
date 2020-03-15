@@ -24,12 +24,12 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(readonly, copy, nonatomic) INSpeakableString *descriptiveText; // @synthesize descriptiveText=_descriptiveText;
 @property(readonly, copy, nonatomic) INImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) INSpeakableString *voiceCommand; // @synthesize voiceCommand=_voiceCommand;
 @property(readonly, copy, nonatomic) INSpeakableString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

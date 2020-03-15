@@ -48,6 +48,7 @@
     struct CGRect _nowPlayingContentRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(readonly, nonatomic) MCDShadowImageView *artworkViewBrick; // @synthesize artworkViewBrick=_artworkViewBrick;
 @property(nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
@@ -72,7 +73,6 @@
 @property(readonly, nonatomic) MCDSongDetailsView *songDetailsView; // @synthesize songDetailsView=_songDetailsView;
 @property(readonly, nonatomic) MCDPlayModeControlView *playModeControlView; // @synthesize playModeControlView=_playModeControlView;
 @property(readonly, nonatomic) MCDTransportControlView *transportControlView; // @synthesize transportControlView=_transportControlView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_recalculateLayout:(_Bool)arg1;
 - (void)_invalidateConstraintCache;

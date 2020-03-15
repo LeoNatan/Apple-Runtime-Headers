@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(readonly, nonatomic) PODPlaylist *playlist; // @synthesize playlist=_playlist;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithPlaylist:(id)arg1 episodes:(id)arg2;

@@ -13,8 +13,8 @@
     AlphanumericPINTextField *_pinTextField;
 }
 
-@property(retain, nonatomic) AlphanumericPINTextField *pinTextField; // @synthesize pinTextField=_pinTextField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AlphanumericPINTextField *pinTextField; // @synthesize pinTextField=_pinTextField;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

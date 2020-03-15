@@ -19,10 +19,10 @@
     ASKCommerceAccountChangeNotifier *_changeNotifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ASKCommerceAccountChangeNotifier *changeNotifier; // @synthesize changeNotifier=_changeNotifier;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isAccountModificationRestricted;
 @property(readonly, nonatomic) BOOL hasManagedAppleID;
 @property(readonly, nonatomic) BOOL isRunningInStoreDemoMode;

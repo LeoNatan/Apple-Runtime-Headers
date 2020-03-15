@@ -35,12 +35,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)setShowDevelopMenu:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSView *includeDevelopMenuButtonContainerView; // @synthesize includeDevelopMenuButtonContainerView=_includeDevelopMenuButtonContainerView;
 @property(nonatomic) __weak NSButton *saveReadingListItemsAutomaticallyCheckbox; // @synthesize saveReadingListItemsAutomaticallyCheckbox=_saveReadingListItemsAutomaticallyCheckbox;
 @property(nonatomic) __weak NSButton *smartSearchFieldShowsFullURLCheckbox; // @synthesize smartSearchFieldShowsFullURLCheckbox=_smartSearchFieldShowsFullURLCheckbox;
 @property(nonatomic) __weak NSTextField *smartSearchFieldSectionLabel; // @synthesize smartSearchFieldSectionLabel=_smartSearchFieldSectionLabel;
 @property(nonatomic) __weak NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (id)safariHelpAnchor;
 - (void)moduleWasInstalled;
 - (void)moduleWillBeRemoved;

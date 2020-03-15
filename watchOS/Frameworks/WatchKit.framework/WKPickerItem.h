@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) WKImage *contentImage; // @synthesize contentImage=_contentImage;
 @property(copy, nonatomic) WKImage *accessoryImage; // @synthesize accessoryImage=_accessoryImage;
 @property(copy, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

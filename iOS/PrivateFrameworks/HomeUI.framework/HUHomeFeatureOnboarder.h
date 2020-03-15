@@ -13,8 +13,8 @@
     HMHome *_home;
 }
 
-@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (id)getPostProcessingFlowsForResults:(id)arg1;
 - (id)_subclass_buildAllFlowGroupsFromFeatureGroups:(id)arg1 usageOptions:(id)arg2;
 - (id)initWithGroupedFeatures:(id)arg1 home:(id)arg2 usageOptions:(id)arg3;

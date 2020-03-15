@@ -15,8 +15,8 @@
     SGSuggestionStore *_suggestionStore;
 }
 
-@property(retain, nonatomic) SGSuggestionStore *suggestionStore; // @synthesize suggestionStore=_suggestionStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SGSuggestionStore *suggestionStore; // @synthesize suggestionStore=_suggestionStore;
 - (void)dismissViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

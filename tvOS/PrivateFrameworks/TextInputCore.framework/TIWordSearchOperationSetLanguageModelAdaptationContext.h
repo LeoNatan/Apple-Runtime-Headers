@@ -14,9 +14,9 @@
     TILanguageModelAdaptationContext *_adaptationContext;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) TILanguageModelAdaptationContext *adaptationContext; // @synthesize adaptationContext=_adaptationContext;
 @property(retain, nonatomic) TIMecabraWrapper *mecabraWrapper; // @synthesize mecabraWrapper=_mecabraWrapper;
-- (void).cxx_destruct;
 - (void)perform;
 - (void)cancel;
 - (id)initWithWordSearch:(id)arg1 adaptationContext:(id)arg2;

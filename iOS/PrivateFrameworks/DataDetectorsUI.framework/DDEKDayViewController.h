@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     EKEvent *_dd_event;
 }
 
-@property(retain) EKEvent *dd_event; // @synthesize dd_event=_dd_event;
 - (void).cxx_destruct;
+@property(retain) EKEvent *dd_event; // @synthesize dd_event=_dd_event;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;

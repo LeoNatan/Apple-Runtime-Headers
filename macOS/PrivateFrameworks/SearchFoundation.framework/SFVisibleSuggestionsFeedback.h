@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSuggestions:(id)arg1;

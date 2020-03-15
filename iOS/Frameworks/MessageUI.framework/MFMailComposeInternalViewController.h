@@ -37,8 +37,8 @@
     id <MFMailComposeViewControllerDelegate> _mailComposeDelegate;
 }
 
-@property(nonatomic) __weak id <MFMailComposeViewControllerDelegate> mailComposeDelegate; // @synthesize mailComposeDelegate=_mailComposeDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MFMailComposeViewControllerDelegate> mailComposeDelegate; // @synthesize mailComposeDelegate=_mailComposeDelegate;
 - (id)remoteViewController;
 - (void)autosaveWithHandler:(CDUnknownBlockType)arg1;
 - (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;

@@ -76,6 +76,7 @@
 + (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2;
 + (struct CGPoint)convertPoint:(struct CGPoint)arg1 toView:(id)arg2;
 + (id)__displayConfigurationsIncludingMain:(BOOL)arg1;
++ (id)_mainScreenThreadSafeTraitCollection;
 + (BOOL)_shouldDisableJail;
 + (BOOL)_isProbablyBeingRecorded;
 + (void)_FBSDisplayIdentityDisconnected:(id)arg1;
@@ -101,6 +102,7 @@
 + (struct CGAffineTransform)transformForScreenOriginRotation:(double)arg1;
 + (id)mainScreen;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setFocusedWindow:) UIWindow<UIFocusEnvironment> *_focusedWindow; // @synthesize _focusedWindow=__focusedWindow;
 @property(nonatomic, getter=_isMainScreen, setter=_setMainScreen:) BOOL mainScreen; // @synthesize mainScreen=_mainScreen;
 @property(retain, nonatomic, getter=_boundingPathUtilities, setter=_setBoundingPathUtilities:) _UIScreenBoundingPathUtilities *boundingPathUtilities; // @synthesize boundingPathUtilities=_boundingPathUtilities;
@@ -114,7 +116,6 @@
 @property(retain, nonatomic, getter=_lastNotifiedTraitCollection, setter=_setLastNotifiedTraitCollection:) UITraitCollection *lastNotifiedTraitCollection; // @synthesize lastNotifiedTraitCollection=_lastNotifiedTraitCollection;
 @property(retain, nonatomic, getter=_overrideTraitCollection, setter=_setOverrideTraitCollection:) UITraitCollection *overrideTraitCollection; // @synthesize overrideTraitCollection=_overrideTraitCollection;
 @property(retain, nonatomic, getter=_defaultTraitCollection, setter=_setDefaultTraitCollection:) UITraitCollection *defaultTraitCollection; // @synthesize defaultTraitCollection=_defaultTraitCollection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_interactiveHighlightEnvironment) _UIInteractiveHighlightEnvironment *interactiveHighlightEnvironment; // @synthesize interactiveHighlightEnvironment=_interactiveHighlightEnvironment;
 - (BOOL)_supportsDragging;
 @property(readonly, nonatomic, getter=_dragManager) _UIDragManager *dragManager; // @synthesize dragManager=_dragManager;

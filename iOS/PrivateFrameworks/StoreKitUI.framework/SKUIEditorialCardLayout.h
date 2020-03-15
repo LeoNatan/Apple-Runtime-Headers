@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _secondaryLockupWidth;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double secondaryLockupWidth; // @synthesize secondaryLockupWidth=_secondaryLockupWidth;
 @property(readonly, nonatomic) struct CGSize primaryLockupSize; // @synthesize primaryLockupSize=_primaryLockupSize;
 @property(readonly, nonatomic) SKUILockupViewElement *primaryLockup; // @synthesize primaryLockup=_primaryLockup;
 @property(readonly, nonatomic) NSArray *allLockups; // @synthesize allLockups=_allLockups;
-- (void).cxx_destruct;
 - (id)initWithCard:(id)arg1 width:(double)arg2 context:(id)arg3;
 
 @end

@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
     double _factor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUICountdown *countdown; // @synthesize countdown=_countdown;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_setCountdownWithResponse:(id)arg1 error:(id)arg2;
 - (void)_currentRemainingDays:(long long *)arg1 hours:(long long *)arg2 minutes:(long long *)arg3 seconds:(long long *)arg4;
 - (long long)_currentValue;

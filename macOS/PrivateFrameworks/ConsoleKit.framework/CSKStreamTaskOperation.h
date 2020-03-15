@@ -18,12 +18,12 @@
     NSString *_uniqueIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL delegateWasSignaled; // @synthesize delegateWasSignaled=_delegateWasSignaled;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSString *initiatorIdentifier; // @synthesize initiatorIdentifier=_initiatorIdentifier;
 @property(readonly, nonatomic) CSKStreamTask *representedTask; // @synthesize representedTask=_representedTask;
 @property(nonatomic) __weak id <CSKStreamTaskOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_signalDelegateDidFinishIfNeeded;
 - (void)cancel;
 - (void)main;

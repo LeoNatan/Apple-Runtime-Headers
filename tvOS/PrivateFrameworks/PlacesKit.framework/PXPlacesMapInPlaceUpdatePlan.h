@@ -19,10 +19,10 @@
     NSMapTable *_currentLayoutItemToAnnotationTable;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMapTable *currentLayoutItemToAnnotationTable; // @synthesize currentLayoutItemToAnnotationTable=_currentLayoutItemToAnnotationTable;
 @property(retain) id <PXPlacesMapLayoutResult> currentLayoutResult; // @synthesize currentLayoutResult=_currentLayoutResult;
 @property(nonatomic) __weak id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider; // @synthesize pipelineComponentProvider;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)annotationForLayoutItem:(id)arg1;
 - (id)_changesBetweenSourceLayoutResult:(id)arg1 targetLayoutResult:(id)arg2;

@@ -19,13 +19,13 @@
     struct CGRect _frameInRow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MOMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(nonatomic) struct CGRect frameInRow; // @synthesize frameInRow=_frameInRow;
 @property(nonatomic) __weak id <MOPhotoAtlasLayoutCellAXDelegate> axDelegate; // @synthesize axDelegate=_axDelegate;
 @property(nonatomic) long long indexOfRow; // @synthesize indexOfRow=_indexOfRow;
 @property(readonly, nonatomic) NSAccessibilityElement *image; // @synthesize image=_image;
 @property(nonatomic) __weak MOPhotosAtlasSupplementaryRow *row; // @synthesize row=_row;
-- (void).cxx_destruct;
 - (id)_actualIndexPath;
 - (id)_layoutSectionAccessibility;
 - (BOOL)accessibilityPerformScrollToVisible;

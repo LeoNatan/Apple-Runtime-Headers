@@ -15,8 +15,8 @@
     struct os_unfair_lock_s _uniqueIDLock;
 }
 
-@property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 - (unsigned long long)MTUForAddressFamily:(unsigned long long)arg1;
 - (_Bool)shouldUseSocketForTransport;
 - (void)setPreferences:(id)arg1;

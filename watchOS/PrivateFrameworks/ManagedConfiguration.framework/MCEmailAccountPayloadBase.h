@@ -34,6 +34,7 @@
     NSNumber *_SMIMEPerMessageSwitchEnabledNum;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *SMIMEPerMessageSwitchEnabledNum; // @synthesize SMIMEPerMessageSwitchEnabledNum=_SMIMEPerMessageSwitchEnabledNum;
 @property(retain, nonatomic) NSNumber *isMailDropEnabledNum; // @synthesize isMailDropEnabledNum=_isMailDropEnabledNum;
 @property(retain, nonatomic) NSNumber *isRecentsSyncingDisabledNum; // @synthesize isRecentsSyncingDisabledNum=_isRecentsSyncingDisabledNum;
@@ -56,7 +57,6 @@
 @property(nonatomic) _Bool SMIMEEnabled; // @synthesize SMIMEEnabled=_SMIMEEnabled;
 @property(nonatomic) _Bool preventAppSheet; // @synthesize preventAppSheet=_preventAppSheet;
 @property(nonatomic) _Bool preventMove; // @synthesize preventMove=_preventMove;
-- (void).cxx_destruct;
 - (_Bool)containsSensitiveUserInformation;
 - (void)addSMIMEEncryptionPayloadKeysTo:(id)arg1;
 - (id)payloadDescriptionKeyValueSections;

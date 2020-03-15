@@ -7,10 +7,12 @@
 #import <objc/NSObject.h>
 
 @class PLLibraryServicesManager;
+@protocol OS_dispatch_queue;
 
 @interface PLDelayedSaveActionsProcessor : NSObject
 {
     PLLibraryServicesManager *_libraryServicesManager;
+    NSObject<OS_dispatch_queue> *_coreDuetCallback;
 }
 
 - (void).cxx_destruct;

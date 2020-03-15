@@ -29,12 +29,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *feedCellHostExposureId; // @synthesize feedCellHostExposureId=_feedCellHostExposureId;
 @property(retain, nonatomic) NSString *viewFrameInScreen; // @synthesize viewFrameInScreen=_viewFrameInScreen;
 @property(nonatomic) int displayRankInSection; // @synthesize displayRankInSection=_displayRankInSection;
 @property(nonatomic) _Bool isUserSubscribedToFeed; // @synthesize isUserSubscribedToFeed=_isUserSubscribedToFeed;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

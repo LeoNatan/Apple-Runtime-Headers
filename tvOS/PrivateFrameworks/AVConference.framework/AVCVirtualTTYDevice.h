@@ -19,7 +19,7 @@
 - (void)terminateSession;
 - (void)deregisterBlocksForDelegateNotifications;
 - (void)registerBlocksForDelegateNotifications;
-- (_Bool)sendText:(struct NSString *)arg1;
+- (_Bool)sendText:(id)arg1;
 - (id)sendCharacter:(unsigned short)arg1;
 - (void)stop;
 - (void)start;

@@ -46,6 +46,7 @@
     CDStruct_1b6d18a9 _scrubbingPhotoTime;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setSeekCompletionHandler:) CDUnknownBlockType _seekCompletionHandler; // @synthesize _seekCompletionHandler=__seekCompletionHandler;
 @property(nonatomic, setter=_setLivePhotoRequestID:) int _livePhotoRequestID; // @synthesize _livePhotoRequestID=__livePhotoRequestID;
 @property(nonatomic, setter=_setLivePhotoRequestState:) long long _livePhotoRequestState; // @synthesize _livePhotoRequestState=__livePhotoRequestState;
@@ -67,7 +68,6 @@
 @property(copy, nonatomic) CDUnknownBlockType playerItemChangeHandler; // @synthesize playerItemChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType statusChangeHandler; // @synthesize statusChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType durationChangeHandler; // @synthesize durationChangeHandler;
-- (void).cxx_destruct;
 - (id)playerItem;
 - (long long)playerStatus;
 - (void)removeTimeObserver:(id)arg1;

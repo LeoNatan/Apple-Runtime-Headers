@@ -56,14 +56,6 @@ struct ComponentInstanceRecord {
 
 struct IONotificationPort;
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSMutableArray {
-    Class _field1;
-};
-
 struct OpaqueAEDataStorageType;
 
 struct OpaqueAudioConverter;

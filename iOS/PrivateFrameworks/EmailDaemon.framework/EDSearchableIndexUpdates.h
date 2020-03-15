@@ -18,10 +18,10 @@
 }
 
 + (id)updates;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *removedDomainIdentifiers; // @synthesize removedDomainIdentifiers=_removedDomainIdentifiers;
 @property(copy, nonatomic) NSArray *removedIdentifiers; // @synthesize removedIdentifiers=_removedIdentifiers;
 @property(copy, nonatomic) NSArray *itemsRequiringIndexing; // @synthesize itemsRequiringIndexing=_itemsRequiringIndexing;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool hasUpdates;

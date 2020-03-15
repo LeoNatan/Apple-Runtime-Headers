@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 
 + (id)titleAttributedStringWithString:(id)arg1;
 + (id)explanationAttributedStringWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UILabel *explanationLabel; // @synthesize explanationLabel=_explanationLabel;
 @property(nonatomic) long long contentPosition; // @synthesize contentPosition=_contentPosition;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (id)_newTitleLabel;
 - (id)_newExplanationLabel;
 - (void)setBackgroundColor:(id)arg1;

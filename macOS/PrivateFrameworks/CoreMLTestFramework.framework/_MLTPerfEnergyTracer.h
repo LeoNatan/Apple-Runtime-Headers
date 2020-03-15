@@ -18,11 +18,11 @@
     NSMutableArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(nonatomic) unsigned long long sampleStartCPUCycles; // @synthesize sampleStartCPUCycles=_sampleStartCPUCycles;
 @property(nonatomic) BOOL inMeasurement; // @synthesize inMeasurement=_inMeasurement;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (BOOL)stopSampling:(id *)arg1;
 - (BOOL)startSampling:(id *)arg1;
 - (id)measurements;

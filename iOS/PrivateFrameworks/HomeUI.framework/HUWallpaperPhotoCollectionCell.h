@@ -20,6 +20,7 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *imageHeightConstraint; // @synthesize imageHeightConstraint=_imageHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageWidthConstraint; // @synthesize imageWidthConstraint=_imageWidthConstraint;
 @property(retain, nonatomic) NSArray *horizontalConstraints; // @synthesize horizontalConstraints=_horizontalConstraints;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *imageThumbnailView; // @synthesize imageThumbnailView=_imageThumbnailView;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *descriptionText;
 @property(retain, nonatomic) NSString *titleText;
 @property(retain, nonatomic) UIImage *image;

@@ -16,9 +16,9 @@
     NSURL *_invitationURL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *invitationURL; // @synthesize invitationURL=_invitationURL;
 @property(retain) CalDAVReportJunkTaskGroup *taskGroup; // @synthesize taskGroup=_taskGroup;
-- (void).cxx_destruct;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (void)performOperation;
 - (id)initWithChangeRequest:(id)arg1 forSession:(id)arg2;

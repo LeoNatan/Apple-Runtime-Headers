@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct SCRDataCell _coordinates;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct SCRDataCell coordinates; // @synthesize coordinates=_coordinates;
 @property(retain, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
-- (void).cxx_destruct;
 
 @end
 

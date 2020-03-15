@@ -24,6 +24,7 @@
     CDStruct_e83c9415 _playbackTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldFadeVolumeChange; // @synthesize shouldFadeVolumeChange=_shouldFadeVolumeChange;
 @property(readonly, nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) unsigned long long audioSessionCategoryOptions; // @synthesize audioSessionCategoryOptions=_audioSessionCategoryOptions;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool seekToBeginningAtEnd; // @synthesize seekToBeginningAtEnd=_seekToBeginningAtEnd;
 @property(nonatomic) CDStruct_e83c9415 playbackTimeRange; // @synthesize playbackTimeRange=_playbackTimeRange;
 @property(nonatomic, getter=isLoopingEnabled) _Bool loopingEnabled; // @synthesize loopingEnabled=_loopingEnabled;
-- (void).cxx_destruct;
 - (void)setAudioSessionCategory:(id)arg1 options:(unsigned long long)arg2;
 - (void)setVolume:(float)arg1 withFade:(_Bool)arg2;
 

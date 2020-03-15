@@ -38,6 +38,7 @@
     UIViewController *_statusBarStyleViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *statusBarStyleViewController; // @synthesize statusBarStyleViewController=_statusBarStyleViewController;
 @property(nonatomic) _Bool isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(copy, nonatomic) CDUnknownBlockType alertViewHandler; // @synthesize alertViewHandler=_alertViewHandler;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) CKCoreChatController *composeChatController; // @synthesize composeChatController=_composeChatController;
 @property(retain, nonatomic) CKCoreChatController *chatController; // @synthesize chatController=_chatController;
 @property(nonatomic) __weak id <CKMessagesControllerDelegate> messagesControllerDelegate; // @synthesize messagesControllerDelegate=_messagesControllerDelegate;
-- (void).cxx_destruct;
 - (void)teardownCamera;
 - (void)prewarmCameraIfNecessary;
 - (void)presentOnboardingViewControllerIfNeeded;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *specifiersDict; // @synthesize specifiersDict=_specifiersDict;
 @property(retain, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (void)carrierBundleChange:(id)arg1;
 - (void)openURLWithSpecifier:(id)arg1;

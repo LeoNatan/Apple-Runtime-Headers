@@ -10,7 +10,7 @@
 {
 }
 
-+ (struct __SecIdentity *)copySecIdentity:(struct NSMutableData *)arg1;
++ (struct __SecIdentity *)copySecIdentity:(id)arg1;
 + (id)createDecryptedData:(id)arg1 algorithm:(id)arg2 key:(id)arg3 iv:(id)arg4 aad:(id)arg5 padDataToKeyLength:(_Bool)arg6;
 + (id)createEncryptedData:(id)arg1 algorithm:(id)arg2 key:(id)arg3 iv:(id)arg4 encryptionContext:(id)arg5 aad:(id)arg6 padDataToKeyLength:(_Bool)arg7;
 + (_Bool)decryptChaChaPolyWithKey:(const char *)arg1 keyLen:(int)arg2 iv:(const char *)arg3 ivLen:(int)arg4 aad:(const char *)arg5 aadLen:(int)arg6 encryptedText:(const char *)arg7 len:(int)arg8 output:(char *)arg9 outputLen:(int)arg10;
@@ -43,9 +43,9 @@
 + (id)createHashFromData:(id)arg1;
 + (id)createHashFromData:(id)arg1 hashAlgorithm:(unsigned long long)arg2;
 + (id)createHashFromData:(id)arg1 algorithm:(unsigned long long)arg2;
-+ (struct NSMutableData *)createPRFPlusFromData:(id)arg1 key:(id)arg2 prfAlgorithm:(unsigned long long)arg3 outputLength:(unsigned int)arg4;
-+ (struct NSMutableData *)createHMACFromData:(id)arg1 key:(id)arg2 prfAlgorithm:(unsigned long long)arg3;
-+ (struct NSMutableData *)createHMACFromData:(id)arg1 key:(id)arg2 integrityAlgorithm:(unsigned long long)arg3;
++ (id)createPRFPlusFromData:(id)arg1 key:(id)arg2 prfAlgorithm:(unsigned long long)arg3 outputLength:(unsigned int)arg4;
++ (id)createHMACFromData:(id)arg1 key:(id)arg2 prfAlgorithm:(unsigned long long)arg3;
++ (id)createHMACFromData:(id)arg1 key:(id)arg2 integrityAlgorithm:(unsigned long long)arg3;
 + (id)createRandomWithSize:(unsigned int)arg1;
 
 @end

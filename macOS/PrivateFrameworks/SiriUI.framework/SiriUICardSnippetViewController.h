@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     CRKCardPresentation *_cardPresenter;
 }
 
+- (void).cxx_destruct;
 @property(retain) CRKCardPresentation *cardPresenter; // @synthesize cardPresenter=_cardPresenter;
 @property(retain) CRKCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
-- (void).cxx_destruct;
 - (void)_applyUserInfoDictionary:(id)arg1 toCommand:(id)arg2;
 - (id)_cardForData:(id)arg1;
 - (BOOL)_loadCard:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

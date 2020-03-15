@@ -14,8 +14,8 @@
     PXAssetReference *_keyAssetReference;
 }
 
-@property(readonly, nonatomic) PXAssetReference *keyAssetReference; // @synthesize keyAssetReference=_keyAssetReference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXAssetReference *keyAssetReference; // @synthesize keyAssetReference=_keyAssetReference;
 - (id)initWithAssetCollection:(id)arg1 keyAssetReference:(id)arg2 indexPath:(struct PXSimpleIndexPath)arg3;
 @property(readonly, nonatomic) id <PXDisplayAssetCollection> assetCollection;
 

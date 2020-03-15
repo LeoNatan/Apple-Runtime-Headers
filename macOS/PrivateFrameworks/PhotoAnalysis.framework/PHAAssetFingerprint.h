@@ -21,8 +21,8 @@
 + (id)_fingerprintWithSceneprint:(id)arg1;
 + (id)versionNameForVersion:(long long)arg1;
 + (long long)versionForVersionName:(id)arg1;
-@property(readonly, copy, nonatomic) PHAMutableFloatArray *floatArray; // @synthesize floatArray=_floatArray;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) PHAMutableFloatArray *floatArray; // @synthesize floatArray=_floatArray;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithFloatArray:(id)arg1;
 

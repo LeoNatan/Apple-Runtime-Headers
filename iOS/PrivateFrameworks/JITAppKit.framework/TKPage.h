@@ -23,11 +23,11 @@
     NSURLRequest *_dataRequest;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowLoading; // @synthesize shouldShowLoading=_shouldShowLoading;
 @property(readonly, nonatomic) _Bool dataLoading; // @synthesize dataLoading=_dataLoading;
 @property(copy, nonatomic) NSURLRequest *dataRequest; // @synthesize dataRequest=_dataRequest;
 @property(readonly, nonatomic) NSString *viewName; // @synthesize viewName=_viewName;
-- (void).cxx_destruct;
 - (void)hideLoadingViewController;
 - (void)showLoadingViewController;
 - (void)didLoadData:(_Bool)arg1;

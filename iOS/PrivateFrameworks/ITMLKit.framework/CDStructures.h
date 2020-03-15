@@ -31,14 +31,6 @@ struct IKCornerRadii {
     double _field4;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSDictionary {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;

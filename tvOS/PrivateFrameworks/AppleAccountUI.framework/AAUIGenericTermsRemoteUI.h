@@ -26,10 +26,10 @@
     id <AAUIGenericTermsRemoteUIDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) __weak id <AAUIGenericTermsRemoteUIDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;
 - (void)_displayConnectionErrorAndDismiss;
 - (void)_popObjectModelAnimated:(_Bool)arg1;

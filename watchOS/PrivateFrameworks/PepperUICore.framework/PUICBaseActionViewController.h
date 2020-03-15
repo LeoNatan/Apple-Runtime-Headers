@@ -19,11 +19,11 @@
     UIView *_curtainView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *curtainView; // @synthesize curtainView=_curtainView;
 @property(retain, nonatomic) UIView *blurredView; // @synthesize blurredView=_blurredView;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;

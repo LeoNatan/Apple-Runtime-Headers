@@ -14,9 +14,9 @@
     NSMutableSet *_vars;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *vars; // @synthesize vars=_vars;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)addVar:(id)arg1;
 
 @end

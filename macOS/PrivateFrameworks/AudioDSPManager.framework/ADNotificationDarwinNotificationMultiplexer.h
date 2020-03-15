@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *callbacksByNotificationName; // @synthesize callbacksByNotificationName=_callbacksByNotificationName;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)unregisterNotificationToken:(id)arg1;
 - (id)registerForNotification:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)init;

@@ -14,9 +14,9 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) NSDate *entryTimestamp; // @synthesize entryTimestamp=_entryTimestamp;
-- (void).cxx_destruct;
 
 @end
 

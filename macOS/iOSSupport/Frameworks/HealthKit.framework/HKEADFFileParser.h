@@ -13,8 +13,8 @@
     NSData *_data;
 }
 
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)newBuilderWithStartDate:(id)arg1;
 - (id)payloadInRange:(struct _NSRange)arg1;
 - (void)enumerateChannelsWithHandler:(CDUnknownBlockType)arg1;

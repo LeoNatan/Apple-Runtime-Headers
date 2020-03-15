@@ -22,6 +22,7 @@
     SPHandle *_handle;
     NSString *_lostModeMessage;
     NSString *_lostModePhoneNumber;
+    NSString *_obfuscatedIdentifier;
 }
 
 + (id)stopNotifyWhenFound:(id)arg1;
@@ -30,7 +31,9 @@
 + (id)disableNotifyWhenFound:(id)arg1;
 + (id)enableNotifyWhenFound:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enableLostMode; // @synthesize enableLostMode=_enableLostMode;
+@property(copy, nonatomic) NSString *obfuscatedIdentifier; // @synthesize obfuscatedIdentifier=_obfuscatedIdentifier;
 @property(copy, nonatomic) NSString *lostModePhoneNumber; // @synthesize lostModePhoneNumber=_lostModePhoneNumber;
 @property(copy, nonatomic) NSString *lostModeMessage; // @synthesize lostModeMessage=_lostModeMessage;
 @property(copy, nonatomic) SPHandle *handle; // @synthesize handle=_handle;
@@ -39,13 +42,12 @@
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSUUID *beaconIdentifier; // @synthesize beaconIdentifier=_beaconIdentifier;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *taskName;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithBeaconUUID:(id)arg1 type:(int)arg2 expiration:(id)arg3 duration:(id)arg4 handle:(id)arg5 lostModeMessage:(id)arg6 lostModePhoneNumber:(id)arg7 identifier:(id)arg8;
-- (id)initWithBeaconUUID:(id)arg1 type:(int)arg2 expiration:(id)arg3 duration:(id)arg4 handle:(id)arg5 lostModeMessage:(id)arg6 lostModePhoneNumber:(id)arg7;
+- (id)initWithBeaconUUID:(id)arg1 type:(int)arg2 expiration:(id)arg3 duration:(id)arg4 handle:(id)arg5 lostModeMessage:(id)arg6 lostModePhoneNumber:(id)arg7 obfuscatedIdentifier:(id)arg8 identifier:(id)arg9;
+- (id)initWithBeaconUUID:(id)arg1 type:(int)arg2 expiration:(id)arg3 duration:(id)arg4 handle:(id)arg5 lostModeMessage:(id)arg6 lostModePhoneNumber:(id)arg7 obfuscatedIdentifier:(id)arg8;
 
 @end
 

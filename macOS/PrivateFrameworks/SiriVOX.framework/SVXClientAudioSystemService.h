@@ -20,8 +20,8 @@
     id <SVXClientAudioSystemServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SVXClientAudioSystemServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SVXClientAudioSystemServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clientServiceDidChange;
 - (id)initWithClientServiceProvider:(id)arg1 performer:(id)arg2;
 - (void)handleAudioSessionDidBecomeActive:(BOOL)arg1 activationContext:(id)arg2 deactivationContext:(id)arg3;

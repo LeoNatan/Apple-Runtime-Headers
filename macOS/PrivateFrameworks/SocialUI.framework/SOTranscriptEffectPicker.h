@@ -25,6 +25,7 @@
     SOEffectPickerUnsentMessage *_unsentMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain) SOEffectPickerUnsentMessage *unsentMessage; // @synthesize unsentMessage=_unsentMessage;
 @property(retain) NSString *chosenEffect; // @synthesize chosenEffect=_chosenEffect;
 @property(retain, nonatomic) SOBalloonEffectPickerViewController *balloonsViewController; // @synthesize balloonsViewController=_balloonsViewController;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak NSButton *momentButton; // @synthesize momentButton=_momentButton;
 @property(nonatomic) __weak NSButton *balloonButton; // @synthesize balloonButton=_balloonButton;
 @property __weak id <SOTranscriptEffectPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)effectPicker:(id)arg1 setSendEnabled:(BOOL)arg2;
 - (void)userChoseSendPicker:(id)arg1;
 - (void)userCancelledPicker:(id)arg1;

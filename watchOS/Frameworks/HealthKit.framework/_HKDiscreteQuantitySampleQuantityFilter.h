@@ -20,11 +20,11 @@
 + (id)_allowedKeyPaths;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 comparisonQuantity:(id)arg3 quantityType:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKQuantity *comparisonQuantity; // @synthesize comparisonQuantity=_comparisonQuantity;
 @property(readonly, copy, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 @property(readonly, nonatomic) unsigned int operatorType; // @synthesize operatorType=_operatorType;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

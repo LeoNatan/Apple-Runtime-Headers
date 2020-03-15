@@ -17,9 +17,9 @@
     HMFHTTPRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFHTTPResponseInternal *internal; // @synthesize internal=_internal;
 @property(readonly, nonatomic) HMFHTTPRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *body;
 @property(readonly, nonatomic) NSDictionary *headerFields;
 @property(readonly, nonatomic) long long statusCode;

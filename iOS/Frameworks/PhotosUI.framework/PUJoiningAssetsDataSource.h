@@ -16,11 +16,11 @@
     NSArray *__containedDataSourceInfos;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *_containedDataSourceInfos; // @synthesize _containedDataSourceInfos=__containedDataSourceInfos;
 @property(readonly, nonatomic) NSDictionary *_containedDataSourceInfoByIdentifier; // @synthesize _containedDataSourceInfoByIdentifier=__containedDataSourceInfoByIdentifier;
 @property(readonly, nonatomic) long long _totalNumberOfSections; // @synthesize _totalNumberOfSections=__totalNumberOfSections;
 @property(readonly, nonatomic) NSArray *_dataSources; // @synthesize _dataSources=__dataSources;
-- (void).cxx_destruct;
 - (id)containedAssetsDataSourceAtIndexPath:(id)arg1;
 - (long long)numberOfAssetsWithMaximum:(long long)arg1;
 - (id)startingAssetReference;

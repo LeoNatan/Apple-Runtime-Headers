@@ -35,6 +35,7 @@
 + (_Bool)imageClassificationEnabled;
 + (_Bool)ocrGenerationEnabled;
 + (id)sharedGenerator;
+- (void).cxx_destruct;
 // Error parsing type for property shouldGenerateAttachmentsWhenReachable:
 // Property attributes: TAB,N,V_shouldGenerateAttachmentsWhenReachable
 
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) ICAttachmentPreviewGeneratorOperationQueue *generatorQueue; // @synthesize generatorQueue=_generatorQueue;
 @property(retain, nonatomic) ICAttachmentPreviewGeneratorOperationQueue *costlyGeneratorQueue; // @synthesize costlyGeneratorQueue=_costlyGeneratorQueue;
 @property(retain, nonatomic) ICAttachmentPreviewGeneratorOperationQueue *asyncGeneratorQueue; // @synthesize asyncGeneratorQueue=_asyncGeneratorQueue;
-- (void).cxx_destruct;
 - (void)cancelIfNeededForAttachment:(id)arg1;
 - (void)generatePendingPreviewForAttachment:(id)arg1;
 - (void)generatePendingPreviews;

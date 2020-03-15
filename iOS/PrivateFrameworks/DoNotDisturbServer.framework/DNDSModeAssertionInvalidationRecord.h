@@ -22,13 +22,13 @@
 
 + (id)recordForInvalidation:(id)arg1;
 + (id)recordForDictionary:(id)arg1 keys:(const CDStruct_0a6492a9 *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reasonOverride; // @synthesize reasonOverride=_reasonOverride;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) DNDSModeAssertionSourceRecord *source; // @synthesize source=_source;
 @property(retain, nonatomic) DNDSModeAssertionInvalidationDetailsRecord *details; // @synthesize details=_details;
 @property(retain, nonatomic) NSNumber *invalidationDate; // @synthesize invalidationDate=_invalidationDate;
 @property(retain, nonatomic) DNDSModeAssertionRecord *assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 - (id)object;
 - (id)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1 options:(unsigned long long)arg2;
 

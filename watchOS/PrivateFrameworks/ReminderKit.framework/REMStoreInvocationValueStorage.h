@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableDictionary *valueStorage; // @synthesize valueStorage=_valueStorage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *valueStorage; // @synthesize valueStorage=_valueStorage;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -23,9 +23,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *observersNeedingInitialState; // @synthesize observersNeedingInitialState=_observersNeedingInitialState;
 @property(nonatomic) int currentBacklightState; // @synthesize currentBacklightState=_currentBacklightState;
-- (void).cxx_destruct;
 - (void)requestRejectedForError:(id)arg1 shouldRaiseException:(_Bool)arg2;
 - (void)assertionTimedOut:(id)arg1;
 - (void)backlightDidChangeFrom:(int)arg1 to:(int)arg2 forReason:(unsigned int)arg3;

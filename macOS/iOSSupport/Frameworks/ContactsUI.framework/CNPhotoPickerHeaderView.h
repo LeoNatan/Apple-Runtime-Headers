@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     UIButton *_editButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) NSArray *subviewsConstraints; // @synthesize subviewsConstraints=_subviewsConstraints;
 @property(retain, nonatomic) UIView *headerDropShadowView; // @synthesize headerDropShadowView=_headerDropShadowView;
 @property(nonatomic) BOOL allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) __weak id <CNPhotoPickerHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;
-- (void).cxx_destruct;
 - (void)updatePhoto;
 - (void)photoViewTapped;
 - (void)didMoveToWindow;

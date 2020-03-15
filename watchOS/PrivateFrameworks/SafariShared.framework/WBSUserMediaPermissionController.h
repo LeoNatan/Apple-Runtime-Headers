@@ -16,8 +16,8 @@
 {
     NSMutableDictionary *_cachedSettings;
     WBSCoalescedAsynchronousWriter *_saveUserMediaPermissionsWriter;
-    NSObject<OS_dispatch_queue> *_loadPermissionsSynchronizationQueue;
-    // Error parsing type: {atomic<LoadingStatus>="__a_"Ai}, name: _savedStateLoadStatus
+    NSObject<OS_dispatch_queue> *_internalQueue;
+    // Error parsing type: {atomic<LoadingStatus>="__a_"{__cxx_atomic_impl<LoadingStatus, std::__1::__cxx_atomic_base_impl<LoadingStatus> >="__a_value"Ai}}, name: _savedStateLoadStatus
     NSURL *_userMediaPermissionsFileURL;
     WBSPerSitePreferencesSQLiteStore *_perSitePreferencesStore;
     WBSPerSitePreference *_cameraMediaCapturePreference;
@@ -26,22 +26,27 @@
 
 + (id)localizedStringForPerSitePreferenceValue:(id)arg1;
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSPerSitePreference *microphoneMediaCapturePreference; // @synthesize microphoneMediaCapturePreference=_microphoneMediaCapturePreference;
 @property(readonly, nonatomic) WBSPerSitePreference *cameraMediaCapturePreference; // @synthesize cameraMediaCapturePreference=_cameraMediaCapturePreference;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore; // @synthesize perSitePreferencesStore=_perSitePreferencesStore;
-- (void).cxx_destruct;
+- (void)_dispatchSyncOnInternalQueue:(CDUnknownBlockType)arg1;
+- (void)_dispatchAsyncOnInternalQueue:(CDUnknownBlockType)arg1;
 - (void)_invalidateAllPermissionsForDomain:(id)arg1;
 - (id)_standardizedURLForDomain:(id)arg1;
 - (_Bool)_isPreferenceValid:(id)arg1;
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
 - (int)preferencesStoreKeyForPreference:(id)arg1;
+- (_Bool)_removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2;
 - (void)removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getAllDomainsConfiguredForPreference:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (unsigned int)permissionForDomain:(id)arg1;
+- (unsigned int)_permissionByApplyingDefaultsForMissingValuesInPermission:(unsigned int)arg1;
 - (unsigned int)userMediaPermissionForDefaultPreferenceValues;
 - (unsigned int)_userMediaPermissionForMediaCaptureType:(int)arg1 mediaCaptureSetting:(int)arg2;
 - (int)_mediaCaptureSettingForMediaCaptureType:(int)arg1 userMediaPermission:(unsigned int)arg2;
 - (void)getValueOfPreference:(id)arg1 forDomain:(id)arg2 withTimeout:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
+- (_Bool)_setValue:(id)arg1 ofPreference:(id)arg2 forDomain:(id)arg3;
 - (void)setValue:(id)arg1 ofPreference:(id)arg2 forDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
@@ -49,24 +54,25 @@
 - (unsigned int)_permissionMaskForMediaCaptureType:(int)arg1;
 - (int)_mediaCaptureTypeForPreference:(id)arg1;
 - (void)checkUserMediaPermissionForURL:(id)arg1 mainFrameURL:(id)arg2 frameIdentifier:(unsigned int)arg3 decisionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)hasPolicyEntryForTopLevelOrigin:(id)arg1;
-- (id)sortedPolicies;
 - (void)_cachedSettingsDidChange;
 - (_Bool)_captureDevicesAreAllDefaultsGivenPermission:(unsigned int)arg1;
 - (id)_dictionaryRepresentation;
 - (void)didCommitLoadForFrameWithIdentifier:(unsigned int)arg1;
 - (void)_loadSavedPermissions;
-- (void)_loadSavedPermissionsIfNecessary;
-- (void)_waitUntilPermissionsHaveLoaded;
 - (void)resetOriginPermissions;
-- (void)removePolicyEntries:(id)arg1;
 - (void)removeAllOriginsAddedAfterDate:(id)arg1;
+- (id)_saltWithPolicyEntry:(id)arg1 computedPermission:(unsigned int)arg2 frameIdentifier:(unsigned int)arg3;
+- (id)_saltForOrigin:(id)arg1 topLevelOrigin:(id)arg2 frameIdentifier:(unsigned int)arg3;
 - (id)saltForOrigin:(id)arg1 topLevelOrigin:(id)arg2 frameIdentifier:(unsigned int)arg3;
+- (unsigned int)_permissionByRemovingDefaultPermissionFlagsInPermission:(unsigned int)arg1;
+- (void)_setPermission:(unsigned int)arg1 expirationPolicy:(unsigned int)arg2 forOrigin:(id)arg3 topLevelOrigin:(id)arg4;
 - (void)setPermission:(unsigned int)arg1 expirationPolicy:(unsigned int)arg2 forOrigin:(id)arg3 topLevelOrigin:(id)arg4;
-- (void)setPermission:(unsigned int)arg1 expirationPolicy:(unsigned int)arg2 forPolicyEntry:(id)arg3;
+- (unsigned int)permissionForNonHTTPSOriginFromPermission:(unsigned int)arg1;
 - (id)_policyForOrigin:(id)arg1 topLevelOrigin:(id)arg2;
-- (unsigned int)_defaultUserMediaPermission;
+- (id)_validPolicyForOrigin:(id)arg1 topLevelOrigin:(id)arg2;
+- (id)_validPolicyForDomainWithOrigin:(id)arg1 topLevelOrigin:(id)arg2;
 - (unsigned int)_permissionForOrigin:(id)arg1 topLevelOrigin:(id)arg2;
+- (void)getPermissionForOrigin:(id)arg1 topLevelOrigin:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (unsigned int)permissionForOrigin:(id)arg1 topLevelOrigin:(id)arg2;
 - (void)_invalidateCachedSettingsForOriginHash:(id)arg1;
 - (void)savePendingChangesWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -19,6 +19,7 @@
     BOOL _updatingCandidates;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL updatingCandidates; // @synthesize updatingCandidates=_updatingCandidates;
 @property(retain, nonatomic) NSArray *visibleLineIndices; // @synthesize visibleLineIndices=_visibleLineIndices;
 @property(retain, nonatomic) IMKUISingleCandidateListView *listView; // @synthesize listView=_listView;
@@ -26,7 +27,6 @@
 @property(nonatomic) struct CGSize currentSize; // @synthesize currentSize=_currentSize;
 @property(nonatomic) BOOL changesSizeWhenScrolling; // @synthesize changesSizeWhenScrolling=_changesSizeWhenScrolling;
 @property(nonatomic) double accumulatedLengthOfCandidates; // @synthesize accumulatedLengthOfCandidates=_accumulatedLengthOfCandidates;
-- (void).cxx_destruct;
 - (id)appearanceView;
 - (id)candidatesSelectableByKeyboard;
 - (id)visibleCandidates;

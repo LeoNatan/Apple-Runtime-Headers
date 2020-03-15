@@ -23,11 +23,13 @@
     int _effectiveContentMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int effectiveContentMode; // @synthesize effectiveContentMode=_effectiveContentMode;
 @property(nonatomic) _Bool tryUsingMobileIfPossible; // @synthesize tryUsingMobileIfPossible=_tryUsingMobileIfPossible;
 @property(readonly, nonatomic) _SFInjectedJavaScriptController *activityJSController; // @synthesize activityJSController=_activityJSController;
-- (void).cxx_destruct;
 - (void)logCompletedPageloadToDifferentialPrivacy:(id)arg1;
+- (void)didSetRequestDesktopSitePerSitePreferencesValues:(id)arg1;
+- (void)didSetRequestDesktopSiteDefaultValue:(int)arg1;
 - (void)didMarkURLAsNeedingStandardUserAgent:(id)arg1;
 - (void)didMarkURLAsNeedingDesktopUserAgent:(id)arg1;
 - (void)requestStandardSite;

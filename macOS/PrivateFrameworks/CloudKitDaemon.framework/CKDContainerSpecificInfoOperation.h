@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_infoFetchedGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *infoFetchedGroup; // @synthesize infoFetchedGroup=_infoFetchedGroup;
 @property(copy, nonatomic) CKDContainerInfo *containerInfo; // @synthesize containerInfo=_containerInfo;
 @property(nonatomic) BOOL requireUserIDs; // @synthesize requireUserIDs=_requireUserIDs;
-- (void).cxx_destruct;
 - (void)main;
 - (void)setCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)shouldCheckAppVersion;

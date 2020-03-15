@@ -34,6 +34,7 @@
 + (double)estimatedHeight;
 + (id)reuseIdentifier;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *updatingParticipantSpinner; // @synthesize updatingParticipantSpinner=_updatingParticipantSpinner;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) UIButton *facetimeVideoButton; // @synthesize facetimeVideoButton=_facetimeVideoButton;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) CKLabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(nonatomic) __weak id <CKDetailsContactsTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKAvatarView *contactAvatarView; // @synthesize contactAvatarView=_contactAvatarView;
-- (void).cxx_destruct;
 - (void)_configureButtonLayer:(id)arg1;
 - (void)_updateVisibleButtons;
 - (void)_handleCommunicationAction:(id)arg1;

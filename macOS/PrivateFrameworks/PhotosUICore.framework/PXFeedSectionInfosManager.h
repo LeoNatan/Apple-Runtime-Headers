@@ -30,11 +30,11 @@
 }
 
 + (id)mostRecentCreationDate;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXFeedSectionInfosManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(retain, nonatomic) NSDate *earliestDate; // @synthesize earliestDate=_earliestDate;
 @property(nonatomic) long long entryFilter; // @synthesize entryFilter=_entryFilter;
-- (void).cxx_destruct;
 - (id)initWithPhotoLibraryForTesting:(id)arg1 filter:(long long)arg2;
 - (CDUnknownBlockType)_sectionInfoSortingComparator;
 - (void)_updateSectionInfosForFeedEntriesChangeNotifications:(id)arg1 commentsChangeNotifications:(id)arg2 assetsChangeNotifications:(id)arg3;

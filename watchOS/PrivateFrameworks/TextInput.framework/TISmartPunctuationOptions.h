@@ -23,13 +23,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)smartPunctuationOptionsForLocale:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *rightDoubleQuote; // @synthesize rightDoubleQuote=_rightDoubleQuote;
 @property(copy, nonatomic) NSString *leftDoubleQuote; // @synthesize leftDoubleQuote=_leftDoubleQuote;
 @property(copy, nonatomic) NSString *apostrophe; // @synthesize apostrophe=_apostrophe;
 @property(copy, nonatomic) NSString *rightSingleQuote; // @synthesize rightSingleQuote=_rightSingleQuote;
 @property(copy, nonatomic) NSString *leftSingleQuote; // @synthesize leftSingleQuote=_leftSingleQuote;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

@@ -20,10 +20,10 @@
 + (id)readConfigurationFromDefaults;
 + (id)sanitizeTuningConfiguration:(id)arg1;
 + (id)defaultTuningConfiguration;
+- (void).cxx_destruct;
 @property _Bool enableCaching; // @synthesize enableCaching=_enableCaching;
 @property(retain) _CDAutoSuConfig *autoSuConfig; // @synthesize autoSuConfig=_autoSuConfig;
 @property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
-- (void).cxx_destruct;
 - (id)predictNextDateForLastUnlockAttemptOfTheDay;
 - (id)predicitLastUnlockForDay:(id)arg1;
 - (id)predictForDate:(id)arg1 fromState:(id)arg2 withConfig:(id)arg3;

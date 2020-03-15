@@ -17,8 +17,8 @@
 + (id)buildWithExtensions:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) NSArray *statusExtensions; // @synthesize statusExtensions=_statusExtensions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *statusExtensions; // @synthesize statusExtensions=_statusExtensions;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 

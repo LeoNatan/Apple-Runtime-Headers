@@ -13,8 +13,8 @@
     UILabel *_addValueLabel;
 }
 
-@property(retain, nonatomic) UILabel *addValueLabel; // @synthesize addValueLabel=_addValueLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *addValueLabel; // @synthesize addValueLabel=_addValueLabel;
 - (void)createAddValueLabel;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

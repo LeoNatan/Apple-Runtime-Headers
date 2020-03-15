@@ -25,6 +25,7 @@
 }
 
 + (_Bool)_hasSuitableApplicationForOpeningDocument:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(copy, nonatomic) NSString *savedPathWithProperExtension; // @synthesize savedPathWithProperExtension=_savedPathWithProperExtension;
 @property(retain, nonatomic) LSDocumentProxy *documentProxy; // @synthesize documentProxy=_documentProxy;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(copy, nonatomic) NSString *savedPath; // @synthesize savedPath=_savedPath;
 @property(readonly, nonatomic) _Bool needsQuickLookDocumentView; // @synthesize needsQuickLookDocumentView=_needsQuickLookDocumentView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldUnzipByUIDocumentInteractionController;
 - (void)addQuickLookPrintSettingsToPrintInfo:(id)arg1;
 - (void)setSavedPathWithProperExtension:(id)arg1 shouldDelete:(_Bool)arg2;

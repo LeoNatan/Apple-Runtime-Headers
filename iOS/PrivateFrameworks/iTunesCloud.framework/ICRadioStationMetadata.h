@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ICStoreArtworkInfo, NSDictionary, NSString;
+@class ICRadioStationProviderResource, ICStoreArtworkInfo, NSDictionary, NSString;
 
 @interface ICRadioStationMetadata : NSObject
 {
@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) ICRadioStationProviderResource *providerResource;
 @property(readonly, nonatomic, getter=isSubscriptionRequired) _Bool subscriptionRequired;
 @property(readonly, nonatomic) long long subtype;
 @property(readonly, nonatomic) long long type;

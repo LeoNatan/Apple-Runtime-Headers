@@ -17,15 +17,15 @@
 }
 
 + (void)_updateWebpageUsage:(id)arg1 withDigitalHealthManagerUsageState:(unsigned long long)arg2;
-+ (void)deleteUsageHistoryForURL:(id)arg1;
++ (void)deleteUsageHistoryForURLs:(id)arg1;
 + (void)deleteUsageHistoryFromDate:(id)arg1 toDate:(id)arg2;
 + (void)deleteAllUsageHistory;
-@property(nonatomic) __weak id <WBSDigitalHealthManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WBSDigitalHealthManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_historyWasCleared:(id)arg1;
 - (void)_historyItemsWereRemoved:(id)arg1;
 - (void)stopUsageTrackingForURL:(id)arg1;
-- (void)updateUsageTrackingForURL:(id)arg1 toState:(unsigned long long)arg2;
+- (void)updateUsageTrackingForURL:(id)arg1 withBundleIdentifier:(id)arg2 toState:(unsigned long long)arg3;
 - (void)getOverlayStateForURLs:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_requestPoliciesForWebsites:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

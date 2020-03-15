@@ -26,13 +26,13 @@
 
 + (Class)feedbackItemsType;
 + (Class)featuresType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *feedbackItems; // @synthesize feedbackItems=_feedbackItems;
 @property(retain, nonatomic) NSMutableArray *features; // @synthesize features=_features;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(retain, nonatomic) NSString *namedEntityWithFeedback; // @synthesize namedEntityWithFeedback=_namedEntityWithFeedback;
 @property(retain, nonatomic) NSString *namedEntity; // @synthesize namedEntity=_namedEntity;
 @property(nonatomic) unsigned long long topicId; // @synthesize topicId=_topicId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)actionWithActions:(id)arg1 name:(id)arg2 description:(id)arg3;
 + (id)actionWithName:(id)arg1 description:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) NSString *actionDescription; // @synthesize actionDescription=_actionDescription;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
-- (void).cxx_destruct;
 - (void)appendActions:(id)arg1;
 - (void)appendAction:(id)arg1;
 

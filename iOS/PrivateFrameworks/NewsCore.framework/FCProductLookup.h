@@ -9,18 +9,20 @@
 #import <NewsCore/FCProductLookup-Protocol.h>
 #import <NewsCore/SKProductsRequestDelegate-Protocol.h>
 
-@class NSString, SKProduct;
+@class NSString, SKProduct, SKProductsRequest;
 @protocol OS_dispatch_group;
 
 @interface FCProductLookup : NSObject <SKProductsRequestDelegate, FCProductLookup>
 {
     NSObject<OS_dispatch_group> *_productRequestGroup;
     SKProduct *_product;
+    SKProductsRequest *_request;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) SKProductsRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) SKProduct *product; // @synthesize product=_product;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *productRequestGroup; // @synthesize productRequestGroup=_productRequestGroup;
-- (void).cxx_destruct;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
 - (void)productsRequest:(id)arg1 didReceiveResponse:(id)arg2;

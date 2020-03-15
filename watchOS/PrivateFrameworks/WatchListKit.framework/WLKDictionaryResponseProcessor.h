@@ -14,9 +14,9 @@
     Class _objectClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
 @property(copy, nonatomic) NSString *dictionaryKeyPath; // @synthesize dictionaryKeyPath=_dictionaryKeyPath;
-- (void).cxx_destruct;
 - (id)processResponseData:(id)arg1 options:(unsigned int)arg2 error:(id *)arg3;
 - (id)processResponseData:(id)arg1 error:(id *)arg2;
 

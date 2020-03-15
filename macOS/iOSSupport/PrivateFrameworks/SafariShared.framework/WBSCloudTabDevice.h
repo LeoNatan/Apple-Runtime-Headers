@@ -29,6 +29,7 @@
 + (unsigned long long)tabCountInDictionary:(id)arg1;
 + (BOOL)isCloudTabDeviceDictionary:(id)arg1;
 + (id)_dictionaryWithDeviceName:(id)arg1 lastModified:(id)arg2 hasDuplicateName:(BOOL)arg3 tabs:(id)arg4 isEphemeralDevice:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCloudKitBookmarkSyncingSupported) BOOL cloudKitBookmarkSyncingSupported; // @synthesize cloudKitBookmarkSyncingSupported=_cloudKitBookmarkSyncingSupported;
 @property(readonly, nonatomic) NSDate *lastModified; // @synthesize lastModified=_lastModified;
 @property(readonly, copy, nonatomic) NSArray *tabs; // @synthesize tabs=_tabs;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) BOOL hasDuplicateName; // @synthesize hasDuplicateName=_hasDuplicateName;
 @property(readonly, nonatomic, getter=isCloseRequestSupported) BOOL closeRequestSupported; // @synthesize closeRequestSupported=_closeRequestSupported;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

@@ -24,6 +24,7 @@
 }
 
 + (id)newWithKeyValuePairs:(id)arg1 variableProvider:(id)arg2 variableUIDelegate:(id)arg3 navigationContext:(id)arg4 localizedNewItemTypeName:(id)arg5 variablesDisabled:(BOOL)arg6 allowedValueTypes:(id)arg7 allowedVariableTypes:(id)arg8 editable:(BOOL)arg9 updateBlock:(CDUnknownBlockType)arg10 size:(const struct CKComponentSize *)arg11;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(readonly, nonatomic) BOOL editable; // @synthesize editable=_editable;
 @property(readonly, nonatomic) BOOL variablesDisabled; // @synthesize variablesDisabled=_variablesDisabled;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(readonly, nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(readonly, nonatomic) NSArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
-- (void).cxx_destruct;
 
 @end
 

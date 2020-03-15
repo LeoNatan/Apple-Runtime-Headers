@@ -17,12 +17,12 @@
     NSError *_errorToReport;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool successToReport; // @synthesize successToReport=_successToReport;
 @property(readonly, nonatomic) NSError *errorToReport; // @synthesize errorToReport=_errorToReport;
 @property(readonly, nonatomic) long long pendingSaveCount; // @synthesize pendingSaveCount=_pendingSaveCount;
 @property(readonly, nonatomic) NSArray *itemsToSchedule; // @synthesize itemsToSchedule=_itemsToSchedule;
 @property(readonly, nonatomic) CDUnknownBlockType saveCompletionBlock; // @synthesize saveCompletionBlock=_saveCompletionBlock;
-- (void).cxx_destruct;
 - (void)_invokeSaveCompletionBlock;
 - (void)_noteDidCompleteSavingItem:(id)arg1 error:(id)arg2;
 - (void)_didCompleteSavingItem:(id)arg1 error:(id)arg2 contextInfo:(void *)arg3;

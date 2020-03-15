@@ -18,9 +18,9 @@
     CDUnknownBlockType _lookupCallbackBlock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preferredLanguage; // @synthesize preferredLanguage=_preferredLanguage;
 @property BOOL platformOverride; // @synthesize platformOverride=_platformOverride;
-- (void).cxx_destruct;
 - (id)parameters;
 - (BOOL)start;
 - (BOOL)startWithLookupBlock:(CDUnknownBlockType)arg1;

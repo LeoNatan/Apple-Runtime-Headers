@@ -26,6 +26,7 @@
     _CPNetworkTimingData *_timingData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CPNetworkTimingData *timingData; // @synthesize timingData=_timingData;
 @property(copy, nonatomic) NSString *partialClientIp; // @synthesize partialClientIp=_partialClientIp;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -35,7 +36,6 @@
 @property(nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
 @property(nonatomic) long long responseSize; // @synthesize responseSize=_responseSize;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

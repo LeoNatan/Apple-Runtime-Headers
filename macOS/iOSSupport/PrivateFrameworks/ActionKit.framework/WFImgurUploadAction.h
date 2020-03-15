@@ -10,6 +10,7 @@
 {
 }
 
+- (id)targetDataInfo;
 - (void)uploadInput:(id)arg1 withAccount:(id)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 

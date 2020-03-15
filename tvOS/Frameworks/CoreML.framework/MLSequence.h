@@ -18,9 +18,9 @@
 + (id)sequenceWithStringArray:(id)arg1;
 + (id)sequenceFromArray:(id)arg1 error:(id *)arg2;
 + (id)emptySequenceWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *int64Values;
 @property(readonly, nonatomic) NSArray *stringValues;
 - (id)initWithArray:(id)arg1 type:(long long)arg2;

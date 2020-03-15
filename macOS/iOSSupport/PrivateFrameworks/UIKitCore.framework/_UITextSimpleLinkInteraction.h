@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (BOOL)_allowItemInteractions;
-- (BOOL)_beginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1 asTap:(BOOL)arg2;
-- (BOOL)_canBeginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1 asTap:(BOOL)arg2;
+- (BOOL)_beginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1 asTap:(BOOL)arg2 precision:(unsigned long long)arg3;
+- (BOOL)_canBeginInteractionSessionForLinkAtPoint:(struct CGPoint)arg1 asTap:(BOOL)arg2 precision:(unsigned long long)arg3;
 - (BOOL)interaction_gestureRecognizerShouldBegin:(id)arg1;
 - (void)highlight:(id)arg1;
 - (void)linkTapped:(id)arg1;

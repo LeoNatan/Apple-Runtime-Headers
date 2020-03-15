@@ -26,8 +26,8 @@
 + (const char *)optstring;
 + (id)usage;
 + (id)usagesummary;
-@property(readonly) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (int)runOnPhotoKitAssetArgumentsAllowAll:(BOOL)arg1 propertySets:(id)arg2 additionalPredicate:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (id)managedObjectContext;
 - (id)photoLibrary;

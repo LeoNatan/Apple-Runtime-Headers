@@ -17,10 +17,10 @@
     CDUnknownBlockType _responseHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
-@property(copy, nonatomic) MPModelLibrarySearchRequest *request; // @synthesize request=_request;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
+@property(copy, nonatomic) MPModelLibrarySearchRequest *request; // @synthesize request=_request;
 - (void)cancel;
 - (void)execute;
 - (id)init;

@@ -18,9 +18,9 @@
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSceneClassificationRequest:) VNSceneClassificationRequest *_sceneClassificationRequest; // @synthesize _sceneClassificationRequest=__sceneClassificationRequest;
 @property(nonatomic) unsigned int taxonomyOptions; // @synthesize taxonomyOptions=_taxonomyOptions;
-- (void).cxx_destruct;
 - (void)evaluate:(id)arg1;
 - (BOOL)validateVisionKitSoftLinkSymbols;
 - (void)encodeWithCoder:(id)arg1;

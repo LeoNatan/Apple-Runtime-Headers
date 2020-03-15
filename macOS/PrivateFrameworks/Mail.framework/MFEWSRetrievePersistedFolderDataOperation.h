@@ -15,9 +15,9 @@
     NSArray *_mailboxURLs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *mailboxURLs; // @synthesize mailboxURLs=_mailboxURLs;
 @property(nonatomic) __weak id <MFEWSRetrievePersistedFolderDataDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)init;
 - (id)initWithMailboxURLs:(id)arg1;

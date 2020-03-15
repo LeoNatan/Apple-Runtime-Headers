@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIEditorialLinkLayout *linkLayout; // @synthesize linkLayout=_layout;
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
 @property(nonatomic) __weak id <SKUIEditorialLinkViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_newButton;
 - (void)_linkButtonAction:(id)arg1;
 - (void)tintColorDidChange;

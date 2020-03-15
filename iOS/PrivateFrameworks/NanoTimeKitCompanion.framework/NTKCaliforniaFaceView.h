@@ -25,7 +25,7 @@
 
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
-+ (long long)uiSensitivity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCircularAnalogDialView *dialView; // @synthesize dialView=_dialView;
 @property(retain, nonatomic) UIImageView *editingNotchBackgroundView; // @synthesize editingNotchBackgroundView=_editingNotchBackgroundView;
 @property(retain, nonatomic) NTKCaliforniaColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
@@ -35,7 +35,6 @@
 @property(retain, nonatomic) NTKRoundedCornerOverlayView *cornerView; // @synthesize cornerView=_cornerView;
 @property(retain, nonatomic) NTKCaliforniaContentView *californiaContentView; // @synthesize californiaContentView=_californiaContentView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)applyToForegroundZoomFraction:(double)arg1 faceScale:(double)arg2;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (double)_editSpeedForCustomEditMode:(long long)arg1 slot:(id)arg2;

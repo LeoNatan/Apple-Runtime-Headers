@@ -15,9 +15,9 @@
     PXCuratedLibraryActionManager *_actionManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCuratedLibraryActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(nonatomic) __weak PXGLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_presentToUserOptionsFromActionPerformers:(id)arg1 forAssetCollectionReference:(id)arg2;
 - (void)performUserInteractionTask;
 - (id)buttonSpriteReference;

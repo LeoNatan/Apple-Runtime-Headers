@@ -41,6 +41,7 @@
 + (id)appWithPluginBundle:(id)arg1;
 + (id)appWithPluginBundle:(id)arg1 extension:(id)arg2;
 + (id)appWithPluginBundle:(id)arg1 pluginKitProxy:(id)arg2 extension:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pluginLoaded; // @synthesize pluginLoaded=_pluginLoaded;
 @property(nonatomic) unsigned int presentationContexts; // @synthesize presentationContexts=_presentationContexts;
 @property(retain, nonatomic) id <PKPlugIn> plugin; // @synthesize plugin=_plugin;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) Class customTypingIndicatorLayerClass; // @synthesize customTypingIndicatorLayerClass=_customTypingIndicatorLayerClass;
 @property(retain, nonatomic) Class dataSourceClass; // @synthesize dataSourceClass=_dataSourceClass;
 @property(retain, nonatomic) Class browserClass; // @synthesize browserClass=_browserClass;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showableInBrowser;
 @property(nonatomic) _Bool isEnabledUnremovableApp;
 @property(nonatomic) _Bool isEnabled;

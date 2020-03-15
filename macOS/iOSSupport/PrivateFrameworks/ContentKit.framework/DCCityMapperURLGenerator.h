@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)generateURLWithMapsLink:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *endCoordinate; // @synthesize endCoordinate=_endCoordinate;
 @property(retain, nonatomic) NSString *startCoordinate; // @synthesize startCoordinate=_startCoordinate;
-- (void).cxx_destruct;
 - (void)populateQueryDictionary;
 - (id)path;
 - (id)host;

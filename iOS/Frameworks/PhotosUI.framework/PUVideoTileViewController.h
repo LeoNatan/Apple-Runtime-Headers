@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     struct CGSize __targetSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool currentImageIsPlaceholder; // @synthesize currentImageIsPlaceholder=_currentImageIsPlaceholder;
 @property(nonatomic) _Bool placeholderVisible; // @synthesize placeholderVisible=_placeholderVisible;
 @property(nonatomic) _Bool playerDidPlayToEnd; // @synthesize playerDidPlayToEnd=_playerDidPlayToEnd;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool canPlayVideo; // @synthesize canPlayVideo=_canPlayVideo;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
-- (void).cxx_destruct;
 - (void)_updateReadyForDisplay;
 - (_Bool)adoptAssetTransitionInfo:(id)arg1;
 - (id)generateAssetTransitionInfo;

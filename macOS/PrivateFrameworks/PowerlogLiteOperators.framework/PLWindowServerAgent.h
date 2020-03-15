@@ -17,9 +17,9 @@
 + (id)entryEventForwardDefinitionTimelineInfo;
 + (id)entryEventForwardDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) SLDataTimelineConfig *config; // @synthesize config=_config;
 @property(retain) NSMutableString *report; // @synthesize report=_report;
-- (void).cxx_destruct;
 - (void)installTimelineConnection;
 - (void)establishConnection;
 - (void)logEventForwardTimelineInfo:(id)arg1 withPID:(int)arg2 withnewProcess:(id)arg3 withSnapshotTimestamp:(id)arg4;

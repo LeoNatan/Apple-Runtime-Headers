@@ -33,8 +33,8 @@
 + (id)tileMapNodeWithTileSet:(id)arg1 columns:(unsigned int)arg2 rows:(unsigned int)arg3 tileSize:(struct CGSize)arg4 fillWithTileGroup:(id)arg5;
 + (id)tileMapNodeWithTileSet:(id)arg1 columns:(unsigned int)arg2 rows:(unsigned int)arg3 tileSize:(struct CGSize)arg4;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *tileSetName; // @synthesize tileSetName=_tileSetName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *tileSetName; // @synthesize tileSetName=_tileSetName;
 - (void)setValue:(id)arg1 forAttributeNamed:(id)arg2;
 - (id)valueForAttributeNamed:(id)arg1;
 - (void)forceRedraw;

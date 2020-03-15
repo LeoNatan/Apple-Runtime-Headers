@@ -32,6 +32,7 @@
 
 + (id)gizmoGraph;
 + (id)companionGraph;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool drawsFutureScoreDots; // @synthesize drawsFutureScoreDots=_drawsFutureScoreDots;
 @property(nonatomic) _Bool drawsDailyScoreLabels; // @synthesize drawsDailyScoreLabels=_drawsDailyScoreLabels;
 @property(nonatomic) _Bool showsBackgroundScoreGuide; // @synthesize showsBackgroundScoreGuide=_showsBackgroundScoreGuide;
@@ -49,7 +50,6 @@
 @property(nonatomic) double horizontalInset; // @synthesize horizontalInset=_horizontalInset;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) ASCompetition *competition; // @synthesize competition=_competition;
-- (void).cxx_destruct;
 - (double)_percentForScoreAtIndex:(unsigned long long)arg1 scores:(id)arg2 maxScore:(unsigned long long)arg3;
 - (id)_allScores;
 - (unsigned long long)_minDailyScore;

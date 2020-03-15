@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _boundingBox;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIImage *imageValue; // @synthesize imageValue=_imageValue;
 @property(retain) NSNumber *dayValue; // @synthesize dayValue=_dayValue;
 @property(retain) NSNumber *monthValue; // @synthesize monthValue=_monthValue;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSAttributedString *overlayString; // @synthesize overlayString=_overlayString;
 @property(retain) NSString *type; // @synthesize type=_type;
 @property(retain) NSArray *vertices; // @synthesize vertices=_vertices;
-- (void).cxx_destruct;
 @property(retain) NSString *formattedStringValue; // @synthesize formattedStringValue=_formattedStringValue;
 @property(retain) NSString *stringValue; // @synthesize stringValue=_stringValue;
 

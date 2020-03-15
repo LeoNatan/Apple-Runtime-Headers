@@ -16,10 +16,10 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFWallpaperParallaxSettings *lockScreenParallaxSettings; // @synthesize lockScreenParallaxSettings=_lockScreenParallaxSettings;
 @property(retain, nonatomic) SBFWallpaperParallaxSettings *homeScreenParallaxSettings; // @synthesize homeScreenParallaxSettings=_homeScreenParallaxSettings;
 @property(retain, nonatomic) PTOutlet *resetWallpaperOutlet; // @synthesize resetWallpaperOutlet=_resetWallpaperOutlet;
-- (void).cxx_destruct;
 - (id)parallaxSettingsForVariant:(long long)arg1;
 - (void)setDefaultValues;
 

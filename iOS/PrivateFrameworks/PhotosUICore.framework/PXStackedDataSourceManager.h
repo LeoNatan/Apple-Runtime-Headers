@@ -16,9 +16,9 @@
     NSArray *_dataSectionManagers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialDataSourceCreated; // @synthesize initialDataSourceCreated=_initialDataSourceCreated;
 @property(copy, nonatomic) NSArray *dataSectionManagers; // @synthesize dataSectionManagers=_dataSectionManagers;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)createInitialDataSource;
 - (void)_updateDataSourceWithSectionChanges:(id)arg1 itemChanges:(id)arg2;

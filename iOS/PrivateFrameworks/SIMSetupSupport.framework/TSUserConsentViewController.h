@@ -19,9 +19,9 @@
 }
 
 + (void)calculateTitleAndDetailsWithName:(id)arg1 consentType:(unsigned long long)arg2 title:(id *)arg3 details:(id *)arg4;
+- (void).cxx_destruct;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long userConsentResponse; // @synthesize userConsentResponse=_userConsentResponse;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)_cancelButtonTapped;
 - (void)_declineButtonTapped;

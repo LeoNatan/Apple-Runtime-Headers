@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     id <UITextGestureClusterViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UITextGestureClusterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) NSDictionary *gestures; // @synthesize gestures=_gestures;
 @property(readonly, retain, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(nonatomic) _Bool inGesture; // @synthesize inGesture=_inGesture;
-- (void).cxx_destruct;
 - (id)recursiveDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)_shouldObscureTextInput;

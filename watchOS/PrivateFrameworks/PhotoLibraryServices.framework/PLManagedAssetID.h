@@ -19,12 +19,12 @@
     NSString *_libraryID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char bundleScope; // @synthesize bundleScope=_bundleScope;
 @property(copy, nonatomic) NSString *libraryID; // @synthesize libraryID=_libraryID;
 @property(copy, nonatomic) NSString *directory; // @synthesize directory=_directory;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)initWithUUID:(id)arg1 filename:(id)arg2 directory:(id)arg3 libraryID:(id)arg4 bundleScope:(unsigned char)arg5;
 - (id)initWithManagedAsset:(id)arg1;
 

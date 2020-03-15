@@ -13,8 +13,8 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)_asynchronousProxyWithHandler:(CDUnknownBlockType)arg1;
 - (void)deleteAllWebHistoryForApplication:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteWebHistoryDuringInterval:(id)arg1 application:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

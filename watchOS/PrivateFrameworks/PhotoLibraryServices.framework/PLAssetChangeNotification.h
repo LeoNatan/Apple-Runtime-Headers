@@ -14,8 +14,8 @@
 }
 
 + (id)notificationWithChangedAssets:(id)arg1;
-@property(copy, nonatomic) NSSet *updatedAssets; // @synthesize updatedAssets=_updatedAssets;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *updatedAssets; // @synthesize updatedAssets=_updatedAssets;
 - (id)description;
 - (id)userInfo;
 - (id)object;

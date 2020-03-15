@@ -17,9 +17,9 @@
 }
 
 + (id)dataSourceWithAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXPhotosDataSourceChange *change; // @synthesize change=_change;
 @property(readonly, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
-- (void).cxx_destruct;
 - (id)selectionSnapshotForAsset:(id)arg1 assetCollection:(id)arg2;
 - (id)inputForItem:(id)arg1;
 - (void)prefetchSections:(id)arg1;

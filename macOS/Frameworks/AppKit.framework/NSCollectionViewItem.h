@@ -34,8 +34,8 @@
 }
 
 + (id)_collectionViewItemForView:(id)arg1;
-@property(setter=_setCollectionView:) __weak NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(setter=_setCollectionView:) __weak NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, copy) NSString *description;
 - (id)_nibWithName:(id)arg1 bundle:(id)arg2;
 - (id)representedObject;

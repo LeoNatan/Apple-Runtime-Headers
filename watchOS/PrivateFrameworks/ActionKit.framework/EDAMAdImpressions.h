@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *impressionTime; // @synthesize impressionTime=_impressionTime;
 @property(retain, nonatomic) NSNumber *impressionCount; // @synthesize impressionCount=_impressionCount;
 @property(retain, nonatomic) NSNumber *adId; // @synthesize adId=_adId;
-- (void).cxx_destruct;
 
 @end
 

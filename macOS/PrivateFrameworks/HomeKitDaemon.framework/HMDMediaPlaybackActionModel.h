@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSSet *accessories; // @dynamic accessories;
 @property(retain, nonatomic) MPPlaybackArchive *encodedPlaybackArchive; // @dynamic encodedPlaybackArchive;
 @property(retain, nonatomic) NSSet *profiles; // @dynamic profiles;
+@property(retain, nonatomic) NSSet *services; // @dynamic services;
 @property(retain, nonatomic) NSNumber *state; // @dynamic state;
 @property(retain, nonatomic) NSNumber *volume; // @dynamic volume;
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     SiriTVUIViewStyle *_style;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) SiriTVUIViewStyle *style; // @synthesize style=_style;
 @property(copy, nonatomic) NSIndexSet *styleSelector; // @synthesize styleSelector=_styleSelector;
-- (void).cxx_destruct;
 - (id)initWithStyleSelector:(id)arg1 style:(id)arg2;
 
 @end

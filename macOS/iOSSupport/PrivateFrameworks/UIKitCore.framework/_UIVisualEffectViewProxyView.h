@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
-@property(copy, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

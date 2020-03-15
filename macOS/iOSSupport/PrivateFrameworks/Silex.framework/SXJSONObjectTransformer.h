@@ -19,9 +19,9 @@
 + (id)mergingTransformerWithKey:(id)arg1;
 + (id)concatenatingTransformerWithKey:(id)arg1;
 + (id)transformerWithKey:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)transformKey:(id)arg1;
 - (id)transformObject:(id)arg1 otherObject:(id)arg2;
 

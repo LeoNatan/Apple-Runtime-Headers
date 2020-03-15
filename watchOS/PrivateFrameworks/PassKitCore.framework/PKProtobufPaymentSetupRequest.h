@@ -15,8 +15,8 @@
     NSString *_appName;
 }
 
-@property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

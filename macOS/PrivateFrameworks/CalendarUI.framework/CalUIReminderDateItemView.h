@@ -15,9 +15,9 @@
 }
 
 + (id)titleForDate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSTextField *dateText; // @synthesize dateText=_dateText;
 @property(readonly) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithDate:(id)arg1;
 
 @end

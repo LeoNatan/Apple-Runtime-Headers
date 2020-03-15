@@ -22,9 +22,9 @@
     int _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak PUICPickerView *pickerView; // @synthesize pickerView=_pickerView;
-- (void).cxx_destruct;
 - (void)_regenerateFeatheringOverlayView;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;

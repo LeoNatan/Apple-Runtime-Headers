@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *selectionValue; // @synthesize selectionValue=_selectionValue;
 @property(readonly, copy, nonatomic) NSUUID *selectionIdentifier; // @synthesize selectionIdentifier=_selectionIdentifier;
 @property(readonly, copy, nonatomic) NSData *dataValue; // @synthesize dataValue=_dataValue;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, copy, nonatomic) NSNumber *numberValue; // @synthesize numberValue=_numberValue;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

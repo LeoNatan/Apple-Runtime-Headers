@@ -21,13 +21,13 @@
     NSArray *_optionItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *optionItems; // @synthesize optionItems=_optionItems;
 @property(retain, nonatomic) HFStaticItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
 @property(retain, nonatomic) HUCameraAccessLevelOptionItemProvider *accessLevelSettingItemProvider; // @synthesize accessLevelSettingItemProvider=_accessLevelSettingItemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HMUser *user; // @synthesize user=_user;
 - (id)showOptionsItem;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (void)_buildItemProvider;
 - (id)itemProviders;

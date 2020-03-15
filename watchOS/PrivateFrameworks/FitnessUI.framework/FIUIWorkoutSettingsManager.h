@@ -20,9 +20,9 @@
 }
 
 + (void)obliterateUserConfiguredWorkoutMetrics;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
 @property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
-- (void).cxx_destruct;
 - (void)_writeToDomainWithShouldUpdateVersion:(_Bool)arg1;
 - (void)_migratePaceViewSettingIfNeeded;
 - (void)_readFromDomain;

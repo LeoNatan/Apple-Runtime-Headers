@@ -18,8 +18,8 @@
 }
 
 + (id)message;
-@property(readonly, copy, nonatomic) BSMutableKeyedSettings *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) BSMutableKeyedSettings *payload; // @synthesize payload=_payload;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

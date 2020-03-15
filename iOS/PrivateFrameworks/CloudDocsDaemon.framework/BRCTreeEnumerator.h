@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)_iterate:(unsigned long long)arg1;
 - (unsigned long long)__iterate:(unsigned long long)arg1;
 - (_Bool)_visitNewParent;

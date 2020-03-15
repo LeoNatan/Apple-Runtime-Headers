@@ -14,9 +14,9 @@
     NSDate *_creationDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType work; // @synthesize work=_workBlock;
-- (void).cxx_destruct;
 - (id)initWithWork:(CDUnknownBlockType)arg1;
 
 @end

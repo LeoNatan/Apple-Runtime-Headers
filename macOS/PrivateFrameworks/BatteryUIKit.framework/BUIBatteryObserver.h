@@ -16,10 +16,10 @@
 }
 
 + (id)createPMObserverWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property struct __CFRunLoopSource *runLoopSourceRef; // @synthesize runLoopSourceRef=_runLoopSourceRef;
 @property(copy) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
 @property(retain) BUIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)_update:(BOOL)arg1;
 - (id)_menuBarStringWithSourceState:(struct BUIPowerSourceTypeStruct)arg1;
 - (void)refreshUI;

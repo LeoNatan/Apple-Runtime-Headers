@@ -16,8 +16,8 @@
 }
 
 + (id)errorForUnableToOpenUserActivity:(id)arg1 withUnderlyingError:(id)arg2;
-@property(readonly, nonatomic) CNLSApplicationWorkspace *applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNLSApplicationWorkspace *applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
 - (id)openUserActivity:(id)arg1 usingBundleIdentifier:(id)arg2 withScheduler:(id)arg3;
 - (id)initWithApplicationWorkspace:(id)arg1;
 - (id)init;

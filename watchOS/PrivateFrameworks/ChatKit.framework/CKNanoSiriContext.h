@@ -17,9 +17,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKNanoSiriMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)updateWithMessageText:(id)arg1 forConversation:(id)arg2;
 - (void)updateWithLastMessageInConversation:(id)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WFSSHKeyConfigurationViewController *_viewController;
 }
 
-@property(nonatomic) __weak WFSSHKeyConfigurationViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFSSHKeyConfigurationViewController *viewController; // @synthesize viewController=_viewController;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)keyConfigurationViewControllerDidFinish:(id)arg1;
 - (void)completeEditing;

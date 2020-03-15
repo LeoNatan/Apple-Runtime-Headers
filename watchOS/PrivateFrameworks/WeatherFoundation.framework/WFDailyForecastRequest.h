@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void)startWithService:(id)arg1;
 - (id)description;
 - (id)initWithLocation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSObject *_entityName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject *entityName; // @synthesize entityName=_entityName;
 @property(retain) NSDate *expiryTime; // @synthesize expiryTime=_expiryTime;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

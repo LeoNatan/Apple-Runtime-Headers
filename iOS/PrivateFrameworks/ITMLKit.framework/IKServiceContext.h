@@ -14,9 +14,9 @@
     IKViewElement *_element;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IKViewElement *element; // @synthesize element=_element;
 @property(readonly, copy, nonatomic) NSDictionary *contextDictionary; // @synthesize contextDictionary=_contextDictionary;
-- (void).cxx_destruct;
 - (id)initWithContextDictionary:(id)arg1 element:(id)arg2;
 
 @end

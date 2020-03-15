@@ -15,10 +15,10 @@
     NSArray *_desaturateViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *desaturateViews; // @synthesize desaturateViews=_desaturateViews;
 @property(retain, nonatomic) NSArray *accentViews; // @synthesize accentViews=_accentViews;
 @property(retain, nonatomic) NTKCalendarRichComplicationContentView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_updateViews:(id)arg1 withFilter:(id)arg2;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;

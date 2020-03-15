@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) id <SKUIArtworkProviding> artworks; // @synthesize artworks=_artworks;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SKUIArtworkProviding> artworks; // @synthesize artworks=_artworks;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)largestArtworkURL;

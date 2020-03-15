@@ -20,9 +20,9 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *updatedPhysicalCards; // @synthesize updatedPhysicalCards=_updatedPhysicalCards;
 @property(nonatomic) unsigned int reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

@@ -18,13 +18,13 @@
     NSOperationQueue *_privateQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fetchFromStoreOnly; // @synthesize fetchFromStoreOnly=_fetchFromStoreOnly;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, copy, nonatomic) NSString *identityProviderUniqueID; // @synthesize identityProviderUniqueID=_identityProviderUniqueID;
 @property(copy, nonatomic) NSString *identityProviderID; // @synthesize identityProviderID=_identityProviderID;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)_fetchAllOperation;

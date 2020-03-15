@@ -16,11 +16,11 @@
     shared_ptr_c14ee569 _gb;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property shared_ptr_c14ee569 gb; // @synthesize gb=_gb;
 @property(retain) NSMutableArray *all_variables; // @synthesize all_variables=_all_variables;
 @property shared_ptr_d082c67d network; // @synthesize network=_network;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)layerNames;
 - (id)variableForLayer:(id)arg1 kind:(unsigned long long)arg2;
 - (id)variables;

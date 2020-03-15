@@ -14,9 +14,9 @@
     NSString *_alternativeTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *alternativeTitle; // @synthesize alternativeTitle=_alternativeTitle;
 @property(nonatomic) _Bool blinking; // @synthesize blinking=_blinking;
-- (void).cxx_destruct;
 - (void)touchesEstimatedPropertiesUpdated:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

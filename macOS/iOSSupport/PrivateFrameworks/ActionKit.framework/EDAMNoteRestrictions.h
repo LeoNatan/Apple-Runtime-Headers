@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *noSharePublicly; // @synthesize noSharePublicly=_noSharePublicly;
 @property(retain, nonatomic) NSNumber *noShare; // @synthesize noShare=_noShare;
 @property(retain, nonatomic) NSNumber *noEmail; // @synthesize noEmail=_noEmail;
 @property(retain, nonatomic) NSNumber *noUpdateContent; // @synthesize noUpdateContent=_noUpdateContent;
 @property(retain, nonatomic) NSNumber *noUpdateTitle; // @synthesize noUpdateTitle=_noUpdateTitle;
-- (void).cxx_destruct;
 
 @end
 

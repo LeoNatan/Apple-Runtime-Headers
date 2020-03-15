@@ -14,9 +14,9 @@
     NSLayoutConstraint *_topLeadingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *topLeadingConstraint; // @synthesize topLeadingConstraint=_topLeadingConstraint;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 
 @end
 

@@ -42,6 +42,7 @@
 }
 
 + (id)secureCodedPropertyKeys;
+- (void).cxx_destruct;
 @property(nonatomic) long long customMaxReplays; // @synthesize customMaxReplays=_customMaxReplays;
 @property(nonatomic) double customTournamentDuration; // @synthesize customTournamentDuration=_customTournamentDuration;
 @property(nonatomic) long long customMinPlayers; // @synthesize customMinPlayers=_customMinPlayers;
@@ -71,7 +72,6 @@
 @property(nonatomic) long long tournamentNameFormat; // @synthesize tournamentNameFormat=_tournamentNameFormat;
 @property(retain, nonatomic) NSString *tournamentName; // @synthesize tournamentName=_tournamentName;
 @property(retain, nonatomic) NSString *tournamentDefinitionID; // @synthesize tournamentDefinitionID=_tournamentDefinitionID;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,8 +14,8 @@
     HUIconView *_iconView;
 }
 
-@property(retain, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) id <HFIconDescriptor> iconDescriptor;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateWithIconDescriptor:(id)arg1 animated:(_Bool)arg2;

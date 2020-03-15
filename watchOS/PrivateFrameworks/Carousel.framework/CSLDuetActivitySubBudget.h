@@ -23,6 +23,7 @@
 }
 
 + (id)subBudgetWithClass:(unsigned int)arg1 refreshCredits:(unsigned int)arg2 maxSimultaenousApps:(unsigned int)arg3 priority:(unsigned int)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableOrderedSet *eligibleBundleIDs; // @synthesize eligibleBundleIDs=_eligibleBundleIDs;
 @property(nonatomic) unsigned int recentSimultaneousApps; // @synthesize recentSimultaneousApps=_recentSimultaneousApps;
 @property(readonly, nonatomic) unsigned int maxSimultaneousApps; // @synthesize maxSimultaneousApps=_maxSimultaneousApps;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(nonatomic) int credits; // @synthesize credits=_credits;
 @property(readonly, nonatomic) unsigned int budgetClass; // @synthesize budgetClass=_budgetClass;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

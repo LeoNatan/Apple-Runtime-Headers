@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <NSObject><NSCopying> _observationsCacheKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NSObject><NSCopying> observationsCacheKey; // @synthesize observationsCacheKey=_observationsCacheKey;
 @property(readonly, nonatomic) VNRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

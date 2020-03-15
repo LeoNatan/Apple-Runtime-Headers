@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
     VUIPreviewInteractionController *_interactionController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIPreviewInteractionController *interactionController; // @synthesize interactionController=_interactionController;
 @property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(readonly, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) _Bool isPresenting; // @synthesize isPresenting=_isPresenting;
 @property(retain, nonatomic) NSIndexPath *currentIndexPath; // @synthesize currentIndexPath=_currentIndexPath;
 @property(nonatomic) __weak id <VUIDialogInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_cleanup;
 - (void)interactionController:(id)arg1 didEndForIndexPath:(id)arg2;
 - (void)interactionController:(id)arg1 didBeginForIndexPath:(id)arg2;

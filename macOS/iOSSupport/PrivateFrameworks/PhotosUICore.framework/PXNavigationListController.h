@@ -27,6 +27,7 @@
 }
 
 + (id)navigateToListItem:(id)arg1 sourceViewController:(id)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isTableViewUpdating; // @synthesize isTableViewUpdating=_isTableViewUpdating;
 @property(nonatomic, setter=_setNeedsUpdateRowHeight:) BOOL _needsUpdateRowHeight; // @synthesize _needsUpdateRowHeight=__needsUpdateRowHeight;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) PXNavigationListDataSection *dataSection; // @synthesize dataSection=_dataSection;
 @property(nonatomic) __weak id <PXNavigationListContainer> container; // @synthesize container=_container;
 @property(readonly, nonatomic) PXNavigationListDataSectionManager *dataSectionManager; // @synthesize dataSectionManager=_dataSectionManager;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)_navigateTolistItem:(id)arg1 animated:(BOOL)arg2;

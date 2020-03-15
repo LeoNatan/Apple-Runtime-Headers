@@ -19,9 +19,9 @@
     SBHSidebarWidgetBootstrappingAdvisor *_sidebarWidgetBootstrappingAdvisor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBHSidebarWidgetBootstrappingAdvisor *sidebarWidgetBootstrappingAdvisor; // @synthesize sidebarWidgetBootstrappingAdvisor=_sidebarWidgetBootstrappingAdvisor;
 @property(retain, nonatomic, getter=_widgetDiscoveryController) WGWidgetDiscoveryController *widgetDiscoveryController; // @synthesize widgetDiscoveryController=_widgetDiscoveryController;
-- (void).cxx_destruct;
 - (void)_homescreenSidebarVisibilityDidChange:(id)arg1;
 - (void)_updateFavoriteWidgetLearning;
 - (void)sidebarWidgetLearningAdvisorDidUpdate:(id)arg1;

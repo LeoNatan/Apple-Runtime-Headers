@@ -15,8 +15,8 @@
     id <NPKPeerPaymentTransactionSummary> _transactionSummary;
 }
 
-@property(retain, nonatomic) id <NPKPeerPaymentTransactionSummary> transactionSummary; // @synthesize transactionSummary=_transactionSummary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <NPKPeerPaymentTransactionSummary> transactionSummary; // @synthesize transactionSummary=_transactionSummary;
 - (id)numberFormatterWithCurrencyCode:(id)arg1;
 - (void)didUpdateWithTransactionSummary:(id)arg1;
 

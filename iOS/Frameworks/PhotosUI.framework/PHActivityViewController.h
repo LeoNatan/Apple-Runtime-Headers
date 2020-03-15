@@ -15,8 +15,8 @@
     NSArray *__PHActivityItems;
 }
 
-@property(copy, nonatomic, setter=_setPHActivityItems:) NSArray *_PHActivityItems; // @synthesize _PHActivityItems=__PHActivityItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setPHActivityItems:) NSArray *_PHActivityItems; // @synthesize _PHActivityItems=__PHActivityItems;
 - (id)activityItemsForActivity:(id)arg1;
 - (id)activityViewControllerForActivity:(id)arg1;
 - (void)_updateActivityItems:(id)arg1;

@@ -17,8 +17,8 @@
     id <WebBookmarksClientDelegateProtocol> _delegate;
 }
 
-@property(nonatomic) __weak id <WebBookmarksClientDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WebBookmarksClientDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 - (void)didFinishFetching;
 - (void)didUpdateProgressWithMessage:(id)arg1;
 - (void)didStopFetchingReadingListItemWithMessage:(id)arg1;

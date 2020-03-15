@@ -14,9 +14,9 @@
     id <ASVFeedbackGenerator> _snapAwayFromScaleFeedbackGenerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ASVFeedbackGenerator> snapAwayFromScaleFeedbackGenerator; // @synthesize snapAwayFromScaleFeedbackGenerator=_snapAwayFromScaleFeedbackGenerator;
 @property(retain, nonatomic) id <ASVFeedbackGenerator> snapToScaleFeedbackGenerator; // @synthesize snapToScaleFeedbackGenerator=_snapToScaleFeedbackGenerator;
-- (void).cxx_destruct;
 - (void)prepare;
 - (id)initWithSnapToGenerator:(id)arg1 snapAwayFromGenerator:(id)arg2;
 

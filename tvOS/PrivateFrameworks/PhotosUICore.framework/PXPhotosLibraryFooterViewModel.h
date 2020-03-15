@@ -22,12 +22,12 @@
     PXCloudQuotaController *_cloudQuotaController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXCloudQuotaController *cloudQuotaController; // @synthesize cloudQuotaController=_cloudQuotaController;
 @property(retain, nonatomic) PXCPLServiceUI *cplServiceUI; // @synthesize cplServiceUI=_cplServiceUI;
 @property(readonly, nonatomic) PXPhotoKitAssetsDataSourceManager *assetsDataSourceManager; // @synthesize assetsDataSourceManager=_assetsDataSourceManager;
 @property(nonatomic) __weak id <PXPhotosLibraryFooterViewModelPresentationDelegate> presentingDelegate; // @synthesize presentingDelegate=_presentingDelegate;
-- (void).cxx_destruct;
-- (struct NSObject *)presentingViewControllerForCloudQuotaController:(id)arg1;
+- (id)presentingViewControllerForCloudQuotaController:(id)arg1;
 - (void)cloudQuotaController:(id)arg1 presentInformationBanner:(id)arg2;
 - (_Bool)serviceUI:(id)arg1 performAction:(long long)arg2;
 - (void)serviceUI:(id)arg1 progressDidChange:(float)arg2;

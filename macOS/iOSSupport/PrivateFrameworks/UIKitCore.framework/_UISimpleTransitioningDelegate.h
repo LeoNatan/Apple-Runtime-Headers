@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     BOOL __suppressCrossFadeNavigationBarAnimation;
 }
 
-@property(nonatomic, setter=_setSuppressCrossFadeNavigationBarAnimation:) BOOL _suppressCrossFadeNavigationBarAnimation; // @synthesize _suppressCrossFadeNavigationBarAnimation=__suppressCrossFadeNavigationBarAnimation;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setSuppressCrossFadeNavigationBarAnimation:) BOOL _suppressCrossFadeNavigationBarAnimation; // @synthesize _suppressCrossFadeNavigationBarAnimation=__suppressCrossFadeNavigationBarAnimation;
 - (BOOL)_navigationControllerShouldCrossFadeNavigationBar:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)initWithAnimator:(id)arg1;

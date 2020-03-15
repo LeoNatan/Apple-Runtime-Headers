@@ -20,6 +20,7 @@
     id <PXUIImageProvider> _mediaProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(readonly, nonatomic) id <PXUIImageProvider> mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
@@ -27,7 +28,6 @@
 @property(readonly, copy, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setAsset:(id)arg1;

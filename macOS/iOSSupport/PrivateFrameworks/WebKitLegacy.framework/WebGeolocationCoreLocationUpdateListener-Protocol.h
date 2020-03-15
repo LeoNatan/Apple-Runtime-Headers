@@ -9,7 +9,7 @@
 @protocol WebGeolocationCoreLocationUpdateListener
 - (void)resetGeolocation;
 - (void)errorOccurred:(NSString *)arg1;
-- (void)positionChanged:(struct GeolocationPosition *)arg1;
+- (void)positionChanged:(struct GeolocationPositionData *)arg1;
 - (void)geolocationAuthorizationDenied;
 - (void)geolocationAuthorizationGranted;
 @end

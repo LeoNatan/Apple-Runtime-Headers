@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *contentIDWithoutScheme; // @synthesize contentIDWithoutScheme=_contentIDWithoutScheme;
 @property BOOL isReferenced; // @synthesize isReferenced=_isReferenced;
 @property(copy) NSString *filename; // @synthesize filename=_filename;
 @property(copy) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithMCAttachment:(id)arg1;

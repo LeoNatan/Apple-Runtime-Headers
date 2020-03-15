@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SCRUIElement *__uiElement;
 }
 
-@property(readonly, nonatomic) SCRUIElement *_uiElement; // @synthesize _uiElement=__uiElement;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SCRUIElement *_uiElement; // @synthesize _uiElement=__uiElement;
 - (id)_dataDetectorItemOutputWithType:(id)arg1;
 - (id)_dataDetectorTypeAtPoint:(struct CGPoint)arg1;
 - (BOOL)openDataDetectorMenuAtPoint:(struct CGPoint)arg1;

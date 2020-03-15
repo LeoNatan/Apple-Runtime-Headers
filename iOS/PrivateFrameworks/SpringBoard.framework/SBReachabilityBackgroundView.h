@@ -24,10 +24,10 @@
     double _homeGrabberAdditionalOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double homeGrabberAdditionalOffset; // @synthesize homeGrabberAdditionalOffset=_homeGrabberAdditionalOffset;
 @property(nonatomic) double containerViewYOffset; // @synthesize containerViewYOffset=_containerViewYOffset;
 @property(nonatomic) long long wallpaperVariant; // @synthesize wallpaperVariant=_wallpaperVariant;
-- (void).cxx_destruct;
 - (void)_setupHitTestBlockerView;
 - (void)_setupHomeGrabberView;
 - (void)_updateChevronPathForUpFraction:(double)arg1;

@@ -25,6 +25,7 @@
 }
 
 + (id)_adminsWithError:(id *)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reply; // @synthesize reply=_reply;
 @property(retain, nonatomic) LAContext *context; // @synthesize context=_context;
 @property __weak NSTextField *authenticationReasonLabel; // @synthesize authenticationReasonLabel=_authenticationReasonLabel;
@@ -35,7 +36,6 @@
 @property __weak SFIconView *iconView; // @synthesize iconView=_iconView;
 @property(copy, nonatomic) NSString *localizedAuthenticationReason; // @synthesize localizedAuthenticationReason=_localizedAuthenticationReason;
 @property(nonatomic) __weak id <LARUIAuthenticationDialogDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setEnabled:(BOOL)arg1;
 - (void)_setupWindow;
 - (void)cancelClicked:(id)arg1;

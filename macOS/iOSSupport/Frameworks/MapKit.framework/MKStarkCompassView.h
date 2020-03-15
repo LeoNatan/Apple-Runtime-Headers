@@ -21,10 +21,10 @@
     int _compassPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(nonatomic) BOOL contentsHidden; // @synthesize contentsHidden=_contentsHidden;
 @property(nonatomic) int compassPoint; // @synthesize compassPoint=_compassPoint;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;

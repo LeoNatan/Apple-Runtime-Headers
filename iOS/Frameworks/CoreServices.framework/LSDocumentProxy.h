@@ -29,12 +29,12 @@
 + (id)documentProxyForURL:(id)arg1;
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 isContentManaged:(_Bool)arg4 sourceAuditToken:(const CDStruct_4c969caf *)arg5;
 + (id)documentProxyForURL:(id)arg1 isContentManaged:(_Bool)arg2 sourceAuditToken:(const CDStruct_4c969caf *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
 @property(readonly, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic, getter=isContentManaged) _Bool contentManaged; // @synthesize contentManaged=_isContentManaged;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) const CDStruct_4c969caf *managedSourceAuditToken;
 @property(readonly, nonatomic) _Bool sourceIsManaged;
 - (id)debugDescription;

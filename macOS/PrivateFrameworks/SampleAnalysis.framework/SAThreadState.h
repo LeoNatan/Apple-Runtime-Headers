@@ -56,6 +56,7 @@
 + (id)stateWithoutReferencesFromPAStyleSerializedThread:(const CDStruct_f92c3047 *)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_ace3f587 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property unsigned int state; // @synthesize state=_state;
 @property BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property BOOL isIdleWorkQueue; // @synthesize isIdleWorkQueue=_isIdleWorkQueue;
@@ -88,7 +89,6 @@
 @property unsigned long long startSampleIndex; // @synthesize startSampleIndex=_startSampleIndex;
 @property(retain) SATimestamp *endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(retain) SATimestamp *startTimestamp; // @synthesize startTimestamp=_startTimestamp;
-- (void).cxx_destruct;
 - (id)debugDescriptionWithThread:(id)arg1;
 - (BOOL)hasSameStackAs:(id)arg1;
 - (id)stack;
@@ -126,9 +126,9 @@
 @property(readonly) BOOL isWaiting;
 - (void)applyPAStyleSampleTimestamp:(id)arg1;
 - (void)populateReferencesUsingPAStyleSerializedThread:(const CDStruct_f92c3047 *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
-- (void)populateReferencesUsingBuffer:(const CDStruct_ace3f587 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_cb201eb0 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_ace3f587 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_cb201eb0 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

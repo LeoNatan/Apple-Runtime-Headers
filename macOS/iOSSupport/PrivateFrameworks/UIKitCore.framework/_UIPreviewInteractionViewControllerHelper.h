@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
     id <UIViewControllerContextTransitioning> _currentTransitionContext;
 }
 
-@property(readonly, nonatomic) _UIPreviewInteractionViewControllerPresentation *viewControllerPresentation; // @synthesize viewControllerPresentation=_viewControllerPresentation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _UIPreviewInteractionViewControllerPresentation *viewControllerPresentation; // @synthesize viewControllerPresentation=_viewControllerPresentation;
 - (void)_performDismissalCompletionIfNeeded;
 - (void)_finalizeAfterViewControllerPresentation;
 - (id)customPresentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;

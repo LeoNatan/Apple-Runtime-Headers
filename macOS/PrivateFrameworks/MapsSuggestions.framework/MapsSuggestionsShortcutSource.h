@@ -21,8 +21,8 @@
 
 + (unsigned long long)disposition;
 + (BOOL)isEnabled;
-@property(retain, nonatomic) MapsSuggestionsShortcutManager *shortcutManager; // @synthesize shortcutManager=_shortcutManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MapsSuggestionsShortcutManager *shortcutManager; // @synthesize shortcutManager=_shortcutManager;
 - (void)meCardReader:(id)arg1 didUpdateMeCard:(id)arg2;
 - (BOOL)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)canProduceEntriesOfType:(long long)arg1;
@@ -30,9 +30,9 @@
 - (void)stop;
 - (void)start;
 - (void)_updateSuggestionEntries;
-- (void)_treatShortcuts:(struct NSArray *)arg1 error:(id)arg2;
-- (id)initWithDelegate:(id)arg1 name:(struct NSString *)arg2;
-- (void)_renameDuplicateMeCardTypes:(struct NSArray *)arg1;
+- (void)_treatShortcuts:(id)arg1 error:(id)arg2;
+- (id)initWithDelegate:(id)arg1 name:(id)arg2;
+- (void)_renameDuplicateMeCardTypes:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

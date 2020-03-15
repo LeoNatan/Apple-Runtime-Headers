@@ -21,6 +21,7 @@
     KHTextAlignmentController *_alignmentPicker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHTextAlignmentController *alignmentPicker; // @synthesize alignmentPicker=_alignmentPicker;
 @property(retain, nonatomic) KHTextSpacingController *spacingPicker; // @synthesize spacingPicker=_spacingPicker;
 @property(retain, nonatomic) KHFontPickerController *fontPicker; // @synthesize fontPicker=_fontPicker;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) KHInspectorTileViewController *textAlignmentTileController; // @synthesize textAlignmentTileController=_textAlignmentTileController;
 @property(retain, nonatomic) KHInspectorTileViewController *fontTileController; // @synthesize fontTileController=_fontTileController;
 @property(retain, nonatomic) KHTextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)textViewDidChangeTypingAttributes:(id)arg1;
 - (void)textViewDidChangeSelection:(id)arg1;
 - (id)badgeImage;

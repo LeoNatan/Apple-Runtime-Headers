@@ -17,10 +17,10 @@
 
 + (id)itemWithProduct:(id)arg1 selectionHandler:(CDUnknownBlockType)arg2;
 + (id)itemWithTitle:(id)arg1 selectionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 @property(nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)handleSelectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end

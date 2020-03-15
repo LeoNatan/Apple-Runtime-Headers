@@ -20,8 +20,8 @@
     int _transportType;
     MapsSuggestionsManager *_manager;
     GEOLocationShifter *_locationShifter;
-    struct NSMutableDictionary *_etaTitleFormatters;
-    struct NSMutableDictionary *_distanceTitleFormatters;
+    NSMutableDictionary *_etaTitleFormatters;
+    NSMutableDictionary *_distanceTitleFormatters;
     _Bool _shouldBeRunning;
     MapsSuggestionsETARequester *_etaRequester;
     MapsSuggestionsDonater *_donater;
@@ -40,6 +40,7 @@
 }
 
 + (_Bool)_isLocationShiftRequiredForLocation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MapsSuggestionsPredictor *predictor; // @synthesize predictor=_predictor;
 @property(retain, nonatomic) MapsSuggestionsNetworkRequester *networkRequester; // @synthesize networkRequester=_networkRequester;
 @property(retain, nonatomic) MapsSuggestionsMutableWeakEntries *trackedEntries; // @synthesize trackedEntries=_trackedEntries;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property(nonatomic) int mapType; // @synthesize mapType=_mapType;
 @property(copy) MapsSuggestionsETARequirements *requirements; // @synthesize requirements=_requirements;
-- (void).cxx_destruct;
 - (void)_shiftLocation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2 callbackQueue:(id)arg3;
 - (void)_prepareShiftForLocation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2 withShiftRequestBlock:(CDUnknownBlockType)arg3;
 - (id)location;
@@ -65,8 +65,8 @@
 - (void)_requestDistances;
 - (void)_decorateFlightInfoForEntry:(id)arg1;
 - (void)_decorateETA:(id)arg1 forEntry:(id)arg2;
-- (void)trackSuggestionEntries:(struct NSArray *)arg1 transportType:(int)arg2;
-- (void)_captureSignalsFromEntries:(struct NSArray *)arg1;
+- (void)trackSuggestionEntries:(id)arg1 transportType:(int)arg2;
+- (void)_captureSignalsFromEntries:(id)arg1;
 - (id)_bestValidOfflineETAForEntry:(id)arg1 destinationKey:(id)arg2;
 - (_Bool)_isMatchingTransportType:(int)arg1;
 - (_Bool)_isUnusableETA:(id)arg1;

@@ -54,6 +54,7 @@
 + (id)helpViewControllerWithIdentifier:(id)arg1 version:(id)arg2;
 + (id)helpViewControllerWithLocalHelpBookFileURL:(id)arg1;
 + (id)helpViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HLPHelpTableOfContentViewController *tableOfContentViewController; // @synthesize tableOfContentViewController=_tableOfContentViewController;
 @property(retain, nonatomic) HLPHelpLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) HLPReachabilityManager *reachabilityManager; // @synthesize reachabilityManager=_reachabilityManager;
@@ -73,7 +74,6 @@
 @property(nonatomic) _Bool showTopicNameAsTitle; // @synthesize showTopicNameAsTitle=_showTopicNameAsTitle;
 @property(nonatomic) _Bool displayHelpTopicsOnly; // @synthesize displayHelpTopicsOnly=_displayHelpTopicsOnly;
 @property(nonatomic) _Bool hideDoneButton; // @synthesize hideDoneButton=_hideDoneButton;
-- (void).cxx_destruct;
 - (void)showHelpBookInfo:(id)arg1;
 - (void)reachabilityManagerConnectionStatusChanged:(id)arg1 connected:(_Bool)arg2;
 - (void)helpTopicViewControllerShowHelpBookInfo:(id)arg1;

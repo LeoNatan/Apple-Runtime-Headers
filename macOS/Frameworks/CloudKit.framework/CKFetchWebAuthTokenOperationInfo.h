@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSString *APIToken; // @synthesize APIToken=_APIToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *APIToken; // @synthesize APIToken=_APIToken;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

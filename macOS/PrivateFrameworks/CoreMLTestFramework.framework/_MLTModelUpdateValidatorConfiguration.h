@@ -17,11 +17,11 @@
     id <MLBatchProvider> _validationDataProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <MLBatchProvider> validationDataProvider; // @synthesize validationDataProvider=_validationDataProvider;
 @property BOOL useBatchPrediction; // @synthesize useBatchPrediction=_useBatchPrediction;
 @property(retain) _MLTLogger *logger; // @synthesize logger=_logger;
 @property(retain) NSString *recipePath; // @synthesize recipePath=_recipePath;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

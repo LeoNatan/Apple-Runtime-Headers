@@ -24,6 +24,7 @@
 
 + (void)processAccountChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)changeTokenURLForStoreIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceNilChangeDictionaryResponse; // @synthesize forceNilChangeDictionaryResponse=_forceNilChangeDictionaryResponse;
 @property(retain, nonatomic) NSURL *changeTokenURL; // @synthesize changeTokenURL=_changeTokenURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(nonatomic) long long storeType; // @synthesize storeType=_storeType;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
-- (void).cxx_destruct;
 - (id)asyncDaemonWithErrorHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <SYDDaemonProtocol> synchronousDaemon;
 - (long long)maximumTotalDataLength;

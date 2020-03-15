@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     CKTwoButtonInlineNotificationView *_inlineNotificationView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKTwoButtonInlineNotificationView *inlineNotificationView; // @synthesize inlineNotificationView=_inlineNotificationView;
 @property(nonatomic) __weak id <CKUnexpectedlyLoggedOutNotificationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 @property(nonatomic) _Bool visible; // @dynamic visible;
 - (void)inlineNotificationView:(id)arg1 didChangeRequestedHeight:(double)arg2;

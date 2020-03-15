@@ -16,11 +16,11 @@
     EKViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldScrollToTop; // @synthesize shouldScrollToTop=_shouldScrollToTop;
 @property BOOL isEnabled; // @synthesize isEnabled=_isEnabled;
 @property __weak EKViewController *viewController; // @synthesize viewController=_viewController;
 @property __weak EKUIGadgetContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)scrollToTop;
 - (void)dealloc;

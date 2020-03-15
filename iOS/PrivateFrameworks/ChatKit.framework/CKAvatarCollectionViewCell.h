@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) CKAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 - (void)layoutSubviews;
 - (void)configureWithEntity:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

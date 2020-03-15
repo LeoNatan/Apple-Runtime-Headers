@@ -24,10 +24,10 @@
 }
 
 + (id)notificationManagementAlertControllerForNotificationRequest:(id)arg1 withPresentingView:(id)arg2 settingsDelegate:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCNotificationRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSURL *settingsURL; // @synthesize settingsURL=_settingsURL;
 @property(nonatomic) __weak id <NCNotificationManagementControllerSettingsDelegate> settingsDelegate; // @synthesize settingsDelegate=_settingsDelegate;
-- (void).cxx_destruct;
 - (void)_setAllowsCriticalAlerts:(_Bool)arg1 forNotificationRequest:(id)arg2 withSectionIdentifier:(id)arg3;
 - (void)_setDeliverQuietly:(_Bool)arg1 forNotificationRequest:(id)arg2 withSectionIdentifier:(id)arg3;
 - (void)_setAllowsNotifications:(_Bool)arg1 forNotificationRequest:(id)arg2 withSectionIdentifier:(id)arg3;

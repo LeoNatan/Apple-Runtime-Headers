@@ -15,10 +15,10 @@
     unsigned long long _settingsContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long settingsContext; // @synthesize settingsContext=_settingsContext;
 @property(readonly, copy, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 @property(readonly, nonatomic) unsigned long long motionDetectionType; // @synthesize motionDetectionType=_motionDetectionType;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithDetectionType:(unsigned long long)arg1 cameraProfiles:(id)arg2 settingsContext:(unsigned long long)arg3;
 

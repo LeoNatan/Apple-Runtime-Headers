@@ -17,10 +17,10 @@
     IXDemotingAppInstallCoordinator *_coordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IXDemotingAppInstallCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)coordinator:(id)arg1 canceledWithReason:(id)arg2 client:(unsigned long long)arg3;
 - (void)coordinatorDidCompleteSuccessfully:(id)arg1;
 

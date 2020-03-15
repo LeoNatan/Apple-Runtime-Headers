@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_messageSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableIndexSet *messageSet; // @synthesize messageSet=_messageSet;
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (void)flush;
 - (void)cancel;
 - (_Bool)handleMessage:(id)arg1;

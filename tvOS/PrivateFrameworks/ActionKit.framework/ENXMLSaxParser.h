@@ -144,9 +144,9 @@
     NSArray *_dtds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isHTML; // @synthesize isHTML=_isHTML;
 @property(nonatomic) __weak id <ENXMLSaxParserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

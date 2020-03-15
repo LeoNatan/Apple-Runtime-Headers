@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_matches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *matches; // @synthesize matches=_matches;
 @property(readonly, copy, nonatomic) NSString *displayValue; // @synthesize displayValue=_displayValue;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (id)initWithMatches:(id)arg1 displayValue:(id)arg2 label:(id)arg3;
 
 @end

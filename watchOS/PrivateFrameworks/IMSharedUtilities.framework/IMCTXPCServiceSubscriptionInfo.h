@@ -14,9 +14,9 @@
     NSArray *_phoneNumbersOfActiveSubscriptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *phoneNumbersOfActiveSubscriptions; // @synthesize phoneNumbersOfActiveSubscriptions=_phoneNumbersOfActiveSubscriptions;
 @property(retain, nonatomic) CTXPCServiceSubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
-- (void).cxx_destruct;
 - (id)__im_contactPreferredSubscriptionContextForChatHandleIDs:(id)arg1;
 - (id)_senderIdentityManager;
 - (id)__im_subscriptionContextForSenderIdentity:(id)arg1;

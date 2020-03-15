@@ -43,8 +43,10 @@
     NSDateComponents *_greenCarValidityStartDate;
 }
 
++ (Class)equalityClass;
 + (BOOL)supportsSecureCoding;
 + (id)passPropertiesForPass:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasShinkansenTicket; // @synthesize hasShinkansenTicket=_hasShinkansenTicket;
 @property(nonatomic) BOOL hasGreenCarTicket; // @synthesize hasGreenCarTicket=_hasGreenCarTicket;
 @property(copy, nonatomic) NSDateComponents *greenCarValidityStartDate; // @synthesize greenCarValidityStartDate=_greenCarValidityStartDate;
@@ -73,7 +75,8 @@
 @property(nonatomic, getter=isInShinkansenStation) BOOL inShinkansenStation; // @synthesize inShinkansenStation=_inShinkansenStation;
 @property(nonatomic, getter=isGreenCarTicketUsed) BOOL greenCarTicketUsed; // @synthesize greenCarTicketUsed=_greenCarTicketUsed;
 @property(nonatomic, getter=isShinkansenTicketActive) BOOL shinkansenTicketActive; // @synthesize shinkansenTicketActive=_shinkansenTicketActive;
-- (void).cxx_destruct;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)_stringForRow:(id)arg1 seat:(id)arg2;
 - (BOOL)isInStation;
 - (id)displayableShinkansenSecondarySeat;

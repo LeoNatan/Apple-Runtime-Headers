@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUNetLinkManager : NSObject
 {
-    struct NSMutableSet *_endpoints;
+    NSMutableSet *_endpoints;
     unsigned int _endpointChanges;
     _Bool _hasIPv4Endpoint;
     _Bool _hasIPv6Endpoint;
@@ -33,10 +33,10 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_monitorSendPacketToEndpoint:(id)arg1;
 - (void)_monitorReadPacket:(int)arg1;
 - (void)_monitorSetupSocket:(int)arg1;

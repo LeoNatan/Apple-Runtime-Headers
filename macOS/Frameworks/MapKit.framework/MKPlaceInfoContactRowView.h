@@ -31,13 +31,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)icon;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(retain, nonatomic) NSLayoutConstraint *valueToBottomConstraint; // @synthesize valueToBottomConstraint=_valueToBottomConstraint;
 @property(copy, nonatomic) CDUnknownBlockType iconSelectedBlock; // @synthesize iconSelectedBlock=_iconSelectedBlock;
 @property(readonly, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) _MKUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int analyticsTarget;
 - (void)_menuDone;
 - (void)rightMouseDown:(id)arg1;

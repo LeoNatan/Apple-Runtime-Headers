@@ -15,8 +15,8 @@
     NSString *_userInterfaceType;
 }
 
-@property(readonly, nonatomic) NSString *userInterfaceType; // @synthesize userInterfaceType=_userInterfaceType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *userInterfaceType; // @synthesize userInterfaceType=_userInterfaceType;
 - (_Bool)shouldReverseLayoutDirection;
 - (int)currentApplicationStateForWFApplicationContext:(id)arg1;
 - (id)applicationForWFApplicationContext:(id)arg1;

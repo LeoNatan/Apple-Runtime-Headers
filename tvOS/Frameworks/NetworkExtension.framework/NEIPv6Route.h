@@ -24,10 +24,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)defaultRoute;
 + (void)initGlobals;
+- (void).cxx_destruct;
 @property(copy) NSString *gatewayAddress; // @synthesize gatewayAddress=_gatewayAddress;
 @property(readonly) NSNumber *destinationNetworkPrefixLength; // @synthesize destinationNetworkPrefixLength=_destinationNetworkPrefixLength;
 @property(readonly) NSString *destinationAddress; // @synthesize destinationAddress=_destinationAddress;
-- (void).cxx_destruct;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;

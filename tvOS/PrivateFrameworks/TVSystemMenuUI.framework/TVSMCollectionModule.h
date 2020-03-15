@@ -19,10 +19,10 @@
 }
 
 + (long long)buttonStyle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) __weak id <TVSMModuleDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)contentModuleViewControllerDidTriggerAction:(id)arg1;
 @property(readonly, nonatomic) NSArray *childModules;
 @property(readonly, nonatomic) UIViewController<TVSMModuleContentViewController> *contentViewController;

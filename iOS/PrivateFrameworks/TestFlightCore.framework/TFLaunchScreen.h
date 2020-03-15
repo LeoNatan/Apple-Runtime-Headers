@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSURL *_howToScreenshotSupportUrl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *howToScreenshotSupportUrl; // @synthesize howToScreenshotSupportUrl=_howToScreenshotSupportUrl;
 @property(readonly, copy, nonatomic) NSString *testerNotes; // @synthesize testerNotes=_testerNotes;
 @property(readonly, nonatomic) TFAppLockup *lockup; // @synthesize lockup=_lockup;
-- (void).cxx_destruct;
 - (id)initWithLockup:(id)arg1 testerNotes:(id)arg2 howToScreenshotSupportUrl:(id)arg3;
 
 @end

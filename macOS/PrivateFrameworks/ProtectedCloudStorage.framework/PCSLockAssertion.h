@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     PCSLockManager *_manager;
 }
 
+- (void).cxx_destruct;
 @property _Bool held; // @synthesize held=_held;
 @property(retain) PCSLockManager *manager; // @synthesize manager=_manager;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)dropAssertion;
 - (_Bool)holdAssertion;

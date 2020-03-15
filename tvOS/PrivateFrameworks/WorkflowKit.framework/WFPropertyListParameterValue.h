@@ -22,14 +22,14 @@
 + (Class)classForValueType:(long long)arg1;
 + (id)defaultStateForValueType:(long long)arg1;
 + (id)localizedTitleForValueType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WFParameterState> state; // @synthesize state=_state;
 @property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)containedVariables;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)serializedRepresentation;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 - (id)initWithType:(long long)arg1 state:(id)arg2;

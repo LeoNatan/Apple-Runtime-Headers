@@ -33,10 +33,10 @@
 + (id)mergePersistedChanges:(id)arg1;
 + (id)handlerQueue;
 + (void)pl_simulateChangeWithAssetContainerList:(id)arg1 photoLibrary:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHPersistentChangeToken *changeToken; // @synthesize changeToken=_changeToken;
 @property(readonly, nonatomic) NSDictionary *deletedUuidsByObjectId; // @synthesize deletedUuidsByObjectId=_deletedUuidsByObjectId;
 @property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)_formatEncodedDictionary:(id)arg1 withDecodeBlock:(CDUnknownBlockType)arg2;
 - (id)_formatedDeletedUUidsByObjectId;
 - (id)_pl_prettyDescriptionWithIndent:(long long)arg1;

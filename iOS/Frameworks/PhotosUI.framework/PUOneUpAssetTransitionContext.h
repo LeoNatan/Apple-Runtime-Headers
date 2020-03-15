@@ -22,6 +22,7 @@
 
 + (id)oneUpAssetTransitionContextWithContainerView:(id)arg1 fromView:(id)arg2 snapshotView:(id)arg3 transitionInfo:(id)arg4 trailingAssetTransitionInfo:(id)arg5 leadingAssetTransitionInfo:(id)arg6;
 + (id)oneUpAssetTransitionContextWithContainerView:(id)arg1 fromView:(id)arg2 snapshotView:(id)arg3 transitionInfo:(id)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setAnimationBlock:) CDUnknownBlockType animationBlock; // @synthesize animationBlock=_animationBlock;
 @property(retain, nonatomic, setter=_setLeadingAssetTransitionInfo:) PUAssetTransitionInfo *leadingAssetTransitionInfo; // @synthesize leadingAssetTransitionInfo=_leadingAssetTransitionInfo;
 @property(retain, nonatomic, setter=_setTrailingAssetTransitionInfo:) PUAssetTransitionInfo *trailingAssetTransitionInfo; // @synthesize trailingAssetTransitionInfo=_trailingAssetTransitionInfo;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic, setter=_setSnapshotView:) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic, setter=_setFromView:) UIView *fromView; // @synthesize fromView=_fromView;
 @property(retain, nonatomic, setter=_setContainerView:) UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (id)oneUpTransitionContextWithAnimationBlock:(CDUnknownBlockType)arg1;
 - (id)oneUpTransitionContextWithContextShouldHideBackground:(_Bool)arg1;
 - (id)oneUpTransitionContextWithContextWithContainerView:(id)arg1;

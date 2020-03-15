@@ -17,15 +17,15 @@
     NSString *persistentIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 @property(readonly, copy, nonatomic) NSString *keyDomain;
 - (void)setKeySpecifier:(id)arg1;
 @property(readonly, copy, nonatomic) _SFKeySpecifier *keySpecifier;
 @property(copy, nonatomic) NSString *localizedDescription;
 @property(copy, nonatomic) NSString *localizedLabel;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithSpecifier:(id)arg1 domain:(struct NSString *)arg2;
+- (id)initWithSpecifier:(id)arg1 domain:(id)arg2;
 - (id)initWithSpecifier:(id)arg1;
 
 // Remaining properties

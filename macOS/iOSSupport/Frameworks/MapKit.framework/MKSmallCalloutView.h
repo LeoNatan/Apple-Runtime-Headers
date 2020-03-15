@@ -53,9 +53,9 @@ __attribute__((visibility("hidden")))
     UIView *_titlesContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(readonly, nonatomic) UIView *titlesContainerView; // @synthesize titlesContainerView=_titlesContainerView;
-- (void).cxx_destruct;
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 @property(retain, nonatomic) UIView *detailView;

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)isValidShortPromptType:(unsigned long long)arg1;
 + (id)eventWithText:(id)arg1 fallbackPrompt:(unsigned long long)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) unsigned long long shortPromptType; // @synthesize shortPromptType=_shortPromptType;
 @property(readonly, copy, nonatomic) NSString *textToSpeak; // @synthesize textToSpeak=_textToSpeak;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (_Bool)isEqualToEvent:(id)arg1;
 - (id)description;
 - (id)initWithText:(id)arg1 fallbackPrompt:(unsigned long long)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;

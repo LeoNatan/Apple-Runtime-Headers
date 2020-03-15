@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pickerPreviewWithFrame:(struct CGRect)arg1 forItem:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
 @property(retain, nonatomic) UIView *thumbnailContentView; // @synthesize thumbnailContentView=_thumbnailContentView;
 @property(readonly, nonatomic) UIView *previewView; // @synthesize previewView=_previewView;
-- (void).cxx_destruct;
 - (void)updatePreviewWithItem:(id)arg1;
 - (void)setupPreview;
 - (void)layoutSubviews;

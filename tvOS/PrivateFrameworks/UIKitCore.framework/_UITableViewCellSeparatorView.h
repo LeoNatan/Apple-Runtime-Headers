@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool _drawsWithVibrantLightMode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffect *separatorEffect; // @synthesize separatorEffect=_separatorEffect;
 @property(nonatomic) _Bool drawsWithVibrantLightMode; // @synthesize drawsWithVibrantLightMode=_drawsWithVibrantLightMode;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 + (double)heightOfSmileCellWithComments:(id)arg1 forWidth:(double)arg2 isVideo:(_Bool)arg3 forInterfaceOrientation:(long long)arg4;
 + (id)_attributedStringForComments:(id)arg1 color:(id)arg2 isVideo:(_Bool)arg3;
 + (id)_smileStringForComments:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UIView *styledSeparatorView; // @synthesize styledSeparatorView=_styledSeparatorView;
 @property(nonatomic) _Bool usesCompactSeparators; // @synthesize usesCompactSeparators=_usesCompactSeparators;
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
 @property(copy, nonatomic) NSOrderedSet *userLikes; // @synthesize userLikes=_userLikes;
 @property(readonly, retain, nonatomic) UILabel *smileContentLabel; // @synthesize smileContentLabel=_smileContentLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateContent;
 - (void)prepareForReuse;

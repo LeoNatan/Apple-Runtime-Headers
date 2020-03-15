@@ -17,9 +17,9 @@
     _Bool _fromOTASoftwareUpdate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDark) _Bool dark; // @synthesize dark=_isDark;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

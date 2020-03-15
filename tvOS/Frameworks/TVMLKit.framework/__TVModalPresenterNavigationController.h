@@ -22,9 +22,9 @@
     NSArray *_previousViewControllers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsMenuDismissal; // @synthesize allowsMenuDismissal=_allowsMenuDismissal;
 @property(retain, nonatomic) NSArray *previousViewControllers; // @synthesize previousViewControllers=_previousViewControllers;
-- (void).cxx_destruct;
 - (id)activeDocument;
 - (void)updatePreferredFocusedViewStateForFocus:(_Bool)arg1;
 - (void)_dismissForLastViewController:(_Bool)arg1;

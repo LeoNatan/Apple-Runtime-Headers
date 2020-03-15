@@ -14,9 +14,9 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSDate *date; // @synthesize date=_date;
 @property(readonly) unsigned long long absoluteTime; // @synthesize absoluteTime=_absoluteTime;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long absoluteTimeNanoSeconds;
 - (id)initWithAbsoluteTime:(unsigned long long)arg1 date:(id)arg2;
 - (id)init;

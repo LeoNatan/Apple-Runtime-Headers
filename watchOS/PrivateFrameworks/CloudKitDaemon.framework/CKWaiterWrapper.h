@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSString *_personaID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) NSArray *zoneIDs; // @synthesize zoneIDs=_zoneIDs;
 @property(readonly, nonatomic) id <CKDZoneGatekeeperWaiter> waiter; // @synthesize waiter=_waiter;
-- (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)description;
 - (void)invokeCompletionHandler:(_Bool)arg1;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSArray *_constraintsToTargetView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraintsToTargetView; // @synthesize constraintsToTargetView=_constraintsToTargetView;
 @property(retain, nonatomic, getter=_targetView, setter=_setTargetView:) UIView<AVFocusProxyViewDelegateProtocol> *targetView; // @synthesize targetView=_targetView;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (_Bool)canBecomeFocused;

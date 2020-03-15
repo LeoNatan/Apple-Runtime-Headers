@@ -13,8 +13,8 @@
     NSDictionary *_wordTimings;
 }
 
-@property(retain, nonatomic) NSDictionary *wordTimings; // @synthesize wordTimings=_wordTimings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *wordTimings; // @synthesize wordTimings=_wordTimings;
 - (id)estimatedTTSWordTimingForText:(id)arg1 withLanguage:(id)arg2 withGender:(long long)arg3;
 - (id)timingPlistForLanguage:(id)arg1;
 - (id)timingInfosFrom:(id)arg1 withText:(id)arg2;

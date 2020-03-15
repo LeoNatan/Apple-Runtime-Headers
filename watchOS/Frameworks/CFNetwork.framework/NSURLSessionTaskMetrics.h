@@ -17,8 +17,8 @@
 
 + (id)new;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) __CFN_TaskMetrics *_metrics; // @synthesize _metrics=__metrics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __CFN_TaskMetrics *_metrics; // @synthesize _metrics=__metrics;
 - (id)description;
 @property(readonly) unsigned int redirectCount;
 @property(readonly, copy) NSDateInterval *taskInterval;

@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) BOOL canCancel; // @synthesize canCancel=_canCancel;
 @property(readonly, nonatomic) double estimatedTimeRemaining; // @synthesize estimatedTimeRemaining=_estimatedTimeRemaining;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) unsigned long long bytesTotal; // @synthesize bytesTotal=_bytesTotal;
 @property(readonly, nonatomic) unsigned long long bytesDownloaded; // @synthesize bytesDownloaded=_bytesDownloaded;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

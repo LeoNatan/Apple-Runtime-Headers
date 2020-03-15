@@ -18,10 +18,10 @@
 
 + (Class)dataMapperClassForOptions:(unsigned long long)arg1;
 + (BOOL)enableContactsOutOfProcess;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNRegulatoryLogger> regulatoryLogger; // @synthesize regulatoryLogger=_regulatoryLogger;
 @property(readonly, nonatomic) id <CNContactsLogger> logger; // @synthesize logger=_logger;
 @property(readonly, retain, nonatomic) NSObject<CNDataMapper> *mapper; // @synthesize mapper=_mapper;
-- (void).cxx_destruct;
 - (BOOL)hasMultipleGroupsOrAccounts;
 - (id)currentHistoryToken;
 - (BOOL)executeChangeHistoryClearRequest:(id)arg1 error:(id *)arg2;

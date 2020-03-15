@@ -18,12 +18,12 @@
     struct CGRect _objectBounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int lostCount; // @synthesize lostCount=_lostCount;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 start; // @synthesize start=_start;
 @property(readonly, nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) struct CGRect objectBounds; // @synthesize objectBounds=_objectBounds;
 @property(readonly, nonatomic) struct CGRect objectBoundsInitial; // @synthesize objectBoundsInitial=_objectBoundsInitial;
-- (void).cxx_destruct;
 - (int)trackObjectInFrame:(struct __CVBuffer *)arg1;
 - (id)initWithObjectBounds:(struct CGRect)arg1 inFrame:(struct __CVBuffer *)arg2 timestamp:(CDStruct_1b6d18a9)arg3;
 

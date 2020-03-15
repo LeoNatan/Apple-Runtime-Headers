@@ -14,9 +14,9 @@
     unsigned int _view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int view; // @synthesize view=_view;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isTomorrow;
 - (void)updateActivity:(id)arg1;
 - (id)dictionary;

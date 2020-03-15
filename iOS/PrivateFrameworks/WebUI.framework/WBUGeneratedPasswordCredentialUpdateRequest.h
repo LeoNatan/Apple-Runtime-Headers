@@ -19,13 +19,13 @@
 }
 
 + (id)requestWithNewUsername:(id)arg1 newGeneratedPassword:(id)arg2 lastGeneratedPassword:(id)arg3 credentialURL:(id)arg4 protectionSpace:(id)arg5 shouldSaveNewCredential:(_Bool)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldSaveNewCredential; // @synthesize shouldSaveNewCredential=_shouldSaveNewCredential;
 @property(readonly, nonatomic) NSURL *urlForCredential; // @synthesize urlForCredential=_urlForCredential;
 @property(readonly, nonatomic) NSURLProtectionSpace *protectionSpace; // @synthesize protectionSpace=_protectionSpace;
 @property(readonly, copy, nonatomic) NSString *lastGeneratedPassword; // @synthesize lastGeneratedPassword=_lastGeneratedPassword;
 @property(readonly, copy, nonatomic) NSString *generatedPassword; // @synthesize generatedPassword=_generatedPassword;
 @property(readonly, copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)_initRequestWithNewUsername:(id)arg1 newGeneratedPassword:(id)arg2 lastGeneratedPassword:(id)arg3 credentialURL:(id)arg4 protectionSpace:(id)arg5 shouldSaveNewCredential:(_Bool)arg6;
 
 @end

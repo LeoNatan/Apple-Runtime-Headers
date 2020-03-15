@@ -6,12 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, PRPeer, PRRangingDevice;
+#import <Proximity/PRAidedRangingClientProtocol-Protocol.h>
+
+@class NSMutableSet, NSString, NSXPCConnection, PRPeer, PRRangingDevice;
 @protocol OS_dispatch_queue, OS_os_log, PRRangingSessionDelegate;
 
-@interface PRRangingSession : NSObject
+@interface PRRangingSession : NSObject <PRAidedRangingClientProtocol>
 {
     NSObject<OS_os_log> *_logger;
+    NSXPCConnection *_connection;
     PRPeer *_localPeer;
     PRRangingDevice *_rangingDevice;
     _Bool _isReady;
@@ -22,6 +25,8 @@
     PRPeer *_rangedPeer;
 }
 
++ (unsigned long long)computeLocalDeviceIndex:(id)arg1 sessionParticipants:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) PRPeer *rangedPeer; // @synthesize rangedPeer=_rangedPeer;
 @property(getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property _Bool isReady; // @synthesize isReady=_isReady;
@@ -29,7 +34,16 @@
 @property(readonly, copy) PRPeer *localPeer; // @synthesize localPeer=_localPeer;
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property __weak id <PRRangingSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (id)rangingConfigurationWithDeviceIndex:(unsigned long long)arg1;
+- (void)rangingRequestDidUpdateStatus:(unsigned long long)arg1;
+- (void)didReceiveNewSolutions:(id)arg1;
+- (void)rangingServiceDidUpdateState:(unsigned long long)arg1;
+- (void)didFailWithError:(id)arg1;
+- (void)sendDataToPeers:(id)arg1;
+- (id)remoteObject;
+- (void)handleInvalidation;
+- (void)handleInterruption;
+- (void)connectToDaemon;
 - (void)invalidate;
 - (void)requestInitialCollaborationDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)invokeDelegateBlock:(CDUnknownBlockType)arg1;
@@ -37,6 +51,12 @@
 - (void)stopRangingWithPeer:(id)arg1;
 - (void)startRangingWithPeer:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

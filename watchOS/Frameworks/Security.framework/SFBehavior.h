@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)behaviorFamily:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) NSString *family; // @synthesize family=_family;
-- (void).cxx_destruct;
 - (id)configurationString:(id)arg1 defaultValue:(id)arg2;
 - (id)configurationNumber:(id)arg1 defaultValue:(id)arg2;
 - (_Bool)featureDisabled:(id)arg1;

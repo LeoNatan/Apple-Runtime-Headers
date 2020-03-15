@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     UIDecomposedReloadUpdateItem *_pairedItem;
 }
 
-@property(nonatomic) __weak UIDecomposedReloadUpdateItem *pairedItem; // @synthesize pairedItem=_pairedItem;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIDecomposedReloadUpdateItem *pairedItem; // @synthesize pairedItem=_pairedItem;
 - (BOOL)isDecomposedFromReload;
 
 @end

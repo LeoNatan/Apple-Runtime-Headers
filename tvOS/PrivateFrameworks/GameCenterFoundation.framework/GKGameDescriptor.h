@@ -33,7 +33,7 @@
 @property(copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (id)description;
-- (struct NSDictionary *)dictionaryForRequest;
+- (id)dictionaryForRequest;
 - (void)dealloc;
 - (id)initWithPushDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

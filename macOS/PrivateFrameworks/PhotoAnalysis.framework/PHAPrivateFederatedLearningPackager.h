@@ -15,10 +15,10 @@
     DESPFLEncryptor *_encryptor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DESPFLEncryptor *encryptor; // @synthesize encryptor=_encryptor;
 @property(readonly, nonatomic) NSNumber *normBinCount; // @synthesize normBinCount=_normBinCount;
 @property(readonly, nonatomic) NSNumber *clippingNorm; // @synthesize clippingNorm=_clippingNorm;
-- (void).cxx_destruct;
 - (id)_errorWithCode:(long long)arg1 withUnderlyingError:(id)arg2;
 - (id)_encryptFlattenedTrainingResults:(id)arg1 withEncryptionKey:(id)arg2 shouldEncrypt:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)_callPFLPrivatizeCustomNorm:(float *)arg1 elementsCount:(id)arg2 clippingNorm:(id)arg3 normBinCount:(id)arg4 privacyIdentifier:(id)arg5;

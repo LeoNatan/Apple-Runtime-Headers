@@ -25,6 +25,7 @@
 }
 
 + (id)defaultSubscriptionRegistrationCenter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSLinkedOnOrAfterChecker *linkedOnOrAfterChecker; // @synthesize linkedOnOrAfterChecker=_linkedOnOrAfterChecker;
 @property(retain, nonatomic) VSSecurityTask *currentTask; // @synthesize currentTask=_currentTask;
 @property(retain, nonatomic) VSSubscriptionServiceConnection *connection; // @synthesize connection=_connection;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) VSDelayOperation *expirationOperation; // @synthesize expirationOperation=_expirationOperation;
 @property(retain, nonatomic) NSMutableDictionary *subscriptionsByOptions; // @synthesize subscriptionsByOptions=_subscriptionsByOptions;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
-- (void).cxx_destruct;
 - (void)removeSubscriptions:(id)arg1;
 - (void)registerSubscription:(id)arg1;
 - (void)fetchActiveSubscriptionsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

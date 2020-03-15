@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
 @property(nonatomic) _Bool didTrySettingDefaultString; // @synthesize didTrySettingDefaultString=_didTrySettingDefaultString;
 @property(readonly, nonatomic) NSString *defaultString; // @synthesize defaultString=_defaultString;
-- (void).cxx_destruct;
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;

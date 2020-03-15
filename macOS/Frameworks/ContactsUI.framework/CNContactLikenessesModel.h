@@ -16,10 +16,10 @@
 }
 
 + (id)emptyModel;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxNumberOfLikenessesAllowed; // @synthesize maxNumberOfLikenessesAllowed=_maxNumberOfLikenessesAllowed;
 @property(readonly, nonatomic) NSArray *recentLikenesses; // @synthesize recentLikenesses=_recentLikenesses;
 @property(readonly, nonatomic) CNLikeness *currentLikeness; // @synthesize currentLikeness=_currentLikeness;
-- (void).cxx_destruct;
 - (unsigned long long)indexOfCurrentLikeness;
 - (id)initWithCurrentLikeness:(id)arg1 recentLikenesses:(id)arg2 maxNumberOfLikenessesAllowed:(unsigned long long)arg3;
 - (id)init;

@@ -23,11 +23,11 @@
 }
 
 + (Class)configBucketsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *configBuckets; // @synthesize configBuckets=_configBuckets;
 @property(retain, nonatomic) NTPBConfig *configControl; // @synthesize configControl=_configControl;
 @property(nonatomic) long long populationCeiling; // @synthesize populationCeiling=_populationCeiling;
 @property(nonatomic) long long populationFloor; // @synthesize populationFloor=_populationFloor;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

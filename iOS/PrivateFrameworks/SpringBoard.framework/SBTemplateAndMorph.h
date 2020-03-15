@@ -14,9 +14,9 @@
     SBTouchTemplate *_touchTemplate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBTouchTemplate *touchTemplate; // @synthesize touchTemplate=_touchTemplate;
 @property(readonly, nonatomic) SBPolygon *morphedCandidate; // @synthesize morphedCandidate=_morphedCandidate;
-- (void).cxx_destruct;
 - (id)initWithTemplate:(id)arg1 morph:(id)arg2;
 
 @end

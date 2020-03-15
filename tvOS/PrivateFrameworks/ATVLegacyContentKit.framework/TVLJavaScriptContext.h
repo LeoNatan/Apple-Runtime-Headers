@@ -20,8 +20,8 @@
 }
 
 + (id)contextFromJSContext:(struct OpaqueJSContext *)arg1;
-@property(readonly, nonatomic) _Bool isDestroyed; // @synthesize isDestroyed=_isDestroyed;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isDestroyed; // @synthesize isDestroyed=_isDestroyed;
 - (_Bool)evaluateSynchronously:(CDUnknownBlockType)arg1;
 - (void)evaluate:(CDUnknownBlockType)arg1;
 - (void)evaluate:(CDUnknownBlockType)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

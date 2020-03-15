@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak HMDSettingsMessageHandler *messageHandler; // @synthesize messageHandler=_messageHandler;
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)registerForMessage:(id)arg1 policies:(id)arg2 messageHandler:(CDUnknownBlockType)arg3;

@@ -28,6 +28,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDCameraStreamSnapshotHandler *streamSnapshotHandler; // @synthesize streamSnapshotHandler=_streamSnapshotHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HMDStreamingManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) HMDAudioStreamInterface *audioStreamInterface; // @synthesize audioStreamInterface=_audioStreamInterface;
 @property(retain, nonatomic) HMDVideoStreamInterface *videoStreamInterface; // @synthesize videoStreamInterface=_videoStreamInterface;
-- (void).cxx_destruct;
 - (void)remoteVideoServerDidDie:(id)arg1;
 - (void)remoteVideoClientDidReceiveLastFrame:(id)arg1;
 - (void)remoteVideoClient:(id)arg1 remoteVideoAttributesDidChange:(id)arg2;

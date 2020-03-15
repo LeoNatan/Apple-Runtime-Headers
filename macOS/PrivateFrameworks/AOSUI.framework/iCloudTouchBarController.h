@@ -18,11 +18,11 @@
     NSMutableOrderedSet *_buttonIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *buttonIdentifiers; // @synthesize buttonIdentifiers=_buttonIdentifiers;
 @property(retain) NSMutableDictionary *buttonDictionary; // @synthesize buttonDictionary=_buttonDictionary;
 @property(retain) NSGroupTouchBarItem *buttonGroup; // @synthesize buttonGroup=_buttonGroup;
 @property(retain) NSTouchBar *iCloudTouchBar; // @synthesize iCloudTouchBar=_iCloudTouchBar;
-- (void).cxx_destruct;
 @property(readonly) NSTouchBar *touchBar;
 - (id)initWithButtonDictionary:(id)arg1 withOrderedIdentifiers:(id)arg2;
 

@@ -33,6 +33,7 @@
     ACDDatabaseBackupActivity *_databaseBackupActivity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACDDatabaseBackupActivity *databaseBackupActivity; // @synthesize databaseBackupActivity=_databaseBackupActivity;
 @property(retain, nonatomic) id <ACDDatabaseProtocol> database; // @synthesize database=_database;
 @property(retain, nonatomic) id <ACDClientProviderProtocol> clientProvider; // @synthesize clientProvider=_clientProvider;
@@ -45,9 +46,8 @@
 @property(readonly, nonatomic) NSXPCListener *authenticationDialogListener; // @synthesize authenticationDialogListener=_authenticationDialogListener;
 @property(readonly, nonatomic) NSXPCListener *oauthSignerListener; // @synthesize oauthSignerListener=_oauthSignerListener;
 @property(readonly, nonatomic) NSXPCListener *accountStoreListener; // @synthesize accountStoreListener=_accountStoreListener;
-- (void).cxx_destruct;
 - (void)_beginObservingIDSProxyNotifications;
-- (void)credentialsDidChangeForAccountWithIdentifier:(id)arg1;
+- (void)credentialsDidChangeForAccount:(id)arg1;
 - (void)accountStore:(id)arg1 didSaveAccount:(id)arg2;
 - (void)_handleLanguageChangedDarwinNotification;
 - (void)_endObservingLanguageChangeNotification;

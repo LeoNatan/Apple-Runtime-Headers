@@ -34,6 +34,7 @@
 + (id)_nodeFindersForSnapshots:(id)arg1 ancestorMatch:(id)arg2 ancestorIndex:(unsigned long long)arg3 stopCombinatorialExpansionIndexes:(id)arg4 excludeUnlessNecessaryElementTypes:(id)arg5 language:(unsigned long long)arg6 platform:(unsigned long long)arg7;
 + (id)_excludeUnlessNecessaryElementTypesForPlatform:(unsigned long long)arg1;
 + (id)_stopCombinatorialExpansionElementTypesForPlatform:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property _Bool excludeUnlessNecessary; // @synthesize excludeUnlessNecessary=_excludeUnlessNecessary;
 @property _Bool allowElementQueries; // @synthesize allowElementQueries=_allowElementQueries;
 @property unsigned long long platform; // @synthesize platform=_platform;
@@ -43,7 +44,6 @@
 @property(retain) XCUIRecorderNodeFinderMatch *ancestorNodeFinderMatch; // @synthesize ancestorNodeFinderMatch=_ancestorNodeFinderMatch;
 @property(retain) NSMutableArray *unprocessedContainsMatches; // @synthesize unprocessedContainsMatches=_unprocessedContainsMatches;
 @property(retain) NSMutableArray *mutableFoundNodeMatches; // @synthesize mutableFoundNodeMatches=_mutableFoundNodeMatches;
-- (void).cxx_destruct;
 - (id)descendantsQueryNodeWithTargetElementTypeContainingElementsOfType:(unsigned long long)arg1 identifierValue:(id)arg2;
 - (id)childrenQueryNodeWithTargetElementTypeAndIdentifierValue:(id)arg1;
 - (id)descendantsQueryNodeWithElementType:(unsigned long long)arg1;

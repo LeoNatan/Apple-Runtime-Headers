@@ -40,12 +40,12 @@
 + (struct SGUnixTimestamp_)fromFloatingTime:(struct SGUnixTimestamp_)arg1;
 + (struct SGUnixTimestamp_)toFloatingTime:(struct SGUnixTimestamp_)arg1 withDSTAmbiguityPreferences:(id)arg2;
 + (struct SGUnixTimestamp_)toFloatingTime:(struct SGUnixTimestamp_)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFloating) _Bool floating; // @synthesize floating=_floating;
 @property(readonly, nonatomic) long long endUTCOffsetSeconds; // @synthesize endUTCOffsetSeconds=_endUTCOffsetSeconds;
 @property(readonly, nonatomic) long long startUTCOffsetSeconds; // @synthesize startUTCOffsetSeconds=_startUTCOffsetSeconds;
 @property(readonly, nonatomic) struct SGUnixTimestamp_ end; // @synthesize end=_end;
 @property(readonly, nonatomic) struct SGUnixTimestamp_ start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

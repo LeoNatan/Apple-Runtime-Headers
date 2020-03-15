@@ -13,8 +13,8 @@
     UIColor *_disabledTextColor;
 }
 
-@property(retain, nonatomic) UIColor *disabledTextColor; // @synthesize disabledTextColor=_disabledTextColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *disabledTextColor; // @synthesize disabledTextColor=_disabledTextColor;
 - (id)colorForKnobFocusLayer;
 - (void)setEnabled:(_Bool)arg1;
 - (id)tintColor;

@@ -16,9 +16,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)performAfterDelay:(double)arg1;
 - (void)performAsync;

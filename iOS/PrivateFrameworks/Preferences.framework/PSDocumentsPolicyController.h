@@ -17,12 +17,12 @@
     DOCSourceSearchingContext *_searchingContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFirstSourceResults; // @synthesize isFirstSourceResults=_isFirstSourceResults;
 @property(retain, nonatomic) DOCSourceSearchingContext *searchingContext; // @synthesize searchingContext=_searchingContext;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) DOCDocumentSource *selectedDocumentSource; // @synthesize selectedDocumentSource=_selectedDocumentSource;
 @property(retain, nonatomic) PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)setDocumentSource:(id)arg1;
 - (id)documentSource;

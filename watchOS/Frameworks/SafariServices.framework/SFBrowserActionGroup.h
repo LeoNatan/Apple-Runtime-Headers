@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     id <SFBrowserActionGroupDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReaderItemSelected) _Bool readerItemSelected; // @synthesize readerItemSelected=_readerItemSelected;
 @property(nonatomic) _Bool stopReloadItemShowsStop; // @synthesize stopReloadItemShowsStop=_stopReloadItemShowsStop;
 @property(nonatomic) __weak id <SFBrowserActionGroupDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateReaderItem;
 @property(nonatomic, getter=isReaderItemEnabled) _Bool readerItemEnabled;
 - (void)_updateStopReloadItem;

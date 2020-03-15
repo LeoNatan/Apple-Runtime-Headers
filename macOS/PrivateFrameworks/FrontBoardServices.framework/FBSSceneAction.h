@@ -14,9 +14,9 @@
     FBSSerialQueue *_callOutQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBSSerialQueue *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
 @property(retain, nonatomic) FBSScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 
 @end
 

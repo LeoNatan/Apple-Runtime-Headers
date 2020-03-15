@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     _Bool _stashed;
 }
 
-@property(nonatomic, getter=isStashed) _Bool stashed; // @synthesize stashed=_stashed;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isStashed) _Bool stashed; // @synthesize stashed=_stashed;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

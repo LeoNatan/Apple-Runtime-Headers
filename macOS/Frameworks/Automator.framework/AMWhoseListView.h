@@ -19,9 +19,9 @@
     } _vlvFlags;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *_expandedSubviews; // @synthesize _expandedSubviews;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)removeSubviewAtIndex:(unsigned long long)arg1;
 - (void)addSubview:(id)arg1;
 - (void)insertSubview:(id)arg1 atIndex:(unsigned long long)arg2;

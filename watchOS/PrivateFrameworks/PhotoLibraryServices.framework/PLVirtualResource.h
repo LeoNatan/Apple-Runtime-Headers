@@ -35,6 +35,7 @@
     long long _unorientedHeight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) short trashedState; // @synthesize trashedState=_trashedState;
 @property(readonly, nonatomic) NSDate *trashedDate; // @synthesize trashedDate=_trashedDate;
 - (void)setScale:(float)arg1;
@@ -68,7 +69,6 @@
 - (void)setVersion:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int version;
 @property(readonly, copy, nonatomic) id <PLAssetID> assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (id)photosCTLJSONDict;
 @property(readonly, nonatomic) NSURL *fileURL;

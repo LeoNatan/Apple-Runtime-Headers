@@ -17,9 +17,9 @@
     CKNanoSendController *_sendController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKNanoSendController *sendController; // @synthesize sendController=_sendController;
 @property(nonatomic) __weak id <CKNanoReplyViewControllerDismissalDelegate> dismissalDelegate; // @synthesize dismissalDelegate=_dismissalDelegate;
-- (void).cxx_destruct;
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)initForChatController:(id)arg1;
 - (id)initWithConversation:(id)arg1;

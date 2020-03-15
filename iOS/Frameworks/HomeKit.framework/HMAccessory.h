@@ -83,6 +83,7 @@
 + (id)_cameraProfilesForAccessoryProfiles:(id)arg1;
 + (id)_networkConfigurationProfilesForCoder:(id)arg1 accessoryIdentifier:(id)arg2;
 + (id)_mediaProfilesForAccessoryProfiles:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMMutableArray *accessoryProfiles; // @synthesize accessoryProfiles=_accessoryProfiles;
 @property(retain) HMRemoteLoginHandler *remoteLoginHandler; // @synthesize remoteLoginHandler=_remoteLoginHandler;
 @property(nonatomic) unsigned long long accessoryReprovisionState; // @synthesize accessoryReprovisionState=_accessoryReprovisionState;
@@ -97,7 +98,6 @@
 @property(nonatomic) unsigned long long additionalSetupStatus; // @synthesize additionalSetupStatus=_additionalSetupStatus;
 @property(nonatomic) unsigned long long transportTypes; // @synthesize transportTypes=_transportTypes;
 @property(nonatomic) _Bool firmwareUpdateAvailable; // @synthesize firmwareUpdateAvailable=_firmwareUpdateAvailable;
-- (void).cxx_destruct;
 - (void)setNetworkProtectionGroupUUID:(id)arg1;
 @property(readonly) NSUUID *networkProtectionGroupUUID; // @synthesize networkProtectionGroupUUID=_networkProtectionGroupUUID;
 - (void)_handleSupportsCompanionInitiatedRestartUpdatedMessage:(id)arg1;

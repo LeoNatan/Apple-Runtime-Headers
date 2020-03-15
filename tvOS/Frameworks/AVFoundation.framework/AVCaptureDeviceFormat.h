@@ -18,6 +18,11 @@
 + (void)initialize;
 @property(readonly, nonatomic, getter=isHighestPhotoQualitySupported) _Bool highestPhotoQualitySupported; // @synthesize highestPhotoQualitySupported=_highestPhotoQualitySupported;
 @property(readonly, nonatomic, getter=isGlobalToneMappingSupported) _Bool globalToneMappingSupported; // @synthesize globalToneMappingSupported=_globalToneMappingSupported;
+- (_Bool)isDeepFusionSupported;
+- (_Bool)isDeferredPhotoProcessingSupported;
+- (float)maxPortraitLightingEffectStrength;
+- (float)minPortraitLightingEffectStrength;
+- (float)defaultPortraitLightingEffectStrength;
 - (unsigned int)supportedRawPixelFormat;
 - (_Bool)isEquivalentToVirtualDeviceFormat:(id)arg1;
 - (int)ispPowerConsumption;
@@ -72,6 +77,8 @@
 - (_Bool)isVideoStabilizationModeSupported:(long long)arg1;
 @property(readonly, nonatomic, getter=isVideoHDRSupported) _Bool videoHDRSupported;
 @property(readonly, nonatomic, getter=isVideoStabilizationSupported) _Bool videoStabilizationSupported;
+- (double)videoMaxZoomFactorForCameraCalibrationDataDelivery;
+- (double)videoMinZoomFactorForCameraCalibrationDataDelivery;
 @property(readonly, nonatomic) double videoMaxZoomFactorForDepthDataDelivery;
 @property(readonly, nonatomic) double videoMinZoomFactorForDepthDataDelivery;
 @property(readonly, nonatomic) double videoZoomFactorUpscaleThreshold;

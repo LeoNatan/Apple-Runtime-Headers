@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_transcodeServerHostname;
 }
 
-@property(retain, nonatomic) NSString *transcodeServerHostname; // @synthesize transcodeServerHostname=_transcodeServerHostname;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *transcodeServerHostname; // @synthesize transcodeServerHostname=_transcodeServerHostname;
 
 @end
 

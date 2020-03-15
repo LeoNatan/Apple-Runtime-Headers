@@ -13,8 +13,8 @@
     UILabel *_titleLabel;
 }
 
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)layoutSubviews;
 - (struct CGRect)contentBounds;
 - (void)setTitle:(id)arg1;

@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
     UITextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) int outDirection; // @synthesize outDirection=_outDirection;
 @property(nonatomic) __weak id <MCProfileQuestionsControllerDelegate> questionsDelegate; // @synthesize questionsDelegate=_questionsDelegate;
-- (void).cxx_destruct;
 - (void)_textFieldValueChanged:(id)arg1;
 - (void)_continueOrFinish;
 - (void)_finishInput;

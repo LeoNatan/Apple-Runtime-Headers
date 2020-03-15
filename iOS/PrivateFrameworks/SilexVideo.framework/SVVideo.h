@@ -17,10 +17,10 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) _Bool allowsCallToActionBar; // @synthesize allowsCallToActionBar=_allowsCallToActionBar;
 @property(readonly, nonatomic) unsigned long long videoType; // @synthesize videoType=_videoType;
-- (void).cxx_destruct;
 - (id)initWithVideoType:(unsigned long long)arg1;
 
 // Remaining properties

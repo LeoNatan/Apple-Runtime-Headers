@@ -13,8 +13,8 @@
     NSString *_identifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)entriesForString:(id)arg1;
 - (void)enumerateEntriesForString:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)initWithIdentifier:(id)arg1;

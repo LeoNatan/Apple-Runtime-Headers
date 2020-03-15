@@ -15,8 +15,8 @@
     CDUnknownBlockType _copyDocumentURLCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType copyDocumentURLCompletionBlock; // @synthesize copyDocumentURLCompletionBlock=_copyDocumentURLCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType copyDocumentURLCompletionBlock; // @synthesize copyDocumentURLCompletionBlock=_copyDocumentURLCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithRecordID:(id)arg1 withServerLookup:(_Bool)arg2;

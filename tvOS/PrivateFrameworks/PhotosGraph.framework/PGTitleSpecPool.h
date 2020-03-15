@@ -14,8 +14,8 @@
 }
 
 + (id)poolWithSpecs:(id)arg1;
-@property(readonly) NSArray *specs; // @synthesize specs=_specs;
 - (void).cxx_destruct;
+@property(readonly) NSArray *specs; // @synthesize specs=_specs;
 - (id)description;
 - (id)initWithSpecs:(id)arg1;
 

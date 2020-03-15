@@ -14,8 +14,8 @@
 }
 
 + (id)sharedNotifier;
-@property(retain) NSUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 - (void).cxx_destruct;
+@property(retain) NSUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 - (void)userNotificationCenter:(id)arg1 didActivateNotification:(id)arg2;
 - (void)dismissNotificationsForAccount:(id)arg1;
 - (void)postNewMultipleAddNotificationForAccount;

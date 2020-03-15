@@ -27,6 +27,7 @@
     HUWebViewController *_webViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(readonly, nonatomic) NSString *license; // @synthesize license=_license;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) CDUnknownBlockType agreeHandler; // @synthesize agreeHandler=_agreeHandler;
 @property(readonly, copy, nonatomic) HMHTMLDocument *document; // @synthesize document=_document;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WKWebView *webView;
 - (id)_evaluateHeight:(id)arg1;
 - (void)_emailTermsAndConditions:(id)arg1;

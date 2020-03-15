@@ -17,10 +17,10 @@
 
 + (id)thumbnailForResult:(id)arg1;
 + (id)imageViewWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *tintView; // @synthesize tintView=_tintView;
 @property(retain, nonatomic) SearchUIButton *overlayPlayButton; // @synthesize overlayPlayButton=_overlayPlayButton;
 @property(retain, nonatomic) SFImage *currentImage; // @synthesize currentImage=_currentImage;
-- (void).cxx_destruct;
 - (void)resetCursorRects;
 - (BOOL)clickable;
 - (void)layout;

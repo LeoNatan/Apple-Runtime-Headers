@@ -13,10 +13,10 @@
     UIView *_liveBlurView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *liveBlurView; // @synthesize liveBlurView=_liveBlurView;
 @property(retain, nonatomic) UIView *realSnapshotView; // @synthesize realSnapshotView=_realSnapshotView;
 @property(retain, nonatomic) UIView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

@@ -21,13 +21,13 @@
 
 + (_Bool)isRaiseGestureSupported;
 + (_Bool)isRaiseGestureEnabled;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool proximityState; // @synthesize proximityState=_proximityState;
 @property(retain, nonatomic) CMGestureManager *gestureManager; // @synthesize gestureManager=_gestureManager;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) long long gestureState; // @synthesize gestureState=_gestureState;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)proximityStateDidChange:(id)arg1;
 @property(readonly, nonatomic, getter=isRecognized) _Bool recognized;
 - (void)setProximityMonitoringEnabled:(_Bool)arg1;

@@ -18,10 +18,10 @@
     struct CGRect _tileRect;
 }
 
+- (void).cxx_destruct;
 @property(retain) PAMutableBuffer *mutableBuffer; // @synthesize mutableBuffer=_mutableBuffer;
 @property(retain) PABuffer *buffer; // @synthesize buffer=_buffer;
 @property struct CGRect tileRect; // @synthesize tileRect=_tileRect;
-- (void).cxx_destruct;
 - (BOOL)writeBufferRegion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (BOOL)writeTextureRegion:(id)arg1 withContext:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (BOOL)readBufferRegion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

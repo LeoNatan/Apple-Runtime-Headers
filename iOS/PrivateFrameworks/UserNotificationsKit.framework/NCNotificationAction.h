@@ -28,6 +28,7 @@
     _Bool _shouldDismissNotification;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldDismissNotification; // @synthesize shouldDismissNotification=_shouldDismissNotification;
 @property(readonly, nonatomic, getter=isDestructiveAction) _Bool destructiveAction; // @synthesize destructiveAction=_destructiveAction;
 @property(readonly, nonatomic) _Bool requiresAuthentication; // @synthesize requiresAuthentication=_requiresAuthentication;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) unsigned long long activationMode; // @synthesize activationMode=_activationMode;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

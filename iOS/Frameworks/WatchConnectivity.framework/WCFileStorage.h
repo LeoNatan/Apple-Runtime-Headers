@@ -21,6 +21,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) WCContentIndex *userInfoResultsIndex; // @synthesize userInfoResultsIndex=_userInfoResultsIndex;
 @property(retain) WCContentIndex *userInfoIndex; // @synthesize userInfoIndex=_userInfoIndex;
 @property(retain) WCContentIndex *fileResultsIndex; // @synthesize fileResultsIndex=_fileResultsIndex;
@@ -28,7 +29,6 @@
 @property(retain) NSArray *outstandingFileTransfers; // @synthesize outstandingFileTransfers=_outstandingFileTransfers;
 @property(retain) NSObject<OS_dispatch_queue> *fileQueue; // @synthesize fileQueue=_fileQueue;
 @property(copy, nonatomic) NSString *pairingID; // @synthesize pairingID=_pairingID;
-- (void).cxx_destruct;
 - (id)receivedAppContextFolderURL;
 - (id)localAppContextFolderURL;
 - (id)appContextFolderURL:(_Bool)arg1;

@@ -26,6 +26,7 @@
     CDStruct_e83c9415 _timerange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCPVideoKeyFrame *keyFrame; // @synthesize keyFrame=_keyFrame;
 @property(retain, nonatomic) VCPImageDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(nonatomic) BOOL isTrimmed; // @synthesize isTrimmed=_isTrimmed;
@@ -40,7 +41,6 @@
 @property(nonatomic) float junkScore; // @synthesize junkScore=_junkScore;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(nonatomic) CDStruct_e83c9415 timerange; // @synthesize timerange=_timerange;
-- (void).cxx_destruct;
 - (void)checkAutoPlayable;
 - (void)copyScoresFrom:(id)arg1;
 - (BOOL)isShort;

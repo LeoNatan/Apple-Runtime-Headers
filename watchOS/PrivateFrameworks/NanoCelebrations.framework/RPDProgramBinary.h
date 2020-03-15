@@ -14,9 +14,9 @@
     unsigned int _format;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int format; // @synthesize format=_format;
 @property(readonly, nonatomic) NSData *binary; // @synthesize binary=_binary;
-- (void).cxx_destruct;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithData:(id)arg1 format:(unsigned int)arg2;

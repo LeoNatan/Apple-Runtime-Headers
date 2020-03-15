@@ -41,6 +41,7 @@
     long long _lastJingleAccountStatus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL notificationRequired; // @synthesize notificationRequired=_notificationRequired;
 @property(nonatomic) int lastPOSTLimitAdTrackingTimestamp; // @synthesize lastPOSTLimitAdTrackingTimestamp=_lastPOSTLimitAdTrackingTimestamp;
 @property(nonatomic) int lastSentLimitAdTrackingTimestamp; // @synthesize lastSentLimitAdTrackingTimestamp=_lastSentLimitAdTrackingTimestamp;
@@ -66,7 +67,6 @@
 @property(nonatomic) BOOL accountIsT13; // @synthesize accountIsT13=_accountIsT13;
 @property(retain, nonatomic) NSString *iCloudDSID; // @synthesize iCloudDSID=_iCloudDSID;
 @property(retain, nonatomic) NSString *DSID; // @synthesize DSID=_DSID;
-- (void).cxx_destruct;
 @property(nonatomic) int nextReconcileTimestamp;
 - (void)setlimitAdTrackingTimestamp:(int)arg1;
 - (BOOL)shouldSendNotification;

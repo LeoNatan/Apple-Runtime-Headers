@@ -13,8 +13,8 @@
     NSString *_identifier;
 }
 
-@property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)performPaymentSetupFeatureLookup;
 - (BOOL)isPaymentSetupFeatureSupportedWithError:(id *)arg1;
 - (id)initWithIdentifier:(id)arg1;

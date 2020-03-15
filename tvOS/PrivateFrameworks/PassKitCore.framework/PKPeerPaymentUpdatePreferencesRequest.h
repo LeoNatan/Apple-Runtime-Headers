@@ -13,8 +13,8 @@
     PKPeerPaymentPreferences *_peerPaymentPreferences;
 }
 
-@property(retain, nonatomic) PKPeerPaymentPreferences *peerPaymentPreferences; // @synthesize peerPaymentPreferences=_peerPaymentPreferences;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPeerPaymentPreferences *peerPaymentPreferences; // @synthesize peerPaymentPreferences=_peerPaymentPreferences;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)initWithPeerPaymentPreferences:(id)arg1;
 

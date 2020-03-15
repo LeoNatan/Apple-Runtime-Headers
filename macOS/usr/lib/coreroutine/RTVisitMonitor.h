@@ -35,8 +35,9 @@
 }
 
 + (id)bucketLocations:(id)arg1 interval:(double)arg2;
-+ (id)hyperParameterForPipelineType:(id)arg1;
++ (id)hyperParameterForPipelineType:(unsigned long long)arg1;
 + (double)LocationHeartbeatWhileAwake;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pipelines; // @synthesize pipelines=_pipelines;
 @property(nonatomic) unsigned long long highConfidencePipelineReferenceCounter; // @synthesize highConfidencePipelineReferenceCounter=_highConfidencePipelineReferenceCounter;
 @property(nonatomic) unsigned long long lowConfidencePipelineReferenceCounter; // @synthesize lowConfidencePipelineReferenceCounter=_lowConfidencePipelineReferenceCounter;
@@ -56,13 +57,12 @@
 @property(retain, nonatomic) RTHintManager *hintManager; // @synthesize hintManager=_hintManager;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(nonatomic) __weak id <RTVisitMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleLowConfidenceVisitIncident:(id)arg1;
 - (void)handleLeechedVisitIncident:(id)arg1;
 - (void)handleVisitIncident:(id)arg1;
 - (void)fetchVisitMonitorState:(CDUnknownBlockType)arg1;
 - (void)fetchVisitMonitorStatusWithHandler:(CDUnknownBlockType)arg1;
-- (void)_processRealtimeVisits:(id)arg1 withPipeline:(id)arg2 withType:(id)arg3;
+- (void)_processRealtimeVisits:(id)arg1 pipeline:(id)arg2;
 - (void)_processMatureLocations;
 - (void)_processLeechedLocations:(id)arg1;
 - (void)_startFeedBufferTimer;
@@ -77,11 +77,12 @@
 - (void)startMonitoringVisitIncidents;
 - (void)fetchVisitsFromDate:(id)arg1 toDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_batchProcess:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)_setupRealtimePipelineWithType:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (id)_createPipelineWithType:(id)arg1 name:(id)arg2 lastVisit:(id)arg3;
-- (id)_modulesForPipelineType:(id)arg1 hyperParameter:(id)arg2;
-- (id)_configurationForPipelineType:(id)arg1;
-- (id)_moduleWithName:(id)arg1 pipelineType:(id)arg2 hyperParameter:(id)arg3;
+- (void)_bootstrapPipeline:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_setupRealtimePipelineWithType:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)_createPipelineWithType:(unsigned long long)arg1 name:(id)arg2 lastVisit:(id)arg3;
+- (id)_modulesForPipelineType:(unsigned long long)arg1 hyperParameter:(id)arg2;
+- (id)_configurationForPipelineType:(unsigned long long)arg1;
+- (id)_moduleWithName:(id)arg1 pipelineType:(unsigned long long)arg2 hyperParameter:(id)arg3;
 - (void)fetchVisitIncidentsFromLocations:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)shutdown;
 - (id)initWithDefaultsManager:(id)arg1 hintManager:(id)arg2 learnedLocationManager:(id)arg3 locationAwarenessManager:(id)arg4 locationManager:(id)arg5 metricManager:(id)arg6 motionActivityManager:(id)arg7 platform:(id)arg8 queue:(id)arg9 state:(id)arg10 timerManager:(id)arg11;

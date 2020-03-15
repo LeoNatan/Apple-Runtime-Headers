@@ -20,6 +20,7 @@
     double _reconstructionProbability;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double reconstructionProbability; // @synthesize reconstructionProbability=_reconstructionProbability;
 @property(nonatomic) unsigned long long dimension; // @synthesize dimension=_dimension;
 @property(nonatomic) double normmax; // @synthesize normmax=_normmax;
@@ -27,7 +28,6 @@
 @property(nonatomic) double minCDProduct; // @synthesize minCDProduct=_minCDProduct;
 @property(nonatomic) double precision; // @synthesize precision=_precision;
 @property(nonatomic) double rho; // @synthesize rho=_rho;
-- (void).cxx_destruct;
 - (BOOL)populateFromFile:(id)arg1;
 - (BOOL)populateFromDefaultFile;
 - (id)initWithIdentifier:(id)arg1;

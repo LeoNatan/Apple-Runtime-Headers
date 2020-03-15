@@ -20,8 +20,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) BSMutableSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSMutableSettings *settings; // @synthesize settings=_settings;
 @property(readonly, copy) NSString *description;
 - (id)settings:(id)arg1 valueDescriptionForFlag:(int)arg2 object:(id)arg3 ofSetting:(unsigned int)arg4;
 - (id)settings:(id)arg1 keyDescriptionForSetting:(unsigned int)arg2;

@@ -20,6 +20,7 @@
     unsigned long long _numberOfLocationsOfInterestTransitions;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long numberOfLocationsOfInterestTransitions; // @synthesize numberOfLocationsOfInterestTransitions=_numberOfLocationsOfInterestTransitions;
 @property(readonly) PLLocationOfInterestVisit *lastLocationOfInterestVisit; // @synthesize lastLocationOfInterestVisit=_lastLocationOfInterestVisit;
 @property(readonly) NSDate *earliestVisitStartDate; // @synthesize earliestVisitStartDate=_earliestVisitStartDate;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSMutableSet *homeLocations; // @synthesize homeLocations=_homeLocations;
 @property(retain, nonatomic) NSMutableSet *allLocationsOfInterest; // @synthesize allLocationsOfInterest=_allLocationsOfInterest;
 @property(retain, nonatomic) NSMutableDictionary *visitsCache; // @synthesize visitsCache=_visitsCache;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long numberOfLocationsOfInterest;
 - (id)locationsOfInterestVisitsInDateInterval:(id)arg1;
 - (id)locationsOfInterestVisitsAtLocation:(id)arg1 inDateInterval:(id)arg2;

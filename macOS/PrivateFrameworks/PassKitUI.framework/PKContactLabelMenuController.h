@@ -24,6 +24,7 @@
     NSComboBox *_comboBox;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSComboBox *comboBox; // @synthesize comboBox=_comboBox;
 @property(nonatomic) __weak NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 @property(nonatomic) unsigned long long customItemIndex; // @synthesize customItemIndex=_customItemIndex;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSArray *allLabels; // @synthesize allLabels=_allLabels;
 @property(retain, nonatomic) NSArray *defaultLabels; // @synthesize defaultLabels=_defaultLabels;
 @property(nonatomic) __weak id <PKContactLabelMenuControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_localizedLabelMatchingString:(id)arg1 atIndex:(unsigned long long *)arg2;
 - (void)_updateControls;
 - (id)comboBox:(id)arg1 completedString:(id)arg2;

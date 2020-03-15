@@ -23,13 +23,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPPSearchStringPredicate *searchStringPredicate; // @synthesize searchStringPredicate=_searchStringPredicate;
 @property(retain, nonatomic) MPPPersistentIDsPredicate *persistentIDsPredicate; // @synthesize persistentIDsPredicate=_persistentIDsPredicate;
 @property(retain, nonatomic) MPPConditionalPredicate *conditionalPredicate; // @synthesize conditionalPredicate=_conditionalPredicate;
 @property(retain, nonatomic) MPPCompoundPredicate *compoundPredicate; // @synthesize compoundPredicate=_compoundPredicate;
 @property(retain, nonatomic) MPPPropertyPredicate *propertyPredicate; // @synthesize propertyPredicate=_propertyPredicate;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

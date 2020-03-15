@@ -16,10 +16,10 @@
 }
 
 + (long long)_contactFormatterStyleForUserNameStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithHome:(id)arg1;
 - (id)init;

@@ -13,9 +13,9 @@
 }
 
 + (id)confirmationForDeletingItemAtIndex:(unsigned long long)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType confirmationHandler; // @synthesize confirmationHandler=_confirmationHandler;
 @property(readonly, nonatomic) unsigned long long itemIndex; // @synthesize itemIndex=_itemIndex;
-- (void).cxx_destruct;
 - (id)initWithItemIndex:(unsigned long long)arg1 confirmationHandler:(CDUnknownBlockType)arg2;
 
 @end

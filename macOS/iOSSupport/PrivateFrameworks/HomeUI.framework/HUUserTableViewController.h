@@ -20,12 +20,12 @@
     NAFuture *_mediaAccountFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *mediaAccountFuture; // @synthesize mediaAccountFuture=_mediaAccountFuture;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) _HUUserAvatarHeaderView *userAvatarHeaderView; // @synthesize userAvatarHeaderView=_userAvatarHeaderView;
 @property(retain, nonatomic) NSAttributedString *headerMessage; // @synthesize headerMessage=_headerMessage;
 @property(readonly, nonatomic) HFItemManager<HUUserItemManager> *userItemManager; // @synthesize userItemManager=_userItemManager;
-- (void).cxx_destruct;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)setAMSiTunesAccount:(id)arg1 forHome:(id)arg2;

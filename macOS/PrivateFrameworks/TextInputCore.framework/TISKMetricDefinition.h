@@ -24,12 +24,12 @@
 + (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_2418a849 *)arg3 size:(unsigned long long)arg4;
 + (id)_makeMetric:(id)arg1 type:(int)arg2 metricDef:(CDStruct_2418a849 *)arg3 size:(unsigned long long)arg4 isPointMetric:(BOOL)arg5;
 + (double)pointsToMM:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isPointMetric; // @synthesize isPointMetric=_isPointMetric;
 @property(readonly, nonatomic) CDStruct_2418a849 *metricDefinition; // @synthesize metricDefinition=_metricDefinition;
 @property(readonly, nonatomic) unsigned long long positionalSize; // @synthesize positionalSize=_positionalSize;
 @property(readonly, nonatomic) int metricType; // @synthesize metricType=_metricType;
 @property(readonly, nonatomic) NSString *metricName; // @synthesize metricName=_metricName;
-- (void).cxx_destruct;
 - (id)init:(id)arg1 type:(int)arg2 metricDef:(CDStruct_2418a849 *)arg3 size:(unsigned long long)arg4 isPointMetric:(BOOL)arg5;
 
 @end

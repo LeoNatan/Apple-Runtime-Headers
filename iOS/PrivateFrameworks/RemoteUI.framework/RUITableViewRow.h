@@ -49,6 +49,7 @@
 + (id)_formatterForDateYMD;
 + (id)_timeZoneAdjustedDateFromDate:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) RUIDetailButtonElement *detailButton; // @synthesize detailButton=_detailButton;
 @property(nonatomic) __weak RUIPage *linkedPage; // @synthesize linkedPage=_linkedPage;
@@ -68,7 +69,7 @@
 @property(retain, nonatomic) NSDictionary *deleteAction; // @synthesize deleteAction=_deleteAction;
 @property(nonatomic) _Bool rowInvalid; // @synthesize rowInvalid=_rowInvalid;
 @property(nonatomic) __weak id <RUITableViewRowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (id)_checkmarkAccessoryViewWithSelected:(_Bool)arg1;
 - (void)webContainerView:(id)arg1 didClickLinkWithURL:(id)arg2;
 - (void)detailLabelActivatedLinkFromCell:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)sourceURL;

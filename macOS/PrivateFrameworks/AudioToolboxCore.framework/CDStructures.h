@@ -209,6 +209,7 @@ struct IPCAURenderingClient {
     _Bool mIsOffline;
     _Bool mSentWorkInterval;
     _Bool mMessengerCanSend;
+    _Bool mIPCWithoutTimeouts;
     struct IPCAUSharedMemory mSharedMemory;
     struct unique_ptr<SemaphoreIOMessenger_Sender, std::__1::default_delete<SemaphoreIOMessenger_Sender>> mMessenger;
     double mOutputSampleRate;
@@ -257,10 +258,14 @@ struct ParameterAutomationEvent;
 
 struct ParameterMap {
     id _field1;
-    _Bool _field2;
-    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field3;
+    struct OpaqueAudioComponentInstance *_field2;
+    _Bool _field3;
     struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field4;
-    id _field5;
+    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field5;
+    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field6;
+    id _field7;
+    void *_field8;
+    struct map<unsigned int, AUParameterGroup *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, AUParameterGroup *>>> _field9;
 };
 
 struct PropertyListener;
@@ -351,6 +356,18 @@ struct function<void (const AudioComponentVector &, AudioComponentVector &)> {
     struct __value_func<void (const AudioComponentVector &, AudioComponentVector &)> {
         struct type _field1;
         struct __base<void (const AudioComponentVector &, AudioComponentVector &)> *_field2;
+    } _field1;
+};
+
+struct map<unsigned int, AUParameterGroup *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, AUParameterGroup *>>> {
+    struct __tree<std::__1::__value_type<unsigned int, AUParameterGroup *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUParameterGroup *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, AUParameterGroup *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, AUParameterGroup *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUParameterGroup *>, std::__1::less<unsigned int>, true>> {
+            unsigned long long _field1;
+        } _field3;
     } _field1;
 };
 

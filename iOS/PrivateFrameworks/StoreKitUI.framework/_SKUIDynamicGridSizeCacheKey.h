@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     SKUIViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) long long position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -14,8 +14,8 @@
     id <CLKTimelineEntry> _entry;
 }
 
-@property(retain, nonatomic) id <CLKTimelineEntry> entry; // @synthesize entry=_entry;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CLKTimelineEntry> entry; // @synthesize entry=_entry;
 @property(readonly, nonatomic) NSDate *date;
 
 @end

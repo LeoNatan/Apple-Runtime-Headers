@@ -24,6 +24,7 @@
     struct CGSize _shadowOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *highlightedValue; // @synthesize highlightedValue=_highlightedValue;
 @property(retain, nonatomic) NSNumber *maxValue; // @synthesize maxValue=_maxValue;
 @property(retain, nonatomic) NSNumber *minValue; // @synthesize minValue=_minValue;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIColor *highlightedLabelColor; // @synthesize highlightedLabelColor=_highlightedLabelColor;
 @property(retain, nonatomic) UIColor *unhighlightedLabelColor; // @synthesize unhighlightedLabelColor=_unhighlightedLabelColor;
 @property(retain, nonatomic) UIFont *labelFont; // @synthesize labelFont=_labelFont;
-- (void).cxx_destruct;
 - (Class)expectedDataType;
 - (id)axisLabels;
 - (id)_axisLabelForValue:(id)arg1 highlighted:(_Bool)arg2;

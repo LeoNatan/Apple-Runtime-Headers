@@ -16,11 +16,11 @@
     CDUnknownBlockType _beforeAndAfterBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType beforeAndAfterBlock; // @synthesize beforeAndAfterBlock=_beforeAndAfterBlock;
 @property(copy, nonatomic) CDUnknownBlockType afterBlock; // @synthesize afterBlock=_afterBlock;
 @property(nonatomic) __weak NSObject *object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,8 +16,8 @@
     id <PBSOSUpdateManagerClientDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PBSOSUpdateManagerClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PBSOSUpdateManagerClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)osUpdateServiceDidEncounterSlowUpdateWithData:(id)arg1;
 - (void)osUpdateServiceDidFinishApplyWithData:(id)arg1;
 - (void)osUpdateServiceDidUpdateApplyProgressWithData:(id)arg1;

@@ -28,6 +28,7 @@
 }
 
 + (id)newControllerWithIcon:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property(retain) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(copy) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
@@ -43,7 +44,6 @@
 @property NSTextField *messageField; // @synthesize messageField=_messageField;
 @property NSTextField *titleField; // @synthesize titleField=_titleField;
 @property NSImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (void)close;
 - (void)showInWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setCancellable:(_Bool)arg1;

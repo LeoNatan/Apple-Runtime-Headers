@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSURLSessionTask *_warmTask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionTask *warmTask; // @synthesize warmTask=_warmTask;
 @property(retain, nonatomic) C2RequestOptions *warmOptions; // @synthesize warmOptions=_warmOptions;
 @property(retain, nonatomic) NSMutableURLRequest *warmRequest; // @synthesize warmRequest=_warmRequest;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;

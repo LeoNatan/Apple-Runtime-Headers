@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIWindow *_window;
 }
 
-@property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (void)_setRating:(long long)arg1 forItemID:(id)arg2 account:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)setRating:(long long)arg1 forItemID:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)initWithClientContext:(id)arg1 reviewConfiguration:(id)arg2;

@@ -31,6 +31,7 @@
     CDStruct_efb11229 _interactionState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSIndexSet *requestIDsInTargetRect; // @synthesize requestIDsInTargetRect=_requestIDsInTargetRect;
 @property(nonatomic) CDStruct_efb11229 interactionState; // @synthesize interactionState=_interactionState;
 @property(retain, nonatomic) PXGViewEnvironment *viewEnvironment; // @synthesize viewEnvironment=_viewEnvironment;
-- (void).cxx_destruct;
 - (void)clearTextureAtlasManagerCache;
 - (void)setTextureAtlasManager:(id)arg1 atSpecIndex:(long long)arg2;
 - (id)textureAtlasManagerAtSpecIndex:(long long)arg1;

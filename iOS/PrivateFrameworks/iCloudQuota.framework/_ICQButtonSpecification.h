@@ -17,9 +17,9 @@
 }
 
 + (id)buttonSpecificationSampleForLevel:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *linkForBundleIdentifier; // @synthesize linkForBundleIdentifier=_linkForBundleIdentifier;
 @property(readonly, nonatomic) NSString *buttonFormat; // @synthesize buttonFormat=_buttonFormat;
-- (void).cxx_destruct;
 - (id)linkForBundleIdentifier:(id)arg1;
 @property(readonly, nonatomic) ICQLink *buttonLink;
 - (id)initWithServerDictionary:(id)arg1;

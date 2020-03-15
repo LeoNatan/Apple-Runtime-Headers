@@ -20,11 +20,11 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *replacedView; // @synthesize replacedView=_replacedView;
 @property(nonatomic) long long replacementAnimationType; // @synthesize replacementAnimationType=_replacementAnimationType;
 @property(nonatomic) long long insertionAnimationType; // @synthesize insertionAnimationType=_insertionAnimationType;
 @property(retain, nonatomic) SiriUIAceObjectViewController *aceViewController; // @synthesize aceViewController=_aceViewController;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)isFlipped;

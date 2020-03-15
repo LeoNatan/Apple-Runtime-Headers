@@ -16,8 +16,8 @@
     SBIconPageIndicatorImageSetResult *_cameraImageSetResults;
 }
 
-@property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 - (id)_emptyPageIndicatorSet;
 - (id)cameraIndicatorImageSetForLegibilitySettings:(id)arg1;
 - (id)searchIndicatorImageSetForLegibilitySettings:(id)arg1;

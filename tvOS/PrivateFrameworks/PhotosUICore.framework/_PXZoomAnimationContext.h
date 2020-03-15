@@ -28,6 +28,7 @@
     CDUnknownBlockType __allAnimationsCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setAllAnimationsCompletionHandler:) CDUnknownBlockType _allAnimationsCompletionHandler; // @synthesize _allAnimationsCompletionHandler=__allAnimationsCompletionHandler;
 @property(nonatomic) _Bool keepsSourceRegionOfInterestContent; // @synthesize keepsSourceRegionOfInterestContent=_keepsSourceRegionOfInterestContent;
 @property(nonatomic, getter=isMatchingRegionsOfInterest) _Bool matchingRegionsOfInterest; // @synthesize matchingRegionsOfInterest=_matchingRegionsOfInterest;
@@ -39,7 +40,6 @@
 @property(nonatomic) double fromAlpha; // @synthesize fromAlpha=_fromAlpha;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
-- (void).cxx_destruct;
 - (void)registerCleanupHandler:(CDUnknownBlockType)arg1;
 - (void)didEndAnimation:(long long)arg1;
 - (long long)willBeginAnimation;

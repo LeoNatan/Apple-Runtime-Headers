@@ -27,6 +27,7 @@
     long long _totalPacketsCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long totalPacketsCount; // @synthesize totalPacketsCount=_totalPacketsCount;
 @property(nonatomic) struct OpaqueAudioFileID *fileID; // @synthesize fileID=_fileID;
 @property(nonatomic) _Bool shouldPlayStopSound; // @synthesize shouldPlayStopSound=_shouldPlayStopSound;
@@ -39,7 +40,6 @@
 @property(nonatomic, getter=isRecordingEmpty) _Bool recordingEmpty; // @synthesize recordingEmpty=_recordingEmpty;
 @property(nonatomic, getter=isRecording) _Bool recording; // @synthesize recording=_recording;
 @property(nonatomic) __weak id <CKAudioRecorderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)resetState;
 - (void)voiceController:(id)arg1 didUpdateAveragePower:(float)arg2;

@@ -24,6 +24,7 @@
 }
 
 + (id)sharedBulletinObserver;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLNotificationXPCServer *xpcServer; // @synthesize xpcServer=_xpcServer;
 @property(retain, nonatomic) CSLPITimer *obsolescenceTimer; // @synthesize obsolescenceTimer=_obsolescenceTimer;
 @property(retain, nonatomic) CSLBulletinDeduplicator *deduplicator; // @synthesize deduplicator=_deduplicator;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) CSLBulletinPipelineStep *pipeline; // @synthesize pipeline=_pipeline;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)_sectionDisplayNameForSectionID:(id)arg1;
 - (id)getNotificationSettings;
 - (void)setNotificationsLevel:(int)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3;

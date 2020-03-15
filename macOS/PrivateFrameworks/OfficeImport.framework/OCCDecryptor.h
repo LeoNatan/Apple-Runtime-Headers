@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)allocTempFileWithBase:(id)arg1 outFilename:(id *)arg2 tempDirectory:(id *)arg3;
 + (id)agilePasswordKeyEncryptorNamespace;
 + (id)agileDescriptorNamespace;
-@property(readonly, nonatomic) NSString *outputFilename; // @synthesize outputFilename=mOutputFilename;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *outputFilename; // @synthesize outputFilename=mOutputFilename;
 - (BOOL)decryptIntoOutputFile;
 - (BOOL)verifyPassphrase:(id)arg1;
 - (BOOL)decrypt;

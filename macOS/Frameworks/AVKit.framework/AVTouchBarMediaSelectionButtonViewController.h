@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     AVTouchBarMediaSelectionOption *_previouslySelectedTouchBarLegibleMediaSelectionOption;
 }
 
+- (void).cxx_destruct;
 @property(retain) AVTouchBarMediaSelectionOption *previouslySelectedTouchBarLegibleMediaSelectionOption; // @synthesize previouslySelectedTouchBarLegibleMediaSelectionOption=_previouslySelectedTouchBarLegibleMediaSelectionOption;
 @property(nonatomic) __weak id <AVTouchBarMediaSelectionButtonViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id <AVTouchBarMediaSelectionControlling> playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)_presentMediaSelectionPopover;
 - (void)actionMediaSelectionButtonPressAndHold:(id)arg1;
 - (void)actionMediaSelectionButtonTapped:(id)arg1;

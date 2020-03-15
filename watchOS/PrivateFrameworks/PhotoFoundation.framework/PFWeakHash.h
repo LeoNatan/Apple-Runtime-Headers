@@ -25,8 +25,8 @@
 }
 
 + (void)initialize;
-@property __weak id <PFWeakHashDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <PFWeakHashDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)enumerateObjectsAndPayloadsWithBlock:(CDUnknownBlockType)arg1;
 - (id)payloadForObject:(id)arg1;
 - (void)setPayload:(id)arg1 forObject:(id)arg2;

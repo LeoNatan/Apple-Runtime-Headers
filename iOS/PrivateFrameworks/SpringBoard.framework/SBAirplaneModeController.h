@@ -19,8 +19,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <SBAirplaneModeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBAirplaneModeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)airplaneModeChanged;
 @property(nonatomic, getter=isInAirplaneMode) _Bool inAirplaneMode;
 - (id)init;

@@ -20,6 +20,7 @@
     struct CacheDeleteToken *__queryQueue_currentToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CacheDeleteToken *_queryQueue_currentToken; // @synthesize _queryQueue_currentToken=__queryQueue_currentToken;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_cacheDeleteQueryQueue; // @synthesize _cacheDeleteQueryQueue=__cacheDeleteQueryQueue;
 @property(retain, nonatomic) NSDate *_lastPurgeRequestUpdateTime; // @synthesize _lastPurgeRequestUpdateTime=__lastPurgeRequestUpdateTime;
@@ -27,7 +28,6 @@
 @property(nonatomic) long long _cachedLowDiskThreshold; // @synthesize _cachedLowDiskThreshold=__cachedLowDiskThreshold;
 @property(nonatomic) long long _cachedVeryLowDiskThreshold; // @synthesize _cachedVeryLowDiskThreshold=__cachedVeryLowDiskThreshold;
 @property(nonatomic) __weak id <CAMStorageControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_legacyDiskSpaceDidBecomeLowNotification;
 - (void)_queryQueue_updatePurgeRequestStateForTotalFreeBytes:(long long)arg1 preferredFreeBytes:(long long)arg2;
 - (void)_queryQueue_aggregateLowDiskEventWithIdentifier:(id)arg1;

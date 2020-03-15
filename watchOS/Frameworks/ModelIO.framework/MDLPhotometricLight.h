@@ -16,9 +16,9 @@
     unsigned int _sphericalHarmonicsLevel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int sphericalHarmonicsLevel; // @synthesize sphericalHarmonicsLevel=_sphericalHarmonicsLevel;
 @property(readonly, retain, nonatomic) MDLTexture *lightCubeMap; // @synthesize lightCubeMap=_lightCubeMap;
-- (void).cxx_destruct;
 - (struct CGColor *)evaluatedColorFromSHVector: /* Error: Ran out of types for this method. */;
 - (void)generateSphericalHarmonicsFromLight:(unsigned int)arg1;
 - (id)computeSceneKitRenderingTexture:(unsigned int)arg1;

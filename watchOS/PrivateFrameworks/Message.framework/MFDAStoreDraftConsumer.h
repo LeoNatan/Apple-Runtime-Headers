@@ -17,10 +17,10 @@
     MFError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
 @property(readonly, nonatomic) MFError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSString *serverId; // @synthesize serverId=_serverId;
-- (void).cxx_destruct;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
 
 // Remaining properties

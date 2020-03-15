@@ -26,6 +26,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)messageWithIPMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *messageUnits; // @synthesize messageUnits=_messageUnits;
 @property(nonatomic) _Bool isSenderSignificant; // @synthesize isSenderSignificant=_isSenderSignificant;
 @property(nonatomic) _Bool isGroupConversation; // @synthesize isGroupConversation=_isGroupConversation;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(retain, nonatomic) SGIPPerson *sender; // @synthesize sender=_sender;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToMessage:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

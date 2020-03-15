@@ -18,9 +18,9 @@
 
 + (id)serviceReferenceWithService:(id)arg1;
 + (id)serviceReferenceWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) HMPBAccessoryReference *accessoryReference; // @synthesize accessoryReference=_accessoryReference;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,9 +15,9 @@
     RTPersistenceManager *_persistenceManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)collapseReconciledVisitsToLocationsOfInterest:(id)arg1 context:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)performReconciliationWithHandler:(CDUnknownBlockType)arg1;
 - (id)_sortDescriptorForReconciliation;

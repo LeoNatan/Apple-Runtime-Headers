@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *disabledProfiles; // @synthesize disabledProfiles;
 @property(readonly, nonatomic) NSArray *enabledProfiles; // @synthesize enabledProfiles;
-- (void).cxx_destruct;
 - (void)updateWithEnabledProfiles:(id)arg1 disabledProfiles:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

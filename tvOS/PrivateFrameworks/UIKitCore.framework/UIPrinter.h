@@ -15,8 +15,8 @@
 }
 
 + (id)printerWithURL:(id)arg1;
-@property(readonly, copy) NSURL *URL; // @synthesize URL;
 - (void).cxx_destruct;
+@property(readonly, copy) NSURL *URL; // @synthesize URL;
 - (id)_internalPrinter;
 - (void)contactPrinter:(CDUnknownBlockType)arg1;
 @property(readonly) _Bool supportsDuplex;

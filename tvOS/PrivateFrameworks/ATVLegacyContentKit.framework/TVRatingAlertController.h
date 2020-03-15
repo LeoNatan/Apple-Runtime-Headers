@@ -18,8 +18,8 @@
 }
 
 + (id)ratingAlertControllerWithTitle:(id)arg1 initialRating:(unsigned long long)arg2 initialRatingIsSuggestion:(_Bool)arg3;
-@property(copy, nonatomic) CDUnknownBlockType ratingSelectionHandler; // @synthesize ratingSelectionHandler=_ratingSelectionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType ratingSelectionHandler; // @synthesize ratingSelectionHandler=_ratingSelectionHandler;
 - (void)_ratingViewController:(id)arg1 didSelectRating:(unsigned long long)arg2;
 @property(nonatomic) _Bool initialRatingIsSuggestion;
 @property(nonatomic) unsigned long long initialRating;

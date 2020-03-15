@@ -18,9 +18,9 @@
     NSObject<OS_xpc_object> *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)setTestLatencyMap:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchStateForClient:(id)arg1 withPeerEndpoint:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setCurrentLatitude:(double)arg1 longitude:(double)arg2 timestamp:(id)arg3 forClient:(id)arg4;

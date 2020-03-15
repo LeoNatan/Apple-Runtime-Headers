@@ -25,9 +25,9 @@
     double _accuracy;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSCollectionViewLayout *nextLayout; // @synthesize nextLayout=_toLayout;
 @property(readonly) NSCollectionViewLayout *currentLayout; // @synthesize currentLayout=_fromLayout;
-- (void).cxx_destruct;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;

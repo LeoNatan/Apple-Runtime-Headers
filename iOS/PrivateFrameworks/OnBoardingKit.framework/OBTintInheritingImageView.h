@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIImage *_originalImage;
 }
 
-@property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
 - (void)tintColorDidChange;
 - (void)setImage:(id)arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;

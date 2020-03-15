@@ -16,8 +16,8 @@
     id <SXDateParser> _dateParser;
 }
 
-@property(readonly, nonatomic) id <SXDateParser> dateParser; // @synthesize dateParser=_dateParser;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXDateParser> dateParser; // @synthesize dateParser=_dateParser;
 - (id)actionForStartDate:(id)arg1 endDate:(id)arg2;
 - (id)actionForURL:(id)arg1;
 - (id)actionForAddition:(id)arg1;

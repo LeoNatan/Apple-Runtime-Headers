@@ -13,8 +13,8 @@
     NSArray *_bodyStructure;
 }
 
-@property(copy, nonatomic) NSArray *bodyStructure; // @synthesize bodyStructure=_bodyStructure;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *bodyStructure; // @synthesize bodyStructure=_bodyStructure;
 - (id)description;
 
 @end

@@ -15,15 +15,19 @@
 {
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rawJoints;
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rotatedJoints;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rawJointsLocalSpace;
     struct vector<unsigned char, std::__1::allocator<unsigned char>> _jointTrackingStates;
-    long long _rotationNeeded;
     AR2D3DSkeletonLiftingData *_liftingData;
+    long long _rotation;
 }
 
++ (id)childrenIndices;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) AR2D3DSkeletonLiftingData *liftingData; // @synthesize liftingData=_liftingData;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long rotation; // @synthesize rotation=_rotation;
+@property(readonly, nonatomic) AR2D3DSkeletonLiftingData *liftingData; // @synthesize liftingData=_liftingData;
+- (id)alignSkeleton:(id)arg1 rotationNeeded:(long long)arg2;
 - (float)computeDistanceBetweenSkeletonDetectionResult:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
@@ -31,8 +35,12 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long liftingJointCount;
 @property(readonly, nonatomic) const float *liftingData3D;
+@property(readonly, nonatomic) unsigned long long trackedJointCount;
 @property(readonly, nonatomic) unsigned long long jointCount;
 @property(readonly, nonatomic) const char *jointTrackingStates;
+// Error parsing type for property jointsLocalSpace:
+// Property attributes: Tr^,R,N
+
 // Error parsing type for property joints:
 // Property attributes: Tr^,R,N
 

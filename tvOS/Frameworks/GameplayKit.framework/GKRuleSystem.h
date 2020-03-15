@@ -18,8 +18,8 @@
     NSMapTable *_gradeByFact;
 }
 
-@property(readonly, retain, nonatomic) NSMutableDictionary *state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSMutableDictionary *state; // @synthesize state=_state;
 - (void)reset;
 - (void)retractFact:(id)arg1 grade:(float)arg2;
 - (void)retractFact:(id)arg1;

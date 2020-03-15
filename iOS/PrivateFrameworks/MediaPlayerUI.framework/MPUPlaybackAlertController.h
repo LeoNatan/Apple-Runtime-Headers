@@ -20,10 +20,10 @@
 + (long long)playbackAlertTypeForError:(id)arg1;
 + (id)playbackAlertControllerForItem:(id)arg1 contentType:(long long)arg2 error:(id)arg3 dismissalBlock:(CDUnknownBlockType)arg4;
 + (id)contentRestrictedPlaybackAlertControllerForContentType:(long long)arg1 dismissalBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) MPAVItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) long long playbackAlertType; // @synthesize playbackAlertType=_playbackAlertType;
-- (void).cxx_destruct;
 
 @end
 

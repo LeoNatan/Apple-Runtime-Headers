@@ -16,10 +16,10 @@
     NSURLRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) id <SWNavigationHandler> navigationHandler; // @synthesize navigationHandler=_navigationHandler;
 @property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)initWithViewController:(id)arg1 navigationHandler:(id)arg2 URLRequest:(id)arg3;
 
 @end

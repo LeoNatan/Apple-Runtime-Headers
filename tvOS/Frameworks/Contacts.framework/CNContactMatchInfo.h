@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool matchedNameProperty; // @synthesize matchedNameProperty=_matchedNameProperty;
 @property(retain, nonatomic) CNPromise *excerpt; // @synthesize excerpt=_excerpt;
 @property(retain, nonatomic) NSSet *matchedTerms; // @synthesize matchedTerms=_matchedTerms;
 @property(copy, nonatomic) NSDictionary *matchedProperties; // @synthesize matchedProperties=_matchedProperties;
 @property(copy, nonatomic) NSNumber *relevanceScore; // @synthesize relevanceScore=_relevanceScore;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

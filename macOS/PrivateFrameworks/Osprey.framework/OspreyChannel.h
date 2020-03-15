@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSError, NSString, NSURL, NSURLSessionConfiguration, OspreyAbsintheAuthenticator, OspreyGRPCChannel;
+@class NSError, NSString, NSURL, NSURLSessionConfiguration, OspreyAbsintheAuthenticator, OspreyConnectionPreferences, OspreyGRPCChannel;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface OspreyChannel : NSObject
@@ -15,11 +15,11 @@
     NSURLSessionConfiguration *_configuration;
     NSObject<OS_dispatch_queue> *_queue;
     OspreyGRPCChannel *_channel;
-    NSData *_validationHeaderData;
     OspreyAbsintheAuthenticator *_authenticator;
     NSObject<OS_dispatch_group> *_validationGroup;
     BOOL _waitingForSignature;
     NSError *_signatureError;
+    OspreyConnectionPreferences *_connectionPreferences;
     BOOL _useAbsinthe;
     BOOL _forceHTTPv2;
     NSString *_clientTraceId;
@@ -27,11 +27,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType connectionMetricsHandler; // @synthesize connectionMetricsHandler=_connectionMetricsHandler;
 @property(copy, nonatomic) NSString *clientTraceId; // @synthesize clientTraceId=_clientTraceId;
 @property(nonatomic) BOOL forceHTTPv2; // @synthesize forceHTTPv2=_forceHTTPv2;
 @property(nonatomic) BOOL useAbsinthe; // @synthesize useAbsinthe=_useAbsinthe;
-- (void).cxx_destruct;
 - (void)initializeAbsintheSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)preconnect;
 - (void)setUseCompression:(BOOL)arg1;

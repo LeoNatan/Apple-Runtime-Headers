@@ -7,16 +7,18 @@
 #import <UIKitCore/NSObject-Protocol.h>
 #import <UIKitCore/UITextAutoscrolling-Protocol.h>
 
-@class NSTextAlternatives, UIDragRecognizer, UIGestureRecognizer, UIResponder, UITextRange, UITextSelectionView, UITouch, UIView;
+@class NSTextAlternatives, UIDragRecognizer, UIGestureRecognizer, UIResponder, UITextRange, UITextSelectionView, UITouch, UIView, _UIKeyboardTextSelectionController;
 @protocol UITextInput;
 
 @protocol UITextInteraction_AssistantDelegate <UITextAutoscrolling, NSObject>
+@property(readonly, nonatomic) _UIKeyboardTextSelectionController *activeSelectionController;
+@property(retain, nonatomic) id grabberSuppressionAssertion;
 @property(nonatomic) _Bool expectingCommit;
 @property(readonly, nonatomic) _Bool willHandoffLoupeMagnifier;
 @property(nonatomic) _Bool needsGestureUpdate;
 @property(nonatomic) struct CGPoint loupeGestureEndPoint;
 @property(nonatomic) _Bool autoscrolled;
-- (void)lollipopGestureWithState:(int)arg1 location:(struct CGPoint)arg2 locationOfFirstTouch:(struct CGPoint)arg3;
+- (void)lollipopGestureWithState:(int)arg1 location:(struct CGPoint)arg2 locationOfFirstTouch:(struct CGPoint)arg3 forTouchType:(int)arg4;
 - (void)endFloatingCursor;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
@@ -35,10 +37,13 @@
 - (void)setFirstResponderIfNecessary;
 - (void)checkEditabilityAndSetFirstResponderIfNecessary;
 - (void)scrollSelectionToVisible;
+- (_Bool)hasActiveSelectionInteraction;
 - (void)didEndSelectionInteraction;
 - (void)willBeginSelectionInteraction;
 - (void)clearStashedSelection;
 - (void)stashCurrentSelection;
+- (_Bool)supportsIndirectInteractions;
+- (_Bool)usesAsynchronousSelectionController;
 - (_Bool)didUseStashedSelection;
 - (void)canBeginDragCursor:(UIDragRecognizer *)arg1;
 - (_Bool)viewCouldBecomeEditable:(UIResponder<UITextInput> *)arg1;

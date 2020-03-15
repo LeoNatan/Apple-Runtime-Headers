@@ -15,9 +15,9 @@
     NSArray *_messages;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 @property(readonly, nonatomic) __weak id <IMAPPersistMessagesOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithDataSource:(id)arg1;

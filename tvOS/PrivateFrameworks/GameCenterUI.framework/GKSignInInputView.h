@@ -20,6 +20,7 @@
     NSLayoutConstraint *_signInInputViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *signInInputViewHeightConstraint; // @synthesize signInInputViewHeightConstraint=_signInInputViewHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *privacyLinkToSignInFormTopConstraint; // @synthesize privacyLinkToSignInFormTopConstraint=_privacyLinkToSignInFormTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *signInFormToSignInLabelTopConstraint; // @synthesize signInFormToSignInLabelTopConstraint=_signInFormToSignInLabelTopConstraint;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *signInBaselineToPromptTextTopConstraint; // @synthesize signInBaselineToPromptTextTopConstraint=_signInBaselineToPromptTextTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bottomToSignInBaselineConstraint; // @synthesize bottomToSignInBaselineConstraint=_bottomToSignInBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topToSignInBaselineConstraint; // @synthesize topToSignInBaselineConstraint=_topToSignInBaselineConstraint;
-- (void).cxx_destruct;
 - (id)allVariableConstraints;
 - (void)setupConstraintConstantsForOrientation:(long long)arg1;
 

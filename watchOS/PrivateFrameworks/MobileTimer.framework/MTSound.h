@@ -33,12 +33,12 @@
 + (void)setDefaultSound:(id)arg1 forCategory:(unsigned int)arg2;
 + (id)defaultSoundForCategory:(unsigned int)arg1;
 + (int)_alertTypeForCategory:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *soundVolume; // @synthesize soundVolume=_soundVolume;
 @property(readonly, nonatomic) NSString *vibrationIdentifier; // @synthesize vibrationIdentifier=_vibrationIdentifier;
 @property(readonly, nonatomic) NSNumber *mediaItemIdentifier; // @synthesize mediaItemIdentifier=_mediaItemIdentifier;
 @property(readonly, nonatomic) NSString *toneIdentifier; // @synthesize toneIdentifier=_toneIdentifier;
 @property(readonly, nonatomic) unsigned int soundType; // @synthesize soundType=_soundType;
-- (void).cxx_destruct;
 - (void)updatePreview:(id)arg1;
 - (id)previewWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)encodeWithCoder:(id)arg1;

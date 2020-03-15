@@ -13,6 +13,7 @@
 
 @interface NPKPassSyncEngine : NSObject <NSSecureCoding>
 {
+    _Bool _requireAppleAccountForPaymentPasses;
     NPKPassSyncState *_libraryState;
     NPKPassSyncState *_backupState;
     NPKPassSyncState *_reconciledState;
@@ -25,13 +26,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool requireAppleAccountForPaymentPasses; // @synthesize requireAppleAccountForPaymentPasses=_requireAppleAccountForPaymentPasses;
 @property(retain, nonatomic) NPKPassSyncChange *processingChange; // @synthesize processingChange=_processingChange;
 @property(retain, nonatomic) NPKPassSyncChange *candidateChange; // @synthesize candidateChange=_candidateChange;
 @property(nonatomic) __weak id <NPKPassSyncEngineDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NPKPassSyncEngineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long engineRole; // @synthesize engineRole=_engineRole;
 @property(retain, nonatomic) NPKPassSyncState *backupState; // @synthesize backupState=_backupState;
-- (void).cxx_destruct;
 - (void)_finishedProcessingChange:(id)arg1;
 - (void)_receivedStateChangeProcessed:(id)arg1 changeAccepted:(_Bool)arg2;
 - (void)_engineStateChanged;

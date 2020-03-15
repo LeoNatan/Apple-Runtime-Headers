@@ -15,10 +15,10 @@
     CDUnknownBlockType _reject;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reject; // @synthesize reject=_reject;
 @property(copy, nonatomic) CDUnknownBlockType resolve; // @synthesize resolve=_resolve;
 @property(retain, nonatomic) NFPromise *promise; // @synthesize promise=_promise;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

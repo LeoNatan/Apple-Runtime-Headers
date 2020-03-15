@@ -35,11 +35,11 @@
 
 + (struct CGSize)viewSizeWithLength:(long long)arg1;
 + (struct CGSize)digitViewSizeWithLength:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain) NSButton *nextButtonResponder; // @synthesize nextButtonResponder=_nextButtonResponder;
 @property BOOL supportsRTL; // @synthesize supportsRTL=_supportsRTL;
 @property(nonatomic) BOOL echosBullets; // @synthesize echosBullets=_echosBullets;
 @property(nonatomic) __weak id <MMPinFieldViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)activeInputIndex;
 - (struct CGRect)rectForIndex:(int)arg1;
 - (void)handleTextChange;

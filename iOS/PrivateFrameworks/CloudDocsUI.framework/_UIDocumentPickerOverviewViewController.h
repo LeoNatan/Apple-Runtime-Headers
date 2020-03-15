@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _mode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool manage; // @synthesize manage=_manage;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSArray *fileTypes; // @synthesize fileTypes=_fileTypes;
 @property(retain, nonatomic) NSArray *auxiliaryOptions; // @synthesize auxiliaryOptions=_auxiliaryOptions;
 @property(retain, nonatomic) NSArray *allPickers; // @synthesize allPickers=_allPickers;
 @property(nonatomic) __weak id <_UIDocumentPickerOverviewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

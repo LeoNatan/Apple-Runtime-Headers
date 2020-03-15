@@ -13,8 +13,8 @@
     NUIOSurface *_surface;
 }
 
-@property(readonly, nonatomic) NUIOSurface *surface; // @synthesize surface=_surface;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NUIOSurface *surface; // @synthesize surface=_surface;
 - (BOOL)isSurface;
 - (void)allocateStorage:(id)arg1;
 - (id)initWithIOSurface:(id)arg1;

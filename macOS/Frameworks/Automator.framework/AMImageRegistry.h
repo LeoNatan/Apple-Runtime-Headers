@@ -20,9 +20,9 @@
 + (id)successImage;
 + (id)progressImage;
 + (id)sharedImageRegistry;
+- (void).cxx_destruct;
 @property(retain) NSCache *applicationURLCache; // @synthesize applicationURLCache=_applicationURLCache;
 @property(retain) NSCache *imageCache; // @synthesize imageCache=_imageCache;
-- (void).cxx_destruct;
 - (id)imageFromAutomatorApplicationNamed:(id)arg1 size:(long long)arg2;
 - (id)imageFromFrameworkNamed:(id)arg1 type:(id)arg2 size:(long long)arg3;
 - (id)imageFromSystemNamed:(id)arg1 size:(long long)arg2;

@@ -7,11 +7,10 @@
 #import <objc/NSObject.h>
 
 #import <AppStoreKit/AMPWritingDirectionContentProtocol-Protocol.h>
-#import <AppStoreKit/NSTextStorageDelegate-Protocol.h>
 
 @class NSTextStorage;
 
-@interface AMPLanguageAwareTextStorage : NSObject <NSTextStorageDelegate, AMPWritingDirectionContentProtocol>
+@interface AMPLanguageAwareTextStorage : NSObject <AMPWritingDirectionContentProtocol>
 {
     // Error parsing type: , name: textStorage
     // Error parsing type: , name: originalTextStorageDelegate

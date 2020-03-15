@@ -20,6 +20,7 @@
     ICURLBag *_delegatedURLBag;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICURLBag *delegatedURLBag; // @synthesize delegatedURLBag=_delegatedURLBag;
 @property(copy, nonatomic) ICDelegateToken *delegateToken; // @synthesize delegateToken=_delegateToken;
 @property(copy, nonatomic) NSString *delegatedStorefrontIdentifier; // @synthesize delegatedStorefrontIdentifier=_delegatedStorefrontIdentifier;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
 @property(retain, nonatomic) ICURLBag *URLBag; // @synthesize URLBag=_URLBag;
 @property(copy, nonatomic) NSString *iCloudPersonID; // @synthesize iCloudPersonID=_iCloudPersonID;
-- (void).cxx_destruct;
 
 @end
 

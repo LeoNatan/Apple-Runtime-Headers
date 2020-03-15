@@ -14,8 +14,8 @@
 }
 
 + (id)privateSearchConnectionWithToken:(id)arg1;
-@property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 - (void)sendMessageAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)createXPCDictionaryForQuery:(id)arg1 queryID:(long long)arg2 queryContext:(id)arg3 needsInitialization:(_Bool)arg4;
 - (id)initWithToken:(id)arg1;

@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *blockedReasonDescription; // @synthesize blockedReasonDescription=_blockedReasonDescription;
 @property(readonly, nonatomic) BOOL knownMalware; // @synthesize knownMalware=_knownMalware;
 @property(readonly, nonatomic) BOOL needsOverride; // @synthesize needsOverride=_needsOverride;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(readonly, nonatomic) NSString *signingID; // @synthesize signingID=_signingID;
 @property(readonly, nonatomic) NSString *itemPath; // @synthesize itemPath=_itemPath;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItemPath:(id)arg1 signingID:(id)arg2 teamID:(id)arg3 cdHash:(id)arg4 needsApproval:(BOOL)arg5 needsOverride:(BOOL)arg6 knownMalware:(BOOL)arg7 blockedReasonDescription:(id)arg8;

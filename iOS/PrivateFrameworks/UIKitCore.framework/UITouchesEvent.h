@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     long long _singleAllowableExternalTouchPathIndex;
 }
 
-@property(nonatomic) long long singleAllowableExternalTouchPathIndex; // @synthesize singleAllowableExternalTouchPathIndex=_singleAllowableExternalTouchPathIndex;
 - (void).cxx_destruct;
+@property(nonatomic) long long singleAllowableExternalTouchPathIndex; // @synthesize singleAllowableExternalTouchPathIndex=_singleAllowableExternalTouchPathIndex;
 - (void)_setHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)predictedTouchesForTouch:(id)arg1;
 - (id)coalescedTouchesForTouch:(id)arg1;
@@ -41,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double _initialTouchTimestamp;
 - (id)description;
 - (id)_cloneEvent;
-- (long long)_modifierFlags;
 - (void)_moveTouchesFromView:(id)arg1 toView:(id)arg2;
 - (id)_exclusiveTouchWindows;
 - (id)_firstTouchForView:(id)arg1;

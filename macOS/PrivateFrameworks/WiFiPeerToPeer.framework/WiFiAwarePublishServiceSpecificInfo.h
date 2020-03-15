@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *instanceName; // @synthesize instanceName=_instanceName;
 @property(copy, nonatomic) NSData *txtRecordData; // @synthesize txtRecordData=_txtRecordData;
 @property(copy, nonatomic) NSData *blob; // @synthesize blob=_blob;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

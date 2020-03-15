@@ -18,10 +18,10 @@
 }
 
 + (Class)eventsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(retain, nonatomic) NTPBSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

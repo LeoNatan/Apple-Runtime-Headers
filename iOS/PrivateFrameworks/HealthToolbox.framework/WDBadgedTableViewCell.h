@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *badgeViewToAccessoryViewConstraint; // @synthesize badgeViewToAccessoryViewConstraint=_badgeViewToAccessoryViewConstraint;
 @property(retain, nonatomic) _WDRoundedCornerView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UILabel *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
 @property(copy, nonatomic) HKBadge *badge; // @synthesize badge=_badge;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentSizeCategory;
 - (void)setAccessoryView:(id)arg1;

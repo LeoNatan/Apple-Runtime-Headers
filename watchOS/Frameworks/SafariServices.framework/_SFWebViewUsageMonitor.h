@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     _Bool _viewControllerViewIsHidden;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool viewControllerViewIsHidden; // @synthesize viewControllerViewIsHidden=_viewControllerViewIsHidden;
 @property(nonatomic) _Bool urlHasIDFA; // @synthesize urlHasIDFA=_urlHasIDFA;
 @property(nonatomic) _Bool urlHasQueryString; // @synthesize urlHasQueryString=_urlHasQueryString;
 @property(nonatomic) _Bool userInteracted; // @synthesize userInteracted=_userInteracted;
-- (void).cxx_destruct;
 - (void)checkURL:(id)arg1;
 - (void)auditUsageIfNeeded;
 @property(readonly, nonatomic) NSString *stringAsAuditKey;

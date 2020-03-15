@@ -25,6 +25,7 @@
 }
 
 + (id)defaultStyle;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets preferredBackgroundInsets; // @synthesize preferredBackgroundInsets=_preferredBackgroundInsets;
 @property(retain, nonatomic) NSArray *preferredBackgroundEffects; // @synthesize preferredBackgroundEffects=_preferredBackgroundEffects;
 @property(retain, nonatomic) UITraitCollection *preferredTraitCollection; // @synthesize preferredTraitCollection=_preferredTraitCollection;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned long long preferredLayout; // @synthesize preferredLayout=_preferredLayout;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIWindow *containerWindow; // @synthesize containerWindow=_containerWindow;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

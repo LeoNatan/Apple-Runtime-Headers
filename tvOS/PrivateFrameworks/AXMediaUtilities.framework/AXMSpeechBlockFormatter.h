@@ -11,8 +11,8 @@
     CDUnknownBlockType _formattingBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType formattingBlock; // @synthesize formattingBlock=_formattingBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType formattingBlock; // @synthesize formattingBlock=_formattingBlock;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithFormattingBlock:(CDUnknownBlockType)arg1;
 

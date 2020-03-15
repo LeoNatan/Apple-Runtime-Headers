@@ -19,8 +19,8 @@
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
 }
 
-@property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (id)_appExposeModifierKeyForBundleID:(id)arg1;
 - (id)_reduceMotionModifier;
 - (id)_swipeToKillModifierKeyForAppLayout:(id)arg1;

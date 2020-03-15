@@ -17,11 +17,11 @@
 }
 
 + (unsigned long long)_xpcAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UISaveToCameraRollSaveItemsController *saveController; // @synthesize saveController=_saveController;
 @property(nonatomic) long long videoCount; // @synthesize videoCount=_videoCount;
 @property(nonatomic) long long livePhotoCount; // @synthesize livePhotoCount=_livePhotoCount;
 @property(nonatomic) long long imageCount; // @synthesize imageCount=_imageCount;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (CDUnknownBlockType)_backgroundPreheatBlock;

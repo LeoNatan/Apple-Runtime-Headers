@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_loadingItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *loadingItem; // @synthesize loadingItem=_loadingItem;
 @property(retain, nonatomic) UIBarButtonItem *loginItem; // @synthesize loginItem=_loginItem;
 @property(nonatomic) __weak UITextField *passwordField; // @synthesize passwordField=_passwordField;
 @property(nonatomic) __weak UITextField *usernameField; // @synthesize usernameField=_usernameField;
 @property(retain, nonatomic) IKEngine *engine; // @synthesize engine=_engine;
 @property(nonatomic) __weak id <WFInstapaperLoginViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
 - (void)cancel;

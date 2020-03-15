@@ -15,10 +15,10 @@
     UILabel *_loadingLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(copy, nonatomic) NSString *loadingTitle; // @synthesize loadingTitle=_loadingTitle;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setLoadingIndicatorVisible:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isLoadingIndicatorVisible) _Bool loadingIndicatorVisible;

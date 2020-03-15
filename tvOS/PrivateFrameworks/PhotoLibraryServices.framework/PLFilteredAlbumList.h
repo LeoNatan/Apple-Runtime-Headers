@@ -26,13 +26,13 @@
 }
 
 + (id)filteredAlbumList:(id)arg1 filter:(int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate;
 @property(nonatomic) int filter; // @synthesize filter;
 @property(retain, nonatomic) PLManagedAlbumList *backingAlbumList; // @synthesize backingAlbumList;
-- (void).cxx_destruct;
 - (void)enumerateDerivedAlbumLists:(CDUnknownBlockType)arg1;
 - (void)unregisterAllDerivedAlbums;
-- (void)registerDerivedAlbumList:(struct NSObject *)arg1;
+- (void)registerDerivedAlbumList:(id)arg1;
 - (void)replaceFilteredAlbumsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAlbumsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeFilteredAlbumsAtIndexes:(id)arg1;
@@ -73,7 +73,7 @@
 - (_Bool)needsReordering;
 - (void)setNeedsReordering;
 @property(readonly, copy, nonatomic) CDUnknownBlockType albumsSortingComparator;
-- (_Bool)albumHasFixedOrder:(struct NSObject *)arg1;
+- (_Bool)albumHasFixedOrder:(id)arg1;
 @property(readonly, nonatomic) _Bool isFolder;
 @property(readonly, nonatomic) _Bool canEditAlbums;
 @property(readonly, nonatomic) short albumListType;

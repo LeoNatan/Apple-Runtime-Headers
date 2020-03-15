@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_semaphore> *_waitForExtensionsSemaphore;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *waitForExtensionsSemaphore; // @synthesize waitForExtensionsSemaphore=_waitForExtensionsSemaphore;
 @property(nonatomic) _Bool isMatchingExtensions; // @synthesize isMatchingExtensions=_isMatchingExtensions;
 @property(retain, nonatomic) NSMapTable *qlExtensions; // @synthesize qlExtensions=_qlExtensions;
 @property(retain, nonatomic) NSMutableDictionary *matchingExtensions; // @synthesize matchingExtensions=_matchingExtensions;
 @property(retain, nonatomic) id matchingContext; // @synthesize matchingContext=_matchingContext;
 @property(retain, nonatomic) NSDictionary *matchingAttributes; // @synthesize matchingAttributes=_matchingAttributes;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_synchronouslyWaitForExtensionListIfNeeded;
 - (_Bool)_supportedContentTypesFromExtension:(id)arg1 matches:(id)arg2 allowMatchingWithParentTypes:(_Bool)arg3;

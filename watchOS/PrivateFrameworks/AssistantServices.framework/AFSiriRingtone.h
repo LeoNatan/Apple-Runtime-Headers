@@ -21,6 +21,7 @@
     AFVoiceInfo *_voiceInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AFVoiceInfo *voiceInfo; // @synthesize voiceInfo=_voiceInfo;
 @property(nonatomic) int callDestinationIDType; // @synthesize callDestinationIDType=_callDestinationIDType;
 @property(copy, nonatomic) NSString *callDestinationID; // @synthesize callDestinationID=_callDestinationID;
@@ -28,7 +29,6 @@
 @property(nonatomic) int callerIDType; // @synthesize callerIDType=_callerIDType;
 @property(copy, nonatomic) NSString *displayedCallerID; // @synthesize displayedCallerID=_displayedCallerID;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (id)_escapeCallDestinationIDString:(id)arg1 forType:(int)arg2;
 - (id)_escapeCallerIDString:(id)arg1 forType:(int)arg2;
 - (id)_phoneticNamesForContact:(id)arg1 languageCode:(id)arg2;

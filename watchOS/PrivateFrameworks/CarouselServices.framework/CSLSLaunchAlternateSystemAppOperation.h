@@ -18,9 +18,9 @@
     NSObject<OS_os_activity> *_activity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) BKSAlternateSystemApp *alternateSystemApp; // @synthesize alternateSystemApp=_alternateSystemApp;
-- (void).cxx_destruct;
 - (void)alternateSystemApp:(id)arg1 didFailToLaunchWithError:(id)arg2;
 - (void)alternateSystemAppDidLaunch:(id)arg1;
 - (void)complete;

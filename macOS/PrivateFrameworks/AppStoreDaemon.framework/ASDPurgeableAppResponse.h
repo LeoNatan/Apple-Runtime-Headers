@@ -17,9 +17,9 @@
     NSArray *_purgeableApps;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *purgeableApps; // @synthesize purgeableApps=_purgeableApps;
 @property(readonly, nonatomic) long long purgeableSize; // @synthesize purgeableSize=_purgeableSize;
-- (void).cxx_destruct;
 - (id)initWithPurgeableSize:(long long)arg1 purgeableApps:(id)arg2;
 - (id)init;
 

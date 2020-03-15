@@ -7,7 +7,7 @@
 #import <NewsSubscription/NFCopying-Protocol.h>
 #import <NewsSubscription/NSObject-Protocol.h>
 
-@class FCForYouGroupsConfiguration, FCNotificationsConfiguration, FCPaidBundleConfiguration, FCPersonalizationTreatment, FCTopStoriesConfiguration, FCVideoGroupsConfig, NSArray, NSDictionary, NSNumber, NSString, NTPBTodayConfig;
+@class FCForYouGroupsConfiguration, FCNotificationsConfiguration, FCPaidBundleConfiguration, FCPersonalizationTreatment, FCTopStoriesConfiguration, FCVideoGroupsConfig, NSArray, NSDictionary, NSNumber, NSString, NSURL, NTPBTodayConfig;
 
 @protocol FCCoreConfiguration <NSObject, NFCopying>
 - (NSDictionary *)analyticsEnvelopeContentTypeConfigsForEnvironment:(unsigned long long)arg1;
@@ -82,6 +82,7 @@
 @property(nonatomic, readonly) long long singleTopicFeedMinFeedItemsPerRequest;
 @property(nonatomic, readonly) _Bool shouldShowAlternateHeadlines;
 - (FCPersonalizationTreatment *)personalizationTreatment;
+- (NSURL *)appAnalyticsEndpointUrlForEnvironment:(unsigned long long)arg1;
 
 // Remaining properties
 @property(nonatomic, readonly) _Bool orderFeedEndpointEnabled;

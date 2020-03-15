@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _actualTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isReadyForDelivery; // @synthesize isReadyForDelivery=_isReadyForDelivery;
 @property(retain, nonatomic) PUFilmstripAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) CDStruct_1b6d18a9 actualTime; // @synthesize actualTime=_actualTime;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long requestNumber; // @synthesize requestNumber=_requestNumber;
 @property(retain, nonatomic) NSDictionary *resultInfo; // @synthesize resultInfo=_resultInfo;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 
 @end

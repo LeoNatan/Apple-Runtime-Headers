@@ -47,8 +47,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_existingClusterAnnotationViews;
 }
 
-@property(nonatomic) BOOL suppressCallout; // @synthesize suppressCallout=_suppressCallout;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL suppressCallout; // @synthesize suppressCallout=_suppressCallout;
 - (void)updateAnnotationViewsWithDelay;
 - (void)_performStateUpdatesIfNeeded;
 - (void)_updateCollidableAnnotationViews;

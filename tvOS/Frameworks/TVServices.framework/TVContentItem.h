@@ -53,6 +53,7 @@
 + (id)_arrayOfDictionariesFromItems:(id)arg1;
 + (id)_itemFromDictionary:(id)arg1;
 + (id)_dictionaryFromItem:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *wantsShroudOnPlay; // @synthesize wantsShroudOnPlay=_wantsShroudOnPlay;
 @property(copy, nonatomic) NSNumber *wantsShroudOnSelect; // @synthesize wantsShroudOnSelect=_wantsShroudOnSelect;
 @property(copy, nonatomic) NSNumber *wantsPlaybackShroud; // @synthesize wantsPlaybackShroud=_wantsPlaybackShroud;
@@ -83,7 +84,6 @@
 @property(nonatomic) long long imageShape; // @synthesize imageShape=_imageShape;
 @property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(copy, nonatomic) TVContentIdentifier *contentIdentifier; // @synthesize contentIdentifier=_contentIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

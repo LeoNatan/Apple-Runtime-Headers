@@ -23,11 +23,11 @@
     double _simulationSpeedOverride;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double simulationSpeedOverride; // @synthesize simulationSpeedOverride=_simulationSpeedOverride;
 @property(readonly, nonatomic) NSArray *traceEvents; // @synthesize traceEvents=_traceEvents;
 @property(copy, nonatomic) CDUnknownBlockType authorizationRequestBlock; // @synthesize authorizationRequestBlock=_authorizationRequestBlock;
 @property(nonatomic) __weak id <MNLocationProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)navigationSession:(id)arg1 didEnableGuidancePrompts:(_Bool)arg2;
 - (void)navigationSession:(id)arg1 didAnnounceArrival:(id)arg2;
 - (void)navigationSessionHideSecondaryStep:(id)arg1;

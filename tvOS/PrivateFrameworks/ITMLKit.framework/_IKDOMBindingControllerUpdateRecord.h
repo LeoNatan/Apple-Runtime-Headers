@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _update;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(copy, nonatomic) CDUnknownBlockType update; // @synthesize update=_update;
 @property(copy, nonatomic) CDUnknownBlockType preUpdate; // @synthesize preUpdate=_preUpdate;
-- (void).cxx_destruct;
 
 @end
 

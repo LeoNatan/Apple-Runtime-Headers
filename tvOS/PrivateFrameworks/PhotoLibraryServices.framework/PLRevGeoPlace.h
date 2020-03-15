@@ -19,8 +19,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)placeWithMapItem:(id)arg1 placeAnnotation:(id)arg2;
 + (id)_newFilterSortedPlaceInfos:(id)arg1 usingPlaceAnnotation:(id)arg2 outFoundOrderType:(unsigned long long *)arg3 outPreviousOrderType:(unsigned long long *)arg4;
-@property(readonly, nonatomic) NSDictionary *placeInfosForOrderType; // @synthesize placeInfosForOrderType=_placeInfosForOrderType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *placeInfosForOrderType; // @synthesize placeInfosForOrderType=_placeInfosForOrderType;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)bestPlaceInfoForOrderType:(unsigned long long)arg1;

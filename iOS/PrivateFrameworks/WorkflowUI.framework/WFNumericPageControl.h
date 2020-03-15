@@ -23,6 +23,7 @@
     UILabel *_pageLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *pageLabel; // @synthesize pageLabel=_pageLabel;
 @property(nonatomic) __weak UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(nonatomic) _Bool usesBoldText; // @synthesize usesBoldText=_usesBoldText;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <WFNumericPageControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long numberOfPages; // @synthesize numberOfPages=_numberOfPages;
 @property(nonatomic) long long currentPage; // @synthesize currentPage=_currentPage;
-- (void).cxx_destruct;
 - (void)adjustableLabelRequestedDecrement:(id)arg1;
 - (void)adjustableLabelRequestedIncrement:(id)arg1;
 - (void)pageControlValueChanged:(id)arg1;

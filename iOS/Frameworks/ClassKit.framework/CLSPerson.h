@@ -35,6 +35,7 @@
 + (unsigned long long)roleFromString:(id)arg1;
 + (id)stringForRole:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(nonatomic, getter=isSearchable) _Bool isSearchable; // @synthesize isSearchable=_isSearchable;
 @property(nonatomic, getter=isEditable) _Bool isEditable; // @synthesize isEditable=_isEditable;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPersonNameComponents *nameComponents;
 @property(readonly, nonatomic) NSString *displayName;
 - (id)dictionaryRepresentation;

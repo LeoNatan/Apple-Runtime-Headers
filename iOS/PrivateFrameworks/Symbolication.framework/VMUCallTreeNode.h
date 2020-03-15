@@ -71,7 +71,6 @@
 - (id)description;
 - (void)dealloc;
 - (unsigned int)sumOfChildCounts;
-- (void)addChildCountsIntoNode;
 - (void)addChild:(id)arg1;
 - (void)setChildren:(id)arg1;
 - (id)allChildren;

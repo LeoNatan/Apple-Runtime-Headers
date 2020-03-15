@@ -26,11 +26,11 @@
 
 + (id)defaultDatabaseDirectory;
 + (id)storeWithDirectory:(id)arg1 readOnly:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool readConcurrently; // @synthesize readConcurrently=_readConcurrently;
 @property(readonly, nonatomic) _DKCoreDataStorage *storage; // @synthesize storage=_storage;
 @property(retain) id <_DKLocationHistorian> locationHistorian; // @synthesize locationHistorian=_locationHistorian;
 @property(retain, nonatomic) _CDInteraction *pendingShareSheetInteraction; // @synthesize pendingShareSheetInteraction=_pendingShareSheetInteraction;
-- (void).cxx_destruct;
 - (void)anonymizeContactsWithSalt:(id)arg1;
 - (void)anonymizeKeywordsWithSalt:(id)arg1;
 - (void)anonymizeInteractionsWithSalt:(id)arg1;

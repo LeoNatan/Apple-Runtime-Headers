@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 
 + (id)keyPathsForValuesAffectingRecordButtonImage;
 + (id)keyPathsForValuesAffectingRecordButtonEnabled;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL optionKeyPressed; // @synthesize optionKeyPressed=_optionKeyPressed;
 @property(nonatomic, getter=isRedDotHidden) BOOL redDotHidden; // @synthesize redDotHidden=_redDotHidden;
 @property(retain, nonatomic) NSImage *recordButtonImage; // @synthesize recordButtonImage=_recordButtonImage;
 @property(nonatomic) BOOL recordButtonEnabled; // @synthesize recordButtonEnabled=_recordButtonEnabled;
 @property(retain, nonatomic) NSButton *recordButton; // @synthesize recordButton=_recordButton;
-- (void).cxx_destruct;
 - (id)touchBar;
 - (id)touchBarRecordingControlsProvider;
 - (id)recordButtonStopImage;

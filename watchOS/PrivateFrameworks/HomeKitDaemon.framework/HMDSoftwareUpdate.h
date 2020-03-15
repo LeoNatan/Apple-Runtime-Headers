@@ -32,6 +32,7 @@
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (id)modelNamespace;
+- (void).cxx_destruct;
 @property __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
@@ -39,7 +40,6 @@
 @property(readonly) unsigned long long downloadSize; // @synthesize downloadSize=_downloadSize;
 @property(readonly, copy) HMFSoftwareVersion *version; // @synthesize version=_version;
 @property(copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;

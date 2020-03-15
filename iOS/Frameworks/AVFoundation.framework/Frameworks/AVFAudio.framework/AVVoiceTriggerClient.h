@@ -11,6 +11,7 @@
     CDUnknownBlockType _voiceTriggerBlock;
     CDUnknownBlockType _speakerStateChangedBlock;
     CDUnknownBlockType _speakerMuteStateChangedBlock;
+    CDUnknownBlockType _siriClientRecordStateChangedBlock;
     CDUnknownBlockType _serverCrashedBlock;
     CDUnknownBlockType _serverResetBlock;
 }
@@ -18,12 +19,15 @@
 + (_Bool)isAPIAvailable;
 @property(copy, nonatomic) CDUnknownBlockType serverResetBlock; // @synthesize serverResetBlock=_serverResetBlock;
 @property(copy, nonatomic) CDUnknownBlockType serverCrashedBlock; // @synthesize serverCrashedBlock=_serverCrashedBlock;
+@property(copy, nonatomic) CDUnknownBlockType siriClientRecordStateChangedBlock; // @synthesize siriClientRecordStateChangedBlock=_siriClientRecordStateChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType speakerMuteStateChangedBlock; // @synthesize speakerMuteStateChangedBlock=_speakerMuteStateChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType speakerStateChangedBlock; // @synthesize speakerStateChangedBlock=_speakerStateChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType voiceTriggerBlock; // @synthesize voiceTriggerBlock=_voiceTriggerBlock;
+- (void)siriClientRecordStateChangedNotification:(_Bool)arg1 recordingCount:(unsigned long long)arg2;
 - (void)speakerMuteStateChangedNotification:(_Bool)arg1;
 - (void)speakerStateChangedNotification:(id)arg1;
 - (void)voiceTriggerNotification:(id)arg1;
+- (void)siriClientsRecordingCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)listeningEnabledCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)updateVoiceTriggerConfiguration:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)updateVoiceTriggerConfiguration:(id)arg1;

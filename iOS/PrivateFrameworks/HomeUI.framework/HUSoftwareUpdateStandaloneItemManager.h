@@ -19,12 +19,12 @@
     HMHome *_overrideHome;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHome *overrideHome; // @synthesize overrideHome=_overrideHome;
 @property(retain, nonatomic) NAFuture *softwareUpdateFetchFuture; // @synthesize softwareUpdateFetchFuture=_softwareUpdateFetchFuture;
 @property(retain, nonatomic) HUSoftwareUpdateItemModule *softwareUpdateModule; // @synthesize softwareUpdateModule=_softwareUpdateModule;
 @property(retain, nonatomic) HUSoftwareUpdateFetchItem *fetchItem; // @synthesize fetchItem=_fetchItem;
 @property(retain, nonatomic) HFItem *autoUpdateItem; // @synthesize autoUpdateItem=_autoUpdateItem;
-- (void).cxx_destruct;
 - (void)home:(id)arg1 didUpdateAutomaticSoftwareUpdateEnabled:(_Bool)arg2;
 - (id)triggerSoftwareUpdateFetch;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;

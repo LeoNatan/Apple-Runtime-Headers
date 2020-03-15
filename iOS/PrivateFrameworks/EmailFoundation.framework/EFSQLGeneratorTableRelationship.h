@@ -18,11 +18,11 @@
     unsigned long long _relationship;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long relationship; // @synthesize relationship=_relationship;
 @property(readonly, nonatomic) EFSQLTableSchema *targetTable; // @synthesize targetTable=_targetTable;
 @property(readonly, nonatomic) EFSQLColumnSchema *sourceColumn; // @synthesize sourceColumn=_sourceColumn;
 @property(readonly, nonatomic) EFSQLTableSchema *table; // @synthesize table=_table;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToTableRelationship:(id)arg1;

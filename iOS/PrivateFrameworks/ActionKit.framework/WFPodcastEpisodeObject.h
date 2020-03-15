@@ -32,6 +32,7 @@
 + (id)descriptionTextJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *artworkURLTemplate; // @synthesize artworkURLTemplate=_artworkURLTemplate;
 @property(readonly, nonatomic) NSURL *feedURL; // @synthesize feedURL=_feedURL;
 @property(readonly, nonatomic) NSURL *viewURL; // @synthesize viewURL=_viewURL;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSString *author; // @synthesize author=_author;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *wfName;
 
 // Remaining properties

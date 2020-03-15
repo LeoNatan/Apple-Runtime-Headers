@@ -40,11 +40,11 @@
     struct CGRect _collisionFrame;
     NSString *_clusteringIdentifier;
     UIImage *_image;
+    long long _collisionMode;
     MKCalloutView *_calloutView;
     UIView *_leftCalloutAccessoryView;
     UIView *_rightCalloutAccessoryView;
     UIView *_detailCalloutAccessoryView;
-    long long _collisionMode;
     NSString *_reuseIdentifier;
     MKAnnotationView *_clusterAnnotationView;
     unsigned long long _mapType;
@@ -91,6 +91,7 @@
 + (id)currentLocationTitle;
 + (Class)_mapkitLeafClass;
 + (Class)calloutViewClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long collisionMode; // @synthesize collisionMode=_collisionMode;
 @property(readonly, nonatomic) __weak MKAnnotationView *clusterAnnotationView; // @synthesize clusterAnnotationView=_clusterAnnotationView;
 @property(copy, nonatomic) NSString *clusteringIdentifier; // @synthesize clusteringIdentifier=_clusteringIdentifier;
@@ -116,7 +117,6 @@
 @property(nonatomic, setter=_setPresentationCourse:) double _presentationCourse; // @synthesize _presentationCourse;
 @property(copy, nonatomic, setter=_setPresentationCoordinateChangedCallback:) CDUnknownBlockType _presentationCoordinateChangedCallback; // @synthesize _presentationCoordinateChangedCallback;
 @property(nonatomic, setter=_setDirection:) double _direction; // @synthesize _direction;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_defaultCollisionAlignmentRectInsets) struct UIEdgeInsets defaultCollisionAlignmentRectInsets;
 @property(readonly, nonatomic, getter=_collisionAlignmentRectInsets) struct UIEdgeInsets collisionAlignmentRectInsets;
 - (struct UIEdgeInsets)alignmentRectInsets;

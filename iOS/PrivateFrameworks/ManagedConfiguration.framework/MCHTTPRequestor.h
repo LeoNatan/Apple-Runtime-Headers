@@ -19,12 +19,12 @@
     id _selfReference;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didFailDueToMissingCredentials; // @synthesize didFailDueToMissingCredentials=_didFailDueToMissingCredentials;
 @property(retain, nonatomic) id selfReference; // @synthesize selfReference=_selfReference;
 @property(retain, nonatomic) NSArray *anchorCertificates; // @synthesize anchorCertificates=_anchorCertificates;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)startWithRequest:(id)arg1 username:(id)arg2 password:(id)arg3 anchorCertificates:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 

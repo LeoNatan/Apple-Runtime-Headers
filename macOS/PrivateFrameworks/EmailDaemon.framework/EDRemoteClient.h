@@ -9,7 +9,7 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 #import <EmailDaemon/EMDaemonInterfaceXPC-Protocol.h>
 
-@class EDAccountRepository, EDActivityRegistry, EDClientState, EDDaemonInterfaceFactory, EDFetchController, EDInteractionLogger, EDMailboxRepository, EDMessageRepository, EDOutgoingMessageRepository, EDSearchableIndex, NSString, NSXPCConnection;
+@class EDAccountRepository, EDActivityRegistry, EDClientResumer, EDClientState, EDDaemonInterfaceFactory, EDFetchController, EDInteractionLogger, EDMailboxRepository, EDMessageRepository, EDOutgoingMessageRepository, EDSearchableIndex, NSString, NSXPCConnection;
 @protocol EMVIPManagerInterface;
 
 @interface EDRemoteClient : NSObject <EFLoggable, EMDaemonInterfaceXPC>
@@ -17,7 +17,6 @@
     struct os_unfair_lock_s _lock;
     EDAccountRepository *_accountRepository;
     EDMailboxRepository *_mailboxRepository;
-    EDMessageRepository *_messageRepository;
     EDOutgoingMessageRepository *_outgoingMessageRepository;
     EDFetchController *_fetchController;
     EDSearchableIndex *_searchableIndex;
@@ -27,14 +26,19 @@
     NSXPCConnection *_clientConnection;
     EDDaemonInterfaceFactory *_daemonInterfaceFactory;
     EDClientState *_clientState;
+    EDMessageRepository *_messageRepository;
+    EDClientResumer *_clientResumer;
 }
 
 + (id)exportedInterface;
 + (id)log;
-@property(retain, nonatomic) EDClientState *clientState; // @synthesize clientState=_clientState;
+- (void).cxx_destruct;
+@property(retain, nonatomic) EDClientResumer *clientResumer; // @synthesize clientResumer=_clientResumer;
+@property(readonly, nonatomic) EDMessageRepository *messageRepository; // @synthesize messageRepository=_messageRepository;
+@property(readonly, nonatomic) EDClientState *clientState; // @synthesize clientState=_clientState;
 @property(readonly, nonatomic) EDDaemonInterfaceFactory *daemonInterfaceFactory; // @synthesize daemonInterfaceFactory=_daemonInterfaceFactory;
 @property(readonly, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
-- (void).cxx_destruct;
+- (void)setAllowsBackgroundResume:(BOOL)arg1;
 - (void)launchForEarlyRecovery:(CDUnknownBlockType)arg1;
 - (void)debugStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getActivityRegistryInterface:(CDUnknownBlockType)arg1;
@@ -53,10 +57,10 @@
 @property(readonly, nonatomic) EDSearchableIndex *searchableIndex; // @synthesize searchableIndex=_searchableIndex;
 @property(readonly, nonatomic) EDFetchController *fetchController; // @synthesize fetchController=_fetchController;
 @property(readonly, nonatomic) EDOutgoingMessageRepository *outgoingMessageRepository; // @synthesize outgoingMessageRepository=_outgoingMessageRepository;
-@property(readonly, nonatomic) EDMessageRepository *messageRepository; // @synthesize messageRepository=_messageRepository;
 @property(readonly, nonatomic) EDMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
 @property(readonly, nonatomic) EDAccountRepository *accountRepository; // @synthesize accountRepository=_accountRepository;
 - (void)test_tearDown;
+- (void)dealloc;
 - (id)initWithConnection:(id)arg1 daemonInterfaceFactory:(id)arg2;
 
 // Remaining properties

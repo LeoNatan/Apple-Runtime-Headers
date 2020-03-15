@@ -17,12 +17,12 @@
     NSMutableDictionary *__invalidatedIndexPathsByTileKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_invalidatedIndexPathsByTileKind; // @synthesize _invalidatedIndexPathsByTileKind=__invalidatedIndexPathsByTileKind;
 @property(nonatomic) _Bool invalidatedAnyTile; // @synthesize invalidatedAnyTile=_invalidatedAnyTile;
 @property(readonly, nonatomic) _Bool invalidatedContentBounds; // @synthesize invalidatedContentBounds=_invalidatedContentBounds;
 @property(nonatomic) _Bool invalidatedAllTiles; // @synthesize invalidatedAllTiles=_invalidatedAllTiles;
 @property(readonly, nonatomic) NSSet *invalidatedTileKinds; // @synthesize invalidatedTileKinds=_invalidatedTileKinds;
-- (void).cxx_destruct;
 - (void)enumerateInvalidatedTilesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)invalidateContentBounds;
 - (void)invalidateAllTiles;

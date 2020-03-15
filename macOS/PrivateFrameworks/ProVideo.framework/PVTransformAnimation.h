@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 presentationTimeRange; // @synthesize presentationTimeRange=_presentationTimeRange;
 @property(readonly, nonatomic) NSArray *animationData; // @synthesize animationData=_animationData;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dataFromAnimationInfo:(id)arg1;
 - (id)animationInfoFromData:(id)arg1;

@@ -18,11 +18,11 @@
 
 + (id)guiInterestedKeys;
 + (id)guiMonitorKeys;
+- (void).cxx_destruct;
 @property(retain) NSString *machineName; // @synthesize machineName;
 @property(retain) NSDate *backupCompletedDate; // @synthesize backupCompletedDate;
 @property(retain) NSString *storageVolume; // @synthesize storageVolume;
 @property BOOL isLiteBackup; // @synthesize isLiteBackup;
-- (void).cxx_destruct;
 - (id)volumeIconAccesibilityLabel;
 - (id)displayState;
 - (id)displayName;

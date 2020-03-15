@@ -16,9 +16,9 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=isLandscape) _Bool landscape;
 - (id)initWithTraitCollection:(id)arg1 bounds:(struct CGRect)arg2;

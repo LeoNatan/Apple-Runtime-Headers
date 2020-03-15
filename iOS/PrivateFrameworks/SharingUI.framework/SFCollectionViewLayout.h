@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _evaluatedInset;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *preparedUpdateItems; // @synthesize preparedUpdateItems=_preparedUpdateItems;
 @property(copy, nonatomic) NSArray *preparedLayoutAttributes; // @synthesize preparedLayoutAttributes=_preparedLayoutAttributes;
 @property(nonatomic) double evaluatedHorizontalItemOffset; // @synthesize evaluatedHorizontalItemOffset=_evaluatedHorizontalItemOffset;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize evaluatedItemSize; // @synthesize evaluatedItemSize=_evaluatedItemSize;
 @property(nonatomic) struct UIEdgeInsets evaluatedInset; // @synthesize evaluatedInset=_evaluatedInset;
 @property(nonatomic) __weak id <SFCollectionViewDelegateLayout> fallbackDelegate; // @synthesize fallbackDelegate=_fallbackDelegate;
-- (void).cxx_destruct;
 - (void)invalidateGroupViewLayoutAnimated:(_Bool)arg1;
 - (id)_layoutAttributesForItemAtIndexPath:(id)arg1 numberOfItemsInSection:(unsigned long long)arg2;
 - (_Bool)_shouldScrollToContentBeginningInRightToLeft;

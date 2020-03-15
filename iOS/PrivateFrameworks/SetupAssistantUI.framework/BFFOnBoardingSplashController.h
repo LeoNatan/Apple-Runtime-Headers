@@ -26,6 +26,7 @@
 
 + (void)needsToRunForFeature:(long long)arg1 usingDeviceProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)cloudConfigSkipKey;
+- (void).cxx_destruct;
 @property(retain) NSDate *videoStartDate; // @synthesize videoStartDate=_videoStartDate;
 @property double placeholderDuration; // @synthesize placeholderDuration=_placeholderDuration;
 @property _Bool movieShowing; // @synthesize movieShowing=_movieShowing;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) id <BYDeviceProvider> deviceProvider; // @synthesize deviceProvider=_deviceProvider;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) long long feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 - (id)movieView;
 - (void)movieReady:(id)arg1 error:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;

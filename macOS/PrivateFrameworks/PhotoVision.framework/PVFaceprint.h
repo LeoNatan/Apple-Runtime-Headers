@@ -15,9 +15,9 @@
 }
 
 + (id)faceprintWithFaceprintData:(id)arg1 faceprintVersion:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *faceprintData; // @synthesize faceprintData=_faceprintData;
 @property(nonatomic) unsigned int faceprintVersion; // @synthesize faceprintVersion=_faceprintVersion;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)getDistance:(float *)arg1 toOtherFaceprint:(id)arg2 error:(id *)arg3;
 - (void)_setPropertiesFrom:(id)arg1;

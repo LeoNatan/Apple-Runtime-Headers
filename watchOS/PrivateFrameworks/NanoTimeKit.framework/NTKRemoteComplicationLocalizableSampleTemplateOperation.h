@@ -14,8 +14,8 @@
     CDUnknownBlockType _templateHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType templateHandler; // @synthesize templateHandler=_templateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType templateHandler; // @synthesize templateHandler=_templateHandler;
 - (id)description;
 - (int)blacklistPolicy;
 - (void)activateWithClient:(id)arg1 completion:(CDUnknownBlockType)arg2;

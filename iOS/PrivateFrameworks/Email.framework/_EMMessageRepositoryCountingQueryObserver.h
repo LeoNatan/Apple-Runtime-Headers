@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     EFPair *_queryIdentifier;
 }
 
-@property(readonly) EFPair *queryIdentifier; // @synthesize queryIdentifier=_queryIdentifier;
 - (void).cxx_destruct;
+@property(readonly) EFPair *queryIdentifier; // @synthesize queryIdentifier=_queryIdentifier;
 - (void)countDidChange:(long long)arg1 acknowledgementToken:(id)arg2;
 - (void)_performQueryWithRemoteConnection:(id)arg1 forRecovery:(_Bool)arg2;
 - (void)recoverQueryWithRemoteConnection:(id)arg1;

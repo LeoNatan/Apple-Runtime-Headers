@@ -27,6 +27,7 @@
     NSMutableString *_recentTextAfterBackspace;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool backspacedIntoAutocorrection; // @synthesize backspacedIntoAutocorrection=_backspacedIntoAutocorrection;
 @property(readonly, nonatomic) NSMutableString *recentTextAfterBackspace; // @synthesize recentTextAfterBackspace=_recentTextAfterBackspace;
 @property(readonly, nonatomic) NSMutableString *recentTextBeforeBackspace; // @synthesize recentTextBeforeBackspace=_recentTextBeforeBackspace;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) int predictedCharacterCount; // @synthesize predictedCharacterCount=_predictedCharacterCount;
 @property(readonly, nonatomic) int characterCount; // @synthesize characterCount=_characterCount;
 @property(readonly, nonatomic) int touchCount; // @synthesize touchCount=_touchCount;
-- (void).cxx_destruct;
 - (void)visitRecordCandidateRejected:(id)arg1;
 - (void)visitRecordTextAccepted:(id)arg1;
 - (void)visitRecordSkipHitTest:(id)arg1;

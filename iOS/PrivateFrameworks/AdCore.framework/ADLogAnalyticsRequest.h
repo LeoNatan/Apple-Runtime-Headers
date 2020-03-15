@@ -21,12 +21,12 @@
 
 + (Class)eventsType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(retain, nonatomic) NSData *dPID; // @synthesize dPID=_dPID;
 @property(retain, nonatomic) NSData *contentiAdID; // @synthesize contentiAdID=_contentiAdID;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSData *iAdID; // @synthesize iAdID=_iAdID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

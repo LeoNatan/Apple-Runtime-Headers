@@ -22,12 +22,12 @@
 + (_Bool)supportsSecureCoding;
 + (id)userSegmentationConfigurationWithConfigDict:(id)arg1 environment:(unsigned long long)arg2;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *endpointURLString; // @synthesize endpointURLString=_endpointURLString;
 @property(readonly, nonatomic) unsigned long long modMax; // @synthesize modMax=_modMax;
 @property(readonly, nonatomic) unsigned long long modThreshold; // @synthesize modThreshold=_modThreshold;
 @property(readonly, nonatomic) unsigned long long backgroundRefreshRate; // @synthesize backgroundRefreshRate=_backgroundRefreshRate;
 @property(readonly, nonatomic) unsigned long long foregroundRefreshRate; // @synthesize foregroundRefreshRate=_foregroundRefreshRate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

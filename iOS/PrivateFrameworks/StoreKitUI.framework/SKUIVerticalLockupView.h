@@ -41,11 +41,11 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
 + (double)maximumPerspectiveHeightForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double zoomingImageWidth; // @synthesize zoomingImageWidth=_zoomingImageWidth;
 @property(nonatomic) double zoomingImageAlpha; // @synthesize zoomingImageAlpha=_zoomingImageAlpha;
 @property(nonatomic) double opacityOfViewsOtherThanProductImageView; // @synthesize opacityOfViewsOtherThanProductImageView=_opacityOfViewsOtherThanProductImageView;
 @property(nonatomic) long long sizingStyle; // @synthesize sizingStyle=_sizingStyle;
-- (void).cxx_destruct;
 - (void)_showConfirmationAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
 - (void)_buttonAction:(id)arg1;

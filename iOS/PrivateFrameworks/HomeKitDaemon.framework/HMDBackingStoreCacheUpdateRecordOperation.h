@@ -19,6 +19,7 @@
     unsigned long long _encoding;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long encoding; // @synthesize encoding=_encoding;
 @property(readonly) HMDBackingStoreModelObject *model; // @synthesize model=_model;
 @property(readonly) NSData *data; // @synthesize data=_data;
@@ -26,7 +27,6 @@
 @property(readonly) NSString *recordName; // @synthesize recordName=_recordName;
 @property(readonly) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
 @property(readonly) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithShareGroup:(id)arg1 name:(id)arg2 model:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;
 - (id)initWithGroup:(id)arg1 name:(id)arg2 model:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;

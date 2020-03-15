@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 
 @end
 

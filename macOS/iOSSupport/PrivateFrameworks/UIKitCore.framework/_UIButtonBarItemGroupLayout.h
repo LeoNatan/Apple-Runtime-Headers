@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _itemViewGenerator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemViewGenerator; // @synthesize itemViewGenerator=_itemViewGenerator;
 @property(nonatomic) _Bool suppressSpacing; // @synthesize suppressSpacing=_suppressSpacing;
 @property(nonatomic) _Bool useGroupSizing; // @synthesize useGroupSizing=_useGroupSizing;
 @property(nonatomic) _Bool compact; // @synthesize compact=_compact;
 @property(readonly, nonatomic) UILayoutGuide *groupSizeGuide; // @synthesize groupSizeGuide=_groupSizeGuide;
 @property(readonly, nonatomic) UIBarButtonItemGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_addConstraintsToActivate:(id)arg1 toDeactivate:(id)arg2;
 - (void)_addLayoutGuides:(id)arg1;
@@ -39,9 +39,9 @@ __attribute__((visibility("hidden")))
 - (id)_newLayoutForBarButtonItem:(id)arg1 useGroupSizing:(_Bool)arg2;
 - (id)_representativeLayout;
 - (id)_itemLayouts;
-- (id)_effectiveLayout;
-- (_Bool)_isGroup;
-- (_Bool)_isSpace;
+- (id)subLayouts;
+- (_Bool)isGroupLayout;
+- (_Bool)isSpaceLayout;
 - (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (id)layoutsForSpacerItem:(id)arg1;
 - (id)layoutForBarButtonItem:(id)arg1;

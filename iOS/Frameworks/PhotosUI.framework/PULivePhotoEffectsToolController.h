@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *__analysisResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAnalysisResult:) NSDictionary *_analysisResult; // @synthesize _analysisResult=__analysisResult;
 @property(retain, nonatomic, setter=_setCollectionViewLayout:) UICollectionViewFlowLayout *_collectionViewLayout; // @synthesize _collectionViewLayout=__collectionViewLayout;
 @property(retain, nonatomic, setter=_setCollectionView:) UICollectionView *_collectionView; // @synthesize _collectionView=__collectionView;
 @property(copy, nonatomic, setter=_setOptions:) NSArray *_options; // @synthesize _options=__options;
 @property(copy, nonatomic) NSString *analysisResultCacheKey; // @synthesize analysisResultCacheKey=_analysisResultCacheKey;
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

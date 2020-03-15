@@ -15,10 +15,10 @@
     NSMutableDictionary *_pathsToPreflight;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *pathsToPreflight; // @synthesize pathsToPreflight=_pathsToPreflight;
 @property(retain) SMMacUser_Daemon *user; // @synthesize user=_user;
 @property __weak SMPreflightEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (unsigned long long)totalSize;
 - (id)sandboxPathForPath:(id)arg1;
 - (BOOL)process;

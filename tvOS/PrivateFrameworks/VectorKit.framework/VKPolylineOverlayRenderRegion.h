@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     struct MultiRectRegion _snappingRegion;
 }
 
-@property(readonly, nonatomic) Box_3d7e3c2c visibleRect; // @synthesize visibleRect=_visibleRect;
-@property(readonly, nonatomic) const set_8caf8a88 *routeLineDatas; // @synthesize routeLineDatas=_routeLineDatas;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Box_3d7e3c2c visibleRect; // @synthesize visibleRect=_visibleRect;
+@property(readonly, nonatomic) const set_8caf8a88 *routeLineDatas; // @synthesize routeLineDatas=_routeLineDatas;
 - (_Bool)isEquivalentToNewRegion:(id)arg1;
 - (const struct MultiRectRegion *)snappingRegion;
 - (id)initForVisibleRect:(const Box_3d7e3c2c *)arg1 snappingRegion:(const struct MultiRectRegion *)arg2 routeLineDatas:(const set_8caf8a88 *)arg3;

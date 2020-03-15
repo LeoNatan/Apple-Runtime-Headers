@@ -16,9 +16,9 @@
     NSURL *_sourceDir;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *sourceDir; // @synthesize sourceDir=_sourceDir;
 @property(retain) NSURL *tarGzUrl; // @synthesize tarGzUrl=_tarGzUrl;
-- (void).cxx_destruct;
 - (struct archive *)archiverForUrl:(id)arg1;
 - (void)dealloc;
 - (void)closeArchive;

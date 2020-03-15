@@ -31,6 +31,7 @@
     long long _level;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long compressionLevel; // @synthesize compressionLevel=_level;
 @property(readonly, nonatomic) unsigned long long bytesThroughput; // @synthesize bytesThroughput=_byteCount;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) CDUnknownBlockType onSpaceAvailable; // @synthesize onSpaceAvailable=_onSpaceAvailable;
 @property(copy, nonatomic) CDUnknownBlockType onBytesAvailable; // @synthesize onBytesAvailable=_onBytesAvailable;
 @property(copy, nonatomic) CDUnknownBlockType onOpenComplete; // @synthesize onOpenComplete=_onOpenComplete;
-- (void).cxx_destruct;
 - (_Bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
 - (_Bool)hasSpaceAvailable;

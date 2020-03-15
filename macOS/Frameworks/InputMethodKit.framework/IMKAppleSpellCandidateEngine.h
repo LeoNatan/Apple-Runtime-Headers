@@ -18,12 +18,12 @@
     id <IMKMacSpellChecker> _spellChecker;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldLearn; // @synthesize shouldLearn=_shouldLearn;
 @property(readonly, nonatomic) id <IMKMacSpellChecker> spellChecker; // @synthesize spellChecker=_spellChecker;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) long long spellDocumentTag; // @synthesize spellDocumentTag=_spellDocumentTag;
 @property(nonatomic) long long processID; // @synthesize processID=_processID;
-- (void).cxx_destruct;
 - (id)contentForRange:(struct _NSRange)arg1 forCursorPosition:(long long)arg2 inDocument:(id)arg3;
 - (id)_candidateListFromChecker:(id)arg1 withContext:(id)arg2 cursorPosition:(long long)arg3;
 - (void)generateCandidatesFor:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;

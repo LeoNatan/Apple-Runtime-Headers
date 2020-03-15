@@ -14,8 +14,8 @@
 }
 
 + (Class)layerClass;
-@property(readonly, copy, nonatomic) SBFGradient *wallpaperGradient; // @synthesize wallpaperGradient=_wallpaperGradient;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) SBFGradient *wallpaperGradient; // @synthesize wallpaperGradient=_wallpaperGradient;
 - (double)contrastInRect:(struct CGRect)arg1 contrastWithinBoxes:(double *)arg2 contrastBetweenBoxes:(double *)arg3;
 - (id)averageColorInRect:(struct CGRect)arg1 withSmudgeRadius:(double)arg2;
 - (id)_computeAverageColor;

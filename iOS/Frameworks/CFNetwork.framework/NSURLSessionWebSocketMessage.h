@@ -14,8 +14,8 @@
     long long _type;
 }
 
-@property(readonly) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly) long long type; // @synthesize type=_type;
 @property(readonly, copy) NSString *string;
 @property(readonly, copy) NSData *data;
 - (id)initWithString:(id)arg1;

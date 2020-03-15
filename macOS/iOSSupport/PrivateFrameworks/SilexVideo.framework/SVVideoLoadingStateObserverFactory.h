@@ -16,8 +16,8 @@
     id <SVPlayerItemLoaderProviding> _playerItemLoaderProvider;
 }
 
-@property(readonly, nonatomic) id <SVPlayerItemLoaderProviding> playerItemLoaderProvider; // @synthesize playerItemLoaderProvider=_playerItemLoaderProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVPlayerItemLoaderProviding> playerItemLoaderProvider; // @synthesize playerItemLoaderProvider=_playerItemLoaderProvider;
 - (id)createLoadingStateObserverForVideo:(id)arg1;
 - (id)initWithPlayeryItemLoaderProvider:(id)arg1;
 

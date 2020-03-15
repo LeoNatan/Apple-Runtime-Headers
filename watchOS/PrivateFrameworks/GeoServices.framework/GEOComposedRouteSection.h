@@ -24,6 +24,7 @@
     double _lengthScaleFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lengthScaleFactor; // @synthesize lengthScaleFactor=_lengthScaleFactor;
 @property(readonly, nonatomic) double startDistance; // @synthesize startDistance=_startDistance;
 @property(readonly, nonatomic) unsigned int finalStepIndex; // @synthesize finalStepIndex=_finalStepIndex;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) CDStruct_869f9c67 *points; // @synthesize points=_points;
 @property(readonly, nonatomic) unsigned int pointCount; // @synthesize pointCount=_pointCount;
 @property(readonly, nonatomic) unsigned int startPointIndex; // @synthesize startPointIndex=_startPointIndex;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_MapsCarPlay_isEqual:(id)arg1;
 - (_Bool)isTransfer;

@@ -20,9 +20,9 @@
 + (void)endMonitoringProviderChanges:(id)arg1;
 + (id)beginMonitoringProviderChangesWithHandler:(CDUnknownBlockType)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSArray *supportedSortDescriptors; // @synthesize supportedSortDescriptors=_supportedSortDescriptors;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *storageURL;
 @property(readonly, nonatomic) NSURL *bundleURL;
 @property(readonly, nonatomic) NSString *providerIdentifier;

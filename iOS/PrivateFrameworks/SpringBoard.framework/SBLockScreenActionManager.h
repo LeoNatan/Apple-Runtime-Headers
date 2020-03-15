@@ -13,8 +13,8 @@
     NSMutableDictionary *_actionProviders;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *actionProviders; // @synthesize actionProviders=_actionProviders;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *actionProviders; // @synthesize actionProviders=_actionProviders;
 - (void)_clearActionOnAllProviders;
 - (void)runUnlockAction;
 - (id)currentLockScreenActionContextActionSource:(unsigned long long *)arg1;

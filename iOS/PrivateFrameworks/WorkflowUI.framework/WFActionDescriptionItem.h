@@ -16,9 +16,9 @@
 
 + (id)itemWithTitle:(id)arg1 attributedDescription:(id)arg2;
 + (id)itemWithTitle:(id)arg1 description:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property(readonly, nonatomic) NSString *itemTitle; // @synthesize itemTitle=_itemTitle;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 description:(id)arg2;
 
 @end

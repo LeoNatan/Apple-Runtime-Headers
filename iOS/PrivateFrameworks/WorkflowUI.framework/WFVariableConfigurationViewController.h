@@ -38,6 +38,7 @@
 
 + (_Bool)shouldShowOnInsertionOfVariable:(id)arg1;
 + (id)defaultPropertyForContentClass:(Class)arg1 resultType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFUnitVariableAggrandizement *unitAggrandizement; // @synthesize unitAggrandizement=_unitAggrandizement;
 @property(retain, nonatomic) WFDictionaryValueVariableAggrandizement *dictionaryValueAggrandizement; // @synthesize dictionaryValueAggrandizement=_dictionaryValueAggrandizement;
 @property(retain, nonatomic) WFDateFormatVariableAggrandizement *dateFormatAggrandizement; // @synthesize dateFormatAggrandizement=_dateFormatAggrandizement;
@@ -53,7 +54,6 @@
 @property(nonatomic) unsigned long long resultType; // @synthesize resultType=_resultType;
 @property(nonatomic) __weak id <WFVariableConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
-- (void).cxx_destruct;
 - (void)variableContentClassesDidChange;
 - (void)availableVariablesDidChange;
 - (void)variableDidChange:(id)arg1;

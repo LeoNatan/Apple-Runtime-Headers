@@ -34,6 +34,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(copy) NSString *passPhrase; // @synthesize passPhrase=_passPhrase;
 @property int pinLength; // @synthesize pinLength=_pinLength;
@@ -50,7 +51,6 @@
 @property __weak NSTextField *pinViewTitle; // @synthesize pinViewTitle=_pinViewTitle;
 @property __weak NSImageView *pinViewImageView; // @synthesize pinViewImageView=_pinViewImageView;
 @property id <MMCSCPinRecoveryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clickedOnLink:(id)arg1;
 - (void)pinFieldViewTextDidChange:(id)arg1;
 - (id)forgotCodeAttributedString;

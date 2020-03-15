@@ -13,8 +13,8 @@
     id <NNMKMessagesSyncServiceClientDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NNMKMessagesSyncServiceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NNMKMessagesSyncServiceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)readProtobufData:(id)arg1 type:(unsigned long long)arg2;
 - (void)connectivityChanged;
 - (void)failedSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(long long)arg2;

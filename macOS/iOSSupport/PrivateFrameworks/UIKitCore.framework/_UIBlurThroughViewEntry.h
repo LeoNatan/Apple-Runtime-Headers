@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long _level;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL active; // @synthesize active=_active;
 @property(nonatomic) long long level; // @synthesize level=_level;
 @property(copy, nonatomic) NSString *blendMode; // @synthesize blendMode=_blendMode;
 @property(copy, nonatomic) NSString *material; // @synthesize material=_material;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isSameTypeOfEffect:(id)arg1;
 - (BOOL)canTransitionToEffect:(id)arg1;

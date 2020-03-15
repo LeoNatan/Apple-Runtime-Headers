@@ -22,6 +22,7 @@
 }
 
 + (id)modelIcon;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *componentDictionary; // @synthesize componentDictionary=_componentDictionary;
 @property(retain) NSObject<OS_dispatch_queue> *systemProfileQueue; // @synthesize systemProfileQueue=_systemProfileQueue;
 @property(retain, nonatomic) NSArray *allUsers; // @synthesize allUsers;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSDictionary *versionDictionary; // @synthesize versionDictionary;
 @property BOOL hasSystemProfile; // @synthesize hasSystemProfile;
 @property BOOL sizingIsCancelled; // @synthesize sizingIsCancelled;
-- (void).cxx_destruct;
 - (void)dumpRemoteLog;
 - (id)componentWithName:(id)arg1 forUser:(id)arg2;
 - (void)cancelSizing;

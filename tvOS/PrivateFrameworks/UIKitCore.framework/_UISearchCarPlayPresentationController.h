@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIVisualEffectView *_blurView;
 }
 
-@property(retain, nonatomic) UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
 - (void)containerViewWillLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 - (unsigned long long)edgeForHidingNavigationBar;

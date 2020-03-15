@@ -75,13 +75,15 @@
 + (id)addressBookCoreDataDatabaseFileName;
 + (BOOL)isUsingDefaultAddressBookDirectory;
 + (void)setAddressBookDirectory:(id)arg1;
-+ (id)nts_persistentStoreForUrls:(id)arg1 inCoordinator:(id)arg2;
++ (id)nts_firstPersistentStoreForUrls:(id)arg1 inCoordinator:(id)arg2;
++ (id)nts_persistentStoreForUrl:(id)arg1 inCoordinator:(id)arg2;
 + (id)persistentUrlsForAccounts:(id)arg1;
 + (void)addStoreUrlsForAccount:(id)arg1 to:(id)arg2;
 + (id)temporaryTimeMachineStoreUrlForAccount:(id)arg1;
 + (id)persistentUrlsForAccount:(id)arg1;
 + (id)recordClassFromUniqueId:(id)arg1;
 + (void)postDistributedNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 deliverImmediately:(BOOL)arg4;
++ (unsigned long long)defaultSaveOptions;
 + (BOOL)isPredicateSearchingEnabled;
 + (BOOL)nts_hasSharedInstance;
 + (id)nts_AddressBookWithOptions:(id)arg1;
@@ -190,8 +192,8 @@
 - (void)nts_ImportTipCards;
 - (BOOL)isABCoreDataImportCompleted;
 - (void)markABCoreDataImportCompleted;
-- (void)setManagedObjectContext:(id)arg1 forDatabaseType:(int)arg2;
-- (id)managedObjectContextForDataType:(int)arg1;
+- (void)setManagedObjectContext:(id)arg1 forDatabaseType:(unsigned long long)arg2;
+- (id)managedObjectContextForDataType:(unsigned long long)arg1;
 - (void)nts_assignDatabaseImpl:(id)arg1 toStoreAtUrl:(id)arg2;
 - (id)nts_persistentStoreForUrl:(id)arg1;
 - (id)persistentStoreAtDefaultPath;
@@ -263,6 +265,9 @@
 - (id)peopleForWritableAccounts;
 - (id)relationshipKeypathsToFetchOnEntity:(id)arg1;
 - (void)preheatPeople:(id)arg1 inAccount:(id)arg2;
+- (id)_allContainersForAccounts:(id)arg1 prefetchingKeyPaths:(id)arg2;
+- (id)containersForAccounts:(id)arg1;
+- (id)containers;
 - (unsigned long long)_groupsOnlyCountForAccount:(id)arg1;
 - (id)_groupsOnly;
 - (id)nts_SmartGroups;
@@ -418,7 +423,7 @@
 - (id)managedObjectContext;
 - (id)persistentStoreForSourceIdentifier:(id)arg1;
 - (id)persistentStoreCoordinator;
-- (id)storeKeyForDatabaseDataType:(int)arg1;
+- (id)storeKeyForDatabaseDataType:(unsigned long long)arg1;
 - (void)abDidRevertFromBackupCompleteResetContextAndUnlock:(id)arg1;
 - (BOOL)isMemoryBacked;
 - (id)persistentStoreURLs;

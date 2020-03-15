@@ -20,8 +20,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 @property(readonly, nonatomic) GEODirectionsRequest *directionsRequest; // @synthesize directionsRequest=_directionsRequest;
 @property(readonly, nonatomic) GEORouteAttributes *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
 @property(readonly, nonatomic) GEOETATrafficUpdateResponse *etaTrafficUpdateResponse; // @synthesize etaTrafficUpdateResponse=_etaTrafficUpdateResponse;

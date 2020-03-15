@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     FPSpotlightQueryDescriptor *_queryDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPSpotlightQueryDescriptor *queryDescriptor; // @synthesize queryDescriptor=_queryDescriptor;
 @property(nonatomic) __weak id <FPSpotlightDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool hasMoreIncoming; // @synthesize hasMoreIncoming=_hasMoreIncoming;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)enumerationMightHaveResumed;
 - (void)invalidate;

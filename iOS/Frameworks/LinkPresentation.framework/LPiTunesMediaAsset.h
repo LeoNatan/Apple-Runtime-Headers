@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSDictionary *colors; // @synthesize colors=_colors;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) LPFetcher *fetcher;
 - (id)metadata;
 - (id)initWithName:(id)arg1 customFetcherClass:(Class)arg2;

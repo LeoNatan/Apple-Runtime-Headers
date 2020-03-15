@@ -34,9 +34,9 @@
 + (id)uniqueIdentifierForREMObject:(id)arg1;
 + (Class)frozenClassForReminderClass:(Class)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly) __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(readonly, nonatomic) REMStore *remStore; // @synthesize remStore=_remStore;
-- (void).cxx_destruct;
 - (id)existingUpdatedObject:(id)arg1;
 - (void)_reminderCopiedToNewList:(id)arg1;
 - (id)newFrozenObjectForReminderObject:(id)arg1 withChanges:(id)arg2;

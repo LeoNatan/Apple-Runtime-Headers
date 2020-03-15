@@ -22,9 +22,9 @@
 + (_Bool)_shouldAutoPiPEnteringBackgroundForRequest:(id)arg1 transientOverlayEntityFoundBlock:(CDUnknownBlockType)arg2 appEntityFoundBlock:(CDUnknownBlockType)arg3;
 + (_Bool)shouldAutoPiPEnteringBackgroundForRequest:(id)arg1 entityFoundBlock:(CDUnknownBlockType)arg2;
 + (_Bool)shouldAutoPiPEnteringBackgroundForRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SBWorkspaceEntity *entityToPiP; // @synthesize entityToPiP=_entityToPiP;
 @property(nonatomic) long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
-- (void).cxx_destruct;
 - (long long)_transitionStyle;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;

@@ -22,6 +22,7 @@
     NSDictionary *_data;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long messagePersistentID; // @synthesize messagePersistentID=_messagePersistentID;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long version; // @synthesize version=_version;
 @property(nonatomic) long long eventID; // @synthesize eventID=_eventID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

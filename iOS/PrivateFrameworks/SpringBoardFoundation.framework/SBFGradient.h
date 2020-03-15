@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
 @property(copy, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

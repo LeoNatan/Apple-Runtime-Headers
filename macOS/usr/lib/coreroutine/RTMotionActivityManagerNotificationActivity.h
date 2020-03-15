@@ -13,8 +13,8 @@
     RTMotionActivity *_activity;
 }
 
-@property(readonly, nonatomic) RTMotionActivity *activity; // @synthesize activity=_activity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RTMotionActivity *activity; // @synthesize activity=_activity;
 - (id)initWithActivity:(id)arg1;
 
 @end

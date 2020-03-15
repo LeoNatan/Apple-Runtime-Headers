@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSFileHandle *encryptedFileHandle; // @synthesize encryptedFileHandle=_encryptedFileHandle;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

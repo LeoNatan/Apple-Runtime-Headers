@@ -40,8 +40,8 @@
 }
 
 + (id)_newPushServiceConnectionWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2 queue:(id)arg3;
-@property(nonatomic) id <UNSRemoteNotificationServerObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(nonatomic) id <UNSRemoteNotificationServerObserver> observer; // @synthesize observer=_observer;
 - (void)_queue_performMigration;
 - (void)_queue_didCompleteInitialization;
 - (void)_queue_removeRegistrationForBundleIdentifier:(id)arg1;

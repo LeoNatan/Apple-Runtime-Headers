@@ -13,6 +13,8 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)_focusGroupDescriptor;
+- (_Bool)canBecomeFocused;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)_axUserDataConfiguration;

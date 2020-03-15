@@ -18,11 +18,11 @@
 
 + (_Bool)_supportsAccessory:(id)arg1;
 + (id)_powerModeSelectionCharacteristicForAccessory:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFItem *showPowerModeSelectionItem; // @synthesize showPowerModeSelectionItem=_showPowerModeSelectionItem;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (id)itemProviders;
-- (void).cxx_destruct;
 - (id)showPowerModeSelection;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (void)_createItemProviders;

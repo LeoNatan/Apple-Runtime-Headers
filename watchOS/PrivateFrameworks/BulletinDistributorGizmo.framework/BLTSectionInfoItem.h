@@ -13,8 +13,8 @@
     BBSectionInfo *_sectionInfo;
 }
 
-@property(retain, nonatomic) BBSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BBSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 @property(readonly, nonatomic) NSString *displayName;
 
 @end

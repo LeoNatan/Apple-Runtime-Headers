@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     WFTableDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFTableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, copy, nonatomic) NSString *hashString; // @synthesize hashString=_hashString;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (id)initWithHashString:(id)arg1 title:(id)arg2;
 

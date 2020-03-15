@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *showTitle; // @synthesize showTitle=_showTitle;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *showTitle; // @synthesize showTitle=_showTitle;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

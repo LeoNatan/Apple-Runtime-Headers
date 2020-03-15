@@ -19,8 +19,8 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)_isConcreteObjectClass;
 + (id)stringSampleWithType:(id)arg1 stringValue:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 device:(id)arg5 metadata:(id)arg6;
-@property(readonly) _HKStringSampleType *stringType; // @synthesize stringType=_stringType;
 - (void).cxx_destruct;
+@property(readonly) _HKStringSampleType *stringType; // @synthesize stringType=_stringType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)payload;

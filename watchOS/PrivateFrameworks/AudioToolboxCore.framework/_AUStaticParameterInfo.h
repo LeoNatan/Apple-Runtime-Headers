@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long clumpID; // @synthesize clumpID=_clumpID;
 @property(retain, nonatomic) NSArray *valueStrings; // @synthesize valueStrings=_valueStrings;
 @property(nonatomic) unsigned long flags; // @synthesize flags=_flags;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long unit; // @synthesize unit=_unit;
 @property(nonatomic) float maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) float minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

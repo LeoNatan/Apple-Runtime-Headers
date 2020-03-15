@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int processID; // @synthesize processID=_processID;
 @property(retain, nonatomic) NSData *iconDigest; // @synthesize iconDigest=_iconDigest;
 @property(retain, nonatomic) NSString *watchBundleIdentifier; // @synthesize watchBundleIdentifier=_watchBundleIdentifier;
 @property(nonatomic) unsigned int playbackState; // @synthesize playbackState=_playbackState;
 @property(retain, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
 @property(retain, nonatomic) NSString *companionBundleIdentifier; // @synthesize companionBundleIdentifier=_companionBundleIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

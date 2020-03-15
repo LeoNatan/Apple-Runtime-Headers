@@ -46,6 +46,7 @@
 }
 
 + (float)headerHeightInMinimalMode;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(nonatomic) _Bool placeInShortcuts; // @synthesize placeInShortcuts=_placeInShortcuts;
 @property(readonly, nonatomic) float headerSecondaryNameLabelPadding; // @synthesize headerSecondaryNameLabelPadding=_headerSecondaryNameLabelPadding;
@@ -76,7 +77,6 @@
 @property(copy, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(readonly, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
 @property(nonatomic) _Bool showShareActionsButton; // @synthesize showShareActionsButton=_showShareActionsButton;
-- (void).cxx_destruct;
 - (void)placeCardWillCloseFromClientType:(unsigned int)arg1;
 - (void)updateMaskAlpha:(float)arg1 onHeight:(float)arg2 withOffset:(float)arg3;
 - (void)hideTitle:(_Bool)arg1;

@@ -17,10 +17,10 @@
     NSMutableDictionary *_progressHandlersDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *progressHandlersDictionary; // @synthesize progressHandlersDictionary=_progressHandlersDictionary;
 @property(retain) NSLock *serviceConnectionLock; // @synthesize serviceConnectionLock=_serviceConnectionLock;
 @property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
-- (void).cxx_destruct;
 - (void)_setProgressHandler:(CDUnknownBlockType)arg1 forUUID:(id)arg2;
 - (void)reportRestoreProgressForUUID:(id)arg1 restorePhase:(long long)arg2 restoreAfterBootFailure:(BOOL)arg3 percentComplete:(float)arg4 timeRemaining:(double)arg5;
 - (void)lockRestoreQueueForCLIRestoreWithCompletionHandler:(CDUnknownBlockType)arg1;

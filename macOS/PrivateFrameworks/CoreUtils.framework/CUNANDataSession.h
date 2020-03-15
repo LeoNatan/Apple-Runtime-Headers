@@ -31,6 +31,7 @@
     CDUnion_fab80606 _peerAddress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WiFiAwarePublisherDataSessionHandle *wfaDataSessionServer; // @synthesize wfaDataSessionServer=_wfaDataSessionServer;
 @property(retain, nonatomic) WiFiAwarePublisher *publisher; // @synthesize publisher=_publisher;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)dataSession:(id)arg1 terminatedWithReason:(long long)arg2;
 - (BOOL)_dataSession:(id)arg1 confirmedForPeerDataAddress:(id)arg2 serviceSpecificInfo:(id)arg3 error:(id *)arg4;
 - (void)dataSession:(id)arg1 confirmedForPeerDataAddress:(id)arg2 serviceSpecificInfo:(id)arg3;

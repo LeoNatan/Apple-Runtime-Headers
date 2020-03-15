@@ -30,6 +30,7 @@
     SVTimeBasedAction *_autoAppearanceAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldIgnoreControlItemHideability; // @synthesize shouldIgnoreControlItemHideability=_shouldIgnoreControlItemHideability;
 @property(nonatomic) _Bool autoHidingEnabled; // @synthesize autoHidingEnabled=_autoHidingEnabled;
 @property(retain, nonatomic) SVTimeBasedAction *autoAppearanceAction; // @synthesize autoAppearanceAction=_autoAppearanceAction;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) id <SVVideoControlsTimingProviding> timingProvider; // @synthesize timingProvider=_timingProvider;
 @property(readonly, nonatomic) id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
 @property(readonly, nonatomic) SVTimeline *timeline; // @synthesize timeline=_timeline;
-- (void).cxx_destruct;
 - (void)videoViewControllerWillDisappear:(id)arg1;
 - (void)videoViewControllerDidAppear:(id)arg1;
 - (void)videoViewControllerWillAppear:(id)arg1;

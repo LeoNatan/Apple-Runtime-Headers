@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "CATTaskRequest.h"
+#import <DeviceManagement/CATTaskRequest.h>
 
 @class DMFControlGroupIdentifier, NSArray, NSData, NSString;
 
@@ -20,13 +20,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(nonatomic) _Bool openAfterDownloadCompletes; // @synthesize openAfterDownloadCompletes=_openAfterDownloadCompletes;
 @property(retain, nonatomic) NSData *previewImageData; // @synthesize previewImageData=_previewImageData;
 @property(copy, nonatomic) NSString *resourcesDescription; // @synthesize resourcesDescription=_resourcesDescription;
 @property(copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 @property(copy, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

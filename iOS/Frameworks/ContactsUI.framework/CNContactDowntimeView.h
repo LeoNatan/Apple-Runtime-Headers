@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)lockImageAttachment;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextAttachment *imageAttachment; // @synthesize imageAttachment=_imageAttachment;
 @property(readonly, nonatomic) UILabel *downtimeLabel; // @synthesize downtimeLabel=_downtimeLabel;
 @property(copy, nonatomic) NSDictionary *ab_textAttributes; // @synthesize ab_textAttributes=_ab_textAttributes;
-- (void).cxx_destruct;
 - (void)invalidateIntrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

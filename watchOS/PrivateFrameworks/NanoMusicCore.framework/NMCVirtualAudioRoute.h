@@ -16,11 +16,11 @@
     NMCHearingAidAudioDevice *_hearingDevice;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cachedPicked; // @synthesize cachedPicked=_cachedPicked;
 @property(retain, nonatomic) NMCHearingAidAudioDevice *hearingDevice; // @synthesize hearingDevice=_hearingDevice;
 @property(retain, nonatomic) NMCBluetoothAudioDevice *bluetoothDevice; // @synthesize bluetoothDevice=_bluetoothDevice;
 @property(retain, nonatomic) MPAVRoute *systemRoute; // @synthesize systemRoute=_systemRoute;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_bluetoothDeviceName;
 - (int)routeTypeFromMPAVRoute:(id)arg1;

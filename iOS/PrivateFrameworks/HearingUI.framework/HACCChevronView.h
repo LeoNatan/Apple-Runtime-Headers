@@ -22,9 +22,9 @@
     UIView *_alphaContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setState:(long long)arg1 animated:(_Bool)arg2;
 - (_Bool)_setUnified:(_Bool)arg1;

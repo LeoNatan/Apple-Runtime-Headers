@@ -16,8 +16,8 @@
     id <CSLWatchActivatedAlertViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLWatchActivatedAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLWatchActivatedAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

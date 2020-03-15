@@ -15,9 +15,9 @@
     BOOL _forGmailLabels;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL forGmailLabels; // @synthesize forGmailLabels=_forGmailLabels;
 @property BOOL add; // @synthesize add=_add;
-- (void).cxx_destruct;
 - (BOOL)executeOnConnection:(id)arg1;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;
 @property(readonly, copy) NSArray *gmailLabels;

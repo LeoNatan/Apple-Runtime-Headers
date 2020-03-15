@@ -15,6 +15,7 @@
     // Error parsing type: {?="columns"[4]}, name: _transform
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property cameraIntrinsics:
 // Property attributes: T{?=[3]},N,V_cameraIntrinsics
 
@@ -22,7 +23,6 @@
 // Error parsing type for property transform:
 // Property attributes: T{?=[4]},R,N,V_transform
 
-- (void).cxx_destruct;
 - (id)description;
 -     // Error parsing type: @96@0:8^{?=[9d][3d][9d]Q^I}16@24{?=[4]}32, name: initWithKeyframeData:featurePoints:referenceOriginTransform:
 

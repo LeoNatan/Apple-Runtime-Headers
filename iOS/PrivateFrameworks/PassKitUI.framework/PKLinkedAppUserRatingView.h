@@ -14,8 +14,8 @@
     float _userRating;
 }
 
-@property(nonatomic) float userRating; // @synthesize userRating=_userRating;
 - (void).cxx_destruct;
+@property(nonatomic) float userRating; // @synthesize userRating=_userRating;
 - (id)_starImageViewWithImage:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

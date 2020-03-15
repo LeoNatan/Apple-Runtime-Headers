@@ -16,9 +16,9 @@
     struct UIRectCornerRadii _fullscreenCornerRadii;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIRectCornerRadii fullscreenCornerRadii; // @synthesize fullscreenCornerRadii=_fullscreenCornerRadii;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)insertionModifierForInsertionEvent:(id)arg1;
 - (id)transitionModifierForInlineTransitionEvent:(id)arg1;
 - (id)multitaskingModifierForEvent:(id)arg1;

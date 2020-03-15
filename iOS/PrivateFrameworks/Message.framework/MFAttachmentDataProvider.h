@@ -15,8 +15,8 @@
 
 + (id)dataProviderWithPath:(id)arg1;
 + (id)dataProviderWithURL:(id)arg1;
-@property(retain) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(retain) NSURL *url; // @synthesize url=_url;
 - (id)data;
 - (_Bool)save:(id)arg1;
 - (id)_fileAttributes:(id)arg1;

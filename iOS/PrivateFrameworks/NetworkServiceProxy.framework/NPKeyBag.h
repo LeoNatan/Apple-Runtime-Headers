@@ -23,6 +23,7 @@
     NSPredicate *_validOnRampWithTFOPredicate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPredicate *validOnRampWithTFOPredicate; // @synthesize validOnRampWithTFOPredicate=_validOnRampWithTFOPredicate;
 @property(retain) NSPredicate *validOnRampPredicate; // @synthesize validOnRampPredicate=_validOnRampPredicate;
 @property(retain) NSArray *onRampList; // @synthesize onRampList=_onRampList;
@@ -34,7 +35,6 @@
 @property long long fallbackReason; // @synthesize fallbackReason=_fallbackReason;
 @property unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
-- (void).cxx_destruct;
 - (void)removeIPv6Keys;
 - (void)moveToOnRamp:(id)arg1;
 - (id)getOnRampForEndpoint:(id)arg1;

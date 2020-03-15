@@ -19,9 +19,9 @@
     _Bool _isOLEDDisplay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isOLEDDisplay; // @synthesize isOLEDDisplay=_isOLEDDisplay;
 @property(nonatomic) _Bool javaScriptEnabled; // @synthesize javaScriptEnabled=_javaScriptEnabled;
-- (void).cxx_destruct;
 - (void)_migrateToVersion5IfNecessary;
 - (int)_effectiveTextZoomIndex;
 - (int)_defaultThemeForAppearance:(int)arg1;

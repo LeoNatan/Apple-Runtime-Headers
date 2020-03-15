@@ -18,11 +18,11 @@
 }
 
 + (id)enumeratorWithDatabase:(struct sqlite3 *)arg1 query:(id)arg2 stepBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType stepBlock; // @synthesize stepBlock=_stepBlock;
 @property(nonatomic) struct sqlite3_stmt *stmt; // @synthesize stmt=_stmt;
 @property(nonatomic) struct sqlite3 *db; // @synthesize db=_db;
-- (void).cxx_destruct;
 - (id)nextObject;
 - (void)dealloc;
 - (id)initWithDatabase:(struct sqlite3 *)arg1 query:(id)arg2 stepBlock:(CDUnknownBlockType)arg3;

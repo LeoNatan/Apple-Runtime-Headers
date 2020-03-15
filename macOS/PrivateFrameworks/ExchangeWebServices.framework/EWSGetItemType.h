@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *ItemIds; // @synthesize ItemIds=_ItemIds;
 @property(retain, nonatomic) EWSItemResponseShapeType *ItemShape; // @synthesize ItemShape=_ItemShape;
-- (void).cxx_destruct;
 
 @end
 

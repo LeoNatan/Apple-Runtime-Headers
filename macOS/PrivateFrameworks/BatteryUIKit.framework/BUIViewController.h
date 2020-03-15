@@ -16,11 +16,11 @@
     double _redStateTriggerLevel;
 }
 
+- (void).cxx_destruct;
 @property double redStateTriggerLevel; // @synthesize redStateTriggerLevel=_redStateTriggerLevel;
 @property(retain) NSTextField *batteryImageLabel; // @synthesize batteryImageLabel=_batteryImageLabel;
 @property(retain) NSImageView *batteryImageView; // @synthesize batteryImageView=_batteryImageView;
 @property BOOL powerChimeView; // @synthesize powerChimeView;
-- (void).cxx_destruct;
 @property(getter=isHidden) BOOL hidden; // @dynamic hidden;
 - (void)updateWithParametersWithPercentCharged:(double)arg1 useRed:(BOOL)arg2;
 - (void)updateWithParametersWithPercentCharged:(double)arg1;

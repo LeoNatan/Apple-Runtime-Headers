@@ -20,8 +20,10 @@
 - (int)readPointerAt:(unsigned long long)arg1 value:(unsigned long long *)arg2;
 - (int)peekAtAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnsBuf:(void **)arg3;
 - (int)mapAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnedAddress:(unsigned long long *)arg3 returnedSize:(unsigned long long *)arg4;
+- (int)mapAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
 - (int)stopPeeking;
 - (int)startPeeking;
+- (void)enumerateMemoryCache:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (void)flushMemoryCache;
 - (id)initWithTask:(unsigned int)arg1;

@@ -68,10 +68,10 @@ __attribute__((visibility("hidden")))
     long long _deviceID;
 }
 
+- (void).cxx_destruct;
 @property(setter=_setLastDragLocation:) struct CGPoint _lastDragLocation; // @synthesize _lastDragLocation;
 @property(setter=_setLastDragTimestamp:) double _lastDragTimestamp; // @synthesize _lastDragTimestamp;
 @property(setter=_setDragID:) unsigned int _dragID; // @synthesize _dragID;
-- (void).cxx_destruct;
 @property(readonly) long long springLoadingHighlight;
 - (long long)_deviceID;
 - (void)resetSpringLoading;

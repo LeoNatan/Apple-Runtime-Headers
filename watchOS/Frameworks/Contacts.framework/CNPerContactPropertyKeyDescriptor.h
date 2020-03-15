@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableDictionary *propertiesByIdentifier; // @synthesize propertiesByIdentifier=_propertiesByIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *propertiesByIdentifier; // @synthesize propertiesByIdentifier=_propertiesByIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_cn_ignorableKeys;
 - (id)_cn_optionalKeys;

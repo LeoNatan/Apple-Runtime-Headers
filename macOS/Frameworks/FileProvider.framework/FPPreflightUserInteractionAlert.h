@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)alertFromDictionary:(id)arg1 localizationLookup:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enableContinue; // @synthesize enableContinue=_enableContinue;
 @property(retain, nonatomic) FPStringFormat *cancelCaptionFormat; // @synthesize cancelCaptionFormat=_cancelCaptionFormat;
 @property(retain, nonatomic) FPStringFormat *continueCaptionFormat; // @synthesize continueCaptionFormat=_continueCaptionFormat;
 @property(retain, nonatomic) FPStringFormat *subtitleFormat; // @synthesize subtitleFormat=_subtitleFormat;
 @property(retain, nonatomic) FPStringFormat *titleFormat; // @synthesize titleFormat=_titleFormat;
-- (void).cxx_destruct;
 
 @end
 

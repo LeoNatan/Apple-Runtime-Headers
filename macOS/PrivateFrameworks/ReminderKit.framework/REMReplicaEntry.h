@@ -17,11 +17,11 @@
     id <REMReplicaManagerClient> _client;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <REMReplicaManagerClient> client; // @synthesize client=_client;
 @property(nonatomic) BOOL inUse; // @synthesize inUse=_inUse;
 @property(retain, nonatomic) REMClockElementList *clockElementList; // @synthesize clockElementList=_clockElementList;
 @property(nonatomic) unsigned int replicaUUIDIndex; // @synthesize replicaUUIDIndex=_replicaUUIDIndex;
-- (void).cxx_destruct;
 - (BOOL)hasEqualPersistedPropertiesAs:(id)arg1;
 - (id)persistenceDescription;
 - (id)description;

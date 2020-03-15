@@ -26,6 +26,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceAddress; // @synthesize sourceAddress=_sourceAddress;
 @property(retain, nonatomic) NSString *contactPoint; // @synthesize contactPoint=_contactPoint;
 @property(nonatomic) _Bool requiresUserInteraction; // @synthesize requiresUserInteraction=_requiresUserInteraction;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSString *typeDescription; // @synthesize typeDescription=_typeDescription;
 @property(retain, nonatomic) NSString *typeDescriptionUnlocalized; // @synthesize typeDescriptionUnlocalized=_typeDescriptionUnlocalized;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

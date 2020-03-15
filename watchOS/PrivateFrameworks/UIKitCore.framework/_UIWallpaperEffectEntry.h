@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIColor *_backgroundColor;
 }
 
-@property(retain) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
+@property(retain) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (_Bool)isSameTypeOfEffect:(id)arg1;
 - (_Bool)canTransitionToEffect:(id)arg1;
 - (void)applyIdentityEffectToView:(id)arg1;

@@ -29,6 +29,7 @@
     NSArray *_layoutConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) PXComposeRecipientView *composeRecipientView; // @synthesize composeRecipientView=_composeRecipientView;
 @property(readonly, nonatomic) PXRecipientSearchDataSourceManager *searchDataSourceManager; // @synthesize searchDataSourceManager=_searchDataSourceManager;
@@ -38,7 +39,6 @@
 @property(nonatomic) long long maxRecipients; // @synthesize maxRecipients=_maxRecipients;
 @property(copy, nonatomic) NSString *fieldLabel; // @synthesize fieldLabel=_fieldLabel;
 @property(nonatomic) __weak id <PXPhotoRecipientViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)searchRecipientController:(id)arg1 didSelectRecipient:(id)arg2;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;

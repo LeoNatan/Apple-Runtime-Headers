@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *__test_apps;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *_test_apps; // @synthesize _test_apps=__test_apps;
 @property(retain, nonatomic) ASDAppQuery *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)findApplicationIn:(id)arg1;
 - (void)appInstallStateOnWatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithBundleID:(id)arg1;

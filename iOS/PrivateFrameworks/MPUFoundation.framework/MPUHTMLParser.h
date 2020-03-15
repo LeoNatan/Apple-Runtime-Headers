@@ -20,8 +20,8 @@
 + (id)parserWithDefaultAttributes:(id)arg1;
 + (id)parser;
 + (id)attributedSanitizedStringFromHTMLString:(id)arg1 defaultAttributes:(id)arg2;
-@property(nonatomic) __weak id <MPUHTMLParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MPUHTMLParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)attributedStringForHTMLString:(id)arg1 error:(id *)arg2;
 
 @end

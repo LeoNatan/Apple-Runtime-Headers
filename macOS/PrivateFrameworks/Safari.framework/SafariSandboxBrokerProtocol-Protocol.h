@@ -5,11 +5,11 @@
 //
 
 #import <Safari/NSObject-Protocol.h>
-#import <Safari/WBSSafariSandboxBrokerProtocol-Protocol.h>
+#import <Safari/WBSUISafariSandboxBrokerProtocol-Protocol.h>
 
 @class NSData, NSDictionary, NSString, NSURL;
 
-@protocol SafariSandboxBrokerProtocol <WBSSafariSandboxBrokerProtocol, NSObject>
+@protocol SafariSandboxBrokerProtocol <WBSUISafariSandboxBrokerProtocol, NSObject>
 - (void)migrateResourcesToSandbox:(NSDictionary *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)cancelUnarchivingOperationWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)extractArchiveAtPath:(NSString *)arg1 type:(unsigned long long)arg2 identifier:(NSString *)arg3 completionHandler:(void (^)(NSString *, NSError *))arg4;

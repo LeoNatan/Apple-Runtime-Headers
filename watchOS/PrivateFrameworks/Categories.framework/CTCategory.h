@@ -48,6 +48,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)_newXpcConnection;
 + (id)_xpcConnection;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *resourceString; // @synthesize resourceString=_resourceString;
 @property(readonly, copy, nonatomic) NSString *secondaryLocalizedName; // @synthesize secondaryLocalizedName=_secondaryLocalizedName;
 @property(readonly, copy, nonatomic) NSString *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) NSString *canonicalBundleIdentifier; // @synthesize canonicalBundleIdentifier=_canonicalBundleIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCategory:(id)arg1;

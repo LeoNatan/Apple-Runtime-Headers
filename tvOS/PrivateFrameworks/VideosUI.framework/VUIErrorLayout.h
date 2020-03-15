@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUITextLayout *debugTextLayout2; // @synthesize debugTextLayout2=_debugTextLayout2;
 @property(readonly, nonatomic) VUITextLayout *debugTextLayout; // @synthesize debugTextLayout=_debugTextLayout;
 @property(readonly, nonatomic) VUITextLayout *descriptionTextLayout; // @synthesize descriptionTextLayout=_descriptionTextLayout;
 @property(readonly, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -23,9 +23,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int suggestionPositionWhenIgnored; // @synthesize suggestionPositionWhenIgnored=_suggestionPositionWhenIgnored;
 @property(retain, nonatomic) NSString *ignoredFeedId; // @synthesize ignoredFeedId=_ignoredFeedId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

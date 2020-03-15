@@ -17,9 +17,9 @@
     struct CGSize _maximumSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maximumSize; // @synthesize maximumSize=_maximumSize;
 @property(nonatomic) struct CGSize minimumSize; // @synthesize minimumSize=_minimumSize;
-- (void).cxx_destruct;
 - (id)_initWithScene:(id)arg1;
 
 @end

@@ -18,11 +18,11 @@
 }
 
 + (BOOL)adjustStartTime:(unsigned long long *)arg1 endTime:(unsigned long long *)arg2 currMachAbsTime:(unsigned long long *)arg3;
+- (void).cxx_destruct;
 @property unsigned long long numOfWords; // @synthesize numOfWords=_numOfWords;
 @property unsigned long long wordOffset; // @synthesize wordOffset=_wordOffset;
 @property unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
-- (void).cxx_destruct;
 - (unsigned long long)getEndTime;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)getLongestContiguousHammingWeight;

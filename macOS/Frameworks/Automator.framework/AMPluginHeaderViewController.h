@@ -13,8 +13,8 @@
     AMWorkflow *_workflow;
 }
 
-@property(nonatomic) __weak AMWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AMWorkflow *workflow; // @synthesize workflow=_workflow;
 
 @end
 

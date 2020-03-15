@@ -18,11 +18,11 @@
 
 + (id)attachmentData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 + (id)attachmentData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
 @property(retain, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 
 @end
 

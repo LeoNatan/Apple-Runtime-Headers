@@ -18,8 +18,8 @@
     CKTransactionalComponentDataSourceChangeset *_changeset;
 }
 
-@property(readonly, nonatomic) CKTransactionalComponentDataSourceChangeset *changeset; // @synthesize changeset=_changeset;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKTransactionalComponentDataSourceChangeset *changeset; // @synthesize changeset=_changeset;
 @property(readonly, copy) NSString *description;
 - (id)changeFromState:(id)arg1;
 - (id)initWithChangeset:(id)arg1 stateListener:(id)arg2 userInfo:(id)arg3;

@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 
 + (id)voiceIdentifierForVoiceCreator:(unsigned int)arg1 voiceID:(unsigned int)arg2;
 + (BOOL)findVoiceByIdentifier:(id)arg1 returningCreator:(unsigned int *)arg2 returningID:(unsigned int *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *_generalLock; // @synthesize _generalLock=__generalLock;
 @property(readonly, nonatomic) NSArray *supportedLiteralCharacterRanges; // @synthesize supportedLiteralCharacterRanges=_supportedLiteralCharacterRanges;
 @property(readonly, nonatomic) NSArray *supportedCharacterRanges; // @synthesize supportedCharacterRanges=_supportedCharacterRanges;
@@ -61,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool usingDefaultVoice; // @synthesize usingDefaultVoice=_usingDefaultVoice;
 @property(retain, nonatomic) id delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *currentVoiceIdentifier; // @synthesize currentVoiceIdentifier=_currentVoice;
-- (void).cxx_destruct;
 - (void)resetChannel;
 - (short)setSpeechChannelWithVoiceCreator:(unsigned int)arg1 voiceID:(unsigned int)arg2;
 - (short)setSpeechChannelWithVoiceIdentifier:(id)arg1;

@@ -19,12 +19,12 @@
     NSDictionary *_headerFields;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _CFHTTPServerRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSString *method; // @synthesize method=_method;
 @property(readonly, nonatomic) REHTTPConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSInputStream *stream;
 - (void)appendData:(id)arg1;
 @property(readonly, nonatomic) NSData *bodyData;

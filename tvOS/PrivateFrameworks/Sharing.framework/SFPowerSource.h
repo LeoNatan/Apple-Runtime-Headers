@@ -52,6 +52,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int changes; // @synthesize changes=_changes;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
 @property(nonatomic) _Bool added; // @synthesize added=_added;
@@ -87,7 +88,6 @@
 @property(copy, nonatomic) NSData *batteryCaseAddress; // @synthesize batteryCaseAddress=_batteryCaseAddress;
 @property(copy, nonatomic) NSString *accessoryID; // @synthesize accessoryID=_accessoryID;
 @property(copy, nonatomic) NSString *accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
-- (void).cxx_destruct;
 - (unsigned int)updateWithPowerSourceDescription:(id)arg1;
 - (void)updateWithPowerSource:(id)arg1;
 - (unsigned int)updateWithPowerAdapterDetails:(id)arg1;

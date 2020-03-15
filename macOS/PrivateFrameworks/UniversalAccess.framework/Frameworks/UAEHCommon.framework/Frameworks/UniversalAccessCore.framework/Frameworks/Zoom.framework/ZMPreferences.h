@@ -18,9 +18,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL notificationsDisabled; // @synthesize notificationsDisabled=_notificationsDisabled;
 @property(nonatomic) BOOL isZoomApp; // @synthesize isZoomApp=_isZoomApp;
-- (void).cxx_destruct;
 - (void)sync;
 - (void)_sanityCheckPrefs;
 - (void)postNotificationForKey:(id)arg1;

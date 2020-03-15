@@ -17,12 +17,13 @@
 - (void)didFinishLoadingDataWithError:(NSError *)arg1;
 - (void)didFinishLoadingData;
 - (void)didStartLoadingData;
+- (void)venueCreated:(const struct Venue *)arg1 building:(const struct VenueBuilding *)arg2;
 - (void)nearestVenueDidChange:(const struct Venue *)arg1 building:(const struct VenueBuilding *)arg2;
 - (_Bool)wantsTimerTick;
 - (void)didPresent;
 - (void)willLayoutWithTimestamp:(double)arg1;
 
 @optional
-- (void)muninJunctionDidChange:(const struct MuninJunction *)arg1 currentRoad:(const struct MuninRoadEdge *)arg2;
+- (void)muninJunctionDidChange:(const struct MuninJunction *)arg1 currentRoad:(const struct MuninRoadEdge *)arg2 localize:(_Bool)arg3;
 @end
 

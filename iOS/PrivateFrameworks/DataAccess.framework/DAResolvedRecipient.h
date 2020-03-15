@@ -17,12 +17,12 @@
     NSMutableDictionary *_mResolvedEmailToX509Certs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mResolvedEmailToX509Certs; // @synthesize mResolvedEmailToX509Certs=_mResolvedEmailToX509Certs;
 @property(retain, nonatomic) NSString *mergedFreeBusy; // @synthesize mergedFreeBusy=_mergedFreeBusy;
 @property(nonatomic) long long availabilityStatus; // @synthesize availabilityStatus=_availabilityStatus;
 @property(nonatomic) long long certificatesStatus; // @synthesize certificatesStatus=_certificatesStatus;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)addCert:(id)arg1 forEmailAddress:(id)arg2;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *resolvedEmailToX509Certs;

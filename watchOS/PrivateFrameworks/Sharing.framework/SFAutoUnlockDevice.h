@@ -33,6 +33,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int majorOSVersion; // @synthesize majorOSVersion=_majorOSVersion;
 @property(nonatomic) _Bool supportsHEIC; // @synthesize supportsHEIC=_supportsHEIC;
 @property(nonatomic) _Bool supportsConnectionCache; // @synthesize supportsConnectionCache=_supportsConnectionCache;
@@ -51,7 +52,6 @@
 @property(nonatomic) _Bool keyExists; // @synthesize keyExists=_keyExists;
 @property(nonatomic) _Bool unlockEnabled; // @synthesize unlockEnabled=_unlockEnabled;
 @property(copy, nonatomic) NSString *modelDescription; // @synthesize modelDescription=_modelDescription;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

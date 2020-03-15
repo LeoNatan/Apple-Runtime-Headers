@@ -18,6 +18,7 @@
 - (void)publishMomentShare:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)overrideSystemBudgetsForSyncSession:(BOOL)arg1 systemBudgets:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)getSystemBudgetsWithReply:(CDUnknownBlockType)arg1;
+- (void)getNotUploadedCount:(CDUnknownBlockType)arg1;
 - (void)getCurrentTransferProgress:(CDUnknownBlockType)arg1;
 - (void)rampingRequestForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)synchronouslySetCloudPhotoLibraryPauseState:(BOOL)arg1 reason:(short)arg2;

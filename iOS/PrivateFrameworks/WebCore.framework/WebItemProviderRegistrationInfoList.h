@@ -17,12 +17,12 @@
     struct CGSize _preferredPresentationSize;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *teamData; // @synthesize teamData=_teamData;
 @property(nonatomic) long long preferredPresentationStyle; // @synthesize preferredPresentationStyle=_preferredPresentationStyle;
 @property(copy, nonatomic) NSString *suggestedName; // @synthesize suggestedName=_suggestedName;
 @property(nonatomic) struct CGSize preferredPresentationSize; // @synthesize preferredPresentationSize=_preferredPresentationSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSItemProvider *itemProvider;
 - (void)enumerateItems:(CDUnknownBlockType)arg1;

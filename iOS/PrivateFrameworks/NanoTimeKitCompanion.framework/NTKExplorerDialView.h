@@ -26,8 +26,8 @@
     unsigned long long _density;
 }
 
-@property(nonatomic) unsigned long long density; // @synthesize density=_density;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long density; // @synthesize density=_density;
 - (id)_minuteTickShrinkAndGrow;
 - (id)_minuteClusterExpandAnimation;
 - (id)_minuteTickBreakAnimation;

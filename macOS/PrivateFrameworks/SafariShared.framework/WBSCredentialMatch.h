@@ -14,9 +14,9 @@
     NSURLProtectionSpace *_protectionSpace;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLProtectionSpace *protectionSpace; // @synthesize protectionSpace=_protectionSpace;
 @property(readonly, nonatomic) NSURLCredential *credential; // @synthesize credential=_credential;
-- (void).cxx_destruct;
 - (id)completion;
 - (id)initWithCredential:(id)arg1 protectionSpace:(id)arg2;
 - (id)initWithCredential:(id)arg1;

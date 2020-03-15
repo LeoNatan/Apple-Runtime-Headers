@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _iconDisplaySize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showSeeMoreButton; // @synthesize showSeeMoreButton=_showSeeMoreButton;
 @property(nonatomic) struct CGSize iconDisplaySize; // @synthesize iconDisplaySize=_iconDisplaySize;
 @property(retain, nonatomic) NSString *providerName; // @synthesize providerName=_providerName;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 @property(retain, nonatomic) UIImage *icon;

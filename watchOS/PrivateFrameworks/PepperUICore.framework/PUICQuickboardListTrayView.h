@@ -20,6 +20,7 @@
     NSObject<OS_os_log> *_log;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSArray *secondRowButtons; // @synthesize secondRowButtons=_secondRowButtons;
 @property(retain, nonatomic) NSArray *firstRowButtons; // @synthesize firstRowButtons=_firstRowButtons;
@@ -27,7 +28,6 @@
 @property(nonatomic) __weak UIStackView *firstRow; // @synthesize firstRow=_firstRow;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) PUICQuickboardListTraySpecs *specs; // @synthesize specs=_specs;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (void)updateInnerSpacingForRow:(id)arg1;
 - (void)replaceAllSubviewsFrom:(id)arg1 with:(id)arg2;

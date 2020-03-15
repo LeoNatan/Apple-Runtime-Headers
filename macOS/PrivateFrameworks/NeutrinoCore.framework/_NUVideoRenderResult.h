@@ -19,11 +19,11 @@
     NUImageGeometry *_geometry;
 }
 
+- (void).cxx_destruct;
 @property(retain) NUImageGeometry *geometry; // @synthesize geometry=_geometry;
 @property(retain) AVAudioMix *audioMix; // @synthesize audioMix=_audioMix;
 @property(retain) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(retain) AVAsset *video; // @synthesize video=_video;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) AVVideoComposition *avVideoComposition;
 @property(readonly) AVComposition *avAsset;

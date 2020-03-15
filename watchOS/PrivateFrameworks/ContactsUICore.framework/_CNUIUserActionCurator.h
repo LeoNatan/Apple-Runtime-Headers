@@ -17,9 +17,9 @@
     id <CNLSApplicationWorkspace> _applicationWorkspace;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNLSApplicationWorkspace> applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)curateUserAction:(id)arg1;
 - (id)initWithContactStore:(id)arg1 applicationWorkspace:(id)arg2;
 

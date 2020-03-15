@@ -32,10 +32,10 @@
 + (id)_fetchResultForEmptyDataSourceManager;
 + (id)new;
 + (id)mostRecentCreationDate;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCMMSuggestionsDataSourceContext *context; // @synthesize context=_context;
 @property(retain) NSMutableOrderedSet *_remainingAssetCollectionsObjectIDsToFetch; // @synthesize _remainingAssetCollectionsObjectIDsToFetch=__remainingAssetCollectionsObjectIDsToFetch;
 @property(retain, nonatomic) PXCMMSuggestionsDataSourceState *_state; // @synthesize _state=__state;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)_handleFinishedFetchingBatch:(id)arg1 preparedChangeDetails:(id)arg2 forFetchResult:(id)arg3 changedObjects:(id)arg4;

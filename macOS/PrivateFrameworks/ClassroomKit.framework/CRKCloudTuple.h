@@ -6,20 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@protocol CRKCloudStoring;
-
 @interface CRKCloudTuple : NSObject
 {
-    id <CRKCloudStoring> _originalObject;
-    id <CRKCloudStoring> _changedObject;
 }
 
-+ (id)new;
-@property(readonly, nonatomic) id <CRKCloudStoring> changedObject; // @synthesize changedObject=_changedObject;
-@property(readonly, nonatomic) id <CRKCloudStoring> originalObject; // @synthesize originalObject=_originalObject;
-- (void).cxx_destruct;
+- (id)changedObject;
+- (id)originalObject;
 - (id)initWithChangedObject:(id)arg1 originalObject:(id)arg2;
-- (id)init;
 
 @end
 

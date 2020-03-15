@@ -16,11 +16,11 @@
     NSData *_body;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *body; // @synthesize body=_body;
 @property(readonly, nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) HAPRelayRequestMessage *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (_Bool)_deserializeResponseMessage:(id)arg1;
 @property(readonly, nonatomic, getter=isEncrypted) _Bool encrypted;
 - (id)description;

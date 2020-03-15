@@ -27,6 +27,7 @@
     PKDynamicProvisioningPageLearnMoreContent *_learnMore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char contentAlignment; // @synthesize contentAlignment=_contentAlignment;
 @property(retain, nonatomic) PKDynamicProvisioningPageLearnMoreContent *learnMore; // @synthesize learnMore=_learnMore;
 @property(retain, nonatomic) NSString *heroImageURL; // @synthesize heroImageURL=_heroImageURL;
@@ -40,7 +41,7 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long pageNumber; // @synthesize pageNumber=_pageNumber;
-- (void).cxx_destruct;
+- (_Bool)isEmptyPage;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictonary:(id)arg1;
 

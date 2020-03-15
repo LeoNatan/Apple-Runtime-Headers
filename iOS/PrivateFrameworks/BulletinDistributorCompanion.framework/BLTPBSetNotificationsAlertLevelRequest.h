@@ -21,9 +21,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mirror; // @synthesize mirror=_mirror;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

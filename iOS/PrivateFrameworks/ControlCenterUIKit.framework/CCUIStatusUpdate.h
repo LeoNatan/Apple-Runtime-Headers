@@ -15,9 +15,9 @@
 }
 
 + (id)statusUpdateWithMessage:(id)arg1 type:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)_initWithMessage:(id)arg1 type:(unsigned long long)arg2;
 
 @end

@@ -20,16 +20,16 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *eventObserversByID; // @synthesize eventObserversByID=_eventObserversByID;
 @property(retain, nonatomic) id <TVRCXPCRequestProtocol> remoteObject; // @synthesize remoteObject=_remoteObject;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (void)_postInvalidationNotification;
 - (void)_broadcastStateUpdateToDevices:(id)arg1;
 - (void)_disconnectAllDevices;
 - (void)_setupConnectionIfNeeded;
 - (void)deviceQueryUpdatedDiscoveredDevices:(id)arg1;
-- (void)deviceWithState:(id)arg1 encounteredAuthChallengeOfType:(long long)arg2 attributes:(long long)arg3 codeToEnterOnDevice:(id)arg4;
+- (void)deviceWithState:(id)arg1 encounteredAuthChallengeOfType:(long long)arg2 attributes:(long long)arg3 codeToEnterOnDevice:(id)arg4 throttleSeconds:(long long)arg5;
 - (void)deviceUpdatedState:(id)arg1;
 - (void)sendEvent:(id)arg1 toDeviceWithIdentifier:(id)arg2 options:(id)arg3 response:(CDUnknownBlockType)arg4;
 - (void)fetchActiveMREndpointUIDWithCompletion:(CDUnknownBlockType)arg1;

@@ -16,7 +16,6 @@
     AVPlayerInternal *_player;
 }
 
-+ (_Bool)eligibleForHDRPlayback;
 + (int)availableHDRModes;
 + (_Bool)automaticallyNotifiesObserversOfUsesAirPlayVideoWhileAirPlayScreenIsActive;
 + (_Bool)automaticallyNotifiesObserversOfAirPlayVideoActive;

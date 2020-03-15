@@ -19,10 +19,10 @@
 + (struct CGSize)preferredQuickLookViewSize;
 + (double)preferredBottomPaddingHeight;
 + (double)preferredAddButtonHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFFloatingButton *addButton; // @synthesize addButton=_addButton;
 @property(readonly, nonatomic) WFModulesQuickLookView *quickLookView; // @synthesize quickLookView=_quickLookView;
 @property(nonatomic) __weak id <WFRunWorkflowFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setQuickLookViewHidden:(_Bool)arg1 addButtonHidden:(_Bool)arg2;
 - (void)didTapAddButton;
 - (void)tintColorDidChange;

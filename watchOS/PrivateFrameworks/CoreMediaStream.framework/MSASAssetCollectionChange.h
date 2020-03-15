@@ -15,10 +15,10 @@
     NSString *_ctag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wasDeleted; // @synthesize wasDeleted=_wasDeleted;
 @property(retain, nonatomic) NSString *ctag; // @synthesize ctag=_ctag;
 @property(retain, nonatomic) NSString *GUID; // @synthesize GUID=_GUID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -47,6 +47,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultSession;
 + (BOOL)isSupported;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *switchTasksQueue; // @synthesize switchTasksQueue=_switchTasksQueue;
 @property(nonatomic) BOOL delegateSupportsActiveDeviceSwitch; // @synthesize delegateSupportsActiveDeviceSwitch=_delegateSupportsActiveDeviceSwitch;
 @property(nonatomic) BOOL delegateSupportsAsyncActivate; // @synthesize delegateSupportsAsyncActivate=_delegateSupportsAsyncActivate;
@@ -75,7 +76,6 @@
 @property(nonatomic) BOOL hasContentPending; // @synthesize hasContentPending=_hasContentPending;
 @property(nonatomic) long long activationState; // @synthesize activationState=_activationState;
 @property(nonatomic) __weak id <WCSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)roundValue:(unsigned long long)arg1 toSignificantFigures:(int)arg2;
 - (void)reportFileTransfer:(id)arg1;
 - (id)fileSizeFromURL:(id)arg1;

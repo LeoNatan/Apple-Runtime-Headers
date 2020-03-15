@@ -24,8 +24,10 @@
     CDUnknownBlockType _secureElementSessionPostlude;
     BOOL _startingSession;
     BOOL _startingPrioritySession;
+    BOOL _startingAsyncSession;
     NSMutableArray *_sessionAccessHandlers;
     NSMutableArray *_prioritySessionAccessHandlers;
+    NSMutableArray *_asyncSessionAccessHandlers;
     NSHashTable *_observers;
     NSLock *_observersLock;
     BOOL _registeredForHardwareUpdates;
@@ -79,7 +81,9 @@
 - (void)markAppletWithIdentifierForDeletion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)markAllAppletsForDeletionWithExternalAuthorization:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)appletWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)allAppletsAndCredentialsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)allAppletsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_allAppletsWithSession:(id)arg1;
 - (BOOL)setRegistrationInformation:(id)arg1 primaryRegionTopic:(id)arg2;
 - (BOOL)hasRegistrationInformation;
 - (void)pairingStateWithCompletion:(CDUnknownBlockType)arg1;
@@ -89,8 +93,10 @@
 - (void)secureElement:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;
 - (void)_updateHardwareManagerListener;
 - (void)contactlessPaymentPassesAvailableDidChange;
+- (void)_executeSecureElementAsyncSessionHandlersWithSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_executeSecureElementSessionHandlersWithPriority:(BOOL)arg1 session:(id)arg2;
-- (void)_accessSecureElementManagerSessionWithPriority:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_startSecureElementManagerSessionWithType:(long long)arg1 handler:(id)arg2;
+- (void)accessAsyncSecureElementManagerSessionWithHandler:(CDUnknownBlockType)arg1;
 - (void)accessPrioritySecureElementManagerSessionWithHandler:(CDUnknownBlockType)arg1;
 - (void)accessSecureElementManagerSessionWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

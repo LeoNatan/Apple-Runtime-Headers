@@ -23,9 +23,9 @@
     CDUnknownBlockType _dismissalBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissalBlock; // @synthesize dismissalBlock=_dismissalBlock;
 @property(retain, nonatomic) NSArray *previousViewControllers; // @synthesize previousViewControllers=_previousViewControllers;
-- (void).cxx_destruct;
 - (id)activeDocument;
 - (void)updatePreferredFocusedViewStateForFocus:(_Bool)arg1;
 - (void)_dismissForLastViewController:(_Bool)arg1;

@@ -17,8 +17,8 @@
 + (id)retryIntervals;
 + (_Bool)supportsDetachedStorage;
 + (_Bool)ignoresRoamingSwitch;
-@property(readonly, nonatomic) NSDictionary *parameterValues; // @synthesize parameterValues=_parameterValues;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *parameterValues; // @synthesize parameterValues=_parameterValues;
 - (id)parameterValueForKey:(id)arg1;
 - (id)initWithService:(id)arg1;
 

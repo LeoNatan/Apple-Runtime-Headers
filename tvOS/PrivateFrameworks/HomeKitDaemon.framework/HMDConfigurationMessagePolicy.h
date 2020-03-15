@@ -16,7 +16,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithOperationTypes:(unsigned long long)arg1;
+- (id)__initWithOperationTypes:(unsigned long long)arg1;
 - (id)init;
 
 @end

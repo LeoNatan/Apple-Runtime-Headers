@@ -25,11 +25,11 @@
 + (id)sharedEditMenuController;
 + (int)menuState;
 + (id)p_sharedEditMenuController;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *targetView; // @synthesize targetView=_targetView;
 @property(nonatomic) struct CGRect targetRect; // @synthesize targetRect=_targetRect;
 @property(nonatomic) _Bool isBeginningEditing; // @synthesize isBeginningEditing=_isBeginningEditing;
 @property(nonatomic) _Bool showMenuOnKeyboard; // @synthesize showMenuOnKeyboard=_showMenuOnKeyboard;
-- (void).cxx_destruct;
 - (void)p_clearIsBeginningEditing;
 - (void)p_didAnimateKeyboard;
 - (void)p_didHideMenu:(id)arg1;

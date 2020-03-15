@@ -32,6 +32,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIKeyboardCandidate *responseKitEntryOffered; // @synthesize responseKitEntryOffered=_responseKitEntryOffered;
 @property(retain, nonatomic) TIAutocorrectionList *lastAutocorrectionList; // @synthesize lastAutocorrectionList=_lastAutocorrectionList;
 @property(retain, nonatomic) PETScalarEventTracker *personalizationEngagementTracker; // @synthesize personalizationEngagementTracker=_personalizationEngagementTracker;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) PETScalarEventTracker *triggeredCategoryEventTracker; // @synthesize triggeredCategoryEventTracker=_triggeredCategoryEventTracker;
 @property(retain, nonatomic) PETScalarEventTracker *triggeredEventTracker; // @synthesize triggeredEventTracker=_triggeredEventTracker;
 @property(retain, nonatomic) PETScalarEventTracker *failureEventDescriptionTracker; // @synthesize failureEventDescriptionTracker=_failureEventDescriptionTracker;
-- (void).cxx_destruct;
 - (void)trackEngagementFailureWithDescription:(unsigned char)arg1 description:(id)arg2 categories:(id)arg3 locale:(id)arg4 fieldType:(id)arg5;
 - (void)trackPredictionTimeWithSource:(unsigned char)arg1 time:(double)arg2 selected:(_Bool)arg3 categories:(id)arg4 locale:(id)arg5 fieldType:(id)arg6;
 - (void)trackSelectedWithSource:(unsigned char)arg1 position:(unsigned long long)arg2 categories:(id)arg3 locale:(id)arg4 fieldType:(id)arg5;

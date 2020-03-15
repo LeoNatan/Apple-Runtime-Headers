@@ -24,6 +24,7 @@
 }
 
 + (struct CGSize)sizeThatFitsCardSection:(id)arg1 boundingSize:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double footerViewHeight; // @synthesize footerViewHeight=_footerViewHeight;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) double headerViewHeight; // @synthesize headerViewHeight=_headerViewHeight;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIView<SiriUIReusableView> *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *cardSectionViewIdentifier; // @synthesize cardSectionViewIdentifier=_cardSectionViewIdentifier;
 @property(nonatomic) __weak UIView<CRKComposableView> *composedSuperview; // @synthesize composedSuperview=_composedSuperview;
-- (void).cxx_destruct;
 - (void)removeFromComposedSuperview;
 - (id)accessibilityIdentifier;
 - (void)layoutSubviews;

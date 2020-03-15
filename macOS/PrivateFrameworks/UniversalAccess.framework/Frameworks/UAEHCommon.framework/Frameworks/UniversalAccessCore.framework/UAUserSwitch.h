@@ -21,13 +21,13 @@
 }
 
 + (id)switchWithPropertyList:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) BOOL customNameIsLocalized; // @synthesize customNameIsLocalized=_customNameIsLocalized;
 @property(copy, nonatomic) NSString *customName; // @synthesize customName=_customName;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) unsigned long long triggerType; // @synthesize triggerType=_triggerType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

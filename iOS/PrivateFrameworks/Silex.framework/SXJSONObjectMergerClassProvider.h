@@ -15,8 +15,8 @@
     Class _objectClass;
 }
 
-@property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
 - (Class)classForObject:(id)arg1 specVersion:(id)arg2;
 - (id)initWithObjectClass:(Class)arg1;
 

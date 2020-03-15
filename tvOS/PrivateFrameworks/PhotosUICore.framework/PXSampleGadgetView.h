@@ -16,10 +16,10 @@
     UIView *_colorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *colorView; // @synthesize colorView=_colorView;
 @property(nonatomic) __weak id <PXSampleGadgetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

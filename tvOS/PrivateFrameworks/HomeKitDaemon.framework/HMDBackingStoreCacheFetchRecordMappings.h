@@ -15,10 +15,10 @@
     CDUnknownBlockType _fetchResult;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithGroup:(id)arg1 fetchResult:(CDUnknownBlockType)arg2;
 - (id)initWithShareGroup:(id)arg1 fetchResult:(CDUnknownBlockType)arg2;

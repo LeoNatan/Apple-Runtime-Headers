@@ -15,21 +15,23 @@ __attribute__((visibility("hidden")))
     long long _popoverDisplayOption;
     NSString *_localizedPreferencePaneName;
     NSString *_localizedPreferencePaneDescription;
+    NSString *_localizedPreferencePaneTableAccessibilityLabel;
     NSImage *_preferencePaneIcon;
     NSString *_localizedPlaceholderToDisplayIfNotConfigurable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedPlaceholderToDisplayIfNotConfigurable; // @synthesize localizedPlaceholderToDisplayIfNotConfigurable=_localizedPlaceholderToDisplayIfNotConfigurable;
 @property(readonly, nonatomic) NSImage *preferencePaneIcon; // @synthesize preferencePaneIcon=_preferencePaneIcon;
+@property(readonly, copy, nonatomic) NSString *localizedPreferencePaneTableAccessibilityLabel; // @synthesize localizedPreferencePaneTableAccessibilityLabel=_localizedPreferencePaneTableAccessibilityLabel;
 @property(readonly, copy, nonatomic) NSString *localizedPreferencePaneDescription; // @synthesize localizedPreferencePaneDescription=_localizedPreferencePaneDescription;
 @property(readonly, copy, nonatomic) NSString *localizedPreferencePaneName; // @synthesize localizedPreferencePaneName=_localizedPreferencePaneName;
 @property(readonly, nonatomic) long long popoverDisplayOption; // @synthesize popoverDisplayOption=_popoverDisplayOption;
 @property(readonly, copy, nonatomic) NSString *localizedPopoverName; // @synthesize localizedPopoverName=_localizedPopoverName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithLocalizedPopoverName:(id)arg1 popoverDisplayOption:(long long)arg2 localizedPreferencePaneName:(id)arg3 localizedPreferencePaneDescription:(id)arg4 preferencePaneIcon:(id)arg5 localizedPlaceholderToDisplayIfNotConfigurable:(id)arg6;
-- (id)initWithLocalizedPopoverName:(id)arg1 popoverDisplayOption:(long long)arg2 localizedPreferencePaneName:(id)arg3 localizedPreferencePaneDescription:(id)arg4 preferencePaneIcon:(id)arg5;
+- (id)initWithLocalizedPopoverName:(id)arg1 popoverDisplayOption:(long long)arg2 localizedPreferencePaneName:(id)arg3 localizedPreferencePaneDescription:(id)arg4 localizedPreferencePaneTableAccessibilityLabel:(id)arg5 preferencePaneIcon:(id)arg6 localizedPlaceholderToDisplayIfNotConfigurable:(id)arg7;
+- (id)initWithLocalizedPopoverName:(id)arg1 popoverDisplayOption:(long long)arg2 localizedPreferencePaneName:(id)arg3 localizedPreferencePaneDescription:(id)arg4 localizedPreferencePaneTableAccessibilityLabel:(id)arg5 preferencePaneIcon:(id)arg6;
 - (id)init;
 
 @end

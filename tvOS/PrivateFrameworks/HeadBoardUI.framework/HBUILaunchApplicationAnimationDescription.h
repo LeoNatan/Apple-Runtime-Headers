@@ -17,11 +17,11 @@
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(readonly, nonatomic) UIWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property(readonly, nonatomic) id <HBUILaunchAnimationViewSnapshot> viewSnapshot; // @synthesize viewSnapshot=_viewSnapshot;
 @property(readonly, nonatomic) id <HBUIHideable> applicationIconView; // @synthesize applicationIconView=_applicationIconView;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithApplicationIconView:(id)arg1 viewSnapshot:(id)arg2 sourceWindow:(id)arg3 sourceRect:(struct CGRect)arg4;
 

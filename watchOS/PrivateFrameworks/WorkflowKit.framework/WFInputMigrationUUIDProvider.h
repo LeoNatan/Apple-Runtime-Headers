@@ -16,9 +16,9 @@
     unsigned int _position;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int position; // @synthesize position=_position;
 @property(readonly, nonatomic) WFAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)generateOutputUUIDForAction:(id)arg1;
 - (id)initWithAction:(id)arg1 atPosition:(unsigned int)arg2;
 

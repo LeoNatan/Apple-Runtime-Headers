@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *inviterUUID; // @synthesize inviterUUID=_inviterUUID;
 @property(copy, nonatomic) NSString *inviterName; // @synthesize inviterName=_inviterName;
 @property(readonly, copy, nonatomic) NSUUID *homeUUID; // @synthesize homeUUID=_homeUUID;
 @property(readonly, copy, nonatomic) NSString *homeName; // @synthesize homeName=_homeName;
 @property(readonly, nonatomic) NSString *inviterUserID; // @synthesize inviterUserID=_inviterUserID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

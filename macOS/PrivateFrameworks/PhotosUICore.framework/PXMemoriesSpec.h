@@ -13,8 +13,8 @@
     BOOL _feedShouldAllowHeaders;
     BOOL _alwaysShowFavoritesBadge;
     BOOL _shouldRemoveHighlightOnScroll;
-    struct NSColor *_feedBackgroundColor;
-    struct NSColor *_selectionHighlightColor;
+    NSColor *_feedBackgroundColor;
+    NSColor *_selectionHighlightColor;
     long long _feedHeroPosition;
     long long _feedAxis;
     unsigned long long _feedMemoriesPerRow;
@@ -25,11 +25,11 @@
     long long _idiom;
     double _feedHeroImageAspectRatio;
     double _feedAdditionalContentThreshold;
-    struct NSFont *_tabTitleFont;
-    struct NSColor *_tabTitleTextColor;
+    NSFont *_tabTitleFont;
+    NSColor *_tabTitleTextColor;
     double _tabTitleBaselineOffset;
     double _tabTopContentPadding;
-    struct NSColor *_borderColor;
+    NSColor *_borderColor;
     double _borderWidth;
     double _orbPreviewSize;
     unsigned long long __style;
@@ -42,6 +42,7 @@
     struct NSEdgeInsets _favoriteBadgeInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double _columnWidth; // @synthesize _columnWidth=__columnWidth;
 @property(readonly, nonatomic) double _displayScale; // @synthesize _displayScale=__displayScale;
 @property(readonly, nonatomic) unsigned long long _style; // @synthesize _style=__style;
@@ -72,11 +73,10 @@
 @property(readonly, nonatomic) long long feedHeroPosition; // @synthesize feedHeroPosition=_feedHeroPosition;
 @property(readonly, nonatomic) NSColor *selectionHighlightColor; // @synthesize selectionHighlightColor=_selectionHighlightColor;
 @property(readonly, nonatomic) NSColor *feedBackgroundColor; // @synthesize feedBackgroundColor=_feedBackgroundColor;
-- (void).cxx_destruct;
 - (double)_feedInteritemSpacingForReferenceSize:(struct CGSize)arg1;
 - (void)_calculateSectionInsetWithExtendedTraitCollection:(id)arg1;
 @property(readonly, nonatomic) struct NSEdgeInsets layoutInsets;
-- (struct NSColor *)feedCategoryLabelTextColor;
+- (id)feedCategoryLabelTextColor;
 @property(readonly, nonatomic) double feedSecondaryImagePaddingBottom;
 @property(readonly, nonatomic) double bottomShadowPadding;
 @property(readonly, nonatomic) double feedHeroImagePaddingBottom;

@@ -17,9 +17,9 @@
 }
 
 + (id)copyConfigurationForRequest:(id)arg1 reply:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSArray *attributes; // @synthesize attributes=_attributes;
 @property unsigned long long configurationType; // @synthesize configurationType=_configurationType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;

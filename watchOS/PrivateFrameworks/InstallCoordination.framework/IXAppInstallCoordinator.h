@@ -62,12 +62,12 @@
 + (_Bool)demoteAppToPlaceholderWithBundleID:(id)arg1 forReason:(unsigned int)arg2 waitForDeletion:(_Bool)arg3 error:(id *)arg4;
 + (_Bool)demoteAppToPlaceholderWithBundleID:(id)arg1 forReason:(unsigned int)arg2 error:(id *)arg3;
 + (void)_demoteAppToPlaceholderWithBundleID:(id)arg1 forReason:(unsigned int)arg2 waitForDeletion:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int observersCalled; // @synthesize observersCalled=_observersCalled;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *observerCalloutQueue; // @synthesize observerCalloutQueue=_observerCalloutQueue;
 @property(readonly, nonatomic) IXAppInstallCoordinatorSeed *seed; // @synthesize seed=_seed;
 @property(nonatomic) __weak id <IXAppInstallCoordinatorObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (oneway void)_clientDelegate_didCancelWithError:(id)arg1 client:(unsigned int)arg2;
 - (oneway void)_clientDelegate_didComplete;
 - (oneway void)_clientDelegate_placeholderDidInstall;

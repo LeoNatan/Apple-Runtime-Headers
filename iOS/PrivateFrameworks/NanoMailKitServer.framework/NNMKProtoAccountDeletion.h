@@ -17,9 +17,9 @@
     CDStruct_a125a100 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

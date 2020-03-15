@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_buttonView;
 }
 
-@property(retain, nonatomic) UIView *buttonView; // @synthesize buttonView=_buttonView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *buttonView; // @synthesize buttonView=_buttonView;
 - (void)prepareForReuse;
 - (id)preferredFocusEnvironments;
 

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     AVPlayerViewController *_playerViewController;
 }
 
-@property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 - (id)initWithAVKitOwner:(id)arg1;
 
 // Remaining properties

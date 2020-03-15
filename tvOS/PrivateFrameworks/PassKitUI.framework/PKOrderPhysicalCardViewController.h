@@ -28,12 +28,12 @@
     NSString *_secondaryButtonTitleOverride;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *secondaryButtonTitleOverride; // @synthesize secondaryButtonTitleOverride=_secondaryButtonTitleOverride;
 @property(copy, nonatomic) NSString *primaryButtonTitleOverride; // @synthesize primaryButtonTitleOverride=_primaryButtonTitleOverride;
 @property(copy, nonatomic) NSString *bodyOverride; // @synthesize bodyOverride=_bodyOverride;
 @property(copy, nonatomic) NSString *titleOverride; // @synthesize titleOverride=_titleOverride;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_terminateSetupFlow;
 - (void)_handleNextStep;

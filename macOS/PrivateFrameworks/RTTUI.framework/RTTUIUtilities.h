@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
+@class NSNumber;
 @protocol OS_dispatch_queue;
 
 @interface RTTUIUtilities : NSObject
 {
     BOOL _inUnitTestMode;
     BOOL _headphoneJackSupportsTTY;
+    NSNumber *_overrideLTR;
     NSObject<OS_dispatch_queue> *_callCenterQueue;
 }
 
@@ -31,10 +33,11 @@
 + (void)contactIsTTYContact:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 + (BOOL)contactIsTTYContact:(id)arg1;
 + (id)sharedUtilityProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callCenterQueue; // @synthesize callCenterQueue=_callCenterQueue;
 @property(nonatomic) BOOL headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;
+@property(retain, nonatomic) NSNumber *overrideLTR; // @synthesize overrideLTR=_overrideLTR;
 @property(nonatomic) BOOL inUnitTestMode; // @synthesize inUnitTestMode=_inUnitTestMode;
-- (void).cxx_destruct;
 - (id)transcriptStringForConversation:(id)arg1;
 - (BOOL)contactIsTTYContact:(id)arg1;
 - (BOOL)deleteConversationWithCallUID:(id)arg1;

@@ -17,10 +17,10 @@
     struct CGPoint _targetContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint targetContentOffset; // @synthesize targetContentOffset=_targetContentOffset;
 @property(nonatomic) __weak PUICCrownInputSequencer *sequencer; // @synthesize sequencer=_sequencer;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)_displayLinkFired:(id)arg1;
 - (void)stop;
 - (void)_startDisplayLink;

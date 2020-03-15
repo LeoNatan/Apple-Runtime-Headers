@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)versionFromOperatingSystemVersion:(CDStruct_77932685)arg1;
-@property(readonly, copy) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (CDStruct_77932685)operatingSystemVersion;

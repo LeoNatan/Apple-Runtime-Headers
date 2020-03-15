@@ -15,10 +15,10 @@
     id _notificationObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 @property(copy, nonatomic) CDUnknownBlockType updateKeyboardLayoutPreviewBlock; // @synthesize updateKeyboardLayoutPreviewBlock=_updateKeyboardLayoutPreviewBlock;
 @property(copy, nonatomic) NSString *inputSourceIdentifier; // @synthesize inputSourceIdentifier=_inputSourceIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CIMPreferences *preferences;
 - (void)didAddToPreferencePane;
 - (void)dealloc;

@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     UIColor *_unselectedImageTintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *unselectedImageTintColor; // @synthesize unselectedImageTintColor=_unselectedImageTintColor;
 @property(retain, nonatomic) UIColor *selectedImageTintColor; // @synthesize selectedImageTintColor;
 @property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor;
 @property(retain, nonatomic) UIImage *selectionIndicatorImage; // @synthesize selectionIndicatorImage;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage;
-- (void).cxx_destruct;
 - (id)_tabItemAppearanceStorage;
 @property(retain, nonatomic) _UITabBarItemAppearanceStorage *tabItemAppearanceStorage;
 

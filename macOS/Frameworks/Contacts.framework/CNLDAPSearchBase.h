@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)searchBaseWithDistinguishedName:(id)arg1 scope:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property unsigned long long scope; // @synthesize scope=_scope;
 @property(copy) NSString *distinguishedName; // @synthesize distinguishedName=_distinguishedName;
-- (void).cxx_destruct;
 
 @end
 

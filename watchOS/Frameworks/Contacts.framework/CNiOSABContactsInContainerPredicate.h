@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *parentContainerIdentifier; // @synthesize parentContainerIdentifier=_parentContainerIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *parentContainerIdentifier; // @synthesize parentContainerIdentifier=_parentContainerIdentifier;
 @property(readonly, copy) NSString *description;
 - (id)cn_cursorForEncodedPeopleFromAddressBook:(void *)arg1 fetchRequest:(id)arg2 environment:(id)arg3 error:(id *)arg4;
 - (id)cn_copyPeopleInAddressBook:(void *)arg1 fetchRequest:(id)arg2 matchInfos:(id *)arg3 environment:(id)arg4 nserror:(id *)arg5;

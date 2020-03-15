@@ -26,6 +26,7 @@
     NSTimer *_waitTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *waitTimer; // @synthesize waitTimer=_waitTimer;
 @property(retain, nonatomic) NSMutableSet *learnedActions; // @synthesize learnedActions=_learnedActions;
 @property(nonatomic) __weak id <PBSExternalControlIRLearningManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,7 +34,6 @@
 @property(nonatomic, getter=isLearningInProgress) _Bool learningInProgress; // @synthesize learningInProgress=_learningInProgress;
 @property(retain, nonatomic) PBSExternalControlIRLearningConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) PBSExternalControlSystem *externalControlSystem; // @synthesize externalControlSystem=_externalControlSystem;
-- (void).cxx_destruct;
 - (void)_didCancel;
 - (void)_didSaveLearnedActions:(id)arg1 forDeviceWithUUID:(id)arg2;
 - (void)_didFailToStartLearningWithError:(id)arg1;

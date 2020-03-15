@@ -15,10 +15,10 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) TIAssetAttributes *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) TIAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

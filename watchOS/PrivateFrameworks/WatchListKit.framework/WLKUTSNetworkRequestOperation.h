@@ -16,10 +16,10 @@
     unsigned int _environmentHash;
 }
 
+- (void).cxx_destruct;
 @property _Bool didHandleInvalidConfig; // @synthesize didHandleInvalidConfig=_didHandleInvalidConfig;
 @property(nonatomic) unsigned int environmentHash; // @synthesize environmentHash=_environmentHash;
 @property(retain, nonatomic) WLKURLRequestProperties *requestProperties; // @synthesize requestProperties=_requestProperties;
-- (void).cxx_destruct;
 - (id)responseDictionary;
 - (void)processResponse;
 - (void)handleResult:(id)arg1 error:(id)arg2;

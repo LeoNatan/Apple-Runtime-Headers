@@ -19,9 +19,9 @@
 
 + (id)sharedInstance;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *visibleMailboxesObjectIds; // @synthesize visibleMailboxesObjectIds=_visibleMailboxesObjectIds;
 @property(readonly, nonatomic) _Bool isForeground; // @synthesize isForeground=_isForeground;
-- (void).cxx_destruct;
 - (id)giveBoostWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)setClientIsInForeground:(_Bool)arg1;
 - (void)setCurrentlyVisibleMailboxObjectIDs:(id)arg1;

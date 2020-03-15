@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)processInfoWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) unsigned int applicationState; // @synthesize applicationState=_applicationState;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 
 @end
 

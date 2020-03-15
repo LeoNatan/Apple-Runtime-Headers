@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 + (id)dataLabelViewWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)headerViewWithImage:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)headerViewWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIProductMetadataLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) NSArray *dataViews; // @synthesize dataViews=_dataViews;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 
 @end
 

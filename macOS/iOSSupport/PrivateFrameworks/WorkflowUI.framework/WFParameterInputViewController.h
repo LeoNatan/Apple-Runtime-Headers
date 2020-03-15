@@ -29,6 +29,7 @@
 }
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *hintBottomConstraint; // @synthesize hintBottomConstraint=_hintBottomConstraint;
 @property(nonatomic) __weak UIView *firstResponderHintView; // @synthesize firstResponderHintView=_firstResponderHintView;
 @property(nonatomic) __weak UIResponder *wf_firstResponder; // @synthesize wf_firstResponder=_wf_firstResponder;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) WFAction *fakeAction; // @synthesize fakeAction=_fakeAction;
 @property(readonly, nonatomic) WFModuleModel *moduleModel; // @synthesize moduleModel=_moduleModel;
 @property(nonatomic) __weak id <WFParameterInputViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)positionFirstResponderHintViewAnimated:(BOOL)arg1;
 - (void)responderDidEndEditing:(id)arg1;
 - (void)responderDidBeginEditing:(id)arg1;

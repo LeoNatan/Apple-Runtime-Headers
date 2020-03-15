@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSXPCConnection *_xpcConnection;
 }
 
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-@property(nonatomic) __weak SafariNotificationAgentDelegate *delegate; // @synthesize delegate=_agentDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(nonatomic) __weak SafariNotificationAgentDelegate *delegate; // @synthesize delegate=_agentDelegate;
 - (void)centerDidUnregisterForRemoteNotifications:(unsigned long long)arg1;
 - (void)verificationRequest:(id)arg1 centerDidRegisterForRemoteNotifications:(unsigned long long)arg2 withDeviceToken:(id)arg3;
 - (void)verificationRequest:(id)arg1 didFinishHandshake:(int)arg2 websiteName:(id)arg3 lowResIcon:(id)arg4 highResIcon:(id)arg5 errorMessages:(id)arg6;

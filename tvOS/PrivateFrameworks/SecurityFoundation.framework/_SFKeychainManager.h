@@ -18,10 +18,10 @@
 
 + (id)defaultOverCommitManager;
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *keychainReplyQueue; // @synthesize keychainReplyQueue=_keychainReplyQueue;
 @property(retain) NSObject<OS_dispatch_queue> *keychainManagerQueue; // @synthesize keychainManagerQueue=_keychainManagerQueue;
 @property(retain) _SFCredentialStore *credentialStore; // @synthesize credentialStore=_credentialStore;
-- (void).cxx_destruct;
 - (void)removeItemWithIdentifier:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)identitiesFilteredBy:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)keysFilteredBy:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;

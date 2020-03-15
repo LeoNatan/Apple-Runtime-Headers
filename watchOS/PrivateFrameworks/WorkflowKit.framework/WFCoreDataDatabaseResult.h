@@ -15,8 +15,8 @@
     NSFetchedResultsController *_resultsController;
 }
 
-@property(readonly, nonatomic) NSFetchedResultsController *resultsController; // @synthesize resultsController=_resultsController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSFetchedResultsController *resultsController; // @synthesize resultsController=_resultsController;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
 - (id)initWithBackingStore:(id)arg1 fetchRequest:(id)arg2 managedObjectContext:(id)arg3;
 

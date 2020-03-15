@@ -24,6 +24,7 @@
     // Error parsing type: , name: _lastTranslationLocation
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastTranslationTime; // @synthesize lastTranslationTime=_lastTranslationTime;
 // Error parsing type for property lastTranslationLocation:
 // Property attributes: T,N,V_lastTranslationLocation
@@ -36,11 +37,8 @@
 @property(retain, nonatomic) ASVDeceleration *translationDeceleration; // @synthesize translationDeceleration=_translationDeceleration;
 @property(retain, nonatomic) NSSet *snapScalesSet; // @synthesize snapScalesSet=_snapScalesSet;
 @property(nonatomic) __weak id <ASVWorldGestureRecognizerDelegate> worldDelegate; // @synthesize worldDelegate=_worldDelegate;
-- (void).cxx_destruct;
 - (void)cancelDeceleration;
-// Error parsing type for property decelerationTranslationDelta:
-// Property attributes: T,R,N
-
+- (void)updateDecelerationTranslation;
 - (_Bool)isDecelerating;
 - (void)startTranslationDecelerationWithInitialVelocity: /* Error: Ran out of types for this method. */;
 - (void)gestureEndedLevitation:(id)arg1;
@@ -52,6 +50,8 @@
 @property(readonly, nonatomic) float maximumObjectScale;
 @property(readonly, nonatomic) float minimumObjectScale;
 - (float)clampedScaleForScale:(float)arg1;
+- (void)update;
+- (_Bool)isActive;
 - (id)twoFingerGestureForFirstTouch:(id)arg1 secondTouch:(id)arg2 dataSource:(id)arg3;
 - (id)singleFingerGestureForTouch:(id)arg1 dataSource:(id)arg2 enabledGestureTypes:(unsigned long long)arg3;
 - (void)setEnabledGestureTypes:(unsigned long long)arg1;

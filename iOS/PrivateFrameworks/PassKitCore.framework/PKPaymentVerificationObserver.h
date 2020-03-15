@@ -20,11 +20,11 @@
     id <PKPaymentVerificationObserverDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <PKPaymentVerificationObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) PKVerificationChannel *verificationChannel; // @synthesize verificationChannel=_verificationChannel;
 @property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(readonly, retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)startObservingVerificationSourceWithTimeout:(double)arg1;
 - (void)dealloc;

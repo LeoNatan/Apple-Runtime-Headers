@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _extrinsicContentSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *loadingIndicatorRightAlignmentConstraint; // @synthesize loadingIndicatorRightAlignmentConstraint=_loadingIndicatorRightAlignmentConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *loadingIndicatorLeftAlignmentConstraint; // @synthesize loadingIndicatorLeftAlignmentConstraint=_loadingIndicatorLeftAlignmentConstraint;
 @property(nonatomic) BOOL hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) long long loadingIndicatorAlignment; // @synthesize loadingIndicatorAlignment=_loadingIndicatorAlignment;
 @property(nonatomic) BOOL showsLoadingIndicator; // @synthesize showsLoadingIndicator=_showsLoadingIndicator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) BOOL collapsedOrExcluded;
 - (void)setHidden:(BOOL)arg1;
 - (id)viewForLastBaselineLayout;

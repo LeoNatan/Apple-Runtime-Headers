@@ -6,7 +6,7 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFSpeechAudioAnalytics, AFSpeechPackage, AFXPCWrapper, NSArray, NSDictionary, NSError, NSFileHandle, NSString, SASMultilingualSpeechRecognized, SASSpeechPartialResult;
+@class AFDictationOptions, AFSpeechAudioAnalytics, AFSpeechPackage, AFXPCWrapper, NSArray, NSDictionary, NSError, NSFileHandle, NSString, SASMultilingualSpeechRecognized, SASSpeechPartialResult;
 
 @protocol AFDictationServiceDelegate <NSObject>
 - (oneway void)languageDetectorFailedWithError:(NSError *)arg1;
@@ -24,7 +24,7 @@
 - (oneway void)speechRecordingDidFail:(NSError *)arg1;
 - (oneway void)speechRecordingDidCancel;
 - (oneway void)speechRecordingDidEnd;
-- (oneway void)speechRecordingDidBegin;
+- (oneway void)speechRecordingDidBeginWithOptions:(AFDictationOptions *)arg1;
 - (oneway void)speechRecordingWillBeginWithInputAudioPowerXPCWrapper:(AFXPCWrapper *)arg1;
 @end
 

@@ -26,6 +26,7 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *proxyCaptiveLoginAllowedNum; // @synthesize proxyCaptiveLoginAllowedNum=_proxyCaptiveLoginAllowedNum;
 @property(retain, nonatomic) NSNumber *proxyPACFallbackAllowedNum; // @synthesize proxyPACFallbackAllowedNum=_proxyPACFallbackAllowedNum;
 @property(nonatomic) _Bool proxyCaptiveLoginAllowed; // @synthesize proxyCaptiveLoginAllowed=_proxyCaptiveLoginAllowed;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSNumber *proxyServerPort; // @synthesize proxyServerPort=_proxyServerPort;
 @property(retain, nonatomic) NSString *proxyServer; // @synthesize proxyServer=_proxyServer;
 @property(nonatomic) int proxyType; // @synthesize proxyType=_proxyType;
-- (void).cxx_destruct;
 - (id)installationWarnings;
 - (id)description;
 - (id)payloadDescriptionKeyValueSections;

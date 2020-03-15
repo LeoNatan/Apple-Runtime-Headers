@@ -28,6 +28,7 @@
     CNUIMeContactMonitor *_meContactMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIMeContactMonitor *meContactMonitor; // @synthesize meContactMonitor=_meContactMonitor;
 @property(retain, nonatomic) CNLikeness *likenessBeingEdited; // @synthesize likenessBeingEdited=_likenessBeingEdited;
 @property(retain, nonatomic) id <CNCancelable> currentLikenessToken; // @synthesize currentLikenessToken=_currentLikenessToken;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) CNContactPersistenceHelper *persistenceHelper; // @synthesize persistenceHelper=_persistenceHelper;
 @property(retain, nonatomic) AKCardViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (BOOL)shouldBeIncludedInKeyViewLoop;
 - (double)desiredHeight;
 - (void)processLikenessEditingResult:(id)arg1;

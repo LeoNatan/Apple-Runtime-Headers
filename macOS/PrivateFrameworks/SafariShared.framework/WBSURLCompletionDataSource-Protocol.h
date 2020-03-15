@@ -12,7 +12,7 @@
 @protocol WBSURLCompletionDataSource <NSObject>
 @property(readonly, nonatomic, getter=isEnumeratingHistoryMatches) BOOL enumeratingHistoryMatches;
 @property(readonly, nonatomic, getter=isEnumeratingBookmarkMatches) BOOL enumeratingBookmarkMatches;
-- (id <WBSURLCompletionMatchData>)fakeBookmarkMatchDataWithURLString:(NSString *)arg1 title:(NSString *)arg2;
+- (id <WBSURLCompletionMatchData>)fakeBookmarkMatchDataWithURLString:(NSString *)arg1 title:(NSString *)arg2 shouldPreload:(BOOL)arg3;
 - (void)enumerateMatchDataForTypedStringHint:(WBSURLCompletionUserTypedString *)arg1 options:(unsigned long long)arg2 withBlock:(void (^)(id <WBSURLCompletionMatchData>))arg3;
 @end
 

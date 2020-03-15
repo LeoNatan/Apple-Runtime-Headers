@@ -14,9 +14,9 @@
     NSString *_applicationID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(readonly, copy, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

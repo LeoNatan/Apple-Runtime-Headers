@@ -36,6 +36,7 @@
     struct CGSize _interfacePlistSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *selectionAction; // @synthesize selectionAction=_selectionAction;
 @property(copy, nonatomic) NSString *interfaceAction; // @synthesize interfaceAction=_interfaceAction;
 @property(nonatomic) _Bool isNativeInterfaceObject; // @synthesize isNativeInterfaceObject=_isNativeInterfaceObject;
@@ -48,7 +49,6 @@
 @property(nonatomic) int interfaceAlignment; // @synthesize interfaceAlignment=_interfaceAlignment;
 @property(copy, nonatomic) NSDictionary *companionProperty; // @synthesize companionProperty=_companionProperty;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)setTarget:(id)arg1 forInterfaceItemAction:(SEL)arg2;
 - (_Bool)hasIntrinsicHeight;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;

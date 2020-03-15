@@ -18,13 +18,13 @@
     CDUnknownBlockType _visibilityChangedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType visibilityChangedBlock; // @synthesize visibilityChangedBlock=_visibilityChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(copy, nonatomic) CDUnknownBlockType cellConfigurationBlock; // @synthesize cellConfigurationBlock=_cellConfigurationBlock;
 @property(copy, nonatomic) CDUnknownBlockType visibilityBlock; // @synthesize visibilityBlock=_visibilityBlock;
 @property(retain, nonatomic) NSString *cellReuseIdentifier; // @synthesize cellReuseIdentifier=_cellReuseIdentifier;
 @property(retain, nonatomic) Class cellClass; // @synthesize cellClass=_cellClass;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible;
 
 @end

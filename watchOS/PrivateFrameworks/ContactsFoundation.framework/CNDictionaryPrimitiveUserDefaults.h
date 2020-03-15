@@ -17,9 +17,9 @@
     unsigned int _setupAutosyncCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int setupAutosyncCount; // @synthesize setupAutosyncCount=_setupAutosyncCount;
 @property(readonly) unsigned int synchronizeCount; // @synthesize synchronizeCount=_synchronizeCount;
-- (void).cxx_destruct;
 - (void)setupAutosync;
 - (_Bool)synchronize;
 - (void)primitiveRemoveObjectForKey:(id)arg1;

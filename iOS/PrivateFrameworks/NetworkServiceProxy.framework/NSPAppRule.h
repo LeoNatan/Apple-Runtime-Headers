@@ -57,6 +57,7 @@
 + (_Bool)supportsSecureCoding;
 + (void)loadAppRules:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (id)validateRuleDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *updateHash; // @synthesize updateHash=_updateHash;
 @property(nonatomic) _Bool disabledByRatio; // @synthesize disabledByRatio=_disabledByRatio;
 @property(retain, nonatomic) NSDate *enableCheckDate; // @synthesize enableCheckDate=_enableCheckDate;
@@ -98,7 +99,6 @@
 @property(copy, nonatomic) NSNumber *enableDirectTFO; // @synthesize enableDirectTFO=_enableDirectTFO;
 @property(copy, nonatomic) NSNumber *enableDirectMultipath; // @synthesize enableDirectMultipath=_enableDirectMultipath;
 @property(copy, nonatomic) NSNumber *disableFallback; // @synthesize disableFallback=_disableFallback;
-- (void).cxx_destruct;
 - (void)teardownNetworkAgent;
 - (_Bool)updateNetworkAgent;
 - (void)merge:(id)arg1;

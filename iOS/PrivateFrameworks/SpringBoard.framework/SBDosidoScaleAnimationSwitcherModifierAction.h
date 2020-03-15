@@ -13,8 +13,8 @@
     SBAppLayout *_appLayout;
 }
 
-@property(readonly, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
 - (id)initWithAppLayout:(id)arg1;
 - (long long)type;
 

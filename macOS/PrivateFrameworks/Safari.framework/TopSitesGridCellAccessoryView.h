@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     GridCellView *_cellView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsAsPinned; // @synthesize showsAsPinned=_showsAsPinned;
 @property(nonatomic) __weak GridCellView *cellView; // @synthesize cellView=_cellView;
 @property(nonatomic) __weak id <TopSitesGridCellAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeButtonPressed:(id)arg1;
 - (void)_pinButtonPressed:(id)arg1;
 - (void)_updatePinButtonToolTip;

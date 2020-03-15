@@ -44,6 +44,7 @@
     struct CGSize _cellSize;
 }
 
+- (void).cxx_destruct;
 @property BOOL animating; // @synthesize animating=_animating;
 @property BOOL treatmentsClosed; // @synthesize treatmentsClosed=_treatmentsClosed;
 @property BOOL ignoreSelection; // @synthesize ignoreSelection=_ignoreSelection;
@@ -69,7 +70,6 @@
 @property(retain) NSArray *layouts; // @synthesize layouts=_layouts;
 @property(retain, nonatomic) KHModel *bindableModel; // @synthesize bindableModel=_bindableModel;
 @property __weak id <KHTreatmentPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)teardownBindings;
 - (void)setupModelBindings;
 - (id)viewForPresentationMode:(int)arg1;

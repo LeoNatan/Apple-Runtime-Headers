@@ -27,6 +27,7 @@
     NSMutableArray *_userActions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *userActions; // @synthesize userActions=_userActions;
 @property(nonatomic) _Bool didCancelHomeButton; // @synthesize didCancelHomeButton=_didCancelHomeButton;
 @property(nonatomic) _Bool didBiometricsLockout; // @synthesize didBiometricsLockout=_didBiometricsLockout;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(nonatomic) long long confirmationStyle; // @synthesize confirmationStyle=_confirmationStyle;
-- (void).cxx_destruct;
 - (void)paymentAuthorizationController:(id)arg1 willFinishWithError:(id)arg2;
 - (void)paymentAuthorizationController:(id)arg1 didEncounterAuthorizationEvent:(unsigned long long)arg2;
 - (void)paymentAuthorizationController:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;

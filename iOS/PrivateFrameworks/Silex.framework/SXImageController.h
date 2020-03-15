@@ -18,10 +18,10 @@
     struct CGSize _viewportSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *optimalImageResources; // @synthesize optimalImageResources=_optimalImageResources;
 @property(readonly, nonatomic) SXColumnLayout *columnLayout; // @synthesize columnLayout=_columnLayout;
 @property(readonly, nonatomic) __weak SXDocumentController *documentController; // @synthesize documentController=_documentController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *image2ResourcesGroupedByImageIdentifier; // @synthesize image2ResourcesGroupedByImageIdentifier=_image2ResourcesGroupedByImageIdentifier;
 @property(readonly, nonatomic) NSDictionary *imageResourcesGroupedByImageIdentifier; // @synthesize imageResourcesGroupedByImageIdentifier=_imageResourcesGroupedByImageIdentifier;
 - (id)Image2ResourcesForImageIdentifier:(id)arg1;

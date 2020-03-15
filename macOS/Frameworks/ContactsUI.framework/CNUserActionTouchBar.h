@@ -32,6 +32,7 @@
 }
 
 + (id)displayNameFromContact:(id)arg1 style:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain) NSButton *actionTypeTextButton; // @synthesize actionTypeTextButton=_actionTypeTextButton;
 @property(retain) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(retain) NSMutableDictionary *modelsByActionType; // @synthesize modelsByActionType=_modelsByActionType;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSArray *actionTypes; // @synthesize actionTypes=_actionTypes;
 @property(nonatomic) unsigned long long titleOptions; // @synthesize titleOptions=_titleOptions;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
-- (void).cxx_destruct;
 - (void)consumer:(id)arg1 didSelectAction:(id)arg2;
 - (id)dataSource;
 - (id)delegate;

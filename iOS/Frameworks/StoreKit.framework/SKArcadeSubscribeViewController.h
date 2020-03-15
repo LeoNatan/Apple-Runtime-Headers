@@ -21,13 +21,13 @@
     id <NSCopying> _extensionRequestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSCopying> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) SKStoreRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id <SKArcadeSubscribeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)storeRemoteViewControllerNeedsTabSelection:(id)arg1;
 - (void)storeRemoteViewController:(id)arg1 presentRequestedViewControllerWithIdentifier:(id)arg2;
 - (void)storeRemoteViewControllerTerminatedWithError:(id)arg1;

@@ -13,10 +13,10 @@
     id _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) id userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) unsigned long long length; // @synthesize length=_length;
 @property(readonly) double *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDataLength:(unsigned long long)arg1;
 

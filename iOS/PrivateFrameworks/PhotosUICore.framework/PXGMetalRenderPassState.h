@@ -18,13 +18,13 @@
     long long _capacity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) id <MTLBuffer> spriteTextureInfosMetalBuffer; // @synthesize spriteTextureInfosMetalBuffer=_spriteTextureInfosMetalBuffer;
 @property(readonly, nonatomic) id <MTLBuffer> spriteIndexesMetalBuffer; // @synthesize spriteIndexesMetalBuffer=_spriteIndexesMetalBuffer;
 @property(readonly, nonatomic) CDStruct_183601bc *textureInfos; // @synthesize textureInfos=_textureInfos;
 @property(readonly, nonatomic) unsigned int *spriteIndexes; // @synthesize spriteIndexes=_spriteIndexes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDevice:(id)arg1 capacity:(long long)arg2;
 

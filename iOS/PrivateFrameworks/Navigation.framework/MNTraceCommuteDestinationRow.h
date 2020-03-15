@@ -15,10 +15,10 @@
     GEOComposedWaypoint *_waypoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOComposedWaypoint *waypoint; // @synthesize waypoint=_waypoint;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long destinationID; // @synthesize destinationID=_destinationID;
-- (void).cxx_destruct;
 
 @end
 

@@ -18,11 +18,11 @@
     int _pid;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresForegroundStatus; // @synthesize ignoresForegroundStatus=_ignoresForegroundStatus;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) unsigned int edgeFlags; // @synthesize edgeFlags=_edgeFlags;
 @property(retain, nonatomic) NSString *assertionID; // @synthesize assertionID=_assertionID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

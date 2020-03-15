@@ -22,12 +22,12 @@
 
 + (id)stringForState:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *unusedRedemptionCode; // @synthesize unusedRedemptionCode=_unusedRedemptionCode;
 @property(copy, nonatomic) NSString *redemptionCode; // @synthesize redemptionCode=_redemptionCode;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_stringForOptions:(unsigned int)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

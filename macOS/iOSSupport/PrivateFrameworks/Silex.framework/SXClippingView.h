@@ -17,11 +17,11 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long clippingMode; // @synthesize clippingMode=_clippingMode;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
-- (void).cxx_destruct;
 - (id)initWithContentView:(id)arg1;
 
 // Remaining properties

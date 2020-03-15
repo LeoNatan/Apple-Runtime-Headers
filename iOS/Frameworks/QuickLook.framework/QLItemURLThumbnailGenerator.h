@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)_executeCompletionHandlerWithImage:(id)arg1;
 - (void)generateThumbnailWithURL:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 completionBlock:(CDUnknownBlockType)arg4;
 

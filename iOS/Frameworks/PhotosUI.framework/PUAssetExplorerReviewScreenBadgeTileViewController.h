@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (void)_configureBadgeView:(id)arg1 isOverContent:(_Bool)arg2 isLivePhotoDisabled:(_Bool)arg3;
 + (struct CGSize)badgeTileSize;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setOverContent:) _Bool _isOverContent; // @synthesize _isOverContent=__isOverContent;
 @property(nonatomic, setter=_setNeedsUpdateBadgeView:) _Bool _needsUpdateBadgeView; // @synthesize _needsUpdateBadgeView=__needsUpdateBadgeView;
 @property(nonatomic, getter=_isPerformingChanges, setter=_setPerformingChanges:) _Bool _performingChanges; // @synthesize _performingChanges=__performingChanges;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUAssetActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(retain, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)assetBadgeView:(id)arg1 userDidSelectBadges:(unsigned long long)arg2;

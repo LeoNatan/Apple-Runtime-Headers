@@ -15,8 +15,8 @@
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
-@property(readonly, nonatomic) NSNumber *inferredTimeZoneOffset; // @synthesize inferredTimeZoneOffset=_inferredTimeZoneOffset;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *inferredTimeZoneOffset; // @synthesize inferredTimeZoneOffset=_inferredTimeZoneOffset;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end

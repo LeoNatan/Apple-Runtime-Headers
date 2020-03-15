@@ -17,8 +17,8 @@
     NSSortDescriptor *_sortDescriptor;
 }
 
-@property(retain, nonatomic) NSSortDescriptor *sortDescriptor; // @synthesize sortDescriptor=_sortDescriptor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSortDescriptor *sortDescriptor; // @synthesize sortDescriptor=_sortDescriptor;
 - (id)description;
 - (id)reverseSampleEnumerator;
 - (id)sampleEnumerator;

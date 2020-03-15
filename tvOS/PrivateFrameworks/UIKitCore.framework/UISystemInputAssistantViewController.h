@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 
 + (double)preferredHeightForTraitCollection:(id)arg1;
 + (_Bool)_requiresProxyInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedPredictiveViewControllers; // @synthesize cachedPredictiveViewControllers=_cachedPredictiveViewControllers;
 @property(nonatomic) __weak UITextInputAssistantItem *observedInputAssistantItem; // @synthesize observedInputAssistantItem=_observedInputAssistantItem;
 @property(nonatomic) __weak UIView *popoverSourceView; // @synthesize popoverSourceView=_popoverSourceView;
 @property(retain, nonatomic) UIViewController<UIPredictiveViewController> *centerViewController; // @synthesize centerViewController=_centerViewController;
-- (void).cxx_destruct;
 - (id)candidateViewController;
 - (id)predictionViewController;
 - (void)setInputAssistantButtonItemsForResponder:(id)arg1;

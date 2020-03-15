@@ -25,6 +25,7 @@
 + (id)buildRequiredOnly;
 + (id)buildWithCatalogURL:(id)arg1 withIsDefaultCatalog:(id)arg2 withPreviousScanDate:(id)arg3 withPreviousScanResult:(id)arg4 withPerformPeriodicCheck:(id)arg5 withAutomaticCheckEnabled:(id)arg6 withBackgroundDownloadEnabled:(id)arg7 withAutomaticAppInstallationEnabled:(id)arg8 withAutomaticOSInstallationEnabled:(id)arg9 withAutomaticSecurityUpdatesEnabled:(id)arg10;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *statusAutomaticSecurityUpdatesEnabled; // @synthesize statusAutomaticSecurityUpdatesEnabled=_statusAutomaticSecurityUpdatesEnabled;
 @property(copy, nonatomic) NSNumber *statusAutomaticOSInstallationEnabled; // @synthesize statusAutomaticOSInstallationEnabled=_statusAutomaticOSInstallationEnabled;
 @property(copy, nonatomic) NSNumber *statusAutomaticAppInstallationEnabled; // @synthesize statusAutomaticAppInstallationEnabled=_statusAutomaticAppInstallationEnabled;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSDate *statusPreviousScanDate; // @synthesize statusPreviousScanDate=_statusPreviousScanDate;
 @property(copy, nonatomic) NSNumber *statusIsDefaultCatalog; // @synthesize statusIsDefaultCatalog=_statusIsDefaultCatalog;
 @property(copy, nonatomic) NSString *statusCatalogURL; // @synthesize statusCatalogURL=_statusCatalogURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

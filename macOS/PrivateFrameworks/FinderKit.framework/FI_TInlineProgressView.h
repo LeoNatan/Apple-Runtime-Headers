@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSImageView, void> _templateImageView;
 }
 
-@property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 - (id)accessibilityMaxValue;
 - (id)accessibilityMinValue;
 - (id)accessibilityValue;

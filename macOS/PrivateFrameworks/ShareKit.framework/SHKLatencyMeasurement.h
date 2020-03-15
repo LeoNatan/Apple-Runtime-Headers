@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 @property(readonly) NSNumber *durationMs;
 @property(readonly) BOOL isComplete;
 - (void)stop;

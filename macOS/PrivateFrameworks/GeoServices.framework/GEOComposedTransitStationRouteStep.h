@@ -18,11 +18,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int expectedTime; // @synthesize expectedTime=_expectedTime;
 @property(readonly, nonatomic) BOOL isArrivalUncertain; // @synthesize isArrivalUncertain=_isArrivalUncertain;
 @property(readonly, nonatomic) GEOTransitTransferInfo *transitTransfer; // @synthesize transitTransfer=_transitTransfer;
 @property(readonly, nonatomic) GEOPBTransitAccessPoint *accessPoint; // @synthesize accessPoint=_accessPoint;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (CDStruct_39925896)endGeoCoordinate;

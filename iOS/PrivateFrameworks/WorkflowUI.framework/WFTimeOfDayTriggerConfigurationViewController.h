@@ -19,10 +19,10 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showingPicker; // @synthesize showingPicker=_showingPicker;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)timeOffsetPickerViewControllerDidCancel:(id)arg1;
 - (void)timeOffsetPickerViewController:(id)arg1 didSelectOffset:(unsigned long long)arg2;
 - (void)timePickerUpdated:(id)arg1;

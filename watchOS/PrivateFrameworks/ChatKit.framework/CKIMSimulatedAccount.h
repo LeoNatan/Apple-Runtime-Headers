@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     IMHandle *_loginHandle;
 }
 
-@property(retain, nonatomic) IMHandle *loginHandle; // @synthesize loginHandle=_loginHandle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMHandle *loginHandle; // @synthesize loginHandle=_loginHandle;
 - (id)loginIMHandle;
 
 @end

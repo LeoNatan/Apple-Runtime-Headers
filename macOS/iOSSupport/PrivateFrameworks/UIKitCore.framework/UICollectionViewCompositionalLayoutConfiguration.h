@@ -20,10 +20,10 @@
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *boundarySupplementaryItems; // @synthesize boundarySupplementaryItems=_boundarySupplementaryItems;
 @property(nonatomic) double interSectionSpacing; // @synthesize interSectionSpacing=_interSectionSpacing;
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic, getter=_safeAreaReference, setter=_setSafeAreaReference:) long long safeAreaReference;
 - (unsigned long long)differencesFromConfiguration:(id)arg1;

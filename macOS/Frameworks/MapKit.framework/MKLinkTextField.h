@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _blockOnLinkOpened;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType blockOnLinkOpened; // @synthesize blockOnLinkOpened=_blockOnLinkOpened;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType blockOnLinkOpened; // @synthesize blockOnLinkOpened=_blockOnLinkOpened;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstResponder;

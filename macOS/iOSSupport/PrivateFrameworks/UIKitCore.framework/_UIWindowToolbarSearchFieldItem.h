@@ -14,9 +14,9 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 @property(copy, nonatomic) NSString *text;
 @property(copy, nonatomic) NSString *placeholder;

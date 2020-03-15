@@ -19,8 +19,8 @@
 + (id)keyPathFromPrimaryObject;
 + (id)entityName;
 + (id)propertySetName;
-@property(readonly, nonatomic) NSMutableDictionary *fetchDictionariesByWorkerType; // @synthesize fetchDictionariesByWorkerType=_fetchDictionariesByWorkerType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *fetchDictionariesByWorkerType; // @synthesize fetchDictionariesByWorkerType=_fetchDictionariesByWorkerType;
 - (int)analysisStateForWorkerType:(short)arg1 outLastIgnoreDate:(id *)arg2 outIgnoreUntilDate:(id *)arg3;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 

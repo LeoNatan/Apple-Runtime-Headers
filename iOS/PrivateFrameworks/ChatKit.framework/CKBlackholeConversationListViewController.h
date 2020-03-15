@@ -22,10 +22,10 @@
     UILabel *_emptyConversationListLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *emptyConversationListLabel; // @synthesize emptyConversationListLabel=_emptyConversationListLabel;
 @property(retain, nonatomic) UIBarButtonItem *clearAllButton; // @synthesize clearAllButton=_clearAllButton;
 @property(retain, nonatomic) _UITableViewDiffableDataSource *tableViewDataSource; // @synthesize tableViewDataSource=_tableViewDataSource;
-- (void).cxx_destruct;
 - (void)updateFocusIfNeeded;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)setNeedsFocusUpdate;

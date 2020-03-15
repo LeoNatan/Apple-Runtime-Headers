@@ -25,10 +25,10 @@
 
 + (int)currentVersion;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSConditionLock *migrationState; // @synthesize migrationState=_migrationState;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
 @property(readonly, nonatomic) __weak id <MFMailMessageLibraryMigratorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (void)detachProtectedDatabaseWithConnection:(id)arg1;
 - (long long)attachProtectedDatabaseWithConnection:(id)arg1;

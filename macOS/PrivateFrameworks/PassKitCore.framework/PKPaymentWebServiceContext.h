@@ -16,7 +16,7 @@
     NSDictionary *_regions;
     NSObject<OS_dispatch_queue> *_queue;
     struct os_unfair_lock_s _cacheLock;
-    NSMutableDictionary *_featureSupportedLangaugeCache;
+    NSMutableDictionary *_featureSupportedLanguageCache;
     BOOL _devSigned;
     BOOL _transactionServiceDisabled;
     BOOL _messageServiceDisabled;
@@ -40,6 +40,7 @@
 + (void)_migrateContext:(id)arg1;
 + (id)contextWithArchive:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *lastUpdatedTag; // @synthesize lastUpdatedTag=_lastUpdatedTag;
 @property(copy) NSArray *certificates; // @synthesize certificates=_certificates;
 @property long long consistencyCheckBackoffLevel; // @synthesize consistencyCheckBackoffLevel=_consistencyCheckBackoffLevel;
@@ -57,7 +58,6 @@
 @property(copy) NSString *secureElementID; // @synthesize secureElementID=_secureElementID;
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (id)applyServicePreferredLanguageForFeatureIdentifier:(unsigned long long)arg1;
 - (id)applyServiceLocalizationBundleForFeatureIdentifier:(unsigned long long)arg1;
 - (id)applyServiceFeaturesForRegionMeetingEnablementThreshold:(id)arg1;

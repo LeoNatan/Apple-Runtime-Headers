@@ -30,9 +30,9 @@
 + (id)factoryDefaults;
 + (void)addFactoryDefaults:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFString *defaultsBundleID; // @synthesize defaultsBundleID=_defaultsBundleID;
 @property(retain, nonatomic) NSMutableDictionary *factoryDefaults; // @synthesize factoryDefaults=_factoryDefaults;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

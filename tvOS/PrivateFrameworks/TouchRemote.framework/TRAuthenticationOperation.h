@@ -16,11 +16,11 @@
     UIViewController *_presentingViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) _Bool shouldForceInteractiveAuth; // @synthesize shouldForceInteractiveAuth=_shouldForceInteractiveAuth;
 @property(nonatomic) _Bool shouldIgnoreAuthFailures; // @synthesize shouldIgnoreAuthFailures=_shouldIgnoreAuthFailures;
 @property(retain, nonatomic) NSSet *targetedServices; // @synthesize targetedServices=_targetedServices;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

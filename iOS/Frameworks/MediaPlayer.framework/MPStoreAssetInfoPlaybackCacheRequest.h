@@ -23,6 +23,7 @@
     long long _storeRadioAdamID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long storeRadioAdamID; // @synthesize storeRadioAdamID=_storeRadioAdamID;
 @property(nonatomic) long long storePurchasedAdamID; // @synthesize storePurchasedAdamID=_storePurchasedAdamID;
 @property(nonatomic) unsigned long long storeCloudID; // @synthesize storeCloudID=_storeCloudID;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long requestType; // @synthesize requestType=_requestType;
 @property(nonatomic) unsigned long long delegatedAccountID; // @synthesize delegatedAccountID=_delegatedAccountID;
 @property(nonatomic) unsigned long long accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

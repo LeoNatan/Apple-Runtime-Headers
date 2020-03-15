@@ -27,12 +27,12 @@
     CDUnknownBlockType _taskDidFinishWithErrorBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool bypassForceSyncLimitations; // @synthesize bypassForceSyncLimitations=_bypassForceSyncLimitations;
 @property(copy, nonatomic) CDUnknownBlockType taskDidFinishWithErrorBlock; // @synthesize taskDidFinishWithErrorBlock=_taskDidFinishWithErrorBlock;
 @property(nonatomic) __weak id <CPLEngineForceSyncTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 @property(retain, nonatomic) CPLScopeFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)task:(id)arg1 didProgress:(float)arg2 userInfo:(id)arg3;
 - (void)reallyCancel;

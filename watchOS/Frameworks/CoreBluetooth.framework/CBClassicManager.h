@@ -25,13 +25,14 @@
     CDUnknownBlockType _servicesAdded;
     CDUnknownBlockType _inquiryServicesAdded;
     CDUnknownBlockType _sdpRecordAdded;
-    int _powerState;
     CDUnknownBlockType _connectRFCOMMCallback;
+    int _powerState;
 }
 
-@property(copy) CDUnknownBlockType connectRFCOMMCallback; // @synthesize connectRFCOMMCallback=_connectRFCOMMCallback;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool testMode; // @synthesize testMode=_testMode;
 @property(readonly) int powerState; // @synthesize powerState=_powerState;
+@property(copy) CDUnknownBlockType connectRFCOMMCallback; // @synthesize connectRFCOMMCallback=_connectRFCOMMCallback;
 @property(copy, nonatomic) CDUnknownBlockType sdpRecordAdded; // @synthesize sdpRecordAdded=_sdpRecordAdded;
 @property(copy, nonatomic) CDUnknownBlockType inquiryServicesAdded; // @synthesize inquiryServicesAdded=_inquiryServicesAdded;
 @property(copy, nonatomic) CDUnknownBlockType servicesAdded; // @synthesize servicesAdded=_servicesAdded;
@@ -46,7 +47,6 @@
 @property(readonly) _Bool connectable; // @synthesize connectable=_connectable;
 @property(readonly) _Bool discoverable; // @synthesize discoverable=_discoverable;
 @property(readonly) _Bool inquiryState; // @synthesize inquiryState=_inquiryState;
-- (void).cxx_destruct;
 - (void)handlePeerDisconnectionCompleted:(id)arg1;
 - (void)handlePeerConnectionCompleted:(id)arg1;
 - (void)handleSDPRecordAdded:(id)arg1;

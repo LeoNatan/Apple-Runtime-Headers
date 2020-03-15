@@ -14,9 +14,9 @@
     NSArray *_EWSFolderIdsRequested;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *EWSFolderIdsRequested; // @synthesize EWSFolderIdsRequested=_EWSFolderIdsRequested;
 @property(copy) NSArray *EWSFolders; // @synthesize EWSFolders=_EWSFolders;
-- (void).cxx_destruct;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSGetFolderResponseType *response;

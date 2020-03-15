@@ -20,6 +20,7 @@
     id <AVTUILogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) id <AVTImageCache> inMemoryImageCache; // @synthesize inMemoryImageCache=_inMemoryImageCache;
 @property(readonly, nonatomic) AVTInMemoryResourceCache *presetCache; // @synthesize presetCache=_presetCache;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (void)performPresetLoadingForPresetResources:(id)arg1 task:(id)arg2;
 - (void)performPresetResourcesPreloadingTask:(id)arg1;
 - (void)startPresetPreloadingTask:(id)arg1;

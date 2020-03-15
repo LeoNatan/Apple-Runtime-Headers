@@ -18,8 +18,8 @@
     PXCMMImageViewModel *_viewModel;
 }
 
-@property(retain, nonatomic) PXCMMImageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXCMMImageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (_Bool)test_highlighted;
 - (void)_updateContentsRect;

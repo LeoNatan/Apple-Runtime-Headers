@@ -37,6 +37,7 @@
     id _inspectorDisconnectedToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id inspectorDisconnectedToken; // @synthesize inspectorDisconnectedToken=_inspectorDisconnectedToken;
 @property(readonly, nonatomic) id inspectorConnectedToken; // @synthesize inspectorConnectedToken=_inspectorConnectedToken;
 @property(readonly, nonatomic) __weak IKJSInspectorStorageAgent *storageAgent; // @synthesize storageAgent=_storageAgent;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) RWIProtocolInspector *inspector; // @synthesize inspector=_inspector;
 @property(nonatomic) __weak id <IKJSInspectorControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void)inspectNodeWithID:(long long)arg1;
 @property(readonly, nonatomic, getter=isInspectElementModeEnabled) _Bool inspectElementModeEnabled;
 - (void)unregisterLoaderWithIdentifier:(id)arg1;

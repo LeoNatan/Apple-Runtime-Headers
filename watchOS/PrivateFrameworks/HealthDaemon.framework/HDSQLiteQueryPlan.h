@@ -17,12 +17,12 @@
     NSArray *_indices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *indices; // @synthesize indices=_indices;
 @property(readonly, nonatomic) _Bool usesCoveringIndex; // @synthesize usesCoveringIndex=_usesCoveringIndex;
 @property(readonly, nonatomic) _Bool usesIndex; // @synthesize usesIndex=_usesIndex;
 @property(readonly, nonatomic) _Bool includesTableScan; // @synthesize includesTableScan=_includesTableScan;
 @property(readonly, copy, nonatomic) NSArray *queryPlanRows; // @synthesize queryPlanRows=_queryPlanRows;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithQueryPlanRows:(id)arg1;
 

@@ -16,11 +16,11 @@
     NSMenu *_menu;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMenu *menu; // @synthesize menu=_menu;
 @property(retain, nonatomic) NSArray *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) PKPaymentAuthorizationDataModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (id)_menuItemWithPreferenceView:(id)arg1;
 - (id)preferenceViewForPreference:(id)arg1 atIndex:(long long)arg2;
 - (id)preferenceViewForTitleOfSection:(long long)arg1;

@@ -31,12 +31,12 @@
 + (id)defaultInstanceWithChildSlots:(id)arg1;
 + (id)defaultInstanceForIdioms:(id)arg1 enforceStrictIdioms:(_Bool)arg2;
 + (id)defaultEmbeddedInstanceForIdioms:(id)arg1 enforceStrictIdioms:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(retain, nonatomic) NSValue *frameSize; // @synthesize frameSize=_frameSize;
 @property(retain, nonatomic) NSValue *frameCenter; // @synthesize frameCenter=_frameCenter;
 @property(copy, nonatomic) IBICCatalogContentReference *contentReference; // @synthesize contentReference=_contentReference;
-- (void).cxx_destruct;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (CDStruct_2a4d9400)taggingSupport;
 - (Class)expectedReferenceType;
@@ -49,7 +49,7 @@
 - (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;
 - (_Bool)manifestArchivist:(id)arg1 childHasDataToRecordInManifest:(id)arg2;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (void)replaceChildrenFromFileSystemSnapshot:(id)arg1 results:(id)arg2;
 - (id)manifestContent;

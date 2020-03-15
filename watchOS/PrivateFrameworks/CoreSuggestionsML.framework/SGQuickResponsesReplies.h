@@ -40,6 +40,7 @@
 + (id)flattenedArraysFromNestedArray:(id)arg1;
 + (id)indexedArraysFromNestedArray:(id)arg1;
 + (id)nestedArrayFromModels:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *replyTextsSet; // @synthesize replyTextsSet=_replyTextsSet;
 @property(readonly, nonatomic) NSArray *styleGroupReplyTexts; // @synthesize styleGroupReplyTexts=_styleGroupReplyTexts;
 @property(readonly, nonatomic) NSArray *semanticClassReplyTexts; // @synthesize semanticClassReplyTexts=_semanticClassReplyTexts;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) NSArray *styleGroups; // @synthesize styleGroups=_styleGroups;
 @property(readonly, nonatomic) NSArray *semanticClasses; // @synthesize semanticClasses=_semanticClasses;
 @property(readonly, nonatomic) NSArray *models; // @synthesize models=_models;
-- (void).cxx_destruct;
 - (id)initWithArray:(id)arg1;
 
 @end

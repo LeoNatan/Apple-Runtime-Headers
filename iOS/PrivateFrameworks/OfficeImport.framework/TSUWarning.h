@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 + (id)warningWithMessage:(id)arg1 affectedObjects:(id)arg2;
 + (id)warningWithMessage:(id)arg1 affectedObject:(id)arg2;
 + (id)warningWithMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *detailMessage; // @synthesize detailMessage=_detailMessage;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (_Bool)isFontWarning;
 - (void)addAffectedObjects:(id)arg1;
 - (void)setAffectedObjects:(id)arg1;

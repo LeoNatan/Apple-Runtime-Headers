@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _currentSenderID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentSenderID; // @synthesize currentSenderID=_currentSenderID;
 @property(retain, nonatomic) CARInputDeviceTouchpad *currentTouchpad; // @synthesize currentTouchpad=_currentTouchpad;
 @property(retain, nonatomic) CARSessionStatus *sessionStatus; // @synthesize sessionStatus=_sessionStatus;
-- (void).cxx_destruct;
 - (void)performHapticFeedbackForFocusUpdateInContext:(id)arg1;
 - (id)init;
 

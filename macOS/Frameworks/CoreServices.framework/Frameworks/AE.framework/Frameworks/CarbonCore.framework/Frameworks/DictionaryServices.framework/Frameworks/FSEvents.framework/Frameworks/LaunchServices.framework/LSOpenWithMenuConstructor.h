@@ -21,13 +21,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 @property(nonatomic) __weak id <LSOpenWithMenuDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSViewController *otherPanelAccessoryViewController; // @synthesize otherPanelAccessoryViewController=_otherPanelAccessoryViewController;
 @property(nonatomic) unsigned int rolesMask; // @synthesize rolesMask=_rolesMask;
 @property(copy, nonatomic) NSArray *contentTypes; // @synthesize contentTypes=_contentTypes;
 @property(copy, nonatomic) NSArray *URLs; // @synthesize URLs=_URLs;
-- (void).cxx_destruct;
 - (id)constructMenuItemsReturningError:(id *)arg1;
 @property(nonatomic, getter=isStronglyBoundApplicationIncluded) BOOL stronglyBoundApplicationIncluded;
 @property(nonatomic, getter=isOtherPanelAlwaysModal) BOOL otherPanelAlwaysModal;

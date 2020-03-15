@@ -28,10 +28,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *disableMonitoringAgentsTokens; // @synthesize disableMonitoringAgentsTokens=_disableMonitoringAgentsTokens;
 @property(nonatomic) unsigned long long nextDisableMonitoringAgentsToken; // @synthesize nextDisableMonitoringAgentsToken=_nextDisableMonitoringAgentsToken;
 @property(retain, nonatomic) NSMutableArray *subCalHandlers; // @synthesize subCalHandlers=_subCalHandlers;
-- (void).cxx_destruct;
 - (BOOL)hasActiveAccounts;
 - (BOOL)hasPendingAccountSetup;
 - (void)removePendingAccountSetup;

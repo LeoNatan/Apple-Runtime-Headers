@@ -16,9 +16,9 @@
     ACAccount *_primaryAppleAccount;
 }
 
+- (void).cxx_destruct;
 @property(retain) ACAccount *primaryAppleAccount; // @synthesize primaryAppleAccount=_primaryAppleAccount;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)_accountStoreDidChange:(id)arg1;
 - (void)_queue_updatePrimaryAppleAccountAndNotify:(_Bool)arg1;
 - (void)_updatePrimaryAppleAccount;

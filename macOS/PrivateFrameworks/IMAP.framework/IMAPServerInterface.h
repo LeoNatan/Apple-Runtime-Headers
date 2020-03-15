@@ -17,10 +17,10 @@
     NSString *_mailboxName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 @property(readonly, nonatomic) IMAPConnection *connection; // @synthesize connection=_connection;
 @property(readonly) IMAPNetworkTaskHandler *networkTaskHandler; // @synthesize networkTaskHandler=_networkTaskHandler;
-- (void).cxx_destruct;
 - (void)_setErrorFromCommand:(id)arg1 overwriteExistingError:(BOOL)arg2;
 - (BOOL)_setError:(id *)arg1 fromCommand:(id)arg2;
 - (BOOL)executeClientCommand:(id)arg1;

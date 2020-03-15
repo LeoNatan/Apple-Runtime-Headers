@@ -16,8 +16,8 @@
     id <HMNetworkConfigurationProfileDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HMNetworkConfigurationProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HMNetworkConfigurationProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)networkConfigurationProfileDidUpdateWiFiCredentialType:(id)arg1;
 - (void)networkConfigurationProfileDidUpdateWiFiReconfigurationSupport:(id)arg1;
 - (void)networkConfigurationProfileDidUpdateAccessViolation:(id)arg1;

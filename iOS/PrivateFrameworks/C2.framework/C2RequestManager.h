@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) C2SessionPool *sessionPool; // @synthesize sessionPool=_sessionPool;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) C2SessionPool *sessionPool; // @synthesize sessionPool=_sessionPool;
 - (void)_testUtility_forTask:(id)arg1 sessionHandle:(id *)arg2 taskHandle:(id *)arg3;
 - (id)testUtility_sessionTaskForTask:(id)arg1;
 - (id)testUtility_sessionForTask:(id)arg1;

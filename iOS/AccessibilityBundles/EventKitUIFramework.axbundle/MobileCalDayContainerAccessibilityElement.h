@@ -16,11 +16,11 @@
     UIView *_dayGrid;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *dayGrid; // @synthesize dayGrid=_dayGrid;
 @property(nonatomic) long long indexInArray; // @synthesize indexInArray=_indexInArray;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_accessibilityParentForFindingScrollParent;
 - (_Bool)isAccessibilityElement;

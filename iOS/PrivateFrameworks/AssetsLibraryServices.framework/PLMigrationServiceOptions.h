@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char taskToInterrupt; // @synthesize taskToInterrupt=_taskToInterrupt;
 @property unsigned short option; // @synthesize option=_option;
 @property(copy) NSString *suggestedDestinationName; // @synthesize suggestedDestinationName=_suggestedDestinationName;
 @property(readonly) NSString *clientBundleId; // @synthesize clientBundleId=_clientBundleId;
-- (void).cxx_destruct;
 - (_Bool)isPMSOption:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

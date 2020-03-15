@@ -17,8 +17,8 @@
 
 + (long long)labelAccessorySystemImageScale;
 + (id)labelAccessorySystemImageName;
-@property(retain, nonatomic) UIImage *baseImage; // @synthesize baseImage=_baseImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *baseImage; // @synthesize baseImage=_baseImage;
 @property(readonly, nonatomic) struct UIEdgeInsets alignmentRectInsets;
 @property(readonly, nonatomic) double baselineOffsetFromBottom;
 @property(readonly, nonatomic) _Bool hasBaseline;

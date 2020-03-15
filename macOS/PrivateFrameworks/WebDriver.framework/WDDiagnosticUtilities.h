@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) BOOL globalDiagnosticsEnabled; // @synthesize globalDiagnosticsEnabled=_globalDiagnosticsEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL globalDiagnosticsEnabled; // @synthesize globalDiagnosticsEnabled=_globalDiagnosticsEnabled;
 - (void)flushPendingWrites;
 - (void)logProtocolMessageReceive:(id)arg1 sessionIdentifier:(id)arg2;
 - (void)logProtocolMessageSend:(id)arg1 sessionIdentifier:(id)arg2;

@@ -17,9 +17,9 @@
     AVTCoreEnvironment *_environment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTCoreEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (id)updatedRecordsForMigratingRecords:(id)arg1 source:(id)arg2 destinationBackend:(id)arg3 error:(id *)arg4;
 - (_Bool)migrateContentFromSource:(id)arg1 toDestination:(id)arg2 error:(id *)arg3;
 - (id)initWithEnvironment:(id)arg1;

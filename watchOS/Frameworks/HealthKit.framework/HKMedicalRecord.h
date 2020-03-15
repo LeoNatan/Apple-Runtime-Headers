@@ -16,6 +16,7 @@
 
 @interface HKMedicalRecord : HKSample <HKMedicalRecordCodings, HKConceptIndexable, HKCodedSample, NSSecureCoding, NSCopying>
 {
+    HKConcept *_primaryConcept;
     _Bool _enteredInError;
     NSString *_note;
     NSDate *_modifiedDate;
@@ -23,19 +24,22 @@
     NSLocale *_locale;
     int _extractionVersion;
     HKSemanticDate *_sortDate;
-    HKConcept *_primaryConcept;
+    NSString *_country;
+    unsigned int _state;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (id)_sortDateIntervalFromStartDateComponents:(id)arg1 endDateComponents:(id)arg2 error:(out id *)arg3;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)_newMedicalRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 config:(CDUnknownBlockType)arg11;
++ (id)_newMedicalRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned int)arg12 config:(CDUnknownBlockType)arg13;
 + (id)defaultDisplayString;
 + (id)cachedConceptRelationshipKeyPaths;
 + (id)indexableConceptKeyPaths;
 + (id)indexableKeyPathsWithPrefix:(id)arg1;
-@property(readonly, nonatomic) HKConcept *primaryConcept; // @synthesize primaryConcept=_primaryConcept;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
+@property(retain, nonatomic) NSString *country; // @synthesize country=_country;
 @property(readonly, copy, nonatomic) HKSemanticDate *sortDate; // @synthesize sortDate=_sortDate;
 @property(readonly, nonatomic) int extractionVersion; // @synthesize extractionVersion=_extractionVersion;
 @property(readonly, copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
@@ -43,8 +47,9 @@
 @property(readonly, copy, nonatomic) NSDate *modifiedDate; // @synthesize modifiedDate=_modifiedDate;
 @property(readonly, nonatomic) _Bool enteredInError; // @synthesize enteredInError=_enteredInError;
 @property(readonly, copy, nonatomic) NSString *note; // @synthesize note=_note;
-- (void).cxx_destruct;
 - (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setState:(unsigned int)arg1;
+- (void)_setCountry:(id)arg1;
 - (void)_setPrimaryConcept:(id)arg1;
 - (void)_setSortDate:(id)arg1;
 - (void)_setExtractionVersion:(int)arg1;
@@ -58,12 +63,10 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly, nonatomic) HKConcept *primaryConcept;
 - (id)_init;
 - (id)fallbackDisplayString;
-- (id)primaryCodingContext;
-@property(readonly, nonatomic) NSArray *medicalRecordPreferredSystems;
 @property(readonly, nonatomic) NSArray *medicalRecordCodings;
-@property(readonly, nonatomic) NSArray *indexKeywords;
 - (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 

@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *classDescription; // @synthesize classDescription=_classDescription;
 @property(retain) NSString *objectDescription; // @synthesize objectDescription=_objectDescription;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_am_convertFromXPCWithWorkflow:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

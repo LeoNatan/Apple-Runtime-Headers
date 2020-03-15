@@ -14,9 +14,9 @@
     WLKContentPlayResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WLKContentPlayResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
-- (void).cxx_destruct;
 - (void)processResponse;
 - (id)initWithCanonicalID:(id)arg1 caller:(id)arg2;
 

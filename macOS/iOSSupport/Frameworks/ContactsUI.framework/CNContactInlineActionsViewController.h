@@ -36,6 +36,7 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIUserActionListDataSource *actionListDataSource; // @synthesize actionListDataSource=_actionListDataSource;
 @property(retain, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) CNContactActionsController *actionsController; // @synthesize actionsController=_actionsController;
@@ -53,7 +54,6 @@
 @property(nonatomic) BOOL displaysTitles; // @synthesize displaysTitles=_displaysTitles;
 @property(nonatomic) BOOL displaysUnavailableActionTypes; // @synthesize displaysUnavailableActionTypes=_displaysUnavailableActionTypes;
 @property(nonatomic) __weak id <CNUIObjectViewControllerDelegate> objectViewControllerDelegate; // @synthesize objectViewControllerDelegate;
-- (void).cxx_destruct;
 - (void)showDisambiguationFromSourceView:(id)arg1 actionType:(id)arg2;
 - (void)performAction:(id)arg1;
 - (void)contactActionsController:(id)arg1 didSelectAction:(id)arg2;

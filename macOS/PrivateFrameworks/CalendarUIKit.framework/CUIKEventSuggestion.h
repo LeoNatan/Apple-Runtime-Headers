@@ -41,6 +41,7 @@
 + (id)propertiesForEquality;
 + (id)allProperties;
 + (id)similarityPropertiesConsideringTimeProperties:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *recurrenceRules; // @synthesize recurrenceRules=_recurrenceRules;
 @property(retain) NSArray *alarms; // @synthesize alarms=_alarms;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
@@ -65,7 +66,6 @@
 @property BOOL isZKWSuggestion; // @synthesize isZKWSuggestion=_isZKWSuggestion;
 @property(retain) NSMutableSet *additionalReferenceEvents; // @synthesize additionalReferenceEvents=_additionalReferenceEvents;
 @property(retain) EKEvent *referenceEvent; // @synthesize referenceEvent=_referenceEvent;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

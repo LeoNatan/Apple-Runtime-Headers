@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsSubscription/NPHardPaywallModuleType-Protocol.h>
-
-@interface NPHardPaywallModule : NSObject <NPHardPaywallModuleType>
+@interface NPHardPaywallModule : NSObject
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker

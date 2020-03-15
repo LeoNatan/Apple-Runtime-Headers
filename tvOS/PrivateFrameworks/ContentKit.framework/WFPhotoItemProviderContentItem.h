@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)defaultSourceForRepresentation:(id)arg1;
 + (id)pluralTypeDescription;
 + (id)typeDescription;
 + (id)contentCategories;

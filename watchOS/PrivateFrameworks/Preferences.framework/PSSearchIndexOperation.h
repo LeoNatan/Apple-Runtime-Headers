@@ -22,9 +22,9 @@
 + (id)_loadSearchEntriesFromPlistForEntry:(id)arg1 bundle:(id)arg2;
 + (id)_loadThirdPartySearchEntriesForEntry:(id)arg1 bundle:(id)arg2;
 + (id)_bundleForSearchEntry:(id)arg1 thirdPartyApp:(_Bool *)arg2;
+- (void).cxx_destruct;
 @property __weak id <PSSearchIndexOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PSSearchEntry *searchEntry; // @synthesize searchEntry=_searchEntry;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_cancel;
 - (void)_finishedIndexingWithEntries:(id)arg1 cancelled:(_Bool)arg2;

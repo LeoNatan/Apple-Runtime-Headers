@@ -14,9 +14,9 @@
     unsigned long long _senderID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long senderID; // @synthesize senderID=_senderID;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)_setSenderID:(unsigned long long)arg1;
 - (void)_setUUID:(id)arg1;
 - (id)initWithServiceClient:(struct __IOHIDServiceClient *)arg1 UUID:(id)arg2;

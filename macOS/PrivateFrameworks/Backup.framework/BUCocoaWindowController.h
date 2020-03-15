@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationCenterObservers;
 }
 
-@property(nonatomic) double minY; // @synthesize minY=_minY;
-@property(nonatomic) double maxX; // @synthesize maxX=_maxX;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) double minY; // @synthesize minY=_minY;
+@property(nonatomic) double maxX; // @synthesize maxX=_maxX;
 - (struct CGRect)windowWillChangeFrame:(id)arg1 toFrame:(struct CGRect)arg2;
 - (BOOL)interceptsWindowClose:(id)arg1;
 - (id)initWithWindow:(id)arg1;

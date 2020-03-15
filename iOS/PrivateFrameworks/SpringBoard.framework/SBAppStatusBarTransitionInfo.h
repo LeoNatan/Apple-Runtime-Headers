@@ -18,13 +18,13 @@
     _Bool _zoomOther;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool zoomOther; // @synthesize zoomOther=_zoomOther;
 @property(nonatomic) int transition; // @synthesize transition=_transition;
 @property(nonatomic) long long endOrientation; // @synthesize endOrientation=_endOrientation;
 @property(copy, nonatomic) UIStatusBarStyleRequest *endStyleRequest; // @synthesize endStyleRequest=_endStyleRequest;
 @property(nonatomic) long long startOrientation; // @synthesize startOrientation=_startOrientation;
 @property(copy, nonatomic) UIStatusBarStyleRequest *startStyleRequest; // @synthesize startStyleRequest=_startStyleRequest;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

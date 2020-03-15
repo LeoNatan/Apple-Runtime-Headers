@@ -12,8 +12,8 @@
     unsigned int _state;
 }
 
-@property(nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int state; // @synthesize state=_state;
 - (void)_configureForCurrentState;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

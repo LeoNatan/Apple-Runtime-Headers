@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double recommendedNumServings; // @synthesize recommendedNumServings=_recommendedNumServings;
 @property(copy, nonatomic) NSDictionary *nutritionFacts; // @synthesize nutritionFacts=_nutritionFacts;
 @property(nonatomic) long long foodType; // @synthesize foodType=_foodType;
 @property(copy, nonatomic) NSString *genericName; // @synthesize genericName=_genericName;
 @property(copy, nonatomic) NSString *brandName; // @synthesize brandName=_brandName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToHDDemoDataFoodObject:(id)arg1;

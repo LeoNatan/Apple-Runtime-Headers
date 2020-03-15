@@ -37,6 +37,7 @@
 + (void)applyConfiguration:(unsigned long long)arg1 toEditor:(id)arg2;
 + (unsigned long long)configurationOfEditorGivenImage:(id)arg1 editorHost:(id)arg2 isMeContact:(BOOL)arg3;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain) id <CNCancelable> imageRepresentationOfItemChangedToken; // @synthesize imageRepresentationOfItemChangedToken=_imageRepresentationOfItemChangedToken;
 @property(retain) NSMutableDictionary *rootGroupIDToObjectMap; // @synthesize rootGroupIDToObjectMap=_rootGroupIDToObjectMap;
 @property BOOL userSetup; // @synthesize userSetup=_userSetup;
@@ -54,7 +55,6 @@
 @property(retain) NSMutableArray *visibleRootGroups; // @synthesize visibleRootGroups=_visibleRootGroups;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property struct CGRect cropRect; // @synthesize cropRect=_cropRect;
-- (void).cxx_destruct;
 - (void)imageBrowser:(id)arg1 cellWasDoubleClickedAtIndex:(unsigned long long)arg2;
 - (void)loadRootGroups;
 - (void)_updateVisibleRootGroups;

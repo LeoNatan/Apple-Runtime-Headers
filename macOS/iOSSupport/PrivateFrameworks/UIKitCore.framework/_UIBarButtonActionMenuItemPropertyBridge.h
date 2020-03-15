@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSObject<UINSPopupButtonMenuItem> *_propertyObserver;
 }
 
-@property(readonly, nonatomic) NSObject<UINSPopupButtonMenuItem> *propertyObserver; // @synthesize propertyObserver=_propertyObserver;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<UINSPopupButtonMenuItem> *propertyObserver; // @synthesize propertyObserver=_propertyObserver;
 - (void)_action:(id)arg1 changedToChecked:(BOOL)arg2;
 - (void)_action:(id)arg1 changedToEnabled:(BOOL)arg2;
 - (id)initWithPropertyObserver:(id)arg1;

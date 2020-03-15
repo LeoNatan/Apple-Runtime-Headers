@@ -17,12 +17,12 @@ __attribute__((visibility("hidden")))
     _Bool _isIndeterminateProgress;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) struct TFENode node; // @synthesize node=_node;
 @property(nonatomic, getter=isIndeterminateProgress) _Bool indeterminateProgress; // @synthesize indeterminateProgress=_isIndeterminateProgress;
 @property(nonatomic, getter=isCancellable) _Bool cancellable; // @synthesize cancellable=_isCancellable;
 @property(nonatomic) double percentComplete; // @synthesize percentComplete=_percentComplete;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly) CNContact *contact; // @dynamic contact;
 @property(readonly) NSImage *icon; // @dynamic icon;
 @property(nonatomic) NSString *stateText; // @dynamic stateText;

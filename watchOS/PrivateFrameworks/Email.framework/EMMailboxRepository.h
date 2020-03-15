@@ -27,12 +27,12 @@
 
 + (id)remoteInterface;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EMAccountRepository *accountRepository; // @synthesize accountRepository=_accountRepository;
 @property(retain, nonatomic) NSMapTable *observerMap; // @synthesize observerMap=_observerMap;
 @property(retain, nonatomic) EFPromise *mailboxesPromise; // @synthesize mailboxesPromise=_mailboxesPromise;
 @property(retain, nonatomic) id <EFCancelable> registrationCancelable; // @synthesize registrationCancelable=_registrationCancelable;
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly) NSOrderedSet *mailboxesIfAvailable;
 - (id)_mailboxesFuture;
 - (void)mailboxListChanged:(id)arg1;

@@ -15,9 +15,9 @@
     WFDailyRoutineShortcutSetupTriggerBuilder *_trigger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupTriggerBuilder *trigger; // @synthesize trigger=_trigger;
 @property(nonatomic) __weak id <WFDailyRoutineShortcutSetupTriggerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didSelectSkipButton;
 - (void)didSelectAddTriggerButton;
 - (id)initWithTrigger:(id)arg1;

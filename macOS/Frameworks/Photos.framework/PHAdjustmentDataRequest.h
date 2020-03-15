@@ -17,9 +17,9 @@
     PHAdjustmentDataRequestBehaviorSpec *_behaviorSpec;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHAdjustmentDataRequestBehaviorSpec *behaviorSpec; // @synthesize behaviorSpec=_behaviorSpec;
 @property(readonly, nonatomic) __weak id <PHAdjustmentDataRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_cplDownloadStatusNotification:(id)arg1;
 - (void)cancel;
 - (void)startRequest;

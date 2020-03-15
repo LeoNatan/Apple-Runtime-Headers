@@ -28,6 +28,7 @@
 }
 
 + (double)_rubberbandingStartScreenEdgeMarginInOrientation:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentGestureIdentifier; // @synthesize currentGestureIdentifier=_currentGestureIdentifier;
 @property(retain, nonatomic) SBMainWorkspaceTransaction *currentWorkspaceTransaction; // @synthesize currentWorkspaceTransaction=_currentWorkspaceTransaction;
 @property(retain, nonatomic) SBBlurViewCoordinator *blurCoordinator; // @synthesize blurCoordinator=_blurCoordinator;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) SBLayoutElementViewController *sideLayoutElementController; // @synthesize sideLayoutElementController=_sideLayoutElementController;
 @property(readonly, nonatomic) SBLayoutElementViewController *primaryLayoutElementController; // @synthesize primaryLayoutElementController=_primaryLayoutElementController;
 @property(readonly, nonatomic) SBMainDisplaySceneLayoutViewController *layoutViewController; // @synthesize layoutViewController=_layoutViewController;
-- (void).cxx_destruct;
 - (void)_finishWithCompletionType:(long long)arg1;
 - (void)systemGestureStateChanged:(id)arg1;
 - (void)_didInterruptWithReason:(id)arg1;

@@ -13,8 +13,8 @@
     MFEWSAccount *_account;
 }
 
-@property(readonly) __weak MFEWSAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly) __weak MFEWSAccount *account; // @synthesize account=_account;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 

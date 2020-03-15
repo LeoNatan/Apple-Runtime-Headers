@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     unsigned int m_maximumSize;
 }
 
-@property unsigned int maximumSize; // @synthesize maximumSize=m_maximumSize;
 - (void).cxx_destruct;
+@property unsigned int maximumSize; // @synthesize maximumSize=m_maximumSize;
 - (int)size;
 - (id)getObject:(unsigned int)arg1;
 - (int)putObject:(id)arg1 in_objectPos:(unsigned int)arg2;

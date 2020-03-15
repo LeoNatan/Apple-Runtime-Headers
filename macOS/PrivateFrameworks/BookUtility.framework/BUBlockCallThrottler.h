@@ -15,10 +15,10 @@
     NSDate *_lastBlockCallDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL running; // @synthesize running=_running;
 @property(retain, nonatomic) NSDate *lastBlockCallDate; // @synthesize lastBlockCallDate=_lastBlockCallDate;
 @property(nonatomic) double minimumTimeBetweenCalls; // @synthesize minimumTimeBetweenCalls=_minimumTimeBetweenCalls;
-- (void).cxx_destruct;
 - (BOOL)_runBlock:(CDUnknownBlockType)arg1 throttle:(BOOL)arg2;
 - (BOOL)runBlockThrottled:(CDUnknownBlockType)arg1;
 - (void)runBlock:(CDUnknownBlockType)arg1;

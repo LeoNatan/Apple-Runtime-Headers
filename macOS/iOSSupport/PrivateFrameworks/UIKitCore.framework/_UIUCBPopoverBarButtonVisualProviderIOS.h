@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIColor *_selectionTintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *selectionTintColor; // @synthesize selectionTintColor=_selectionTintColor;
 @property(retain, nonatomic) UIColor *selectionBackgroundTintColor; // @synthesize selectionBackgroundTintColor=_selectionBackgroundTintColor;
-- (void).cxx_destruct;
 - (void)updateButton:(id)arg1 forSelectedState:(BOOL)arg2;
 - (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
 - (BOOL)isEqual:(id)arg1;

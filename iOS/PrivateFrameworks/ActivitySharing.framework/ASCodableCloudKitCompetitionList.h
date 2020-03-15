@@ -19,10 +19,10 @@
 }
 
 + (Class)competitionsType;
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSData *friendUUID; // @synthesize friendUUID=_friendUUID;
 @property(retain, nonatomic) NSMutableArray *competitions; // @synthesize competitions=_competitions;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

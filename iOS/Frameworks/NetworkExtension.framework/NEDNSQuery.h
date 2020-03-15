@@ -16,11 +16,11 @@
     NSData *_answerData;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSData *answerData; // @synthesize answerData=_answerData;
 @property(readonly) long long recordClass; // @synthesize recordClass=_recordClass;
 @property(readonly) long long recordType; // @synthesize recordType=_recordType;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)createAnswer;
 - (id)initWithName:(id)arg1 recordType:(long long)arg2 recordClass:(long long)arg3;
 

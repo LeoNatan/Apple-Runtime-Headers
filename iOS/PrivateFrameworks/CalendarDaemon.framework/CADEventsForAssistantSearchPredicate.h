@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long limit; // @synthesize limit=_limit;
 @property(copy, nonatomic) NSArray *participants; // @synthesize participants=_participants;
 @property(copy, nonatomic) NSString *notes; // @synthesize notes=_notes;
 @property(copy, nonatomic) NSString *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)defaultPropertiesToLoad;
 - (_Bool)shouldLoadDefaultProperties;
 - (id)predicateFormat;

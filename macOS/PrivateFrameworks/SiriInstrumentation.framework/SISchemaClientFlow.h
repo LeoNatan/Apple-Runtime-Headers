@@ -13,8 +13,8 @@
     NSString *_clientFlowPayload;
 }
 
-@property(copy, nonatomic) NSString *clientFlowPayload; // @synthesize clientFlowPayload=_clientFlowPayload;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *clientFlowPayload; // @synthesize clientFlowPayload=_clientFlowPayload;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

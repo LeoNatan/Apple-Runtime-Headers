@@ -16,11 +16,11 @@
     NSArray *_mailboxNames;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *mailboxNames; // @synthesize mailboxNames=_mailboxNames;
 @property(copy, nonatomic) NSString *notificationNamePrefix; // @synthesize notificationNamePrefix=_notificationNamePrefix;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)registerForPush:(CDUnknownBlockType)arg1;
 - (id)init;
 

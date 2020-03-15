@@ -16,8 +16,8 @@
     id <SWLogger> _logger;
 }
 
-@property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 - (id)createDatastoreFromMessage:(id)arg1;
 - (id)initWithLogger:(id)arg1;
 

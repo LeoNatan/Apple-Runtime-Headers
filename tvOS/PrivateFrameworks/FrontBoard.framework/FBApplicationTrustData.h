@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(readonly, nonatomic) NSArray *profiles; // @synthesize profiles=_provisioningProfiles;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *profiles; // @synthesize profiles=_provisioningProfiles;
 - (void)_acceptApplicationSignatureIdentity;
 - (_Bool)_workQueue_signatureNeedsExplicitUserTrust;
 - (id)_workQueue_expirationDateForProvisioningProfile;

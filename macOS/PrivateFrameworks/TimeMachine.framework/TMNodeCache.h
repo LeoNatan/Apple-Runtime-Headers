@@ -25,11 +25,11 @@
 + (id)structureType;
 + (id)nearestFutureDateForDate:(id)arg1 inDates:(id)arg2;
 + (BOOL)_appendEntries:(vector_55152583)arg1 toURL:(id)arg2 error:(id *)arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, retain) TMMessageSerializer *serializer; // @synthesize serializer=_serializer;
 @property(retain) NSURL *updatingCloneCacheURL; // @synthesize updatingCloneCacheURL=_updatingCloneCacheURL;
 @property(retain) NSURL *updatingStableCacheURL; // @synthesize updatingStableCacheURL=_updatingStableCacheURL;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (id)immemorialCacheURL;
 - (BOOL)buildAtURL:(id)arg1 parentURL:(id)arg2 error:(id *)arg3;

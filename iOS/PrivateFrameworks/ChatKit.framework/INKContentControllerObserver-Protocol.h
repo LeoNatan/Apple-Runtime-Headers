@@ -15,5 +15,6 @@
 @optional
 - (UIImage *)contentController:(INKContentController *)arg1 contentView:(INKContentView *)arg2 iconForCustomizationID:(long long)arg3;
 - (void)contentController:(INKContentController *)arg1 contentViewNeedsLayout:(INKContentView *)arg2;
+- (void)contentController:(INKContentController *)arg1 actionTapped:(INKContent *)arg2;
 @end
 

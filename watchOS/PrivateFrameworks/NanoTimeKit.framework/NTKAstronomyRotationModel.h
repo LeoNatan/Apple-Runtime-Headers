@@ -26,11 +26,11 @@
     _Bool _isPulling;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPulling) _Bool pulling; // @synthesize pulling=_isPulling;
 @property(readonly, nonatomic) const struct NTKAstronomyInteractionSettings *interactionSettings; // @synthesize interactionSettings=_interactionSettings;
 @property(nonatomic) __weak id <NTKAstronomyRotationModelObserver> observer; // @synthesize observer=_observer;
 @property(nonatomic) __weak id <NURotatable> rotatable; // @synthesize rotatable=_rotatable;
-- (void).cxx_destruct;
 - (void)push: /* Error: Ran out of types for this method. */;
 - (void)_update;
 - (void)_handleDisplayLink;

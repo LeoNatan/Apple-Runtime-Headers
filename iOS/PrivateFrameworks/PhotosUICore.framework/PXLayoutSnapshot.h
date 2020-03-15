@@ -14,9 +14,9 @@
     struct CGRect _contentRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXLayoutEngineDataSourceSnapshot> dataSourceSnapshot; // @synthesize dataSourceSnapshot=_dataSourceSnapshot;
 @property(readonly, nonatomic) struct CGRect contentRect; // @synthesize contentRect=_contentRect;
-- (void).cxx_destruct;
 - (void)enumerateGeometriesForItemsInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (struct _PXLayoutGeometry)geometryForItem:(id)arg1;
 - (id)description;

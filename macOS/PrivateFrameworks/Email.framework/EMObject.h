@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) EMObjectID *objectID; // @synthesize objectID=_objectID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) EMObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

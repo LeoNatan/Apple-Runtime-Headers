@@ -14,9 +14,9 @@
     NSString *_subtitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL useSmallerFont; // @synthesize useSmallerFont=_useSmallerFont;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 useSmallerFont:(BOOL)arg3;

@@ -16,10 +16,10 @@
     id <CSWallpaperColorProvider> _wallpaperColorProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSWallpaperColorProvider> wallpaperColorProvider; // @synthesize wallpaperColorProvider=_wallpaperColorProvider;
 @property(nonatomic) __weak id <CSWallpaperViewProviding> wallpaperViewProvider; // @synthesize wallpaperViewProvider=_wallpaperViewProvider;
 @property(nonatomic) __weak id <CSUserSessionControlling> userSessionController; // @synthesize userSessionController=_userSessionController;
-- (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)loadView;
 @property(readonly, nonatomic) CSVibrantWallpaperButton *button;

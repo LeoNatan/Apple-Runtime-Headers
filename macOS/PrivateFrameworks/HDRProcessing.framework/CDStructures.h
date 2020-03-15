@@ -342,10 +342,13 @@ struct ToneCurve_Control {
     float mid;
     float crush;
     float clip;
-    _Bool passThroughTM;
+    unsigned int ptvMode:1;
+    unsigned int passThroughTM:1;
     struct _HDR10AuxData auxData;
     struct _HDR10TMParam tmParam;
+    struct _HDR10EdrAdaptationParam edrAdaptationParam;
     struct _HDR10AmbAdaptationParam ambAdaptationParam;
+    int hlg_tmMode;
 };
 
 struct _HDR10AmbAdaptationParam {
@@ -385,6 +388,13 @@ struct _HDR10DpcParam {
     float alpha;
     float alpha_prime;
     float gain;
+};
+
+struct _HDR10EdrAdaptationParam {
+    unsigned short n;
+    float Xs[3];
+    float Ys[3];
+    float Ms[3];
 };
 
 struct _HDR10TMParam {
@@ -815,8 +825,9 @@ typedef struct {
     float _field17;
     CDStruct_5b5de198 _field18;
     CDStruct_3ad9644f _field19;
+    unsigned int :1;
     int _field20;
-} CDStruct_096ecdcf;
+} CDStruct_d18332a3;
 
 typedef struct {
     struct {
@@ -840,7 +851,7 @@ typedef struct {
     struct ToneCurve_Control tcControl;
     CDStruct_d76a58a8 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_2203fc2d;
+} CDStruct_2b0c1162;
 
 typedef struct {
     int version;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSArray, NSMutableDictionary, PKAccount, PKAccountService, PKPaymentPass;
+@class NSArray, NSDateFormatter, NSMutableDictionary, PKAccount, PKAccountService, PKPaymentPass;
 @protocol PKPaymentDataProvider;
 
 @interface PKInstallmentPlansViewController : UITableViewController
@@ -17,6 +17,7 @@
     id <PKPaymentDataProvider> _dataProvider;
     NSArray *_installmentPlans;
     NSMutableDictionary *_installmentPlanToDeviceName;
+    NSDateFormatter *_installmentDateFormatter;
 }
 
 - (void).cxx_destruct;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)typeOfSiriRequestHandled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) AFSiriResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) AFSiriRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)description;
 - (id)errorWithDescription:(id)arg1;
 - (_Bool)isMessageServiceAvailable;

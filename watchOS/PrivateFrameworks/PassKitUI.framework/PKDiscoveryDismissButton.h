@@ -16,8 +16,8 @@
 
 + (int)_blurEffectStyleForUserInterfaceStyle:(int)arg1;
 + (id)_tintColorForUserInterfaceStyle:(int)arg1;
-@property(readonly, nonatomic) int style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int style; // @synthesize style=_style;
 - (void)_updateStyleWithStyle:(int)arg1;
 - (id)_tintColor;
 - (id)_backingEffect;

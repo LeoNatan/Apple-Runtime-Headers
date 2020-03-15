@@ -12,23 +12,32 @@
 @interface CPSApplicationStateMonitor : NSObject
 {
     NSObject<OS_dispatch_queue> *_stateObserverQueue;
+    UIWindowScene *_windowSceneForTemplateApplicationScene;
+    UIWindowScene *_windowSceneForMapWidgetScene;
+    UIWindowScene *_windowSceneForGuidanceWidgetScene;
     NSString *_bundleIdentifier;
     CARObserverHashTable *_stateObservers;
-    UIWindowScene *_windowScene;
 }
 
-@property(nonatomic) __weak UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CARObserverHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
+@property(nonatomic) __weak UIWindowScene *windowSceneForGuidanceWidgetScene; // @synthesize windowSceneForGuidanceWidgetScene=_windowSceneForGuidanceWidgetScene;
+@property(nonatomic) __weak UIWindowScene *windowSceneForMapWidgetScene; // @synthesize windowSceneForMapWidgetScene=_windowSceneForMapWidgetScene;
+@property(nonatomic) __weak UIWindowScene *windowSceneForTemplateApplicationScene; // @synthesize windowSceneForTemplateApplicationScene=_windowSceneForTemplateApplicationScene;
 - (void)_sceneDidEnterBackground:(id)arg1;
 - (void)_sceneWillEnterForeground:(id)arg1;
 - (void)_notifyObserversForeground:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool templateApplicationSceneIsActive;
+@property(readonly, nonatomic) _Bool canPostNavigationAlertNotification;
+@property(readonly, nonatomic) _Bool canPostManeuverNotification;
+- (_Bool)_sceneIsForeground:(id)arg1;
 @property(readonly, nonatomic, getter=isApplicationActive) _Bool applicationActive;
 - (void)removeApplicationStateObserver:(id)arg1;
 - (void)addApplicationStateObserver:(id)arg1;
 - (void)dealloc;
-- (id)initWithWindowScene:(id)arg1;
+- (void)_observeScene:(id)arg1;
+- (id)init;
 
 @end
 

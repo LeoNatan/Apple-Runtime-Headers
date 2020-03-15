@@ -22,13 +22,13 @@
     NSMutableArray *_modifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *modifiers; // @synthesize modifiers=_modifiers;
 @property(readonly, nonatomic) _Bool universalLinksEnabled; // @synthesize universalLinksEnabled=_universalLinksEnabled;
 @property(readonly, nonatomic) id <NUURLHandling> URLHandling; // @synthesize URLHandling=_URLHandling;
 @property(retain, nonatomic) id <NUPreviewViewControllerFactory> previewViewControllerFactory; // @synthesize previewViewControllerFactory=_previewViewControllerFactory;
 @property(retain, nonatomic) id <NUWebViewControllerFactory> webViewControllerFactory; // @synthesize webViewControllerFactory=_webViewControllerFactory;
 @property(nonatomic) __weak id <NUURLHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)modifyURL:(id)arg1;
 - (void)openURL:(id)arg1;

@@ -20,11 +20,11 @@
     NSLock *_itemsLock;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLock *itemsLock; // @synthesize itemsLock=_itemsLock;
 @property long long totalSize; // @synthesize totalSize=_totalSize;
 @property __weak id <STMSizeCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long cacheEventID; // @synthesize cacheEventID=_cacheEventID;
-- (void).cxx_destruct;
 - (void)addItem:(id)arg1;
 - (id)createCacheEntryForPath:(id)arg1;
 - (void)sizeAllItems;

@@ -9,7 +9,7 @@
 #import <AuthKitUI/TVTextEntryControllerDelegate-Protocol.h>
 #import <AuthKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, UITapGestureRecognizer;
+@class AKBasicLoginActions, NSString, UITapGestureRecognizer;
 @protocol AKTVSignInViewControllerDelegate;
 
 @interface AKTVSignInViewController : UIViewController <UIGestureRecognizerDelegate, TVTextEntryControllerDelegate>
@@ -18,31 +18,29 @@
     NSString *_currentSubtitle;
     _Bool _isUsernameEditable;
     _Bool _didPerformAction;
-    CDUnknownBlockType _ak_cancelAction;
-    CDUnknownBlockType _ak_authenticateAction;
     NSString *_username;
     NSString *_password;
     NSString *_reason;
     NSString *_signInButtonString;
     id <AKTVSignInViewControllerDelegate> _signInDelegate;
+    AKBasicLoginActions *_loginActions;
     UIViewController *_childViewController;
     UITapGestureRecognizer *_menuRecognizer;
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didPerformAction; // @synthesize didPerformAction=_didPerformAction;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(retain, nonatomic) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
+@property(copy, nonatomic) AKBasicLoginActions *loginActions; // @synthesize loginActions=_loginActions;
 @property(nonatomic) _Bool isUsernameEditable; // @synthesize isUsernameEditable=_isUsernameEditable;
 @property(nonatomic) __weak id <AKTVSignInViewControllerDelegate> signInDelegate; // @synthesize signInDelegate=_signInDelegate;
 @property(copy, nonatomic) NSString *signInButtonString; // @synthesize signInButtonString=_signInButtonString;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
-@property(copy, nonatomic) CDUnknownBlockType ak_authenticateAction; // @synthesize ak_authenticateAction=_ak_authenticateAction;
-@property(copy, nonatomic) CDUnknownBlockType ak_cancelAction; // @synthesize ak_cancelAction=_ak_cancelAction;
-- (void).cxx_destruct;
 - (void)performCancelAction;
 - (void)performAuthenticateAction;
 - (void)traitCollectionDidChange:(id)arg1;

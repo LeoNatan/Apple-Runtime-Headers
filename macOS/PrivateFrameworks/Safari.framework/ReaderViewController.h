@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     _WKRemoteObjectInterface *_readerViewControllerMessageReceiverInterface;
     WBSReaderFontManager *_fontManager;
     ReaderAppearanceViewController *_readerAppearanceViewController;
-    struct unique_ptr<Safari::ReaderPageFindClient, std::__1::default_delete<Safari::ReaderPageFindClient>> _pageFindClient;
     ReaderNavigationDelegate *_navigationDelegate;
     ReaderUIDelegate *_UIDelegate;
     BOOL _isObservingKeyValueChanges;
@@ -25,9 +24,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)readerViewControllerForPage:(const struct Page *)arg1;
-@property(readonly, nonatomic) struct ReaderController *readerController; // @synthesize readerController=_readerController;
-- (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct ReaderController *readerController; // @synthesize readerController=_readerController;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_stopObservingWKWebViewKeyValueChanges;
 - (void)_startObservingWKWebViewKeyValueChanges;
@@ -61,7 +59,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *availableFonts;
 - (void)updateLanguageTag:(id)arg1;
 - (void)_applyConfigurationAndSendNotification:(BOOL)arg1;
-- (void)effectiveAppearanceDidChange;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)reloadAndReapplyConfiguration;
 - (void)setConfiguration:(id)arg1;
 - (void)goForward;

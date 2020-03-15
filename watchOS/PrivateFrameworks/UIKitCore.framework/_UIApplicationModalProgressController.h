@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 
 + (id)instanceForScene:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *urlProgress; // @synthesize urlProgress=_urlProgress;
 @property(nonatomic, getter=_displayStartTime, setter=_setDisplayStartTime:) double displayStartTime; // @synthesize displayStartTime=_displayStartTime;
 @property(retain, nonatomic, getter=_hideTimer, setter=_setHideTimer:) NSTimer *hideTimer; // @synthesize hideTimer=_hideTimer;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, getter=_alertController, setter=_setAlertController:) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic, getter=_window, setter=_setWindow:) UIWindow *window; // @synthesize window=_window;
 @property(nonatomic) double displayDelaySeconds; // @synthesize displayDelaySeconds=_displayDelaySeconds;
-- (void).cxx_destruct;
 - (void)displayForDownloadingURL:(id)arg1 copyToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)displayForCopyingFileAtURL:(id)arg1 toURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)displayForDownloadingURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

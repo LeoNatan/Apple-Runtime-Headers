@@ -29,6 +29,7 @@
     struct CGSize _imageBoundingSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIUber *uber; // @synthesize uber=_uber;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak id <SKUIItemGridDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(readonly, nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
-- (void).cxx_destruct;
 - (id)_itemCollectionController;
 - (void)_reloadLayout;
 - (id)_collectionViewLayout;

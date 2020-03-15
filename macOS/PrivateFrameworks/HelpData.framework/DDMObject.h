@@ -17,8 +17,8 @@
 
 + (id)newWithDDMDictionary:(id)arg1 originURL:(id)arg2;
 + (id)log;
-@property(readonly) NSURL *originURL; // @synthesize originURL=_originURL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *originURL; // @synthesize originURL=_originURL;
 - (id)_initWithDDMDictionary:(id)arg1 originURL:(id)arg2;
 - (BOOL)_mapAttributeName:(id)arg1 fromDDMDictionary:(id)arg2 attributeDescription:(id)arg3 originURL:(id)arg4;
 - (id)_makeTreeFromArray:(id)arg1 withDescription:(id)arg2 topLevelItemIDs:(id)arg3;

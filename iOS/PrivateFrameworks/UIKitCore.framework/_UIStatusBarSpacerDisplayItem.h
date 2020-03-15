@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILayoutGuide *layoutGuide; // @synthesize layoutGuide=_layoutGuide;
-- (void).cxx_destruct;
 - (void)_applyConstraintsIfNeeded;
 - (void)setContainerView:(id)arg1;
 - (void)applyUpdate:(id)arg1;

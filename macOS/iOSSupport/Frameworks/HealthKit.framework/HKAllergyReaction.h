@@ -14,11 +14,11 @@
 
 @interface HKAllergyReaction : NSObject <NSSecureCoding, NSCopying, HKCodedObject>
 {
-    NSArray *_manifestations;
-    NSArray *_manifestionCodings;
-    HKMedicalDate *_onsetDate;
-    HKConcept *_severity;
     HKMedicalCoding *_severityCoding;
+    NSArray *_manifestionCodings;
+    HKConcept *_severity;
+    NSArray *_manifestations;
+    HKMedicalDate *_onsetDate;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -26,16 +26,23 @@
 + (id)indexableKeyPathsWithPrefix:(id)arg1;
 + (id)severityCodingPreferredSystems;
 + (id)manifestationCodingsPreferredSystems;
-@property(readonly, copy, nonatomic) HKMedicalCoding *severityCoding; // @synthesize severityCoding=_severityCoding;
-@property(readonly, copy, nonatomic) HKConcept *severity; // @synthesize severity=_severity;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKMedicalDate *onsetDate; // @synthesize onsetDate=_onsetDate;
 @property(readonly, copy, nonatomic) NSArray *manifestionCodings; // @synthesize manifestionCodings=_manifestionCodings;
-@property(readonly, copy, nonatomic) NSArray *manifestations; // @synthesize manifestations=_manifestations;
-- (void).cxx_destruct;
 - (BOOL)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) HKConcept *severity;
+- (void)_setSeverityCoding:(id)arg1;
+@property(readonly, copy, nonatomic) HKMedicalCoding *severityCoding;
+@property(readonly, copy, nonatomic) NSArray *manifestations;
+- (void)_setManifestationCodings:(id)arg1;
+- (id)manifestationCodings;
+- (id)manifestationCodingContexts;
+- (id)manifestationCodingsCollection;
+- (id)severityCodingContext;
+- (id)severityCodingCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

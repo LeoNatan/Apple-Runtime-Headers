@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _collectionMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSpinning) _Bool spinning; // @synthesize spinning=_spinning;
 @property(readonly, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 @property(nonatomic, getter=isPartialViewEnabled) _Bool partialViewEnabled; // @synthesize partialViewEnabled=_partialViewEnabled;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_TVSearchTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool isTouchEnabled; // @synthesize isTouchEnabled=_isTouchEnabled;
 @property(readonly, retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (_Bool)_isSearchFieldVisible;
 - (void)_transitionKeyboardOut;
 - (void)_transitionKeyboardInAnimated:(_Bool)arg1;

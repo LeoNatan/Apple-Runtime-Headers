@@ -23,13 +23,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) QLPreviewProgressiveCallbacks *progressiveCallbacks; // @synthesize progressiveCallbacks=_progressiveCallbacks;
 @property BOOL progressive; // @synthesize progressive=_progressive;
 @property(retain) NSDictionary *waitForDataOptions; // @synthesize waitForDataOptions=_waitForDataOptions;
 @property(retain) NSMutableArray *waitForDataCompletionBlocks; // @synthesize waitForDataCompletionBlocks=_waitForDataCompletionBlocks;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) QLDaemonProxy *daemonProxy; // @synthesize daemonProxy=_daemonProxy;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)debugDescription;
 @property(readonly) NSDictionary *properties;

@@ -36,6 +36,7 @@
     NSLayoutConstraint *_toolAndColorPickerContainerViewWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUsingSmallestSupportedWidth) _Bool usingSmallestSupportedWidth; // @synthesize usingSmallestSupportedWidth=_usingSmallestSupportedWidth;
 @property(retain, nonatomic) NSLayoutConstraint *toolAndColorPickerContainerViewWidthConstraint; // @synthesize toolAndColorPickerContainerViewWidthConstraint=_toolAndColorPickerContainerViewWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *toolAndColorPickerContainerViewHeightConstraint; // @synthesize toolAndColorPickerContainerViewHeightConstraint=_toolAndColorPickerContainerViewHeightConstraint;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) PKPaletteUndoRedoView *undoRedoView; // @synthesize undoRedoView=_undoRedoView;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (void)didChangeAnnotationSupport:(id)arg1;
 - (void)_dismissPalettePopoverUsingConfirmationBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGRect)plusButtonFrame;

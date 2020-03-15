@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSUUID *_clientID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSUUID *clientID; // @synthesize clientID=_clientID;
 @property(retain) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 clientID:(id)arg2;
 
 @end

@@ -26,6 +26,7 @@
 
 + (id)regionForCoordinateSpace:(id)arg1 withExtent:(struct CGRect)arg2;
 + (id)regionForCoordinateSpace:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReservedForHorizontalScrolling) _Bool reservedForHorizontalScrolling; // @synthesize reservedForHorizontalScrolling=_reservedForHorizontalScrolling;
 @property(nonatomic) __weak id provider; // @synthesize provider=_provider;
 @property(nonatomic) __weak id <UICoordinateSpace> identity; // @synthesize identity=_identity;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long role; // @synthesize role=_role;
 @property(readonly, nonatomic) struct CGRect extent; // @synthesize extent=_extent;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromCoordinateSpace:(id)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toCoordinateSpace:(id)arg2;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromCoordinateSpace:(id)arg2;

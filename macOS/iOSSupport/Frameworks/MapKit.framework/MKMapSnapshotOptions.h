@@ -39,6 +39,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_customFeatureAnnotations, setter=_setCustomFeatureAnnotations:) NSArray *customFeatureAnnotations; // @synthesize customFeatureAnnotations=_customFeatureAnnotations;
 @property(nonatomic, getter=_searchResultsType, setter=_setSearchResultsType:) unsigned char searchResultsType; // @synthesize searchResultsType=_searchResultsType;
 @property(nonatomic, getter=_showsVenues, setter=_setShowsVenues:) BOOL showsVenues; // @synthesize showsVenues=_showsVenues;
@@ -60,7 +61,6 @@
 @property(nonatomic) CDStruct_b7cb895d region; // @synthesize region=_region;
 @property(nonatomic) CDStruct_02837cd9 mapRect; // @synthesize mapRect=_mapRect;
 @property(copy, nonatomic) MKMapCamera *camera; // @synthesize camera=_camera;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(nonatomic) BOOL showsPointsOfInterest; // @dynamic showsPointsOfInterest;
 - (void)_updateShouldUseSnapshotService;

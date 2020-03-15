@@ -22,12 +22,12 @@
 }
 
 + (id)_rangeStringForInterval:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(nonatomic) __weak id <SearchUIChartUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *createdValue; // @synthesize createdValue=_createdValue;
 @property(nonatomic) double lowValue; // @synthesize lowValue=_lowValue;
 @property(nonatomic) double highValue; // @synthesize highValue=_highValue;
-- (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
 - (void)failWithError:(id)arg1;
 - (void)didParseData;

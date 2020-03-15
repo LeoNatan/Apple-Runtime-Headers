@@ -65,6 +65,7 @@
 }
 
 + (id)pinyinSyllables;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSString *inputModeName; // @synthesize inputModeName=_inputModeName;
@@ -101,7 +102,6 @@
 @property(nonatomic) int shuangpinLayout; // @synthesize shuangpinLayout=_shuangpinLayout;
 @property(nonatomic) BOOL autocorrectionEnabled; // @synthesize autocorrectionEnabled=_autocorrectionEnabled;
 @property(nonatomic) BOOL adjustsWordFrequency; // @synthesize adjustsWordFrequency=_adjustsWordFrequency;
-- (void).cxx_destruct;
 - (id)candidatesForInputString:(id)arg1;
 - (id)inputStringForCharacters:(id)arg1;
 @property(readonly, nonatomic) BOOL isApplyingToneFilter;

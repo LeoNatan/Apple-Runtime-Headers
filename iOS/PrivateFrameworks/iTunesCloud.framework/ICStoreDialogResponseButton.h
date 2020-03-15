@@ -18,11 +18,11 @@
     ICStoreDialogResponseButtonAction *_action;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICStoreDialogResponseButtonAction *action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) _Bool isDefaultButton; // @synthesize isDefaultButton=_isDefaultButton;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithType:(long long)arg1 isDefaultButton:(_Bool)arg2 title:(id)arg3 action:(id)arg4;
 

@@ -19,11 +19,11 @@
 }
 
 + (id)constructToken;
+- (void).cxx_destruct;
 @property(retain) NSString *string; // @synthesize string=_string;
 @property int length; // @synthesize length=_length;
 @property int start; // @synthesize start=_start;
 @property _Bool overflows; // @synthesize overflows=_overflows;
-- (void).cxx_destruct;
 - (id)description;
 - (struct _NSRange)range;
 

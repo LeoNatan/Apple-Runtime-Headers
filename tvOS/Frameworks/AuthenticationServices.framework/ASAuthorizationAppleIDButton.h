@@ -20,8 +20,8 @@
 
 + (double)defaultCornerRadius;
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
@@ -40,7 +40,7 @@
 - (void)_createHighlightFilterIfNecessary;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
-- (void)_drawRect:(struct CGRect)arg1 inView:(struct UIView *)arg2;
+- (void)_drawRect:(struct CGRect)arg1 inView:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

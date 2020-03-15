@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIColor *_templateColor;
 }
 
-@property(retain, nonatomic) UIColor *templateColor; // @synthesize templateColor=_templateColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *templateColor; // @synthesize templateColor=_templateColor;
 - (id)objectForData:(id)arg1 response:(id)arg2 error:(id *)arg3;
 
 @end

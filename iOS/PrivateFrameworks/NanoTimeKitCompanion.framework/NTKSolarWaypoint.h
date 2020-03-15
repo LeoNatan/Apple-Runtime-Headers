@@ -19,11 +19,11 @@
     double _percentageThroughPeriodForWaypointDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double percentageThroughPeriodForWaypointDate; // @synthesize percentageThroughPeriodForWaypointDate=_percentageThroughPeriodForWaypointDate;
 @property(readonly, nonatomic) NSDate *waypointDate; // @synthesize waypointDate=_waypointDate;
 @property(readonly, nonatomic) NTKSolarTimeModel *solarTimeModel; // @synthesize solarTimeModel=_solarTimeModel;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)ntkCacheableKey;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *localizedName;

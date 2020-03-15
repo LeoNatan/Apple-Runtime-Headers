@@ -17,11 +17,11 @@
     struct CGSize _shadowOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double shadowRadius; // @synthesize shadowRadius=_shadowRadius;
 @property(readonly, nonatomic) double shadowOpacity; // @synthesize shadowOpacity=_shadowOpacity;
 @property(readonly, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(readonly, nonatomic) struct CGSize shadowOffset; // @synthesize shadowOffset=_shadowOffset;
-- (void).cxx_destruct;
 - (struct CGPoint)offsetPointWithExternalPoint:(struct CGPoint)arg1;
 - (struct CGPoint)offsetPointWithInternalPoint:(struct CGPoint)arg1;
 - (struct CGRect)offsetRectWithInternalRect:(struct CGRect)arg1;

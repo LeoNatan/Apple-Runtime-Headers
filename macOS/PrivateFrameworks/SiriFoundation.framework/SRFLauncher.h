@@ -22,8 +22,8 @@
 + (BOOL)isSiriRunning;
 + (id)sharedInstance;
 + (void)initialize;
-@property(retain, nonatomic) NSXPCConnection *connectionToSiri; // @synthesize connectionToSiri=_connectionToSiri;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connectionToSiri; // @synthesize connectionToSiri=_connectionToSiri;
 - (void)_dismissSiriFromSource:(long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_invokeSiriFromSource:(long long)arg1 withAction:(long long)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_sendSiriNotification:(id)arg1 launchingIfNotRunning:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) NSTextField *messageLabel; // @synthesize messageLabel=_messageLabel;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (void)setupConstraints;
 - (void)setupSubviews;

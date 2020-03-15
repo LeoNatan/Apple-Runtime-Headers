@@ -23,13 +23,13 @@
     UIButton *_editButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic, getter=isEditButtonHidden) _Bool hideEditButton; // @synthesize hideEditButton=_hideEditButton;
 @property(retain, nonatomic) NSDate *dateSaved; // @synthesize dateSaved=_dateSaved;
 @property(nonatomic) __weak id <HKIDUpdatedAndEditCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic, getter=isEditButtonDisabled) _Bool disableEditButton;
 @property(retain, nonatomic) NSString *titleText;

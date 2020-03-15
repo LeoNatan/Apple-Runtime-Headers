@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *measurements; // @synthesize measurements=_measurements;
 @property(nonatomic) unsigned long long numberOfValidMeasurements; // @synthesize numberOfValidMeasurements=_numberOfValidMeasurements;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) double standardDeviation; // @synthesize standardDeviation=_standardDeviation;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(copy, nonatomic) NSString *MACAddress; // @synthesize MACAddress=_MACAddress;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

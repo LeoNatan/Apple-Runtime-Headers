@@ -13,8 +13,8 @@
     NSMutableDictionary *_plistsByName;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *plistsByName; // @synthesize plistsByName=_plistsByName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *plistsByName; // @synthesize plistsByName=_plistsByName;
 - (id)plistWithName:(id)arg1;
 - (id)init;
 

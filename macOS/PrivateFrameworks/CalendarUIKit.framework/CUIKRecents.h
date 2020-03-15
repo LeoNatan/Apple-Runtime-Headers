@@ -10,7 +10,7 @@
 {
 }
 
-+ (struct NSObject *)recentForLocation:(id)arg1 withAddressString:(id)arg2 andTitle:(id)arg3;
++ (id)recentForLocation:(id)arg1 withAddressString:(id)arg2 andTitle:(id)arg3;
 + (id)locationForRecent:(id)arg1;
 
 @end

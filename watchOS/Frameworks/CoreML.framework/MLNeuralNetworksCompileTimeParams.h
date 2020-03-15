@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
 @property(retain, nonatomic) NSArray *trainableLayerNames; // @synthesize trainableLayerNames=_trainableLayerNames;
 @property(retain, nonatomic) NSDictionary *lossParameters; // @synthesize lossParameters=_lossParameters;
 @property(retain, nonatomic) NSDictionary *optimizerParameters; // @synthesize optimizerParameters=_optimizerParameters;
 @property(nonatomic) int optimizerType; // @synthesize optimizerType=_optimizerType;
 @property(nonatomic) int lossType; // @synthesize lossType=_lossType;
-- (void).cxx_destruct;
 - (id)unarchiveUpdatableParamsAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)writeUpdatableParamsToURL:(id)arg1 error:(id *)arg2;
 - (id)initWithCoder:(id)arg1;

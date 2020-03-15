@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     BRCProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *stageID; // @synthesize stageID=_stageID;
 @property(readonly, nonatomic) long long throttleID; // @synthesize throttleID=_throttleID;
 @property(nonatomic) _Bool progressPublished; // @synthesize progressPublished=_progressPublished;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long totalSize; // @synthesize totalSize=_totalSize;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(readonly, nonatomic) BRCItemID *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDocument:(id)arg1 stageID:(id)arg2 transferSize:(unsigned long long)arg3;
 - (id)description;

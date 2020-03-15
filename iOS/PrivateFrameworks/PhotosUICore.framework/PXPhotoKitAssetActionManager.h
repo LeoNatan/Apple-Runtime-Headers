@@ -18,15 +18,15 @@
     PXAssetActionPerformer *__activePerformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setActivePerformer:) PXAssetActionPerformer *_activePerformer; // @synthesize _activePerformer=__activePerformer;
 @property(readonly, nonatomic) PXPhotosDataSource *_dataSourceSnapshot; // @synthesize _dataSourceSnapshot=__dataSourceSnapshot;
 @property(readonly, nonatomic) NSMapTable *_actionTypeByBarButtonItem; // @synthesize _actionTypeByBarButtonItem=__actionTypeByBarButtonItem;
 @property(readonly, nonatomic) NSMutableDictionary *_performerClassByType; // @synthesize _performerClassByType=__performerClassByType;
 @property(retain, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(retain, nonatomic) PXPhotoKitAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)_handleActionPerformerComplete:(id)arg1 success:(_Bool)arg2 error:(id)arg3;
-- (void)_handleActionType:(id)arg1;
+- (void)executeActionForActionType:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleBarButtonItem:(id)arg1;
 - (void)_handlePreviewAction:(id)arg1 actionType:(id)arg2;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;

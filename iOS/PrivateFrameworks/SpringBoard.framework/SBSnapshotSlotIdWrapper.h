@@ -14,9 +14,9 @@
     CAContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) unsigned int slotId; // @synthesize slotId=_slotId;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (id)initWithContext:(id)arg1 slotId:(unsigned int)arg2;

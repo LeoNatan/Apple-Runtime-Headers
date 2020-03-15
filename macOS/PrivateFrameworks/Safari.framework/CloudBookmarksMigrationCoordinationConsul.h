@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     long long _localMigrationState;
 }
 
-@property(nonatomic) long long localMigrationState; // @synthesize localMigrationState=_localMigrationState;
 - (void).cxx_destruct;
+@property(nonatomic) long long localMigrationState; // @synthesize localMigrationState=_localMigrationState;
 - (void)_syncAgentDidFinish:(id)arg1;
 @property(nonatomic) BOOL migrationReadinessDataInvalidated;
 - (id)_migrationEligibilityLogsDirectoryURL;

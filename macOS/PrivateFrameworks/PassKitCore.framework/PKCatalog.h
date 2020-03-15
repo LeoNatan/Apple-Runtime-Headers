@@ -22,11 +22,11 @@
 + (id)cloudStoreCatalogRecordTypeRecordNamePrefix;
 + (BOOL)supportsSecureCoding;
 + (id)catalogWithContentsOfURL:(id)arg1 nonUbiquitousCatalogURL:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSMutableArray *groups; // @synthesize groups=_groups;
-- (void).cxx_destruct;
 - (unsigned long long)itemType;
-- (id)recordTypesAndNames;
+- (id)recordTypesAndNamesIncludingServerData:(BOOL)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;
 - (void)shuffle:(int)arg1;

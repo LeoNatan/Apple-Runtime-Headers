@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *eventHandlers; // @synthesize eventHandlers=_eventHandlers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)unregisterHandler:(CDUnknownBlockType)arg1 forEventName:(id)arg2;
 - (void)registerHandler:(CDUnknownBlockType)arg1 forEventName:(id)arg2;
 - (void)_startMonitoringEventsForStream:(unsigned long long)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_urlString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *URLString; // @synthesize URLString=_urlString;
 @property(readonly, nonatomic) long long facebookType; // @synthesize facebookType=_facebookType;
-- (void).cxx_destruct;
 - (long long)pageComponentType;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

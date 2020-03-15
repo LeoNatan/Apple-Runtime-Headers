@@ -13,8 +13,8 @@
     MFMailboxProvider *_mailboxProvider;
 }
 
-@property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
 - (id)_transformLibraryMessage:(id)arg1 mailboxScope:(id)arg2 mailboxObjectIDs:(id)arg3;
 - (id)transformECMessages:(id)arg1 mailboxScope:(id)arg2;
 - (id)transformLibraryMessage:(id)arg1 mailboxScope:(id)arg2;

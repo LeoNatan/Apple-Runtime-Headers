@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
 
 + (Class)changedShareType;
 + (Class)changedRecordType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pendingArchivedRecords; // @synthesize pendingArchivedRecords=_pendingArchivedRecords;
 @property(retain, nonatomic) NSMutableArray *changedShares; // @synthesize changedShares=_changedShares;
 @property(retain, nonatomic) NSData *clientChangeToken; // @synthesize clientChangeToken=_clientChangeToken;
 @property(retain, nonatomic) NSData *syncContinuationToken; // @synthesize syncContinuationToken=_syncContinuationToken;
 @property(retain, nonatomic) NSMutableArray *changedRecords; // @synthesize changedRecords=_changedRecords;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

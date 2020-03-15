@@ -31,6 +31,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *placeHolder; // @synthesize placeHolder=_placeHolder;
 @property(retain, nonatomic) NSString *invitedBy; // @synthesize invitedBy=_invitedBy;
 @property(nonatomic) int localId; // @synthesize localId=_localId;
@@ -40,7 +41,6 @@
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *email; // @synthesize email=_email;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)icsUserAddress;
 - (id)copyOfSelfWithoutLocalID;
 - (id)fullEmailString;

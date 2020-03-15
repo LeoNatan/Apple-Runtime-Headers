@@ -24,6 +24,7 @@
 + (id)unarchiveFromData:(id)arg1 replica:(id)arg2;
 + (id)documentWithRootObject:(id)arg1 replica:(id)arg2;
 + (id)documentWithReplica:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long unserializedReplicaClock; // @synthesize unserializedReplicaClock=_unserializedReplicaClock;
 @property(readonly, nonatomic) long long replicaClock; // @synthesize replicaClock=_replicaClock;
 @property(readonly, nonatomic) NSMutableDictionary *objects; // @synthesize objects=_objects;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSUUID *replica; // @synthesize replica=_replica;
 @property(readonly, nonatomic) CRVectorTimestamp *startVersion; // @synthesize startVersion=_startVersion;
 @property(readonly, nonatomic) CRVectorTimestamp *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)deltaSince:(id)arg1;
 - (unsigned long long)mergeWithDocument:(id)arg1;

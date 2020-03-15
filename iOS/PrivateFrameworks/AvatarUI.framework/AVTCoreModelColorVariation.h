@@ -14,9 +14,9 @@
     AVTCoreModelColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTCoreModelColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) AVTColorPreset *colorPreset; // @synthesize colorPreset=_colorPreset;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

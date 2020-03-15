@@ -54,14 +54,14 @@
     WBSHistoryCrypto *_crypto;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryCrypto *crypto; // @synthesize crypto=_crypto;
 @property(readonly, nonatomic) WBSSQLiteDatabase *database; // @synthesize database=_database;
 @property(nonatomic) _Bool syncsWithManateeContainer; // @synthesize syncsWithManateeContainer=_syncsWithManateeContainer;
 @property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
 @property(nonatomic) _Bool pushNotificationsAreInitialized; // @synthesize pushNotificationsAreInitialized=_pushNotificationsAreInitialized;
 @property(nonatomic) __weak id <WBSHistoryStoreDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *salt;
 - (void)_checkpointWriteAheadLog;
 - (void)_expireOldVisits;

@@ -16,14 +16,15 @@
     NSMutableArray *_containers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *containers; // @synthesize containers=_containers;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 - (void)applyDiff:(id)arg1 toContainerWithIdentifier:(id)arg2;
 - (id)defaultContainer;
 - (id)allContainers;
 - (id)makePersistenceContextWithNotificationSource:(id)arg1;
 - (id)makeManagedObjectContextWithConcurrencyType:(unsigned long long)arg1;
+- (id)addAccountContainerWithProvider:(CDUnknownBlockType)arg1;
 - (id)addAccountContainerWithName:(id)arg1 type:(long long)arg2 writable:(BOOL)arg3;
 - (id)addAccountContainerWithName:(id)arg1 type:(long long)arg2;
 - (id)init;

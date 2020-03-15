@@ -14,9 +14,9 @@
     NSArray *_tracks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *tracks; // @synthesize tracks=_tracks;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 tracks:(id)arg2;

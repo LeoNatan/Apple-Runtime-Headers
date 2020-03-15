@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
     int _pageIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int pageIndex; // @synthesize pageIndex=_pageIndex;
 @property(nonatomic) __weak id <PageRangeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (_Bool)accessibilityActivate;
 - (id)accessibilityHint;
 - (id)accessibilityValue;

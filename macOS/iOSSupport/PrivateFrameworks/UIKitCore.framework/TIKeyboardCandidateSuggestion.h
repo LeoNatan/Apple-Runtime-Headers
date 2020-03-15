@@ -16,8 +16,8 @@
 
 + (id)candidateWithSuggestion:(id)arg1 customInfoType:(unsigned long long)arg2;
 + (id)candidateWithSuggestion:(id)arg1;
-@property(readonly, nonatomic) UITextSuggestion *textSuggestion; // @synthesize textSuggestion=_textSuggestion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextSuggestion *textSuggestion; // @synthesize textSuggestion=_textSuggestion;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSuggestion:(id)arg1 customInfoType:(unsigned long long)arg2;

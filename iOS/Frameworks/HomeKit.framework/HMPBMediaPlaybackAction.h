@@ -23,12 +23,12 @@
 }
 
 + (Class)mediaProfilesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSData *volume; // @synthesize volume=_volume;
 @property(nonatomic) int mediaPlaybackState; // @synthesize mediaPlaybackState=_mediaPlaybackState;
 @property(retain, nonatomic) NSMutableArray *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 @property(retain, nonatomic) NSData *actionUUID; // @synthesize actionUUID=_actionUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

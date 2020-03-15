@@ -27,9 +27,9 @@
 + (id)cloudPlistName;
 + (id)cameraRollPlistName;
 + (id)migrateOldPlistToNewPlist:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSURL *directoryURL; // @synthesize directoryURL=_baseURL;
 @property _Bool representsCameraRoll; // @synthesize representsCameraRoll=_representsCameraRoll;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)nextAvailableFileURLWithExtension:(id)arg1;
 - (id)init;

@@ -18,10 +18,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *birthDate; // @synthesize birthDate=_birthDate;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

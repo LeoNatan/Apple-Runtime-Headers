@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
-@property(retain, nonatomic) NSString *buildType; // @synthesize buildType=_buildType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *buildType; // @synthesize buildType=_buildType;
 - (_Bool)evaluate;
 - (void)processUserInfo:(id)arg1;
 

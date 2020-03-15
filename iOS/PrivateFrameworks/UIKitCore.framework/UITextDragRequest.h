@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSArray *_suggestedItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) NSArray *suggestedItems; // @synthesize suggestedItems=_suggestedItems;
 @property(readonly, nonatomic) id <UIDragSession> dragSession; // @synthesize dragSession=_dragSession;
 @property(readonly, nonatomic) NSArray *existingItems; // @synthesize existingItems=_existingItems;
 @property(readonly, nonatomic) UITextRange *dragRange; // @synthesize dragRange=_dragRange;
-- (void).cxx_destruct;
 - (id)initWithRange:(id)arg1 inSession:(id)arg2;
 
 // Remaining properties

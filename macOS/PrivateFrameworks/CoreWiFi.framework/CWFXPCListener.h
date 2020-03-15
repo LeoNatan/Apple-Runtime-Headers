@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     long long _XPCServiceType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long XPCServiceType; // @synthesize XPCServiceType=_XPCServiceType;
 @property(retain) id <CWFXPCListenerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)XPCConnection:(id)arg1 receivedXPCRequest:(id)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (BOOL)__allowXPCConnection:(id)arg1 serviceType:(long long)arg2;

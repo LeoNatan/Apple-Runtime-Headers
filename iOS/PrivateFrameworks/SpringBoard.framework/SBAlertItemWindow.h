@@ -10,6 +10,10 @@
 {
 }
 
+- (void)setBounds:(struct CGRect)arg1;
+- (void)setFrame:(struct CGRect)arg1;
+- (void)setCenter:(struct CGPoint)arg1;
+- (void)setTransform:(struct CGAffineTransform)arg1;
 - (_Bool)_canBecomeKeyWindow;
 
 @end

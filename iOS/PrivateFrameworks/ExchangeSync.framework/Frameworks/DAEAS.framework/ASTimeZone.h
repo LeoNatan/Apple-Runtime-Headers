@@ -19,7 +19,6 @@
 
 + (_Bool)expectsContent;
 + (void)_cacheTimeZoneInfo;
-+ (_Bool)_loadDataFromDisk;
 + (id)_curTZDataVersion;
 + (id)_tzCachePathCreateIfMissing:(_Bool)arg1;
 + (void)_fillOutCurrentTimeZoneInfo;
@@ -50,7 +49,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 lengthUntilEndOfTerminator:(int)arg6;
-- (id)_bestGuessAtOlsonTimeZoneForOffsetInMinutes:(int)arg1 firstTransitionDate:(struct _SYSTEMTIME *)arg2 secondTransitionDate:(struct _SYSTEMTIME *)arg3;
+- (id)_bestGuessAtOlsonTimeZoneForOffsetInMinutes:(int)arg1 daylightBiasInMinutes:(int)arg2 standardTransitionDate:(struct _SYSTEMTIME *)arg3 daylightTransitionDate:(struct _SYSTEMTIME *)arg4;
 - (id)initWithTZNameFromCalDB:(id)arg1;
 
 @end

@@ -39,6 +39,7 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
@@ -47,7 +48,6 @@
 @property(nonatomic) _Bool idsEncryption; // @synthesize idsEncryption=_idsEncryption;
 @property(copy, nonatomic) NSString *idsDestination; // @synthesize idsDestination=_idsDestination;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (void)sessionStarted:(id)arg1;
 - (void)session:(id)arg1 receivedInvitationCancelFromID:(id)arg2;

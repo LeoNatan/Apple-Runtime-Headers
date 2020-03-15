@@ -15,9 +15,9 @@
 }
 
 + (id)defaultSerializationCenter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) NSOperationQueue *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
-- (void).cxx_destruct;
 - (id)importData:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)exportDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSUndoManager *undoManager;

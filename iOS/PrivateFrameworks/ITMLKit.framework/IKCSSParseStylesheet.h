@@ -13,8 +13,8 @@
     IKArray *_cssValue;
 }
 
-@property(retain, nonatomic) IKArray *cssValue; // @synthesize cssValue=_cssValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKArray *cssValue; // @synthesize cssValue=_cssValue;
 - (id)description;
 
 @end

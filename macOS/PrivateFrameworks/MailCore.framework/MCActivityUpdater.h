@@ -15,10 +15,10 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL valid; // @synthesize valid=_valid;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) MCActivityMonitor *monitor; // @synthesize monitor=_monitor;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

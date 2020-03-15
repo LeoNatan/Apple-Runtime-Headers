@@ -17,12 +17,12 @@
     long long _tag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

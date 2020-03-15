@@ -16,9 +16,9 @@
     _Bool _selected;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isSelected; // @synthesize isSelected=_selected;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithText:(id)arg1 selected:(_Bool)arg2;

@@ -18,13 +18,13 @@
     NSDate *_createdAt;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(readonly, nonatomic) NSURL *mapItemURL; // @synthesize mapItemURL=_mapItemURL;
 @property(readonly, nonatomic) NSString *fullFormattedAddress; // @synthesize fullFormattedAddress=_fullFormattedAddress;
 @property(readonly, nonatomic) NSString *originatingBundleID; // @synthesize originatingBundleID=_originatingBundleID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLocation:(id)arg1 name:(id)arg2 originatingBundleID:(id)arg3 fullFormattedAddress:(id)arg4 mapItemURL:(id)arg5 createdAt:(id)arg6;
 - (id)init;

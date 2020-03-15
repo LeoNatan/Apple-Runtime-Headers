@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_command;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *command; // @synthesize command=_command;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) __weak AppExtensionContextMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
-- (void).cxx_destruct;
 - (id)userInfoForPageUUID:(id)arg1;
 - (id)initWithAppExtensionContextMenu:(id)arg1 text:(id)arg2 command:(id)arg3;
 

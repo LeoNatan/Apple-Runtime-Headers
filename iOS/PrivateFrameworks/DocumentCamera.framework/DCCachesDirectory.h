@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedCachesDirectory;
-@property(readonly, nonatomic) NSURL *cachesDirectoryURL; // @synthesize cachesDirectoryURL=_cachesDirectoryURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *cachesDirectoryURL; // @synthesize cachesDirectoryURL=_cachesDirectoryURL;
 - (id)init;
 
 @end

@@ -24,11 +24,11 @@
 }
 
 + (_Bool)shouldRunGeometricAutoCalculatorForSource:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 videoFrameTime; // @synthesize videoFrameTime=_videoFrameTime;
 @property(retain, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(retain, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(retain, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
-- (void).cxx_destruct;
 - (void)_ensureInitialImageValuesAreComputed;
 - (void)_ensureCurrentImageValuesAreComputed;
 - (void)computeAutoEnhanceWithCompletionHandler:(CDUnknownBlockType)arg1;

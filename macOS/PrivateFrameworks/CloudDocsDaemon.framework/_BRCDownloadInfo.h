@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_resumeUnitCounts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *resumeUnitCounts; // @synthesize resumeUnitCounts=_resumeUnitCounts;
 @property(nonatomic) long long previousTotalUnitCount; // @synthesize previousTotalUnitCount;
 @property(nonatomic) long long previousCompletedUnitCount; // @synthesize previousCompletedUnitCount;
-- (void).cxx_destruct;
 - (void)copyProgressInfoToProgress:(id)arg1 options:(BOOL)arg2;
 - (void)updateLocalizedDescriptionWithOptions:(BOOL)arg1;
 - (id)init;

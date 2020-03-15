@@ -15,10 +15,10 @@
     NSLayoutConstraint *_labelConstraintTrailing;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *labelConstraintTrailing; // @synthesize labelConstraintTrailing=_labelConstraintTrailing;
 @property(retain, nonatomic) NSLayoutConstraint *labelConstraintLeading; // @synthesize labelConstraintLeading=_labelConstraintLeading;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChange;
 @property(nonatomic) double titleInset;
 @property(retain, nonatomic) NSString *title;

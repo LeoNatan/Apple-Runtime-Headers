@@ -31,9 +31,9 @@
 + (id)defaultScheduler;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EFFuture *messageFuture; // @synthesize messageFuture=_messageFuture;
 @property(readonly, nonatomic) id <EMCollectionItemID> itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (id)addLoadObserver:(CDUnknownBlockType)arg1;
 - (id)onScheduler:(id)arg1 addLoadObserver:(CDUnknownBlockType)arg2;
 @property(readonly) unsigned long long state;

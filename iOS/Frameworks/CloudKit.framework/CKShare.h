@@ -35,6 +35,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKShareID *shareID; // @synthesize shareID=_shareID;
 @property(nonatomic) _Bool serializePersonalInfo; // @synthesize serializePersonalInfo=_serializePersonalInfo;
 @property(retain, nonatomic) NSArray *invitedKeysToRemove; // @synthesize invitedKeysToRemove=_invitedKeysToRemove;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSMutableSet *removedParticipantIDs; // @synthesize removedParticipantIDs=_removedParticipantIDs;
 @property(retain, nonatomic) NSMutableSet *addedParticipantIDs; // @synthesize addedParticipantIDs=_addedParticipantIDs;
 @property(nonatomic) long long publicPermission; // @synthesize publicPermission=_publicPermission;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeSystemFieldsWithCoder:(id)arg1;
 - (id)shareURL;

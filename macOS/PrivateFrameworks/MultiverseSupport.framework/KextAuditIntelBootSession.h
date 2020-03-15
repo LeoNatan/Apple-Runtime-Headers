@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) int instanceTag; // @synthesize instanceTag=_instanceTag;
 @property(retain) NSMutableArray *errors; // @synthesize errors=_errors;
 @property(retain) NSMutableArray *kexts; // @synthesize kexts=_kexts;
@@ -35,7 +36,6 @@
 @property unsigned int imkTypeTag; // @synthesize imkTypeTag=_imkTypeTag;
 @property unsigned int csrConfig; // @synthesize csrConfig=_csrConfig;
 @property unsigned char csrStatus; // @synthesize csrStatus=_csrStatus;
-- (void).cxx_destruct;
 - (void)invalidate:(id)arg1;
 - (_Bool)hasKernel;
 - (_Bool)isValid;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *__cachedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableOrderedSet *_cachedObjects; // @synthesize _cachedObjects=__cachedObjects;
 @property(readonly, nonatomic) NSMapTable *_mapTable; // @synthesize _mapTable=__mapTable;
 @property(nonatomic) unsigned long long cacheCountLimit; // @synthesize cacheCountLimit=_cacheCountLimit;
-- (void).cxx_destruct;
 - (void)_objectWasRecentlyUsed:(id)arg1;
 - (unsigned long long)_initialCapacity;
 - (id)_cachedObjectsCreateIfNeeded:(_Bool)arg1;

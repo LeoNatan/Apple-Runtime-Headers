@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     UIWindow *_dragAnimationWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *dragAnimationWindow; // @synthesize dragAnimationWindow=_dragAnimationWindow;
 @property(retain, nonatomic) UIView *dragAnimationPortalView; // @synthesize dragAnimationPortalView=_dragAnimationPortalView;
 @property(copy, nonatomic) CDUnknownBlockType postDismissCleanUp; // @synthesize postDismissCleanUp=_postDismissCleanUp;
 @property(copy, nonatomic) CDUnknownBlockType postDismissItemUpdate; // @synthesize postDismissItemUpdate=_postDismissItemUpdate;
 @property(retain, nonatomic) _UIPlatterView *destinationPlatterView; // @synthesize destinationPlatterView=_destinationPlatterView;
 @property(retain, nonatomic) UIView *dragContainer; // @synthesize dragContainer=_dragContainer;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *presentationContainer; // @synthesize presentationContainer=_presentationContainer;
 
 @end

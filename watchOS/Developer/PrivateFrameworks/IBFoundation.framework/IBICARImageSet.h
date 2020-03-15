@@ -33,15 +33,15 @@
 + (id)createInstanceNamed:(id)arg1 baseSize:(struct CGSize)arg2 usingRenderer:(CDUnknownBlockType)arg3;
 + (id)createDefaultInstancesForUnitTesting;
 + (Class)assetRepClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUnitLength *unit; // @synthesize unit=_unit;
 @property(nonatomic) double width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)enclosingResourceGroup;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (CDStruct_2a4d9400)taggingSupport;
 - (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;

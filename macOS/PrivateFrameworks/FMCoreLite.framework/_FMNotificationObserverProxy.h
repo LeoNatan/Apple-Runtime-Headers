@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSString *_notificationName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
 @property(readonly, copy, nonatomic) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
 @property(readonly, nonatomic) NSOperationQueue *observerQueue; // @synthesize observerQueue=_observerQueue;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)performObserverBlock;
 - (id)initWithWeakObserver:(id)arg1 notificationName:(id)arg2 observerQueue:(id)arg3 observerBlock:(CDUnknownBlockType)arg4;

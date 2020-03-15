@@ -15,9 +15,9 @@
 }
 
 + (id)serializationTypeNumber;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SignpostEvent *endEvent; // @synthesize endEvent=_endEvent;
 @property(retain, nonatomic) SignpostEvent *beginEvent; // @synthesize beginEvent=_beginEvent;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)_eventDescriptions;
 - (float)durationSeconds;

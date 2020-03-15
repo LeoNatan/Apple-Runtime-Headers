@@ -13,8 +13,8 @@
     IMEventListener *_eventListener;
 }
 
-@property(readonly, nonatomic) __weak IMEventListener *eventListener; // @synthesize eventListener=_eventListener;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IMEventListener *eventListener; // @synthesize eventListener=_eventListener;
 - (id)initWithEventListener:(id)arg1;
 
 @end

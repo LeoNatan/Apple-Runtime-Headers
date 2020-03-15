@@ -21,11 +21,11 @@
 
 + (id)retrySynchronousIPC:(CDUnknownBlockType)arg1;
 + (id)sharedConnection;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *promiseInstances; // @synthesize promiseInstances=_promiseInstances;
 @property(readonly, nonatomic) NSMutableDictionary *coordinatorInstances; // @synthesize coordinatorInstances=_coordinatorInstances;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (oneway void)_client_promiseWithUUID:(id)arg1 didCancelWithReason:(id)arg2 client:(unsigned int)arg3;
 - (oneway void)_client_promiseDidCompleteSuccessfullyWithUUID:(id)arg1;
 - (oneway void)_client_coordinatorWithUUID:(id)arg1 didCancelWithReason:(id)arg2 client:(unsigned int)arg3;

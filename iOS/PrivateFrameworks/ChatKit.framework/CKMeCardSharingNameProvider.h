@@ -23,11 +23,11 @@
 + (id)nameProviderForAccount:(id)arg1;
 + (id)nameProviderForNickname:(id)arg1;
 + (id)nameProviderForContact:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(retain, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(retain, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

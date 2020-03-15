@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)defaultMaxSequenceLength;
 + (id)trainingDataFor:(long long)arg1 andLocale:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool processingNewRecord; // @synthesize processingNewRecord=_processingNewRecord;
 @property(nonatomic) unsigned long long iterator; // @synthesize iterator=_iterator;
 @property(retain, nonatomic) NSMutableArray *sentences; // @synthesize sentences=_sentences;
 @property(nonatomic) unsigned long long maxSequenceLength; // @synthesize maxSequenceLength=_maxSequenceLength;
-- (void).cxx_destruct;
 - (void)addResource:(id)arg1;
 - (_Bool)loadFromCoreDuet:(id)arg1 withLocale:(id)arg2 andTokenizationBlock:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) unsigned long long numTrainingSamples;

@@ -25,11 +25,11 @@
 + (id)ephemeralKeyPathWithKey:(id)arg1;
 + (id)keyPathWithKey:(id)arg1;
 + (id)keyPathWithKey:(id)arg1 isUserCentric:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isEphemeral; // @synthesize isEphemeral=_isEphemeral;
 @property(nonatomic) BOOL isUserCentric; // @synthesize isUserCentric=_isUserCentric;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

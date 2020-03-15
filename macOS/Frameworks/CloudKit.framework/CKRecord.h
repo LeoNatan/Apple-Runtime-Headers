@@ -72,6 +72,7 @@
 + (id)encryptFullToken:(id)arg1 shortSharingTokenData:(id)arg2;
 + (id)fullTokenFromBaseToken:(id)arg1 privateToken:(id)arg2;
 + (id)recordWithDuplicatedPackagesOfRecord:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *pcsKeyID; // @synthesize pcsKeyID=_pcsKeyID;
 @property(retain, nonatomic) NSString *previousProtectionEtagFromUnitTest; // @synthesize previousProtectionEtagFromUnitTest=_previousProtectionEtagFromUnitTest;
 @property(copy, nonatomic) NSDictionary *pluginFields; // @synthesize pluginFields=_pluginFields;
@@ -116,7 +117,6 @@
 @property(copy, nonatomic) CKRecordID *creatorUserRecordID; // @synthesize creatorUserRecordID=_creatorUserRecordID;
 @property(copy, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(copy, nonatomic) NSString *recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 - (void)claimPackagesWithSuccessBlock:(CDUnknownBlockType)arg1 failureBlock:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)removePackages;
 - (void)releasePackages;

@@ -16,9 +16,9 @@
     RTDistanceCalculator *_distanceCalculator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(readonly, nonatomic) RTVehicleLocationProvider *vehicleLocationProvider; // @synthesize vehicleLocationProvider=_vehicleLocationProvider;
-- (void).cxx_destruct;
 - (void)fetchPredictedExitDatesWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchNextPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;

@@ -17,12 +17,12 @@
     NSSet *_deletedMediaEntityIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *deletedMediaEntityIdentifiers; // @synthesize deletedMediaEntityIdentifiers=_deletedMediaEntityIdentifiers;
 @property(copy, nonatomic) NSArray *sortHeaders; // @synthesize sortHeaders=_sortHeaders;
 @property(copy, nonatomic) NSArray *mediaEntities; // @synthesize mediaEntities=_mediaEntities;
 @property(nonatomic) unsigned long long mediaEntitySubtype; // @synthesize mediaEntitySubtype=_mediaEntitySubtype;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

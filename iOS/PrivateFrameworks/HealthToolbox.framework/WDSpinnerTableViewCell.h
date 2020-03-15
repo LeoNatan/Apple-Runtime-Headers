@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain) UILabel *waitingReasonLabel; // @synthesize waitingReasonLabel=_waitingReasonLabel;
 @property(retain) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(retain) UIView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 @property(retain, nonatomic) NSString *waitingReason;
 - (void)setupConstraints;

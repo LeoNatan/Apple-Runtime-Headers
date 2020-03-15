@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subText; // @synthesize subText=_subText;
 @property(retain, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (id)initWithHeader:(id)arg1 subText:(id)arg2;
 
 @end

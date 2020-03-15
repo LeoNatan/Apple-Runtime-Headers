@@ -42,6 +42,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPunctuationEntryFollowingAWord; // @synthesize isPunctuationEntryFollowingAWord=_isPunctuationEntryFollowingAWord;
 @property long long candidateIndex; // @synthesize candidateIndex=_candidateIndex;
 @property(nonatomic) unsigned long long alignmentConflicts; // @synthesize alignmentConflicts=_alignmentConflicts;
@@ -71,7 +72,6 @@
 @property(copy, nonatomic) NSString *orientation; // @synthesize orientation=_orientation;
 @property(copy, nonatomic) NSString *originalAcceptedString; // @synthesize originalAcceptedString=_originalAcceptedString;
 @property(copy, nonatomic) NSString *acceptedString; // @synthesize acceptedString=_acceptedString;
-- (void).cxx_destruct;
 - (_Bool)isEntryFollowingANewLine;
 @property(readonly, nonatomic) NSArray *touchLayouts;
 @property(readonly, nonatomic) NSArray *candidatesOffered;

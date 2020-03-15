@@ -13,8 +13,8 @@
     PKSplashImageHeaderView *_headerView;
 }
 
-@property(readonly, nonatomic) PKSplashImageHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKSplashImageHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

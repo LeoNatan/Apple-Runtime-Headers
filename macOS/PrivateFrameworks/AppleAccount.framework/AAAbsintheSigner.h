@@ -22,9 +22,9 @@
 + (void)_setContextCreationBlock:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)_contextCreationBlock;
 + (id)sharedSigner;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AAURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) double cacheTimeout; // @synthesize cacheTimeout=_cacheTimeout;
-- (void).cxx_destruct;
 - (void)_fetchSessionInfoWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_fetchCertificateDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_contextQueue_contextWithCompletion:(CDUnknownBlockType)arg1;

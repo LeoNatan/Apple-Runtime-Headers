@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     BOOL _successfullyPrepared;
 }
 
+- (void).cxx_destruct;
 @property BOOL successfullyPrepared; // @synthesize successfullyPrepared=_successfullyPrepared;
 @property BOOL privateTablesChanged; // @synthesize privateTablesChanged=_privateTablesChanged;
 @property BOOL shouldSyncWhenSaved; // @synthesize shouldSyncWhenSaved=_shouldSyncWhenSaved;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain) NSMutableDictionary *privateUserInfo; // @synthesize privateUserInfo=_privateUserInfo;
 @property(retain) NSMutableDictionary *publicUserInfo; // @synthesize publicUserInfo=_publicUserInfo;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

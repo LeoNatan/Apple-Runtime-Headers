@@ -26,6 +26,7 @@
     long long _nextIndexToProcess;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long nextIndexToProcess; // @synthesize nextIndexToProcess=_nextIndexToProcess;
 @property(readonly, nonatomic) NSOperationQueue *serializationQueue; // @synthesize serializationQueue=_serializationQueue;
 @property(retain, nonatomic) MFMessageCriterion *threadScope; // @synthesize threadScope=_threadScope;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSArray *excludedMailboxURLs; // @synthesize excludedMailboxURLs=_excludedMailboxURLs;
 @property(nonatomic) BOOL checkWhereFromsPaths; // @synthesize checkWhereFromsPaths=_checkWhereFromsPaths;
 @property(retain, nonatomic) id <MFMessageConsumer> target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)cancelQuery;
 - (void)_messagesCompacted:(id)arg1;
 - (void)_messagesAdded:(id)arg1;

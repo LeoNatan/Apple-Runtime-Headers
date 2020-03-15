@@ -23,11 +23,11 @@
 + (void)registerValueMapping:(CDUnknownBlockType)arg1;
 + (id)predicateWithValueBlock:(CDUnknownBlockType)arg1 forProperty:(id)arg2;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int comparisonType; // @synthesize comparisonType=_comparisonType;
 @property(readonly, copy, nonatomic) CDUnknownBlockType valueBlock; // @synthesize valueBlock=_valueBlock;
 @property(readonly, copy, nonatomic) id <NSCopying> value; // @synthesize value=_value;
 @property(readonly, nonatomic) WFContentProperty *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *containedProperties;
 - (_Bool)evaluateWithValues:(id)arg1;
 - (void)evaluateWithObject:(id)arg1 propertySubstitutor:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;

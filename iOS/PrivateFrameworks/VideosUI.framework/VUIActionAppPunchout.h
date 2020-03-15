@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSURL *_punchoutURLWithoutAssociatedPlayable;
 }
 
-@property(readonly, nonatomic) NSURL *punchoutURLWithoutAssociatedPlayable; // @synthesize punchoutURLWithoutAssociatedPlayable=_punchoutURLWithoutAssociatedPlayable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *punchoutURLWithoutAssociatedPlayable; // @synthesize punchoutURLWithoutAssociatedPlayable=_punchoutURLWithoutAssociatedPlayable;
 - (_Bool)_openPunchoutURL:(id)arg1 isPlaybackURL:(_Bool)arg2;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1;

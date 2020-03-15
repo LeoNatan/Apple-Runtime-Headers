@@ -24,6 +24,7 @@
         char willEndForConfiguration;
         char styleForMenuWithConfiguration;
         char accessoriesForMenuWithConfiguration;
+        char failedToBeginForSecondaryClickAtLocation;
         char asyncConfigurationForMenuAtLocation;
         char overrideSuggestedActions;
         char shouldAllowDragAfterDismiss;
@@ -44,6 +45,7 @@
 }
 
 + (id)_deferredMenuPlaceholder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIContextMenuAnimator *pendingCommitAnimator; // @synthesize pendingCommitAnimator=_pendingCommitAnimator;
 @property(copy, nonatomic) UITargetedPreview *stashedPreview; // @synthesize stashedPreview=_stashedPreview;
 @property(retain, nonatomic) _UIClickPresentationInteraction *presentationInteraction; // @synthesize presentationInteraction=_presentationInteraction;
@@ -52,13 +54,14 @@
 @property(retain, nonatomic) UIContextMenuConfiguration *pendingConfiguration; // @synthesize pendingConfiguration=_pendingConfiguration;
 @property(readonly, nonatomic) __weak id <UIContextMenuInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)_suggestedMenuForConfiguration:(id)arg1;
 - (id)_delegate_contextMenuInteractionWillEndForConfiguration:(id)arg1 presentation:(id)arg2;
 - (id)_delegate_contextMenuInteractionWillDisplayForConfiguration:(id)arg1;
 - (void)_delegate_tappedPreviewForConfiguration:(id)arg1 withAnimator:(id)arg2;
+- (id)_overrideTargetedPreviewForCompactStyle:(id)arg1;
 - (id)_delegate_previewForDismissingForConfiguration:(id)arg1;
 - (id)_delegate_previewForHighlightingForConfiguration:(id)arg1;
+- (BOOL)_delegate_failedToBeginForSecondaryClickAtLocation:(struct CGPoint)arg1;
 - (id)_delegate_configurationForMenuAtLocation:(struct CGPoint)arg1;
 - (void)_interactionShouldBeginAtLocation:(struct CGPoint)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)targetedPreviewForAnimator:(id)arg1 dismissingWithStyle:(unsigned long long)arg2;
@@ -72,7 +75,7 @@
 - (void)_previewPlatterPresentationControllerDidBeginPanInteraction:(id)arg1;
 - (void)_clickPresentationInteraction:(id)arg1 dragSessionDidEndForItems:(id)arg2;
 - (void)_clickPresentationInteractionEnded:(id)arg1 forPresentation:(id)arg2 reason:(unsigned long long)arg3;
-- (id)_fulfilledConfigurationForConfiguration:(id)arg1;
+- (id)_fulfilledConfigurationForConfiguration:(id)arg1 activationMode:(unsigned long long)arg2;
 - (unsigned long long)_actualLayoutForPreferredLayout:(unsigned long long)arg1 withConfiguration:(id)arg2;
 - (id)_accessoryViewsForPreviewPlatterPresentationController:(id)arg1;
 - (id)clickPresentationInteraction:(id)arg1 presentationForPresentingViewController:(id)arg2;
@@ -86,6 +89,8 @@
 - (void)_clickPresentationInteraction:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizerForFailureRelationships;
 @property(nonatomic) BOOL allowSimultaneousRecognition;
+@property(readonly, nonatomic) unsigned long long _inputPrecision;
+- (unsigned long long)_currentActivationMode;
 - (void)_updateVisibleMenuWithBlock:(CDUnknownBlockType)arg1;
 - (void)dismissMenu;
 - (void)_presentMenuAtLocation:(struct CGPoint)arg1;

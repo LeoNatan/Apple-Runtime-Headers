@@ -14,9 +14,9 @@
     NSString *_spatialOverCaptureLivePhotoPairingIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *spatialOverCaptureLivePhotoPairingIdentifier; // @synthesize spatialOverCaptureLivePhotoPairingIdentifier=_spatialOverCaptureLivePhotoPairingIdentifier;
 @property(copy, nonatomic) NSString *spatialOverCaptureGroupIdentifier; // @synthesize spatialOverCaptureGroupIdentifier=_spatialOverCaptureGroupIdentifier;
-- (void).cxx_destruct;
 
 @end
 

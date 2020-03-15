@@ -49,6 +49,7 @@
 + (id)currentLocation;
 + (id)manager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType suggestionsFoundHandler; // @synthesize suggestionsFoundHandler=_suggestionsFoundHandler;
 @property(retain) CalUILocationSuggestionResult *suggestionBeingGeocoded; // @synthesize suggestionBeingGeocoded=_suggestionBeingGeocoded;
 @property(retain) NSMutableArray *suggestionsNeedingGeocoding; // @synthesize suggestionsNeedingGeocoding=_suggestionsNeedingGeocoding;
@@ -71,7 +72,6 @@
 @property unsigned long long options; // @synthesize options=_options;
 @property(retain) CalUILocationSuggestionResult *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(retain, nonatomic) NSString *redactedCurrentQuery; // @synthesize redactedCurrentQuery=_redactedCurrentQuery;
-- (void).cxx_destruct;
 - (void)completerDidFail:(id)arg1 error:(id)arg2;
 - (void)geocodeNextLocationSuggestion;
 - (void)handleCompletedGeocodeWithPlacemark:(id)arg1 error:(id)arg2;

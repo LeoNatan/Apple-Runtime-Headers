@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *conversions; // @synthesize conversions=_conversions;
 @property(readonly) NSString *conversionType; // @synthesize conversionType=_conversionType;
 @property(readonly) NSString *localizedInputValueAndUnit; // @synthesize localizedInputValueAndUnit=_localizedInputValueAndUnit;
 @property(readonly) NSNumber *inputValue; // @synthesize inputValue=_inputValue;
 @property(readonly) NSString *inputUnit; // @synthesize inputUnit=_inputUnit;
-- (void).cxx_destruct;
 -     // Error parsing type: T16@0:8, name: rank
 -     // Error parsing type: T16@0:8, name: score
 - (BOOL)shouldNotBeTopHit;

@@ -59,6 +59,7 @@
 + (id)darkStyle;
 + (id)defaultStyle;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long inlineActionsViewStyle; // @synthesize inlineActionsViewStyle=_inlineActionsViewStyle;
 @property(nonatomic) long long topActionsViewStyle; // @synthesize topActionsViewStyle=_topActionsViewStyle;
 @property(nonatomic) long long modalTransitionStyle; // @synthesize modalTransitionStyle=_modalTransitionStyle;
@@ -95,7 +96,6 @@
 @property(retain, nonatomic) UIColor *taglineTextColor; // @synthesize taglineTextColor=_taglineTextColor;
 @property(retain, nonatomic) UIColor *sectionHeaderTextColor; // @synthesize sectionHeaderTextColor=_sectionHeaderTextColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFont *boldTextFont;
 @property(readonly, nonatomic) UIFont *textFont;
 - (void)encodeWithCoder:(id)arg1;

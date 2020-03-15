@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property __weak id <NSItemProviderDataTransferDelegate> dataTransferDelegate; // @synthesize dataTransferDelegate=_dataTransferDelegate;
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) NSUUID *_UUID; // @synthesize _UUID;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSMutableOrderedSet *_typeOrder; // @synthesize _typeOrder;
 @property(retain, nonatomic) NSMutableDictionary *_representationByType; // @synthesize _representationByType;
 @property(retain) id <_NSItemProviderLoading> _loadOperator; // @synthesize _loadOperator;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -19,10 +19,10 @@
     NSString *_virtualCardIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *virtualCardIdentifier; // @synthesize virtualCardIdentifier=_virtualCardIdentifier;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (void)setAction:(long long)arg1 withQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 

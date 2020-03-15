@@ -18,13 +18,13 @@
     long long _fadeOutLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long fadeOutLength; // @synthesize fadeOutLength=_fadeOutLength;
 @property(nonatomic) long long fadeInLength; // @synthesize fadeInLength=_fadeInLength;
 @property(nonatomic) long long duration; // @synthesize duration=_duration;
 @property(nonatomic) long long offset; // @synthesize offset=_offset;
 @property(nonatomic) long long position; // @synthesize position=_position;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

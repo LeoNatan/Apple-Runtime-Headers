@@ -17,7 +17,8 @@
 - (void)performWhenMenuOpens:(XCAccessibilityElement *)arg1 block:(void (^)(void))arg2;
 - (void)removeObserver:(id)arg1 forAXNotification:(NSString *)arg2;
 - (id)addObserverForAXNotification:(NSString *)arg1 handler:(void (^)(XCAccessibilityElement *, NSDictionary *))arg2;
-- (void)registerForAXNotificationsForApplicationWithPID:(int)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)unregisterForAXNotificationsForApplicationWithPID:(int)arg1;
+- (void)registerForAXNotificationsForApplicationWithPID:(int)arg1 timeout:(double)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (NSArray *)localizableStringsDataForActiveApplications;
 - (_Bool)enableFauxCollectionViewCells:(id *)arg1;
 - (void)notifyWhenViewControllerViewDidDisappearReply:(void (^)(NSDictionary *, NSError *))arg1;

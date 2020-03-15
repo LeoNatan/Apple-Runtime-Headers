@@ -11,8 +11,8 @@ __attribute__((visibility("hidden")))
 {
     struct __CFDictionary *mVectorUidToAlongMap;
     _Bool mReadingRowVectors;
-    vector_7584168e *mRowPositions;
-    vector_7584168e *mColumnPositions;
+    vector_f9ed6fc8 *mRowPositions;
+    vector_f9ed6fc8 *mColumnPositions;
     float mCurrentCellMinX;
     float mCurrentCellMaxX;
     float mCurrentCellMinY;

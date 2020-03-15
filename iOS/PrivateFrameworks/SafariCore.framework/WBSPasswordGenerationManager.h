@@ -16,9 +16,10 @@
 }
 
 + (_Bool)passwordLooksLikePasswordManagerGeneratedPassword:(id)arg1;
++ (unsigned long long)minimumPasswordLength;
 + (id)requirementsForPasswordRuleSet:(id)arg1 respectingMinLength:(id)arg2 maxLength:(id)arg3;
-@property(copy, nonatomic) NSDictionary *passwordRequirementsByDomain; // @synthesize passwordRequirementsByDomain=_passwordRequirementsByDomain;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *passwordRequirementsByDomain; // @synthesize passwordRequirementsByDomain=_passwordRequirementsByDomain;
 - (_Bool)passwordGenerationIsDisallowedByRequirements:(id)arg1;
 - (_Bool)manualPasswordGenerationIsDisallowedByRequirements:(id)arg1;
 - (id)protectionSpaceForGeneratedPasswordsInProtectionSpace:(id)arg1;

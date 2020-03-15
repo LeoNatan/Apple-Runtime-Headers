@@ -18,9 +18,9 @@
 + (id)tumblrOAuthTokenSecret;
 + (void)setTumblrOAuthToken:(id)arg1;
 + (id)tumblrOAuthToken;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *OAuthTokenSecret; // @synthesize OAuthTokenSecret=_OAuthTokenSecret;
 @property(copy, nonatomic) NSString *OAuthToken; // @synthesize OAuthToken=_OAuthToken;
-- (void).cxx_destruct;
 - (void)logOut;
 - (BOOL)canLogOut;
 - (id)username;

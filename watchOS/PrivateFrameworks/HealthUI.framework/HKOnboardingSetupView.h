@@ -18,12 +18,12 @@
     UIButton *_onboardingButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *onboardingButton; // @synthesize onboardingButton=_onboardingButton;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *heroView; // @synthesize heroView=_heroView;
 @property(nonatomic) __weak id <HKOnboardingSetupViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didTapOnboardingButton;
 - (void)_setUpConstraints;
 @property(readonly, nonatomic) NSString *buttonTitleString;

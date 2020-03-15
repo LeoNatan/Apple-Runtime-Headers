@@ -17,9 +17,9 @@
     NSString *_alias;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *alias; // @synthesize alias=_alias;
 @property(readonly, nonatomic) id <EFSQLExpressable> expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 - (id)initWithExpression:(id)arg1 alias:(id)arg2;
 

@@ -55,11 +55,11 @@
 + (id)allDefaultsEnabled;
 + (id)sharedDefaults;
 + (id)applicationID;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *userPrefsCache; // @synthesize userPrefsCache=_userPrefsCache;
 @property(retain) NSMutableDictionary *instancePrefsCache; // @synthesize instancePrefsCache=_instancePrefsCache;
 @property(retain) NSMutableDictionary *managedPrefsCache; // @synthesize managedPrefsCache=_managedPrefsCache;
 @property BOOL debugEnabled; // @synthesize debugEnabled=_debugEnabled;
-- (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKey:(id)arg2 forApplicationID:(id)arg3 saveToDisk:(BOOL)arg4;
 - (void)resetUserDefaultCacheForKey:(id)arg1 forApplicationID:(id)arg2;
 - (id)instancePrefsObjectForKey:(id)arg1;

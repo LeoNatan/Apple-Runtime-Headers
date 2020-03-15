@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) NSDate *modificationDate;
 @property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) NSDate *creationDate;
+@property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) CLLocation *location;

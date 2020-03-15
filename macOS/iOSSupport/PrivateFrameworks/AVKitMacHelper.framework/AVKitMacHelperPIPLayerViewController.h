@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CALayer *_pipLayer;
 }
 
-@property(retain, nonatomic) CALayer *pipLayer; // @synthesize pipLayer=_pipLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayer *pipLayer; // @synthesize pipLayer=_pipLayer;
 - (void)loadView;
 
 @end

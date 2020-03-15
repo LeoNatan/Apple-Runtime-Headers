@@ -21,8 +21,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) IDSXPCDaemonController *xpcDaemonController; // @synthesize xpcDaemonController=_xpcDaemonController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDSXPCDaemonController *xpcDaemonController; // @synthesize xpcDaemonController=_xpcDaemonController;
 - (void)constructRAResponseDictionary:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deliveryStats:(id)arg1;
 - (void)device:(id)arg1 pairingDeleted:(_Bool)arg2;

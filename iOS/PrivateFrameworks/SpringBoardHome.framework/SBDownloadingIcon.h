@@ -18,9 +18,9 @@
 + (_Bool)isDownloadingIconLeafIdentifier:(id)arg1;
 + (id)applicationPlaceholderBundleIDForDownloadingIconLeafIdentifier:(id)arg1;
 + (id)leafIdentifierForApplicationPlaceholderBundleID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool uninstalledByUser; // @synthesize uninstalledByUser=_uninstalledByUser;
 @property(readonly, nonatomic) id <SBDownloadingIconDataSource> downloadingIconDataSource; // @synthesize downloadingIconDataSource=_downloadingIconDataSource;
-- (void).cxx_destruct;
 - (_Bool)isDownloadingIcon;
 - (id)descriptionForLocation:(id)arg1;
 - (void)cancelDownload;

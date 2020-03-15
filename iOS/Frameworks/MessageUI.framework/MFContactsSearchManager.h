@@ -29,6 +29,7 @@
     NSString *_sendingAccountIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *searchAccounts; // @synthesize searchAccounts=_searchAccounts;
 @property(nonatomic, getter=isSimulatedResultsEnabled) _Bool simulatedResultsEnabled; // @synthesize simulatedResultsEnabled=_simulatedResultsEnabled;
 @property(copy, nonatomic) NSString *sendingAccountIdentifier; // @synthesize sendingAccountIdentifier=_sendingAccountIdentifier;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *sendingAddress; // @synthesize sendingAddress=_sendingAddress;
 @property(retain) NSArray *searchAccountIDs; // @synthesize searchAccountIDs=_explicitSearchAccountIDs;
 @property(copy, nonatomic) NSString *recentsBundleIdentifier; // @synthesize recentsBundleIdentifier=_recentsBundleIdentifier;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancelTaskWithID:(id)arg1;
 - (void)_handleContactsAutocompleteSearch:(id)arg1 returnedResults:(id)arg2 taskID:(id)arg3;

@@ -14,9 +14,9 @@
     UIColor *_confirmationColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *confirmationColor; // @synthesize confirmationColor=_confirmationColor;
 @property(readonly, nonatomic) UIColor *buttonColor; // @synthesize buttonColor=_buttonColor;
-- (void).cxx_destruct;
 - (id)initWithColorScheme:(id)arg1;
 
 @end

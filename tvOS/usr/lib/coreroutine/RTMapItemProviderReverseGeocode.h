@@ -16,9 +16,9 @@
     RTMapItemProviderReverseGeocodeParameters *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTMapItemProviderReverseGeocodeParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
-- (void).cxx_destruct;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
 - (id)initWithMapServiceManager:(id)arg1 parameters:(id)arg2;
 - (id)initWithDefaultsManager:(id)arg1 mapServiceManager:(id)arg2;

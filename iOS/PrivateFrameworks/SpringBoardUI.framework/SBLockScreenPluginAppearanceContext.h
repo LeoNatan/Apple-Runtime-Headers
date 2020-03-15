@@ -25,6 +25,7 @@
     struct CGRect presentationRegion;
 }
 
+- (void).cxx_destruct;
 - (void)setPresentationRegion:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect presentationRegion;
 - (void)setElementOverrides:(id)arg1;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) unsigned long long restrictedCapabilities;
 - (void)setHidden:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

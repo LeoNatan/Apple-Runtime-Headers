@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_contentViewBottomAnchorConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomAnchorConstraint; // @synthesize contentViewBottomAnchorConstraint=_contentViewBottomAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *valueViewFirstBaselineAnchorConstraint; // @synthesize valueViewFirstBaselineAnchorConstraint=_valueViewFirstBaselineAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *labelViewFirstBaselineAnchorConstraint; // @synthesize labelViewFirstBaselineAnchorConstraint=_labelViewFirstBaselineAnchorConstraint;
 @property(readonly, nonatomic) CNStarkActionView *actionView; // @synthesize actionView=_actionView;
-- (void).cxx_destruct;
 - (void)actionViewTapped:(id)arg1;
 - (void)updateTransportButtons;
 - (BOOL)shouldShowStar;

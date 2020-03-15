@@ -23,6 +23,7 @@
     NSMutableArray *_transactionsForPendingChanges;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *transactionsForPendingChanges; // @synthesize transactionsForPendingChanges=_transactionsForPendingChanges;
 @property(readonly, nonatomic) NSMutableArray *changeHandlers; // @synthesize changeHandlers=_changeHandlers;
 @property(retain, nonatomic) id <NSObject> observationToken; // @synthesize observationToken=_observationToken;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <AVTCoreDataPersistentStoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)performManagedObjectContextWork:(CDUnknownBlockType)arg1;
 - (id)changeTransactionsForToken:(id)arg1 managedObjectContext:(id)arg2;
 - (void)processRemoteChangeNotification:(id)arg1 completion:(CDUnknownBlockType)arg2;

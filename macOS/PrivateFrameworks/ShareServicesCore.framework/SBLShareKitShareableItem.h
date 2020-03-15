@@ -36,6 +36,7 @@
     PFDispatchQueue *_dispatchLoaderQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PFDispatchQueue *dispatchLoaderQueue; // @synthesize dispatchLoaderQueue=_dispatchLoaderQueue;
 @property(readonly, nonatomic) PFDispatchQueue *providerWorkerQueue; // @synthesize providerWorkerQueue=_providerWorkerQueue;
 @property(readonly, nonatomic) NSURL *exportPath; // @synthesize exportPath=_exportPath;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *prepareGroup; // @synthesize prepareGroup=_prepareGroup;
 @property(nonatomic) BOOL shouldStripLocation; // @synthesize shouldStripLocation=_shouldStripLocation;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)waitUntilPrepared;
 - (void)cancel;

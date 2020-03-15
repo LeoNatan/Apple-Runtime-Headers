@@ -19,6 +19,7 @@
     NSArray *_signatureVerificationPublicKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *signatureVerificationPublicKeys; // @synthesize signatureVerificationPublicKeys=_signatureVerificationPublicKeys;
 @property(readonly, nonatomic) _Bool zonesWereDeleted; // @synthesize zonesWereDeleted=_zonesWereDeleted;
 @property(readonly, nonatomic) _Bool zonesHaveChanged; // @synthesize zonesHaveChanged=_zonesHaveChanged;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) CKServerChangeToken *originalDatabaseChangeToken; // @synthesize originalDatabaseChangeToken=_originalDatabaseChangeToken;
 @property(retain, nonatomic) CKServerChangeToken *databaseChangeToken; // @synthesize databaseChangeToken=_databaseChangeToken;
 @property(readonly, nonatomic) NSDictionary *zoneInfoMap; // @synthesize zoneInfoMap=_zoneInfoMap;
-- (void).cxx_destruct;
 - (void)__cleanupMirroredZones:(id)arg1 cloudZones:(id)arg2 result:(id)arg3 error:(id)arg4;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)markZonesDeleted;

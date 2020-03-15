@@ -45,6 +45,8 @@
     long long _previousDayCacheIndex;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *previousDayStatisticsBuilderTag; // @synthesize previousDayStatisticsBuilderTag=_previousDayStatisticsBuilderTag;
 @property(retain, nonatomic) NSString *targetDayStatisticsBuilderTag; // @synthesize targetDayStatisticsBuilderTag=_targetDayStatisticsBuilderTag;
 @property(nonatomic) long long previousDayCacheIndex; // @synthesize previousDayCacheIndex=_previousDayCacheIndex;
@@ -56,8 +58,6 @@
 @property(readonly, nonatomic) HDActivityCacheHeartRateStatisticsBuilder *targetDayHeartRateStatisticsBuilder; // @synthesize targetDayHeartRateStatisticsBuilder=_targetDayHeartRateStatisticsBuilder;
 @property(readonly, nonatomic) HDActivityCacheStatisticsBuilder *previousDayStatisticsBuilder; // @synthesize previousDayStatisticsBuilder=_previousDayStatisticsBuilder;
 @property(readonly, nonatomic) HDActivityCacheStatisticsBuilder *targetDayStatisticsBuilder; // @synthesize targetDayStatisticsBuilder=_targetDayStatisticsBuilder;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_samplesAddedToWorkoutNotification:(id)arg1;
 - (id)activityCacheStatisticsBuilder:(id)arg1 sourceOrderForObjectType:(id)arg2;
 - (int)_isConnectedGymDeviceForDeviceIdentifier:(long long)arg1 error:(id *)arg2;

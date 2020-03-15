@@ -16,18 +16,20 @@ __attribute__((visibility("hidden")))
     _MKUILabel *_secondLineLabel;
     UIView *_labelsView;
     UIView *_backgroundView;
+    long long _context;
     long long _type;
     MKMapItem *_mapItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)updateBackground;
 - (void)setMapItem:(id)arg1 andType:(long long)arg2;
+- (id)secondLineLabelFont;
+- (id)firstLineLabelFont;
 - (void)updateInfoAttributionString;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithContext:(long long)arg1;
 
 @end
 

@@ -17,10 +17,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) NSXPCInterface *interface; // @synthesize interface=_interface;
-- (void).cxx_destruct;
 - (id)removeMDMPayloadForUUID:(id)arg1;
 - (id)installMDMPayload:(id)arg1 uuid:(id)arg2;
 - (id)callMDMServiceWithRetry:(CDUnknownBlockType)arg1;

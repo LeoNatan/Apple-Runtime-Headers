@@ -24,11 +24,11 @@
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enableImagesForDupes; // @synthesize enableImagesForDupes=_enableImagesForDupes;
 @property(nonatomic) BOOL isBaseline; // @synthesize isBaseline=_isBaseline;
 @property(nonatomic) BOOL isTest; // @synthesize isTest=_isTest;
 @property(retain, nonatomic) ADUserTargetingProperties *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -17,9 +17,9 @@
     id <RTIInputSystemPayloadDelegate> _payloadDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RTIInputSystemPayloadDelegate> payloadDelegate; // @synthesize payloadDelegate=_payloadDelegate;
 @property(nonatomic) __weak id <RTIInputSystemPayloadDelegate> forwardingPayloadDelegate; // @synthesize forwardingPayloadDelegate=_forwardingPayloadDelegate;
-- (void).cxx_destruct;
 - (void)handleTextActionPayload:(id)arg1;
 - (void)handleForwardingResponseActionPayload:(id)arg1;
 @property(readonly, copy, nonatomic) RTIDataPayload *currentForwardingDataPayload;

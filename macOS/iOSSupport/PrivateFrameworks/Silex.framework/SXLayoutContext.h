@@ -16,9 +16,9 @@
     SXUnitConverter *_unitConverter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXUnitConverter *unitConverter; // @synthesize unitConverter=_unitConverter;
 @property(readonly, nonatomic) SXColumnLayout *columnLayout; // @synthesize columnLayout=_columnLayout;
-- (void).cxx_destruct;
 - (id)initWithColumnLayout:(id)arg1 unitConverter:(id)arg2;
 
 // Remaining properties

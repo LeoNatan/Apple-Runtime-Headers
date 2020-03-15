@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     long long _appearance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cutCopyPasteIconOnly; // @synthesize cutCopyPasteIconOnly=_cutCopyPasteIconOnly;
 @property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) _Bool isRTL; // @synthesize isRTL=_isRTL;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *HUDbackgroundColor; // @synthesize HUDbackgroundColor=_HUDbackgroundColor;
 @property(retain, nonatomic) UIVibrancyEffect *backgroundVibrancyEffect; // @synthesize backgroundVibrancyEffect=_backgroundVibrancyEffect;
 @property(retain, nonatomic) UIBlurEffect *backgroundBlurEffect; // @synthesize backgroundBlurEffect=_backgroundBlurEffect;
-- (void).cxx_destruct;
 - (void)createDynamicColors;
 - (id)vibrancyEffectForBlur:(id)arg1;
 - (id)initWithKeyboardAppearance:(long long)arg1 isRTL:(_Bool)arg2;

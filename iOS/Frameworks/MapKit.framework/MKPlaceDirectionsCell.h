@@ -40,10 +40,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _requestDirectionsBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool offlineMode; // @synthesize offlineMode=_offlineMode;
 @property(copy, nonatomic) CDUnknownBlockType requestDirectionsBlock; // @synthesize requestDirectionsBlock=_requestDirectionsBlock;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;

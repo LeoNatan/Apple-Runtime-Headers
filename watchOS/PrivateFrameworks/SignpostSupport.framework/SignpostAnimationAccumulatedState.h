@@ -30,6 +30,7 @@
     NSMutableArray *_allContributedFrameLifetimes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *allContributedFrameLifetimes; // @synthesize allContributedFrameLifetimes=_allContributedFrameLifetimes;
 @property(readonly, nonatomic) NSMutableArray *allFrameLifetimes; // @synthesize allFrameLifetimes=_allFrameLifetimes;
 @property(readonly, nonatomic) NSMutableArray *longContributedFrameLifetimes; // @synthesize longContributedFrameLifetimes=_longContributedFrameLifetimes;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSMutableArray *longCommitIntervals; // @synthesize longCommitIntervals=_longCommitIntervals;
 @property(readonly, nonatomic) NSMutableArray *compositorIntervals; // @synthesize compositorIntervals=_compositorIntervals;
 @property(readonly, nonatomic) SignpostEvent *animationBeginEvent; // @synthesize animationBeginEvent=_animationBeginEvent;
-- (void).cxx_destruct;
 - (void)addCompositorInterval:(id)arg1;
 - (void)_handleFrameLifetime:(id)arg1 isLong:(_Bool)arg2 isConcise:(_Bool)arg3;
 - (void)_handleFrameLatency:(id)arg1 isLong:(_Bool)arg2 isConcise:(_Bool)arg3;

@@ -27,10 +27,10 @@
 + (id)tokensByAdjustingForNobiliaryParticles:(id)arg1;
 + (id)tokensFromString:(id)arg1 nameOrder:(int *)arg2;
 + (id)componentsFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(retain) NSPersonNameComponents *components; // @synthesize components=_components;
 @property(copy) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)extractGivenMiddleFamilyNamesFromWhatsLeftUsingOrder:(int)arg1;
 - (void)adjustTokensForNobiliaryParticles;
 - (void)extractNamePrefixFromBeginning;

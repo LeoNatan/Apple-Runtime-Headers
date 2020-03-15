@@ -24,13 +24,13 @@
 + (id)homeAssistantOperationWithActionSet:(id)arg1 queue:(id)arg2;
 + (id)homeAssistantOperationWithReadRequests:(id)arg1 queue:(id)arg2;
 + (id)homeAssistantOperationWithWriteRequests:(id)arg1 queue:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool completionHandlerCalled; // @synthesize completionHandlerCalled=_completionHandlerCalled;
 @property(readonly, nonatomic) NSMutableSet *reachableAccessoriesToOperateOn; // @synthesize reachableAccessoriesToOperateOn=_reachableAccessoriesToOperateOn;
 @property(readonly, nonatomic) NSSet *accessoriesToOperateOn; // @synthesize accessoriesToOperateOn=_accessoriesToOperateOn;
 @property(readonly, nonatomic) HMFTimer *accessoryConnectivityWaitTimer; // @synthesize accessoryConnectivityWaitTimer=_accessoryConnectivityWaitTimer;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)startWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_testForReachability;
 - (void)_callCompletion;

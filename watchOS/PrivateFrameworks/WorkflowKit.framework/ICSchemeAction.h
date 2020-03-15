@@ -13,8 +13,8 @@
     ICScheme *_scheme;
 }
 
-@property(readonly, nonatomic) __weak ICScheme *scheme; // @synthesize scheme=_scheme;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak ICScheme *scheme; // @synthesize scheme=_scheme;
 - (void)performActionWithInput:(id)arg1 parameters:(id)arg2 userInterface:(id)arg3 successHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5;
 - (id)defersCompletionUntilReturn;
 @property(readonly, nonatomic, getter=isCallbackAction) _Bool callbackAction;

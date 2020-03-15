@@ -18,11 +18,11 @@
 
 + (id)componentsWithRawServiceName:(id)arg1 rawRoomName:(id)arg2 localizedFormat:(id)arg3;
 + (id)componentsWithRawServiceName:(id)arg1 rawRoomName:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *format; // @synthesize format=_format;
 @property(retain, nonatomic) NSString *roomName; // @synthesize roomName=_roomName;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSString *rawServiceName; // @synthesize rawServiceName=_rawServiceName;
-- (void).cxx_destruct;
 - (id)composedName;
 - (id)initWithRawServiceName:(id)arg1 rawRoomName:(id)arg2 localizedFormat:(id)arg3;
 

@@ -16,9 +16,9 @@
     NSString *_trailingString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *trailingString; // @synthesize trailingString=_trailingString;
 @property(retain, nonatomic) NSString *leadingString; // @synthesize leadingString=_leadingString;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)init;
 

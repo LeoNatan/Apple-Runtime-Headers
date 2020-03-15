@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     EDReference *_baseFormulaRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDReference *baseFormulaRange; // @synthesize baseFormulaRange=_baseFormulaRange;
 @property(nonatomic) int columnBaseOrOffset; // @synthesize columnBaseOrOffset=_columnBaseOrOffset;
 @property(nonatomic) int rowBaseOrOffset; // @synthesize rowBaseOrOffset=_rowBaseOrOffset;
 @property(nonatomic) _Bool forceNonBaseFormula; // @synthesize forceNonBaseFormula=_forceNonBaseFormula;
 @property(nonatomic) unsigned long long baseFormulaIndex; // @synthesize baseFormulaIndex=_baseFormulaIndex;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isSharedFormula;
 - (id)warningWithRowBlocks:(id)arg1;

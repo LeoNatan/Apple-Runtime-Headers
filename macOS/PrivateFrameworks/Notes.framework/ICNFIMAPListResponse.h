@@ -16,10 +16,10 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 @property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
 @property(nonatomic) unsigned long long mailboxAttributes; // @synthesize mailboxAttributes=_mailboxAttributes;
-- (void).cxx_destruct;
 - (unsigned long long)mailboxAttributesFromSet:(id)arg1;
 - (id)_newStringForMailboxAttributes;
 - (id)description;

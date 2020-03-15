@@ -23,6 +23,7 @@
     SVKeyValueObserver *_playerItemStatusObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SVKeyValueObserver *playerItemStatusObserver; // @synthesize playerItemStatusObserver=_playerItemStatusObserver;
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) id <SVPlayerItemLoading> playerItemLoader; // @synthesize playerItemLoader=_playerItemLoader;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic, setter=onFailed:) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(copy, nonatomic, setter=onFinished:) CDUnknownBlockType finishedBlock; // @synthesize finishedBlock=_finishedBlock;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)configureStateWithPlayerItem:(id)arg1;
 - (id)initWithPlayerItemLoader:(id)arg1;
 

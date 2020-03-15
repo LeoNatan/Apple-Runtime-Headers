@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _enabledBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_isEnabledBlock, setter=_setEnabledBlock:) CDUnknownBlockType enabledBlock; // @synthesize enabledBlock=_enabledBlock;
 @property(copy, nonatomic, getter=_imageUpdatingBlock, setter=_setImageUpdatingBlock:) CDUnknownBlockType imageUpdatingBlock; // @synthesize imageUpdatingBlock=_imageUpdatingBlock;
-- (void).cxx_destruct;
 - (_Bool)isEnabled;
 - (id)_privateImage;
 

@@ -21,9 +21,9 @@
     int _imageRequestIDForPopulatingCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *additionalInfo; // @synthesize additionalInfo=_additionalInfo;
 @property(nonatomic) int imageRequestIDForPopulatingCache; // @synthesize imageRequestIDForPopulatingCache=_imageRequestIDForPopulatingCache;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (_Bool)isCancelled;
 - (void)cancel;

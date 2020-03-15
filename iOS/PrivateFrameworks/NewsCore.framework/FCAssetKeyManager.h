@@ -22,13 +22,13 @@
     FCThreadSafeMutableDictionary *_errorsByKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCThreadSafeMutableDictionary *errorsByKey; // @synthesize errorsByKey=_errorsByKey;
 @property(readonly, nonatomic) FCThreadSafeMutableSet *pendingWrappingKeyIDs; // @synthesize pendingWrappingKeyIDs=_pendingWrappingKeyIDs;
 @property(readonly, nonatomic) id <FCOperationThrottler> throttler; // @synthesize throttler=_throttler;
 @property(readonly, nonatomic) __weak id <FCAssetKeyManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <FCAssetKeyCacheType> cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <FCAssetKeyServiceType> service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (_Bool)_canRetryAfterNetworkError:(id)arg1;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 - (void)eraseAllKeys;

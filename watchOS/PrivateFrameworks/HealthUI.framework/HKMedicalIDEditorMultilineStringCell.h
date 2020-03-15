@@ -23,10 +23,10 @@
 }
 
 + (_Bool)showsLabelAndValue;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets textViewExtraMargins; // @synthesize textViewExtraMargins=_textViewExtraMargins;
 @property(nonatomic) __weak id <HKMedicalIDEditorCellHeightChangeDelegate> heightChangeDelegate; // @synthesize heightChangeDelegate=_heightChangeDelegate;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)commitEditing;
 - (void)_labelTapped:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     long long _acknowledgmentType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long acknowledgmentType; // @synthesize acknowledgmentType=_acknowledgmentType;
 @property(retain, nonatomic) CKEntity *entityToShow; // @synthesize entityToShow=_entityToShow;
 @property(nonatomic) unsigned long long ackVoteCount; // @synthesize ackVoteCount=_ackVoteCount;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *voteCountLabel; // @synthesize voteCountLabel=_voteCountLabel;
 @property(retain, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *avatarViewAttr; // @synthesize avatarViewAttr=_avatarViewAttr;
-- (void).cxx_destruct;
 - (void)_updateAvatarViewDelayTime:(double)arg1;
 - (void)insertAvatarDelayTime:(double)arg1;
 - (void)_updateAckIconViewDelayTime:(double)arg1;

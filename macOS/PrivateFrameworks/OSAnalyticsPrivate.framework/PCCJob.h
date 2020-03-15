@@ -21,6 +21,7 @@
     NSDate *_lastTouch;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *event; // @synthesize event=_event;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSDate *lastTouch; // @synthesize lastTouch=_lastTouch;
@@ -28,7 +29,6 @@
 @property(readonly) NSDictionary *options; // @synthesize options=_options;
 @property(readonly) NSString *target; // @synthesize target=_target;
 @property(readonly) NSString *jid; // @synthesize jid=_jid;
-- (void).cxx_destruct;
 - (void)registerResult:(BOOL)arg1 error:(id)arg2;
 - (void)packageLog:(id)arg1 forRouting:(id)arg2 info:(id)arg3 options:(id)arg4;
 - (id)initWithID:(id)arg1 forTarget:(id)arg2 options:(id)arg3 forFile:(id)arg4;

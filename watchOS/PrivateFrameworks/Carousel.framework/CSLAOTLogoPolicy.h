@@ -17,9 +17,9 @@
 }
 
 + (id)policyWithLogoManager:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPIBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 @property(retain, nonatomic) CSLUILogoManager *logoManager; // @synthesize logoManager=_logoManager;
-- (void).cxx_destruct;
 - (void)logoManager:(id)arg1 didUpdateLogoVisibility:(_Bool)arg2;
 - (void)_updateAssertionForLogoVisibility:(_Bool)arg1;
 - (void)activate;

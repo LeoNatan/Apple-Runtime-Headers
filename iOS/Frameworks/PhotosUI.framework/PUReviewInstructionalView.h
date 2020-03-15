@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UILabel *__instructionalLabel;
 }
 
-@property(readonly, nonatomic) UILabel *_instructionalLabel; // @synthesize _instructionalLabel=__instructionalLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *_instructionalLabel; // @synthesize _instructionalLabel=__instructionalLabel;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithCoder:(id)arg1;

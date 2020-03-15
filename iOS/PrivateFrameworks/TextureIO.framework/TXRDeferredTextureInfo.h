@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_mipmaps;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *mipmaps; // @synthesize mipmaps=_mipmaps;
 @property(retain, nonatomic) TXRTextureInfo *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (id)initWithMipmapLevelCount:(unsigned long long)arg1 arrayLength:(unsigned long long)arg2 cubemap:(_Bool)arg3;
 
 @end

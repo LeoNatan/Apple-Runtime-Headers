@@ -13,8 +13,8 @@
     NSMutableDictionary *_matchers;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *matchers; // @synthesize matchers=_matchers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *matchers; // @synthesize matchers=_matchers;
 - (BOOL)hasMatchForEvent:(id)arg1;
 - (BOOL)registerMatcher:(id)arg1;
 - (id)init;

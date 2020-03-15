@@ -13,8 +13,8 @@
     NSSet *_constraintAbstractions;
 }
 
-@property(copy, nonatomic) NSSet *constraintAbstractions; // @synthesize constraintAbstractions=_constraintAbstractions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *constraintAbstractions; // @synthesize constraintAbstractions=_constraintAbstractions;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 

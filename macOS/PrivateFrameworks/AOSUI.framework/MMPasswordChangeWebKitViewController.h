@@ -32,6 +32,7 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property BOOL isResizeAvailible; // @synthesize isResizeAvailible=_isResizeAvailible;
 @property BOOL isButtonBarShown; // @synthesize isButtonBarShown=_isButtonBarShown;
 @property struct CGSize contentSize; // @synthesize contentSize=_contentSize;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(copy, nonatomic) CDUnknownBlockType passwordChangeCompletionHandler; // @synthesize passwordChangeCompletionHandler=_passwordChangeCompletionHandler;
 @property(retain, nonatomic) MMICAWebKitViewController *icaWebKitVC; // @synthesize icaWebKitVC=_icaWebKitVC;
-- (void).cxx_destruct;
 - (void)button3Pressed:(id)arg1;
 - (void)button2Pressed:(id)arg1;
 - (void)button1Pressed:(id)arg1;

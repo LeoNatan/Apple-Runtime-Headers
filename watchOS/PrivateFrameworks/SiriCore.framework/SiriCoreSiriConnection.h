@@ -51,6 +51,7 @@
     SAConnectionPolicy *_connectionPolicy;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) SAConnectionPolicy *connectionPolicy; // @synthesize connectionPolicy=_connectionPolicy;
 @property(nonatomic) _Bool imposePolicyBan; // @synthesize imposePolicyBan=_imposePolicyBan;
 @property(copy, nonatomic) NSString *connectionId; // @synthesize connectionId=_connectionId;
@@ -73,7 +74,6 @@
 @property(nonatomic) _Bool skipPeer; // @synthesize skipPeer=_skipPeer;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) __weak id <SiriCoreSiriConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_recordConnectionMethodForMetrics:(id)arg1;
 - (void)siriBackgroundConnection:(id)arg1 willStartConnectionWithHTTPHeader:(id)arg2;
 - (void)siriBackgroundConnection:(id)arg1 didEncounterIntermediateError:(id)arg2;

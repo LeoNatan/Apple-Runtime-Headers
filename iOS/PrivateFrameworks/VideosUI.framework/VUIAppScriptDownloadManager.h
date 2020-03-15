@@ -18,10 +18,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSMutableDictionary *appScriptDict; // @synthesize appScriptDict=_appScriptDict;
 @property(retain, nonatomic) NSURL *currentURL; // @synthesize currentURL=_currentURL;
-- (void).cxx_destruct;
 - (void)fetchAppJavascript:(id)arg1 cachePolicy:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_init;
 

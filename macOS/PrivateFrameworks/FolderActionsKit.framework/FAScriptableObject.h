@@ -22,13 +22,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)keyInContainer;
+- (void).cxx_destruct;
 @property(retain) NSString *keyInContainer; // @synthesize keyInContainer=_keyInContainer;
 @property __weak id container; // @synthesize container=_container;
 @property BOOL objectSpecifierUsesNameBeforeID; // @synthesize objectSpecifierUsesNameBeforeID=_objectSpecifierUsesNameBeforeID;
 @property(retain) NSUUID *id; // @synthesize id=_id;
 @property unsigned long long index; // @synthesize index=_index;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)resetContainmentProperties;

@@ -26,11 +26,11 @@
 + (id)candidateWithText:(id)arg1 annotation:(id)arg2;
 + (id)candidateWithText:(id)arg1 type:(unsigned long long)arg2;
 + (id)candidateWithText:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) IMKDocumentContent *documentContentToReplace; // @synthesize documentContentToReplace=_documentContentToReplace;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displayText;
 @property(readonly, nonatomic) NSString *axHelpString;
 @property(readonly, nonatomic) NSString *axValueString;

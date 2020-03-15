@@ -26,11 +26,11 @@
 
 + (id)_defaultTextColor;
 + (double)heightForInterfaceOrientation:(long long)arg1 windowSize:(struct CGSize)arg2 heightSizeClass:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool computeCircleFrameWithoutAdjustments; // @synthesize computeCircleFrameWithoutAdjustments=_computeCircleFrameWithoutAdjustments;
 @property(readonly, nonatomic) double circleSizeForDoubleDigit; // @synthesize circleSizeForDoubleDigit=_circleSizeForDoubleDigit;
 @property(retain, nonatomic) EKUIOverlayCalendarSignificantDatesProvider *overlaySignificantDatesProvider; // @synthesize overlaySignificantDatesProvider=_overlaySignificantDatesProvider;
 @property(retain, nonatomic) EKCalendarDate *calendarDate; // @synthesize calendarDate=_calendarDate;
-- (void).cxx_destruct;
 - (id)_imageForDayNumber:(id)arg1 size:(struct CGSize)arg2 underlineThickness:(double)arg3;
 - (id)_imageForMonthDays:(long long)arg1 size:(struct CGSize)arg2 underlineThickness:(double)arg3;
 - (id)_weekDayInitialsImage;
@@ -84,6 +84,7 @@
 - (struct CGRect)frameForTodayHighlight;
 - (void)pulseTodayCircle;
 - (id)_todayAttributes;
+- (void)_getMetricsForDayIndex:(long long)arg1 textFrame:(struct CGRect *)arg2 circleFrame:(struct CGRect *)arg3;
 - (void)_getTodayNumberTextFrame:(struct CGRect *)arg1 circleFrame:(struct CGRect *)arg2;
 - (struct CGPoint)headerOrigin;
 - (struct CGRect)frameForGridOfDays:(_Bool)arg1;

@@ -15,9 +15,9 @@
     NSString *_webAuthToken;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *webAuthToken; // @synthesize webAuthToken=_webAuthToken;
 @property(copy, nonatomic) NSString *APIToken; // @synthesize APIToken=_APIToken;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)fillFromOperationInfo:(id)arg1;

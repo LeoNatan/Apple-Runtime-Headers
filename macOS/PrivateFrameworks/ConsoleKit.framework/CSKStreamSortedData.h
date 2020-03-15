@@ -15,10 +15,10 @@
     NSMutableDictionary *_activityMessagesMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *activityMessagesMap; // @synthesize activityMessagesMap=_activityMessagesMap;
 @property(readonly, nonatomic) NSMutableArray *messages; // @synthesize messages=_messages;
 @property(readonly, nonatomic) NSMutableArray *activities; // @synthesize activities=_activities;
-- (void).cxx_destruct;
 - (id)_removeActivitiesWithIdentifiers:(id)arg1 fromMutableArray:(id)arg2;
 - (unsigned long long)_removeMessages:(id)arg1 fromMutableArray:(id)arg2;
 - (void)_addMessageToActivityMessagesMap:(id)arg1;

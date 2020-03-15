@@ -41,6 +41,7 @@
     NSWindow *_parentWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *authKitData; // @synthesize authKitData=_authKitData;
 @property(retain) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(retain, nonatomic) NSDictionary *workflowDict; // @synthesize workflowDict=_workflowDict;
@@ -55,7 +56,6 @@
 @property(nonatomic) __weak id <AKMBICAUIDelegate> icaMBUIDelegate; // @synthesize icaMBUIDelegate=_icaMBUIDelegate;
 @property(nonatomic) __weak id <AKICAWebKitViewControllerDelegate> icaWebKitViewControllerDelegate; // @synthesize icaWebKitViewControllerDelegate=_icaWebKitViewControllerDelegate;
 @property(nonatomic) __weak id <AKICAUIDelegate> icaUIDelegate; // @synthesize icaUIDelegate=_icaUIDelegate;
-- (void).cxx_destruct;
 - (void)validateLocalPassword:(id)arg1;
 - (void)runAppleIDOptOut:(id)arg1;
 - (void)obtainAuthRight:(id)arg1;

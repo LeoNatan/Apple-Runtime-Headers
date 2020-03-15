@@ -21,6 +21,7 @@
     double _fadeBegin;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
 @property(nonatomic) _Bool fadeIn; // @synthesize fadeIn=_fadeIn;
 @property(nonatomic) _Bool fadeOut; // @synthesize fadeOut=_fadeOut;
@@ -28,7 +29,6 @@
 @property(nonatomic) double fadeLength; // @synthesize fadeLength=_fadeLength;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

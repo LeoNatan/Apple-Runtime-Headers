@@ -13,8 +13,10 @@
     NSDictionary *_artworkDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *artworkDictionary; // @synthesize artworkDictionary=_artworkDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *artworkDictionary; // @synthesize artworkDictionary=_artworkDictionary;
+- (unsigned long long)_qualityForFormat:(id)arg1;
+- (id)URLWithSize:(struct CGSize)arg1 cropStyle:(id)arg2 format:(id)arg3 quality:(unsigned long long)arg4;
 - (id)URLWithSize:(struct CGSize)arg1 cropStyle:(id)arg2 format:(id)arg3;
 - (id)URLWithSize:(struct CGSize)arg1;
 - (struct CGColor *)colorWithKind:(id)arg1;

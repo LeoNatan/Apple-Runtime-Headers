@@ -105,6 +105,7 @@
     struct FCEdgeInsets _nameImageMaskInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCInterestToken *tagRecordInterestToken; // @synthesize tagRecordInterestToken=_tagRecordInterestToken;
 @property(readonly, nonatomic) NTPBTagRecord *tagRecord; // @synthesize tagRecord=_tagRecord;
 @property(retain, nonatomic) NSDate *loadDate; // @synthesize loadDate=_loadDate;
@@ -186,7 +187,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *versionKey; // @synthesize versionKey=_versionKey;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isWhitelisted;
 @property(readonly, nonatomic) _Bool supportsNotifications;
 @property(readonly, nonatomic) NSData *backingTagRecordData;

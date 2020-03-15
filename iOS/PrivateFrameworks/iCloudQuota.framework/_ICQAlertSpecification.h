@@ -22,6 +22,7 @@
     NSMutableDictionary *_linkForButtonIndex;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *linkForButtonIndex; // @synthesize linkForButtonIndex=_linkForButtonIndex;
 @property(nonatomic) long long defaultButtonIndex; // @synthesize defaultButtonIndex=_defaultButtonIndex;
 @property(nonatomic) _Bool disableLockScreenAlert; // @synthesize disableLockScreenAlert=_disableLockScreenAlert;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *altMessage; // @synthesize altMessage=_altMessage;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *serverDict;
 - (void)_setLinks:(id)arg1 defaultIndex:(unsigned long long)arg2;
 - (void)setLink:(id)arg1 forButtonIndex:(long long)arg2 defaultButton:(_Bool)arg3;

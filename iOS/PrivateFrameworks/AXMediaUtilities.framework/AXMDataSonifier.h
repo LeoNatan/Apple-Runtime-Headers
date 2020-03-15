@@ -49,6 +49,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long playbackSampleCount; // @synthesize playbackSampleCount=_playbackSampleCount;
 @property(readonly, nonatomic) vector_3203cf93 *liveTonePlaybackCallbackRenderingContext; // @synthesize liveTonePlaybackCallbackRenderingContext=_liveTonePlaybackCallbackRenderingContext;
 @property(readonly, nonatomic) vector_3203cf93 *scrubbingPlaybackCallbackRenderingContext; // @synthesize scrubbingPlaybackCallbackRenderingContext=_scrubbingPlaybackCallbackRenderingContext;
@@ -82,7 +83,6 @@
 @property(nonatomic) double playbackDuration; // @synthesize playbackDuration=_playbackDuration;
 @property(nonatomic) double maximumPlaybackFrequency; // @synthesize maximumPlaybackFrequency=_maximumPlaybackFrequency;
 @property(nonatomic) double minimumPlaybackFrequency; // @synthesize minimumPlaybackFrequency=_minimumPlaybackFrequency;
-- (void).cxx_destruct;
 - (id)_newContinuousToneEnvelope;
 - (void)_peakNormalizeBuffer:(vector_3203cf93 *)arg1 length:(unsigned long long)arg2 level:(double)arg3;
 - (void)setLiveContinuousToneNormalizedFrequency:(double)arg1;

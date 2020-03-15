@@ -23,9 +23,9 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void)_applyModificationPair:(id)arg1;
 - (void)_processStateUpdates;
 - (void)_synchronouslyApplyChange:(id)arg1;

@@ -6,37 +6,49 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class NSDictionary, NSFileHandle, NSSet, NSString;
+@class IASInputStream, NSDictionary, NSFileHandle, NSObject, NSSet, NSString, SMNetworkDirectoryEnumerator_ServerSide;
+@protocol OS_dispatch_semaphore;
 
 @interface SMNPathingAction : SMNAction
 {
     BOOL _autoSizeBundles;
     BOOL _useTrueOnDiskSizes;
     BOOL _autoDetectBundles;
+    BOOL _readResultSuccess;
     NSFileHandle *_networkDirectoryEnumeratorStream;
     NSString *_compressionFormat;
+    NSDictionary *_restartPoint;
     CDUnknownBlockType _receiveDataBlock;
     NSString *_startingPath;
     NSSet *_dontDescendPaths;
     NSSet *_additionalProperties;
-    NSDictionary *_restartPoint;
+    SMNetworkDirectoryEnumerator_ServerSide *_dirEnumerator;
+    IASInputStream *_inputStream;
+    NSObject<OS_dispatch_semaphore> *_doneReadingResults;
 }
 
 + (id)actionWithPayload:(id)arg1;
-+ (BOOL)shouldCloseInboundStreamWhenDone;
 + (BOOL)streamsResults;
 + (int)actionID;
-@property(retain) NSDictionary *restartPoint; // @synthesize restartPoint=_restartPoint;
+- (void).cxx_destruct;
+@property BOOL readResultSuccess; // @synthesize readResultSuccess=_readResultSuccess;
+@property(retain) NSObject<OS_dispatch_semaphore> *doneReadingResults; // @synthesize doneReadingResults=_doneReadingResults;
+@property(retain) IASInputStream *inputStream; // @synthesize inputStream=_inputStream;
+@property(retain) SMNetworkDirectoryEnumerator_ServerSide *dirEnumerator; // @synthesize dirEnumerator=_dirEnumerator;
 @property(retain) NSSet *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property BOOL autoDetectBundles; // @synthesize autoDetectBundles=_autoDetectBundles;
 @property(retain) NSSet *dontDescendPaths; // @synthesize dontDescendPaths=_dontDescendPaths;
 @property(retain) NSString *startingPath; // @synthesize startingPath=_startingPath;
 @property(copy, nonatomic) CDUnknownBlockType receiveDataBlock; // @synthesize receiveDataBlock=_receiveDataBlock;
+@property(retain) NSDictionary *restartPoint; // @synthesize restartPoint=_restartPoint;
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes=_useTrueOnDiskSizes;
 @property BOOL autoSizeBundles; // @synthesize autoSizeBundles=_autoSizeBundles;
 @property(retain) NSString *compressionFormat; // @synthesize compressionFormat=_compressionFormat;
 @property(retain) NSFileHandle *networkDirectoryEnumeratorStream; // @synthesize networkDirectoryEnumeratorStream=_networkDirectoryEnumeratorStream;
-- (void).cxx_destruct;
+- (void)stopPathing;
+- (void)setReadResultsResult:(BOOL)arg1;
+- (void)readResults;
+- (void)cleanUp;
 - (BOOL)receiveResultOnFd:(int)arg1 errorIsFatal:(char *)arg2;
 - (BOOL)sendResultOnFd:(int)arg1;
 - (id)requestPayload;

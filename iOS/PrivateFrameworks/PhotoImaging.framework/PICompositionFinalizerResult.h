@@ -14,9 +14,9 @@
     NUComposition *_composition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NUComposition *composition; // @synthesize composition=_composition;
 @property(readonly) long long disposition; // @synthesize disposition=_disposition;
-- (void).cxx_destruct;
 - (id)initWithDisposition:(long long)arg1 composition:(id)arg2;
 
 @end

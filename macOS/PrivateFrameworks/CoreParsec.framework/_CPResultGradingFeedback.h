@@ -20,11 +20,11 @@
     NSString *_textFeedback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textFeedback; // @synthesize textFeedback=_textFeedback;
 @property(nonatomic) int grade; // @synthesize grade=_grade;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result; // @synthesize result=_result;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

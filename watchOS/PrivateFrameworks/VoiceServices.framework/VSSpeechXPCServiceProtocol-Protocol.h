@@ -37,7 +37,7 @@
 - (oneway void)startSpeechRequest:(VSSpeechRequest *)arg1 reply:(void (^)(void))arg2;
 - (oneway void)estimateDurationWithRequest:(VSSpeechRequest *)arg1 reply:(void (^)(double, NSError *))arg2;
 - (oneway void)queryPhaticCapabilityWithRequest:(VSSpeechRequest *)arg1 reply:(void (^)(_Bool))arg2;
-- (oneway void)prewarmIfNeededWithRequest:(VSSpeechRequest *)arg1;
+- (oneway void)prewarmIfNeededWithRequest:(VSSpeechRequest *)arg1 reply:(void (^)(NSError *))arg2;
 - (oneway void)updateWithConnectionIdentifier:(NSString *)arg1;
 @end
 

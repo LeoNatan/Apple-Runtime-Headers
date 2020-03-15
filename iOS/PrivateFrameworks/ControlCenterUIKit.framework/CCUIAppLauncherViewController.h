@@ -15,8 +15,8 @@
     CCUIAppLauncherModule *_module;
 }
 
-@property(nonatomic) __weak CCUIAppLauncherModule *module; // @synthesize module=_module;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CCUIAppLauncherModule *module; // @synthesize module=_module;
 - (void)_activateApplicationForShortcutItem:(id)arg1;
 - (id)_menuItemForShortcutItem:(id)arg1;
 - (void)_updateApplicationShortcutsActions;

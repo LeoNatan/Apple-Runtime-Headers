@@ -19,8 +19,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
-@property(readonly, copy, nonatomic) NSDictionary *experimentsByConfigurationIdentifier; // @synthesize experimentsByConfigurationIdentifier=_experimentsByConfigurationIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *experimentsByConfigurationIdentifier; // @synthesize experimentsByConfigurationIdentifier=_experimentsByConfigurationIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

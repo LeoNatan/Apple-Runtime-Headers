@@ -65,6 +65,7 @@
 
 + (id)emptyContact;
 + (id)descriptorForRequiredKeysForPreferredForNameMeContact;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
 @property(nonatomic) BOOL shouldDisplayEmergencyContacts; // @synthesize shouldDisplayEmergencyContacts=_shouldDisplayEmergencyContacts;
 @property(nonatomic) BOOL shouldAllowDrops; // @synthesize shouldAllowDrops=_shouldAllowDrops;
@@ -96,7 +97,6 @@
 @property(copy, nonatomic) NSString *meContactBannerFootnoteLabel; // @synthesize meContactBannerFootnoteLabel=_meContactBannerFootnoteLabel;
 @property(nonatomic) BOOL shouldAutoHideMeContactBanner; // @synthesize shouldAutoHideMeContactBanner=_shouldAutoHideMeContactBanner;
 @property(nonatomic) __weak id <CNContactListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)vCardImportControllerDidCompleteQueue:(id)arg1;
 - (void)vCardImportController:(id)arg1 didSaveContacts:(id)arg2;
 - (void)vCardImportController:(id)arg1 presentViewController:(id)arg2 animated:(BOOL)arg3;

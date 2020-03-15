@@ -19,6 +19,7 @@
     NSMutableDictionary *_ephemeralSalts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *ephemeralSalts; // @synthesize ephemeralSalts=_ephemeralSalts;
 @property(nonatomic) unsigned long long permission; // @synthesize permission=_permission;
 @property(retain, nonatomic) NSString *persistentSalt; // @synthesize persistentSalt=_persistentSalt;
@@ -26,8 +27,6 @@
 @property(retain, nonatomic) NSString *origin; // @synthesize origin=_origin;
 @property(nonatomic) double permissionGrantDate; // @synthesize permissionGrantDate=_permissionGrantDate;
 @property(nonatomic) double permissionExpirationDate; // @synthesize permissionExpirationDate=_permissionExpirationDate;
-- (void).cxx_destruct;
-- (unsigned long long)_defaultUserMediaPermission;
 - (_Bool)_isValidUserMediaPermission:(unsigned long long)arg1;
 - (void)updatePermission:(unsigned long long)arg1 expirationPolicy:(unsigned long long)arg2;
 - (_Bool)permissionExpiresWithinOneDay;

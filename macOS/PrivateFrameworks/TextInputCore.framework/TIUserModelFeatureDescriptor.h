@@ -17,11 +17,11 @@
 }
 
 + (id)configureFeatureDescriptors;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *thresholds; // @synthesize thresholds=_thresholds;
 @property(readonly, nonatomic) NSString *configString; // @synthesize configString=_configString;
 @property(readonly, nonatomic) NSString *discoveryCounterName; // @synthesize discoveryCounterName=_discoveryCounterName;
 @property(readonly, nonatomic) long long discoveryThreshold; // @synthesize discoveryThreshold=_discoveryThreshold;
-- (void).cxx_destruct;
 - (id)initWithFeatureName:(id)arg1 discoveryThreshold:(long long)arg2 discoveryCounterName:(id)arg3 configString:(id)arg4 counterNames:(id)arg5 thresholds:(id)arg6;
 
 @end

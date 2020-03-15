@@ -26,11 +26,11 @@
 + (id)aggregatedMetadataForCharacteristics:(id)arg1;
 + (id)aggregatedReadResponseFromResponses:(id)arg1 withAggregationPolicy:(unsigned long long)arg2;
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *responsesKeyedByCharacteristicType; // @synthesize responsesKeyedByCharacteristicType=_responsesKeyedByCharacteristicType;
 @property(readonly, nonatomic) NSDictionary *responseKeyedByCharacteristicUUID; // @synthesize responseKeyedByCharacteristicUUID=_responseKeyedByCharacteristicUUID;
 @property(readonly, nonatomic) NSSet *allReadResponses; // @synthesize allReadResponses=_allReadResponses;
 @property(readonly, nonatomic) id <HFCharacteristicOperationContextProviding> contextProvider; // @synthesize contextProvider=_contextProvider;
-- (void).cxx_destruct;
 - (id)_aggregatedMetadataForCharacteristicType:(id)arg1;
 - (unsigned long long)defaultAggregationPolicyForCharacteristicType:(id)arg1;
 - (id)servicesWithErrorForCharacteristicType:(id)arg1;

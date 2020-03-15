@@ -22,10 +22,10 @@
 + (id)imageWithImageName:(id)arg1;
 + (id)imageWithImageData:(id)arg1;
 + (id)imageWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)_init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

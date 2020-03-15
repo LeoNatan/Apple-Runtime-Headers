@@ -15,10 +15,10 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak OrientationInfo *currentAltInfo; // @synthesize currentAltInfo=_currentAltInfo;
 @property(retain, nonatomic) AltClipCollection *altInfo; // @synthesize altInfo=_altInfo;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isRotated;
 @property(readonly, nonatomic) double aspect;
 

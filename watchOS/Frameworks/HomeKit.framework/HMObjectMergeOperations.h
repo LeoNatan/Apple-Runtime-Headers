@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_operations;
 }
 
-@property(retain, nonatomic) NSMutableArray *operations; // @synthesize operations=_operations;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *operations; // @synthesize operations=_operations;
 - (void)_executeOperationsOnQueue:(id)arg1;
 - (void)_addOperation:(id)arg1;
 - (id)init;

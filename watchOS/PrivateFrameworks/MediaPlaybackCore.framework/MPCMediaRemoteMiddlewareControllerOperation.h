@@ -13,7 +13,7 @@
 
 @interface MPCMediaRemoteMiddlewareControllerOperation : MPAsyncOperation <MPCMediaRemoteMiddlewareControllerProviding, MPMiddlewareAutomaticDependencyOperation>
 {
-    struct NSMapTable *_inputOperations;
+    NSMapTable *_inputOperations;
     CDUnknownBlockType _invalidationHandler;
     NSArray *_invalidationObservers;
     MPCMediaRemoteMiddleware *_middleware;
@@ -21,13 +21,13 @@
     MPCFuture *_controllerFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCFuture *controllerFuture; // @synthesize controllerFuture=_controllerFuture;
 @property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) MPCMediaRemoteMiddleware *middleware; // @synthesize middleware=_middleware;
 @property(readonly, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSMapTable *inputOperations; // @synthesize inputOperations=_inputOperations;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputProtocols;
 @property(readonly, nonatomic) NSArray *inputProtocols;
 - (id)timeoutDescription;

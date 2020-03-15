@@ -22,6 +22,8 @@
 @property(retain, nonatomic) _INPBDateTime *createdDateTime;
 @property(readonly, nonatomic) unsigned long long contentsCount;
 @property(copy, nonatomic) NSArray *contents;
+@property(readonly, nonatomic) _Bool hasAccountIdentifier;
+@property(copy, nonatomic) NSString *accountIdentifier;
 - (_INPBNoteContent *)contentAtIndex:(unsigned long long)arg1;
 - (void)addContent:(_INPBNoteContent *)arg1;
 - (void)clearContents;

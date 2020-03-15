@@ -16,10 +16,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasValidNotificationRegistrationToken; // @synthesize hasValidNotificationRegistrationToken=_hasValidNotificationRegistrationToken;
 @property(nonatomic) int notificationRegistrationToken; // @synthesize notificationRegistrationToken=_notificationRegistrationToken;
 @property(nonatomic) __weak NSObject<EXSNotificationControllerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopListeningForNotifications;
 - (void)startListeningForNotifications;
 - (id)init;

@@ -31,8 +31,8 @@
     GCController *_controller;
 }
 
-- (id)controller;
 - (void).cxx_destruct;
+- (id)controller;
 - (void)_setRotationRate:(CDStruct_39925896)arg1;
 - (void)_setAttitude:(struct GCQuaternion)arg1;
 - (void)_setUserAcceleration:(CDStruct_39925896)arg1;

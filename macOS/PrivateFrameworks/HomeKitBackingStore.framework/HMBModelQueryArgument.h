@@ -17,9 +17,9 @@
 
 + (id)argumentWithPropertyName:(id)arg1 defaultValue:(id)arg2;
 + (id)argumentWithPropertyName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HMBQueryableModelFieldCoder> defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(readonly, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
-- (void).cxx_destruct;
 - (id)initWithPropertyName:(id)arg1 defaultValue:(id)arg2;
 
 @end

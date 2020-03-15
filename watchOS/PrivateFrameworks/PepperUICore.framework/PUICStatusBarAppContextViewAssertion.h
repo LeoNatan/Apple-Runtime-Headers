@@ -15,10 +15,10 @@
     double _animationDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PUICStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithStatusBar:(id)arg1;
 - (id)init;

@@ -16,10 +16,10 @@
     id <TIClientProxy> _clientProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <TIClientProxy> clientProxy; // @synthesize clientProxy=_clientProxy;
 @property(retain, nonatomic) id <TIKeyboardInputManagerLogging> logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) TIKeyboardInputManagerBase *inputManager; // @synthesize inputManager=_inputManager;
-- (void).cxx_destruct;
 - (void)writeTypologyLogWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)logDiscoverabilityEvent:(int)arg1 userInfo:(id)arg2;
 - (void)lastAcceptedCandidateCorrected;

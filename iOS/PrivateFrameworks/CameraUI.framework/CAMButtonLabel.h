@@ -16,11 +16,11 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UILabel *_label; // @synthesize _label=__label;
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) _Bool wantsLegibilityShadow; // @synthesize wantsLegibilityShadow=_wantsLegibilityShadow;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)updateToContentSize:(id)arg1;
 @property(nonatomic) long long textAlignment;
 - (void)setHighlightedTextColor:(id)arg1;

@@ -24,6 +24,7 @@
     VCNRDeviceSyncService *_currentSyncService;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) VCNRDeviceSyncService *currentSyncService; // @synthesize currentSyncService=_currentSyncService;
 @property(retain, nonatomic) VCCompanionSyncSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(copy, nonatomic) NSSet *currentDataHandlers; // @synthesize currentDataHandlers=_currentDataHandlers;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) SYService *service; // @synthesize service=_service;
 @property(nonatomic) __weak id <VCCompanionSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)companionSyncSession:(id)arg1 didUpdateProgress:(double)arg2;
 - (void)companionSyncSessionDidFinishSendingChanges:(id)arg1;
 - (void)companionSyncSession:(id)arg1 didFinishWithError:(id)arg2;

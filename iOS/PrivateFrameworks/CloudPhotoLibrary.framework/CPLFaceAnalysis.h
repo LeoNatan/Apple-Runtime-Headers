@@ -20,9 +20,9 @@
 }
 
 + (Class)faceInstancesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *faceInstances; // @synthesize faceInstances=_faceInstances;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

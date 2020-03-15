@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_assetTransferOptionsByRecordTypeAndKey;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDecryptionAttempt; // @synthesize forceDecryptionAttempt=_forceDecryptionAttempt;
 @property(retain, nonatomic) NSDictionary *assetTransferOptionsByRecordTypeAndKey; // @synthesize assetTransferOptionsByRecordTypeAndKey=_assetTransferOptionsByRecordTypeAndKey;
 @property(retain, nonatomic) NSSet *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(nonatomic) _Bool preserveOrdering; // @synthesize preserveOrdering=_preserveOrdering;
 @property(nonatomic) _Bool fetchAssetContents; // @synthesize fetchAssetContents=_fetchAssetContents;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

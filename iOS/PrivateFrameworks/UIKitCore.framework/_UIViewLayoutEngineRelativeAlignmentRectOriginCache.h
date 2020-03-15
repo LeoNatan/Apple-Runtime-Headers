@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _variableChangeCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long variableChangeCount; // @synthesize variableChangeCount=_variableChangeCount;
 @property(nonatomic) __weak NSISEngine *cacheEngine; // @synthesize cacheEngine=_cacheEngine;
 @property(readonly, nonatomic) __weak UIView *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint origin;
 @property(readonly, nonatomic) _Bool isValid;
 - (id)initWithDelegate:(id)arg1;

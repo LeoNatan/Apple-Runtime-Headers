@@ -21,13 +21,13 @@
     NSData *_mapsData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int pinBehavior; // @synthesize pinBehavior=_pinBehavior;
 @property(copy, nonatomic) NSData *mapsData; // @synthesize mapsData=_mapsData;
 @property(copy, nonatomic) NSString *resultID; // @synthesize resultID=_resultID;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) _SFPBColor *pinColor; // @synthesize pinColor=_pinColor;
 @property(retain, nonatomic) _SFPBLatLng *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

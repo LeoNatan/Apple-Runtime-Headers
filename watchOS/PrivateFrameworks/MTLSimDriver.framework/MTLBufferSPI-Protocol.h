@@ -10,6 +10,7 @@
 @protocol MTLTexture;
 
 @protocol MTLBufferSPI <MTLBuffer>
+@property(readonly, nonatomic) unsigned long long gpuAddress;
 @property(readonly) struct __IOSurface *iosurface;
 - (id <MTLTexture>)newLinearTextureWithDescriptor:(MTLTextureDescriptor *)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3 bytesPerImage:(unsigned int)arg4;
 - (void)didModifyRange:(struct _NSRange)arg1;

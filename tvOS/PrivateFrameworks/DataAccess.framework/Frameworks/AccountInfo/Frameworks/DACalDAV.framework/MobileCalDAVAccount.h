@@ -37,6 +37,7 @@
     DACoreDAVLogger *_coreDAVLogger;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool subscribedCalendarsChanged; // @synthesize subscribedCalendarsChanged=_subscribedCalendarsChanged;
 @property(retain, nonatomic) DACoreDAVLogger *coreDAVLogger; // @synthesize coreDAVLogger=_coreDAVLogger;
 @property(retain, nonatomic) NSMutableSet *searchTaskSet; // @synthesize searchTaskSet=_searchTaskSet;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSMutableSet *mMovedItemURLStrings; // @synthesize mMovedItemURLStrings=_movedItemURLStrings;
 @property(retain, nonatomic) NSMutableDictionary *mItemIDsToMoveActions; // @synthesize mItemIDsToMoveActions=_itemIDsToMoveActions;
 @property(retain, nonatomic) NSMutableDictionary *mPrincipals; // @synthesize mPrincipals=_principals;
-- (void).cxx_destruct;
 - (_Bool)addressIsAccountOwner:(id)arg1;
 - (void)coreDAVTransmittedDataFinished;
 - (void)coreDAVLogTransmittedDataPartial:(id)arg1;

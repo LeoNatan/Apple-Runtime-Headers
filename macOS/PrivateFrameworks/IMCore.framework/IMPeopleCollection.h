@@ -13,8 +13,8 @@
     NSMutableArray *_collectedPeople;
 }
 
-@property(retain, nonatomic) NSMutableArray *_collectedPeople; // @synthesize _collectedPeople;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *_collectedPeople; // @synthesize _collectedPeople;
 - (BOOL)containsPerson:(id)arg1;
 - (id)groups;
 - (id)people;

@@ -13,8 +13,8 @@
     UIImageView *_iconView;
 }
 
-@property(nonatomic) __weak UIImageView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) __weak UIImage *icon;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

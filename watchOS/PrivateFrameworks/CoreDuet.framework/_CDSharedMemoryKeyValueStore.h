@@ -29,8 +29,8 @@
 + (id)sharedInstance;
 + (id)defaultName;
 + (unsigned long)defaultSize;
-@property(readonly, nonatomic) unsigned long size; // @synthesize size=_size;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long size; // @synthesize size=_size;
 - (id)description;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;

@@ -22,12 +22,12 @@
 
 + (id)_logStringForTopShelfContentStyle:(long long)arg1;
 + (_Bool)pluginHasTopShelfExtension:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int topShelfItemsDidChangeNotifyToken; // @synthesize topShelfItemsDidChangeNotifyToken=_topShelfItemsDidChangeNotifyToken;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(retain, nonatomic) TVTopShelfProviderExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(nonatomic) __weak id <TVTopShelfContentExtensionControllingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_invalidate;
 - (void)_stopObservingToTopShelfItemsDidChangeRemoteNotification;
 - (void)_startObservingToTopShelfItemsDidChangeRemoteNotification;

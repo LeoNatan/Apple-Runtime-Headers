@@ -13,13 +13,13 @@ __attribute__((visibility("hidden")))
 {
     NSDictionary *_entriesByKey;
     NSMutableSet *_unresolvedKeys;
-    struct NSDictionary *_keyValues;
+    NSDictionary *_keyValues;
     NSSet *_dataBoundKeys;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *dataBoundKeys; // @synthesize dataBoundKeys=_dataBoundKeys;
 @property(copy, nonatomic) NSDictionary *keyValues; // @synthesize keyValues=_keyValues;
-- (void).cxx_destruct;
 - (void)markResolvedForKey:(id)arg1;
 - (void)setNeedsResolutionForAllKeys;
 - (void)setNeedsResolutionForKey:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)configureOrCreateWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASWriteReviewWindowController *writeReviewWindowControllerLifecycle; // @synthesize writeReviewWindowControllerLifecycle=_writeReviewWindowControllerLifecycle;
 @property(retain, nonatomic) ASWriteReviewConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 @property(readonly, nonatomic) ASTransitionViewController *transitionViewController;
 - (void)transitionToViewController:(id)arg1;

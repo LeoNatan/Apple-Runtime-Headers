@@ -16,10 +16,10 @@
 }
 
 + (void)actionForURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)performWithCompletion:(CDUnknownBlockType)arg1;
 
 @end

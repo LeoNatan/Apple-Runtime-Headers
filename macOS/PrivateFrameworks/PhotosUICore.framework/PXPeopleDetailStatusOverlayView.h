@@ -16,11 +16,11 @@
     NSArray *_viewConstraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *viewConstraints; // @synthesize viewConstraints=_viewConstraints;
 @property(readonly, nonatomic) UXLabel *subtitleField; // @synthesize subtitleField=_subtitleField;
 @property(readonly, nonatomic) UXLabel *messageField; // @synthesize messageField=_messageField;
 @property(readonly, nonatomic) UXImageView *keyAssetImageView; // @synthesize keyAssetImageView=_keyAssetImageView;
-- (void).cxx_destruct;
 - (double)_imageHeightMultiplier;
 - (void)updateConstraints;
 - (double)preferredHeightForWidth:(double)arg1;

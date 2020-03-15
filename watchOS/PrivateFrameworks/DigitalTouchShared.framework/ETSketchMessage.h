@@ -19,11 +19,11 @@
 }
 
 + (unsigned short)messageType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hideComet; // @synthesize hideComet=_hideComet;
 @property(nonatomic) _Bool didDrawPoints; // @synthesize didDrawPoints=_didDrawPoints;
 @property(nonatomic) _Bool didEndWisping; // @synthesize didEndWisping=_didEndWisping;
 @property(nonatomic) _Bool hasMultipleColors; // @synthesize hasMultipleColors=_hasMultipleColors;
-- (void).cxx_destruct;
 - (double)messageDuration;
 - (void)convertToSimulatedPlaybackSpeed;
 - (void)setParentMessage:(id)arg1;

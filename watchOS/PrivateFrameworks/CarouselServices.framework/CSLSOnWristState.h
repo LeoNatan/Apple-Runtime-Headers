@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic, getter=isDeviceOnCharger) _Bool deviceOnCharger; // @synthesize deviceOnCharger=_deviceOnCharger;
 @property(readonly, nonatomic, getter=isForceOnWristEnabled) _Bool forceOnWristEnabled; // @synthesize forceOnWristEnabled=_forceOnWristEnabled;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) int sensorOnWristState; // @synthesize sensorOnWristState=_sensorOnWristState;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)setConfidence:(int)arg1;
 - (void)setSensorOnWristState:(int)arg1;
 - (void)setForceOnWristEnabled:(_Bool)arg1;

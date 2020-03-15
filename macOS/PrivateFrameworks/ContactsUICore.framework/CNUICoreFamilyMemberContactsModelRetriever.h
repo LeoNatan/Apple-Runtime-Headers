@@ -20,12 +20,14 @@
 
 + (id)keysToFetch;
 + (long long)contactFormatterStyle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNSchedulerProvider *schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUICoreFamilyInfoFetching> familyInfoFetcher; // @synthesize familyInfoFetcher=_familyInfoFetcher;
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
-- (id)allContacts;
 - (id)allContactsModel;
+- (id)modelBuilderForContacts:(id)arg1 familyInfo:(id)arg2;
+- (id)modelBuilderForWhitelistedContacts:(id)arg1 familyInfo:(id)arg2;
+- (id)allContacts;
 - (id)whitelistedContactsModel;
 @property(readonly, nonatomic) id <CNScheduler> backgroundOrImmediateScheduler;
 - (id)initWithContactStoreFacade:(id)arg1 familyInfoFetcher:(id)arg2 schedulerProvider:(id)arg3;

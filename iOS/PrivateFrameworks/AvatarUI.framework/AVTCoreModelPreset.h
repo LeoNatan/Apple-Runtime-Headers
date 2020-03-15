@@ -10,14 +10,14 @@
 
 @interface AVTCoreModelPreset : NSObject
 {
-    struct NSDictionary *_tags;
+    NSDictionary *_tags;
     AVTPreset *_preset;
 }
 
-+ (struct NSDictionary *)tagSetFromPreset:(id)arg1;
++ (id)tagSetFromPreset:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTPreset *preset; // @synthesize preset=_preset;
 @property(readonly, copy, nonatomic) NSDictionary *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

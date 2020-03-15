@@ -15,8 +15,8 @@
     _MRNowPlayingClientProtobuf *_client;
 }
 
-@property(retain, nonatomic) _MRNowPlayingClientProtobuf *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MRNowPlayingClientProtobuf *client; // @synthesize client=_client;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

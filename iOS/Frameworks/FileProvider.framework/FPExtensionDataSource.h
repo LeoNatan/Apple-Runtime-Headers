@@ -29,8 +29,8 @@
     id <FPCollectionDataSourceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FPCollectionDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FPCollectionDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_gatherMoreItemsAfterPage:(id)arg1 section:(unsigned long long)arg2;
 - (void)_updateItemsWithUpdatesCount:(unsigned long long)arg1 section:(unsigned long long)arg2;
 @property(readonly, nonatomic) _Bool hasMoreIncoming; // @synthesize hasMoreIncoming=_hasMoreIncoming;

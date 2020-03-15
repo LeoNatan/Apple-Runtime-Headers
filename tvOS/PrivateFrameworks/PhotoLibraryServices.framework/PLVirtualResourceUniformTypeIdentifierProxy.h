@@ -14,8 +14,8 @@
     id <PLUniformTypeIdentifierIdentity> _uniformTypeIdentiferID;
 }
 
-@property(retain, nonatomic) id <PLUniformTypeIdentifierIdentity> uniformTypeIdentiferID; // @synthesize uniformTypeIdentiferID=_uniformTypeIdentiferID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PLUniformTypeIdentifierIdentity> uniformTypeIdentiferID; // @synthesize uniformTypeIdentiferID=_uniformTypeIdentiferID;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) _Bool conformsToImage;
 - (id)initWithUniformTypeIdentiferID:(id)arg1;

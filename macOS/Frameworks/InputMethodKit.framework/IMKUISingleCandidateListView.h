@@ -13,8 +13,8 @@
     NSArray *_selectionKeys;
 }
 
-@property(retain, nonatomic) NSArray *selectionKeys; // @synthesize selectionKeys=_selectionKeys;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *selectionKeys; // @synthesize selectionKeys=_selectionKeys;
 - (id)groupTitleForLineWithIndex:(long long)arg1;
 - (void)didUpdateViewBounds;
 - (id)viewForLineWithIndex:(long long)arg1 frame:(struct CGRect)arg2;

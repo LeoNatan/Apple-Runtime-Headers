@@ -23,10 +23,10 @@
 
 + (void)registerPreferredLanguagesForInputModes:(id)arg1 replacingInputModes:(id)arg2;
 + (id)sharedPreferencesController;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ignoreNextSyncNotification; // @synthesize ignoreNextSyncNotification=_ignoreNextSyncNotification;
 @property(nonatomic) BOOL inhibitGlobalNotification; // @synthesize inhibitGlobalNotification=_inhibitGlobalNotification;
 @property(nonatomic) BOOL isInternalInstall; // @synthesize isInternalInstall;
-- (void).cxx_destruct;
 - (void)updateLastUsedDictationLanguages:(id)arg1;
 - (void)updateEnabledDictationLanguages:(id)arg1;
 - (void)updateEnableProKeyboard:(BOOL)arg1;
@@ -65,6 +65,8 @@
 - (void)setValue:(id)arg1 forPreferenceKey:(id)arg2;
 - (BOOL)boolForPreferenceKey:(id)arg1;
 - (id)valueForPreferenceKey:(id)arg1;
+- (void)_configureKey:(id)arg1 domain:(id)arg2 defaultValue:(id)arg3 fallbackKey:(id)arg4;
+- (void)_configureKey:(id)arg1 domain:(id)arg2 fallbackKey:(id)arg3;
 - (void)_configureKey:(id)arg1 domain:(id)arg2 defaultValue:(id)arg3;
 - (void)_configureDomain:(id)arg1 notification:(id)arg2;
 - (void)_configurePreferences;

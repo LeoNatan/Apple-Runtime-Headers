@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)connectionAttemptStatisticsReportsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
 @property(retain, nonatomic) NSMutableArray *connectionAttemptStatisticsReports; // @synthesize connectionAttemptStatisticsReports=_connectionAttemptStatisticsReports;
 @property(nonatomic) unsigned long long iPAddressAttemptCount; // @synthesize iPAddressAttemptCount=_iPAddressAttemptCount;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL delegated; // @synthesize delegated=_delegated;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

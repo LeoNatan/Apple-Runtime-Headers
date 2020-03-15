@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 + (void *)_createMediaRemoteLanguageOptionWithAudioOption:(id)arg1;
 + (void *)_createMediaRemoteLanguageOptionGroupWithAudioOptions:(id)arg1;
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *contentItemSectionIdentifiers; // @synthesize contentItemSectionIdentifiers=_contentItemSectionIdentifiers;
 @property(nonatomic) void *tokenForContentItemInfoCallback; // @synthesize tokenForContentItemInfoCallback=_tokenForContentItemInfoCallback;
 @property(nonatomic) void *tokenForCreateChildContentItemCallback; // @synthesize tokenForCreateChildContentItemCallback=_tokenForCreateChildContentItemCallback;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVTimeRangeCollection *interstitialTimeRangeCollection; // @synthesize interstitialTimeRangeCollection=_interstitialTimeRangeCollection;
 @property(retain, nonatomic) AVMediaPlayerDelegate *mediaPlayerDelegate; // @synthesize mediaPlayerDelegate=_mediaPlayerDelegate;
 @property(nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (id)_nowPlayingInfo;
 - (void)_scaleImage:(id)arg1 toSize:(struct CGSize)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fetchNowPlayingInfoArtworkForSize:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;

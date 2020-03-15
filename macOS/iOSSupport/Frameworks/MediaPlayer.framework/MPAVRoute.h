@@ -40,6 +40,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPAVRouteConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic, getter=_externalDevice) void *externalDevice; // @synthesize externalDevice=_externalDevice;
 @property(readonly, nonatomic, getter=isHomePodRoute) BOOL homePodRoute; // @synthesize homePodRoute=_homePodRoute;
@@ -60,13 +61,13 @@
 @property(readonly, nonatomic) NSString *groupUID; // @synthesize groupUID=_groupUID;
 @property(readonly, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(readonly, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)debugDescription;
 - (unsigned long long)hash;
 @property(readonly, nonatomic) BOOL supportsWirelessDisplay;
 @property(readonly, nonatomic, getter=isLowLatencyRoute) BOOL lowLatencyRoute;
+@property(readonly, nonatomic, getter=isB364Route) BOOL b364Route;
 @property(readonly, nonatomic, getter=isB419Route) BOOL b419Route;
 @property(readonly, nonatomic, getter=isB444Route) BOOL b444Route;
 @property(readonly, nonatomic, getter=isW2Route) BOOL w2Route;

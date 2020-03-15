@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class DESRecipe, DESRecordSet, NSArray, NSData, NSDate, NSDictionary, NSError, NSString, NSURL;
+@protocol OS_xpc_object;
 
 @interface DESRecipeEvaluationSession : NSObject
 {
@@ -28,9 +29,12 @@
     NSString *_testingRecipePath;
     NSArray *_testingRecipeAttachments;
     CDUnknownBlockType _testingCompletionHandler;
+    NSObject<OS_xpc_object> *_activity;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
 @property(copy, nonatomic) CDUnknownBlockType testingCompletionHandler; // @synthesize testingCompletionHandler=_testingCompletionHandler;
 @property(copy, nonatomic) NSArray *testingRecipeAttachments; // @synthesize testingRecipeAttachments=_testingRecipeAttachments;
 @property(copy, nonatomic) NSString *testingRecipePath; // @synthesize testingRecipePath=_testingRecipePath;
@@ -40,11 +44,11 @@
 @property(readonly, nonatomic) long long evaluationResult; // @synthesize evaluationResult=_evaluationResult;
 @property(readonly, nonatomic) DESRecordSet *matchingRecordSet; // @synthesize matchingRecordSet=_matchingRecordSet;
 @property(readonly, nonatomic) DESRecipe *recipe; // @synthesize recipe=_recipe;
-- (void).cxx_destruct;
 - (void)_deleteDownloadedAttachments;
 - (id)deferralURL;
 - (id)deferWithDeadline:(id)arg1 error:(id *)arg2;
 - (void)completeWithError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)completeWithJSONResult:(id)arg1 binaryResult:(id)arg2 secureAggregationFloats:(const float *)arg3 count:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)completeWithJSONResult:(id)arg1 binaryResult:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_postResultsToServerIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)downloadAttachmentsWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;

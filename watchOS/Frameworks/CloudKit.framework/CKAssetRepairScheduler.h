@@ -43,6 +43,7 @@
 + (int)repairBatchCountLimit;
 + (int)repairBatchSizeLimit;
 + (double)requestTimeout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *retryCountForAssets; // @synthesize retryCountForAssets=_retryCountForAssets;
 @property(retain, nonatomic) NSMutableSet *assetsBeingUploaded; // @synthesize assetsBeingUploaded=_assetsBeingUploaded;
 @property(retain, nonatomic) NSMutableSet *assetsBeingRequested; // @synthesize assetsBeingRequested=_assetsBeingRequested;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) CKUploadRequestConfiguration *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
 @property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;
 @property __weak id <CKAssetRepairSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned int)cacheCount;
 - (unsigned int)cacheSize;
 - (id)allRemainingUploadableAssets;

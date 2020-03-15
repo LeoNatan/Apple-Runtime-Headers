@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSSet *_capabilities;
 }
 
-@property(readonly) NSSet *capabilities; // @synthesize capabilities=_capabilities;
 - (void).cxx_destruct;
+@property(readonly) NSSet *capabilities; // @synthesize capabilities=_capabilities;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (id)init;
 - (id)initWithAttribute:(id)arg1 error:(id *)arg2;

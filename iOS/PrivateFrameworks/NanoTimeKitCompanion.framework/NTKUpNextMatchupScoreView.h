@@ -34,9 +34,9 @@
 }
 
 + (id)_timeStringForFetchDate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)updateTimeLabel;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_iosVisualStyle;
 + (id)styleForConfiguration:(id)arg1;
-@property(retain, nonatomic) NSCache *_systemImageCache; // @synthesize _systemImageCache=__systemImageCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCache *_systemImageCache; // @synthesize _systemImageCache=__systemImageCache;
 @property(readonly, nonatomic) UIImage *systemTableViewCellDetailedDisclosureIndicatorImage;
 @property(readonly, nonatomic) UIImage *systemTableViewCellDisclosureIndicatorImage;
 @property(readonly, nonatomic) UIImage *strokedCheckmarkImage; // @synthesize strokedCheckmarkImage=_strokedCheckmarkImage;

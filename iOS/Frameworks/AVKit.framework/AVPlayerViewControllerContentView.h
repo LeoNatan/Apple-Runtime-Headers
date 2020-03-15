@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _videoContentInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVScrollViewObserver *scrollingObserver; // @synthesize scrollingObserver=_scrollingObserver;
 @property(retain, nonatomic) AVStyleSheet *styleSheet; // @synthesize styleSheet=_styleSheet;
 @property(copy, nonatomic) NSString *externalPlaybackIndicatorSubtitle; // @synthesize externalPlaybackIndicatorSubtitle=_externalPlaybackIndicatorSubtitle;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldLoadPlaybackControlsHint; // @synthesize shouldLoadPlaybackControlsHint=_shouldLoadPlaybackControlsHint;
 @property(retain, nonatomic) UIView<AVPlaybackContentContainer> *playbackContentContainerView; // @synthesize playbackContentContainerView=_playbackContentContainerView;
 @property(nonatomic) __weak id <AVPlayerViewControllerContentViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateStyleSheet;
 - (void)_loadTurboModePlaybackControlsPlaceholderViewIfNeeded;
 - (void)_loadTurboOrFullPlaybackControlsIfNeeded;

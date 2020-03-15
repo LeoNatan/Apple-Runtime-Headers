@@ -20,9 +20,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(getter=isSleepImminent) _Bool sleepImminent; // @synthesize sleepImminent=_sleepImminent;
 @property(getter=isAttemptingToSleep) _Bool attemptingToSleep; // @synthesize attemptingToSleep=_attemptingToSleep;
-- (void).cxx_destruct;
 - (void)systemSleepObserverWillNotSleep:(id)arg1;
 - (void)systemSleepObserver:(id)arg1 willSleepWithCompletion:(CDUnknownBlockType)arg2;
 - (void)systemSleepObserver:(id)arg1 canSleep:(CDUnknownBlockType)arg2;

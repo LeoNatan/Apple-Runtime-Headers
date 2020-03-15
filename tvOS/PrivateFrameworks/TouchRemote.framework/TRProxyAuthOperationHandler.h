@@ -15,8 +15,8 @@
     CDUnknownBlockType _proxyAuthHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType proxyAuthHandler; // @synthesize proxyAuthHandler=_proxyAuthHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType proxyAuthHandler; // @synthesize proxyAuthHandler=_proxyAuthHandler;
 - (void)_handleProxyAuthenticationRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)_handleProxyDeviceRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)registerMessageHandlersForSession:(id)arg1;

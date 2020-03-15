@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 
 + (id)featureName;
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(nonatomic) __weak id <SKUIAnimatorDOMFeatureDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 
 // Remaining properties

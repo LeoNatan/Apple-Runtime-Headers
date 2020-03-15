@@ -16,11 +16,11 @@
     float _lineWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(nonatomic) unsigned int axis; // @synthesize axis=_axis;
 @property(nonatomic) unsigned int unitMultiple; // @synthesize unitMultiple=_unitMultiple;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform scale;
 - (id)initWithUnitMultiple:(int)arg1 axis:(unsigned int)arg2 lineColor:(id)arg3 lineWidth:(float)arg4;
 

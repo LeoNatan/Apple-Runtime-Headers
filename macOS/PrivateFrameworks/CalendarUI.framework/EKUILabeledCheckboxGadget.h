@@ -13,8 +13,8 @@
     NSButton *_checkbox;
 }
 
-@property(retain) NSButton *checkbox; // @synthesize checkbox=_checkbox;
 - (void).cxx_destruct;
+@property(retain) NSButton *checkbox; // @synthesize checkbox=_checkbox;
 - (double)centerlineOffset;
 - (double)baselineOffset;
 - (double)pixelsBetweenLabelAndControl;

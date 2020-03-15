@@ -27,8 +27,10 @@
     BOOL _isFnDown;
     unsigned long long _keyCode;
     NSString *_unicodeCharacter;
+    NSString *_backupUnicodeCharacter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isFnDown; // @synthesize isFnDown=_isFnDown;
 @property(nonatomic) BOOL isCapsLockDown; // @synthesize isCapsLockDown=_isCapsLockDown;
 @property(nonatomic) BOOL isRightShiftDown; // @synthesize isRightShiftDown=_isRightShiftDown;
@@ -42,11 +44,13 @@
 @property(nonatomic) BOOL isModifierChangedEvent; // @synthesize isModifierChangedEvent=_isModifierChangedEvent;
 @property(nonatomic) BOOL isRepeatEvent; // @synthesize isRepeatEvent=_isRepeatEvent;
 @property(nonatomic) BOOL isDownEvent; // @synthesize isDownEvent=_isDownEvent;
+@property(copy, nonatomic) NSString *backupUnicodeCharacter; // @synthesize backupUnicodeCharacter=_backupUnicodeCharacter;
 @property(copy, nonatomic) NSString *unicodeCharacter; // @synthesize unicodeCharacter=_unicodeCharacter;
 @property(nonatomic) unsigned long long keyCode; // @synthesize keyCode=_keyCode;
-- (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) AXSSKeyChord *backupKeyChord;
 @property(readonly, nonatomic) AXSSKeyChord *keyChord;
+- (id)_keyChordForUnicodeCharacter:(id)arg1;
 @property(readonly, nonatomic) long long modifierMask;
 @property(readonly, nonatomic) BOOL isShiftDown;
 @property(readonly, nonatomic) BOOL isControlDown;

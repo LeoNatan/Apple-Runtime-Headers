@@ -22,8 +22,8 @@
 + (id)outputTypes;
 + (_Bool)supportedTypeMustBeDeterminedByInstance:(id)arg1;
 + (id)propertyBuilders;
-@property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 - (_Bool)canGenerateRepresentationForType:(id)arg1;
 - (id)generateFileRepresentationForType:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)generateObjectRepresentationsForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;

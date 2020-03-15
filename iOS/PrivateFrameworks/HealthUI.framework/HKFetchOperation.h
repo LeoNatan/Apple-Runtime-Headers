@@ -17,11 +17,11 @@
     id <HKFetchOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_delegate, setter=_setDelegate:) __weak id <HKFetchOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long operationPriority; // @synthesize operationPriority=_operationPriority;
 @property(nonatomic) long long clientPriority; // @synthesize clientPriority=_clientPriority;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)_alertDelegateDidUpdatePriority;
 - (void)stopOperation;
 - (void)startOperationWithCompletion:(CDUnknownBlockType)arg1;

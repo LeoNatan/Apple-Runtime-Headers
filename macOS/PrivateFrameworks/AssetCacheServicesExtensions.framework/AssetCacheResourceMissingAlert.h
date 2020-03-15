@@ -14,9 +14,9 @@
     NSString *_pathPreventingAccess;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *pathPreventingAccess; // @synthesize pathPreventingAccess=_pathPreventingAccess;
 @property(retain) NSString *resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)sharingPrefsAnchor;
 - (id)verboseText;
 - (id)externalRepresentation;

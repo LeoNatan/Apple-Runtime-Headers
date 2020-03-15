@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSData *screenshotData; // @synthesize screenshotData=_screenshotData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *screenshotData; // @synthesize screenshotData=_screenshotData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;

@@ -60,6 +60,7 @@
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldPendAlertItems; // @synthesize shouldPendAlertItems=_shouldPendAlertItems;
 @property(readonly, nonatomic) _Bool shouldDisableSiri; // @synthesize shouldDisableSiri=_shouldDisableSiri;
 @property(readonly, nonatomic) _Bool shouldDisableInteractiveScreenshotGesture; // @synthesize shouldDisableInteractiveScreenshotGesture=_shouldDisableInteractiveScreenshotGesture;
@@ -84,7 +85,6 @@
 @property(readonly, nonatomic) _Bool allowsStackingOverlayContentAbove; // @synthesize allowsStackingOverlayContentAbove=_allowsStackingOverlayContentAbove;
 @property(nonatomic, getter=isActivatingForSiri) _Bool activatingForSiri; // @synthesize activatingForSiri=_activatingForSiri;
 @property(nonatomic) __weak id <SBRemoteTransientOverlayHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updatePreferredGestureDismissalStyles;
 - (void)_updatePreferredBackgroundStyleWithAnimationSettings:(id)arg1;
 - (void)_updateContentOpaqueProperty;

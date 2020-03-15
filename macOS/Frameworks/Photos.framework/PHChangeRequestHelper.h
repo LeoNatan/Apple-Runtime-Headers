@@ -26,6 +26,7 @@
 
 + (id)changeRequestWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
 + (id)changeRequestForObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *placeholderRequestError; // @synthesize placeholderRequestError=_placeholderRequestError;
 @property(retain, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) NSString *uuidSaveToken; // @synthesize uuidSaveToken=_uuidSaveToken;
@@ -34,14 +35,14 @@
 @property(nonatomic) __weak id <PHChangeRequest> changeRequest; // @synthesize changeRequest=_changeRequest;
 @property(readonly, nonatomic) NSMutableSet *nilMutations; // @synthesize nilMutations=_nilMutations;
 @property(readonly, nonatomic) NSMutableDictionary *mutations; // @synthesize mutations=_mutations;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeToXPCDict:(id)arg1;
 - (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id *)arg2;
 - (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;
 - (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id *)arg3;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSString *clientName;
+@property(readonly, nonatomic) NSString *clientBundleIdentifier;
+@property(readonly, nonatomic) NSString *clientDisplayName;
 @property(readonly, nonatomic, getter=isClientEntitled) BOOL clientEntitled;
 @property(nonatomic, getter=isNewRequest) BOOL newRequest;
 @property(nonatomic, getter=isMutated) BOOL mutated;

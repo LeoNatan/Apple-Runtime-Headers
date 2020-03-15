@@ -14,9 +14,9 @@
     GEOCompanionRouteContext *_companionRouteContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool originatedFromWatch; // @synthesize originatedFromWatch=_originatedFromWatch;
 @property(readonly, copy, nonatomic) GEOCompanionRouteContext *companionRouteContext; // @synthesize companionRouteContext=_companionRouteContext;
-- (void).cxx_destruct;
 - (id)initWithOriginatedFromWatch:(_Bool)arg1 companionRouteContext:(id)arg2;
 
 @end

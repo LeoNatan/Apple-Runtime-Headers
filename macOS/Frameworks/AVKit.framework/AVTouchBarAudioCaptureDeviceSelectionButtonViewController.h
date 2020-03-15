@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingTitle;
 + (id)keyPathsForValuesAffectingWidth;
 + (id)keyPathsForValuesAffectingShowsImage;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVTouchBarAudioCaptureDeviceSelectionButtonViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id <AVTouchBarRecordingControlsControllingInternal> captureController; // @synthesize captureController=_captureController;
-- (void).cxx_destruct;
 - (void)_unbindAllObjects;
 - (void)_bindObject:(id)arg1 withBinding:(id)arg2 toObject:(id)arg3 withKeyPath:(id)arg4 options:(id)arg5;
 - (void)actionButton:(id)arg1;

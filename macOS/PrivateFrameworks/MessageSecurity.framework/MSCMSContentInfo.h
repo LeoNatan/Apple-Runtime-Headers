@@ -19,10 +19,10 @@
 }
 
 + (id)decodeMessageSecurityObject:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain) MSOID *contentType; // @synthesize contentType=_contentType;
 @property(retain) id <MSCMSMessage> embeddedContent; // @synthesize embeddedContent=_embeddedContent;
 @property(retain) NSData *content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (id)initWithDataContent:(id)arg1;
 - (id)initWithEmbeddedContent:(id)arg1;
 - (id)encodeMessageSecurityObject:(id *)arg1;

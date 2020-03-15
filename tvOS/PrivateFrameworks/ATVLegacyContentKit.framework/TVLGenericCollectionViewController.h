@@ -21,12 +21,12 @@
     NSIndexPath *_currentFocusedIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
 @property(nonatomic) _Bool ignoreInitialSelection; // @synthesize ignoreInitialSelection=_ignoreInitialSelection;
 @property(retain, nonatomic) UIView *xmlBannerView; // @synthesize xmlBannerView=_xmlBannerView;
 @property(retain, nonatomic) TVLPreviewFactory *previewFactory; // @synthesize previewFactory=_previewFactory;
 @property(retain, nonatomic) TVLListViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)_isValidIndexPath:(id)arg1;
 - (id)_initialSelectionIndexPath;
 - (void)evaluateJavascriptForEvent:(id)arg1 atIndexPath:(id)arg2;

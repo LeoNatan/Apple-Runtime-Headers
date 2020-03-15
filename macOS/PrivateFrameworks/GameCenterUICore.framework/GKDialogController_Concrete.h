@@ -20,12 +20,12 @@
     struct _NSModalSession *_modalSession;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSModalSession *modalSession; // @synthesize modalSession=_modalSession;
 @property(retain) NSMutableArray *dimmingViews; // @synthesize dimmingViews=_dimmingViews;
 @property(retain, nonatomic) GKPanel *window; // @synthesize window=_window;
 @property(retain, nonatomic) NSViewController<GKViewController> *viewController; // @synthesize viewController=_viewController;
 @property __weak NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-- (void).cxx_destruct;
 - (void)removeDimmingViews;
 - (void)addDimmingViews;
 - (void)_dismissViewController;

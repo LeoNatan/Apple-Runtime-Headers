@@ -64,6 +64,7 @@
     OSLogEventStreamPosition *_position;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OSLogEventStreamPosition *position; // @synthesize position=_position;
 @property(retain, nonatomic) OSLogEventStream *stream; // @synthesize stream=_stream;
 @property(retain, nonatomic) OSLogEventSource *eventSource; // @synthesize eventSource=_eventSource;
@@ -96,7 +97,6 @@
 @property(readonly, nonatomic) CSKDatabaseHandle *activitiesReadonlyDBHandle; // @synthesize activitiesReadonlyDBHandle=_activitiesReadonlyDBHandle;
 @property(readonly, nonatomic) CSKDatabaseHandle *searchMessagesDBHandle; // @synthesize searchMessagesDBHandle=_searchMessagesDBHandle;
 @property(readonly, nonatomic) CSKDatabaseHandle *messagesReadonlyDBHandle; // @synthesize messagesReadonlyDBHandle=_messagesReadonlyDBHandle;
-- (void).cxx_destruct;
 - (id)_cskEventFromLogEventProxy:(id)arg1;
 - (void)_updateDBWithStreamEvents:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_resetAllCachedObjects;

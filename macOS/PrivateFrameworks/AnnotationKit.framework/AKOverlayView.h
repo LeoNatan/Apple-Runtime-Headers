@@ -18,13 +18,13 @@
     NSScrollView *_observedScrollView;
 }
 
+- (void).cxx_destruct;
 @property BOOL scrollViewIsInLiveMagnify; // @synthesize scrollViewIsInLiveMagnify=_scrollViewIsInLiveMagnify;
 @property(retain) NSScrollView *observedScrollView; // @synthesize observedScrollView=_observedScrollView;
 @property BOOL deferWasMovedToSuperviewUntilMoveToWindow; // @synthesize deferWasMovedToSuperviewUntilMoveToWindow=_deferWasMovedToSuperviewUntilMoveToWindow;
 @property BOOL isObserving; // @synthesize isObserving=_isObserving;
 @property __weak AKMainEventHandler *mainEventHandler; // @synthesize mainEventHandler=_mainEventHandler;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 - (void)_willEndLiveMagnify:(id)arg1;
 - (void)_willStartLiveMagnify:(id)arg1;
 - (void)_wasMovedToNewSuperview;

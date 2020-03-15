@@ -23,13 +23,13 @@
 + (id)saliencyObservationWithImageRequestHandler:(id)arg1;
 + (id)saliencyDataForSaliencyObservation:(id)arg1;
 + (void)consolidateCandidateSalientClusters:(id)arg1 maxDistance:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *regressedSalientSubjects; // @synthesize regressedSalientSubjects=_regressedSalientSubjects;
 @property(readonly, nonatomic) VNSaliencyImageObservation *saliencyImageObservation; // @synthesize saliencyImageObservation=_saliencyImageObservation;
 @property(nonatomic) unsigned long long subjectDirection; // @synthesize subjectDirection=_subjectDirection;
 @property(readonly, copy, nonatomic) NSArray *saliencyData; // @synthesize saliencyData=_saliencyData;
 @property(readonly, copy, nonatomic) NSArray *detectedSubjects; // @synthesize detectedSubjects=_detectedSubjects;
 @property(readonly, nonatomic) PIExpandedSubjectCalculatorConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *expandedSubjects; // @synthesize expandedSubjects=_expandedSubjects;
 - (id)findSalientPointsWithSaliencyScale:(float)arg1 outsideOfSubjectsRect:(struct CGRect)arg2;
 - (id)findBestStartingPointForStartingPoint:(struct CGPoint)arg1;

@@ -33,6 +33,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *vendorName; // @synthesize vendorName=_vendorName;
 @property(copy, nonatomic) NSString *variantID; // @synthesize variantID=_variantID;
 @property(copy, nonatomic) MIStoreMetadata *storeMetadata; // @synthesize storeMetadata=_storeMetadata;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic, getter=isBeta) BOOL beta; // @synthesize beta=_beta;
 @property(copy, nonatomic) NSURL *artworkURL; // @synthesize artworkURL=_artworkURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

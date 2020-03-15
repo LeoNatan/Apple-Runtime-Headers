@@ -19,6 +19,7 @@
     SBWorkspaceApplicationSceneTransitionContext *_applicationTransitionContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak SBWorkspaceApplicationSceneTransitionContext *applicationTransitionContext; // @synthesize applicationTransitionContext=_applicationTransitionContext;
 @property(readonly, nonatomic) __weak SBWorkspaceTransaction *workspaceTransaction; // @synthesize workspaceTransaction=_workspaceTransaction;
 @property(readonly, nonatomic) _Bool animationsDisabled; // @synthesize animationsDisabled=_animationsDisabled;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic, getter=isComplete) _Bool complete; // @synthesize complete=_complete;
 @property(readonly, nonatomic) SBLayoutState *toLayoutState; // @synthesize toLayoutState=_toLayoutState;
 @property(readonly, nonatomic) SBLayoutState *fromLayoutState; // @synthesize fromLayoutState=_fromLayoutState;
-- (void).cxx_destruct;
 - (void)transitionCompletedWithError:(id)arg1;
 @property(readonly, nonatomic, getter=isInterrupted) _Bool interrupted;
 - (id)init;

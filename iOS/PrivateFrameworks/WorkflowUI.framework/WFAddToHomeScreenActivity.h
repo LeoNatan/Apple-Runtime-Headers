@@ -19,11 +19,11 @@
     UINavigationController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 @property(nonatomic) __weak id <WFAddToHomeScreenActivityDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addToHomeScreenViewController:(id)arg1 didFinishWithName:(id)arg2 icon:(id)arg3;
 - (void)cancel;
 - (void)addToHomeScreenWithName:(id)arg1 icon:(id)arg2;

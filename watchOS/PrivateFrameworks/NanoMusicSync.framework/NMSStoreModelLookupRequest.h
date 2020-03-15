@@ -13,8 +13,8 @@
     NSArray *_containerIDs;
 }
 
-@property(copy, nonatomic) NSArray *containerIDs; // @synthesize containerIDs=_containerIDs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *containerIDs; // @synthesize containerIDs=_containerIDs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 

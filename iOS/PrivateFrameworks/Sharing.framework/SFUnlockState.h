@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSNumber *remotePasscodeEnabled; // @synthesize remotePasscodeEnabled=_remotePasscodeEnabled;
 @property(readonly) NSNumber *unlockEnabled; // @synthesize unlockEnabled=_unlockEnabled;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUnlockEnabled:(id)arg1 remotePasscodeEnabled:(id)arg2;

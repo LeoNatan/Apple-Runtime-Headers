@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <CKObjectValidating> _validator;
 }
 
-@property(retain, nonatomic) id <CKObjectValidating> validator; // @synthesize validator=_validator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CKObjectValidating> validator; // @synthesize validator=_validator;
 - (id)CKPropertiesDescription;
 - (_Bool)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithValidator:(id)arg1;

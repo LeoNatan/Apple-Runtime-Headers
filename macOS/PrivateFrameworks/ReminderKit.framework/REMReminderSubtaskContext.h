@@ -13,8 +13,8 @@
     REMReminder *_reminder;
 }
 
-@property(retain, nonatomic) REMReminder *reminder; // @synthesize reminder=_reminder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMReminder *reminder; // @synthesize reminder=_reminder;
 - (id)fetchRemindersWithError:(id *)arg1;
 @property(readonly, nonatomic) REMReminder *parentReminder;
 - (id)initWithReminder:(id)arg1;

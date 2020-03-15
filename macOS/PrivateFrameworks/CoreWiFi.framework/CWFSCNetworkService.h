@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     NSString *_interfaceName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (id)DHCPLeaseExpirationTimestamp;
 - (id)DHCPLeaseStartTimestamp;
 - (id)__DHCPInfo;

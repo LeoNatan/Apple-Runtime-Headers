@@ -29,6 +29,7 @@
 + (_Bool)isHostedWindow:(id)arg1;
 + (id)paletteViewInteractionForWindow:(id)arg1 windowScene:(id)arg2;
 + (id)paletteViewInteractionForCanvas:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect textEffectsWindowFrame; // @synthesize textEffectsWindowFrame=_textEffectsWindowFrame;
 @property(retain, nonatomic) NSLayoutConstraint *paletteHostViewLeftConstraint; // @synthesize paletteHostViewLeftConstraint=_paletteHostViewLeftConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *paletteHostViewTopConstraint; // @synthesize paletteHostViewTopConstraint=_paletteHostViewTopConstraint;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
 @property(retain, nonatomic) PKPaletteHostView *paletteHostView; // @synthesize paletteHostView=_paletteHostView;
-- (void).cxx_destruct;
 - (struct CGRect)paletteHostingWindowSceneBounds;
 - (id)hostingWindow;
 - (void)_updatePaletteTraitCollection:(id)arg1;

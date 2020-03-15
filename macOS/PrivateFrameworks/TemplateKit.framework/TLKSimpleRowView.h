@@ -27,6 +27,7 @@
 }
 
 + (void)applyText:(id)arg1 toLabel:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKImageView *trailingImageView; // @synthesize trailingImageView=_trailingImageView;
 @property(retain, nonatomic) TLKLabel *trailingSubtitleLabel; // @synthesize trailingSubtitleLabel=_trailingSubtitleLabel;
 @property(retain, nonatomic) TLKLabel *trailingTitleLabel; // @synthesize trailingTitleLabel=_trailingTitleLabel;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) TLKRichText *leadingSubtitle; // @synthesize leadingSubtitle=_leadingSubtitle;
 @property(retain, nonatomic) TLKRichText *leadingTitle; // @synthesize leadingTitle=_leadingTitle;
 @property(retain, nonatomic) TLKImage *leadingImage; // @synthesize leadingImage=_leadingImage;
-- (void).cxx_destruct;
 - (id)bottomRowViews;
 - (id)topRowViews;
 - (double)widthOfColumnAtIndex:(unsigned long long)arg1;

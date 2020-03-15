@@ -35,6 +35,7 @@
 + (id)defaultCaptureDeviceName;
 + (BOOL)captureDeviceIsAvailable;
 + (void)presentError:(id)arg1 inParentWindow:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSView *captureContainerView; // @synthesize captureContainerView=_captureContainerView;
 @property(retain) AKSignatureOutputView_Mac *outputView; // @synthesize outputView=_outputView;
 @property(retain) AKSignatureCaptureView_Mac *captureView; // @synthesize captureView=_captureView;
@@ -44,7 +45,6 @@
 @property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(copy) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property BOOL persistSignature; // @synthesize persistSignature=_persistSignature;
-- (void).cxx_destruct;
 - (void)clear:(id)arg1;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;

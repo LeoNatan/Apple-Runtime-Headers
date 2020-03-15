@@ -17,10 +17,10 @@
     AWDHomeKitCameraStreamIDSConnSetupParameters *_videoConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDHomeKitCameraStreamIDSConnSetupParameters *keepaliveConnection; // @synthesize keepaliveConnection=_keepaliveConnection;
 @property(retain, nonatomic) AWDHomeKitCameraStreamIDSConnSetupParameters *audioConnection; // @synthesize audioConnection=_audioConnection;
 @property(retain, nonatomic) AWDHomeKitCameraStreamIDSConnSetupParameters *videoConnection; // @synthesize videoConnection=_videoConnection;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

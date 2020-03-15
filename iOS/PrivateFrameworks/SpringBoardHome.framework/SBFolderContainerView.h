@@ -17,11 +17,11 @@
     UIView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) SBFolderView *folderView; // @synthesize folderView=_folderView;
 @property(retain, nonatomic) SBIconLayoutOverrideStrategy *iconLayoutOverrideStrategy; // @synthesize iconLayoutOverrideStrategy=_iconLayoutOverrideStrategy;
 @property(nonatomic) double statusBarHeight; // @synthesize statusBarHeight=_statusBarHeight;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGRect)_frameForFolderView:(id)arg1;
 @property(retain, nonatomic) SBFolderContainerView *childFolderContainerView;

@@ -22,11 +22,11 @@
     long long _maxRetryCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
 @property(nonatomic) _Bool shouldBufferFetchOperations; // @synthesize shouldBufferFetchOperations=_shouldBufferFetchOperations;
 @property(retain, nonatomic) HKOutstandingFetchOperationManager *operationManager; // @synthesize operationManager=_operationManager;
 @property(retain, nonatomic) id <HKChartCacheDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_handleOperationCompletionWithOperation:(id)arg1 identifier:(id)arg2 results:(id)arg3 error:(id)arg4;
 - (id)_operationForIdentifier:(id)arg1;
 - (void)invalidateCache;

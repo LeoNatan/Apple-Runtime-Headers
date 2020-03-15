@@ -32,6 +32,7 @@
     unsigned long long _coalseceCount;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long coalseceCount; // @synthesize coalseceCount=_coalseceCount;
 @property(retain) NSString *otherButtonTitle; // @synthesize otherButtonTitle=_otherButtonTitle;
 @property(retain) NSString *actionButtonTitle; // @synthesize actionButtonTitle=_actionButtonTitle;
@@ -52,7 +53,6 @@
 @property BOOL isForTomorrow; // @synthesize isForTomorrow=_isForTomorrow;
 @property BOOL isForToday; // @synthesize isForToday=_isForToday;
 @property BOOL isForBirthday; // @synthesize isForBirthday=_isForBirthday;
-- (void).cxx_destruct;
 
 @end
 

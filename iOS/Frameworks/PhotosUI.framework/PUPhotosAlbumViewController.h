@@ -22,18 +22,18 @@
     _Bool __isCountingAssetTypes;
     _Bool __hasAccurateCounts;
     PHAssetCollection *_assetCollection;
-    struct NSObject *_album;
+    NSObject<PLAlbumProtocol> *_album;
     PUPhotosAlbumViewControllerSpec *__albumSpec;
     PXEditableNavigationTitleView *_editableTitleView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXEditableNavigationTitleView *editableTitleView; // @synthesize editableTitleView=_editableTitleView;
 @property(retain, nonatomic, setter=_setAlbumSpec:) PUPhotosAlbumViewControllerSpec *_albumSpec; // @synthesize _albumSpec=__albumSpec;
 @property(nonatomic, setter=_setHasAccurateCounts:) _Bool _hasAccurateCounts; // @synthesize _hasAccurateCounts=__hasAccurateCounts;
 @property(nonatomic, setter=_setCountingAssetTypes:) _Bool _isCountingAssetTypes; // @synthesize _isCountingAssetTypes=__isCountingAssetTypes;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *album; // @synthesize album=_album;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 - (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)canRouteToDestination:(id)arg1;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
@@ -48,7 +48,6 @@
 - (id)editableNavigationTitleView:(id)arg1 validateNewText:(id)arg2;
 - (void)photosDataSource:(id)arg1 didReceivePhotoLibraryChange:(id)arg2;
 - (void)didTapHeaderView:(id)arg1;
-- (double)sectionedGridLayout:(id)arg1 aspectRatioForItemAtIndexPath:(id)arg2;
 - (double)sectionedGridLayout:(id)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;
 - (double)sectionedGridLayout:(id)arg1 sectionHeaderHeightForVisualSection:(long long)arg2;
 - (void)handleTransitionFade:(_Bool)arg1 animate:(_Bool)arg2;
@@ -93,9 +92,9 @@
 - (void)setAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 filterPredicate:(id)arg3;
 - (void)setAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 filterPredicate:(id)arg3 existingFetchResults:(id)arg4;
 - (void)setAssetCollection:(id)arg1;
-- (void)setAlbum:(struct NSObject *)arg1 existingFetchResult:(id)arg2;
+- (void)setAlbum:(id)arg1 existingFetchResult:(id)arg2;
 - (void)setSessionInfo:(id)arg1;
-- (id)filterPredicateForAlbum:(struct NSObject *)arg1;
+- (id)filterPredicateForAlbum:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithAlbumSpec:(id)arg1;
 - (id)initWithSpec:(id)arg1;

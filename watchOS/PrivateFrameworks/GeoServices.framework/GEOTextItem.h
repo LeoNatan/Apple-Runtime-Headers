@@ -15,8 +15,8 @@
     NSString *_primaryText;
 }
 
-@property(readonly, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
 - (id)initWithTextItem:(id)arg1;
 - (id)initWithPrimaryText:(id)arg1;
 - (id)init;

@@ -16,11 +16,11 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <AnalyticsEventObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)stopObserving;
 - (BOOL)startObservingEventList:(id)arg1;
 - (void)setEventObserverDelegate:(id)arg1 queue:(id)arg2;

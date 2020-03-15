@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSHTTPURLResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHTTPURLResponse *URLResponse; // @synthesize URLResponse=_response;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 URLResponse:(id)arg2;
 
 @end

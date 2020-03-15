@@ -18,9 +18,9 @@
 }
 
 + (id)textView;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CKBalloonTextViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (void)_interactionStoppedFromPreviewItemController:(id)arg1;
 - (void)_interactionStartedFromPreviewItemController:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(struct UIEdgeInsets *)arg2 isSingleLine:(_Bool *)arg3;

@@ -14,9 +14,9 @@
     SFDevice *_representedDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SFDevice *representedDevice; // @synthesize representedDevice=_representedDevice;
 @property(nonatomic) unsigned long long supportedService; // @synthesize supportedService=_supportedService;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSUUID *identifier;
 - (id)initWithRepresentedDevice:(id)arg1 supportedService:(unsigned long long)arg2;

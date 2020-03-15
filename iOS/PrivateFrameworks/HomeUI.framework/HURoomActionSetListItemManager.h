@@ -13,8 +13,8 @@
     NSArray *_cachedSortedRooms;
 }
 
-@property(retain, nonatomic) NSArray *cachedSortedRooms; // @synthesize cachedSortedRooms=_cachedSortedRooms;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *cachedSortedRooms; // @synthesize cachedSortedRooms=_cachedSortedRooms;
 - (CDUnknownBlockType)_roomComparator;
 - (id)_sortedRooms;
 - (id)_currentSectionIdentifiers;

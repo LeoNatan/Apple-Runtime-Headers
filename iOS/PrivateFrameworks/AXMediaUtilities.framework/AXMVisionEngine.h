@@ -40,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMSequenceRequestManager *sequenceRequestManager; // @synthesize sequenceRequestManager=_sequenceRequestManager;
 @property(retain, nonatomic) AXMTaskDispatcher *taskDispatcher; // @synthesize taskDispatcher=_taskDispatcher;
 @property(retain, nonatomic) AXMService *axMediaUtilsService; // @synthesize axMediaUtilsService=_axMediaUtilsService;
@@ -53,7 +54,6 @@
 @property _Bool prioritySchedulingEnabled; // @synthesize prioritySchedulingEnabled=_prioritySchedulingEnabled;
 @property long long maximumQueueSize; // @synthesize maximumQueueSize=_maximumQueueSize;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)captureSessionNodeDidDropFrame:(id)arg1;
 - (void)captureSessionNodeWillProcessFrame:(id)arg1;
 - (void)captureSessionNodeDidEndProcessingFrames:(id)arg1;

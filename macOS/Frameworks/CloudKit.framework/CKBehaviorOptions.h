@@ -21,6 +21,7 @@
 }
 
 + (id)sharedOptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *automatedDeviceGroupDefaults; // @synthesize automatedDeviceGroupDefaults=_automatedDeviceGroupDefaults;
 @property(retain, nonatomic) NSString *automatedDeviceGroup; // @synthesize automatedDeviceGroup=_automatedDeviceGroup;
 @property BOOL didReadAutomatedDeviceGroup; // @synthesize didReadAutomatedDeviceGroup=_didReadAutomatedDeviceGroup;
@@ -28,7 +29,6 @@
 @property(nonatomic) int mcToken; // @synthesize mcToken=_mcToken;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cachedPrefsQueue; // @synthesize cachedPrefsQueue=_cachedPrefsQueue;
 @property(retain, nonatomic) NSMutableDictionary *cachedPrefs; // @synthesize cachedPrefs=_cachedPrefs;
-- (void).cxx_destruct;
 - (void)setDeviceCountOverride:(id)arg1;
 - (id)deviceCountOverride;
 - (void)setForceUploadRequestActivitiesToRunImmediately:(BOOL)arg1;

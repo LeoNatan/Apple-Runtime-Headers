@@ -22,12 +22,12 @@
 }
 
 + (id)waitForNotification:(id)arg1 matchingPredicate:(CDUnknownBlockType)arg2 withTimeout:(double)arg3 completionQueue:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 @property(retain, nonatomic) id <RWINotifier> notifier; // @synthesize notifier=_notifier;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double elapsedTime;
 - (void)_teardownAndDispatchResult:(long long)arg1 notification:(id)arg2;
 - (void)_watchdogTimerFired:(id)arg1;

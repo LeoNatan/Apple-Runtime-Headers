@@ -20,6 +20,7 @@
     unsigned char _newVoiceInstalled;
     unsigned char _speechThreadPriorityIsHigh;
     unsigned char _shouldTerminateThread;
+    unsigned char _didTerminateThread;
     unsigned long long _synthesizerId;
     TTSTimer *_wordCallbackTimer;
     TTSSpeechServer *_speechService;
@@ -42,7 +43,7 @@
 - (_Bool)_footprintOrVoiceNameHasChanged:(CDStruct_347baace *)arg1;
 - (id)_ttSSpeechServerCopyVoiceNamesForLanguage:(id)arg1 voiceType:(long)arg2 queryingMobileAssets:(_Bool)arg3;
 - (void)_newVoiceInstalled;
-- (void)processMarker:(int)arg1 withByteOffset:(unsigned long)arg2 markerPosition:(unsigned long)arg3 markerLength:(unsigned long)arg4 context:(CDStruct_347baace *)arg5 currentTime:(unsigned long long)arg6;
+- (void)processMarker:(int)arg1 withByteOffset:(unsigned long)arg2 markerPosition:(unsigned long)arg3 markerLength:(unsigned long)arg4 context:(CDStruct_347baace *)arg5 currentTime:(unsigned long long)arg6 secondPass:(_Bool)arg7;
 - (unsigned char)_shouldContinueSpeechGivenMark:(CDStruct_347baace *)arg1 markType:(int)arg2 blockIfPaused:(unsigned char)arg3;
 - (unsigned char)_needsParameterChange:(CDStruct_347baace *)arg1 lock:(unsigned char)arg2 rate:(float *)arg3 pitch:(float *)arg4 volume:(float *)arg5 footprint:(long *)arg6 voiceType:(long *)arg7;
 - (void)_handleSpeechThread;

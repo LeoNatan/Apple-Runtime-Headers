@@ -24,10 +24,10 @@
     struct CGSize _videoDialSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize videoDialSize; // @synthesize videoDialSize=_videoDialSize;
 @property(retain, nonatomic) NTKColorCircularUtilitarianFaceViewComplicationFactory *faceViewComplicationFactory; // @synthesize faceViewComplicationFactory=_faceViewComplicationFactory;
 @property(retain, nonatomic) NTKVideoPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
-- (void).cxx_destruct;
 - (double)_complicationAlphaForEditMode:(long long)arg1;
 - (double)_contentAlphaForEditMode:(long long)arg1;
 - (double)_handAlphaForEditMode:(long long)arg1;

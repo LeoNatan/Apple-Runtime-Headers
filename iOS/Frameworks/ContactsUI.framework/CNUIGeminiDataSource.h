@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CNGeminiManager *_geminiManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNGeminiManager *geminiManager; // @synthesize geminiManager=_geminiManager;
 @property(nonatomic) __weak id <CNUIGeminiDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNGeminiResult *geminiResult; // @synthesize geminiResult=_geminiResult;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)channelsDidChangeForGeminiManager:(id)arg1;
 @property(readonly, nonatomic) NSString *channelIdentifier;
 - (void)applicationWillEnterForeground:(id)arg1;

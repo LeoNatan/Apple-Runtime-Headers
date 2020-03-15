@@ -25,6 +25,7 @@
 
 + (double)timeAdjustedForDigitalDisplay:(double)arg1;
 + (id)sharedStopwatchModel;
+- (void).cxx_destruct;
 @property(nonatomic) double elapsedLapTime; // @synthesize elapsedLapTime=_elapsedLapTime;
 @property(nonatomic) double startLapTime; // @synthesize startLapTime=_startLapTime;
 @property(nonatomic) double elapsedTotalTime; // @synthesize elapsedTotalTime=_elapsedTotalTime;
@@ -33,7 +34,6 @@
 @property(nonatomic) double maxLapTime; // @synthesize maxLapTime=_maxLapTime;
 @property(nonatomic) double minLapTime; // @synthesize minLapTime=_minLapTime;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)pptTestPrep;
 - (void)updateModelWithState:(int)arg1 startTotalTime:(double)arg2 elapsedTotalTime:(double)arg3 startLapTime:(double)arg4 elapsedLapTime:(double)arg5 laps:(id)arg6;
 - (void)addLap:(double)arg1;

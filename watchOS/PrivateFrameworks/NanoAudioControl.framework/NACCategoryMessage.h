@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_category;
 }
 
-@property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

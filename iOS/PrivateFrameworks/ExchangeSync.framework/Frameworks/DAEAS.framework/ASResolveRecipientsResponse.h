@@ -21,10 +21,10 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *responses; // @synthesize responses=_responses;
 @property(retain, nonatomic) NSMutableArray *mResponses; // @synthesize mResponses=_mResponses;
 @property(retain, nonatomic, setter=setEASStatus:) NSNumber *easStatus; // @synthesize easStatus=_easStatus;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addResponse:(id)arg1;
 

@@ -15,10 +15,10 @@
     NSMutableDictionary *_dict;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dict; // @synthesize dict=_dict;
 @property(retain, nonatomic) NSTimeZone *nextTimeZone; // @synthesize nextTimeZone=_nextTimeZone;
 @property(retain, nonatomic) NSTimeZone *previousTimeZone; // @synthesize previousTimeZone=_previousTimeZone;
-- (void).cxx_destruct;
 
 @end
 

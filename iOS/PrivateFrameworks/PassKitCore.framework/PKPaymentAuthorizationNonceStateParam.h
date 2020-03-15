@@ -16,9 +16,9 @@
 
 + (id)paramWithAuthenticatorEvaluationResponse:(id)arg1;
 + (id)paramWithCredential:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKAuthenticatorEvaluationResponse *evaluationResponse; // @synthesize evaluationResponse=_evaluationResponse;
 @property(retain, nonatomic) NSData *credential; // @synthesize credential=_credential;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

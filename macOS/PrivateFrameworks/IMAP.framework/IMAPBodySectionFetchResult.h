@@ -13,8 +13,8 @@
     NSString *_section;
 }
 
-@property(copy, nonatomic) NSString *section; // @synthesize section=_section;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *section; // @synthesize section=_section;
 
 @end
 

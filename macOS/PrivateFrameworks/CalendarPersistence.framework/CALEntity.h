@@ -35,6 +35,7 @@
 
 + (id)makeNewLocalUID;
 + (id)entityFromManagedObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *dropBoxLocationOverrideBaseURL; // @synthesize dropBoxLocationOverrideBaseURL=_dropBoxLocationOverrideBaseURL;
 @property(retain) NSNumber *dropBoxFreeBytes; // @synthesize dropBoxFreeBytes=_dropBoxFreeBytes;
 @property unsigned long long unlistedOtherAttendees; // @synthesize unlistedOtherAttendees=_unlistedOtherAttendees;
@@ -43,7 +44,6 @@
 @property BOOL isOwnerMe; // @synthesize isOwnerMe=_isOwnerMe;
 @property BOOL isPhantom; // @synthesize isPhantom=_isPhantom;
 @property BOOL eTagShouldBeNil; // @synthesize eTagShouldBeNil=_eTagShouldBeNil;
-- (void).cxx_destruct;
 - (void)setChangeKey:(id)arg1;
 - (id)changeKey;
 - (void)setEWSItemID:(id)arg1;

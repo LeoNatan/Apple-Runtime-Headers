@@ -19,12 +19,12 @@
 }
 
 + (void)submitMetricsOnReconciledGraphDensity:(id)arg1 algorithm:(unsigned long long)arg2 persistenceManager:(id)arg3 managedObjectContext:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) NSArray *reconciliationModels; // @synthesize reconciliationModels=_reconciliationModels;
 @property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)_visitsWithContext:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 error:(id *)arg4;
 - (id)_visitFollowingVisit:(id)arg1 visits:(id)arg2;
 - (id)_findWinner:(id)arg1 currentVisit:(id)arg2 model:(id)arg3 modelContext:(id)arg4;

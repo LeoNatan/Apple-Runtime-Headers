@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)_addressBookSourceForNewInfoObjectsInManagedObjectContext:(id)arg1;
++ (id)_containerForNewInfoObjectsInManagedObjectContext:(id)arg1;
 + (id)createInfoWithPersistenceStack:(id)arg1;
 
 @end

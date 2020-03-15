@@ -15,8 +15,8 @@
     NSArray *_eventRules;
 }
 
-@property(retain, nonatomic) NSArray *eventRules; // @synthesize eventRules=_eventRules;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *eventRules; // @synthesize eventRules=_eventRules;
 - (id)_ruleWithUUID:(id)arg1;
 - (id)dateForRuleWithUUID:(id)arg1 byEvaluatingForYear:(long long)arg2;
 - (void)enumerateEventRulesBetweenLocalDate:(id)arg1 andLocalDate:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

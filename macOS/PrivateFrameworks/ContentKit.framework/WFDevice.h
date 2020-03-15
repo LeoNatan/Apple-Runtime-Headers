@@ -15,8 +15,8 @@
 }
 
 + (id)currentDevice;
-@property(readonly, nonatomic) long long chipID; // @synthesize chipID=_chipID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long chipID; // @synthesize chipID=_chipID;
 - (id)_deviceInfoForKey:(struct __CFString *)arg1;
 @property(readonly, nonatomic) NSString *marketingName;
 @property(readonly, nonatomic) NSString *localizedWiFiDisplayName;

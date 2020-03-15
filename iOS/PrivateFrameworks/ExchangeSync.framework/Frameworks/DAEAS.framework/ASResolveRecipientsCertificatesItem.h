@@ -22,11 +22,11 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mCertificates; // @synthesize mCertificates=_mCertificates;
 @property(retain, nonatomic, setter=setEASStatus:) NSNumber *easStatus; // @synthesize easStatus=_easStatus;
 @property(retain, nonatomic) NSNumber *recipientCount; // @synthesize recipientCount=_recipientCount;
 @property(retain, nonatomic) NSNumber *certCount; // @synthesize certCount=_certCount;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addCertificateString:(id)arg1;
 @property(readonly, nonatomic) NSArray *certificates;

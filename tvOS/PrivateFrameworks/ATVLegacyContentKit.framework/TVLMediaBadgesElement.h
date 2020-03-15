@@ -17,12 +17,12 @@
     NSDictionary *_styleKeyValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *styleKeyValues; // @synthesize styleKeyValues=_styleKeyValues;
 @property(retain, nonatomic) NSArray *urlBadges; // @synthesize urlBadges=_urlBadges;
 @property(nonatomic) _Bool closedCaption; // @synthesize closedCaption=_closedCaption;
 @property(copy, nonatomic) NSString *videoFormat; // @synthesize videoFormat=_videoFormat;
 @property(copy, nonatomic) NSString *audioFormat; // @synthesize audioFormat=_audioFormat;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, retain, nonatomic) UIColor *color;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

@@ -19,10 +19,10 @@
     AFAnalyticsTurnBasedInstrumentationContext *_instrumentationContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AFAnalyticsTurnBasedInstrumentationContext *instrumentationContext; // @synthesize instrumentationContext=_instrumentationContext;
 @property(readonly, nonatomic) id <SVXTaskTracking> parent; // @synthesize parent=_parent;
 @property(readonly, copy, nonatomic) SVXTaskContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) SVXDeactivationContext *deactivationContext;
 @property(readonly, nonatomic) SVXActivationContext *activationContext;

@@ -19,12 +19,12 @@
 
 + (struct CGColorSpace *)linearWideGamutColorSpace;
 + (id)faceBalanceKernels;
+- (void).cxx_destruct;
 @property(nonatomic) double inputWarmth; // @synthesize inputWarmth=_inputWarmth;
 @property(nonatomic) double inputStrength; // @synthesize inputStrength=_inputStrength;
 @property(nonatomic) double inputOrigQ; // @synthesize inputOrigQ=_inputOrigQ;
 @property(nonatomic) double inputOrigI; // @synthesize inputOrigI=_inputOrigI;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 
 @end

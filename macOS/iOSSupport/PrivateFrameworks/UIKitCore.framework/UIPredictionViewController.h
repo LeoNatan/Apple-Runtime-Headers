@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     TUIPredictionView *_predictionView;
 }
 
-@property(readonly, nonatomic) TUIPredictionView *predictionView; // @synthesize predictionView=_predictionView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TUIPredictionView *predictionView; // @synthesize predictionView=_predictionView;
 - (id)_currentTextSuggestions;
 - (BOOL)hidesExpandableButton;
 - (BOOL)isVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;

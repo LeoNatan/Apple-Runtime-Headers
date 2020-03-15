@@ -22,11 +22,11 @@
     double _activityIndicatorDelay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowMenuToDismiss; // @synthesize allowMenuToDismiss=_allowMenuToDismiss;
 @property(nonatomic) double activityIndicatorDelay; // @synthesize activityIndicatorDelay=_activityIndicatorDelay;
 @property(nonatomic, getter=isActivityIndicatorHidden) _Bool activityIndicatorHidden; // @synthesize activityIndicatorHidden=_activityIndicatorHidden;
 @property(copy, nonatomic) NSString *activityText; // @synthesize activityText=_activityText;
-- (void).cxx_destruct;
 - (void)_didSelectMenu;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;

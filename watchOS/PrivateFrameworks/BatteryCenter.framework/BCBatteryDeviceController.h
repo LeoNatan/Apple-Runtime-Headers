@@ -27,9 +27,9 @@
 + (id)_glyphForBatteryDeviceWithTransport:(int)arg1 accessoryCategory:(unsigned int)arg2 vendor:(int)arg3 productIdentifier:(int)arg4 parts:(unsigned int)arg5 modelNumber:(id)arg6;
 + (id)_internalBatteryDeviceGlyph;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_chargeChangeHandlingDisabled, setter=_setChargeChangeHandlingDisabled:) _Bool chargeChangeHandlingDisabled; // @synthesize chargeChangeHandlingDisabled=_chargeChangeHandlingDisabled;
 @property(retain, nonatomic, getter=_sortedDevices, setter=_setSortedDevices:) NSArray *sortedDevices; // @synthesize sortedDevices=_sortedDevices;
-- (void).cxx_destruct;
 - (id)_fakeDevicePowerSourceDescriptions;
 - (id)_fakeDeviceB443PowerSourceDescription;
 - (id)_fakeDeviceB352PowerSourceDescription;

@@ -19,12 +19,12 @@
     NSMutableArray *_otherLogs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *otherLogs; // @synthesize otherLogs=_otherLogs;
 @property(retain, nonatomic) NSNumber *sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) NSNumber *lengthOfSearchString; // @synthesize lengthOfSearchString=_lengthOfSearchString;
 @property(retain, nonatomic) NSNumber *selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) CNTracedLogger *tracedLogger; // @synthesize tracedLogger=_tracedLogger;
-- (void).cxx_destruct;
 - (void)sendData;
 - (id)buildTraceLogWithUserAction:(id)arg1 stringLength:(id)arg2 selectedResultIndex:(id)arg3 sourceType:(unsigned long long)arg4 resultType:(id)arg5 numberOfResults:(id)arg6;
 - (void)recordUserIgnoredPrefixedResultAfterDelay:(double)arg1 batch:(unsigned long long)arg2;

@@ -17,10 +17,10 @@
 
 + (id)itemWithIdentifier:(id)arg1 products:(id)arg2;
 + (id)itemWithIdentifier:(id)arg1 title:(id)arg2 products:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSArray *products; // @synthesize products=_products;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

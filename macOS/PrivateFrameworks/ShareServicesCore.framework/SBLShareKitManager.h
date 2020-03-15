@@ -33,6 +33,7 @@
     NSWindow *_hostWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain, nonatomic) NSSharingServicePicker *sessionPicker; // @synthesize sessionPicker=_sessionPicker;
 @property(copy, nonatomic) NSString *sharingAlertCancelTitle; // @synthesize sharingAlertCancelTitle=_sharingAlertCancelTitle;
@@ -46,7 +47,6 @@
 @property __weak id <SBLShareKitManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak id <SBLShareKitManagerReconnectDelegate> reconnectDelegate; // @synthesize reconnectDelegate=_reconnectDelegate;
 @property __weak id <SBLShareKitManagerProgressDelegate> progressDelegate; // @synthesize progressDelegate=_progressDelegate;
-- (void).cxx_destruct;
 - (void)abort;
 - (void)preflightItemProviders:(id)arg1;
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;

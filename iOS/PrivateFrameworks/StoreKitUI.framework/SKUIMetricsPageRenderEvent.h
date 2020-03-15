@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 + (double)_randomDouble;
 + (_Bool)shouldCollectPageRenderDataForDocument:(id)arg1;
 + (_Bool)shouldCollectPageRenderData;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *metricsBase; // @synthesize metricsBase=_metricsBase;
 @property(readonly, copy, nonatomic) NSArray *requests; // @synthesize requests=_requests;
 @property(readonly, copy, nonatomic) NSArray *domChanges; // @synthesize domChanges=_domChanges;
-- (void).cxx_destruct;
 - (void)populateObjectInspector:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)appendPropertiesToBody:(id)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedProvider;
-@property(readonly, copy, nonatomic) NSDictionary *contents; // @synthesize contents=_contents;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *contents; // @synthesize contents=_contents;
 - (id)nameForObject:(id)arg1;
 - (id)init;
 

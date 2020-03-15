@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface _CSStore : NSObject <NSSecureCoding>
 {
-    // Error parsing type: {Store="dataContainer"@"tableOffsets"{array<unsigned int, 64>="__elems_"[64I]}"arrayTable"^{Table}"stringTable"^{Table}"enumerationState"{atomic<long long>="__a_"Aq}"getNSDataCallCount"{atomic<long long>="__a_"Aq}"pedigree"{Pedigree="family"Q"generationAtCopyTime"{optional<unsigned int>=""(?="__null_state_"c"__val_"I)"__engaged_"B}}}, name: _store
+    // Error parsing type: {Store="dataContainer"@"tableOffsets"{array<unsigned int, 64>="__elems_"[64I]}"arrayTable"^{Table}"stringTable"^{Table}"enumerationState"{atomic<long long>="__a_"{__cxx_atomic_impl<long long, std::__1::__cxx_atomic_base_impl<long long> >="__a_value"Aq}}"getNSDataCallCount"{atomic<long long>="__a_"{__cxx_atomic_impl<long long, std::__1::__cxx_atomic_base_impl<long long> >="__a_value"Aq}}"pedigree"{Pedigree="family"Q"generationAtCopyTime"{optional<unsigned int>=""(?="__null_state_"c"__val_"I)"__engaged_"B}}}, name: _store
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)setExpectedAccessQueue:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1 error:(id *)arg2;
 - (id)initWithError:(id *)arg1;
--     // Error parsing type: @24@0:8^{Store=@{array<unsigned int, 64>=[64I]}^{Table}^{Table}{atomic<long long>=Aq}{atomic<long long>=Aq}{Pedigree=Q{optional<unsigned int>=(?=cI)B}}}16, name: initByMovingStore:
+-     // Error parsing type: @24@0:8^{Store=@{array<unsigned int, 64>=[64I]}^{Table}^{Table}{atomic<long long>={__cxx_atomic_impl<long long, std::__1::__cxx_atomic_base_impl<long long> >=Aq}}{atomic<long long>={__cxx_atomic_impl<long long, std::__1::__cxx_atomic_base_impl<long long> >=Aq}}{Pedigree=Q{optional<unsigned int>=(?=cI)B}}}16, name: initByMovingStore:
 - (id)init;
 
 @end

@@ -17,9 +17,9 @@
     RTTimer *_flushTimer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTTimer *flushTimer; // @synthesize flushTimer=_flushTimer;
 @property(readonly, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
-- (void).cxx_destruct;
 - (void)fetchMetricsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_fetchMetricsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)removeLocationsPredating:(id)arg1 handler:(CDUnknownBlockType)arg2;

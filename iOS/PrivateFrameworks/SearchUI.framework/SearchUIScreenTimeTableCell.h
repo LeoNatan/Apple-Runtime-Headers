@@ -13,8 +13,8 @@
     TLKLabel *_label;
 }
 
-@property(retain, nonatomic) TLKLabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TLKLabel *label; // @synthesize label=_label;
 - (id)visibleResults;
 - (void)updateWithRowModel:(id)arg1;
 - (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;

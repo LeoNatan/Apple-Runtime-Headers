@@ -22,10 +22,10 @@
 }
 
 + (id)_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *checkProgress; // @synthesize checkProgress=_checkProgress;
 @property BOOL routerCancelled; // @synthesize routerCancelled=_routerCancelled;
 @property(nonatomic) BOOL performingUserInitiatedFetch; // @synthesize performingUserInitiatedFetch=_performingUserInitiatedFetch;
-- (void).cxx_destruct;
 - (void)_finishCheckingForMailProgress;
 - (void)_setFoundNewUnreadMessageInInbox;
 - (void)_incrementFoundMessages:(unsigned long long)arg1;

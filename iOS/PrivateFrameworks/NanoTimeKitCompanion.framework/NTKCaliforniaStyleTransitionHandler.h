@@ -19,6 +19,7 @@
     struct CGPoint _centerPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) unsigned long long hourMarkersCount; // @synthesize hourMarkersCount=_hourMarkersCount;
 @property(nonatomic) struct CGPoint *fadeInHourMarkersCenterPoints; // @synthesize fadeInHourMarkersCenterPoints=_fadeInHourMarkersCenterPoints;
@@ -26,7 +27,6 @@
 @property(nonatomic) struct CGPoint centerPoint; // @synthesize centerPoint=_centerPoint;
 @property(nonatomic) unsigned long long dial; // @synthesize dial=_dial;
 @property(nonatomic) double fraction; // @synthesize fraction=_fraction;
-- (void).cxx_destruct;
 - (double)animationDurationForHourMarkerAtIndex:(unsigned long long)arg1 markerType:(unsigned long long)arg2;
 - (double)animationStartTimeForMarkerAtIndex:(unsigned long long)arg1 markerType:(unsigned long long)arg2;
 - (double)animationProgressForHourMarkerAtIndex:(unsigned long long)arg1 markerType:(unsigned long long)arg2;

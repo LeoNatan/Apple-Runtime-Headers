@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CXNamespace *mOCXDrawingNamespace;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CXNamespace *OCXDrawingNamespace; // @synthesize OCXDrawingNamespace=mOCXDrawingNamespace;
 @property(retain, nonatomic) CXNamespace *OCXRelationshipsNamespace; // @synthesize OCXRelationshipsNamespace=mOCXRelationshipsNamespace;
 @property(readonly, nonatomic) int xmlFormat; // @synthesize xmlFormat=mXMLFormat;
-- (void).cxx_destruct;
 - (id)OCXSettingsRelationshipType;
 - (id)OCXTableStylesRelationshipType;
 - (id)OCXPackageViewPropsRelationshipType;

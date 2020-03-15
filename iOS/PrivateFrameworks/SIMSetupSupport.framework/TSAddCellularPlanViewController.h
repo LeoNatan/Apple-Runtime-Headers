@@ -18,8 +18,8 @@
     id <TSSIMSetupFlowDelegate> _delegate;
 }
 
-@property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_doneButtonTapped;
 - (void)_cancelButtonTapped;
 - (void)viewDidLoad;

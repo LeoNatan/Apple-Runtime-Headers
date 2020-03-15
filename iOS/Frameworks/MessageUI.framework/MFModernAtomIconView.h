@@ -15,10 +15,10 @@
     struct CGPoint _drawingOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint drawingOffset; // @synthesize drawingOffset=_drawingOffset;
 @property(nonatomic) double iconPadding; // @synthesize iconPadding=_iconPadding;
 @property(retain, nonatomic) NSArray *iconImages; // @synthesize iconImages=_iconImages;
-- (void).cxx_destruct;
 - (double)preferredWidth;
 - (void)drawRect:(struct CGRect)arg1;
 

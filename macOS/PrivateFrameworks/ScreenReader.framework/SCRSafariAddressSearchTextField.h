@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     SCRTextMarkerRange *__previousSelectionRangeBeforeSelectionNotificationHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _inputInProgressWhilePopupIsDisplayed; // @synthesize _inputInProgressWhilePopupIsDisplayed=__inputInProgressWhilePopupIsDisplayed;
 @property(retain, nonatomic) SCRTextMarkerRange *_previousSelectionRangeBeforeSelectionNotificationHandler; // @synthesize _previousSelectionRangeBeforeSelectionNotificationHandler=__previousSelectionRangeBeforeSelectionNotificationHandler;
 @property(nonatomic) unsigned long long _numberOfCharactersBeforeSelectionNotificationHandler; // @synthesize _numberOfCharactersBeforeSelectionNotificationHandler=__numberOfCharactersBeforeSelectionNotificationHandler;
 @property(nonatomic) BOOL _selectionNotificationHandlerModifiedCachedNumberOfCharacters; // @synthesize _selectionNotificationHandlerModifiedCachedNumberOfCharacters=__selectionNotificationHandlerModifiedCachedNumberOfCharacters;
-- (void).cxx_destruct;
 - (BOOL)shouldSuppressTextAttributesEcho;
 - (void)_elementWasDestroyed:(id)arg1;
 - (void)_handlePopupSelectionChange;

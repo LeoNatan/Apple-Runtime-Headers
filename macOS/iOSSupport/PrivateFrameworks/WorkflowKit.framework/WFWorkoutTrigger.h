@@ -21,11 +21,11 @@
 + (id)localizedDisplayName;
 + (BOOL)isSupportedOnThisDevice;
 + (BOOL)isAllowedToRunAutomatically;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL onEnd; // @synthesize onEnd=_onEnd;
 @property(nonatomic) BOOL onStart; // @synthesize onStart=_onStart;
 @property(copy, nonatomic) NSArray *selectedWorkoutTypes; // @synthesize selectedWorkoutTypes=_selectedWorkoutTypes;
 @property(nonatomic) unsigned long long selection; // @synthesize selection=_selection;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

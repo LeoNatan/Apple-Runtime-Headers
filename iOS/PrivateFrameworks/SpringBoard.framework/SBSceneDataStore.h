@@ -17,10 +17,10 @@
     _Bool _invalidated;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic, getter=_data) NSDictionary *data; // @synthesize data=_data;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_invokeChangeHandler;
 - (void)_invalidate;
 - (void)removeAllObjects;

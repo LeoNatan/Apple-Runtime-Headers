@@ -21,12 +21,12 @@
 }
 
 + (id)operationForAction:(unsigned long long)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSError *lastError; // @synthesize lastError=_lastError;
 @property(copy, nonatomic) CDUnknownBlockType editingManagerProvider; // @synthesize editingManagerProvider=_editingManagerProvider;
 @property(retain) id <CUIKDecisionDelegate> decisionDelegate; // @synthesize decisionDelegate=_decisionDelegate;
 @property(retain) id <CUIKCommitDelegate> commitDelegate; // @synthesize commitDelegate=_commitDelegate;
 @property BOOL disableUndoForOrganizerScheduling; // @synthesize disableUndoForOrganizerScheduling=_disableUndoForOrganizerScheduling;
-- (void).cxx_destruct;
 - (void)clearUndoOperations;
 - (void)undoOperation:(id)arg1;
 - (void)handleUndoForOperation:(id)arg1;

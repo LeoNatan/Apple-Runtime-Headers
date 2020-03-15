@@ -14,9 +14,9 @@
     MPModelStoreBrowseResponseParser *_parser;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelStoreBrowseResponseParser *parser; // @synthesize parser=_parser;
 @property(retain, nonatomic) MPChangeDetails *changeDetails; // @synthesize changeDetails=_changeDetails;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasAdditionalContentItems;
 
 @end

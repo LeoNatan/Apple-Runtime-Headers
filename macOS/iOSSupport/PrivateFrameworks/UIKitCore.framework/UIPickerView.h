@@ -64,12 +64,13 @@
 + (struct CGSize)defaultSizeForTraits:(id)arg1;
 + (struct CGSize)sizeForMainScreenTraitsThatFits:(struct CGSize)arg1;
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 forTraits:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor; // @synthesize magnifierLineColor=_magnifierLineColor;
 @property(nonatomic, getter=_enabled, setter=_setEnabled:) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, setter=_setMagnifierEnabled:) BOOL _magnifierEnabled; // @synthesize _magnifierEnabled;
 @property(nonatomic) __weak id <UIPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <UIPickerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (BOOL)_canHostViewControllerContentScrollView;
 - (id)_scalarStatisticsForUserValueChangedEvent;
 - (void)_willPlayClickSound;

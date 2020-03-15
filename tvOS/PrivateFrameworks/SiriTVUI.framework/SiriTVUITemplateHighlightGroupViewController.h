@@ -14,8 +14,8 @@
     long long _selectedIndex;
 }
 
-@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (void).cxx_destruct;
+@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (_Bool)supportsSwipeDismissal;
 - (void)templateItemViewController:(id)arg1 didHighlightTemplateItem:(id)arg2 atIndexPath:(id)arg3 hasStopped:(_Bool)arg4;
 - (void)loadView;

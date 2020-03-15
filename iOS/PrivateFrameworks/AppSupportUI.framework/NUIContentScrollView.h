@@ -18,12 +18,12 @@
     long long _verticalAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canScrollDocumentViewVertically; // @synthesize canScrollDocumentViewVertically=_canScrollDocumentViewVertically;
 @property(nonatomic) _Bool canScrollDocumentViewHorizontally; // @synthesize canScrollDocumentViewHorizontally=_canScrollDocumentViewHorizontally;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
 @property(retain, nonatomic) UIView *documentView; // @synthesize documentView=_documentView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;

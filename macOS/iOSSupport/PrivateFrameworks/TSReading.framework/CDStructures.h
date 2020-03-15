@@ -179,10 +179,6 @@ struct Info {
     struct __CFString *_field8;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 struct ObjcSharedPtr<NSString> {
     id _field1;
 };

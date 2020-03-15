@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *liveProperties; // @synthesize liveProperties=_liveProperties;
 @property(retain, nonatomic) NSArray *staticProperties; // @synthesize staticProperties=_staticProperties;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

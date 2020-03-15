@@ -24,6 +24,7 @@
 + (id)sampleQueryDescriptionWithSampleTypes:(id)arg1 predicate:(id)arg2;
 + (id)sampleQueryDescriptionWithSampleType:(id)arg1 predicate:(id)arg2;
 + (id)sampleQueryDescriptionWithSampleType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HDSQLitePredicate *sqlitePredicate; // @synthesize sqlitePredicate=_sqlitePredicate;
 @property(readonly, copy, nonatomic) _HKFilter *filter; // @synthesize filter=_filter;
 @property(readonly, copy, nonatomic) CDUnknownBlockType authorizationFilter; // @synthesize authorizationFilter=_authorizationFilter;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *encodingOptions; // @synthesize encodingOptions=_encodingOptions;
 @property(readonly, copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy, nonatomic) NSSet *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -26,6 +26,7 @@
     CDUnion_fab80606 _peerAddress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(retain, nonatomic) CUNANEndpoint *peerEndpoint; // @synthesize peerEndpoint=_peerEndpoint;
 @property(readonly, nonatomic) CDUnion_fab80606 peerAddress; // @synthesize peerAddress=_peerAddress;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_invalidated;
 - (void)_invalidate;
 - (void)invalidate;

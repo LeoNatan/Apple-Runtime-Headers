@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool destructive; // @synthesize destructive=_destructive;
 @property(retain, nonatomic) BLTPBImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

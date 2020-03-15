@@ -13,8 +13,8 @@
     NSSet *_notificationTypeNamesToFetch;
 }
 
-@property(retain, nonatomic) NSSet *notificationTypeNamesToFetch; // @synthesize notificationTypeNamesToFetch=_notificationTypeNamesToFetch;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *notificationTypeNamesToFetch; // @synthesize notificationTypeNamesToFetch=_notificationTypeNamesToFetch;
 - (id)copyAdditionalResourcePropertiesToFetch;
 - (_Bool)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
 - (id)copyGetTaskWithURL:(id)arg1;

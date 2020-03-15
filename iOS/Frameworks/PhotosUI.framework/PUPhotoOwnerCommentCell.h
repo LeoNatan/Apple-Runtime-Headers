@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (double)heightOfOwnerCellWithAsset:(id)arg1 forWidth:(double)arg2 forInterfaceOrientation:(long long)arg3;
 + (id)_ownerStringForAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UIView *styledSeparatorView; // @synthesize styledSeparatorView=_styledSeparatorView;
 @property(readonly, retain, nonatomic) UILabel *ownerContentLabel; // @synthesize ownerContentLabel=_ownerContentLabel;
 @property(copy, nonatomic) NSAttributedString *ownerString; // @synthesize ownerString=_ownerString;
 @property(nonatomic) _Bool usesCompactSeparators; // @synthesize usesCompactSeparators=_usesCompactSeparators;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateContentFromAsset:(id)arg1;
 - (void)prepareForReuse;

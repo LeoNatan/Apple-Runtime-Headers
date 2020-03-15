@@ -18,13 +18,13 @@
     HFSelectedUserCollection *_selectedUsers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFSelectedUserCollection *selectedUsers; // @synthesize selectedUsers=_selectedUsers;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
 @property(readonly, nonatomic) unsigned long long activationGranularity; // @synthesize activationGranularity=_activationGranularity;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)_summaryTitle;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithEventType:(unsigned long long)arg1 selectedUsers:(id)arg2 activationGranularity:(unsigned long long)arg3 style:(unsigned long long)arg4 home:(id)arg5;

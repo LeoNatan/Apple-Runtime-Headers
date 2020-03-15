@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     PUPinchedTileTracker *__pinchedTileTracker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPinchedTileTracker:) PUPinchedTileTracker *_pinchedTileTracker; // @synthesize _pinchedTileTracker=__pinchedTileTracker;
 @property(retain, nonatomic, setter=_setScaleDirectionValueFilter:) PUChangeDirectionValueFilter *_scaleDirectionValueFilter; // @synthesize _scaleDirectionValueFilter=__scaleDirectionValueFilter;
 @property(nonatomic, getter=_isHandlingPinchGestureRecognizer, setter=_setHandlingPinchGestureRecognizer:) _Bool handlingPinchGestureRecognizer; // @synthesize handlingPinchGestureRecognizer=_handlingPinchGestureRecognizer;
 @property(retain, nonatomic, setter=_setPinchGestureRecognizer:) UIPinchGestureRecognizer *_pinchGestureRecognizer; // @synthesize _pinchGestureRecognizer=__pinchGestureRecognizer;
-- (void).cxx_destruct;
 - (id)pinchedTiledTracker:(id)arg1 finalLayoutInfoForInitialLayoutInfo:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

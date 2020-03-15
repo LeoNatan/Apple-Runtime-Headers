@@ -16,11 +16,11 @@
     ARRaycastQuery *_trackedQuery;
 }
 
+- (void).cxx_destruct;
 @property(retain) ARRaycastQuery *trackedQuery; // @synthesize trackedQuery=_trackedQuery;
 @property(nonatomic) __weak ARWorldTrackingTechnique *attachedWorldTrackingTechnique; // @synthesize attachedWorldTrackingTechnique=_attachedWorldTrackingTechnique;
 @property(readonly, copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)stopTracking;
 - (id)query;

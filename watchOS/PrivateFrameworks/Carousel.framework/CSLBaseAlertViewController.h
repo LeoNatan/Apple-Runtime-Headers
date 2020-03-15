@@ -23,12 +23,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool timeLabelEnabled; // @synthesize timeLabelEnabled=_timeLabelEnabled;
 @property(nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(retain, nonatomic) UIViewController<CUISBulletinQuickLongLook> *contentController; // @synthesize contentController=_contentController;
 @property(retain, nonatomic) CUISAlertBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) CLKUITimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
-- (void).cxx_destruct;
 - (void)quickLongLook:(id)arg1 setTimeVisible:(_Bool)arg2;
 - (void)usePlainAnimationOnDismissalForQuickLongLook:(id)arg1;
 - (id)alertBackground;

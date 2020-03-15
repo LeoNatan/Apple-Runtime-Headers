@@ -26,6 +26,7 @@
 }
 
 + (id)_tintColorForEffect:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentEffect; // @synthesize currentEffect=_currentEffect;
 @property(nonatomic, getter=isReduceTransparencyEnabled) _Bool reduceTransparencyEnabled; // @synthesize reduceTransparencyEnabled=_reduceTransparencyEnabled;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long effect; // @synthesize effect=_effect;
 @property(nonatomic, getter=isTransitionCancelled) _Bool transitionCancelled; // @synthesize transitionCancelled=_transitionCancelled;
 @property(nonatomic) __weak id <SBFolderControllerBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)minimumHomeScreenScale;
 - (_Bool)_isCurrentlyExpanding;
 - (void)_updateCurrentEffect;

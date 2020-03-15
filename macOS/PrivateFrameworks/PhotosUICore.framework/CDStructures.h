@@ -39,39 +39,11 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSCollectionViewItem {
-    Class _field1;
-};
-
-struct NSColor {
-    Class _field1;
-};
-
 struct NSEdgeInsets {
     double top;
     double left;
     double bottom;
     double right;
-};
-
-struct NSFont {
-    Class _field1;
-};
-
-struct NSImage {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
-struct NSString {
-    Class _field1;
 };
 
 struct PHAssetResourceTableDataSpecification {
@@ -129,10 +101,6 @@ struct PXGImageRequest {
     unsigned int _field1;
     int _field2;
     void *_field3;
-};
-
-struct PXGItemsLayout {
-    Class _field1;
 };
 
 struct PXGThumbnailRequest {
@@ -250,10 +218,6 @@ struct PXTileState {
     void *_field12;
     void *_field13;
     unsigned long long _field14;
-};
-
-struct PXTwoTuple {
-    Class _field1;
 };
 
 struct PXViewSpecDescriptor {
@@ -541,6 +505,11 @@ typedef struct {
 
 typedef struct {
     long long _field1;
+    double _field2;
+} CDStruct_7f320dbc;
+
+typedef struct {
+    long long _field1;
     float _field2;
 } CDStruct_fd7332cd;
 
@@ -563,6 +532,13 @@ typedef struct {
     long long _field3;
     double _field4;
 } CDStruct_68723fc0;
+
+typedef struct {
+    long long contentSizeCategory;
+    long long layoutDirection;
+    long long layoutSizeClass;
+    long long layoutOrientation;
+} CDStruct_e6148bb0;
 
 typedef struct {
     long long _field1;
@@ -694,12 +670,7 @@ typedef struct {
 typedef struct {
     struct CGRect layoutRect;
     char onlyCalculateSize;
-    struct {
-        long long contentSizeCategory;
-        long long layoutDirection;
-        long long layoutSizeClass;
-        long long layoutOrientation;
-    } layoutAttributes;
+    CDStruct_e6148bb0 layoutAttributes;
 } CDStruct_8c65c4f4;
 
 typedef struct {

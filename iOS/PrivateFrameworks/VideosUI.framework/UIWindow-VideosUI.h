@@ -8,17 +8,27 @@
 
 @interface UIWindow (VideosUI)
 + (double)_adjustedWindowSizeFor:(id)arg1;
++ (struct UIEdgeInsets)_safeAreaInsetsForDeviceWithWindowWidth:(double)arg1;
 + (struct UIEdgeInsets)_safeAreaInsetsForDeviceWithElement:(id)arg1;
 + (id)vui_keyWindow;
++ (long long)_layoutTypeIsPortrait;
 + (long long)vui_layoutType;
 + (double)_vui_interitemSpaceForSizeClass:(long long)arg1 gridType:(long long)arg2;
++ (long long)_vui_currentSizeClassForWindowWidth:(double)arg1 safeArea:(struct UIEdgeInsets)arg2;
++ (long long)vui_currentSizeClassForWindowWidth:(double)arg1;
 + (long long)vui_currentSizeClassForElement:(id)arg1;
 + (long long)vui_currentSizeClass;
++ (_Bool)vui_isCompactSize:(double)arg1;
 + (double)vui_collectionInteritemSpace:(long long)arg1 gridType:(long long)arg2 withElement:(id)arg3;
 + (double)vui_collectionInteritemSpace:(long long)arg1 gridType:(long long)arg2;
++ (double)_vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2 numGridColumns:(unsigned long long)arg3 windowWidth:(double)arg4 sizeClass:(long long)arg5 padding:(struct UIEdgeInsets)arg6;
++ (double)vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2 numGridColumns:(unsigned long long)arg3 windowWidth:(double)arg4;
 + (double)vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2 numGridColumns:(unsigned long long)arg3 element:(id)arg4;
 + (double)vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2 numGridColumns:(unsigned long long)arg3;
 + (double)vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2;
++ (struct UIEdgeInsets)_paddingForSizeClass:(long long)arg1 safeArea:(struct UIEdgeInsets)arg2;
++ (struct UIEdgeInsets)vui_paddingForSizeClass:(long long)arg1;
++ (struct UIEdgeInsets)vui_paddingForWindowWidth:(double)arg1;
 + (struct UIEdgeInsets)vui_paddingForElement:(id)arg1;
 + (struct UIEdgeInsets)vui_padding;
 @end

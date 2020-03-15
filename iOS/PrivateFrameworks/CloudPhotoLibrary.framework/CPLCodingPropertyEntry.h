@@ -21,6 +21,7 @@
     NSString *_structName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *structName; // @synthesize structName=_structName;
 @property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic) struct objc_ivar *ivar; // @synthesize ivar=_ivar;
@@ -30,7 +31,6 @@
 @property(nonatomic) SEL propertyGetter; // @synthesize propertyGetter=_propertyGetter;
 @property(retain, nonatomic) NSSet *propertyClasses; // @synthesize propertyClasses=_propertyClasses;
 @property(nonatomic) BOOL propertyType; // @synthesize propertyType=_propertyType;
-- (void).cxx_destruct;
 - (void)setIvarValue:(id)arg1 forObject:(id)arg2;
 - (id)ivarValueForObject:(id)arg1;
 - (void *)ivarAddrForObject:(id)arg1;

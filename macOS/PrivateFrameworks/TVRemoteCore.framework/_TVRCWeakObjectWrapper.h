@@ -12,8 +12,8 @@
 }
 
 + (id)wrapperWithObjectValue:(id)arg1;
-@property(nonatomic) __weak id objectValue; // @synthesize objectValue=_objectValue;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id objectValue; // @synthesize objectValue=_objectValue;
 
 @end
 

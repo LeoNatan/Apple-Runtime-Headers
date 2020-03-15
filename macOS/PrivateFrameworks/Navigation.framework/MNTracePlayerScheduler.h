@@ -20,10 +20,10 @@
     MNTracePlayerTimelineStream *_nextTimelineStream;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double position; // @synthesize position=_position;
 @property(nonatomic) double speedMultiplier; // @synthesize speedMultiplier=_speedMultiplier;
 @property(nonatomic) __weak id <MNTracePlayerSchedulerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_timerUpdated:(id)arg1;
 - (void)_update;
 - (void)pause;

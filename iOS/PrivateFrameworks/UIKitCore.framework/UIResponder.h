@@ -85,6 +85,8 @@
 - (_Bool)_isPinningInputViews;
 - (void)_endPinningInputViews;
 - (void)_beginPinningInputViews;
+- (_Bool)_nextResponderChainContainsResponder:(id)arg1;
+- (id)_nextResponderThatCanBecomeFirstResponder;
 - (void)_becomeFirstResponderAndMakeVisible;
 - (_Bool)_canBecomeFirstResponder;
 - (void)_resignFirstResponder;
@@ -101,7 +103,7 @@
 - (_Bool)_disableAutomaticKeyboardUI;
 - (_Bool)_disableAutomaticKeyboardBehavior;
 - (id)_keyCommandsInChainPassingTest:(CDUnknownBlockType)arg1 skipViewControllersPresentingModally:(_Bool)arg2;
-- (id)_keyCommandForEvent:(id)arg1 target:(id *)arg2;
+- (id)_keyCommandForEvent:(id)arg1 target:(out id *)arg2;
 - (id)_keyCommandForEvent:(id)arg1;
 - (id)_keyCommands;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;

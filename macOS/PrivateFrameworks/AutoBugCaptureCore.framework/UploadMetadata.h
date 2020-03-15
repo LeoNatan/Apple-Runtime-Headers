@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     long long _errorCode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) short observedPrimaryInterfaceOnCompletion; // @synthesize observedPrimaryInterfaceOnCompletion=_observedPrimaryInterfaceOnCompletion;
 @property(nonatomic) short taskState; // @synthesize taskState=_taskState;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) BOOL uploaded; // @synthesize uploaded=_uploaded;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)init;

@@ -25,13 +25,13 @@
 
 + (Class)serviceSessionClass;
 + (id)sharedServiceWithMachName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSString *machName; // @synthesize machName=_machName;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <RTIInputSystemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(readonly, nonatomic) RTIInputSystemServiceSession *currentSession; // @synthesize currentSession=_currentSession;
-- (void).cxx_destruct;
 - (void)inputSession:(id)arg1 didChangePause:(_Bool)arg2 withReason:(id)arg3;
 - (void)inputSession:(id)arg1 documentStateDidChange:(id)arg2;
 - (void)inputSession:(id)arg1 documentTraitsDidChange:(id)arg2;

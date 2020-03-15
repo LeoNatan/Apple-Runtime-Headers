@@ -22,8 +22,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate=_alertProviderDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CUISAlertProviderDelegate> alertProviderDelegate; // @synthesize alertProviderDelegate=_alertProviderDelegate;
 - (void)activeAlertDidDisappear:(id)arg1;
 - (void)activeAlertDidAppear:(id)arg1;
 - (void)_timerFired:(id)arg1;

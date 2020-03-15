@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSData *_prekeySignature;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSData *prekeySignature; // @synthesize prekeySignature=_prekeySignature;
 @property(retain, nonatomic) NSData *prekey; // @synthesize prekey=_prekey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

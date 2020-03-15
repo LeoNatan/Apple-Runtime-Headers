@@ -32,8 +32,8 @@
     NSProgress *_progress;
 }
 
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)_recordForwardProgressDate;
 - (void)_setInitialForwardProgressDateIfNecessary;
 - (id)_queue_estimateSyncEntityClassesWithChangesForSession:(id)arg1;

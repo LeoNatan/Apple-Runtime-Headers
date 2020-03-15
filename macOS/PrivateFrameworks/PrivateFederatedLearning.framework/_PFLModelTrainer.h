@@ -17,10 +17,10 @@
 
 + (unsigned long long)countSubDirectoryInDirectory:(id)arg1;
 + (unsigned long long)countFilesInDirectory:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long imageCount; // @synthesize imageCount=_imageCount;
 @property(retain) ETModelDefMLP *mlp; // @synthesize mlp=_mlp;
 @property(retain) ETTaskClassifier *task; // @synthesize task=_task;
-- (void).cxx_destruct;
 - (void)updateLayerNamed:(id)arg1 withWeights:(float *)arg2 weightCount:(unsigned long long)arg3 andBiases:(float *)arg4 biasCount:(unsigned long long)arg5;
 - (BOOL)copyWeightsAndBiasesForLayerNamed:(id)arg1 combinedWeightBiasesOut:(float **)arg2 weightCountOut:(unsigned long long *)arg3 biasCountOut:(unsigned long long *)arg4;
 - (id)sdpWithInitVector:(id)arg1 currentVector:(id)arg2 gamma:(double)arg3 nu:(double)arg4;

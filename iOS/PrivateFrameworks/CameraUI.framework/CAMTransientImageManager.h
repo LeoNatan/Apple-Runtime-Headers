@@ -16,9 +16,9 @@
     NSMutableDictionary *__activeRequestsByPairedUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_activeRequestsByPairedUUID; // @synthesize _activeRequestsByPairedUUID=__activeRequestsByPairedUUID;
 @property(readonly, nonatomic) NSMutableDictionary *_pairedVideosByPairedUUID; // @synthesize _pairedVideosByPairedUUID=__pairedVideosByPairedUUID;
-- (void).cxx_destruct;
 - (void)_handleRequestTimeout:(id)arg1;
 - (void)requestPairedVideoURLForUUID:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (void)removePairedVideoForUUID:(id)arg1;

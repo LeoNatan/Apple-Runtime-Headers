@@ -17,12 +17,12 @@
     double _impressionThreshold;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double impressionThreshold; // @synthesize impressionThreshold=_impressionThreshold;
 @property(readonly, nonatomic) NSString *impressionIdentifier; // @synthesize impressionIdentifier=_impressionIdentifier;
 @property(readonly, nonatomic) NSString *adCreative; // @synthesize adCreative=_adCreative;
 @property(readonly, nonatomic) NSString *adLine; // @synthesize adLine=_adLine;
 @property(readonly, nonatomic) NSString *adCampaign; // @synthesize adCampaign=_adCampaign;
-- (void).cxx_destruct;
 - (id)initWithCampaign:(id)arg1 line:(id)arg2 creative:(id)arg3 impressionIdentifier:(id)arg4 impressionThreshold:(double)arg5;
 
 @end

@@ -13,8 +13,8 @@
     id <ICPaperStyleUIActivityDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ICPaperStyleUIActivityDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ICPaperStyleUIActivityDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (long long)activityCategory;

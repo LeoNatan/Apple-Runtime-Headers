@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)_configureImage:(id)arg1 assumePreconfigured:(_Bool)arg2;

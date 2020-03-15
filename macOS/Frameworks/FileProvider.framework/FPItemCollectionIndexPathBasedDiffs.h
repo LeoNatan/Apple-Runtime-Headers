@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_updatedIndexes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableIndexSet *updatedIndexes; // @synthesize updatedIndexes=_updatedIndexes;
 @property(retain) NSMutableIndexSet *insertedIndexes; // @synthesize insertedIndexes=_insertedIndexes;
 @property(retain) NSMutableIndexSet *deletedIndexes; // @synthesize deletedIndexes=_deletedIndexes;
 @property(retain) NSMutableArray *movedDestinationIndexPaths; // @synthesize movedDestinationIndexPaths=_movedDestinationIndexPaths;
 @property(retain) NSMutableArray *movedSourceIndexPaths; // @synthesize movedSourceIndexPaths=_movedSourceIndexPaths;
-- (void).cxx_destruct;
 - (BOOL)containsChanges;
 
 @end

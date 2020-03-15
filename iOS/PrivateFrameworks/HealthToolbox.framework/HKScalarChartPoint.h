@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <HKGraphSeriesBlockCoordinateInfo> _scalarPointInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> scalarPointInfo; // @synthesize scalarPointInfo=_scalarPointInfo;
 @property(readonly, nonatomic) NSNumber *yValue; // @synthesize yValue=_yValue;
 @property(readonly, nonatomic) NSNumber *xValue; // @synthesize xValue=_xValue;
-- (void).cxx_destruct;
 - (id)userInfo;
 - (id)maxYValue;
 - (id)minYValue;

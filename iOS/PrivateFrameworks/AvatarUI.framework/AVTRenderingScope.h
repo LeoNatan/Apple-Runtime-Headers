@@ -29,13 +29,13 @@
 + (id)gridThumbnailScope;
 + (id)largeThumbnailScope;
 + (id)thumbnailScope;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTAvatarPose *pose; // @synthesize pose=_pose;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) long long renderingType; // @synthesize renderingType=_renderingType;
 @property(readonly, nonatomic) float sizeModifier; // @synthesize sizeModifier=_sizeModifier;
 @property(readonly, nonatomic) NSString *framingMode; // @synthesize framingMode=_framingMode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)framingModeIdentifier;
 - (id)adaptedFramingModeForObjectType:(long long)arg1;

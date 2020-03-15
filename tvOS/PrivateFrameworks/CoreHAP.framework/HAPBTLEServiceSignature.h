@@ -17,12 +17,12 @@
     NSArray *_linkedServices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(readonly, nonatomic) NSArray *linkedServices; // @synthesize linkedServices=_linkedServices;
 @property(readonly, nonatomic) unsigned long long serviceProperties; // @synthesize serviceProperties=_serviceProperties;
 @property(readonly, copy, nonatomic) NSNumber *serviceInstanceID; // @synthesize serviceInstanceID=_serviceInstanceID;
 @property(readonly, copy, nonatomic) NSUUID *serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithServiceType:(id)arg1 serviceInstanceID:(id)arg2 serviceProperties:(unsigned long long)arg3 linkedServices:(id)arg4 authenticated:(_Bool)arg5;
 

@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long imageDataHash; // @synthesize imageDataHash=_imageDataHash;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSArray *persistentIDs; // @synthesize persistentIDs=_persistentIDs;
 @property(nonatomic) unsigned int kind; // @synthesize kind=_kind;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) unsigned long long dbID; // @synthesize dbID=_dbID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -21,10 +21,10 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *appName; // @synthesize appName=_appName;
 @property(readonly, copy) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

@@ -28,9 +28,9 @@
     _Bool _loggingOut;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_policyAggregator, setter=_setPolicyAggregator:) SBMainDisplayPolicyAggregator *policyAggregator; // @synthesize policyAggregator=_lazy_policyAggregator;
 @property(nonatomic, getter=isLoggingOut) _Bool loggingOut; // @synthesize loggingOut=_loggingOut;
-- (void).cxx_destruct;
 - (struct CGPoint)_portraitOrientedProgressLocationForOrientation:(long long)arg1;
 - (id)_massageApplicationListForDisplay:(id)arg1;
 - (void)_displayProgressTransientOverlayIfNeeded;

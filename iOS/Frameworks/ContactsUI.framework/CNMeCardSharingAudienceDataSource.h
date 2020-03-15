@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSArray *valuesArray; // @synthesize valuesArray=_valuesArray;
 @property(nonatomic) _Bool shouldShowEveryone; // @synthesize shouldShowEveryone=_shouldShowEveryone;
 @property(retain, nonatomic) CNMeCardSharingRowItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(nonatomic) unsigned long long selectedSharingAudience; // @synthesize selectedSharingAudience=_selectedSharingAudience;
-- (void).cxx_destruct;
 - (void)didSelectItemAtIndex:(unsigned long long)arg1;
 - (id)itemForIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;

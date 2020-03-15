@@ -14,9 +14,9 @@
     NSString *_dialogDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dialogDescription; // @synthesize dialogDescription=_dialogDescription;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

@@ -25,6 +25,7 @@
     struct NEVirtualInterface_s *_interface;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct NEVirtualInterface_s *interface; // @synthesize interface=_interface;
 @property(readonly) long long interfaceType; // @synthesize interfaceType=_interfaceType;
 @property unsigned long long buffersSize; // @synthesize buffersSize=_buffersSize;
@@ -37,7 +38,6 @@
 @property(retain) NSFileHandle *socket; // @synthesize socket=_socket;
 @property _Bool handlerSetup; // @synthesize handlerSetup=_handlerSetup;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (_Bool)writePacketObjects:(id)arg1;
 - (_Bool)writePackets:(id)arg1 withProtocols:(id)arg2;
 - (void)readPacketObjectsWithCompletionHandler:(CDUnknownBlockType)arg1;

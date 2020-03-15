@@ -20,6 +20,7 @@
     EKEventStore *_internalStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKEventStore *internalStore; // @synthesize internalStore=_internalStore;
 @property(nonatomic) BOOL internalPurgingAllowed; // @synthesize internalPurgingAllowed=_internalPurgingAllowed;
 @property(copy, nonatomic) CDUnknownBlockType internalCreationBlock; // @synthesize internalCreationBlock=_internalCreationBlock;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)_uninstallTimer;
 - (void)_resetIdleTimer;
 - (id)acquireCachedEventStoreOrCreate:(BOOL)arg1;

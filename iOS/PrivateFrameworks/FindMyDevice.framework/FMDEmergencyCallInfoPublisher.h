@@ -13,8 +13,8 @@
     FMDEmergencyCallInfoPublisherConfiguration *_publisherConfig;
 }
 
-@property(retain, nonatomic) FMDEmergencyCallInfoPublisherConfiguration *publisherConfig; // @synthesize publisherConfig=_publisherConfig;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FMDEmergencyCallInfoPublisherConfiguration *publisherConfig; // @synthesize publisherConfig=_publisherConfig;
 - (void)publishInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithConfiguration:(id)arg1;
 

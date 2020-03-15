@@ -21,6 +21,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)recurrenceRuleFromICSString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *untilDate; // @synthesize untilDate=_untilDate;
 @property(nonatomic) BOOL isInfinite; // @synthesize isInfinite=_isInfinite;
 @property(nonatomic) int interval; // @synthesize interval=_interval;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSArray *byMonthDay; // @synthesize byMonthDay=_byMonthDay;
 @property(retain, nonatomic) NSArray *byMonth; // @synthesize byMonth=_byMonth;
 @property(retain, nonatomic) NSArray *byDay; // @synthesize byDay=_byDay;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

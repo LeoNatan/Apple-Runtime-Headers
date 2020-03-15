@@ -18,10 +18,10 @@
 }
 
 + (id)subBatchFromHeadlines:(id)arg1 feedSettings:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tileInfosUsed; // @synthesize tileInfosUsed=_tileInfosUsed;
 @property(retain, nonatomic) NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
-- (void).cxx_destruct;
 - (id)singleComponentLayouts;
 @property(readonly, copy, nonatomic) NSDictionary *layoutDataByTileInfo;
 - (id)layoutInfosAtRowOrigin:(long long)arg1 columnOrigin:(long long)arg2 subBatchRowOffset:(long long)arg3 feedSettings:(id)arg4;

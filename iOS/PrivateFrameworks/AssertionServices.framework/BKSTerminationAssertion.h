@@ -15,10 +15,10 @@
     BKSTerminationContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BKSTerminationContext *context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) NSString *targetBundleIdentifier; // @synthesize targetBundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) unsigned long long efficacy; // @synthesize efficacy=_efficacy;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (_Bool)acquire;
 - (id)initWithBundleIdentifier:(id)arg1 efficacy:(unsigned long long)arg2 name:(id)arg3 context:(id)arg4 withHandler:(CDUnknownBlockType)arg5;

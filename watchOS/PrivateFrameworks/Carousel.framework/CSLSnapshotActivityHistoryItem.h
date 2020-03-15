@@ -14,9 +14,9 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithBundleID:(id)arg1 date:(id)arg2;
 

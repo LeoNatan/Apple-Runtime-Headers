@@ -22,12 +22,12 @@
 
 + (void)setDefaultRequestService:(id)arg1;
 + (id)defaultRequestService;
+- (void).cxx_destruct;
 @property(retain) id <PAAVAssetRequestService> requestService; // @synthesize requestService=_requestService;
 @property(retain) NSArray *keysToLoadAndTest; // @synthesize keysToLoadAndTest=_keysToLoadAndTest;
 @property(retain) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(retain) id <PFCanceler> canceler; // @synthesize canceler=_canceler;
 @property(retain) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)submitSynchronous;

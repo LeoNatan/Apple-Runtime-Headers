@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIResponseView *responseView; // @synthesize responseView=_responseView;
 @property(retain, nonatomic) SKUITextBoxView *descriptionView; // @synthesize descriptionView=_descriptionView;
 @property(copy, nonatomic) CDUnknownBlockType responseDescriptionTapAction; // @synthesize responseDescriptionTapAction=_responseDescriptionTapAction;
 @property(copy, nonatomic) CDUnknownBlockType descriptionTapAction; // @synthesize descriptionTapAction=_descriptionTapAction;
-- (void).cxx_destruct;
 - (void)_resetTapGestures;
 - (void)contentViewTapped:(id)arg1;
 - (void)layoutSubviews;

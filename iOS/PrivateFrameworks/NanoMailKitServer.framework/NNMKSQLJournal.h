@@ -17,11 +17,11 @@
     unsigned long long _filesCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long filesCount; // @synthesize filesCount=_filesCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *journalQueue; // @synthesize journalQueue=_journalQueue;
 @property(retain, nonatomic) NSMutableData *currentFileData; // @synthesize currentFileData=_currentFileData;
 @property(retain, nonatomic) NSString *directoryPath; // @synthesize directoryPath=_directoryPath;
-- (void).cxx_destruct;
 - (id)_sortedJournalFiles;
 - (id)_nextFilePath;
 - (void)_flush;

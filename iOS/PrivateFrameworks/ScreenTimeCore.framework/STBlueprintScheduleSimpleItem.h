@@ -16,9 +16,9 @@
     NSDateComponents *_endTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDateComponents *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

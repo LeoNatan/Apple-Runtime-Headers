@@ -19,10 +19,10 @@
 }
 
 + (id)userId;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s settingsLock; // @synthesize settingsLock=_settingsLock;
 @property(nonatomic) struct os_unfair_lock_s useFallbackLock; // @synthesize useFallbackLock=_useFallbackLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestSerialQueue; // @synthesize requestSerialQueue=_requestSerialQueue;
-- (void).cxx_destruct;
 - (id)_URLSafeBase64EncodedStringWithData:(id)arg1 options:(unsigned long long)arg2;
 - (id)containerIdentifier;
 - (BOOL)_containerIDForContainerIdentifier:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAppConfigurationIfNeeded;
 - (void)fetchAppConfigurationIfExpired;
-- (void)clearConfigCache;
+- (void)clearConfigCacheOnLaunchIfRequested;
 - (void)setSettings:(id)arg1;
 @property(readonly, nonatomic) id <WFSettings> settings; // @synthesize settings=_settings;
 - (void)setUseFallback:(_Bool)arg1;

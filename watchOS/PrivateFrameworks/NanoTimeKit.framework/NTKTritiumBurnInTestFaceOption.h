@@ -15,9 +15,9 @@
 }
 
 + (id)optionWithName:(id)arg1 jsonString:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *jsonDict; // @synthesize jsonDict=_jsonDict;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

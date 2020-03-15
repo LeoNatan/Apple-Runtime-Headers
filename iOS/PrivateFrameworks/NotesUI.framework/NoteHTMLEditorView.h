@@ -40,6 +40,7 @@
 }
 
 + (id)baseHTMLString;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool updatingContent; // @synthesize updatingContent=_updatingContent;
 @property(retain, nonatomic) ICSelectorDelayer *updateContentDelayer; // @synthesize updateContentDelayer=_updateContentDelayer;
 @property(copy, nonatomic) NSArray *attachmentsToLoad; // @synthesize attachmentsToLoad=_attachmentsToLoad;
@@ -59,7 +60,6 @@
 @property(nonatomic) __weak id <NoteHTMLEditorViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 @property(nonatomic) __weak id <NoteHTMLEditorViewActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(nonatomic) __weak id <NoteHTMLEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)contextMenuConfigurationForElement:(id)arg1 presentation:(id)arg2;
 - (void)webView:(id)arg1 stopURLSchemeTask:(id)arg2;
 - (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;

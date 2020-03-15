@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_allAnimators;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *allAnimators; // @synthesize allAnimators=_allAnimators;
 @property(readonly, nonatomic) UIViewPropertyAnimator *clientAnimator; // @synthesize clientAnimator=_clientAnimator;
 @property(readonly, nonatomic) UIViewPropertyAnimator *transitionAnimator; // @synthesize transitionAnimator=_transitionAnimator;
 @property(readonly, nonatomic) __weak id <UIViewControllerContextTransitioningEx> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) __weak id <AVTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
-- (void).cxx_destruct;
 - (struct CGRect)_sourceViewFrameInContainerView;
 - (void)_updateCornerAppearanceAttributesOfView:(id)arg1 toSourceView:(id)arg2 similarity:(double)arg3;
 - (struct CGAffineTransform)_transformForScale:(double)arg1 translation:(struct CGPoint)arg2 rotation:(double)arg3 locationInWindow:(struct CGPoint)arg4 sourceRectInContainerView:(struct CGRect)arg5;

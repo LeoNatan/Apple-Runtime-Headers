@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(nonatomic) __weak UIViewController<DCDocumentCameraPublicViewController> *publicViewController; // @synthesize publicViewController=_publicViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController<DCDocumentCameraPublicViewController> *publicViewController; // @synthesize publicViewController=_publicViewController;
 - (void)didFinishWithDocumentInfoCollection:(id)arg1;
 - (void)didCancel;
 - (void)viewControllerWasDismissed;

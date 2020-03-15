@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)downloadedButton;
-@property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 

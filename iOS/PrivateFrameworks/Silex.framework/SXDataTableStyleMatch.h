@@ -15,9 +15,9 @@
 }
 
 + (id)matchWithStyle:(id)arg1 andSelector:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXJSONDataTableSelector *selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) SXDataTableElementStyle *style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)initWithStyle:(id)arg1 andSelector:(id)arg2;
 
 @end

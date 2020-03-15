@@ -25,8 +25,8 @@
     id <_SBUIBiometricKitInterfaceDelegate> _delegate;
 }
 
-@property(nonatomic) id <_SBUIBiometricKitInterfaceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <_SBUIBiometricKitInterfaceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_createPresenceDetectOperationsForDeviceTypes:(id)arg1 error:(id *)arg2;
 - (unsigned long long)_biometricEventForFaceDetectFeedback:(long long)arg1;
 - (unsigned long long)_eventForLockoutState:(long long)arg1;

@@ -16,14 +16,14 @@
     long long _service;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isApproved) BOOL approved; // @synthesize approved=_approved;
 @property(readonly, nonatomic) long long service; // @synthesize service=_service;
 @property(readonly, copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_initWithDomain:(id)arg1 appID:(id)arg2 service:(long long)arg3 isApproved:(BOOL)arg4;
-- (id)initWithDictionary:(id)arg1;
+- (id)initWithServiceDetails:(id)arg1;
 
 @end
 

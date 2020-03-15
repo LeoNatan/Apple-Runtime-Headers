@@ -15,9 +15,9 @@
     id _responseInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id responseInfo; // @synthesize responseInfo=_responseInfo;
 @property(nonatomic) long long responseCode; // @synthesize responseCode=_responseCode;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL descriptionIncludesUserString;
 - (id)description;
 - (id)debugDescription;

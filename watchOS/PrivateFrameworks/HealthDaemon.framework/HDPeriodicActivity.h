@@ -32,12 +32,12 @@
 
 + (id)_userDefaultsKeyForName:(id)arg1 key:(id)arg2;
 + (void)registerDisabledPeriodicActivityWithName:(id)arg1 loggingCategory:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_xpc_object> *currentActivity; // @synthesize currentActivity=_currentActivity;
 @property(readonly, nonatomic) __weak id <HDPeriodicActivityDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) NSObject<OS_os_log> *loggingCategory; // @synthesize loggingCategory=_loggingCategory;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (id)_dateForDefaultsKey:(id)arg1;
 - (id)_queue_criteriaForInterval:(double)arg1;

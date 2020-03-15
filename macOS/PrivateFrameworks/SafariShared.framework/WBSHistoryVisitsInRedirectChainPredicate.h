@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) WBSSetInt64 *ignoredItemIdentifiers; // @synthesize ignoredItemIdentifiers=_ignoredItemIdentifiers;
 @property(readonly, nonatomic) WBSSetInt64 *visitIdentifiers; // @synthesize visitIdentifiers=_visitIdentifiers;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)evaluateServiceVisit:(id)arg1;
 - (BOOL)evaluateVisit:(id)arg1;

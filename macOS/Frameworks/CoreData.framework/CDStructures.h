@@ -61,10 +61,6 @@ struct _NSSQLMigrationContext {
     id _field1;
 };
 
-struct _NSScalarObjectID {
-    Class _field1;
-};
-
 struct _PFArrayFlags {
     unsigned int shouldRetain:1;
     unsigned int shouldRelease:1;

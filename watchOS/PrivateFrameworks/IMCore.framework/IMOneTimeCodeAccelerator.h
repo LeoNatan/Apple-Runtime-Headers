@@ -16,10 +16,10 @@
     CDUnknownBlockType _updateBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requestedOneTimeCodeStatusForConnection; // @synthesize requestedOneTimeCodeStatusForConnection=_requestedOneTimeCodeStatusForConnection;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(retain, nonatomic) IMDaemonController<IMRemoteDaemonProtocol> *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (void)daemonConnectionLost;
 - (void)daemonControllerDidDisconnect;
 - (void)daemonControllerDidConnect;

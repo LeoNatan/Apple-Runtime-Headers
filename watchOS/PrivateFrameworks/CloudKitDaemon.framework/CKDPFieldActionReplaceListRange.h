@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)valueType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(retain, nonatomic) CKDPListRange *range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

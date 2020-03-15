@@ -24,8 +24,8 @@
 }
 
 + (id)sharedServer;
-@property(retain, nonatomic) NSArray *previewAssetLocalIdentifiers; // @synthesize previewAssetLocalIdentifiers=_previewAssetLocalIdentifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *previewAssetLocalIdentifiers; // @synthesize previewAssetLocalIdentifiers=_previewAssetLocalIdentifiers;
 - (id)previewRenderedContentURLAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long previewRenderedContentURLCount;
 - (void)setPreviewRenderedContentURLs:(id)arg1;

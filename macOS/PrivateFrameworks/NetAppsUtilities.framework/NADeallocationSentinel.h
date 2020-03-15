@@ -17,10 +17,10 @@
     NADeallocationTracer *_tracer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NADeallocationTracer *tracer; // @synthesize tracer=_tracer;
 @property(readonly, copy, nonatomic) CDUnknownBlockType finalizer; // @synthesize finalizer=_finalizer;
 @property(readonly, nonatomic) id targetObject; // @synthesize targetObject=_targetObject;
-- (void).cxx_destruct;
 - (void)tracerIsDeallocating;
 - (void)dealloc;
 - (id)initWithTargetObject:(id)arg1 finalizer:(CDUnknownBlockType)arg2;

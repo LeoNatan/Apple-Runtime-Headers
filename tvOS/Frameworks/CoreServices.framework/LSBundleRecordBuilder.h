@@ -92,6 +92,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_entitlements;
     NSDictionary *_sandboxEnvironmentVariables;
     NSDictionary *_extensionSDK;
+    NSDictionary *_siriActionDefinitionURLs;
     NSArray *_bgPermittedIdentifiers;
     NSDictionary *_localizedNames;
     NSDictionary *_localizedShortNames;
@@ -100,12 +101,14 @@ __attribute__((visibility("hidden")))
     NSNumber *_directoryClass;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *directoryClass; // @synthesize directoryClass=_directoryClass;
 @property(readonly, nonatomic) NSDictionary *unlocalizedNamesWithContext; // @synthesize unlocalizedNamesWithContext=_unlocalizedNamesWithContext;
 @property(readonly, nonatomic) NSDictionary *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
 @property(readonly, nonatomic) NSDictionary *localizedShortNames; // @synthesize localizedShortNames=_localizedShortNames;
 @property(readonly, nonatomic) NSDictionary *localizedNames; // @synthesize localizedNames=_localizedNames;
 @property(readonly, nonatomic) NSArray *bgPermittedIdentifiers; // @synthesize bgPermittedIdentifiers=_bgPermittedIdentifiers;
+@property(readonly, nonatomic) NSDictionary *siriActionDefinitionURLs; // @synthesize siriActionDefinitionURLs=_siriActionDefinitionURLs;
 @property(readonly, nonatomic) NSDictionary *extensionSDK; // @synthesize extensionSDK=_extensionSDK;
 @property(readonly, nonatomic) NSDictionary *sandboxEnvironmentVariables; // @synthesize sandboxEnvironmentVariables=_sandboxEnvironmentVariables;
 @property(readonly, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
@@ -173,7 +176,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(nonatomic) unsigned int installationType; // @synthesize installationType=_installationType;
 @property(nonatomic) unsigned char retries; // @synthesize retries=_retries;
-- (void).cxx_destruct;
 - (unsigned int)registerBundleRecord:(id)arg1 error:(id *)arg2;
 - (int)activateBindings:(id)arg1 unitID:(unsigned int)arg2 bundleData:(const struct LSBundleData *)arg3;
 - (struct LSBundleData)buildBundleData:(id)arg1 error:(id *)arg2;

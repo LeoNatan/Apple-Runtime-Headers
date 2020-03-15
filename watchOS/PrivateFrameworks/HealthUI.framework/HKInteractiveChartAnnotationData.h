@@ -15,8 +15,8 @@
     NSString *_annotation;
 }
 
-@property(retain, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

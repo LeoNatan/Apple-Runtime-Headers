@@ -39,6 +39,7 @@
 
 + (id)decodeRecordFromSystemFields:(id)arg1;
 + (id)encodeRecordSystemFields:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fetchRecordZoneChangesSuccess; // @synthesize fetchRecordZoneChangesSuccess=_fetchRecordZoneChangesSuccess;
 @property(nonatomic) _Bool serverFetchPostponed; // @synthesize serverFetchPostponed=_serverFetchPostponed;
 @property(nonatomic) double backOffInterval; // @synthesize backOffInterval=_backOffInterval;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSString *subscriptionID; // @synthesize subscriptionID=_subscriptionID;
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) CKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)unregisterServerChangeTokenStore:(id)arg1;
 - (void)registerServerChangeTokenStore:(id)arg1 forZoneID:(id)arg2;
 - (void)removeObserver:(id)arg1;

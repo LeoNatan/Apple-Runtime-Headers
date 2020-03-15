@@ -21,10 +21,10 @@
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
 + (id)hashingKeyWithId:(id)arg1 type:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) NSDictionary *options; // @synthesize options=_options;
 @property long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)hashingKey;

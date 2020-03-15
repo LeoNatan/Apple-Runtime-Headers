@@ -17,10 +17,10 @@
     double _upperBound;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double upperBound; // @synthesize upperBound=_upperBound;
 @property(readonly, nonatomic) double lowerBound; // @synthesize lowerBound=_lowerBound;
 @property(readonly, nonatomic) id <CRKGrowthFunction> growthFunction; // @synthesize growthFunction=_growthFunction;
-- (void).cxx_destruct;
 - (double)evaluateWithValue:(double)arg1;
 - (id)initWithGrowthFunction:(id)arg1 lowerBound:(double)arg2 upperBound:(double)arg3;
 

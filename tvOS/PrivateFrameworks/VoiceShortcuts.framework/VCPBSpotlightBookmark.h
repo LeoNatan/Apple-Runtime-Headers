@@ -17,9 +17,9 @@
 }
 
 + (Class)pairsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pairs; // @synthesize pairs=_pairs;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

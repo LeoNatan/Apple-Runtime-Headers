@@ -16,9 +16,9 @@
     int _activityValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int activityValue; // @synthesize activityValue=_activityValue;
 @property(retain, nonatomic) HKActivitySummary *activitySummaryData; // @synthesize activitySummaryData=_activitySummaryData;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool activityValueGoalMet;
 @property(readonly, nonatomic) _Bool hasActivityGoal;

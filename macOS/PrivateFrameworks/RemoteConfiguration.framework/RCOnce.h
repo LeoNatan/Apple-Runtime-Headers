@@ -14,9 +14,9 @@
     RCMutexLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RCMutexLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (BOOL)hasBeenTriggered;
 - (BOOL)trigger;
 - (void)executeOnce:(CDUnknownBlockType)arg1;

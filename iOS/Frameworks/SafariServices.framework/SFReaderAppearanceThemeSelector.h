@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 
 + (double)requiredHeight;
 + (id)themeSelectorWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType selectedThemeChangedBlock; // @synthesize selectedThemeChangedBlock=_selectedThemeChangedBlock;
 @property(nonatomic) long long selectedTheme; // @synthesize selectedTheme=_selectedTheme;
-- (void).cxx_destruct;
 - (void)_themeButtonAction:(id)arg1;
 - (id)_themeButtonImageWithFillColor:(id)arg1 strokeColor:(id)arg2 selected:(_Bool)arg3;
 - (id)_imageForTheme:(long long)arg1 selected:(_Bool)arg2;

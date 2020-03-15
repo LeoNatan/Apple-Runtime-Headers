@@ -19,11 +19,11 @@
     NSMutableSet *_accountIds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *accountIds; // @synthesize accountIds=_accountIds;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *retrievingInitialAccountsSemaphore; // @synthesize retrievingInitialAccountsSemaphore=_retrievingInitialAccountsSemaphore;
 @property(retain, nonatomic) NNMKNanoMailService *nanoMailService; // @synthesize nanoMailService=_nanoMailService;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *senderQueue; // @synthesize senderQueue=_senderQueue;
-- (void).cxx_destruct;
 - (void)nanoMailServiceDidResetXPCConnection:(id)arg1;
 - (void)nanoMailServiceDidRequestReloadCache:(id)arg1;
 - (void)nanoMailService:(id)arg1 didDeleteAccountWithId:(id)arg2;

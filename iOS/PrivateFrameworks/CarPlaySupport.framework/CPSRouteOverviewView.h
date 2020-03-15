@@ -24,6 +24,7 @@
 + (void)_applyText:(id)arg1 fontSize:(double)arg2 color:(id)arg3 toLabel:(id)arg4;
 + (void)_applyBoldText:(id)arg1 fontSize:(double)arg2 color:(id)arg3 toLabel:(id)arg4;
 + (id)_multilineLabel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPSRouteEstimatesView *estimatesView; // @synthesize estimatesView=_estimatesView;
 @property(retain, nonatomic) CPTravelEstimates *currentTravelEstimates; // @synthesize currentTravelEstimates=_currentTravelEstimates;
 @property(copy, nonatomic) NSString *routeNote; // @synthesize routeNote=_routeNote;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) CPSHidingLabel *destinationAddress; // @synthesize destinationAddress=_destinationAddress;
 @property(readonly, nonatomic) UILabel *destinationName; // @synthesize destinationName=_destinationName;
 @property(readonly, nonatomic) CPTrip *representedTrip; // @synthesize representedTrip=_representedTrip;
-- (void).cxx_destruct;
 - (void)setRepresentedTrip:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateTripEstimateStyle;

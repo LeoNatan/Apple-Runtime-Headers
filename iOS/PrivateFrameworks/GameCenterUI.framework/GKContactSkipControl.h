@@ -18,13 +18,13 @@
     NSMutableDictionary *_buttonsToTitles;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *buttonsToTitles; // @synthesize buttonsToTitles=_buttonsToTitles;
 @property(retain, nonatomic) UIView *centeringView; // @synthesize centeringView=_centeringView;
 @property(retain, nonatomic) UIView *buttonView; // @synthesize buttonView=_buttonView;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) NSString *lastSelectedValue; // @synthesize lastSelectedValue=_lastSelectedValue;
 @property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
-- (void).cxx_destruct;
 - (void)valueSelected:(id)arg1;
 - (void)determineButtonFromGesture:(id)arg1;
 - (void)setupValueButtons;

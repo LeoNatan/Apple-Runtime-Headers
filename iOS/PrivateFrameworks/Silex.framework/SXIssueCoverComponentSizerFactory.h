@@ -16,8 +16,8 @@
     id <SXIssueCoverLayoutAttributesFactory> _layoutOptionsFactory;
 }
 
-@property(readonly, nonatomic) id <SXIssueCoverLayoutAttributesFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXIssueCoverLayoutAttributesFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 - (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutOptions:(id)arg3 DOMObjectProvider:(id)arg4;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) NSString *type;

@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy) NSArray *userCurrentBookings; // @synthesize userCurrentBookings=_userCurrentBookings;
 - (void).cxx_destruct;
+@property(copy) NSArray *userCurrentBookings; // @synthesize userCurrentBookings=_userCurrentBookings;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_dictionaryRepresentation;
 @property(readonly) long long code;

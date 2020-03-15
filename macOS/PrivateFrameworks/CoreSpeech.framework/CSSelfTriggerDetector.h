@@ -30,6 +30,7 @@
     CSPolicy *_enablePolicy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isListenPollingStarting; // @synthesize isListenPollingStarting=_isListenPollingStarting;
 @property(nonatomic) BOOL selfTriggerEnabled; // @synthesize selfTriggerEnabled=_selfTriggerEnabled;
 @property(nonatomic) BOOL isSiriClientListening; // @synthesize isSiriClientListening=_isSiriClientListening;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak CSSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)siriClientBehaviorMonitor:(id)arg1 willStopStream:(id)arg2;
 - (void)siriClientBehaviorMonitor:(id)arg1 willStartStreamWithContext:(id)arg2 option:(id)arg3;

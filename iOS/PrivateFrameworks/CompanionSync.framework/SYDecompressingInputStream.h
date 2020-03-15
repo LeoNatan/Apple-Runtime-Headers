@@ -29,6 +29,7 @@
     unsigned long long _byteCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bytesThroughput; // @synthesize bytesThroughput=_byteCount;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType onClose; // @synthesize onClose=_onClose;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) CDUnknownBlockType onSpaceAvailable; // @synthesize onSpaceAvailable=_onSpaceAvailable;
 @property(copy, nonatomic) CDUnknownBlockType onBytesAvailable; // @synthesize onBytesAvailable=_onBytesAvailable;
 @property(copy, nonatomic) CDUnknownBlockType onOpenComplete; // @synthesize onOpenComplete=_onOpenComplete;
-- (void).cxx_destruct;
 - (_Bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
 - (_Bool)hasBytesAvailable;

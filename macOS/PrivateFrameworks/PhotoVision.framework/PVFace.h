@@ -59,6 +59,7 @@
 + (id)faceWithFace:(id)arg1 copyPropertiesOption:(long long)arg2;
 + (id)faceFromVNFaceObservation:(id)arg1 fromImage:(id)arg2 additionalVisionRequests:(id)arg3 faceAlgorithmUmbrellaVersion:(unsigned int)arg4 error:(id *)arg5;
 + (id)faceFromVNFaceObservation:(id)arg1 fromImageWithPixelWidth:(unsigned long long)arg2 pixelHeight:(unsigned long long)arg3 additionalVisionRequests:(id)arg4 faceAlgorithmUmbrellaVersion:(unsigned int)arg5 error:(id *)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) double quality; // @synthesize quality=_quality;
 @property(nonatomic) double roll; // @synthesize roll=_roll;
 @property(retain, nonatomic) PVFaceprint *faceprint; // @synthesize faceprint=_faceprint;
@@ -101,7 +102,6 @@
 @property(nonatomic) long long sourceHeight; // @synthesize sourceHeight=_sourceHeight;
 @property(nonatomic) long long sourceWidth; // @synthesize sourceWidth=_sourceWidth;
 @property(copy, nonatomic) NSString *personLocalIdentifier; // @synthesize personLocalIdentifier=_personLocalIdentifier;
-- (void).cxx_destruct;
 - (double)photosFaceRepresentationQuality;
 - (double)photosFaceRepresentationRoll;
 - (id)photosFaceRepresentationLocalIdentifier;

@@ -16,10 +16,10 @@
 }
 
 + (id)dateContentProviderWithDate:(id)arg1 units:(unsigned long long)arg2 timeZone:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, nonatomic) unsigned long long units; // @synthesize units=_units;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

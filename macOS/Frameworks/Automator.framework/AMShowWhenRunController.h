@@ -16,11 +16,11 @@
     NSArray *_showWhenRunItems;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *_showWhenRunButton; // @synthesize _showWhenRunButton;
 @property(retain) NSArray *showWhenRunItems; // @synthesize showWhenRunItems=_showWhenRunItems;
 @property(nonatomic) __weak AMActionView *actionView; // @synthesize actionView=_actionView;
 @property __weak AMAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)didToggleIgnoreInput:(id)arg1;
 - (void)showSelectedItemsWhenRun:(id)arg1;
 - (void)showActionWhenRun:(id)arg1;

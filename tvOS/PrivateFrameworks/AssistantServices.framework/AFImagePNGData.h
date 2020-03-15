@@ -14,9 +14,9 @@
     double _scale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 
 @end
 

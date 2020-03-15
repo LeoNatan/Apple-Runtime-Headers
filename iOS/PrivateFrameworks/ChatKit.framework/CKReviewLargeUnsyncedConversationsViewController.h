@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(retain, nonatomic) NSArray *conversations; // @synthesize conversations=_conversations;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *conversations; // @synthesize conversations=_conversations;
 - (void)_populateConversationsIfNeeded;
 - (void)didSelectModelObjectAtIndex:(unsigned long long)arg1;
 - (void)deleteModelObjectAndUnderlyingData:(id)arg1;

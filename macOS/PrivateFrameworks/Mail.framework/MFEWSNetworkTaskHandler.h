@@ -13,8 +13,8 @@
     MFEWSConnection *_connection;
 }
 
-@property(readonly, nonatomic) MFEWSConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MFEWSConnection *connection; // @synthesize connection=_connection;
 - (id)init;
 - (id)initWithEWSConnection:(id)arg1;
 

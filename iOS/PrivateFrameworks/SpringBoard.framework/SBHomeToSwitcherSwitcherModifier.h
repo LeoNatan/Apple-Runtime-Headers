@@ -15,9 +15,9 @@
     SBSwitcherModifier<SBFluidSwitcherScrollProviding> *_multitaskingModifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBSwitcherModifier<SBFluidSwitcherScrollProviding> *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
 @property(readonly, nonatomic) long long direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
 - (id)appLayoutToScrollToDuringTransition;
 - (_Bool)isEffectivelyHome;
 - (id)transitionWillUpdate;

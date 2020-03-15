@@ -14,9 +14,9 @@
     UILabel *_name;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *name; // @synthesize name=_name;
 @property(retain, nonatomic) UILabel *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 - (struct CGRect)accessibilityFrame;

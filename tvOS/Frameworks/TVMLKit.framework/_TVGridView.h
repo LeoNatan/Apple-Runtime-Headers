@@ -14,8 +14,8 @@
     _TVCollectionViewFlowLayout *_gridFlowLayout;
 }
 
-@property(retain, nonatomic) _TVCollectionViewFlowLayout *gridFlowLayout; // @synthesize gridFlowLayout=_gridFlowLayout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TVCollectionViewFlowLayout *gridFlowLayout; // @synthesize gridFlowLayout=_gridFlowLayout;
 - (struct CGSize)tv_sizeThatFits:(struct CGSize)arg1 withContentInset:(struct UIEdgeInsets)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setDelegate:(id)arg1;

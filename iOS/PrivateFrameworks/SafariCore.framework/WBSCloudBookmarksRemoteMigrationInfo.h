@@ -15,10 +15,10 @@
     NSDate *_serverModificationDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *serverModificationDate; // @synthesize serverModificationDate=_serverModificationDate;
 @property(readonly, copy, nonatomic) NSString *migratorDeviceIdentifier; // @synthesize migratorDeviceIdentifier=_migratorDeviceIdentifier;
 @property(readonly, nonatomic) long long migrationState; // @synthesize migrationState=_migrationState;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithMigrationState:(long long)arg1 migratorDeviceIdentifier:(id)arg2 serverModificationDate:(id)arg3;
 

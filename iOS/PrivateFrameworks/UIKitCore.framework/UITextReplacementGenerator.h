@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_stringToReplace;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringToReplace; // @synthesize stringToReplace=_stringToReplace;
 @property(retain, nonatomic) UITextRange *replacementRange; // @synthesize replacementRange=_replacementRange;
-- (void).cxx_destruct;
 - (_Bool)isStringToReplaceMisspelled;
 - (id)replacements;
 - (void)addPlaceholderForEmptyReplacements:(id)arg1;

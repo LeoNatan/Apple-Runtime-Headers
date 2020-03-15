@@ -15,9 +15,9 @@
 }
 
 + (double)defaultReflectionHeight;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool squareImage; // @synthesize squareImage=_squareImage;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)setReflectionVisible:(_Bool)arg1 withDuration:(float)arg2;
 - (void)setFrame:(struct CGRect)arg1 withReflectionHeight:(double)arg2;
 @property(retain, nonatomic) UIImage *image;

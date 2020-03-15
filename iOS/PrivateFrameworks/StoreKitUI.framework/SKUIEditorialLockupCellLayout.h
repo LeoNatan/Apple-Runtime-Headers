@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
 
 + (double)_imagePaddingForArtworkSize:(long long)arg1;
 + (double)editorialWidthForCellWidth:(double)arg1 lockupStyle:(struct SKUILockupStyle)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) unsigned long long visibleFields; // @synthesize visibleFields=_visibleFields;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (_Bool)_showsItemOfferUnderEditorial;
 - (id)_lockupView;
 - (_Bool)_isItemOfferButtonHidden;

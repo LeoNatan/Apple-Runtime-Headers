@@ -31,6 +31,7 @@
     CDStruct_02837cd9 _mapRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXMediaEngageEvent *activeMediaEngageEvent; // @synthesize activeMediaEngageEvent=_activeMediaEngageEvent;
 @property(readonly, nonatomic) NSCache *cachedSnapshots; // @synthesize cachedSnapshots=_cachedSnapshots;
 @property(copy, nonatomic) CDUnknownBlockType snapShotCancelHandler; // @synthesize snapShotCancelHandler=_snapShotCancelHandler;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSArray *annotations; // @synthesize annotations=_annotations;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (void)fullScreenCanvasViewControllerWantsToDismiss:(id)arg1;
 - (void)submitMediaEngageCompleteEvent;
 - (void)finishMediaEngageEvent;

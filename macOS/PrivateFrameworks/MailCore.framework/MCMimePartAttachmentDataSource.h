@@ -16,9 +16,9 @@
     unsigned long long _approximateSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long approximateSize; // @synthesize approximateSize=_approximateSize;
 @property(readonly, nonatomic) MCMimePart *mimePart; // @synthesize mimePart=_mimePart;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isDirectory;
 @property(readonly, nonatomic) BOOL canResultsBeCached;
 @property(readonly, nonatomic) BOOL dataIsLocallyAvailable;

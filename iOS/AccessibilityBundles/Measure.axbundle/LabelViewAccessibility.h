@@ -15,13 +15,10 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)_accessibilityLabelElementsWithAccessibilityContainer:(id)arg1;
 @property(readonly, nonatomic) NSString *_accessibilityCurrentMeasurementString;
 @property(readonly, nonatomic) NSString *_accessibilityLastSavedMeasurementString;
-- (struct CGRect)accessibilityFrame;
-- (_Bool)accessibilityViewIsModal;
-- (id)accessibilityElements;
-- (id)_axLabelElementForMeasureID:(id)arg1;
-- (_Bool)_axIsShowingPlatter;
+- (id)_axLabelElementForMeasureID:(id)arg1 accessibilityContainer:(id)arg2;
 
 @end
 

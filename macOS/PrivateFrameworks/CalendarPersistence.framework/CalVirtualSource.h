@@ -18,9 +18,9 @@
 }
 
 + (id)propertiesUnavailableForPartialObjects;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int displayOrder; // @synthesize displayOrder=_displayOrder;
 @property(readonly, retain, nonatomic) NSString *typeString; // @synthesize typeString=_typeString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *preFrozenRelationshipObjects;
 - (BOOL)isPropertyUnavailable:(id)arg1;
 @property(readonly, nonatomic) BOOL isPartialObject;

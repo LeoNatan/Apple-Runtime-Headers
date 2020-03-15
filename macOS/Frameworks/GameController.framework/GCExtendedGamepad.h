@@ -38,6 +38,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GCControllerButtonInput *_buttonHome; // @synthesize _buttonHome=__buttonHome;
 @property(readonly, nonatomic) GCControllerButtonInput *rightThumbstickButton; // @synthesize rightThumbstickButton=_rightThumbstickButton;
 @property(readonly, nonatomic) GCControllerButtonInput *leftThumbstickButton; // @synthesize leftThumbstickButton=_leftThumbstickButton;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic) GCControllerButtonInput *buttonA; // @synthesize buttonA=_button0;
 - (void)set_motion:(id)arg1;
 - (id)_motion;
-- (void).cxx_destruct;
 - (BOOL)isBluetoothAndUSBMirrored;
 - (void)setStateFromExtendedGamepad:(id)arg1;
 - (void)setEnableTimeForHaptics:(BOOL)arg1;

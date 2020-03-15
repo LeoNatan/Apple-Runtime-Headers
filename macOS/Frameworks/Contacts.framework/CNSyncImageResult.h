@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _cropRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *imageHash; // @synthesize imageHash=_imageHash;
 @property(readonly, nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 imageData:(id)arg2 cropRect:(struct CGRect)arg3 imageHash:(id)arg4;
 
 @end

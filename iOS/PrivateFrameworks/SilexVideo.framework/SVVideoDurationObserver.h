@@ -19,11 +19,11 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) SVKeyValueObserver *playerItemDurationObserver; // @synthesize playerItemDurationObserver=_playerItemDurationObserver;
 @property(readonly, nonatomic) id <SVPlayerItemObserving> playerItemObserver; // @synthesize playerItemObserver=_playerItemObserver;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 - (void)updateDuration:(CDStruct_198678f7)arg1;
 - (id)initWithPlayerItemObserver:(id)arg1;
 

@@ -10,9 +10,8 @@
 #import <FileProvider/FPXVendor-Protocol.h>
 
 @class FPXDomainContext, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUserDefaults;
-@protocol OS_dispatch_queue;
+@protocol FPDDomainServicing><FPXPCAutomaticErrorProxy, OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface FPXExtensionContext : NSExtensionContext <FPXVendor, FPItemHierarchyLookingUp>
 {
     NSMutableSet *_listenerDelegates;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSHashTable *_runningEnumerators;
     NSMutableDictionary *_alternateContentsURLDictionary;
     NSUserDefaults *_userDefaults;
+    id <FPDDomainServicing><FPXPCAutomaticErrorProxy> _domainServicer;
     FPXDomainContext *_domainContext;
     BOOL _isBeingDeallocated;
     BOOL _usesFPFS;
@@ -32,10 +32,11 @@ __attribute__((visibility("hidden")))
 + (void)setPrincipalClass:(Class)arg1;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL usesFPFS; // @synthesize usesFPFS=_usesFPFS;
 @property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
-- (void).cxx_destruct;
 - (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
+- (void)waitForStabilizationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)importDidFinishWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)signalEnumeratorForMaterializedItemsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)itemForItemID:(id)arg1;
@@ -51,11 +52,12 @@ __attribute__((visibility("hidden")))
 - (void)fetchDefaultContainerForBundleIdentifier:(id)arg1 defaultName:(id)arg2 inDomainIdentifier:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)fetchItemID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)fetchHierarchyForItemID:(id)arg1 recursively:(BOOL)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)_createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 targetName:(id)arg5 bounce:(BOOL)arg6 bounceNumber:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)_fetchHierarchyForItemID:(id)arg1 into:(id)arg2 maxDepth:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 bounce:(BOOL)arg5 bounceCollidingItem:(BOOL)arg6 bounceNumber:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)_freeSlotHeldByItem:(id)arg1 bounceIndex:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 bounce:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)deleteItemsWithIDs:(id)arg1 baseVersions:(id)arg2 options:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)preflightReparentItemID:(id)arg1 underParentID:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)_reparentItem:(id)arg1 underParent:(id)arg2 withNewName:(id)arg3 shouldBounce:(BOOL)arg4 bounceIndex:(unsigned long long)arg5 reply:(CDUnknownBlockType)arg6;
 - (id)_proxyWithCancellationHandler:(id)arg1 forClientOperation:(id)arg2;
 - (void)fetchVendorEndpoint:(CDUnknownBlockType)arg1;
 - (void)fetchOperationServiceEndpoint:(CDUnknownBlockType)arg1;
@@ -67,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)valuesForAttributes:(id)arg1 forItemID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)startOperation:(id)arg1 toFetchThumbnailsForItemIdentifiers:(id)arg2 size:(struct CGSize)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)trashItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_setupItemForTrashing:(id)arg1 usesFPFS:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLForItemID:(id)arg1 creatingPlaceholderIfMissing:(BOOL)arg2 ignoreAlternateContentsURL:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_persistedDocumentURLForURL:(id)arg1 itemID:(id)arg2 extension:(id)arg3 creatingPlaceholderIfMissing:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)itemForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -76,7 +79,6 @@ __attribute__((visibility("hidden")))
 - (void)setAlternateContentsURL:(id)arg1 forDocumentWithItemID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)alternateContentsURLWrapperForItemID:(id)arg1;
 - (void)providePlaceholderAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setLastUsedDate:(id)arg1 forItemIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)preflightTrashItemIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpIndexStateForDomain:(id)arg1 toFileHandler:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dropIndexForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -103,6 +105,8 @@ __attribute__((visibility("hidden")))
 - (id)domainContextForItemIDs:(id)arg1;
 - (id)domainContextForItemID:(id)arg1;
 - (id)instanceForItemID:(id)arg1;
+- (id)instanceWithPrivateSelector:(SEL)arg1;
+- (id)v2Instance;
 - (id)instanceForURL:(id)arg1;
 - (id)domainContextForURL:(id)arg1;
 - (id)instanceForDomainIdentifier:(id)arg1;
@@ -112,7 +116,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidate;
 - (void)dealloc;
 - (void)_setTransaction:(id)arg1;
-- (void)beginRequestWithDomain:(id)arg1 alternateContentsDictionary:(id)arg2 usesFPFS:(BOOL)arg3;
+- (void)beginRequestWithDomain:(id)arg1 alternateContentsDictionary:(id)arg2 usesFPFS:(BOOL)arg3 domainServicer:(id)arg4;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 - (void)importDocumentAtURL:(id)arg1 intoFolderWithIdentifier:(id)arg2 originalName:(id)arg3 extensionInstance:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)applyItemChange:(id)arg1 baseVersion:(id)arg2 contents:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -38,6 +38,7 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(nonatomic) double offsetLocalLight; // @synthesize offsetLocalLight=_offsetLocalLight;
 @property(nonatomic) double offsetBlack; // @synthesize offsetBlack=_offsetBlack;
 @property(nonatomic) double offsetHighlights; // @synthesize offsetHighlights=_offsetHighlights;
@@ -46,7 +47,6 @@
 @property(nonatomic) double offsetContrast; // @synthesize offsetContrast=_offsetContrast;
 @property(nonatomic) double offsetExposure; // @synthesize offsetExposure=_offsetExposure;
 @property(nonatomic) double inputLight; // @synthesize inputLight=_inputLight;
-- (void).cxx_destruct;
 - (void)resetAllAutoSettingsToPending;
 - (void)disableLocalLight;
 - (void)updateAutoSettings:(id)arg1;

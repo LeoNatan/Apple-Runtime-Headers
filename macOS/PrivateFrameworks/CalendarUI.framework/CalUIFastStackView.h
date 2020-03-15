@@ -19,6 +19,7 @@
     struct NSEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *lastConstraint; // @synthesize lastConstraint=_lastConstraint;
 @property(retain) NSLayoutConstraint *firstConstraint; // @synthesize firstConstraint=_firstConstraint;
 @property double spacing; // @synthesize spacing=_spacing;
@@ -26,7 +27,6 @@
 @property struct NSEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property long long orientation; // @synthesize orientation=_orientation;
 @property(retain) NSMutableArray *views; // @synthesize views=_views;
-- (void).cxx_destruct;
 - (void)_activateLowPriorityConstraint:(id)arg1;
 - (void)_activateHighPriorityConstraint:(id)arg1;
 - (void)_constrainNonOrientationEdges:(id)arg1;

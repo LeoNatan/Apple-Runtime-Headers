@@ -48,12 +48,12 @@
 
 + (id)_generatePlaceholderImageForStyle:(long long)arg1;
 + (void)loadPlaceholdersWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long testIteration; // @synthesize testIteration=_testIteration;
 @property(retain, nonatomic) NSString *performanceTestName; // @synthesize performanceTestName=_performanceTestName;
 @property(nonatomic) long long performanceTest; // @synthesize performanceTest=_performanceTest;
 @property(retain, nonatomic) PKGroupsController *existingGroupsController; // @synthesize existingGroupsController=_existingGroupsController;
 @property(nonatomic) __weak id <PKEditTableViewControllerCachingDelegate> cachingDelegate; // @synthesize cachingDelegate=_cachingDelegate;
-- (void).cxx_destruct;
 - (void)beginPassDeletionTestWithTestName:(id)arg1;
 - (void)beginPassSelectionTestWithTestName:(id)arg1;
 - (void)beginScrollingTestWithTestName:(id)arg1;

@@ -16,22 +16,21 @@
 }
 
 + (id)localizedAppNames;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFActionDrawerResults *cachedSiriSuggestionsResults; // @synthesize cachedSiriSuggestionsResults=_cachedSiriSuggestionsResults;
 @property(readonly, nonatomic) WFActionRegistry *actionRegistry; // @synthesize actionRegistry=_actionRegistry;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)actions;
 - (id)actionsForCategory:(id)arg1;
 - (BOOL)filteringForResidentCompatibleActions;
-- (id)homeSectionsIncludingRelatedActions:(BOOL)arg1;
+- (void)getHomeSectionsIncludingRelatedActions:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)suggestedCategoriesForContentClasses:(id)arg1;
 - (void)getDeveloperSuggestedResultsForAppIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSiriSuggestedGroupedResultsRefreshingCache:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSiriSuggestedResultsForBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)resultsForFavorites;
 - (id)resultsForSuggestionsWithWorkflow:(id)arg1;
-- (id)resultsForAppWithBundleIdentifier:(id)arg1 legacyIdentifier:(id)arg2 shouldFilterForAppsViewController:(BOOL)arg3;
-- (id)resultsForCategory:(id)arg1;
+- (void)getResultsForCategory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getResultsForAppWithBundleIdentifier:(id)arg1 legacyIdentifier:(id)arg2 shouldFilterForAppsViewController:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)resultsForSearchQuery:(id)arg1 includingSiriSuggestedResults:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithActionRegistry:(id)arg1;

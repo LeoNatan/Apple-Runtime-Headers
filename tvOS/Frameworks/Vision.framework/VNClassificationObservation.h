@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)operationPointsAndReturnError:(id *)arg1;
 - (_Bool)hasMinimumPrecision:(float)arg1 forRecall:(float)arg2;
 - (_Bool)hasMinimumRecall:(float)arg1 forPrecision:(float)arg2;

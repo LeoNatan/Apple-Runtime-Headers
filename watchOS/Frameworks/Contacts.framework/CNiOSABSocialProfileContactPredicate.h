@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) CNSocialProfile *socialProfile; // @synthesize socialProfile=_socialProfile;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CNSocialProfile *socialProfile; // @synthesize socialProfile=_socialProfile;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -31,6 +31,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)stepType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) BOOL waitingForResume; // @synthesize waitingForResume=_waitingForResume;
 @property(copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(nonatomic) BOOL requestsIntentExecution; // @synthesize requestsIntentExecution=_requestsIntentExecution;
 @property(nonatomic) BOOL continueRunning; // @synthesize continueRunning=_continueRunning;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

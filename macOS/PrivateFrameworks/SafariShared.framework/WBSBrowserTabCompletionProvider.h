@@ -20,11 +20,11 @@
     NSArray *_currentTabCompletionMatches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *currentTabCompletionMatches; // @synthesize currentTabCompletionMatches=_currentTabCompletionMatches;
 @property(readonly, copy, nonatomic) NSString *currentQuery; // @synthesize currentQuery=_currentQuery;
 @property(nonatomic) __weak id <WBSBrowserTabCompletionProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <WBSBrowserTabCompletionProviderSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (unsigned long long)_distanceFromSelectedTabForTabMatch:(id)arg1;
 - (long long)_compareTabMatch:(id)arg1 otherTabMatch:(id)arg2;
 - (void)_tabCompletionOperationCompletedForQuery:(id)arg1 matches:(id)arg2 tabInfos:(id)arg3 selectedTabInfo:(id)arg4;

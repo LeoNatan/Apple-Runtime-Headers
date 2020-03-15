@@ -19,6 +19,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)projectExtensionDataForProjectUuid:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)updateInternalResourcePath:(id)arg1 objectURI:(id)arg2 sandboxExtension:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)consolidateAssets:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)_consolidateResource:(id)arg1 assetUUID:(id)arg2 error:(id *)arg3;

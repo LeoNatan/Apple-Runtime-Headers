@@ -78,6 +78,7 @@
     struct CGRect _thumbnailFocalFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *changeEtag; // @synthesize changeEtag=_changeEtag;
 @property(retain, nonatomic) NSArray *flintFontResourceIDs; // @synthesize flintFontResourceIDs=_flintFontResourceIDs;
 @property(retain, nonatomic) NSData *flintDocumentPrefetchedData; // @synthesize flintDocumentPrefetchedData=_flintDocumentPrefetchedData;
@@ -168,7 +169,6 @@
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (id)versionIdentifier;
-- (void).cxx_destruct;
 - (id)generateFlintDocumentAssetHandleForUrlString:(id)arg1 prefetchedData:(id)arg2 withAssetManager:(id)arg3;
 - (id)generateThumbnailAssetHandleForUrlString:(id)arg1 withAssetManager:(id)arg2;
 - (BOOL)isValid;

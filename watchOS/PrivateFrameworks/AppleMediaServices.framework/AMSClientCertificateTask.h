@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     AMSKeychainOptions *_options;
 }
 
+- (void).cxx_destruct;
 @property(retain) AMSKeychainOptions *options; // @synthesize options=_options;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (id)performClientCertChainRequest;
 - (id)initWithOptions:(id)arg1;
 

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_formatPattern;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *formatPattern; // @synthesize formatPattern=_formatPattern;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) double timeStamp; // @synthesize timeStamp=_timeStamp;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

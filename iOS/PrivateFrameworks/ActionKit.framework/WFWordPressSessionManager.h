@@ -17,12 +17,12 @@
     NSURLSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(copy, nonatomic) NSNumber *blogId; // @synthesize blogId=_blogId;
 @property(copy, nonatomic) NSURL *endpointURL; // @synthesize endpointURL=_endpointURL;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)sendRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)sendRequestWithMethod:(id)arg1 parameters:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)uploadFile:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

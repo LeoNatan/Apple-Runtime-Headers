@@ -17,10 +17,10 @@
     PKProtobufPaymentRequest *_paymentRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *paymentApplicationIdentifier; // @synthesize paymentApplicationIdentifier=_paymentApplicationIdentifier;
 @property(retain, nonatomic) PKProtobufPaymentRequest *paymentRequest; // @synthesize paymentRequest=_paymentRequest;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

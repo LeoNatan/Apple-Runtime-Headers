@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sessionOfType:(unsigned long long)arg1 language:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool muteSpeechOverride; // @synthesize muteSpeechOverride=_muteSpeechOverride;
 @property(nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
 @property(nonatomic) unsigned long long appContext; // @synthesize appContext=_appContext;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) unsigned long long sessionType; // @synthesize sessionType=_sessionType;
-- (void).cxx_destruct;
 - (_Bool)vibrateForPrompt:(unsigned long long)arg1;
 - (void)prepareToAnnounce;
 - (void)endSession;

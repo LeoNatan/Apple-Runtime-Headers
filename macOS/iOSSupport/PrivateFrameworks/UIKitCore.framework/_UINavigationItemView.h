@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     BOOL __isFadingInFromCustomAlpha;
 }
 
-@property(nonatomic, setter=_setFadingInFromCustomAlpha:) BOOL _isFadingInFromCustomAlpha; // @synthesize _isFadingInFromCustomAlpha=__isFadingInFromCustomAlpha;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setFadingInFromCustomAlpha:) BOOL _isFadingInFromCustomAlpha; // @synthesize _isFadingInFromCustomAlpha=__isFadingInFromCustomAlpha;
 - (void)_cleanUpCrossView;
 - (void)_crossFadeHiddingButton:(BOOL)arg1;
 - (void)_prepareCrossViewsForNewSize:(struct CGSize)arg1;

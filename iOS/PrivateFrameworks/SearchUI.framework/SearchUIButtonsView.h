@@ -13,8 +13,8 @@
     SearchUIMovieCardSectionView *_cardSectionView;
 }
 
-@property __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 - (void).cxx_destruct;
+@property __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 - (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 punchoutURL:(id)arg3;
 - (id)buttonForChannelOffer:(id)arg1 channel:(id)arg2 episode:(id)arg3;
 - (id)buttonForOffer:(id)arg1 playable:(id)arg2;

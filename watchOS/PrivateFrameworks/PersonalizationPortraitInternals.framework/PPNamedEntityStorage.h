@@ -42,7 +42,7 @@
 - (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 atLeastOneNamedEntityRemoved:(_Bool *)arg3 deletedCount:(unsigned int *)arg4 error:(id *)arg5;
 - (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 atLeastOneNamedEntityRemoved:(_Bool *)arg3 deletedCount:(unsigned int *)arg4 error:(id *)arg5;
 - (_Bool)deleteAllNamedEntitiesOlderThanDate:(id)arg1 atLeastOneNamedEntityRemoved:(_Bool *)arg2 deletedCount:(unsigned int *)arg3 error:(id *)arg4;
-- (void)_prepareDonationStatement:(id)arg1 scoredNamedEntity:(struct PPScoredItem *)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 occurrencesInSource:(unsigned short)arg7 weightMultiplier:(double)arg8 sourceRowId:(long long)arg9;
+- (void)_prepareDonationStatement:(id)arg1 scoredNamedEntity:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 occurrencesInSource:(unsigned short)arg7 weightMultiplier:(double)arg8 sourceRowId:(long long)arg9;
 - (_Bool)_donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 txnWitness:(id)arg7;
 - (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned int)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 error:(id *)arg7;
 - (struct _PASDBIterAction_)_populateUpdates:(id)arg1 statement:(id)arg2 source:(id)arg3 weightMultiplier:(double)arg4 entityToScoredEntityMap:(id)arg5;

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *workoutBuilderID; // @synthesize workoutBuilderID=_workoutBuilderID;
 @property(readonly, copy, nonatomic) HKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

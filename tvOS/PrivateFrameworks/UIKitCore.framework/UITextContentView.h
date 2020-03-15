@@ -40,10 +40,10 @@
 }
 
 + (id)excludedElementsForHTML;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UITextContentViewDelegate> delegate; // @synthesize delegate=m_delegate;
 @property(nonatomic) _Bool scrollsSelectionOnWebDocumentChanges; // @synthesize scrollsSelectionOnWebDocumentChanges=m_scrollsSelectionOnWebDocumentChanges;
 @property(nonatomic) struct UIEdgeInsets selectionInset; // @synthesize selectionInset=m_selectionInset;
-- (void).cxx_destruct;
 - (void)setSelectionGranularity:(long long)arg1;
 - (long long)selectionGranularity;
 @property(nonatomic) long long selectionAffinity;

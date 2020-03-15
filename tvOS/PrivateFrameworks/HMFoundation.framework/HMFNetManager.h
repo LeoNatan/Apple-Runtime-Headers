@@ -17,9 +17,9 @@
 
 + (id)sharedManager;
 + (void)initialize;
+- (void).cxx_destruct;
 @property __weak _HMFNetManagerWoWAssertion *wowAssertion; // @synthesize wowAssertion=_wowAssertion;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)deregisterWoWAssertionForObject:(id)arg1;
 - (void)registerWoWAssertionForObject:(id)arg1;
 - (void)deregisterObject:(id)arg1;

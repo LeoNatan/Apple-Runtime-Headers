@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_constraintOffScreen;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *constraintOffScreen; // @synthesize constraintOffScreen=_constraintOffScreen;
 @property(retain, nonatomic) NSLayoutConstraint *constraintOnScreen; // @synthesize constraintOnScreen=_constraintOnScreen;
 @property(retain, nonatomic) UITapGestureRecognizer *menuPressRecognizer; // @synthesize menuPressRecognizer=_menuPressRecognizer;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIButton *timeRemainingButton; // @synthesize timeRemainingButton=_timeRemainingButton;
 @property(retain, nonatomic) UIButton *headingLabel; // @synthesize headingLabel=_headingLabel;
 @property(retain, nonatomic) UIFocusGuide *mainLayoutGuide; // @synthesize mainLayoutGuide=_mainLayoutGuide;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
 - (void)_countdownTimerFired:(id)arg1;

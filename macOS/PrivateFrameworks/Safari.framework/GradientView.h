@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_colors;
 }
 
-@property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

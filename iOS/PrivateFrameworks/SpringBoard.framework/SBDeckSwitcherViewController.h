@@ -15,8 +15,8 @@
     SBSwitcherAppSuggestionViewController *_appSuggestionController;
 }
 
-@property(retain, nonatomic) SBSwitcherAppSuggestionViewController *appSuggestionController; // @synthesize appSuggestionController=_appSuggestionController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBSwitcherAppSuggestionViewController *appSuggestionController; // @synthesize appSuggestionController=_appSuggestionController;
 - (long long)orientationForSuggestionViewController:(id)arg1;
 - (void)suggestionViewController:(id)arg1 activatedSuggestion:(id)arg2;
 - (void)_setBestAppSuggestion:(id)arg1 animationCompletion:(CDUnknownBlockType)arg2;

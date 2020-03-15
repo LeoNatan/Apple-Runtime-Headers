@@ -11,7 +11,7 @@
 #import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class ARFaceData, AVDepthData, NSDate, NSString;
+@class ARFaceData, AVCameraCalibrationData, AVDepthData, NSDate, NSString;
 
 @interface ARImageData : NSObject <ARDictionaryCoding, ARSensorData, NSCopying, NSSecureCoding>
 {
@@ -34,17 +34,28 @@
     struct __CVBuffer *_visionData;
     long long _cameraPosition;
     NSString *_cameraType;
+    AVCameraCalibrationData *_calibrationData;
     long long _captureFramesPerSecond;
+    ARImageData *_latestUltraWideImage;
+    double _timestampOfSynchronizedWideImageData;
     struct CGSize _imageResolution;
     // Error parsing type: , name: _tangentialDistortion
     // Error parsing type: , name: _radialDistortion
     // Error parsing type: {?="columns"[3]}, name: _cameraIntrinsics
+    // Error parsing type: {?="columns"[4]}, name: _extrinsicsToWideSensor
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)captureDateFromPresentationTimestamp:(CDStruct_1b6d18a9)arg1 session:(id)arg2;
+- (void).cxx_destruct;
+@property(nonatomic) double timestampOfSynchronizedWideImageData; // @synthesize timestampOfSynchronizedWideImageData=_timestampOfSynchronizedWideImageData;
+@property(retain, nonatomic) ARImageData *latestUltraWideImage; // @synthesize latestUltraWideImage=_latestUltraWideImage;
 @property(nonatomic, getter=isSecondary) _Bool secondary; // @synthesize secondary=_secondary;
 @property(nonatomic) long long captureFramesPerSecond; // @synthesize captureFramesPerSecond=_captureFramesPerSecond;
+// Error parsing type for property extrinsicsToWideSensor:
+// Property attributes: T{?=[4]},N,V_extrinsicsToWideSensor
+
+@property(retain, nonatomic) AVCameraCalibrationData *calibrationData; // @synthesize calibrationData=_calibrationData;
 @property(retain, nonatomic) NSString *cameraType; // @synthesize cameraType=_cameraType;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(nonatomic) struct __CVBuffer *visionData; // @synthesize visionData=_visionData;
@@ -73,7 +84,6 @@
 @property(nonatomic) double currentCaptureTimestamp; // @synthesize currentCaptureTimestamp=_currentCaptureTimestamp;
 @property(copy, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)encodeToDictionary;
 - (id)initWithDictionary:(id)arg1;

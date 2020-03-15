@@ -13,8 +13,8 @@
     CDDebug *_debug;
 }
 
-@property(readonly) CDDebug *debug; // @synthesize debug=_debug;
 - (void).cxx_destruct;
+@property(readonly) CDDebug *debug; // @synthesize debug=_debug;
 - (_Bool)respondToLocalFocalAppsOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 responseDictionary:(id)arg4 error:(id *)arg5;
 - (_Bool)respondToRequestAdmissionLogFromDeviceOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 error:(id *)arg4;
 - (_Bool)respondToSetNonAppFocalOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 error:(id *)arg4;

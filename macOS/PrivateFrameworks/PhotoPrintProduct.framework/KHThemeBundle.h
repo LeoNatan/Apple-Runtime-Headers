@@ -18,10 +18,10 @@
 }
 
 + (id)bundleWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) KHThemeManifest *manifest; // @synthesize manifest=_manifest;
-- (void).cxx_destruct;
 - (id)previewImageForThemeIdentifier:(id)arg1 andProductCode:(id)arg2;
 - (id)themesForProjectType:(long long)arg1;
 - (id)themesForProductCodes:(id)arg1;

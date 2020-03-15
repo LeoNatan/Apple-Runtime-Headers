@@ -14,9 +14,9 @@
     PKPassUpgradeRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPassUpgradeRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 - (id)initWithPaymentPass:(id)arg1 updateRequest:(id)arg2;
 

@@ -23,11 +23,11 @@
 + (id)privateOnDiskDatabaseURL;
 + (id)inMemoryDatabaseURL;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) struct sqlite3 *handle; // @synthesize handle=_handle;
 @property(nonatomic) __weak id <WBSSQLiteDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_openWithFlags:(int)arg1 vfs:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSError *lastError;
 @property(readonly, nonatomic) long long changedRowCount;

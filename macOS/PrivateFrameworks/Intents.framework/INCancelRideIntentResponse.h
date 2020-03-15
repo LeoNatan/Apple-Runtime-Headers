@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSDateComponents *cancellationFeeThreshold; // @synthesize cancellationFeeThreshold=_cancellationFeeThreshold;
 @property(copy) INCurrencyAmount *cancellationFee; // @synthesize cancellationFee=_cancellationFee;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) long long code; // @dynamic code;

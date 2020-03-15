@@ -8,21 +8,24 @@
 
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 @protocol _WKWebAuthenticationPanelDelegate;
 
 @interface _WKWebAuthenticationPanel : NSObject <WKObject>
 {
     struct ObjectStorage<API::WebAuthenticationPanel> _panel;
     struct WeakPtr<WebKit::WebAuthenticationPanelClient> _client;
+    struct RetainPtr<NSMutableArray> _transports;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly) struct Object *_apiObject;
 - (void)cancel;
-@property(nonatomic) __weak id <_WKWebAuthenticationPanelDelegate> delegate;
+@property(readonly, nonatomic) long long type;
+@property(readonly, copy, nonatomic) NSArray *transports;
 @property(readonly, copy, nonatomic) NSString *relyingPartyID;
+@property(nonatomic) __weak id <_WKWebAuthenticationPanelDelegate> delegate;
 - (void)dealloc;
 
 // Remaining properties

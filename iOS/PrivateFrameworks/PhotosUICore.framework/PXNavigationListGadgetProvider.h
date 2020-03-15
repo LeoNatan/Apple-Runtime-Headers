@@ -19,12 +19,12 @@
     PXNavigationListDataSectionManager *_dataSourceManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPresentedInPicker; // @synthesize isPresentedInPicker=_isPresentedInPicker;
 @property(retain, nonatomic) PXNavigationListDataSectionManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(readonly, nonatomic) PXExtendedTraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool shouldShowNavigationListOnIpad; // @synthesize shouldShowNavigationListOnIpad=_shouldShowNavigationListOnIpad;
-- (void).cxx_destruct;
 - (void)_initializeDataSourceManagerIfNeeded;
 @property(readonly, nonatomic) _Bool shouldShowNavigationListForDeviceAndLayoutClass;
 - (void)_updateGadgets;

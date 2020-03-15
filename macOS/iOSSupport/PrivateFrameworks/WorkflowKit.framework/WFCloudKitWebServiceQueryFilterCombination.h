@@ -14,9 +14,9 @@
     unsigned long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
-- (void).cxx_destruct;
 - (id)stringRepresentationWithRecordType:(id)arg1;
 
 @end

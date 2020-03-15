@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transferredBytes; // @synthesize transferredBytes=_transferredBytes;
 @property(nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;
 @property(nonatomic) long long uploadType; // @synthesize uploadType=_uploadType;
 @property(retain, nonatomic) NSString *uploadID; // @synthesize uploadID=_uploadID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

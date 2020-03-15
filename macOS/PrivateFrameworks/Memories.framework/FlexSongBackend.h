@@ -28,6 +28,7 @@
     NSDictionary *_customOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *customOptions; // @synthesize customOptions=_customOptions;
 @property(nonatomic) long long metadataVersion; // @synthesize metadataVersion=_metadataVersion;
 @property(nonatomic) BOOL recalled; // @synthesize recalled=_recalled;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSString *audioEncoderPresetName; // @synthesize audioEncoderPresetName=_audioEncoderPresetName;
 @property(retain, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(retain, nonatomic) NSImage *artwork; // @synthesize artwork=_cachedArtwork;
-- (void).cxx_destruct;
 - (BOOL)_verifyKeyFrames:(id)arg1 failureReason:(id *)arg2;
 - (BOOL)_verifyClips:(id)arg1 inRendition:(id)arg2 failureReason:(id *)arg3;
 - (BOOL)verifyRendition:(id)arg1 forDuration:(CDStruct_1b6d18a9)arg2 failureReason:(id *)arg3;

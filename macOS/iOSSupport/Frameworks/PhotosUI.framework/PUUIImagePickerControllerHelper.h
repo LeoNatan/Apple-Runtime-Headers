@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)imagePickerTypesForMediaTypes:(id)arg1;
 + (id)albumListViewControllerSpec;
 + (id)gridViewControllerSpec;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didHandleSelectionOfAssets; // @synthesize didHandleSelectionOfAssets=_didHandleSelectionOfAssets;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *multiSelectionGroup; // @synthesize multiSelectionGroup=_multiSelectionGroup;
 @property(readonly, nonatomic) __weak id <PUPhotoPicker> photoPicker; // @synthesize photoPicker=_photoPicker;
 @property(readonly, nonatomic) __weak PUUIAlbumListViewController *albumListViewController; // @synthesize albumListViewController=_albumListViewController;
 @property(readonly, nonatomic) __weak PUPhotosGridViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
-- (void).cxx_destruct;
 - (void)handleKeyboardAvoidanceIfNeeded:(id)arg1;
 - (void)_showImageViewController:(id)arg1;
 - (id)_pickerProperties;

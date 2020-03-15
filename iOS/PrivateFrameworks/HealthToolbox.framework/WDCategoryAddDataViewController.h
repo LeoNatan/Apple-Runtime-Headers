@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     WDAddDataManualEntryItem *_dateEntryItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WDAddDataManualEntryItem *dateEntryItem; // @synthesize dateEntryItem=_dateEntryItem;
 @property(readonly, nonatomic) WDAddDataManualEntryItem *categoryValueEntryItem; // @synthesize categoryValueEntryItem=_categoryValueEntryItem;
-- (void).cxx_destruct;
 - (void)manualEntryItemDidUpdate:(id)arg1;
 - (void)validateDataWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) HKValueRange *selectedDateRange;

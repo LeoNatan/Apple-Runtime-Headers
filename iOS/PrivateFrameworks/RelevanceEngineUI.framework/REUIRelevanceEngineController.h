@@ -42,13 +42,13 @@
     id <REUIRelevanceEngineControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsIdealizedContent; // @synthesize wantsIdealizedContent=_wantsIdealizedContent;
 @property(nonatomic) _Bool wantsLiveDataSources; // @synthesize wantsLiveDataSources=_wantsLiveDataSources;
 @property(nonatomic) _Bool allowsLocationUse; // @synthesize allowsLocationUse=_allowsLocationUse;
 @property(nonatomic) __weak id <REUIRelevanceEngineControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *sectionOrder; // @synthesize sectionOrder=_sectionOrder;
 @property(readonly, nonatomic) RERelevanceEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (id)interactionTypeForElement:(id)arg1;
 - (_Bool)elementIsAvailable:(id)arg1;
 - (id)elementsOrdered:(unsigned long long)arg1 relativeToElement:(id)arg2;
@@ -85,6 +85,7 @@
 - (id)identifierForElementAtIndexPath:(id)arg1;
 - (id)actionAtIndexPath:(id)arg1;
 - (id)_contentAtIndexPath:(id)arg1;
+- (id)generateDiffableSnapshot;
 - (id)indexPathForElementWithIdentifier:(id)arg1;
 - (id)contentAtIndexPath:(id)arg1;
 - (id)_elementAtIndexPath:(id)arg1;

@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
 + (void)copySuggestionsFrom:(id)arg1 to:(id)arg2;
 + (void)setSearchFieldState:(id)arg1 withState:(id)arg2;
 + (id)searchFieldState:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property _Bool configuring; // @synthesize configuring=_configuring;
 @property _Bool isSaveable; // @synthesize isSaveable=_isSaveable;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateUIForAction;
 - (void)updateQueryWithScope:(int)arg1 clearContent:(_Bool)arg2;
 - (void)updateQueryWithScopeIndex:(unsigned long long)arg1 clearContent:(_Bool)arg2;

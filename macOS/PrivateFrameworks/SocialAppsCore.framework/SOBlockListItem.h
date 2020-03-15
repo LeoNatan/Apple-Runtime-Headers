@@ -17,12 +17,12 @@
     NSString *_cachedFormattedPersonName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cachedFormattedPersonName; // @synthesize cachedFormattedPersonName=_cachedFormattedPersonName;
 @property(retain, nonatomic) NSString *cachedFormattedHandle; // @synthesize cachedFormattedHandle=_cachedFormattedHandle;
 @property(retain, nonatomic) IMPerson *person; // @synthesize person=_person;
 @property(nonatomic) void *cmfItem; // @synthesize cmfItem=_cmfItem;
 @property(retain, nonatomic) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToBlockListItem:(id)arg1;
 - (id)formattedPersonNameWithAddress:(BOOL)arg1;

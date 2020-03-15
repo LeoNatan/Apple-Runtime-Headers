@@ -18,12 +18,12 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long response; // @synthesize response=_response;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) HMIncomingHomeInvitation *invitation; // @synthesize invitation=_invitation;
 @property(readonly, nonatomic) __weak id <HUIncomingInvitationResponseControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_acceptInvitation;
 - (id)_declineInvitation;
 - (void)respondToInvitationWithResponse:(unsigned long long)arg1;

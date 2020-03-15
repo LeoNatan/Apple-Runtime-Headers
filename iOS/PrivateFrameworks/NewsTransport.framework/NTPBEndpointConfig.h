@@ -23,6 +23,7 @@
     NSString *_staticAssetBaseUrl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *remoteDataSourceBaseUrl; // @synthesize remoteDataSourceBaseUrl=_remoteDataSourceBaseUrl;
 @property(retain, nonatomic) NSString *staticAssetBaseUrl; // @synthesize staticAssetBaseUrl=_staticAssetBaseUrl;
 @property(retain, nonatomic) NSString *analyticsEnvelopeContentTypePropJson; // @synthesize analyticsEnvelopeContentTypePropJson=_analyticsEnvelopeContentTypePropJson;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *eventRelayBaseUrl; // @synthesize eventRelayBaseUrl=_eventRelayBaseUrl;
 @property(retain, nonatomic) NSString *clientApiBaseUrl; // @synthesize clientApiBaseUrl=_clientApiBaseUrl;
 @property(nonatomic) int environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

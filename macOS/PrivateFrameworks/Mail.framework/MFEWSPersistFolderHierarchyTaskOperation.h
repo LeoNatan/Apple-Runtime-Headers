@@ -15,9 +15,9 @@
     MFEWSSyncFolderHierarchyBatch *_batch;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSSyncFolderHierarchyBatch *batch; // @synthesize batch=_batch;
 @property __weak id <MFEWSPersistFolderHierarchyTaskOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)init;
 - (id)initWithBatch:(id)arg1;

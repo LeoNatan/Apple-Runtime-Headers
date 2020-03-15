@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_listenerKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *listenerKeys; // @synthesize listenerKeys=_listenerKeys;
 @property(retain, nonatomic) BKSAccelerometer *accelerometer; // @synthesize accelerometer=_accelerometer;
 @property(nonatomic) __weak id <CKDeviceOrientationManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_broadcastOrientation:(long long)arg1;
 - (long long)_springboardDeviceLockOrientation;
 - (void)_updateListeningState;

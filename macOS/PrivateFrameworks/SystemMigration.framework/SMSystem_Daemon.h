@@ -50,6 +50,7 @@
 + (id)archivedSystemWithPath:(id)arg1 onVolume:(id)arg2;
 + (id)currentSystem;
 + (id)systemWithPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) SMODDBAccess *oddb; // @synthesize oddb=_oddb;
 @property(retain) SMDBAccess *dsdb; // @synthesize dsdb=_dsdb;
 @property BOOL systemPrepared; // @synthesize systemPrepared=_systemPrepared;
@@ -71,7 +72,6 @@
 @property(retain) NSString *modelID; // @synthesize modelID;
 @property(retain) NSArray *groups; // @synthesize groups;
 @property(retain) NSArray *users; // @synthesize users;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

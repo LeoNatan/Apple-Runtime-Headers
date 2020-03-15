@@ -16,8 +16,8 @@
     NSMutableData *_singleShot;
 }
 
-@property(readonly, nonatomic) long lastSecCMSError; // @synthesize lastSecCMSError=_SecCMSError;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long lastSecCMSError; // @synthesize lastSecCMSError=_SecCMSError;
 - (id)data;
 - (void)_appendBytes:(const void *)arg1 length:(unsigned long)arg2;
 - (void)done;

@@ -20,10 +20,10 @@
     CDUnknownBlockType _primaryActionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType primaryActionHandler; // @synthesize primaryActionHandler=_primaryActionHandler;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) _Bool alwaysAllowFocus; // @synthesize alwaysAllowFocus=_alwaysAllowFocus;
-- (void).cxx_destruct;
 - (void)_updateFloatingTintColor;
 - (void)_selectButtonAction:(id)arg1;
 - (void)_handlePrimaryAction;

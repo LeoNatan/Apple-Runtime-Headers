@@ -9,7 +9,7 @@
 #import <UIKitCore/UIResponderStandardEditActions-Protocol.h>
 #import <UIKitCore/UITextInteraction_AssistantDelegate-Protocol.h>
 
-@class NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextLinkInteraction, UITextRange, UITextSelectionView, UITouch;
+@class NSNumber, NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextLinkInteraction, UITextRange, UITextSelectionView, _UIKeyboardTextSelectionController;
 @protocol UITextInput;
 
 @interface UITextInteractionAssistant : NSObject <UITextInteraction_AssistantDelegate, UIResponderStandardEditActions>
@@ -32,16 +32,21 @@
     _Bool _expectingCommit;
     _Bool _externalTextInput;
     _Bool _suppressSystemUI;
+    unsigned long long _activeSelectionInteractions;
     UITextLinkInteraction *_linkInteraction;
     UITextInteraction *_interactions;
     long long _textInteractionMode;
     UITextInteraction *_externalInteractions;
-    UITouch *_synthesizedTouchForLollipopForwarding;
+    id _grabberSuppressionAssertion;
+    _UIKeyboardTextSelectionController *_nonEditableSelectionController;
     _Bool _detaching;
+    NSNumber *_viewConformsToTextItemInteracting;
+    NSNumber *_viewRespondsToInteractiveTextSelectionDisabled;
 }
 
-+ (long long)_nextGranularityInCycle:(long long)arg1;
++ (long long)_nextGranularityInCycle:(long long)arg1 forTouchType:(long long)arg2;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isInteractiveSelectionDisabled) _Bool interactiveSelectionDisabled;
 - (id)textSelectionView;
 - (void)clearGestureRecognizers;
 - (id)initWithResponder:(id)arg1;
@@ -72,8 +77,10 @@
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)willBeginFloatingCursor:(_Bool)arg1;
+- (_Bool)hasActiveSelectionInteraction;
 - (void)didEndSelectionInteraction;
 - (void)willBeginSelectionInteraction;
+- (_Bool)usesAsynchronousSelectionController;
 - (_Bool)didUseStashedSelection;
 - (void)clearStashedSelection;
 - (void)stashCurrentSelection;
@@ -97,7 +104,7 @@
 - (void)extendSelectionToLoupeOrSetToPoint:(struct CGPoint)arg1;
 - (void)extendSelectionToPoint:(struct CGPoint)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint)arg1;
-- (void)lollipopGestureWithState:(long long)arg1 location:(struct CGPoint)arg2 locationOfFirstTouch:(struct CGPoint)arg3;
+- (void)lollipopGestureWithState:(long long)arg1 location:(struct CGPoint)arg2 locationOfFirstTouch:(struct CGPoint)arg3 forTouchType:(long long)arg4;
 - (void)rangedMagnifierWithState:(long long)arg1 atPoint:(struct CGPoint)arg2;
 - (void)loupeMagnifierWithState:(long long)arg1 atPoint:(struct CGPoint)arg2;
 - (void)loupeGestureWithState:(long long)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(long long)arg5 shouldCancel:(_Bool *)arg6;
@@ -109,7 +116,7 @@
 - (void)setFirstResponderIfNecessaryActivatingSelection:(_Bool)arg1;
 - (void)setFirstResponderIfNecessary;
 - (void)addGestureRecognizersToView:(id)arg1;
-- (Class)loupeInteractionClass;
+- (_Bool)supportsIndirectInteractions;
 - (Class)selectionInteractionClass;
 - (void)setGestureRecognizers;
 - (void)canBeginDragCursor:(id)arg1;
@@ -140,6 +147,7 @@
 @property(readonly, retain, nonatomic) UILongPressGestureRecognizer *loupeGesture;
 @property(readonly, retain, nonatomic) UIGestureRecognizer *doubleTapGesture;
 @property(readonly, retain, nonatomic) UITapGestureRecognizer *singleTapGesture;
+@property(readonly, nonatomic) _UIKeyboardTextSelectionController *activeSelectionController;
 @property(retain, nonatomic) UITextInteraction *externalInteractions;
 @property(retain, nonatomic) UITextLinkInteraction *linkInteraction;
 @property(readonly, retain, nonatomic) UITextInteraction *interactions;
@@ -154,6 +162,7 @@
 @property(readonly, nonatomic) UIResponder<UITextInput> *view;
 - (id)_scrollable;
 - (id)_asText;
+@property(retain, nonatomic) id grabberSuppressionAssertion;
 @property(nonatomic) _Bool needsGestureUpdate;
 - (void)dealloc;
 - (id)initWithView:(id)arg1 textInteractionMode:(long long)arg2;

@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_shapeLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(copy, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(nonatomic) double highlightInset; // @synthesize highlightInset=_highlightInset;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double highlightWidth; // @synthesize highlightWidth=_highlightWidth;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (struct CGRect)highlightRectInView:(id)arg1 forDragInteraction:(id)arg2 withContext:(id)arg3;
 - (struct CGRect)clippingRectInView:(id)arg1 forView:(id)arg2;

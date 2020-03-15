@@ -25,10 +25,10 @@
 - (BOOL)matchesStackshotWaitInfo:(const struct stackshot_thread_waitinfo *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithStackshotWaitInfo:(const struct stackshot_thread_waitinfo *)arg1;
-- (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(struct NSMutableDictionary *)arg2 andDataBufferDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (id)_initWithSerializedWaitInfo:(const CDStruct_33dcf794 *)arg1;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg2;
+- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 @end

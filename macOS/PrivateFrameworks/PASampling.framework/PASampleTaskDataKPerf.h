@@ -15,12 +15,12 @@
     PASampleTaskDataKPerf *previousSampleTask;
 }
 
+- (void).cxx_destruct;
 @property BOOL filledLatencyQoS; // @synthesize filledLatencyQoS;
 @property BOOL filledMem; // @synthesize filledMem;
 @property BOOL filledState; // @synthesize filledState;
 @property BOOL isSentinel; // @synthesize isSentinel;
 @property __weak PASampleTaskDataKPerf *previousSampleTask; // @synthesize previousSampleTask;
-- (void).cxx_destruct;
 - (id)privateData;
 - (void)setPrivateData:(id)arg1;
 

@@ -19,10 +19,10 @@
 
 + (Class)actionType;
 + (id)emptyFieldWithKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) CKDPRecordFieldValue *value; // @synthesize value=_value;
 @property(retain, nonatomic) CKDPRecordFieldIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

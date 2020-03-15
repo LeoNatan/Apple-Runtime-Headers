@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     VSAccountStore *_accountStore;
 }
 
-@property(retain, nonatomic) VSAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VSAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void)fetchMSOProviderStatus:(id)arg1;
 - (void)_sendVideoSubscriberChangedNotificationToTheJavaScript;
 - (void)dealloc;

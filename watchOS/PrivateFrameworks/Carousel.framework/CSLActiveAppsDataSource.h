@@ -22,9 +22,9 @@
     CSLSessionManager *_sessionManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSLSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(retain, nonatomic) CSLDuetActivityBudgetDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)sessionManagerConfigurationChanged:(id)arg1;
 - (void)sessionManager:(id)arg1 sessionDidEnd:(id)arg2;
 - (void)sessionManager:(id)arg1 sessionDidStart:(id)arg2;

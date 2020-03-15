@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)backgroundColor;
+- (void).cxx_destruct;
 @property _Bool playVideo; // @synthesize playVideo=_playVideo;
 @property _Bool displayingVideo; // @synthesize displayingVideo=_displayingVideo;
 @property(retain) AVPlayerViewController *videoViewController; // @synthesize videoViewController=_videoViewController;
 @property(retain) AVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(retain) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)videoReachedEnd:(id)arg1;
 - (void)transitionToVideo;

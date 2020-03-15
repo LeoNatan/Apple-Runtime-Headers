@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedContextsByPath;
 + (id)sharedContextsQueue;
 + (id)_appID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableIndexSet *inMemoryItemsIDs; // @synthesize inMemoryItemsIDs=_inMemoryItemsIDs;
 @property(nonatomic) unsigned int maxChunkCountForSection; // @synthesize maxChunkCountForSection=_maxChunkCountForSection;
 @property(retain, nonatomic) NSString *runLoopMode; // @synthesize runLoopMode=_runLoopMode;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL stopMMCSThread; // @synthesize stopMMCSThread=_stopMMCSThread;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) long long refCount; // @synthesize refCount=_refCount;
-- (void).cxx_destruct;
 - (void)stopTrackingItemID:(unsigned long long)arg1;
 - (unsigned long long)nextAvailableItemID;
 - (void)performOnRunLoop:(CDUnknownBlockType)arg1;

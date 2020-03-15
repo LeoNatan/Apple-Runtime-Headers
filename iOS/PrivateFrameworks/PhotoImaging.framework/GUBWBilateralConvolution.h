@@ -21,12 +21,12 @@
 + (id)bilateralLoop5Kernel;
 + (id)bilateralLoop2Kernel;
 + (id)BWBilateralKernels;
+- (void).cxx_destruct;
 @property(retain) NSNumber *inputBorder; // @synthesize inputBorder=_inputBorder;
 @property(retain) NSNumber *inputEdgeDetail; // @synthesize inputEdgeDetail=_inputEdgeDetail;
 @property(retain) NSArray *inputWeights; // @synthesize inputWeights=_inputWeights;
 @property(retain) NSArray *inputPoints; // @synthesize inputPoints=_inputPoints;
 @property(retain) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)doBilateralLoop:(id)arg1 points:(id)arg2 weights:(id)arg3 slope:(id)arg4;
 - (struct CGRect)bilateralROI:(long long)arg1 destRect:(struct CGRect)arg2 userInfo:(id)arg3;

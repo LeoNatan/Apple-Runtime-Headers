@@ -13,14 +13,20 @@
 __attribute__((visibility("hidden")))
 @interface VUIContextMenuTemplateController : _TVBgImageLoadingViewController <VUIContextMenuTemplateControllerInterface>
 {
+    _Bool _canPerformAction;
     VUIContextMenuCardView *_cardView;
     IKViewElement *_viewElement;
+    IKViewElement *_selectedElement;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) IKViewElement *selectedElement; // @synthesize selectedElement=_selectedElement;
+@property(nonatomic) _Bool canPerformAction; // @synthesize canPerformAction=_canPerformAction;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUIContextMenuCardView *cardView; // @synthesize cardView=_cardView;
-- (void).cxx_destruct;
+- (void)didDismissTemplateController;
 - (void)didSelectPreviewTemplateController;
+- (void)_performAction;
 - (void)_updateInteractionMenuItems:(id)arg1;
 - (id)_shareActionSheetFromViewElement:(id)arg1;
 - (void)viewDidLoad;

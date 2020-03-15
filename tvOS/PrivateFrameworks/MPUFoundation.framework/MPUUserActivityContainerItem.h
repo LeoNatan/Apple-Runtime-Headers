@@ -18,10 +18,10 @@
     MPMediaEntity *_visualReferenceMediaEntity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPMediaEntity *visualReferenceMediaEntity; // @synthesize visualReferenceMediaEntity=_visualReferenceMediaEntity;
 @property(readonly, nonatomic) MPMediaEntity *selectedMediaEntity; // @synthesize selectedMediaEntity=_selectedMediaEntity;
 @property(readonly, nonatomic) long long containerItemType; // @synthesize containerItemType=_containerItemType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _MPUProtoBufUserActivityContainerItem *protoBufUserActivityContainerItem;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

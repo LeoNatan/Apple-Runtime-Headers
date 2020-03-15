@@ -13,8 +13,8 @@
     id <UIScrollViewDelegate> _designatedDelegate;
 }
 
-@property(nonatomic) __weak id <UIScrollViewDelegate> designatedDelegate; // @synthesize designatedDelegate=_designatedDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UIScrollViewDelegate> designatedDelegate; // @synthesize designatedDelegate=_designatedDelegate;
 - (void)setDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 designatedDelegate:(id)arg2;
 

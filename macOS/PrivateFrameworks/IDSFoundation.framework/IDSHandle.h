@@ -15,10 +15,10 @@
     long long _validationStatus;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long validationStatus; // @synthesize validationStatus=_validationStatus;
 @property(readonly, nonatomic) BOOL isUserVisible; // @synthesize isUserVisible=_isUserVisible;
 @property(readonly, nonatomic) IDSURI *URI; // @synthesize URI=_URI;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToHandle:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

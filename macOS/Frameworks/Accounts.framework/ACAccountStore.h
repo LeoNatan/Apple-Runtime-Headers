@@ -24,10 +24,11 @@
 + (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
 + (void)_setDefaultStore:(id)arg1;
 + (id)_defaultStore;
+- (void).cxx_destruct;
 @property(readonly) NSString *effectiveBundleID; // @synthesize effectiveBundleID=_effectiveBundleID;
 @property(readonly, nonatomic) ACRemoteAccountStoreSession *longLivedRemoteAccountStoreSession; // @synthesize longLivedRemoteAccountStoreSession=_longLivedRemoteAccountStoreSession;
 @property(readonly, nonatomic) ACRemoteAccountStoreSession *remoteAccountStoreSession; // @synthesize remoteAccountStoreSession=_remoteAccountStoreSession;
-- (void).cxx_destruct;
+- (void)resetDatabaseToVersion:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)scheduleBackupIfNonexistent:(CDUnknownBlockType)arg1;
 - (void)reportTelemetryForLandmarkEvent:(CDUnknownBlockType)arg1;
 - (id)_createSMTPAccountForServerAccount:(id)arg1;

@@ -27,6 +27,7 @@
     UIFont *_appAgeRatingFont;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIFont *appAgeRatingFont; // @synthesize appAgeRatingFont=_appAgeRatingFont;
 @property(copy, nonatomic) UIFont *caption2Font; // @synthesize caption2Font=_caption2Font;
 @property(copy, nonatomic) UIFont *caption1Font; // @synthesize caption1Font=_caption1Font;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) UIFont *title0Font; // @synthesize title0Font=_title0Font;
 @property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic) __weak id <UITraitEnvironment> traitEnvironment; // @synthesize traitEnvironment=_traitEnvironment;
-- (void).cxx_destruct;
 - (void)_updateFontsWithTraitCollection:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;

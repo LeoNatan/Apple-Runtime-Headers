@@ -13,8 +13,8 @@
     id <FCPaidAccessCheckerType> _paidAccessChecker;
 }
 
-@property(readonly, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 - (void)checkAccessToItem:(id)arg1 withQualityOfService:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)hasAccessToItem:(id)arg1 blockedReason:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)canSynchronouslyCheckAccessToItem:(id)arg1;

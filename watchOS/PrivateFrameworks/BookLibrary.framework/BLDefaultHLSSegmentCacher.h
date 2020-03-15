@@ -21,11 +21,11 @@
     unsigned int _taskCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int taskCount; // @synthesize taskCount=_taskCount;
 @property(readonly, nonatomic) BLHLSCacheManager *cacheManager; // @synthesize cacheManager=_cacheManager;
 @property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(nonatomic) __weak id <BLHLSSegmentCachingDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

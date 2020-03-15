@@ -15,10 +15,10 @@
     NSArray *_postedBulletins;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *postedBulletins; // @synthesize postedBulletins=_postedBulletins;
 @property(readonly, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) NSSet *changedCharacteristics; // @synthesize changedCharacteristics=_changedCharacteristics;
-- (void).cxx_destruct;
 - (id)initWithCameraSessionID:(id)arg1 changedCharacteristics:(id)arg2 timeInterval:(double)arg3;
 
 @end

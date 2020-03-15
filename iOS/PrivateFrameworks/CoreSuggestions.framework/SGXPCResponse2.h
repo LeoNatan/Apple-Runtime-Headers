@@ -16,8 +16,8 @@
 + (id)responseWithError:(id)arg1;
 + (id)responseWith:(id)arg1 also:(id)arg2;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) id <NSSecureCoding> response2; // @synthesize response2=_response2;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NSSecureCoding> response2; // @synthesize response2=_response2;
 - (id)response1;
 - (void)setResponse2:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

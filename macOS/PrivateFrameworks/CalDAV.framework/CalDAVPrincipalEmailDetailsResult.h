@@ -16,10 +16,10 @@
 }
 
 + (id)resultFromResponseItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *preferredAddresses; // @synthesize preferredAddresses=_preferredAddresses;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSURL *principalURL; // @synthesize principalURL=_principalURL;
-- (void).cxx_destruct;
 - (id)description;
 - (id)addresses;
 

@@ -20,12 +20,12 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) double contentBottomMargin; // @synthesize contentBottomMargin=_contentBottomMargin;
 @property(retain, nonatomic) HUGridLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_updateTitleLabel;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(_Bool)arg1;

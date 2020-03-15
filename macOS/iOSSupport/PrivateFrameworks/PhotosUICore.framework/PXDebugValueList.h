@@ -15,8 +15,8 @@
     NSMutableArray *_debugValues;
 }
 
-@property(readonly, nonatomic) NSMutableArray *debugValues; // @synthesize debugValues=_debugValues;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *debugValues; // @synthesize debugValues=_debugValues;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)addValueWithLabel:(id)arg1 highlightedScore:(double)arg2;
 - (void)addValueWithLabel:(id)arg1 stringValue:(id)arg2;

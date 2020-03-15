@@ -15,7 +15,7 @@
 {
     RTStateModelLocation *_location;
     long long _type;
-    long long _typeSource;
+    unsigned long long _typeSource;
     RTMapItem *_mapItem;
     long long _mapItemSource;
     NSDate *_geocodeDate;
@@ -25,20 +25,20 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <GEOMapItem> geoMapItem; // @synthesize geoMapItem=_geoMapItem;
 @property(retain, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property(retain, nonatomic) NSMutableArray *histEntryExit_s; // @synthesize histEntryExit_s=_histEntryExit_s;
 @property(retain, nonatomic) NSDate *geocodeDate; // @synthesize geocodeDate=_geocodeDate;
 @property(nonatomic) long long mapItemSource; // @synthesize mapItemSource=_mapItemSource;
 @property(retain, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
-@property(nonatomic) long long typeSource; // @synthesize typeSource=_typeSource;
+@property(nonatomic) unsigned long long typeSource; // @synthesize typeSource=_typeSource;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) RTStateModelLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithLocation:(id)arg1 type:(long long)arg2 typeSource:(long long)arg3 customLabel:(id)arg4 mapItem:(id)arg5;
+- (id)initWithLocation:(id)arg1 type:(long long)arg2 typeSource:(unsigned long long)arg3 customLabel:(id)arg4 mapItem:(id)arg5;
 - (id)init;
 
 @end

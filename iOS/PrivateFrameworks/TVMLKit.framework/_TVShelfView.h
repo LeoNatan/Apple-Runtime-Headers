@@ -13,8 +13,8 @@
     _TVShelfViewLayout *_shelfFlowLayout;
 }
 
-@property(retain, nonatomic) _TVShelfViewLayout *shelfFlowLayout; // @synthesize shelfFlowLayout=_shelfFlowLayout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TVShelfViewLayout *shelfFlowLayout; // @synthesize shelfFlowLayout=_shelfFlowLayout;
 - (struct UIEdgeInsets)_selectionMarginsForCell:(id)arg1;
 - (struct UIEdgeInsets)selectionMarginsForCellAtIndexPath:(id)arg1;
 - (void)updateLayoutForFocusedView:(id)arg1;

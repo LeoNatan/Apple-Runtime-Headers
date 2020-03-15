@@ -15,10 +15,10 @@
     _ICQAlertSpecification *_startAlert;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _ICQAlertSpecification *startAlert; // @synthesize startAlert=_startAlert;
 @property(readonly, nonatomic) NSDictionary *pagesByIdentifier; // @synthesize pagesByIdentifier=_pagesByIdentifier;
 @property(readonly, nonatomic) _ICQPageSpecification *startPage; // @synthesize startPage=_startPage;
-- (void).cxx_destruct;
 - (id)initWithPages:(id)arg1;
 
 @end

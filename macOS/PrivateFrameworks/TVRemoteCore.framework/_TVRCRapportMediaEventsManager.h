@@ -17,12 +17,12 @@
     CDUnknownBlockType _eventHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int currentSetting; // @synthesize currentSetting=_currentSetting;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(retain, nonatomic) RPMediaControlSession *mediaSession; // @synthesize mediaSession=_mediaSession;
 @property(retain, nonatomic) NSMutableSet *mediaCommands; // @synthesize mediaCommands=_mediaCommands;
 @property(retain, nonatomic) NSSet *volumeCommands; // @synthesize volumeCommands=_volumeCommands;
-- (void).cxx_destruct;
 - (id)supportedCaptionEvents;
 - (void)_refreshCaptionState;
 - (int)_captionSettingForButtonEvent:(id)arg1;

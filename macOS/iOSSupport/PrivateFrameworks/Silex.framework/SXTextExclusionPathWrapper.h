@@ -17,10 +17,10 @@
     TSDWrapPolygon *_myWrapPolygon;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TSDWrapPolygon *myWrapPolygon; // @synthesize myWrapPolygon=_myWrapPolygon;
 @property(readonly, nonatomic) BOOL isRectangular; // @synthesize isRectangular=_isRectangular;
 @property(readonly, nonatomic) __weak SXTextExclusionPath *exclusionPath; // @synthesize exclusionPath=_exclusionPath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasAlpha;
 - (id)parent;
 - (struct CGRect)boundsInRoot;

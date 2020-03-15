@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     XMLWrapperQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XMLWrapperQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSArray *childElementSequence; // @synthesize childElementSequence=_childElementSequence;
 @property(readonly, nonatomic) NSDictionary *namespaces; // @synthesize namespaces=_namespaces;
 @property(retain, nonatomic) NSString *textContent; // @synthesize textContent=_textContent;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
-- (void).cxx_destruct;
 - (id)xmlString:(id *)arg1;
 - (struct _xmlNode *)xmlNode:(id *)arg1;
 - (void)reorderChildElements;

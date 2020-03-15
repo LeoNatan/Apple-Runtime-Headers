@@ -28,6 +28,7 @@
 
 + (Class)collectionViewClass;
 + (Class)flowLayoutClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL masterViewControllerHidden; // @synthesize masterViewControllerHidden=_masterViewControllerHidden;
 @property(nonatomic) BOOL frameOptionsEnabled; // @synthesize frameOptionsEnabled=_frameOptionsEnabled;
 @property(retain, nonatomic) NSMutableDictionary *sectionHeaders; // @synthesize sectionHeaders=_sectionHeaders;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) CDUnknownBlockType deletionHandler; // @synthesize deletionHandler=_deletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType actionMenuProvider; // @synthesize actionMenuProvider=_actionMenuProvider;
 @property(readonly, nonatomic) KHSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
-- (void).cxx_destruct;
 - (void)splitViewController:(id)arg1 willShowMasterViewController:(id)arg2;
 - (void)splitViewController:(id)arg1 willHideMasterViewController:(id)arg2;
 - (void)selectionManager:(id)arg1 didRemoveSelections:(id)arg2;

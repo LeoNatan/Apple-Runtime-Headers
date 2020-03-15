@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _touchesEndedCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType touchesEndedCallback; // @synthesize touchesEndedCallback=_touchesEndedCallback;
 @property(copy, nonatomic) CDUnknownBlockType touchesBeganCallback; // @synthesize touchesBeganCallback=_touchesBeganCallback;
-- (void).cxx_destruct;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
 - (void)reset;

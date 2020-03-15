@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultPreflightManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *presentingController; // @synthesize presentingController=_presentingController;
 @property(nonatomic) unsigned long long restrictionsCheckType; // @synthesize restrictionsCheckType=_restrictionsCheckType;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) VUIVideosPlayable *videosPlayable; // @synthesize videosPlayable=_videosPlayable;
-- (void).cxx_destruct;
 - (_Bool)_isOnWiFi;
 - (void)_preflightDownloadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_showAgeConfirmationWithPresentingViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)_ratingValue;
 - (_Bool)_isTrailer;
 - (id)_ratingDomain;
-- (void)_preflightWithOptions:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_preflightWithOptions:(long long)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)preflightWithOptions:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
 

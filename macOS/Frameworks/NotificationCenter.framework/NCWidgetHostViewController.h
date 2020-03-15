@@ -18,10 +18,10 @@
     unsigned long long _forcedAppearance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long forcedAppearance; // @synthesize forcedAppearance=_forcedAppearance;
 @property(readonly, nonatomic) id <NCWidgetServiceProtocol> remoteWidgetObject; // @synthesize remoteWidgetObject=_remoteWidgetObject;
 @property(readonly, nonatomic) _Bool supportsEdit; // @synthesize supportsEdit=_supportsEdit;
-- (void).cxx_destruct;
 - (void)_widgetHostSetTemperaturePreference:(BOOL)arg1;
 - (void)widgetHostEditModeChanged:(long long)arg1;
 - (void)widgetHostHasContentChanged:(BOOL)arg1;

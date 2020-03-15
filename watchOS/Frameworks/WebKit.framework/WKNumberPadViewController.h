@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool _shouldDismissWithFadeAnimation;
 }
 
-@property(readonly, nonatomic) int inputMode; // @synthesize inputMode=_inputMode;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int inputMode; // @synthesize inputMode=_inputMode;
 - (void)addContentViewAnimations:(_Bool)arg1;
 - (void)_deletionTimerFired;
 - (void)_startDeletionTimer;

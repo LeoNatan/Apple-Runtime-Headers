@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _safeAreaLayoutGuideFrameRect;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setConstraints:) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILabel *messageLabel2; // @synthesize messageLabel2=_messageLabel2;
 @property(retain, nonatomic) UILabel *messageLabel1; // @synthesize messageLabel1=_messageLabel1;
 @property(nonatomic) struct CGRect safeAreaLayoutGuideFrameRect; // @synthesize safeAreaLayoutGuideFrameRect=_safeAreaLayoutGuideFrameRect;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_updateConstraintsIfNeeded;
 - (void)_invalidateConstraints;

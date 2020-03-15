@@ -23,13 +23,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)contextWithUUID:(id)arg1 andAccountID:(id)arg2 andSlot:(long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *labelID; // @synthesize labelID=_labelID;
 @property(readonly, nonatomic) long long slotID; // @synthesize slotID=_slotID;
 @property(readonly, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

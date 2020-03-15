@@ -22,13 +22,13 @@
     UINavigationController *_moreNavigationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINavigationController *moreNavigationController; // @synthesize moreNavigationController=_moreNavigationController;
 @property(retain, nonatomic) UINavigationController *overrideNavigationController; // @synthesize overrideNavigationController=_overrideNavigationController;
 @property(nonatomic) __weak id <SKUINavigationDocumentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(readonly, copy, nonatomic) NSArray *documentStackItems; // @synthesize documentStackItems=_stackItems;
-- (void).cxx_destruct;
 - (void)_unloadAllStackItems;
 - (void)_scheduleFlushingPendingNavigationStackEnsureConsistencyRequestsWithTransitionCoordinator:(id)arg1;
 - (void)_handleStackDidChange;

@@ -21,13 +21,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) BOOL finishedDataMigration; // @synthesize finishedDataMigration=_finishedDataMigration;
 @property(nonatomic) BOOL foundExtensions; // @synthesize foundExtensions=_foundExtensions;
 @property(nonatomic) BOOL unlocked; // @synthesize unlocked=_unlocked;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)registerHandlerWithEventMonitor:(id)arg1;
 - (void)monitorDataMigrationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)unlock;

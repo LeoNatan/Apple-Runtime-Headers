@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)rangeWithRange:(struct _NSRange)arg1 affinity:(int)arg2;
 + (id)rangeWithRange:(struct _NSRange)arg1;
 + (id)rangeWithStart:(id)arg1 end:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextPosition *end; // @synthesize end=_end;
 @property(retain, nonatomic) UITextPosition *start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (struct _NSRange)asRange;

@@ -18,8 +18,8 @@
 + (void)badgeForNewHealthRecordsForProfile:(id)arg1;
 + (void)notifyForNewHealthRecordsForProfile:(id)arg1;
 + (void)_notifyUserIfNecessaryForProfile:(id)arg1;
-@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void)conceptIndexManagerDidChangeExecutionState:(unsigned long long)arg1;
 - (void)conceptIndexManagerDidBecomeQuiescent:(id)arg1 samplesProcessedCount:(long long)arg2;
 - (_Bool)stopWithError:(id *)arg1;

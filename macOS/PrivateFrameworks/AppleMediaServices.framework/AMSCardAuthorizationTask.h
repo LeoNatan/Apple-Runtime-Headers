@@ -22,6 +22,7 @@
     NSMutableArray *_userActions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *userActions; // @synthesize userActions=_userActions;
 @property BOOL didCancelHomeButton; // @synthesize didCancelHomeButton=_didCancelHomeButton;
 @property BOOL didBiometricsLockout; // @synthesize didBiometricsLockout=_didBiometricsLockout;
@@ -32,7 +33,6 @@
 @property(retain) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(retain) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property long long confirmationStyle; // @synthesize confirmationStyle=_confirmationStyle;
-- (void).cxx_destruct;
 - (id)_metricsUserActionDictionary;
 - (id)_metricsTimestamp;
 - (void)_metricsPost;

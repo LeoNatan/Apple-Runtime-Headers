@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) INRestaurantGuestDisplayPreferences *guestDisplayPreferences; // @synthesize guestDisplayPreferences=_guestDisplayPreferences;
 @property(copy, nonatomic) INRestaurantGuest *guest; // @synthesize guest=_guest;
-- (void).cxx_destruct;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_dictionaryRepresentation;
 @property(readonly, nonatomic) long long code;

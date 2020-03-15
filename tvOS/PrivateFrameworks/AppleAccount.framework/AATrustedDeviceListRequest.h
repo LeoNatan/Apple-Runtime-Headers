@@ -15,8 +15,8 @@
 }
 
 + (Class)responseClass;
-@property(copy, nonatomic) NSString *heartbeatToken; // @synthesize heartbeatToken=_heartbeatToken;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *heartbeatToken; // @synthesize heartbeatToken=_heartbeatToken;
 - (id)urlRequest;
 - (id)urlString;
 - (id)initWithURLString:(id)arg1 accountStore:(id)arg2 grandSlamAccount:(id)arg3;

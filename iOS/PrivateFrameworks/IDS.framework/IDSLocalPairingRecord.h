@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSDictionary *protectionClassIdentityDataMap; // @synthesize protectionClassIdentityDataMap=_protectionClassIdentityDataMap;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *protectionClassIdentityDataMap; // @synthesize protectionClassIdentityDataMap=_protectionClassIdentityDataMap;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentityDataClassA:(id)arg1 classC:(id)arg2 classD:(id)arg3;

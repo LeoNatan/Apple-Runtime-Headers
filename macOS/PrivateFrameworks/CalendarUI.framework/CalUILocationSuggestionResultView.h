@@ -15,10 +15,10 @@
     NSTextField *_addressField;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *addressField; // @synthesize addressField=_addressField;
 @property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
 @property(retain) CalUILocationSuggestionResult *suggestion; // @synthesize suggestion=_suggestion;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)iconForSuggestion:(id)arg1;
 - (id)initWithSuggestion:(id)arg1;

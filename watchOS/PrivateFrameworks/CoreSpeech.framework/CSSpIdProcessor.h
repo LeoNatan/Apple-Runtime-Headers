@@ -13,8 +13,8 @@
     NSString *_sysConfigFilepath;
 }
 
-@property(readonly, nonatomic) NSString *sysConfigFilepath; // @synthesize sysConfigFilepath=_sysConfigFilepath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *sysConfigFilepath; // @synthesize sysConfigFilepath=_sysConfigFilepath;
 - (void)logUtteranceUnderDirectory:(id)arg1 withScores:(id)arg2 withWinner:(id)arg3;
 - (void)rejectUtterance;
 - (void)updateModelWithBestScoreUser:(id)arg1;

@@ -17,10 +17,10 @@
     NSString *_uniqueID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *balanceReminderBytes; // @synthesize balanceReminderBytes=_balanceReminderBytes;
 @property(retain, nonatomic) NSData *balanceBytes; // @synthesize balanceBytes=_balanceBytes;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

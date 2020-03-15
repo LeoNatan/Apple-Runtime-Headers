@@ -14,9 +14,9 @@
     NSString *_peerIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *peerIdentifier; // @synthesize peerIdentifier=_peerIdentifier;
 @property(readonly, nonatomic) AFRequestInfo *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (void)sendWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithInfo:(id)arg1;
 

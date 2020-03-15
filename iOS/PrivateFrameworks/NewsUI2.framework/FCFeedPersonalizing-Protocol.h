@@ -6,7 +6,7 @@
 
 #import <NewsUI2/FCTagRanking-Protocol.h>
 
-@class FCFeedPersonalizedItems, NSArray, NSString;
+@class FCFeedPersonalizedItems, NSArray, NSDictionary, NSString;
 @protocol FCFeedPersonalizingItem;
 
 @protocol FCFeedPersonalizing <FCTagRanking>
@@ -23,8 +23,8 @@
 @optional
 - (void)fetchAggregateMapForPersonalizingItem:(id <FCFeedPersonalizingItem>)arg1 completion:(void (^)(NSDictionary *))arg2;
 - (NSArray *)bestOfGroupFromItems:(NSArray *)arg1 configurationSet:(long long)arg2;
+- (double)personalizedScoreForFeatureWithIdentifier:(NSString *)arg1 items:(NSArray *)arg2 scores:(NSDictionary *)arg3;
 - (double)personalizedScoreForFeatureWithIdentifier:(NSString *)arg1 items:(NSArray *)arg2;
-- (id)scoreProfilesForItems:(NSArray *)arg1 configurationSet:(long long)arg2;
 - (FCFeedPersonalizedItems *)sortItems:(NSArray *)arg1 options:(long long)arg2 configurationSet:(long long)arg3;
 - (FCFeedPersonalizedItems *)sortItems:(NSArray *)arg1 configurationSet:(long long)arg2;
 - (void)prepareFavorites:(void (^)(void))arg1;

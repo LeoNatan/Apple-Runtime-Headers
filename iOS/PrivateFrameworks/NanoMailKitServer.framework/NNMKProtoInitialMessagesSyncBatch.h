@@ -18,9 +18,9 @@
 }
 
 + (Class)initialMessagesSyncType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *initialMessagesSyncs; // @synthesize initialMessagesSyncs=_initialMessagesSyncs;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

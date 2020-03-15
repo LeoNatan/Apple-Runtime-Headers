@@ -17,10 +17,10 @@
     NSMutableDictionary *_cachedItemsByURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *cachedItemsByURL; // @synthesize cachedItemsByURL=_cachedItemsByURL;
 @property(readonly, nonatomic) NSMutableArray *cachedItems; // @synthesize cachedItems=_cachedItems;
 @property(nonatomic) __weak id <BLHLSCacheManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)markTaskAsFinished:(id)arg1;
 - (void)markTaskAsFailed:(id)arg1 error:(id)arg2;

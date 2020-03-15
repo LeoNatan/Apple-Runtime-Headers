@@ -28,9 +28,9 @@ __attribute__((visibility("hidden")))
     SUTextContentView *_textContentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIComposeReviewViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long composeReviewStyle; // @synthesize composeReviewStyle=_style;
-- (void).cxx_destruct;
 - (void)_updateContentSize;
 - (void)_showLoadingView;
 - (void)_showComposeView;

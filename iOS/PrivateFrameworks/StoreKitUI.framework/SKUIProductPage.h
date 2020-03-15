@@ -25,6 +25,7 @@
     SKUIUber *_uber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIUber *uber; // @synthesize uber=_uber;
 @property(retain, nonatomic) SKUIReviewConfiguration *reviewConfiguration; // @synthesize reviewConfiguration=_reviewConfiguration;
 @property(copy, nonatomic) NSArray *relatedContentSwooshes; // @synthesize relatedContentSwooshes=_relatedContentSwooshes;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSData *ITMLData; // @synthesize ITMLData=_itmlData;
 @property(retain, nonatomic) SKUIProductPageItem *item; // @synthesize item=_item;
 @property(nonatomic) long long defaultPageFragment; // @synthesize defaultPageFragment=_defaultPageFragment;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

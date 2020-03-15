@@ -23,6 +23,7 @@
     UINavigationController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak UIViewController *currentHostController; // @synthesize currentHostController=_currentHostController;
 @property(copy, nonatomic) CDUnknownBlockType customPresentationHandler; // @synthesize customPresentationHandler=_customPresentationHandler;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSString *passUniqueID; // @synthesize passUniqueID=_passUniqueID;
 @property(readonly, copy, nonatomic) NSString *termsIdentifier; // @synthesize termsIdentifier=_termsIdentifier;
 @property(readonly, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
-- (void).cxx_destruct;
 - (void)_presentRemoteUIControllerWithUpdatedTermsViewController:(id)arg1;
 - (void)_presentRemoteUIController;
 - (void)peerPaymentUpdatedTermsViewController:(id)arg1 didSelectContinue:(_Bool)arg2;

@@ -19,8 +19,8 @@
 + (void)stopAdAnalytics:(id)arg1;
 + (void)startAdAnalytics:(id)arg1;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *adSequences; // @synthesize adSequences=_adSequences;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *adSequences; // @synthesize adSequences=_adSequences;
 - (void)captureEvent:(id)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)init;
 

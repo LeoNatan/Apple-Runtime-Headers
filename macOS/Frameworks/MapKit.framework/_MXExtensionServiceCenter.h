@@ -18,8 +18,8 @@
     _MXExtensionProvider *_extensionProvider;
 }
 
-@property(readonly, nonatomic) __weak _MXExtensionProvider *extensionProvider; // @synthesize extensionProvider=_extensionProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak _MXExtensionProvider *extensionProvider; // @synthesize extensionProvider=_extensionProvider;
 @property(copy, nonatomic) NSDictionary *containingAppProxies;
 @property(copy, nonatomic) NSDictionary *mapsExtensions;
 @property(copy, nonatomic) NSDictionary *extensions;

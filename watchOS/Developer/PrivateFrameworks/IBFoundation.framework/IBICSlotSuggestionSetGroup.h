@@ -18,13 +18,13 @@
     double _displayOrder;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double displayOrder; // @synthesize displayOrder=_displayOrder;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(readonly) long long mode; // @synthesize mode=_mode;
 @property(readonly) Class slotClass; // @synthesize slotClass=_slotClass;
-- (void).cxx_destruct;
 - (void)ibic_generateAttributes:(CDUnknownBlockType)arg1;
 - (long long)compareDisplayOrder:(id)arg1;
 - (id)description;

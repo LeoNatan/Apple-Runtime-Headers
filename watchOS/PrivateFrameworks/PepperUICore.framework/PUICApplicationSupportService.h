@@ -18,8 +18,8 @@
     id <PUICApplicationSupportServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUICApplicationSupportServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICApplicationSupportServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)classicModeConfigurationForClient:(id)arg1;
 - (id)initWithCalloutQueue:(id)arg1;
 

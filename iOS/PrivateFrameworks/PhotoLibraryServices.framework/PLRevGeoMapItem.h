@@ -21,10 +21,10 @@
 + (id)mapItemWithGEOMapItem:(id)arg1;
 + (CDUnknownBlockType)sortedAdditionalPlaceInfoComparator;
 + (id)placeInfoWithName:(id)arg1 geoPlaceInfo:(id)arg2 dominantOrderType:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *finalPlaceInfos; // @synthesize finalPlaceInfos=_finalPlaceInfos;
 @property(readonly, nonatomic) NSArray *backupPlaceInfos; // @synthesize backupPlaceInfos=_backupPlaceInfos;
 @property(readonly, nonatomic) NSArray *sortedPlaceInfos; // @synthesize sortedPlaceInfos=_sortedPlaceInfos;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

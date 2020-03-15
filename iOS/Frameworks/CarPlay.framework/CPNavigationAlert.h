@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPNavigationAlertUpdating> navigationAlertUpdateTarget; // @synthesize navigationAlertUpdateTarget=_navigationAlertUpdateTarget;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) CPImageSet *imageSet; // @synthesize imageSet=_imageSet;
 @property(readonly, copy, nonatomic) NSArray *subtitleVariants; // @synthesize subtitleVariants=_subtitleVariants;
 @property(readonly, copy, nonatomic) NSArray *titleVariants; // @synthesize titleVariants=_titleVariants;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIImage *image;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

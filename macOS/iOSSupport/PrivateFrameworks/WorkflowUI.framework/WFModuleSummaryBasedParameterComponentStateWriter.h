@@ -13,8 +13,8 @@
     CDUnknownBlockType _updateBlock;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 - (BOOL)setState:(id)arg1 ofParameter:(id)arg2;
 - (id)initWithUpdateBlock:(CDUnknownBlockType)arg1;
 

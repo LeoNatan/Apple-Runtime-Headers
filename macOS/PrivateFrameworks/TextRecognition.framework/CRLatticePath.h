@@ -19,6 +19,7 @@
     double _totalScore;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double totalScore; // @synthesize totalScore=_totalScore;
 @property(readonly) double patternScore; // @synthesize patternScore=_patternScore;
 @property(readonly) double geometryScore; // @synthesize geometryScore=_geometryScore;
@@ -26,7 +27,6 @@
 @property(readonly) double cnnScore; // @synthesize cnnScore=_cnnScore;
 @property(readonly) double lexiconScore; // @synthesize lexiconScore=_lexiconScore;
 @property(readonly, nonatomic) NSArray *edges; // @synthesize edges=_edges;
-- (void).cxx_destruct;
 - (id)initWithEdgeIndexes:(id)arg1 lex:(double)arg2 cnn:(double)arg3 ngram:(double)arg4 geom:(double)arg5 pattern:(double)arg6 total:(double)arg7;
 
 @end

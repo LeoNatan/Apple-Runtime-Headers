@@ -20,6 +20,7 @@
     BOOL _isFinished;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isFinished; // @synthesize isFinished=_isFinished;
 @property(nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *user; // @synthesize user=_user;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)cancel;
 - (void)start;

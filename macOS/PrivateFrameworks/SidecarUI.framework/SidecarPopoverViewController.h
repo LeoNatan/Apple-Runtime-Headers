@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     unsigned int _deallocating:1;
 }
 
-@property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 - (void).cxx_destruct;
+@property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 - (void)_showProgress;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

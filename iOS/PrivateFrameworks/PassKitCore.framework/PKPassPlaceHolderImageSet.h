@@ -18,9 +18,9 @@
 + (unsigned int)currentVersion;
 + (id)archiveName;
 + (long long)imageSetType;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect logoRect; // @synthesize logoRect=_logoRect;
 @property(retain, nonatomic) PKImage *placeHolderImage; // @synthesize placeHolderImage=_placeHolderImage;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

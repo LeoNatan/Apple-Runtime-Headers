@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UITableViewCell *_swipeToDeleteCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableViewCell *swipeToDeleteCell; // @synthesize swipeToDeleteCell=_swipeToDeleteCell;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) long long animationCount; // @synthesize animationCount=_animationCount;
 @property(retain, nonatomic) NSArray *viewAnimations; // @synthesize viewAnimations=_viewAnimations;
-- (void).cxx_destruct;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end

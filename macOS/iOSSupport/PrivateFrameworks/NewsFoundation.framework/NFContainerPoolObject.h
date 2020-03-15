@@ -13,10 +13,10 @@
     id _weakObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id weakObject; // @synthesize weakObject=_weakObject;
 @property(readonly, nonatomic) id strongObject; // @synthesize strongObject=_strongObject;
 @property(readonly, nonatomic) unsigned long long ownership; // @synthesize ownership=_ownership;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id object;
 - (id)initWithObject:(id)arg1 ownership:(unsigned long long)arg2;
 

@@ -19,13 +19,13 @@
     NSSet *_whitelistedMeaningLabels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *whitelistedMeaningLabels; // @synthesize whitelistedMeaningLabels=_whitelistedMeaningLabels;
 @property(nonatomic) _Bool forDiagnostics; // @synthesize forDiagnostics=_forDiagnostics;
 @property(retain, nonatomic) PHAssetCollection *curatedAssetCollection; // @synthesize curatedAssetCollection=_curatedAssetCollection;
 @property(retain, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(retain, nonatomic) PGTitleTuple *titleTuple; // @synthesize titleTuple=_titleTuple;
 @property(retain, nonatomic) id <PGEventEnrichment> collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (id)_sortedMeaningLabels;
 - (id)_meaningLabelForTitle;
 - (void)_generateTitleTuples;

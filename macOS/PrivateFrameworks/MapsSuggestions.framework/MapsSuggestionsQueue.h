@@ -16,7 +16,7 @@
     struct unique_ptr<MSg::Queue, std::__1::default_delete<MSg::Queue>> _cppQueue;
 }
 
-+ (id)serialQueueWithName:(struct NSString *)arg1;
++ (id)serialQueueWithName:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)asyncBlock:(CDUnknownBlockType)arg1;
@@ -25,7 +25,7 @@
 - (void)syncBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *innerQueue;
 @property(readonly, nonatomic) NSString *uniqueName;
-- (id)initSerialQueueWithName:(struct NSString *)arg1;
+- (id)initSerialQueueWithName:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

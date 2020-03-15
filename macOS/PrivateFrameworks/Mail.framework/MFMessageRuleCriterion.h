@@ -16,8 +16,8 @@
 + (id)noSentCriterion;
 + (id)noTrashCriterion;
 + (id)noJunkCriterion;
-@property(nonatomic) __weak MFMessageRule *rule; // @synthesize rule=_rule;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MFMessageRule *rule; // @synthesize rule=_rule;
 - (id)objectSpecifier;
 - (void)setCriterionIdentifier:(id)arg1;
 - (void)setRuleExpression:(id)arg1;

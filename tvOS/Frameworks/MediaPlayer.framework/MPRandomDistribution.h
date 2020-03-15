@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numberOfPossibleOutcomes; // @synthesize numberOfPossibleOutcomes=_numberOfPossibleOutcomes;
 @property(readonly, nonatomic) long long highestValue; // @synthesize highestValue=_highestValue;
 @property(readonly, nonatomic) long long lowestValue; // @synthesize lowestValue=_lowestValue;
-- (void).cxx_destruct;
 - (unsigned long long)nextIntWithUpperBound:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

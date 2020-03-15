@@ -30,9 +30,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)testingIdentityStoreWithSingleWriterService:(id)arg1;
 + (id)testingIdentityStoreWithDatabasePath:(id)arg1;
++ (id)nullIdentityStore;
 + (void)_claimSingleWriterStatus;
 + (id)defaultIdentityStore;
-@property(readonly, nonatomic) id <ICUserIdentityStoreBackend> _unsafeBackend; // @synthesize _unsafeBackend=_backend;
 - (void).cxx_destruct;
 - (id)_icValidStoreAccountsFromACAccounts:(id)arg1;
 - (void)_unregisterForDelegateAccountStoreNotifications:(id)arg1;
@@ -46,9 +46,12 @@
 - (void)_dsidForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_dsidForTimestamp:(unsigned long long)arg1 history:(id)arg2;
 - (void)_dispatchDidChangeNotification:(_Bool)arg1 didDelegateAccountStoreChange:(_Bool)arg2;
+- (void)_assertNonNullIdentityStoreForSelector:(SEL)arg1;
 - (_Bool)_allowsDelegationForUserIdentity:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned int hash;
 - (void)_delegateAccountStoreDidChangeNotification:(id)arg1;
 - (void)_updateDelegateAccountStoreUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_unsafe_deleteDelegateAccountStore;
@@ -56,6 +59,8 @@
 - (void)_reloadForExternalChange;
 - (void)_refreshLocalStoreAccountPropertiesAllowingDidChangeNotification:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_prepareDelegateAccountStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) id <ICUserIdentityStoreBackend> _unsafeBackend;
+@property(readonly, nonatomic) int identityStoreStyle;
 - (void)userIdentityStoreBackendDidChange:(id)arg1;
 - (void)getuserIdentitiesForAllStoreAccountsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)userIdentitiesForAllStoreAccountsWithError:(id *)arg1;
@@ -92,7 +97,6 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 @end

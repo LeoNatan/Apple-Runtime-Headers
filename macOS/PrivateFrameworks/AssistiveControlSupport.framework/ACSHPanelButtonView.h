@@ -37,6 +37,7 @@
 + (id)_descriptionForPanelButtonViewState:(unsigned long long)arg1;
 + (id)_resizingFontSizesInDescendingOrder;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _liveResizing; // @synthesize _liveResizing=__liveResizing;
 @property(nonatomic) double _currentBackgroundScaleFactor; // @synthesize _currentBackgroundScaleFactor=__currentBackgroundScaleFactor;
 @property(nonatomic) struct CGRect _currentBackgroundExtraRect; // @synthesize _currentBackgroundExtraRect=__currentBackgroundExtraRect;
@@ -59,7 +60,6 @@
 @property(nonatomic) BOOL locked; // @synthesize locked=_locked;
 @property(nonatomic) BOOL depressed; // @synthesize depressed=_depressed;
 @property(nonatomic) __weak ACSHPanelButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)viewDidEndLiveResize;
 - (void)viewWillStartLiveResize;
 - (id)accessibilityAttributeValue:(id)arg1;

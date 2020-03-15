@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     ISImage *_image;
 }
 
-@property(readonly) ISImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(readonly) ISImage *image; // @synthesize image=_image;
 - (BOOL)placeholder;
 - (struct CGSize)minimumSize;
 - (struct CGImage *)cgImage;

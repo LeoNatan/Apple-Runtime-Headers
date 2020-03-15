@@ -27,11 +27,11 @@
 }
 
 + (id)remakerWithOperations:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 @property(copy, nonatomic, setter=_setProgressHandler:) CDUnknownBlockType _progressHandler; // @synthesize _progressHandler=__progressHandler;
 @property(retain, nonatomic, setter=_setOperations:) NSArray *_operations; // @synthesize _operations=__operations;
 @property(retain, nonatomic, setter=_setOptions:) PFSharingRemakerOptions *_options; // @synthesize _options=__options;
-- (void).cxx_destruct;
 - (void)_abortWithUnderlyingOperationError:(id)arg1;
 - (void)_completeOperationWithUUID:(id)arg1;
 - (void)_configurePhotoOperation:(id)arg1 withUUID:(id)arg2 dispatchGroup:(id)arg3;

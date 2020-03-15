@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_titleSortDescriptor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *showByIdentifier; // @synthesize showByIdentifier=_showByIdentifier;
 @property(copy, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(copy, nonatomic) NSArray *seasons; // @synthesize seasons=_seasons;
-- (void).cxx_destruct;
 - (id)_DAAPSeasonForIdentifier:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

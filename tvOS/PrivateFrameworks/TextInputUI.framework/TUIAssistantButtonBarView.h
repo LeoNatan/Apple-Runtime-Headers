@@ -27,6 +27,7 @@
     NSMutableOrderedSet *_groupViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *groupViews; // @synthesize groupViews=_groupViews;
 @property(nonatomic) double effectiveInterItemSpacing; // @synthesize effectiveInterItemSpacing=_effectiveInterItemSpacing;
 @property(retain, nonatomic) UIView *buttonContainer; // @synthesize buttonContainer=_buttonContainer;
@@ -39,7 +40,6 @@
 @property(nonatomic) double minimumInterItemSpace; // @synthesize minimumInterItemSpace=_minimumInterItemSpace;
 @property(retain, nonatomic) _UIButtonBarButtonVisualProvider *visualProvider; // @synthesize visualProvider=_visualProvider;
 @property(retain, nonatomic) NSArray *buttonGroups; // @synthesize buttonGroups=_buttonGroups;
-- (void).cxx_destruct;
 - (void)_didTapButtonBarButton:(id)arg1 withEvent:(id)arg2;
 - (id)_itemViewForSender:(id)arg1;
 - (void)preferredSizeDidChangeForButtonBarItem:(id)arg1;

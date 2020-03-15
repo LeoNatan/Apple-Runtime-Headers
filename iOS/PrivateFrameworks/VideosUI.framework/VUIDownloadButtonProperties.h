@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _downloadState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long downloadState; // @synthesize downloadState=_downloadState;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isInderminate) _Bool indeterminate; // @synthesize indeterminate=_indeterminate;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasImage; // @synthesize hasImage=_hasImage;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool hasBorder; // @synthesize hasBorder=_hasBorder;
-- (void).cxx_destruct;
 
 @end
 

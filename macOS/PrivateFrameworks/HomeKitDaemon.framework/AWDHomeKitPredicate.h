@@ -26,12 +26,12 @@
 }
 
 + (Class)presenceEventsType;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL containsCalendarTime; // @synthesize containsCalendarTime=_containsCalendarTime;
 @property(nonatomic) BOOL containsSignificantTimeOffset; // @synthesize containsSignificantTimeOffset=_containsSignificantTimeOffset;
 @property(nonatomic) BOOL containsSignificantTime; // @synthesize containsSignificantTime=_containsSignificantTime;
 @property(nonatomic) BOOL containsCharacteristicValue; // @synthesize containsCharacteristicValue=_containsCharacteristicValue;
 @property(retain, nonatomic) NSMutableArray *presenceEvents; // @synthesize presenceEvents=_presenceEvents;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

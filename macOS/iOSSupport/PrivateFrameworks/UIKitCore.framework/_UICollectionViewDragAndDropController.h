@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSUUID *_currentDropInsertionShadowUpdateIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int sessionKind; // @synthesize sessionKind=_sessionKind;
 @property(retain, nonatomic) NSUUID *currentDropInsertionShadowUpdateIdentifier; // @synthesize currentDropInsertionShadowUpdateIdentifier=_currentDropInsertionShadowUpdateIdentifier;
 @property(retain, nonatomic) _UIDropAnimationHandlers *defaultAnimationHandlers; // @synthesize defaultAnimationHandlers=_defaultAnimationHandlers;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *_reorderedItems; // @synthesize _reorderedItems=__reorderedItems;
 @property(retain, nonatomic) _UICollectionViewDragSourceController *sourceController; // @synthesize sourceController=_sourceController;
 @property(retain, nonatomic) _UICollectionViewDragDestinationController *destinationController; // @synthesize destinationController=_destinationController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <UIDropSession> dropSession;
 @property(readonly, nonatomic) id <UIDropSession> session;
 @property(readonly, nonatomic) UICollectionViewDropProposal *dropProposal;

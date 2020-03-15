@@ -21,8 +21,8 @@
 + (BOOL)cancelAllTasks;
 + (BOOL)cancelTaskWithIdentifier:(id)arg1;
 + (BOOL)scheduleTask:(id)arg1;
-@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

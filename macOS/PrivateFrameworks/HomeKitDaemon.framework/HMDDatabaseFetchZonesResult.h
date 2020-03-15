@@ -14,9 +14,9 @@
     HMBCloudZone *_cloudZone;
 }
 
+- (void).cxx_destruct;
 @property(readonly) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(readonly) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
-- (void).cxx_destruct;
 - (id)initWithLocalZone:(id)arg1 cloudZone:(id)arg2;
 
 @end

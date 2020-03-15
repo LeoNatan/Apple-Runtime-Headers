@@ -28,6 +28,7 @@
     NSMutableArray *_resolvingServices;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *resolvingServices; // @synthesize resolvingServices=_resolvingServices;
 @property(retain) NSObject<OS_dispatch_queue> *serviceMapQueue; // @synthesize serviceMapQueue=_serviceMapQueue;
 @property(retain) NSMutableDictionary *serviceToAdditionalInfoServiceMap; // @synthesize serviceToAdditionalInfoServiceMap=_serviceToAdditionalInfoServiceMap;
@@ -40,7 +41,6 @@
 @property(copy) CDUnknownBlockType disappearedBlock; // @synthesize disappearedBlock=_disappearedBlock;
 @property(copy) CDUnknownBlockType remoteDiskAppearedBlock; // @synthesize remoteDiskAppearedBlock=_remoteDiskAppearedBlock;
 @property(copy) CDUnknownBlockType capsuleAppearedBlock; // @synthesize capsuleAppearedBlock=_capsuleAppearedBlock;
-- (void).cxx_destruct;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;

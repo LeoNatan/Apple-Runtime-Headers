@@ -21,9 +21,9 @@
 
 + (id)logCategory;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property __weak id <HMDDeviceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 @property(readonly) HMDDevice *device;
 - (id)attributeDescriptions;

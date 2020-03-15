@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HKValueRange *_requestedVisibleRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKValueRange *requestedVisibleRange; // @synthesize requestedVisibleRange=_requestedVisibleRange;
 @property(readonly, nonatomic) HKValueRange *requestedAxisRange; // @synthesize requestedAxisRange=_requestedAxisRange;
-- (void).cxx_destruct;
 - (id)_buildSeriesWithColor:(id)arg1 minimumYAxisRange:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 unitForYAxis:(id)arg2 data:(id)arg3 axisRange:(id)arg4 visibleRange:(id)arg5 minimumYAxisRange:(id)arg6 color:(id)arg7 profile:(id)arg8;

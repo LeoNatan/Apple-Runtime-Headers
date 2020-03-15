@@ -14,9 +14,9 @@
     HKStatistics *_diastolic;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKStatistics *diastolic; // @synthesize diastolic=_diastolic;
 @property(retain, nonatomic) HKStatistics *systolic; // @synthesize systolic=_systolic;
-- (void).cxx_destruct;
 
 @end
 

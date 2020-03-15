@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) BOOL shouldProcessRemotely; // @synthesize shouldProcessRemotely=_shouldProcessRemotely;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldProcessRemotely; // @synthesize shouldProcessRemotely=_shouldProcessRemotely;
 - (void)triggerWithContext:(id)arg1 cacheKey:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (void)produceImage:(id)arg1;
 - (void)_nodeQueue_removeAllResultHandlers;

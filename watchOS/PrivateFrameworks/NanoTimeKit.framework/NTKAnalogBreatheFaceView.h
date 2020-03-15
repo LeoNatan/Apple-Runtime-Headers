@@ -16,9 +16,9 @@
     unsigned int _currentVideoStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentVideoStyle; // @synthesize currentVideoStyle=_currentVideoStyle;
 @property(retain, nonatomic) CSLPIBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
-- (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_applyBurnInStudyFakeActiveStateWithFrameSpecifier:(id)arg1;
 - (void)_releaseBacklightAssertion;

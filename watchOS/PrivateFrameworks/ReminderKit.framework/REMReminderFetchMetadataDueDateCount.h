@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int count; // @synthesize count=_count;
 @property(readonly, nonatomic) NSDate *dueDate; // @synthesize dueDate=_dueDate;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -18,12 +18,12 @@
     NSMutableArray *_blacklistedStatesHistory;
 }
 
+- (void).cxx_destruct;
 @property BOOL enterprisePolicy; // @synthesize enterprisePolicy=_enterprisePolicy;
 @property(retain) NSMutableArray *blacklistedStatesHistory; // @synthesize blacklistedStatesHistory=_blacklistedStatesHistory;
 @property(retain) NSMutableArray *blacklistedStatesCurrent; // @synthesize blacklistedStatesCurrent=_blacklistedStatesCurrent;
 @property(retain) NSMutableArray *blacklistTriggers; // @synthesize blacklistTriggers=_blacklistTriggers;
 @property(retain) id <WFBlacklistNetwork> networkDelegate; // @synthesize networkDelegate=_networkDelegate;
-- (void).cxx_destruct;
 - (void)addBlacklistedStateHistory:(id)arg1 state:(unsigned long long)arg2 reason:(unsigned long long)arg3 reasonData:(long long)arg4;
 - (void)addBlacklistedState:(unsigned long long)arg1 reason:(unsigned long long)arg2 reasonData:(long long)arg3;
 - (id)_copyCreateBlacklistedState:(unsigned long long)arg1 reason:(unsigned long long)arg2 reasonData:(long long)arg3;

@@ -128,6 +128,7 @@
 + (Class)imageBlurResultsType;
 + (id)movieAnalysisFromLegacyDictionary:(id)arg1;
 + (id)imageAnalysisFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *moviePetsFaceResults; // @synthesize moviePetsFaceResults=_moviePetsFaceResults;
 @property(retain, nonatomic) NSMutableArray *moviePetsResults; // @synthesize moviePetsResults=_moviePetsResults;
 @property(retain, nonatomic) NSMutableArray *movieLoudnessResults; // @synthesize movieLoudnessResults=_movieLoudnessResults;
@@ -187,7 +188,6 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(nonatomic) unsigned int types; // @synthesize types=_types;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

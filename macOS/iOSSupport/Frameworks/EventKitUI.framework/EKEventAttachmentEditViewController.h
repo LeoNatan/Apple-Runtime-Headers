@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     id <EKEventAttachmentEditViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <EKEventAttachmentEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <EKEventAttachmentEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)parentViewControllerForAttachmentCellController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

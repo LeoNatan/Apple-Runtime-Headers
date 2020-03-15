@@ -21,9 +21,9 @@
 }
 
 + (id)queue;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isHelper; // @synthesize isHelper=_isHelper;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)extractQueryStringFrom:(id)arg1 isGeneric:(_Bool *)arg2;
 - (void)performQueryOnEntityCore:(id)arg1 pred:(id)arg2 sort:(id)arg3 actions:(id)arg4 service:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)shutdown;

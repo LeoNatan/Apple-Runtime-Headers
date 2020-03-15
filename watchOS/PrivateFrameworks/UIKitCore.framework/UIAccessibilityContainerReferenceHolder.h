@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _referencedContainer;
 }
 
-@property(nonatomic) __weak id referencedContainer; // @synthesize referencedContainer=_referencedContainer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id referencedContainer; // @synthesize referencedContainer=_referencedContainer;
 
 @end
 

@@ -13,8 +13,8 @@
     NSData *_data;
 }
 
-@property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)initWithAsset:(id)arg1 data:(id)arg2 error:(id)arg3;
 
 @end

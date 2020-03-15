@@ -15,9 +15,9 @@
 }
 
 + (id)emojiWithString:(id)arg1 withVariantMask:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property unsigned long long variantMask; // @synthesize variantMask=_variantMask;
 @property(retain, nonatomic) NSString *emojiString; // @synthesize emojiString=_emojiString;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)key;
 - (id)initWithString:(id)arg1 withVariantMask:(unsigned long long)arg2;

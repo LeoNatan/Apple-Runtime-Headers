@@ -18,9 +18,9 @@
 
 + (id)credentialWithUser:(id)arg1 password:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, copy, nonatomic) NSString *user; // @synthesize user=_user;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -22,9 +22,9 @@
 + (id)arriveBy:(id)arg1;
 + (id)leaveBy:(id)arg1;
 + (id)leaveNow;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;

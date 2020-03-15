@@ -66,6 +66,7 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSManagedObjectID *yearKeyAsset; // @synthesize yearKeyAsset=_yearKeyAsset;
 @property(readonly, nonatomic) NSManagedObjectID *monthKeyAsset; // @synthesize monthKeyAsset=_monthKeyAsset;
 @property(readonly, nonatomic) NSManagedObjectID *dayGroupKeyAsset; // @synthesize dayGroupKeyAsset=_dayGroupKeyAsset;
@@ -92,7 +93,6 @@
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned short kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) NSString *verboseSmartDescription; // @synthesize verboseSmartDescription=_verboseSmartDescription;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) unsigned short preferredCurationType;
 @property(readonly, nonatomic) NSManagedObjectID *keyAssetForKind;

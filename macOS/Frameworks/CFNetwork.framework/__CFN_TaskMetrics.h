@@ -29,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (long long)optionsFromTask:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) __CFN_SessionMetrics *sessionMetrics; // @synthesize sessionMetrics=_sessionMetrics;
 @property(retain) __CFN_TransactionMetrics *currentTransactionMetrics; // @synthesize currentTransactionMetrics=_currentTransactionMetrics;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSMutableArray *transactionMetrics; // @synthesize transactionMetrics=_transactionMetrics;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)nextTransaction:(unsigned long long)arg1 withNewRequest:(id)arg2;

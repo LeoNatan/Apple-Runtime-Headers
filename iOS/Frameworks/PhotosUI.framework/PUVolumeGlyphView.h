@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)classSubstitions;
-@property(copy, nonatomic) NSString *stateName; // @synthesize stateName=_stateName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *stateName; // @synthesize stateName=_stateName;
 - (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
 - (void)layoutSubviews;
 - (void)_handleGlyphLayerDidLoad:(id)arg1;

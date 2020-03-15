@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_videoHeight;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *videoHeight; // @synthesize videoHeight=_videoHeight;
 @property(retain, nonatomic) NSLayoutConstraint *videoWidth; // @synthesize videoWidth=_videoWidth;
 @property(retain, nonatomic) AVPlayerLayer *videoLayer; // @synthesize videoLayer=_videoLayer;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *keyboardView; // @synthesize keyboardView=_keyboardView;
 @property(retain, nonatomic) UILabel *landscapeTextBody; // @synthesize landscapeTextBody=_landscapeTextBody;
 @property(retain, nonatomic) UIView *textVideoContainer; // @synthesize textVideoContainer=_textVideoContainer;
-- (void).cxx_destruct;
 - (void)extraButtonTapAction;
 - (int)textBodyMaxLines;
 - (float)mediaLayoutWidthAdjustment;

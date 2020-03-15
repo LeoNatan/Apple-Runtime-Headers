@@ -19,12 +19,12 @@
 
 + (id)wrapperWithData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 + (id)wrapperWithFileURL:(id)arg1 mimeType:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (unsigned long long)fileSize;
 - (id)description;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;

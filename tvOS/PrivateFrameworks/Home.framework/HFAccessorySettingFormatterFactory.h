@@ -17,8 +17,8 @@
 + (id)_siriOutputVoiceFormatter;
 + (id)_siriRecognitionLanguageFormatter;
 + (id)defaultFactory;
-@property(retain, nonatomic) NSMutableDictionary *formattersForKey; // @synthesize formattersForKey=_formattersForKey;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *formattersForKey; // @synthesize formattersForKey=_formattersForKey;
 - (id)_buildFormatterForKey:(id)arg1;
 - (id)formatterForKey:(id)arg1;
 - (id)formatterForKey:(id)arg1 copy:(_Bool)arg2;

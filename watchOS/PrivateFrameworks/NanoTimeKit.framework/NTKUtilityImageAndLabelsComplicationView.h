@@ -16,10 +16,10 @@
     NTKColoringLabel *_secondLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKColoringLabel *secondLabel; // @synthesize secondLabel=_secondLabel;
 @property(retain, nonatomic) NTKColoringLabel *firstLabel; // @synthesize firstLabel=_firstLabel;
 @property(retain, nonatomic) UIView<NTKComplicationImageView> *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)_enumerateColoringStackedImagesViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_updateWithImageProvider:(id)arg1;

@@ -24,6 +24,7 @@
 + (id)permanentInfoWithPeerID:(id)arg1 data:(id)arg2 sig:(id)arg3 keyFactory:(id)arg4;
 + (id)peerIDForData:(id)arg1 sig:(id)arg2 peerIDHashAlgo:(long long)arg3;
 + (id)permanentInfoWithMachineID:(id)arg1 modelID:(id)arg2 epoch:(unsigned long long)arg3 signingKeyPair:(id)arg4 encryptionKeyPair:(id)arg5 peerIDHashAlgo:(long long)arg6 error:(id *)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *peerID; // @synthesize peerID=_peerID;
 @property(retain, nonatomic) NSData *sig; // @synthesize sig=_sig;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long epoch; // @synthesize epoch=_epoch;
 @property(retain, nonatomic) NSString *modelID; // @synthesize modelID=_modelID;
 @property(retain, nonatomic) NSString *machineID; // @synthesize machineID=_machineID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithMachineID:(id)arg1 modelID:(id)arg2 epoch:(unsigned long long)arg3 signingPubKey:(id)arg4 encryptionPubKey:(id)arg5 data:(id)arg6 sig:(id)arg7 peerID:(id)arg8;

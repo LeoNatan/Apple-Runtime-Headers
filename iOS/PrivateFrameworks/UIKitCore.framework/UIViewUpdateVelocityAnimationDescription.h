@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptionWithVelocity:(id)arg1 targetVelocity:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIVectorOperatable> targetVelocity; // @synthesize targetVelocity=_targetVelocity;
 @property(retain, nonatomic) id <UIVectorOperatable> velocity; // @synthesize velocity=_velocity;
-- (void).cxx_destruct;
 - (id)initWithVelocity:(id)arg1 targetVelocity:(id)arg2;
 
 @end

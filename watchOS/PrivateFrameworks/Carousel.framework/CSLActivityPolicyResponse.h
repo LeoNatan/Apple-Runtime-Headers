@@ -18,11 +18,11 @@
 
 + (id)policyResponseWithScore:(double)arg1 validityDuration:(double)arg2 rationale:(id)arg3;
 + (id)policyResponseWithDecision:(int)arg1 validityDuration:(double)arg2 rationale:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) CSLPolicyResponseRationale *rationale; // @synthesize rationale=_rationale;
 @property(readonly, nonatomic) double validityDuration; // @synthesize validityDuration=_validityDuration;
 @property(readonly, nonatomic) int policyDecision; // @synthesize policyDecision=_policyDecision;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithScore:(double)arg1 decision:(int)arg2 validityDuration:(double)arg3 rationale:(id)arg4;
 

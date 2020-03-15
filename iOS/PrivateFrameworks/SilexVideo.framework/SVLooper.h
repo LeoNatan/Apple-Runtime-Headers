@@ -14,9 +14,9 @@
     SVVideoDurationObserver *_durationObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVVideoDurationObserver *durationObserver; // @synthesize durationObserver=_durationObserver;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (id)initWithPlayer:(id)arg1;
 
 @end

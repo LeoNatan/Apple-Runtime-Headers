@@ -18,8 +18,8 @@
 + (id)messageWithPacker:(CDUnknownBlockType)arg1;
 + (id)messageWithPayload:(id)arg1;
 + (id)message;
-@property(readonly, nonatomic) NSObject<OS_xpc_object> *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *payload; // @synthesize payload=_payload;
 - (void)sendReplyMessageWithPacker:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initWithMessagePacker:(CDUnknownBlockType)arg1;

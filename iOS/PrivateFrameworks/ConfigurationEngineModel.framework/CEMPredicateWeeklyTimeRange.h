@@ -25,13 +25,13 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadNotificationTimes; // @synthesize payloadNotificationTimes=_payloadNotificationTimes;
 @property(copy, nonatomic) NSString *payloadEndTime; // @synthesize payloadEndTime=_payloadEndTime;
 @property(copy, nonatomic) NSNumber *payloadEndDay; // @synthesize payloadEndDay=_payloadEndDay;
 @property(copy, nonatomic) NSString *payloadStartTime; // @synthesize payloadStartTime=_payloadStartTime;
 @property(copy, nonatomic) NSNumber *payloadStartDay; // @synthesize payloadStartDay=_payloadStartDay;
 @property(copy, nonatomic) NSString *payloadCalendarIdentifier; // @synthesize payloadCalendarIdentifier=_payloadCalendarIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

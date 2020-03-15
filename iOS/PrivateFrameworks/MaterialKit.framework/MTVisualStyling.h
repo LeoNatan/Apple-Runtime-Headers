@@ -13,8 +13,8 @@
     MTCoreMaterialVisualStyling *_coreMaterialVisualStyling;
 }
 
-@property(retain, nonatomic, getter=_coreMaterialVisualStyling) MTCoreMaterialVisualStyling *coreMaterialVisualStyling; // @synthesize coreMaterialVisualStyling=_coreMaterialVisualStyling;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_coreMaterialVisualStyling) MTCoreMaterialVisualStyling *coreMaterialVisualStyling; // @synthesize coreMaterialVisualStyling=_coreMaterialVisualStyling;
 - (id)visualEffect;
 @property(readonly, nonatomic) CAFilter *composedFilter;
 @property(readonly, nonatomic) double alpha;

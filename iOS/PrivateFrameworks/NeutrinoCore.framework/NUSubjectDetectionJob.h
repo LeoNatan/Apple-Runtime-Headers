@@ -13,8 +13,8 @@
     NSArray *_observations;
 }
 
-@property(copy, nonatomic) NSArray *observations; // @synthesize observations=_observations;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *observations; // @synthesize observations=_observations;
 - (void)cleanUp;
 - (id)result;
 - (_Bool)render:(out id *)arg1;

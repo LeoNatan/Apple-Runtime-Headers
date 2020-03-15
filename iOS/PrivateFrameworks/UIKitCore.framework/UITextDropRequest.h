@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     UITextDropProposal *_suggestedProposal;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSameView) _Bool sameView; // @synthesize sameView=_sameView;
 @property(retain, nonatomic) UITextDropProposal *suggestedProposal; // @synthesize suggestedProposal=_suggestedProposal;
 @property(readonly, nonatomic) UITextRange *dropRange; // @synthesize dropRange=_dropRange;
 @property(readonly, nonatomic) UITextPosition *dropPosition; // @synthesize dropPosition=_dropPosition;
 @property(readonly, nonatomic) id <UIDropSession> dropSession; // @synthesize dropSession=_dropSession;
-- (void).cxx_destruct;
 - (id)initWithPosition:(id)arg1 range:(id)arg2 inSession:(id)arg3;
 
 // Remaining properties

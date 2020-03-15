@@ -20,9 +20,9 @@
     id <PXCMMWorkflowPresenting> _workflowPresenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXCMMWorkflowPresenting> workflowPresenter; // @synthesize workflowPresenter=_workflowPresenter;
 @property(readonly, nonatomic) PXCMMSuggestionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_setDataSource:(id)arg1 changes:(id)arg2;
 - (id)_newGadgetForSuggestion:(id)arg1;

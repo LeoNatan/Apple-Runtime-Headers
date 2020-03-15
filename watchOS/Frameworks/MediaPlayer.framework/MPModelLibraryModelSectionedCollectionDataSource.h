@@ -21,11 +21,11 @@
     shared_ptr_274c5e8b _sectionEntityQueryResult;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPModelLibraryRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) shared_ptr_274c5e8b sectionEntityQueryResult; // @synthesize sectionEntityQueryResult=_sectionEntityQueryResult;
 @property(readonly, nonatomic) shared_ptr_87e3a99b itemEntityQueryResults; // @synthesize itemEntityQueryResults=_itemEntityQueryResults;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)_allowedEntityIdentifiersContainsAllPersistentIDs;
 - (unsigned long)_adjustedIndexForSectionIndex:(int)arg1;
 - (void)_populateIndexMap;

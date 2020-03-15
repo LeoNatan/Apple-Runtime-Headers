@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMChangeTombstone *tombstone; // @synthesize tombstone=_tombstone;
 @property(readonly, nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) REMObjectID *changedObjectID; // @synthesize changedObjectID=_changedObjectID;
 @property(readonly, nonatomic) long long changeID; // @synthesize changeID=_changeID;
 @property(readonly, nonatomic) __weak REMChangeTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *updatedProperties;
 - (id)copyForCoalescing;
 - (id)coalescedChanges;

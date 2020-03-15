@@ -8,12 +8,13 @@
 
 #import <Symbolication/VMUCommonGraphInterface-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, VMUClassInfoMap, VMUDebugTimer, VMUGraphStackLogReader, VMUNodeToStringMap, VMURangeToStringMap;
+@class NSArray, NSDictionary, NSString, VMUClassInfoMap, VMUDebugTimer, VMUGraphStackLogReader, VMUNodeToStringMap, VMURangeToStringMap, VMUTaskMemoryScanner;
 @protocol VMUStackLogReader;
 
 @interface VMUProcessObjectGraph : VMUObjectGraph <VMUCommonGraphInterface>
 {
     int _pid;
+    VMUTaskMemoryScanner *_scanner;
     unsigned int _kernPageSize;
     unsigned long long _machAbsolute;
     NSArray *_regions;
@@ -36,8 +37,13 @@
     unsigned long long _physicalFootprint;
     unsigned long long _physicalFootprintPeak;
     _Bool _showsPhysFootprint;
+    unsigned int _objectContentLevel;
+    unsigned int _objectContentLevelForNodeLabels;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) unsigned int objectContentLevelForNodeLabels; // @synthesize objectContentLevelForNodeLabels=_objectContentLevelForNodeLabels;
+@property(nonatomic) unsigned int objectContentLevel; // @synthesize objectContentLevel=_objectContentLevel;
 @property(nonatomic) _Bool showsPhysFootprint; // @synthesize showsPhysFootprint=_showsPhysFootprint;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(nonatomic) unsigned long long physicalFootprintPeak; // @synthesize physicalFootprintPeak=_physicalFootprintPeak;
@@ -48,8 +54,8 @@
 @property(nonatomic) unsigned long long snapshotMachTime; // @synthesize snapshotMachTime=_machAbsolute;
 @property(readonly, nonatomic) unsigned int regionCount; // @synthesize regionCount=_regionCount;
 @property(readonly, nonatomic) unsigned int vmPageSize; // @synthesize vmPageSize=_kernPageSize;
+@property(nonatomic) __weak VMUTaskMemoryScanner *scanner; // @synthesize scanner=_scanner;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (_Bool)nodeDetailIsAutoreleasePoolContentPage:(CDStruct_599faf0f)arg1;
 - (_Bool)nodeIsAutoreleasePoolContentPage:(unsigned int)arg1;
 - (void)markReachableNodesFromRoots:(void *)arg1 inMap:(void *)arg2 options:(unsigned int)arg3;

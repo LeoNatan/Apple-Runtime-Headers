@@ -21,13 +21,13 @@
     SVKeyValueObserver *_playbackLikelyToKeepUpObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVKeyValueObserver *playbackLikelyToKeepUpObserver; // @synthesize playbackLikelyToKeepUpObserver=_playbackLikelyToKeepUpObserver;
 @property(readonly, nonatomic) SVKeyValueObserver *playbackBufferFullObserver; // @synthesize playbackBufferFullObserver=_playbackBufferFullObserver;
 @property(readonly, nonatomic) id <SVPlayerItemObserving> playerItemObserver; // @synthesize playerItemObserver=_playerItemObserver;
 @property(nonatomic, getter=isPlaybackLikelyToKeepUp) _Bool playbackLikelyToKeepUp; // @synthesize playbackLikelyToKeepUp=_playbackLikelyToKeepUp;
 @property(nonatomic, getter=isPlaybackBufferFull) _Bool playbackBufferFull; // @synthesize playbackBufferFull=_playbackBufferFull;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
-- (void).cxx_destruct;
 - (id)initWithPlayerItemObserver:(id)arg1;
 
 // Remaining properties

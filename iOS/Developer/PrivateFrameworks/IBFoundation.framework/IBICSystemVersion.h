@@ -22,9 +22,9 @@
 + (id)unspecifiedValuePlaceholder;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
+- (void).cxx_destruct;
 @property(readonly) NSString *marketingVersion; // @synthesize marketingVersion=_marketingVersion;
 @property(readonly) NSString *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

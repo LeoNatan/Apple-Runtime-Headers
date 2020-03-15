@@ -20,9 +20,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_c3b9c2ee coordinate; // @synthesize coordinate=_coordinate;
 @property(readonly, nonatomic) long long representation; // @synthesize representation=_representation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL showsBalloonCallout;
 - (void)setShowsBalloonCallout:(BOOL)arg1;
 - (id)feature;

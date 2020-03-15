@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUSystemMonitor, NSArray, NSData, NSString, NSURL, SFDeviceDiscovery, SFService, SFSession;
+@class CUSystemMonitor, NSArray, NSData, NSMutableDictionary, NSString, NSURL, SFDeviceDiscovery, SFService, SFSession;
 @protocol OS_dispatch_queue;
 
 @interface SFRemoteAutoFillService : NSObject
@@ -15,7 +15,7 @@
     CDUnknownBlockType _activateCompletion;
     SFDeviceDiscovery *_discovery;
     int _discoveryState;
-    struct NSMutableDictionary *_devices;
+    NSMutableDictionary *_devices;
     _Bool _invalidateCalled;
     NSString *_receivedPassword;
     NSString *_receivedUsername;
@@ -45,6 +45,7 @@
     CDUnknownBlockType _urlForVisualScanningChanged;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool unitTesting; // @synthesize unitTesting=_unitTesting;
 @property(copy, nonatomic) CDUnknownBlockType urlForVisualScanningChanged; // @synthesize urlForVisualScanningChanged=_urlForVisualScanningChanged;
 @property(copy, nonatomic) CDUnknownBlockType discoveredDevicesChanged; // @synthesize discoveredDevicesChanged=_discoveredDevicesChanged;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool needsSetup;
 - (void)_bluetoothAddressChanged;
 - (void)_systemMonitorStart;

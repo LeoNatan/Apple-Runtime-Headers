@@ -14,6 +14,8 @@
     NSString *_storeIdentifier;
     int _type;
     NSArray *_contextIdentifierPath;
+    NSString *_contextSummary;
+    NSString *_contextCustomTypeName;
     NSURL *_URL;
     long long _contextType;
     NSString *_bundleIdentifier;
@@ -21,13 +23,15 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contentStoreIdentifier; // @synthesize contentStoreIdentifier=_contentStoreIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) long long contextType; // @synthesize contextType=_contextType;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
+@property(retain, nonatomic) NSString *contextCustomTypeName; // @synthesize contextCustomTypeName=_contextCustomTypeName;
+@property(retain, nonatomic) NSString *contextSummary; // @synthesize contextSummary=_contextSummary;
 @property(retain, nonatomic) NSArray *contextIdentifierPath; // @synthesize contextIdentifierPath=_contextIdentifierPath;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -36,7 +40,7 @@
 - (BOOL)validateObject:(id *)arg1;
 - (id)initWithTitle:(id)arg1 URL:(id)arg2 andBundleIdentifier:(id)arg3;
 - (id)initWithTitle:(id)arg1 context:(id)arg2;
-- (id)initWithTitle:(id)arg1 contextIdentifierPath:(id)arg2 URL:(id)arg3 type:(int)arg4 contextType:(long long)arg5 andBundleIdentifier:(id)arg6 contentStoreIdentifier:(id)arg7;
+- (id)initWithTitle:(id)arg1 contextIdentifierPath:(id)arg2 URL:(id)arg3 type:(int)arg4 contextType:(long long)arg5 andBundleIdentifier:(id)arg6 contentStoreIdentifier:(id)arg7 contextSummary:(id)arg8 contextCustomTypeName:(id)arg9;
 
 @end
 

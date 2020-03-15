@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int lastErrorKind; // @synthesize lastErrorKind=_lastErrorKind;
 @property(retain, nonatomic) BRMangledID *mangledID; // @synthesize mangledID=_mangledID;
 @property(readonly, nonatomic) double nextTry; // @synthesize nextTry=_nextTry;
 @property(readonly, nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)updateForError:(id)arg1;
 - (BOOL)updateForClearingOutOfQuota;

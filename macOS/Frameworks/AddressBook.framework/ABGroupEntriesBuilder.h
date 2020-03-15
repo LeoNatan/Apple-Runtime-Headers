@@ -36,7 +36,7 @@
 - (id)allContactsString;
 - (id)allDirectoriesString;
 - (id)directoriesString;
-- (id)makeAllContactsEntry;
+- (id)makeAllContactsEntryWithAccount:(id)arg1;
 - (id)makeEntriesForSmartGroups:(id)arg1;
 - (id)makeAggregateDirectoryWithName:(id)arg1 directories:(id)arg2;
 - (id)makeDirectoryEntriesForAccounts:(id)arg1;

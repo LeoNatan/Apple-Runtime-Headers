@@ -13,8 +13,8 @@
     NSString *_label;
 }
 
-@property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) unsigned long long highlightStyle;
 - (id)initWithLabel:(id)arg1;
 

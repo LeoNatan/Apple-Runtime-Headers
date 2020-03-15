@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSArray *requestedExtendedAttributes; // @synthesize requestedExtendedAttributes=_requestedExtendedAttributes;
 @property(readonly, nonatomic) NSMutableDictionary *domainsByID; // @synthesize domainsByID=_domainsByID;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSSet *blacklistedProcessNames; // @synthesize blacklistedProcessNames=_blacklistedProcessNames;
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) FPDProviderDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(_Bool)arg2;
 - (void)dumpValue:(id)arg1 forKey:(id)arg2 to:(id)arg3;
 - (void)setEjectable:(_Bool)arg1 forDomainIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

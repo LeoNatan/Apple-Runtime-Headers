@@ -17,12 +17,12 @@
     UIStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIActivityIndicatorView *loadingIndicatorView; // @synthesize loadingIndicatorView=_loadingIndicatorView;
 @property(retain, nonatomic) GKUIContentUnavailableView *contentUnavailableView; // @synthesize contentUnavailableView=_contentUnavailableView;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(copy, nonatomic) CDUnknownBlockType buttonAction; // @synthesize buttonAction=_buttonAction;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *buttonTitle; // @dynamic buttonTitle;
 @property(copy, nonatomic) NSString *message; // @dynamic message;
 @property(copy, nonatomic) NSString *title; // @dynamic title;

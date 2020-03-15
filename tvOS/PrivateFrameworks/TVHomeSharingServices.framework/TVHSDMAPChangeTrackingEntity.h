@@ -16,9 +16,9 @@
     TVHSDMAPEntity *_entity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHSDMAPEntity *entity; // @synthesize entity=_entity;
 @property(retain, nonatomic) NSMutableDictionary *mutatedAttributeValues; // @synthesize mutatedAttributeValues=_mutatedAttributeValues;
-- (void).cxx_destruct;
 - (id)_mutableAttributeValuesData;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;

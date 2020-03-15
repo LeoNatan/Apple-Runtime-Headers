@@ -25,12 +25,12 @@
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *transformFunction; // @synthesize transformFunction=_transformFunction;
 @property(readonly, copy, nonatomic) NSString *treatNullAsString; // @synthesize treatNullAsString=_treatNullAsString;
 @property(readonly, nonatomic) BOOL caseInsensitive; // @synthesize caseInsensitive=_caseInsensitive;
 @property(readonly, nonatomic) int comparison; // @synthesize comparison=_comparison;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (BOOL)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
 - (id)databaseStatementParameters;
 - (id)valueToBindForOperation:(long long)arg1;

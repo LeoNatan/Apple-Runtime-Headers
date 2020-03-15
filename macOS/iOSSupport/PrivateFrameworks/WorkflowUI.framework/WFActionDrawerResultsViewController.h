@@ -25,12 +25,12 @@
     UILabel *_emptyLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) NSString *emptyText; // @synthesize emptyText=_emptyText;
 @property(readonly, nonatomic) WFActionDrawerResults *results; // @synthesize results=_results;
 @property(nonatomic) __weak id <WFActionDrawerResultsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)moveToState:(id)arg1 animated:(BOOL)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *country; // @synthesize country=_country;
 @property(copy, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned long long categoryCode; // @synthesize categoryCode=_categoryCode;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,11 +17,11 @@
     HDDataCollectionManager *_dataCollectionManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HDDataCollectionManager *dataCollectionManager; // @synthesize dataCollectionManager=_dataCollectionManager;
 @property(readonly, nonatomic) double collectionInterval; // @synthesize collectionInterval=_collectionInterval;
 @property(readonly, nonatomic) NSSet *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
 @property(copy, nonatomic) HDDataCollectionObserverState *observerState; // @synthesize observerState=_observerState;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithOwnerIdentifier:(id)arg1 sampleTypes:(id)arg2 observerState:(id)arg3 dataCollectionManager:(id)arg4;
 

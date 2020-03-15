@@ -16,9 +16,9 @@
 }
 
 + (id)sharedDispatcher;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *appleMusicAccountObservers; // @synthesize appleMusicAccountObservers=_appleMusicAccountObservers;
 @property(copy, nonatomic) NSArray *appleMusicMagicAuthCapableAccounts; // @synthesize appleMusicMagicAuthCapableAccounts=_appleMusicMagicAuthCapableAccounts;
-- (void).cxx_destruct;
 - (void)_setupAppleMusicAccountStoreIfNecessary;
 - (void)_accountsStoreWasUpdated:(id)arg1;
 - (BOOL)_reloadAppleMusicMagicAuthCapableAccounts;

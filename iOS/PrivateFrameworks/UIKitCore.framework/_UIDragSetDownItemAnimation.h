@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _targetFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType nearCompletionHandler; // @synthesize nearCompletionHandler=_nearCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType nonAnimatedMidpointHandler; // @synthesize nonAnimatedMidpointHandler=_nonAnimatedMidpointHandler;
 @property(copy, nonatomic) CDUnknownBlockType midpointHandler; // @synthesize midpointHandler=_midpointHandler;
@@ -84,7 +85,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool reachedTarget; // @synthesize reachedTarget=_reachedTarget;
 @property(readonly, nonatomic) _DUIVisibleDroppedItem *droppedItem; // @synthesize droppedItem=_droppedItem;
 @property(readonly, nonatomic) UIDragItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_setCenterAndVelocityFromDroppedItem:(id)arg1;
 - (void)updateDroppedItem:(id)arg1;
 - (void)updateTargetedDropPreview:(id)arg1;

@@ -33,6 +33,7 @@
 + (void)setCapabilitiesVersion:(id)arg1;
 + (void)setCapabilitiesIdentifier:(id)arg1;
 + (id)capabilitiesIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool persisted; // @synthesize persisted=_persisted;
 @property(nonatomic) NSString *version; // @synthesize version=_version;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSValue *viewAreaInsets; // @synthesize viewAreaInsets=_viewAreaInsets;
 @property(nonatomic) long long nowPlayingAlbumArtMode; // @synthesize nowPlayingAlbumArtMode=_nowPlayingAlbumArtMode;
 @property(nonatomic) unsigned long long disabledFeature; // @synthesize disabledFeature=_disabledFeature;
-- (void).cxx_destruct;
 - (void)persistCapabilitiesToGlobalDomain;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

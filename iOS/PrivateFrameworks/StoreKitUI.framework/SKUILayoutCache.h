@@ -18,8 +18,8 @@
     NSMutableArray *_requests;
 }
 
-@property(nonatomic) __weak id <SKUILayoutCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUILayoutCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_populateCache;
 - (void)_layoutRequestsInRange:(struct _NSRange)arg1;
 - (void)_addLayoutBatch:(id)arg1;

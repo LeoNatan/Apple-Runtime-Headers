@@ -19,9 +19,9 @@
     unsigned int _view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int view; // @synthesize view=_view;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)updateActivity:(id)arg1;
 - (id)eventFromStore:(id)arg1;
 - (id)dictionary;

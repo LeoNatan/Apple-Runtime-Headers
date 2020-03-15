@@ -18,7 +18,7 @@
     SpatialResampler *_resampler;
     DolbyVisionDisplayManagement *_dm;
     struct EDRMetaData_RBSP *_parser;
-    CDStruct_2203fc2d _edrMetaData[2];
+    CDStruct_2b0c1162 _edrMetaData[2];
     unsigned int _hardwareType;
     unsigned int _hdrMode;
     unsigned long long _bitDepth;
@@ -57,6 +57,7 @@
     struct __CFString *_targetColorPrimaries;
 }
 
+- (void).cxx_destruct;
 @property struct __CFString *targetColorPrimaries; // @synthesize targetColorPrimaries=_targetColorPrimaries;
 @property double targetMinNits; // @synthesize targetMinNits=_targetMinNits;
 @property double targetNits; // @synthesize targetNits=_targetNits;
@@ -64,7 +65,6 @@
 @property float defaultAmbientLightValue; // @synthesize defaultAmbientLightValue=_defaultAmbientLightValue;
 @property float defaultEDRFactorValue; // @synthesize defaultEDRFactorValue=_defaultEDRFactorValue;
 @property float defaultMaxEDRValue; // @synthesize defaultMaxEDRValue=_defaultMaxEDRValue;
-- (void).cxx_destruct;
 - (void)extractFrameMetadata:(struct __CFDictionary *)arg1 intoTCControl:(struct ToneCurve_Control *)arg2;
 - (unsigned int)selectHDRUsage;
 - (void)setCSCMatrixInHDRControl:(CDStruct_d76a58a8 *)arg1 forIndex:(unsigned int)arg2;
@@ -73,7 +73,7 @@
 - (void)extractCAMetaData:(id)arg1 withRPU:(BOOL)arg2 tcCtrl:(struct ToneCurve_Control *)arg3;
 - (void)getDisplayPipelineCompensationType:(id)arg1 gamma:(float)arg2;
 - (void)checkIOSurface:(struct __IOSurface *)arg1 forInfoFrame:(CDStruct_52986d3b *)arg2 withRPUData:(BOOL)arg3;
-- (long long)processPixelsWithLayer0:(struct __IOSurface *)arg1 layer1:(struct __IOSurface *)arg2 output:(struct __IOSurface *)arg3 metaData:(CDStruct_2203fc2d *)arg4 tcControl:(struct ToneCurve_Control *)arg5 hdrControl:(CDStruct_d76a58a8 *)arg6 hdr10InfoFrame:(CDStruct_52986d3b *)arg7 commandbuffer:(id)arg8;
+- (long long)processPixelsWithLayer0:(struct __IOSurface *)arg1 layer1:(struct __IOSurface *)arg2 output:(struct __IOSurface *)arg3 metaData:(CDStruct_2b0c1162 *)arg4 tcControl:(struct ToneCurve_Control *)arg5 hdrControl:(CDStruct_d76a58a8 *)arg6 hdr10InfoFrame:(CDStruct_52986d3b *)arg7 commandbuffer:(id)arg8;
 - (long long)processFrameInternalWithLayer0:(struct __IOSurface *)arg1 layer1:(struct __IOSurface *)arg2 outout:(struct __IOSurface *)arg3 metadata:(id)arg4 commandbuffer:(id)arg5 operation:(unsigned int)arg6 config:(CDStruct_481e6fe2 *)arg7 histogram:(struct RgbHistogram_t *)arg8;
 - (long long)ValidateMSRColorConfigInput:(unsigned int)arg1 config:(CDStruct_481e6fe2 *)arg2 inputSurface:(struct __IOSurface *)arg3 outputSurface:(struct __IOSurface *)arg4 metadata:(id)arg5 histogram:(struct RgbHistogram_t *)arg6;
 - (long long)generateMSRColorConfigWithOperation:(unsigned int)arg1 config:(CDStruct_481e6fe2 *)arg2 inputSurface:(struct __IOSurface *)arg3 outputSurface:(struct __IOSurface *)arg4 metadata:(id)arg5 histogram:(struct RgbHistogram_t *)arg6;

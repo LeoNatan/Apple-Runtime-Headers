@@ -12,7 +12,7 @@
 }
 
 - (id)newSourceWithURL:(id)arg1 type:(id)arg2 useEmbeddedPreview:(BOOL)arg3;
-- (id)initWithURL:(id)arg1 type:(id)arg2 size:(struct CGSize)arg3 image:(struct NSObject *)arg4 useEmbeddedPreview:(BOOL)arg5;
+- (id)initWithURL:(id)arg1 type:(id)arg2 size:(struct CGSize)arg3 image:(id)arg4 useEmbeddedPreview:(BOOL)arg5;
 
 @end
 

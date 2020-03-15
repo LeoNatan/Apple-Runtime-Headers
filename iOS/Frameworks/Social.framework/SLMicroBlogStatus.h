@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *inReplyToStatusID; // @synthesize inReplyToStatusID=_inReplyToStatusID;
 @property(retain, nonatomic) NSString *maskedApplicationID; // @synthesize maskedApplicationID=_maskedApplicationID;
 @property(retain, nonatomic) NSArray *imageAssetURLs; // @synthesize imageAssetURLs=_imageAssetURLs;
 @property(retain, nonatomic) NSArray *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) NSString *statusText; // @synthesize statusText=_statusText;
-- (void).cxx_destruct;
 - (void)loadAssetDataIfNecessaryWithMaxByteSize:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

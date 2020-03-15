@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double personalizationScore; // @synthesize personalizationScore=_personalizationScore;
 @property(nonatomic) unsigned long long localSectionPosition; // @synthesize localSectionPosition=_localSectionPosition;
 @property(copy, nonatomic) SFResultSection *section; // @synthesize section=_section;
 @property(copy, nonatomic) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

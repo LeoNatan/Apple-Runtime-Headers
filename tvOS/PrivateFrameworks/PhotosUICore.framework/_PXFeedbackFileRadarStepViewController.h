@@ -16,11 +16,11 @@
     CDUnknownBlockType _buttonActionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType buttonActionHandler; // @synthesize buttonActionHandler=_buttonActionHandler;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *messageTitle; // @synthesize messageTitle=_messageTitle;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 
 @end

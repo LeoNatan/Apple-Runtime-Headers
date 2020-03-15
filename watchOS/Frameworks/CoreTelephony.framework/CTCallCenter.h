@@ -19,9 +19,9 @@
     CXCallObserver *_callKitObserver;
 }
 
-@property(retain) CXCallObserver *callKitObserver; // @synthesize callKitObserver=_callKitObserver;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain) CXCallObserver *callKitObserver; // @synthesize callKitObserver=_callKitObserver;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;

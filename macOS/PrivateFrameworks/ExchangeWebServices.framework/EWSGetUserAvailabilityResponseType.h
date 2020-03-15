@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *FreeBusyResponseArray; // @synthesize FreeBusyResponseArray=_FreeBusyResponseArray;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *FreeBusyResponseArray; // @synthesize FreeBusyResponseArray=_FreeBusyResponseArray;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

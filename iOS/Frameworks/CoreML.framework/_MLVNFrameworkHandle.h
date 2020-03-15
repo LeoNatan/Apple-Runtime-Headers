@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
 
 + (id)addOrientation:(unsigned int)arg1 toOptions:(id)arg2;
 + (id)sharedHandle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class VNImageBufferClass; // @synthesize VNImageBufferClass=_VNImageBufferClass;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintLengthImpl; // @synthesize scenePrintLengthImpl=_scenePrintLengthImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintElementCountImpl; // @synthesize scenePrintElementCountImpl=_scenePrintElementCountImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintsFromPixelBuffersUsesCPUOnlyImpl; // @synthesize scenePrintsFromPixelBuffersUsesCPUOnlyImpl=_scenePrintsFromPixelBuffersUsesCPUOnlyImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintsFromPixelBuffersImpl; // @synthesize scenePrintsFromPixelBuffersImpl=_scenePrintsFromPixelBuffersImpl;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
-- (void).cxx_destruct;
 - (struct __CVBuffer *)createPixelBufferFromCGImage:(struct CGImage *)arg1 constraint:(id)arg2 cropRect:(struct CGRect)arg3 cropAndScaleOption:(unsigned long long)arg4 options:(id)arg5 error:(id *)arg6;
 - (struct __CVBuffer *)createPixelBufferFromImageAtURL:(id)arg1 constraint:(id)arg2 cropRect:(struct CGRect)arg3 cropAndScaleOption:(unsigned long long)arg4 options:(id)arg5 error:(id *)arg6;
 - (struct __CVBuffer *)createPixelBufferFromVNImageBuffer:(id)arg1 constraint:(id)arg2 cropRect:(struct CGRect)arg3 cropAndScaleOption:(unsigned long long)arg4 options:(id)arg5 error:(id *)arg6;

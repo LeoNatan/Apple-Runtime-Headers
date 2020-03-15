@@ -8,11 +8,12 @@
 
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
 #import <ARKit/ARReplaySensorProtocol-Protocol.h>
+#import <ARKit/ARReplaySensorProtocolInternal-Protocol.h>
 
 @class ARImageCroppingTechnique, AVAssetReader, AVAssetReaderOutputMetadataAdaptor, AVAssetReaderTrackOutput, AVURLAsset, NSArray, NSDictionary, NSMutableArray, NSSet, NSString, NSURL;
 @protocol ARReplaySensorDelegate, ARSensorDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface ARReplaySensor : NSObject <ARInternalSessionObserver, ARReplaySensorProtocol>
+@interface ARReplaySensor : NSObject <ARInternalSessionObserver, ARReplaySensorProtocolInternal, ARReplaySensorProtocol>
 {
     _Bool _manualCommandLineMode;
     AVURLAsset *_asset;
@@ -25,12 +26,10 @@
     NSDictionary *_recordedResultGetters;
     double _originalToReplayTimestampDifference;
     NSObject<OS_dispatch_queue> *_replayQueue;
+    id <ARReplaySensorDelegate> _traceReplaySensorDelegate;
     NSObject<OS_dispatch_source> *_timer;
     double _startTime;
     long long _tick;
-    double _frameRateScale;
-    double _timestampWhenFramerateChanged;
-    double _imageTimestampWhenFramerateChanged;
     int _imageIndexForPreloading;
     int _accelDataIndex;
     int _gyroDataIndex;
@@ -65,8 +64,8 @@
     struct OpaqueVTPixelTransferSession *_synchronizationTransferSession;
     unsigned long long _sensorDataTypes;
     ARImageCroppingTechnique *_croppingTechnique;
+    _Bool synchronousMode;
     _Bool _isReplayingManually;
-    _Bool _synchronousMode;
     float _advanceFramesPerSecondMultiplier;
     int _imageIndex;
     id <ARSensorDelegate> _delegate;
@@ -78,22 +77,22 @@
     double _nominalFrameRate;
     unsigned long long _recordedSensorTypes;
     NSSet *_recordedResultClasses;
-    unsigned long long _forcePlaybackFramesPerSecond;
+    long long _replayMode;
     long long _nextFrameIndex;
     NSSet *_customDataClasses;
     long long _targetFrameIndex;
     struct CGSize _imageResolution;
 }
 
+- (void).cxx_destruct;
 @property long long targetFrameIndex; // @synthesize targetFrameIndex=_targetFrameIndex;
 @property(nonatomic) int imageIndex; // @synthesize imageIndex=_imageIndex;
 @property(readonly, nonatomic) _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property(copy, nonatomic) NSSet *customDataClasses; // @synthesize customDataClasses=_customDataClasses;
 @property float advanceFramesPerSecondMultiplier; // @synthesize advanceFramesPerSecondMultiplier=_advanceFramesPerSecondMultiplier;
 @property long long nextFrameIndex; // @synthesize nextFrameIndex=_nextFrameIndex;
-@property(nonatomic) unsigned long long forcePlaybackFramesPerSecond; // @synthesize forcePlaybackFramesPerSecond=_forcePlaybackFramesPerSecond;
-@property(readonly, nonatomic, getter=isSynchronousMode) _Bool synchronousMode; // @synthesize synchronousMode=_synchronousMode;
 @property(readonly, nonatomic) _Bool isReplayingManually; // @synthesize isReplayingManually=_isReplayingManually;
+@property(readonly, nonatomic) long long replayMode; // @synthesize replayMode=_replayMode;
 @property(readonly, nonatomic) NSSet *recordedResultClasses; // @synthesize recordedResultClasses=_recordedResultClasses;
 @property(readonly, nonatomic) unsigned long long recordedSensorTypes; // @synthesize recordedSensorTypes=_recordedSensorTypes;
 @property(readonly, nonatomic) double nominalFrameRate; // @synthesize nominalFrameRate=_nominalFrameRate;
@@ -104,7 +103,8 @@
 @property(readonly, nonatomic) NSURL *sequenceURL; // @synthesize sequenceURL=_sequenceURL;
 @property __weak id <ARReplaySensorDelegate> replaySensorDelegate; // @synthesize replaySensorDelegate=_replaySensorDelegate;
 @property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSynchronousMode) _Bool synchronousMode; // @synthesize synchronousMode;
+@property __weak id <ARReplaySensorDelegate> traceReplaySensorDelegate;
 - (void)readFileMetadataFromAsset:(id)arg1;
 - (struct __CVBuffer *)requestNextDepthPixelBufferForTimestamp:(double)arg1;
 - (struct __CVBuffer *)requestNextPixelBufferForTimestamp:(double)arg1;
@@ -153,6 +153,7 @@
 @property(readonly, nonatomic) NSArray *recordedResultClassList;
 - (unsigned long long)providedDataTypes;
 - (void)dealloc;
+- (id)initWithSequenceURL:(id)arg1 replayMode:(long long)arg2;
 - (id)initWithSequenceURL:(id)arg1 manualReplay:(_Bool)arg2 synchronousMode:(_Bool)arg3;
 - (id)initWithSequenceURL:(id)arg1 manualReplay:(_Bool)arg2;
 - (id)initWithDataFromFile:(id)arg1;

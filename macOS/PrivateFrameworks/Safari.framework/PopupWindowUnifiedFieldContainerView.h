@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PopupWindowUnifiedField *_unifiedField;
 }
 
-@property(retain, nonatomic) PopupWindowUnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PopupWindowUnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (id)accessibilityChildren;
 - (id)accessibilityRole;
 

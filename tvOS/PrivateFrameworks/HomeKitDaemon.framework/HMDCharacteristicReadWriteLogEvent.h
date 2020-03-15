@@ -16,16 +16,29 @@
     _Bool _isTimedWrite;
     _Bool _isLocal;
     _Bool _isCached;
+    _Bool _isResidentAvailable;
+    _Bool _isRemoteAccessAllowed;
+    _Bool _isRemotelyReachable;
     NSArray *_characteristicsToRead;
     HAPAccessory *_hapAccessory;
     HMDAccessory *_hmdAccessory;
     NSUUID *_transactionId;
     unsigned long long _triggerSource;
+    NSString *_primaryServiceType;
+    unsigned long long _consecutiveFailureCount;
+    double _timeIntervalSinceFirstFailure;
 }
 
 + (id)characteristicWriteLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned long long)arg4 isTimedWrite:(_Bool)arg5 isLocal:(_Bool)arg6 transactionId:(id)arg7;
 + (id)characteristicReadLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned long long)arg4 isLocal:(_Bool)arg5 transactionId:(id)arg6 isCached:(_Bool)arg7;
 + (id)uuid;
+- (void).cxx_destruct;
+@property(nonatomic) double timeIntervalSinceFirstFailure; // @synthesize timeIntervalSinceFirstFailure=_timeIntervalSinceFirstFailure;
+@property(nonatomic) unsigned long long consecutiveFailureCount; // @synthesize consecutiveFailureCount=_consecutiveFailureCount;
+@property(readonly, nonatomic) _Bool isRemotelyReachable; // @synthesize isRemotelyReachable=_isRemotelyReachable;
+@property(readonly, nonatomic) _Bool isRemoteAccessAllowed; // @synthesize isRemoteAccessAllowed=_isRemoteAccessAllowed;
+@property(readonly, nonatomic) _Bool isResidentAvailable; // @synthesize isResidentAvailable=_isResidentAvailable;
+@property(readonly, nonatomic) NSString *primaryServiceType; // @synthesize primaryServiceType=_primaryServiceType;
 @property(readonly, nonatomic) _Bool isCached; // @synthesize isCached=_isCached;
 @property(readonly, nonatomic) unsigned long long triggerSource; // @synthesize triggerSource=_triggerSource;
 @property(readonly, nonatomic) NSUUID *transactionId; // @synthesize transactionId=_transactionId;
@@ -35,7 +48,7 @@
 @property(readonly, nonatomic) __weak HMDAccessory *hmdAccessory; // @synthesize hmdAccessory=_hmdAccessory;
 @property(readonly, nonatomic) __weak HAPAccessory *hapAccessory; // @synthesize hapAccessory=_hapAccessory;
 @property(readonly, nonatomic) NSArray *characteristicsToRead; // @synthesize characteristicsToRead=_characteristicsToRead;
-- (void).cxx_destruct;
+- (void)submitAtDate:(id)arg1 error:(id)arg2;
 - (void)setLocal:(_Bool)arg1;
 - (id)initReadWriteLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned long long)arg4 isWriteOperation:(_Bool)arg5 isTimedWrite:(_Bool)arg6 isLocal:(_Bool)arg7 transactionId:(id)arg8 isCached:(_Bool)arg9;
 - (id)metricForAWD;

@@ -23,11 +23,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)archivedClasses;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) FLFollowUpController *followUpController; // @synthesize followUpController=_followUpController;
 @property(retain) NSString *bugSessionIdentifier; // @synthesize bugSessionIdentifier=_bugSessionIdentifier;
 @property __weak DEDNotifierConfiguration *config; // @synthesize config=_config;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)cancelNotification;

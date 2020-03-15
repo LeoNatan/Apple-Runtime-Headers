@@ -24,13 +24,13 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *typingAttributes; // @synthesize typingAttributes=_typingAttributes;
 @property(retain) NSTextStorage *annotationText; // @synthesize annotationText=_annotationText;
 @property unsigned long long arrowHeadStyle; // @synthesize arrowHeadStyle=_arrowHeadStyle;
 @property struct CGPoint midPoint; // @synthesize midPoint=_midPoint;
 @property struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)translateBy:(struct CGPoint)arg1;

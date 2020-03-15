@@ -60,6 +60,7 @@
 }
 
 + (_Bool)compareAddressURL:(id)arg1 localString:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAppleIDSession *appleIDSession; // @synthesize appleIDSession=_appleIDSession;
 @property(retain, nonatomic) NSURL *legacy_principalURL; // @synthesize legacy_principalURL=_legacy_principalURL;
 @property(retain, nonatomic) CalDAVRefreshContext *refreshContext; // @synthesize refreshContext=_refreshContext;
@@ -93,7 +94,6 @@
 @property(nonatomic) id <CalDAVAccount> account; // @synthesize account=_account;
 @property(retain, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(retain, nonatomic) NSMutableSet *deletedCalendarURLs; // @synthesize deletedCalendarURLs=_deletedCalendarURLs;
-- (void).cxx_destruct;
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (void)noteFailedProtocolRequest;
 - (void)noteFailedNetworkRequest;

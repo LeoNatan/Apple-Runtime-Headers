@@ -32,8 +32,8 @@
     NSProgress *_progress;
 }
 
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (_Bool)_queue_finishRebasePreparationWithError:(id *)arg1;
 - (_Bool)_queue_updatePersistedStateForStore:(id)arg1 error:(id *)arg2;
 - (id)_queue_recordIDsToDeleteWithStoreRecord:(id)arg1;

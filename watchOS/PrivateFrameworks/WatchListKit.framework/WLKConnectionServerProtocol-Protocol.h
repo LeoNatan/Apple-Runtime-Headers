@@ -9,6 +9,8 @@
 @class NSDictionary, NSNumber, NSString, WLKPlaybackSummary;
 
 @protocol WLKConnectionServerProtocol <NSObject>
+- (void)refreshSubscriptionData:(_Bool)arg1;
+- (void)fetchSubscriptionData:(_Bool)arg1 callerProcessID:(int)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)clearOffers:(void (^)(NSError *))arg1;
 - (void)fetchOffers:(_Bool)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)saveOffer:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
@@ -21,6 +23,7 @@
 - (void)fetchApplications:(void (^)(NSDictionary *))arg1;
 - (void)deletePlaybackActivityWithIdentifier:(NSString *)arg1 bundleID:(NSString *)arg2;
 - (void)requestConsentForBundleID:(NSString *)arg1 forceAuth:(_Bool)arg2 replyHandler:(void (^)(_Bool))arg3;
+- (void)checkPendingPlaybackReports;
 - (void)endPlaybackSession:(NSString *)arg1;
 - (void)reportPlayback:(WLKPlaybackSummary *)arg1 sessionID:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)reportPlayback:(WLKPlaybackSummary *)arg1 completion:(void (^)(_Bool, NSError *))arg2;

@@ -16,8 +16,8 @@
     NUAdjustmentSchema *_schema;
 }
 
-@property(readonly, nonatomic) NUAdjustmentSchema *schema; // @synthesize schema=_schema;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NUAdjustmentSchema *schema; // @synthesize schema=_schema;
 - (void)reset;
 - (BOOL)isEqualToAdjustment:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

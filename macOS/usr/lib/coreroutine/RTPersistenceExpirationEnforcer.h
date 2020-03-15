@@ -10,8 +10,14 @@
 {
 }
 
-- (BOOL)removeRecordsOwnedByOtherDevicesExpiredBeforeDate:(id)arg1 allowPropagation:(BOOL)arg2 withContext:(id)arg3 error:(id *)arg4;
-- (id)entitiesWithDeviceAndExpirationProperty:(id)arg1;
+- (BOOL)repairInvalidExpirationDatesWithContext:(id)arg1 error:(id *)arg2;
+- (BOOL)removeExpiredRecordsBeforeDate:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (BOOL)removeExpiredRecordsWithObjectIDs:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (BOOL)removeRecordsOwnedByThisDeviceExpiredBeforeDate:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (BOOL)removeRecordsOwnedByOtherDevicesExpiredBeforeDate:(id)arg1 allowPropagation:(BOOL)arg2 context:(id)arg3 error:(id *)arg4;
+- (id)collectRecordIDsByTypeExpiredBeforeDate:(id)arg1 ownedByThisDevice:(BOOL)arg2 context:(id)arg3 error:(id *)arg4;
+- (id)entitiesWithDeviceAndExpirationProperty:(id)arg1 ownedByThisDevice:(BOOL)arg2;
+- (id)init;
 
 @end
 

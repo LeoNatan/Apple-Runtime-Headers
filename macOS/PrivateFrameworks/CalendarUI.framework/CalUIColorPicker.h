@@ -14,9 +14,9 @@
     id <CalUIColorPickerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <CalUIColorPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL colorSelected; // @synthesize colorSelected=_colorSelected;
-- (void).cxx_destruct;
 - (void)buttonPressed:(id)arg1;
 - (id)initWithSelectedSymbolicColors:(id)arg1 delegate:(id)arg2;
 

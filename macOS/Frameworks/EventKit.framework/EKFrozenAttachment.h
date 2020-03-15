@@ -23,6 +23,7 @@
 }
 
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly, retain) NSString *uuid; // @synthesize uuid;
 @property(readonly, retain) NSURL *urlOnServer; // @synthesize urlOnServer;
 @property(readonly, retain) NSURL *urlOnDisk; // @synthesize urlOnDisk;
@@ -31,7 +32,6 @@
 @property(readonly, retain) NSString *contentTypeFromServer; // @synthesize contentTypeFromServer;
 @property(readonly, retain) NSString *contentType; // @synthesize contentType;
 @property(readonly, retain) NSString *attachmentIDOnServer; // @synthesize attachmentIDOnServer;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 
 // Remaining properties

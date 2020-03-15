@@ -17,10 +17,10 @@
     TLKLabel *_secondaryView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKLabel *secondaryView; // @synthesize secondaryView=_secondaryView;
 @property(retain, nonatomic) TLKLabel *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) SearchUIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
-- (void).cxx_destruct;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (id)initWithResult:(id)arg1;
 

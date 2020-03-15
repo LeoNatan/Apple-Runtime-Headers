@@ -14,8 +14,8 @@
 }
 
 + (id)detachNewThreadWithName:(id)arg1 qualityOfService:(long long)arg2;
-@property(retain, nonatomic) NSRunLoop *runLoop; // @synthesize runLoop=_runLoop;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSRunLoop *runLoop; // @synthesize runLoop=_runLoop;
 - (void)_spin:(double)arg1;
 
 @end

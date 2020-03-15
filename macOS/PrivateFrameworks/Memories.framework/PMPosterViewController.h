@@ -26,6 +26,7 @@
 }
 
 + (double)biggestScreenPixelDimension;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
@@ -39,7 +40,6 @@
 @property(nonatomic) double titleScale; // @synthesize titleScale=_titleScale;
 @property(nonatomic) __weak VEKProduction *production; // @synthesize production=_production;
 @property(retain, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;
-- (void).cxx_destruct;
 @property(nonatomic) double titleSubtitleAlpha;
 - (void)viewWillLayoutSubviews;
 - (void)updateSubtitleTitleLabelForSize:(struct CGSize)arg1;

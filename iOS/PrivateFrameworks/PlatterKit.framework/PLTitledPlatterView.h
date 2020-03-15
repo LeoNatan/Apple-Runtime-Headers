@@ -18,8 +18,8 @@
     _Bool _largerHeaderMarginEnabled;
 }
 
-@property(nonatomic, getter=isLargerHeaderMarginEnabled) _Bool largerHeaderMarginEnabled; // @synthesize largerHeaderMarginEnabled=_largerHeaderMarginEnabled;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isLargerHeaderMarginEnabled) _Bool largerHeaderMarginEnabled; // @synthesize largerHeaderMarginEnabled=_largerHeaderMarginEnabled;
 - (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;

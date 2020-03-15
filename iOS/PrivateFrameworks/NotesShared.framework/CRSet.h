@@ -18,9 +18,9 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) CRDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)tombstone;
 - (void)walkGraph:(CDUnknownBlockType)arg1;

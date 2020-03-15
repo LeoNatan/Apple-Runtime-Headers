@@ -51,6 +51,7 @@
     _Bool _messageHadEncryptedData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSCertifiedDeliveryContext *certifiedDeliveryContext; // @synthesize certifiedDeliveryContext=_certifiedDeliveryContext;
 @property(readonly, nonatomic) int endpointState; // @synthesize endpointState=_endpointState;
 @property(readonly, copy, nonatomic) NSNumber *messageSequenceNumber; // @synthesize messageSequenceNumber=_messageSequenceNumber;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) double averageLocalRTT; // @synthesize averageLocalRTT=_averageLocalRTT;
 @property(nonatomic) _Bool messageHadEncryptedData; // @synthesize messageHadEncryptedData=_messageHadEncryptedData;
 @property(copy, nonatomic) NSString *originalGUID; // @synthesize originalGUID=_originalGUID;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool usedEngram;
 @property(nonatomic) long long connectionType;
 @property(nonatomic) _Bool fromServerStorage;

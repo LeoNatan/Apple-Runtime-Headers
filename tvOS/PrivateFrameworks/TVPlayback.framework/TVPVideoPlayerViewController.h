@@ -94,6 +94,7 @@
 
 + (struct CGSize)bumperLogoSize;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long restrictionsValidationResult; // @synthesize restrictionsValidationResult=_restrictionsValidationResult;
 @property(nonatomic) _Bool interactiveRestrictionsValidationCompleted; // @synthesize interactiveRestrictionsValidationCompleted=_interactiveRestrictionsValidationCompleted;
 @property(nonatomic) _Bool appDeactivated; // @synthesize appDeactivated=_appDeactivated;
@@ -163,7 +164,6 @@
 @property(nonatomic) long long resumeMenuOption; // @synthesize resumeMenuOption=_resumeMenuOption;
 @property(nonatomic) __weak id <TVPVideoPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<TVPAVFPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_updateAVPlayerViewControllerWithActiveAVPlayer;
 - (_Bool)_isRunningInViewService;

@@ -18,12 +18,12 @@
     BOOL _recordStatistics;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PAImageDrawStatistics *statistics; // @synthesize statistics=_statistics;
 @property(nonatomic) BOOL recordStatistics; // @synthesize recordStatistics=_recordStatistics;
 @property(retain, nonatomic) PAContentTransform *transform; // @synthesize transform=_transform;
 @property(retain, nonatomic) PADisplay *display; // @synthesize display=_display;
 @property(readonly, nonatomic) PAOpenGLContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_recordDrawMultiImage:(id)arg1 foregroundLevel:(unsigned long long)arg2 backgroundLevel:(unsigned long long)arg3 region:(id)arg4;
 - (void)_recordDrawImage:(id)arg1 level:(unsigned long long)arg2 region:(id)arg3;
 - (id)_multiTileDrawingShaderProgramWithColorMatch;

@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)activitiesForLevelLocators:(id)arg1 startAt:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool exportInProgress; // @synthesize exportInProgress=_exportInProgress;
 @property(retain, nonatomic) UIViewController *noDoubleTapViewController; // @synthesize noDoubleTapViewController=_noDoubleTapViewController;
-- (void).cxx_destruct;
 - (void)_updateBadgeForViewControllerAtIndex:(long long)arg1 domain:(long long)arg2;
 - (void)_updateBadges;
 - (void)_deregisterFromBadgeNotifications;

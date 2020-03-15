@@ -15,10 +15,10 @@
     NSString *_requestID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 @property(readonly, copy, nonatomic) NSString *action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSDictionary *aps; // @synthesize aps=_aps;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

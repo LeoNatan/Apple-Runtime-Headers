@@ -18,6 +18,7 @@
     BOOL _isLoginUser;
     BOOL _isAuditor;
     BOOL _isDisabled;
+    BOOL _isTransientUser;
     BOOL _hasManagedCredentials;
     BOOL _hasDataToSync;
     unsigned int _uid;
@@ -49,6 +50,7 @@
 }
 
 + (id)userWithUID:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *lastLogoutEndDate; // @synthesize lastLogoutEndDate=_lastLogoutEndDate;
 @property(copy, nonatomic) NSDate *lastLogoutStartDate; // @synthesize lastLogoutStartDate=_lastLogoutStartDate;
 @property(copy, nonatomic) NSDate *lastCachedLoginEndDate; // @synthesize lastCachedLoginEndDate=_lastCachedLoginEndDate;
@@ -63,6 +65,7 @@
 @property(nonatomic) BOOL hasManagedCredentials; // @synthesize hasManagedCredentials=_hasManagedCredentials;
 @property(copy, nonatomic) NSArray *languages; // @synthesize languages=_languages;
 @property(nonatomic) unsigned long long passcodeLockGracePeriod; // @synthesize passcodeLockGracePeriod=_passcodeLockGracePeriod;
+@property(nonatomic) BOOL isTransientUser; // @synthesize isTransientUser=_isTransientUser;
 @property(nonatomic) BOOL isDisabled; // @synthesize isDisabled=_isDisabled;
 @property(nonatomic) BOOL isAuditor; // @synthesize isAuditor=_isAuditor;
 @property(nonatomic) BOOL isLoginUser; // @synthesize isLoginUser=_isLoginUser;
@@ -81,7 +84,6 @@
 @property(nonatomic) unsigned int gid; // @synthesize gid=_gid;
 @property(nonatomic) BOOL shouldFetchAttributes; // @synthesize shouldFetchAttributes=_shouldFetchAttributes;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (id)userPersonaFromIdentityString:(id)arg1;
 @property(readonly, nonatomic) __weak NSArray *allUserPersonas;
 - (BOOL)commitChangesWithError:(id *)arg1;

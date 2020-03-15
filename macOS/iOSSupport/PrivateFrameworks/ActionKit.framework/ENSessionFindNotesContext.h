@@ -26,6 +26,7 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(retain, nonatomic) NSSet *resultGuidsFromBusiness; // @synthesize resultGuidsFromBusiness=_resultGuidsFromBusiness;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(nonatomic) unsigned long long scope; // @synthesize scope=_scope;
 @property(retain, nonatomic) ENNotebook *scopeNotebook; // @synthesize scopeNotebook=_scopeNotebook;
-- (void).cxx_destruct;
 
 @end
 

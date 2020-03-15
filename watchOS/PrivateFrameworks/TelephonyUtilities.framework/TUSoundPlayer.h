@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     TURepeatingActor *_repeatingActor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TURepeatingActor *repeatingActor; // @synthesize repeatingActor=_repeatingActor;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing;
 - (void)stopPlaying;
 - (void)playSound:(unsigned long)arg1 iterations:(unsigned int)arg2 pauseDurationBetweenIterations:(double)arg3 completion:(CDUnknownBlockType)arg4;

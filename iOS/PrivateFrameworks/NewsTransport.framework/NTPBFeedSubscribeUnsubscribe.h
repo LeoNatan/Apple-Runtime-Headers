@@ -57,6 +57,7 @@
 }
 
 + (Class)subscribedFeedIdsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(nonatomic) long long previousArticlePublisherArticleVersion; // @synthesize previousArticlePublisherArticleVersion=_previousArticlePublisherArticleVersion;
 @property(retain, nonatomic) NSString *previousArticleVersion; // @synthesize previousArticleVersion=_previousArticleVersion;
@@ -73,7 +74,6 @@
 @property(nonatomic) int displayRank; // @synthesize displayRank=_displayRank;
 @property(retain, nonatomic) NSData *feedViewExposureId; // @synthesize feedViewExposureId=_feedViewExposureId;
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

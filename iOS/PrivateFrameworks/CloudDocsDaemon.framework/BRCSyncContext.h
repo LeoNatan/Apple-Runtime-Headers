@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 + (id)contextIdentifierForMangledID:(id)arg1;
 + (id)_contextIdentifierForMangledID:(id)arg1 metadata:(_Bool)arg2;
 + (id)_sourceAppIdentifierForMangledID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isShared; // @synthesize isShared=_isShared;
 @property(readonly, nonatomic) BRCTransferStream *downloadStream; // @synthesize downloadStream=_downloadStream;
 @property(readonly, nonatomic) BRCTransferStream *uploadStream; // @synthesize uploadStream=_uploadStream;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BRCThrottleBase *readerThrottle; // @synthesize readerThrottle=_readerThrottle;
 @property(readonly, nonatomic) NSString *contextIdentifier; // @synthesize contextIdentifier=_contextIdentifier;
 @property(readonly, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)_notifyContainerBeingNowForeground;
 - (void)_notifyFrameworkContainersMonitorWithState:(_Bool)arg1;
 - (void)_armForegroundGraceTimerForClientDescription:(id)arg1;

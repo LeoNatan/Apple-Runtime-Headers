@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *tag; // @synthesize tag=_tag;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain) NSArray *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

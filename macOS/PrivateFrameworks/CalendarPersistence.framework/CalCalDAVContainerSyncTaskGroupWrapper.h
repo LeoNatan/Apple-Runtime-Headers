@@ -25,6 +25,7 @@
     NSMutableArray *_removedURLs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *removedURLs; // @synthesize removedURLs=_removedURLs;
 @property(retain, nonatomic) NSMutableArray *addedOrModifiedContainers; // @synthesize addedOrModifiedContainers=_addedOrModifiedContainers;
 @property BOOL usingFilterQuery; // @synthesize usingFilterQuery=_usingFilterQuery;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) CalManagedCalDAVCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain, nonatomic) CalManagedCalDAVPrincipal *principal; // @synthesize principal=_principal;
 @property(nonatomic) unsigned long long numberOfResourcesAffected; // @synthesize numberOfResourcesAffected=_numberOfResourcesAffected;
-- (void).cxx_destruct;
 - (id)_messageTraceSignatureForServerURL:(id)arg1;
 - (void)reportMismatchedChecksum:(id)arg1 forURL:(id)arg2 inFolderWithURL:(id)arg3 checksumVersion:(id)arg4 eTag:(id)arg5;
 - (void)_messageTraceMismatch:(id)arg1;

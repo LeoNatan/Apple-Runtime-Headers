@@ -75,6 +75,7 @@
     struct UIEdgeInsets _marginInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transcriptUpdateCompletion; // @synthesize transcriptUpdateCompletion=_transcriptUpdateCompletion;
 @property(nonatomic) NSString *mostRecentlyTouchedPlugin; // @synthesize mostRecentlyTouchedPlugin=_mostRecentlyTouchedPlugin;
 @property(retain, nonatomic) UIView *snapshotOfPluginBeingReplacedByBreadcrumb; // @synthesize snapshotOfPluginBeingReplacedByBreadcrumb=_snapshotOfPluginBeingReplacedByBreadcrumb;
@@ -119,7 +120,6 @@
 @property(copy, nonatomic) NSArray *associatedChatItems; // @synthesize associatedChatItems=_associatedChatItems;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(copy, nonatomic) NSArray *chatItems; // @synthesize chatItems=_chatItems;
-- (void).cxx_destruct;
 - (void)verticallyScrollTranscriptByAmount:(double)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)wantsDrawerLayout;
 - (id)collectionViewLayout;

@@ -17,9 +17,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)identifierWithAction:(SEL)arg1 propertyList:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id propertyList; // @synthesize propertyList=_propertyList;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

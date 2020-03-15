@@ -30,6 +30,7 @@
 }
 
 + (void)checkIn;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType deviceStatusCallback; // @synthesize deviceStatusCallback=_deviceStatusCallback;
 @property(retain, nonatomic) SFDeviceDiscovery *pongDiscovery; // @synthesize pongDiscovery=_pongDiscovery;
 @property(retain, nonatomic) SFService *workerService; // @synthesize workerService=_workerService;
@@ -46,7 +47,6 @@
 @property _Bool listenForClients; // @synthesize listenForClients=_listenForClients;
 @property __weak DEDController *controller; // @synthesize controller=_controller;
 @property(retain) DEDSharingInbound *inbound; // @synthesize inbound=_inbound;
-- (void).cxx_destruct;
 - (void)addIncomingSFSession:(id)arg1 forIdentifier:(id)arg2;
 - (void)stopSession:(id)arg1;
 - (void)_verifyPairingForSession:(id)arg1 holdForPIN:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

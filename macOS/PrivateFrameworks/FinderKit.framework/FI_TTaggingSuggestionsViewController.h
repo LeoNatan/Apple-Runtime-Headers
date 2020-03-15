@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSLayoutConstraint, void> _maxHeightConstraint;
 }
 
-@property(nonatomic) _Bool showLabelColorView; // @synthesize showLabelColorView=_showLabelColorView;
-@property _Bool fadeScrolledRows; // @synthesize fadeScrolledRows=_fadeScrolledRows;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showLabelColorView; // @synthesize showLabelColorView=_showLabelColorView;
+@property _Bool fadeScrolledRows; // @synthesize fadeScrolledRows=_fadeScrolledRows;
 - (void)clipViewBoundsOrFrameChanged;
 - (void)configureClipViewMask;
 - (void)labelColorChanged:(id)arg1;

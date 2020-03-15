@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_source> *_invalidationTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
 @property(copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(retain, nonatomic) PDAssertion *assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (id)initWithAssertion:(id)arg1 delegate:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 

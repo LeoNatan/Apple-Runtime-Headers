@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
     NSArray *_tagRequests;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tagRequests; // @synthesize tagRequests=_tagRequests;
 @property(nonatomic) __weak id <UIKBAutoFillTestTaggerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_doneBarButtonAction:(id)arg1;
 - (void)_previousBarButtonAction:(id)arg1;
 - (void)_nextBarButtonAction:(id)arg1;

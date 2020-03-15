@@ -17,9 +17,9 @@
 }
 
 + (id)printerPickerControllerWithInitiallySelectedPrinter:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIPrinterPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIPrinter *selectedPrinter; // @synthesize selectedPrinter=_selectedPrinter;
-- (void).cxx_destruct;
 - (void)_dismissMacPrinterSelection;
 - (BOOL)_showMacPrinterSelectionWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)_shouldShowPrinter:(id)arg1;

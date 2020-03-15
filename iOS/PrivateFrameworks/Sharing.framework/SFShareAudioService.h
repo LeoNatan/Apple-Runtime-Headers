@@ -28,9 +28,9 @@
     SDStatusMonitor *_statusMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SDStatusMonitor *statusMonitor; // @synthesize statusMonitor=_statusMonitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)xpcPerformAction:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleShareAudioSearchTimeout;
 - (void)_handleShareAudioPairingCompleted:(id)arg1 error:(id)arg2;

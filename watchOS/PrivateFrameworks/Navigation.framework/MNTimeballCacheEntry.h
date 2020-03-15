@@ -18,11 +18,11 @@
     NSDate *_nextUpdate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *nextUpdate; // @synthesize nextUpdate=_nextUpdate;
 @property(retain, nonatomic) NSDate *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(retain, nonatomic) MNPlannedDestination *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) MNRouteUpdate *routeUpdate; // @synthesize routeUpdate=_routeUpdate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)jsonDictionary;
 

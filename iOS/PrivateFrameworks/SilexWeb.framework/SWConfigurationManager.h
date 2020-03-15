@@ -20,12 +20,12 @@
     id <SWConfigurationSerializer> _serializer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWConfigurationSerializer> serializer; // @synthesize serializer=_serializer;
 @property(retain, nonatomic) id <SWScript> configurationScript; // @synthesize configurationScript=_configurationScript;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <SWScriptsManager> webContentScriptsManager; // @synthesize webContentScriptsManager=_webContentScriptsManager;
 @property(copy, nonatomic) SWConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)initWithWebContentScriptsManager:(id)arg1 logger:(id)arg2 serializer:(id)arg3;
 
 // Remaining properties

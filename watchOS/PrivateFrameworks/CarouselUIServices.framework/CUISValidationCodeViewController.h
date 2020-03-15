@@ -24,6 +24,7 @@
     NSString *_validationCodeTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *validationCodeTitle; // @synthesize validationCodeTitle=_validationCodeTitle;
 @property(nonatomic) unsigned int minCodeLength; // @synthesize minCodeLength=_minCodeLength;
 @property(nonatomic) unsigned int maxCodeLength; // @synthesize maxCodeLength=_maxCodeLength;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=isSimpleCode) _Bool simpleCode; // @synthesize simpleCode=_simpleCode;
 @property(nonatomic) _Bool shouldShowCancel; // @synthesize shouldShowCancel=_shouldShowCancel;
 @property(nonatomic) __weak id <CUISValidationCodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -18,11 +18,11 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool preferThumbnails; // @synthesize preferThumbnails=_preferThumbnails;
 @property(nonatomic) float baseScale; // @synthesize baseScale=_baseScale;
 @property(retain, nonatomic) UIImage *baseImage; // @synthesize baseImage=_baseImage;
 @property(retain) NPTOLocketReader *reader; // @synthesize reader=_reader;
-- (void).cxx_destruct;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)displaySynchronouslyAtMaximumScaleInRect:(struct CGRect)arg1;
 - (void)_displaySynchronouslyInRect:(struct CGRect)arg1;

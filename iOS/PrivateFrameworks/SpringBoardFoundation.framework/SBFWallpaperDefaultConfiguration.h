@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SBFGradient *wallpaperGradient; // @synthesize wallpaperGradient=_wallpaperGradient;
 @property(readonly, copy, nonatomic) NSString *wallpaperColorName; // @synthesize wallpaperColorName=_wallpaperColorName;
 @property(readonly, copy, nonatomic) UIColor *wallpaperColor; // @synthesize wallpaperColor=_wallpaperColor;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(readonly, copy, nonatomic) NSURL *staticImageURL; // @synthesize staticImageURL=_staticImageURL;
 @property(readonly, nonatomic) long long wallpaperType; // @synthesize wallpaperType=_wallpaperType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

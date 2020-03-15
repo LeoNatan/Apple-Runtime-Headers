@@ -16,9 +16,9 @@
 
 + (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float clusteringDistanceThreshold; // @synthesize clusteringDistanceThreshold=_clusteringDistanceThreshold;
 @property(copy, nonatomic) NSArray *inputImageprints; // @synthesize inputImageprints=_inputImageprints;
-- (void).cxx_destruct;
 - (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
 - (CDUnknownBlockType)resultsSortingComparator;
 - (void)applyConfigurationOfRequest:(id)arg1;

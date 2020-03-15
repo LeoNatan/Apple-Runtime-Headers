@@ -21,11 +21,11 @@
 + (Class)brokerRegionPushTopicsType;
 + (Class)tsmRegionURLsType;
 + (Class)tsmRegionPushTopicsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *primaryRegionTopic; // @synthesize primaryRegionTopic=_primaryRegionTopic;
 @property(retain, nonatomic) NSMutableArray *brokerRegionPushTopics; // @synthesize brokerRegionPushTopics=_brokerRegionPushTopics;
 @property(retain, nonatomic) NSMutableArray *tsmRegionURLs; // @synthesize tsmRegionURLs=_tsmRegionURLs;
 @property(retain, nonatomic) NSMutableArray *tsmRegionPushTopics; // @synthesize tsmRegionPushTopics=_tsmRegionPushTopics;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

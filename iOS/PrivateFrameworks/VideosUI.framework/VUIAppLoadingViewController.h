@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     _Bool _loading;
 }
 
-@property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 - (void)setView:(id)arg1;
 
 @end

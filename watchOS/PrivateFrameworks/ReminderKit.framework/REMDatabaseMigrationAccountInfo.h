@@ -15,10 +15,10 @@
     int _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithAccountType:(int)arg1 identifier:(id)arg2 name:(id)arg3;
 
 @end

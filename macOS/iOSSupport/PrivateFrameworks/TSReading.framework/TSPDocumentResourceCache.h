@@ -19,8 +19,8 @@
 
 + (id)sharedCache;
 + (id)defaultCacheURL;
-@property(nonatomic) long long maxCacheSizeInBytes; // @synthesize maxCacheSizeInBytes=_maxCacheSizeInBytes;
 - (void).cxx_destruct;
+@property(nonatomic) long long maxCacheSizeInBytes; // @synthesize maxCacheSizeInBytes=_maxCacheSizeInBytes;
 - (void)reloadEntries;
 - (void)enumerateEntriesFromCacheURLWithHandler:(CDUnknownBlockType)arg1;
 - (void)shrinkCacheWithMaxCacheSizeInBytes:(long long)arg1;

@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _backingSize;
 }
 
-@property(readonly, nonatomic) struct CGSize backingSize; // @synthesize backingSize=_backingSize;
-@property id <GGLLayerDelegate> renderDelegate; // @synthesize renderDelegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGSize backingSize; // @synthesize backingSize=_backingSize;
+@property id <GGLLayerDelegate> renderDelegate; // @synthesize renderDelegate=_delegate;
 - (void)didEnterBackground;
 - (void)setContentsScale:(float)arg1;
 - (void)onTimerFired:(double)arg1;

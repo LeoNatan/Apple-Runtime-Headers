@@ -22,9 +22,9 @@
 }
 
 + (id)_analysisQ;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isIrisIndicatorActive) _Bool irisIndicatorActive; // @synthesize irisIndicatorActive=_irisIndicatorActive;
 @property(nonatomic, getter=isShowingGrid) _Bool showingGrid; // @synthesize showingGrid=_showingGrid;
-- (void).cxx_destruct;
 - (void)_updateImageToBlur;
 - (void)_updateNoPhotosState;
 - (_Bool)_preloadNextPhoto;

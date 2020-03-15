@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL didEndDisplaying; // @synthesize didEndDisplaying=_didEndDisplaying;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (id)initWithIndexPath:(id)arg1 didEndDisplaying:(BOOL)arg2;
 
 @end

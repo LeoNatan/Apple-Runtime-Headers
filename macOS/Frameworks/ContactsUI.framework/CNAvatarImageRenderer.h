@@ -14,9 +14,9 @@
     id <CNScheduler> _backgroundScheduler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> backgroundScheduler; // @synthesize backgroundScheduler=_backgroundScheduler;
 @property(readonly, nonatomic) id <CNUILikenessRendering> renderer; // @synthesize renderer=_renderer;
-- (void).cxx_destruct;
 - (id)runScopeBasedImageObservable:(CDUnknownBlockType)arg1 scope:(id)arg2 imageHandler:(CDUnknownBlockType)arg3;
 - (id)renderedMonogramObservableForString:(id)arg1 scope:(id)arg2;
 - (id)renderMonogramForString:(id)arg1 scope:(id)arg2 imageHandler:(CDUnknownBlockType)arg3;

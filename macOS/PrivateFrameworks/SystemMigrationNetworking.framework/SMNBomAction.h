@@ -38,6 +38,7 @@
 + (BOOL)shouldCloseOutboundStreamWhenDone;
 + (BOOL)streamsResults;
 + (int)actionID;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *resumeQueue; // @synthesize resumeQueue=_resumeQueue;
 @property(retain) NSObject<OS_dispatch_source> *watchdogSource; // @synthesize watchdogSource=_watchdogSource;
 @property(retain) NSObject<OS_dispatch_queue> *atomicQueue; // @synthesize atomicQueue=_atomicQueue;
@@ -57,7 +58,6 @@
 @property __weak NSObject *bomCallbacksDelegate; // @synthesize bomCallbacksDelegate=_bomCallbacksDelegate;
 @property(retain) NSString *compressionLevel; // @synthesize compressionLevel=_compressionLevel;
 @property int returnCode; // @synthesize returnCode;
-- (void).cxx_destruct;
 - (BOOL)_writeCompletelyToFd:(int)arg1 buffer:(const void *)arg2 length:(unsigned long long)arg3;
 - (BOOL)_readCompletelyFromFd:(int)arg1 buffer:(void *)arg2 length:(unsigned long long)arg3;
 - (id)_indexBomPathForRegularFile:(id)arg1;

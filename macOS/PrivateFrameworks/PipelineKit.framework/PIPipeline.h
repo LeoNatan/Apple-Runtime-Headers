@@ -44,9 +44,9 @@
 + (id)pipelineWithConcurrencyLimit:(long long)arg1 qualityOfService:(long long)arg2;
 + (id)pipeline;
 + (id)sharedPipeline;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak PIPipeline *mainPipeline; // @synthesize mainPipeline=_mainPipeline;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_queueForOperation:(id)arg1;
 - (id)_nextValidOperation;

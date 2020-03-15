@@ -29,9 +29,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property BOOL preferImmediateRecovery; // @synthesize preferImmediateRecovery=_preferImmediateRecovery;
 @property(readonly) Protocol *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 @property(readonly) id remoteObjectProxy;

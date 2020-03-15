@@ -20,6 +20,7 @@
     FCFeedViewportDiff *_resultDiff;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFeedViewportDiff *resultDiff; // @synthesize resultDiff=_resultDiff;
 @property(retain, nonatomic) FCFeedViewport *resultViewport; // @synthesize resultViewport=_resultViewport;
 @property(copy, nonatomic) CDUnknownBlockType refreshCompletionHandler; // @synthesize refreshCompletionHandler=_refreshCompletionHandler;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) FCFeedViewport *viewport; // @synthesize viewport=_viewport;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)_continueWithRefreshDate:(id)arg1 forYouConfig:(id)arg2;
 - (void)performOperation;

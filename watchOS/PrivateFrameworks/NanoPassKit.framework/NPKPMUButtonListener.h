@@ -15,10 +15,10 @@
     NSObject<OS_dispatch_queue> *_hidSystemQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *hidSystemQueue; // @synthesize hidSystemQueue=_hidSystemQueue;
 @property(nonatomic) struct __IOHIDEventSystemClient *hidSystemClient; // @synthesize hidSystemClient=_hidSystemClient;
 @property(copy, nonatomic) CDUnknownBlockType buttonHandler; // @synthesize buttonHandler=_buttonHandler;
-- (void).cxx_destruct;
 - (void)_handleButtonEvent:(struct __IOHIDEvent *)arg1;
 - (void)_initializeHIDClient;
 - (void)dealloc;

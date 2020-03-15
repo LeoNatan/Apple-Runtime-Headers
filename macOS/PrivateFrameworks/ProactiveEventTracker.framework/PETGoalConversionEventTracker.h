@@ -14,9 +14,9 @@
     NSString *_conversionEvent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *conversionEvent; // @synthesize conversionEvent=_conversionEvent;
 @property(readonly, nonatomic) NSString *opportunityEvent; // @synthesize opportunityEvent=_opportunityEvent;
-- (void).cxx_destruct;
 - (id)_keyMetadataForEvent:(id)arg1;
 - (void)_logValue:(id)arg1 forEvent:(id)arg2 stringifiedProperties:(id)arg3 metaData:(id)arg4;
 - (void)trackGoalOpportunityEventWithConversion:(BOOL)arg1 propertyValues:(id)arg2;

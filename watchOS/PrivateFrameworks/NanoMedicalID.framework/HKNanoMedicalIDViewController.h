@@ -20,12 +20,12 @@
     _HKMedicalIDData *_medicalIDData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HKMedicalIDData *medicalIDData; // @synthesize medicalIDData=_medicalIDData;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) NSMutableArray *models; // @synthesize models=_models;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (void)_enableStateChangedTo:(_Bool)arg1;
 - (void)_deleteMedicalID;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

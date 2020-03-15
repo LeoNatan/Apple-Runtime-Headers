@@ -14,7 +14,7 @@
         _Bool didAutoscrollWithTimestamp;
     } _delegateRespondsTo;
     _Bool __repeating;
-    struct NSObject *_scrollView;
+    NSObject<PXAnonymousScrollView> *_scrollView;
     id <PXAutoScrollerDelegate> _delegate;
     double __margin;
     double __maximumSpeed;
@@ -22,6 +22,7 @@
     struct CGPoint __autoscrollDirection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLastUpdateTimestamp:) double _lastUpdateTimestamp; // @synthesize _lastUpdateTimestamp=__lastUpdateTimestamp;
 @property(nonatomic, getter=_isRepeating, setter=_setRepeating:) _Bool _repeating; // @synthesize _repeating=__repeating;
 @property(nonatomic, setter=_setAutoscrollDirection:) struct CGPoint _autoscrollDirection; // @synthesize _autoscrollDirection=__autoscrollDirection;
@@ -29,15 +30,14 @@
 @property(readonly, nonatomic) double _margin; // @synthesize _margin=__margin;
 @property(nonatomic) __weak id <PXAutoScrollerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<PXAnonymousScrollView> *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (_Bool)autoscrollWithOffset:(struct CGPoint)arg1;
 - (void)stopRepeating;
 - (void)startRepeating;
-- (struct CGRect)visibleRectForScrollView:(struct NSObject *)arg1;
+- (struct CGRect)visibleRectForScrollView:(id)arg1;
 - (void)updateWithTimestamp:(double)arg1;
 - (void)stop;
 - (void)updateWithUserInteractionLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
-- (id)initWithTargetScrollView:(struct NSObject *)arg1;
+- (id)initWithTargetScrollView:(id)arg1;
 - (id)init;
 
 @end

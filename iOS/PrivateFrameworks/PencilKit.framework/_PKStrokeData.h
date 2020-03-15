@@ -26,13 +26,13 @@
 + (void)_calculateOffsets:(unsigned long long *)arg1 sizes:(unsigned long long *)arg2;
 + (void)calculateOffsets;
 + (id)strokeDataFromDataArchive:(const struct StrokeData *)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *_strokeDataUUID; // @synthesize _strokeDataUUID;
 @property(readonly, nonatomic) double _timestamp; // @synthesize _timestamp;
 @property(readonly, nonatomic) long long _inputType; // @synthesize _inputType;
 @property(readonly, nonatomic) unsigned long long _startIndex; // @synthesize _startIndex;
 @property(readonly, nonatomic) unsigned long long _immutablePointsCount; // @synthesize _immutablePointsCount;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct PKCompressedStrokePoint)pointAt:(unsigned long long)arg1;
 - (void)setPointsFrom:(id)arg1 range:(struct _NSRange)arg2;
 - (void)setPoints:(struct PKCompressedStrokePoint *)arg1 pointsCount:(unsigned long long)arg2;

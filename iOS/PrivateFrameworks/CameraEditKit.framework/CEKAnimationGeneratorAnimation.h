@@ -14,11 +14,11 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)initWithStartTime:(double)arg1 duration:(double)arg2 updateHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 @end

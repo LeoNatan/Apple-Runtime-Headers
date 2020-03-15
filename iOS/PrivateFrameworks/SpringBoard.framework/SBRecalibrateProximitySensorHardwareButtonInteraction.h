@@ -17,9 +17,9 @@
     SBProximitySensorManager *_sensorManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didResetProxCalibration; // @synthesize didResetProxCalibration=_didResetProxCalibration;
 @property(retain, nonatomic) SBProximitySensorManager *sensorManager; // @synthesize sensorManager=_sensorManager;
-- (void).cxx_destruct;
 - (id)hardwareButtonGestureParameters;
 - (_Bool)disallowsLongPressForReason:(id *)arg1;
 - (_Bool)disallowsTriplePressForReason:(id *)arg1;

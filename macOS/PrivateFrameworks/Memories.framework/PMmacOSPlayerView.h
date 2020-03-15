@@ -11,8 +11,8 @@
     NSView *_playerView;
 }
 
-@property(nonatomic) __weak NSView *playerView; // @synthesize playerView=_playerView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSView *playerView; // @synthesize playerView=_playerView;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;

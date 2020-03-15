@@ -18,10 +18,10 @@
 + (id)imageDataDescriptions;
 + (id)unifyContacts:(id)arg1;
 + (void)freezeIfInstancetypeIsImmutable:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(copy, nonatomic) NSData *cropRectHash; // @synthesize cropRectHash=_cropRectHash;
 @property(copy, nonatomic) NSString *cropRectID; // @synthesize cropRectID=_cropRectID;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *linkedContacts; // @dynamic linkedContacts;
 @property(copy, nonatomic) CNContactKeyVector *availableKeyDescriptor;
 @property(copy, nonatomic) CNContact *snapshot; // @dynamic snapshot;

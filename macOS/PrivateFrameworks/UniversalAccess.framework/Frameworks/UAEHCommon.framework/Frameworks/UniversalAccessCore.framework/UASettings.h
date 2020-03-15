@@ -17,12 +17,12 @@
     NSMutableArray *__orderedPropertiesToUndo;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _performingUndoableModifications; // @synthesize _performingUndoableModifications=__performingUndoableModifications;
 @property(retain, nonatomic) NSMutableArray *_orderedPropertiesToUndo; // @synthesize _orderedPropertiesToUndo=__orderedPropertiesToUndo;
 @property(retain, nonatomic) NSMutableDictionary *_propertiesToUndoAndTheirOriginalValues; // @synthesize _propertiesToUndoAndTheirOriginalValues=__propertiesToUndoAndTheirOriginalValues;
 @property(retain, nonatomic) AXFThrottler *_notificationPostingThrottler; // @synthesize _notificationPostingThrottler=__notificationPostingThrottler;
 @property(retain, nonatomic) NSUserDefaults *universalAccessUserDefaults; // @synthesize universalAccessUserDefaults=_universalAccessUserDefaults;
-- (void).cxx_destruct;
 - (void)_postSettingsDidChangeNotification:(id)arg1;
 - (void)registerOriginalValue:(id)arg1 forPropertyIfNotYetRegistered:(SEL)arg2;
 - (void)postSettingsDidChangeNotification:(id)arg1;

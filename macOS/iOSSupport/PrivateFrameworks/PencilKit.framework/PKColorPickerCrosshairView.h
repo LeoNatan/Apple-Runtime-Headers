@@ -19,13 +19,13 @@
     _PKColorPickerCrosshairCornerMaskView *_cornerEdgeMaskView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PKColorPickerCrosshairCornerMaskView *cornerEdgeMaskView; // @synthesize cornerEdgeMaskView=_cornerEdgeMaskView;
 @property(retain, nonatomic) _PKColorPickerSimpleCrosshairView *cornerEdgeView; // @synthesize cornerEdgeView=_cornerEdgeView;
 @property(retain, nonatomic) _PKColorPickerCrosshairCornerMaskView *baseMaskView; // @synthesize baseMaskView=_baseMaskView;
 @property(retain, nonatomic) _PKColorPickerSimpleCrosshairView *baseView; // @synthesize baseView=_baseView;
 @property(nonatomic) unsigned long long cornerPosition; // @synthesize cornerPosition=_cornerPosition;
 @property(nonatomic) __weak id <PKColorPickerCrosshairViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)update;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

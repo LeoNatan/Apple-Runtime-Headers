@@ -16,11 +16,11 @@
     NSImage *_playedWaveform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *playedWaveform; // @synthesize playedWaveform=_playedWaveform;
 @property(retain, nonatomic) NSImage *unplayedWaveform; // @synthesize unplayedWaveform=_unplayedWaveform;
 @property(retain, nonatomic) NSLayoutConstraint *waveformWidthLayoutConstraint; // @synthesize waveformWidthLayoutConstraint=_waveformWidthLayoutConstraint;
 @property(retain, nonatomic) NSImage *waveform; // @synthesize waveform=_waveform;
-- (void).cxx_destruct;
 - (void)clearWaveform;
 - (void)drawRect:(struct CGRect)arg1;
 

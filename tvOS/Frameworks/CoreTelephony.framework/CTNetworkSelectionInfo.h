@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CTNetwork *selection; // @synthesize selection=_selection;
 @property(nonatomic) unsigned long long selectionMode; // @synthesize selectionMode=_selectionMode;
 @property(nonatomic) unsigned long long selectionState; // @synthesize selectionState=_selectionState;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

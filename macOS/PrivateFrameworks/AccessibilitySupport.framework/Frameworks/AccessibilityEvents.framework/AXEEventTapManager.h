@@ -26,6 +26,7 @@
 + (id)sharedSessionTapManager;
 + (id)sharedHIDTapManager;
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXEEventTap *_activeEventTap; // @synthesize _activeEventTap=__activeEventTap;
 @property(retain, nonatomic) AXEEventTap *_passiveEventTap; // @synthesize _passiveEventTap=__passiveEventTap;
 @property(copy, nonatomic) NSArray *_activeListeners; // @synthesize _activeListeners=__activeListeners;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSLock *_listenerLock; // @synthesize _listenerLock=__listenerLock;
 @property(readonly, nonatomic) unsigned int _tapPlacement; // @synthesize _tapPlacement=__tapPlacement;
 @property(readonly, nonatomic) unsigned long long location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)_recreateEventTapAsNeededForListenerWrappers:(id)arg1 listenOnly:(BOOL)arg2;
 - (id)_createEventTapWithEventsOfInterest:(unsigned long long)arg1 listenOnly:(BOOL)arg2;
 - (id)_findWrapperForListener:(void *)arg1 inListeners:(id)arg2;

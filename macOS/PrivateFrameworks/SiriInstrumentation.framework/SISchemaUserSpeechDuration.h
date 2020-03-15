@@ -14,9 +14,9 @@
     NSString *_resultCandidateId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resultCandidateId; // @synthesize resultCandidateId=_resultCandidateId;
 @property(nonatomic) long long durationMs; // @synthesize durationMs=_durationMs;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

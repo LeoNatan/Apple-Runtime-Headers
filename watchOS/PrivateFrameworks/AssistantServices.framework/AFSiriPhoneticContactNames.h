@@ -18,13 +18,13 @@
     NSString *_languageCode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(copy, nonatomic) NSString *organizationName; // @synthesize organizationName=_organizationName;
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 @property(copy, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(copy, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-- (void).cxx_destruct;
 - (id)spokenName;
 
 @end

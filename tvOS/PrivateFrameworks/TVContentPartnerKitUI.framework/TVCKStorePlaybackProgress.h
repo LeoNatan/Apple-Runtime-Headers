@@ -40,6 +40,7 @@
 + (double)_elapsedTimeForLookupItems:(id)arg1;
 + (_Bool)_shouldDetermineStatusForLookupItem:(id)arg1 withShowInfo:(id)arg2 hasBeenAcquired:(_Bool)arg3;
 + (_Bool)_hasBeenMarkedAsUnwatchedForLookupItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TVCKStorePlaybackProgressDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSSet *bookmarkKeys; // @synthesize bookmarkKeys=_bookmarkKeys;
 @property(readonly, nonatomic) _Bool assumePurchased; // @synthesize assumePurchased=_assumePurchased;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) long long unwatchedUnitCount; // @synthesize unwatchedUnitCount=_unwatchedUnitCount;
 @property(readonly, nonatomic) long long totalUnitCount; // @synthesize totalUnitCount=_totalUnitCount;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool canMarkAsUnwatched;
 @property(readonly, nonatomic) _Bool canMarkAsWatched;

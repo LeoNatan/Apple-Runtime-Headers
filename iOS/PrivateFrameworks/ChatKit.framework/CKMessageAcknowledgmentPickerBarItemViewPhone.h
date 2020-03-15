@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CALayer *_selectionLayer;
 }
 
-@property(retain, nonatomic) CALayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;
 

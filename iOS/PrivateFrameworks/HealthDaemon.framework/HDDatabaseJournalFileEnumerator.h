@@ -22,11 +22,11 @@
     id <HDDatabaseJournalFileEnumeratorTestsDelegate> _unitTestDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HDDatabaseJournalFileEnumeratorTestsDelegate> unitTestDelegate; // @synthesize unitTestDelegate=_unitTestDelegate;
 @property(retain, nonatomic) NSMutableArray *openJournalFiles; // @synthesize openJournalFiles=_openJournalFiles;
 @property(retain, nonatomic) NSMutableArray *remainingJournalFileNames; // @synthesize remainingJournalFileNames=_remainingJournalFileNames;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)setMaxAllowedOpenFileHandleCount:(long long)arg1;
 - (long long)maxAllowedOpenFileHandleCount;
 - (unsigned long long)_totalOpenFileHandleCount;

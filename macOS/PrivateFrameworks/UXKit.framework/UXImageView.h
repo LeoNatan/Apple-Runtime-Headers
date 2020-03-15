@@ -21,12 +21,12 @@
     NSImage *_highlightedImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) NSImage *highlightedImage; // @synthesize highlightedImage=_highlightedImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(nonatomic) BOOL allowsVibrancy; // @synthesize allowsVibrancy=_allowsVibrancy;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel;
-- (void).cxx_destruct;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)sizeToFit;
 - (void)_updateForCurrentImage;

@@ -14,9 +14,9 @@
     NSCache *_recentlyUsedItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *recentlyUsedItems; // @synthesize recentlyUsedItems=_recentlyUsedItems;
 @property(readonly, nonatomic) NSMapTable *cachedThumbnailItems; // @synthesize cachedThumbnailItems=_cachedThumbnailItems;
-- (void).cxx_destruct;
 - (void)clear;
 - (id)init;
 

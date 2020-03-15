@@ -28,10 +28,10 @@
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(retain, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 @property(readonly, nonatomic) PKPaymentVerificationController *verificationController; // @synthesize verificationController=_verificationController;
-- (void).cxx_destruct;
 - (void)_showActivationError:(id)arg1;
 - (void)_showCompletedUIForPass:(id)arg1;
 - (void)_terminateFlow;

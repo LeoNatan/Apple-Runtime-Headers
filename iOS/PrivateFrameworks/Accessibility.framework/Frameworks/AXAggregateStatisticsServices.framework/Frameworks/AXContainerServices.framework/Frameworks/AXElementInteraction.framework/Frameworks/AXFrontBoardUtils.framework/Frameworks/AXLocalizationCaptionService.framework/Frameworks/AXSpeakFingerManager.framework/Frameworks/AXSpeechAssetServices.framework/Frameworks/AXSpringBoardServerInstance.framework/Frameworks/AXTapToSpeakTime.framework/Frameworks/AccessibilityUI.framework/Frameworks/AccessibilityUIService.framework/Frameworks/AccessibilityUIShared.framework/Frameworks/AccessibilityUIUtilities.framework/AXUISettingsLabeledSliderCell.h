@@ -17,12 +17,12 @@
     UILabel *_rightLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool segmented; // @synthesize segmented=_segmented;
 @property(retain, nonatomic) UILabel *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(retain, nonatomic) UIView *rightView; // @synthesize rightView=_rightView;
 @property(retain, nonatomic) UISlider *sliderView; // @synthesize sliderView=_sliderView;
 @property(retain, nonatomic) UIView *leftView; // @synthesize leftView=_leftView;
-- (void).cxx_destruct;
 - (double)initialValue;
 - (double)minimumValue;
 - (double)maximumValue;

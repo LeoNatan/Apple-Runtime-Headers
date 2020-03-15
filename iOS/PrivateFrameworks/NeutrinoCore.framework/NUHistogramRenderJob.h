@@ -18,8 +18,8 @@
     id <NUScalePolicy> _scalePolicy;
 }
 
-- (id)scalePolicy;
 - (void).cxx_destruct;
+- (id)scalePolicy;
 - (void)cleanUp;
 - (id)result;
 - (_Bool)complete:(out id *)arg1;

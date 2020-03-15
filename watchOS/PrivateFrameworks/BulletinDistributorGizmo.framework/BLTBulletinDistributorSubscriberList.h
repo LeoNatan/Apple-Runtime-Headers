@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableArray *subscribers; // @synthesize subscribers=_subscribers;
-- (void).cxx_destruct;
 - (void)_removeSubscribersWithMachServiceName:(id)arg1 exceptFor:(id)arg2;
 - (void)subscriber:(id)arg1 subscribedWithMachServiceName:(id)arg2;
 - (_Bool)hasSubscribersForSectionID:(id)arg1;

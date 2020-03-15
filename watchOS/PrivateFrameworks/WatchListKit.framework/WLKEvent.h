@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(readonly, nonatomic) NSNumber *cleanupTime; // @synthesize cleanupTime=_cleanupTime;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSString *externalPlayableID; // @synthesize externalPlayableID=_externalPlayableID;
 @property(readonly, nonatomic) NSString *legID; // @synthesize legID=_legID;
 @property(readonly, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

@@ -35,6 +35,7 @@
     unsigned long long _txRetransmitBytes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long txRetransmitBytes; // @synthesize txRetransmitBytes=_txRetransmitBytes;
 @property(copy, nonatomic) NSString *statsType; // @synthesize statsType=_statsType;
 @property(nonatomic) unsigned long long wiredTXPackets; // @synthesize wiredTXPackets=_wiredTXPackets;
@@ -55,7 +56,6 @@
 @property(nonatomic) unsigned long long cellTXPackets; // @synthesize cellTXPackets=_cellTXPackets;
 @property(nonatomic) unsigned long long cellRXPackets; // @synthesize cellRXPackets=_cellRXPackets;
 @property(nonatomic) unsigned int avgRTT; // @synthesize avgRTT=_avgRTT;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

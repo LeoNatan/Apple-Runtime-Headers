@@ -23,6 +23,7 @@
     PKPackageInfo *_packageInfo;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldDownload; // @synthesize shouldDownload=_shouldDownload;
 @property(retain) PKPackageInfo *packageInfo; // @synthesize packageInfo=_packageInfo;
 @property(retain) NSString *version; // @synthesize version=_version;
@@ -34,7 +35,6 @@
 @property(retain) NSString *digest; // @synthesize digest=_digest;
 @property(retain) NSNumber *size; // @synthesize size=_size;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 @property(readonly) PKPackageReference *packageReference;
 
 @end

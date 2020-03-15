@@ -26,6 +26,7 @@
     long long _currentOrientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(nonatomic) _Bool pauseDeferrals; // @synthesize pauseDeferrals=_pauseDeferrals;
 @property(retain, nonatomic) id <BSInvalidatable> predicateInvalidationHandler; // @synthesize predicateInvalidationHandler=_predicateInvalidationHandler;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) AFUISceneController *sceneController; // @synthesize sceneController=_sceneController;
 @property(readonly, nonatomic) AFUISceneConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) long long deferralMode; // @synthesize deferralMode=_deferralMode;
-- (void).cxx_destruct;
 - (_Bool)_hasScene;
 - (void)sceneController:(id)arg1 sceneDidUpdateClientSettings:(id)arg2;
 - (void)sceneController:(id)arg1 sceneWasInvalidated:(id)arg2 forReason:(unsigned long long)arg3;

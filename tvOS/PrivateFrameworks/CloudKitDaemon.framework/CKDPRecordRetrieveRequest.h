@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldFailBatch; // @synthesize shouldFailBatch=_shouldFailBatch;
 @property(retain, nonatomic) CKDPAssetsToDownload *assetsToDownload; // @synthesize assetsToDownload=_assetsToDownload;
 @property(retain, nonatomic) CKDPRecordRetrieveRequestRetrieveAssetURL *getAssetURL; // @synthesize getAssetURL=_getAssetURL;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *versionETag; // @synthesize versionETag=_versionETag;
 @property(retain, nonatomic) CKDPRequestedFields *requestedFields; // @synthesize requestedFields=_requestedFields;
 @property(retain, nonatomic) CKDPRecordIdentifier *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

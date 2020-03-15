@@ -20,10 +20,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)tokenForKeyboardState:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int shiftState; // @synthesize shiftState=_shiftState;
 @property(readonly, nonatomic) TIDocumentState *documentState; // @synthesize documentState=_documentState;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)shortIdentifier;
 - (id)description;
 - (BOOL)isSameRequestAs:(id)arg1;

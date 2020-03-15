@@ -18,9 +18,9 @@
 + (id)purchaseQueueForIdentifier:(id)arg1;
 + (void)_resumeTransactionWithResumeData:(id)arg1 storeResponse:(id)arg2;
 + (void)_cancelTransactionWithResumeData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) _CKPurchaseQueueDelegateWrapper *delegateWrapper; // @synthesize delegateWrapper=_delegateWrapper;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)cancelTransactionGroup:(id)arg1;
 - (void)cancelTransaction:(id)arg1;
 - (id)addPurchases:(id)arg1;

@@ -20,9 +20,9 @@
 }
 
 + (Class)setupFieldsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *setupFields; // @synthesize setupFields=_setupFields;
 @property(nonatomic) _Bool cameraFirstProvisioningEnabled; // @synthesize cameraFirstProvisioningEnabled=_cameraFirstProvisioningEnabled;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

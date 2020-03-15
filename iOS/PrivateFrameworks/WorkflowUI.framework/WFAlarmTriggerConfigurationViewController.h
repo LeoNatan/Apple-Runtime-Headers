@@ -19,10 +19,10 @@
     MTAlarmDataSource *_alarmDataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MTAlarmDataSource *alarmDataSource; // @synthesize alarmDataSource=_alarmDataSource;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)alarmChooserViewControllerDidCancel:(id)arg1;
 - (void)alarmChooserViewController:(id)arg1 didFinishWithChosenAlarms:(id)arg2;
 - (void)presentAlarmChooserViewController;

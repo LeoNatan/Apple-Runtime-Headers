@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PVEffect *_generatorEffect;
 }
 
-@property(retain, nonatomic) PVEffect *generatorEffect; // @synthesize generatorEffect=_generatorEffect;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PVEffect *generatorEffect; // @synthesize generatorEffect=_generatorEffect;
 - (void)validateEffectRange:(CDStruct_e83c9415)arg1 inProject:(id)arg2;
 - (int)maxDuration;
 - (void)setContentsFromPlist:(id)arg1 inProject:(id)arg2;

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     UIView *_currentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *currentView; // @synthesize currentView=_currentView;
 @property(retain, nonatomic) UIView *pendingView; // @synthesize pendingView=_pendingView;
 @property(retain, nonatomic) IKViewElement *deckElement; // @synthesize deckElement=_deckElement;
 @property(copy, nonatomic) CDUnknownBlockType didDissolveBlock; // @synthesize didDissolveBlock=_didDissolveBlock;
 @property(nonatomic, getter=isDissolving) _Bool dissolving; // @synthesize dissolving=_dissolving;
-- (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_resumePreview;

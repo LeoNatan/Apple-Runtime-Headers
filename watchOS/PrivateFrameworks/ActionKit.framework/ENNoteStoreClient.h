@@ -18,12 +18,12 @@
 }
 
 + (id)noteStoreClientWithUrl:(id)arg1 authenticationToken:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cachedAuthenticationToken; // @synthesize cachedAuthenticationToken=_cachedAuthenticationToken;
 @property(copy, nonatomic) NSString *cachedNoteStoreUrl; // @synthesize cachedNoteStoreUrl=_cachedNoteStoreUrl;
 @property(retain, nonatomic) EDAMNoteStoreClient *client; // @synthesize client=_client;
 @property(copy, nonatomic) CDUnknownBlockType downloadProgressHandler; // @synthesize downloadProgressHandler=_downloadProgressHandler;
 @property(copy, nonatomic) CDUnknownBlockType uploadProgressHandler; // @synthesize uploadProgressHandler=_uploadProgressHandler;
-- (void).cxx_destruct;
 - (void)setSharedNotebookRecipientSettingsWithSharedNotebookId:(long long)arg1 recipientSettings:(id)arg2 success:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
 - (void)updateSharedNotebook:(id)arg1 success:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 - (void)authenticateToSharedNoteWithGuid:(id)arg1 noteKey:(id)arg2 authenticationToken:(id)arg3 success:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;

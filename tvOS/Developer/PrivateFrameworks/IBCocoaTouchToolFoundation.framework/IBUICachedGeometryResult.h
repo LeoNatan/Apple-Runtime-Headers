@@ -14,8 +14,8 @@
     NSObject<IBBinaryArchiving> *_value;
 }
 
-@property(readonly, nonatomic) NSObject<IBBinaryArchiving> *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<IBBinaryArchiving> *value; // @synthesize value=_value;
 - (id)description;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

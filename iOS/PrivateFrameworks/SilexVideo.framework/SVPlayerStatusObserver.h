@@ -19,12 +19,12 @@
     long long _status;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) SVKeyValueObserver *statusObserver; // @synthesize statusObserver=_statusObserver;
 @property(readonly, nonatomic) SVPlayer *player; // @synthesize player=_player;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 - (id)initWithPlayer:(id)arg1;
 
 // Remaining properties

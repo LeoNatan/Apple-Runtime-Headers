@@ -30,6 +30,7 @@
 + (id)interfaceAddress:(struct ifaddrs *)arg1 eflags:(unsigned long long)arg2 v6flags:(int)arg3 iftype:(int)arg4;
 + (id)interfaceAddressWithTransmittedBytes:(char *)arg1 length:(long long)arg2 withLocalInterfaceName:(id)arg3;
 + (id)BSSIDWithInterfaceName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool constrained; // @synthesize constrained=_constrained;
 @property(readonly, nonatomic) _Bool expensive; // @synthesize expensive=_expensive;
 @property(readonly, getter=isCompanionLink) _Bool companionLink; // @synthesize companionLink=_companionLink;
@@ -45,7 +46,6 @@
 @property(readonly) IDSSockAddrWrapper *netmask; // @synthesize netmask=_netmask;
 @property(copy) IDSSockAddrWrapper *external; // @synthesize external=_external;
 @property(readonly) IDSSockAddrWrapper *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)initWithInterfaceAddress:(struct ifaddrs *)arg1 bflags:(unsigned char)arg2 bssid:(char *)arg3 bssidLength:(unsigned char)arg4;
 - (long long)getTransmittableBytes:(char *)arg1 withPrefixByte:(unsigned char)arg2;
 @property(readonly) unsigned long long IPVersion;

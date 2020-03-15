@@ -14,8 +14,8 @@
 }
 
 + (id)textContentProviderWithText:(id)arg1;
-@property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -15,10 +15,10 @@
     NSMutableDictionary *_backgroundColorsByState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *backgroundColorsByState; // @synthesize backgroundColorsByState=_backgroundColorsByState;
 @property(nonatomic) BOOL derivesBackgroundColorFromTintColor; // @synthesize derivesBackgroundColorFromTintColor=_derivesBackgroundColorFromTintColor;
 @property(nonatomic) BOOL derivesTitleColorFromTintColor; // @synthesize derivesTitleColorFromTintColor=_derivesTitleColorFromTintColor;
-- (void).cxx_destruct;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;

@@ -13,7 +13,6 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (_Bool)_isTransparentFocusRegion;
 - (id)_iosAccessibilityAttributeValue:(long long)arg1;
 - (_Bool)accessibilityElementsHidden;
 - (unsigned int)_accessibilityContextId;

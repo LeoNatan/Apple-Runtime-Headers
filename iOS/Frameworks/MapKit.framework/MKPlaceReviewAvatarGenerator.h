@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     CNAvatarImageRenderer *_monogrammer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNAvatarImageRenderer *monogrammer; // @synthesize monogrammer=_monogrammer;
 @property(nonatomic) __weak id <MKInfoCardTheme> theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (void)avatarForReview:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)monogramForReviewerName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;

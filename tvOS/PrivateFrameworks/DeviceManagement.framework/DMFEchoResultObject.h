@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resultStatus; // @synthesize resultStatus=_resultStatus;
 @property(copy, nonatomic) NSString *echo; // @synthesize echo=_echo;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

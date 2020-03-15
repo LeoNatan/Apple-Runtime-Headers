@@ -19,9 +19,9 @@
 
 + (void)setDefaultDatabase:(id)arg1;
 + (id)defaultDatabase;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WFDatabaseBackingStore> backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)duplicateNameErrorWithName:(id)arg1;

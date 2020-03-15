@@ -33,6 +33,7 @@
 + (id)applicationBundleID;
 + (int)activityCategory;
 + (unsigned int)_xpcAttributes;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasValidAccountForSending; // @synthesize hasValidAccountForSending=_hasValidAccountForSending;
 @property(nonatomic) _Bool hasAnyAccount; // @synthesize hasAnyAccount=_hasAnyAccount;
 @property(retain, nonatomic) MFMailComposeViewController *mailComposeViewController; // @synthesize mailComposeViewController=_mailComposeViewController;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(copy, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
-- (void).cxx_destruct;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)_cleanup;

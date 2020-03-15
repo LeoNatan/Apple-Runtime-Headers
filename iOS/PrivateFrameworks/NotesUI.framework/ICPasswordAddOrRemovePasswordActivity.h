@@ -17,11 +17,11 @@
 }
 
 + (long long)activityCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindow *displayWindow; // @synthesize displayWindow=_displayWindow;
 @property(retain, nonatomic) ICNote *note; // @synthesize note=_note;
 @property(copy, nonatomic) CDUnknownBlockType willPerformActivityBlock; // @synthesize willPerformActivityBlock=_willPerformActivityBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)accessibilityAnnounceAddOrRemovePasswordWithIntent:(unsigned long long)arg1 withNote:(id)arg2;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_systemImageName;

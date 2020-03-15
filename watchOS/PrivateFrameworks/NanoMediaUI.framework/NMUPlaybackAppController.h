@@ -16,10 +16,10 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICNavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) Class nowPlayingViewControllerClass; // @synthesize nowPlayingViewControllerClass=_nowPlayingViewControllerClass;
 @property(retain, nonatomic) Class playbackIntentClass; // @synthesize playbackIntentClass=_playbackIntentClass;
-- (void).cxx_destruct;
 - (_Bool)_handleIntent:(id)arg1 userActivity:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)continueUserActivity:(id)arg1;
 - (void)handleIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

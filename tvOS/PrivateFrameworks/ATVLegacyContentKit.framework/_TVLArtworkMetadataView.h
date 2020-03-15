@@ -16,11 +16,11 @@
     TVLStarRatingView *_starRatingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLStarRatingView *starRatingView; // @synthesize starRatingView=_starRatingView;
 @property(retain, nonatomic) TVLMediaBadgesView *mediaBadgesView; // @synthesize mediaBadgesView=_mediaBadgesView;
 @property(retain, nonatomic) NSMutableArray *metadataLabels; // @synthesize metadataLabels=_metadataLabels;
 @property(copy, nonatomic) NSArray *metadataArray; // @synthesize metadataArray=_metadataArray;
-- (void).cxx_destruct;
 - (id)defaultMetadataValueLabel;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

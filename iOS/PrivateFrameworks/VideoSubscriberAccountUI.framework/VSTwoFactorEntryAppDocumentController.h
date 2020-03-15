@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_buttonElements;
 }
 
-@property(retain, nonatomic) NSMutableArray *buttonElements; // @synthesize buttonElements=_buttonElements;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *buttonElements; // @synthesize buttonElements=_buttonElements;
 - (void)twoFactorEntryViewModel:(id)arg1 didPressButtonAtIndex:(unsigned long long)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (_Bool)_updateTwoFactorEntryViewModel:(id)arg1 withTemplate:(id)arg2 error:(id *)arg3;

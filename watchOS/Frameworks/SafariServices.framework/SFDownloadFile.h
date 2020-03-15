@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     NSData *_bookmarkData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *bookmarkData; // @synthesize bookmarkData=_bookmarkData;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) __weak id <SFDownloadFileDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)presentedItemDidChange;
 - (void)presentedItemDidMoveToURL:(id)arg1;

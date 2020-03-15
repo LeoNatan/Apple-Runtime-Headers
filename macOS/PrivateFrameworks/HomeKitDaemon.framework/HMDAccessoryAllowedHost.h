@@ -17,8 +17,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)allowedHostsFromJSONFirewallWANRules:(id)arg1;
-@property(readonly) NSString *jsonWANRule; // @synthesize jsonWANRule=_jsonWANRule;
 - (void).cxx_destruct;
+@property(readonly) NSString *jsonWANRule; // @synthesize jsonWANRule=_jsonWANRule;
 - (id)attributeDescriptions;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -13,8 +13,8 @@
     MFMailMessageLibrary *_library;
 }
 
-@property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 - (long long)mailboxIDForMailboxURL:(id)arg1 useNumericSearch:(_Bool *)arg2 supportsLabels:(_Bool *)arg3;
 - (id)initWithLibrary:(id)arg1 database:(id)arg2;
 

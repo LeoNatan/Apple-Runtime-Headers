@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSImage *_image;
 }
 
-@property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 - (void)setImage:(id)arg1 animated:(BOOL)arg2;
 - (id)_animationWithKeyPath:(id)arg1 fromValue:(id)arg2;
 - (id)_createImageLayer;

@@ -22,6 +22,7 @@
     unsigned long long _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
@@ -29,7 +30,6 @@
 @property(retain) NSArray *possibleProducts; // @synthesize possibleProducts=_possibleProducts;
 @property(retain) PKPaymentSetupProduct *selectedProduct; // @synthesize selectedProduct=_selectedProduct;
 @property(nonatomic) __weak PKPaymentSetupViewController *setupVC; // @synthesize setupVC=_setupVC;
-- (void).cxx_destruct;
 - (id)nibBundle;
 - (void)radioButtonAction:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

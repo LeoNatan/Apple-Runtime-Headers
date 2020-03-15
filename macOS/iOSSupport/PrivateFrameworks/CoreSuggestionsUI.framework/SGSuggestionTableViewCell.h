@@ -37,9 +37,9 @@
 + (id)descriptionFont;
 + (id)titleFont;
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SGSuggestionTableViewController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) id <SGSuggestion> suggestion; // @synthesize suggestion=_suggestion;
-- (void).cxx_destruct;
 - (void)_updateCurrentAppearance;
 - (id)_backgroundColor;
 - (id)_titleColor;

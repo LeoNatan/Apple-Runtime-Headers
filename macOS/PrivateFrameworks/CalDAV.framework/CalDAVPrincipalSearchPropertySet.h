@@ -14,8 +14,8 @@
 }
 
 + (id)searchSetWithProperties:(id)arg1;
-@property(retain, nonatomic) NSSet *stringProperties; // @synthesize stringProperties=_stringProperties;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *stringProperties; // @synthesize stringProperties=_stringProperties;
 - (BOOL)isEqualToPropertySet:(id)arg1;
 @property(readonly, nonatomic) BOOL supportsPropertySearch;
 - (BOOL)supportsWellKnownType:(int)arg1;

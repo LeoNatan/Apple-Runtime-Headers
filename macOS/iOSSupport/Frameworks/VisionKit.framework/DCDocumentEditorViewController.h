@@ -32,6 +32,7 @@
 + (id)activityTypeOrder;
 + (id)docInfoCollectionFromScannedDocument:(id)arg1 imageCache:(id)arg2;
 + (BOOL)isAvailable;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sourceViewForZoomTransition; // @synthesize sourceViewForZoomTransition=_sourceViewForZoomTransition;
 @property(retain, nonatomic) UIImage *unfilteredImageForRecrop; // @synthesize unfilteredImageForRecrop=_unfilteredImageForRecrop;
 @property(retain, nonatomic) UIImage *filteredImageForRecrop; // @synthesize filteredImageForRecrop=_filteredImageForRecrop;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) VNDocumentCameraScan *scannedDocument; // @synthesize scannedDocument=_scannedDocument;
 @property(nonatomic) __weak id <DCDocumentEditorViewControllerDelegate> docCamDelegate; // @synthesize docCamDelegate=_docCamDelegate;
 @property(retain, nonatomic) ICDocCamExtractedDocumentViewController *extractedDocumentController; // @synthesize extractedDocumentController=_extractedDocumentController;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)scanDataDelegateWithIdentifier:(id)arg1;

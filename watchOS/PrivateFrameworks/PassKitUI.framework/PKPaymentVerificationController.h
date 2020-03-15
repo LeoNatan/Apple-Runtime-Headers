@@ -30,6 +30,7 @@
     PKPassView *_passView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPassView *passView; // @synthesize passView=_passView;
 @property(retain, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 @property(readonly, nonatomic) PKVerificationRequestRecord *verificationRecord; // @synthesize verificationRecord=_verificationRecord;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) __weak id <PKPaymentVerificationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)_downloadAndAddPassWithCompletion:(CDUnknownBlockType)arg1;
 - (void)submitVerificationCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performVerificationUpdateRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

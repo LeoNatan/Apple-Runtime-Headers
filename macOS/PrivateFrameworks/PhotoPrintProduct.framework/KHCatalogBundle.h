@@ -24,10 +24,10 @@
 }
 
 + (id)languageSpecificCountryCodes;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *allKey; // @synthesize allKey=_allKey;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSMutableDictionary *rootDictionary; // @synthesize rootDictionary=_rootDictionary;
-- (void).cxx_destruct;
 - (id)themePreviewVersionForThemePreviewIdentifier:(id)arg1;
 - (id)themeVersionForThemePreviewIdentifier:(id)arg1;
 - (BOOL)isPreviewBundleIdentifierLocal:(id)arg1;

@@ -16,9 +16,9 @@
     HUTVViewingProfilesDevicesModuleController *_tvpDevicesModuleController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUTVViewingProfilesDevicesModuleController *tvpDevicesModuleController; // @synthesize tvpDevicesModuleController=_tvpDevicesModuleController;
 @property(nonatomic) _Bool hideHeadersAndFooters; // @synthesize hideHeadersAndFooters=_hideHeadersAndFooters;
-- (void).cxx_destruct;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;
 - (id)moduleController:(id)arg1 dismissViewControllerForRequest:(id)arg2;
 - (id)moduleController:(id)arg1 presentViewControllerForRequest:(id)arg2;

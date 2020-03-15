@@ -19,6 +19,7 @@
     NSString *_cardEncryptionScheme;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cardEncryptionScheme; // @synthesize cardEncryptionScheme=_cardEncryptionScheme;
 @property(retain, nonatomic) NSString *cardProduct; // @synthesize cardProduct=_cardProduct;
 @property(retain, nonatomic) NSString *cardIssuer; // @synthesize cardIssuer=_cardIssuer;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *cardID; // @synthesize cardID=_cardID;
 @property(retain, nonatomic) NSString *cardFlow; // @synthesize cardFlow=_cardFlow;
 @property(retain, nonatomic) NSString *cardPNO; // @synthesize cardPNO=_cardPNO;
-- (void).cxx_destruct;
 
 @end
 

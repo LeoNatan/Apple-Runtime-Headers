@@ -22,8 +22,8 @@
 }
 
 + (id)detector;
-@property(retain) NSMutableArray *voiceDetections; // @synthesize voiceDetections=_voiceDetections;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *voiceDetections; // @synthesize voiceDetections=_voiceDetections;
 - (id)results;
 - (int)finalizeAnalysisAtTime:(const CDStruct_1b6d18a9 *)arg1;
 - (int)processAudioSamples:(struct AudioBufferList *)arg1 timestamp:(struct AudioTimeStamp)arg2;

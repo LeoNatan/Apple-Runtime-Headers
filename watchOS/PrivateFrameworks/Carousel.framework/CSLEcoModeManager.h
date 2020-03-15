@@ -13,8 +13,8 @@
     CSLSEcoModeClient *_ecoModeClient;
 }
 
-@property(retain, nonatomic) CSLSEcoModeClient *ecoModeClient; // @synthesize ecoModeClient=_ecoModeClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLSEcoModeClient *ecoModeClient; // @synthesize ecoModeClient=_ecoModeClient;
 - (void)commitCurrentEcoModeStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)prepareForPowerDown;
 - (void)setEcoMode:(_Bool)arg1 thermalTrap:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

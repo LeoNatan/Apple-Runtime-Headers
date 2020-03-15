@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMapTable *_behaviorsAndBehaviorContexts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *behaviorsAndBehaviorContexts; // @synthesize behaviorsAndBehaviorContexts=_behaviorsAndBehaviorContexts;
 @property(nonatomic) __weak id AVKitOwner; // @synthesize AVKitOwner=_AVKitOwner;
-- (void).cxx_destruct;
 - (id)behaviorContextOfClass:(Class)arg1;
 - (void)enumerateAllBehaviorContextsImplementingSelector:(SEL)arg1 forProtocol:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateAllBehaviorContextsConformingToProtocol:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

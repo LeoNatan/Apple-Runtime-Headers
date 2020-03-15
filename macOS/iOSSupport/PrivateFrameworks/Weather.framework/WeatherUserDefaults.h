@@ -16,8 +16,9 @@ __attribute__((visibility("hidden")))
     NSUserDefaults *_userDefaults;
 }
 
-@property(retain) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (void).cxx_destruct;
+@property(retain) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
+- (void)synchronizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)synchronize;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 - (BOOL)boolForKey:(id)arg1;

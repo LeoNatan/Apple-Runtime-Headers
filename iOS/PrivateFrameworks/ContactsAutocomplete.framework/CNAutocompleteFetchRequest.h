@@ -9,7 +9,7 @@
 #import <ContactsAutocomplete/NSCopying-Protocol.h>
 #import <ContactsAutocomplete/NSSecureCoding-Protocol.h>
 
-@class CNAutocompleteFetchContext, NSArray, NSString;
+@class CNAutocompleteFetchContext, NSArray, NSNumber, NSString;
 
 @interface CNAutocompleteFetchRequest : NSObject <NSCopying, NSSecureCoding>
 {
@@ -17,7 +17,7 @@
     NSString *_priorityDomainForSorting;
     unsigned long long _searchType;
     CNAutocompleteFetchContext *_fetchContext;
-    struct NSNumber *_shouldIncludeGroupResultsImpl;
+    NSNumber *_shouldIncludeGroupResultsImpl;
     _Bool _includeContacts;
     _Bool _includeRecents;
     _Bool _includeSuggestions;
@@ -30,6 +30,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)searchablePropertiesForSearchType:(unsigned long long)arg1;
 + (id)request;
+- (void).cxx_destruct;
 @property _Bool includePredictions; // @synthesize includePredictions=_includePredictions;
 @property _Bool includeCalendarServers; // @synthesize includeCalendarServers=_includeCalendarServers;
 @property _Bool includeDirectoryServers; // @synthesize includeDirectoryServers=_includeDirectoryServers;
@@ -41,7 +42,6 @@
 @property unsigned long long searchType; // @synthesize searchType=_searchType;
 @property(copy) NSString *priorityDomainForSorting; // @synthesize priorityDomainForSorting=_priorityDomainForSorting;
 @property(copy) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 @property _Bool includeServers;
 @property(copy) NSString *sendingAddress;
 @property _Bool shouldIncludeGroupResults;

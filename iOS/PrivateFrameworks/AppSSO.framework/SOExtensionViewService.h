@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
-@property __weak SORemoteExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property __weak SORemoteExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)_connectChildView;
 - (void)connectToContextWithSessionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)exportedInterface;

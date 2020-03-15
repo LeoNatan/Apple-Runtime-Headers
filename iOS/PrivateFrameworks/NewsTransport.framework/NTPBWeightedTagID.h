@@ -16,9 +16,9 @@
     float _weight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float weight; // @synthesize weight=_weight;
 @property(retain, nonatomic) NSString *tagId; // @synthesize tagId=_tagId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

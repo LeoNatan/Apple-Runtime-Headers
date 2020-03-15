@@ -24,6 +24,7 @@
 
 + (id)recordForAssertionLifetime:(id)arg1;
 + (id)recordForDictionary:(id)arg1 keys:(const CDStruct_0a6492a9 *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *behavior; // @synthesize behavior=_behavior;
 @property(retain, nonatomic) NSString *scheduleIdentifier; // @synthesize scheduleIdentifier=_scheduleIdentifier;
 @property(retain, nonatomic) NSNumber *endDate; // @synthesize endDate=_endDate;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSNumber *occurrenceDate; // @synthesize occurrenceDate=_occurrenceDate;
 @property(retain, nonatomic) NSString *eventUniqueID; // @synthesize eventUniqueID=_eventUniqueID;
 @property(retain, nonatomic) NSString *lifetimeType; // @synthesize lifetimeType=_lifetimeType;
-- (void).cxx_destruct;
 - (id)object;
 - (id)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1 options:(unsigned long long)arg2;
 

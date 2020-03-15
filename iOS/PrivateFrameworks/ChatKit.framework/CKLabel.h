@@ -14,9 +14,9 @@
     long long _titleIconImageType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long titleIconImageType; // @synthesize titleIconImageType=_titleIconImageType;
 @property(retain, nonatomic) UIImageView *titleIconImageView; // @synthesize titleIconImageView=_titleIconImageView;
-- (void).cxx_destruct;
 - (_Bool)isLTR;
 - (struct CGSize)sizeOfAccessoryImageView;
 - (struct CGSize)sizeOfTitleLabel;

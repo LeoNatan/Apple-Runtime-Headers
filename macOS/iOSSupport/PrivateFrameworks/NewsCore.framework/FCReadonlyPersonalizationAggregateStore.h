@@ -17,9 +17,9 @@
     NSMutableDictionary *_overrideAggregatesByFeatureKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *overrideAggregatesByFeatureKey; // @synthesize overrideAggregatesByFeatureKey=_overrideAggregatesByFeatureKey;
 @property(retain, nonatomic) id <FCDerivedPersonalizationData> derivedPersonalizationData; // @synthesize derivedPersonalizationData=_derivedPersonalizationData;
-- (void).cxx_destruct;
 - (void)processTodayPersonalizationUpdates:(id)arg1 withConfigurableValues:(id)arg2;
 - (id)aggregatesForFeatures:(id)arg1;
 - (id)baselineAggregateWithConfigurableValues:(id)arg1;

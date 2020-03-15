@@ -21,6 +21,7 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType outgoingValuePreprocessor; // @synthesize outgoingValuePreprocessor=_outgoingValuePreprocessor;
 @property(copy, nonatomic) CDUnknownBlockType applicationElementCallback; // @synthesize applicationElementCallback=_applicationElementCallback;
 @property(copy, nonatomic) CDUnknownBlockType hitTestCallback; // @synthesize hitTestCallback=_hitTestCallback;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) CDUnknownBlockType parameterizedAttributeCallback; // @synthesize parameterizedAttributeCallback=_parameterizedAttributeCallback;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(nonatomic) _Bool systemWideServer; // @synthesize systemWideServer=_systemWideServer;
-- (void).cxx_destruct;
 - (void)start;
 
 @end

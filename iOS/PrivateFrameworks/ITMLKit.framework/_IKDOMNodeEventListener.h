@@ -14,9 +14,9 @@
     JSManagedValue *_managedValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) JSManagedValue *managedValue; // @synthesize managedValue=_managedValue;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)value;
 - (id)initWithListener:(id)arg1 forNode:(id)arg2;
 

@@ -19,13 +19,13 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) _Bool runInProcess; // @synthesize runInProcess=_runInProcess;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) _Bool allowManualIP; // @synthesize allowManualIP=_allowManualIP;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)activate;
 - (void)_cleanup;

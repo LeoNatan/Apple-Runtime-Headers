@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) __weak UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) UIPreviewAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_contentSizeChanged:(id)arg1;
 - (void)_updateConstraints;
 - (void)_updateImageFromAction;

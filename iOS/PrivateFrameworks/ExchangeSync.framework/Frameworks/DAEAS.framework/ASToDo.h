@@ -37,6 +37,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASToDoRecurrence *recurrence; // @synthesize recurrence=_recurrence;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(retain, nonatomic, setter=setUTCStartTime:) NSDate *utcStartTime; // @synthesize utcStartTime=_utcStartTime;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSNumber *bodyTruncated; // @synthesize bodyTruncated=_bodyTruncated;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(nonatomic) void *calTask; // @synthesize calTask=_calTask;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSTimeZone *dueDateTimeZone;

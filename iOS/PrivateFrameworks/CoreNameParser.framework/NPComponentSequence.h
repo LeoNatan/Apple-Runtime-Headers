@@ -19,6 +19,7 @@
     double _stateModelScore;
 }
 
+- (void).cxx_destruct;
 @property(getter=isFavorite) _Bool favorite; // @synthesize favorite=_favorite;
 @property double stateModelScore; // @synthesize stateModelScore=_stateModelScore;
 @property double emissionModelScore; // @synthesize emissionModelScore=_emissionModelScore;
@@ -26,7 +27,6 @@
 @property(copy) NSArray *oovIndices; // @synthesize oovIndices=_oovIndices;
 @property(copy) NSArray *sequence; // @synthesize sequence=_sequence;
 @property(copy) NSArray *observation; // @synthesize observation=_observation;
-- (void).cxx_destruct;
 - (id)oovTokens;
 - (void)setValue:(id)arg1 atSequenceIndex:(unsigned long long)arg2;
 - (id)description;

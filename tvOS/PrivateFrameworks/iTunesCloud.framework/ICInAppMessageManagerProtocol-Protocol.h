@@ -27,6 +27,7 @@
 - (void)removeMessageEntryWithIdentifier:(NSString *)arg1 forBundleIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)updateMessageEntry:(ICInAppMessageEntry *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)addMessageEntry:(ICInAppMessageEntry *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)messageEntryWithIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(ICInAppMessageEntry *, NSError *))arg3;
 - (void)messageEntriesForBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)allMessageEntriesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 @end

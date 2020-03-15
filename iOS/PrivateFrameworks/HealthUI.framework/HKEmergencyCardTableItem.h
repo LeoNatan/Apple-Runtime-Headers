@@ -16,11 +16,11 @@
     UIViewController *_owningViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowHints; // @synthesize shouldShowHints=_shouldShowHints;
 @property(readonly, nonatomic) _Bool isInEditMode; // @synthesize isInEditMode=_isInEditMode;
 @property(nonatomic) __weak UIViewController *owningViewController; // @synthesize owningViewController=_owningViewController;
 @property(retain, nonatomic) _HKMedicalIDData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)timeZoneDidChange:(id)arg1;
 - (void)localeDidChange:(id)arg1;
 - (id)_dequeueNoValueCellInTableView:(id)arg1 withTitle:(id)arg2;

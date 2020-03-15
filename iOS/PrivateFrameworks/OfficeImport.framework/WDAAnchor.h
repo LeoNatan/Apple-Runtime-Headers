@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)stringForTextWrappingModeType:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long zIndex; // @synthesize zIndex=mZIndex;
 @property(nonatomic) _Bool allowOverlap; // @synthesize allowOverlap=mAllowOverlap;
 @property(nonatomic) int relativeVerticalPosition; // @synthesize relativeVerticalPosition=mRelativeVerticalPosition;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int textWrappingModeType; // @synthesize textWrappingModeType=mTextWrappingModeType;
 @property(nonatomic) int textWrappingMode; // @synthesize textWrappingMode=mTextWrappingMode;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=mBounds;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

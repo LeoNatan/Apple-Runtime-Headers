@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     long long _pendingOperationCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long pendingOperationCount; // @synthesize pendingOperationCount=_pendingOperationCount;
 @property(readonly, nonatomic) NSMutableDictionary *templateStrings; // @synthesize templateStrings=_templateStrings;
 @property(readonly, nonatomic) NSMutableArray *errors; // @synthesize errors=_errors;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, copy, nonatomic) NSArray *URLs; // @synthesize URLs=_URLs;
-- (void).cxx_destruct;
 - (void)load;
 - (void)_operationDidFinish:(id)arg1;
 - (void)_operation:(id)arg1 didFailWithError:(id)arg2;

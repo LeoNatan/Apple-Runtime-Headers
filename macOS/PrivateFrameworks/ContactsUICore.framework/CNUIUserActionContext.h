@@ -24,13 +24,13 @@
 + (id)makeDefaultContext;
 + (id)contextWithExtensionContext:(id)arg1;
 + (id)defaultContext;
+- (void).cxx_destruct;
 @property(copy, nonatomic) BSServiceConnectionEndpoint *connectionEndpoint; // @synthesize connectionEndpoint=_connectionEndpoint;
 @property(retain, nonatomic) id <CNUIUserActionCurator> actionCurator; // @synthesize actionCurator=_actionCurator;
 @property(retain, nonatomic) id <CNUIUserActionRecorder> actionRecorder; // @synthesize actionRecorder=_actionRecorder;
 @property(retain, nonatomic) id <CNUIUserActionDialRequestOpener> dialRequestOpener; // @synthesize dialRequestOpener=_dialRequestOpener;
 @property(retain, nonatomic) id <CNUIUserActionUserActivityOpener> userActivityOpener; // @synthesize userActivityOpener=_userActivityOpener;
 @property(retain, nonatomic) id <CNUIUserActionURLOpener> urlOpener; // @synthesize urlOpener=_urlOpener;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithContactStore:(id)arg1 applicationWorkspace:(id)arg2;
 

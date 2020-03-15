@@ -45,6 +45,7 @@
     CDUnknownBlockType _wifiStateChangedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType wifiStateChangedHandler; // @synthesize wifiStateChangedHandler=_wifiStateChangedHandler;
 @property(readonly, nonatomic) int wifiState; // @synthesize wifiState=_wifiState;
 @property(readonly, nonatomic) unsigned int wifiFlags; // @synthesize wifiFlags=_wifiFlags;
@@ -55,7 +56,6 @@
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(nonatomic) BOOL infraDisabled; // @synthesize infraDisabled=_infraDisabled;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_wifiStateChanged;
 - (void)ssidDidChangeForWiFiInterfaceWithName:(id)arg1;
 - (void)powerStateDidChangeForWiFiInterfaceWithName:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSItemType *Item; // @synthesize Item=_Item;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSItemType *Item; // @synthesize Item=_Item;
 
 @end
 

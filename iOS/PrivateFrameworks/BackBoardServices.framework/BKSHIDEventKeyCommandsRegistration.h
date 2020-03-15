@@ -21,10 +21,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *keyCommands; // @synthesize keyCommands=_keyCommands;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringToken *deferringToken; // @synthesize deferringToken=_token;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringEnvironment *deferringEnvironment; // @synthesize deferringEnvironment=_environment;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

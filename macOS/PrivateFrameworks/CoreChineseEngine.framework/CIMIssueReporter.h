@@ -13,8 +13,8 @@
     CIMIssueReporterRadarInfoController *_radarInfoController;
 }
 
-@property(readonly, retain) CIMIssueReporterRadarInfoController *radarInfoController; // @synthesize radarInfoController=_radarInfoController;
 - (void).cxx_destruct;
+@property(readonly, retain) CIMIssueReporterRadarInfoController *radarInfoController; // @synthesize radarInfoController=_radarInfoController;
 @property(readonly) NSString *description;
 @property(readonly) NSString *title;
 - (id)initWithDebugLogger:(id)arg1 candidateState:(id)arg2;

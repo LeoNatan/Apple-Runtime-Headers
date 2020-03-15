@@ -18,10 +18,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property unsigned long long loadBagRetryAttempt; // @synthesize loadBagRetryAttempt=_loadBagRetryAttempt;
 @property(readonly, nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain) ISURLBag *fallbackBag; // @synthesize fallbackBag=_fallbackBag;
-- (void).cxx_destruct;
 - (void)_retry:(unsigned long long)arg1 withSelector:(SEL)arg2;
 - (id)_userIdentifier;
 - (id)_bagContext;

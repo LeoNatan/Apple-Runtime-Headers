@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *canonicalLanguageIdentifier; // @synthesize canonicalLanguageIdentifier=_canonicalLanguageIdentifier;
 @property(readonly, nonatomic) NSDictionary *sortingDetails; // @synthesize sortingDetails=_sortingDetails;
 @property(readonly, nonatomic) NSDictionary *sectionsInfo; // @synthesize sectionsInfo=_sectionsInfo;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSectionsInfo:(id)arg1 sortingDetails:(id)arg2 canonicalLanguageIdentifier:(id)arg3;

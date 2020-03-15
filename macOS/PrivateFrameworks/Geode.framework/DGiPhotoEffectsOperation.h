@@ -24,6 +24,7 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *inputBoostIntensity; // @synthesize inputBoostIntensity=_boostIntensity;
 @property(copy, nonatomic) NSNumber *inputFadeIntensity; // @synthesize inputFadeIntensity=_fadeIntensity;
 @property(copy, nonatomic) NSNumber *inputEdgeBlurIntensity; // @synthesize inputEdgeBlurIntensity=_edgeBlurIntensity;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSNumber *inputAntiqueIntensity; // @synthesize inputAntiqueIntensity=_antiqueIntensity;
 @property(copy, nonatomic) NSNumber *inputSepiaIntensity; // @synthesize inputSepiaIntensity=_sepiaIntensity;
 @property(copy, nonatomic) NSNumber *inputBlackAndWhiteIntensity; // @synthesize inputBlackAndWhiteIntensity=_blackAndWhiteIntensity;
-- (void).cxx_destruct;
 - (BOOL)isPostGeometryOperation;
 - (id)initWithOperation:(id)arg1;
 - (id)init;

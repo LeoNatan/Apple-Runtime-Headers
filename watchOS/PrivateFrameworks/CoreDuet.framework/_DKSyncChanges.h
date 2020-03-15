@@ -16,11 +16,11 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSArray *deletionChangeSets; // @synthesize deletionChangeSets=_deletionChangeSets;
 @property(readonly, nonatomic) NSArray *additionChangeSets; // @synthesize additionChangeSets=_additionChangeSets;
-- (void).cxx_destruct;
 - (id)initWithAdditionChangeSets:(id)arg1 deletionChangeSets:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
 
 @end

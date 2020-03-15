@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     PDFDocument *_pdfDocument;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
 @property(readonly, nonatomic) NSDate *sampleDate; // @synthesize sampleDate=_sampleDate;
 @property(readonly, nonatomic) NSData *pdfData; // @synthesize pdfData=_pdfData;
-- (void).cxx_destruct;
 - (unsigned long long)overrideMask;
 - (void)didTapShare;
 - (void)didTapDone;

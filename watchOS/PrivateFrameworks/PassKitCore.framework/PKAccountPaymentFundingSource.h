@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)fundingDetailsClassForFundingSourceType:(int)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) PKAccountPaymentFundingDetails *fundingDetails; // @synthesize fundingDetails=_fundingDetails;
 @property(copy, nonatomic) NSString *accountSuffix; // @synthesize accountSuffix=_accountSuffix;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

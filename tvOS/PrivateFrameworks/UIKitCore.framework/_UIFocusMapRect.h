@@ -17,9 +17,9 @@
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)intersectionWithRegion:(id)arg1;
 - (_Bool)intersectsRegion:(id)arg1;
 - (_Bool)intersectsRect:(struct CGRect)arg1;

@@ -17,12 +17,12 @@
     int _maxResultCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int maxResultCount; // @synthesize maxResultCount=_maxResultCount;
 @property(readonly, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (id)initWithCoordinate:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 categories:(id)arg3 dateInterval:(id)arg4 maxResultCount:(int)arg5;
 - (id)initWithCoordinate:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 categories:(id)arg3 dateInterval:(id)arg4;
 - (id)init;

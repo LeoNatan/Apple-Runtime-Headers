@@ -45,6 +45,7 @@
 
 + (id)viewControllerWithConnection:(id)arg1 configuration:(id)arg2 delegate:(id)arg3 dataSource:(id)arg4;
 + (id)sharedSiriViewController;
+- (void).cxx_destruct;
 @property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property BOOL isBeingPresented; // @synthesize isBeingPresented=_isBeingPresented;
 @property(nonatomic, getter=_viewDidAppearTime, setter=_setViewDidAppearTime:) double viewDidAppearTime; // @synthesize viewDidAppearTime=_viewDidAppearTime;
@@ -59,7 +60,6 @@
 @property(nonatomic, getter=isVisible) BOOL visible; // @synthesize visible=_visible;
 @property(nonatomic) __weak id <AFUISiriViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)siriPresentationContentHeightDidChange;
 - (void)serviceAcousticIDRequestDidFinishWithSuccess:(BOOL)arg1;
 - (void)serviceWillStartAcousticIDRequest;

@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_barButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIBarButtonItem *barButton; // @synthesize barButton=_barButton;
 @property __weak id <QLListViewControllerDelegate> archiveDelegate; // @synthesize archiveDelegate=_archiveDelegate;
-- (void).cxx_destruct;
 - (void)_addPath:(id)arg1 fromPreviewItem:(id)arg2 intoArray:(id)arg3;
 - (void)_generateItemsAndFolders;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

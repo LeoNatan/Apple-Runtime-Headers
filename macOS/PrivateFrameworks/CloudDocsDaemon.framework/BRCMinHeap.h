@@ -20,8 +20,8 @@
     unsigned long long _count;
 }
 
-@property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 - (void)objectWeightChanged:(id)arg1;
 - (void)firstObjectWeightChanged;
 - (void)removeAllObjects;

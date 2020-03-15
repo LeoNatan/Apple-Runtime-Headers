@@ -17,9 +17,9 @@
     SBDateTimeController *_dateTimeController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBDateTimeController *dateTimeController; // @synthesize dateTimeController=_dateTimeController;
 @property(nonatomic) __weak id <SBCalendarIconImageProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)controller:(id)arg1 didChangeOverrideDateFromDate:(id)arg2;
 - (id)unmaskedIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)iconImageWithInfo:(struct SBIconImageInfo)arg1;

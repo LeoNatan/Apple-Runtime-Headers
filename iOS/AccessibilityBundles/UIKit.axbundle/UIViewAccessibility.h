@@ -17,8 +17,11 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (id)_accessibilitySubviewMatchingFKAView:(id)arg1;
+- (_Bool)_accessibilityFKAShouldBeProcessed;
 - (id)_childFocusRegionsInRect:(struct CGRect)arg1 inCoordinateSpace:(id)arg2;
 - (_Bool)_axHasSingleFocusableSubview;
+- (id)_accessibilityLastFocusedChild;
+- (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;
 - (_Bool)_isEligibleForFocusInteraction;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
@@ -42,12 +45,14 @@
 - (id)_axWindowSubviews;
 - (id)_axSubviews;
 - (void)_axPrintSubviews:(long long)arg1 string:(id)arg2;
+- (id)_accessibilityUserTestingSubviewsSorted:(_Bool)arg1;
 - (id)_accessibilityUserTestingChildren;
 - (id)_accessibilitySortedElementsWithin;
 - (id)_accessibilitySupportGesturesAttributes;
 - (id)accessibilityContainer;
 - (id)_accessibilityChildVendingParent;
-- (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
+- (id)_systemDefaultFocusGroupDescriptor;
+- (_Bool)_accessibilityInTopLevelTabLoop;
 - (_Bool)_accessibilityIsFKARunningForFocusItem;
 - (_Bool)_accessibilityIsInCollectionCell;
 - (_Bool)_accessibilityIsInTableCell;

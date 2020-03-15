@@ -25,11 +25,11 @@
 }
 
 + (CDStruct_202aea77)guardingWindow;
+- (void).cxx_destruct;
 @property(readonly) BOOL hasTasking; // @synthesize hasTasking=_hasTasking;
 @property BOOL usingCellular; // @synthesize usingCellular=_usingCellular;
 @property BOOL ignoreProxies; // @synthesize ignoreProxies=_ignoreProxies;
 @property BOOL permissive; // @synthesize permissive=_permissive;
-- (void).cxx_destruct;
 - (CDStruct_202aea77)calcNextWindow;
 - (void)registerRouting:(id)arg1 result:(BOOL)arg2;
 - (id)getCadence:(id)arg1;

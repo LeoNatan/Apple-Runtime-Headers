@@ -29,6 +29,7 @@
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTLumaDodgePillStyleSettings *whiteSettings; // @synthesize whiteSettings=_whiteSettings;
 @property(retain, nonatomic) MTLumaDodgePillStyleSettings *blackSettings; // @synthesize blackSettings=_blackSettings;
 @property(retain, nonatomic) MTLumaDodgePillStyleSettings *graySettings; // @synthesize graySettings=_graySettings;
@@ -44,7 +45,6 @@
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(nonatomic) double minWidth; // @synthesize minWidth=_minWidth;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

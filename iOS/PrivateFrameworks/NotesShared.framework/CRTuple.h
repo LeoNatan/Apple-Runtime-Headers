@@ -17,8 +17,8 @@
 }
 
 + (id)tupleWithArray:(id)arg1;
-@property(retain, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long count;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;

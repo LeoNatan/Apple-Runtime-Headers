@@ -20,11 +20,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)achievementWithTemplateUniqueName:(id)arg1 completedDate:(id)arg2 value:(id)arg3 friendUUID:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSDate *completedDate; // @synthesize completedDate=_completedDate;
 @property(retain, nonatomic) NSString *templateUniqueName; // @synthesize templateUniqueName=_templateUniqueName;
 @property(retain, nonatomic) NSUUID *friendUUID; // @synthesize friendUUID=_friendUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

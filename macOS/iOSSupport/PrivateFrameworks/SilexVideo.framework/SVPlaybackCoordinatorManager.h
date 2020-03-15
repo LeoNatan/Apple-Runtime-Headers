@@ -17,9 +17,9 @@
     SVWeakObjectCache *_playbackCoordinators;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVWeakObjectCache *playbackCoordinators; // @synthesize playbackCoordinators=_playbackCoordinators;
 @property(readonly, nonatomic) id <SVPlaybackCoordinatorFactory> factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (id)playbackCoordinatorForVideo:(id)arg1;
 - (id)initWithPlaybackCoordinatorFactory:(id)arg1;
 

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     LinearGaugeView *_backgroundLinearGaugeView;
 }
 
-@property(readonly, nonatomic) LinearGaugeView *backgroundLinearGaugeView; // @synthesize backgroundLinearGaugeView=_backgroundLinearGaugeView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) LinearGaugeView *backgroundLinearGaugeView; // @synthesize backgroundLinearGaugeView=_backgroundLinearGaugeView;
 - (void)applyFilter:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

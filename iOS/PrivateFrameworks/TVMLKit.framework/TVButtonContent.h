@@ -28,6 +28,7 @@
     IKViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(copy, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) _TVImageView *accessoryView; // @synthesize accessoryView=_accessoryView;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(readonly, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)_updateFocusStateWithCoordinator:(id)arg1;
 - (void)_updateFloaingViewFocusState:(_Bool)arg1 coordinator:(id)arg2;
 - (void)_setFocused:(_Bool)arg1 animationCoordinator:(id)arg2;

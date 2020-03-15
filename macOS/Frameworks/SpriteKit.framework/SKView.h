@@ -72,12 +72,12 @@
 + (id)debugHierarchyAdditionalGroupingIDs;
 + (void)_setCurrentTime:(double)arg1;
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double physicsDebugStrokeWidth; // @synthesize physicsDebugStrokeWidth=_physicsDebugStrokeWidth;
 @property(retain, nonatomic) NSMutableDictionary *_info; // @synthesize _info=__info;
 @property(readonly, nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
 @property(nonatomic) __weak NSObject<SKViewDelegate> *delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)_getPerformanceStats;
 - (int)_spriteSubmitCount;
 - (int)_spriteRenderCount;

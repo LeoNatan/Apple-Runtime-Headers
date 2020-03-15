@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)entryDescriptorWithImage:(id)arg1;
 + (id)entryDescriptorWithAttributedString:(id)arg1;
 + (id)entryDescriptorWithArtwork:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long visibilityPriority; // @synthesize visibilityPriority=_visibilityPriority;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SKUIArtwork *artwork; // @synthesize artwork=_artwork;
 @property(nonatomic) long long entryDescriptorType; // @synthesize entryDescriptorType=_entryDescriptorType;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

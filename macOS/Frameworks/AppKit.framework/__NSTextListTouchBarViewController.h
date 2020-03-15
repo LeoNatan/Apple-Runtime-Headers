@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)textListFormats;
-@property __weak id target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property __weak id target; // @synthesize target=_target;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 @property(retain) NSTextList *textList; // @dynamic textList;
 - (void)_selectList:(id)arg1;

@@ -18,10 +18,10 @@
     unsigned long long _owningGroupId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long owningGroupId; // @synthesize owningGroupId=_owningGroupId;
 @property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
 - (_Bool)isEqual:(id)arg1;

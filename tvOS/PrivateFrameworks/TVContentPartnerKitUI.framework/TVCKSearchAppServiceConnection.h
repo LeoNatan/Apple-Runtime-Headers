@@ -16,9 +16,9 @@
     NSString *_clientBundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientBundleIdentifier; // @synthesize clientBundleIdentifier=_clientBundleIdentifier;
 @property(retain, nonatomic) NSXPCConnection *remoteConnection; // @synthesize remoteConnection=_remoteConnection;
-- (void).cxx_destruct;
 - (id)_clientBundleIdentifierFromConnection;
 - (void)updateWithSearchResult:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)resume;

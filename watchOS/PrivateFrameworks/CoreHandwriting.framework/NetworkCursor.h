@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cursorByAddingNodeIndex:(unsigned long)arg1 toCursor:(id)arg2;
-@property(nonatomic) unsigned int stateType; // @synthesize stateType=_stateType;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int stateType; // @synthesize stateType=_stateType;
 - (_Bool)isCompletePattern;
 - (unsigned long)nodeIndexAtPosition:(unsigned long)arg1;
 - (unsigned long)nodeIndexCount;

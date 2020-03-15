@@ -22,6 +22,7 @@
     NSArray *_devices;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *devices; // @synthesize devices=_devices;
 @property(retain) IASPickerViewController *devicePickerController; // @synthesize devicePickerController=_devicePickerController;
 @property AKiCDPDeviceValidationFlowViewController *flowController; // @synthesize flowController=_flowController;
@@ -30,7 +31,6 @@
 @property BOOL forgotAllPasswordsAndPasscodesButtonEnabled; // @synthesize forgotAllPasswordsAndPasscodesButtonEnabled=_forgotAllPasswordsAndPasscodesButtonEnabled;
 @property NSView *devicePickerPlaceholderView; // @synthesize devicePickerPlaceholderView=_devicePickerPlaceholderView;
 @property unsigned long long deviceSelection; // @synthesize deviceSelection=_deviceSelection;
-- (void).cxx_destruct;
 - (void)forgotAllPasswordsAndPasscodesPressed:(id)arg1;
 - (void)setUpDevicesSpecificStrings;
 - (void)viewDidAppear;

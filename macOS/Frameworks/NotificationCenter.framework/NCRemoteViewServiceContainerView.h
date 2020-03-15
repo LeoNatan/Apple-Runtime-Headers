@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <NCRemoteServiceContainerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sendFrameChangesToHost; // @synthesize sendFrameChangesToHost=_sendFrameChangesToHost;
 @property(nonatomic) __weak id <NCRemoteServiceContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
 
 @end

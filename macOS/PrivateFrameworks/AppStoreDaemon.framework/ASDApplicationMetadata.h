@@ -34,6 +34,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(copy, nonatomic) NSString *vendorName; // @synthesize vendorName=_vendorName;
 @property(copy, nonatomic) NSNumber *storeFront; // @synthesize storeFront=_storeFront;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy, nonatomic) NSNumber *accountID; // @synthesize accountID=_accountID;
 @property(copy, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -36,6 +36,7 @@
 + (id)tileDefinitionWithTexture:(id)arg1 size:(struct CGSize)arg2;
 + (id)tileDefinitionWithTexture:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool nextFrameAffectsVertexBuffer; // @synthesize nextFrameAffectsVertexBuffer=_nextFrameAffectsVertexBuffer;
 @property(nonatomic) _Bool frameDidChange; // @synthesize frameDidChange=_frameDidChange;
 @property(nonatomic) float currentFrameTime; // @synthesize currentFrameTime=_currentFrameTime;
@@ -48,7 +49,6 @@
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSMutableDictionary *userData; // @synthesize userData=_userData;
-- (void).cxx_destruct;
 - (id)initWithTextures:(id)arg1 normalTextures:(id)arg2 size:(struct CGSize)arg3 timePerFrame:(double)arg4;
 - (id)initWithTextures:(id)arg1 size:(struct CGSize)arg2 timePerFrame:(double)arg3;
 - (id)initWithTexture:(id)arg1 normalTexture:(id)arg2 size:(struct CGSize)arg3;

@@ -32,6 +32,7 @@
     struct CGAffineTransform _finalPresentingVCTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reduceMotion; // @synthesize reduceMotion=_reduceMotion;
 @property(nonatomic) _Bool shouldDismissGracefullyForTextSizeChange; // @synthesize shouldDismissGracefullyForTextSizeChange=_shouldDismissGracefullyForTextSizeChange;
 @property(nonatomic) _Bool shouldPlayFlipInAnimation; // @synthesize shouldPlayFlipInAnimation=_shouldPlayFlipInAnimation;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) id <AnimatorDetailViewController> detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) _Bool shouldAdjustForInset; // @synthesize shouldAdjustForInset=_shouldAdjustForInset;
-- (void).cxx_destruct;
 - (void)animateDismissalWithContext:(id)arg1;
 - (void)reducedMotionAnimateDismissalWithContext:(id)arg1;
 - (void)animatePresentationWithContext:(id)arg1;

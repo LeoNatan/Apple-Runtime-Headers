@@ -20,13 +20,13 @@
     unsigned long long _signpostID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(readonly, nonatomic) int contextType; // @synthesize contextType=_contextType;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
 @property(readonly, nonatomic) unsigned long long requestIndex; // @synthesize requestIndex=_requestIndex;
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
 - (void)cancel;
 - (void)handleAvailabilityChangeForResource:(id)arg1 url:(id)arg2 info:(id)arg3 error:(id)arg4;

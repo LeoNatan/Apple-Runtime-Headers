@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UITextView *_textView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) double horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;
 @property(retain, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (void)_initializeTextView;
 - (void)_configureTextViewTextStyling;
 - (void)layoutSubviews;

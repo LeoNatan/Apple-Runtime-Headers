@@ -30,6 +30,7 @@
     SXPresentationAttributes *_presentationAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXPresentationAttributes *presentationAttributes; // @synthesize presentationAttributes=_presentationAttributes;
 @property(nonatomic) BOOL isPresenting; // @synthesize isPresenting=_isPresenting;
 @property(retain, nonatomic) NSMutableArray *nestedComponentViews; // @synthesize nestedComponentViews=_nestedComponentViews;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak id <SXComponentHosting> host; // @synthesize host=_host;
 @property(readonly, nonatomic) BOOL isPresented; // @synthesize isPresented=_isPresented;
 @property(readonly, nonatomic) SXLayoutBlueprint *presentedBlueprint; // @synthesize presentedBlueprint=_presentedBlueprint;
-- (void).cxx_destruct;
 - (void)updatePresentationStateForNestedComponentView:(id)arg1 presentationState:(long long)arg2;
 - (void)updatePresentationStateForNestedComponentViews:(id)arg1 presentationState:(long long)arg2;
 - (void)assistiveTechnologyStatusDidChange;

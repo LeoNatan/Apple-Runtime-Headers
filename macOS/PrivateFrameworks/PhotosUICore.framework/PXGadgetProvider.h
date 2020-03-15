@@ -21,22 +21,22 @@
     NSArray *_gadgets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL invalidGadgets; // @synthesize invalidGadgets=_invalidGadgets;
 @property(nonatomic) BOOL isPerformingChanges; // @synthesize isPerformingChanges=_isPerformingChanges;
 @property(copy) NSArray *gadgets; // @synthesize gadgets=_gadgets;
 @property(nonatomic) __weak id <PXGadgetDelegate> nextGadgetResponder; // @synthesize nextGadgetResponder=_nextGadgetResponder;
 @property(nonatomic) __weak id <PXGadgetProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PXGadgetNavigationHelper *rootNavigationHelper;
 @property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
 - (void)dismissAlert:(id)arg1;
 - (void)presentAlert:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)dismissGadgetViewController:(struct NSObject *)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)presentGadgetViewController:(struct NSObject *)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)gadget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)dismissGadgetViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentGadgetViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)gadget:(id)arg1 transitionToViewController:(id)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
 - (void)gadget:(id)arg1 animateChanges:(CDUnknownBlockType)arg2;
-- (struct NSObject *)gadgetViewControllerHostingGadget:(id)arg1;
+- (id)gadgetViewControllerHostingGadget:(id)arg1;
 - (void)_updateIfNeeded;
 - (void)removeAllGadgets;
 - (void)removeGadgetsAtIndexes:(id)arg1;

@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSArray *extensions; // @synthesize extensions=_extensions;
-- (void).cxx_destruct;
 
 @end
 

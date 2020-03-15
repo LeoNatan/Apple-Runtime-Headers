@@ -21,8 +21,8 @@
 + (id)currentLanguageCode;
 + (id)speechVoices;
 + (void)initialize;
-@property(readonly, nonatomic) NSDictionary *audioFileSettings; // @synthesize audioFileSettings=_audioFileSettings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *audioFileSettings; // @synthesize audioFileSettings=_audioFileSettings;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

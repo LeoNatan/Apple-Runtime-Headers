@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_titleTextField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(nonatomic) __weak NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
 @property(nonatomic) __weak NSStackView *stackView; // @synthesize stackView=_stackView;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double minimumWidth; // @synthesize minimumWidth=_minimumWidth;
 @property(nonatomic) __weak id <TitleAndStackViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
-- (void).cxx_destruct;
 - (void)updateView;
 - (void)viewDidDisappear;
 - (void)viewWillAppear;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSSearchProvider.h>
+#import <SafariSharedUI/WBSSearchProvider.h>
 
 @class NSString;
 
@@ -16,9 +16,9 @@
 
 + (_Bool)shouldIncludeEngineFromDictionary:(id)arg1 withController:(id)arg2;
 + (id)engineFromDictionary:(id)arg1 withController:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *scriptName; // @synthesize scriptName=_scriptName;
 @property(readonly, nonatomic) int searchID; // @synthesize searchID=_searchID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName;
 - (id)description;
 - (_Bool)searchShouldUseSafeSearchTemplate;

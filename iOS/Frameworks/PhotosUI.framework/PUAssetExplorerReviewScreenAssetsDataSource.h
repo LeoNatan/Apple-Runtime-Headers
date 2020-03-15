@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSCache *__assetReferenceByIndexPathCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *_assetReferenceByIndexPathCache; // @synthesize _assetReferenceByIndexPathCache=__assetReferenceByIndexPathCache;
 @property(readonly, nonatomic) NSDictionary *_substitutedAssetsByUUID; // @synthesize _substitutedAssetsByUUID=__substitutedAssetsByUUID;
 @property(readonly, nonatomic) PUAssetsDataSource *_originalDataSource; // @synthesize _originalDataSource=__originalDataSource;
-- (void).cxx_destruct;
 - (id)badgeInfoPromiseForAssetAtIndexPath:(id)arg1;
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)assetCollectionAtIndexPath:(id)arg1;

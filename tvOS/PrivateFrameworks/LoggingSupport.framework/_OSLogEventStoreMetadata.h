@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSUUID *_sourceUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *sourceUUID; // @synthesize sourceUUID=_sourceUUID;
 @property(readonly, nonatomic) NSUUID *archiveUUID; // @synthesize archiveUUID=_archiveUUID;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *end; // @synthesize end=_end;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestSignpost; // @synthesize oldestSignpost=_oldestSignpost;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestSpecial; // @synthesize oldestSpecial=_oldestSpecial;
 @property(readonly, nonatomic) _OSLogEventStoreTimeRef *oldestPersist; // @synthesize oldestPersist=_oldestPersist;
-- (void).cxx_destruct;
 - (id)timeRefForTTLClass:(unsigned char)arg1;
 - (id)initWithCollection:(id)arg1 localStorePlist:(id)arg2 liveDataDescriptor:(int)arg3;
 - (id)initWithDictionary:(id)arg1;

@@ -20,13 +20,13 @@
     struct UIEdgeInsets _alignmentRectInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimer *alternateTextTimer; // @synthesize alternateTextTimer=_alternateTextTimer;
 @property(copy, nonatomic) NSString *originalText; // @synthesize originalText=_originalText;
 @property(nonatomic) BOOL showsAlternateText; // @synthesize showsAlternateText=_showsAlternateText;
 @property(copy, nonatomic) NSString *alternateText; // @synthesize alternateText=_alternateText;
 @property(nonatomic) struct UIEdgeInsets alignmentRectInsets; // @synthesize alignmentRectInsets=_alignmentRectInsets;
 @property(nonatomic) long long fontStyle; // @synthesize fontStyle=_fontStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 - (void)didMoveToWindow;
 - (void)_updateAlternateTextTimer;

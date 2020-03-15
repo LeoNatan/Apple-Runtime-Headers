@@ -16,11 +16,11 @@
     CDUnknownBlockType _objectDescriptionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType objectDescriptionBlock; // @synthesize objectDescriptionBlock=_objectDescriptionBlock;
 @property(copy, nonatomic) NSArray *sortHeaders; // @synthesize sortHeaders=_sortHeaders;
 @property(copy, nonatomic) NSArray *changes; // @synthesize changes=_changes;
 @property(copy, nonatomic) NSArray *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (id)_objectsDescription;
 - (id)description;
 - (id)init;

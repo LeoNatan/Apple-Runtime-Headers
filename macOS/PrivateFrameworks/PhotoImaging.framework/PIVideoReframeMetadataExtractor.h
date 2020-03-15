@@ -18,8 +18,8 @@
     NSArray *timedMetadataArray;
 }
 
-@property(readonly, nonatomic) NSArray *timedMetadataArray; // @synthesize timedMetadataArray;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *timedMetadataArray; // @synthesize timedMetadataArray;
 - (id)extractMetadata;
 -     // Error parsing type: {?=[3]}32@0:8r^{FigLivePhotoMetadata=I{FigLivePhotoMetadataV1Struct=fqffffffccSI[0{FigLivePhotoDetectedFaceV1Struct=qffffisS}]}}16^c24, name: trajectoryeHomographyFromMetadata:containsV3Metadata:
 - (struct CGVector)motionBlurVectorFromMetadata:(const struct FigLivePhotoMetadata *)arg1;

@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressErrorDialogs; // @synthesize suppressErrorDialogs=_suppressErrorDialogs;
 @property(copy, nonatomic) NSNumber *purchaseID; // @synthesize purchaseID=_purchaseID;
 @property(nonatomic) _Bool ignoresPreviousClaimAttempts; // @synthesize ignoresPreviousClaimAttempts=_ignoresPreviousClaimAttempts;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(copy, nonatomic) NSData *clientAuditTokenData; // @synthesize clientAuditTokenData=_clientAuditTokenData;
 @property(copy, nonatomic) NSNumber *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,9 +16,9 @@
     NSMutableSet *_caretakerNodes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *caretakerNodes; // @synthesize caretakerNodes=_caretakerNodes;
 @property(readonly, nonatomic) NSMutableSet *momentNodes; // @synthesize momentNodes=_momentNodes;
-- (void).cxx_destruct;
 - (id)initWithMomentNodes:(id)arg1 caretakerNodes:(id)arg2;
 
 // Remaining properties

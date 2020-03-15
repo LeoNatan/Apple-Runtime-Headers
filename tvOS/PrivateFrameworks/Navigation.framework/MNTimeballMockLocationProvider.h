@@ -26,10 +26,10 @@
     CLLocation *location;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CLLocation *location; // @synthesize location;
 @property(nonatomic) double desiredAccuracy; // @synthesize desiredAccuracy;
 @property(nonatomic) __weak id <CLLocationManagerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)_deliverNextObject;
 - (void)_processNextObject;
 - (void)_setupTimer;

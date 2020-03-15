@@ -19,12 +19,12 @@
     NSObject<NSSearchToolbarItemDelegate> *_delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak NSObject<NSSearchToolbarItemDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)setAction:(SEL)arg1;
 - (SEL)action;
 - (void)setTarget:(id)arg1;
 - (id)target;
-- (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidBeginEditing:(id)arg1;
 - (void)searchCanceled:(id)arg1;

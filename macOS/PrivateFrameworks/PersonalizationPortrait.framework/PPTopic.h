@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *topicIdentifier; // @synthesize topicIdentifier=_topicIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *topicIdentifier; // @synthesize topicIdentifier=_topicIdentifier;
 - (id)id;
 - (id)initWithId:(id)arg1;
 @property(readonly, nonatomic) double sentimentScore;

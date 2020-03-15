@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_errors;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didFinish; // @synthesize didFinish=_didFinish;
 @property(retain, nonatomic) NSDictionary *errors; // @synthesize errors=_errors;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

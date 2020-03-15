@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     NSArray *_stops;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOMapRegion *boundingMapRegion; // @synthesize boundingMapRegion=_boundingMapRegion;
 @property(readonly, nonatomic) NSMutableArray *pointSections; // @synthesize pointSections=_pointSections;
-- (void).cxx_destruct;
 - (double)_buildPointSectionsForRoute:(id)arg1 pointRange:(struct _NSRange)arg2 stepIndex:(unsigned long long)arg3 currentTransitLineColor:(id)arg4 startDistance:(double)arg5;
 - (void)buildPointSectionsForRoute:(id)arg1;
 - (void)buildRoute:(id)arg1;

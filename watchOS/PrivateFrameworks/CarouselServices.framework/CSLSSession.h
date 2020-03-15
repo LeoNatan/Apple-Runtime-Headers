@@ -36,6 +36,7 @@
 + (id)sessionForBundleID:(id)arg1 withURL:(id)arg2 type:(int)arg3;
 + (id)sessionOfType:(int)arg1;
 + (id)sessionWithURL:(id)arg1 type:(int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(getter=isLaunchable) _Bool launchable; // @synthesize launchable=_launchable;
 @property(getter=isDismissible) _Bool dismissible; // @synthesize dismissible=_dismissible;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) __weak id <CSLSSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setErrorCode:(int)arg1;

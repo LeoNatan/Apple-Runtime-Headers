@@ -13,8 +13,8 @@
     NSError *_error;
 }
 
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSString *content;
 - (id)initWithMimePart:(id)arg1;
 

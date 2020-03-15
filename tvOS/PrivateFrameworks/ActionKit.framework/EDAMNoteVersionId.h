@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *lastEditorId; // @synthesize lastEditorId=_lastEditorId;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSNumber *saved; // @synthesize saved=_saved;
 @property(retain, nonatomic) NSNumber *updated; // @synthesize updated=_updated;
 @property(retain, nonatomic) NSNumber *updateSequenceNum; // @synthesize updateSequenceNum=_updateSequenceNum;
-- (void).cxx_destruct;
 
 @end
 

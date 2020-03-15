@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (Class)publicKeysType;
 + (Class)pluginFieldsType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *publicKeys; // @synthesize publicKeys=_publicKeys;
 @property(nonatomic) _Bool participantKeyLost; // @synthesize participantKeyLost=_participantKeyLost;
 @property(retain, nonatomic) NSMutableArray *pluginFields; // @synthesize pluginFields=_pluginFields;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(retain, nonatomic) CKDPRecordIdentifier *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

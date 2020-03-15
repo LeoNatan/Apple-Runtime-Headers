@@ -17,10 +17,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AFDisambiguationAssistance> disambiguationAssistance; // @synthesize disambiguationAssistance=_disambiguationAssistance;
 @property(retain, nonatomic) NSArray *listItems; // @synthesize listItems=_listItems;
 @property(nonatomic) __weak id <AFUIDisambiguationAnalyticsManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_recordSASMetrics:(id)arg1 withSelectedBundleId:(id)arg2 originalCommandId:(id)arg3;
 - (id)_allListItems;
 - (id)_listItemMatchingAceId:(id)arg1;

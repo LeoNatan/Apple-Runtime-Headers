@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
     TIKeyboardCandidateResultSet *_candidateSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIKeyboardCandidateResultSet *candidateSet; // @synthesize candidateSet=_candidateSet;
 @property(retain, nonatomic) _UIDynamicCaretHelpLabel *helpLabel; // @synthesize helpLabel=_helpLabel;
 @property(retain, nonatomic) _UIDynamicCaretNoContentView *noContentView; // @synthesize noContentView=_noContentView;
 @property(retain, nonatomic) _UIDynamicCaretAlternatives *alternativesView; // @synthesize alternativesView=_alternativesView;
 @property(retain, nonatomic) _UIDynamicCaretInput *inputView; // @synthesize inputView=_inputView;
-- (void).cxx_destruct;
 - (unsigned long long)selectedSortIndex;
 - (id)statisticsIdentifier;
 - (id)keyboardBehaviors;

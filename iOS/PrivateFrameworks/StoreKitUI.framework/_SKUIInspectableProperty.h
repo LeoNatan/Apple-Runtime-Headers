@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *friendlyName; // @synthesize friendlyName=_friendlyName;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *valueString;
 
 @end

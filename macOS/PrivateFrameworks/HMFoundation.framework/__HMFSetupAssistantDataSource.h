@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <HMFSystemInfoMigrationDataSourceDelegate> _delegate;
 }
 
-@property __weak id <HMFSystemInfoMigrationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <HMFSystemInfoMigrationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isMigrating) BOOL migrating;
 - (void)dealloc;
 - (id)init;

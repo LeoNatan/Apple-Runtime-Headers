@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 @interface BrowserTabPersistentState : NSObject <BrowserPersistentState, WBSClosedTab>
 {
     BrowserViewController *_browserViewController;
-    Vector_81153489 _ancestorTabIdentifiers;
+    Vector_f2f32486 _ancestorTabIdentifiers;
     id <EncryptionProvider> _encryptionProvider;
     int _processIdentifier;
     BOOL _supportsSafeToLoadWebPage;
@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_generateSessionDataForBuiltInURL:(id)arg1;
 + (id)sessionDataWithBuiltInURL:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(nonatomic) BOOL restoredFromPersistentData; // @synthesize restoredFromPersistentData=_restoredFromPersistentData;
 @property(readonly, copy, nonatomic) NSString *pinnedPageTitle; // @synthesize pinnedPageTitle=_pinnedPageTitle;
@@ -51,19 +53,18 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long tabIndex; // @synthesize tabIndex=_tabIndex;
 @property(readonly, nonatomic) NSDate *dateClosed; // @synthesize dateClosed=_dateClosed;
 @property(readonly, nonatomic) NSUUID *tabUUID; // @synthesize tabUUID=_tabUUID;
-@property(readonly, nonatomic) const Vector_81153489 *ancestorTabIdentifiers; // @synthesize ancestorTabIdentifiers=_ancestorTabIdentifiers;
+@property(readonly, nonatomic) const Vector_f2f32486 *ancestorTabIdentifiers; // @synthesize ancestorTabIdentifiers=_ancestorTabIdentifiers;
 @property(readonly, nonatomic) unsigned int tabIdentifier; // @synthesize tabIdentifier=_tabIdentifier;
 @property(readonly, copy, nonatomic) NSDictionary *queuedNavigation; // @synthesize queuedNavigation=_queuedNavigation;
 @property(readonly, copy, nonatomic) NSData *sessionStateData; // @synthesize sessionStateData=_sessionStateData;
 @property(readonly, nonatomic) double lastVisitTime; // @synthesize lastVisitTime=_lastVisitTime;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long closedItemType;
 @property(readonly, nonatomic) unsigned long long numberOfTabs;
 @property(readonly, copy, nonatomic) NSArray *tabUUIDs;
 - (id)dictionaryRepresentationIncludingSessionState:(BOOL)arg1 forCleanExit:(BOOL)arg2;
+@property(readonly, nonatomic) BrowserTabPersistentState *stateByRemovingPinnedTabData;
 - (void)_setTitleAndURLFromBrowserTabViewItem:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldDeferRestorationUntilSelected;
 - (BOOL)_safeToLoadWebPageFromCurrentLoadingState;
@@ -71,6 +72,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *titleForMenu;
 - (id)browserTabPersistentStateForRegisteringWithUndoForClosingBrowserTabViewItem:(id)arg1;
 - (void)clearSessionState;
+- (id)copyWithNewTabIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1 encryptionProvider:(id)arg2;
 - (id)initWithURL:(id)arg1 title:(id)arg2;

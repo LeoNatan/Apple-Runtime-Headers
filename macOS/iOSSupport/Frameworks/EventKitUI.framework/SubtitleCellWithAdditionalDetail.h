@@ -14,8 +14,8 @@
     id _source;
 }
 
-@property id source; // @synthesize source=_source;
 - (void).cxx_destruct;
+@property id source; // @synthesize source=_source;
 - (BOOL)leftFrame:(struct CGRect)arg1 overlapsRightFrame:(struct CGRect)arg2 difference:(double *)arg3;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

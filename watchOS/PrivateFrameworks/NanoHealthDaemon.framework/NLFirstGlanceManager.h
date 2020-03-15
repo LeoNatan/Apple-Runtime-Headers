@@ -27,9 +27,9 @@
 + (void)setMostRecentFirstGlanceAlertDate:(id)arg1 profile:(id)arg2;
 + (id)mostRecentFirstGlanceAlertDateWithProfile:(id)arg1;
 + (id)submanagerIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
-- (void).cxx_destruct;
 - (_Bool)requiresCoachingConditionsOnRequests;
 - (int)minimumRecentActiveDays;
 - (_Bool)requiresMoveGoal;

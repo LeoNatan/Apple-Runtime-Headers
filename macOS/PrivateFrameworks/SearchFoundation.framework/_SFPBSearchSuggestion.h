@@ -27,6 +27,7 @@
     NSString *_utteranceText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *utteranceText; // @synthesize utteranceText=_utteranceText;
 @property(copy, nonatomic) NSString *scopedSearchApplicationBundleIdentifier; // @synthesize scopedSearchApplicationBundleIdentifier=_scopedSearchApplicationBundleIdentifier;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *suggestion; // @synthesize suggestion=_suggestion;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -16,10 +16,10 @@
     id <ICNFMCAccountProxyManager> _accountProxyManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ICNFMCAccountProxyManager> accountProxyManager; // @synthesize accountProxyManager=_accountProxyManager;
 @property(retain, nonatomic) NSMutableSet *accountsWithActions; // @synthesize accountsWithActions=_accountsWithActions;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_addMovedFolderToOfflineQueue:(id)arg1 originalParent:(id)arg2;
 - (void)_addMovedNoteToOfflineQueue:(id)arg1 originalFolder:(id)arg2;
 - (void)_addUpdatedFolderToOfflineQueue:(id)arg1;

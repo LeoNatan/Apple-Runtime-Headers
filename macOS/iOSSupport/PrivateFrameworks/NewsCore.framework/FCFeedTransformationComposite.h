@@ -17,10 +17,10 @@
     NSArray *_feedTransformations;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *feedTransformations; // @synthesize feedTransformations=_feedTransformations;
 @property(readonly, nonatomic) NSMutableArray *transformationLogs; // @synthesize transformationLogs=_transformationLogs;
 @property(readonly, nonatomic) BOOL shouldLogTransformationResults; // @synthesize shouldLogTransformationResults=_shouldLogTransformationResults;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 - (id)initWithFeedTransformations:(id)arg1 logTransformationResults:(BOOL)arg2;
 - (id)initWithFeedTransformations:(id)arg1;

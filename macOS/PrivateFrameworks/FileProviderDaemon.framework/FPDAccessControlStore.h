@@ -18,8 +18,8 @@
 }
 
 + (id)sharedStore;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 - (id)dumpForBundleIdentifier:(id)arg1;
 - (BOOL)isProviderIdentifier:(id)arg1 allowedToProvideItemID:(id)arg2 toConsumerWithIdentifier:(id)arg3;
 - (void)validateDatabase:(id)arg1;

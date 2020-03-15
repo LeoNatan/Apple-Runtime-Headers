@@ -19,10 +19,10 @@
     NSString *_authenticatediTunesStoreID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *authenticatediTunesStoreID; // @synthesize authenticatediTunesStoreID=_authenticatediTunesStoreID;
 @property(copy) CDUnknownBlockType pendingSendDataHandler; // @synthesize pendingSendDataHandler=_pendingSendDataHandler;
 @property(nonatomic) __weak id <TRDeviceSetupPeripheralDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_legacyAuthenticateWithUserAgent:(id)arg1 deviceGUID:(id)arg2 accountID:(id)arg3 password:(id)arg4 attemptCount:(unsigned long long)arg5 completion:(CDUnknownBlockType)arg6;
 - (_Bool)_sendAction:(id)arg1 sendDataHandler:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (void)_setupDidFailWithError:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;

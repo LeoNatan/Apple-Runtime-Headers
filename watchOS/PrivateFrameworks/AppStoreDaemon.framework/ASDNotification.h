@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)notificationWithName:(id)arg1 userInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

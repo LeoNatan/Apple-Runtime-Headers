@@ -19,12 +19,12 @@
     NSDictionary *_coreGraphicsInfoDictionariesByAuxiliaryType;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *coreGraphicsInfoDictionariesByAuxiliaryType; // @synthesize coreGraphicsInfoDictionariesByAuxiliaryType=_coreGraphicsInfoDictionariesByAuxiliaryType;
 @property(copy) NSDictionary *imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(nonatomic) _Bool renderToData; // @synthesize renderToData=_renderToData;
 @property(copy, nonatomic) NUImageExportFormat *format; // @synthesize format=_format;
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
-- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;
 - (id)copyWithZone:(struct _NSZone *)arg1;

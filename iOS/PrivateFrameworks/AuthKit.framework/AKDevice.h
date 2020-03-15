@@ -51,8 +51,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)activeIDSPeerDevice;
 + (id)currentDevice;
-@property(setter=setLinkType:) unsigned long long linkType; // @synthesize linkType=_linkType;
 - (void).cxx_destruct;
+@property(setter=setLinkType:) unsigned long long linkType; // @synthesize linkType=_linkType;
 - (id)_volumeGroupUUID;
 @property(readonly) NSString *phoneNumber;
 @property(readonly) _Bool isMultiUserMode;

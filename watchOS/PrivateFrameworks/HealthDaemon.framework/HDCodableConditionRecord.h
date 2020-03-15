@@ -26,6 +26,7 @@
     HDCodableMedicalCoding *_verificationStatusCoding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCodingListList *bodySitesCodings; // @synthesize bodySitesCodings=_bodySitesCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingList *severityCodings; // @synthesize severityCodings=_severityCodings;
 @property(retain, nonatomic) HDCodableMedicalCoding *verificationStatusCoding; // @synthesize verificationStatusCoding=_verificationStatusCoding;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) HDCodableMedicalCodingList *categoryCodings; // @synthesize categoryCodings=_categoryCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingList *conditionCodings; // @synthesize conditionCodings=_conditionCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

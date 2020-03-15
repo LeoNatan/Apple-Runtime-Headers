@@ -22,6 +22,7 @@
     NSMutableArray *_specifierListArray;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *specifierListArray; // @synthesize specifierListArray=_specifierListArray;
 @property(retain, nonatomic) PSSpecifier *selectedSpecifier; // @synthesize selectedSpecifier=_selectedSpecifier;
 @property(retain, nonatomic) NSString *currentExtensionID; // @synthesize currentExtensionID=_currentExtensionID;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool showingParentViewController; // @synthesize showingParentViewController=_showingParentViewController;
 @property(retain, nonatomic) NSDictionary *extensionNameMapping; // @synthesize extensionNameMapping=_extensionNameMapping;
 @property(retain, nonatomic) NSArray *extensionIDArray; // @synthesize extensionIDArray=_extensionIDArray;
-- (void).cxx_destruct;
 - (id)specifiers;
 - (id)getSpamSpecifiers;
 - (void)showPrivacyLegalVC;

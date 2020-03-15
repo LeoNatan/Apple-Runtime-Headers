@@ -14,9 +14,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) __weak AVURLAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_notifyCompletionHandlerWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_downloadCompleteFailedNotification:(id)arg1;
 - (void)_downloadCompleteSuccessNotification:(id)arg1;

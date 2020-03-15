@@ -18,9 +18,9 @@
     id <MDLMeshBufferAllocator> _allocator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) id <MDLMeshBufferAllocator> allocator; // @synthesize allocator=_allocator;
 @property(readonly, nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
-- (void).cxx_destruct;
 - (void)cancelMemory:(unsigned long long)arg1;
 - (_Bool)reserveMemory:(unsigned long long)arg1 allocator:(id)arg2;
 - (id)initWithCapacity:(unsigned long long)arg1 allocator:(id)arg2;

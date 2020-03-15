@@ -45,9 +45,9 @@
 + (id)allMomentIDsInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)allMomentsInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)insertNewMomentInManagedObjectContext:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didRegisteredWithUserInterfaceContext; // @synthesize didRegisteredWithUserInterfaceContext;
 @property(nonatomic) _Bool isRegisteredForChanges; // @synthesize isRegisteredForChanges;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long pl_numberOfAssets;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 @property(readonly, nonatomic) CLLocation *pl_location;

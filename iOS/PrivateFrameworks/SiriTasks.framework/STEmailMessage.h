@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *receivingAddresses; // @synthesize receivingAddresses=_receivingAddresses;
 @property(retain, nonatomic) NSArray *bccRecipients; // @synthesize bccRecipients=_bccRecipients;
 @property(retain, nonatomic) NSArray *ccRecipients; // @synthesize ccRecipients=_ccRecipients;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) STPerson *sender; // @synthesize sender=_sender;
 @property(retain, nonatomic) NSURL *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
 @property(copy, nonatomic) NSString *messageBody; // @synthesize messageBody=_messageBody;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_personAttributesForRecipients:(id)arg1;

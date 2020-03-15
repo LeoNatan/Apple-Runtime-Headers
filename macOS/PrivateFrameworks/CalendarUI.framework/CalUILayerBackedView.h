@@ -31,6 +31,7 @@
 + (id)viewWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3;
 + (id)viewWithColor:(id)arg1 isOpaque:(BOOL)arg2;
 + (id)view;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL overrideAllowsVibrancyValue; // @synthesize overrideAllowsVibrancyValue=_overrideAllowsVibrancyValue;
 @property(nonatomic) BOOL overrideAllowsVibrancy; // @synthesize overrideAllowsVibrancy=_overrideAllowsVibrancy;
 @property BOOL settableIsOpaque; // @synthesize settableIsOpaque=_settableIsOpaque;
@@ -40,7 +41,6 @@
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(copy) CDUnknownBlockType updateLayerBlock; // @synthesize updateLayerBlock=_updateLayerBlock;
 @property BOOL acceptsFirstResponderStatus; // @synthesize acceptsFirstResponderStatus=_acceptsFirstResponderStatus;
-- (void).cxx_destruct;
 - (BOOL)accessibilityIsIgnored;
 - (void)disableAnimatedLayerActions;
 - (BOOL)acceptsFirstMouse:(id)arg1;

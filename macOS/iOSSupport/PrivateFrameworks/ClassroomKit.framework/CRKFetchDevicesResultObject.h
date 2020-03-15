@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *connectedDevices; // @synthesize connectedDevices=_connectedDevices;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *connectedDevices; // @synthesize connectedDevices=_connectedDevices;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

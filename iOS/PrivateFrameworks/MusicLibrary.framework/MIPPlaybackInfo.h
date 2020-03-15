@@ -51,6 +51,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long durationInSamples; // @synthesize durationInSamples=_durationInSamples;
 @property(nonatomic) int progressionDirection; // @synthesize progressionDirection=_progressionDirection;
 @property(nonatomic) int beatsPerMinute; // @synthesize beatsPerMinute=_beatsPerMinute;
@@ -70,7 +71,6 @@
 @property(nonatomic) int codecSubType; // @synthesize codecSubType=_codecSubType;
 @property(nonatomic) int codecType; // @synthesize codecType=_codecType;
 @property(nonatomic) int bitRate; // @synthesize bitRate=_bitRate;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

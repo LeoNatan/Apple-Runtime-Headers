@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _eventHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)resume;
 - (void)suspend;
 - (void)cancel;

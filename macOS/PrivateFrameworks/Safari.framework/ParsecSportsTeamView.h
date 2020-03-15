@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSTextField *_recordLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextField *recordLabel; // @synthesize recordLabel=_recordLabel;
 @property(readonly, nonatomic) NSTextField *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(readonly, nonatomic) NSImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
-- (void).cxx_destruct;
 - (void)_setUpConstraints;
 - (void)_configureViews;
 - (struct CGSize)intrinsicContentSize;

@@ -17,9 +17,9 @@
 + (id)buildRequiredOnlyWithCode:(id)arg1;
 + (id)buildWithCode:(id)arg1 withErrorChain:(id)arg2;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *statusErrorChain; // @synthesize statusErrorChain=_statusErrorChain;
 @property(copy, nonatomic) NSString *statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

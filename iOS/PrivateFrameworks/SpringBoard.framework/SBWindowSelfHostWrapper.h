@@ -18,10 +18,10 @@
 
 + (id)wrapperForWindow:(id)arg1 orientation:(long long)arg2 hostRequester:(id)arg3 sceneIdentifier:(id)arg4;
 + (id)wrapperForUseInWindow:(id)arg1 hostRequester:(id)arg2 sceneIdentifier:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <UIScenePresenter> presenter; // @synthesize presenter=_presenter;
 @property(readonly, nonatomic) UIView<UIScenePresentation> *hostView; // @synthesize hostView=_hostView;
 @property(readonly, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)stopHosting;
 - (void)modifyPresentationContext:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) UIScenePresentationContext *presentationContext;

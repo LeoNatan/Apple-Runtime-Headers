@@ -13,8 +13,8 @@
     HUScrollGestureRecognitionResolver *_scrollGestureResolver;
 }
 
-@property(readonly, nonatomic) HUScrollGestureRecognitionResolver *scrollGestureResolver; // @synthesize scrollGestureResolver=_scrollGestureResolver;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUScrollGestureRecognitionResolver *scrollGestureResolver; // @synthesize scrollGestureResolver=_scrollGestureResolver;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)touchesShouldCancelInContentView:(id)arg1;

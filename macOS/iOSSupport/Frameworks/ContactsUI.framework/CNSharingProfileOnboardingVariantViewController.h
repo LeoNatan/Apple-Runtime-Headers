@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)_navigationBarTitleShouldShowForHeaderView:(id)arg1 inScrollView:(id)arg2;
 + (void)updateNavigationBarWithNavigationItem:(id)arg1 forHeaderView:(id)arg2 inScrollView:(id)arg3 animated:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) OBNavigationBarDisplayState *cachedBarState; // @synthesize cachedBarState=_cachedBarState;
 @property(retain, nonatomic) UINavigationController *retainedNavigationController; // @synthesize retainedNavigationController=_retainedNavigationController;
 @property(retain, nonatomic) OBLinkTrayButton *poseButton; // @synthesize poseButton=_poseButton;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) OBHeaderView *onboardingHeaderView; // @synthesize onboardingHeaderView=_onboardingHeaderView;
 @property(nonatomic) BOOL shouldShowPoseButton; // @synthesize shouldShowPoseButton=_shouldShowPoseButton;
 @property(nonatomic) __weak id <CNSharingProfileOnboardingVariantViewControllerDelegate> onboardingDelegate; // @synthesize onboardingDelegate=_onboardingDelegate;
-- (void).cxx_destruct;
 - (BOOL)_scrollViewContentIsUnderTrayForScrollView:(id)arg1;
 - (void)updateTrayBackgroundForScrollView:(id)arg1;
 - (void)_scrollViewDidLayoutSubviews:(id)arg1;

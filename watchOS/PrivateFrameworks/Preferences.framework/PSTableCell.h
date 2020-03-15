@@ -42,13 +42,13 @@
 + (id)reuseIdentifierForBasicCellTypes:(int)arg1;
 + (id)stringFromCellType:(int)arg1;
 + (int)cellTypeFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longTapRecognizer; // @synthesize longTapRecognizer=_longTapRecognizer;
 @property(nonatomic) _Bool isCopyable; // @synthesize isCopyable=_isCopyable;
 @property(nonatomic) _Bool forceHideDisclosureIndicator; // @synthesize forceHideDisclosureIndicator=_forceHideDisclosureIndicator;
 @property(nonatomic) _Bool reusedCell; // @synthesize reusedCell=_reusedCell;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_disclosureChevronImage:(_Bool)arg1;
 - (id)_checkmarkImage:(_Bool)arg1;
 - (void)_invalidateHighlightContext;

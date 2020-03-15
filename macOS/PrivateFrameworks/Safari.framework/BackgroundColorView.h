@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     double _cornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (void)_updateWindowBackgroundMaterialVisualEffectViewIfNeeded;
 - (void)_updateLayerFromProperties;
 - (void)updateLayer;

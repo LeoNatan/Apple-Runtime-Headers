@@ -17,8 +17,8 @@
     id <SiriUIAcousticIDSpinnerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SiriUIAcousticIDSpinnerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriUIAcousticIDSpinnerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)animateOut;

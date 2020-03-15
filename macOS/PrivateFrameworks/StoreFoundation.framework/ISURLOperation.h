@@ -36,6 +36,7 @@
 }
 
 + (long long)operationType;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType outputHandler; // @synthesize outputHandler=_outputHandler;
 @property(copy) NSDictionary *conditionalConnectionProperties; // @synthesize conditionalConnectionProperties=_conditionalConnectionProperties;
 @property BOOL shouldRetryOnNetworkError; // @synthesize shouldRetryOnNetworkError=_shouldRetryOnNetworkError;
@@ -48,7 +49,6 @@
 @property(getter=_shouldSetCookies, setter=_setShouldSetCookies:) BOOL _shouldSetCookies; // @synthesize _shouldSetCookies;
 @property(retain) NSURLResponse *response; // @synthesize response=_response;
 @property(retain) ISDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_updateProgress;
 - (void)_stopConnection;

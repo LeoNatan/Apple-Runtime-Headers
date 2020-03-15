@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL hideTab; // @synthesize hideTab=_hideTab;
 @property(copy) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property BOOL showIcon; // @synthesize showIcon=_showIcon;
@@ -33,7 +34,6 @@
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

@@ -35,10 +35,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_cardPresentation, setter=_setCardPresentation:) CRKCardPresentation *cardPresentation; // @synthesize cardPresentation=_cardPresentation;
 @property(retain, nonatomic, getter=_cardViewController, setter=_setCardViewController:) UIViewController<CRKCardViewControlling> *cardViewController; // @synthesize cardViewController=_cardViewController;
 - (id)snippet;
-- (void).cxx_destruct;
 - (double)boundingWidthForPresentation:(id)arg1;
 @property(readonly, nonatomic) id <CRKCardViewControllerDelegate> cardViewControllerDelegate;
 - (double)desiredHeightForTransparentHeaderView;

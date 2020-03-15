@@ -17,11 +17,11 @@
 }
 
 + (id)socksHadshakeWithVersion:(int)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *credentials; // @synthesize credentials=_credentials;
 @property unsigned short port; // @synthesize port=_port;
 @property(retain) NSString *host; // @synthesize host=_host;
 @property _Bool finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (id)finish:(int)arg1;
 - (_Bool)parse:(const char *)arg1 len:(long)arg2 completion:(CDUnknownBlockType)arg3;
 

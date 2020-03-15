@@ -21,11 +21,11 @@
 }
 
 + (id)defaultCellItemTypes;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *cellItemTypes; // @synthesize cellItemTypes=_cellItemTypes;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) BOOL supportsOpacityEditing; // @synthesize supportsOpacityEditing=_supportsOpacityEditing;
 @property(nonatomic) __weak id <AKToolsListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_shapesCellIndexRow;
 - (void)_reloadCellItemTypes;
 - (id)_buttonViewWithImage:(id)arg1 title:(id)arg2;

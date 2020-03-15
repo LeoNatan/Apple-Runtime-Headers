@@ -25,6 +25,7 @@
 + (id)_cornerReminderImageProvider;
 + (id)_reminderImageCorner;
 + (id)_reminderImageAnalog;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *primaryReminderParentListColor; // @synthesize primaryReminderParentListColor=_primaryReminderParentListColor;
 @property(nonatomic) unsigned int overlappingReminderCount; // @synthesize overlappingReminderCount=_overlappingReminderCount;
 @property(nonatomic) _Bool displayAsConflicting; // @synthesize displayAsConflicting=_displayAsConflicting;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *primaryReminderId; // @synthesize primaryReminderId=_primaryReminderId;
 @property(retain, nonatomic) NSString *primaryReminderTitle; // @synthesize primaryReminderTitle=_primaryReminderTitle;
 @property(retain, nonatomic) NSDate *dueDate; // @synthesize dueDate=_dueDate;
-- (void).cxx_destruct;
 - (id)_createLargeUtilityTemplate;
 - (id)_createLargeModularTemplate;
 - (id)_createSignatureCornerTemplate;

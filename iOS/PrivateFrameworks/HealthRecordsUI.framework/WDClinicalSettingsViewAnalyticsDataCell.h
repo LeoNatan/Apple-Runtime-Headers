@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
-@property(retain, nonatomic) Class viewControllerClass; // @synthesize viewControllerClass=_viewControllerClass;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Class viewControllerClass; // @synthesize viewControllerClass=_viewControllerClass;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

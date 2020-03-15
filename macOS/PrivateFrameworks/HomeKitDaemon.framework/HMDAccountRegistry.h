@@ -24,10 +24,10 @@
 + (id)logCategory;
 + (id)sharedRegistry;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) HMDRemoteAccountManager *remoteAccountManager; // @synthesize remoteAccountManager=_remoteAccountManager;
 @property(readonly) HMDAppleAccountManager *appleAccountManager; // @synthesize appleAccountManager=_appleAccountManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)_resolveAccountForHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)__handleRemovedRemoteAccount:(id)arg1;

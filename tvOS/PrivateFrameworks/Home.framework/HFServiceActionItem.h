@@ -20,11 +20,11 @@
 }
 
 + (id)_percentFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *actionBuilders; // @synthesize actionBuilders=_actionBuilders;
 @property(retain, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) HFItem<HFServiceLikeItem> *containingItem; // @synthesize containingItem=_containingItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)_characteristicTypeToTargetValuesMap;
 - (void)_getDesiredItemDescription:(id *)arg1 controlDescription:(id *)arg2 withSourceItemResults:(id)arg3;
 - (id)namingComponentForHomeKitObject;

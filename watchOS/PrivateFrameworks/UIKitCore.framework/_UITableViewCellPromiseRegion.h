@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
 - (id)_preferredFocusRegionCoordinateSpace;

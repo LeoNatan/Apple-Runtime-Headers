@@ -15,23 +15,24 @@
     _Bool _forceSquareImageAspectRatio;
     _Bool _showMovieDuration;
     unsigned long long _imageScaling;
-    struct UIColor *_borderColor;
+    UIColor *_borderColor;
     unsigned long long _hairlineEdges;
     unsigned long long _edgesToRemoveStartPoint;
     unsigned long long _edgesToRemoveEndPoint;
     double _mininumScaleFactor;
-    struct UIImageView *_imageView;
+    UIImageView *_imageView;
     NSLayoutConstraint *_imageViewLeftLayoutConstraint;
     NSLayoutConstraint *_imageViewRightLayoutConstraint;
     NSLayoutConstraint *_imageViewBottomLayoutConstraint;
     NSLayoutConstraint *_imageViewTopLayoutConstraint;
-    struct UIView *_movieFooter;
+    UIView *_movieFooter;
     ICLabel *_movieDurationLabel;
     NSMutableDictionary *_hairlineLayers;
     NSMutableDictionary *_hairlineColors;
     CDStruct_1b6d18a9 _movieDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showMovieDuration; // @synthesize showMovieDuration=_showMovieDuration;
 @property(retain, nonatomic) NSMutableDictionary *hairlineColors; // @synthesize hairlineColors=_hairlineColors;
 @property(retain, nonatomic) NSMutableDictionary *hairlineLayers; // @synthesize hairlineLayers=_hairlineLayers;
@@ -52,7 +53,6 @@
 @property(nonatomic) CDStruct_1b6d18a9 movieDuration; // @synthesize movieDuration=_movieDuration;
 @property(nonatomic) _Bool showAsMovie; // @synthesize showAsMovie=_showAsMovie;
 @property(nonatomic) unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
-- (void).cxx_destruct;
 - (void)updateHairlineFrames;
 - (struct CGRect)frameByApplyingHorizontalReductionTo:(struct CGRect)arg1 edge:(unsigned long long)arg2;
 - (struct CGRect)frameByApplyingVerticalReductionTo:(struct CGRect)arg1 edge:(unsigned long long)arg2;
@@ -64,7 +64,7 @@
 - (_Bool)usesSeparateLayerForHairlineEdge:(unsigned long long)arg1;
 - (_Bool)usesSeparateLayersForHairlines;
 - (void)updateDurationLabel;
-- (void)setHairlineColor:(struct UIColor *)arg1 forEdges:(unsigned long long)arg2;
+- (void)setHairlineColor:(id)arg1 forEdges:(unsigned long long)arg2;
 @property(nonatomic) double cornerRadius; // @dynamic cornerRadius;
 - (void)setupMovieFooter;
 @property(nonatomic) double imageInset; // @dynamic imageInset;

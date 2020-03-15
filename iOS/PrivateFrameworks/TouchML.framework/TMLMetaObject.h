@@ -25,6 +25,7 @@
 }
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) NSSet *implements; // @synthesize implements=_implements;
 @property(retain, nonatomic) TMLValueExpression *initializer; // @synthesize initializer=_initializer;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (id)signalDeclaration:(id)arg1;
 - (id)propertyDeclaration:(id)arg1;

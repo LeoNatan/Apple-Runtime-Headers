@@ -20,6 +20,7 @@
     NSDictionary *_dictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(retain) NSString *suffix; // @synthesize suffix=_suffix;
 @property(retain) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
@@ -28,7 +29,6 @@
 @property(retain) NSString *descriptionLong; // @synthesize descriptionLong=_descriptionLong;
 @property long long cardType; // @synthesize cardType=_cardType;
 @property(retain) NSString *cardArtwork; // @synthesize cardArtwork=_cardArtwork;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

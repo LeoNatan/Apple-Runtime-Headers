@@ -17,8 +17,8 @@
     NSLock *_lock;
 }
 
-@property(nonatomic) _Bool downTimeHidden; // @synthesize downTimeHidden=_downTimeHidden;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool downTimeHidden; // @synthesize downTimeHidden=_downTimeHidden;
 - (void)removeHiddenBulletin:(id)arg1;
 - (_Bool)isEquivalentToNil;
 - (_Bool)hasItems;

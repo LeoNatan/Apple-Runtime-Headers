@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType changeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler;
 @property(retain, nonatomic) NSDictionary *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property(retain, nonatomic) NSString *representedClass; // @synthesize representedClass;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

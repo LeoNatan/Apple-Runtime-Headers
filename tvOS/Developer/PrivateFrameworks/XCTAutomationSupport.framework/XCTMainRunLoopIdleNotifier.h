@@ -16,10 +16,10 @@
     struct __CFRunLoopObserver *_runLoopObserver;
 }
 
+- (void).cxx_destruct;
 @property struct __CFRunLoopObserver *runLoopObserver; // @synthesize runLoopObserver=_runLoopObserver;
 @property(readonly) NSMutableArray *idleHandlers; // @synthesize idleHandlers=_idleHandlers;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)handleIdleObserved;
 - (void)_queue_setUpRunLoopObserver;
 - (void)notifyWhenIdle:(CDUnknownBlockType)arg1;

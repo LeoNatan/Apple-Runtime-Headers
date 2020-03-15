@@ -13,8 +13,8 @@
     WFAccessResource *_accessResource;
 }
 
-@property(readonly, nonatomic) WFAccessResource *accessResource; // @synthesize accessResource=_accessResource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFAccessResource *accessResource; // @synthesize accessResource=_accessResource;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithAccessResource:(id)arg1;

@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _isResizing; // @synthesize _isResizing=__isResizing;
 @property(nonatomic) BOOL cursorHidden; // @synthesize cursorHidden=_cursorHidden;
 @property(readonly, nonatomic) ZMWCursorView *cursorView; // @synthesize cursorView=_cursorView;
 @property(nonatomic) BOOL constrainToMainDisplay; // @synthesize constrainToMainDisplay=_constrainToMainDisplay;
 @property(nonatomic) __weak ZMWMainWindow *window; // @synthesize window=_window;
 @property(nonatomic) unsigned int magicID; // @synthesize magicID=_magicID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (struct CGRect)captureRect;
 - (struct CGSize)_captureSize;

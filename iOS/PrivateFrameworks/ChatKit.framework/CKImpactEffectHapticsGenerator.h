@@ -15,10 +15,10 @@
     double _feedbackImpactBehaviorDispatchDelay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sendFeedbackImpactBehavior; // @synthesize sendFeedbackImpactBehavior=_sendFeedbackImpactBehavior;
 @property(nonatomic) double feedbackImpactBehaviorDispatchDelay; // @synthesize feedbackImpactBehaviorDispatchDelay=_feedbackImpactBehaviorDispatchDelay;
 @property(retain, nonatomic) NSObject<CK_UIFeedBackImpactBehavior> *expressiveSendFeedbackImpactBehavior; // @synthesize expressiveSendFeedbackImpactBehavior=_expressiveSendFeedbackImpactBehavior;
-- (void).cxx_destruct;
 - (void)cleanUpImpactBehaviorFeedback;
 - (void)sendImpactBehaviorFeedbackForCoordinateSpace:(id)arg1 cleanUpOnSend:(_Bool)arg2;
 - (void)sendImpactBehaviorFeedbackForCoordinateSpace:(id)arg1;

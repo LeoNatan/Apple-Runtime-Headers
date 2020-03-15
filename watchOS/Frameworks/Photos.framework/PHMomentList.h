@@ -22,10 +22,10 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int sortIndex; // @synthesize sortIndex=_sortIndex;
 @property(readonly, nonatomic) NSDate *representativeDate; // @synthesize representativeDate=_representativeDate;
 @property(readonly, nonatomic) short granularityLevel; // @synthesize granularityLevel=_granularityLevel;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)collectionHasFixedOrder;
 - (_Bool)hasLocationInfo;

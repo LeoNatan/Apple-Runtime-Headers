@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *rawAccountPassword; // @synthesize rawAccountPassword=_rawAccountPassword;
 @property(retain) NSNumber *loginChoice; // @synthesize loginChoice=_loginChoice;
 @property(retain, nonatomic) AKAuthorizationScopesUserSelection *userSelection; // @synthesize userSelection=_userSelection;
 @property(retain, nonatomic) id <AKCredentialRequestProtocol> selectedRequest; // @synthesize selectedRequest=_selectedRequest;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

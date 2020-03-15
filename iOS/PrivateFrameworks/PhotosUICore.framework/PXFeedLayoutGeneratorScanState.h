@@ -14,11 +14,11 @@
     long long _scanSpecialSequenceCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long scanSpecialSequenceCount; // @synthesize scanSpecialSequenceCount=_scanSpecialSequenceCount;
 @property(nonatomic) _Bool scannedBatchHasCaption; // @synthesize scannedBatchHasCaption=_scannedBatchHasCaption;
 @property(retain, nonatomic) id scannedBatchID; // @synthesize scannedBatchID=_scannedBatchID;
 @property(nonatomic) long long scanLocation; // @synthesize scanLocation=_scanLocation;
-- (void).cxx_destruct;
 
 @end
 

@@ -26,6 +26,7 @@
 + (id)itemWithSize:(id)arg1 decorationItems:(id)arg2;
 + (id)itemWithLayoutSize:(id)arg1 supplementaryItems:(id)arg2;
 + (id)itemWithLayoutSize:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasComputedContainsEstimatedItem; // @synthesize hasComputedContainsEstimatedItem=_hasComputedContainsEstimatedItem;
 @property(copy, nonatomic) NSArray *decorationItems; // @synthesize decorationItems=_decorationItems;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSArray *supplementaryItems; // @synthesize supplementaryItems=_supplementaryItems;
 @property(copy, nonatomic) NSCollectionLayoutEdgeSpacing *edgeSpacing; // @synthesize edgeSpacing=_edgeSpacing;
 @property(nonatomic) struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (_Bool)hasCustomGroupItemProvider;
 - (_Bool)ignoresRTL;
 - (id)auxillaryItems;

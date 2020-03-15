@@ -16,10 +16,10 @@
 }
 
 + (id)relativeDateContentProviderWithDate:(id)arg1 style:(long long)arg2 units:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long units; // @synthesize units=_units;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

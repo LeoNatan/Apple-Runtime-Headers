@@ -24,13 +24,13 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) INAirportGate *arrivalAirportGate; // @synthesize arrivalAirportGate=_arrivalAirportGate;
 @property(readonly, copy, nonatomic) INAirportGate *departureAirportGate; // @synthesize departureAirportGate=_departureAirportGate;
 @property(readonly, copy, nonatomic) INDateComponentsRange *flightDuration; // @synthesize flightDuration=_flightDuration;
 @property(readonly, copy, nonatomic) INDateComponentsRange *boardingTime; // @synthesize boardingTime=_boardingTime;
 @property(readonly, copy, nonatomic) NSString *flightNumber; // @synthesize flightNumber=_flightNumber;
 @property(readonly, copy, nonatomic) INAirline *airline; // @synthesize airline=_airline;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

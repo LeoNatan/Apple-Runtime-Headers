@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) CALayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(retain, nonatomic) _UIBannerContent *content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (void)setHighlighted:(BOOL)arg1 initialPress:(BOOL)arg2;
 - (void)layoutSubviews;
 - (void)updateConstraints;

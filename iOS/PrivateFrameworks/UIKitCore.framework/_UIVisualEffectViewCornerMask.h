@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 + (id)cornerMaskWithRadius:(double)arg1 continuous:(_Bool)arg2 cornerMask:(unsigned long long)arg3;
 + (id)continuousCornerMaskWithRadius:(double)arg1;
 + (id)cornerMaskWithRadius:(double)arg1;
-@property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 - (_Bool)_isCornerWithRadius:(double)arg1 continuous:(_Bool)arg2 mask:(unsigned long long)arg3;
 - (_Bool)isEqual:(id)arg1;
 - (void)_applyToLayer:(id)arg1;

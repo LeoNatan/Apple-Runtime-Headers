@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_blockerSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *blockerSet; // @synthesize blockerSet=_blockerSet;
 @property(nonatomic) __weak id <ICDocCamProcessingBlockerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)removeBlockerOfType:(id)arg1;
 - (void)addBlockerOfType:(id)arg1 clearRectangles:(_Bool)arg2 clearQueue:(_Bool)arg3;
 - (_Bool)blocked;

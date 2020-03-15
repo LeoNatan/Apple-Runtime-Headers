@@ -56,6 +56,7 @@
 + (_Bool)_canWidgetHostRequestRemoteViewControllerForSequence:(id)arg1;
 + (_Bool)_canWidgetHostConnectRemoteViewControllerByCancellingDisappearanceForSequence:(id)arg1;
 + (_Bool)_canWidgetHostConnectRemoteViewControllerByRequestingForSequence:(id)arg1 disconnectionTimer:(id)arg2 connectionState:(long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isIgnoringParentAppearState, setter=_setIgnoringParentAppearState:) _Bool ignoringParentAppearState; // @synthesize ignoringParentAppearState=_ignoringParentAppearState;
 @property(retain, nonatomic, getter=_sequenceIDsToOutstandingWidgetUpdateCompletionHandlers, setter=_setSequenceIDsToOutstandingWidgetUpdateCompletionHandlers:) NSMutableDictionary *sequenceIDsToOutstandingWidgetUpdateCompletionHandlers; // @synthesize sequenceIDsToOutstandingWidgetUpdateCompletionHandlers=_sequenceIDsToOutstandingWidgetUpdateCompletionHandlers;
 @property(retain, nonatomic, getter=_lockedOutView, setter=_setLockedOutView:) _WGLockedOutWidgetView *lockedOutView; // @synthesize lockedOutView=_lockedOutView;
@@ -91,7 +92,6 @@
 @property(nonatomic) __weak id <WGWidgetHostingViewControllerHost> host; // @synthesize host=_host;
 @property(nonatomic) __weak id <WGWidgetHostingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WGWidgetInfo *widgetInfo; // @synthesize widgetInfo=_widgetInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_insertLockedOutViewWithExplanation:(id)arg1;
 - (void)_invalidateVisibleFrame;

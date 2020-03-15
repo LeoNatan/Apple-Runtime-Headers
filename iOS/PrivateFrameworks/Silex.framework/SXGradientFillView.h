@@ -15,10 +15,10 @@
     SXGradientView *_gradientView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXGradientView *gradientView; // @synthesize gradientView=_gradientView;
 @property(readonly, nonatomic) SXClippingView *clippingView; // @synthesize clippingView=_clippingView;
 @property(readonly, nonatomic) SXLinearGradientFill *gradientFill; // @synthesize gradientFill=_gradientFill;
-- (void).cxx_destruct;
 - (void)setContentFrame:(struct CGRect)arg1;
 - (struct CGRect)contentFrame;
 - (struct CGRect)fillFrameWithBoundingSize:(struct CGSize)arg1;

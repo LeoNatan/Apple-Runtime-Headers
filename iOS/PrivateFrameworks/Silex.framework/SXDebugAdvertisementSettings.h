@@ -19,11 +19,11 @@
     struct _SXConvertibleValue _distanceFromMedia;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _SXConvertibleValue distanceFromMedia; // @synthesize distanceFromMedia=_distanceFromMedia;
 @property(readonly, nonatomic) id <SXAutoPlacementLayout> layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) unsigned long long bannerType; // @synthesize bannerType=_bannerType;
 @property(readonly, nonatomic) unsigned long long frequency; // @synthesize frequency=_frequency;
-- (void).cxx_destruct;
 - (id)initWithFrequency:(unsigned long long)arg1 bannerType:(id)arg2 layout:(id)arg3 distanceFromMedia:(struct _SXConvertibleValue)arg4;
 
 // Remaining properties

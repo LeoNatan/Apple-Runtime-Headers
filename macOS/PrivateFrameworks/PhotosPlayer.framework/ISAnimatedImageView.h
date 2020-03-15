@@ -15,8 +15,8 @@
     ISAnimatedImagePlayer *_player;
 }
 
-@property(retain, nonatomic) ISAnimatedImagePlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ISAnimatedImagePlayer *player; // @synthesize player=_player;
 @property(nonatomic) unsigned long long displayedFrameIndex;
 @property(nonatomic, getter=isPlaying) BOOL playing;
 @property(retain, nonatomic) ISAnimatedImage *image;

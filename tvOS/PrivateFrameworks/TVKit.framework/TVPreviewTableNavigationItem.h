@@ -14,9 +14,9 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (id)initWithAttributedText:(id)arg1 userInfo:(id)arg2;
 
 @end

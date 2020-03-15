@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     NSNumber *duration;
 }
 
-@property(retain, nonatomic) NSNumber *duration; // @synthesize duration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *duration; // @synthesize duration;
 - (id)description;
 - (void)setOptions:(id)arg1;
 - (id)options;

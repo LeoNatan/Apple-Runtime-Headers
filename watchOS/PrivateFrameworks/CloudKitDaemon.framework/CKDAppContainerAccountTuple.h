@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_accountID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(retain, nonatomic) CKDAppContainerTuple *appContainerTuple; // @synthesize appContainerTuple=_appContainerTuple;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (unsigned int)hash;

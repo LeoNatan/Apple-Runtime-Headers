@@ -16,12 +16,11 @@
     NSString *_syncToken;
 }
 
-+ (id)dateFormatter;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *syncToken; // @synthesize syncToken=_syncToken;
 @property(readonly, copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) WFOAuth2Credential *credential; // @synthesize credential=_credential;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)requestWithCommands:(id)arg1 resourceTypes:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createItemInProject:(id)arg1 content:(id)arg2 dueDateString:(id)arg3 reminderDateString:(id)arg4 reminderService:(long long)arg5 priority:(long long)arg6 note:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)createFileOnItemWithId:(long long)arg1 withFile:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

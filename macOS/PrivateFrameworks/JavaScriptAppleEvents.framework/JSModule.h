@@ -17,9 +17,9 @@
 }
 
 + (id)identifier;
+- (void).cxx_destruct;
 @property BOOL loaded; // @synthesize loaded=_loaded;
 @property __weak JSModuleConstructor *constructor; // @synthesize constructor=_constructor;
-- (void).cxx_destruct;
 - (id)require:(id)arg1;
 - (void)load;
 @property(retain) JSValue *exports;

@@ -41,6 +41,7 @@
 + (id)localizedLabelsForLabels:(id)arg1 languageIdentifiers:(id)arg2;
 + (id)localizedLabelForLabel:(id)arg1;
 + (id)localizedStringDictionaryForLanguageIdentifiers:(id)arg1 selectedLanguage:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedResult; // @synthesize cachedResult=_cachedResult;
 @property(retain, nonatomic) NSLocale *updatingLocale; // @synthesize updatingLocale=_updatingLocale;
 @property(retain, nonatomic) NSString *applicableLanguage; // @synthesize applicableLanguage=_applicableLanguage;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(retain, nonatomic) NSMutableDictionary *labelDictionary; // @synthesize labelDictionary=_labelDictionary;
-- (void).cxx_destruct;
 - (void)_validateLabelsForInstalledUnlocalizedLabels:(id)arg1 languageIdentifiers:(id)arg2;
 - (id)cachedLocalizedLabelsForUnlocalizedLabels:(id)arg1;
 - (id)cachedLocalizedLabelsForUnlocalizedLabels:(id)arg1 languageIdentifiers:(id)arg2;

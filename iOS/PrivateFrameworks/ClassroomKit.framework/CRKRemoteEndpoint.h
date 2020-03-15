@@ -16,9 +16,9 @@
     NSString *_IPAddress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short port; // @synthesize port=_port;
 @property(readonly, copy, nonatomic) NSString *IPAddress; // @synthesize IPAddress=_IPAddress;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

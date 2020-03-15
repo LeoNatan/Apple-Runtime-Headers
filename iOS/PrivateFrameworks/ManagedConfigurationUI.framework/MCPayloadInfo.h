@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 + (id)managedBookClasses;
 + (id)managedAppClasses;
 + (id)accountPayloadClasses;
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSDate *certificateExpirationDate; // @synthesize certificateExpirationDate=_certificateExpirationDate;
 @property(retain, nonatomic) NSArray *certificateProperties; // @synthesize certificateProperties=_certificateProperties;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *localizedPluralForm; // @synthesize localizedPluralForm=_localizedPluralForm;
 @property(retain, nonatomic) NSString *localizedSingularForm; // @synthesize localizedSingularForm=_localizedSingularForm;
 @property(retain, nonatomic) NSArray *typeStrings; // @synthesize typeStrings=_typeStrings;
-- (void).cxx_destruct;
 - (id)initWithPayload:(id)arg1;
 - (id)initWithManagedBook:(id)arg1;
 - (id)initWithManagedAppID:(id)arg1;

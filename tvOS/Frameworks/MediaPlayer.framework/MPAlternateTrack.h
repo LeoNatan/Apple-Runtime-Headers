@@ -18,12 +18,12 @@
 }
 
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDVS; // @synthesize isDVS=_isDVS;
 @property(readonly, nonatomic) _Bool isMainProgram; // @synthesize isMainProgram=_isMainProgram;
 @property(readonly, nonatomic) AVMediaSelectionOption *option; // @synthesize option=_option;
 @property(readonly, nonatomic) NSString *canonicalLanguageIdentifier; // @synthesize canonicalLanguageIdentifier=_canonicalLanguageIdentifier;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)_setDisplayNameFromOption:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

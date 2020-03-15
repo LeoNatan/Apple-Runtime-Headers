@@ -20,13 +20,17 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSURL *configurationURL; // @synthesize configurationURL=_configurationURL;
 @property(readonly) __weak NSNumber *version; // @synthesize version=_version;
 @property(copy) NSDictionary *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
+- (id)_queue_unsupported_region:(id)arg1;
+- (id)_queue_unsupported_regions;
 - (id)_queue_region:(id)arg1;
 - (id)_queue_regions;
-- (BOOL)_queue_supportedForOSVersion:(id)arg1 inRegion:(id)arg2 deviceClass:(id)arg3 platform:(id)arg4;
+- (BOOL)_queue_supportedForOSVersion:(id)arg1 inRegion:(id)arg2 deviceClass:(id)arg3 platform:(id)arg4 suportedRegions:(BOOL)arg5;
+- (id)_regionsForOSVersion:(id)arg1 deviceClass:(id)arg2 platform:(id)arg3 supportedRegions:(BOOL)arg4;
+- (BOOL)shouldEnableTransitServiceCheckInForRegion:(id)arg1;
 - (BOOL)shouldPaymentSetupFeaturesUseStrictProductsCheckForRegion:(id)arg1;
 - (BOOL)deviceCheckInDisabledForRegion:(id)arg1;
 - (double)deviceCheckInIntervalForRegion:(id)arg1;
@@ -44,6 +48,15 @@
 - (BOOL)accountServiceEnabledForRegion:(id)arg1;
 - (BOOL)remotePaymentsRequiredForVoiceover;
 - (id)unsupportedWebPaymentConfigurations;
+- (id)featureWithType:(long long)arg1 inRegion:(id)arg2;
+- (id)_queue_featuresForRegion:(id)arg1 osVersion:(id)arg2 deviceClass:(id)arg3;
+- (id)_queue_featuresForRegion:(id)arg1;
+- (id)featuresForRegion:(id)arg1;
+- (id)_queue_globalFeaturesForOSVersion:(id)arg1 deviceClass:(id)arg2;
+- (BOOL)hasFeaturesSupportedForRegion:(id)arg1 osVersion:(id)arg2 deviceClass:(id)arg3;
+- (id)_featuresFromDictionary:(id)arg1 withRegion:(id)arg2 osVersion:(id)arg3 deviceClass:(id)arg4;
+- (id)unsupportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2 platform:(id)arg3;
+- (id)unsupportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2;
 - (id)supportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2 platform:(id)arg3;
 - (id)supportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2;
 - (id)maxRefreshIntervalForRegion:(id)arg1;
@@ -56,6 +69,7 @@
 - (BOOL)regionHasProvisioningEnablementPercentage:(id)arg1;
 - (id)paymentSetupBrowsableProductTypesForRegion:(id)arg1;
 - (BOOL)suppressCardholderNameFieldForRegion:(id)arg1;
+- (id)defaultServerURL;
 - (id)marketsURL;
 - (id)discoveryManifestURLForRegion:(id)arg1;
 - (id)heroImageManifestURLForRegion:(id)arg1;

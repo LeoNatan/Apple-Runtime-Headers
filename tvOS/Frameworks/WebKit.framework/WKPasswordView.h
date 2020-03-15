@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _userDidEnterPassword;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType userDidEnterPassword; // @synthesize userDidEnterPassword=_userDidEnterPassword;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType userDidEnterPassword; // @synthesize userDidEnterPassword=_userDidEnterPassword;
 - (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;

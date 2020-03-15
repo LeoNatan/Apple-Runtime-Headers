@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 {
     MTLSimDevice *_device;
     unsigned int _pipelineRef;
+    unsigned long long _uniqueIdentifier;
 }
 
 - (unsigned long long)imageblockMemoryLengthForDimensions:(CDStruct_da2e99ad)arg1;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)newVertexShaderDebugInfo;
 - (id)newFragmentShaderDebugInfo;
 - (unsigned int)pipelineRef;
+@property(readonly) unsigned long long uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 pipelineRef:(unsigned int)arg2 descriptor:(id)arg3;
 
@@ -41,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) Class superclass;
 @property(readonly) _Bool supportIndirectCommandBuffers;
 @property(readonly) _Bool threadgroupSizeMatchesTileSize;
-@property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly, retain, nonatomic) MTLDebugInstrumentationData *vertexDebugInstrumentationData;
 
 @end

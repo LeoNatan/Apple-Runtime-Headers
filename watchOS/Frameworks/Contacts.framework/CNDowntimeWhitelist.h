@@ -6,24 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore;
+@class ACAccountStore, CNContactStore, NSString;
 @protocol NSObject;
 
 @interface CNDowntimeWhitelist : NSObject
 {
-    CNContactStore *_store;
+    NSString *_primaryiCloudContainerIdentifier;
+    CNContactStore *_contactStore;
+    ACAccountStore *_accountStore;
     id <NSObject> _contactStoreDidChangeNotificationToken;
 }
 
 + (_Bool)isWhitelistedContact:(id)arg1;
++ (_Bool)anyContactIsWhitelisted:(id)arg1;
++ (id)keyDescriptor;
 + (id)os_log;
-@property(readonly) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
-@property(readonly) CNContactStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
-- (id)allWhitelistedHandleStrings;
-- (_Bool)anyContactIsWhitelisted:(id)arg1;
-- (id)keys;
+@property(readonly) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
+@property(readonly) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
+@property(readonly) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+- (void)setTestAcountStore:(id)arg1;
+- (void)setTestPrimaryiCloudContainerIdentifier:(id)arg1;
+- (id)fetchPrimaryiCloudCardDAVContainerIdentifier;
+@property(readonly) NSString *primaryiCloudContainerIdentifier; // @synthesize primaryiCloudContainerIdentifier=_primaryiCloudContainerIdentifier;
+- (id)identifierOfContainerSupporingDowntimeContacts;
+- (id)requestForNonUnifiedContacts;
+- (id)requestForContactsInPermittedContainers;
+- (id)requestForContactsInPermittedContainersWithHandles:(id)arg1;
 - (id)allWhitelistedContacts;
+- (id)allWhitelistedHandleStrings;
 - (_Bool)isHandleStringWhitelisted:(id)arg1;
 - (id)whitelistedHandleStringsFromHandleStrings:(id)arg1;
 - (void)dealloc;

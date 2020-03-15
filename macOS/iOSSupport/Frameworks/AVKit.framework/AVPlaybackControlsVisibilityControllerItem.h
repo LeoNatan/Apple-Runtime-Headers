@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIView *_view;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic, getter=isViewLoaded) BOOL viewLoaded; // @synthesize viewLoaded=_viewLoaded;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
-- (void).cxx_destruct;
 - (BOOL)needsTransitionToHidden:(BOOL)arg1 alpha:(double)arg2;
 - (BOOL)wantsAnimatedTransitionToHidden:(BOOL)arg1 alpha:(double)arg2;
 - (id)init;

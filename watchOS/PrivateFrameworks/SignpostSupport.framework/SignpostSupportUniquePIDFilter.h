@@ -15,8 +15,8 @@
     NSSet *_uniquePidSet;
 }
 
-@property(readonly, nonatomic) NSSet *uniquePidSet; // @synthesize uniquePidSet=_uniquePidSet;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *uniquePidSet; // @synthesize uniquePidSet=_uniquePidSet;
 - (void)addUniquePIDNumberSet:(id)arg1;
 - (void)addUniquePIDNumber:(id)arg1;
 - (_Bool)passesUniquePIDNumber:(id)arg1;

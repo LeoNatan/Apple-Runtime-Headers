@@ -16,8 +16,8 @@
     _Bool _showsExtendedRangeSwitch;
 }
 
-@property(nonatomic) _Bool showsExtendedRangeSwitch; // @synthesize showsExtendedRangeSwitch=_showsExtendedRangeSwitch;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showsExtendedRangeSwitch; // @synthesize showsExtendedRangeSwitch=_showsExtendedRangeSwitch;
 - (id)usesExtendedRangeForSpecifier:(id)arg1;
 - (void)setUsesExtendedRange:(id)arg1 forSpecifier:(id)arg2;
 - (void)sizeCategoryDidChange:(id)arg1;

@@ -37,6 +37,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) CalUIPopupWindowState *windowState; // @synthesize windowState=_windowState;
 @property long long firstDayOfWeek; // @synthesize firstDayOfWeek=_firstDayOfWeek;
 @property(retain) NSMutableArray *tabHeights; // @synthesize tabHeights=_tabHeights;
@@ -59,7 +60,6 @@
 @property __weak NSPopUpButton *recurrenceFrequency; // @synthesize recurrenceFrequency=_recurrenceFrequency;
 @property(retain) NSWindow *customRepeatPanel; // @synthesize customRepeatPanel=_customRepeatPanel;
 @property __weak EKCalendarItem *calendarItem; // @synthesize calendarItem=_calendarItem;
-- (void).cxx_destruct;
 - (BOOL)isCustomRecurrenceValid;
 - (void)setOptionsEnabling;
 - (void)switchToPaneAtIndex:(long long)arg1;

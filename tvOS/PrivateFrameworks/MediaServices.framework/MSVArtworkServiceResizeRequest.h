@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *resizeDestinations; // @synthesize resizeDestinations=_resizeDestinations;
 @property(copy, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (Class)operationClass;
 - (void)enumerateDestinationsUsingBlock:(CDUnknownBlockType)arg1;

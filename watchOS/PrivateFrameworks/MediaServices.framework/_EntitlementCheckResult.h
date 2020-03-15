@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_entitlement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEntitled) _Bool entitled; // @synthesize entitled=_entitled;
 @property(copy, nonatomic) NSString *entitlement; // @synthesize entitlement=_entitlement;
 @property(copy, nonatomic) NSString *group; // @synthesize group=_group;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)initWithEntitlement:(id)arg1 group:(id)arg2;
 
 @end

@@ -20,8 +20,8 @@
 + (id)setWithCapacity:(unsigned long long)arg1;
 + (id)set;
 + (id)log;
-@property(retain, nonatomic) NSMutableSet *internalSet; // @synthesize internalSet=_internalSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *internalSet; // @synthesize internalSet=_internalSet;
 - (void)setSet:(id)arg1;
 - (void)intersectSet:(id)arg1;
 - (void)minusSet:(id)arg1;

@@ -16,9 +16,9 @@
     _Bool _allowFullScreenPhoto;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allowFullScreenPhoto; // @synthesize allowFullScreenPhoto=_allowFullScreenPhoto;
 @property(readonly, nonatomic) NSArray *pictureItems; // @synthesize pictureItems=_pictureItems;
-- (void).cxx_destruct;
 - (id)initWithPictureItemContainer:(id)arg1;
 - (id)initWithPictureItems:(id)arg1 allowFullScreenPhoto:(_Bool)arg2;
 - (id)init;

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_primitiveValues;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFaultForData; // @synthesize hasFaultForData=_hasFaultForData;
 @property(retain, nonatomic) NSMutableDictionary *primitiveValues; // @synthesize primitiveValues=_primitiveValues;
 @property(retain, nonatomic) NSMutableDictionary *committedValues; // @synthesize committedValues=_committedValues;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isInserted) _Bool inserted; // @synthesize inserted=_inserted;
 @property(readonly, copy, nonatomic) VSKeychainItemKind *itemKind; // @synthesize itemKind=_itemKind;
 @property(nonatomic) __weak VSKeychainEditingContext *editingContext; // @synthesize editingContext=_editingContext;
-- (void).cxx_destruct;
 - (id)description;
 @property(copy, nonatomic) NSData *data;
 - (void)didAccessValueForKey:(id)arg1;

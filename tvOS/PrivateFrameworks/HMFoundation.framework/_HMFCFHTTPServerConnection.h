@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _CFHTTPServerConnection *internal; // @synthesize internal=_internal;
 @property(readonly, nonatomic) NSMutableArray *pendingRespones; // @synthesize pendingRespones=_pendingRespones;
 @property(readonly, nonatomic) NSMutableArray *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) HMFNetAddress *address; // @synthesize address=_address;
 @property __weak id <_HMFCFHTTPServerConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_handleCompletedResponse:(struct _CFHTTPServerResponse *)arg1 error:(id)arg2;
 - (void)sendResponse:(id)arg1;

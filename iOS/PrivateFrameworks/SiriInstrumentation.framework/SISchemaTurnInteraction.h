@@ -13,8 +13,8 @@
     NSString *_interactionId;
 }
 
-@property(copy, nonatomic) NSString *interactionId; // @synthesize interactionId=_interactionId;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *interactionId; // @synthesize interactionId=_interactionId;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

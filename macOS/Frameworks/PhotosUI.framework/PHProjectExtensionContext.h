@@ -27,11 +27,11 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)supportedDraggedTypes;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setProject:) PHProject *project; // @synthesize project=_project;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(retain, nonatomic) PHProjectTypeDescriptionSourceService *_typeDescriptionService; // @synthesize _typeDescriptionService;
 @property(nonatomic) __weak id <PHProjectExtensionController> _projectExtensionController; // @synthesize _projectExtensionController;
-- (void).cxx_destruct;
 - (void)connectionWasInvalidatedForProjectTypeDescriptionSourceService:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)_setupProjectWithIdentifier:(id)arg1 libraryURL:(id)arg2;

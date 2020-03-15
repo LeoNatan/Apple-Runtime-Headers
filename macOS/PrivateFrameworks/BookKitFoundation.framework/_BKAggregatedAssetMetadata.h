@@ -19,6 +19,7 @@
     _BKAggregatedAssetData *_aggregateData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _BKAggregatedAssetData *aggregateData; // @synthesize aggregateData=_aggregateData;
 @property(retain, nonatomic) NSData *coverImageData; // @synthesize coverImageData=_coverImageData;
 @property(retain, nonatomic) NSDictionary *sinfOptions; // @synthesize sinfOptions=_sinfOptions;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) BKAssetMetadata *iTunesMetadata; // @synthesize iTunesMetadata=_iTunesMetadata;
 @property(retain, nonatomic) BKAssetMetadata *opfMetadata; // @synthesize opfMetadata=_opfMetadata;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)_populatePackageHashOnMetadata:(id)arg1;
 @property(readonly, nonatomic) BKAssetMetadata *combinedMetadata;
 - (id)initWithURL:(id)arg1 opfMetadata:(id)arg2 aggregateData:(id)arg3;

@@ -16,8 +16,8 @@
 }
 
 + (Class)contactsType;
-@property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *contacts; // @synthesize contacts=_contacts;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

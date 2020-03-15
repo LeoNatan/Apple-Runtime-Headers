@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isRunningAsDaemon;
 + (id)remoteManagementBundle;
 
 @end

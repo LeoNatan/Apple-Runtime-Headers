@@ -18,10 +18,10 @@
 }
 
 + (Class)appleLanguagesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *archivedPreferences; // @synthesize archivedPreferences=_archivedPreferences;
 @property(retain, nonatomic) NSString *appleLocale; // @synthesize appleLocale=_appleLocale;
 @property(retain, nonatomic) NSMutableArray *appleLanguages; // @synthesize appleLanguages=_appleLanguages;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

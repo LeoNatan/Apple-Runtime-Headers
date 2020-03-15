@@ -17,9 +17,9 @@
     CDUnknownBlockType _duplicatePreferenceComparator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType duplicatePreferenceComparator; // @synthesize duplicatePreferenceComparator=_duplicatePreferenceComparator;
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
-- (void).cxx_destruct;
 - (void)enumerateUniqueMessageInfosWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)debugDescription;
 - (unsigned long long)_scanForMessageInfoSimilarTo:(id)arg1;

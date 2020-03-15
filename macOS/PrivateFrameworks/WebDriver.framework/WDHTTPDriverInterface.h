@@ -16,10 +16,10 @@
     id <WDSessionProvider> _sessionProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WDSessionProvider> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(retain, nonatomic) id <WDHTTPRouteHandler> routeHandler; // @synthesize routeHandler=_routeHandler;
 @property(readonly, nonatomic) WDHTTPServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (BOOL)stop;
 - (BOOL)start:(id *)arg1;
 @property(readonly, nonatomic) unsigned long long port;

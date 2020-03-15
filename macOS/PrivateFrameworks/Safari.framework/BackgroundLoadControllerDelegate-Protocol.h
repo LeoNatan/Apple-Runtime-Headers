@@ -6,12 +6,12 @@
 
 #import <Safari/NSObject-Protocol.h>
 
-@class BackgroundLoad, BackgroundLoadController, BrowserTabViewItem, BrowserViewController;
+@class BackgroundLoad, BackgroundLoadController, BrowserTabViewItem, BrowserViewController, WKWebView;
 
 @protocol BackgroundLoadControllerDelegate <NSObject>
 - (BrowserTabViewItem *)backgroundLoadController:(BackgroundLoadController *)arg1 destinationTabViewItemForCommittingBackgroundLoad:(BackgroundLoad *)arg2;
 - (BrowserViewController *)backgroundLoadController:(BackgroundLoadController *)arg1 browserViewControllerForSettingUpBackgroundLoad:(BackgroundLoad *)arg2;
-- (BrowserViewController *)makeBrowserViewControllerForBackgroundLoadController:(BackgroundLoadController *)arg1;
+- (BrowserViewController *)makeBrowserViewControllerForBackgroundLoadController:(BackgroundLoadController *)arg1 relatedToWebView:(WKWebView *)arg2;
 
 @optional
 - (BOOL)backgroundLoadController:(BackgroundLoadController *)arg1 handleBackgroundLoadDidPerformFirstVisuallyNonEmptyLayout:(BackgroundLoad *)arg2;

@@ -13,8 +13,8 @@
     id <NTKRemoteComplicationBudgetManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NTKRemoteComplicationBudgetManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKRemoteComplicationBudgetManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeAppBundleFromBlacklist:(id)arg1;
 - (void)endMeteredSessionForAppBundleID:(id)arg1 clientID:(id)arg2;
 - (void)beginMeteredSessionForAppBundleID:(id)arg1 clientID:(id)arg2 pid:(id)arg3 forPing:(_Bool)arg4;

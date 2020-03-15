@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)preferredCellHeight;
-@property(nonatomic) unsigned long long marginMode; // @synthesize marginMode=_marginMode;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long marginMode; // @synthesize marginMode=_marginMode;
 - (void)_setIsWheelchairUser:(_Bool)arg1;
 - (void)wheelchairUseCharacteristicCache:(id)arg1 wheelchairUsageDidChange:(_Bool)arg2;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;

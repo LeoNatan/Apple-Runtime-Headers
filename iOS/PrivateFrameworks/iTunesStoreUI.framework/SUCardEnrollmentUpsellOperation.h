@@ -20,11 +20,11 @@
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(nonatomic) long long paymentSetupFeatureState; // @synthesize paymentSetupFeatureState=_paymentSetupFeatureState;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
-- (void).cxx_destruct;
 - (void)paymentSetupViewControllerDidDismiss;
 - (id)_paymentSetupFeature;
 - (void)run;

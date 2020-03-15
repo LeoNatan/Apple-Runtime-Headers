@@ -30,10 +30,10 @@
 }
 
 + (id)containerGridViewWithArrangedSubviewRows:(id)arg1;
-@property(nonatomic) double columnWidth; // @synthesize columnWidth=_columnWidth;
-@property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) double columnWidth; // @synthesize columnWidth=_columnWidth;
+@property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 - (void)populateGridArrangementDimension:(vector_b8a5df6e *)arg1 withCells:(const vector_f8404f95 *)arg2 axis:(long long)arg3;
 - (void)populateGridArrangementCells:(vector_f8404f95 *)arg1;
 - (void)_setupViewRangesIfNeeded;

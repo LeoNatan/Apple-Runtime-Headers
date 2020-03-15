@@ -19,11 +19,11 @@
 }
 
 + (long long)compareMemoryInfo:(id)arg1 toMemoryInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, copy, nonatomic) NSArray *memories; // @synthesize memories=_memories;
 @property(readonly, nonatomic) NSDate *representativeDate; // @synthesize representativeDate=_representativeDate;
-- (void).cxx_destruct;
 - (id)entryByReplacingMemoryInfoAtIndex:(long long)arg1 withMemoryInfo:(id)arg2;
 - (id)entryByRemovingMemory:(id)arg1;
 - (id)entryByAddingMemory:(id)arg1;

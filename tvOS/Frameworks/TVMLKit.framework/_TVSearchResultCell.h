@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _didFocusBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didFocusBlock; // @synthesize didFocusBlock=_didFocusBlock;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;

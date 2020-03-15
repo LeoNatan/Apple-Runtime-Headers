@@ -21,12 +21,12 @@
 
 + (id)cachedDateFormatter;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool couldChangeBacklight; // @synthesize couldChangeBacklight=_couldChangeBacklight;
 @property(readonly, nonatomic) _Bool willChangeBacklight; // @synthesize willChangeBacklight=_willChangeBacklight;
 @property(readonly, nonatomic) _Bool backlightWasOn; // @synthesize backlightWasOn=_backlightWasOn;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) unsigned int gestureType; // @synthesize gestureType=_gestureType;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

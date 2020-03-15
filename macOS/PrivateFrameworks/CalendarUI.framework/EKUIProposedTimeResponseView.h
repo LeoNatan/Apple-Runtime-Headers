@@ -19,12 +19,12 @@
     EKUIKeyViewButton *_acceptControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly) EKUIKeyViewButton *acceptControl; // @synthesize acceptControl=_acceptControl;
 @property(readonly) EKUIKeyViewButton *declineControl; // @synthesize declineControl=_declineControl;
 @property unsigned long long orderIndex; // @synthesize orderIndex=_orderIndex;
 @property __weak id <EKUIProposedTimeActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(retain) EKParticipant *proposingAttendee; // @synthesize proposingAttendee=_proposingAttendee;
-- (void).cxx_destruct;
 - (BOOL)shouldDisplay;
 - (void)acceptControlClicked:(id)arg1;
 - (void)declineControlClicked:(id)arg1;

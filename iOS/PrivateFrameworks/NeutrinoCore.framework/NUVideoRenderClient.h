@@ -16,10 +16,10 @@
     NSArray *_pipelineFilters;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *pipelineFilters; // @synthesize pipelineFilters=_pipelineFilters;
 @property(nonatomic) long long sampleMode; // @synthesize sampleMode=_sampleMode;
 @property(retain, nonatomic) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
-- (void).cxx_destruct;
 - (void)submitRequestForComposition:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithName:(id)arg1 responseQueue:(id)arg2;
 

@@ -14,8 +14,8 @@
 }
 
 + (id)itemWithInitialValue:(id)arg1 possibleValues:(id)arg2;
-@property(readonly, copy, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;
 - (void)segmentedControlSelectedItemAtIndex:(unsigned long long)arg1;
 - (void)configureCell:(id)arg1;
 

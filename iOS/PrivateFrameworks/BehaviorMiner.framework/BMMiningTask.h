@@ -25,6 +25,7 @@
 }
 
 + (id)supergreenMiningTask;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned long long absoluteSupport; // @synthesize absoluteSupport=_absoluteSupport;
 @property(readonly, nonatomic) double samplingInterval; // @synthesize samplingInterval=_samplingInterval;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableDictionary *coreAnalyticsDict; // @synthesize coreAnalyticsDict=_coreAnalyticsDict;
 @property(nonatomic) long long completionStatus; // @synthesize completionStatus=_completionStatus;
 @property(nonatomic) __weak id <BMMiningTaskDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)terminateEarly;
 - (void)mine;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished;

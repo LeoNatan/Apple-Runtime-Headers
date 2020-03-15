@@ -16,9 +16,9 @@
     NSString *_username;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

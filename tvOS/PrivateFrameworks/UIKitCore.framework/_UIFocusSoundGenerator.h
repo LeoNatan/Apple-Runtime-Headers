@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (void)_uiktest_unregisterURLForIdentifier:(id)arg1;
 + (void)registerURL:(id)arg1 forIdentifier:(id)arg2;
 + (id)defaultGenerator;
-@property(readonly, nonatomic) id <_UIFocusSoundPlayer> focusSoundPlayer; // @synthesize focusSoundPlayer=_focusSoundPlayer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <_UIFocusSoundPlayer> focusSoundPlayer; // @synthesize focusSoundPlayer=_focusSoundPlayer;
 - (void)playSoundForFocusUpdateInContext:(id)arg1;
 - (id)initWithFocusSoundPlayer:(id)arg1;
 

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     id _resourceProxy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id resourceProxy; // @synthesize resourceProxy=_resourceProxy;
 @property(readonly, nonatomic) _Bool isExclusive; // @synthesize isExclusive=_isExclusive;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)cancel;
 - (void)notifyWithResourceProxy:(id)arg1;

@@ -8,6 +8,6 @@
 
 @protocol ICAttachmentThumbnailOperation
 - (BOOL)isMatchingOperationForCacheKey:(NSString *)arg1 cache:(ICThumbnailDataCache *)arg2;
-- (void)addCompletionBlock:(void (^)(struct NSImage *, unsigned long long, BOOL, BOOL))arg1;
+- (void)addCompletionBlock:(void (^)(NSImage *, unsigned long long, BOOL, BOOL))arg1;
 @end
 

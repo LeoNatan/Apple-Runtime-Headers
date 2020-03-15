@@ -20,8 +20,10 @@
     struct OpaqueFigCFWeakReferenceHolder *_weakAssertion;
     long long _doomTime;
     BOOL _doomCheckScheduled;
+    int _assertionCount;
 }
 
+@property(nonatomic) int assertionCount; // @synthesize assertionCount=_assertionCount;
 @property(nonatomic) BOOL doomCheckScheduled; // @synthesize doomCheckScheduled=_doomCheckScheduled;
 @property(nonatomic) long long doomTime; // @synthesize doomTime=_doomTime;
 @property(readonly, nonatomic) NSString *clientBundleIdentifier; // @synthesize clientBundleIdentifier=_clientBundleIdentifier;
@@ -32,7 +34,7 @@
 - (void)dealloc;
 - (id)initWithClientBundleIdentifier:(id)arg1 dispatchQueue:(id)arg2;
 - (void)debug;
-@property(readonly, nonatomic) struct FigOpaqueAssertion *assertion;
+- (struct FigOpaqueAssertion *)acquireAssertion;
 
 @end
 

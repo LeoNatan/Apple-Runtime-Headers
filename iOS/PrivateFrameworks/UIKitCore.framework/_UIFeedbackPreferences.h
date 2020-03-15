@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedPreferences;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly, nonatomic) NSDictionary *defaultFeedbackTypes; // @synthesize defaultFeedbackTypes=_defaultFeedbackTypes;
-- (void).cxx_destruct;
 - (void)_accessibilityForceTouchChanged:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_invalidate;

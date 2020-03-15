@@ -19,9 +19,9 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *characteristicRecipes; // @synthesize characteristicRecipes=_characteristicRecipes;
 @property(readonly, nonatomic) id <HFServiceTreeMatching> predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

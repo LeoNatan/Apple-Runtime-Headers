@@ -15,8 +15,8 @@
 
 + (id)applicationIdentifierForValue:(id)arg1;
 + (id)applicationValueForIdentifier:(id)arg1;
-@property(retain) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

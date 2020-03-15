@@ -17,13 +17,15 @@
     NSUUID *_uuid_ivar;
     NSString *_tlsSessionCachePrefix;
     ConnectionContextManager *_nwContextManager;
-    shared_ptr_9ad247fa _nwContext;
+    shared_ptr_22b0e4cc _nwContext;
     NSMutableDictionary *_altSvc;
     NSMutableSet *_h2BlacklistedHosts;
     NSMutableDictionary *_coalescing;
     __CFN_SessionMetrics *_metrics;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)set_metrics:(id)arg1;
 - (id)_metrics;
 - (void)set_coalescing:(id)arg1;
@@ -33,9 +35,7 @@
 - (void)set_altSvc:(id)arg1;
 - (id)_altSvc;
 - (id)_tlsSessionCachePrefix;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (shared_ptr_9ad247fa)_nwContext;
+- (shared_ptr_22b0e4cc)_nwContext;
 - (void)set_tlsSessionCachePrefix:(id)arg1;
 - (void)_useTLSSessionCacheFromSession:(id)arg1;
 @property(readonly, copy) NSDictionary *delegateOptions;

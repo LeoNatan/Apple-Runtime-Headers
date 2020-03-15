@@ -13,8 +13,8 @@
     NSMutableDictionary *_handlers;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 - (void)unregisterHandler:(unsigned long long)arg1;
 - (unsigned long long)registerForNotification:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)dispatchNotification:(id)arg1 payload:(id)arg2;

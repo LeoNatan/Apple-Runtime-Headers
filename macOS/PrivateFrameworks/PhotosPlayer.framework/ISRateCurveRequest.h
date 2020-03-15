@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _targetTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(readonly, nonatomic) __weak ISAVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(readonly, nonatomic) float initialRate; // @synthesize initialRate=_initialRate;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 targetTime; // @synthesize targetTime=_targetTime;
-- (void).cxx_destruct;
 - (void)_stopObservingPlayer;
 - (void)dealloc;
 - (void)cancel;

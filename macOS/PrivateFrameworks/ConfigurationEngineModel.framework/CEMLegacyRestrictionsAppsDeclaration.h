@@ -28,6 +28,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadBlacklistedAppBundleIDs; // @synthesize payloadBlacklistedAppBundleIDs=_payloadBlacklistedAppBundleIDs;
 @property(copy, nonatomic) NSNumber *payloadAllowVideoConferencing; // @synthesize payloadAllowVideoConferencing=_payloadAllowVideoConferencing;
 @property(copy, nonatomic) NSNumber *payloadAllowSafari; // @synthesize payloadAllowSafari=_payloadAllowSafari;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSNumber *payloadAllowNews; // @synthesize payloadAllowNews=_payloadAllowNews;
 @property(copy, nonatomic) NSNumber *payloadAllowiTunes; // @synthesize payloadAllowiTunes=_payloadAllowiTunes;
 @property(copy, nonatomic) NSNumber *payloadAllowChat; // @synthesize payloadAllowChat=_payloadAllowChat;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

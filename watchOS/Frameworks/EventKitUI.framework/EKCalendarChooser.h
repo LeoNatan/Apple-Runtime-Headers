@@ -52,6 +52,7 @@
 + (id)delegatesString;
 + (id)hideAllString;
 + (id)showAllString;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsEdit; // @synthesize allowsEdit=_allowsEdit;
 @property(nonatomic) _Bool showDetailAccessories; // @synthesize showDetailAccessories=_showDetailAccessories;
 @property(nonatomic) _Bool onlyShowUnmanagedAccounts; // @synthesize onlyShowUnmanagedAccounts=_onlyShowUnmanagedAccounts;
@@ -79,7 +80,6 @@
 @property(nonatomic) __weak id <EKCalendarChooserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableSet *selectedCalendarSet; // @synthesize selectedCalendarSet=_selectedCalendars;
 @property(nonatomic) int selectionStyle; // @synthesize selectionStyle=_style;
-- (void).cxx_destruct;
 - (void)_insertStoreIntoByGroupArray:(id)arg1;
 - (void)calendarEditor:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)_sendAnalyticsEvent:(unsigned int)arg1 forGroup:(id)arg2;

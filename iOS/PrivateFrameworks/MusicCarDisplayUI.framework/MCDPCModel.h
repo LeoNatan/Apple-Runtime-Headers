@@ -31,6 +31,7 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mediaRemoteItemQueue; // @synthesize mediaRemoteItemQueue=_mediaRemoteItemQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mediaRemoteNotificationQueue; // @synthesize mediaRemoteNotificationQueue=_mediaRemoteNotificationQueue;
 @property(retain, nonatomic) MPWeakTimer *playbackProgressTimeoutTimer; // @synthesize playbackProgressTimeoutTimer=_playbackProgressTimeoutTimer;
@@ -47,7 +48,6 @@
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) MCDPCItem *rootItem; // @synthesize rootItem=_rootItem;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)itemsFromMRContentItems:(id)arg1;
 - (void)_invalidatePlaybackProgressTimeoutTimer;
 - (void)_setupPlaybackProgressTimeoutTimerWithCompletion:(CDUnknownBlockType)arg1;

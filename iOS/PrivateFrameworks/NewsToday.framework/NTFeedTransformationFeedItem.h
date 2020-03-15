@@ -18,10 +18,10 @@
     NTPBFeedItem *_feedItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NTPBFeedItem *feedItem; // @synthesize feedItem=_feedItem;
 @property(readonly, copy, nonatomic) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(readonly, copy, nonatomic) NSDate *cacheExpirationDate; // @synthesize cacheExpirationDate=_cacheExpirationDate;
-- (void).cxx_destruct;
 - (id)protoitemWithFetchedFeedItemHeadline:(id)arg1;
 @property(readonly, copy, nonatomic) NTPBFeedItem *feedItemForHeadlineFetch;
 @property(readonly, nonatomic) _Bool needsFeedItemHeadlinesFetch;

@@ -15,8 +15,8 @@
     id <NFLocking> _underlyingLock;
 }
 
-@property(retain, nonatomic) id <NFLocking> underlyingLock; // @synthesize underlyingLock=_underlyingLock;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <NFLocking> underlyingLock; // @synthesize underlyingLock=_underlyingLock;
 - (void)unlock;
 - (void)lock;
 - (void)performWriteSync:(CDUnknownBlockType)arg1;

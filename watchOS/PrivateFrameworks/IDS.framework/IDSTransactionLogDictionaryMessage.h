@@ -13,8 +13,8 @@
     NSDictionary *_dictionaryValue;
 }
 
-@property(readonly, nonatomic) NSDictionary *dictionaryValue; // @synthesize dictionaryValue=_dictionaryValue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dictionaryValue; // @synthesize dictionaryValue=_dictionaryValue;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithDictionary:(id)arg1 accountUniqueID:(id)arg2 fromID:(id)arg3 loginID:(id)arg4 serviceName:(id)arg5;

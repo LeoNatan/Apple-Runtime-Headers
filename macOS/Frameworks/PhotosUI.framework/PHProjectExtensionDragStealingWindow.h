@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <NSDraggingDestination> _stealingDraggingDestination;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NSDraggingDestination> stealingDraggingDestination; // @synthesize stealingDraggingDestination=_stealingDraggingDestination;
 @property(copy, nonatomic) NSSet *photosDragTypes; // @synthesize photosDragTypes=_photosDragTypes;
-- (void).cxx_destruct;
 - (id)_findDragTargetFrom:(id)arg1;
 - (BOOL)_containsPhotosDragTypes:(id)arg1;
 

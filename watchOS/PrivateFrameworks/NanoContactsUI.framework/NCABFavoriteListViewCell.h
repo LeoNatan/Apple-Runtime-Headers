@@ -14,9 +14,9 @@
     UIColor *_emphasisColorDisabled;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *emphasisColorDisabled; // @synthesize emphasisColorDisabled=_emphasisColorDisabled;
 @property(readonly, nonatomic) UIColor *emphasisColor; // @synthesize emphasisColor=_emphasisColor;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)initWithCellIdentifier:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

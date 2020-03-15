@@ -22,13 +22,13 @@
     CDUnknownBlockType _doneAction;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType doneAction; // @synthesize doneAction=_doneAction;
 @property(copy, nonatomic) CDUnknownBlockType learnMoreAction; // @synthesize learnMoreAction=_learnMoreAction;
 @property(copy, nonatomic) CDUnknownBlockType auxiliaryAction; // @synthesize auxiliaryAction=_auxiliaryAction;
 @property(copy, nonatomic) CDUnknownBlockType continueAction; // @synthesize continueAction=_continueAction;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) __weak PKApplyController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_bodyButtonAction;
 - (void)_featureApplicationUpdated;
 - (void)showNavigationBarSpinner:(_Bool)arg1;

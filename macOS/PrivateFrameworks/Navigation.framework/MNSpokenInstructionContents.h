@@ -23,12 +23,12 @@
 }
 
 + (id)contentsWithStep:(id)arg1 transportType:(int)arg2 destination:(id)arg3 options:(CDStruct_68b2ff84 *)arg4 isSecondary:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *executionInstructionFormats; // @synthesize executionInstructionFormats=_executionInstructionFormats;
 @property(retain, nonatomic) id <GEOServerFormattedString> prepareInstructionFormat; // @synthesize prepareInstructionFormat=_prepareInstructionFormat;
 @property(retain, nonatomic) id <GEOServerFormattedString> initialInstructionFormat; // @synthesize initialInstructionFormat=_initialInstructionFormat;
 @property(retain, nonatomic) id <GEOServerFormattedString> continueInstructionFormat; // @synthesize continueInstructionFormat=_continueInstructionFormat;
 @property(retain, nonatomic) id <GEOServerFormattedString> proceedInstructionFormat; // @synthesize proceedInstructionFormat=_proceedInstructionFormat;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasServerContent;
 - (id)instructionForStage:(unsigned long long)arg1 distance:(double)arg2;
 - (id)_instructionsForFormats:(id)arg1 distance:(double)arg2;

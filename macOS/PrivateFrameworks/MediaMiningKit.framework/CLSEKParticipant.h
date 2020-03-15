@@ -20,13 +20,13 @@
     NSURL *_URL;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly) long long participantType; // @synthesize participantType=_participantType;
 @property(readonly) BOOL isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly) long long participantStatus; // @synthesize participantStatus=_participantStatus;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

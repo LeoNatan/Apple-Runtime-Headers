@@ -38,6 +38,7 @@
     NSMutableDictionary *__barButtonItemCacheByBarItemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAddActionButton; // @synthesize shouldAddActionButton=_shouldAddActionButton;
 @property(readonly, nonatomic) NSMutableDictionary *_barButtonItemCacheByBarItemIdentifier; // @synthesize _barButtonItemCacheByBarItemIdentifier=__barButtonItemCacheByBarItemIdentifier;
 @property(readonly, nonatomic) NSMutableDictionary *_barButtonItemByActionType; // @synthesize _barButtonItemByActionType=__barButtonItemByActionType;
@@ -52,14 +53,13 @@
 @property(retain, nonatomic, setter=_setSelectionManager:) PXSectionedSelectionManager *_selectionManager; // @synthesize _selectionManager=__selectionManager;
 @property(readonly, nonatomic) PXPhotosDetailsViewModel *_viewModel; // @synthesize _viewModel=__viewModel;
 @property(retain, nonatomic, setter=_setBarAppearance:) PXBarAppearance *_barAppearance; // @synthesize _barAppearance=__barAppearance;
-- (void).cxx_destruct;
 - (_Bool)_dismissViewControllerIfSafeAnimated:(_Bool)arg1;
 - (void)actionMenu:(id)arg1 assetCollectionActionPerformer:(id)arg2 playMovieForAssetCollection:(id)arg3;
 - (void)actionMenu:(id)arg1 actionPerformer:(id)arg2 didChangeState:(unsigned long long)arg3;
 - (_Bool)actionMenu:(id)arg1 actionPerformer:(id)arg2 dismissViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)actionMenu:(id)arg1 actionPerformer:(id)arg2 presentViewController:(id)arg3;
 - (void)prepareForPopoverPresentation:(id)arg1;
-- (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)actionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)_sourceBarButtonItemForActionType:(id)arg1;
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;

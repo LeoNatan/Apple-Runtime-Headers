@@ -29,12 +29,12 @@
 + (id)sharedDaemonConfigOversize;
 + (id)sharedDaemonConfig;
 + (id)sharedConfig;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *propertyAccessQueue; // @synthesize propertyAccessQueue=_propertyAccessQueue;
 @property(retain, nonatomic) NSObject<OS_os_log> *backingOSLogObject; // @synthesize backingOSLogObject=_backingOSLogObject;
 @property(copy, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(nonatomic) unsigned long long environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

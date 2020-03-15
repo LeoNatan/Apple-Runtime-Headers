@@ -19,13 +19,13 @@
         double _field5;
         double _field6;
     } *_events;
-    int _swipeAxis;
     UIWindow *_window;
+    unsigned long long _swipeAxis;
 }
 
-@property(nonatomic) int swipeAxis; // @synthesize swipeAxis=_swipeAxis;
-@property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long swipeAxis; // @synthesize swipeAxis=_swipeAxis;
+@property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 - (void)main;
 - (void)prepareWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithIdentifier:(id)arg1;

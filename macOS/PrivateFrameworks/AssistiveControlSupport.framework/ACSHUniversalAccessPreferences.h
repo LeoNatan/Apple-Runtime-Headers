@@ -18,10 +18,10 @@
 
 + (id)shared;
 + (id)userDefaultsPreferencesSource;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_cachedSwitchControlDisplayThemeStringFromPreferences; // @synthesize _cachedSwitchControlDisplayThemeStringFromPreferences=__cachedSwitchControlDisplayThemeStringFromPreferences;
 @property(copy, nonatomic) NSString *_cachedVirtualKeyboardDisplayThemeStringFromPreferences; // @synthesize _cachedVirtualKeyboardDisplayThemeStringFromPreferences=__cachedVirtualKeyboardDisplayThemeStringFromPreferences;
 @property(copy, nonatomic) NSString *_cachedDisplayThemeStringFromPreferences; // @synthesize _cachedDisplayThemeStringFromPreferences=__cachedDisplayThemeStringFromPreferences;
-- (void).cxx_destruct;
 - (void)preferencesChanged:(id)arg1;
 - (void)_preferencesChanged:(id)arg1;
 - (void)_updateDisplayThemeStringFromPreferences;

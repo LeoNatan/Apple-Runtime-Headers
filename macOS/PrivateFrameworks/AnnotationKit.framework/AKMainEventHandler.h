@@ -41,6 +41,7 @@
 }
 
 + (id)newMainEventHandlerForCurrentPlatformWithController:(id)arg1;
+- (void).cxx_destruct;
 @property struct CGPoint panGestureStartPointInWindow; // @synthesize panGestureStartPointInWindow=_panGestureStartPointInWindow;
 @property struct CGPoint firstDragPoint; // @synthesize firstDragPoint=_firstDragPoint;
 @property __weak AKController *controller; // @synthesize controller=_controller;
@@ -67,7 +68,6 @@
 @property BOOL mainEventHandlerIsInRotationLoop; // @synthesize mainEventHandlerIsInRotationLoop=_mainEventHandlerIsInRotationLoop;
 @property BOOL mainEventHandlerIsInDoodleTrackingLoop; // @synthesize mainEventHandlerIsInDoodleTrackingLoop=_mainEventHandlerIsInDoodleTrackingLoop;
 @property BOOL mainEventHandlerIsInTrackingLoop; // @synthesize mainEventHandlerIsInTrackingLoop=_mainEventHandlerIsInTrackingLoop;
-- (void).cxx_destruct;
 - (BOOL)_detectFormElementInCurrentPageControllerUnderPointInWindow:(struct CGPoint)arg1;
 - (BOOL)_detectFormElementInCurrentPageControllerUnderPointInWindow:(struct CGPoint)arg1 withStartingPoint:(struct CGPoint)arg2;
 - (void)_beginEditingIfTextAnnotation:(id)arg1 withEvent:(id)arg2 orRecognizer:(id)arg3;

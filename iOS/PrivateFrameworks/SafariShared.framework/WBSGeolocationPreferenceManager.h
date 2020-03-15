@@ -16,9 +16,9 @@
     WBSPerSitePreference *_geolocationPreference;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSPerSitePreference *geolocationPreference; // @synthesize geolocationPreference=_geolocationPreference;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore; // @synthesize perSitePreferencesStore=_perSitePreferencesStore;
-- (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forDomain:(id)arg2 shouldIncludeTimestamp:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)_isDateLessThanOneDayAgo:(id)arg1;
 - (id)perSitePreferenceValueForGeolocationSetting:(long long)arg1;

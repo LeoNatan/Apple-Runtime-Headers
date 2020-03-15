@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coreIDVServiceProviderName; // @synthesize coreIDVServiceProviderName=_coreIDVServiceProviderName;
 @property(copy, nonatomic) NSString *businessChatIdentifier; // @synthesize businessChatIdentifier=_businessChatIdentifier;
 @property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned long long feature; // @synthesize feature=_feature;
 @property(copy, nonatomic) NSURL *applicationBaseURL; // @synthesize applicationBaseURL=_applicationBaseURL;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -48,6 +48,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)hasSufficientOTBForInstallmentConfiguration:(id)arg1;
+@property(readonly, nonatomic) _Bool isActive;
 - (id)initWithDictionary:(id)arg1;
 
 @end

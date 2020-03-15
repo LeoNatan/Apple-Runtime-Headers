@@ -15,9 +15,9 @@
 }
 
 + (id)_sharedPublicMetrics;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
-- (void).cxx_destruct;
 - (void)logSyncFailedWithError:(id)arg1;
 - (void)logSyncCompleted;
 - (void)logTimerRepeated;

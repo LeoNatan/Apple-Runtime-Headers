@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _numberOfAppearanceTransitions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAppearingFor27640396) _Bool appearingFor27640396; // @synthesize appearingFor27640396=_appearingFor27640396;
 @property(nonatomic) unsigned long long numberOfAppearanceTransitions; // @synthesize numberOfAppearanceTransitions=_numberOfAppearanceTransitions;
 @property(retain, nonatomic) UIGestureRecognizer *interactionGestureRecognizer; // @synthesize interactionGestureRecognizer=_interactionGestureRecognizer;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVPRelatedContent *relatedContent; // @synthesize relatedContent=_relatedContent;
 @property(retain, nonatomic) UIViewController *primaryViewController; // @synthesize primaryViewController=_primaryViewController;
 @property(nonatomic) __weak id <TVPRelatedContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

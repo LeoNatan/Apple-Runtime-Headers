@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *icsString; // @synthesize icsString=_icsString;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *icsString; // @synthesize icsString=_icsString;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *extraPreviewText;

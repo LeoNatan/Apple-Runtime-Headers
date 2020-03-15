@@ -24,9 +24,9 @@
 + (_Bool)_writeDictionary:(id)arg1 toFileURL:(id)arg2 error:(id *)arg3;
 + (id)relaunchPlistPath;
 + (id)sharedHandler;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *registeredRelaunchClients; // @synthesize registeredRelaunchClients=_registeredRelaunchClients;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
-- (void).cxx_destruct;
 - (void)_setJetsamPriorityElevated:(_Bool)arg1;
 - (void)_updateOrRemoveRelaunchPlist;
 - (void)deregisterForRelaunch:(id)arg1;

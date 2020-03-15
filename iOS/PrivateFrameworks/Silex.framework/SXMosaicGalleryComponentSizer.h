@@ -15,8 +15,8 @@
     SXMosaicGalleryLayouter *_layouter;
 }
 
-@property(retain, nonatomic) SXMosaicGalleryLayouter *layouter; // @synthesize layouter=_layouter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXMosaicGalleryLayouter *layouter; // @synthesize layouter=_layouter;
 - (id)documentColumnLayoutForGalleryLayouter:(id)arg1;
 - (unsigned long long)numberOfItemsForGalleryLayouter:(id)arg1;
 - (_Bool)galleryLayouter:(id)arg1 viewIsCurrentlyFullscreenForItemAtIndex:(unsigned long long)arg2;

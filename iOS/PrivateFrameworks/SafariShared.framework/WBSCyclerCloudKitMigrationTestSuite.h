@@ -20,8 +20,8 @@
 }
 
 + (_Bool)setValue:(id)arg1 forConfigurationKey:(id)arg2;
-@property(readonly, nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 - (id)_descriptionForErrorCode:(long long)arg1;
 - (id)_errorWithCode:(long long)arg1;
 - (void)_validateResultsOfMigrationWithTarget:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

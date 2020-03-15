@@ -26,6 +26,7 @@
 + (_Bool)isNotch:(CDStruct_b31d0695)arg1 equalToNotch:(CDStruct_b31d0695)arg2;
 + (_Bool)doesNotchWithOffset:(CDStruct_b31d0695)arg1 overlapNotch:(CDStruct_b31d0695)arg2;
 + (_Bool)doesNotch:(CDStruct_b31d0695)arg1 overlapNotch:(CDStruct_b31d0695)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool notchAddDidFail; // @synthesize notchAddDidFail=_notchAddDidFail;
 @property(nonatomic) _Bool detentsEnabledForDevice; // @synthesize detentsEnabledForDevice=_detentsEnabledForDevice;
 @property(nonatomic) _Bool failForItemsTallerThanScreen; // @synthesize failForItemsTallerThanScreen=_failForItemsTallerThanScreen;
@@ -35,7 +36,6 @@
 @property(nonatomic) float initialContentOffset; // @synthesize initialContentOffset=_initialContentOffset;
 @property(nonatomic) float firstValidOffsetForNotches; // @synthesize firstValidOffsetForNotches=_firstValidOffsetForNotches;
 @property(nonatomic) __weak PUICCrownInputSequencer *targetCrownInputSequencer; // @synthesize targetCrownInputSequencer=_targetCrownInputSequencer;
-- (void).cxx_destruct;
 - (void)detentService:(id)arg1 detentsDisabledChanged:(_Bool)arg2;
 - (void)_detentsEnabledStateChanged:(id)arg1;
 @property(readonly, copy) NSString *description;

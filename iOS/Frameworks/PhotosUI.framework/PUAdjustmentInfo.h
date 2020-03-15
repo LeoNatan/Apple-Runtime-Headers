@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSString *_attributeKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *attributeKey; // @synthesize attributeKey=_attributeKey;
 @property(retain, nonatomic) id <PUAdjustmentCustomBehavior> customSettingDelegate; // @synthesize customSettingDelegate=_customSettingDelegate;
 @property(retain, nonatomic) NSString *settingKey; // @synthesize settingKey=_settingKey;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(retain, nonatomic) NSString *localizedSectionName; // @synthesize localizedSectionName=_localizedSectionName;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) double normalizedDefaultLevel;
 @property(readonly, nonatomic) double normalizedCurrentLevel;

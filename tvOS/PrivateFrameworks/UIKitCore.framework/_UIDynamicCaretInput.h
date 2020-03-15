@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     _UIDynamicCaretDot *_dotView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDynamicCaretDot *dotView; // @synthesize dotView=_dotView;
 @property(retain, nonatomic) UIDelayedAction *committedAction; // @synthesize committedAction=_committedAction;
 @property(retain, nonatomic) TIHandwritingStrokes *accumulatedStrokes; // @synthesize accumulatedStrokes=_accumulatedStrokes;
 @property(retain, nonatomic) NSTimer *fadeTimer; // @synthesize fadeTimer=_fadeTimer;
-- (void).cxx_destruct;
 - (void)cancelTouchAtPoint:(struct CGPoint)arg1;
 - (void)endTouchAtPoint:(struct CGPoint)arg1;
 - (void)addTouchAtPoint:(struct CGPoint)arg1;

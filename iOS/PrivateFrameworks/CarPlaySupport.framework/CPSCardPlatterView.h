@@ -10,6 +10,9 @@
 {
 }
 
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)didAddSubview:(id)arg1;
+- (void)_updateStyleOverridesForSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

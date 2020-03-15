@@ -18,11 +18,11 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy, nonatomic) NSString *feature; // @synthesize feature=_feature;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithProcess:(id)arg1 type:(unsigned long long)arg2 feature:(id)arg3 timestamp:(id)arg4;
 

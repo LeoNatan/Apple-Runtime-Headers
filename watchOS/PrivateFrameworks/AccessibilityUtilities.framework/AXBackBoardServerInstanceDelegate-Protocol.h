@@ -12,7 +12,11 @@
 - (void)setCapsLockLightOn:(_Bool)arg1;
 - (void)setLockScreenDimTimerEnabled:(_Bool)arg1;
 - (void)zoomListenerRegistered;
+- (void)setHearingAidServerPid:(int)arg1;
+- (int)hearingAidServerPid;
 - (void)setSiriViewServicePid:(int)arg1;
+- (int)accessibilityFullKeyboardAccessDaemonPid;
+- (void)setFullKeyboardAccessDaemonPID:(int)arg1;
 - (int)accessibilityUIServerPid;
 - (void)setAccessibilityUIServerPid:(int)arg1;
 - (int)accessibilityAssistiveTouchPid;
@@ -24,6 +28,8 @@
 - (void)postEvent:(AXEventRepresentation *)arg1 systemEvent:(_Bool)arg2 afterNamedTap:(NSString *)arg3 namedTaps:(NSArray *)arg4;
 - (unsigned int)contextIdForDisplayPoint:(struct CGPoint)arg1;
 - (unsigned int)contextIdHosterForContextId:(unsigned int)arg1;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg1 toContextId:(unsigned int)arg2 displayId:(unsigned int)arg3;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromContextId:(unsigned int)arg2 displayId:(unsigned int)arg3;
 - (struct CGRect)convertFrame:(struct CGRect)arg1 toContextId:(unsigned int)arg2 displayId:(unsigned int)arg3;
 - (struct CGRect)convertFrame:(struct CGRect)arg1 fromContextId:(unsigned int)arg2 displayId:(unsigned int)arg3;
 @end

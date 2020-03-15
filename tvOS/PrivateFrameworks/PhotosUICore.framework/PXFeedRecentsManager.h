@@ -24,12 +24,12 @@
     NSArray *__cachedRecentPHAssets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCachedRecentPHAssets:) NSArray *_cachedRecentPHAssets; // @synthesize _cachedRecentPHAssets=__cachedRecentPHAssets;
 @property(copy, nonatomic, setter=_setCachedRecentAssets:) NSOrderedSet *_cachedRecentAssets; // @synthesize _cachedRecentAssets=__cachedRecentAssets;
 @property(nonatomic) __weak id <PXFeedRecentsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setCount:) long long count; // @synthesize count=_count;
 @property(retain, nonatomic, setter=_setPhotoLibrary:) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-- (void).cxx_destruct;
 - (void)_didFinishPostingNotifications:(id)arg1;
 - (void)shouldReload:(id)arg1;
 - (void)assetsDidChange:(id)arg1;

@@ -21,9 +21,8 @@
     PHImageRequestOptions *_imageOptions;
 }
 
-+ (long long)type;
-@property(readonly, nonatomic) PHImageRequestOptions *imageOptions; // @synthesize imageOptions=_imageOptions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHImageRequestOptions *imageOptions; // @synthesize imageOptions=_imageOptions;
 - (void)processMediaResult:(id)arg1 forRequest:(id)arg2;
 - (id)progresses;
 - (CDUnknownBlockType)progressHandler;
@@ -33,6 +32,7 @@
 - (BOOL)representsShareableHighQualityResource;
 - (BOOL)isSynchronous;
 - (BOOL)isNetworkAccessAllowed;
+- (long long)type;
 - (id)_produceIntermediateImageRequestForRequest:(id)arg1;
 - (id)_produceFinalImageRequestForRequest:(id)arg1;
 - (id)_lazyProgress;

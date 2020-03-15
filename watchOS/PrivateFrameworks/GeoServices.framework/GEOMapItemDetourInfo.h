@@ -13,8 +13,8 @@
     GEOPDResultDetourInfo *_detourInfo;
 }
 
-@property(readonly, nonatomic, getter=_detourInfo) GEOPDResultDetourInfo *detourInfo; // @synthesize detourInfo=_detourInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_detourInfo) GEOPDResultDetourInfo *detourInfo; // @synthesize detourInfo=_detourInfo;
 @property(readonly, nonatomic) NSData *detourInfoAsData;
 @property(readonly, nonatomic) double distanceToPlace;
 @property(readonly, nonatomic) double detourDistance;

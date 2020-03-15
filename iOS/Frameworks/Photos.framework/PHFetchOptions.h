@@ -66,6 +66,7 @@
 + (id)fetchOptionsWithPhotoLibrary:(id)arg1 orObject:(id)arg2;
 + (id)fetchOptionsWithInclusiveDefaultsForPhotoLibrary:(id)arg1;
 + (id)fetchOptionsWithInclusiveDefaults;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(copy, nonatomic) NSSet *verifiedPersonTypes; // @synthesize verifiedPersonTypes=_verifiedPersonTypes;
 @property(nonatomic) _Bool includeRecentsSmartAlbum; // @synthesize includeRecentsSmartAlbum=_includeRecentsSmartAlbum;
@@ -77,7 +78,6 @@
 @property(retain, nonatomic) NSArray *customObjectIDSortOrder; // @synthesize customObjectIDSortOrder=_customObjectIDSortOrder;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)description;
 @property(nonatomic) _Bool includeUserSmartAlbums;
 @property(nonatomic) unsigned long long sharingStream;

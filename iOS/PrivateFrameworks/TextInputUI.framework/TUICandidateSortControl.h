@@ -16,10 +16,10 @@
     UISegmentedControl *_segmentedControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
 @property(copy, nonatomic) NSArray *titles; // @synthesize titles=_titles;
-- (void).cxx_destruct;
 - (void)handleValueChanged;
 @property(nonatomic) long long selectedIndex;
 - (double)segmentedControlWidth;

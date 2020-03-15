@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     id <BookmarksOperationCoalescingTimerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <BookmarksOperationCoalescingTimerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSOperation<CoalesceableBookmarksOperation> *currentOperation; // @synthesize currentOperation=_currentOperation;
-- (void).cxx_destruct;
 - (void)coalesceCurrentOperationWithOperation:(id)arg1;
 - (void)start;
 - (id)initWithOperation:(id)arg1 queue:(id)arg2;

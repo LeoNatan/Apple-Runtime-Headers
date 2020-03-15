@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_hexString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hexString; // @synthesize hexString=_hexString;
 @property(nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(nonatomic) unsigned long long profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)initWithProfile:(unsigned long long)arg1 level:(unsigned long long)arg2;
 - (id)initWithHexString:(id)arg1;
 

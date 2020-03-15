@@ -19,11 +19,11 @@
     NSArray *_tabs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tabs; // @synthesize tabs=_tabs;
 @property(readonly, nonatomic) CSKTabViewController *tabViewController; // @synthesize tabViewController=_tabViewController;
 @property(retain, nonatomic) CSKHeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(nonatomic) __weak NSStackView *contentStackView; // @synthesize contentStackView=_contentStackView;
-- (void).cxx_destruct;
 - (id)tabViewController:(id)arg1 itemAtIndex:(unsigned long long)arg2;
 - (unsigned long long)numberOfTabsInTabViewController:(id)arg1;
 - (id)tabViewController:(id)arg1 viewForTabItemAtIndex:(unsigned long long)arg2;

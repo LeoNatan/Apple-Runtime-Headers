@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     UIView *_presentedView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool interactive; // @synthesize interactive=_interactive;
 @property(retain, nonatomic) UIView *presentedView; // @synthesize presentedView=_presentedView;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> context; // @synthesize context=_context;
 @property(retain, nonatomic) UIPanGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property _Bool reversed; // @synthesize reversed=_reversed;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 

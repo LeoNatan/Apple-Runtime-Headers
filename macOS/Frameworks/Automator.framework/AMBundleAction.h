@@ -24,10 +24,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *_topLevelObjects; // @synthesize _topLevelObjects;
 @property(nonatomic) __weak NSView *_view; // @synthesize _view;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *showWhenRunItems;
 @property(readonly, nonatomic) NSArray *selectedShowWhenRunItems;
 - (id)_itemNameFromString:(id)arg1;

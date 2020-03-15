@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     struct WebViewImpl *_webViewImpl;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) long long currentTextAlignment; // @synthesize currentTextAlignment=_currentTextAlignment;
 @property(nonatomic) BOOL textIsUnderlined; // @synthesize textIsUnderlined=_textIsUnderlined;
 @property(nonatomic) BOOL textIsItalic; // @synthesize textIsItalic=_textIsItalic;
 @property(nonatomic) BOOL textIsBold; // @synthesize textIsBold=_textIsBold;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)textListViewController;
 - (void)_wkChangeColor:(id)arg1;
 @property(retain, nonatomic) NSColor *textColor;

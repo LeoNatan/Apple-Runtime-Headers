@@ -16,9 +16,9 @@
     SSVPlayActivityEvent *_playActivityEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldReportToStore; // @synthesize shouldReportToStore=_shouldReportToStore;
 @property(copy, nonatomic) SSVPlayActivityEvent *playActivityEvent; // @synthesize playActivityEvent=_playActivityEvent;
-- (void).cxx_destruct;
 - (unsigned long long)reportingEventType;
 - (BOOL)isValidReportingEvent;
 @property(readonly, copy) NSString *description;

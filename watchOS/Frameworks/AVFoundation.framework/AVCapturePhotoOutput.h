@@ -55,6 +55,7 @@
 - (void)_setIsFlashScene:(_Bool)arg1 firingKVO:(_Bool)arg2;
 - (void)_decrementObserverCountForKeyPath:(id)arg1;
 - (void)_incrementObserverCountForKeyPath:(id)arg1;
+- (void)_updateDeferredProcessingSupportedForSourceDevice:(id)arg1;
 - (void)_updateDepthDataDeliverySupportedForSourceDevice:(id)arg1;
 - (void)_updateSceneMonitoringForSourceDevice:(id)arg1;
 - (void)_resetLivePhotoMovieProcessingSuspended;
@@ -115,6 +116,9 @@
 @property(readonly, nonatomic) unsigned int maxBracketedCapturePhotoCount;
 @property(nonatomic, getter=isHighResolutionCaptureEnabled) _Bool highResolutionCaptureEnabled;
 @property(copy, nonatomic) AVCapturePhotoSettings *photoSettingsForSceneMonitoring;
+- (void)setDeferredProcessingEnabled:(_Bool)arg1;
+- (_Bool)isDeferredProcessingEnabled;
+- (_Bool)isDeferredProcessingSupported;
 @property(readonly, nonatomic, getter=isCameraCalibrationDataDeliverySupported) _Bool cameraCalibrationDataDeliverySupported;
 @property(nonatomic, getter=isDualCameraDualPhotoDeliveryEnabled) _Bool dualCameraDualPhotoDeliveryEnabled;
 @property(readonly, nonatomic, getter=isDualCameraDualPhotoDeliverySupported) _Bool dualCameraDualPhotoDeliverySupported;

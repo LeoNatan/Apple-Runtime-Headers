@@ -15,9 +15,9 @@
     NSData *_setupHash;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *setupHash; // @synthesize setupHash=_setupHash;
 @property(nonatomic) int certificationStatus; // @synthesize certificationStatus=_certificationStatus;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (int)associationOptions;
 - (_Bool)hasIPLink;

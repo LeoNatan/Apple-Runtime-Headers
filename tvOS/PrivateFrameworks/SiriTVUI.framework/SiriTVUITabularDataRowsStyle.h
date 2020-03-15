@@ -15,10 +15,10 @@
     NSIndexSet *_rowIndexes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *rowIndexes; // @synthesize rowIndexes=_rowIndexes;
 @property(copy, nonatomic) NSNumber *showTopBorder; // @synthesize showTopBorder=_showTopBorder;
 @property(copy, nonatomic) NSNumber *minimumHeight; // @synthesize minimumHeight=_minimumHeight;
-- (void).cxx_destruct;
 
 @end
 

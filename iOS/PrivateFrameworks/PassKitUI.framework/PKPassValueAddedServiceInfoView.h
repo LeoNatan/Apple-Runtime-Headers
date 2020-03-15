@@ -18,9 +18,9 @@
     UILabel *_statusView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (double)_baselineDistance;
 - (id)_statusFont;
 - (id)_labelFont;

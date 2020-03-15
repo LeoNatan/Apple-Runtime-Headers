@@ -20,12 +20,12 @@
     struct UIEdgeInsets _expansionInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setHighlightedView:) UIView *_highlightedView; // @synthesize _highlightedView=__highlightedView;
 @property(nonatomic, getter=_isTouchInTrackedView, setter=_setTouchInTrackedView:) _Bool _touchInTrackedView; // @synthesize _touchInTrackedView=__touchInTrackedView;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) __weak id <CAMControlDrawerExpandableButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets expansionInsets; // @synthesize expansionInsets=_expansionInsets;
-- (void).cxx_destruct;
 - (void)_setExpanded:(_Bool)arg1 animated:(_Bool)arg2 shouldNotify:(_Bool)arg3;
 - (void)setExpanded:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic, getter=isSelfExpanding) _Bool selfExpanding;

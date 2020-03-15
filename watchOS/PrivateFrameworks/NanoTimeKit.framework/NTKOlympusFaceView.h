@@ -28,10 +28,10 @@
     unsigned int _currentStyle;
     unsigned int _currentDial;
     unsigned int _currentColor;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
 }
 
-+ (int)uiSensitivity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *clockTimerToken; // @synthesize clockTimerToken=_clockTimerToken;
 @property(nonatomic) unsigned int currentColor; // @synthesize currentColor=_currentColor;
 @property(nonatomic) unsigned int currentDial; // @synthesize currentDial=_currentDial;
@@ -47,7 +47,6 @@
 @property(retain, nonatomic) NTKCircularAnalogDialView *dialView; // @synthesize dialView=_dialView;
 @property(retain, nonatomic) NTKVictoryAnalogBackgroundView *analogBackgroundView; // @synthesize analogBackgroundView=_analogBackgroundView;
 @property(retain, nonatomic) NTKOlympusTimeView *olympusView; // @synthesize olympusView=_olympusView;
-- (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_didTransitionToTritiumOff;
 - (void)tritium_willTransitionToTritiumOn;

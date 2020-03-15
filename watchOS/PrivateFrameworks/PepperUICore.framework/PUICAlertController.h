@@ -18,8 +18,8 @@
     id <PUICAlertControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUICAlertControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICAlertControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)show;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 dismissButtonTitle:(id)arg3;
 

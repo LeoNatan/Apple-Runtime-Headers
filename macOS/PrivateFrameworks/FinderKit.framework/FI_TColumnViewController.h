@@ -45,6 +45,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)makeColumnCellViewForBrowserTableView:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool nextSelectionAllowsRetarget; // @synthesize nextSelectionAllowsRetarget=_nextSelectionAllowsRetarget;
 @property(nonatomic) int arrangeBy; // @synthesize arrangeBy=_arrangeBy;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
@@ -52,8 +54,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showsSize; // @synthesize showsSize=_showsSize;
 @property(nonatomic) _Bool showPreviewColumn; // @synthesize showPreviewColumn=_showPreviewColumn;
 @property(nonatomic) _Bool showIcons; // @synthesize showIcons=_showIcons;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)columnView;
 - (long long)focusedColumn;
 - (long long)lastContainerColumn;

@@ -41,10 +41,10 @@
 + (void)listenForSystemPhotoLibraryURLChanges;
 + (BOOL)setTimeMachineExclusionAttribute:(BOOL)arg1 url:(id)arg2 error:(id *)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *assetUUIDRecoveryMappingPath; // @synthesize assetUUIDRecoveryMappingPath=_assetUUIDRecoveryMappingPath;
 @property(copy) NSString *baseDirectory; // @synthesize baseDirectory=_baseDirectory;
 @property(copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
-- (void).cxx_destruct;
 - (id)pathToAssetAlbumOrderStructure;
 - (id)assetAbbreviatedMetadataDirectoryForDirectory:(id)arg1 type:(unsigned char)arg2;
 - (void)setDataProtectionComplete:(BOOL)arg1;

@@ -37,6 +37,7 @@
     NSString *_deviceName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSImage *alternatePhoneImage; // @synthesize alternatePhoneImage=_alternatePhoneImage;
 @property(nonatomic) BOOL useAlternatePhoneImage; // @synthesize useAlternatePhoneImage=_useAlternatePhoneImage;
@@ -61,7 +62,6 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) PKPaymentAuthorizationLayout *paymentAuthorizationLayout; // @synthesize paymentAuthorizationLayout=_paymentAuthorizationLayout;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_blueColor;
 - (id)_statusTextForState:(long long)arg1;
 - (void)_applyRemoteDevice;

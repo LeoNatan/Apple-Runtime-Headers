@@ -18,12 +18,12 @@
     NNMKSyncSessionController *_sessionController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKSyncSessionController *sessionController; // @synthesize sessionController=_sessionController;
 @property(retain, nonatomic) NNMKBatchRequestHandler *batchRequestHandler; // @synthesize batchRequestHandler=_batchRequestHandler;
 @property(retain, nonatomic) NNMKSyncController *syncController; // @synthesize syncController=_syncController;
 @property(nonatomic) __weak id <NNMKSyncStateManager> syncStateManager; // @synthesize syncStateManager=_syncStateManager;
 @property(nonatomic) __weak id <NNMKDeviceRegistryHolder> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)currentDeviceRegistry;
 - (id)protoMessageFromMessage:(id)arg1;
 - (id)addMessageContent:(id)arg1 forMessage:(id)arg2 mailbox:(id)arg3 isProtectedData:(_Bool)arg4;

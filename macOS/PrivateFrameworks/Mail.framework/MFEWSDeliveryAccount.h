@@ -15,8 +15,8 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-@property BOOL stripsFromHeaderWhenSending; // @synthesize stripsFromHeaderWhenSending=_stripsFromHeaderWhenSending;
 - (void).cxx_destruct;
+@property BOOL stripsFromHeaderWhenSending; // @synthesize stripsFromHeaderWhenSending=_stripsFromHeaderWhenSending;
 - (id)remoteMailAccountsEmployedBy;
 - (void)setShouldUseAuthentication:(BOOL)arg1;
 - (BOOL)shouldUseAuthentication;

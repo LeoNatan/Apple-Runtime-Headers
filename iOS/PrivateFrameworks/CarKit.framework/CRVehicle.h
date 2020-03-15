@@ -30,6 +30,7 @@
 
 + (id)vehicleForVehicleAccessory:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long albumArtUserPreference; // @synthesize albumArtUserPreference=_albumArtUserPreference;
 @property(retain, nonatomic) NSString *internalNotes; // @synthesize internalNotes=_internalNotes;
 @property(retain, nonatomic) NSString *PPID; // @synthesize PPID=_PPID;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSSet *accessoryProtocols; // @synthesize accessoryProtocols=_accessoryProtocols;
 @property(retain, nonatomic) NSString *vehicleName; // @synthesize vehicleName=_vehicleName;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)displayName;
 - (void)mergeAttributesFromVehicle:(id)arg1;
 - (id)description;

@@ -18,10 +18,10 @@
 }
 
 + (id)cacheKeyForProxy:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(readonly, copy, nonatomic) NSString *bundlePathHash; // @synthesize bundlePathHash=_bundlePathHash;
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

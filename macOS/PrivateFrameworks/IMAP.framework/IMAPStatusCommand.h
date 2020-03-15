@@ -14,9 +14,9 @@
     NSDictionary *_statusEntries;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *statusEntries; // @synthesize statusEntries=_statusEntries;
 @property unsigned long long dataItems; // @synthesize dataItems=_dataItems;
-- (void).cxx_destruct;
 - (BOOL)executeOnConnection:(id)arg1;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;
 - (id)_newStringForDataItems;

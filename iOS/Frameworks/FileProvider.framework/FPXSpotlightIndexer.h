@@ -30,13 +30,13 @@ __attribute__((visibility("hidden")))
     FPXDomainContext *_domainContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isIndexing) _Bool indexing; // @synthesize indexing=_indexing;
 @property(readonly, nonatomic) NSData *lastIndexState; // @synthesize lastIndexState=_lastIndexState;
 @property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) id <NSFileProviderEnumerator> vendorEnumerator; // @synthesize vendorEnumerator=_vendorEnumerator;
 @property(readonly) __weak FPXDomainContext *domainContext; // @synthesize domainContext=_domainContext;
-- (void).cxx_destruct;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(CDUnknownBlockType)arg3;
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)dumpStateTo:(id)arg1;

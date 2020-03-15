@@ -25,6 +25,7 @@
 + (id)conversationGroupWithParent:(id)arg1 members:(id)arg2 sponsorAlias:(id)arg3 sponsor:(id)arg4 applicationData:(id)arg5 error:(id *)arg6;
 + (id)conversationGroupWithParent:(id)arg1 sponsor:(id)arg2 deviceIdentity:(id)arg3 groupID:(id)arg4 publicKeyData:(id)arg5 publicData:(id)arg6 signature:(id)arg7 error:(id *)arg8;
 + (id)conversationGroupWithParent:(id)arg1 members:(id)arg2 sponsor:(id)arg3 applicationData:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *groupMembers; // @synthesize groupMembers=_groupMembers;
 @property(readonly, nonatomic) NSString *sponsorAlias; // @synthesize sponsorAlias=_sponsorAlias;
 @property(readonly, nonatomic) NSData *applicationData; // @synthesize applicationData=_applicationData;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSData *forwardingTicket; // @synthesize forwardingTicket=_forwardingTicket;
 @property(readonly, nonatomic) NSData *publicKeyData; // @synthesize publicKeyData=_publicKeyData;
 @property(readonly, nonatomic) ENGroupID *groupID; // @synthesize groupID=_groupID;
-- (void).cxx_destruct;
 - (_Bool)isParentOfGroup:(id)arg1;
 - (id)privateDataRepresentationWithError:(id *)arg1;
 - (id)conversationGroupWithUpdatedGroupID:(id)arg1 error:(id *)arg2;

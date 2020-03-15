@@ -15,9 +15,9 @@
     long long _albumArtistPID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long albumArtistPID; // @synthesize albumArtistPID=_albumArtistPID;
 @property(readonly, nonatomic) long long albumPID; // @synthesize albumPID=_albumPID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *misgroupedTracks;
 - (void)addMisgroupedTrack:(id)arg1;
 - (id)initWithAlbumPID:(long long)arg1 albumArtistPID:(long long)arg2;

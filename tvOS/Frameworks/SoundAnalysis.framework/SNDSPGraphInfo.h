@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_substitutions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;
 @property(retain, nonatomic) NSArray *includePaths; // @synthesize includePaths=_includePaths;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithDictionary:(id)arg1 resourcePath:(id)arg2;

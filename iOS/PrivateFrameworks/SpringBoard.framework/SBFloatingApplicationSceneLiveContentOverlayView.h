@@ -27,6 +27,7 @@
     FBDisplayLayoutElement *_displayLayoutElement;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool asynchronousRenderingTemporarilyDisabled; // @synthesize asynchronousRenderingTemporarilyDisabled=_asynchronousRenderingTemporarilyDisabled;
 @property(readonly, nonatomic) _Bool liveContentRasterizationDisabled; // @synthesize liveContentRasterizationDisabled=_liveContentRasterizationDisabled;
 @property(readonly, nonatomic) _Bool wantsMinificationFilter; // @synthesize wantsMinificationFilter=_wantsMinificationFilter;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) SBUISizeObservingView *sizeObservingView; // @synthesize sizeObservingView=_sizeObservingView;
 @property(readonly, nonatomic) SBWindowSelfHostWrapper *windowHostWrapper; // @synthesize windowHostWrapper=_windowHostWrapper;
 @property(readonly, nonatomic) SBFloatingApplicationLiveContentWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (void)sceneHandle:(id)arg1 didCreateScene:(id)arg2;
 - (void)_updateContentWindowFrameFromView:(id)arg1;

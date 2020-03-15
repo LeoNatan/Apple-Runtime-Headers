@@ -13,8 +13,8 @@
     VMVoicemailManager *_voicemailManager;
 }
 
-@property(retain, nonatomic) VMVoicemailManager *voicemailManager; // @synthesize voicemailManager=_voicemailManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VMVoicemailManager *voicemailManager; // @synthesize voicemailManager=_voicemailManager;
 - (id)allVoicemailsWithFlags:(unsigned long long)arg1 withoutFlags:(unsigned long long)arg2;
 - (void)moveVoicemailFromTrash:(id)arg1;
 - (void)moveVoicemailToTrash:(id)arg1;

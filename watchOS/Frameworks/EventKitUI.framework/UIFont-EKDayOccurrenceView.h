@@ -7,9 +7,5 @@
 #import <UIKit/UIFont.h>
 
 @interface UIFont (EKDayOccurrenceView)
-+ (id)ek_defaultOccurrenceSmallPrimaryTextFontForSizeClass:(int)arg1;
-+ (id)ek_defaultOccurrencePrimaryTextFontForSizeClass:(int)arg1;
-+ (id)ek_defaultOccurrenceSecondaryTextFont;
-+ (id)primaryTextFontCache;
 @end
 

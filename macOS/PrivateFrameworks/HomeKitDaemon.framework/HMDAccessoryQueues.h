@@ -13,8 +13,8 @@
     NSMutableDictionary *queues;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *queues; // @synthesize queues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *queues; // @synthesize queues;
 - (id)getAccessoryForContext:(id)arg1 fromQueue:(id)arg2;
 - (int)countForQueue:(id)arg1;
 - (id)whichQueueForAccessory:(id)arg1;

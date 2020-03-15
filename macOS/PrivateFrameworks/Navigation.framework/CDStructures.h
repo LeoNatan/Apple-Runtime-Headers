@@ -24,10 +24,6 @@ struct Matrix<double, 2, 1> {
     double _e[2];
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct PolylineCoordinate {
     unsigned int index;
     float offset;

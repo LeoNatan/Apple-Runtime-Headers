@@ -29,6 +29,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMNotebookRecipientSettings *recipientSettings; // @synthesize recipientSettings=_recipientSettings;
 @property(retain, nonatomic) EDAMNotebookRestrictions *restrictions; // @synthesize restrictions=_restrictions;
 @property(retain, nonatomic) EDAMUser *contact; // @synthesize contact=_contact;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSNumber *updateSequenceNum; // @synthesize updateSequenceNum=_updateSequenceNum;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 
 @end
 

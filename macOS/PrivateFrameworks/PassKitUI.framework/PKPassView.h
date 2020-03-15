@@ -21,9 +21,9 @@
 + (void)drawPlainNinePartImage:(id)arg1 inRect:(struct CGRect)arg2;
 + (void)drawPerforatedNinePartImage:(id)arg1 inRect:(struct CGRect)arg2;
 + (void)drawNotchedNinePartImage:(id)arg1 inRect:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *windowTitle; // @synthesize windowTitle=_windowTitle;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)innerRect;
 - (void)dealloc;

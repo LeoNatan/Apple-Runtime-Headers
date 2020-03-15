@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) DNDScheduleTime *endTime; // @synthesize endTime=_endTime;
 @property(readonly, copy, nonatomic) DNDScheduleTime *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

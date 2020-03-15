@@ -15,14 +15,16 @@
     NSUUID *_identifier;
 }
 
++ (void)_fetchCategoriesForBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)_fetchCategoriesForBundleIdentifiers:(id)arg1 withError:(id *)arg2;
 + (void)createPolicyMonitorWithPolicyChangeHandler:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) DMFPolicyRegistration *registration; // @synthesize registration=_registration;
 @property(copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
-- (void).cxx_destruct;
-- (void)_fetchCategoriesIfNeededForBundleIdentifiers:(id)arg1 response:(CDUnknownBlockType)arg2;
-- (void)requestPoliciesForBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, getter=isEnabled) BOOL enabled;
+- (void)requestPoliciesForBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)requestPoliciesForBundleIdentifiers:(id)arg1 withError:(id *)arg2;
 - (void)dealloc;
 - (id)_initWithPolicyChangeHandler:(CDUnknownBlockType)arg1 addingRegistration:(BOOL)arg2;
 - (id)initWithPolicyChangeHandler:(CDUnknownBlockType)arg1;

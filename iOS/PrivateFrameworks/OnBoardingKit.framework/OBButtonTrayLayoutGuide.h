@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_widthConstraint;
 }
 
-@property(retain, nonatomic) NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
 
 @end
 

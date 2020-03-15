@@ -16,10 +16,10 @@
     SSRequest *_storeServicesRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSRequest *storeServicesRequest; // @synthesize storeServicesRequest=_storeServicesRequest;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSStoreRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (_Bool)_isFirstToFinish;

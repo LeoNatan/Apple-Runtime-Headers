@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     PUVelocityFilter *__angularVelocityFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAngularVelocityFilter:) PUVelocityFilter *_angularVelocityFilter; // @synthesize _angularVelocityFilter=__angularVelocityFilter;
 @property(retain, nonatomic, setter=_setVerticalVelocityFilter:) PUVelocityFilter *_verticalVelocityFilter; // @synthesize _verticalVelocityFilter=__verticalVelocityFilter;
 @property(retain, nonatomic, setter=_setHorizontalVelocityFilter:) PUVelocityFilter *_horizontalVelocityFilter; // @synthesize _horizontalVelocityFilter=__horizontalVelocityFilter;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setPinchGestureRecognizerScaleDirectionValueFilter:) PUChangeDirectionValueFilter *_pinchGestureRecognizerScaleDirectionValueFilter; // @synthesize _pinchGestureRecognizerScaleDirectionValueFilter=__pinchGestureRecognizerScaleDirectionValueFilter;
 @property(readonly, nonatomic) long long direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) UIPinchGestureRecognizer *pinchGestureRecognizer; // @synthesize pinchGestureRecognizer=_pinchGestureRecognizer;
-- (void).cxx_destruct;
 - (void)_updateTargetLayoutInfoIfNeeded;
 - (id)tileControllerToTrack;
 - (void)configureTileReattachmentContext:(id)arg1;

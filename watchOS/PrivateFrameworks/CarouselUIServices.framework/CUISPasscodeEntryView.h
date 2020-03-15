@@ -32,9 +32,9 @@
     id <CUISPasscodeEntryViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CUISPasscodeEntryViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CUISPasscodeEntryViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)didBeginEnteringPasscodeInPasscodeField:(id)arg1;
 - (void)passcodeField:(id)arg1 didEnterPasscode:(id)arg2;
 - (void)setKeyPadEnabled:(_Bool)arg1;

@@ -142,6 +142,13 @@ struct vImage_Buffer {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+} CDStruct_33dcf794;
+
+typedef struct {
     char _field1;
     double _field2;
     char _field3;
@@ -152,13 +159,6 @@ typedef struct {
     double _field1;
     double _field2;
 } CDStruct_c3b9c2ee;
-
-typedef struct {
-    int _field1;
-    int _field2;
-    int _field3;
-    int _field4;
-} CDStruct_a734b2e2;
 
 typedef struct {
     int _field1;

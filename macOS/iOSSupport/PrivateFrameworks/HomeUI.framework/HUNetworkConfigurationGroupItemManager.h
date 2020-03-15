@@ -13,8 +13,8 @@
     HUNetworkConfigurationItemListModule *_networkConfigurationItemListModule;
 }
 
-@property(readonly, nonatomic) HUNetworkConfigurationItemListModule *networkConfigurationItemListModule; // @synthesize networkConfigurationItemListModule=_networkConfigurationItemListModule;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUNetworkConfigurationItemListModule *networkConfigurationItemListModule; // @synthesize networkConfigurationItemListModule=_networkConfigurationItemListModule;
 - (id)_buildItemModulesForHome:(id)arg1;
 
 @end

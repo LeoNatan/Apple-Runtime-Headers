@@ -22,11 +22,11 @@
 + (id)defaultFontForTextStyleDescriptor:(id)arg1;
 + (id)fontWithTextStyleDescriptor:(id)arg1;
 + (id)descriptorWithTextStyle:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allowsSmallSizes; // @synthesize allowsSmallSizes=_allowsSmallSizes;
 @property(readonly, nonatomic) _Bool allowsAccessibilitySizes; // @synthesize allowsAccessibilitySizes=_allowsAccessibilitySizes;
 @property(readonly, nonatomic) unsigned int symbolicTraits; // @synthesize symbolicTraits=_symbolicTraits;
 @property(readonly, copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

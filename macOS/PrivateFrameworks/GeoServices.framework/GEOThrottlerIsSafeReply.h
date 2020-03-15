@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEODataRequestThrottlerToken *throttlerToken; // @synthesize throttlerToken=_throttlerToken;
 @property(nonatomic) int availableRequestCount; // @synthesize availableRequestCount=_availableRequestCount;
 @property(nonatomic) double nextSafeRequestTime; // @synthesize nextSafeRequestTime=_nextSafeRequestTime;
-- (void).cxx_destruct;
 - (BOOL)isValid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

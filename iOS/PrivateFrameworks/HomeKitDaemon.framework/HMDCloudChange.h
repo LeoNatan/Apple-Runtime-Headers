@@ -22,13 +22,13 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *rowIDsSet; // @synthesize rowIDsSet=_rowIDsSet;
 @property(nonatomic) unsigned long long applyType; // @synthesize applyType=_applyType;
 @property(nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) HMDCloudRecord *deletedCloudRecord; // @synthesize deletedCloudRecord=_deletedCloudRecord;
 @property(readonly, nonatomic) HMDCloudRecord *cloudRecord; // @synthesize cloudRecord=_cloudRecord;
 @property(retain, nonatomic) HMDBackingStoreModelObject *objectChange; // @synthesize objectChange=_objectChange;
-- (void).cxx_destruct;
 - (void)replayChange:(id)arg1 stagedChange:(id)arg2;
 - (void)resetRecord;
 - (void)updateChangeWithRecord:(id)arg1;

@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_source> *_timeoutTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(readonly, copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) _Bool expectsResponse; // @synthesize expectsResponse=_expectsResponse;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL autoLogin; // @synthesize autoLogin=_autoLogin;
 @property(readonly) NSString *password; // @synthesize password=_password;
 @property(readonly) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

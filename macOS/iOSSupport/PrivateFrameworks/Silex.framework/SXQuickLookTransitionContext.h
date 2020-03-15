@@ -13,8 +13,8 @@
     UIView *_originView;
 }
 
-@property(readonly, nonatomic) UIView *originView; // @synthesize originView=_originView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *originView; // @synthesize originView=_originView;
 - (id)initWithOriginView:(id)arg1;
 
 @end

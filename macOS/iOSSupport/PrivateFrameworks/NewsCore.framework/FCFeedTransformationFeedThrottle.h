@@ -17,9 +17,9 @@
 }
 
 + (id)transformationWithFeedID:(id)arg1 limit:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

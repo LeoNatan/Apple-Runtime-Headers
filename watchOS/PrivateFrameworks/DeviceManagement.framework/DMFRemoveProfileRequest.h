@@ -18,9 +18,9 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *profileIdentifier; // @synthesize profileIdentifier=_profileIdentifier;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

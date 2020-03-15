@@ -21,12 +21,12 @@
     id <NSCopying> _localContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NSCopying> localContext; // @synthesize localContext=_localContext;
 @property(nonatomic) long long LPEMOption; // @synthesize LPEMOption=_LPEMOption;
 @property(nonatomic) long long source; // @synthesize source=_source;
 @property(nonatomic) long long rebootType; // @synthesize rebootType=_rebootType;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

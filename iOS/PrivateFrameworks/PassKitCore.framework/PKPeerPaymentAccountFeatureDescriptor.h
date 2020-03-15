@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDecimalNumber *maximumFee; // @synthesize maximumFee=_maximumFee;
 @property(copy, nonatomic) NSDecimalNumber *minimumFee; // @synthesize minimumFee=_minimumFee;
 @property(copy, nonatomic) NSDecimalNumber *feePercentage; // @synthesize feePercentage=_feePercentage;
-- (void).cxx_destruct;
 - (_Bool)isEqualToPeerPaymentAccountFeatureDescriptor:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

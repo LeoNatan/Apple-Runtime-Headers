@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *firstIncomingRecipientDate; // @synthesize firstIncomingRecipientDate=_firstIncomingRecipientDate;
 @property(retain) NSDate *firstIncomingSenderDate; // @synthesize firstIncomingSenderDate=_firstIncomingSenderDate;
 @property(retain) NSDate *firstOutgoingRecipientDate; // @synthesize firstOutgoingRecipientDate=_firstOutgoingRecipientDate;
@@ -33,7 +34,6 @@
 @property unsigned long long incomingRecipientCount; // @synthesize incomingRecipientCount=_incomingRecipientCount;
 @property unsigned long long incomingSenderCount; // @synthesize incomingSenderCount=_incomingSenderCount;
 @property unsigned long long outgoingRecipientCount; // @synthesize outgoingRecipientCount=_outgoingRecipientCount;
-- (void).cxx_destruct;
 - (double)incomingRecipientTimeInterval;
 - (double)incomingSenderTimeInterval;
 - (double)outgoingRecipientTimeInterval;

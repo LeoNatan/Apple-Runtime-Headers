@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
     BOOL _updateZIndexAfterAnimation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL updateZIndexAfterAnimation; // @synthesize updateZIndexAfterAnimation=_updateZIndexAfterAnimation;
 @property(readonly, nonatomic) double endFraction; // @synthesize endFraction=_endFraction;
 @property(readonly, nonatomic) double startFraction; // @synthesize startFraction=_startFraction;
 @property(readonly, nonatomic) UICollectionViewLayoutAttributes *finalLayoutAttributes; // @synthesize finalLayoutAttributes=_finalLayoutAttributes;
 @property(readonly, nonatomic) long long viewType; // @synthesize viewType=_viewType;
 @property(readonly, nonatomic) UICollectionReusableView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)addStartupHandler:(CDUnknownBlockType)arg1;
 - (void)addCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startWithAnimator:(id)arg1;

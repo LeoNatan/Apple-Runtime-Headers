@@ -25,11 +25,11 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)resultWithTitle:(id)arg1 andType:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) id payload; // @synthesize payload=_payload;
 @property(retain) NSNumber *relevance; // @synthesize relevance=_relevance;
 @property(retain) NSString *type; // @synthesize type=_type;
 @property(retain) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *isDuplicateApp;
 @property(readonly, copy) NSString *appVersion;
 @property(readonly, copy) NSString *appID;

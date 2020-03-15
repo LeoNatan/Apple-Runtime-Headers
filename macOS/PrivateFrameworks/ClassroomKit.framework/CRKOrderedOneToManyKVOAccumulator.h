@@ -22,10 +22,10 @@
     NSObject *_observedObject;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject *observedObject; // @synthesize observedObject=_observedObject;
 @property(copy, nonatomic) NSString *observedKeyPath; // @synthesize observedKeyPath=_observedKeyPath;
 @property(nonatomic) __weak id <CRKOrderedOneToManyKVOAccumulatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)_prestateIndexForImmediateIndex:(unsigned long long)arg1;
 - (id)_resultsToArriveAtArray:(id)arg1;
 - (void)_reset;

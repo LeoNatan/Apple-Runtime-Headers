@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMFetchResultToken *latestFetchResultToken; // @synthesize latestFetchResultToken=_latestFetchResultToken;
 @property(readonly, nonatomic) NSDictionary *resultStorages; // @synthesize resultStorages=_resultStorages;
 @property(readonly, nonatomic) NSData *resultData; // @synthesize resultData=_resultData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResultData:(id)arg1 storages:(id)arg2 latestFetchResultToken:(id)arg3;

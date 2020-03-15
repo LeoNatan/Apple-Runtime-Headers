@@ -14,9 +14,9 @@
     CDUnknownBlockType _processedArtworkImageBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType processedArtworkImageBlock; // @synthesize processedArtworkImageBlock=_processedArtworkImageBlock;
 @property(copy, nonatomic) CDUnknownBlockType artworkImageBlock; // @synthesize artworkImageBlock=_artworkImageBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *processedArtworkImage;
 @property(readonly, nonatomic) UIImage *artworkImage;
 

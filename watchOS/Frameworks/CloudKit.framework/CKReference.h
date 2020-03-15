@@ -21,9 +21,9 @@
 + (_Bool)supportsSecureCoding;
 + (int)ckdpReferenceTypeForCKReferenceAction:(unsigned int)arg1;
 + (unsigned int)ckReferenceActionForCKDPRecordReferenceType:(int)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) unsigned int referenceAction; // @synthesize referenceAction=_referenceAction;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;

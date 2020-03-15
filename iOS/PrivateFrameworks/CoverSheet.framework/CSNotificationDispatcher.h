@@ -24,6 +24,7 @@
     id <NCNotificationDestinationDelegate> _notificationDestinationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NCNotificationDestinationDelegate> delegate; // @synthesize delegate=_notificationDestinationDelegate;
 @property(nonatomic) __weak SBNCAlertingController *alertingController; // @synthesize alertingController=_alertingController;
 @property(nonatomic) __weak id <CSCarPlayStatusProviding> carPlayStatusProvider; // @synthesize carPlayStatusProvider=_carPlayStatusProvider;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <CSNotificationDestination> listDestination; // @synthesize listDestination=_listDestination;
 @property(nonatomic) __weak id <CSNotificationDestination> modalDestination; // @synthesize modalDestination=_modalDestination;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)_clearNotificationRequestsFromDashBoard:(id)arg1;
 - (void)stopAllRealerts;
 - (id)notificationSectionSettingsForDestination:(id)arg1;

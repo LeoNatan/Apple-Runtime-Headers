@@ -18,11 +18,11 @@
     long long _lastIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long lastIndex; // @synthesize lastIndex=_lastIndex;
 @property(retain, nonatomic) NSTimer *indexTimer; // @synthesize indexTimer=_indexTimer;
 @property(retain, nonatomic) NSMutableIndexSet *indexesPendingRefresh; // @synthesize indexesPendingRefresh=_indexesPendingRefresh;
 @property(nonatomic, getter=isEmbedded) BOOL embedded; // @synthesize embedded=_embedded;
-- (void).cxx_destruct;
 - (void)wf_refreshPreviewItemAtIndex:(long long)arg1;
 - (void)updateCurrentIndex;
 - (void)viewWillDisappear:(BOOL)arg1;

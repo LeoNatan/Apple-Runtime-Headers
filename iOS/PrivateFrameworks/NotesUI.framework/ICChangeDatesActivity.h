@@ -13,9 +13,9 @@
 }
 
 + (long long)activityCategory;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char type; // @synthesize type=_type;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)activityTitle;
 - (id)activityType;

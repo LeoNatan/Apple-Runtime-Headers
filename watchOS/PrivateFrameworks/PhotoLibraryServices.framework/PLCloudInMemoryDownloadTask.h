@@ -16,10 +16,10 @@
     CPLResourceTransferTask *_transferTask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCompleted) _Bool completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) CPLResourceTransferTask *transferTask; // @synthesize transferTask=_transferTask;
 @property(readonly, copy, nonatomic) NSString *resourceID; // @synthesize resourceID=_resourceID;
-- (void).cxx_destruct;
 - (void)reportCompletionWithData:(id)arg1 error:(id)arg2;
 @property(readonly, nonatomic) __weak NSArray *taskIDs;
 - (void)cancelClientWithTaskID:(id)arg1;

@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)displayItemsFromReaction:(id)arg1;
+- (id)displayItemsFromReaction:(id)arg1 country:(id)arg2;
 
 @end
 

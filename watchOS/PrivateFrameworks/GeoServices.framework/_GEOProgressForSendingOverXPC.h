@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_remoteConnections;
 }
 
-@property(readonly, nonatomic) NSObject<OS_xpc_object> *endpoint; // @synthesize endpoint=_endpoint;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *endpoint; // @synthesize endpoint=_endpoint;
 - (void)_connectionDidInvalidate;
 - (void)cancel;
 - (void)_broadcastOverXPCConnections:(id)arg1;

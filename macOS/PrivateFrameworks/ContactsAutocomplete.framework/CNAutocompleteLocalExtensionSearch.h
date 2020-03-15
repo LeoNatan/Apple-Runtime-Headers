@@ -15,8 +15,8 @@
     CLSDataStore *_dataStore;
 }
 
-@property(readonly, nonatomic) CLSDataStore *dataStore; // @synthesize dataStore=_dataStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLSDataStore *dataStore; // @synthesize dataStore=_dataStore;
 - (id)fetchContactsForFetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)executeRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithDataStore:(id)arg1;

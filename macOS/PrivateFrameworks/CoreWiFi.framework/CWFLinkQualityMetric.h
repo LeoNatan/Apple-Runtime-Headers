@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) float CCA; // @synthesize CCA=_CCA;
 @property(nonatomic) double txRate; // @synthesize txRate=_txRate;
 @property(nonatomic) long long RSSI; // @synthesize RSSI=_RSSI;
 @property(copy, nonatomic) NSDate *updatedAt; // @synthesize updatedAt=_updatedAt;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

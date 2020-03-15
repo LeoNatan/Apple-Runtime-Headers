@@ -23,6 +23,7 @@
     struct CGSize _previousFooterSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *footerPinningConstraint; // @synthesize footerPinningConstraint=_footerPinningConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *headerPinningConstraint; // @synthesize headerPinningConstraint=_headerPinningConstraint;
 @property(nonatomic) struct CGSize previousFooterSize; // @synthesize previousFooterSize=_previousFooterSize;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) int headerBehavior; // @synthesize headerBehavior=_headerBehavior;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (void)_updatePinningConstraintConstantsForCurrentSafeArea;
 - (id)_createFooterConstraintsForBehavior:(int)arg1;
 - (id)_createHeaderConstraintsForBehavior:(int)arg1;

@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMSavedSearchScope *scope; // @synthesize scope=_scope;
 @property(retain, nonatomic) NSNumber *updateSequenceNum; // @synthesize updateSequenceNum=_updateSequenceNum;
 @property(retain, nonatomic) NSNumber *format; // @synthesize format=_format;
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 
 @end
 

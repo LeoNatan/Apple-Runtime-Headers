@@ -19,8 +19,8 @@
     _Bool _serverIsExiting;
 }
 
-@property(nonatomic) __weak id <SUSUICommandLineToolClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SUSUICommandLineToolClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_noteServerExiting;
 - (void)_noteConnectionDropped;
 - (void)_connectToServerIfNecessary;

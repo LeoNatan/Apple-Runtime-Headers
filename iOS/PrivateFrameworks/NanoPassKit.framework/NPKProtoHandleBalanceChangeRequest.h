@@ -17,9 +17,9 @@
 }
 
 + (Class)balanceBytesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *balanceBytes; // @synthesize balanceBytes=_balanceBytes;
 @property(retain, nonatomic) NSString *passID; // @synthesize passID=_passID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     NSArray *_viewModels;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *viewModels; // @synthesize viewModels=_viewModels;
 @property(readonly, nonatomic) long long sectionType; // @synthesize sectionType=_sectionType;
-- (void).cxx_destruct;
 - (id)description;
 - (void)removeItem:(id)arg1;
 - (id)initWithType:(long long)arg1 viewModels:(id)arg2;

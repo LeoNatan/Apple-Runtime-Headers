@@ -14,9 +14,9 @@
     HUAppleMusicAccountModule *_module;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDisableUpdates; // @synthesize shouldDisableUpdates=_shouldDisableUpdates;
 @property(readonly, nonatomic) HUAppleMusicAccountModule *module; // @synthesize module=_module;
-- (void).cxx_destruct;
 - (void)_moduleStateDidChangeFrom:(unsigned long long)arg1 to:(unsigned long long)arg2;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;

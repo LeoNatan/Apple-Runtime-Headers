@@ -27,6 +27,7 @@
     BSMutableSettings *_otherSettings;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasKeyboardFocus; // @synthesize hasKeyboardFocus=_keyboardFocus;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic, getter=isUIApplicationElement) _Bool UIApplicationElement; // @synthesize UIApplicationElement=_application;
@@ -35,7 +36,6 @@
 @property(nonatomic) struct CGRect referenceFrame; // @synthesize referenceFrame=_referenceFrame;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (Class)fallbackXPCEncodableClass;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

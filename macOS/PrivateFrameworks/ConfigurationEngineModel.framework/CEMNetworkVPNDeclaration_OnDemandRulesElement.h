@@ -22,6 +22,7 @@
 + (id)buildRequiredOnlyWithAction:(id)arg1;
 + (id)buildWithDNSDomainMatch:(id)arg1 withDNSServerAddressMatch:(id)arg2 withURLStringProbe:(id)arg3 withAction:(id)arg4 withActionParameters:(id)arg5 withInterfaceTypeMatch:(id)arg6 withSSIDMatch:(id)arg7;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadSSIDMatch; // @synthesize payloadSSIDMatch=_payloadSSIDMatch;
 @property(copy, nonatomic) NSString *payloadInterfaceTypeMatch; // @synthesize payloadInterfaceTypeMatch=_payloadInterfaceTypeMatch;
 @property(copy, nonatomic) CEMNetworkVPNDeclaration_OnDemandRulesElementActionParameters *payloadActionParameters; // @synthesize payloadActionParameters=_payloadActionParameters;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *payloadURLStringProbe; // @synthesize payloadURLStringProbe=_payloadURLStringProbe;
 @property(copy, nonatomic) NSArray *payloadDNSServerAddressMatch; // @synthesize payloadDNSServerAddressMatch=_payloadDNSServerAddressMatch;
 @property(copy, nonatomic) NSArray *payloadDNSDomainMatch; // @synthesize payloadDNSDomainMatch=_payloadDNSDomainMatch;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

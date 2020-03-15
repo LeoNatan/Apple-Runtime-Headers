@@ -17,11 +17,11 @@
     id <ASDManagedRingBuffer> _ringBuffer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <ASDManagedRingBuffer> ringBuffer; // @synthesize ringBuffer=_ringBuffer;
 @property(nonatomic) long long ringBufferFrameCapacity; // @synthesize ringBufferFrameCapacity=_ringBufferFrameCapacity;
 @property(readonly, nonatomic) ASDStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(readonly, nonatomic) ASDStream *inputStream; // @synthesize inputStream=_inputStream;
-- (void).cxx_destruct;
 - (id)initWithRingBufferFrameCapacity:(long long)arg1 withPlugin:(id)arg2;
 
 @end

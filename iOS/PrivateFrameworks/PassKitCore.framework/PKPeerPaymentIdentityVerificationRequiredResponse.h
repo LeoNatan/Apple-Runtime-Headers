@@ -13,8 +13,8 @@
     NSString *_prerequisiteIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *prerequisiteIdentifier; // @synthesize prerequisiteIdentifier=_prerequisiteIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *prerequisiteIdentifier; // @synthesize prerequisiteIdentifier=_prerequisiteIdentifier;
 - (id)initWithData:(id)arg1;
 
 @end

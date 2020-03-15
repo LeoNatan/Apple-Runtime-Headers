@@ -17,9 +17,9 @@
     NSMutableDictionary *_completionHandlerTable;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *completionHandlerTable; // @synthesize completionHandlerTable=_completionHandlerTable;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)callAndRemoveCompletionHandlerWithDate:(id)arg1 error:(id)arg2 task:(id)arg3;
 - (void)storeCompletionHandler:(CDUnknownBlockType)arg1 forTask:(id)arg2;
 - (void)internetDateRequestDidReceiveTask:(id)arg1;

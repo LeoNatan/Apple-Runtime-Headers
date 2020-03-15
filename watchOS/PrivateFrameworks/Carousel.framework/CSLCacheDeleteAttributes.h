@@ -15,10 +15,10 @@
     NSURL *_fileURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain, nonatomic) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(retain, nonatomic) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

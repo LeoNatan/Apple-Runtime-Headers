@@ -21,9 +21,9 @@
 + (id)operationsWithManagedAttendees:(id)arg1 replyStatus:(id)arg2;
 + (id)operationsWithManagedAttendees:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *organizerEmail; // @synthesize organizerEmail=_organizerEmail;
 @property(retain) NSString *replyStatus; // @synthesize replyStatus=_replyStatus;
-- (void).cxx_destruct;
 - (int)_participationStatusInContext:(id)arg1;
 - (id)emailSubjectInContext:(id)arg1;
 - (id)emailRecipientsInContext:(id)arg1;

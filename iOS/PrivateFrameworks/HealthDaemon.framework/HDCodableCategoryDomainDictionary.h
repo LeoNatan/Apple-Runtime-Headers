@@ -22,10 +22,10 @@
 }
 
 + (Class)keyValuePairsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(nonatomic) long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

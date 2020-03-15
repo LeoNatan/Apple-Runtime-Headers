@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)contentViewInsets;
 + (float)arrowBase;
 + (float)arrowHeight;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *rightCapView; // @synthesize rightCapView=_rightCapView;
 @property(readonly, nonatomic) UIView *leftCapView; // @synthesize leftCapView=_leftCapView;
 @property(readonly, nonatomic) UIView *arrowView; // @synthesize arrowView=_arrowView;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *viewToMaskWhenContentExtendsOverArrow; // @synthesize viewToMaskWhenContentExtendsOverArrow;
 @property(nonatomic, getter=isDebugModeEnabled) _Bool debugModeEnabled; // @synthesize debugModeEnabled=_debugMode;
 @property(nonatomic) _Bool useShortMode; // @synthesize useShortMode;
-- (void).cxx_destruct;
 - (void)setArrowVisible:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isArrowVisible) _Bool arrowVisible;
 @property(copy, nonatomic) UIColor *arrowBackgroundColor;

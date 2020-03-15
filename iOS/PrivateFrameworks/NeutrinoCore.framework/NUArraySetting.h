@@ -13,8 +13,8 @@
 
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
 + (id)supportedAttributes;
-@property(readonly) NUSetting *content; // @synthesize content=_content;
 - (void).cxx_destruct;
+@property(readonly) NUSetting *content; // @synthesize content=_content;
 - (_Bool)serializeIntoDictionary:(id)arg1 error:(out id *)arg2;
 - (id)deserialize:(id)arg1 error:(out id *)arg2;
 - (id)serialize:(id)arg1 error:(out id *)arg2;

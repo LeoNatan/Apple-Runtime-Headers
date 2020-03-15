@@ -22,6 +22,7 @@
     UIView *_dimmedView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(retain, nonatomic) UIView *dimmedView; // @synthesize dimmedView=_dimmedView;
 @property(retain, nonatomic) UILabel *rightLabel; // @synthesize rightLabel=_rightLabel;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) TVImageView *rightImageView; // @synthesize rightImageView=_rightImageView;
 @property(retain, nonatomic) TVImageView *leftImageView; // @synthesize leftImageView=_leftImageView;
 @property(retain, nonatomic) TVLImageTextImageMenuItemElement *menuItemElement; // @synthesize menuItemElement=_menuItemElement;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title;
 - (void)layoutSubviews;
 - (void)configureWithMenuItemElement:(id)arg1;

@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) __weak HDHealthStoreServer *server; // @synthesize server=_server;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)requirePrivateHealthKitEntitlementUsingBlock:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)requireEntitlement:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;

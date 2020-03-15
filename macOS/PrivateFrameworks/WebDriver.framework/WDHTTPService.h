@@ -25,12 +25,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(readonly, nonatomic) WDHTTPDriverInterface *driver; // @synthesize driver=_driver;
-- (void).cxx_destruct;
 - (void)fetchContentsOfLocalFiles:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchAttributesOfLocalFiles:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)launchApplication:(id)arg1 forHost:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)launchApplication:(id)arg1 withArguments:(id)arg2 forHost:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)destroySession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestSessionWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSArray *sessions;
@@ -42,7 +42,6 @@
 - (void)stopServerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startServerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)configureServerWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)getServerStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_allowIncomingClientConnection:(id)arg1;
 - (void)_removeDriverClient:(id)arg1;
 - (void)_addDriverClient:(id)arg1;

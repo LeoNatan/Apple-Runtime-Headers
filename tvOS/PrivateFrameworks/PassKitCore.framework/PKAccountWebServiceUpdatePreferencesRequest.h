@@ -13,8 +13,8 @@
     PKAccountPreferences *_preferences;
 }
 
-@property(copy, nonatomic) PKAccountPreferences *preferences; // @synthesize preferences=_preferences;
 - (void).cxx_destruct;
+@property(copy, nonatomic) PKAccountPreferences *preferences; // @synthesize preferences=_preferences;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

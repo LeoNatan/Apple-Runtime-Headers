@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_accessibilityScrollToGlobalPoint:(struct CGPoint)arg1;
 - (void)_accessibilityScrollToMakeVisibleWithSubFocus:(struct CGRect)arg1;
 - (void)accessibilityScrollToVisible;
+- (void)_accessibilityShowContextMenu;
 - (void)accessibilityShowContextMenu;
 - (void)accessibilityPerformShowMenuAction;
 - (void)_accessibilityPerformDecrementAction;
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityPlatformMathSuperscriptKey;
 - (id)accessibilityPlatformMathSubscriptKey;
 - (id)accessibilityAttributeValue:(id)arg1;
+- (id)windowElement:(id)arg1;
 - (id)valueDescriptionForMeter;
 - (id)scrollViewParent;
 - (id)computedRoleString;
@@ -81,7 +83,7 @@ __attribute__((visibility("hidden")))
 - (id)nextTextMarkerForCharacterOffset:(struct CharacterOffset *)arg1;
 - (id)startOrEndTextMarkerForRange:(RefPtr_033e7b31)arg1 isStart:(BOOL)arg2;
 - (id)textMarkerRangeFromRange:(RefPtr_033e7b31)arg1;
-- (struct AccessibilityObject *)accessibilityObjectForTextMarker:(id)arg1;
+-     // Error parsing type: ^{AccessibilityObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}I{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}Bii{AccessibilityIsIgnoredFromParentData=^{AXCoreObject}BBB}BB{RetainPtr<WebAccessibilityObjectWrapper>=^v}}24@0:8@16, name: accessibilityObjectForTextMarker:
 - (struct IntRect)screenToContents:(const struct IntRect *)arg1;
 - (id)attachmentView;
 - (void)detach;

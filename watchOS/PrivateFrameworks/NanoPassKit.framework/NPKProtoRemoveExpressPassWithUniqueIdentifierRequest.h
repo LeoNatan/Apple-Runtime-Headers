@@ -15,8 +15,8 @@
     NSString *_uniqueID;
 }
 
-@property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

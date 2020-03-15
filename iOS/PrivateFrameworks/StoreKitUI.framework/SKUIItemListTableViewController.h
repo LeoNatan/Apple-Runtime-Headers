@@ -35,6 +35,7 @@
     struct CGSize _imageBoundingSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIUber *uber; // @synthesize uber=_uber;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(retain, nonatomic) SKUIItemArtworkContext *artworkContext; // @synthesize artworkContext=_artworkContext;
 @property(nonatomic) __weak id <SKUIItemListTableDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_loadRemainingItemsWithPriority:(long long)arg1;
 - (id)_itemCollectionController;
 - (void)_finishLoadMoreOperationWithItems:(id)arg1 error:(id)arg2;

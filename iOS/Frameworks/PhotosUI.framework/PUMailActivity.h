@@ -42,10 +42,10 @@ __attribute__((visibility("hidden")))
 + (id)_momentShareLinkTitleForMomentShare:(id)arg1;
 + (id)_momentShareLinkSubjectForMomentShare:(id)arg1;
 + (id)_momentShareLinkPrompt;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *transcodedVideoFilePath; // @synthesize transcodedVideoFilePath=_transcodedVideoFilePath;
 @property(nonatomic, setter=_setRemakerWasCancelled:) _Bool _remakerWasCancelled; // @synthesize _remakerWasCancelled=__remakerWasCancelled;
 @property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
-- (void).cxx_destruct;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;

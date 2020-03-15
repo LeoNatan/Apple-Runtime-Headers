@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *appAdamID;
 @property(readonly, nonatomic) _Bool requiresAttributionInCallout;
 - (id)providerSnippetLogoImageForScale:(float)arg1;
 - (id)providerLogoImageForScale:(float)arg1;

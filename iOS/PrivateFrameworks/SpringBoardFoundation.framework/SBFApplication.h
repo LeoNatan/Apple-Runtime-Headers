@@ -21,13 +21,13 @@
     NSString *_applicationShortcutWidgetBundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *applicationShortcutWidgetBundleIdentifier; // @synthesize applicationShortcutWidgetBundleIdentifier=_applicationShortcutWidgetBundleIdentifier;
 @property(readonly, nonatomic) NSNumber *appStoreItemID; // @synthesize appStoreItemID=_appStoreItemID;
 @property(readonly, nonatomic, getter=isSystemOrInternalApplication) _Bool systemOrInternalApplication; // @synthesize systemOrInternalApplication=_systemOrInternalApplication;
 @property(readonly, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
-- (void).cxx_destruct;
 - (void)_updateApplicationShortcutServiceFetchResult;
 @property(readonly, nonatomic) NSArray *dynamicApplicationShortcutItems;
 @property(readonly, nonatomic) NSArray *staticApplicationShortcutItems;

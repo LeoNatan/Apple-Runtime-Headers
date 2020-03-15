@@ -14,9 +14,9 @@
     UIColor *_highlightedBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *highlightedBackgroundColor; // @synthesize highlightedBackgroundColor=_highlightedBackgroundColor;
 @property(retain, nonatomic) UIColor *savedBackgroundColor; // @synthesize savedBackgroundColor=_savedBackgroundColor;
-- (void).cxx_destruct;
 - (void)_updateRealBackgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setHighlighted:(_Bool)arg1;

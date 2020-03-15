@@ -73,6 +73,7 @@
 + (id)cleanImageMetadataFromData:(id)arg1;
 + (_Bool)hasPrivateImageMetadata:(id)arg1;
 + (id)supportedOutputTypes;
+- (void).cxx_destruct;
 @property unsigned long long inkStyle; // @synthesize inkStyle=_inkStyle;
 @property(retain) UIImageView *placeholderImageView; // @synthesize placeholderImageView=_placeholderImageView;
 @property(nonatomic) _Bool showShareButtonInToolbar; // @synthesize showShareButtonInToolbar=_showShareButtonInToolbar;
@@ -117,7 +118,6 @@
 @property(retain, nonatomic) UINavigationBar *navBar; // @synthesize navBar=_navBar;
 @property(nonatomic) long long toolbarPosition; // @synthesize toolbarPosition=_toolbarPosition;
 @property(nonatomic, getter=isToolbarHidden) _Bool toolbarHidden; // @synthesize toolbarHidden=_toolbarHidden;
-- (void).cxx_destruct;
 - (long long)toolbarController:(id)arg1 positionForBar:(id)arg2;
 - (void)_toolbarShareButtonTapped:(id)arg1;
 - (long long)positionForBar:(id)arg1;
@@ -166,6 +166,7 @@
 - (void)_cleanupPlaceholderImage;
 - (void)_presentPlaceholderImage;
 - (void)_updateundoBarButtonWithController:(id)arg1;
+- (_Bool)_shouldShowUndoRedoButtonsInNavigationBar;
 - (void)_setupInitialBaseModelScaleFactorWithScreenSize:(struct CGSize)arg1 windowDecorationSize:(struct CGSize)arg2;
 - (_Bool)_sourceImageMayContainBaseImageAndModel;
 - (void)_bailFailedAnimateEnterMarkup;

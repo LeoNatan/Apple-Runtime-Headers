@@ -24,7 +24,6 @@
 - (void)messageViewController:(id)arg1 didTapRevealActionsButton:(id)arg2;
 - (void)arrowControlsView:(id)arg1 didTapButtonWithDirection:(int)arg2;
 - (id)arrowControlsView;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)_shrinkMessagesToBarButton:(id)arg1 withInteraction:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_scrollToReferenceMessage;
 - (void)_accessibilityPerformLeadingActionWithCell:(id)arg1;
@@ -32,12 +31,12 @@
 - (void)_axSimulateTapArrowButtonWithDirection:(int)arg1;
 - (_Bool)accessibilityScroll:(long long)arg1;
 - (id)_axFirstVisibleCell;
+- (id)_axFirstVisibleExpandedCell;
 - (id)_accessibilityFirstElementForFocus;
+- (id)_accessibilityFirstElementForReadFromTop;
 - (id)_axElementForFocusInCell:(id)arg1 shouldAllowCollapsedCell:(_Bool)arg2;
 - (id)accessibilityCustomRotors;
 - (void)_accessibilityLoadAccessibilityInformation;
-- (void)_axSetFocusOnReferenceOnMessage:(_Bool)arg1;
-- (_Bool)_axFocusOnReferenceMessage;
 - (void)_axSetSkipNextFocusOnMessage:(_Bool)arg1;
 - (_Bool)_axSkipNextFocusOnMessage;
 

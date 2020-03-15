@@ -21,10 +21,10 @@
 + (id)_cleanedRatingLabel:(id)arg1;
 + (id)_badgeDescriptorLookupKeyWithRatingLabel:(id)arg1 inRatingSystem:(long long)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *badgeDescriptors; // @synthesize badgeDescriptors=_badgeDescriptors;
 @property(retain, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(nonatomic) _Bool cachesImages; // @synthesize cachesImages=_cachesImages;
-- (void).cxx_destruct;
 - (id)_badgeDescriptorForRatingLabel:(id)arg1 inRatingSystem:(long long)arg2;
 - (id)_badgeDescriptorForContentRating:(id)arg1;
 - (_Bool)isTemplatedBadgeForContentRating:(id)arg1;

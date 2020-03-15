@@ -14,9 +14,9 @@
     NSArray *_flags;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

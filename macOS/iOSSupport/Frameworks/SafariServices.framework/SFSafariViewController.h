@@ -20,11 +20,11 @@
     long long _dismissButtonStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long dismissButtonStyle; // @synthesize dismissButtonStyle=_dismissButtonStyle;
 @property(retain, nonatomic) UIColor *preferredControlTintColor; // @synthesize preferredControlTintColor=_preferredControlTintColor;
 @property(retain, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
 @property(nonatomic) __weak id <SFSafariViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewIsAppearing:(BOOL)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

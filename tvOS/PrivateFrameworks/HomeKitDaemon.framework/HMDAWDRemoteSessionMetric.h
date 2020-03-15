@@ -23,13 +23,13 @@
 + (int)closeReasonFromError:(id)arg1;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) int closeReason; // @synthesize closeReason=_closeReason;
 @property(getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(retain, nonatomic) NSDate *creation; // @synthesize creation=_creation;
 @property(readonly, nonatomic) int role; // @synthesize role=_role;
 @property(nonatomic) _Bool submitted; // @synthesize submitted=_submitted;
-- (void).cxx_destruct;
 - (id)metricForAWD;
 - (void)open;
 - (id)initWithClientMode:(_Bool)arg1 sessionID:(id)arg2;

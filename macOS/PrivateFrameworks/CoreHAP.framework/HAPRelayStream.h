@@ -14,9 +14,9 @@
     unsigned long long _mtu;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long mtu; // @synthesize mtu=_mtu;
 @property __weak id <HAPStreamDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)writeData:(id)arg1 error:(id *)arg2;
 - (void)close;
 - (void)open;

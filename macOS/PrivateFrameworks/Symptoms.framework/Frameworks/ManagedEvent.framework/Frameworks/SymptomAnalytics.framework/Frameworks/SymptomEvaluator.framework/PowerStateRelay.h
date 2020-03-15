@@ -11,20 +11,46 @@ __attribute__((visibility("hidden")))
 {
     int powerStateToken;
     int screenStateToken;
+    int thermalPressureToken;
     unsigned int _batteryService;
     unsigned int _batteryNotification;
     struct IONotificationPort *_batteryPort;
     BOOL _pluggedIn;
     BOOL _screenNotDark;
+    BOOL _batteryExternalPowerIsConnected;
+    BOOL _batteryIsCharging;
+    BOOL _batteryFullyCharged;
+    BOOL _batteryAtWarnLevel;
+    BOOL _batteryAtCriticalLevel;
+    unsigned int _batteryCurrentCapacity;
+    unsigned int _batteryMaximumCapacity;
+    unsigned int _batteryDesignCapacity;
+    unsigned int _batteryAbsoluteCapacity;
+    unsigned int _batteryVoltage;
+    unsigned int _batteryTimeRemaining;
     double _batteryPercentage;
+    long long _thermalPressure;
 }
 
 + (id)defaultRelay;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property BOOL batteryAtCriticalLevel; // @synthesize batteryAtCriticalLevel=_batteryAtCriticalLevel;
+@property BOOL batteryAtWarnLevel; // @synthesize batteryAtWarnLevel=_batteryAtWarnLevel;
+@property BOOL batteryFullyCharged; // @synthesize batteryFullyCharged=_batteryFullyCharged;
+@property BOOL batteryIsCharging; // @synthesize batteryIsCharging=_batteryIsCharging;
+@property BOOL batteryExternalPowerIsConnected; // @synthesize batteryExternalPowerIsConnected=_batteryExternalPowerIsConnected;
+@property unsigned int batteryTimeRemaining; // @synthesize batteryTimeRemaining=_batteryTimeRemaining;
+@property unsigned int batteryVoltage; // @synthesize batteryVoltage=_batteryVoltage;
+@property unsigned int batteryAbsoluteCapacity; // @synthesize batteryAbsoluteCapacity=_batteryAbsoluteCapacity;
+@property unsigned int batteryDesignCapacity; // @synthesize batteryDesignCapacity=_batteryDesignCapacity;
+@property unsigned int batteryMaximumCapacity; // @synthesize batteryMaximumCapacity=_batteryMaximumCapacity;
+@property unsigned int batteryCurrentCapacity; // @synthesize batteryCurrentCapacity=_batteryCurrentCapacity;
 @property double batteryPercentage; // @synthesize batteryPercentage=_batteryPercentage;
+@property long long thermalPressure; // @synthesize thermalPressure=_thermalPressure;
 @property BOOL screenNotDark; // @synthesize screenNotDark=_screenNotDark;
 @property BOOL pluggedIn; // @synthesize pluggedIn=_pluggedIn;
 - (void)dealloc;
+- (id)thermalPressureLevelToString:(long long)arg1;
 - (id)init;
 
 @end

@@ -15,8 +15,8 @@
     NSXPCListener *_listener;
 }
 
-@property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
+@property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)run;
 

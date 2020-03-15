@@ -22,6 +22,7 @@
     unsigned long long _featureIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak UIViewController<PKPaymentDocumentSubmissionControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long side; // @synthesize side=_side;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)stateChanged;
 - (void)terminateSetupFlow;
 - (void)userWantsToCancel;

@@ -41,6 +41,7 @@
 + (id)legacyImportWordKeyPairsFromFiles:(id)arg1;
 + (id)legacyImportFilePaths;
 + (id)textReplacementEntriesFromManagedObjects:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDisableCaching; // @synthesize shouldDisableCaching=_shouldDisableCaching;
 @property(retain, nonatomic) NSDate *ubiquityStoreLoadStartTime; // @synthesize ubiquityStoreLoadStartTime=_ubiquityStoreLoadStartTime;
 @property(nonatomic) _Bool ubiquityStoreLoaded; // @synthesize ubiquityStoreLoaded=_ubiquityStoreLoaded;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(copy, nonatomic) NSString *cacheFilePath; // @synthesize cacheFilePath=_cacheFilePath;
-- (void).cxx_destruct;
 - (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (void)persistentStoreCoordinatorStoresDidChange:(id)arg1;
 - (void)persistentStoreCoordinatorStoresWillChange:(id)arg1;

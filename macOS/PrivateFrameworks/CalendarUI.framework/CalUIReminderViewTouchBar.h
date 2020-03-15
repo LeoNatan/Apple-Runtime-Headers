@@ -31,6 +31,7 @@
     NSButton *_locationButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *locationButton; // @synthesize locationButton=_locationButton;
 @property(retain) NSButton *timeButton; // @synthesize timeButton=_timeButton;
 @property(retain) CalUIGadgetViewTouchBar *locationGadgetViewTouchBar; // @synthesize locationGadgetViewTouchBar=_locationGadgetViewTouchBar;
@@ -46,7 +47,6 @@
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CalUIReminderViewTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EKReminder *reminder; // @synthesize reminder=_reminder;
-- (void).cxx_destruct;
 - (void)reminderDateChanged;
 - (void)reminderDateIsChanging;
 - (void)dismissAllPopovers;

@@ -15,10 +15,10 @@
     long long _position;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(nonatomic) long long position; // @synthesize position=_position;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)estimatedTimeAtPosition:(unsigned long long)arg1;
 - (void)updatePosition:(unsigned long long)arg1 playbackRate:(float)arg2;
 - (id)initWithPosition:(unsigned long long)arg1 playbackRate:(float)arg2;

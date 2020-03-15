@@ -13,8 +13,8 @@
     id <AKNameTextFieldDelegate> _nameTextFieldDelegate;
 }
 
-@property __weak id <AKNameTextFieldDelegate> nameTextFieldDelegate; // @synthesize nameTextFieldDelegate=_nameTextFieldDelegate;
 - (void).cxx_destruct;
+@property __weak id <AKNameTextFieldDelegate> nameTextFieldDelegate; // @synthesize nameTextFieldDelegate=_nameTextFieldDelegate;
 - (BOOL)becomeFirstResponder;
 
 @end

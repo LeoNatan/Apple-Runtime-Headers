@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool immutable; // @synthesize immutable=_immutable;
 @property unsigned long long deviceID; // @synthesize deviceID=_deviceID;
 @property unsigned long long index; // @synthesize index=_index;
 @property(readonly) struct CGPoint initialMouseLocation; // @synthesize initialMouseLocation=_initialMouseLocation;
 @property(readonly) unsigned long long pathType; // @synthesize pathType=_pathType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)firstEventAfterOffset:(double)arg1;
 - (id)lastEventBeforeOffset:(double)arg1;
@@ -46,6 +46,8 @@
 - (void)pressDownWithPressure:(double)arg1 atOffset:(double)arg2;
 - (void)pressDownAtOffset:(double)arg1;
 @property(readonly) NSArray *pointerEvents;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initForTouchBarAtPoint:(struct CGPoint)arg1 offset:(double)arg2;

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)aqiEnabledByRules:(id)arg1 forLocation:(id)arg2;
-@property(readonly, nonatomic) id <WFSettings> settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <WFSettings> settings; // @synthesize settings=_settings;
 - (long long)locationNumDecimalsOfPrecision;
 - (_Bool)aqiEnabledForCountryCode:(id)arg1;
 - (id)initWithSettings:(id)arg1;

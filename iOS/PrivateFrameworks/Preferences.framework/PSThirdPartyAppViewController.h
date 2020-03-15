@@ -19,10 +19,10 @@
     PSSpecifierController *_specifierController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSSpecifierController *specifierController; // @synthesize specifierController=_specifierController;
 @property(retain, nonatomic) PSRootController *root; // @synthesize root=_root;
 @property(retain, nonatomic) UIViewController<PSController> *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

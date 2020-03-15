@@ -14,9 +14,9 @@
     AXDragManager *_dragManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AXDragManager *dragManager; // @synthesize dragManager=_dragManager;
 @property(nonatomic) _Bool shouldIncludeMedusaActions; // @synthesize shouldIncludeMedusaActions=_shouldIncludeMedusaActions;
-- (void).cxx_destruct;
 - (_Bool)performAction:(id)arg1;
 - (id)actionsForElement:(id)arg1;
 - (_Bool)canShowActionsForElement:(id)arg1;

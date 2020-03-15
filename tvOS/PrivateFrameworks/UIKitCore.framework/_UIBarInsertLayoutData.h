@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 + (CDStruct_39925896)calculateLayoutHeights:(id)arg1;
 + (id)calculateRestingHeightsForLayouts:(id)arg1;
 + (void)updateLayoutParameters:(id)arg1 overflowLayout:(id)arg2 forAvailableHeight:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool ignoredForCollapsingBehaviors; // @synthesize ignoredForCollapsingBehaviors=_ignoredForCollapsingBehaviors;
 @property(nonatomic) long long order; // @synthesize order=_order;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double preferredHeight; // @synthesize preferredHeight=_preferredHeight;
 @property(nonatomic) double minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isVariableHeight) _Bool variableHeight;
 @property(readonly, nonatomic) double layoutMinimumHeight;
 - (void)setFixedHeight:(double)arg1;

@@ -15,8 +15,8 @@
     NSCalendar *_calendar;
 }
 
-@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (BOOL)highlightItemList:(id)arg1 canBeMergedWithOtherHighlightItemList:(id)arg2;
 - (BOOL)highlightItem:(id)arg1 belongsToHighlightItemList:(id)arg2;
 - (unsigned long long)dominantYearForStartDate:(id)arg1 endDate:(id)arg2;

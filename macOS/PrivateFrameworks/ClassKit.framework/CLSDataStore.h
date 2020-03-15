@@ -15,7 +15,7 @@
 @interface CLSDataStore : NSObject <CLSFaultProcessorDelegate, NSLocking>
 {
     NSMutableSet *_dataObservers;
-    struct NSMutableDictionary *_deletedObjectsByID;
+    NSMutableDictionary *_deletedObjectsByID;
     NSMutableDictionary *_objectGenerationsByID;
     CLSCurrentUser *_cachedCurrentUser;
     int _accountChangeToken;
@@ -41,15 +41,15 @@
 + (BOOL)isAvailable;
 + (id)shared;
 + (Class)endpointClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLSGraph *graph; // @synthesize graph=_graph;
 @property(retain, nonatomic) CLSEndpointConnection *endpointConnection; // @synthesize endpointConnection=_endpointConnection;
 @property(retain, nonatomic) CLSContext *mainAppContext; // @synthesize mainAppContext=_mainAppContext;
 @property(nonatomic) __weak id <CLSDataStoreDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)featureIsEnabled:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)syncFetchWithCompletion:(CDUnknownBlockType)arg1;
 - (void)pruneDeletedObjectsWithCompletion:(CDUnknownBlockType)arg1;
-- (BOOL)faultProcessor:(id)arg1 shouldFaultRelation:(id)arg2 fromObject:(struct NSObject *)arg3;
+- (BOOL)faultProcessor:(id)arg1 shouldFaultRelation:(id)arg2 fromObject:(id)arg3;
 - (void)deregisterDataObserver:(id)arg1;
 - (void)registerDataObserver:(id)arg1;
 - (void)currentUserWithServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -95,6 +95,8 @@
 - (void)saveWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchAndCompleteAllAssignedActivitiesForContextPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)completeAllAssignedActivitiesMatching:(id)arg1;
+- (void)syncDeleteThumbnailBlobForContext:(id)arg1;
+- (id)syncFetchThumbnailBlobForContext:(id)arg1;
 - (void)contextsMatchingPredicate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)contextsMatchingIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)allContexts;
@@ -104,13 +106,16 @@
 - (void)refreshMainAppContext;
 - (void)_createMainAppContext;
 - (id)cachedMainAppContext;
+- (void)deleteArchivedCollectionObjects:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)fetchCollectionItemsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchCollectionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)awaitExecuteQuery:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dataServer:(id)arg1 executeQuery:(id)arg2;
 - (void)executeQuery:(id)arg1;
 @property(retain, nonatomic) CLSCurrentUser *cachedCurrentUser;
 - (void)_reconnect;
 - (void)_reenableObservers;
-- (void)_registerForDarwinNotifications;
+- (void)_registerForAccountChangedDarwinNotification;
 - (void)_connectionConnected;
 - (void)_connectionInterupted;
 - (void)unlock;
@@ -130,16 +135,24 @@
 - (void)_classesForCurrentUserWithRole:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeFavorite:(id)arg1;
 - (void)addFavorite:(id)arg1;
+- (void)removeCollection:(id)arg1;
+- (void)addCollection:(id)arg1;
 - (void)handoutAttachmentForDocumentURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)publishHandout:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeHandout:(id)arg1;
 - (void)addHandout:(id)arg1;
+- (void)studentActivityForAttachmentsWithIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)enrolledClassesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)membersOfGroupWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)objectsMatching:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)shouldPerformSearchAPIOperation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)isSearchAllowed;
 - (void)canSearchRostersWithCompletion:(CDUnknownBlockType)arg1;
+- (void)publishCollaborationStateChanges:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)collaborationStatesForObjectWithID:(id)arg1 ownerPersonID:(id)arg2;
+- (void)collaborationStatesForObjectWithID:(id)arg1 ownerPersonID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)syncSetSettingsForUserNotificationType:(long long)arg1 settings:(id)arg2;
+- (id)syncFetchSettingsForUserNotificationType:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

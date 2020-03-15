@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <FPOperationProgressDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FPOperationProgressDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FPOperationProgressDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)operationDidProgressWithInfo:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)main;
 - (id)initWithAppLibraryItems:(id)arg1 desiredSize:(struct CGSize)arg2 screenScale:(double)arg3;

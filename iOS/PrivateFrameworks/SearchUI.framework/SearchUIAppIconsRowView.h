@@ -25,6 +25,7 @@
 }
 
 + (double)numberOfIcons;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUIGridArrangement *arrangment; // @synthesize arrangment=_arrangment;
 @property(retain, nonatomic) NSMutableArray *spacerDebuggerViews; // @synthesize spacerDebuggerViews=_spacerDebuggerViews;
 @property(retain, nonatomic) NSMutableArray *itemAtIndex; // @synthesize itemAtIndex=_itemAtIndex;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMutableArray *spacingHelpers; // @synthesize spacingHelpers=_spacingHelpers;
 @property(retain, nonatomic) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;
 @property __weak id <SearchUIFeedbackDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGRect)layoutFrameForArrangedSubview:(id)arg1 withProposedContentFrame:(struct CGRect)arg2;
 - (struct CGSize)contentLayoutSizeFittingSize:(struct CGSize)arg1 forArrangedSubview:(id)arg2;

@@ -22,10 +22,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)callRecordsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
 @property(copy, nonatomic) NSArray *callRecords; // @synthesize callRecords=_callRecords;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

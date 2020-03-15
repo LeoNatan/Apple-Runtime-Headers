@@ -19,11 +19,11 @@
 + (id)buildRequiredOnlyWithFrequency:(id)arg1;
 + (id)buildWithFrequency:(id)arg1 withLocalTime:(id)arg2 withSpread:(id)arg3 withDay:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadDay; // @synthesize payloadDay=_payloadDay;
 @property(copy, nonatomic) NSNumber *payloadSpread; // @synthesize payloadSpread=_payloadSpread;
 @property(copy, nonatomic) NSString *payloadLocalTime; // @synthesize payloadLocalTime=_payloadLocalTime;
 @property(copy, nonatomic) NSString *payloadFrequency; // @synthesize payloadFrequency=_payloadFrequency;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

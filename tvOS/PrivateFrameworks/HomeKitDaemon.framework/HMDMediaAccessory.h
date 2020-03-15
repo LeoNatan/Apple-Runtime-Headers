@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) HMDMediaProfile *mediaProfile; // @synthesize mediaProfile=_mediaProfile;
 - (void).cxx_destruct;
+@property(readonly) HMDMediaProfile *mediaProfile; // @synthesize mediaProfile=_mediaProfile;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)dumpSimpleState;
@@ -40,12 +40,13 @@
 - (_Bool)providesHashRouteID;
 - (void)removeAdvertisement:(id)arg1;
 - (void)addAdvertisement:(id)arg1;
+- (id)_createMediaProfile;
 - (_Bool)_shouldFilterAccessoryProfile:(id)arg1;
 - (void)_registerForMessages;
 - (id)init;
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

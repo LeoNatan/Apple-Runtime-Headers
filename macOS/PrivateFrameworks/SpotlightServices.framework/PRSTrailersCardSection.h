@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *trailers; // @synthesize trailers=_trailers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *trailers; // @synthesize trailers=_trailers;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 trailers:(id)arg2;

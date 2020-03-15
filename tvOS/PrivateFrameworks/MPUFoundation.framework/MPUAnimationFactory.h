@@ -19,12 +19,12 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(nonatomic, getter=isRemovedOnCompletion) _Bool removedOnCompletion; // @synthesize removedOnCompletion=_removedOnCompletion;
 @property(copy, nonatomic) NSString *fillMode; // @synthesize fillMode=_fillMode;
 @property(copy, nonatomic) NSArray *allowedKeyPaths; // @synthesize allowedKeyPaths=_allowedKeyPaths;
-- (void).cxx_destruct;
 - (id)_timingFunctionForAnimation;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)init;

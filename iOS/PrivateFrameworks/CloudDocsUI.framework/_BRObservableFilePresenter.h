@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     BRObservableFile *_parent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak BRObservableFile *parent; // @synthesize parent=_parent;
 @property(retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 @property(copy) NSURL *presentedItemURL; // @synthesize presentedItemURL=_presentedItemURL;
-- (void).cxx_destruct;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
 - (void)presentedItemUbiquityDidChange;

@@ -21,13 +21,13 @@
 }
 
 + (id)contextWithACAccount:(id)arg1 accountStore:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int verificationStyle; // @synthesize verificationStyle=_verificationStyle;
 @property(retain, nonatomic) ICUserIdentityStore *identityStore; // @synthesize identityStore=_identityStore;
 @property(copy, nonatomic) ICUserIdentityProperties *identityProperties; // @synthesize identityProperties=_identityProperties;
 @property(retain, nonatomic) ACAccountStore *ACAccountStore; // @synthesize ACAccountStore=_ACAccountStore;
 @property(retain, nonatomic) ACAccount *ACAccount; // @synthesize ACAccount=_ACAccount;
 @property(nonatomic) int interactionLevel; // @synthesize interactionLevel=_interactionLevel;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -84,6 +84,7 @@
 + (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize)arg2;
 + (_Bool)_supportsAdaptiveFramerate;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool renderInBackground; // @synthesize renderInBackground=_renderInBackground;
 @property(nonatomic) _Bool reduceThinkingFramerate; // @synthesize reduceThinkingFramerate=_reduceThinkingFramerate;
 @property(nonatomic) _Bool reduceFrameRate; // @synthesize reduceFrameRate=_reduceFrameRate;
@@ -97,7 +98,6 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) _Bool accelerateTransitions; // @synthesize accelerateTransitions=_accelerateTransitions;
 @property(nonatomic) __weak id <SUICFlamesViewProvidingDelegate> flamesDelegate; // @synthesize flamesDelegate=_flamesDelegate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (float)_currentMicPowerLevel;
 - (void)_didFinishTransition;

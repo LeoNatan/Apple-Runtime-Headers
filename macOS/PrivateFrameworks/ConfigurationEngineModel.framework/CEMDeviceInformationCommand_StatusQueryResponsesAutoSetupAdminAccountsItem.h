@@ -17,9 +17,9 @@
 + (id)buildRequiredOnly;
 + (id)buildWithGUID:(id)arg1 withShortName:(id)arg2;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *statusShortName; // @synthesize statusShortName=_statusShortName;
 @property(copy, nonatomic) NSString *statusGUID; // @synthesize statusGUID=_statusGUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

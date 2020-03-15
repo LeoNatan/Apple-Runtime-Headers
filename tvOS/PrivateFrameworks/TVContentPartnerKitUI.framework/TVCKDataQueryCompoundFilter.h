@@ -18,9 +18,9 @@
 
 + (id)_stringFromOperator:(long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long op; // @synthesize op=_op;
 @property(retain, nonatomic) NSArray *dataFilters; // @synthesize dataFilters=_dataFilters;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isQueryFilter;

@@ -15,8 +15,8 @@
     NSArray *_alertButtons;
 }
 
-@property(retain, nonatomic) NSArray *alertButtons; // @synthesize alertButtons=_alertButtons;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *alertButtons; // @synthesize alertButtons=_alertButtons;
 - (id)preferredFocusEnvironments;
 - (void)didSelectButton:(id)arg1;
 - (id)_titleFont;

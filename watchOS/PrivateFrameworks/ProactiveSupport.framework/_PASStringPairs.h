@@ -14,9 +14,9 @@
     NSArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) NSArray *keys; // @synthesize keys=_keys;
-- (void).cxx_destruct;
 - (id)valueAtIndex:(unsigned int)arg1;
 - (id)keyAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int count;

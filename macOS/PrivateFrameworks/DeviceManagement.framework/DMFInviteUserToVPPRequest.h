@@ -18,9 +18,9 @@
 + (BOOL)isPermittedOnUserConnection;
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *originator; // @synthesize originator=_originator;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

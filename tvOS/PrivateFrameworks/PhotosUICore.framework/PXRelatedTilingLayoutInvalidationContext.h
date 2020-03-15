@@ -14,9 +14,9 @@
     PXRelatedDataSource *_toDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXRelatedDataSource *toDataSource; // @synthesize toDataSource=_toDataSource;
 @property(retain, nonatomic) PXRelatedDataSource *fromDataSource; // @synthesize fromDataSource=_fromDataSource;
-- (void).cxx_destruct;
 
 @end
 

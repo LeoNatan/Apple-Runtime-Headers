@@ -13,8 +13,8 @@
     HNPredicate *_predicate;
 }
 
-@property(readonly, copy, nonatomic) HNPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) HNPredicate *predicate; // @synthesize predicate=_predicate;
 - (id)initWithPredicate:(id)arg1;
 - (id)init;
 

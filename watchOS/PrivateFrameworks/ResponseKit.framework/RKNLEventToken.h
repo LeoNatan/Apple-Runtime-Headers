@@ -16,11 +16,11 @@
     long _length;
 }
 
+- (void).cxx_destruct;
 @property long length; // @synthesize length=_length;
 @property long location; // @synthesize location=_location;
 @property unsigned int tokenID; // @synthesize tokenID=_tokenID;
 @property(retain) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)initWithString:(id)arg1 location:(long)arg2 length:(long)arg3;
 
 @end

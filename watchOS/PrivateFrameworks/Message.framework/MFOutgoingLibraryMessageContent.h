@@ -13,8 +13,8 @@
     MFLibraryMessage *_libraryMessage;
 }
 
-@property(retain, nonatomic) MFLibraryMessage *libraryMessage; // @synthesize libraryMessage=_libraryMessage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MFLibraryMessage *libraryMessage; // @synthesize libraryMessage=_libraryMessage;
 - (id)libraryContent;
 - (id)headers;
 - (id)copy;

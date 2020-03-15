@@ -21,11 +21,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *subsectionId; // @synthesize subsectionId=_subsectionId;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned int standaloneState; // @synthesize standaloneState=_standaloneState;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

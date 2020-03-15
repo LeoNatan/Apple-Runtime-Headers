@@ -15,9 +15,9 @@
     CDUnknownBlockType _connectionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionHandler; // @synthesize connectionHandler=_connectionHandler;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)stop;
 - (void)start;

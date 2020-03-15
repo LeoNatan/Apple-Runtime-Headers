@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_charityMetadataURLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *charityMetadataURLString; // @synthesize charityMetadataURLString=_charityMetadataURLString;
 @property(readonly, nonatomic) NSString *campaignIdentifier; // @synthesize campaignIdentifier=_campaignIdentifier;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

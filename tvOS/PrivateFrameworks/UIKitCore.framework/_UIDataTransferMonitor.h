@@ -29,10 +29,10 @@
     unsigned long long _outstandingItemsCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long outstandingItemsCount; // @synthesize outstandingItemsCount=_outstandingItemsCount;
 @property(readonly, copy, nonatomic) NSArray *outstandingRequests; // @synthesize outstandingRequests=_outstandingRequests;
 @property(nonatomic) __weak id <_UIDataTransferMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)itemProvider:(id)arg1 finishedDataTransferTransactionUUID:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

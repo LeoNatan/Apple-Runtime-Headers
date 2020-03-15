@@ -24,11 +24,11 @@
     UITableView *__searchResultsTableView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITableView *_searchResultsTableView; // @synthesize _searchResultsTableView=__searchResultsTableView;
 @property(retain, nonatomic, setter=_setSearchDataSource:) PXRecipientSearchDataSource *_searchDataSource; // @synthesize _searchDataSource=__searchDataSource;
 @property(readonly, nonatomic) PXRecipientSearchDataSourceManager *searchDataSourceManager; // @synthesize searchDataSourceManager=_searchDataSourceManager;
 @property(nonatomic) __weak id <PXSearchRecipientControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

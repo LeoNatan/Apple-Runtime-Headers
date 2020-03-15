@@ -15,10 +15,10 @@
     UILabel *_labelLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
 @property(retain, nonatomic) UILabel *handleLabel; // @synthesize handleLabel=_handleLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
-- (void).cxx_destruct;
 - (void)updateFonts;
 - (void)prepareForReuse;
 - (id)initWithCellIdentifier:(id)arg1;

@@ -22,12 +22,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)relativePositionWithTimestamp:(double)arg1 range:(id)arg2 azimuth:(id)arg3 elevation:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PRAngleMeasurement *elevation; // @synthesize elevation=_elevation;
 @property(readonly, nonatomic) PRAngleMeasurement *azimuth; // @synthesize azimuth=_azimuth;
 @property(readonly, nonatomic) PRRangeMeasurement *range; // @synthesize range=_range;
 @property(readonly) long long cycleIndex; // @synthesize cycleIndex=_cycleIndex;
 @property(readonly) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

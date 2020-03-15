@@ -22,9 +22,9 @@
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
 + (id)supportedRecipes;
 + (unsigned int)storeClassID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLThumbnailIndexes *thumbnailIndexes; // @synthesize thumbnailIndexes=_thumbnailIndexes;
 @property(retain, nonatomic) PLThumbnailManager *thumbnailManager; // @synthesize thumbnailManager=_thumbnailManager;
-- (void).cxx_destruct;
 - (struct CGImage *)newTableThumbImageForKey:(id)arg1;
 - (id)thumbnailFormatsByTableType;
 - (void)setThumbnailFormatsByIDs:(id)arg1;

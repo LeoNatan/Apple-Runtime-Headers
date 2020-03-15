@@ -27,6 +27,7 @@
     double _failedConnectionRetryInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double failedConnectionRetryInterval; // @synthesize failedConnectionRetryInterval=_failedConnectionRetryInterval;
 @property(nonatomic) double willLoseBeaconWarningTimeout; // @synthesize willLoseBeaconWarningTimeout=_willLoseBeaconWarningTimeout;
 @property(nonatomic) double lostBeaconTimeout; // @synthesize lostBeaconTimeout=_lostBeaconTimeout;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak id <CRKSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CATTransport *transport; // @synthesize transport=mTransport;
 @property(retain, nonatomic) CATStateMachine *stateMachine; // @synthesize stateMachine=mFSM;
-- (void).cxx_destruct;
 - (void)transport:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)transportDidInvalidate:(id)arg1;
 - (void)transportDidConnect:(id)arg1;

@@ -20,6 +20,8 @@
 - (void)setPortraitLightingEffectStrength:(float)arg1;
 - (float)simulatedAperture;
 - (void)setSimulatedAperture:(float)arg1;
+- (void)setCameraCalibrationDataDeliveryEnabled:(_Bool)arg1;
+- (_Bool)isCameraCalibrationDataDeliveryEnabled;
 - (void)setVisionDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)isVisionDataDeliveryEnabled;
 - (void)setBuiltInMicrophoneStereoAudioCaptureEnabled:(_Bool)arg1;

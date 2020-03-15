@@ -36,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *rawFiles; // @synthesize rawFiles=_rawFiles;
 @property(copy, nonatomic) NSSet *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSDictionary *itemsDescriptionAdvanced; // @synthesize itemsDescriptionAdvanced=_itemsDescriptionAdvanced;
@@ -57,7 +58,6 @@
 @property(nonatomic) BOOL didAutoAccept; // @synthesize didAutoAccept=_didAutoAccept;
 @property(readonly, nonatomic) BOOL canAutoAccept; // @synthesize canAutoAccept=_canAutoAccept;
 @property(nonatomic) long long transferTypes; // @synthesize transferTypes=_transferTypes;
-- (void).cxx_destruct;
 - (void)setItemsDescription:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

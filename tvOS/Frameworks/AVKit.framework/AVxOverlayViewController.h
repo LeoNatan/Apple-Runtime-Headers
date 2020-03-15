@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_bottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) AVControlItem *swapPictureInPicture; // @synthesize swapPictureInPicture=_swapPictureInPicture;
 @property(retain, nonatomic) AVControlItem *startPictureInPicture; // @synthesize startPictureInPicture=_startPictureInPicture;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *buttonItems; // @synthesize buttonItems=_buttonItems;
 @property(nonatomic) double bottomInset; // @synthesize bottomInset=_bottomInset;
 @property(nonatomic, getter=isOverlayPresented) _Bool overlayPresented; // @synthesize overlayPresented=_overlayPresented;
-- (void).cxx_destruct;
 - (void)setScaleOfEveryVisibleCell:(double)arg1 animated:(_Bool)arg2;
 - (void)didSelectButtonItem:(id)arg1;
 - (id)preferredFocusEnvironments;

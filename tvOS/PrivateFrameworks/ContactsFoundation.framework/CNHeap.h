@@ -15,10 +15,10 @@
     NSMutableDictionary *_heapObjectsByClassAndBinary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *heapObjectsByClassAndBinary; // @synthesize heapObjectsByClassAndBinary=_heapObjectsByClassAndBinary;
 @property(retain) NSMutableArray *heapObjects; // @synthesize heapObjects=_heapObjects;
 @property(retain) NSString *rawDataString; // @synthesize rawDataString=_rawDataString;
-- (void).cxx_destruct;
 
 @end
 

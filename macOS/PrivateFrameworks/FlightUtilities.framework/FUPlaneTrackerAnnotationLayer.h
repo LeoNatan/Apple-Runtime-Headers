@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     struct CLLocationCoordinate2D _endLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CALayer *planeImageLayer; // @synthesize planeImageLayer=_planeImageLayer;
 @property(nonatomic) struct CLLocationCoordinate2D endLocation; // @synthesize endLocation=_endLocation;
 @property(nonatomic) struct CLLocationCoordinate2D startLocation; // @synthesize startLocation=_startLocation;
-- (void).cxx_destruct;
 - (double)defaultHeadingForStartPosition:(struct CLLocationCoordinate2D)arg1 endPosition:(struct CLLocationCoordinate2D)arg2 positionPercentage:(double)arg3;
 - (struct CLLocationCoordinate2D)geodesicLocationForStartPosition:(struct CLLocationCoordinate2D)arg1 endPosition:(struct CLLocationCoordinate2D)arg2 positionPercentage:(double)arg3;
 @property(readonly) struct CLLocationCoordinate2D currentLocation;

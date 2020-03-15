@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long isNewsRestricted; // @synthesize isNewsRestricted=_isNewsRestricted;
 @property(readonly, nonatomic) long long hasActiveAccount; // @synthesize hasActiveAccount=_hasActiveAccount;
 @property(readonly, nonatomic) long long gender; // @synthesize gender=_gender;
 @property(readonly, copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

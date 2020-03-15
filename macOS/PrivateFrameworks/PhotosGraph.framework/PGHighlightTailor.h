@@ -18,9 +18,9 @@
 }
 
 + (BOOL)itemScoreIsAutoplayable:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *enrichmentProfiles; // @synthesize enrichmentProfiles=_enrichmentProfiles;
 @property(retain, nonatomic) PGManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (id)sortedCurationOfType:(unsigned short)arg1 fromHighlight:(id)arg2;
 - (id)keyAssetFromHighlight:(id)arg1;
 - (id)bestEnrichmentProfileForHighlight:(id)arg1 options:(unsigned long long)arg2;

@@ -15,10 +15,10 @@
     NSURL *_baseURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *apiKey; // @synthesize apiKey=_apiKey;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)sendRequestWithURL:(id)arg1 queryParameters:(id)arg2 requestBody:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)getAccessTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (void)translateStrings:(id)arg1 fromLanguage:(id)arg2 intoLanguage:(id)arg3 completion:(CDUnknownBlockType)arg4;

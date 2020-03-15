@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableString *_textContent;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableString *textContent; // @synthesize textContent=_textContent;
 @property(retain) NSMutableDictionary *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

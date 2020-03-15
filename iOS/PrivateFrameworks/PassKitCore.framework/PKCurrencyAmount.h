@@ -15,15 +15,18 @@
 {
     NSDecimalNumber *_amount;
     NSString *_currency;
+    long long _exponent;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
-@property(readonly, copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 - (void).cxx_destruct;
+@property(nonatomic) long long exponent; // @synthesize exponent=_exponent;
+@property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
+@property(copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 - (id)negativeValue;
 - (id)absoluteValue;
 - (id)minimalFormattedStringValueInLocale:(id)arg1;
+- (_Bool)isCurrency;
 - (id)minimalFormattedStringValue;
 - (id)formattedStringValue;
 - (id)description;
@@ -33,6 +36,7 @@
 - (_Bool)isEqualToCurrencyAmount:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithAmount:(id)arg1 currency:(id)arg2 exponent:(long long)arg3;
 - (id)initWithAmount:(id)arg1 currency:(id)arg2;
 - (long long)compareToCurrencyCode:(id)arg1 amount:(id)arg2;
 

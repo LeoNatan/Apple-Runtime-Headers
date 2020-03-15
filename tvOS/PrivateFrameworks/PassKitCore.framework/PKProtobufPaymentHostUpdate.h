@@ -18,11 +18,11 @@
     PKProtobufShippingMethod *_shippingMethod;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKProtobufPaymentMethod *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
 @property(retain, nonatomic) PKProtobufShippingMethod *shippingMethod; // @synthesize shippingMethod=_shippingMethod;
 @property(retain, nonatomic) NSData *shippingContact; // @synthesize shippingContact=_shippingContact;
 @property(retain, nonatomic) NSString *remotePaymentRequestIdentifier; // @synthesize remotePaymentRequestIdentifier=_remotePaymentRequestIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

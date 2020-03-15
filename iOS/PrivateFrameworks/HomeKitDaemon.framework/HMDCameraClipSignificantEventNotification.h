@@ -17,11 +17,11 @@
     NSUUID *_clipUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSUUID *clipUUID; // @synthesize clipUUID=_clipUUID;
 @property(readonly) id <HMDHomePresenceCheck> homePresence; // @synthesize homePresence=_homePresence;
 @property(readonly, copy) NSURL *heroFrameURL; // @synthesize heroFrameURL=_heroFrameURL;
 @property(readonly, copy) HMCameraClipSignificantEvent *significantEvent; // @synthesize significantEvent=_significantEvent;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)initWithModel:(id)arg1 heroFrameURL:(id)arg2 clipUUID:(id)arg3;
 - (id)initWithSignificantEvent:(id)arg1 heroFrameURL:(id)arg2 homePresence:(id)arg3 clipUUID:(id)arg4;

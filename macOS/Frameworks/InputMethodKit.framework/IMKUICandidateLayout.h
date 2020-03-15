@@ -18,12 +18,12 @@
 }
 
 + (id)candidateSetFrom:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *candidates; // @synthesize candidates=_candidates;
 @property(readonly) BOOL middleIsCorrection; // @synthesize middleIsCorrection=_middleIsCorrection;
 @property(readonly) IMKUITriCandidateLayout *rightSet; // @synthesize rightSet=_right;
 @property(readonly) IMKCandidate *middleCandidate; // @synthesize middleCandidate=_middle;
 @property(readonly) IMKCandidate *leftCandidate; // @synthesize leftCandidate=_left;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithLeftCandidate:(id)arg1 middleCandidate:(id)arg2 thatIsCorrection:(BOOL)arg3 rightSet:(id)arg4;

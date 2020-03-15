@@ -16,10 +16,10 @@
 }
 
 + (void)purgeDirectoryAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *paths; // @synthesize paths=_paths;
 @property(copy, nonatomic) CDUnknownBlockType shouldRemoveFileBlock; // @synthesize shouldRemoveFileBlock=_shouldRemoveFileBlock;
 @property(copy, nonatomic) CDUnknownBlockType shouldSkipFileBlock; // @synthesize shouldSkipFileBlock=_shouldSkipFileBlock;
-- (void).cxx_destruct;
 - (void)purge;
 - (id)initWithPaths:(id)arg1;
 

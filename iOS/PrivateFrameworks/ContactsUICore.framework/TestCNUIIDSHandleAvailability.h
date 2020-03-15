@@ -17,9 +17,9 @@
     id <CNUIIDSHandle> _handle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool available; // @synthesize available=_available;
 @property(retain, nonatomic) id <CNUIIDSHandle> handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) _Bool isAvailable;

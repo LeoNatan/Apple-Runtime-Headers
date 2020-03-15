@@ -19,6 +19,7 @@
     struct CGRect _bucketRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *fieldTemplates; // @synthesize fieldTemplates=_fieldTemplates;
 @property(nonatomic) _Bool sitsOnStripImage; // @synthesize sitsOnStripImage=_sitsOnStripImage;
 @property(nonatomic) unsigned int maxFields; // @synthesize maxFields=_maxFields;
@@ -26,7 +27,6 @@
 @property(nonatomic) float minFieldPadding; // @synthesize minFieldPadding=_minFieldPadding;
 @property(nonatomic) struct CGRect bucketRect; // @synthesize bucketRect=_bucketRect;
 @property(nonatomic) int bucketAlignment; // @synthesize bucketAlignment=_bucketAlignment;
-- (void).cxx_destruct;
 - (id)templateForFieldAtIndex:(unsigned int)arg1;
 - (void)addFieldTemplate:(id)arg1;
 

@@ -13,8 +13,8 @@
     id <IIDatePickerPanelDelegate> _panelDelegate;
 }
 
-@property __weak id <IIDatePickerPanelDelegate> panelDelegate; // @synthesize panelDelegate=_panelDelegate;
 - (void).cxx_destruct;
+@property __weak id <IIDatePickerPanelDelegate> panelDelegate; // @synthesize panelDelegate=_panelDelegate;
 - (void)selectKeyViewPrecedingView:(id)arg1;
 - (void)selectKeyViewFollowingView:(id)arg1;
 - (void)resignKeyWindow;

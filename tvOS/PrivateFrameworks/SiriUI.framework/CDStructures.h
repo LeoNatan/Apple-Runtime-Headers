@@ -25,23 +25,11 @@ struct CGSize {
     double height;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct NSDirectionalEdgeInsets {
     double top;
     double leading;
     double bottom;
     double trailing;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSUUID {
-    Class _field1;
 };
 
 struct UIEdgeInsets {

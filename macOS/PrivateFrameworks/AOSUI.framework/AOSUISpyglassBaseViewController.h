@@ -13,8 +13,8 @@
     AIDAAccountManager *_accountManager;
 }
 
-@property(readonly, nonatomic) AIDAAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AIDAAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 - (id)initWithAccountManager:(id)arg1;
 
 @end

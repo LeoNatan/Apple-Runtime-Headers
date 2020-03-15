@@ -11,6 +11,7 @@
     unsigned long long _templateType;
 }
 
++ (struct CGSize)preferredContentSize;
 @property(nonatomic) unsigned long long templateType; // @synthesize templateType=_templateType;
 - (void)_presentationStyleValidationCheck;
 - (void)_applyChromelessToBar:(long long)arg1 navigationItem:(id)arg2;
@@ -23,6 +24,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
 

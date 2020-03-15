@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     GEOTileLoader *_tileLoader;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool visitDoubleTravelDirectionRoadsTwice; // @synthesize visitDoubleTravelDirectionRoadsTwice=_visitDoubleTravelDirectionRoadsTwice;
 @property(nonatomic) _Bool flipNegativeTravelDirectionRoads; // @synthesize flipNegativeTravelDirectionRoads=_flipNegativeTravelDirectionRoads;
-- (void).cxx_destruct;
 - (id)findRoadsNear:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 handler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithTileLoader:(id)arg1;
 

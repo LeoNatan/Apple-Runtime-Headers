@@ -26,6 +26,7 @@
     NSArray *_summaryDescriptors;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsIconSort; // @synthesize needsIconSort=_needsIconSort;
 @property(readonly, nonatomic) NSArray *summaryDescriptors; // @synthesize summaryDescriptors=_summaryDescriptors;
 @property(readonly, nonatomic) NSString *summaryDescription; // @synthesize summaryDescription=_summaryDescription;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned long long numberOfStandaloneServices; // @synthesize numberOfStandaloneServices=_numberOfStandaloneServices;
 @property(nonatomic) unsigned long long numberOfScenes; // @synthesize numberOfScenes=_numberOfScenes;
 @property(retain, nonatomic) NSString *uniqueServiceGroupName; // @synthesize uniqueServiceGroupName=_uniqueServiceGroupName;
-- (void).cxx_destruct;
 - (void)addMediaAccessoryNamed:(id)arg1;
 - (void)_sortIconDescriptors;
 - (void)_incrementIconCounter:(id)arg1;

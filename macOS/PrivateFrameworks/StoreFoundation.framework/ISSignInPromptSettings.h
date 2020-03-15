@@ -32,6 +32,7 @@
 + (id)settingsWithTitle:(id)arg1 message:(id)arg2 defaultButton:(id)arg3 alternateButton:(id)arg4 otherButton:(id)arg5 suppressionCheckbox:(id)arg6 suppressionCheckboxState:(id)arg7 authenticateAccountURL:(id)arg8 authenticationContext:(id)arg9 needsDedicatedUI:(BOOL)arg10 storeClient:(id)arg11;
 + (id)settingsWithTitle:(id)arg1 message:(id)arg2 defaultButton:(id)arg3 alternateButton:(id)arg4 otherButton:(id)arg5 suppressionCheckbox:(id)arg6 suppressionCheckboxState:(id)arg7 authenticateAccountURL:(id)arg8 authenticationContext:(id)arg9 shouldUseAppStoreUI:(BOOL)arg10 storeClient:(id)arg11;
 + (id)settingsWithTitle:(id)arg1 message:(id)arg2 defaultButton:(id)arg3 alternateButton:(id)arg4 otherButton:(id)arg5 suppressionCheckbox:(id)arg6 suppressionCheckboxState:(id)arg7 authenticateAccountURL:(id)arg8 authenticationContext:(id)arg9 storeClient:(id)arg10;
+- (void).cxx_destruct;
 @property(retain) NSWindow *sheetWindow; // @synthesize sheetWindow=_sheetWindow;
 @property(retain) ISStoreClient *storeClient; // @synthesize storeClient;
 @property BOOL forceActivate; // @synthesize forceActivate;
@@ -46,7 +47,6 @@
 @property(retain) NSString *defaultButtonString; // @synthesize defaultButtonString;
 @property(retain) NSString *messageString; // @synthesize messageString;
 @property(retain) NSString *titleString; // @synthesize titleString;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

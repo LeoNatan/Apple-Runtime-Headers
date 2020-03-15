@@ -22,13 +22,13 @@
 }
 
 + (double)minimumViewHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) double hintingAlpha; // @synthesize hintingAlpha=_hintingAlpha;
 @property(retain, nonatomic) SBUILegibilityLabel *revealHintTitle; // @synthesize revealHintTitle=_revealHintTitle;
 @property(nonatomic, getter=isForceRevealed) _Bool forceRevealed; // @synthesize forceRevealed=_forceRevealed;
 @property(nonatomic) double revealPercentage; // @synthesize revealPercentage=_revealPercentage;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)_updateAlpha;
 - (double)_alphaValueBasedOnRevealPercentage;
 - (id)_labelFont;

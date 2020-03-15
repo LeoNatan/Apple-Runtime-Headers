@@ -21,10 +21,10 @@
     NSObject<QLThumbnailTouchbarControllerDelegate> *_delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) QLThumbnailScrubberItemView *previouslySelectedItemView; // @synthesize previouslySelectedItemView=_previouslySelectedItemView;
 @property(nonatomic) __weak NSObject<QLThumbnailTouchbarControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) NSTouchBarItem *pageScrubberItem; // @synthesize pageScrubberItem=_pageScrubberItem;
-- (void).cxx_destruct;
 - (void)notifyDelegateOfPageUpdate;
 - (void)scrubber:(id)arg1 didSelectItemAtIndex:(long long)arg2;
 - (void)highlightSelectedItemAtIndex:(long long)arg1;

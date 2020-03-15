@@ -17,8 +17,8 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 - (void)connectToContextWithSessionID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)loadView;
 - (id)exportedInterface;

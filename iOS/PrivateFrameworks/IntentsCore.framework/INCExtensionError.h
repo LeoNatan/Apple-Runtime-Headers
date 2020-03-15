@@ -14,9 +14,9 @@
     NSError *_underlyingError;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
-- (void).cxx_destruct;
 - (id)initWithErrorCode:(long long)arg1 underlyingError:(id)arg2;
 
 @end

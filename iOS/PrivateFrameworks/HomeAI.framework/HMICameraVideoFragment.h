@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly) long long eventTypes; // @synthesize eventTypes=_eventTypes;
 @property(readonly, nonatomic) NSData *moovFragment; // @synthesize moovFragment=_moovFragment;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSMutableData *fragmentData;
 - (id)initWithSequenceNumber:(unsigned long long)arg1 fragmentData:(id)arg2 eventTypes:(long long)arg3 url:(id)arg4;

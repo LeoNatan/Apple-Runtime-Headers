@@ -30,12 +30,12 @@
 
 + (id)getValidPropertiesForType:(Class)arg1 withCache:(id)arg2;
 + (id)pbPropertyFor:(struct objc_property *)arg1 type:(Class)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class subObjectType; // @synthesize subObjectType=_subObjectType;
 @property(retain, nonatomic) Class objectType; // @synthesize objectType=_objectType;
 @property(nonatomic) BOOL subType; // @synthesize subType=_subType;
 @property(nonatomic) BOOL type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)getPtrArrayValueFromInstance:(id)arg1;
 - (void)setNumberValue:(id)arg1 onInstance:(id)arg2;

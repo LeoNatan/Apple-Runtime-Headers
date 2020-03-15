@@ -51,6 +51,7 @@
     HKObjectType *_objectType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displayNameKey; // @synthesize displayNameKey=_displayNameKey;
 @property(getter=_isWheelchairUser, setter=_setWheelchairUser:) _Bool _wheelchairUser; // @synthesize _wheelchairUser=__wheelchairUser;
 @property(readonly, nonatomic) HKObjectType *objectType; // @synthesize objectType=_objectType;
@@ -70,7 +71,6 @@
 @property(readonly, nonatomic) NSArray *secondaryCategoryIdentifiers; // @synthesize secondaryCategoryIdentifiers=_secondaryCategoryIdentifiers;
 @property(readonly, nonatomic) long long categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(readonly, nonatomic) long long displayTypeIdentifier; // @synthesize displayTypeIdentifier=_displayTypeIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

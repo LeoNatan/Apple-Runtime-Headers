@@ -21,11 +21,11 @@
     id <MDLObjectContainerComponent> _children;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MDLObjectContainerComponent> children; // @synthesize children=_children;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(retain, nonatomic) MDLObject *instance; // @synthesize instance=_instance;
-- (void).cxx_destruct;
 - (struct)boundingBoxAtTime:(double)arg1;
 - (id)recursiveDescription;
 - (id)description;

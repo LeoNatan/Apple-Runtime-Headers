@@ -19,12 +19,12 @@
     int _selectedCategoryIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsLargerSizesHelpText; // @synthesize showsLargerSizesHelpText=_showsLargerSizesHelpText;
 @property(nonatomic) _Bool usesExtendedRange; // @synthesize usesExtendedRange=_usesExtendedRange;
 @property(nonatomic) _Bool showsExtendedRangeSwitch; // @synthesize showsExtendedRangeSwitch=_showsExtendedRangeSwitch;
 @property(nonatomic) int selectedCategoryIndex; // @synthesize selectedCategoryIndex=_selectedCategoryIndex;
 @property(copy, nonatomic) NSArray *contentSizeCategories; // @synthesize contentSizeCategories=_contentSizeCategories;
-- (void).cxx_destruct;
 - (id)getDynamicTypeValueForSpecifier:(id)arg1;
 - (void)setDynamicTypeValue:(id)arg1 forSpecifier:(id)arg2;
 - (id)specifiers;

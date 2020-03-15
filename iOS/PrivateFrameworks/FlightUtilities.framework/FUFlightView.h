@@ -51,6 +51,7 @@
     struct UIEdgeInsets _mapInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *leadingMapConstraint; // @synthesize leadingMapConstraint=_leadingMapConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bottomMapConstraint; // @synthesize bottomMapConstraint=_bottomMapConstraint;
 @property __weak id <FUFlightViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -75,7 +76,6 @@
 @property(nonatomic) _Bool ignoreMapUpdate; // @synthesize ignoreMapUpdate=_ignoreMapUpdate;
 @property(nonatomic) struct UIEdgeInsets mapInsets; // @synthesize mapInsets=_mapInsets;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
-- (void).cxx_destruct;
 - (id)infoViewControllerCreate;
 - (void)flightInfoView:(id)arg1 didUpdateFocus:(long long)arg2;
 - (_Bool)hasFollowupContent:(id)arg1;

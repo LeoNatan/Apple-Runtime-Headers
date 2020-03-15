@@ -17,11 +17,11 @@
     id <AVTUILogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSMutableDictionary *inUseStickerGenerators; // @synthesize inUseStickerGenerators=_inUseStickerGenerators;
 @property(readonly, nonatomic) NSMutableDictionary *availableStickerGenerators; // @synthesize availableStickerGenerators=_availableStickerGenerators;
 @property(readonly, nonatomic) long long maxCount; // @synthesize maxCount=_maxCount;
-- (void).cxx_destruct;
 - (void)flush;
 - (void)flushGeneratorForRecord:(id)arg1;
 - (void)didStopUsingStickerGeneratorForRecord:(id)arg1;

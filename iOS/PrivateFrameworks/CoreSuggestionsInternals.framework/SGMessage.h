@@ -15,6 +15,7 @@
 @interface SGMessage : NSObject <NSSecureCoding, NSCopying, SGSpotlightIdentifiers>
 {
     _Bool _isSent;
+    _Bool _isStoredEncrypted;
     NSString *_subject;
     NSString *_textContent;
     NSDate *_date;
@@ -29,6 +30,8 @@
 + (id)fromDictionary:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)messageWithSearchableItem:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool isStoredEncrypted; // @synthesize isStoredEncrypted=_isStoredEncrypted;
 @property(copy, nonatomic) NSString *accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) _Bool isSent; // @synthesize isSent=_isSent;
 @property(copy, nonatomic) NSArray *accountHandles; // @synthesize accountHandles=_accountHandles;
@@ -39,7 +42,6 @@
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *textContent; // @synthesize textContent=_textContent;
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 - (id)spotlightUniqueIdentifier;
 - (id)spotlightDomainIdentifier;
 - (id)spotlightBundleIdentifier;

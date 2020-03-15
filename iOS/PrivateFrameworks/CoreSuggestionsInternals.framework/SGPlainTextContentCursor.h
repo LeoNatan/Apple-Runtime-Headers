@@ -29,8 +29,8 @@
     unsigned long long _pos;
 }
 
-@property(nonatomic) unsigned long long pos; // @synthesize pos=_pos;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long pos; // @synthesize pos=_pos;
 - (void)seekToEnd;
 - (void)seekToStart;
 - (_Bool)backwardToString:(id)arg1 consume:(_Bool)arg2;

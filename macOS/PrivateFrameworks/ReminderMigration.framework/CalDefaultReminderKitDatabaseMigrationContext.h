@@ -15,8 +15,8 @@
     REMDatabaseMigrationContext *_remDatabaseMigrationContext;
 }
 
-@property(readonly, nonatomic) REMDatabaseMigrationContext *remDatabaseMigrationContext; // @synthesize remDatabaseMigrationContext=_remDatabaseMigrationContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMDatabaseMigrationContext *remDatabaseMigrationContext; // @synthesize remDatabaseMigrationContext=_remDatabaseMigrationContext;
 @property(readonly, nonatomic) BOOL shouldDeleteMigratedData;
 @property(readonly, nonatomic) BOOL shouldPerformMigration;
 @property(readonly, nonatomic) REMStore *reminderStore;

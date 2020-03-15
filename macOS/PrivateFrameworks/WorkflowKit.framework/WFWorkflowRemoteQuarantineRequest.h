@@ -15,9 +15,9 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *workflowJavaScriptCoreRepresentation; // @synthesize workflowJavaScriptCoreRepresentation=_workflowJavaScriptCoreRepresentation;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (id)policyFunctionName;
 - (id)javaScriptCoreRepresentationWithError:(id *)arg1;
 - (id)defaultLocalizedDeniedErrorMessage;

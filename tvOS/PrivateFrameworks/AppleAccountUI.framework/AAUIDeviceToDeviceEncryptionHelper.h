@@ -16,10 +16,10 @@
     AKAppleIDAuthenticationController *_authController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAppleIDAuthenticationController *authController; // @synthesize authController=_authController;
 @property(nonatomic) __weak id <AAUIDeviceToDeviceEncryptionHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
-- (void).cxx_destruct;
 - (id)_encryptionErrorFromError:(id)arg1;
 - (_Bool)_hasPasscode;
 - (void)_validatePasscodeWithCompletion:(CDUnknownBlockType)arg1;

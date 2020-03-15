@@ -26,13 +26,13 @@
     UXView *_lowerHalfLayoutContainerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXView *lowerHalfLayoutContainerView; // @synthesize lowerHalfLayoutContainerView=_lowerHalfLayoutContainerView;
 @property(retain, nonatomic) UXView *upperHalfLayoutContainerView; // @synthesize upperHalfLayoutContainerView=_upperHalfLayoutContainerView;
 @property(retain, nonatomic) UXLabel *themeDescriptionLabel; // @synthesize themeDescriptionLabel=_themeDescriptionLabel;
 @property(retain, nonatomic) UXLabel *themeTitleLabel; // @synthesize themeTitleLabel=_themeTitleLabel;
 @property(retain, nonatomic) UXImageView *themePreviewImageView; // @synthesize themePreviewImageView=_themePreviewImageView;
 @property(retain, nonatomic) NSArray *previewImages; // @synthesize previewImages=_previewImages;
-- (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;

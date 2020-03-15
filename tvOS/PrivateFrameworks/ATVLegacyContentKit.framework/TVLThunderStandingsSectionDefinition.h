@@ -15,10 +15,10 @@
     NSArray *_rows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(retain, nonatomic) NSArray *headerDefinitions; // @synthesize headerDefinitions=_headerDefinitions;
 @property(retain, nonatomic) NSArray *columnDefinitions; // @synthesize columnDefinitions=_columnDefinitions;
-- (void).cxx_destruct;
 
 @end
 

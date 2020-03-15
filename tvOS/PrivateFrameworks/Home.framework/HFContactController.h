@@ -23,6 +23,7 @@
 + (id)contactForPhoneNumber:(id)arg1 keyDescriptors:(id)arg2;
 + (id)contactForEmailAddress:(id)arg1 keyDescriptors:(id)arg2;
 + (id)stringForRecipientStatus:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *familyMemberCallbacks; // @synthesize familyMemberCallbacks=_familyMemberCallbacks;
 @property(copy, nonatomic) NSArray *descriptors; // @synthesize descriptors=_descriptors;
 @property(copy, nonatomic) NSDictionary *familyMemberDsidToContact; // @synthesize familyMemberDsidToContact=_familyMemberDsidToContact;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned long long familyMembersState; // @synthesize familyMembersState=_familyMembersState;
 @property(retain, nonatomic) NSMutableDictionary *recipientAvailabilities; // @synthesize recipientAvailabilities=_recipientAvailabilities;
 @property(nonatomic) __weak id <HFContactControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_downloadFamilyMemberPhotos;
 - (void)_loadFamilyMembersWithCompletion:(CDUnknownBlockType)arg1;
 - (id)contactForFamilyMemberWithDsid:(id)arg1;

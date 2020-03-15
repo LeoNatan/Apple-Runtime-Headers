@@ -15,8 +15,8 @@
     FCNetworkReachability *_networkReachability;
 }
 
-@property(readonly, nonatomic) FCNetworkReachability *networkReachability; // @synthesize networkReachability=_networkReachability;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCNetworkReachability *networkReachability; // @synthesize networkReachability=_networkReachability;
 - (id)errorMessageForTitle:(id)arg1 subtitle:(id)arg2;
 - (id)errorMessageForArticleViewWithOfflineReason:(long long)arg1;
 - (id)errorMessageForArticleView;

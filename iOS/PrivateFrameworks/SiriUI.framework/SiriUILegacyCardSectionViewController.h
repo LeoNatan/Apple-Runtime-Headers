@@ -18,9 +18,9 @@
 }
 
 + (id)cardSectionClasses;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SiriUISnippetViewController *containingSnippetViewController; // @synthesize containingSnippetViewController=_containingSnippetViewController;
 @property(readonly, nonatomic) SiriUISnippetViewController *backingSnippetViewController; // @synthesize backingSnippetViewController=_snippetViewController;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (struct UIEdgeInsets)siriViewControllerBackgroundInsets:(id)arg1;
 - (id)additionalSpeechInterpretationsForSiriViewController:(id)arg1;

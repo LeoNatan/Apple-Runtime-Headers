@@ -27,7 +27,7 @@
     _Bool _awaitingSuccessOrFailureEvent;
     _Bool _showHeaderChevron;
     _Bool _provisional;
-    struct NSUUID *_instrumentationTurnIdentifier;
+    NSUUID *_instrumentationTurnIdentifier;
     UIColor *_titleTextColor;
     UIColor *_titleBackgroundColor;
     NSAttributedString *_attributedSubtitle;
@@ -41,6 +41,7 @@
     struct UIEdgeInsets _defaultViewInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isProvisional, setter=_setProvisional:) _Bool provisional; // @synthesize provisional=_provisional;
 @property(nonatomic) _Bool showHeaderChevron; // @synthesize showHeaderChevron=_showHeaderChevron;
 @property(nonatomic, getter=_isAwaitingSuccessOrFailureEvent, setter=_setAwaitingSuccessOrFailureEvent:) _Bool awaitingSuccessOrFailureEvent; // @synthesize awaitingSuccessOrFailureEvent=_awaitingSuccessOrFailureEvent;
@@ -65,7 +66,6 @@
 @property(copy, nonatomic) UIColor *titleBackgroundColor; // @synthesize titleBackgroundColor=_titleBackgroundColor;
 @property(copy, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(retain, nonatomic) NSUUID *instrumentationTurnIdentifier; // @synthesize instrumentationTurnIdentifier=_instrumentationTurnIdentifier;
-- (void).cxx_destruct;
 - (void)setTopKeylineHidden:(_Bool)arg1;
 - (void)confirmSnippet;
 - (void)confirmButtonTapped:(id)arg1;

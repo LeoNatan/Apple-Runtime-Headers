@@ -19,9 +19,9 @@
     FCCacheCoordinator *_cacheCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCCacheCoordinator *cacheCoordinator; // @synthesize cacheCoordinator=_cacheCoordinator;
 @property(retain, nonatomic) FCAssetStore *assetStore; // @synthesize assetStore=_assetStore;
-- (void).cxx_destruct;
 - (void)_reportEnvelopesToNewsAutomationIfNeeded:(id)arg1;
 - (void)_deleteEnvelopesForKeysFromStore:(id)arg1;
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;

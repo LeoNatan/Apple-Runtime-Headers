@@ -44,6 +44,7 @@
 
 + (id)postQuerySearchResultsLog;
 + (id)topAssetsSectionForSearchResultsValue:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wordEmbeddingsRequested; // @synthesize wordEmbeddingsRequested=_wordEmbeddingsRequested;
 @property(retain, nonatomic) NSDateComponents *dateRangeFormattingComponents; // @synthesize dateRangeFormattingComponents=_dateRangeFormattingComponents;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
@@ -72,7 +73,6 @@
 @property(copy, nonatomic) CDUnknownBlockType topAssetFilter; // @synthesize topAssetFilter=_topAssetFilter;
 @property(nonatomic) _Bool resultsReady; // @synthesize resultsReady=_resultsReady;
 @property(nonatomic) __weak id <PXSearchResultsSectionedDataSourceChangeObserver> changeObserver; // @synthesize changeObserver=_changeObserver;
-- (void).cxx_destruct;
 - (void)_updateResultsWithMergeTargetPerson:(id)arg1 sourcePerson:(id)arg2 tombstonedCandidatesLocalIdentifiers:(id)arg3;
 - (void)_suggestionsDidFinish:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;

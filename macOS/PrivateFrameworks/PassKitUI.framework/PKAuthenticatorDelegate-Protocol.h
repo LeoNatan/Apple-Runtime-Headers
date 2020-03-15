@@ -6,17 +6,17 @@
 
 #import <PassKitUI/NSObject-Protocol.h>
 
-@class PKAuthenticator;
+@class NSViewController, PKAuthenticator;
 
 @protocol PKAuthenticatorDelegate <NSObject>
 
 @optional
 - (void)dismissPassphraseViewController;
-- (void)presentPassphraseViewController:(struct NSViewController *)arg1 completionHandler:(void (^)(BOOL))arg2 reply:(void (^)(NSData *))arg3;
-- (struct NSViewController *)passphraseViewController;
+- (void)presentPassphraseViewController:(NSViewController *)arg1 completionHandler:(void (^)(BOOL))arg2 reply:(void (^)(NSData *))arg3;
+- (NSViewController *)passphraseViewController;
 - (void)dismissPasscodeViewController;
-- (void)presentPasscodeViewController:(struct NSViewController *)arg1 completionHandler:(void (^)(BOOL))arg2 reply:(void (^)(NSData *))arg3;
-- (struct NSViewController *)passcodeViewController;
+- (void)presentPasscodeViewController:(NSViewController *)arg1 completionHandler:(void (^)(BOOL))arg2 reply:(void (^)(NSData *))arg3;
+- (NSViewController *)passcodeViewController;
 - (void)authenticatorDidDeactivateTouchID:(PKAuthenticator *)arg1 status:(long long)arg2;
 - (void)authenticatorDidActivateTouchID:(PKAuthenticator *)arg1;
 - (void)authenticatorDidEncounterBiometricLockout:(PKAuthenticator *)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     CallHistoryDBClientHandle *_dbHandle;
 }
 
-@property(readonly, nonatomic) CallHistoryDBClientHandle *dbHandle; // @synthesize dbHandle=_dbHandle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CallHistoryDBClientHandle *dbHandle; // @synthesize dbHandle=_dbHandle;
 - (id)archiveCallObject:(id)arg1;
 - (void)resetTimers;
 - (double)timerOutgoing;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     PUAirPlayScreenMap *__detectedScreensMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDetectedScreensMap:) PUAirPlayScreenMap *_detectedScreensMap; // @synthesize _detectedScreensMap=__detectedScreensMap;
 @property(nonatomic) __weak id <PUAirPlayScreenReceiver> receiver; // @synthesize receiver=_receiver;
-- (void).cxx_destruct;
 - (void)_lostScreen:(id)arg1;
 - (void)_detectedNewScreen:(id)arg1;
 - (void)_setUpScreenNotifications;

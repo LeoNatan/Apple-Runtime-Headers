@@ -18,8 +18,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)relations;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *title;
 - (BOOL)validateObject:(id *)arg1;
 - (id)dictionaryRepresentation;

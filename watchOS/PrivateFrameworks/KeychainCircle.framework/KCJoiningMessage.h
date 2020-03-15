@@ -22,11 +22,11 @@
 + (id)messageWithType:(int)arg1 data:(id)arg2 secondData:(id)arg3 error:(id *)arg4;
 + (id)messageWithType:(int)arg1 data:(id)arg2 error:(id *)arg3;
 + (id)messageWithDER:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSData *der; // @synthesize der=_der;
 @property(readonly) NSData *secondData; // @synthesize secondData=_secondData;
 @property(readonly) NSData *firstData; // @synthesize firstData=_firstData;
 @property(readonly) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id *)arg4;
 - (id)initWithDER:(id)arg1 error:(id *)arg2;
 - (_Bool)inflatePartsOfEncoding:(id *)arg1;

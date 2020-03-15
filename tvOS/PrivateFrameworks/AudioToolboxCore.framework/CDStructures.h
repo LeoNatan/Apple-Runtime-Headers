@@ -169,10 +169,14 @@ struct ParameterAutomationEvent;
 
 struct ParameterMap {
     id _field1;
-    _Bool _field2;
-    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field3;
+    struct OpaqueAudioComponentInstance *_field2;
+    _Bool _field3;
     struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field4;
-    id _field5;
+    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field5;
+    struct vector<AUv3InstanceBase::ScopeElementIDObj, std::__1::allocator<AUv3InstanceBase::ScopeElementIDObj>> _field6;
+    id _field7;
+    void *_field8;
+    struct map<unsigned int, AUParameterGroup *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, AUParameterGroup *>>> _field9;
 };
 
 struct PropertyListener;
@@ -212,6 +216,18 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long, 
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *__left_;
+};
+
+struct map<unsigned int, AUParameterGroup *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, AUParameterGroup *>>> {
+    struct __tree<std::__1::__value_type<unsigned int, AUParameterGroup *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUParameterGroup *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, AUParameterGroup *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, AUParameterGroup *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUParameterGroup *>, std::__1::less<unsigned int>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
 };
 
 struct map<unsigned int, AUProcessingBlock, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, AUProcessingBlock>>> {

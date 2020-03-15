@@ -15,9 +15,9 @@
     IMHandle *_sender;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IMHandle *sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) struct IMAssociatedMessageGeometryDescriptor geometryDescriptor; // @synthesize geometryDescriptor=_geometryDescriptor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *messageSummaryInfo;
 @property(readonly, nonatomic) _Bool failed;
 - (void)_setParentMessageIsFromMe:(_Bool)arg1;

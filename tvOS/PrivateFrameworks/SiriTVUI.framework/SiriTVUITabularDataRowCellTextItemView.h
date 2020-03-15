@@ -15,8 +15,8 @@
     struct CGSize _imageSize;
 }
 
-@property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 @property(retain, nonatomic) UIImage *image;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

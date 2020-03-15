@@ -18,9 +18,9 @@
 + (id)committedNavigationContextWithURL:(id)arg1;
 + (id)provisionalNavigationContext;
 + (id)cancellationContextWithReason:(id)arg1 userInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)initWithReason:(id)arg1 userInfo:(id)arg2;
 - (id)init;
 

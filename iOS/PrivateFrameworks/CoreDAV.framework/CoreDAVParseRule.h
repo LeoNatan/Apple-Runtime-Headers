@@ -19,13 +19,13 @@
 }
 
 + (id)ruleWithMinimumNumber:(long long)arg1 maximumNumber:(long long)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL setterMethod; // @synthesize setterMethod=_setterMethod;
 @property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
 @property(readonly, nonatomic) NSString *elementName; // @synthesize elementName=_elementName;
 @property(readonly, nonatomic) NSString *nameSpace; // @synthesize nameSpace=_nameSpace;
 @property(readonly, nonatomic) long long maximumNumber; // @synthesize maximumNumber=_maximumNumber;
 @property(readonly, nonatomic) long long minimumNumber; // @synthesize minimumNumber=_minimumNumber;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMinimumNumber:(long long)arg1 maximumNumber:(long long)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
 

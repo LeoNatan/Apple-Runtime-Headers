@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _animatedFocusRingBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double nilFocusTime; // @synthesize nilFocusTime=_nilFocusTime;
 @property(nonatomic) __weak UIView *lastNonNilFocusRingView; // @synthesize lastNonNilFocusRingView=_lastNonNilFocusRingView;
 @property(nonatomic) __weak UIWindow *alreadyFocusedWindow; // @synthesize alreadyFocusedWindow=_alreadyFocusedWindow;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *automaticFocusRingView; // @synthesize automaticFocusRingView=_automaticFocusRingView;
 @property(nonatomic) BOOL automaticFocusRingNeedsUpdate; // @synthesize automaticFocusRingNeedsUpdate=_automaticFocusRingNeedsUpdate;
 @property(nonatomic) BOOL automaticFocusRingShown; // @synthesize automaticFocusRingShown=_automaticFocusRingShown;
-- (void).cxx_destruct;
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;
 
 // Remaining properties

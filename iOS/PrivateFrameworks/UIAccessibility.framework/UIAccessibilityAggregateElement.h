@@ -13,8 +13,8 @@
     NSArray *_representedElements;
 }
 
-@property(retain, nonatomic) NSArray *representedElements; // @synthesize representedElements=_representedElements;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *representedElements; // @synthesize representedElements=_representedElements;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityLabel;
 - (void)addRepresentedObject:(id)arg1;

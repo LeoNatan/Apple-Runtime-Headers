@@ -20,8 +20,8 @@
     id <REScriptTokenizerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <REScriptTokenizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <REScriptTokenizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)_matchTokenStart:(CDUnknownFunctionPointerType)arg1 body:(CDUnknownFunctionPointerType)arg2 value:(id *)arg3;
 - (void)_popChar;
 - (unsigned short)_peekChar;

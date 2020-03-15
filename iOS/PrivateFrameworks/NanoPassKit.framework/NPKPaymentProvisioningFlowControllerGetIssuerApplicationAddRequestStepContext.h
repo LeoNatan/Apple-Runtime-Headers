@@ -15,10 +15,10 @@
     NSData *_nonceSignature;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *nonceSignature; // @synthesize nonceSignature=_nonceSignature;
 @property(retain, nonatomic) NSData *nonce; // @synthesize nonce=_nonce;
 @property(retain, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

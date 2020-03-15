@@ -39,6 +39,7 @@
     struct UIEdgeInsets _shadowInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool insetsInlayForTritium; // @synthesize insetsInlayForTritium=_insetsInlayForTritium;
 @property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)setTritiumProgress:(float)arg1;
 - (void)tritium_prepareForTransition;
 @property(nonatomic) float tritiumAlpha;

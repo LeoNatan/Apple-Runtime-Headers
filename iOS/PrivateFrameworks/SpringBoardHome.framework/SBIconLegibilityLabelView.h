@@ -16,9 +16,9 @@
     SBIconLabelImageParameters *_imageParameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBIconLabelImageParameters *imageParameters; // @synthesize imageParameters=_imageParameters;
 @property(nonatomic) __weak SBIconView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (void)updateIconLabelWithSettings:(id)arg1 imageParameters:(id)arg2;
 - (id)initWithSettings:(id)arg1;
 

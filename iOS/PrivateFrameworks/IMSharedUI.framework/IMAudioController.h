@@ -30,6 +30,7 @@
 
 + (id)audioControllerWithContentsOfURLs:(id)arg1;
 + (Class)audioControllerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMAudioPlayer *listenAudioPlayer; // @synthesize listenAudioPlayer=_listenAudioPlayer;
 @property(nonatomic) _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property(retain, nonatomic) IMAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
@@ -41,7 +42,6 @@
 @property(nonatomic) _Bool shouldDuckOthers; // @synthesize shouldDuckOthers=_shouldDuckOthers;
 @property(nonatomic) _Bool shouldStopPlayingWhenSilent; // @synthesize shouldStopPlayingWhenSilent=_shouldStopPlayingWhenSilent;
 @property(nonatomic) _Bool shouldUseSpeaker; // @synthesize shouldUseSpeaker=_shouldUseSpeaker;
-- (void).cxx_destruct;
 - (void)playListenEndSound:(CDUnknownBlockType)arg1;
 - (void)playListenSound:(CDUnknownBlockType)arg1;
 - (void)_playSoundWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;

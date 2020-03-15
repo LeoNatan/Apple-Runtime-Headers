@@ -26,8 +26,8 @@
     id <HDSQLiteDatabasePoolDelegate> _delegate;
 }
 
-@property __weak id <HDSQLiteDatabasePoolDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <HDSQLiteDatabasePoolDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)diagnosticDescription;
 - (void)_didFlushDatabases:(id)arg1;
 - (id)_semaphoreForCheckOutOptions:(unsigned int)arg1;

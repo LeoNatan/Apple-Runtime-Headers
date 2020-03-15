@@ -19,10 +19,10 @@
 + (BOOL)isPermittedOnUserConnection;
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *organizationType; // @synthesize organizationType=_organizationType;
 @property(copy, nonatomic) NSString *organizationDisplayName; // @synthesize organizationDisplayName=_organizationDisplayName;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

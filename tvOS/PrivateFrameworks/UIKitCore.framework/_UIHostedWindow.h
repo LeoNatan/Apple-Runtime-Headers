@@ -19,6 +19,7 @@
     id <_UIHostedWindowDelegate> __hostedWindowDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIHostedWindowDelegate> _hostedWindowDelegate; // @synthesize _hostedWindowDelegate=__hostedWindowDelegate;
 - (void)__setHostViewUnderlapsStatusBar:(_Bool)arg1;
 - (_Bool)__hostViewUnderlapsStatusBar;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic, setter=_setHostTraitCollection:) UITraitCollection *_hostTraitCollection; // @synthesize _hostTraitCollection;
 @property(retain, nonatomic, setter=_setHostTintColor:) UIColor *_hostTintColor; // @synthesize _hostTintColor=__hostTintColor;
 @property(nonatomic, setter=_setHostTintAdjustmentMode:) long long _hostTintAdjustmentMode; // @synthesize _hostTintAdjustmentMode;
-- (void).cxx_destruct;
 - (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2;
 - (void)_updateWindowTraitsAndNotify:(_Bool)arg1;
 - (_Bool)_shouldPropagateTraitCollectionChanges;

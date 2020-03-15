@@ -17,11 +17,11 @@
 }
 
 + (id)roundedButtonWithText:(id)arg1 color:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alwaysUnderline; // @synthesize alwaysUnderline=_alwaysUnderline;
 @property(nonatomic) _Bool usesImage; // @synthesize usesImage=_usesImage;
 @property(copy, nonatomic) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

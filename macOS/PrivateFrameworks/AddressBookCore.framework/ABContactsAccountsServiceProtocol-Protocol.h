@@ -6,9 +6,10 @@
 
 #import <AddressBookCore/NSObject-Protocol.h>
 
-@class ABACAccount, NSString;
+@class ABACAccount, CNCDDatabasePreparationRequest, NSString;
 
 @protocol ABContactsAccountsServiceProtocol <NSObject>
+- (void)preparePersistentStore:(CNCDDatabasePreparationRequest *)arg1 withCompletionHandler:(void (^)(CNCDDatabasePreparationResult *, NSError *))arg2;
 - (void)removeAccount:(ABACAccount *)arg1 withCompletionHandler:(void (^)(BOOL, NSError *))arg2;
 - (void)saveVerifiedAccount:(ABACAccount *)arg1 withCompletionHandler:(void (^)(BOOL, NSError *))arg2;
 - (void)passwordForAccount:(ABACAccount *)arg1 withCompletionHandler:(void (^)(NSString *, NSError *))arg2;

@@ -18,12 +18,12 @@
 }
 
 + (id)sharedProfiler;
+- (void).cxx_destruct;
 @property BOOL isSSD; // @synthesize isSSD=_isSSD;
 @property(retain) NSDictionary *userMachineDictionary; // @synthesize userMachineDictionary=_userMachineDictionary;
 @property double migrationTime; // @synthesize migrationTime=_migrationTime;
 @property unsigned long long deletionSpeed; // @synthesize deletionSpeed=_deletionSpeed;
 @property unsigned long long extractorSpeed; // @synthesize extractorSpeed=_extractorSpeed;
-- (void).cxx_destruct;
 - (void)dumpFinalStats;
 - (void)populateStats;
 - (id)modelName;

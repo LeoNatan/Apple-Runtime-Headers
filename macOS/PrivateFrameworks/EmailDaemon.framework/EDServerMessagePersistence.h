@@ -23,12 +23,15 @@
 + (id)serverMessagesTableSchema;
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL useNumericSearch; // @synthesize useNumericSearch=_useNumericSearch;
 @property(readonly, nonatomic) long long mailboxID; // @synthesize mailboxID=_mailboxID;
 @property(readonly, nonatomic) EDGmailLabelPersistence *gmailLabelPersistence; // @synthesize gmailLabelPersistence=_gmailLabelPersistence;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) BOOL supportsLabels; // @synthesize supportsLabels=_supportsLabels;
-- (void).cxx_destruct;
+- (id)_uidExpressionForUIDs:(id)arg1 isContiguous:(BOOL)arg2;
+- (BOOL)_uidsAreContiguous:(id)arg1;
+- (id)_nextBatchForUIDs:(id)arg1 limit:(unsigned long long)arg2 returnLastEntries:(BOOL)arg3 isContiguous:(char *)arg4;
 - (id)_remoteIDStringForRemoteIDArray:(id)arg1;
 - (BOOL)_addLabels:(id)arg1 removeLabels:(id)arg2 forUID:(unsigned int)arg3 connection:(id)arg4;
 - (BOOL)addLabels:(id)arg1 removeLabels:(id)arg2 toMessagesWithRemoteIDs:(id)arg3;
@@ -39,7 +42,7 @@
 - (BOOL)addServerMessage:(id)arg1 invalidMessage:(char *)arg2 duplicateRemoteID:(char *)arg3;
 - (id)_serverMessageForRow:(id)arg1 connection:(id)arg2;
 - (id)_serverMessagesWithWhereClause:(id)arg1 limitClause:(id)arg2 returnLastEntries:(BOOL)arg3;
-- (id)serverMessagesInIMAPUIDRange:(struct _NSRange)arg1 limit:(unsigned long long)arg2 returnLastEntries:(BOOL)arg3;
+- (id)serverMessagesForIMAPUIDs:(id)arg1 limit:(unsigned long long)arg2 returnLastEntries:(BOOL)arg3;
 - (id)serverMessagesForRemoteIDs:(id)arg1;
 @property(readonly, nonatomic) unsigned int minimumIMAPUID;
 @property(readonly, nonatomic) unsigned int maximumIMAPUID;

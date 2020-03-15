@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _typeBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint baselinePoint; // @synthesize baselinePoint=_baselinePoint;
 @property(nonatomic) struct CGRect typeBounds; // @synthesize typeBounds=_typeBounds;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic) id line; // @synthesize line=_line;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

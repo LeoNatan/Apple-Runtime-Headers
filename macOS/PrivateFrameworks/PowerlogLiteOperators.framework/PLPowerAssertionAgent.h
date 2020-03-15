@@ -43,6 +43,7 @@
 + (id)entryEventPointDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
 @property(readonly) NSSet *logAssertNameForActions; // @synthesize logAssertNameForActions=_logAssertNameForActions;
 @property(readonly) NSDictionary *assertTypeToEnum; // @synthesize assertTypeToEnum=_assertTypeToEnum;
 @property(readonly) NSDictionary *startEndActionsToEnum; // @synthesize startEndActionsToEnum=_startEndActionsToEnum;
@@ -63,7 +64,6 @@
 @property(retain) PLTimer *assertionBufferFullNotificationRearmTimer; // @synthesize assertionBufferFullNotificationRearmTimer=_assertionBufferFullNotificationRearmTimer;
 @property(retain) PLCFNotificationOperatorComposition *assertionBufferFullNotification; // @synthesize assertionBufferFullNotification=_assertionBufferFullNotification;
 @property(retain) PLCFNotificationOperatorComposition *assertionNotification; // @synthesize assertionNotification=_assertionNotification;
-- (void).cxx_destruct;
 - (id)bundleIDForAssertionProcessPID:(int)arg1;
 - (void)logAggregatedAssertionActivity;
 - (void)logEventPointAggregateResetWithReason:(short)arg1 withPidCount:(int)arg2;

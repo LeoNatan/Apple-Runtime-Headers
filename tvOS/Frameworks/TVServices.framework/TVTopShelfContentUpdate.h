@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *itemUpdates; // @synthesize itemUpdates=_itemUpdates;
 @property(copy, nonatomic) NSSet *itemIdentifiersToRemove; // @synthesize itemIdentifiersToRemove=_itemIdentifiersToRemove;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

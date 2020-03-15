@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_locateMode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *locateMode; // @synthesize locateMode=_locateMode;
 @property(copy, nonatomic) NSArray *symbologies; // @synthesize symbologies=_symbologies;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestClass:(Class)arg1;
 

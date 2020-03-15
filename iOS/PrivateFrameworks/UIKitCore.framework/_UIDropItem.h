@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSItemProvider *_dropItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_dropItemProvider, setter=_setDropItemProvider:) NSItemProvider *dropItemProvider; // @synthesize dropItemProvider=_dropItemProvider;
 @property(retain, nonatomic, getter=_localDragItem, setter=_setLocalDragItem:) UIDragItem *localDragItem; // @synthesize localDragItem=_localDragItem;
-- (void).cxx_destruct;
 - (void)_setPrivateLocalContext:(id)arg1;
 - (id)_privateLocalContext;
 - (void)setLocalObject:(id)arg1;

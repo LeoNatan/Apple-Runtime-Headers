@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)isPrefixSupportedFromNodeContext:(struct _xmlNode *)arg1 prefix:(const char *)arg2;
 + (_Bool)isNamespaceSupported:(const char *)arg1;
 + (void)registerNamespace:(id)arg1;
-@property(retain, nonatomic) CXNamespace *fallbackNamespace; // @synthesize fallbackNamespace=mFallbackNamespace;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CXNamespace *fallbackNamespace; // @synthesize fallbackNamespace=mFallbackNamespace;
 - (const char *)fallbackUri;
 - (const char *)uri;
 - (_Bool)containsAttribute:(struct _xmlAttr *)arg1;

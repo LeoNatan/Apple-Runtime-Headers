@@ -14,9 +14,9 @@
     NSArray *_sectionTitles;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionTitles; // @synthesize sectionTitles=_sectionTitles;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (id)_sendablePropertiesFromTrust:(struct __SecTrust *)arg1;
 - (id)_copyPropertiesFromTrust:(struct __SecTrust *)arg1;
 - (id)_sendablePropertiesFromProperties:(id)arg1;

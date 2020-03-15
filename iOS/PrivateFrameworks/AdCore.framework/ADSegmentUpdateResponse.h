@@ -22,10 +22,10 @@
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) double maxSegmentUpdateIntervalInSeconds; // @synthesize maxSegmentUpdateIntervalInSeconds=_maxSegmentUpdateIntervalInSeconds;
 @property(nonatomic) double segmentRefreshIntervalInSeconds; // @synthesize segmentRefreshIntervalInSeconds=_segmentRefreshIntervalInSeconds;
 @property(retain, nonatomic) NSString *idDebug; // @synthesize idDebug=_idDebug;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

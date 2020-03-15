@@ -13,10 +13,10 @@
     unsigned long long _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long priority; // @synthesize priority=_priority;
 @property(readonly) unsigned int qos; // @synthesize qos=_qos;
 @property(readonly) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)initWithPriority:(unsigned long long)arg1 qos:(unsigned int)arg2 block:(CDUnknownBlockType)arg3;
 
 @end

@@ -19,12 +19,12 @@
 
 + (void)publishMediaFromSources:(id)arg1 toNewSharedAlbumWithName:(id)arg2 withCommentText:(id)arg3 recipients:(id)arg4;
 + (void)publishMediaFromSources:(id)arg1 toSharedAlbum:(id)arg2 withCommentText:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recipientsInfo; // @synthesize recipientsInfo=_recipientsInfo;
 @property(retain, nonatomic) NSString *commentText; // @synthesize commentText=_commentText;
 @property(retain, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 @property(retain, nonatomic) NSString *albumCloudGUID; // @synthesize albumCloudGUID=_albumCloudGUID;
 @property(retain, nonatomic) NSArray *mediaSources; // @synthesize mediaSources=_mediaSources;
-- (void).cxx_destruct;
 - (void)executeDaemonOperation;
 - (id)description;
 - (_Bool)shouldArchiveXPCToDisk;

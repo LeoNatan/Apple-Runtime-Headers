@@ -42,12 +42,12 @@
 - (void)_writeImageToSavedPhotosAlbum:(struct CGImage *)arg1 orientation:(long long)arg2 imageData:(id)arg3 metadata:(id)arg4 internalProperties:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)enumerateGroupsWithTypes:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (void)_addGroupListForContainerList:(id)arg1 ofType:(unsigned long long)arg2 toArray:(id)arg3;
-- (void)_addGroupForAlbum:(struct NSObject *)arg1 ofType:(unsigned long long)arg2 toArray:(id)arg3;
+- (void)_addGroupForAlbum:(id)arg1 ofType:(unsigned long long)arg2 toArray:(id)arg3;
 - (id)publicErrorForPrivateDomain:(id)arg1 withPrivateCode:(long long)arg2;
 - (id)publicErrorFromPrivateError:(id)arg1;
 - (void)_performBlock:(CDUnknownBlockType)arg1;
 - (void)_performBlockAndWait:(CDUnknownBlockType)arg1;
-- (void)registerAlbum:(struct NSObject *)arg1 assetGroupPrivate:(id)arg2;
+- (void)registerAlbum:(id)arg1 assetGroupPrivate:(id)arg2;
 - (_Bool)isValid;
 - (void)dealloc;
 - (id)init;

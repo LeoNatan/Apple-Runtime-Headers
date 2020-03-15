@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 + (id)objWithMessage:(id)arg1;
 + (id)objWithDict:(id)arg1;
-@property(copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

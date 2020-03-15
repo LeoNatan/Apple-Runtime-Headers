@@ -28,13 +28,13 @@
 + (id)_itemsForSystemSharingFromActivityItemsConfiguration:(id)arg1 wrapperBlock:(CDUnknownBlockType)arg2;
 + (id)activityItemsConfigurationWithItemProviders:(id)arg1;
 + (id)activityItemsConfigurationWithObjects:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType applicationActivitiesProvider; // @synthesize applicationActivitiesProvider=_applicationActivitiesProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) CDUnknownBlockType perItemMetadataProvider; // @synthesize perItemMetadataProvider=_perItemMetadataProvider;
 @property(copy, nonatomic) CDUnknownBlockType metadataProvider; // @synthesize metadataProvider=_metadataProvider;
 @property(copy, nonatomic) NSArray *supportedInteractions; // @synthesize supportedInteractions=_supportedInteractions;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *_uinsActivityItemSourceProxies;
 @property(readonly, nonatomic) NSArray *_uinsApplicationActivityProxies;
 @property(copy, nonatomic, setter=_setExcludedActivityTypes:) NSArray *_excludedActivityTypes;

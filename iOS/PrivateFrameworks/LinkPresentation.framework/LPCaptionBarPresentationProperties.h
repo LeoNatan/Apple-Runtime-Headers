@@ -27,6 +27,7 @@
     struct CGSize _trailingIconSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic) long long trailingAccessoryType; // @synthesize trailingAccessoryType=_trailingAccessoryType;
 @property(nonatomic) long long leadingAccessoryType; // @synthesize leadingAccessoryType=_leadingAccessoryType;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSArray *additionalLeadingIcons; // @synthesize additionalLeadingIcons=_additionalLeadingIcons;
 @property(nonatomic) struct CGSize leadingIconSize; // @synthesize leadingIconSize=_leadingIconSize;
 @property(retain, nonatomic) LPImage *leadingIcon; // @synthesize leadingIcon=_leadingIcon;
-- (void).cxx_destruct;
 - (long long)rightAccessoryType;
 - (long long)leftAccessoryType;
 - (id)rightIcon;

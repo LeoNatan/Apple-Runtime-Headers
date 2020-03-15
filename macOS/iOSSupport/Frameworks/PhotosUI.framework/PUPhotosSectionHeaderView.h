@@ -44,6 +44,7 @@
 }
 
 + (BOOL)_hasAccessibilityLargeText;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowsPhotosDetailsInteraction; // @synthesize allowsPhotosDetailsInteraction=_allowsPhotosDetailsInteraction;
 @property(copy, nonatomic) NSString *actionButtonTitle; // @synthesize actionButtonTitle=_actionButtonTitle;
 @property(nonatomic) BOOL showsActionButton; // @synthesize showsActionButton=_showsActionButton;
@@ -58,7 +59,6 @@
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <PUPhotosSectionHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
-- (void).cxx_destruct;
 - (void)_hideHighlightView;
 - (void)_updateHighlightView;
 - (void)_setHighlightViewVisible:(BOOL)arg1;

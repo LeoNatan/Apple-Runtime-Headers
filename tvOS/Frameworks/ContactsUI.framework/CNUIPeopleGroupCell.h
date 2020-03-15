@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_nameLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(readonly, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

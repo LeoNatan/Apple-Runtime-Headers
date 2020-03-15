@@ -19,6 +19,7 @@
     void *_account;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int defaultSourceID; // @synthesize defaultSourceID=_defaultSourceID;
 @property(nonatomic) void *account; // @synthesize account=_account;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
@@ -26,7 +27,6 @@
 @property(nonatomic) int sourceID; // @synthesize sourceID=_sourceID;
 @property(retain, nonatomic) NSString *accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) double score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (int)_findBestSourceID;
 - (void)calculateScore;
 @property(readonly, nonatomic) NSString *accountDisambiguationDescription;

@@ -25,6 +25,7 @@
     AKAuthorizationSubPaneConfirmButton *_confirmButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAuthorizationSubPaneConfirmButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) AKAuthorizationSubPaneLoginChoice *subPaneLoginChoice; // @synthesize subPaneLoginChoice=_subPaneLoginChoice;
 @property(retain, nonatomic) NSMutableArray *cellChoices; // @synthesize cellChoices=_cellChoices;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property BOOL editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;
-- (void).cxx_destruct;
 - (void)passwordAuthenticationCompletedWithResults:(id)arg1 error:(id)arg2;
 - (void)_performAppleIDPasswordAuthenticationIfNeeded;
 - (BOOL)validateReadyForAuthorization;

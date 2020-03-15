@@ -15,9 +15,9 @@
     NSData *_credentialSet;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *credentialSet; // @synthesize credentialSet=_credentialSet;
 @property(nonatomic) unsigned int userID; // @synthesize userID=_userID;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(nonatomic) __weak id <BKEnrollOperationDelegate> delegate; // @dynamic delegate;

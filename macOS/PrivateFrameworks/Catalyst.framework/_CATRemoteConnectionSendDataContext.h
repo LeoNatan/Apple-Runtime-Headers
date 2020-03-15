@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _bytesWritten;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bytesWritten; // @synthesize bytesWritten=_bytesWritten;
 @property(readonly, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)bufferedDataWithError:(id *)arg1;
 - (unsigned long long)headerLength;
 @property(readonly, nonatomic) unsigned long long clientBytesWritten;

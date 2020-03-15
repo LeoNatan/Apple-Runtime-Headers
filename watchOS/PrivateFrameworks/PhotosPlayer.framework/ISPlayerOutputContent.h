@@ -17,12 +17,12 @@
     struct CGSize _videoSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(readonly, nonatomic) ISWrappedAVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(readonly, nonatomic) int photoEXIFOrientation; // @synthesize photoEXIFOrientation=_photoEXIFOrientation;
 @property(readonly, nonatomic) _Bool photoIsOriginal; // @synthesize photoIsOriginal=_photoIsOriginal;
 @property(readonly, nonatomic) struct CGImage *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)initWithPhoto:(struct CGImage *)arg1 photoIsOriginal:(_Bool)arg2 photoEXIFOrientation:(int)arg3 videoPlayer:(id)arg4 videoSize:(struct CGSize)arg5;

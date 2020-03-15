@@ -13,8 +13,8 @@
     id <CNTUDialRequest> _dialRequest;
 }
 
-@property(readonly, nonatomic) id <CNTUDialRequest> dialRequest; // @synthesize dialRequest=_dialRequest;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CNTUDialRequest> dialRequest; // @synthesize dialRequest=_dialRequest;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

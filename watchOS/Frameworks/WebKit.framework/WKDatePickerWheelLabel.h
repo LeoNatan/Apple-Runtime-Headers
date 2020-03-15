@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned int _index;
 }
 
-@property(nonatomic) unsigned int index; // @synthesize index=_index;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int index; // @synthesize index=_index;
 - (_Bool)needsUpdateForIndex:(unsigned int)arg1 selectedDate:(id)arg2;
 @property(copy, nonatomic) NSDate *lastSelectedDate;
 - (id)initWithFrame:(struct CGRect)arg1;

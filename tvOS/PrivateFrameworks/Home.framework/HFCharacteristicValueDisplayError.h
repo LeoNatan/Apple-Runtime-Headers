@@ -20,11 +20,11 @@
 + (id)mostEgregiousError:(id)arg1;
 + (id)errorWithUnderlyingSymptom:(id)arg1 isFixingCurrently:(_Bool)arg2 contextProvider:(id)arg3;
 + (id)errorWithUnderlyingError:(id)arg1 readTraits:(id)arg2 contextProvider:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMSymptom *underlyingSymptom; // @synthesize underlyingSymptom=_underlyingSymptom;
 @property(copy, nonatomic) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
 @property(retain, nonatomic) id <HFCharacteristicOperationContextProviding> contextProvider; // @synthesize contextProvider=_contextProvider;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPersistentError) _Bool persistentError;
 
 @end

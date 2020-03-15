@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UICloudSharingController *_viewController;
 }
 
-@property(retain, nonatomic) UICloudSharingController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UICloudSharingController *viewController; // @synthesize viewController=_viewController;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 

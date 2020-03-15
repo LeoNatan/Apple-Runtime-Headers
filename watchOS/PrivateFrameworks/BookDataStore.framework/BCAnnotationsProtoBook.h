@@ -19,11 +19,11 @@
 }
 
 + (Class)annotationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *annotations; // @synthesize annotations=_annotations;
 @property(retain, nonatomic) NSString *assetVersion; // @synthesize assetVersion=_assetVersion;
 @property(retain, nonatomic) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(retain, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

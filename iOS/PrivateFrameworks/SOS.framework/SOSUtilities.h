@@ -20,7 +20,7 @@
 + (_Bool)shouldForceDisableAutoCallForClient:(id)arg1;
 + (long long)SOSSelectableTriggerMechanismCapability;
 + (_Bool)deviceHasHomeButton;
-+ (_Bool)isD2xDevice;
++ (_Bool)isDeviceD2xOrNewer;
 + (long long)defaultSOSTriggerMechanism;
 + (long long)SOSTriggerMechanismForClickCount:(long long)arg1;
 + (long long)currentSOSTriggerMechanism;

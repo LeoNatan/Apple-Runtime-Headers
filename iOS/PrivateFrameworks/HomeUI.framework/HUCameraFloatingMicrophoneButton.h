@@ -18,11 +18,11 @@
 
 + (id)_createBackgroundEffect;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NAUILayoutConstraintSet *constraintSet; // @synthesize constraintSet=_constraintSet;
 @property(readonly, nonatomic) UIImageView *microphoneImageView; // @synthesize microphoneImageView=_microphoneImageView;
 @property(readonly, nonatomic) UILabel *microphoneLabel; // @synthesize microphoneLabel=_microphoneLabel;
 @property(readonly, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_setupConstraintSet;
 - (void)_updateSelectionState;

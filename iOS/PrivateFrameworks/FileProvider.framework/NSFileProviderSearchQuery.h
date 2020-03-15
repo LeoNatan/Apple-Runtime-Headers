@@ -28,11 +28,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newSearchContainerItemIdentifier;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *searchContainerItemIdentifier; // @synthesize searchContainerItemIdentifier=_searchContainerItemIdentifier;
 @property(readonly, copy, nonatomic) NSString *scopedToItemIdentifier; // @synthesize scopedToItemIdentifier=_scopedToItemIdentifier;
 @property(readonly, copy, nonatomic) NSSet *allowedContentTypes; // @synthesize allowedContentTypes=_allowedContentTypes;
 @property(readonly, copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *allowedPathExtensions;
 @property(copy, nonatomic) NSString *providerDomainID;
 @property(copy, nonatomic) NSString *scopeFragment;

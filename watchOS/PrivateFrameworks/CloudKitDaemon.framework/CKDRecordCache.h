@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_expiryDateFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastExpiryAttempt; // @synthesize lastExpiryAttempt=_lastExpiryAttempt;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) int scope; // @synthesize scope=_scope;
 @property(retain, nonatomic) CKDClientContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) CKSQLitePool *dbPool; // @synthesize dbPool=_dbPool;
 @property(retain, nonatomic) CKSQLite *db; // @synthesize db=_db;
-- (void).cxx_destruct;
 - (void)scheduleRecordExpirationWithExpiryDate:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (unsigned int)recordCacheSizeLimit;
 - (void)_attemptRecordExpiryIfNeeded;

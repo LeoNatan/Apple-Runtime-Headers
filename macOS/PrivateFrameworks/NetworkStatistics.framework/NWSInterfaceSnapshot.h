@@ -39,6 +39,7 @@
     unsigned long long _wifiScanDuration;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long wifiScanDuration; // @synthesize wifiScanDuration=_wifiScanDuration;
 @property unsigned long long wifiScanCount; // @synthesize wifiScanCount=_wifiScanCount;
 @property unsigned long long wifiConfigMulticastRate; // @synthesize wifiConfigMulticastRate=_wifiConfigMulticastRate;
@@ -63,7 +64,6 @@
 @property unsigned long long ulEffectiveBandwidth; // @synthesize ulEffectiveBandwidth=_ulEffectiveBandwidth;
 @property unsigned long long ulMaxBandwidth; // @synthesize ulMaxBandwidth=_ulMaxBandwidth;
 @property unsigned long long linkQualityMetric; // @synthesize linkQualityMetric=_linkQualityMetric;
-- (void).cxx_destruct;
 - (id)initWithCounts:(const struct nstat_counts *)arg1 interfaceDescriptor:(struct nstat_ifnet_descriptor *)arg2 sourceIdent:(unsigned long long)arg3 seqno:(unsigned long long)arg4;
 - (id)description;
 - (void)_handleDescriptor:(struct nstat_ifnet_descriptor *)arg1;

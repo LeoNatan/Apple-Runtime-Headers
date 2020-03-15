@@ -15,9 +15,9 @@
     id <SiriTVUITemplateItemViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriTVUITemplateItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) SiriTVUITemplateItem *templateItem; // @synthesize templateItem=_templateItem;
-- (void).cxx_destruct;
 - (_Bool)supportsSwipeDismissal;
 - (struct CGRect)highlightedTemplateItemFrame;
 @property(readonly, nonatomic) _Bool prefersFocus;

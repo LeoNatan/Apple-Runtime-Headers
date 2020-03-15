@@ -19,10 +19,10 @@
 
 + (id)setWithChartableQuantity:(id)arg1 date:(id)arg2;
 + (id)setWithMedicalCodings:(id)arg1 quantities:(id)arg2 date:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *quantities; // @synthesize quantities=_quantities;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSArray *codings; // @synthesize codings=_codings;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (double)maxValueIncludingReferenceRangeForUnit:(id)arg1;

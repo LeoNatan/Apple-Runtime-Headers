@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) AKAuthorizationScopesUserSelection *userSelection; // @synthesize userSelection=_userSelection;
 @property(readonly, copy) AKAuthorizationRequest *request; // @synthesize request=_request;
 @property(copy) NSString *clientID; // @synthesize clientID=_clientID;
@@ -38,7 +39,6 @@
 @property(copy) NSDictionary *appProvidedData; // @synthesize appProvidedData=_appProvidedData;
 @property(copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy, setter=_setProxiedAppName:) NSString *_proxiedAppName; // @synthesize _proxiedAppName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) BOOL _hasApplicationMetaData;
 - (void)encodeWithCoder:(id)arg1;

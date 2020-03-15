@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithError:(id)arg1;

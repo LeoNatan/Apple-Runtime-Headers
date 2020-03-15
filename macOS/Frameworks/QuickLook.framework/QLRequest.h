@@ -18,13 +18,13 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct __QLRequest *requestRef; // @synthesize requestRef=_requestRef;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) QLRequestSession *session; // @synthesize session=_session;
 @property(copy, nonatomic) CDUnknownBlockType replyCreatedWithBitmapBlock; // @synthesize replyCreatedWithBitmapBlock=_replyCreatedWithBitmapBlock;
 @property int discardError; // @synthesize discardError=_discardError;
 @property(copy, nonatomic) CDUnknownBlockType generationWillStartBlock; // @synthesize generationWillStartBlock=_generationWillStartBlock;
-- (void).cxx_destruct;
 - (void)teardown;
 - (id)initWithRequestRef:(struct __QLRequest *)arg1;
 

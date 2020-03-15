@@ -20,6 +20,7 @@
     ENNoteRef *_noteRef;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENNoteRef *noteRef; // @synthesize noteRef=_noteRef;
 @property(retain, nonatomic) ENNoteStoreClient *noteStore; // @synthesize noteStore=_noteStore;
 @property(copy, nonatomic) CDUnknownBlockType progress; // @synthesize progress=_progress;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) ENNotebook *notebook; // @synthesize notebook=_notebook;
 @property(retain, nonatomic) ENNoteRef *refToReplace; // @synthesize refToReplace=_refToReplace;
 @property(retain, nonatomic) EDAMNote *note; // @synthesize note=_note;
-- (void).cxx_destruct;
 
 @end
 

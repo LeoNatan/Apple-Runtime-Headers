@@ -20,10 +20,10 @@
     UIColor *_fallbackColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *fallbackColor; // @synthesize fallbackColor=_fallbackColor;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *color;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

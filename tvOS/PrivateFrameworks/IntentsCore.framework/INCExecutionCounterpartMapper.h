@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_mapping;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s _lock; // @synthesize _lock;
 @property(readonly, nonatomic) _Bool _filled; // @synthesize _filled;
 @property(readonly, copy, nonatomic) NSMutableDictionary *_mapping; // @synthesize _mapping;
 @property(readonly, nonatomic) LSApplicationWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (id)counterpartBundleIdentifiersForBundleIdentifier:(id)arg1;
 - (void)reset;
 - (void)installedApplicationsDidChange:(id)arg1;

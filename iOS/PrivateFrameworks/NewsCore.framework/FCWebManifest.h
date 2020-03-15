@@ -18,12 +18,12 @@
     FCInterestToken *_webArchiveHoldToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCInterestToken *webArchiveHoldToken; // @synthesize webArchiveHoldToken=_webArchiveHoldToken;
 @property(retain, nonatomic) id <FCWebArchiveSource> webArchiveSource; // @synthesize webArchiveSource=_webArchiveSource;
 @property(retain, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(retain, nonatomic) FCAssetHandle *excerptAssetHandle; // @synthesize excerptAssetHandle=_excerptAssetHandle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *baseURL;
 @property(readonly, nonatomic) NSURL *URL;
 - (id)initWithArticleID:(id)arg1 sourceURL:(id)arg2 webArchiveSource:(id)arg3 excerptAssetHandle:(id)arg4;

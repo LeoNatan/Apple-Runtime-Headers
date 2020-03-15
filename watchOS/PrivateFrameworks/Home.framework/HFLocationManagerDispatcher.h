@@ -22,12 +22,12 @@
 }
 
 + (id)sharedDispatcher;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasInitializedAuthorizationStatus; // @synthesize hasInitializedAuthorizationStatus=_hasInitializedAuthorizationStatus;
 @property(nonatomic) int cachedAuthorizationStatus; // @synthesize cachedAuthorizationStatus=_cachedAuthorizationStatus;
 @property(readonly, nonatomic) NSMutableArray *pendingAuthorizationStatusFutures; // @synthesize pendingAuthorizationStatusFutures=_pendingAuthorizationStatusFutures;
 @property(retain, nonatomic) NSHashTable *locationObservers; // @synthesize locationObservers=_locationObservers;
 @property(readonly, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
-- (void).cxx_destruct;
 - (void)_updateMacAuthorizationStatus:(int)arg1;
 - (void)_authorizeHomeKitLocationServices;
 - (void)locationManager:(id)arg1 didFinishDeferredUpdatesWithError:(id)arg2;

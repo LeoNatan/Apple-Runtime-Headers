@@ -17,12 +17,12 @@
     NSString *_senderID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *senderID; // @synthesize senderID=_senderID;
 @property(retain, nonatomic) NSString *downloadingDeviceID; // @synthesize downloadingDeviceID=_downloadingDeviceID;
 @property(retain, nonatomic) NSData *sessionToken; // @synthesize sessionToken=_sessionToken;
 @property(retain, nonatomic) NSData *downloadingDeviceToken; // @synthesize downloadingDeviceToken=_downloadingDeviceToken;
 @property(retain, nonatomic) NSArray *downloadAuths; // @synthesize downloadAuths=_downloadAuths;
-- (void).cxx_destruct;
 - (id)messageBody;
 - (id)requiredKeys;
 - (int)responseCommand;

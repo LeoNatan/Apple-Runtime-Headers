@@ -15,8 +15,8 @@
 }
 
 + (id)referencedActionResourceClasses;
-@property(retain, nonatomic) WFEvernoteAccessResource *evernoteAccessResource; // @synthesize evernoteAccessResource=_evernoteAccessResource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFEvernoteAccessResource *evernoteAccessResource; // @synthesize evernoteAccessResource=_evernoteAccessResource;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;
 - (void)possibleStatesDidChange;

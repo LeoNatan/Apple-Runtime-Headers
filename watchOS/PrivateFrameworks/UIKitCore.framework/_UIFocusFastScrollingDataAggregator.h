@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)scrollingEnded;
++ (void)scrollingEndedWithStyle:(int)arg1;
 + (void)scrollingBeganWithStyle:(int)arg1;
 
 @end

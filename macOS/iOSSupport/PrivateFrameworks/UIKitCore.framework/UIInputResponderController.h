@@ -22,6 +22,7 @@
     NSMutableDictionary *_preservedViewSets;
     NSMutableArray *_animationStyleStack;
     NSHashTable *_visibilityObservers;
+    NSMutableDictionary *_keyboardSnapshots;
     UIInputViewPostPinningReloadState *_postPinningReloadState;
     NSMutableSet *_pinningResponders;
     NSMutableDictionary *_persistentInputAccessoryResponders;
@@ -40,8 +41,9 @@
     BOOL _allowNilResponderReload;
     BOOL _reloadInputViewsForcedIsAllowed;
     BOOL _blockedReloadInputViewsForDictation;
+    id _keyForPreservingInputViews;
+    id _keyForRestoringInputViews;
     BOOL _hideSystemInputAssistantView;
-    BOOL _preservingInputViews;
     UIScene *_scene;
     long long _currentState;
     UIKBRenderConfig *_restorableRenderConfig;
@@ -52,16 +54,15 @@
 + (void)performOnControllers:(CDUnknownBlockType)arg1;
 + (id)activeInputResponderController;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ignoresPinning; // @synthesize ignoresPinning=_ignoresPinning;
 @property(nonatomic) unsigned long long deactivationCount; // @synthesize deactivationCount=_deactivationCount;
-@property(nonatomic) BOOL preservingInputViews; // @synthesize preservingInputViews=_preservingInputViews;
 @property(retain, nonatomic) UIKBRenderConfig *restorableRenderConfig; // @synthesize restorableRenderConfig=_restorableRenderConfig;
 @property(readonly, nonatomic) long long currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) BOOL hideSystemInputAssistantView; // @synthesize hideSystemInputAssistantView=_hideSystemInputAssistantView;
 @property(readonly, nonatomic) UIResponder *responder; // @synthesize responder=_responder;
 @property(nonatomic) BOOL automaticAppearanceEnabled; // @synthesize automaticAppearanceEnabled=_automaticAppearanceEnabled;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UITextFormattingCoordinator *textFormattingCoordinator;
 - (void)performWithAllowingNilResponderReload:(CDUnknownBlockType)arg1;
 - (void)_endPersistingInputAccessoryViewWithId:(id)arg1;
@@ -74,6 +75,8 @@
 - (void)_preserveInputViewsWithId:(id)arg1 animated:(BOOL)arg2;
 - (void)_preserveInputViewsWithId:(id)arg1;
 - (void)_preserveInputViewsWithId:(id)arg1 animated:(BOOL)arg2 reset:(BOOL)arg3;
+- (id)getKeyboardSnapshotInWindow:(long long)arg1;
+- (void)setKeyboardSnapshot:(id)arg1 inWindow:(long long)arg2;
 - (void)_clearMultiDocumentTokenIfNecessary:(id)arg1 withId:(id)arg2;
 - (BOOL)_restoreMultiDocumentTokenIfNecessary:(id)arg1 withId:(id)arg2;
 - (BOOL)_preserveMultiDocumentTokenIfNecessary:(id)arg1 withId:(id)arg2 reset:(BOOL)arg3;
@@ -144,6 +147,7 @@
 - (void)_beginIgnoringReloadInputViews;
 @property(readonly, nonatomic) BOOL automaticAppearanceReallyEnabled;
 @property(nonatomic) BOOL automaticAppearanceInternalEnabled;
+- (BOOL)isUndocked;
 @property(readonly, nonatomic) BOOL isOnScreen;
 @property(readonly, nonatomic) UIView *containerView;
 @property(readonly, nonatomic) UISystemInputAssistantViewController *systemInputAssistantViewController;

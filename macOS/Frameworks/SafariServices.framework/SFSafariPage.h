@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSExtensionContext *_extensionContext; // @synthesize _extensionContext=__extensionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSExtensionContext *_extensionContext; // @synthesize _extensionContext=__extensionContext;
 - (void)getURLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getTitleWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getIsPrivateWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -42,6 +42,7 @@
 + (void)initialize;
 + (void)releaseDownloadSlot:(id)arg1;
 + (id)acquireDownloadSlotForItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FPDCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) FPMoveInfo *info; // @synthesize info=_info;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) CDUnknownBlockType itemCompletionBlock; // @synthesize itemCompletionBlock=_itemCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType itemCopyProgressBlock; // @synthesize itemCopyProgressBlock=_itemCopyProgressBlock;
 @property(readonly, nonatomic) __weak FPDMoveOperation *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (void)performCreateFolder:(id)arg1 inside:(id)arg2 as:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)performMoveOfFolder:(id)arg1 to:(id)arg2 as:(id)arg3 sourceMaterializeOption:(unsigned long long)arg4 targetMaterializeOption:(unsigned long long)arg5 atomically:(_Bool)arg6 useDiskWriter:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)performMoveOfItem:(id)arg1 to:(id)arg2 as:(id)arg3 sourceMaterializeOption:(unsigned long long)arg4 targetMaterializeOption:(unsigned long long)arg5 useDiskWriter:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;

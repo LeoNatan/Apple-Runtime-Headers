@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (long long)fullMomentsSectionHeaderStyle;
-- (BOOL)shouldUseAspectItems;
 - (id)gridSpec;
 
 @end

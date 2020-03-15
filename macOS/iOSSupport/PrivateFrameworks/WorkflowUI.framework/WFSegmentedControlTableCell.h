@@ -16,11 +16,11 @@
     WFSegmentedControlValue *_selectedValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFSegmentedControlValue *selectedValue; // @synthesize selectedValue=_selectedValue;
 @property(copy, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(nonatomic) __weak WFSegmentedControlTableItem *tableItem; // @synthesize tableItem=_tableItem;
-- (void).cxx_destruct;
 - (void)valueChanged:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

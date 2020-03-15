@@ -15,10 +15,10 @@
     NSString *_moodIdentifier;
 }
 
+- (void).cxx_destruct;
 @property _Bool isHighConfidence; // @synthesize isHighConfidence=_isHighConfidence;
 @property _Bool isDistributed; // @synthesize isDistributed=_isDistributed;
 @property(retain) NSString *moodIdentifier; // @synthesize moodIdentifier=_moodIdentifier;
-- (void).cxx_destruct;
 
 @end
 

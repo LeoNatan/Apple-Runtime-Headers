@@ -19,10 +19,10 @@
 
 + (id)_propertyKeyForSnapshotKey:(unsigned int)arg1 overriddenForNil:(_Bool *)arg2;
 + (id)sortDescriptorWithKey:(unsigned int)arg1 ascending:(_Bool)arg2 comparator:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(nonatomic) _Bool ascending; // @synthesize ascending=_ascending;
 @property(nonatomic) unsigned int key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)_stringForKey:(unsigned int)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

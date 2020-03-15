@@ -17,12 +17,12 @@
     char *_reason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) char *reason; // @synthesize reason=_reason;
 @property(nonatomic) unsigned long long reasonCode; // @synthesize reasonCode=_reasonCode;
 @property(retain, nonatomic) NSMutableDictionary *additionalInfo; // @synthesize additionalInfo=_additionalInfo;
 @property(retain, nonatomic) NSMutableArray *evaluations; // @synthesize evaluations=_evaluations;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithReason:(const char *)arg1 code:(unsigned long long)arg2 evaluations:(id)arg3;
 - (id)description;

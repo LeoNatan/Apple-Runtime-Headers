@@ -13,8 +13,8 @@
     NSString *_extensionName;
 }
 
-@property(readonly, nonatomic) NSString *extensionName; // @synthesize extensionName=_extensionName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *extensionName; // @synthesize extensionName=_extensionName;
 - (id)_initWithItem:(id)arg1 withExtensionName:(id)arg2;
 
 @end

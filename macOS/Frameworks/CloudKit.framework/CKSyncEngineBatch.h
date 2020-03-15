@@ -15,10 +15,10 @@
     NSArray *_recordIDsToDelete;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAtomic) BOOL atomic; // @synthesize atomic=_atomic;
 @property(readonly, nonatomic) NSArray *recordIDsToDelete; // @synthesize recordIDsToDelete=_recordIDsToDelete;
 @property(readonly, nonatomic) NSArray *recordsToSave; // @synthesize recordsToSave=_recordsToSave;
-- (void).cxx_destruct;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)description;
 - (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2;

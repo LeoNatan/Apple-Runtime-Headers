@@ -11,12 +11,12 @@
 @interface ASFriendListRow : NSObject
 {
     ASFriend *_friend;
-    struct _HKFitnessFriendActivitySnapshot *_snapshot;
+    _HKFitnessFriendActivitySnapshot *_snapshot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HKFitnessFriendActivitySnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property(retain, nonatomic) ASFriend *friend; // @synthesize friend=_friend;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 
 @end

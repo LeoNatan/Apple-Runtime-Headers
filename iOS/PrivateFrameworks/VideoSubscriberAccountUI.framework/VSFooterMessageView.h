@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     VSFontCenter *_fontCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(copy, nonatomic) NSString *tertiaryMessage; // @synthesize tertiaryMessage=_tertiaryMessage;
 @property(copy, nonatomic) NSString *secondaryMessage; // @synthesize secondaryMessage=_secondaryMessage;
 @property(copy, nonatomic) NSString *primaryMessage; // @synthesize primaryMessage=_primaryMessage;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (double)preferredHeightForWidth:(double)arg1;
 - (void)dealloc;

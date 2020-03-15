@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     double _value;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *filledColor; // @synthesize filledColor=_filledColor;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(nonatomic) long long numberOfStars; // @synthesize numberOfStars=_numberOfStars;
 @property(copy, nonatomic) UIColor *emptyColor; // @synthesize emptyColor=_emptyColor;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setColoringUsingStyle:(id)arg1;

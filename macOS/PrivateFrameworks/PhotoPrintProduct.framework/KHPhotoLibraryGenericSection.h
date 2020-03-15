@@ -22,10 +22,10 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL needsHydration; // @synthesize needsHydration=_needsHydration;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property __weak id <KHPhotoGroupCollectionDelegate> pageLayoutDelegate;
 - (id)photoWithURL:(id)arg1;
 - (id)pageLayoutPhotoGroupAtIndexPath:(id)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (double)heightForWidth:(double)arg1 withDelegate:(id)arg2;
-@property(nonatomic) __weak id <RTTUIServiceCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <RTTUIServiceCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 - (void)updateLayout;

@@ -30,6 +30,7 @@
 - (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3 chatGUID:(NSString *)arg4 groupName:(NSString *)arg5;
 - (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3;
 - (void)disableCameraAttachments;
+- (void)setShouldDisableEntryField:(_Bool)arg1;
 - (void)setCanEditRecipients:(_Bool)arg1;
 - (void)setPendingAddresses:(NSArray *)arg1;
 @end

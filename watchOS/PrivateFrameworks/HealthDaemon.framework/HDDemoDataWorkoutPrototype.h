@@ -38,6 +38,7 @@
 + (id)ellipticalPrototype;
 + (id)workoutPrototypeWithActivityType:(unsigned int)arg1 goalType:(unsigned int)arg2 goal:(id)arg3 startTime:(double)arg4 duration:(double)arg5 energyBurned:(double)arg6 distanceWalking:(double)arg7 distanceCycling:(double)arg8 distanceSwimming:(double)arg9 distanceSwimmingSegment:(double)arg10 totalSwimmingSegments:(int)arg11 numLapsPerSegment:(int)arg12 swimTimePerSegment:(double)arg13 restTimePerSegment:(double)arg14 swimmingStrokeStyle:(int)arg15;
 + (id)workoutPrototypeWithActivityType:(unsigned int)arg1 goalType:(unsigned int)arg2 goal:(id)arg3 startTime:(double)arg4 duration:(double)arg5 energyBurned:(double)arg6 distanceWalking:(double)arg7 distanceCycling:(double)arg8;
+- (void).cxx_destruct;
 @property(nonatomic) int swimmingStrokeStyle; // @synthesize swimmingStrokeStyle=_swimmingStrokeStyle;
 @property(nonatomic) double restTimePerSegment; // @synthesize restTimePerSegment=_restTimePerSegment;
 @property(nonatomic) double swimTimePerSegment; // @synthesize swimTimePerSegment=_swimTimePerSegment;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) HKQuantity *goal; // @synthesize goal=_goal;
 @property(nonatomic) unsigned int goalType; // @synthesize goalType=_goalType;
 @property(nonatomic) unsigned int workoutActivityType; // @synthesize workoutActivityType=_workoutActivityType;
-- (void).cxx_destruct;
 
 @end
 

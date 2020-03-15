@@ -18,11 +18,11 @@
     NSString *_snapshotKeyOfSnapshotImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *snapshotKeyOfSnapshotImage; // @synthesize snapshotKeyOfSnapshotImage=_snapshotKeyOfSnapshotImage;
 @property(retain, nonatomic) UIImage *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) NTKFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
 - (void)_updateFaceSnapshotIfNecessaryOfFace;
 - (void)faceResourceDirectoryDidChange:(id)arg1;
 - (void)faceConfigurationDidChange:(id)arg1;

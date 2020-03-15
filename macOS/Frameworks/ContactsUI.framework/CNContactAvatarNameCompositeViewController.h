@@ -20,13 +20,13 @@
     NSView *_externalNameAlignmentView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *externalNameAlignmentView; // @synthesize externalNameAlignmentView=_externalNameAlignmentView;
 @property(retain) NSLayoutConstraint *nameViewExternalAlignmentConstraint; // @synthesize nameViewExternalAlignmentConstraint=_nameViewExternalAlignmentConstraint;
 @property(retain) NSLayoutConstraint *contentTopInsetConstraint; // @synthesize contentTopInsetConstraint=_contentTopInsetConstraint;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain) CNContactNameViewController *nameWidgetController; // @synthesize nameWidgetController=_nameWidgetController;
 @property(retain) CNContactAvatarViewController *avatarWidgetController; // @synthesize avatarWidgetController=_avatarWidgetController;
-- (void).cxx_destruct;
 - (BOOL)shouldBeIncludedInKeyViewLoop;
 - (void)updateExternalNameAlignmentConstraint;
 - (void)mouseUp:(id)arg1;
@@ -35,7 +35,7 @@
 - (id)updateKeyViewLoopAndReturnTailView;
 - (double)customSpacingAfterWidget;
 - (double)desiredHeight;
-- (void)commitEditing;
+- (BOOL)commitEditing;
 - (void)setContact:(id)arg1;
 - (BOOL)isTemplate;
 - (void)loadView;

@@ -34,6 +34,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (id)CKPartialErrorDescription;
+- (void)dealloc;
 
 @end
 

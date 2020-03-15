@@ -33,6 +33,7 @@
 
 + (id)schemeNameOverride;
 + (void)setSchemeNameOverride:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(readonly, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(retain, nonatomic) PSSpecifierAction *action; // @synthesize action=_action;
@@ -45,7 +46,6 @@
 @property(readonly, copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(readonly, nonatomic) NSMutableSet *childEntries; // @synthesize childEntries=_childEntries;
 @property(nonatomic) __weak PSSearchEntry *parentEntry; // @synthesize parentEntry=_parentEntry;
-- (void).cxx_destruct;
 - (id)hierarchyDescription;
 - (id)debugDescription;
 - (id)recursiveDescriptionForLevel:(unsigned long long)arg1;

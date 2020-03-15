@@ -16,8 +16,11 @@
     ABBookCreateGroupCommand *_createCommand;
     ABBookGroupAddMembersCommand *_addMembersCommand;
     NSSet *_memberUids;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (void)updateGroupName:(id)arg1;
 - (id)groupEntryForNewGroup;
 - (void)executeRedo;

@@ -15,9 +15,9 @@
     ASVWorldGestureDragOffsetCorrector *_dragOffsetCorrector;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASVWorldGestureDragOffsetCorrector *dragOffsetCorrector; // @synthesize dragOffsetCorrector=_dragOffsetCorrector;
 @property(nonatomic) __weak id <ASVWorldSingleFingerGestureDelegate> worldDelegate; // @synthesize worldDelegate=_worldDelegate;
-- (void).cxx_destruct;
 - (void)finishGesture;
 - (void)updateTranslation;
 - (float)potentialAssetDistanceFromInitialLocationOnScreen;

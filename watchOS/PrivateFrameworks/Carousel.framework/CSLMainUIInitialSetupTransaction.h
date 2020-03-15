@@ -15,10 +15,10 @@
     CSLNavigationTransactionAnimatorHelper *_helper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
 @property(retain, nonatomic) CSLNavigationStackController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (_Bool)shouldWatchdog:(id *)arg1;
 - (void)_begin;
 

@@ -17,9 +17,9 @@
 + (id)storeUnitWithStoreURL:(unsigned long long)arg1 dataProvider:(CDUnknownBlockType)arg2;
 + (id)storeUnitWithData:(id)arg1;
 + (id)storeUnitWithStoreURL:(id)arg1 UUID:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)remapWithStoreURL:(id)arg1;
 - (BOOL)isValid;
 - (id)initWithData:(id)arg1 UUID:(id)arg2;

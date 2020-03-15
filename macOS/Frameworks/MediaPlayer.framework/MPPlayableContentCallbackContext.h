@@ -14,9 +14,9 @@
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL serviced; // @synthesize serviced=_serviced;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (id)initWithIndexPath:(id)arg1;
 
 @end

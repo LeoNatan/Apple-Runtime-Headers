@@ -13,8 +13,8 @@
     EDPersistenceDatabaseConnection *_sqliteConnection;
 }
 
-@property(retain, nonatomic) EDPersistenceDatabaseConnection *sqliteConnection; // @synthesize sqliteConnection=_sqliteConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EDPersistenceDatabaseConnection *sqliteConnection; // @synthesize sqliteConnection=_sqliteConnection;
 - (void)_purgeFoldersMatchingPatterns:(id)arg1;
 - (_Bool)_updateMailboxURLsInSQLitedb:(struct sqlite3 *)arg1 withOldURLToNewURLMap:(id)arg2;
 - (_Bool)_renameMailboxURLsForMailAccount:(id)arg1 inSQLiteDB:(struct sqlite3 *)arg2;

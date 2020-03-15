@@ -34,12 +34,12 @@
 + (id)memoriesFontsSpecForDescriptor:(struct PXViewSpecDescriptor)arg1 extendedTraitCollection:(id)arg2;
 + (id)_fontSpecCache;
 + (void)preloadFontsSpecsForExtendedTraitCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(readonly, nonatomic) double baselineDistance; // @synthesize baselineDistance=_baselineDistance;
 @property(readonly, nonatomic) NSDictionary *subtitleTextAttributes; // @synthesize subtitleTextAttributes=_subtitleTextAttributes;
 @property(readonly, nonatomic) NSDictionary *fallbackTitleTextAttributes; // @synthesize fallbackTitleTextAttributes=_fallbackTitleTextAttributes;
 @property(readonly, nonatomic) NSDictionary *titleTextAttributes; // @synthesize titleTextAttributes=_titleTextAttributes;
-- (void).cxx_destruct;
 - (id)_initWithIdentifier:(struct PXMemoryFontsSpecIdentifier)arg1 titleFontName:(id)arg2;
 
 @end

@@ -8,13 +8,13 @@
 
 #import <NanoTimeKitCompanion/NTKTimeView-Protocol.h>
 
-@class CALayer, CAReplicatorLayer, CLKDevice, CLKFont, NSArray, NSCalendar, NSDate, NSString, NTKAnalogHandsView, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle;
+@class CALayer, CAReplicatorLayer, CLKDevice, CLKFont, NSArray, NSCalendar, NSDate, NSNumber, NSString, NTKAnalogHandsView, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle;
 
 @interface NTKDualTimeView : UIView <NTKTimeView>
 {
     NSDate *_overrideDate;
     NSCalendar *_calendar;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
     CAReplicatorLayer *_hourTickReplicatorLayer;
     CAReplicatorLayer *_minuteTickReplicatorLayer;
     UIView *_digitalContainerView;
@@ -37,6 +37,7 @@
     UIView *_analogTickContainerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *analogTickContainerView; // @synthesize analogTickContainerView=_analogTickContainerView;
 @property(retain, nonatomic) UIView *analogContainerView; // @synthesize analogContainerView=_analogContainerView;
 @property(retain, nonatomic) UIView *dialContainerView; // @synthesize dialContainerView=_dialContainerView;
@@ -50,7 +51,6 @@
 @property(nonatomic) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (id)_secondTickInactiveColorForColor:(unsigned long long)arg1;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_clientList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clientList; // @synthesize clientList=_clientList;
 @property(retain, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (void)signal;
 - (id)initWithName:(id)arg1;
 

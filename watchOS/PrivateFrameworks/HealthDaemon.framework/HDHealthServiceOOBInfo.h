@@ -17,11 +17,11 @@
 }
 
 + (id)reverseData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *btAddress; // @synthesize btAddress=_btAddress;
 @property(readonly, nonatomic) NSData *confirmationValue; // @synthesize confirmationValue=_confirmationValue;
 @property(readonly, nonatomic) NSData *randomValue; // @synthesize randomValue=_randomValue;
 @property(readonly, nonatomic) NSData *oobData; // @synthesize oobData=_oobData;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithOOBData:(id)arg1 btAddress:(id)arg2;
 

@@ -29,6 +29,7 @@
     RPRemoteViewContainerWindow *_remoteWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RPRemoteViewContainerWindow *remoteWindow; // @synthesize remoteWindow=_remoteWindow;
 @property(retain, nonatomic) RPRemoteWindowController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) RPBroadcastActivityHostRemoteNSViewController *broadcastActivityHostViewController; // @synthesize broadcastActivityHostViewController=_broadcastActivityHostViewController;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSWindow *modalSheet; // @synthesize modalSheet=_modalSheet;
 @property(nonatomic) __weak NSWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property(nonatomic) __weak id <ReplayKitMacHelperDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (void)windowDidDeminiaturize:(id)arg1;
 - (void)windowDidMiniaturize:(id)arg1;

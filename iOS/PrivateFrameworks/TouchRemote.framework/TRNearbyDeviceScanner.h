@@ -19,12 +19,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long requestedService; // @synthesize requestedService=_requestedService;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *scannerQ; // @synthesize scannerQ=_scannerQ;
 @property(retain, nonatomic) SFDeviceDiscovery *deviceDiscovery; // @synthesize deviceDiscovery=_deviceDiscovery;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property __weak id <TRNearbyDeviceScannerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)openSession:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_deviceChanged:(id)arg1;
 - (void)_deviceFound:(id)arg1;

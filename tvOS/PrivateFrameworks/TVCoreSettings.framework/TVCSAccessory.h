@@ -16,8 +16,8 @@
 }
 
 + (id)accessoryWithHMAccessory:(id)arg1;
-@property(retain, nonatomic) HMAccessory *hmAccessory; // @synthesize hmAccessory=_hmAccessory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMAccessory *hmAccessory; // @synthesize hmAccessory=_hmAccessory;
 - (void)accessoryDidUpdateName:(id)arg1;
 @property(readonly) NSString *name;
 @property(readonly, copy) NSString *description;

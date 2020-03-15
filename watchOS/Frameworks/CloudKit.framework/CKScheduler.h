@@ -27,12 +27,12 @@
 + (id)activityFromXPCActivity:(id)arg1;
 + (id)xpcActivityIdentifierForCKActivityIdentifier:(id)arg1;
 + (id)sharedScheduler;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *fakeDeviceCount; // @synthesize fakeDeviceCount=_fakeDeviceCount;
 @property(retain, nonatomic) NSMutableDictionary *handlersByCKActivityIdentifier; // @synthesize handlersByCKActivityIdentifier=_handlersByCKActivityIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *xpcActivitiesByCKActivityIdentifier; // @synthesize xpcActivitiesByCKActivityIdentifier=_xpcActivitiesByCKActivityIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)performAsyncOnQueue:(CDUnknownBlockType)arg1;
 - (int)currentPriorityForActivityIdentifier:(id)arg1;
 - (id)activityForActivityIdentifier:(id)arg1;

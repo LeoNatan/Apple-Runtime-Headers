@@ -15,8 +15,8 @@
     NSString *_note;
 }
 
-@property(copy, nonatomic) NSString *note; // @synthesize note=_note;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *note; // @synthesize note=_note;
 - (void)performForChangedDefault:(id)arg1;
 - (id)initWithDarwinNotification:(id)arg1;
 

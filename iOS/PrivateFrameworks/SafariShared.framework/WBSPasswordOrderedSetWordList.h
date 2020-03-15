@@ -14,8 +14,8 @@
     _Bool _sensitive;
 }
 
-@property(readonly, nonatomic, getter=isSensitive) _Bool sensitive; // @synthesize sensitive=_sensitive;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSensitive) _Bool sensitive; // @synthesize sensitive=_sensitive;
 - (void)enumerateEntriesForString:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)initWithIdentifier:(id)arg1 isSensitive:(_Bool)arg2 orderedWordsArray:(id)arg3;
 - (id)initWithIdentifier:(id)arg1 isSensitive:(_Bool)arg2 orderedWords:(id)arg3;

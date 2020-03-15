@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)urgencyAtWhichItIsAcceptableToPurgeItemWithLastUsedDate:(id)arg1;
-@property(retain, nonatomic) FPDExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FPDExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 - (void)dumpStateTo:(id)arg1;
 - (id)evictableByProviderDomainID:(int)arg1;
 - (id)queryWithAttributes:(id)arg1;

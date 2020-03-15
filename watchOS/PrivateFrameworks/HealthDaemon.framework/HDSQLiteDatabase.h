@@ -34,6 +34,7 @@
 + (id)highFrequencyDatabaseURLWithProfileDirectoryPath:(id)arg1;
 + (id)protectedDatabaseURLWithProfileDirectoryPath:(id)arg1;
 + (id)mainDatabaseURLWithProfileDirectoryPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int corruptionResultCode; // @synthesize corruptionResultCode=_corruptionResultCode;
 @property(readonly, nonatomic) _Bool hasEncounteredCorruptionError; // @synthesize hasEncounteredCorruptionError=_hasEncounteredCorruptionError;
 @property(readonly, nonatomic) HDSQLiteStatementCache *statementCache; // @synthesize statementCache=_statementCache;
@@ -42,7 +43,6 @@
 @property(nonatomic, getter=isWriter) _Bool writer; // @synthesize writer=_writer;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(nonatomic) __weak id <HDSQLiteDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_statementCache;
 - (_Bool)_stepStatement:(struct sqlite3_stmt *)arg1 hasRow:(_Bool *)arg2 error:(id *)arg3;
 - (id)dumpSchemaWithError:(id *)arg1;

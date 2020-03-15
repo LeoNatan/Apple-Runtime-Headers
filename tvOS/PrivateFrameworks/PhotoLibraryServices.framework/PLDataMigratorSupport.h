@@ -14,8 +14,8 @@
     PLPhotoLibraryPathManager *_pathManager;
 }
 
-@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void)_removeLegacyMetadataFiles;
 - (void)_removeAsidePhotosDatabase;
 - (void)_removeInternalMemoriesRelatedSnapshotDirectory;

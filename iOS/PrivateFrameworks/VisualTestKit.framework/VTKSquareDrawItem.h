@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawAtContext:(id)arg1;
 - (id)initWitColor:(id)arg1 frame:(struct CGRect)arg2;
 

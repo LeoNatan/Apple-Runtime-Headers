@@ -16,11 +16,11 @@
     unsigned long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSString *glyphName; // @synthesize glyphName=_glyphName;
 @property(retain, nonatomic) UIImageView *glyphImageView; // @synthesize glyphImageView=_glyphImageView;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
-- (void).cxx_destruct;
 - (void)setComponentColor:(id)arg1;
 - (void)setupConstraints;
 - (void)setupGlyphName:(id)arg1 size:(double)arg2 glyphColor:(id)arg3;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)classesForKey;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAbsolute; // @synthesize isAbsolute=_isAbsolute;
 @property(copy, nonatomic) NSDate *absoluteDate; // @synthesize absoluteDate=_absoluteDate;
 @property(nonatomic) double relativeOffset; // @synthesize relativeOffset=_relativeOffset;
-- (void).cxx_destruct;
 - (id)createAlarm:(id *)arg1;
 - (id)initWithAlarm:(id)arg1;
 

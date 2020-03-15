@@ -15,10 +15,10 @@
     NSAttributedString *_descriptionAttributedString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSAttributedString *descriptionAttributedString; // @synthesize descriptionAttributedString=_descriptionAttributedString;
 @property(readonly, copy, nonatomic) NSAttributedString *titleAttributedString; // @synthesize titleAttributedString=_titleAttributedString;
 @property(readonly, nonatomic) UIImage *appIconImage; // @synthesize appIconImage=_appIconImage;
-- (void).cxx_destruct;
 - (id)createDescriptionAttributedString;
 - (id)createTitleAttributedString;
 - (id)init;

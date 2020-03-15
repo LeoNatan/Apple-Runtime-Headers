@@ -17,11 +17,11 @@
     long long _width;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(readonly, nonatomic) NSString *imageKind; // @synthesize imageKind=_imageKind;
 @property(readonly, nonatomic) long long height; // @synthesize height=_height;
-- (void).cxx_destruct;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

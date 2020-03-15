@@ -13,8 +13,8 @@
     NSWindow *_cdpRecoveryKeySheet;
 }
 
-@property(retain) NSWindow *cdpRecoveryKeySheet; // @synthesize cdpRecoveryKeySheet=_cdpRecoveryKeySheet;
 - (void).cxx_destruct;
+@property(retain) NSWindow *cdpRecoveryKeySheet; // @synthesize cdpRecoveryKeySheet=_cdpRecoveryKeySheet;
 - (void)handleCompletion:(BOOL)arg1 andError:(id)arg2;
 - (void)showCdpRecoveryKeyWithWindow:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

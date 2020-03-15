@@ -14,8 +14,8 @@
 }
 
 + (id)sharedLogger;
-@property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 
 @end
 

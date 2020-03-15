@@ -18,8 +18,8 @@
 
 + (unsigned int)CPUTimeMultiplierForScene:(id)arg1;
 + (unsigned int)realTimeMultiplierForScene:(id)arg1;
-@property(readonly, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (unsigned int)CSL_bar_task_type;
 @property(readonly) double cpuTimeLimit;
 @property(readonly) double wallTimeLimit;

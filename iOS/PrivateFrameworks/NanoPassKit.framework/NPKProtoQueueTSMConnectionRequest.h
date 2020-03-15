@@ -15,8 +15,8 @@
     NSString *_pushTopic;
 }
 
-@property(retain, nonatomic) NSString *pushTopic; // @synthesize pushTopic=_pushTopic;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *pushTopic; // @synthesize pushTopic=_pushTopic;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

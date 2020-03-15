@@ -15,10 +15,10 @@
     CNGeminiBadge *_badge;
 }
 
+- (void).cxx_destruct;
 @property(retain) CNGeminiBadge *badge; // @synthesize badge=_badge;
 @property(retain) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)setLabel:(id)arg1 description:(id)arg2 badge:(id)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _packageRequestCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType packageRequestCallback; // @synthesize packageRequestCallback=_packageRequestCallback;
 @property(copy) CDUnknownBlockType assetRequestCallback; // @synthesize assetRequestCallback=_assetRequestCallback;
 @property(retain, nonatomic) NSMutableDictionary *callbackForOverridePoint; // @synthesize callbackForOverridePoint=_callbackForOverridePoint;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKContainer *repairContainer; // @synthesize repairContainer=_repairContainer;
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) _Bool ignoringSystemConditions; // @synthesize ignoringSystemConditions=_ignoringSystemConditions;
-- (void).cxx_destruct;
 - (void)invokeCallbackForOverridePoint:(int)arg1 withError:(id)arg2 onCallbackQueue:(_Bool)arg3;
 - (void)setCallback:(CDUnknownBlockType)arg1 forOverridePoint:(int)arg2;
 - (void)dispatchEvent:(int)arg1 synchronously:(_Bool)arg2;

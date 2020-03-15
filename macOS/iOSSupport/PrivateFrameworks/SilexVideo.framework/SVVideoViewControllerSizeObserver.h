@@ -18,11 +18,11 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) SVKeyValueObserver *boundsObserver; // @synthesize boundsObserver=_boundsObserver;
 @property(readonly, nonatomic) __weak SVVideoViewController *videoViewController; // @synthesize videoViewController=_videoViewController;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 - (id)initWithVideoViewController:(id)arg1;
 
 // Remaining properties

@@ -30,6 +30,7 @@
     NSLayoutConstraint *_textBoxBottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *textBoxBottomConstraint; // @synthesize textBoxBottomConstraint=_textBoxBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *textBoxTrailingConstraint; // @synthesize textBoxTrailingConstraint=_textBoxTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *textBoxLeadingConstraint; // @synthesize textBoxLeadingConstraint=_textBoxLeadingConstraint;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *detail1String; // @synthesize detail1String=_detail1String;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(retain, nonatomic) ICMZoomController *zoomController; // @synthesize zoomController=_zoomController;
-- (void).cxx_destruct;
 - (void)updateMargins;
 - (void)updateTextColors;
 - (BOOL)allowsVibrancy;

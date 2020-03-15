@@ -19,10 +19,10 @@
 + (id)addressFromNearbyToken:(id)arg1;
 + (unsigned char)applyMaskToAddress:(id)arg1;
 + (id)objectDiscoveryReportFromAdvReport:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) NSMutableData *address; // @synthesize address=_address;
 @property(nonatomic) long long length; // @synthesize length=_length;
-- (void).cxx_destruct;
 - (id)updateWithKey:(id)arg1 Status:(unsigned char)arg2 Reserved:(id)arg3;
 - (void)wipeout;
 - (id)description;

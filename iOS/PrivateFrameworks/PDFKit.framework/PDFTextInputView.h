@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)linkRegionsConstrainedToLineAtPoint:(struct CGPoint)arg1;
 - (_Bool)interactionShouldBegin:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)deleteBackward;
 - (void)insertText:(id)arg1;
@@ -61,7 +62,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBecomeFirstResponder;
 - (id)_selectionForTextRange:(id)arg1;
 - (void)updateGestureRecognizerDependencies;
-- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
+- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4 isIndirectTouch:(_Bool)arg5;
 - (id)selection;
 - (void)setSelection:(id)arg1;
 - (void)updateTextSelectionGraphics;

@@ -13,8 +13,8 @@
     NSString *_workflowType;
 }
 
-@property(readonly, copy, nonatomic) NSString *workflowType; // @synthesize workflowType=_workflowType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *workflowType; // @synthesize workflowType=_workflowType;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

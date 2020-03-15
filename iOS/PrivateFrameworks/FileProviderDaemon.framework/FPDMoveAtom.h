@@ -23,6 +23,7 @@
 
 + (id)atomForPostFolderUnderRoot:(id)arg1 atomically:(_Bool)arg2 useDiskWriter:(_Bool)arg3;
 + (id)atomForMoving:(id)arg1 toTargetFolder:(id)arg2 as:(id)arg3 root:(id)arg4 atomically:(_Bool)arg5 sourceMaterializeOption:(unsigned long long)arg6 targetMaterializeOption:(unsigned long long)arg7 useDiskWriter:(_Bool)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long targetMaterializeOption; // @synthesize targetMaterializeOption=_targetMaterializeOption;
 @property(readonly, nonatomic) unsigned long long materializeOption; // @synthesize materializeOption=_materializeOption;
 @property(readonly, nonatomic) _Bool useDiskWriter; // @synthesize useDiskWriter=_useDiskWriter;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) FPActionOperationLocator *source; // @synthesize source=_source;
 @property(readonly, nonatomic) FPActionOperationLocator *root; // @synthesize root=_root;
 @property(readonly, nonatomic) unsigned char kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)shouldAccountForDownloadOfSourceItemForMoveInfo:(id)arg1 extensionManager:(id)arg2;
 - (id)initWithKind:(unsigned char)arg1 source:(id)arg2 targetName:(id)arg3 targetFolder:(id)arg4 root:(id)arg5 atomically:(_Bool)arg6 sourceMaterializeOption:(unsigned long long)arg7 targetMaterializeOption:(unsigned long long)arg8 useDiskWriter:(_Bool)arg9;

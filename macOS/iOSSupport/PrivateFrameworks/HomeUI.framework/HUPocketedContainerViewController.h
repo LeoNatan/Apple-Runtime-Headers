@@ -17,10 +17,10 @@
     UIVisualEffectView *_pocketBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *pocketBackgroundView; // @synthesize pocketBackgroundView=_pocketBackgroundView;
 @property(retain, nonatomic) UIViewController *pocketViewController; // @synthesize pocketViewController=_pocketViewController;
 @property(readonly, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 - (void)_installContentViewController;
 - (void)viewDidLayoutSubviews;
 - (id)_tearDownPocket;

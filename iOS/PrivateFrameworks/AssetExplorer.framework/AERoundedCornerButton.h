@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)roundedCornerButtonWithStyle:(long long)arg1 buttonType:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setImageView:) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(retain, nonatomic, setter=_setLabel:) UILabel *_label; // @synthesize _label=__label;
 @property(readonly, nonatomic) long long _buttonType; // @synthesize _buttonType=__buttonType;
 @property(nonatomic, setter=_setLayoutStyle:) long long _layoutStyle; // @synthesize _layoutStyle=__layoutStyle;
-- (void).cxx_destruct;
 - (double)_interpolatedGlyphTopInset;
 - (double)_interpolatedGlyphHorizontalInset;
 - (void)layoutSubviews;

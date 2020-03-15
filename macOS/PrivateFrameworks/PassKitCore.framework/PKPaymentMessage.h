@@ -25,6 +25,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)paymentMessageWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isArchived) BOOL archived; // @synthesize archived=_archived;
 @property(nonatomic) BOOL hasAssociatedPaymentApplication; // @synthesize hasAssociatedPaymentApplication=_hasAssociatedPaymentApplication;
 @property(nonatomic) BOOL allowDeepLink; // @synthesize allowDeepLink=_allowDeepLink;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL archiveOnNextTransaction;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 - (void)encodeWithCoder:(id)arg1;

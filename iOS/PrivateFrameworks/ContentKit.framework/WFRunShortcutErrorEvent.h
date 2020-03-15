@@ -17,11 +17,11 @@
 }
 
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *errorCode; // @synthesize errorCode=_errorCode;
 @property(copy, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

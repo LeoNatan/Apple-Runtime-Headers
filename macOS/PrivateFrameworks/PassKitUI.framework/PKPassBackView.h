@@ -18,8 +18,8 @@
     PKButton *_backDoneButton;
 }
 
-@property(readonly) PKButton *backDoneButton; // @synthesize backDoneButton=_backDoneButton;
 - (void).cxx_destruct;
+@property(readonly) PKButton *backDoneButton; // @synthesize backDoneButton=_backDoneButton;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (double)textFieldHeightWithWidth:(double)arg1 string:(id)arg2 font:(id)arg3;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

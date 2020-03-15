@@ -36,6 +36,7 @@
 + (void)dumpMetadataForData:(id)arg1;
 + (void)dumpImageData:(id)arg1;
 + (void)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibrary:(id)arg3 withOptions:(id)arg4 progress:(id *)arg5 delegate:(id)arg6 atEnd:(CDUnknownBlockType)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHImportSource *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSMutableSet *importedBurstUUIDs; // @synthesize importedBurstUUIDs=_importedBurstUUIDs;
 @property(retain, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) PHImportResults *results; // @synthesize results=_results;
 @property(retain, nonatomic) PHImportOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (id)removeImportDirectoryForLibrary:(id)arg1;
 - (void)importedBurstAsset:(id)arg1;
 - (void)cancellationHandler;
@@ -64,9 +64,11 @@
 - (void)importRecords:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_recordsToImportWithCount:(unsigned long long)arg1;
 - (void)importRecords:(id)arg1;
-- (void)downloadNextAssetInRecord:(id)arg1 recordEnumerator:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)downloadNextAssetInRecord:(id)arg1 toURL:(id)arg2 subRecordEnumerator:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)shouldImportRecordAsReference:(id)arg1;
 - (void)importNextAsset:(id)arg1;
+- (id)getDestinationUrlForImportAsset:(id)arg1;
+- (id)makeDownloadUrlForParentFolderPath:(id)arg1;
 - (id)beginImport:(id)arg1;
 - (id)initWithLibrary:(id)arg1 options:(id)arg2 source:(id)arg3 delegate:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 

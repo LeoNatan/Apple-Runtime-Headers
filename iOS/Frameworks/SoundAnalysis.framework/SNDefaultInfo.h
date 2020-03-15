@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id _initialValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id initialValue; // @synthesize initialValue=_initialValue;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,10 +15,10 @@
     HFStaticItem *_useListeningHistoryItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItem *useListeningHistoryItem; // @synthesize useListeningHistoryItem=_useListeningHistoryItem;
 @property(retain, nonatomic) HFStaticItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(readonly, nonatomic) NSArray *playbackInfluencesOptionItems; // @synthesize playbackInfluencesOptionItems=_playbackInfluencesOptionItems;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)updateUseListeningHistorySetting:(_Bool)arg1;

@@ -16,11 +16,11 @@
     double _topMarginForLayout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double topMarginForLayout; // @synthesize topMarginForLayout=_topMarginForLayout;
 @property(nonatomic) double overrideIntrinsicContentHeight; // @synthesize overrideIntrinsicContentHeight=_overrideIntrinsicContentHeight;
 @property(retain, nonatomic) WGWidgetPlatterView *platterView; // @synthesize platterView=_platterView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)initWithPlatterView:(id)arg1;

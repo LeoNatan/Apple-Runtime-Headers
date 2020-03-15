@@ -28,6 +28,7 @@
 + (BOOL)_isRunningInExtension;
 + (void)_applicationDidFinishLaunching:(id)arg1;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setRunningTasksMap:) NSMapTable *_runningTasksMap; // @synthesize _runningTasksMap=__runningTasksMap;
 @property(retain, nonatomic, setter=_setPermittedIdentifiers:) NSSet *_permittedIdentifiers; // @synthesize _permittedIdentifiers=__permittedIdentifiers;
 @property(retain, nonatomic, setter=_setRegistrations:) NSMutableDictionary *_registrations; // @synthesize _registrations=__registrations;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic, setter=_setQueuedExpiredLaunchActivities:) NSMutableSet *_queuedExpiredLaunchActivities; // @synthesize _queuedExpiredLaunchActivities=__queuedExpiredLaunchActivities;
 @property(retain, nonatomic, setter=_setQueuedLaunchActivities:) NSMutableSet *_queuedLaunchActivities; // @synthesize _queuedLaunchActivities=__queuedLaunchActivities;
 @property(retain, nonatomic, setter=_setScheduler:) id <_DASActivityBackgroundTasksScheduler> _scheduler; // @synthesize _scheduler=__scheduler;
-- (void).cxx_destruct;
 - (void)_simulateExpirationForTaskWithIdentifier:(id)arg1;
 - (void)_simulateLaunchForTaskWithIdentifier:(id)arg1;
 - (void)scheduler:(id)arg1 willExpireActivities:(id)arg2;

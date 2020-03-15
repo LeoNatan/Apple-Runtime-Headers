@@ -23,6 +23,7 @@
 
 + (BOOL)formattedTextHasTextContent:(id)arg1;
 + (id)largeMiddleTextFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKTextAreaView *textAreaViewForAlignment; // @synthesize textAreaViewForAlignment=_textAreaViewForAlignment;
 @property(retain, nonatomic) TLKLabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
 @property(retain, nonatomic) TLKLabel *middleLabel; // @synthesize middleLabel=_middleLabel;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) TLKFormattedText *bottomText; // @synthesize bottomText=_bottomText;
 @property(retain, nonatomic) TLKFormattedText *middleText; // @synthesize middleText=_middleText;
 @property(retain, nonatomic) TLKFormattedText *topText; // @synthesize topText=_topText;
-- (void).cxx_destruct;
 - (id)bottomLabelString;
 - (id)middleLabelString;
 - (id)topLabelString;

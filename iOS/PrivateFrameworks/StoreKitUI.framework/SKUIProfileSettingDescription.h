@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_viewClassForSettingDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *photo; // @synthesize photo=_photo;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (void)_fetchProfilePhoto;
 - (void)_fetchAccountInfo;
 - (void)reloadData;

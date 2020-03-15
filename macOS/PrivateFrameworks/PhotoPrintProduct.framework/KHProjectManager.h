@@ -25,6 +25,7 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) KHFileSystemWatcher *fileSystemWatcher; // @synthesize fileSystemWatcher=_fileSystemWatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(readonly) NSMutableDictionary *bundlesByURL; // @synthesize bundlesByURL=_bundlesByURL;
@@ -33,7 +34,6 @@
 @property(readonly) NSMutableSet *bundleSet; // @synthesize bundleSet=_bundleSet;
 @property(copy, nonatomic) NSURL *projectsDirectoryURL; // @synthesize projectsDirectoryURL=_projectsDirectoryURL;
 @property(nonatomic) BOOL scanForProjects; // @synthesize scanForProjects=_scanForProjects;
-- (void).cxx_destruct;
 - (void)fileSystemWatcher:(id)arg1 didObserveChangesAtPath:(id)arg2;
 - (BOOL)recycleProjectBundle:(id)arg1;
 - (BOOL)removeProjectBundle:(id)arg1;

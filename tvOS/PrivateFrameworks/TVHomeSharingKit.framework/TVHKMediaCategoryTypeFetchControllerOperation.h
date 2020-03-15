@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (CDUnknownBlockType)_mediaCategoryTypesSortComparator;
 + (id)_changesFromMediaCategoryTypes:(id)arg1 toMediaCategoryTypes:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaCategoryTypesFetchControllerResult *result; // @synthesize result=_result;
 @property(copy, nonatomic) NSArray *currentMediaCategoryTypes; // @synthesize currentMediaCategoryTypes=_currentMediaCategoryTypes;
 @property(nonatomic) long long queryReason; // @synthesize queryReason=_queryReason;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithMediaEntityServer:(id)arg1 queryReason:(long long)arg2;
 - (id)initWithMediaEntityServer:(id)arg1;

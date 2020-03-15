@@ -15,8 +15,8 @@
     NSArray *_visibleAssociatedMessageChatItems;
 }
 
-@property(retain, nonatomic, setter=_setVisibleAssociatedMessageChatItems:) NSArray *visibleAssociatedMessageChatItems; // @synthesize visibleAssociatedMessageChatItems=_visibleAssociatedMessageChatItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setVisibleAssociatedMessageChatItems:) NSArray *visibleAssociatedMessageChatItems; // @synthesize visibleAssociatedMessageChatItems=_visibleAssociatedMessageChatItems;
 @property(readonly, retain, nonatomic) NSAttributedString *editedBody;
 
 // Remaining properties

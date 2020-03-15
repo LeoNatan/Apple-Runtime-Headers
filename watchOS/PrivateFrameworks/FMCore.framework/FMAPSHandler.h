@@ -21,13 +21,13 @@
 }
 
 + (id)constantForEnvironmentString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool registrationsSuspended; // @synthesize registrationsSuspended=_registrationsSuspended;
 @property(retain, nonatomic) NSString *environmentName; // @synthesize environmentName=_environmentName;
 @property(retain, nonatomic) NSMutableArray *pendingPushes; // @synthesize pendingPushes=_pendingPushes;
 @property(retain, nonatomic) NSMutableArray *registeredDelegates; // @synthesize registeredDelegates=_registeredDelegates;
 @property(retain, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
 @property(nonatomic) _Bool registerForDarkWake; // @synthesize registerForDarkWake=_registerForDarkWake;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)_setEnabledTopics:(id)arg1;

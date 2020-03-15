@@ -28,6 +28,7 @@
     NTPBAsset *_assetMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain) NTPBAsset *assetMetadata; // @synthesize assetMetadata=_assetMetadata;
 @property(copy) NSString *rawFilePath; // @synthesize rawFilePath=_rawFilePath;
 @property(nonatomic) long long lifetimeHint; // @synthesize lifetimeHint=_lifetimeHint;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
 @property(retain) NSError *downloadError; // @synthesize downloadError=_downloadError;
 @property(retain) id <FCAssetDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
-- (void).cxx_destruct;
 - (_Bool)_canRetryDownload;
 - (void)_completeFetchWithDataProvider:(id)arg1 error:(id)arg2;
 - (void)_revisitDownloadRequestPriorities;

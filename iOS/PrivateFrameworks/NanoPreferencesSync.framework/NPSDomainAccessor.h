@@ -21,11 +21,11 @@
 + (id)copyDomainList;
 + (void)resolveActivePairedDevicePairingID:(id *)arg1 pairingDataStore:(id *)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initializedWithActiveDevice; // @synthesize initializedWithActiveDevice=_initializedWithActiveDevice;
 @property(retain, nonatomic) NPSDomainAccessorInternal *internalAccessor; // @synthesize internalAccessor=_internalAccessor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *invalidationQueue; // @synthesize invalidationQueue=_invalidationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalQueue; // @synthesize externalQueue=_externalQueue;
-- (void).cxx_destruct;
 - (id)copyKeyList;
 - (id)dictionaryRepresentation;
 - (void)setURL:(id)arg1 forKey:(id)arg2;

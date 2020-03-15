@@ -33,6 +33,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *keychainAccessGroup; // @synthesize keychainAccessGroup=_keychainAccessGroup;
 @property BOOL controlProviderInitialized; // @synthesize controlProviderInitialized=_controlProviderInitialized;
 @property(copy) NSString *packetProviderDesignatedRequirement; // @synthesize packetProviderDesignatedRequirement=_packetProviderDesignatedRequirement;
@@ -49,7 +50,6 @@
 @property BOOL filterPackets; // @synthesize filterPackets=_filterPackets;
 @property BOOL filterSockets; // @synthesize filterSockets=_filterSockets;
 @property BOOL filterBrowsers; // @synthesize filterBrowsers=_filterBrowsers;
-- (void).cxx_destruct;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -9,6 +9,8 @@
 @class NSString;
 
 @protocol SRFXPCServiceProtocol <NSObject>
+- (void)endFullSuppressionActivityWithReason:(NSString *)arg1;
+- (void)beginFullSuppressionActivityWithReason:(NSString *)arg1;
 - (void)endVoiceTriggerSuppressionActivityWithReason:(NSString *)arg1;
 - (void)beginVoiceTriggerSuppressionActivityWithReason:(NSString *)arg1;
 - (void)invokeWithNotificationName:(NSString *)arg1 completion:(void (^)(BOOL))arg2;

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _targetSeekTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setTimedOut:) _Bool _timedOut; // @synthesize _timedOut=__timedOut;
 @property(nonatomic, setter=_setArrived:) _Bool _arrived; // @synthesize _arrived=__arrived;
 @property(nonatomic, setter=_setSeeked:) _Bool _seeked; // @synthesize _seeked=__seeked;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *targetModificationDate; // @synthesize targetModificationDate=_targetModificationDate;
 @property(retain, nonatomic) PUAssetReference *targetAssetReference; // @synthesize targetAssetReference=_targetAssetReference;
 @property(retain, nonatomic) PUBrowsingViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (id)_infoMessage;
 - (id)_navigationRequestError;
 - (void)_cleanUpWhenDone;

@@ -10,7 +10,7 @@
 #import <NanoPassKit/PKPaymentWebServiceArchiver-Protocol.h>
 #import <NanoPassKit/PKPaymentWebServiceTargetDeviceProtocol-Protocol.h>
 
-@class IDSService, NPKCompanionAgentConnection, NPKTapToRadarManager, NPKTargetDeviceAssertionManager, NRActiveDeviceAssertion, NSMutableDictionary, NSString;
+@class IDSService, NPKCompanionAgentConnection, NPKSubcredentialInvitationCoordinator, NPKTapToRadarManager, NPKTargetDeviceAssertionManager, NRActiveDeviceAssertion, NSMutableDictionary, NSString;
 @protocol NPKPasscodeChangeCoordinatorProtocol, NPKPaymentWebServiceCompanionTargetDeviceDelegate, OS_dispatch_queue;
 
 @interface NPKPaymentWebServiceCompanionTargetDevice : NSObject <IDSServiceDelegate, PKPaymentWebServiceTargetDeviceProtocol, PKPaymentWebServiceArchiver>
@@ -27,9 +27,12 @@
     NPKTapToRadarManager *_manager;
     id <NPKPasscodeChangeCoordinatorProtocol> _passcodeChangeCoordinator;
     id _passcodeUpgradeFlowController;
+    NPKSubcredentialInvitationCoordinator *_subcredentialInvitationCoordinator;
 }
 
 + (id)bridgedClientInfoHTTPHeader;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NPKSubcredentialInvitationCoordinator *subcredentialInvitationCoordinator; // @synthesize subcredentialInvitationCoordinator=_subcredentialInvitationCoordinator;
 @property(nonatomic) __weak id passcodeUpgradeFlowController; // @synthesize passcodeUpgradeFlowController=_passcodeUpgradeFlowController;
 @property(retain, nonatomic) id <NPKPasscodeChangeCoordinatorProtocol> passcodeChangeCoordinator; // @synthesize passcodeChangeCoordinator=_passcodeChangeCoordinator;
 @property(retain, nonatomic) NPKTapToRadarManager *manager; // @synthesize manager=_manager;
@@ -42,11 +45,11 @@
 @property(retain, nonatomic) IDSService *provisioningService; // @synthesize provisioningService=_provisioningService;
 @property(nonatomic) unsigned long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
-- (_Bool)_currentlyPairing;
+- (id)_statusUpdaterWithResponseClass:(Class)arg1 type:(unsigned short)arg2 responseIdentifier:(id)arg3;
 - (id)_categoryIdentifierForPass:(id)arg1;
 - (id)_expressModesFromExpressPassesInformation:(id)arg1;
 - (id)_expressPassesInformationFromDataArray:(id)arg1;
+- (_Bool)_deviceIsConnected;
 - (_Bool)_deviceIsFortuneOrLater;
 - (_Bool)_deviceIsDaytonaOrLater;
 - (_Bool)deviceSupportTransitReminderSetting;
@@ -54,10 +57,31 @@
 - (id)_serialNumbersOfAllPairedDevices;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2;
-- (void)_setOrResetCleanupTimerForRequest:(id)arg1;
+- (id)_sendProtobuf:(id)arg1 responseIdentifier:(id)arg2;
+- (void)_trackOutstandingRequestWithMessageIdentifier:(id)arg1 completionHandler:(id)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)_invalidateAssertionOfType:(unsigned long long)arg1;
 - (void)_acquireAssertionOfType:(unsigned long long)arg1;
+- (void)consistencyCheck;
 - (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
+- (void)updateSubcredentialMetadataResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 updateMetadataOnPass:(id)arg2 withCredential:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)requestSubcredentialInvitationResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 requestSubcredentialInvitation:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setAccountAttestationAnonymizationSaltResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 setAccountAttestationAnonymizationSalt:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)accountAttestationAnonymizationSaltResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 accountAttestationAnonymizationSaltWithCompletion:(CDUnknownBlockType)arg2;
+- (void)handleAcceptSubcredentialProvisioningRequest:(id)arg1;
+- (void)matchingCredentialOnDeviceResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 matchingInvitationOnDevice:(id)arg2 withTimeout:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)acceptSubcredentialInvitationResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 acceptSubcredentialInvitationWithIdentifier:(id)arg2 metadata:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)subcredentialInvitationsResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 subcredentialInvitationsWithCompletion:(CDUnknownBlockType)arg2;
+- (void)canAcceptInvitationResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 canAcceptInvitation:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (id)deviceIDSIdentifier;
+- (_Bool)_isSubcredentialProvisioningSupported;
 - (void)endRequiringUpgradedPasscodeIfNecessary;
 - (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
 - (void)handlePasscodeUpgradeFlowShouldExitRequest:(id)arg1;
@@ -83,9 +107,11 @@
 - (id)_upgradeExpressAutomaticSelectionCriteriaRequestForPass:(id)arg1 deviceClass:(id)arg2 OSVersion:(id)arg3 SEID:(id)arg4;
 - (id)_upgradeExpressAutomaticSelectionCriteriaRequestForPass:(id)arg1;
 - (id)_expressPassInformationWithPass:(id)arg1 upgradeRequst:(id)arg2;
+- (void)paymentWebService:(id)arg1 canHandlePotentialExpressPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_singleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_multipleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 upgradeRequest:(id)arg3 pass:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (void)paymentWebService:(id)arg1 handlePotentialExpressPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)isGymKitEnabled;
 - (_Bool)supportsCredentialType:(long long)arg1;
 - (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (_Bool)felicaSecureElementIsAvailable;
@@ -135,9 +161,9 @@
 - (void)enableServiceModeForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelOutstandingSetDefaultExpressPassRequestsWithExpressMode:(id)arg1;
 - (void)enableServiceModeResponse:(id)arg1;
-- (void)commutePlanReminderIntervalForCommutePlan:(id)arg1 pass:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)commutePlanReminderForCommutePlan:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)commutePlanReminderWithCommutePlanAndPassResponse:(id)arg1;
-- (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)setCommutePlanReminder:(id)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setCommutePlanReminderWithCommutePlanAndPassResponse:(id)arg1;
 - (void)balanceReminderForBalance:(id)arg1 pass:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)balanceReminderWithBalanceAndPassResponse:(id)arg1;
@@ -179,12 +205,15 @@
 - (void)paymentWebService:(id)arg1 addPaymentPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)paymentWebService:(id)arg1 deleteApplicationWithAID:(id)arg2;
 - (id)deviceVersion;
+- (id)osVersion;
 - (id)deviceClass;
 - (id)deviceName;
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;
+- (int)registrationSupportedInCurrentRegionForWebService:(id)arg1;
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (id)paymentWebService:(id)arg1 filterVerificationChannels:(id)arg2;
 - (void)paymentWebServiceDidUpdateConfiguration:(id)arg1;
+- (_Bool)_supportsFeaturesForWebService:(id)arg1;
 - (id)_supportedRegionsForWebService:(id)arg1;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2 primaryRegionTopic:(id)arg3;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2;

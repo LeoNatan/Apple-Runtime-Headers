@@ -29,6 +29,7 @@
     SAConnectionPolicy *_connectionPolicy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSiriServerLoggingEnabled) _Bool enableSiriServerLogging; // @synthesize enableSiriServerLogging=_enableSiriServerLogging;
 @property(copy, nonatomic) SAConnectionPolicy *connectionPolicy; // @synthesize connectionPolicy=_connectionPolicy;
 @property(nonatomic) _Bool requiresURLSession; // @synthesize requiresURLSession=_requiresURLSession;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *aceHost; // @synthesize aceHost=_aceHost;
 @property(copy, nonatomic) SAConnectionPolicyRoute *connectionPolicyRoute; // @synthesize connectionPolicyRoute=_connectionPolicyRoute;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_appendPotentiallyNilString:(id)arg1 toMutableString:(id)arg2;
 

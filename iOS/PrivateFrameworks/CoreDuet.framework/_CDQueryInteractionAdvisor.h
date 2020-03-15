@@ -13,8 +13,8 @@
     _CDInteractionStore *_store;
 }
 
-@property(retain) _CDInteractionStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(retain) _CDInteractionStore *store; // @synthesize store=_store;
 - (id)adviseInteractionsForKeywordsInString:(id)arg1 usingSettings:(id)arg2;
 - (id)initWithStore:(id)arg1;
 

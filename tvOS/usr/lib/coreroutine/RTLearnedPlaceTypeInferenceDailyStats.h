@@ -16,11 +16,11 @@
     double _aggregateDwellTimeBetweenDateRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double aggregateDwellTimeBetweenDateRange; // @synthesize aggregateDwellTimeBetweenDateRange=_aggregateDwellTimeBetweenDateRange;
 @property(readonly, nonatomic) unsigned long long visitCount; // @synthesize visitCount=_visitCount;
 @property(readonly, nonatomic) NSDate *end; // @synthesize end=_end;
 @property(readonly, nonatomic) NSDate *start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithStart:(id)arg1 end:(id)arg2 visitCount:(unsigned long long)arg3 aggregateDwellTimeBetweenDateRange:(double)arg4;
 

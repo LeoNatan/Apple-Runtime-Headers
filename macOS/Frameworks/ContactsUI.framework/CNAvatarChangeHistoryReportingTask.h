@@ -15,9 +15,9 @@
     id <CNAvatarCacheChangeListenerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNAvatarCacheChangeListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (id)run:(id *)arg1;
 - (id)initWithIdentifiers:(id)arg1 delegate:(id)arg2;
 

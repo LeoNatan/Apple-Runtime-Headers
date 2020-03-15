@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dateAfterWhichDataShouldBeClearedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dateAfterWhichDataShouldBeClearedBlock; // @synthesize dateAfterWhichDataShouldBeClearedBlock=_dateAfterWhichDataShouldBeClearedBlock;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *descriptionOfInterval; // @synthesize descriptionOfInterval=_descriptionOfInterval;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithDescription:(id)arg1 identifier:(id)arg2 dateAfterWhichDataShouldBeClearedBlock:(CDUnknownBlockType)arg3;

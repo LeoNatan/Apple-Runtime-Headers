@@ -15,8 +15,8 @@
 
 + (struct UIEdgeInsets)backgroundInsets;
 + (id)defaultContentImage;
-@property(readonly, nonatomic) SBHomeScreenMaterialView *materialView; // @synthesize materialView=_materialView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBHomeScreenMaterialView *materialView; // @synthesize materialView=_materialView;
 @property(readonly, nonatomic) UIView *backgroundView;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;

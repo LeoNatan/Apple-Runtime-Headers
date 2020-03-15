@@ -38,10 +38,10 @@
 + (id)memoriesFeedLandscapeEdgeInsetsInterpolator;
 + (id)memoriesFeedPortraitEdgeInsetsInterpolator;
 + (id)memoriesFeedInteritemSpacingInterpolator;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCachedValue:) NSValue *_cachedValue; // @synthesize _cachedValue=__cachedValue;
 @property(nonatomic, setter=_setCachedMetric:) double _cachedMetric; // @synthesize _cachedMetric=__cachedMetric;
 @property(readonly, nonatomic) NSMutableArray *_referenceValuesByMetrics; // @synthesize _referenceValuesByMetrics=__referenceValuesByMetrics;
-- (void).cxx_destruct;
 - (double)valueForMetric:(double)arg1;
 - (id)_valueForMetric:(double)arg1 fromInterpolationBetweenValue:(id)arg2 secondValue:(id)arg3;
 - (void)_getReferenceValueForMetric:(double)arg1 exactMatch:(id *)arg2 closestBeforeMatch:(id *)arg3 closestAfterMatch:(id *)arg4;

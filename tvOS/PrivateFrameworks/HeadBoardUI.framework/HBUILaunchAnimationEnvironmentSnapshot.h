@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)snapshotWithRootEnvironment:(id)arg1 animationContext:(id)arg2;
-@property(readonly, nonatomic) NSHashTable *animationEnvironments; // @synthesize animationEnvironments=_animationEnvironments;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSHashTable *animationEnvironments; // @synthesize animationEnvironments=_animationEnvironments;
 - (id)launchAnimationsWithContext:(id)arg1;
 - (void)didFinishLaunchAnimationWithContext:(id)arg1;
 - (void)willBeginLaunchAnimationWithContext:(id)arg1;

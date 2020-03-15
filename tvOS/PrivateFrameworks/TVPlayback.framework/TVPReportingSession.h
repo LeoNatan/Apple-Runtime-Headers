@@ -16,9 +16,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTCReporting *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (void)_sendEvent:(id)arg1 withCategory:(unsigned short)arg2 type:(unsigned short)arg3 values:(id)arg4;
 - (void)reportDownloadFinishedWithResult:(long long)arg1 error:(id)arg2;
 - (id)initWithMediaItem:(id)arg1;

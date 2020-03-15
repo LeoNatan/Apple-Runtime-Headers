@@ -18,11 +18,10 @@ __attribute__((visibility("hidden")))
     float _topLayoutGuideInset;
 }
 
-@property(nonatomic) float topLayoutGuideInset; // @synthesize topLayoutGuideInset=_topLayoutGuideInset;
 - (void).cxx_destruct;
+@property(nonatomic) float topLayoutGuideInset; // @synthesize topLayoutGuideInset=_topLayoutGuideInset;
 - (void)updateBarTintColor:(id)arg1;
 - (int)positionForBar:(id)arg1;
-- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

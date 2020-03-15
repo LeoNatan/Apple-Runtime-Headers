@@ -17,11 +17,11 @@
     NSError *_lastError;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *lastError; // @synthesize lastError=_lastError;
 @property(copy, nonatomic) CDUnknownBlockType editingManagerProvider; // @synthesize editingManagerProvider=_editingManagerProvider;
 @property(retain) id <CUIKDecisionDelegate> decisionDelegate; // @synthesize decisionDelegate=_decisionDelegate;
 @property(retain) id <CUIKCommitDelegate> commitDelegate; // @synthesize commitDelegate=_commitDelegate;
-- (void).cxx_destruct;
 
 @end
 

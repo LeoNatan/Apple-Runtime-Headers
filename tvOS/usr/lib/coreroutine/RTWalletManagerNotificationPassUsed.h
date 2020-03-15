@@ -15,10 +15,10 @@
     NSArray *_storeIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *storeIDs; // @synthesize storeIDs=_storeIDs;
 @property(readonly, nonatomic) long long source; // @synthesize source=_source;
 @property(readonly, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
-- (void).cxx_destruct;
 
 @end
 

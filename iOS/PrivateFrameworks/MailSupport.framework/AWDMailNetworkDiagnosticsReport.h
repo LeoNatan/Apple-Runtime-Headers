@@ -35,6 +35,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numBackgroundWifiClients; // @synthesize numBackgroundWifiClients=_numBackgroundWifiClients;
 @property(nonatomic) unsigned long long numActiveCalls; // @synthesize numActiveCalls=_numActiveCalls;
 @property(nonatomic) _Bool roamingAllowed; // @synthesize roamingAllowed=_roamingAllowed;
@@ -45,7 +46,6 @@
 @property(nonatomic) _Bool dnsEnabled; // @synthesize dnsEnabled=_dnsEnabled;
 @property(nonatomic) unsigned int reachabilityFlags; // @synthesize reachabilityFlags=_reachabilityFlags;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

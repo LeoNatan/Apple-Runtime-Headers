@@ -25,10 +25,10 @@
 + (id)builderWithObject:(id)arg1;
 + (id)nameObjectSeparator;
 + (id)componentSeparator;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useDebugDescription; // @synthesize useDebugDescription=_useDebugDescription;
 @property(retain, nonatomic) NSString *activeMultilinePrefix; // @synthesize activeMultilinePrefix=_activePrefix;
 @property(nonatomic) int activeComponent; // @synthesize activeComponent=_activeComponent;
-- (void).cxx_destruct;
 - (id)build;
 - (id)appendFormat:(id)arg1;
 - (id)appendString:(id)arg1;

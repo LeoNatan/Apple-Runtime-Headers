@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIView *_sourceView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(retain, nonatomic) NSString *imageURLStr; // @synthesize imageURLStr=_imageURLStr;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
-- (void).cxx_destruct;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1 viewElement:(id)arg2 sourceView:(id)arg3;
 

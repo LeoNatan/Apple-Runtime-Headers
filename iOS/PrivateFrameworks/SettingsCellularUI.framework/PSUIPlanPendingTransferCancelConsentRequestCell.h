@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UILabel *_requestSentLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *requestSentLabel; // @synthesize requestSentLabel=_requestSentLabel;
 @property(retain, nonatomic) UILabel *rightMargin; // @synthesize rightMargin=_rightMargin;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) CTCellularPlanManager *cellularPlanManager; // @synthesize cellularPlanManager=_cellularPlanManager;
 @property(retain, nonatomic) CTCellularPlanPendingTransfer *planPendingTransfer; // @synthesize planPendingTransfer=_planPendingTransfer;
-- (void).cxx_destruct;
 - (void)cancelPressed;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 

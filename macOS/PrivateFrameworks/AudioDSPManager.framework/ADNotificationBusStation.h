@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
     shared_ptr_ea97fd03 _station;
 }
 
-@property(readonly, nonatomic) shared_ptr_ea97fd03 station; // @synthesize station=_station;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) shared_ptr_ea97fd03 station; // @synthesize station=_station;
 - (id)createBusForTopic:(id)arg1;
 - (id)busForTopic:(id)arg1;
 - (shared_ptr_ea97fd03)busStation;

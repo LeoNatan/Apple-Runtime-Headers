@@ -45,11 +45,11 @@
     NSArray *_payments;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *payments; // @synthesize payments=_payments;
 @property(retain, nonatomic) NSArray *fundingSources; // @synthesize fundingSources=_fundingSources;
 @property(nonatomic) __weak id <PKAccountBillPaymentControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_accountDidChange:(id)arg1;
 - (void)_billPaymentHasCompletedWithState:(unsigned long long)arg1 error:(id)arg2;
 - (void)_performApplePayTrustSignatureRequestWithSignature:(id)arg1 completion:(CDUnknownBlockType)arg2;

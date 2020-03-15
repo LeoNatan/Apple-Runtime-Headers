@@ -19,11 +19,11 @@
     struct CGPoint _pointerLocationInView;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGPoint pointerLocationInView; // @synthesize pointerLocationInView=_pointerLocationInView;
 @property(readonly) NSArray *itemRectsInView; // @synthesize itemRectsInView=_itemRectsInView;
 @property(readonly) __weak NSView *view; // @synthesize view=_view;
 @property(readonly) __weak id <RVPresenterHighlightDelegate> highlightDelegate; // @synthesize highlightDelegate=_highlightDelegate;
-- (void).cxx_destruct;
 - (void)highlightRangeChangedForItem:(id)arg1;
 - (void)stopHighlightingItem:(id)arg1;
 - (void)completeHighlightingItem:(id)arg1;

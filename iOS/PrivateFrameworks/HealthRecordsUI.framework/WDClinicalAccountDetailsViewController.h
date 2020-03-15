@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_status;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(retain, nonatomic) NSString *patientIdentifier; // @synthesize patientIdentifier=_patientIdentifier;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) __weak id <WDClinicalAccountDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)healthRecordsStore:(id)arg1 accountDidChange:(id)arg2 changeType:(long long)arg3;
 - (void)_hideActivityAndDismissUnlessError:(id)arg1;
 - (void)_showActivityInProgressUIWithMessage:(id)arg1;
@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)accountOwner;
 - (void)_computeSections;
+- (_Bool)_showInternalGatewayDetails;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)dealloc;
 - (void)viewDidLoad;

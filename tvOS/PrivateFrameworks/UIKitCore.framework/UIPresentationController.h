@@ -73,6 +73,7 @@
 + (_Bool)_preventsAppearanceProxyCustomization;
 + (struct UIEdgeInsets)_statusBarOverlapAndMarginInfoForView:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_realSourceView) UIView *realSourceView; // @synthesize realSourceView=_realSourceView;
 @property(nonatomic) _Bool isCurrentStateCancelled; // @synthesize isCurrentStateCancelled=_isCurrentStateCancelled;
 @property(nonatomic, getter=_containerIgnoresDirectTouchEvents, setter=_setContainerIgnoresDirectTouchEvents:) _Bool containerIgnoresDirectTouchEvents; // @synthesize containerIgnoresDirectTouchEvents=_containerIgnoresDirectTouchEvents;
@@ -104,7 +105,6 @@
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic, getter=_preferredContentSize, setter=_setPreferredContentSize:) struct CGSize _preferredContentSize; // @synthesize _preferredContentSize;
-- (void).cxx_destruct;
 - (_Bool)_shouldSavePresentedViewControllerForStateRestoration;
 - (struct UIEdgeInsets)_additionalSafeAreaInsets;
 - (void)_sendFallbackDidDismiss;

@@ -18,11 +18,11 @@
     id <FCChannelProviding> _channel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <FCChannelProviding> channel; // @synthesize channel=_channel;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (_Bool)webEmbedsEnabled;
-- (void).cxx_destruct;
 - (_Bool)useTransparentNavigationBar;
 - (_Bool)isPremium;
 - (id)localDraftPath;

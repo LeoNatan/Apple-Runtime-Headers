@@ -17,9 +17,9 @@
     NSMutableSet *_leaseEndIgnoreReasons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *leaseEndIgnoreReasons; // @synthesize leaseEndIgnoreReasons=_leaseEndIgnoreReasons;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
-- (void).cxx_destruct;
 - (void)_updateStateForPlaybackPrevention;
 - (void)_itemShouldPreventPlaybackDidChangeNotification:(id)arg1;
 - (void)engine:(id)arg1 willChangeToItem:(id)arg2 fromItem:(id)arg3;

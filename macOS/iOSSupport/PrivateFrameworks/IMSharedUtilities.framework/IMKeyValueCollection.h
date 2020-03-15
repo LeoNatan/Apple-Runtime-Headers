@@ -20,10 +20,10 @@
     NSMutableDictionary *_recordedChanges;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *recordedChanges; // @synthesize recordedChanges=_recordedChanges;
 @property(nonatomic) __weak id <IMKeyValueCollectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <IMKeyValueCollectionStorage> keyValueStorage; // @synthesize keyValueStorage=_keyValueStorage;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;

@@ -19,8 +19,8 @@
     id <PRGenericRangingSessionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PRGenericRangingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PRGenericRangingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)stopP2PRanging:(id)arg1 error:(id *)arg2;
 - (_Bool)startP2PRanging:(id)arg1 error:(id *)arg2;
 - (void)configureForP2PRanging:(id)arg1 options:(id)arg2;

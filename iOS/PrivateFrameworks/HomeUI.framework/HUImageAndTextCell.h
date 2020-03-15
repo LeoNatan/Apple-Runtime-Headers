@@ -22,13 +22,13 @@
     struct CGSize _imageViewRecommendedSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILayoutGuide *infoImageViewTrailingMarginLayoutGuide; // @synthesize infoImageViewTrailingMarginLayoutGuide=_infoImageViewTrailingMarginLayoutGuide;
 @property(retain, nonatomic) NSArray *contentConstraints; // @synthesize contentConstraints=_contentConstraints;
 @property(readonly, nonatomic) UIImageView *infoImageView; // @synthesize infoImageView=_infoImageView;
 @property(nonatomic) struct CGSize imageViewRecommendedSize; // @synthesize imageViewRecommendedSize=_imageViewRecommendedSize;
 @property(readonly, nonatomic) UITextView *messageTextView; // @synthesize messageTextView=_messageTextView;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_resetContentConstraints;
 @property(readonly, nonatomic) _Bool prefersSeparatorsHidden;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;

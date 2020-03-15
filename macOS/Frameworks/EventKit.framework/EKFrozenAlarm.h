@@ -32,6 +32,7 @@
 
 + (Class)alternateUniverseClass;
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isTimeToLeaveAlarm; // @synthesize isTimeToLeaveAlarm;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url;
 @property(readonly, copy, nonatomic) id <EKProtocolStructuredLocation> structuredLocation; // @synthesize structuredLocation;
@@ -47,7 +48,6 @@
 @property(readonly, copy, nonatomic) NSString *actionString; // @synthesize actionString;
 @property(readonly, copy, nonatomic) NSDate *acknowledgedDate; // @synthesize acknowledgedDate;
 @property(readonly, copy, nonatomic) NSDate *absoluteDate; // @synthesize absoluteDate;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 
 // Remaining properties

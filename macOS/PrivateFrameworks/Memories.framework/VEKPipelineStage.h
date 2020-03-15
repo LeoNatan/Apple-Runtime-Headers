@@ -15,10 +15,10 @@
     VEKProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly) VEKProgress *progress; // @synthesize progress=_progress;
 @property(readonly) NSArray *outputType; // @synthesize outputType=_outputType;
-- (void).cxx_destruct;
 - (id)runStageWithInput:(id)arg1;
 - (id)outputTypes;
 @property(readonly) NSArray *inputTypes;

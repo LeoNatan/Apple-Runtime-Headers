@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _trackingKnotIndex;
 }
 
-@property(nonatomic) long long trackingKnotIndex; // @synthesize trackingKnotIndex=_trackingKnotIndex;
-@property(nonatomic) double scale; // @synthesize scale=_scale;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) long long trackingKnotIndex; // @synthesize trackingKnotIndex=_trackingKnotIndex;
+@property(nonatomic) double scale; // @synthesize scale=_scale;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;

@@ -29,6 +29,7 @@
     float _offsetForRevealingDeleteConfirmationButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_offsetForRevealingDeleteConfirmationButton, setter=_setOffsetForRevealingDeleteConfirmationButton:) float offsetForRevealingDeleteConfirmationButton; // @synthesize offsetForRevealingDeleteConfirmationButton=_offsetForRevealingDeleteConfirmationButton;
 @property(nonatomic) __weak UICollectionViewLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(nonatomic) _Bool transitioningLayouts; // @synthesize transitioningLayouts=_transitioningLayouts;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool interactiveMoveEffectsVisible; // @synthesize interactiveMoveEffectsVisible=_interactiveMoveEffectsVisible;
 @property(retain, nonatomic) UITableViewCollectionCell *tableViewCell; // @synthesize tableViewCell=_tableViewCell;
 @property(retain, nonatomic, getter=_swipeToDeleteCell, setter=_setSwipeToDeleteCell:) UITableViewCell *swipeToDeleteCell; // @synthesize swipeToDeleteCell=_swipeToDeleteCell;
-- (void).cxx_destruct;
 - (void)didTransitionToState:(unsigned int)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
 - (void)setFocusStyle:(int)arg1;

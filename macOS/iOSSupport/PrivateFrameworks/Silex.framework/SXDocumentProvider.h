@@ -15,8 +15,8 @@
     SXDocument *_document;
 }
 
-@property(retain, nonatomic) SXDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXDocument *document; // @synthesize document=_document;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

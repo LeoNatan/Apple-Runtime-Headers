@@ -16,11 +16,11 @@
     CDUnknownBlockType _resultHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(retain, nonatomic) EKDayOccurrenceState *state; // @synthesize state=_state;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) long long requestId; // @synthesize requestId=_requestId;
-- (void).cxx_destruct;
 - (id)initWithId:(long long)arg1 options:(unsigned long long)arg2 state:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
 
 @end

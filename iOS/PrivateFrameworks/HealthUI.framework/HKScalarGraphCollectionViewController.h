@@ -24,6 +24,7 @@
     double _minimumHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic) double collectionViewHeight; // @synthesize collectionViewHeight=_collectionViewHeight;
 @property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <HKScalarGraphCollectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *audiograms; // @synthesize audiograms=_audiograms;
-- (void).cxx_destruct;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;

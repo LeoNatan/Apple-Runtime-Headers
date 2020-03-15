@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *dispatchWorkloop; // @synthesize dispatchWorkloop=_dispatchWorkloop;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) __weak EXSAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) __weak EXSDataConsumerPlugin *plugin; // @synthesize plugin=_plugin;
 @property(retain, nonatomic) id <EXSDataConsumer> dataConsumer; // @synthesize dataConsumer=_dataConsumer;
-- (void).cxx_destruct;
 - (BOOL)waitForConsumerToBeReady;
 - (void)shutdownInstance;
 - (void)startupInstance;

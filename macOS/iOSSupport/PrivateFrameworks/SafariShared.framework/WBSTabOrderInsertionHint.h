@@ -15,10 +15,10 @@
     unsigned long long _relationType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long relationType; // @synthesize relationType=_relationType;
 @property(readonly, nonatomic) unsigned long long insertionIndex; // @synthesize insertionIndex=_insertionIndex;
 @property(readonly, nonatomic) id <WBSOrderedTab> tabToInsertAfter; // @synthesize tabToInsertAfter=_tabToInsertAfter;
-- (void).cxx_destruct;
 - (id)initWithTabToInsertAfter:(id)arg1 insertionIndex:(unsigned long long)arg2 relation:(unsigned long long)arg3;
 - (id)initWithTabToInsertAfter:(id)arg1 relation:(unsigned long long)arg2;
 

@@ -6,10 +6,10 @@
 
 #import <RTTUtilities/NSObject-Protocol.h>
 
-@class AVCVirtualTTYDevice, NSError;
+@class AVCVirtualTTYDevice, NSError, NSString;
 
 @protocol AVCVirtualTTYDeviceDelegate <NSObject>
-- (void)device:(AVCVirtualTTYDevice *)arg1 didReceiveText:(struct NSString *)arg2;
+- (void)device:(AVCVirtualTTYDevice *)arg1 didReceiveText:(NSString *)arg2;
 - (void)device:(AVCVirtualTTYDevice *)arg1 didReceiveCharacter:(unsigned short)arg2;
 - (void)deviceDidStop:(AVCVirtualTTYDevice *)arg1;
 - (void)device:(AVCVirtualTTYDevice *)arg1 didStart:(_Bool)arg2 error:(NSError *)arg3;

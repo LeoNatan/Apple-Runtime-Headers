@@ -14,7 +14,7 @@
 
 @interface PMLFidesTracker : NSObject <PMLLogRegTrackerProtocol, PMLEvaluationTrackerProtocol, PMLMultiLabelEvaluationTrackerProtocol>
 {
-    struct NSString *_planId;
+    NSString *_planId;
 }
 
 - (void).cxx_destruct;
@@ -25,7 +25,7 @@
 - (id)trackEvaluationMetrics:(id)arg1 minibatchStats:(id)arg2;
 - (id)trackGradient:(id)arg1 scaleFactor:(float)arg2 minibatchStats:(id)arg3 evaluationMetrics:(id)arg4 serverIteration:(unsigned long long)arg5;
 - (id)trackWeights:(id)arg1 scaleFactor:(float)arg2 minibatchStats:(id)arg3 evaluationMetrics:(id)arg4;
-- (id)initWithPlanId:(struct NSString *)arg1;
+- (id)initWithPlanId:(id)arg1;
 - (id)init;
 
 // Remaining properties

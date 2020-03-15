@@ -21,13 +21,13 @@
     int _transactionCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int transactionCount; // @synthesize transactionCount=_transactionCount;
 @property(retain, nonatomic) MSVLRUDictionaryNode *tail; // @synthesize tail=_tail;
 @property(retain, nonatomic) MSVLRUDictionaryNode *head; // @synthesize head=_head;
 @property(retain, nonatomic) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(nonatomic) int maximumCapacity; // @synthesize maximumCapacity=_maximumCapacity;
 @property(nonatomic) __weak id <MSVLRUDictionaryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_addNodeToFront:(id)arg1;
 - (void)_moveNodeToFront:(id)arg1;
 - (void)_removeNode:(id)arg1;

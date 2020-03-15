@@ -35,6 +35,7 @@
     UIView *_backgroundContentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCandidateForContentCapture) BOOL candidateForContentCapture; // @synthesize candidateForContentCapture=_candidateForContentCapture;
 @property(nonatomic) __weak UIView *backgroundContentView; // @synthesize backgroundContentView=_backgroundContentView;
 @property(nonatomic) __weak UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -54,7 +55,6 @@
 @property(nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak WFDrawerPaneContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformEscape;
 - (void)didDismissHeaderView:(id)arg1;
 - (void)willTransitionToVisibility:(unsigned long long)arg1;

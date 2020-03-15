@@ -16,11 +16,11 @@
     id <MTLTexture> _mtlTexture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTLTexture> mtlTexture; // @synthesize mtlTexture=_mtlTexture;
 @property(readonly, nonatomic) int length; // @synthesize length=_length;
 @property(readonly, nonatomic) const void *data; // @synthesize data=_data;
 @property(nonatomic) unsigned int gid; // @synthesize gid=_gid;
-- (void).cxx_destruct;
 - (id)initWithData:(const void *)arg1 length:(int)arg2;
 
 @end

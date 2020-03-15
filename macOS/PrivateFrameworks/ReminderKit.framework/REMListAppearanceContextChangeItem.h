@@ -13,8 +13,8 @@
     REMListChangeItem *_listChangeItem;
 }
 
-@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (BOOL)showingLargeAttachments;
 - (void)setShowingLargeAttachments:(BOOL)arg1;
 @property(copy, nonatomic) NSString *badgeEmblem;

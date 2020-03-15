@@ -32,6 +32,7 @@
 
 + (id)navigationBarBackgroundColor;
 + (id)peerPaymentActionViewControllerForAction:(unsigned long long)arg1 paymentPass:(id)arg2 webService:(id)arg3 context:(long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showCancelButton; // @synthesize showCancelButton=_showCancelButton;
 @property(copy, nonatomic) NSDecimalNumber *maxLoadAmount; // @synthesize maxLoadAmount=_maxLoadAmount;
 @property(copy, nonatomic) NSDecimalNumber *minLoadAmount; // @synthesize minLoadAmount=_minLoadAmount;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) PKPeerPaymentActionController *actionController; // @synthesize actionController=_actionController;
 @property(retain, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 @property(nonatomic) __weak id <PKPeerPaymentActionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_cancelBarButton;
 - (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
 - (void)_handlePeerPaymentAccountDidChangeNotification:(id)arg1;

@@ -14,9 +14,9 @@
     double _totalInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double totalInterval; // @synthesize totalInterval=_totalInterval;
 @property(readonly, nonatomic) NSMutableDictionary *bins; // @synthesize bins=_bins;
-- (void).cxx_destruct;
 - (id)binsSortedByInterval;
 - (void)addInterval:(double)arg1 ofType:(unsigned long long)arg2 withConfidence:(unsigned long long)arg3;
 - (id)binForType:(unsigned long long)arg1;

@@ -12,13 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct BRXPCSyncProxy {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-};
-
 struct CGSize {
     double _field1;
     double _field2;

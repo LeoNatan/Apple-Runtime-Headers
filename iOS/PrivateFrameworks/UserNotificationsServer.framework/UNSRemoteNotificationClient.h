@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *lastKnownDeviceToken; // @synthesize lastKnownDeviceToken=_lastKnownDeviceToken;
 @property(copy, nonatomic) NSString *environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSString *tokenIdentifier; // @synthesize tokenIdentifier=_tokenIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (Class)class;
 - (void)_versionHash:(char *)arg1 inStyle:(unsigned long long)arg2;

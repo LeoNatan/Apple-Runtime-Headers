@@ -22,12 +22,12 @@
 
 + (id)weightWithDescriptor:(id)arg1 biasTerms:(id)arg2 weights:(id)arg3 neuronDescriptor:(id)arg4;
 + (id)weightWithDescriptor:(id)arg1 biasTerms:(id)arg2 weights:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLFoundationTensor *biasTerm; // @synthesize biasTerm=_biasTerm;
 @property(readonly, nonatomic) MLFoundationTensor *weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) MLFoundationNeuronDescriptor *neuronDesc; // @synthesize neuronDesc=_neuronDesc;
 @property(readonly, nonatomic) MLFoundationConvolutionDescriptor *desc; // @synthesize desc=_desc;
 @property(readonly, nonatomic) MPSCNNConvolutionDescriptor *descMPS; // @synthesize descMPS=_descMPS;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void *)weights;
 - (void)purge;

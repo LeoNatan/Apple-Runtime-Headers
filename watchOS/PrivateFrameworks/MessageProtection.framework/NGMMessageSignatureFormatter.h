@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSData *_formattedSignedData;
 }
 
-@property(readonly, nonatomic) NSData *formattedSignedData; // @synthesize formattedSignedData=_formattedSignedData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *formattedSignedData; // @synthesize formattedSignedData=_formattedSignedData;
 - (id)signedData;
 - (id)initWithDHOutput:(id)arg1 prekeyPub:(id)arg2 ephemeralPub:(id)arg3 recipientPub:(id)arg4 ciphertext:(id)arg5;
 

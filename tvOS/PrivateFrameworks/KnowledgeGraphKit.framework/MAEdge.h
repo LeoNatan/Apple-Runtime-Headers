@@ -14,9 +14,9 @@
     MANode *_targetNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MANode *targetNode; // @synthesize targetNode=_targetNode;
 @property(readonly, nonatomic) __weak MANode *sourceNode; // @synthesize sourceNode=_sourceNode;
-- (void).cxx_destruct;
 - (unsigned long long)_memoryFootprint:(id)arg1;
 - (id)visualStringWithName:(id)arg1 andPropertyKeys:(id)arg2;
 - (id)visualStringWithName:(id)arg1;

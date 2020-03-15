@@ -15,10 +15,10 @@
     NSDictionary *_jsMessageLogs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *jsMessageLogs; // @synthesize jsMessageLogs=_jsMessageLogs;
 @property(readonly, nonatomic) NSArray *exceptionTemplates; // @synthesize exceptionTemplates=_exceptionTemplates;
 @property(readonly, nonatomic) NSArray *outputItems; // @synthesize outputItems=_outputItems;
-- (void).cxx_destruct;
 - (id)initWithOutputItems:(id)arg1 exeptionTemplates:(id)arg2 jsMessageLogs:(id)arg3;
 
 @end

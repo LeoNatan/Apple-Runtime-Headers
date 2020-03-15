@@ -17,10 +17,10 @@
     NSMutableArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(nonatomic) BOOL inMeasurement; // @synthesize inMeasurement=_inMeasurement;
 @property(nonatomic) unsigned long long sampleStartTime; // @synthesize sampleStartTime=_sampleStartTime;
-- (void).cxx_destruct;
 - (BOOL)stopSampling:(id *)arg1;
 - (BOOL)startSampling:(id *)arg1;
 - (id)measurements;

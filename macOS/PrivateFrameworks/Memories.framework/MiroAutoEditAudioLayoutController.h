@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _lastBeatTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 lastBeatTime; // @synthesize lastBeatTime=_lastBeatTime;
 @property(retain, nonatomic) MiroAutoEditLogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) NSArray *layoutClips; // @synthesize layoutClips=_layoutClips;
 @property(nonatomic) MiroMemory *activeMemory; // @synthesize activeMemory=_activeMemory;
 @property(retain, nonatomic) Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (id)_rollCutsToBeatsWithGranularity:(id)arg1 excludingTimes:(id)arg2;
 - (unsigned long long)indexOfClipInLayoutClips:(id)arg1;
 - (void)rollCutsToBeats;

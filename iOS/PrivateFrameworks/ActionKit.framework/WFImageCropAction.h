@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 + (id)imageByCroppingImage:(id)arg1 toRect:(struct CGRect)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 

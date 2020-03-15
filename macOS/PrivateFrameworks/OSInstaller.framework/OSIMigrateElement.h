@@ -27,8 +27,8 @@
 + (BOOL)moveFilesAtPaths:(id)arg1 toPreservationFolderAtPath:(id)arg2 withError:(id *)arg3;
 + (id)validPathsForPreservation:(id)arg1 onMountpoint:(id)arg2 ignoreFiles:(id)arg3 keepFiles:(id)arg4;
 + (BOOL)setupMigrationWithOptions:(id)arg1 error:(id *)arg2;
-@property(retain) SMPaths *pather; // @synthesize pather=_pather;
 - (void).cxx_destruct;
+@property(retain) SMPaths *pather; // @synthesize pather=_pather;
 - (BOOL)_moveFirmlinkedUserDataWithError:(id *)arg1;
 - (void)migrationRequestCompletedState:(unsigned long long)arg1 advancingTo:(unsigned long long)arg2 withErrorsAndWarnings:(id)arg3;
 - (void)engineStartedWithRequestUUID:(id)arg1 migrationType:(unsigned long long)arg2;

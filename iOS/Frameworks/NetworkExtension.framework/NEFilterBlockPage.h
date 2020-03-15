@@ -18,12 +18,12 @@
     NSString *_remediationButtonText;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *remediationButtonText; // @synthesize remediationButtonText=_remediationButtonText;
 @property(copy) NSString *unblockStyle; // @synthesize unblockStyle=_unblockStyle;
 @property(copy) NSString *formActionURL; // @synthesize formActionURL=_formActionURL;
 @property(copy) NSString *userURL; // @synthesize userURL=_userURL;
 @property(readonly) NSURL *pageTemplateURL; // @synthesize pageTemplateURL=_pageTemplateURL;
-- (void).cxx_destruct;
 - (id)page;
 @property(copy) NSString *organization;
 - (id)_css;

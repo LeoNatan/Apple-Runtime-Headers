@@ -14,8 +14,8 @@
 }
 
 + (id)builderProtocol;
-@property(retain, nonatomic) MPModelResponse *modelResponse; // @synthesize modelResponse=_modelResponse;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelResponse *modelResponse; // @synthesize modelResponse=_modelResponse;
 - (id)initWithRequest:(id)arg1 middleware:(id)arg2;
 
 @end

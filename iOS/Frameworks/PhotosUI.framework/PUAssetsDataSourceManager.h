@@ -15,9 +15,9 @@
     id <PUAssetsDataSourceManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUAssetsDataSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PUAssetsDataSource *assetsDataSource; // @synthesize assetsDataSource=_assetsDataSource;
-- (void).cxx_destruct;
 
 @end
 

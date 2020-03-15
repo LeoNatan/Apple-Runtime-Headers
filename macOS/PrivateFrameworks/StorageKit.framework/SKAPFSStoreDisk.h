@@ -14,9 +14,9 @@
     NSString *_apfsContainerUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *apfsContainerUUID; // @synthesize apfsContainerUUID=_apfsContainerUUID;
 @property(retain) NSString *apfsUUID; // @synthesize apfsUUID=_apfsUUID;
-- (void).cxx_destruct;
 - (id)container;
 - (BOOL)canResize;
 - (id)description;

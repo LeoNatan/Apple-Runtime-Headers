@@ -25,13 +25,14 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
++ (id)offersSetFromArray:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSubscribed) _Bool subscribed; // @synthesize subscribed=_subscribed;
 @property(copy, nonatomic) NSString *offerIdentifier; // @synthesize offerIdentifier=_offerIdentifier;
 @property(nonatomic, getter=isDowngrading) _Bool downgrading; // @synthesize downgrading=_downgrading;
 @property(readonly, nonatomic) NSSet *serialNumbers; // @synthesize serialNumbers=_serialNumbers;
 @property(copy, nonatomic) NSString *description; // @synthesize description=_description;
 @property(copy, nonatomic) NSNumber *adamId; // @synthesize adamId=_adamId;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) unsigned int offerType;

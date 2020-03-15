@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (id)sortedRingRatioDirectives;
 + (id)activityRingSizingDirectiveWithIdentifier:(id)arg1 width:(float)arg2 outerRingOffset:(float)arg3 ringThickness:(float)arg4 ringInterspacing:(float)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) float ringInterspacing; // @synthesize ringInterspacing=_ringInterspacing;
 @property(nonatomic) float ringThickness; // @synthesize ringThickness=_ringThickness;
 @property(nonatomic) float outerRingOffset; // @synthesize outerRingOffset=_outerRingOffset;
 @property(nonatomic) float width; // @synthesize width=_width;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

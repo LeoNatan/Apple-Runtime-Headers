@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKAcknowledgmentGlyphImageView *_glyph;
 }
 
-@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *glyph; // @synthesize glyph=_glyph;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *glyph; // @synthesize glyph=_glyph;
 - (void)setGlyphColor:(id)arg1;
 - (void)layoutSubviews;
 - (double)animationDuration;

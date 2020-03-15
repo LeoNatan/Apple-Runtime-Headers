@@ -47,6 +47,7 @@
     TDreamOutputBuffer *_outputBuffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TDreamOutputBuffer *outputBuffer; // @synthesize outputBuffer=_outputBuffer;
 @property(retain, nonatomic) TDreamGaussBlurExpressPassTwoOpt9 *extraGaussFilter2QOpt9; // @synthesize extraGaussFilter2QOpt9=_extraGaussFilter2QOpt9;
 @property(retain, nonatomic) TDreamGaussBlurExpressOpt9 *extraGaussFilterQOpt9; // @synthesize extraGaussFilterQOpt9=_extraGaussFilterQOpt9;
@@ -82,7 +83,6 @@
 @property(retain, nonatomic) TDreamBFBlurPassOneOpt *bfBlurPassOneOpt; // @synthesize bfBlurPassOneOpt=_bfBlurPassOneOpt;
 @property(retain, nonatomic) TDreamBFBlurPassOne *bfBlurPassOne; // @synthesize bfBlurPassOne=_bfBlurPassOne;
 @property(retain, nonatomic) TDreamMaskBlend *blendWithMask; // @synthesize blendWithMask=_blendWithMask;
-- (void).cxx_destruct;
 
 @end
 

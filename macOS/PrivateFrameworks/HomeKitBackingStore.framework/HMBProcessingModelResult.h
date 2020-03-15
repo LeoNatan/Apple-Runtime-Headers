@@ -16,10 +16,10 @@
 }
 
 + (id)alloc;
+- (void).cxx_destruct;
 @property(readonly) NAFuture *mirrorOutputFuture; // @synthesize mirrorOutputFuture=_mirrorOutputFuture;
 @property(readonly) HMBProcessingOptions *options; // @synthesize options=_options;
 @property(readonly) HMBModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)initWithModel:(id)arg1 options:(id)arg2 mirrorOutputFuture:(id)arg3;
 

@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     UIPageViewController *_pageViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPageViewController *pageViewController; // @synthesize pageViewController=_pageViewController;
 @property(nonatomic) unsigned long long visibleImageIndex; // @synthesize visibleImageIndex=_visibleImageIndex;
 @property(nonatomic) _Bool allowsPinchingImageForInteractiveZoomingImageTransition; // @synthesize allowsPinchingImageForInteractiveZoomingImageTransition=_allowsPinchingImageForInteractiveZoomingImageTransition;
 @property(nonatomic) __weak id <VideosExtrasZoomingImageInteractiveTransitionSource> zoomingImageInteractiveTransitionSource; // @synthesize zoomingImageInteractiveTransitionSource=_zoomingImageInteractiveTransitionSource;
 @property(nonatomic) __weak id <VideosExtrasImageBrowserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VideosExtrasImageBrowserViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_visibleImageViewController;
 - (void)_updateTitle;
 - (void)_updatePageViewController;

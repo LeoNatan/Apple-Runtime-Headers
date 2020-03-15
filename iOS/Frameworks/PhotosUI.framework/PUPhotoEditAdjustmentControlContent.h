@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

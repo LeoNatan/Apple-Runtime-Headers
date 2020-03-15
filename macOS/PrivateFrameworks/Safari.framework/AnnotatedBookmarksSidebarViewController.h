@@ -57,10 +57,10 @@ __attribute__((visibility("hidden")))
     SidebarScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SidebarScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <AnnotatedBookmarksSidebarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isShowingFolderHierarchy) BOOL showingFolderHierarchy; // @synthesize showingFolderHierarchy=_showingFolderHierarchy;
-- (void).cxx_destruct;
 - (id)safari_keyViews;
 @property(readonly, nonatomic) NSArray *allFilteringControls;
 @property(readonly, nonatomic) NSSearchField *searchField;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     FUFlightLeg *_leg;
 }
 
+- (void).cxx_destruct;
 @property(retain) FUFlightLeg *leg; // @synthesize leg=_leg;
 @property(retain) MKGeodesicPolyline *polyline; // @synthesize polyline=_polyline;
-- (void).cxx_destruct;
 
 @end
 

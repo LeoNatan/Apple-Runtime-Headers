@@ -22,6 +22,7 @@
     NSMutableArray *_finishedImages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *finishedImages; // @synthesize finishedImages=_finishedImages;
 @property(retain, nonatomic) NSMutableArray *loadingImageProxies; // @synthesize loadingImageProxies=_loadingImageProxies;
 @property(retain, nonatomic) NSMutableArray *pendingImageProxies; // @synthesize pendingImageProxies=_pendingImageProxies;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long preloadCount; // @synthesize preloadCount=_preloadCount;
 @property(nonatomic, getter=isRandomized) _Bool randomized; // @synthesize randomized=_randomized;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (void)_checkForPreloadCompletion;
 - (void)_imageProxyDidFail:(id)arg1 withError:(id)arg2;
 - (void)_imageProxyDidLoad:(id)arg1 withImage:(id)arg2;

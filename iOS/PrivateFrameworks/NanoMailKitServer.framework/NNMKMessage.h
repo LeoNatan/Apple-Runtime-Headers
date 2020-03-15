@@ -54,6 +54,7 @@
 + (unsigned long long)addState:(unsigned long long)arg1 toStatus:(unsigned long long)arg2;
 + (unsigned long long)removeState:(unsigned long long)arg1 fromStatus:(unsigned long long)arg2;
 + (_Bool)checkStatus:(unsigned long long)arg1 stateToCheck:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool replaceStandaloneNotification; // @synthesize replaceStandaloneNotification=_replaceStandaloneNotification;
 @property(nonatomic) unsigned long long visibleStatus; // @synthesize visibleStatus=_visibleStatus;
 @property(nonatomic) unsigned long long isSpecialMailboxSpecific; // @synthesize isSpecialMailboxSpecific=_isSpecialMailboxSpecific;
@@ -77,7 +78,6 @@
 @property(retain, nonatomic) NSString *preview; // @synthesize preview=_preview;
 @property(copy, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isFromSource:(unsigned long long)arg1;

@@ -19,11 +19,11 @@
 }
 
 + (id)textInfoFromJSONValues:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) FCColor *color; // @synthesize color=_color;
 @property(nonatomic) double lineHeightMultiplier; // @synthesize lineHeightMultiplier=_lineHeightMultiplier;
 @property(nonatomic) long long fontSizeAdjustment; // @synthesize fontSizeAdjustment=_fontSizeAdjustment;
 @property(copy, nonatomic) FCLoadableFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (double)fontSizeWithInitialFontSize:(double)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

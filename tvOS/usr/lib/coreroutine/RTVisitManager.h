@@ -27,6 +27,7 @@
     RTVisitMonitor *_visitMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTVisitMonitor *visitMonitor; // @synthesize visitMonitor=_visitMonitor;
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) NSMutableArray *spoofVisitIncidentTokens; // @synthesize spoofVisitIncidentTokens=_spoofVisitIncidentTokens;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) RTLocationAwarenessManager *locationAwarenessManager; // @synthesize locationAwarenessManager=_locationAwarenessManager;
 @property(retain, nonatomic) RTHintManager *hintManager; // @synthesize hintManager=_hintManager;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
-- (void).cxx_destruct;
 - (void)simulateVisit:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_simulateVisit:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)unregisterForSpoofVisitIncidentWithToken:(int)arg1;

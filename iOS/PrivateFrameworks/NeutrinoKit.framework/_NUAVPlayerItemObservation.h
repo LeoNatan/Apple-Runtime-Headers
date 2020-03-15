@@ -14,9 +14,9 @@
     AVPlayerItem *_playerItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool registeredKVO; // @synthesize registeredKVO=_registeredKVO;
 @property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,11 +16,11 @@
     CDUnknownBlockType _calledUnimplementedMethodBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType calledUnimplementedMethodBlock; // @synthesize calledUnimplementedMethodBlock=_calledUnimplementedMethodBlock;
 @property(copy) CDUnknownBlockType callImplementedMethodBlock; // @synthesize callImplementedMethodBlock=_callImplementedMethodBlock;
 @property(readonly) NSArray *protocols; // @synthesize protocols=_protocols;
 @property(readonly) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithObject:(id)arg1 protocols:(id)arg2;

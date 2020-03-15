@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     id _owner;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id owner; // @synthesize owner=_owner;
 @property(readonly, copy, nonatomic) CDUnknownBlockType onTimer; // @synthesize onTimer=_onTimer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *selfQueue; // @synthesize selfQueue=_selfQueue;
-- (void).cxx_destruct;
 - (void)timerFired:(id)arg1;
 - (void)invalidate;
 - (void)fireNow;

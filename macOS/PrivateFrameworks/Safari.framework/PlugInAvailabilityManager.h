@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (id)test_plugInStateModifiedDateKey;
 + (id)test_disabledPlugInVersionStringKey;
 + (id)test_disabledPlugInDisableDateKey;
-@property(nonatomic) __weak id <PlugInAvailabilityManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PlugInAvailabilityManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)test_shouldDisablePlugIn:(id)arg1 updateInfo:(id)arg2;
 - (id)test_updatePlugInInfo:(id)arg1 plugInInfo:(id)arg2 getNameOfNewlyInstalledPlugIn:(id *)arg3 andBundleIdentifier:(id *)arg4;
 - (BOOL)test_shouldEnablePlugInWhenMigratingFromDisabledDictionaryToAllPlugInsDictionary:(id)arg1;

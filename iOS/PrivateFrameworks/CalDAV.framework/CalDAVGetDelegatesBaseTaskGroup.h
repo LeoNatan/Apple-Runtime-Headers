@@ -22,6 +22,7 @@
     NSMutableSet *_readDetails;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *readDetails; // @synthesize readDetails=_readDetails;
 @property(retain, nonatomic) NSMutableSet *writeDetails; // @synthesize writeDetails=_writeDetails;
 @property(retain, nonatomic) NSMutableArray *writePrincipalURLs; // @synthesize writePrincipalURLs=_writePrincipalURLs;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSURL *principalURL; // @synthesize principalURL=_principalURL;
 @property(retain, nonatomic) CalDAVGetPrincipalEmailDetailsTaskGroup *getPrincipalEmailDetailsTaskGroup; // @synthesize getPrincipalEmailDetailsTaskGroup=_getPrincipalEmailDetailsTaskGroup;
 @property(nonatomic) _Bool serverSupportsExpandPropertyReport; // @synthesize serverSupportsExpandPropertyReport=_serverSupportsExpandPropertyReport;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSSet *readWritePrincipalDetails;
 @property(readonly, retain, nonatomic) NSSet *readOnlyPrincipalDetails;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;

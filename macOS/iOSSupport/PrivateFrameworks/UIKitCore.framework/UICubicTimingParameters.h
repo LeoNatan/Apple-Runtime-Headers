@@ -18,10 +18,10 @@
     UISpringTimingParameters *_springTimingParameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISpringTimingParameters *springTimingParameters; // @synthesize springTimingParameters=_springTimingParameters;
 @property(readonly, nonatomic) long long animationCurve; // @synthesize animationCurve=_animationCurve;
 @property(readonly, nonatomic) _UIViewCubicTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

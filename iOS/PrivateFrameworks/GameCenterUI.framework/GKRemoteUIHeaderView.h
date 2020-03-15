@@ -18,11 +18,11 @@
     double _bottomMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double bottomMargin; // @synthesize bottomMargin=_bottomMargin;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(retain, nonatomic) GKLabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) _Bool isFirstSection; // @synthesize isFirstSection=_isFirstSection;
-- (void).cxx_destruct;
 - (double)headerHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (void)setSectionIsFirst:(_Bool)arg1;
 - (id)initWithAttributes:(id)arg1;

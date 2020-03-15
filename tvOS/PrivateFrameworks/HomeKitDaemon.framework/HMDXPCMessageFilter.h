@@ -15,8 +15,8 @@
 
 + (_Bool)canInitWithMessage:(id)arg1;
 + (id)policyClasses;
-@property(readonly) HMDXPCClientConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly) HMDXPCClientConnection *connection; // @synthesize connection=_connection;
 - (id)initWithMessage:(id)arg1;
 
 @end

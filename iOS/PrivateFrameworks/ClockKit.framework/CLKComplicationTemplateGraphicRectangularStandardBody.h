@@ -16,11 +16,11 @@
     CLKTextProvider *_body2TextProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKTextProvider *body2TextProvider; // @synthesize body2TextProvider=_body2TextProvider;
 @property(copy, nonatomic) CLKTextProvider *body1TextProvider; // @synthesize body1TextProvider=_body1TextProvider;
 @property(copy, nonatomic) CLKTextProvider *headerTextProvider; // @synthesize headerTextProvider=_headerTextProvider;
 @property(copy, nonatomic) CLKFullColorImageProvider *headerImageProvider; // @synthesize headerImageProvider=_headerImageProvider;
-- (void).cxx_destruct;
 - (void)_enumerateFullColorImageProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isCompatibleWithFamily:(long long)arg1;

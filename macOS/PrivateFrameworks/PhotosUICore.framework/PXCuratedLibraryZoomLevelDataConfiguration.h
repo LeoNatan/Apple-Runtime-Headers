@@ -17,9 +17,9 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
-- (void).cxx_destruct;
 - (id)dataSourceManagerCreateInitialPhotosDataSource:(id)arg1;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *assetsDataSourceManager;
 - (id)initWithZoomLevel:(long long)arg1;

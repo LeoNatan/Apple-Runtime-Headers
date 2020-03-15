@@ -49,9 +49,9 @@
 + (id)albumListInPhotoLibrary:(id)arg1;
 + (id)_singletonListWithType:(short)arg1 library:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didRegisteredWithUserInterfaceContext; // @synthesize didRegisteredWithUserInterfaceContext;
 @property(nonatomic) BOOL isRegisteredForChanges; // @synthesize isRegisteredForChanges;
-- (void).cxx_destruct;
 - (void)didSave;
 - (void)willSave;
 - (void)unregisterForChanges;
@@ -60,7 +60,7 @@
 - (BOOL)hasDerivedIndexMappers;
 - (void)enumerateDerivedAlbumLists:(CDUnknownBlockType)arg1;
 - (void)unregisterAllDerivedAlbums;
-- (void)registerDerivedAlbumList:(struct NSObject *)arg1;
+- (void)registerDerivedAlbumList:(id)arg1;
 - (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
 - (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)updateAlbumsOrderIfNeeded;
@@ -68,7 +68,7 @@
 - (void)setNeedsReordering;
 - (void)insertIntoOrderedAlbumsAtIndexByPriorityForAlbum:(id)arg1;
 @property(readonly, copy, nonatomic) CDUnknownBlockType albumsSortingComparator;
-- (BOOL)albumHasFixedOrder:(struct NSObject *)arg1;
+- (BOOL)albumHasFixedOrder:(id)arg1;
 - (id)containersRelationshipName;
 - (BOOL)canEditContainers;
 - (BOOL)isEmpty;

@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     MPMRAVEndpointObserverWrapper *_endpointObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPMRAVEndpointObserverWrapper *endpointObserver; // @synthesize endpointObserver=_endpointObserver;
 @property(readonly, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
 @property(nonatomic, getter=isEndpointDiscovered) _Bool endpointDiscovered; // @synthesize endpointDiscovered=_endpointDiscovered;
 @property(retain, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
-- (void).cxx_destruct;
 - (void)endpointController:(id)arg1 willAttemptToConnectToRoute:(id)arg2;
 - (id)_routeForEndpoint:(void *)arg1;
 - (_Bool)controller:(id)arg1 shouldRetryFailedRequestWithError:(id)arg2;

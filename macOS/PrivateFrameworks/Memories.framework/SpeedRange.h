@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)speedRangeWithRate:(float)arg1 startMedia:(int)arg2 startClip:(int)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SpeedRange *accurateNext; // @synthesize accurateNext=_accurateNext;
 @property(nonatomic) __weak SpeedRange *accurate; // @synthesize accurate=_accurate;
 @property(nonatomic) __weak SpeedRanges *container; // @synthesize container=_container;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int startClip; // @synthesize startClip=_startClip;
 @property(nonatomic) int startMedia; // @synthesize startMedia=_startMedia;
 @property(nonatomic) double rate; // @synthesize rate=_rate;
-- (void).cxx_destruct;
 - (CDStruct_1b6d18a9)applySpeed:(CDStruct_1b6d18a9)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

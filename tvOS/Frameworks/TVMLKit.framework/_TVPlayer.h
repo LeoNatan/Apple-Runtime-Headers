@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
     id <TVPlaying> _playerImpl;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool presentsImplicitlyOnPlay; // @synthesize presentsImplicitlyOnPlay=_presentsImplicitlyOnPlay;
 @property(retain, nonatomic) id <TVPlaying> playerImpl; // @synthesize playerImpl=_playerImpl;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKAppDocument *interactiveOverlayDocument; // @synthesize interactiveOverlayDocument=_interactiveOverlayDocument;
 @property(retain, nonatomic) IKAppDocument *overlayDocument; // @synthesize overlayDocument=_overlayDocument;
 @property(retain, nonatomic) id <IKAppPlaylist> playlist; // @synthesize playlist=_playlist;
-- (void).cxx_destruct;
 - (void)_present:(_Bool)arg1;
 - (id)_ikMediaItemForPublicObj:(id)arg1;
 - (void)dispatchEvent:(id)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;

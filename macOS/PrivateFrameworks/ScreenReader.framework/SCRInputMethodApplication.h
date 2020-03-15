@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_previousSelectedCandidate;
 }
 
-@property(retain) NSString *previousSelectedCandidate; // @synthesize previousSelectedCandidate=_previousSelectedCandidate;
 - (void).cxx_destruct;
+@property(retain) NSString *previousSelectedCandidate; // @synthesize previousSelectedCandidate=_previousSelectedCandidate;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (void)setIsFrontMost:(BOOL)arg1;
 - (void)_elementWasDestroyed:(id)arg1;

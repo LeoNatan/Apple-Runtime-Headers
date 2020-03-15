@@ -21,10 +21,10 @@
 + (id)fallBackAssetResourcePath;
 + (id)assetForAssetType:(unsigned int)arg1 resourcePath:(id)arg2 configVersion:(id)arg3;
 + (id)hybridEndpointerAssetFilename;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *configVersion; // @synthesize configVersion=_configVersion;
 @property(readonly, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (_Bool)isEqualAsset:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSString *hashFromResourcePath;

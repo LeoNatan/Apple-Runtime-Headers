@@ -27,9 +27,9 @@
 + (id)unspecifiedValuePlaceholder;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long coreUIValue; // @synthesize coreUIValue=_coreUIValue;
 @property(readonly, nonatomic) NSString *latestVersion; // @synthesize latestVersion=_latestVersion;
-- (void).cxx_destruct;
 - (id)idioms;
 @property(readonly, nonatomic) NSString *latestMajorVersion;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 latestVersion:(id)arg3 coreUIValue:(long long)arg4 displayOrder:(double)arg5;

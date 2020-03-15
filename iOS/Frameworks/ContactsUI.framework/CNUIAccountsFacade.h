@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CNUIAccountsFacadeRequestRunner *_requestRunner;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUIAccountsFacadeRequestRunner *requestRunner; // @synthesize requestRunner=_requestRunner;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)fetchiCloudFamilyMembersWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithAccountStore:(id)arg1 requestRunner:(id)arg2;
 - (id)init;

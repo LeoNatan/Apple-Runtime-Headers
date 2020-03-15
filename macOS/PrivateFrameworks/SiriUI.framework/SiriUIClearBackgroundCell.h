@@ -23,8 +23,8 @@
 + (id)elementKind;
 + (double)defaultHeight;
 + (id)reuseIdentifier;
-@property long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
 - (void).cxx_destruct;
+@property long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
 - (void)updateSelectionBackground;
 @property struct CGRect selectionFrame;
 - (void)setSelectedBackgroundView:(id)arg1;

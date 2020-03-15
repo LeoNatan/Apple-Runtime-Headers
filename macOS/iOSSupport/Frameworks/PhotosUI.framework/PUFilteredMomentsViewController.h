@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     long long _gridPresentationContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long gridPresentationContext; // @synthesize gridPresentationContext=_gridPresentationContext;
 @property(retain, nonatomic) NSString *emptyPlaceholderText; // @synthesize emptyPlaceholderText=_emptyPlaceholderText;
 @property(retain, nonatomic) PUFilteredMomentsDataSource *filteredMomentsDataSource; // @synthesize filteredMomentsDataSource=_filteredMomentsDataSource;
-- (void).cxx_destruct;
 - (void)filteredMomentsDataSourceHasPendingChanges:(id)arg1;
 - (void)didTapHeaderView:(id)arg1;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;

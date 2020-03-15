@@ -17,13 +17,14 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *maintenanceConnection; // @synthesize maintenanceConnection=_maintenanceConnection;
 @property(retain, nonatomic) NSXPCConnection *defaultConnection; // @synthesize defaultConnection=_defaultConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getExtensionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)compactStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)openSettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)synchronizeExtensionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)firstIdentificationEntriesForEnabledExtensionsWithPhoneNumbers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)firstIdentificationEntryForEnabledExtensionWithPhoneNumber:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

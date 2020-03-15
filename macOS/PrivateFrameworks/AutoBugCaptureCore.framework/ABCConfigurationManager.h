@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultLibraryDirectory;
 + (id)autoBugCapturePrefix;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *previousConfiguration; // @synthesize previousConfiguration=_previousConfiguration;
 @property(retain, nonatomic) NSNumber *seed_flag; // @synthesize seed_flag=_seed_flag;
 @property(retain, nonatomic) NSNumber *carrier_seed_flag; // @synthesize carrier_seed_flag=_carrier_seed_flag;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL apns_dev_environment; // @synthesize apns_dev_environment=_apns_dev_environment;
 @property(nonatomic) BOOL apns_enable; // @synthesize apns_enable=_apns_enable;
 @property(retain, nonatomic) ABCPreferences *preferences; // @synthesize preferences=_preferences;
-- (void).cxx_destruct;
 - (id)currentDiagnosticActions;
 - (id)defaultDiagnosticActions;
 - (id)loadEmbeddedConfigurationPlist:(const char *)arg1;

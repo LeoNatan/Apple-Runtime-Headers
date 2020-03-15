@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     struct UIOffset _titleOffset;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *badgeColor; // @synthesize badgeColor=_badgeColor;
 @property(nonatomic) struct UIOffset titleOffset; // @synthesize titleOffset=_titleOffset;
-- (void).cxx_destruct;
 - (void)enumerateBadgeTextAttributesWithBlock:(CDUnknownBlockType)arg1;
 - (id)badgeTextAttributesForState:(unsigned long long)arg1;
 - (void)setBadgeTextAttributes:(id)arg1 forState:(unsigned long long)arg2;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)preferredContentViewSizeForKey:(id)arg1 withTraits:(id)arg2;
 + (id)_selectionAndSeparatorColorForDarkMode:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKBTree *representedKey; // @synthesize representedKey=_representedKey;
 @property(retain, nonatomic) NSArray *skinToneVariantRows; // @synthesize skinToneVariantRows=_skinToneVariantRows;
 @property(retain, nonatomic) NSMutableArray *selectedVariantIndices; // @synthesize selectedVariantIndices=_selectedVariantIndices;
@@ -38,9 +39,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) NSMutableArray *familyMemberStackViews; // @synthesize familyMemberStackViews=_familyMemberStackViews;
 @property(nonatomic) _Bool usesDarkStyle; // @synthesize usesDarkStyle=_usesDarkStyle;
-- (void).cxx_destruct;
 - (void)updateRenderConfig:(id)arg1;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
+- (void)retestForTouchUpSelectedVariantIndexForKey:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)retestSelectedVariantIndexForKey:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)layoutSubviews;
 - (void)_beginFamilyMetachronalRhythmAnimation;

@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relevantText; // @synthesize relevantText=_relevantText;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSNumber *minor; // @synthesize minor=_minor;
 @property(retain, nonatomic) NSNumber *major; // @synthesize major=_major;
 @property(retain, nonatomic) NSUUID *proximityUUID; // @synthesize proximityUUID=_proximityUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

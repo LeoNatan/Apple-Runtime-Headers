@@ -29,6 +29,7 @@
 }
 
 + (id)contactPickerWithDelegate:(id)arg1 familyMember:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak CNContactViewController *contactViewControllerPresentingItemDetails; // @synthesize contactViewControllerPresentingItemDetails=_contactViewControllerPresentingItemDetails;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUICoreContactManagementConsentCheck> contactManagentConsentCheck; // @synthesize contactManagentConsentCheck=_contactManagentConsentCheck;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(nonatomic) __weak id <CNUIFamilyMemberWhitelistedContactsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
-- (void).cxx_destruct;
 - (void)addContactsToWhitelist:(id)arg1;
 - (void)downtimePickerController:(id)arg1 didFinishWithContacts:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContacts:(id)arg2;

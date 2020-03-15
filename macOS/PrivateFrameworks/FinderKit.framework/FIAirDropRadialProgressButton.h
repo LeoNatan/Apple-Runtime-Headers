@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     struct vector<TKeyValueObserver, std::__1::allocator<TKeyValueObserver>> _keyValueObservers;
 }
 
-@property(nonatomic, getter=isCancellable) _Bool cancellable; // @synthesize cancellable=_isCancellable;
-@property(nonatomic) double percentComplete; // @synthesize percentComplete=_percentComplete;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isCancellable) _Bool cancellable; // @synthesize cancellable=_isCancellable;
+@property(nonatomic) double percentComplete; // @synthesize percentComplete=_percentComplete;
 @property(retain, nonatomic) FIAirDropListViewItem *airDropListViewItem;
 - (void)updateImagesAndIcons;
 @property(copy, nonatomic) NSImage *icon;

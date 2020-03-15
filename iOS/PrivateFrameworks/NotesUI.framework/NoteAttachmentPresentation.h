@@ -29,6 +29,7 @@
 + (void)prepareDocumentForPresentationWithAttachmentContentIDs:(id)arg1 withAttachmentPresentations:(id)arg2 occurences:(id *)arg3;
 + (id)presentationSelector;
 + (id)attachmentPresentationsForAttachments:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize iconSize; // @synthesize iconSize=_iconSize;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic, getter=isImage) _Bool image; // @synthesize image=_image;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSURL *dataFileURL; // @synthesize dataFileURL=_dataFileURL;
 @property(copy, nonatomic) NSURL *contentIDURL; // @synthesize contentIDURL=_contentIDURL;
 @property(copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
-- (void).cxx_destruct;
 - (_Bool)getData:(id *)arg1 mimeType:(id *)arg2 error:(id *)arg3;
 - (void)clearCache;
 - (void)updateContentIDURL;

@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_dragEventsByContextAndSessionIDPair;
     _Bool _isSystemApplication;
     double _commitTimeForTouchEvents;
+    double _beginTimeForTouchEvents;
+    double _deadlineTimeForTouchEvents;
     NSMutableSet *_windowsWithActiveTouchMaps;
     _Bool _hasSeenAnyPencilEvents;
     UIPressesEvent *_fallbackPressesEvent;
@@ -39,12 +41,12 @@ __attribute__((visibility("hidden")))
 
 + (void)_setKeyboardWindowSceneConnected:(_Bool)arg1;
 + (_Bool)_isKeyboardWindowSceneConnected;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_fallbackGenericGestureFocusWindowID, setter=_setFallbackGenericGestureFocusWindowID:) unsigned int fallbackGenericGestureFocusWindowContextID; // @synthesize fallbackGenericGestureFocusWindowContextID=_fallbackGenericGestureFocusWindowContextID;
 @property(nonatomic, getter=_genericGestureFocusWindowID, setter=_setGenericGestureFocusWindowID:) unsigned int genericGestureFocusWindowContextID; // @synthesize genericGestureFocusWindowContextID=_genericGestureFocusWindowContextID;
 @property(readonly, nonatomic) NSSet *windowsWithActiveTouchMaps; // @synthesize windowsWithActiveTouchMaps=_windowsWithActiveTouchMaps;
 @property(retain, nonatomic) NSMutableArray *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(nonatomic) UIApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)_sendRemoteControlEvent:(long long)arg1;
 - (void)_sendMotionCancelled:(long long)arg1;
 - (void)_sendMotionEnded:(long long)arg1;

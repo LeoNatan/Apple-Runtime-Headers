@@ -18,10 +18,10 @@
     double _screenToModelScaleFactor;
 }
 
+- (void).cxx_destruct;
 @property double screenToModelScaleFactor; // @synthesize screenToModelScaleFactor=_screenToModelScaleFactor;
 @property _Bool exifHasFlippedAxes; // @synthesize exifHasFlippedAxes=_exifHasFlippedAxes;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 - (struct CGPoint)guideAlignedPointForPoint:(struct CGPoint)arg1 withEvent:(id)arg2 orRecognizer:(id)arg3;
 - (void)dealloc;
 - (id)initWithPageController:(id)arg1;

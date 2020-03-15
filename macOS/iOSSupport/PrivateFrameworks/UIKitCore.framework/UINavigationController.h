@@ -137,6 +137,7 @@
 + (BOOL)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (BOOL)_directlySetsContentOverlayInsetsForChildren;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setBarTapHideGesture:) _UIBarTapGestureRecognizer *_barTapHideGesture; // @synthesize _barTapHideGesture=__barTapHideGesture;
 @property(retain, nonatomic, setter=_setInteractiveAnimationCoordinator:) _UIAnimationCoordinator *_barInteractiveAnimationCoordinator; // @synthesize _barInteractiveAnimationCoordinator=__barInteractiveAnimationCoordinator;
 @property(retain, nonatomic, setter=_setBarSwipeHideGesture:) _UIBarPanGestureRecognizer *_barSwipeHideGesture; // @synthesize _barSwipeHideGesture=__barSwipeHideGesture;
@@ -168,7 +169,6 @@
 @property(nonatomic) __weak id <UINavigationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double customNavigationTransitionDuration; // @synthesize customNavigationTransitionDuration=_customNavigationTransitionDuration;
 @property(nonatomic, setter=_setToolbarClass:) Class _toolbarClass; // @synthesize _toolbarClass;
-- (void).cxx_destruct;
 - (id)moreListTableCell;
 - (id)moreListSelectedImage;
 - (id)moreListImage;

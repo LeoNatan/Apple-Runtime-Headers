@@ -18,12 +18,12 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain) NSArray *assetsInCity; // @synthesize assetsInCity=_assetsInCity;
 @property(readonly) long long year; // @synthesize year=_year;
 @property(readonly) PGGraphNode *cityNode; // @synthesize cityNode=_cityNode;
-- (void).cxx_destruct;
 @property(readonly) NSString *city;
 - (void)addMomentNode:(id)arg1;
 - (id)initWithCityNode:(id)arg1 year:(long long)arg2;

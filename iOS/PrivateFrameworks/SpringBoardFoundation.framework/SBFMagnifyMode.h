@@ -20,10 +20,10 @@
 
 + (id)magnifyModeWithSize:(struct CGSize)arg1 name:(id)arg2;
 + (id)currentMagnifyMode;
+- (void).cxx_destruct;
 @property(nonatomic) float zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

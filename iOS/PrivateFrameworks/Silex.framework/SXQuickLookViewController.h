@@ -24,6 +24,7 @@
     UILabel *_errorLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property(readonly, nonatomic) UIButton *thumbnailControl; // @synthesize thumbnailControl=_thumbnailControl;
 @property(readonly, nonatomic) UIImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) id <SXQuickLookRenderer> renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) id <SXQuickLookEventHandler> eventHandler; // @synthesize eventHandler=_eventHandler;
-- (void).cxx_destruct;
 - (void)showThumbnailErrorWithMessage:(id)arg1;
 - (void)showThumbnailImage:(id)arg1;
 - (void)handleTap;

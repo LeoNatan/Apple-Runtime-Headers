@@ -14,9 +14,9 @@
     NSArray *_personsSections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *personsSections; // @synthesize personsSections=_personsSections;
 @property(readonly, copy, nonatomic) NSDictionary *faceTiles; // @synthesize faceTiles=_faceTiles;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long totalItemCount;
 - (id)faceTileForIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)objectsInIndexPath:(struct PXSimpleIndexPath)arg1;

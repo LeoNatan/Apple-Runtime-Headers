@@ -22,9 +22,9 @@
 }
 
 + (id)builderWithOptions:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMVisionFeature *brightnessFeature; // @synthesize brightnessFeature=_brightnessFeature;
 @property(retain, nonatomic) AXMVisionFeature *blurFeature; // @synthesize blurFeature=_blurFeature;
-- (void).cxx_destruct;
 - (void)_addIconClassInformationToDescription:(id)arg1;
 - (void)_addClassificationInformationToDescription:(id)arg1;
 - (void)_addCaptionInformationToDescription:(id)arg1;

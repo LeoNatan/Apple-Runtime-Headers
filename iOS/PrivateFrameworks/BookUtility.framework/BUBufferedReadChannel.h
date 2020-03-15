@@ -30,6 +30,7 @@
     NSObject<OS_dispatch_data> *_currentStreamOutputData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_data> *currentStreamOutputData; // @synthesize currentStreamOutputData=_currentStreamOutputData;
 @property(nonatomic) unsigned long long streamOutputLength; // @synthesize streamOutputLength=_streamOutputLength;
 @property(nonatomic) unsigned long long streamOutputOutstandingLength; // @synthesize streamOutputOutstandingLength=_streamOutputOutstandingLength;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) id <BUReadChannel> sourceReadChannel; // @synthesize sourceReadChannel=_sourceReadChannel;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *readQueue; // @synthesize readQueue=_readQueue;
 @property(copy, nonatomic) CDUnknownBlockType streamReadChannelSourceHandler; // @synthesize streamReadChannelSourceHandler=_streamReadChannelSourceHandler;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (void)addBarrier:(CDUnknownBlockType)arg1;
 - (void)setLowWater:(unsigned long long)arg1;

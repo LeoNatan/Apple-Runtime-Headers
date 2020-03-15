@@ -30,6 +30,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(nonatomic) long long dataclass; // @synthesize dataclass=_dataclass;
 @property(nonatomic) _Bool renameOnCollision; // @synthesize renameOnCollision=_renameOnCollision;
 @property(nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *parentID; // @synthesize parentID=_parentID;
 @property(copy, nonatomic) NSString *serverID; // @synthesize serverID=_serverID;
-- (void).cxx_destruct;
 - (void)setFolderTypeNumber:(id)arg1;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)initWithFolderType:(int)arg1 serverID:(id)arg2 parentID:(id)arg3 displayName:(id)arg4 localID:(int)arg5;

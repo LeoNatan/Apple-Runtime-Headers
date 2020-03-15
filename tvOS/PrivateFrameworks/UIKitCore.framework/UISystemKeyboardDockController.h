@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     UIKeyboardDockView *_dockView;
 }
 
-@property(retain, nonatomic) UIKeyboardDockView *dockView; // @synthesize dockView=_dockView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIKeyboardDockView *dockView; // @synthesize dockView=_dockView;
 - (void)updateDockItemsVisibility;
 - (void)keyboardDockView:(id)arg1 didPressDockItem:(id)arg2 withEvent:(id)arg3;
 - (void)keyboardItemButtonWasTapped:(id)arg1 withEvent:(id)arg2;

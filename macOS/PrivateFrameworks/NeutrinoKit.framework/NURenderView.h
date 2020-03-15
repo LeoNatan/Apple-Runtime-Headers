@@ -19,8 +19,8 @@
     NUImageGeometry *_geometry;
 }
 
-@property(retain, nonatomic) NUImageGeometry *geometry; // @synthesize geometry=_geometry;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NUImageGeometry *geometry; // @synthesize geometry=_geometry;
 @property(nonatomic) BOOL debugMode;
 - (void)transitionToSize:(struct CGSize)arg1 offset:(struct CGPoint)arg2 duration:(double)arg3 animationCurve:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)transitionToSize:(struct CGSize)arg1 duration:(double)arg2 animationCurve:(id)arg3 completion:(CDUnknownBlockType)arg4;

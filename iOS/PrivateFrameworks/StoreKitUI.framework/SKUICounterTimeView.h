@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _visibleFields;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visibleFields; // @synthesize visibleFields=_visibleFields;
 @property(retain, nonatomic) UIFont *valueFont; // @synthesize valueFont=_valueFont;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
-- (void).cxx_destruct;
 - (id)_visibleFieldViews;
 - (void)_setValuesUsingTimestamp:(long long)arg1;
 - (double)_fieldSpacingForFieldCount:(long long)arg1 fieldWidth:(double)arg2 totalWidth:(double)arg3;

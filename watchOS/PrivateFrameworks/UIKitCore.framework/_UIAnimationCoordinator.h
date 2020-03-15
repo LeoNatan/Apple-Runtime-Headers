@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _endFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect endFrame; // @synthesize endFrame=_endFrame;
 @property(nonatomic) struct CGRect startFrame; // @synthesize startFrame=_startFrame;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType animator; // @synthesize animator=_animator;
 @property(copy, nonatomic) CDUnknownBlockType preperation; // @synthesize preperation=_preperation;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

@@ -13,8 +13,8 @@
     NSArray *_blacklist;
 }
 
-@property(retain, nonatomic) NSArray *blacklist; // @synthesize blacklist=_blacklist;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *blacklist; // @synthesize blacklist=_blacklist;
 - (id)description;
 - (_Bool)hasSuppressionRuleForAlertItem:(id)arg1;
 - (unsigned int)suppressionRuleForAlertItem:(id)arg1;

@@ -24,12 +24,12 @@
     id <NSCopying> _extensionRequestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <NSCopying> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, copy, nonatomic) UIFontPickerViewControllerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) UIFontDescriptor *selectedFontDescriptor; // @synthesize selectedFontDescriptor=_selectedFontDescriptor;
 @property(nonatomic) __weak id <UIFontPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_viewControllerPresentationDidInitiate;

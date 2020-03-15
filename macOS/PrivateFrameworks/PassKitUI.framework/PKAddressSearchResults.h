@@ -14,9 +14,9 @@
     NSArray *_completionSearchResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *completionSearchResults; // @synthesize completionSearchResults=_completionSearchResults;
 @property(retain, nonatomic) NSArray *contactSearchResults; // @synthesize contactSearchResults=_contactSearchResults;
-- (void).cxx_destruct;
 - (void)reset;
 
 @end

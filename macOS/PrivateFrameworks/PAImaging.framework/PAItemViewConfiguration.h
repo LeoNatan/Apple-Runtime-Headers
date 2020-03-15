@@ -28,6 +28,7 @@
     struct CGAffineTransform _itemTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PADisplay *display; // @synthesize display=_display;
 @property(nonatomic) double backingScaleFactor; // @synthesize backingScaleFactor=_backingScaleFactor;
 @property(retain, nonatomic) NSScreen *screen; // @synthesize screen=_screen;
@@ -39,7 +40,6 @@
 @property(nonatomic) struct CGRect itemClipRect; // @synthesize itemClipRect=_itemClipRect;
 @property(nonatomic) struct CGAffineTransform itemTransform; // @synthesize itemTransform=_itemTransform;
 @property(nonatomic) struct CGRect itemExtent; // @synthesize itemExtent=_itemExtent;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect viewContentBounds;
 - (struct CGRect)itemRectFromViewRect:(struct CGRect)arg1;
 - (struct CGRect)viewRectFromItemRect:(struct CGRect)arg1;

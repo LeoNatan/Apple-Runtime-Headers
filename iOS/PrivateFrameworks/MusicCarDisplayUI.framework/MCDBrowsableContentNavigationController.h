@@ -28,6 +28,7 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(nonatomic) _Bool hasInvalidatedDummyTabs; // @synthesize hasInvalidatedDummyTabs=_hasInvalidatedDummyTabs;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak UITabBarController *hostTabBarController; // @synthesize hostTabBarController=_hostTabBarController;
 @property(retain, nonatomic) UITabBarController *tabBarController; // @synthesize tabBarController=_tabBarController;
 @property(retain, nonatomic) MCDPCContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

@@ -22,6 +22,7 @@
 
 + (id)mailboxSearchQueryWithSearchString:(id)arg1 predicate:(id)arg2 consumer:(id)arg3;
 + (id)mailboxSearchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rebuildResults; // @synthesize rebuildResults=_rebuildResults;
 @property(nonatomic) _Bool deepTraversal; // @synthesize deepTraversal=_deepTraversal;
 @property(nonatomic) int MIMESupport; // @synthesize MIMESupport=_MIMESupport;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long truncationSize; // @synthesize truncationSize=_truncationSize;
 @property(nonatomic) int bodyType; // @synthesize bodyType=_bodyType;
 @property(retain, nonatomic) NSString *collectionID; // @synthesize collectionID=_collectionID;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)initWithSearchString:(id)arg1 predicate:(id)arg2 consumer:(id)arg3;

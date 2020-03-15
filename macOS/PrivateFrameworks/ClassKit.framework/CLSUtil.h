@@ -18,7 +18,7 @@
 + (id)errorFromData:(id)arg1;
 + (id)dataFromError:(id)arg1;
 + (id)pathFromData:(id)arg1;
-+ (id)dataFromPath:(id)arg1 makeBackwardCompatible:(BOOL)arg2;
++ (id)dataFromPath:(id)arg1 makeBackwardCompatible:(BOOL)arg2 error:(id *)arg3;
 + (id)mediumDateFormatter;
 + (id)stringFromTimeInterval:(double)arg1;
 + (id)mediumStringFromDate:(id)arg1;

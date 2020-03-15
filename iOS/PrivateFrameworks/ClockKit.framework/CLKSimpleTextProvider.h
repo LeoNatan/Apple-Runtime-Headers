@@ -22,11 +22,11 @@
 + (id)textProviderWithText:(id)arg1 shortText:(id)arg2 accessibilityLabel:(id)arg3;
 + (id)textProviderWithText:(id)arg1 shortText:(id)arg2;
 + (id)textProviderWithText:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useAllSmallCaps; // @synthesize useAllSmallCaps=_useAllSmallCaps;
 @property(nonatomic) _Bool useNoContentDashFormatting; // @synthesize useNoContentDashFormatting=_useNoContentDashFormatting;
 @property(copy, nonatomic) NSString *shortText; // @synthesize shortText=_shortText;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (id)attributedString;

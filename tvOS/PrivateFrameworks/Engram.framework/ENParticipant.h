@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(retain, nonatomic) NSSet *aliases; // @synthesize aliases=_aliases;
 @property(retain, nonatomic) id <ENAccountPublicKey> accountPublicKey; // @synthesize accountPublicKey=_accountPublicKey;
-- (void).cxx_destruct;
 - (id)deviceWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsEngram;
 - (id)description;

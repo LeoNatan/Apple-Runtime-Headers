@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_thumbnailQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *thumbnailQueue; // @synthesize thumbnailQueue=_thumbnailQueue;
 @property(retain, nonatomic) NSMutableArray *updateHandlers; // @synthesize updateHandlers=_updateHandlers;
 @property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long pickerMode;
 @property(readonly, copy, nonatomic) NSArray *pickableTypes;
 - (void)updateSortDescriptors;

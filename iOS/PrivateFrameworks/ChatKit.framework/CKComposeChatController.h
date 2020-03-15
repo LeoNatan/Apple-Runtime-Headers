@@ -29,6 +29,7 @@
     CDUnknownBlockType _deferredSendAnimationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deferredSendAnimationBlock; // @synthesize deferredSendAnimationBlock=_deferredSendAnimationBlock;
 @property(nonatomic) _Bool sendingViaCardUI; // @synthesize sendingViaCardUI=_sendingViaCardUI;
 @property(retain, nonatomic) CKTranscriptMultilineLabelCell *blackholeAlertView; // @synthesize blackholeAlertView=_blackholeAlertView;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSArray *prepopulatedRecipients; // @synthesize prepopulatedRecipients=_prepopulatedRecipients;
 @property(nonatomic) _Bool ignoreKeyboardNotifications; // @synthesize ignoreKeyboardNotifications=_ignoreKeyboardNotifications;
 @property(retain, nonatomic) CKComposeRecipientSelectionController *composeRecipientSelectionController; // @synthesize composeRecipientSelectionController=_composeRecipientSelectionController;
-- (void).cxx_destruct;
 - (_Bool)shouldPresentBlockingDowntimeViewController;
 - (void)handleAddressBookChange:(id)arg1;
 - (id)_businessChatController;

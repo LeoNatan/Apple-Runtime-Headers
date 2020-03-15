@@ -25,10 +25,10 @@
     struct CGSize _maxThumbnailSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maxThumbnailSize; // @synthesize maxThumbnailSize=_maxThumbnailSize;
 @property(retain, nonatomic) QLItem *thumbnailItem; // @synthesize thumbnailItem=_thumbnailItem;
 @property(nonatomic) __weak id <ASVThumbnailViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2;
 - (void)previewCurrentItem;
 - (void)updateThumbnailIfNeeded;

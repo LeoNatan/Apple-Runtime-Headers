@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *features; // @synthesize features=_features;
 @property(copy, nonatomic) NSSet *namedImages; // @synthesize namedImages=_namedImages;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

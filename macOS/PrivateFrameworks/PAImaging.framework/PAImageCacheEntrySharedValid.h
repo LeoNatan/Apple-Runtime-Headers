@@ -14,9 +14,9 @@
     BOOL _valid;
 }
 
+- (void).cxx_destruct;
 @property BOOL valid; // @synthesize valid=_valid;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

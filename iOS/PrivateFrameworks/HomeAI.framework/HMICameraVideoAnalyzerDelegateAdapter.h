@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _didNotAnalyzeFragment;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didNotAnalyzeFragment; // @synthesize didNotAnalyzeFragment=_didNotAnalyzeFragment;
 @property(copy, nonatomic) CDUnknownBlockType didFindSignificantEvent; // @synthesize didFindSignificantEvent=_didFindSignificantEvent;
 @property(copy, nonatomic) CDUnknownBlockType didFailAnalysisForFragment; // @synthesize didFailAnalysisForFragment=_didFailAnalysisForFragment;
 @property(copy, nonatomic) CDUnknownBlockType didAnalyzeFragment; // @synthesize didAnalyzeFragment=_didAnalyzeFragment;
-- (void).cxx_destruct;
 - (void)analyzer:(id)arg1 didNotAnalyzeFragment:(id)arg2 withResult:(id)arg3;
 - (void)analyzer:(id)arg1 didFindSignificantEvent:(id)arg2 inFragment:(id)arg3;
 - (void)analyzer:(id)arg1 didFailAnalysisForFragment:(id)arg2 withError:(id)arg3;

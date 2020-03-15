@@ -20,12 +20,12 @@
 + (id)propertyWithItem:(id)arg1;
 + (id)debugStringForType:(int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *occurrenceChanges; // @synthesize occurrenceChanges=_occurrenceChanges;
 @property(retain, nonatomic) CalDAVOccurrenceChange *masterChange; // @synthesize masterChange=_masterChange;
 @property(retain, nonatomic) NSString *attendeeAddress; // @synthesize attendeeAddress=_attendeeAddress;
 @property(nonatomic) int actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) NSString *dateStamp; // @synthesize dateStamp=_dateStamp;
-- (void).cxx_destruct;
 - (id)changeForOccurrence:(id)arg1;
 @property(readonly, nonatomic) NSArray *recurrenceIDs;
 - (void)addOccurrenceChange:(id)arg1;

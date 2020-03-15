@@ -16,11 +16,11 @@
     ICStoreURLRequest *_storeURLRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICStoreURLRequest *storeURLRequest; // @synthesize storeURLRequest=_storeURLRequest;
 @property(retain, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(nonatomic, getter=isAutomatic) _Bool automatic; // @synthesize automatic=_automatic;
 @property(nonatomic) _Bool allowsExplicitContent; // @synthesize allowsExplicitContent=_allowsExplicitContent;
-- (void).cxx_destruct;
 - (void)_getURLFromBagAndSendRequest;
 - (void)_buildAndSendRequestForURL:(id)arg1;
 - (void)cancel;

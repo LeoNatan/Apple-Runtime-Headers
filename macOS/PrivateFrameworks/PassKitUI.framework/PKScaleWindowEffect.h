@@ -13,9 +13,9 @@
     double _nextEffectDelay;
 }
 
+- (void).cxx_destruct;
 @property double nextEffectDelay; // @synthesize nextEffectDelay=_nextEffectDelay;
 @property(retain) QLScaleWindowEffect *nextEffect; // @synthesize nextEffect=_nextEffect;
-- (void).cxx_destruct;
 - (void)done;
 - (float)animation:(id)arg1 valueForProgress:(float)arg2;
 - (void)setEaseFunction:(CDUnknownFunctionPointerType)arg1;

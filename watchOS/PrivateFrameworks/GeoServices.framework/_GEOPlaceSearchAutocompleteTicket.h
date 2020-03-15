@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     GEOAutocompleteSessionData *_sessionData;
 }
 
-@property(readonly, nonatomic, getter=_searchQuery) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_searchQuery) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 - (_Bool)showAutocompleteClientSource;
 - (_Bool)autocompleteTopSectionIsQuerySuggestions;
 - (id)sortPriorityMapping;

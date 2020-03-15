@@ -19,10 +19,10 @@
 }
 
 + (void)registerRequestHandler;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *workflowType; // @synthesize workflowType=_workflowType;
 @property(copy, nonatomic) CDUnknownBlockType doneHandler; // @synthesize doneHandler=_doneHandler;
-- (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

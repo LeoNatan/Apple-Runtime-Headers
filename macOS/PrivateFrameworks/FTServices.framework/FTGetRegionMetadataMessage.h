@@ -16,9 +16,9 @@
     NSDictionary *_responseRegionInformation;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *responseRegionInformation; // @synthesize responseRegionInformation=_responseRegionInformation;
 @property(copy) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)messageBody;
 - (id)requiredKeys;

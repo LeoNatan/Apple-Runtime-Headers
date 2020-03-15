@@ -31,10 +31,10 @@ __attribute__((visibility("hidden")))
 + (void)initialize;
 + (BOOL)loadSynthesizerResourceFromPath:(id)arg1 forDeviceID:(id)arg2;
 + (BOOL)unloadSynthesizerResourceForDeviceID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRSpeechSynthesizerVars *_privateSCRSpeechSynthesizerVars; // @synthesize _privateSCRSpeechSynthesizerVars=__privateSCRSpeechSynthesizerVars;
 @property(nonatomic) struct __CFMessagePort *_speechSynthesizerConsoleRemoteMessagePort; // @synthesize _speechSynthesizerConsoleRemoteMessagePort=__speechSynthesizerConsoleRemoteMessagePort;
 @property(nonatomic) BOOL _wordCallBackRegistered; // @synthesize _wordCallBackRegistered=__wordCallBackRegistered;
-- (void).cxx_destruct;
 - (void)_handleSpeechDoneNoCallback;
 - (void)_handleDefaultVoiceChange;
 - (BOOL)_setupCallbacksSavingToFile:(BOOL)arg1;

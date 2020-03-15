@@ -15,8 +15,8 @@
 
 + (id)layerWithTintColor:(id)arg1 filterType:(id)arg2;
 + (id)layerWithTintColor:(id)arg1;
-@property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 - (id)description;
 - (void)deconfigureLayerView:(id)arg1;
 - (void)configureLayerView:(id)arg1;

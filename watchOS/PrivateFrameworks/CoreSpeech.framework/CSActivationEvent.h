@@ -23,13 +23,13 @@
 + (id)builtInMicVoiceTriggerEvent:(id)arg1 hostTime:(unsigned long long)arg2;
 + (id)remoteMicVADEvent:(id)arg1 vadScore:(float)arg2 hostTime:(unsigned long long)arg3;
 + (id)remoteMicVoiceTriggerEvent:(id)arg1 activationInfo:(id)arg2 hostTime:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) float vadScore; // @synthesize vadScore=_vadScore;
 @property(nonatomic) unsigned long long hosttime; // @synthesize hosttime=_hosttime;
 @property(retain, nonatomic) NSDictionary *activationInfo; // @synthesize activationInfo=_activationInfo;
 @property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)_activationTypeString;
 @property(readonly, nonatomic) NSString *localizedDescription;
 - (id)xpcObject;

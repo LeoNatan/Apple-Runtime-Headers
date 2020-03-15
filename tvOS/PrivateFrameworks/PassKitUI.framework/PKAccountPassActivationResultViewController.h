@@ -25,10 +25,10 @@
     _Bool _showingLoadingIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showingLoadingIndicator; // @synthesize showingLoadingIndicator=_showingLoadingIndicator;
 @property(nonatomic) _Bool didMakeAccountPassDefault; // @synthesize didMakeAccountPassDefault=_didMakeAccountPassDefault;
 @property(nonatomic) _Bool didAddToAmp; // @synthesize didAddToAmp=_didAddToAmp;
-- (void).cxx_destruct;
 - (id)_setupLaterBodyString;
 - (id)_localizedStringKeyForPerformedOperationsAndMadeDefault:(_Bool)arg1;
 - (void)_terminateSetupFlow;

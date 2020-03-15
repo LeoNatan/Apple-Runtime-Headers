@@ -20,6 +20,7 @@
 }
 
 + (id)_imagesForAnnotations:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *annotationImages; // @synthesize annotationImages=_annotationImages;
 @property(retain) AKShapesGridViewController *shapesPicker; // @synthesize shapesPicker=_shapesPicker;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
@@ -27,7 +28,6 @@
 @property(retain) NSButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain) NSArray *items; // @synthesize items=_items;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (BOOL)setSelectionIndexes:(id)arg1;
 @property(copy) CDUnknownBlockType potentialActionBlock;
 @property(copy) CDUnknownBlockType actionBlock;

@@ -17,10 +17,10 @@
     VCPBIntentDefinition *_intentDefinition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCPBIntentDefinition *intentDefinition; // @synthesize intentDefinition=_intentDefinition;
 @property(retain, nonatomic) NSString *associatedBundleID; // @synthesize associatedBundleID=_associatedBundleID;
 @property(nonatomic) int changeType; // @synthesize changeType=_changeType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

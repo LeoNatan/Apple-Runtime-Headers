@@ -19,12 +19,12 @@
     long long _presentationStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL value; // @synthesize value=_value;
 @property(nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(copy, nonatomic) NSString *localizedShortTitle; // @synthesize localizedShortTitle=_localizedShortTitle;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, nonatomic) unsigned int command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)changeValue:(BOOL)arg1;
 - (id)initWithResponse:(id)arg1 mediaRemoteCommand:(unsigned int)arg2;
 

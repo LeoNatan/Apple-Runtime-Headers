@@ -19,10 +19,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(copy, nonatomic) NSString *feldsparID; // @synthesize feldsparID=_feldsparID;
 @property(retain, nonatomic) FCUserInfo *userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (void)_updateFeldsparID:(id)arg1;
 - (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(_Bool)arg2;
 - (void)removeObserver:(id)arg1;

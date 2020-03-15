@@ -16,11 +16,12 @@
     NSString *_voicePath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *voicePath; // @synthesize voicePath=_voicePath;
 @property(retain) NSString *builtInVoicePath; // @synthesize builtInVoicePath=_builtInVoicePath;
 @property(retain) MAAsset *asset; // @synthesize asset=_asset;
 @property(retain) VSVoiceAsset *voiceData; // @synthesize voiceData=_voiceData;
-- (void).cxx_destruct;
+- (double)preferenceScore;
 - (_Bool)isDownloading;
 - (_Bool)isInstalled;
 - (unsigned long long)size;

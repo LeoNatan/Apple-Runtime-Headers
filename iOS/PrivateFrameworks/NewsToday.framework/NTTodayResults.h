@@ -15,12 +15,16 @@
 {
     NSOrderedSet *_sections;
     NSDate *_expirationDate;
+    NSObject *_assetsHoldToken;
+    NSObject *_recordsHoldToken;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSObject *recordsHoldToken; // @synthesize recordsHoldToken=_recordsHoldToken;
+@property(copy, nonatomic) NSObject *assetsHoldToken; // @synthesize assetsHoldToken=_assetsHoldToken;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSOrderedSet *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -28,6 +32,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)itemCount;
+- (id)initWithSections:(id)arg1 expirationDate:(id)arg2 assetsHoldToken:(id)arg3 recordsHoldToken:(id)arg4;
 - (id)initWithSections:(id)arg1 expirationDate:(id)arg2;
 - (id)init;
 

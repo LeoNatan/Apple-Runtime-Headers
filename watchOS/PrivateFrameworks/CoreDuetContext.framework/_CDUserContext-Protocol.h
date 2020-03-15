@@ -6,11 +6,11 @@
 
 #import <CoreDuetContext/_CDLocalContext-Protocol.h>
 
-@class NSArray, _CDContextualPredicate;
+@class NSArray, NSDictionary, _CDContextualPredicate;
 @protocol _CDLocalContext;
 
 @protocol _CDUserContext <_CDLocalContext>
-- (struct NSDictionary *)valuesForKeyPaths:(NSArray *)arg1;
+- (NSDictionary *)valuesForKeyPaths:(NSArray *)arg1;
 - (NSArray *)valuesForKeyPaths:(NSArray *)arg1 inContextsMatchingPredicate:(_CDContextualPredicate *)arg2;
 - (id <_CDLocalContext>)localContext;
 @end

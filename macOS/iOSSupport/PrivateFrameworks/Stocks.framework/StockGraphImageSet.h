@@ -15,10 +15,10 @@
     UIImage *_volumeGraphImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *volumeGraphImage; // @synthesize volumeGraphImage=_volumeGraphImage;
 @property(retain, nonatomic) UIImage *highlightOverlayImage; // @synthesize highlightOverlayImage=_highlightOverlayImage;
 @property(retain, nonatomic) UIImage *lineGraphImage; // @synthesize lineGraphImage=_lineGraphImage;
-- (void).cxx_destruct;
 
 @end
 

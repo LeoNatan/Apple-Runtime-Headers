@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)_defaultAppIconSize;
 + (struct CGSize)_defaultImageSize;
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageLayout *monogramImageLayout; // @synthesize monogramImageLayout=_monogramImageLayout;
 @property(retain, nonatomic) TVImageLayout *appIconLayout; // @synthesize appIconLayout=_appIconLayout;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUITextLayout *subtitleTextLayout; // @synthesize subtitleTextLayout=_subtitleTextLayout;
 @property(retain, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 @property(nonatomic) long long imagePosition; // @synthesize imagePosition=_imagePosition;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

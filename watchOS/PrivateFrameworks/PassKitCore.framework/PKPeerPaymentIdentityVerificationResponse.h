@@ -23,6 +23,7 @@
     NSString *_encryptionVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool manuallyTriggered; // @synthesize manuallyTriggered=_manuallyTriggered;
 @property(readonly, copy, nonatomic) NSString *encryptionVersion; // @synthesize encryptionVersion=_encryptionVersion;
 @property(readonly, copy, nonatomic) NSArray *encryptionCertificates; // @synthesize encryptionCertificates=_encryptionCertificates;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) _Bool complete; // @synthesize complete=_complete;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

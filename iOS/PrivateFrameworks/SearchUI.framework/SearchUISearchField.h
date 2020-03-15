@@ -13,8 +13,8 @@
     SearchUIResultsViewController *_resultsViewController;
 }
 
-@property __weak SearchUIResultsViewController *resultsViewController; // @synthesize resultsViewController=_resultsViewController;
 - (void).cxx_destruct;
+@property __weak SearchUIResultsViewController *resultsViewController; // @synthesize resultsViewController=_resultsViewController;
 - (id)nextResponder;
 
 @end

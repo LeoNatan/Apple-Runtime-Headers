@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BRFieldCKInfo;
+@class BRFieldCKInfo, NSData;
 
 __attribute__((visibility("hidden")))
 @interface BRCSideCarInfo : NSObject
@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
     BRFieldCKInfo *_ckInfo;
     long long _favoriteRank;
     long long _lastUsedTime;
+    NSData *_finderTags;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSData *finderTags; // @synthesize finderTags=_finderTags;
 @property(nonatomic) long long lastUsedTime; // @synthesize lastUsedTime=_lastUsedTime;
 @property(nonatomic) long long favoriteRank; // @synthesize favoriteRank=_favoriteRank;
 @property(retain, nonatomic) BRFieldCKInfo *ckInfo; // @synthesize ckInfo=_ckInfo;
-- (void).cxx_destruct;
 - (_Bool)hasfieldsToSync;
 - (id)debugDescription;
 - (id)description;

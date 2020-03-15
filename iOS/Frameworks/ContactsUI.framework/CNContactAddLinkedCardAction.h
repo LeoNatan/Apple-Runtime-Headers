@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CNContact *_selectedContact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *selectedContact; // @synthesize selectedContact=_selectedContact;
 @property(retain, nonatomic) CNContactPickerViewController *contactPicker; // @synthesize contactPicker=_contactPicker;
 @property(retain, nonatomic) NSArray *editingLinkedContacts; // @synthesize editingLinkedContacts=_editingLinkedContacts;
 @property(retain, nonatomic) CNContact *chosenContact; // @synthesize chosenContact=_chosenContact;
-- (void).cxx_destruct;
 - (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 labeledValue:(id)arg4;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;

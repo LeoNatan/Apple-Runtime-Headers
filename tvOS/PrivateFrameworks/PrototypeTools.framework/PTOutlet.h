@@ -6,19 +6,24 @@
 
 #import <objc/NSObject.h>
 
+#import <PrototypeTools/NSSecureCoding-Protocol.h>
+
 @class NSMutableDictionary;
 
-@interface PTOutlet : NSObject
+@interface PTOutlet : NSObject <NSSecureCoding>
 {
     unsigned long long _nextToken;
     NSMutableDictionary *_actionsByToken;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (void)_invokeActions;
 - (id)_init;
-- (void)removeActionForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)addAction:(CDUnknownBlockType)arg1;
+- (void)removeActionForToken:(id)arg1;
+- (id)addAction:(CDUnknownBlockType)arg1;
 
 @end
 

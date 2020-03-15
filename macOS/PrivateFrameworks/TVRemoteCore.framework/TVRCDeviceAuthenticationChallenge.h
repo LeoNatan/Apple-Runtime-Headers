@@ -12,15 +12,17 @@
 {
     long long _challengeType;
     long long _challengeAttributes;
+    long long _throttleSeconds;
     NSString *_codeToEnterOnDevice;
     NSString *_deviceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(readonly, copy, nonatomic) NSString *codeToEnterOnDevice; // @synthesize codeToEnterOnDevice=_codeToEnterOnDevice;
+@property(nonatomic) long long throttleSeconds; // @synthesize throttleSeconds=_throttleSeconds;
 @property(nonatomic) long long challengeAttributes; // @synthesize challengeAttributes=_challengeAttributes;
 @property(readonly, nonatomic) long long challengeType; // @synthesize challengeType=_challengeType;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)userEnteredCodeLocally:(id)arg1;
 - (id)_initWithDeviceIdentifier:(id)arg1 challengeType:(long long)arg2 codeToEnterOnDevice:(id)arg3;

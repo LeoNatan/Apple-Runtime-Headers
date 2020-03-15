@@ -19,8 +19,8 @@
     NSDate *_date;
 }
 
-@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (id)_attributedSymbolForClassification:(unsigned long long)arg1 font:(id)arg2;
 - (id)attributedSupplementaryStringWithDisplayType:(id)arg1 unitController:(id)arg2 font:(id)arg3;
 - (id)stringWithDisplayType:(id)arg1 unitController:(id)arg2;

@@ -14,9 +14,9 @@
     UIActivityIndicatorView *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(nonatomic) _Bool hasSpinner; // @synthesize hasSpinner=_hasSpinner;
-- (void).cxx_destruct;
 - (_Bool)usesStandardBackgroundImage;
 - (void)layoutSubviews;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;

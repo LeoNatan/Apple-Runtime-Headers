@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (void)getRemovalWarningMessage:(id *)arg1 buttonTitle:(id *)arg2 cancelTitle:(id *)arg3 forAssets:(id)arg4;
 + (void)getCombinedRemovalDeletionWarningMessage:(id *)arg1 removeButtonTitle:(id *)arg2 deleteButtonTitle:(id *)arg3 cancelTitle:(id *)arg4 forAssets:(id)arg5;
-@property(retain, nonatomic, setter=_setAssets:) NSArray *_assets; // @synthesize _assets=__assets;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setAssets:) NSArray *_assets; // @synthesize _assets=__assets;
 - (id)_suffix;
 
 @end

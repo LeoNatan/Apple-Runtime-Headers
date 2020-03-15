@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIImage *_image;
 }
 
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void)sizeToFit;
 - (id)initWithImage:(id)arg1;
 

@@ -21,10 +21,10 @@
     NSArray *_nudgeGestureRecognizers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *nudgeGestureRecognizers; // @synthesize nudgeGestureRecognizers=_nudgeGestureRecognizers;
 @property(retain, nonatomic) CPSPanView *panView; // @synthesize panView=_panView;
 @property(nonatomic) __weak id <CPSPanEventDelegate> panDelegate; // @synthesize panDelegate=_panDelegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double sideButtonTopInset;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)_linearFocusItems;

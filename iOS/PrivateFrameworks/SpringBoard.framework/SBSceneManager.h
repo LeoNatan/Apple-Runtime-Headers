@@ -52,8 +52,8 @@
 + (Class)_sceneLayoutWindowClass;
 + (Class)_applicationSceneHandleClass;
 + (Class)_layoutStateManagerClass;
-@property(retain, nonatomic) SBLayoutState *currentLayoutState; // @synthesize currentLayoutState=_currentLayoutState;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBLayoutState *currentLayoutState; // @synthesize currentLayoutState=_currentLayoutState;
 - (void)sceneManager:(id)arg1 interceptUpdateForScene:(id)arg2 withNewSettings:(id)arg3;
 - (id)sceneManager:(id)arg1 createDefaultTransitionContextForScene:(id)arg2;
 - (void)scene:(id)arg1 didCompleteUpdateWithContext:(id)arg2 error:(id)arg3;

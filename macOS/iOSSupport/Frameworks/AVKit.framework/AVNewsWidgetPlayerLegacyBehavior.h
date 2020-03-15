@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <AVPlayerViewControllerContentTransitioning_NewsOnly> _legacyDelegate;
 }
 
-@property(nonatomic) __weak id <AVPlayerViewControllerContentTransitioning_NewsOnly> legacyDelegate; // @synthesize legacyDelegate=_legacyDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AVPlayerViewControllerContentTransitioning_NewsOnly> legacyDelegate; // @synthesize legacyDelegate=_legacyDelegate;
 - (void)didCancelContentTransition;
 - (void)willCancelContentTransition;
 - (void)didCompleteContentTransition;

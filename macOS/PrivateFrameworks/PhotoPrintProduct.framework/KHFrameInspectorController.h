@@ -17,10 +17,10 @@
     KHTreatmentPickerController *_treatmentPickerController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHTreatmentPickerController *treatmentPickerController; // @synthesize treatmentPickerController=_treatmentPickerController;
 @property(retain, nonatomic) KHTheme *theme; // @synthesize theme=_theme;
 @property(retain, nonatomic) NSArray *frames; // @synthesize frames=_frames;
-- (void).cxx_destruct;
 - (id)badgeImage;
 - (void)teardownBindings;
 - (void)setupModelBindings;

@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType tryPINHandler; // @synthesize tryPINHandler=_tryPINHandler;
 @property(copy, nonatomic) CDUnknownBlockType retryHandler; // @synthesize retryHandler=_retryHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
-- (void).cxx_destruct;
 - (void)promptWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
 - (void)pairingError:(id)arg1;
 - (void)invalidate;

@@ -27,11 +27,11 @@
     _PXEditableNavigationTitleTextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(readonly, nonatomic) _PXEditableNavigationTitleTextField *textField; // @synthesize textField=_textField;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) __weak id <PXEditableNavigationTitleViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)textFieldDidEndEditing:(id)arg1 reason:(long long)arg2;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)_textFieldTextDidChange:(id)arg1;

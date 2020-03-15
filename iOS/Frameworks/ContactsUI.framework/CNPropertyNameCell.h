@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <CNPropertyCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIResponder *firstResponderItem; // @synthesize firstResponderItem=_firstResponderItem;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (double)minCellHeight;
 - (void)setBackgroundColor:(id)arg1;
 @property(retain, nonatomic) CNPropertyGroupItem *propertyItem;

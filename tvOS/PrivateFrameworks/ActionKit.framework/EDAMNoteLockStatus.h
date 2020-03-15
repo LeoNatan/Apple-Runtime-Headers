@@ -21,6 +21,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *currentTime; // @synthesize currentTime=_currentTime;
 @property(retain, nonatomic) NSDictionary *unknownUsers; // @synthesize unknownUsers=_unknownUsers;
 @property(retain, nonatomic) NSNumber *viewIdleExpiration; // @synthesize viewIdleExpiration=_viewIdleExpiration;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSNumber *lockRenewBy; // @synthesize lockRenewBy=_lockRenewBy;
 @property(retain, nonatomic) NSNumber *lockHolderUserId; // @synthesize lockHolderUserId=_lockHolderUserId;
 @property(retain, nonatomic) NSNumber *noteUpdateSequenceNumber; // @synthesize noteUpdateSequenceNumber=_noteUpdateSequenceNumber;
-- (void).cxx_destruct;
 
 @end
 

@@ -24,12 +24,12 @@
     struct CGSize _thumbnailSize;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *atlasTextures; // @synthesize atlasTextures=_atlasTextures;
 @property(readonly, nonatomic) PXGColorProgram *colorProgram; // @synthesize colorProgram=_colorProgram;
 @property(retain, nonatomic) NSIndexSet *skipRenderSpriteIndexes; // @synthesize skipRenderSpriteIndexes=_skipRenderSpriteIndexes;
 @property(readonly, nonatomic) struct CGSize thumbnailSize; // @synthesize thumbnailSize=_thumbnailSize;
 @property(readonly, nonatomic) unsigned long long pixelFormat; // @synthesize pixelFormat=_pixelFormat;
-- (void).cxx_destruct;
 - (void)_getAtlas:(id *)arg1 localThumbnailIndex:(unsigned int *)arg2 forGlobalThumbnailIndex:(unsigned int)arg3;
 - (void)_requestQueue_getNextAvailableAtlas:(id *)arg1 thumbnailOffset:(unsigned int *)arg2;
 - (void)pruneUnusedTextures;

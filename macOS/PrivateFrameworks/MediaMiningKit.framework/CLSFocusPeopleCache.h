@@ -16,10 +16,10 @@
 }
 
 + (id)_personSortDescriptors;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic) unsigned long long maximumNumberOfPeople; // @synthesize maximumNumberOfPeople=_maximumNumberOfPeople;
 @property(readonly, nonatomic) NSSet *peopleUUIDs; // @synthesize peopleUUIDs=_peopleUUIDs;
-- (void).cxx_destruct;
 - (id)_collectValidPeopleUUIDs;
 - (void)invalidate;
 - (id)initWithPhotoLibrary:(id)arg1 maximumNumberOfPeople:(unsigned long long)arg2;

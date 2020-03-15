@@ -32,6 +32,7 @@
     double _smallBalloonScale;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *innerStrokeColor; // @synthesize innerStrokeColor=_innerStrokeColor;
 @property(copy, nonatomic) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(nonatomic) double smallBalloonScale; // @synthesize smallBalloonScale=_smallBalloonScale;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(copy, nonatomic) NSColor *balloonTintColor; // @synthesize balloonTintColor=_balloonTintColor;
-- (void).cxx_destruct;
 - (BOOL)calloutContainsPoint:(struct CGPoint)arg1;
 - (void)dismissAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;

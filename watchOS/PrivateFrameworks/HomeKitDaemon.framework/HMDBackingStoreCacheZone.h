@@ -16,11 +16,11 @@
     long long _zoneID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *actualShares; // @synthesize actualShares=_actualShares;
 @property(retain) NSMutableArray *actualGroups; // @synthesize actualGroups=_actualGroups;
 @property(readonly) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(readonly) long long zoneID; // @synthesize zoneID=_zoneID;
-- (void).cxx_destruct;
 @property(readonly) NSArray *shares;
 @property(readonly) NSArray *groups;
 - (id)dumpDebug;

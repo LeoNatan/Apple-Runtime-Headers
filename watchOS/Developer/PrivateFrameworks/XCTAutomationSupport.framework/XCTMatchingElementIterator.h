@@ -20,11 +20,11 @@
     NSSet *_currentRelatedElements;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *currentRelatedElements; // @synthesize currentRelatedElements=_currentRelatedElements;
 @property(retain) XCElementSnapshot *currentMatch; // @synthesize currentMatch=_currentMatch;
 @property(readonly) id <XCTElementSetTransformer> transformer; // @synthesize transformer=_transformer;
 @property(readonly) XCElementSnapshot *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (id)nextMatch;
 - (id)initWithInput:(id)arg1 transformer:(id)arg2;
 

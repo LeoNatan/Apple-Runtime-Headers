@@ -18,13 +18,13 @@
     unsigned long long _fieldLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fieldLength; // @synthesize fieldLength=_fieldLength;
 @property(retain, nonatomic) NSArray *termInverseDocWeighted; // @synthesize termInverseDocWeighted=_termInverseDocWeighted;
 @property(retain, nonatomic) NSArray *termInverseDoc; // @synthesize termInverseDoc=_termInverseDoc;
 @property(retain, nonatomic) NSArray *inverseDocFrequencies; // @synthesize inverseDocFrequencies=_inverseDocFrequencies;
 @property(retain, nonatomic) NSArray *termFrequenciesWeighted; // @synthesize termFrequenciesWeighted=_termFrequenciesWeighted;
 @property(retain, nonatomic) NSArray *termFrequencies; // @synthesize termFrequencies=_termFrequencies;
-- (void).cxx_destruct;
 
 @end
 

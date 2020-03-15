@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)connectionFromXPCConnection:(id)arg1 delegate:(id)arg2;
-@property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 - (void)sendMessage:(id)arg1;
 - (void)_handleXPCEvent:(id)arg1;
 - (void)closeInternal;

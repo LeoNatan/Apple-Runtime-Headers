@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     VSSubscriptionPredicateFactory *_predicateFactory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSSubscriptionPredicateFactory *predicateFactory; // @synthesize predicateFactory=_predicateFactory;
 @property(retain, nonatomic) VSSubscriptionPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 @property(retain, nonatomic) VSRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
-- (void).cxx_destruct;
 - (void)removeSubscriptions:(id)arg1;
 - (id)_predicateForPersistentAttributesOfSubscriptions:(id)arg1 withEntity:(id)arg2 forFiltering:(_Bool)arg3;
 - (void)registerSubscription:(id)arg1;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (id)_subscriptionEntity;
 - (long long)_saveChangesToContext:(id)arg1 withDate:(id)arg2;
 - (_Bool)_saveChangesToContext:(id)arg1;
-- (void)_performBlockAndWait:(CDUnknownBlockType)arg1;
+- (void)_performBlock:(CDUnknownBlockType)arg1;
 - (void)_installedAppsDidChange:(id)arg1;
 - (void)_sendRemoteNotification;
 - (void)dealloc;

@@ -15,10 +15,10 @@
     NSString *_alternateGUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, setter=setAlternateGUID:) NSString *alternateGUID; // @synthesize alternateGUID=_alternateGUID;
 @property(retain, setter=setGUID:) NSString *guid; // @synthesize guid=_guid;
 @property unsigned int dataProtectionClass; // @synthesize dataProtectionClass=_dataProtectionClass;
-- (void).cxx_destruct;
 
 @end
 

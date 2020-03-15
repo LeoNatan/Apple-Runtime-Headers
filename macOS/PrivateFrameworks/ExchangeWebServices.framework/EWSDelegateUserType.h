@@ -19,11 +19,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ViewPrivateItems; // @synthesize ViewPrivateItems=_ViewPrivateItems;
 @property(nonatomic) BOOL ReceiveCopiesOfMeetingMessages; // @synthesize ReceiveCopiesOfMeetingMessages=_ReceiveCopiesOfMeetingMessages;
 @property(retain, nonatomic) EWSDelegatePermissionsType *DelegatePermissions; // @synthesize DelegatePermissions=_DelegatePermissions;
 @property(retain, nonatomic) EWSUserIdType *UserId; // @synthesize UserId=_UserId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

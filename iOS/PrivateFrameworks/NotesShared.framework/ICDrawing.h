@@ -29,13 +29,13 @@
 + (struct CGAffineTransform)defaultSizeOrientationTransform:(long long)arg1;
 + (struct CGSize)fullSize:(struct CGSize)arg1 forOrientation:(long long)arg2;
 + (void)sortCommands:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect unrotatedBoundsInCommandSpace; // @synthesize unrotatedBoundsInCommandSpace=_unrotatedBoundsInCommandSpace;
 @property(retain, nonatomic) NSDate *orientationTimestamp; // @synthesize orientationTimestamp=_orientationTimestamp;
 @property(nonatomic) struct CGSize unrotatedSize; // @synthesize unrotatedSize=_unrotatedSize;
 @property(readonly, nonatomic) NSOrderedSet *commands; // @synthesize commands=_commands;
 @property(retain, nonatomic) TTVectorMultiTimestamp *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSUUID *replicaUUID; // @synthesize replicaUUID=_replicaUUID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long imageOrientation;
 - (struct CGAffineTransform)orientationTransform;
 @property(readonly, nonatomic) struct CGRect fullBounds;

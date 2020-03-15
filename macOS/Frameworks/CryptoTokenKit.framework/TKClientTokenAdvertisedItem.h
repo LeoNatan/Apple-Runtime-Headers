@@ -15,9 +15,9 @@
     NSDictionary *_keychainAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *keychainAttributes; // @synthesize keychainAttributes=_keychainAttributes;
 @property(readonly, nonatomic) TKClientTokenSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __SecIdentity *identityRef;
 @property(readonly, nonatomic) struct __SecCertificate *certificateRef;
 @property(readonly, nonatomic) struct __SecKey *keyRef;

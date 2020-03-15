@@ -15,8 +15,8 @@
     NSMutableDictionary *_storage;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *storage; // @synthesize storage=_storage;
 - (void)setFloat:(float)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (float)floatForKey:(id)arg1;

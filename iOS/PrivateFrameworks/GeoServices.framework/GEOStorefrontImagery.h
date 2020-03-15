@@ -20,6 +20,7 @@
     unsigned int _dataFormatVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int dataFormatVersion; // @synthesize dataFormatVersion=_dataFormatVersion;
 @property(readonly, nonatomic) NSArray *cameras; // @synthesize cameras=_cameras;
 @property(readonly, nonatomic) struct GEOOrientedPosition position; // @synthesize position=_position;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) unsigned short bucketId; // @synthesize bucketId=_bucketId;
 @property(readonly, nonatomic) unsigned int buildId; // @synthesize buildId=_buildId;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithPhotoPosition:(id)arg1;
 - (id)init;
 

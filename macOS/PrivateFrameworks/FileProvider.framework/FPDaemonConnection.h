@@ -24,8 +24,8 @@
 + (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 + (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 + (id)sharedConnection;
-@property(nonatomic) unsigned int user; // @synthesize user=_user;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int user; // @synthesize user=_user;
 - (void)restoreUserURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)backUpUserURL:(id)arg1 outputUserURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getURLForContainerWithItemID:(id)arg1 inDataScopeDomainWithIdentifier:(id)arg2 documentsScopeDomainIdentifier:(id)arg3 documentsFolderItemIdentifier:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -33,6 +33,8 @@
 - (void)makeTopologicallySortedItemsOnDisk:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
 - (void)_test_retrieveItemWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)waitForStabilizationOfDomainWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)copyDatabaseForFPCKStartingAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)listOfMonitoredAppsWithError:(id *)arg1;
 - (id)valuesForAttributes:(id)arg1 forItemAtURL:(id)arg2 error:(id *)arg3;

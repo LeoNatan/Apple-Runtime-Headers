@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableSet *relevantPassIdentifiers; // @synthesize relevantPassIdentifiers=_relevantPassIdentifiers;
 @property(retain, nonatomic) NSMutableDictionary *networks; // @synthesize networks=_networks;
 @property(retain, nonatomic) PKPassLibrary *passLibrary; // @synthesize passLibrary=_passLibrary;
 @property(copy, nonatomic) CDUnknownBlockType relevancyHandler; // @synthesize relevancyHandler;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler;
-- (void).cxx_destruct;
 - (id)relevantNetworks;
 - (id)candidateNetworks;
 - (id)_networksWithIdentifier:(id)arg1;

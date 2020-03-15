@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_cancellationQ;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cancellationQ; // @synthesize cancellationQ=_cancellationQ;
 @property(getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (void)addOperations:(id)arg1 waitUntilFinished:(_Bool)arg2;
 - (void)addOperationWithBlock:(CDUnknownBlockType)arg1;
 - (void)addOperation:(id)arg1;

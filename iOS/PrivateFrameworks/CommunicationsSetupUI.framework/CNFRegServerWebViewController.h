@@ -31,9 +31,9 @@
     UIWebView *_webView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) CNFRegController *regController; // @synthesize regController=_regController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool timedOut; // @dynamic timedOut;
 @property(readonly, nonatomic) _Bool isLoading; // @dynamic isLoading;
 @property(readonly, nonatomic) _Bool isLoaded; // @dynamic isLoaded;

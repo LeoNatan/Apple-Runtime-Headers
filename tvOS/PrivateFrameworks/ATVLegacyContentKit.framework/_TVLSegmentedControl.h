@@ -14,9 +14,9 @@
     long long _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)enumerateLabelFramesWithBlock:(CDUnknownBlockType)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutSubviews;

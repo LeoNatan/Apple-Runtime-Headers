@@ -21,6 +21,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSArray *content; // @synthesize content=_content;
 @property __weak NSButton *scrollRightButton; // @synthesize scrollRightButton=_scrollRightButton;
 @property __weak NSButton *scrollLeftButton; // @synthesize scrollLeftButton=_scrollLeftButton;
@@ -29,7 +30,6 @@
 @property __weak NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property __weak NSLayoutConstraint *collectionViewWidthConstraint; // @synthesize collectionViewWidthConstraint=_collectionViewWidthConstraint;
 @property __weak NSLayoutConstraint *scrollerButtonWidthConstraint; // @synthesize scrollerButtonWidthConstraint=_scrollerButtonWidthConstraint;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)recalculateCollectionWidthConstraint;
 - (void)pressedScrollRightButton:(id)arg1;

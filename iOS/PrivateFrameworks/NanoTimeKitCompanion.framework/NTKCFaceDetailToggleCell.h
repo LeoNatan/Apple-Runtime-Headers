@@ -16,9 +16,9 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISwitch *toggle; // @synthesize toggle=_toggle;
 @property(nonatomic) __weak id <NTKCFaceDetailToggleCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_switchToggled;
 @property(nonatomic) _Bool on;

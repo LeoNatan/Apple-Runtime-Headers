@@ -22,6 +22,7 @@
     long long __pendingChangeNotifications;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setPendingChangeNotifications:) long long _pendingChangeNotifications; // @synthesize _pendingChangeNotifications=__pendingChangeNotifications;
 @property(nonatomic, setter=_setNestedPerformChanges:) long long _nestedPerformChanges; // @synthesize _nestedPerformChanges=__nestedPerformChanges;
 @property(readonly, nonatomic) NSMutableDictionary *_enqueuedBurstConvertiblesByAssetUUID; // @synthesize _enqueuedBurstConvertiblesByAssetUUID=__enqueuedBurstConvertiblesByAssetUUID;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *_assetsByUUID; // @synthesize _assetsByUUID=__assetsByUUID;
 @property(readonly, nonatomic) NSMutableArray *_assetUUIDs; // @synthesize _assetUUIDs=__assetUUIDs;
 @property(readonly, nonatomic) NSHashTable *_observers; // @synthesize _observers=__observers;
-- (void).cxx_destruct;
 - (void)_notifyObserversOfDataSourceChange;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;

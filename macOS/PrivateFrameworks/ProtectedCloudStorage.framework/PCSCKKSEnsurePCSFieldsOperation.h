@@ -13,8 +13,8 @@
     PCSCKKSItemModifyContext *_context;
 }
 
-@property(retain) PCSCKKSItemModifyContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) PCSCKKSItemModifyContext *context; // @synthesize context=_context;
 - (int)updateKeychain:(id)arg1 withAttributes:(id)arg2;
 - (void)start;
 - (_Bool)haveCKKSPlaintextEntitlements;

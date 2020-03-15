@@ -15,8 +15,8 @@
     id <HKHistogramAxisDimensionDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <HKHistogramAxisDimensionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HKHistogramAxisDimensionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id)stringForLocation:(id)arg1;
 - (void)setStepSizeForLabels:(double)arg1;
 - (double)ticksPerStepSize:(double)arg1;

@@ -24,8 +24,8 @@
 
 + (id)narrowBandOpusConverter;
 + (id)opusConverter;
-@property __weak id <CSAudioConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <CSAudioConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_configureAudioConverter:(struct OpaqueAudioConverter *)arg1;
 - (void)reset;
 - (void)_convertBufferedLPCM:(id)arg1 allowPartial:(_Bool)arg2 timestamp:(unsigned long long)arg3;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSArray *_filesToDelete;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *filesToDelete; // @synthesize filesToDelete=_filesToDelete;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NetDiagnosticsShim *netDiags; // @synthesize netDiags=_netDiags;
 @property(retain) id <SymptomsFileCleanerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)netDiagnosticTaskStatusChangedFor:(id)arg1 toStatus:(int)arg2;
 - (void)cleanupFiles:(id)arg1;
 - (id)initWithQueue:(id)arg1;

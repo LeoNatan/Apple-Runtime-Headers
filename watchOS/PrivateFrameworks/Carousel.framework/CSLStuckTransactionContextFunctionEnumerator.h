@@ -14,9 +14,9 @@
     unsigned int _currentIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSPointerArray *functions; // @synthesize functions=_functions;
-- (void).cxx_destruct;
 - (CDUnknownFunctionPointerType)nextFunction;
 - (id)initWithFunctions:(id)arg1;
 

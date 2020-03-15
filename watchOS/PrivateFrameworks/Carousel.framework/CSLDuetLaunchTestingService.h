@@ -20,11 +20,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *errorCodesByBundleID; // @synthesize errorCodesByBundleID=_errorCodesByBundleID;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)clearError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)injectError:(id)arg1 errorCode:(int)arg2 completion:(CDUnknownBlockType)arg3;

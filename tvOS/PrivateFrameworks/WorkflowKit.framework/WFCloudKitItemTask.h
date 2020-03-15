@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) CKOperation *cloudOperation; // @synthesize cloudOperation=_cloudOperation;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
 

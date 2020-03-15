@@ -14,8 +14,8 @@
 }
 
 + (id)downloadQueueWithIdentifier:(id)arg1;
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)removeDownloadQueueObserver:(id)arg1;
 - (id)addDownloadQueueObserver:(id)arg1;
 - (id)_identifiersForDownloads:(id)arg1;

@@ -681,7 +681,7 @@
 - (id)selectionRects;
 - (id)selectionRectsForDOMRange:(id)arg1;
 - (id)textInDOMRange:(id)arg1;
-- (void)setSelectedDOMRange:(id)arg1 affinity:(int)arg2;
+- (void)setSelectedDOMRange:(id)arg1 affinity:(unsigned long long)arg2;
 - (id)wordAtPoint:(struct CGPoint)arg1;
 - (void)setSelectionWithFirstPoint:(struct CGPoint)arg1 secondPoint:(struct CGPoint)arg2;
 - (void)setRangedSelectionExtentPoint:(struct CGPoint)arg1 baseIsStart:(_Bool)arg2 allowFlipping:(_Bool)arg3;

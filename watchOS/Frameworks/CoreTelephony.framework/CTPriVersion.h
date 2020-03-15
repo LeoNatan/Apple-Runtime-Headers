@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *releaseVersion; // @synthesize releaseVersion=_releaseVersion;
 @property(retain, nonatomic) NSNumber *minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(retain, nonatomic) NSNumber *majorVersion; // @synthesize majorVersion=_majorVersion;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

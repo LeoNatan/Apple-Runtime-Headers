@@ -27,8 +27,8 @@
 + (id)layoutFeedbackLoopDebugger;
 + (void)destroyLayoutFeedbackLoopDebuggerForUnitTests;
 + (void)createLayoutFeedbackLoopDebuggerForUnitTests;
-@property(retain, nonatomic) NSView *currentLayoutView; // @synthesize currentLayoutView=_currentLayoutView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *currentLayoutView; // @synthesize currentLayoutView=_currentLayoutView;
 - (id)topLevelViewHierarchyTrace;
 - (id)description;
 - (void)dumpInfoWithInfoCollectionSuccess:(BOOL)arg1;

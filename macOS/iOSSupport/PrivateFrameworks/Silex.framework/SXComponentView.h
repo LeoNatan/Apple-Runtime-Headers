@@ -54,6 +54,7 @@
     struct CGRect _presentationFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_74be42e1 presentationChanges; // @synthesize presentationChanges=_presentationChanges;
 @property(nonatomic) struct CGRect presentationFrame; // @synthesize presentationFrame=_presentationFrame;
 @property(nonatomic) unsigned long long componentIndex; // @synthesize componentIndex=_componentIndex;
@@ -88,7 +89,7 @@
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
 @property(readonly, nonatomic) id <SXComponentLayout> componentLayout; // @synthesize componentLayout=_componentLayout;
-- (void).cxx_destruct;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)assistiveTechnologyStatusDidChange;
 - (BOOL)userInteractable;
 @property(readonly, copy) NSString *description;

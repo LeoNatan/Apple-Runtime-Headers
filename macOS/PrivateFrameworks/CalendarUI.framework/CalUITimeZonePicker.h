@@ -16,11 +16,11 @@
     id <CalUITimeZonePickerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL useShortenedLabels; // @synthesize useShortenedLabels=_useShortenedLabels;
 @property BOOL includeGMT; // @synthesize includeGMT=_includeGMT;
 @property BOOL supportsFloating; // @synthesize supportsFloating=_supportsFloating;
 @property __weak id <CalUITimeZonePickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)saveRecentlyUsedTimeZone:(id)arg1;
 - (id)recentlyUsedTimeZones;
 - (void)otherSelected;

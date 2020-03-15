@@ -16,9 +16,9 @@
     long long _orientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) SBHomeGrabberView *grabberView; // @synthesize grabberView=_grabberView;
-- (void).cxx_destruct;
 - (id)_addWrapperViewWithOrientation:(long long)arg1;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2 rotationSettings:(id)arg3;
 - (void)layoutSubviews;

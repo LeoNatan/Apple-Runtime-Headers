@@ -28,6 +28,7 @@
 }
 
 + (id)propertyForObjectStoreProperty:(const struct Property *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) SEL setterSel; // @synthesize setterSel=_setterSel;
 @property(nonatomic) SEL getterSel; // @synthesize getterSel=_getterSel;
 @property(copy, nonatomic) NSString *setterName; // @synthesize setterName=_setterName;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL indexed; // @synthesize indexed=_indexed;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (struct Property)objectStoreCopy:(id)arg1;
 - (id)description;
 - (BOOL)isEqualToProperty:(id)arg1;

@@ -13,9 +13,9 @@
     CDUnknownBlockType _animationBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, copy, nonatomic) CDUnknownBlockType animationBlock; // @synthesize animationBlock=_animationBlock;
-- (void).cxx_destruct;
 - (void)_setHidden:(_Bool)arg1 animated:(_Bool)arg2 withRequstID:(long long)arg3;
 - (void)_setHidden:(_Bool)arg1 animated:(_Bool)arg2 afterDelay:(double)arg3;
 - (void)setHidden:(_Bool)arg1 animated:(_Bool)arg2;

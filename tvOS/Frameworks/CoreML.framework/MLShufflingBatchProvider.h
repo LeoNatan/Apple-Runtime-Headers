@@ -17,9 +17,9 @@
     id <MLBatchProvider> _batchProvider;
 }
 
-@property(retain) id <MLBatchProvider> batchProvider; // @synthesize batchProvider=_batchProvider;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain) id <MLBatchProvider> batchProvider; // @synthesize batchProvider=_batchProvider;
 - (id)featuresAtIndex:(long long)arg1;
 @property(readonly, nonatomic) long long count;
 - (void)shuffle;

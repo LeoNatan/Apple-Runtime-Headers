@@ -16,8 +16,8 @@
 
 + (id)incompatibleWindowError;
 + (id)genericServiceCrashError;
-@property(retain) QLRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void).cxx_destruct;
+@property(retain) QLRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void)windowDidChange;
 - (id)responder;
 - (id)contentLayer;

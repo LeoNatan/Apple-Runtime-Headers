@@ -32,6 +32,7 @@
 + (void)requestRemoteViewControllerWithRequestInfo:(id)arg1 reply:(CDUnknownBlockType)arg2;
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSCopying> currentRequestIdentifier; // @synthesize currentRequestIdentifier=_currentRequestIdentifier;
 @property(retain, nonatomic) NSExtension *activeExtension; // @synthesize activeExtension=_activeExtension;
 @property(retain, nonatomic) _INUIExtensionHostContext *extensionHostContext; // @synthesize extensionHostContext=_extensionHostContext;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak id <INUIRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic, setter=_setRequestInfo:) INUIExtensionRequestInfo *requestInfo; // @synthesize requestInfo=_requestInfo;
 @property(nonatomic) struct CGSize preferredContentSize; // @synthesize preferredContentSize=_preferredContentSize;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (void)serviceViewControllerDesiresConstrainedSize:(struct CGSize)arg1;
 - (void)configureWithInteraction:(id)arg1 context:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

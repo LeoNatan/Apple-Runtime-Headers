@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)_userLikelyHasNetworkReachability;
-@property(retain, nonatomic) ReadingListContentProvider *contentProvider; // @synthesize contentProvider=_contentProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ReadingListContentProvider *contentProvider; // @synthesize contentProvider=_contentProvider;
 - (id)sideBarScrollViewAccessibilityChildren:(id)arg1;
 - (void)_thumbnailWasLoaded:(id)arg1;
 - (void)_updateSegmentedControlSelectionFromContentProvider;

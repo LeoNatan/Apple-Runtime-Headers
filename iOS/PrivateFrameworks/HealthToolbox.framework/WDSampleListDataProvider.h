@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     HKSortedSampleArray *_samples;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKSortedSampleArray *samples; // @synthesize samples=_samples;
 @property(readonly, nonatomic) __weak WDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) NSPredicate *defaultQueryPredicate; // @synthesize defaultQueryPredicate=_defaultQueryPredicate;
-- (void).cxx_destruct;
 - (_Bool)_handleObjectsRemoved:(id)arg1;
 - (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;

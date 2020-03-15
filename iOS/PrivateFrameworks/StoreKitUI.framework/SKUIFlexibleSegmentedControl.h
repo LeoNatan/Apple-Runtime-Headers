@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     _Bool _sizesSegmentsToFitWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sizesSegmentsToFitWidth; // @synthesize sizesSegmentsToFitWidth=_sizesSegmentsToFitWidth;
 @property(copy, nonatomic) NSString *moreListTitle; // @synthesize moreListTitle=_moreListTitle;
 @property(nonatomic) long long maximumNumberOfVisibleItems; // @synthesize maximumNumberOfVisibleItems=_maximumNumberOfVisibleItems;
 @property(copy, nonatomic) NSArray *itemTitles; // @synthesize itemTitles=_itemTitles;
 @property(nonatomic) double desiredSegmentWidth; // @synthesize desiredSegmentWidth=_desiredSegmentWidth;
 @property(nonatomic) __weak id <SKUIFlexibleSegmentedControlDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setTitles:(id)arg1 forSegmentedControl:(id)arg2;
 - (void)_configureSegmentedControl:(id)arg1 withTitles:(id)arg2 boundingSize:(struct CGSize)arg3;
 - (void)_valueChangeAction:(id)arg1;

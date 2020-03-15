@@ -17,9 +17,9 @@
     NSArray *_subcommands;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *subcommands; // @synthesize subcommands=_subcommands;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *userInfo;
 - (void)removeSubcommand:(id)arg1;
 - (void)addSubcommand:(id)arg1;

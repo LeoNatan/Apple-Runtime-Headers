@@ -52,6 +52,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *NetShowUrl; // @synthesize NetShowUrl=_NetShowUrl;
 @property(copy, nonatomic) NSString *MeetingWorkspaceUrl; // @synthesize MeetingWorkspaceUrl=_MeetingWorkspaceUrl;
 @property(nonatomic) BOOL IsOnlineMeeting; // @synthesize IsOnlineMeeting=_IsOnlineMeeting;
@@ -91,7 +92,6 @@
 @property(retain, nonatomic) NSDateComponents *Start; // @synthesize Start=_Start;
 @property(nonatomic) long long IntendedFreeBusyStatus; // @synthesize IntendedFreeBusyStatus=_IntendedFreeBusyStatus;
 @property(nonatomic) long long MeetingRequestType; // @synthesize MeetingRequestType=_MeetingRequestType;
-- (void).cxx_destruct;
 
 @end
 

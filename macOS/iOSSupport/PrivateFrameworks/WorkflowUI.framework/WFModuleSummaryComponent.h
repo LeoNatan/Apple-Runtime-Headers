@@ -31,6 +31,7 @@
 }
 
 + (id)newWithSummaryFormatString:(id)arg1 parameters:(id)arg2 editableParameters:(id)arg3 parameterStates:(id)arg4 processing:(BOOL)arg5 appearance:(id)arg6 stateWriter:(id)arg7 variableProvider:(id)arg8 variableUIDelegate:(id)arg9 navigationContext:(id)arg10 firstResponderParameterKey:(id)arg11 horizontalPadding:(double)arg12 textAlignment:(long long)arg13 extendSlotBackgroundOffEdges:(BOOL)arg14 actionForRunningMonitoring:(id)arg15 preparingToRun:(BOOL)arg16;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL preparingToRun; // @synthesize preparingToRun=_preparingToRun;
 @property(readonly, nonatomic) __weak WFAction *actionForRunningMonitoring; // @synthesize actionForRunningMonitoring=_actionForRunningMonitoring;
 @property(readonly, nonatomic) BOOL extendSlotBackgroundOffEdges; // @synthesize extendSlotBackgroundOffEdges=_extendSlotBackgroundOffEdges;
@@ -48,7 +49,6 @@
 @property(readonly, copy, nonatomic) NSSet *editableParameters; // @synthesize editableParameters=_editableParameters;
 @property(readonly, copy, nonatomic) NSSet *parameters; // @synthesize parameters=_parameters;
 @property(readonly, copy, nonatomic) NSString *summaryFormatString; // @synthesize summaryFormatString=_summaryFormatString;
-- (void).cxx_destruct;
 - (void)reflowWithStagedParameterStates:(id)arg1;
 - (struct CKComponentLayout)computeLayoutThatFits:(struct CKSizeRange)arg1;
 

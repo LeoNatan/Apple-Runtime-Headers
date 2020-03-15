@@ -11,8 +11,8 @@
     CDUnknownBlockType _runBlock;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType runBlock; // @synthesize runBlock=_runBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType runBlock; // @synthesize runBlock=_runBlock;
 - (void)runWithFinishBlock:(CDUnknownBlockType)arg1;
 - (id)initWithRunBlock:(CDUnknownBlockType)arg1;
 

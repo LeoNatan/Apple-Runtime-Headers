@@ -23,6 +23,7 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRecordCreated) _Bool recordCreated; // @synthesize recordCreated=_recordCreated;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) NSData *cachedData; // @synthesize cachedData=_cachedData;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool encryptionFailed; // @synthesize encryptionFailed=_encryptionFailed;
 @property(nonatomic) _Bool decryptionFailed; // @synthesize decryptionFailed=_decryptionFailed;
 @property(retain, nonatomic) NSUUID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long objectEncoding;
 - (void)clearData;
 @property(retain, nonatomic) NSData *data;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSPredicate *_allowedValuePredicate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSPredicate *allowedValuePredicate; // @synthesize allowedValuePredicate=_allowedValuePredicate;
 @property(retain, nonatomic) Class allowedClass; // @synthesize allowedClass=_allowedClass;
 @property(nonatomic) unsigned long long minCount; // @synthesize minCount=_minCount;
 @property(nonatomic, getter=isContainer) _Bool container; // @synthesize container=_container;
 @property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

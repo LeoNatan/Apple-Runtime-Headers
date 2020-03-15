@@ -23,6 +23,7 @@
 }
 
 + (id)dummyOngoingPurchaseEntryWithTagID:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *price; // @synthesize price=_price;
 @property(copy, nonatomic) NSDate *purchaseInitiatedTime; // @synthesize purchaseInitiatedTime=_purchaseInitiatedTime;
 @property(copy, nonatomic) NSString *vendorIdentifier; // @synthesize vendorIdentifier=_vendorIdentifier;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *purchaseID; // @synthesize purchaseID=_purchaseID;
 @property(copy, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithEntryID:(id)arg1 dictionaryRepresentation:(id)arg2;
 - (id)initWithEntryID:(id)arg1 tagID:(id)arg2 purchaseID:(id)arg3 productID:(id)arg4 webAccessOptIn:(_Bool)arg5 appAdamID:(id)arg6 storeExternalVersion:(id)arg7 vendorIdentifier:(id)arg8 purchaseInitiatedTime:(id)arg9 price:(id)arg10;

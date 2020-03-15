@@ -14,8 +14,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
 - (id)_makeAccessibilityConstraints;
 - (id)_makeConstraints;
 - (void)_configureLayoutForTraitCollection:(id)arg1;

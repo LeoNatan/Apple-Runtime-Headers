@@ -17,11 +17,11 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak UIViewController *presentingContainerViewController; // @synthesize presentingContainerViewController=_presentingContainerViewController;
 @property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
-- (void).cxx_destruct;
 - (void)_removePresentingContainerViewFromViewHierarchyIfNecessary;
 - (id)_headerView;
 - (id)groups;

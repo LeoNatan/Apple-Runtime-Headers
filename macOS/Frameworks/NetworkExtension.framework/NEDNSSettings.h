@@ -24,12 +24,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL matchDomainsNoSearch; // @synthesize matchDomainsNoSearch=_matchDomainsNoSearch;
 @property(copy) NSArray *matchDomains; // @synthesize matchDomains=_matchDomains;
 @property(copy) NSString *domainName; // @synthesize domainName=_domainName;
 @property(copy) NSArray *searchDomains; // @synthesize searchDomains=_searchDomains;
 @property(readonly) NSArray *servers; // @synthesize servers=_servers;
-- (void).cxx_destruct;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;

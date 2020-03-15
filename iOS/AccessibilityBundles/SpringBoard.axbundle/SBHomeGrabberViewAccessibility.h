@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (unsigned long long)accessibilityTraits;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (void)_accessibilityUpdateCaptionPanelVisiblityForPresence:(long long)arg1;
 - (void)_accessibilityUpdateCaptionPanelVisibility;

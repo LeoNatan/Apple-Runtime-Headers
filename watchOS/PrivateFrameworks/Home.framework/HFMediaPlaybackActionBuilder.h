@@ -18,12 +18,12 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *accessories; // @synthesize accessories=_accessories;
 @property(retain, nonatomic) HFPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSNumber *targetVolume; // @synthesize targetVolume=_targetVolume;
 @property(nonatomic) int targetPlayState; // @synthesize targetPlayState=_targetPlayState;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
-- (void).cxx_destruct;
 - (id)commitItem;
 - (void)_ensureConsistency;
 - (id)performValidation;

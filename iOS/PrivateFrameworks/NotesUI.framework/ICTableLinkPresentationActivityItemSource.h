@@ -13,8 +13,8 @@
     ICAttachment *_attachment;
 }
 
-@property(retain) ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+@property(retain) ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (id)detail;
 - (id)title;
 - (id)initWithAttachment:(id)arg1;

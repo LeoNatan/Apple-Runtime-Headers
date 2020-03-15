@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     id _locateNotification;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id locateNotification; // @synthesize locateNotification=_locateNotification;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) FMFTintedActivityIndicatorView *aiv; // @synthesize aiv=_aiv;
 @property(retain, nonatomic) FMFRefreshWrapperButton *wrapperButton; // @synthesize wrapperButton=_wrapperButton;
 @property(retain, nonatomic) NSSet *locations; // @synthesize locations=_locations;
-- (void).cxx_destruct;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
 - (_Bool)anyLocationIsUpdating;

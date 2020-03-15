@@ -18,9 +18,9 @@
     CUISAlertBackground *_alertBackground;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISAlertBackground *alertBackground; // @synthesize alertBackground=_alertBackground;
 @property(nonatomic) __weak id <CUISBulletinClientViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)shouldPerformDefaultActionOnView:(id)arg1;
 - (id)alertSuppressionContexts;
 - (id)headerBlurContentView;

@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (void)enumerateTree:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)treeFrameWithFrame:(id)arg1 startSampleIndex:(unsigned long long)arg2 sampleCount:(unsigned long long)arg3 isLeafFrame:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *children; // @synthesize children=_children;
 @property(readonly) BOOL isLeafFrame; // @synthesize isLeafFrame=_isLeafFrame;
 @property(readonly) SAFrame *frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (void)writeJSONDictionaryEntriesToStream:(id)arg1;
 - (id)initWithFrame:(id)arg1 startSampleIndex:(unsigned long long)arg2 sampleCount:(unsigned long long)arg3 isLeafFrame:(BOOL)arg4;
 

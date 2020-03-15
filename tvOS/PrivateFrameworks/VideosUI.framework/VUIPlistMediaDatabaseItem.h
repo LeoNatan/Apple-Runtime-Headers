@@ -29,6 +29,7 @@
     NSString *_downloadState;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *downloadState; // @synthesize downloadState=_downloadState;
 @property(copy, nonatomic) NSDictionary *offlineFPSKeys; // @synthesize offlineFPSKeys=_offlineFPSKeys;
 @property(copy, nonatomic) NSURL *filePathURL; // @synthesize filePathURL=_filePathURL;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(nonatomic) __weak VUIPlistMediaDatabaseSeason *season; // @synthesize season=_season;
 - (id)isLocal;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

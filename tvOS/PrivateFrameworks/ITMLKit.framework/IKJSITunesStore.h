@@ -27,9 +27,9 @@
 
 + (void)setHeadersForURL:(id)arg1 inRequestProperties:(id)arg2;
 + (void)setITunesStoreHeaders:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKURLBagCache *bagCache; // @synthesize bagCache=_bagCache;
 @property(retain, nonatomic) NSString *cookieURL; // @synthesize cookieURL=_cookieURL;
-- (void).cxx_destruct;
 - (void)_bagCacheUpdated;
 - (void)invalidateBag;
 - (id)getBag;

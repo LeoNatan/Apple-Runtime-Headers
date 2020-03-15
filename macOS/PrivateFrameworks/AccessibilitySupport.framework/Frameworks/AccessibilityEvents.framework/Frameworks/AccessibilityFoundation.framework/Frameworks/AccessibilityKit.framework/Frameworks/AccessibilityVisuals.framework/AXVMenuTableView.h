@@ -21,12 +21,12 @@
     long long __selectedRowIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setSelectedRowIndex:) long long _selectedRowIndex; // @synthesize _selectedRowIndex=__selectedRowIndex;
 @property(retain, nonatomic, setter=_setLayoutManager:) NSLayoutManager *_layoutManager; // @synthesize _layoutManager=__layoutManager;
 @property(nonatomic) __weak id <AXVMenuTableViewMouseEventDelegate> mouseEventDelegate; // @synthesize mouseEventDelegate=_mouseEventDelegate;
 @property(retain, nonatomic) NSMutableArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(nonatomic) double menuItemFontSize; // @synthesize menuItemFontSize=_menuItemFontSize;
-- (void).cxx_destruct;
 - (id)_menuItemViewForTableRow:(long long)arg1;
 - (void)_setupDefaultColumnsWithTableWidth:(double)arg1;
 - (void)_handleMouseUpForMenuItemView:(id)arg1 selectedRow:(long long)arg2;

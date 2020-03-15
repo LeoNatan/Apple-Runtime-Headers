@@ -24,13 +24,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL showHelp; // @synthesize showHelp=_showHelp;
 @property BOOL createSession; // @synthesize createSession=_createSession;
 @property BOOL forceAccount; // @synthesize forceAccount=_forceAccount;
 @property(copy) NSDictionary *createAccountArguments; // @synthesize createAccountArguments=_createAccountArguments;
 @property(copy) NSDictionary *authenticateArguments; // @synthesize authenticateArguments=_authenticateArguments;
 @property(copy) NSString *suggestedUsername; // @synthesize suggestedUsername=_suggestedUsername;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

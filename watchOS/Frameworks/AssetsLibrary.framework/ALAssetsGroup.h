@@ -29,7 +29,7 @@
 - (id)_uuid;
 - (id)_typeAsString;
 - (void)dealloc;
-- (id)initWithPhotoAlbum:(struct NSObject *)arg1 library:(id)arg2 type:(unsigned int)arg3;
+- (id)initWithPhotoAlbum:(id)arg1 library:(id)arg2 type:(unsigned int)arg3;
 
 @end
 

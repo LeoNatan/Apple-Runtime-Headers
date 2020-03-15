@@ -11,8 +11,8 @@
     Class _contentItemClass;
 }
 
-@property(retain, nonatomic) Class contentItemClass; // @synthesize contentItemClass=_contentItemClass;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Class contentItemClass; // @synthesize contentItemClass=_contentItemClass;
 - (id)localizedLabelForPossibleState:(id)arg1;
 
 @end

@@ -26,8 +26,8 @@
 + (id)recordVideoConfigurationWithValidValues:(id)arg1;
 + (_Bool)setNewFormatsConfiguration:(int)arg1 fromSource:(int)arg2;
 + (int)newFormatsConfiguration;
-@property(retain) NSDictionary *capabilitiesInformation; // @synthesize capabilitiesInformation=_capabilitiesInformation;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *capabilitiesInformation; // @synthesize capabilitiesInformation=_capabilitiesInformation;
 - (id)description;
 - (int)userDefaultsPeerAssetBundleSupportOverrideValue;
 - (int)supportValueByApplyingUserDefaultsPeerAssetBundleSupportOverrideToValue:(int)arg1 selector:(SEL)arg2;
@@ -35,8 +35,8 @@
 - (int)supportValueByApplyingUserDefaultsPeerOverrideToValue:(int)arg1 selector:(SEL)arg2;
 - (id)opaqueRepresentation;
 - (_Bool)supportsTranscodeChoice;
-- (int)supportForAVAsset:(id)arg1;
-- (int)supportForFormatDescription:(struct opaqueCMFormatDescription *)arg1;
+- (int)hevcDecodingSupportForAVAsset:(id)arg1;
+- (int)hevcDecodingSupportForFormatDescription:(struct opaqueCMFormatDescription *)arg1;
 - (int)supportForAdjustmentBaseResources;
 - (int)supportForAssetBundleVersion:(id)arg1;
 - (int)supportForLivePhotoVersion:(id)arg1;

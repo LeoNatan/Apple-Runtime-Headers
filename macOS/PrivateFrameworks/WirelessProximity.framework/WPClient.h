@@ -37,7 +37,10 @@
 + (id)stateAsString:(long long)arg1;
 + (BOOL)holdVoucherForConnections;
 + (void)initialize;
++ (BOOL)isHomePodOrIOS;
++ (BOOL)isAppleTV;
 + (BOOL)isHomePod;
+- (void).cxx_destruct;
 @property(retain) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property BOOL servicesAdded; // @synthesize servicesAdded=_servicesAdded;
 @property BOOL registering; // @synthesize registering=_registering;
@@ -55,7 +58,6 @@
 @property long long scannerState; // @synthesize scannerState=_scannerState;
 @property long long advertiserState; // @synthesize advertiserState=_advertiserState;
 @property long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)sendTestRequest:(id)arg1;
 - (void)disableScanning;
 - (void)dumpDaemonState;

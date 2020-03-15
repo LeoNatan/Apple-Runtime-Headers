@@ -14,9 +14,9 @@
     UIColor *_borderColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hairlineBorder; // @synthesize hairlineBorder=_hairlineBorder;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
-- (void).cxx_destruct;
 - (void)_bbUpdateLayer;
 @property(nonatomic) double cornerRadius;
 @property(nonatomic) double borderWidth;

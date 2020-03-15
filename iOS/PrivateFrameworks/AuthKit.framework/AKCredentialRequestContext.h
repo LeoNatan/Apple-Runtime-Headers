@@ -41,6 +41,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKPasswordRequest *passwordRequest; // @synthesize passwordRequest=_passwordRequest;
 @property(retain, nonatomic) AKAuthorizationRequest *authorizationRequest; // @synthesize authorizationRequest=_authorizationRequest;
 @property(readonly, copy, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
@@ -65,7 +66,6 @@
 @property(nonatomic) _Bool _shouldSkipAuthorizationUI; // @synthesize _shouldSkipAuthorizationUI;
 @property(nonatomic) _Bool _shouldSkipBiometrics; // @synthesize _shouldSkipBiometrics;
 @property(nonatomic) _Bool _shouldForceUI; // @synthesize _shouldForceUI;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) _Bool _requirePassword; // @synthesize _requirePassword;

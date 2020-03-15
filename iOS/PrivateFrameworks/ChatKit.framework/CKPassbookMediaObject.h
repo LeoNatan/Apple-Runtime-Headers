@@ -18,9 +18,9 @@
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;
 + (_Bool)isPreviewable;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (int)mediaType;
 - (id)passView;
 - (_Bool)shouldShowDisclosure;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKQuery, CKRecordZone, NSArray, NSMutableArray, NSString;
+@class CKQuery, NSArray, NSMutableArray, NSString;
 
 @interface PDCloudStoreRecordsRequest : NSObject
 {
@@ -18,18 +18,19 @@
     NSString *_groupNameSuffix;
     long long _qualityOfService;
     unsigned long long _requestType;
-    CKRecordZone *_zone;
+    NSString *_zoneName;
     CKQuery *_ckQuery;
     NSArray *_recordsToSave;
     NSArray *_recordIDs;
     NSMutableArray *_completionHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(retain, nonatomic) NSArray *recordsToSave; // @synthesize recordsToSave=_recordsToSave;
 @property(retain, nonatomic) CKQuery *ckQuery; // @synthesize ckQuery=_ckQuery;
-@property(retain, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;
+@property(retain, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(nonatomic) _Bool shouldSaveToken; // @synthesize shouldSaveToken=_shouldSaveToken;
 @property(nonatomic) _Bool useLastChangeToken; // @synthesize useLastChangeToken=_useLastChangeToken;
 @property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(nonatomic) _Bool returnRecords; // @synthesize returnRecords=_returnRecords;
 @property(nonatomic) _Bool storeChangesInDatabase; // @synthesize storeChangesInDatabase=_storeChangesInDatabase;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequestType:(unsigned long long)arg1 storeChanges:(_Bool)arg2 returnRecords:(_Bool)arg3 qualityOfService:(long long)arg4 groupName:(id)arg5 groupNameSuffix:(id)arg6;
 

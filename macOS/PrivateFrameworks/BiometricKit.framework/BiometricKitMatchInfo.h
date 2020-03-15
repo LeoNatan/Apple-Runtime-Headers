@@ -14,9 +14,9 @@
     NSDictionary *_details;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *details; // @synthesize details=_details;
 @property(retain, nonatomic) NSArray *topology; // @synthesize topology=_topology;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

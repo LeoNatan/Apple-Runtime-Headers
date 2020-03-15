@@ -16,10 +16,10 @@
 }
 
 + (id)tabInfoWithLabelKey:(id)arg1 iconName:(id)arg2 contentMode:(int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int contentMode; // @synthesize contentMode=_contentMode;
 @property(readonly, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(readonly, nonatomic) NSString *labelKey; // @synthesize labelKey=_labelKey;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *landscapeIconName;
 - (id)initWithLabelKey:(id)arg1 iconName:(id)arg2 contentMode:(int)arg3;
 

@@ -19,13 +19,13 @@
     struct IMAssociatedMessageGeometryDescriptor _geometryDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float cumulativeAssociatedOffset; // @synthesize cumulativeAssociatedOffset=_cumulativeAssociatedOffset;
 @property(nonatomic) struct CGSize parentSize; // @synthesize parentSize=_parentSize;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) struct IMAssociatedMessageGeometryDescriptor geometryDescriptor; // @synthesize geometryDescriptor=_geometryDescriptor;
 @property(retain, nonatomic) UIView *associatedItemView; // @synthesize associatedItemView=_associatedItemView;
 @property(nonatomic) __weak id <CKAssociatedMessageTranscriptCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;
 - (void)prepareForReuse;

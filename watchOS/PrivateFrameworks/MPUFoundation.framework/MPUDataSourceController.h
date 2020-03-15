@@ -19,13 +19,13 @@
     MPUNotificationObserver *_didInvalidateObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldReloadWhenViewControllerIsVisible; // @synthesize shouldReloadWhenViewControllerIsVisible=_shouldReloadWhenViewControllerIsVisible;
 @property(nonatomic) _Bool viewControllerIsVisible; // @synthesize viewControllerIsVisible=_viewControllerIsVisible;
 @property(retain, nonatomic) MPUNotificationObserver *didInvalidateObserver; // @synthesize didInvalidateObserver=_didInvalidateObserver;
 @property(retain, nonatomic) MPUNotificationObserver *willInvalidateObserver; // @synthesize willInvalidateObserver=_willInvalidateObserver;
 @property(nonatomic) __weak id <MPUDataSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) MPUDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_didInvalidate;
 - (void)_willInvalidate;
 - (void)viewControllerDidDisappear;

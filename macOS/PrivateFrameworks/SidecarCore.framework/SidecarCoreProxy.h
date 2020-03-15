@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProxy;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SidecarServicePresenterDelegate> presenterDelegate; // @synthesize presenterDelegate=_presenterDelegate;
 @property(retain, nonatomic) id <SidecarSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)relayTerminateService;
 - (void)relayPresenterServiceExtensionReady:(id)arg1;
 - (void)relayPresenterStartServiceExtension:(id)arg1 completion:(CDUnknownBlockType)arg2;

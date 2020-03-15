@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     AVGradientView *_gradientBackdrop;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVGradientView *gradientBackdrop; // @synthesize gradientBackdrop=_gradientBackdrop;
 @property(retain, nonatomic) UIView *flatBackdrop; // @synthesize flatBackdrop=_flatBackdrop;
 @property(nonatomic) _Bool dimsEntireBounds; // @synthesize dimsEntireBounds=_dimsEntireBounds;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

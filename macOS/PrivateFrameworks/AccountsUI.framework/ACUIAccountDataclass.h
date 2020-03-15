@@ -20,12 +20,12 @@
 
 + (id)dataclassWithIdentifier:(id)arg1;
 + (id)_supportedDataclasses;
+- (void).cxx_destruct;
 @property __weak NSObject<ACUIAccountDataclassDelegate> *delegate; // @synthesize delegate=_delegate;
 @property __weak ACAccount *account; // @synthesize account=_account;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (void)didClickOptionsButton:(id)arg1;
 @property(readonly, nonatomic) NSString *statusString;
 @property(readonly, nonatomic) NSString *optionButtonTitle;

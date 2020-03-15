@@ -17,11 +17,11 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ratingDescription; // @synthesize ratingDescription=_ratingDescription;
 @property(readonly, nonatomic) unsigned long long rank; // @synthesize rank=_rank;
 @property(readonly, copy, nonatomic) NSString *ratingLabel; // @synthesize ratingLabel=_ratingLabel;
 @property(readonly, nonatomic) long long ratingSystem; // @synthesize ratingSystem=_ratingSystem;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

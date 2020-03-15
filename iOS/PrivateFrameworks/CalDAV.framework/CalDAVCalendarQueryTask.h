@@ -16,11 +16,11 @@
     NSDateComponents *_eventFilterEndDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *eventFilterEndDate; // @synthesize eventFilterEndDate=_eventFilterEndDate;
 @property(retain, nonatomic) NSDateComponents *eventFilterStartDate; // @synthesize eventFilterStartDate=_eventFilterStartDate;
 @property(nonatomic) _Bool syncTodos; // @synthesize syncTodos=_syncTodos;
 @property(nonatomic) _Bool syncEvents; // @synthesize syncEvents=_syncEvents;
-- (void).cxx_destruct;
 - (id)requestBody;
 - (void)_appendComponentFiltersToXMLData:(id)arg1;
 - (void)_appendTimeRangeFilterToXMLData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;

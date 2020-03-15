@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)dataLabelWithResources:(id)arg1;
-@property(retain, nonatomic) EDString *string; // @synthesize string=mString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EDString *string; // @synthesize string=mString;
 - (void)setRotationAngle:(double)arg1;
 - (double)rotationAngle;
 - (_Bool)isPositionAffineTransform;

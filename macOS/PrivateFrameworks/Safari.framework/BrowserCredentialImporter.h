@@ -9,22 +9,29 @@
 #import <Safari/BrowserCredentialImporterDelegate-Protocol.h>
 
 @class BrowserDataImportPasswordRequestPanelController, NSString;
-@protocol BrowserCredentialImporter;
+@protocol BrowserCredentialImportEngine;
 
 __attribute__((visibility("hidden")))
 @interface BrowserCredentialImporter : BrowserDataImporter <BrowserCredentialImporterDelegate>
 {
-    id <BrowserCredentialImporter> _importerProxy;
+    id <BrowserCredentialImportEngine> _importerProxy;
     BrowserDataImportPasswordRequestPanelController *_passwordRequestPanelController;
-    BOOL _didRequestMasterPassword;
+    BOOL _didRequestDecryptionKey;
+    unsigned long long _numberOfSuccessfullyImportedCredentials;
+    unsigned long long _numberOfConflictingCredentials;
+    CDUnknownBlockType _completionHandler;
 }
 
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+- (void)_showKeychainPasswordRequest;
+- (void)_showPasswordRequestPanelController;
 - (unsigned long long)_credentialPersistence;
 - (void)importerDidFailToImportCredentials;
 - (void)importerDidFinishImportingCredentials;
 - (void)importerDidImportCredential:(id)arg1;
 - (void)importerRequiresMasterPassword;
+- (void)retryAfterObtainingDecryptionKey;
 - (void)importCredentialsUsingImporterProxy:(id)arg1;
 
 // Remaining properties

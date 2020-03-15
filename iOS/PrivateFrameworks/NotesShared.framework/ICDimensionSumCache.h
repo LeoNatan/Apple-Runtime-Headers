@@ -15,10 +15,10 @@
     NSMutableDictionary *_dimensions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *dimensions; // @synthesize dimensions=_dimensions;
 @property(readonly, nonatomic) double estimateDimension; // @synthesize estimateDimension=_estimateDimension;
 @property(nonatomic) double sum; // @synthesize sum=_sum;
-- (void).cxx_destruct;
 - (void)removeDimensionForKey:(id)arg1;
 - (void)setDimension:(double)arg1 forKey:(id)arg2;
 - (double)dimensionForKey:(id)arg1;

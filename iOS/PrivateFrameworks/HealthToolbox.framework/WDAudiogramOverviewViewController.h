@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     NSArray *_sectionToRows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionToRows; // @synthesize sectionToRows=_sectionToRows;
 @property(readonly, nonatomic) HKAudiogramChartViewController *audiogramChartViewController; // @synthesize audiogramChartViewController=_audiogramChartViewController;
 @property(readonly, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowAppsRow;
 - (void)_pushSourcesAndAccessViewController;
 - (void)_pushShowAllDataViewController;

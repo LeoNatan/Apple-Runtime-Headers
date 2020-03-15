@@ -18,10 +18,10 @@
     id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) SXLayoutBlueprint *layoutBlueprint; // @synthesize layoutBlueprint=_layoutBlueprint;
-- (void).cxx_destruct;
 - (id)layoutBlueprintForMarker:(id)arg1;
 - (id)unitConverterForMarker:(id)arg1;
 - (id)suggestedMarginForMarker:(id)arg1;

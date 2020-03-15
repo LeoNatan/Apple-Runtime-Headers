@@ -15,10 +15,10 @@
     struct CGAffineTransform _transform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int textureWrapMode; // @synthesize textureWrapMode=_textureWrapMode;
 @property(retain, nonatomic) PVTransformAnimation *transformAnimation; // @synthesize transformAnimation=_transformAnimation;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
-- (void).cxx_destruct;
 - (id)instructionGraphNodeDescription;
 - (HGRef_265f9e4c)applyWrapModeToInput:(HGRef_265f9e4c)arg1;
 - (BOOL)isPortrait;

@@ -19,11 +19,11 @@
     NSString *_keyProfile;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *keyProfile; // @synthesize keyProfile=_keyProfile;
 @property(copy, nonatomic) NSArray *itemIdentifiers; // @synthesize itemIdentifiers=_itemIdentifiers;
 @property(copy, nonatomic) NSString *imageProfile; // @synthesize imageProfile=_imageProfile;
 @property(nonatomic) __weak id <SKUIItemRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)newLoadOperation;
 - (void)finishWithResource:(id)arg1;

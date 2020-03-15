@@ -19,10 +19,10 @@
 + (double)scaledFontSize:(double)arg1 withMaximumFontSizeCategory:(id)arg2;
 + (CDStruct_91d2e2b9)labelFontMetrics;
 + (id)labelFont;
+- (void).cxx_destruct;
 @property(nonatomic) double strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double baselineOffsetFromBottom;
 @property(readonly, nonatomic) double baselineOffsetFromOrigin;
 - (double)interItemSpacing;

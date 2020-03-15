@@ -17,11 +17,11 @@
     CDUnknownBlockType _textChangedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType textChangedHandler; // @synthesize textChangedHandler=_textChangedHandler;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSArray *fields; // @synthesize fields=_fields;
 @property(nonatomic) BOOL alphaNumeric; // @synthesize alphaNumeric=_alphaNumeric;
-- (void).cxx_destruct;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)keyDown:(id)arg1;

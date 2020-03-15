@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDFHIRResourceObject *resource; // @synthesize resource=_resource;
 @property(readonly, copy, nonatomic) NSSet *references; // @synthesize references=_references;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -17,12 +17,12 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

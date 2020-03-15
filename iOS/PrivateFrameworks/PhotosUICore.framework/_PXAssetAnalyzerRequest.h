@@ -18,9 +18,9 @@
     long long _workerType;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long workerType; // @synthesize workerType=_workerType;
 @property(readonly) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_handleFinishWithSuccess:(_Bool)arg1;
 - (void)runWithResultHandler:(CDUnknownBlockType)arg1;
 - (id)initWithAsset:(id)arg1 workerType:(long long)arg2;

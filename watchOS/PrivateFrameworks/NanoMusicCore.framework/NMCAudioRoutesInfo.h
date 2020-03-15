@@ -17,12 +17,12 @@
     NSArray *_systemAudioRoutes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAvailableW1Route; // @synthesize hasAvailableW1Route=_hasAvailableW1Route;
 @property(nonatomic) _Bool hasPickedVirtualAudioRoute; // @synthesize hasPickedVirtualAudioRoute=_hasPickedVirtualAudioRoute;
 @property(copy, nonatomic) NSArray *systemAudioRoutes; // @synthesize systemAudioRoutes=_systemAudioRoutes;
 @property(retain, nonatomic) NMCVirtualAudioRoute *pickedVirtualAudioRoute; // @synthesize pickedVirtualAudioRoute=_pickedVirtualAudioRoute;
 @property(copy, nonatomic) NSArray *virtualAudioRoutes; // @synthesize virtualAudioRoutes=_virtualAudioRoutes;
-- (void).cxx_destruct;
 
 @end
 

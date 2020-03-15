@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     _TVCommonSenseFooterView *_footerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVCommonSenseFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) NSArray *infoViews; // @synthesize infoViews=_infoViews;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

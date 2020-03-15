@@ -19,13 +19,13 @@
     const char *_notification_key;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) const char *notification_key; // @synthesize notification_key=_notification_key;
 @property(retain, nonatomic) NSString *state_key; // @synthesize state_key=_state_key;
 @property(readonly, copy, nonatomic) CDUnknownBlockType notify_handler; // @synthesize notify_handler=_notify_handler;
 @property(readonly, nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
 @property(copy, nonatomic) CDUnknownBlockType notifyHandler; // @synthesize notifyHandler=_notifyHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *notifyQueue; // @synthesize notifyQueue=_notifyQueue;
-- (void).cxx_destruct;
 - (void)saveState:(id)arg1;
 - (void)handlePreferencesChanged;
 - (void)dealloc;

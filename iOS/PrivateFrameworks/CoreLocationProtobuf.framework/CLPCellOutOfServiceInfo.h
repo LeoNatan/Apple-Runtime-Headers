@@ -16,9 +16,9 @@
     NSString *_serviceProviderName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serviceProviderName; // @synthesize serviceProviderName=_serviceProviderName;
 @property(retain, nonatomic) CLPLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

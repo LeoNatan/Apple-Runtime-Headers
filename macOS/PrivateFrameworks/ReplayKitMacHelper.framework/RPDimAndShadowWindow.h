@@ -19,10 +19,10 @@
     NSWindow *_sourceWindow;
 }
 
+- (void).cxx_destruct;
 @property __weak NSWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property __weak NSWindow *remoteWindow; // @synthesize remoteWindow=_remoteWindow;
 @property BOOL animatesTransitions; // @synthesize animatesTransitions;
-- (void).cxx_destruct;
 - (void)updateShadowFrame:(struct CGRect)arg1;
 - (void)animateLayersToFrame:(struct CGRect)arg1 oldFrame:(struct CGRect)arg2;
 - (void)startTransitionOut;

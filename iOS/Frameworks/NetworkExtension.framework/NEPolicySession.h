@@ -33,6 +33,7 @@
 + (unsigned char)getTLVtypeForBytes:(const char *)arg1 includeHeaderOffset:(_Bool)arg2 nextTLVOffset:(unsigned int *)arg3;
 + (id)copyTLVForBytes:(const char *)arg1 messageLength:(unsigned long long)arg2 type:(unsigned char)arg3 includeHeaderOffset:(_Bool)arg4 n:(int)arg5;
 + (void)addTLVToMessage:(id)arg1 type:(unsigned char)arg2 length:(unsigned long long)arg3 value:(const void *)arg4;
+- (void).cxx_destruct;
 @property int controlSocket; // @synthesize controlSocket=_controlSocket;
 @property(retain) NSObject<OS_dispatch_source> *controlSource; // @synthesize controlSource=_controlSource;
 @property unsigned int lastSendMessageID; // @synthesize lastSendMessageID=_lastSendMessageID;
@@ -41,7 +42,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(retain) NSMutableDictionary *policies; // @synthesize policies=_policies;
 @property long long internalPriority; // @synthesize internalPriority=_internalPriority;
-- (void).cxx_destruct;
 - (_Bool)removeAllPolicies;
 - (_Bool)removePolicyWithID:(unsigned long long)arg1;
 - (id)policyWithID:(unsigned long long)arg1;

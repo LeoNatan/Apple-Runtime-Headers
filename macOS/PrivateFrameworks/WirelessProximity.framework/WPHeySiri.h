@@ -14,9 +14,9 @@
     id <WPHeySiriProtocol> _delegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL isScanning; // @synthesize isScanning=_isScanning;
 @property(nonatomic) __weak id <WPHeySiriProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
 - (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)scanningStartedOfType:(unsigned char)arg1;

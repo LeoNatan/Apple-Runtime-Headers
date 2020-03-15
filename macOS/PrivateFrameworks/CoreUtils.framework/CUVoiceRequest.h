@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     id _owner;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id owner; // @synthesize owner=_owner;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 
 @end
 

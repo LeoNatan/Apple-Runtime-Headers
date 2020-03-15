@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *offerButtonViews; // @synthesize offerButtonViews=_offerButtonViews;
 @property(retain, nonatomic) NSMutableArray *metadataViews; // @synthesize metadataViews=_metadataViews;
 @property(retain, nonatomic) NSNumber *hlsID; // @synthesize hlsID=_hlsID;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isShowingConfirmation) _Bool showingConfirmation; // @synthesize showingConfirmation=_showingConfirmation;
 @property(nonatomic) long long metadataPosition; // @synthesize metadataPosition=_metadataPosition;
 @property(nonatomic) __weak id <SKUIOfferViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_shouldHideNoticesWithBuyButtonDescriptor:(id)arg1 context:(id)arg2;
 - (void)_sendWillAnimate;
 - (void)_showConfirmationAction:(id)arg1;

@@ -38,6 +38,7 @@
     NSWindow *_sheetWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSWindow *sheetWindow; // @synthesize sheetWindow=_sheetWindow;
 @property BOOL forceActivate; // @synthesize forceActivate=mForceActivate;
 @property(retain, nonatomic) NSNumber *suppressionCheckboxState; // @synthesize suppressionCheckboxState=mSuppressionCheckboxState;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) ISStoreClient *storeClient; // @synthesize storeClient;
 @property(retain, nonatomic) ISAuthenticationContext *context; // @synthesize context;
 @property(retain, nonatomic) NSURL *authenticateAccountURL; // @synthesize authenticateAccountURL;
-- (void).cxx_destruct;
 - (void)forgotPassword:(id)arg1;
 - (void)helpButtonAction:(id)arg1;
 - (void)alternateButtonAction:(id)arg1;

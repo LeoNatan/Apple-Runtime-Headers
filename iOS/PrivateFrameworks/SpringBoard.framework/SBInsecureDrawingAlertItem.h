@@ -14,9 +14,9 @@
     NSSet *_layerNames;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *layerNames; // @synthesize layerNames=_layerNames;
 @property(copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
-- (void).cxx_destruct;
 - (id)_buildVersion;
 - (long long)radarReproducibility;
 - (long long)radarClassification;

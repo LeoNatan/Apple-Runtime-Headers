@@ -20,12 +20,12 @@
 
 + (id)sharedNotifierForCoreSpeechDaemon;
 + (id)sharedNotifier;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pendingCompletion; // @synthesize pendingCompletion=_pendingCompletion;
 @property(retain, nonatomic) CSActivationEvent *pendingActivationEvent; // @synthesize pendingActivationEvent=_pendingActivationEvent;
 @property(retain, nonatomic) NSMapTable *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
-- (void).cxx_destruct;
 - (id)_createXPCClientConnection;
 - (void)receiveTestNotificationAOPMode;
 - (void)receiveTestNotificationAPMode;

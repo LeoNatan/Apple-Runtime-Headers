@@ -13,8 +13,8 @@
     unsigned int _eventPage;
     unsigned int _usage;
     double _duration;
-    unsigned long long _type;
     double _rotation;
+    unsigned long long _type;
 }
 
 + (id)deviceEventForDigitalCrownRotation:(double)arg1 velocity:(double)arg2;

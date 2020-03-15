@@ -23,9 +23,9 @@
     PXMediaProvider *_mediaProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 - (id)contentIdentifier;
-- (void).cxx_destruct;
 - (void)request:(id)arg1 didFinishWithPlayerItem:(id)arg2 info:(id)arg3;
 - (void)requestLoadingProgressDidChange:(id)arg1;
 - (void)_loadingQueue_reloadContent;

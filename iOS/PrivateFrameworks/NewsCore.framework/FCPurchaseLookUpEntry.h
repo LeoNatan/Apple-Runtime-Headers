@@ -22,6 +22,7 @@
     NSDate *_dateOfExpiration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasShownRenewalNotice; // @synthesize hasShownRenewalNotice=_hasShownRenewalNotice;
 @property(copy, nonatomic) NSDate *dateOfExpiration; // @synthesize dateOfExpiration=_dateOfExpiration;
 @property(nonatomic) _Bool isNewsAppPurchase; // @synthesize isNewsAppPurchase=_isNewsAppPurchase;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSDate *lastVerificationTime; // @synthesize lastVerificationTime=_lastVerificationTime;
 @property(nonatomic) unsigned long long purchaseValidationState; // @synthesize purchaseValidationState=_purchaseValidationState;
 @property(nonatomic) unsigned long long purchaseType; // @synthesize purchaseType=_purchaseType;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

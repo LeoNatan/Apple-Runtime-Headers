@@ -21,13 +21,13 @@
     BOOL _didReceiveRemoteMessage;
 }
 
+- (void).cxx_destruct;
 @property BOOL didReceiveRemoteMessage; // @synthesize didReceiveRemoteMessage=_didReceiveRemoteMessage;
 @property(retain) NSMutableDictionary *conversionsByUUID; // @synthesize conversionsByUUID=_conversionsByUUID;
 @property unsigned long long runnerState; // @synthesize runnerState=_runnerState;
 @property(retain) AMRemoteRunnerController *remoteRunnerController; // @synthesize remoteRunnerController=_remoteRunnerController;
 @property __weak id <AMRunnerControllerDelegate> runnerControllerDelegate; // @synthesize runnerControllerDelegate=_runnerControllerDelegate;
 @property(retain) AMWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (id)actionAtIndex:(unsigned long long)arg1;
 - (id)updatedLocalConversionForXPCConversion:(id)arg1 uuid:(id)arg2;
 - (void)remoteWorkflowRunnerDidChangeState:(unsigned long long)arg1;

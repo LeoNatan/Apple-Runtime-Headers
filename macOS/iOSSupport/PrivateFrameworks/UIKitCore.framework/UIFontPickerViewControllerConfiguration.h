@@ -24,13 +24,13 @@
 
 + (id)filterPredicateForFilteredLanguages:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTintColor:) UIColor *_tintColor; // @synthesize _tintColor=__tintColor;
 @property(nonatomic, setter=_setHideSearchBar:) BOOL _hideSearchBar; // @synthesize _hideSearchBar=__hideSearchBar;
 @property(copy, nonatomic) NSPredicate *filteredLanguagesPredicate; // @synthesize filteredLanguagesPredicate=_filteredLanguagesPredicate;
 @property(nonatomic) unsigned int filteredTraits; // @synthesize filteredTraits=_filteredTraits;
 @property(nonatomic) BOOL displayUsingSystemFont; // @synthesize displayUsingSystemFont=_displayUsingSystemFont;
 @property(nonatomic) BOOL includeFaces; // @synthesize includeFaces=_includeFaces;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

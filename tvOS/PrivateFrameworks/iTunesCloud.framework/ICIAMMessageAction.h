@@ -16,20 +16,22 @@
     ICIAMMetricEvent *_clickEvent;
     NSString *_displayText;
     NSString *_identifier;
+    int _messageRemovalPolicy;
     NSString *_uRL;
     _Bool _requiresDelegate;
     struct {
+        unsigned int messageRemovalPolicy:1;
         unsigned int requiresDelegate:1;
     } _has;
 }
 
 + (Class)actionParametersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICIAMMetricEvent *clickEvent; // @synthesize clickEvent=_clickEvent;
 @property(retain, nonatomic) NSMutableArray *actionParameters; // @synthesize actionParameters=_actionParameters;
 @property(retain, nonatomic) NSString *uRL; // @synthesize uRL=_uRL;
 @property(retain, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -39,6 +41,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsMessageRemovalPolicy:(id)arg1;
+- (id)messageRemovalPolicyAsString:(int)arg1;
+@property(nonatomic) _Bool hasMessageRemovalPolicy;
+@property(nonatomic) int messageRemovalPolicy; // @synthesize messageRemovalPolicy=_messageRemovalPolicy;
 @property(readonly, nonatomic) _Bool hasClickEvent;
 - (id)actionParametersAtIndex:(unsigned long long)arg1;
 - (unsigned long long)actionParametersCount;

@@ -21,11 +21,11 @@
 + (id)recordFromInsertEdit:(id)arg1;
 + (id)tombstoneWithRecordIdentifier:(id)arg1;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=recordIdentifier) NSUUID *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
 @property(readonly, copy, nonatomic) MSPVectorTimestamp *contentsTimestamp; // @synthesize contentsTimestamp=_contentsTimestamp;
 @property(readonly, copy, nonatomic) NSData *contents; // @synthesize contents=_contents;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=isTombstoneRepresentedByCloudRecord) _Bool tombstoneRepresentedByCloudRecord;
 - (id)tombstoneRecordRepresentation;

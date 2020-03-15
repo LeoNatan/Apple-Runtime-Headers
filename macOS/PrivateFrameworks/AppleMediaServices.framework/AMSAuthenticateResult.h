@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *serverResponse; // @synthesize serverResponse=_serverResponse;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAccount:(id)arg1;

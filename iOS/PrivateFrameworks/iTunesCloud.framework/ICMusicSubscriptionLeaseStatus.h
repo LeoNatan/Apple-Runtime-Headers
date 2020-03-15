@@ -21,6 +21,7 @@
     NSDictionary *_stateReasonDialogMetricsDictionary;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *stateReasonDialogMetricsDictionary; // @synthesize stateReasonDialogMetricsDictionary=_stateReasonDialogMetricsDictionary;
 @property(copy, nonatomic) ICStoreDialogResponse *stateReasonDialog; // @synthesize stateReasonDialog=_stateReasonDialog;
 @property(nonatomic) long long leaseState; // @synthesize leaseState=_leaseState;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool hasOfflinePlaybackKeys; // @synthesize hasOfflinePlaybackKeys=_hasOfflinePlaybackKeys;
 @property(nonatomic) _Bool hasOnlinePlaybackKeys; // @synthesize hasOnlinePlaybackKeys=_hasOnlinePlaybackKeys;
 @property(nonatomic) _Bool shouldPlaybackRequireOnlineKeys; // @synthesize shouldPlaybackRequireOnlineKeys=_shouldPlaybackRequireOnlineKeys;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

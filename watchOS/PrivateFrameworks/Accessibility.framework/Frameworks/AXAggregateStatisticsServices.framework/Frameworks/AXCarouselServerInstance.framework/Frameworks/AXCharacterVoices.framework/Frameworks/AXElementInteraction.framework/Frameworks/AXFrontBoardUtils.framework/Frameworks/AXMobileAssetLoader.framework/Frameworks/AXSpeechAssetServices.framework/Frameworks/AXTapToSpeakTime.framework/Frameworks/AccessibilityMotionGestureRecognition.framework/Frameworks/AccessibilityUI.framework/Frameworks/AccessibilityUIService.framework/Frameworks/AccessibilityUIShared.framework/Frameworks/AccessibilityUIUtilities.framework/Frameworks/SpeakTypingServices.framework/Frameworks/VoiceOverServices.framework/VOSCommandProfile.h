@@ -25,8 +25,8 @@
 + (id)_parseProfileProperties:(id)arg1 overlayProperties:(id)arg2;
 + (_Bool)_overlay:(id)arg1 shouldIncludeItem:(id)arg2;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <VOSCommandProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <VOSCommandProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_profileCommandForCommand:(id)arg1 inMode:(id)arg2;
 - (id)_profileModeForScreenreaderMode:(id)arg1;
 - (id)_profileModeForResolver:(id)arg1;

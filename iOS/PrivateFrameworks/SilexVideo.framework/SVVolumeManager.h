@@ -18,10 +18,10 @@
     id <SVVideoVolumeObserving> _volumeObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoVolumeObserving> volumeObserver; // @synthesize volumeObserver=_volumeObserver;
 @property(readonly, nonatomic) id <SVVideoVolumeObserverFactory> volumeObserverFactory; // @synthesize volumeObserverFactory=_volumeObserverFactory;
 @property(readonly, nonatomic) id <SVVolumeReporting> volumeReporter; // @synthesize volumeReporter=_volumeReporter;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithVolumeReporter:(id)arg1 volumeObserverFactory:(id)arg2;
 

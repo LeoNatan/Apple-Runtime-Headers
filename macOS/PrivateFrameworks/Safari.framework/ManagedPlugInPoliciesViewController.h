@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 + (id)_onPolicyString;
 + (id)_offPolicyString;
 + (id)cautionImage;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SegmentedControlWithDynamicWidth *removeButtonSegmentedControl; // @synthesize removeButtonSegmentedControl=_removeButtonSegmentedControl;
 @property(nonatomic) __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(retain, nonatomic) NSLayoutConstraint *warningContentViewTrailingHorizontalSpacingConstraint; // @synthesize warningContentViewTrailingHorizontalSpacingConstraint=_warningContentViewTrailingHorizontalSpacingConstraint;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *plugInNamePolicyHeaderField; // @synthesize plugInNamePolicyHeaderField=_plugInNamePolicyHeaderField;
 @property(nonatomic) __weak NSOutlineView *policyOutlineView; // @synthesize policyOutlineView=_policyOutlineView;
 @property(retain, nonatomic) ManagedPlugIn *managedPlugIn; // @synthesize managedPlugIn=_managedPlugIn;
-- (void).cxx_destruct;
 - (id)_policyItemsForButton:(id)arg1;
 - (void)_browserContentDidChange:(id)arg1;
 - (void)_didChangeManagedPlugInPolicies:(id)arg1;

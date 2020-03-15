@@ -17,9 +17,9 @@
 
 + (void)dispatchAsyncOnQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)sharedInsights;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *threadsToContexts; // @synthesize threadsToContexts=_threadsToContexts;
 @property __weak id <CRInsightsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)allowOverrideWithKey:(id)arg1 forValue:(id)arg2;
 - (id)allowOverrideWithKey:(id)arg1 forResultFromBlock:(CDUnknownBlockType)arg2;
 - (void)leaveSection:(id)arg1;

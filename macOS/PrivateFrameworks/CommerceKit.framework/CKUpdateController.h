@@ -19,13 +19,13 @@
 }
 
 + (id)sharedUpdateController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKUpdateControllerClient *sharedObserver; // @synthesize sharedObserver=_sharedObserver;
 @property(retain, nonatomic) NSMutableDictionary *updateProgressObservers; // @synthesize updateProgressObservers=_updateProgressObservers;
 @property(retain, nonatomic) NSMutableDictionary *updateScanObservers; // @synthesize updateScanObservers=_updateScanObservers;
 @property(retain, nonatomic) NSMutableDictionary *availableUpdatesObservers; // @synthesize availableUpdatesObservers=_availableUpdatesObservers;
 @property BOOL shouldNotAttemptInstallationAfterFailureDialog; // @synthesize shouldNotAttemptInstallationAfterFailureDialog=_shouldNotAttemptInstallationAfterFailureDialog;
 @property(copy) CDUnknownBlockType dialogHandler; // @synthesize dialogHandler=_dialogHandler;
-- (void).cxx_destruct;
 - (BOOL)isAutoUpdatedEnabled;
 - (void)stopObservingOSUpdateProgressWithCallback:(id)arg1;
 - (id)observeOSUpdateProgressWithProgressHandler:(CDUnknownBlockType)arg1;

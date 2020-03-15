@@ -11,19 +11,22 @@
 
 @interface PXPeopleScalableAvatarView : PXSmartScaleView
 {
+    BOOL _useCornerRadius;
     UXImageView *_imageView;
     id <PXPerson> _person;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) BOOL useCornerRadius; // @synthesize useCornerRadius=_useCornerRadius;
 @property(retain, nonatomic) id <PXPerson> person; // @synthesize person=_person;
 @property(retain) UXImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)_updateImageAndWait:(BOOL)arg1;
 - (void)updateImage;
 - (void)viewScaleDidChange;
 - (void)setPersonAndWaitForImage:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
 
 @end
 

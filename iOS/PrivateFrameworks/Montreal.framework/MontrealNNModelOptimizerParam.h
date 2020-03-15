@@ -19,12 +19,12 @@
     NSNumber *_gradientClipMax;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *gradientClipMax; // @synthesize gradientClipMax=_gradientClipMax;
 @property(readonly) NSNumber *gradientClipMin; // @synthesize gradientClipMin=_gradientClipMin;
 @property(readonly) float momentum; // @synthesize momentum=_momentum;
 @property(readonly) float learningRate; // @synthesize learningRate=_learningRate;
 @property(readonly) unsigned long long optimizerType; // @synthesize optimizerType=_optimizerType;
-- (void).cxx_destruct;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (id)initWithOptimizerType:(unsigned long long)arg1 learningRate:(float)arg2 momentum:(float)arg3 gradientClipMin:(id)arg4 gradientClipMax:(id)arg5;
 - (id)initWithDictionary:(id)arg1;

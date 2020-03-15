@@ -20,9 +20,9 @@
 + (id)identityForProcessIdentity:(id)arg1;
 + (id)identityForBundleID:(id)arg1;
 + (id)localIdentity;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *processIdentity; // @synthesize processIdentity=_processIdentity;
 @property(readonly, nonatomic, getter=isLocal) _Bool local; // @synthesize local=_local;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -13,8 +13,8 @@
     id <ICCloudKitSyncerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ICCloudKitSyncerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ICCloudKitSyncerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)saveUnsyncedObjects;
 - (void)saveUnsyncedObjectsWithRetryCount:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_indexSet;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reversed; // @synthesize reversed=_reversed;
 @property(readonly, nonatomic) NSMutableIndexSet *indexSet; // @synthesize indexSet=_indexSet;
-- (void).cxx_destruct;
 - (id)description;
 - (void)removeIndexes:(id)arg1;
 - (void)removeIndex:(unsigned long long)arg1;

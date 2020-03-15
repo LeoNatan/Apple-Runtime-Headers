@@ -39,6 +39,7 @@
 + (_Bool)isFeedbackSelector:(SEL)arg1;
 + (void)_updateHeaderView:(id)arg1 fromText:(id)arg2 fromToken:(id)arg3;
 + (_Bool)shouldShowAsTypedSuggestion;
+- (void).cxx_destruct;
 @property unsigned long long feedbackBackgroundTaskIdentifier; // @synthesize feedbackBackgroundTaskIdentifier=_feedbackBackgroundTaskIdentifier;
 @property unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(retain) SPUITestingHelper *testingHelper; // @synthesize testingHelper=_testingHelper;
@@ -54,7 +55,6 @@
 @property(retain) SPUISearchHeader *searchHeader; // @synthesize searchHeader=_searchHeader;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) __weak id <SPUISearchViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)_canShowWhileLocked;

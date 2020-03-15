@@ -13,19 +13,19 @@ __attribute__((visibility("hidden")))
 {
     id <MTLDevice> _device;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _resourceIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _depthStencilIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _samplerIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _libraryIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _functionIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _computePipelineIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _renderPipelineIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _fences
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _argumentBufferLayoutIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _argumentEncoderIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _heapIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _eventIndex
-    // Error parsing type: {atomic<unsigned int>="__a_"AI}, name: _commandQueueIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _resourceIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _depthStencilIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _samplerIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _libraryIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _functionIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _computePipelineIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _renderPipelineIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _fences
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _argumentBufferLayoutIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _argumentEncoderIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _heapIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _eventIndex
+    // Error parsing type: {atomic<unsigned int>="__a_"{__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >="__a_value"AI}}, name: _commandQueueIndex
     struct MTLSerializerIndexGenerator *_commandBufferIndex;
     struct MTLSerializerIndexGenerator *_eventNotifications;
     _Bool _deserializerGeneratesResourceRefs;
@@ -57,6 +57,11 @@ __attribute__((visibility("hidden")))
 - (void)argumentEncoderSetTextures:(const id *)arg1 withRange:(struct _NSRange)arg2 encoderRef:(unsigned int)arg3 allocator:(id)arg4;
 - (void)setSignaledValue:(unsigned long long)arg1 eventRef:(unsigned int)arg2 allocator:(id)arg3;
 - (unsigned int)notifyListenerForEventRef:(unsigned int)arg1 atValue:(unsigned long long)arg2 allocator:(id)arg3;
+- (void)uniqueIdentifierForComputePipelineState:(id)arg1 allocator:(id)arg2;
+- (void)uniqueIdentifierForRenderPipelineState:(id)arg1 allocator:(id)arg2;
+- (void)uniqueIdentifierForSamplerState:(id)arg1 allocator:(id)arg2;
+- (void)uniqueIdentifierForTexture:(id)arg1 allocator:(id)arg2;
+- (void)bufferGPUAddress:(id)arg1 allocator:(id)arg2;
 - (void)argumentEncoderSetBuffers:(const id *)arg1 offsets:(const unsigned long long *)arg2 withRange:(struct _NSRange)arg3 encoderRef:(unsigned int)arg4 allocator:(id)arg5;
 - (void)argumentEncoderSetArgumentBuffer:(id)arg1 offset:(unsigned long long)arg2 encoderRef:(unsigned int)arg3 allocator:(id)arg4;
 - (void)maxAvailableSizeWithAlignment:(unsigned long long)arg1 heap:(id)arg2 allocator:(id)arg3;

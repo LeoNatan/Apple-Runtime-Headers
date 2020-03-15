@@ -46,6 +46,7 @@
     UIAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didFinishInitialViewAppear; // @synthesize didFinishInitialViewAppear=_didFinishInitialViewAppear;
 @property(nonatomic) _Bool didFinishInitialLoad; // @synthesize didFinishInitialLoad=_didFinishInitialLoad;
 @property(nonatomic) _Bool pushToNowPlaying; // @synthesize pushToNowPlaying=_pushToNowPlaying;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) MCDPCContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)_limitedUIChanged:(id)arg1;
 - (_Bool)_shouldLimitLists;
 - (void)_clearTableViewSelectionAnimated:(_Bool)arg1;

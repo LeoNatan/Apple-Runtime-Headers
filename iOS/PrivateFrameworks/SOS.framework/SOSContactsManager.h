@@ -22,10 +22,10 @@
 + (_Bool)authorizedToUseContactStore;
 + (id)contactStore;
 + (void)preloadContactStoreIfNecessary;
+- (void).cxx_destruct;
 @property(nonatomic) struct _opaque_pthread_mutex_t medicalIDEmergencyContactsMutex; // @synthesize medicalIDEmergencyContactsMutex=_medicalIDEmergencyContactsMutex;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *medicalIDContactsInitialStateSemaphore; // @synthesize medicalIDContactsInitialStateSemaphore=_medicalIDContactsInitialStateSemaphore;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)_medicalContactsDidChange;
 - (void)_waitForMedicalIDInitialState;
 @property(retain, nonatomic) NSArray *medicalIDEmergencyContacts; // @synthesize medicalIDEmergencyContacts=_medicalIDEmergencyContacts;

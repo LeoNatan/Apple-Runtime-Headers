@@ -37,11 +37,14 @@
 + (BOOL)shouldDeferAfterError:(id)arg1;
 + (void)unregisterActivitiesWithDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
 + (id)earliestStartDateAfterError:(id)arg1;
++ (void)setFastErrorRetry:(BOOL)arg1;
++ (BOOL)fastErrorRetry;
 + (id)saveSubscriptionActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
 + (id)modifyPendingChangesActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
 + (id)fetchChangesActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
 + (id)activityIdentifierWithName:(id)arg1 database:(id)arg2 ignoringSystemConditions:(BOOL)arg3 uniquenessPointer:(id)arg4;
 + (id)supportedDatabaseScopes;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAutomaticSyncingDisabled) BOOL automaticSyncingDisabled; // @synthesize automaticSyncingDisabled=_automaticSyncingDisabled;
 @property(nonatomic) BOOL skipRetryOnOperationError; // @synthesize skipRetryOnOperationError=_skipRetryOnOperationError;
 @property(nonatomic) long long priorityForModifications; // @synthesize priorityForModifications=_priorityForModifications;
@@ -63,7 +66,6 @@
 @property(retain, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) __weak id <CKSyncEngineDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) BOOL ignoringSystemConditions; // @synthesize ignoringSystemConditions=_ignoringSystemConditions;
-- (void).cxx_destruct;
 - (id)defaultOperationConfiguration;
 - (void)updateAccountInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)ensureAccountAvailableWithCompletionHandler:(CDUnknownBlockType)arg1;

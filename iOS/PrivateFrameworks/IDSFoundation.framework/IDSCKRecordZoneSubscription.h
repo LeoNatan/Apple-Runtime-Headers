@@ -15,8 +15,8 @@
 
 + (id)alloc;
 + (Class)__class;
-@property(copy, nonatomic) IDSCKNotificationInfo *notificationInfo; // @synthesize notificationInfo=_notificationInfo;
 - (void).cxx_destruct;
+@property(copy, nonatomic) IDSCKNotificationInfo *notificationInfo; // @synthesize notificationInfo=_notificationInfo;
 
 @end
 

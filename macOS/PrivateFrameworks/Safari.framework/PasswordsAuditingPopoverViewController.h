@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     ContentHuggingTextView *_passwordsAuditingWarningLabel;
 }
 
+- (void).cxx_destruct;
 @property ContentHuggingTextView *passwordsAuditingWarningLabel; // @synthesize passwordsAuditingWarningLabel=_passwordsAuditingWarningLabel;
 @property __weak NSClipView *passwordsAuditingWarningLabelEnclosingClipView; // @synthesize passwordsAuditingWarningLabelEnclosingClipView=_passwordsAuditingWarningLabelEnclosingClipView;
 @property(readonly, nonatomic) WBSSavedPassword *auditingSavedPassword; // @synthesize auditingSavedPassword=_auditingSavedPassword;
 @property(nonatomic) __weak id <PasswordsAuditingHandler> passwordAuditingHandler; // @synthesize passwordAuditingHandler=_passwordAuditingHandler;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)closePopover;
 - (void)showPopoverWithPositioningView:(id)arg1;

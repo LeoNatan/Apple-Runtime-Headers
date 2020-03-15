@@ -25,9 +25,9 @@
 + (id)unreadMailboxWithMailboxScope:(id)arg1;
 + (id)flaggedMailboxWithMailboxScope:(id)arg1;
 + (id)vipMailboxWithMailboxScope:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int smartMailboxType; // @synthesize smartMailboxType=_smartMailboxType;
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
-- (void).cxx_destruct;
 - (_Bool)_shouldArchiveByDefault;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

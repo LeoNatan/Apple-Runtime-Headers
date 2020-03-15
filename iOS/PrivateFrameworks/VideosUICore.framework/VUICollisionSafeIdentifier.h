@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _collisionCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long collisionCount; // @synthesize collisionCount=_collisionCount;
 @property(copy, nonatomic) NSObject<NSCopying> *rootIdentifier; // @synthesize rootIdentifier=_rootIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

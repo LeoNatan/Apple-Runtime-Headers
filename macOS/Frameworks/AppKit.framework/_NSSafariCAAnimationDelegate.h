@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _animationDidStopBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType animationDidStopBlock; // @synthesize animationDidStopBlock=_animationDidStopBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType animationDidStopBlock; // @synthesize animationDidStopBlock=_animationDidStopBlock;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 
 // Remaining properties

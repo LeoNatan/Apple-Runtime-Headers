@@ -15,9 +15,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *applicationNameLabel; // @synthesize applicationNameLabel=_applicationNameLabel;
 @property(readonly, nonatomic) UIImageView *applicationImageView; // @synthesize applicationImageView=_applicationImageView;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

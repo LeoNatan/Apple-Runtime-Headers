@@ -16,8 +16,8 @@
     id <SXAction> _action;
 }
 
-@property(readonly, nonatomic) id <SXAction> action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXAction> action; // @synthesize action=_action;
 - (id)initWithAction:(id)arg1;
 
 // Remaining properties

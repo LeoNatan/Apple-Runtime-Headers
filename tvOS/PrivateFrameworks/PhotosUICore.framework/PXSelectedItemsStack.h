@@ -17,10 +17,10 @@
     NSArray *_topItemReferences;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *topItemReferences; // @synthesize topItemReferences=_topItemReferences;
 @property(copy, nonatomic) NSArray *topItems; // @synthesize topItems=_topItems;
 @property(readonly, nonatomic) long long depth; // @synthesize depth=_depth;
-- (void).cxx_destruct;
 - (void)updateWithSelectedItemsSnapshot:(id)arg1;
 - (id)mutableChangeObject;
 - (void)performChanges:(CDUnknownBlockType)arg1;

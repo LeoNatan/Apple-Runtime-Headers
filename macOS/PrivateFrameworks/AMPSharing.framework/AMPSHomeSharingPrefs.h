@@ -16,11 +16,11 @@
     AMPLSharingClient *_client;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMPLSharingClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) BOOL updatePlayCounts; // @synthesize updatePlayCounts=_updatePlayCounts;
 @property(readonly, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(readonly, nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setUpdatePlayCounts:(BOOL)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)disableHomeSharingWithReply:(CDUnknownBlockType)arg1;
 - (void)enableHomeSharing:(id)arg1 forComputerID:(id)arg2 forUserID:(unsigned long long)arg3 forUserName:(id)arg4 withReply:(CDUnknownBlockType)arg5;

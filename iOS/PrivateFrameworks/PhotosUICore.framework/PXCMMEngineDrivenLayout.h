@@ -30,6 +30,7 @@
 }
 
 + (id)_additionalTileKinds;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool headerViewIsVisible; // @synthesize headerViewIsVisible=_headerViewIsVisible;
 @property(readonly, nonatomic) PXCMMAssetStatusBadgeTileUserData *_failedUserData; // @synthesize _failedUserData=__failedUserData;
 @property(readonly, nonatomic) PXCMMAssetStatusBadgeTileUserData *_copiedUserData; // @synthesize _copiedUserData=__copiedUserData;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) double bannerHeight; // @synthesize bannerHeight=_bannerHeight;
 @property(readonly, nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;
 @property(readonly, nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
-- (void).cxx_destruct;
 - (void)adjustGeometry:(struct PXTileGeometry *)arg1 forAdditionalTileWithKind:(unsigned long long)arg2 indexPath:(struct PXSimpleIndexPath)arg3;
 - (_Bool)_getAdditionalTileIdentifierForEditorial:(out struct PXTileIdentifier *)arg1 group:(out unsigned long long *)arg2 layoutGeometryKind:(long long)arg3 indexPath:(struct PXSimpleIndexPath)arg4;
 - (_Bool)_getAdditionalTileIdentifierForGrid:(out struct PXTileIdentifier *)arg1 group:(out unsigned long long *)arg2 layoutGeometryKind:(long long)arg3 indexPath:(struct PXSimpleIndexPath)arg4;

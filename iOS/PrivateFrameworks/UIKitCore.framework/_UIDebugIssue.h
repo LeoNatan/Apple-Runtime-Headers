@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (id)issueWithFormat:(id)arg1;
 + (id)issueWithDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_subissueReport) _UIDebugIssueReport *subissueReport; // @synthesize subissueReport=_subissueReport;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(copy, nonatomic) NSString *description; // @synthesize description=_description;
-- (void).cxx_destruct;
 - (void)addIssue:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *subissues;
 - (id)init;

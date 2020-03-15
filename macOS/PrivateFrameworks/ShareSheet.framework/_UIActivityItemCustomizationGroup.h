@@ -15,10 +15,10 @@
     NSArray *_customizations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *customizations; // @synthesize customizations=_customizations;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_initGroupWithName:(id)arg1 identifier:(id)arg2 customizations:(id)arg3;
 
 @end

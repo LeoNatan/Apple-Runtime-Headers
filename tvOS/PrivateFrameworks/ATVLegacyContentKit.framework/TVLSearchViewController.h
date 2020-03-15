@@ -27,12 +27,12 @@
     TVLSearchResultsViewController *_resultsViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool searchControllerPresented; // @synthesize searchControllerPresented=_searchControllerPresented;
 @property(retain, nonatomic) TVLSearchResultsViewController *resultsViewController; // @synthesize resultsViewController=_resultsViewController;
 @property(retain, nonatomic) UIViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (void)_loadSearchResultsForQueryString:(id)arg1;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)searchResultsViewController:(id)arg1 didSelectSearchTerm:(id)arg2;

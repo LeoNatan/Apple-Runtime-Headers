@@ -74,6 +74,7 @@
 + (id)buildRequiredOnly;
 + (id)buildWithUDID:(id)arg1 withOrganizationInfo:(id)arg2 withMDMOptions:(id)arg3 withLastCloudBackupDate:(id)arg4 withAwaitingConfiguration:(id)arg5 withITunesStoreAccountIsActive:(id)arg6 withITunesStoreAccountHash:(id)arg7 withDeviceName:(id)arg8 withOSVersion:(id)arg9 withBuildVersion:(id)arg10 withModelName:(id)arg11 withModel:(id)arg12 withProductName:(id)arg13 withMarketingName:(id)arg14 withSerialNumber:(id)arg15 withDeviceCapacity:(id)arg16 withAvailableDeviceCapacity:(id)arg17 withIMEI:(id)arg18 withMEID:(id)arg19 withModemFirmwareVersion:(id)arg20 withCellularTechnology:(id)arg21 withBatteryLevel:(id)arg22 withIsSupervised:(id)arg23 withIsMultiUser:(id)arg24 withIsDeviceLocatorServiceEnabled:(id)arg25 withIsActivationLockEnabled:(id)arg26 withIsDoNotDisturbInEffect:(id)arg27 withDeviceID:(id)arg28 withEASDeviceIdentifier:(id)arg29 withIsCloudBackupEnabled:(id)arg30 withActiveManagedUsers:(id)arg31 withOSUpdateSettings:(id)arg32 withAutoSetupAdminAccounts:(id)arg33 withSystemIntegrityProtectionEnabled:(id)arg34 withIsMDMLostModeEnabled:(id)arg35 withMaximumResidentUsers:(id)arg36 withPushToken:(id)arg37 withDiagnosticSubmissionEnabled:(id)arg38 withAppAnalyticsEnabled:(id)arg39 withICCID:(id)arg40 withBluetoothMAC:(id)arg41 withWiFiMAC:(id)arg42 withEthernetMACs:(id)arg43 withCurrentCarrierNetwork:(id)arg44 withSIMCarrierNetwork:(id)arg45 withSubscriberCarrierNetwork:(id)arg46 withCarrierSettingsVersion:(id)arg47 withPhoneNumber:(id)arg48 withDataRoamingEnabled:(id)arg49 withVoiceRoamingEnabled:(id)arg50 withPersonalHotspotEnabled:(id)arg51 withIsNetworkTethered:(id)arg52 withIsRoaming:(id)arg53 withSIMMCC:(id)arg54 withSIMMNC:(id)arg55 withSubscriberMCC:(id)arg56 withSubscriberMNC:(id)arg57 withCurrentMCC:(id)arg58 withCurrentMNC:(id)arg59;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *statusCurrentMNC; // @synthesize statusCurrentMNC=_statusCurrentMNC;
 @property(copy, nonatomic) NSString *statusCurrentMCC; // @synthesize statusCurrentMCC=_statusCurrentMCC;
 @property(copy, nonatomic) NSString *statusSubscriberMNC; // @synthesize statusSubscriberMNC=_statusSubscriberMNC;
@@ -133,7 +134,6 @@
 @property(copy, nonatomic) NSString *statusMDMOptions; // @synthesize statusMDMOptions=_statusMDMOptions;
 @property(copy, nonatomic) CEMDeviceInformationCommand_StatusQueryResponsesOrganizationInfo *statusOrganizationInfo; // @synthesize statusOrganizationInfo=_statusOrganizationInfo;
 @property(copy, nonatomic) NSString *statusUDID; // @synthesize statusUDID=_statusUDID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

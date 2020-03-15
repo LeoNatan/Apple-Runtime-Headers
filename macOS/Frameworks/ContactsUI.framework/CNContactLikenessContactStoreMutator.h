@@ -17,9 +17,9 @@
 }
 
 + (void)updateContact:(id)arg1 withLikeness:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)setLikenessAsCurrent:(id)arg1;
 - (id)deleteLikeness:(id)arg1;
 - (id)updateLikeness:(id)arg1;

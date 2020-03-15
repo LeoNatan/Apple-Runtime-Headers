@@ -22,9 +22,9 @@
     NSObject<OS_dispatch_queue> *_feedbackQueue;
 }
 
+- (void).cxx_destruct;
 @property BOOL malwareScanOnly; // @synthesize malwareScanOnly=_malwareScanOnly;
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (id)description;
 - (void)didReceiveFeedbackOfType:(id)arg1 withInformation:(id)arg2;
 - (BOOL)beginAnalysisWithHandler:(CDUnknownBlockType)arg1 contextInfo:(void *)arg2 feedback:(CDUnknownBlockType)arg3;

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _thumbnailSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double standardSideMargins; // @synthesize standardSideMargins=_standardSideMargins;
 @property(readonly, nonatomic) double collectionViewContentInset; // @synthesize collectionViewContentInset=_collectionViewContentInset;
 @property(readonly, nonatomic) _Bool shouldUseFullscreenLayout; // @synthesize shouldUseFullscreenLayout=_shouldUseFullscreenLayout;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long largeNumberOfSubjectsForLikes; // @synthesize largeNumberOfSubjectsForLikes=_largeNumberOfSubjectsForLikes;
 @property(readonly, nonatomic) struct CGSize minimumVideoTileSize; // @synthesize minimumVideoTileSize=_minimumVideoTileSize;
 @property(copy, nonatomic, setter=_setQualityImageFormats:) NSIndexSet *qualityImageFormats; // @synthesize qualityImageFormats=_qualityImageFormats;
-- (void).cxx_destruct;
 - (double)spacingBetweenSectionWithInfo:(id)arg1 andHeaderWithGroupID:(id)arg2;
 - (void)configureSeparatorMetrics:(inout struct PUFeedSeparatorMetrics *)arg1 betweenSectionWithInfo:(id)arg2 andSectionWithInfo:(id)arg3 joined:(_Bool)arg4 collectionViewType:(long long)arg5;
 - (long long)configurationForSectionHeaderType:(long long)arg1 collectionViewType:(long long)arg2;

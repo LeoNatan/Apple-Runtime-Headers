@@ -60,6 +60,7 @@
     NSDate *_timeOfLastScrollingDecelerationEnded;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool browserIsCollapsingFromFullscreen; // @synthesize browserIsCollapsingFromFullscreen=_browserIsCollapsingFromFullscreen;
 @property(nonatomic) _Bool browserIsLoadingCompact; // @synthesize browserIsLoadingCompact=_browserIsLoadingCompact;
 @property(retain, nonatomic) NSDate *timeOfLastScrollingDecelerationEnded; // @synthesize timeOfLastScrollingDecelerationEnded=_timeOfLastScrollingDecelerationEnded;
@@ -92,7 +93,6 @@
 @property(retain, nonatomic) CKBrowserTransitionCoordinator *transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
 @property(readonly, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(nonatomic) __weak id <CKBrowserSwitcherViewControllerDelegate><CKBrowserTransitionCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(long long)arg2;
 - (id)backdropView:(id)arg1 willChangeToGraphicsQuality:(long long)arg2;
 - (void)appGrabberViewCloseButtonTapped:(id)arg1;

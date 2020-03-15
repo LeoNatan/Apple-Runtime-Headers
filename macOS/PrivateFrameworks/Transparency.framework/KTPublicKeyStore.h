@@ -16,11 +16,11 @@
     TransparencyManagedDataStore *_dataStore;
 }
 
+- (void).cxx_destruct;
 @property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property BOOL forceRefresh; // @synthesize forceRefresh=_forceRefresh;
 @property(retain) NSArray *applications; // @synthesize applications=_applications;
 @property(retain) NSDictionary *applicationKeyStores; // @synthesize applicationKeyStores=_applicationKeyStores;
-- (void).cxx_destruct;
 @property(readonly) BOOL ready;
 - (void)clearApplicationState:(id)arg1 error:(id *)arg2;
 - (id)initWithDataStore:(id)arg1;

@@ -24,6 +24,7 @@
 + (id)buildWithLatitude:(id)arg1 withLongitude:(id)arg2 withHorizontalAccuracy:(id)arg3 withVerticalAccuracy:(id)arg4 withAltitude:(id)arg5 withSpeed:(id)arg6 withCourse:(id)arg7 withTimestamp:(id)arg8;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *statusTimestamp; // @synthesize statusTimestamp=_statusTimestamp;
 @property(copy, nonatomic) NSNumber *statusCourse; // @synthesize statusCourse=_statusCourse;
 @property(copy, nonatomic) NSNumber *statusSpeed; // @synthesize statusSpeed=_statusSpeed;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSNumber *statusHorizontalAccuracy; // @synthesize statusHorizontalAccuracy=_statusHorizontalAccuracy;
 @property(copy, nonatomic) NSNumber *statusLongitude; // @synthesize statusLongitude=_statusLongitude;
 @property(copy, nonatomic) NSNumber *statusLatitude; // @synthesize statusLatitude=_statusLatitude;
-- (void).cxx_destruct;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;
 

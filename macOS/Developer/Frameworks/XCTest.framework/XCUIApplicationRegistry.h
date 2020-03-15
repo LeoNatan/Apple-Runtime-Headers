@@ -17,10 +17,10 @@
     id <XCUIApplicationRegistryProvider> _platformProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <XCUIApplicationRegistryProvider> platformProvider; // @synthesize platformProvider=_platformProvider;
 @property(copy) NSDictionary *userOverrides; // @synthesize userOverrides=_userOverrides;
 @property(copy) NSDictionary *testDependencies; // @synthesize testDependencies=_testDependencies;
-- (void).cxx_destruct;
 - (BOOL)testDependencyExistsForApplicationAtURL:(id)arg1;
 - (BOOL)_validateBundleIdentifier:(id)arg1 withApplicationAtURL:(id)arg2 error:(id *)arg3;
 - (id)_discoveredURLForBundleIdentifier:(id)arg1 error:(id *)arg2;

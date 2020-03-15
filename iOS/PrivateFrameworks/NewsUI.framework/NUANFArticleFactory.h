@@ -17,10 +17,10 @@
     FCArticleController *_articleController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCArticleController *articleController; // @synthesize articleController=_articleController;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
-- (void).cxx_destruct;
 - (id)createArticlesForArticleIDs:(id)arg1;
 - (id)initWithArticleController:(id)arg1;
 

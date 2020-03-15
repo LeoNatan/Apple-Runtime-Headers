@@ -18,12 +18,12 @@
 }
 
 + (id)watchedKeyPaths;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIStackView *mainStackView; // @synthesize mainStackView=_mainStackView;
 @property(readonly, nonatomic) UIStackView *titleSpinnerStackView; // @synthesize titleSpinnerStackView=_titleSpinnerStackView;
 @property(readonly, nonatomic) UILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
 @property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_watchLabelsForContentAndResizeIfNecessary;
 - (struct CGSize)intrinsicContentSize;

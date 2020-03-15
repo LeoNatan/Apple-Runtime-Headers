@@ -19,10 +19,10 @@
     id <RemindMePeopleDelegate> _peopleDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <RemindMePeopleDelegate> peopleDelegate; // @synthesize peopleDelegate=_peopleDelegate;
 @property(copy) CDUnknownBlockType suggestionsUpdatedBlock; // @synthesize suggestionsUpdatedBlock=_suggestionsUpdatedBlock;
 @property(retain) CalAutoCompleteOperation *acOperation; // @synthesize acOperation=_acOperation;
-- (void).cxx_destruct;
 - (void)queryForString:(id)arg1 suggestionsFoundHandler:(CDUnknownBlockType)arg2;
 - (id)matchWithPrefix:(id)arg1;
 - (id)subtitleForSuggestion:(id)arg1;

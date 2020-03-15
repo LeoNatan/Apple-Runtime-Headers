@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct CGPoint _origin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) struct CGPoint origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawAtContext:(id)arg1;
 - (id)initWitColor:(id)arg1 origin:(struct CGPoint)arg2 orientation:(long long)arg3;
 

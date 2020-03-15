@@ -20,10 +20,10 @@
 
 + (id)serviceProtocolInterface;
 + (id)cursorProtocolInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNXPCDataMapperService> serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) id <CNContactsLogger> logger; // @synthesize logger=_logger;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)authorizedKeysForContactKeys:(id)arg1 error:(id *)arg2;
 - (BOOL)writeFavoritesPropertyListData:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
 - (id)favoritesEntryDictionariesAtPath:(id)arg1 error:(id *)arg2;

@@ -84,6 +84,7 @@
 + (void)setAirplaneMode:(_Bool)arg1;
 + (_Bool)airplaneMode;
 + (id)radiosPreferences;
+- (void).cxx_destruct;
 @property(nonatomic) struct __CTServerConnection *_ctConnection; // @synthesize _ctConnection=__ctConnection;
 @property(nonatomic) _Bool _cellularDataSetting; // @synthesize _cellularDataSetting=__cellularDataSetting;
 @property(nonatomic) _Bool _cellularDataSettingInitialized; // @synthesize _cellularDataSettingInitialized=__cellularDataSettingInitialized;
@@ -94,7 +95,6 @@
 @property(retain, nonatomic) NSArray *followupSpecifiers; // @synthesize followupSpecifiers=_followupSpecifiers;
 @property(copy, nonatomic) NSString *bluetoothString; // @synthesize bluetoothString=_bluetoothString;
 @property(nonatomic) _Bool skipSelectingDefaultCategoryOnLaunch; // @synthesize skipSelectingDefaultCategoryOnLaunch;
-- (void).cxx_destruct;
 - (_Bool)isCellularDataEnabled;
 - (void)fetchCellularDataEnabled;
 - (void)_configureImageViewForRow:(id)arg1;

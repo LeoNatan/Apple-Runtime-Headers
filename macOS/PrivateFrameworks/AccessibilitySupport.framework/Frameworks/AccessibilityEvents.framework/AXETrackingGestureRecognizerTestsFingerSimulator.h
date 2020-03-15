@@ -15,10 +15,10 @@
     NSMutableDictionary *__fingersToTouchEvents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_fingersToTouchEvents; // @synthesize _fingersToTouchEvents=__fingersToTouchEvents;
 @property(retain, nonatomic) NSDate *_lastGestureEventTimestamp; // @synthesize _lastGestureEventTimestamp=__lastGestureEventTimestamp;
 @property(nonatomic) unsigned long long _eventSource; // @synthesize _eventSource=__eventSource;
-- (void).cxx_destruct;
 - (id)createGestureEventAfterTimeInterval:(double)arg1;
 - (id)fingerWithID:(unsigned long long)arg1;
 - (void)liftAllFingers;

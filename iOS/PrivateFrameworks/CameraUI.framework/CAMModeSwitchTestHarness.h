@@ -15,10 +15,10 @@
     long long _desiredMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isTestingAnimation) _Bool testingAnimation; // @synthesize testingAnimation=_testingAnimation;
 @property(readonly, nonatomic) long long desiredMode; // @synthesize desiredMode=_desiredMode;
 @property(readonly, nonatomic) CAMViewfinderViewController *viewfinderViewController; // @synthesize viewfinderViewController=_viewfinderViewController;
-- (void).cxx_destruct;
 - (void)_ensureCaptureMode:(long long)arg1 thenPerform:(CDUnknownBlockType)arg2;
 - (void)handleDidOpenViewfinderForReason:(long long)arg1;
 - (void)startTesting;

@@ -15,8 +15,8 @@
     RTLearnedLocationStore *_learnedLocationStore;
 }
 
-@property(retain, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
 - (id)classifyWithError:(id *)arg1;
 - (id)initWithLearnedLocationStore:(id)arg1;
 - (id)init;

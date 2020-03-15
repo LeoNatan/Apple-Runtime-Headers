@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_contentsViews;
 }
 
-@property(retain, nonatomic) NSMutableArray *contentsViews; // @synthesize contentsViews=_contentsViews;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *contentsViews; // @synthesize contentsViews=_contentsViews;
 - (void)updateWithContents:(id)arg1;
 - (id)init;
 

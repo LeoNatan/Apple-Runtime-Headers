@@ -39,10 +39,10 @@
 + (BOOL)isQuerySupported:(unsigned long long)arg1;
 + (void)unboost;
 + (void)boost;
+- (void).cxx_destruct;
 @property(readonly) SPMetadataPattern *queryPattern; // @synthesize queryPattern=_queryPattern;
 @property(readonly) NSString *queryString; // @synthesize queryString=_queryString;
 @property BOOL isFuzzy; // @synthesize isFuzzy=_isFuzzy;
-- (void).cxx_destruct;
 - (void)_sendResponse:(id)arg1;
 - (void)_sendFilteredResponseOfKind:(int)arg1;
 - (void)_sendFastFilteredResults;

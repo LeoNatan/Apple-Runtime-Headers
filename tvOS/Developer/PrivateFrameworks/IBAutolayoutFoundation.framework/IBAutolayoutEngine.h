@@ -34,11 +34,11 @@
 + (void)setGlobalAssertsOnRuntimeUnsatisfiableConstraints:(_Bool)arg1;
 + (_Bool)globalAssertsOnRuntimeUnsatisfiableConstraints;
 + (id)layoutConstraintEngineForViewHierarchyOfView:(id)arg1 layoutInfo:(id)arg2 options:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *mutuallyExclusiveConstraintsRemovedDuringBootstrapping; // @synthesize mutuallyExclusiveConstraintsRemovedDuringBootstrapping=_mutuallyExclusiveConstraintsRemovedDuringBootstrapping;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly) IBAutolayoutArbitrationUnit *arbitrationUnit; // @synthesize arbitrationUnit=_arbitrationUnit;
 @property(readonly) NSObject<IBAutolayoutItem> *topMostView; // @synthesize topMostView=_topLevelRealView;
-- (void).cxx_destruct;
 - (void)exerciseAmbiguityInLayoutForView:(id)arg1;
 - (void)_catchExceptionsToWorkaround13752578During:(CDUnknownBlockType)arg1;
 - (id)constraintAbstractionsAffectingLayoutOfView:(id)arg1 forOrientation:(unsigned long long)arg2 maximumNumberOfConstraints:(id)arg3;
@@ -97,6 +97,7 @@
 - (_Bool)hasMismatchedFrameOrBoundsSizeForView:(id)arg1 expectedFrameOrBounds:(struct CGRect *)arg2 actualFrameOrBounds:(struct CGRect *)arg3;
 - (struct CGRect)layoutBoundsForView:(id)arg1;
 - (struct CGRect)layoutFrameForView:(id)arg1 inCoordinateSpaceOfView:(id)arg2;
+- (_Bool)requiresRepresentedCoordinateSpaceViewForView:(id)arg1;
 - (struct CGRect)layoutFrameForView:(id)arg1;
 - (_Bool)ambiguityIsAccurateForView:(id)arg1;
 - (unsigned long long)ambiguityStatusForView:(id)arg1;

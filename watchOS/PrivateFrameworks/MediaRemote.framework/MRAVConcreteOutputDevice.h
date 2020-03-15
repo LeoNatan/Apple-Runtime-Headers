@@ -31,6 +31,7 @@
 - (void)_onqueue_clearCachedAVOutputDeviceProperties;
 - (_Bool)_isOutputDevice:(id)arg1 belongToOutputContext:(id)arg2;
 - (id)_outputContext;
+- (_Bool)supportsHAP;
 - (id)bluetoothID;
 - (void)setVolume:(float)arg1;
 - (float)volume;

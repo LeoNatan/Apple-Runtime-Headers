@@ -18,8 +18,8 @@
     id <MOPhotosMomentsViewDelegate> _photosMomentsViewDelegate;
 }
 
-@property(nonatomic) __weak id <MOPhotosMomentsViewDelegate> photosMomentsViewDelegate; // @synthesize photosMomentsViewDelegate=_photosMomentsViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MOPhotosMomentsViewDelegate> photosMomentsViewDelegate; // @synthesize photosMomentsViewDelegate=_photosMomentsViewDelegate;
 - (void)mediaView:(id)arg1 didUpdateSupplementaryView:(id)arg2 ofKind:(id)arg3 withMediaSection:(id)arg4 atIndexPath:(id)arg5;
 - (double)mainFooterHeightForCollectionView:(id)arg1;
 - (id)mainFooterInfoForCollectionView:(id)arg1;

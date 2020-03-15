@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_apertureValues;
 }
 
+- (void).cxx_destruct;
 @property(getter=isComplete) _Bool complete; // @synthesize complete=_complete;
 @property(copy) NSDictionary *apertureValues; // @synthesize apertureValues=_apertureValues;
 @property(copy) NSDictionary *portraitValues; // @synthesize portraitValues=_portraitValues;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSDictionary *overcaptureSmartToneStatistics; // @synthesize overcaptureSmartToneStatistics=_overcaptureSmartToneStatistics;
 @property(copy) NSDictionary *primarySmartToneStatistics; // @synthesize primarySmartToneStatistics=_primarySmartToneStatistics;
 @property(copy) NSDictionary *smartToneStatistics; // @synthesize smartToneStatistics=_smartToneStatistics;
-- (void).cxx_destruct;
 
 @end
 

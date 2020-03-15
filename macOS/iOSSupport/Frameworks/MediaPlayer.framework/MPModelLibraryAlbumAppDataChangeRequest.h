@@ -16,9 +16,9 @@
     MPMediaLibraryAlbumAppData *_albumAppData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPMediaLibraryAlbumAppData *albumAppData; // @synthesize albumAppData=_albumAppData;
 @property(retain, nonatomic) MPModelObject *modelObject; // @synthesize modelObject=_modelObject;
-- (void).cxx_destruct;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

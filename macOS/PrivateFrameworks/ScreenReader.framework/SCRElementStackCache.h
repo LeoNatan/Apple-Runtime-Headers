@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *__cache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_cache; // @synthesize _cache=__cache;
 @property(retain, nonatomic) NSMutableArray *_mutatedKeys; // @synthesize _mutatedKeys=__mutatedKeys;
-- (void).cxx_destruct;
 - (id)objectWithExpectedType:(Class)arg1 forKey:(id)arg2;
 - (id)uiElementForKey:(id)arg1;
 - (long long)integerForKey:(id)arg1;

@@ -16,10 +16,10 @@
     PXSnapStripView *_snapStripView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowStartEndTimeSnapIndicators; // @synthesize allowStartEndTimeSnapIndicators=_allowStartEndTimeSnapIndicators;
 @property(retain, nonatomic) PXSnapStripView *snapStripView; // @synthesize snapStripView=_snapStripView;
 @property(retain, nonatomic) PXLivePhotoTrimScrubber *trimScrubber; // @synthesize trimScrubber=_trimScrubber;
-- (void).cxx_destruct;
 @property(retain, nonatomic) PXLivePhotoTrimScrubberSnapStripControllerSpec *spec; // @synthesize spec=_spec;
 - (void)updateSnapStripViewAnimated:(_Bool)arg1;
 - (void)updateSnapStripView;

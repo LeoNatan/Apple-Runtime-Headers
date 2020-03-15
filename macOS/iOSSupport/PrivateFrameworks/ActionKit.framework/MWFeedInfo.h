@@ -18,11 +18,11 @@
     NSURL *url;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *url; // @synthesize url;
 @property(copy, nonatomic) NSString *summary; // @synthesize summary;
 @property(copy, nonatomic) NSString *link; // @synthesize link;
 @property(copy, nonatomic) NSString *title; // @synthesize title;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

@@ -18,7 +18,6 @@
 }
 
 - (void).cxx_destruct;
-- (void)loadLinkPresentationMetdataForMessageWithGUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)changeUserWebSearchProviderInfoTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)relatedExtensionsForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_connectionWithCompletionHandler:(CDUnknownBlockType)arg1;

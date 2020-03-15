@@ -22,10 +22,10 @@
 + (id)_sharedBroker;
 + (_Bool)supportsSecureCoding;
 + (void)cancelAllRequestsWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain) id <ASDRequestProxy> proxy; // @synthesize proxy=_proxy;
 @property(readonly, nonatomic) NSUUID *requestID; // @synthesize requestID=_requestID;
 @property __weak id <ASDRequestObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)_submitRequestWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)_startWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)_notifyObserverOfCompletionWithError:(id)arg1;

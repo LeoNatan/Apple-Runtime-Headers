@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _magnifiedDragEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets magnifiedDragEdgeInsets; // @synthesize magnifiedDragEdgeInsets=_magnifiedDragEdgeInsets;
 @property(retain, nonatomic) UIImage *itemImage; // @synthesize itemImage=_itemImage;
 @property(retain, nonatomic) NSIndexPath *itemIndexPath; // @synthesize itemIndexPath=_itemIndexPath;
 @property(nonatomic) struct CGSize magnifiedImageSize; // @synthesize magnifiedImageSize=_magnifiedImageSize;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (struct CGRect)pinFrameToParentFrame:(struct CGRect)arg1;
 - (struct CGRect)photoFrameForViewFrame:(struct CGRect)arg1;
 - (struct CGRect)viewFrameForPhotoFrame:(struct CGRect)arg1;

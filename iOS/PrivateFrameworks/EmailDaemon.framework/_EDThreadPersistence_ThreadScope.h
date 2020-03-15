@@ -18,11 +18,11 @@
     _EDThreadPersistence_SQLHelper *_sqlHelper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _EDThreadPersistence_SQLHelper *sqlHelper; // @synthesize sqlHelper=_sqlHelper;
 @property(readonly, nonatomic) id <EFSQLExpressable> threadScopeExpression; // @synthesize threadScopeExpression=_threadScopeExpression;
 @property(readonly, nonatomic) long long threadScopeDatabaseID; // @synthesize threadScopeDatabaseID=_threadScopeDatabaseID;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
-- (void).cxx_destruct;
 - (void)dropTemporaryView;
 - (void)_ensureTempScopeView;
 - (id)createMessagesWithThreadObjectID:(id)arg1 wrappedMessages:(id)arg2;

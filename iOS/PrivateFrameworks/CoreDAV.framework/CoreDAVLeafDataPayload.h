@@ -17,10 +17,10 @@
     NSData *_dataPayload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *syncKey; // @synthesize syncKey=_syncKey;
 @property(readonly, nonatomic) NSData *dataPayload; // @synthesize dataPayload=_dataPayload;
 @property(retain, nonatomic) NSURL *serverID; // @synthesize serverID=_serverID;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
 
 // Remaining properties

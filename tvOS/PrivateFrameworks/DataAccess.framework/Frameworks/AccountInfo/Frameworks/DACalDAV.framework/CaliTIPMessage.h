@@ -17,12 +17,12 @@
     ICSEvent *_event;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICSEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) ICSDocument *document; // @synthesize document=_document;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(retain, nonatomic) CalDAVScheduleChangesProperty *scheduleChanges; // @synthesize scheduleChanges=_scheduleChanges;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compare:(id)arg1;
 @property(readonly, nonatomic) NSArray *occurrences;

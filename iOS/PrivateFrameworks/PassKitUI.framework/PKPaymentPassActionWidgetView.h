@@ -23,10 +23,10 @@
     id <PKPaymentPassActionWidgetViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentPassActionWidgetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(retain, nonatomic) PKPeerPaymentAccount *peerPaymentAccount; // @synthesize peerPaymentAccount=_peerPaymentAccount;
-- (void).cxx_destruct;
 - (void)cleanUpExistingWidgets;
 - (unsigned long long)numberOfRows;
 - (void)updateNumberOfWidgetsPerRow;
@@ -35,6 +35,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_determineWidgetContentWithAvailableWidgets;
+- (id)_titleForAddMoneyWidgetForActions:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithWidgetViewStyle:(unsigned long long)arg1;
 

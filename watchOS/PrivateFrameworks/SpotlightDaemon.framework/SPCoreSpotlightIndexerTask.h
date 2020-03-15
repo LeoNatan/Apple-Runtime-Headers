@@ -18,13 +18,13 @@
     unsigned int _dataMigrationStage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResumeOnFailure; // @synthesize shouldResumeOnFailure=_shouldResumeOnFailure;
 @property(nonatomic) unsigned int dataMigrationStage; // @synthesize dataMigrationStage=_dataMigrationStage;
 @property(retain, nonatomic) NSArray *completedBundleIDs; // @synthesize completedBundleIDs=_completedBundleIDs;
 @property(retain, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property(readonly, nonatomic) NSArray *indexers; // @synthesize indexers=_indexers;
 @property(readonly, nonatomic) CSIndexJob *job; // @synthesize job=_job;
-- (void).cxx_destruct;
 - (id)initWithIndexJob:(id)arg1 indexers:(id)arg2;
 
 @end

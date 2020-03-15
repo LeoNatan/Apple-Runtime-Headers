@@ -16,10 +16,10 @@
 }
 
 + (id)newWithVariable:(id)arg1 range:(struct _NSRange)arg2 editingVariable:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool editingVariable; // @synthesize editingVariable=_editingVariable;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
-- (void).cxx_destruct;
 
 @end
 

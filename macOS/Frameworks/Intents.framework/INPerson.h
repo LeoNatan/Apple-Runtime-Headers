@@ -38,6 +38,7 @@
 
 + (id)expectedCNContactKeys;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *phonemeData; // @synthesize phonemeData=_phonemeData;
 @property(copy) NSArray *alternatives; // @synthesize alternatives=_alternatives;
 @property BOOL isMe; // @synthesize isMe=_isMe;
@@ -49,7 +50,6 @@
 @property(copy) INImage *image; // @synthesize image=_image;
 @property(copy) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(copy) INPersonHandle *personHandle; // @synthesize personHandle=_personHandle;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *alternativeSiriMatches;
 - (id)_dictionaryRepresentation;
 - (id)initWithContact:(id)arg1;
@@ -80,7 +80,7 @@
 @property(readonly, copy, nonatomic) NSString *firstName;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 aliases:(id)arg7 suggestionType:(long long)arg8;

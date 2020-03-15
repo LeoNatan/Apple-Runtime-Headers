@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     id _delegate;
 }
 
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithQueue:(struct queue)arg1;

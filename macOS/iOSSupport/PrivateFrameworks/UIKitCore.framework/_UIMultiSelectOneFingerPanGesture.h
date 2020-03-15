@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <_UIMultiSelectOneFingerPanGestureDelegate> _oneFingerPanDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIMultiSelectOneFingerPanGestureDelegate> oneFingerPanDelegate; // @synthesize oneFingerPanDelegate=_oneFingerPanDelegate;
 @property(readonly, nonatomic) UIEvent *activeEvent; // @synthesize activeEvent=_activeEvent;
 @property(readonly, nonatomic) UITouch *activeTouch; // @synthesize activeTouch=_activeTouch;
-- (void).cxx_destruct;
 - (BOOL)_affectedByGesture:(id)arg1;
 - (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;

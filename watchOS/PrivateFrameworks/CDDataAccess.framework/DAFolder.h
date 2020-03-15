@@ -18,13 +18,13 @@
     int _dataclass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasRemoteChanges; // @synthesize hasRemoteChanges=_hasRemoteChanges;
 @property(nonatomic) _Bool isDefault; // @synthesize isDefault=_isDefault;
 @property(nonatomic) int dataclass; // @synthesize dataclass=_dataclass;
 @property(copy, nonatomic) NSString *parentFolderID; // @synthesize parentFolderID=_parentFolderID;
 @property(copy, nonatomic) NSString *folderID; // @synthesize folderID=_folderID;
 @property(copy, nonatomic) NSString *folderName; // @synthesize folderName=_folderName;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;

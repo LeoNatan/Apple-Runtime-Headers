@@ -21,11 +21,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *readyToRecordByCameraUUIDString; // @synthesize readyToRecordByCameraUUIDString=_readyToRecordByCameraUUIDString;
 @property(readonly) HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly) HMISystemResourceUsageMonitor *systemResourceUsageMonitor; // @synthesize systemResourceUsageMonitor=_systemResourceUsageMonitor;
 @property unsigned long long totalNumberOfStreams; // @synthesize totalNumberOfStreams=_totalNumberOfStreams;
-- (void).cxx_destruct;
 - (void)systemResourceUsageDidChangeTo:(long long)arg1;
 - (void)handleResidentMeshInitialized:(id)arg1;
 - (void)_updateReadyToRecordMetric;

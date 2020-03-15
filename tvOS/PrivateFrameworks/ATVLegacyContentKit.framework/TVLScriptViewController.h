@@ -14,9 +14,9 @@
     TVLDocument *_feedDocument;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLDocument *feedDocument; // @synthesize feedDocument=_feedDocument;
 @property(retain, nonatomic) TVLScriptArrayElement *feedElement; // @synthesize feedElement=_feedElement;
-- (void).cxx_destruct;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (id)context;

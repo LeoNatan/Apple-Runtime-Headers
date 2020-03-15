@@ -69,6 +69,7 @@
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
 + (id)_sharedInstanceCreateIfNeeded:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unlockActionBlock; // @synthesize unlockActionBlock=_unlockActionBlock;
 @property(readonly) _Bool isWaitingToLockUI; // @synthesize isWaitingToLockUI=_isWaitingToLockUI;
 @property(readonly, nonatomic) SBLockScreenOrientationManager *lockScreenOrientationManager; // @synthesize lockScreenOrientationManager=_lockScreenOrientationManager;
@@ -79,7 +80,6 @@
 @property(nonatomic, getter=isUIUnlocking) _Bool UIUnlocking; // @synthesize UIUnlocking=_uiUnlocking;
 @property(readonly) _Bool isUILocked; // @synthesize isUILocked=_isUILocked;
 @property(readonly, nonatomic) id <SBLockScreenEnvironment> lockScreenEnvironment; // @synthesize lockScreenEnvironment=_lockScreenEnvironment;
-- (void).cxx_destruct;
 - (void)_emulateInterstitialPasscodePresentation;
 - (_Bool)_shouldEmulateInterstitialPresentation;
 - (void)wallpaperDidChangeForVariant:(long long)arg1;

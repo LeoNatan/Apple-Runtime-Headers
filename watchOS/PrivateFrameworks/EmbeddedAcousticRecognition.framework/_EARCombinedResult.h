@@ -15,10 +15,10 @@
     NSArray *_originalRanks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *originalRanks; // @synthesize originalRanks=_originalRanks;
 @property(copy, nonatomic) NSArray *nBestSourceIndexes; // @synthesize nBestSourceIndexes=_nBestSourceIndexes;
 @property(copy, nonatomic) NSArray *nBestStrings; // @synthesize nBestStrings=_nBestStrings;
-- (void).cxx_destruct;
 
 @end
 

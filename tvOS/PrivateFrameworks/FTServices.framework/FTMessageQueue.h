@@ -17,10 +17,10 @@
     CUTDeferredTaskQueue *_timeoutTask;
 }
 
+- (void).cxx_destruct;
 @property __weak id <FTMessageQueueDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSMutableArray *_addDates; // @synthesize _addDates;
 @property(retain) NSMutableArray *_queue; // @synthesize _queue;
-- (void).cxx_destruct;
 - (_Bool)removeMessage:(id)arg1;
 - (_Bool)addMessageAtHeadOfQueue:(id)arg1;
 - (_Bool)addMessage:(id)arg1;

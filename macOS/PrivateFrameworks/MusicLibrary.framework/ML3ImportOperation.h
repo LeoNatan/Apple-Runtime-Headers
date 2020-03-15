@@ -21,6 +21,7 @@
 }
 
 + (id)importOperationWithSourceType:(unsigned long long)arg1 databaseImport:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *returnData; // @synthesize returnData=_returnData;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) BOOL success; // @synthesize success=_success;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(readonly, nonatomic) ML3ServiceDatabaseImport *import; // @synthesize import=_import;
-- (void).cxx_destruct;
 - (void)_setClientCompletionHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_clientCompletionHandler;
 - (void)_writerTransactionWithBlock:(CDUnknownBlockType)arg1;

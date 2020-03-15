@@ -22,6 +22,7 @@
     NSArray *_satisfiedLocalKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *satisfiedLocalKeys; // @synthesize satisfiedLocalKeys=_satisfiedLocalKeys;
 @property(retain, nonatomic) NSArray *remoteKeysToFetch; // @synthesize remoteKeysToFetch=_remoteKeysToFetch;
 @property(retain, nonatomic) NSOperationQueue *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id <TBFetchResponse> response; // @synthesize response=_response;
 @property(retain, nonatomic) id <TBFetchRequest> fetchRequestCopy; // @synthesize fetchRequestCopy=_fetchRequestCopy;
 @property(retain, nonatomic) id <TBFetchRequest> fetchRequest; // @synthesize fetchRequest=_fetchRequest;
-- (void).cxx_destruct;
 - (void)_captureCacheEventWithStatus:(unsigned long long)arg1 userInfo:(id)arg2 error:(id)arg3 type:(unsigned long long)arg4;
 - (id)name;
 - (void)finish;

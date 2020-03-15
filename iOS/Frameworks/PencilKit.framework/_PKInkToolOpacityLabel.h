@@ -22,10 +22,10 @@
 + (id)_formattedStringForInkOpacity:(double)arg1;
 + (double)_labelAlphaForInkOpacity:(double)arg1;
 + (_Bool)_shouldHideLabel:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) double inkOpacity; // @synthesize inkOpacity=_inkOpacity;
 @property(nonatomic) unsigned long long sizeState; // @synthesize sizeState=_sizeState;
-- (void).cxx_destruct;
 - (struct CGRect)_frameForRotatedLabel;
 - (id)_inkOpacityLabelString;
 - (void)setInkOpacity:(double)arg1 animated:(_Bool)arg2;

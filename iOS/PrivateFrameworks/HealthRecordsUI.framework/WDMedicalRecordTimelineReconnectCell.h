@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     HKDynamicButton *_reconnectButton;
 }
 
-@property(retain, nonatomic) HKDynamicButton *reconnectButton; // @synthesize reconnectButton=_reconnectButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKDynamicButton *reconnectButton; // @synthesize reconnectButton=_reconnectButton;
 - (void)_updateBasedOnAccessibilityCategory:(_Bool)arg1;
 - (void)_updateForContentSizeCategory:(id)arg1;
 - (void)prepareForReuse;

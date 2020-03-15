@@ -17,8 +17,8 @@
 }
 
 + (id)browsingContextWithWindowHandle:(id)arg1 frameHandle:(id)arg2;
-@property(readonly, copy, nonatomic) NSString *windowHandle; // @synthesize windowHandle=_windowHandle;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *windowHandle; // @synthesize windowHandle=_windowHandle;
 - (unsigned long long)hash;
 - (BOOL)isEqualToBrowsingContext:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

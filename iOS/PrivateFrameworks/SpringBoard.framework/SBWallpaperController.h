@@ -67,6 +67,7 @@
 + (id)substitutionFlatColorForWallpaperName:(id)arg1;
 + (id)accessAuthenticator;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> wallpaperStyleAnimationAssertion; // @synthesize wallpaperStyleAnimationAssertion=_wallpaperStyleAnimationAssertion;
 @property(retain, nonatomic) id <BSInvalidatable> batterySaverAnimationAssertion; // @synthesize batterySaverAnimationAssertion=_batterySaverAnimationAssertion;
 @property(retain, nonatomic) UITraitCollection *fakeBlurViewOverrideTraitCollection; // @synthesize fakeBlurViewOverrideTraitCollection=_fakeBlurViewOverrideTraitCollection;
@@ -83,7 +84,6 @@
 @property(readonly, copy, nonatomic) NSString *cachingIdentifier; // @synthesize cachingIdentifier=_cachingIdentifier;
 @property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 @property(readonly, nonatomic, getter=_WallpaperOrientationNotForYou) long long _orientation; // @synthesize _orientation;
-- (void).cxx_destruct;
 - (id)relinquishHostingOfWallpaperOverlay;
 - (void)startHostingWallpaperOverlay:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

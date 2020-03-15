@@ -20,9 +20,9 @@
     SBElasticVolumeViewController *_elasticAudioViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBElasticVolumeViewController *elasticAudioViewController; // @synthesize elasticAudioViewController=_elasticAudioViewController;
 @property(nonatomic) __weak id <SBVolumeHUDViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_dismiss;
 - (void)elasticVolumeViewControllerNeedsDismissal:(id)arg1;
 - (void)dismissAnimatedWithCompletion:(CDUnknownBlockType)arg1;

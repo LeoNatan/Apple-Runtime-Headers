@@ -20,9 +20,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)itemWithWithFormat:(id)arg1;
 + (id)itemWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_description;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;

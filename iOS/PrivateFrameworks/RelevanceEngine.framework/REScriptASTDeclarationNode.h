@@ -16,10 +16,10 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REScriptASTNode *value; // @synthesize value=_value;
 @property(readonly, nonatomic) REScriptToken *name; // @synthesize name=_name;
 @property(readonly, nonatomic) REScriptToken *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)dependencies;
 - (id)initWithName:(id)arg1 type:(id)arg2 expression:(id)arg3;
 

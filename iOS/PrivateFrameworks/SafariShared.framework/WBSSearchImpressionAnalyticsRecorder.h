@@ -15,9 +15,9 @@
 }
 
 + (id)sharedRecorder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WBSSearchProvider *defaultSearchProvider; // @synthesize defaultSearchProvider=_defaultSearchProvider;
 @property(copy, nonatomic) NSArray *searchProviders; // @synthesize searchProviders=_searchProviders;
-- (void).cxx_destruct;
 - (id)_searchProviderForURL:(id)arg1;
 - (void)didActualizeImpressionForURL:(id)arg1 isFromUnifiedField:(_Bool)arg2;
 - (id)init;

@@ -13,7 +13,7 @@
 #import <UIKitCore/_UIWebDoubleTapDelegate-Protocol.h>
 #import <UIKitCore/_UIWebRotationDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMapTable, NSString, UIAlertView, UIColor, UIDocumentPasswordView, UIView, UIWebPDFLabelView, UIWebPDFView, WebPDFNSNumberFormatter, _UIHighlightView, _UIRotatingAlertController;
+@class NSArray, NSDictionary, NSMapTable, NSString, UIColor, UIDocumentPasswordView, UIView, UIWebPDFLabelView, UIWebPDFView, WebPDFNSNumberFormatter, _UIHighlightView, _UIRotatingAlertController;
 @protocol UIWebPDFViewHandlerDelegate;
 
 @interface UIWebPDFViewHandler : NSObject <UIWebPDFViewPrivateDelegate, UIDocumentPasswordViewDelegate, _UIRotatingAlertControllerDelegate, UIWebPDFViewDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate>
@@ -39,7 +39,6 @@
     NSArray *_linkActions;
     struct CGRect _rectOfInterest;
     _Bool _rectOfInterestConsidersHeight;
-    UIAlertView *_currentAlert;
 }
 
 @property(nonatomic) _Bool hideActivityIndicatorForUnRenderedContent; // @synthesize hideActivityIndicatorForUnRenderedContent=_hideActivityIndicatorForUnRenderedContent;
@@ -97,7 +96,6 @@
 - (void)_adjustContentOffsetForKeyboardIfNeeded;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
 - (void)_showPasswordErrorAlert;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (id)createPageLabel;
 - (void)clearPageLabel;
 - (struct CGRect)presentationRectInHostViewForSheet:(id)arg1;

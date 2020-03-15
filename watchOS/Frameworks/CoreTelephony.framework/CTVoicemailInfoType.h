@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isVoiceMailMWI; // @synthesize isVoiceMailMWI=_isVoiceMailMWI;
 @property(nonatomic) _Bool isNetworkOriginated; // @synthesize isNetworkOriginated=_isNetworkOriginated;
 @property(retain, nonatomic) NSNumber *count; // @synthesize count=_count;
 @property(nonatomic) _Bool available; // @synthesize available=_available;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

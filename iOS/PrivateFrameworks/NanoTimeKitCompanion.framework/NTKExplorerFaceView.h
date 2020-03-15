@@ -25,9 +25,9 @@
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (Class)_timeViewClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long density; // @synthesize density=_density;
-- (void).cxx_destruct;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (double)_complicationAlphaForEditMode:(long long)arg1;
 - (double)_contentScaleForEditMode:(long long)arg1;

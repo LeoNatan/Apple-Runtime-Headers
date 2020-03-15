@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UIStackView *_labelStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *labelStackView; // @synthesize labelStackView=_labelStackView;
 @property(retain, nonatomic) UILabel *appleIDValueLabel; // @synthesize appleIDValueLabel=_appleIDValueLabel;
 @property(retain, nonatomic) UILabel *organizationValueLabel; // @synthesize organizationValueLabel=_organizationValueLabel;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *organizationLabel; // @synthesize organizationLabel=_organizationLabel;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy, nonatomic) NSString *organizationName; // @synthesize organizationName=_organizationName;
-- (void).cxx_destruct;
 - (void)updateProgressWithTranslationDistance:(double)arg1 referenceDistance:(double)arg2 isScrolling:(_Bool)arg3;
 - (id)_createVerticalStackWithViews:(id)arg1;
 - (id)_createHorizontalStackWithViews:(id)arg1;

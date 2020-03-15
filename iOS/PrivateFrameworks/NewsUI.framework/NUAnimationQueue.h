@@ -14,9 +14,9 @@
     NSMutableArray *_queue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, nonatomic) NSMutableArray *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)runUntilEmpty;
 - (void)cancel;
 - (void)addAnimation:(CDUnknownBlockType)arg1;

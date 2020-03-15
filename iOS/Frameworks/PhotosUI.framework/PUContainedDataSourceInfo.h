@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct _NSRange _externalSections;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange externalSections; // @synthesize externalSections=_externalSections;
 @property(retain, nonatomic) PUAssetsDataSource *assetsDataSource; // @synthesize assetsDataSource=_assetsDataSource;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

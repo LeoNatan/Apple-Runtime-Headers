@@ -14,9 +14,9 @@
     CSLBulletin *_replacementBulletin;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBulletin *replacementBulletin; // @synthesize replacementBulletin=_replacementBulletin;
 @property(retain, nonatomic) CSLBulletin *originalBulletin; // @synthesize originalBulletin=_originalBulletin;
-- (void).cxx_destruct;
 
 @end
 

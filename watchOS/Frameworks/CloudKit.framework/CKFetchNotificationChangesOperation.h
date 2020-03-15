@@ -18,11 +18,11 @@
     CKServerChangeToken *_resultServerChangeToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKServerChangeToken *resultServerChangeToken; // @synthesize resultServerChangeToken=_resultServerChangeToken;
 @property(nonatomic) _Bool moreComing; // @synthesize moreComing=_moreComing;
 @property(nonatomic) unsigned int resultsLimit; // @synthesize resultsLimit=_resultsLimit;
 @property(copy, nonatomic) CKServerChangeToken *previousServerChangeToken; // @synthesize previousServerChangeToken=_previousServerChangeToken;
-- (void).cxx_destruct;
 - (id)activityCreate;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;

@@ -19,11 +19,11 @@
     NSMutableSet *_entities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *entities; // @synthesize entities=_entities;
 @property(readonly, nonatomic) NSNumber *supportsMMC; // @synthesize supportsMMC=_supportsMMC;
 @property(nonatomic) __weak id <AXMIDIDeviceProtocol> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int midiDevice; // @synthesize midiDevice=_midiDevice;
-- (void).cxx_destruct;
 - (void)entity:(id)arg1 didRemoveDestination:(id)arg2;
 - (void)entity:(id)arg1 didAddDestination:(id)arg2;
 - (void)entity:(id)arg1 didRemoveSource:(id)arg2;

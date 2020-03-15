@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _Bool _showButtonShape;
 }
 
-@property(nonatomic) _Bool showButtonShape; // @synthesize showButtonShape=_showButtonShape;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showButtonShape; // @synthesize showButtonShape=_showButtonShape;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)_updateBackgroundProvidingView;

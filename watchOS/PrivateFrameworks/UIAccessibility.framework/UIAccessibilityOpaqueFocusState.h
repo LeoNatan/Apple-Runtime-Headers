@@ -17,12 +17,12 @@
     struct CGRect _sceneRelativeFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBeenReused; // @synthesize hasBeenReused=_hasBeenReused;
 @property(retain, nonatomic) UIView *reusableView; // @synthesize reusableView=_reusableView;
 @property(nonatomic) struct CGRect sceneRelativeFrame; // @synthesize sceneRelativeFrame=_sceneRelativeFrame;
 @property(nonatomic) _Bool hasFocus; // @synthesize hasFocus=_hasFocus;
 @property(nonatomic) __weak id element; // @synthesize element=_element;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

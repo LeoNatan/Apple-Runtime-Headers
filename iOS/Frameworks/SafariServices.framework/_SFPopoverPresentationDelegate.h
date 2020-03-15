@@ -21,8 +21,8 @@
 + (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToURLOutlineInNavigationBar:(id)arg2 usesAdaptivePresentationInCompact:(_Bool)arg3;
 + (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToURLOutlineInNavigationBar:(id)arg2;
 + (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToReloadButtonInNavigationBar:(id)arg2;
-@property(nonatomic) _Bool popoverUsesAdaptivePresentationInCompact; // @synthesize popoverUsesAdaptivePresentationInCompact=_popoverUsesAdaptivePresentationInCompact;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool popoverUsesAdaptivePresentationInCompact; // @synthesize popoverUsesAdaptivePresentationInCompact=_popoverUsesAdaptivePresentationInCompact;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect *)arg2 inView:(inout id *)arg3;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;

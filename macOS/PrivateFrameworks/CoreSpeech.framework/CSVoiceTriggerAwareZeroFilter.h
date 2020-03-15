@@ -18,12 +18,12 @@
     CSAudioZeroFilter *_zeroFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSAudioZeroFilter *zeroFilter; // @synthesize zeroFilter=_zeroFilter;
 @property(nonatomic) unsigned long long numSamplesProcessed; // @synthesize numSamplesProcessed=_numSamplesProcessed;
 @property(nonatomic) unsigned long long vtEndInSampleCount; // @synthesize vtEndInSampleCount=_vtEndInSampleCount;
 @property(nonatomic) float sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(nonatomic) __weak id <CSVoiceTriggerAwareZeroFilterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)metrics;
 - (void)flush;
 - (void)processBuffer:(id)arg1 atTime:(unsigned long long)arg2;

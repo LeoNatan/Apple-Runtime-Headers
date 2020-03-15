@@ -16,11 +16,11 @@
     NSArray *_buttons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int initialSelection; // @synthesize initialSelection=_initialSelection;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

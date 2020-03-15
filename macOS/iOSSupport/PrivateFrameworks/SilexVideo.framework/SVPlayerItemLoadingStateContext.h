@@ -16,9 +16,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) AVPlayerItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)initWithError:(id)arg1;
 - (id)initWithPlayerItem:(id)arg1;
 

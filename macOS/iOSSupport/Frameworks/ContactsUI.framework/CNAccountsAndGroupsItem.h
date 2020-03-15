@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) BOOL soloSelect; // @synthesize soloSelect=_soloSelect;
 @property(nonatomic) BOOL bypassIfUnique; // @synthesize bypassIfUnique=_bypassIfUnique;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) CDUnknownBlockType nameProvider; // @synthesize nameProvider=_nameProvider;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (long long)localizedCompare:(id)arg1;
 - (id)arrayForDisplay:(BOOL)arg1;
 - (void)_setSelected:(BOOL)arg1 affectingChildren:(BOOL)arg2;

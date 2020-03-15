@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     id __enabledObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setEnabledObserver:) id _enabledObserver; // @synthesize _enabledObserver=__enabledObserver;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setEnabled:) long long _enabled; // @synthesize _enabled=__enabled;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL temporarilyHidden; // @synthesize temporarilyHidden=_temporarilyHidden;
 @property(copy, nonatomic) NSAttributedString *brailleWithAttributes; // @synthesize brailleWithAttributes=_brailleWithAttributes;
 @property(nonatomic) BOOL brailleDeviceConnected; // @synthesize brailleDeviceConnected=_brailleDeviceConnected;
-- (void).cxx_destruct;
 - (void)setEnabledAndAnnounceChange:(long long)arg1;
 - (void)showBrailleWindow;
 - (void)_brailleWindowNeedsDisplay;

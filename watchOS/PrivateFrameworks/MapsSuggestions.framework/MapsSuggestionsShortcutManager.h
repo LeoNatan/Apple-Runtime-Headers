@@ -9,7 +9,7 @@
 #import <MapsSuggestions/MapsSuggestionsMeCardObserver-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsMeCardReader-Protocol.h>
 
-@class MapsSuggestionsContacts, MapsSuggestionsMeCard, MapsSuggestionsObservers, MapsSuggestionsRoutine, NSArray, NSString;
+@class MapsSuggestionsContacts, MapsSuggestionsMeCard, MapsSuggestionsObservers, MapsSuggestionsRoutine, NSArray, NSMutableArray, NSString;
 @protocol MapsSuggestionsShortcutStorage, MapsSuggestionsShortcutSuggestor;
 
 @interface MapsSuggestionsShortcutManager : NSObject <MapsSuggestionsMeCardObserver, MapsSuggestionsMeCardReader>
@@ -19,9 +19,9 @@
     id <MapsSuggestionsShortcutSuggestor> _suggestor;
     MapsSuggestionsRoutine *_routine;
     MapsSuggestionsContacts *_contacts;
-    struct NSMutableArray *_hiddenShortcuts;
+    NSMutableArray *_hiddenShortcuts;
     MapsSuggestionsMeCard *_rawMeCard;
-    struct NSArray *_shortcutsOverlay;
+    NSArray *_shortcutsOverlay;
     MapsSuggestionsObservers *_meCardObservers;
     MapsSuggestionsMeCard *_currCorrectedMeCard;
     NSArray *_rawHomeAddressStrings;
@@ -44,15 +44,15 @@
 - (_Bool)moveShortcutToFront:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)moveShortcut:(id)arg1 afterShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)moveShortcut:(id)arg1 beforeShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (_Bool)moveShortcut:(id)arg1 toIndex:(int)arg2 withSnapshot:(struct NSArray *)arg3 handler:(CDUnknownBlockType)arg4;
-- (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
-- (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)moveShortcut:(id)arg1 toIndex:(int)arg2 withSnapshot:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (_Bool)removeShortcuts:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)addOrUpdateShortcuts:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)loadAllShortcutsWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_loadCorrectedMeCardWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)__loadCorrectedMeCardWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_mergeShortcutsToMeCardAndCallHandler:(CDUnknownBlockType)arg1;
-- (void)test_sortMapsSuggestionsShortcuts:(struct NSMutableArray *)arg1;
-- (struct NSArray *)test_setUpPlaceholdersIfNeeded:(id)arg1 overlays:(struct NSArray *)arg2;
+- (void)test_sortMapsSuggestionsShortcuts:(id)arg1;
+- (id)test_setUpPlaceholdersIfNeeded:(id)arg1 overlays:(id)arg2;
 - (id)initWithStorage:(id)arg1 suggestor:(id)arg2 contacts:(id)arg3 routine:(id)arg4;
 - (id)initWithDefaults;
 

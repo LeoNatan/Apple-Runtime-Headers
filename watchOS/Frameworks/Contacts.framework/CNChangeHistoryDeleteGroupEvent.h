@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;
 - (unsigned int)hash;

@@ -13,8 +13,8 @@
 
 + (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 + (Class)proxyClass;
-@property(retain, nonatomic) id proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id proxy; // @synthesize proxy=_proxy;
 - (void)resume;
 - (void)pause;
 - (void)becomeInactive;

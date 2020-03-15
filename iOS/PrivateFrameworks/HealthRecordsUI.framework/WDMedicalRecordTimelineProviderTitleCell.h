@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *title;
 - (void)setupSubviews;
 

@@ -23,6 +23,7 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSNumber *cloudOwnerEmailKey; // @synthesize cloudOwnerEmailKey=_cloudOwnerEmailKey;
 @property(readonly, retain, nonatomic) NSString *cloudOwnerFullName; // @synthesize cloudOwnerFullName=_cloudOwnerFullName;
 @property(readonly, retain, nonatomic) NSString *cloudOwnerLastName; // @synthesize cloudOwnerLastName=_cloudOwnerLastName;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) short cloudAlbumSubtype; // @synthesize cloudAlbumSubtype=_cloudAlbumSubtype;
 @property(readonly, nonatomic, getter=isCloudMultipleContributorsEnabled) BOOL cloudMultipleContributorsEnabled; // @synthesize cloudMultipleContributorsEnabled=_cloudMultipleContributorsEnabled;
 @property(readonly, nonatomic, getter=isOwned) BOOL owned; // @synthesize owned=_owned;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)canPerformEditOperation:(long long)arg1;
 - (BOOL)collectionHasFixedOrder;

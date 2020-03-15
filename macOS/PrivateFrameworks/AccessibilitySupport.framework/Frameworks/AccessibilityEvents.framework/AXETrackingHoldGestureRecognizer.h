@@ -30,6 +30,7 @@
     AXETrackingTapGestureRecognizer *__preHoldTapRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXETrackingTapGestureRecognizer *_preHoldTapRecognizer; // @synthesize _preHoldTapRecognizer=__preHoldTapRecognizer;
 @property(retain, nonatomic) id <AXETimer> _holdTimer; // @synthesize _holdTimer=__holdTimer;
 @property(retain, nonatomic) id <AXETimer> _holdStartTimeoutTimer; // @synthesize _holdStartTimeoutTimer=__holdStartTimeoutTimer;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) double maximumHoldDeviation; // @synthesize maximumHoldDeviation=_maximumHoldDeviation;
 @property(readonly, nonatomic) unsigned long long preHoldTapCount; // @synthesize preHoldTapCount=_preHoldTapCount;
 @property(readonly, nonatomic) unsigned long long fingerCount; // @synthesize fingerCount=_fingerCount;
-- (void).cxx_destruct;
 - (void)_signalAborted:(id)arg1;
 - (void)_signalTouchesMovedAfterStabilizing:(id)arg1;
 - (void)_signalStabilized:(id)arg1;

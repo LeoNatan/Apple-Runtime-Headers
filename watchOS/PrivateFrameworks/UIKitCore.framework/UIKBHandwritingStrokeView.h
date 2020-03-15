@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _aggregateInvalidRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect aggregateInvalidRect; // @synthesize aggregateInvalidRect=_aggregateInvalidRect;
 @property(readonly, nonatomic) float scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(readonly, nonatomic) struct CGContext *bitmapContext; // @synthesize bitmapContext=_bitmapContext;
 @property(nonatomic) __weak UIKBHandwritingView *keyView; // @synthesize keyView=_keyView;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)displayAggregateInvalidRect;
 - (void)redrawStrokesInRect:(struct CGRect)arg1;

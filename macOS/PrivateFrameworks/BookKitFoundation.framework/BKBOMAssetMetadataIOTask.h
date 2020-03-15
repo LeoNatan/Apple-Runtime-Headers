@@ -17,12 +17,12 @@
     unsigned long long _bytesSoFar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) unsigned long long bytesSoFar; // @synthesize bytesSoFar=_bytesSoFar;
 @property(nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;
 @property(retain, nonatomic) NSError *bomError; // @synthesize bomError=_bomError;
 @property(nonatomic) struct _BOMCopier *copier; // @synthesize copier=_copier;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)executeWithTargetDirectory:(id)arg1 error:(id *)arg2;
 

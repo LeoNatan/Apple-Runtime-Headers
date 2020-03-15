@@ -15,10 +15,10 @@
     PKPaymentApplication *_paymentApplication;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentApplication *paymentApplication; // @synthesize paymentApplication=_paymentApplication;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (id)initWithTransaction:(id)arg1 pass:(id)arg2 paymentApplication:(id)arg3;
 
 @end

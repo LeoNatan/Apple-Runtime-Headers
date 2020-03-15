@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(readonly, nonatomic) VUISeasonPickerButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (struct CGSize)_layoutWithSize:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (void)switchToIndex:(unsigned long long)arg1;
 - (void)layoutSubviews;

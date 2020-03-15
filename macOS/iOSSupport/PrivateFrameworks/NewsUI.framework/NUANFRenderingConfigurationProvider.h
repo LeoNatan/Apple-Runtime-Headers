@@ -17,8 +17,8 @@
     id <FCNewsAppConfigurationManager> _appConfigurationManager;
 }
 
-@property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 @property(readonly, nonatomic) SXRenderingConfiguration *configuration; // @synthesize configuration=_configuration;
 - (id)initWithAppConfigurationManager:(id)arg1;
 

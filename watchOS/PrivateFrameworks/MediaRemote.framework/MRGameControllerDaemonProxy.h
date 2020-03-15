@@ -22,16 +22,16 @@
 - (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(_Bool)arg4;
 - (void)controllerWithUDID:(unsigned int)arg1 setValue:(float)arg2 forElement:(int)arg3;
 - (void)controllerWithUDID:(unsigned int)arg1 setData:(id)arg2;
-- (void)removeController:(struct NSObject *)arg1;
-- (void)addController:(struct NSObject *)arg1;
+- (void)removeController:(id)arg1;
+- (void)addController:(id)arg1;
 - (void)replyConnectedHosts:(id)arg1;
 - (_Bool)_delayEvent:(unsigned int)arg1 setValue:(float)arg2 forElement:(int)arg3 withUpDelay:(double)arg4;
 - (void)controllerID:(unsigned int)arg1 setArrayValueX:(float)arg2 y:(float)arg3 z:(float)arg4 w:(float)arg5 forElement:(int)arg6;
 - (void)controllerID:(unsigned int)arg1 setDigitizerX:(float)arg2 digitizerY:(float)arg3 withTimeStamp:(unsigned long long)arg4 touchDown:(_Bool)arg5;
 - (void)controllerID:(unsigned int)arg1 setValue:(float)arg2 forElement:(int)arg3;
 - (void)controllerID:(unsigned int)arg1 setValue:(float)arg2 forElement:(int)arg3 withUpDelay:(double)arg4;
-- (void)removeEmulatedController:(struct NSObject *)arg1;
-- (struct NSObject *)addEmulatedControllerWithProperties:(id)arg1;
+- (void)removeEmulatedController:(id)arg1;
+- (id)addEmulatedControllerWithProperties:(id)arg1;
 - (void)_openConnection;
 
 // Remaining properties

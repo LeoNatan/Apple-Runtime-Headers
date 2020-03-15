@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *libraryContainerIdentifier; // @synthesize libraryContainerIdentifier=_libraryContainerIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *libraryContainerIdentifier; // @synthesize libraryContainerIdentifier=_libraryContainerIdentifier;
 - (id)_pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(char *)arg4;
 - (id)_controlDirectoryPathWithBasePath:(id)arg1;
 - (id)_libraryContainerPathForDSID:(id)arg1;

@@ -14,21 +14,23 @@
 {
     NSString *_suiteName;
     unsigned long long _executionCount;
+    unsigned long long _skipCount;
     unsigned long long _failureCount;
     unsigned long long _unexpectedExceptionCount;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long unexpectedExceptionCount; // @synthesize unexpectedExceptionCount=_unexpectedExceptionCount;
 @property(readonly) unsigned long long failureCount; // @synthesize failureCount=_failureCount;
+@property(readonly) unsigned long long skipCount; // @synthesize skipCount=_skipCount;
 @property(readonly) unsigned long long executionCount; // @synthesize executionCount=_executionCount;
 @property(readonly) NSString *suiteName; // @synthesize suiteName=_suiteName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqualToStatisticsRecord:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithSuiteName:(id)arg1 executionCount:(unsigned long long)arg2 failureCount:(unsigned long long)arg3 unexpectedExceptionCount:(unsigned long long)arg4;
+- (id)initWithSuiteName:(id)arg1 executionCount:(unsigned long long)arg2 skipCount:(unsigned long long)arg3 failureCount:(unsigned long long)arg4 unexpectedExceptionCount:(unsigned long long)arg5;
 
 @end
 

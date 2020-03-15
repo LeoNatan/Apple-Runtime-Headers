@@ -18,11 +18,11 @@
     HKUnitPreferenceController *_unitController;
 }
 
+- (void).cxx_destruct;
 @property(readonly) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
 @property(readonly) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(readonly) long long stepSizeTableSize; // @synthesize stepSizeTableSize=_stepSizeTableSize;
 @property(readonly) struct HKStepSizeTableEntryDefn *stepSizeTable; // @synthesize stepSizeTable=_stepSizeTable;
-- (void).cxx_destruct;
 - (struct HKStepSizeTableEntryDefn *)_findStepSize:(double)arg1 allowEqual:(_Bool)arg2;
 - (id)stringForLocation:(id)arg1;
 - (void)setStepSizeForLabels:(double)arg1;

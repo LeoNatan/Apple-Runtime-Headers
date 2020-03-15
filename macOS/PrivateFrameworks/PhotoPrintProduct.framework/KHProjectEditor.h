@@ -40,6 +40,7 @@
     struct CGPoint userPhotoBinOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSButton *buyButton; // @synthesize buyButton=_buyButton;
 @property(retain, nonatomic) UXPopoverController *inspectorPopoverController; // @synthesize inspectorPopoverController=_inspectorPopoverController;
 @property(retain, nonatomic) id <KHStoreCartProtocol> cart; // @synthesize cart=_cart;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) KHProject *project; // @synthesize project=_project;
 @property(nonatomic) struct CGPoint userPhotoBinOffset; // @synthesize userPhotoBinOffset;
 @property(retain, nonatomic) NSArray *userPhotoSelectionStateArray; // @synthesize userPhotoSelectionStateArray;
-- (void).cxx_destruct;
 - (void)_storeChanged:(id)arg1;
 - (void)collectionDataSourceDidChangeContent:(id)arg1;
 - (void)collectionDataSourceDidChangeMetadata:(id)arg1;

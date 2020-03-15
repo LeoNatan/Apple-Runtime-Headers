@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSMeasurement *peakMemory; // @synthesize peakMemory=_peakMemory;
 @property(retain) NSMeasurementFormatter *measurementFormatter; // @synthesize measurementFormatter=_measurementFormatter;
 @property(readonly) NSMeasurement *cumulativeLogicalWrites; // @synthesize cumulativeLogicalWrites=_cumulativeLogicalWrites;
 @property(readonly) MXAverage *averageMemory; // @synthesize averageMemory=_averageMemory;
 @property(readonly) NSMeasurement *cumulativeCPUTime; // @synthesize cumulativeCPUTime=_cumulativeCPUTime;
 @property(readonly) MXHistogram *histogrammedSignpostDuration; // @synthesize histogrammedSignpostDuration=_histogrammedSignpostDuration;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

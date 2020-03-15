@@ -17,9 +17,9 @@
     NSObject<OS_xpc_object> *_activity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
 @property(nonatomic) __weak EDAssetDownloadScheduler *scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 - (void)stopScheduling;
 - (void)rescheduleAfterFailure;
 - (void)rescheduleAfterSuccess;

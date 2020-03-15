@@ -14,14 +14,14 @@
     _HKDateRangeQuery *_dateRangeQuery;
     NSHashTable *_observers;
     NSString *_name;
-    struct NSDictionary *_dateRangesBySampleType;
+    NSDictionary *_dateRangesBySampleType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *dateRangesBySampleType; // @synthesize dateRangesBySampleType=_dateRangesBySampleType;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_updateHandlerDidReceiveError:(id)arg1 retryCount:(long long)arg2;
-- (void)_resultsDidUpdate:(struct NSDictionary *)arg1;
+- (void)_resultsDidUpdate:(id)arg1;
 - (void)_beginUpdatesWithRetryAttemptCount:(long long)arg1;
 - (void)_alertObserverDidUpdateDateRanges:(id)arg1;
 - (void)_alertObserversDidUpdateDateRanges;

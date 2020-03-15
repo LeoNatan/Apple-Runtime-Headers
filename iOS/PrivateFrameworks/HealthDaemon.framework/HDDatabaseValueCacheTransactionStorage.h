@@ -15,10 +15,10 @@
     long long _cacheScope;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didRemoveAllObjects; // @synthesize didRemoveAllObjects=_didRemoveAllObjects;
 @property(nonatomic) long long cacheScope; // @synthesize cacheScope=_cacheScope;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

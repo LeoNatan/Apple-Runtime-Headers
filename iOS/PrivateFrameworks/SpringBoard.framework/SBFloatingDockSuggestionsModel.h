@@ -37,6 +37,7 @@
     PTSingleTestRecipe *_stressTestRecipe;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PTSingleTestRecipe *stressTestRecipe; // @synthesize stressTestRecipe=_stressTestRecipe;
 @property(readonly, nonatomic) NSMutableOrderedSet *currentRecentDisplayItemsSortedByRecency; // @synthesize currentRecentDisplayItemsSortedByRecency=_currentRecentDisplayItemsSortedByRecency;
 @property(readonly, nonatomic) NSMutableOrderedSet *currentRecentDisplayItems; // @synthesize currentRecentDisplayItems=_currentRecentDisplayItems;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) SBApplication *requestedSuggestedApplication; // @synthesize requestedSuggestedApplication=_requestedSuggestedApplication;
 @property(readonly, nonatomic) SBBestAppSuggestion *currentAppSuggestion; // @synthesize currentAppSuggestion=_currentAppSuggestion;
 @property(copy, nonatomic) NSOrderedSet *currentDisplayItems; // @synthesize currentDisplayItems=_currentDisplayItems;
-- (void).cxx_destruct;
 - (void)iconList:(id)arg1 didMoveIcon:(id)arg2;
 - (void)iconList:(id)arg1 didRemoveIcon:(id)arg2;
 - (void)iconList:(id)arg1 didReplaceIcon:(id)arg2 withIcon:(id)arg3;

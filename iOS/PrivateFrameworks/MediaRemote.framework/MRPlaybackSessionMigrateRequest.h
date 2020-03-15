@@ -8,16 +8,37 @@
 
 #import <MediaRemote/NSCopying-Protocol.h>
 
-@class NSString, _MRContentItemProtobuf, _MRPlaybackSessionMigrateRequestProtobuf, _MRPlaybackSessionRequestProtobuf;
+@class NSError, NSString, _MRContentItemProtobuf, _MRPlaybackSessionMigrateRequestProtobuf, _MRPlaybackSessionRequestProtobuf;
 
 @interface MRPlaybackSessionMigrateRequest : NSObject <NSCopying>
 {
     _MRPlaybackSessionMigrateRequestProtobuf *_descriptor;
+    NSError *_migrateError;
+    NSError *_fallbackError;
+    unsigned int _originatorType;
+    unsigned int _destinationTypes;
+    NSString *_appBundleIdentifier;
+    NSString *_initiator;
+    unsigned long long _requestType;
+    unsigned long long _fallbackReason;
+    long long _playbackSessionSize;
 }
 
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int destinationTypes; // @synthesize destinationTypes=_destinationTypes;
+@property(nonatomic) unsigned int originatorType; // @synthesize originatorType=_originatorType;
+@property(nonatomic) long long playbackSessionSize; // @synthesize playbackSessionSize=_playbackSessionSize;
+@property(nonatomic) unsigned long long fallbackReason; // @synthesize fallbackReason=_fallbackReason;
+@property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
+@property(retain, nonatomic) NSString *initiator; // @synthesize initiator=_initiator;
+@property(retain, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 - (void)merge:(id)arg1;
 @property(readonly, nonatomic) double duration;
+- (void)addDestinationTypesFromDevices:(id)arg1;
+- (void)addDestinationType:(unsigned int)arg1;
+- (void)setOriginatorTypeFromDevice:(id)arg1;
+- (id)analyticsPayload;
+- (void)finalize;
 - (void)endEvent:(id)arg1 withError:(id)arg2;
 - (void)endEvent:(id)arg1;
 - (void)startEvent:(id)arg1;

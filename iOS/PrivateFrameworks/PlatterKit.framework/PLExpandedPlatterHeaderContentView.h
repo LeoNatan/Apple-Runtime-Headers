@@ -27,6 +27,7 @@
 - (void)_configureDateLabel;
 - (void)_updateStylingForTitleLabel:(id)arg1;
 - (void)_configureIconButton:(id)arg1 withIcon:(id)arg2;
+- (id)_newIconButton;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (double)_headerHeightForWidth:(double)arg1;

@@ -17,10 +17,10 @@
     struct FigPhotoDecompressionContainer *_figDecompressionContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) struct FigPhotoDecompressionContainer *figDecompressionContainer; // @synthesize figDecompressionContainer=_figDecompressionContainer;
 @property(nonatomic) unsigned long long figRequestID; // @synthesize figRequestID=_figRequestID;
 @property(readonly, nonatomic) PHImageDecoder *initialDecoder; // @synthesize initialDecoder=_initialDecoder;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, nonatomic) _Bool cancelRequested;
 - (void)cancel;

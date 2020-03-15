@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     NSMapTable *_sublayoutToSectionsToIndexRanges;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rendersWithParallax; // @synthesize rendersWithParallax=_rendersWithParallax;
 @property(nonatomic) _Bool rendersWithPerspective; // @synthesize rendersWithPerspective=_rendersWithPerspective;
 @property(copy, nonatomic) NSArray *indexPathsForGradientItems; // @synthesize indexPathsForGradientItems=_indexPathsForGradientItems;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
-- (void).cxx_destruct;
 - (id)_newStorePageCollectionViewLayout;
 - (void)_createSectionsToIndexRangesMapTableIfNeededForSublayout:(id)arg1;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;

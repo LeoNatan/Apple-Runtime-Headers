@@ -13,8 +13,8 @@
     NSString *_html;
 }
 
-@property(copy, nonatomic) NSString *html; // @synthesize html=_html;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *html; // @synthesize html=_html;
 - (id)enmlWithNote:(id)arg1;
 - (id)initWithHTML:(id)arg1;
 

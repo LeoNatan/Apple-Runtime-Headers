@@ -15,10 +15,10 @@
     NSString *_serviceName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, nonatomic) NSDictionary *aliasToAccountsMap; // @synthesize aliasToAccountsMap=_aliasToAccountsMap;
 @property(readonly, nonatomic) ENAccountIdentity *accountIdentity; // @synthesize accountIdentity=_accountIdentity;
-- (void).cxx_destruct;
 - (id)accountForAlias:(id)arg1;
 - (id)initWithAccountIdentity:(id)arg1 aliasToAccountsMap:(id)arg2 serviceName:(id)arg3;
 

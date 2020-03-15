@@ -21,10 +21,10 @@
     UIViewController *_fullScreenPluginViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *fullScreenPluginViewController; // @synthesize fullScreenPluginViewController=_fullScreenPluginViewController;
 @property(retain, nonatomic) IMBalloonPlugin *currentPlugin; // @synthesize currentPlugin=_currentPlugin;
 @property(retain, nonatomic) STConversationContext *currentScreenTimeConversationContext; // @synthesize currentScreenTimeConversationContext=_currentScreenTimeConversationContext;
-- (void).cxx_destruct;
 - (void)nanoPlaceCardViewController:(id)arg1 didSelectTransitIncidents:(id)arg2;
 - (void)nanoPlaceCardViewControllerDidTapAttribution:(id)arg1;
 - (void)nanoPlaceCardViewController:(id)arg1 didSelectPhoneNumber:(id)arg2;

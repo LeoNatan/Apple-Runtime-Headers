@@ -16,10 +16,10 @@
 }
 
 + (id)shaderWithSource:(id)arg1 type:(int)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *logMessage; // @synthesize logMessage=_logMessage;
 @property(nonatomic) _Bool compilationSucceeded; // @synthesize compilationSucceeded=_compilationSucceeded;
 @property(nonatomic) unsigned int shader; // @synthesize shader=_shader;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithSource:(id)arg1 type:(int)arg2;
 

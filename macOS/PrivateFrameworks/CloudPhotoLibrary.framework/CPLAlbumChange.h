@@ -25,6 +25,7 @@
 
 + (BOOL)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *smartQueryParamsData; // @synthesize smartQueryParamsData=_smartQueryParamsData;
 @property(nonatomic) BOOL albumSortAscending; // @synthesize albumSortAscending=_albumSortAscending;
 @property(nonatomic) unsigned long long albumSortType; // @synthesize albumSortType=_albumSortType;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long position; // @synthesize position=_position;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long albumType; // @synthesize albumType=_albumType;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *smartQueryParams;
 - (id)propertiesDescription;
 - (void)setRelatedIdentifier:(id)arg1;

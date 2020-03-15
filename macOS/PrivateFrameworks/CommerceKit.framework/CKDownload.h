@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *downloadQueueIdentifier; // @synthesize downloadQueueIdentifier=_downloadQueueIdentifier;
 @property(readonly) NSArray *assets; // @synthesize assets=_assets;
 @property(readonly) NSURL *cancelURL; // @synthesize cancelURL=_cancelURL;
@@ -43,7 +44,6 @@
 @property(readonly) NSString *versionIdentifier; // @synthesize versionIdentifier=_versionIdentifier;
 @property(readonly) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)finish;

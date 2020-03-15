@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSSet *variants; // @synthesize variants=_variants;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *variants; // @synthesize variants=_variants;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

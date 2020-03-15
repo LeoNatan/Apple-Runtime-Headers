@@ -22,10 +22,10 @@
     CDUnknownBlockType _remoteInfoChangedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType remoteInfoChangedHandler; // @synthesize remoteInfoChangedHandler=_remoteInfoChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType remoteDisconnectedHandler; // @synthesize remoteDisconnectedHandler=_remoteDisconnectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType remoteConnectedHandler; // @synthesize remoteConnectedHandler=_remoteConnectedHandler;
-- (void).cxx_destruct;
 - (void)setNumber:(id)arg1 forProperty:(id)arg2;
 - (id)deviceManagementDrivers;
 - (void)handleRemotePresenceDidChange:(id)arg1;

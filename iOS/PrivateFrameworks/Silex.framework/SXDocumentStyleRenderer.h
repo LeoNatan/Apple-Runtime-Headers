@@ -19,10 +19,10 @@
     UIView *_topBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *topBackgroundView; // @synthesize topBackgroundView=_topBackgroundView;
 @property(readonly, nonatomic) id <SXGradientFactory> gradientFactory; // @synthesize gradientFactory=_gradientFactory;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
-- (void).cxx_destruct;
 - (void)viewport:(id)arg1 boundsDidChangeFromBounds:(struct CGRect)arg2;
 - (void)layoutTopBackgroundView;
 - (void)applyTopBackgroundForStyle:(id)arg1 onView:(id)arg2;

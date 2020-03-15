@@ -14,9 +14,9 @@
     BOOL _forceNoCache;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forceNoCache; // @synthesize forceNoCache=_forceNoCache;
 @property(retain, nonatomic) id appSpecificDataItemResult; // @synthesize appSpecificDataItemResult=_appSpecificDataItemResult;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)requestBody;

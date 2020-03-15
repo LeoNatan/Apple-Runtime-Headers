@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSDate *dateStatusModified; // @synthesize dateStatusModified=_dateStatusModified;
 @property unsigned long long status; // @synthesize status=_status;
 @property(copy) NSString *guestProvidedSpecialRequestText; // @synthesize guestProvidedSpecialRequestText=_guestProvidedSpecialRequestText;
 @property(copy) INRestaurantOffer *selectedOffer; // @synthesize selectedOffer=_selectedOffer;
 @property(copy) NSString *advisementText; // @synthesize advisementText=_advisementText;
 @property(copy) INRestaurantGuest *guest; // @synthesize guest=_guest;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

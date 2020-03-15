@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsDisplayConfigurationDiffInspector;
 }
 
-@property(retain, nonatomic) UIApplicationSceneSettingsDiffInspector *sceneSettingsDisplayConfigurationDiffInspector; // @synthesize sceneSettingsDisplayConfigurationDiffInspector=_sceneSettingsDisplayConfigurationDiffInspector;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIApplicationSceneSettingsDiffInspector *sceneSettingsDisplayConfigurationDiffInspector; // @synthesize sceneSettingsDisplayConfigurationDiffInspector=_sceneSettingsDisplayConfigurationDiffInspector;
 - (void)_performActionsForUIScene:(id)arg1 withUpdatedFBSScene:(id)arg2 settingsDiff:(id)arg3 fromSettings:(id)arg4 transitionContext:(id)arg5 lifecycleActionType:(unsigned int)arg6;
 
 // Remaining properties

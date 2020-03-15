@@ -18,8 +18,8 @@
 
 + (id)autoTrack;
 + (id)offTrack;
-@property(nonatomic) int tag; // @synthesize tag=_tag;
 - (void).cxx_destruct;
+@property(nonatomic) int tag; // @synthesize tag=_tag;
 - (id)_displayNameForName:(id)arg1;
 - (id)displayName;
 @property(readonly, nonatomic) int type;

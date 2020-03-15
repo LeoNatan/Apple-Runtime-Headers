@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _detailLabelOriginX;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double detailLabelOriginX; // @synthesize detailLabelOriginX=_detailLabelOriginX;
 @property(retain, nonatomic) NSArray *detailViews; // @synthesize detailViews=_detailViews;
-- (void).cxx_destruct;
 - (void)createViewWithItemDetailArray:(id)arg1;
 - (void)createViewWithDescriptors:(id)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

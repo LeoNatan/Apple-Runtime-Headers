@@ -21,13 +21,13 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isBackgrounded) BOOL backgrounded; // @synthesize backgrounded=_backgrounded;
 @property(nonatomic) double powerAssertionStartTime; // @synthesize powerAssertionStartTime=_powerAssertionStartTime;
 @property(nonatomic) unsigned int assertionID; // @synthesize assertionID=_assertionID;
 @property(nonatomic) unsigned long long backgroundTaskIdentifier; // @synthesize backgroundTaskIdentifier=_backgroundTaskIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *powerControllerQueue; // @synthesize powerControllerQueue=_powerControllerQueue;
 @property(readonly, nonatomic) NSMutableDictionary *assertionReasonsByIdentifier; // @synthesize assertionReasonsByIdentifier=_assertionReasonsByIdentifier;
-- (void).cxx_destruct;
 - (void)startBackgroundTaskIfNeeded;
 - (void)endBackgroundTaskIfNeeded;
 - (void)applicationWillResignActive:(id)arg1;

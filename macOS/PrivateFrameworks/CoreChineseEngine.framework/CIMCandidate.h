@@ -20,6 +20,7 @@
     BOOL _facemarkCandidate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isFacemarkCandidate) BOOL facemarkCandidate; // @synthesize facemarkCandidate=_facemarkCandidate;
 @property(readonly, getter=isPredictionCandidate) BOOL predictionCandidate; // @synthesize predictionCandidate=_predictionCandidate;
 @property BOOL usesPointerAsUniqueKey; // @synthesize usesPointerAsUniqueKey=_usesPointerAsUniqueKey;
@@ -27,7 +28,6 @@
 @property(getter=isInlineCandidate) BOOL inlineCandidate; // @synthesize inlineCandidate=_inlineCandidate;
 @property(copy) NSString *displayReading; // @synthesize displayReading=_displayReading;
 @property(copy) NSString *reading; // @synthesize reading=_reading;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)axHelpString;
 @property(readonly, getter=isCompositionCandidate) BOOL compositionCandidate;

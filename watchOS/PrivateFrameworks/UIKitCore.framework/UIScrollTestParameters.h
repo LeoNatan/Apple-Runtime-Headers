@@ -16,23 +16,23 @@
     int _iterations;
     float _delta;
     float _length;
-    int _axis;
+    unsigned int _axis;
     CDUnknownBlockType _extraResultsBlock;
     float _startOffset;
     CADisplayLink *_displayLink;
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) float startOffset; // @synthesize startOffset=_startOffset;
 @property(copy, nonatomic) CDUnknownBlockType extraResultsBlock; // @synthesize extraResultsBlock=_extraResultsBlock;
-@property(nonatomic) int axis; // @synthesize axis=_axis;
+@property(nonatomic) unsigned int axis; // @synthesize axis=_axis;
 @property(nonatomic) float length; // @synthesize length=_length;
 @property(nonatomic) float delta; // @synthesize delta=_delta;
 @property(nonatomic) int iterations; // @synthesize iterations=_iterations;
 @property(copy, nonatomic) NSString *testName; // @synthesize testName=_testName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) float endOffset;
 - (void)dealloc;

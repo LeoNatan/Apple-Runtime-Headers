@@ -13,8 +13,8 @@
     NSXPCConnection *_xpcEcoModeDConnection;
 }
 
-@property(retain, nonatomic) NSXPCConnection *xpcEcoModeDConnection; // @synthesize xpcEcoModeDConnection=_xpcEcoModeDConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *xpcEcoModeDConnection; // @synthesize xpcEcoModeDConnection=_xpcEcoModeDConnection;
 - (void)updatePowerSettingsForDemoModeWithChargeThrottling:(_Bool)arg1 chargeLimitVoltage:(int)arg2;
 - (void)addScreenOnDuration:(int)arg1;
 - (void)obliterateSettings:(CDUnknownBlockType)arg1;

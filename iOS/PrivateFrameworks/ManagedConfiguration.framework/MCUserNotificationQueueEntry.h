@@ -24,6 +24,7 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) id notification; // @synthesize notification=_notification;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *defaultButtonText; // @synthesize defaultButtonText=_defaultButtonText;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

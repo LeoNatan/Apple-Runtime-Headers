@@ -14,9 +14,9 @@
     TICandidateRequestToken *_requestToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TICandidateRequestToken *requestToken; // @synthesize requestToken=_requestToken;
 @property(retain, nonatomic) TIAutocorrectionList *autocorrections; // @synthesize autocorrections=_autocorrections;
-- (void).cxx_destruct;
 - (void)visitRecordAutocorrections:(id)arg1;
 
 @end

@@ -19,10 +19,10 @@
     id <SXQuickLookRouter> _router;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXQuickLookRouter> router; // @synthesize router=_router;
 @property(readonly, nonatomic) id <SXQuickLookInteractor> interactor; // @synthesize interactor=_interactor;
 @property(nonatomic) __weak id <SXQuickLookEventHandlerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)failedToLoadThumbnail;
 - (void)didLoadThumbnail:(id)arg1;
 - (void)didTapThumbnailView:(id)arg1;

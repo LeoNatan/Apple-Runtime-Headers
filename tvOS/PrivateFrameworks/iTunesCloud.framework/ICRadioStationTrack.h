@@ -17,9 +17,9 @@
 }
 
 + (id)flattenedTracksWithTracks:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICRadioStationTrack *parentTrack; // @synthesize parentTrack=_parentTrack;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
-- (void).cxx_destruct;
 - (id)_hlsAssetFromAssetDictionary:(id)arg1;
 @property(readonly, nonatomic) long long trackType;
 @property(readonly, copy, nonatomic) ICStorePlatformMetadata *storePlatformMetadata;

@@ -19,13 +19,13 @@
 }
 
 + (id)copyParseRules;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *selfItem; // @synthesize selfItem=_selfItem;
 @property(retain, nonatomic) CoreDAVItem *property; // @synthesize property=_property;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *unauthenticated; // @synthesize unauthenticated=_unauthenticated;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *authenticated; // @synthesize authenticated=_authenticated;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *all; // @synthesize all=_all;
 @property(retain, nonatomic) CoreDAVHrefItem *href; // @synthesize href=_href;
-- (void).cxx_destruct;
 - (id)hashString;
 - (void)write:(id)arg1;
 - (id)description;

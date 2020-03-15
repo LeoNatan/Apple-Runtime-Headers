@@ -19,9 +19,9 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKDisplayTypeContextTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *displayTypeContextItems; // @synthesize displayTypeContextItems=_displayTypeContextItems;
-- (void).cxx_destruct;
 - (void)contextView:(id)arg1 didTapOnInfoButtonAtIndex:(long long)arg2;
 - (void)contextView:(id)arg1 didDeselectItemAtIndex:(long long)arg2;
 - (void)contextView:(id)arg1 didSelectItemAtIndex:(long long)arg2;

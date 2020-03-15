@@ -12,12 +12,12 @@
 
 @interface NTKUpNextUseMonitor : NSObject <NTKFaceCollectionObserver>
 {
-    struct NSString *_locationToken;
+    NSString *_locationToken;
     NTKFaceCollection *_libraryFaceCollection;
 }
 
-@property(retain, nonatomic) NTKFaceCollection *libraryFaceCollection; // @synthesize libraryFaceCollection=_libraryFaceCollection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKFaceCollection *libraryFaceCollection; // @synthesize libraryFaceCollection=_libraryFaceCollection;
 - (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned int)arg3;

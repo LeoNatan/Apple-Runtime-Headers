@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) CTUserLabel *planLabel; // @synthesize planLabel=_planLabel;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSString *carrierName; // @synthesize carrierName=_carrierName;
 @property(retain, nonatomic) NSString *sourceIccid; // @synthesize sourceIccid=_sourceIccid;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

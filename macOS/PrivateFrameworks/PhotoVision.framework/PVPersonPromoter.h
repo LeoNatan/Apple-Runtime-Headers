@@ -31,6 +31,7 @@
 + (BOOL)_writePersonPromoterInformation:(id)arg1 atURL:(id)arg2;
 + (id)_personPromoterInformationAtURL:(id)arg1;
 + (BOOL)isEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PVPersonDeduperProfile *deduperProfile; // @synthesize deduperProfile=_deduperProfile;
 @property(retain, nonatomic) PVPersonPromoterProfile *promoterProfile; // @synthesize promoterProfile=_promoterProfile;
 @property(nonatomic) BOOL didAskFaceProcesingProgress; // @synthesize didAskFaceProcesingProgress=_didAskFaceProcesingProgress;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) id <PVPhotoLibraryProtocol> photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic) __weak id <PVPersonPromoterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PVPersonClusterManager *personClusterManager; // @synthesize personClusterManager=_personClusterManager;
-- (void).cxx_destruct;
 - (id)_sortedSocialGroups:(id)arg1 withPersonsByLocalIdentifier:(id)arg2;
 - (id)_graphOrderedPersonsWithPersons:(id)arg1 withAllPersons:(id)arg2 updateBlock:(CDUnknownBlockType)arg3;
 - (BOOL)_updateSuggestedMeIdentifierWithPersons:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;

@@ -50,6 +50,7 @@
 
 + (Class)resolutionCountType;
 + (Class)reconfigurationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *resolutionCounts; // @synthesize resolutionCounts=_resolutionCounts;
 @property(nonatomic) _Bool isStreamStarted; // @synthesize isStreamStarted=_isStreamStarted;
 @property(nonatomic) unsigned long long startupDelay; // @synthesize startupDelay=_startupDelay;
@@ -70,7 +71,6 @@
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) AWDHomeKitVendorInformation *vendorDetails; // @synthesize vendorDetails=_vendorDetails;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

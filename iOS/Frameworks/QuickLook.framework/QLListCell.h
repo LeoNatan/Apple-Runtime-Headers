@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)listCell;
+- (void).cxx_destruct;
 @property unsigned long long row; // @synthesize row=_row;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(copy, nonatomic) NSString *subtitleString; // @synthesize subtitleString=_subtitleString;
 @property(nonatomic) long long fileDepthLevel; // @synthesize fileDepthLevel=_fileDepthLevel;
 @property(retain, nonatomic) NSString *folderName; // @synthesize folderName=_folderName;
 @property(retain, nonatomic) QLItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)_folderImage;
 - (void)prepareForReuse;
 - (void)awakeFromNib;

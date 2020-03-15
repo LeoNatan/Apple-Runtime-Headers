@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cacheHit; // @synthesize cacheHit=_cacheHit;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)collectionViewItemsPerRow;
 + (_Bool)requiresConstraintBasedLayout;
 + (id)reuseIdentifier;
-@property(nonatomic) __weak id <WDHealthDataTopLevelCategoryTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WDHealthDataTopLevelCategoryTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

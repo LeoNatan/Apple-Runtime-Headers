@@ -39,9 +39,9 @@
     HDPeriodicActivity *_periodicActivity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDPeriodicActivity *periodicActivity; // @synthesize periodicActivity=_periodicActivity;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)unitTest_performPeriodicSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unitTest_setPrimaryProfileOverride:(id)arg1;

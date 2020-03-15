@@ -17,10 +17,10 @@
     NSString *_webPageUri;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *storeFrontId; // @synthesize storeFrontId=_storeFrontId;
 @property(retain, nonatomic) NSString *feedUri; // @synthesize feedUri=_feedUri;
 @property(retain, nonatomic) NSString *webPageUri; // @synthesize webPageUri=_webPageUri;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

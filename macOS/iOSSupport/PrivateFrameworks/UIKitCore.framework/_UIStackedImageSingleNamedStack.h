@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     _UIStackedImageSingleNamedLayerImage *_layerImage;
 }
 
-@property(retain, nonatomic) _UIStackedImageSingleNamedLayerImage *layerImage; // @synthesize layerImage=_layerImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStackedImageSingleNamedLayerImage *layerImage; // @synthesize layerImage=_layerImage;
 @property(readonly, nonatomic) struct CGImage *flattenedImage;
 @property(readonly, nonatomic) double scale;
 @property(readonly, nonatomic) struct CGSize size;

@@ -15,8 +15,8 @@
     CKDialogContext *_dialogContext;
 }
 
-@property(readonly) CKDialogContext *dialogContext; // @synthesize dialogContext=_dialogContext;
 - (void).cxx_destruct;
+@property(readonly) CKDialogContext *dialogContext; // @synthesize dialogContext=_dialogContext;
 - (id)purchaseQueue:(id)arg1 dialogContextForTransaction:(id)arg2;
 - (id)initWithDialogContext:(id)arg1;
 

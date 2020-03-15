@@ -17,7 +17,6 @@
 @interface HMHomeManager : NSObject <HMFLogging, HMFMessageReceiver, HMMutableApplicationData, HMApplicationData>
 {
     HMFUnfairLock *_lock;
-    HMAccessory *_currentAccessory;
     NSOperationQueue *_syncOperationQueue;
     _Bool _frameworkMergeComplete;
     _Bool _thisDeviceResidentCapable;
@@ -55,6 +54,7 @@
 
 + (id)logCategory;
 + (_Bool)dataSyncInProgressFromDataSyncState:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMNetworkRouterFirewallRuleManager *firewallRuleManager; // @synthesize firewallRuleManager=_firewallRuleManager;
 @property(nonatomic, getter=isViewServiceActive) _Bool viewServiceActive; // @synthesize viewServiceActive=_viewServiceActive;
 @property(nonatomic) unsigned int metadataVersion; // @synthesize metadataVersion=_metadataVersion;
@@ -71,7 +71,6 @@
 @property(retain, nonatomic) HMMutableArray *homeInvitations; // @synthesize homeInvitations=_homeInvitations;
 @property(retain, nonatomic) HMMutableArray *currentHomes; // @synthesize currentHomes=_currentHomes;
 @property(readonly) HMUserCloudShareManager *userCloudShareManager; // @synthesize userCloudShareManager=_userCloudShareManager;
-- (void).cxx_destruct;
 @property(readonly, copy) NSUUID *applicationDataIdentifier;
 - (void)_pairingIdentityForAccessoryWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)pairingIdentityForAccessoryWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -201,8 +200,7 @@
 @property(readonly) HMHomeManagerConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)setApplicationData:(id)arg1;
 @property(readonly, nonatomic) HMApplicationData *applicationData;
-- (void)setCurrentAccessory:(id)arg1;
-@property(readonly) __weak HMAccessory *currentAccessory;
+@property(readonly) HMAccessory *currentAccessory;
 - (void)setCurrentHome:(id)arg1;
 @property(readonly, nonatomic) HMHome *currentHome; // @synthesize currentHome=_currentHome;
 @property(retain, nonatomic) HMHome *primaryHome; // @synthesize primaryHome=_primaryHome;

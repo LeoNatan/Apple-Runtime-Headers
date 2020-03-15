@@ -16,9 +16,9 @@
     UIColor *_borderColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) __weak UIWindow *targetWindow; // @synthesize targetWindow=_targetWindow;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)highlightView:(id)arg1;
 @property(retain, nonatomic) UIColor *contentColor;

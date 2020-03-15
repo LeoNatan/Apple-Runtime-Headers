@@ -17,9 +17,9 @@
     UIGestureRecognizer *_targetGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property __weak UIGestureRecognizer *targetGestureRecognizer; // @synthesize targetGestureRecognizer=_targetGestureRecognizer;
 @property __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
-- (void).cxx_destruct;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

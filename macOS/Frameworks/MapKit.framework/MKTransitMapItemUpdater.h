@@ -18,12 +18,12 @@
     NSDate *_suggestedDataRefreshDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *suggestedDataRefreshDate; // @synthesize suggestedDataRefreshDate=_suggestedDataRefreshDate;
 @property(retain, nonatomic) NSTimer *dataRefreshTimer; // @synthesize dataRefreshTimer=_dataRefreshTimer;
 @property(nonatomic, getter=isRefreshing) BOOL refreshing; // @synthesize refreshing=_refreshing;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) BOOL lastInfoRefreshFailed; // @synthesize lastInfoRefreshFailed=_lastInfoRefreshFailed;
-- (void).cxx_destruct;
 - (void)_transitInfoUpdated;
 - (BOOL)_isInfoExpiredRelativeToDate:(id)arg1;
 - (BOOL)isStuckWithExpiredInfoRelativeToDate:(id)arg1;

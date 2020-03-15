@@ -30,6 +30,7 @@
 
 + (id)sharedManager;
 + (_Bool)isProfileSectionRestricted;
+- (void).cxx_destruct;
 @property(nonatomic) int provisioningProfileRemovedToken; // @synthesize provisioningProfileRemovedToken=_provisioningProfileRemovedToken;
 @property(nonatomic) int provisioningProfileInstalledToken; // @synthesize provisioningProfileInstalledToken=_provisioningProfileInstalledToken;
 @property(nonatomic) int appsChangedNotifyToken; // @synthesize appsChangedNotifyToken=_appsChangedNotifyToken;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSArray *uninstalledProfilesInfo; // @synthesize uninstalledProfilesInfo=_uninstalledProfilesInfo;
 @property(retain, nonatomic) NSArray *configurationProfilesInfo; // @synthesize configurationProfilesInfo=_configurationProfilesInfo;
 @property(retain, nonatomic) MCProfileInfo *mdmProfileInfo; // @synthesize mdmProfileInfo=_mdmProfileInfo;
-- (void).cxx_destruct;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)reloadAppSignersAndBlockedAppsInBackgroundWithCompletion:(CDUnknownBlockType)arg1;

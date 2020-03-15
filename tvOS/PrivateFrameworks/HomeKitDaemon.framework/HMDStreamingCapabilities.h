@@ -28,6 +28,7 @@
 + (_Bool)is4x3Resolution:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (void)translateCapabilities:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsComfortNoise; // @synthesize supportsComfortNoise=_supportsComfortNoise;
 @property(nonatomic) unsigned long long streamingTierType; // @synthesize streamingTierType=_streamingTierType;
 @property(readonly, nonatomic) NSSet *supportedAudioSampleRates; // @synthesize supportedAudioSampleRates=_supportedAudioSampleRates;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSSet *supportedVideoResolutions; // @synthesize supportedVideoResolutions=_supportedVideoResolutions;
 @property(readonly, nonatomic) NSSet *supportedVideoCodecs; // @synthesize supportedVideoCodecs=_supportedVideoCodecs;
 @property(readonly, nonatomic) NSDictionary *supportedAudioCodecs; // @synthesize supportedAudioCodecs=_supportedAudioCodecs;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateWithRemoteSettings:(id)arg1;

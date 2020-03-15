@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
 @property(readonly, nonatomic) VUITextLayout *infoTextLayout; // @synthesize infoTextLayout=_infoTextLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

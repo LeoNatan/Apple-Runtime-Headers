@@ -13,5 +13,8 @@
 @protocol NSURLSessionAppleIDContext <NSObject, NSCopying, NSSecureCoding>
 - (NSSet *)relevantHTTPStatusCodes;
 - (void)URLSession:(NSURLSession *)arg1 task:(NSURLSessionTask *)arg2 getAppleIDHeadersForResponse:(NSURLResponse *)arg3 completionHandler:(void (^)(_Bool, NSDictionary *))arg4;
+
+@optional
+- (void)URLSession:(NSURLSession *)arg1 task:(NSURLSessionTask *)arg2 getAppleIDRequestOrHeadersForResponse:(NSURLResponse *)arg3 completionHandler:(void (^)(_Bool, NSDictionary *, NSURLRequest *))arg4;
 @end
 

@@ -14,8 +14,8 @@
     double _percentComplete;
 }
 
-@property(nonatomic) double percentComplete; // @synthesize percentComplete=_percentComplete;
 - (void).cxx_destruct;
+@property(nonatomic) double percentComplete; // @synthesize percentComplete=_percentComplete;
 - (double)valueForFunctionWithName:(id)arg1;
 - (id)timingFunctionNames;
 - (void)addTimingFunctionWithName:(id)arg1 fromNormalizedAnimationSettings:(id)arg2;

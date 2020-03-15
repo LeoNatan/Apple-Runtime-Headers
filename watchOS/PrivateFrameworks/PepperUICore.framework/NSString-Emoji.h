@@ -10,6 +10,7 @@
 + (void)applyKerning:(float)arg1 whitespaceKerning:(float)arg2 toAttributedString:(id)arg3;
 + (struct CGRect)_integralRectOfAttributedString:(id)arg1;
 - (_Bool)__puic_containsOnlyEmojiAndWhitespace;
+- (unsigned int)_composedCharacterLength;
 - (float)_adjustedLeadingForScripts:(int)arg1 forLeading:(float)arg2;
 - (id)_adjustedFontForScripts:(int)arg1 forFont:(id)arg2 withPointAdjustment:(float)arg3 ignoringContent:(_Bool)arg4;
 - (_Bool)_arabicEnabled;

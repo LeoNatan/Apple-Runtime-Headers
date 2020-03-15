@@ -25,8 +25,8 @@
     id <SBRecentDisplayItemsControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBRecentDisplayItemsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBRecentDisplayItemsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_addStateCaptureHandler;
 - (void)_disallowAppFromAppearingWhileHidden:(id)arg1;
 - (void)_allowAppToAppearWhileHidden:(id)arg1;

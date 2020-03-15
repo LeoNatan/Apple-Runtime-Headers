@@ -18,13 +18,13 @@
     UIView *_systemBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *systemBackgroundView; // @synthesize systemBackgroundView=_systemBackgroundView;
 @property(retain, nonatomic) _UIVisualEffectBackdropView *fullScreenBackdropView; // @synthesize fullScreenBackdropView=_fullScreenBackdropView;
 @property(retain, nonatomic) AFUIStarkGradientView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) UIImageView *fullScreenAuraView; // @synthesize fullScreenAuraView=_fullScreenAuraView;
 @property(retain, nonatomic) UIView *fullScreenBackgroundView; // @synthesize fullScreenBackgroundView=_fullScreenBackgroundView;
 @property(nonatomic) long long backgroundViewMode; // @synthesize backgroundViewMode=_backgroundViewMode;
-- (void).cxx_destruct;
 - (void)_updateViewsForBackgroundViewMode:(long long)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

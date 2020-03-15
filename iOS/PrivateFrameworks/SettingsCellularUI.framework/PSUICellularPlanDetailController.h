@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PSUISubscriptionContextMenusGroup *_subscriptionContextMenus;
 }
 
-@property(retain, nonatomic) PSUISubscriptionContextMenusGroup *subscriptionContextMenus; // @synthesize subscriptionContextMenus=_subscriptionContextMenus;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSUISubscriptionContextMenusGroup *subscriptionContextMenus; // @synthesize subscriptionContextMenus=_subscriptionContextMenus;
 - (id)specifiers;
 - (id)selectSpecifier:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

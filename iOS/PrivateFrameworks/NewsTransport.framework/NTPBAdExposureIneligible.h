@@ -23,8 +23,8 @@
     } _has;
 }
 
-@property(retain, nonatomic) NSString *exposureIneligibleLocationTypeId; // @synthesize exposureIneligibleLocationTypeId=_exposureIneligibleLocationTypeId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *exposureIneligibleLocationTypeId; // @synthesize exposureIneligibleLocationTypeId=_exposureIneligibleLocationTypeId;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

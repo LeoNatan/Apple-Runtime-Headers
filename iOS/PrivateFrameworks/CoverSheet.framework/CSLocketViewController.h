@@ -24,8 +24,8 @@
     id <CSLocketViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLocketViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLocketViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_dismiss:(_Bool)arg1;
 - (_Bool)_shouldCancelInteractiveDismissGesture;
 - (void)_updateLocketScale:(double)arg1 interactive:(_Bool)arg2;

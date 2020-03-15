@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(retain) AVAssetImageGenerator *assetImageGenerator; // @synthesize assetImageGenerator=_assetImageGenerator;
 @property(copy) CDUnknownBlockType thumbnailHandler; // @synthesize thumbnailHandler=_thumbnailHandler;
 @property long long requestType; // @synthesize requestType=_requestType;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property double duration; // @synthesize duration=_duration;
 @property double startTime; // @synthesize startTime=_startTime;
 @property(retain) AVURLAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 
 @end
 

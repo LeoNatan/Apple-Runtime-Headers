@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)shouldDisplayScoresBelowLabels;
 + (_Bool)shouldUseVerticalLayout;
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2 sizeClass:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVImageLayout *availabilityImageLayout; // @synthesize availabilityImageLayout=_availabilityImageLayout;
 @property(readonly, nonatomic) VUITextLayout *availabilityTextLayout; // @synthesize availabilityTextLayout=_availabilityTextLayout;
 @property(readonly, nonatomic) VUITextLayout *footerTextLayout; // @synthesize footerTextLayout=_footerTextLayout;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VUITextLayout *scoreTextLayout; // @synthesize scoreTextLayout=_scoreTextLayout;
 @property(readonly, nonatomic) VUITextLayout *rowTextLayout; // @synthesize rowTextLayout=_rowTextLayout;
 @property(readonly, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithSizeClass:(long long)arg1;
 

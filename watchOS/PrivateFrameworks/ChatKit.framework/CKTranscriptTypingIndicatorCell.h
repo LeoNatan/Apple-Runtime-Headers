@@ -16,8 +16,8 @@
     CKTypingView *_typingView;
 }
 
-@property(retain, nonatomic) CKTypingView *typingView; // @synthesize typingView=_typingView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKTypingView *typingView; // @synthesize typingView=_typingView;
 - (void)startShrinkAnimation;
 - (void)stopPulseAnimation;
 - (void)startPulseAnimation;

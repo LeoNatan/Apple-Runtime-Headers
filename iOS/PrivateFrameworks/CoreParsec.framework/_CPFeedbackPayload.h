@@ -60,9 +60,9 @@
     unsigned long long _whichContained_Feedback;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long whichContained_Feedback; // @synthesize whichContained_Feedback=_whichContained_Feedback;
 @property(nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

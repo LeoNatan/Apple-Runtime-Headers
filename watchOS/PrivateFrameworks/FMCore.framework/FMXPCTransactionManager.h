@@ -18,11 +18,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *masterTransaction; // @synthesize masterTransaction=_masterTransaction;
 @property(retain, nonatomic) NSString *keepAliveActivityIdentifier; // @synthesize keepAliveActivityIdentifier=_keepAliveActivityIdentifier;
 @property(retain, nonatomic) NSCountedSet *activeTransactions; // @synthesize activeTransactions=_activeTransactions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *txn_ops_queue; // @synthesize txn_ops_queue=_txn_ops_queue;
-- (void).cxx_destruct;
 - (void)_disableOldKeepAliveActivity;
 - (void)_disableLaunchOnRebootActivity:(id)arg1;
 - (void)_disableKeepAlive;

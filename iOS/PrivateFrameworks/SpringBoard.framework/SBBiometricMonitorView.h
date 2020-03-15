@@ -16,10 +16,10 @@
     long long _poseState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long poseState; // @synthesize poseState=_poseState;
 @property(nonatomic) long long presenceDetectState; // @synthesize presenceDetectState=_presenceDetectState;
 @property(nonatomic) long long matchState; // @synthesize matchState=_matchState;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

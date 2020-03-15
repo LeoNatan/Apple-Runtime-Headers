@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) long long resultType; // @synthesize resultType=_resultType;
 @property(readonly, copy) NSArray *values; // @synthesize values=_values;
 @property(readonly, copy) NSString *unit; // @synthesize unit=_unit;
 @property(readonly, copy) INDateComponentsRange *recordDate; // @synthesize recordDate=_recordDate;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)description;

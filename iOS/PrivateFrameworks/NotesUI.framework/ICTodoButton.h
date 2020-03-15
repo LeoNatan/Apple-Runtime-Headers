@@ -16,18 +16,18 @@
     struct CGSize _defaultImageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize defaultImageSize; // @synthesize defaultImageSize=_defaultImageSize;
 @property(nonatomic) struct CGSize defaultSize; // @synthesize defaultSize=_defaultSize;
 @property(nonatomic) __weak ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
 @property(nonatomic, getter=isDone) _Bool done; // @synthesize done=_done;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)setDone:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)init;
 - (void)setFrame:(struct CGRect)arg1 leftToRight:(_Bool)arg2;
 - (struct CGRect)imageFrame;
 - (void)updateImagesAnimated:(_Bool)arg1;
-- (struct UIImage *)imageForChecked:(_Bool)arg1 withHighlight:(_Bool)arg2;
+- (id)imageForChecked:(_Bool)arg1 withHighlight:(_Bool)arg2;
 - (void)wasPressed;
 - (void)setHighlighted:(_Bool)arg1;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;

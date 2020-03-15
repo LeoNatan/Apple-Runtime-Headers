@@ -15,10 +15,10 @@
     NSDictionary *_queryParameters;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *queryParameters; // @synthesize queryParameters=_queryParameters;
 @property(copy, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(nonatomic) long long searchTypes; // @synthesize searchTypes=_searchTypes;
-- (void).cxx_destruct;
 
 @end
 

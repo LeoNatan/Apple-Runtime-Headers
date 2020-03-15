@@ -19,6 +19,7 @@
     id <DNDSBackingStore> _backingStore;
     DNDSModeAssertionStore *_store;
     DNDSClientDetailsProvider *_clientDetailsProvider;
+    struct os_unfair_lock_s _storeLock;
 }
 
 - (void).cxx_destruct;

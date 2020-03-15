@@ -22,12 +22,12 @@
     CDUnknownBlockType _dismissHandlerWithReason;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandlerWithReason; // @synthesize dismissHandlerWithReason=_dismissHandlerWithReason;
 @property(readonly, nonatomic) MPMediaControlsConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (_Bool)_shouldUpdateStyleForCurrentConfigurationStyle:(long long)arg1;
 - (id)_dismissalReasonString:(unsigned long long)arg1;
 - (unsigned long long)_MPRouteSharingPolicyToAVRouteSharingPolicy:(unsigned long long)arg1;

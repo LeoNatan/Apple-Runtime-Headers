@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) CLLocation *relativeLocation; // @synthesize relativeLocation=_relativeLocation;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CLLocation *relativeLocation; // @synthesize relativeLocation=_relativeLocation;
 - (long long)compareObject:(id)arg1 toObject:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SFCustomActivityProxy *_activityProxy;
 }
 
-@property(readonly, nonatomic) SFCustomActivityProxy *activityProxy; // @synthesize activityProxy=_activityProxy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SFCustomActivityProxy *activityProxy; // @synthesize activityProxy=_activityProxy;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)activityImage;
 - (id)activityTitle;

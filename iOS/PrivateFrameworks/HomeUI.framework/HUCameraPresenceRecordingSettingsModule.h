@@ -30,6 +30,7 @@
     HMHome *_home;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) unsigned long long numCamerasSupportRecordingService; // @synthesize numCamerasSupportRecordingService=_numCamerasSupportRecordingService;
 @property(nonatomic) unsigned long long offerState; // @synthesize offerState=_offerState;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) unsigned long long presenceEventType; // @synthesize presenceEventType=_presenceEventType;
 @property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 - (id)showOptionsItem;
-- (void).cxx_destruct;
 - (void)sendCAMetricInfo;
 - (unsigned long long)countCameraProfilesWithRecordingService;
 - (void)upgradeFlowManagerDidComplete:(id)arg1;

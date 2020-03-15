@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)manager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *deletedItems; // @synthesize deletedItems=_deletedItems;
 @property(retain, nonatomic) NSMutableDictionary *customItems; // @synthesize customItems=_customItems;
 @property(retain, nonatomic) NSMutableDictionary *customMenus; // @synthesize customMenus=_customMenus;
-- (void).cxx_destruct;
 - (id)copyCustomObjectsInStandardMenu:(id)arg1 fromStorage:(id)arg2 filteringBy:(CDUnknownBlockType)arg3;
 - (id)copyCustomItemsInStandardMenu:(id)arg1 afterStandardItem:(id)arg2;
 - (id)copyCustomMenusAfterStandardMenu:(id)arg1;

@@ -25,6 +25,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) SUPowerAssertionManager *powerAssertionManager; // @synthesize powerAssertionManager=_powerAssertionManager;
 @property(retain) SUOSUScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) NSLock *serviceConnectionLock; // @synthesize serviceConnectionLock=_serviceConnectionLock;
@@ -34,7 +35,6 @@
 @property(retain) NSXPCConnection *legacyServiceConnection; // @synthesize legacyServiceConnection=_legacyServiceConnection;
 @property(copy) CDUnknownBlockType customInterruptionHandler; // @synthesize customInterruptionHandler=_customInterruptionHandler;
 @property(retain, nonatomic) id <SUOSULaterDelegate> schedulerDelegate; // @synthesize schedulerDelegate=_schedulerDelegate;
-- (void).cxx_destruct;
 - (void)postAndProceedWithAutoUpdateNotification:(CDUnknownBlockType)arg1;
 - (void)mdmMajorOSUpdateStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startInstallingMDMMajorOSUpdateWithBundleId:(id)arg1 orVersion:(id)arg2;

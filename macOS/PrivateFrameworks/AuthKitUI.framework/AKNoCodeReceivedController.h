@@ -20,6 +20,7 @@
     CDUnknownBlockType _defaultButtonAction;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType defaultButtonAction; // @synthesize defaultButtonAction=_defaultButtonAction;
 @property(copy) CDUnknownBlockType alternateButtonAction; // @synthesize alternateButtonAction=_alternateButtonAction;
 @property(copy) CDUnknownBlockType cancelButtonAction; // @synthesize cancelButtonAction=_cancelButtonAction;
@@ -28,7 +29,6 @@
 @property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain) NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
 @property(retain) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 - (void)defaultButtonPressed:(id)arg1;
 - (void)alternativeButtonPressed:(id)arg1;
 - (void)cancelButtonPressed:(id)arg1;

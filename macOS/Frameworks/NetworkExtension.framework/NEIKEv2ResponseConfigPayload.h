@@ -13,8 +13,8 @@
     NEIKEv2ConfigurationMessage *_configurationRequest;
 }
 
-@property(retain) NEIKEv2ConfigurationMessage *configurationRequest; // @synthesize configurationRequest=_configurationRequest;
 - (void).cxx_destruct;
+@property(retain) NEIKEv2ConfigurationMessage *configurationRequest; // @synthesize configurationRequest=_configurationRequest;
 - (BOOL)parsePayloadData;
 - (id)initWithResponseConfigPayload:(id)arg1 configRequest:(id)arg2;
 

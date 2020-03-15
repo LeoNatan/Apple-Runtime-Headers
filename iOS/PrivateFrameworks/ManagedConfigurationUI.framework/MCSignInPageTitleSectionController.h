@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_orgName;
 }
 
-@property(copy, nonatomic) NSString *orgName; // @synthesize orgName=_orgName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *orgName; // @synthesize orgName=_orgName;
 - (id)cellForRowAtIndex:(unsigned long long)arg1;
 - (double)heightForHeader;
 - (unsigned long long)numberOfRows;

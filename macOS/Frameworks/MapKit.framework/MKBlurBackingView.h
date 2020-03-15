@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     MKBlurBackingLayer *_blurLayer;
 }
 
-@property(retain, nonatomic) MKBlurBackingLayer *blurLayer; // @synthesize blurLayer=_blurLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKBlurBackingLayer *blurLayer; // @synthesize blurLayer=_blurLayer;
 - (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;
 

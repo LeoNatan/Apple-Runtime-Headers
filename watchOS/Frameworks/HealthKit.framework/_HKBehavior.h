@@ -41,6 +41,7 @@
     _Bool _hasOntologyFeaturesEnabled;
     _Bool _isTestingDevice;
     _Bool _healthAppHidden;
+    NSString *_unitTest_deviceRegionCode;
 }
 
 + (_Bool)_condensesHeartRateSamples;
@@ -95,7 +96,10 @@
 + (void)resetSharedBehavior;
 + (void)setSharedBehavior:(id)arg1;
 + (id)sharedBehavior;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool healthAppHidden; // @synthesize healthAppHidden=_healthAppHidden;
+@property(copy, nonatomic) NSString *unitTest_deviceRegionCode; // @synthesize unitTest_deviceRegionCode=_unitTest_deviceRegionCode;
 @property(nonatomic) _Bool isTestingDevice; // @synthesize isTestingDevice=_isTestingDevice;
 @property(nonatomic) _Bool hasOntologyFeaturesEnabled; // @synthesize hasOntologyFeaturesEnabled=_hasOntologyFeaturesEnabled;
 @property(nonatomic) _Bool ignoreOntologyVersionCheckDuringReferenceOntologyImport; // @synthesize ignoreOntologyVersionCheckDuringReferenceOntologyImport=_ignoreOntologyVersionCheckDuringReferenceOntologyImport;
@@ -123,8 +127,6 @@
 @property(nonatomic) _Bool isAppleWatch; // @synthesize isAppleWatch=_isAppleWatch;
 @property(nonatomic) _Bool isAppleInternalInstall; // @synthesize isAppleInternalInstall=_isAppleInternalInstall;
 @property(nonatomic) _Bool isDeviceSupported; // @synthesize isDeviceSupported=_isDeviceSupported;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsCloudSync;
 @property(nonatomic) _Bool futureMigrationsEnabled;
 - (void)setManateeEnabledForHSA2AccountsOverride:(_Bool)arg1;

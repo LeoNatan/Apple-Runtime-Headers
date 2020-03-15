@@ -12,9 +12,9 @@
     CDUnknownBlockType _predicate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) Class controllerClass; // @synthesize controllerClass=_controllerClass;
-- (void).cxx_destruct;
 - (Class)evaluate:(id)arg1;
 
 @end

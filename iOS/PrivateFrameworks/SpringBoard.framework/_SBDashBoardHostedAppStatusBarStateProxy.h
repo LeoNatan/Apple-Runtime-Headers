@@ -13,8 +13,8 @@
     SBDashBoardHostedAppViewController *_hostedAppVCBackReference;
 }
 
-@property(nonatomic) __weak SBDashBoardHostedAppViewController *hostedAppVCBackReference; // @synthesize hostedAppVCBackReference=_hostedAppVCBackReference;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SBDashBoardHostedAppViewController *hostedAppVCBackReference; // @synthesize hostedAppVCBackReference=_hostedAppVCBackReference;
 - (double)_statusBarAlpha;
 - (_Bool)_suppressInheritedPartStyles;
 - (long long)_fallbackInterfaceOrientation;

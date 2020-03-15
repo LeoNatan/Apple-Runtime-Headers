@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGRect)titleRectForAsset:(id)arg1 targetAspect:(double)arg2 memory:(id)arg3;
 + (void)prepareKBClip:(id)arg1 project:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double projectAspect; // @synthesize projectAspect=_projectAspect;
 @property(nonatomic) struct CGRect endRect; // @synthesize endRect=_endRect;
 @property(nonatomic) struct CGRect startRect; // @synthesize startRect=_startRect;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double targetAspect; // @synthesize targetAspect=_targetAspect;
 @property(retain, nonatomic) MiroMemory *memory; // @synthesize memory=_memory;
 @property(retain, nonatomic) Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (void)_adjustZoomSpeedOfKenBurnsClip;
 - (double)_scaleToPanOffsetFromScale:(double)arg1;
 - (struct CGRect)_panFrameForStart:(BOOL)arg1;

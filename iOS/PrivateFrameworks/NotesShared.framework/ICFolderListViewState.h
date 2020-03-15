@@ -22,6 +22,7 @@
     NSNumber *_customFoldersExistValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *customFoldersExistValue; // @synthesize customFoldersExistValue=_customFoldersExistValue;
 @property(retain, nonatomic) NSCountedSet *folderNamesCountedSet; // @synthesize folderNamesCountedSet=_folderNamesCountedSet;
 @property(retain, nonatomic) NSMutableArray *accounts; // @synthesize accounts=_accounts;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMutableSet *collapsedLegacyAccountIdentifiers; // @synthesize collapsedLegacyAccountIdentifiers=_collapsedLegacyAccountIdentifiers;
 @property(retain, nonatomic) NSMutableSet *collapsedAccountIdentifiers; // @synthesize collapsedAccountIdentifiers=_collapsedAccountIdentifiers;
 @property(retain, nonatomic) NSMutableSet *expandedFolderIdentifiers; // @synthesize expandedFolderIdentifiers=_expandedFolderIdentifiers;
-- (void).cxx_destruct;
 - (void)invalidateDerivedFolderState;
 @property(readonly, nonatomic) _Bool customFoldersExist;
 - (void)folderMovedFromOldFolder:(id)arg1 toNewFolder:(id)arg2;

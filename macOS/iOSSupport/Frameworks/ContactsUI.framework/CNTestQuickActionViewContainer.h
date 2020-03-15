@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_actionViewsByActionType;
 }
 
-@property(readonly, nonatomic) NSDictionary *actionViewsByActionType; // @synthesize actionViewsByActionType=_actionViewsByActionType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *actionViewsByActionType; // @synthesize actionViewsByActionType=_actionViewsByActionType;
 - (id)viewForActionType:(id)arg1;
 - (id)initWithActionTypes:(id)arg1;
 

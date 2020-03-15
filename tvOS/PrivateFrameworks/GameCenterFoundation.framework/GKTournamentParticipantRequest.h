@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) GKTournamentParticipantRequestInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(retain) GKTournamentParticipantRequestInternal *internal; // @synthesize internal=_internal;
 @property(nonatomic) struct _NSRange range; // @dynamic range;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;

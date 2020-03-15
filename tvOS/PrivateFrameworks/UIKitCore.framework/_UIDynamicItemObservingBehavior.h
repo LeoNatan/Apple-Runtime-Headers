@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
     struct CGVector _targetVelocity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long frameCount; // @synthesize frameCount=_frameCount;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double completionHandlerInvocationDelay; // @synthesize completionHandlerInvocationDelay=_completionHandlerInvocationDelay;
 @property(nonatomic) struct CGVector targetVelocity; // @synthesize targetVelocity=_targetVelocity;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)willMoveToAnimator:(id)arg1;
 

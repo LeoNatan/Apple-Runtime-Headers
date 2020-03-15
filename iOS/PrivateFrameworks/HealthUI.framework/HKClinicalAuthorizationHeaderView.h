@@ -15,10 +15,10 @@
     NSLayoutConstraint *_imageToTitleConstraint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *imageToTitleConstraint; // @synthesize imageToTitleConstraint=_imageToTitleConstraint;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentContentSizeCategory;
 @property(copy, nonatomic) NSString *title;

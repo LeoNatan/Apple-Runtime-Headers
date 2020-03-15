@@ -21,13 +21,13 @@
 
 + (id)errorWithCode:(int)arg1;
 + (_Bool)isSynchronizationAvailable;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long synchronizationMode; // @synthesize synchronizationMode=_synchronizationMode;
 @property(copy, nonatomic) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
 @property(copy, nonatomic) NSData *passwordData; // @synthesize passwordData=_passwordData;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *service; // @synthesize service=_service;
 @property(copy, nonatomic) NSString *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)query;
 @property(copy, nonatomic) NSString *password;
 @property(copy, nonatomic) id <NSCoding> passwordObject;

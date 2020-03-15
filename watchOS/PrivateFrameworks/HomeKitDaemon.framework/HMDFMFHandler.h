@@ -21,10 +21,10 @@
 
 + (id)logCategory;
 + (id)sharedHandler;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *queries; // @synthesize queries=_queries;
 @property(retain, nonatomic) HMDFMFRequest *currentFMFRequest; // @synthesize currentFMFRequest=_currentFMFRequest;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)queryFMFStatusWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 

@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Body; // @synthesize Body=_Body;
 @property(copy, nonatomic) NSArray *Header; // @synthesize Header=_Header;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

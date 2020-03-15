@@ -33,6 +33,7 @@
     CDUnknownBlockType _didResizeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didResizeHandler; // @synthesize didResizeHandler=_didResizeHandler;
 @property(readonly, nonatomic) struct CGSize textSize; // @synthesize textSize=_textSize;
 @property(nonatomic) _Bool frozen; // @synthesize frozen=_frozen;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) CLKFont *font; // @synthesize font=_font;
 @property(nonatomic) _Bool suffixSmallCaps; // @synthesize suffixSmallCaps=_suffixSmallCaps;
 @property(nonatomic) double time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (id)_cachedImageForDigit:(unsigned long long)arg1;
 - (void)_invalidateDigitImages;
 @property(retain, nonatomic) UIColor *textColor;

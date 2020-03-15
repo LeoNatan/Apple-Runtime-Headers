@@ -17,8 +17,8 @@
 
 + (id)authorizationProviderWithIdentityProviderURL:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 - (id)createRequest;
 @property(readonly, nonatomic) _Bool canPerformAuthorization;
 - (id)initWithURL:(id)arg1;

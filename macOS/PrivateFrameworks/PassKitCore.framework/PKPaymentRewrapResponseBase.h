@@ -13,8 +13,8 @@
     NSData *_rewrappedPaymentData;
 }
 
-@property(copy, nonatomic) NSData *rewrappedPaymentData; // @synthesize rewrappedPaymentData=_rewrappedPaymentData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *rewrappedPaymentData; // @synthesize rewrappedPaymentData=_rewrappedPaymentData;
 - (id)initWithData:(id)arg1;
 
 @end

@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(copy, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(nonatomic) _Bool showsWhenForeground; // @synthesize showsWhenForeground=_showsWhenForeground;
 @property(nonatomic, getter=isExclusive) _Bool exclusive; // @synthesize exclusive=_exclusive;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) int statusBarStyleOverrides; // @synthesize statusBarStyleOverrides=_statusBarStyleOverrides;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     UIActivityViewController *_activityViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityViewController *activityViewController; // @synthesize activityViewController=_activityViewController;
 @property(readonly, nonatomic) NSArray *activityItems; // @synthesize activityItems=_activityItems;
 @property(readonly, nonatomic) UIActivity *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (void)prepareToPerformActivity;
 - (void)performActivity;
 @property(readonly, nonatomic) long long activityCategory;

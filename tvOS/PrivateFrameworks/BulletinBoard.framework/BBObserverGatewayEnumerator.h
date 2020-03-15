@@ -18,13 +18,13 @@
     NSMutableSet *_gatewaysPlayedLightsAndSirens;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(retain, nonatomic) NSMutableSet *gatewaysPlayedLightsAndSirens; // @synthesize gatewaysPlayedLightsAndSirens=_gatewaysPlayedLightsAndSirens;
 @property(nonatomic) double gatewayTimeout; // @synthesize gatewayTimeout=_gatewayTimeout;
 @property(nonatomic) unsigned long long feeds; // @synthesize feeds=_feeds;
 @property(retain, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(copy, nonatomic) NSArray *gateways; // @synthesize gateways=_gateways;
-- (void).cxx_destruct;
 - (void)sendToDefaultGatewayToPlayLightsAndSirens:(_Bool)arg1;
 - (id)defaultGateway;
 - (void)attemptNextGatewayInEnumerator:(id)arg1 playLightsAndSirens:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

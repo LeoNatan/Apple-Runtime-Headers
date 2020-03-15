@@ -14,8 +14,8 @@
 }
 
 + (Class)containerViewClass;
-@property(readonly, nonatomic) NUIContainerView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NUIContainerView *containerView; // @synthesize containerView=_containerView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

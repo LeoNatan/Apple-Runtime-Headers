@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <SFContactAutoFillViewControllerFiller> _autoFiller;
 }
 
-@property(nonatomic) __weak id <SFContactAutoFillViewControllerFiller> autoFiller; // @synthesize autoFiller=_autoFiller;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SFContactAutoFillViewControllerFiller> autoFiller; // @synthesize autoFiller=_autoFiller;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

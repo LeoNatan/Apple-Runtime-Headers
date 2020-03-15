@@ -32,6 +32,7 @@
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
 + (id)objectPackageFromRequest:(id)arg1 globalMarshallingContext:(id)arg2;
 + (id)objectPackageFromRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long applicableTraits; // @synthesize applicableTraits=_applicableTraits;
 @property(readonly, nonatomic) NSArray *initializationWarningMessages; // @synthesize initializationWarningMessages=_initializationWarningMessages;
 @property(readonly, nonatomic) NSArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSArray *orderedObjects; // @synthesize orderedObjects=_orderedObjects;
 @property(readonly, nonatomic) NSArray *visibleWindows; // @synthesize visibleWindows=_visibleWindows;
 @property(readonly, nonatomic) NSArray *topLevelObjects; // @synthesize topLevelObjects=_topLevelObjects;
-- (void).cxx_destruct;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)associateObjectWithNewUniqueID:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;

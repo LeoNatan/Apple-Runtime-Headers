@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     float _currentGain;
 }
 
-@property(readonly) float currentGain; // @synthesize currentGain=_currentGain;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) float currentGain; // @synthesize currentGain=_currentGain;
 - (CDUnknownBlockType)internalRenderBlock;
 - (void)fadeToGain:(float)arg1 duration:(double)arg2;
 - (id)channelCapabilities;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSSet *_descendants;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *descendants; // @synthesize descendants=_descendants;
 @property(readonly, nonatomic) NSArray *traitStorages; // @synthesize traitStorages=_traitStorages;
 @property(readonly, nonatomic) __weak id topLevelObject; // @synthesize topLevelObject=_topLevelObject;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

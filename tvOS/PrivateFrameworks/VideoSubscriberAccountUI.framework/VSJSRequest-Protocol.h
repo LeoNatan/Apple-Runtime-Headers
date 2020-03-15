@@ -6,10 +6,9 @@
 
 #import <VideoSubscriberAccountUI/JSExport-Protocol.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSString;
 
 @protocol VSJSRequest <JSExport>
-@property(readonly, copy, nonatomic) NSDictionary *requestorInfo;
 @property(readonly, copy, nonatomic) NSArray *attributeNames;
 @property(readonly, copy, nonatomic) NSString *requestorVerificationToken;
 @property(readonly, copy, nonatomic) NSString *appleVerificationToken;

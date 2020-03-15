@@ -63,6 +63,7 @@
 + (id)stringForHue:(int)arg1;
 + (void)initialize;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property double inputMagentasSpread; // @synthesize inputMagentasSpread=_inputMagentasSpread;
 @property double inputMagentasLuminance; // @synthesize inputMagentasLuminance=_inputMagentasLuminance;
 @property double inputMagentasSaturation; // @synthesize inputMagentasSaturation=_inputMagentasSaturation;
@@ -93,7 +94,6 @@
 @property double inputRedsSaturation; // @synthesize inputRedsSaturation=_inputRedsSaturation;
 @property double inputRedsHueShift; // @synthesize inputRedsHueShift=_inputRedsHueShift;
 @property double inputRedsHueBase; // @synthesize inputRedsHueBase=_inputRedsHueBase;
-- (void).cxx_destruct;
 - (id)initWithOperation:(id)arg1;
 - (id)init;
 

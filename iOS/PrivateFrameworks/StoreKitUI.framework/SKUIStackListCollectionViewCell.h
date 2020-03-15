@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *listViews; // @synthesize listViews=_listViews;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
 - (_Bool)_isRightAligned;
 - (_Bool)layoutSubviewsWithFixedWidth:(struct CGRect)arg1 size:(struct CGSize *)arg2;
 - (_Bool)layoutSubviewsWithFlowLayout:(struct CGRect)arg1 size:(struct CGSize *)arg2;

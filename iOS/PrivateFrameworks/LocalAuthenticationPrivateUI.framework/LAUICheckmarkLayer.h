@@ -21,19 +21,19 @@
     UIColor *_primaryColor;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRevealed) _Bool revealed; // @synthesize revealed=_revealed;
 @property(readonly, copy, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
 @property(nonatomic) double lineWidthScale; // @synthesize lineWidthScale=_lineWidthScale;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_animationsDidResolve;
 - (void)_executeCompletions:(_Bool)arg1;
 - (void)_updateRevealedAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) struct CGSize aspectSize;
 - (void)setRevealed:(_Bool)arg1 animated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)setRevealed:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)setPrimaryColor:(struct UIColor *)arg1 animated:(_Bool)arg2;
-- (void)setPrimaryColor:(struct UIColor *)arg1;
+- (void)setPrimaryColor:(id)arg1 animated:(_Bool)arg2;
+- (void)setPrimaryColor:(id)arg1;
 - (void)layoutSublayers;
 - (void)dealloc;
 - (id)init;

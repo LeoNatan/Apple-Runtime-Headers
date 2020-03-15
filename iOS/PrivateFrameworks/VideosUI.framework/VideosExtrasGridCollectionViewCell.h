@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     VideosExtrasConstrainedArtworkContainerView *_artworkContainer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VideosExtrasConstrainedArtworkContainerView *artworkContainer; // @synthesize artworkContainer=_artworkContainer;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak IKLockupElement *lockupElement; // @synthesize lockupElement=_lockupElement;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)configureForLockup:(id)arg1 cellStyle:(id)arg2;

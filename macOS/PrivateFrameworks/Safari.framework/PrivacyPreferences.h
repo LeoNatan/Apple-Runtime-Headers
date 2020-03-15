@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSView *_mainContentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSView *mainContentView; // @synthesize mainContentView=_mainContentView;
 @property(retain, nonatomic) NSLayoutConstraint *applePaySubtextTrailingHorizontalSpacingConstraint; // @synthesize applePaySubtextTrailingHorizontalSpacingConstraint=_applePaySubtextTrailingHorizontalSpacingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *applePaySubtextBottomVerticalSpacingConstraint; // @synthesize applePaySubtextBottomVerticalSpacingConstraint=_applePaySubtextBottomVerticalSpacingConstraint;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property __weak NSButton *manageWebsiteDataButton; // @synthesize manageWebsiteDataButton=_manageWebsiteDataButton;
 @property(nonatomic) __weak NSButton *blockStorageAlwaysButton; // @synthesize blockStorageAlwaysButton=_blockStorageAlwaysButton;
 @property(nonatomic) __weak NSButton *policyEnabledButton; // @synthesize policyEnabledButton=_policyEnabledButton;
-- (void).cxx_destruct;
 - (void)_updateApplePayCapabilityDisclosureAllowedCheckbox;
 - (void)_updateStoragePolicyButtons;
 - (id)_blockStoragePolicyButtons;
@@ -65,7 +65,6 @@ __attribute__((visibility("hidden")))
 - (void)willBeDisplayed;
 - (void)moduleWillBeRemoved;
 - (void)moduleWasInstalled;
-- (void)awakeFromNib;
 - (id)imageForPreferenceNamed:(id)arg1;
 
 @end

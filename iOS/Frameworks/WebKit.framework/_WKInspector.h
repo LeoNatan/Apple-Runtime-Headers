@@ -16,10 +16,10 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+- (void)_setDiagnosticLoggingDelegate:(id)arg1;
 - (void)printErrorToConsole:(id)arg1;
 - (void)toggleElementSelection;
 - (void)togglePageProfiling;
-- (void)showTimelines;
 - (void)detach;
 - (void)attach;
 - (void)showMainResourceForFrame:(id)arg1;
@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) _Bool isFront;
 @property(readonly, nonatomic) _Bool isVisible;
 @property(readonly, nonatomic) _Bool isConnected;
+- (id)inspectorWebView;
 @property(readonly, nonatomic) WKWebView *webView;
 
 // Remaining properties

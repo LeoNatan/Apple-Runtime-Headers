@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_contextActionsRegistration;
 }
 
-@property(copy, nonatomic) NSMutableDictionary *contextActionsRegistration; // @synthesize contextActionsRegistration=_contextActionsRegistration;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSMutableDictionary *contextActionsRegistration; // @synthesize contextActionsRegistration=_contextActionsRegistration;
 - (void)_requestCellLayout;
 - (struct UIEdgeInsets)_contentInsetForReviewIndex:(long long)arg1;
 - (id)_contextActionRegistrationKeyWithCell:(id)arg1 indexPath:(id)arg2;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)allDefaultsInfo;
 + (id)userDefaults;
 + (id)instance;
-@property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (id)init;
 
 @end

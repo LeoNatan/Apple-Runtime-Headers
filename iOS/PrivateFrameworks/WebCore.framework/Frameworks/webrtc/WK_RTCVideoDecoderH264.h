@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCVideoDecoder-Protocol.h>
+#import <webrtc/RTCVideoDecoder-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCVideoDecoderH264 : NSObject <WK_RTCVideoDecoder>
+@interface WK_RTCVideoDecoderH264 : NSObject <RTCVideoDecoder>
 {
     struct opaqueCMFormatDescription *_videoFormat;
     struct OpaqueCMMemoryPool *_memoryPool;
@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 - (long long)releaseDecoder;
 - (void)setError:(int)arg1;
 - (void)setCallback:(CDUnknownBlockType)arg1;
+- (long long)decodeData:(const char *)arg1 size:(unsigned long long)arg2 timeStamp:(unsigned int)arg3;
 - (long long)decode:(id)arg1 missingFrames:(_Bool)arg2 codecSpecificInfo:(id)arg3 renderTimeMs:(long long)arg4;
-- (long long)startDecodeWithSettings:(id)arg1 numberOfCores:(int)arg2;
 - (long long)startDecodeWithNumberOfCores:(int)arg1;
 - (void)dealloc;
 - (id)init;

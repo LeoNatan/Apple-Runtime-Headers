@@ -14,9 +14,9 @@
     NSString *_universalSectionID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *universalSectionID; // @synthesize universalSectionID=_universalSectionID;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 
 @end
 

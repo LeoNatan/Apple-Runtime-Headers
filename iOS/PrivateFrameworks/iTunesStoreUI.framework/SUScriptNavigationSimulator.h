@@ -25,11 +25,11 @@
 + (void)stopTransition;
 + (void)startTransition;
 + (_Bool)transitioning;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *enqueuedTransitions; // @synthesize enqueuedTransitions=_enqueuedTransitions;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) long long lastVisibleIndex; // @synthesize lastVisibleIndex=_lastVisibleIndex;
 @property(nonatomic) long long initialIndex; // @synthesize initialIndex=_initialIndex;
-- (void).cxx_destruct;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 - (id)_className;

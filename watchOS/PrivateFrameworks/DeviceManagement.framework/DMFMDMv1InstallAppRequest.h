@@ -25,6 +25,7 @@
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool manage; // @synthesize manage=_manage;
 @property(copy, nonatomic) NSString *originator; // @synthesize originator=_originator;
 @property(copy, nonatomic) NSString *redemptionCode; // @synthesize redemptionCode=_redemptionCode;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -67,6 +67,7 @@
     struct CGRect _hostedPresentationFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect hostedPresentationFrame; // @synthesize hostedPresentationFrame=_hostedPresentationFrame;
 @property(nonatomic, getter=_isPunchingOut, setter=_setPunchingOut:) _Bool punchingOut; // @synthesize punchingOut=_punchingOut;
 @property(nonatomic, getter=_isUserUtteranceTapToEditInProgress, setter=_setUserUtteranceTapToEditInProgress:) _Bool userUtteranceTapToEditInProgress; // @synthesize userUtteranceTapToEditInProgress=_userUtteranceTapToEditInProgress;
@@ -92,7 +93,6 @@
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) __weak id <AFUISiriViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISiriViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)emitUIStateTransitionForSiriDismissal:(int)arg1 withDismissalReason:(int)arg2;
 - (_Bool)_canShowWhileLocked;
 - (void)_setRecordingStartedOnRoute:(_Bool)arg1;
@@ -271,6 +271,7 @@
 - (void)_sendBeginAppearanceTransitionIfReadyAnimated:(_Bool)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)_presentDeferredFlamesViewIfNecessary;
+- (void)invalidate;
 - (void)_informRemoteViewControllerOfParentIfNecessary;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentRemoteViewController;

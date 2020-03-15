@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)responseForFetcher:(id)arg1 withData:(id)arg2 MIMEType:(id)arg3;
 + (_Bool)isValidMIMEType:(id)arg1;
-@property(readonly, retain, nonatomic) id rootObject; // @synthesize rootObject=_rootObject;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) id rootObject; // @synthesize rootObject=_rootObject;
 - (id)initWithRootObject:(id)arg1 fetcher:(id)arg2;
 
 // Remaining properties

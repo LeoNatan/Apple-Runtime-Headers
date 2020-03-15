@@ -6,11 +6,11 @@
 
 #import <AvatarKit/AVTAvatar.h>
 
-@class AVTColorPreset, AVTComponent, AVTComponentInstance, AVTCompositor, AVTPreset, NSDictionary, NSString, SCNMaterial, SCNNode;
+@class AVTColorPreset, AVTComponent, AVTComponentInstance, AVTCompositor, AVTPreset, NSDictionary, NSString, SCNMaterial, SCNNode, UIColor;
 
 @interface AVTMemoji : AVTAvatar
 {
-    struct UIColor *_backgroundColor;
+    UIColor *_backgroundColor;
     _Bool _needsUpdate;
     SCNNode *_componentContainer;
     long long _componentDirtyMask;
@@ -35,7 +35,7 @@
 }
 
 + (double)skinTextureSize;
-+ (struct UIColor *)rndColor;
++ (id)rndColor;
 + (float)rndRange:(float)arg1:(float)arg2;
 + (unsigned long long)rndIndex:(unsigned long long)arg1;
 + (float)rnd;
@@ -88,14 +88,14 @@
 - (id)colorPresetForCategory:(long long)arg1;
 - (void)setColorPreset:(id)arg1 forCategory:(long long)arg2;
 - (void)_applyColorPreset:(long long)arg1;
-- (void)setBackgroundColor:(struct UIColor *)arg1;
-- (struct UIColor *)backgroundColor;
+- (void)setBackgroundColor:(id)arg1;
+- (id)backgroundColor;
 - (void)_invalidateAOImage;
-- (struct UIColor *)lipsColor;
-- (struct UIColor *)facialhairColor;
-- (struct UIColor *)eyebrowsColor;
-- (struct UIColor *)hairColor;
-- (struct UIColor *)skinColor;
+- (id)lipsColor;
+- (id)facialhairColor;
+- (id)eyebrowsColor;
+- (id)hairColor;
+- (id)skinColor;
 - (void)morphVariantForComponentType:(long long)arg1 facialFeature:(long long)arg2 didChangeWithVariantName:(id)arg3;
 - (void)updateNodeHierarchyMorphVariantWithType:(long long)arg1 variant:(id)arg2 node:(id)arg3;
 - (void)updateHeadMorphVariantWithType:(long long)arg1 variant:(id)arg2;

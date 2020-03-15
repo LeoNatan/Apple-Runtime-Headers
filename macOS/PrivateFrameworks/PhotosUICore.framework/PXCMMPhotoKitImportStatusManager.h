@@ -17,8 +17,8 @@
     BOOL _supportsStateSimulation;
 }
 
-@property(readonly, nonatomic) BOOL supportsStateSimulation; // @synthesize supportsStateSimulation=_supportsStateSimulation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL supportsStateSimulation; // @synthesize supportsStateSimulation=_supportsStateSimulation;
 - (void)removeAssetImportStatusObserver:(id)arg1;
 - (void)addAssetImportStatusObserver:(id)arg1;
 - (long long)_simulatedStateForAsset:(id)arg1;

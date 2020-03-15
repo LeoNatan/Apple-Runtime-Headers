@@ -35,6 +35,7 @@
 }
 
 + (BOOL)supportsNotificationName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTLocationStore *locationStore; // @synthesize locationStore=_locationStore;
@@ -47,13 +48,12 @@
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) RTPowerAssertion *powerAssertion; // @synthesize powerAssertion=_powerAssertion;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *stopUpdatingLocationTimer; // @synthesize stopUpdatingLocationTimer=_stopUpdatingLocationTimer;
 @property(nonatomic) BOOL monitoringLocations; // @synthesize monitoringLocations=_monitoringLocations;
 @property(nonatomic) BOOL leechingLocations; // @synthesize leechingLocations=_leechingLocations;
 @property(nonatomic) BOOL updating; // @synthesize updating=_updating;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *stopUpdatingLocationTimer; // @synthesize stopUpdatingLocationTimer=_stopUpdatingLocationTimer;
 @property(retain, nonatomic) NSMutableArray *currentLocationHandlers; // @synthesize currentLocationHandlers=_currentLocationHandlers;
 @property(retain, nonatomic) CLLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
-- (void).cxx_destruct;
 - (void)submitHarvestSample:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)onAuthorizationNotification:(id)arg1;
 - (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -79,7 +79,6 @@
 - (void)shouldLeechLocations;
 - (void)stopUpdatingLocation;
 - (void)startUpdatingLocation;
-- (void)dealloc;
 - (void)_shutdown;
 - (void)_setup;
 - (void)_createLocationManager;

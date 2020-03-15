@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(copy) NSURL *productURL; // @synthesize productURL=_productURL;
 @property(copy) NSDictionary *evaluatorMetaInfo; // @synthesize evaluatorMetaInfo=_evaluatorMetaInfo;
 @property(copy) NSString *interfaceType; // @synthesize interfaceType=_interfaceType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToInstallableItem:(id)arg1;

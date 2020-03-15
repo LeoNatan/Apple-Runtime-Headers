@@ -34,8 +34,8 @@
     EDPersistenceDatabaseConnection *_connection;
 }
 
-@property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) EFSQLPreparedStatement *deleteSubjectsStatement;
 @property(readonly, nonatomic) EFSQLPreparedStatement *deleteAddressesStatement;
 @property(readonly, nonatomic) EFSQLPreparedStatement *deleteRecipientStatement;

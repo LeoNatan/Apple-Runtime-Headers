@@ -41,6 +41,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)allowedSecureArchivingClasses_so;
 + (id)chatDisplayController;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *viewConfigurationStorage; // @synthesize viewConfigurationStorage=_viewConfigurationStorage;
 @property(readonly, nonatomic, getter=isJoiningInvitation) _Bool joiningInvitation; // @synthesize joiningInvitation=_joiningInvitation;
 @property(nonatomic) BOOL sendingMessage; // @synthesize sendingMessage=_sendingMessage;
@@ -60,7 +61,6 @@
 @property(readonly, copy, nonatomic) NSString *defaultTitle; // @synthesize defaultTitle=_defaultTitle;
 @property(copy, nonatomic) NSString *customTitle; // @synthesize customTitle=_customTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (long long)compareForConversationListSorting:(id)arg1;
 - (long long)compareBySequenceNumberAndDateDescending:(id)arg1;
 - (id)deviceIndependentID;
@@ -108,6 +108,7 @@
 @property(readonly) BOOL canRemoveRecipientHandles; // @dynamic canRemoveRecipientHandles;
 @property(readonly, nonatomic) BOOL canAddRecipientHandles; // @dynamic canAddRecipientHandles;
 @property(readonly, nonatomic) NSOrderedSet *actionableHandles; // @dynamic actionableHandles;
+@property(readonly, nonatomic) NSArray *recipientHandlesArray;
 @property(readonly) BOOL recipientIsChat; // @dynamic recipientIsChat;
 @property(readonly, nonatomic) BOOL canInsertAttachmentsIntoInputLineContents; // @dynamic canInsertAttachmentsIntoInputLineContents;
 @property(readonly) BOOL inputLineContainsFileTransfers; // @dynamic inputLineContainsFileTransfers;

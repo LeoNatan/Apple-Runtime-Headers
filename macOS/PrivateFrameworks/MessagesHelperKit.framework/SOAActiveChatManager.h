@@ -16,10 +16,10 @@
 }
 
 + (id)weakSharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *chatGUIDToLastPostedMessage; // @synthesize chatGUIDToLastPostedMessage=_chatGUIDToLastPostedMessage;
 @property(retain, nonatomic) NSMutableDictionary *chatGUIDToLastReadMessage; // @synthesize chatGUIDToLastReadMessage=_chatGUIDToLastReadMessage;
 @property(nonatomic) __weak NSXPCConnection *delegateConnection; // @synthesize delegateConnection=_delegateConnection;
-- (void).cxx_destruct;
 - (BOOL)shouldPostNotificationForMessage:(id)arg1 inChat:(id)arg2;
 - (void)setLastPostedMessage:(id)arg1 forChatGUID:(id)arg2;
 - (void)setLastReadMessage:(id)arg1 forChatGUID:(id)arg2;

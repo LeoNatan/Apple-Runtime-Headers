@@ -15,9 +15,9 @@
     NSMutableOrderedSet *_identifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *identifiers; // @synthesize identifiers=_identifiers;
 @property(retain, nonatomic) NSMutableDictionary *calls; // @synthesize calls=_calls;
-- (void).cxx_destruct;
 - (void)_trimCache;
 - (id)callWithUniqueProxyIdentifier:(id)arg1;
 - (void)addCall:(id)arg1;

@@ -19,8 +19,8 @@
 }
 
 + (BOOL)isCyclerEnabled;
-@property(readonly, nonatomic) id <WBSCyclerTestTarget> testTarget; // @synthesize testTarget=_testTarget;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <WBSCyclerTestTarget> testTarget; // @synthesize testTarget=_testTarget;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)connect;
 - (id)initWithTestTarget:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *formattedPrice; // @synthesize formattedPrice=_formattedPrice;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithInAppPurchaseDictionary:(id)arg1;

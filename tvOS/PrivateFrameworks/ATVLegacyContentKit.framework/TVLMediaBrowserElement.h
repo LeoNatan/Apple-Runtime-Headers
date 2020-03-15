@@ -16,11 +16,11 @@
     NSString *_gridLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *gridLayout; // @synthesize gridLayout=_gridLayout;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) TVLInitialSelectionElement *initialSelection; // @synthesize initialSelection=_initialSelection;
 @property(retain, nonatomic) TVLHeaderWithCountAndButtonsElement *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

@@ -21,6 +21,7 @@
     NSNumber *_trackingSegmentIndex;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *trackingSegmentIndex; // @synthesize trackingSegmentIndex=_trackingSegmentIndex;
 @property(retain, nonatomic) UILongPressGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) NSArray *segmentViews; // @synthesize segmentViews=_segmentViews;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(retain, nonatomic) NSNumber *selectedSegmentIndex; // @synthesize selectedSegmentIndex=_selectedSegmentIndex;
 @property(copy, nonatomic) CDUnknownBlockType selectionChangeHandler; // @synthesize selectionChangeHandler=_selectionChangeHandler;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasCenteredContent;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

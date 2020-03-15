@@ -15,8 +15,8 @@
 
 + (id)ckQueue;
 + (id)sharedInstance;
-@property(readonly, nonatomic) CKContainer *nickNameContainer; // @synthesize nickNameContainer=_nickNameContainer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKContainer *nickNameContainer; // @synthesize nickNameContainer=_nickNameContainer;
 - (id)lockdownManager;
 - (_Bool)shouldUseDevNickNameContainer;
 - (id)_nickNameContainer;

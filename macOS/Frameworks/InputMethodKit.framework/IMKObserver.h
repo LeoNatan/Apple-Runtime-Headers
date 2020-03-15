@@ -16,11 +16,11 @@
     CDUnknownBlockType _observerBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly, copy, nonatomic) NSString *observedKeyPath; // @synthesize observedKeyPath=_observedKeyPath;
 @property __weak NSObject *observedObject; // @synthesize observedObject=_observedObject;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) BOOL isObserving;
 - (void)endObservation;

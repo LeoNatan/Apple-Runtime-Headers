@@ -14,8 +14,8 @@
 }
 
 + (id)shared;
-@property(readonly, nonatomic) NSString *specVersion; // @synthesize specVersion=_specVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *specVersion; // @synthesize specVersion=_specVersion;
 - (CDUnknownBlockType)purgeClassBlock;
 - (CDUnknownBlockType)objectValueClassBlock;
 - (id)initWithSpecVersion:(id)arg1;

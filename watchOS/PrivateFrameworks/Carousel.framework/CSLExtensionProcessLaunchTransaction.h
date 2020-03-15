@@ -23,6 +23,7 @@
     FBWaitForProcessDeathTransaction *_deathTransaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBWaitForProcessDeathTransaction *deathTransaction; // @synthesize deathTransaction=_deathTransaction;
 @property(nonatomic) _Bool needsTerminationHold; // @synthesize needsTerminationHold=_needsTerminationHold;
 @property(readonly, nonatomic) FBProcessExecutionContext *executionContext; // @synthesize executionContext=_executionContext;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) CSLApplicationInfo *applicationInfo; // @synthesize applicationInfo=_applicationInfo;
 @property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 @property(readonly, nonatomic) id <PKPlugIn> plugin; // @synthesize plugin=_plugin;
-- (void).cxx_destruct;
 - (_Bool)_shouldFailForChildTransaction:(id)arg1;
 - (void)_childTransactionDidComplete:(id)arg1;
 - (void)extensionFailedToLaunch;

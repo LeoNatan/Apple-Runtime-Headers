@@ -6,7 +6,7 @@
 
 #import <NanoTimeKitCompanion/NTKAnalogFaceView.h>
 
-@class NTKEditOptionPickerView, NTKNumeralsHourViewsManager, NTKUtilityComplicationFactory;
+@class NSNumber, NTKEditOptionPickerView, NTKNumeralsHourViewsManager, NTKUtilityComplicationFactory;
 
 @interface NTKNumeralsAnalogFaceView : NTKAnalogFaceView
 {
@@ -18,7 +18,7 @@
     NTKEditOptionPickerView *_stylePickerView;
     NTKNumeralsHourViewsManager *_hourViewsManager;
     unsigned long long _selectedStyle;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
 }
 
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;

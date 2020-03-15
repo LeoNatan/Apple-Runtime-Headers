@@ -14,9 +14,9 @@
     unsigned long long _uriHash;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long uriHash; // @synthesize uriHash=_uriHash;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *uri; // @synthesize uri=_uri;
-- (void).cxx_destruct;
 - (id)initWithXPCURI:(id)arg1;
 - (id)init;
 

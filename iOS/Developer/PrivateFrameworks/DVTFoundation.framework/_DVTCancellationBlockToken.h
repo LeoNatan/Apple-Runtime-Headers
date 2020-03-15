@@ -16,8 +16,8 @@
     CDUnknownBlockType _cancellationBlock;
 }
 
-@property(copy) CDUnknownBlockType cancellationBlock; // @synthesize cancellationBlock=_cancellationBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType cancellationBlock; // @synthesize cancellationBlock=_cancellationBlock;
 - (void)runCancellatonBlockWithOperation:(id)arg1;
 - (void)waitForCancellation;
 - (id)initWithCancellationBlock:(CDUnknownBlockType)arg1;

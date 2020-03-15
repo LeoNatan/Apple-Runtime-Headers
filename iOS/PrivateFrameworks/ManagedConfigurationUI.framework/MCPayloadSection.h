@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_payloadInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *payloadInfos; // @synthesize payloadInfos=_payloadInfos;
 @property(retain, nonatomic) NSString *sectionFooter; // @synthesize sectionFooter=_sectionFooter;
 @property(retain, nonatomic) NSString *sectionTitle; // @synthesize sectionTitle=_sectionTitle;
-- (void).cxx_destruct;
 - (id)initWithSectionTitle:(id)arg1 footer:(id)arg2 payloadInfos:(id)arg3;
 - (id)init;
 

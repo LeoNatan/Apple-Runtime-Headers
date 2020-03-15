@@ -22,11 +22,11 @@
 
 + (id)boundarySupplementaryItemWithSize:(id)arg1 elementKind:(id)arg2 alignment:(long long)arg3 offset:(struct CGPoint)arg4;
 + (id)boundarySupplementaryItemWithSize:(id)arg1 elementKind:(id)arg2 alignment:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) _Bool pinToVisibleBounds; // @synthesize pinToVisibleBounds=_pinToVisibleBounds;
 @property(nonatomic) _Bool extendsBoundary; // @synthesize extendsBoundary=_extendsBoundary;
-- (void).cxx_destruct;
 - (id)_apiRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSize:(id)arg1 elementKind:(id)arg2 alignment:(long long)arg3 offset:(struct CGPoint)arg4 zIndex:(long long)arg5 contentInsets:(struct NSDirectionalEdgeInsets)arg6 extendsBoundary:(_Bool)arg7 pinToVisibleBounds:(_Bool)arg8;

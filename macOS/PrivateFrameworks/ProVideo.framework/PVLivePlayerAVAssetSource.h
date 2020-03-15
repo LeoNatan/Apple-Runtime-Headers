@@ -39,11 +39,11 @@
     int status;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) BOOL repeatFrames; // @synthesize repeatFrames;
 @property(nonatomic) BOOL loopPlayback; // @synthesize loopPlayback;
 @property int status; // @synthesize status;
-- (void).cxx_destruct;
 - (void)outputSequenceWasFlushed:(id)arg1;
 - (void)outputMediaDataWillChange:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -21,9 +21,12 @@
     NSString *_subtitle;
     NSString *_location;
     HKClinicalBrand *_brand;
+    NSString *_countryCode;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(readonly, nonatomic, getter=isSupported) _Bool supported; // @synthesize supported=_supported;
 @property(readonly, copy, nonatomic) HKClinicalBrand *brand; // @synthesize brand=_brand;
 @property(readonly, copy, nonatomic) NSString *location; // @synthesize location=_location;
@@ -31,14 +34,13 @@
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *batchID; // @synthesize batchID=_batchID;
 @property(readonly, copy, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
-- (void).cxx_destruct;
 - (id)informationURL;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithExternalID:(id)arg1 batchID:(id)arg2 title:(id)arg3 subtitle:(id)arg4 location:(id)arg5 supported:(_Bool)arg6 brand:(id)arg7;
+- (id)initWithExternalID:(id)arg1 batchID:(id)arg2 title:(id)arg3 subtitle:(id)arg4 location:(id)arg5 supported:(_Bool)arg6 countryCode:(id)arg7 brand:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

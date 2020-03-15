@@ -28,6 +28,7 @@
     NSString *_preferredFilename;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *preferredFilename; // @synthesize preferredFilename=_preferredFilename;
 @property(readonly, copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(copy, nonatomic) CDUnknownBlockType fileWrapperCompletionBlock; // @synthesize fileWrapperCompletionBlock=_fileWrapperCompletionBlock;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSPort *downloadPort; // @synthesize downloadPort=_downloadPort;
 @property(retain, nonatomic) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
 @property(retain, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)_persistDownloadedFileWrapper:(id)arg1 originalContentsURL:(id)arg2;

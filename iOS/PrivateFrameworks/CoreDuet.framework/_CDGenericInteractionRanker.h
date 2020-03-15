@@ -39,6 +39,7 @@
 }
 
 + (_Bool)isDateInWeekend:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rankAggregationMethod; // @synthesize rankAggregationMethod=_rankAggregationMethod;
 @property double contactNameKeywordMatchWeight; // @synthesize contactNameKeywordMatchWeight=_contactNameKeywordMatchWeight;
 @property double keywordWeight; // @synthesize keywordWeight=_keywordWeight;
@@ -63,7 +64,6 @@
 @property(retain) NSString *referenceLocationUUID; // @synthesize referenceLocationUUID=_referenceLocationUUID;
 @property(retain) NSArray *seedContacts; // @synthesize seedContacts=_seedContacts;
 @property(retain) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
-- (void).cxx_destruct;
 - (_Bool)contactIsAllowed:(id)arg1;
 - (double)rankContact:(id)arg1;
 - (_Bool)canRankContacts;

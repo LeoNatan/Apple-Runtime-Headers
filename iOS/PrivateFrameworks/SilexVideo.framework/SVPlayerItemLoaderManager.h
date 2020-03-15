@@ -17,9 +17,9 @@
     SVWeakObjectCache *_playerItemLoaders;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVWeakObjectCache *playerItemLoaders; // @synthesize playerItemLoaders=_playerItemLoaders;
 @property(readonly, nonatomic) id <SVPlayerItemLoaderFactory> playerItemLoaderFactory; // @synthesize playerItemLoaderFactory=_playerItemLoaderFactory;
-- (void).cxx_destruct;
 - (id)playerItemLoaderForVideo:(id)arg1;
 - (id)initWithPlayerItemLoaderFactory:(id)arg1;
 

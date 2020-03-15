@@ -20,6 +20,7 @@
     NSArray *_matchedRanges;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *matchedRanges; // @synthesize matchedRanges=_matchedRanges;
 @property(retain) NSArray *sentenceEntities; // @synthesize sentenceEntities=_sentenceEntities;
 @property(retain) NSString *taggedText; // @synthesize taggedText=_taggedText;
@@ -28,7 +29,6 @@
 @property(getter=isSensitive) int sensitive; // @synthesize sensitive=_sensitive;
 @property unsigned long long sentenceType; // @synthesize sentenceType=_sentenceType;
 @property(retain) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

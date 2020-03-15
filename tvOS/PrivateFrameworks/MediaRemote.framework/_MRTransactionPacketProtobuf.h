@@ -24,12 +24,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalWritePosition; // @synthesize totalWritePosition=_totalWritePosition;
 @property(nonatomic) unsigned long long totalLength; // @synthesize totalLength=_totalLength;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSData *packetData; // @synthesize packetData=_packetData;
 @property(retain, nonatomic) _MRTransactionKeyProtobuf *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

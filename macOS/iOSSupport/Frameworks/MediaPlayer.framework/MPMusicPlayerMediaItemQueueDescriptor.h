@@ -16,8 +16,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) MPMediaItem *startItem; // @synthesize startItem=_startItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPMediaItem *startItem; // @synthesize startItem=_startItem;
+- (BOOL)isEmpty;
 @property(readonly, nonatomic) MPMediaItemCollection *itemCollection;
 @property(readonly, copy, nonatomic) MPMediaQuery *query;
 - (void)setEndTime:(double)arg1 forItem:(id)arg2;

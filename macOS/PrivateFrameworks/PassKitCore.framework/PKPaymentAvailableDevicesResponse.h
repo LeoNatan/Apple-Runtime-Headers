@@ -13,8 +13,8 @@
     NSDictionary *_devices;
 }
 
-@property(copy, nonatomic) NSDictionary *devices; // @synthesize devices=_devices;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *devices; // @synthesize devices=_devices;
 - (id)initWithData:(id)arg1;
 
 @end

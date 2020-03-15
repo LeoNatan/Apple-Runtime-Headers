@@ -28,13 +28,13 @@
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
 + (BOOL)canMakePayments;
 + (void)requestViewControllerWithPaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentAuthorizationViewControllerPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(retain, nonatomic) NSUUID *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(retain, nonatomic) PKExtension *hostExtension; // @synthesize hostExtension=_hostExtension;
 @property(retain, nonatomic) PKExtensionHostContext *paymentAuthorizationHostContext; // @synthesize paymentAuthorizationHostContext=_paymentAuthorizationHostContext;
 @property(retain, nonatomic) PKExtensionRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id <PKPaymentAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)extensionRemoteViewController:(id)arg1 didTerminateWithError:(id)arg2;
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
 - (void)connectionDidOpen;

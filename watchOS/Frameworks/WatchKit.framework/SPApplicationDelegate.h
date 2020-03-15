@@ -78,6 +78,7 @@
     double _busyDisplayTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SPViewController *initialViewController; // @synthesize initialViewController=_initialViewController;
 @property(nonatomic) _Bool showOverlayWindow; // @synthesize showOverlayWindow=_showOverlayWindow;
 @property(retain, nonatomic) SPFullScreenWindow *overlayWindow; // @synthesize overlayWindow=_overlayWindow;
@@ -127,7 +128,6 @@
 @property(nonatomic) _Bool displayingDisconnectedScreen; // @synthesize displayingDisconnectedScreen=_displayingDisconnectedScreen;
 @property(nonatomic) _Bool displayingFirstUnlockScreen; // @synthesize displayingFirstUnlockScreen=_displayingFirstUnlockScreen;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (id)extendLaunchTest;
 - (_Bool)runTest:(id)arg1 options:(id)arg2;
 - (void)viewControllerDidUpdateFullScreen:(id)arg1;

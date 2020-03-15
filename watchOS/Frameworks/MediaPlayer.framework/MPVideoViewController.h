@@ -47,9 +47,9 @@
     UIAlertController *_alertController;
 }
 
-+ (int)_activityIndicatorViewStyle;
 + (struct CGRect)calculateArtworkImageViewFrameInRect:(struct CGRect)arg1;
 + (_Bool)supportsFullscreenDisplay;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visibleParts; // @synthesize visibleParts=_visibleParts;
 @property(retain, nonatomic) UIImage *posterImage; // @synthesize posterImage=_posterImage;
 @property(nonatomic) int itemTypeOverride; // @synthesize itemTypeOverride=_itemTypeOverride;
@@ -57,7 +57,6 @@
 @property(nonatomic) unsigned long long desiredParts; // @synthesize desiredParts=_desiredParts;
 @property(retain, nonatomic) UIColor *backstopColor; // @synthesize backstopColor=_backstopColor;
 @property(nonatomic) int artworkImageStyle; // @synthesize artworkImageStyle=_artworkImageStyle;
-- (void).cxx_destruct;
 - (void)_updateProgressControlForItem:(id)arg1;
 - (void)_updateIdleTimerDisabledFromPlaybackState:(int)arg1;
 - (_Bool)_showDestinationPlaceholder;

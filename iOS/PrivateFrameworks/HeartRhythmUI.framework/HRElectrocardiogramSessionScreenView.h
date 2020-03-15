@@ -16,11 +16,11 @@
     UILabel *_countdownUnitLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *countdownUnitLabel; // @synthesize countdownUnitLabel=_countdownUnitLabel;
 @property(readonly, nonatomic) UILabel *countdownValueLabel; // @synthesize countdownValueLabel=_countdownValueLabel;
 @property(readonly, nonatomic) UIImageView *waveformView; // @synthesize waveformView=_waveformView;
 @property(readonly, nonatomic) _Bool isLargeDevice; // @synthesize isLargeDevice=_isLargeDevice;
-- (void).cxx_destruct;
 - (void)_setUpUI;
 - (id)initWithLargeDevice:(_Bool)arg1;
 

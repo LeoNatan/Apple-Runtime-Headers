@@ -16,10 +16,10 @@
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
+- (void).cxx_destruct;
 @property(getter=isUsingRubberbanding) BOOL usingRubberbanding; // @synthesize usingRubberbanding=_usingRubberbanding;
 @property BOOL scrollsInLineIncrements; // @synthesize scrollsInLineIncrements=_scrollsInLineIncrements;
 @property(retain) IMKUICandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
-- (void).cxx_destruct;
 - (struct CGRect)adjustScroll:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -22,12 +22,12 @@
     HFItem *_selectedDateOptionItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem *selectedDateOptionItem; // @synthesize selectedDateOptionItem=_selectedDateOptionItem;
 @property(readonly, nonatomic) HUTriggerConditionEditorItemModuleController *conditionModuleController; // @synthesize conditionModuleController=_conditionModuleController;
 @property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFTimerTriggerBuilder *timerTriggerBuilder; // @synthesize timerTriggerBuilder=_timerTriggerBuilder;
-- (void).cxx_destruct;
 - (void)conditionEditorModuleController:(id)arg1 dismissDetailViewController:(id)arg2;
 - (void)conditionEditorModuleController:(id)arg1 presentDetailViewController:(id)arg2;
 - (id)_selectedSignificantEvent;

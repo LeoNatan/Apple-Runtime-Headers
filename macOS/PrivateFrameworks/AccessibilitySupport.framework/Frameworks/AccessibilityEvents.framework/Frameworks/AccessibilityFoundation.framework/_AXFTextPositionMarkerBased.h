@@ -14,8 +14,8 @@
     AXFUIElement *__webAreaUIElement;
 }
 
-@property(retain, nonatomic) AXFUIElement *_webAreaUIElement; // @synthesize _webAreaUIElement=__webAreaUIElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXFUIElement *_webAreaUIElement; // @synthesize _webAreaUIElement=__webAreaUIElement;
 - (long long)_distanceBetweenTextMarker:(struct __AXTextMarker *)arg1 andTextMarker:(struct __AXTextMarker *)arg2;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;

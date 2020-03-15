@@ -22,8 +22,8 @@
     CDUnknownBlockType _visibilityBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType visibilityBlock; // @synthesize visibilityBlock=_visibilityBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType visibilityBlock; // @synthesize visibilityBlock=_visibilityBlock;
 - (void)_presentWaitingToDownloadAlert;
 - (void)_updatePinningStatus;
 - (void)_handleMediaSyncInfoDidUpdateNotification:(id)arg1;

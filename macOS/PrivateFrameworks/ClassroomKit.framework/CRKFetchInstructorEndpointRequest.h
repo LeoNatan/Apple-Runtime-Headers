@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
-@property(retain, nonatomic) NSURL *classroomAppBundleURL; // @synthesize classroomAppBundleURL=_classroomAppBundleURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *classroomAppBundleURL; // @synthesize classroomAppBundleURL=_classroomAppBundleURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

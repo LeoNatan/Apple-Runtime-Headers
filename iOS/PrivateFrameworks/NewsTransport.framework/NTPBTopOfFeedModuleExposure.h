@@ -24,10 +24,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *feedViewExposureId; // @synthesize feedViewExposureId=_feedViewExposureId;
 @property(retain, nonatomic) NSData *moduleExposureId; // @synthesize moduleExposureId=_moduleExposureId;
 @property(nonatomic) int moduleItemCount; // @synthesize moduleItemCount=_moduleItemCount;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -39,6 +39,7 @@
     MPCPlayerResponseItem *_nowPlayingItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCPlayerResponseItem *nowPlayingItem; // @synthesize nowPlayingItem=_nowPlayingItem;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MPCPlayerResponse *lastReceivedResponse; // @synthesize lastReceivedResponse=_lastReceivedResponse;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) MPModelSong *currentPlayingSong; // @synthesize currentPlayingSong;
 @property(nonatomic) _Bool limitedUI; // @synthesize limitedUI;
 @property(nonatomic) __weak Class tableCellClass; // @synthesize tableCellClass;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *nowPlayingBundleID;
 - (void)_performChangeRequest:(id)arg1;
 - (id)nowPlayingViewControllerGetPlaybackRate:(id)arg1;

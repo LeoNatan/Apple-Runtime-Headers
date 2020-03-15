@@ -15,10 +15,10 @@
     NSTextField *_PIDTextField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *PIDTextField; // @synthesize PIDTextField=_PIDTextField;
 @property(nonatomic) __weak NSTextField *threadIDTextField; // @synthesize threadIDTextField=_threadIDTextField;
 @property(nonatomic) __weak NSTextField *activityIDTextField; // @synthesize activityIDTextField=_activityIDTextField;
-- (void).cxx_destruct;
 - (void)updateViewWithMessage:(id)arg1;
 
 @end

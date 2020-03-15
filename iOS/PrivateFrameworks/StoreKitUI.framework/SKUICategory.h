@@ -19,13 +19,13 @@
     id <SKUIArtworkProviding> _artworkProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SKUIArtworkProviding> artworkProvider; // @synthesize artworkProvider=_artworkProvider;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(readonly, nonatomic) NSString *parentLabel; // @synthesize parentLabel=_parentLabel;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(readonly, nonatomic) long long categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
-- (void).cxx_destruct;
 - (id)subcategoryContainingURL:(id)arg1;
 - (_Bool)containsURL:(id)arg1;
 - (id)initWithCategoryDictionary:(id)arg1;

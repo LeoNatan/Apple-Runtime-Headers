@@ -44,6 +44,7 @@
 
 + (id)viewControllerForSourceType:(long long)arg1;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain) CNPhotoLikenessMaskView *maskView; // @synthesize maskView=_maskView;
 @property double viewFinderCornerRadius; // @synthesize viewFinderCornerRadius=_viewFinderCornerRadius;
 @property double viewFinderOffset; // @synthesize viewFinderOffset=_viewFinderOffset;
@@ -67,7 +68,6 @@
 @property double photoHeight; // @synthesize photoHeight=_photoHeight;
 @property(retain) NSTableColumn *tableColumn; // @synthesize tableColumn=_tableColumn;
 @property(retain) NSOutlineView *sourcesTable; // @synthesize sourcesTable=_sourcesTable;
-- (void).cxx_destruct;
 - (void)setZoomFraction:(double)arg1;
 - (void)displayViewFinderMask;
 - (void)layout;

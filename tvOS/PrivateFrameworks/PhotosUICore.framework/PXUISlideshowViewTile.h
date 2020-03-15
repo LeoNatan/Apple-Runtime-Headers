@@ -22,12 +22,12 @@
     UIView *__slideshowSnapshotView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSlideshowSnapshotView:) UIView *_slideshowSnapshotView; // @synthesize _slideshowSnapshotView=__slideshowSnapshotView;
 @property(retain, nonatomic, setter=_setContentView:) UIView *_contentView; // @synthesize _contentView=__contentView;
 @property(nonatomic) __weak id <PXUISlideshowViewTileDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isSlideshowViewHidden) _Bool slideshowViewHidden; // @synthesize slideshowViewHidden=_slideshowViewHidden;
 @property(retain, nonatomic) UIViewController *slideshowViewController; // @synthesize slideshowViewController=_slideshowViewController;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)didAnimateToGeometry:(struct PXTileGeometry)arg1 toUserData:(id)arg2 withOptions:(id)arg3;

@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) CAMCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
 @property(readonly, nonatomic) NSData *adjustmentsData; // @synthesize adjustmentsData=_adjustmentsData;
@@ -43,7 +44,6 @@
 @property(readonly, copy, nonatomic) NSURL *linkedDestinationURL; // @synthesize linkedDestinationURL=_linkedDestinationURL;
 @property(readonly, copy, nonatomic) NSURL *filteredLocalDestinationURL; // @synthesize filteredLocalDestinationURL=_filteredLocalDestinationURL;
 @property(readonly, copy, nonatomic) NSURL *localDestinationURL; // @synthesize localDestinationURL=_localDestinationURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1 filteredLocalDestinationURL:(id)arg2 linkedURL:(id)arg3 filteredLinkedURL:(id)arg4 videoThumbnailPath:(id)arg5 UUID:(id)arg6 duration:(CDStruct_1b6d18a9)arg7 dimensions:(CDStruct_79c71658)arg8 stillPersistenceUUID:(id)arg9 stillDisplayTime:(CDStruct_1b6d18a9)arg10 creationDate:(id)arg11 adjustmentsData:(id)arg12 coordinationInfo:(id)arg13 error:(id)arg14;

@@ -18,11 +18,11 @@
 
 + (void)_buildMapIfNeeded;
 + (id)displayInformationForPerSitePreference:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int displayOption; // @synthesize displayOption=_displayOption;
 @property(readonly, copy, nonatomic) NSString *localizedClearAllSettingsPrompt; // @synthesize localizedClearAllSettingsPrompt=_localizedClearAllSettingsPrompt;
 @property(readonly, copy, nonatomic) NSString *localizedAllWebsiteSettingsTitle; // @synthesize localizedAllWebsiteSettingsTitle=_localizedAllWebsiteSettingsTitle;
 @property(readonly, copy, nonatomic) NSString *localizedSiteSpecificSettingsTitle; // @synthesize localizedSiteSpecificSettingsTitle=_localizedSiteSpecificSettingsTitle;
-- (void).cxx_destruct;
 - (id)_initWithLocalizedSiteSpecificSettingsTitle:(id)arg1 localizedAllWebsiteSettingsTitle:(id)arg2 localizedClearAllSettingsPrompt:(id)arg3 displayOption:(unsigned int)arg4;
 
 @end

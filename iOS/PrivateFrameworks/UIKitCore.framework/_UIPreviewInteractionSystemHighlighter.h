@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     UIView *_blinderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *blinderView; // @synthesize blinderView=_blinderView;
 @property(nonatomic) _Bool blinderViewEnabled; // @synthesize blinderViewEnabled=_blinderViewEnabled;
 @property(retain, nonatomic) UIView *updatedSnapshotView; // @synthesize updatedSnapshotView=_updatedSnapshotView;
 @property(retain, nonatomic) UIView *initialSnapshotView; // @synthesize initialSnapshotView=_initialSnapshotView;
-- (void).cxx_destruct;
 - (id)_newSnapshotViewForPreviewingContext:(id)arg1 afterScreenUpdates:(_Bool)arg2;
 - (void)finalizeHighlightForPreviewingContext:(id)arg1;
 - (id)highlightShouldBeginInContainerView:(id)arg1 presentationContainerView:(id)arg2 previewingContext:(id)arg3;

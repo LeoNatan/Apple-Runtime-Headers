@@ -23,6 +23,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useListeningHistory; // @synthesize useListeningHistory=_useListeningHistory;
 @property(nonatomic) _Bool sortAlbumsByArtist; // @synthesize sortAlbumsByArtist=_sortAlbumsByArtist;
 @property(nonatomic) _Bool sortSongsByArtist; // @synthesize sortSongsByArtist=_sortSongsByArtist;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *musicAdvertisingIdentifier; // @synthesize musicAdvertisingIdentifier=_musicAdvertisingIdentifier;
 @property(nonatomic) _Bool musicAdvertisingIdentifierNeedsReset; // @synthesize musicAdvertisingIdentifierNeedsReset=_musicAdvertisingIdentifierNeedsReset;
 @property(readonly, nonatomic) _Bool shouldLimitAdTracking; // @synthesize shouldLimitAdTracking=_shouldLimitAdTracking;
-- (void).cxx_destruct;
 - (void)_updateValues;
 @property(readonly, nonatomic, getter=isSortAlbumsByArtistSet) _Bool sortAlbumsByArtistSet;
 @property(readonly, nonatomic, getter=isSortSongsByArtistSet) _Bool sortSongsByArtistSet;

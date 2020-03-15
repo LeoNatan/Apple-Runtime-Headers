@@ -17,9 +17,9 @@
 }
 
 + (id)classIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *providerCache; // @synthesize providerCache=_providerCache;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (void)refresh;

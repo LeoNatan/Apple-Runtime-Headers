@@ -22,8 +22,8 @@
     NSString *_mutableSessionEntityString;
 }
 
-@property(readonly) SPSearchQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+@property(readonly) SPSearchQuery *query; // @synthesize query=_query;
 - (id)unsafeSessionEntityString;
 - (id)unsafeSections;
 - (void)searchDaemonRankingLog:(id)arg1;

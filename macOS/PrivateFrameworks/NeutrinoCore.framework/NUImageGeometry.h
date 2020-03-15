@@ -18,11 +18,11 @@
     CDStruct_996ac03c _extent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUTaggedSpaceMapping> spaceMap; // @synthesize spaceMap=_spaceMap;
 @property(readonly, nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) CDStruct_912cb5d2 renderScale; // @synthesize renderScale=_renderScale;
 @property(readonly, nonatomic) CDStruct_996ac03c extent; // @synthesize extent=_extent;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size;
 @property(readonly, nonatomic) CDStruct_912cb5d2 scaledSize;

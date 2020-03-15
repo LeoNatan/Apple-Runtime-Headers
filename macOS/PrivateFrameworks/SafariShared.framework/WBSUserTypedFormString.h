@@ -13,8 +13,8 @@
     NSString *_userTypedString;
 }
 
-@property(readonly, nonatomic) NSString *userTypedString; // @synthesize userTypedString=_userTypedString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *userTypedString; // @synthesize userTypedString=_userTypedString;
 - (id)completion;
 - (id)initWithUserTypedString:(id)arg1;
 

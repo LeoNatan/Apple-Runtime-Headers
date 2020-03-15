@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <WiFiShimDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL monitorBradycardia; // @synthesize monitorBradycardia=_monitorBradycardia;
 @property(readonly) BOOL awdlLinkUp; // @synthesize awdlLinkUp=_awdlLinkUp;
-- (void).cxx_destruct;
 - (id)getAWDLPeerList;
 - (void)bssidDidChangeForWiFiInterfaceWithName:(id)arg1;
 - (void)linkQualityDidChangeForWiFiInterfaceWithName:(id)arg1 rssi:(long long)arg2 transmitRate:(double)arg3;

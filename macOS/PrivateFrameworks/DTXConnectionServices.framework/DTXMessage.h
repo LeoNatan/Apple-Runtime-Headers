@@ -41,6 +41,7 @@
 + (void)setReportCompressionBlock:(CDUnknownBlockType)arg1;
 + (id)defaultAllowedSecureCodingClasses;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cost; // @synthesize cost=_cost;
 @property(nonatomic) unsigned int errorStatus; // @synthesize errorStatus=_status;
 @property(readonly, nonatomic) BOOL deserialized; // @synthesize deserialized=_deserialized;
@@ -48,7 +49,6 @@
 @property(nonatomic) BOOL expectsReply; // @synthesize expectsReply=_expectsReply;
 @property(nonatomic) unsigned int channelCode; // @synthesize channelCode=_channelCode;
 @property(nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long serializedLength;
 - (void)serializedFormApply:(CDUnknownBlockType)arg1;
 - (id)initWithSerializedForm:(const char *)arg1 length:(unsigned long long)arg2 destructor:(CDUnknownBlockType)arg3 compressor:(id)arg4;

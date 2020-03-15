@@ -25,6 +25,7 @@
 + (id)printsPreparationOperation;
 + (id)projectCreationOperationWithInfo:(id)arg1;
 + (id)themeHydrationOperationForProvider:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL internalIsCancelled; // @synthesize internalIsCancelled=_internalIsCancelled;
 @property(retain) id hydrationResultActivity; // @synthesize hydrationResultActivity=_hydrationResultActivity;
 @property(retain) id hydrationResult; // @synthesize hydrationResult=_hydrationResult;
@@ -33,7 +34,6 @@
 @property(copy) CDUnknownBlockType progressWasSetBlockDelegate; // @synthesize progressWasSetBlockDelegate=_progressWasSetBlockDelegate;
 @property(retain) NSArray *errors; // @synthesize errors=_errors;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)cancel;
 
 @end

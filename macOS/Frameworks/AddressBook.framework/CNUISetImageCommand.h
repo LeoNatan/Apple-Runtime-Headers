@@ -24,6 +24,7 @@
 + (id)actionNameForImageData:(id)arg1;
 + (id)compressLargeImageData:(id)arg1;
 + (id)compressImageData:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL done; // @synthesize done=_done;
 @property(retain, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(nonatomic) BOOL shouldSave; // @synthesize shouldSave=_shouldSave;
@@ -33,13 +34,12 @@
 @property(retain, nonatomic) NSData *largeImageData; // @synthesize largeImageData=_largeImageData;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) CNMutableContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
 - (BOOL)isClearCommand;
 - (void)switchImage;
-- (id)initWithContactStore:(id)arg1 contact:(id)arg2 imageData:(id)arg3 largeImageData:(id)arg4 clippingRect:(struct CGRect)arg5 shouldSave:(BOOL)arg6;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 contact:(id)arg2 imageData:(id)arg3 largeImageData:(id)arg4 clippingRect:(struct CGRect)arg5 ignoresGuardianRestrictions:(BOOL)arg6 shouldSave:(BOOL)arg7;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

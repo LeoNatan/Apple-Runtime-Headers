@@ -22,6 +22,7 @@
     id _timeObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id timeObserver; // @synthesize timeObserver=_timeObserver;
 @property(nonatomic) unsigned long long playbackState; // @synthesize playbackState=_playbackState;
 @property(retain, nonatomic) AVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool playbackHasBegun; // @synthesize playbackHasBegun=_playbackHasBegun;
 @property(retain, nonatomic) ADBannerView *videoAd; // @synthesize videoAd=_videoAd;
 @property(nonatomic) __weak id <ADPlayerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_networkOptimalVideoURLForAd:(id)arg1;
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;

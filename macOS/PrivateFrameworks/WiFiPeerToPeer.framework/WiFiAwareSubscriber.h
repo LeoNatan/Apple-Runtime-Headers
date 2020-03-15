@@ -21,9 +21,9 @@
     WiFiAwareSubscribeConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WiFiAwareSubscribeConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <WiFiAwareSubscriberDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)subscribeReceivedMessage:(id)arg1 fromPublishID:(unsigned char)arg2 address:(id)arg3;
 - (void)subscribeFailedToStartWithError:(long long)arg1;
 - (void)subscribeTerminatedWithReason:(long long)arg1;

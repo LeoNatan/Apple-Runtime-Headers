@@ -16,8 +16,8 @@
 }
 
 + (_Bool)canGenerateIconsInBackground;
-@property(readonly, nonatomic) SBCalendarIconImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBCalendarIconImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 - (void)calendarIconImageProviderHasChanged:(id)arg1;
 - (id)unmaskedIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)generateIconImageWithInfo:(struct SBIconImageInfo)arg1;

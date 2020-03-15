@@ -27,8 +27,8 @@
     id <PUPhotoStreamCreateTitleDelegate> _titleDelegate;
 }
 
-@property(nonatomic) id <PUPhotoStreamCreateTitleDelegate> titleDelegate; // @synthesize titleDelegate=_titleDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <PUPhotoStreamCreateTitleDelegate> titleDelegate; // @synthesize titleDelegate=_titleDelegate;
 - (void)dealloc;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_setTitle:(id)arg1;

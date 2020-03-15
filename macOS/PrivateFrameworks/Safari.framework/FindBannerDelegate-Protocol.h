@@ -11,8 +11,8 @@
 @protocol FindBannerDelegate <BannerDelegate>
 
 @optional
-- (void)findBanner:(FindBanner *)arg1 highlightAllMatchesForString:(NSString *)arg2 findOptions:(unsigned int)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
-- (void)findBanner:(FindBanner *)arg1 startFindingString:(NSString *)arg2 findOptions:(unsigned int)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
+- (void)findBanner:(FindBanner *)arg1 highlightAllMatchesForString:(NSString *)arg2 findOptions:(unsigned long long)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
+- (void)findBanner:(FindBanner *)arg1 startFindingString:(NSString *)arg2 findOptions:(unsigned long long)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
 - (void)hideFindOverlayForBanner:(FindBanner *)arg1;
 - (BOOL)shouldUpdateFindPasteboardForBanner:(FindBanner *)arg1;
 - (BOOL)isReadyToFindForBanner:(FindBanner *)arg1;

@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     CDStruct_f953fb60 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPLocationBound *bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic) CKDPRecordFieldValue *fieldValue; // @synthesize fieldValue=_fieldValue;
 @property(retain, nonatomic) CKDPRecordFieldIdentifier *fieldName; // @synthesize fieldName=_fieldName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

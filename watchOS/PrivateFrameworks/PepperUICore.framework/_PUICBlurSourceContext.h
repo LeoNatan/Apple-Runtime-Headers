@@ -18,12 +18,12 @@
     id _movedToWindowObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id movedToWindowObserver; // @synthesize movedToWindowObserver=_movedToWindowObserver;
 @property(retain, nonatomic) NSMutableDictionary *blurImages; // @synthesize blurImages=_blurImages;
 @property(copy, nonatomic) CDUnknownBlockType colorPreparedCallback; // @synthesize colorPreparedCallback=_colorPreparedCallback;
 @property(retain, nonatomic) UIColor *averageColor; // @synthesize averageColor=_averageColor;
 @property(retain, nonatomic) UIImage *snapshotImage; // @synthesize snapshotImage=_snapshotImage;
-- (void).cxx_destruct;
 - (void)enumerateBlurViewsWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)hasBlurViews;
 - (void)removeBlurView:(id)arg1;

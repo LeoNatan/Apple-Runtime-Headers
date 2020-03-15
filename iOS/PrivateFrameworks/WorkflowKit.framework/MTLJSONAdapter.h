@@ -30,11 +30,11 @@
 + (id)dictionaryTransformerWithModelClass:(Class)arg1;
 + (id)JSONDictionaryFromModel:(id)arg1;
 + (id)JSONArrayFromModels:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *JSONAdaptersByModelClass; // @synthesize JSONAdaptersByModelClass=_JSONAdaptersByModelClass;
 @property(readonly, copy, nonatomic) NSDictionary *valueTransformersByPropertyKey; // @synthesize valueTransformersByPropertyKey=_valueTransformersByPropertyKey;
 @property(readonly, copy, nonatomic) NSDictionary *JSONKeyPathsByPropertyKey; // @synthesize JSONKeyPathsByPropertyKey=_JSONKeyPathsByPropertyKey;
 @property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
-- (void).cxx_destruct;
 - (id)serializablePropertyKeys:(id)arg1 forModel:(id)arg2;
 - (id)JSONAdapterForModelClass:(Class)arg1 error:(id *)arg2;
 - (id)modelFromJSONDictionary:(id)arg1 error:(id *)arg2;

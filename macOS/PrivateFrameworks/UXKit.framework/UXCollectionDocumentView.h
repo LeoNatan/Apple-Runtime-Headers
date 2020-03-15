@@ -13,8 +13,8 @@
     UXCollectionView *_collectionView;
 }
 
-@property(nonatomic) __weak UXCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UXCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)prepareContentInRect:(struct CGRect)arg1;
 - (BOOL)acceptsFirstResponder;

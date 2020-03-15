@@ -15,10 +15,10 @@
     NSTrackingArea *_trackingArea;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property BOOL cancelButtonTimer; // @synthesize cancelButtonTimer=_cancelButtonTimer;
 @property(retain) CalUIDelayedHoverButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (struct CGPoint)currentMouseLocation;
 - (BOOL)mouseInView;
 - (void)showButtonIfMouseHasMovedSlowlyEnoughFromPreviousLocation:(id)arg1;

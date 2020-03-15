@@ -19,8 +19,8 @@
 
 + (id)logCategory;
 + (id)sharedHandler;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void)timerDidFire:(id)arg1;
 - (void)queryFMFStatusWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 

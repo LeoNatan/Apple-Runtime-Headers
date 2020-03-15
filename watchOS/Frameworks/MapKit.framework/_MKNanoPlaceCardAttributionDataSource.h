@@ -17,9 +17,9 @@
     MKMapItem *_mapItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) __weak id <_MKNanoPlaceCardAttributionDataDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)notifyDelegateForActionAtIndexPath:(id)arg1;
 - (id)cellForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
 - (int)numberOfRowsInSection:(int)arg1;

@@ -18,9 +18,9 @@
     double _slowPressDuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_slowPressTimer, setter=_setSlowPressTimer:) BSTimer *slowPressTimer; // @synthesize slowPressTimer=_slowPressTimer;
 @property(nonatomic) double slowPressDuration; // @synthesize slowPressDuration=_slowPressDuration;
-- (void).cxx_destruct;
 - (_Bool)_isPrimed;
 - (void)_evaluateUnlock;
 - (_Bool)_isTimerRunning;

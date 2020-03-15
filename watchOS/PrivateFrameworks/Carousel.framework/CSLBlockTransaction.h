@@ -12,8 +12,8 @@
 }
 
 + (id)transactionWithBlock:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)_begin;
 
 @end

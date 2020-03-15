@@ -62,11 +62,11 @@ __attribute__((visibility("hidden")))
 + (void)removeFromAnimationTimerQueue:(id)arg1;
 + (void)addToAnimationTimerQueue:(id)arg1;
 + (double)defaultSidebarWidth;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(nonatomic) double iCloudCompletionPercentage; // @synthesize iCloudCompletionPercentage=_iCloudCompletionPercentage;
 @property(nonatomic) _Bool restoringExpandedState; // @synthesize restoringExpandedState=_restoringExpandedState;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)preferencesUpdated:(id)arg1;
 - (void)handleItemsChanged:(id)arg1;
 - (void)handleItemsAddedRemovedReordered:(id)arg1;

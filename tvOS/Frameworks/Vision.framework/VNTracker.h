@@ -23,14 +23,14 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)VNTrackerOptionToTrackerType:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) NSString *level; // @synthesize level=_level;
 @property(readonly) NSUUID *key; // @synthesize key=_key;
 @property struct CGRect lastTrackedBBox; // @synthesize lastTrackedBBox=_lastTrackedBBox;
 @property long long trackedFrameNumber; // @synthesize trackedFrameNumber=_trackedFrameNumber;
 @property unsigned int trackedFrameCVPixelBufferFormat; // @synthesize trackedFrameCVPixelBufferFormat=_trackedFrameCVPixelBufferFormat;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)_updateTrackerWithModifiedBBoxForImageBuffer:(id)arg1 error:(id *)arg2;
 - (_Bool)_visionBBoxToTrackerBBox:(id)arg1 trackedObjects:(vector_41a7cb1a *)arg2 imageSize:(struct CGSize)arg3 results:(id)arg4 error:(id *)arg5;
 - (id)_postProcessTrackingResults:(id)arg1 trackerResults:(id)arg2 error:(id *)arg3;

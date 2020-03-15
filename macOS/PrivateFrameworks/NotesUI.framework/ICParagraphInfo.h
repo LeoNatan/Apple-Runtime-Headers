@@ -16,11 +16,11 @@
     struct _NSRange _rangeIncludingChildren;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 @property(nonatomic) struct _NSRange rangeIncludingChildren; // @synthesize rangeIncludingChildren=_rangeIncludingChildren;
 @property(nonatomic) struct _NSRange characterRange; // @synthesize characterRange=_characterRange;
 @property(retain, nonatomic) TTParagraphStyle *paragraphStyle; // @synthesize paragraphStyle=_paragraphStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long indent;
 @property(readonly, nonatomic) unsigned int style;
 

@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)contactChangeRequestWithKind:(long long)arg1 contacts:(id)arg2 linkIdentifier:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *linkIdentifier; // @synthesize linkIdentifier=_linkIdentifier;
 @property(readonly, nonatomic) long long kind; // @synthesize kind=_kind;
 @property(readonly, copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *contactIdentifiers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (double)_pillBackgroundViewHeightConstraint;
 + (id)_titleLabelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) HKGradientView *backgroundGradientView; // @synthesize backgroundGradientView=_backgroundGradientView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentSizeCategory;
 - (double)_cornerRadius;

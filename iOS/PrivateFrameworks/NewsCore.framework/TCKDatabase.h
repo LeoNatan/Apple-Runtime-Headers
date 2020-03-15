@@ -33,6 +33,7 @@
 }
 
 + (id)tRecordsForQuery:(id)arg1 zoneID:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tFetchDatabaseChangesHandler; // @synthesize tFetchDatabaseChangesHandler=_tFetchDatabaseChangesHandler;
 @property(copy, nonatomic) CDUnknownBlockType tFetchRecordZoneChangesOperationHandler; // @synthesize tFetchRecordZoneChangesOperationHandler=_tFetchRecordZoneChangesOperationHandler;
 @property(copy, nonatomic) CDUnknownBlockType tFetchZoneChangesHandler; // @synthesize tFetchZoneChangesHandler=_tFetchZoneChangesHandler;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSMutableArray *tFetchedRecords; // @synthesize tFetchedRecords=_tFetchedRecords;
 @property(retain, nonatomic) NSMutableArray *tQueriedRecordZonesNames; // @synthesize tQueriedRecordZonesNames=_tQueriedRecordZonesNames;
 @property(retain, nonatomic) NSMutableArray *tQueriedRecordTypes; // @synthesize tQueriedRecordTypes=_tQueriedRecordTypes;
-- (void).cxx_destruct;
 - (void)addOperation:(id)arg1;
 - (void)performQuery:(id)arg1 inZoneWithID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchRecordWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

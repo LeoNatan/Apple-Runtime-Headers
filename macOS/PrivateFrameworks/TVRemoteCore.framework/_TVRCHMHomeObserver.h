@@ -19,9 +19,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *serviceToAccessoryIDMapping; // @synthesize serviceToAccessoryIDMapping=_serviceToAccessoryIDMapping;
 @property(retain, nonatomic) HMHome *currentHome; // @synthesize currentHome=_currentHome;
-- (void).cxx_destruct;
 - (BOOL)_checkErrorForLocallySuspendedAccessory:(id)arg1;
 - (void)_readCharacteristic:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_checkAccessoryReachabilityAndFetchTVServices:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

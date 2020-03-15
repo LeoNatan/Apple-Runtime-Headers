@@ -39,10 +39,10 @@
 + (id)pendingIgnoredNotifications;
 + (id)accountCache;
 + (id)migrate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *updatedAt; // @synthesize updatedAt=_updatedAt;
 @property(readonly, copy, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(readonly, copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)invalidateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)refreshWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;

@@ -13,8 +13,8 @@
     NSAttributedString *_transcriptButtonText;
 }
 
-@property(copy, nonatomic) NSAttributedString *transcriptButtonText; // @synthesize transcriptButtonText=_transcriptButtonText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSAttributedString *transcriptButtonText; // @synthesize transcriptButtonText=_transcriptButtonText;
 - (_Bool)showReportSMSSpam;
 - (_Bool)hasMultipleMessages;
 - (_Bool)isGroupChat;

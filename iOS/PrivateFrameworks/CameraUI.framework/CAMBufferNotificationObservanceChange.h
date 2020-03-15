@@ -14,9 +14,9 @@
     NSObject *_object;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSObject *object; // @synthesize object=_object;
 @property(readonly, copy, nonatomic) NSString *notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (id)initWithNotification:(id)arg1 object:(id)arg2;
 
 @end

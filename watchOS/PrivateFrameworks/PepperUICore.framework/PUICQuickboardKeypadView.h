@@ -25,6 +25,7 @@
     NSNumberFormatter *_formatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *formatter; // @synthesize formatter=_formatter;
 @property(readonly, nonatomic) UILabel *dialedNumbersLabel; // @synthesize dialedNumbersLabel=_dialedNumbersLabel;
 @property(readonly, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic, getter=isDialer) _Bool dialer; // @synthesize dialer=_dialer;
 @property(nonatomic) __weak id <PUICQuickboardKeypadViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *dialedNumber; // @synthesize dialedNumber=_dialedNumber;
-- (void).cxx_destruct;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)numberPadViewDidSelectDelete:(id)arg1;
 - (void)numberPadViewDidSelectOK:(id)arg1;

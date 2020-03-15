@@ -28,6 +28,7 @@
 + (id)activityStatesEntryKey;
 + (id)activityEntryKey;
 + (id)workQueue;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastCompletedDate; // @synthesize lastCompletedDate=_lastCompletedDate;
 @property(retain) PLEntry *activityEntry; // @synthesize activityEntry=_activityEntry;
 @property(retain) PLActivityCriterion *mustRunCriterion; // @synthesize mustRunCriterion=_mustRunCriterion;
@@ -37,7 +38,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)mustRunCriterionString;
 - (id)criteriaString;
 @property(readonly, copy) NSString *description;

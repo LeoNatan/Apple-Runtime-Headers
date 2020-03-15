@@ -42,6 +42,7 @@
     NSString *_createChildAccountInstructions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *createChildAccountInstructions; // @synthesize createChildAccountInstructions=_createChildAccountInstructions;
 @property(copy, nonatomic) NSString *createChildAccountButtonTitle; // @synthesize createChildAccountButtonTitle=_createChildAccountButtonTitle;
 @property(copy, nonatomic) NSString *addFamilyMemberInstructions; // @synthesize addFamilyMemberInstructions=_addFamilyMemberInstructions;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSString *inviteeEmail; // @synthesize inviteeEmail=_inviteeEmail;
 @property(readonly, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(nonatomic) __weak id <FAPickInviteeDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_imageForPersonWithRecordID:(unsigned int)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

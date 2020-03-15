@@ -17,8 +17,8 @@
 }
 
 + (id)tableViewSectionClasses;
-@property(copy, nonatomic) NSString *restorationSourceBundleIdentifier; // @synthesize restorationSourceBundleIdentifier=_restorationSourceBundleIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *restorationSourceBundleIdentifier; // @synthesize restorationSourceBundleIdentifier=_restorationSourceBundleIdentifier;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (void)_updateActivityForViewDidAppear;

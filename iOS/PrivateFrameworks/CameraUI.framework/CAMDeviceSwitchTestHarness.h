@@ -16,11 +16,11 @@
     long long _startingCaptureMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isTestingAnimation) _Bool testingAnimation; // @synthesize testingAnimation=_testingAnimation;
 @property(readonly, nonatomic) long long startingCaptureMode; // @synthesize startingCaptureMode=_startingCaptureMode;
 @property(readonly, nonatomic) long long desiredDevicePosition; // @synthesize desiredDevicePosition=_desiredDevicePosition;
 @property(readonly, nonatomic) CAMViewfinderViewController *viewfinderViewController; // @synthesize viewfinderViewController=_viewfinderViewController;
-- (void).cxx_destruct;
 - (void)ensureCaptureDevicePosition:(long long)arg1 mode:(long long)arg2 thenPerform:(CDUnknownBlockType)arg3;
 - (void)handleDidOpenViewfinderForReason:(long long)arg1;
 - (void)startTesting;

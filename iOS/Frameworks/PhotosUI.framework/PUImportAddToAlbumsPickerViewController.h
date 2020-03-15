@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
 + (id)dataSourceShiftedIndexPath:(id)arg1;
 + (long long)dataSourceOffset;
 + (id)userCreatredAlbumsPhotoKitConfiguration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXPhotoKitCollectionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(retain, nonatomic) PXPhotoKitCollectionsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXImportAlbumPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXPhotoKitCollectionsDataSourceManagerConfiguration *dataSourceManagerConfiguration; // @synthesize dataSourceManagerConfiguration=_dataSourceManagerConfiguration;
-- (void).cxx_destruct;
 - (void)_dismissPicker;
 - (void)_handleCreateAlbum;
 - (id)createAlbumListViewController;

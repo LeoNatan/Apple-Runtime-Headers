@@ -13,8 +13,8 @@
     _HMCameraAudioControl *_audioControl;
 }
 
-@property(retain, nonatomic) _HMCameraAudioControl *audioControl; // @synthesize audioControl=_audioControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HMCameraAudioControl *audioControl; // @synthesize audioControl=_audioControl;
 @property(readonly, nonatomic) HMCharacteristic *volume;
 @property(readonly, nonatomic) HMCharacteristic *mute;
 - (id)initWithAudioControl:(id)arg1;

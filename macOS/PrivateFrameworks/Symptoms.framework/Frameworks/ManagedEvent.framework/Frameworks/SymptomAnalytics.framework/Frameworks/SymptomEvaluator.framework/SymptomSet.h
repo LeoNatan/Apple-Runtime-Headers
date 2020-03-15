@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *symptoms;
 }
 
-@property(retain, nonatomic) NSMutableArray *symptoms; // @synthesize symptoms;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *symptoms; // @synthesize symptoms;
 - (id)description;
 
 @end

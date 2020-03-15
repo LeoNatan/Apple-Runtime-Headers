@@ -16,11 +16,11 @@
     NSString *_localizedUnpairTitle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedUnpairTitle; // @synthesize localizedUnpairTitle=_localizedUnpairTitle;
 @property(readonly, copy, nonatomic) NSString *localizedPairTitle; // @synthesize localizedPairTitle=_localizedPairTitle;
 @property(readonly, copy, nonatomic) NSString *localizedPairedTitle; // @synthesize localizedPairedTitle=_localizedPairedTitle;
 @property(readonly, nonatomic) long long pairedCategory; // @synthesize pairedCategory=_pairedCategory;
-- (void).cxx_destruct;
 - (id)initWithPairedCategory:(long long)arg1 pairedTitle:(id)arg2 pairTitle:(id)arg3 unpairTitle:(id)arg4;
 
 @end

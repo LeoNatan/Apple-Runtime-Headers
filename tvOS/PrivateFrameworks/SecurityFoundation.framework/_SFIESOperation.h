@@ -19,8 +19,8 @@
 
 + (void)initialize;
 + (_Bool)supportsSecureCoding;
-@property long long curve; // @synthesize curve=_curve;
 - (void).cxx_destruct;
+@property long long curve; // @synthesize curve=_curve;
 @property(copy, nonatomic) id <SFDigestOperation> digestOperation;
 @property(copy, nonatomic) _SFAuthenticatedEncryptionOperation *encryptionOperation;
 @property(copy, nonatomic) _SFECDHOperation *diffieHellmanOperation;

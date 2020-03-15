@@ -10,13 +10,13 @@
 {
 }
 
-- (struct NSObject *)_process;
-- (struct NSObject *)_librarySizeRange:(long long)arg1;
-- (struct NSObject *)_osVersion;
-- (struct NSObject *)_deviceModel;
+- (id)_process;
+- (id)_librarySizeRange:(long long)arg1;
+- (id)_osVersion;
+- (id)_deviceModel;
 - (id)_fetchLibrarySummary;
 - (void)_registerLibrarySummary:(id)arg1;
-- (struct NSObject *)_deviceFreeSpaceDescription;
+- (id)_deviceFreeSpaceDescription;
 - (id)_percentageOfFreeSpaceOnDevice;
 - (void)registerSystemProperties:(id)arg1;
 

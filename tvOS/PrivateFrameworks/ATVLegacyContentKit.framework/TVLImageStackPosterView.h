@@ -29,6 +29,7 @@
 + (double)_titleOffsetForPosterSize:(struct CGSize)arg1 selected:(_Bool)arg2;
 + (double)_heightForTitleStyle:(long long)arg1 alwaysShowTitles:(_Bool)arg2 isRelated:(_Bool)arg3;
 + (long long)titleStyleForElement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(nonatomic) _Bool partOfShelfList; // @synthesize partOfShelfList=_partOfShelfList;
 @property(nonatomic) _Bool collectionBasedLayout; // @synthesize collectionBasedLayout=_collectionBasedLayout;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) TVBadgeOverlayView *badgeOverlayView; // @synthesize badgeOverlayView=_badgeOverlayView;
 @property(nonatomic) struct CGPoint focusDirection; // @synthesize focusDirection=_focusDirection;
 @property(nonatomic) long long titleStyle; // @synthesize titleStyle=_titleStyle;
-- (void).cxx_destruct;
 - (void)_setImageFromURL:(id)arg1 overlayView:(id)arg2;
 - (void)updateBadgeValue;
 - (void)setTitleStyle:(long long)arg1 alwaysShowTitles:(_Bool)arg2;

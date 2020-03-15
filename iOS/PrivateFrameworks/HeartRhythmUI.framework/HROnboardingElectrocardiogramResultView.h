@@ -29,9 +29,10 @@
 }
 
 + (id)inconclusiveResultViewWithDelegate:(id)arg1;
-+ (id)highOrLowHeartRateResultView;
++ (id)highOrLowAbove120Below50HeartRateResultView;
 + (id)atrialFibrillationResultView;
 + (id)sinusRhythmResultView;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *playerViewTopConstraint; // @synthesize playerViewTopConstraint=_playerViewTopConstraint;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) HRVideoPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) UILabel *numberedTitleLabel; // @synthesize numberedTitleLabel=_numberedTitleLabel;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (double)_learnMoreButtonLastBaselineToBottom;
 - (double)_visibleBodyLastBaselineToLearnMoreButtonFirstBaseline;
 - (double)_visibleBodyFirstBaselineDistance;

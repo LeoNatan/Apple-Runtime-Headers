@@ -76,12 +76,12 @@
 + (id)logCategory;
 + (id)openWithURL:(id)arg1 readOnly:(BOOL)arg2 error:(id *)arg3;
 + (void)unlinkDatastoreAt:(id)arg1 everything:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMBSQLQueryStatement *selectAllRecordTypeRows; // @synthesize selectAllRecordTypeRows=_selectAllRecordTypeRows;
 @property(retain, nonatomic) HMBSQLQueryStatement *selectAllRecordRows; // @synthesize selectAllRecordRows=_selectAllRecordRows;
 @property(retain) NSMutableDictionary *queryContextsByModelType; // @synthesize queryContextsByModelType=_queryContextsByModelType;
 @property(retain) NSMapTable *queryContextsByClass; // @synthesize queryContextsByClass=_queryContextsByClass;
 @property(retain) NSDictionary *queryTables; // @synthesize queryTables=_queryTables;
-- (void).cxx_destruct;
 - (id)flush:(BOOL)arg1;
 - (BOOL)_deleteIndexSentinelsWithZoneRow:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)_deleteIndexSentinelsWithModelType:(id)arg1 error:(id *)arg2;

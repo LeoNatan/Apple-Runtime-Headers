@@ -20,8 +20,8 @@
     unsigned long long _queue_representedConstraints;
 }
 
-@property(readonly, retain, nonatomic) NSSet *constraintMonitors; // @synthesize constraintMonitors=_queue_installationConstraintMonitors;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSSet *constraintMonitors; // @synthesize constraintMonitors=_queue_installationConstraintMonitors;
 - (void)_queue_setDelegate:(id)arg1;
 - (void)installationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;
 - (void)_queue_invalidateChildConstraintMonitors;

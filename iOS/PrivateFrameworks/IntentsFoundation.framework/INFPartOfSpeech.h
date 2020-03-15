@@ -20,11 +20,11 @@
 + (id)adjectiveWithIdentifier:(id)arg1 language:(id)arg2;
 + (id)nounWithGender:(unsigned long long)arg1 identifier:(id)arg2 language:(id)arg3;
 + (id)nounWithIdentifier:(id)arg1 language:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *variants; // @synthesize variants=_variants;
 @property(nonatomic) unsigned long long partOfSpeechType; // @synthesize partOfSpeechType=_partOfSpeechType;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 - (id)identifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)stringForContext:(id)arg1;
 - (id)contributingSentenceContext;

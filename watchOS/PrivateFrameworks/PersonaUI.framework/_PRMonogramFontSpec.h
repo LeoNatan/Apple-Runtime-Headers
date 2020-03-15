@@ -16,10 +16,10 @@
 }
 
 + (id)specForFontWithName:(id)arg1 baseSize:(float)arg2 tracking:(float)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float tracking; // @synthesize tracking=_tracking;
 @property(readonly, nonatomic) float baseSize; // @synthesize baseSize=_baseSize;
 @property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (void).cxx_destruct;
 
 @end
 

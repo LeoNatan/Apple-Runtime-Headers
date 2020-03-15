@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIImageView *_photoImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *photoImageView; // @synthesize photoImageView=_photoImageView;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithName:(id)arg1;

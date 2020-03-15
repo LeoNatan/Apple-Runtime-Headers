@@ -18,8 +18,8 @@
     id <BLTAddBulletinBatchAssertionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTAddBulletinBatchAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTAddBulletinBatchAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)initializingComplete;
 - (void)_stateAdvanceToState:(int)arg1;
 - (void)_queue_notifyNewStateIfNeeded;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_kindEnrollmentsDict;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *kindEnrollmentsDict; // @synthesize kindEnrollmentsDict=_kindEnrollmentsDict;
 @property(retain, nonatomic) NSMutableDictionary *enrollmentsDict; // @synthesize enrollmentsDict=_enrollmentsDict;
 @property(retain, nonatomic) NSMutableSet *uncommittedEnrollmentIdentifiers; // @synthesize uncommittedEnrollmentIdentifiers=_uncommittedEnrollmentIdentifiers;
 @property(retain, nonatomic) NSMutableOrderedSet *enrollmentIdentifiers; // @synthesize enrollmentIdentifiers=_enrollmentIdentifiers;
-- (void).cxx_destruct;
 - (void)_removeEnrollmentWithIdentifier:(id)arg1;
 - (void)_addEnrollmentToKindDict:(id)arg1;
 - (void)pruneUncommitedEnrollments;

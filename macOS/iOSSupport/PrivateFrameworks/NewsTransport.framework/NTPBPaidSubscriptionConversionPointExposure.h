@@ -43,6 +43,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(retain, nonatomic) NSString *parentFeedId; // @synthesize parentFeedId=_parentFeedId;
 @property(retain, nonatomic) NSString *groupFeedId; // @synthesize groupFeedId=_groupFeedId;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSString *articleId; // @synthesize articleId=_articleId;
 @property(retain, nonatomic) NSString *sectionId; // @synthesize sectionId=_sectionId;
 @property(retain, nonatomic) NSString *sourceChannelId; // @synthesize sourceChannelId=_sourceChannelId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

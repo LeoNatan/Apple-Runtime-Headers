@@ -19,8 +19,8 @@
 + (float)pillCornerRadius;
 + (float)defaultCornerRadius;
 + (id)buttonWithType:(int)arg1;
-@property(nonatomic) float backgroundCornerRadius; // @synthesize backgroundCornerRadius=_backgroundCornerRadius;
 - (void).cxx_destruct;
+@property(nonatomic) float backgroundCornerRadius; // @synthesize backgroundCornerRadius=_backgroundCornerRadius;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateBackgroundImage;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;

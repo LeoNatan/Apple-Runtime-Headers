@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _reattemptHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSynchronous) _Bool synchronous; // @synthesize synchronous=_synchronous;
 @property(readonly, copy, nonatomic) CDUnknownBlockType reattemptHandler; // @synthesize reattemptHandler=_reattemptHandler;
 @property(readonly, nonatomic) EMRemoteConnection *remoteInterface; // @synthesize remoteInterface=_remoteInterface;
-- (void).cxx_destruct;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)reattemptingRemoteObjectProxyWithReattemptHandler:(CDUnknownBlockType)arg1;

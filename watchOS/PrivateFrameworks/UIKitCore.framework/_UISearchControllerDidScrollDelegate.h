@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UIScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <_UIScrollViewScrollObserver_Internal> controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)_didScroll;
 

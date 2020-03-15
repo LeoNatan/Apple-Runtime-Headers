@@ -16,9 +16,9 @@
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) ASDPropertyAddress *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

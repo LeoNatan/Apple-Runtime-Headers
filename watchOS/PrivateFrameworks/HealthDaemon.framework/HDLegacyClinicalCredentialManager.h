@@ -15,8 +15,8 @@
     NSObject<OS_dispatch_queue> *_credentialKeyQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *credentialKeyQueue; // @synthesize credentialKeyQueue=_credentialKeyQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *credentialKeyQueue; // @synthesize credentialKeyQueue=_credentialKeyQueue;
 - (_Bool)_error:(id)arg1 isCredentialManagerErrorWithCode:(int)arg2;
 - (_Bool)_assignCredentialManagerError:(out id *)arg1 code:(int)arg2 format:(id)arg3;
 - (_Bool)_assignCredentialManagerError:(out id *)arg1 code:(int)arg2 description:(id)arg3;

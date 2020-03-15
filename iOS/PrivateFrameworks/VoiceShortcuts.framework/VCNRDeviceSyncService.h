@@ -19,11 +19,11 @@
     VCCompanionSyncService *_service;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak VCCompanionSyncService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) long long protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(readonly, copy, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 @property(readonly, copy, nonatomic) NSString *syncServiceIdentifier; // @synthesize syncServiceIdentifier=_syncServiceIdentifier;
-- (void).cxx_destruct;
 - (void)requestFullResync;
 - (void)requestSync;
 - (id)copyWithZone:(struct _NSZone *)arg1;

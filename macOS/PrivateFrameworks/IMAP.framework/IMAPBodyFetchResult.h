@@ -14,9 +14,9 @@
     NSData *_fetchData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int startOffset; // @synthesize startOffset=_startOffset;
 @property(retain, nonatomic) NSData *fetchData; // @synthesize fetchData=_fetchData;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *section;
 

@@ -35,12 +35,12 @@ __attribute__((visibility("hidden")))
 + (id)supportedDecoders;
 + (void)registerAU;
 + (struct AudioComponentDescription)getAUDesc;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) APCListenerResultData *resultData; // @synthesize resultData=_resultData;
 @property(retain, nonatomic) AUPasscodeCodecConfiguration *codecConfig; // @synthesize codecConfig=_codecConfig;
 @property(copy, nonatomic) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)handleDecodedData:(void *)arg1 ofLength:(int)arg2;
 - (CDUnknownBlockType)internalRenderBlock;
 - (void)deallocateRenderResources;

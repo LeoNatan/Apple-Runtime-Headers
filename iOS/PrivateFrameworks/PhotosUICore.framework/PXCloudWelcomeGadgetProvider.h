@@ -19,10 +19,10 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *contentGadgets; // @synthesize contentGadgets=_contentGadgets;
 @property(nonatomic) __weak id <PXCMMCloudGadgetViewControllerDelegate> gadgetDelegate; // @synthesize gadgetDelegate=_gadgetDelegate;
 @property(readonly, nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
-- (void).cxx_destruct;
 - (void)didUpdateCloudPhotoLibraryEnablement:(id)arg1;
 - (void)presentationRequestForWelcomeCloudViewController:(id)arg1;
 - (void)resetPriorityDate;

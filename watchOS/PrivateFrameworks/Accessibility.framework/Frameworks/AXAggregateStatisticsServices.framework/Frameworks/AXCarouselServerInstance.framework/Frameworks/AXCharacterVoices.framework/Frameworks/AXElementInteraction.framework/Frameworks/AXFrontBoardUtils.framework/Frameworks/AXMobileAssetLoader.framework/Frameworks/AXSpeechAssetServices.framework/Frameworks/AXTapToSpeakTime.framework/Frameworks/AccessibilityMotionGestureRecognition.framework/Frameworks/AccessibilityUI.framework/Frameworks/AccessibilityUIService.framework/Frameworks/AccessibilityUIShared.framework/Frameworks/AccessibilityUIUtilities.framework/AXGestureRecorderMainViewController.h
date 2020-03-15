@@ -32,6 +32,7 @@
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisplayLinkInEffect; // @synthesize isDisplayLinkInEffect=_isDisplayLinkInEffect;
 @property(nonatomic) int recorderType; // @synthesize recorderType=_recorderType;
 @property(nonatomic) __weak id appDidResignActiveNotificationHandlerToken; // @synthesize appDidResignActiveNotificationHandlerToken=_appDidResignActiveNotificationHandlerToken;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) AXGestureRecorderControlsView *controlsView; // @synthesize controlsView=_controlsView;
 @property(retain, nonatomic) AXGestureRecorderViewController *gestureRecorderViewController; // @synthesize gestureRecorderViewController=_gestureRecorderViewController;
 @property(retain, nonatomic) AXGestureRecorderStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
-- (void).cxx_destruct;
 - (void)gestureRecorderControlsView:(id)arg1 buttonTappedAtIndex:(unsigned int)arg2;
 - (void)gestureRecorderViewController:(id)arg1 setChromeVisible:(_Bool)arg2;
 - (_Bool)isChromeVisibleForGestureRecorderViewController:(id)arg1;

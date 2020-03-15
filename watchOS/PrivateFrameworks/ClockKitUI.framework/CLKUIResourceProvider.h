@@ -16,10 +16,10 @@
     NSNumber *_key;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *key; // @synthesize key=_key;
 @property(readonly, nonatomic) NSSet *uuidHistory; // @synthesize uuidHistory=_uuidHistory;
 @property(readonly, nonatomic) __weak id <CLKUIResourceProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addUuidToHistory:(id)arg1;
 - (id)initWithDelegate:(id)arg1 key:(id)arg2;
 

@@ -16,13 +16,13 @@
     NSArray *_keysToFetch;
 }
 
-+ (struct CNPair *)contactsFoundAndNotFoundByPartioningContacts:(id)arg1 usingFoundContacts:(id)arg2;
++ (id)contactsFoundAndNotFoundByPartioningContacts:(id)arg1 usingFoundContacts:(id)arg2;
 + (id)contactsByReplacingContacts:(id)arg1 withContactsHavingMatchingIdentifier:(id)arg2;
 + (id)refetchedContacts:(id)arg1 fromStore:(id)arg2 keysToFetch:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
 @property(readonly, nonatomic) NSArray *contactsToRefetch; // @synthesize contactsToRefetch=_contactsToRefetch;
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)contactsFoundAndNotFound;
 - (id)foundContacts;
 - (id)allContacts;

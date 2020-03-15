@@ -13,8 +13,8 @@
     CSLStatusBarGlobalContextView *_contextView;
 }
 
-@property(retain, nonatomic) CSLStatusBarGlobalContextView *contextView; // @synthesize contextView=_contextView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLStatusBarGlobalContextView *contextView; // @synthesize contextView=_contextView;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

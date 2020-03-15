@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) EMMailboxObjectID *mailboxObjectID; // @synthesize mailboxObjectID=_mailboxObjectID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) EMMailboxObjectID *mailboxObjectID; // @synthesize mailboxObjectID=_mailboxObjectID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMailboxObjectID:(id)arg1;

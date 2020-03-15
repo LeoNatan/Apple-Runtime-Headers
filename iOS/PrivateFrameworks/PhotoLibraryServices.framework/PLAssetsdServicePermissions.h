@@ -17,10 +17,10 @@
     NSArray *_requiredEntitlements;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *requiredEntitlements; // @synthesize requiredEntitlements=_requiredEntitlements;
 @property(nonatomic) _Bool allowsAuthorizationWithPhotoKitEntitlement; // @synthesize allowsAuthorizationWithPhotoKitEntitlement=_allowsAuthorizationWithPhotoKitEntitlement;
 @property(nonatomic) long long requiredAuthorization; // @synthesize requiredAuthorization=_requiredAuthorization;
-- (void).cxx_destruct;
 - (id)_errorForMissingEntitlements:(id)arg1 withContext:(id)arg2;
 - (id)_verifyEntitlementsWithContext:(id)arg1;
 - (_Bool)_isAuthorizedViaPhotoKitEntitlementWithContext:(id)arg1;

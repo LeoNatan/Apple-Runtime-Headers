@@ -37,9 +37,9 @@
 + (id)uniformWithName:(id)arg1 float:(float)arg2;
 + (id)uniformWithName:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long _seed; // @synthesize _seed;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_removeTargetShader:(id)arg1;
 - (void)_addTargetShader:(id)arg1;
 - (void)_propagateChange;

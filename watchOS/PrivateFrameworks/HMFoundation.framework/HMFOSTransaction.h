@@ -15,9 +15,9 @@
     double _creationTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double creationTime; // @synthesize creationTime=_creationTime;
 @property(readonly, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)init;

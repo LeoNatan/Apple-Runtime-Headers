@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_childContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *childContentView; // @synthesize childContentView=_childContentView;
 @property(nonatomic) struct UIEdgeInsets childContentInsets; // @synthesize childContentInsets=_childContentInsets;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

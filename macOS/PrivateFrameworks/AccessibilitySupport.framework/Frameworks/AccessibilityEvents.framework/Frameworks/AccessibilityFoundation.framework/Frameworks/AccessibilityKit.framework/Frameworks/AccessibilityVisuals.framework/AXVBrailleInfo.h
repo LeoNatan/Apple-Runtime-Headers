@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long brailleCursorIndex; // @synthesize brailleCursorIndex=_brailleCursorIndex;
 @property(nonatomic) struct _NSRange brailleCellRange; // @synthesize brailleCellRange=_brailleCellRange;
 @property(copy, nonatomic) NSAttributedString *brailleWithTransliteration; // @synthesize brailleWithTransliteration=_brailleWithTransliteration;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)_isEqualToBrailleInfo:(id)arg1;
 - (unsigned long long)hash;

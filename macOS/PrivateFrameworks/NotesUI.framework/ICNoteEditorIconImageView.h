@@ -16,9 +16,9 @@
     double _maxZoomFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maxZoomFactor; // @synthesize maxZoomFactor=_maxZoomFactor;
 @property(retain, nonatomic) ICMZoomController *zoomController; // @synthesize zoomController=_zoomController;
-- (void).cxx_destruct;
 - (void)hostViewDidZoom:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 

@@ -20,10 +20,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)scoredLabeledValueWithLabeledValue:(id)arg1 score:(double)arg2 flags:(unsigned char)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) PPLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
-- (void).cxx_destruct;
 - (BOOL)isEqualToScoredLabeledValue:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

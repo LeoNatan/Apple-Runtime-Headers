@@ -17,10 +17,10 @@
     NSString *_outputDeviceUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *outputDeviceUID; // @synthesize outputDeviceUID=_outputDeviceUID;
 @property(retain, nonatomic) NSString *endpointUID; // @synthesize endpointUID=_endpointUID;
 @property(retain, nonatomic) _MRVolumeControlAvailabilityProtobuf *capabilities; // @synthesize capabilities=_capabilities;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

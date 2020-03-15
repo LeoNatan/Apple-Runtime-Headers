@@ -48,6 +48,7 @@
 
 + (id)sharedHandler;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceFetchQueue; // @synthesize resourceFetchQueue=_resourceFetchQueue;
 @property(retain, nonatomic) NSString *resourceMetadataPath; // @synthesize resourceMetadataPath=_resourceMetadataPath;
 @property(nonatomic) _Bool resourceMetadataNeedsWrite; // @synthesize resourceMetadataNeedsWrite=_resourceMetadataNeedsWrite;
@@ -75,7 +76,6 @@
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property __weak id <PRSSessionController> client; // @synthesize client=_client;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)refreshGUID;
 - (void)getFTEStringsWithReply:(CDUnknownBlockType)arg1;
 - (void)triggerTaskWhenReady:(id)arg1;

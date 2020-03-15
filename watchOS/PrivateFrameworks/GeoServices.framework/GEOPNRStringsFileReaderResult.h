@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)maxPossibleScore;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *city; // @synthesize city=_city;
 @property(retain, nonatomic) NSString *region; // @synthesize region=_region;
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;
-- (void).cxx_destruct;
 - (_Bool)isPlaceHolderForEmpty;
 - (id)aggregateStringWhileInCountry:(id)arg1 forLanguage:(id)arg2 ccOfNumber:(id)arg3;
 - (_Bool)shouldOrderCityFirstForLanguage:(id)arg1 phoneNumberInCC:(id)arg2;

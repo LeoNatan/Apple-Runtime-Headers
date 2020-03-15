@@ -18,8 +18,8 @@
 }
 
 + (id)_podcastSizeCacheFilePath;
-@property(readonly, nonatomic) NSDictionary *relationshipDict; // @synthesize relationshipDict=_relationshipDict;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *relationshipDict; // @synthesize relationshipDict=_relationshipDict;
 - (void)_registerForCacheChanged;
 - (id)_cachedPodcastEpisodeSizeDictionary;
 - (void)_setupFromCache;

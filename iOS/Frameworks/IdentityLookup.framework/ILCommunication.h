@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(readonly, copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

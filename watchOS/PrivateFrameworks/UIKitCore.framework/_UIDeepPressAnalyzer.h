@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UIVelocityIntegrator *_locationIntegrator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIVelocityIntegrator *locationIntegrator; // @synthesize locationIntegrator=_locationIntegrator;
 @property(retain, nonatomic) _UIVelocityIntegrator *touchForceIntegrator; // @synthesize touchForceIntegrator=_touchForceIntegrator;
-- (void).cxx_destruct;
 - (float)_touchForceFromTouches:(id)arg1;
 @property(readonly, nonatomic, getter=isDeepPressLikely) _Bool deepPressLikely;
 - (void)analyzeTouchForce:(float)arg1 centroidAtLocation:(struct CGPoint)arg2;

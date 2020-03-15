@@ -13,10 +13,10 @@
     CDUnknownBlockType _tryPINHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tryPINHandler; // @synthesize tryPINHandler=_tryPINHandler;
 @property(copy, nonatomic) CDUnknownBlockType retryHandler; // @synthesize retryHandler=_retryHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
-- (void).cxx_destruct;
 - (void)promptWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
 - (void)pairingError:(id)arg1;
 - (void)invalidate;

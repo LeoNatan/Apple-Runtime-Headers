@@ -27,6 +27,7 @@
     HUQuickControlContentCharacteristicWritingUpdateAdapter *_characteristicWritingAdapter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUQuickControlContentCharacteristicWritingUpdateAdapter *characteristicWritingAdapter; // @synthesize characteristicWritingAdapter=_characteristicWritingAdapter;
 @property(readonly, nonatomic) NSMapTable *viewControllersKeyedByItem; // @synthesize viewControllersKeyedByItem=_viewControllersKeyedByItem;
 @property(nonatomic) BOOL disableItemUpdatesForOverrideCharacteristicValueChanges; // @synthesize disableItemUpdatesForOverrideCharacteristicValueChanges=_disableItemUpdatesForOverrideCharacteristicValueChanges;
@@ -35,7 +36,6 @@
 @property(nonatomic, getter=isUserInteractionEnabled) BOOL userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic) __weak id <HUQuickControlContentHosting> quickControlHost; // @synthesize quickControlHost=_quickControlHost;
 @property(nonatomic) __weak id <HUQuickControlContentCharacteristicWritingDelegate> characteristicWritingDelegate; // @synthesize characteristicWritingDelegate=_characteristicWritingDelegate;
-- (void).cxx_destruct;
 - (id)overrideValueForCharacteristic:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *affectedCharacteristics;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;

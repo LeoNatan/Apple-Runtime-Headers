@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     SAMutableDataOutputStream *_stream;
 }
 
+- (void).cxx_destruct;
 @property(retain) SAMutableDataOutputStream *stream; // @synthesize stream=_stream;
 @property BOOL isTargetThread; // @synthesize isTargetThread=_isTargetThread;
 @property BOOL isMainThread; // @synthesize isMainThread=_isMainThread;
 @property(retain) NSMutableArray *threadIds; // @synthesize threadIds=_threadIds;
 @property(retain) NSMutableArray *dispatchQueues; // @synthesize dispatchQueues=_dispatchQueues;
 @property unsigned long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 
 @end
 

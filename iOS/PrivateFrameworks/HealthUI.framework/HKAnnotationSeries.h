@@ -16,8 +16,8 @@
 }
 
 + (id)_buildChartPointsForDateInterval:(id)arg1 trendData:(id)arg2;
-@property(readonly, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 - (void)setUpdateDelegate:(id)arg1;
 - (id)dataForDateRange:(id)arg1 timeScope:(long long)arg2;
 - (_Bool)supportsMultiTouchSelection;

@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     PHManualFetchResult *__assetsFetchResults;
 }
 
-@property(retain, nonatomic, setter=_setAssetsFetchResult:) PHManualFetchResult *_assetsFetchResults; // @synthesize _assetsFetchResults=__assetsFetchResults;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setAssetsFetchResult:) PHManualFetchResult *_assetsFetchResults; // @synthesize _assetsFetchResults=__assetsFetchResults;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (id)attemptTogglingAssetsVisibilityFromViewController:(id)arg1 sourceView:(id)arg2 sourceRect:(struct CGRect)arg3 completionHandler:(CDUnknownBlockType)arg4;

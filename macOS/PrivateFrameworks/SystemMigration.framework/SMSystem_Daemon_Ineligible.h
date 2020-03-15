@@ -18,13 +18,13 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
 @property(retain) NSImage *overrideIcon; // @synthesize overrideIcon;
 @property BOOL obsoleteSoftware; // @synthesize obsoleteSoftware;
 @property(retain) NSURL *path; // @synthesize path;
 @property unsigned long long systemType; // @synthesize systemType;
 @property(retain) NSString *systemName; // @synthesize systemName;
-- (void).cxx_destruct;
 - (BOOL)enabled;
 - (BOOL)selectableSystem;
 - (id)warningBadge;

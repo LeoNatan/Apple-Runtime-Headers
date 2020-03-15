@@ -14,9 +14,9 @@
     UILabel *_valueLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *keyLabel; // @synthesize keyLabel=_keyLabel;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

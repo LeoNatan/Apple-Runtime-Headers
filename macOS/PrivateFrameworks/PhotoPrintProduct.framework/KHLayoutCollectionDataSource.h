@@ -15,9 +15,9 @@
     id <KHLayoutCollectionDataSourceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <KHLayoutCollectionDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) KHTheme *theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (id)accessibilityValuesForLayout:(id)arg1;
 - (id)accessibilityValues;
 - (void)refresh;

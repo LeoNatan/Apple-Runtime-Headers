@@ -42,6 +42,7 @@
 + (id)dateFormatter;
 + (BOOL)hasPanoramaImageDimensions:(struct CGSize)arg1;
 + (id)importAssetsFromModels:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *thumbnailRequestsBySize; // @synthesize thumbnailRequestsBySize=_thumbnailRequestsBySize;
 @property(retain, nonatomic) NSMutableDictionary *assetRequestsBySize; // @synthesize assetRequestsBySize=_assetRequestsBySize;
 @property(retain, nonatomic) NSMutableDictionary *imageRepresentationsBySize; // @synthesize imageRepresentationsBySize=_imageRepresentationsBySize;
@@ -63,7 +64,6 @@
 @property(nonatomic) __weak PXImportAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) PHImportAsset *importAsset; // @synthesize importAsset=_importAsset;
 @property(nonatomic) __weak id <PXImportDisplayDelegate> displayDelegate; // @synthesize displayDelegate=_displayDelegate;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (id)groupIdentifier;
 @property(readonly, nonatomic) NSDate *fileCreationDate;

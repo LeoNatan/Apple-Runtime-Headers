@@ -18,10 +18,10 @@
 }
 
 + (id)providerForDomain:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *deferredMessageKeys; // @synthesize deferredMessageKeys=_deferredMessageKeys;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)stringForExpression:(id)arg1;
 
 // Remaining properties

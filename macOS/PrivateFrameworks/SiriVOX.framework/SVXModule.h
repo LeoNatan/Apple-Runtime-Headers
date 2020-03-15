@@ -17,11 +17,11 @@
     id <SVXPerforming> _performer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isActive; // @synthesize isActive=_isActive;
 @property(readonly, nonatomic) id <SVXPerforming> performer; // @synthesize performer=_performer;
 @property(readonly, nonatomic) Class instanceClass; // @synthesize instanceClass=_instanceClass;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 instanceClass:(Class)arg2 performer:(id)arg3;
 

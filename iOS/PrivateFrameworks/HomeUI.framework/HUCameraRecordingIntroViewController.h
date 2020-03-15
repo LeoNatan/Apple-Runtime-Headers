@@ -21,12 +21,12 @@
     OBLinkTrayButton *_notNowButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OBLinkTrayButton *notNowButton; // @synthesize notNowButton=_notNowButton;
 @property(retain, nonatomic) OBTrayButton *setupButton; // @synthesize setupButton=_setupButton;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) unsigned long long variant; // @synthesize variant=_variant;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)hu_preloadContent;

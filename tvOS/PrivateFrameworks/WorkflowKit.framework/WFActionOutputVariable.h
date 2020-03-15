@@ -15,8 +15,8 @@
     WFAction *_action;
 }
 
-- (id)variableProvider;
 - (void).cxx_destruct;
+- (id)variableProvider;
 - (void)variableProvider:(id)arg1 variableNameDidChangeTo:(id)arg2;
 - (void)retrieveContentCollectionWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)possibleContentClassesWithContext:(id)arg1;

@@ -20,12 +20,12 @@
 
 + (void)initialize;
 + (id)nameWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
 @property(readonly, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(readonly, nonatomic) NSString *middlename; // @synthesize middlename=_middlename;
 @property(readonly, nonatomic) NSString *surname; // @synthesize surname=_surname;
 @property(readonly, nonatomic) NSString *firstname; // @synthesize firstname=_firstname;
-- (void).cxx_destruct;
 - (id)toSGNameWithOrigin:(id)arg1 recordId:(id)arg2 extractionInfo:(id)arg3;
 - (id)initWithWesternName:(id)arg1;
 - (id)segmentWesternNameWithNameParts:(id)arg1 andPrefix:(id)arg2;

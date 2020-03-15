@@ -16,13 +16,13 @@
     NSSet *_emittableGroupTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *emittableGroupTypes; // @synthesize emittableGroupTypes=_emittableGroupTypes;
 @property(retain, nonatomic) id <FCHeadlineClusterOrdering> headlineClusterOrderer; // @synthesize headlineClusterOrderer=_headlineClusterOrderer;
 @property(retain, nonatomic) id <FCHeadlineClustering> headlineClusterer; // @synthesize headlineClusterer=_headlineClusterer;
-- (void).cxx_destruct;
 - (id)_sortClusteredHeadlinesForDisplay:(id)arg1 withAdditionalData:(id)arg2 scoresByArticleID:(id)arg3 topicsByID:(id)arg4 translationProvider:(id)arg5;
 - (id)_joinedFeedTransformation;
-- (id)_nonEditorialFeedTransformationWithFeedContext:(id)arg1 feedItemScores:(id)arg2 showStoriesOnlyFromFavorites:(_Bool)arg3;
+- (id)_nonEditorialFeedTransformationWithFeedContext:(id)arg1 showStoriesOnlyFromFavorites:(_Bool)arg2;
 - (void)_performOperation;
 - (void)performOperation;
 - (id)interleaveHeadlines:(id)arg1 withPublisherDiversificationPenalty:(double)arg2;

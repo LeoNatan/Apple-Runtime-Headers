@@ -19,10 +19,10 @@
     unsigned int _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSArray *verificationChannels; // @synthesize verificationChannels=_verificationChannels;
 @property(readonly, nonatomic) PKPaymentVerificationController *verificationController; // @synthesize verificationController=_verificationController;
-- (void).cxx_destruct;
 - (id)newVerificationRequest;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

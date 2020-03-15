@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PUTileReattachmentContext *_context;
 }
 
-@property(retain, nonatomic) PUTileReattachmentContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUTileReattachmentContext *context; // @synthesize context=_context;
 - (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(long long)arg3;
 
 @end

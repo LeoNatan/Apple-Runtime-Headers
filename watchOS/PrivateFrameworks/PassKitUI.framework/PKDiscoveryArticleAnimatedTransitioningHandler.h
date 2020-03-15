@@ -24,9 +24,9 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
-- (void).cxx_destruct;
 - (void)_moveCardView:(id)arg1 toView:(id)arg2 belowView:(id)arg3;
 - (double)transitionDuration:(id)arg1;
 - (void)animateTransition:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long provenance; // @synthesize provenance=_provenance;
 @property(readonly, nonatomic) ACHTemplate *template; // @synthesize template=_template;
 @property(readonly, nonatomic) long long action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTemplate:(id)arg1 provenance:(long long)arg2 action:(long long)arg3;

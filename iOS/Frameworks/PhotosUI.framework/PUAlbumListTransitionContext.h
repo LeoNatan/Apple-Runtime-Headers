@@ -19,13 +19,13 @@
     UICollectionViewTransitionLayout *_transitionLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewTransitionLayout *transitionLayout; // @synthesize transitionLayout=_transitionLayout;
 @property(nonatomic) _Bool usesContentOffsetAutoAdjust; // @synthesize usesContentOffsetAutoAdjust=_usesContentOffsetAutoAdjust;
 @property(retain, nonatomic) PUPhotoDecoration *photoDecoration; // @synthesize photoDecoration=_photoDecoration;
 @property(retain, nonatomic) NSIndexPath *keyItemIndexPath; // @synthesize keyItemIndexPath=_keyItemIndexPath;
 @property(retain, nonatomic) PHCollection *phCollection; // @synthesize phCollection=_phCollection;
 @property(retain, nonatomic) id <PLAssetContainer> collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 
 @end
 

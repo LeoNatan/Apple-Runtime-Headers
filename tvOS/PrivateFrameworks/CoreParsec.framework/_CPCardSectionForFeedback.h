@@ -19,11 +19,11 @@
     NSString *_resultId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resultId; // @synthesize resultId=_resultId;
 @property(copy, nonatomic) NSString *actionDestination; // @synthesize actionDestination=_actionDestination;
 @property(copy, nonatomic) NSString *actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(copy, nonatomic) NSString *cardSectionId; // @synthesize cardSectionId=_cardSectionId;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

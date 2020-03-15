@@ -15,6 +15,7 @@
     WFFileType *_preferredFileType;
 }
 
++ (id)defaultSourceForRepresentation:(id)arg1;
 + (BOOL)isAvailableOnPlatform:(long long)arg1;
 + (BOOL)hasLibrary;
 + (id)pluralFilterDescription;
@@ -30,14 +31,16 @@
 + (id)propertyBuilders;
 + (id)photoAlbums;
 + (void)runQuery:(id)arg1 withItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3;
++ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3 contentSource:(id)arg4;
 + (id)itemsWithBurstIdentifier:(id)arg1;
++ (id)itemWithAssetIdentifier:(id)arg1 assetFile:(id)arg2 nameIfKnown:(id)arg3 contentSource:(id)arg4;
 + (id)itemWithAssetIdentifier:(id)arg1 assetFile:(id)arg2 nameIfKnown:(id)arg3;
 + (id)itemWithAssetIdentifier:(id)arg1 assetFile:(id)arg2;
 + (id)itemWithAssetIdentifier:(id)arg1;
-@property(retain, nonatomic) WFFileType *preferredFileType; // @synthesize preferredFileType=_preferredFileType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFFileType *preferredFileType; // @synthesize preferredFileType=_preferredFileType;
 - (id)outputTypes;
+- (id)intermediaryTypesForCoercionToItemClass:(Class)arg1;
 - (id)assetRepresentationTypes;
 - (id)fullSizeAssetResourcesInResources:(id)arg1;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;

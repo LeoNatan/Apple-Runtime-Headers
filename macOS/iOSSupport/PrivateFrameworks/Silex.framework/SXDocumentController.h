@@ -19,12 +19,12 @@
     NSMutableDictionary *_componentStyles;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *componentStyles; // @synthesize componentStyles=_componentStyles;
 @property(retain, nonatomic) SXImageController *imageController; // @synthesize imageController=_imageController;
 @property(readonly, nonatomic) SXJSONObjectMerger *componentStyleMerger; // @synthesize componentStyleMerger=_componentStyleMerger;
 @property(readonly, nonatomic) SXDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) NSString *shareURL; // @synthesize shareURL=_shareURL;
-- (void).cxx_destruct;
 - (id)mergedObjectsWithIdentifiers:(id)arg1 fromDictionary:(id)arg2 merger:(id)arg3;
 @property(readonly, nonatomic) UIColor *topBackgroundColor;
 @property(readonly, nonatomic) UIColor *documentBackgroundColor;

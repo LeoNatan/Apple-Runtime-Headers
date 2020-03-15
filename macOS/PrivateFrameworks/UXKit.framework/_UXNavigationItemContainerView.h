@@ -34,6 +34,7 @@
 }
 
 + (id)layoutContainerForItem:(id)arg1 navigationBar:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSView *titleCenteringConstraintOwnerView; // @synthesize titleCenteringConstraintOwnerView=_titleCenteringConstraintOwnerView;
 @property(nonatomic) __weak NSView *titleCenteringTrackedView; // @synthesize titleCenteringTrackedView=_titleCenteringTrackedView;
 @property(nonatomic) __weak NSView *titleCenteringConstrainedTitleView; // @synthesize titleCenteringConstrainedTitleView=_titleCenteringConstrainedTitleView;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) __weak UXNavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(readonly, nonatomic) UXNavigationItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_updateItemsViews:(id)arg1 withNewViews:(id)arg2;
 - (void)setTitleCenteringTrackedView:(id)arg1 updateConstraints:(BOOL)arg2;
 - (void)layout;

@@ -15,8 +15,8 @@
     _Bool _visible;
 }
 
-@property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 - (void)addEntry:(id)arg1;
 
 @end

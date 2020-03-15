@@ -36,6 +36,7 @@
 + (BOOL)shouldSuppressInCallUIFromURLComponents:(id)arg1;
 + (BOOL)videoEnabledFromURLComponents:(id)arg1;
 + (id)remoteMembersFromURLComponents:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUplinkMuted) BOOL uplinkMuted; // @synthesize uplinkMuted=_uplinkMuted;
 @property(nonatomic) BOOL showUIPrompt; // @synthesize showUIPrompt=_showUIPrompt;
 @property(copy, nonatomic) NSString *messagesGroupName; // @synthesize messagesGroupName=_messagesGroupName;
@@ -46,7 +47,6 @@
 @property(nonatomic, getter=isVideoEnabled) BOOL videoEnabled; // @synthesize videoEnabled=_videoEnabled;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(readonly, copy, nonatomic) NSSet *remoteMembers; // @synthesize remoteMembers=_remoteMembers;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -60,6 +60,7 @@
 - (id)remoteMembersQueryItem;
 - (id)queryItems;
 @property(readonly, nonatomic) NSURL *URL;
+- (id)contactNamesByHandleWithContactsDataSource:(id)arg1;
 - (id)handles;
 - (id)bundleIdentifier;
 @property(readonly, copy) NSString *description;

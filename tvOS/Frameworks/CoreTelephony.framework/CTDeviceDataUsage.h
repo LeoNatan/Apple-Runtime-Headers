@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *wifiAssist; // @synthesize wifiAssist=_wifiAssist;
 @property(retain) NSMutableDictionary *systemServices; // @synthesize systemServices=_systemServices;
 @property(retain) NSMutableDictionary *proxiedOnlyApps; // @synthesize proxiedOnlyApps=_proxiedOnlyApps;
 @property(retain) NSMutableDictionary *uninstalledApps; // @synthesize uninstalledApps=_uninstalledApps;
 @property(retain) NSMutableDictionary *apps; // @synthesize apps=_apps;
 @property unsigned long long periods; // @synthesize periods=_periods;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

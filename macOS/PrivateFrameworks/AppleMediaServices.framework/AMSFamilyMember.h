@@ -21,6 +21,7 @@
     NSString *_lastName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isSharingPurchases) BOOL sharingPurchases; // @synthesize sharingPurchases=_sharingPurchases;
 @property(readonly) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly) NSString *iTunesUsername; // @synthesize iTunesUsername=_iTunesUsername;
@@ -30,7 +31,6 @@
 @property(readonly) NSString *firstName; // @synthesize firstName=_firstName;
 @property(getter=isCurrentSignedInUser) BOOL currentSignedInUser; // @synthesize currentSignedInUser=_currentSignedInUser;
 @property(readonly, getter=isAskToBuyEnabled) BOOL askToBuyEnabled; // @synthesize askToBuyEnabled=_askToBuyEnabled;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

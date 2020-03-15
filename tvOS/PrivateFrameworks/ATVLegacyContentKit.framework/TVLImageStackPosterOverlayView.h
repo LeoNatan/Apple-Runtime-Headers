@@ -20,13 +20,13 @@
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(nonatomic) __weak TVImageView *badgeImageView; // @synthesize badgeImageView=_badgeImageView;
 @property(nonatomic) __weak UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) TVLPosterOverlayElement *overlayElement; // @synthesize overlayElement=_overlayElement;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateWithFeedElement:(id)arg1;
 - (id)currentFeedElement;

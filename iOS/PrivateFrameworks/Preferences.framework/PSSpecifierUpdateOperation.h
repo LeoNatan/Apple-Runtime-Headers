@@ -24,12 +24,12 @@
 + (id)removeOperationWithSpecifier:(id)arg1 atIndex:(unsigned long long)arg2;
 + (id)reloadOperationWithSpecifier:(id)arg1 atIndex:(unsigned long long)arg2;
 + (id)insertOperationWithSpecifier:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool removingGroupSpecifierRemovesEntireGroup; // @synthesize removingGroupSpecifierRemovesEntireGroup=_removingGroupSpecifierRemovesEntireGroup;
 @property(retain, nonatomic) NSNumber *toIndex; // @synthesize toIndex=_toIndex;
 @property(retain, nonatomic) NSNumber *index; // @synthesize index=_index;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(readonly, nonatomic) long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (_Bool)applyToArray:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

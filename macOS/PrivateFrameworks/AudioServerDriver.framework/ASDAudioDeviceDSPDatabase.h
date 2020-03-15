@@ -16,11 +16,11 @@
     NSSet *_referencedDSPDeviceProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *referencedDSPDeviceProperties; // @synthesize referencedDSPDeviceProperties=_referencedDSPDeviceProperties;
 @property(readonly, nonatomic) NSSet *referencedUnderlyingDeviceProperties; // @synthesize referencedUnderlyingDeviceProperties=_referencedUnderlyingDeviceProperties;
 @property(readonly, nonatomic) NSSet *dspConfigurations; // @synthesize dspConfigurations=_dspConfigurations;
 @property(readonly, nonatomic) NSString *deviceUID; // @synthesize deviceUID=_deviceUID;
-- (void).cxx_destruct;
 - (id)dspConfigurationForDevice:(id)arg1;
 - (id)initWithDictionary:(id)arg1 resourcePath:(id)arg2 deviceUID:(id)arg3;
 

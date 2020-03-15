@@ -18,11 +18,11 @@
     UILabel *_explicitLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *explicitLabel; // @synthesize explicitLabel=_explicitLabel;
 @property(nonatomic) _Bool shouldUseMusicExplicitGlyph; // @synthesize shouldUseMusicExplicitGlyph=_shouldUseMusicExplicitGlyph;
 @property(nonatomic, getter=isExplicitTrack) _Bool explicitTrack; // @synthesize explicitTrack=_explicitTrack;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateExplicitTreatmentString;
 - (id)_createLabelWithTextAlignment:(long long)arg1;
 - (struct CGSize)intrinsicContentSize;

@@ -19,11 +19,11 @@
 }
 
 + (_Bool)isSupported;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 @property(readonly) _Bool resourcesAllocated; // @synthesize resourcesAllocated=_resourcesAllocated;
 @property(readonly) HapticClient *client; // @synthesize client=_client;
 @property(copy) CDUnknownBlockType stopRunningHandler; // @synthesize stopRunningHandler=_stopRunningHandler;
-- (void).cxx_destruct;
 - (void)detachHapticSequence:(unsigned long long)arg1;
 - (_Bool)clearSequenceEvents:(unsigned long long)arg1 atTime:(double)arg2;
 - (_Bool)setSequenceChannelParam:(unsigned long long)arg1 atTime:(double)arg2 channel:(unsigned long long)arg3 param:(unsigned long long)arg4 value:(float)arg5 error:(id *)arg6;

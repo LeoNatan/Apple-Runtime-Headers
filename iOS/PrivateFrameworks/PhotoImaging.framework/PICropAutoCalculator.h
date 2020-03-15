@@ -28,6 +28,7 @@
 + (id)updateCropAdjustment:(id)arg1 after:(id)arg2 error:(out id *)arg3;
 + (struct CGRect)overcaptureRectForStitchedOvercaptureSize:(CDStruct_912cb5d2)arg1 overcaptureVideoComplementSize:(CDStruct_912cb5d2)arg2 primarySize:(CDStruct_912cb5d2)arg3 autoLoopStabilizedCropRect:(struct CGRect)arg4;
 + (_Bool)stitchedOvercaptureRect:(struct CGRect *)arg1 primaryRect:(struct CGRect *)arg2 forComposition:(id)arg3 error:(out id *)arg4;
+- (void).cxx_destruct;
 @property(copy) NSString *debugFilesPrefix; // @synthesize debugFilesPrefix=_debugFilesPrefix;
 @property _Bool debugFilesEnabled; // @synthesize debugFilesEnabled=_debugFilesEnabled;
 @property double minAutoStraighten; // @synthesize minAutoStraighten=_minAutoStraighten;
@@ -38,7 +39,6 @@
 @property _Bool shouldPerformAutoStraighten; // @synthesize shouldPerformAutoStraighten=_shouldPerformAutoStraighten;
 @property _Bool shouldPerformAutoCrop; // @synthesize shouldPerformAutoCrop=_shouldPerformAutoCrop;
 @property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
-- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (_Bool)undoExifOrientation:(CDStruct_996ac03c *)arg1 error:(out id *)arg2;
 - (id)imageProperties:(out id *)arg1;

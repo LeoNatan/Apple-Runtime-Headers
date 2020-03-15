@@ -34,13 +34,13 @@
     UIView *_appOverlayView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool counterRotationViewTransformUpdatesPaused; // @synthesize counterRotationViewTransformUpdatesPaused=_counterRotationViewTransformUpdatesPaused;
 @property(retain, nonatomic) UIView *appOverlayView; // @synthesize appOverlayView=_appOverlayView;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) double statusBarAlpha; // @synthesize statusBarAlpha=_statusBarAlpha;
 @property(retain, nonatomic) SBApplicationSceneViewStatusBarDescriptor *statusBarDescriptor; // @synthesize statusBarDescriptor=_statusBarDescriptor;
-- (void).cxx_destruct;
 - (void)_maybeStartTrackingRotationForOverlay;
 - (void)_updateReferenceSize:(struct CGSize)arg1 andOrientation:(long long)arg2;
 - (void)_updateEdgeProtectAndAutoHideOnHomeGrabberView;

@@ -14,9 +14,9 @@
     ICUserIdentityProperties *_iCloudIdentityProperties;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) ICUserIdentityProperties *iCloudIdentityProperties; // @synthesize iCloudIdentityProperties=_iCloudIdentityProperties;
 @property(copy, nonatomic) ICUserIdentityProperties *identityProperties; // @synthesize identityProperties=_identityProperties;
-- (void).cxx_destruct;
 
 @end
 

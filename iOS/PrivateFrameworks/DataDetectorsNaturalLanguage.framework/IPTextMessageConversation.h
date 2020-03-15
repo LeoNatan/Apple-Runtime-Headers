@@ -18,10 +18,10 @@
 
 + (id)collapseMessages:(id)arg1;
 + (id)collapsedMessagesFromMessages:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *eventsByMessageIdentifierDictionary; // @synthesize eventsByMessageIdentifierDictionary=_eventsByMessageIdentifierDictionary;
 @property(retain) NSMutableDictionary *messageByMessageIdentifierDictionary; // @synthesize messageByMessageIdentifierDictionary=_messageByMessageIdentifierDictionary;
 @property(copy, nonatomic) NSArray *allMessages; // @synthesize allMessages=_allMessages;
-- (void).cxx_destruct;
 - (id)eventsInPreviouslyScannedMessageWithIdentifier:(id)arg1;
 - (void)_scanEventsInLastMessageOnly:(_Bool)arg1 synchronously:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)scanEventsInLastMessageOnly:(_Bool)arg1 synchronously:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;

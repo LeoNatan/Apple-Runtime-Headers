@@ -45,6 +45,7 @@
 + (unsigned long long)buttonTagForCFUserNotificationButtonTitleKey:(struct __CFString *)arg1;
 + (void)_initializeStaticButtonTitleKeyAndTagMapping;
 + (long long)displayCountForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *touchIDContinueToken; // @synthesize touchIDContinueToken=_touchIDContinueToken;
 @property(readonly) SSPaymentSheet *paymentSheet; // @synthesize paymentSheet=_paymentSheet;
 @property _Bool displaysOnLockscreen; // @synthesize displaysOnLockscreen=_displaysOnLockscreen;
@@ -67,7 +68,6 @@
 @property _Bool authorizationIsForced; // @synthesize authorizationIsForced=_authorizationIsForced;
 @property(copy) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 @property _Bool allowDuplicates; // @synthesize allowDuplicates=_allowDuplicates;
-- (void).cxx_destruct;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (long long)_kindForString:(id)arg1;

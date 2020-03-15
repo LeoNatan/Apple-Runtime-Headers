@@ -13,8 +13,8 @@
     id <_SBUIPopoverExtensionHostInterface> _hostService;
 }
 
-@property(nonatomic) __weak id <_SBUIPopoverExtensionHostInterface> hostService; // @synthesize hostService=_hostService;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SBUIPopoverExtensionHostInterface> hostService; // @synthesize hostService=_hostService;
 - (void)requestDismiss;
 
 @end

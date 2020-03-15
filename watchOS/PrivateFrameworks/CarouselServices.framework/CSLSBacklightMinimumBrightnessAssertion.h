@@ -16,11 +16,11 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) NSString *display; // @synthesize display=_display;
 @property(readonly, nonatomic) float fadeDuration; // @synthesize fadeDuration=_fadeDuration;
 @property(readonly, nonatomic) float minimumNits; // @synthesize minimumNits=_minimumNits;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithMinimumNits:(float)arg1 fadeDuration:(float)arg2 forDisplay:(id)arg3;
 - (id)initWithMinimumNits:(float)arg1 forDisplay:(id)arg2;

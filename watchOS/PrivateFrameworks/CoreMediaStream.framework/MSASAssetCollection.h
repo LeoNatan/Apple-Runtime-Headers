@@ -36,6 +36,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)assetCollectionWithAssetCollection:(id)arg1;
 + (id)MSASPAssetCollectionFromProtocolDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMine; // @synthesize isMine=_isMine;
 @property(nonatomic) _Bool isDeletable; // @synthesize isDeletable=_isDeletable;
 @property(retain, nonatomic) NSString *email; // @synthesize email=_email;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSString *albumGUID; // @synthesize albumGUID=_albumGUID;
 @property(retain, nonatomic) NSString *ctag; // @synthesize ctag=_ctag;
 @property(retain, nonatomic) NSString *GUID; // @synthesize GUID=_GUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mediaAssetType;
 - (_Bool)isAutoloopVideo;

@@ -20,6 +20,7 @@
 }
 
 + (id)templateChooserItems;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *templateDescription; // @synthesize templateDescription=_templateDescription;
 @property(nonatomic) struct CGSize imageInset; // @synthesize imageInset=_imageInset;
 @property(nonatomic) double imageDimension; // @synthesize imageDimension=_imageDimensino;
@@ -27,7 +28,6 @@
 @property(retain) AMWorkflowMetaData *workflowMetaData; // @synthesize workflowMetaData=_workflowMetaData;
 @property __weak AMWorkflowPersonality *workflowPersonality; // @synthesize workflowPersonality=_workflowPersonality;
 @property(retain, nonatomic) NSImage *imageRepresentation; // @synthesize imageRepresentation=_imageRepresentation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isSelectable;
 - (void)configureWithSettingsDictionary:(id)arg1;
 - (id)description;

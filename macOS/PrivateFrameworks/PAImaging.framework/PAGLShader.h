@@ -16,10 +16,10 @@
 }
 
 + (void)deleteWithContext:(id)arg1 objectID:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 @property(readonly, nonatomic, getter=isCompiled) BOOL compiled; // @synthesize compiled=_compiled;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)compileWithContext:(id)arg1;
 - (BOOL)_compilationStatus;
 - (void)_compile;

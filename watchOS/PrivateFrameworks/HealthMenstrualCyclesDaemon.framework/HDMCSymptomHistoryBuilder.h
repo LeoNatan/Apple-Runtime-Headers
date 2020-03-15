@@ -14,8 +14,8 @@
     unsigned int _recentSymptoms;
 }
 
-@property(nonatomic) unsigned int recentSymptoms; // @synthesize recentSymptoms=_recentSymptoms;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int recentSymptoms; // @synthesize recentSymptoms=_recentSymptoms;
 - (void)addSymptoms:(unsigned int)arg1 forDayIndex:(int)arg2;
 - (id)initWithCurrentDayIndex:(int)arg1;
 

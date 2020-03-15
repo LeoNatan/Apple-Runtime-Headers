@@ -18,10 +18,10 @@
 }
 
 + (id)CreateControllerParameters:(id)arg1:(id)arg2:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *playerBypassRenderLink; // @synthesize playerBypassRenderLink=_playerBypassRenderLink;
 @property(retain, nonatomic) NSNumber *playerQueueSize; // @synthesize playerQueueSize=_playerQueueSize;
 @property(retain, nonatomic) NSNumber *renderLinkRate; // @synthesize renderLinkRate=_renderLinkRate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateNilsFrom:(id)arg1;
 - (BOOL)hasNilParameter;

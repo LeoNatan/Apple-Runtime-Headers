@@ -28,6 +28,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSString *logPrefix; // @synthesize logPrefix=_logPrefix;
 @property(retain, nonatomic) NSProgress *internalProgress; // @synthesize internalProgress=_internalProgress;
@@ -39,7 +40,6 @@
 @property(readonly, copy, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 @property(readonly, copy, nonatomic) NSArray *filterQueries; // @synthesize filterQueries=_filterQueries;
 @property(readonly, copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (void)_cancel;
 - (void)cancel;
 - (void)start;

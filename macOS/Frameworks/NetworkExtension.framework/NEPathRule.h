@@ -25,6 +25,7 @@
 
 + (long long)aggregateNetworkBehavior:(long long)arg1 other:(long long)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long internalWiFiBehavior; // @synthesize internalWiFiBehavior=_internalWiFiBehavior;
 @property(retain) NSNumber *aggregateEnterpriseWiFi; // @synthesize aggregateEnterpriseWiFi=_aggregateEnterpriseWiFi;
 @property(retain) NSNumber *aggregatePersonalWiFi; // @synthesize aggregatePersonalWiFi=_aggregatePersonalWiFi;
@@ -33,7 +34,6 @@
 @property(retain) NSNumber *aggregatePersonalCellular; // @synthesize aggregatePersonalCellular=_aggregatePersonalCellular;
 @property BOOL isIdentifierExternal; // @synthesize isIdentifierExternal=_isIdentifierExternal;
 @property BOOL denyCellularFallback; // @synthesize denyCellularFallback=_denyCellularFallback;
-- (void).cxx_destruct;
 - (BOOL)supportsWiFiBehavior:(long long)arg1;
 - (void)addWiFiBehavior:(long long)arg1 grade:(long long)arg2;
 - (BOOL)supportsCellularBehavior:(long long)arg1;
@@ -41,7 +41,7 @@
 @property long long wifiBehavior;
 @property long long cellularBehavior;
 - (BOOL)isAggregateRule;
-- (BOOL)signingIdentifierAllowed:(id)arg1 domainsRequired:(out char *)arg2;
+- (BOOL)signingIdentifierAllowed:(id)arg1 domainsOrAccountsRequired:(out char *)arg2;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

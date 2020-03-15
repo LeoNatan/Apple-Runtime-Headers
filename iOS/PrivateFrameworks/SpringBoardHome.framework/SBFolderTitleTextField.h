@@ -18,10 +18,10 @@
 + (id)_clearButtonImage;
 + (id)_editBackgroundImage;
 + (void)warmupIfNecessary;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showingEditUI; // @synthesize showingEditUI=_showingEditUI;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
-- (void).cxx_destruct;
 - (id)_clearButtonImage;
 - (id)_backgroundImage;
 - (void)_updateLegibility;

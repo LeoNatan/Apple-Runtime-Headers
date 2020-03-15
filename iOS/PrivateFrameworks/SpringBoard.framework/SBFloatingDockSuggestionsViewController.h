@@ -35,6 +35,7 @@
     id <SBIconViewProviding> _iconViewProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SBIconViewProviding> iconViewProvider; // @synthesize iconViewProvider=_iconViewProvider;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) long long effectiveEnvironmentMode; // @synthesize effectiveEnvironmentMode=_effectiveEnvironmentMode;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) unsigned long long numberOfRecents; // @synthesize numberOfRecents=_numberOfRecents;
 @property(nonatomic) __weak id <SBFloatingDockSuggestionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak SBFloatingDockViewController *floatingDockViewController; // @synthesize floatingDockViewController=_floatingDockViewController;
-- (void).cxx_destruct;
 - (void)_fadeInIcon:(id)arg1 isReplacing:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fadeOutIcon:(id)arg1 atIndex:(unsigned long long)arg2 isReplacing:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_listLayoutDidChange:(id)arg1;

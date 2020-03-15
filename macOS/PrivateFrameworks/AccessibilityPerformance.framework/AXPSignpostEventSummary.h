@@ -22,12 +22,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)makeIdentifierFromSignpostName:(id)arg1 metadata1:(id)arg2 metadata2:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double totalIntervalTime; // @synthesize totalIntervalTime=_totalIntervalTime;
 @property(nonatomic) long long totalCount; // @synthesize totalCount=_totalCount;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

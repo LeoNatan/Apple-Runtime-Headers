@@ -35,12 +35,12 @@
 + (id)currentPersonaOrHomeDirectoryOverride:(id)arg1;
 + (id)currentPersonaOrHomeDirectory;
 + (id)currentPersonaVolume;
+- (void).cxx_destruct;
 @property(readonly) NSString *dataPath; // @synthesize dataPath=_dataPath;
 @property(readonly) NSString *metadataPath; // @synthesize metadataPath=_metadataPath;
 @property(readonly) NSString *containerPath; // @synthesize containerPath=_containerPath;
 @property(readonly) NSString *personaVolume; // @synthesize personaVolume=_personaVolume;
 @property(readonly) NSString *homeDirPath; // @synthesize homeDirPath=_homeDirPath;
-- (void).cxx_destruct;
 - (BOOL)setError:(id *)arg1 message:(id)arg2 forPath:(id)arg3 withDomain:(id)arg4 code:(long long)arg5;
 @property(readonly) NSDictionary *sandboxProfileDataValidationInfo; // @dynamic sandboxProfileDataValidationInfo;
 @property(readonly) NSData *sandboxProfileData; // @dynamic sandboxProfileData;

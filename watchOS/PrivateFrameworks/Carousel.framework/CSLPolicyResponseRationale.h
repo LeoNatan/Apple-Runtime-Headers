@@ -14,8 +14,8 @@
     NSString *_policyName;
 }
 
-@property(readonly) NSString *policyName; // @synthesize policyName=_policyName;
 - (void).cxx_destruct;
+@property(readonly) NSString *policyName; // @synthesize policyName=_policyName;
 - (id)description;
 @property(readonly) NSMutableArray *conditions; // @synthesize conditions=_conditions;
 - (void)addRationaleForDeniedActivityWithDescriptiveCondition:(id)arg1;

@@ -18,11 +18,11 @@
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long state; // @synthesize state=_state;
 @property(retain) PFDispatchQueue *isolationQueue; // @synthesize isolationQueue=_isolationQueue;
 @property(retain) NSMutableDictionary *pendingRequestIdentifierToProgressMap; // @synthesize pendingRequestIdentifierToProgressMap=_pendingRequestIdentifierToProgressMap;
 @property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
-- (void).cxx_destruct;
 - (void)invalidateAfterPendingRequestCompletion;
 - (void)updateProgress:(id)arg1;
 - (void)performCleanupForJobGroupIdentifier:(id)arg1;

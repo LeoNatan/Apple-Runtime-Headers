@@ -17,9 +17,9 @@
     id <SXFontAttributes> _fontAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXFontAttributes> fontAttributes; // @synthesize fontAttributes=_fontAttributes;
 @property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (void).cxx_destruct;
 - (id)initWithFontName:(id)arg1 fontAttributes:(id)arg2;
 
 // Remaining properties

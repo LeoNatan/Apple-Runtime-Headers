@@ -17,12 +17,12 @@
     DOCTagCheckmarkView *_checkmarkView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DOCTagCheckmarkView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(readonly, nonatomic) UILabel *tagNameLabel; // @synthesize tagNameLabel=_tagNameLabel;
 @property(readonly, nonatomic) DOCTagDotView *tagDotView; // @synthesize tagDotView=_tagDotView;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) DOCTag *tagValue; // @synthesize tagValue=_tagValue;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateBorder;
 - (void)updateBackgroundColor;

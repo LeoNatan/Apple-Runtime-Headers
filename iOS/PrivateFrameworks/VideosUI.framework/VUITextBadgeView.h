@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)badgeElementHasContent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *expiryUpdateTimer; // @synthesize expiryUpdateTimer=_expiryUpdateTimer;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) struct CGSize glyphSize; // @synthesize glyphSize=_glyphSize;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(nonatomic) double strokeSize; // @synthesize strokeSize=_strokeSize;
-- (void).cxx_destruct;
 - (void)_imageLoaded;
 - (struct CGSize)_textSize;
 - (void)_invalidateTimer;

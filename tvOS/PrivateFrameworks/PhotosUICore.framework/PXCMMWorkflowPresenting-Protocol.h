@@ -6,10 +6,11 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PXCMMContext;
+@class NSObject, PXCMMContext;
+@protocol PXAnonymousViewController;
 
 @protocol PXCMMWorkflowPresenting <NSObject>
 - (void)cancelWorkflow;
-- (struct NSObject *)workflowViewControllerWithContext:(PXCMMContext *)arg1;
+- (NSObject<PXAnonymousViewController> *)workflowViewControllerWithContext:(PXCMMContext *)arg1;
 @end
 

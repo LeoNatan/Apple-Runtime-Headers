@@ -28,6 +28,7 @@
     double _lastReportTimeAsInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=setIsReactionJob:) _Bool isReactionJob; // @synthesize isReactionJob=_isReactionJob;
 @property(nonatomic) _Bool treatMissingResultsAsFailures; // @synthesize treatMissingResultsAsFailures=_treatMissingResultsAsFailures;
 @property double lastReportTimeAsInterval; // @synthesize lastReportTimeAsInterval=_lastReportTimeAsInterval;
@@ -41,7 +42,6 @@
 @property(nonatomic) _Bool didTimeout; // @synthesize didTimeout=_didTimeout;
 @property(readonly, nonatomic) short workerType; // @synthesize workerType=_workerType;
 @property(readonly, nonatomic) unsigned long long scenario; // @synthesize scenario=_scenario;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float completionScore; // @dynamic completionScore;
 @property(readonly, nonatomic) _Bool finished;
 - (_Bool)stopProcessingOnWorker:(id)arg1 withError:(id *)arg2;

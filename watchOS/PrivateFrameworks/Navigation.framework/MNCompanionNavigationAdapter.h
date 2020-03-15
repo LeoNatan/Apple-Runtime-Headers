@@ -41,8 +41,8 @@
     id <MNCompanionNavigationDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MNCompanionNavigationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MNCompanionNavigationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleNavigationServiceStopped;
 - (void)_reloadRouteFromNavigationService:(id)arg1;
 - (void)navigationService:(id)arg1 didReceiveRealtimeUpdates:(id)arg2;

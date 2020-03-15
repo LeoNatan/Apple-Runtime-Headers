@@ -32,6 +32,7 @@
 }
 
 + (id)sharedFireworksGLContext;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *stopTimer; // @synthesize stopTimer=_stopTimer;
 @property int ticks; // @synthesize ticks=_ticks;
 @property double averageFrameDuration; // @synthesize averageFrameDuration=_averageFrameDuration;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSMutableArray *particleSystems; // @synthesize particleSystems=_particleSystems;
 @property(retain, nonatomic) RPDGLContext *glContext; // @synthesize glContext=_glContext;
 @property(retain, nonatomic) GLKView *fireworksView; // @synthesize fireworksView=_fireworksView;
-- (void).cxx_destruct;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect)arg2 forTime:(double)arg3;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect)arg2;
 - (void)displayTimerDidFire:(id)arg1;

@@ -34,6 +34,7 @@
     MPAVRoutingTableViewCellSubtitleTextState *_subtitleTextState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPAVRoutingTableViewCellSubtitleTextState *subtitleTextState; // @synthesize subtitleTextState=_subtitleTextState;
 @property(nonatomic, getter=isShowingVolumeSlider) _Bool showingVolumeSlider; // @synthesize showingVolumeSlider=_showingVolumeSlider;
 @property(retain, nonatomic) MPVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
@@ -46,9 +47,8 @@
 @property(nonatomic) unsigned int mirroringStyle; // @synthesize mirroringStyle=_mirroringStyle;
 @property(nonatomic) _Bool mirroringSwitchVisible; // @synthesize mirroringSwitchVisible=_mirroringSwitchVisible;
 @property(nonatomic) __weak id <MPAVRoutingTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_animateSubtitleLabelToNextAvailableText;
-- (void)_updateSpinnerStyle;
+- (void)_updateSpinnerColor;
 - (void)_updateSubtitleTextLabelForRouteItem:(id)arg1;
 - (void)_updateAccessory;
 - (id)_checkmarkImageForSmartAudio;

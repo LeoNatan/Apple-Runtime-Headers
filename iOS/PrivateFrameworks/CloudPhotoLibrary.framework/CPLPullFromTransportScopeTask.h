@@ -6,7 +6,7 @@
 
 #import <CloudPhotoLibrary/CPLEngineScopedTask.h>
 
-@class CPLEngineTransport, CPLFeatureVersionHistory, CPLLibraryInfo, CPLLibraryState, NSObject, NSString;
+@class CPLEngineTransport, CPLFeatureVersionHistory, CPLLibraryInfo, CPLLibraryState, NSData, NSObject, NSString;
 @protocol CPLEngineTransportDownloadBatchTask, CPLEngineTransportGetCurrentSyncAnchorTask, CPLEngineTransportGroup, CPLEngineTransportQueryTask, OS_dispatch_queue;
 
 @interface CPLPullFromTransportScopeTask : CPLEngineScopedTask
@@ -20,7 +20,7 @@
     _Bool _ignoreNewBatches;
     _Bool _useCourtesyMingling;
     unsigned long long _rewindFeatureVersion;
-    struct NSData *_rewindSyncAnchor;
+    NSData *_rewindSyncAnchor;
     CPLFeatureVersionHistory *_versionHistory;
     id <CPLEngineTransportGroup> _transportGroup;
     unsigned long long _totalAssetCountForScope;
@@ -28,7 +28,7 @@
     long long _taskItem;
     _Bool _hasFetchedInitialSyncAnchor;
     _Bool _shouldStoreInitialSyncAnchor;
-    struct NSData *_initialSyncAnchor;
+    NSData *_initialSyncAnchor;
     CPLLibraryInfo *_initialLibraryInfo;
     CPLLibraryState *_initialLibraryState;
     id <CPLEngineTransportGetCurrentSyncAnchorTask> _fetchInitialSyncAnchorTask;
@@ -38,8 +38,8 @@
     NSString *_phaseDescription;
 }
 
-@property(copy) NSString *phaseDescription; // @synthesize phaseDescription=_phaseDescription;
 - (void).cxx_destruct;
+@property(copy) NSString *phaseDescription; // @synthesize phaseDescription=_phaseDescription;
 - (id)taskIdentifier;
 - (void)cancel;
 - (void)taskDidFinishWithError:(id)arg1;
@@ -53,11 +53,11 @@
 - (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2;
 - (void)_storeInitialSyncAnchorIfNecessaryInTransaction:(id)arg1;
 - (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2 inTransaction:(id)arg3;
-- (void)_launchFetchChangesFromSyncAnchor:(struct NSData *)arg1;
-- (void)_updateLastFeatureVersionAndRelaunchFetchChangesFromSyncAnchor:(struct NSData *)arg1;
-- (void)_handleNewBatchFromChanges:(id)arg1 updatedLibraryInfo:(id)arg2 updatedLibraryState:(id)arg3 newSyncAnchor:(struct NSData *)arg4;
+- (void)_launchFetchChangesFromSyncAnchor:(id)arg1;
+- (void)_updateLastFeatureVersionAndRelaunchFetchChangesFromSyncAnchor:(id)arg1;
+- (void)_handleNewBatchFromChanges:(id)arg1 updatedLibraryInfo:(id)arg2 updatedLibraryState:(id)arg3 newSyncAnchor:(id)arg4;
 - (_Bool)checkScopeIsValidInTransaction:(id)arg1;
-- (void)_handleNewBatchFromChanges:(id)arg1 newSyncAnchor:(struct NSData *)arg2 inTransaction:(id)arg3;
+- (void)_handleNewBatchFromChanges:(id)arg1 newSyncAnchor:(id)arg2 inTransaction:(id)arg3;
 - (unsigned long long)_totalAssetCountForScope;
 - (void)_extractAndMingleAssetsIfPossibleFromBatch:(id)arg1 inTransaction:(id)arg2;
 - (void)_cancelAllTasks;

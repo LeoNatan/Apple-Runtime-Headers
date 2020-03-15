@@ -17,12 +17,12 @@
     unsigned int _smoothingAttempts;
 }
 
+- (void).cxx_destruct;
 @property unsigned int smoothingAttempts; // @synthesize smoothingAttempts=_smoothingAttempts;
 @property(retain, nonatomic) HDDaemonTransaction *transaction; // @synthesize transaction=_transaction;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSArray *unsmoothedLocations; // @synthesize unsmoothedLocations=_unsmoothedLocations;
 @property(retain, nonatomic) HKWorkoutRoute *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithRoute:(id)arg1;

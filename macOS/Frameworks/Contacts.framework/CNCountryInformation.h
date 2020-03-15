@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_phoneticName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *phoneticName; // @synthesize phoneticName=_phoneticName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

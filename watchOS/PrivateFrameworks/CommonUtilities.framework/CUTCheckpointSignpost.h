@@ -18,10 +18,10 @@
     unsigned long long _signpostID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int scope; // @synthesize scope=_scope;
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (_Bool)_verifyMatchingName:(id)arg1;
 - (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2;
 

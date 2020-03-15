@@ -16,10 +16,10 @@
 }
 
 + (long long)_songPartForText:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lines; // @synthesize lines=_lines;
 @property(copy, nonatomic) NSString *songPartText; // @synthesize songPartText=_songPartText;
 @property(nonatomic) long long songPart; // @synthesize songPart=_songPart;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

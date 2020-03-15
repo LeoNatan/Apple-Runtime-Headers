@@ -16,9 +16,9 @@
 }
 
 + (unsigned long long)actualCapacity:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) unsigned long long beginIndex; // @synthesize beginIndex=_beginIndex;
-- (void).cxx_destruct;
 - (void)clear;
 - (id)bitVector;
 - (unsigned char)bitAtIndex:(unsigned long long)arg1;

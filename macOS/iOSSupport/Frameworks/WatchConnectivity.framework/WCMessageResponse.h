@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain) NSError *error; // @synthesize error=_error;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

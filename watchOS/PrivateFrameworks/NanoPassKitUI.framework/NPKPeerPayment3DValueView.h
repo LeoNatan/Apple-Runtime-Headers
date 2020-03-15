@@ -16,11 +16,11 @@
     NSNumberFormatter *_valueFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *valueFormatter; // @synthesize valueFormatter=_valueFormatter;
 @property(readonly, nonatomic) PKPeerPayment3DTextView *payment3DTextView; // @synthesize payment3DTextView=_payment3DTextView;
 @property(readonly, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(retain, nonatomic) NSDecimalNumber *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *text;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 value:(id)arg2 currency:(id)arg3;

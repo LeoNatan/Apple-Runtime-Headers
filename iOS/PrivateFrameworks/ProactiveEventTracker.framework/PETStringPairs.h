@@ -14,9 +14,9 @@
     NSArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) NSArray *keys; // @synthesize keys=_keys;
-- (void).cxx_destruct;
 - (id)subsetForKeys:(id)arg1;
 - (id)valueAtIndex:(unsigned long long)arg1;
 - (id)keyAtIndex:(unsigned long long)arg1;

@@ -37,6 +37,7 @@
     struct CGAffineTransform _viewTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsAddingToLayout; // @synthesize needsAddingToLayout=_needsAddingToLayout;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *placement; // @synthesize placement=_placement;
 @property(retain, nonatomic) id <UILayoutItem> layoutItem; // @synthesize layoutItem=_layoutItem;
@@ -57,7 +58,6 @@
 @property(readonly, copy, nonatomic) _UIStatusBarIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct UIEdgeInsets actionInsets; // @synthesize actionInsets=_actionInsets;
 @property(retain, nonatomic) _UIStatusBarAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)applyStyleAttributes:(id)arg1;
 @property(readonly, nonatomic) long long priority;
 @property(nonatomic) struct CGRect absoluteFrame;

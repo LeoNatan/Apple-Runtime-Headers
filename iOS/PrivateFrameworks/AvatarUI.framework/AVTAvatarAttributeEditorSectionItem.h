@@ -25,6 +25,7 @@
     CDUnknownBlockType _presetResourcesProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType presetResourcesProvider; // @synthesize presetResourcesProvider=_presetResourcesProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType thumbnailProvider; // @synthesize thumbnailProvider=_thumbnailProvider;
 @property(readonly, nonatomic) double heightRatio; // @synthesize heightRatio=_heightRatio;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, copy, nonatomic) CDUnknownBlockType avatarUpdater; // @synthesize avatarUpdater=_avatarUpdater;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (void)discardContent;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSString *prefetchingIdentifier;

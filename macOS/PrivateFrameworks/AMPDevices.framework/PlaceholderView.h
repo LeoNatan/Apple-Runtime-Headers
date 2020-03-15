@@ -13,8 +13,8 @@
     NSColor *_fillColor;
 }
 
-@property(readonly, nonatomic) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 
 @end
 

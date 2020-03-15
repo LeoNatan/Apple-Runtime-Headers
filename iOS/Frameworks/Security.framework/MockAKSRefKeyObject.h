@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSData *_blob;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *blob; // @synthesize blob=_blob;
 @property(retain) NSData *externalData; // @synthesize externalData=_externalData;
 @property(retain) NSData *acmHandle; // @synthesize acmHandle=_acmHandle;
 @property(retain) _SFAESKey *key; // @synthesize key=_key;
 @property(retain) NSData *keyData; // @synthesize keyData=_keyData;
-- (void).cxx_destruct;
 - (id)initWithKeyData:(id)arg1 parameters:(id)arg2 error:(id *)arg3;
 
 @end

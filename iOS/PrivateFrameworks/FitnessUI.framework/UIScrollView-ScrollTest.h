@@ -12,8 +12,8 @@
 + (id)_implicitAnimationCulprits;
 - (void)_incrementForScrollTest;
 - (id)_fiui_scrollTestExtraResults;
-- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5;
-- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 scrollAxis:(int)arg4;
+- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(unsigned long long)arg5;
+- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 scrollAxis:(unsigned long long)arg4;
 - (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
 - (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
 - (void)_suppressImplicitAnimationsForScrollTest;

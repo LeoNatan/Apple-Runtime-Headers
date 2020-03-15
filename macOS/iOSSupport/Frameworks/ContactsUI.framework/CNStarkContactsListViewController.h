@@ -21,12 +21,12 @@
 }
 
 + (id)makeContactsDisplayedProperties;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL limitedUI; // @synthesize limitedUI=_limitedUI;
 @property(retain, nonatomic) UITableViewHeaderFooterView *siriHeaderView; // @synthesize siriHeaderView=_siriHeaderView;
 @property(retain, nonatomic) CNStarkNoContentBannerView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) CNContactListTableView *contactListTableView; // @synthesize contactListTableView=_contactListTableView;
 @property(retain, nonatomic) NSArray *displayedContactProperties; // @synthesize displayedContactProperties=_displayedContactProperties;
-- (void).cxx_destruct;
 - (void)contactListViewController:(id)arg1 didSelectContact:(id)arg2;
 - (id)contactListStyleApplier;
 - (void)showContactListTableView;

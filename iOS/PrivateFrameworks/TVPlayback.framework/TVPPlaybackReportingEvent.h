@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     TVPPlaybackReportingEvent *_startEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TVPPlaybackReportingEvent *startEvent; // @synthesize startEvent=_startEvent;
 @property(nonatomic) long long durationMS; // @synthesize durationMS=_durationMS;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

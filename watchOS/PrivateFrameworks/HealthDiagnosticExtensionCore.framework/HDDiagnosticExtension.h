@@ -21,10 +21,10 @@
     NSMutableString *_collectionLog;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableString *collectionLog; // @synthesize collectionLog=_collectionLog;
 @property(readonly, nonatomic) _Bool allowsSensitiveAttachments; // @synthesize allowsSensitiveAttachments=_allowsSensitiveAttachments;
 @property(readonly, copy, nonatomic) NSURL *temporaryDirectoryURL; // @synthesize temporaryDirectoryURL=_temporaryDirectoryURL;
-- (void).cxx_destruct;
 - (id)_generateTemporaryAttachmentDirectory;
 - (_Bool)_captureLog;
 - (void)_logQueue_log:(id)arg1 timestamp:(double)arg2;

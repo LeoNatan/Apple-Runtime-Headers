@@ -6,9 +6,11 @@
 
 #import <ContactsPersistence/ABCDRecord.h>
 
-@class NSSet, NSString;
+#import <ContactsPersistence/ABCDContainedRecord-Protocol.h>
 
-@interface ABCDGroup : ABCDRecord
+@class CNCDContainer, NSSet, NSString;
+
+@interface ABCDGroup : ABCDRecord <ABCDContainedRecord>
 {
     id _readWriteSharingACL;
     id _readSharingACL;
@@ -19,6 +21,9 @@
 + (id)_table;
 + (id)abEntityName;
 - (void).cxx_destruct;
+- (BOOL)validateForDelete:(id *)arg1;
+- (BOOL)validateForUpdate:(id *)arg1;
+- (BOOL)validateForInsert:(id *)arg1;
 - (id)membersIncludingMembersOfSubgroups:(BOOL)arg1;
 - (id)affectedStoresInMembershipPredicate;
 - (id)contactMembershipRecursivePredicate;
@@ -36,6 +41,8 @@
 
 // Remaining properties
 @property(readonly, nonatomic) NSSet *contacts; // @dynamic contacts;
+@property(retain, nonatomic) CNCDContainer *container; // @dynamic container;
+@property(nonatomic) unsigned long long externalGroupBehavior; // @dynamic externalGroupBehavior;
 @property(retain, nonatomic) NSString *nameNormalized; // @dynamic nameNormalized;
 @property(retain, nonatomic) NSString *primitiveName; // @dynamic primitiveName;
 

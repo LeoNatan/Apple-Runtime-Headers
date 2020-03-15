@@ -16,9 +16,9 @@
 
 + (id)persistenceKey;
 + (id)daemonOfferStubsDictionarySample;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *buddyStubs; // @synthesize buddyStubs=_buddyStubs;
 @property(readonly, nonatomic) NSArray *serverStubs; // @synthesize serverStubs=_serverStubs;
-- (void).cxx_destruct;
 - (id)_chooseStubFromServerStubs:(id)arg1 conditions:(id)arg2;
 - (_Bool)_isValidServerStubs:(id)arg1 key:(id)arg2;
 - (void)_initServerStubsFromServerDictionary;

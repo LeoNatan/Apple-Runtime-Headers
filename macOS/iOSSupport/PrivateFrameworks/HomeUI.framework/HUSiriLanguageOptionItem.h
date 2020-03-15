@@ -16,10 +16,10 @@
 }
 
 + (id)selectionKeyForLanguageOption:(id)arg1 withOptionStyle:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFSiriLanguageOption *languageOption; // @synthesize languageOption=_languageOption;
 @property(readonly, nonatomic) HFAccessorySettingSiriLanguageAdapter *adapter; // @synthesize adapter=_adapter;
 @property(readonly, nonatomic) unsigned long long optionStyle; // @synthesize optionStyle=_optionStyle;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithStyle:(unsigned long long)arg1 adapter:(id)arg2 languageOption:(id)arg3;
 

@@ -14,8 +14,8 @@
     NSMutableDictionary *_dictionary;
 }
 
-@property(readonly, retain) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly, retain) NSMutableDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)initWithContext:(id)arg1;

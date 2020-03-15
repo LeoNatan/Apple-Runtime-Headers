@@ -19,11 +19,11 @@
 + (long long)compareBuild:(id)arg1 withBuild:(id)arg2;
 + (long long)compareOSVersion:(id)arg1 withOSVersion:(id)arg2;
 + (id)contextFromBuild:(id)arg1 fromVersion:(id)arg2 toBuild:(id)arg3 toVersion:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *toBuild; // @synthesize toBuild=_toBuild;
 @property(readonly, copy, nonatomic) NSString *toVersion; // @synthesize toVersion=_toVersion;
 @property(readonly, copy, nonatomic) NSString *fromBuild; // @synthesize fromBuild=_fromBuild;
 @property(readonly, copy, nonatomic) NSString *fromVersion; // @synthesize fromVersion=_fromVersion;
-- (void).cxx_destruct;
 - (long long)compareToBuildVersionWithBuildVersion:(id)arg1;
 - (long long)compareToOSVersionWithOSVersion:(id)arg1;
 - (long long)compareFromBuildVersionWithBuildVersion:(id)arg1;

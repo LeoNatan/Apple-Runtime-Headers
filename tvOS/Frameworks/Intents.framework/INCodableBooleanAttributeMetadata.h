@@ -18,19 +18,19 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *trueDisplayNameID; // @synthesize trueDisplayNameID=_trueDisplayNameID;
 @property(copy, nonatomic) NSString *trueDisplayName; // @synthesize trueDisplayName=_trueDisplayName;
 @property(copy, nonatomic) NSString *falseDisplayNameID; // @synthesize falseDisplayNameID=_falseDisplayNameID;
 @property(copy, nonatomic) NSString *falseDisplayName; // @synthesize falseDisplayName=_falseDisplayName;
 @property(copy, nonatomic) NSNumber *defaultValue; // @synthesize defaultValue=_defaultValue;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)localizedFalseDisplayNameForLanguage:(id)arg1;
+- (id)localizedFalseDisplayNameWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedFalseDisplayName;
-- (id)localizedTrueDisplayNameForLanguage:(id)arg1;
+- (id)localizedTrueDisplayNameWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedTrueDisplayName;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

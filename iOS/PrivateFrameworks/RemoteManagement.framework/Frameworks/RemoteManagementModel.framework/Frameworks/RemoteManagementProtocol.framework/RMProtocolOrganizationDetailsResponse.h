@@ -15,12 +15,12 @@
 }
 
 + (id)requestWithOrganizationDetailsToken:(id)arg1 organizationDetails:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RMProtocolOrganizationDetails *responseOrganizationDetails; // @synthesize responseOrganizationDetails=_responseOrganizationDetails;
 @property(copy, nonatomic) NSString *responseOrganizationDetailsToken; // @synthesize responseOrganizationDetailsToken=_responseOrganizationDetailsToken;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

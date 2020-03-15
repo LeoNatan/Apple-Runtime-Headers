@@ -13,6 +13,7 @@
 + (id)sharedInstance;
 + (_Bool)isICDPEnabledForDSID:(id)arg1 checkWithServer:(_Bool)arg2;
 + (_Bool)isICDPEnabledForDSID:(id)arg1;
+- (id)primaryAccountStashedPRK;
 - (id)primaryAppleAccount;
 - (id)sharedAccountStore;
 - (id)contextForPrimaryAccount;

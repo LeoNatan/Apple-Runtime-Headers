@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)isPredominatelyDownload;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *successfulNotificationIDs; // @synthesize successfulNotificationIDs=_successfulNotificationIDs;
 @property(retain, nonatomic) NSMutableDictionary *errorByNotificationID; // @synthesize errorByNotificationID=_errorByNotificationID;
 @property(retain, nonatomic) NSArray *notificationIDs; // @synthesize notificationIDs=_notificationIDs;
 @property(copy, nonatomic) CDUnknownBlockType notificationMarkedRead; // @synthesize notificationMarkedRead=_notificationMarkedRead;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_handleNotificationID:(id)arg1 withResponse:(id)arg2;

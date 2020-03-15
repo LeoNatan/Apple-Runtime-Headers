@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly) NSMutableDictionary *services; // @synthesize services=_services;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)readMaxValue:(double *)arg1;
 - (_Bool)readValueFromSensor:(int)arg1 value:(double *)arg2;

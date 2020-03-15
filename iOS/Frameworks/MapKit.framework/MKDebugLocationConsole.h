@@ -19,9 +19,9 @@
     NSDateFormatter *_timeStampFormatter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool customTextEnabled; // @synthesize customTextEnabled=_customTextEnabled;
 @property(nonatomic) unsigned long long pageIndex; // @synthesize pageIndex=_pageIndex;
-- (void).cxx_destruct;
 - (id)timeStampFormatter;
 - (void)setText:(id)arg1;
 - (void)_showNextPage;

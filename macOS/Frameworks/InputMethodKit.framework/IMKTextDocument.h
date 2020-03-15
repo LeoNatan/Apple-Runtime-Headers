@@ -17,9 +17,9 @@
 
 + (id)keyPathsForValuesAffectingText;
 + (id)textDocumentWithTextDocument:(id)arg1 surroundingCharactersToCopy:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(readonly, nonatomic) NSMutableString *committedText; // @synthesize committedText=_committedText;
-- (void).cxx_destruct;
 - (BOOL)_hasComposingText;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)selectCodeUnits:(unsigned long long)arg1 after:(long long)arg2;

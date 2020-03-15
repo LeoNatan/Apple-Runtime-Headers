@@ -12,6 +12,8 @@
 
 + (id)_table;
 + (id)abEntityName;
+- (void)setExternalGroupBehavior:(unsigned long long)arg1;
+- (unsigned long long)externalGroupBehavior;
 - (id)modifiedUniqueIdsSet;
 - (void)setModifiedUniqueIdsSet:(id)arg1;
 

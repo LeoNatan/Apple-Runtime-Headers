@@ -19,11 +19,11 @@
     NSDictionary *_usageOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *usageOptions; // @synthesize usageOptions=_usageOptions;
 @property(retain, nonatomic) HFAccessorySettingsEntity *entity; // @synthesize entity=_entity;
 @property(retain, nonatomic) HMSetting *setting; // @synthesize setting=_setting;
 @property(retain, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
-- (void).cxx_destruct;
 - (void)_decorateHiddenOrDisabled:(id)arg1;
 - (void)_decorateOutcomeWithResultKeys:(id)arg1;
 - (void)_decorateOutcomeWithAccessorySettingResultKeys:(id)arg1;

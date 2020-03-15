@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) double imageInsetPercentage; // @synthesize imageInsetPercentage=_imageInsetPercentage;
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *title;

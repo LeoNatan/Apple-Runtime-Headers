@@ -15,10 +15,10 @@
     SBSRemoteAlertDefinition *_remoteAlertDefinition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBSRemoteAlertDefinition *remoteAlertDefinition; // @synthesize remoteAlertDefinition=_remoteAlertDefinition;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

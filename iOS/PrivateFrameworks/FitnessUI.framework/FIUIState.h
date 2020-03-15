@@ -22,6 +22,7 @@
 
 + (id)stateWithLabel:(id)arg1;
 + (id)transitionalStateFromState:(id)arg1 toState:(id)arg2 entryEvent:(long long)arg3 exitEvent:(long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak FIUIState *entryState; // @synthesize entryState=_entryState;
 @property(readonly, nonatomic) NSMutableSet *childStates; // @synthesize childStates=_childStates;
 @property(nonatomic) __weak FIUIState *parentState; // @synthesize parentState=_parentState;
@@ -29,7 +30,6 @@
 @property(copy) CDUnknownBlockType exit; // @synthesize exit=_exit;
 @property(copy) CDUnknownBlockType entry; // @synthesize entry=_entry;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)addChildStates:(id)arg1 withEntryState:(id)arg2;
 - (id)description;
 - (id)transitionForEvent:(long long)arg1;

@@ -33,6 +33,7 @@
 + (_Bool)supportsSecureCoding;
 + (void)loadFlightsWithNumber:(unsigned long long)arg1 airlineCode:(id)arg2 date:(id)arg3 dateType:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (id)timeFormatterForIdentifier;
+- (void).cxx_destruct;
 @property(retain) NSString *rawResponse; // @synthesize rawResponse=_rawResponse;
 @property(retain) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property unsigned long long arrivalLegIndex; // @synthesize arrivalLegIndex=_arrivalLegIndex;
@@ -48,7 +49,6 @@
 @property unsigned long long displayFlightNumber; // @synthesize displayFlightNumber=_displayFlightNumber;
 @property(retain) FUAirline *displayAirline; // @synthesize displayAirline=_displayAirline;
 @property(retain) NSString *queriedAirlineTitle; // @synthesize queriedAirlineTitle=_queriedAirlineTitle;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly) double duration;

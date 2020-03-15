@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *teams; // @synthesize teams=_teams;
 @property(readonly, copy, nonatomic) NSString *authorizedAppListVersion; // @synthesize authorizedAppListVersion=_authorizedAppListVersion;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -21,12 +21,12 @@
 
 + (id)font;
 + (BOOL)supportsRowModel:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *storeIdentifiers; // @synthesize storeIdentifiers=_storeIdentifiers;
 @property(retain, nonatomic) NSString *spotlightIdentifier; // @synthesize spotlightIdentifier=_spotlightIdentifier;
 @property(retain, nonatomic) TLKLabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
-- (void).cxx_destruct;
 - (void)buttonPressed;
 - (void)sendEngagementDidPunchout:(BOOL)arg1;
 - (unsigned long long)type;

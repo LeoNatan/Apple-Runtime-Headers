@@ -12,6 +12,7 @@
 
 @interface TTSVoiceAsset : TTSAssetBase <NSSecureCoding>
 {
+    _Bool _neural;
     _Bool _isInstalled;
     _Bool _isBuiltInVoice;
     NSString *_name;
@@ -23,21 +24,22 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *voicePath; // @synthesize voicePath=_voicePath;
 @property(readonly, nonatomic) _Bool isBuiltInVoice; // @synthesize isBuiltInVoice=_isBuiltInVoice;
 @property(readonly, nonatomic) _Bool isInstalled; // @synthesize isInstalled=_isInstalled;
+@property(readonly, nonatomic) _Bool neural; // @synthesize neural=_neural;
 @property(readonly, nonatomic) long long footprint; // @synthesize footprint=_footprint;
 @property(readonly, nonatomic) long long gender; // @synthesize gender=_gender;
 @property(readonly, nonatomic) NSArray *languages; // @synthesize languages=_languages;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 isInstalled:(_Bool)arg5 isBuiltIn:(_Bool)arg6 masteredVersion:(id)arg7 compatibilityVersion:(id)arg8;
+- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 isInstalled:(_Bool)arg5 isBuiltIn:(_Bool)arg6 masteredVersion:(id)arg7 compatibilityVersion:(id)arg8 neural:(_Bool)arg9;
 
 @end
 

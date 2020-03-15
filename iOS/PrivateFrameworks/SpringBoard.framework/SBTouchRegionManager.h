@@ -27,8 +27,8 @@
 - (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (void)_queue_displayLayoutDidUpdate:(id)arg1;
 - (id)_queue_floatingHitTestRegionForLayoutRect:(struct CGRect)arg1;
-- (struct NSMutableSet *)_queue_calculateHitTestRegionsFromSceneRects:(struct NSMutableSet *)arg1;
-- (struct NSMutableSet *)_queue_calculateTouchRegionsFromSceneRects:(struct NSMutableSet *)arg1;
+- (id)_queue_calculateHitTestRegionsFromSceneRects:(id)arg1;
+- (id)_queue_calculateTouchRegionsFromSceneRects:(id)arg1;
 - (id)displayLayoutMonitor;
 - (void)setDisplayLayoutMonitor:(id)arg1;
 - (void)setTouchRegionBuffer:(double)arg1;

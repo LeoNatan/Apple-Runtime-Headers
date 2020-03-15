@@ -11,8 +11,8 @@
     id _result;
 }
 
-@property(retain, nonatomic) id result; // @synthesize result=_result;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id result; // @synthesize result=_result;
 
 @end
 

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldKeepIconVisibleForActivityType:(long long)arg1;
 + (id)pillCombinedDisplayIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarPillView *combinedView; // @synthesize combinedView=_combinedView;
 @property(nonatomic) long long previousType; // @synthesize previousType=_previousType;
 @property(nonatomic) struct CGSize pillSize; // @synthesize pillSize=_pillSize;
-- (void).cxx_destruct;
 - (_Bool)shouldUpdateIndicatorForIdentifier:(id)arg1;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_combinedView;

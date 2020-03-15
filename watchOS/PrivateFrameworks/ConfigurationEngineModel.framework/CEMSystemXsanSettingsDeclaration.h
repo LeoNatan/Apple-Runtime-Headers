@@ -26,12 +26,12 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadSharedSecret; // @synthesize payloadSharedSecret=_payloadSharedSecret;
 @property(copy, nonatomic) NSString *payloadSanAuthMethod; // @synthesize payloadSanAuthMethod=_payloadSanAuthMethod;
 @property(copy, nonatomic) NSArray *payloadFsnameservers; // @synthesize payloadFsnameservers=_payloadFsnameservers;
 @property(copy, nonatomic) NSArray *payloadSanConfigURLs; // @synthesize payloadSanConfigURLs=_payloadSanConfigURLs;
 @property(copy, nonatomic) NSString *payloadSanName; // @synthesize payloadSanName=_payloadSanName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

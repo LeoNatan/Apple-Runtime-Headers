@@ -31,6 +31,7 @@
 + (id)hostNameForAccount:(id)arg1 type:(long long)arg2;
 + (id)authTokenForSubAccount:(id)arg1 type:(long long)arg2 error:(id *)arg3;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool legacyBehavior; // @synthesize legacyBehavior=_legacyBehavior;
 @property(copy, nonatomic) NSString *personId; // @synthesize personId=_personId;
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic) NSString *hostName; // @synthesize hostName=_hostName;
 @property(readonly, copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
-- (void).cxx_destruct;
 - (id)hostNameOfType:(long long)arg1;
 - (id)tokenOfType:(long long)arg1;
 - (id)description;

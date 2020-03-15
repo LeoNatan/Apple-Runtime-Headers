@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_conversionNeeded;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *conversionNeeded; // @synthesize conversionNeeded=_conversionNeeded;
 @property(retain, nonatomic) MiroAutoEditLogger *logger; // @synthesize logger=_logger;
 @property(nonatomic) MiroAutoEditController *editController; // @synthesize editController=_editController;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *layoutClips; // @synthesize layoutClips=_layoutClips;
 @property(nonatomic) MiroMemory *activeMemory; // @synthesize activeMemory=_activeMemory;
 @property(retain, nonatomic) Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (BOOL)extremeCropAllowed;
 - (void)_updateSpeedRampsForClip:(id)arg1 beginningRampDurationSeconds:(double)arg2 endingRampDurationSeconds:(double)arg3;
 - (void)adjustSlowMotionSpeedRamps;

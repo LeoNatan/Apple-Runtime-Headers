@@ -34,6 +34,7 @@
 }
 
 + (id)footnoteFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKEmbossedLabel *subtitle2Label; // @synthesize subtitle2Label=_subtitle2Label;
 @property(retain, nonatomic) TLKLabel *subtitle1Label; // @synthesize subtitle1Label=_subtitle1Label;
 @property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) TLKMultilineText *subtitle2; // @synthesize subtitle2=_subtitle2;
 @property(retain, nonatomic) TLKMultilineText *subtitle1; // @synthesize subtitle1=_subtitle1;
 @property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)titleFont;
 - (id)trailingImageInView;
 - (id)trailingSubtitleText;

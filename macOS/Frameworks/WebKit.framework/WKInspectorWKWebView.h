@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)reload:(id)arg1;
 @property(nonatomic) __weak id <WKInspectorWKWebViewDelegate> inspectorWKWebViewDelegate;
 - (long long)tag;
+- (struct CGRect)_opaqueRectForWindowMoveWhenInTitlebar;
 
 @end
 

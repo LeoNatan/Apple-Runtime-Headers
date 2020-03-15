@@ -21,10 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_downloadItem:(id)arg1 downloader:(id)arg2 request:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
-- (void)_recursivelyDownloadItem:(id)arg1 downloader:(id)arg2 request:(id)arg3 perItemCompletion:(CDUnknownBlockType)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (void)_recursivelyDownloadItem:(id)arg1 forceDiskIteration:(BOOL)arg2 downloader:(id)arg3 request:(id)arg4 perItemCompletion:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)progressComputationPreflightForRecursiveRoot:(id)arg1 downloader:(id)arg2 itemProgressNeedsSetup:(CDUnknownBlockType)arg3 itemProgressSetup:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)progressComputationPreflightForItem:(id)arg1;
 - (void)retrieveFPItemForURL:(id)arg1 domain:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)verifyIfSubtreeIsFullyMaterializedBelowItem:(id)arg1 downloader:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)downloadItem:(id)arg1 recursively:(BOOL)arg2 downloader:(id)arg3 request:(id)arg4 perItemCompletion:(CDUnknownBlockType)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (void)downloadItems:(id)arg1 recursively:(BOOL)arg2 downloader:(id)arg3 request:(id)arg4 perItemCompletion:(CDUnknownBlockType)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (id)init;

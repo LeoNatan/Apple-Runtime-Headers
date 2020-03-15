@@ -18,11 +18,11 @@
 
 + (id)handleForLanguageLikelihood;
 + (id)handleForInputMode:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) TILanguageModelAdaptationContext *currentAdaptationContext; // @synthesize currentAdaptationContext=_currentAdaptationContext;
 @property(copy, nonatomic) NSDate *lastAdaptationDate; // @synthesize lastAdaptationDate=_lastAdaptationDate;
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
 @property(nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
-- (void).cxx_destruct;
 - (void)didFinishLearning;
 - (void)updateAdaptationContext:(id)arg1;
 - (void)adaptToParagraph:(id)arg1 timeStamp:(double)arg2 adaptationType:(int)arg3;

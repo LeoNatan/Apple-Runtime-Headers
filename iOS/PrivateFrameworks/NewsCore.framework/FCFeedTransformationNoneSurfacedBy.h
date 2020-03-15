@@ -17,9 +17,9 @@
 }
 
 + (id)transformationWithTagIDs:(id)arg1 feedContextByFeedID:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *feedContextByFeedID; // @synthesize feedContextByFeedID=_feedContextByFeedID;
 @property(copy, nonatomic) NSSet *tagIDs; // @synthesize tagIDs=_tagIDs;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

@@ -19,11 +19,11 @@
     NSString *_osVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(copy, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(copy, nonatomic) NSString *country; // @synthesize country=_country;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

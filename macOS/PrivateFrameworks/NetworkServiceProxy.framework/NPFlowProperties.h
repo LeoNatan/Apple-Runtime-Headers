@@ -22,6 +22,7 @@
     unsigned long long *_timestamps;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(nonatomic) unsigned long long *timestamps; // @synthesize timestamps=_timestamps;
 @property(retain, nonatomic) NWEndpoint *directEndpoint; // @synthesize directEndpoint=_directEndpoint;
@@ -32,7 +33,6 @@
 @property(nonatomic) double fallbackTimeout; // @synthesize fallbackTimeout=_fallbackTimeout;
 @property(nonatomic) unsigned int flowIdentifier; // @synthesize flowIdentifier=_flowIdentifier;
 @property(nonatomic) unsigned long long serviceID; // @synthesize serviceID=_serviceID;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL disableIdleTimeout;
 @property(nonatomic) BOOL isLoopback;
 @property(nonatomic) BOOL enableNSP;

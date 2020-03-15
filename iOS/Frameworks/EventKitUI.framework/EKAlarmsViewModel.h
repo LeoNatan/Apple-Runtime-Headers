@@ -18,10 +18,10 @@
 }
 
 + (id)labelTextForIndex:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uiAlarms; // @synthesize uiAlarms=_uiAlarms;
 @property(retain, nonatomic) EKCalendarItem *calendarItem; // @synthesize calendarItem=_calendarItem;
 @property(nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
-- (void).cxx_destruct;
 - (id)createAlarmEditItemViewControllerWithFrame:(struct CGRect)arg1 forAlarmAtIndex:(unsigned long long)arg2;
 @property(readonly, nonatomic) _Bool hasLeaveNowAlarm;
 @property(readonly, nonatomic) _Bool canHaveLeaveNowAlarm;

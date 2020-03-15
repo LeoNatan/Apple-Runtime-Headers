@@ -33,9 +33,9 @@
 + (BOOL)isMessageIDHeaderKey:(id)arg1;
 + (BOOL)isAddressHeaderKey:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *headerData; // @synthesize headerData=_headerData;
 @property(readonly, nonatomic) unsigned long long encodingHint; // @synthesize encodingHint=_encodingHint;
-- (void).cxx_destruct;
 - (void)_appendAddressList:(id)arg1 toData:(id)arg2;
 - (id)description;
 - (void)appendHeaderData:(id)arg1 recipients:(id)arg2 recipientsByHeaderKey:(id)arg3 expandGroups:(BOOL)arg4 includeComment:(BOOL)arg5;

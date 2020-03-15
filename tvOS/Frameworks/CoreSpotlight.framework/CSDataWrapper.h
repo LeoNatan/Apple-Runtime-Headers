@@ -19,12 +19,12 @@
     unsigned long long _mapSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool mapped; // @synthesize mapped=_mapped;
 @property(readonly, nonatomic) unsigned long long mapSize; // @synthesize mapSize=_mapSize;
 @property(readonly, nonatomic) const void *dataPtr; // @synthesize dataPtr=_dataPtr;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *xpcData; // @synthesize xpcData=_xpcData;
 @property(nonatomic) unsigned long long dataSize; // @synthesize dataSize=_dataSize;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)initWithData:(id)arg1;

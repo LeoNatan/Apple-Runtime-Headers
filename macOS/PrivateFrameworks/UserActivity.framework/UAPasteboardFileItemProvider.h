@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)conformsToProtocol:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSData *sandboxExtension; // @synthesize sandboxExtension=_sandboxExtension;
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(nonatomic) BOOL preferFileRep; // @synthesize preferFileRep=_preferFileRep;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)accessFileAtURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getDataWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)getDataFileWithCompletionBlock:(CDUnknownBlockType)arg1;

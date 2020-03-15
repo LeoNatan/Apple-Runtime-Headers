@@ -19,10 +19,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFrontmostScreenOff) _Bool frontmostScreenOff; // @synthesize frontmostScreenOff=_frontmostScreenOff;
 @property(nonatomic) __weak id <PUICApplicationEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
-- (void).cxx_destruct;
 - (id)_settingsDiffActionsForScene:(id)arg1;
 - (void)_setFrontmostScreenOff:(_Bool)arg1;
 - (void)_updateAOTDisplayStyle:(unsigned int)arg1 withAction:(id)arg2;

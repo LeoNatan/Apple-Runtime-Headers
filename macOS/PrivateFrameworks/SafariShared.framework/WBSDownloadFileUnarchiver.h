@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_synchronizationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizationQueue; // @synthesize synchronizationQueue=_synchronizationQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
 @property(copy, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
-- (void).cxx_destruct;
 - (id)pickDestinationPath:(id)arg1;
 - (id)createTemporaryDirectory;
 - (void)didFinishUnarchiving;

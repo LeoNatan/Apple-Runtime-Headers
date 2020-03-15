@@ -20,9 +20,9 @@
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
 + (id)ipAddressFromRuleAddress:(id)arg1 allowWildcard:(_Bool)arg2;
 + (id)ipAddressFromNetAddress:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *v6; // @synthesize v6=_v6;
 @property(retain, nonatomic) NSData *v4; // @synthesize v4=_v4;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

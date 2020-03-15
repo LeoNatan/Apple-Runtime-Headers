@@ -13,8 +13,8 @@
     PXCMMPosterUIView *_gadgetView;
 }
 
-@property(readonly, nonatomic) PXCMMPosterUIView *gadgetView; // @synthesize gadgetView=_gadgetView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXCMMPosterUIView *gadgetView; // @synthesize gadgetView=_gadgetView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)shouldParseChildDOMElements;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *property; // @synthesize property=_property;
 @property(readonly, nonatomic, getter=isAscending) _Bool ascending; // @synthesize ascending=_ascending;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

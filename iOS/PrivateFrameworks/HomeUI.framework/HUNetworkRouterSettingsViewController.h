@@ -16,8 +16,8 @@
     HUNetworkConfigurationItemListModuleController *_networkConfigurationItemListModuleController;
 }
 
-@property(retain, nonatomic) HUNetworkConfigurationItemListModuleController *networkConfigurationItemListModuleController; // @synthesize networkConfigurationItemListModuleController=_networkConfigurationItemListModuleController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUNetworkConfigurationItemListModuleController *networkConfigurationItemListModuleController; // @synthesize networkConfigurationItemListModuleController=_networkConfigurationItemListModuleController;
 - (Class)_networkRouterDetailsViewControllerClass;
 - (_Bool)_shouldShowNetworkRouterDetails;
 - (void)switchCell:(id)arg1 didTurnOn:(_Bool)arg2;

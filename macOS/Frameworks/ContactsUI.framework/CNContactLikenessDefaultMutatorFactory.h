@@ -17,10 +17,10 @@
     CNUIMeContactMonitor *_meMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIMeContactMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
-- (void).cxx_destruct;
 - (id)likenessMutatorForContact:(id)arg1 likeness:(id)arg2 mutationType:(long long)arg3;
 - (id)initWithContactStore:(id)arg1 personaStore:(id)arg2 meMonitor:(id)arg3;
 

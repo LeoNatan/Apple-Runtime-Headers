@@ -13,8 +13,8 @@
     NSString *_template;
 }
 
-@property(copy, nonatomic) NSString *template; // @synthesize template=_template;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *template; // @synthesize template=_template;
 - (void)updateDateFormat;
 - (id)notificationCenter;
 - (id)initWithTemplate:(id)arg1;

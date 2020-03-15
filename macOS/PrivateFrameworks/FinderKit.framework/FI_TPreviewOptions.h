@@ -31,12 +31,12 @@ __attribute__((visibility("hidden")))
 
 + (id)keyPathsForValuesAffectingOrderedDisplayAttributes;
 + (id)keyPathsForValuesAffectingSpotlightQueryAttributes;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) _Bool showQuickActions; // @synthesize showQuickActions=_showQuickActions;
 @property(readonly, nonatomic) _Bool quickActionsSupported; // @synthesize quickActionsSupported=_quickActionsSupported;
 @property(nonatomic) _Bool suppressSaving; // @synthesize suppressSaving=_suppressSaving;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateDynamicGroupSettingsWithItemMetadata:(shared_ptr_99c3fa9b)arg1;
 - (void)groupDidChange:(id)arg1;
 @property(readonly, retain, nonatomic) NSArray *groupedSettings;

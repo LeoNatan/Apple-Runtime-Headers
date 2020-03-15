@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     NSArray *_preferredLanguages;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int tuscanyOption; // @synthesize tuscanyOption=_tuscanyOption;
 @property(copy, nonatomic) NSArray *preferredLanguages; // @synthesize preferredLanguages=_preferredLanguages;
 @property(copy, nonatomic) NSString *effectiveSystemLanguage; // @synthesize effectiveSystemLanguage=_effectiveSystemLanguage;
 @property(copy, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(copy, nonatomic) NSString *secretKey; // @synthesize secretKey=_secretKey;
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

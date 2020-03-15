@@ -19,12 +19,12 @@
 }
 
 + (BOOL)_shouldExtendCandidateWord:(id)arg1 withSuffix:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AXKTextProviding> _textProvider; // @synthesize _textProvider=__textProvider;
 @property(retain, nonatomic) AXFTextRange *currentWordRange; // @synthesize currentWordRange=_currentWordRange;
 @property(copy, nonatomic) NSString *currentWord; // @synthesize currentWord=_currentWord;
 @property(retain, nonatomic) AXFTextPosition *currentPosition; // @synthesize currentPosition=_currentPosition;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (id)_paragraphRangeContainingPosition:(id)arg1;
 - (id)_findWordCandidateInSearchRange:(id)arg1 atPosition:(id)arg2;
 - (id)_findLastWordCandidateInSearchRange:(id)arg1;

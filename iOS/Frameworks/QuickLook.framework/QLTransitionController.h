@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     NSDate *_setupDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPerformedTransition; // @synthesize hasPerformedTransition=_hasPerformedTransition;
 @property(retain, nonatomic) NSDate *setupDate; // @synthesize setupDate=_setupDate;
 @property unsigned long long transitionState; // @synthesize transitionState=_transitionState;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) UIViewController<QLCustomTransitioning> *animatedController; // @synthesize animatedController=_animatedController;
 @property(retain) QLTransitionContext *quickLookTransitionContext; // @synthesize quickLookTransitionContext=_quickLookTransitionContext;
 @property _Bool showing; // @synthesize showing=_showing;
-- (void).cxx_destruct;
 - (void)_performForcedDismissal;
 - (_Bool)forceDismissalIfNeeded;
 - (void)_view:(id)arg1 applyFrameFromTransitionContextAsFinalFrame:(_Bool)arg2 isToView:(_Bool)arg3;

@@ -15,6 +15,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (id)_keyCommands;
+- (id)_accessibilityFKAArrowKeysHandled;
 - (void)dealloc;
 
 @end

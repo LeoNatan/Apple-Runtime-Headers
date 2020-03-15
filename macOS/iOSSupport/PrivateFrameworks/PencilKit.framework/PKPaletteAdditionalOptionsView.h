@@ -9,13 +9,14 @@
 #import <PencilKit/PKEdgeLocatable-Protocol.h>
 #import <PencilKit/PKPaletteMoreOptionsViewControllerDelegate-Protocol.h>
 #import <PencilKit/PKPalettePopoverDismissing-Protocol.h>
+#import <PencilKit/PKPalettePopoverUpdating-Protocol.h>
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class NSLayoutConstraint, NSString, PKPaletteButton, PKPaletteMoreOptionsViewController, UIStackView, UIViewController;
 @protocol PKPalettePopoverPresenting><PKPaletteAdditionalOptionsViewDelegate;
 
-@interface PKPaletteAdditionalOptionsView : UIView <PKPaletteMoreOptionsViewControllerDelegate, UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
+@interface PKPaletteAdditionalOptionsView : UIView <PKPaletteMoreOptionsViewControllerDelegate, UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverUpdating, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
 {
     BOOL _supportsAnnotationEditing;
     BOOL _autoHideOn;
@@ -33,6 +34,7 @@
     NSLayoutConstraint *_ellipsisButtonHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *ellipsisButtonHeightConstraint; // @synthesize ellipsisButtonHeightConstraint=_ellipsisButtonHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *ellipsisButtonWidthConstraint; // @synthesize ellipsisButtonWidthConstraint=_ellipsisButtonWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *plusButtonHeightConstraint; // @synthesize plusButtonHeightConstraint=_plusButtonHeightConstraint;
@@ -47,7 +49,6 @@
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteAdditionalOptionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (struct CGRect)plusButtonFrame;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -56,6 +57,7 @@
 - (void)moreOptionsViewControllerDidToggleAutoHide:(id)arg1;
 - (double)_contentSizeWidth;
 - (struct CGSize)intrinsicContentSize;
+- (void)updatePopoverUI;
 - (void)_didSelectEllipsisButton:(id)arg1;
 - (void)_didSelectPlusButton:(id)arg1;
 - (void)_updateUI;

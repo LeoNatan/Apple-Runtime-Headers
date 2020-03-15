@@ -14,9 +14,9 @@
     CoreDAVLeafItem *_commonName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVLeafItem *commonName; // @synthesize commonName=_commonName;
 @property(retain, nonatomic) CoreDAVHrefItem *href; // @synthesize href=_href;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (id)init;
 

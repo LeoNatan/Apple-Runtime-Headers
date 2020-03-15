@@ -16,9 +16,9 @@
     double _confidence;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) NSString *placeInterestType; // @synthesize placeInterestType=_placeInterestType;
-- (void).cxx_destruct;
 - (id)initWithPlaceOfInterestType:(id)arg1 confidence:(double)arg2;
 
 // Remaining properties

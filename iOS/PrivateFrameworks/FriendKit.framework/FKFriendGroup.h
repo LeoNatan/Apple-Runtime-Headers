@@ -18,10 +18,10 @@
     id <FKFriendGroupDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FKFriendGroupDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long selectedPosition; // @synthesize selectedPosition=_selectedPosition;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)displayNameForGroupWithSeparator:(id)arg1;
 - (long long)_firstEmptyPosition;
 - (id)friends;

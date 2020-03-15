@@ -25,12 +25,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool trafficRestricted; // @synthesize trafficRestricted=_trafficRestricted;
 @property(nonatomic) unsigned int updateType; // @synthesize updateType=_updateType;
 @property(nonatomic) double date; // @synthesize date=_date;
 @property(nonatomic) _Bool shouldPlayLightsAndSirens; // @synthesize shouldPlayLightsAndSirens=_shouldPlayLightsAndSirens;
 @property(retain, nonatomic) BLTPBBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,9 +16,9 @@
     NSRunLoop *_runloop;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRunLoop *runloop; // @synthesize runloop=_runloop;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)_performBlock:(CDUnknownBlockType)arg1;
 - (void)cancel;
 - (void)performAfterDelay:(double)arg1;

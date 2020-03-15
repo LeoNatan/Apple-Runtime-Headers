@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_allowedAppVersionsCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *allowedAppVersionsCache; // @synthesize allowedAppVersionsCache=_allowedAppVersionsCache;
 @property(retain, nonatomic) NSMutableDictionary *values; // @synthesize values=_values;
 @property(retain, nonatomic) NSDate *expiry; // @synthesize expiry=_expiry;
-- (void).cxx_destruct;
 - (id)dictionaryPropertyEncoding;
 - (id)initWithPropertyDictionary:(id)arg1;
 - (id)iCloudHostnames;

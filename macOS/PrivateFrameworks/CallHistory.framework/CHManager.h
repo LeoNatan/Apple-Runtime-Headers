@@ -33,6 +33,7 @@
 
 + (unsigned int)CHCallStatusForCallWithDuration:(double)arg1 isOriginated:(BOOL)arg2 isAnswered:(BOOL)arg3;
 + (id)limitingCallKindsForCallType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain) NSNumber *unreadCallCount; // @synthesize unreadCallCount=_unreadCallCount;
 @property(retain) NSArray *uncoalescedUnFilteredRecentCalls; // @synthesize uncoalescedUnFilteredRecentCalls=_uncoalescedUnFilteredRecentCalls;
 @property(retain, nonatomic, getter=uncoalescedRecentCallsSync) NSArray *uncoalescedRecentCalls; // @synthesize uncoalescedRecentCalls=_uncoalescedRecentCalls;
@@ -42,7 +43,6 @@
 @property long long numberOfUnseenMissedCalls; // @synthesize numberOfUnseenMissedCalls=_numberOfUnseenMissedCalls;
 @property(retain, nonatomic) NSArray *recentCalls; // @synthesize recentCalls=_recentCalls;
 @property(nonatomic) BOOL generateSyncTransactions; // @synthesize generateSyncTransactions=_generateSyncTransactions;
-- (void).cxx_destruct;
 - (id)latestCallMatchingNormalizedRemoteParticipantHandleValues:(id)arg1;
 - (id)latestRecentCallMatchingPredicate:(id)arg1;
 - (id)coalescedCallsWithPredicate:(id)arg1 limit:(unsigned long long)arg2 offset:(unsigned long long)arg3 batchSize:(unsigned long long)arg4;

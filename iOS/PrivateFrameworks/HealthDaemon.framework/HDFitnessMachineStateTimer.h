@@ -19,12 +19,12 @@
 }
 
 + (id)_timerWithDuration:(long long)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isValid;
 - (void)cancel;
 - (void)begin;

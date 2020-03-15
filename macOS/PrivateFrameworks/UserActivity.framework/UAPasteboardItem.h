@@ -13,8 +13,8 @@
     NSArray *_types;
 }
 
-@property(copy, nonatomic) NSArray *types; // @synthesize types=_types;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *types; // @synthesize types=_types;
 - (id)description;
 - (void)addType:(id)arg1;
 - (id)init;

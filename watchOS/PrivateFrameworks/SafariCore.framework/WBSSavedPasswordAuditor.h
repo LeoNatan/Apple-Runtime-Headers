@@ -14,9 +14,9 @@
     WBSAutoFillQuirksManager *_autoFillQuirksManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSAutoFillQuirksManager *autoFillQuirksManager; // @synthesize autoFillQuirksManager=_autoFillQuirksManager;
 @property(readonly, nonatomic) WBSSavedPasswordStore *savedPasswordStore; // @synthesize savedPasswordStore=_savedPasswordStore;
-- (void).cxx_destruct;
 - (id)duplicatePasswordsInPasswords:(id)arg1;
 - (id)savedPasswordsWithDuplicatedPassword:(id)arg1;
 - (_Bool)savedPasswordIsReused:(id)arg1;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <WFImageContentItemCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WFImageContentItemCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

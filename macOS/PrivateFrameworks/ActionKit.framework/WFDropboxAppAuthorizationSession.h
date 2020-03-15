@@ -20,13 +20,13 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSString *state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(readonly, nonatomic) NSURL *cancelURI; // @synthesize cancelURI=_cancelURI;
 @property(readonly, nonatomic) NSURL *successURI; // @synthesize successURI=_successURI;
 @property(readonly, nonatomic) NSArray *authorizationURLs; // @synthesize authorizationURLs=_authorizationURLs;
-- (void).cxx_destruct;
 - (BOOL)resumeSessionWithURL:(id)arg1;
 - (id)initWithClientID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 

@@ -23,13 +23,13 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXVerticalSwipeGestureRecognizerHelper *swipeDownGestureRecognizerHelper; // @synthesize swipeDownGestureRecognizerHelper=_swipeDownGestureRecognizerHelper;
 @property(readonly, nonatomic) NSMutableSet *swipeDownTransitions; // @synthesize swipeDownTransitions=_swipeDownTransitions;
 @property(readonly, nonatomic) NSMutableSet *_pinchTransitions; // @synthesize _pinchTransitions=__pinchTransitions;
 @property(readonly, nonatomic) NSMapTable *_lastViewControllerTransitions; // @synthesize _lastViewControllerTransitions=__lastViewControllerTransitions;
 @property(readonly, nonatomic) NSMapTable *panGestureRecognizers; // @synthesize panGestureRecognizers=_panGestureRecognizers;
 @property(readonly, nonatomic) NSMapTable *_pinchGestureRecognizers; // @synthesize _pinchGestureRecognizers=__pinchGestureRecognizers;
-- (void).cxx_destruct;
 - (_Bool)verticalSwipeGestureRecognizerHelper:(id)arg1 shouldRecognizeSwipeDownGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

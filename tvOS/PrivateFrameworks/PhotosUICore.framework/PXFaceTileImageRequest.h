@@ -25,6 +25,7 @@
     struct PXFaceTileImageParams _params;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *ppt_requestStartDate; // @synthesize ppt_requestStartDate=_ppt_requestStartDate;
 @property _Bool canceled; // @synthesize canceled=_canceled;
 @property _Bool fullResMissing; // @synthesize fullResMissing=_fullResMissing;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) PHFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
 - (void)ppt_reportMeasurementsForImageQuality:(long long)arg1;
 - (void)cancel;
 - (id)initWithFace:(id)arg1 cacheKey:(id)arg2 params:(struct PXFaceTileImageParams)arg3;

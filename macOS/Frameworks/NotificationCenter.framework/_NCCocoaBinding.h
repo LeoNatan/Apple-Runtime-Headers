@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 KeyPath:(id)arg2 andBlock:(CDUnknownBlockType)arg3;
 
 @end

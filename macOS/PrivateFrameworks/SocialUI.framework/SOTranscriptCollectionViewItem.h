@@ -23,9 +23,9 @@
 
 + (id)itemTypeIdentifier;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMDynamicGradientReferenceView> gradientReferenceView; // @synthesize gradientReferenceView=_gradientReferenceView;
 @property __weak id <SOTranscriptCollectionViewItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SOTranscriptTheme> transcriptTheme;
 - (void)prepareForReuse;
 @property(readonly) struct IMBalloonDescriptor_t balloonDescriptor;

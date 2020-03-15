@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     id <MKRotationFilterDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKRotationFilterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double additionalSnappingAngle; // @synthesize additionalSnappingAngle=_additionalSnappingAngle;
 @property(nonatomic, getter=isSnappedToNorth) _Bool snappedToNorth; // @synthesize snappedToNorth=_snappedToNorth;
-- (void).cxx_destruct;
 - (_Bool)hasAdditionalSnappingAngle;
 - (void)updateSnappedToNorth;
 - (void)snapToNorthAnimated:(_Bool)arg1 forceTrueNorth:(_Bool)arg2;

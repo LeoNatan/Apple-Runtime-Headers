@@ -19,12 +19,12 @@
     NSArray *_underlyingTileInfos;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *underlyingTileInfos; // @synthesize underlyingTileInfos=_underlyingTileInfos;
 @property(readonly, nonatomic) long long groupType; // @synthesize groupType=_groupType;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic) unsigned long long tileInfoType; // @synthesize tileInfoType=_tileInfoType;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

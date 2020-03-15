@@ -28,21 +28,21 @@
     GEOAutomobileOptions *_automobileOptions;
 }
 
+- (void).cxx_destruct;
 @property int mapType; // @synthesize mapType=_mapType;
 @property(retain) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property __weak MapsSuggestionsNetworkRequester *requester; // @synthesize requester=_requester;
-- (void).cxx_destruct;
-- (_Bool)_timeball_requestETAsToEntries:(struct NSArray *)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_timeball_requestETAsToEntries:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceTransportType:(int)arg1;
-- (_Bool)_old_requestETAsToEntries:(struct NSArray *)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)_requestETAsToEntries:(struct NSArray *)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_old_requestETAsToEntries:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_requestETAsToEntries:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_determineTransportTypeFromOrigin:(id)arg1 toEntry:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_transportTypesForDestinationEntries:(id)arg1;
-- (_Bool)_requestWaypointsForEntries:(struct NSArray *)arg1;
+- (_Bool)_requestWaypointsForEntries:(id)arg1;
 - (_Bool)_requestWaypointForCurrentLocation:(id)arg1;
-- (_Bool)_keepExistingWaypointsForEntries:(struct NSArray *)arg1;
+- (_Bool)_keepExistingWaypointsForEntries:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
-- (_Bool)ETAsFromLocation:(id)arg1 toEntries:(struct NSArray *)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)ETAsFromLocation:(id)arg1 toEntries:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithNetworkRequester:(id)arg1 transportModePredictor:(id)arg2 requirements:(id)arg3;
 
 // Remaining properties

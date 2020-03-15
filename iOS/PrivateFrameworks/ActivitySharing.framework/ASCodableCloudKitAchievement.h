@@ -27,6 +27,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *templateUniqueName; // @synthesize templateUniqueName=_templateUniqueName;
 @property(retain, nonatomic) NSString *definitionIdentifier; // @synthesize definitionIdentifier=_definitionIdentifier;
 @property(nonatomic) long long workoutActivityType; // @synthesize workoutActivityType=_workoutActivityType;
@@ -34,7 +35,6 @@
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) double completedDate; // @synthesize completedDate=_completedDate;
 @property(retain, nonatomic) ASCodableCloudKitSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -13,8 +13,8 @@
     NSArray *_allowedValues;
 }
 
-@property(readonly, nonatomic) NSArray *allowedValues; // @synthesize allowedValues=_allowedValues;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *allowedValues; // @synthesize allowedValues=_allowedValues;
 - (BOOL)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithName:(id)arg1 allowedValues:(id)arg2;
 

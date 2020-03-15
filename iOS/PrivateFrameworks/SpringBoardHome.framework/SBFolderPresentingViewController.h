@@ -18,10 +18,10 @@
     id <UIViewControllerAnimatedTransitioning> _currentFolderAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewControllerAnimatedTransitioning> currentFolderAnimator; // @synthesize currentFolderAnimator=_currentFolderAnimator;
 @property(nonatomic) unsigned long long backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
 @property(nonatomic) __weak id <SBFolderPresentingViewControllerDelegate> folderPresentationDelegate; // @synthesize folderPresentationDelegate=_folderPresentationDelegate;
-- (void).cxx_destruct;
 - (double)minimumHomeScreenScaleForFolderControllerBackgroundView:(id)arg1;
 - (id)nestingViewController:(id)arg1 sourceViewForPresentingViewController:(id)arg2;
 - (void)nestingViewController:(id)arg1 willPerformOperation:(long long)arg2 onViewController:(id)arg3 withTransitionCoordinator:(id)arg4;

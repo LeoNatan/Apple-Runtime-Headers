@@ -18,8 +18,8 @@
     id <NSURLSessionDataDelegate><NSURLSessionDelegate><NSURLSessionTaskDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NSURLSessionDataDelegate><NSURLSessionDelegate><NSURLSessionTaskDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NSURLSessionDataDelegate><NSURLSessionDelegate><NSURLSessionTaskDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

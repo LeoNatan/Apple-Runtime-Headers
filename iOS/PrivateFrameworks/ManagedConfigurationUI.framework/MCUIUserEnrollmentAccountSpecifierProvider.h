@@ -15,8 +15,8 @@
 + (id)warningTextForAccountDeletion;
 + (id)labelTextForAccountSummaryCell;
 + (id)titleForAccountSummaryGroup;
-@property(copy, nonatomic) CDUnknownBlockType devicePasscodeVerificationCompletionHandler; // @synthesize devicePasscodeVerificationCompletionHandler=_devicePasscodeVerificationCompletionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType devicePasscodeVerificationCompletionHandler; // @synthesize devicePasscodeVerificationCompletionHandler=_devicePasscodeVerificationCompletionHandler;
 - (void)didCancelEnteringPIN;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)_verifyDevicePasscodeWithPresentingViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

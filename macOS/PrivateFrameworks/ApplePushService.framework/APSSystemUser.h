@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (id)allConsoleUserIDs;
 + (id)systemUserWithUID:(unsigned int)arg1;
 + (id)systemUserWithUserID:(id)arg1;
-@property(readonly, nonatomic) NSString *userID; // @synthesize userID=_userID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *userID; // @synthesize userID=_userID;
 - (id)debugDescription;
 @property(retain, nonatomic) NSString *status;
 - (BOOL)isDaemonUser;

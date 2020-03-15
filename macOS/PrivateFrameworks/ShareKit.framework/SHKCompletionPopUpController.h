@@ -23,10 +23,10 @@
     struct _NSRange _tentativeRange;
 }
 
+- (void).cxx_destruct;
 @property struct _NSRange tentativeRange; // @synthesize tentativeRange=_tentativeRange;
 @property(retain) NSString *tentativeCompletion; // @synthesize tentativeCompletion=_tentativeCompletion;
 @property __weak id <SHKCompletionPopUpControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)completionTableView:(id)arg1 mouseUpInRow:(long long)arg2 event:(id)arg3;
 - (BOOL)tableView:(id)arg1 shouldShowCellExpansionForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)tableView:(id)arg1 toolTipForCell:(id)arg2 rect:(struct CGRect *)arg3 tableColumn:(id)arg4 row:(long long)arg5 mouseLocation:(struct CGPoint)arg6;

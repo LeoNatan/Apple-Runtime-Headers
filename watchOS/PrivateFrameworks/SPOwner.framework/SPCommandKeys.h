@@ -22,11 +22,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *nearbyToken; // @synthesize nearbyToken=_nearbyToken;
 @property(copy, nonatomic) NSData *connectionToken; // @synthesize connectionToken=_connectionToken;
 @property(copy, nonatomic) NSData *commandKey; // @synthesize commandKey=_commandKey;
 @property(copy, nonatomic) SPBeaconingKey *beaconingKey; // @synthesize beaconingKey=_beaconingKey;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDateInterval *dateInterval;
 @property(readonly, copy, nonatomic) NSData *address;
 @property(readonly, copy) NSString *description;

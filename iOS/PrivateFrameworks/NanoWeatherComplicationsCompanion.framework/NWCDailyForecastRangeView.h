@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UILabel *_lowLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *lowLabel; // @synthesize lowLabel=_lowLabel;
 @property(readonly, nonatomic) UILabel *interpunctLabel; // @synthesize interpunctLabel=_interpunctLabel;
 @property(readonly, nonatomic) UILabel *highLabel; // @synthesize highLabel=_highLabel;
-- (void).cxx_destruct;
 - (id)_rangeLabelWithFontSize:(double)arg1;
 - (void)_applyConstraints:(CDStruct_d83abbfb)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

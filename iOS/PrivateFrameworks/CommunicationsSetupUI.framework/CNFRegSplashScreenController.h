@@ -18,9 +18,9 @@
     CNFRegController *_regController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNFRegController *regController; // @synthesize regController=_regController;
 @property(nonatomic) id <CNFRegFirstRunDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *customRightButton; // @dynamic customRightButton;
 @property(retain, nonatomic) UIBarButtonItem *customLeftButton; // @dynamic customLeftButton;
 @property(readonly, nonatomic) long long currentAppearanceStyle; // @dynamic currentAppearanceStyle;

@@ -13,8 +13,8 @@
     UICollectionView *_collectionView;
 }
 
-@property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

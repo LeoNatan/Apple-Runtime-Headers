@@ -46,6 +46,8 @@ __attribute__((visibility("hidden")))
     BOOL _isPicked;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const shared_ptr_702c344d *tile; // @synthesize tile=_tile;
 @property(nonatomic) BOOL isPicked; // @synthesize isPicked=_isPicked;
 @property(readonly, nonatomic) BOOL suppressRoadSignIfShieldPresent; // @synthesize suppressRoadSignIfShieldPresent=_suppressRoadSignIfShieldPresent;
@@ -62,8 +64,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL isOnRoute; // @synthesize isOnRoute=_isOnRoute;
 @property(nonatomic) Matrix_8746f91e direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isTrafficCameraFeature;
 @property(readonly, nonatomic) BOOL isEtaFeature;
 - (double)length;

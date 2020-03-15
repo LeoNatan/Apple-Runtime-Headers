@@ -9,11 +9,10 @@
 @class NSArray, NSData, NSDictionary;
 
 @protocol SOSControlProtocol <NSObject>
-- (void)rpcTriggerRingUpdate:(void (^)(NSError *))arg1;
-- (void)rpcTriggerBackup:(NSArray *)arg1 complete:(void (^)(NSError *))arg2;
+- (void)triggerBackup:(NSArray *)arg1 complete:(void (^)(NSError *))arg2;
 - (void)setWatchdogParmeters:(NSDictionary *)arg1 complete:(void (^)(NSError *))arg2;
 - (void)getWatchdogParameters:(void (^)(NSDictionary *, NSError *))arg1;
-- (void)rpcTriggerSync:(NSArray *)arg1 complete:(void (^)(_Bool, NSError *))arg2;
+- (void)triggerSync:(NSArray *)arg1 complete:(void (^)(_Bool, NSError *))arg2;
 - (void)importInitialSyncCredentials:(NSArray *)arg1 complete:(void (^)(_Bool, NSError *))arg2;
 - (void)initialSyncCredentials:(unsigned int)arg1 complete:(void (^)(NSArray *, NSError *))arg2;
 - (void)joinCircleWithBlob:(NSData *)arg1 version:(int)arg2 complete:(void (^)(_Bool, NSError *))arg3;

@@ -20,6 +20,7 @@
     SXADBannerView *_bannerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shown; // @synthesize shown=_shown;
 @property(nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) SXADBannerView *bannerView; // @synthesize bannerView=_bannerView;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 @property(nonatomic) double positionInArticle; // @synthesize positionInArticle=_positionInArticle;
 @property(retain, nonatomic) NSString *opportunityIdentifier; // @synthesize opportunityIdentifier=_opportunityIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

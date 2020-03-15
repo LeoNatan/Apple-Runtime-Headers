@@ -16,9 +16,9 @@
     NSURL *_soundFileURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requiresLongFormPlayback; // @synthesize requiresLongFormPlayback=_requiresLongFormPlayback;
 @property(readonly, nonatomic) NSURL *soundFileURL; // @synthesize soundFileURL=_soundFileURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int soundID;
 - (id)description;
 - (void)dealloc;

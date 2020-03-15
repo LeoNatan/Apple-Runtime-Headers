@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *uploadReceipt; // @synthesize uploadReceipt=_uploadReceipt;
 @property(nonatomic) _Bool hasSize; // @synthesize hasSize=_hasSize;
 @property(nonatomic) unsigned int size; // @synthesize size=_size;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSString *owner; // @synthesize owner=_owner;
 @property(copy, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;
 @property(copy, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int bytesUpperBound;
 @property(readonly, nonatomic) unsigned int bytesUploaded;
 @property(readonly, copy, nonatomic) NSDate *contentDownloadURLExpirationDate;

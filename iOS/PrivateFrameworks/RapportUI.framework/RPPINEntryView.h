@@ -38,6 +38,7 @@
     UIColor *_wellFocusColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *wellFocusColor; // @synthesize wellFocusColor=_wellFocusColor;
 @property(retain, nonatomic) UIView *well8; // @synthesize well8=_well8;
 @property(retain, nonatomic) UIView *well7; // @synthesize well7=_well7;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) _Bool alphaNumeric; // @synthesize alphaNumeric=_alphaNumeric;
-- (void).cxx_destruct;
 @property(nonatomic) long long spellCheckingType;
 @property(nonatomic) long long keyboardType;
 @property(nonatomic) long long keyboardAppearance;

@@ -21,10 +21,10 @@
 }
 
 + (Class)pushMessageType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool moreAvailable; // @synthesize moreAvailable=_moreAvailable;
 @property(retain, nonatomic) NSMutableArray *pushMessages; // @synthesize pushMessages=_pushMessages;
 @property(retain, nonatomic) NSData *changeID; // @synthesize changeID=_changeID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

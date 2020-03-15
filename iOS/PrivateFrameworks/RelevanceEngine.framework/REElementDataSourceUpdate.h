@@ -19,10 +19,10 @@
 + (id)removeElement:(id)arg1 inSection:(id)arg2;
 + (id)insertElement:(id)arg1 inSection:(id)arg2;
 + (id)reloadElement:(id)arg1 inSection:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *section; // @synthesize section=_section;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) REElement *element; // @synthesize element=_element;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithElement:(id)arg1 section:(id)arg2 updateType:(unsigned long long)arg3;

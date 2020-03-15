@@ -15,9 +15,9 @@
 }
 
 + (id)sharedSessionWithClientId:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long clientId; // @synthesize clientId=_clientId;
 @property(readonly) CDDClientConnection *cddClientConnection; // @synthesize cddClientConnection=_cddClientConnection;
-- (void).cxx_destruct;
 - (_Bool)setGlancesLingeredOn:(id)arg1 error:(id *)arg2;
 - (_Bool)setActiveComplications:(id)arg1 error:(id *)arg2;
 - (_Bool)setNonAppBundlIdWithError:(id)arg1 error:(id *)arg2;

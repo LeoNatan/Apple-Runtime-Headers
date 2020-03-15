@@ -25,6 +25,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *relatedItems; // @synthesize relatedItems=_relatedItems;
 @property(copy, nonatomic) NSString *debug; // @synthesize debug=_debug;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
@@ -33,7 +34,6 @@
 @property(nonatomic) long long minPrefix; // @synthesize minPrefix=_minPrefix;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

@@ -16,11 +16,11 @@
     IMAPFetchResult *_expectedFetchResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int expectedLength; // @synthesize expectedLength=_expectedLength;
 @property(retain, nonatomic) IMAPFetchResult *expectedFetchResult; // @synthesize expectedFetchResult=_expectedFetchResult;
 @property(retain, nonatomic) IMAPFetchDataItem *fetchItem; // @synthesize fetchItem=_fetchItem;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (id)newFailedFetchResponse;
 - (BOOL)matchesFetchResponse:(id)arg1;
 - (void)_setupExpectedFetchResult;

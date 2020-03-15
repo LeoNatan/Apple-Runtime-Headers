@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSString *_persistentIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL windowIsInFullScreen; // @synthesize windowIsInFullScreen=_windowIsInFullScreen;
 @property(nonatomic) BOOL autoHidesToolbarInFullScreen; // @synthesize autoHidesToolbarInFullScreen=_autoHidesToolbarInFullScreen;
 @property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(copy, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
-- (void).cxx_destruct;
 - (BOOL)acceptKeyViewHandoff:(BOOL)arg1;
 - (void)noteFocusRingMaskChanged;
 - (void)updateFullScreenBehavior;

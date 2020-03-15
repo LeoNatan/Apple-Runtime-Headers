@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(copy, nonatomic) NSNumber *errorCode; // @synthesize errorCode=_errorCode;
 @property(copy, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *permLink; // @synthesize permLink=_permLink;
 @property(copy, nonatomic) NSString *purchaseParameters; // @synthesize purchaseParameters=_purchaseParameters;
 @property(copy, nonatomic) NSString *downloadID; // @synthesize downloadID=_downloadID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

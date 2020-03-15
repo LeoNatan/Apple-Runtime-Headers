@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     HRElectrocardiogramReportGenerator *_reportGenerator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool actionsEnabled; // @synthesize actionsEnabled=_actionsEnabled;
 @property(retain, nonatomic) HRElectrocardiogramReportGenerator *reportGenerator; // @synthesize reportGenerator=_reportGenerator;
 @property(retain, nonatomic) WDElectrocardiogramReportDataSource *reportDataSource; // @synthesize reportDataSource=_reportDataSource;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) __weak id <HKDataMetadataViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKElectrocardiogram *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)deleteSampleTriggeredBySection:(id)arg1;
 - (void)presentPDFViewController;

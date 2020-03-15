@@ -17,12 +17,12 @@
     _HKClinicalBulletedListLayoutManager *_bulletLayoutManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HKClinicalBulletedListLayoutManager *bulletLayoutManager; // @synthesize bulletLayoutManager=_bulletLayoutManager;
 @property(readonly, nonatomic) UITextView *contentsTextView; // @synthesize contentsTextView=_contentsTextView;
 @property(readonly, nonatomic) NSLayoutConstraint *contentsTextViewLastBaselineToSuperviewBottomConstraint; // @synthesize contentsTextViewLastBaselineToSuperviewBottomConstraint=_contentsTextViewLastBaselineToSuperviewBottomConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *superviewTopToContentsTextViewFirstBaselineConstraint; // @synthesize superviewTopToContentsTextViewFirstBaselineConstraint=_superviewTopToContentsTextViewFirstBaselineConstraint;
 @property(nonatomic) __weak HKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentContentSizeCategory;
 - (id)_bulletContentFont;

@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSSet *tagPermutations; // @synthesize tagPermutations=_tagPermutations;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *tagPermutations; // @synthesize tagPermutations=_tagPermutations;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

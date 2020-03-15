@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _downloadHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType downloadHandler; // @synthesize downloadHandler=_downloadHandler;
 @property(retain, nonatomic) NSString *gridProgressIdentifier; // @synthesize gridProgressIdentifier=_gridProgressIdentifier;
 @property(retain, nonatomic) PHResourceDownloadRequest *resourceDownloadRequest; // @synthesize resourceDownloadRequest=_resourceDownloadRequest;
-- (void).cxx_destruct;
 
 @end
 

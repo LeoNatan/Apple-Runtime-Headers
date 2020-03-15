@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_imagesIsolationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *imagesIsolationQueue; // @synthesize imagesIsolationQueue=_imagesIsolationQueue;
 @property(retain, nonatomic) NSMutableDictionary *images; // @synthesize images=_images;
 @property(retain, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
-- (void).cxx_destruct;
 - (id)nameAtIndexPath:(id)arg1;
 - (unsigned long long)numberOfAssets;
 - (id)imageAtIndexPath:(id)arg1;

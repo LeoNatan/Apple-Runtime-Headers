@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
-@property(retain, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 - (BOOL)evaluate;
 - (void)processUserInfo:(id)arg1;
 

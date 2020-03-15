@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)displayTileTransformWithModelTileTransform:(id)arg1 initialScale:(double)arg2 initialSize:(struct CGSize)arg3 displaySize:(struct CGSize)arg4 secondaryDisplayTileTransform:(id)arg5;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDisplaySize:) struct CGSize _displaySize; // @synthesize _displaySize=__displaySize;
 @property(nonatomic, setter=_setInitialSize:) struct CGSize _initialSize; // @synthesize _initialSize=__initialSize;
 @property(nonatomic, setter=_setInitialScale:) double _initialScale; // @synthesize _initialScale=__initialScale;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic, setter=_setUserInputOriginIdentifier:) NSString *userInputOriginIdentifier; // @synthesize userInputOriginIdentifier=_userInputOriginIdentifier;
 @property(nonatomic, setter=_setHasUserInput:) _Bool hasUserInput; // @synthesize hasUserInput=_hasUserInput;
 @property(nonatomic, setter=_setAffineTransform:) struct CGAffineTransform affineTransform; // @synthesize affineTransform=_affineTransform;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

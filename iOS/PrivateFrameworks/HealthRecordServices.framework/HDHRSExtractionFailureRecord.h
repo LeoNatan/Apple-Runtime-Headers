@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)extractionFailureRecordWithCode:(long long)arg1 propertyName:(id)arg2 resourceKeyPath:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *resourceKeyPath; // @synthesize resourceKeyPath=_resourceKeyPath;
 @property(readonly, copy, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
 @property(readonly, nonatomic) long long failureCode; // @synthesize failureCode=_failureCode;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *internalDisplaySafeDescription;
 - (void)encodeWithCoder:(id)arg1;

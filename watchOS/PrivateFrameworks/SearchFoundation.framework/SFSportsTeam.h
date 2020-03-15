@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *accessibilityDescription; // @synthesize accessibilityDescription=_accessibilityDescription;
 @property(copy, nonatomic) NSString *score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *record; // @synthesize record=_record;
 @property(retain, nonatomic) SFImage *logo; // @synthesize logo=_logo;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

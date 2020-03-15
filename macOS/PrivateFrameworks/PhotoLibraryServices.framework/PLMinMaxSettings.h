@@ -14,9 +14,9 @@
     NSNumber *_max;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *max; // @synthesize max=_max;
 @property(retain, nonatomic) NSNumber *min; // @synthesize min=_min;
-- (void).cxx_destruct;
 
 @end
 

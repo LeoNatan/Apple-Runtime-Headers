@@ -20,6 +20,7 @@
     PHPhotoLibrary *_library;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
 @property(retain, nonatomic) PHImportSource *importSource; // @synthesize importSource=_importSource;
 @property(retain, nonatomic) NSString *personId; // @synthesize personId=_personId;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSSortDescriptor *sortDescriptor; // @synthesize sortDescriptor=_sortDescriptor;
 @property(retain, nonatomic) PHCollectionList *destinationFolder; // @synthesize destinationFolder=_destinationFolder;
 @property(retain, nonatomic) PHAssetCollection *destinationAlbum; // @synthesize destinationAlbum=_destinationAlbum;
-- (void).cxx_destruct;
 - (void)setAllowUnsupported:(_Bool)arg1;
 - (_Bool)allowUnsupported;
 - (void)setOmitImportComplete:(_Bool)arg1;

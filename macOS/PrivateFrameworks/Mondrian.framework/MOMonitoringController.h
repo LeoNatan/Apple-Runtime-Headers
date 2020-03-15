@@ -48,13 +48,13 @@
 
 + (BOOL)isLoggingEnabled;
 + (id)monitoringControllerForMediaView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak MOMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(readonly, nonatomic) id emptyCellsStatistic; // @synthesize emptyCellsStatistic=_emptyCellsStatistic;
 @property(readonly, nonatomic) id frameRateStatistic; // @synthesize frameRateStatistic=_frameRateStatistic;
 @property(nonatomic) double outputLogTimeInterval; // @synthesize outputLogTimeInterval=_outputLogTimeInterval;
 @property(nonatomic) double recentLowFrameRateTimerInterval; // @synthesize recentLowFrameRateTimerInterval=_recentLowFrameRateTimerInterval;
 @property(readonly, nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;
-- (void).cxx_destruct;
 - (void)markAutomationEnd;
 - (void)markAutomationBegin;
 - (void)clearThumbnailsMemoryCacheStatistics;

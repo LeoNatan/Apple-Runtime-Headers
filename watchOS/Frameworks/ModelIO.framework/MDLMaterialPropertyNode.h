@@ -19,11 +19,11 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *outputs; // @synthesize outputs=_outputs;
 @property(readonly, nonatomic) NSArray *inputs; // @synthesize inputs=_inputs;
 @property(copy, nonatomic) CDUnknownBlockType evaluationFunction; // @synthesize evaluationFunction=_evaluationFunction;
-- (void).cxx_destruct;
 - (id)initWithInputs:(id)arg1 outputs:(id)arg2 evaluationFunction:(CDUnknownBlockType)arg3;
 
 @end

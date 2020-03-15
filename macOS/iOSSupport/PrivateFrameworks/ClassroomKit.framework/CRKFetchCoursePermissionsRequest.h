@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
-@property(retain, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

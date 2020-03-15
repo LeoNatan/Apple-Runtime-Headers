@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSArray *timeZonesDB; // @synthesize timeZonesDB=_timeZonesDB;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *timeZonesDB; // @synthesize timeZonesDB=_timeZonesDB;
 - (id)timeZoneWithDictionary:(id)arg1;
 - (id)filteredTimeZonesWithCountyCode:(id)arg1;
 - (id)closestZoneInfoWithLocation:(id)arg1 source:(id)arg2;

@@ -24,9 +24,9 @@
     int _dataTypeCode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int dataTypeCode; // @synthesize dataTypeCode=_dataTypeCode;
 @property(nonatomic) __weak id <NLIngestionTrackerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reportAndReset;
 - (void)appendSamples:(id)arg1 atTime:(double)arg2 inSession:(_Bool)arg3;
 - (void)reset;

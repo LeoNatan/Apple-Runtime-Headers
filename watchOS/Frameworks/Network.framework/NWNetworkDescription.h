@@ -20,6 +20,7 @@
 }
 
 + (int)getNewStateFromPathMatch:(_Bool)arg1 oldState:(int)arg2 probeExists:(_Bool)arg3;
+- (void).cxx_destruct;
 @property int state; // @synthesize state=_state;
 @property(copy) NSURL *probeURL; // @synthesize probeURL=_probeURL;
 @property int roamingPreference; // @synthesize roamingPreference=_roamingPreference;
@@ -27,7 +28,6 @@
 @property(copy) NSSet *dnsSearchDomainOptions; // @synthesize dnsSearchDomainOptions=_dnsSearchDomainOptions;
 @property(copy) NSSet *ssidOptions; // @synthesize ssidOptions=_ssidOptions;
 @property(copy) NSSet *interfaceTypeOptions; // @synthesize interfaceTypeOptions=_interfaceTypeOptions;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

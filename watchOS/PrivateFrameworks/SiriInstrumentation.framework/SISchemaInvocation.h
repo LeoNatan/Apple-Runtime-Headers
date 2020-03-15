@@ -15,10 +15,10 @@
     SISchemaViewContainer *_viewContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
 @property(nonatomic) int invocationSource; // @synthesize invocationSource=_invocationSource;
 @property(nonatomic) int invocationAction; // @synthesize invocationAction=_invocationAction;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

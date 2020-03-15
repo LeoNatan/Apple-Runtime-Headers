@@ -15,10 +15,10 @@
     NSManagedObjectContext *_moc;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSManagedObjectContext *moc; // @synthesize moc=_moc;
 @property(retain, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(nonatomic) long long orderValue; // @synthesize orderValue=_orderValue;
-- (void).cxx_destruct;
 - (id)description;
 - (id)secondaryOrderSortKey;
 - (id)childManagedObject;

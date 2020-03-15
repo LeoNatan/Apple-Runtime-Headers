@@ -21,11 +21,11 @@
     id <SXAnalyticsReportingProvider> _analyticsReportingProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXAnalyticsReportingProvider> analyticsReportingProvider; // @synthesize analyticsReportingProvider=_analyticsReportingProvider;
 @property(readonly, nonatomic) id <SXActionSerializer> actionSerializer; // @synthesize actionSerializer=_actionSerializer;
 @property(readonly, nonatomic) id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
 @property(readonly, nonatomic) id <SXAction> action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)commitViewController:(id)arg1;
 - (id)previewViewController;
 - (void)handledAction:(id)arg1 state:(unsigned long long)arg2;

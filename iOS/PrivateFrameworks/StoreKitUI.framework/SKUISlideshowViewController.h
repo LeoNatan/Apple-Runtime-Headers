@@ -34,11 +34,11 @@ __attribute__((visibility("hidden")))
     long long _currentIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(nonatomic) __weak id <SKUISlideshowViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SKUISlideshowViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_restoreStatusBarAppearanceState;
 - (void)_saveStatusBarAppearanceState;
 - (void)_setOverlayVisible:(_Bool)arg1 animated:(_Bool)arg2;

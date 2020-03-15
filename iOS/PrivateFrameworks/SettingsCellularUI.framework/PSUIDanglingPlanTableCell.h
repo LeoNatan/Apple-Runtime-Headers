@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)cellStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *accessorySpacerView; // @synthesize accessorySpacerView=_accessorySpacerView;
 @property(retain, nonatomic) UILabel *centeredNameLabel; // @synthesize centeredNameLabel=_centeredNameLabel;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
-- (void).cxx_destruct;
 - (id)detailTextLabel;
 - (id)textLabel;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;

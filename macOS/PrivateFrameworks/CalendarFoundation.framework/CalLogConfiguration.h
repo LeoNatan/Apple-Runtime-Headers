@@ -14,9 +14,9 @@
     NSMutableArray *_nodes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nodes; // @synthesize nodes=_nodes;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)parseWriterDefinition:(id)arg1;
 - (id)parseFilterDefinition:(id)arg1;
 - (id)parseNodeDefinition:(id)arg1;

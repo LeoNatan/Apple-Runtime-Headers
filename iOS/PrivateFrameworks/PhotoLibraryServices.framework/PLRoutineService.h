@@ -16,11 +16,11 @@
     NSMutableSet *_pendingPinningVisitIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool routineIsAvailable; // @synthesize routineIsAvailable=_routineIsAvailable;
 @property(retain, nonatomic) NSMutableSet *pendingPinningVisitIdentifiers; // @synthesize pendingPinningVisitIdentifiers=_pendingPinningVisitIdentifiers;
 @property(retain, nonatomic) PLLocationOfInterestCache *visitsCache; // @synthesize visitsCache=_visitsCache;
 @property(retain, nonatomic) NSDateInterval *fetchDateInterval; // @synthesize fetchDateInterval=_fetchDateInterval;
-- (void).cxx_destruct;
 - (void)_pinPendingVisits;
 - (id)_fetchHomeAndWorkLocationsOfInterestWithRoutineManager:(id)arg1;
 - (id)_fetchLocationsOfInterestWithinDateInterval:(id)arg1 routineManager:(id)arg2;

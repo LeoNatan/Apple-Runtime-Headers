@@ -21,11 +21,11 @@
 + (id)_deleteRequestsForObjects:(id)arg1;
 + (id)deleteRequestsForObjects:(id)arg1 ofType:(Class)arg2 forSelector:(SEL)arg3;
 + (id)deleteRequestForObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, nonatomic, getter=isClientEntitled) BOOL clientEntitled; // @synthesize clientEntitled=_clientEntitled;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 - (id)uuid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *managedEntityName;
 - (void)deleteManagedObject:(id)arg1 photoLibrary:(id)arg2;
 - (BOOL)validateForDeleteManagedObject:(id)arg1 error:(id *)arg2;

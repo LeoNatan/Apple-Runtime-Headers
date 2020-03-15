@@ -14,9 +14,9 @@
     WebView *_webView;
 }
 
+- (void).cxx_destruct;
 @property BOOL htmlLoaded; // @synthesize htmlLoaded=_htmlLoaded;
 @property(retain) WebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)updateLayer;
 
 @end

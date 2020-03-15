@@ -32,11 +32,11 @@
 + (id)subcommandPath;
 + (_Bool)supportsVerboseOutput;
 + (_Bool)supportsJSON;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(nonatomic) __weak id <CRKToolCommandDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=shouldPrintVerbose) _Bool printVerbose; // @synthesize printVerbose=_printVerbose;
 @property(nonatomic, getter=shouldPrintJSON) _Bool printJSON; // @synthesize printJSON=_printJSON;
-- (void).cxx_destruct;
 - (void)clientDidDisconnect:(id)arg1;
 - (void)client:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)client:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;

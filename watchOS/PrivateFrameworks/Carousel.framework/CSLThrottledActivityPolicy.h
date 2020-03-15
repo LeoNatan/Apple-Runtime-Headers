@@ -20,12 +20,12 @@
     double _minimumIntraAppInterval;
 }
 
+- (void).cxx_destruct;
 @property __weak id <CSLThrottledActivityPolicyDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *policyName; // @synthesize policyName=_policyName;
 @property(nonatomic) double minimumIntraAppInterval; // @synthesize minimumIntraAppInterval=_minimumIntraAppInterval;
 @property(nonatomic) double minimumInterAppInterval; // @synthesize minimumInterAppInterval=_minimumInterAppInterval;
 @property(retain, nonatomic) id <CSLActivityDateSource> dateSource; // @synthesize dateSource=_dateSource;
-- (void).cxx_destruct;
 - (id)budgetManagerForContext:(id)arg1;
 - (id)responseForActivity:(id)arg1 withState:(id)arg2;
 - (_Bool)appliesToActivity:(id)arg1;

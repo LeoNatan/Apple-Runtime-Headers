@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultAtomBackgroundColor;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *withoutImageConstraints; // @synthesize withoutImageConstraints=_withoutImageConstraints;
 @property(copy, nonatomic) NSArray *withImageConstraints; // @synthesize withImageConstraints=_withImageConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *imageCenterYConstraint; // @synthesize imageCenterYConstraint=_imageCenterYConstraint;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain) UIImageView *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIColor *atomBackgroundColor; // @synthesize atomBackgroundColor=_atomBackgroundColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect selectionBounds;
 - (void)setSelectionStyle:(int)arg1 animated:(_Bool)arg2;
 @property(nonatomic) int selectionStyle;

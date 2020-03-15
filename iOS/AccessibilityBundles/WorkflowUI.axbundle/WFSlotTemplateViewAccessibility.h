@@ -16,7 +16,8 @@
 - (id)accessibilityCustomActions;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;
-- (void)enumerateContentsWithBlock:(CDUnknownBlockType)arg1;
+- (id)_accessibilityLocalizedPlaceholderNameForSlot:(id)arg1;
+- (void)_accessibilityEnumerateContentsWithBlock:(CDUnknownBlockType)arg1;
 
 @end
 

@@ -32,6 +32,7 @@
 
 + (Class)faceResultsType;
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float contentScore; // @synthesize contentScore=_contentScore;
 @property(nonatomic) float globalQualityScore; // @synthesize globalQualityScore=_globalQualityScore;
 @property(retain, nonatomic) NSMutableArray *faceResults; // @synthesize faceResults=_faceResults;
@@ -43,7 +44,6 @@
 @property(nonatomic) float visualPleasingScore; // @synthesize visualPleasingScore=_visualPleasingScore;
 @property(nonatomic) float qualityScoreForLivePhoto; // @synthesize qualityScoreForLivePhoto=_qualityScoreForLivePhoto;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

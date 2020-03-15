@@ -64,6 +64,7 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+- (void).cxx_destruct;
 @property BOOL isBeingCopied; // @synthesize isBeingCopied=_isBeingCopied;
 @property struct CGRect initialDrawingBoundsForAppearanceOverride; // @synthesize initialDrawingBoundsForAppearanceOverride=_initialDrawingBoundsForAppearanceOverride;
 @property __weak AKAnnotation *childAnnotation; // @synthesize childAnnotation=_childAnnotation;
@@ -85,7 +86,6 @@
 @property(nonatomic) double originalModelBaseScaleFactor; // @synthesize originalModelBaseScaleFactor=_originalModelBaseScaleFactor;
 @property(copy) NSString *customPlaceholderText; // @synthesize customPlaceholderText=_customPlaceholderText;
 @property(readonly) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (BOOL)conformsToAKChildAnnotationProtocol;
 - (BOOL)conformsToAKParentAnnotationProtocol;
 - (BOOL)conformsToAKTextAnnotationProtocol;

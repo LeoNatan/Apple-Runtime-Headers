@@ -27,6 +27,7 @@
     double _maxDuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) TLAlertConfiguration *alertConfiguration; // @synthesize alertConfiguration=_alertConfiguration;
 @property(copy, nonatomic) NSString *resolvedToneIdentifier; // @synthesize resolvedToneIdentifier=_resolvedToneIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned int soundBehavior; // @synthesize soundBehavior=_soundBehavior;
 @property(nonatomic) unsigned long systemSoundID; // @synthesize systemSoundID=_systemSoundID;
 @property(nonatomic) int soundType; // @synthesize soundType=_soundType;
-- (void).cxx_destruct;
 - (id)shortDescription;
 - (id)description;
 - (id)_descriptionWithLength:(unsigned int)arg1;

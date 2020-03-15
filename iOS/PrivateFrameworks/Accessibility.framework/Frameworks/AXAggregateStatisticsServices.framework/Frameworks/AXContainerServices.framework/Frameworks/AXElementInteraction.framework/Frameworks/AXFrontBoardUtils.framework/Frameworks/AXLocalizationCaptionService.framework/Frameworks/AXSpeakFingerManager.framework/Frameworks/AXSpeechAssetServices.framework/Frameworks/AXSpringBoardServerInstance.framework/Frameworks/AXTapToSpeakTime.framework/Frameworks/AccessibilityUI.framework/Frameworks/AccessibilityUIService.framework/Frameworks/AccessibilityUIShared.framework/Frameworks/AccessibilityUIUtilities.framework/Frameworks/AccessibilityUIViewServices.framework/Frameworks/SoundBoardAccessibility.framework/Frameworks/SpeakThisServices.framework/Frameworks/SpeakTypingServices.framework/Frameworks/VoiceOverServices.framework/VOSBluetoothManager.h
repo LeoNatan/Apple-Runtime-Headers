@@ -27,8 +27,8 @@
 
 + (int)lastInitError;
 + (id)sharedInstance;
-@property(nonatomic) unsigned int authorizedServices; // @synthesize authorizedServices=_authorizedServices;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int authorizedServices; // @synthesize authorizedServices=_authorizedServices;
 - (unsigned int)authorizedServicesForDevice:(id)arg1;
 - (_Bool)isServiceSupported:(unsigned int)arg1;
 - (void)setAudioConnected:(_Bool)arg1;

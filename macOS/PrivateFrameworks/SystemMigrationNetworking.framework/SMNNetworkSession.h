@@ -58,6 +58,7 @@
 + (id)keyPathsForValuesAffectingActiveInterfaceBenchmark;
 + (id)keyPathsForValuesAffectingRemoteInterfaceType;
 + (id)keyPathsForValuesAffectingLocalInterfaceType;
+- (void).cxx_destruct;
 @property double infrastructureWirelessRate; // @synthesize infrastructureWirelessRate=_infrastructureWirelessRate;
 @property int ipv6Port; // @synthesize ipv6Port=_ipv6Port;
 @property int preferredInterface; // @synthesize preferredInterface=_preferredInterface;
@@ -97,7 +98,6 @@
 @property(retain) NSString *connectedServiceName; // @synthesize connectedServiceName=_connectedServiceName;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property unsigned long long protocolVersion; // @synthesize protocolVersion=_protocolVersion;
-- (void).cxx_destruct;
 @property(readonly) BOOL otherConnectionsAvailable;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)closeStream:(id)arg1;

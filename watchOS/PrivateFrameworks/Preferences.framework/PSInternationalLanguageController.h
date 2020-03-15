@@ -27,6 +27,7 @@
 }
 
 + (_Bool)capitalizeLanguageNames;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool searchIsActive; // @synthesize searchIsActive=_searchIsActive;
 @property(retain, nonatomic) NSString *savedSearchTerm; // @synthesize savedSearchTerm=_savedSearchTerm;
 @property(retain, nonatomic) NSArray *filteredDeviceLanguages; // @synthesize filteredDeviceLanguages=_filteredDeviceLanguages;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) PSLanguage *checkedLanguage; // @synthesize checkedLanguage=_checkedLanguage;
 @property(retain, nonatomic) PSLocaleSelector *localeSelector; // @synthesize localeSelector=_localeSelector;
 @property(retain, nonatomic) PSLanguageSelector *languageSelector; // @synthesize languageSelector=_languageSelector;
-- (void).cxx_destruct;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;

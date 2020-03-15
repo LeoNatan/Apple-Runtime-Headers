@@ -18,13 +18,13 @@
     struct UIEdgeInsets _marginInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *checkmark; // @synthesize checkmark=_checkmark;
 @property(nonatomic) _Bool hidesCheckmark; // @synthesize hidesCheckmark=_hidesCheckmark;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets=_marginInsets;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) struct CGRect contentAlignmentRect; // @synthesize contentAlignmentRect=_contentAlignmentRect;
-- (void).cxx_destruct;
 - (void)updateCheckmarkImage;
 - (struct UIEdgeInsets)_horizontalSafeAreaInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets contentAlignmentInsets;

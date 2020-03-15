@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_transitionTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *transitionTimer; // @synthesize transitionTimer=_transitionTimer;
 @property(retain, nonatomic) UIImage *nextImage; // @synthesize nextImage=_nextImage;
 @property(retain, nonatomic) VideosExtrasConstrainedArtworkContainerView *imageContainerView; // @synthesize imageContainerView=_imageContainerView;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double transitionInterval; // @synthesize transitionInterval=_transitionInterval;
 @property(nonatomic) unsigned long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 @property(nonatomic) __weak id <VideosExtrasSlideshowViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_transitionToNextImageIfAppropriate;
 - (void)_reload;
 - (void)_prepareNextImageAndScheduleTransitionTimerIfAppropriate;

@@ -31,6 +31,7 @@
 }
 
 + (id)sharedDisplayManager;
+- (void).cxx_destruct;
 @property(nonatomic) float reachabilityOffset; // @synthesize reachabilityOffset=_reachabilityOffset;
 @property(copy, nonatomic) NSString *reachabilityHandlerIdentifier; // @synthesize reachabilityHandlerIdentifier=_reachabilityHandlerIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *nubbitContexts; // @synthesize nubbitContexts=_nubbitContexts;
@@ -46,7 +47,6 @@
 @property(nonatomic) unsigned int numberOfAttemptsToInitializeActiveInterfaceOrientation; // @synthesize numberOfAttemptsToInitializeActiveInterfaceOrientation=_numberOfAttemptsToInitializeActiveInterfaceOrientation;
 @property(nonatomic) int activeInterfaceOrientation; // @synthesize activeInterfaceOrientation=_activeInterfaceOrientation;
 @property(retain, nonatomic) AXUIAlertStyleProvider *defaultAlertStyleProvider; // @synthesize defaultAlertStyleProvider=_defaultAlertStyleProvider;
-- (void).cxx_destruct;
 - (void)_didReceiveMemoryWarning:(id)arg1;
 - (void)_reapHiddenWindows;
 - (void)_resetServiceManager;
@@ -84,6 +84,7 @@
 - (void)enumerateContentViewControllersUsingBlock:(CDUnknownBlockType)arg1;
 - (double)_originalDurationForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 withAdjustedDuration:(double)arg3;
 - (void)_rotateWindow:(id)arg1 toInterfaceOrientation:(int)arg2 duration:(double)arg3 force:(_Bool)arg4;
+- (id)_windowWithUserInteractionEnabled:(_Bool)arg1 windowLevel:(float)arg2 createIfNeeded:(_Bool)arg3 purposeIdentifier:(id)arg4 userInterfaceStyle:(int)arg5 allowSystemAppHosting:(_Bool)arg6;
 - (id)_windowWithUserInteractionEnabled:(_Bool)arg1 windowLevel:(float)arg2 createIfNeeded:(_Bool)arg3 purposeIdentifier:(id)arg4;
 - (void)_enumerateWindowsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)unregisterNubbit:(id)arg1 shouldUndoFade:(_Bool)arg2;
@@ -94,8 +95,11 @@
 - (id)showAlertWithText:(id)arg1 subtitleText:(id)arg2 iconImage:(id)arg3 type:(unsigned int)arg4 priority:(unsigned int)arg5 duration:(double)arg6 forService:(id)arg7;
 - (id)showAlertWithText:(id)arg1 subtitleText:(id)arg2 iconImage:(id)arg3 type:(unsigned int)arg4 forService:(id)arg5;
 - (void)removeContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3 context:(void *)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)addContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3 context:(void *)arg4 userInterfaceStyle:(int)arg5 allowSystemAppHosting:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)addContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3 context:(void *)arg4 userInterfaceStyle:(int)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)addContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3 context:(void *)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)removeContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3;
+- (void)addContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3 allowSystemAppHosting:(_Bool)arg4;
 - (void)addContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3;
 - (id)contentViewControllersWithUserInteractionEnabled:(_Bool)arg1 forService:(id)arg2;
 - (void)systemAppServerReady;

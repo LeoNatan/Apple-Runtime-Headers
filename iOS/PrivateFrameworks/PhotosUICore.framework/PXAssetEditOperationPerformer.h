@@ -16,10 +16,10 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)performEditOperationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithEditOperationType:(id)arg1 asset:(id)arg2;
 - (id)init;

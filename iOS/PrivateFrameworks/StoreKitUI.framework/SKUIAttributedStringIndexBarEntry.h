@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_defaultTextAttributes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *defaultTextAttributes; // @synthesize defaultTextAttributes=_defaultTextAttributes;
 @property(readonly, copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 - (id)_synthesizedAttributedString;
 - (void)_invalidateSynthesizedAttributedString;
 - (id)entryAttributedString;

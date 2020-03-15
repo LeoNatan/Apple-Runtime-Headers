@@ -14,9 +14,9 @@
     NSSet *_traits;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *traits; // @synthesize traits=_traits;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)hasTrait:(id)arg1;
 - (_Bool)isEqualToMediaItem:(id)arg1;
 - (id)mediaItemURL;

@@ -26,9 +26,9 @@
 + (id)diffsToSetStatusCode:(unsigned long long)arg1 andCompatibilityState:(unsigned short)arg2;
 + (id)diffsToPair:(_Bool)arg1 withDate:(id)arg2;
 + (id)diffsToActivate:(_Bool)arg1 withDate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NRPBMutableDevice *protobuf; // @synthesize protobuf=_protobuf;
-- (void).cxx_destruct;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

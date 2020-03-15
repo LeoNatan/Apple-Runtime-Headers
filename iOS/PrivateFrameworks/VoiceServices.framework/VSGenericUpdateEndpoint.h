@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (CDUnknownBlockType)remoteUpdateHanderForEndpoint:(id)arg1;
 + (id)configuredEndpointWithUpdateHandler:(CDUnknownBlockType)arg1 withConnection:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSXPCListenerEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)invalidate;

@@ -14,9 +14,9 @@
     NSTextField *_textfield;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *textfield; // @synthesize textfield=_textfield;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)stop;
 - (void)animate;

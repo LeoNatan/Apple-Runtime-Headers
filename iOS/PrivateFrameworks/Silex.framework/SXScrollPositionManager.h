@@ -16,8 +16,8 @@
     id <SXScrollPositionRestoring> _scrollPositionRestoring;
 }
 
-@property(nonatomic) __weak id <SXScrollPositionRestoring> scrollPositionRestoring; // @synthesize scrollPositionRestoring=_scrollPositionRestoring;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SXScrollPositionRestoring> scrollPositionRestoring; // @synthesize scrollPositionRestoring=_scrollPositionRestoring;
 - (void)updateScrollPosition:(id)arg1 animated:(_Bool)arg2;
 
 // Remaining properties

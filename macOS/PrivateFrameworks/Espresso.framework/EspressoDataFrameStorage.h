@@ -16,10 +16,10 @@
 }
 
 + (id)dataFrameStorageFromPath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *baseFilename; // @synthesize baseFilename=_baseFilename;
 @property(retain) NSMutableDictionary *mappedFiles; // @synthesize mappedFiles=_mappedFiles;
 @property(retain) NSMutableArray *dataFrames; // @synthesize dataFrames=_dataFrames;
-- (void).cxx_destruct;
 - (id)dataFrameAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfDataFrames;
 

@@ -15,10 +15,10 @@
     NSString *_mutingChannelID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mutingChannelID; // @synthesize mutingChannelID=_mutingChannelID;
 @property(readonly, nonatomic) NSDictionary *topVideosMetadataByArticleID; // @synthesize topVideosMetadataByArticleID=_topVideosMetadataByArticleID;
 @property(readonly, nonatomic) NSArray *topVideosArticleIDs; // @synthesize topVideosArticleIDs=_topVideosArticleIDs;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *discoverMoreVideosURLString;
 @property(readonly, nonatomic) NSString *discoverMoreVideosSubtitle;
 @property(readonly, nonatomic) NSString *discoverMoreVideosTitle;

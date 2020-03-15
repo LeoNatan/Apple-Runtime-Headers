@@ -25,13 +25,13 @@
     double _videoLoadingProgress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double videoLoadingProgress; // @synthesize videoLoadingProgress=_videoLoadingProgress;
 @property(retain, nonatomic) ISWrappedAVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
 @property(retain, nonatomic) NSNumber *queuePosition; // @synthesize queuePosition=_queuePosition;
 @property(nonatomic) _Bool canLoadVideo; // @synthesize canLoadVideo=_canLoadVideo;
 @property(retain, nonatomic) AVPlayerItem *videoPlayerItem; // @synthesize videoPlayerItem=_videoPlayerItem;
 @property(retain, nonatomic) ISWrappedAVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
-- (void).cxx_destruct;
 - (void)_endLoadingInterval:(_Bool)arg1;
 - (void)_endPlaybackInterval;
 - (void)_updateVideoViewPlaceholderFilters;

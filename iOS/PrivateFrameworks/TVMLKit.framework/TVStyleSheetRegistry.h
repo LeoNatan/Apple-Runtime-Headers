@@ -15,9 +15,9 @@
 }
 
 + (id)_urlForStyleSheetName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *nodesByTemplateName; // @synthesize nodesByTemplateName=_nodesByTemplateName;
 @property(retain, nonatomic) NSMutableArray *rootNodes; // @synthesize rootNodes=_rootNodes;
-- (void).cxx_destruct;
 - (void)_commitTemplateTreeNode:(id)arg1 withParentStyleSheetURLs:(id)arg2;
 - (void)_createDefaultRootNodes;
 - (void)commitStyleSheets;

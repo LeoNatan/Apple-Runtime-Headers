@@ -16,11 +16,11 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, copy, nonatomic) NSString *speakableKey; // @synthesize speakableKey=_speakableKey;
 @property(readonly, copy, nonatomic) NSString *displayKey; // @synthesize displayKey=_displayKey;
 @property(readonly, nonatomic) long long phase; // @synthesize phase=_phase;
-- (void).cxx_destruct;
 - (id)initWithDuration:(double)arg1;
 - (id)initWithPhase:(long long)arg1 displayKey:(id)arg2 speakableKey:(id)arg3;
 

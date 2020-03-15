@@ -15,9 +15,9 @@
 }
 
 + (id)documentWithMarkdown:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 @property(readonly, copy, nonatomic) NSString *markdown; // @synthesize markdown=_markdown;
-- (void).cxx_destruct;
 - (void)addElement:(id)arg1;
 - (id)initWithMarkdown:(id)arg1;
 

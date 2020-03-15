@@ -21,12 +21,12 @@
 
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2 andCategories:(id)arg3;
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDeletionRestricted) _Bool deletionRestricted; // @synthesize deletionRestricted=_deletionRestricted;
 @property(nonatomic) float totalSize; // @synthesize totalSize=_totalSize;
 @property(retain, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <PSStorageReporting> usageBundleStorageReporter;
 - (id)description;
 

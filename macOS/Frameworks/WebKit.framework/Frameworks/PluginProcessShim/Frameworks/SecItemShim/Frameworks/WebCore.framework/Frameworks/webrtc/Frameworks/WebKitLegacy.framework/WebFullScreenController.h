@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
     BOOL _isFullScreen;
 }
 
-@property(readonly) struct CGRect finalFrame; // @synthesize finalFrame=_finalFrame;
-@property(readonly) struct CGRect initialFrame; // @synthesize initialFrame=_initialFrame;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) struct CGRect finalFrame; // @synthesize finalFrame=_finalFrame;
+@property(readonly) struct CGRect initialFrame; // @synthesize initialFrame=_initialFrame;
 - (void)_startExitFullScreenAnimationWithDuration:(double)arg1;
 - (void)_startEnterFullScreenAnimationWithDuration:(double)arg1;
 - (void)_swapView:(id)arg1 with:(id)arg2;

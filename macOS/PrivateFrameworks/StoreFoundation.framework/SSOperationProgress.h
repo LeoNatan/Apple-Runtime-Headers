@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long units; // @synthesize units=_units;
 @property(nonatomic) long long operationType; // @synthesize operationType=_operationType;
 @property(nonatomic) double normalizedMaxValue; // @synthesize normalizedMaxValue=_normalizedMaxValue;
@@ -36,7 +37,6 @@
 @property(nonatomic) double currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) double changeRate; // @synthesize changeRate=_changeRate;
 @property(nonatomic) BOOL canPause; // @synthesize canPause=_canPause;
-- (void).cxx_destruct;
 - (void)_updateStatisticsFromSnapshots;
 - (void)snapshot;
 - (void)resetSnapshots;

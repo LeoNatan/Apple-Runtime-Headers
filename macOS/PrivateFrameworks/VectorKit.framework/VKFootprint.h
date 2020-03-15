@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     Matrix_6e1d3589 _cornerGroundPoints[12];
 }
 
+- (id).cxx_construct;
 @property(readonly, nonatomic) int cornerGroundPointsCount; // @synthesize cornerGroundPointsCount=_cornerGroundPointsCount;
 @property(readonly, nonatomic) Matrix_6e1d3589 nearestGroundPoint; // @synthesize nearestGroundPoint=_nearestGroundPoint;
 @property(readonly, nonatomic) Matrix_6e1d3589 furthestGroundPoint; // @synthesize furthestGroundPoint=_furthestGroundPoint;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double minDepth; // @synthesize minDepth=_minDepth;
 @property(readonly, nonatomic) struct VKFootprintConvexHull_struct convexHull; // @synthesize convexHull=_convexHull;
 @property(readonly, nonatomic) Box_3d7e3c2c boundingRect; // @synthesize boundingRect=_boundingRect;
-- (id).cxx_construct;
 - (CDUnknownBlockType)annotationCoordinateTest;
 - (CDUnknownBlockType)annotationRectTest;
 - (Box_3d7e3c2c)_expandedBoundingRect;

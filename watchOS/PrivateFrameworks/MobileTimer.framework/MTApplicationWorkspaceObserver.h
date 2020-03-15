@@ -19,10 +19,10 @@
 }
 
 + (id)sharedWorkspaceObserver;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isObserving) _Bool observing; // @synthesize observing=_observing;
 @property(retain, nonatomic) NSMutableDictionary *observersForBundleID; // @synthesize observersForBundleID=_observersForBundleID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
-- (void).cxx_destruct;
 - (void)applicationsDidUninstall:(id)arg1;
 - (_Bool)isApplicationInstalledForBundleIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;

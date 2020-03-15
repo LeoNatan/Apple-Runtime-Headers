@@ -16,11 +16,11 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
 @property(nonatomic) unsigned int disbursementTarget; // @synthesize disbursementTarget=_disbursementTarget;
 @property(nonatomic) unsigned int disbursementSource; // @synthesize disbursementSource=_disbursementSource;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)initWithDisbursementSource:(unsigned int)arg1 disbursementTarget:(unsigned int)arg2 teamIdentifier:(id)arg3 bundleIdentifier:(id)arg4;
 

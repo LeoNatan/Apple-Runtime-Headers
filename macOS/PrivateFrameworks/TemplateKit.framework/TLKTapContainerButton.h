@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSView *_containerView;
 }
 
-@property(nonatomic) __weak NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSView *containerView; // @synthesize containerView=_containerView;
 
 @end
 

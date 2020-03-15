@@ -14,8 +14,8 @@
 }
 
 + (id)sharedAggregate;
-@property(retain, nonatomic) NSString *primaryDomain; // @synthesize primaryDomain=_primaryDomain;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *primaryDomain; // @synthesize primaryDomain=_primaryDomain;
 - (id)_truncateToSignificantFigureForValue:(id)arg1 numOfSignificantDigits:(int)arg2;
 - (id)_messageTracerMethodConstructionHintsForKey:(id)arg1;
 - (id)_aggdMethodConstructionHintsForKey:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (Class)layerClass;
-@property(readonly, nonatomic) SXGradient *gradient; // @synthesize gradient=_gradient;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXGradient *gradient; // @synthesize gradient=_gradient;
 - (id)initWithGradient:(id)arg1;
 
 @end

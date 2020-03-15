@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _callback;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 callback:(CDUnknownBlockType)arg2;
 
 @end

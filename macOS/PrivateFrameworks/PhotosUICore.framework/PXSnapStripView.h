@@ -14,8 +14,8 @@
     NSArray *_indicatorInfos;
 }
 
-@property(copy, nonatomic) NSArray *indicatorInfos; // @synthesize indicatorInfos=_indicatorInfos;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *indicatorInfos; // @synthesize indicatorInfos=_indicatorInfos;
 - (void)_updateStripView:(BOOL)arg1;
 - (void)setIndicatorInfos:(id)arg1 animated:(BOOL)arg2;
 - (void)layoutSubviews;

@@ -19,6 +19,7 @@
     NSString *_legacyUsername;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *legacyUsername; // @synthesize legacyUsername=_legacyUsername;
 @property(retain, nonatomic) NSString *legacyDsid; // @synthesize legacyDsid=_legacyDsid;
 @property(nonatomic) long long appAuthTokenStatus; // @synthesize appAuthTokenStatus=_appAuthTokenStatus;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *appServerHost; // @synthesize appServerHost=_appServerHost;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -15,8 +15,8 @@
 
 + (void)synchronizeUsageWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)getLocalDeviceIdentifierAndReturnError:(id *)arg1;
-@property(readonly) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(readonly) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)fetchReportsDuringInterval:(id)arg1 partitionInterval:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchReportsDuringInterval:(id)arg1 partitionInterval:(double)arg2 forceImmediateSync:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)getLocalDeviceIdentifierAndReturnError:(id *)arg1;

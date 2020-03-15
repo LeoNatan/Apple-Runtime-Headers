@@ -18,11 +18,11 @@
     struct UIEdgeInsets _hitTestEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *tintImage; // @synthesize tintImage=_tintImage;
 @property(nonatomic) long long tintStyle; // @synthesize tintStyle=_tintStyle;
 @property(nonatomic) struct UIEdgeInsets hitTestEdgeInsets; // @synthesize hitTestEdgeInsets=_hitTestEdgeInsets;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
-- (void).cxx_destruct;
 - (id)_tintColorForSettings:(id)arg1;
 - (void)updateForChangedSettings:(id)arg1;
 - (void)setSettings:(id)arg1 image:(id)arg2 shadowImage:(id)arg3;

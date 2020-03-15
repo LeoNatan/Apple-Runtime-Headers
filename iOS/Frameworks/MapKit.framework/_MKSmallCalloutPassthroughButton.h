@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIView *_highlightView;
 }
 
-@property(retain, nonatomic) UIControl *targetControl; // @synthesize targetControl=_targetControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIControl *targetControl; // @synthesize targetControl=_targetControl;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)handleTap:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

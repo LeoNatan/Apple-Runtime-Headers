@@ -16,8 +16,8 @@
     HULinkedApplicationView *_linkedApplicationView;
 }
 
-@property(retain, nonatomic) HULinkedApplicationView *linkedApplicationView; // @synthesize linkedApplicationView=_linkedApplicationView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HULinkedApplicationView *linkedApplicationView; // @synthesize linkedApplicationView=_linkedApplicationView;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 @property(retain, nonatomic) HFItem *item;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;

@@ -15,10 +15,10 @@
     NSTextField *_amountLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *amountLabel; // @synthesize amountLabel=_amountLabel;
 @property(retain) NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain) NSTextField *nameLabel; // @synthesize nameLabel=_nameLabel;
-- (void).cxx_destruct;
 
 @end
 

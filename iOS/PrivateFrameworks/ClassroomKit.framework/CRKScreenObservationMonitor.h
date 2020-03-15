@@ -22,12 +22,12 @@
 }
 
 + (id)keyPathsForValuesAffectingHasObservingInstructors;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *enrolledCoursesByCourseIdentifierString; // @synthesize enrolledCoursesByCourseIdentifierString=_enrolledCoursesByCourseIdentifierString;
 @property(retain, nonatomic) NSDictionary *observingInstructorIdentifiersByCourseIdentifierString; // @synthesize observingInstructorIdentifiersByCourseIdentifierString=_observingInstructorIdentifiersByCourseIdentifierString;
 @property(readonly, nonatomic) CRKStudentDaemonProxy *daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 @property(retain, nonatomic) NSDictionary *observingInstructorsByCourse; // @synthesize observingInstructorsByCourse=_observingInstructorsByCourse;
 @property(nonatomic) __weak id <CRKScreenObservationMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)daemonProxy:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (void)daemonProxyDidDisconnect:(id)arg1;
 - (void)daemonProxyDidConnect:(id)arg1;

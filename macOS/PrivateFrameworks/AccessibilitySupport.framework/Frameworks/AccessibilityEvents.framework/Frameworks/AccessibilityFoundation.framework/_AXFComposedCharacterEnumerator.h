@@ -15,10 +15,10 @@
     unsigned long long __indexOfCurrentComposedCharacter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _indexOfCurrentComposedCharacter; // @synthesize _indexOfCurrentComposedCharacter=__indexOfCurrentComposedCharacter;
 @property(nonatomic) BOOL _done; // @synthesize _done=__done;
 @property(copy, nonatomic) NSString *_string; // @synthesize _string=__string;
-- (void).cxx_destruct;
 - (id)allObjects;
 - (id)nextObject;
 - (id)initWithString:(id)arg1;

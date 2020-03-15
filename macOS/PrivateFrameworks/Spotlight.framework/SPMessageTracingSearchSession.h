@@ -36,6 +36,7 @@
     double _endTimeStamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double endTimeStamp; // @synthesize endTimeStamp=_endTimeStamp;
 @property(nonatomic) double startTimeStamp; // @synthesize startTimeStamp=_startTimeStamp;
 @property(nonatomic) long long parsecQueriesErrored; // @synthesize parsecQueriesErrored=_parsecQueriesErrored;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSString *openMethod; // @synthesize openMethod=_openMethod;
 @property(nonatomic) double timeBeganPreviewingCurrentResult; // @synthesize timeBeganPreviewingCurrentResult=_timeBeganPreviewingCurrentResult;
 @property(nonatomic) double started; // @synthesize started=_started;
-- (void).cxx_destruct;
 - (void)parsecQuery:(id)arg1 didFinishWithResultsCount:(long long)arg2 sectionCount:(long long)arg3 success:(BOOL)arg4;
 - (void)didStartParsecQuery;
 - (id)init;

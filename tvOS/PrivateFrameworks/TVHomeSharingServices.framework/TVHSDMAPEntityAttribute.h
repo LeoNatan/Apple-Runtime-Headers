@@ -22,6 +22,7 @@
 }
 
 + (unsigned long long)_attributeTypeFromCodeValueType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValueTransformer *valueTransformer; // @synthesize valueTransformer=_valueTransformer;
 @property(nonatomic) unsigned long long attributeType; // @synthesize attributeType=_attributeType;
 @property(nonatomic) unsigned long long codeValueBytesLength; // @synthesize codeValueBytesLength=_codeValueBytesLength;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool queryable; // @synthesize queryable=_queryable;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSNumber *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)init;

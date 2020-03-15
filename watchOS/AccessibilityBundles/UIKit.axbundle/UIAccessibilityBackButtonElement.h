@@ -13,8 +13,9 @@
     NSArray *_associatedViews;
 }
 
-@property(retain, nonatomic) NSArray *associatedViews; // @synthesize associatedViews=_associatedViews;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *associatedViews; // @synthesize associatedViews=_associatedViews;
+- (_Bool)canBecomeFocused;
 - (_Bool)_accessibilityHasNativeFocus;
 
 @end

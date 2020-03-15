@@ -25,10 +25,10 @@
 + (id)realisticMap;
 + (BOOL)supportsTransitMap;
 + (BOOL)supportsRealisticMap;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useMapMatchingTilesetForRoads; // @synthesize useMapMatchingTilesetForRoads=_useMapMatchingTilesetForRoads;
 @property(copy, nonatomic) CDUnknownBlockType tileErrorHandler; // @synthesize tileErrorHandler=_tileErrorHandler;
 @property(nonatomic) __weak id <GEOMapAccessRestrictions> restrictions; // @synthesize restrictions=_restrictions;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long buildingsZoomLevel;
 @property(readonly, nonatomic) unsigned long long transitZoomLevel;
 @property(readonly, nonatomic) unsigned long long roadsZoomLevel;

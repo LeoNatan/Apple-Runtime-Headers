@@ -15,8 +15,8 @@
     IMHandle *_handle;
 }
 
-@property(readonly, nonatomic) IMHandle *handle; // @synthesize handle=_handle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IMHandle *handle; // @synthesize handle=_handle;
 - (void)setIdentifier:(int)arg1;
 - (_Bool)isRemovableFromSearchResults;
 - (id)objectForDragType:(id)arg1;

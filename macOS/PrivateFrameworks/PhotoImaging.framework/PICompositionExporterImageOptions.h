@@ -15,10 +15,10 @@
     CDUnknownBlockType _metadataProcessor;
 }
 
+- (void).cxx_destruct;
 @property BOOL optimizeForSharing; // @synthesize optimizeForSharing=_optimizeForSharing;
 @property(copy) CDUnknownBlockType metadataProcessor; // @synthesize metadataProcessor=_metadataProcessor;
 @property(copy) NUImageExportFormat *imageExportFormat; // @synthesize imageExportFormat=_imageExportFormat;
-- (void).cxx_destruct;
 - (id)imageExportFormatForURL:(id)arg1;
 - (void)setImageExportFormatJpegWithQuality:(double)arg1;
 

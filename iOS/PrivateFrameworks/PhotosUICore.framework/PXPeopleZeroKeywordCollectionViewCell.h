@@ -14,8 +14,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UIView *peopleContentView; // @synthesize peopleContentView=_peopleContentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *peopleContentView; // @synthesize peopleContentView=_peopleContentView;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (void)setThumbnailSize:(struct CGSize)arg1;

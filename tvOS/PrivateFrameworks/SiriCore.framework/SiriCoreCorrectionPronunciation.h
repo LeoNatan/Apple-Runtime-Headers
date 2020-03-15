@@ -25,6 +25,7 @@
 }
 
 + (Class)ttsPronunciationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *asrPronunciationData; // @synthesize asrPronunciationData=_asrPronunciationData;
 @property(retain, nonatomic) NSMutableArray *ttsPronunciations; // @synthesize ttsPronunciations=_ttsPronunciations;
 @property(nonatomic) int tokenOffset; // @synthesize tokenOffset=_tokenOffset;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *apgId; // @synthesize apgId=_apgId;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSString *orthography; // @synthesize orthography=_orthography;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

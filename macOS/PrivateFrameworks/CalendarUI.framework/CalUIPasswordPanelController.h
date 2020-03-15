@@ -19,12 +19,12 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *showCredentialPromptSerialQueue; // @synthesize showCredentialPromptSerialQueue=_showCredentialPromptSerialQueue;
 @property(retain) ACUICredentialPromptViewController *credentialPromptViewController; // @synthesize credentialPromptViewController=_credentialPromptViewController;
 @property(retain) NSObject<OS_dispatch_queue> *checkAuthenticatingAccountUIDsSerialQueue; // @synthesize checkAuthenticatingAccountUIDsSerialQueue=_checkAuthenticatingAccountUIDsSerialQueue;
 @property(retain) NSMutableDictionary *datesPasswordPanelWasShown; // @synthesize datesPasswordPanelWasShown=_datesPasswordPanelWasShown;
 @property(retain) NSMutableSet *authenticatingAccountUIDs; // @synthesize authenticatingAccountUIDs=_authenticatingAccountUIDs;
-- (void).cxx_destruct;
 - (BOOL)_recentlyShowedPasswordPanelForAccount:(id)arg1;
 - (id)_mainWindow;
 - (void)showPasswordPanelsForUnauthenticatedAccounts;

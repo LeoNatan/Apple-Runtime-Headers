@@ -22,6 +22,7 @@
     SKMutablePayment *_payment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKMutablePayment *payment; // @synthesize payment=_payment;
 @property(readonly, nonatomic) FCIntroductoryOffer *introductoryOffer; // @synthesize introductoryOffer=_introductoryOffer;
 @property(readonly, nonatomic) NSNumber *price; // @synthesize price=_price;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSString *subscriptionPriceFormatted; // @synthesize subscriptionPriceFormatted=_subscriptionPriceFormatted;
 @property(readonly, nonatomic) NSString *purchaseID; // @synthesize purchaseID=_purchaseID;
 @property(readonly, nonatomic) NSNumber *appAdamID; // @synthesize appAdamID=_appAdamID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFreeTrialEligible) _Bool freeTrialEligible;
 - (id)initWithPurchaseID:(id)arg1 appAdamID:(id)arg2 subscriptionPriceFormatted:(id)arg3 subscriptionPeriodInISO_8601:(id)arg4 offerName:(id)arg5 storeExternalVersion:(id)arg6 bundleID:(id)arg7 price:(id)arg8 introOffer:(id)arg9 payment:(id)arg10;
 

@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
 + (Class)sortsType;
 + (Class)filtersType;
 + (Class)typesType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool distinct; // @synthesize distinct=_distinct;
 @property(retain, nonatomic) NSMutableArray *sorts; // @synthesize sorts=_sorts;
 @property(retain, nonatomic) NSMutableArray *filters; // @synthesize filters=_filters;
 @property(retain, nonatomic) NSMutableArray *types; // @synthesize types=_types;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

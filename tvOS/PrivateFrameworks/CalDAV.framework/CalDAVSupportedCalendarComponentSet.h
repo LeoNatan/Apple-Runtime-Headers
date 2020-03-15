@@ -13,8 +13,8 @@
     NSMutableSet *_comps;
 }
 
-@property(retain, nonatomic) NSMutableSet *comps; // @synthesize comps=_comps;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *comps; // @synthesize comps=_comps;
 @property(readonly, nonatomic) NSSet *compNames;
 - (id)childrenToWrite;
 - (void)addComp:(id)arg1;

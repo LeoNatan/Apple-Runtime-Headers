@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSString *_tag;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <_RWIRelayConnectionToApplicationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool available; // @dynamic available;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 - (void)_handleEvent:(id)arg1;

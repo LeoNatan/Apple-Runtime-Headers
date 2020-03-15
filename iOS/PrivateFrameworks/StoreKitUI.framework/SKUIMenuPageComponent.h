@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_titles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *titleForMoreItem; // @synthesize titleForMoreItem=_titleForMoreItem;
 @property(readonly, nonatomic) long long menuTitleFontWeight; // @synthesize menuTitleFontWeight=_menuTitleFontWeight;
 @property(readonly, nonatomic) float menuTitleFontSize; // @synthesize menuTitleFontSize=_menuTitleFontSize;
 @property(readonly, nonatomic) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;
 @property(readonly, nonatomic) long long menuStyle; // @synthesize menuStyle=_menuStyle;
 @property(readonly, nonatomic) long long defaultSelectedIndex; // @synthesize defaultSelectedIndex=_defaultSelectedIndex;
-- (void).cxx_destruct;
 - (id)_componentWithContext:(id)arg1;
 - (void)_setChildComponents:(id)arg1 forIndex:(long long)arg2;
 - (long long)componentType;

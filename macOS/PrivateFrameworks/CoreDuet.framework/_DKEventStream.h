@@ -22,9 +22,9 @@
 + (id)eventStreamWithName:(id)arg1 valueType:(id)arg2;
 + (id)eventStreamWithName:(id)arg1;
 + (id)fromPBCodable:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) _DKObjectType *eventValueType; // @synthesize eventValueType=_eventValueType;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

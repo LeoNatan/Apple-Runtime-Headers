@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     UIView *_behindView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *behindView; // @synthesize behindView=_behindView;
 @property(readonly, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(readonly, nonatomic) UIView *topView; // @synthesize topView=_topView;
 @property(retain, nonatomic) NSLayoutConstraint *topViewAttributeTopConstraint; // @synthesize topViewAttributeTopConstraint=_topViewAttributeTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topViewHeightConstraint; // @synthesize topViewHeightConstraint=_topViewHeightConstraint;
-- (void).cxx_destruct;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)configureInteractionForContainment:(_Bool)arg1;

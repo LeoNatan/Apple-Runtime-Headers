@@ -35,6 +35,7 @@
     AVTAvatarEditorViewController *_editorViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AVTAvatarEditorViewController *editorViewController; // @synthesize editorViewController=_editorViewController;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(nonatomic) _Bool allowFacetracking; // @synthesize allowFacetracking=_allowFacetracking;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) UIStackView *buttonsView; // @synthesize buttonsView=_buttonsView;
 @property(retain, nonatomic) id <AVTAvatarActionsViewControllerLayout> currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(nonatomic) __weak id <AVTAvatarActionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)controllerPresentationWillObstructView:(id)arg1;
 - (long long)interfaceOrientationForFaceTrackingManager:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;

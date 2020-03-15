@@ -13,8 +13,8 @@
     UIButton *_editButton;
 }
 
-@property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;
 

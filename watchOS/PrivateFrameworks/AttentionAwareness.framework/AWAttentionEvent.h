@@ -17,10 +17,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id tag; // @synthesize tag=_tag;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) unsigned long long eventMask; // @synthesize eventMask=_eventMask;
-- (void).cxx_destruct;
 - (void)updateWithConfig:(id)arg1;
 - (unsigned long long)tagIndex;
 - (id)description;

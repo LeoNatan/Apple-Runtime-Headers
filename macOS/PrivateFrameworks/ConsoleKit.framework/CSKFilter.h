@@ -28,10 +28,10 @@
 + (BOOL)supportsSecureCoding;
 + (id)filterWithType:(long long)arg1 value:(id)arg2 comparisonType:(long long)arg3;
 + (id)filterWithType:(long long)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long comparisonType; // @synthesize comparisonType=_comparisonType;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;

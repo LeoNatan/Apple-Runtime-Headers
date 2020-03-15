@@ -13,8 +13,8 @@
     NSDate *_keepOffUntilDate;
 }
 
-@property(retain, nonatomic) NSDate *keepOffUntilDate; // @synthesize keepOffUntilDate=_keepOffUntilDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *keepOffUntilDate; // @synthesize keepOffUntilDate=_keepOffUntilDate;
 - (void)updateState:(_Bool)arg1;
 - (void)didEnterWithPreviousState:(id)arg1;
 - (_Bool)isEqualToState:(id)arg1;

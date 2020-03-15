@@ -23,6 +23,7 @@
     MSASPendingChanges *_pendingChanges;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSASPendingChanges *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
 @property(retain, nonatomic) MSASServerSideModelGroupedCommandQueue *commandQueue; // @synthesize commandQueue=_commandQueue;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSCountedSet *observers; // @synthesize observers=_observers;
 @property(nonatomic) __weak MSAlbumSharingDaemon *daemon; // @synthesize daemon=_daemon;
 @property(nonatomic) MSASStateMachine *MSASCounterpartInstance; // @synthesize MSASCounterpartInstance=_counterpartInstance;
-- (void).cxx_destruct;
 - (BOOL)errorIsCancellation:(id)arg1;
 - (void)MSASStateMachine:(id)arg1 didFinishAddingComment:(id)arg2 toAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5 error:(id)arg6;
 - (void)MSASStateMachine:(id)arg1 didFinishRemovingSharingRelationship:(id)arg2 fromOwnedAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;

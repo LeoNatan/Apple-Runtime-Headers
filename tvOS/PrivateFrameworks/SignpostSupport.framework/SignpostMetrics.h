@@ -21,13 +21,13 @@
 + (id)newMetricsForSignpostEvent:(id)arg1;
 + (id)_deltaDescription:(id)arg1;
 + (id)_newMetricsFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *cpuInstructionsKI; // @synthesize cpuInstructionsKI=_cpuInstructionsKI;
 @property(readonly, nonatomic) NSNumber *storageDirtiedKB; // @synthesize storageDirtiedKB=_storageDirtiedKB;
 @property(readonly, nonatomic) NSNumber *dirtyMemoryLifetimePeakKB; // @synthesize dirtyMemoryLifetimePeakKB=_dirtyMemoryLifetimePeakKB;
 @property(readonly, nonatomic) NSNumber *dirtyMemoryKB; // @synthesize dirtyMemoryKB=_dirtyMemoryKB;
 @property(readonly, nonatomic) NSNumber *cpuTimeNsec; // @synthesize cpuTimeNsec=_cpuTimeNsec;
 @property(readonly, nonatomic) NSData *binarySnapshot; // @synthesize binarySnapshot=_binarySnapshot;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithSnapshotDict:(id)arg1 data:(id)arg2;

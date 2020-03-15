@@ -18,11 +18,11 @@
     id _maximumRelativeValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id maximumRelativeValue; // @synthesize maximumRelativeValue=_maximumRelativeValue;
 @property(retain, nonatomic) id minimumRelativeValue; // @synthesize minimumRelativeValue=_minimumRelativeValue;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (void)_setType:(int)arg1;
 - (void)_setKeyPath:(id)arg1;
 - (void)_setVerticalAccelerationBoostFactor:(float)arg1;

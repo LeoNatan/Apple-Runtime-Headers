@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     _UICollectionPreferredSizes *_preferredSizes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UICollectionPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
 @property(readonly, nonatomic) NSCollectionLayoutSection *section; // @synthesize section=_section;
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(readonly, nonatomic) struct CGRect globalFrame; // @synthesize globalFrame=_globalFrame;
 @property(readonly, nonatomic) id <_UICollectionLayoutSectionSolver> solution; // @synthesize solution=_solution;
-- (void).cxx_destruct;
 - (id)copyWithGlobalFrame:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGSize orthogonalContentSize;
 @property(readonly, nonatomic) struct CGRect orthogonalContentLayoutFrame;

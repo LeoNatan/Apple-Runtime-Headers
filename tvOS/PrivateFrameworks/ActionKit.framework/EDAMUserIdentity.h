@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *longIdentifier; // @synthesize longIdentifier=_longIdentifier;
 @property(retain, nonatomic) NSString *stringIdentifier; // @synthesize stringIdentifier=_stringIdentifier;
 @property(retain, nonatomic) NSNumber *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

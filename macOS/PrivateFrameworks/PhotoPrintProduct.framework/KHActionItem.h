@@ -15,9 +15,9 @@
 }
 
 + (id)itemWithTitle:(id)arg1 actionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)invoke:(id)arg1;
 - (id)initWithTitle:(id)arg1 actionHandler:(CDUnknownBlockType)arg2;
 

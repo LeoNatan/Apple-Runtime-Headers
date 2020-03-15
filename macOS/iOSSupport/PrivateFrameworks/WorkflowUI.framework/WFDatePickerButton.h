@@ -28,6 +28,7 @@
     WFVariableInputCoordinator *_variableCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
 @property(readonly, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 @property(copy, nonatomic) CDUnknownBlockType variableBlock; // @synthesize variableBlock=_variableBlock;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(retain, nonatomic) UIView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
-- (void).cxx_destruct;
 - (void)datePickerValueChanged;
 - (void)tintColorDidChange;
 - (BOOL)resignFirstResponder;

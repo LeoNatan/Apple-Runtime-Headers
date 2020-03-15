@@ -31,6 +31,7 @@
 }
 
 + (id)currentEnvironment;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactsEnvironment *cnEnvironment; // @synthesize cnEnvironment=_cnEnvironment;
 @property(retain, nonatomic) CNUIMeMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(retain, nonatomic) id <CNUIPRLikenessProviderCache> likenessProviderCache; // @synthesize likenessProviderCache=_likenessProviderCache;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) CNUIFMFFacade *fmfFacade; // @synthesize fmfFacade=_fmfFacade;
 @property(retain, nonatomic) CNUIAccountsFacade *accountsFacade; // @synthesize accountsFacade=_accountsFacade;
 @property(readonly, nonatomic) CNUIContactsEnvironmentServicesProvider *servicesProvider; // @synthesize servicesProvider=_servicesProvider;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _DECConsumer *duetConsumer;
 - (id)initWithContactsEnvironment:(id)arg1;
 - (id)init;

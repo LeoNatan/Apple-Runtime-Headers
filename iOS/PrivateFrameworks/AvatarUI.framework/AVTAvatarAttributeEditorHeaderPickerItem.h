@@ -18,11 +18,11 @@
     CDUnknownBlockType _editorUpdater;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, copy, nonatomic) CDUnknownBlockType editorUpdater; // @synthesize editorUpdater=_editorUpdater;
 @property(readonly, copy, nonatomic) CDUnknownBlockType avatarUpdater; // @synthesize avatarUpdater=_avatarUpdater;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (id)initWithLocalizedName:(id)arg1 avatarUpdater:(CDUnknownBlockType)arg2 editorUpdater:(CDUnknownBlockType)arg3 selected:(_Bool)arg4;
 
 // Remaining properties

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     FMFSession *_fmfSession;
 }
 
-@property(readonly, nonatomic) FMFSession *fmfSession; // @synthesize fmfSession=_fmfSession;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FMFSession *fmfSession; // @synthesize fmfSession=_fmfSession;
 - (void)fetchFriendHandlesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithFMFSession:(id)arg1;
 - (id)init;

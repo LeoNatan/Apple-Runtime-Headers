@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     UIView *_sourceView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (void)unregisterForPreviewing;

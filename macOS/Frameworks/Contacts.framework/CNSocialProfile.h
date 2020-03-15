@@ -27,6 +27,7 @@
 + (id)socialProfileWithDictionaryRepresentation:(id)arg1;
 + (id)localizedStringForService:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(copy) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
 @property(copy) NSString *displayname; // @synthesize displayname=_displayname;
@@ -34,7 +35,6 @@
 @property(copy) NSString *userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(copy) NSString *username; // @synthesize username=_username;
 @property(copy) NSString *urlString; // @synthesize urlString=_urlString;
-- (void).cxx_destruct;
 - (BOOL)isValid:(id *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1 ignoreURLs:(BOOL)arg2;

@@ -16,11 +16,11 @@
     struct CGPoint _contextualMenuPoint;
 }
 
+- (void).cxx_destruct;
 @property struct CGPoint contextualMenuPoint; // @synthesize contextualMenuPoint=_contextualMenuPoint;
 @property(getter=isCameraInitiated) BOOL cameraInitiated; // @synthesize cameraInitiated=_cameraInitiated;
 @property(getter=isRendering) BOOL rendering; // @synthesize rendering=_rendering;
 @property(retain, nonatomic) KHFrame *frameObject; // @synthesize frameObject=_frameObject;
-- (void).cxx_destruct;
 - (double)zoomLevelFromCoordinateSpan:(CDStruct_c3b9c2ee)arg1;
 - (CDStruct_c3b9c2ee)coordinateSpanWithMapView:(id)arg1 centerCoordinate:(struct CLLocationCoordinate2D)arg2 andZoomLevel:(unsigned long long)arg3;
 - (double)pixelSpaceYToLatitude:(double)arg1;

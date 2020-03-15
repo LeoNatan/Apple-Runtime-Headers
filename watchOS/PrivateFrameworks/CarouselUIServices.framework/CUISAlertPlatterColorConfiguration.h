@@ -20,10 +20,10 @@
 + (id)blurredContentHeaderColorConfiguration;
 + (id)blurredPlatterColorConfiguration;
 + (id)blurredHeaderColorConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int colorStyle; // @synthesize colorStyle=_colorStyle;
 @property(retain, nonatomic) CAFilter *compositingFilter; // @synthesize compositingFilter=_compositingFilter;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

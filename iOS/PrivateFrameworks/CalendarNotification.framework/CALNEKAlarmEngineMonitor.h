@@ -18,10 +18,10 @@
     _EKAlarmEngine *_alarmEngine;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) _EKAlarmEngine *alarmEngine; // @synthesize alarmEngine=_alarmEngine;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
-- (void).cxx_destruct;
 - (void)removeAlarmsFiredObserver:(id)arg1;
 - (void)addAlarmsFiredObserver:(id)arg1 selector:(SEL)arg2;
 - (void)protectedDataDidBecomeAvailable;

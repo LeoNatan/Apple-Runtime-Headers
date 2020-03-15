@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_property;
 }
 
-@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

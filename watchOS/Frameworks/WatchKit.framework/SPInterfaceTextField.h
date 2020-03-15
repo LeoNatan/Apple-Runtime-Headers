@@ -33,6 +33,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) id target; // @synthesize target=_target;
 @property(retain, nonatomic) PUICTextField *textField; // @synthesize textField=_textField;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)doTextInputValueDidChange:(id)arg1;
 - (void)setTarget:(id)arg1 forInterfaceItemAction:(SEL)arg2;
 - (void)textField:(id)arg1 textInputValueDidChange:(id)arg2;

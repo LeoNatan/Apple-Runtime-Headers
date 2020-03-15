@@ -17,9 +17,9 @@
 }
 
 + (id)pairWithFirst:(id)arg1 second:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NSObject> second; // @synthesize second=_second;
 @property(readonly, nonatomic) id <NSObject> first; // @synthesize first=_first;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToPair:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

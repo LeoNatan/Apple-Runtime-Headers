@@ -15,8 +15,8 @@
     NSData *_vendorData;
 }
 
-@property(retain) NSData *vendorData; // @synthesize vendorData=_vendorData;
 - (void).cxx_destruct;
+@property(retain) NSData *vendorData; // @synthesize vendorData=_vendorData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

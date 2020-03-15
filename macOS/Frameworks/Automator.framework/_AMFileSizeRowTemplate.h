@@ -20,6 +20,7 @@
 }
 
 + (id)templateWithName:(id)arg1 withKeyPath:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL hasCreatedViews; // @synthesize hasCreatedViews=_hasCreatedViews;
 @property(retain) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy) NSString *name; // @synthesize name=_name;
@@ -27,7 +28,6 @@
 @property(retain) NSTextField *valueTextField; // @synthesize valueTextField=_valueTextField;
 @property(retain) NSPopUpButton *comparisonPopUpButton; // @synthesize comparisonPopUpButton=_comparisonPopUpButton;
 @property(retain) NSPopUpButton *leftExpressionPopup; // @synthesize leftExpressionPopup=_leftExpressionPopup;
-- (void).cxx_destruct;
 - (id)predicateWithSubpredicates:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (double)matchForPredicate:(id)arg1;

@@ -25,13 +25,13 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadTitle; // @synthesize payloadTitle=_payloadTitle;
 @property(copy, nonatomic) NSString *payloadAuthor; // @synthesize payloadAuthor=_payloadAuthor;
 @property(copy, nonatomic) NSString *payloadVersion; // @synthesize payloadVersion=_payloadVersion;
 @property(copy, nonatomic) NSString *payloadKind; // @synthesize payloadKind=_payloadKind;
 @property(copy, nonatomic) CEMAssetBaseReference *payloadReference; // @synthesize payloadReference=_payloadReference;
 @property(copy, nonatomic) CEMAssetBaseDescriptor *payloadDescriptor; // @synthesize payloadDescriptor=_payloadDescriptor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

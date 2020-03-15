@@ -14,9 +14,9 @@
     NSString *_errorMessage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 
 @end

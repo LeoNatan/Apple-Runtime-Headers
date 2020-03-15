@@ -15,6 +15,6 @@
 - (void)visualTabPickerGridViewCloseTabViewItem:(BrowserTabViewItem *)arg1;
 - (void)visualTabPickerGridView:(VisualTabPickerGridView *)arg1 selectTab:(BrowserTabViewItem *)arg2;
 - (void)createNewTabForVisualTabPickerGridView:(VisualTabPickerGridView *)arg1;
-- (BOOL)canCloseTabsInVisualTabPickerGridView:(VisualTabPickerGridView *)arg1;
+- (BOOL)visualTabPickerGridView:(VisualTabPickerGridView *)arg1 canCloseTab:(BrowserTabViewItem *)arg2;
 @end
 

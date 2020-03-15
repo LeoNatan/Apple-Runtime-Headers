@@ -25,11 +25,11 @@
 + (BOOL)isTrackpadAvailable;
 + (BOOL)isCameraAvailable;
 + (BOOL)isSignatureCaptureAvailable;
+- (void).cxx_destruct;
 @property(retain) NSView *captureViewHolder; // @synthesize captureViewHolder=_captureViewHolder;
 @property(retain) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property __weak id <AKSignatureCaptureViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setupSidecarCapture;
 - (void)_setupTrackpadCapture;
 - (void)_setupCameraCapture;

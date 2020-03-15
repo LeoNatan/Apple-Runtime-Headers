@@ -4,34 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class HMFTimer, NSString, NSUUID;
 
-@interface HMDUserPresenceFeedRetryTimer : NSObject <HMFLogging>
+@interface HMDUserPresenceFeedRetryTimer : HMFObject <HMFLogging>
 {
-    NSUUID *_timerID;
     HMFTimer *_retryTimer;
     unsigned long long _retryCount;
+    NSUUID *_timerID;
 }
 
 + (id)logCategory;
-@property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
-@property(retain, nonatomic) HMFTimer *retryTimer; // @synthesize retryTimer=_retryTimer;
-@property(readonly, nonatomic) NSUUID *timerID; // @synthesize timerID=_timerID;
 - (void).cxx_destruct;
-- (void)cancel;
-- (void)startWithDelegate:(id)arg1 responseTime:(double)arg2;
-- (_Bool)shouldRetryImmediately:(double)arg1;
-@property(readonly, nonatomic) double retryTimeInterval;
-@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSUUID *timerID; // @synthesize timerID=_timerID;
+@property unsigned long long retryCount; // @synthesize retryCount=_retryCount;
+@property(retain) HMFTimer *retryTimer; // @synthesize retryTimer=_retryTimer;
 - (id)logIdentifier;
+- (_Bool)shouldRetryImmediately:(double)arg1;
+@property(readonly) double retryTimeInterval;
+- (void)cancel;
+- (void)startWithDelegate:(id)arg1 delegateQueue:(id)arg2 responseTime:(double)arg3;
+- (id)attributeDescriptions;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

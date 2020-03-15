@@ -23,10 +23,10 @@
 + (id)unreadIndicatorImage;
 + (double)separatorLeadingInset;
 + (double)height;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contactName; // @synthesize contactName=_contactName;
 @property(retain, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(retain, nonatomic) PKActivityEventPeerPaymentTransaction *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateViews;
 - (void)layoutSubviews;

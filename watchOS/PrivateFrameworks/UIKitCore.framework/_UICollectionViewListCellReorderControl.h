@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _grabberImageProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType grabberImageProvider; // @synthesize grabberImageProvider=_grabberImageProvider;
 @property(nonatomic) __weak id <_UICollectionViewListCellReorderControlDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)endReordering:(_Bool)arg1;
 - (void)moveToPoint:(struct CGPoint)arg1;
 - (void)beginReordering;

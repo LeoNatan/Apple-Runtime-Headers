@@ -6,26 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber;
+@class NSNumber, NSString;
 
 __attribute__((visibility("hidden")))
 @interface WK_RTCRtpEncodingParameters : NSObject
 {
     _Bool _isActive;
+    NSString *_rid;
     NSNumber *_maxBitrateBps;
     NSNumber *_minBitrateBps;
     NSNumber *_maxFramerate;
     NSNumber *_numTemporalLayers;
+    NSNumber *_scaleResolutionDownBy;
     NSNumber *_ssrc;
+    double _networkPriority;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) double networkPriority; // @synthesize networkPriority=_networkPriority;
 @property(readonly, nonatomic) NSNumber *ssrc; // @synthesize ssrc=_ssrc;
+@property(copy, nonatomic) NSNumber *scaleResolutionDownBy; // @synthesize scaleResolutionDownBy=_scaleResolutionDownBy;
 @property(copy, nonatomic) NSNumber *numTemporalLayers; // @synthesize numTemporalLayers=_numTemporalLayers;
 @property(copy, nonatomic) NSNumber *maxFramerate; // @synthesize maxFramerate=_maxFramerate;
 @property(copy, nonatomic) NSNumber *minBitrateBps; // @synthesize minBitrateBps=_minBitrateBps;
 @property(copy, nonatomic) NSNumber *maxBitrateBps; // @synthesize maxBitrateBps=_maxBitrateBps;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
-- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *rid; // @synthesize rid=_rid;
 @property(readonly, nonatomic) struct RtpEncodingParameters nativeParameters;
 - (id)initWithNativeParameters:(const struct RtpEncodingParameters *)arg1;
 - (id)init;

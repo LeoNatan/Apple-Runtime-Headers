@@ -14,8 +14,8 @@
 }
 
 + (id)sharedOutputManager;
-@property(retain, nonatomic) NSMutableArray *outputQueue; // @synthesize outputQueue=_outputQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *outputQueue; // @synthesize outputQueue=_outputQueue;
 - (void)queueOutput:(id)arg1;
 - (unsigned long long)outputQueueCount;
 - (void)clearOutputQueue;

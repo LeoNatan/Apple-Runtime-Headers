@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned char _minPhoneNumLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char minPhoneNumLength; // @synthesize minPhoneNumLength=_minPhoneNumLength;
 @property(readonly, nonatomic) unsigned char maxPhoneNumLength; // @synthesize maxPhoneNumLength=_maxPhoneNumLength;
-- (void).cxx_destruct;
 - (BOOL)lookupPhoneNumber:(id)arg1 idResult:(unsigned int *)arg2;
 - (void)dealloc;
 - (id)initWithFile:(id)arg1;

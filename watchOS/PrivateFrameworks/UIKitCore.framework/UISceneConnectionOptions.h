@@ -15,10 +15,10 @@
     FBSSceneSpecification *_specification;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak FBSSceneSpecification *_specification; // @synthesize _specification;
 @property(readonly, nonatomic) __weak FBSScene *_fbsScene; // @synthesize _fbsScene;
 @property(readonly, nonatomic) NSDictionary *_launchOptionsDictionary; // @synthesize _launchOptionsDictionary;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) CKShareMetadata *cloudKitShareMetadata; // @dynamic cloudKitShareMetadata;
 @property(readonly, nonatomic) UIApplicationShortcutItem *shortcutItem; // @dynamic shortcutItem;

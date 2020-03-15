@@ -16,10 +16,10 @@
 }
 
 + (id)iconWithImage:(id)arg1 notificationIconStyle:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *modifierImage; // @synthesize modifierImage=_modifierImage;
 @property(nonatomic) unsigned int notificationIconStyle; // @synthesize notificationIconStyle=_notificationIconStyle;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1 notificationIconStyle:(unsigned int)arg2;
 
 @end

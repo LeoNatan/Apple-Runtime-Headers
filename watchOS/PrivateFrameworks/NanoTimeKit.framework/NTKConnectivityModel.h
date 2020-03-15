@@ -24,6 +24,7 @@
 }
 
 + (id)_statusStringForInterfaceMonitor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(retain, nonatomic) IDSService *idsService; // @synthesize idsService=_idsService;
 @property(retain, nonatomic) PCInterfaceMonitor *nonCellularInterfaceMonitor; // @synthesize nonCellularInterfaceMonitor=_nonCellularInterfaceMonitor;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *connectivity; // @synthesize connectivity=_connectivity;
 @property(retain, nonatomic) id <NTKConnectivityModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isUpdating) _Bool updating; // @synthesize updating=_updating;
-- (void).cxx_destruct;
 - (void)interfaceRadioHotnessChanged:(id)arg1;
 - (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
 - (void)interfaceReachabilityChanged:(id)arg1;

@@ -20,13 +20,13 @@
     NSMutableArray *_didDisappearBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *didDisappearBlocks; // @synthesize didDisappearBlocks=_didDisappearBlocks;
 @property(readonly, nonatomic) NSMutableArray *willDisappearBlocks; // @synthesize willDisappearBlocks=_willDisappearBlocks;
 @property(readonly, nonatomic) NSMutableArray *visiblePercentageBlocks; // @synthesize visiblePercentageBlocks=_visiblePercentageBlocks;
 @property(readonly, nonatomic) NSMutableArray *didAppearBlocks; // @synthesize didAppearBlocks=_didAppearBlocks;
 @property(readonly, nonatomic) NSMutableArray *willAppearBlocks; // @synthesize willAppearBlocks=_willAppearBlocks;
 @property(retain, nonatomic) SVVisibilityMonitor *visibilityMonitor; // @synthesize visibilityMonitor=_visibilityMonitor;
-- (void).cxx_destruct;
 - (void)onDidDisappear:(CDUnknownBlockType)arg1;
 - (void)onWillDisappear:(CDUnknownBlockType)arg1;
 - (void)onVisiblePercentageChange:(CDUnknownBlockType)arg1;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     CDStruct_0736a270 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(retain, nonatomic) NSData *playbackQueueDigest; // @synthesize playbackQueueDigest=_playbackQueueDigest;
 @property(retain, nonatomic) NSData *supportedCommandsDigest; // @synthesize supportedCommandsDigest=_supportedCommandsDigest;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSData *knownDigest; // @synthesize knownDigest=_knownDigest;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

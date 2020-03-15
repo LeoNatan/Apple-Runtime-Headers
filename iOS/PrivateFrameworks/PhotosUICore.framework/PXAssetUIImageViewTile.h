@@ -27,6 +27,7 @@
     struct CGRect __desiredContentsRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDesiredContentsRect:) struct CGRect _desiredContentsRect; // @synthesize _desiredContentsRect=__desiredContentsRect;
 @property(nonatomic, setter=_setContentSize:) struct CGSize _contentSize; // @synthesize _contentSize=__contentSize;
 @property(nonatomic) _Bool shouldAllowFocus; // @synthesize shouldAllowFocus=_shouldAllowFocus;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIColor *placeholderColor; // @synthesize placeholderColor=_placeholderColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)imageDidChange;
 - (void)_updateImageView;

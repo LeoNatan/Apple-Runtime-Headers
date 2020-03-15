@@ -15,8 +15,8 @@
     NSDate *_presentationTime;
 }
 
-@property(retain, nonatomic) NSDate *presentationTime; // @synthesize presentationTime=_presentationTime;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *presentationTime; // @synthesize presentationTime=_presentationTime;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

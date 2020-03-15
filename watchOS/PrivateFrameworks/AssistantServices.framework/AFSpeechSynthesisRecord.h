@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(readonly, nonatomic) unsigned long long beginTimestamp; // @synthesize beginTimestamp=_beginTimestamp;
 @property(readonly, copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -17,7 +17,7 @@
 + (id)messageDataDeletedTableSchema;
 + (id)messageDataTableSchema;
 + (id)mailboxesTableSchema;
-+ (id)_messagesTableSchemaAndAssociationsToResolve:(id *)arg1;
++ (id)_messagesTableSchemaAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)additionalSchemaProviders;
 

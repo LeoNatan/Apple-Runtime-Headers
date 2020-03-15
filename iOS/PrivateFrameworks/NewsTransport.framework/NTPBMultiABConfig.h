@@ -19,10 +19,10 @@
 }
 
 + (Class)abConfigsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *abConfigs; // @synthesize abConfigs=_abConfigs;
 @property(nonatomic) long long moduloForHashing; // @synthesize moduloForHashing=_moduloForHashing;
 @property(retain, nonatomic) NTPBConfig *defaultConfig; // @synthesize defaultConfig=_defaultConfig;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

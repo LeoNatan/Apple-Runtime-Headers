@@ -30,6 +30,7 @@
 }
 
 + (double)expansionDuration;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMTouchingGestureRecognizer *touchingGestureRecognizer; // @synthesize touchingGestureRecognizer=_touchingGestureRecognizer;
 @property(nonatomic) __weak id <CAMExpandableMenuButtonDelegate> expandableMenuDelegate; // @synthesize expandableMenuDelegate=_expandableMenuDelegate;
 @property(nonatomic, getter=_isTrackingViewHighlighted, setter=_setTrackingViewHighlighted:) _Bool _trackingViewHighlighted; // @synthesize _trackingViewHighlighted=__trackingViewHighlighted;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;
 - (_Bool)shouldIgnoreMenuInteraction;

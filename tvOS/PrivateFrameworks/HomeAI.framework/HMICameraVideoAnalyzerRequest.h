@@ -34,6 +34,7 @@
 
 + (id)logCategory;
 + (id)videoAnnotationScoresForFrameResult:(id)arg1;
+- (void).cxx_destruct;
 @property long long flag; // @synthesize flag=_flag;
 @property long long phase; // @synthesize phase=_phase;
 @property(readonly) HMICameraVideoAnalyzerRequestLog *log; // @synthesize log=_log;
@@ -52,7 +53,6 @@
 @property(readonly) double maxAnalysisFPS; // @synthesize maxAnalysisFPS=_maxAnalysisFPS;
 @property(readonly) NSDate *analysisStartTime; // @synthesize analysisStartTime=_analysisStartTime;
 @property(readonly) NSDate *analysisSubmissionTime; // @synthesize analysisSubmissionTime=_analysisSubmissionTime;
-- (void).cxx_destruct;
 - (void)cancel;
 @property(readonly) double timeSinceAnalysisSubmission;
 @property(readonly) double timeSinceAnalysisStart;

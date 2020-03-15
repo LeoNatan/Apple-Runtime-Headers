@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_shadowCollectionElementForCollectionElement:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAlwaysSoftFocusEnabled) _Bool alwaysSoftFocusEnabled; // @synthesize alwaysSoftFocusEnabled=_alwaysSoftFocusEnabled;
 @property(nonatomic) __weak id <_TVListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_marginForHeaderCellForElement:(id)arg1 section:(long long)arg2;
 - (struct CGSize)_expectedHeaderCellSizeForElement:(id)arg1 section:(long long)arg2;
 - (struct CGSize)_expectedCellSizeForElement:(id)arg1 inSectionIndex:(long long)arg2;

@@ -27,6 +27,7 @@
     NSString *_endpointerModelVersion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *endpointerModelVersion; // @synthesize endpointerModelVersion=_endpointerModelVersion;
 @property(readonly, nonatomic) BOOL canProcessCurrentRequest; // @synthesize canProcessCurrentRequest=_canProcessCurrentRequest;
 @property(nonatomic) __weak id <CSEndpointAnalyzerImplDelegate> implDelegate; // @synthesize implDelegate;
@@ -39,7 +40,6 @@
 @property(nonatomic) double delay; // @synthesize delay;
 @property(nonatomic) double automaticEndpointingSuspensionEndTime; // @synthesize automaticEndpointingSuspensionEndTime;
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel;
-- (void).cxx_destruct;
 - (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
 - (void)stopEndpointer;
 - (void)recordingStoppedForReason:(long long)arg1;

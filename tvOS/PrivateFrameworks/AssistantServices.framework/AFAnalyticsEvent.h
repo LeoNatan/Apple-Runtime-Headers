@@ -22,12 +22,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)eventsReferenceTime;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *contextData; // @synthesize contextData=_contextData;
 @property(readonly, nonatomic) long long contextDataType; // @synthesize contextDataType=_contextDataType;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long deliveryStream; // @synthesize deliveryStream=_deliveryStream;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

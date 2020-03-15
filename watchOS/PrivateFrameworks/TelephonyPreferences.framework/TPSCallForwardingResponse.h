@@ -15,8 +15,8 @@
 
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
-@property(readonly, nonatomic) CTCallForwardingValue *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CTCallForwardingValue *value; // @synthesize value=_value;
 - (id)archivedDataWithError:(id *)arg1;
 - (_Bool)isEqualToResponse:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

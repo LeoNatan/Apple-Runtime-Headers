@@ -14,9 +14,9 @@
     NSMutableArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) double initialXAxisOffset; // @synthesize initialXAxisOffset=_initialXAxisOffset;
-- (void).cxx_destruct;
 - (void)_expandToSection:(long long)arg1;
 - (void)enumerateSequences:(CDUnknownBlockType)arg1;
 - (long long)sectionCount;

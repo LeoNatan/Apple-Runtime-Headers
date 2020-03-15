@@ -125,6 +125,7 @@
 + (Class)headerClassForStyle:(unsigned long long)arg1;
 + (Class)cellClassForStyle:(unsigned long long)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property long long globalPerformCount; // @synthesize globalPerformCount=_globalPerformCount;
 @property(nonatomic) BOOL displaysNewerPhotosAtBottom; // @synthesize displaysNewerPhotosAtBottom=_displaysNewerPhotosAtBottom;
 @property(retain, nonatomic) CAMediaTimingFunction *defaultAnimationTimingFunction; // @synthesize defaultAnimationTimingFunction=_defaultAnimationTimingFunction;
@@ -132,7 +133,6 @@
 @property(readonly, nonatomic) __weak id <MOAssetsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MOAssetsViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseEntered:(id)arg1;

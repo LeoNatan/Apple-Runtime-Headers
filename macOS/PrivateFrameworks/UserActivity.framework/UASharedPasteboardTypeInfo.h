@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSNumber *index; // @synthesize index=_index;
 @property(copy) NSString *typeHint; // @synthesize typeHint=_typeHint;
 @property BOOL preferFileRep; // @synthesize preferFileRep=_preferFileRep;
@@ -32,7 +33,6 @@
 @property(copy) NSNumber *offset; // @synthesize offset=_offset;
 @property(copy) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

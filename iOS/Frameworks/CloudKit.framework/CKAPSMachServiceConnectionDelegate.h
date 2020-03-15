@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CKAPSMachServiceConnectionKey *_key;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKAPSMachServiceConnectionKey *key; // @synthesize key=_key;
 @property(nonatomic) __weak APSConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)connectionDidReconnect:(id)arg1;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(_Bool)arg2;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;

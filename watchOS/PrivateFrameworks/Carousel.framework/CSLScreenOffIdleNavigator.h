@@ -25,8 +25,8 @@
     id <CSLScreenOffIdleNavigatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLScreenOffIdleNavigatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLScreenOffIdleNavigatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)timeoutScreenWakeProviderOverride;
 - (void)_scheduleTimerWithTimeout:(double)arg1 andHandler:(CDUnknownBlockType)arg2;
 - (void)screenOffIdleNavigationTransactionReadyForNavigation:(id)arg1;

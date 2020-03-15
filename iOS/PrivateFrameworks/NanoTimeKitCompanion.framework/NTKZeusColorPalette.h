@@ -51,6 +51,7 @@
 + (id)ambreColor;
 + (id)zeusSilverColor;
 + (id)zeusOrangeColor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *splitColor; // @synthesize splitColor=_splitColor;
 @property(readonly, nonatomic) unsigned long long bleed; // @synthesize bleed=_bleed;
 @property(readonly, nonatomic) double secondHandAlpha; // @synthesize secondHandAlpha=_secondHandAlpha;
@@ -62,7 +63,6 @@
 @property(readonly, nonatomic) UIColor *secondHandColor; // @synthesize secondHandColor=_secondHandColor;
 @property(readonly, nonatomic) UIColor *complicationColor; // @synthesize complicationColor=_complicationColor;
 @property(readonly, nonatomic) UIColor *dialColor; // @synthesize dialColor=_dialColor;
-- (void).cxx_destruct;
 - (id)initWithColor:(unsigned long long)arg1;
 
 @end

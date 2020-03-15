@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_edgeTypeSubfeatures;
 }
 
-@property(readonly, nonatomic) NSDictionary *edgeTypeSubfeatures; // @synthesize edgeTypeSubfeatures=_edgeTypeSubfeatures;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *edgeTypeSubfeatures; // @synthesize edgeTypeSubfeatures=_edgeTypeSubfeatures;
 - (void)_incorporateSample:(const struct _UISEGestureFeatureSample *)arg1;
 - (id)debugDictionary;
 - (void)featureDidChangeState:(id)arg1;

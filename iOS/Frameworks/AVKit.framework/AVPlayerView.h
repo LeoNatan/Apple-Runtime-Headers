@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     AVPlayerViewControllerContentView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsInitialLayout; // @synthesize needsInitialLayout=_needsInitialLayout;
 @property(readonly, nonatomic) AVPlayerViewControllerContentView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)beginManagingContentView;
 - (id)initWithFrame:(struct CGRect)arg1 contentView:(id)arg2;

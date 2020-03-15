@@ -23,8 +23,8 @@
     id <PK3DLiveCardViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PK3DLiveCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PK3DLiveCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)renderer:(id)arg1 didRenderScene:(id)arg2 atTime:(double)arg3;
 - (void)setRollPitch: /* Error: Ran out of types for this method. */;
 - (void)setMotionEnabled:(BOOL)arg1;

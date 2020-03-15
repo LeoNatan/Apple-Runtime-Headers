@@ -23,10 +23,10 @@
     HKDisplayType *_displayType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(readonly, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)_handleUnitPreferencesDidChangeNotification:(id)arg1;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;
 - (void)_alertObserversDidUpdateValues;

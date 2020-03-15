@@ -13,7 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)_jiggleTheAlert;
+- (void)jiggleAView;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (void)_accessibilitySetAlertIdentifier;

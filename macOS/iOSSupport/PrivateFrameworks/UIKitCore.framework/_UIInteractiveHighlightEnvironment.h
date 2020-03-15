@@ -30,10 +30,10 @@ __attribute__((visibility("hidden")))
 
 + (id)interactiveHighlightEnvironmentForContainerView:(id)arg1;
 + (id)requestInteractiveHighlightEnvironmentForView:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType backgroundEffectApplyBlock; // @synthesize backgroundEffectApplyBlock=_backgroundEffectApplyBlock;
 @property(retain, nonatomic) UIView *customBackgroundEffectView; // @synthesize customBackgroundEffectView=_customBackgroundEffectView;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)finalizeContainerWindowIfNeeded;
 - (void)finalizeContentViewIfNeeded;
 - (void)finalizeBackgroundEffect;

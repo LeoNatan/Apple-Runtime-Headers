@@ -24,13 +24,13 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) INBalanceAmount *secondaryBalance; // @synthesize secondaryBalance=_secondaryBalance;
 @property(readonly, copy, nonatomic) INBalanceAmount *balance; // @synthesize balance=_balance;
 @property(readonly, copy, nonatomic) INSpeakableString *organizationName; // @synthesize organizationName=_organizationName;
 @property(readonly, nonatomic) int accountType; // @synthesize accountType=_accountType;
 @property(readonly, copy, nonatomic) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
 @property(readonly, copy, nonatomic) INSpeakableString *nickname; // @synthesize nickname=_nickname;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
@@ -42,7 +42,7 @@
 @property(readonly) unsigned int hash;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 accountType:(int)arg3 organizationName:(id)arg4;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 accountType:(int)arg3 organizationName:(id)arg4 balance:(id)arg5 secondaryBalance:(id)arg6;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

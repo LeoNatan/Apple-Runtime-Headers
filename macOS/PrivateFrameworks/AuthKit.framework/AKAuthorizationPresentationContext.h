@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *loginChoices; // @synthesize loginChoices=_loginChoices;
 @property(retain, nonatomic) AKUserInformation *userInformation; // @synthesize userInformation=_userInformation;
 @property(retain, nonatomic) AKCredentialRequestContext *credentialRequestContext; // @synthesize credentialRequestContext=_credentialRequestContext;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(readonly, copy, nonatomic) NSString *localizedAppName; // @synthesize localizedAppName=_localizedAppName;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)_addPresentationParametersForContext:(id)arg1;
 - (void)_addPresenterParameters;
 - (id)initWithCoder:(id)arg1;

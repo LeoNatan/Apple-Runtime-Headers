@@ -25,12 +25,10 @@ __attribute__((visibility("hidden")))
     unsigned int nearManeuver:1;
     unsigned int loading:1;
     unsigned int loaded:1;
-    unsigned int preempted:1;
 }
 
 - (void).cxx_destruct;
 - (double)networkDataRateKB;
-- (double)dataRateKB;
 - (void)resetErrors;
 - (_Bool)okToLoad;
 

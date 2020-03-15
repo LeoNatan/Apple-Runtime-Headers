@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     HMCharacteristic *_imageMirroring;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMCharacteristic *imageMirroring; // @synthesize imageMirroring=_imageMirroring;
 @property(retain, nonatomic) HMCharacteristic *imageRotation; // @synthesize imageRotation=_imageRotation;
 @property(retain, nonatomic) HMCharacteristic *digitalZoom; // @synthesize digitalZoom=_digitalZoom;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) HMCharacteristic *targetHorizontalTilt; // @synthesize targetHorizontalTilt=_targetHorizontalTilt;
 @property(retain, nonatomic) HMCharacteristic *currentHorizontalTilt; // @synthesize currentHorizontalTilt=_currentHorizontalTilt;
 @property(retain, nonatomic) HMCharacteristic *nightVision; // @synthesize nightVision=_nightVision;
-- (void).cxx_destruct;
 - (id)initWithCameraProfile:(id)arg1 service:(id)arg2 profileUniqueIdentifier:(id)arg3;
 
 @end

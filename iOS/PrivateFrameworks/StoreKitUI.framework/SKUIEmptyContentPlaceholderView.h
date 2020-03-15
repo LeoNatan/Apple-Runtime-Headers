@@ -16,8 +16,8 @@
     UIButton *_signInButton;
 }
 
-@property(nonatomic) struct UIEdgeInsets placeholderImageInsets; // @synthesize placeholderImageInsets=_imageInsets;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets placeholderImageInsets; // @synthesize placeholderImageInsets=_imageInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;

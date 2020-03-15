@@ -27,12 +27,12 @@
 + (id)_prefixTruncatedToMaximumAllowableSize:(id)arg1;
 + (id)_subjectTruncatedToMaximumAllowableSize:(id)arg1;
 + (id)subjectWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasPrefix; // @synthesize hasPrefix=_hasPrefix;
 @property(copy, nonatomic) NSString *subjectWithoutPrefix; // @synthesize subjectWithoutPrefix=_subjectWithoutPrefix;
 @property(readonly, nonatomic) unsigned long long prefixLength; // @synthesize prefixLength=_prefixLength;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
-- (void).cxx_destruct;
 - (_Bool)isEqualToSubjectIgnoringPrefix:(id)arg1;
 - (_Bool)isEqualToString:(id)arg1;
 - (_Bool)isEqualToSubject:(id)arg1;

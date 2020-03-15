@@ -27,6 +27,7 @@
     struct CGPoint _lastTouchPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *doubleTapTimer; // @synthesize doubleTapTimer=_doubleTapTimer;
 @property(retain, nonatomic) NSMutableArray *otherGestures; // @synthesize otherGestures=_otherGestures;
 @property(nonatomic) _Bool isRTLOrientation; // @synthesize isRTLOrientation=_isRTLOrientation;
@@ -41,7 +42,6 @@
 @property(nonatomic) _Bool isSwipeEnabled; // @synthesize isSwipeEnabled=_isSwipeEnabled;
 @property(nonatomic) int touchRadius; // @synthesize touchRadius=_touchRadius;
 @property(nonatomic) __weak id <FMMapGestureRecognizerDelegate> touchDelegate; // @synthesize touchDelegate=_touchDelegate;
-- (void).cxx_destruct;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)reset;

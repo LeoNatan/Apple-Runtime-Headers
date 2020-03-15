@@ -20,13 +20,13 @@
     NSDateComponents *_dueDateComponents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
 @property(nonatomic) int overrideDisplayOrder; // @synthesize overrideDisplayOrder=_overrideDisplayOrder;
 @property(nonatomic) unsigned int recurringReminderState; // @synthesize recurringReminderState=_recurringReminderState;
 @property(retain, nonatomic) NSDate *completionDate; // @synthesize completionDate=_completionDate;
 @property(nonatomic) _Bool reminderCompleted; // @synthesize reminderCompleted=_reminderCompleted;
 @property(retain, nonatomic) NSString *reminderId; // @synthesize reminderId=_reminderId;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithReminderId:(id)arg1 reminderCompleted:(_Bool)arg2;
 

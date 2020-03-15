@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) EMCertificateTrustInformation *encryptionCertificateTrustInfo; // @synthesize encryptionCertificateTrustInfo=_encryptionCertificateTrustInfo;
 @property(retain, nonatomic) EMCertificateTrustInformation *signingCertificateTrustInfo; // @synthesize signingCertificateTrustInfo=_signingCertificateTrustInfo;
-- (void).cxx_destruct;
 - (void)reevaluateTrustWithNetworkAccessAllowed;
 - (void)evaluateTrustsWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL hasSeparateSigningAndEncryptionCertificates;

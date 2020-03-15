@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNRepeatingGradientSeparatorView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) UITextField *textFieldRight; // @synthesize textFieldRight=_textFieldRight;
 @property(retain, nonatomic) UITextField *textFieldLeft; // @synthesize textFieldLeft=_textFieldLeft;
-- (void).cxx_destruct;
 - (id)textAttributes;
 - (void)setTextAttributes:(id)arg1;
 - (id)textFields;

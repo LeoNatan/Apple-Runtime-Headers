@@ -13,8 +13,8 @@
     CSLPIPowerAssertion *_assertion;
 }
 
-@property(retain, nonatomic) CSLPIPowerAssertion *assertion; // @synthesize assertion=_assertion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLPIPowerAssertion *assertion; // @synthesize assertion=_assertion;
 
 @end
 

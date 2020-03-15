@@ -25,6 +25,7 @@
     NSNumber *_storeVersionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *storeVersionIdentifier; // @synthesize storeVersionIdentifier=_storeVersionIdentifier;
 @property(copy, nonatomic) NSString *storePlatformKind; // @synthesize storePlatformKind=_storePlatformKind;
 @property(copy, nonatomic) NSString *storeFlavorIdentifier; // @synthesize storeFlavorIdentifier=_storeFlavorIdentifier;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) unsigned long long AVTypes; // @synthesize AVTypes=_avTypes;
 @property(nonatomic) long long availability; // @synthesize availability=_availability;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)newJavaScriptRepresentation;
 @property(readonly, nonatomic) NSString *itemStateVariantIdentifier;

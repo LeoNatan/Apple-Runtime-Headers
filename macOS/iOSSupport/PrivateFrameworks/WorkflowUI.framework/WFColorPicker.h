@@ -21,12 +21,12 @@
     UICollectionView *_colorCollectionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionView *colorCollectionView; // @synthesize colorCollectionView=_colorCollectionView;
 @property(retain, nonatomic) NSArray *colorNames; // @synthesize colorNames=_colorNames;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(nonatomic) __weak id <WFColorPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WFColor *selectedColor; // @synthesize selectedColor=_selectedColor;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

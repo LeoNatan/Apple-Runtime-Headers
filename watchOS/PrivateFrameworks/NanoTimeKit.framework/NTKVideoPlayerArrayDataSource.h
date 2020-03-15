@@ -21,8 +21,8 @@
 + (id)dataSourceForDevice:(id)arg1 withPosterImage:(id)arg2 order:(unsigned int)arg3 andFilenames:(id)arg4;
 + (id)dataSourceForDevice:(id)arg1 withPosterImage:(id)arg2 andFilenames:(id)arg3;
 + (id)dataSourceForDevice:(id)arg1 withFilenames:(id)arg2;
-@property(nonatomic) unsigned int order; // @synthesize order=_order;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int order; // @synthesize order=_order;
 - (id)currentListing;
 - (void)advanceToNextListing:(unsigned int)arg1;
 - (id)initForDevice:(id)arg1 withListings:(id)arg2;

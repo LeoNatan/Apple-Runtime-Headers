@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setOffsetMapArray:) NSMutableArray *_offsetMapArray; // @synthesize _offsetMapArray=__offsetMapArray;
 @property(retain, nonatomic, setter=_setMutableAttributedString:) NSMutableAttributedString *_mutableAttributedString; // @synthesize _mutableAttributedString=__mutableAttributedString;
-- (void).cxx_destruct;
 - (void)_replaceRange:(struct _NSRange)arg1 withLength:(long long)arg2;
 - (id)_initWithSCROffsetMappedString:(id)arg1;
 - (void)setOriginalAttributedString:(id)arg1;

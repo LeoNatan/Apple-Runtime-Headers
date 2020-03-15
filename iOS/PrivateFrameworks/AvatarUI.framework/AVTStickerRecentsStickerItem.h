@@ -12,6 +12,7 @@
 
 @interface AVTStickerRecentsStickerItem : NSObject <AVTStickerRecentsItem>
 {
+    _Bool _prereleaseSticker;
     UIImage *_image;
     NSString *_localizedDescription;
     CDUnknownBlockType _provider;
@@ -21,14 +22,15 @@
     NSString *_stickerName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *stickerName; // @synthesize stickerName=_stickerName;
 @property(readonly, copy, nonatomic) NSString *avatarIdentifier; // @synthesize avatarIdentifier=_avatarIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType discardableContentHandler; // @synthesize discardableContentHandler;
+@property(nonatomic, getter=isPrereleaseSticker) _Bool prereleaseSticker; // @synthesize prereleaseSticker=_prereleaseSticker;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) CDUnknownBlockType provider; // @synthesize provider=_provider;
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)discardContent;
 - (id)cellIdentifier;
 - (id)initWithAvatarIdentifier:(id)arg1 stickerName:(id)arg2 localizedName:(id)arg3 stickerProvider:(CDUnknownBlockType)arg4;

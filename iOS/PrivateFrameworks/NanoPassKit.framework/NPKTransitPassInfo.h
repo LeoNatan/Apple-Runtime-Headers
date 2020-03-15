@@ -12,13 +12,15 @@
 {
     PKTransitPassProperties *_transitProperties;
     NSArray *_balanceFields;
+    NSArray *_commutePlanFields;
 }
 
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *commutePlanFields; // @synthesize commutePlanFields=_commutePlanFields;
 @property(readonly, nonatomic) NSArray *balanceFields; // @synthesize balanceFields=_balanceFields;
 @property(readonly, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
-- (void).cxx_destruct;
 - (id)description;
-- (id)initWithTransitProperties:(id)arg1 balanceFields:(id)arg2;
+- (id)initWithTransitProperties:(id)arg1 balanceFields:(id)arg2 commutePlanFields:(id)arg3;
 
 @end
 

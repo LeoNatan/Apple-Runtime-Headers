@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSDictionary *itemDictionary; // @synthesize itemDictionary=_itemDictionary;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *itemDictionary; // @synthesize itemDictionary=_itemDictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

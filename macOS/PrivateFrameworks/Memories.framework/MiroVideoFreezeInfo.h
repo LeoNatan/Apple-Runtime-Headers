@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_ranges;
 }
 
-@property(retain, nonatomic) NSArray *ranges; // @synthesize ranges=_ranges;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *ranges; // @synthesize ranges=_ranges;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isRemoved;

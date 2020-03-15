@@ -14,9 +14,9 @@
     NUGLObjectPool *_objectPool;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUGLObjectPool *objectPool; // @synthesize objectPool=_objectPool;
 @property(nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)resetGLObject;
 - (id)description;
 - (void)dealloc;

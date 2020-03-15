@@ -31,10 +31,10 @@
 + (id)niceMileageSegmentWithLowerBound:(double)arg1 useMetricSystem:(BOOL)arg2;
 + (double)niceDistanceFromDistance:(double)arg1;
 + (id)niceSegmentWithLowerBound:(double)arg1 useMetricSystem:(BOOL)arg2 useYardsForShortDistances:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL reducesTransparency; // @synthesize reducesTransparency=_reducesTransparency;
 @property(nonatomic) BOOL drawsOutline; // @synthesize drawsOutline=_drawsOutline;
 @property(nonatomic) double distanceInMeters; // @synthesize distanceInMeters=_distanceInMeters;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double segmentLength;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

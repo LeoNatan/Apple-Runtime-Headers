@@ -14,9 +14,9 @@
     NSObject<OS_ldap_connection> *_ldap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_ldap_connection> *ldap; // @synthesize ldap=_ldap;
 @property(nonatomic) _Bool isConnected; // @synthesize isConnected=_isConnected;
-- (void).cxx_destruct;
 - (void)useKerberosAuth:(struct gss_cred_id_t_desc_struct *)arg1 forSPN:(id)arg2;
 - (void)useDigestMD5Auth:(id)arg1 andPassword:(id)arg2;
 - (void)disconnect;

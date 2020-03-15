@@ -46,6 +46,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType transportSendMessage; // @synthesize transportSendMessage=_transportSendMessage;
 @property(copy) CDUnknownBlockType stoppedHandler; // @synthesize stoppedHandler=_stoppedHandler;
 @property(copy) CDUnknownBlockType startedHandler; // @synthesize startedHandler=_startedHandler;
@@ -54,12 +55,11 @@
 @property(copy) CDUnknownBlockType getLocalIdentityHandler; // @synthesize getLocalIdentityHandler=_getLocalIdentityHandler;
 @property(copy) CDUnknownBlockType internalRequestHandler; // @synthesize internalRequestHandler=_internalRequestHandler;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_userQueue;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_serverCompletePrepareRequest:(id)arg1;
-- (int)_serverHandleCommitRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
+- (int)_serverHandleCommitRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (int)_serverHandlePrepareRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
-- (int)_serverHandleDecryptedRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
+- (int)_serverHandleDecryptedRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)_serverHandleEncryptedRequest:(id)arg1 options:(id)arg2;
 - (void)_serverPairVerifyExchange:(id)arg1 options:(id)arg2;
 - (void)_serverRunStateMachine;

@@ -21,9 +21,9 @@
     IKAppDocument *_appDocument;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IKAppDocument *appDocument; // @synthesize appDocument=_appDocument;
 @property(readonly, copy) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
-- (void).cxx_destruct;
 - (void)didCloseViewModelLink:(id)arg1 withErrorDictionary:(id)arg2;
 - (void)documentDidChangeForViewModelLink:(id)arg1;
 - (void)responseDictionaryDidChangeForViewModelLink:(id)arg1;

@@ -20,13 +20,13 @@
     long long _textSectionSpecifier;
 }
 
+- (void).cxx_destruct;
 @property long long textSectionSpecifier; // @synthesize textSectionSpecifier=_textSectionSpecifier;
 @property(retain) NSString *partSectionSpecifier; // @synthesize partSectionSpecifier=_partSectionSpecifier;
 @property(nonatomic) BOOL isComplete; // @synthesize isComplete=_isComplete;
 @property(readonly, nonatomic) unsigned int expectedLength; // @synthesize expectedLength=_expectedLength;
 - (void)setError:(id)arg1;
 - (id)error;
-- (void).cxx_destruct;
 - (id)data;
 - (void)addCommandsToPipeline:(id)arg1 withCache:(id)arg2;
 - (void)processResults;

@@ -13,6 +13,7 @@
 @interface PMMovieProviderAnalyticsEvent : PMCoreAnalyticsEvent <CoreAnalyticsEventProtocol>
 {
     BOOL _didChangeMusic;
+    BOOL _featuredMusicUsed;
     BOOL _didChangeTitle;
     BOOL _didChangeSubTitle;
     BOOL _didChangeMood;
@@ -40,6 +41,7 @@
     NSDate *_creationDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) long long assetCountDeltaFromEditing; // @synthesize assetCountDeltaFromEditing=_assetCountDeltaFromEditing;
 @property(nonatomic) BOOL didAbortDuringDownload; // @synthesize didAbortDuringDownload=_didAbortDuringDownload;
@@ -64,9 +66,9 @@
 @property(nonatomic) long long changedSubTitleCount; // @synthesize changedSubTitleCount=_changedSubTitleCount;
 @property(nonatomic) BOOL didChangeTitle; // @synthesize didChangeTitle=_didChangeTitle;
 @property(nonatomic) long long changedTitleCount; // @synthesize changedTitleCount=_changedTitleCount;
+@property(nonatomic) BOOL featuredMusicUsed; // @synthesize featuredMusicUsed=_featuredMusicUsed;
 @property(nonatomic) BOOL didChangeMusic; // @synthesize didChangeMusic=_didChangeMusic;
 @property(nonatomic) long long changedMusicCount; // @synthesize changedMusicCount=_changedMusicCount;
-- (void).cxx_destruct;
 - (id)copy;
 - (id)eventName;
 - (id)eventPayload;
@@ -93,6 +95,7 @@
 - (id)eventByIncreasingChangedSubtitleCount;
 - (id)eventByAssigningDidChangeTitle;
 - (id)eventByIncreasingChangedTitleCount;
+- (id)eventBySettingFeaturedMusicUsed:(BOOL)arg1;
 - (id)eventByAssigningDidChangeMusic;
 - (id)eventByIncreasingChangedMusicCount;
 - (id)init;

@@ -17,9 +17,9 @@
     NSObject<OS_os_log> *_summaryLog;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *summaryLog; // @synthesize summaryLog=_summaryLog;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (void)verifiedIndexWithSummmary:(id)arg1;
 - (void)didNotFinishIndexingForDeltaSyncWithError:(id)arg1;
 - (void)didNotFinishIndexingForFullSyncWithError:(id)arg1;

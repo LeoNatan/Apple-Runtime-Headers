@@ -17,17 +17,21 @@ __attribute__((visibility("hidden")))
     int _playbackReportToken;
     NSMapTable *_observerMapTable;
     NSDate *_lastProcesssedPlayActivity;
+    NSDate *_lastAppDidBecomeActive;
 }
 
 + (_Bool)_isAppRefreshEventType:(id)arg1;
 + (id)sharedMonitor;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *lastAppDidBecomeActive; // @synthesize lastAppDidBecomeActive=_lastAppDidBecomeActive;
 @property(retain, nonatomic) NSDate *lastProcesssedPlayActivity; // @synthesize lastProcesssedPlayActivity=_lastProcesssedPlayActivity;
 @property(nonatomic) int playbackReportToken; // @synthesize playbackReportToken=_playbackReportToken;
 @property(retain, nonatomic) NSMapTable *observerMapTable; // @synthesize observerMapTable=_observerMapTable;
-- (void).cxx_destruct;
+- (void)_postPurchaseNotification:(id)arg1 error:(id)arg2;
 - (void)_postSubscriptionNotification:(id)arg1 interruptedOfferDetails:(id)arg2 error:(id)arg3;
 - (void)_notifyObserversOfEvent:(id)arg1;
 - (void)_notifyObserver:(id)arg1 ofRefreshEvent:(id)arg2;
+- (void)_handleIAMMessageDidReceiveNotification:(id)arg1;
 - (void)_handlePurchaseRequestSucceededNotification:(id)arg1;
 - (void)_handleLocationDidChangeNotification:(id)arg1;
 - (void)_handleLocationAuthorizationDidChangeNotification:(id)arg1;
@@ -51,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleSettingsDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryContentsDidChangeNotification:(id)arg1;
 - (void)_handleAppDidEnterBackgroundNotification:(id)arg1;
+- (void)_handleAppDidBecomeActive:(id)arg1;
 - (void)_handleAppWillEnterForegroundNotification:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1 forEventDescriptors:(id)arg2;

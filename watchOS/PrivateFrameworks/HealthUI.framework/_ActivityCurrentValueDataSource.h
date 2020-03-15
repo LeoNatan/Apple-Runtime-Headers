@@ -16,10 +16,10 @@
     UIView *_noDataView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *noDataView; // @synthesize noDataView=_noDataView;
 @property(nonatomic) _Bool currentValueViewHasNoData; // @synthesize currentValueViewHasNoData=_currentValueViewHasNoData;
 @property(nonatomic) __weak id <HKInteractiveChartCurrentValueViewCallbacks> currentValueViewCallbacks; // @synthesize currentValueViewCallbacks=_currentValueViewCallbacks;
-- (void).cxx_destruct;
 - (id)_dateRangeFromComponents;
 - (id)_dateRangeFromStartDate:(id)arg1 endDate:(id)arg2;
 - (id)_localizedCurrentValueViewDateRange;

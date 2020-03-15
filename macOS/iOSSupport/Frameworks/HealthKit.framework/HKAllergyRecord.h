@@ -30,15 +30,12 @@
 + (BOOL)_isConcreteObjectClass;
 + (BOOL)supportsEquivalence;
 + (BOOL)supportsSecureCoding;
-+ (id)_newAllergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17 statusCoding:(id)arg18 config:(CDUnknownBlockType)arg19;
-+ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17 statusCoding:(id)arg18;
++ (id)_newAllergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned long long)arg12 allergyCodings:(id)arg13 onsetDate:(id)arg14 asserter:(id)arg15 reactions:(id)arg16 criticalityCoding:(id)arg17 lastOccurenceDate:(id)arg18 recordedDate:(id)arg19 statusCoding:(id)arg20 config:(CDUnknownBlockType)arg21;
++ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned long long)arg12 allergyCodings:(id)arg13 onsetDate:(id)arg14 asserter:(id)arg15 reactions:(id)arg16 criticalityCoding:(id)arg17 lastOccurenceDate:(id)arg18 recordedDate:(id)arg19 statusCoding:(id)arg20;
 + (id)defaultDisplayString;
-+ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 allergyCodings:(id)arg10 onsetDate:(id)arg11 asserter:(id)arg12 reactions:(id)arg13 criticalityCoding:(id)arg14 lastOccurenceDate:(id)arg15 recordedDate:(id)arg16 statusCoding:(id)arg17;
++ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(BOOL)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 country:(id)arg10 state:(unsigned long long)arg11 allergyCodings:(id)arg12 onsetDate:(id)arg13 asserter:(id)arg14 reactions:(id)arg15 criticalityCoding:(id)arg16 lastOccurenceDate:(id)arg17 recordedDate:(id)arg18 statusCoding:(id)arg19;
 + (id)cachedConceptRelationshipKeyPaths;
 + (id)indexableConceptKeyPaths;
-+ (id)statusCodingPreferredSystems;
-+ (id)criticalityCodingPreferredSystems;
-+ (id)allergyCodingsPreferredSystems;
 - (void).cxx_destruct;
 @property(readonly, copy) HKAllergyRecordType *allergyRecordType;
 - (id)_validateConfigurationWithOptions:(unsigned long long)arg1;
@@ -76,17 +73,13 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)init;
-- (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
-- (id)indexKeywords;
 - (BOOL)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
-- (id)statusCodingTasks;
-- (id)criticalityCodingTasks;
-- (id)allergyCodingsTasks;
 
 // Remaining properties
 @property(readonly) NSUUID *UUID;
+@property(readonly, copy, nonatomic) NSString *country;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) NSLocale *locale;

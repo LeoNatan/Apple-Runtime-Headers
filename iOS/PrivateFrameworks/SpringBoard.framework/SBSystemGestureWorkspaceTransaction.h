@@ -15,8 +15,8 @@
     long long _completionType;
 }
 
-@property(retain, nonatomic) UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 - (void)_beginAnimation;
 - (void)_setupAnimation;
 - (void)_finishWithCompletionType:(long long)arg1;

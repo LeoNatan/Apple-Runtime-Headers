@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
 + (id)textMarkerWithVisiblePosition:(struct VisiblePosition *)arg1 cache:(struct AXObjectCache *)arg2;
 - (id).cxx_construct;
 - (id)description;
-- (struct AccessibilityObject *)accessibilityObject;
+-     // Error parsing type: ^{AccessibilityObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}I{Vector<WTF::RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<WebCore::AXCoreObject, WTF::DumbPtrTraits<WebCore::AXCoreObject> >}II}Bii{AccessibilityIsIgnoredFromParentData=^{AXCoreObject}BBB}BB{RetainPtr<WebAccessibilityObjectWrapper>=^v}}16@0:8, name: accessibilityObject
 - (BOOL)isIgnored;
 - (struct CharacterOffset)characterOffset;
 - (struct VisiblePosition)visiblePosition;
 - (id)dataRepresentation;
-- (id)initWithData:(id)arg1 accessibilityObject:(struct WebAccessibilityObjectWrapper *)arg2;
+- (id)initWithData:(id)arg1 accessibilityObject:(id)arg2;
 - (id)initWithData:(id)arg1 cache:(struct AXObjectCache *)arg2;
 - (id)initWithTextMarker:(struct TextMarkerData *)arg1 cache:(struct AXObjectCache *)arg2;
 

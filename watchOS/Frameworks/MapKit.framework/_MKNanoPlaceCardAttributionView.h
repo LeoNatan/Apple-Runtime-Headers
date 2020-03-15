@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     _MKMapItemAttribution *_attribution;
 }
 
-@property(retain, nonatomic) _MKMapItemAttribution *attribution; // @synthesize attribution=_attribution;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MKMapItemAttribution *attribution; // @synthesize attribution=_attribution;
 - (void)prepareForReuse;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

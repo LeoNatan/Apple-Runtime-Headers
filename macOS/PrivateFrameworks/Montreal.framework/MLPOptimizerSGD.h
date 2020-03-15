@@ -13,8 +13,8 @@
     MPSVector *_momentum;
 }
 
-@property(retain) MPSVector *momentum; // @synthesize momentum=_momentum;
 - (void).cxx_destruct;
+@property(retain) MPSVector *momentum; // @synthesize momentum=_momentum;
 - (void)updateLearningRate:(float)arg1;
 - (void)encodeToCommandBuffer:(id)arg1 inputGradientVector:(id)arg2 inputValuesVector:(id)arg3;
 - (id)initWithNetwork:(id)arg1 momentum:(CDUnknownBlockType)arg2;

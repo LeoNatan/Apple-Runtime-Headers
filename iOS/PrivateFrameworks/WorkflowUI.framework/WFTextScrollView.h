@@ -18,10 +18,10 @@
     struct _NSRange _selectedRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(nonatomic) __weak id <UITextViewDelegate> textViewDelegate; // @synthesize textViewDelegate=_textViewDelegate;
 @property(readonly, nonatomic) UITextView<WFTextField> *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;

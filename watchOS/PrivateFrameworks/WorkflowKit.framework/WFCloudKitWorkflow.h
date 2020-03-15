@@ -28,6 +28,7 @@
 
 + (id)properties;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflowRecord *cachedRecord; // @synthesize cachedRecord=_cachedRecord;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
 @property(copy, nonatomic) NSData *serializedAccessResourcePerWorkflowStateData; // @synthesize serializedAccessResourcePerWorkflowStateData=_serializedAccessResourcePerWorkflowStateData;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSDate *modifiedAt; // @synthesize modifiedAt=_modifiedAt;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isValidForSyncing;
 - (id)recordRepresentationWithError:(id *)arg1;
 - (id)initWithRecord:(id)arg1 identifier:(id)arg2;

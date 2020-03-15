@@ -18,8 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *detectedObjects; // @synthesize detectedObjects=_detectedObjects;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *detectedObjects; // @synthesize detectedObjects=_detectedObjects;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

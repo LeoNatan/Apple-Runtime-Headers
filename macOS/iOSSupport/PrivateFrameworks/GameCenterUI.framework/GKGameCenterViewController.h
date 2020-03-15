@@ -22,10 +22,10 @@
     long long _leaderboardTimeScope;
 }
 
+- (void).cxx_destruct;
 @property BOOL didRequestRemoteViewController; // @synthesize didRequestRemoteViewController=_internalFlag;
 @property(nonatomic) __weak id <GKGameCenterControllerDelegate> gameCenterDelegate; // @synthesize gameCenterDelegate=_internal2;
 @property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_internal1;
-- (void).cxx_destruct;
 - (BOOL)remoteViewControllerRequestingDismiss:(id)arg1;
 - (void)remoteViewController:(id)arg1 receivedMessageFromService:(id)arg2;
 - (BOOL)shouldShowQuitForTurnBasedMatch;

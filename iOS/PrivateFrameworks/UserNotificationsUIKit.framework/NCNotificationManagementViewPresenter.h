@@ -17,9 +17,9 @@
     UIAlertController *_notificationManagementAlertViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *notificationManagementAlertViewController; // @synthesize notificationManagementAlertViewController=_notificationManagementAlertViewController;
 @property(nonatomic) __weak id <NCNotificationManagementViewPresenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)notificationManagementControllerDidDismissManagementView:(id)arg1;
 - (void)notificationManagementController:(id)arg1 setAllowsCriticalAlerts:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
 - (void)notificationManagementController:(id)arg1 setDeliverQuietly:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;

@@ -24,6 +24,7 @@
 }
 
 + (id)instantiateViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *progressLabel; // @synthesize progressLabel=_progressLabel;
 @property(retain, nonatomic) UIActivityIndicatorView *progressSpinner; // @synthesize progressSpinner=_progressSpinner;
 @property(retain, nonatomic) RPPINEntryView *pinEntryView; // @synthesize pinEntryView=_pinEntryView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(copy, nonatomic) CDUnknownBlockType tryPasswordHandler; // @synthesize tryPasswordHandler=_tryPasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (void)_retryTimer;
 - (void)updateWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
 - (void)handlePINEntered:(id)arg1;

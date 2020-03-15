@@ -16,11 +16,11 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
 @property(nonatomic) __weak NSObject *observerObject; // @synthesize observerObject=_observerObject;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 
 @end

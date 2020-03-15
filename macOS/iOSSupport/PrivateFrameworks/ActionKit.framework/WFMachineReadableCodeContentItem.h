@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ContentKit/WFContentItem.h>
+#import <ContentKit/WFGenericFileContentItem.h>
 
 #import <ActionKit/WFContentItemClass-Protocol.h>
 
 @class NSString, WFMachineReadableCode;
 
-@interface WFMachineReadableCodeContentItem : WFContentItem <WFContentItemClass>
+@interface WFMachineReadableCodeContentItem : WFGenericFileContentItem <WFContentItemClass>
 {
     BOOL _prefersImage;
     NSString *_errorCorrectionLevel;
@@ -24,9 +24,9 @@
 + (id)ownedTypes;
 + (BOOL)supportedTypeMustBeDeterminedByInstance:(id)arg1;
 + (id)qrCodeItemWithString:(id)arg1 errorCorrectionLevel:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorCorrectionLevel; // @synthesize errorCorrectionLevel=_errorCorrectionLevel;
 @property(nonatomic) BOOL prefersImage; // @synthesize prefersImage=_prefersImage;
-- (void).cxx_destruct;
 - (id)preferredFileType;
 - (id)preferredObjectType;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;

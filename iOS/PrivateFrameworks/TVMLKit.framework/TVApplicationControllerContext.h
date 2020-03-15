@@ -22,6 +22,7 @@
     NSURL *_offlineJSURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *offlineJSURL; // @synthesize offlineJSURL=_offlineJSURL;
 @property(copy, nonatomic) NSString *bagBootURLKey; // @synthesize bagBootURLKey=_bagBootURLKey;
 @property(copy, nonatomic) NSURL *appJSCachePath; // @synthesize appJSCachePath=_appJSCachePath;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSDictionary *launchOptions; // @synthesize launchOptions=_launchOptions;
 @property(copy, nonatomic) NSString *storageIdentifier; // @synthesize storageIdentifier=_storageIdentifier;
 @property(copy, nonatomic) NSURL *javaScriptApplicationURL; // @synthesize javaScriptApplicationURL=_javaScriptApplicationURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

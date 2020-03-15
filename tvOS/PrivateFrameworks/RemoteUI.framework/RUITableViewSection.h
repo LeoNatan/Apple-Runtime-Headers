@@ -32,6 +32,7 @@
     RUITableView *_tableElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool configured; // @synthesize configured=_configured;
 @property(nonatomic) __weak RUITableView *tableElement; // @synthesize tableElement=_tableElement;
 @property(retain, nonatomic) RUIElement *footer; // @synthesize footer=_footer;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) UIView<RemoteUITableFooter> *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) RUITableViewHeaderFooterView *containerizedHeaderView; // @synthesize containerizedHeaderView=_containerizedHeaderView;
 @property(retain, nonatomic) UIView<RUIHeader> *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (id)subElementsWithName:(id)arg1;
 - (id)subElementWithID:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;

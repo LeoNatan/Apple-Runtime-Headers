@@ -24,11 +24,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int imageAlign; // @synthesize imageAlign=_imageAlign;
 @property(retain, nonatomic) SFImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) SFPunchout *appPunchout; // @synthesize appPunchout=_appPunchout;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

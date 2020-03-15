@@ -14,8 +14,8 @@
 }
 
 + (_Bool)isLoggingEnabled;
-@property(retain, nonatomic) NSMutableString *loggedMessage; // @synthesize loggedMessage=_loggedMessage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableString *loggedMessage; // @synthesize loggedMessage=_loggedMessage;
 - (void)writeLogToFile;
 - (void)endLoggingForInput:(id)arg1 atFinalTimeMark:(unsigned long long)arg2;
 - (id)logFilePath;

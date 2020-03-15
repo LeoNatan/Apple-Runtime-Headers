@@ -40,6 +40,7 @@
 }
 
 + (id)defaultColorForInkingToolWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *opacityLabelCenterYConstraint; // @synthesize opacityLabelCenterYConstraint=_opacityLabelCenterYConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *opacityLabelCenterXConstraint; // @synthesize opacityLabelCenterXConstraint=_opacityLabelCenterXConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *opacityLabelTrailingConstraint; // @synthesize opacityLabelTrailingConstraint=_opacityLabelTrailingConstraint;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) UIImage *colorIndicatorImageUp; // @synthesize colorIndicatorImageUp=_colorIndicatorImageUp;
 @property(retain, nonatomic) UIImageView *colorIndicatorImageView; // @synthesize colorIndicatorImageView=_colorIndicatorImageView;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
-- (void).cxx_destruct;
 - (id)_opacityLabelFont;
 - (void)setScalingFactor:(double)arg1;
 - (void)_inkAttributesPickerUserDidEndDraggingSlider:(id)arg1;

@@ -13,8 +13,8 @@
     NSArray *_vehicleEvents;
 }
 
-@property(readonly, nonatomic) NSArray *vehicleEvents; // @synthesize vehicleEvents=_vehicleEvents;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *vehicleEvents; // @synthesize vehicleEvents=_vehicleEvents;
 - (id)initWithVehicleEvents:(id)arg1;
 
 @end

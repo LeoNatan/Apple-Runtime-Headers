@@ -15,9 +15,9 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pathLayoutBlock; // @synthesize pathLayoutBlock=_pathLayoutBlock;
 @property(nonatomic) _Bool fillColorMatchesTintColor; // @synthesize fillColorMatchesTintColor=_fillColorMatchesTintColor;
-- (void).cxx_destruct;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)tintColorDidChange;
 - (void)didMoveToSuperview;

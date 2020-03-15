@@ -20,10 +20,10 @@
 
 + (id)readerScrollPositionCache;
 + (id)readerViewControllerForChatItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(copy, nonatomic) NSString *messageGUID; // @synthesize messageGUID=_messageGUID;
 @property(nonatomic) __weak id <CKReaderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange visibleRange; // @dynamic visibleRange;
 @property(copy, nonatomic) NSAttributedString *text; // @dynamic text;
 - (void)contentSizeCategoryDidChange:(id)arg1;

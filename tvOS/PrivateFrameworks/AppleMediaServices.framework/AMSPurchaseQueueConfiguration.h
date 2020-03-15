@@ -14,9 +14,9 @@
     id <AMSPurchaseResponseProtocol> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AMSPurchaseResponseProtocol> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
-- (void).cxx_destruct;
 - (id)initWithBag:(id)arg1;
 
 @end

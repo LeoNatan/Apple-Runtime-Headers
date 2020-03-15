@@ -20,6 +20,7 @@
     NSString *_accessToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool webAccessOptIn; // @synthesize webAccessOptIn=_webAccessOptIn;
 @property(readonly, copy, nonatomic) NSString *accessToken; // @synthesize accessToken=_accessToken;
 @property(readonly, copy, nonatomic) NSNumber *contentScaleMacOS; // @synthesize contentScaleMacOS=_contentScaleMacOS;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSNumber *fontMultiplier; // @synthesize fontMultiplier=_fontMultiplier;
 @property(readonly, copy, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CKRecord *asCKRecord;
 - (id)initWithEntryID:(id)arg1 tagID:(id)arg2 fontMultiplier:(id)arg3 fontMultiplierMacOS:(id)arg4 contentScale:(id)arg5 contentScaleMacOS:(id)arg6 accessToken:(id)arg7 webAccessOptIn:(_Bool)arg8;
 - (id)dictionaryRepresentation;

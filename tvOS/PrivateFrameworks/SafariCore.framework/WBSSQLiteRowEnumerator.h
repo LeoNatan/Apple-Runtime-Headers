@@ -15,9 +15,9 @@
     int _lastResultCode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int lastResultCode; // @synthesize lastResultCode=_lastResultCode;
 @property(readonly, nonatomic) WBSSQLiteStatement *statement; // @synthesize statement=_statement;
-- (void).cxx_destruct;
 - (id)nextObject;
 - (id)initWithResultsOfStatement:(id)arg1;
 

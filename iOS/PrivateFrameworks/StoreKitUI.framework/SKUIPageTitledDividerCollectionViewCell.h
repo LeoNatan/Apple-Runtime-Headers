@@ -40,8 +40,8 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
-@property(nonatomic) double topEdgeInset; // @synthesize topEdgeInset=_topEdgeInset;
 - (void).cxx_destruct;
+@property(nonatomic) double topEdgeInset; // @synthesize topEdgeInset=_topEdgeInset;
 - (id)_imageForImageViewElement:(id)arg1 returningRequestIdentifier:(out id *)arg2 context:(id)arg3;
 - (void)_buttonAction:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;

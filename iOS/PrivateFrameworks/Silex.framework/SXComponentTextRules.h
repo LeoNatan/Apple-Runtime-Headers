@@ -28,6 +28,7 @@
 + (id)smallTextRules;
 + (id)bodyTextRules;
 + (id)defaultTextRules;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fontTextStyle; // @synthesize fontTextStyle=_fontTextStyle;
 @property(nonatomic) long long textFlow; // @synthesize textFlow=_textFlow;
 @property(nonatomic) _Bool allowsScrollPositionRestore; // @synthesize allowsScrollPositionRestore=_allowsScrollPositionRestore;
@@ -37,7 +38,6 @@
 @property(nonatomic) double lineHeightConstant; // @synthesize lineHeightConstant=_lineHeightConstant;
 @property(nonatomic) double fontSizeConstant; // @synthesize fontSizeConstant=_fontSizeConstant;
 @property(nonatomic) double fontResizingTresholdFactor; // @synthesize fontResizingTresholdFactor=_fontResizingTresholdFactor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

@@ -23,6 +23,7 @@
 }
 
 + (id)timerTargettingMainAccessQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *dispatchTimer; // @synthesize dispatchTimer=_dispatchTimer;
 @property(nonatomic) _Bool accessQueueIsExternal; // @synthesize accessQueueIsExternal=_accessQueueIsExternal;
 @property(retain, nonatomic) AXAccessQueue *accessQueue; // @synthesize accessQueue=_accessQueue;
@@ -30,7 +31,6 @@
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool automaticallyCancelPendingBlockUponSchedulingNewBlock; // @synthesize automaticallyCancelPendingBlockUponSchedulingNewBlock=_automaticallyCancelPendingBlockUponSchedulingNewBlock;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_warnAboutAsynchronousCancelling;
 - (void)_reallyCancel;

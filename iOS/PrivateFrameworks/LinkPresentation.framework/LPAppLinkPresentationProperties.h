@@ -27,6 +27,7 @@
     UIColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) LPVideo *video; // @synthesize video=_video;
 @property(retain, nonatomic) LPImage *icon; // @synthesize icon=_icon;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) LPCaptionBarPresentationProperties *mediaBottomCaptionBar; // @synthesize mediaBottomCaptionBar=_mediaBottomCaptionBar;
 @property(retain, nonatomic) LPCaptionBarPresentationProperties *mediaTopCaptionBar; // @synthesize mediaTopCaptionBar=_mediaTopCaptionBar;
 @property(retain, nonatomic) LPCaptionBarPresentationProperties *captionBar; // @synthesize captionBar=_captionBar;
-- (void).cxx_destruct;
 - (long long)style;
 
 // Remaining properties

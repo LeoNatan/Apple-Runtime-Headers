@@ -19,6 +19,7 @@
     NSData *_bitmapData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *bitmapData; // @synthesize bitmapData=_bitmapData;
 @property unsigned int bitmapInfo; // @synthesize bitmapInfo=_bitmapInfo;
 @property unsigned long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
@@ -26,7 +27,6 @@
 @property unsigned long bitsPerComponent; // @synthesize bitsPerComponent=_bitsPerComponent;
 @property unsigned long height; // @synthesize height=_height;
 @property unsigned long width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (void)enumerateAllPixels:(CDUnknownBlockType)arg1;
 - (struct CGImage *)createImageRef;
 - (id)encodedImage;

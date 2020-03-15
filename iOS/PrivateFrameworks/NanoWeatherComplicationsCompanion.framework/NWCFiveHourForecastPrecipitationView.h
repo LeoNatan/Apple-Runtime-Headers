@@ -13,8 +13,8 @@
     NWMPrecipitationFormatter *_formatter;
 }
 
-@property(retain, nonatomic) NWMPrecipitationFormatter *formatter; // @synthesize formatter=_formatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NWMPrecipitationFormatter *formatter; // @synthesize formatter=_formatter;
 - (id)dataFormatter;
 - (Class)hourlyForecastViewClass;
 

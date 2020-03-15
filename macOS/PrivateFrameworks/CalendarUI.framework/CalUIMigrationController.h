@@ -23,11 +23,11 @@
     NSWindow *error;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSWindow *error; // @synthesize error;
 @property(retain) NSWindow *window; // @synthesize window;
 @property(retain) NSTextField *textField; // @synthesize textField;
 @property(retain) NSProgressIndicator *progressBar; // @synthesize progressBar;
-- (void).cxx_destruct;
 - (void)tryMigrationAgain:(id)arg1;
 - (void)dismissErrorPanel:(id)arg1;
 - (void)showErrorPanel:(id)arg1;

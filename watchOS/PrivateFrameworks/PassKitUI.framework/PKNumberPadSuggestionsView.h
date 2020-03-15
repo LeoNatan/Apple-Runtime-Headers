@@ -19,11 +19,11 @@
 }
 
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;
 @property(copy, nonatomic) UIColor *buttonTextColor; // @synthesize buttonTextColor=_buttonTextColor;
 @property(copy, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(nonatomic) __weak id <PKNumberPadSuggestionsViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_selectedSuggestion:(id)arg1;
 - (id)initWithDefaultFrame;
 - (id)initWithFrame:(struct CGRect)arg1;

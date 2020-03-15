@@ -26,6 +26,7 @@
 + (CDStruct_afa449f9)_calculateStatistics:(struct CGImage *)arg1 withSize:(struct CGSize)arg2;
 + (id)blurColorForColor:(id)arg1;
 + (id)blurColorForImage:(id)arg1 forButtonSize:(struct CGSize)arg2 withOffsetRight:(float)arg3 withOffsetBottom:(float)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) CAShapeLayer *innerProgressLayer; // @synthesize innerProgressLayer=_innerProgressLayer;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) UIImage *toggledImage; // @synthesize toggledImage=_toggledImage;
 @property(retain, nonatomic) UIImage *untoggledImage; // @synthesize untoggledImage=_untoggledImage;
 @property(nonatomic, getter=isToggled) _Bool toggled; // @synthesize toggled=_toggled;
-- (void).cxx_destruct;
 @property(readonly) UIView *hitView;
 - (void)addTarget:(id)arg1 forAction:(SEL)arg2;
 - (id)_newShapeViewWithBounds:(struct CGRect)arg1 lineWidth:(double)arg2;

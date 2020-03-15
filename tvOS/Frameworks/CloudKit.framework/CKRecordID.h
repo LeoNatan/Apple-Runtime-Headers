@@ -21,9 +21,9 @@
 
 + (_Bool)isValidRecordName:(id)arg1 outError:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 @property(retain, nonatomic) NSString *recordName; // @synthesize recordName=_recordName;
-- (void).cxx_destruct;
 - (long long)compareToRecordID:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

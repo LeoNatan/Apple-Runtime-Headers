@@ -22,8 +22,8 @@
 + (id)subTypeForEvent:(id)arg1;
 + (_Bool)shouldSubmitEvent:(id)arg1;
 + (id)supportedEventTypes;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 - (void)dispatcher:(id)arg1 didReceiveEvent:(id)arg2;
 - (void)stop;
 - (void)start;

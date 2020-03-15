@@ -40,6 +40,7 @@
 }
 
 + (_Bool)shouldVerifyCharacteristic:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFExponentialBackoffTimer *verificationBackoffTimer; // @synthesize verificationBackoffTimer=_verificationBackoffTimer;
 @property(nonatomic, getter=isVerifying) _Bool verifying; // @synthesize verifying=_verifying;
 @property(readonly, nonatomic) NSMutableArray *pendingResponses; // @synthesize pendingResponses=_pendingResponses;
@@ -59,7 +60,6 @@
 @property(nonatomic) __weak HAPService *tunneledBTLEAccessoryService; // @synthesize tunneledBTLEAccessoryService=_tunneledBTLEAccessoryService;
 @property(nonatomic) __weak id <HAPKeyStore> keyStore; // @synthesize keyStore=_keyStore;
 @property(copy, nonatomic) NSNumber *stateNumber; // @synthesize stateNumber=_stateNumber;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (_Bool)mergeObject:(id)arg1;
 - (void)securitySession:(id)arg1 didCloseWithError:(id)arg2;
@@ -112,7 +112,7 @@
 - (void)_performTimedWriteValue:(id)arg1 toCharacteristic:(id)arg2 authorizationData:(id)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_performWriteValue:(id)arg1 toCharacteristic:(id)arg2 authorizationData:(id)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_writeValue:(id)arg1 toCharacteristic:(id)arg2 authorizationData:(id)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)writeCharacteristicValue:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_readValueForCharacteristic:(id)arg1 options:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

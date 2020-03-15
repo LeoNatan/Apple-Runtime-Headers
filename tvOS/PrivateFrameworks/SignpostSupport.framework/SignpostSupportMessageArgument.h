@@ -12,9 +12,9 @@
     NSObject *_argumentObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject *argumentObject; // @synthesize argumentObject=_argumentObject;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithArgumentObject:(id)arg1;
 

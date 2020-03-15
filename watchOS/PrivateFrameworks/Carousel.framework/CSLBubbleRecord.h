@@ -16,10 +16,10 @@
 }
 
 + (id)bubbleRecordWithBubble:(id)arg1 targetFrame:(struct CGRect)arg2 andDistanceFromCenter:(float)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) float distanceFromCenter; // @synthesize distanceFromCenter=_distanceFromCenter;
 @property(nonatomic) struct CGPoint weightedTravelPoint; // @synthesize weightedTravelPoint=_weightedTravelPoint;
 @property(nonatomic) __weak UIView *bubble; // @synthesize bubble=_bubble;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

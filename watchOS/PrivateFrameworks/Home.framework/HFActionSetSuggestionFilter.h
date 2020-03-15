@@ -14,8 +14,8 @@
 }
 
 + (id)filterWithServices:(id)arg1;
-@property(copy, nonatomic) NSArray *services; // @synthesize services=_services;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *services; // @synthesize services=_services;
 
 @end
 

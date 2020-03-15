@@ -21,12 +21,12 @@
     id <BSInvalidatable> _hardwareButtonObserverAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> hardwareButtonObserverAssertion; // @synthesize hardwareButtonObserverAssertion=_hardwareButtonObserverAssertion;
 @property(retain, nonatomic) SBHomeGestureParticipant *hardwareButtonServiceParticipant; // @synthesize hardwareButtonServiceParticipant=_hardwareButtonServiceParticipant;
 @property(retain, nonatomic) SBHomeGestureParticipant *owningParticipant; // @synthesize owningParticipant=_owningParticipant;
 @property(retain, nonatomic) NSMutableArray *participants; // @synthesize participants=_participants;
 @property(retain, nonatomic) id <BSInvalidatable> stateCaptureHandle; // @synthesize stateCaptureHandle=_stateCaptureHandle;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

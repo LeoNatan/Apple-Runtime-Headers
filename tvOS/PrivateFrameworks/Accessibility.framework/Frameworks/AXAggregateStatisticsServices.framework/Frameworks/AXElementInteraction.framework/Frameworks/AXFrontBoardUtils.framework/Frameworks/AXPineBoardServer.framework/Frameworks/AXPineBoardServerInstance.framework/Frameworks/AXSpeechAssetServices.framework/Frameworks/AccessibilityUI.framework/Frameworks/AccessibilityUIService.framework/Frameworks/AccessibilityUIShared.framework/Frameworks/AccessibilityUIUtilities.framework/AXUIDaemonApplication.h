@@ -14,6 +14,7 @@
 + (id)_systemUIServiceIdentifier;
 + (id)_systemUIServiceClientSettings;
 + (_Bool)_isSystemUIService;
+- (long long)_frontMostAppOrientation;
 
 @end
 

@@ -25,6 +25,7 @@
     double _maxCPUInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *monitorIdentifier; // @synthesize monitorIdentifier=_monitorIdentifier;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) double maxCPUInterval; // @synthesize maxCPUInterval=_maxCPUInterval;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) int error; // @synthesize error=_error;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) __weak NSObject<CSLSceneActionRetryMonitoring> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_queue_retryTimerFired;
 - (void)_queue_cancelRetryTimeTimerIfNecessary;
 - (void)_queue_scheduleRetryTimeTimerIfNecessary;

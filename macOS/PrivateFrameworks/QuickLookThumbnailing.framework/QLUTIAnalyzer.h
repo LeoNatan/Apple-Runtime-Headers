@@ -21,8 +21,8 @@
 + (id)UTIForURL:(id)arg1;
 + (id)removeSpacesFromString:(id)arg1;
 + (id)knownExtensions;
-@property(readonly) NSString *contentType; // @synthesize contentType=_contentType;
 - (void).cxx_destruct;
+@property(readonly) NSString *contentType; // @synthesize contentType=_contentType;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isAudioOnly;

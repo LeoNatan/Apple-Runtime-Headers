@@ -16,8 +16,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (_Bool)executeSyncWithBOOL:(CDUnknownBlockType)arg1;
 - (id)executeSyncWithResult:(CDUnknownBlockType)arg1;
 - (void)executeSync:(CDUnknownBlockType)arg1;

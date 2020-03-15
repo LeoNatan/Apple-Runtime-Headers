@@ -16,10 +16,10 @@
 }
 
 + (id)labelsFromUnlocalizedLabels:(id)arg1 localizedLongLabels:(id)arg2 localizedBadgeLabels:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *unlocalizedLongLabel; // @synthesize unlocalizedLongLabel=_unlocalizedLongLabel;
 @property(readonly, nonatomic) NSString *localizedLongLabel; // @synthesize localizedLongLabel=_localizedLongLabel;
 @property(readonly, nonatomic) NSString *localizedBadgeLabel; // @synthesize localizedBadgeLabel=_localizedBadgeLabel;
-- (void).cxx_destruct;
 - (_Bool)isEqualToSubscriptionLabel:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

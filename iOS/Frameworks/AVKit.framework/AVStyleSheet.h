@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _routePickerButtonFullScreenSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic) _Bool shouldUseCompactFullScreenSize; // @synthesize shouldUseCompactFullScreenSize=_shouldUseCompactFullScreenSize;
 @property(readonly, nonatomic) double scrubberInstructionsMinimumRequiredWidth; // @synthesize scrubberInstructionsMinimumRequiredWidth=_scrubberInstructionsMinimumRequiredWidth;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double standardPadding; // @synthesize standardPadding=_standardPadding;
 @property(readonly, nonatomic) struct CGSize defaultItemFullScreenSize; // @synthesize defaultItemFullScreenSize=_defaultItemFullScreenSize;
 @property(readonly, nonatomic) struct CGSize defaultItemInlineSize; // @synthesize defaultItemInlineSize=_defaultItemInlineSize;
-- (void).cxx_destruct;
 - (void)_loadFontsIfNeeded;
 @property(readonly, nonatomic) UIFont *infoLabelFont; // @synthesize infoLabelFont=_infoLabelFont;
 @property(readonly, nonatomic) UIFont *scrubberTimeLabelFont; // @synthesize scrubberTimeLabelFont=_scrubberTimeLabelFont;

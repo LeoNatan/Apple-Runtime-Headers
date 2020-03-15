@@ -17,10 +17,10 @@
     AVTCoreModelGroup *_modelGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTCoreModelGroup *modelGroup; // @synthesize modelGroup=_modelGroup;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithSections:(id)arg1 localizedName:(id)arg2 modelGroup:(id)arg3;
 - (id)representedAVTPresetResources;

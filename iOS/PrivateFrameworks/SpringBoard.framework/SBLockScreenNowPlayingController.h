@@ -22,10 +22,10 @@
     id <SBLockScreenNowPlayingControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBLockScreenNowPlayingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long currentState; // @synthesize currentState=_currentState;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_disableTimerFired;
 - (void)_invalidateDisableTimer;

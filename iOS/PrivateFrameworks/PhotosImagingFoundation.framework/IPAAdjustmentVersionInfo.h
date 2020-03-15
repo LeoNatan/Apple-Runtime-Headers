@@ -25,11 +25,11 @@
 + (id)_systemBuildVersion;
 + (id)systemBuildVersion;
 + (id)currentVersionInfo;
+- (void).cxx_destruct;
 @property(nonatomic) long long schemaRevision; // @synthesize schemaRevision=_schemaRevision;
 @property(copy, nonatomic) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(copy, nonatomic) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(copy, nonatomic) NSString *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (_Bool)isEqualToVersionInfo:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)archivalRepresentation;

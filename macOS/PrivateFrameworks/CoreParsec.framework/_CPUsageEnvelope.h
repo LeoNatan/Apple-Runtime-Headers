@@ -27,6 +27,7 @@
     unsigned long long _whichKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long whichKind; // @synthesize whichKind=_whichKind;
 @property(copy, nonatomic) NSData *uuidBytes; // @synthesize uuidBytes=_uuidBytes;
 @property(retain, nonatomic) _CPDeviceContext *context; // @synthesize context=_context;
@@ -34,7 +35,6 @@
 @property(nonatomic) int configuredLookbackTimeInDays; // @synthesize configuredLookbackTimeInDays=_configuredLookbackTimeInDays;
 @property(nonatomic) long long collectionEndTimestamp; // @synthesize collectionEndTimestamp=_collectionEndTimestamp;
 @property(nonatomic) long long collectionStartTimestamp; // @synthesize collectionStartTimestamp=_collectionStartTimestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -27,12 +27,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int serverHash; // @synthesize serverHash=_serverHash;
 @property(retain, nonatomic) CLPLocation *location; // @synthesize location=_location;
 @property(nonatomic) double age; // @synthesize age=_age;
 @property(nonatomic) int appState; // @synthesize appState=_appState;
 @property(retain, nonatomic) NSString *appBundleId; // @synthesize appBundleId=_appBundleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

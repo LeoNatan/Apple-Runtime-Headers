@@ -28,6 +28,7 @@
     GEODataRequestThrottlerToken *_throttleToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <GEOProtobufSessionTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak GEOProtobufSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) unsigned int requestTypeCode; // @synthesize requestTypeCode=_requestTypeCode;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) id <GEODataSessionTask> dataTask; // @synthesize dataTask=_dataTask;
 @property(readonly, nonatomic) Class responseClass; // @synthesize responseClass=_responseClass;
 @property(readonly, nonatomic) unsigned int taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool receivedRNFNotification;
 @property(readonly, nonatomic) _Bool mptcpNegotiated;
 @property(readonly, nonatomic) unsigned int requestedMultipathServiceType;

@@ -13,8 +13,8 @@
     NSUUID *_testUuid;
 }
 
-@property(retain, nonatomic) NSUUID *testUuid; // @synthesize testUuid=_testUuid;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUUID *testUuid; // @synthesize testUuid=_testUuid;
 - (id)uuid;
 - (id)init;
 

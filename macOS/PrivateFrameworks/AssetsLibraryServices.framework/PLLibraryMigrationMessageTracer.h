@@ -51,6 +51,7 @@
     NSObject<OS_dispatch_semaphore> *_libSizeSemaphore;
 }
 
+- (void).cxx_destruct;
 @property BOOL libSizingStarted; // @synthesize libSizingStarted=_libSizingStarted;
 @property(retain) NSObject<OS_dispatch_semaphore> *libSizeSemaphore; // @synthesize libSizeSemaphore=_libSizeSemaphore;
 @property(retain) NSNumberFormatter *threeDigitBucketFormatter; // @synthesize threeDigitBucketFormatter=_threeDigitBucketFormatter;
@@ -88,7 +89,6 @@
 @property(copy) NSString *client_id; // @synthesize client_id=_client_id;
 @property(retain) NSString *error; // @synthesize error=_error;
 @property BOOL upgradeOccurred; // @synthesize upgradeOccurred=_upgradeOccurred;
-- (void).cxx_destruct;
 - (int)unifiedLibraryVersionAtRoot:(id)arg1 requirePathIsRoot:(BOOL)arg2;
 - (BOOL)checkSandboxForPath:(id)arg1;
 - (int)libraryVersionAtRoot:(id)arg1 requirePathIsRoot:(BOOL)arg2;

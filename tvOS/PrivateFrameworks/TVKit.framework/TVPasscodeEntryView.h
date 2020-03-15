@@ -23,6 +23,7 @@
     UIButton *_doneButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) NSArray *digitViews; // @synthesize digitViews=_digitViews;
 @property(nonatomic) __weak id <TVPasscodeEntryViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) _Bool showsDigits; // @synthesize showsDigits=_showsDigits;
 @property(readonly, nonatomic) _Bool editable; // @synthesize editable=_editable;
 @property(readonly, nonatomic) unsigned long long numberOfDigits; // @synthesize numberOfDigits=_numberOfDigits;
-- (void).cxx_destruct;
 - (void)_doneButton:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)preferredFocusEnvironments;

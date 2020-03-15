@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

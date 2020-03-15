@@ -26,13 +26,13 @@ __attribute__((visibility("hidden")))
 + (id)makeAlertButtonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)makeButtonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4 preferredWidth:(double)arg5;
 + (id)_buttonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4 preferredWidth:(double)arg5 isAlertButton:(BOOL)arg6;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *popoverItems; // @synthesize popoverItems=_popoverItems;
 @property(retain) NSMutableArray *adjustableButtons; // @synthesize adjustableButtons=_adjustableButtons;
 @property(retain) NSLayoutConstraint *desiredWidthConstraint; // @synthesize desiredWidthConstraint=_desiredWidthConstraint;
 @property(retain) NSMutableArray *equalWidthConstraints; // @synthesize equalWidthConstraints=_equalWidthConstraints;
 @property(retain) NSMutableArray *preferredWidthConstraints; // @synthesize preferredWidthConstraints=_preferredWidthConstraints;
 @property __weak NSButtonGroupTouchBarItem *groupTouchBarItem; // @synthesize groupTouchBarItem=_groupTouchBarItem;
-- (void).cxx_destruct;
 - (unsigned long long)_compressedImagePosition;
 - (void)_setButtonsWithShortTitlesCompressedImage;
 - (void)_setButtonsWithShortTitles;

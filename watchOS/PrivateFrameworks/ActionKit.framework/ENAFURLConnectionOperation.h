@@ -37,6 +37,7 @@
 
 + (id)networkRequestThread;
 + (void)networkRequestThreadEntryPoint:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(copy, nonatomic) CDUnknownBlockType redirectResponse; // @synthesize redirectResponse=_redirectResponse;
 @property(copy, nonatomic) CDUnknownBlockType cacheResponse; // @synthesize cacheResponse=_cacheResponse;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) NSURLConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) short state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

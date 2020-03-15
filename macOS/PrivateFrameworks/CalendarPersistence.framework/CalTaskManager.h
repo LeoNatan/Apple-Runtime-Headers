@@ -24,9 +24,9 @@
     NSRunLoop *_workRunLoop;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *outstandingTaskGroups; // @synthesize outstandingTaskGroups=_outstandingTaskGroups;
 @property(retain) NSRunLoop *workRunLoop; // @synthesize workRunLoop=_workRunLoop;
-- (void).cxx_destruct;
 - (void)_scheduleStartModal:(id)arg1;
 - (void)_schedulePerformTask:(id)arg1;
 - (void)_makeStateTransition;

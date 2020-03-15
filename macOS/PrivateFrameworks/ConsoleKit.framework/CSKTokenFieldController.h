@@ -23,6 +23,7 @@
 }
 
 + (BOOL)_isTokenEligible:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *currentSearchID; // @synthesize currentSearchID=_currentSearchID;
 @property(retain, nonatomic) NSString *currentTerm; // @synthesize currentTerm=_currentTerm;
 @property(retain, nonatomic) CSKToken *temporaryToken; // @synthesize temporaryToken=_temporaryToken;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL isBasicSearchEnabled; // @synthesize isBasicSearchEnabled=_isBasicSearchEnabled;
 @property(nonatomic) __weak id <CSKTokenFieldControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CSKTokenField *tokenField; // @synthesize tokenField=_tokenField;
-- (void).cxx_destruct;
 - (id)_mergeFirstTwoStringsFromArrayIfEligible:(id)arg1;
 - (id)_createTokenFromTerm:(id)arg1;
 - (id)_createTokensFromObjects:(id)arg1;

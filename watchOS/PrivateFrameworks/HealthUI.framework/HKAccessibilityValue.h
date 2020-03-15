@@ -16,11 +16,11 @@
     NSNumber *_valueAsNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *valueAsNumber; // @synthesize valueAsNumber=_valueAsNumber;
 @property(readonly, nonatomic) NSString *valueDescription; // @synthesize valueDescription=_valueDescription;
 @property(readonly, nonatomic) NSString *valueType; // @synthesize valueType=_valueType;
 @property(readonly, nonatomic) NSString *valueTitle; // @synthesize valueTitle=_valueTitle;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithValueTitle:(id)arg1 valueType:(id)arg2 valueDescription:(id)arg3 valueAsNumber:(id)arg4;
 

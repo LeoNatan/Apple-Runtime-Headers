@@ -21,8 +21,8 @@
 }
 
 + (BOOL)mingleBatch:(id)arg1 forStore:(id)arg2 putBatchesInPullQueue:(char *)arg3 error:(id *)arg4;
-@property(retain, nonatomic) CPLScopeFilter *scopeFilter; // @synthesize scopeFilter=_scopeFilter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CPLScopeFilter *scopeFilter; // @synthesize scopeFilter=_scopeFilter;
 - (id)taskIdentifier;
 - (void)cancel;
 - (void)taskDidFinishWithError:(id)arg1;

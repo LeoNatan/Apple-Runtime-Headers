@@ -17,8 +17,8 @@
     _Bool _shouldLogAndResetOnCompletion;
 }
 
-@property(nonatomic) _Bool shouldLogAndResetOnCompletion; // @synthesize shouldLogAndResetOnCompletion=_shouldLogAndResetOnCompletion;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldLogAndResetOnCompletion; // @synthesize shouldLogAndResetOnCompletion=_shouldLogAndResetOnCompletion;
 - (id)eventsWithType:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *writeEvents;
 @property(readonly, nonatomic) NSArray *allEvents;

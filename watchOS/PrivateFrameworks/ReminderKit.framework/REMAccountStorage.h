@@ -45,6 +45,7 @@
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool daWasMigrated; // @synthesize daWasMigrated=_daWasMigrated;
 @property(nonatomic) _Bool daSupportsSharedCalendars; // @synthesize daSupportsSharedCalendars=_daSupportsSharedCalendars;
 @property(nonatomic) _Bool daAllowsCalendarAddDeleteModify; // @synthesize daAllowsCalendarAddDeleteModify=_daAllowsCalendarAddDeleteModify;
@@ -65,7 +66,6 @@
 @property(copy, nonatomic) NSString *daSyncToken; // @synthesize daSyncToken;
 @property(copy, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag;
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier;
-- (void).cxx_destruct;
 - (id)listIDsMergeableOrderingReplicaIDSource;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 @property(readonly, nonatomic) NSString *displayName;

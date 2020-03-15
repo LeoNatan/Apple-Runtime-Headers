@@ -23,13 +23,13 @@
 
 + (id)gaugeProviderWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) NSArray *gaugeColorLocations; // @synthesize gaugeColorLocations=_gaugeColorLocations;
 @property(retain, nonatomic) NSArray *gaugeColors; // @synthesize gaugeColors=_gaugeColors;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)finalize;
 - (void)validate;
 - (id)JSONObjectRepresentation;
@@ -37,8 +37,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)stopUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopUpdatesForToken:(id)arg1;
+- (id)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (double)progressFractionForNow:(id)arg1;
 - (_Bool)needsTimerUpdates;
 - (id)initWithCoder:(id)arg1;

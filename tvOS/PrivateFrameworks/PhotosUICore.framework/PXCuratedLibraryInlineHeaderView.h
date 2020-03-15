@@ -27,9 +27,9 @@
 + (struct CGSize)sizeWithConfiguration:(id)arg1;
 + (id)_subtitleFontForStyle:(unsigned long long)arg1;
 + (id)_titleFontForStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) PXCuratedLibraryInlineHeaderViewConfiguration *userData; // @synthesize userData=_userData;
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
-- (void).cxx_destruct;
 - (void)_platformSpecificViewSetup;
 - (id)_tintViewBackgroundColor;
 - (void)_setEffectViewCornerRadius:(double)arg1;

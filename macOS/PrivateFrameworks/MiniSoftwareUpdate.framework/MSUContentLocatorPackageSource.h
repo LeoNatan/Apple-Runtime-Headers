@@ -18,8 +18,8 @@
 + (id)_modifiedPackageReferencesForPackages:(id)arg1;
 + (CDUnknownFunctionPointerType)_contentLocatorFunction;
 + (void)_setContentLocatorFunction:(CDUnknownFunctionPointerType)arg1;
-@property(retain) NSArray *modifiedPackageReferences; // @synthesize modifiedPackageReferences=_modifiedPackageReferences;
 - (void).cxx_destruct;
+@property(retain) NSArray *modifiedPackageReferences; // @synthesize modifiedPackageReferences=_modifiedPackageReferences;
 @property(readonly) NSArray *allPackageReferences;
 - (id)initWithPackages:(id)arg1;
 

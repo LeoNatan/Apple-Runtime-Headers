@@ -19,12 +19,12 @@
 }
 
 + (id)_sortedCaptureDevicesFromDevices:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureDeviceDiscoverySession *_captureDeviceDiscoverySession; // @synthesize _captureDeviceDiscoverySession=__captureDeviceDiscoverySession;
 @property(retain, nonatomic) NSMutableArray *_allCaptureDevices; // @synthesize _allCaptureDevices=__allCaptureDevices;
 @property(retain, nonatomic) NSMutableArray *_compatibleCaptureDevices; // @synthesize _compatibleCaptureDevices=__compatibleCaptureDevices;
 @property(nonatomic) BOOL _monitoring; // @synthesize _monitoring=__monitoring;
 @property(nonatomic) __weak id <AXSSMotionTrackingCameraManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_captureDeviceDisconnected:(id)arg1;
 - (void)_captureDeviceConnected:(id)arg1;
 - (void)_resetDiscoverySession;

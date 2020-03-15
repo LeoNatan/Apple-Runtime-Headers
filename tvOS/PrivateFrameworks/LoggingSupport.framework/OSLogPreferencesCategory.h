@@ -14,9 +14,9 @@
     OSLogPreferencesSubsystem *_subsystem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) OSLogPreferencesSubsystem *subsystem; // @synthesize subsystem=_subsystem;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)reset;
 @property(nonatomic) _Bool signpostPersisted;
 @property(nonatomic) _Bool signpostEnabled;

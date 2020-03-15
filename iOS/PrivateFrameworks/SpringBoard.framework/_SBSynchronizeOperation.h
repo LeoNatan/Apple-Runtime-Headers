@@ -16,8 +16,8 @@
     NSMutableArray *_tasks;
 }
 
-@property(retain, nonatomic) NSString *humanReadableDescription; // @synthesize humanReadableDescription=_humanReadableDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *humanReadableDescription; // @synthesize humanReadableDescription=_humanReadableDescription;
 - (void)main;
 - (void)addTask:(CDUnknownBlockType)arg1;
 - (id)init;

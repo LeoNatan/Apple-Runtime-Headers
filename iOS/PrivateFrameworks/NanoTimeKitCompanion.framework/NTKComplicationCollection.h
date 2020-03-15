@@ -26,10 +26,10 @@
 }
 
 + (id)sharedRemoteCollection;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(readonly, nonatomic) NSUUID *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
 @property(readonly, nonatomic) NSString *collectionIdentifier; // @synthesize collectionIdentifier=_collectionIdentifier;
-- (void).cxx_destruct;
 - (void)_performOrEnqueueUpdate:(CDUnknownBlockType)arg1;
 - (void)_throwIfNotLoaded:(SEL)arg1;
 - (void)_handleConnectionInterrupted;

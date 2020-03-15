@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *joinedUserCount; // @synthesize joinedUserCount=_joinedUserCount;
 @property(retain, nonatomic) NSNumber *hasSharedNotebook; // @synthesize hasSharedNotebook=_hasSharedNotebook;
 @property(retain, nonatomic) NSString *contactName; // @synthesize contactName=_contactName;
 @property(retain, nonatomic) NSString *notebookDisplayName; // @synthesize notebookDisplayName=_notebookDisplayName;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 
 @end
 

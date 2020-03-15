@@ -14,9 +14,12 @@
     NSArray *_setupFields;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *setupFields; // @synthesize setupFields=_setupFields;
 @property(nonatomic) _Bool cameraFirstProvisioningEnabled; // @synthesize cameraFirstProvisioningEnabled=_cameraFirstProvisioningEnabled;
-- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

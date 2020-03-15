@@ -16,8 +16,8 @@
 }
 
 + (id)iconsetWithURL:(id)arg1 error:(id *)arg2;
-@property(readonly) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *URL; // @synthesize URL=_URL;
 - (BOOL)writeAsICNSToURL:(id)arg1 flags:(long long)arg2 error:(id *)arg3;
 - (BOOL)writeAsICNSToURL:(id)arg1 flags:(long long)arg2;
 - (id)icnsWithFlags:(long long)arg1;

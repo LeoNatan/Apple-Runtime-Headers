@@ -13,8 +13,8 @@
     NSString *_reason;
 }
 
-@property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (id)notificationName;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

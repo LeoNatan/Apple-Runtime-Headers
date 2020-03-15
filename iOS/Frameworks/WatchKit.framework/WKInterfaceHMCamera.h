@@ -16,11 +16,11 @@
     struct CGSize _containerViewSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize containerViewSize; // @synthesize containerViewSize=_containerViewSize;
 @property(retain, nonatomic) CAContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) UIView *cameraView; // @synthesize cameraView=_cameraView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)updateContainerViewSize;
 - (void)remoteSetHeight:(double)arg1;
 - (void)remoteSetWidth:(double)arg1;

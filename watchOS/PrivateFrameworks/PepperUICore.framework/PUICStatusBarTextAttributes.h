@@ -20,6 +20,7 @@
     UIFont *_font;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UIFontDescriptor *fontDescriptor; // @synthesize fontDescriptor=_fontDescriptor;
 @property(retain, nonatomic) NSString *fontStyle; // @synthesize fontStyle=_fontStyle;
@@ -28,7 +29,6 @@
 @property(nonatomic) float fontPointSize; // @synthesize fontPointSize=_fontPointSize;
 @property(nonatomic) float inset; // @synthesize inset=_inset;
 @property(nonatomic) float baseline; // @synthesize baseline=_baseline;
-- (void).cxx_destruct;
 
 @end
 

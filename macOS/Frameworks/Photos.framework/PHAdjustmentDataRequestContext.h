@@ -13,12 +13,12 @@
     PHImageRequestOptions *_options;
 }
 
-+ (long long)type;
-@property(readonly, nonatomic) PHImageRequestOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHImageRequestOptions *options; // @synthesize options=_options;
 - (void)processMediaResult:(id)arg1 forRequest:(id)arg2;
 - (id)initialRequests;
 - (BOOL)isNetworkAccessAllowed;
+- (long long)type;
 - (id)initWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
 
 @end

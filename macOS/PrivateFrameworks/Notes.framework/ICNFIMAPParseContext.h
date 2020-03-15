@@ -18,11 +18,11 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL invalid; // @synthesize invalid=_invalid;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) ICNFIMAPResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) ICNFIMAPConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)_newBodystructure;
 - (id)_newArrayAllowingNulls:(BOOL)arg1;
 - (id)_newNamespaceExtension;

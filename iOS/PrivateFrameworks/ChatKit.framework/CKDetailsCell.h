@@ -16,11 +16,11 @@
     UIView *_bottomSeperator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeperator; // @synthesize bottomSeperator=_bottomSeperator;
 @property(retain, nonatomic) UIView *topSeperator; // @synthesize topSeperator=_topSeperator;
 @property(nonatomic) _Bool indentBottomSeperator; // @synthesize indentBottomSeperator=_indentBottomSeperator;
 @property(nonatomic) _Bool indentTopSeperator; // @synthesize indentTopSeperator=_indentTopSeperator;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

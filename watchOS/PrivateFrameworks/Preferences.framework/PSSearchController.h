@@ -26,10 +26,10 @@
     CDUnknownBlockType _iconForSearchEntryHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType iconForSearchEntryHandler; // @synthesize iconForSearchEntryHandler=_iconForSearchEntryHandler;
 @property(nonatomic) __weak id <PSSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
-- (void).cxx_destruct;
 - (Class)rootSearchControllerClassForSearchModel:(id)arg1;
 - (id)rootSpecifiersForSearchModel:(id)arg1;
 - (void)searchModelDidFinishIndexing:(id)arg1;

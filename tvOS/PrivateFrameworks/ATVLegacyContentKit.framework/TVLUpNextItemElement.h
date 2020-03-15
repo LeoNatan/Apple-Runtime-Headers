@@ -13,8 +13,8 @@
     TVLVideoAssetElement *_videoAsset;
 }
 
-@property(retain, nonatomic) TVLVideoAssetElement *videoAsset; // @synthesize videoAsset=_videoAsset;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLVideoAssetElement *videoAsset; // @synthesize videoAsset=_videoAsset;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

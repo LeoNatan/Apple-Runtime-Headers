@@ -17,11 +17,11 @@
     CSLAppPrelauncher *_prelauncher;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLAppPrelauncher *prelauncher; // @synthesize prelauncher=_prelauncher;
 @property _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(copy, nonatomic) CSLSPowerTest *powerTest; // @synthesize powerTest=_powerTest;
 @property(nonatomic) __weak NSObject<CSLPowerTesterDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_snapshotApp:(id)arg1;
 - (void)_launchApp:(id)arg1;

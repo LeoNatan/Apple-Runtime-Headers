@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     NSDate *m_startDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool _canceled; // @synthesize _canceled=m_canceled;
 @property(readonly) NSDate *_startDate; // @synthesize _startDate=m_startDate;
 @property(retain) id userInfo; // @synthesize userInfo=m_userInfo;
 @property(retain) id target; // @synthesize target=m_target;
-- (void).cxx_destruct;
 - (void)timerFired:(id)arg1;
 - (double)delay;
 - (_Bool)scheduled;

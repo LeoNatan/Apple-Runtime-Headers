@@ -15,10 +15,10 @@
     NSNumber *_storeItemID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUserInitiated) BOOL userInitiated; // @synthesize userInitiated=_userInitiated;
 @property(copy, nonatomic) NSNumber *storeItemID; // @synthesize storeItemID=_storeItemID;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)initWithBundleID:(id)arg1;
 - (id)init;
 

@@ -17,10 +17,10 @@
     NSData *_SICData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *SICData; // @synthesize SICData=_SICData;
 @property(copy, nonatomic) NSData *cloudCredentialsTokenData; // @synthesize cloudCredentialsTokenData=_cloudCredentialsTokenData;
 @property(copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSMutableDictionary *propertyListRepresentation;
 - (id)initWithDSID:(id)arg1 SICData:(id)arg2;

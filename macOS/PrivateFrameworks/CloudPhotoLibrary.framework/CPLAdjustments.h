@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *creatorCode; // @synthesize creatorCode=_creatorCode;
 @property(retain, nonatomic) CPLResource *adjustmentData; // @synthesize adjustmentData=_adjustmentData;
 @property(nonatomic) unsigned long long adjustmentRenderTypes; // @synthesize adjustmentRenderTypes=_adjustmentRenderTypes;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *adjustmentCreatorCode; // @synthesize adjustmentCreatorCode=_adjustmentCreatorCode;
 @property(copy, nonatomic) NSString *adjustmentCompoundVersion; // @synthesize adjustmentCompoundVersion=_adjustmentCompoundVersion;
 @property(copy, nonatomic) NSString *adjustmentType; // @synthesize adjustmentType=_adjustmentType;
-- (void).cxx_destruct;
 - (id)adjustmentSimpleDescription;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

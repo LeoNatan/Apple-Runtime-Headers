@@ -25,6 +25,7 @@
 }
 
 + (id)pairingEventsListenerInterface;
+- (void).cxx_destruct;
 @property(retain) id <SMDMigrateFromProtocol> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 @property(retain) NSXPCConnection *daemonConnection; // @synthesize daemonConnection=_daemonConnection;
 @property(retain) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
@@ -34,7 +35,6 @@
 @property BOOL paired; // @synthesize paired=_paired;
 @property BOOL usingSharedSecretPassword; // @synthesize usingSharedSecretPassword=_usingSharedSecretPassword;
 @property(retain) NSNumber *passcode; // @synthesize passcode=_passcode;
-- (void).cxx_destruct;
 - (void)pairingCompleted;
 - (void)receiveUpdatedPasscode:(id)arg1;
 - (void)rejectTrustedPassCode;

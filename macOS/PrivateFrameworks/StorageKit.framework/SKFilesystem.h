@@ -26,6 +26,7 @@
 + (BOOL)_shouldShowFilesystem:(id)arg1;
 + (id)_skfilesystemTypeWithPersonality:(id)arg1;
 + (id)filesystemsWithDMFilesystem:(id)arg1;
+- (void).cxx_destruct;
 @property int sortPriority; // @synthesize sortPriority=_sortPriority;
 @property(retain) NSString *localizedKey; // @synthesize localizedKey=_localizedKey;
 @property unsigned long long minimumSize; // @synthesize minimumSize=_minimumSize;
@@ -37,7 +38,6 @@
 @property(retain) NSString *dmPersonality; // @synthesize dmPersonality=_dmPersonality;
 @property(retain) NSString *type; // @synthesize type=_type;
 @property(retain) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)dicationaryRepresentation;

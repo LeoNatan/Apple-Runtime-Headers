@@ -19,9 +19,9 @@
 + (id)bundlePathForURL:(id)arg1;
 + (void)reset;
 + (void)loadWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (id)viewPathForName:(id)arg1;
 - (id)initWithURL:(id)arg1 bundlePath:(id)arg2;
 

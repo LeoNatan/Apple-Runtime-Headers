@@ -19,6 +19,7 @@
     NSDate *_updated;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int updateSequenceNum; // @synthesize updateSequenceNum=_updateSequenceNum;
 @property(nonatomic) _Bool hasResources; // @synthesize hasResources=_hasResources;
 @property(retain, nonatomic) NSDate *updated; // @synthesize updated=_updated;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) ENNotebook *notebook; // @synthesize notebook=_notebook;
 @property(retain, nonatomic) ENNoteRef *noteRef; // @synthesize noteRef=_noteRef;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

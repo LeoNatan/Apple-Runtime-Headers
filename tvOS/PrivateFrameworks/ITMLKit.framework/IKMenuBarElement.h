@@ -14,8 +14,8 @@
 }
 
 + (id)supportedFeatures;
-@property(readonly, nonatomic) IKAppMenuBarDocument *menuBarDocument; // @synthesize menuBarDocument=_menuBarDocument;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKAppMenuBarDocument *menuBarDocument; // @synthesize menuBarDocument=_menuBarDocument;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

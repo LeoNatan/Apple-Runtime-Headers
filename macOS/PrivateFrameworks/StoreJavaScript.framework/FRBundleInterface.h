@@ -29,6 +29,7 @@
 }
 
 + (id)allowedMessageClasses;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *activeContextMenu; // @synthesize activeContextMenu=_activeContextMenu;
 @property(readonly, nonatomic) NSMutableDictionary *contextMenus; // @synthesize contextMenus=_contextMenus;
 @property(readonly, nonatomic) NSMutableDictionary *eventListeners; // @synthesize eventListeners=_eventListeners;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) struct OpaqueWKBundlePage *page; // @synthesize page=_page;
 @property(readonly, nonatomic) struct OpaqueWKBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (void)contextMenuDismissed;
 - (void)contextMenuItemClicked:(id)arg1;
 - (struct OpaqueWKArray *)_contextMenuItemsForJSContextMenuNamed:(id)arg1 appendingDefaultMenu:(struct OpaqueWKArray *)arg2 withDOMElement:(struct OpaqueJSValue *)arg3 context:(struct OpaqueJSContext *)arg4;

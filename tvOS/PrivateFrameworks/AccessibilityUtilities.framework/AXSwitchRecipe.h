@@ -19,12 +19,12 @@
 }
 
 + (id)recipeWithDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *menuIconIdentifier; // @synthesize menuIconIdentifier=_menuIconIdentifier;
 @property(retain, nonatomic) NSString *unlocalizedName; // @synthesize unlocalizedName=_unlocalizedName;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) NSArray *mappings; // @synthesize mappings=_mappings;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)description;
 @property(copy, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool shouldContinueScanning;

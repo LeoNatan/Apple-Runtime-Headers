@@ -21,6 +21,7 @@
     int _numberOfChildren;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNumberOfChildren:) int numberOfChildren; // @synthesize numberOfChildren=_numberOfChildren;
 @property(nonatomic, setter=_setParentTonePickerController:) __weak TKTonePickerController *_parentTonePickerController; // @synthesize _parentTonePickerController=__parentTonePickerController;
 @property(nonatomic, setter=_setDownloadProgress:) float downloadProgress; // @synthesize downloadProgress=_downloadProgress;
@@ -28,7 +29,6 @@
 @property(nonatomic, setter=_setNeedsActivityIndicator:) _Bool needsActivityIndicator; // @synthesize needsActivityIndicator=_needsActivityIndicator;
 @property(nonatomic, setter=_setNeedsRoomForCheckmark:) _Bool needsRoomForCheckmark; // @synthesize needsRoomForCheckmark=_needsRoomForCheckmark;
 @property(nonatomic, setter=_setItemKind:) unsigned int itemKind; // @synthesize itemKind=_itemKind;
-- (void).cxx_destruct;
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (id)childItemAtIndex:(int)arg1;
 @property(readonly, nonatomic) TKTonePickerSectionItem *parentSectionItem;

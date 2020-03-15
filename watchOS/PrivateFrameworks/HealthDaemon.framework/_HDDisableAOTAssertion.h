@@ -13,8 +13,8 @@
     CSLSBacklightAssertion *_backlightAssertion;
 }
 
-@property(retain, nonatomic) CSLSBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLSBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 - (id)initWithOwnerIdentifier:(id)arg1;
 
 @end

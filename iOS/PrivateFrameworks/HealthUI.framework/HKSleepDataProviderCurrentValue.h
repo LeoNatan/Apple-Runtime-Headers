@@ -18,9 +18,9 @@
 }
 
 + (id)dataProviderValueWithSleepQueryResult:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long categoryValue; // @synthesize categoryValue=_categoryValue;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)lastUpdatedDescriptionWithDateCache:(id)arg1;
 - (id)attributedStringWithDisplayType:(id)arg1 unitController:(id)arg2 valueFont:(id)arg3 unitFont:(id)arg4 dateCache:(id)arg5;
 - (id)initWithTimeInterval:(double)arg1 categoryValue:(long long)arg2;

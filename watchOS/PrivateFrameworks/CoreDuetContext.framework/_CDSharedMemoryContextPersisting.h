@@ -22,11 +22,11 @@
 + (id)sharedMemoryKeyFromRegistration:(id)arg1;
 + (id)sharedMemoryKeyFromKeyPath:(id)arg1;
 + (id)persistenceWithSharedMemoryKeyValueStore:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localDeviceID; // @synthesize localDeviceID=_localDeviceID;
 @property(retain, nonatomic) NSCountedSet *keyPathRegistrationCount; // @synthesize keyPathRegistrationCount=_keyPathRegistrationCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) _CDSharedMemoryKeyValueStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)deleteDataCreatedBefore:(id)arg1;
 - (void)deleteAllData;
 - (id)loadRegistrations;

@@ -27,13 +27,13 @@
     double _endTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) BOOL showsControls; // @synthesize showsControls=_showsControls;
 @property(nonatomic) BOOL startsPlayingAutomatically; // @synthesize startsPlayingAutomatically=_startsPlayingAutomatically;
 @property(nonatomic) __weak id <LPYouTubePlayerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didReceiveScriptMessage:(id)arg1;
 - (void)layout;
 - (void)_webView:(id)arg1 navigation:(id)arg2 didFailProvisionalLoadInSubframe:(id)arg3 withError:(id)arg4;

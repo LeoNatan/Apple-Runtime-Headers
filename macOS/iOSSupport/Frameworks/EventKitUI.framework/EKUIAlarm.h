@@ -14,9 +14,9 @@
     EKAlarm *_alarm;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKAlarm *alarm; // @synthesize alarm=_alarm;
 @property(readonly, nonatomic) BOOL isLeaveNowAlarm; // @synthesize isLeaveNowAlarm=_isLeaveNowAlarm;
-- (void).cxx_destruct;
 - (BOOL)isEqualToUIAlarm:(id)arg1;
 - (id)localizedDescriptionAllDay:(BOOL)arg1;
 - (id)description;

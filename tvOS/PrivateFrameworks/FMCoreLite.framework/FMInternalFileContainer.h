@@ -15,8 +15,8 @@
     NSURL *_url;
 }
 
-@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (id)internalContainerURL;
 - (id)init;
 

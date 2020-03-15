@@ -15,9 +15,9 @@
     NSMutableDictionary *_mapStateToBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_elementVCs;
-- (void).cxx_destruct;
 - (void)_fireBlocksForState:(unsigned long long)arg1;
 - (void)_setState:(unsigned long long)arg1;
 - (void)removeNotifyBlock:(CDUnknownBlockType)arg1 forState:(unsigned long long)arg2;

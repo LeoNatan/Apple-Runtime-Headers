@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _peripheryInsetsPortrait;
 }
 
+- (void).cxx_destruct;
 @property struct UIEdgeInsets peripheryInsetsPortrait; // @synthesize peripheryInsetsPortrait=_peripheryInsetsPortrait;
 @property struct UIEdgeInsets peripheryInsetsLandscape; // @synthesize peripheryInsetsLandscape=_peripheryInsetsLandscape;
 @property _Bool shouldFit; // @synthesize shouldFit=_shouldFit;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) double minZoomScale; // @synthesize minZoomScale=_minZoomScale;
 @property(nonatomic) struct CGSize contentViewSize; // @synthesize contentViewSize=_contentViewSize;
 @property(nonatomic) _Bool needsZoomUpdate; // @synthesize needsZoomUpdate=_needsZoomUpdate;
-- (void).cxx_destruct;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;

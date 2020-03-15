@@ -21,11 +21,11 @@
 + (id)enumValueForArgument:(id)arg1 withMapping:(id)arg2 error:(id *)arg3;
 + (id)numberValueForArgument:(id)arg1 error:(id *)arg2;
 + (id)boolValueForArgument:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) NSMutableSet *requiredOptions; // @synthesize requiredOptions=_requiredOptions;
 @property(readonly, nonatomic) NSMutableArray *registeredOptions; // @synthesize registeredOptions=_registeredOptions;
 @property(readonly, nonatomic) NSMutableArray *registeredSubcommands; // @synthesize registeredSubcommands=_registeredSubcommands;
-- (void).cxx_destruct;
 - (id)_argumentParseTemplate:(id)arg1 longArgs:(struct option **)arg2;
 - (int)invokeHandlerWithArguments:(const char **)arg1 count:(int)arg2 parseErrorCode:(int)arg3 error:(id *)arg4;
 - (id)naiveUsageHelpWithPositionalArgString:(id)arg1;

@@ -18,6 +18,7 @@
 + (id)_localizedNameForValue:(unsigned int)arg1 forDevice:(id)arg2;
 + (_Bool)_valueIsValid:(unsigned int)arg1 forDevice:(id)arg2;
 + (id)_optionWithValue:(unsigned int)arg1 forDevice:(id)arg2;
++ (id)localizedNameForValidValue:(unsigned int)arg1 forDevice:(id)arg2;
 - (id)_faceBundleStringToValueDict;
 - (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;
 - (id)JSONObjectRepresentation;

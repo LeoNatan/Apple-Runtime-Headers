@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) BOOL isManagedStudent; // @synthesize isManagedStudent=_isManagedStudent;
 @property(readonly) NSString *storeFront; // @synthesize storeFront=_storeFront;
 @property(readonly) NSString *token; // @synthesize token=_token;
@@ -32,7 +33,6 @@
 @property(readonly) long long accountKind; // @synthesize accountKind=_accountKind;
 @property(readonly) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property unsigned long long URLBagType; // @synthesize URLBagType=_URLBagType;
-- (void).cxx_destruct;
 - (BOOL)_loadFromDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

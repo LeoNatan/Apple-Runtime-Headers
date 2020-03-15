@@ -34,9 +34,9 @@
 - (void)setPrewarmHandler:(CDUnknownBlockType)arg1;
 - (void)_setupRequestListener;
 - (void)siriActivationListener:(id)arg1 handleIntent:(id)arg2 inBackgroundAppWithBundleId:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)siriActivationListener:(id)arg1 deactivateForReason:(long long)arg2 options:(unsigned long long)arg3 analyticsContext:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)siriActivationListener:(id)arg1 activateWithRequestInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)siriActivationListener:(id)arg1 prewarmWithRequestInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)siriActivationListener:(id)arg1 deactivateForReason:(long long)arg2 options:(unsigned long long)arg3 context:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)siriActivationListener:(id)arg1 activateWithRequestInfo:(id)arg2 context:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)siriActivationListener:(id)arg1 prewarmWithRequestInfo:(id)arg2 context:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 - (id)init;
 

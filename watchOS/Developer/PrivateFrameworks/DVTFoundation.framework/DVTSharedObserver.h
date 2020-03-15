@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (void)_locked_rebalanceObservingTokens;
 @property(readonly) _Bool _hasRegisteredObservers;
-- (void)_removeObserverWithTrackingIndex:(unsigned int)arg1;
+- (void)_removeObserverWithTrackingIndexProvider:(CDUnknownBlockType)arg1;
 - (id)_setObserverWithCreationBacktrace:(id)arg1 handlerBlock:(CDUnknownBlockType)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

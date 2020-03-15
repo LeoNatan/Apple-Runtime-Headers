@@ -21,11 +21,11 @@
 
 + (id)sharedTimerManager;
 + (id)sharedAlarmManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *supportedBulletinCategories; // @synthesize supportedBulletinCategories=_supportedBulletinCategories;
 @property(retain, nonatomic) NSMutableOrderedSet *alerts; // @synthesize alerts=_alerts;
 @property(copy, nonatomic) NSString *changeNotificationName; // @synthesize changeNotificationName=_changeNotificationName;
 @property(retain, nonatomic) Class alertableClass; // @synthesize alertableClass=_alertableClass;
-- (void).cxx_destruct;
 - (void)alertProvider:(id)arg1 invalidateBulletinIDs:(id)arg2;
 - (void)alertProvider:(id)arg1 removeBulletin:(id)arg2;
 - (void)alertProvider:(id)arg1 modifyBulletin:(id)arg2;

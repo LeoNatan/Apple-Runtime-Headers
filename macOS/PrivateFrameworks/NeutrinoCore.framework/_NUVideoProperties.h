@@ -24,6 +24,7 @@
     CDStruct_996ac03c _originalCleanAperture;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(nonatomic) CDStruct_1b6d18a9 livePhotoKeyFrameTime; // @synthesize livePhotoKeyFrameTime=_livePhotoKeyFrameTime;
 @property(retain, nonatomic) NSDictionary *colorProperties; // @synthesize colorProperties=_colorProperties;
@@ -34,7 +35,6 @@
 @property(nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
 @property(retain, nonatomic) NSArray *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithProperties:(id)arg1;
 

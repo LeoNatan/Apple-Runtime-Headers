@@ -14,9 +14,9 @@
     NSMapTable *_mapping;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMapTable *mapping; // @synthesize mapping=_mapping;
 @property(readonly, copy, nonatomic) NSArray *inputs; // @synthesize inputs=_inputs;
-- (void).cxx_destruct;
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithInputs:(id)arg1 outputs:(id)arg2;

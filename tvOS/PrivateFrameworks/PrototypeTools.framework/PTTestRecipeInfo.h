@@ -16,19 +16,21 @@
     NSString *_domainIdentifier;
     NSString *_title;
     NSIndexSet *_events;
+    NSString *_recipeDescription;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *recipeDescription; // @synthesize recipeDescription=_recipeDescription;
 @property(readonly, nonatomic) NSIndexSet *events; // @synthesize events=_events;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
-- (id)initWithTestRecipe:(id)arg1 domainIdentifier:(id)arg2;
+- (id)initWithTestRecipe:(id)arg1 domainInfo:(id)arg2;
 
 @end
 

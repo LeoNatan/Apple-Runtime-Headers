@@ -15,9 +15,9 @@
 }
 
 + (id)attributes;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *autoRedEyeCorrections; // @synthesize autoRedEyeCorrections=_autoRedEyeCorrections;
 @property(copy, nonatomic) NSArray *redEyeCorrections; // @synthesize redEyeCorrections=_redEyeCorrections;
-- (void).cxx_destruct;
 - (BOOL)applySettingsDictionary:(id)arg1;
 - (id)settingsDictionary;
 - (void)addCorrection:(id)arg1;

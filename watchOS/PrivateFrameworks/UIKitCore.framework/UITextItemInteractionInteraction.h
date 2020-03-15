@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (_Bool)mightResponder:(id)arg1 haveInteractableTextItemAtPoint:(struct CGPoint)arg2;
++ (_Bool)mightResponder:(id)arg1 haveInteractableTextItemAtPoint:(struct CGPoint)arg2 precision:(unsigned int)arg3;
 + (_Bool)mightResponderHaveTextItemInteractions:(id)arg1;
 - (_Bool)_allowItemInteractions;
 

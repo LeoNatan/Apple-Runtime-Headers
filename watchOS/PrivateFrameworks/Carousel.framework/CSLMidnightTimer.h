@@ -16,8 +16,8 @@
     NSTimer *_internalTimer;
 }
 
-@property(retain, nonatomic) NSTimer *internalTimer; // @synthesize internalTimer=_internalTimer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTimer *internalTimer; // @synthesize internalTimer=_internalTimer;
 - (void)createTimerWithFireDate:(id)arg1;
 - (void)scheduleMidnightTimer;
 - (_Bool)timerIsPastMidnightFireDate;

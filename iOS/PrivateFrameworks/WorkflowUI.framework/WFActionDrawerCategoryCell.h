@@ -18,13 +18,13 @@
     NSArray *_horizontalStackConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *horizontalStackConstraints; // @synthesize horizontalStackConstraints=_horizontalStackConstraints;
 @property(retain, nonatomic) NSArray *verticalStackConstraints; // @synthesize verticalStackConstraints=_verticalStackConstraints;
 @property(retain, nonatomic) WFActionDrawerCategoriesMetrics *metrics; // @synthesize metrics=_metrics;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(nonatomic) _Bool shouldStackVertically; // @synthesize shouldStackVertically=_shouldStackVertically;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)configureWithWorkflowCategoryTitle:(id)arg1 icon:(id)arg2 shouldStackVertically:(_Bool)arg3;
 - (void)adjustStackingStyle;

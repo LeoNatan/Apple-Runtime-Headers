@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _value;
 }
 
-@property(retain) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain) id value; // @synthesize value=_value;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

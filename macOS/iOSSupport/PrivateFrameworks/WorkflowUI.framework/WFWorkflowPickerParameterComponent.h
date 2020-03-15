@@ -20,13 +20,13 @@
 }
 
 + (id)newWithParameter:(id)arg1 state:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 options:(struct WFParameterComponentOptions)arg4 variableProvider:(id)arg5 variableUIDelegate:(id)arg6 navigationContext:(id)arg7 labelsToAlignTo:(id)arg8;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL processing; // @synthesize processing=_processing;
 @property(readonly, nonatomic) id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(readonly, nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(readonly, nonatomic) WFVariableSubstitutableParameterState *state; // @synthesize state=_state;
 - (CDUnknownBlockType)updateBlock;
 - (id)parameter;
-- (void).cxx_destruct;
 
 @end
 

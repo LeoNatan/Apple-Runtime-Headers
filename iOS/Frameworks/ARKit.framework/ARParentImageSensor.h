@@ -9,11 +9,12 @@
 #import <ARKit/ARSensor-Protocol.h>
 #import <ARKit/AVCaptureAudioDataOutputSampleBufferDelegate-Protocol.h>
 
-@class ARParentImageSensorSettings, AVCaptureAudioDataOutput, AVCaptureConnection, AVCaptureDeviceInput, AVCaptureSession, NSMutableArray, NSString;
+@class ARBufferPopulationMonitor, ARParentImageSensorSettings, AVCaptureAudioDataOutput, AVCaptureConnection, AVCaptureDeviceInput, AVCaptureSession, NSMutableArray, NSString;
 @protocol ARSensorDelegate, OS_dispatch_queue;
 
 @interface ARParentImageSensor : NSObject <AVCaptureAudioDataOutputSampleBufferDelegate, ARSensor>
 {
+    ARBufferPopulationMonitor *_bufferPopulationMonitor;
     NSObject<OS_dispatch_queue> *_captureQueue;
     _Bool _recordingMode;
     _Bool _running;
@@ -29,6 +30,7 @@
     AVCaptureConnection *_audioConnection;
 }
 
+- (void).cxx_destruct;
 @property _Bool unrecoverable; // @synthesize unrecoverable=_unrecoverable;
 @property _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property _Bool running; // @synthesize running=_running;
@@ -41,9 +43,9 @@
 @property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *sensors; // @synthesize sensors=_sensors;
 @property(readonly, copy, nonatomic) ARParentImageSensorSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)captureSessionStateChanged:(id)arg1;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (_Bool)_validateMicrophoneAuthorization;
 - (_Bool)_validateCameraAuthorization;
@@ -60,7 +62,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

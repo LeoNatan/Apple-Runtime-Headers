@@ -56,6 +56,7 @@
 }
 
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long sectionInsetReference; // @synthesize sectionInsetReference=_sectionInsetReference;
 @property(nonatomic) struct CGSize estimatedItemSize; // @synthesize estimatedItemSize=_estimatedItemSize;
 @property(nonatomic) struct UIEdgeInsets sectionInset; // @synthesize sectionInset=_sectionInset;
@@ -64,11 +65,10 @@
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_interitemSpacing;
 @property(nonatomic) double minimumLineSpacing; // @synthesize minimumLineSpacing=_lineSpacing;
-- (void).cxx_destruct;
-- (int)_layoutAxis;
+- (unsigned long long)_layoutAxis;
 - (void)_didPerformUpdateVisibleCellsPass;
 - (void)_willPerformUpdateVisibleCellsPass;
-- (struct UIEdgeInsets)_adjustedSectionInsetForSectionInset:(struct UIEdgeInsets)arg1 forAxis:(int)arg2;
+- (struct UIEdgeInsets)_adjustedSectionInsetForSectionInset:(struct UIEdgeInsets)arg1 forAxis:(unsigned long long)arg2;
 - (long long)developmentLayoutDirection;
 - (struct CGPoint)_contentOffsetForScrollingToSection:(long long)arg1;
 - (struct UIEdgeInsets)_focusFastScrollingIndexBarInsets;

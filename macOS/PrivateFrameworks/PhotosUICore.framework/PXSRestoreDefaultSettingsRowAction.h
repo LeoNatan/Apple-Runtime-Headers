@@ -14,8 +14,8 @@
 }
 
 + (id)actionWithSettingsKeyPath:(id)arg1;
-@property(copy, nonatomic) NSString *settingsKeyPath; // @synthesize settingsKeyPath=_settingsKeyPath;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *settingsKeyPath; // @synthesize settingsKeyPath=_settingsKeyPath;
 - (id)init;
 
 @end

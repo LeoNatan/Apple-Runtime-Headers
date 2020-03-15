@@ -18,10 +18,10 @@
 + (id)buildRequiredOnlyWithEventtype:(id)arg1;
 + (id)buildWithEventtype:(id)arg1 withWeekdays:(id)arg2 withTime:(id)arg3;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadTime; // @synthesize payloadTime=_payloadTime;
 @property(copy, nonatomic) NSNumber *payloadWeekdays; // @synthesize payloadWeekdays=_payloadWeekdays;
 @property(copy, nonatomic) NSString *payloadEventtype; // @synthesize payloadEventtype=_payloadEventtype;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

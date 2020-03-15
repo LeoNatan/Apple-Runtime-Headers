@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     MNTraceRouteSimulator *_simulator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MNTraceRouteSimulator *simulator; // @synthesize simulator=_simulator;
 @property(nonatomic) unsigned long long voiceGuidanceLevel; // @synthesize voiceGuidanceLevel=_voiceGuidanceLevel;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)clearAllAnnouncements;
 - (void)stop;
 - (_Bool)vibrateForPrompt:(unsigned long long)arg1;

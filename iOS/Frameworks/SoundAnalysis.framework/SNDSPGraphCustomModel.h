@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _preProcessCallback;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType preProcessCallback; // @synthesize preProcessCallback=_preProcessCallback;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType preProcessCallback; // @synthesize preProcessCallback=_preProcessCallback;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithModelDescription:(id)arg1 expectedInputShape:(id)arg2 expectedOutputShape:(id)arg3 graph:(unique_ptr_7f3c0f79)arg4 error:(id *)arg5;
 

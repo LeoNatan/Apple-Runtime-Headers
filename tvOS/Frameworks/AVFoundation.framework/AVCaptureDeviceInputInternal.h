@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     AVCaptureDevice *device;
     NSArray *ports;
     _Bool ready;
+    float portraitLightingEffectStrength;
     AVWeakReference *weakReference;
     id <AVCallbackCancellation> deviceOpenCallbackInvoker;
 }

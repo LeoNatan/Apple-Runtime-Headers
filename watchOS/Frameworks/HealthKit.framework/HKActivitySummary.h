@@ -43,6 +43,7 @@
 + (_Bool)_validateActivitySummaryDateComponentsRange:(id)arg1 endDateComponents:(id)arg2 errorMessage:(id *)arg3;
 + (_Bool)_validateActivitySummaryDateComponents:(id)arg1 errorMessage:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isDataLoading, setter=_setDataLoading:) _Bool dataLoading; // @synthesize dataLoading=_dataLoading;
 @property(retain, nonatomic, getter=_dailyBriskMinutesStatistics, setter=_setDailyBriskMinutesStatistics:) NSArray *dailyBriskMinutesStatistics; // @synthesize dailyBriskMinutesStatistics=_dailyBriskMinutesStatistics;
 @property(retain, nonatomic, getter=_dailyEnergyBurnedStatistics, setter=_setDailyEnergyBurnedStatistics:) NSArray *dailyEnergyBurnedStatistics; // @synthesize dailyEnergyBurnedStatistics=_dailyEnergyBurnedStatistics;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic, getter=_creationDate, setter=_setCreationDate:) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic, getter=_endDate, setter=_setEndDate:) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic, getter=_startDate, setter=_setStartDate:) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)_initWithActivityCache:(id)arg1 shouldIncludePrivateProperties:(_Bool)arg2;
 - (double)_percentageCompleteWithQuantity:(id)arg1 goalQuantity:(id)arg2 unit:(id)arg3;
 @property(readonly, nonatomic, getter=_standHoursCompletionPercentage) double standHoursCompletionPercentage;

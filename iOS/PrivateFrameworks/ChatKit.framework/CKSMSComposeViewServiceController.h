@@ -15,6 +15,7 @@
 @interface CKSMSComposeViewServiceController : UINavigationController <CKComposeChatControllerDelegate, CKSMSComposeViewServiceProtocol>
 {
     _Bool _canEditRecipients;
+    _Bool _shouldDisableEntryField;
     _Bool _supportsAttachments;
     _Bool _supportsMessageInspection;
     _Bool _forceMMS;
@@ -34,11 +35,11 @@
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
 + (_Bool)_isSecureForRemoteViewService;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType entryViewCompletion; // @synthesize entryViewCompletion=_entryViewCompletion;
 @property(copy, nonatomic) CDUnknownBlockType gameCenterPickerBlock; // @synthesize gameCenterPickerBlock=_gameCenterPickerBlock;
 @property(nonatomic) __weak id <CKSMSComposeViewServiceControllerDelegate> composeDelegate; // @synthesize composeDelegate=_composeDelegate;
 @property(retain, nonatomic) CKModalTranscriptController *modalTranscriptController; // @synthesize modalTranscriptController=_modalTranscriptController;
-- (void).cxx_destruct;
 - (void)donateInteractionWithConversation:(id)arg1;
 - (void)_willAppearInRemoteViewController;
 - (_Bool)supportsMessageInspection;
@@ -58,6 +59,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)setTextEntryContentsVisible:(_Bool)arg1;
 - (void)disableCameraAttachments;
+@property(nonatomic) _Bool shouldDisableEntryField; // @dynamic shouldDisableEntryField;
 @property(nonatomic) _Bool canEditRecipients; // @dynamic canEditRecipients;
 - (void)setPendingAddresses:(id)arg1;
 - (void)setShareSheetSessionID:(id)arg1;

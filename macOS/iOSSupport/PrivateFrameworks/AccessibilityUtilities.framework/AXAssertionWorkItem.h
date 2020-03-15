@@ -16,11 +16,11 @@
     unsigned long long _retries;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long retries; // @synthesize retries=_retries;
 @property(readonly, nonatomic) BOOL acquire; // @synthesize acquire=_acquire;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(id)arg1 identifier:(id)arg2 isAcquisition:(BOOL)arg3;
 
 @end

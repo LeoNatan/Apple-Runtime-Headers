@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSData *_externalData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *acmHandle; // @synthesize acmHandle=_acmHandle;
 @property(retain, nonatomic) NSData *externalData; // @synthesize externalData=_externalData;
 @property(retain, nonatomic) NSData *accessGroups; // @synthesize accessGroups=_accessGroups;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

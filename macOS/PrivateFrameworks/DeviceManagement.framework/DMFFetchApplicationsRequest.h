@@ -20,13 +20,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(nonatomic) unsigned long long stateFilter; // @synthesize stateFilter=_stateFilter;
 @property(nonatomic) unsigned long long typeFilter; // @synthesize typeFilter=_typeFilter;
 @property(nonatomic) BOOL deleteFeedback; // @synthesize deleteFeedback=_deleteFeedback;
 @property(nonatomic) BOOL excludeUnmanagedApps; // @synthesize excludeUnmanagedApps=_excludeUnmanagedApps;
 @property(nonatomic) BOOL excludeIcon; // @synthesize excludeIcon=_excludeIcon;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

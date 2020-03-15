@@ -27,11 +27,11 @@
     CDUnknownBlockType _textInputDidEnd;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType textInputDidEnd; // @synthesize textInputDidEnd=_textInputDidEnd;
 @property(copy, nonatomic) CDUnknownBlockType textInputDidBegin; // @synthesize textInputDidBegin=_textInputDidBegin;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)handleTextActionPayload:(id)arg1;
 - (void)inputSystemService:(id)arg1 inputSessionDocumentDidChange:(id)arg2;
 - (void)inputSystemService:(id)arg1 inputSessionDidUnpause:(id)arg2 withReason:(id)arg3;
@@ -46,7 +46,7 @@
 - (void)fireEventHandlerWithPayload:(id)arg1;
 - (void)flushOperations;
 - (void)handleUsername:(id)arg1 password:(id)arg2;
-- (void)handleTextInputData:(struct NSDictionary *)arg1;
+- (void)handleTextInputData:(id)arg1;
 @property(readonly, nonatomic) RTIInputSystemSourceSession *sourceSession;
 @property(readonly, copy, nonatomic) NSDictionary *currentPayload;
 - (void)_cleanup;

@@ -6,13 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@interface PTRowAction : NSObject
+#import <PrototypeTools/NSSecureCoding-Protocol.h>
+
+@interface PTRowAction : NSObject <NSSecureCoding>
 {
     CDUnknownBlockType _handler;
+    BOOL _isEncodable;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)actionWithHandler:(CDUnknownBlockType)arg1;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isEncodable; // @synthesize isEncodable=_isEncodable;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (CDUnknownBlockType)defaultHandler;
 - (BOOL)deselectsRowOnSuccess;
 @property(readonly, nonatomic) CDUnknownBlockType handler;

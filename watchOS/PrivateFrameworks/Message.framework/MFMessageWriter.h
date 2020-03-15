@@ -20,10 +20,10 @@
     NSDictionary *_compositionSpecification;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldWriteAttachmentPlaceholders; // @synthesize shouldWriteAttachmentPlaceholders=_shouldWriteAttachmentPlaceholders;
 @property(readonly, nonatomic) NSDictionary *compositionSpecification; // @synthesize compositionSpecification=_compositionSpecification;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setMessageClassToInstantiate:(Class)arg1;
 - (void)setWriteSizeDispositionParameter:(_Bool)arg1;
 - (void)setAllowsQuotedPrintable:(_Bool)arg1;

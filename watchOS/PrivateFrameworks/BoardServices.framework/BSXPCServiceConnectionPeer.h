@@ -22,8 +22,8 @@
 + (id)_allPeers;
 + (void)invalidateConnection:(id)arg1;
 + (id)peerOfConnection:(id)arg1;
-@property(readonly, retain, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

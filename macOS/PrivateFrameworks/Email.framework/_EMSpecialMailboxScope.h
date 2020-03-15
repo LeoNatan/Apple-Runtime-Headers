@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (BOOL)scopeContainsMailboxObjectID:(id)arg1 mailboxTypeResolver:(id)arg2;
 - (BOOL)scopeContainsMailbox:(id)arg1;
 - (id)allMailboxObjectIDsWithMailboxTypeResolver:(id)arg1 forExclusion:(char *)arg2;

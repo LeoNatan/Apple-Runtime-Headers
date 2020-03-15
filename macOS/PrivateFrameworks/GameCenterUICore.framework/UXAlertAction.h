@@ -19,11 +19,11 @@
 }
 
 + (id)actionWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly) long long style; // @synthesize style=_style;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

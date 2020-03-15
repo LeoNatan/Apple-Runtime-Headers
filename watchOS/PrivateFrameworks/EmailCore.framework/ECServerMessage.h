@@ -22,12 +22,12 @@
     NSSet *_labels;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *labels; // @synthesize labels=_labels;
 @property(copy, nonatomic) NSString *remoteID; // @synthesize remoteID=_remoteID;
 @property(retain, nonatomic) ECMessageFlags *serverFlags; // @synthesize serverFlags=_serverFlags;
 @property(retain, nonatomic) NSString *messagePersistentID; // @synthesize messagePersistentID=_messagePersistentID;
 @property(retain, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id remoteIDObject;
 - (void)setImapUID:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int imapUID;

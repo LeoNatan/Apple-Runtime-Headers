@@ -15,8 +15,8 @@
     CUISAlertPolicy *_presentationPolicy;
 }
 
-@property(nonatomic) __weak CUISAlertPolicy *presentationPolicy; // @synthesize presentationPolicy=_presentationPolicy;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CUISAlertPolicy *presentationPolicy; // @synthesize presentationPolicy=_presentationPolicy;
 - (unsigned int)allowedAudioFeedbackForAlertName:(id)arg1 options:(unsigned int)arg2;
 - (unsigned int)allowedAudioFeedbackForAlertName:(id)arg1;
 

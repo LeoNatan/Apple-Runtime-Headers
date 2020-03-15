@@ -25,6 +25,7 @@
 
 + (void)_getTokenRanges:(struct _NSRange [8])arg1 fromCompressedRanges:(unsigned long long [2])arg2;
 + (void)getCompressedRanges:(unsigned long long [2])arg1 fromTokenRanges:(CDStruct_627e0f85 *)arg2 count:(long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) struct __CFArray *collectionIds; // @synthesize collectionIds=_collectionIds;
 @property(retain, nonatomic) struct __CFArray *assetIds; // @synthesize assetIds=_assetIds;
 @property(readonly, nonatomic) NSString *lookupIdentifier; // @synthesize lookupIdentifier=_lookupIdentifier;
@@ -33,7 +34,6 @@
 @property(nonatomic) short category; // @synthesize category=_category;
 @property(nonatomic) unsigned long long owningGroupId; // @synthesize owningGroupId=_owningGroupId;
 @property(nonatomic) unsigned long long groupId; // @synthesize groupId=_groupId;
-- (void).cxx_destruct;
 - (void)unionIdsWithGroup:(id)arg1;
 - (void)unionCollectionIdsWithGroup:(id)arg1;
 - (unsigned long long)groupIdForObjectLookup;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIView *_customStatusBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customStatusBackgroundView; // @synthesize customStatusBackgroundView=_customStatusBackgroundView;
 @property(retain, nonatomic) CKNavbarCanvasViewController *avatarNavbarCanvasViewController; // @synthesize avatarNavbarCanvasViewController=_avatarNavbarCanvasViewController;
 @property(retain, nonatomic) CKComposeNavbarCanvasViewController *defaultNavbarCanvasViewController; // @synthesize defaultNavbarCanvasViewController=_defaultNavbarCanvasViewController;
 @property(retain, nonatomic) CKComposeNavbarManagerContentView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)commitTransitionAnimationWithConversation:(id)arg1 shouldShowBackButtonView:(_Bool)arg2;
 - (void)_setupAvatarNavBarViewControllerWithConversation:(id)arg1 shouldShowBackButtonView:(_Bool)arg2;
 - (void)_setupDefaultNavbarCanvasViewController;

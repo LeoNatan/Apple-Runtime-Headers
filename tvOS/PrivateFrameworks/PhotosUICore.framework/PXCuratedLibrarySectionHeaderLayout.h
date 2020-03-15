@@ -75,6 +75,7 @@
     struct CGRect _titleSubtitleFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double titleSubtitleLastBaseline; // @synthesize titleSubtitleLastBaseline=_titleSubtitleLastBaseline;
 @property(nonatomic) double titleSubtitleTopSpacing; // @synthesize titleSubtitleTopSpacing=_titleSubtitleTopSpacing;
 @property(nonatomic) double buttonsMaxY; // @synthesize buttonsMaxY=_buttonsMaxY;
@@ -113,7 +114,6 @@
 @property(retain, nonatomic) PXAssetCollectionReference *assetCollectionReference; // @synthesize assetCollectionReference=_assetCollectionReference;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)hitTestResultForSpriteIndex:(unsigned int)arg1;
 - (id)_configurationForButton:(unsigned long long)arg1;
 - (void)_discardAllCachedButtonSizes;

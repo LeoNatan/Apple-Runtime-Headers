@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fontWithSubfamily:(id)arg1 bold:(BOOL)arg2 italic:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL italic; // @synthesize italic=_italic;
 @property(nonatomic) BOOL bold; // @synthesize bold=_bold;
 @property(readonly, nonatomic) OCFontSubfamily *subfamily; // @synthesize subfamily=_subfamily;
-- (void).cxx_destruct;
 - (id)initWithSubfamily:(id)arg1 bold:(BOOL)arg2 italic:(BOOL)arg3;
 
 @end

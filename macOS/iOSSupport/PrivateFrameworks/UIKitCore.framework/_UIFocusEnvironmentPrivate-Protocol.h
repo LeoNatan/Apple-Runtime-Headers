@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIFocusEnvironment-Protocol.h>
 
-@class NSArray;
+@class NSArray, _UIFocusGroupDescriptor;
 
 @protocol _UIFocusEnvironmentPrivate <UIFocusEnvironment>
 
@@ -15,6 +15,7 @@
 @property(readonly, nonatomic, getter=_preferredFocusMovementStyle) long long preferredFocusMovementStyle;
 @property(readonly, nonatomic, getter=_isEligibleForFocusInteraction) BOOL eligibleForFocusInteraction;
 @property(nonatomic) BOOL areChildrenFocused;
+- (_UIFocusGroupDescriptor *)_focusGroupDescriptor;
 - (BOOL)_reversesLinearFocusWrapping;
 - (void)_setNeedsNonDeferredFocusUpdate;
 - (BOOL)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;

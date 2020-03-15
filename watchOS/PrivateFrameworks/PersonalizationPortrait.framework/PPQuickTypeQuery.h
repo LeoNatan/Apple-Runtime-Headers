@@ -39,6 +39,7 @@
 + (id)quickTypeQueryWithType:(unsigned char)arg1 subtype:(unsigned char)arg2 semanticTag:(unsigned char)arg3 fields:(unsigned int)arg4 time:(unsigned char)arg5 options:(unsigned char)arg6 subFields:(id)arg7 label:(id)arg8 people:(id)arg9 localeIdentifier:(id)arg10 bundleIdentifier:(id)arg11 recipients:(id)arg12;
 + (id)quickTypeQueryWithType:(unsigned char)arg1 subtype:(unsigned char)arg2 semanticTag:(unsigned char)arg3 fields:(unsigned int)arg4 time:(unsigned char)arg5 subFields:(id)arg6 label:(id)arg7 people:(id)arg8 localeIdentifier:(id)arg9 bundleIdentifier:(id)arg10 recipients:(id)arg11;
 + (id)quickTypeQueryFromLMTokens:(id)arg1 localeIdentifier:(id)arg2 recipients:(id)arg3 bundleIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned char semanticTag; // @synthesize semanticTag=_semanticTag;
 @property(nonatomic) unsigned char subtype; // @synthesize subtype=_subtype;
 @property(nonatomic) unsigned char type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)isResultEquivelentToQuickTypeQuery:(id)arg1;
 - (_Bool)isEqualToQuickTypeQuery:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

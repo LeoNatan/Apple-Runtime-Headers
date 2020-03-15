@@ -16,11 +16,11 @@
     struct CGPoint _startLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint startLocation; // @synthesize startLocation=_startLocation;
 @property(retain, nonatomic) UITouch *gestureTouch; // @synthesize gestureTouch=_gestureTouch;
 @property(nonatomic) _Bool hasRecognized; // @synthesize hasRecognized=_hasRecognized;
 @property(nonatomic) double stationaryFingerTimeout; // @synthesize stationaryFingerTimeout=_stationaryFingerTimeout;
-- (void).cxx_destruct;
 - (_Bool)_pointShouldBeRecognized:(struct CGPoint)arg1;
 - (_Bool)_pointInsideRecognitionPossibleArea:(struct CGPoint)arg1;
 - (void)_stationaryFingerTimerFired;

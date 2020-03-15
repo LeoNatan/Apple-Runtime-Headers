@@ -55,6 +55,8 @@
 - (_Bool)canvasEditorCanCopyWithSender:(id)arg1;
 - (_Bool)canvasEditorCanDeleteWithSender:(id)arg1;
 - (_Bool)canCopyStyle;
+- (void)beginAutomaticTextEditingIfNeededForPoint:(struct CGPoint)arg1;
+- (_Bool)allowAutomaticTextEditingToBeginWithDifferentEditor;
 - (id)pasteboardController;
 - (void)setSelectionToRep:(id)arg1;
 - (void)setSelection:(id)arg1 withFlags:(unsigned long long)arg2;

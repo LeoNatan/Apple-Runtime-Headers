@@ -34,9 +34,9 @@
     _UIKeyboardChangedInformation *_lastUpdate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIKeyboardChangedInformation *lastUpdate; // @synthesize lastUpdate=_lastUpdate;
 @property(readonly, nonatomic) id <_UIKeyboardArbiterLink> sceneLink; // @synthesize sceneLink=_sceneLink;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_clearLastEventSource:(id)arg1;
 - (void)signalEventSourceChanged:(long long)arg1 fromHandler:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

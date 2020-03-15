@@ -14,8 +14,8 @@
 }
 
 + (id)cellIdentifier;
-@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)updateAvatarImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

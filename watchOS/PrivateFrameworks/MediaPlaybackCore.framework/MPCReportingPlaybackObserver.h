@@ -31,13 +31,13 @@
     unsigned long long _storeAccountID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storeFrontID; // @synthesize storeFrontID=_storeFrontID;
 @property(nonatomic) unsigned long long storeAccountID; // @synthesize storeAccountID=_storeAccountID;
 @property(nonatomic, getter=isSBEnabled) _Bool SBEnabled; // @synthesize SBEnabled=_SBEnabled;
 @property(readonly, nonatomic) MPCReportingController *reportingController; // @synthesize reportingController=_reportingController;
 @property(nonatomic, getter=isOffline) _Bool offline; // @synthesize offline=_offline;
 @property(readonly, nonatomic) MPAVController *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (double)_itemStartTimeForItem:(id)arg1;
 - (double)_itemEndTimeForItem:(id)arg1 withProposedEndTime:(double)arg2;
 - (void)_setLastPlayEventEndTime:(double)arg1 forItemContentItemID:(id)arg2;

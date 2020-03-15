@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     AMSURLTaskInfo *_taskInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) AMSURLTaskInfo *taskInfo; // @synthesize taskInfo=_taskInfo;
 @property(retain) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(readonly) long long dialogKind; // @synthesize dialogKind=_dialogKind;
-- (void).cxx_destruct;
 - (id)_valueForProtocolKey:(id)arg1;
 @property(readonly) NSURL *versionMismatchURL;
 @property(readonly) BOOL supportedProtocolVersion;

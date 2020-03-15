@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *aggregatesByFeatureKey; // @synthesize aggregatesByFeatureKey=_aggregatesByFeatureKey;
 @property(copy, nonatomic) NTPBPersonalizationProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKNicknamePreviewView *_nicknamePreviewView;
 }
 
-@property(retain, nonatomic) CKNicknamePreviewView *nicknamePreviewView; // @synthesize nicknamePreviewView=_nicknamePreviewView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKNicknamePreviewView *nicknamePreviewView; // @synthesize nicknamePreviewView=_nicknamePreviewView;
 - (double)_contentViewHeight;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;

@@ -16,8 +16,8 @@
     id <FCPaymentTransactionObserverDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FCPaymentTransactionObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FCPaymentTransactionObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)failedTransaction:(id)arg1;
 - (void)finishTransaction:(id)arg1;
 - (void)paymentQueue:(id)arg1 updatedTransactions:(id)arg2;

@@ -19,10 +19,10 @@
     VCRealmDataStore *_realmDataStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VCRealmDataStore *realmDataStore; // @synthesize realmDataStore=_realmDataStore;
 @property(readonly, copy, nonatomic) NSPersistentStoreDescription *storeDescription; // @synthesize storeDescription=_storeDescription;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)requestDataMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)addExtraVocabForDemoIfAppropriate:(id)arg1;
 - (void)requestShortcutsSpotlightFullReindex;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UILabel *_priceLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setBackgroundColor:(id)arg1;

@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_grabberDot;
+- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=m_orientation;
 @property(nonatomic) BOOL animating; // @synthesize animating=m_animating;
 @property(nonatomic) BOOL navigationTransitionFlattened; // @synthesize navigationTransitionFlattened=m_navigationTransitionFlattened;
 @property(nonatomic) BOOL activeFlattened; // @synthesize activeFlattened=m_activeFlattened;
 @property(nonatomic) BOOL alertFlattened; // @synthesize alertFlattened=m_alertFlattened;
 @property(nonatomic) BOOL isDotted; // @synthesize isDotted=m_isDotted;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)didMoveToSuperview;
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)transitionDot:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)animateGrabberOutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animateGrabberInWithCompletion:(CDUnknownBlockType)arg1;
+- (void)redrawDotForScale:(double)arg1;
 - (void)updateDot;
 - (BOOL)scroller:(id)arg1 fullyContainSelectionRect:(struct CGRect)arg2;
 - (BOOL)dotIsVisibleInDocument:(struct CGRect)arg1;

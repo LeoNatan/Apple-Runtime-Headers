@@ -26,6 +26,7 @@
     TPSURLSessionItem *_sectionImageURLSessionItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TPSURLSessionItem *sectionImageURLSessionItem; // @synthesize sectionImageURLSessionItem=_sectionImageURLSessionItem;
 @property(retain, nonatomic) UIImageView *sectionImageView; // @synthesize sectionImageView=_sectionImageView;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool closed; // @synthesize closed=_closed;
 @property(nonatomic) _Bool ignoreLevels; // @synthesize ignoreLevels=_ignoreLevels;
 @property(nonatomic) _Bool showFirstLevelIcon; // @synthesize showFirstLevelIcon=_showFirstLevelIcon;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)updateToggleImageAnimated:(_Bool)arg1;
 - (struct CGAffineTransform)arrowTransform;

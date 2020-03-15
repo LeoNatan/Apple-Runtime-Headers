@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) NSArray *imageElements; // @synthesize imageElements=_imageElements;
 @property(retain, nonatomic) VideosExtrasSlideshowViewController *slideshowViewController; // @synthesize slideshowViewController=_slideshowViewController;
-- (void).cxx_destruct;
 - (void)_toggleVisibilityOfNavigationBar;
 - (void)_firstImageLoadedHideNavigationBar;
 - (void)_handleTap:(id)arg1;

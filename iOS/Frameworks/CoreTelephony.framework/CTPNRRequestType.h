@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pnrReqList; // @synthesize pnrReqList=_pnrReqList;
 @property(retain, nonatomic) NSNumber *attemptCount; // @synthesize attemptCount=_attemptCount;
 @property(retain, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

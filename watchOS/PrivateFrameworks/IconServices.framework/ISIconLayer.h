@@ -22,6 +22,7 @@
     unsigned int _iconShape;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool drawBorder; // @synthesize drawBorder=_drawBorder;
 @property(nonatomic) _Bool shouldApplyMask; // @synthesize shouldApplyMask=_shouldApplyMask;
 @property(nonatomic) unsigned int iconShape; // @synthesize iconShape=_iconShape;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned int backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) unsigned int variantOptions; // @synthesize variantOptions=_variantOptions;
 @property(nonatomic) unsigned int badgeOptions; // @synthesize badgeOptions=_badgeOptions;
-- (void).cxx_destruct;
 - (void)iconManager:(id)arg1 didInvalidateIcons:(id)arg2;
 - (id)initWithIcon:(id)arg1;
 - (id)init;

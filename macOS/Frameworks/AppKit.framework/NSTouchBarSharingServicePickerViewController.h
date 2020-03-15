@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSStackView *_stackView;
 }
 
-@property __weak id <NSSharingServicePickerTouchBarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <NSSharingServicePickerTouchBarItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;

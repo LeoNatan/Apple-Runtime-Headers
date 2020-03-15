@@ -26,6 +26,7 @@
     NSArray *_allowedUTIs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isContentManaged, setter=_setIsContentManaged:) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(copy, nonatomic) NSArray *allowedUTIs; // @synthesize allowedUTIs=_allowedUTIs;
 @property(copy, nonatomic) NSURL *uploadURL; // @synthesize uploadURL=_uploadURL;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSMutableArray *auxiliaryOptions; // @synthesize auxiliaryOptions=_auxiliaryOptions;
 @property(nonatomic) __weak id <UIDocumentMenuDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=_ignoreApplicationEntitlementForImport, setter=_setIgnoreApplicationEntitlementForImport:) _Bool _ignoreApplicationEntitlementForImport; // @synthesize _ignoreApplicationEntitlementForImport;
-- (void).cxx_destruct;
 - (void)setModalPresentationStyle:(long long)arg1;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_dismissViewController;

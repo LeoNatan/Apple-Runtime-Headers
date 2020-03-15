@@ -14,9 +14,9 @@
     unsigned long long _dataOrientation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long dataOrientation; // @synthesize dataOrientation=_dataOrientation;
 @property(readonly, nonatomic) SXDataRecordStore *recordStore; // @synthesize recordStore=_recordStore;
-- (void).cxx_destruct;
 - (id)descriptorForIndexPath:(CDStruct_2fea82da)arg1;
 - (id)conditionEngineForSelector:(id)arg1 forIndexPath:(CDStruct_2fea82da)arg2;
 - (_Bool)validateCellSelector:(id)arg1 forIndexPath:(CDStruct_2fea82da)arg2;

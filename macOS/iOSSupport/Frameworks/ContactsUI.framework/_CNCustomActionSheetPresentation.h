@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long permittedArrowDirections; // @synthesize permittedArrowDirections=_permittedArrowDirections;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
-- (void).cxx_destruct;
 - (void)actionSheetPresentationControllerDidDismissActionSheet:(id)arg1;
 - (id)presentedViewController;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;

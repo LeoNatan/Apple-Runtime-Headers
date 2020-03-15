@@ -15,10 +15,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) long long selectionOperation; // @synthesize selectionOperation=_selectionOperation;
 @property(retain, nonatomic) MPAVRoute *route; // @synthesize route=_route;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRoute:(id)arg1 selectionOperation:(long long)arg2;
 

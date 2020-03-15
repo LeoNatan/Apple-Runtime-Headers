@@ -27,6 +27,7 @@
 + (void)_configureFloatingContentViewAppearance;
 + (long long)_contentModeForStyle:(long long)arg1;
 + (id)_imageForSymbolName:(id)arg1 style:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TVSMHighContrastFocusView *highContrastFocusView; // @synthesize highContrastFocusView=_highContrastFocusView;
 @property(readonly, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *imageSymbolName; // @synthesize imageSymbolName=_imageSymbolName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)updateAppearanceForLockupViewState:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

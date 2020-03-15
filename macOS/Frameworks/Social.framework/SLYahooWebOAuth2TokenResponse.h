@@ -23,6 +23,7 @@
     NSString *_idToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *idToken; // @synthesize idToken=_idToken;
 @property(readonly) NSString *token; // @synthesize token=_token;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
@@ -32,7 +33,6 @@
 @property(readonly) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) NSDictionary *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 
 // Remaining properties

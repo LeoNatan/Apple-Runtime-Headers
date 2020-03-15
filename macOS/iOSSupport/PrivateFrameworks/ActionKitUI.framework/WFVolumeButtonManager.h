@@ -12,11 +12,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _pressHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType pressHandler; // @synthesize pressHandler=_pressHandler;
 - (void).cxx_destruct;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+@property(copy, nonatomic) CDUnknownBlockType pressHandler; // @synthesize pressHandler=_pressHandler;
+- (void)volumeButtonPressed;
 - (void)dealloc;
-- (id)initWithView:(id)arg1 pressHandler:(CDUnknownBlockType)arg2;
+- (id)initWithPressHandler:(CDUnknownBlockType)arg1;
 
 @end
 

@@ -24,8 +24,8 @@
 + (BOOL)_isMatchedExtension:(id)arg1 forBundleIdentifier:(id)arg2;
 + (void)_sendNotificationsLoadedExtensions:(id)arg1 new:(id)arg2 removed:(id)arg3;
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSArray *loadedExtensions; // @synthesize loadedExtensions=_loadedExtensions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *loadedExtensions; // @synthesize loadedExtensions=_loadedExtensions;
 - (void)_doEndMatchingExtensions;
 - (void)_doBeginMatchingExtensions;
 - (BOOL)isLoadedExtensionWithBundleIdentifer:(id)arg1;

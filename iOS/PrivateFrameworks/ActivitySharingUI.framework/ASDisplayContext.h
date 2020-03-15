@@ -28,6 +28,7 @@
 + (id)_gizmoContext;
 + (id)_companionContext;
 + (void)_contentSizeChangeForContext:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *keyColors; // @synthesize keyColors=_keyColors;
 @property(retain, nonatomic) NSDictionary *titleColors; // @synthesize titleColors=_titleColors;
 @property(retain, nonatomic) UIFont *descriptionFont; // @synthesize descriptionFont=_descriptionFont;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UIFont *multilineDataFont; // @synthesize multilineDataFont=_multilineDataFont;
 @property(retain, nonatomic) UIFont *dataFont; // @synthesize dataFont=_dataFont;
 @property(retain, nonatomic) UIFont *nameFont; // @synthesize nameFont=_nameFont;
-- (void).cxx_destruct;
 - (id)keyColorForDisplayMode:(long long)arg1;
 - (id)titleColorForDisplayMode:(long long)arg1;
 

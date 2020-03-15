@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (Class)idsToArchiveType;
 + (id)options;
-@property(retain, nonatomic) NSMutableArray *idsToArchives; // @synthesize idsToArchives=_idsToArchives;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *idsToArchives; // @synthesize idsToArchives=_idsToArchives;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

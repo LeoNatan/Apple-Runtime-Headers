@@ -8,7 +8,10 @@
 
 @interface NSLocale (HealthKit)
 + (_Bool)hk_isUSLocale;
++ (id)hk_testablePreferredLanguages;
++ (void)hk_setTestPreferredLanguages:(id)arg1;
 + (id)hk_testableAutoupdatingCurrentLocale;
++ (id)hk_testableCurrentLocale;
 + (void)hk_setTestLocale:(id)arg1;
 - (_Bool)hk_isEquivalent:(id)arg1;
 @property(readonly, nonatomic) _Bool hk_isUSLocale;

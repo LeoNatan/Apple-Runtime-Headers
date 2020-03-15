@@ -29,11 +29,11 @@
 }
 
 + (id)_imageRequestOptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXCMMSuggestion> suggestion; // @synthesize suggestion=_suggestion;
 @property(readonly, nonatomic) id <PXCMMWorkflowPresenting> workflowPresenter; // @synthesize workflowPresenter=_workflowPresenter;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
-- (void).cxx_destruct;
 - (void)presentDetailViewForSuggestionView:(id)arg1 animated:(_Bool)arg2;
 - (void)suggestionViewSizeThatFitsDidChange:(id)arg1;
 - (void)dynamicUserInterfaceTraitDidChange;
@@ -45,17 +45,18 @@
 - (void)_updatePeopleSuggestionFaceTileImagesForPersons:(id)arg1 mutableViewModel:(id)arg2;
 - (void)_loadSuggestionIfNecessary;
 - (void)commitPreviewViewController:(id)arg1;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
-- (struct NSObject *)targetPreviewViewForLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
+- (id)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(id)arg2;
+- (id)targetPreviewViewForLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)prefetchDuringScrollingForWidth:(double)arg1;
 - (void)contentHasBeenSeen;
 - (id)uniqueGadgetIdentifier;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
+- (_Bool)supportsHighlighting;
 - (void)gadgetControllerHasAppeared;
-- (void)prepareCollectionViewItem:(struct UICollectionViewCell *)arg1;
+- (void)prepareCollectionViewItem:(id)arg1;
 @property(readonly, nonatomic) Class collectionViewItemClass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)ppt_presentComposeRecipientViewAfterDelay:(double)arg1;
 - (void)presentDetailViewAnimated:(_Bool)arg1;
@@ -72,8 +73,6 @@
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(nonatomic) long long priority;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

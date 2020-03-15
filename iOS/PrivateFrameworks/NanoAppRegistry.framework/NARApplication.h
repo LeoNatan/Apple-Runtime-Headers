@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *iTunesPlistStrings; // @synthesize iTunesPlistStrings=_iTunesPlistStrings;
 @property(retain, nonatomic) NSDictionary *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
 @property(retain, nonatomic) NSDictionary *infoPlist; // @synthesize infoPlist=_infoPlist;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *parentApplicationBundleIdentifier; // @synthesize parentApplicationBundleIdentifier=_parentApplicationBundleIdentifier;
 @property(copy, nonatomic) NSString *launchServicesBundleType; // @synthesize launchServicesBundleType=_launchServicesBundleType;
 @property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NARGlance *glance;
 - (id)description;
 - (id)objectForInfoDictionaryKey:(id)arg1 localization:(id)arg2;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_filterType;
 }
 
-@property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
 - (id)description;
 - (BOOL)canTransitionToEffect:(id)arg1;
 - (BOOL)isSameTypeOfEffect:(id)arg1;

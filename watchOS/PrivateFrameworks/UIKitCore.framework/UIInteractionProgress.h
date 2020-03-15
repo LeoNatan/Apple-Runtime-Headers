@@ -18,8 +18,8 @@
     float _percentComplete;
 }
 
-@property(readonly, nonatomic) float percentComplete; // @synthesize percentComplete=_percentComplete;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) float percentComplete; // @synthesize percentComplete=_percentComplete;
 - (int)numberOfObservers;
 - (void)removeProgressObserver:(id)arg1;
 - (void)addProgressObserver:(id)arg1;

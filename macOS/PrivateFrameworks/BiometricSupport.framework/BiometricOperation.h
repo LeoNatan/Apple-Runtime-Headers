@@ -16,11 +16,11 @@
     long long _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int cancelledMessage; // @synthesize cancelledMessage=_cancelledMessage;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) BiometricKitXPCExportedClientObject *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int taskResumeFailedMessage;
 @property(readonly, nonatomic) unsigned int taskResumedMessage;
 @property(readonly, nonatomic) unsigned int taskPausedMessage;

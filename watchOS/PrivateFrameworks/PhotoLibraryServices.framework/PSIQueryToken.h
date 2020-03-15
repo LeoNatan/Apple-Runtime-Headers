@@ -33,6 +33,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)stringForMatchType:(unsigned int)arg1;
 + (id)personQueryTokensFromSocialGroupQueryToken:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dateAttributes; // @synthesize dateAttributes=_dateAttributes;
 @property(retain, nonatomic) NSMutableSet *collectionIds; // @synthesize collectionIds=_collectionIds;
 @property(retain, nonatomic) NSMutableSet *assetIds; // @synthesize assetIds=_assetIds;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSIndexSet *searchedCategories; // @synthesize searchedCategories=_searchedCategories;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)replaceIdentifier:(id)arg1;

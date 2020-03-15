@@ -24,6 +24,7 @@
     NSString *_downloadBatchPerfGUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *downloadBatchPerfGUID; // @synthesize downloadBatchPerfGUID=_downloadBatchPerfGUID;
 @property(retain, nonatomic) NSString *objectGUID; // @synthesize objectGUID=_objectGUID;
 @property(nonatomic) _Bool isWaitingForFirstDownloadEvent; // @synthesize isWaitingForFirstDownloadEvent=_isWaitingForFirstDownloadEvent;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSMutableDictionary *assetToItemInFlightMap; // @synthesize assetToItemInFlightMap=_assetToItemInFlightMap;
 @property(retain, nonatomic) NSMutableArray *itemsInFlight; // @synthesize itemsInFlight=_itemsInFlight;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)didFinishGettingAllAssets;
 - (void)MMCSEngine:(id)arg1 didMakeGetProgress:(float)arg2 state:(int)arg3 onAsset:(id)arg4;
 - (id)_orphanedAssetError;

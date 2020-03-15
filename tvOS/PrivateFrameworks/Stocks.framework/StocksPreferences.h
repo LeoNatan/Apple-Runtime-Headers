@@ -18,10 +18,10 @@
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool textAttachmentDirectionIsRightToLeft; // @synthesize textAttachmentDirectionIsRightToLeft=_textAttachmentDirectionIsRightToLeft;
 @property(readonly, nonatomic) unsigned long long textDirection; // @synthesize textDirection=_textDirection;
 @property(readonly, nonatomic, getter=isChangeColorSwapped) _Bool changeColorSwapped; // @synthesize changeColorSwapped=_changeColorSwapped;
-- (void).cxx_destruct;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;

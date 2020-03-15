@@ -16,10 +16,10 @@
     id <FCChannelProviding> _channel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCChannelProviding> channel; // @synthesize channel=_channel;
 @property(readonly, nonatomic) NSMutableArray *headlines; // @synthesize headlines=_headlines;
 @property(readonly, nonatomic) NSArray *paths; // @synthesize paths=_paths;
-- (void).cxx_destruct;
 - (void)convertPathsToHeadlines;
 - (void)performOperation;
 - (id)initWithPaths:(id)arg1 andChannel:(id)arg2;

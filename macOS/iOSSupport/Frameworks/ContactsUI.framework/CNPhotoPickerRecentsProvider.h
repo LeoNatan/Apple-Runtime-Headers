@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CNContact *_contact;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) BOOL containsMonogram; // @synthesize containsMonogram=_containsMonogram;
 @property(nonatomic) BOOL containsContactImage; // @synthesize containsContactImage=_containsContactImage;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (id)providerItemForContactImage:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 RTL:(BOOL)arg4 renderingQueue:(id)arg5 callbackQueue:(id)arg6;
 - (id)loadItemsForSize:(struct CGSize)arg1 scale:(double)arg2 RTL:(BOOL)arg3 renderingQueue:(id)arg4 callbackQueue:(id)arg5 itemDelegate:(id)arg6;
 - (id)initWithContact:(id)arg1;

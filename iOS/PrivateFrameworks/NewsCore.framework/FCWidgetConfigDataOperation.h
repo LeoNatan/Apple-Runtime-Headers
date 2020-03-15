@@ -23,6 +23,7 @@
     NSDictionary *_resultHeldRecordsByType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *resultHeldRecordsByType; // @synthesize resultHeldRecordsByType=_resultHeldRecordsByType;
 @property(retain, nonatomic) NSArray *resultArticleListIDs; // @synthesize resultArticleListIDs=_resultArticleListIDs;
 @property(retain, nonatomic) NSArray *resultArticleIDs; // @synthesize resultArticleIDs=_resultArticleIDs;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) CDUnknownBlockType widgetConfigDataCompletionHandler; // @synthesize widgetConfigDataCompletionHandler=_widgetConfigDataCompletionHandler;
 @property(copy, nonatomic) NSDictionary *widgetConfiguration; // @synthesize widgetConfiguration=_widgetConfiguration;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)_recordSourceForRecordType:(id)arg1;
 - (void)_finalizeResultFromCachedRecords;
 - (void)_collectRecordsFromWidgetConfigDictionary:(id)arg1;

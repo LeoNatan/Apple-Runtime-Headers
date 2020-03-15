@@ -14,9 +14,9 @@
     UIButton *_accessoryView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(nonatomic, getter=isHitAreaCompact) _Bool hitAreaCompact; // @synthesize hitAreaCompact=_hitAreaCompact;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) struct CGRect visibleBounds;
 @property(readonly, nonatomic) struct CGRect backActionFrame;

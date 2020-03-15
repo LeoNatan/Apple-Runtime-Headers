@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UILabel *_textLabel;
 }
 
-@property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 - (void)_setupConstraints;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;

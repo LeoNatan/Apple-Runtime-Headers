@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIStoryboardSegueTemplate *_commitTemplate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIStoryboardSegueTemplate *commitTemplate; // @synthesize commitTemplate=_commitTemplate;
 @property(nonatomic) __weak UIStoryboardPreviewingSegueTemplate *previewTemplate; // @synthesize previewTemplate=_previewTemplate;
 @property(nonatomic) __weak UIView *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

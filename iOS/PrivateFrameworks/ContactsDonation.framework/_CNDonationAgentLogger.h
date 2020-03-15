@@ -16,8 +16,8 @@
     NSObject<OS_os_log> *_log_t;
 }
 
-@property(readonly, nonatomic) NSObject<OS_os_log> *log_t; // @synthesize log_t=_log_t;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *log_t; // @synthesize log_t=_log_t;
 - (void)willRenewValues:(id)arg1 withDonor:(id)arg2;
 - (void)didRenewValue:(id)arg1 untilDate:(id)arg2;
 - (void)couldNotRenewBecauseNotADonorExtension:(id)arg1;

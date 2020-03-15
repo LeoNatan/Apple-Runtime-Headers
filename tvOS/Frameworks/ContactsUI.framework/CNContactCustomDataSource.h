@@ -24,6 +24,7 @@
     NSArray *_filteredContacts;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool observingContacts; // @synthesize observingContacts=_observingContacts;
 @property(retain, nonatomic) NSArray *filteredContacts; // @synthesize filteredContacts=_filteredContacts;
 @property(retain, nonatomic) NSMapTable *identifiersToIndexes; // @synthesize identifiersToIndexes=_identifiersToIndexes;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool autoUpdateContacts; // @synthesize autoUpdateContacts=_autoUpdateContacts;
 @property(copy, nonatomic) CNContactFilter *filter; // @synthesize filter=_filter;
 @property(nonatomic) __weak id <CNContactDataSourceDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)_sendDataSourceDidChange;
 - (void)contactDidChange:(id)arg1;
 - (void)_updateContactsObserving;

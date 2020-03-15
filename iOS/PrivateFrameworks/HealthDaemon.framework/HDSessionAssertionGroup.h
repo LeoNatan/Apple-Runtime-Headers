@@ -15,8 +15,8 @@
     long long _state;
 }
 
-@property(readonly, nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long state; // @synthesize state=_state;
 - (void)_transitionToNewAssertions:(id)arg1;
 - (void)invalidate;
 - (void)transitionToState:(long long)arg1;

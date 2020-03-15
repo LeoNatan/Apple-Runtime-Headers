@@ -24,11 +24,11 @@
     NSString *_serviceType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldForceOperation:) _Bool _shouldForceOperation; // @synthesize _shouldForceOperation=__shouldForceOperation;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) _Bool canEditUsername; // @synthesize canEditUsername=_canEditUsername;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)willAuthenticateWithContext:(id)arg1;

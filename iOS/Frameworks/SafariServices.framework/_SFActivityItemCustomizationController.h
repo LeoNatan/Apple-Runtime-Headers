@@ -18,9 +18,9 @@
     long long _selectedContentType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long selectedContentType; // @synthesize selectedContentType=_selectedContentType;
 @property(nonatomic) __weak id <_SFActivityItemCustomizationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_ensureSelectedContentTypeIsAllowed;
 - (void)_customizationsDidChange;
 - (id)_allowedContentTypes;

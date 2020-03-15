@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSNumber *_animationDuration;
 }
 
-@property(copy, nonatomic) NSNumber *animationDuration; // @synthesize animationDuration=_animationDuration;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *animationDuration; // @synthesize animationDuration=_animationDuration;
 - (struct CGAffineTransform)_adjustDefaultDisappearanceTransform:(struct CGAffineTransform)arg1;
 - (id)_layoutInfoWithDefaultDisappearance:(id)arg1;
 - (void)configureOptions:(id)arg1 forSpringAnimationsZommingIn:(_Bool)arg2;

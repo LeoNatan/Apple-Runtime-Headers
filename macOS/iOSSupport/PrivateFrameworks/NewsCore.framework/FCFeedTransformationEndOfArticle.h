@@ -21,12 +21,12 @@
 }
 
 + (id)transformationWithConfiguration:(id)arg1 context:(id)arg2 isPaywallAvailable:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
 @property(nonatomic) BOOL isPaywallAvailable; // @synthesize isPaywallAvailable=_isPaywallAvailable;
 @property(nonatomic) unsigned long long maxiumInaccessibleHeadlineCount; // @synthesize maxiumInaccessibleHeadlineCount=_maxiumInaccessibleHeadlineCount;
 @property(nonatomic) double paidHeadlineRatio; // @synthesize paidHeadlineRatio=_paidHeadlineRatio;
 @property(nonatomic) unsigned long long minimumResultHeadlineCount; // @synthesize minimumResultHeadlineCount=_minimumResultHeadlineCount;
-- (void).cxx_destruct;
 - (id)transformHeadlines:(id)arg1;
 - (id)transformFeedItems:(id)arg1;
 - (id)transformItems:(id)arg1 isPaidBlock:(CDUnknownBlockType)arg2 sourceChannelIDProvider:(CDUnknownBlockType)arg3;

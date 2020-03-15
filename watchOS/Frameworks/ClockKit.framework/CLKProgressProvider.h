@@ -10,13 +10,13 @@
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class NSMutableDictionary, NSString, UIColor;
+@class NSMutableDictionary, NSNumber, NSString, UIColor;
 
 @interface CLKProgressProvider : NSObject <CLKComplicationTritiumCopyable, NSCopying, NSSecureCoding>
 {
     unsigned int _nextUpdateToken;
     NSMutableDictionary *_updateHandlersByToken;
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     _Bool _finalized;
     _Bool _tritium_isTritiumInactiveCopy;
     _Bool _paused;
@@ -25,11 +25,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property float backgroundRingAlpha; // @synthesize backgroundRingAlpha=_backgroundRingAlpha;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
-- (void).cxx_destruct;
 - (float)_progressFractionForNow:(id)arg1;
 - (void)_validate;
 - (_Bool)_needsUpdates;
@@ -47,8 +47,8 @@
 - (int)timeTravelUpdateFrequency;
 - (void)finalize;
 - (void)validate;
-- (void)stopUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopUpdatesForToken:(id)arg1;
+- (id)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (float)progressFractionForNow:(id)arg1;
 - (void)dealloc;
 - (void)_commonInit;

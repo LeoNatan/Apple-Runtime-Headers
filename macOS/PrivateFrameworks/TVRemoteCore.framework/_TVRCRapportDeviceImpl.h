@@ -20,11 +20,11 @@
 }
 
 + (id)implWithDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVRCRapportRemoteTextInputKeyboardImpl *keyboardImpl; // @synthesize keyboardImpl=_keyboardImpl;
 @property(retain, nonatomic) _TVRXKeyboardController *keyboardController; // @synthesize keyboardController=_keyboardController;
 @property(retain, nonatomic) _TVRCRPCompanionLinkClientWrapper *deviceWrapper; // @synthesize deviceWrapper=_deviceWrapper;
 @property(nonatomic) __weak _TVRXDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_setupKeyboardController;
 - (void)deviceUpdatedSupportedButtons:(id)arg1;
 - (void)deviceEncounteredAuthenticationChallenge:(id)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType parentServiceDescriptorGenerator; // @synthesize parentServiceDescriptorGenerator=_parentServiceDescriptorGenerator;
 @property(readonly, copy, nonatomic) NSString *serviceSubtype; // @synthesize serviceSubtype=_serviceSubtype;
 @property(readonly, copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) HFServiceDescriptor *parentServiceDescriptor; // @synthesize parentServiceDescriptor=_parentServiceDescriptor;

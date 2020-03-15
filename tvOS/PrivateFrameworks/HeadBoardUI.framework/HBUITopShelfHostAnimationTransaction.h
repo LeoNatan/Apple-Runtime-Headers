@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <BaseBoard/BSTransaction.h>
+#import <FrontBoardServices/BSTransaction.h>
 
 @class UIViewController;
 
@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     long long _animationDirection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isBackgroundUpdate) _Bool backgroundUpdate; // @synthesize backgroundUpdate=_backgroundUpdate;
 @property(readonly, nonatomic) long long animationDirection; // @synthesize animationDirection=_animationDirection;
 @property(readonly, nonatomic) UIViewController *toViewController; // @synthesize toViewController=_toViewController;
 @property(readonly, nonatomic) UIViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
 @property(readonly, nonatomic) __weak UIViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
-- (void).cxx_destruct;
 - (void)_addTransformAnimations;
 - (void)_addFadeAnimations;
 - (void)_prepareForTransition;

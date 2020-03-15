@@ -18,10 +18,10 @@
     double _durationWhenMovementExceeded;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double durationWhenMovementExceeded; // @synthesize durationWhenMovementExceeded=_durationWhenMovementExceeded;
 @property(retain, nonatomic) _UIGestureStudyPressDurationGestureRecognizer *pressDurationRecognizer; // @synthesize pressDurationRecognizer=_pressDurationRecognizer;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)_locationForTriggeredRecognizer:(id)arg1;
 - (id)_viewDescription;
 - (id)_eventDataForTriggeredRecognizer:(id)arg1;

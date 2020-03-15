@@ -16,9 +16,9 @@
     NSString *_requestJSON;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestJSON; // @synthesize requestJSON=_requestJSON;
 @property(retain, nonatomic) NSMutableSet *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isFeed;
 - (_Bool)_matchesClause:(id)arg1 inContext:(id)arg2;

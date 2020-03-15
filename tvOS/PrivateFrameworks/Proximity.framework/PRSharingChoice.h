@@ -30,14 +30,14 @@ __attribute__((visibility("hidden")))
     NSObject<OS_os_log> *_logger;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_log> *logger; // @synthesize logger=_logger;
 @property _Bool currentlyInitiating; // @synthesize currentlyInitiating=_currentlyInitiating;
 @property double halfPointingAngleDegrees; // @synthesize halfPointingAngleDegrees=_halfPointingAngleDegrees;
 @property _Bool outputScoreCalculatedWithAngle; // @synthesize outputScoreCalculatedWithAngle=_outputScoreCalculatedWithAngle;
 @property _Bool useRegionBasedEstimator; // @synthesize useRegionBasedEstimator=_useRegionBasedEstimator;
 @property(copy) CDUnknownBlockType newScoresHandler; // @synthesize newScoresHandler=_newScoresHandler;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateScoresWithNewMeasurement:(const struct NeighborMeasurements *)arg1;
 - (void)updateScoresForTime:(double)arg1;
 - (void)reportScoresToClientAlways:(_Bool)arg1 useUpdatedScoreList:(_Bool)arg2 currentMachContTime:(double)arg3;

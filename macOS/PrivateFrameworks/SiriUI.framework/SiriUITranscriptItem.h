@@ -19,12 +19,12 @@
 }
 
 + (id)transcriptItemWithAceObject:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect previousFrame; // @synthesize previousFrame=_previousFrame;
 @property(nonatomic) BOOL snippetViewControllerHasBeenUnloaded; // @synthesize snippetViewControllerHasBeenUnloaded=_snippetViewControllerHasBeenUnloaded;
 @property(retain, nonatomic) AceObject *aceObject; // @synthesize aceObject=_aceObject;
 @property(retain, nonatomic) NSViewController<SiriUIViewController> *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) NSUUID *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAceObject:(id)arg1;
 

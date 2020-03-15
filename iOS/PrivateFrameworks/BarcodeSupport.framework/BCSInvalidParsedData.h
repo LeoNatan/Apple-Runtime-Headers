@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *invalidURLScheme; // @synthesize invalidURLScheme=_invalidURLScheme;
 @property(copy, nonatomic) NSString *invalidContents; // @synthesize invalidContents=_invalidContents;
 @property(readonly, nonatomic) long long invalidDataType; // @synthesize invalidDataType=_invalidDataType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *extraPreviewText;

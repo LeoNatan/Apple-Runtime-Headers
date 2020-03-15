@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     double _minimumSteadyTouchForceDuration;
 }
 
-@property(nonatomic) double minimumSteadyTouchForceDuration; // @synthesize minimumSteadyTouchForceDuration=_minimumSteadyTouchForceDuration;
 - (void).cxx_destruct;
+@property(nonatomic) double minimumSteadyTouchForceDuration; // @synthesize minimumSteadyTouchForceDuration=_minimumSteadyTouchForceDuration;
 - (void)_endContinuousEvaluation;
 - (void)_updateForContinuousEvaluation:(id)arg1;
 - (void)_beginForContinuousEvaluationForTouches:(id)arg1;

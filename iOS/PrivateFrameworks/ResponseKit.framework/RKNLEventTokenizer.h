@@ -16,9 +16,9 @@
 
 + (_Bool)isSpecialToken:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property struct __CFStringTokenizer *tokenizer; // @synthesize tokenizer=_tokenizer;
 @property(readonly) NSString *languageID; // @synthesize languageID=_languageID;
-- (void).cxx_destruct;
 - (id)buildTokenSquence:(id)arg1 withOffset:(unsigned long long)arg2;
 - (id)getTokens:(id)arg1;
 - (id)processForHyphenation:(id)arg1;

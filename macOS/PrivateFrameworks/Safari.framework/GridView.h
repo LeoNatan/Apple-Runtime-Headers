@@ -80,6 +80,8 @@ __attribute__((visibility("hidden")))
 + (void)_removeHoleInIndexMap:(id)arg1 betweenRangesOfOccupiedIndexes:(id)arg2;
 + (id)indexExchangesWithDraggedIndex:(unsigned long long)arg1 dropIndex:(unsigned long long)arg2 replaceableIndex:(unsigned long long)arg3 numberOfIndexes:(unsigned long long)arg4 maximumNumberOfIndexes:(unsigned long long)arg5 fixedIndexes:(id)arg6;
 + (BOOL)requiresConstraintBasedLayout;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(readonly, nonatomic) double maximumWidth; // @synthesize maximumWidth=_maximumWidth;
 @property(nonatomic) double maximumCellHeightToWidthRatio; // @synthesize maximumCellHeightToWidthRatio=_maximumCellHeightToWidthRatio;
@@ -99,8 +101,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <GridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <GridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) int presentationMode; // @synthesize presentationMode=_presentationMode;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateGridCellAccessoryViewVisibility:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isEditingCellView) BOOL editingCellView;
 - (void)_cellViewDidBecomeFirstResponder:(id)arg1;

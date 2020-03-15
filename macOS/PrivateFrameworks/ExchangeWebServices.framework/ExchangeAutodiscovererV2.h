@@ -16,9 +16,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) ExchangeAutodiscovererV2 *me; // @synthesize me=_me;
-- (void).cxx_destruct;
 - (void)autodiscoverV2Binding:(id)arg1 didFailWithError:(id)arg2;
 - (void)autodiscoverV2Binding:(id)arg1 didFinishWithResponse:(id)arg2;
 - (void)autodiscoverV2ForEmail:(id)arg1 protocol:(id)arg2 retrieveAuthURI:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;

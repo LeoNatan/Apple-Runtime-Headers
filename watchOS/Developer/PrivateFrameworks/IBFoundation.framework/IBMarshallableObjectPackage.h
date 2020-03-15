@@ -19,9 +19,9 @@
     NSSet *_unorderedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *unorderedObjects; // @synthesize unorderedObjects=_unorderedObjects;
 @property(readonly, nonatomic) NSDictionary *marshallingDescription; // @synthesize marshallingDescription=_marshallingDescription;
-- (void).cxx_destruct;
 - (id)objectForObjectRepresentation:(id)arg1;
 - (id)objectRepresentationForObject:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -22,6 +22,7 @@
 }
 
 + (unsigned int)preferredAttestationStyle;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) _Bool regenerateKeys; // @synthesize regenerateKeys=_regenerateKeys;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *intermediateCertLabel; // @synthesize intermediateCertLabel=_intermediateCertLabel;
 @property(copy, nonatomic) NSString *clientCertLabel; // @synthesize clientCertLabel=_clientCertLabel;
-- (void).cxx_destruct;
 - (_Bool)_compareString:(id)arg1 withString:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

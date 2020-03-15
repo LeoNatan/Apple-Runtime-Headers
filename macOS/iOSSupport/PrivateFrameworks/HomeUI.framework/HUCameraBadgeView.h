@@ -20,6 +20,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *labelConstraints; // @synthesize labelConstraints=_labelConstraints;
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
 @property(readonly, nonatomic) UIVisualEffectView *vibrancyEffectView; // @synthesize vibrancyEffectView=_vibrancyEffectView;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(readonly, nonatomic) HULegibilityLabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *labelText;
 - (void)updateConstraints;
 - (id)initWithSize:(unsigned long long)arg1;

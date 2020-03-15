@@ -37,6 +37,7 @@
 + (void)_accountForLocationEnhancementSuccess;
 + (void)_accountForNoLocationEnhancementNeeded;
 + (double)fuzzyMaximumInitialUpdateIntervalBeforeStartDate;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *agendaEntryIdentifier; // @synthesize agendaEntryIdentifier=_agendaEntryIdentifier;
 @property(nonatomic) double maximumTravelDurationEncountered; // @synthesize maximumTravelDurationEncountered=_maximumTravelDurationEncountered;
 @property(nonatomic) int travelTimeThresholdExceededState; // @synthesize travelTimeThresholdExceededState=_travelTimeThresholdExceededState;
@@ -55,7 +56,6 @@
 @property(nonatomic) _Bool dismissed; // @synthesize dismissed=_dismissed;
 @property(copy, nonatomic) CDUnknownBlockType entrySignificantlyChangedBlock; // @synthesize entrySignificantlyChangedBlock=_entrySignificantlyChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
-- (void).cxx_destruct;
 - (void)_updateWithHypothesis:(id)arg1;
 - (void)_createHypothesizerForDestination:(id)arg1;
 - (id)_createSyntheticHypothesis;

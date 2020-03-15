@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *phoneNumberOnSIM; // @synthesize phoneNumberOnSIM=_phoneNumberOnSIM;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) NSString *imsi; // @synthesize imsi=_imsi;
 @property(retain, nonatomic) NSString *plmn; // @synthesize plmn=_plmn;
 @property(nonatomic) _Bool isReady; // @synthesize isReady=_isReady;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

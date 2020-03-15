@@ -19,10 +19,10 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) NSArray *allDevices; // @synthesize allDevices=_allDevices;
-- (void).cxx_destruct;
 - (void)triggerTableViewControllerDidCancel:(id)arg1;
 - (void)triggerTableViewController:(id)arg1 didFinishWithAnySelected:(_Bool)arg2 orSelectedOptions:(id)arg3;
 - (void)presentNavControllerWithRootViewController:(id)arg1;

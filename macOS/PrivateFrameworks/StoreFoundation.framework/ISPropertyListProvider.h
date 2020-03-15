@@ -27,6 +27,7 @@
     ISServiceProxy *_serviceProxy;
 }
 
+- (void).cxx_destruct;
 @property(readonly) ISServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain) NSString *touchIDChallenge; // @synthesize touchIDChallenge=_touchIDChallenge;
 @property(copy) CDUnknownBlockType gotoActionHandler; // @synthesize gotoActionHandler=_gotoActionHandler;
@@ -39,7 +40,6 @@
 @property(readonly) BOOL didProcessDialog; // @synthesize didProcessDialog=_didProcessDialog;
 @property BOOL shouldProcessDialogs; // @synthesize shouldProcessDialogs=_shouldProcessDialogs;
 @property BOOL shouldProcessAccount; // @synthesize shouldProcessAccount=_shouldProcessAccount;
-- (void).cxx_destruct;
 - (void)operation:(id)arg1 selectedButton:(id)arg2;
 - (void)_processDownloads:(id)arg1 fallback:(id)arg2;
 - (void)_processTriggerDownload:(id)arg1 fallback:(id)arg2;

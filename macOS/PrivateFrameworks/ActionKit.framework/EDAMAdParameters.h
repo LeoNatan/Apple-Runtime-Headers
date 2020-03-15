@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *clientProperties; // @synthesize clientProperties=_clientProperties;
 @property(retain, nonatomic) NSNumber *supportHtml; // @synthesize supportHtml=_supportHtml;
 @property(retain, nonatomic) NSArray *impressions; // @synthesize impressions=_impressions;
 @property(retain, nonatomic) NSString *clientLanguage; // @synthesize clientLanguage=_clientLanguage;
-- (void).cxx_destruct;
 
 @end
 

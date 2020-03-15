@@ -17,9 +17,9 @@
     NAFuture *_softwareUpdateFetchFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *softwareUpdateFetchFuture; // @synthesize softwareUpdateFetchFuture=_softwareUpdateFetchFuture;
 @property(retain, nonatomic) HUSoftwareUpdateItemModuleController *softwareUpdateModule; // @synthesize softwareUpdateModule=_softwareUpdateModule;
-- (void).cxx_destruct;
 - (void)_kickoffSoftwareUpdate;
 - (void)_triggerRefresh:(id)arg1;
 - (void)_setupRefreshControl;

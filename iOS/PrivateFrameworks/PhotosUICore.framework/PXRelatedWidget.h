@@ -52,6 +52,7 @@
     struct PXSimpleIndexPath __anchorIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXSectionedObjectReference *focusedObjectReference; // @synthesize focusedObjectReference=_focusedObjectReference;
 @property(retain, nonatomic) PXSectionedObjectReference *highlightedObjectReference; // @synthesize highlightedObjectReference=_highlightedObjectReference;
 @property(retain, nonatomic, setter=_setPrefetchedDataSourceByRelatedEntry:) NSDictionary *_prefetchedDataSourceByRelatedEntry; // @synthesize _prefetchedDataSourceByRelatedEntry=__prefetchedDataSourceByRelatedEntry;
@@ -72,7 +73,6 @@
 @property(retain, nonatomic) PXPhotosDetailsContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PXWidgetUnlockDelegate> widgetUnlockDelegate; // @synthesize widgetUnlockDelegate=_widgetUnlockDelegate;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
-- (void).cxx_destruct;
 - (struct CGRect)relatedTilingLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath)arg2 forAspectRatio:(double)arg3;
 - (id)relatedTilingLayout:(id)arg1 titleFontNameForEntryAtIndexPath:(struct PXSimpleIndexPath)arg2;
 - (_Bool)relatedTilingLayout:(id)arg1 isPlaceholderEntryAtIndexPath:(struct PXSimpleIndexPath)arg2;

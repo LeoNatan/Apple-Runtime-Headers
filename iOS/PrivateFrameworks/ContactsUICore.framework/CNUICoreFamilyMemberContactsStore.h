@@ -18,10 +18,10 @@
     id <CNSchedulerProvider> _schedulerProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
-- (void).cxx_destruct;
 - (id)updateContactWhitelistByRemovingContacts:(id)arg1;
 - (id)contactsFoundAndNotFoundInFamilyMemberContainerFuture:(id)arg1;
 - (id)contactsInsertedIntoFamilyMemberContainerIfMissingFuture:(id)arg1 preserveEditsToProvidedContactsOverContactsFoundInFamilyMemberStore:(_Bool)arg2;

@@ -17,10 +17,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) LSApplicationProxy *applicationProxy; // @synthesize applicationProxy=_applicationProxy;
 @property(retain, nonatomic) NSMutableArray *blocks; // @synthesize blocks=_blocks;
-- (void).cxx_destruct;
 - (BOOL)_isNewsAvailable;
 - (void)_updateAvailability;
 - (void)addNotificationBlock:(CDUnknownBlockType)arg1;

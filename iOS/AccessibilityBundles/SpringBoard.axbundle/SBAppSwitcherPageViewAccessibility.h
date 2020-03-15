@@ -13,13 +13,14 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)accessibilityPath;
+- (id)_viewToAddFocusLayer;
+- (_Bool)canBecomeFocused;
 - (_Bool)_accessibilityShouldIncludeArrowKeyCommandsForDirectionalFocusMovement;
 - (id)_scroller;
 - (id)_accessibilityPreferredScrollActions;
 - (_Bool)_accessibilityElementVisibilityAffectsLayout;
 - (struct CGRect)_accessibilityVisibleFrame;
-- (struct CGRect)accessibilityFrame;
-- (_Bool)_accessibilityFrameShouldIncludeExtraSpaceBelow;
 - (_Bool)_accessibilityScrollToVisible;
 - (id)_accessibilityScrollStatus;
 - (id)_accessibilityCustomActionGroupIdentifier;

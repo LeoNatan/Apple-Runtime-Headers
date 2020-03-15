@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValue *extensionWindowSize; // @synthesize extensionWindowSize=_extensionWindowSize;
 @property(readonly, nonatomic) ASAuthorizationProviderExtensionAuthorizationRequest *extensionAuthorizationRequest; // @synthesize extensionAuthorizationRequest=_extensionAuthorizationRequest;
 @property __weak SOExtensionViewService *viewService; // @synthesize viewService=_viewService;
-- (void).cxx_destruct;
 - (void)_disableAppSSOInCFNetwork;
 - (_Bool)canOpenURL:(id)arg1;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -14,9 +14,9 @@
     UIView *_renderedView;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIView *renderedView; // @synthesize renderedView=_renderedView;
 @property(retain) NSAttributedString *sourceText; // @synthesize sourceText=_sourceText;
-- (void).cxx_destruct;
 
 @end
 

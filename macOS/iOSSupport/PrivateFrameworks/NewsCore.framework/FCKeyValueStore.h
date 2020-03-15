@@ -32,6 +32,7 @@
 
 + (BOOL)shouldDumpToJSON;
 + (id)persistenceQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dictionaryValueHandler; // @synthesize dictionaryValueHandler=_dictionaryValueHandler;
 @property(copy, nonatomic) CDUnknownBlockType dictionaryKeyHandler; // @synthesize dictionaryKeyHandler=_dictionaryKeyHandler;
 @property(copy, nonatomic) CDUnknownBlockType arrayObjectHandler; // @synthesize arrayObjectHandler=_arrayObjectHandler;
@@ -47,7 +48,6 @@
 @property(nonatomic) unsigned long long storeSize; // @synthesize storeSize=_storeSize;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) BOOL shouldExportJSONSidecar; // @synthesize shouldExportJSONSidecar=_shouldExportJSONSidecar;
-- (void).cxx_destruct;
 - (id)fc_jsonString;
 - (id)fc_jsonStringWithDictionary:(id)arg1;
 - (id)fc_jsonEncodableDictionary;

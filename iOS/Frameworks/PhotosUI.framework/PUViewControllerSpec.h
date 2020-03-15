@@ -22,6 +22,7 @@
     struct CGSize _secondScreenSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUViewControllerSpecChange *currentChange; // @synthesize currentChange=_currentChange;
 @property(readonly, nonatomic) long long currentLayoutStyle; // @synthesize currentLayoutStyle=_currentLayoutStyle;
 @property(nonatomic, setter=_setNeedsUpdateLayoutStyle:) _Bool _needsUpdateLayoutStyle; // @synthesize _needsUpdateLayoutStyle=__needsUpdateLayoutStyle;
@@ -32,7 +33,6 @@
 @property(nonatomic, getter=isPresentedForSecondScreen) _Bool presentedForSecondScreen; // @synthesize presentedForSecondScreen=_presentedForSecondScreen;
 @property(nonatomic) struct CGSize layoutReferenceSize; // @synthesize layoutReferenceSize=_layoutReferenceSize;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 - (void)_setCurrentLayoutStyle:(long long)arg1;
 - (void)_setCurrentChange:(id)arg1;
 - (void)_updateCurrentLayoutStyleIfNeeded;

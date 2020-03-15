@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(nonatomic) long long BodyType; // @synthesize BodyType=_BodyType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

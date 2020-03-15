@@ -27,6 +27,7 @@
     CKAudioPlayer *_audioPlayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property(retain, nonatomic) CKAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool shouldUseSpeaker; // @synthesize shouldUseSpeaker=_shouldUseSpeaker;
 @property(nonatomic) __weak id <CKAudioControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, setter=_setMediaObjects:) NSMutableArray *_mediaObjects; // @synthesize _mediaObjects;
-- (void).cxx_destruct;
 - (void)applicationWillResignActive;
 - (void)audioSessionInterruption:(id)arg1;
 - (void)playListenEndSound:(CDUnknownBlockType)arg1;

@@ -20,13 +20,13 @@
 }
 
 + (id)processDataWithFunction:(int)arg1 algorithm:(int)arg2 content:(id)arg3 progressBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_0fa5602b *stream; // @synthesize stream=_stream;
 @property(retain, nonatomic) NSMutableData *destinationBuffer; // @synthesize destinationBuffer=_destinationBuffer;
 @property(nonatomic) __weak id <_HKStreamingDestination> destination; // @synthesize destination=_destination;
 @property(nonatomic) int algorithm; // @synthesize algorithm=_algorithm;
 @property(nonatomic) int operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) NSMutableData *sinkContent; // @synthesize sinkContent=_sinkContent;
-- (void).cxx_destruct;
 - (_Bool)_processIncomingData:(const void *)arg1 length:(unsigned int)arg2 flags:(int)arg3;
 - (_Bool)_initializeStream;
 - (unsigned int)_deliverDestinationContent;

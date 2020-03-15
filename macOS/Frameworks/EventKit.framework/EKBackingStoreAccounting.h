@@ -29,6 +29,7 @@
     EKCalendarStoreBackingStore *_backingStore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak EKCalendarStoreBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *fetchSerialQueue; // @synthesize fetchSerialQueue=_fetchSerialQueue;
 @property(readonly, nonatomic) NSSet *generalLookupPredicates; // @synthesize generalLookupPredicates=_generalLookupPredicates;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSSet *calendarIdentifiersWithAllRemindersCached; // @synthesize calendarIdentifiersWithAllRemindersCached=_calendarIdentifiersWithAllRemindersCached;
 @property(readonly, nonatomic) NSSet *itemIdentifiers; // @synthesize itemIdentifiers=_itemIdentifiers;
 @property(nonatomic) unsigned long long receiptGeneration; // @synthesize receiptGeneration=_receiptGeneration;
-- (void).cxx_destruct;
 - (void)addReceiptForEventsInCalendars:(id)arg1;
 - (void)addReceiptForRemindersInCalendars:(id)arg1;
 - (BOOL)eventsInCalendarsAccountedFor:(id)arg1;

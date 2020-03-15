@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
-@property(retain, nonatomic) id eventValue; // @synthesize eventValue=_eventValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id eventValue; // @synthesize eventValue=_eventValue;
 - (id)metricData;
 - (void)_transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)_transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;

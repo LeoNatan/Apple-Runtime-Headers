@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumberFormatter *uvIndexNumberFormatter; // @synthesize uvIndexNumberFormatter=_uvIndexNumberFormatter;
 @property(readonly, nonatomic) NSLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (id)formattedUVIndexForUVIndexNumber:(id)arg1;
 - (id)initPrivate;
 

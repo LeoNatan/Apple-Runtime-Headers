@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-@property(nonatomic) __weak SKAccountPageViewController *accountPageViewController; // @synthesize accountPageViewController=_accountPageViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKAccountPageViewController *accountPageViewController; // @synthesize accountPageViewController=_accountPageViewController;
 - (id)disconnect;
 - (void)dismissBridgedViewController;
 - (void)presentBridgedViewController;

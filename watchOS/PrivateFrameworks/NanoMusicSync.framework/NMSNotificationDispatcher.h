@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     id <NMSNotificationDispatcherDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NMSNotificationDispatcherDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *baseNotificationName; // @synthesize baseNotificationName=_baseNotificationName;
-- (void).cxx_destruct;
 - (void)_postLocalDarwinNotification;
 - (void)_handleRemoteNotification;
 - (void)_handleLocalNotificationIgnoringSenderPID:(_Bool)arg1;

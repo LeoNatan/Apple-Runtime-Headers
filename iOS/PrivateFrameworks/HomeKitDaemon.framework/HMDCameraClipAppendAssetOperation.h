@@ -22,6 +22,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain) HMFTimer *retryTimer; // @synthesize retryTimer=_retryTimer;
 @property unsigned long long state; // @synthesize state=_state;
 @property(readonly) HMDCameraClipSegmentMetadata *segmentMetadata; // @synthesize segmentMetadata=_segmentMetadata;
@@ -29,7 +30,6 @@
 @property(readonly, copy) NSString *metadataPropertyName; // @synthesize metadataPropertyName=_metadataPropertyName;
 @property(readonly, copy) NSString *streamingAssetPropertyName; // @synthesize streamingAssetPropertyName=_streamingAssetPropertyName;
 @property unsigned long long retryPolicy; // @synthesize retryPolicy=_retryPolicy;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (void)timerDidFire:(id)arg1;
 - (id)_retryDelayForError:(id)arg1;

@@ -20,9 +20,9 @@
 
 + (id)labelWithAttributedString:(id)arg1 textLayout:(id)arg2 existingLabel:(id)arg3;
 + (id)labelWithString:(id)arg1 textLayout:(id)arg2 existingLabel:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *labelName; // @synthesize labelName=_labelName;
 @property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
-- (void).cxx_destruct;
 - (void)_updateCompositingFilter;
 - (void)_updateTextColor:(_Bool)arg1;
 - (void)_updateTextColor;

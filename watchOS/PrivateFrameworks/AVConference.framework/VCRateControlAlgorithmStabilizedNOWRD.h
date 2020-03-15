@@ -80,8 +80,10 @@ __attribute__((visibility("hidden")))
     unsigned int _packetBurstLoss;
     unsigned int _roundTripTimeTick;
     double _roundTripTime;
+    double _worstRecentRoundTripTime;
     double _packetLossRate;
     double _packetLossRateVideo;
+    unsigned int _worstRecentBurstLoss;
     int _currentTierIndex;
     int _previousTierIndex;
     unsigned int _targetBitrate;
@@ -92,6 +94,7 @@ __attribute__((visibility("hidden")))
     _Bool _didMBLRampDown;
 }
 
+@property(readonly, nonatomic) _Bool isSendBitrateLimited; // @synthesize isSendBitrateLimited=_isSendBitrateLimited;
 @property(nonatomic) _Bool didMBLRampDown; // @synthesize didMBLRampDown=_didMBLRampDown;
 @property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualBitrate;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
@@ -139,6 +142,8 @@ __attribute__((visibility("hidden")))
 - (void)stateChangeTo:(int)arg1;
 - (void)resetRampingStatus;
 - (void)updateInternalStatus;
+@property(readonly, nonatomic) unsigned int worstRecentBurstLoss; // @synthesize worstRecentBurstLoss=_worstRecentBurstLoss;
+@property(readonly, nonatomic) double worstRecentRoundTripTime; // @synthesize worstRecentRoundTripTime=_worstRecentRoundTripTime;
 - (_Bool)doRateControlWithBasebandStatistics:(CDStruct_b21f1e06)arg1;
 - (_Bool)doRateControlWithVCRCStatistics:(CDStruct_b21f1e06)arg1;
 - (_Bool)doRateControlWithStatistics:(CDStruct_b21f1e06)arg1;

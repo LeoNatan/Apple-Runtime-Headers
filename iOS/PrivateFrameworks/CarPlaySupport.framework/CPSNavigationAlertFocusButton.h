@@ -13,8 +13,8 @@
     CPSNavigationAlertProgressView *_altFocusProgressView;
 }
 
-@property(nonatomic) __weak CPSNavigationAlertProgressView *altFocusProgressView; // @synthesize altFocusProgressView=_altFocusProgressView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CPSNavigationAlertProgressView *altFocusProgressView; // @synthesize altFocusProgressView=_altFocusProgressView;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;

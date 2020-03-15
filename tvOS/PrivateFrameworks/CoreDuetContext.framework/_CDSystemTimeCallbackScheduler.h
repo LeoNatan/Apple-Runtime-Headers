@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, copy, nonatomic) NSString *eventNameRoot; // @synthesize eventNameRoot=_eventNameRoot;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *eventNameRoot; // @synthesize eventNameRoot=_eventNameRoot;
 - (void)_handleCallbackAtDate:(id)arg1;
 - (void)unscheduleCallbackAtDate:(id)arg1 identifier:(id)arg2 requiringDeviceWake:(_Bool)arg3;
 - (void)scheduleCallbackAtDate:(id)arg1 identifier:(id)arg2 requiringDeviceWake:(_Bool)arg3;

@@ -55,11 +55,11 @@
 + (id)_newFacesExcludingRestrictedForDevice:(id)arg1;
 + (id)_calloutNameForNewFaces:(id)arg1 withDevice:(id)arg2;
 + (id)galleryCollectionsForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKCGalleryCollectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(copy, nonatomic) CDUnknownBlockType calloutName; // @synthesize calloutName=_calloutName;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)enumerateFaceNamesUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)indexOfFace:(id)arg1;
 - (id)faceAtIndex:(unsigned long long)arg1;

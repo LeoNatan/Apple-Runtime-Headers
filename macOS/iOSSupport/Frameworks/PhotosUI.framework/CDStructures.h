@@ -60,23 +60,11 @@ struct NSDirectionalEdgeInsets {
     double _field4;
 };
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
 struct PHDisplayVelocity {
     double _field1;
     double _field2;
     double _field3;
     double _field4;
-};
-
-struct PUAlbumListCellContentView {
-    Class _field1;
 };
 
 struct PUBarAnimationSettings {

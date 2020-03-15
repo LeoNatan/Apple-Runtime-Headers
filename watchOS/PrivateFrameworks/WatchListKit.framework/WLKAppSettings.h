@@ -21,12 +21,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isExternalID:(id)arg1 equalToExternalID:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool obsolete; // @synthesize obsolete=_obsolete;
 @property(readonly, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(nonatomic) unsigned int accessStatus; // @synthesize accessStatus=_accessStatus;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

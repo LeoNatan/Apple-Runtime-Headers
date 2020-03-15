@@ -13,8 +13,8 @@
     FCPrivateDataController *_privateDataController;
 }
 
-@property(retain, nonatomic) FCPrivateDataController *privateDataController; // @synthesize privateDataController=_privateDataController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCPrivateDataController *privateDataController; // @synthesize privateDataController=_privateDataController;
 - (id)backingHeadlineIDs;
 - (id)streamOfLatestHeadlinesWithContext:(id)arg1;
 - (id)initWithPrivateDataController:(id)arg1 identifier:(id)arg2;

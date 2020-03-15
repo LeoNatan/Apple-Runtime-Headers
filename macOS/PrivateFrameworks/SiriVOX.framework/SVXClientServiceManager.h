@@ -27,6 +27,7 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVXClientAudioSystemServicing> audioSystemService; // @synthesize audioSystemService=_audioSystemService;
 @property(readonly, nonatomic) id <SVXClientDeviceServicing> deviceService; // @synthesize deviceService=_deviceService;
 @property(readonly, nonatomic) id <SVXClientSpeechSynthesisServicing> speechSynthesisService; // @synthesize speechSynthesisService=_speechSynthesisService;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) id <SVXClientSessionServicing> sessionService; // @synthesize sessionService=_sessionService;
 @property(readonly, nonatomic) id <SVXClientSessionStateServicing> sessionStateService; // @synthesize sessionStateService=_sessionStateService;
 @property(readonly, nonatomic) id <SVXClientActivationServicing> activationService; // @synthesize activationService=_activationService;
-- (void).cxx_destruct;
 - (id)_connection;
 - (void)_connect;
 - (id)clientServiceConnection:(id)arg1 performerForComponent:(long long)arg2;

@@ -21,11 +21,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)textProviderWithDate:(id)arg1 timeZone:(id)arg2;
 + (id)textProviderWithDate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prefersDesignatorToMinutes; // @synthesize prefersDesignatorToMinutes=_prefersDesignatorToMinutes;
 @property(nonatomic) _Bool disallowBothMinutesAndDesignator; // @synthesize disallowBothMinutesAndDesignator=_disallowBothMinutesAndDesignator;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;

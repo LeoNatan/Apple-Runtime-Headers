@@ -29,10 +29,12 @@
     CMMotionManager *_motionManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CMMotionManager *motionManager; // @synthesize motionManager=_motionManager;
 @property(readonly, nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
+- (_Bool)isBusy;
+- (id)_fullDescription;
 - (_Bool)isEqual:(id)arg1;
 - (void)_handleTrackingStateChanges:(id)arg1 initialized:(_Bool *)arg2 relocalized:(_Bool *)arg3;
 - (id)_deviceOrientationPoseDataFromDeviceOrientation:(id)arg1;

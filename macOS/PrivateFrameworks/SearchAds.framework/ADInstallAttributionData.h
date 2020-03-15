@@ -18,13 +18,13 @@
     NSString *_signature;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(readonly, copy, nonatomic) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy, nonatomic) NSNumber *adamID; // @synthesize adamID=_adamID;
 @property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, copy, nonatomic) NSNumber *campaignID; // @synthesize campaignID=_campaignID;
 @property(readonly, copy, nonatomic) NSString *adNetworkID; // @synthesize adNetworkID=_adNetworkID;
-- (void).cxx_destruct;
 - (void)recordStoreKitAdTap:(CDUnknownBlockType)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithDict:(id)arg1;

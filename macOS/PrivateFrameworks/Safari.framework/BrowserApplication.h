@@ -9,7 +9,7 @@
 #import <Safari/AppControllerTouchBarProviderDelegate-Protocol.h>
 #import <Safari/NSTouchBarProvider-Protocol.h>
 
-@class AppControllerTouchBarProvider, NSObject, NSString, NSTimer, NSTouchBar, QuitTimePerformanceMonitor;
+@class AppControllerTouchBarProvider, NSObject, NSString, NSTimer, NSTouchBar;
 
 __attribute__((visibility("hidden")))
 @interface BrowserApplication : NSApplication <AppControllerTouchBarProviderDelegate, NSTouchBarProvider>
@@ -34,10 +34,12 @@ __attribute__((visibility("hidden")))
     NSTimer *_usageLoggingTimer;
     double _usageLoggingTimeRemaining;
     AppControllerTouchBarProvider *_touchBarProvider;
-    QuitTimePerformanceMonitor *_quitTimePerformanceMonitor;
 }
 
 - (void).cxx_destruct;
+- (id)init;
+- (void)finishLaunching;
+- (void)_logSafariUsage:(id)arg1;
 - (void)createNewPrivateBrowsingWindowFromTouchBarProvider:(id)arg1;
 - (void)createNewWindowFromTouchBarProvider:(id)arg1;
 @property(readonly) NSTouchBar *touchBar;
@@ -45,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (void)tryToTerminate;
 - (void)terminate:(id)arg1;
 - (void)_applicationWillTerminate:(id)arg1;
-- (void)_initializeQuitTimePerformanceMonitor;
 - (void)setDockBouncingSuppressed:(BOOL)arg1;
 - (BOOL)isDockBouncingSuppressed;
 - (long long)requestUserAttention:(unsigned long long)arg1;
@@ -74,9 +75,6 @@ __attribute__((visibility("hidden")))
 - (SEL)currentAction;
 - (id)targetForAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;
 - (void)orderFrontStandardAboutPanel:(id)arg1;
-- (id)init;
-- (void)finishLaunching;
-- (void)_logSafariUsage:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

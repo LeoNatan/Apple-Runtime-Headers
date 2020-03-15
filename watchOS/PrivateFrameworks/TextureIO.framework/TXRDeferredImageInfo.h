@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     TXRImageInfo *_info;
 }
 
-@property(retain, nonatomic) TXRImageInfo *info; // @synthesize info=_info;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TXRImageInfo *info; // @synthesize info=_info;
 - (void)signalLoaded;
 - (id)init;
 

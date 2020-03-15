@@ -45,10 +45,6 @@ struct DecodedDataMessage;
 
 struct EOFReachedMessage;
 
-struct NSData {
-    Class _field1;
-};
-
 struct OpaqueExtAudioFile;
 
 struct RealtimeMessenger;

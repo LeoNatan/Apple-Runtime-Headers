@@ -17,10 +17,10 @@
 }
 
 + (id)matchingCommonLocationWithLabel:(id)arg1 coordinate:(struct CLLocationCoordinate2D)arg2 forAddressCoordinate:(struct CLLocationCoordinate2D)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D addressCoordinate; // @synthesize addressCoordinate=_addressCoordinate;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (double)distanceBetweenCoordinates;
 
 @end

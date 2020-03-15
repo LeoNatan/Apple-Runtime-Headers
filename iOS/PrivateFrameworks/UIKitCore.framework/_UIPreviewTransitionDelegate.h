@@ -16,9 +16,9 @@
     _UIStatesFeedbackGenerator *_feedbackGenerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatesFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) UIInteractionProgress *interactionProgressForPresentation; // @synthesize interactionProgressForPresentation;
-- (void).cxx_destruct;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)interactionControllerForPresentation:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;

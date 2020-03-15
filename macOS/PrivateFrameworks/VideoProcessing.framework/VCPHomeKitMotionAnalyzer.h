@@ -27,9 +27,9 @@
     float _actionScore;
 }
 
-@property(readonly) float actionScore; // @synthesize actionScore=_actionScore;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) float actionScore; // @synthesize actionScore=_actionScore;
 - (id)regionsOfInterest;
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 flags:(unsigned long long *)arg4;
 - (int)computeRegionsofInterest;

@@ -15,8 +15,8 @@
     _Bool _isEditing;
 }
 
-@property(nonatomic, setter=setEditing:) _Bool isEditing; // @synthesize isEditing=_isEditing;
 - (void).cxx_destruct;
+@property(nonatomic, setter=setEditing:) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(retain, nonatomic) UIImage *photo;
 - (double)desiredHeightForWidth:(double)arg1;
 - (void)layoutSubviews;

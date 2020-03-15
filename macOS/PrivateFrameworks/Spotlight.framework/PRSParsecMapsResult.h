@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double geoUserSessionStartTime; // @synthesize geoUserSessionStartTime;
 @property(retain, nonatomic) NSString *geoUserSessionIDString; // @synthesize geoUserSessionIDString;
 @property(retain, nonatomic) MKMapItem *location; // @synthesize location;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqualToResult:(id)arg1;
 - (id)initWithResult:(id)arg1;

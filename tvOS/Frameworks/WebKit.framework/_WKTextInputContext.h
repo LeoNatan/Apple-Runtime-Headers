@@ -10,17 +10,16 @@
 
 @interface _WKTextInputContext : NSObject <NSCopying>
 {
-    struct TextInputContext _textInputContext;
+    struct ElementContext _textInputContext;
 }
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (const struct TextInputContext *)_textInputContext;
+- (const struct ElementContext *)_textInputContext;
 @property(readonly, nonatomic) struct CGRect boundingRect;
-- (id)_initWithTextInputContext:(const struct TextInputContext *)arg1;
+- (id)_initWithTextInputContext:(const struct ElementContext *)arg1;
 - (id)init;
 
 @end

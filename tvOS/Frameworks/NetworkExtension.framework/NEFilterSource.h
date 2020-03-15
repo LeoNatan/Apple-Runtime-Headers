@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableData, NSString, NSURL, NSURLRequest, NSURLResponse, NSUUID, NWPathEvaluator;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface NEFilterSource : NSObject
 {
@@ -39,9 +39,12 @@
     struct ne_filter_globals *_globals;
     unsigned long long _byteInboundCount;
     unsigned long long _byteOutboundCount;
+    NSObject<OS_dispatch_group> *_sendDataGroup;
 }
 
 + (_Bool)filterRequired;
+- (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_group> *sendDataGroup; // @synthesize sendDataGroup=_sendDataGroup;
 @property unsigned long long byteOutboundCount; // @synthesize byteOutboundCount=_byteOutboundCount;
 @property unsigned long long byteInboundCount; // @synthesize byteInboundCount=_byteInboundCount;
 @property(readonly) struct ne_filter_globals *globals; // @synthesize globals=_globals;
@@ -70,8 +73,8 @@
 @property(readonly) long long direction; // @synthesize direction=_direction;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(readonly) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)remediateWithDecisionHandler:(CDUnknownBlockType)arg1;
+- (void)handleFinishedLoadingWithDecisionHandler:(CDUnknownBlockType)arg1;
 - (void)finishedLoadingWithDecisionHandler:(CDUnknownBlockType)arg1;
 - (void)receivedData:(id)arg1 decisionHandler:(CDUnknownBlockType)arg2;
 - (void)receivedResponse:(id)arg1 decisionHandler:(CDUnknownBlockType)arg2;

@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface _UICollectionLayoutSectionGeometryTranslator : NSObject
 {
     struct CGSize _contentSize;
-    int _layoutAxis;
+    unsigned long long _layoutAxis;
     _Bool _layoutRTL;
     struct NSDirectionalEdgeInsets _supplementaryInsets;
     struct NSDirectionalEdgeInsets _sectionInsets;
@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)contentRectForSectionRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect contentFrame;
 @property(readonly, nonatomic) struct CGPoint contentOffset;
-- (id)initWithContentSize:(struct CGSize)arg1 layoutAxis:(int)arg2 layoutRTL:(_Bool)arg3 sectionInsets:(struct NSDirectionalEdgeInsets)arg4 supplementaryInsets:(struct NSDirectionalEdgeInsets)arg5;
+- (id)initWithContentSize:(struct CGSize)arg1 layoutAxis:(unsigned long long)arg2 layoutRTL:(_Bool)arg3 sectionInsets:(struct NSDirectionalEdgeInsets)arg4 supplementaryInsets:(struct NSDirectionalEdgeInsets)arg5;
 
 @end
 

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)hostForResponder:(id)arg1;
-@property(readonly, nonatomic) __weak UIResponder *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIResponder *owner; // @synthesize owner=_owner;
 - (id)description;
 - (int)typesForResponder:(id)arg1;
 - (void)detachOverrider:(id)arg1 forTypes:(int)arg2;

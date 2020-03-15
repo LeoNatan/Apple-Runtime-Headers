@@ -17,12 +17,12 @@
     CDStruct_ef18196a _currentValueRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUElasticSliderValueNormalizationOptions *options; // @synthesize options=_options;
 @property(nonatomic) _Bool hasSecondaryValue; // @synthesize hasSecondaryValue=_hasSecondaryValue;
 @property(nonatomic) CDStruct_c3b9c2ee currentValueRange; // @synthesize currentValueRange=_currentValueRange;
 @property(retain, nonatomic) HFNumberValueConstraints *maxValueConstraints; // @synthesize maxValueConstraints=_maxValueConstraints;
 @property(retain, nonatomic) HFNumberValueConstraints *minValueConstraints; // @synthesize minValueConstraints=_minValueConstraints;
-- (void).cxx_destruct;
 - (id)_originalConstraintsForValueType:(unsigned long long)arg1;
 - (id)_effectiveConstraintsForValueOfType:(unsigned long long)arg1 boundRange:(_Bool)arg2;
 - (double)_rubberBandValue:(double)arg1 ofType:(unsigned long long)arg2;

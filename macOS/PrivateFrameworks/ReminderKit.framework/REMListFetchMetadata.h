@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long scheduledCount; // @synthesize scheduledCount=_scheduledCount;
 @property(readonly, nonatomic) NSDictionary *incompleteReminderCounts; // @synthesize incompleteReminderCounts=_incompleteReminderCounts;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

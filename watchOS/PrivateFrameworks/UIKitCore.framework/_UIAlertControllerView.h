@@ -108,6 +108,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)requiresConstraintBasedLayout;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *discreteCancelActionViewHeightConstraint; // @synthesize discreteCancelActionViewHeightConstraint=_discreteCancelActionViewHeightConstraint;
 @property(retain) NSLayoutConstraint *discreteCancelActionViewWidthConstraint; // @synthesize discreteCancelActionViewWidthConstraint=_discreteCancelActionViewWidthConstraint;
 @property(retain) NSLayoutConstraint *discreteCancelActionViewLeadingConstraint; // @synthesize discreteCancelActionViewLeadingConstraint=_discreteCancelActionViewLeadingConstraint;
@@ -154,7 +155,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIAlertControllerActionViewMetrics *actionViewMetrics; // @synthesize actionViewMetrics=_actionViewMetrics;
 @property(readonly) UIView *_dimmingView; // @synthesize _dimmingView;
 @property(readonly) UIView *_contentView; // @synthesize _contentView;
-- (void).cxx_destruct;
 - (_Bool)_forceLayoutEngineSolutionInRationalEdges;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusedView;

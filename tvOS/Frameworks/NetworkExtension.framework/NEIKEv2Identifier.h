@@ -18,8 +18,8 @@
 + (id)createIdentifierWithType:(unsigned long long)arg1 data:(id)arg2;
 + (id)createIdentifierWithType:(unsigned long long)arg1 data:(id)arg2 zone:(struct _NSZone *)arg3;
 + (id)copyTypeDescription;
-@property(retain) NSData *identifierData; // @synthesize identifierData=_identifierData;
 - (void).cxx_destruct;
+@property(retain) NSData *identifierData; // @synthesize identifierData=_identifierData;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly) NSString *stringValue;

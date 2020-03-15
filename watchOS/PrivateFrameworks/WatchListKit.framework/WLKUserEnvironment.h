@@ -26,6 +26,7 @@
 
 + (void)setCurrentEnvironmentForTesting:(id)arg1;
 + (id)currentEnvironment;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *platform; // @synthesize platform=_platform;
 @property(nonatomic) _Bool internalBuild; // @synthesize internalBuild=_internalBuild;
 @property(retain, nonatomic) NSArray *deniedBrands; // @synthesize deniedBrands=_deniedBrands;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(retain, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
 @property(retain, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
-- (void).cxx_destruct;
 - (id)_consentQuery;
 - (id)_entitlementsQuery;
 - (id)_locationQueryParameters;

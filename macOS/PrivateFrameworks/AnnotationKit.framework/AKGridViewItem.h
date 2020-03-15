@@ -18,11 +18,11 @@
     NSString *_toolTip;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

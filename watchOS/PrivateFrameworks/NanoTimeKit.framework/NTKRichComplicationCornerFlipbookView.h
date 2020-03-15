@@ -15,9 +15,9 @@
     NSDate *_frameSpecifierDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *frameSpecifierDate; // @synthesize frameSpecifierDate=_frameSpecifierDate;
 @property(nonatomic) _Bool isFlipbook; // @synthesize isFlipbook=_isFlipbook;
-- (void).cxx_destruct;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)updateLabels;

@@ -14,9 +14,9 @@
     PKPaletteToolPickerArrowIndicatorView *_secondArrowView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaletteToolPickerArrowIndicatorView *secondArrowView; // @synthesize secondArrowView=_secondArrowView;
 @property(retain, nonatomic) PKPaletteToolPickerArrowIndicatorView *firstArrowView; // @synthesize firstArrowView=_firstArrowView;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

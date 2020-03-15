@@ -22,9 +22,9 @@
 + (id)legacyContentKitLocalizedStringForKey:(id)arg1 inFile:(id)arg2;
 + (id)accessibilityLocalizedStringForKey:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stringFileCache; // @synthesize stringFileCache=_stringFileCache;
 @property(retain, nonatomic) NSString *currentLanguage; // @synthesize currentLanguage=_currentLanguage;
-- (void).cxx_destruct;
 - (_Bool)_doesHashKey:(id)arg1 belongToBundleWithPath:(id)arg2;
 - (id)_hashKeyForStringKey:(id)arg1 inFile:(id)arg2 fromBundlePath:(id)arg3;
 - (id)_currentLanguageNameForBundle:(id)arg1;

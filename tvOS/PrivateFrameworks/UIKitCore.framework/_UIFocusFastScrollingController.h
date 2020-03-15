@@ -52,9 +52,9 @@ __attribute__((visibility("hidden")))
 + (id)controllerWithRequest:(id)arg1;
 + (long long)indexOfEntryNearestToScrollViewBounds:(struct CGRect)arg1 inDisplayedEntries:(id)arg2;
 + (id)indexBarViewForScrollView:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIFocusFastScrollingIndexBarView *indexBarView; // @synthesize indexBarView=_indexBarView;
 @property(copy, nonatomic) NSArray *indexEntries; // @synthesize indexEntries=_indexEntries;
-- (void).cxx_destruct;
 - (void)_updateIndexBarIndicator;
 - (_Bool)_shouldShowEntriesInIndexBar;
 - (void)_cooldownEnded;

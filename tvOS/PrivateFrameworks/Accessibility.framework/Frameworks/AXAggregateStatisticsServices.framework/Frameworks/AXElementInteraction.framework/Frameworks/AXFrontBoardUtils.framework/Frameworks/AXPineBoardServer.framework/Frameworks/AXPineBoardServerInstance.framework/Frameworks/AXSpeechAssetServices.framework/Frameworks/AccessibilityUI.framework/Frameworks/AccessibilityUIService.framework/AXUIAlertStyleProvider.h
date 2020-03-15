@@ -16,8 +16,8 @@
 }
 
 + (id)styleProvider;
-@property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (double)alertFadeAnimationDurationForType:(unsigned long long)arg1;
 - (int)alertPositionForType:(unsigned long long)arg1;
 - (struct UIEdgeInsets)alertEdgeInsetsForType:(unsigned long long)arg1;

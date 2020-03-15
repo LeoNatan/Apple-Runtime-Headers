@@ -23,6 +23,7 @@
     struct CGRect _toStartFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setIsDeferred:) BOOL _isDeferred; // @synthesize _isDeferred=__isDeferred;
 @property(nonatomic, setter=_setToStartFrame:) struct CGRect toStartFrame; // @synthesize toStartFrame=_toStartFrame;
 @property(nonatomic, setter=_setToEndFrame:) struct CGRect toEndFrame; // @synthesize toEndFrame=_toEndFrame;
@@ -30,7 +31,6 @@
 @property(nonatomic, setter=_setFromStartFrame:) struct CGRect fromStartFrame; // @synthesize fromStartFrame=_fromStartFrame;
 @property(retain, nonatomic, setter=_setToViewController:) UIViewController *toViewController; // @synthesize toViewController=_toViewController;
 @property(retain, nonatomic, setter=_setFromViewController:) UIViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
-- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_fromView, setter=_setFromView:) UIView *fromView;
 @property(retain, nonatomic, getter=_toView, setter=_setToView:) UIView *toView;
 - (struct CGRect)finalFrameForViewController:(id)arg1;

@@ -7,6 +7,8 @@
 #import <UIKit/UITabBarController.h>
 
 @interface UITabBarController (PhotosUICore)
+- (void)_px_selectTabForKeyCommand:(id)arg1;
+- (id)px_defaultKeyCommandsWithDelegate:(id)arg1;
 - (struct CGRect)px_frameForTabItem:(unsigned long long)arg1 inCoordinateSpace:(id)arg2;
 - (void)px_performAddToTabAnimation:(unsigned long long)arg1 withSnapshotView:(id)arg2;
 @property(readonly, nonatomic) _Bool px_hidesTabBarForCurrentHorizontalSizeClass;

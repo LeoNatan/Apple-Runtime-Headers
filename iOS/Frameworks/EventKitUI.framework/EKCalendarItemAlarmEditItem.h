@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     EKAlarmsViewModel *_alarmsViewModel;
 }
 
-@property(retain, nonatomic) EKAlarmsViewModel *alarmsViewModel; // @synthesize alarmsViewModel=_alarmsViewModel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EKAlarmsViewModel *alarmsViewModel; // @synthesize alarmsViewModel=_alarmsViewModel;
 - (_Bool)saveAndDismissWithForce:(_Bool)arg1;
 - (_Bool)_alarmsMatchCalendarItem;
 - (void)refreshFromCalendarItemAndStore;

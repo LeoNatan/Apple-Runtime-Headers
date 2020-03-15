@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PODShowArtworkChangeEntityData *showArtworkData; // @synthesize showArtworkData=_showArtworkData;
 @property(readonly, nonatomic) PODShow *show; // @synthesize show=_show;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithShow:(id)arg1 showArtworkData:(id)arg2;

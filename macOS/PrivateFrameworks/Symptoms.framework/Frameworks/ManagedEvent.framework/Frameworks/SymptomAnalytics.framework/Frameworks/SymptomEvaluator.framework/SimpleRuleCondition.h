@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 + (id)configureClass:(id)arg1;
 + (id)objectWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) SEL additionalSelector; // @synthesize additionalSelector=_additionalSelector;
 @property(retain, nonatomic) id <SymptomAdditionalProtocol> additionalHandler; // @synthesize additionalHandler=_additionalHandler;
 @property(nonatomic) long long conditionStringLength; // @synthesize conditionStringLength=_conditionStringLength;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int conditionType; // @synthesize conditionType=_conditionType;
 @property(nonatomic) long long conditionMinCount; // @synthesize conditionMinCount=_conditionMinCount;
 @property(retain, nonatomic) NSString *conditionName; // @synthesize conditionName=_conditionName;
-- (void).cxx_destruct;
 - (_Bool)evaluate:(id)arg1 showingWorkAt:(id)arg2;
 - (_Bool)evaluateHandler:(id)arg1 showingWorkAt:(id)arg2;
 - (_Bool)evaluatePrevSymptom:(id)arg1 showingWorkAt:(id)arg2;

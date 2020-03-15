@@ -13,8 +13,8 @@
     GEOPDPriceDescription *_geoPriceDescription;
 }
 
-@property(retain, nonatomic) GEOPDPriceDescription *geoPriceDescription; // @synthesize geoPriceDescription=_geoPriceDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOPDPriceDescription *geoPriceDescription; // @synthesize geoPriceDescription=_geoPriceDescription;
 @property(readonly, nonatomic) NSString *priceDescription;
 @property(readonly, nonatomic) _Bool hasPriceDescription;
 - (id)initWithGEOPDPriceDescription:(id)arg1;

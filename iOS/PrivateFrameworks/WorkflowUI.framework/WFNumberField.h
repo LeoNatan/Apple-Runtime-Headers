@@ -21,13 +21,13 @@
     WFTextTokenTextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WFTextTokenTextField *textField; // @synthesize textField=_textField;
 @property(copy, nonatomic) CDUnknownBlockType variableBlock; // @synthesize variableBlock=_variableBlock;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(copy, nonatomic) CDUnknownBlockType doneBlock; // @synthesize doneBlock=_doneBlock;
 @property(nonatomic) _Bool allowsNegatingNumbers; // @synthesize allowsNegatingNumbers=_allowsNegatingNumbers;
 @property(nonatomic) _Bool allowsDecimalNumbers; // @synthesize allowsDecimalNumbers=_allowsDecimalNumbers;
-- (void).cxx_destruct;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)textDidChange;

@@ -16,11 +16,11 @@
     NSSet *_eventUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *eventUUIDs; // @synthesize eventUUIDs=_eventUUIDs;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 
 @end
 

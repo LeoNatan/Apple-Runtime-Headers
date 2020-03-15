@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldFailIfAccountNotYetSynced; // @synthesize shouldFailIfAccountNotYetSynced=_shouldFailIfAccountNotYetSynced;
 @property BOOL allowsBatching; // @synthesize allowsBatching=_allowsBatching;
 @property BOOL onlyMainStore; // @synthesize onlyMainStore=_onlyMainStore;
@@ -37,7 +38,6 @@
 @property(copy) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
 @property(copy) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property BOOL rankSort; // @synthesize rankSort=_rankSort;
-- (void).cxx_destruct;
 - (BOOL)requiresMeContactAuthorization;
 - (id)effectiveKeysToFetch;
 - (id)effectivePredicate;

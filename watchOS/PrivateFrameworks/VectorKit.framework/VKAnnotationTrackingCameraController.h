@@ -39,10 +39,10 @@ __attribute__((visibility("hidden")))
     } _flags;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) int headingAnimationDisplayRate; // @synthesize headingAnimationDisplayRate=_headingAnimationDisplayRate;
 @property(nonatomic) int zoomStyle; // @synthesize zoomStyle=_zoomStyle;
 @property(readonly, nonatomic) id <VKTrackableAnnotation> annotation; // @synthesize annotation=_annotation;
-- (id).cxx_construct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)resumeAnimation;
 - (void)pauseAnimation;

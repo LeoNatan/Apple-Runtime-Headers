@@ -24,8 +24,8 @@
     NSError *_error;
 }
 
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)_finishWithError:(id)arg1;
 - (BOOL)isFinished;
 - (BOOL)isExecuting;

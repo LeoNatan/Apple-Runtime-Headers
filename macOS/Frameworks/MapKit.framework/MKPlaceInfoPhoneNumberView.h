@@ -15,10 +15,11 @@ __attribute__((visibility("hidden")))
     BOOL _optsOutOfAds;
 }
 
-@property(nonatomic) BOOL optsOutOfAds; // @synthesize optsOutOfAds=_optsOutOfAds;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL optsOutOfAds; // @synthesize optsOutOfAds=_optsOutOfAds;
 - (int)analyticsTarget;
 - (Class)_labeledValueExpectedValueType;
+- (id)formatPhoneNumber:(id)arg1;
 - (id)_valueString;
 - (id)_iconAccessibilityLabel;
 - (id)_icon;

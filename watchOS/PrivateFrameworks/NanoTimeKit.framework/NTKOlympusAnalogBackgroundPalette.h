@@ -16,9 +16,9 @@
     NTKOlympusTritiumColorPalette *_tritiumPalette;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKOlympusTritiumColorPalette *tritiumPalette; // @synthesize tritiumPalette=_tritiumPalette;
 @property(retain, nonatomic) NTKOlympusColorPalette *olympusPalette; // @synthesize olympusPalette=_olympusPalette;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float smallDotsColorBrightness;
 @property(readonly, nonatomic) float smallNumbersColorBrightness;
 @property(readonly, nonatomic) UIColor *smallNumbersTritiumOutlineColor;
@@ -30,6 +30,11 @@
 @property(readonly, nonatomic) UIColor *logoColor;
 @property(readonly, nonatomic) UIColor *numbersColor;
 @property(readonly, nonatomic) UIColor *backgroundColor;
+- (id)tritiumOutlineColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (id)tritiumFillColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (id)colorForLogoWithStyle:(unsigned int)arg1;
+- (id)colorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (id)colorForDotVictoryAnalogTimeElement:(unsigned int)arg1;
 - (id)initWithOlympusPalette:(id)arg1 alternatePalette:(id)arg2;
 - (id)initWithOlympusPalette:(id)arg1;
 

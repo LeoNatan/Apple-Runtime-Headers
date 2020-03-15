@@ -27,12 +27,12 @@
 + (id)logCategory;
 + (id)shortDescription;
 + (id)defaultTransport;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *currentHomeConfigurations; // @synthesize currentHomeConfigurations=_currentHomeConfigurations;
 @property(retain, nonatomic) HMDRemoteMessageNotifications *sessionNotifications; // @synthesize sessionNotifications=_sessionNotifications;
 @property(readonly, nonatomic) NSMutableSet *secureRemoteSessions; // @synthesize secureRemoteSessions=_secureRemoteSessions;
 @property(readonly) HMDRemoteDeviceMonitor *deviceMonitor; // @synthesize deviceMonitor=_deviceMonitor;
 @property(readonly, copy) NSArray *transports; // @synthesize transports=_transports;
-- (void).cxx_destruct;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
 - (id)dumpState;
 - (void)secureRemoteSession:(id)arg1 receivedRequestToSendMessage:(id)arg2;

@@ -8,7 +8,7 @@
 
 #import <IBFoundation/IBICSchemaProvider-Protocol.h>
 
-@class IBICColorSpace, IBICContrastAppearance, IBICFileType, IBICIdiom, IBICLanguageDirection, IBICLuminosityAppearance, IBICPlatform, IBICScale, IBICSize, IBICVibrancyAppearance, NSArray, NSString;
+@class IBICColorSpace, IBICContrastAppearance, IBICFileType, IBICIdiom, IBICLanguageDirection, IBICLocale, IBICLuminosityAppearance, IBICPlatform, IBICScale, IBICSize, IBICVibrancyAppearance, NSArray, NSString;
 
 @interface IBICCocoaSchemaAdditions : NSObject <IBICSchemaProvider>
 {
@@ -33,6 +33,7 @@
     IBICLanguageDirection *_anyLanguageDirection;
     IBICLanguageDirection *_leftToRightLanguageDirection;
     IBICLanguageDirection *_rightToLeftLanguageDirection;
+    IBICLocale *_developmentLanguageLocale;
     IBICFileType *_pngFileType;
     IBICFileType *_jpegFileType;
     IBICLuminosityAppearance *_anyLightness;

@@ -14,9 +14,9 @@
     UILabel *_progressLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *progressLabel; // @synthesize progressLabel=_progressLabel;
 @property(retain, nonatomic) UIProgressView *progressBar; // @synthesize progressBar=_progressBar;
-- (void).cxx_destruct;
 - (id)_progressFont;
 - (void)setProgress:(double)arg1;
 - (void)setProgressText:(id)arg1;

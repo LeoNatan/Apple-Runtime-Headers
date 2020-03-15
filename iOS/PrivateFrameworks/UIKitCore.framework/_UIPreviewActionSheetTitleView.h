@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_contentSizeChanged:(id)arg1;
 - (void)_updateLabelFont;
 - (void)dealloc;

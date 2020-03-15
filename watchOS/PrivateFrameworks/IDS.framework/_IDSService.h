@@ -39,9 +39,9 @@
 }
 
 + (id)deviceForFromID:(id)arg1 fromDevices:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) IDSGroupContextController *groupContextController; // @synthesize groupContextController=_groupContextController;
 @property(nonatomic) _Bool manuallyAckMessages; // @synthesize manuallyAckMessages=_manuallyAckMessages;
-- (void).cxx_destruct;
 - (id)groupContextController:(id)arg1 accountsForAlises:(id)arg2;
 - (void)groupContextController:(id)arg1 didCreateGroup:(id)arg2;
 - (void)connection:(id)arg1 didHintCheckingTransportLogWithReason:(int)arg2;

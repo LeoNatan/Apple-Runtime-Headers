@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *waveformCache; // @synthesize waveformCache=_waveformCache;
 @property(readonly) unsigned long long cacheCapacity; // @synthesize cacheCapacity=_cacheCapacity;
-- (void).cxx_destruct;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
 - (id)waveformForAudioTrack:(id)arg1;
 - (void)dealloc;

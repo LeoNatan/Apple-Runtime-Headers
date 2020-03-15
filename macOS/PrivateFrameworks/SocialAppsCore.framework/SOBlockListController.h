@@ -17,10 +17,10 @@
 
 + (void *)_createCMFItemRefWithUnsanitizedAddress:(id)arg1;
 + (id)sharedBlockList;
+- (void).cxx_destruct;
 @property(retain) id abDatabaseChangedExternallyObserver; // @synthesize abDatabaseChangedExternallyObserver=_abDatabaseChangedExternallyObserver;
 @property(retain) id cmfBlockListUpdatedObserver; // @synthesize cmfBlockListUpdatedObserver=_cmfBlockListUpdatedObserver;
 @property(retain) NSOrderedSet *soBlockItemList; // @synthesize soBlockItemList=_soBlockItemList;
-- (void).cxx_destruct;
 - (void)_unblockCMFItem:(void *)arg1;
 - (BOOL)_blockCMFItemRef:(void *)arg1;
 - (id)_addressForCMItemRef:(void *)arg1;

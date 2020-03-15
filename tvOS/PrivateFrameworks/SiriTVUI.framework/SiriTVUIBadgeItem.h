@@ -19,6 +19,7 @@
     struct UIEdgeInsets _backgroundInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) double backgroundCornerRadius; // @synthesize backgroundCornerRadius=_backgroundCornerRadius;
 @property(nonatomic) struct UIEdgeInsets backgroundInsets; // @synthesize backgroundInsets=_backgroundInsets;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSDictionary *colors; // @synthesize colors=_colors;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 font:(id)arg2 colors:(id)arg3 isFilled:(_Bool)arg4 backgroundInsets:(struct UIEdgeInsets)arg5 backgroundCornerRadius:(double)arg6 borderWidth:(double)arg7;
 
 @end

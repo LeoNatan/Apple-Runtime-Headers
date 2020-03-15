@@ -20,13 +20,13 @@
     struct CGRect _visibleRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint coordinateSystemOrigin; // @synthesize coordinateSystemOrigin=_coordinateSystemOrigin;
 @property(nonatomic) __weak id <PUTilingCoordinateSystem> parentCoordinateSystem; // @synthesize parentCoordinateSystem=_parentCoordinateSystem;
 @property(nonatomic) __weak PUTilingView *tilingView; // @synthesize tilingView=_tilingView;
 @property(readonly, nonatomic) id <PUTilingCoordinateSystem> coordinateSystem; // @synthesize coordinateSystem=_coordinateSystem;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(retain, nonatomic) PUTilingDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)description;
 - (id)tileIdentifierForTileWithIndexPath:(id)arg1 kind:(id)arg2;
 - (void)invalidateLayoutForUpdateWithItems:(id)arg1;

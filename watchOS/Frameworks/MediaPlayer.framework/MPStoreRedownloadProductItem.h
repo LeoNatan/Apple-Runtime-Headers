@@ -16,11 +16,11 @@
     NSURL *_fallbackStreamingKeyCertificateURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesCurrentAccountIfAvailable; // @synthesize usesCurrentAccountIfAvailable=_usesCurrentAccountIfAvailable;
 @property(copy, nonatomic) NSURL *fallbackStreamingKeyCertificateURL; // @synthesize fallbackStreamingKeyCertificateURL=_fallbackStreamingKeyCertificateURL;
 @property(copy, nonatomic) NSURL *fallbackStreamingKeyServerURL; // @synthesize fallbackStreamingKeyServerURL=_fallbackStreamingKeyServerURL;
 @property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
-- (void).cxx_destruct;
 - (void)_enumerateAssetDictionariesWithBlock:(CDUnknownBlockType)arg1;
 - (id)assetForFlavor:(id)arg1;
 @property(readonly, nonatomic) NSURL *alternateHLSKeyCertificateURL;

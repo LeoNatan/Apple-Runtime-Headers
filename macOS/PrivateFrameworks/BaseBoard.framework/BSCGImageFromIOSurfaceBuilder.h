@@ -16,8 +16,8 @@
     BOOL _isOpaque;
 }
 
-@property(readonly, nonatomic, getter=isOpaque) BOOL opaque; // @synthesize opaque=_isOpaque;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isOpaque) BOOL opaque; // @synthesize opaque=_isOpaque;
 - (struct CGImage *)_buildImage;
 - (id)_surface;
 - (struct CGImage *)buildCGImage;

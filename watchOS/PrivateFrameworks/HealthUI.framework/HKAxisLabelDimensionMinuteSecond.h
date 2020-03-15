@@ -14,9 +14,9 @@
     NSDate *_startDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
-- (void).cxx_destruct;
 - (id)stringForLocation:(id)arg1;
 - (id)initWithStartDate:(id)arg1;
 

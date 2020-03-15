@@ -23,6 +23,7 @@
     UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) double focusedSizeIncrease; // @synthesize focusedSizeIncrease=_focusedSizeIncrease;
 @property(nonatomic) double diameter; // @synthesize diameter=_diameter;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStyle:(long long)arg1;
 

@@ -29,11 +29,11 @@
 + (_Bool)supportsBackgroundLuminanceObserving;
 + (Class)layerClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) long long backgroundLuminanceBias; // @synthesize backgroundLuminanceBias=_backgroundLuminanceBias;
 @property(readonly, nonatomic) long long backgroundLuminance; // @synthesize backgroundLuminance=_backgroundLuminance;
 @property(nonatomic) __weak id <MTLumaDodgePillBackgroundLuminanceObserver> backgroundLumninanceObserver; // @synthesize backgroundLumninanceObserver=_backgroundLumninanceObserver;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (struct CGSize)suggestedSizeForContentWidth:(double)arg1;
 @property(readonly, nonatomic) double suggestedEdgeSpacing;
 - (void)bounce;

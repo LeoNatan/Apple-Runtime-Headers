@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     _Bool _opaqueHitTestingEnabled;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isOpaqueHitTestingEnabled) _Bool opaqueHitTestingEnabled; // @synthesize opaqueHitTestingEnabled=_opaqueHitTestingEnabled;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property _Bool delayWindowOrderingOnClickThrough; // @synthesize delayWindowOrderingOnClickThrough=_delayWindowOrderingOnClickThrough;
 @property _Bool acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setAccessibilityElement:(BOOL)arg1;
 - (void)configureDropShadowWithOffset:(struct CGSize)arg1 size:(double)arg2 alpha:(double)arg3;
 - (void)setImage:(id)arg1;

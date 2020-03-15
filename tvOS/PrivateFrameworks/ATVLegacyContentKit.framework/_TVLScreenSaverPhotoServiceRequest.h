@@ -14,9 +14,9 @@
     CDUnknownBlockType _responseBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType responseBlock; // @synthesize responseBlock=_responseBlock;
 @property(copy, nonatomic) NSString *collectionID; // @synthesize collectionID=_collectionID;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,10 +20,10 @@
     } _itemFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak _NSFlowLayoutRow *rowObject; // @synthesize rowObject=_rowObject;
 @property(nonatomic) __weak _NSFlowLayoutSection *section; // @synthesize section=_section;
 @property(nonatomic) struct CGRect itemFrame; // @synthesize itemFrame=_itemFrame;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL sizeHasBeenSet;
 @property(nonatomic, getter=isPositionEstimated) BOOL positionEstimated;
 @property(nonatomic, getter=isSizeEstimated) BOOL sizeEstimated;

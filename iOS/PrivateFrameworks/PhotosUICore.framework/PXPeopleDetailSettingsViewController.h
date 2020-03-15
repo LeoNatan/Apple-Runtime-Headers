@@ -20,10 +20,10 @@
     PXPeopleSuggestionDataSource *_suggestionDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXPeopleSuggestionDataSource *suggestionDataSource; // @synthesize suggestionDataSource=_suggestionDataSource;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain) PXPeoplePersonDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)loadSuggestionsForPerson:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)peopleDataSource:(id)arg1 didApplyIncrementalChanges:(id)arg2;

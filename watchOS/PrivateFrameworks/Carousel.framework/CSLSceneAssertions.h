@@ -19,11 +19,11 @@
     CSLEnableClientSideOrientationEventsAssertion *_clientSideOrientationEventsAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLEnableClientSideOrientationEventsAssertion *clientSideOrientationEventsAssertion; // @synthesize clientSideOrientationEventsAssertion=_clientSideOrientationEventsAssertion;
 @property(retain, nonatomic) CSLEnableLocalOrientationEventsAssertion *localOrientationEventsAssertion; // @synthesize localOrientationEventsAssertion=_localOrientationEventsAssertion;
 @property(retain, nonatomic) CSLPIBacklightAssertion *disableSleepAssertion; // @synthesize disableSleepAssertion=_disableSleepAssertion;
 @property(retain, nonatomic) CSLBacklightIdleAssertion *backlightIdleAssertion; // @synthesize backlightIdleAssertion=_backlightIdleAssertion;
-- (void).cxx_destruct;
 - (void)updateSceneToOrientation:(int)arg1;
 - (void)_updateForDeviceOrientation:(int)arg1;
 - (void)orientationEventsAssertion:(id)arg1 deviceChangedToOrientation:(int)arg2;

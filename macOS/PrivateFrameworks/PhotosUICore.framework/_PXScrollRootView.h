@@ -13,8 +13,8 @@
     id <_PXScrollDocumentViewAccessibilityDelegate> _accessibilityDelegate;
 }
 
-@property(nonatomic) __weak id <_PXScrollDocumentViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_PXScrollDocumentViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityFocusedUIElement;
 - (struct CGRect)accessibilityFrameInParentSpace;

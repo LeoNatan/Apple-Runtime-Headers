@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PUScrubberView *_scrubber;
 }
 
-@property(retain, nonatomic) PUScrubberView *scrubber; // @synthesize scrubber=_scrubber;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUScrubberView *scrubber; // @synthesize scrubber=_scrubber;
 - (void)layoutSubviews;
 
 @end

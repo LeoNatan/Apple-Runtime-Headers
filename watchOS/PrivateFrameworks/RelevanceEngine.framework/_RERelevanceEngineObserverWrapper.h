@@ -27,8 +27,8 @@
     id <RERelevanceEngineObserver> _observer;
 }
 
-@property(readonly, nonatomic) __weak id <RERelevanceEngineObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <RERelevanceEngineObserver> observer; // @synthesize observer=_observer;
 - (void)relevanceEngineDidFinishUpdatingRelevance:(id)arg1;
 - (void)relevanceEngineDidBeginUpdatingRelevance:(id)arg1;
 - (void)relevanceEngine:(id)arg1 didUpdateRelevanceForElement:(id)arg2;

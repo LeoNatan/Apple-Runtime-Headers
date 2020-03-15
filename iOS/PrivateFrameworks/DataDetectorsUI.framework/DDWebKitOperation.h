@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     int _endOffset;
 }
 
+- (void).cxx_destruct;
 @property int endOffset; // @synthesize endOffset=_endOffset;
 @property(retain, nonatomic) DOMNode *endNode; // @synthesize endNode=_endNode;
 @property int startOffset; // @synthesize startOffset=_startOffset;
 @property(retain, nonatomic) DOMNode *startNode; // @synthesize startNode=_startNode;
-- (void).cxx_destruct;
 - (void)dispatchContainerModificationBlock:(CDUnknownBlockType)arg1;
 - (id)newOperationForContinuation;
 - (id)newOperationForStartingOver;

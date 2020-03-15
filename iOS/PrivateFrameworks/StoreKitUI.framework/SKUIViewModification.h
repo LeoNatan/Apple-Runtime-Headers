@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMapTable *_allViewTextProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *views; // @synthesize views=_views;
 @property(readonly, copy, nonatomic) NSMapTable *allViewTextProperties; // @synthesize allViewTextProperties=_allViewTextProperties;
-- (void).cxx_destruct;
 - (void)setTextProperties:(id)arg1 forView:(id)arg2;
 - (void)addView:(id)arg1;
 - (id)addReusableViewWithReuseIdentifier:(id)arg1;

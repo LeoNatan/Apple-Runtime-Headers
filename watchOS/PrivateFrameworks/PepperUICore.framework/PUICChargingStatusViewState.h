@@ -20,10 +20,10 @@
     float _batteryChargedLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float batteryChargedLevel; // @synthesize batteryChargedLevel=_batteryChargedLevel;
 @property(nonatomic, getter=isShowingChargingPercentage) _Bool showChargingPercentage; // @synthesize showChargingPercentage=_showChargingPercentage;
 @property(nonatomic, getter=statusViewIsStateActive) _Bool statusViewStateActive; // @synthesize statusViewStateActive;
-- (void).cxx_destruct;
 - (float)batteryLevel;
 - (_Bool)shouldShowChargingPercentage;
 - (id)statusViewIndicatorView;

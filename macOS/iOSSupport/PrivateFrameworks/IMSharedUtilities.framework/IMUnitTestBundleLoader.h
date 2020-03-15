@@ -13,8 +13,8 @@
     IMUnitTestLogger *_logger;
 }
 
-@property(readonly) IMUnitTestLogger *logger; // @synthesize logger=_logger;
 - (void).cxx_destruct;
+@property(readonly) IMUnitTestLogger *logger; // @synthesize logger=_logger;
 - (BOOL)loadTestBundle:(id)arg1 bundle:(id *)arg2 error:(id *)arg3;
 - (id)initWithLogger:(id)arg1;
 

@@ -36,6 +36,7 @@
 + (id)authenticatorForExistingPlayer:(id)arg1 withPresentingViewController:(id)arg2;
 + (id)authenticatorForPlayerWithUsername:(id)arg1 password:(id)arg2;
 + (id)authenticatorForExistingPlayer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool userShouldSkipCreateAppleID; // @synthesize userShouldSkipCreateAppleID=_userShouldSkipCreateAppleID;
 @property(retain, nonatomic) GKDispatchGroup *u13Group; // @synthesize u13Group=_u13Group;
 @property(retain, nonatomic) NSMutableArray *u13ObjectModels; // @synthesize u13ObjectModels=_u13ObjectModels;
@@ -53,7 +54,6 @@
 @property(copy) NSString *username; // @synthesize username=_username;
 @property(retain) GKLocalPlayer *inputLocalPlayer; // @synthesize inputLocalPlayer=_inputLocalPlayer;
 @property(retain) GKLocalPlayer *resultantLocalPlayer; // @synthesize resultantLocalPlayer=_resultantLocalPlayer;
-- (void).cxx_destruct;
 - (void)remoteUIControllerDidDismiss:(id)arg1;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;

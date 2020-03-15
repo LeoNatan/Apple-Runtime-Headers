@@ -30,6 +30,9 @@
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
+- (void)setPerson:(id)arg1 shouldShowLinkedPeople:(BOOL)arg2;
+@property(retain) ABPerson *person; // @dynamic person;
 - (void)desiredHeightChangedTo:(double)arg1;
 - (void)headerWasClicked;
 - (void)startSharingSessionForServiceNamed:(id)arg1 listenerEndpoint:(id)arg2;
@@ -45,7 +48,6 @@
 
 // Remaining properties
 @property BOOL editing; // @dynamic editing;
-@property(retain) ABPerson *person; // @dynamic person;
 @property BOOL shouldShowLinkedPeople; // @dynamic shouldShowLinkedPeople;
 
 @end

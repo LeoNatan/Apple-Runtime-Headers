@@ -13,8 +13,8 @@
     PHXSource *_source;
 }
 
-@property(retain) PHXSource *source; // @synthesize source=_source;
 - (void).cxx_destruct;
+@property(retain) PHXSource *source; // @synthesize source=_source;
 
 @end
 

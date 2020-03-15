@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)requestWithSubmanagerIdentifier:(id)arg1 userInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isWheelchairUser) _Bool wheelchairUser; // @synthesize wheelchairUser=_wheelchairUser;
 @property(nonatomic) _Bool delayable; // @synthesize delayable=_delayable;
 @property(nonatomic) _Bool forced; // @synthesize forced=_forced;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) NSString *submanagerIdentifier; // @synthesize submanagerIdentifier=_submanagerIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

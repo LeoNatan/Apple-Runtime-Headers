@@ -14,9 +14,9 @@
     WFStringParameterState *_stagedState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasChangedText; // @synthesize hasChangedText=_hasChangedText;
 @property(retain, nonatomic) WFStringParameterState *stagedState; // @synthesize stagedState=_stagedState;
-- (void).cxx_destruct;
 - (void)textEntryDidFinish;
 - (void)textEntryTextDidChange:(id)arg1;
 - (void)textEntryWillBegin:(id)arg1 allowMultipleLines:(_Bool *)arg2;

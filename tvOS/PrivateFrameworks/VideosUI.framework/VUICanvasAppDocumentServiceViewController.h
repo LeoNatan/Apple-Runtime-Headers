@@ -11,5 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)initWithDocumentServiceRequest:(id)arg1 loadImmediately:(_Bool)arg2 documentRef:(id)arg3 viewControllerIdentifier:(id)arg4 viewControllerDocumentIdentifier:(id)arg5;
+
 @end
 

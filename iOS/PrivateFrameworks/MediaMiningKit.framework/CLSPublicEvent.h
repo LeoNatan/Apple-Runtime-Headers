@@ -27,6 +27,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)supportedCategories;
+- (void).cxx_destruct;
 @property(nonatomic) long long expectedAttendance; // @synthesize expectedAttendance=_expectedAttendance;
 @property(nonatomic) struct CLLocationCoordinate2D businessItemCoordinates; // @synthesize businessItemCoordinates=_businessItemCoordinates;
 @property(nonatomic) unsigned long long businessItemMuid; // @synthesize businessItemMuid=_businessItemMuid;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSDateInterval *localDateInterval; // @synthesize localDateInterval=_localDateInterval;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) _Bool hasExpectedAttendance;

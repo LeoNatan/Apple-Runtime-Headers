@@ -17,11 +17,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *predicateRecords; // @synthesize predicateRecords=_predicateRecords;
 @property(readonly, nonatomic) NSMapTable *observersWithContexts; // @synthesize observersWithContexts=_observersWithContexts;
 @property(readonly, nonatomic) NSMutableDictionary *operationStatusByAsset; // @synthesize operationStatusByAsset=_operationStatusByAsset;
 @property(readonly, nonatomic) NSMutableDictionary *pendingPerformersByAsset; // @synthesize pendingPerformersByAsset=_pendingPerformersByAsset;
-- (void).cxx_destruct;
 - (void)_handleCompletionOfPerformer:(id)arg1 withSuccess:(_Bool)arg2 error:(id)arg3 externalCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_signalPendingPerformersChangeForAsset:(id)arg1;
 - (void)_signalStatusChangeForAsset:(id)arg1;

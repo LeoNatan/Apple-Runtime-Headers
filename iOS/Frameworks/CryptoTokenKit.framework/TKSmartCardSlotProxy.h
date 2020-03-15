@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSHashTable *_cards;
 }
 
-@property(readonly) NSHashTable *cards; // @synthesize cards=_cards;
 - (void).cxx_destruct;
+@property(readonly) NSHashTable *cards; // @synthesize cards=_cards;
 - (id)initWithSlot:(id)arg1;
 - (void)cardSessionRequested;
 - (void)notifyWithParameters:(id)arg1;

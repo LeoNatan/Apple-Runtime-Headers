@@ -16,11 +16,11 @@
     UILabel *_nameLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
 @property(retain, nonatomic) TVImageView *playerImageView; // @synthesize playerImageView=_playerImageView;
 @property(retain, nonatomic) TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)commonInit;
 - (id)initWithDictionary:(id)arg1;

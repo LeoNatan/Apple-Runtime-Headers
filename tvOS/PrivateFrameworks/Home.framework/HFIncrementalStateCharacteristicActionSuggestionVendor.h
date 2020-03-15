@@ -15,8 +15,8 @@
     NSString *_characteristicType;
 }
 
-@property(readonly, copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
 - (id)suggestedActionForCharacteristic:(id)arg1 candidateActions:(id)arg2;
 - (id)initWithCharacteristicType:(id)arg1;
 

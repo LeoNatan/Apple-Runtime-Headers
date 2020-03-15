@@ -15,10 +15,10 @@
     _Bool _hasArtworkAtPlaybackTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasArtworkAtPlaybackTime; // @synthesize hasArtworkAtPlaybackTime=_hasArtworkAtPlaybackTime;
 @property(retain, nonatomic) NSArray *chapters; // @synthesize chapters=_chapters;
 @property(nonatomic) unsigned long long chapterIndex; // @synthesize chapterIndex=_chapterIndex;
-- (void).cxx_destruct;
 
 @end
 

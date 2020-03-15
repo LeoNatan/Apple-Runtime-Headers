@@ -13,8 +13,8 @@
     NFEWSAccountProxy *_account;
 }
 
-@property __weak NFEWSAccountProxy *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property __weak NFEWSAccountProxy *account; // @synthesize account=_account;
 - (void)_deleteItemIdStrings:(id)arg1;
 - (id)_getItemsRequestWithIds:(id)arg1;
 - (id)_htmlFromPlainText:(id)arg1;

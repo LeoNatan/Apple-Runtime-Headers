@@ -15,9 +15,9 @@
     NSString *_personID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *personID; // @synthesize personID=_personID;
 @property(nonatomic) id <MSStreamsProtocolDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_refreshAuthTokenForContext:(struct __MSSPCContext *)arg1;
 - (void)_didReceiveRetryAfterDate:(id)arg1;
 - (void)_didFindServerSideConfigurationVersion:(id)arg1;

@@ -23,6 +23,7 @@
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <EDMessageChangeHookResponder> hookResponder; // @synthesize hookResponder=_hookResponder;
 @property(nonatomic) __weak EDConversationPersistence *conversationPersistence; // @synthesize conversationPersistence=_conversationPersistence;
 @property(nonatomic) BOOL recordConversationCalculationPerformanceMetrics; // @synthesize recordConversationCalculationPerformanceMetrics=_recordConversationCalculationPerformanceMetrics;
@@ -31,7 +32,6 @@
 @property(nonatomic) BOOL logConversationCalculationSubjectPrefixTrace; // @synthesize logConversationCalculationSubjectPrefixTrace=_logConversationCalculationSubjectPrefixTrace;
 @property(nonatomic) BOOL logConversationCalculationTrace; // @synthesize logConversationCalculationTrace=_logConversationCalculationTrace;
 @property(nonatomic) BOOL logConversationCalculationPerformance; // @synthesize logConversationCalculationPerformance=_logConversationCalculationPerformance;
-- (void).cxx_destruct;
 - (void)updateConversationRootsWithConnection:(id)arg1 onlyForMessagesMissingRoots:(BOOL)arg2;
 - (BOOL)isRootMessageSubject:(id)arg1;
 - (void)_updatePrefixWithConnection:(id)arg1 withNewPrefix:(id)arg2 forMessagesWithSubject:(long long)arg3;

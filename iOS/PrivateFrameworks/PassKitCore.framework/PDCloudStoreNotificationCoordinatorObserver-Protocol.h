@@ -9,6 +9,6 @@
 @class NSString, PDCloudStoreNotificationCoordinator;
 
 @protocol PDCloudStoreNotificationCoordinatorObserver <NSObject>
-- (void)cloudStoreNotificationCoordinator:(PDCloudStoreNotificationCoordinator *)arg1 createdZoneWithName:(NSString *)arg2;
+- (void)cloudStoreNotificationCoordinator:(PDCloudStoreNotificationCoordinator *)arg1 createdZoneWithName:(NSString *)arg2 forContainerName:(NSString *)arg3;
 @end
 

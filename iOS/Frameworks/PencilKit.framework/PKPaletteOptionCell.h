@@ -13,8 +13,8 @@
     UILabel *_textLabel;
 }
 
-@property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

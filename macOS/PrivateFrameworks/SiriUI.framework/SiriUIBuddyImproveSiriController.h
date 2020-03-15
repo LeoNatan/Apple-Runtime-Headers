@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSButton *_optOutButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *optOutButton; // @synthesize optOutButton=_optOutButton;
 @property __weak NSButton *optInButton; // @synthesize optInButton=_optInButton;
 @property __weak NSButton *aboutLinkButton; // @synthesize aboutLinkButton=_aboutLinkButton;
 @property __weak SiriUIBuddyController *parentController; // @synthesize parentController=_parentController;
-- (void).cxx_destruct;
 - (void)mbuaSetDataSharingOptInStatus:(long long)arg1;
 - (void)willExitPane;
 @property(readonly) BOOL shouldShowPane;

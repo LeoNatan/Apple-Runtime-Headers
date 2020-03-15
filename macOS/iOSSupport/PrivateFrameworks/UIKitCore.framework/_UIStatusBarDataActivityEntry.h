@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayId; // @synthesize displayId=_displayId;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -16,11 +16,11 @@
     NSMutableSet *_destinationStores;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *destinationStores; // @synthesize destinationStores=_destinationStores;
 @property(retain, nonatomic) NSMutableArray *messagesToBeDeleted; // @synthesize messagesToBeDeleted=_messagesToBeDeleted;
 @property(retain, nonatomic) NSMutableArray *rejectedMessages; // @synthesize rejectedMessages=_rejectedMessages;
 @property(retain, nonatomic) NSMutableArray *transferredOrDeleted; // @synthesize transferredOrDeleted=_transferredOrDeleted;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

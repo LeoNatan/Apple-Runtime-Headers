@@ -15,10 +15,10 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

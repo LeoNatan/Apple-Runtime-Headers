@@ -19,11 +19,11 @@
 + (id)deprecatedTextStyleWithName:(id)arg1 deprecatesInto:(id)arg2;
 + (id)textStyleWithName:(id)arg1 archiveName:(id)arg2;
 + (id)textStyleWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deprecatesInto; // @synthesize deprecatesInto=_deprecatesInto;
 @property(retain, nonatomic) NSArray *alternateNames; // @synthesize alternateNames=_alternateNames;
 @property(retain, nonatomic) NSString *archiveName; // @synthesize archiveName=_archiveName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

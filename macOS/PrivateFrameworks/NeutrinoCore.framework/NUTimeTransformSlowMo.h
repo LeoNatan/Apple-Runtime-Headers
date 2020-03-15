@@ -14,9 +14,9 @@
     id <NUSlowMotionTimeRangeMapper> _timeMapper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUSlowMotionTimeRangeMapper> timeMapper; // @synthesize timeMapper=_timeMapper;
 @property(readonly, nonatomic) BOOL isInverse; // @synthesize isInverse=_isInverse;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

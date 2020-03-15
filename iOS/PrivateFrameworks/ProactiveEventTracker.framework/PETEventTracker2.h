@@ -24,12 +24,12 @@
 + (double)roundToSigFigs:(double)arg1 sigFigs:(unsigned long long)arg2;
 + (unsigned int)typeIdForMessageName:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *storeCache; // @synthesize storeCache=_storeCache;
 @property(retain) PETAggregateState *aggregateState; // @synthesize aggregateState=_aggregateState;
 @property(retain) PETConfig *config; // @synthesize config=_config;
 @property(retain) NSString *logStoresDir; // @synthesize logStoresDir=_logStoresDir;
 @property(retain) NSString *rootDir; // @synthesize rootDir=_rootDir;
-- (void).cxx_destruct;
 - (void)enumerateAggregatedMessagesWithBlock:(CDUnknownBlockType)arg1 clearStore:(_Bool)arg2;
 - (double)_roundToSigFigs:(double)arg1 forRawMessage:(id)arg2;
 - (void)enumerateMessagesWithBlock:(CDUnknownBlockType)arg1 messageGroup:(id)arg2 clearStore:(_Bool)arg3;

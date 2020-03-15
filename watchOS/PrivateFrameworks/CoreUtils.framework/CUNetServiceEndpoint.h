@@ -18,13 +18,13 @@
     CUNANEndpoint *_nanEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUNANEndpoint *nanEndpoint; // @synthesize nanEndpoint=_nanEndpoint;
 @property(retain, nonatomic) CUBonjourDevice *bonjourDevice; // @synthesize bonjourDevice=_bonjourDevice;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, copy, nonatomic) NSDictionary *serviceInfo; // @synthesize serviceInfo=_serviceInfo;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned int)updateWithNANEndpoint:(id)arg1;
 - (unsigned int)updateWithBonjourDevice:(id)arg1;
 - (id)descriptionWithLevel:(int)arg1;

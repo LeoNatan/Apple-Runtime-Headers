@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 - (void).cxx_destruct;
+@property(retain) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 - (BOOL)deleteExpiredSendingDestinations;
 - (BOOL)deleteReceivingCountersForKey:(id)arg1;
 - (id)registeredPrekeyForNGMPrekey:(id)arg1 objectContext:(id)arg2;

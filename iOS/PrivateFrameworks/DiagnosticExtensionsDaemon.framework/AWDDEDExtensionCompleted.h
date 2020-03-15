@@ -27,12 +27,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long numbytes; // @synthesize numbytes=_numbytes;
 @property(nonatomic) unsigned long long numfiles; // @synthesize numfiles=_numfiles;
 @property(retain, nonatomic) NSString *extension; // @synthesize extension=_extension;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

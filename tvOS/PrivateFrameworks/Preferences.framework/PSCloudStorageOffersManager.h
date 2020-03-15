@@ -23,6 +23,7 @@
     unsigned long long _requiredStorageThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsModernAlerts; // @synthesize supportsModernAlerts=_supportsModernAlerts;
 @property(nonatomic) _Bool skipCompletionAlert; // @synthesize skipCompletionAlert=_skipCompletionAlert;
 @property(nonatomic) _Bool skipRetryWithoutToken; // @synthesize skipRetryWithoutToken=_skipRetryWithoutToken;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool shouldOfferFamilySharePlansOnly; // @synthesize shouldOfferFamilySharePlansOnly=_shouldOfferFamilySharePlansOnly;
 @property(nonatomic) unsigned long long requiredStorageThreshold; // @synthesize requiredStorageThreshold=_requiredStorageThreshold;
 @property(nonatomic) __weak id <PSCloudStorageOffersManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)commerceDelegate:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)commerceDelegateDidCancel:(id)arg1;
 - (void)commerceDelegate:(id)arg1 loadDidFailWithError:(id)arg2;

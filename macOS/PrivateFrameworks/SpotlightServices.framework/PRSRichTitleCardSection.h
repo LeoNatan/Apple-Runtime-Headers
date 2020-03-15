@@ -31,6 +31,7 @@
     double _round_corner_pt;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double round_corner_pt; // @synthesize round_corner_pt=_round_corner_pt;
 @property(readonly, nonatomic) BOOL isActionButtonAligned; // @synthesize isActionButtonAligned=_isActionButtonAligned;
 @property(readonly, nonatomic) int action_button_align; // @synthesize action_button_align=_action_button_align;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) int title_align; // @synthesize title_align=_title_align;
 @property(readonly, nonatomic) BOOL thumbnail_crop_circle; // @synthesize thumbnail_crop_circle=_thumbnail_crop_circle;
 @property(readonly, nonatomic) unsigned long long title_weight; // @synthesize title_weight=_title_weight;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 description:(id)arg3 title_weight:(unsigned long long)arg4 title_align:(long long)arg5 glyphs:(id)arg6 rt_glyph:(id)arg7 rt_text:(id)arg8 rt_newline:(BOOL)arg9 rating:(float)arg10 text:(id)arg11 image:(id)arg12 auxiliary_info:(id)arg13 action_button:(id)arg14 action_button_align:(int)arg15 buy_buttons:(id)arg16;

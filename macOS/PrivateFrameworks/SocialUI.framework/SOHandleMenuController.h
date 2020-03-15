@@ -26,12 +26,12 @@
 }
 
 + (id)_handleMenuItemLabelParagraphStyle;
+- (void).cxx_destruct;
 @property BOOL includeHandleAlternatives; // @synthesize includeHandleAlternatives=_includeHandleAlternatives;
 @property BOOL showingMenu; // @synthesize showingMenu=_showingMenu;
 @property BOOL hideAlternateHandles; // @synthesize hideAlternateHandles=_hideAlternateHandles;
 @property __weak SOChatDisplayController *chatDisplayController; // @synthesize chatDisplayController=_chatDisplayController;
 @property(copy) CDUnknownBlockType handleBlock; // @synthesize handleBlock=_handleBlock;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)menuDidClose:(id)arg1;

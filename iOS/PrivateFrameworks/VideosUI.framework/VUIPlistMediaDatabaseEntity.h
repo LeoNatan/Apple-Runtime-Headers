@@ -21,6 +21,7 @@
     NSString *_canonicalID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(copy, nonatomic) NSURL *coverArtURL; // @synthesize coverArtURL=_coverArtURL;
 @property(copy, nonatomic) NSString *contentDescription; // @synthesize contentDescription=_contentDescription;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_mediaEntityPropertyDidChange:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

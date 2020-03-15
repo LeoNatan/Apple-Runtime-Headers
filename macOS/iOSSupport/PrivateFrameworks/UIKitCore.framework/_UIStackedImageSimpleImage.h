@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *imageObj; // @synthesize imageObj=_imageObj;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, nonatomic) id <UINamedLayerContentProvider> contentProvider;

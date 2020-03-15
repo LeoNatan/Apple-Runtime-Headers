@@ -13,8 +13,8 @@
     NWPath *_path;
 }
 
-@property(retain) NWPath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(retain) NWPath *path; // @synthesize path=_path;
 - (id)clientIdentifier;
 - (id)parameters;
 - (id)endpoint;

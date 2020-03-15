@@ -18,9 +18,9 @@
     TVPSecureKeyLoader *_secureKeyLoader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPSecureKeyLoader *secureKeyLoader; // @synthesize secureKeyLoader=_secureKeyLoader;
 @property(retain, nonatomic) NSURL *mediaItemURL; // @synthesize mediaItemURL=_mediaItemURL;
-- (void).cxx_destruct;
 - (void)_postMetadataDidChangeNotificationWithMetadataProperties:(id)arg1;
 - (void)_postMetadataWillChangeNotificationWithMetadataProperties:(id)arg1;
 - (void)loadStreamingKeyForRequest:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     WBSCompletionQuery *_completionQuery;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WBSCompletionQuery *completionQuery; // @synthesize completionQuery=_completionQuery;
 @property(nonatomic) __weak id <WebSearchSuggestionsFetcherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_stopLoading;
 - (void)_fetch;
 @property(readonly, nonatomic) WBSOpenSearchURLTemplate *suggestionsURLTemplate;

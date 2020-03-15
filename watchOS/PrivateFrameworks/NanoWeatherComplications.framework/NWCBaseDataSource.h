@@ -20,8 +20,8 @@
 + (id)selectedLocationWeatherMonitor;
 + (id)localizedAppName;
 + (id)appIdentifier;
-@property(retain, nonatomic) CLKComplicationTemplate *switcherTemplate; // @synthesize switcherTemplate=_switcherTemplate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CLKComplicationTemplate *switcherTemplate; // @synthesize switcherTemplate=_switcherTemplate;
 @property(readonly) NSString *launchQuery;
 @property(readonly) unsigned int loggingCategory;
 @property(readonly) unsigned int forecastTypes;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)proxyForClass:(Class)arg1;
 + (id)proxyForServer:(id)arg1 daemon:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOServer *server; // @synthesize server=_server;
 @property(readonly, nonatomic) Class serverClass; // @synthesize serverClass=_serverClass;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqualToServerProxy:(id)arg1;

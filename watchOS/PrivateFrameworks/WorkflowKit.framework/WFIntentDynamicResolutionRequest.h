@@ -12,9 +12,9 @@
     CDUnknownBlockType _resolutionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resolutionBlock; // @synthesize resolutionBlock=_resolutionBlock;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
 

@@ -20,10 +20,10 @@
 
 + (id)speakThisMessageKeyKBFrame;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) CDUnknownBlockType errorHandlerFromPriorShowControllerAttempt; // @synthesize errorHandlerFromPriorShowControllerAttempt=_errorHandlerFromPriorShowControllerAttempt;
 @property(nonatomic) _Bool triedToShowSpeechControllerBeforeSBReady; // @synthesize triedToShowSpeechControllerBeforeSBReady=_triedToShowSpeechControllerBeforeSBReady;
 @property(nonatomic) _Bool springBoardReady; // @synthesize springBoardReady=_springBoardReady;
-- (void).cxx_destruct;
 - (id)_descriptionForErrorCode:(long long)arg1;
 - (id)_descriptionForMessageIdentifier:(unsigned long long)arg1;
 - (void)_sendMessage:(id)arg1 withIdentifier:(unsigned long long)arg2 errorHandler:(CDUnknownBlockType)arg3;

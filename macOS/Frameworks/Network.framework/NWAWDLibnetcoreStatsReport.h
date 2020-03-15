@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)tcpECNInterfaceReportType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NWAWDLibnetcoreMPTCPStatsReport *mptcpStatisticsReport; // @synthesize mptcpStatisticsReport=_mptcpStatisticsReport;
 @property(retain, nonatomic) NWAWDNWAPIUsage *nwAPIUsageReport; // @synthesize nwAPIUsageReport=_nwAPIUsageReport;
 @property(retain, nonatomic) NSMutableArray *tcpECNInterfaceReports; // @synthesize tcpECNInterfaceReports=_tcpECNInterfaceReports;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NWAWDLibnetcoreMbufStatsReport *mbufStatisticsReport; // @synthesize mbufStatisticsReport=_mbufStatisticsReport;
 @property(nonatomic) unsigned int reportReason; // @synthesize reportReason=_reportReason;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

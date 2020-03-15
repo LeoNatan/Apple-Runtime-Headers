@@ -14,9 +14,9 @@
     unsigned int _feeds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int feeds; // @synthesize feeds=_feeds;
 @property(retain, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 
 @end
 

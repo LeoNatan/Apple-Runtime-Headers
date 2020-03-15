@@ -33,6 +33,7 @@
     NSNumber *_replicationTime;
 }
 
+- (void).cxx_destruct;
 @property _Bool syncLocalPassword; // @synthesize syncLocalPassword=_syncLocalPassword;
 @property(retain, nonatomic) NSNumber *replicationTime; // @synthesize replicationTime=_replicationTime;
 @property(retain, nonatomic) NSString *pwReqText; // @synthesize pwReqText=_pwReqText;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSString *siteCode; // @synthesize siteCode=_siteCode;
 @property(retain, nonatomic) NSString *principalName; // @synthesize principalName=_principalName;
 @property(retain, nonatomic) NSString *cacheName; // @synthesize cacheName=_cacheName;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initAndPopulateExtensionData;
 

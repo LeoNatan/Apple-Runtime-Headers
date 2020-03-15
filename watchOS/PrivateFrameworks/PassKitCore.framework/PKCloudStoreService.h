@@ -31,18 +31,19 @@
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)simulateCloudStorePushForContainerIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)populateEvents:(id)arg1 forAccountIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)uploadTransaction:(id)arg1 forPassWithUniqueIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)deleteZone:(id)arg1 containerName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)copyDataFromZoneName:(id)arg1 toZoneName:(id)arg2 inContainerName:(id)arg3 passUniqueID:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)uploadTransaction:(id)arg1 forPassWithUniqueIdentifier:(id)arg2 includeServerData:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetContainerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)recreateZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)itemOfItemType:(unsigned int)arg1 recordName:(id)arg2 qualityOfService:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)itemOfItemType:(unsigned int)arg1 recordName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)allItemsOfItemType:(unsigned int)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)removeRecordWithRecordName:(id)arg1 zoneName:(id)arg2 containerName:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 includeServerData:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)init;
-- (void)simulateCloudStorePushWithCompletion:(CDUnknownBlockType)arg1;
-- (void)resetContainerWithHandler:(CDUnknownBlockType)arg1;
-- (void)resetContainerWithCompletion:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

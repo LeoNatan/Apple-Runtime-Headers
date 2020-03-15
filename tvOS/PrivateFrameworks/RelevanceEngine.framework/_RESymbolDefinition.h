@@ -17,12 +17,12 @@
     id _objectValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id objectValue; // @synthesize objectValue=_objectValue;
 @property(retain, nonatomic) REScriptASTNode *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) REScriptToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name;
 - (id)initWithToken:(id)arg1 type:(unsigned long long)arg2 options:(id)arg3;
 

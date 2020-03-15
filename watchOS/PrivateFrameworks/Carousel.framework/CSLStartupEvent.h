@@ -21,6 +21,7 @@
     struct vm_statistics64 _finalVMStats;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct vm_statistics64 finalVMStats; // @synthesize finalVMStats=_finalVMStats;
 @property(nonatomic) struct vm_statistics64 initialVMStats; // @synthesize initialVMStats=_initialVMStats;
 @property(nonatomic) double expectedDuration; // @synthesize expectedDuration=_expectedDuration;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned int traceCode; // @synthesize traceCode=_traceCode;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)plistRepresentation;
 - (id)initWithName:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 

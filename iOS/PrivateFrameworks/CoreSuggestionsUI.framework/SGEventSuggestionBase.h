@@ -23,8 +23,8 @@
 + (id)_eventStore;
 + (void)confirm:(_Bool)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)calendarImage;
-@property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 - (CDUnknownBlockType)suggestionCategoryItemComparator;
 - (id)suggestionCategoryLocalizedCountOfItems:(id)arg1;
 - (id)suggestionCategorySubtitleForItems:(id)arg1;

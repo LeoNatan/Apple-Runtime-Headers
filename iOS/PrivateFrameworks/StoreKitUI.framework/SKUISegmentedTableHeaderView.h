@@ -15,9 +15,9 @@
     UIView *_segmentedControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
-- (void).cxx_destruct;
 - (id)_borderView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

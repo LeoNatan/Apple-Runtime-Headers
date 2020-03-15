@@ -22,6 +22,7 @@
 }
 
 + (unsigned long long)visibleRowsInGrid:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double lastMeasuredWidth; // @synthesize lastMeasuredWidth=_lastMeasuredWidth;
 @property(retain, nonatomic) TLKImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) TLKKeyValueGridView *trailingGrid; // @synthesize trailingGrid=_trailingGrid;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSArray *trailingTuples; // @synthesize trailingTuples=_trailingTuples;
 @property(retain, nonatomic) NSArray *leadingTuples; // @synthesize leadingTuples=_leadingTuples;
-- (void).cxx_destruct;
 - (id)leadingTextKeyLabels;
 - (unsigned long long)numberOfVisibleRowsForTrailingGrid;
 - (unsigned long long)numberOfVisibleRowsForLeadingGrid;

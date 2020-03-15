@@ -14,9 +14,9 @@
     NSArray *_menuItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(retain, nonatomic) TVLHeaderElement *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

@@ -16,11 +16,11 @@
     double _doubleValue;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) int intValue; // @synthesize intValue=_intValue;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

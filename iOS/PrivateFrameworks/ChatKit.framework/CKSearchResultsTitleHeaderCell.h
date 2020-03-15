@@ -26,6 +26,7 @@
 + (double)desiredZPosition;
 + (id)reuseIdentifier;
 + (id)supplementaryViewType;
+- (void).cxx_destruct;
 @property(nonatomic) double titleBottomPadding; // @synthesize titleBottomPadding=_titleBottomPadding;
 @property(nonatomic) double titleTopPadding; // @synthesize titleTopPadding=_titleTopPadding;
 @property(retain, nonatomic) CALayer *topHairline; // @synthesize topHairline=_topHairline;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long sectionIndex; // @synthesize sectionIndex=_sectionIndex;
 @property(nonatomic) __weak id <CKSearchResultsTitleHeaderCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
-- (void).cxx_destruct;
 - (void)_showAllButtonTapped:(id)arg1;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)setTitle:(id)arg1;

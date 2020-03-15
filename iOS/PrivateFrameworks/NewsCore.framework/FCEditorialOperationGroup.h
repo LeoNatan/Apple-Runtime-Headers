@@ -16,10 +16,10 @@
     NSDate *_publishDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
 @property(retain, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
 @property(retain, nonatomic) id <FCSectionProviding> section; // @synthesize section=_section;
-- (void).cxx_destruct;
 
 @end
 

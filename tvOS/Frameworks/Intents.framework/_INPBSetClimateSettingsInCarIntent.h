@@ -41,6 +41,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBTemperature *temperature; // @synthesize temperature=_temperature;
 @property(nonatomic) int relativeTemperatureSetting; // @synthesize relativeTemperatureSetting=_relativeTemperatureSetting;
@@ -55,7 +56,6 @@
 @property(nonatomic) int climateZone; // @synthesize climateZone=_climateZone;
 @property(retain, nonatomic) _INPBDataString *carName; // @synthesize carName=_carName;
 @property(nonatomic) int airCirculationMode; // @synthesize airCirculationMode=_airCirculationMode;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

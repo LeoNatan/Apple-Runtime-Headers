@@ -16,9 +16,9 @@
     NSURLSession *_urlSession;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(copy) NSArray *retryIntervals; // @synthesize retryIntervals=_retryIntervals;
-- (void).cxx_destruct;
 - (void)performLoadFromURL:(id)arg1 session:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)attemptLoadFromURL:(id)arg1 session:(id)arg2 retryIntervalEnumerator:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fileCache:(id)arg1 loadFileForIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

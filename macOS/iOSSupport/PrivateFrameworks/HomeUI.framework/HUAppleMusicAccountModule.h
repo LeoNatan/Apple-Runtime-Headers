@@ -23,6 +23,7 @@
     HFStaticItemProvider *_appleMusicAccountActionItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFStaticItemProvider *appleMusicAccountActionItemProvider; // @synthesize appleMusicAccountActionItemProvider=_appleMusicAccountActionItemProvider;
 @property(copy, nonatomic) CDUnknownBlockType stateChangeObserver; // @synthesize stateChangeObserver=_stateChangeObserver;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) HUAppleMusicItem *loggedInUsernameItem; // @synthesize loggedInUsernameItem=_loggedInUsernameItem;
 @property(readonly, nonatomic) HUAppleMusicAccountItemProvider *appleMusicAccountItemProvider; // @synthesize appleMusicAccountItemProvider=_appleMusicAccountItemProvider;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (void)dispatcher:(id)arg1 appleMusicAccountsDidUpdate:(id)arg2;
 @property(readonly, nonatomic) NSString *explicitAccountSignedInMessage;
 - (id)signInMessage:(BOOL)arg1;

@@ -30,6 +30,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSSet *functions; // @synthesize functions=_functions;
 @property(retain, nonatomic) NSOperationQueue *timedMetadataQueue; // @synthesize timedMetadataQueue=_timedMetadataQueue;
@@ -37,7 +38,6 @@
 @property _Bool allowsSubtitleOffOption; // @synthesize allowsSubtitleOffOption=_allowsSubtitleOffOption;
 @property(retain) NSArray *allowedSubtitleLanguageCodes; // @synthesize allowedSubtitleLanguageCodes=_allowedSubtitleLanguageCodes;
 @property(retain, nonatomic) TVLLegacyJSContext *context; // @synthesize context;
-- (void).cxx_destruct;
 - (id)player:(id)arg1 filteredSubtitleOptionsFromOptions:(id)arg2;
 - (_Bool)player:(id)arg1 shouldChangeToMediaAtIndex:(unsigned long long)arg2;
 - (_Bool)player:(id)arg1 shouldChangeMediaInDirection:(long long)arg2;

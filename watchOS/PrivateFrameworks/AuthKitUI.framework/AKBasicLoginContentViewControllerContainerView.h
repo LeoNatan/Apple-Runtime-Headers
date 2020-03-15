@@ -19,11 +19,11 @@
     NSArray *_activeConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *bannerView; // @synthesize bannerView=_bannerView;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *bannerImage; // @synthesize bannerImage=_bannerImage;
 @property(copy, nonatomic) NSString *messageText; // @synthesize messageText=_messageText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;

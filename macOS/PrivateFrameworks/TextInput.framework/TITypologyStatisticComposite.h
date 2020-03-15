@@ -14,8 +14,8 @@
 }
 
 + (id)statisticCompositeWithStatistics:(id)arg1;
-@property(readonly, nonatomic) NSArray *statistics; // @synthesize statistics=_statistics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *statistics; // @synthesize statistics=_statistics;
 - (id)aggregateReport;
 - (id)structuredReport;
 - (void)finalizeComputation;

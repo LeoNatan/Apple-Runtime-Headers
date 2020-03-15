@@ -21,11 +21,11 @@
     double _delayBetweenScrolls;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double delayBetweenScrolls; // @synthesize delayBetweenScrolls=_delayBetweenScrolls;
 @property(nonatomic) unsigned int numberOfScrollsToPerform; // @synthesize numberOfScrollsToPerform=_numberOfScrollsToPerform;
 @property(nonatomic) float peakScrollVelocity; // @synthesize peakScrollVelocity=_peakScrollVelocity;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)_performFocusFastScrolling;
 - (void)main;
 - (void)prepareWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -13,8 +13,8 @@
     PLClickPresentationPresentationTransition *_presentationTransition;
 }
 
-@property(nonatomic) __weak PLClickPresentationPresentationTransition *presentationTransition; // @synthesize presentationTransition=_presentationTransition;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PLClickPresentationPresentationTransition *presentationTransition; // @synthesize presentationTransition=_presentationTransition;
 - (void)_configureTransitionContextWithFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (id)_newAnimator;
 - (void)updateBackgroundViewForTransition;

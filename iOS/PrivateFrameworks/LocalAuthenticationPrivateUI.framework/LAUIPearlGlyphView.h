@@ -25,6 +25,7 @@
 }
 
 + (id)sharedStaticResources;
+- (void).cxx_destruct;
 // Error parsing type for property modelTransform:
 // Property attributes: T{?=[4]},N,V_modelTransform
 
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) UIColor *finishedColor; // @synthesize finishedColor=_finishedColor;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool inApplicationContext; // @synthesize inApplicationContext=_inApplicationContext;
-- (void).cxx_destruct;
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

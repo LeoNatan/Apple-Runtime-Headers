@@ -21,8 +21,8 @@
 + (_Bool)isBluetoothRoute:(id)arg1;
 + (id)macAddressForRoute:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) _Bool selectedForSystem; // @synthesize selectedForSystem=_selectedForSystem;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool selectedForSystem; // @synthesize selectedForSystem=_selectedForSystem;
 - (void)setHfpPreference:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool hfpPreference;
 - (void)setSelected:(_Bool)arg1;

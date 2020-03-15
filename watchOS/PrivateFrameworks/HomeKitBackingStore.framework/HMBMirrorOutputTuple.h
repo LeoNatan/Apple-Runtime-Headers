@@ -18,13 +18,13 @@
     unsigned int _outputBlockRow;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int outputBlockRow; // @synthesize outputBlockRow=_outputBlockRow;
 @property(readonly) unsigned int recordRow; // @synthesize recordRow=_recordRow;
 @property(readonly, nonatomic) HMBLocalSQLQueryTable *queryTable; // @synthesize queryTable=_queryTable;
 @property(copy, nonatomic) NSData *externalData; // @synthesize externalData=_externalData;
 @property(copy, nonatomic) NSData *externalID; // @synthesize externalID=_externalID;
 @property(readonly, nonatomic) HMBModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithOutputBlockRow:(unsigned int)arg1 recordRow:(unsigned int)arg2 model:(id)arg3 queryTable:(id)arg4 externalID:(id)arg5 externalData:(id)arg6;
 

@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     NSDate *_scrollToDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *scrollToDate; // @synthesize scrollToDate=_scrollToDate;
 @property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(readonly, nonatomic) id <WDDataListViewControllerDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
-- (void).cxx_destruct;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (void)_updateActivityForViewDidAppear;

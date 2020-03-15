@@ -20,8 +20,8 @@
     _Bool _usesLongSideTicks;
 }
 
-@property(nonatomic) _Bool usesLongSideTicks; // @synthesize usesLongSideTicks=_usesLongSideTicks;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool usesLongSideTicks; // @synthesize usesLongSideTicks=_usesLongSideTicks;
 - (double)_innerDialRadiusAtLargeTick:(long long)arg1 verticalLength:(double)arg2 horizontalLength:(double)arg3;
 - (double)_outerDialRadiusAtMediumTick:(long long)arg1 verticalLength:(double)arg2 horizontalLength:(double)arg3;
 - (void)applyZoomFraction:(double)arg1;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     long long _previousItemCount;
 }
 
-@property(retain) SHKProgressController *progressController; // @synthesize progressController=_progressController;
 - (void).cxx_destruct;
+@property(retain) SHKProgressController *progressController; // @synthesize progressController=_progressController;
 - (void)revealProgressItem:(id)arg1;
 - (void)cancelProgressItem:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;

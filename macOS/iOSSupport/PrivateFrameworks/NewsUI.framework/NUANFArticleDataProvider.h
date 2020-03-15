@@ -25,6 +25,7 @@
     NFEventManager *_eventManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFEventManager *eventManager; // @synthesize eventManager=_eventManager;
 @property(retain, nonatomic) id <NUEmbedDataManager> embedDataManger; // @synthesize embedDataManger=_embedDataManger;
 @property(retain, nonatomic) NUANFAssetLoader *assetLoader; // @synthesize assetLoader=_assetLoader;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(retain, nonatomic) FCArticle *article; // @synthesize article=_article;
-- (void).cxx_destruct;
 - (void)setupAssetPrefetchCancellationWithOperation:(id)arg1;
 - (void)setupAssetPrefetchRequestEventsWithEvents:(id)arg1;
 - (void)reloadArticleIfNeeded;

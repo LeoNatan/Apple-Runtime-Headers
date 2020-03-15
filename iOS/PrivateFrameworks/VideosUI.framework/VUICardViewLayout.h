@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     VUITextLayout *_secondaryTextLayout;
     VUITextLayout *_titleTextLayout;
     VUITextLayout *_subtitleTextLayout;
+    VUITextLayout *_detailsTextLayout;
     TVImageLayout *_appImageLayout;
     VUIButtonLayout *_buttonLayout;
     struct TVCornerRadii _borderRadii;
@@ -29,8 +30,10 @@ __attribute__((visibility("hidden")))
 
 + (double)cardHeightForElementType:(unsigned long long)arg1 width:(double)arg2;
 + (double)cardHeightForElementType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIButtonLayout *buttonLayout; // @synthesize buttonLayout=_buttonLayout;
 @property(retain, nonatomic) TVImageLayout *appImageLayout; // @synthesize appImageLayout=_appImageLayout;
+@property(retain, nonatomic) VUITextLayout *detailsTextLayout; // @synthesize detailsTextLayout=_detailsTextLayout;
 @property(retain, nonatomic) VUITextLayout *subtitleTextLayout; // @synthesize subtitleTextLayout=_subtitleTextLayout;
 @property(retain, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 @property(retain, nonatomic) VUITextLayout *secondaryTextLayout; // @synthesize secondaryTextLayout=_secondaryTextLayout;
@@ -43,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct TVCornerRadii borderRadii; // @synthesize borderRadii=_borderRadii;
 @property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(nonatomic) _Bool hideFloatingBackground; // @synthesize hideFloatingBackground=_hideFloatingBackground;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

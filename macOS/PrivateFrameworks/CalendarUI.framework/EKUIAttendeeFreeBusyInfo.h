@@ -15,10 +15,10 @@
     EKUILocationTableCellView *_locationView;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKUILocationTableCellView *locationView; // @synthesize locationView=_locationView;
 @property int freeBusyType; // @synthesize freeBusyType=_freeBusyType;
 @property(retain) EKUITokenAttachmentCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -13,8 +13,8 @@
     NSArray *_interactableSubviews;
 }
 
-@property(copy, nonatomic) NSArray *interactableSubviews; // @synthesize interactableSubviews=_interactableSubviews;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *interactableSubviews; // @synthesize interactableSubviews=_interactableSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end

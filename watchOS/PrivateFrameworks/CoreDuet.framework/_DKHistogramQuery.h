@@ -28,6 +28,7 @@
 + (id)histogramQueryForStream:(id)arg1 interval:(id)arg2 predicate:(id)arg3 valueKeyPaths:(id)arg4;
 + (id)histogramQueryForStream:(id)arg1 interval:(id)arg2 withPredicate:(id)arg3;
 + (id)histogramQueryForStream:(id)arg1 interval:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *valueKeyPaths; // @synthesize valueKeyPaths=_valueKeyPaths;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) unsigned int minimumOccurrencesForInclusion; // @synthesize minimumOccurrencesForInclusion=_minimumOccurrencesForInclusion;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) CDUnknownBlockType histogramHandler; // @synthesize histogramHandler=_histogramHandler;
 @property(retain, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) _DKEventStream *stream; // @synthesize stream=_stream;
-- (void).cxx_destruct;
 - (id)handleResults:(id)arg1 error:(id)arg2;
 - (id)executeUsingCoreDataStorage:(id)arg1 error:(id *)arg2;
 - (id)_fetchRemoteResultsWithStorage:(id)arg1 error:(id *)arg2;

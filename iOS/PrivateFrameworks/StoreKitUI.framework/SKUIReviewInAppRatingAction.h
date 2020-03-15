@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionWithCustomContentViewController:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType afterDismissHandler; // @synthesize afterDismissHandler=_afterDismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType beforeDismissHandler; // @synthesize beforeDismissHandler=_beforeDismissHandler;
-- (void).cxx_destruct;
 - (void)setCustomEnabledState:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;
 

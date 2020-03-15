@@ -17,8 +17,8 @@
 
 + (id)uuid;
 + (void)initialize;
-@property(readonly, nonatomic) AWDHomeKitPresenceReport *metric; // @synthesize metric=_metric;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AWDHomeKitPresenceReport *metric; // @synthesize metric=_metric;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 - (id)init;

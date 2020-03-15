@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

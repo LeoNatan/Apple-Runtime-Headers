@@ -17,9 +17,9 @@
     NSString *_environmentDescriptionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *environmentDescriptionIdentifier; // @synthesize environmentDescriptionIdentifier=_environmentDescriptionIdentifier;
 @property(copy, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *loggableDescription;
 @property(readonly, nonatomic) BSSettings *bsSettings;
 - (void)encodeWithXPCDictionary:(id)arg1;

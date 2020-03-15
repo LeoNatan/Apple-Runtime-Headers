@@ -16,10 +16,10 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFAnimationSettings *appFadeSettings; // @synthesize appFadeSettings=_appFadeSettings;
 @property(retain, nonatomic) SBFAnimationSettings *appZoomSettings; // @synthesize appZoomSettings=_appZoomSettings;
 @property(nonatomic) double appHeadStart; // @synthesize appHeadStart=_appHeadStart;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

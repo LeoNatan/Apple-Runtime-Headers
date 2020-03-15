@@ -20,8 +20,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) NSSet *extensionsSync; // @synthesize extensionsSync=_extensionsSync;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *extensionsSync; // @synthesize extensionsSync=_extensionsSync;
 - (_Bool)shouldShowConfigurationUIForEnablingExtension:(id)arg1;
 - (id)displayNameForExtension:(id)arg1;
 - (void)setExtension:(id)arg1 isEnabled:(_Bool)arg2;

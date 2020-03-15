@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) NSDictionary *labelClasses; // @synthesize labelClasses=_labelClasses;
-@property(readonly, nonatomic) unsigned long long embeddingDimension; // @synthesize embeddingDimension=_embeddingDimension;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *labelClasses; // @synthesize labelClasses=_labelClasses;
+@property(readonly, nonatomic) unsigned long long embeddingDimension; // @synthesize embeddingDimension=_embeddingDimension;
 - (void)addResource:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numOutputClasses;
 - (id)getEvaluationDataPoint;

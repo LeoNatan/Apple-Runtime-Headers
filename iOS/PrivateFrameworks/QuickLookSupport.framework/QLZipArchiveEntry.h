@@ -16,10 +16,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property __weak QLZipArchive *archive; // @synthesize archive=_archive;
 @property(retain) NSData *data; // @synthesize data=_data;
 @property struct archive_entry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (id)readDataWithError:(id *)arg1;
 @property(readonly, nonatomic) NSURL *url;
 

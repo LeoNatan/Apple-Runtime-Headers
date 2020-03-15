@@ -21,10 +21,10 @@
     unsigned int _audioStreamHandleId;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int audioStreamHandleId; // @synthesize audioStreamHandleId=_audioStreamHandleId;
 @property(retain, nonatomic) CSAudioPowerMeter *powerMeter; // @synthesize powerMeter=_powerMeter;
 @property(nonatomic) __weak id <CSVTUIAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)audioRecorderDisconnected:(id)arg1;
 - (void)audioRecorderDidStopRecord:(id)arg1 audioStreamHandleId:(unsigned int)arg2 reason:(int)arg3;
 - (void)audioRecorderDidStartRecord:(id)arg1 audioStreamHandleId:(unsigned int)arg2 successfully:(_Bool)arg3 error:(id)arg4;

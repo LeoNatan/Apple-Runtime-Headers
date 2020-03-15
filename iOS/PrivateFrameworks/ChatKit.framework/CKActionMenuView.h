@@ -24,6 +24,7 @@
 }
 
 + (void)collapseAnimation:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTouchInside) _Bool touchInside; // @synthesize touchInside=_touchInside;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(retain, nonatomic) UIBlurEffect *blurEffect; // @synthesize blurEffect=_blurEffect;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak CKActionMenuController *actionMenuController; // @synthesize actionMenuController=_actionMenuController;
 @property(nonatomic) unsigned long long defaultActionIndex; // @synthesize defaultActionIndex=_defaultActionIndex;
 @property(copy, nonatomic) NSArray *actionMenuItems; // @synthesize actionMenuItems=_actionMenuItems;
-- (void).cxx_destruct;
 - (void)configureForPresentationAtPoint:(struct CGPoint)arg1 inRect:(struct CGRect)arg2;
 - (id)actionMenuItemAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)setCollapsed:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

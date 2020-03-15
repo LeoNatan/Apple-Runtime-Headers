@@ -17,8 +17,8 @@
     struct os_unfair_lock_s _lock;
 }
 
-@property(retain) id <SFLInternalItem> _internalItem; // @synthesize _internalItem;
 - (void).cxx_destruct;
+@property(retain) id <SFLInternalItem> _internalItem; // @synthesize _internalItem;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy) SFLBookmark *bookmark;

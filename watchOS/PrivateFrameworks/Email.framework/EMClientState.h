@@ -20,10 +20,10 @@
 
 + (id)remoteInterface;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) EFObservable<EFObserver> *foregroundObservable; // @synthesize foregroundObservable=_foregroundObservable;
 @property(nonatomic) _Bool isForeground; // @synthesize isForeground=_isForeground;
-- (void).cxx_destruct;
 - (void)_handleApplicationDidEnterBackground;
 - (void)_handleApplicationWillEnterForeground;
 - (void)_updateRemoteInterface;

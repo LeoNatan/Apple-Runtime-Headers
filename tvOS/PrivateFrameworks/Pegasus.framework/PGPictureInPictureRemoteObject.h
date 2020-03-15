@@ -49,11 +49,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _initialLayerFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sourceSceneSessionPersistentIdentifier; // @synthesize sourceSceneSessionPersistentIdentifier=_sourceSceneSessionPersistentIdentifier;
 @property(readonly, nonatomic) struct CGSize preferredContentSize; // @synthesize preferredContentSize=_preferredContentSize;
 @property(readonly, nonatomic) struct CGRect initialLayerFrame; // @synthesize initialLayerFrame=_initialLayerFrame;
 @property(readonly, nonatomic) PGPictureInPictureApplication *pictureInPictureApplication; // @synthesize pictureInPictureApplication=_pictureInPictureApplication;
-- (void).cxx_destruct;
 - (void)pictureInPictureViewControllerCancelButtonTapped:(id)arg1;
 - (void)pictureInPictureViewControllerActionButtonTapped:(id)arg1;
 - (void)pictureInPictureViewControllerStopButtonTapped:(id)arg1;

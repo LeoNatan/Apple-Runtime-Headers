@@ -14,9 +14,9 @@
     id <_PKAllowDrawingWhilePresentingPopoverViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isHitTesting; // @synthesize isHitTesting=_isHitTesting;
 @property(nonatomic) __weak id <_PKAllowDrawingWhilePresentingPopoverViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)_rootAncestorViewOfDimmmingView:(struct CGPoint)arg1 withEvent:(id)arg2;
 

@@ -23,11 +23,11 @@
     JSContext *_jsContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) JSValue *jsBodyField; // @synthesize jsBodyField=_jsBodyField;
 @property(readonly, nonatomic) JSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(readonly, nonatomic) WKWebProcessPlugInBrowserContextController *controller; // @synthesize controller=_controller;
 @property(readonly, nonatomic) __weak id <WKWebProcessPlugIn> plugIn; // @synthesize plugIn=_plugIn;
-- (void).cxx_destruct;
 - (void)initializeBodyField:(id)arg1;
 - (void)initializeGlobalObject;
 - (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned long long)arg3 request:(id)arg4 redirectResponse:(id)arg5;

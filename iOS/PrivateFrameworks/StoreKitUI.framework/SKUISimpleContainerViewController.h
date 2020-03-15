@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
-@property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void)setPreferredContentSize:(struct CGSize)arg1;
 - (void)loadView;
 

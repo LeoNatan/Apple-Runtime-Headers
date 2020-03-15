@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pathStringForAccessorSequence:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *accessorSequence; // @synthesize accessorSequence=_accessorSequence;
 @property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)_initWithAccessorSequence:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

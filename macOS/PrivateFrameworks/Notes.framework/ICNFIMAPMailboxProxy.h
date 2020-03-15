@@ -30,9 +30,9 @@
     ICNFIMAPAccountProxy *_accountProxy;
 }
 
+- (void).cxx_destruct;
 @property BOOL doingHasMessages; // @synthesize doingHasMessages=_doingHasMessages;
 @property __weak ICNFIMAPAccountProxy *accountProxy; // @synthesize accountProxy=_accountProxy;
-- (void).cxx_destruct;
 - (id)_copyMailboxSyncEngineCreateIfNecessary:(BOOL)arg1 setupGatewayIfNecessary:(BOOL)arg2;
 - (BOOL)deleteMessageFromServer:(unsigned int)arg1;
 - (unsigned int)_permanentFlags;

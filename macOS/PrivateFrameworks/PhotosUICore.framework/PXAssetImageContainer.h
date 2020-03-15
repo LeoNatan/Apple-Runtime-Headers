@@ -18,12 +18,12 @@
 }
 
 + (id)imageContainersForSelectionSnapshot:(id)arg1 gridView:(id)arg2 fallbackMediaProvider:(id)arg3 includeAllAssets:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
 @property(readonly, nonatomic) struct CGImage *imageRef; // @synthesize imageRef=_imageRef;
 @property(readonly, nonatomic) PXRegionOfInterest *regionOfInterest; // @synthesize regionOfInterest=_regionOfInterest;
 @property(readonly, nonatomic) PXCoordinatedRect *frame; // @synthesize frame=_frame;
 @property(readonly, nonatomic) PXAssetReference *assetReference; // @synthesize assetReference=_assetReference;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithAssetReference:(id)arg1 frame:(id)arg2 imageRef:(struct CGImage *)arg3 contentsRect:(struct CGRect)arg4 regionOfInterest:(id)arg5;

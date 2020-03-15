@@ -18,13 +18,13 @@
     unsigned long long _restingFrameCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long restingFrameCount; // @synthesize restingFrameCount=_restingFrameCount;
 @property(nonatomic, getter=isAtRest) BOOL atRest; // @synthesize atRest=_atRest;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(copy, nonatomic) CDUnknownBlockType progressInputBlock; // @synthesize progressInputBlock=_progressInputBlock;
 @property(nonatomic) BOOL completesWhenAtRest; // @synthesize completesWhenAtRest=_completesWhenAtRest;
 @property(nonatomic) BOOL applyOnlyOnProgressChanges; // @synthesize applyOnlyOnProgressChanges=_applyOnlyOnProgressChanges;
-- (void).cxx_destruct;
 - (BOOL)complete:(BOOL)arg1;
 - (void)_invalidateDisplayLinkIfNecessary;
 - (void)restingStateDidChange;

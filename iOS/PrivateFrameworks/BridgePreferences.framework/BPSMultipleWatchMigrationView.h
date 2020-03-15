@@ -19,11 +19,11 @@
     NSMutableDictionary *_selectedStates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *selectedStates; // @synthesize selectedStates=_selectedStates;
 @property(retain, nonatomic) BPSMultipleWatchMigrationPickerTableView *devicesTable; // @synthesize devicesTable=_devicesTable;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSArray *migratableDevices; // @synthesize migratableDevices=_migratableDevices;
-- (void).cxx_destruct;
 - (id)selectedMigrationDevices;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

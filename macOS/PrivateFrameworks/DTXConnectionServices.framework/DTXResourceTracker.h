@@ -22,8 +22,8 @@
     BOOL _log;
 }
 
-@property(nonatomic) BOOL log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL log; // @synthesize log=_log;
 - (void)resumeLimits;
 - (void)suspendLimits;
 - (void)releaseSize:(unsigned long long)arg1;

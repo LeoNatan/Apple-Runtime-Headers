@@ -17,8 +17,8 @@
     BOOL _didCancel;
 }
 
-@property(nonatomic) BOOL didCancel; // @synthesize didCancel=_didCancel;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL didCancel; // @synthesize didCancel=_didCancel;
 - (void)finishedSendingMessages;
 @property(readonly) BOOL shouldCancel;
 - (void)newMessagesAvailable:(id)arg1 secondaryMessages:(id)arg2 fromUpdate:(BOOL)arg3;

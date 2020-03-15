@@ -27,6 +27,7 @@
     id <XCTElementSetTransformer> _transformer;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <XCTElementSetTransformer> transformer; // @synthesize transformer=_transformer;
 @property(readonly, copy) NSString *queryDescription; // @synthesize queryDescription=_queryDescription;
 @property(retain) XCElementSnapshot *rootElementSnapshot; // @synthesize rootElementSnapshot=_rootElementSnapshot;
@@ -38,7 +39,6 @@
 @property _Bool stopsOnFirstMatch; // @synthesize stopsOnFirstMatch=_stopsOnFirstMatch;
 @property _Bool changesScope; // @synthesize changesScope=_changesScope;
 @property(readonly) XCUIElementQuery *inputQuery; // @synthesize inputQuery=_inputQuery;
-- (void).cxx_destruct;
 @property(readonly, copy) XCUIElementQuery *statusItems;
 @property(readonly, copy) XCUIElementQuery *otherElements;
 @property(readonly, copy) XCUIElementQuery *handles;

@@ -6,26 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class AVDepthData, PVCMSampleBuffer, PVImageBuffer;
+@class AVDepthData, NSMutableDictionary, PVCMSampleBuffer, PVImageBuffer;
 
 @interface PVFrameSet : NSObject
 {
     struct unique_ptr<PVGCDLock, std::__1::default_delete<PVGCDLock>> _mdLock;
-    struct NSMutableDictionary *_metadata;
+    NSMutableDictionary *_metadata;
     PVCMSampleBuffer *_colorSampleBuffer;
     AVDepthData *_depthData;
     PVImageBuffer *_alphaMaskImageBuffer;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) PVImageBuffer *alphaMaskImageBuffer; // @synthesize alphaMaskImageBuffer=_alphaMaskImageBuffer;
 @property(readonly, nonatomic) AVDepthData *depthData; // @synthesize depthData=_depthData;
 @property(readonly, nonatomic) PVCMSampleBuffer *colorSampleBuffer; // @synthesize colorSampleBuffer=_colorSampleBuffer;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setMetadataObject:(id)arg1 forKey:(id)arg2;
 - (id)metadataObjectForKey:(id)arg1;
-- (void)setMetadataDict:(struct NSDictionary *)arg1;
-- (struct NSDictionary *)metadataDict;
+- (void)setMetadataDict:(id)arg1;
+- (id)metadataDict;
 @property(readonly, nonatomic) PVImageBuffer *colorImageBuffer;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 presentationTimeStamp;
 - (void)commonInitWithColorBuffer:(id)arg1 depthData:(id)arg2 metadata:(id)arg3;

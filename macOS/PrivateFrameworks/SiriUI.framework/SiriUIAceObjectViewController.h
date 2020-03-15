@@ -19,11 +19,11 @@
     id <SiriUIAceObjectViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUIAceObjectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isVirgin) BOOL virgin; // @synthesize virgin=_virgin;
 @property(retain, nonatomic) AceObject *aceObject; // @synthesize aceObject=_aceObject;
 @property(retain, nonatomic) AFAnalyticsTurnBasedInstrumentationContext *instrumentationTurnContext; // @synthesize instrumentationTurnContext=_instrumentationTurnContext;
-- (void).cxx_destruct;
 - (void)wasAddedToTranscript;
 - (void)siriDidDeactivate;
 - (void)siriWillActivateFromSource:(long long)arg1;

@@ -36,6 +36,7 @@
 
 + (id)sceneLayoutViewControllerForDisplayIdentity:(id)arg1;
 + (id)mainDisplaySceneLayoutViewController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *sceneContainerView; // @synthesize sceneContainerView=_sceneContainerView;
 @property(nonatomic, getter=_areElementViewControllerUpdatesSuspended, setter=_setElementViewControllerUpdatesSuspended:) _Bool elementViewControllerUpdatesSuspended; // @synthesize elementViewControllerUpdatesSuspended=_elementViewControllerUpdatesSuspended;
 @property(nonatomic) __weak id <SBSceneLayoutViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) SBWorkspaceApplicationSceneTransitionContext *_transitionContext; // @synthesize _transitionContext;
 @property(readonly, nonatomic) SBLayoutState *_transitioningToLayoutState; // @synthesize _transitioningToLayoutState;
 @property(readonly, nonatomic) SBLayoutState *_transitioningFromLayoutState; // @synthesize _transitioningFromLayoutState;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -21,6 +21,7 @@
     NSNumber *_offsetIntoSymbol;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *offsetIntoSymbol; // @synthesize offsetIntoSymbol=_offsetIntoSymbol;
 @property(readonly, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
 @property(readonly, nonatomic) NSNumber *sourceColumn; // @synthesize sourceColumn=_sourceColumn;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) BOOL isTextExecOffset; // @synthesize isTextExecOffset=_isTextExecOffset;
 @property(readonly, nonatomic) BKSSymbolOwner *symbolOwner; // @synthesize symbolOwner=_symbolOwner;
 @property(readonly, nonatomic) NSUUID *symbolOwnerUUID; // @synthesize symbolOwnerUUID=_symbolOwnerUUID;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)debugDescription;

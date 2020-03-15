@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *pcsError; // @synthesize pcsError=_pcsError;
 @property(retain, nonatomic) NSString *pcsDiagnosticString; // @synthesize pcsDiagnosticString=_pcsDiagnosticString;
 @property(nonatomic) int pcsStatus; // @synthesize pcsStatus=_pcsStatus;
 @property(nonatomic) BOOL wasRepaired; // @synthesize wasRepaired=_wasRepaired;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

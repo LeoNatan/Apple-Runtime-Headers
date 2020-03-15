@@ -11,11 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface Core_Audio_IO_Gateway : Core_Audio_Gateway <Core_Audio_IO>
 {
-    // Error parsing type: ^{Client_Side_IO_Gateway=I{atomic<unsigned int>=AI}{shared_ptr<Client_Side_IO_Host>=^{Client_Side_IO_Host}^{__shared_weak_count}}{shared_ptr<HALIO::IPC_Client_Transport<Client_Side_IO_Host> >=^{IPC_Client_Transport<Client_Side_IO_Host>}^{__shared_weak_count}}}, name: _client_gateway
+    // Error parsing type: ^{Client_Side_IO_Gateway=I{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}{shared_ptr<Client_Side_IO_Host>=^{Client_Side_IO_Host}^{__shared_weak_count}}{shared_ptr<HALIO::IPC_Client_Transport<Client_Side_IO_Host> >=^{IPC_Client_Transport<Client_Side_IO_Host>}^{__shared_weak_count}}}, name: _client_gateway
 }
 
 // Error parsing type for property client_gateway:
-// Property attributes: T^{Client_Side_IO_Gateway=I{atomic<unsigned int>=AI}{shared_ptr<Client_Side_IO_Host>=^{Client_Side_IO_Host}^{__shared_weak_count}}{shared_ptr<HALIO::IPC_Client_Transport<Client_Side_IO_Host> >=^{IPC_Client_Transport<Client_Side_IO_Host>}^{__shared_weak_count}}},N,V_client_gateway
+// Property attributes: T^{Client_Side_IO_Gateway=I{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}{shared_ptr<Client_Side_IO_Host>=^{Client_Side_IO_Host}^{__shared_weak_count}}{shared_ptr<HALIO::IPC_Client_Transport<Client_Side_IO_Host> >=^{IPC_Client_Transport<Client_Side_IO_Host>}^{__shared_weak_count}}},N,V_client_gateway
 
 - (void)handle_server_disconnected;
 - (void)start_after_io_device_change:(unsigned long)arg1;

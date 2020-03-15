@@ -14,9 +14,9 @@
     UILabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subtitle;
 - (double)titleSubtitlePadding;
 - (double)iconTitlePadding;

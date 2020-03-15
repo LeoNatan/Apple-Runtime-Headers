@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)verificationChannelWithDictionary:(id)arg1 andOrganizationName:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *typeDescription; // @synthesize typeDescription=_typeDescription;
 @property(copy, nonatomic) NSString *sourceAddress; // @synthesize sourceAddress=_sourceAddress;
 @property(copy, nonatomic) NSString *contactPoint; // @synthesize contactPoint=_contactPoint;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *organizationName; // @synthesize organizationName=_organizationName;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)needsServerRequest;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *typeDescriptionUnlocalized;

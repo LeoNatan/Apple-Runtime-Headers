@@ -30,6 +30,7 @@
 + (struct CGSize)defaultSize;
 + (id)previewSizingQueue;
 + (id)previewCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
 @property(nonatomic) _Bool isIrisAsset; // @synthesize isIrisAsset=_isIrisAsset;
 @property(retain, nonatomic) NSString *irisVideoPath; // @synthesize irisVideoPath=_irisVideoPath;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(copy, nonatomic) NSString *transferGUID; // @synthesize transferGUID=_transferGUID;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) NSURL *previewItemURL;
 - (id)_getIrisBundleURL;

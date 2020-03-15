@@ -14,9 +14,9 @@
     NSString *_actionName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(readonly, nonatomic) NSUUID *drawingUUID; // @synthesize drawingUUID=_drawingUUID;
-- (void).cxx_destruct;
 - (id)strokes;
 - (void)applyToDrawing:(id)arg1;
 - (id)invertedInDrawing:(id)arg1;

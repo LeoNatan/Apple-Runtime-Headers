@@ -22,6 +22,7 @@
     NSCalendar *_calendar;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain) CalUIReminderTimeWheelSelectorLabelMask *selectorLabelMask; // @synthesize selectorLabelMask=_selectorLabelMask;
 @property(retain) CalUIReminderTimeWheelSelectorView *selectorView; // @synthesize selectorView=_selectorView;
@@ -29,7 +30,6 @@
 @property(retain) CalUIReminderTimeTrackView *timeTrackView; // @synthesize timeTrackView=_timeTrackView;
 @property(retain) NSScrollView *timeTrackScrollView; // @synthesize timeTrackScrollView=_timeTrackScrollView;
 @property(retain) NSTextField *selectorLabel; // @synthesize selectorLabel=_selectorLabel;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformDecrement;
 - (BOOL)accessibilityPerformIncrement;
 - (id)accessibilityChildren;

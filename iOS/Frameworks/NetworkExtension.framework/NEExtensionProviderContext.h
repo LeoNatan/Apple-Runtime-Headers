@@ -17,6 +17,7 @@
     id <NEExtensionProviderHostProtocol> _hostContext;
     NSString *_description;
     _Bool _isDisposed;
+    _Bool _started;
     NEConfiguration *_configuration;
     CDUnknownBlockType _stopCompletionHandler;
     NSXPCConnection *_hostConnection;
@@ -26,13 +27,14 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) NEProvider *provider; // @synthesize provider=_provider;
 @property(readonly) NSXPCConnection *hostConnection; // @synthesize hostConnection=_hostConnection;
 @property(copy) CDUnknownBlockType stopCompletionHandler; // @synthesize stopCompletionHandler=_stopCompletionHandler;
+@property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(nonatomic) _Bool isDisposed; // @synthesize isDisposed=_isDisposed;
 @property(retain) NEConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *extensionPoint;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopWithReason:(int)arg1;

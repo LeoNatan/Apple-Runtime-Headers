@@ -13,8 +13,8 @@
     id <CPLAbstractObject> _abstractObject;
 }
 
-@property(readonly, nonatomic) __weak id <CPLAbstractObject> abstractObject; // @synthesize abstractObject=_abstractObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <CPLAbstractObject> abstractObject; // @synthesize abstractObject=_abstractObject;
 - (id)description;
 - (id)initWithAbstractObject:(id)arg1;
 - (id)init;

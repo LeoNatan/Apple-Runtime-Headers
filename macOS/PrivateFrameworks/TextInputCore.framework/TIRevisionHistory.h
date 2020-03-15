@@ -25,6 +25,7 @@
 }
 
 + (id)documentStateTrimmedToSentenceForState:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isRapidDeleteActive; // @synthesize isRapidDeleteActive=_isRapidDeleteActive;
 @property(nonatomic) BOOL isDeletingBackwards; // @synthesize isDeletingBackwards=_isDeletingBackwards;
 @property(nonatomic) BOOL shouldReportRevisionToDP; // @synthesize shouldReportRevisionToDP=_shouldReportRevisionToDP;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *documentText; // @synthesize documentText=_documentText;
 @property(retain, nonatomic) TILRUDictionary *recentAutocorrections; // @synthesize recentAutocorrections=_recentAutocorrections;
 @property(nonatomic) id <TIRevisionHistoryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)currentUserTyping;
 - (id)currentWord;
 - (void)enumerateSentenceStemUsingBlock:(CDUnknownBlockType)arg1;

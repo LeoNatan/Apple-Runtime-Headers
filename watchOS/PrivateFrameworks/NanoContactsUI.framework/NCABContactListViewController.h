@@ -27,6 +27,7 @@
 + (id)_descriptorForRequiredKeysWithDescription:(id)arg1;
 + (id)_newDataSource;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRefreshMeContact; // @synthesize shouldRefreshMeContact=_shouldRefreshMeContact;
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(retain, nonatomic) PUICContentUnavailableView *noContactsView; // @synthesize noContactsView=_noContactsView;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) id <CNContactDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NCABContactListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool useCustomNoContactsDisplay; // @synthesize useCustomNoContactsDisplay=_useCustomNoContactsDisplay;
-- (void).cxx_destruct;
 - (_Bool)_isContactWithIdentifierMeContactOrLinkedToMeContact:(id)arg1;
 - (id)_contactAtIndexPath:(id)arg1;
 - (id)_sections;

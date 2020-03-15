@@ -29,6 +29,7 @@
 }
 
 + (id)daapLibraryWithStoreClient:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *observers; // @synthesize observers=_observers;
 @property(retain) NSTimer *forcedRefreshTimer; // @synthesize forcedRefreshTimer=_forcedRefreshTimer;
 @property(retain) NSTimer *pollTimer; // @synthesize pollTimer=_pollTimer;
@@ -42,7 +43,6 @@
 @property(readonly) unsigned long long count; // @synthesize count=_count;
 @property long long mediaKinds; // @synthesize mediaKinds=_mediaKinds;
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (void)accountStore:(id)arg1 primaryAccountChanged:(id)arg2;
 - (void)_configureWithBagInfo:(id)arg1;
 - (void)_performDAAPRequestWithAction:(id)arg1 body:(id)arg2 contentType:(id)arg3 reason:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;

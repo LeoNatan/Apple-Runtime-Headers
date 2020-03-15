@@ -40,10 +40,10 @@
 + (id)slidingAttachmentWithItem:(id)arg1 attachmentAnchor:(struct CGPoint)arg2 axisOfTranslation:(struct CGVector)arg3;
 + (id)slidingAttachmentWithItem:(id)arg1 attachedToItem:(id)arg2 attachmentAnchor:(struct CGPoint)arg3 axisOfTranslation:(struct CGVector)arg4;
 + (_Bool)_isPrimitiveBehavior;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_b2fbf00d attachmentRange; // @synthesize attachmentRange=_attachmentRange;
 @property(nonatomic) float frictionTorque; // @synthesize frictionTorque=_frictionTorque;
 @property(readonly, nonatomic) int attachedBehaviorType; // @synthesize attachedBehaviorType=_attachedBehaviorType;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_dissociate;
 - (void)_associate;

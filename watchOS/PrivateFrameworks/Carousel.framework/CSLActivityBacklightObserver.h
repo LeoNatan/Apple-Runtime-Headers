@@ -18,10 +18,10 @@
     CSLActivityScheduler *_scheduler;
 }
 
+- (void).cxx_destruct;
 @property __weak CSLActivityScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly) id <CSLSchedulerContext> context; // @synthesize context=_context;
 @property(readonly) IOSSHLBacklight *backlight; // @synthesize backlight=_backlight;
-- (void).cxx_destruct;
 - (void)backlight:(id)arg1 didTurnOn:(_Bool)arg2 atContinuousTime:(unsigned long long)arg3 forReason:(unsigned int)arg4;
 - (id)initWithBacklight:(id)arg1 context:(id)arg2;
 

@@ -60,6 +60,7 @@
 + (id)cachedTours;
 + (id)cachedObjectForKey:(id)arg1;
 + (void)cacheObject:(id)arg1 forKey:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL isWaxwingTour; // @synthesize isWaxwingTour=_isWaxwingTour;
 @property(retain) NSString *locale; // @synthesize locale=_locale;
 @property(retain) NSString *neverRemindMeText; // @synthesize neverRemindMeText=_neverRemindMeText;
@@ -79,7 +80,6 @@
 @property(retain) NSString *localAssetURL; // @synthesize localAssetURL=_localAssetURL;
 @property(retain) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (id)typeDescription;
 - (void)updateKVStoreItems:(id)arg1;

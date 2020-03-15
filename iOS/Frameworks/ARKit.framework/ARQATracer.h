@@ -9,7 +9,7 @@
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
 #import <ARKit/ARReplaySensorDelegate-Protocol.h>
 
-@class ARPresentationStats, ARScreenRecording, NSArray, NSDictionary, NSMutableData, NSMutableDictionary, NSOutputStream, NSString, UILabel;
+@class ARScreenRecording, NSArray, NSDictionary, NSMutableData, NSMutableDictionary, NSOutputStream, NSString, UILabel;
 @protocol ARQATracerDelegate, OS_dispatch_queue;
 
 @interface ARQATracer : NSObject <ARInternalSessionObserver, ARReplaySensorDelegate>
@@ -22,18 +22,21 @@
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSDictionary *_raycastQueryData;
     NSArray *_raycastResultData;
+    struct os_unfair_lock_s _additionalResultsLock;
     _Bool _forceQuitApp;
     _Bool _recordScreen;
     id <ARQATracerDelegate> _delegate;
     NSString *_traceOutputFilePath;
     UILabel *_replayFrameLabel;
     ARScreenRecording *_screenRecorder;
-    ARPresentationStats *_presentationStats;
+    NSMutableDictionary *_additionalResults;
     struct CGPoint _offset;
 }
 
++ (id)traceOutputDirectory;
 + (_Bool)isEnabled;
-@property(retain, nonatomic) ARPresentationStats *presentationStats; // @synthesize presentationStats=_presentationStats;
+- (void).cxx_destruct;
+@property(retain) NSMutableDictionary *additionalResults; // @synthesize additionalResults=_additionalResults;
 @property(nonatomic) _Bool recordScreen; // @synthesize recordScreen=_recordScreen;
 @property(nonatomic) _Bool forceQuitApp; // @synthesize forceQuitApp=_forceQuitApp;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
@@ -41,12 +44,10 @@
 @property(retain, nonatomic) UILabel *replayFrameLabel; // @synthesize replayFrameLabel=_replayFrameLabel;
 @property(retain, nonatomic) NSString *traceOutputFilePath; // @synthesize traceOutputFilePath=_traceOutputFilePath;
 @property(nonatomic) __weak id <ARQATracerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (void)replaySensorDidFinishReplayingData;
 - (void)addFrameLabel:(id)arg1;
-- (id)createTraceOutputDirectory;
 - (void)update:(id)arg1 session:(id)arg2;
 - (void)stop;
 - (void)start:(id)arg1;
@@ -54,6 +55,7 @@
 - (void)writeStringToOutputStream:(id)arg1;
 - (void)writeJSONObjectToStream:(id)arg1 prefix:(id)arg2;
 - (void)receiveDefaults;
+- (void)trace:(id)arg1 forKey:(id)arg2;
 - (void)traceRaycastResults:(id)arg1;
 - (void)traceRaycastQuery:(id)arg1;
 - (void)dealloc;

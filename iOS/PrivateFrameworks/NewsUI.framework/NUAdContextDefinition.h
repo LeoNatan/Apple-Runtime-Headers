@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *mutablePropertyDefinitions; // @synthesize mutablePropertyDefinitions=_mutablePropertyDefinitions;
 @property(readonly, nonatomic) NSMutableDictionary *nestedContextDefinitions; // @synthesize nestedContextDefinitions=_nestedContextDefinitions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isPropertyDefinitionValid:(id)arg1;
 @property(readonly, nonatomic) NSSet *propertyDefinitions;

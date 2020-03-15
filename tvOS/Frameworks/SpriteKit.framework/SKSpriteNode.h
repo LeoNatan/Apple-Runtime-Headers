@@ -26,8 +26,8 @@
 + (id)spriteNodeWithImageNamed:(id)arg1 normalMapped:(_Bool)arg2;
 + (id)spriteNodeWithImageNamed:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) _Bool shouldRepeatTexture; // @synthesize shouldRepeatTexture=_shouldRepeatTexture;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldRepeatTexture; // @synthesize shouldRepeatTexture=_shouldRepeatTexture;
 - (void)setValue:(id)arg1 forAttributeNamed:(id)arg2;
 - (id)valueForAttributeNamed:(id)arg1;
 -     // Error parsing type: B36@0:8^^16^Q24f32, name: _pathFromTextureToPoints:outSize:accuracy:

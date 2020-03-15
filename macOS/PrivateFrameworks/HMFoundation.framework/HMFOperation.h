@@ -27,9 +27,9 @@
 
 + (id)logCategory;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) HMFTimer *timer; // @synthesize timer=_timer;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (id)logIdentifier;
 @property(retain) HMFActivity *activity; // @synthesize activity=_activity;

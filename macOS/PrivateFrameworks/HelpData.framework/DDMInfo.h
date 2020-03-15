@@ -15,10 +15,10 @@
     NSString *_locale;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *locale; // @synthesize locale=_locale;
 @property(readonly) NSArray *versions; // @synthesize versions=_versions;
 @property(readonly) NSArray *platforms; // @synthesize platforms=_platforms;
-- (void).cxx_destruct;
 
 @end
 

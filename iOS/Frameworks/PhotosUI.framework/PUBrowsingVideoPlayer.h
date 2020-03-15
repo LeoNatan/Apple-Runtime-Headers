@@ -41,6 +41,7 @@
     CDStruct_1b6d18a9 _desiredSeekTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *_timeObservers; // @synthesize _timeObservers=__timeObservers;
 @property(nonatomic) _Bool shouldLoadVideoSession; // @synthesize shouldLoadVideoSession=_shouldLoadVideoSession;
 @property(nonatomic) unsigned long long nextPlayerLoadingEnabledUpdateID; // @synthesize nextPlayerLoadingEnabledUpdateID=_nextPlayerLoadingEnabledUpdateID;
@@ -61,7 +62,6 @@
 @property(nonatomic) long long desiredPlayState; // @synthesize desiredPlayState=_desiredPlayState;
 @property(readonly, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_performPendingSeekIfNeeded;
 - (void)_updatePlayerVolume;
 - (void)_updateVideoSessionDesiredPlayState;

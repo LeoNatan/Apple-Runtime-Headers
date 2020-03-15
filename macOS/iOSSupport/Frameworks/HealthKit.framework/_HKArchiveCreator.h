@@ -15,9 +15,9 @@
     NSFileHandle *_fileHandle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(readonly, copy, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
-- (void).cxx_destruct;
 - (void)closeArchive;
 - (void)_addDataOfSize:(long long)arg1 toPathInArchive:(id)arg2 fromByteProvider:(CDUnknownBlockType)arg3;
 - (void)addDataToArchive:(id)arg1 pathInArchive:(id)arg2;

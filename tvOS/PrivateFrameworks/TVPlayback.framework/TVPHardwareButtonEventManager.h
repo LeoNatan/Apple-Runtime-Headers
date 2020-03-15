@@ -28,6 +28,7 @@
     NSObject<OS_dispatch_queue> *_volumeUpdateQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float lastVolumeLevel; // @synthesize lastVolumeLevel=_lastVolumeLevel;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *volumeUpdateQueue; // @synthesize volumeUpdateQueue=_volumeUpdateQueue;
 @property(retain, nonatomic) PBSBulletin *volumeBulletin; // @synthesize volumeBulletin=_volumeBulletin;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool canAcceptHardwareButtonEvents; // @synthesize canAcceptHardwareButtonEvents=_canAcceptHardwareButtonEvents;
 @property(retain, nonatomic) MPAVRoute *route; // @synthesize route=_route;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_presentBulletinWithVolume:(float)arg1;
 - (void)_updateButtonOverrides;
 - (_Bool)_canControlVolume;

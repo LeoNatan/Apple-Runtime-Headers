@@ -14,8 +14,8 @@
 }
 
 + (id)dataSourceForTask;
-- (id)dataSource;
 - (void).cxx_destruct;
+- (id)dataSource;
 - (id)initWithClientIdentifier:(id)arg1 oneTimeTask:(_Bool)arg2;
 
 @end

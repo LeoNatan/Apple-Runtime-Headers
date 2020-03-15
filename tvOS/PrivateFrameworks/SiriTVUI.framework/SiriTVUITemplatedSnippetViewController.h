@@ -23,12 +23,12 @@
     NSArray *_templateItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_didCancelPreparePresentation, setter=_setDidCancelPreparePresentation:) _Bool didCancelPreparePresentation; // @synthesize didCancelPreparePresentation=_didCancelPreparePresentation;
 @property(copy, nonatomic, setter=_setTemplateItems:) NSArray *templateItems; // @synthesize templateItems=_templateItems;
 @property(retain, nonatomic) SiriTVUITemplateItem *annotationItem; // @synthesize annotationItem=_annotationItem;
 @property(readonly, nonatomic) SiriTVUITemplateModelTranslator *translationLayer; // @synthesize translationLayer=_translationLayer;
 @property(readonly, nonatomic) double fullScreenFraction; // @synthesize fullScreenFraction=_fullScreenFraction;
-- (void).cxx_destruct;
 - (_Bool)shouldCancelPresentationAfterPresentationTimeout;
 - (void)prepareForSiriPresentationAsynchronouslyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)prepareForSiriPresentation:(CDUnknownBlockType)arg1;

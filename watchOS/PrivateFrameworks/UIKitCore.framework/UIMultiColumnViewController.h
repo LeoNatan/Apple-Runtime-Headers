@@ -33,13 +33,13 @@
     UIImage *__columnToggleButtonImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setColumnToggleButtonImage:) UIImage *_columnToggleButtonImage; // @synthesize _columnToggleButtonImage=__columnToggleButtonImage;
 @property(retain, nonatomic) NSArray *columnWidths; // @synthesize columnWidths=_columnWidths;
 @property(nonatomic) float keyboardInset; // @synthesize keyboardInset=_keyboardInset;
 @property(retain, nonatomic) NSArray *navControllers; // @synthesize navControllers=_navControllers;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(nonatomic) __weak id <UIMultiColumnViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_hideSecondColumn:(id)arg1;
 - (void)_showSecondColumn:(id)arg1;
 - (id)_secondColumnBarButtonItem:(int)arg1 createIfNecessary:(_Bool)arg2;

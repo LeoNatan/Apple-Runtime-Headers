@@ -66,6 +66,7 @@
 - (void)setDepthBias:(float)arg1 slopeScale:(float)arg2 clamp:(float)arg3;
 - (void)setDepthClipMode:(unsigned long long)arg1;
 - (void)setCullMode:(unsigned long long)arg1;
+- (void)setVertexAmplificationCount:(unsigned long long)arg1 viewMappings:(const CDStruct_c0454aff *)arg2;
 - (void)setFrontFacingWinding:(unsigned long long)arg1;
 - (void)setViewports:(const CDStruct_8727d297 *)arg1 count:(unsigned long long)arg2;
 - (void)setViewport:(CDStruct_8727d297)arg1;

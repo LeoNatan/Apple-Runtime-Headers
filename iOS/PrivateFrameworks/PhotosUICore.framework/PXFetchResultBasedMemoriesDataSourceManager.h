@@ -21,10 +21,10 @@
     NSMutableOrderedSet *__remainingMemoriesToFetch;
 }
 
+- (void).cxx_destruct;
 @property(retain, setter=_setRemainingMemoriesToFetch:) NSMutableOrderedSet *_remainingMemoriesToFetch; // @synthesize _remainingMemoriesToFetch=__remainingMemoriesToFetch;
 @property(retain, nonatomic, setter=_setState:) PXMemoriesDataSourceState *_state; // @synthesize _state=__state;
 @property(nonatomic) _Bool loadFromEnd; // @synthesize loadFromEnd=_loadFromEnd;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (id)_createMemoriesDataSourceFromCurrentState;

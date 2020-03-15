@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSData *rand; // @synthesize rand=_rand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *rand; // @synthesize rand=_rand;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

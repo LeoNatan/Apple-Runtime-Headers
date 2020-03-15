@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     double _alpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) double gravity; // @synthesize gravity=_gravity;
 @property(nonatomic) double theta; // @synthesize theta=_theta;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *links; // @synthesize links=_links;
 @property(readonly, nonatomic) NSSet *nodes; // @synthesize nodes=_nodes;
 @property(readonly, nonatomic) UIView *referenceView; // @synthesize referenceView=_referenceView;
-- (void).cxx_destruct;
 - (void)tick;
 - (void)stop;
 - (void)start;

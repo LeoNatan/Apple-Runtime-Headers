@@ -17,9 +17,9 @@
     id <SXURLActionFactory> _URLActionFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXURLActionFactory> URLActionFactory; // @synthesize URLActionFactory=_URLActionFactory;
 @property(readonly, nonatomic) id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
-- (void).cxx_destruct;
 - (id)actionForRequest:(id)arg1;
 - (void)commitViewController:(id)arg1 URLRequest:(id)arg2;
 - (id)previewViewControllerForRequest:(id)arg1;

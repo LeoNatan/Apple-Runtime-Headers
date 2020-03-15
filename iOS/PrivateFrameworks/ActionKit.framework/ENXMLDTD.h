@@ -21,8 +21,8 @@
 + (id)enexDTD;
 + (id)dtdWithBundleResource:(id)arg1 ofType:(id)arg2;
 + (void)initialize;
-@property(retain, nonatomic) NSString *docTypeDeclaration; // @synthesize docTypeDeclaration=_docTypeDeclaration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *docTypeDeclaration; // @synthesize docTypeDeclaration=_docTypeDeclaration;
 - (_Bool)isAttributeLegal:(id)arg1 inElement:(id)arg2;
 - (id)sanitizedAttributes:(id)arg1 forElement:(id)arg2;
 - (_Bool)isElementLegal:(id)arg1;

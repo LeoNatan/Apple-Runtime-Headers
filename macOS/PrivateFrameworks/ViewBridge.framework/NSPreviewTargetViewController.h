@@ -30,10 +30,10 @@
 + (id)nsxpcInterface;
 + (id)previewTargetViewControllerForIdentifier:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property __weak id <NSISEngineDelegate> layoutEngineDelegate; // @synthesize layoutEngineDelegate=_layoutEngineDelegate;
 @property __weak NSXPCConnection *nsxpcConnection; // @synthesize nsxpcConnection=_nsxpcConnection;
 @property struct CGRect hostViewFrame; // @synthesize hostViewFrame=_hostViewFrame;
-- (void).cxx_destruct;
 - (void)loadView;
 - (void)setView:(id)arg1;
 - (id)previewTargetView;

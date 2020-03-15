@@ -24,6 +24,7 @@
     TVImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *bottomCenterLabel; // @synthesize bottomCenterLabel=_bottomCenterLabel;
 @property(retain, nonatomic) UILabel *bottomLeftLabel; // @synthesize bottomLeftLabel=_bottomLeftLabel;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *bottomLeftText; // @synthesize bottomLeftText=_bottomLeftText;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)configureWithMenuItemElement:(id)arg1;
 - (id)_defaultLabel;
 - (id)_defaultTitleLabel;

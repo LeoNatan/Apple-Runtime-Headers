@@ -25,6 +25,7 @@
 }
 
 + (int)authorization;
+- (void).cxx_destruct;
 @property(readonly) NSString *localName; // @synthesize localName=_localName;
 @property(readonly) NSString *localAddressString; // @synthesize localAddressString=_localAddressString;
 @property(readonly, nonatomic) int advertisingAddressType; // @synthesize advertisingAddressType=_advertisingAddressType;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool tccComplete; // @synthesize tccComplete=_tccComplete;
 @property(nonatomic) int authorization; // @synthesize authorization=_authorization;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (unsigned int)getAppSDKVersion;
 - (void)performTCCCheck:(id)arg1;
 - (void)doneWithTCC;

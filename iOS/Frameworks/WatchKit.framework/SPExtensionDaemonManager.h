@@ -21,6 +21,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *coreLocationAssertsQueue; // @synthesize coreLocationAssertsQueue=_coreLocationAssertsQueue;
 @property(retain, nonatomic) NSMutableDictionary *coreLocationAsserts; // @synthesize coreLocationAsserts=_coreLocationAsserts;
 @property(retain, nonatomic) NSMutableSet *transactionObservers; // @synthesize transactionObservers=_transactionObservers;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *transactionTimer; // @synthesize transactionTimer=_transactionTimer;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) long long refCount; // @synthesize refCount=_refCount;
-- (void).cxx_destruct;
 - (void)startTransactionTimer;
 - (void)keepAlive;
 - (void)transactionTimeOut;

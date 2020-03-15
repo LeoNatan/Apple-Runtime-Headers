@@ -31,6 +31,7 @@
 - (unsigned long long)currentGuidedAccessModeAndSessionApp:(id *)arg1;
 - (id)guidedAccessIgnoredRegions;
 - (void)toggleGuidedAccess;
+- (BOOL)isRestrictedForAAC;
 - (BOOL)isGuidedAccessUnmanagedSelfLocked;
 - (BOOL)isGuidedAccessSelfLockedToApp:(id)arg1;
 - (void)requestGuidedAccessSessionEndWithCompletion:(CDUnknownBlockType)arg1;
@@ -54,6 +55,8 @@
 - (void)setHearingAidControlIsVisible:(BOOL)arg1;
 - (void)setCapsLockLightOn:(BOOL)arg1;
 - (void)userEventOccurred;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg1 toContextId:(unsigned int)arg2;
+- (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromContextId:(unsigned int)arg2;
 - (struct CGRect)convertFrame:(struct CGRect)arg1 fromContextId:(unsigned int)arg2;
 - (struct CGRect)convertFrame:(struct CGRect)arg1 toContextId:(unsigned int)arg2;
 - (struct CGRect)convertFrame:(struct CGRect)arg1 fromContextId:(unsigned int)arg2 toContextId:(unsigned int)arg3;
@@ -69,8 +72,12 @@
 @property(nonatomic) BOOL inPreboardMode;
 - (id)backboardServiceInstance;
 - (BOOL)_shouldDispatchLocally;
+- (void)registerHearingAidServerPID:(int)arg1;
+- (int)hearingAidServerPID;
 - (void)registerAccessibilityUIServicePID:(int)arg1;
+- (void)registerFullKeyboardAccessDaemonPID:(int)arg1;
 - (int)accessibilityUIServicePID;
+- (int)accessibilityFullKeyboardAccessDaemonPID;
 - (int)accessibilityAssistiveTouchPID;
 - (void)registerSiriViewServicePID:(int)arg1;
 - (void)setLockScreenDimTimerEnabled:(BOOL)arg1;

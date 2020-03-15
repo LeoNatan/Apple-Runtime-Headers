@@ -15,10 +15,10 @@
     NSNumber *_stepValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *stepValue; // @synthesize stepValue=_stepValue;
 @property(readonly) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(readonly) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
-- (void).cxx_destruct;
 - (id)valueForUpdate:(id)arg1;
 - (id)internalValue;
 - (BOOL)isKindOfClass:(Class)arg1;

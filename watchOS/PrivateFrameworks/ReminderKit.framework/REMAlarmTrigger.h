@@ -20,8 +20,8 @@
 + (id)objectIDWithUUID:(id)arg1;
 + (id)newObjectID;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) REMObjectID *objectID; // @synthesize objectID=_objectID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_deepCopy;

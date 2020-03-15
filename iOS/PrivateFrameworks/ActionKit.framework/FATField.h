@@ -24,6 +24,7 @@
 + (id)fieldWithIndex:(unsigned int)arg1 type:(unsigned int)arg2 optional:(_Bool)arg3 name:(id)arg4 valueField:(id)arg5;
 + (id)fieldWithIndex:(unsigned int)arg1 type:(unsigned int)arg2 optional:(_Bool)arg3 name:(id)arg4 structClass:(Class)arg5;
 + (id)fieldWithIndex:(unsigned int)arg1 type:(unsigned int)arg2 optional:(_Bool)arg3 name:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FATField *keyField; // @synthesize keyField=_keyField;
 @property(retain, nonatomic) FATField *valueField; // @synthesize valueField=_valueField;
 @property(nonatomic) Class structClass; // @synthesize structClass=_structClass;
@@ -31,7 +32,6 @@
 @property _Bool optional; // @synthesize optional=_optional;
 @property unsigned int type; // @synthesize type=_type;
 @property unsigned int index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

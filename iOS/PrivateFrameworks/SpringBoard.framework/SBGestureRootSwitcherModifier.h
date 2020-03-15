@@ -16,9 +16,9 @@
     long long _currentEnvironmentMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long currentEnvironmentMode; // @synthesize currentEnvironmentMode=_currentEnvironmentMode;
 @property(readonly, nonatomic) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
-- (void).cxx_destruct;
 - (id)_transitionModifier;
 - (id)_gestureModifier;
 - (void)_performModifierStackCoherencyCheckIfNeededAfterHandlingEvent:(id)arg1;

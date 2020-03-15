@@ -16,11 +16,11 @@
     NNMKQueueNode *_lastNode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKQueueNode *lastNode; // @synthesize lastNode=_lastNode;
 @property(retain, nonatomic) NNMKQueueNode *firstNode; // @synthesize firstNode=_firstNode;
 @property(nonatomic) unsigned int maxSize; // @synthesize maxSize=_maxSize;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (id)dequeue;
 - (void)enqueue:(id)arg1;
 

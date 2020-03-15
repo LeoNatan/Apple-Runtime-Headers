@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     ASChannelLayout *_layout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASChannelLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) unsigned int bitsPerChannel; // @synthesize bitsPerChannel=_bitsPerChannel;
 @property(nonatomic) unsigned int channelsPerFrame; // @synthesize channelsPerFrame=_channelsPerFrame;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int formatFlags; // @synthesize formatFlags=_formatFlags;
 @property(nonatomic) unsigned int formatID; // @synthesize formatID=_formatID;
 @property(nonatomic) double sampleRate; // @synthesize sampleRate=_sampleRate;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

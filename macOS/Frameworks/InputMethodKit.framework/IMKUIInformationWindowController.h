@@ -13,8 +13,8 @@
     NSVisualEffectView *_appearanceView;
 }
 
-@property(retain, nonatomic) NSVisualEffectView *appearanceView; // @synthesize appearanceView=_appearanceView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSVisualEffectView *appearanceView; // @synthesize appearanceView=_appearanceView;
 - (struct CGSize)preferredWindowSize;
 - (void)updateVisualElements;
 

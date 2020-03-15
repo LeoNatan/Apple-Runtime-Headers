@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_trackingAnimators;
 }
 
-@property(readonly, nonatomic) NSArray *trackingAnimators; // @synthesize trackingAnimators=_trackingAnimators;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *trackingAnimators; // @synthesize trackingAnimators=_trackingAnimators;
 - (void)finishAnimationAtPosition:(long long)arg1;
 - (void)stopAnimation:(_Bool)arg1;
 - (void)pauseAnimation;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_dataString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dataString; // @synthesize dataString=_dataString;
 @property(readonly, nonatomic) int seqNum; // @synthesize seqNum=_seqNum;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMessage:(id)arg1;
 

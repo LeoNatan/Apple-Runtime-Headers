@@ -16,8 +16,8 @@
     NSLocale *_outputLocale;
 }
 
-@property(readonly, nonatomic) NSLocale *outputLocale; // @synthesize outputLocale=_outputLocale;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSLocale *outputLocale; // @synthesize outputLocale=_outputLocale;
 - (id)format:(id)arg1;
 - (id)format:(id)arg1 preToPostItnMap:(id)arg2;
 - (id)initWithModelURL:(id)arg1;

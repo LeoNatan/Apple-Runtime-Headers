@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) UISwitch *enabledSwitch; // @synthesize enabledSwitch=_enabledSwitch;
 @property(nonatomic) _Bool sharingEnabled; // @synthesize sharingEnabled=_sharingEnabled;
 @property(nonatomic) __weak id <CNMeCardSharingEnabledDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didToggleEnabledSwitch:(id)arg1;
 - (void)didSelectItemAtIndex:(unsigned long long)arg1;
 - (id)itemForIndex:(unsigned long long)arg1;

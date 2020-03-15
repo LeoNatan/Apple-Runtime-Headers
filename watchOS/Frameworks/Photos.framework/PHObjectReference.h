@@ -24,10 +24,10 @@
 + (id)filteredObjectReferences:(id)arg1 inPhotoLibrary:(id)arg2;
 + (id)representedType;
 + (id)referenceForObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 @property(readonly, copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 @property(readonly, copy, nonatomic) NSString *representedType; // @synthesize representedType=_representedType;
-- (void).cxx_destruct;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (id)dictionaryForReferenceType:(id)arg1;

@@ -16,9 +16,9 @@
     NSDateInterval *_interval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) unsigned long long periodOfDay; // @synthesize periodOfDay=_periodOfDay;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
 - (id)description;

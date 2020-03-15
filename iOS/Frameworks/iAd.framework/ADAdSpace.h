@@ -62,6 +62,7 @@
 }
 
 + (id)ADIdentifierNameForCreativeType:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool actionInProgress; // @synthesize actionInProgress=_actionInProgress;
 @property(nonatomic) _Bool privacyRequestInProgress; // @synthesize privacyRequestInProgress=_privacyRequestInProgress;
 @property(retain, nonatomic) NewsTransparencyViewController *newsViewController; // @synthesize newsViewController=_newsViewController;
@@ -106,7 +107,6 @@
 @property(copy, nonatomic) NSURL *serverURL; // @synthesize serverURL=_serverURL;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <ADAdRecipient> recipient; // @synthesize recipient=_recipient;
-- (void).cxx_destruct;
 - (void)creativeControllerVideoVolumeChanged:(float)arg1 playTime:(float)arg2;
 - (void)creativeControllerVideoExitFullScreenTapped:(float)arg1 volume:(float)arg2;
 - (void)creativeControllerVideoFullScreenTapped:(float)arg1 volume:(float)arg2;

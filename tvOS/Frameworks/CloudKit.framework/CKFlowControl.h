@@ -21,11 +21,11 @@
 }
 
 + (id)flowControlWithBudgetCap:(unsigned long long)arg1 withMaximumThrottleTime:(double)arg2 andRegenerationPerSecond:(double)arg3;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastRegeneration; // @synthesize lastRegeneration=_lastRegeneration;
 @property(retain, nonatomic) NSError *lastReportableError; // @synthesize lastReportableError=_lastReportableError;
 @property(nonatomic) double maximumThrottleTime; // @synthesize maximumThrottleTime=_maximumThrottleTime;
 @property double budget; // @synthesize budget=_budget;
-- (void).cxx_destruct;
 - (_Bool)attemptBudgetedExpenditureWithCost:(double)arg1;
 - (void)expendWithCost:(double)arg1 reportableError:(id)arg2;
 - (_Bool)isLimited;

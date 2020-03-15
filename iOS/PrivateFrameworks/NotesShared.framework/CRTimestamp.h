@@ -19,9 +19,9 @@
     long long _counter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long counter; // @synthesize counter=_counter;
 @property(retain, nonatomic) NSUUID *replica; // @synthesize replica=_replica;
-- (void).cxx_destruct;
 - (id)shortDescription;
 @property(readonly, copy) NSString *description;
 - (id)laterTimestamp:(id)arg1;

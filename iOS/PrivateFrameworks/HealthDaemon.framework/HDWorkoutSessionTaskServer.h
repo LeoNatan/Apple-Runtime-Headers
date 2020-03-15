@@ -31,9 +31,9 @@
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
+- (void).cxx_destruct;
 @property __weak id <HDWorkoutDataAccumulator> accumulator; // @synthesize accumulator=_accumulator;
 @property(readonly, copy, nonatomic) HKSource *clientSource; // @synthesize clientSource=_clientSource;
-- (void).cxx_destruct;
 - (void)_queue_setupSessionServer;
 - (void)connectionInvalidated;
 - (id)remoteInterface;

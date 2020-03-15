@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long tokenExpiration; // @synthesize tokenExpiration=_tokenExpiration;
 @property(retain, nonatomic) CKDPAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

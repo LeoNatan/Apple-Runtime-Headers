@@ -24,6 +24,7 @@
 + (void)removeClientWithName:(id)arg1;
 + (id)clientWithName:(id)arg1;
 + (id)allClients;
+- (void).cxx_destruct;
 @property(readonly) _Bool isAlwaysOn; // @synthesize isAlwaysOn=_isAlwaysOn;
 @property(retain) NEConfiguration *currentConfiguration; // @synthesize currentConfiguration=_currentConfiguration;
 @property(retain) NSMutableArray *identities; // @synthesize identities=_identities;
@@ -31,7 +32,6 @@
 @property(retain) NSMutableArray *createdConfigurations; // @synthesize createdConfigurations=_createdConfigurations;
 @property(readonly) NEConfigurationManager *manager; // @synthesize manager=_manager;
 @property(readonly) NSString *clientName; // @synthesize clientName=_clientName;
-- (void).cxx_destruct;
 - (void)handleCommand:(int)arg1 forConfigWithName:(id)arg2 withParameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)unsetProxyServer:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)setProxyServer:(id)arg1 errorStr:(id *)arg2;

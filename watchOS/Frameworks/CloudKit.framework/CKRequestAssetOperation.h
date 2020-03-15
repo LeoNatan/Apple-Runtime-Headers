@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _requestCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType requestCallback; // @synthesize requestCallback=_requestCallback;
 @property(copy, nonatomic) CDUnknownBlockType assetRequestCompletionBlock; // @synthesize assetRequestCompletionBlock=_assetRequestCompletionBlock;
 @property(retain, nonatomic) CKUploadRequestMetadata *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (void)start;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;

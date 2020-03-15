@@ -32,6 +32,7 @@
 + (id)sharedFullZWKInstance;
 + (id)sharedGeneralInstance;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) SPQueryResponse *lastResponse; // @synthesize lastResponse=_lastResponse;
 @property(retain) SPQueryTask *queryTask; // @synthesize queryTask=_queryTask;
 @property(retain) NSObject<SPSearchAgentDelegate> *delegate; // @synthesize delegate=_delegate;
@@ -42,7 +43,6 @@
 @property _Bool queryComplete; // @synthesize queryComplete=_queryComplete;
 @property _Bool infinitePatience; // @synthesize infinitePatience=_infinitePatience;
 @property _Bool springBoardIsActive; // @synthesize springBoardIsActive=_springBoardIsActive;
-- (void).cxx_destruct;
 - (void)updateWithQueryContext:(id)arg1;
 - (void)invalidate;
 - (void)resultsDidBecomeInvalid:(id)arg1;

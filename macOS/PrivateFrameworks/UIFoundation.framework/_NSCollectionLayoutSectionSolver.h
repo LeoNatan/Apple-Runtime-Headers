@@ -32,6 +32,7 @@
 }
 
 + (id)solverWithLayoutSection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGVector orthogonalScrollingPrefetchingUnitVector; // @synthesize orthogonalScrollingPrefetchingUnitVector=_orthogonalScrollingPrefetchingUnitVector;
 @property(retain, nonatomic) id <NSCollectionLayoutContainer> memoizedAuxiliaryHostContainer; // @synthesize memoizedAuxiliaryHostContainer=_memoizedAuxiliaryHostContainer;
 @property(retain, nonatomic) _NSCollectionLayoutSectionGeometryTranslator *sectionGeometryTranslator; // @synthesize sectionGeometryTranslator=_sectionGeometryTranslator;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSCollectionLayoutSection *layoutSection; // @synthesize layoutSection=_layoutSection;
 @property(nonatomic) struct CGPoint orthogonalOffset; // @synthesize orthogonalOffset=_orthogonalOffset;
 @property(nonatomic) BOOL shouldAdjustContentSizeForPartialLastGroupSolution; // @synthesize shouldAdjustContentSizeForPartialLastGroupSolution=_shouldAdjustContentSizeForPartialLastGroupSolution;
-- (void).cxx_destruct;
 - (double)_dimensionForRootGroupAlongAxis:(int)arg1;
 - (void)_configureInitialOrthogonalPrefetchingUnitVector;
 - (void)_setOrthogonalOffset:(struct CGPoint)arg1;

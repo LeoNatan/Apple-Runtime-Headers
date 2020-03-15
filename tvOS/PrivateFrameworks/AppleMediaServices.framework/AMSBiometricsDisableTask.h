@@ -13,8 +13,8 @@
     ACAccount *_account;
 }
 
-@property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (id)perform;
 - (id)initWithAccount:(id)arg1;
 

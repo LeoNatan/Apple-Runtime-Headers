@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     long long _avatarType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wasSelectedInFullPhotoPicker; // @synthesize wasSelectedInFullPhotoPicker=_wasSelectedInFullPhotoPicker;
 @property(nonatomic) long long avatarType; // @synthesize avatarType=_avatarType;
 @property(copy, nonatomic) NSString *variantName; // @synthesize variantName=_variantName;
 @property(retain, nonatomic) UIImage *compositedImage; // @synthesize compositedImage=_compositedImage;
 @property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,12 +17,12 @@
     NSString *_ownerPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char segment; // @synthesize segment=_segment;
 @property(copy, nonatomic) NSString *ownerPath; // @synthesize ownerPath=_ownerPath;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) unsigned long long start; // @synthesize start=_start;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long end;
 
 @end

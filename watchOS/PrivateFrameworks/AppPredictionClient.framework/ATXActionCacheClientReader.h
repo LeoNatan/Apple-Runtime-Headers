@@ -14,8 +14,8 @@
     NSIndexSet *_lockscreenPredictionIndices;
 }
 
-@property(readonly, nonatomic) NSIndexSet *lockscreenPredictionIndices; // @synthesize lockscreenPredictionIndices=_lockscreenPredictionIndices;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSIndexSet *lockscreenPredictionIndices; // @synthesize lockscreenPredictionIndices=_lockscreenPredictionIndices;
 - (id)_getLockScreenPredictionIndices:(id)arg1;
 - (id)actionsWithLimit:(int)arg1 shouldFilterRestrictedAppsAndRecentEngagements:(_Bool)arg2;
 - (id)_predicateForInstalledAndNonEngagedPredictions:(id)arg1;

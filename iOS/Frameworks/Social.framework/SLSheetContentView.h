@@ -23,9 +23,9 @@
     UIView *_accessoryView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) UIView *previewView; // @synthesize previewView=_previewView;
-- (void).cxx_destruct;
 - (void)endAutoCompletionMode;
 - (void)beginAutoCompletionMode;
 - (void)preflightAutoCompletionModeWithApparentHeight:(double)arg1;

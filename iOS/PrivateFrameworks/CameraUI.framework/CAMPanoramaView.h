@@ -42,6 +42,7 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setArrowUpdateFrame:) unsigned long long _arrowUpdateFrame; // @synthesize _arrowUpdateFrame=__arrowUpdateFrame;
 @property(nonatomic, setter=_setCurrentAverageSpeed:) double _currentAverageSpeed; // @synthesize _currentAverageSpeed=__currentAverageSpeed;
 @property(nonatomic, getter=_isCurrentlyMovingTooFast, setter=_setCurrentlyMovingTooFast:) _Bool _currentlyMovingTooFast; // @synthesize _currentlyMovingTooFast=__currentlyMovingTooFast;
@@ -70,7 +71,6 @@
 @property(readonly, nonatomic) CAMPanoramaPreviewView *previewView; // @synthesize previewView=_previewView;
 @property(nonatomic) __weak id <CAMPanoramaViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
 - (void)updateToContentSize:(id)arg1;
 - (void)_showArrowInstructions;
 - (void)_hideArrowInstructionsAfterDelay;

@@ -14,9 +14,9 @@
     NSMenu *_avPopUpMenu;
 }
 
+- (void).cxx_destruct;
 @property(retain, setter=setAVPopUpMenu:) NSMenu *avPopUpMenu; // @synthesize avPopUpMenu=_avPopUpMenu;
 @property(readonly) unsigned long long avOptions; // @synthesize avOptions=_avOptions;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)setRepresentedObject:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

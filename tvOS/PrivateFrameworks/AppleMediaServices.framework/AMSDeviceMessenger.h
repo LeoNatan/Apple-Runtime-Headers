@@ -19,10 +19,10 @@
     NSMutableArray *_updateHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updateHandlers; // @synthesize updateHandlers=_updateHandlers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) AMSDaemonConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_sendDelegateUpdateForMessage:(id)arg1;
 - (id)_identifierFromDialogRequest:(id)arg1;
 - (id)_getProxyObject;

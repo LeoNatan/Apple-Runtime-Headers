@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)shared;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isExperimentalScrubbingMomentumCurveEnabled) _Bool experimentalScrubbingMomentumCurveEnabled; // @synthesize experimentalScrubbingMomentumCurveEnabled=_experimentalScrubbingMomentumCurveEnabled;
 @property(readonly, nonatomic) long long surroundSound; // @synthesize surroundSound=_surroundSound;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAtmosDisabled) _Bool atmosDisabled;
 - (id)init;
 

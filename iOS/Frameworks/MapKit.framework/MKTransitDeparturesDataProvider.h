@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     NSString *_lastInfoRefreshErrorDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *lastInfoRefreshErrorDescription; // @synthesize lastInfoRefreshErrorDescription=_lastInfoRefreshErrorDescription;
 @property(readonly, nonatomic) NSDate *lastInfoRefreshDate; // @synthesize lastInfoRefreshDate=_lastInfoRefreshDate;
 @property(readonly, nonatomic, getter=isRefreshing) _Bool refreshing; // @synthesize refreshing=_refreshing;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) __weak id <MKTransitDeparturesDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *lastCutoffDateWithValidSchedule; // @synthesize lastCutoffDateWithValidSchedule=_lastCutoffDateWithValidSchedule;
-- (void).cxx_destruct;
 - (id)possibleActions;
 - (void)transitMapItemUpdater:(id)arg1 updatedMapItem:(id)arg2 error:(id)arg3;
 - (void)transitMapItemUpdater:(id)arg1 willUpdateMapItem:(id)arg2;

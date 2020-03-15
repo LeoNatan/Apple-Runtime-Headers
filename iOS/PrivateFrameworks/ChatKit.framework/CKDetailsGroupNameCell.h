@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldHighlight;
 + (id)reuseIdentifier;
-@property(retain, nonatomic) CKDetailsAddGroupNameView *groupNameView; // @synthesize groupNameView=_groupNameView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDetailsAddGroupNameView *groupNameView; // @synthesize groupNameView=_groupNameView;
 - (void)dealloc;
 
 // Remaining properties

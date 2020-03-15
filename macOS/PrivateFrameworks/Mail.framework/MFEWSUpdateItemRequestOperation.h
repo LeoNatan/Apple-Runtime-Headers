@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSSuppressReadReceiptsRequestOperation *suppressReadReceiptsRequest; // @synthesize suppressReadReceiptsRequest=_suppressReadReceiptsRequest;
 @property(readonly, nonatomic) MFEWSGetItemsResponseOperation *getItemsResponse; // @synthesize getItemsResponse=_getItemsResponse;
 @property(readonly, nonatomic) BOOL messageType; // @synthesize messageType=_messageType;
 @property(readonly, copy, nonatomic) NSDictionary *flags; // @synthesize flags=_flags;
 @property(readonly, copy, nonatomic) NSArray *EWSItemIds; // @synthesize EWSItemIds=_EWSItemIds;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *itemsPriorToUpdate;
 - (id)prepareRequest;
 - (id)activityString;

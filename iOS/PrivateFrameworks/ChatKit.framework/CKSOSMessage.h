@@ -24,6 +24,7 @@
     NSString *_mmsMessage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMMSEnabled; // @synthesize isMMSEnabled=_isMMSEnabled;
 @property(copy, nonatomic) NSString *mmsMessage; // @synthesize mmsMessage=_mmsMessage;
 @property(copy, nonatomic) NSString *smsMessage; // @synthesize smsMessage=_smsMessage;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(copy, nonatomic) NSString *locationURL; // @synthesize locationURL=_locationURL;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)initWithSMSMessage:(id)arg1 mmsMessage:(id)arg2 recipients:(id)arg3;

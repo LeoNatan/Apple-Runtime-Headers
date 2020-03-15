@@ -13,8 +13,8 @@
     NSString *_applicationIdentifier;
 }
 
-@property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _fireBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fireBlock; // @synthesize fireBlock=_fireBlock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
 @property(nonatomic) _Bool callOnMainThread; // @synthesize callOnMainThread=_callOnMainThread;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property double delay; // @synthesize delay=_delay;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)_cancelFireRequests;
 - (void)cancelPreviousFireRequests;
 @property(readonly, nonatomic) _Bool isScheduledToFire;

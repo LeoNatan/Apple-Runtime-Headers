@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)enumerateEnumerator:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL unifyResults; // @synthesize unifyResults=_unifyResults;
 @property(retain, nonatomic) NSArray *labeledValueChanges; // @synthesize labeledValueChanges=_labeledValueChanges;
 @property(retain, nonatomic) NSArray *groupChanges; // @synthesize groupChanges=_groupChanges;
 @property(retain, nonatomic) NSArray *contactChanges; // @synthesize contactChanges=_contactChanges;
 @property(retain, nonatomic) CNChangeHistoryAnchor *latestChangeAnchor; // @synthesize latestChangeAnchor=_latestChangeAnchor;
 @property(nonatomic) BOOL changesTruncated; // @synthesize changesTruncated=_changesTruncated;
-- (void).cxx_destruct;
 - (id)labeledValueChangesEnumeratorWithContactStore:(id)arg1;
 - (id)groupChangesEnumeratorWithContactStore:(id)arg1;
 - (BOOL)enumerateGroupChangesFromContactStore:(id)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3;

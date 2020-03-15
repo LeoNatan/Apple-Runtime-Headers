@@ -15,10 +15,10 @@
     SNDetectionResult *_result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SNDetectionResult *result; // @synthesize result=_result;
 @property(retain, nonatomic) AVAudioTime *when; // @synthesize when=_when;
 @property(retain, nonatomic) AVAudioPCMBuffer *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (id)initWithBuffer:(id)arg1 andTime:(id)arg2;
 
 @end

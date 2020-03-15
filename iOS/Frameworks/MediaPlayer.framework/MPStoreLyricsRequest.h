@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsLyricsForURLBagDictionary:(id)arg1;
-@property(retain, nonatomic) MPModelSong *song; // @synthesize song=_song;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelSong *song; // @synthesize song=_song;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

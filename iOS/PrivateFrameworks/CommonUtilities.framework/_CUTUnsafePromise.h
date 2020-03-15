@@ -15,10 +15,10 @@
     NSMutableArray *_resultBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *resultBlocks; // @synthesize resultBlocks=_resultBlocks;
 @property(retain, nonatomic) CUTResult *result; // @synthesize result=_result;
 @property(nonatomic) _Bool done; // @synthesize done=_done;
-- (void).cxx_destruct;
 - (void)registerResultBlock:(CDUnknownBlockType)arg1;
 - (void)_fulfillWithResult:(id)arg1;
 - (id)initWithResult:(id)arg1;

@@ -40,13 +40,9 @@
 }
 
 + (id)sharedInstance;
-@property(readonly) BOOL hasWWANStatusIndicator; // @synthesize hasWWANStatusIndicator=_hasWWANStatusIndicator;
 - (void).cxx_destruct;
-- (id)urlConnectionBoundToWWANInterfaceWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
-- (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(long long)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
-- (void)bindCFStreamToWWANInterface:(struct __CFReadStream *)arg1;
-- (void)bindCFStream:(struct __CFReadStream *)arg1 toWWANInterface:(BOOL)arg2;
-- (BOOL)_allowBindingToWWAN;
+@property(readonly, nonatomic) BOOL hasWWANStatusIndicator; // @synthesize hasWWANStatusIndicator=_hasWWANStatusIndicator;
+@property(readonly, nonatomic) BOOL allowBindingToWWAN;
 - (void)_adjustWakeOnWiFiLocked;
 - (void)_adjustWakeOnWiFi;
 - (BOOL)_wantsWakeOnWiFiEnabled;
@@ -59,22 +55,22 @@
 - (BOOL)_wantsWWANInterfaceAssertion;
 - (void)cutWiFiManagerDeviceAttached:(id)arg1;
 @property(readonly) BOOL areAllNetworkInterfacesDisabled;
-@property(readonly) BOOL isWakeOnWiFiSupported;
+@property(readonly, nonatomic) BOOL isWakeOnWiFiSupported;
 - (BOOL)_isWiFiUsable;
-@property(readonly) BOOL isInternetReachableViaWiFi;
-@property(readonly) BOOL isInternetReachable;
+@property(readonly, nonatomic) BOOL isInternetReachableViaWiFi;
+@property(readonly, nonatomic) BOOL isInternetReachable;
 - (BOOL)_isInternetReachableLocked;
 @property(readonly) BOOL isInCall;
-@property(readonly) BOOL isWWANInHomeCountry;
+@property(readonly, nonatomic) BOOL isWWANInHomeCountry;
 - (BOOL)_isWWANInHomeCountryLocked;
 @property(readonly) BOOL isWWANInterfaceActivationPermitted;
 @property(readonly) BOOL isWWANInterfaceInProlongedHighPowerState;
 @property(readonly) BOOL isPowerStateDetectionSupported;
-@property(readonly) BOOL doesWWANInterfaceExist;
-@property(readonly) BOOL isWWANInterfaceSuspended;
-@property(readonly) NSString *WWANInterfaceName;
-@property(readonly) BOOL isWWANInterfaceUp;
-@property(readonly) BOOL isWWANBetterThanWiFi;
+@property(readonly, nonatomic) BOOL doesWWANInterfaceExist;
+@property(readonly, nonatomic) BOOL isWWANInterfaceSuspended;
+@property(readonly, nonatomic) NSString *WWANInterfaceName;
+@property(readonly, nonatomic) BOOL isWWANInterfaceUp;
+@property(readonly, nonatomic) BOOL isWWANBetterThanWiFi;
 - (void)_scheduleCalloutsForSelector:(SEL)arg1;
 - (BOOL)_wifiIsPoorLinkQuality;
 - (BOOL)_wwanIsPoorLinkQuality;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)actionAvailableForEvent:(id)arg1;
 + (id)cachedEventForICSString:(id)arg1;
-@property(retain, nonatomic) DDRemoteActionViewController *viewController; // @synthesize viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DDRemoteActionViewController *viewController; // @synthesize viewController;
 - (id)notificationURL;
 - (id)notificationIconBundleIdentifier;
 - (id)notificationTitle;

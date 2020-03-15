@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_symbolImageName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *symbolImageName; // @synthesize symbolImageName=_symbolImageName;
 @property(retain, nonatomic) CNSharingProfileAvatarItem *avatarItem; // @synthesize avatarItem=_avatarItem;
 @property(retain, nonatomic) UIImage *cachedPreviewImage; // @synthesize cachedPreviewImage=_cachedPreviewImage;
-- (void).cxx_destruct;
 - (id)compositeImageWithSize:(struct CGSize)arg1;
 - (id)originalImageWithSize:(struct CGSize)arg1;
 

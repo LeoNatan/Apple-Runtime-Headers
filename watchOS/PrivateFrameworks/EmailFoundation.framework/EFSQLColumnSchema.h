@@ -34,6 +34,7 @@
 + (id)integerColumnWithName:(id)arg1 nullable:(_Bool)arg2;
 + (unsigned int)columnTypeForString:(id)arg1;
 + (id)stringForColumnType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int foreignKeyUpdateAction; // @synthesize foreignKeyUpdateAction=_foreignKeyUpdateAction;
 @property(nonatomic) unsigned int foreignKeyDeleteAction; // @synthesize foreignKeyDeleteAction=_foreignKeyDeleteAction;
 @property(copy, nonatomic) NSString *foreignKeyTargetString; // @synthesize foreignKeyTargetString=_foreignKeyTargetString;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) _Bool nullable; // @synthesize nullable=_nullable;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) EFSQLColumnExpression *columnExpressionWithFullName;
 @property(readonly, nonatomic) EFSQLColumnExpression *columnExpression;

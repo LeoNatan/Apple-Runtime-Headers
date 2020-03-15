@@ -19,9 +19,9 @@
     NSArray *_deviceList;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSArray *deviceList; // @synthesize deviceList=_deviceList;
-- (void).cxx_destruct;
 - (void)waitForOthers;
 - (void)waitForAllDevicesExcludingDevice:(unsigned long long)arg1 eventValue:(unsigned long long)arg2;
 - (void)synchronizeTensor:(id)arg1;

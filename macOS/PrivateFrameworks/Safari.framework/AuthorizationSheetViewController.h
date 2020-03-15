@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSButton *_unlockButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSButton *unlockButton; // @synthesize unlockButton=_unlockButton;
 @property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak NSView *authorizationView; // @synthesize authorizationView=_authorizationView;
 @property(nonatomic) __weak id <AuthorizationSheetViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) InlineAuthorizationViewController *inlineAuthorizationViewController; // @synthesize inlineAuthorizationViewController=_inlineAuthorizationViewController;
-- (void).cxx_destruct;
 - (void)cancelAuthentication:(id)arg1;
 - (void)controllerAuthorizationDidSucceed:(id)arg1;
 - (void)attemptAuthorization:(id)arg1;

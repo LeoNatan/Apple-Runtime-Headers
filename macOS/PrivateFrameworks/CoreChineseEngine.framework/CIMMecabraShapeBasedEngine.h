@@ -18,10 +18,10 @@
     TIMecabraEnvironment *_mecabraEnvironment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
 @property(nonatomic) int inputMethodType; // @synthesize inputMethodType=_inputMethodType;
 @property(nonatomic) unsigned long long creationOptions; // @synthesize creationOptions=_creationOptions;
-- (void).cxx_destruct;
 - (id)candidatesForInputString:(id)arg1;
 - (id)inputStringForCharacters:(id)arg1;
 - (void)unlearnCandidate:(id)arg1;

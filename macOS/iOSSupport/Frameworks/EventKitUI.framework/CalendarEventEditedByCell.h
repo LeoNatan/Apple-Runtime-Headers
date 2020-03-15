@@ -17,8 +17,8 @@
     id <EKCellShortener> _shortener;
 }
 
-@property(nonatomic) __weak id <EKCellShortener> shortener; // @synthesize shortener=_shortener;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <EKCellShortener> shortener; // @synthesize shortener=_shortener;
 - (void)layoutSubviews;
 - (void)_checkValueWidth;
 - (BOOL)detailText2IsPlaceholder;

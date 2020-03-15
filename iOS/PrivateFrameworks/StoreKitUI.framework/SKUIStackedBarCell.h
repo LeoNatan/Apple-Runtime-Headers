@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIView *_separator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setTitle:(id)arg1 forState:(unsigned long long)arg2;

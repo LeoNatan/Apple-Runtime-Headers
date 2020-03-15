@@ -6,25 +6,24 @@
 
 #import <SiriActivation/SiriContext.h>
 
-@class AFRequestInfo, AFSpeechRequestOptions, NSDictionary, NSNumber;
+@class AFRequestInfo, NSDictionary, NSNumber;
 
 @interface SiriContinuityContext : SiriContext
 {
     NSNumber *_isTemporaryDevice;
-    AFSpeechRequestOptions *_speechRequestOptions;
     AFRequestInfo *_requestInfo;
     NSDictionary *_userActivity;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *userActivity; // @synthesize userActivity=_userActivity;
 @property(readonly, nonatomic) AFRequestInfo *requestInfo; // @synthesize requestInfo=_requestInfo;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (_Bool)isTemporaryDevice;
-@property(readonly, nonatomic) AFSpeechRequestOptions *speechRequestOptions;
+- (id)speechRequestOptions;
 - (id)initWithUserActivity:(id)arg1;
 - (id)initWithRequestInfo:(id)arg1;
 - (id)initWithSpeechRequestOptions:(id)arg1;

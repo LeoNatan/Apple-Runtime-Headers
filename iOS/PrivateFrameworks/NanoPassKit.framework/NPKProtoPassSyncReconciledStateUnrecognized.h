@@ -16,9 +16,9 @@
     NSData *_unrecognizedReconciledStateHash;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKProtoPassSyncState *libraryPassSyncState; // @synthesize libraryPassSyncState=_libraryPassSyncState;
 @property(retain, nonatomic) NSData *unrecognizedReconciledStateHash; // @synthesize unrecognizedReconciledStateHash=_unrecognizedReconciledStateHash;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

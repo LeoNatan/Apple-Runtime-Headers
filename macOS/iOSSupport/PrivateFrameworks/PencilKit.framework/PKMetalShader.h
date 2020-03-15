@@ -31,8 +31,8 @@
     unsigned long long _msaaPipelineStateWithColorMaskNoneSampleCount;
 }
 
-@property(readonly, nonatomic) id <MTLRenderPipelineState> pipelineState; // @synthesize pipelineState=_pipelineState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MTLRenderPipelineState> pipelineState; // @synthesize pipelineState=_pipelineState;
 - (id)shaderWithBlendMode:(long long)arg1;
 - (id)newShaderWithBlendMode:(long long)arg1;
 - (id)msaaPipelineStateWithColorMaskNoneAndSampleCount:(unsigned long long)arg1;

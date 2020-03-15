@@ -15,9 +15,9 @@
     SmartBlockWithArgs_5ecd03db _didDidCompleteWithErrorCompletionBlock;
 }
 
-@property(nonatomic) SmartBlockWithArgs_5ecd03db didDidCompleteWithErrorCompletionBlock; // @synthesize didDidCompleteWithErrorCompletionBlock=_didDidCompleteWithErrorCompletionBlock;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) SmartBlockWithArgs_5ecd03db didDidCompleteWithErrorCompletionBlock; // @synthesize didDidCompleteWithErrorCompletionBlock=_didDidCompleteWithErrorCompletionBlock;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 
 // Remaining properties

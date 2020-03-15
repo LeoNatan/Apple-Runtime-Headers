@@ -23,9 +23,9 @@
 
 + (id)supportedFeatures;
 + (double)updateInterval;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastCompletedWorkoutDate; // @synthesize lastCompletedWorkoutDate=_lastCompletedWorkoutDate;
 @property _Bool hasActiveWorkout; // @synthesize hasActiveWorkout=_hasActiveWorkout;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int numberOfWorkoutsPerformedToday;
 @property(readonly, nonatomic) float dailyAverageWorkouts;
 @property(readonly, nonatomic) _Bool currentlyHasActiveWorkout;

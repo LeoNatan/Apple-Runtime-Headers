@@ -107,6 +107,8 @@ struct SpeechRequestData;
 
 struct SymbolTableList;
 
+struct SyncSpeechRecognizer;
+
 struct SystemConfig {
     CDUnknownFunctionPointerType *_vptr$OptionsItf;
     basic_string_8c74bb18 jsonConfigFilePath;
@@ -500,6 +502,11 @@ struct shared_ptr<quasar::SpeechRequestData> {
 struct shared_ptr<quasar::SymbolTableList> {
     struct SymbolTableList *_field1;
     struct __shared_weak_count *_field2;
+};
+
+struct shared_ptr<quasar::SyncSpeechRecognizer> {
+    struct SyncSpeechRecognizer *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<quasar::URegularExpressionWrapper> {

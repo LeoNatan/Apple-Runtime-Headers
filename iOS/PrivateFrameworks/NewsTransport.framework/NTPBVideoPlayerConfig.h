@@ -17,10 +17,10 @@
     NSString *_discoverMoreVideosUrl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *discoverMoreVideosUrl; // @synthesize discoverMoreVideosUrl=_discoverMoreVideosUrl;
 @property(retain, nonatomic) NSString *discoverMoreVideosSubtitle; // @synthesize discoverMoreVideosSubtitle=_discoverMoreVideosSubtitle;
 @property(retain, nonatomic) NSString *discoverMoreVideosTitle; // @synthesize discoverMoreVideosTitle=_discoverMoreVideosTitle;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     SearchUIHorizontallyScrollingContainerButtonController *_buttonController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SearchUIHorizontallyScrollingContainerButtonController *buttonController; // @synthesize buttonController=_buttonController;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

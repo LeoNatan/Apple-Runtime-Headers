@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)_configureSubviews;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;

@@ -14,9 +14,9 @@
     NSSet *_allowedObjectClasses;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *allowedObjectClasses; // @synthesize allowedObjectClasses=_allowedObjectClasses;
 @property(retain, nonatomic) NSMutableDictionary *applicationData; // @synthesize applicationData=_applicationData;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (_Bool)isAllowedClassForObject:(id)arg1;
 - (unsigned long long)hash;

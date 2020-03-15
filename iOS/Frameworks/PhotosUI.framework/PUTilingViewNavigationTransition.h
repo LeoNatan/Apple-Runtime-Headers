@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     PUTilingViewTransitionHelper *__tilingViewTransitionHelper;
 }
 
-@property(readonly, nonatomic) PUTilingViewTransitionHelper *_tilingViewTransitionHelper; // @synthesize _tilingViewTransitionHelper=__tilingViewTransitionHelper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUTilingViewTransitionHelper *_tilingViewTransitionHelper; // @synthesize _tilingViewTransitionHelper=__tilingViewTransitionHelper;
 - (void)resumeTransition:(_Bool)arg1;
 - (void)updatePausedTransitionWithProgress:(double)arg1 interactionProgress:(double)arg2;
 - (void)pauseTransitionWithOptions:(unsigned long long)arg1;

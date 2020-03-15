@@ -15,9 +15,9 @@
 }
 
 + (unsigned int)freshnessForString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *freshnessPercentage; // @synthesize freshnessPercentage=_freshnessPercentage;
 @property(readonly, nonatomic) unsigned int freshness; // @synthesize freshness=_freshness;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFreshness:(unsigned int)arg1 freshnessPercentage:(id)arg2;
 

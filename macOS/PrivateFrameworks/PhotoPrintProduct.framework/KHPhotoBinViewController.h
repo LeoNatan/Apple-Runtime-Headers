@@ -37,6 +37,7 @@
     UXLabel *_emptyBinLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXLabel *emptyBinLabel; // @synthesize emptyBinLabel=_emptyBinLabel;
 @property(nonatomic) BOOL requiresContentUpdateOnAppear; // @synthesize requiresContentUpdateOnAppear=_requiresContentUpdateOnAppear;
 @property(nonatomic) BOOL updatingContent; // @synthesize updatingContent=_updatingContent;
@@ -53,7 +54,6 @@
 @property(nonatomic) BOOL shouldHandleDraggingEvents; // @synthesize shouldHandleDraggingEvents=_shouldHandleDraggingEvents;
 @property(nonatomic) BOOL canDeleteContents; // @synthesize canDeleteContents=_canDeleteContents;
 @property __weak id <KHPhotoBinViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)photoBinPhotoCellWasPicked:(id)arg1;
 - (void)photoBinPhotoCellWasPressed:(id)arg1;
 - (id)collectionViewAccessibilityRoleDescription:(id)arg1;

@@ -49,6 +49,7 @@
 + (id)defaultPropertyValues;
 + (id)primaryKey;
 + (id)className;
+- (void).cxx_destruct;
 @property long long remoteQuarantineStatus; // @synthesize remoteQuarantineStatus=_remoteQuarantineStatus;
 @property(copy) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property _Bool deleted; // @synthesize deleted=_deleted;
@@ -77,7 +78,6 @@
 @property(retain) NSDate *modifiedAt; // @synthesize modifiedAt=_modifiedAt;
 @property(retain) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(copy) NSString *workflowID; // @synthesize workflowID=_workflowID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isConflictOfOtherWorkflow) _Bool conflictOfOtherWorkflow;
 @property(readonly, nonatomic) NSNumber *location;
 @property(copy, nonatomic) NSSet *accessResourcePerWorkflowStates;

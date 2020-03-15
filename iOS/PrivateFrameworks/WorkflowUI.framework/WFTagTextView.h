@@ -22,6 +22,7 @@
     WFVariableInputCoordinator *_variableCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
 @property(copy, nonatomic) CDUnknownBlockType variableBlock; // @synthesize variableBlock=_variableBlock;
 @property(nonatomic) unsigned long long syntaxHighlightingType; // @synthesize syntaxHighlightingType=_syntaxHighlightingType;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) _Bool variablesDisabled; // @synthesize variablesDisabled=_variablesDisabled;
-- (void).cxx_destruct;
 - (void)updateDoneButtonPresence;
 @property(nonatomic) long long returnKeyType;
 - (void)updateAllowedVariableTypes;

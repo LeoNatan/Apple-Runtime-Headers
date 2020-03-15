@@ -19,10 +19,10 @@
     id <SXRenderingConfigurationProvider> _configurationProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXRenderingConfigurationProvider> configurationProvider; // @synthesize configurationProvider=_configurationProvider;
 @property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
 @property(readonly, nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (_Bool)validateConfigurationOption:(id)arg1 documentSpecVersion:(id)arg2 clientSpecVersion:(id)arg3;
 - (_Bool)validateConfigurationOption:(id)arg1;
 @property(readonly, nonatomic) id <SXHintsConfigurationOption> hints; // @synthesize hints=_hints;

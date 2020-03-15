@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSCalendarPermissionSetType *PermissionSet; // @synthesize PermissionSet=_PermissionSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSCalendarPermissionSetType *PermissionSet; // @synthesize PermissionSet=_PermissionSet;
 
 @end
 

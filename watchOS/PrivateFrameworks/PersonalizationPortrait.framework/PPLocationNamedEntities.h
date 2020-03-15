@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSData *mapItem; // @synthesize mapItem=_mapItem;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *city; // @synthesize city=_city;
 @property(retain, nonatomic) NSString *streetAddress; // @synthesize streetAddress=_streetAddress;
 @property(retain, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -36,9 +36,9 @@
 + (id)_newRingsView;
 + (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
 + (void)_prewarmForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(nonatomic) double rightTimeViewInset; // @synthesize rightTimeViewInset=_rightTimeViewInset;
-- (void).cxx_destruct;
 - (id)_additionalPrelaunchApplicationIdentifiers;
 - (double)_blinkerAndSecondsWidth;
 - (void)_removeActivityRelatedUIs;

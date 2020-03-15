@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int soundDuration; // @synthesize soundDuration=_soundDuration;
 @property(retain, nonatomic) NSString *soundName; // @synthesize soundName=_soundName;
 @property(nonatomic) _Bool vibrate; // @synthesize vibrate=_vibrate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

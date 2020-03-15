@@ -30,6 +30,7 @@
     WFWorkflowRunEvent *_runEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL handingOff; // @synthesize handingOff=_handingOff;
 @property(retain, nonatomic) WFWorkflowRunEvent *runEvent; // @synthesize runEvent=_runEvent;
 @property(nonatomic) __weak id <WFLibraryRunCoordinatorDelegate> delegateOverride; // @synthesize delegateOverride=_delegateOverride;
@@ -43,7 +44,6 @@
 @property(readonly, copy, nonatomic) NSString *source; // @synthesize source=_source;
 @property(nonatomic) __weak id <WFLibraryRunCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
-- (void).cxx_destruct;
 - (void)parameterInputViewControllerDidFinish:(id)arg1 withParameterStates:(id)arg2;
 - (void)parameterInputViewControllerDidCancel:(id)arg1;
 - (void)action:(id)arg1 provideInputForParameters:(id)arg2 withDefaultStates:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -30,6 +30,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDProactiveModelFittingQuantizedDenseVector *denseQuantizedGradient; // @synthesize denseQuantizedGradient=_denseQuantizedGradient;
 @property(nonatomic) float gradientL2norm; // @synthesize gradientL2norm=_gradientL2norm;
 @property(nonatomic) float gradientScaleFactor; // @synthesize gradientScaleFactor=_gradientScaleFactor;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) AWDProactiveModelFittingSparseFloatVector *sparseFloatGradient; // @synthesize sparseFloatGradient=_sparseFloatGradient;
 @property(retain, nonatomic) AWDProactiveModelFittingModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

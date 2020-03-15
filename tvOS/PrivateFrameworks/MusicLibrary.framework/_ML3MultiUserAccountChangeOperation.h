@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <MLMediaLibraryAccountChangeObserver> _accountChangeObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MLMediaLibraryAccountChangeObserver> accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
 @property(readonly, copy, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
-- (void).cxx_destruct;
 - (void)execute;
 - (id)initWithDatabasePath:(id)arg1 accountChangeObserver:(id)arg2;
 

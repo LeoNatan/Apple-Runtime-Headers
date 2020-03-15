@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (id)titleColorConfigurationWithTitleStyleID:(id)arg1 snapshotAspect:(int)arg2 randomizerSeed:(unsigned int)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *debugTitleName; // @synthesize debugTitleName=_debugTitleName;
 @property(retain, nonatomic) NSDictionary *titleParameters; // @synthesize titleParameters=_titleParameters;
 @property(nonatomic) int snapshotAspect; // @synthesize snapshotAspect=_snapshotAspect;
-- (void).cxx_destruct;
 - (BOOL)_verifyTitleStylesAreCorrect:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

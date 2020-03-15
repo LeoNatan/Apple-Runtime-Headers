@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)arrayWithUIElement:(id)arg1 attribute:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_attribute; // @synthesize _attribute=___attribute;
 @property(retain, nonatomic) SCRUIElement *_uiElement; // @synthesize _uiElement=__uiElement;
-- (void).cxx_destruct;
 - (unsigned long long)elementsCount;
 - (id)copyElementsForRange:(struct _NSRange)arg1;
 - (id)nilSentinel;

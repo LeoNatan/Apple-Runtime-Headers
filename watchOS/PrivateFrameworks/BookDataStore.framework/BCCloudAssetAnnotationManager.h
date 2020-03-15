@@ -23,13 +23,13 @@
     NSURL *_ckAssetStoreDirectory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *ckAssetStoreDirectory; // @synthesize ckAssetStoreDirectory=_ckAssetStoreDirectory;
 @property(retain, nonatomic) BCCloudDataManager *dataManager; // @synthesize dataManager=_dataManager;
 @property(retain, nonatomic) BCCloudDataSyncManager *syncManager; // @synthesize syncManager=_syncManager;
 @property(retain, nonatomic) BCCloudDataSource *annotationsDataSource; // @synthesize annotationsDataSource=_annotationsDataSource;
 @property(nonatomic) __weak BCCloudKitController *cloudKitController; // @synthesize cloudKitController=_cloudKitController;
 @property(nonatomic) _Bool enableCloudSync; // @synthesize enableCloudSync=_enableCloudSync;
-- (void).cxx_destruct;
 - (void)getAnnotationChangesSince:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)entityName;
 - (void)syncManager:(id)arg1 failedRecordIDs:(id)arg2 completion:(CDUnknownBlockType)arg3;

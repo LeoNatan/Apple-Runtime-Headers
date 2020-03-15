@@ -38,6 +38,7 @@
 + (BOOL)copyFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (id)errorForKGDBReturnCode:(int)arg1 description:(id)arg2;
 + (id)persistentStoreFileExtension;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *propertyNameByAttrId; // @synthesize propertyNameByAttrId=_propertyNameByAttrId;
 @property(retain, nonatomic) NSMutableDictionary *attrIdByPropertyName; // @synthesize attrIdByPropertyName=_attrIdByPropertyName;
 @property(retain, nonatomic) NSMutableDictionary *domainByDegasLabel; // @synthesize domainByDegasLabel=_domainByDegasLabel;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSMutableDictionary *labelNameByDegasLabel; // @synthesize labelNameByDegasLabel=_labelNameByDegasLabel;
 @property(retain, nonatomic) NSMutableDictionary *degasLabelByLabelName; // @synthesize degasLabelByLabelName=_degasLabelByLabelName;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasMarker;
 - (void)setMarker;
 - (void)deleteMarker;
@@ -100,6 +100,7 @@
 - (void)leaveBatch;
 - (void)enterBatch;
 - (void)closePersistentStore;
+- (void)leaveTransactionWithRollback;
 - (void)leaveTransaction;
 - (void)beginTransactionIfNeeded;
 - (void)checkTransaction;

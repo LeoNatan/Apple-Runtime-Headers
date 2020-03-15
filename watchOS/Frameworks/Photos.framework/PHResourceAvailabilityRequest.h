@@ -13,8 +13,8 @@
     id <PLResourceIdentity> _resourceIdentity;
 }
 
-@property(readonly, nonatomic) id <PLResourceIdentity> resourceIdentity; // @synthesize resourceIdentity=_resourceIdentity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PLResourceIdentity> resourceIdentity; // @synthesize resourceIdentity=_resourceIdentity;
 - (id)plistDictionary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
 - (id)initWithTaskIdentifier:(id)arg1 assetObjectID:(id)arg2 resourceIdentity:(id)arg3;

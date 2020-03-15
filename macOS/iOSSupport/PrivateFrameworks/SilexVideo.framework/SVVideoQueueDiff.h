@@ -16,9 +16,9 @@
     NSOrderedSet *_videosToRemove;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *videosToRemove; // @synthesize videosToRemove=_videosToRemove;
 @property(readonly, nonatomic) NSOrderedSet *videosToInsert; // @synthesize videosToInsert=_videosToInsert;
-- (void).cxx_destruct;
 - (id)initWithVideosToInsert:(id)arg1 videosToRemove:(id)arg2;
 
 // Remaining properties

@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s componentsLock; // @synthesize componentsLock=_componentsLock;
 @property(getter=isNightForecast) _Bool nightForecast; // @synthesize nightForecast=_nightForecast;
 @property(retain) WFLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (_Bool)wf_isDayIfSunrise:(id)arg1 sunset:(id)arg2;
 - (_Bool)wf_isDay;
 - (void)setValue:(id)arg1 forComponent:(id)arg2;

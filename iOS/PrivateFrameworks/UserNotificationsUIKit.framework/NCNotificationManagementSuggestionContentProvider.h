@@ -19,11 +19,11 @@
     id <NCNotificationManagementSuggestionDelegate> _suggestionDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NCNotificationManagementSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 @property(nonatomic) _Bool auxiliaryOptionsVisible; // @synthesize auxiliaryOptionsVisible=_auxiliaryOptionsVisible;
 @property(nonatomic) unsigned long long numberOfOptionButtons; // @synthesize numberOfOptionButtons=_numberOfOptionButtons;
 @property(copy, nonatomic) NSString *optionsSummaryText; // @synthesize optionsSummaryText=_optionsSummaryText;
-- (void).cxx_destruct;
 - (void)configureOptionButtons:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1 bundleDisplayName:(id)arg2 managementDelegate:(id)arg3 suggestionDelegate:(id)arg4;
 

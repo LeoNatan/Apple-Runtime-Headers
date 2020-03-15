@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) PKAccountEvent *event; // @synthesize event=_event;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKAccountEvent *event; // @synthesize event=_event;
 - (id)_descriptionWithIncludeItem:(BOOL)arg1;
 - (id)description;
 - (id)descriptionWithItem:(BOOL)arg1;

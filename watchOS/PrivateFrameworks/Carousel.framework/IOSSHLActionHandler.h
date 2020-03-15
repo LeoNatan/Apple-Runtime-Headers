@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) IOSSHLInsecureDrawingAlert *insecureDrawingAlert; // @synthesize insecureDrawingAlert=_insecureDrawingAlert;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IOSSHLInsecureDrawingAlert *insecureDrawingAlert; // @synthesize insecureDrawingAlert=_insecureDrawingAlert;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)_handleRestartForMigrationAction:(id)arg1;
 - (void)_reportAndKillInsecureProcesses:(id)arg1;

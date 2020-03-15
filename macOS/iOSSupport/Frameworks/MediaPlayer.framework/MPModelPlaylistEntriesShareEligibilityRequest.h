@@ -15,8 +15,8 @@
     MPModelPlaylist *_playlist;
 }
 
-@property(readonly, nonatomic) MPModelPlaylist *playlist; // @synthesize playlist=_playlist;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPModelPlaylist *playlist; // @synthesize playlist=_playlist;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPlaylist:(id)arg1;

@@ -27,11 +27,11 @@
 
 + (double)defaultStateTransitionOutDuration;
 + (double)defaultStateTransitionInDuration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *states; // @synthesize states=_states;
 @property(nonatomic) unsigned int verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) unsigned int horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
 @property(nonatomic) __weak id <PUICStatusViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_transitionInToState:(id)arg1 oldState:(id)arg2 nextState:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_transitionOutFromState:(id)arg1 newState:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_transitionFromState:(id)arg1 toState:(id)arg2 nextState:(id)arg3 completion:(CDUnknownBlockType)arg4;

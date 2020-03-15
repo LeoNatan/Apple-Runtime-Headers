@@ -22,11 +22,11 @@
 + (id)timerWithFireInterval:(id)arg1 atRate:(double)arg2 queue:(id)arg3 block:(CDUnknownBlockType)arg4;
 + (id)timerWithFireDate:(id)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (id)timerWithInterval:(double)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *dispatch_timer; // @synthesize dispatch_timer=_dispatch_timer;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) double rate; // @synthesize rate=_rate;
 @property(readonly, nonatomic) NSDateInterval *fireInterval; // @synthesize fireInterval=_fireInterval;
-- (void).cxx_destruct;
 - (void)invalidate;
 @property(readonly, getter=isValid) _Bool valid;
 - (void)_rescheduleTimer;

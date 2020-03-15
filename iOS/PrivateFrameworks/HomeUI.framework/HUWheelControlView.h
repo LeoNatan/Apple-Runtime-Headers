@@ -29,6 +29,7 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *wheelValues; // @synthesize wheelValues=_wheelValues;
 @property(retain, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain, nonatomic) NSSet *customValues; // @synthesize customValues=_customValues;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool canBeHighlighted; // @synthesize canBeHighlighted=_canBeHighlighted;
 @property(nonatomic) __weak id <HUControlViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_updateUIToReachable;
 - (id)_defaultStepValue;
 - (id)_defaultMinValue;

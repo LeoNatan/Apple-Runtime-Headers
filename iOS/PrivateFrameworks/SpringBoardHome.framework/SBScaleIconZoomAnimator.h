@@ -27,6 +27,7 @@
 }
 
 + (_Bool)validateAnimationContainer:(id)arg1 targetIcon:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint targetIconCenter; // @synthesize targetIconCenter=_targetIconCenter;
 @property(readonly, nonatomic) struct CGPoint zoomedTargetIconCenter; // @synthesize zoomedTargetIconCenter=_zoomedTargetIconCenter;
 @property(readonly, nonatomic) struct CGPoint zoomScaleDimension; // @synthesize zoomScaleDimension=_zoomScaleDimension;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) SBReversibleLayerPropertyAnimator *targetIconScaleYAnimator; // @synthesize targetIconScaleYAnimator=_targetIconScaleYAnimator;
 @property(retain, nonatomic) SBReversibleLayerPropertyAnimator *targetIconScaleXAnimator; // @synthesize targetIconScaleXAnimator=_targetIconScaleXAnimator;
 @property(retain, nonatomic) SBReversibleLayerPropertyAnimator *homeScreenScaleAnimator; // @synthesize homeScreenScaleAnimator=_homeScreenScaleAnimator;
-- (void).cxx_destruct;
 - (void)_applyIconGridFadeFraction:(double)arg1;
 - (void)_applyVisualAltitudeFraction:(double)arg1;
 - (struct CGPoint)_targetIconScaleForZoomFraction:(double)arg1;

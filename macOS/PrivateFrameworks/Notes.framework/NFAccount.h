@@ -31,8 +31,8 @@
 + (id)allAccountsWithContext:(id)arg1;
 + (void)setSupportsACAccount:(BOOL)arg1;
 + (BOOL)supportsACAccount;
-@property(retain, nonatomic) ACAccount *internalParentACAccount; // @synthesize internalParentACAccount=_internalParentACAccount;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccount *internalParentACAccount; // @synthesize internalParentACAccount=_internalParentACAccount;
 @property(readonly, nonatomic) ACAccount *parentACAccount;
 @property(readonly, copy, nonatomic) NSString *internetAccountsUID;
 @property(readonly) BOOL participatesInInternetAccounts;

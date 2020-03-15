@@ -19,9 +19,9 @@
 
 + (id)policyWithName:(id)arg1 forProvisions:(id)arg2;
 + (id)policyWithProvisions:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *provisions; // @synthesize provisions=_provisions;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -14,9 +14,9 @@
     NSVisualEffectView *_blurView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(nonatomic) BOOL drawBorder; // @synthesize drawBorder=_drawBorder;
-- (void).cxx_destruct;
 - (void)setupBlurView;
 - (void)_commonInitInputLineBackground;
 - (void)setToDefaultAppearance;

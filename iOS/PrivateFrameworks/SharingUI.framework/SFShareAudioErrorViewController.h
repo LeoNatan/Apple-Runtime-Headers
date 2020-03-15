@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(retain, nonatomic) UILabel *internalLabel; // @synthesize internalLabel=_internalLabel;
 @property(retain, nonatomic) UILabel *infoLabel; // @synthesize infoLabel=_infoLabel;
-- (void).cxx_destruct;
 - (void)eventDismiss:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

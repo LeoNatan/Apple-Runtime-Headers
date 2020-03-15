@@ -20,6 +20,7 @@
     NSString *__longDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *_longDescription; // @synthesize _longDescription=__longDescription;
 @property(retain, nonatomic) NSString *_displayVersion; // @synthesize _displayVersion=__displayVersion;
 @property(retain, nonatomic) NSString *_displayName; // @synthesize _displayName=__displayName;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) PKDistributionController *_distributionController; // @synthesize _distributionController=__distributionController;
 @property(retain, nonatomic) PKDistribution *_distribution; // @synthesize _distribution=__distribution;
 @property(readonly, nonatomic) NSString *productKey; // @synthesize productKey=_productKey;
-- (void).cxx_destruct;
 - (void)insertIntoJournal;
 - (void)setTargetJournalPath:(id)arg1;
 - (id)_attributedStringToHTMLString:(id)arg1;

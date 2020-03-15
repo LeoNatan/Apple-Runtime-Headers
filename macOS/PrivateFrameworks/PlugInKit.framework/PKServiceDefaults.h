@@ -13,8 +13,8 @@
     PKServicePersonality *_personality;
 }
 
-@property __weak PKServicePersonality *personality; // @synthesize personality=_personality;
 - (void).cxx_destruct;
+@property __weak PKServicePersonality *personality; // @synthesize personality=_personality;
 - (BOOL)synchronize;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;

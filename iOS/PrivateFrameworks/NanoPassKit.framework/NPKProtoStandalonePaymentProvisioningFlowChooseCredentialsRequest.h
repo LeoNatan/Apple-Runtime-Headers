@@ -17,9 +17,9 @@
 }
 
 + (Class)chosenPaymentCredentialIdentifiersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *chosenPaymentCredentialIdentifiers; // @synthesize chosenPaymentCredentialIdentifiers=_chosenPaymentCredentialIdentifiers;
 @property(retain, nonatomic) NPKProtoStandaloneRequestHeader *requestHeader; // @synthesize requestHeader=_requestHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

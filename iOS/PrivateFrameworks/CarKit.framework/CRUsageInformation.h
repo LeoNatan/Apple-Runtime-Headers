@@ -13,8 +13,8 @@
     CRCarKitServiceClient *_serviceClient;
 }
 
-@property(retain, nonatomic) CRCarKitServiceClient *serviceClient; // @synthesize serviceClient=_serviceClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CRCarKitServiceClient *serviceClient; // @synthesize serviceClient=_serviceClient;
 @property(readonly, nonatomic) _Bool shouldSuggestCarPlayTips;
 - (id)init;
 

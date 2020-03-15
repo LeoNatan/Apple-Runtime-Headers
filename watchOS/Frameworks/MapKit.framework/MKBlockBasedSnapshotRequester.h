@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)snapshotRequesterWitHandler:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler;
 - (void)mapSnapshotCreator:(id)arg1 didCreateSnapshot:(id)arg2 attributionString:(id)arg3 context:(id)arg4;
 
 // Remaining properties

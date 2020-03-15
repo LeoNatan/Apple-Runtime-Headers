@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)sizeForEpisodeListCellWithDescription:(id)arg1 width:(double)arg2 cornerRadius:(double)arg3;
 + (id)configureWithElement:(id)arg1 existingView:(id)arg2;
 + (void)configureVUITVLibraryEpisodeListCell:(id)arg1 withMedia:(id)arg2 width:(double)arg3 cornerRadius:(double)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUITVEpisodeInformationView *informationView; // @synthesize informationView=_informationView;
 @property(retain, nonatomic) VUIMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView<TVAuxiliaryViewSelecting> *selectingView; // @synthesize selectingView=_selectingView;
 @property(nonatomic) _Bool isFocusWithinCell; // @synthesize isFocusWithinCell=_isFocusWithinCell;
 @property(nonatomic) __weak id <VUITVLibraryEpisodeListCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
 - (void)_postConfigurationSetup;

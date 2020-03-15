@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     long long _cellState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIDownloadsCellView *cellView; // @synthesize cellView=_cellView;
 @property(nonatomic) long long cellState; // @synthesize cellState=_cellState;
-- (void).cxx_destruct;
 - (void)_reloadEditState;
 - (void)layoutSubviews;
 - (void)setSelected:(_Bool)arg1;

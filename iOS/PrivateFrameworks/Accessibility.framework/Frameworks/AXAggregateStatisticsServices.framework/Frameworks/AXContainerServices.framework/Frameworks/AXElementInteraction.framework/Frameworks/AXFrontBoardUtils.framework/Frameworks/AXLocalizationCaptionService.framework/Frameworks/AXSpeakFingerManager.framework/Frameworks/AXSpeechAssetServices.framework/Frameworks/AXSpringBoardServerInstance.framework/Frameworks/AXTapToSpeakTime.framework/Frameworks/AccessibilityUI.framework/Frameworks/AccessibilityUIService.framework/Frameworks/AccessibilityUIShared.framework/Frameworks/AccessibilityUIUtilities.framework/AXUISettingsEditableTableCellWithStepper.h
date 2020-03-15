@@ -17,11 +17,11 @@
     UILabel *_secondsLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool testingUseNoPreferencesDelegate; // @synthesize testingUseNoPreferencesDelegate=_testingUseNoPreferencesDelegate;
 @property(retain, nonatomic) UILabel *secondsLabel; // @synthesize secondsLabel=_secondsLabel;
 @property(nonatomic) __weak id <AXUISettingsEditableTableCellWithStepperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIStepper *stepper; // @synthesize stepper=_stepper;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)didMoveToSuperview;

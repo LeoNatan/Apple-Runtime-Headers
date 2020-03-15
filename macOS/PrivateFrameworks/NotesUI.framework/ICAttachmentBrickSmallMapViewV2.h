@@ -14,9 +14,9 @@
     CALayer *_effectsLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *effectsLayer; // @synthesize effectsLayer=_effectsLayer;
 @property(retain, nonatomic) CALayer *borderLayer; // @synthesize borderLayer=_borderLayer;
-- (void).cxx_destruct;
 - (void)setContentsScale:(double)arg1;
 - (void)updateSublayersBounds:(struct CGRect)arg1;
 - (void)setCornerRadius:(double)arg1;

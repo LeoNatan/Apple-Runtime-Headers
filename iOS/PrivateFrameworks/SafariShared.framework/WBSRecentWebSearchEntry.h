@@ -14,9 +14,9 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *date; // @synthesize date=_date;
 @property(readonly) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)hash;

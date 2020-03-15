@@ -14,9 +14,9 @@
     GEOClientRankingModelFeatureFunction *_function;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOClientRankingModelFeatureFunction *function; // @synthesize function=_function;
 @property(readonly, nonatomic) GEOClientRankingModelFeatureIdentifier *featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
-- (void).cxx_destruct;
 - (id)initWithGEOPDClientRankingFeatureMetadata:(id)arg1;
 - (id)initWithFeatureIdentifier:(id)arg1 function:(id)arg2;
 - (id)init;

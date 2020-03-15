@@ -16,10 +16,10 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *deviceCapabilities; // @synthesize deviceCapabilities=_deviceCapabilities;
 @property(readonly, getter=isMulticast) BOOL multicast; // @synthesize multicast=_multicast;
 @property(readonly, copy) HMDAccountHandle *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (id)remoteDestinationString;
 - (id)description;
 - (id)debugDescription;

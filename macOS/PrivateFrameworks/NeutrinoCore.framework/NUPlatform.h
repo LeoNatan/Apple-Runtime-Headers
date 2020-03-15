@@ -23,6 +23,7 @@
 }
 
 + (id)currentPlatform;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasExtendedColorDisplay; // @synthesize hasExtendedColorDisplay=_hasExtendedColorDisplay;
 @property(retain, nonatomic) id <NUDevice> cpuDevice; // @synthesize cpuDevice=_cpuDevice;
 @property(retain, nonatomic) id <NUDevice> headlessDevice; // @synthesize headlessDevice=_headlessDevice;
@@ -32,7 +33,6 @@
 @property(nonatomic) BOOL supportsAutomaticGraphicsSwitching; // @synthesize supportsAutomaticGraphicsSwitching=_supportsAutomaticGraphicsSwitching;
 @property(copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsLiveVideoRendering;
 @property(readonly, nonatomic) BOOL defaultSupportsLiveVideoRendering;
 - (id)displayWithIdentifier:(id)arg1;

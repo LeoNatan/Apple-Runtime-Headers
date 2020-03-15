@@ -26,6 +26,7 @@
     struct CGSize _enclosingSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *thumbnailCache; // @synthesize thumbnailCache=_thumbnailCache;
 @property(readonly, nonatomic) NSOperationQueue *thumbnailerQueue; // @synthesize thumbnailerQueue=_thumbnailerQueue;
 @property(nonatomic) __weak id <KHLayoutThumbnailManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL shouldIgnoreDrawingBadges; // @synthesize shouldIgnoreDrawingBadges=_shouldIgnoreDrawingBadges;
 @property(nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(nonatomic) struct CGSize enclosingSize; // @synthesize enclosingSize=_enclosingSize;
-- (void).cxx_destruct;
 - (void)thumbnailerCompleted:(id)arg1;
 - (BOOL)hasThumbnailForLayout:(id)arg1;
 - (struct CGSize)thumbnailSizeForLayout:(id)arg1;

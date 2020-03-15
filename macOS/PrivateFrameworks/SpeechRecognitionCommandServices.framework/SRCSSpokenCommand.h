@@ -20,9 +20,9 @@
     SRCSCommandRecognizer *_commandRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) NSDictionary *recognizedParameters; // @synthesize recognizedParameters=_recognizedParameters;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_uniqueCustomCommandIdentifier;
 - (id)fstGrammar;

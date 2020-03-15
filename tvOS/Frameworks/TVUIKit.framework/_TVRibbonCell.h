@@ -22,6 +22,7 @@
 }
 
 + (double)_slantDistanceForAngle:(double)arg1 cellSize:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double unfocusedEdgeExpansion; // @synthesize unfocusedEdgeExpansion=_unfocusedEdgeExpansion;
 @property(nonatomic) double focusedEdgeExpansion; // @synthesize focusedEdgeExpansion=_focusedEdgeExpansion;
 @property(nonatomic) double shearAngle; // @synthesize shearAngle=_shearAngle;
@@ -31,7 +32,6 @@
 @property(nonatomic) double slantDistance; // @synthesize slantDistance=_slantDistance;
 @property(nonatomic) struct CGRect frameLastMaskedTo; // @synthesize frameLastMaskedTo=_frameLastMaskedTo;
 @property(readonly, nonatomic) UIView *maskedContentView; // @synthesize maskedContentView=_maskedContentView;
-- (void).cxx_destruct;
 - (void)setEdgeExpansion:(double)arg1;
 @property(nonatomic) _Bool antialiasEdges;
 - (void)_updateMaskingModeForParameters:(id)arg1;

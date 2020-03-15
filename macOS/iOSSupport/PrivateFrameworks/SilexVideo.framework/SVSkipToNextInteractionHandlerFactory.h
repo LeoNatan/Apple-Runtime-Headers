@@ -16,8 +16,8 @@
     id <SVVideoPlaybackSkipping> _playbackSkipper;
 }
 
-@property(readonly, nonatomic) id <SVVideoPlaybackSkipping> playbackSkipper; // @synthesize playbackSkipper=_playbackSkipper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVVideoPlaybackSkipping> playbackSkipper; // @synthesize playbackSkipper=_playbackSkipper;
 - (id)createInteractionHandlerForVideo:(id)arg1;
 - (id)initWithPlaybackSkipper:(id)arg1;
 

@@ -6,12 +6,13 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class PUAlbumStreamActivity;
+@class NSObject, PUAlbumStreamActivity;
+@protocol PLAlbumProtocol;
 
 @protocol PUAlbumStreamActivityDelegate <NSObject>
 
 @optional
-- (void)albumStreamActivity:(PUAlbumStreamActivity *)arg1 didCreateAlbum:(struct NSObject *)arg2;
+- (void)albumStreamActivity:(PUAlbumStreamActivity *)arg1 didCreateAlbum:(NSObject<PLAlbumProtocol> *)arg2;
 - (void)albumStreamActivity:(PUAlbumStreamActivity *)arg1 didFinishSuccessfully:(_Bool)arg2;
 @end
 

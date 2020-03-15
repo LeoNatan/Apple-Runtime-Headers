@@ -16,8 +16,8 @@
     NSError *_error;
 }
 
-@property(retain) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain) NSError *error; // @synthesize error=_error;
 - (BOOL)isComplete;
 @property(retain) PACGImage *image;
 - (void)setImage:(id)arg1 atIndex:(unsigned long long)arg2;

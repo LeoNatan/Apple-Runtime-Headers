@@ -14,8 +14,8 @@
 }
 
 + (BOOL)validateName:(id)arg1 error:(out id *)arg2;
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) NSString *name; // @synthesize name=_name;
 - (id)descriptionSubClassHook;
 - (id)_descriptionWithOffset:(long long)arg1 showInputs:(BOOL)arg2;
 - (id)_evaluateImageGeometry:(out id *)arg1;
@@ -24,7 +24,7 @@
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
 @property(retain) NURenderNode *input;
 - (id)initWithInput:(id)arg1 name:(id)arg2;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

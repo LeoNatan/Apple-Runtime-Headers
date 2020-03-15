@@ -17,11 +17,11 @@
 }
 
 + (id)waitingCallerWithRequestedRange:(struct _NSRange)arg1;
+- (void).cxx_destruct;
 @property _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property _Bool requestedRangeIsAvailable; // @synthesize requestedRangeIsAvailable=_requestedRangeIsAvailable;
 @property struct _NSRange requestedRange; // @synthesize requestedRange=_requestedRange;
 @property(retain) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
-- (void).cxx_destruct;
 - (void)resume;
 - (void)waitWithTimeout:(unsigned long long)arg1;
 - (_Bool)canResumeForRange:(struct _NSRange)arg1;

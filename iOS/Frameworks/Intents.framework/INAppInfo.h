@@ -28,6 +28,7 @@
 + (id)appInfoWithIntent:(id)arg1;
 + (id)appInfoWithData:(id)arg1 error:(id *)arg2;
 + (id)appInfoWithAppProxy:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *definedIntents; // @synthesize definedIntents=_definedIntents;
 @property(copy, nonatomic) NSSet *supportedMediaCategories; // @synthesize supportedMediaCategories=_supportedMediaCategories;
 @property(copy, nonatomic) NSSet *actionsRestrictedWhileProtectedDataUnavailable; // @synthesize actionsRestrictedWhileProtectedDataUnavailable=_actionsRestrictedWhileProtectedDataUnavailable;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *developmentRegion; // @synthesize developmentRegion=_developmentRegion;
 @property(copy, nonatomic) NSString *companionApplicationIdentifier; // @synthesize companionApplicationIdentifier=_companionApplicationIdentifier;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSData *data;

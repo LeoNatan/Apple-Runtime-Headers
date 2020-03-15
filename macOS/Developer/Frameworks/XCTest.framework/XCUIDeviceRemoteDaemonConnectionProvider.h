@@ -24,8 +24,8 @@
 + (void)initialize;
 + (void)setSoftlinkFrameworksError:(id)arg1;
 + (id)softlinkFrameworksError;
-@property(readonly) CDUnknownBlockType dtxConnectionProviderFactory; // @synthesize dtxConnectionProviderFactory=_dtxConnectionProviderFactory;
 - (void).cxx_destruct;
+@property(readonly) CDUnknownBlockType dtxConnectionProviderFactory; // @synthesize dtxConnectionProviderFactory=_dtxConnectionProviderFactory;
 - (void)makeNewDaemonConnectionWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithDTXConnectionProviderFactory:(CDUnknownBlockType)arg1;
 

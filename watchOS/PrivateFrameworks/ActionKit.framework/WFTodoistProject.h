@@ -17,21 +17,17 @@
     int _projectId;
     NSString *_name;
     WFColor *_color;
-    int _indent;
-    int _order;
 }
 
 + (id)collapsedJSONTransformer;
 + (id)colorJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool collapsed; // @synthesize collapsed=_collapsed;
-@property(readonly, nonatomic) int order; // @synthesize order=_order;
-@property(readonly, nonatomic) int indent; // @synthesize indent=_indent;
 @property(readonly, nonatomic) WFColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) int projectId; // @synthesize projectId=_projectId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

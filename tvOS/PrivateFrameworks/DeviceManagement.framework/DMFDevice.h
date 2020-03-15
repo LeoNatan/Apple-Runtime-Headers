@@ -77,6 +77,7 @@
 
 + (id)_sanitizedDeviceKey:(id)arg1;
 + (id)propertyNameForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *errorsForKeys; // @synthesize errorsForKeys=_errorsForKeys;
 @property(readonly, nonatomic) NSString *destinationIdentifier; // @synthesize destinationIdentifier=_destinationIdentifier;
 @property(readonly, nonatomic) NSDictionary *xsanConfiguration; // @synthesize xsanConfiguration=_xsanConfiguration;
@@ -140,7 +141,6 @@
 @property(readonly, nonatomic) NSString *bluetoothAddress; // @synthesize bluetoothAddress=_bluetoothAddress;
 @property(readonly, nonatomic) NSNumber *batteryLevel; // @synthesize batteryLevel=_batteryLevel;
 @property(readonly, nonatomic) NSNumber *availableCapacity; // @synthesize availableCapacity=_availableCapacity;
-- (void).cxx_destruct;
 - (id)valueForKey:(id)arg1 error:(id *)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

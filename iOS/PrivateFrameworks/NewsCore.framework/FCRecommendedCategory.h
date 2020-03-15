@@ -18,13 +18,13 @@
     NSArray *_curatedTagIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *curatedTagIDs; // @synthesize curatedTagIDs=_curatedTagIDs;
 @property(readonly, nonatomic) NSArray *subcategories; // @synthesize subcategories=_subcategories;
 @property(readonly, nonatomic) NSArray *channelTagIDs; // @synthesize channelTagIDs=_channelTagIDs;
 @property(readonly, nonatomic) NSArray *topicTagIDs; // @synthesize topicTagIDs=_topicTagIDs;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

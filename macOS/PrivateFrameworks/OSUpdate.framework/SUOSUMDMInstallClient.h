@@ -19,12 +19,12 @@
     NSString *_installerFrameworkPath;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *installerFrameworkPath; // @synthesize installerFrameworkPath=_installerFrameworkPath;
 @property(copy) CDUnknownBlockType installBlock; // @synthesize installBlock=_installBlock;
 @property BOOL runLoopAbort; // @synthesize runLoopAbort=_runLoopAbort;
 @property(retain) OSISClient *installClient; // @synthesize installClient=_installClient;
 @property(retain) NSMutableDictionary *mdmInstallStatus; // @synthesize mdmInstallStatus=_mdmInstallStatus;
-- (void).cxx_destruct;
 - (void)prepareRecoveryDidSucceed;
 - (void)prepareRecoveryDidStart;
 - (void)prepareRecoveryDidFailWithError:(id)arg1;

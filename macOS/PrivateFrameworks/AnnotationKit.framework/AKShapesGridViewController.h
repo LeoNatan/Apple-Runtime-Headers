@@ -17,9 +17,9 @@
 }
 
 + (id)_toolTipForTag:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *optionalImages; // @synthesize optionalImages=_optionalImages;
 @property(readonly) NSArray *shapes; // @synthesize shapes=_shapes;
-- (void).cxx_destruct;
 - (void)keyUp:(id)arg1;
 - (void)_validateShapesItems:(id)arg1;
 - (id)_shapesGridViewItems;

@@ -14,9 +14,9 @@
     struct CGPoint _secondHandCenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint secondHandCenter; // @synthesize secondHandCenter=_secondHandCenter;
 @property(retain, nonatomic) UIColor *secondHandDotColor; // @synthesize secondHandDotColor=_secondHandDotColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3;
 - (void)setInlayColor:(id)arg1;

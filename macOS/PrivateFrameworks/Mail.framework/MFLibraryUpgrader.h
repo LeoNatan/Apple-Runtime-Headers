@@ -44,6 +44,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) struct sqlite3 *upgraderDB; // @synthesize upgraderDB=_upgraderDB;
 @property(retain, nonatomic) MCActivityAggregate *activity; // @synthesize activity=_activity;
 @property(nonatomic) unsigned long long minorVersion; // @synthesize minorVersion=_minorVersion;
@@ -68,7 +69,6 @@
 @property(retain, nonatomic) MCActivityMonitor *monitor; // @synthesize monitor=_monitor;
 @property(nonatomic) BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic) __weak id <MFLibraryUpgraderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)upgradeMailDataIfNecessary;
 - (long long)_getSQLTableCount:(const char *)arg1 connection:(id)arg2;
 - (void)_stampCurrentMinorVersion:(unsigned long long)arg1;

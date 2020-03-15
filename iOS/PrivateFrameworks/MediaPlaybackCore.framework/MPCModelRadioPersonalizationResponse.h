@@ -14,8 +14,8 @@
     MPSectionedCollection *_radioStationTracks;
 }
 
-@property(copy, nonatomic) MPSectionedCollection *radioStationTracks; // @synthesize radioStationTracks=_radioStationTracks;
 - (void).cxx_destruct;
+@property(copy, nonatomic) MPSectionedCollection *radioStationTracks; // @synthesize radioStationTracks=_radioStationTracks;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 personalizationResponse:(id)arg2;
 

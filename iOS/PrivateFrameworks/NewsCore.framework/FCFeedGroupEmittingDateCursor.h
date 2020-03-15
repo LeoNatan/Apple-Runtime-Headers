@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDate:(id)arg1;

@@ -21,12 +21,12 @@
 + (BOOL)isPermittedOnUserConnection;
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(copy, nonatomic) NSData *profileData; // @synthesize profileData=_profileData;
 @property(copy, nonatomic) NSString *managingProfileIdentifier; // @synthesize managingProfileIdentifier=_managingProfileIdentifier;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

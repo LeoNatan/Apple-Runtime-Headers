@@ -18,9 +18,9 @@
     NUColorSpace *_colorSpace;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly, nonatomic) NUPixelFormat *pixelFormat; // @synthesize pixelFormat=_pixelFormat;
-- (void).cxx_destruct;
 - (void)_updateDisplay:(id)arg1;
 - (void)_updateDisplayWithIdentifier:(id)arg1;
 - (void)layerDidBecomeVisible:(BOOL)arg1;

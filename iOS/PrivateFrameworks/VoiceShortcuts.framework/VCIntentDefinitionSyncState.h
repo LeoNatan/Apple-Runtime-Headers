@@ -19,10 +19,10 @@
 
 + (id)applicationsJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *applications; // @synthesize applications=_applications;
 @property(copy, nonatomic) NSNumber *sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(copy, nonatomic) NSUUID *databaseUUID; // @synthesize databaseUUID=_databaseUUID;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

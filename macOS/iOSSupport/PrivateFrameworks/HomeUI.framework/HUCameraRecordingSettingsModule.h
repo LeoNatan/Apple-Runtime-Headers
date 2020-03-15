@@ -28,6 +28,7 @@
     NSString *_locationDeviceName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *locationDeviceName; // @synthesize locationDeviceName=_locationDeviceName;
 @property(retain, nonatomic) HULocationDeviceManager *locationDeviceManager; // @synthesize locationDeviceManager=_locationDeviceManager;
 @property(readonly, nonatomic) HFItemProvider *headerItemProvider; // @synthesize headerItemProvider=_headerItemProvider;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSString *longestCameraUsageOptionItemTitle; // @synthesize longestCameraUsageOptionItemTitle=_longestCameraUsageOptionItemTitle;
 @property(readonly, nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (id)didSelectItem:(id)arg1;
 - (id)_attributedFooterTitle;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;

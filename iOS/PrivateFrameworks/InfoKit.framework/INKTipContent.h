@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)classSet;
-@property(readonly, nonatomic) TPSDiscoverabilityTip *tip; // @synthesize tip=_tip;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TPSDiscoverabilityTip *tip; // @synthesize tip=_tip;
 - (id)initWithTip:(id)arg1 dismissalEvents:(id)arg2 customizationID:(long long)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -16,11 +16,11 @@
     UIActivityIndicatorView *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(nonatomic) _Bool articleLoading; // @synthesize articleLoading=_articleLoading;
 @property(retain, nonatomic) NSSArticleView *articleView; // @synthesize articleView=_articleView;
 @property(retain, nonatomic) NSSArticleInternal *article; // @synthesize article=_article;
-- (void).cxx_destruct;
 - (void)_tickleArticleView;
 - (void)_tickleSpinner;
 - (void)presentArticle:(id)arg1 completion:(CDUnknownBlockType)arg2;

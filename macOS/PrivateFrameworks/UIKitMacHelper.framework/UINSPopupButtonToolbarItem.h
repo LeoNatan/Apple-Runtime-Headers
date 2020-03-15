@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSArray *_menuItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsArrow; // @synthesize showsArrow=_showsArrow;
 @property(retain, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain, nonatomic) id <NSUIImage> helperImage; // @synthesize helperImage=_helperImage;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_configureMenu;
 - (id)_menu;
 - (void)prepareItem;

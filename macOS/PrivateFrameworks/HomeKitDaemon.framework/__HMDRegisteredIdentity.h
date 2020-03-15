@@ -14,9 +14,9 @@
     NSMutableArray *_registeredObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *registeredObjects; // @synthesize registeredObjects=_registeredObjects;
 @property(readonly, copy) HMFPairingIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (id)initWithIdentity:(id)arg1;

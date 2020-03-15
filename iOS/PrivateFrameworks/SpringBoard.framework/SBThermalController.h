@@ -29,9 +29,9 @@
 
 + (void)logThermalEvent:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInSunlight) _Bool inSunlight; // @synthesize inSunlight=_inSunlight;
 @property(readonly, nonatomic) long long level; // @synthesize level=_level;
-- (void).cxx_destruct;
 - (void)_setBlocked:(_Bool)arg1;
 - (_Bool)_isBlocked;
 - (void)removeThermalObserver:(id)arg1;

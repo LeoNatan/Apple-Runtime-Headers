@@ -23,14 +23,15 @@
     HDRestorableAlarm *_scheduler;
 }
 
-@property(readonly, nonatomic) HDRestorableAlarm *scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HDRestorableAlarm *scheduler; // @synthesize scheduler=_scheduler;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)_deregisterUITriggers;
 - (void)_registerUITriggers;
 - (void)_queue_removeAllScheduledNotifications;
 - (void)_queue_rescheduleNotificationsForAnalysis:(id)arg1;
 - (void)_queue_alarm:(id)arg1 didReceiveDueEvents:(id)arg2;
+- (_Bool)_isAlgorithmsVersionSameOnPairedDevice;
 - (void)settingsManagerDidUpdateNotificationSettings:(id)arg1;
 - (void)analysisManager:(id)arg1 didUpdateAnalysis:(id)arg2;
 - (id)scheduledNotificationsWithError:(id *)arg1;

@@ -27,6 +27,7 @@
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)cancelLoadAppImageAtURL:(id)arg1;
 - (void)loadAppImageAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)cachedImageAtURL:(id)arg1;
 - (void)clearImageCache;
 - (id)init;
 

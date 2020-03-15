@@ -29,6 +29,7 @@
     struct UIEdgeInsets _graphInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) StockChartDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
 @property(nonatomic) _Bool roundLineCaps; // @synthesize roundLineCaps=_roundLineCaps;
 @property(retain, nonatomic) StockGraphImageSet *graphImageSet; // @synthesize graphImageSet=_graphImageSet;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSArray *linePointCounts; // @synthesize linePointCounts=_linePointCounts;
 @property(nonatomic) struct CGPoint *points; // @synthesize points=_points;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
-- (void).cxx_destruct;
 - (void)renderVolumeGraph;
 - (void)renderLineGraph;
 - (void)renderGraphLineInContext:(struct CGContext *)arg1 withColor:(id)arg2 offset:(struct CGPoint)arg3;

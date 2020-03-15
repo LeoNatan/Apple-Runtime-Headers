@@ -21,8 +21,8 @@
     id <REDonatedActionFilteredCacheDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <REDonatedActionFilteredCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <REDonatedActionFilteredCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_refreshAllDonations:(id)arg1;
 - (void)_queue_incrementPerformedCountForDonation:(id)arg1;
 - (unsigned long long)_queue_performedCountForDonation:(id)arg1;

@@ -38,6 +38,7 @@
 }
 
 + (id)_defaultTextColor;
+- (void).cxx_destruct;
 @property(nonatomic) double labelScaleFactor; // @synthesize labelScaleFactor=_labelScaleFactor;
 @property(nonatomic) struct CGSize lastLayoutBoundsSize; // @synthesize lastLayoutBoundsSize=_lastLayoutBoundsSize;
 @property(nonatomic) _Bool isFirstKeyboardInput; // @synthesize isFirstKeyboardInput=_isFirstKeyboardInput;
@@ -59,7 +60,6 @@
 @property(nonatomic) _Bool ignoreIntegralNumber; // @synthesize ignoreIntegralNumber=_ignoreIntegralNumber;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool showsDecimalPointButton; // @synthesize showsDecimalPointButton=_showsDecimalPointButton;
-- (void).cxx_destruct;
 - (void)_createSubviews;
 - (void)_updateContent;
 - (id)_decimalNumberFromString:(id)arg1;

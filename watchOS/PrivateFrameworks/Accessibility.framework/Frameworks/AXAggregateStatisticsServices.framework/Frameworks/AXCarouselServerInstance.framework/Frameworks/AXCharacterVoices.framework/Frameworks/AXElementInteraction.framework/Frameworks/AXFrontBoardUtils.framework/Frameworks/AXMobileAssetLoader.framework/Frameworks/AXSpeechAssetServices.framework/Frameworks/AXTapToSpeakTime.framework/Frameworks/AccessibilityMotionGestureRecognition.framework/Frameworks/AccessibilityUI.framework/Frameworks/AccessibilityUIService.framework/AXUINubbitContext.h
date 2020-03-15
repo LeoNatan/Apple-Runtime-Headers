@@ -26,6 +26,7 @@
     float _originalAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float originalAlpha; // @synthesize originalAlpha=_originalAlpha;
 @property(retain, nonatomic) UIDynamicItemBehavior *dynamicItemBehavior; // @synthesize dynamicItemBehavior=_dynamicItemBehavior;
 @property(retain, nonatomic) UICollisionBehavior *collisionBehavior; // @synthesize collisionBehavior=_collisionBehavior;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) AXAssertion *disableSystemGesturesAssertion; // @synthesize disableSystemGesturesAssertion=_disableSystemGesturesAssertion;
 @property(nonatomic) __weak id <AXUINubbitDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *nubbit; // @synthesize nubbit=_nubbit;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)hostWindowInfo;
+- (void).cxx_destruct;
 @property(retain) NSTextField *progressField; // @synthesize progressField=_progressField;
 @property(retain) NSProgressIndicator *progressSpinner; // @synthesize progressSpinner=_progressSpinner;
 @property(retain) NSWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)showProgress;
 - (void)hideProgress;
 

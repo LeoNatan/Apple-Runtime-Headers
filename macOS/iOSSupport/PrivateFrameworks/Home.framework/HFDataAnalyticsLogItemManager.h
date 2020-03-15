@@ -15,9 +15,9 @@
     HFDataAnalyticsModule *_dataAnalyticsModule;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFDataAnalyticsModule *dataAnalyticsModule; // @synthesize dataAnalyticsModule=_dataAnalyticsModule;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)initWithMediaProfileContainer:(id)arg1 delegate:(id)arg2;

@@ -23,6 +23,7 @@
     NSString *_carrierPhoneNumber;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *carrierPhoneNumber; // @synthesize carrierPhoneNumber=_carrierPhoneNumber;
 @property(copy, nonatomic) NSString *operatorFlightNumber; // @synthesize operatorFlightNumber=_operatorFlightNumber;
 @property(copy, nonatomic) NSString *operatorCarrierCode; // @synthesize operatorCarrierCode=_operatorCarrierCode;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *carrierName; // @synthesize carrierName=_carrierName;
 @property(copy, nonatomic) NSString *carrierCode; // @synthesize carrierCode=_carrierCode;
 @property(copy, nonatomic) NSString *flightID; // @synthesize flightID=_flightID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -17,9 +17,9 @@
     NSString *_inboxURI;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *inboxURI; // @synthesize inboxURI=_inboxURI;
 @property(retain) NSString *uri; // @synthesize uri=_uri;
-- (void).cxx_destruct;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (void)deleteTask:(id)arg1 completedWithError:(id)arg2;
 - (void)updateFreeBusySet;

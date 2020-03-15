@@ -19,6 +19,7 @@
     struct CGSize _drawerTextSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize drawerTextSize; // @synthesize drawerTextSize=_drawerTextSize;
 @property(nonatomic) _Bool drawerTextChanged; // @synthesize drawerTextChanged=_drawerTextChanged;
 @property(nonatomic) _Bool drawerWasVisible; // @synthesize drawerWasVisible=_drawerWasVisible;
@@ -26,7 +27,6 @@
 @property(nonatomic) long long animationPauseReasons; // @synthesize animationPauseReasons=_animationPauseReasons;
 @property(nonatomic) struct CGSize messageDisplayViewRequestedSize; // @synthesize messageDisplayViewRequestedSize=_messageDisplayViewRequestedSize;
 @property(copy, nonatomic) NSAttributedString *drawerText; // @synthesize drawerText=_drawerText;
-- (void).cxx_destruct;
 @property(readonly) UIView *messageDisplayView;
 - (void)willLayoutDrawerLabelFrame:(struct CGRect *)arg1;
 @property(readonly) struct CGRect drawerLabelFrame;

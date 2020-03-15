@@ -19,8 +19,8 @@
 + (long long)versionFromArtworkFilename:(id)arg1;
 + (id)localizedNameForTagWithID:(id)arg1;
 + (id)availableTagIDs;
-@property(readonly) NSObject<FlexSongProtocol> *backend; // @synthesize backend=_backend;
 - (void).cxx_destruct;
+@property(readonly) NSObject<FlexSongProtocol> *backend; // @synthesize backend=_backend;
 - (id)songFormat;
 - (id)customOptions;
 - (id)renditionForDuration:(CDStruct_1b6d18a9)arg1 withOptions:(id)arg2 testingContext:(id)arg3;

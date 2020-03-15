@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     _Bool _active;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)_handleTouchObservingGestureRecognizer:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

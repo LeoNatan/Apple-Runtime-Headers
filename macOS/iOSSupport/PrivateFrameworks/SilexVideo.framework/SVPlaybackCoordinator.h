@@ -15,9 +15,9 @@
     id <SVPlayerItemLoading> _playerItemLoader;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVPlayerItemLoading> playerItemLoader; // @synthesize playerItemLoader=_playerItemLoader;
 @property(readonly, nonatomic) SVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)loadVideoIfNeeded;
 - (void)load;
 - (void)pause;

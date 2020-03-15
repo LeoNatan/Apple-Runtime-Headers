@@ -31,6 +31,7 @@
     GKTurnBasedInviteViewController *_inviteController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKTurnBasedInviteViewController *inviteController; // @synthesize inviteController=_inviteController;
 @property(retain, nonatomic) NSString *matchIDWaitingForTurnEvent; // @synthesize matchIDWaitingForTurnEvent=_matchIDWaitingForTurnEvent;
 @property(nonatomic) long long maxMatchesSeen; // @synthesize maxMatchesSeen=_maxMatchesSeen;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak GKCollectionViewController *masterViewController; // @synthesize masterViewController=_masterViewController;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
-- (void).cxx_destruct;
 - (void)handleTurnBasedEvent:(id)arg1;
 - (void)turnBasedMatchDetailViewControllerDidShowStore:(id)arg1;
 - (void)turnBasedMatchDetailViewControllerDidRemoveMatch:(id)arg1;

@@ -34,6 +34,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int valueType; // @synthesize valueType=_valueType;
 @property(nonatomic) int unit; // @synthesize unit=_unit;
@@ -43,7 +44,6 @@
 @property(nonatomic) long long integerValue; // @synthesize integerValue=_integerValue;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) BOOL booleanValue; // @synthesize booleanValue=_booleanValue;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

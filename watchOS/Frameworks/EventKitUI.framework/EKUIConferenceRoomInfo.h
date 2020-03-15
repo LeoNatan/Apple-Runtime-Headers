@@ -15,10 +15,10 @@
     int _availabilityType;
 }
 
+- (void).cxx_destruct;
 @property int availabilityType; // @synthesize availabilityType=_availabilityType;
 @property(retain) NSArray *availabilitySpans; // @synthesize availabilitySpans=_availabilitySpans;
 @property(retain) EKRequestAvailabilityOperation *availabilityRequest; // @synthesize availabilityRequest=_availabilityRequest;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

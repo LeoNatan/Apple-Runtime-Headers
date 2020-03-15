@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
-@property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 

@@ -26,6 +26,7 @@
 
 + (double)captureMetricDurationBetweenStart:(double)arg1 andEnd:(double)arg2;
 + (double)captureMetricsForTimingData:(id)arg1 withKey:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int attemptCount; // @synthesize attemptCount=_attemptCount;
 @property(nonatomic) double resetTime; // @synthesize resetTime=_resetTime;
 @property(nonatomic) double initTime; // @synthesize initTime=_initTime;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) id <C2RequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) C2RequestOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)C2Session:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)captureMetricsWithError:(id)arg1 eventType:(long long)arg2;
 - (void)dealloc;

@@ -11,24 +11,26 @@
 @interface __NSURLSessionStatistics : NSObject
 {
     void *report;
+    PBCodable *_awdReport;
     NSUUID *_externallyVisibleNwActivity;
     NSArray *_externallyVisibleConnectionUUIDs;
 }
 
-+ (void)fillCFNetworkTransactionMetricStruct:(CDStruct_eeadfa9f *)arg1 from:(id)arg2;
++ (void)fillCFNetworkTransactionMetricStruct:(CDStruct_78f5ff5d *)arg1 from:(id)arg2;
 + (int)getNetworkProtocol:(id)arg1;
 + (int)getTaskType:(id)arg1;
-+ (CDStruct_88e232e4 *)createCFNetworkTaskMetrics_s:(id)arg1;
++ (CDStruct_24e10642 *)createCFNetworkTaskMetrics_s:(id)arg1;
 + (void)reportMetricsToSymptoms:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *externallyVisibleConnectionUUIDs; // @synthesize externallyVisibleConnectionUUIDs=_externallyVisibleConnectionUUIDs;
 @property(retain) NSUUID *externallyVisibleNwActivity; // @synthesize externallyVisibleNwActivity=_externallyVisibleNwActivity;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBCodable *awdReport;
 @property(readonly, nonatomic) unsigned int awdMetricID;
 @property(readonly, nonatomic) NSArray *connectionUUIDS;
 @property(readonly, nonatomic) NSUUID *taskUUID;
 @property(readonly, nonatomic) NSUUID *nwActivity;
 - (void)dealloc;
+- (id)initWithPBCodableData:(id)arg1;
 - (id)initWithCFNetworkReport:(void *)arg1 length:(int)arg2;
 
 @end

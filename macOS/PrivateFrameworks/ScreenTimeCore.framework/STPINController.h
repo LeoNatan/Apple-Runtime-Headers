@@ -17,14 +17,15 @@
 }
 
 + (unsigned long long)pinLength;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
 @property(readonly, nonatomic) STCoreUser *user; // @synthesize user=_user;
 @property(copy) NSDate *timeoutEndDate; // @synthesize timeoutEndDate=_timeoutEndDate;
-- (void).cxx_destruct;
 - (void)_beginTimeoutUntilDate:(id)arg1;
 - (id)_timeoutEndDateForAttemptNumber:(long long)arg1;
-- (BOOL)_authenticateWithPIN:(id)arg1 forUser:(id)arg2 error:(id *)arg3;
+- (BOOL)_authenticateWithPIN:(id)arg1 forUser:(id)arg2 allowPasscodeRecovery:(BOOL)arg3 error:(id *)arg4;
 - (void)authenticateWithPIN:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)authenticateWithPIN:(id)arg1 allowPasscodeRecovery:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)authenticateWithPIN:(id)arg1 error:(id *)arg2;
 - (BOOL)_saveChangesForUser:(id)arg1 error:(id *)arg2;
 - (BOOL)_setPasscode:(id)arg1 recoveryAppleID:(id)arg2 forUser:(id)arg3 error:(id *)arg4;
@@ -33,6 +34,7 @@
 - (void)removePIN:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updatePIN:(id)arg1 toPIN:(id)arg2 withRecoveryAppleIDPrompt:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setPIN:(id)arg1 withRecoveryAppleIDPrompt:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly) BOOL canRecoveryAuthenticate;
 - (id)initWithUser:(id)arg1;
 
 @end

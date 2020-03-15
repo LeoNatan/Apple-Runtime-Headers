@@ -17,8 +17,8 @@
     CSLSessionManager *_weakManager;
 }
 
-@property(nonatomic) __weak CSLSessionManager *weakManager; // @synthesize weakManager=_weakManager;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSLSessionManager *weakManager; // @synthesize weakManager=_weakManager;
 - (void)sessionManager:(id)arg1 sessionDidEnd:(id)arg2;
 - (void)sessionManager:(id)arg1 sessionDidStart:(id)arg2;
 - (void)backlight:(id)arg1 didTurnOn:(_Bool)arg2 atContinuousTime:(unsigned long long)arg3 forReason:(unsigned int)arg4;

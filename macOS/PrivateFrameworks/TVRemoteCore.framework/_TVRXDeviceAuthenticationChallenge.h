@@ -11,17 +11,20 @@
 @interface _TVRXDeviceAuthenticationChallenge : NSObject
 {
     CDUnknownBlockType _continuation;
+    CDUnknownBlockType _cancellationHandler;
     long long _challengeType;
     long long _challengeAttributes;
+    long long _throttleSeconds;
     NSString *_codeToEnterOnDevice;
 }
 
 + (id)_challengeWithCodeToEnterLocally:(CDUnknownBlockType)arg1;
-+ (id)_challengeWithCodeToEnterOnDevice:(id)arg1;
++ (id)_challengeWithCodeToEnterOnDevice:(id)arg1 cancellationHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *codeToEnterOnDevice; // @synthesize codeToEnterOnDevice=_codeToEnterOnDevice;
+@property(nonatomic) long long throttleSeconds; // @synthesize throttleSeconds=_throttleSeconds;
 @property(nonatomic) long long challengeAttributes; // @synthesize challengeAttributes=_challengeAttributes;
 @property(readonly, nonatomic) long long challengeType; // @synthesize challengeType=_challengeType;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)userEnteredCodeLocally:(id)arg1;
 - (id)_init;

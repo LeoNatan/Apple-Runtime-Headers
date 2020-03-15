@@ -28,6 +28,7 @@
 + (Class)VideoPlayerUIViewClass;
 + (Class)AVPlayerLayerClass;
 + (Class)AVPlayerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isListeningToVideoPlayer; // @synthesize isListeningToVideoPlayer=_isListeningToVideoPlayer;
 @property(nonatomic) float playbackRateWhenPlayerIsReady; // @synthesize playbackRateWhenPlayerIsReady=_playbackRateWhenPlayerIsReady;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) ISVideoPlayerUIView *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(nonatomic) _Bool isJellyfishVideo; // @synthesize isJellyfishVideo=_isJellyfishVideo;
 @property(retain, nonatomic) CKMovieMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
-- (void).cxx_destruct;
 - (void)previewDidChange:(id)arg1;
 - (void)_setPlaybackRateDeferredIfNecessary:(float)arg1;
 - (void)_setPlaybackRate:(float)arg1;

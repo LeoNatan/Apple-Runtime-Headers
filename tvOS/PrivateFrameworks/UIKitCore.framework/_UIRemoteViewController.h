@@ -86,11 +86,11 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 + (_Bool)shouldPropagateAppearanceCustomizations;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool serviceViewShouldShareTouchesWithHost; // @synthesize serviceViewShouldShareTouchesWithHost=_serviceViewShouldShareTouchesWithHost;
 @property(nonatomic, setter=_setIsUpdatingSizeInHost:) _Bool _isUpdatingSizeInHost; // @synthesize _isUpdatingSizeInHost;
 @property(nonatomic, setter=_setIsUpdatingSize:) _Bool _isUpdatingSize; // @synthesize _isUpdatingSize;
 @property(retain, nonatomic, setter=_setTouchDeliveryPolicyAssertion:) BKSTouchDeliveryPolicyAssertion *_touchDeliveryPolicyAssertion; // @synthesize _touchDeliveryPolicyAssertion;
-- (void).cxx_destruct;
 - (void)__handleFocusMovementAction:(id)arg1;
 - (void)__trampolineButtonPressData:(id)arg1 canceled:(_Bool)arg2;
 - (id)_cancelTouchesForCurrentEventInHostedContent;

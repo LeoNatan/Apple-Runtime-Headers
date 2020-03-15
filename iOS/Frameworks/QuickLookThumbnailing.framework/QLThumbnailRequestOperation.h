@@ -24,6 +24,7 @@
 }
 
 + (id)operationWithThumbnailRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *thumbnailRequestInvalidError; // @synthesize thumbnailRequestInvalidError=_thumbnailRequestInvalidError;
 @property(retain, nonatomic) QLThumbnailRepresentation *mostRepresentativeThumbnail; // @synthesize mostRepresentativeThumbnail=_mostRepresentativeThumbnail;
 @property(copy, nonatomic) CDUnknownBlockType thumbnailRequestGenerationWillStartBlock; // @synthesize thumbnailRequestGenerationWillStartBlock=_thumbnailRequestGenerationWillStartBlock;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) CDUnknownBlockType requestUpdateBlock; // @synthesize requestUpdateBlock=_requestUpdateBlock;
 - (_Bool)isExecuting;
 - (_Bool)isFinished;
-- (void).cxx_destruct;
 - (void)main;
 - (_Bool)_finishIfNeeded;
 - (void)_finishIfRequestIsInvalid;

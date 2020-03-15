@@ -13,8 +13,8 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
-@property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 - (void)setTitle:(id)arg1 forState:(unsigned long long)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentSizeCategory;

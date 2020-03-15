@@ -56,6 +56,7 @@
     _Bool _isObtainingEditsFromServiceBeforeDismissing;
     _Bool _isContentManaged;
     _Bool _useCustomActionButton;
+    _Bool _alwaysDisplayPreviewItemTitle;
     _Bool _showActionAsDefaultButton;
     long long _currentPreviewItemIndex;
     id <QLPreviewControllerDataSource> _dataSource;
@@ -105,6 +106,7 @@
 + (id)contentTypeForPreviewItem:(id)arg1;
 + (void)logDeprecatedMessageForSelector:(SEL)arg1;
 + (void)logDeprecatedMessageForMethodName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(retain, nonatomic) UIColor *fullscreenBackgroundColor; // @synthesize fullscreenBackgroundColor=_fullscreenBackgroundColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -113,6 +115,7 @@
 @property(retain) NSArray *additionalRightBarButtonItems; // @synthesize additionalRightBarButtonItems=_additionalRightBarButtonItems;
 @property(retain) NSArray *additionalLeftBarButtonItems; // @synthesize additionalLeftBarButtonItems=_additionalLeftBarButtonItems;
 @property(nonatomic) _Bool showActionAsDefaultButton; // @synthesize showActionAsDefaultButton=_showActionAsDefaultButton;
+@property(nonatomic) _Bool alwaysDisplayPreviewItemTitle; // @synthesize alwaysDisplayPreviewItemTitle=_alwaysDisplayPreviewItemTitle;
 @property(nonatomic) _Bool useCustomActionButton; // @synthesize useCustomActionButton=_useCustomActionButton;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(nonatomic) unsigned long long appearanceActions; // @synthesize appearanceActions=_appearanceActions;
@@ -157,7 +160,6 @@
 @property(nonatomic) __weak id <QLPreviewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) id <QLPrintingProtocol> printer; // @synthesize printer=_printer;
 @property(nonatomic) __weak id <QLPreviewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (long long)itemStore:(id)arg1 editingModeForPreviewItem:(id)arg2;
 - (unsigned long long)itemStore:(id)arg1 editedFileBehaviorForItem:(id)arg2;

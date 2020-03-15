@@ -33,6 +33,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain) SBAppSwitcherOrbGestureAnimationSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
 @property _Bool canPlayCommitHaptic; // @synthesize canPlayCommitHaptic=_canPlayCommitHaptic;
 @property _Bool canPlayInitialHaptic; // @synthesize canPlayInitialHaptic=_canPlayInitialHaptic;
@@ -53,7 +54,6 @@
 @property double maxIconScrollProgressAllowed; // @synthesize maxIconScrollProgressAllowed=_maxIconScrollProgressAllowed;
 @property double orbGestureRegionMax; // @synthesize orbGestureRegionMax=_orbGestureRegionMax;
 @property _Bool useOrbGesture; // @synthesize useOrbGesture=_useOrbGesture;
-- (void).cxx_destruct;
 - (double)valueAlongDefaultForcePressCurveWithMinY:(double)arg1 progress:(double)arg2 fromHomeScreen:(_Bool)arg3;
 - (void)setDefaultValues;
 

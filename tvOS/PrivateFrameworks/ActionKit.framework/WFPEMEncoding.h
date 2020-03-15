@@ -15,9 +15,9 @@
 }
 
 + (id)decodePEM:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)encodedPEM;
 - (id)initWithType:(id)arg1 data:(id)arg2;
 

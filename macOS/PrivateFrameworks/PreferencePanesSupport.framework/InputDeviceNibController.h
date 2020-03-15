@@ -16,11 +16,11 @@
     NSButton *mSetupBTBackButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly) InputDeviceController *controller; // @synthesize controller=mController;
 @property(readonly) NSButton *setupBTBackButton; // @synthesize setupBTBackButton=mSetupBTBackButton;
 @property(readonly) NSButton *setupBTButton; // @synthesize setupBTButton=mSetupBTButton;
 @property(readonly) NSView *contentView; // @synthesize contentView=mContentView;
-- (void).cxx_destruct;
 - (id)fieldEditorForObject:(id)arg1;
 - (void)updateButtons;
 - (void)willSwitchOut;

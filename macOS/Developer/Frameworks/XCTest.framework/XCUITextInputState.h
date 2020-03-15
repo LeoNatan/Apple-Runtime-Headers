@@ -14,9 +14,9 @@
     id <XCUITextInputSource> _layoutInputSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <XCUITextInputSource> layoutInputSource; // @synthesize layoutInputSource=_layoutInputSource;
 @property(readonly) id <XCUITextInputSource> inputSource; // @synthesize inputSource=_inputSource;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithInputSource:(id)arg1 layoutInputSource:(id)arg2;
 

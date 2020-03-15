@@ -18,12 +18,12 @@
     UILabel *_labelCreditAvailable;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useAccssibilityLayout; // @synthesize useAccssibilityLayout=_useAccssibilityLayout;
 @property(readonly, nonatomic) UILabel *labelCreditAvailable; // @synthesize labelCreditAvailable=_labelCreditAvailable;
 @property(readonly, nonatomic) UILabel *labelAmount; // @synthesize labelAmount=_labelAmount;
 @property(readonly, nonatomic) UILabel *labelBalance; // @synthesize labelBalance=_labelBalance;
 @property(retain, nonatomic) PKDashboardCreditAccountItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)_createSubviews;

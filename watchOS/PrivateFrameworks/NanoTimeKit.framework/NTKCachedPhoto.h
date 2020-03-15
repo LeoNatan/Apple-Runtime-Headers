@@ -16,10 +16,10 @@
     float _dimming;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int index; // @synthesize index=_index;
 @property(readonly, nonatomic) NTKPhoto *photo; // @synthesize photo=_photo;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (_Bool)load;
 @property(readonly, nonatomic) float dimming;
 - (id)initWithPhoto:(id)arg1 index:(int)arg2;

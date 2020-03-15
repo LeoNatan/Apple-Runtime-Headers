@@ -16,11 +16,11 @@
     NSString *_listDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *listDescription; // @synthesize listDescription=_listDescription;
 @property(retain, nonatomic) TVLMenuElement *menu; // @synthesize menu=_menu;
 @property(retain, nonatomic) TVLElement *preview; // @synthesize preview=_preview;
 @property(retain, nonatomic) TVLHeaderElement *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

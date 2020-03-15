@@ -16,10 +16,10 @@
 }
 
 + (id)updateWithState:(id)arg1 previousState:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RBSProcessState *previousState; // @synthesize previousState=_previousState;
 @property(readonly, nonatomic) RBSProcessState *state; // @synthesize state=_state;
 @property(readonly, nonatomic) RBSProcessHandle *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

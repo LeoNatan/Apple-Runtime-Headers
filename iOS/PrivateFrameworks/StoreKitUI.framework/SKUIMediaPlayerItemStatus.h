@@ -22,6 +22,7 @@
     long long _playState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long playState; // @synthesize playState=_playState;
 @property(nonatomic) long long itemType; // @synthesize itemType=_itemType;
 @property(nonatomic) _Bool hideDuration; // @synthesize hideDuration=_hideDuration;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *storeAlbumID; // @synthesize storeAlbumID=_storeAlbumID;
 @property(copy, nonatomic) NSString *storeID; // @synthesize storeID=_storeID;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

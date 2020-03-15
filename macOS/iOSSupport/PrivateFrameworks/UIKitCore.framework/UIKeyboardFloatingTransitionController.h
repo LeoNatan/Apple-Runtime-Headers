@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)snapshotOfKeyplaneView:(id)arg1;
 + (BOOL)isPointWithinDockingRegion:(struct CGPoint)arg1;
 + (double)magneticEdgeMargin;
+- (void).cxx_destruct;
 @property(retain) UIViewSpringAnimationBehavior *animationBehavior; // @synthesize animationBehavior=_animationBehavior;
 @property(nonatomic) BOOL expandedForDocking; // @synthesize expandedForDocking=_expandedForDocking;
 @property(nonatomic) BOOL withinDockingRegion; // @synthesize withinDockingRegion=_withinDockingRegion;
@@ -59,13 +60,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIKeyboardFloatingPinchGestureRecognizer *pinchGestureRecognizer; // @synthesize pinchGestureRecognizer=_pinchGestureRecognizer;
 @property(nonatomic) __weak id <UIKeyboardFloatingTransitionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL isTransitioning; // @synthesize isTransitioning=_isTransitioning;
-- (void).cxx_destruct;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)captureStateForStart:(BOOL)arg1;
 - (void)inputViewSnapshot:(id *)arg1 withPlatterInsets:(struct UIEdgeInsets *)arg2;
 - (void)updateAnimationAtScale:(double)arg1;
 - (void)finalizeTransition;
+- (void)restoreAccessoryViewConstraints;
+- (void)constrainAccessoryViewToBottom;
 - (void)initializeContextAtPoint:(struct CGPoint)arg1;
 - (void)endTransitionAtPoint:(struct CGPoint)arg1 withScale:(double)arg2;
 - (void)updateTransitionAtPoint:(struct CGPoint)arg1 withScale:(double)arg2 interactive:(BOOL)arg3;

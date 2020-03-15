@@ -23,13 +23,13 @@
 + (_Bool)_syncObserverHasCompletedCalendar:(id)arg1;
 + (_Bool)_shouldSkipWaitForInitialSync;
 + (id)sharedModel;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NEKSignalCoalescer *signalCoalescer; // @synthesize signalCoalescer=_signalCoalescer;
 @property(nonatomic) _Bool syncComplete; // @synthesize syncComplete=_syncComplete;
 @property(retain, nonatomic) PSYSyncStateObserver *syncStateObserver; // @synthesize syncStateObserver=_syncStateObserver;
 @property(retain, nonatomic) NTKCalendarEntryModelLoadQueue *loadQueue; // @synthesize loadQueue=_loadQueue;
 @property(retain, nonatomic) NTKCalendarEntryModelCache *entryModelCache; // @synthesize entryModelCache=_entryModelCache;
 @property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (void)syncStateObserverDidChangeSyncState:(id)arg1;
 - (void)_openEventStoreIfAvailable;
 - (_Bool)_isEventStoreReadyToOpen;

@@ -62,6 +62,7 @@
 
 + (id)_backgroundFileReadingQueue;
 + (BOOL)automaticallyNotifiesObserversOfOriginalData;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isMailDropIndividualImage; // @synthesize isMailDropIndividualImage=_isMailDropIndividualImage;
 @property(nonatomic) struct CGSize resizedImageSize; // @synthesize resizedImageSize=_resizedImageSize;
 @property(nonatomic) BOOL isMailDropImageArchive; // @synthesize isMailDropImageArchive=_isMailDropImageArchive;
@@ -99,7 +100,6 @@
 @property(retain, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(nonatomic) unsigned int creator; // @synthesize creator=_creator;
 @property(copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
-- (void).cxx_destruct;
 - (void)_finishedCoordinatedFileReadingWithURL:(id)arg1;
 @property(readonly, nonatomic) BOOL hasPendingBackgroundRead;
 - (id)beginBackgroundFileReading;

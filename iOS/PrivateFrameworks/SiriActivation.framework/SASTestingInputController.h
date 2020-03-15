@@ -13,8 +13,8 @@
     SiriTestingContext *_preloadedTestingInput;
 }
 
-@property(readonly, nonatomic) SiriTestingContext *preloadedTestingInput; // @synthesize preloadedTestingInput=_preloadedTestingInput;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SiriTestingContext *preloadedTestingInput; // @synthesize preloadedTestingInput=_preloadedTestingInput;
 - (id)dequeuePreloadedTestingContext;
 - (void)_testingAudioInputPathsDidChange:(id)arg1;
 - (void)_testingStringsDidChange:(id)arg1;

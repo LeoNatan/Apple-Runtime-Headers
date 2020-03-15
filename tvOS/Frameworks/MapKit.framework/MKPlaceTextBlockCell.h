@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_textBlockText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool constraintsAdded; // @synthesize constraintsAdded=_constraintsAdded;
 @property(copy, nonatomic) NSString *textBlockText; // @synthesize textBlockText=_textBlockText;
 @property(retain, nonatomic) MKExpandingLabel *textBlock; // @synthesize textBlock=_textBlock;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType textBlockResizedBlock;
 @property(nonatomic, getter=isTextBlockExpanded) _Bool textBlockExpanded;
 - (void)updateConstraints;

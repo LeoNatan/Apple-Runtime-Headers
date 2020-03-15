@@ -34,9 +34,9 @@
     NSCalendar *_calendar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 - (void)tritium_cleanUpAfterTransition;
 - (void)tritium_setTritiumOnWithProgress:(float)arg1;
 - (void)tritium_prepareForTransition;
@@ -53,6 +53,8 @@
 - (void)applyDensity:(unsigned int)arg1;
 - (id)_nodeForBleed:(unsigned int)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
+- (void)_applyComplicationColor:(id)arg1;
+- (void)_applyDialColor:(id)arg1 withBleed:(unsigned int)arg2;
 - (void)applyPalette:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
 - (void)_applyTransitionFraction:(float)arg1 fromHourLabelCollectionNode:(id)arg2 toHourLabelCollectionNode:(id)arg3;

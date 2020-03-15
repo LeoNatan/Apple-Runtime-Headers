@@ -30,6 +30,7 @@
 + (_Bool)showsWithTapAndHold;
 + (long long)actionsMode;
 + (long long)avatarCardImplementation;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool bypassActionValidation; // @synthesize bypassActionValidation=_bypassActionValidation;
 @property(nonatomic) _Bool actionsNeedRefresh; // @synthesize actionsNeedRefresh=_actionsNeedRefresh;
 @property(retain, nonatomic) UIGestureRecognizer *rolloverGestureRecognizer; // @synthesize rolloverGestureRecognizer=_rolloverGestureRecognizer;
@@ -41,7 +42,6 @@
 @property(nonatomic) __weak id <CNAvatarCardControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *actionCategories; // @synthesize actionCategories=_actionCategories;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (id)preparedViewControllerForPresentationWithGestureRecognizer:(id)arg1;
 - (void)showContact:(id)arg1;
 - (void)dismissAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

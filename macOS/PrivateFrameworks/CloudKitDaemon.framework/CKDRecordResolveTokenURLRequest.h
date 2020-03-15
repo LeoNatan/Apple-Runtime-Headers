@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_lookupInfosByRequestID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *lookupInfosByRequestID; // @synthesize lookupInfosByRequestID=_lookupInfosByRequestID;
 @property(retain, nonatomic) NSArray *lookupInfos; // @synthesize lookupInfos=_lookupInfos;
 @property(copy, nonatomic) CDUnknownBlockType tokenResolveBlock; // @synthesize tokenResolveBlock=_tokenResolveBlock;
 @property(nonatomic) BOOL shouldFetchRootRecord; // @synthesize shouldFetchRootRecord=_shouldFetchRootRecord;
 @property(retain, nonatomic) NSSet *rootRecordDesiredKeySet; // @synthesize rootRecordDesiredKeySet=_rootRecordDesiredKeySet;
-- (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;

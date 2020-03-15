@@ -11,8 +11,8 @@
     CDUnknownBlockType _visibilityChangeHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType visibilityChangeHandler; // @synthesize visibilityChangeHandler=_visibilityChangeHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType visibilityChangeHandler; // @synthesize visibilityChangeHandler=_visibilityChangeHandler;
 - (void)setHidden:(_Bool)arg1;
 - (void)setAlpha:(double)arg1;
 - (void)didMoveToWindow;

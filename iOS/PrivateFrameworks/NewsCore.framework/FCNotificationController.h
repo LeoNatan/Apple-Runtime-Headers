@@ -22,6 +22,7 @@
     id <FCCoreConfigurationManager> _configurationManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appleNewsNotificationsAllowed; // @synthesize appleNewsNotificationsAllowed=_appleNewsNotificationsAllowed;
 @property(nonatomic) _Bool publisherNotificationsAllowed; // @synthesize publisherNotificationsAllowed=_publisherNotificationsAllowed;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) FCUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *deviceToken; // @synthesize deviceToken=_deviceToken;
 @property(copy, nonatomic) NSString *notificationsUserID; // @synthesize notificationsUserID=_notificationsUserID;
-- (void).cxx_destruct;
 - (void)userInfoDidChangeNotificationsUserID:(id)arg1;
 - (id)appendBreakingNewsIfNeededToChannelIDs:(id)arg1;
 - (void)refreshNotificationsFromAppleNews;

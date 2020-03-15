@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     WDMedicalRecordBrandView *_brandView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WDMedicalRecordBrandView *brandView; // @synthesize brandView=_brandView;
 @property(readonly, nonatomic) WDBrandLogoView *logoView; // @synthesize logoView=_logoView;
 @property(readonly, nonatomic) UIImageView *disclosureChevronView; // @synthesize disclosureChevronView=_disclosureChevronView;
 @property(nonatomic, getter=showsDisclosureChevron) _Bool showDisclosureChevron; // @synthesize showDisclosureChevron=_showDisclosureChevron;
-- (void).cxx_destruct;
 @property(nonatomic) double logoSize;
 @property(readonly, nonatomic) WDClinicalSourcesDataProvider *dataProvider;
 @property(readonly, nonatomic) id <HKClinicalBrandable> brandable;

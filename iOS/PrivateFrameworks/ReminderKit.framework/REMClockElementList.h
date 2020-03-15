@@ -15,8 +15,8 @@
 
 + (long long)compareList:(id)arg1 toList:(id)arg2;
 + (_Bool)list:(id)arg1 isCompatibleToList:(id)arg2;
-@property(copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 - (id)initWithEntryArchive:(const struct ReplicaEntry *)arg1;
 - (void)encodeIntoEntryArchive:(struct ReplicaEntry *)arg1;
 - (id)description;

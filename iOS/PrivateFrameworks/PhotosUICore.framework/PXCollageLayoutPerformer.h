@@ -24,6 +24,7 @@
 }
 
 + (struct CGSize)performLayoutWithLayoutInput:(CDStruct_392cfed4)arg1 layoutOutput:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property(retain, nonatomic) PXSplitLayoutPerformer *threeItemNestedPerformer; // @synthesize threeItemNestedPerformer=_threeItemNestedPerformer;
 @property(retain, nonatomic) PXSplitLayoutPerformer *threeItemPerformer; // @synthesize threeItemPerformer=_threeItemPerformer;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool portraitBias; // @synthesize portraitBias=_portraitBias;
 @property(nonatomic) double interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) double outerLayoutRatio; // @synthesize outerLayoutRatio=_outerLayoutRatio;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (struct CGSize)performLayout;
 @property(readonly, nonatomic) NSArray *children;

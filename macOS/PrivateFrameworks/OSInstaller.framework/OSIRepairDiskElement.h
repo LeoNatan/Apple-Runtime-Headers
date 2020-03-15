@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property BOOL repairCompleted; // @synthesize repairCompleted=_repairCompleted;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (double)estimatedTimeToComplete;
 - (BOOL)_isVolumeInComplexAPFSContainer:(id)arg1;
 - (void)_disableQuotasForDiskWithMountPoint:(id)arg1;

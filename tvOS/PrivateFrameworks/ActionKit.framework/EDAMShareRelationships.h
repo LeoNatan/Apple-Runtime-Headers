@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMShareRelationshipRestrictions *invitationRestrictions; // @synthesize invitationRestrictions=_invitationRestrictions;
 @property(retain, nonatomic) NSArray *memberships; // @synthesize memberships=_memberships;
 @property(retain, nonatomic) NSArray *invitations; // @synthesize invitations=_invitations;
-- (void).cxx_destruct;
 
 @end
 

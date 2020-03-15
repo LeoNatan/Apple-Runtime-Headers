@@ -26,6 +26,7 @@
 }
 
 + (id)sharedStatusController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *_retryBlocks; // @synthesize _retryBlocks=__retryBlocks;
 @property(nonatomic, getter=_isRequestingGraphFractionCompleted, setter=_setRequestingGraphFractionCompleted:) _Bool _requestingGraphFractionCompleted; // @synthesize _requestingGraphFractionCompleted=__requestingGraphFractionCompleted;
 @property(retain, nonatomic, setter=_setGraphError:) NSError *_graphError; // @synthesize _graphError=__graphError;
@@ -36,7 +37,6 @@
 @property(nonatomic, setter=_setGraphFractionCompleted:) double graphFractionCompleted; // @synthesize graphFractionCompleted=_graphFractionCompleted;
 @property(nonatomic, setter=_setHasBeenReadyForSomeTime:) _Bool hasBeenReadyForSomeTime; // @synthesize hasBeenReadyForSomeTime=_hasBeenReadyForSomeTime;
 @property(nonatomic, setter=_setGraphStatus:) long long graphStatus; // @synthesize graphStatus=_graphStatus;
-- (void).cxx_destruct;
 - (void)_updateGraphStatusIfNeeded;
 - (void)_invalidateGraphStatus;
 - (void)_updateIfNeeded;

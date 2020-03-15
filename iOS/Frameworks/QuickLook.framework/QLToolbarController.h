@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     UIView *_preferredParentViewForSafeAreaInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *preferredParentViewForSafeAreaInset; // @synthesize preferredParentViewForSafeAreaInset=_preferredParentViewForSafeAreaInset;
 @property(readonly, nonatomic) __weak UIView *preferredSuperview; // @synthesize preferredSuperview=_preferredSuperview;
 @property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly) UIToolbar *customToolbar; // @synthesize customToolbar=_customToolbar;
 @property(nonatomic) __weak UIToolbar *originalToolbar; // @synthesize originalToolbar=_originalToolbar;
-- (void).cxx_destruct;
 - (void)setAccessoryView:(id)arg1 animated:(_Bool)arg2;
 @property(nonatomic) double accessoryViewHiddenProgress; // @synthesize accessoryViewHiddenProgress=_accessoryViewHiddenProgress;
 @property(nonatomic, getter=isAccessoryViewHidden) _Bool accessoryViewHidden; // @synthesize accessoryViewHidden=_accessoryViewHidden;

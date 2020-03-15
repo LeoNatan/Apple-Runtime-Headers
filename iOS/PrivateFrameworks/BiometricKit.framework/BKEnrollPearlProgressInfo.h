@@ -14,9 +14,9 @@
     NSArray *_enrolledPoses;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *enrolledPoses; // @synthesize enrolledPoses=_enrolledPoses;
 @property(readonly, nonatomic) long long percentageCompleted; // @synthesize percentageCompleted=_percentageCompleted;
-- (void).cxx_destruct;
 
 @end
 

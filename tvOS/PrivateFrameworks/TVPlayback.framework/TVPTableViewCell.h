@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     double __imageViewWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setImageViewWidth:) double _imageViewWidth; // @synthesize _imageViewWidth=__imageViewWidth;
 @property(retain, nonatomic, setter=_setImageTintColor:) UIColor *_imageTintColor; // @synthesize _imageTintColor=__imageTintColor;
 @property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(nonatomic) _Bool rendersImageAsTemplates; // @synthesize rendersImageAsTemplates=_rendersImageAsTemplates;
-- (void).cxx_destruct;
 - (double)_textLabelWidthWithXPosition:(double)arg1 currentWidth:(double)arg2;
 - (void)_updateImage;
 - (void)layoutSubviews;

@@ -31,6 +31,7 @@
     NSSet *_preventLaunchReasons;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *preventLaunchReasons; // @synthesize preventLaunchReasons=_preventLaunchReasons;
 @property(readonly, nonatomic) unsigned int legacyFinishTaskReason; // @synthesize legacyFinishTaskReason=_legacyFinishTaskReason;
 @property(copy, nonatomic) NSSet *primitiveAssertions; // @synthesize primitiveAssertions=_primitiveAssertions;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) unsigned char jetsamBand; // @synthesize jetsamBand=_jetsamBand;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 @property(readonly, nonatomic) unsigned char terminationResistance; // @synthesize terminationResistance=_terminationResistance;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

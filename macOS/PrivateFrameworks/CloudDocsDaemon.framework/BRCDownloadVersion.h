@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_docID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *docID; // @synthesize docID=_docID;
 @property(readonly, nonatomic) NSError *gsError; // @synthesize gsError=_gsError;
 @property(readonly, nonatomic) GSPermanentStorage *storage; // @synthesize storage=_storage;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (void)setSecondaryRecord:(id)arg1;
 - (id)secondaryRecord;
 - (id)secondaryRecordID;
-- (void).cxx_destruct;
 - (id)_stageWithSession:(id)arg1 creationInfo:(id *)arg2 error:(id *)arg3;
 - (id)_stageContentWithSession:(id)arg1 error:(id *)arg2;
 - (id)description;

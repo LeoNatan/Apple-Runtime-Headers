@@ -9,12 +9,11 @@
 #import <CoreCDP/NSCopying-Protocol.h>
 #import <CoreCDP/NSSecureCoding-Protocol.h>
 
-@class AKCircleRequestContext, CUMessageSession, KCAESGCMDuplexSession, NSDictionary, NSMutableArray, NSNumber, NSString;
+@class AKCircleRequestContext, CUMessageSession, KCAESGCMDuplexSession, NSDictionary, NSNumber, NSString;
 @protocol CDPAuthProviderInternal;
 
 @interface CDPContext : NSObject <NSSecureCoding, NSCopying>
 {
-    NSMutableArray *_signInMetricsStack;
     BOOL _isHSA2Account;
     BOOL _isFederatedAccount;
     BOOL _didUseSMSVerification;
@@ -43,8 +42,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)_metricsQueue;
 + (id)preflightContext:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL idmsMasterKeyRecovery; // @synthesize idmsMasterKeyRecovery=_idmsMasterKeyRecovery;
 @property(nonatomic) BOOL idmsRecovery; // @synthesize idmsRecovery=_idmsRecovery;
 @property(nonatomic) BOOL _ignoreLockAssertErrors; // @synthesize _ignoreLockAssertErrors=__ignoreLockAssertErrors;
@@ -70,12 +69,7 @@
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
-- (void).cxx_destruct;
 - (id)cliqueConfiguration;
-- (struct __CFData *)encodedTopLevelMetric;
-- (id)topLevelMetric;
-- (void)stopMetric:(id)arg1 withAttributes:(id)arg2;
-- (id)startMetricForEventName:(id)arg1;
 - (void)augmentWithCredentialsFromContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateWithAuthenticationResults:(id)arg1;

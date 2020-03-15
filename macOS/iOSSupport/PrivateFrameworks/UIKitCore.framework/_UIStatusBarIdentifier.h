@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)identifierForObject:(id)arg1 string:(id)arg2;
 + (id)displayIdentifierFromStringRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(copy, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation;

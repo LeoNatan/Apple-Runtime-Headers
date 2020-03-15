@@ -28,10 +28,10 @@ __attribute__((visibility("hidden")))
 + (id)largerZoomFactorForFactor:(id)arg1;
 + (id)smallerZoomFactorForFactor:(id)arg1;
 + (id)pageZoomFactors;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSPerSitePreference *pageZoomPreference; // @synthesize pageZoomPreference=_pageZoomPreference;
 @property(readonly, nonatomic) double defaultPageZoomFactor; // @synthesize defaultPageZoomFactor=_defaultPageZoomFactor;
 @property(nonatomic) __weak id <WBSPerSitePreferenceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_performDelayedLaunchOperationsIfNecessary;
 - (void)removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getAllDomainsConfiguredForPreference:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

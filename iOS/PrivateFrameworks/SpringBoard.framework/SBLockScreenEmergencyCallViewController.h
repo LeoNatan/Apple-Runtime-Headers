@@ -13,8 +13,8 @@
     id <SBLockScreenEmergencyCallViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBLockScreenEmergencyCallViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBLockScreenEmergencyCallViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (long long)_wallpaperStyleFromUIBackgroundStyle:(long long)arg1;
 - (_Bool)_canShowWhileLocked;
 - (id)tintColorForBackgroundStyle:(long long)arg1 outBlurRadius:(double *)arg2;

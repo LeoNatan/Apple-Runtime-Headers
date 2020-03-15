@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _lineSpacing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(copy, nonatomic) NSArray *labelViews; // @synthesize labelViews=_labelViews;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

@@ -17,10 +17,10 @@
     ICUserVerificationContext *_verificationContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICUserVerificationContext *verificationContext; // @synthesize verificationContext=_verificationContext;
 @property(copy, nonatomic) ICStoreRequestContext *storeRequestContext; // @synthesize storeRequestContext=_storeRequestContext;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
-- (void).cxx_destruct;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithVerificationContext:(id)arg1;

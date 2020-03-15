@@ -22,9 +22,9 @@
     float _textureScore;
 }
 
+- (void).cxx_destruct;
 @property(readonly) float textureScore; // @synthesize textureScore=_textureScore;
 @property(readonly) float sharpness; // @synthesize sharpness=_sharpness;
-- (void).cxx_destruct;
 - (int)analyzePixelBuffer:(struct __CVBuffer *)arg1 flags:(unsigned long long *)arg2 results:(id *)arg3 cancel:(CDUnknownBlockType)arg4;
 - (int)computeLocalSharpness:(struct __CVBuffer *)arg1;
 - (void)spatialPooling;

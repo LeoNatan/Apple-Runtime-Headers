@@ -39,10 +39,6 @@ struct ISVisibilityRange {
     double _field2;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

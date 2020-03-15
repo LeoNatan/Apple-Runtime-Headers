@@ -55,6 +55,7 @@
     struct UIEdgeInsets _compassInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(nonatomic) __weak id <MKMuninViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -64,7 +65,6 @@
 @property(nonatomic) _Bool hasEnteredMunin; // @synthesize hasEnteredMunin=_hasEnteredMunin;
 @property(nonatomic) struct UIEdgeInsets compassInsets; // @synthesize compassInsets=_compassInsets;
 @property(retain, nonatomic) VKMapView *muninView; // @synthesize muninView=_muninView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *imageResources;
 @property(readonly, nonatomic) NSArray *visibleRoadLabels;
 @property(readonly, nonatomic) NSArray *visiblePlaceMUIDs;

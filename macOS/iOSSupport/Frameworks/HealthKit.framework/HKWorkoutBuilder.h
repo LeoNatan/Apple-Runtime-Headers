@@ -46,6 +46,7 @@
 + (double)_elapsedTimeAtDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 sortedEvents:(id)arg4;
 + (long long)_collectionStateAtDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 sortedEvents:(id)arg4;
 + (id)_constructionStateMachineForBuilderConfiguration:(id)arg1 builderIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, nonatomic) HKTaskServerProxyProvider *proxyProvider; // @synthesize proxyProvider=_proxyProvider;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSMutableDictionary *statisticsByType; // @synthesize statisticsByType=_statisticsByType;
 @property(retain, nonatomic) NSMutableDictionary *seriesBuilders; // @synthesize seriesBuilders=_seriesBuilders;
 @property(readonly, copy) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
-- (void).cxx_destruct;
 - (void)unitTest_setFailureHandler:(CDUnknownBlockType)arg1;
 - (void)unitTest_setRecoveryFinishedHandler:(CDUnknownBlockType)arg1;
 - (void)unitTest_setServerStateChangeHandler:(CDUnknownBlockType)arg1;

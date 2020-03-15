@@ -18,10 +18,10 @@
 + (id)_accessibilityIdentifierForTag:(long long)arg1;
 + (id)_accessibilityLabelFromTag:(long long)arg1;
 + (id)_imageFromTag:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain) NSStackView *lineStyleView; // @synthesize lineStyleView=_lineStyleView;
 @property(retain) NSStepperTouchBarItem *lineWidthStepperItem; // @synthesize lineWidthStepperItem=_lineWidthStepperItem;
 @property(retain) NSTouchBarItem *lineStyleItem; // @synthesize lineStyleItem=_lineStyleItem;
-- (void).cxx_destruct;
 - (id)_createButtonWithTag:(long long)arg1;
 - (void)_initializeLineStyleView;
 - (void)_lineWidthDidChange;

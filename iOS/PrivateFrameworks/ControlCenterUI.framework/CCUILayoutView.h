@@ -16,9 +16,9 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CCUILayoutViewLayoutSource> layoutSource; // @synthesize layoutSource=_layoutSource;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

@@ -6,13 +6,14 @@
 
 #import <MediaPlayer/MPModelObject.h>
 
-@class MPModelStoreBrowseResponse, NSString, NSURL;
+@class MPModelRadioStation, MPModelStoreBrowseResponse, NSString, NSURL;
 
 @interface MPModelStoreBrowseSection : MPModelObject
 {
     BOOL _containsOnlyEditorialElements;
 }
 
++ (id)__radioStation_KEY;
 + (id)__displaysAsGridCellInCarPlay_KEY;
 + (id)__previouslyRetrievedNestedResponse_KEY;
 + (id)__brick_KEY;
@@ -29,6 +30,7 @@
 @property(copy, nonatomic) NSURL *loadAdditionalContentURL; // @dynamic loadAdditionalContentURL;
 @property(nonatomic, getter=isMemberOfChartSet) BOOL memberOfChartSet; // @dynamic memberOfChartSet;
 @property(retain, nonatomic) MPModelStoreBrowseResponse *previouslyRetrievedNestedResponse; // @dynamic previouslyRetrievedNestedResponse;
+@property(retain, nonatomic) MPModelRadioStation *radioStation; // @dynamic radioStation;
 @property(nonatomic) long long sectionType; // @dynamic sectionType;
 @property(copy, nonatomic) NSString *title; // @dynamic title;
 @property(nonatomic) long long uniformContentItemType; // @dynamic uniformContentItemType;

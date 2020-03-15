@@ -17,10 +17,10 @@
     unsigned int _sampleByteDepth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sampleByteDepth; // @synthesize sampleByteDepth=_sampleByteDepth;
 @property(retain, nonatomic) NSMutableData *writeBuffer; // @synthesize writeBuffer=_writeBuffer;
 @property(retain, nonatomic) NSURL *fileUrl; // @synthesize fileUrl=_fileUrl;
-- (void).cxx_destruct;
 - (_Bool)endAudio;
 - (_Bool)addSamples:(const void *)arg1 numSamples:(unsigned int)arg2;
 - (id)initWithFileUrl:(id)arg1 sampleByteDepth:(unsigned int)arg2;

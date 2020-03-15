@@ -43,6 +43,7 @@
 
 + (id)scheduleDateInterval:(id)arg1;
 + (void)afterFirstUnlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL initialStateChangeSent; // @synthesize initialStateChangeSent=_initialStateChangeSent;
 @property(nonatomic) long long cachedLocalBeaconManagerState; // @synthesize cachedLocalBeaconManagerState=_cachedLocalBeaconManagerState;
 @property(nonatomic) unsigned char currentStatus; // @synthesize currentStatus=_currentStatus;
@@ -68,7 +69,6 @@
 @property(copy, nonatomic) CDUnknownBlockType statusChangedBlock; // @synthesize statusChangedBlock=_statusChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedBlockWithCompletion; // @synthesize stateChangedBlockWithCompletion=_stateChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedBlock; // @synthesize stateChangedBlock=_stateChangedBlock;
-- (void).cxx_destruct;
 - (void)bleMonitor:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)stateDidChange:(BOOL)arg1 powerState:(unsigned long long)arg2;
 - (BOOL)isBeaconing;

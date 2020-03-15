@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     TVObservableEventController *_observableEventController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVObservableEventController *observableEventController; // @synthesize observableEventController=_observableEventController;
 @property(retain, nonatomic) TVMediaInfo *selectedMediaInfo; // @synthesize selectedMediaInfo=_selectedMediaInfo;
 @property(retain, nonatomic) _TVShelfViewController *shelfViewController; // @synthesize shelfViewController=_shelfViewController;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(readonly, nonatomic) unsigned long long host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)removeObserver:(id)arg1 forEvent:(id)arg2;
 - (void)addObserver:(id)arg1 forEvent:(id)arg2;

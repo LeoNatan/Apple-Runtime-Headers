@@ -28,11 +28,11 @@
     _UIContextMenuPreviewActionGroup *_actionGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIContextMenuPreviewActionGroup *actionGroup; // @synthesize actionGroup=_actionGroup;
 @property(retain, nonatomic) UIContextMenuInteraction *actualInteraction; // @synthesize actualInteraction=_actualInteraction;
 @property(readonly, nonatomic) __weak id <_UIContextMenuInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)_previewViewController;
 - (id)_actionsWithSuggestedActions:(id)arg1;
 - (void)contextMenuInteractionDidEnd:(id)arg1;

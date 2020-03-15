@@ -14,9 +14,9 @@
     NSSet *_alertSuppressionContexts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *alertSuppressionContexts; // @synthesize alertSuppressionContexts=_alertSuppressionContexts;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 alertSuppressionContexts:(id)arg2;
 - (id)initWithIdentifier:(id)arg1;

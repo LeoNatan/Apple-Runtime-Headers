@@ -28,6 +28,7 @@
     id <FCTagsFetchOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FCTagsFetchOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(retain, nonatomic) FCTagRecordSource *tagRecordSource; // @synthesize tagRecordSource=_tagRecordSource;
@@ -43,7 +44,6 @@
 @property BOOL overrideTargetsCachePolicy; // @synthesize overrideTargetsCachePolicy=_overrideTargetsCachePolicy;
 @property(nonatomic) BOOL includeParents; // @synthesize includeParents=_includeParents;
 @property(nonatomic) BOOL includeChildren; // @synthesize includeChildren=_includeChildren;
-- (void).cxx_destruct;
 - (id)completeFetchOperation;
 - (id)fetchChildTagRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchParentTagRecordsWithCompletion:(CDUnknownBlockType)arg1;

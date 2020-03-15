@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
     NSString *_queryString;
 }
 
-@property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void)_updateObserverForQuery;
 - (void)arrayController:(id)arg1 modelChanged:(id)arg2 differences:(id)arg3;
-- (struct _UIArrayController *)_createObserver;
+- (id)_createObserver;
 - (id)scopes;
 - (void)startMonitoringChanges;
 - (id)displayTitle;

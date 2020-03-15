@@ -15,10 +15,10 @@
     NSMutableSet *_dayGroupHighlights;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *dayGroupHighlights; // @synthesize dayGroupHighlights=_dayGroupHighlights;
 @property(readonly, nonatomic) NSMutableSet *dayHighlights; // @synthesize dayHighlights=_dayHighlights;
 @property(readonly, nonatomic) NSMutableSet *moments; // @synthesize moments=_moments;
-- (void).cxx_destruct;
 - (void)addDayGroupHighlight:(id)arg1;
 - (void)_addDayHighlight:(id)arg1;
 - (void)addDayHighlight:(id)arg1;

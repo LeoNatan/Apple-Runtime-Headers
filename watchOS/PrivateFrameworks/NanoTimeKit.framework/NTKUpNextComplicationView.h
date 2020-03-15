@@ -29,6 +29,7 @@
     PUICCrownInputSequencer *_crownSequencer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUICCrownInputSequencer *crownSequencer; // @synthesize crownSequencer=_crownSequencer;
 @property(nonatomic) unsigned int numberOfViewsInCylinderView; // @synthesize numberOfViewsInCylinderView=_numberOfViewsInCylinderView;
 @property(retain, nonatomic) UIView<NTKEditOptionContainerView> *pickingView; // @synthesize pickingView=_pickingView;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NTKUpNextComplicationConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <NTKComplicationTemplateDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;

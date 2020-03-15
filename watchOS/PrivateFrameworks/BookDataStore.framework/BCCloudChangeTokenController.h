@@ -18,11 +18,11 @@
     BCCloudKitController *_cloudKitController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak BCCloudKitController *cloudKitController; // @synthesize cloudKitController=_cloudKitController;
 @property(copy, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(nonatomic) __weak NSManagedObjectContext *moc; // @synthesize moc=_moc;
 @property(nonatomic) _Bool enableCloudSync; // @synthesize enableCloudSync=_enableCloudSync;
-- (void).cxx_destruct;
 - (void)serverChangeTokenWithCompletion:(CDUnknownBlockType)arg1;
 - (void)storeServerChangeToken:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteCloudDataWithCompletion:(CDUnknownBlockType)arg1;

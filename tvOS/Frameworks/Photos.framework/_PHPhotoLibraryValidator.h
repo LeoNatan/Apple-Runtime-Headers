@@ -13,8 +13,8 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(readonly, nonatomic) __weak PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (_Bool)isValidVideoPathExtension:(id)arg1;
 - (_Bool)isValidImagePathExtension:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;

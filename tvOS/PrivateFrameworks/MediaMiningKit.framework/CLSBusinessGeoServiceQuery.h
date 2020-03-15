@@ -20,11 +20,11 @@
     NSArray *_resolvedBusinessItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) NSArray *resolvedBusinessItems; // @synthesize resolvedBusinessItems=_resolvedBusinessItems;
 @property(readonly, nonatomic) id <GEOMapServiceTicket> ticket; // @synthesize ticket=_ticket;
 @property(readonly, copy, nonatomic) NSArray *muids; // @synthesize muids=_muids;
-- (void).cxx_destruct;
 - (void)prepareForRetry;
 - (void)cancel;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1;

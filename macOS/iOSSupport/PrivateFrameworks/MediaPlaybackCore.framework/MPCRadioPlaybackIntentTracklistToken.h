@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MPCRadioPlaybackIntentTracklistTokenRadioStationMetadata> radioStationPlaybackMetadata; // @synthesize radioStationPlaybackMetadata=_radioStationPlaybackMetadata;
 @property(copy, nonatomic) NSURL *radioStationURL; // @synthesize radioStationURL=_radioStationURL;
 @property(retain, nonatomic) MPModelRadioStation *radioStation; // @synthesize radioStation=_radioStation;
 @property(copy, nonatomic) MPCModelRadioContentReference *seedContentReference; // @synthesize seedContentReference=_seedContentReference;
 @property(copy, nonatomic) MPCModelRadioContentReference *nowPlayingContentReference; // @synthesize nowPlayingContentReference=_nowPlayingContentReference;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

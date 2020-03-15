@@ -28,6 +28,7 @@
     NSLayoutConstraint *_releaseNotesSummaryHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *releaseNotesSummaryHeightConstraint; // @synthesize releaseNotesSummaryHeightConstraint=_releaseNotesSummaryHeightConstraint;
 @property(retain, nonatomic) HUInlineWebContainerView *releaseNotesSummaryView; // @synthesize releaseNotesSummaryView=_releaseNotesSummaryView;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) HUSoftwareUpdateAnimatedIcon *animatedGearView; // @synthesize animatedGearView=_animatedGearView;
 @property(nonatomic) __weak id <HUSoftwareUpdateInternalResizingDelegate> internalViewResizingDelegate; // @synthesize internalViewResizingDelegate=_internalViewResizingDelegate;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)inlineWebContainerViewDidFinishLoadingContent:(id)arg1;
 - (void)layoutSubviews;
 - (void)_updateReleaseNotesHeightIfNeeded;

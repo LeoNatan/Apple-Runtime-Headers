@@ -26,6 +26,7 @@
     UIVisualEffectView *_buttonBackgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *buttonBackgroundView; // @synthesize buttonBackgroundView=_buttonBackgroundView;
 @property(retain, nonatomic) UIButton *setButton; // @synthesize setButton=_setButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) HFWallpaper *wallpaper; // @synthesize wallpaper=_wallpaper;
 @property(nonatomic) _Bool statusBarHidden; // @synthesize statusBarHidden=_statusBarHidden;
 @property(nonatomic) __weak id <HUWallpaperEditingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)transparentButtonWithTitle:(id)arg1;
 - (id)_createButtonConstraints;
 - (id)_createButtonViews;

@@ -20,6 +20,7 @@
     struct chunklist_chunk *_chunks;
 }
 
+- (void).cxx_destruct;
 @property struct chunklist_chunk *chunks; // @synthesize chunks=_chunks;
 @property struct chunklist_hdr *header; // @synthesize header=_header;
 @property BOOL allowNoSignature; // @synthesize allowNoSignature=_allowNoSignature;
@@ -28,7 +29,6 @@
 @property unsigned long long chunkCount; // @synthesize chunkCount=_chunkCount;
 @property(retain) NSData *chunklistData; // @synthesize chunklistData=_chunklistData;
 @property int signatureType; // @synthesize signatureType=_signatureType;
-- (void).cxx_destruct;
 - (unsigned long long)_expectedFileSizeFromChunkNumber:(unsigned long long)arg1;
 - (id)_SHA256ForData:(id)arg1;
 - (long long)_verifyIntegrityOnlySHA;

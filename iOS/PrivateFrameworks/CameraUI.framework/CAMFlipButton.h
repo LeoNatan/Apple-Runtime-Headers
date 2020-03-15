@@ -22,13 +22,13 @@
 
 + (id)flipButtonOverContent;
 + (id)flipButtonWithLayoutStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _useCTMAppearance; // @synthesize _useCTMAppearance=__useCTMAppearance;
 @property(retain, nonatomic) UIImageView *_circleBackgroundView; // @synthesize _circleBackgroundView=__circleBackgroundView;
 @property(readonly, nonatomic) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) struct UIEdgeInsets tappableEdgeInsets; // @synthesize tappableEdgeInsets=_tappableEdgeInsets;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (id)imageForAccessibilityHUD;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;

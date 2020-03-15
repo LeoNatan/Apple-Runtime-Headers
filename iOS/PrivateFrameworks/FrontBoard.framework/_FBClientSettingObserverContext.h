@@ -14,9 +14,9 @@
     FBSSceneTransitionContext *_transitionContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBSSceneTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (id)initWithScene:(id)arg1 transitionContext:(id)arg2;
 
 @end

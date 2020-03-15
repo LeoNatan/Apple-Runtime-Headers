@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     struct Boolean _readerAvailableWK;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReaderAvailableWK) struct Boolean readerAvailableWK; // @synthesize readerAvailableWK=_readerAvailableWK;
 @property(nonatomic) struct Data webArchiveDataWK; // @synthesize webArchiveDataWK=_webArchiveDataWK;
 @property(nonatomic) struct Image mainImageWK; // @synthesize mainImageWK=_mainImageWK;
@@ -29,8 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct String previewTextWK; // @synthesize previewTextWK=_previewTextWK;
 @property(nonatomic) struct String titleWK; // @synthesize titleWK=_titleWK;
 @property(nonatomic) struct URL urlWK; // @synthesize urlWK=_urlWK;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isReaderAvailable) BOOL readerAvailable;
 @property(readonly, nonatomic) NSData *webArchiveData;
 @property(readonly, nonatomic) NSImage *mainImage;

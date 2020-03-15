@@ -11,7 +11,7 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 #import <EmailDaemon/EMCollectionItemIDStateCapturerDelegate-Protocol.h>
 
-@class EDMessageQueryHelper, EDThreadReloadSummaryHelper, EDUpdateThrottler, EDVIPManager, EMCollectionItemIDStateCapturer, EMMailboxScope, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSString;
+@class EDMessageQueryHelper, EDThreadReloadSummaryHelper, EDUpdateThrottler, EDVIPManager, EFProcessTransaction, EMCollectionItemIDStateCapturer, EMMailboxScope, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSString;
 @protocol EDRemoteSearchProvider, EFScheduler, EMMessageListItemQueryResultsObserver, OS_dispatch_queue;
 
 @interface EDInMemoryThreadQueryHandler : EDMessageRepositoryQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver, EMCollectionItemIDStateCapturerDelegate>
@@ -20,6 +20,7 @@
     NSMutableDictionary *_threadsByConversationID;
     NSMutableDictionary *_changesWhilePaused;
     NSMutableDictionary *_oldestThreadsByMailboxObjectIDs;
+    EFProcessTransaction *_processTransaction;
     struct os_unfair_lock_s _threadsLock;
     BOOL _didCancel;
     BOOL _isInitialized;
@@ -40,6 +41,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EMCollectionItemIDStateCapturer *stateCapturer; // @synthesize stateCapturer=_stateCapturer;
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 @property(nonatomic) BOOL hasChangesWhilePaused; // @synthesize hasChangesWhilePaused=_hasChangesWhilePaused;
@@ -56,7 +58,6 @@
 @property(retain, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
 @property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 @property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
-- (void).cxx_destruct;
 - (id)itemIDsForStateCaptureWithErrorString:(id *)arg1;
 - (id)labelForStateCapture;
 - (BOOL)_messageListItemChangeAffectsSorting:(id)arg1;
@@ -105,7 +106,7 @@
 - (void)start;
 - (void)tearDown;
 - (void)test_tearDown;
-- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5 observer:(id)arg6 observationIdentifier:(id)arg7;
+- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5 observer:(id)arg6 observationIdentifier:(id)arg7 observationResumer:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

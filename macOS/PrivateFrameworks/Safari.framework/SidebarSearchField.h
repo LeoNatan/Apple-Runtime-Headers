@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id accessibilityOverrideParent; // @synthesize accessibilityOverrideParent=_accessibilityOverrideParent;
 @property(nonatomic) __weak id <SidebarSearchFieldDelegate> sidebarSearchFieldDelegate; // @synthesize sidebarSearchFieldDelegate=_sidebarSearchFieldDelegate;
-- (void).cxx_destruct;
 - (void)_sidebarSearchFieldInit;
 - (id)accessibilityParent;
 - (BOOL)becomeFirstResponder;

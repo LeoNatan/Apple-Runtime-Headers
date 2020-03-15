@@ -18,11 +18,11 @@
     NSURL *_sourceURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 @property(copy, nonatomic) NSDictionary *purchaseBundle; // @synthesize purchaseBundle=_purchaseBundle;
 @property(nonatomic) unsigned long long downloadToken; // @synthesize downloadToken=_downloadToken;
 @property(copy, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 

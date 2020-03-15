@@ -19,11 +19,11 @@
 }
 
 + (id)transitionContextProviderWithToApplicationSceneEntity:(id)arg1 fromApplicationSceneEntity:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBApplicationSceneEntity *fromApplicationSceneEntity; // @synthesize fromApplicationSceneEntity=_fromApplicationSceneEntity;
 @property(readonly, nonatomic) SBApplicationSceneEntity *toApplicationSceneEntity; // @synthesize toApplicationSceneEntity=_toApplicationSceneEntity;
 @property(retain, nonatomic) SBApplicationSceneEntity *deactivatingAppSceneEntity; // @synthesize deactivatingAppSceneEntity=_fromAppSceneEntity;
 @property(retain, nonatomic) SBApplicationSceneEntity *activatingAppSceneEntity; // @synthesize activatingAppSceneEntity=_toAppSceneEntity;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *fromApplicationSceneEntities;
 @property(readonly, copy, nonatomic) NSSet *toApplicationSceneEntities;
 - (id)initWithToApplicationSceneEntity:(id)arg1 fromApplicationSceneEntity:(id)arg2;

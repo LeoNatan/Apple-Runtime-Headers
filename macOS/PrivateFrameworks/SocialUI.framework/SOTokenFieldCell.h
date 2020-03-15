@@ -17,9 +17,9 @@
     SOTokenFieldController *_tokenFieldController;
 }
 
+- (void).cxx_destruct;
 @property __weak SOTokenFieldController *tokenFieldController; // @synthesize tokenFieldController=_tokenFieldController;
 @property(nonatomic) __weak id <SOTokenFieldCellDragDelegate> dragDelegate; // @synthesize dragDelegate=_dragDelegate;
-- (void).cxx_destruct;
 - (id)accessibilityChildren;
 - (id)setUpFieldEditorAttributes:(id)arg1;
 - (BOOL)tokenAttachment:(id)arg1 doubleClickedInRect:(struct CGRect)arg2 ofView:(id)arg3 atCharacterIndex:(unsigned long long)arg4;

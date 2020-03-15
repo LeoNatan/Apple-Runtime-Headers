@@ -15,9 +15,9 @@
 }
 
 + (id)queryWithSQLPredicate:(id)arg1 ascending:(_Bool)arg2 indexedProperties:(id)arg3 arguments:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *indexedColumns; // @synthesize indexedColumns=_indexedColumns;
 @property(readonly, nonatomic) NSString *indexNameSuffix; // @synthesize indexNameSuffix=_indexNameSuffix;
-- (void).cxx_destruct;
 - (_Bool)hasExpectedIndexes;
 @property(readonly, nonatomic) NSString *indexName;
 - (id)initWithSQLPredicate:(id)arg1 sqlColumns:(id)arg2 initialSequence:(id)arg3 maximumRowsPerSelect:(unsigned int)arg4 indexNameSuffix:(id)arg5 indexedColumns:(id)arg6 arguments:(id)arg7;

@@ -15,9 +15,9 @@
 }
 
 + (id)sharedSystemInfo;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
 @property(readonly, copy, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *bootDate;
 @property(readonly, nonatomic) unsigned long long platform;
 - (void)populateVersions;

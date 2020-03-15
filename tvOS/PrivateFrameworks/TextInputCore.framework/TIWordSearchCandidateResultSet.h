@@ -8,7 +8,7 @@
 
 #import <TextInputCore/NSCopying-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, TIKeyboardCandidate;
 
 @interface TIWordSearchCandidateResultSet : NSObject <NSCopying>
 {
@@ -17,6 +17,7 @@
     NSMutableDictionary *_mutableCandidateRefsDictionary;
     NSArray *_disambiguationCandidates;
     unsigned long long _selectedDisambiguationCandidateIndex;
+    TIKeyboardCandidate *_candidateAfterSegmentBreak;
     NSArray *_proactiveCandidates;
     NSArray *_autoconvertedCandidates;
     NSString *_autoconvertedCandidateString;
@@ -25,17 +26,18 @@
 }
 
 + (id)emptySet;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *mutableProactiveTriggers; // @synthesize mutableProactiveTriggers=_mutableProactiveTriggers;
 @property(retain, nonatomic) NSString *autoconvertedInputString; // @synthesize autoconvertedInputString=_autoconvertedInputString;
 @property(retain, nonatomic) NSString *autoconvertedCandidateString; // @synthesize autoconvertedCandidateString=_autoconvertedCandidateString;
 @property(copy, nonatomic) NSArray *autoconvertedCandidates; // @synthesize autoconvertedCandidates=_autoconvertedCandidates;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(retain, nonatomic) NSArray *proactiveCandidates; // @synthesize proactiveCandidates=_proactiveCandidates;
+@property(copy, nonatomic) TIKeyboardCandidate *candidateAfterSegmentBreak; // @synthesize candidateAfterSegmentBreak=_candidateAfterSegmentBreak;
 @property(nonatomic) unsigned long long selectedDisambiguationCandidateIndex; // @synthesize selectedDisambiguationCandidateIndex=_selectedDisambiguationCandidateIndex;
 @property(copy, nonatomic) NSArray *disambiguationCandidates; // @synthesize disambiguationCandidates=_disambiguationCandidates;
 @property(retain, nonatomic) NSMutableDictionary *mutableCandidateRefsDictionary; // @synthesize mutableCandidateRefsDictionary=_mutableCandidateRefsDictionary;
 @property(retain, nonatomic) NSMutableArray *mutableCandidates; // @synthesize mutableCandidates=_mutableCandidates;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)clearProactiveTriggers;
 - (void)moveCandidate:(id)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;

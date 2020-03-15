@@ -27,9 +27,9 @@
 + (id)_demoModeActionResponse;
 + (id)searchResultForAction:(id)arg1 actionResponse:(id)arg2;
 + (id)predictedActionSearchResultsWithLimit:(long long)arg1 forBundleIdentifiers:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ATXAction *atxAction; // @synthesize atxAction=_atxAction;
 @property(retain, nonatomic) ATXActionResponse *actionResponse; // @synthesize actionResponse=_actionResponse;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqualToActionSearchResult:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)messagesForPlistRepresentation:(id)arg1;
 + (id)plistRepresentationForMessages:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPLServerFeedbackMessage *serverMessage; // @synthesize serverMessage=_serverMessage;
 @property(readonly, nonatomic) NSString *feedbackType; // @synthesize feedbackType=_feedbackType;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

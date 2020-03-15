@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)keyPathsForValuesAffectingLocalPlaybackURL;
 + (id)fetchRequest;
++ (id)keyPathsForValuesAffectingLocalPlaybackURL;
 - (id)mediaMetrics;
 - (id)additionalFPSRequestParams;
 @property(copy, nonatomic) NSURL *localPlaybackURL; // @dynamic localPlaybackURL;

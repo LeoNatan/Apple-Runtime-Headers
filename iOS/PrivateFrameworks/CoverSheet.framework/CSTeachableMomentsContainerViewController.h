@@ -7,11 +7,12 @@
 #import <CoverSheet/CSCoverSheetViewControllerBase.h>
 
 #import <CoverSheet/CAAnimationDelegate-Protocol.h>
+#import <CoverSheet/UIGestureRecognizerDelegate-Protocol.h>
 
 @class CSHomeAffordanceViewController, CSTeachableMomentsContainerView, NSMutableDictionary, NSString, NSTimer;
 @protocol SBDashBoardHomeAffordanceAnimationViewProviding, SBUIBiometricResource;
 
-@interface CSTeachableMomentsContainerViewController : CSCoverSheetViewControllerBase <CAAnimationDelegate>
+@interface CSTeachableMomentsContainerViewController : CSCoverSheetViewControllerBase <CAAnimationDelegate, UIGestureRecognizerDelegate>
 {
     _Bool _authenticated;
     _Bool _updateTextLabelOnNextAnimation;
@@ -26,6 +27,7 @@
 
 + (id)_animationKeyForKeyPath:(id)arg1 iteration:(unsigned long long)arg2 reset:(_Bool)arg3;
 + (void)_addRepeatedAnimationWithProvider:(CDUnknownBlockType)arg1 toLayer:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool controlCenterCoachingIsHidden; // @synthesize controlCenterCoachingIsHidden=_controlCenterCoachingIsHidden;
 @property(retain, nonatomic) NSMutableDictionary *cachedLegibilityLabels; // @synthesize cachedLegibilityLabels=_cachedLegibilityLabels;
 @property(nonatomic) _Bool updateTextLabelOnNextAnimation; // @synthesize updateTextLabelOnNextAnimation=_updateTextLabelOnNextAnimation;
@@ -35,7 +37,7 @@
 @property(nonatomic) __weak id <SBDashBoardHomeAffordanceAnimationViewProviding> viewProvider; // @synthesize viewProvider=_viewProvider;
 @property(nonatomic) unsigned long long animationState; // @synthesize animationState=_animationState;
 @property(readonly, nonatomic) CSHomeAffordanceViewController *homeAffordanceViewController; // @synthesize homeAffordanceViewController=_homeAffordanceViewController;
-- (void).cxx_destruct;
+- (void)aggregateAppearance:(id)arg1;
 - (void)_contentSizeCategoryChanged;
 - (void)_updateText:(id)arg1;
 - (void)_updateTextLabel;

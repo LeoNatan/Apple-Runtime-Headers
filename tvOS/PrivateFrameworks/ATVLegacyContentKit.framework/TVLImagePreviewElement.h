@@ -14,9 +14,9 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) TVLImageElement *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

@@ -20,12 +20,12 @@
     struct CGRect _touchableBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect touchableBounds; // @synthesize touchableBounds=_touchableBounds;
 @property(nonatomic) unsigned long long maximumNumberOfTouches; // @synthesize maximumNumberOfTouches=_maximumNumberOfTouches;
 @property(nonatomic) unsigned long long minimumNumberOfTouches; // @synthesize minimumNumberOfTouches=_minimumNumberOfTouches;
 @property(nonatomic) double requiredPressDelay; // @synthesize requiredPressDelay=_requiredPressDelay;
 @property(readonly, nonatomic) NSSet *touches; // @synthesize touches=_touches;
-- (void).cxx_destruct;
 - (id)touchAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *orderedTouches;
 - (struct CGPoint)locationInView:(id)arg1;

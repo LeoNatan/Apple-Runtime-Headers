@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

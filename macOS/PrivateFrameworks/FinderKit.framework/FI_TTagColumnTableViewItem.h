@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingImage;
-@property(nonatomic) _Bool drawSelected; // @synthesize drawSelected=_drawSelected;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool drawSelected; // @synthesize drawSelected=_drawSelected;
 @property(readonly, retain, nonatomic) NSImage *image; // @dynamic image;
 @property(readonly, retain, nonatomic) NSString *name; // @dynamic name;
 - (BOOL)isEqual:(id)arg1;

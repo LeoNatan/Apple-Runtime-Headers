@@ -18,8 +18,8 @@
 + (id)informantDependenciesIdentifiers;
 + (id)identifier;
 + (id)classIdentifier;
-@property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void)processResultsSynchronouslyForInvestigation:(id)arg1 withProgressBlock:(CDUnknownBlockType)arg2;
 - (id)uniqueIdentifier;
 - (id)description;

@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     FPSearchQueryDescriptor *_queryDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPSearchQueryDescriptor *queryDescriptor; // @synthesize queryDescriptor=_queryDescriptor;
 @property(nonatomic) __weak id <FPSpotlightDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dataSource:(id)arg1 didChangeItemsOrigin:(unsigned long long)arg2;
 - (BOOL)dataSourceShouldAlwaysReplaceContents:(id)arg1;
 - (void)dataSource:(id)arg1 wasInvalidatedWithError:(id)arg2;

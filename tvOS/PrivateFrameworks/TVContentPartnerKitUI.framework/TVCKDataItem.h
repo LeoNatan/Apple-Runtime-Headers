@@ -19,12 +19,12 @@
     NSMutableDictionary *_playbackMetadataDict;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *playbackMetadataDict; // @synthesize playbackMetadataDict=_playbackMetadataDict;
 @property __weak TVCKDataClient *dataClient; // @synthesize dataClient=_dataClient;
 @property(retain, nonatomic) NSMutableDictionary *transactionDict; // @synthesize transactionDict=_transactionDict;
 @property(retain) NSMutableDictionary *mutatedDict; // @synthesize mutatedDict=_mutatedDict;
 @property(retain) NSMutableDictionary *metadataDict; // @synthesize metadataDict=_metadataDict;
-- (void).cxx_destruct;
 - (id)concreteValueForProperty:(id)arg1;
 - (void)commitUpdateTransactionWithOptions:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

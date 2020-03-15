@@ -31,6 +31,7 @@
 
 + (unsigned long long)variableResultTypeForParameter:(id)arg1;
 + (BOOL)supportsEditingTextAttachment:(id)arg1 inSlotWithIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL returnToKeyboardOnComplete; // @synthesize returnToKeyboardOnComplete=_returnToKeyboardOnComplete;
 @property(nonatomic) BOOL variableResponderSuspended; // @synthesize variableResponderSuspended=_variableResponderSuspended;
 @property(retain, nonatomic) WFVariableConfigurationResponder *variableResponder; // @synthesize variableResponder=_variableResponder;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) WFMultipleValueParameterState *initialArrayState; // @synthesize initialArrayState=_initialArrayState;
 @property(readonly, nonatomic) id <WFParameterState> initialState; // @synthesize initialState=_initialState;
 @property(readonly, nonatomic) WFParameter<WFModuleSummarySupporting> *parameter; // @synthesize parameter=_parameter;
-- (void).cxx_destruct;
 - (void)variableResponder:(id)arg1 presentPromptWithTitle:(id)arg2 message:(id)arg3 fieldConfigurationHandler:(CDUnknownBlockType)arg4 commitHandler:(CDUnknownBlockType)arg5;
 - (void)variableResponderDidRevealAction:(id)arg1;
 - (BOOL)variableResponderHasText:(id)arg1;

@@ -21,10 +21,10 @@
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedShortName; // @synthesize localizedShortName=_localizedShortName;
 @property(readonly, nonatomic) CXAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)archivedDataWithError:(id *)arg1;
 - (_Bool)isEqualToSenderIdentity:(id)arg1;
 - (unsigned int)hash;

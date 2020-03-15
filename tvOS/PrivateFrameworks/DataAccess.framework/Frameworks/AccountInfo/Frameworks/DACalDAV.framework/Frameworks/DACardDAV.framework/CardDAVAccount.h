@@ -22,11 +22,11 @@
 }
 
 + (id)addressBookConstraintsPlistPath;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DACoreDAVLogger *curLogger; // @synthesize curLogger=_curLogger;
 @property(retain, nonatomic) CoreDAVDiscoveryTaskGroup *checkValidityTaskGroup; // @synthesize checkValidityTaskGroup=_checkValidityTaskGroup;
 @property(readonly, nonatomic) CardDAVLocalDBHelper *databaseHelper; // @synthesize databaseHelper=_databaseHelper;
 @property(readonly, nonatomic) int cardDAVAccountVersion; // @synthesize cardDAVAccountVersion=_cardDAVAccountVersion;
-- (void).cxx_destruct;
 - (_Bool)enabledForDADataclass:(long long)arg1;
 - (void)coreDAVTransmittedDataFinished;
 - (void)coreDAVLogTransmittedDataPartial:(id)arg1;

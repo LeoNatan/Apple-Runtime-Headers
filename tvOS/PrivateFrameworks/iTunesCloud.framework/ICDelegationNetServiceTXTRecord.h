@@ -18,11 +18,11 @@
     long long _serviceVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long serviceVersion; // @synthesize serviceVersion=_serviceVersion;
 @property(nonatomic) long long securityMode; // @synthesize securityMode=_securityMode;
 @property(copy, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(copy, nonatomic) NSArray *delegationAccountUUIDs; // @synthesize delegationAccountUUIDs=_delegationAccountUUIDs;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *TXTRecordData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

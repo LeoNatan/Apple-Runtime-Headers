@@ -17,10 +17,10 @@
     PUICQuickboardKeypadView *_keypadView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICQuickboardKeypadView *keypadView; // @synthesize keypadView=_keypadView;
 @property(retain, nonatomic) PUICStatusBarGlobalContextViewAssertion *globalContextViewAssertion; // @synthesize globalContextViewAssertion=_globalContextViewAssertion;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)keypadView:(id)arg1 didSelectOK:(id)arg2;
 - (void)selectedDoneOrOK:(id)arg1;
 - (void)selectedDone:(id)arg1;

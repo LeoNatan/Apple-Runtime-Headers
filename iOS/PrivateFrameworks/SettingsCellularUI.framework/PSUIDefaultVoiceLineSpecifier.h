@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_cachedSubscriptionContexts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedSubscriptionContexts; // @synthesize cachedSubscriptionContexts=_cachedSubscriptionContexts;
 @property(retain, nonatomic) PSSimStatusCache *simStatusCache; // @synthesize simStatusCache=_simStatusCache;
 @property(retain, nonatomic) CTCellularPlanManager *planManager; // @synthesize planManager=_planManager;
 @property(retain, nonatomic) PSUICellularPlanManagerCache *planManagerCache; // @synthesize planManagerCache=_planManagerCache;
 @property(retain, nonatomic) NSArray *cachedPlanItems; // @synthesize cachedPlanItems=_cachedPlanItems;
-- (void).cxx_destruct;
 - (id)subscriptionContextForListItem:(id)arg1;
 - (id)planItemForListItem:(id)arg1;
 - (void)setDefaultVoiceLine:(id)arg1 specifier:(id)arg2;

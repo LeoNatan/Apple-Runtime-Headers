@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
 @interface BrowserHistoryImporter : BrowserDataImporter <BrowserHistoryImporterDelegate>
 {
     NSMutableDictionary *_existingVisits;
+    CDUnknownBlockType _completionHandler;
 }
 
-+ (long long)historyVisitOriginForSourceBrowserBundleIdentifier:(id)arg1 forTestDrive:(BOOL)arg2;
++ (long long)historyVisitOriginForSourceBrowserBundle:(id)arg1;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (id)_insertImportedVisitWithURLString:(id)arg1 title:(id)arg2 onDate:(id)arg3;
 - (void)importerDidFailToImportHistory;
 - (void)importerDidFinishImportingHistory;

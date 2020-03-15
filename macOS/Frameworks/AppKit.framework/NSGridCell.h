@@ -23,9 +23,9 @@
 }
 
 + (id)emptyContentView;
+- (void).cxx_destruct;
 @property(readonly) __weak NSGridColumn *column; // @synthesize column=_column;
 @property(readonly) __weak NSGridRow *row; // @synthesize row=_row;
-- (void).cxx_destruct;
 - (BOOL)_isUnmergedOrHeadOfMergedRegion;
 - (void)set_headOfMergedCell:(id)arg1;
 - (id)_headOfMergedCell;

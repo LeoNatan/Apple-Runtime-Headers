@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_verticalMarginRelatedConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *verticalMarginRelatedConstraints; // @synthesize verticalMarginRelatedConstraints=_verticalMarginRelatedConstraints;
 @property(nonatomic) __weak UIStackView *titleStackView; // @synthesize titleStackView=_titleStackView;
 @property(nonatomic) __weak UIStackView *trendingSearchesStackView; // @synthesize trendingSearchesStackView=_trendingSearchesStackView;
 @property(copy, nonatomic) NSArray *trendingSearchViews; // @synthesize trendingSearchViews=_trendingSearchViews;
 @property(copy, nonatomic) UIView *trendingTitleView; // @synthesize trendingTitleView=_trendingTitleView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;

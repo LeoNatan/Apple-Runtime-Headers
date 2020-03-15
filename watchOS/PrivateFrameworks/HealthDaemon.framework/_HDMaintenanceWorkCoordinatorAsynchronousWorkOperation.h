@@ -13,9 +13,9 @@
     _Bool finished;
 }
 
+- (void).cxx_destruct;
 @property(getter=isFinished) _Bool finished; // @synthesize finished;
 @property(getter=isExecuting) _Bool executing; // @synthesize executing;
-- (void).cxx_destruct;
 - (_Bool)isAsynchronous;
 - (void)start;
 - (id)initWithName:(id)arg1 operationBlock:(CDUnknownBlockType)arg2;

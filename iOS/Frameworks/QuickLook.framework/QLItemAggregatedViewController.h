@@ -19,9 +19,9 @@
     QLItemViewController *_currentPreviewViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) QLItemViewController *currentPreviewViewController; // @synthesize currentPreviewViewController=_currentPreviewViewController;
 - (id)delegate;
-- (void).cxx_destruct;
 - (void)savePreviewEditedCopyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)draggableView;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -45,6 +45,7 @@
 - (_Bool)canShowNavBar;
 - (_Bool)canShowToolBar;
 - (_Bool)canPinchToDismiss;
+- (_Bool)canClickToToggleFullscreen;
 - (_Bool)canToggleFullScreen;
 - (_Bool)canSwipeToDismiss;
 - (id)safeAreaLayoutGuide;

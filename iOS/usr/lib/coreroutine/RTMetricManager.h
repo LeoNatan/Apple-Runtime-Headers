@@ -6,18 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class AWDServerConnection, NSArray, RTInvocationDispatcher, RTManagedConfiguration, RTPlatform;
+@class AWDServerConnection, NSArray, RTManagedConfiguration, RTPlatform, RTXPCActivityManager;
 @protocol OS_dispatch_queue;
 
 @interface RTMetricManager : NSObject
 {
-    _Bool _ready;
-    RTInvocationDispatcher *_dispatcher;
     RTPlatform *_platform;
     NSArray *_configuredMetricClasses;
     AWDServerConnection *_awdServerConnection;
     RTManagedConfiguration *_managedConfigurationManager;
     NSObject<OS_dispatch_queue> *_queue;
+    RTXPCActivityManager *_xpcActivityManager;
 }
 
 + (id)metricForType:(unsigned long long)arg1;
@@ -26,14 +25,13 @@
 + (int)intWithSignificantDigits:(int)arg1 digits:(int)arg2;
 + (int)doubleToInt:(double)arg1 shifts:(int)arg2;
 + (int)roundTimeInterval:(double)arg1 byIntervalUnit:(unsigned long long)arg2;
+- (void).cxx_destruct;
+@property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTManagedConfiguration *managedConfigurationManager; // @synthesize managedConfigurationManager=_managedConfigurationManager;
 @property(retain, nonatomic) AWDServerConnection *awdServerConnection; // @synthesize awdServerConnection=_awdServerConnection;
 @property(retain, nonatomic) NSArray *configuredMetricClasses; // @synthesize configuredMetricClasses=_configuredMetricClasses;
-@property(nonatomic) _Bool ready; // @synthesize ready=_ready;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
-@property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
-- (void).cxx_destruct;
 - (id)createMetricForType:(unsigned long long)arg1;
 - (_Bool)_routineConfiguredForMetric:(id)arg1;
 - (void)_submitMetric:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
@@ -43,12 +41,12 @@
 - (void)_registerQueriableMetric:(unsigned long long)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)registerQueriableMetric:(unsigned long long)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)shutdown;
-- (void)_setupWithConfiguredClasses:(id)arg1;
-- (_Bool)_isDiagnosticsSubmissionAllowed;
+- (void)registerForXPCActivities:(id)arg1;
+- (_Bool)setupWithConfiguredClasses:(id)arg1 platform:(id)arg2 error:(id *)arg3;
 - (void)_fetchDiagnosticsEnabled:(CDUnknownBlockType)arg1;
 - (void)fetchDiagnosticsEnabled:(CDUnknownBlockType)arg1;
-- (id)initWithAWDServerConnection:(id)arg1 configuredClasses:(id)arg2 managedConfigurationManager:(id)arg3 platform:(id)arg4;
-- (id)initWithPlatform:(id)arg1;
+- (id)initWithAWDServerConnection:(id)arg1 configuredClasses:(id)arg2 managedConfigurationManager:(id)arg3 platform:(id)arg4 xpcActivityManager:(id)arg5;
+- (id)initWithPlatform:(id)arg1 xpcActivityManager:(id)arg2;
 - (id)init;
 
 @end

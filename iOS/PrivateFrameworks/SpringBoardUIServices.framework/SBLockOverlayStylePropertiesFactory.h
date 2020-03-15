@@ -15,8 +15,8 @@
 }
 
 + (id)overlayPropertiesFactoryWithStyle:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (id)_fetchAndCachePropsForDeviceQuality:(long long)arg1;
 - (id)propertiesWithGraphicsQuality:(long long)arg1;
 - (id)propertiesWithDeviceDefaultGraphicsQuality;

@@ -22,10 +22,10 @@
 + (id)accountScopedExpressionWithExpression:(id)arg1 accountIdentifiers:(id)arg2;
 + (id)_scopedExpressionWithExpression:(id)arg1 identifiers:(id)arg2 attribute:(id)arg3;
 + (id)defaultFactory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSearchableIndexEnabled) BOOL searchableIndexEnabled; // @synthesize searchableIndexEnabled=_searchableIndexEnabled;
 @property(readonly, nonatomic) NSString *attachmentFormatString; // @synthesize attachmentFormatString=_attachmentFormatString;
 @property(readonly, nonatomic) NSString *emailContentType; // @synthesize emailContentType=_emailContentType;
-- (void).cxx_destruct;
 - (id)expressionForQueryString:(id)arg1 includeAttachmentCriterion:(BOOL)arg2;
 - (id)queryStringForAllMailboxesWithQueryString:(id)arg1 excludedMailboxesQueryString:(id)arg2 forUnreadCount:(BOOL)arg3 includeAttachmentCriterion:(BOOL)arg4;
 - (id)expressionForAllMailboxesWithExpression:(id)arg1 excludedMailboxesExpression:(id)arg2 forUnreadCount:(BOOL)arg3 includeAttachmentCriterion:(BOOL)arg4;

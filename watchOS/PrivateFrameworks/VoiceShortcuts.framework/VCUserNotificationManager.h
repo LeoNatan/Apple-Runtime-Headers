@@ -17,9 +17,9 @@
     UNUserNotificationCenter *_notificationCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(nonatomic) __weak id <VCUserNotificationManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)removeNotificationsWithTriggerIdentifier:(id)arg1;
 - (void)postNotificationThatTrigger:(id)arg1 failedWithError:(id)arg2;

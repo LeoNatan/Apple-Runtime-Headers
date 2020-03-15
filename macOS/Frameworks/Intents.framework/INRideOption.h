@@ -30,6 +30,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSUserActivity *userActivityForBookingInApplication; // @synthesize userActivityForBookingInApplication=_userActivityForBookingInApplication;
 @property(copy) INImage *specialPricingBadgeImage; // @synthesize specialPricingBadgeImage=_specialPricingBadgeImage;
 @property(copy) NSString *specialPricing; // @synthesize specialPricing=_specialPricing;
@@ -39,7 +40,6 @@
 @property(copy) INPriceRange *priceRange; // @synthesize priceRange=_priceRange;
 @property(copy) NSDate *estimatedPickupDate; // @synthesize estimatedPickupDate=_estimatedPickupDate;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

@@ -17,10 +17,10 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 type:(int)arg3;
 - (id)init;

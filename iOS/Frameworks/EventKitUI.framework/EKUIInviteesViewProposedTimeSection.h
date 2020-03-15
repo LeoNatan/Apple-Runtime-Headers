@@ -28,6 +28,7 @@
     long long _checkedRow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long checkedRow; // @synthesize checkedRow=_checkedRow;
 @property(retain, nonatomic) NSArray *proposedTimeResults; // @synthesize proposedTimeResults=_proposedTimeResults;
 @property(retain, nonatomic) NSMutableOrderedSet *proposedTimes; // @synthesize proposedTimes=_proposedTimes;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSArray *busyParticipants; // @synthesize busyParticipants=_busyParticipants;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (_Bool)_isValidRow:(long long)arg1;
 - (_Bool)isRowChecked:(long long)arg1;
 - (id)busyParticipantsForDate:(id)arg1;

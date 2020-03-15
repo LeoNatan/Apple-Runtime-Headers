@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     unsigned int _maxCountAfterSpellingGuesses;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceSpellingGuesses; // @synthesize forceSpellingGuesses=_forceSpellingGuesses;
 @property(nonatomic) unsigned int maxCountAfterSpellingGuesses; // @synthesize maxCountAfterSpellingGuesses=_maxCountAfterSpellingGuesses;
 @property(nonatomic) _Bool forceAutocorrectionGuesses; // @synthesize forceAutocorrectionGuesses=_forceAutocorrectionGuesses;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool forceHistoryReplacement; // @synthesize forceHistoryReplacement=_forceHistoryReplacement;
 @property(retain, nonatomic) TIKeyboardCandidate *autocorrectionRecord; // @synthesize autocorrectionRecord=_autocorrectionRecord;
 @property(retain, nonatomic) UITextChecker *textChecker; // @synthesize textChecker=_textChecker;
-- (void).cxx_destruct;
 - (id)replacements;
 - (void)addSpellingGuessesForString:(id)arg1 ToReplacements:(id)arg2;
 - (void)addAutocorrectionGuessesToReplacements:(id)arg1;

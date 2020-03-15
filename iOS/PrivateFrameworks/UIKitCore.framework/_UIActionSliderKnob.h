@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIColor *_knobColor;
 }
 
-@property(retain, nonatomic) UIColor *knobColor; // @synthesize knobColor=_knobColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *knobColor; // @synthesize knobColor=_knobColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)isOpaque;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -17,12 +17,12 @@
     id _imapCommandPipelineLock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id imapCommandPipelineLock; // @synthesize imapCommandPipelineLock=_imapCommandPipelineLock;
 @property(retain, nonatomic) NSMutableArray *fetchUnits; // @synthesize fetchUnits=_fetchUnits;
 @property(nonatomic) BOOL isSending; // @synthesize isSending=_isSending;
 @property(nonatomic) unsigned int expectedSize; // @synthesize expectedSize=_expectedSize;
 @property(nonatomic) unsigned int chunkSize; // @synthesize chunkSize=_chunkSize;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_newOperationsAssigningResponseHandler:(id)arg1;
 - (id)failureResponsesFromSendingCommandsWithGateway:(id)arg1 responseHandler:(id)arg2 highPriority:(BOOL)arg3;

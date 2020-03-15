@@ -23,8 +23,8 @@
     unsigned int _compatibilityVersion;
 }
 
-@property(readonly, nonatomic) unsigned int compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (void)callAssetUpdateHandlers;
 - (void)clearOverrides;
 - (void)addOverridePath:(id)arg1 forResourceWithRelativePath:(id)arg2;

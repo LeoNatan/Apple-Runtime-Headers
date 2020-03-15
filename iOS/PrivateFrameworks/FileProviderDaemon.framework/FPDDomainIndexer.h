@@ -32,12 +32,12 @@
     FPDExtension *_extension;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak FPDExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic) __weak FPDDomain *domain; // @synthesize domain=_domain;
 @property(nonatomic) __weak id <FPDDomainIndexerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(nonatomic) _Bool needsAuthentication; // @synthesize needsAuthentication=_needsAuthentication;
-- (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1;
 - (void)setIndexingEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)signalChangesWithCompletionHandler:(CDUnknownBlockType)arg1;

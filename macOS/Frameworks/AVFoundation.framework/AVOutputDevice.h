@@ -31,6 +31,7 @@
 - (void)setCurrentBluetoothListeningMode:(id)arg1;
 - (id)currentBluetoothListeningMode;
 - (id)availableBluetoothListeningModes;
+- (long long)HAPConformance;
 - (BOOL)supportsBluetoothSharing;
 - (BOOL)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (BOOL)canFetchMediaDataFromSender;

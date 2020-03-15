@@ -13,8 +13,8 @@
     AVBackgroundView *_backgroundView;
 }
 
-@property(readonly, nonatomic) AVBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (unsigned long long)accessibilityTraits;
 - (void)updateBackgroundColor;
 - (void)layoutSubviews;

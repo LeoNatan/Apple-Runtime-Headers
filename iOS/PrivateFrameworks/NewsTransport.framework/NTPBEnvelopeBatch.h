@@ -26,12 +26,12 @@
 }
 
 + (Class)envelopeType;
+- (void).cxx_destruct;
 @property(nonatomic) int envelopeDroppedCountDueToSizeLimit; // @synthesize envelopeDroppedCountDueToSizeLimit=_envelopeDroppedCountDueToSizeLimit;
 @property(nonatomic) int patchVersion; // @synthesize patchVersion=_patchVersion;
 @property(nonatomic) int minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(nonatomic) int majorVersion; // @synthesize majorVersion=_majorVersion;
 @property(retain, nonatomic) NSMutableArray *envelopes; // @synthesize envelopes=_envelopes;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

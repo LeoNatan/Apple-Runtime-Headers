@@ -45,6 +45,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL disconnectOnLogout; // @synthesize disconnectOnLogout=_disconnectOnLogout;
 @property BOOL disconnectOnUserSwitch; // @synthesize disconnectOnUserSwitch=_disconnectOnUserSwitch;
 @property int disconnectOnIdleTimeout; // @synthesize disconnectOnIdleTimeout=_disconnectOnIdleTimeout;
@@ -71,7 +72,6 @@
 @property(copy) NSData *passwordReference; // @synthesize passwordReference=_passwordReference;
 @property(copy) NSString *username; // @synthesize username=_username;
 @property(copy) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
-- (void).cxx_destruct;
 - (id)description;
 - (void)copyPasswordsFromKeychainInDomain:(long long)arg1;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences *)arg1;

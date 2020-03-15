@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     id <UIPrinterAccessoryViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int printerState; // @synthesize printerState=_printerState;
 @property(nonatomic) __weak id <UIPrinterAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)infoButtonPressed:(id)arg1;

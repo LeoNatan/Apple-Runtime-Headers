@@ -28,6 +28,7 @@
 + (double)evalMaxUncFromMotionDevMotionInducedDev:(double)arg1 andMeasInducedDev:(double)arg2;
 + (double)evaluateMotionInducedDeviationFromMeanLat:(double)arg1 meanOfSquaredLat_deg:(double)arg2 meanLon_deg:(double)arg3 meanOfSquaredLon_deg:(double)arg4;
 + (double)evaluateClustThresFromClustThresSlv:(double)arg1 motionInducedDev:(double)arg2 adaptionBasis:(double)arg3 adaptionSampleCnt:(long long)arg4 adaptionRate:(double)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTLocation *centroid; // @synthesize centroid=_centroid;
 @property(readonly, nonatomic) NSMutableArray *outliers; // @synthesize outliers=_outliers;
 @property(readonly, nonatomic) NSDate *lastProcessedSample; // @synthesize lastProcessedSample=_lastProcessedSample;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSDate *potentialEntry; // @synthesize potentialEntry=_potentialEntry;
 @property(readonly, nonatomic) unsigned long long numOfAdaptionSample; // @synthesize numOfAdaptionSample=_numOfAdaptionSample;
 @property(readonly, nonatomic) unsigned long long numOfDataPoints; // @synthesize numOfDataPoints=_numOfDataPoints;
-- (void).cxx_destruct;
 - (double)getRadiusForDate:(id)arg1;
 - (void)addOutlier:(id)arg1;
 - (void)addNewPoint:(id)arg1 event:(unsigned long long)arg2 lcFSMState:(unsigned long long)arg3 fsmState:(unsigned long long)arg4;

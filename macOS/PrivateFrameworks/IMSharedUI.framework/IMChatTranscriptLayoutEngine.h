@@ -18,11 +18,11 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) IMChatTranscriptLayoutSpecification *layoutSpecification; // @synthesize layoutSpecification=_layoutSpecification;
 @property(nonatomic) __weak id <IMChatTranscriptLayoutEngineDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_updateContentSize;
 - (void)_invalidateCachedItemData;
 - (unsigned long long)_numberOfTranscriptItems;

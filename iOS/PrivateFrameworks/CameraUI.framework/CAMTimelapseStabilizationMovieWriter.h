@@ -48,6 +48,7 @@
 }
 
 + (struct CGSize)_desiredOutputSizeForSourcePixelBuffer:(struct __CVBuffer *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) void *_powerAssertion; // @synthesize _powerAssertion=__powerAssertion;
 @property(readonly, copy, nonatomic) CDUnknownBlockType _completion; // @synthesize _completion=__completion;
 @property(readonly, nonatomic) unsigned long long _frameLoadMode; // @synthesize _frameLoadMode=__frameLoadMode;
@@ -79,7 +80,6 @@
 @property(readonly, nonatomic) NSArray *_visMetadataFilePaths; // @synthesize _visMetadataFilePaths=__visMetadataFilePaths;
 @property(readonly, nonatomic) NSArray *_frameFilePaths; // @synthesize _frameFilePaths=__frameFilePaths;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
-- (void).cxx_destruct;
 - (id)copySourceStabilizationMetadataForFrameNumber:(long long)arg1 outputSampleTime:(CDStruct_1b6d18a9 *)arg2 stabilizer:(id)arg3;
 - (struct __CVBuffer *)copySourcePixelBufferForFrameNumber:(long long)arg1 outputSampleTime:(CDStruct_1b6d18a9 *)arg2 stabilizer:(id)arg3;
 - (void)_finishMovieWithCompletionHandler:(CDUnknownBlockType)arg1;

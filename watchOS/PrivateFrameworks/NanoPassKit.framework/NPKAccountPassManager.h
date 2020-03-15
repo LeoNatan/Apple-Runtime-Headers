@@ -20,11 +20,11 @@
     NSMutableArray *_accountDetails;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *accountDetails; // @synthesize accountDetails=_accountDetails;
 @property(retain, nonatomic) NSDate *lastAccountUpdateDate; // @synthesize lastAccountUpdateDate=_lastAccountUpdateDate;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (void)_updateAccountDetailsWithAccount:(id)arg1;
 - (void)_updateAccount;
 - (void)handleAccountsChangedNotification:(id)arg1;

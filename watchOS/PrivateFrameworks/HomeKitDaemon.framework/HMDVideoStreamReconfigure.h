@@ -26,6 +26,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reconfigurationMode; // @synthesize reconfigurationMode=_reconfigurationMode;
 @property(readonly) __weak id <HMDVideoStreamReconfigureDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) HMFTimer *upgradeDebouceTimer; // @synthesize upgradeDebouceTimer=_upgradeDebouceTimer;
 @property(readonly, nonatomic) NSMutableArray *reconfigureEvents; // @synthesize reconfigureEvents=_reconfigureEvents;
 @property(retain, nonatomic) NSDictionary *downlinkQualityInfo; // @synthesize downlinkQualityInfo=_downlinkQualityInfo;
-- (void).cxx_destruct;
 - (void)_callNetworkDeteriorated;
 - (void)_callNetworkImproved;
 - (_Bool)_isReconfigureFlipFlop;

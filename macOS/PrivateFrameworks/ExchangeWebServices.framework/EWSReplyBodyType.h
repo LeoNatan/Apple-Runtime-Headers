@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSString *Message; // @synthesize Message=_Message;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *Message; // @synthesize Message=_Message;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 
 // Remaining properties

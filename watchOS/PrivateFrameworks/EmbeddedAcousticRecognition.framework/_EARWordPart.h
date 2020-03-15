@@ -17,11 +17,11 @@
     NSSet *_pronunciations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *pronunciations; // @synthesize pronunciations=_pronunciations;
 @property(readonly, nonatomic) unsigned int frequency; // @synthesize frequency=_frequency;
 @property(readonly, nonatomic) int tag; // @synthesize tag=_tag;
 @property(readonly, nonatomic) NSString *orthography; // @synthesize orthography=_orthography;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *tagName;
 - (id)initWithOrthography:(id)arg1 pronunciations:(id)arg2 tagName:(id)arg3 frequency:(unsigned int)arg4;
 - (id)initWithOrthography:(id)arg1 pronunciations:(id)arg2 tag:(int)arg3;

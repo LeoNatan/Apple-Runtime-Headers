@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)definitionFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSExpression *goalExpression; // @synthesize goalExpression=_goalExpression;
 @property(readonly, nonatomic) NSString *typeString; // @synthesize typeString=_typeString;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_goalExpressionValue;

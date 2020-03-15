@@ -19,12 +19,12 @@
     UIActivityIndicatorView *_reportCaptureInProgressActivityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didDismissMailWindow; // @synthesize didDismissMailWindow=_didDismissMailWindow;
 @property(retain, nonatomic) UIActivityIndicatorView *reportCaptureInProgressActivityIndicator; // @synthesize reportCaptureInProgressActivityIndicator=_reportCaptureInProgressActivityIndicator;
 @property(retain, nonatomic) UILabel *reportCaptureInProgressLabel; // @synthesize reportCaptureInProgressLabel=_reportCaptureInProgressLabel;
 @property(retain, nonatomic) NSArray *features; // @synthesize features=_features;
 @property(retain, nonatomic) PHMemory *memory; // @synthesize memory=_memory;
-- (void).cxx_destruct;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (void)_showMailComposeWindow;
 - (void)viewWillAppear:(_Bool)arg1;

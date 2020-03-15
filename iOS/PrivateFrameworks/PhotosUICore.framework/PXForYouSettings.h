@@ -15,7 +15,8 @@
     _Bool _showCMMInvitations;
     _Bool _showEditSuggestions;
     _Bool _showRecentInterestSuggestions;
-    _Bool _showQuestions;
+    _Bool _showPeopleQuestions;
+    _Bool _showSurveyQuestions;
     _Bool _showFooter;
     _Bool _showSampleSuggestionGadgets;
     _Bool _showVerticalSampleGadgets;
@@ -25,7 +26,6 @@
     _Bool _allowGIFPlayback;
     _Bool _useMockData;
     _Bool _forceDisplayReportJunk;
-    _Bool _navigateToActivityPost;
     _Bool _forcePortraitBias;
     _Bool _useSquareSharedAlbumActivity;
     _Bool _disableSharedAlbumTopMargin;
@@ -51,7 +51,6 @@
 @property(nonatomic) _Bool disableSharedAlbumTopMargin; // @synthesize disableSharedAlbumTopMargin=_disableSharedAlbumTopMargin;
 @property(nonatomic) _Bool useSquareSharedAlbumActivity; // @synthesize useSquareSharedAlbumActivity=_useSquareSharedAlbumActivity;
 @property(nonatomic) _Bool forcePortraitBias; // @synthesize forcePortraitBias=_forcePortraitBias;
-@property(nonatomic) _Bool navigateToActivityPost; // @synthesize navigateToActivityPost=_navigateToActivityPost;
 @property(nonatomic) _Bool forceDisplayReportJunk; // @synthesize forceDisplayReportJunk=_forceDisplayReportJunk;
 @property(nonatomic) _Bool useMockData; // @synthesize useMockData=_useMockData;
 @property(nonatomic) double minimumVisibilityForVideoPlayback; // @synthesize minimumVisibilityForVideoPlayback=_minimumVisibilityForVideoPlayback;
@@ -63,7 +62,8 @@
 @property(nonatomic) _Bool showVerticalSampleGadgets; // @synthesize showVerticalSampleGadgets=_showVerticalSampleGadgets;
 @property(nonatomic) _Bool showSampleSuggestionGadgets; // @synthesize showSampleSuggestionGadgets=_showSampleSuggestionGadgets;
 @property(nonatomic) _Bool showFooter; // @synthesize showFooter=_showFooter;
-@property(nonatomic) _Bool showQuestions; // @synthesize showQuestions=_showQuestions;
+@property(nonatomic) _Bool showSurveyQuestions; // @synthesize showSurveyQuestions=_showSurveyQuestions;
+@property(nonatomic) _Bool showPeopleQuestions; // @synthesize showPeopleQuestions=_showPeopleQuestions;
 @property(nonatomic) _Bool showRecentInterestSuggestions; // @synthesize showRecentInterestSuggestions=_showRecentInterestSuggestions;
 @property(nonatomic) _Bool showEditSuggestions; // @synthesize showEditSuggestions=_showEditSuggestions;
 @property(nonatomic) _Bool showCMMInvitations; // @synthesize showCMMInvitations=_showCMMInvitations;

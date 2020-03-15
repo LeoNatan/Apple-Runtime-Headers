@@ -17,12 +17,12 @@
     CDStruct_1b6d18a9 _evaluationTime;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *videoFrames; // @synthesize videoFrames=_videoFrames;
 @property(nonatomic) CDStruct_912cb5d2 renderScale; // @synthesize renderScale=_renderScale;
 @property(nonatomic) CDStruct_1b6d18a9 evaluationTime; // @synthesize evaluationTime=_evaluationTime;
 @property(retain, nonatomic) struct __CVBuffer *destinationBuffer; // @synthesize destinationBuffer=_destinationBuffer;
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
-- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;
 - (id)newRenderJob;

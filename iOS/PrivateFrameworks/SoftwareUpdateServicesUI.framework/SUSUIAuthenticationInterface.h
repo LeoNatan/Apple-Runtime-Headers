@@ -19,8 +19,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) _Bool isController; // @synthesize isController=_isController;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isController; // @synthesize isController=_isController;
 - (void)_incrementFailedAttemptsCount;
 - (unsigned long long)_currentFailedAttemptsCount;
 - (void)keybagInterface:(id)arg1 passcodeLockedStateDidChange:(_Bool)arg2;

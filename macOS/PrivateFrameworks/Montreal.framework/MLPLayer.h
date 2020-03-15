@@ -31,6 +31,7 @@
 }
 
 + (id)layerWithMontrealNode:(id)arg1 modelContainer:(void *)arg2;
+- (void).cxx_destruct;
 @property __weak MLPNetwork *network; // @synthesize network=_network;
 @property __weak MLPLayer *nextLayer; // @synthesize nextLayer=_nextLayer;
 @property __weak MLPLayer *previousLayer; // @synthesize previousLayer=_previousLayer;
@@ -49,7 +50,6 @@
 @property(retain) MontrealNNModelNode *node; // @synthesize node=_node;
 @property(readonly) unsigned long long layerType; // @synthesize layerType=_layerType;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (long long)montrealTypeFromMPSNeuronType:(int)arg1;
 - (int)mpsNeuronTypeFromMontrealType:(long long)arg1;
 - (void)printMatrix:(id)arg1 name:(id)arg2 cmdBuf:(id)arg3;
@@ -57,10 +57,10 @@
 - (void)createKernel;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3 params:(CDStruct_96916c69 *)arg4 inputChunks:(id)arg5 outputChunks:(id)arg6;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
-- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
-- (struct NSArray *)backward:(id)arg1 inputGradient:(struct NSArray *)arg2;
-- (struct NSArray *)forward:(id)arg1 input:(struct NSArray *)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
+- (id)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(id)arg3;
+- (id)seqForward:(id)arg1 input:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
+- (id)backward:(id)arg1 inputGradient:(id)arg2;
+- (id)forward:(id)arg1 input:(id)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
 - (id)initWithName:(id)arg1 parameters:(CDStruct_96916c69 *)arg2;
 - (id)initWithLayerType:(unsigned long long)arg1 name:(id)arg2 parameters:(CDStruct_96916c69 *)arg3;
 - (id)initWithLayerType:(unsigned long long)arg1 name:(id)arg2 neuronType:(int)arg3 neuronParams:(id)arg4;

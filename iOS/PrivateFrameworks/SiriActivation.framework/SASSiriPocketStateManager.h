@@ -12,22 +12,19 @@
 
 @interface SASSiriPocketStateManager : NSObject <CMPocketStateDelegate>
 {
-    _Bool _pocketStateShouldPreventVoiceTrigger;
     CMPocketStateManager *_pocketStateManager;
     long long _currentPocketState;
 }
 
 + (id)new;
 + (id)sharedManager;
-@property(nonatomic, getter=_pocketStateShouldPreventVoiceTrigger, setter=_setPocketStateShouldPreventVoiceTrigger:) _Bool pocketStateShouldPreventVoiceTrigger; // @synthesize pocketStateShouldPreventVoiceTrigger=_pocketStateShouldPreventVoiceTrigger;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_currentPocketState, setter=_setCurrentPocketState:) long long currentPocketState; // @synthesize currentPocketState=_currentPocketState;
 @property(retain, nonatomic, getter=_pocketStateManager, setter=_setPocketStateManager:) CMPocketStateManager *pocketStateManager; // @synthesize pocketStateManager=_pocketStateManager;
-- (void).cxx_destruct;
 - (id)_stringForPocketState:(long long)arg1;
 - (void)_updateForPocketState:(long long)arg1;
 - (void)pocketStateManager:(id)arg1 didUpdateState:(long long)arg2;
 - (_Bool)pocketStateShouldPreventVoiceTrigger;
-- (long long)currentPocketState;
 - (void)queryForPocketStateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)_init;

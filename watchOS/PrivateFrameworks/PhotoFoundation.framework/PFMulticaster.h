@@ -32,10 +32,10 @@
 + (id)_protocolNameByDecodingClassName;
 + (id)_newProtocolMulticaster;
 + (Class)_multicasterClassForProtocolNamed:(id)arg1;
+- (void).cxx_destruct;
 @property __weak id <PFMulticasterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) _Bool acceptingReceivers; // @synthesize acceptingReceivers=_acceptingReceivers;
 @property(readonly) _Bool invalidated; // @synthesize invalidated=_invalidated;
-- (void).cxx_destruct;
 - (void)distributeSelector:(SEL)arg1 distributionBlock:(CDUnknownBlockType)arg2;
 - (void)distributeSelector:(SEL)arg1 toReceivers:(id)arg2 distributionBlock:(CDUnknownBlockType)arg3;
 - (void)_enumerateReceiversWithBlock:(CDUnknownBlockType)arg1;

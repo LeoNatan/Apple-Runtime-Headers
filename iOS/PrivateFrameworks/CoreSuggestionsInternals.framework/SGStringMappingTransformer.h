@@ -16,8 +16,8 @@
 }
 
 + (id)withMappings:(id)arg1;
-@property(retain) NSDictionary *mappings; // @synthesize mappings=_mappings;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *mappings; // @synthesize mappings=_mappings;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToStringMappingTransformer:(id)arg1;

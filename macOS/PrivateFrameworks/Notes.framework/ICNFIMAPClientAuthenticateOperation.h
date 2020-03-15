@@ -14,9 +14,9 @@
     ICNFMCSaslClient *_saslClient;
 }
 
+- (void).cxx_destruct;
 @property BOOL includeInitialResponse; // @synthesize includeInitialResponse=_includeInitialResponse;
 @property(readonly, nonatomic) ICNFMCSaslClient *saslClient; // @synthesize saslClient=_saslClient;
-- (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (BOOL)executeOnConnection:(id)arg1;

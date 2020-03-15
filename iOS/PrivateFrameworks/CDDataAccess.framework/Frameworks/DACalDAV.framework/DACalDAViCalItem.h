@@ -35,6 +35,7 @@
 
 + (id)rem_store;
 + (id)filenameWithUniqueIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long debugReminderFetchCount; // @synthesize debugReminderFetchCount=_debugReminderFetchCount;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) REMObjectID *rem_clientID; // @synthesize rem_clientID=_rem_clientID;
 @property(retain, nonatomic) NSURL *serverID; // @synthesize serverID=_serverID;
 @property(retain, nonatomic) CalDAVCalendarServerScheduleChangesItem *scheduleChanges; // @synthesize scheduleChanges=_scheduleChanges;
-- (void).cxx_destruct;
 - (_Bool)rem_setReminderPropertiesWithBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (_Bool)deleteFromContainer:(void *)arg1;
 - (_Bool)saveServerIDToExistingItem;

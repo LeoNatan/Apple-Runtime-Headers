@@ -46,6 +46,7 @@
     NSOperationQueue *_autofillQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *autofillQueue; // @synthesize autofillQueue=_autofillQueue;
 @property(retain) NSArray *emptyHolesForCurrentLayouts; // @synthesize emptyHolesForCurrentLayouts=_emptyHolesForCurrentLayouts;
 @property(retain) NSArray *autofillCandidates; // @synthesize autofillCandidates=_autofillCandidates;
@@ -75,7 +76,6 @@
 @property(retain) KHPhotoBinViewController *photoBinController; // @synthesize photoBinController=_photoBinController;
 @property(nonatomic) long long accessoryViewState; // @synthesize accessoryViewState=_accessoryViewState;
 @property(nonatomic) __weak id <KHAccessoryViewContainerProtocol> accessoryViewContainer; // @synthesize accessoryViewContainer=_accessoryViewContainer;
-- (void).cxx_destruct;
 - (void)_configureAccessibility;
 @property(readonly, nonatomic) BOOL isAccessoryFloating;
 @property(readonly, nonatomic) double accessoryAnimationDuration;

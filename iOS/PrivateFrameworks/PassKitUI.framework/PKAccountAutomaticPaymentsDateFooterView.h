@@ -13,8 +13,8 @@
     PKMonthDayCollectionViewController *_collectionViewController;
 }
 
-@property(retain, nonatomic) PKMonthDayCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKMonthDayCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 

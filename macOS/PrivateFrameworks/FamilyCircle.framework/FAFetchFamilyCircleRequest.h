@@ -18,13 +18,13 @@
     NSDictionary *_serverResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) NSDictionary *serverResponse; // @synthesize serverResponse=_serverResponse;
 @property BOOL promptUserToResolveAuthenticatonFailure; // @synthesize promptUserToResolveAuthenticatonFailure=_promptUserToResolveAuthenticatonFailure;
 @property BOOL doNotFetchFromServer; // @synthesize doNotFetchFromServer=_doNotFetchFromServer;
 @property BOOL forceServerFetch; // @synthesize forceServerFetch=_forceServerFetch;
 @property BOOL signedInAccountShouldBeApprover; // @synthesize signedInAccountShouldBeApprover=_signedInAccountShouldBeApprover;
 @property(copy) NSArray *expectedDSIDs; // @synthesize expectedDSIDs=_expectedDSIDs;
-- (void).cxx_destruct;
 - (id)requestOptions;
 - (void)startRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 

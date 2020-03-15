@@ -16,8 +16,8 @@
 }
 
 + (id)stringForDedupingType:(unsigned long long)arg1;
-@property(retain, nonatomic) id <CLSInvestigationItem> item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CLSInvestigationItem> item; // @synthesize item=_item;
 - (void)dupeToDebugItem:(id)arg1 withDedupingType:(unsigned long long)arg2;
 - (id)identifier;
 - (id)timestamp;

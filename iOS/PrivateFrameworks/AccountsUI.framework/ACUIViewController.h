@@ -28,13 +28,13 @@
 
 + (id)acuiAccountStore;
 + (_Bool)shouldPresentAsModalSheet;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool validationInProgress; // @synthesize validationInProgress=_validationInProgress;
 @property(nonatomic) __weak id <ACUIViewControllerAccountChangeObserver> accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
 @property(retain, nonatomic) ACUIAccountOperationsHelper *accountOperationsHelper; // @synthesize accountOperationsHelper=_accountOperationsHelper;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) UIBarButtonItem *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
-- (void).cxx_destruct;
 - (void)operationsHelper:(id)arg1 didRemoveAccount:(id)arg2 withSuccess:(_Bool)arg3 error:(id)arg4;
 - (void)operationsHelper:(id)arg1 willRemoveAccount:(id)arg2;
 - (void)operationsHelper:(id)arg1 didSaveAccount:(id)arg2 withSuccess:(_Bool)arg3 error:(id)arg4;
@@ -66,6 +66,9 @@
 - (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(_Bool)arg4 context:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(_Bool)arg4 cancelButtonIndex:(long long)arg5 context:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(_Bool)arg4 cancelButtonIndex:(long long)arg5 context:(id)arg6 forceAlert:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)showConfirmationForDeletingAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)showConfirmationWithActions:(id)arg1 title:(id)arg2 message:(id)arg3;
+- (void)showConfirmationWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)doneButtonTapped:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;
 - (void)dismissAnimated:(_Bool)arg1;

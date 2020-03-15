@@ -14,9 +14,9 @@
     WLKContinueWatchingCollection *_featured;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) WLKContinueWatchingCollection *featured; // @synthesize featured=_featured;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 

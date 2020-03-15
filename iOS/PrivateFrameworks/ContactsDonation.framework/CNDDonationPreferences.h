@@ -20,11 +20,11 @@
 }
 
 + (id)observableWithPreferences:(id)arg1 notificationCenter:(id)arg2 schedulerProvider:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType donationPreferenceSettingBlock; // @synthesize donationPreferenceSettingBlock=_donationPreferenceSettingBlock;
 @property(readonly, copy, nonatomic) CDUnknownBlockType donationPreferenceCheckingBlock; // @synthesize donationPreferenceCheckingBlock=_donationPreferenceCheckingBlock;
 @property(readonly, nonatomic) id <CNDonationPreferencesLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isDonationsEnabled) _Bool donationsEnabled;
 @property(readonly, copy) NSString *description;
 - (id)initWithNotificationCenter:(id)arg1 logger:(id)arg2 donationPreferenceCheckingBlock:(CDUnknownBlockType)arg3 donationPreferenceSettingBlock:(CDUnknownBlockType)arg4;

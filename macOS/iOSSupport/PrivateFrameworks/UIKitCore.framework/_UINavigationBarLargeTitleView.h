@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     _UINavigationBarLargeTitleViewLayout *_layout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UINavigationBarLargeTitleViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) unsigned long long accessoryViewHorizontalAlignment; // @synthesize accessoryViewHorizontalAlignment=_accessoryViewHorizontalAlignment;
 @property(nonatomic) BOOL alignAccessoryViewToTitleBaseline; // @synthesize alignAccessoryViewToTitleBaseline=_alignAccessoryViewToTitleBaseline;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *alternateTitles; // @synthesize alternateTitles=_alternateTitles;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long titleType; // @synthesize titleType=_titleType;
-- (void).cxx_destruct;
 - (void)adoptNewLayout;
 - (void)adoptLayout:(id)arg1;
 - (void)clearTransitionContext;
@@ -48,6 +48,8 @@ __attribute__((visibility("hidden")))
 - (void)recordToStateForTransition:(id)arg1;
 - (void)prepareToRecordToState:(id)arg1;
 - (void)recordFromStateForTransition:(id)arg1;
+- (void)_clearAssistants;
+- (void)_setAssistants;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateContent;
 - (void)_updateContentAndInvalidate:(BOOL)arg1;

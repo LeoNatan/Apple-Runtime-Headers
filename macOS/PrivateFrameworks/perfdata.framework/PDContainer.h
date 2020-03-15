@@ -28,6 +28,7 @@
 + (id)containerWithJSONData:(id)arg1 error:(id *)arg2;
 + (id)containerWithFileURL:(id)arg1 error:(id *)arg2;
 + (id)containerWithPath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *perfdata; // @synthesize perfdata=_perfdata;
 @property(nonatomic) BOOL largerBetter; // @synthesize largerBetter=_largerBetter;
 @property(retain, nonatomic) NSDictionary *labels; // @synthesize labels=_labels;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)aggregateMeasurementsMatchingFilter:(id)arg1 error:(id *)arg2;
 - (BOOL)enumerateAggregatedMeasurementsMatchingNullableFilter:(id)arg1 ignoringVariables:(id)arg2 error:(id *)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (BOOL)enumerateAggregatedMeasurementsIgnoringVariables:(id)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3;

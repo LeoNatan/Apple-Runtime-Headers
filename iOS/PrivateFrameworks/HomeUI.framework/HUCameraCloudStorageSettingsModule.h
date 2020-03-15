@@ -17,9 +17,9 @@
     HFItemProvider *_cloudStorageSectionSettingsItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFItemProvider *cloudStorageSectionSettingsItemProvider; // @synthesize cloudStorageSectionSettingsItemProvider=_cloudStorageSectionSettingsItemProvider;
 @property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
 - (id)didSelectItem:(id)arg1;

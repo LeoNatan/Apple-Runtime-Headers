@@ -16,11 +16,11 @@
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL willCopyUsersPreferences; // @synthesize willCopyUsersPreferences=_willCopyUsersPreferences;
 @property(copy, nonatomic) NSString *humanReadableName; // @synthesize humanReadableName=_humanReadableName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

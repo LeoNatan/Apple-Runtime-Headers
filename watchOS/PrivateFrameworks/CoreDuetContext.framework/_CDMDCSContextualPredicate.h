@@ -36,9 +36,9 @@
 + (id)_predicateForKeyPath:(id)arg1 withPredicate:(id)arg2 identifier:(id)arg3;
 + (id)_predicateForKeyPath:(id)arg1 equalToValue:(id)arg2 identifier:(id)arg3;
 + (id)_predicateForChangeAtKeyPath:(id)arg1 identifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithPlistDictionary:(id)arg1;
 - (id)plistDictionary;
 - (unsigned int)hash;

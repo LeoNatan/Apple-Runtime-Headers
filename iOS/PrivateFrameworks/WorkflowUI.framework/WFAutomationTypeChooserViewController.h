@@ -18,9 +18,9 @@
 }
 
 + (unsigned long long)automationTypeForHomeManager:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(nonatomic) __weak id <WFAutomationTypeChooserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)chooseHomeAutomation:(id)arg1;
 - (void)choosePersonalAutomation:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

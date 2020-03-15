@@ -59,12 +59,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) AVPlayerControllerTimeResolver *timeResolver; // @synthesize timeResolver=_timeResolver;
 @property(retain) id <AVTouchBarMediaSelectionControlling><AVTouchBarPlaybackControlsControllingInternal><AVTouchBarScrubberControlling><AVTouchBarTrackControlling><AVTimeControlling> playerController; // @synthesize playerController=_playerController;
 @property BOOL canCollapse; // @synthesize canCollapse=_canCollapse;
 @property BOOL canShowMediaSelectionButton; // @synthesize canShowMediaSelectionButton=_canShowMediaSelectionButton;
 @property BOOL showsInlinePlayButton; // @synthesize showsInlinePlayButton=_showsInlinePlayButton;
-- (void).cxx_destruct;
 - (void)_deactivateBindings;
 - (void)_activateBindings;
 - (void)_unbindAllObjects;

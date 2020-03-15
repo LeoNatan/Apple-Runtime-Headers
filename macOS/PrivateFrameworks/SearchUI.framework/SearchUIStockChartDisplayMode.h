@@ -34,6 +34,7 @@
 }
 
 + (id)defaultDisplayMode;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *axisLabelsColor; // @synthesize axisLabelsColor=_axisLabelsColor;
 @property(retain, nonatomic) NSColor *xAxisKeylineColor; // @synthesize xAxisKeylineColor=_xAxisKeylineColor;
 @property(retain, nonatomic) NSColor *backgroundLinesColor; // @synthesize backgroundLinesColor=_backgroundLinesColor;
@@ -52,7 +53,6 @@
 @property(nonatomic) long long maxInterval; // @synthesize maxInterval=_maxInterval;
 @property(nonatomic) BOOL showsVolume; // @synthesize showsVolume=_showsVolume;
 @property(nonatomic) struct CGSize chartSize; // @synthesize chartSize=_chartSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double lineGraphBottomPadding;
 @property(readonly, nonatomic) double gutterHeight;
 @property(readonly, nonatomic) struct CGGradient *backgroundGradient;

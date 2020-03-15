@@ -17,11 +17,11 @@
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *detailLabelLastBaselineConstraint; // @synthesize detailLabelLastBaselineConstraint=_detailLabelLastBaselineConstraint;
 @property(retain, nonatomic) NSMutableArray *bodyFirstBaselineConstraints; // @synthesize bodyFirstBaselineConstraints=_bodyFirstBaselineConstraints;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_setupConstraints;
 - (void)_setUpUI;

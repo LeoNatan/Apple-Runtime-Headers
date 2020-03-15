@@ -14,9 +14,9 @@
     NSArray *_addresses;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *addresses; // @synthesize addresses=_addresses;
 @property unsigned long long peerFilterRangeIndex; // @synthesize peerFilterRangeIndex=_peerFilterRangeIndex;
-- (void).cxx_destruct;
 - (id)sharingPrefsAnchor;
 - (id)verboseText;
 - (id)externalRepresentation;

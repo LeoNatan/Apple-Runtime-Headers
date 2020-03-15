@@ -18,12 +18,12 @@
     UIFont *_preferredFontForCurrentSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *preferredFontForCurrentSize; // @synthesize preferredFontForCurrentSize=_preferredFontForCurrentSize;
 @property(retain, nonatomic) id <NACancelable> formattedValueObservationCancellationToken; // @synthesize formattedValueObservationCancellationToken=_formattedValueObservationCancellationToken;
 @property(copy, nonatomic) NSArray *preferredFonts; // @synthesize preferredFonts=_preferredFonts;
 @property(copy, nonatomic) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;
 @property(retain, nonatomic) id <HFDynamicFormattingValue> dynamicFormattingValue; // @synthesize dynamicFormattingValue=_dynamicFormattingValue;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updatePreferredFontIncludingValue:(_Bool)arg1;
 - (void)_updateFormattedValueIncludingFont:(_Bool)arg1;

@@ -21,9 +21,9 @@
     NSString *_verificationCode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *verificationCode; // @synthesize verificationCode=_verificationCode;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
-- (void).cxx_destruct;
 - (void)_watermarkStep;
 - (void)stop;
 - (void)start;

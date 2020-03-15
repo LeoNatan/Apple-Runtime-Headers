@@ -66,6 +66,7 @@
 + (id)_alertControllerWithTitle:(id)arg1 message:(id)arg2;
 + (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
 + (_Bool)_shouldUsePresentationController;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_titleLineBreakMode, setter=_setTitleLineBreakMode:) long long titleLineBreakMode; // @synthesize titleLineBreakMode=_titleLineBreakMode;
 @property(nonatomic, getter=_titleMaximumLineCount, setter=_setTitleMaximumLineCount:) long long titleMaximumLineCount; // @synthesize titleMaximumLineCount=_titleMaximumLineCount;
 @property(retain, nonatomic, setter=_setPresentationSourceRepresentationView:) UIView *_presentationSourceRepresentationView; // @synthesize _presentationSourceRepresentationView=__presentationSourceRepresentationView;
@@ -91,7 +92,6 @@
 @property(retain, nonatomic, setter=_setHeaderContentViewController:) UIViewController *_headerContentViewController; // @synthesize _headerContentViewController;
 @property(readonly) UIAlertAction *_cancelAction; // @synthesize _cancelAction;
 @property(readonly) NSMutableArray *_actions; // @synthesize _actions;
-- (void).cxx_destruct;
 - (_Bool)_canBePresentedAtLocation:(struct CGPoint)arg1;
 - (_Bool)_isPresented;
 - (_Bool)performsViewControllerCommitTransitionForPreviewInteractionController:(id)arg1;

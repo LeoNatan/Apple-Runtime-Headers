@@ -18,8 +18,8 @@
     PGGraph *_graph;
 }
 
-@property(readonly, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 - (id)description;
 @property(readonly, nonatomic) PHFetchResult *moments;
 @property(readonly, nonatomic) PHFetchResult *assets;

@@ -22,13 +22,13 @@
     id <HUContainedMediaAccessoriesGridViewControllerDelegate> _mediaAccessoryGridDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPresentedModally) BOOL presentedModally; // @synthesize presentedModally=_presentedModally;
 @property(nonatomic) __weak id <HUContainedMediaAccessoriesGridViewControllerDelegate> mediaAccessoryGridDelegate; // @synthesize mediaAccessoryGridDelegate=_mediaAccessoryGridDelegate;
 @property(readonly, copy, nonatomic) HFMediaAccessoryItem *mediaAccessoryItem; // @synthesize mediaAccessoryItem=_mediaAccessoryItem;
 - (void)setRequiresPresentingViewControllerDismissal:(BOOL)arg1;
 - (BOOL)requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)_updateRightBarButtons;
 - (id)finishPresentation:(id)arg1 animated:(BOOL)arg2;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;

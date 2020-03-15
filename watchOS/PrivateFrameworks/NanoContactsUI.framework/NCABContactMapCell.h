@@ -29,8 +29,8 @@
 }
 
 + (void)initialize;
-@property(retain, nonatomic) FMFLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FMFLocation *location; // @synthesize location=_location;
 - (void)_appButtonTapped;
 - (id)_noLocationString;
 - (void)_updateLocationLabel;

@@ -15,8 +15,8 @@
     unsigned long long _gesturePhase;
 }
 
-@property(readonly, nonatomic) unsigned long long gesturePhase; // @synthesize gesturePhase=_gesturePhase;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long gesturePhase; // @synthesize gesturePhase=_gesturePhase;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)handleMainTransitionEvent:(id)arg1;
 - (id)handleGestureEvent:(id)arg1;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_establishedBindings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *establishedBindings; // @synthesize establishedBindings=_establishedBindings;
 @property(retain, nonatomic) NSCountedSet *currentlyChangingBindings; // @synthesize currentlyChangingBindings=_currentlyChangingBindings;
 @property(nonatomic, getter=isEstablishmentProhibited) _Bool establishmentProhibited; // @synthesize establishmentProhibited=_establishmentProhibited;
 @property(readonly, nonatomic) __weak id boundObject; // @synthesize boundObject=_boundObject;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setValue:(id)arg1 forBinding:(id)arg2;
 - (id)valueForBinding:(id)arg1;

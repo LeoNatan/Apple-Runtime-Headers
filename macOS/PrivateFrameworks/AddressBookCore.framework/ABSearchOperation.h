@@ -28,6 +28,7 @@
 }
 
 + (BOOL)_resultRecord:(id)arg1 matchesSearchOperation:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain) id <ABCNDirectoryResultBuilder> resultBuilderPrototype; // @synthesize resultBuilderPrototype=_resultBuilderPrototype;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *originalTerm; // @synthesize originalTerm=_originalTerm;
 @property(copy, nonatomic) NSArray *terms; // @synthesize terms=_terms;
 @property(retain, nonatomic) PHXSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (void)reportRecords:(id)arg1;
 - (id)searchMatches;

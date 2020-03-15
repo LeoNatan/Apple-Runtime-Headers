@@ -31,6 +31,7 @@
 
 + (Class)collectionViewLayoutClass;
 + (Class)resultsControllerClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets previousLayoutMargins; // @synthesize previousLayoutMargins=_previousLayoutMargins;
 @property(readonly, nonatomic) WFDatabaseResult *collection; // @synthesize collection=_collection;
 @property(nonatomic) BOOL handlesDropsOntoWorkflows; // @synthesize handlesDropsOntoWorkflows=_handlesDropsOntoWorkflows;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) WFLibraryResultsController *resultsController; // @synthesize resultsController=_resultsController;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)keyCommands;
 - (void)beginSearching;
 - (void)endSearching;

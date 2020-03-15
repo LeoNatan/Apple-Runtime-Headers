@@ -18,8 +18,8 @@
     _Bool _usesSignalFlags;
 }
 
-@property _Bool usesSignalFlags; // @synthesize usesSignalFlags=_usesSignalFlags;
 - (void).cxx_destruct;
+@property _Bool usesSignalFlags; // @synthesize usesSignalFlags=_usesSignalFlags;
 - (double)markEventEnd:(id)arg1;
 - (double)markEventSplit:(id)arg1;
 - (void)markEventStart:(id)arg1;

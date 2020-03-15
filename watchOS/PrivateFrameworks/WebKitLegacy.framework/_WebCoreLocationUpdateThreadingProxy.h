@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (void)resetGeolocation;
 - (void)errorOccurred:(id)arg1;
-- (void)positionChanged:(struct GeolocationPosition *)arg1;
+- (void)positionChanged:(struct GeolocationPositionData *)arg1;
 - (void)geolocationAuthorizationDenied;
 - (void)geolocationAuthorizationGranted;
 - (id)initWithProvider:(id)arg1;

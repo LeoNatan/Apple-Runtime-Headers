@@ -21,6 +21,7 @@
     NFMutexLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFMutexLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;
 @property(retain, nonatomic) id <FCOperationCanceling><FCOperationPrioritizing> activeOperation; // @synthesize activeOperation=_activeOperation;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL succeeded; // @synthesize succeeded=_succeeded;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
 @property(copy, nonatomic) CDUnknownBlockType workBlock; // @synthesize workBlock=_workBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL finishedExecutingWithFailure;
 @property(readonly, nonatomic) BOOL finishedExecuting;
 - (id)executeWithCompletionHandler:(CDUnknownBlockType)arg1;

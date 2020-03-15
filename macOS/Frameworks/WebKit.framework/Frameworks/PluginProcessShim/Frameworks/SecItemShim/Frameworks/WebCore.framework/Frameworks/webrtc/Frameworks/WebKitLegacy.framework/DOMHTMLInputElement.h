@@ -91,7 +91,9 @@
 @property(copy) NSString *alt;
 @property(copy) NSString *accept;
 - (BOOL)_isTextField;
+- (void)_setAutoFilledAndViewable:(BOOL)arg1;
 - (void)_setAutofilled:(BOOL)arg1;
+- (BOOL)_isAutoFilledAndViewable;
 - (BOOL)_isAutofilled;
 
 @end

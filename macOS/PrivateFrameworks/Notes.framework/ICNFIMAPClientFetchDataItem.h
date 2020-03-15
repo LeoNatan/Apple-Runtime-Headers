@@ -20,8 +20,8 @@
 + (id)bodyStructureDataItem;
 + (id)UIDDataItem;
 + (id)flagsDataItem;
-@property(copy, nonatomic) NSString *commandString; // @synthesize commandString=_commandString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *commandString; // @synthesize commandString=_commandString;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

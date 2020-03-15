@@ -19,11 +19,11 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *header; // @synthesize header=_header;
 @property(nonatomic) __weak HKLollipopController *lollipopController; // @synthesize lollipopController=_lollipopController;
 @property(nonatomic) __weak HKScalarGraphViewController *graphViewController; // @synthesize graphViewController=_graphViewController;
 @property(retain, nonatomic) NSArray *graphSeries; // @synthesize graphSeries=_graphSeries;
-- (void).cxx_destruct;
 - (void)_alignYAxesForSeries:(id)arg1;
 - (void)graphViewDidTapYAxis:(id)arg1;
 - (void)graphView:(id)arg1 didUpdateLegendViewsWithTopLegendFrame:(struct CGRect)arg2;

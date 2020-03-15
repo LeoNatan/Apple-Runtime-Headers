@@ -13,8 +13,8 @@
     NSString *_purchaseIdentifier;
 }
 
-@property(copy, nonatomic) NSString *purchaseIdentifier; // @synthesize purchaseIdentifier=_purchaseIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *purchaseIdentifier; // @synthesize purchaseIdentifier=_purchaseIdentifier;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)initWithPurchaseIdentifier:(id)arg1;
 

@@ -48,6 +48,7 @@
     struct CGPoint _previousPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL paused; // @synthesize paused=_paused;
 @property(nonatomic) struct CGPoint previousPoint; // @synthesize previousPoint=_previousPoint;
 @property(retain, nonatomic) UILongPressGestureRecognizer *scrubGesture; // @synthesize scrubGesture=_scrubGesture;
@@ -78,7 +79,6 @@
 @property(nonatomic) BOOL scrubbingEnabled; // @synthesize scrubbingEnabled=_scrubbingEnabled;
 @property(nonatomic) BOOL shouldShowLoadingIndicator; // @synthesize shouldShowLoadingIndicator=_shouldShowLoadingIndicator;
 @property(readonly, nonatomic) SXImageResource *imageResource; // @synthesize imageResource=_imageResource;
-- (void).cxx_destruct;
 - (BOOL)accessibilityIgnoresInvertColors;
 - (BOOL)isAccessibilityElement;
 - (id)stringForAXDragAction;

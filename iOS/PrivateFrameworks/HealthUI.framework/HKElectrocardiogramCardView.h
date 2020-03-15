@@ -41,6 +41,7 @@
 + (id)_averageHeartRateSymptomsTextStyle;
 + (id)_accessibilityContentSizeCategory;
 + (double)estimatedHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
 @property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *heartImageViewHeightConstraint; // @synthesize heartImageViewHeightConstraint=_heartImageViewHeightConstraint;
@@ -57,7 +58,6 @@
 @property(nonatomic, getter=isOnboarding) _Bool onboarding; // @synthesize onboarding=_onboarding;
 @property(nonatomic) __weak HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(retain, nonatomic) HKElectrocardiogram *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (id)_graphBackgroundColor;
 - (id)_cardBackgroundColor;
 - (id)_chevronColor;

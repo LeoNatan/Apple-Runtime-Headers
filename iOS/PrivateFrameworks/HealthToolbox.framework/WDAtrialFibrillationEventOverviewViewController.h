@@ -34,6 +34,7 @@
     long long _totalSampleCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long totalSampleCount; // @synthesize totalSampleCount=_totalSampleCount;
 @property(nonatomic) long long visibleSampleCount; // @synthesize visibleSampleCount=_visibleSampleCount;
 @property(retain, nonatomic) NSDate *latestAnalyzedSampleDate; // @synthesize latestAnalyzedSampleDate=_latestAnalyzedSampleDate;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) HROnboardingManager *onboardingManager; // @synthesize onboardingManager=_onboardingManager;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
-- (void).cxx_destruct;
 - (void)isFavorited:(_Bool)arg1;
 - (void)didDismissOnboarding;
 - (void)didCompleteOnboarding;

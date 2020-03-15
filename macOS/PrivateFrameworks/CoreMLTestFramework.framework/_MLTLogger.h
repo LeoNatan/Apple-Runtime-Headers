@@ -16,10 +16,10 @@
     NSObject<OS_os_log> *_loggingChannel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *loggingChannel; // @synthesize loggingChannel=_loggingChannel;
 @property BOOL loggingToFile; // @synthesize loggingToFile=_loggingToFile;
 @property(retain) NSFileHandle *logFileHandle; // @synthesize logFileHandle=_logFileHandle;
-- (void).cxx_destruct;
 - (void)log:(id)arg1;
 - (id)initWithFile:(id)arg1 error:(id *)arg2;
 - (id)init:(id *)arg1;

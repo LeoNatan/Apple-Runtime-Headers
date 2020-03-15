@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     struct CGRect _normalizedRoutePickerViewRectInWindow;
 }
 
-@property(nonatomic) struct CGRect normalizedRoutePickerViewRectInWindow; // @synthesize normalizedRoutePickerViewRectInWindow=_normalizedRoutePickerViewRectInWindow;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGRect normalizedRoutePickerViewRectInWindow; // @synthesize normalizedRoutePickerViewRectInWindow=_normalizedRoutePickerViewRectInWindow;
 - (struct CGRect)_popoverSourceRectFromNormalizedRect:(struct CGRect)arg1 inBounds:(struct CGRect)arg2;
 - (void)routePickerRemoteViewController:(id)arg1 viewBridgeConnectionDidFailWithError:(id)arg2;
 - (void)popoverDidClose:(id)arg1;

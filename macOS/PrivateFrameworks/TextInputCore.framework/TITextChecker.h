@@ -14,8 +14,8 @@
 }
 
 + (id)_UITextCheckerWithAsynchronousLoading:(BOOL)arg1;
-@property(readonly, nonatomic) id <_TIUITextChecking> checker; // @synthesize checker=_checker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <_TIUITextChecking> checker; // @synthesize checker=_checker;
 - (struct _NSRange)checkSpellingOfString:(id)arg1 startingAt:(long long)arg2 language:(id)arg3 wrap:(BOOL)arg4 correction:(id *)arg5;
 - (BOOL)doneLoading;
 - (id)initWithAsynchronousLoading:(BOOL)arg1;

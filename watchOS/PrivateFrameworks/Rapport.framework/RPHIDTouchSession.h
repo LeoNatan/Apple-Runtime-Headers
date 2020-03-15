@@ -18,10 +18,10 @@
     struct CGSize _screenSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize screenSize; // @synthesize screenSize=_screenSize;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
-- (void).cxx_destruct;
 - (void)sendTouchEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_invalidate;
 - (void)invalidate;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) VNRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

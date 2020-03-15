@@ -14,9 +14,9 @@
     unsigned long long _meaning;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long meaning; // @synthesize meaning=_meaning;
 @property(readonly) id <PGGraphMeaningfulEvent> meaningfulEvent; // @synthesize meaningfulEvent=_meaningfulEvent;
-- (void).cxx_destruct;
 - (id)initWithCategory:(unsigned long long)arg1 meaningfulEvent:(id)arg2 meaning:(unsigned long long)arg3 controller:(id)arg4;
 
 @end

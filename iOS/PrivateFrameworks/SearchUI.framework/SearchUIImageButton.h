@@ -14,9 +14,9 @@
     SearchUIImage *_selectedImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUIImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain, nonatomic) SearchUIImage *unselectedImage; // @synthesize unselectedImage=_unselectedImage;
-- (void).cxx_destruct;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;

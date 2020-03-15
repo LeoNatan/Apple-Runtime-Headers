@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_documentOptions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *documentOptions; // @synthesize documentOptions=_documentOptions;
 @property(nonatomic) _Bool forcesDefaultAttributes; // @synthesize forcesDefaultAttributes=_forcesDefaultAttributes;
 @property(retain, nonatomic) NSArray *supportedPasteConfigurationClasses; // @synthesize supportedPasteConfigurationClasses=_supportedPasteConfigurationClasses;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
 @property(retain, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 - (void)setDefaultResult;
 - (void)setNoResult;
 - (void)setAttachmentResult:(id)arg1;

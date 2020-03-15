@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CNFoundationUserDefaults *_foundationUserDefaults;
 }
 
-@property(retain) CNFoundationUserDefaults *foundationUserDefaults; // @synthesize foundationUserDefaults=_foundationUserDefaults;
 - (void).cxx_destruct;
+@property(retain) CNFoundationUserDefaults *foundationUserDefaults; // @synthesize foundationUserDefaults=_foundationUserDefaults;
 - (void)setFilteredGroupAndContainerIDs:(id)arg1;
 - (id)filteredGroupAndContainerIDs;
 - (void)setShortNameFormatPrefersNicknames:(_Bool)arg1;

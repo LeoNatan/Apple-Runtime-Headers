@@ -17,9 +17,9 @@
     NSDateInterval *_dateInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLSLocationOfInterestVisit *visit; // @synthesize visit=_visit;
 @property(readonly, nonatomic) CLSBusinessItem *businessItem; // @synthesize businessItem=_businessItem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long venueCapacity;
 @property(readonly, nonatomic) double routineVisitConfidence;
 @property(readonly, nonatomic) BOOL hasRoutineVisit;

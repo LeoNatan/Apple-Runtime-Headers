@@ -8,13 +8,11 @@
 
 @interface FCPublisherPremiumFeature : FCPersonalizationFeature
 {
-    _Bool _premium;
 }
 
-@property(nonatomic) _Bool premium; // @synthesize premium=_premium;
 - (id)fr_description;
 - (id)initWithPersonalizationIdentifier:(id)arg1;
-- (id)initWithTagID:(id)arg1 premium:(_Bool)arg2;
+- (id)initWithTagID:(id)arg1;
 - (id)init;
 
 @end

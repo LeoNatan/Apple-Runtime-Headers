@@ -21,12 +21,12 @@
     NSMutableDictionary *_barButtonItemCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *barButtonItemCache; // @synthesize barButtonItemCache=_barButtonItemCache;
 @property(retain, nonatomic) PXBarSpec *barSpec; // @synthesize barSpec=_barSpec;
 @property(nonatomic) _Bool wantsAnimatedBarsUpdate; // @synthesize wantsAnimatedBarsUpdate=_wantsAnimatedBarsUpdate;
 @property(nonatomic) __weak id <PXActionPerformerDelegate> actionPerformerDelegate; // @synthesize actionPerformerDelegate=_actionPerformerDelegate;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)invalidateBarButtonItemWithIdentifier:(id)arg1;
 - (id)barButtonItemForIdentifier:(id)arg1;
 - (id)_getCachedOrCreateNewBarButtonItemForIdentifier:(id)arg1;

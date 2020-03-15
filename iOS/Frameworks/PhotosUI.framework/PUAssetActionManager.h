@@ -17,8 +17,8 @@
 + (id)actionManagerLog;
 + (CDUnknownBlockType)_unlockDeviceHandler;
 + (void)setUnlockDeviceHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <PUAssetActionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUAssetActionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)shouldEnableActionType:(unsigned long long)arg1 onAllAssetsByAssetCollection:(id)arg2;
 - (_Bool)canPerformAction:(unsigned long long)arg1 onAllAssetReferences:(id)arg2;
 - (_Bool)canPerformAction:(unsigned long long)arg1 onAllAssetsByAssetCollection:(id)arg2;

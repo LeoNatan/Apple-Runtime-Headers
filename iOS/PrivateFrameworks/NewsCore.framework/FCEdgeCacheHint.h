@@ -26,9 +26,9 @@
 + (id)edgeCacheHintForTrending;
 + (id)edgeCacheHintForBreaking;
 + (id)edgeCacheHintForTopStories;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *cacheControlKey; // @synthesize cacheControlKey=_cacheControlKey;
 @property(readonly, copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithGroupName:(id)arg1 cacheControlKey:(id)arg2;
 

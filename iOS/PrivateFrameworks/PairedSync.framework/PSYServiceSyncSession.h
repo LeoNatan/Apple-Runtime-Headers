@@ -23,6 +23,7 @@
     id <PSYServiceSyncSessionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isComplete) _Bool complete; // @synthesize complete=_complete;
 @property(nonatomic) __weak id <PSYServiceSyncSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long syncSessionType; // @synthesize syncSessionType=_syncSessionType;
@@ -30,7 +31,6 @@
 @property(nonatomic) __weak PSYSyncCoordinator *syncCoordinator; // @synthesize syncCoordinator=_syncCoordinator;
 @property(retain, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(retain, nonatomic) NRDevice *pairedDevice; // @synthesize pairedDevice=_pairedDevice;
-- (void).cxx_destruct;
 - (void)reportProgress:(double)arg1;
 - (void)syncDidFailWithError:(id)arg1;
 - (void)syncDidComplete;

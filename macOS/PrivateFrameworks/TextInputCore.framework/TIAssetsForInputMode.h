@@ -14,8 +14,8 @@
     NSString *_inputMode;
 }
 
-@property(readonly, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
 - (id)assetContentItemsMatching:(id)arg1;
 - (void)removeAllInputModeLevels;
 - (void)addAssetsForInputModeLevel:(id)arg1;

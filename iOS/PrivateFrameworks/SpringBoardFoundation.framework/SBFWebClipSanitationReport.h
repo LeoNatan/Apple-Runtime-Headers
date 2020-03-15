@@ -15,10 +15,10 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) long long result; // @synthesize result=_result;
 @property(readonly, nonatomic) UIWebClip *webClip; // @synthesize webClip=_webClip;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithWebClip:(id)arg1 result:(long long)arg2 error:(id)arg3;
 

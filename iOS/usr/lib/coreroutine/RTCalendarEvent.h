@@ -23,6 +23,7 @@
 
 + (id)eventAvailabilityToString:(long long)arg1;
 + (id)participantStatusToString:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *locationMapItemHandle; // @synthesize locationMapItemHandle=_locationMapItemHandle;
 @property(readonly, nonatomic) NSString *locationTitle; // @synthesize locationTitle=_locationTitle;
 @property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic, getter=isAllDay) _Bool allDay; // @synthesize allDay=_allDay;
 @property(readonly, nonatomic) NSString *eventIdentifier; // @synthesize eventIdentifier=_eventIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithEventIdentifier:(id)arg1 allDay:(_Bool)arg2 startDate:(id)arg3 endDate:(id)arg4 participantStatus:(unsigned long long)arg5 availability:(long long)arg6 location:(id)arg7 locationTitle:(id)arg8 locationMapItemHandle:(id)arg9;
 - (id)init;

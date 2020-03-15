@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeRemainingColor; // @synthesize timeRemainingColor=_timeRemainingColor;
 @property(readonly, nonatomic) double timeRemaining; // @synthesize timeRemaining=_timeRemaining;
 @property(readonly, copy, nonatomic) NSMeasurement *distanceRemaining; // @synthesize distanceRemaining=_distanceRemaining;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

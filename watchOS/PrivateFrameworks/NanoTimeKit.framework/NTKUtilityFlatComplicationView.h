@@ -26,10 +26,10 @@
 
 + (void)circleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 interior:(_Bool *)arg4 forPlacement:(unsigned int)arg5 forDevice:(id)arg6;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float textWidthInRadians; // @synthesize textWidthInRadians=_textWidthInRadians;
 @property(nonatomic) __weak id <NTKUtilityFlatComplicationViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;

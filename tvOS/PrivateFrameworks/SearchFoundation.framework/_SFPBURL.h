@@ -16,8 +16,8 @@
     NSString *_address;
 }
 
-@property(copy, nonatomic) NSString *address; // @synthesize address=_address;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *address; // @synthesize address=_address;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

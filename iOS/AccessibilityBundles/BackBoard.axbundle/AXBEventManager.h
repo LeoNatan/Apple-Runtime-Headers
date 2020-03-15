@@ -19,8 +19,8 @@
 }
 
 + (id)sharedManager;
-@property(nonatomic) _Bool homeIsDown; // @synthesize homeIsDown=_homeIsDown;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool homeIsDown; // @synthesize homeIsDown=_homeIsDown;
 - (unsigned int)machPortForPoint:(struct CGPoint)arg1;
 - (unsigned int)contextIdForPosition:(struct CGPoint)arg1 displayId:(unsigned int)arg2;
 - (unsigned int)clientPortForContextId:(unsigned int)arg1;

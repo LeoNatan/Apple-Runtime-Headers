@@ -16,10 +16,10 @@
 }
 
 + (id)bulletinUpdateWithType:(unsigned long long)arg1 bulletin:(id)arg2 feed:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long feed; // @synthesize feed=_feed;
 @property(retain, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(nonatomic) unsigned long long updateType; // @synthesize updateType=_updateType;
-- (void).cxx_destruct;
 
 @end
 

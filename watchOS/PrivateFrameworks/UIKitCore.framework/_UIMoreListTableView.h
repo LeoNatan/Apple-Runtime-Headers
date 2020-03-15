@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIMoreListController *__listController;
 }
 
-@property(nonatomic) __weak UIMoreListController *_listController; // @synthesize _listController=__listController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIMoreListController *_listController; // @synthesize _listController=__listController;
 - (void)didMoveToWindow;
 
 @end

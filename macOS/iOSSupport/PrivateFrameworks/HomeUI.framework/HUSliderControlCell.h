@@ -14,9 +14,9 @@
     NSArray *_sliderConstraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *sliderConstraints; // @synthesize sliderConstraints=_sliderConstraints;
 @property(retain, nonatomic) HUSimpleSliderControlView *sliderView; // @synthesize sliderView=_sliderView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)_updateSliderConstraints;
 - (id)allControlViews;

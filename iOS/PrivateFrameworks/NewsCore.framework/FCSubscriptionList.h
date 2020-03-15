@@ -35,6 +35,7 @@
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
 + (id)desiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCMTWriterLock *itemsLock; // @synthesize itemsLock=_itemsLock;
 @property(retain, nonatomic) NSMutableDictionary *mutableSubscriptionsBySubscriptionID; // @synthesize mutableSubscriptionsBySubscriptionID=_mutableSubscriptionsBySubscriptionID;
 @property(retain, nonatomic) id <FCTagRanking> subscribedTagRanker; // @synthesize subscribedTagRanker=_subscribedTagRanker;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSSet *mutedTagIDs; // @synthesize mutedTagIDs=_mutedTagIDs;
 @property(copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;
 @property(copy, nonatomic) NSOrderedSet *orderedSubscribedTagIDs; // @synthesize orderedSubscribedTagIDs=_orderedSubscribedTagIDs;
-- (void).cxx_destruct;
 - (unsigned long long)_preferredZoneForSubscriptionType:(unsigned long long)arg1;
 - (id)t_reconcileSubscriptions:(id)arg1;
 - (id)_reconcileSubscriptions:(id)arg1;

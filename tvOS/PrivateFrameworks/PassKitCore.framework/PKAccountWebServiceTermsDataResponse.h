@@ -14,9 +14,9 @@
     NSString *_termsDataFileName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *termsDataFileName; // @synthesize termsDataFileName=_termsDataFileName;
 @property(retain, nonatomic) NSData *termsData; // @synthesize termsData=_termsData;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

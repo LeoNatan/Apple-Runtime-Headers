@@ -11,6 +11,9 @@
 }
 
 + (id)sharedInstance;
+- (void)_startObservingSystemControllerLifecycle;
+- (void)_systemControllerDied:(id)arg1;
+- (void)_startObservingSpeechDetectionVADPresence;
 - (_Bool)isPresent;
 - (void)handleSpeechDetectionVADPresentChange:(id)arg1;
 - (void)_stopMonitoring;

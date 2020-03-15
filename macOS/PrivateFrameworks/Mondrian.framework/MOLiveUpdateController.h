@@ -25,8 +25,8 @@
 }
 
 + (void)notifyUserActionsInProgress;
-@property(readonly) __weak id <MOLiveUpdateControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <MOLiveUpdateControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cancelAllUpdates;
 - (void)performUpdateAfterDelay:(double)arg1;
 - (void)performUpdateNow;

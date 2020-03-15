@@ -25,6 +25,7 @@
     id _future[4];
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AMWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
 @property(retain) NSMutableArray *actionViewControllers; // @synthesize actionViewControllers=_actionViewControllers;
 @property(retain) NSArray *draggedActionViews; // @synthesize draggedActionViews=_draggedActionViews;
@@ -32,7 +33,6 @@
 @property struct __AMWorkflowViewFlags flags; // @synthesize flags=_flags;
 @property unsigned long long draggingIndex; // @synthesize draggingIndex=_draggingIndex;
 @property(copy) NSString *messageString; // @synthesize messageString=_messageString;
-- (void).cxx_destruct;
 - (void)restoreStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)_clearHeaderView;

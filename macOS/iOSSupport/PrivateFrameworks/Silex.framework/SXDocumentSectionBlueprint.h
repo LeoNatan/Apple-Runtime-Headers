@@ -16,8 +16,8 @@
 }
 
 + (id)blueprintWithItems:(id)arg1;
-@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,8 +13,8 @@
     CoreDAVLeafItem *_attendee;
 }
 
-@property(retain, nonatomic) CoreDAVLeafItem *attendee; // @synthesize attendee=_attendee;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CoreDAVLeafItem *attendee; // @synthesize attendee=_attendee;
 - (id)copyParseRules;
 
 @end

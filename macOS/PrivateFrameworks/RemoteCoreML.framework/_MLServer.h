@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_q;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *q; // @synthesize q=_q;
 @property(copy, nonatomic) CDUnknownBlockType textFunction; // @synthesize textFunction=_textFunction;
 @property(copy, nonatomic) CDUnknownBlockType unLoadFunction; // @synthesize unLoadFunction=_unLoadFunction;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) _MLNetworkPacket *packet; // @synthesize packet=_packet;
 @property(readonly, nonatomic) _MLNetworkOptions *nwOptions; // @synthesize nwOptions=_nwOptions;
 @property(readonly, nonatomic) _MLNetworking *nwObj; // @synthesize nwObj=_nwObj;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (void)setTextCommand:(CDUnknownBlockType)arg1;

@@ -16,11 +16,11 @@
     TVTopShelfContentExtensionDelegateFlags *_delegateFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPrivateEntitlement; // @synthesize hasPrivateEntitlement=_hasPrivateEntitlement;
 @property(nonatomic) _Bool canPerformPrivateActions; // @synthesize canPerformPrivateActions=_canPerformPrivateActions;
 @property(nonatomic) _Bool canReceiveMetrics; // @synthesize canReceiveMetrics=_canReceiveMetrics;
 @property(retain, nonatomic) TVTopShelfContentExtensionDelegateFlags *delegateFlags; // @synthesize delegateFlags=_delegateFlags;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

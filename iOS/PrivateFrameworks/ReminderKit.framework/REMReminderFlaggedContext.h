@@ -13,8 +13,8 @@
     REMReminder *_reminder;
 }
 
-@property(retain, nonatomic) REMReminder *reminder; // @synthesize reminder=_reminder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMReminder *reminder; // @synthesize reminder=_reminder;
 @property(readonly, nonatomic) long long flagged;
 - (id)initWithReminder:(id)arg1;
 

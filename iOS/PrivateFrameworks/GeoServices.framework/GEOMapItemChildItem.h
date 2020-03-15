@@ -15,10 +15,10 @@
     GEOMapItemChildAction *_childItemAction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOMapItemChildAction *childItemAction; // @synthesize childItemAction=_childItemAction;
 @property(retain, nonatomic) GEOMapItemChildPlace *childItemPlace; // @synthesize childItemPlace=_childItemPlace;
 @property(nonatomic) long long childItemType; // @synthesize childItemType=_childItemType;
-- (void).cxx_destruct;
 - (id)initWithChildPlace:(id)arg1;
 - (id)initWithChildItem:(id)arg1;
 

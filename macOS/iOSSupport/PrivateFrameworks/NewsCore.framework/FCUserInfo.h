@@ -32,11 +32,11 @@
 + (id)userInfoCKRecordFromUserInfoDictionary:(id)arg1;
 + (id)iCloudDataKeys;
 + (id)desiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCMTWriterLock *userInfoLock; // @synthesize userInfoLock=_userInfoLock;
 @property(retain, nonatomic) NSDictionary *readOnlyUserInfo; // @synthesize readOnlyUserInfo=_readOnlyUserInfo;
 @property(readonly, nonatomic) BOOL useParsecResults; // @synthesize useParsecResults=_useParsecResults;
 @property(retain, nonatomic) FCTagSettings *tagSettings; // @synthesize tagSettings=_tagSettings;
-- (void).cxx_destruct;
 - (id)_userInfoValueForKey:(id)arg1;
 - (void)_modifyUserInfoWithBlock:(CDUnknownBlockType)arg1;
 - (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2;

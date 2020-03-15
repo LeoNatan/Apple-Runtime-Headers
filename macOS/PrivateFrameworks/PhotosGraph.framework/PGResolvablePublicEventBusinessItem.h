@@ -15,10 +15,10 @@
     unsigned long long _businessItemMuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long businessItemMuid; // @synthesize businessItemMuid=_businessItemMuid;
 @property(readonly, nonatomic) PGConsolidatedAddress *consolidatedAddress; // @synthesize consolidatedAddress=_consolidatedAddress;
 @property(readonly, nonatomic) PGGraphPublicEventNode *publicEventNode; // @synthesize publicEventNode=_publicEventNode;
-- (void).cxx_destruct;
 - (id)initWithPublicEventNode:(id)arg1 consolidatedAddress:(id)arg2 businessItemMuid:(unsigned long long)arg3;
 
 @end

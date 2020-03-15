@@ -17,10 +17,10 @@
 
 + (id)descriptionForStatus:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double downloadPercentComplete; // @synthesize downloadPercentComplete=_downloadPercentComplete;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *productKey; // @synthesize productKey=_productKey;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)eventListenerForNotificationName:(id)arg1 object:(id)arg2;
 + (id)eventListenerForNotificationName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) __weak id notificationObject; // @synthesize notificationObject=_notificationObject;
 @property(readonly, copy) NSString *notificationName; // @synthesize notificationName=_notificationName;
 @property(readonly, nonatomic) NSString *registeredNotificationName; // @synthesize registeredNotificationName=_registeredNotificationName;
-- (void).cxx_destruct;
 - (void)willReset;
 - (void)willStopListening;
 - (void)willStartListening;

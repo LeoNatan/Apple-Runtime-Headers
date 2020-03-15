@@ -14,8 +14,8 @@
 }
 
 + (id)objectWithClassName:(id)arg1 objectType:(id)arg2;
-@property(readonly, nonatomic) id backingObject; // @synthesize backingObject=_backingObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id backingObject; // @synthesize backingObject=_backingObject;
 - (id)_backingObjectForJSValue:(id)arg1;
 - (void)_logErrorLog:(id)arg1;
 - (id)backingObjectValueForKey:(id)arg1;

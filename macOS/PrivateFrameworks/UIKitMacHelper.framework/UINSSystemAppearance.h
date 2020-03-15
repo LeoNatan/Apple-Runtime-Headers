@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     id _encodedDarkKeyboardFocusIndicatorColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL accessibilityIsZoomEnabled; // @synthesize accessibilityIsZoomEnabled=_accessibilityIsZoomEnabled;
 @property(readonly, nonatomic) BOOL accessibilityIsSwitchControlEnabled; // @synthesize accessibilityIsSwitchControlEnabled=_accessibilityIsSwitchControlEnabled;
 @property(readonly, nonatomic) BOOL accessibilityIsVoiceOverEnabled; // @synthesize accessibilityIsVoiceOverEnabled=_accessibilityIsVoiceOverEnabled;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id encodedUnemphasizedTextHighlightColor; // @synthesize encodedUnemphasizedTextHighlightColor=_encodedUnemphasizedTextHighlightColor;
 @property(readonly, nonatomic) id encodedDarkTextHighlightColor; // @synthesize encodedDarkTextHighlightColor=_encodedDarkTextHighlightColor;
 @property(readonly, nonatomic) id encodedTextHighlightColor; // @synthesize encodedTextHighlightColor=_encodedTextHighlightColor;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long scrollBarClickBehavior;
 @property(readonly, nonatomic) unsigned long long scrollerStyle;

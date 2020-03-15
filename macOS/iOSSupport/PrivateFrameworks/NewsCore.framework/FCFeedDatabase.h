@@ -33,6 +33,7 @@
 + (unsigned short)currentFeedDatabaseVersion;
 + (id)temporaryFeedDatabaseWithEndpoint:(long long)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCOperationThrottler> saveThrottler; // @synthesize saveThrottler=_saveThrottler;
 @property(retain, nonatomic) NSMutableSet *modifiedFeedIDs; // @synthesize modifiedFeedIDs=_modifiedFeedIDs;
 @property(nonatomic) int nextFeedLookupID; // @synthesize nextFeedLookupID=_nextFeedLookupID;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) long long endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) long long usage; // @synthesize usage=_usage;
 @property(readonly, copy, nonatomic) NSURL *parentDirectoryURL; // @synthesize parentDirectoryURL=_parentDirectoryURL;
-- (void).cxx_destruct;
 - (void)d_sanityCheckFeed:(id)arg1;
 - (id)_feedItemsForLookups:(id)arg1 withFeedsByID:(id)arg2 boundedByCount:(unsigned long long)arg3;
 - (id)_serviceLookup:(id)arg1 withFeed:(id)arg2 feedItems:(id)arg3;

@@ -13,8 +13,8 @@
     id <IMKCandidateMenu> _candidateMenu;
 }
 
-@property(readonly, nonatomic) id <IMKCandidateMenu> candidateMenu; // @synthesize candidateMenu=_candidateMenu;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <IMKCandidateMenu> candidateMenu; // @synthesize candidateMenu=_candidateMenu;
 - (id)initWithCandidateMenu:(id)arg1;
 - (id)init;
 

@@ -34,6 +34,7 @@
 + (struct UIEdgeInsets)_inputButtonCircleSpacing;
 + (struct CGSize)_inputButtonCircleSize;
 + (id)_buttonForCharacter:(unsigned int)arg1 withLightStyle:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *reduceTransparencyButtonColor; // @synthesize reduceTransparencyButtonColor=_reduceTransparencyButtonColor;
 @property(readonly, nonatomic) SBUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) SBUIButton *backspaceButton; // @synthesize backspaceButton=_backspaceButton;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool showsEmergencyCallButton; // @synthesize showsEmergencyCallButton=_showsEmergencyCallButton;
 @property(nonatomic) _Bool showsBackspaceButton; // @synthesize showsBackspaceButton=_showsBackspaceButton;
 @property(nonatomic) __weak id <SBUIPasscodeLockNumberPadDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_emergencyCallButtonHit;
 - (void)_backspaceButtonHit;
 - (void)_cancelButtonHit;

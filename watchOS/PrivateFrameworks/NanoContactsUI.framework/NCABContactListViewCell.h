@@ -19,10 +19,10 @@
     NSMutableDictionary *_attributedNameCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *attributedNameCache; // @synthesize attributedNameCache=_attributedNameCache;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)_contentSizeChanged:(id)arg1;
 - (id)_attributedName;
 - (id)_defaultAttributes;

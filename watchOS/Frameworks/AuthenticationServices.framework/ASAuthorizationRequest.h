@@ -18,8 +18,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
-@property(readonly, nonatomic) id <ASAuthorizationProvider> provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <ASAuthorizationProvider> provider; // @synthesize provider=_provider;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

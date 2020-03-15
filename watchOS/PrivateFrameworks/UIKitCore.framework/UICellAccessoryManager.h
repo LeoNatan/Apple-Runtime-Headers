@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
 @property(retain, nonatomic) UICellAccessoryConfiguration *previousConfiguration; // @synthesize previousConfiguration=_previousConfiguration;
 @property(nonatomic) struct CGSize previousContainerSize; // @synthesize previousContainerSize=_previousContainerSize;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <UICellAccessoryLayout> leadingLayout; // @synthesize leadingLayout=_leadingLayout;
 @property(nonatomic) float minimumCompressionLayoutWidth; // @synthesize minimumCompressionLayoutWidth=_minimumCompressionLayoutWidth;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
-- (void).cxx_destruct;
 - (id)description;
 - (void)performWithEnforcedContainerSize:(struct CGSize)arg1 block:(CDUnknownBlockType)arg2;
 - (struct CGRect)containerBounds;

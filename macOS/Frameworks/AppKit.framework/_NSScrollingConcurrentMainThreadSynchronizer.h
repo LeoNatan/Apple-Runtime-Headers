@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
     struct CGPoint _lastSetOrigin;
 }
 
-@property(nonatomic) __weak NSScrollingBehaviorConcurrentVBL *scrollingBehavior; // @synthesize scrollingBehavior=_scrollingBehavior;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSScrollingBehaviorConcurrentVBL *scrollingBehavior; // @synthesize scrollingBehavior=_scrollingBehavior;
 - (void)scrollView:(id)arg1 boundsChangedForClipView:(id)arg2;
 - (void)_synchronize:(unsigned long long)arg1 preCommitHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_doIdlePrefetch;

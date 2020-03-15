@@ -18,10 +18,10 @@
     id <SVVideoImpressionTracking> _impressionTracker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoImpressionTracking> impressionTracker; // @synthesize impressionTracker=_impressionTracker;
 @property(readonly, nonatomic) id <SVVideoEventTrackerProviding> eventTrackerProvider; // @synthesize eventTrackerProvider=_eventTrackerProvider;
 @property(readonly, nonatomic) id <SVVideoImpressionTrackerFactory> impressionTrackerFactory; // @synthesize impressionTrackerFactory=_impressionTrackerFactory;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithImpressionTrackerFactory:(id)arg1 eventTrackerProvider:(id)arg2;
 

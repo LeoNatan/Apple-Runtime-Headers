@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)requiresEventOrReminderAccess;
 + (_Bool)requiresReminderAccess;
 + (_Bool)requiresEventAccess;
-@property(readonly, nonatomic) ClientConnection *conn; // @synthesize conn=_conn;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ClientConnection *conn; // @synthesize conn=_conn;
 - (_Bool)accessGrantedToPerformSelector:(SEL)arg1;
 - (id)initWithClientConnection:(id)arg1;
 

@@ -22,12 +22,12 @@
     PXUIWidgetFooterView *__footer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXUIWidgetFooterView *_footer; // @synthesize _footer=__footer;
 @property(readonly, nonatomic) UIButton *_button; // @synthesize _button=__button;
 @property(nonatomic) __weak id <PXActionRowTileDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long idiom; // @synthesize idiom=_idiom;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)widgetFooterView:(id)arg1 didSelectDisclosure:(id)arg2;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;
 - (void)handleButtonTap:(id)arg1 forEvent:(id)arg2;

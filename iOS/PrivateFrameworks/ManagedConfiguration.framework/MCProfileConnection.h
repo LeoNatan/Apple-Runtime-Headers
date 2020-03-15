@@ -334,6 +334,9 @@
 - (_Bool)isNotificationsModificationAllowedForBundleID:(id)arg1;
 - (_Bool)isTodayViewModificationAllowed;
 - (_Bool)isTodayViewAllowed;
+- (_Bool)isLocalStorageAllowed;
+- (_Bool)isSharedDeviceAnonymousTemporaryUserAllowed;
+- (_Bool)isSharedDeviceTemporarySessionAllowed;
 - (_Bool)isUSBRestrictedModeAllowed;
 - (void)setDriverDoNotDisturbModificationsAllowed:(_Bool)arg1;
 - (_Bool)isDriverDoNotDisturbModificationsAllowed;
@@ -376,6 +379,7 @@
 - (_Bool)isSmartPunctuationAllowed;
 - (_Bool)isAutoCorrectionAllowed;
 - (_Bool)isMusicArtistActivityAllowed;
+- (_Bool)isMusicVideoViewingAllowed;
 - (_Bool)isMusicServiceAllowed;
 - (_Bool)isScreenRecordingAllowed;
 - (_Bool)isScreenShotAllowed;
@@ -468,6 +472,8 @@
 - (_Bool)isPasswordAutoFillAllowed;
 - (_Bool)isAuthenticationBeforeAutoFillRequired;
 - (_Bool)isSafariPasswordAutoFillAllowedForURL:(id)arg1;
+- (_Bool)isDeprecatedWebKitSynchronousXHRLoadsAllowed;
+- (_Bool)isDeprecatedWebKitTLSAllowed;
 - (id)managedMedia;
 - (id)associatedDomainsForManagedApps;
 - (id)managedAppIDs;

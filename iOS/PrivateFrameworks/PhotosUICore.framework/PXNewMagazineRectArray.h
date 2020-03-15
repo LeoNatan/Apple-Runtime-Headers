@@ -19,10 +19,10 @@
     struct PXMagazineRect *_rects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct PXMagazineRect *rects; // @synthesize rects=_rects;
 @property(nonatomic) unsigned long long endingType; // @synthesize endingType=_endingType;
 @property(nonatomic) double score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (_Bool)isEqualToRectArray:(id)arg1;
 - (_Bool)nextEmptyTileX:(long long *)arg1 Y:(long long *)arg2 maxWidth:(long long *)arg3;
 - (_Bool)isGoodEnding;

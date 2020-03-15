@@ -37,8 +37,8 @@
 + (CDUnknownBlockType)smartColorCompletionBlock;
 + (CDUnknownBlockType)smartToneCompletionBlock;
 + (CDUnknownBlockType)completionBlockForAutoCalculator:(id)arg1;
-@property(retain) NUPriority *priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
+@property(retain) NUPriority *priority; // @synthesize priority=_priority;
 @property(readonly, copy) NSString *description;
 - (void)_complete:(BOOL)arg1;
 - (void)_complete;

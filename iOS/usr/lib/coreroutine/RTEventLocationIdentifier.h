@@ -17,10 +17,10 @@
     NSString *_calendarIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)normalize;
 - (long long)levenshteinDistanceToIdentifier:(id)arg1;

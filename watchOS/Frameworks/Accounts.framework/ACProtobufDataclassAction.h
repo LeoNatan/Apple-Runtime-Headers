@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)affectedContainersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *affectedContainers; // @synthesize affectedContainers=_affectedContainers;
 @property(nonatomic) _Bool destructive; // @synthesize destructive=_destructive;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

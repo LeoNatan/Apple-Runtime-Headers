@@ -20,11 +20,11 @@
 + (id)_doubleClickToApproveView;
 + (id)approvalConfirmationViewWithFrame:(struct CGRect)arg1;
 + (id)approvalConfirmationView;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *doubleClickToApproveHeightConstraint; // @synthesize doubleClickToApproveHeightConstraint=_doubleClickToApproveHeightConstraint;
 @property(readonly, nonatomic) UIStackView *callToActionStackView; // @synthesize callToActionStackView=_callToActionStackView;
 @property(readonly, nonatomic) NPKDoubleClickToApproveView *doubleClickToApproveView; // @synthesize doubleClickToApproveView=_doubleClickToApproveView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (unsigned int)_contentAlignmentForDoubleClickContentAlignment:(unsigned int)arg1;
 - (unsigned int)_doubleClickContentAlignmentForContentAlignment:(unsigned int)arg1;
 - (void)_setUpVerticalConstraints;

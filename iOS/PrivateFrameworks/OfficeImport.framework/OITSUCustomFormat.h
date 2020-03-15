@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_conditionList;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *conditionList; // @synthesize conditionList=_conditionList;
 @property(readonly, nonatomic) NSString *formatName; // @synthesize formatName=_formatName;
 @property(readonly, nonatomic) OITSUCustomFormatData *defaultFormatData; // @synthesize defaultFormatData=_defaultFormatData;
 @property(readonly, nonatomic) int formatType; // @synthesize formatType=_formatType;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *currencyCode;
 - (id)conditionalFormatDataForKey:(unsigned long long)arg1;

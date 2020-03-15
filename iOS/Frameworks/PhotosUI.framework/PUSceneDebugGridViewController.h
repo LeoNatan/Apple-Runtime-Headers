@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (CDUnknownBlockType)assetResourceLargestToSmallestComparator;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *assetsHighestConfidence; // @synthesize assetsHighestConfidence=_assetsHighestConfidence;
 @property(retain, nonatomic) NSNumber *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
-- (void).cxx_destruct;
 - (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
 - (id)assetResourceFromAcceptableAssetResources:(id)arg1;
 - (id)_localFileURLForAssetResource:(id)arg1 error:(id *)arg2;

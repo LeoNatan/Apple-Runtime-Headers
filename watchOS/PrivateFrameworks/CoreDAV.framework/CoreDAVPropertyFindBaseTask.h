@@ -14,9 +14,9 @@
     NSSet *_propertiesToFind;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVMultiStatusItem *multiStatus; // @synthesize multiStatus=_multiStatus;
 @property(retain, nonatomic) NSSet *propertiesToFind; // @synthesize propertiesToFind=_propertiesToFind;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)getTotalFailureError;
 - (void)updateMultiStatusFromResponse;

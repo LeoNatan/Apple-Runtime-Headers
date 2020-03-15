@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)typicalBarPosition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
 @property(nonatomic) BOOL deferShadowToSearchBar; // @synthesize deferShadowToSearchBar=_deferShadowToSearchBar;
 @property(retain, nonatomic) NSNumber *backIndicatorLeftMargin; // @synthesize backIndicatorLeftMargin;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL reversesShadowOffset; // @synthesize reversesShadowOffset;
 @property(copy, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes;
 @property(nonatomic) BOOL hidesShadow; // @synthesize hidesShadow;
-- (void).cxx_destruct;
 - (id)representativeImageForIdiom:(long long)arg1;
 @property(readonly, nonatomic) _UIBarButtonItemAppearanceStorage *barButtonAppearanceStorage;
 @property(readonly, nonatomic) _UIBarButtonItemAppearanceStorage *_barButtonAppearanceStorage;

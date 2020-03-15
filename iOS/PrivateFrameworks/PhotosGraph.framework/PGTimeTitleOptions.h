@@ -17,12 +17,12 @@
     NSLocale *_locale;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) _Bool filterDates; // @synthesize filterDates=_filterDates;
 @property(nonatomic) unsigned long long allowedFormats; // @synthesize allowedFormats=_allowedFormats;
 @property(retain, nonatomic) NSSet *locationNodes; // @synthesize locationNodes=_locationNodes;
 @property(retain, nonatomic) NSSet *eventNodes; // @synthesize eventNodes=_eventNodes;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

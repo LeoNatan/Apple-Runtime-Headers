@@ -20,5 +20,10 @@
 @property(readonly, nonatomic) UIColor *logoColor;
 @property(readonly, nonatomic) UIColor *numbersColor;
 @property(readonly, nonatomic) UIColor *backgroundColor;
+- (UIColor *)tritiumOutlineColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (UIColor *)tritiumFillColorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (UIColor *)colorForLogoWithStyle:(unsigned int)arg1;
+- (UIColor *)colorForNumberVictoryAnalogTimeElement:(unsigned int)arg1;
+- (UIColor *)colorForDotVictoryAnalogTimeElement:(unsigned int)arg1;
 @end
 

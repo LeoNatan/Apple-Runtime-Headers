@@ -18,10 +18,10 @@
     WFDrawerPaneCloseButton *_closeButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFDrawerPaneCloseButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(readonly, nonatomic) __weak UIView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak id <WFDrawerPaneHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)closeButtonTouchedUp:(id)arg1;
 - (id)layoutConstraints;
 - (id)initWithTitleView:(id)arg1;

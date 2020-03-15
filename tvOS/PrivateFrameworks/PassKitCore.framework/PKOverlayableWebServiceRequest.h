@@ -20,9 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresConfigurationForRedirect; // @synthesize requiresConfigurationForRedirect=_requiresConfigurationForRedirect;
 @property(nonatomic) _Bool requiresConfigurationForRetry; // @synthesize requiresConfigurationForRetry=_requiresConfigurationForRetry;
-- (void).cxx_destruct;
 - (_Bool)hasOverlayParameters;
 - (void)_updateRequestForRetry:(id)arg1 retryFields:(id)arg2 webService:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)_updateRequestForRedirect:(id)arg1 overrides:(id)arg2 webService:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;

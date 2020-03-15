@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL finishedState; // @synthesize finishedState=_finishedState;
 @property(nonatomic) BOOL handled; // @synthesize handled=_handled;
 @property(retain, nonatomic) STGenericIntentRequest *intentRequest; // @synthesize intentRequest=_intentRequest;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)addParam:(id)arg1 withValue:(id)arg2;

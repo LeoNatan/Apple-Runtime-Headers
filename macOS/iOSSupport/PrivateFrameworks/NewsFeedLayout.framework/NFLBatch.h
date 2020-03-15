@@ -15,10 +15,10 @@
     NSMutableArray *_layoutInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *layoutInfos; // @synthesize layoutInfos=_layoutInfos;
 @property(copy, nonatomic) NFLBatchContext *batchContext; // @synthesize batchContext=_batchContext;
 @property(nonatomic) double batchHeight; // @synthesize batchHeight=_batchHeight;
-- (void).cxx_destruct;
 - (void)addLayoutInfos:(id)arg1;
 - (void)addLayoutInfo:(id)arg1;
 - (id)init;

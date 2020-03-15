@@ -16,11 +16,11 @@
     ICNFIMAPFetchResult *_expectedFetchResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int expectedLength; // @synthesize expectedLength=_expectedLength;
 @property(retain, nonatomic) ICNFIMAPFetchResult *expectedFetchResult; // @synthesize expectedFetchResult=_expectedFetchResult;
 @property(retain, nonatomic) ICNFIMAPClientFetchDataItem *fetchItem; // @synthesize fetchItem=_fetchItem;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (id)newFailedFetchResponse;
 - (BOOL)matchesFetchResponse:(id)arg1;
 - (void)_setupExpectedFetchResult;

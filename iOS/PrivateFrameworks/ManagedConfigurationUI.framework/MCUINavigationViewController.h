@@ -11,8 +11,8 @@
     CDUnknownBlockType _showViewControllerCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType showViewControllerCompletionBlock; // @synthesize showViewControllerCompletionBlock=_showViewControllerCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType showViewControllerCompletionBlock; // @synthesize showViewControllerCompletionBlock=_showViewControllerCompletionBlock;
 - (void)didShowViewController:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;

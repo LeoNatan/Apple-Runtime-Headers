@@ -17,8 +17,8 @@
     _Bool _legibilityEnabled;
 }
 
-@property(nonatomic) _Bool legibilityEnabled; // @synthesize legibilityEnabled=_legibilityEnabled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool legibilityEnabled; // @synthesize legibilityEnabled=_legibilityEnabled;
 - (struct UIEdgeInsets)_contentInsetsFromFonts;
 - (void)_updateShadow;
 @property(retain, nonatomic) UIColor *shadowColor; // @dynamic shadowColor;

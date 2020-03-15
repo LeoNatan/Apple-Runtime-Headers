@@ -21,8 +21,8 @@
     id <RBClientInheritanceManagerDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <RBClientInheritanceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <RBClientInheritanceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_lock_sendQueuedInheritances;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

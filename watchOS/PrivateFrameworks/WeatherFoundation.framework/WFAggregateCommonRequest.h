@@ -16,11 +16,11 @@
     NSLocale *_locale;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) unsigned int types; // @synthesize types=_types;
 @property(readonly, nonatomic) WFLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)startWithService:(id)arg1;
 - (void)handleResponse:(id)arg1;
 - (void)handleCancellation;

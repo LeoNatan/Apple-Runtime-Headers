@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *formattedAddressLines; // @synthesize formattedAddressLines=_formattedAddressLines;
 @property(retain, nonatomic) NSString *streetName; // @synthesize streetName=_streetName;
 @property(retain, nonatomic) NSString *streetAddress; // @synthesize streetAddress=_streetAddress;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;
 @property(retain, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
 @property(retain, nonatomic) NSString *locality; // @synthesize locality=_locality;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

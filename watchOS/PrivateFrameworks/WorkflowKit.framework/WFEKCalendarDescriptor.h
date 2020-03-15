@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *calendarRGBAValue; // @synthesize calendarRGBAValue=_calendarRGBAValue;
 @property(readonly, copy, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 @property(readonly, copy, nonatomic) NSString *calendarTitle; // @synthesize calendarTitle=_calendarTitle;
 @property(readonly, nonatomic) _Bool allCalendars; // @synthesize allCalendars=_allCalendars;
-- (void).cxx_destruct;
 - (id)matchingCalendarsFromArray:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

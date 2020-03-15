@@ -16,9 +16,9 @@
     NSString *_subject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(readonly, nonatomic) NSString *recipient; // @synthesize recipient=_recipient;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *type;
 - (id)initWithRecipient:(id)arg1 subject:(id)arg2;
 

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _transitionContainerOriginalFrame;
 }
 
+- (void).cxx_destruct;
 @property double hostNavigationOffset; // @synthesize hostNavigationOffset=_hostNavigationOffset;
 @property double topNavigationOffset; // @synthesize topNavigationOffset=_topNavigationOffset;
 @property double duration; // @synthesize duration=_duration;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain) UIView *transitionContainer; // @synthesize transitionContainer=_transitionContainer;
 @property(retain) QLItem *transitionPreviewItem; // @synthesize transitionPreviewItem=_transitionPreviewItem;
 @property struct CGSize transitionPreviewSize; // @synthesize transitionPreviewSize=_transitionPreviewSize;
-- (void).cxx_destruct;
 - (void)tearDown;
 - (void)animateTransition;
 - (void)animateFinishTransition;

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)hashForObserver:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *pathString; // @synthesize pathString=_pathString;
 @property(readonly, nonatomic) NSString *observerHash; // @synthesize observerHash=_observerHash;
 @property(readonly, nonatomic) __weak id <IKJSDataObserving> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (_Bool)isAffectedByPropertyPathWithString:(id)arg1 subpathString:(id *)arg2;
 - (id)initWithObserver:(id)arg1 pathString:(id)arg2;
 

@@ -12,6 +12,7 @@
 
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)canBecomeFocused;
 - (unsigned long long)accessibilityTraits;
 - (unsigned long long)_accessibilityDatePickerComponentType;
 - (id)accessibilityLabel;

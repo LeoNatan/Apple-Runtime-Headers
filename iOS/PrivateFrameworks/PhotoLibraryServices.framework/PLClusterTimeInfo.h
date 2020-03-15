@@ -16,11 +16,11 @@
     NSDate *_latestUTCDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSDate *latestUTCDate; // @synthesize latestUTCDate=_latestUTCDate;
 @property(readonly, nonatomic) double maximumNextDayTimestamp; // @synthesize maximumNextDayTimestamp=_maximumNextDayTimestamp;
 @property(readonly, nonatomic) double endOfSameDayTimestamp; // @synthesize endOfSameDayTimestamp=_endOfSameDayTimestamp;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 - (_Bool)utcDateBelongsInCluster:(id)arg1;
 - (void)updateWithUTCDate:(id)arg1 localDate:(id)arg2;
 - (void)_updateTimestampsWithUTCDate:(id)arg1 localDate:(id)arg2;

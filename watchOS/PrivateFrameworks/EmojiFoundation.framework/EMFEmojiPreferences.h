@@ -31,8 +31,8 @@
 + (id)_recentEmojiStrings;
 + (id)_cacheDomain;
 + (id)defaultsDomain;
-@property(nonatomic) unsigned int maximumRecentsCount; // @synthesize maximumRecentsCount=_maximumRecentsCount;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int maximumRecentsCount; // @synthesize maximumRecentsCount=_maximumRecentsCount;
 - (id)typingNameForEmoji:(id)arg1;
 - (unsigned int)previouslyUsedIndexInCategory:(id)arg1;
 - (id)lastUsedVariantEmojiForEmoji:(id)arg1;

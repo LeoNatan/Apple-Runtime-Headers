@@ -40,6 +40,7 @@
     BLTSettingsServiceServer *_settingsServiceServer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLTSettingsServiceServer *settingsServiceServer; // @synthesize settingsServiceServer=_settingsServiceServer;
 @property(retain, nonatomic) BLTPingSubscriberManager *pingSubscriberManager; // @synthesize pingSubscriberManager=_pingSubscriberManager;
 @property(retain, nonatomic) BLTSectionConfiguration *sectionConfiguration; // @synthesize sectionConfiguration=_sectionConfiguration;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) BLTWatchKitAppList *watchKitAppList; // @synthesize watchKitAppList=_watchKitAppList;
 @property(retain, nonatomic) BLTSectionIdentifierMapper *sectionIdentifierMapper; // @synthesize sectionIdentifierMapper=_sectionIdentifierMapper;
 @property(nonatomic, getter=isCoordinationDisabled) _Bool coordinationDisabled; // @synthesize coordinationDisabled=_coordinationDisabled;
-- (void).cxx_destruct;
 - (_Bool)isLocallyConnectedToRemote;
 - (void)sendBulletinSummary:(id)arg1;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(CDUnknownBlockType)arg3;

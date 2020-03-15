@@ -34,6 +34,7 @@
 }
 
 + (long long)_endpointStateForServerDeliveryStatus:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *wpConnectionErrorUserInfo; // @synthesize wpConnectionErrorUserInfo=_wpConnectionErrorUserInfo;
 @property(copy, nonatomic) NSNumber *wpConnectionErrorCode; // @synthesize wpConnectionErrorCode=_wpConnectionErrorCode;
 @property(copy, nonatomic) NSString *wpConnectionErrorDomain; // @synthesize wpConnectionErrorDomain=_wpConnectionErrorDomain;
@@ -54,7 +55,6 @@
 @property(nonatomic) long long responseCode; // @synthesize responseCode=_responseCode;
 @property(copy, nonatomic) NSNumber *responseTimeStamp; // @synthesize responseTimeStamp=_responseTimeStamp;
 @property(copy, nonatomic) NSNumber *responseCommand; // @synthesize responseCommand=_responseCommand;
-- (void).cxx_destruct;
 - (id)initWithResponseCode:(long long)arg1 deviceID:(id)arg2 currentAverageRTT:(id)arg3 isDeviceBlackedOut:(id)arg4 localMessageState:(id)arg5;
 - (id)initWithResponseCode:(long long)arg1 deviceID:(id)arg2;
 - (id)initWithResponseCode:(long long)arg1 error:(id)arg2 lastCall:(_Bool)arg3;

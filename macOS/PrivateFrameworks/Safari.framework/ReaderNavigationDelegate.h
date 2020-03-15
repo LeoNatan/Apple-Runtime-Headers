@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)webView:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)_webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 userInfo:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4;
+- (void)_webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 preferences:(id)arg3 userInfo:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (id)initWithReaderViewController:(id)arg1;
 - (id)init;
 

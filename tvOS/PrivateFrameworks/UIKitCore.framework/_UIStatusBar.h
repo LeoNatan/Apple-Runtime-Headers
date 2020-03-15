@@ -40,6 +40,7 @@
 
 + (struct CGSize)intrinsicContentSizeForTargetScreen:(id)arg1 orientation:(long long)arg2 onLockScreen:(_Bool)arg3;
 + (id)stringForStatusBarStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) _UIStatusBarStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
 @property(readonly, nonatomic) _UIStatusBarData *currentAggregatedData; // @synthesize currentAggregatedData=_currentAggregatedData;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) UIScreen *targetScreen; // @synthesize targetScreen=_targetScreen;
-- (void).cxx_destruct;
 - (void)_dismissAccessibilityHUDForGestureManager:(id)arg1;
 - (void)_accessibilityHUDGestureManager:(id)arg1 showHUDItem:(id)arg2;
 - (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldTerminateHUDGestureForOtherGestureRecognizer:(id)arg2;

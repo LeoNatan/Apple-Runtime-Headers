@@ -14,9 +14,9 @@
     OBTextBulletedList *_currentBulletedList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OBTextBulletedList *currentBulletedList; // @synthesize currentBulletedList=_currentBulletedList;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (_Bool)shouldInlineButtonTray;
 - (void)addBulletedListItemWithTitle:(id)arg1 description:(id)arg2 accessoryButton:(id)arg3;
 - (void)addBulletedListItemWithTitle:(id)arg1 description:(id)arg2;

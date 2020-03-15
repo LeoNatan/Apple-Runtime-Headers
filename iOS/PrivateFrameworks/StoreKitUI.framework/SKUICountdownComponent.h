@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKUICountdown *_countdown;
 }
 
-@property(retain, nonatomic) SKUICountdown *countdown; // @synthesize countdown=_countdown;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUICountdown *countdown; // @synthesize countdown=_countdown;
 - (long long)componentType;
 - (id)initWithCustomPageContext:(id)arg1;
 

@@ -17,9 +17,9 @@
     struct CGPoint _firstBodyComponentThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint firstBodyComponentThreshold; // @synthesize firstBodyComponentThreshold=_firstBodyComponentThreshold;
 @property(retain, nonatomic) id <SXComponent> firstBodyComponent; // @synthesize firstBodyComponent=_firstBodyComponent;
-- (void).cxx_destruct;
 - (id)findFirstBodyComponentInComponents:(id)arg1;
 - (_Bool)validateMarker:(id)arg1 componentTraits:(unsigned long long)arg2 layoutProvider:(id)arg3;
 - (void)prepareWithComponents:(id)arg1 layoutProvider:(id)arg2;

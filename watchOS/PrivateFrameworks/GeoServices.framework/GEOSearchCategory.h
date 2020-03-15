@@ -21,9 +21,9 @@
 + (id)categoryForURL:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (void)sendFeedbackForVisibleCategories:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *subcategories; // @synthesize subcategories=_subcategories;
 @property(readonly, nonatomic, getter=_autocompleteEntry) GEOPDAutocompleteEntry *autocompleteEntry; // @synthesize autocompleteEntry=_autocompleteEntry;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSubCategorySameAsTopLevel) _Bool subCategorySameAsTopLevel;
 @property(readonly, nonatomic) int subCategoryType;
 @property(readonly, nonatomic) int sortOrder;

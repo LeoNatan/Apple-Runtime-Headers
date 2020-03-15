@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
     NSString *_searchPattern;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *searchPattern; // @synthesize searchPattern=_searchPattern;
 @property(readonly, nonatomic) WBSSavedPassword *savedPassword; // @synthesize savedPassword=_savedPassword;
-- (void).cxx_destruct;
 - (void)safari_copyPassword;
 - (void)safari_copyUserName;
+- (void)setSavedPassword:(id)arg1 withWarnings:(id)arg2;
+- (void)setSavedPassword:(id)arg1 searchPattern:(id)arg2 showWarningImage:(BOOL)arg3;
 - (void)setSavedPassword:(id)arg1 searchPattern:(id)arg2;
 - (void)showPlaceholderImageForDomain:(id)arg1 backgroundColor:(id)arg2;
 - (void)setIcon:(id)arg1;

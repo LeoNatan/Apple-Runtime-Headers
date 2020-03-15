@@ -14,9 +14,9 @@
     NSString *_folderIDString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *folderIDString; // @synthesize folderIDString=_folderIDString;
 @property(nonatomic) BOOL didDelete; // @synthesize didDelete=_didDelete;
-- (void).cxx_destruct;
 - (void)main;
 - (id)init;
 - (id)initWithFolderIDString:(id)arg1;

@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 + (id)domBindingControllerForDOMElement:(id)arg1;
 + (void)prepareForDOMElement:(id)arg1;
 + (id)parsedBindingForDOMElement:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long resolutionTarget; // @synthesize resolutionTarget=_resolutionTarget;
 @property(readonly, nonatomic) NSDictionary *prototypeGroupsByType; // @synthesize prototypeGroupsByType=_prototypeGroupsByType;
 @property(readonly, nonatomic) _IKDOMMutationRuleSet *mutationRuleSet; // @synthesize mutationRuleSet=_mutationRuleSet;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak IKDOMBindingController *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) __weak IKDOMElement *domElement; // @synthesize domElement=_domElement;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void)_evaluateMutationRules;
 - (void)_resolveBinding;
 - (_Bool)_canBeReused;

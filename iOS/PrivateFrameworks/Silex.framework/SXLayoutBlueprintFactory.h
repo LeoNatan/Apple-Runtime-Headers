@@ -17,9 +17,9 @@
     id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 @property(readonly, nonatomic) id <SXComponentBlueprintFactory> componentBlueprintFactory; // @synthesize componentBlueprintFactory=_componentBlueprintFactory;
-- (void).cxx_destruct;
 - (id)createLayoutBlueprintWithLayoutOptions:(id)arg1;
 - (id)initWithComponentBlueprintFactory:(id)arg1 unitConverterFactory:(id)arg2;
 

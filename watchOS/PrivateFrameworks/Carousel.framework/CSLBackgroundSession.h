@@ -16,11 +16,11 @@
     CSLBackgroundSessionAssertion *_backgroundAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBackgroundSessionAssertion *backgroundAssertion; // @synthesize backgroundAssertion=_backgroundAssertion;
 @property(retain, nonatomic) CSLPITimer *timer; // @synthesize timer=_timer;
 @property(readonly, copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(readonly, nonatomic) __weak CSLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)suspend;
 - (void)stop;
 - (void)_timedOut;

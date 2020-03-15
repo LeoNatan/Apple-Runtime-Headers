@@ -19,11 +19,11 @@
     UIView *_progressView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) UIColor *progressBackgroundColor; // @synthesize progressBackgroundColor=_progressBackgroundColor;
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (long long)accessibilityContainerType;
 - (void)actionRunningStateDidChange:(id)arg1;

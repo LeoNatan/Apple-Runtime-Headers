@@ -13,8 +13,8 @@
     id <TRSetupHandlerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TRSetupHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TRSetupHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleCompletionRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)_handleProxyAuthenticationRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)_handleProxyDeviceRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;

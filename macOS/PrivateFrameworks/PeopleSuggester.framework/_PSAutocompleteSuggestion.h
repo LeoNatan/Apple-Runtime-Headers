@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) unsigned long long resultSourceType; // @synthesize resultSourceType=_resultSourceType;
 @property(readonly, copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSArray *chatHandles; // @synthesize chatHandles=_chatHandles;
 @property(readonly, copy, nonatomic) NSString *chatGuid; // @synthesize chatGuid=_chatGuid;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

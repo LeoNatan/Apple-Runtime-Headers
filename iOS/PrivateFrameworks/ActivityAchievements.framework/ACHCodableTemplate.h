@@ -20,6 +20,7 @@
     long long _earnDateStrategy;
     long long _earnLimit;
     long long _minimumEngineVersion;
+    long long _mobileAssetVersion;
     long long _triggers;
     long long _version;
     NSString *_alertDates;
@@ -44,6 +45,7 @@
     NSString *_visibilityEndDate;
     NSString *_visibilityPredicate;
     NSString *_visibilityStartDate;
+    _Bool _availableOnPairedDevice;
     _Bool _displaysEarnedInstanceCount;
     struct {
         unsigned int createdDate:1;
@@ -54,12 +56,17 @@
         unsigned int earnDateStrategy:1;
         unsigned int earnLimit:1;
         unsigned int minimumEngineVersion:1;
+        unsigned int mobileAssetVersion:1;
         unsigned int triggers:1;
         unsigned int version:1;
+        unsigned int availableOnPairedDevice:1;
         unsigned int displaysEarnedInstanceCount:1;
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) long long mobileAssetVersion; // @synthesize mobileAssetVersion=_mobileAssetVersion;
+@property(nonatomic) _Bool availableOnPairedDevice; // @synthesize availableOnPairedDevice=_availableOnPairedDevice;
 @property(retain, nonatomic) NSString *graceGoalExpression; // @synthesize graceGoalExpression=_graceGoalExpression;
 @property(retain, nonatomic) NSString *graceProgressExpression; // @synthesize graceProgressExpression=_graceProgressExpression;
 @property(retain, nonatomic) NSString *graceValueExpression; // @synthesize graceValueExpression=_graceValueExpression;
@@ -93,7 +100,6 @@
 @property(nonatomic) long long minimumEngineVersion; // @synthesize minimumEngineVersion=_minimumEngineVersion;
 @property(nonatomic) long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *uniqueName; // @synthesize uniqueName=_uniqueName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -103,6 +109,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasMobileAssetVersion;
+@property(nonatomic) _Bool hasAvailableOnPairedDevice;
 @property(readonly, nonatomic) _Bool hasGraceGoalExpression;
 @property(readonly, nonatomic) _Bool hasGraceProgressExpression;
 @property(readonly, nonatomic) _Bool hasGraceValueExpression;

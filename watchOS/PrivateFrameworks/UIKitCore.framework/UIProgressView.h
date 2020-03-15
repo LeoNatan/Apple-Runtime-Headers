@@ -39,6 +39,7 @@
 + (void)_fillImagesForIndex:(unsigned int)arg1 style:(int)arg2 barStyle:(int)arg3;
 + (unsigned int)_indexForStyle:(int)arg1 barStyle:(int)arg2;
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *observedProgress; // @synthesize observedProgress=_observedProgress;
 @property(retain, nonatomic) UIColor *trackTintColor; // @synthesize trackTintColor=_trackTintColor;
 @property(retain, nonatomic) UIColor *progressTintColor; // @synthesize progressTintColor=_progressTintColor;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) UIImage *trackImage; // @synthesize trackImage=_trackImage;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic) int progressViewStyle; // @synthesize progressViewStyle=_progressViewStyle;
-- (void).cxx_destruct;
 - (void)_reducedTransparencyDidChange:(id)arg1;
 - (id)_effectiveContentView;
 - (void)_setProgressColor:(id)arg1;

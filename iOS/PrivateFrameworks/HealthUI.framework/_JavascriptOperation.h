@@ -14,9 +14,9 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSString *javascript; // @synthesize javascript=_javascript;
-- (void).cxx_destruct;
 - (void)submitJavascript:(id)arg1 finishBlock:(CDUnknownBlockType)arg2;
 - (id)initWithJavascript:(id)arg1 completion:(CDUnknownBlockType)arg2;
 

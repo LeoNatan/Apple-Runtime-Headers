@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     AVNavigationMarkersGroup *_navigationMarkersGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVNavigationMarkersGroup *navigationMarkersGroup; // @synthesize navigationMarkersGroup=_navigationMarkersGroup;
 @property __weak AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)initWithAsset:(id)arg1;
 
 @end

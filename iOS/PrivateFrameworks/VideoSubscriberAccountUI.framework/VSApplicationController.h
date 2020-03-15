@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     VSPreferences *_preferences;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSPreferences *preferences; // @synthesize preferences=_preferences;
 @property(nonatomic) _Bool allowUI; // @synthesize allowUI=_allowUI;
 @property(nonatomic) _Bool applicationMustSelfValidate; // @synthesize applicationMustSelfValidate=_applicationMustSelfValidate;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *accountProviderAuthenticationToken; // @synthesize accountProviderAuthenticationToken=_accountProviderAuthenticationToken;
 @property(retain, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
 @property(nonatomic) __weak id <VSApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_makeJavaScriptRequest;
 - (id)_errorForJavascriptErrorValueValue:(id)arg1 withRequest:(id)arg2;
 - (id)_javascriptRequestForRequest:(id)arg1 withVerificationData:(id)arg2;

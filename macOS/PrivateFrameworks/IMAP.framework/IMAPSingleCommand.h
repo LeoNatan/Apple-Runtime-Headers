@@ -17,11 +17,11 @@
     unsigned long long _sessionNumber;
 }
 
+- (void).cxx_destruct;
 @property BOOL isComplete; // @synthesize isComplete=_isComplete;
 @property unsigned long long sessionNumber; // @synthesize sessionNumber=_sessionNumber;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSMutableArray *untaggedResponses; // @synthesize untaggedResponses=_untaggedResponses;
-- (void).cxx_destruct;
 - (id)newCommandString;
 @property(readonly, copy) NSString *tag;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;

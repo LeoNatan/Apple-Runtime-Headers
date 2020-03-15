@@ -10,10 +10,12 @@
 @protocol SFReaderContext;
 
 @protocol _SFBrowserDocument <NSObject>
+@property(readonly, nonatomic) _Bool canHideToolbar;
 @property(readonly, nonatomic) _Bool wasLoadedWithContentBlockersEnabled;
 @property(readonly, nonatomic) NSURL *URLForPerSitePreferences;
 @property(readonly, nonatomic) id <SFReaderContext> readerContext;
 @property(readonly, nonatomic) _SFReloadOptionsController *reloadOptionsController;
+@property(readonly, nonatomic) _SFWebView *activeWebView;
 @property(readonly, nonatomic) _SFWebView *webView;
 - (void)perSiteSettingsUIPresentSettings;
 - (void)reloadEnablingContentBlockers:(_Bool)arg1;

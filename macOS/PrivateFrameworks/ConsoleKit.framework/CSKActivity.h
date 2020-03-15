@@ -19,11 +19,11 @@
 }
 
 + (id)propertyNameForFilter:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *parentActivityIdentifier; // @synthesize parentActivityIdentifier=_parentActivityIdentifier;
 @property(nonatomic) BOOL isDetached; // @synthesize isDetached=_isDetached;
 @property(readonly, copy, nonatomic) NSNumber *activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)stringDescriptionLengthForIndexer;
 - (id)stringDescriptionForIndexer;
 - (id)description;

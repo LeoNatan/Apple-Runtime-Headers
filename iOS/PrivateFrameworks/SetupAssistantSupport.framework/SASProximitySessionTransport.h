@@ -11,8 +11,8 @@
     CDUnknownBlockType _receivedDataBlock;
 }
 
-@property(copy) CDUnknownBlockType receivedDataBlock; // @synthesize receivedDataBlock=_receivedDataBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType receivedDataBlock; // @synthesize receivedDataBlock=_receivedDataBlock;
 - (void)sendData:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)activate;

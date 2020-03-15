@@ -18,10 +18,10 @@
     NSMutableDictionary *_layoutsByComponentIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *layoutsByComponentIdentifier; // @synthesize layoutsByComponentIdentifier=_layoutsByComponentIdentifier;
 @property(retain, nonatomic) NSDictionary *previousFlows; // @synthesize previousFlows=_previousFlows;
 @property(retain, nonatomic) NSMutableDictionary *flows; // @synthesize flows=_flows;
-- (void).cxx_destruct;
 - (void)storeItem:(id)arg1 forFlowName:(id)arg2;
 - (BOOL)tangierTextRepAllowsSelection:(id)arg1;
 - (id)flowLayoutForComponentIdentifier:(id)arg1;

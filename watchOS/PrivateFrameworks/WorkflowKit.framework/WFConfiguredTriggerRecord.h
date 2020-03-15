@@ -15,10 +15,10 @@
     NSData *_triggerData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool shouldPrompt; // @synthesize shouldPrompt=_shouldPrompt;
 @property(copy, nonatomic) NSData *triggerData; // @synthesize triggerData=_triggerData;
-- (void).cxx_destruct;
 
 @end
 

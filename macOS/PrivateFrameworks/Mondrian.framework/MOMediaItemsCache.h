@@ -17,9 +17,9 @@
     unsigned long long _maxCacheCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxCacheCount; // @synthesize maxCacheCount=_maxCacheCount;
 @property(nonatomic) unsigned long long minCacheCount; // @synthesize minCacheCount=_minCacheCount;
-- (void).cxx_destruct;
 - (void)removeAllMediaItems;
 - (void)removeMediaItemAtIndexPath:(id)arg1;
 - (id)mediaItemAtIndexPath:(id)arg1;

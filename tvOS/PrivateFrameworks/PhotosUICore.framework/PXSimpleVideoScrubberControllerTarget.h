@@ -19,11 +19,11 @@
     AVPlayer *_videoPlayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(copy, nonatomic) CDUnknownBlockType playerItemChangeHandler; // @synthesize playerItemChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType durationChangeHandler; // @synthesize durationChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType statusChangeHandler; // @synthesize statusChangeHandler;
-- (void).cxx_destruct;
 - (void)cancelPendingSeeks;
 - (void)videoScrubberController:(id)arg1 seekToTime:(CDStruct_1b6d18a9)arg2 toleranceBefore:(CDStruct_1b6d18a9)arg3 toleranceAfter:(CDStruct_1b6d18a9)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)addPeriodicTimeObserverForInterval:(CDStruct_1b6d18a9)arg1 queue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

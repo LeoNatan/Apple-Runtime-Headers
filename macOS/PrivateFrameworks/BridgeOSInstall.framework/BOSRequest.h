@@ -42,6 +42,7 @@
     NSUUID *_sessionUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property BOOL shouldPurge; // @synthesize shouldPurge=_shouldPurge;
 @property(retain) BridgeOSSoftwareUpdateController *customBridgeOSSoftwareUpdateController; // @synthesize customBridgeOSSoftwareUpdateController=_customBridgeOSSoftwareUpdateController;
@@ -71,7 +72,6 @@
 @property(retain) NSURL *brainBundleURL; // @synthesize brainBundleURL=_brainBundleURL;
 @property(retain) NSURL *updateBundleURL; // @synthesize updateBundleURL=_updateBundleURL;
 @property unsigned long long action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)bridgeOSSoftwareUpdateControllerOptions;
 - (void)_setPropertiesFromOptions:(id)arg1;
 - (BOOL)_parseArugments:(const char **)arg1 length:(int)arg2;

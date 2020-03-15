@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *maskImage; // @synthesize maskImage=_maskImage;
 @property(readonly, nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(readonly, nonatomic) double angle; // @synthesize angle=_angle;
 @property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

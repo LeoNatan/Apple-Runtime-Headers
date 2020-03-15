@@ -14,9 +14,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) ICSAPSession *sapSession; // @synthesize sapSession=_sapSession;
-- (void).cxx_destruct;
 - (void)_exchangeDataWithSAPContext:(id)arg1 requestContext:(id)arg2 setupURL:(id)arg3 responseData:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)execute;
 

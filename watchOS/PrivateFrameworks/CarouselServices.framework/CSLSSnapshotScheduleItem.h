@@ -31,10 +31,10 @@
 + (id)scheduleSystemItemWithDate:(id)arg1 reason:(unsigned int)arg2;
 + (id)scheduleItemWithDate:(id)arg1 uuid:(id)arg2 userInfo:(id)arg3;
 + (id)scheduleItemWithDate:(id)arg1 userInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

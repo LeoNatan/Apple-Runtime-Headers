@@ -22,8 +22,8 @@
     id <SBIdleTimerCoordinating> _idleTimerCoordinator;
 }
 
-@property(nonatomic) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
 - (void)removeIdleTimerDisabledAssertionReason:(id)arg1;
 - (void)addIdleTimerDisabledAssertionReason:(id)arg1;
 - (id)requestIdleTimerBehaviorForReason:(id)arg1;

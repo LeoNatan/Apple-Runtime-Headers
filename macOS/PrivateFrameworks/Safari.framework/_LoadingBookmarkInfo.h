@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
     struct SHA256Hash _stateHash;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct SHA256Hash stateHash; // @synthesize stateHash=_stateHash;
 @property(copy, nonatomic) NSDictionary *syncData; // @synthesize syncData=_syncData;
 @property(retain, nonatomic) WebBookmarkList *topBookmark; // @synthesize topBookmark=_topBookmark;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

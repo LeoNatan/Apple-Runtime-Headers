@@ -29,6 +29,7 @@
 
 + (id)sharedInstance;
 + (void)setAppGroupIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *originFetchItems; // @synthesize originFetchItems=_originFetchItems;
 @property(retain, nonatomic) NSString *cacheDirectory; // @synthesize cacheDirectory=_cacheDirectory;
 @property(retain, nonatomic) NSMutableDictionary *dataCacheMap; // @synthesize dataCacheMap=_dataCacheMap;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(nonatomic) _Bool backgroundOriginUpdate; // @synthesize backgroundOriginUpdate=_backgroundOriginUpdate;
 @property(nonatomic) float defaultPriority; // @synthesize defaultPriority=_defaultPriority;
-- (void).cxx_destruct;
 - (id)formattedDataWithFileURL:(id)arg1;
 - (id)formattedDataWithData:(id)arg1;
 - (void)formattedDataWithFileURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

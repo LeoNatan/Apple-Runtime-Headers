@@ -15,8 +15,8 @@
     CNSuspendableSchedulerDecorator *_scheduler;
 }
 
-@property(readonly, nonatomic) CNSuspendableSchedulerDecorator *scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNSuspendableSchedulerDecorator *scheduler; // @synthesize scheduler=_scheduler;
 - (void)resume;
 - (void)suspend;
 - (void)performSynchronousWriterBlock:(CDUnknownBlockType)arg1;

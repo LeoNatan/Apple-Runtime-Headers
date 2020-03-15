@@ -15,10 +15,10 @@
     unsigned long long _thumbnailType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long thumbnailType; // @synthesize thumbnailType=_thumbnailType;
 @property(nonatomic) __weak KHTreatment *selectedTreatment; // @synthesize selectedTreatment=_selectedTreatment;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedIndex;
 - (id)treatmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfTreatments;

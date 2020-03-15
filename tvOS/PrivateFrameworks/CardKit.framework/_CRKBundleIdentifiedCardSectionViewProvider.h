@@ -19,9 +19,9 @@
     id <CRKCardSectionViewProviding> _realCardSectionViewProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CRKCardSectionViewProviding> realCardSectionViewProvider; // @synthesize realCardSectionViewProvider=_realCardSectionViewProvider;
 @property(copy, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *viewConfigurations; // @synthesize viewConfigurations;
 @property(readonly, nonatomic) id <CRCard> card; // @synthesize card;
 - (unsigned long long)displayPriorityForCardSection:(id)arg1;

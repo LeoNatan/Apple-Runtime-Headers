@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_standardNotes;
 }
 
-@property(retain, nonatomic) NSString *standardNotes; // @synthesize standardNotes=_standardNotes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *standardNotes; // @synthesize standardNotes=_standardNotes;
 
 @end
 

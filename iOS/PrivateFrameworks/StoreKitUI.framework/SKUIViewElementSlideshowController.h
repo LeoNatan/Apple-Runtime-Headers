@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_dataConsumers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dataConsumers; // @synthesize dataConsumers=_dataConsumers;
 @property(retain, nonatomic) SKUIViewElementLayoutContext *layoutContext; // @synthesize layoutContext=_layoutContext;
 @property(nonatomic) __weak id <SKUIViewElementSlideshowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)slideshowViewControllerDidFinish:(id)arg1;
 - (id)slideshowViewController:(id)arg1 dataConsumerAtIndex:(long long)arg2;
 - (id)slideshowViewController:(id)arg1 imageURLAtIndex:(long long)arg2;

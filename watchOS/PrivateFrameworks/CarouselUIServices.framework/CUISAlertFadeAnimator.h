@@ -17,10 +17,10 @@
     double _animationDuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType willBeginHandler; // @synthesize willBeginHandler=_willBeginHandler;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
-- (void).cxx_destruct;
 - (void)animateAlertTransition:(id)arg1;
 - (double)alertTransitionDuration:(id)arg1;
 - (id)init;

@@ -40,8 +40,8 @@
 
 + (id)clientProtocolInterface;
 + (id)daemonProtocolInterface;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)_dropVoucherForTaskWithIdentifier:(id)arg1;
 - (void)_storeVoucher:(id)arg1 forTaskWithIdentifier:(id)arg2;
 - (void)_withVoucherForTaskWithIdentifier:(id)arg1 do:(CDUnknownBlockType)arg2;

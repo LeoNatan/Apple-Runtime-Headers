@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBDateTimeRange *paymentDateRange; // @synthesize paymentDateRange=_paymentDateRange;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) _INPBDateTimeRange *dueDateRange; // @synthesize dueDateRange=_dueDateRange;
 @property(nonatomic) int billType; // @synthesize billType=_billType;
 @property(retain, nonatomic) _INPBBillPayeeValue *billPayee; // @synthesize billPayee=_billPayee;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

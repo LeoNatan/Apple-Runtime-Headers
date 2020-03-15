@@ -14,9 +14,9 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BKSProcessAssertion *procAssertion; // @synthesize procAssertion=_procAssertion;
-- (void).cxx_destruct;
 - (void)invalidate;
 
 @end

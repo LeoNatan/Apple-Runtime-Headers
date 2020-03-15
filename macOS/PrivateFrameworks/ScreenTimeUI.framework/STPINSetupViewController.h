@@ -6,11 +6,11 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSURL, NSView, STPINRemoteViewController;
+@class NSTextField, NSURL, STPINRemoteViewController;
 
 @interface STPINSetupViewController : NSViewController
 {
-    NSView *_remoteControllerContainerView;
+    NSTextField *_errorField;
     CDUnknownBlockType _setupHandler;
     long long _mode;
     NSURL *_userIDRepresentation;
@@ -18,13 +18,13 @@
 }
 
 + (id)newViewControllerWithUser:(id)arg1 forMode:(long long)arg2 setupHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) STPINRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(readonly, copy) NSURL *userIDRepresentation; // @synthesize userIDRepresentation=_userIDRepresentation;
 @property(readonly) long long mode; // @synthesize mode=_mode;
 @property(readonly, copy) CDUnknownBlockType setupHandler; // @synthesize setupHandler=_setupHandler;
-@property(retain) NSView *remoteControllerContainerView; // @synthesize remoteControllerContainerView=_remoteControllerContainerView;
-- (void).cxx_destruct;
-- (void)viewDidLoad;
+@property(retain) NSTextField *errorField; // @synthesize errorField=_errorField;
+- (void)loadView;
 
 @end
 

@@ -18,9 +18,9 @@
     NSString *_suffix;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *suffix; // @synthesize suffix=_suffix;
-- (void).cxx_destruct;
 - (id)description;
 - (id)styleShouldBeProducedFrom:(CDUnknownBlockType)arg1;
 - (_Bool)styleCanBeProducedFromSize:(struct CGSize)arg1;

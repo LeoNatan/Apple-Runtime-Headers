@@ -14,8 +14,8 @@
 }
 
 + (id)sharedLogger;
-@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void)logFetchingMeError:(id)arg1;
 - (void)logFetchingFamilyCircleError:(id)arg1;
 - (void)logFailure:(id)arg1 updatingContactWhitelistByRemovingContacts:(id)arg2 ofFamilyMember:(id)arg3;

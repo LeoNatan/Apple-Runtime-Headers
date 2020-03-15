@@ -12,8 +12,8 @@
     unsigned int _badgeValue;
 }
 
-@property(nonatomic) unsigned int badgeValue; // @synthesize badgeValue=_badgeValue;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int badgeValue; // @synthesize badgeValue=_badgeValue;
 - (id)activityCreate;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)fillFromOperationInfo:(id)arg1;

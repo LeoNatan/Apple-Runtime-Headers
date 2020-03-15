@@ -27,8 +27,8 @@
     id <PKBalanceDetailsViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKBalanceDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKBalanceDetailsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)performActionViewControllerDidPerformAction:(id)arg1;
@@ -39,6 +39,9 @@
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)_numberOfBalanceDetailsRowsEnabledForRowType:(unsigned long long)arg1;
+- (long long)_numberOfBalanceDetailsRowsEnabled;
+- (unsigned long long)_balanceDetailsRowTypeForRowIndex:(long long)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (_Bool)shouldMapSection:(unsigned long long)arg1;

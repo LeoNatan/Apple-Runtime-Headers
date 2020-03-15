@@ -9,11 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface WebGeolocationPositionInternal : NSObject
 {
-    struct GeolocationPosition _position;
+    struct GeolocationPositionData _position;
 }
 
 - (id).cxx_construct;
-- (id)initWithCoreGeolocationPosition:(struct GeolocationPosition *)arg1;
+- (id)initWithCoreGeolocationPosition:(struct GeolocationPositionData *)arg1;
 
 @end
 

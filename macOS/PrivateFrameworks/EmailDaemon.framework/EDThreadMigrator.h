@@ -24,13 +24,13 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <EDThreadMigratorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) EDInMemoryThreadQueryHandler *queryHandler; // @synthesize queryHandler=_queryHandler;
 @property(readonly, nonatomic) EDThreadPersistence *threadPersistence; // @synthesize threadPersistence=_threadPersistence;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) EFLocked *state; // @synthesize state=_state;
 @property(readonly, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
-- (void).cxx_destruct;
 - (void)deleteObjectIDsToMigrate:(id)arg1;
 - (void)changeObjectIDsToMigrate:(id)arg1;
 - (void)addObjectIDsToMigrate:(id)arg1;

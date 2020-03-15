@@ -16,8 +16,8 @@
     double _circleDiameter;
 }
 
-@property(nonatomic) double circleDiameter; // @synthesize circleDiameter=_circleDiameter;
 - (void).cxx_destruct;
+@property(nonatomic) double circleDiameter; // @synthesize circleDiameter=_circleDiameter;
 - (void)pulse:(CDUnknownBlockType)arg1;
 - (void)_layoutSubviews;
 - (void)setDayLabelContent:(id)arg1;

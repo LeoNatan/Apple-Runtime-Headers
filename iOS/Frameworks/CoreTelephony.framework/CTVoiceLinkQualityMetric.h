@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSNumber *linkQuality; // @synthesize linkQuality=_linkQuality;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *linkQuality; // @synthesize linkQuality=_linkQuality;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

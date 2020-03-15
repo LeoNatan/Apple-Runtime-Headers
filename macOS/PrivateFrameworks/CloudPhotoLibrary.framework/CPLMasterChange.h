@@ -28,6 +28,7 @@
     NSString *_codec;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *codec; // @synthesize codec=_codec;
 @property(nonatomic) short videoFrameRate; // @synthesize videoFrameRate=_videoFrameRate;
 @property(nonatomic) short importedBy; // @synthesize importedBy=_importedBy;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSArray *expungeableResourceStates; // @synthesize expungeableResourceStates=_expungeableResourceStates;
 @property(copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
-- (void).cxx_destruct;
 - (BOOL)isMasterChange;
 - (BOOL)allowsToOnlyUploadNewResources;
 - (BOOL)isResourceTypeAGeneratedDerivative:(unsigned long long)arg1;

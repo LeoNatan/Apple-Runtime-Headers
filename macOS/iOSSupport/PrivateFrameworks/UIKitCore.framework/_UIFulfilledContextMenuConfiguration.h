@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     UIMenu *_actions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIMenu *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 @property(copy, nonatomic) id <NSCopying> identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isPresentable;
 
 @end

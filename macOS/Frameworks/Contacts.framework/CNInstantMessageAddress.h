@@ -25,12 +25,12 @@
 + (id)instantMessageAddressWithDictionaryRepresentation:(id)arg1;
 + (id)localizedStringForService:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(copy) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
 @property(copy) NSString *userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(copy) NSString *service; // @synthesize service=_service;
 @property(copy) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (BOOL)isValid:(id *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

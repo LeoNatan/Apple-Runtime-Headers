@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIColor *_buttonTextColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *buttonTextColor; // @synthesize buttonTextColor=_buttonTextColor;
 @property(retain, nonatomic) UIColor *mainTextColor; // @synthesize mainTextColor=_mainTextColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
-- (void).cxx_destruct;
 - (id)backgroundBlurEffects:(long long)arg1;
 - (id)initWithKeyboardAppearance:(long long)arg1;
 

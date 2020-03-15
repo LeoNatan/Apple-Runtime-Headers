@@ -18,8 +18,8 @@
     FCArticle *_article;
 }
 
-@property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
 - (id)fileURLForBundleURL:(id)arg1;
 - (id)embedForType:(id)arg1;
 - (id)translateURL:(id)arg1;

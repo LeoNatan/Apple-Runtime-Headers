@@ -67,12 +67,12 @@
 + (void)cycleToNextInputKeyboardLayout:(id)arg1;
 + (void)cycleToNextInputScript:(id)arg1;
 + (BOOL)_TIPropertyValueIsValid:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) id <NSTextInputClient> client; // @synthesize client=_client;
 @property(retain) NSBridgedTextSubstitutionController *bridgedTextSubstitutionController; // @synthesize bridgedTextSubstitutionController=_bridgedTextSubstitutionController;
 @property(retain) NSBridgedTextCorrectionController *bridgedTextCorrectionController; // @synthesize bridgedTextCorrectionController=_bridgedTextCorrectionController;
 @property(retain) NSBridgedTextTouchBarController *bridgedTextTouchBarController; // @synthesize bridgedTextTouchBarController=_bridgedTextTouchBarController;
 @property struct _NSRange tiSelectedTextRange; // @synthesize tiSelectedTextRange;
-- (void).cxx_destruct;
 - (void)doCommandBySelector:(SEL)arg1 completionHandlerWithResult:(CDUnknownBlockType)arg2;
 - (unsigned long long)incrementalSearchClientGeometry;
 - (BOOL)drawsVerticallyForCharacterAtIndex:(unsigned long long)arg1;

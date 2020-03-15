@@ -14,9 +14,9 @@
     UIButton *_startFromBeginningButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIButton *startFromBeginningButton; // @synthesize startFromBeginningButton=_startFromBeginningButton;
 @property(readonly, nonatomic) __weak UIButton *resumeButton; // @synthesize resumeButton=_resumeButton;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

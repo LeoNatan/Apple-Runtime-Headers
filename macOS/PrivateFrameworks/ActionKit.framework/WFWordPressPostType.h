@@ -18,10 +18,10 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *labels; // @synthesize labels=_labels;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

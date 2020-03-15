@@ -27,6 +27,7 @@
     NSString *_currencyCode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasValidDefaultSuggestions; // @synthesize hasValidDefaultSuggestions=_hasValidDefaultSuggestions;
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(nonatomic) long long decimalPrecision; // @synthesize decimalPrecision=_decimalPrecision;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSDecimalNumber *maxBalance; // @synthesize maxBalance=_maxBalance;
 @property(copy, nonatomic) NSDecimalNumber *minBalance; // @synthesize minBalance=_minBalance;
 @property(copy, nonatomic) NSDecimalNumber *cardBalance; // @synthesize cardBalance=_cardBalance;
-- (void).cxx_destruct;
 - (id)_generateValuesToDefaults;
 - (id)_generateDefaultSuggestions;
 - (id)_maxAmountSuggestion;

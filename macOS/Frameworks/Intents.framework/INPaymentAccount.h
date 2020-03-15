@@ -24,13 +24,13 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) INBalanceAmount *secondaryBalance; // @synthesize secondaryBalance=_secondaryBalance;
 @property(readonly, copy) INBalanceAmount *balance; // @synthesize balance=_balance;
 @property(readonly, copy) INSpeakableString *organizationName; // @synthesize organizationName=_organizationName;
 @property(readonly) long long accountType; // @synthesize accountType=_accountType;
 @property(readonly, copy) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
 @property(readonly, copy) INSpeakableString *nickname; // @synthesize nickname=_nickname;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

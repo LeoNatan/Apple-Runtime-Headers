@@ -18,9 +18,9 @@
 }
 
 + (id)comparatorWithFilteringRules:(id)arg1 rankingRules:(id)arg2 model:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *rankingRules; // @synthesize rankingRules=_rankingRules;
 @property(copy, nonatomic) NSArray *filteringRules; // @synthesize filteringRules=_filteringRules;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)compareElement:(id)arg1 toElement:(id)arg2 level:(unsigned long long)arg3;
 @property(readonly, nonatomic) unsigned long long comparisonLevels;

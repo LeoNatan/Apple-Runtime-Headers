@@ -19,11 +19,11 @@
     NSObject<OS_dispatch_queue> *_longFormAudioMessagesQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *longFormAudioMessagesQueue; // @synthesize longFormAudioMessagesQueue=_longFormAudioMessagesQueue;
 @property(retain, nonatomic) NSMutableDictionary *pendingResponses; // @synthesize pendingResponses=_pendingResponses;
 @property(retain, nonatomic) SPExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
 @property(retain, nonatomic) NSXPCConnection *longFormAudioServerConnection; // @synthesize longFormAudioServerConnection=_longFormAudioServerConnection;
-- (void).cxx_destruct;
 - (void)receiveData:(id)arg1;
 - (id)sanboxExtensionTokenForAssetURL:(id)arg1;
 - (id)_newMessageDataWithExtensionTokenIfAppropriate:(id)arg1;

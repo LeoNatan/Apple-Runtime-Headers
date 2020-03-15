@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) double rtcpSendIntervalSec; // @synthesize rtcpSendIntervalSec=_rtcpSendIntervalSec;
 @property(retain, nonatomic) HMFOSTransaction *snapshotDataTrasaction; // @synthesize snapshotDataTrasaction=_snapshotDataTrasaction;
 @property __weak id <HMDVideoStreamLastDecodedFrameDelegate> lastFrameDelegate; // @synthesize lastFrameDelegate=_lastFrameDelegate;
@@ -31,7 +32,6 @@
 @property(readonly) __weak id <HMDVideoStreamInterfaceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVCVideoStream *videoStream; // @synthesize videoStream=_videoStream;
 @property(readonly, nonatomic) HMDVideoStreamReconfigure *videoStreamReconfigure; // @synthesize videoStreamReconfigure=_videoStreamReconfigure;
-- (void).cxx_destruct;
 - (void)videoStreamReconfigureDidNetworkImprove:(id)arg1;
 - (void)videoStreamReconfigureDidNetworkDeteriorate:(id)arg1;
 - (void)streamDidRTCPTimeOut:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)referenceForCollectionList:(id)arg1;
 + (id)representedType;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *transientCollectionReferences; // @synthesize transientCollectionReferences=_transientCollectionReferences;
 @property(readonly, nonatomic) long long collectionListSubtype; // @synthesize collectionListSubtype=_collectionListSubtype;
 @property(readonly, nonatomic) long long collectionListType; // @synthesize collectionListType=_collectionListType;
-- (void).cxx_destruct;
 - (id)_transientCollectionInLibrary:(id)arg1;
 - (BOOL)transient;
 - (id)dictionaryForReferenceType:(id)arg1;

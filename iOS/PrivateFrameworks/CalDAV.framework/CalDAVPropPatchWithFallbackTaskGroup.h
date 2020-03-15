@@ -16,8 +16,8 @@
     CoreDAVResponseItem *_responseItem;
 }
 
-@property(retain, nonatomic) CoreDAVResponseItem *responseItem; // @synthesize responseItem=_responseItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CoreDAVResponseItem *responseItem; // @synthesize responseItem=_responseItem;
 - (void)startTaskGroup;
 - (void)_proppatchAfterFailureCount:(unsigned long long)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 primaryPropertiesToSet:(id)arg3 fallbackPropertiesToSet:(id)arg4 atURL:(id)arg5;

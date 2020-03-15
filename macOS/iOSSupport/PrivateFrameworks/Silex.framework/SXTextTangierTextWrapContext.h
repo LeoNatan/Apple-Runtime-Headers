@@ -18,12 +18,12 @@
     struct CGAffineTransform _targetInverseTransformInRoot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TSUPointerKeyDictionary *wrapPathInverseTransformInRootDictionary; // @synthesize wrapPathInverseTransformInRootDictionary=_wrapPathInverseTransformInRootDictionary;
 @property(readonly, nonatomic) struct CGAffineTransform targetInverseTransformInRoot; // @synthesize targetInverseTransformInRoot=_targetInverseTransformInRoot;
 @property(readonly, nonatomic) TSDWrapPolygon *interiorWrapPolygon; // @synthesize interiorWrapPolygon=_interiorWrapPolygon;
 @property(readonly, nonatomic) __weak TSDLayout<TSWPLayoutTarget> *target; // @synthesize target=_target;
 @property(readonly, nonatomic) TSWPColumn *column; // @synthesize column=_column;
-- (void).cxx_destruct;
 - (id)transformedWrapPolygonForWrappable:(id)arg1 canvasSpaceToWrapSpaceTransform:(struct CGAffineTransform)arg2;
 - (void)setTarget:(id)arg1;
 - (id)initWithColumn:(id)arg1 targetLayout:(id)arg2;

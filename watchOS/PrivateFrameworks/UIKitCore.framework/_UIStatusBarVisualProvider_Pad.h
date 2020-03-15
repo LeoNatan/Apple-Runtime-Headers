@@ -30,12 +30,12 @@ __attribute__((visibility("hidden")))
 + (float)regionSpacing;
 + (float)height;
 + (Class)visualProviderSubclassForScreen:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *timePlacement; // @synthesize timePlacement=_timePlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *datePlacement; // @synthesize datePlacement=_datePlacement;
 @property(retain, nonatomic) NSLayoutConstraint *leadingRegionTrailingAnchorConstraint; // @synthesize leadingRegionTrailingAnchorConstraint=_leadingRegionTrailingAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *trailingRegionLeadingAnchorConstraint; // @synthesize trailingRegionLeadingAnchorConstraint=_trailingRegionLeadingAnchorConstraint;
 @property(retain, nonatomic) NSDictionary *orderedDisplayItemPlacements; // @synthesize orderedDisplayItemPlacements=_orderedDisplayItemPlacements;
-- (void).cxx_destruct;
 - (float)airplaneShouldFadeForAnimationType:(int)arg1;
 - (float)airplaneSpeedForAnimationType:(int)arg1;
 - (float)airplaneTravelOffsetInProposedPartWithIdentifier:(id *)arg1 animationType:(int)arg2;

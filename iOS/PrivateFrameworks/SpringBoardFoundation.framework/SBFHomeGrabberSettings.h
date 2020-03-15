@@ -37,6 +37,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *edgeProtectAnimationSettings; // @synthesize edgeProtectAnimationSettings=_edgeProtectAnimationSettings;
 @property(retain, nonatomic) SBFAnimationSettings *rotationFadeInAnimationSettings; // @synthesize rotationFadeInAnimationSettings=_rotationFadeInAnimationSettings;
 @property(retain, nonatomic) SBFAnimationSettings *rotationFadeOutAnimationSettings; // @synthesize rotationFadeOutAnimationSettings=_rotationFadeOutAnimationSettings;
@@ -61,7 +62,6 @@
 @property(nonatomic) _Bool removeViewOnHide; // @synthesize removeViewOnHide=_removeViewOnHide;
 @property(nonatomic) long long initializationStyle; // @synthesize initializationStyle=_initializationStyle;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

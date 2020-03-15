@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fetchRequest;
-@property(retain, nonatomic) NSMutableArray *fileURLs; // @synthesize fileURLs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *fileURLs; // @synthesize fileURLs;
 
 // Remaining properties
 @property(nonatomic) BOOL allowsCellular; // @dynamic allowsCellular;

@@ -22,12 +22,12 @@
 
 + (id)settingsWithDuration:(double)arg1 curve:(long long)arg2;
 + (id)settingsWithDuration:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(nonatomic) float repeatCount; // @synthesize repeatCount=_repeatCount;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)settingsSpedUpByFactor:(double)arg1;
 - (id)_timingFunctionForAnimation;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;

@@ -12,7 +12,6 @@
 @interface NTKWorkoutComplicationDataSource : NTKComplicationDataSource
 {
     NSObject<OS_dispatch_queue> *_healthQueue;
-    int _lockStateNotifyToken;
     _Bool _deviceIsLocked;
     int _workoutStateNotifyToken;
     NSArray *_animationImages;
@@ -31,6 +30,7 @@
 + (id)_signatureTemplateWithHasActiveWorkout:(_Bool)arg1 hasPausedActiveWorkout:(_Bool)arg2;
 + (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKObserverQuery *workoutObservationQuery; // @synthesize workoutObservationQuery=_workoutObservationQuery;
 @property(retain, nonatomic) HKSampleQuery *lastWorkoutQuery; // @synthesize lastWorkoutQuery=_lastWorkoutQuery;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
@@ -38,7 +38,6 @@
 @property(nonatomic) _Bool hasKnownLastWorkoutState; // @synthesize hasKnownLastWorkoutState=_hasKnownLastWorkoutState;
 @property(retain, nonatomic) HKWorkout *lastWorkout; // @synthesize lastWorkout=_lastWorkout;
 @property(nonatomic, getter=isLoadingLastWorkout) _Bool loadingLastWorkout; // @synthesize loadingLastWorkout=_loadingLastWorkout;
-- (void).cxx_destruct;
 - (void)_updateActiveWorkoutState;
 - (id)_makeLastWorkoutQuery;
 - (id)_makeObservationQuery;

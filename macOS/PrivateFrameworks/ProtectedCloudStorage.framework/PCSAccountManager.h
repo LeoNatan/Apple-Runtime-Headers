@@ -13,8 +13,8 @@
     NSString *_dsid;
 }
 
-@property(retain) NSString *dsid; // @synthesize dsid=_dsid;
 - (void).cxx_destruct;
+@property(retain) NSString *dsid; // @synthesize dsid=_dsid;
 - (unsigned long long)accountStatus;
 - (id)initWithDSID:(id)arg1;
 

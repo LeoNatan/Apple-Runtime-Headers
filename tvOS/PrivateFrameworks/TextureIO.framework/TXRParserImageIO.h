@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 + (id)decodeCGImage:(struct CGImage *)arg1 desiredPixelFormat:(unsigned long long)arg2 bufferAllocator:(id)arg3 options:(id)arg4 error:(id *)arg5;
 + (int)determineColorSpaceClass:(struct CGImage *)arg1 displayGamut:(unsigned long long)arg2 options:(id)arg3;
 + (_Bool)handlesData:(id)arg1;
-@property(readonly, nonatomic) TXRTextureInfo *textureInfo; // @synthesize textureInfo=_textureInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TXRTextureInfo *textureInfo; // @synthesize textureInfo=_textureInfo;
 - (id)parsedImageAtLevel:(unsigned long long)arg1 element:(unsigned long long)arg2 face:(unsigned long long)arg3;
 - (_Bool)parseData:(id)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id *)arg4;
 

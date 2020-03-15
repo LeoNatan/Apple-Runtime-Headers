@@ -22,8 +22,8 @@
     _Bool _needsCleanUpConnection;
 }
 
-@property _Bool needsCleanUpConnection; // @synthesize needsCleanUpConnection=_needsCleanUpConnection;
 - (void).cxx_destruct;
+@property _Bool needsCleanUpConnection; // @synthesize needsCleanUpConnection=_needsCleanUpConnection;
 - (void)_idleTimerFired;
 - (void)_stopIdleTimer;
 - (void)_startIdleTimer;

@@ -31,7 +31,7 @@
 - (void)removeElement:(id)arg1 atPath:(id)arg2;
 - (void)insertElement:(id)arg1 atPath:(id)arg2;
 - (void)reloadElement:(id)arg1 atPath:(id)arg2;
-- (void)performBatchUpdateBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performBatchUpdateBlock:(CDUnknownBlockType)arg1;
 - (id)pathForElement:(id)arg1;
 - (unsigned int)numberOfElementsInSection:(id)arg1;
 - (id)elementAtPath:(id)arg1;

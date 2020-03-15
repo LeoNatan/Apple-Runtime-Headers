@@ -18,11 +18,11 @@
 }
 
 + (id)defaultBlankingCoordinator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLApplicationBlankingWindow *blankingWindow; // @synthesize blankingWindow=_blankingWindow;
 @property(readonly, nonatomic) FBScene *transitionScene; // @synthesize transitionScene=_transitionScene;
 @property(readonly, nonatomic) FBSSceneDefinition *sceneDefinition; // @synthesize sceneDefinition=_sceneDefinition;
 @property(nonatomic) unsigned int blankingCoordinationState; // @synthesize blankingCoordinationState=_blankingCoordinationState;
-- (void).cxx_destruct;
 - (void)_completeBlankingRequest:(id)arg1;
 - (void)_hideBlankingWindow;
 - (void)hideBlankingWindowWithCompletion:(CDUnknownBlockType)arg1;

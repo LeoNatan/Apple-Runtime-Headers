@@ -26,8 +26,8 @@
     NSObject<OS_dispatch_source> *_heartbeatTimer;
     NSUUID *_peer;
     NSString *_peerAppleID;
-    struct NSMutableDictionary *_requestHandlers;
-    struct NSMutableDictionary *_requestMap;
+    NSMutableDictionary *_requestHandlers;
+    NSMutableDictionary *_requestMap;
     unsigned char _serviceType;
     unsigned int _sessionFlags;
     unsigned int _sessionID;
@@ -57,7 +57,7 @@
     _Bool _pairVerifyEnded;
     unsigned int _pairVerifyFlags;
     struct PairingSessionPrivate *_pairVerifySession;
-    struct NSMutableDictionary *_requestQueue;
+    NSMutableDictionary *_requestQueue;
     _Bool _timeoutFired;
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSXPCConnection *_xpcCnx;
@@ -95,6 +95,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TRSession *trSession; // @synthesize trSession=_trSession;
 @property(nonatomic) _Bool touchRemoteEnabled; // @synthesize touchRemoteEnabled=_touchRemoteEnabled;
 @property(retain, nonatomic) NSXPCListenerEndpoint *testListenerEndpoint; // @synthesize testListenerEndpoint=_testListenerEndpoint;
@@ -136,7 +137,6 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) long long bluetoothState; // @synthesize bluetoothState=_bluetoothState;
-- (void).cxx_destruct;
 - (void)sessionReceivedResponse:(id)arg1;
 - (void)sessionReceivedRequest:(id)arg1;
 - (void)_sessionReceivedStartAck:(id)arg1;

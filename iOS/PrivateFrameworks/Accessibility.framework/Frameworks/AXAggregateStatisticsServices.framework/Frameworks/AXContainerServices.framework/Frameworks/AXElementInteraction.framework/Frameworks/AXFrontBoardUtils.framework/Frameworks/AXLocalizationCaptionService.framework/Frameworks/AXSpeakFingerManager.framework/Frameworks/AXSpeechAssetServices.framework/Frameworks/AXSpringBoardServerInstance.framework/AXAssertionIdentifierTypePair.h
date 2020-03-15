@@ -14,9 +14,9 @@
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

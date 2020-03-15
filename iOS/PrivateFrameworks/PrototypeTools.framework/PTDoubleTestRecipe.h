@@ -14,9 +14,9 @@
 
 + (id)recipeWithTitle:(id)arg1 prepareBlock:(CDUnknownBlockType)arg2 increaseAction:(CDUnknownBlockType)arg3 decreaseAction:(CDUnknownBlockType)arg4 cleanupBlock:(CDUnknownBlockType)arg5;
 + (id)recipeWithTitle:(id)arg1 increaseAction:(CDUnknownBlockType)arg2 decreaseAction:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType decreaseAction; // @synthesize decreaseAction=_decreaseAction;
 @property(copy, nonatomic) CDUnknownBlockType increaseAction; // @synthesize increaseAction=_increaseAction;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)_handleEvent:(long long)arg1;
 - (_Bool)_wantsEvent:(long long)arg1;

@@ -48,6 +48,7 @@
 + (id)viewControllerForContact:(id)arg1;
 + (id)defaultDisplayedPropertyKeys;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) NCABContactAction *contactAction; // @synthesize contactAction=_contactAction;
 @property(retain, nonatomic) CNContainer *containerOfContact; // @synthesize containerOfContact=_containerOfContact;
@@ -59,7 +60,6 @@
 @property(nonatomic) _Bool showQuickActions; // @synthesize showQuickActions=_showQuickActions;
 @property(copy, nonatomic) NSArray *displayedPropertyKeys; // @synthesize displayedPropertyKeys=_displayedPropertyKeys;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)initWithPerson:(void *)arg1 withFilter:(unsigned int)arg2;
 - (id)initWithPerson:(void *)arg1;
 - (_Bool)_shouldShowLocationSection;

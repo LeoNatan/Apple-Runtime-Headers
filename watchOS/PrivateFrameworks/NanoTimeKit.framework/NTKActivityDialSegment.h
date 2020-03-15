@@ -18,13 +18,13 @@
     float _tickScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float tickScale; // @synthesize tickScale=_tickScale;
 @property(nonatomic) float tickRotation; // @synthesize tickRotation=_tickRotation;
 @property(retain, nonatomic) CALayer *tickLayer; // @synthesize tickLayer=_tickLayer;
 @property(retain, nonatomic) CALayer *arcLayer; // @synthesize arcLayer=_arcLayer;
 @property(retain, nonatomic) NTKFaceColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
-- (void).cxx_destruct;
 - (void)setTritiumOnWithProgress:(float)arg1;
 - (void)_updateTransform;
 - (id)initWithHourIndex:(int)arg1;

@@ -11,6 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (unsigned int)maxLoggableLengthOfInsertionBySubstitution:(id)arg1;
++ (unsigned int)maxLoggableLengthOfInsertionWithDeletion:(id)arg1;
++ (unsigned int)maxLoggableLengthOfInsertionWithoutDeletion:(id)arg1;
++ (void)attributedString:(id)arg1 withIdentifiersBlock:(CDUnknownBlockType)arg2;
 + (void)logSpeechAlternativeReplacement:(id)arg1 originalText:(id)arg2 replacementText:(id)arg3 index:(unsigned int)arg4;
 + (void)trackSubstitution:(id)arg1 originalText:(id)arg2 originalTextRange:(struct _NSRange)arg3 replacementText:(id)arg4 replacementTextRange:(struct _NSRange)arg5;
 + (void)trackDeletion:(id)arg1 text:(id)arg2 range:(struct _NSRange)arg3;

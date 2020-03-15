@@ -18,10 +18,10 @@
 }
 
 + (_Bool)_databaseSchemas:(id)arg1 containsTable:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDDatabaseSchemaManager *schemaManager; // @synthesize schemaManager=_schemaManager;
 @property(readonly, nonatomic) HDDatabaseMigrationTransaction *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (int)deleteDatabaseStatusForVersion:(int)arg1 errorMessage:(id)arg2 error:(id *)arg3;
 - (int)statusForUnhandledVersion:(int)arg1 error:(id *)arg2;
 - (_Bool)executeSQLStatements:(id)arg1 error:(id *)arg2;

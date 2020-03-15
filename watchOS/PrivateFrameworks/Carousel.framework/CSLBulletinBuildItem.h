@@ -25,6 +25,7 @@
     CDUnknownBlockType _batchTimeoutHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType batchTimeoutHandler; // @synthesize batchTimeoutHandler=_batchTimeoutHandler;
 @property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) _Bool shouldBuildAndForget; // @synthesize shouldBuildAndForget=_shouldBuildAndForget;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) CUISBulletinPrimaryPagePresentation *primaryPresentation; // @synthesize primaryPresentation=_primaryPresentation;
 @property(retain, nonatomic) CSLBulletinAlertItem *bulletin; // @synthesize bulletin=_bulletin;
 @property(retain, nonatomic) CUISBulletinClientFactory *factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (_Bool)shouldCancel;
 - (void)_handleBatchTimerExpired;
 - (void)_cancelBatchTimer;

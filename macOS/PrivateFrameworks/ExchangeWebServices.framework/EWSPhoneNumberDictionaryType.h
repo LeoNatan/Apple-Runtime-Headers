@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *Entry; // @synthesize Entry=_Entry;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *Entry; // @synthesize Entry=_Entry;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

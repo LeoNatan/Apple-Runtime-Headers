@@ -21,11 +21,11 @@
     NUAdInterstitial *_interstitialAdPendingLoad;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUAdInterstitial *interstitialAdPendingLoad; // @synthesize interstitialAdPendingLoad=_interstitialAdPendingLoad;
 @property(readonly, nonatomic) id <NUDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) id <NUAdManagerConfigurationProvider> configurationProvider; // @synthesize configurationProvider=_configurationProvider;
 @property(readonly, nonatomic) NUAdStore *adStore; // @synthesize adStore=_adStore;
-- (void).cxx_destruct;
 - (id)videoInTodayHeaderDefinition;
 - (id)videoPlaylistAdBodyDefinition;
 - (id)videoPlaylistAdRootDefinition;

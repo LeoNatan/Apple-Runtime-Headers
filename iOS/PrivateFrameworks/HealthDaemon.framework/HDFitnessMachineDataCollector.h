@@ -33,8 +33,8 @@
     NSDate *_machinePreferredUntilDate;
 }
 
-@property(retain, nonatomic) NSDate *machinePreferredUntilDate; // @synthesize machinePreferredUntilDate=_machinePreferredUntilDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *machinePreferredUntilDate; // @synthesize machinePreferredUntilDate=_machinePreferredUntilDate;
 - (void)_queue_handleConfigurationChanged:(id)arg1;
 - (void)unitTest_processDatumsByMetric:(id)arg1;
 - (long long)_getLongFromDatum:(id)arg1 unitString:(id)arg2 defaultValue:(long long)arg3;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedServer;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType personaUpdateCallbackHandler; // @synthesize personaUpdateCallbackHandler=_personaUpdateCallbackHandler;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(retain, nonatomic) NSMutableSet *xpcConnections; // @synthesize xpcConnections=_xpcConnections;
 @property(retain, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
-- (void).cxx_destruct;
 - (void)_tearDownConnectionToUMServerWithConnection:(id)arg1;
 - (void)_setUpUMServerXPCConnectionIfNeeded:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

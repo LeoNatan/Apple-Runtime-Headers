@@ -15,14 +15,15 @@
     IBCTTUISimulatedMetricsContext *_simulatedMetricsContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBCTTUISimulatedMetricsContext *simulatedMetricsContext; // @synthesize simulatedMetricsContext=_simulatedMetricsContext;
 @property(readonly) UIWindow *rootWindow; // @synthesize rootWindow=_rootWindow;
 @property(readonly) UIView *rootView; // @synthesize rootView=_rootView;
-- (void).cxx_destruct;
 - (id)constraintAbstractionForRepresentedConstraint:(id)arg1 referencesDocumentViews:(_Bool)arg2;
 - (id)candidateRedundantRepresentedConstraints;
 - (id)viewForApplyingSystemRequiredConstraints;
 - (_Bool)internalTryToAddConstraint:(id)arg1 toRepresentedView:(id)arg2 roundingAdjustment:(double)arg3 mutuallyExclusiveConstraints:(id *)arg4;
+- (_Bool)requiresRepresentedCoordinateSpaceViewForView:(id)arg1;
 - (void)invalidateConstraintsForRepresentedItems:(id)arg1;
 - (void)updateConstraintsIfNeeded;
 - (void)layoutIfNeeded;

@@ -14,9 +14,9 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) long long algorithm; // @synthesize algorithm=_algorithm;
-- (void).cxx_destruct;
 - (id)_fallbackColorAnalysis;
 - (void)analyzeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithImage:(id)arg1 algorithm:(long long)arg2;

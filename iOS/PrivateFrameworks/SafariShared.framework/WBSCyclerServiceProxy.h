@@ -16,8 +16,8 @@
     CDUnknownBlockType _errorHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 - (id)_cyclerProxy;
 - (void)fetchStatusWithReply:(CDUnknownBlockType)arg1;
 - (void)sendRequestToTestSuite:(id)arg1 reply:(CDUnknownBlockType)arg2;

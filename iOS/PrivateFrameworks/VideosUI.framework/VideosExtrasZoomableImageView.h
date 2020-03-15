@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     struct CGPoint _pointToCenterAfterResize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *zoomView; // @synthesize zoomView=_zoomView;
 @property(nonatomic) double scaleToRestoreAfterResize; // @synthesize scaleToRestoreAfterResize=_scaleToRestoreAfterResize;
 @property(nonatomic) struct CGPoint pointToCenterAfterResize; // @synthesize pointToCenterAfterResize=_pointToCenterAfterResize;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_updateMinimumAndMaximumZoomScalesForCurrentBounds;
 - (void)_recoverFromResizing;
 - (void)_prepareToResize;

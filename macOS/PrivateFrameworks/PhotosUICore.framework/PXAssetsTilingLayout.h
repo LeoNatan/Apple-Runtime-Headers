@@ -28,6 +28,7 @@
     struct PXSimpleIndexPath _focusedIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *additionalAccessoryTileKinds; // @synthesize additionalAccessoryTileKinds=_additionalAccessoryTileKinds;
 @property(readonly, nonatomic) PXBasicTileUserData *_draggingDimmingUserData; // @synthesize _draggingDimmingUserData=__draggingDimmingUserData;
 @property(readonly, nonatomic) PXBasicTileUserData *_selectedDimmingUserData; // @synthesize _selectedDimmingUserData=__selectedDimmingUserData;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) PXIndexPathSet *hiddenIndexPaths; // @synthesize hiddenIndexPaths=_hiddenIndexPaths;
 @property(readonly, nonatomic) PXAssetsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic, setter=_setContentTileUserData:) PXOverlayBadgeTileUserData *_overlayBadgeTileUserData; // @synthesize _overlayBadgeTileUserData;
-- (void).cxx_destruct;
 - (double)zPositionOffsetForKind:(unsigned long long)arg1;
 - (id)description;
 - (void)_invalidateAllAnimatedOverlayTiles;

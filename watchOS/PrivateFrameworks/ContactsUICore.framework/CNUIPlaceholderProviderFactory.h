@@ -19,9 +19,9 @@
     id <CNScheduler> _highPriorityLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNScheduler> highPriorityLock; // @synthesize highPriorityLock=_highPriorityLock;
 @property(retain, nonatomic) id <CNScheduler> resourceLock; // @synthesize resourceLock=_resourceLock;
-- (void).cxx_destruct;
 @property(readonly) id <CNUIPRLikenessProvider> loadingPlaceholderProvider;
 @property(readonly) id <CNUIPRLikenessProvider> placeholderProvider;
 - (id)init;

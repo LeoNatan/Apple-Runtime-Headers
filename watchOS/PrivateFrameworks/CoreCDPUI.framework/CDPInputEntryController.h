@@ -25,13 +25,13 @@
     unsigned int _numberOfFields;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool secureEntry; // @synthesize secureEntry=_secureEntry;
 @property(nonatomic) unsigned int numberOfFields; // @synthesize numberOfFields=_numberOfFields;
 @property(copy, nonatomic) NSString *entryTitle; // @synthesize entryTitle=_entryTitle;
 @property(nonatomic) _Bool requireNumericEntry; // @synthesize requireNumericEntry=_requireNumericEntry;
 @property(nonatomic) _Bool requireLocalPasscode; // @synthesize requireLocalPasscode=_requireLocalPasscode;
 @property(nonatomic) __weak id <CDPInputEntryControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)quickboardInputCancelled:(id)arg1;
 - (void)quickboard:(id)arg1 textEntered:(id)arg2;
 - (void)passcodeViewController:(id)arg1 didVerifyPasscode:(id)arg2;

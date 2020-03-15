@@ -4,19 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSData, NSString, NSURL;
+@class NSArray, NSData, NSString, NSURL, RMGenericAuthenticationCredential;
 
 @protocol RMXPCService
-- (void)accountRemovedWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)accountAddedWithIdentifier:(NSString *)arg1 accountType:(short)arg2 authenticationToken:(NSString *)arg3 bootstrapURI:(NSURL *)arg4 completionHandler:(void (^)(NSError *))arg5;
 - (void)fetchConfigurationsWithTypes:(NSArray *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
-- (void)unsubscribeFromConfigurationChangesForDarwinNotificationName:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)subscribeToConfigurationChangesWithTypes:(NSArray *)arg1 darwinNotificationName:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)sendStatusForSubscriptionsWithIdentifiers:(NSArray *)arg1 toManagementSourceWithIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)queryForStatusSubscriptionsWithIdentifiers:(NSArray *)arg1 fromManagementSourceWithIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)sendStatusForKeyPaths:(NSArray *)arg1 toManagementSourceWithIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)queryForStatusWithKeyPaths:(NSArray *)arg1 fromManagementSourceWithIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)sendStatusData:(NSData *)arg1 toManagementSourceWithIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)deviceChannelEnrollmentExistsWithCompletionHandler:(void (^)(BOOL, NSError *))arg1;
 - (void)syncWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)unenrollWithAccountIdentifier:(NSString *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
 - (void)unenrollWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
-- (void)enrollUserChannelWithURI:(NSURL *)arg1 accountIdentifier:(NSString *)arg2 accountType:(short)arg3 authenticationToken:(NSString *)arg4 completionHandler:(void (^)(NSString *, NSError *))arg5;
+- (void)enrollUserChannelWithURI:(NSURL *)arg1 authenticationCredential:(RMGenericAuthenticationCredential *)arg2 withDataSeparation:(BOOL)arg3 passcodeData:(NSData *)arg4 completionHandler:(void (^)(NSString *, NSError *))arg5;
 - (void)enrollDeviceChannelWithURI:(NSURL *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;
 @end
 

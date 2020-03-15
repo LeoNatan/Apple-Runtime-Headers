@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)leftHandSideViewSize;
 + (double)requestedHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAttachmentItem *attachmentItem; // @synthesize attachmentItem=_attachmentItem;
 @property(retain, nonatomic) UIImageView *previewView; // @synthesize previewView=_previewView;
-- (void).cxx_destruct;
 - (void)_updateImageViewForAttachmentItem;
 - (void)setModelObject:(id)arg1;
 - (id)leftHandSideView;

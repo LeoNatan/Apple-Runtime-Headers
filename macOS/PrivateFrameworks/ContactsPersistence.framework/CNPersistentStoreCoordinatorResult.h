@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)resultsWithCoordinator:(id)arg1 pristineDatabase:(BOOL)arg2 didMigrate:(BOOL)arg3;
 + (id)resultsWithCoordinator:(id)arg1 pristineDatabase:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly) BOOL didMigrate; // @synthesize didMigrate=_didMigrate;
 @property(readonly, getter=isPristineDatabase) BOOL pristineDatabase; // @synthesize pristineDatabase=_pristineDatabase;
 @property(readonly) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 - (id)initWithCoordinator:(id)arg1 pristineDatabase:(BOOL)arg2 didMigrate:(BOOL)arg3;
 
 @end

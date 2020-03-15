@@ -17,12 +17,12 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *date; // @synthesize date=_date;
 @property(readonly) PHSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(readonly) NSDictionary *info; // @synthesize info=_info;
 @property(readonly) NSString *description; // @synthesize description=_description;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly) _Bool isInvalid;
 - (id)initWithSuggestion:(id)arg1 suggestionInfo:(id)arg2;
 

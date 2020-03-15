@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
 @property(nonatomic) int playbackQueueInsertionPosition; // @synthesize playbackQueueInsertionPosition=_playbackQueueInsertionPosition;
 @property(nonatomic) _Bool shouldBeginRadioPlayback; // @synthesize shouldBeginRadioPlayback=_shouldBeginRadioPlayback;
@@ -76,7 +77,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool externalPlayerCommand; // @synthesize externalPlayerCommand=_externalPlayerCommand;
 @property(retain, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

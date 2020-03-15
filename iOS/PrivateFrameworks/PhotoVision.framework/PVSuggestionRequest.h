@@ -20,6 +20,7 @@
 }
 
 + (id)requestWithFaceClusterIds:(id)arg1 clusterFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly) VNCanceller *canceller; // @synthesize canceller=_canceller;
 @property(copy) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly) NSArray *cflags; // @synthesize cflags=_cflags;
@@ -27,7 +28,6 @@
 @property(readonly) NSMutableDictionary *clusterFlagByClusterId; // @synthesize clusterFlagByClusterId=_clusterFlagByClusterId;
 @property(readonly) NSString *requestId; // @synthesize requestId=_requestId;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithFaceClusterIds:(id)arg1 clusterFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
 
 @end

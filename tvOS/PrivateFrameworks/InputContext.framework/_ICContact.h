@@ -25,6 +25,7 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) NSArray *cities; // @synthesize cities=_cities;
 @property(readonly, nonatomic) NSArray *streets; // @synthesize streets=_streets;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(readonly, nonatomic) NSString *phoneticFirstName; // @synthesize phoneticFirstName=_phoneticFirstName;
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToContact:(id)arg1;
 - (unsigned long long)hash;

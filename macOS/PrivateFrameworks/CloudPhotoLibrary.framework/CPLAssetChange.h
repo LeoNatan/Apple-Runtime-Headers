@@ -63,6 +63,7 @@
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (BOOL)serverSupportsVision;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *facesData; // @synthesize facesData=_facesData;
 @property(nonatomic) long long viewCount; // @synthesize viewCount=_viewCount;
 @property(nonatomic) long long shareCount; // @synthesize shareCount=_shareCount;
@@ -107,7 +108,6 @@
 @property(copy, nonatomic) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 @property(copy, nonatomic) NSDate *lastSharedDate; // @synthesize lastSharedDate=_lastSharedDate;
 @property(copy, nonatomic) NSString *masterIdentifier; // @synthesize masterIdentifier=_masterIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isAssetChange;
 - (id)scopeIdentifiersForQuarantine;
 - (unsigned long long)fullChangeTypeForFullRecord;

@@ -15,10 +15,10 @@
     HUUserNotificationTopicServiceListModuleController *_moduleController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUUserNotificationTopicServiceListModuleController *moduleController; // @synthesize moduleController=_moduleController;
 @property(readonly, nonatomic) HFUserNotificationServiceTopic *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)showNotificationSettingsForHomeKitObject:(id)arg1 animated:(BOOL)arg2;
 - (id)buildItemModuleControllerForModule:(id)arg1;
 - (id)initWithHome:(id)arg1 topic:(id)arg2;

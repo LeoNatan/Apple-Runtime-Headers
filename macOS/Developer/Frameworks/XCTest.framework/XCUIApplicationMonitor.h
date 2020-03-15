@@ -26,6 +26,7 @@
     NSMutableSet *_launchedApplications;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSMutableSet *launchedApplications; // @synthesize launchedApplications=_launchedApplications;
 @property(readonly, copy) NSMutableDictionary *applicationProcessesForToken; // @synthesize applicationProcessesForToken=_applicationProcessesForToken;
 @property(readonly, copy) NSMutableDictionary *applicationProcessesForPID; // @synthesize applicationProcessesForPID=_applicationProcessesForPID;
@@ -36,7 +37,6 @@
 @property(readonly) id <XCUIPlatformApplicationServicesProviding> platformServicesProvider; // @synthesize platformServicesProvider=_platformServicesProvider;
 @property(readonly) __weak id <XCUIDevice> device; // @synthesize device=_device;
 @property(retain) XCUIApplicationRegistry *applicationRegistry; // @synthesize applicationRegistry=_applicationRegistry;
-- (void).cxx_destruct;
 @property(readonly) NSSet *automationSessionBlacklist; // @synthesize automationSessionBlacklist=_automationSessionBlacklist;
 - (void)acquireBackgroundAssertionForPID:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)updatedApplicationStateSnapshot:(id)arg1;

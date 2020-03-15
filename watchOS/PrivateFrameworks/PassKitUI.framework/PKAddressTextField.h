@@ -19,13 +19,13 @@
     UIColor *_invalidColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *invalidColor; // @synthesize invalidColor=_invalidColor;
 @property(retain, nonatomic) UIColor *defaultColor; // @synthesize defaultColor=_defaultColor;
 @property(readonly, nonatomic) _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(nonatomic) __weak id <PKAddressTextFieldDelegate> addressDelegate; // @synthesize addressDelegate=_addressDelegate;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) PKUniqueAddressField *addressField; // @synthesize addressField=_addressField;
-- (void).cxx_destruct;
 - (void)setIsInvalid:(_Bool)arg1 showErrorGlyph:(_Bool)arg2;
 - (void)insertTextSuggestion:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(int)arg2;

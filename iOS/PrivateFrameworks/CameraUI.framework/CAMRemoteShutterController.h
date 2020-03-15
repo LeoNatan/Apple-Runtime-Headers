@@ -26,6 +26,7 @@
     CAMMotionController *__motionController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMMotionController *_motionController; // @synthesize _motionController=__motionController;
 @property(nonatomic) __weak id <CAMRemoteShutterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isCapturingTimelapse) _Bool capturingTimelapse; // @synthesize capturingTimelapse=_capturingTimelapse;
@@ -39,7 +40,6 @@
 @property(nonatomic) long long captureMode; // @synthesize captureMode=_captureMode;
 @property(retain, nonatomic) NSArray *availableCaptureModes; // @synthesize availableCaptureModes=_availableCaptureModes;
 @property(nonatomic, getter=isShowingPreview) _Bool showingPreview; // @synthesize showingPreview=_showingPreview;
-- (void).cxx_destruct;
 - (void)_captureOrientationDidChange:(id)arg1;
 - (void)_enterBackground:(id)arg1;
 - (void)_enterForeground:(id)arg1;

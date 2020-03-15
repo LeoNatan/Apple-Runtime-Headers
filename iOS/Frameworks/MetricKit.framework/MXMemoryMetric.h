@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) MXAverage *averageSuspendedMemory; // @synthesize averageSuspendedMemory=_averageSuspendedMemory;
 @property(readonly) NSMeasurement *peakMemoryUsage; // @synthesize peakMemoryUsage=_peakMemoryUsage;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,8 +15,8 @@
     NSURL *_urlForTool;
 }
 
-@property(readonly, nonatomic) NSURL *urlForTool; // @synthesize urlForTool=_urlForTool;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *urlForTool; // @synthesize urlForTool=_urlForTool;
 - (BOOL)_invokeToolWithArgument:(id)arg1;
 - (BOOL)attemptMigrationWithHomeDirectory:(id)arg1;
 - (BOOL)testInvocationWithSuccess:(BOOL)arg1;

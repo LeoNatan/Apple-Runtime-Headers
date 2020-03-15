@@ -24,6 +24,7 @@
 }
 
 + (struct CGRect)defaultRect;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) LAPKGlyphWrapper *glyphWrapper; // @synthesize glyphWrapper=_glyphWrapper;
 @property(readonly, nonatomic) LAUIAuthenticationCore *authenticationCore; // @synthesize authenticationCore=_authenticationCore;
 @property(nonatomic) _Bool fastAnimations; // @synthesize fastAnimations=_fastAnimations;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) long long glyphStyle; // @synthesize glyphStyle=_glyphStyle;
 @property(nonatomic) __weak id <LAUIAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)localizedCallerName;
 - (id)callerIconBundlePath;
 - (void)biometricNoMatch;

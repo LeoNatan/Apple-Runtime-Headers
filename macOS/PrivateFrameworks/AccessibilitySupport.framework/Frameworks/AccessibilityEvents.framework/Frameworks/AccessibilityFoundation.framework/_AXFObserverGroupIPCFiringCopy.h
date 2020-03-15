@@ -13,8 +13,8 @@
     NSArray *_observersForFiring;
 }
 
-@property(copy, nonatomic) NSArray *observersForFiring; // @synthesize observersForFiring=_observersForFiring;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *observersForFiring; // @synthesize observersForFiring=_observersForFiring;
 - (void)fireWithElement:(id)arg1 userInfo:(id)arg2;
 - (BOOL)isObserving:(id)arg1 element:(id)arg2;
 - (BOOL)removeObserver:(id)arg1 selector:(SEL)arg2;

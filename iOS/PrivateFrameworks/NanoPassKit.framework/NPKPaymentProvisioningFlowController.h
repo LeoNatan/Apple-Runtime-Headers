@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <NanoPassKit/NPKPaymentProvisioningFlowControllerProtocol-Protocol.h>
 #import <NanoPassKit/PKContactlessCardIngesterDelegate-Protocol.h>
 #import <NanoPassKit/PKPaymentAuthorizationControllerDelegate-Protocol.h>
 #import <NanoPassKit/PKPaymentAuthorizationControllerPrivateDelegate-Protocol.h>
@@ -13,7 +14,7 @@
 @class NPKPaymentProvisioningFlowControllerRequestContext, NSData, NSDecimalNumber, NSString, PKAddPaymentPassRequest, PKAddPaymentPassRequestConfiguration, PKContactlessCardIngester, PKPaymentAuthorizationController, PKPaymentCredential, PKPaymentPass, PKPaymentProvisioningController, PKPaymentProvisioningMethodMetadata, PKPaymentRequest, PKPaymentSetupFieldsModel, PKPaymentSetupProduct, PKPaymentWebService, PKServiceProviderPurchase;
 @protocol NPKPaymentProvisioningFlowControllerDelegate, NSObject, OS_dispatch_source;
 
-@interface NPKPaymentProvisioningFlowController : NSObject <PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate, PKContactlessCardIngesterDelegate>
+@interface NPKPaymentProvisioningFlowController : NSObject <PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate, PKContactlessCardIngesterDelegate, NPKPaymentProvisioningFlowControllerProtocol>
 {
     _Bool _readerModeProvisioningSupported;
     _Bool _digitalIssuanceSupported;
@@ -43,7 +44,8 @@
     PKPaymentRequest *_digitalIssuancePaymentRequest;
     NSDecimalNumber *_digitalIssuanceAmount;
     PKServiceProviderPurchase *_digitalIssuancePurchase;
-    NPKPaymentProvisioningFlowControllerRequestContext *_digitalIssuanceRequestContext;
+    NPKPaymentProvisioningFlowControllerRequestContext *_digitalIssuanceAmountRequestContext;
+    NPKPaymentProvisioningFlowControllerRequestContext *_digitalIssuancePaymentRequestContext;
     PKPaymentAuthorizationController *_authorizationController;
     PKContactlessCardIngester *_cardIngester;
     unsigned long long _internalIngestionState;
@@ -67,6 +69,7 @@
 + (id)_physicalCardURLFromMetadata:(id)arg1 forScale:(double)arg2;
 + (id)_readerModeResources;
 + (_Bool)_readerModeEntryAllowedForProduct:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKPaymentProvisioningFlowControllerRequestContext *readerModeRequestContext; // @synthesize readerModeRequestContext=_readerModeRequestContext;
 @property(retain, nonatomic) PKPaymentProvisioningMethodMetadata *ingestionMethodMetadata; // @synthesize ingestionMethodMetadata=_ingestionMethodMetadata;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *ingestionCardNotFoundTimer; // @synthesize ingestionCardNotFoundTimer=_ingestionCardNotFoundTimer;
@@ -77,7 +80,8 @@
 @property(nonatomic) unsigned long long internalIngestionState; // @synthesize internalIngestionState=_internalIngestionState;
 @property(retain, nonatomic) PKContactlessCardIngester *cardIngester; // @synthesize cardIngester=_cardIngester;
 @property(retain, nonatomic) PKPaymentAuthorizationController *authorizationController; // @synthesize authorizationController=_authorizationController;
-@property(retain, nonatomic) NPKPaymentProvisioningFlowControllerRequestContext *digitalIssuanceRequestContext; // @synthesize digitalIssuanceRequestContext=_digitalIssuanceRequestContext;
+@property(retain, nonatomic) NPKPaymentProvisioningFlowControllerRequestContext *digitalIssuancePaymentRequestContext; // @synthesize digitalIssuancePaymentRequestContext=_digitalIssuancePaymentRequestContext;
+@property(retain, nonatomic) NPKPaymentProvisioningFlowControllerRequestContext *digitalIssuanceAmountRequestContext; // @synthesize digitalIssuanceAmountRequestContext=_digitalIssuanceAmountRequestContext;
 @property(retain, nonatomic) PKServiceProviderPurchase *digitalIssuancePurchase; // @synthesize digitalIssuancePurchase=_digitalIssuancePurchase;
 @property(retain, nonatomic) NSDecimalNumber *digitalIssuanceAmount; // @synthesize digitalIssuanceAmount=_digitalIssuanceAmount;
 @property(retain, nonatomic) PKPaymentRequest *digitalIssuancePaymentRequest; // @synthesize digitalIssuancePaymentRequest=_digitalIssuancePaymentRequest;
@@ -106,7 +110,6 @@
 @property(readonly, nonatomic) long long setupContext; // @synthesize setupContext=_setupContext;
 @property(readonly, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 @property(nonatomic) __weak id <NPKPaymentProvisioningFlowControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_requestPassDetailsForAccountCredential:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_verifyPasscodeStateIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_configureWebServiceIfNecessary:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -149,6 +152,7 @@
 - (void)_performProvision:(id)arg1;
 - (void)_performTerms:(id)arg1;
 - (void)_performPasscodeUpgrade:(id)arg1;
+- (void)_handlePasscodeUpgradeCompleteWithSuccess:(_Bool)arg1 error:(id)arg2 requestContext:(id)arg3;
 - (void)_performEligibility:(id)arg1;
 - (void)_requestRequirements:(id)arg1;
 - (id)_newPaymentProvisioningRequest;
@@ -173,6 +177,7 @@
 - (void)acknowledgeMoreInformation:(id)arg1;
 - (void)skipProvisioning:(id)arg1;
 - (void)acceptTerms:(id)arg1;
+- (void)handlePasscodeUpgradeCompleteWithSuccess:(_Bool)arg1 error:(id)arg2 requestContext:(id)arg3;
 - (void)handleProductSelection:(id)arg1 requestContext:(id)arg2;
 - (void)handleManualEntryFields:(id)arg1 credential:(id)arg2 requestContext:(id)arg3;
 - (void)chooseManualEntry:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (struct CGSize)contentViewSizeForLayouts:(id)arg1 layoutScale:(double)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *orientationConstraints; // @synthesize orientationConstraints=_orientationConstraints;
 @property(readonly, nonatomic) UXImageView *decorationImageView; // @synthesize decorationImageView=_decorationImageView;
-- (void).cxx_destruct;
 - (void)_teardownAccessibility;
 - (void)configureAccessoryButton:(id)arg1 forLayout:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)updateDecorationsForProjectLayouts:(id)arg1;

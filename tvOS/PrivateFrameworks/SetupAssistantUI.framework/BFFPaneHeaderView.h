@@ -26,6 +26,7 @@
     double _customTopPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTextLabelAlignedByLastBaseline) _Bool textLabelAlignedByLastBaseline; // @synthesize textLabelAlignedByLastBaseline=_textLabelAlignedByLastBaseline;
 @property(nonatomic) double customTopPadding; // @synthesize customTopPadding=_customTopPadding;
 @property(nonatomic) _Bool useMinimumTopPadding; // @synthesize useMinimumTopPadding=_useMinimumTopPadding;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (double)heightForWidth:(double)arg1 inView:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

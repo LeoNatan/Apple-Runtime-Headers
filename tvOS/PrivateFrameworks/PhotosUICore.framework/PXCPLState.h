@@ -38,6 +38,7 @@
     unsigned long long _numberOfReferencedItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInHardResetSync; // @synthesize isInHardResetSync=_isInHardResetSync;
 @property(nonatomic) _Bool isInSoftResetSync; // @synthesize isInSoftResetSync=_isInSoftResetSync;
 @property(nonatomic) _Bool isOffline; // @synthesize isOffline=_isOffline;
@@ -62,7 +63,6 @@
 @property(copy, nonatomic) NSDate *syncDate; // @synthesize syncDate=_syncDate;
 @property(nonatomic) _Bool isSyncing; // @synthesize isSyncing=_isSyncing;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToCPLState:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

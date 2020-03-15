@@ -23,13 +23,13 @@
     struct _NSModalSession *_modalSession;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSModalSession *modalSession; // @synthesize modalSession=_modalSession;
 @property(retain) NSWindow *panelWindow; // @synthesize panelWindow=_panelWindow;
 @property __weak NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain, nonatomic) GKRemoteViewControllerProxy *proxy; // @synthesize proxy=_proxy;
 @property __weak id delegate; // @synthesize delegate=_delegate;
 @property unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)dismiss;
 - (void)sendMessageToService:(id)arg1;

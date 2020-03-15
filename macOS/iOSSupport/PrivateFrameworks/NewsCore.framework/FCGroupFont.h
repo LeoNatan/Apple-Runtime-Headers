@@ -14,9 +14,9 @@
     NSString *_urlString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 urlString:(id)arg2;
 - (id)init;
 

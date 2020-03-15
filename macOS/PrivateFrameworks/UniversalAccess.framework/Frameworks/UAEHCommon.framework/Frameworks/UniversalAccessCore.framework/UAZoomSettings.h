@@ -46,11 +46,11 @@
 + (id)keyPathsForValuesAffectingZoomEnabled;
 + (id)shared;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *_multitouchTrackpadUserDefaults; // @synthesize _multitouchTrackpadUserDefaults=__multitouchTrackpadUserDefaults;
 @property(retain, nonatomic) NSUserDefaults *_bluetoothMultitouchTrackpadUserDefaults; // @synthesize _bluetoothMultitouchTrackpadUserDefaults=__bluetoothMultitouchTrackpadUserDefaults;
 @property(retain, nonatomic) NSUserDefaults *_symbolicHotKeysUserDefaults; // @synthesize _symbolicHotKeysUserDefaults=__symbolicHotKeysUserDefaults;
 @property(readonly, nonatomic) BOOL canSetZoomStyle; // @synthesize canSetZoomStyle=_canSetZoomStyle;
-- (void).cxx_destruct;
 - (void)_setIOHIDScrollZoomModifiers:(unsigned long long)arg1;
 - (struct CGSize)_validateZoomWindowSizeValue:(struct CGSize)arg1;
 - (struct CGPoint)_validateZoomWindowOriginValue:(struct CGPoint)arg1;

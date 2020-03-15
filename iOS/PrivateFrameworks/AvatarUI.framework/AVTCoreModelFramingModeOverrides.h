@@ -14,9 +14,9 @@
     NSArray *_orderedFramingModeOverrides;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *orderedFramingModeOverrides; // @synthesize orderedFramingModeOverrides=_orderedFramingModeOverrides;
 @property(readonly, nonatomic) NSArray *orderedTags; // @synthesize orderedTags=_orderedTags;
-- (void).cxx_destruct;
 - (id)initWithCameraOverrides:(id)arg1;
 
 @end

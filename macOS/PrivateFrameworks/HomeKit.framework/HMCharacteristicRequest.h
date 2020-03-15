@@ -13,8 +13,8 @@
     HMCharacteristic *_characteristic;
 }
 
-@property(readonly, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
 - (id)initWithCharacteristic:(id)arg1;
 
 @end

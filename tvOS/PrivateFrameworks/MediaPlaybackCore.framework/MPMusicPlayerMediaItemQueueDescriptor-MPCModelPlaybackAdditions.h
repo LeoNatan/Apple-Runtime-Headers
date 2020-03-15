@@ -7,6 +7,7 @@
 #import <MediaPlayer/MPMusicPlayerMediaItemQueueDescriptor.h>
 
 @interface MPMusicPlayerMediaItemQueueDescriptor (MPCModelPlaybackAdditions)
+- (_Bool)matchesStartItem:(id)arg1;
 - (id)playbackContext;
 @end
 

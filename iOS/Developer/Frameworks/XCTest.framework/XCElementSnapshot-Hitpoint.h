@@ -23,6 +23,7 @@
 - (id)_transformParametersFromDictionary:(id)arg1 error:(id *)arg2;
 - (id)_hitPointTransformationRequestOrError:(id *)arg1;
 - (id)_visiblePointOrError:(id *)arg1;
+- (_Bool)_elementIsContainerSubviewWithMatchingFrame:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (id)reparentedOrphanElementMatchingAccessibilityElement:(id)arg1 inconsistentRelationshipDescriptions:(id *)arg2 error:(id *)arg3;
 - (id)_snapshotForAccessibilityElement:(id)arg1 error:(id *)arg2;

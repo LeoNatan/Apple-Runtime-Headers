@@ -24,6 +24,7 @@
 + (id)_extensionBlacklist;
 + (id)sharedInstance;
 + (void)disableExtensionDiscovery;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *pluginsToRemoveAfterExtensionsUpdate; // @synthesize pluginsToRemoveAfterExtensionsUpdate=_pluginsToRemoveAfterExtensionsUpdate;
 @property(retain, nonatomic) NSMutableDictionary *pluginIDToMetadataCache; // @synthesize pluginIDToMetadataCache=_pluginIDToMetadataCache;
 @property(retain, nonatomic) NSString *pluginMetaDataFolder; // @synthesize pluginMetaDataFolder=_pluginMetaDataFolder;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
 @property(retain, nonatomic) NSMutableDictionary *pluginsMap; // @synthesize pluginsMap=_pluginsMap;
 @property(readonly, retain, nonatomic) Class richLinksDataSourceClass; // @synthesize richLinksDataSourceClass=_richLinksDataSourceClass;
-- (void).cxx_destruct;
 - (id)balloonPluginForBundleID:(id)arg1;
 - (id)allPlugins;
 - (void)insertDataSource:(id)arg1 forGUID:(id)arg2;

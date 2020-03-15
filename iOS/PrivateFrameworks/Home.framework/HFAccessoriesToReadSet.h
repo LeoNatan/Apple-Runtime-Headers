@@ -14,9 +14,9 @@
     NSNumber *_transportKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *transportKey; // @synthesize transportKey=_transportKey;
 @property(retain, nonatomic) NSMutableDictionary *accessories; // @synthesize accessories=_accessories;
-- (void).cxx_destruct;
 - (long long)count;
 - (void)markCharacteristicAsRead:(id)arg1 withLogger:(id)arg2;
 - (void)addCharacteristic:(id)arg1;

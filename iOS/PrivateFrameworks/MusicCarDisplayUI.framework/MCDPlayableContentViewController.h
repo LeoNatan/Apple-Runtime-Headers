@@ -22,9 +22,9 @@
     NSOperationQueue *_modelInvalidationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *modelInvalidationQueue; // @synthesize modelInvalidationQueue=_modelInvalidationQueue;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)currentStack;
 - (void)_populateStack;
 - (void)_modelDidInvalidate:(id)arg1;

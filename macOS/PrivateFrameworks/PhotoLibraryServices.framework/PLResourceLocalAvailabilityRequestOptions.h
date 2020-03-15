@@ -18,13 +18,13 @@
     CDUnknownBlockType _dataHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
 @property(nonatomic, getter=isTransient) BOOL transient; // @synthesize transient=_transient;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(nonatomic) BOOL shouldPrioritize; // @synthesize shouldPrioritize=_shouldPrioritize;
 @property(nonatomic, getter=isNetworkAccessAllowed) BOOL networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
-- (void).cxx_destruct;
 
 @end
 

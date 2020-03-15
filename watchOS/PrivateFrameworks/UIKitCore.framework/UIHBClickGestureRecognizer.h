@@ -18,9 +18,9 @@
     unsigned int _clickCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool recognizesOnPressPhaseBegan; // @synthesize recognizesOnPressPhaseBegan=_recognizesOnPressPhaseBegan;
 @property(nonatomic) unsigned int clickCount; // @synthesize clickCount=_clickCount;
-- (void).cxx_destruct;
 - (void)pressesEventDidReceiveTerminal:(id)arg1;
 - (void)_processPresses:(id)arg1;
 - (void)_fail;

@@ -20,13 +20,13 @@
 
 + (_Bool)supports1stPartyHaptics;
 + (id)capabilitiesForHardware;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAutoShutdownEnabled) _Bool autoShutdownEnabled; // @synthesize autoShutdownEnabled=_autoShutdownEnabled;
 @property _Bool running; // @synthesize running=_running;
 @property(readonly) unsigned int audioSessionID; // @synthesize audioSessionID=_audioSessionID;
 @property(readonly) AVAudioSession *avAudioSession; // @synthesize avAudioSession=_avAudioSession;
 @property(copy) CDUnknownBlockType resetHandler; // @synthesize resetHandler=_resetHandler;
 @property(copy) CDUnknownBlockType stoppedHandler; // @synthesize stoppedHandler=_stoppedHandler;
-- (void).cxx_destruct;
 - (_Bool)playPatternFromData:(id)arg1 error:(id *)arg2;
 - (_Bool)playPatternFromURL:(id)arg1 error:(id *)arg2;
 - (_Bool)unregisterAudioResource:(unsigned long long)arg1 error:(id *)arg2;
@@ -52,7 +52,7 @@
 - (id)init;
 - (_Bool)doInit;
 - (void)dealloc;
-- (void)setMetricsTestModeEnabled;
+- (void)setMetricsTestModeEnabled:(_Bool)arg1;
 - (id)getMetricsForPlayer:(id)arg1;
 @property(nonatomic) _Bool highPriority;
 @property(nonatomic) _Bool muteAudioOnRingerOff;

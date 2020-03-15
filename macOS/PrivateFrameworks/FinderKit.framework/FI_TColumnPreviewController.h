@@ -35,9 +35,9 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TPreviewOptions, void> _previewOptions;
 }
 
-@property(nonatomic) _Bool inColumnView; // @synthesize inColumnView=_inColumnView;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool inColumnView; // @synthesize inColumnView=_inColumnView;
 @property(retain, nonatomic) FI_TPreviewOptions *previewOptions; // @dynamic previewOptions;
 - (void)setShowSmallThumbnail:(_Bool)arg1;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodeMDAttributeChanged:(const struct TFENode *)arg2 attributes:(id)arg3 isDisplayAttributes:(_Bool)arg4;

@@ -16,11 +16,11 @@
     struct _NSRange _selectionRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSearchTextField:) AXVTextField *_searchTextField; // @synthesize _searchTextField=__searchTextField;
 @property(nonatomic) struct _NSRange selectionRange; // @synthesize selectionRange=_selectionRange;
 @property(nonatomic) double baseFontSize; // @synthesize baseFontSize=_baseFontSize;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
-- (void).cxx_destruct;
 - (struct CGSize)_windowSizeToFitContent:(double)arg1;
 - (void)_adjustWindowFrameToFitContent:(double)arg1;
 - (struct CGSize)_sizeOfString:(id)arg1 withFont:(id)arg2;

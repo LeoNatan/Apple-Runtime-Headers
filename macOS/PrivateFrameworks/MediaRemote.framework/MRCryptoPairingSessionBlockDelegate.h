@@ -19,12 +19,12 @@
     CDUnknownBlockType _exchangeCompleteBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType exchangeCompleteBlock; // @synthesize exchangeCompleteBlock=_exchangeCompleteBlock;
 @property(copy, nonatomic) CDUnknownBlockType promptForSetupCodeBlock; // @synthesize promptForSetupCodeBlock=_promptForSetupCodeBlock;
 @property(copy, nonatomic) CDUnknownBlockType hideSetupCodeBlock; // @synthesize hideSetupCodeBlock=_hideSetupCodeBlock;
 @property(copy, nonatomic) CDUnknownBlockType showSetupCodeBlock; // @synthesize showSetupCodeBlock=_showSetupCodeBlock;
 @property(copy, nonatomic) CDUnknownBlockType dataExchangeBlock; // @synthesize dataExchangeBlock=_dataExchangeBlock;
-- (void).cxx_destruct;
 - (void)pairingSession:(id)arg1 didCompleteExchangeWithError:(id)arg2;
 - (void)pairingSession:(id)arg1 promptForSetupCodeWithDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)pairingSession:(id)arg1 promptForSetupCodeWithCompletion:(CDUnknownBlockType)arg2;

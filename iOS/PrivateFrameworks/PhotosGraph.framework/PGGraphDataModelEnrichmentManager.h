@@ -18,10 +18,10 @@
 
 + (id)enrichmentProcessorsForDataModelEnrichmentContext:(long long)arg1;
 + (id)allEnrichmentProcessors;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PGGraphDataModelEnrichmentManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PGManager *manager; // @synthesize manager=_manager;
 @property(readonly, nonatomic) NSArray *enrichmentProcessors; // @synthesize enrichmentProcessors=_enrichmentProcessors;
-- (void).cxx_destruct;
 - (_Bool)_enrichDataModelWithGraphUpdateInventory:(id)arg1 error:(id *)arg2 progressBlock:(CDUnknownBlockType)arg3;
 - (_Bool)enrichDataModelWithError:(id *)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (_Bool)enrichDataModelWithGraphUpdateInventory:(id)arg1 error:(id *)arg2 progressBlock:(CDUnknownBlockType)arg3;

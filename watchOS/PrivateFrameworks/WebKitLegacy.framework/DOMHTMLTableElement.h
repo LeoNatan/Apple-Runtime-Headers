@@ -36,6 +36,7 @@
 @property(retain) DOMHTMLTableSectionElement *tHead;
 @property(retain) DOMHTMLTableCaptionElement *caption;
 - (int)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 
 @end
 

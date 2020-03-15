@@ -21,6 +21,7 @@
     NSDate *__startTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *_startTime; // @synthesize _startTime=__startTime;
 @property(readonly, nonatomic) NSTimer *_updateTimer; // @synthesize _updateTimer=__updateTimer;
 @property(readonly, nonatomic) UIImageView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(readonly, nonatomic) _Bool usingBadgeAppearance; // @synthesize usingBadgeAppearance=_usingBadgeAppearance;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)_endRecordingAnimation;
 - (void)_beginRecordingAnimation;
 - (void)_updateBackgroundViewAnimated:(_Bool)arg1;

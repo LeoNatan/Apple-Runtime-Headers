@@ -30,6 +30,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) SVXDeactivationContext *deactivationContext; // @synthesize deactivationContext=_deactivationContext;
 @property(readonly, copy, nonatomic) SVXActivationContext *activationContext; // @synthesize activationContext=_activationContext;
@@ -43,7 +44,6 @@
 @property(readonly, copy, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) long long origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

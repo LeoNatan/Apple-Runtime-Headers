@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)dataTypeWithName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVCKDataType *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

@@ -23,9 +23,9 @@
     NSDate *_registrationDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *registrationDate; // @synthesize registrationDate=_registrationDate;
 @property(readonly, nonatomic) id <ACHEarnedInstanceAwarding> source; // @synthesize source=_source;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)dataStoreDidClearAllProperties:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSDictionary *dataStoreProperties;

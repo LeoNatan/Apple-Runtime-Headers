@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     BOOL _supportsShadowAndGrabber;
     UIView *_contentView;
     UIView *_overlayView;
+    _UIGrabber *_grabber;
     double _rimTreatmentAlpha;
     long long _independentCorners;
     UIView *_firstCornerClippingDescendant;
     NSArray *_cornerClippingDescendants;
-    _UIGrabber *_grabber;
     _UICutoutShadowView *_magicShadowView;
     UIDropShadowRimPartView *_topLeft;
     UIDropShadowRimPartView *_topEdge;
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     struct UIRectCornerRadii _environmentMatchingCornerRadii;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDropShadowRimPartView *bottomRight; // @synthesize bottomRight=_bottomRight;
 @property(retain, nonatomic) UIDropShadowRimPartView *bottomEdge; // @synthesize bottomEdge=_bottomEdge;
 @property(retain, nonatomic) UIDropShadowRimPartView *bottomLeft; // @synthesize bottomLeft=_bottomLeft;
@@ -41,17 +42,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIDropShadowRimPartView *topEdge; // @synthesize topEdge=_topEdge;
 @property(retain, nonatomic) UIDropShadowRimPartView *topLeft; // @synthesize topLeft=_topLeft;
 @property(readonly, nonatomic) _UICutoutShadowView *magicShadowView; // @synthesize magicShadowView=_magicShadowView;
-@property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(readonly, nonatomic) NSArray *cornerClippingDescendants; // @synthesize cornerClippingDescendants=_cornerClippingDescendants;
 @property(readonly, nonatomic) __weak UIView *firstCornerClippingDescendant; // @synthesize firstCornerClippingDescendant=_firstCornerClippingDescendant;
 @property(readonly, nonatomic) long long independentCorners; // @synthesize independentCorners=_independentCorners;
 @property(readonly, nonatomic) BOOL supportsShadowAndGrabber; // @synthesize supportsShadowAndGrabber=_supportsShadowAndGrabber;
 @property(nonatomic) BOOL masksTopCornersOnly; // @synthesize masksTopCornersOnly=_masksTopCornersOnly;
 @property(nonatomic) double rimTreatmentAlpha; // @synthesize rimTreatmentAlpha=_rimTreatmentAlpha;
+@property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct UIRectCornerRadii environmentMatchingCornerRadii; // @synthesize environmentMatchingCornerRadii=_environmentMatchingCornerRadii;
-- (void).cxx_destruct;
 - (void)didFinishRotation;
 - (void)willBeginRotationWithOriginalBounds:(struct CGRect)arg1 newBounds:(struct CGRect)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

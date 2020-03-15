@@ -15,8 +15,8 @@
 
 + (double)estimatedHeight;
 + (double)preferredHeight;
-@property(retain, nonatomic) NSMutableArray *visibleButtons; // @synthesize visibleButtons=_visibleButtons;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *visibleButtons; // @synthesize visibleButtons=_visibleButtons;
 - (void)_updateVisibleButtons;
 - (void)setShowsLocation:(_Bool)arg1;
 - (void)layoutSubviews;

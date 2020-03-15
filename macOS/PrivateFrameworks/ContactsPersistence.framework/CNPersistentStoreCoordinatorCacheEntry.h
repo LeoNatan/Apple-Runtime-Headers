@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_persistentStoreCoordinators;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *persistentStoreCoordinators; // @synthesize persistentStoreCoordinators=_persistentStoreCoordinators;
 @property(retain) id <CNAccountCollection> accountCollection; // @synthesize accountCollection=_accountCollection;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

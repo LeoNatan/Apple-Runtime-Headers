@@ -15,8 +15,8 @@
 
 + (id)defaultMetricsForFeatureType:(long long)arg1;
 + (id)exposedInputsForModel:(id)arg1;
-@property(retain, nonatomic) _MLTModelComparatorConfiguration *config; // @synthesize config=_config;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MLTModelComparatorConfiguration *config; // @synthesize config=_config;
 - (id)getImagesForModel:(id)arg1 error:(id *)arg2;
 - (BOOL)compareModelsWithError:(id *)arg1;
 - (id)groundTruthFromSourceModelWithError:(id *)arg1;

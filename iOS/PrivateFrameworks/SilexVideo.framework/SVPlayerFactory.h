@@ -17,9 +17,9 @@
     id <SVVolumeProviding> _volumeProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVolumeProviding> volumeProvider; // @synthesize volumeProvider=_volumeProvider;
 @property(readonly, nonatomic) int audioMode; // @synthesize audioMode=_audioMode;
-- (void).cxx_destruct;
 - (id)createPlayer;
 - (id)initWithAudioMode:(int)arg1 volumeProvider:(id)arg2;
 

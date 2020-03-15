@@ -19,12 +19,12 @@
     NSData *_contactHistoryToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *contactHistoryToken; // @synthesize contactHistoryToken=_contactHistoryToken;
 @property(retain, nonatomic) NSMutableArray *deletedContactIdentifiers; // @synthesize deletedContactIdentifiers=_deletedContactIdentifiers;
 @property(retain, nonatomic) NSMutableArray *updatedContactIdentifiers; // @synthesize updatedContactIdentifiers=_updatedContactIdentifiers;
 @property(retain, nonatomic) NSMutableArray *insertedContactIdentifiers; // @synthesize insertedContactIdentifiers=_insertedContactIdentifiers;
 @property _Bool didDropEverything; // @synthesize didDropEverything=_didDropEverything;
-- (void).cxx_destruct;
 - (void)visitDeleteContactEvent:(id)arg1;
 - (void)visitUpdateContactEvent:(id)arg1;
 - (void)visitAddContactEvent:(id)arg1;

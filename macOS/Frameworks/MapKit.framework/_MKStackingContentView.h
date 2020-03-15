@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSView *_bottomView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) NSView *topView; // @synthesize topView=_topView;
-- (void).cxx_destruct;
 - (id)vibrancyGroupName;
 - (void)updateConstraints;
 @property(readonly, nonatomic) NSLayoutConstraint *bottomConstraint;

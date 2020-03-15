@@ -16,8 +16,8 @@
     _Bool _forceTouchCompleted;
 }
 
-@property(nonatomic) _Bool forceTouchCompleted; // @synthesize forceTouchCompleted=_forceTouchCompleted;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool forceTouchCompleted; // @synthesize forceTouchCompleted=_forceTouchCompleted;
 - (void)interactionProgress:(id)arg1 didEnd:(_Bool)arg2;
 @property(readonly, nonatomic) double percentComplete;
 - (void)setView:(id)arg1;

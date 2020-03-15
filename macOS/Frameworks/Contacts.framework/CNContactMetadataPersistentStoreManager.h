@@ -20,15 +20,15 @@ __attribute__((visibility("hidden")))
 + (id)createModel;
 + (id)currentManagedObjectModel;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPersistentContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) NSURL *storeLocation; // @synthesize storeLocation=_storeLocation;
-- (void).cxx_destruct;
 - (BOOL)createStoreDirectoryIfNeeded:(id *)arg1;
 - (id)storeDescription;
 - (id)persistentStoreCoordinator;
 - (BOOL)setupIfNeeded:(id *)arg1;
 - (id)createManagedObjectContext;
-- (void)performWorkWithManagedObjectContext:(CDUnknownBlockType)arg1 error:(id *)arg2;
+- (BOOL)performWorkWithManagedObjectContext:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)initWithStoreLocation:(id)arg1;
 - (id)init;
 

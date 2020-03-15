@@ -15,10 +15,10 @@
     SBSwitcherModifierActionSnapshot *_actionSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBSwitcherModifierActionSnapshot *actionSnapshot; // @synthesize actionSnapshot=_actionSnapshot;
 @property(retain, nonatomic) SBSwitcherModifierStackSnapshot *postEventStackSnapshot; // @synthesize postEventStackSnapshot=_postEventStackSnapshot;
 @property(retain, nonatomic) SBSwitcherModifierEventSnapshot *eventSnapshot; // @synthesize eventSnapshot=_eventSnapshot;
-- (void).cxx_destruct;
 
 @end
 

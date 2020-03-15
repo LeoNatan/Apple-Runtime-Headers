@@ -18,13 +18,13 @@
     NSMutableDictionary *_configResourceByRequestKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *configResourceByRequestKey; // @synthesize configResourceByRequestKey=_configResourceByRequestKey;
 @property(retain, nonatomic) RCKeyValueStore *localStore; // @synthesize localStore=_localStore;
 @property(retain, nonatomic) RCAsyncSerialQueue *configRequestSerialQueue; // @synthesize configRequestSerialQueue=_configRequestSerialQueue;
 @property(retain, nonatomic) NSURL *contentDirectoryURL; // @synthesize contentDirectoryURL=_contentDirectoryURL;
 @property(retain, nonatomic) RCDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(retain, nonatomic) RCConfigurationSettings *configurationSettings; // @synthesize configurationSettings=_configurationSettings;
-- (void).cxx_destruct;
 - (id)_decodeConfigurationResource:(id)arg1;
 - (id)_encodeConfigurationResource:(id)arg1;
 - (void)_removeConfigurationResourceForRequestKey:(id)arg1;

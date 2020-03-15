@@ -17,8 +17,8 @@
     UIViewController *_attributeViewController;
 }
 
-@property(nonatomic, getter=isBitmapEraser) BOOL bitmapEraser; // @synthesize bitmapEraser=_bitmapEraser;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isBitmapEraser) BOOL bitmapEraser; // @synthesize bitmapEraser=_bitmapEraser;
 - (void)erasingAttributesViewControllerDidChangeErasingType:(id)arg1;
 - (void)_updateAttributesViewController;
 - (id)attributeViewController;

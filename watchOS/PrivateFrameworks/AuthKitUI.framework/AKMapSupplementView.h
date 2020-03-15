@@ -16,10 +16,10 @@
     MKMapSnapshotter *_mapSnapshotter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapSnapshotter *mapSnapshotter; // @synthesize mapSnapshotter=_mapSnapshotter;
 @property(retain, nonatomic) PUICActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(retain, nonatomic) UIImageView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)willRemoveSubview:(id)arg1;
 - (void)_snapshotMapLocation;

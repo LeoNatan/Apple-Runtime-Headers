@@ -14,8 +14,8 @@
     unsigned long long _dateStyle;
 }
 
-@property(readonly, nonatomic) unsigned long long dateStyle; // @synthesize dateStyle=_dateStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long dateStyle; // @synthesize dateStyle=_dateStyle;
 - (id)foregroundColor;
 - (void)setForegroundColor:(id)arg1;
 - (id)accentColor;

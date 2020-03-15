@@ -13,8 +13,8 @@
     PKDiscoveryManifest *_manifest;
 }
 
-@property(readonly, nonatomic) PKDiscoveryManifest *manifest; // @synthesize manifest=_manifest;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKDiscoveryManifest *manifest; // @synthesize manifest=_manifest;
 - (id)initWithManifest:(id)arg1;
 - (id)initWithData:(id)arg1;
 

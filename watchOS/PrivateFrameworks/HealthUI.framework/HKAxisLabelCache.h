@@ -16,10 +16,10 @@
     NSCache *_mainCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *mainCache; // @synthesize mainCache=_mainCache;
 @property(readonly, nonatomic) NSNumber *axisLabelMaximumWidth; // @synthesize axisLabelMaximumWidth=_axisLabelMaximumWidth;
 @property(nonatomic) __weak id <HKAxisLabelDataSource> axisLabelDataSource; // @synthesize axisLabelDataSource=_axisLabelDataSource;
-- (void).cxx_destruct;
 - (void)_handleTimeChangeNotification:(id)arg1;
 - (void)invalidateCache;
 - (void)enumerateAxisLabelsForTextInRange:(id)arg1 rect:(struct CGRect)arg2 zoomScale:(float)arg3 contentOffset:(struct CGPoint)arg4 constantOffset:(float)arg5 isHorizontal:(_Bool)arg6 optionalOffset:(struct CGPoint)arg7 gridlineWidth:(float)arg8 timeScope:(int)arg9 usingBlock:(CDUnknownBlockType)arg10;

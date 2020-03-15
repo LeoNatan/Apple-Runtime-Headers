@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CKAcknowledgmentGlyphImageView *_a2;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *a2; // @synthesize a2=_a2;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *h2; // @synthesize h2=_h2;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *a1; // @synthesize a1=_a1;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *h1; // @synthesize h1=_h1;
-- (void).cxx_destruct;
 - (double)animationDuration;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (struct CGPoint)glyphOffset;

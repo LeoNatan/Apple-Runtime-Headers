@@ -16,9 +16,9 @@
     NSAttributedString *_attributedString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(copy, nonatomic) CDUnknownBlockType attributedStringCreator; // @synthesize attributedStringCreator=_attributedStringCreator;
-- (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (_Bool)allowsAttributedStringForActivityType:(id)arg1;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;

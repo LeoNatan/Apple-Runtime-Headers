@@ -18,13 +18,13 @@
     NSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *runLoopMode; // @synthesize runLoopMode=_runLoopMode;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)timerFired:(id)arg1;
 - (void)resetWithDelay:(double)arg1;

@@ -33,6 +33,7 @@
 }
 
 + (id)_participantAddressForParticipant:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tableViewCellHook; // @synthesize tableViewCellHook=_tableViewCellHook;
 @property(retain, nonatomic) NSMutableSet *participantAddressesForInFlightAvailabilityOperations; // @synthesize participantAddressesForInFlightAvailabilityOperations=_participantAddressesForInFlightAvailabilityOperations;
 @property(retain, nonatomic) NSMutableDictionary *participantAddressesToParticipantIndex; // @synthesize participantAddressesToParticipantIndex=_participantAddressesToParticipantIndex;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) CDUnknownBlockType participantRemoved; // @synthesize participantRemoved=_participantRemoved;
 @property(copy, nonatomic) CDUnknownBlockType participantTapped; // @synthesize participantTapped=_participantTapped;
 @property(retain, nonatomic) NSArray *pendingParticipants; // @synthesize pendingParticipants=_pendingParticipants;
-- (void).cxx_destruct;
 - (void)_updateCell:(id)arg1 forParticipantAtIndex:(long long)arg2 animated:(_Bool)arg3;
 - (void)_updateCellForParticipantWithAddress:(id)arg1;
 - (_Bool)_isSendInviteRow:(long long)arg1;

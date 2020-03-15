@@ -20,12 +20,12 @@
 }
 
 + (Class)actionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *homeUUID; // @synthesize homeUUID=_homeUUID;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *actionSetType; // @synthesize actionSetType=_actionSetType;
 @property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

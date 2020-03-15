@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)naturalStatementWithSQL:(id)arg1 parameters:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *parameters; // @synthesize parameters=_parameters;
 @property(copy, nonatomic) NSString *sql; // @synthesize sql=_sql;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setParameter:(id)arg1 forPosition:(unsigned long long)arg2;

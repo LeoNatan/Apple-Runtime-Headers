@@ -13,10 +13,10 @@
     CDStruct_79de6ffd _yAxisDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_79de6ffd yAxisDescriptor; // @synthesize yAxisDescriptor=_yAxisDescriptor;
 @property(readonly, nonatomic) CDStruct_79de6ffd xAxisDescriptor; // @synthesize xAxisDescriptor=_xAxisDescriptor;
 @property(readonly, nonatomic) CDUnknownBlockType function; // @synthesize function=_function;
-- (void).cxx_destruct;
 - (double)_xAxisValueForNormalizedPosition:(double)arg1;
 - (void)renderInBuffer:(vector_3203cf93 *)arg1 atFrame:(unsigned int)arg2;
 - (id)initWithUnivariateFunction:(CDUnknownBlockType)arg1 sampleRate:(double)arg2 envelope:(id)arg3 xAxisDescriptor:(CDStruct_79de6ffd)arg4 yAxisDescriptor:(CDStruct_79de6ffd)arg5;

@@ -6,13 +6,20 @@
 
 #import <Transparency/GPBMessage.h>
 
-@class NSMutableArray, SignedLogHead;
+#import <Transparency/TransparencyVerifiable-Protocol.h>
 
-@interface ConsistencyProofResponse_LogConsistencyResponse : GPBMessage
+@class NSMutableArray, NSNumber, SignedLogHead, TransparencyConsistencyProofVerifier, TransparencyManagedDataStore;
+
+@interface ConsistencyProofResponse_LogConsistencyResponse : GPBMessage <TransparencyVerifiable>
 {
 }
 
 + (id)descriptor;
+- (_Bool)verifyWithError:(id *)arg1;
+- (void)setResult:(_Bool)arg1 treeHead:(id)arg2 error:(id)arg3;
+@property(retain) NSNumber *startRevision;
+@property(retain) TransparencyManagedDataStore *dataStore;
+@property(retain) TransparencyConsistencyProofVerifier *verifier;
 
 // Remaining properties
 @property(nonatomic) int application; // @dynamic application;

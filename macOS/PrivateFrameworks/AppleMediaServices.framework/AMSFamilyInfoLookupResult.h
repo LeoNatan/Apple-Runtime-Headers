@@ -15,9 +15,9 @@
 }
 
 + (id)_familyMembersFromDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSArray *familyMembers; // @synthesize familyMembers=_familyMembers;
 @property(readonly, getter=isCached) BOOL cached; // @synthesize cached=_cached;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 cached:(BOOL)arg2;

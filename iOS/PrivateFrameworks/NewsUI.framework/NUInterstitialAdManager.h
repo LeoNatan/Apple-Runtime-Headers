@@ -18,13 +18,13 @@
     id <NUAdLayoutOptionsFactory> _layoutOptionsFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUAdLayoutOptionsFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 @property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
 @property(readonly, nonatomic) id <NUAdProvider> adProvider; // @synthesize adProvider=_adProvider;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) id <NUPage> activePage; // @synthesize activePage=_activePage;
 @property(nonatomic) __weak id <NUInterstitialAdManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)triggerTimerChangesForActivePage:(id)arg1;
 - (void)restartTimer;
 - (void)cancelTimer;

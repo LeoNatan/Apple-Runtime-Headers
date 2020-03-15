@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <BRProgressProxyDelegate> _delegate;
 }
 
-@property __weak id <BRProgressProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <BRProgressProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stop;
 - (void)start;

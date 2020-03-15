@@ -20,6 +20,7 @@
     NSString *_extensionID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL entitlementVerified; // @synthesize entitlementVerified=_entitlementVerified;
 @property(retain, nonatomic) NSString *extensionID; // @synthesize extensionID=_extensionID;
 @property(retain, nonatomic) NSString *containerPath; // @synthesize containerPath=_containerPath;
@@ -27,7 +28,6 @@
 @property(copy) NSSet *identifiers; // @synthesize identifiers=_identifiers;
 @property(retain, nonatomic) NSString *containerID; // @synthesize containerID=_containerID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)performJob:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_performJob:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)_verifyIntegrityWithHostContext:(id)arg1;

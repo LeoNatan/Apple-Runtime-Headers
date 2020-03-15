@@ -12,8 +12,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) id SubscriptionRequest; // @synthesize SubscriptionRequest=_SubscriptionRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id SubscriptionRequest; // @synthesize SubscriptionRequest=_SubscriptionRequest;
 
 @end
 

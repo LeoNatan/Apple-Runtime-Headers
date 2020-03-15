@@ -16,11 +16,11 @@
     NSMutableSet *_participatingPressTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *participatingPressTypes; // @synthesize participatingPressTypes=_participatingPressTypes;
 @property(retain, nonatomic) NSMutableSet *activePressTypes; // @synthesize activePressTypes=_activePressTypes;
 @property(nonatomic) _Bool didTriggerSOS; // @synthesize didTriggerSOS=_didTriggerSOS;
 @property(copy, nonatomic) NSDate *clawEventTimestamp; // @synthesize clawEventTimestamp=_clawEventTimestamp;
-- (void).cxx_destruct;
 - (void)_resetLoggedData;
 - (void)_publishLoggedData;
 - (void)noteSOSTriggered;

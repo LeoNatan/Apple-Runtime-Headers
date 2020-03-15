@@ -12,9 +12,9 @@
     struct _NSRange _subrange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *parentData; // @synthesize parentData=_parentData;
 @property(nonatomic) struct _NSRange subrange; // @synthesize subrange=_subrange;
-- (void).cxx_destruct;
 - (const void *)bytes;
 - (unsigned long long)length;
 - (id)copyWithZone:(struct _NSZone *)arg1;

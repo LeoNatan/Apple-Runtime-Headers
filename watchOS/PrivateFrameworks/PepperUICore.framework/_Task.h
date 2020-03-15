@@ -15,10 +15,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) PUICTaskToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)initWithToken:(id)arg1 block:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end

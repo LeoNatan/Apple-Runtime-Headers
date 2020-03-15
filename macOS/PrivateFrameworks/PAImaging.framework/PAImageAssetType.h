@@ -18,10 +18,10 @@
 }
 
 + (id)assetTypeForImageType:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL consumesAdjustmentChanges; // @synthesize consumesAdjustmentChanges=_consumesAdjustmentChanges;
 @property(readonly) PAImageType *imageType; // @synthesize imageType=_imageType;
 @property(readonly) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqualToAssetType:(id)arg1;

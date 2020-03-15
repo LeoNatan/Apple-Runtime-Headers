@@ -9,6 +9,7 @@
 @class ACAccount, ACAccountCredential, ACAccountType, ACCredentialItem, NSArray, NSDictionary, NSNumber, NSString, NSURL;
 
 @protocol ACRemoteAccountStoreProtocol <NSObject>
+- (void)resetDatabaseToVersion:(NSNumber *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
 - (void)scheduleBackupIfNonexistent:(void (^)(BOOL, NSError *))arg1;
 - (void)reportTelemetryForLandmarkEvent:(void (^)(BOOL, NSError *))arg1;
 - (void)triggerKeychainMigrationIfNecessary:(void (^)(BOOL, NSError *))arg1;

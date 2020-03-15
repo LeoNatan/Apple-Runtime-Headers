@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedCenter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _SKUIStatusBarAlertViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
 @property(readonly, nonatomic) _SKUIClickThroughWindow *window; // @synthesize window=_window;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)statusBarAlertViewControllerWasTapped:(id)arg1;
 - (void)dismiss;
 - (void)scheduleDismiss;

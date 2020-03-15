@@ -29,10 +29,10 @@
 + (id)listControllerHierarchyForURL:(id)arg1;
 + (id)_listControllerHierarchyForURL:(id)arg1 withConstructorBlock:(CDUnknownBlockType)arg2;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _UIDocumentListController *rootListController; // @synthesize rootListController=_rootListController;
 @property(nonatomic) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) _Bool hideSearchField; // @synthesize hideSearchField=_hideSearchField;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_updateScrollPositionForStateRestoration;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

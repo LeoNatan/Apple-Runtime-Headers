@@ -17,9 +17,9 @@
     NSArray *_keyMaps;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct __TISInputSource *inputSourceRef; // @synthesize inputSourceRef=_inputSourceRef;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isEqualToInputSource:(id)arg1;
 - (BOOL)overrideCurrentKeyboardLayoutWithError:(id *)arg1;
 - (BOOL)selectWithError:(id *)arg1;

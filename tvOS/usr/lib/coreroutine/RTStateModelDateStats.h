@@ -17,12 +17,12 @@
     double _timeIntervalToLatestDateSum2;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeIntervalToLatestDateSum2; // @synthesize timeIntervalToLatestDateSum2=_timeIntervalToLatestDateSum2;
 @property(nonatomic) double timeIntervalToLatestDateSum; // @synthesize timeIntervalToLatestDateSum=_timeIntervalToLatestDateSum;
 @property(nonatomic) int numOfDates; // @synthesize numOfDates=_numOfDates;
 @property(nonatomic) double stdDeviation; // @synthesize stdDeviation=_stdDeviation;
 @property(retain, nonatomic) NSDate *averageDate; // @synthesize averageDate=_averageDate;
-- (void).cxx_destruct;
 
 @end
 

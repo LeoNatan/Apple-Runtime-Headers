@@ -38,6 +38,7 @@
 
 + (id)_keysToFetchForContactAction;
 + (id)_contactFromDestination:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id tinCanContacts; // @synthesize tinCanContacts=_tinCanContacts;
 @property(nonatomic, getter=isWalkieTalkieAvailable) _Bool walkieTalkieAvailable; // @synthesize walkieTalkieAvailable=_walkieTalkieAvailable;
 @property(retain, nonatomic) TUCallProviderManager *providerManager; // @synthesize providerManager=_providerManager;
@@ -51,7 +52,6 @@
 @property(nonatomic) _Bool useBestHandleLookupsForMessaging; // @synthesize useBestHandleLookupsForMessaging=_useBestHandleLookupsForMessaging;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak id <NCABContactActionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_mailDestination:(id)arg1;
 - (void)_messageDestination:(id)arg1;
 - (id)_allPhoneAndEmailContactProperties;

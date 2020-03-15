@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_supplementaryControlItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *supplementaryControlItems; // @synthesize supplementaryControlItems=_supplementaryControlItems;
 @property(retain, nonatomic) NSMutableArray *gridControlItems; // @synthesize gridControlItems=_gridControlItems;
 @property(retain, nonatomic) HFServiceItem *serviceItem; // @synthesize serviceItem=_serviceItem;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

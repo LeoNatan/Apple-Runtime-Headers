@@ -25,8 +25,8 @@
 + (id)contentProviderPlistEventStreamsForPath:(id)arg1;
 + (void)loadAllEventStreams;
 + (id)sharedInstance;
-@property(nonatomic) _Bool allStreamsLoaded; // @synthesize allStreamsLoaded=_allStreamsLoaded;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool allStreamsLoaded; // @synthesize allStreamsLoaded=_allStreamsLoaded;
 @property(readonly, nonatomic) NSDictionary *allKBEventStreams; // @synthesize allKBEventStreams=_allKBEventStreams;
 - (void)setAllKBEventStreams:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *allEventStreams; // @synthesize allEventStreams=_allEventStreams;

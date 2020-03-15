@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

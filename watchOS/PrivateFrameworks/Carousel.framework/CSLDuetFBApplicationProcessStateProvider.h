@@ -26,6 +26,7 @@
     FBSALOToken *_observerToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) FBSALOToken *observerToken; // @synthesize observerToken=_observerToken;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSMutableDictionary *processToAppBundleIDMap; // @synthesize processToAppBundleIDMap=_processToAppBundleIDMap;
@@ -34,7 +35,6 @@
 @property(nonatomic) __weak id <CSLDuetApplicationProcessStateObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) IOSSHLApplicationsManager *applicationsManager; // @synthesize applicationsManager=_applicationsManager;
 @property(readonly, nonatomic) FBProcessManager *processManager; // @synthesize processManager=_processManager;
-- (void).cxx_destruct;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)succinctDescription;

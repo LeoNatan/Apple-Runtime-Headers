@@ -13,8 +13,8 @@
     id <KHSelectionViewDelegate> _delegate;
 }
 
-@property __weak id <KHSelectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <KHSelectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)description;
 - (void)endGestureWithEvent:(id)arg1;
 - (void)beginGestureWithEvent:(id)arg1;

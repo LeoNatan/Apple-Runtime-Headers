@@ -70,6 +70,7 @@
     unsigned long long _falsePositiveRelationshipSignal;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long falsePositiveRelationshipSignal; // @synthesize falsePositiveRelationshipSignal=_falsePositiveRelationshipSignal;
 @property(nonatomic) unsigned long long truePositiveRelationshipSignal; // @synthesize truePositiveRelationshipSignal=_truePositiveRelationshipSignal;
 @property(nonatomic) unsigned long long falsePositiveSocialGroupSignal; // @synthesize falsePositiveSocialGroupSignal=_falsePositiveSocialGroupSignal;
@@ -125,7 +126,6 @@
 @property(nonatomic) double precisionContactSuggestionTop1; // @synthesize precisionContactSuggestionTop1=_precisionContactSuggestionTop1;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (double)_precisionFromTruePositivesCount:(unsigned long long)arg1 falsePositivesCount:(unsigned long long)arg2;
 - (id)_peopleIdentitiesSignals;

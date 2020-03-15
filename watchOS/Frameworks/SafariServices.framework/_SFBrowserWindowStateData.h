@@ -15,14 +15,14 @@
     _Bool _needsQuickUpdate;
     int _databaseID;
     NSString *_UUIDString;
+    NSString *_sceneID;
     int _type;
     int _activeDocumentIndex;
     int _activePrivateDocumentIndex;
     int _legacyPlistFileVersion;
-    NSString *_sceneID;
 }
 
-@property(retain, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsQuickUpdate; // @synthesize needsQuickUpdate=_needsQuickUpdate;
 @property(nonatomic) int legacyPlistFileVersion; // @synthesize legacyPlistFileVersion=_legacyPlistFileVersion;
 @property(nonatomic) _Bool isTabStateSuccessfullyLoaded; // @synthesize isTabStateSuccessfullyLoaded=_isTabStateSuccessfullyLoaded;
@@ -30,9 +30,9 @@
 @property(nonatomic) int activePrivateDocumentIndex; // @synthesize activePrivateDocumentIndex=_activePrivateDocumentIndex;
 @property(nonatomic) int activeDocumentIndex; // @synthesize activeDocumentIndex=_activeDocumentIndex;
 @property(nonatomic) int type; // @synthesize type=_type;
+@property(retain, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 @property(retain, nonatomic) NSString *UUIDString; // @synthesize UUIDString=_UUIDString;
 @property(nonatomic) int databaseID; // @synthesize databaseID=_databaseID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isInDatabase;
 - (id)dictionaryPresentation;
 @property(retain, nonatomic) NSUUID *UUID;

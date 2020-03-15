@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property(nonatomic, getter=isInPopover) _Bool inPopover; // @synthesize inPopover=_isInPopover;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
@@ -51,8 +53,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool ignoreTextChanged; // @synthesize ignoreTextChanged=_ignoreTextChanged;
 @property(nonatomic) _Bool showSuggestionsTableInMenu; // @synthesize showSuggestionsTableInMenu=_showSuggestionsTableInMenu;
 @property(nonatomic) _Bool autoResizesVertically; // @synthesize autoResizesVertically=_autoResizesVertically;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)touchBarAddTagsViewController;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)makeTouchBar;

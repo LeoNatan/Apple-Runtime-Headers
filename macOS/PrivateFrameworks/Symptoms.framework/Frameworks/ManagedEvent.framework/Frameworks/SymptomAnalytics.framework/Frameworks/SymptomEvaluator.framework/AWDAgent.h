@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *awdCFNetworkConfiguredMetricIds; // @synthesize awdCFNetworkConfiguredMetricIds=_awdCFNetworkConfiguredMetricIds;
 @property(retain, nonatomic) NSSet *awdLibnetcoreConfiguredMetricIds; // @synthesize awdLibnetcoreConfiguredMetricIds=_awdLibnetcoreConfiguredMetricIds;
 @property(retain, nonatomic) NSSet *awdSymptomsConfiguredMetricIds; // @synthesize awdSymptomsConfiguredMetricIds=_awdSymptomsConfiguredMetricIds;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain) AWDServerConnection *libnetcoreAWDConnection; // @synthesize libnetcoreAWDConnection=_libnetcoreAWDConnection;
 @property(retain) AWDServerConnection *symptomsAWDConnection; // @synthesize symptomsAWDConnection=_symptomsAWDConnection;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)postMetricForSignificantEventWithName:(id)arg1 errorContext:(int)arg2 error:(id)arg3 status:(int)arg4;
 - (void)postMetricForSignificantEvent:(int)arg1 errorContext:(int)arg2 error:(id)arg3 status:(int)arg4;
 - (void)_postMetricForSignificantEvent:(int)arg1 orEventName:(id)arg2 errorContext:(int)arg3 error:(id)arg4 status:(int)arg5;

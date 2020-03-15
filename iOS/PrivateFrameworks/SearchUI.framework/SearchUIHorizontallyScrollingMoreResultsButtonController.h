@@ -13,8 +13,8 @@
     TLKProminenceView *_backgroundView;
 }
 
-@property(retain) TLKProminenceView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
+@property(retain) TLKProminenceView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void)setCardSectionRowModel:(id)arg1;
 - (id)init;
 

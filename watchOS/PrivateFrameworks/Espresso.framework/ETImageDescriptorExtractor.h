@@ -33,6 +33,8 @@
 + (id)passthroughExtractor;
 + (id)inception_v3_Extractor;
 + (id)VisionSceneNet_iOS10_Extractor;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property unsigned long descriptors_file_cache_size; // @synthesize descriptors_file_cache_size=_descriptors_file_cache_size;
 @property unsigned long descriptors_mem_cache_size; // @synthesize descriptors_mem_cache_size=_descriptors_mem_cache_size;
 @property int doBatchnormTuning; // @synthesize doBatchnormTuning=_doBatchnormTuning;
@@ -43,8 +45,6 @@
 @property float zoom_range; // @synthesize zoom_range=_zoom_range;
 @property float horizontal_flip; // @synthesize horizontal_flip=_horizontal_flip;
 @property float rotation_range; // @synthesize rotation_range=_rotation_range;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)numberOfChannels;
 - (float *)extractDescriptorForDataPoint:(struct vImage_Buffer)arg1 freeWhenDone:(_Bool)arg2;
 - (struct vImage_Buffer)cropResizeInputImage:(struct vImage_Buffer)arg1;

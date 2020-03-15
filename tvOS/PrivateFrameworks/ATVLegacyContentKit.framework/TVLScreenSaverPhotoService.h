@@ -20,9 +20,9 @@
     id <TVPhotoServerInterface> _remotePhotoServerInterface;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <TVPhotoServerInterface> remotePhotoServerInterface; // @synthesize remotePhotoServerInterface=_remotePhotoServerInterface;
 @property(retain, nonatomic) TVLAppliance *appliance; // @synthesize appliance=_appliance;
-- (void).cxx_destruct;
 - (void)_processRequest:(id)arg1;
 - (void)_processRequestsIfReady;
 - (void)_enqueueRequest:(id)arg1;

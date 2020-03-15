@@ -20,12 +20,12 @@
 }
 
 + (id)requestWithAsset:(id)arg1 mediaProvider:(id)arg2 priority:(long long)arg3 delegate:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXDisplayAssetVideoContentProviderRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (long long)_streamingVideoIntent;
 - (void)_handleMediaProviderResult:(id)arg1 info:(id)arg2;

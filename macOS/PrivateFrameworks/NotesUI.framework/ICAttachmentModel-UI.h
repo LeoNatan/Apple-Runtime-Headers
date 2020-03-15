@@ -13,8 +13,8 @@
 @class NSArray, NSString, NSURL;
 
 @interface ICAttachmentModel (UI) <QLPreviewItem, NSPasteboardWriting, NSFilePromiseProviderDelegate>
-+ (struct NSImage *)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2 uti:(id)arg3;
-+ (struct NSImage *)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
++ (id)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2 uti:(id)arg3;
++ (id)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
 - (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
 - (id)forceCreateFilePromiseProvider;
@@ -24,7 +24,7 @@
 - (id)writableTypesForPasteboard:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresFilePromiseForDrags;
 - (void)drawPreviewInRect:(struct CGRect)arg1;
-- (struct NSImage *)fileIconWithPreferredSize:(struct CGSize)arg1;
+- (id)fileIconWithPreferredSize:(struct CGSize)arg1;
 - (id)activityItems;
 @property(readonly, nonatomic) NSArray *quicklookPreviewItems;
 - (id)itemProvider;

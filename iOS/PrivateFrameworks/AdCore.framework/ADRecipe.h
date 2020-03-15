@@ -17,12 +17,12 @@
     NSNumber *_scalingRatio;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMissingRequiredData; // @synthesize isMissingRequiredData=_isMissingRequiredData;
 @property(retain, nonatomic) NSNumber *scalingRatio; // @synthesize scalingRatio=_scalingRatio;
 @property(retain, nonatomic) NSArray *testWeights; // @synthesize testWeights=_testWeights;
 @property(retain, nonatomic) NSDictionary *translationMap; // @synthesize translationMap=_translationMap;
 @property(retain, nonatomic) NSString *experimentID; // @synthesize experimentID=_experimentID;
-- (void).cxx_destruct;
 - (id)translationWeights:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 

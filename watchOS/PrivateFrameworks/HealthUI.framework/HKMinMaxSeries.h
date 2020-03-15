@@ -16,11 +16,11 @@
     UIImage *_selectedPointMarkerImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *selectedPointMarkerImage; // @synthesize selectedPointMarkerImage=_selectedPointMarkerImage;
 @property(retain, nonatomic) UIImage *unselectedPointMarkerImage; // @synthesize unselectedPointMarkerImage=_unselectedPointMarkerImage;
 @property(retain, nonatomic) HKStrokeStyle *selectedStrokeStyle; // @synthesize selectedStrokeStyle=_selectedStrokeStyle;
 @property(retain, nonatomic) HKStrokeStyle *unselectedStrokeStyle; // @synthesize unselectedStrokeStyle=_unselectedStrokeStyle;
-- (void).cxx_destruct;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (_Bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (_Bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect)arg1 blockCoordinate:(id)arg2;

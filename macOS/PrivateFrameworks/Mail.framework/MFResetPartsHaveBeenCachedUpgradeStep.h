@@ -14,8 +14,8 @@
 }
 
 + (unsigned long long)targetVersion;
-@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;
 - (id)initWithDatabaseConnection:(id)arg1;
 - (id)initWithDatabaseConnection:(id)arg1 accounts:(id)arg2;

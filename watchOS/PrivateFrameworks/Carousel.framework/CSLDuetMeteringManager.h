@@ -19,9 +19,9 @@
 
 + (id)defaultMeteringManager;
 + (void)prepareDefaultMeteringManagerWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly) CSLDuetMeteringManagerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) NSMutableDictionary *groupsByBundleID; // @synthesize groupsByBundleID=_groupsByBundleID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -13,8 +13,8 @@
     UIDatePicker *_datePicker;
 }
 
-@property(readonly, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -44,6 +44,7 @@
 }
 
 + (_Bool)prepareForSystemAppDeletion:(id *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool triggeredInitialSyncToRecoverFromSyncVersionMismatch; // @synthesize triggeredInitialSyncToRecoverFromSyncVersionMismatch=_triggeredInitialSyncToRecoverFromSyncVersionMismatch;
 @property(retain, nonatomic) NNMKBatchRequestHandler *batchRequestHandler; // @synthesize batchRequestHandler=_batchRequestHandler;
 @property(retain, nonatomic) NNMKInitialSyncProgressTracker *initialSyncProgressTracker; // @synthesize initialSyncProgressTracker=_initialSyncProgressTracker;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) id <NNMKSyncStateManager> syncStateManager; // @synthesize syncStateManager=_syncStateManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *providerQueue; // @synthesize providerQueue=_providerQueue;
 @property(nonatomic) __weak id <NNMKSyncProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)pairedDeviceSupportsStandaloneMode;
 - (_Bool)pairedDeviceSupportsMultipleMailboxes;
 - (id)currentDeviceRegistry;

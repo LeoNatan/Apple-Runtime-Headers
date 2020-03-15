@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_syncQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(copy) NSError *error; // @synthesize error=_error;
 @property long long state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
-- (void).cxx_destruct;
 - (id)taskStatesToString:(long long)arg1;
 - (void)failWithError:(id)arg1 taskContext:(id)arg2;
 - (void)completeWithTaskContext:(id)arg1;

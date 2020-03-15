@@ -34,6 +34,7 @@
 + (void)saveAccountInfoToDefaults;
 + (void)saveAccounts:(id)arg1;
 + (BOOL)haveAccountsBeenConfigured;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastConnectionValidationTime; // @synthesize lastConnectionValidationTime=_lastConnectionValidationTime;
 @property(nonatomic) BOOL autosynchronizingEnabled; // @synthesize autosynchronizingEnabled=_autosynchronizingEnabled;
 @property BOOL primitiveIsWillingToGoOnline; // @synthesize primitiveIsWillingToGoOnline=_primitiveIsWillingToGoOnline;
@@ -41,7 +42,6 @@
 @property(readonly) ECAccount *baseAccount; // @synthesize baseAccount=_baseAccount;
 @property(copy) ACAccount *systemAccount; // @synthesize systemAccount=_systemAccount;
 @property(readonly, copy) NSArray *emailAddressStrings; // @synthesize emailAddressStrings;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (void)respondToHostBecomingReachable;

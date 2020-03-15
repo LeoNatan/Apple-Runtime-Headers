@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_b7cb895d region; // @synthesize region=_region;
 @property(readonly, nonatomic) CDStruct_02837cd9 mapRect; // @synthesize mapRect=_mapRect;
-- (void).cxx_destruct;
 - (struct CLLocationCoordinate2D)_clampedCoordinateForCoordinate:(struct CLLocationCoordinate2D)arg1;
 - (_Bool)_containsCoordinate:(struct CLLocationCoordinate2D)arg1;
 - (id)_vkRegionRestriction;

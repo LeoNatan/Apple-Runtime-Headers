@@ -21,6 +21,7 @@
 @property(copy, nonatomic) NSString *loggableSharedUserId;
 @property(copy, nonatomic) NSString *loggableMultiUserSharedUserId;
 @property(copy, nonatomic) NSString *loggableCompanionAssistantId;
+@property(copy, nonatomic) NSString *lastVisitedAceHost;
 @property(retain, nonatomic) SAHomeMemberSettings *homeMemberSettings;
 @property(copy, nonatomic) NSString *enrollmentName;
 @property(copy, nonatomic) NSString *companionSpeechId;

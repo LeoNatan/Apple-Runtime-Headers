@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _options;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(retain, nonatomic) CKDPCSCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) id <CKSQLiteItem> itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 
 @end
 

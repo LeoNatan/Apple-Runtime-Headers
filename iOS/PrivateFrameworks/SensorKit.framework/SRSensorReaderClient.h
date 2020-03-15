@@ -16,8 +16,8 @@
 }
 
 + (id)readerClientWithReader:(id)arg1;
-@property __weak SRSensorReader *reader; // @synthesize reader=_reader;
 - (void).cxx_destruct;
+@property __weak SRSensorReader *reader; // @synthesize reader=_reader;
 - (void)resetDatastoreFiles:(id)arg1;
 - (id)initWithReader:(id)arg1;
 

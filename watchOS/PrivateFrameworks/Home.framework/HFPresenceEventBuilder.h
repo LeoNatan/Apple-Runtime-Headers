@@ -18,10 +18,10 @@
 }
 
 + (id)_selectedUsersForPresenceEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int activationGranularity; // @synthesize activationGranularity=_activationGranularity;
 @property(nonatomic) unsigned int eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) HFSelectedUserCollection *users; // @synthesize users=_users;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)buildNewEventFromCurrentState;
 @property(readonly, nonatomic) unsigned int presenceUserType;

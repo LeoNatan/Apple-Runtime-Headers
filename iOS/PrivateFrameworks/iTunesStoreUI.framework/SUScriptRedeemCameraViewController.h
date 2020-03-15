@@ -18,8 +18,8 @@
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
-@property(nonatomic) __weak SURedeemCameraViewController *redeemCameraViewController; // @synthesize redeemCameraViewController=_redeemCameraViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SURedeemCameraViewController *redeemCameraViewController; // @synthesize redeemCameraViewController=_redeemCameraViewController;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 - (void)_performAction:(long long)arg1 withObject:(id)arg2;

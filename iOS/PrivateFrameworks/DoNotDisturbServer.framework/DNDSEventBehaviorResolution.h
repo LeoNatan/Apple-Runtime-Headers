@@ -21,13 +21,13 @@
 }
 
 + (id)resolutionForDate:(id)arg1 eventBehavior:(id)arg2 clientIdentifier:(id)arg3 outcome:(unsigned long long)arg4 reason:(unsigned long long)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) unsigned long long outcome; // @synthesize outcome=_outcome;
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, copy, nonatomic) DNDClientEventBehavior *eventBehavior; // @synthesize eventBehavior=_eventBehavior;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

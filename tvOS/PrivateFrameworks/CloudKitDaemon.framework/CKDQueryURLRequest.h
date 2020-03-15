@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_recordResponses;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *recordResponses; // @synthesize recordResponses=_recordResponses;
 @property(retain, nonatomic) NSData *resultsCursor; // @synthesize resultsCursor=_resultsCursor;
 @property(copy, nonatomic) CDUnknownBlockType recordsParsedBlock; // @synthesize recordsParsedBlock=_recordsParsedBlock;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *cursor; // @synthesize cursor=_cursor;
 @property(retain, nonatomic) CKQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSMutableArray *queryResponses; // @synthesize queryResponses=_queryResponses;
-- (void).cxx_destruct;
 - (void)requestDidComplete;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;

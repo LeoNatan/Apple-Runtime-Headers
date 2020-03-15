@@ -18,10 +18,10 @@
     UILabel *_descriptionLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(readonly, nonatomic) __weak UILabel *promptLabel; // @synthesize promptLabel=_promptLabel;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize preferredSize;
 - (id)_localizedTitleString;
 - (id)_localizedDescriptionString;

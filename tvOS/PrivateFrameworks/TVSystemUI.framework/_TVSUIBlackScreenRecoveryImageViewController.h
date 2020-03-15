@@ -17,12 +17,12 @@
     UILabel *_messageLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool iterateAvailableModes; // @synthesize iterateAvailableModes=_iterateAvailableModes;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
-- (void).cxx_destruct;
 - (id)_monospaceHeadlineFont;
 - (void)_addConstraints;
 - (void)viewDidLoad;

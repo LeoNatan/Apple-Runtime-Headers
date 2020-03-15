@@ -18,9 +18,9 @@
 }
 
 + (id)clientInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <BYDeviceMigrationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didChangeConnectionInformation:(id)arg1;
 - (void)didFinishWithError:(id)arg1;
 - (void)didUpdateProgress:(id)arg1;

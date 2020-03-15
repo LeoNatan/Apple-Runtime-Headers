@@ -20,10 +20,10 @@
     NSURLSessionConfiguration *_sessionConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionConfiguration *sessionConfiguration; // @synthesize sessionConfiguration=_sessionConfiguration;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)processResponseForCommand:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)networkActivityStatus:(_Bool)arg1;

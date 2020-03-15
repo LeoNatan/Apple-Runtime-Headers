@@ -6,10 +6,33 @@
 
 #import <VideosUI/VUIAppDocumentServiceViewController.h>
 
+@class UIVisualEffectView, VUIInAppMessagingMessageTargetHandler, _TVStackTemplateController;
+
 __attribute__((visibility("hidden")))
 @interface VUICanvasAppDocumentServiceViewController : VUIAppDocumentServiceViewController
 {
+    VUIInAppMessagingMessageTargetHandler *_iamMessageTarget;
+    _Bool _iamBannerEnabled;
+    _Bool _navBarHidden;
+    _TVStackTemplateController *_stackTemplate;
+    UIVisualEffectView *_statusBarGradientView;
 }
+
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIVisualEffectView *statusBarGradientView; // @synthesize statusBarGradientView=_statusBarGradientView;
+@property(nonatomic) __weak _TVStackTemplateController *stackTemplate; // @synthesize stackTemplate=_stackTemplate;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)didHostTemplateViewController:(id)arg1 usedTransitions:(_Bool)arg2;
+- (void)_updateNavigationBarWithDocument:(id)arg1;
+- (void)documentDidUpdate:(id)arg1;
+- (void)didCompleteDocumentCreationWithStatus:(long long)arg1 errorDictionary:(id)arg2;
+- (void)dealloc;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
+- (id)initWithDocumentServiceRequest:(id)arg1 loadImmediately:(_Bool)arg2 documentRef:(id)arg3 viewControllerIdentifier:(id)arg4 viewControllerDocumentIdentifier:(id)arg5;
 
 @end
 

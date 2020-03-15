@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     UIButton *_continueButton;
 }
 
-@property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForCurrentSizeCategory;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 bottomInset:(double)arg3 width:(double)arg4;

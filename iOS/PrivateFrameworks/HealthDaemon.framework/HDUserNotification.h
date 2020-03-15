@@ -22,6 +22,7 @@
     struct __CFUserNotification *_notification;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFUserNotification *notification; // @synthesize notification=_notification;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(nonatomic) unsigned long long userNotificationOptions; // @synthesize userNotificationOptions=_userNotificationOptions;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *defaultButton; // @synthesize defaultButton=_defaultButton;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_handleResponse:(unsigned long long)arg1;
 - (void)presentWithResponseHandler:(CDUnknownBlockType)arg1;
 

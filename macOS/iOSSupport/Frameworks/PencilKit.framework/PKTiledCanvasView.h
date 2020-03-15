@@ -81,6 +81,7 @@
 
 + (void)setupDefaults;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL editMenuVisible; // @synthesize editMenuVisible=_editMenuVisible;
 @property(retain, nonatomic) NSMutableSet *strokeUUIDsAboutToBeRemoved; // @synthesize strokeUUIDsAboutToBeRemoved=_strokeUUIDsAboutToBeRemoved;
 @property(retain, nonatomic) NSMutableArray *fadeOutStrokeAnimations; // @synthesize fadeOutStrokeAnimations=_fadeOutStrokeAnimations;
@@ -127,7 +128,6 @@
 @property(retain, nonatomic) UIImage *paperTexture; // @synthesize paperTexture=_paperTexture;
 @property(nonatomic) __weak id <PKTiledCanvasViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PKController *_drawingController; // @synthesize _drawingController;
-- (void).cxx_destruct;
 - (struct CGSize)_rendererControllerPixelSize;
 - (struct CGSize)_metalViewDrawableSize;
 - (void)fadeOutAndHideStrokes:(id)arg1 duration:(double)arg2;

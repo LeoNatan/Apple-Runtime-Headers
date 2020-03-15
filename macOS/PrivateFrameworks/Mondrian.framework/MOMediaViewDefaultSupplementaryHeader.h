@@ -15,9 +15,9 @@
 }
 
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextField *subtitleTextField; // @synthesize subtitleTextField=_subtitleTextField;
 @property(readonly, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 - (void)updateWithMediaSection:(id)arg1;
 - (void)prepareForRecycling;
 - (void)prepareForReuse;

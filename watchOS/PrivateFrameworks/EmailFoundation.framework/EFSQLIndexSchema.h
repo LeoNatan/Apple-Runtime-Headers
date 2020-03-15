@@ -18,12 +18,12 @@
     id <EFSQLExpressable> _where;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool unique; // @synthesize unique=_unique;
 @property(readonly, nonatomic) id <EFSQLExpressable> where; // @synthesize where=_where;
 @property(readonly, copy, nonatomic) NSArray *indexedColumns; // @synthesize indexedColumns=_indexedColumns;
 @property(readonly, copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)definitionWithDatabaseName:(id)arg1;
 - (id)initWithTableName:(id)arg1 columnNames:(id)arg2;
 - (id)initWithTableName:(id)arg1 columnNames:(id)arg2 where:(id)arg3 unique:(_Bool)arg4;

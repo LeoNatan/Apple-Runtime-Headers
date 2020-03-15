@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double weightAdultStartInKg; // @synthesize weightAdultStartInKg=_weightAdultStartInKg;
 @property(nonatomic) double lastWeightInKg; // @synthesize lastWeightInKg=_lastWeightInKg;
 @property(nonatomic) double lastHeightInCm; // @synthesize lastHeightInCm=_lastHeightInCm;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSArray *boysWeightBirthTo36MonthsGrowthCurve; // @synthesize boysWeightBirthTo36MonthsGrowthCurve=_boysWeightBirthTo36MonthsGrowthCurve;
 @property(copy, nonatomic) NSArray *boysHeight2To20YearsGrowthCurve; // @synthesize boysHeight2To20YearsGrowthCurve=_boysHeight2To20YearsGrowthCurve;
 @property(copy, nonatomic) NSArray *boysHeightBirthTo36MonthsGrowthCurve; // @synthesize boysHeightBirthTo36MonthsGrowthCurve=_boysHeightBirthTo36MonthsGrowthCurve;
-- (void).cxx_destruct;
 - (double)weightChangeForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)_weightCurveForAge:(double)arg1 sex:(long long)arg2;
 - (id)_heightCurveForAge:(double)arg1 sex:(long long)arg2;

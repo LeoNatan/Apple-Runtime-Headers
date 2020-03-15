@@ -10,7 +10,7 @@
 #import <HMFoundation/NSMutableCopying-Protocol.h>
 #import <HMFoundation/NSSecureCoding-Protocol.h>
 
-@class HMFActivity, HMFMessageDestination, HMFMessageInternal, HMFMessageTransport, NSDictionary, NSString, NSUUID;
+@class HMFActivity, HMFLogEventSession, HMFMessageDestination, HMFMessageInternal, HMFMessageTransport, NSDictionary, NSString, NSUUID;
 
 @interface HMFMessage : HMFObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
@@ -28,8 +28,8 @@
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3;
 + (id)messageWithName:(id)arg1 messagePayload:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 + (id)messageWithName:(id)arg1 messagePayload:(id)arg2;
-@property(readonly, nonatomic) HMFMessageInternal *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMFMessageInternal *internal; // @synthesize internal=_internal;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
@@ -38,6 +38,8 @@
 - (BOOL)respondWithError:(id)arg1;
 - (BOOL)respondWithPayload:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler;
+- (void)setLogEventSession:(id)arg1;
+@property(readonly, nonatomic) HMFLogEventSession *logEventSession;
 @property(copy, nonatomic) NSDictionary *messagePayload;
 @property(readonly, copy, nonatomic) NSDictionary *headers;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo;

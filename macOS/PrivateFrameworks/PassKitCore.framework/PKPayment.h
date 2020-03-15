@@ -25,6 +25,7 @@
 + (BOOL)supportsSecureCoding;
 + (long long)version;
 + (id)paymentWithProtobuf:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *installmentAuthorizationToken; // @synthesize installmentAuthorizationToken=_installmentAuthorizationToken;
 @property(nonatomic) long long biometricAuthorizationAttempts; // @synthesize biometricAuthorizationAttempts=_biometricAuthorizationAttempts;
 @property(retain, nonatomic) NSMutableDictionary *authKitAuthenticationResults; // @synthesize authKitAuthenticationResults=_authKitAuthenticationResults;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) PKContact *shippingContact; // @synthesize shippingContact=_shippingContact;
 @property(retain, nonatomic) PKContact *billingContact; // @synthesize billingContact=_billingContact;
 @property(retain, nonatomic) PKPaymentToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

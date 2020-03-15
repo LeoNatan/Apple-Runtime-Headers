@@ -16,11 +16,11 @@
     NSDictionary *_responseDictionary;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(copy, nonatomic) AMSPurchase *purchase; // @synthesize purchase=_purchase;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSString *correlationID; // @synthesize correlationID=_correlationID;
-- (void).cxx_destruct;
 
 @end
 

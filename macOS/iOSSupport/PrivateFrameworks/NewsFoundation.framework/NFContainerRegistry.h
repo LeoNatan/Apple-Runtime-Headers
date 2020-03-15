@@ -18,10 +18,10 @@
     id <NFCallbackRegistration> _callback;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NFCallbackRegistration> callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) id <NFRegistrationContainer> privateContainer; // @synthesize privateContainer=_privateContainer;
 @property(readonly, nonatomic) id <NFRegistrationContainer> publicContainer; // @synthesize publicContainer=_publicContainer;
-- (void).cxx_destruct;
 - (id)initWithPublicContainer:(id)arg1 privateContainer:(id)arg2 callback:(id)arg3;
 
 // Remaining properties

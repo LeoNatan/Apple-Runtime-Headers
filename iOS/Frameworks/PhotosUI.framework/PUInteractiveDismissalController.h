@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     id <PUInterruptibleViewControllerTransition> __interruptibleViewControllerTransition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateGestureRecognizers:) _Bool _needsUpdateGestureRecognizers; // @synthesize _needsUpdateGestureRecognizers=__needsUpdateGestureRecognizers;
 @property(retain, nonatomic, setter=_setInterruptibleViewControllerTransition:) id <PUInterruptibleViewControllerTransition> _interruptibleViewControllerTransition; // @synthesize _interruptibleViewControllerTransition=__interruptibleViewControllerTransition;
 @property(retain, nonatomic, setter=_setViewHostingGestureRecognizers:) UIView *_viewHostingGestureRecognizers; // @synthesize _viewHostingGestureRecognizers=__viewHostingGestureRecognizers;
 @property(nonatomic, setter=_setViewController:) __weak UIViewController *_viewController; // @synthesize _viewController=__viewController;
 @property(readonly, nonatomic) _Bool isHandlingDismissalInteraction; // @synthesize isHandlingDismissalInteraction=_isHandlingDismissalInteraction;
 @property(nonatomic) __weak id <PUInteractiveDismissalControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateInterruptibleViewControllerTransitionIfNeeded;
 - (void)_invalidateInterruptibleViewControllerTransition;
 - (void)_updateGestureRecognizersIfNeeded;

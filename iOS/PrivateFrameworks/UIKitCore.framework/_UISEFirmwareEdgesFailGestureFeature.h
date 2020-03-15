@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _touchedEdges;
 }
 
-@property(readonly, nonatomic) unsigned long long touchedEdges; // @synthesize touchedEdges=_touchedEdges;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long touchedEdges; // @synthesize touchedEdges=_touchedEdges;
 - (void)_incorporateSample:(const struct _UISEGestureFeatureSample *)arg1;
 - (id)debugDictionary;
 - (id)initWithSettings:(id)arg1;

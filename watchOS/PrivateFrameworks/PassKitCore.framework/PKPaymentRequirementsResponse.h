@@ -19,13 +19,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(readonly, copy, nonatomic) NSURL *learnMoreURL; // @synthesize learnMoreURL=_learnMoreURL;
 @property(readonly, copy, nonatomic) NSArray *possibleProducts; // @synthesize possibleProducts=_possibleProducts;
 @property(readonly, copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(readonly, copy, nonatomic) NSArray *requiredPaymentSetupFields; // @synthesize requiredPaymentSetupFields=_requiredPaymentSetupFields;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithRemoteCredential:(id)arg1;
 - (id)initWithProvisioningMethodMetadata:(id)arg1;
 - (id)initWithProduct:(id)arg1;

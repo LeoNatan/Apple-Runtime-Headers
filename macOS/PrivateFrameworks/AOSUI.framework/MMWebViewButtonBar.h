@@ -26,10 +26,10 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property id <MMWebViewButtonBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSDictionary *buttonBarDict; // @synthesize buttonBarDict=_buttonBarDict;
-- (void).cxx_destruct;
 - (void)updateDefaultButtons;
 - (void)updateButtonBarDict:(id)arg1;
 - (void)disableSpinner;

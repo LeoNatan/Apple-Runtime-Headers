@@ -42,6 +42,7 @@
     TKSmartCardSessionEngine *_session;
 }
 
+- (void).cxx_destruct;
 @property __weak TKSmartCardSessionEngine *session; // @synthesize session=_session;
 @property BOOL apduSentSinceLastReset; // @synthesize apduSentSinceLastReset=_apduSentSinceLastReset;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -53,7 +54,6 @@
 @property BOOL securePINVerificationSupported; // @synthesize securePINVerificationSupported=_securePINVerificationSupported;
 @property long long maxOutputLength; // @synthesize maxOutputLength=_maxOutputLength;
 @property long long maxInputLength; // @synthesize maxInputLength=_maxInputLength;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)terminate;
 - (void)runUserInteraction:(id)arg1 reply:(CDUnknownBlockType)arg2;

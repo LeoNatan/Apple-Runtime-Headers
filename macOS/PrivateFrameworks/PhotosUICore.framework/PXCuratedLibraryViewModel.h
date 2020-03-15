@@ -13,7 +13,7 @@
 #import <PhotosUICore/PXInfoUpdaterObserver-Protocol.h>
 #import <PhotosUICore/PXMutablePhotosLibraryViewModel-Protocol.h>
 
-@class NSArray, NSHashTable, NSMutableSet, NSObject, NSSet, NSString, PXAssetReference, PXAssetsDataSource, PXCPLServiceUI, PXCuratedLibraryActionManager, PXCuratedLibraryAllPhotosAlphaAnimator, PXCuratedLibraryAnalysisStatus, PXCuratedLibraryAssetCollectionSkimmingInfo, PXCuratedLibraryAssetsDataSourceManager, PXCuratedLibraryLayoutSpecManager, PXCuratedLibraryStyleGuide, PXInfoUpdater, PXNumberAnimator, PXScrollViewSpeedometer, PXSectionedSelectionManager, PXSelectionSnapshot, PXUpdater, UXBarButtonItem;
+@class NSArray, NSHashTable, NSMutableSet, NSObject, NSSet, NSString, PXAssetActionManager, PXAssetReference, PXAssetsDataSource, PXCPLServiceUI, PXCuratedLibraryActionManager, PXCuratedLibraryAllPhotosAlphaAnimator, PXCuratedLibraryAnalysisStatus, PXCuratedLibraryAssetCollectionSkimmingInfo, PXCuratedLibraryAssetsDataSourceManager, PXCuratedLibraryLayoutSpecManager, PXCuratedLibraryStyleGuide, PXInfoUpdater, PXNumberAnimator, PXScrollViewSpeedometer, PXSectionedSelectionManager, PXSelectionSnapshot, PXUpdater, UXBarButtonItem;
 @protocol OS_dispatch_queue, PXCuratedLibraryViewModelPresenter, PXFilterState;
 
 @interface PXCuratedLibraryViewModel : PXObservable <PXMutablePhotosLibraryViewModel, PXCuratedLibraryAssetsDataSourceManagerDelegate, PXChangeObserver, PXAssetsDataSourceManagerObserver, PXInfoProvider, PXInfoUpdaterObserver>
@@ -73,6 +73,7 @@
     PXCuratedLibraryAnalysisStatus *_analysisStatus;
     PXUpdater *_updater;
     PXScrollViewSpeedometer *_scrollingSpeedometer;
+    PXAssetActionManager *_assetActionManager;
     long long _chromeVisibilityAnimationCount;
     PXInfoUpdater *_selectedAssetsTypeCountUpdater;
     NSObject<OS_dispatch_queue> *_countUpdateQueue;
@@ -84,10 +85,12 @@
 }
 
 + (id)_cplServiceUI;
+- (void).cxx_destruct;
 @property(nonatomic) long long viewTimeSignpostID; // @synthesize viewTimeSignpostID=_viewTimeSignpostID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *countUpdateQueue; // @synthesize countUpdateQueue=_countUpdateQueue;
 @property(readonly, nonatomic) PXInfoUpdater *selectedAssetsTypeCountUpdater; // @synthesize selectedAssetsTypeCountUpdater=_selectedAssetsTypeCountUpdater;
 @property(nonatomic) long long chromeVisibilityAnimationCount; // @synthesize chromeVisibilityAnimationCount=_chromeVisibilityAnimationCount;
+@property(retain, nonatomic) PXAssetActionManager *assetActionManager; // @synthesize assetActionManager=_assetActionManager;
 @property(retain, nonatomic) PXScrollViewSpeedometer *scrollingSpeedometer; // @synthesize scrollingSpeedometer=_scrollingSpeedometer;
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
 @property(readonly, nonatomic) BOOL isPerformingInitialChanges; // @synthesize isPerformingInitialChanges=_isPerformingInitialChanges;
@@ -130,7 +133,6 @@
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *assetsDataSourceManager; // @synthesize assetsDataSourceManager=_assetsDataSourceManager;
 @property(readonly, nonatomic) PXCuratedLibraryStyleGuide *styleGuide; // @synthesize styleGuide=_styleGuide;
 @property(readonly, nonatomic) PXCuratedLibraryLayoutSpecManager *specManager; // @synthesize specManager=_specManager;
-- (void).cxx_destruct;
 - (void)_systemPhotoLibraryDidChange;
 - (void)infoUpdaterDidUpdate:(id)arg1;
 - (long long)priorityForInfoRequestOfKind:(id)arg1;
@@ -181,6 +183,7 @@
 - (void)_invalidateAssetsDataSourceManager;
 - (void)_updateCurrentDataSource;
 - (void)_invalidateCurrentDataSource;
+- (void)_invalidateAssetActionManager;
 - (void)_setNeedsUpdate;
 - (void)didPerformChanges;
 - (void)setCplServiceUI:(id)arg1;

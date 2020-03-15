@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol TKClientTokenServerProtocol <NSObject>
+- (void)getWatcherEndpoint:(void (^)(NSXPCListenerEndpoint *))arg1;
 - (void)getConfigurationEndpoint:(void (^)(NSXPCListenerEndpoint *))arg1;
 - (void)getTokenEndpointForTokenID:(NSString *)arg1 reply:(void (^)(NSXPCListenerEndpoint *, NSError *))arg2;
 - (void)getEndpoint:(void (^)(NSXPCListenerEndpoint *))arg1;

@@ -17,11 +17,11 @@
 }
 
 + (id)createNodeFromObject:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
 @property(nonatomic) unsigned long long traits; // @synthesize traits=_traits;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 
 @end

@@ -17,9 +17,9 @@
     GEOComposedWaypoint *_startWaypoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOComposedWaypoint *endWaypoint; // @synthesize endWaypoint=_endWaypoint;
 @property(retain, nonatomic) GEOComposedWaypoint *startWaypoint; // @synthesize startWaypoint=_startWaypoint;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

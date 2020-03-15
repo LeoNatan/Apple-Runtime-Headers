@@ -15,10 +15,10 @@
     UXLabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesEmphasizedTitle; // @synthesize usesEmphasizedTitle=_usesEmphasizedTitle;
 @property(retain, nonatomic) UXLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UXLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (double)preferredHeightForWidth:(double)arg1;
 - (void)_setupConstraints;
 - (void)_setupViews;

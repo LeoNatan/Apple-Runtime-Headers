@@ -32,8 +32,8 @@
     id <_SFAuthenticationContextDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_SFAuthenticationContextDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFAuthenticationContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSData *externalizedContext;
 - (void)_handleTouchIDEventWithParameters:(id)arg1;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;

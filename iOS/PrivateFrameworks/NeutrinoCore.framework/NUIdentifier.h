@@ -28,10 +28,10 @@
 + (id)latestIdentifierWithNameSpace:(id)arg1 name:(id)arg2;
 + (id)latestIdentifierWithName:(id)arg1;
 + (id)defaultNameSpace;
+- (void).cxx_destruct;
 @property(readonly) NUVersion *version; // @synthesize version=_version;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *nameSpace; // @synthesize nameSpace=_nameSpace;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToIdentifier:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

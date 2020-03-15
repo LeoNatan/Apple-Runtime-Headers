@@ -13,8 +13,8 @@
     GEORelatedSearchSuggestion *_relatedSearchSuggestion;
 }
 
-@property(retain, nonatomic) GEORelatedSearchSuggestion *relatedSearchSuggestion; // @synthesize relatedSearchSuggestion=_relatedSearchSuggestion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEORelatedSearchSuggestion *relatedSearchSuggestion; // @synthesize relatedSearchSuggestion=_relatedSearchSuggestion;
 @property(readonly, nonatomic) NSString *displayString;
 - (id)initWithChildActionSearch:(id)arg1;
 

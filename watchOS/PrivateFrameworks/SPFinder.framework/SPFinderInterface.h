@@ -13,8 +13,8 @@
     SPAdvertisementCache *_advertisementCache;
 }
 
-@property(retain, nonatomic) SPAdvertisementCache *advertisementCache; // @synthesize advertisementCache=_advertisementCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SPAdvertisementCache *advertisementCache; // @synthesize advertisementCache=_advertisementCache;
 - (id)stateManager;
 - (id)finderStateManager;
 - (id)beaconPayloadCache;

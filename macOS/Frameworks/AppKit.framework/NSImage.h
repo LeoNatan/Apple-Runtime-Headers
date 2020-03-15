@@ -80,8 +80,8 @@
 + (id)_catalogIconImageWithName:(id)arg1 bundle:(id)arg2;
 + (id)_templateImageWithImage:(id)arg1;
 + (id)_emblemForCount:(long long)arg1;
-@property(retain, setter=_setReps:) id _reps; // @synthesize _reps;
 - (void).cxx_destruct;
+@property(retain, setter=_setReps:) id _reps; // @synthesize _reps;
 @property(readonly, getter=_isSymbolImage) BOOL _symbolImage;
 - (id)_alternateImageWithCriteria:(id)arg1;
 - (void)lockFocusOnRepresentation:(id)arg1;

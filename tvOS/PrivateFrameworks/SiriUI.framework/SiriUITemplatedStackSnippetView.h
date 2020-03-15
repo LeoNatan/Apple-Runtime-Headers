@@ -28,11 +28,11 @@
     UIView *_auxiliaryView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *auxiliaryView; // @synthesize auxiliaryView=_auxiliaryView;
 @property(nonatomic) __weak id <SiriUITemplatedStackSnippetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SiriUITemplatedStackSnippetViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, copy, nonatomic) NSArray *stackedSubviews; // @synthesize stackedSubviews=_stackedSubviews;
-- (void).cxx_destruct;
 - (void)_handleTapGesture:(id)arg1;
 @property(readonly, nonatomic) struct UIEdgeInsets templatedContentMargins;
 - (void)templateSubviewWantsToBeRemovedFromHierarchy:(id)arg1;

@@ -48,6 +48,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *greenCarDestinationStationString; // @synthesize greenCarDestinationStationString=_greenCarDestinationStationString;
 @property(copy, nonatomic) NSString *greenCarOriginStationString; // @synthesize greenCarOriginStationString=_greenCarOriginStationString;
 @property(copy, nonatomic) NSString *shinkansenSecondaryDestinationStationString; // @synthesize shinkansenSecondaryDestinationStationString=_shinkansenSecondaryDestinationStationString;
@@ -81,7 +82,6 @@
 @property(nonatomic, getter=isBalanceAllowedForCommute) _Bool balanceAllowedForCommute; // @synthesize balanceAllowedForCommute=_balanceAllowedForCommute;
 @property(nonatomic, getter=isGreenCarTicketUsed) _Bool greenCarTicketUsed; // @synthesize greenCarTicketUsed=_greenCarTicketUsed;
 @property(nonatomic, getter=isShinkansenTicketActive) _Bool shinkansenTicketActive; // @synthesize shinkansenTicketActive=_shinkansenTicketActive;
-- (void).cxx_destruct;
 - (id)transitPassPropertiesWithPaymentApplication:(id)arg1;
 - (id)_concreteTransactionForRecordAtIndex:(unsigned long long)arg1 withBalance:(unsigned int *)arg2 historyRecords:(id)arg3 terminalState:(id)arg4 numberProcessed:(unsigned long long *)arg5 exitedShinkansen:(_Bool *)arg6;
 - (void)_resolveTransactionsFromState:(id)arg1 toState:(id)arg2 withHistoryRecords:(id)arg3 concreteTransactions:(id *)arg4 ephemeralTransaction:(id *)arg5;

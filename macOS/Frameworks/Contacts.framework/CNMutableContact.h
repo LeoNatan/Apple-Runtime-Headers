@@ -70,6 +70,7 @@
 @property(copy) NSData *externalRepresentation; // @dynamic externalRepresentation;
 - (void)_setExternalIdentifier:(id)arg1;
 @property(copy) NSString *externalIdentifier; // @dynamic externalIdentifier;
+@property(copy) NSString *externalURI;
 - (void)_setTextAlert:(id)arg1;
 @property(copy) CNActivityAlert *textAlert; // @dynamic textAlert;
 - (void)_setCallAlert:(id)arg1;

@@ -37,6 +37,7 @@
     UIButton *_appsButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *appsButton; // @synthesize appsButton=_appsButton;
 @property(retain, nonatomic) UIButton *skipButton; // @synthesize skipButton=_skipButton;
 @property(retain, nonatomic) UIButton *beginButton; // @synthesize beginButton=_beginButton;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) __weak id <VSSetupViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_appsButtonPressed:(id)arg1;
 - (void)_skipButtonPressed:(id)arg1;

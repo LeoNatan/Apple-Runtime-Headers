@@ -15,10 +15,10 @@
     SBInteractiveScreenshotGestureHostWindow *_hostWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBInteractiveScreenshotGestureHostWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain, nonatomic) SBInteractiveScreenshotGestureRootWindow *rootWindow; // @synthesize rootWindow=_rootWindow;
 @property(readonly, copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SBInteractiveScreenshotGestureRootViewController *rootViewController;
 @property(readonly, nonatomic) SBInteractiveScreenshotGestureHostRootViewController *hostRootViewController;
 - (id)initWithSessionID:(id)arg1;

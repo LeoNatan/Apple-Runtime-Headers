@@ -13,7 +13,7 @@
 @property(readonly, nonatomic) _Bool playingSound;
 @property(readonly, nonatomic) NSURL *audioURL;
 @property(readonly, nonatomic) NSString *audioRoutingIdentifier;
-@property(readonly, nonatomic) unsigned int inEar;
+@property(readonly, nonatomic) unsigned int audioSafetyStatus;
 - (_Bool)updatePlaybackChannels:(NSArray *)arg1;
 - (_Bool)updateAudioAsset:(id <FMDAsset>)arg1;
 

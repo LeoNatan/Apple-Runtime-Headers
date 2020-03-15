@@ -26,9 +26,9 @@
 + (id)createDeleteChild:(id)arg1;
 + (id)createDeleteIKEResponse:(id)arg1;
 + (id)createDeleteIKE;
+- (void).cxx_destruct;
 @property(retain) NEIKEv2ConfigPayload *config; // @synthesize config=_config;
 @property(retain) NSArray *deletes; // @synthesize deletes=_deletes;
-- (void).cxx_destruct;
 - (void)filloutPayloads;
 - (void)gatherPayloads;
 @property(readonly) BOOL isDeleteChild;

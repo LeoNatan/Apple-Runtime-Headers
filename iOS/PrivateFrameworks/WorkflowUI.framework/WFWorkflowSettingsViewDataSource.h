@@ -21,13 +21,13 @@
     NSMapTable *_switchToAccessResourceMapTable;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *switchToAccessResourceMapTable; // @synthesize switchToAccessResourceMapTable=_switchToAccessResourceMapTable;
 @property(retain, nonatomic) NSArray *accessResources; // @synthesize accessResources=_accessResources;
 @property(retain, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(copy, nonatomic) NSString *tentativeWorkflowName; // @synthesize tentativeWorkflowName=_tentativeWorkflowName;
 @property(nonatomic) __weak id <WFWorkflowSettingsViewDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 helpCellForRow:(long long)arg2;
 - (void)toggledAccessResourceSwitch:(id)arg1;
 - (id)tableView:(id)arg1 accessResourcesCellForRow:(long long)arg2;

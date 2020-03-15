@@ -13,8 +13,8 @@
     NSColor *_color;
 }
 
-@property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 - (void)viewDidChangeBackingProperties;
 - (void)viewDidMoveToSuperview;
 - (void)updateHeight;

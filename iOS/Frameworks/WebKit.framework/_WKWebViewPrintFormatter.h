@@ -16,9 +16,9 @@
     _Bool _snapshotFirstPage;
 }
 
-@property(nonatomic) _Bool snapshotFirstPage; // @synthesize snapshotFirstPage=_snapshotFirstPage;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool snapshotFirstPage; // @synthesize snapshotFirstPage=_snapshotFirstPage;
 - (void)drawInRect:(struct CGRect)arg1 forPageAtIndex:(long long)arg2;
 - (struct CGRect)rectForPageAtIndex:(long long)arg1;
 - (void)_setNeedsRecalc;

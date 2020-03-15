@@ -28,13 +28,13 @@
 + (id)logCategory;
 + (_Bool)supportsSecureCoding;
 + (id)accountHandleForDestination:(id)arg1;
+- (void).cxx_destruct;
 @property(getter=isLocallyTracked) _Bool locallyTracked; // @synthesize locallyTracked=_locallyTracked;
 @property(readonly, copy) IDSURI *URI; // @synthesize URI=_URI;
 @property(readonly, getter=isLocal) _Bool local; // @synthesize local=_local;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSUUID *modelParentIdentifier; // @synthesize modelParentIdentifier=_modelParentIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)remoteDestinationString;
 - (_Bool)isBackingStorageEqual:(id)arg1;

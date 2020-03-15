@@ -43,6 +43,7 @@
 - (id)timeZoneAtLocation:(id)arg1;
 - (const void *)getLocationDefaultForKey:(const struct __CFString *)arg1;
 - (void)setLocationDefaultForKey:(const struct __CFString *)arg1 value:(const void *)arg2;
+- (const struct __CFArray *)copyGnssBandsInUse;
 - (const struct __CFArray *)copyTechnologiesInUse;
 - (const struct __CFDictionary *)copyAppsUsingLocation;
 - (id)applyArchivedAuthorizationDecisions:(id)arg1;

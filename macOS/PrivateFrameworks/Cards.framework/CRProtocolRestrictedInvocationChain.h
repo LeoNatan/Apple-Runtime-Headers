@@ -16,8 +16,8 @@
     Protocol *_restrictingProtocol;
 }
 
-@property(retain, nonatomic) Protocol *restrictingProtocol; // @synthesize restrictingProtocol=_restrictingProtocol;
 - (void).cxx_destruct;
+@property(retain, nonatomic) Protocol *restrictingProtocol; // @synthesize restrictingProtocol=_restrictingProtocol;
 - (BOOL)_selector:(SEL)arg1 isPartOfProtocol:(id)arg2;
 - (BOOL)_selectorIsPartOfRestrictingProtocol:(SEL)arg1;
 - (BOOL)isEligibleForSelector:(SEL)arg1;

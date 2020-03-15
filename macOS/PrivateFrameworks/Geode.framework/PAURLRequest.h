@@ -15,10 +15,10 @@
     NSString *_uti;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *uti; // @synthesize uti=_uti;
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property(copy) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)submitSynchronous:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

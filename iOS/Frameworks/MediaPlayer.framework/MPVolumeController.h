@@ -20,10 +20,10 @@
 }
 
 + (id)descriptionForWarningState:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MPVolumeControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) unsigned int volumeCapabilities; // @synthesize volumeCapabilities=_volumeCapabilities;
 @property(nonatomic) __weak id <MPVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)muted;
 @property(copy, nonatomic) NSString *volumeAudioCategory;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeAudioCategory:(id)arg2;

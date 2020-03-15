@@ -15,10 +15,10 @@
     NSString *_formatVersion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(retain, nonatomic) NSString *formatIdentifier; // @synthesize formatIdentifier=_formatIdentifier;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 
 @end
 

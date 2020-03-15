@@ -30,6 +30,7 @@
 + (_Bool)identifierIsAnimatedImpactEffect:(id)arg1;
 + (_Bool)identifierIsValidImpactEffect:(id)arg1;
 + (id)maskingStringForID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CABackdropLayer *expressiveSendAnimationBackdrop; // @synthesize expressiveSendAnimationBackdrop=_expressiveSendAnimationBackdrop;
 @property(retain, nonatomic) UIScrollView *expressiveSendScrollView; // @synthesize expressiveSendScrollView=_expressiveSendScrollView;
 @property(retain, nonatomic) CKBalloonView *originalBalloonView; // @synthesize originalBalloonView=_originalBalloonView;
@@ -41,7 +42,6 @@
 @property(nonatomic) __weak id <CKSendAnimationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CKSendAnimationBalloonProvider> sendAnimationBalloonProvider; // @synthesize sendAnimationBalloonProvider;
 @property(nonatomic) __weak id <CKSendAnimationManagerDelegate> sendAnimationManagerDelegate; // @synthesize sendAnimationManagerDelegate;
-- (void).cxx_destruct;
 - (void)_cleanupExpressiveSendComponents;
 - (void)_visibleCells:(id *)arg1 aboveItem:(id)arg2;
 - (void)animationDidFinishWithContext:(id)arg1;

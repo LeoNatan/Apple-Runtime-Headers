@@ -18,10 +18,10 @@
 + (id)buildRequiredOnly;
 + (id)buildWithQoSMarkingWhitelistedAppIdentifiers:(id)arg1 withQoSMarkingAppleAudioVideoCalls:(id)arg2 withQoSMarkingEnabled:(id)arg3;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadQoSMarkingEnabled; // @synthesize payloadQoSMarkingEnabled=_payloadQoSMarkingEnabled;
 @property(copy, nonatomic) NSNumber *payloadQoSMarkingAppleAudioVideoCalls; // @synthesize payloadQoSMarkingAppleAudioVideoCalls=_payloadQoSMarkingAppleAudioVideoCalls;
 @property(copy, nonatomic) NSArray *payloadQoSMarkingWhitelistedAppIdentifiers; // @synthesize payloadQoSMarkingWhitelistedAppIdentifiers=_payloadQoSMarkingWhitelistedAppIdentifiers;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

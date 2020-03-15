@@ -30,6 +30,7 @@
 
 + (id)defaultDisplayEdgeInfoForceInsets:(_Bool)arg1;
 + (id)defaultDisplayEdgeInfo;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISApplicationSupportDisplayEdgeInsetsWrapper *safeAreaInsetsLandscapeRight; // @synthesize safeAreaInsetsLandscapeRight=_safeAreaInsetsLandscapeRight;
 @property(retain, nonatomic) UISApplicationSupportDisplayEdgeInsetsWrapper *safeAreaInsetsPortraitUpsideDown; // @synthesize safeAreaInsetsPortraitUpsideDown=_safeAreaInsetsPortraitUpsideDown;
 @property(retain, nonatomic) UISApplicationSupportDisplayEdgeInsetsWrapper *safeAreaInsetsLandscapeLeft; // @synthesize safeAreaInsetsLandscapeLeft=_safeAreaInsetsLandscapeLeft;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSNumber *homeAffordanceOverlayAllowance; // @synthesize homeAffordanceOverlayAllowance=_homeAffordanceOverlayAllowance;
 @property(retain, nonatomic) NSNumber *systemMinimumMargin; // @synthesize systemMinimumMargin=_systemMinimumMargin;
 @property(retain, nonatomic) UISApplicationSupportDisplayEdgeInsetsWrapper *peripheryInsets; // @synthesize peripheryInsets=_peripheryInsets;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;

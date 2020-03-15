@@ -17,9 +17,9 @@
     CDUnknownBlockType _handleBatch;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handleBatch; // @synthesize handleBatch=_handleBatch;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)description;
 - (void)finalizeCallWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)setFinalizeCall:(CDUnknownBlockType)arg1;

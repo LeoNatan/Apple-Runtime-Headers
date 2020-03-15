@@ -21,6 +21,7 @@
     NSMutableDictionary *_pathToClassIndex;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pathToClassIndex; // @synthesize pathToClassIndex=_pathToClassIndex;
 @property(retain, nonatomic) NSMutableArray *classNames; // @synthesize classNames=_classNames;
 @property(retain, nonatomic) NSArray *imageFileNames; // @synthesize imageFileNames=_imageFileNames;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *imagesDir; // @synthesize imagesDir=_imagesDir;
 @property _Bool balanceClassesForTraining; // @synthesize balanceClassesForTraining=_balanceClassesForTraining;
 @property int numberOfClasses; // @synthesize numberOfClasses=_numberOfClasses;
-- (void).cxx_destruct;
 - (int)numberOfDataPoints;
 - (id)dataPointAtIndex:(int)arg1;
 - (struct vImage_Buffer)bufferWithPath:(id)arg1;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     UIKBHandwritingPointFIFO *_nextFIFO;
 }
 
-@property(retain, nonatomic) UIKBHandwritingPointFIFO *nextFIFO; // @synthesize nextFIFO=_nextFIFO;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIKBHandwritingPointFIFO *nextFIFO; // @synthesize nextFIFO=_nextFIFO;
 - (void)clear;
 - (void)flush;
 - (void)addPoint:(struct)arg1;

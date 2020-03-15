@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     double _edgeInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double edgeInset; // @synthesize edgeInset=_edgeInset;
 @property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (double)_bounceValueForFraction:(double)arg1;
 - (void)bounce;
 - (void)_updateHandleImages;

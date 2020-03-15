@@ -19,13 +19,13 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMDService *routerService; // @synthesize routerService=_routerService;
 @property(nonatomic) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
+- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_writeTLVWithValueInResponse:(id)arg1 characteristicType:(id)arg2 operationName:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_writeValue:(id)arg1 characteristicType:(id)arg2 operationName:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)_writeRequestForCharacteristicType:(id)arg1 value:(id)arg2;
+- (void)_writeValueIfDifferent:(id)arg1 characteristicType:(id)arg2 operationName:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_writeClientConfigurationControlRequest:(id)arg1 operationName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)resetAccessViolationForClientIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getAccessViolationList:(CDUnknownBlockType)arg1;
@@ -34,7 +34,7 @@
 - (void)readClientConfigurationWithClientIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addClientConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getClientStatusWithIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setManagedNetworkEnable:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)writeManagedNetworkEnable:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithAccessory:(id)arg1 service:(id)arg2 workQueue:(id)arg3;

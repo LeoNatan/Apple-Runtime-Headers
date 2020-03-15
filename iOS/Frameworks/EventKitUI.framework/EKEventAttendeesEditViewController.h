@@ -18,9 +18,9 @@
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appendOnly; // @synthesize appendOnly=_appendOnly;
 @property(nonatomic) _Bool disableShowingButtons; // @synthesize disableShowingButtons=_disableShowingButtons;
-- (void).cxx_destruct;
 - (_Bool)editItemShouldBeAskedForInjectableViewController;
 - (_Bool)presentModally;
 @property(copy, nonatomic) NSArray *attendees;

@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     PUAlbumListCellContentView *_albumCellContentView;
 }
 
-@property(retain, nonatomic) PUAlbumListCellContentView *albumCellContentView; // @synthesize albumCellContentView=_albumCellContentView;
 - (void).cxx_destruct;
-- (struct NSObject *)contentView;
+@property(retain, nonatomic) PUAlbumListCellContentView *albumCellContentView; // @synthesize albumCellContentView=_albumCellContentView;
+- (id)contentView;
 
 @end
 

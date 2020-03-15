@@ -23,6 +23,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLApplicationUpgradeMonitor *upgradeMonitor; // @synthesize upgradeMonitor=_upgradeMonitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *deactivatedByBundleID; // @synthesize deactivatedByBundleID=_deactivatedByBundleID;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableDictionary *inForegroundByBundleID; // @synthesize inForegroundByBundleID=_inForegroundByBundleID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)applicationUpgradeMonitor:(id)arg1 removed:(id)arg2;
 @property(readonly, copy) NSString *debugDescription;
 - (void)_queue_removeApplicationEntry:(id)arg1;

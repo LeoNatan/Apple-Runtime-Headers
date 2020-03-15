@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) NSXPCListener *anonymousListener; // @synthesize anonymousListener=_anonymousListener;
 - (void).cxx_destruct;
+@property(retain) NSXPCListener *anonymousListener; // @synthesize anonymousListener=_anonymousListener;
 - (void)invalidateTestListeners;
 - (id)sharedAnonymousListener;
 - (id)dedDirectory;

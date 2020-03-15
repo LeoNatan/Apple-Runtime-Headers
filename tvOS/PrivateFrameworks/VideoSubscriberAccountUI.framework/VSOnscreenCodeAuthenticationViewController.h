@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_menuRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(readonly, nonatomic) VSViewModel *viewModel;
 @property(nonatomic) __weak id <VSAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

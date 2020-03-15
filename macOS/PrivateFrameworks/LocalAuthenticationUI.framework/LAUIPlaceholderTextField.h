@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <LAUIPlaceHolderTextFieldDelegate> _placeholderDelegate;
 }
 
-@property(nonatomic) __weak id <LAUIPlaceHolderTextFieldDelegate> placeholderDelegate; // @synthesize placeholderDelegate=_placeholderDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <LAUIPlaceHolderTextFieldDelegate> placeholderDelegate; // @synthesize placeholderDelegate=_placeholderDelegate;
 - (void)rightMouseDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (BOOL)becomeFirstResponder;

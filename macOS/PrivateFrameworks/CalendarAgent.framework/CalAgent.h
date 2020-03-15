@@ -28,6 +28,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL remindersHaveBeenMigrated; // @synthesize remindersHaveBeenMigrated=_remindersHaveBeenMigrated;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *reminderMigrationQueue; // @synthesize reminderMigrationQueue=_reminderMigrationQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *reminderMigrationGroup; // @synthesize reminderMigrationGroup=_reminderMigrationGroup;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) CalAgentMessageEngine *messageEngine; // @synthesize messageEngine=_messageEngine;
 @property(retain, nonatomic) CalMemorySensor *memorySensor; // @synthesize memorySensor=_memorySensor;
 @property(retain, nonatomic) CalSignalSensor *signalHandler; // @synthesize signalHandler=_signalHandler;
-- (void).cxx_destruct;
 - (void)logICSMessage:(id)arg1 atLevel:(long long)arg2;
 - (id)createReminderMigrationBlockingGroupIfNeeded;
 - (void)setupReachabilityEvents;

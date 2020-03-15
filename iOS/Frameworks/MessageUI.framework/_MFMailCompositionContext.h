@@ -59,6 +59,7 @@
 
 + (id)processMessageBody:(id)arg1 asHTML:(_Bool)arg2;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EFScheduler> observationScheduler; // @synthesize observationScheduler=_observationScheduler;
 @property MFComposeWebView *composeWebView; // @synthesize composeWebView=_composeWebView;
 @property(nonatomic) __weak id <_MFMailCompositionContextDelegate> delegate; // @synthesize delegate=_delegate;
@@ -93,7 +94,6 @@
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(copy, nonatomic) NSString *sendingAddress; // @synthesize sendingAddress=_sendingAddress;
 @property(nonatomic) _Bool usingDefaultAccount; // @synthesize usingDefaultAccount=_usingDefaultAccount;
-- (void).cxx_destruct;
 - (void)collection:(id)arg1 replacedExistingItemID:(id)arg2 withNewItemID:(id)arg3;
 - (void)collection:(id)arg1 movedItemIDs:(id)arg2 before:(id)arg3;
 - (void)collection:(id)arg1 movedItemIDs:(id)arg2 after:(id)arg3;
@@ -123,13 +123,18 @@
 - (id)initOutboxRestoreOfMessage:(id)arg1 legacyMessage:(id)arg2;
 - (id)initSendAgainDraftOfMessage:(id)arg1 legacyMessage:(id)arg2;
 - (id)initDraftRestoreOfMessage:(id)arg1 legacyMessage:(id)arg2;
+- (id)initForwardOfMessage:(id)arg1 legacyMessage:(id)arg2 isEML:(_Bool)arg3;
+- (id)initReplyAllToMessage:(id)arg1 legacyMessage:(id)arg2 isEML:(_Bool)arg3;
+- (id)initReplyToMessage:(id)arg1 legacyMessage:(id)arg2 isEML:(_Bool)arg3;
 - (id)initForwardOfMessage:(id)arg1 legacyMessage:(id)arg2;
 - (id)initReplyAllToMessage:(id)arg1 legacyMessage:(id)arg2;
 - (id)initReplyToMessage:(id)arg1 legacyMessage:(id)arg2;
 - (id)initRecoveredAutosavedMessageWithIdentifier:(id)arg1;
+- (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3 legacyMessage:(id)arg4 isEML:(_Bool)arg5;
 - (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3 legacyMessage:(id)arg4;
 - (id)initWithComposeType:(int)arg1 RFC822Data:(id)arg2;
 - (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2 legacyMessage:(id)arg3;
+- (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2 legacyMessage:(id)arg3 isEML:(_Bool)arg4;
 - (id)initWithComposeType:(int)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)init;

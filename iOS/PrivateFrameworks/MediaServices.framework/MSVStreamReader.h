@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSInputStream *stream; // @synthesize stream=_stream;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) CDUnknownBlockType didEncounterErrorBlock; // @synthesize didEncounterErrorBlock=_didEncounterErrorBlock;
 @property(copy, nonatomic) CDUnknownBlockType didFinishReadingBlock; // @synthesize didFinishReadingBlock=_didFinishReadingBlock;
 @property(copy, nonatomic) CDUnknownBlockType didReadDataBlock; // @synthesize didReadDataBlock=_didReadDataBlock;
-- (void).cxx_destruct;
 - (void)_stop;
 - (_Bool)_shouldHandleEvent;
 - (id)_compressedDataForData:(id)arg1;

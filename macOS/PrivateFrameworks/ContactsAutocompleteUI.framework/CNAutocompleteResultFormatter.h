@@ -16,10 +16,10 @@
 }
 
 + (id)displayStringForResult:(id)arg1 withDelegate:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL suppressNonEmailValues; // @synthesize suppressNonEmailValues=_suppressNonEmailValues;
 @property(nonatomic) BOOL includeAddress; // @synthesize includeAddress=_includeAddress;
 @property(retain, nonatomic) id <CNAutocompleteResultWindowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (id)displayStringForResult:(id)arg1;

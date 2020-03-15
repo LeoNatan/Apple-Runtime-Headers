@@ -19,11 +19,11 @@
     NSData *_targetCounts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *targetCounts; // @synthesize targetCounts=_targetCounts;
 @property(retain, nonatomic) NSData *targetWeights; // @synthesize targetWeights=_targetWeights;
 @property(retain, nonatomic) MDLAnimatedScalarArray *weights; // @synthesize weights=_weights;
 @property(readonly, nonatomic) NSArray *targetShapes; // @synthesize targetShapes=_targetShapes;
-- (void).cxx_destruct;
 - (unsigned int)copyShapeSetTargetCountsInto:(unsigned int *)arg1 maxCount:(unsigned int)arg2;
 - (unsigned int)copyShapeSetTargetWeightsInto:(float *)arg1 maxCount:(unsigned int)arg2;
 @property(readonly, nonatomic) NSArray *shapeSetTargetCounts;

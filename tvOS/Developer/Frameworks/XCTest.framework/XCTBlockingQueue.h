@@ -17,11 +17,11 @@
     NSMutableArray *_objects;
 }
 
+- (void).cxx_destruct;
 @property _Bool finalized; // @synthesize finalized=_finalized;
 @property(readonly) NSMutableArray *objects; // @synthesize objects=_objects;
 @property(readonly) NSObject<OS_dispatch_semaphore> *sema; // @synthesize sema=_sema;
 @property(readonly) NSObject<OS_dispatch_queue> *mutex; // @synthesize mutex=_mutex;
-- (void).cxx_destruct;
 - (void)finalize;
 - (id)dequeueObject;
 - (void)enqueueObject:(id)arg1;

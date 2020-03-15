@@ -20,11 +20,11 @@
     CSLClockAssertion *_transitionWindowAssertion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLClockAssertion *transitionWindowAssertion; // @synthesize transitionWindowAssertion=_transitionWindowAssertion;
 @property(readonly, nonatomic) CSLClockAssertion *nilWindowAssertion; // @synthesize nilWindowAssertion=_nilWindowAssertion;
 @property(readonly, nonatomic) CSLClockAssertion *mainWindowAssertion; // @synthesize mainWindowAssertion=_mainWindowAssertion;
 @property(readonly, nonatomic) CSLClockAssertion *alertWindowAssertion; // @synthesize alertWindowAssertion=_alertWindowAssertion;
-- (void).cxx_destruct;
 - (void)alertWindowDidHide:(id)arg1;
 - (void)alertWindowWillHide:(id)arg1;
 - (void)alertWindowDidShow:(id)arg1;

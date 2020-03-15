@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     QLPXSwipeDownTracker *_impl;
 }
 
-@property(readonly, nonatomic) QLPXSwipeDownTracker *impl; // @synthesize impl=_impl;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) QLPXSwipeDownTracker *impl; // @synthesize impl=_impl;
 @property(readonly, nonatomic) double finalAnimationSpringDamping;
 @property(readonly, nonatomic) double finalAnimationDuration;
 @property(readonly, nonatomic) struct QLPHDisplayVelocity trackedVelocity;

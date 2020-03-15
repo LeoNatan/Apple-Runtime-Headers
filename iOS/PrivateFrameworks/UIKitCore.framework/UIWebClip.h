@@ -64,6 +64,7 @@
 + (id)webClips;
 + (id)webClipWithURL:(id)arg1;
 + (id)webClipWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long webClipStatusBarStyle; // @synthesize webClipStatusBarStyle=_webClipStatusBarStyle;
 @property(nonatomic) __weak id <WebClipDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) UIImage *initialLaunchImage; // @synthesize initialLaunchImage;
@@ -85,7 +86,6 @@
 @property(retain) NSArray *icons; // @synthesize icons;
 @property(retain, nonatomic) NSURL *pageURL; // @synthesize pageURL;
 @property(copy) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (id)getStartupImage:(long long)arg1;
 - (void)requestCustomLandscapeStartupImageUpdate;
 - (void)requestCustomPortraitStartupImageUpdate;

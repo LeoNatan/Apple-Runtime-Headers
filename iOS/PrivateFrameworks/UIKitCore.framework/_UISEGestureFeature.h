@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <_UISEGestureFeatureDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_incorporateSample:(const struct _UISEGestureFeatureSample *)arg1;
 - (void)_setState:(unsigned long long)arg1;
 - (id)debugDictionary;

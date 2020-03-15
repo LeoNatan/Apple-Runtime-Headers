@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct _CSArchitecture {
     int cpu_type;
     int cpu_subtype;

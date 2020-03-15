@@ -9,6 +9,7 @@
 @class NSDictionary, NSError;
 
 @protocol AssetCacheServicesManagerObserverProtocol <NSObject>
+- (oneway void)notifyAboutUpdatedSettings:(NSDictionary *)arg1;
 - (oneway void)notifyAboutUpdatedStatus:(NSDictionary *)arg1;
 - (oneway void)notifyAboutCompletedDataMigrationWithError:(NSError *)arg1;
 - (oneway void)notifyAboutDataMigrationProgress:(double)arg1;

@@ -17,12 +17,12 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSArray *unbadgedIssues; // @synthesize unbadgedIssues=_unbadgedIssues;
 @property(retain, nonatomic) NSArray *autoFavoriteIssues; // @synthesize autoFavoriteIssues=_autoFavoriteIssues;
 @property(retain, nonatomic) NSArray *unreadFollowedIssues; // @synthesize unreadFollowedIssues=_unreadFollowedIssues;
 @property(retain, nonatomic) NSArray *followedIssues; // @synthesize followedIssues=_followedIssues;
-- (void).cxx_destruct;
 
 @end
 

@@ -18,6 +18,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)_followUpControllerForContext:(id)arg1;
 - (void)securityLevelChanged:(_Bool)arg1;
 - (_Bool)clearFollowUpWithContext:(id)arg1 error:(id *)arg2;
 - (_Bool)postFollowUpItemForContext:(id)arg1 error:(id *)arg2;

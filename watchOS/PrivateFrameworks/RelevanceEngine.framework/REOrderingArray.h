@@ -17,8 +17,8 @@
     NSArray *_comparators;
 }
 
-@property(readonly, nonatomic) NSArray *comparators; // @synthesize comparators=_comparators;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *comparators; // @synthesize comparators=_comparators;
 - (void)_updateContentOrder;
 - (void)_performOrMarkUpdate;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;

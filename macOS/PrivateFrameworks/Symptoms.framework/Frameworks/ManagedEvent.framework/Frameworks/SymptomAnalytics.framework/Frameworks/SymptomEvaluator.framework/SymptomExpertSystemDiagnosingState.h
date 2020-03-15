@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createStateWithLabel:(id)arg1 rank:(unsigned long long)arg2 entryPreds:(id)arg3;
-@property(retain, nonatomic) NSDictionary *triggeringSymptom; // @synthesize triggeringSymptom=_triggeringSymptom;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *triggeringSymptom; // @synthesize triggeringSymptom=_triggeringSymptom;
 
 @end
 

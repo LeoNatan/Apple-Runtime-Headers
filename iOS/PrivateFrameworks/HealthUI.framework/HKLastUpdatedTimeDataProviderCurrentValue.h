@@ -15,8 +15,8 @@
     NSDate *_date;
 }
 
-@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (id)lastUpdatedDescriptionWithDateCache:(id)arg1;
 - (id)attributedStringWithDisplayType:(id)arg1 unitController:(id)arg2 valueFont:(id)arg3 unitFont:(id)arg4 dateCache:(id)arg5;
 

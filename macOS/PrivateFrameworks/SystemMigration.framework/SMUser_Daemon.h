@@ -13,8 +13,8 @@
     SMSystem_Daemon *sourceSystem;
 }
 
-@property(readonly) SMSystem_Daemon *sourceSystem; // @synthesize sourceSystem;
 - (void).cxx_destruct;
+@property(readonly) SMSystem_Daemon *sourceSystem; // @synthesize sourceSystem;
 - (BOOL)markUserAsMigrated;
 - (BOOL)clearUserMigratedMark;
 - (BOOL)isUserMarkedAsMigrated;

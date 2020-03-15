@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *urlSalt; // @synthesize urlSalt=_urlSalt;
 @property(readonly, copy, nonatomic) NSData *urlHash; // @synthesize urlHash=_urlHash;
 @property(readonly, copy, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

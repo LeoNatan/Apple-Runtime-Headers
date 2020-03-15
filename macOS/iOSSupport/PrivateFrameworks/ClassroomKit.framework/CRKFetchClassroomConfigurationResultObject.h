@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *configurationsByType; // @synthesize configurationsByType=_configurationsByType;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

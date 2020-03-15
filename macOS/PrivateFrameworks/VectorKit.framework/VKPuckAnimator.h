@@ -25,12 +25,12 @@
     GEORouteMatch *_lastProjectedLocation;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 @property(nonatomic) double tracePlaybackSpeedMultiplier; // @synthesize tracePlaybackSpeedMultiplier=_tracePlaybackSpeedMultiplier;
 @property(retain, nonatomic) GEORouteMatch *lastProjectedLocation; // @synthesize lastProjectedLocation=_lastProjectedLocation;
 @property(nonatomic) id <VKPuckAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <VKPuckAnimatorTarget> target; // @synthesize target=_target;
-- (id).cxx_construct;
 - (id)detailedDescription;
 - (void)updateVehicleHeading:(double)arg1;
 - (void)updateLocation:(id)arg1 routeMatch:(id)arg2;

@@ -6,49 +6,60 @@
 
 #import <VideosUI/VUILibraryStackViewController.h>
 
-#import <VideosUI/UICollectionViewDataSource-Protocol.h>
 #import <VideosUI/UICollectionViewDelegate-Protocol.h>
 #import <VideosUI/UICollectionViewDelegateFlowLayout-Protocol.h>
-#import <VideosUI/VUIMediaEntitiesFetchControllerDelegate-Protocol.h>
+#import <VideosUI/VUILibraryDataSourceDelegate-Protocol.h>
 
-@class NSArray, NSString, VUIMediaCollection, VUITVShowDetailPageViewModel;
+@class NSArray, NSString, UICollectionViewDiffableDataSource, VUIMediaEntitiesDataSource, VUITVShowDetailPageViewModel, VUIViewControllerContentPresenter;
 
 __attribute__((visibility("hidden")))
-@interface VUITVShowDetailPageViewController : VUILibraryStackViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, VUIMediaEntitiesFetchControllerDelegate>
+@interface VUITVShowDetailPageViewController : VUILibraryStackViewController <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, VUILibraryDataSourceDelegate>
 {
-    VUIMediaCollection *_mediaCollection;
+    _Bool _seasonsFetchHasCompleted;
+    _Bool _episodesFetchHasCompleted;
     NSArray *_seasons;
     NSArray *_episodes;
     NSArray *_episodeGroups;
     VUITVShowDetailPageViewModel *_tvShowDetailPageViewModel;
+    VUIViewControllerContentPresenter *_contentPresenter;
+    NSString *_headerTitle;
+    VUIMediaEntitiesDataSource *_seasonsDataSource;
+    VUIMediaEntitiesDataSource *_episodesDataSource;
+    UICollectionViewDiffableDataSource *_diffableDataSource;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
+@property(nonatomic) _Bool episodesFetchHasCompleted; // @synthesize episodesFetchHasCompleted=_episodesFetchHasCompleted;
+@property(nonatomic) _Bool seasonsFetchHasCompleted; // @synthesize seasonsFetchHasCompleted=_seasonsFetchHasCompleted;
+@property(retain, nonatomic) VUIMediaEntitiesDataSource *episodesDataSource; // @synthesize episodesDataSource=_episodesDataSource;
+@property(retain, nonatomic) VUIMediaEntitiesDataSource *seasonsDataSource; // @synthesize seasonsDataSource=_seasonsDataSource;
+@property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
+@property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
 @property(retain, nonatomic) VUITVShowDetailPageViewModel *tvShowDetailPageViewModel; // @synthesize tvShowDetailPageViewModel=_tvShowDetailPageViewModel;
 @property(retain, nonatomic) NSArray *episodeGroups; // @synthesize episodeGroups=_episodeGroups;
 @property(retain, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(retain, nonatomic) NSArray *seasons; // @synthesize seasons=_seasons;
-@property(readonly, nonatomic) VUIMediaCollection *mediaCollection; // @synthesize mediaCollection=_mediaCollection;
-- (void).cxx_destruct;
-- (id)_episodesChangeSetMapWithEpisodeGroups:(id)arg1 changeSet:(id)arg2;
+- (_Bool)_allFetchesHaveCompleted;
 - (id)_seasonIdentifiersWithSeasons:(id)arg1;
 - (void)_updateTvShowDetailPageViewModelWithSeasonIdentifiers:(id)arg1;
 - (void)_buildTvShowDetailPageViewModel;
 - (id)_episodesBySeasonIdentifier;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
+- (void)_updateEpisodeShelvesWithLatestEpisodes;
+- (id)_createDiffableDataSourceSnapshot;
+- (id)_createDiffableDataSourceForCollectionView:(id)arg1;
+- (void)dataSourceDidFinishFetching:(id)arg1;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)start;
 - (void)configureWithCollectionView:(id)arg1;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidLoad;
 - (void)viewDidAppear:(_Bool)arg1;
-- (id)initWithMediaCollection:(id)arg1;
+- (id)initWithTitle:(id)arg1 withSeasonsDataSource:(id)arg2 withEpisodesDataSource:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,10 +13,10 @@
     id value;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id value; // @synthesize value;
 @property(nonatomic) __weak id dependency; // @synthesize dependency;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,11 +20,11 @@
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
 + (_Bool)isAllowedToRunAutomatically;
+- (void).cxx_destruct;
 @property(nonatomic) int alarmState; // @synthesize alarmState=_alarmState;
 @property(copy, nonatomic) NSArray *cachedAlarmDescriptions; // @synthesize cachedAlarmDescriptions=_cachedAlarmDescriptions;
 @property(copy, nonatomic) NSArray *alarmIDs; // @synthesize alarmIDs=_alarmIDs;
 @property(nonatomic) int alarmType; // @synthesize alarmType=_alarmType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

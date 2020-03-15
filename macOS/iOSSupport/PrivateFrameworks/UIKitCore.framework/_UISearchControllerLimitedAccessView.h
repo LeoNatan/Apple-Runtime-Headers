@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIButton *_backButton;
 }
 
-@property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;
 - (BOOL)shouldUpdateFocusInContext:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

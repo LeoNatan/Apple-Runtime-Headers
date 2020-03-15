@@ -17,8 +17,8 @@
 }
 
 + (id)decodingQueue;
-@property(readonly) __weak id <_CSVisualizationUnarchiverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <_CSVisualizationUnarchiverDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)postDelegateMessageForDictionary:(id)arg1;
 - (id)decodeDictionaryFromData:(id)arg1;
 - (void)readAllDataYieldingWithPeriod:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;

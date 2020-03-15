@@ -20,7 +20,7 @@
 -     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: _secKey
 @property(readonly, copy, nonatomic) NSString *privateKeyDomain;
 @property(readonly, nonatomic) _SFPublicKey *publicKey;
-- (id)initRandomKeyPairWithSpecifier:(id)arg1 privateKeyDomain:(struct NSString *)arg2;
+- (id)initRandomKeyPairWithSpecifier:(id)arg1 privateKeyDomain:(id)arg2;
 - (id)initRandomKeyPairWithSpecifier:(id)arg1;
 -     // Error parsing type: @24@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16, name: initWithSecKey:
 - (id)initWithData:(id)arg1 specifier:(id)arg2 error:(id *)arg3;

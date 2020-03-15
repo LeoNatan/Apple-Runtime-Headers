@@ -19,10 +19,10 @@
 + (id)encodeWithCandidateResultSet:(id)arg1;
 + (Class)classFromCandidateType:(int)arg1;
 + (id)candidateTypeToClassNameMap;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSMutableData *mutableData; // @synthesize mutableData=_mutableData;
-- (void).cxx_destruct;
 - (id)candidateResultSet;
 - (id)dataFromCandidateResultSet:(id)arg1;
 - (id)decodePointerValueArray;

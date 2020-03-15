@@ -18,10 +18,10 @@
 }
 
 + (Class)valuesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBGroupingFlags *groupingFlags; // @synthesize groupingFlags=_groupingFlags;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

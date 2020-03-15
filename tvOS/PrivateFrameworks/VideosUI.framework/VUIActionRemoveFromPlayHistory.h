@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_canonicalID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isContinueWatching; // @synthesize isContinueWatching=_isContinueWatching;
 @property(retain, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(retain, nonatomic) NSString *deleteID; // @synthesize deleteID=_deleteID;
-- (void).cxx_destruct;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1 isContinueWatching:(_Bool)arg2;
 

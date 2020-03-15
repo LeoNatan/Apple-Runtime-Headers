@@ -13,10 +13,10 @@ __attribute__((visibility("hidden")))
     function_29255342 _validator;
 }
 
-@property(nonatomic) function_29255342 validator; // @synthesize validator=_validator;
-@property(nonatomic) function_b1fce659 actionToInvoke; // @synthesize actionToInvoke=_actionToInvoke;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) function_29255342 validator; // @synthesize validator=_validator;
+@property(nonatomic) function_b1fce659 actionToInvoke; // @synthesize actionToInvoke=_actionToInvoke;
 - (void)invokeGlue:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)initWithTitle:(id)arg1 keyEquivalent:(id)arg2 actionToInvoke:(const function_b1fce659 *)arg3 validator:(const function_29255342 *)arg4;

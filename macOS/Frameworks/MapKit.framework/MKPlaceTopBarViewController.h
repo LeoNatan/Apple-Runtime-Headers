@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     id <MKPlaceCardActionControllerDelegate> _actionDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKPlaceCardActionControllerDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(nonatomic) BOOL hideFavorites; // @synthesize hideFavorites=_hideFavorites;
 @property(nonatomic, getter=isFavorited) BOOL favorited; // @synthesize favorited=_favorited;
 @property(nonatomic) __weak _MKPlaceViewController *owner; // @synthesize owner;
 @property(retain, nonatomic) NSButton *shareButton; // @synthesize shareButton=_shareButton;
 @property(retain, nonatomic) NSButton *favoriteButton; // @synthesize favoriteButton=_favoriteButton;
-- (void).cxx_destruct;
 - (void)addContact:(id)arg1;
 - (void)toggleFavorite:(id)arg1;
 - (void)share:(id)arg1;

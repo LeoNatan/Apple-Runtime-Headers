@@ -16,11 +16,11 @@
     unsigned long long _cursorIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL includeSuffixAsSearchString; // @synthesize includeSuffixAsSearchString=_includeSuffixAsSearchString;
 @property(readonly, nonatomic) unsigned long long cursorIndex; // @synthesize cursorIndex=_cursorIndex;
 @property(readonly, nonatomic) NSArray *syllables; // @synthesize syllables=_syllables;
 @property(readonly, nonatomic) NSString *committedText; // @synthesize committedText=_committedText;
-- (void).cxx_destruct;
 - (id)externalSuffix;
 - (int)syllableIndex:(int *)arg1;
 @property(readonly, nonatomic) NSString *text;

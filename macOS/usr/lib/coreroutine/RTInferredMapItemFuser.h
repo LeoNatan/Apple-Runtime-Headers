@@ -16,11 +16,11 @@
     NSUUID *_placeholderUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *placeholderUUID; // @synthesize placeholderUUID=_placeholderUUID;
 @property(retain, nonatomic) RTInferredMapItemDeduper *deduper; // @synthesize deduper=_deduper;
 @property(retain, nonatomic) RTInferredMapItemFuserParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
-- (void).cxx_destruct;
 - (id)bestFromFusedInferredMapItems:(id)arg1;
 - (id)highestConfidenceAoiMapItemFromFusedInferredMapItems:(id)arg1;
 - (id)fusedInferredMapItemsUsingCandidates:(id)arg1 referenceLocation:(id)arg2 error:(id *)arg3;

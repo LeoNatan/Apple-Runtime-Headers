@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)rangeModelsBySplittingRangeModels:(id)arg1 outsideRange:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowMoreThanMaxVideo; // @synthesize allowMoreThanMaxVideo=_allowMoreThanMaxVideo;
 @property(nonatomic) BOOL useNonSpecialDurations; // @synthesize useNonSpecialDurations=_useNonSpecialDurations;
 @property(nonatomic) int lastClipOutPoint; // @synthesize lastClipOutPoint=_lastClipOutPoint;
 @property(nonatomic) int lastClipInPoint; // @synthesize lastClipInPoint=_lastClipInPoint;
 @property(nonatomic) int duration; // @synthesize duration=_duration;
 @property(nonatomic) __weak id <MiroAutoEditDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)calcLastClipInPointAndOutPoint;
 - (void)setupSongDuration;
 - (void)_saveFreezeBits;

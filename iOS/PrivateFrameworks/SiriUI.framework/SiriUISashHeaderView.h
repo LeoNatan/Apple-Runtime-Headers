@@ -20,8 +20,8 @@
 + (id)elementKind;
 + (double)defaultHeight;
 + (id)reuseIdentifier;
-@property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 - (double)desiredHeightForWidth:(double)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     _Bool _requestAllowsPrivacyUI;
     _Bool _requestRequiresPrivacyUI;
     _Bool _shouldInferFeaturedProviders;
+    _Bool _shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront;
     _Bool _accountModificationAllowed;
     int _hostProcessIdentifier;
     VSAuditToken *_auditToken;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
     CDStruct_4c969caf _hostAuditToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSStoreURLBag *bag; // @synthesize bag=_bag;
 @property(retain, nonatomic) VSIdentityProviderAvailabilityInfoCenter *availabilityInfoCenter; // @synthesize availabilityInfoCenter=_availabilityInfoCenter;
 @property(retain, nonatomic) NSXPCConnection *privacyServiceConnection; // @synthesize privacyServiceConnection=_privacyServiceConnection;
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(retain, nonatomic) VSOptional *currentAccount; // @synthesize currentAccount=_currentAccount;
 @property(nonatomic, getter=isAccountModificationAllowed) _Bool accountModificationAllowed; // @synthesize accountModificationAllowed=_accountModificationAllowed;
+@property(nonatomic) _Bool shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront; // @synthesize shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront=_shouldReturnErrorOnTVProviderFeatureUnsupportedByStorefront;
 @property(nonatomic) _Bool shouldInferFeaturedProviders; // @synthesize shouldInferFeaturedProviders=_shouldInferFeaturedProviders;
 @property(copy, nonatomic) NSArray *featuredIdentityProviderIdentifiers; // @synthesize featuredIdentityProviderIdentifiers=_featuredIdentityProviderIdentifiers;
 @property(copy, nonatomic) NSArray *supportedIdentityProviderIdentifiers; // @synthesize supportedIdentityProviderIdentifiers=_supportedIdentityProviderIdentifiers;
@@ -43,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(nonatomic) int hostProcessIdentifier; // @synthesize hostProcessIdentifier=_hostProcessIdentifier;
 @property(nonatomic) CDStruct_4c969caf hostAuditToken; // @synthesize hostAuditToken=_hostAuditToken;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (void)_promptForPrivacyWithDisplayNameIfRequired:(id)arg1 providerID:(id)arg2 providerIsSupported:(_Bool)arg3 allowUI:(_Bool)arg4;
@@ -51,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)_checkSupportedProviders;
 - (void)_finishWithSupportedProviders:(id)arg1;
 - (void)_checkAvailability;
+- (void)_continueCheckPrivacyWithAccessStatus:(unsigned long long)arg1;
 - (void)_checkPrivacy;
 - (void)_checkEntitlement;
 - (void)_finishWithError:(id)arg1;

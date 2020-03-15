@@ -18,10 +18,10 @@
     id _sessionID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id sessionID; // @synthesize sessionID=_sessionID;
 @property(copy, nonatomic) CDUnknownBlockType photoCacheCompletionBlock; // @synthesize photoCacheCompletionBlock=_photoCacheCompletionBlock;
 @property(nonatomic) __weak id <TVPhotoSourceServiceDelegate> photoServiceDelegate; // @synthesize photoServiceDelegate=_photoServiceDelegate;
-- (void).cxx_destruct;
 - (void)didFinishFetchingPhotoAssets;
 - (void)updateCacheWithPhotoAssets:(id)arg1;
 - (void)dealloc;

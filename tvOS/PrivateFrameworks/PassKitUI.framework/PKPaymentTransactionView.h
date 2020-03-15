@@ -31,6 +31,7 @@
 }
 
 + (id)defaultTertiaryLabelFont;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool strokeImage; // @synthesize strokeImage=_strokeImage;
 @property(retain, nonatomic) UIImage *primaryImage; // @synthesize primaryImage=_primaryImage;
 @property(nonatomic) _Bool showsDisclosureView; // @synthesize showsDisclosureView=_showsDisclosureView;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *primaryString; // @synthesize primaryString=_primaryString;
 @property(retain, nonatomic) UIColor *secondaryColor; // @synthesize secondaryColor=_secondaryColor;
 @property(retain, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
-- (void).cxx_destruct;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;

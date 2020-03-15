@@ -14,8 +14,8 @@
     NSArray *_testRun;
 }
 
-@property(readonly, copy) NSArray *testRuns; // @synthesize testRuns=_testRun;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *testRuns; // @synthesize testRuns=_testRun;
 - (void)addTestRun:(id)arg1;
 - (id)init;
 

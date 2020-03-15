@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     WFContentCollection *_collection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long itemsPerRow; // @synthesize itemsPerRow=_itemsPerRow;
 @property(readonly, nonatomic) WFContentCollection *collection; // @synthesize collection=_collection;
 @property(nonatomic) unsigned long long maximumNumberOfItems; // @synthesize maximumNumberOfItems=_maximumNumberOfItems;
 @property(nonatomic) unsigned long long minimumNumberOfItems; // @synthesize minimumNumberOfItems=_minimumNumberOfItems;
 @property(nonatomic) __weak id <WFChooseImageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cell:(id)arg1 didSelectImageViewAtIndex:(unsigned long long)arg2;
 - (void)done;
 - (void)cancel;

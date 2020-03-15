@@ -27,6 +27,7 @@
     NSTableView *_specifierTableView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTableView *specifierTableView; // @synthesize specifierTableView=_specifierTableView;
 @property __weak PPFlexibleSpaceSpecifier *flexibleSpaceSpecifier; // @synthesize flexibleSpaceSpecifier=_flexibleSpaceSpecifier;
 @property(retain) NSMutableDictionary *viewHeights; // @synthesize viewHeights=_viewHeights;
@@ -36,7 +37,6 @@
 @property(retain) NSView *detailsViewPlaceholder; // @synthesize detailsViewPlaceholder=_detailsViewPlaceholder;
 @property(retain) NSLayoutConstraint *tableViewWidthConstraint; // @synthesize tableViewWidthConstraint=_tableViewWidthConstraint;
 @property __weak id <PPSpecifierTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (double)_updateFlexibleSpecifier;
 - (void)viewDidLayout;

@@ -24,11 +24,11 @@
 }
 
 + (void)fixColumnBoundsForTarget:(id)arg1 storage:(id)arg2 charIndex:(unsigned long long)arg3 firstColumnIndex:(unsigned long long)arg4 precedingHeight:(double)arg5 height:(double)arg6 alreadyHasMargins:(_Bool)arg7 styleProvider:(id)arg8 vertical:(_Bool)arg9;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange dirtyRange; // @synthesize dirtyRange=_dirtyRange;
 @property(readonly, retain, nonatomic) TSWPStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) id <TSWPLayoutOwner> owner; // @synthesize owner=_owner;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)p_layoutConfigFlagsForTarget:(id)arg1;
 @property(readonly, retain, nonatomic) TSWPCTTypesetterCache *typesetterCache;
 - (void)destroyLayoutState:(void *)arg1;

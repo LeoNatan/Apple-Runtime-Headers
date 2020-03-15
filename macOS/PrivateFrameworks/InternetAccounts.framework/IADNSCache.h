@@ -15,8 +15,8 @@
 }
 
 + (id)shared;
-@property(retain) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 - (void).cxx_destruct;
+@property(retain) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 - (void)_delayedSync;
 - (void)_sync;
 - (void)cacheResult:(id)arg1 forHost:(id)arg2;

@@ -20,8 +20,8 @@
 + (void)stopMeasurements;
 + (void)startMeasurementsForOutputType:(id)arg1;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSString *measurementsUnit; // @synthesize measurementsUnit=_measurementsUnit;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *measurementsUnit; // @synthesize measurementsUnit=_measurementsUnit;
 - (id)_measurementsDictionaryForOutputQuality:(long long)arg1;
 @property(readonly, nonatomic) NSDictionary *measurementsDictionaryRepresentation;
 - (CDStruct_4bbd3430)measurementsForOutputQuality:(long long)arg1;

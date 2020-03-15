@@ -15,10 +15,10 @@
     NSUUID *_clientUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSUUID *clientUUID; // @synthesize clientUUID=_clientUUID;
 @property BOOL requireEncyption; // @synthesize requireEncyption=_requireEncyption;
 @property unsigned char requireAck; // @synthesize requireAck=_requireAck;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

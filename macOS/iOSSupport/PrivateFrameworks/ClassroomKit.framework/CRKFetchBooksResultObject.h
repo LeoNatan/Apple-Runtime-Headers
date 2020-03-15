@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *books; // @synthesize books=_books;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *books; // @synthesize books=_books;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

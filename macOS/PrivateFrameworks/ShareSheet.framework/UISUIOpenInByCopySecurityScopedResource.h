@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSString *bookmarkExportDataEncodedAsString; // @synthesize bookmarkExportDataEncodedAsString=_bookmarkExportDataEncodedAsString;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *bookmarkExportDataEncodedAsString; // @synthesize bookmarkExportDataEncodedAsString=_bookmarkExportDataEncodedAsString;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

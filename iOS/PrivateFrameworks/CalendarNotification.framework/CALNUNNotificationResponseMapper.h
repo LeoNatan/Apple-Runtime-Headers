@@ -14,8 +14,8 @@
 }
 
 + (id)_calnNotificationActionIdentifierFromUNNotificationActionIdentifier:(id)arg1;
-@property(readonly, nonatomic) CALNUNNotificationMapper *notificationMapper; // @synthesize notificationMapper=_notificationMapper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CALNUNNotificationMapper *notificationMapper; // @synthesize notificationMapper=_notificationMapper;
 - (id)calnNotificationResponseFromUNNotificationResponse:(id)arg1;
 - (id)initWithNotificationMapper:(id)arg1;
 

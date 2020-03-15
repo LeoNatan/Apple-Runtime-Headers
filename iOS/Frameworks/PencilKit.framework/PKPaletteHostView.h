@@ -47,6 +47,7 @@
     struct CGPoint _draggingInitialPaletteCenterInSelf;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <PKPaletteHostingWindowScene> hostingWindowScene; // @synthesize hostingWindowScene=_hostingWindowScene;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
 @property(retain, nonatomic) PKPalettePencilInteractionFeedbackHostView *pencilInteractionFeedbackHostView; // @synthesize pencilInteractionFeedbackHostView=_pencilInteractionFeedbackHostView;
@@ -73,7 +74,6 @@
 @property(nonatomic) __weak id <PKPaletteHostViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isPaletteVisible) _Bool paletteVisible; // @synthesize paletteVisible=_paletteVisible;
 @property(readonly, nonatomic) PKPaletteView *paletteView; // @synthesize paletteView=_paletteView;
-- (void).cxx_destruct;
 - (double)paletteEdgeSpacingForMinimized;
 - (double)paletteEdgeSpacing;
 - (double)paletteSpringAnimationResponse;

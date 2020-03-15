@@ -18,8 +18,8 @@
     // Error parsing type: AB, name: _modal
 }
 
-@property(readonly, nonatomic) SidecarRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SidecarRequest *request; // @synthesize request=_request;
 - (long long)runModal;
 - (void)close;
 - (void)showWindow:(id)arg1;

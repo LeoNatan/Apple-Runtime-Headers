@@ -25,6 +25,7 @@
     TVPMusicVideoTitleController *_titleController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPMusicVideoTitleController *titleController; // @synthesize titleController=_titleController;
 @property(readonly, nonatomic) TVPMusicNowPlayingVideoView *interstitialView; // @synthesize interstitialView=_interstitialView;
 @property(readonly, nonatomic) TVPMusicNowPlayingVideoView *videoView; // @synthesize videoView=_videoView;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) AVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(readonly, nonatomic) AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
 @property(nonatomic) __weak id <TVPMusicVideoPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didSelectAddButton:(id)arg1;
 - (void)didHideTitle:(id)arg1;
 - (void)didShowTitle:(id)arg1;

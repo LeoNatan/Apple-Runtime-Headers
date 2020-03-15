@@ -8,7 +8,7 @@
 
 #import <ManagedConfiguration/NSURLSessionDataDelegate-Protocol.h>
 
-@class NSData, NSError, NSMutableData, NSString, NSURL, NSURLSession;
+@class NSArray, NSData, NSError, NSMutableData, NSString, NSURL, NSURLSession;
 @protocol OS_dispatch_semaphore;
 
 @interface MCHTTPTransaction : NSObject <NSURLSessionDataDelegate>
@@ -29,25 +29,30 @@
     NSError *_error;
     NSURLSession *_session;
     NSObject<OS_dispatch_semaphore> *_doneSema;
+    _Bool _pinningRevocationCheckRequired;
+    NSArray *_pinnedSecCertificateRefs;
 }
 
 + (id)transactionWithURL:(id)arg1 method:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
 @property(readonly, retain, nonatomic) NSURL *permanentlyRedirectedURL; // @synthesize permanentlyRedirectedURL=_permanentlyRedirectedURL;
 @property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *CMSSignatureHeaderName; // @synthesize CMSSignatureHeaderName=_CMSSignatureHeaderName;
 @property(readonly, retain, nonatomic) NSData *responseData; // @synthesize responseData=_responseData;
+@property(nonatomic) _Bool pinningRevocationCheckRequired; // @synthesize pinningRevocationCheckRequired=_pinningRevocationCheckRequired;
+@property(retain, nonatomic) NSArray *pinnedSecCertificateRefs; // @synthesize pinnedSecCertificateRefs=_pinnedSecCertificateRefs;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) NSString *method; // @synthesize method=_method;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_requestURL;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (_Bool)_shouldAllowTrustWithPinning:(struct __SecTrust *)arg1 forHost:(id)arg2;
 - (_Bool)_shouldAllowTrust:(struct __SecTrust *)arg1 forHost:(id)arg2;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)performCompletionBlock:(CDUnknownBlockType)arg1;

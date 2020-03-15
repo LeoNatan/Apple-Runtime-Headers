@@ -16,8 +16,8 @@
 + (id)buildRequiredOnly;
 + (id)buildWithOverridePrimary:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(copy, nonatomic) NSNumber *payloadOverridePrimary; // @synthesize payloadOverridePrimary=_payloadOverridePrimary;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *payloadOverridePrimary; // @synthesize payloadOverridePrimary=_payloadOverridePrimary;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -28,9 +28,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_resourcesDirectory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOActiveTileGroupMigrationTaskOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) id <NSObject> transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (void)removeOldData:(id)arg1;
 - (void)populateTileGroup:(id)arg1;
 - (void)cancel;

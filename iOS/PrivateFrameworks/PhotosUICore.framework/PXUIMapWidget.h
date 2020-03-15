@@ -9,7 +9,7 @@
 #import <PhotosUICore/PXPhotosDataSourceChangeObserver-Protocol.h>
 #import <PhotosUICore/PXUIWidget-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, PHAsset, PXImageUIView, PXOneUpPresentation, PXPhotosDetailsContext, PXPlacesMapFetchResultViewController, PXPlacesMapViewPort, PXPlacesSnapshotFactory, PXSectionedSelectionManager, PXTilingController, PXWidgetSpec, UIButton, UIFont, UIView;
+@class NSMutableArray, NSMutableDictionary, NSString, PHAsset, PXImageUIView, PXOneUpPresentation, PXPhotosDetailsContext, PXPlacesMapFetchResultViewController, PXPlacesMapViewPort, PXPlacesSnapshotFactory, PXSectionedSelectionManager, PXTilingController, PXUIWidgetContainerView, PXWidgetSpec, UIButton, UIFont, UIView;
 @protocol PXAnonymousView, PXWidgetDelegate, PXWidgetUnlockDelegate;
 
 @interface PXUIMapWidget : NSObject <PXPhotosDataSourceChangeObserver, PXUIWidget>
@@ -27,7 +27,7 @@
     id <PXWidgetUnlockDelegate> _widgetUnlockDelegate;
     PXPhotosDetailsContext *_context;
     PXWidgetSpec *_spec;
-    UIView *__containerView;
+    PXUIWidgetContainerView *__containerView;
     UIView *__contentView;
     PXImageUIView *__imageView;
     PXPlacesMapFetchResultViewController *__mapViewController;
@@ -42,6 +42,7 @@
     PXPlacesSnapshotFactory *__factory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setHasLoadedContentData:) _Bool hasLoadedContentData; // @synthesize hasLoadedContentData=_hasLoadedContentData;
 @property(retain, nonatomic) PXPlacesSnapshotFactory *_factory; // @synthesize _factory=__factory;
 @property(retain, nonatomic) NSMutableArray *_nearbyCountCompletionBlocks; // @synthesize _nearbyCountCompletionBlocks=__nearbyCountCompletionBlocks;
@@ -55,13 +56,12 @@
 @property(readonly, nonatomic) PXPlacesMapFetchResultViewController *_mapViewController; // @synthesize _mapViewController=__mapViewController;
 @property(readonly, nonatomic) PXImageUIView *_imageView; // @synthesize _imageView=__imageView;
 @property(readonly, nonatomic) UIView *_contentView; // @synthesize _contentView=__contentView;
-@property(readonly, nonatomic) UIView *_containerView; // @synthesize _containerView=__containerView;
+@property(readonly, nonatomic) PXUIWidgetContainerView *_containerView; // @synthesize _containerView=__containerView;
 @property(nonatomic) _Bool showAddressLink; // @synthesize showAddressLink=_showAddressLink;
 @property(retain, nonatomic) PXWidgetSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PXPhotosDetailsContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PXWidgetUnlockDelegate> widgetUnlockDelegate; // @synthesize widgetUnlockDelegate=_widgetUnlockDelegate;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
-- (void).cxx_destruct;
 - (_Bool)_hasCachedSnapshotImageForKey:(id)arg1;
 - (void)_setImage:(id)arg1 animated:(_Bool)arg2;
 - (void)_handleSnapshotResponse:(id)arg1 viewPort:(id)arg2 snapshotMapType:(unsigned long long)arg3 shouldFetchNearbyAssetCount:(_Bool)arg4 fetchedImageKey:(id)arg5 error:(id)arg6;

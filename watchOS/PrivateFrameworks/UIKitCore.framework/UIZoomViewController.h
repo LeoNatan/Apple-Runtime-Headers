@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIButton *_zoomButton;
 }
 
-- (id)_window;
 - (void).cxx_destruct;
+- (id)_window;
 - (id)screen;
 - (void)_getRotationContentSettings:(CDStruct_3af65568 *)arg1 forWindow:(id)arg2;
 - (void)_suspendAnimationStarted:(id)arg1;

@@ -9,9 +9,20 @@
 @interface PTEditFloatRow : PTSRow
 {
     unsigned int _precision;
+    float _minValue;
+    float _maxValue;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(nonatomic) float maxValue; // @synthesize maxValue=_maxValue;
+@property(nonatomic) float minValue; // @synthesize minValue=_minValue;
 @property(nonatomic) unsigned int precision; // @synthesize precision=_precision;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)_validatedValue:(id)arg1;
 - (id)init;
 - (id)between:(float)arg1 and:(float)arg2;
 - (id)precision:(unsigned int)arg1;

@@ -40,8 +40,8 @@
 }
 
 + (id)sharedInstance;
-@property _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
+@property _Bool enabled; // @synthesize enabled=_enabled;
 - (void)removeEventListener:(id)arg1;
 - (void)addEventListener:(id)arg1;
 - (void)_startHIDListeners;

@@ -18,8 +18,8 @@
     id <TVLListScrollerSplitDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TVLListScrollerSplitDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVLListScrollerSplitDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
 - (void)setPreviewViewController:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

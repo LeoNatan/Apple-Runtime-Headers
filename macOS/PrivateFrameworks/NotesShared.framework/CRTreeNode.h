@@ -15,9 +15,9 @@
 }
 
 + (id)CRProperties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(nonatomic) __weak CRTree *tree; // @synthesize tree=_tree;
-- (void).cxx_destruct;
 - (void)removeNode:(id)arg1;
 - (void)moveNode:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)insertNodeWithValue:(id)arg1 atIndex:(unsigned long long)arg2;

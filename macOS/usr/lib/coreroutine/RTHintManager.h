@@ -28,6 +28,7 @@
 }
 
 + (id)boundingBoxPredicateForLocation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTWalletManager *walletManager; // @synthesize walletManager=_walletManager;
 @property(retain, nonatomic) RTReachabilityManager *reachabilityManager; // @synthesize reachabilityManager=_reachabilityManager;
 @property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) RTBluetoothManager *bluetoothManager; // @synthesize bluetoothManager=_bluetoothManager;
 @property(retain, nonatomic) RTBatteryManager *batteryManager; // @synthesize batteryManager=_batteryManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_onWalletNotification:(id)arg1;
 - (void)onWalletNotification:(id)arg1;
 - (void)_onCameraNotification:(id)arg1;

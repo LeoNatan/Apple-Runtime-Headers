@@ -19,8 +19,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic, setter=_setUIScene:) __weak UIScene *_UIScene; // @synthesize _UIScene=_uiScene;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setUIScene:) __weak UIScene *_UIScene; // @synthesize _UIScene=_uiScene;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

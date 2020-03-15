@@ -20,10 +20,10 @@
     TTMergeableAttributedString *_contents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TTMergeableAttributedString *contents; // @synthesize contents=_contents;
 @property(nonatomic) __weak NSObject<CRUndoDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CRDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (_Bool)wantsUndoCommands;
 - (void)addUndoCommand:(id)arg1;
 - (void)edited:(unsigned long long)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3;

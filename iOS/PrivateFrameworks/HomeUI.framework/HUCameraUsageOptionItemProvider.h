@@ -16,11 +16,11 @@
     NSSet *_cameraProfiles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 @property(readonly, nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(readonly, nonatomic) unsigned long long presenceEventType; // @synthesize presenceEventType=_presenceEventType;
 @property(readonly, nonatomic) NSMutableSet *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)reloadItems;
 - (id)init;

@@ -13,8 +13,8 @@
     id <NURouter> _router;
 }
 
-@property(readonly, nonatomic) id <NURouter> router; // @synthesize router=_router;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NURouter> router; // @synthesize router=_router;
 - (id)createWelcomeToNewsPage;
 - (id)initWithRouter:(id)arg1;
 

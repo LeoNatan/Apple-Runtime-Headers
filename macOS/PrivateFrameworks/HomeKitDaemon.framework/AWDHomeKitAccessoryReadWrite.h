@@ -15,9 +15,12 @@
     unsigned long long _timestamp;
     int _certified;
     NSMutableArray *_characteristics;
+    unsigned int _consecutiveFailureCount;
     unsigned int _duration;
     int _errorCode;
+    NSString *_primaryServiceType;
     int _source;
+    unsigned int _timeElapsedSinceFirstFailure;
     NSString *_transaction;
     NSString *_transportProtocolVersion;
     int _transportType;
@@ -26,24 +29,39 @@
     AWDHomeKitVendorInformation *_vendorDetails;
     BOOL _isCached;
     BOOL _isRemote;
+    BOOL _isRemoteAccessAllowed;
+    BOOL _isRemotelyReachable;
+    BOOL _isResidentAvailable;
     BOOL _isTimedWrite;
     BOOL _isWrite;
     struct {
         unsigned int timestamp:1;
         unsigned int certified:1;
+        unsigned int consecutiveFailureCount:1;
         unsigned int duration:1;
         unsigned int errorCode:1;
         unsigned int source:1;
+        unsigned int timeElapsedSinceFirstFailure:1;
         unsigned int transportType:1;
         unsigned int underlyingErrorCode:1;
         unsigned int isCached:1;
         unsigned int isRemote:1;
+        unsigned int isRemoteAccessAllowed:1;
+        unsigned int isRemotelyReachable:1;
+        unsigned int isResidentAvailable:1;
         unsigned int isTimedWrite:1;
         unsigned int isWrite:1;
     } _has;
 }
 
 + (Class)characteristicsType;
+- (void).cxx_destruct;
+@property(nonatomic) unsigned int timeElapsedSinceFirstFailure; // @synthesize timeElapsedSinceFirstFailure=_timeElapsedSinceFirstFailure;
+@property(nonatomic) unsigned int consecutiveFailureCount; // @synthesize consecutiveFailureCount=_consecutiveFailureCount;
+@property(nonatomic) BOOL isRemotelyReachable; // @synthesize isRemotelyReachable=_isRemotelyReachable;
+@property(nonatomic) BOOL isRemoteAccessAllowed; // @synthesize isRemoteAccessAllowed=_isRemoteAccessAllowed;
+@property(nonatomic) BOOL isResidentAvailable; // @synthesize isResidentAvailable=_isResidentAvailable;
+@property(retain, nonatomic) NSString *primaryServiceType; // @synthesize primaryServiceType=_primaryServiceType;
 @property(nonatomic) unsigned int underlyingErrorCode; // @synthesize underlyingErrorCode=_underlyingErrorCode;
 @property(retain, nonatomic) NSString *underlyingErrorDomain; // @synthesize underlyingErrorDomain=_underlyingErrorDomain;
 @property(nonatomic) BOOL isCached; // @synthesize isCached=_isCached;
@@ -57,7 +75,6 @@
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -67,6 +84,12 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasTimeElapsedSinceFirstFailure;
+@property(nonatomic) BOOL hasConsecutiveFailureCount;
+@property(nonatomic) BOOL hasIsRemotelyReachable;
+@property(nonatomic) BOOL hasIsRemoteAccessAllowed;
+@property(nonatomic) BOOL hasIsResidentAvailable;
+@property(readonly, nonatomic) BOOL hasPrimaryServiceType;
 @property(nonatomic) BOOL hasUnderlyingErrorCode;
 @property(readonly, nonatomic) BOOL hasUnderlyingErrorDomain;
 @property(nonatomic) BOOL hasIsCached;

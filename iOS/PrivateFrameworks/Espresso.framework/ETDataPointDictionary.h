@@ -12,10 +12,10 @@
     map_afad69f8 _float_buffers;
 }
 
-@property map_afad69f8 float_buffers; // @synthesize float_buffers=_float_buffers;
-@property map_b74cfcc1 image_buffers; // @synthesize image_buffers=_image_buffers;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property map_afad69f8 float_buffers; // @synthesize float_buffers=_float_buffers;
+@property map_b74cfcc1 image_buffers; // @synthesize image_buffers=_image_buffers;
 - (id)dataArrayForKey:(id)arg1 error:(id *)arg2;
 - (float *)dataForKey:(id)arg1 error:(id *)arg2;
 - (_Bool)setData:(float *)arg1 size:(unsigned long long)arg2 forKey:(id)arg3 freeWhenDone:(_Bool)arg4;

@@ -25,6 +25,7 @@
     UIScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIView *primaryContainerView; // @synthesize primaryContainerView=_primaryContainerView;
 @property(retain, nonatomic) UIView *clipView; // @synthesize clipView=_clipView;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool hidesExpandButton; // @synthesize hidesExpandButton=_hidesExpandButton;
 @property(retain, nonatomic) UIView *secondaryView; // @synthesize secondaryView=_secondaryView;
 @property(retain, nonatomic) UIView *primaryView; // @synthesize primaryView=_primaryView;
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)_contentSize;

@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)notFoundIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifierCode; // @synthesize identifierCode=_identifierCode;
 @property(readonly, nonatomic) NSString *localCloudIdentifier; // @synthesize localCloudIdentifier=_localCloudIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

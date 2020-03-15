@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double maximumArea; // @synthesize maximumArea=_maximumArea;
 @property(readonly, nonatomic) double minimumArea; // @synthesize minimumArea=_minimumArea;
 @property(readonly, nonatomic) _Bool hasArea; // @synthesize hasArea=_hasArea;
 @property(readonly, copy, nonatomic) NSString *placeName; // @synthesize placeName=_placeName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)addPlaceInfoArea:(double)arg1;

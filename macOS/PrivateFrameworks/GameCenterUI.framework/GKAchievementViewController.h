@@ -13,8 +13,8 @@
     id <GKAchievementViewControllerDelegate> _achievementDelegate;
 }
 
-@property __weak id <GKAchievementViewControllerDelegate> achievementDelegate; // @synthesize achievementDelegate=_achievementDelegate;
 - (void).cxx_destruct;
+@property __weak id <GKAchievementViewControllerDelegate> achievementDelegate; // @synthesize achievementDelegate=_achievementDelegate;
 - (BOOL)remoteViewControllerRequestingDismiss:(id)arg1;
 - (id)description;
 - (id)init;

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)connectToRenderServer;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(copy, nonatomic) NSArray *windows; // @synthesize windows=_windows;
-- (void).cxx_destruct;
 - (id)createBitmap;
 - (unsigned int)renderToIOSurfaceID:(unsigned int)arg1;
 - (void)renderWithDisplay:(id)arg1 scale:(double)arg2 toBuffer:(void *)arg3;

@@ -13,6 +13,7 @@
 @interface SPPairingSession : NSObject <NSSecureCoding>
 {
     _Bool _ackSuccess;
+    _Bool _pairingUsingTool;
     NSUUID *_identifier;
     NSData *_nonce;
     NSUUID *_beaconId;
@@ -44,6 +45,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool pairingUsingTool; // @synthesize pairingUsingTool=_pairingUsingTool;
 @property(copy, nonatomic) CLLocation *pairingLocation; // @synthesize pairingLocation=_pairingLocation;
 @property(copy, nonatomic) NSData *keyGenerationStatus; // @synthesize keyGenerationStatus=_keyGenerationStatus;
 @property(nonatomic) _Bool ackSuccess; // @synthesize ackSuccess=_ackSuccess;
@@ -73,10 +76,10 @@
 @property(copy, nonatomic) NSUUID *beaconId; // @synthesize beaconId=_beaconId;
 @property(copy, nonatomic) NSData *nonce; // @synthesize nonce=_nonce;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)updateToPairingUsingTool;
 - (void)updateAckSuccess:(_Bool)arg1;
 - (void)updatePairingLocation:(id)arg1;
 - (void)updateName:(id)arg1 roleId:(int)arg2;

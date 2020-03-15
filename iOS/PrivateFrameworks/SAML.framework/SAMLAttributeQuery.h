@@ -14,8 +14,8 @@
     SAMLAttributeQueryElement *_requestElement;
 }
 
-@property(retain, nonatomic) SAMLAttributeQueryElement *requestElement; // @synthesize requestElement=_requestElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SAMLAttributeQueryElement *requestElement; // @synthesize requestElement=_requestElement;
 - (void)addAttribute:(id)arg1 values:(id)arg2;
 - (void)addAttribute:(id)arg1;
 - (void)setSubjectFromResponse:(id)arg1;

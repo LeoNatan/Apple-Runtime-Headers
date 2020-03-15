@@ -17,10 +17,10 @@
 }
 
 + (id)resumableActivitiesControlManager;
+- (void).cxx_destruct;
 @property int recordingPath; // @synthesize recordingPath=_recordingPath;
 @property id delegate; // @synthesize delegate=_delegate;
 @property(retain) NSXPCConnection *connection; // @synthesize connection;
-- (void).cxx_destruct;
 - (BOOL)getAdvertisedBytes:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setLocalReflect:(BOOL)arg1;
 - (void)synchronize;

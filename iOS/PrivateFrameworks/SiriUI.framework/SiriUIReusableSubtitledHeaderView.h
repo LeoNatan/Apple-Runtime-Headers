@@ -15,9 +15,9 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(copy, nonatomic) NSAttributedString *attributedSubtitleText; // @synthesize attributedSubtitleText=_attributedSubtitleText;
-- (void).cxx_destruct;
 - (double)desiredHeightForWidth:(double)arg1;
 - (void)_configureSubTitleLabelForBounds:(struct CGRect)arg1;
 @property(copy, nonatomic) NSString *subtitleText;

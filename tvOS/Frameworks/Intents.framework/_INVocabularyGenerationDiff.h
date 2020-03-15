@@ -18,13 +18,13 @@
     NSString *_appBundleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
 @property(copy, nonatomic) NSString *intentSlotName; // @synthesize intentSlotName=_intentSlotName;
 @property(nonatomic) _Bool isFullReset; // @synthesize isFullReset=_isFullReset;
 @property(nonatomic) long long countOfVocabularyItemsAfterApplying; // @synthesize countOfVocabularyItemsAfterApplying=_countOfVocabularyItemsAfterApplying;
 @property(copy, nonatomic) NSArray *updatedVocabularyItems; // @synthesize updatedVocabularyItems=_updatedVocabularyItems;
 @property(copy, nonatomic) NSSet *deletedSiriIDs; // @synthesize deletedSiriIDs=_deletedSiriIDs;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)hasChanges;
 

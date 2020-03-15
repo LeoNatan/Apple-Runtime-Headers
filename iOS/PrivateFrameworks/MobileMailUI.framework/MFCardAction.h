@@ -15,18 +15,20 @@
     NSString *_imageName;
     UIColor *_tintColor;
     NSString *_title;
+    NSString *_shortTitle;
     CDUnknownBlockType _handler;
 }
 
-+ (id)cardActionWithTitle:(id)arg1 imageName:(id)arg2 tintColor:(id)arg3 handlerEnabled:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;
-+ (id)cardActionWithTitle:(id)arg1 imageName:(id)arg2 tintColor:(id)arg3 handler:(CDUnknownBlockType)arg4;
++ (id)cardActionWithTitle:(id)arg1 shortTitle:(id)arg2 imageName:(id)arg3 tintColor:(id)arg4 handlerEnabled:(_Bool)arg5 handler:(CDUnknownBlockType)arg6;
++ (id)cardActionWithTitle:(id)arg1 shortTitle:(id)arg2 imageName:(id)arg3 tintColor:(id)arg4 handler:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDismissCardBeforeExecuteHandler; // @synthesize shouldDismissCardBeforeExecuteHandler=_shouldDismissCardBeforeExecuteHandler;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool handlerEnabled; // @synthesize handlerEnabled=_handlerEnabled;
+@property(copy, nonatomic) NSString *shortTitle; // @synthesize shortTitle=_shortTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 - (void)executeHandler;
 - (void)executeHandlerIfEnabled;
 

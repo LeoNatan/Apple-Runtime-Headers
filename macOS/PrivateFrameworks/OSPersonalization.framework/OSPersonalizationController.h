@@ -24,7 +24,7 @@
 - (BOOL)networkAvailableForPersonalizationWithOptions:(id)arg1;
 - (BOOL)networkAvailableForPersonalization;
 - (id)_requiredManifestPathsForBootFile:(id)arg1 device:(id)arg2;
-- (struct NSDictionary *)_resultDictionaryWithRequest:(id)arg1 sequenceNumber:(unsigned long long)arg2;
+- (id)_resultDictionaryWithRequest:(id)arg1 sequenceNumber:(unsigned long long)arg2;
 - (void)_personalizeBundleForInstall:(id)arg1 volume:(id)arg2 outputDirectory:(id)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_personalizeBundle:(id)arg1 outputDirectory:(id)arg2 variant:(id)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 

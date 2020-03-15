@@ -19,10 +19,10 @@
 
 + (id)daemonProtocolInterface;
 + (id)daemonProtocolInterfaceInstance;
+- (void).cxx_destruct;
 @property BOOL invalidated; // @synthesize invalidated=_invalidated;
 @property unsigned long long requestedScannerState; // @synthesize requestedScannerState=_requestedScannerState;
 @property __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (id)xpcDictFromGroup:(id)arg1;
 - (id)xpcDictFromUser:(id)arg1;
 - (void)migrationServerVersionForSystem:(id)arg1 reply:(CDUnknownBlockType)arg2;

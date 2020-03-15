@@ -16,9 +16,9 @@
     unsigned int _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) __weak NMCMediaPlayerModelPlaybackController *playbackController; // @synthesize playbackController=_playbackController;
-- (void).cxx_destruct;
 - (void)_presentFailureWithTitle:(id)arg1 message:(id)arg2;
 - (void)_radioDidFailToPlayItem:(id)arg1 error:(id)arg2 errorType:(int)arg3;
 - (void)_musicDidFailToPlayItem:(id)arg1 error:(id)arg2 errorType:(int)arg3;

@@ -17,12 +17,12 @@
     _TVMLPlayer *_tvmlPlayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TVMLPlayer *tvmlPlayer; // @synthesize tvmlPlayer=_tvmlPlayer;
 - (void)setResumeMenuBehavior:(long long)arg1;
 - (long long)resumeMenuBehavior;
 - (void)setOverlayViewController:(id)arg1;
 - (id)overlayViewController;
-- (void).cxx_destruct;
 - (void)setShowsVideoControls:(_Bool)arg1;
 - (_Bool)showsVideoControls;
 - (void)_updateAVPlayer;

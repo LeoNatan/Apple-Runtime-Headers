@@ -17,11 +17,11 @@
 }
 
 + (Class)mediaLibraryClass;
+- (void).cxx_destruct;
 @property(retain) NSTextField *emptyContentTextField; // @synthesize emptyContentTextField=_emptyContentTextField;
 @property(retain) NSView *emptyContentView; // @synthesize emptyContentView=_emptyContentView;
 @property(retain) CNUIDeprecatedIKImageBrowserView *defaultPhotosLibraryView; // @synthesize defaultPhotosLibraryView=_defaultPhotosLibraryView;
 @property(retain) CNUIDeprecatedIKImageBrowserView *mediaLibraryView; // @synthesize mediaLibraryView=_mediaLibraryView;
-- (void).cxx_destruct;
 - (void)viewWillAppear;
 - (id)createLoadingView;
 - (void)setEmptyContentString:(id)arg1;

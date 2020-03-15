@@ -15,10 +15,10 @@
     NSMutableDictionary *_transactionStacks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *transactionStacks; // @synthesize transactionStacks=_transactionStacks;
 @property(retain, nonatomic) HMSettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) __weak HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)_clearTransaction:(id)arg1;
 @property(readonly, nonatomic) NSSet *pendingWrites;
 - (id)valueForSettingAtKeyPath:(id)arg1;

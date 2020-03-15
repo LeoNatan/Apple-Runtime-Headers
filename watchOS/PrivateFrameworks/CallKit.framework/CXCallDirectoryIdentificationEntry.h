@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedLabel; // @synthesize localizedLabel=_localizedLabel;
 @property(copy, nonatomic) NSString *localizedExtensionContainingAppName; // @synthesize localizedExtensionContainingAppName=_localizedExtensionContainingAppName;
 @property(copy, nonatomic) NSString *localizedExtensionName; // @synthesize localizedExtensionName=_localizedExtensionName;
 @property(copy, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

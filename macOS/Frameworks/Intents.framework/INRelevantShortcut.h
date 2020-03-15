@@ -22,10 +22,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) INShortcut *shortcut; // @synthesize shortcut=_shortcut;
 @property long long shortcutRole; // @synthesize shortcutRole=_shortcutRole;
 @property(copy) INDefaultCardTemplate *watchTemplate; // @synthesize watchTemplate=_watchTemplate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(copy) NSArray *relevanceProviders; // @synthesize relevanceProviders=_relevanceProviders;

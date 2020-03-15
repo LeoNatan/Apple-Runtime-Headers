@@ -13,8 +13,8 @@
     AXVStyledMenuView *__view;
 }
 
-@property(retain, nonatomic) AXVStyledMenuView *_view; // @synthesize _view=__view;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXVStyledMenuView *_view; // @synthesize _view=__view;
 @property(readonly, nonatomic) AXVStyledMenuView *menuView;
 @property(nonatomic) struct CGRect menuViewFrame;
 - (void)setMenuTargetOrigin:(struct CGPoint)arg1;

@@ -17,9 +17,9 @@
     _Bool _fromRightWrist;
 }
 
-@property(readonly, nonatomic) _Bool fromRightWrist; // @synthesize fromRightWrist=_fromRightWrist;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool fromRightWrist; // @synthesize fromRightWrist=_fromRightWrist;
 - (id)sr_dictionaryRepresentationWithSample:(id)arg1;
 - (id)sr_endMultiSampleStream;
 - (id)dumpCurrentWaveform;

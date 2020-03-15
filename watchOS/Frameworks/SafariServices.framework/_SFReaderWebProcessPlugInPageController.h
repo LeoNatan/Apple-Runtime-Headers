@@ -16,9 +16,9 @@
 }
 
 + (id)readerPageControllerForContextHandle:(id)arg1;
-@property(nonatomic) __weak _SFWebProcessPlugInReaderEnabledPageController *originalPageController; // @synthesize originalPageController=_originalPageController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _SFWebProcessPlugInReaderEnabledPageController *originalPageController; // @synthesize originalPageController=_originalPageController;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (id)printingMailingFrame;
 - (id)collectReaderContentFromPrintAndMailingFrame;

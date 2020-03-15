@@ -17,12 +17,12 @@
     long long _pressType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long pressType; // @synthesize pressType=_pressType;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(copy, nonatomic) NSArray *desiredButtons; // @synthesize desiredButtons=_desiredButtons;
 @property(nonatomic) long long lastActiveButton; // @synthesize lastActiveButton=_lastActiveButton;
 @property(copy, nonatomic) NSSet *activeButtons; // @synthesize activeButtons=_activeButtons;
-- (void).cxx_destruct;
 - (long long)_captureButtonForPressType:(long long)arg1;
 - (void)reset;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;

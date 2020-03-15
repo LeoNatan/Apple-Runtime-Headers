@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSContactItemType *Contact; // @synthesize Contact=_Contact;
 @property(retain, nonatomic) EWSEmailAddressType *Mailbox; // @synthesize Mailbox=_Mailbox;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

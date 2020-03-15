@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)configureForImage:(id)arg1 title:(id)arg2 subtitle:(id)arg3 style:(id)arg4;
 - (id)initWithFrame:(struct CGRect)arg1;
 

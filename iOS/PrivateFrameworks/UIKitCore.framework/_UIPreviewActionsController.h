@@ -33,6 +33,7 @@
 }
 
 + (id)actionsControllerWithContainerView:(id)arg1 platterView:(id)arg2 presentedViewController:(id)arg3 delegate:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatesFeedbackGenerator *swipeFeedbackGenerator; // @synthesize swipeFeedbackGenerator=_swipeFeedbackGenerator;
 @property(nonatomic) struct CGPoint lastPanningLocation; // @synthesize lastPanningLocation=_lastPanningLocation;
 @property(retain, nonatomic) _UIPreviewQuickActionView *trailingPreviewActionView; // @synthesize trailingPreviewActionView=_trailingPreviewActionView;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) struct CGSize totalPanningTranslation; // @synthesize totalPanningTranslation=_totalPanningTranslation;
-- (void).cxx_destruct;
 - (void)setTrailingSwipeActionViewSelected:(_Bool)arg1;
 - (void)setLeadingSwipeActionViewSelected:(_Bool)arg1;
 - (void)_fireConfirmFeedbackIfNeededForInitialSelectionState:(_Bool)arg1 finalSelectionState:(_Bool)arg2;

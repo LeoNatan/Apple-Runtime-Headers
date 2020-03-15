@@ -25,8 +25,8 @@
     id <PKNewDevicePasscodeViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKNewDevicePasscodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKNewDevicePasscodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)onPresentationRemoveViewControllersAfterMarker;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

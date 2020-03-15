@@ -24,13 +24,13 @@
     MTVisualStylingProvider *_visualStylingProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(retain, nonatomic) MPAVClippingTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *materialView; // @synthesize materialView=_materialView;
 @property(retain, nonatomic) MPRequestResponseController *requestResponseController; // @synthesize requestResponseController=_requestResponseController;
 @property(nonatomic) __weak id <MediaControlsLanguageOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *languageOptionGroups; // @synthesize languageOptionGroups=_languageOptionGroups;
-- (void).cxx_destruct;
 - (_Bool)controller:(id)arg1 shouldRetryFailedRequestWithError:(id)arg2;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
 - (_Bool)tableView:(id)arg1 shouldHaveFullLengthBottomSeparatorForSection:(long long)arg2;

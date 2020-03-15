@@ -15,10 +15,10 @@
     double _scaleFactor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(readonly, nonatomic) unsigned int ioSurfaceID; // @synthesize ioSurfaceID=_ioSurfaceID;
 @property(readonly, nonatomic) IBBitmap *bitmap; // @synthesize bitmap=_bitmap;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithSurfaceID:(unsigned int)arg1 scaleFactor:(double)arg2;

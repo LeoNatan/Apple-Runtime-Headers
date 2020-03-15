@@ -15,9 +15,9 @@
     _NSCollectionPreferredSizes *_preferredSizes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _NSCollectionPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
 @property(readonly, nonatomic) id <_NSCollectionLayoutSectionSolver> solution; // @synthesize solution=_solution;
-- (void).cxx_destruct;
 - (id)initWithSolution:(id)arg1 preferredSizes:(id)arg2;
 
 @end

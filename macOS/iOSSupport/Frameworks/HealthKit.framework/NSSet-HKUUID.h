@@ -18,6 +18,7 @@
 - (id)hk_dataForAllUUIDs;
 - (BOOL)hk_enumerateUUIDsWithError:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (id)hk_mapToDictionary:(CDUnknownBlockType)arg1;
+- (BOOL)hk_containsObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)hk_firstSortedObjectWithComparison:(CDUnknownBlockType)arg1;
 - (id)hk_intersection:(id)arg1;
 - (id)hk_minus:(id)arg1;

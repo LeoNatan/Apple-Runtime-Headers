@@ -19,11 +19,11 @@
     NSButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) AKIDPHandler *idpHandler; // @synthesize idpHandler=_idpHandler;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)cancelButtonTapped:(id)arg1;
 - (void)alternateNavigationButtonClicked:(id)arg1;
 - (void)rightNavigationButtonClicked:(id)arg1;

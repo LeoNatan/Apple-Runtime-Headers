@@ -19,12 +19,12 @@
 }
 
 + (id)taskWithName:(id)arg1 period:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *executionCriteria; // @synthesize executionCriteria=_executionCriteria;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long periodSeconds; // @synthesize periodSeconds=_periodSeconds;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 period:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)init;
 

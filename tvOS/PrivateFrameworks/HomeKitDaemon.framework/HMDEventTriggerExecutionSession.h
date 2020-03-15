@@ -36,6 +36,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 @property(readonly, nonatomic) NSMapTable *writeRequests; // @synthesize writeRequests=_writeRequests;
 @property(readonly, nonatomic) HomeKitEventTriggerExecutionSessionEvent *metricEvent; // @synthesize metricEvent=_metricEvent;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) NSArray *endEvents; // @synthesize endEvents=_endEvents;
 @property(readonly, nonatomic) NSMutableArray *causingDevices; // @synthesize causingDevices=_causingDevices;
 @property(readonly, nonatomic) NSMutableArray *triggerEvents; // @synthesize triggerEvents=_triggerEvents;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (id)didOccurEvent:(id)arg1 causingDevice:(id)arg2;
 - (void)_callExecutionCompleteIfNoMoreOutstandingRequests;

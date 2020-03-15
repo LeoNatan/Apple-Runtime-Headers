@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setRequestProgressController:) PUActivityProgressController *_requestProgressController; // @synthesize _requestProgressController=__requestProgressController;
 @property(copy, nonatomic) CDUnknownBlockType performUserInteractionTaskBlock; // @synthesize performUserInteractionTaskBlock=_performUserInteractionTaskBlock;
-- (void).cxx_destruct;
 - (void)_showFailedReviewAssetRequestAlert;
 - (void)_handleProgressControllerCanceled:(id)arg1;
 - (id)_setupProgressControllerForProgress:(id)arg1;

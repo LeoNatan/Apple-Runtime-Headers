@@ -20,12 +20,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *Watermark; // @synthesize Watermark=_Watermark;
 @property(copy, nonatomic) NSArray *EventTypes; // @synthesize EventTypes=_EventTypes;
 @property(copy, nonatomic) NSArray *FolderIds; // @synthesize FolderIds=_FolderIds;
 @property(nonatomic) BOOL SubscribeToAllFoldersIsSpecified; // @synthesize SubscribeToAllFoldersIsSpecified=_SubscribeToAllFoldersIsSpecified;
 @property(nonatomic) BOOL SubscribeToAllFolders; // @synthesize SubscribeToAllFolders=_SubscribeToAllFolders;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

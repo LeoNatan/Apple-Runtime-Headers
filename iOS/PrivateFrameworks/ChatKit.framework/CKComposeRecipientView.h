@@ -13,8 +13,8 @@
     id <CKComposeRecipientViewDelegate> layoutDelegate;
 }
 
-@property(nonatomic) __weak id <CKComposeRecipientViewDelegate> layoutDelegate; // @synthesize layoutDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CKComposeRecipientViewDelegate> layoutDelegate; // @synthesize layoutDelegate;
 - (struct UIEdgeInsets)layoutMargins;
 - (struct UIEdgeInsets)safeAreaInsets;
 - (void)atomTextViewDidBecomeFirstResponder:(id)arg1;

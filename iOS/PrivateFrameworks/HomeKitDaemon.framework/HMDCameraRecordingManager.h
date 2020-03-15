@@ -44,6 +44,7 @@
 
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSMutableSet *activeRecordingSessions; // @synthesize activeRecordingSessions=_activeRecordingSessions;
 @property(retain) HMDCameraRecordingSession *currentRecordingSession; // @synthesize currentRecordingSession=_currentRecordingSession;
 @property(getter=isMotionActive) _Bool motionActive; // @synthesize motionActive=_motionActive;
@@ -64,7 +65,6 @@
 @property(readonly) HMDCameraRecordingResidentElector *recordingResidentElector; // @synthesize recordingResidentElector=_recordingResidentElector;
 @property(retain) HMDStreamDataChunkAssembler *dataChunkAssembler; // @synthesize dataChunkAssembler=_dataChunkAssembler;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID; // @synthesize messageTargetUUID=_messageTargetUUID;
-- (void).cxx_destruct;
 - (_Bool)supportsDeviceWithCapabilities:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (void)closeSession:(id)arg1 withError:(id)arg2;

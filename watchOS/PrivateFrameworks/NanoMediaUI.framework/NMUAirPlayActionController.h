@@ -40,8 +40,8 @@
 }
 
 + (id)controllerWithAudioRoutingManager:(id)arg1;
-@property(retain, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void)_stopObservingNotifications;
 - (void)_systemAudioRouteFailedToConnectNotification:(id)arg1;
 - (void)_bluetoothDeviceFailedToConnectNotification:(id)arg1;

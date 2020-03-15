@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_processingQueue;
 }
 
+- (void).cxx_destruct;
 @property _Bool isReady; // @synthesize isReady=_isReady;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSArray *cachedContents; // @synthesize cachedContents=_cachedContents;
 @property(readonly) unsigned long long contentVersion; // @synthesize contentVersion=_contentVersion;
 @property(readonly, nonatomic) MSPContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)containerDidEraseContents:(id)arg1 fromStorageTypes:(unsigned int)arg2;

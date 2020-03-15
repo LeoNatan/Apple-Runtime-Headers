@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <NSVisualTabPickerNewTabViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NSVisualTabPickerNewTabViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NSVisualTabPickerNewTabViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionNames;
 - (id)accessibilityAttributeValue:(id)arg1;

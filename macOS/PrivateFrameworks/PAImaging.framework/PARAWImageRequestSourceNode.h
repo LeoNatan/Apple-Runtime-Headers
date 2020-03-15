@@ -13,9 +13,9 @@
     PAImageRequestCacheHint *_cacheHint;
 }
 
-@property(retain) PAImageRequestCacheHint *cacheHint; // @synthesize cacheHint=_cacheHint;
 - (void).cxx_destruct;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+@property(retain) PAImageRequestCacheHint *cacheHint; // @synthesize cacheHint=_cacheHint;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (id)_evaluateRawImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (BOOL)_load:(out id *)arg1;

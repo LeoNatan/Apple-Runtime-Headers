@@ -76,6 +76,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _minimumContentInsetPrivate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *shadowView; // @synthesize shadowView=_shadowView;
 @property(readonly, nonatomic) UIBarButtonItem *animatedAppearanceBarButtonItem; // @synthesize animatedAppearanceBarButtonItem=_animatedAppearanceBarButtonItem;
 @property(nonatomic) __weak id <_UINavigationBarTitleViewDataSource> navBarTitleViewDataSource; // @synthesize navBarTitleViewDataSource=_navBarTitleViewDataSource;
@@ -102,7 +103,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UISearchBarBackground *searchBarBackground; // @synthesize searchBarBackground=_searchBarBackground;
 @property(retain, nonatomic) UISearchBarTextField *searchField; // @synthesize searchField=_searchField;
 @property(nonatomic) UIView<_UISearchBarVisualProvidingDelegate><_UINavigationBarAugmentedTitleView><UITextInputTraits_Private> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)prepareFromAbandonedVisualProvider:(id)arg1;
 - (void)setUpSearchNavigationItemWithSizingOption:(unsigned int)arg1;
 @property(readonly, nonatomic) UINavigationItem *searchNavigationItem;

@@ -17,11 +17,11 @@
     NSArray *_relevantAssets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *relevantAssets; // @synthesize relevantAssets=_relevantAssets;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) NSSet *meaningfulEvents; // @synthesize meaningfulEvents=_meaningfulEvents;
 @property(readonly) unsigned long long meaning; // @synthesize meaning=_meaning;
-- (void).cxx_destruct;
 - (double)score;
 - (id)peopleUUIDs;
 - (void)addMeaningfulEvent:(id)arg1 controller:(id)arg2;

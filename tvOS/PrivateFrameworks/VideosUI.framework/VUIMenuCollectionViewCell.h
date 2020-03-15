@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIVisualEffectView *_backgroundVisualEffectView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *backgroundVisualEffectView; // @synthesize backgroundVisualEffectView=_backgroundVisualEffectView;
 @property(retain, nonatomic) _UIFloatingContentView *floatingView; // @synthesize floatingView=_floatingView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(nonatomic) _Bool shouldAppearSelected; // @synthesize shouldAppearSelected=_shouldAppearSelected;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_updateTitleTextColor;
 - (void)_updateSelectedBackgroundColor;
 - (unsigned long long)_floatingViewControlState;

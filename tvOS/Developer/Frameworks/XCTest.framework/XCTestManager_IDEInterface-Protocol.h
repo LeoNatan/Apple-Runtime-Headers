@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSData, NSDictionary, NSError, NSNumber, NSString, XCActivityRecord, XCElementSnapshot;
+@class NSArray, NSData, NSDictionary, NSError, NSNumber, NSString, XCActivityRecord, XCElementSnapshot, XCTTestIdentifier;
 
 @protocol XCTestManager_IDEInterface
 - (id)_XCT_handleCrashReportData:(NSData *)arg1 fromFileWithName:(NSString *)arg2;
@@ -20,7 +20,9 @@
 - (id)_XCT_testCase:(NSString *)arg1 method:(NSString *)arg2 didStallOnMainThreadInFile:(NSString *)arg3 line:(NSNumber *)arg4;
 - (id)_XCT_testCaseDidFinishForTestClass:(NSString *)arg1 method:(NSString *)arg2 withStatus:(NSString *)arg3 duration:(NSNumber *)arg4;
 - (id)_XCT_testCaseDidFailForTestClass:(NSString *)arg1 method:(NSString *)arg2 withMessage:(NSString *)arg3 file:(NSString *)arg4 line:(NSNumber *)arg5;
+- (id)_XCT_testCaseWasSkippedForTestClass:(NSString *)arg1 method:(NSString *)arg2 withMessage:(NSString *)arg3 file:(NSString *)arg4 line:(NSNumber *)arg5;
 - (id)_XCT_testCaseDidStartForTestClass:(NSString *)arg1 method:(NSString *)arg2;
+- (id)_XCT_testSuite:(NSString *)arg1 didFinishAt:(NSString *)arg2 runCount:(NSNumber *)arg3 skipCount:(NSNumber *)arg4 failureCount:(NSNumber *)arg5 unexpectedFailureCount:(NSNumber *)arg6 testDuration:(NSNumber *)arg7 totalDuration:(NSNumber *)arg8;
 - (id)_XCT_testSuite:(NSString *)arg1 didFinishAt:(NSString *)arg2 runCount:(NSNumber *)arg3 withFailures:(NSNumber *)arg4 unexpected:(NSNumber *)arg5 testDuration:(NSNumber *)arg6 totalDuration:(NSNumber *)arg7;
 - (id)_XCT_testSuite:(NSString *)arg1 didStartAt:(NSString *)arg2;
 - (id)_XCT_initializationForUITestingDidFailWithError:(NSError *)arg1;
@@ -28,6 +30,8 @@
 - (id)_XCT_didFinishExecutingTestPlan;
 - (id)_XCT_didBeginExecutingTestPlan;
 - (id)_XCT_testBundleReadyWithProtocolVersion:(NSNumber *)arg1 minimumVersion:(NSNumber *)arg2;
+- (id)_XCT_reportTestWithIdentifier:(XCTTestIdentifier *)arg1 didExceedExecutionTimeAllowance:(NSNumber *)arg2;
+- (id)_XCT_reportTestWithIdentifier:(XCTTestIdentifier *)arg1 didExceedMaxDuration:(NSNumber *)arg2;
 - (id)_XCT_didFailToBootstrapWithError:(NSError *)arg1;
 - (id)_XCT_getProgressForLaunch:(id)arg1;
 - (id)_XCT_terminateProcess:(id)arg1;

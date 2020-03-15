@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) CTEmergencyMode *mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

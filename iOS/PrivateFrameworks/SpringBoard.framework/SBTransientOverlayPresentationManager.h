@@ -44,12 +44,12 @@
     id <SBTransientOverlayPresentationManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBTransientOverlayPresentationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SBBannerController *bannerController; // @synthesize bannerController=_bannerController;
 @property(readonly, nonatomic) long long topmostViewControllerInterfaceOrientation; // @synthesize topmostViewControllerInterfaceOrientation=_topmostViewControllerInterfaceOrientation;
 @property(readonly, nonatomic) NSNumber *preferredWhitePointAdaptivityStyleValue; // @synthesize preferredWhitePointAdaptivityStyleValue=_preferredWhitePointAdaptivityStyleValue;
 @property(readonly, nonatomic) _Bool prefersStatusBarActivityItemVisible; // @synthesize prefersStatusBarActivityItemVisible=_prefersStatusBarActivityItemVisible;
-- (void).cxx_destruct;
 - (void)_updatePreferredWhitePointAdaptivityStyle;
 - (void)_updateFeaturePolicies;
 - (void)_updateDeactivationAssertions;
@@ -81,6 +81,7 @@
 - (void)transientOverlayViewControllerNeedsGestureDismissalStyleUpdate:(id)arg1;
 - (void)transientOverlayViewControllerNeedsFeaturePolicyUpdate:(id)arg1;
 - (void)transientOverlayViewControllerNeedsContentOpaqueUpdate:(id)arg1;
+- (_Bool)isKeyboardVisibleForSpringBoardForTransientOverlayViewController:(id)arg1;
 - (_Bool)defaultShouldAutorotateForTransientOverlayViewController:(id)arg1;
 - (unsigned long long)defaultSupportedInterfaceOrientationsForTransientOverlayViewController:(id)arg1;
 - (long long)defaultPreferredInterfaceOrientationForPresentationForTransientOverlayViewController:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *allExistingViews; // @synthesize allExistingViews=_allExistingViews;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (void)setBackgroundColor:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)textPropertiesForView:(id)arg1;

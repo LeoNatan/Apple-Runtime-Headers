@@ -27,13 +27,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly, nonatomic) NSMutableDictionary *sceneIDToPIDDictionary; // @synthesize sceneIDToPIDDictionary=_sceneIDToPIDDictionary;
 @property(readonly, nonatomic) NSMutableDictionary *pidToStateDictionary; // @synthesize pidToStateDictionary=_pidToStateDictionary;
 @property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(readonly, nonatomic) CSLURLSessionPolicyServerConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 didCommitUpdateForScene:(id)arg2 transactionID:(unsigned int)arg3;
 - (void)sceneManager:(id)arg1 willCommitUpdateForScene:(id)arg2 transactionID:(unsigned int)arg3;

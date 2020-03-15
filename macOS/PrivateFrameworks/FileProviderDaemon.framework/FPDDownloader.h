@@ -17,15 +17,17 @@
     NSMutableDictionary *_parentToChildMap;
     NSMutableDictionary *_childProxies;
     NSObservation *_observation;
+    BOOL _dryRun;
     FPDDomain *_domain;
     NSProgress *_cancellationProgress;
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic, getter=isDryRun) BOOL dryRun; // @synthesize dryRun=_dryRun;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSProgress *cancellationProgress; // @synthesize cancellationProgress=_cancellationProgress;
 @property(readonly, nonatomic) __weak FPDDomain *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)_didDownloadItem:(id)arg1 withError:(id)arg2;
 - (void)_recursiveDownloadOfItem:(id)arg1 request:(id)arg2 perItemCompletion:(CDUnknownBlockType)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)_nonRecursiveDownloadOfItem:(id)arg1 request:(id)arg2 perItemCompletion:(CDUnknownBlockType)arg3 withCompletion:(CDUnknownBlockType)arg4;

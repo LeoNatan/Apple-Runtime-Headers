@@ -14,8 +14,8 @@
 }
 
 + (id)attachmentWithInternalAppleAttachmentData:(id)arg1 mimeBody:(id)arg2;
-@property(retain, nonatomic) ICNFMCMimePart *mimePart; // @synthesize mimePart=_mimePart;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICNFMCMimePart *mimePart; // @synthesize mimePart=_mimePart;
 - (BOOL)ic_isPlaceholder;
 - (unsigned long long)ic_approximateSize;
 - (id)fileWrapperForcingDownloadEvenIfExternalBody:(BOOL)arg1;

@@ -23,10 +23,10 @@
 + (void)removeNonClockOrLauncherEntitiesFromEndOfArray:(id)arg1;
 + (void)removeNonCarouselEntitiesFromEndOfArray:(id)arg1;
 + (id)transitionContextWithInitialState:(id)arg1 updateAction:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLMainUIState *expectedEndState; // @synthesize expectedEndState=_expectedEndState;
 @property(retain, nonatomic) CSLMainUIState *initialState; // @synthesize initialState=_initialState;
 @property(nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

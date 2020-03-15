@@ -27,6 +27,7 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *numberOfCalls; // @synthesize numberOfCalls=_numberOfCalls;
 @property(readonly, nonatomic) long long callCapability; // @synthesize callCapability=_callCapability;
 @property(readonly, copy, nonatomic) NSNumber *unseen; // @synthesize unseen=_unseen;
@@ -35,7 +36,6 @@
 @property(readonly, copy, nonatomic) INPerson *caller; // @synthesize caller=_caller;
 @property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

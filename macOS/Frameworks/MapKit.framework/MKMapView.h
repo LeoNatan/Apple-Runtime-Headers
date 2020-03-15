@@ -168,7 +168,6 @@
     BOOL wantsAccessibilityUpdates;
     BOOL _canRotateForHeading;
     BOOL _suspended;
-    BOOL _showsAppleLogo;
     MKAccessibilityItem *focusedAccessibilityItem;
     long long _interactionMode;
     unsigned long long _currentFlyoverAnimationID;
@@ -184,8 +183,8 @@
 + (unsigned long long)minZoomLevelForMapType:(unsigned long long)arg1 viewSize:(struct CGSize)arg2;
 + (CDStruct_02837cd9)_mapRectThatFitsViewBounds:(struct CGRect)arg1 mapRect:(CDStruct_02837cd9)arg2 viewInsets:(struct NSEdgeInsets)arg3 edgePadding:(struct NSEdgeInsets)arg4 minZoomLevel:(double)arg5 maxZoomLevel:(double)arg6 snapToZoomLevel:(BOOL)arg7;
 + (CDStruct_b7cb895d)_regionThatFitsMapType:(unsigned long long)arg1 viewSize:(struct CGSize)arg2 viewInsets:(struct NSEdgeInsets)arg3 edgePadding:(struct NSEdgeInsets)arg4 region:(CDStruct_b7cb895d)arg5 minZoomLevel:(double)arg6 maxZoomLevel:(double)arg7 snapToZoomLevel:(BOOL)arg8;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_labelsDidLayoutCallback, setter=_setLabelsDidLayoutCallback:) CDUnknownBlockType labelsDidLayoutCallback; // @synthesize labelsDidLayoutCallback=_labelsDidLayoutCallback;
-@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) BOOL showsAppleLogo; // @synthesize showsAppleLogo=_showsAppleLogo;
 @property(retain, nonatomic) NSTimer *_startEffectsTimer; // @synthesize _startEffectsTimer=__startEffectsTimer;
 @property(nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(readonly, nonatomic) BOOL canRotateForHeading; // @synthesize canRotateForHeading=_canRotateForHeading;
@@ -204,7 +203,6 @@
 @property(nonatomic) BOOL showsAboutMapInContextualMenu; // @synthesize showsAboutMapInContextualMenu=_showsAboutMapInContextualMenu;
 @property(retain, nonatomic) NSOrderedSet *storedAccessibilityItems; // @synthesize storedAccessibilityItems=_storedAccessibilityItems;
 @property(readonly, nonatomic, getter=_calloutShowAnimationGroup) NSObject<OS_dispatch_group> *calloutShowAnimationGroup; // @synthesize calloutShowAnimationGroup=_calloutShowAnimationGroup;
-- (void).cxx_destruct;
 - (void)zoomOut:(id)arg1;
 - (void)zoomIn:(id)arg1;
 @property(nonatomic) BOOL showsZoomControls;
@@ -417,6 +415,7 @@
 - (void)mapLayerDidChangeRegionAnimated:(BOOL)arg1;
 - (void)mapLayerWillChangeRegionAnimated:(BOOL)arg1;
 - (void)mapLayerDidChangeVisibleRegion;
+- (void)mapLayer:(id)arg1 venueCreated:(id)arg2 venueCreatedBuilding:(id)arg3;
 - (void)mapLayer:(id)arg1 venueWithFocusDidChange:(id)arg2 building:(id)arg3;
 - (void)mapLayer:(id)arg1 willTransitionTo:(long long)arg2;
 - (void)mapLayerDidDraw:(id)arg1;
@@ -580,7 +579,7 @@
 - (void)_setCamera:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setCamera:(id)arg1;
 - (id)_camera;
-- (id)_flattenedAnnotationsForAnnotationViews:(id)arg1 maxdisplayPriority:(float *)arg2;
+- (id)_flattenedAnnotationsForAnnotationViews:(id)arg1 maxDisplayPriority:(float *)arg2;
 @property(nonatomic) __weak id <MKMapViewDelegate> delegate; // @dynamic delegate;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;

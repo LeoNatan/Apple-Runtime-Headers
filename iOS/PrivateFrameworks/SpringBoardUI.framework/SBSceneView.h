@@ -41,6 +41,7 @@
 }
 
 + (id)defaultDisplayModeAnimationFactory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBSceneViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <UIScenePresenter> presenter; // @synthesize presenter=_presenter;
 @property(copy, nonatomic) NSString *hostViewMinificationFilter; // @synthesize hostViewMinificationFilter=_hostViewMinificationFilter;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;
 @property(readonly, nonatomic) SBSceneHandle *sceneHandle; // @synthesize sceneHandle=_sceneHandle;
-- (void).cxx_destruct;
 - (void)_recheckLiveContentDependencies;
 - (void)_hotSwapLiveSnapshotView;
 - (void)_hotSwapPlaceholderContentView;

@@ -19,12 +19,12 @@
     struct CGPoint _locationOfFirstTouch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *currentAccumulatedTouches; // @synthesize currentAccumulatedTouches=_currentAccumulatedTouches;
 @property(nonatomic) _Bool penGestureDetected; // @synthesize penGestureDetected=_penGestureDetected;
 @property(nonatomic) struct CGPoint locationOfFirstTouch; // @synthesize locationOfFirstTouch=_locationOfFirstTouch;
 @property(nonatomic) double currentMaxWeight; // @synthesize currentMaxWeight=_currentMaxWeight;
 @property(nonatomic) double currentWeight; // @synthesize currentWeight=_currentWeight;
-- (void).cxx_destruct;
 - (struct CGPoint)locationOfFirstTouchInView:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

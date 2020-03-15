@@ -18,13 +18,13 @@
     long long _classification;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long classification; // @synthesize classification=_classification;
 @property(copy, nonatomic) NSArray *attachmentURLs; // @synthesize attachmentURLs=_attachmentURLs;
 @property(copy, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *componentVersion; // @synthesize componentVersion=_componentVersion;
 @property(copy, nonatomic) NSString *componentName; // @synthesize componentName=_componentName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url;
 
 @end

@@ -23,12 +23,12 @@
 }
 
 + (id)_dateSortDescriptors;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EMMessage *displayMessage; // @synthesize displayMessage=_displayMessage;
 @property(readonly, nonatomic) id <EMMailboxTypeResolver> mailboxTypeResolver; // @synthesize mailboxTypeResolver=_mailboxTypeResolver;
 @property(readonly, nonatomic) EFQuery *originatingQuery; // @synthesize originatingQuery=_originatingQuery;
 @property(readonly, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
 @property(retain, nonatomic) EMThread *thread; // @synthesize thread=_thread;
-- (void).cxx_destruct;
 - (id)_dateSortedMessages;
 - (void)_recalculateDisplayMessage;
 - (id)_combinedMailboxes;

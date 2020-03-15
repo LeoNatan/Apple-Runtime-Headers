@@ -19,11 +19,11 @@
     id <SVVideoGravityProviding> _videoGravityProviderForTransitioningVideo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoGravityProviding> videoGravityProviderForTransitioningVideo; // @synthesize videoGravityProviderForTransitioningVideo=_videoGravityProviderForTransitioningVideo;
 @property(retain, nonatomic) id <SVVideoGravityProviding> videoGravityProviderForCurrentVideo; // @synthesize videoGravityProviderForCurrentVideo=_videoGravityProviderForCurrentVideo;
 @property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, nonatomic) id <SVVideoGravityProviderFactory> videoGravityProviderFactory; // @synthesize videoGravityProviderFactory=_videoGravityProviderFactory;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithVideoGravityProviderFactory:(id)arg1 videoViewControllerProvider:(id)arg2;
 

@@ -20,11 +20,11 @@
     NSMapTable *_dependentScrollViews;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *dependentScrollViews; // @synthesize dependentScrollViews=_dependentScrollViews;
 @property(nonatomic) BOOL allowSwipeDown; // @synthesize allowSwipeDown=_allowSwipeDown;
 @property(nonatomic) BOOL allowSwipeUp; // @synthesize allowSwipeUp=_allowSwipeUp;
 @property(nonatomic) __weak id <PXVerticalSwipeGestureRecognizerHelperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_panGestureRecognizerForVerticalSwipeGestureRecognizer:(id)arg1;
 - (BOOL)verticalSwipeGestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)verticalSwipeGestureRecognizerShouldBegin:(id)arg1;

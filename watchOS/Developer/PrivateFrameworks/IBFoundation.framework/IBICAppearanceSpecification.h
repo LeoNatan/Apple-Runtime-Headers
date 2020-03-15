@@ -18,7 +18,12 @@
     IBICContrastAppearance *_contrastAppearance;
 }
 
++ (id)unspecifiedAppearance;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBICContrastAppearance *contrastAppearance; // @synthesize contrastAppearance=_contrastAppearance;
+@property(readonly, nonatomic) IBICVibrancyAppearance *vibrancyAppearance; // @synthesize vibrancyAppearance=_vibrancyAppearance;
+@property(readonly, nonatomic) IBICLuminosityAppearance *luminosityAppearance; // @synthesize luminosityAppearance=_luminosityAppearance;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSArray *slotComponents;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
@@ -30,7 +35,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

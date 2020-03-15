@@ -18,13 +18,13 @@
     NSString *_rootLogDir;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *rootLogDir; // @synthesize rootLogDir=_rootLogDir;
 @property(nonatomic) _Bool shouldLogRawSensorData; // @synthesize shouldLogRawSensorData=_shouldLogRawSensorData;
 @property(nonatomic) unsigned long long reqStartMachAbsTime; // @synthesize reqStartMachAbsTime=_reqStartMachAbsTime;
 @property(nonatomic) unsigned long long reqStartAudioSampleId; // @synthesize reqStartAudioSampleId=_reqStartAudioSampleId;
 @property(nonatomic) _Bool requestHistoricalAudio; // @synthesize requestHistoricalAudio=_requestHistoricalAudio;
 @property(retain, nonatomic) NSDictionary *voiceTriggerInfo; // @synthesize voiceTriggerInfo=_voiceTriggerInfo;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

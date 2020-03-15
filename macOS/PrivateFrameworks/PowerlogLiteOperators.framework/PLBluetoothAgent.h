@@ -30,6 +30,7 @@
 + (id)entryEventPointDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) IOBluetoothUserNotification *btConnectionNotification; // @synthesize btConnectionNotification=_btConnectionNotification;
 @property unsigned char scanState; // @synthesize scanState=_scanState;
 @property(retain) NSSet *cachedPairedDevicesAddresses; // @synthesize cachedPairedDevicesAddresses=_cachedPairedDevicesAddresses;
@@ -40,7 +41,6 @@
 @property(readonly) PLEntryNotificationOperatorComposition *wakeEntryNotifications; // @synthesize wakeEntryNotifications=_wakeEntryNotifications;
 @property(retain) PLEntryNotificationOperatorComposition *sbcChanged; // @synthesize sbcChanged=_sbcChanged;
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
-- (void).cxx_destruct;
 - (void)refreshBTPairedDevices;
 - (void)refreshBTPairedDevicesWithNewDevices:(id)arg1;
 - (id)getCurrentPairedBTDevices;

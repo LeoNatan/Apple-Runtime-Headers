@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     CNContactStore *_contactStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) CNContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) CNContactAction *disableGuardianRestrictionsAction; // @synthesize disableGuardianRestrictionsAction=_disableGuardianRestrictionsAction;
 @property(readonly, nonatomic) CNContactAction *enableGuardianRestrictionsAction; // @synthesize enableGuardianRestrictionsAction=_enableGuardianRestrictionsAction;
 @property(readonly, nonatomic) CNContactAction *stopSharingWithFamilyAction; // @synthesize stopSharingWithFamilyAction=_stopSharingWithFamilyAction;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactAction *shareWithFamilyAction; // @synthesize shareWithFamilyAction=_shareWithFamilyAction;
 - (id)initWithContact:(id)arg1 inContainer:(id)arg2 contactStore:(id)arg3;
 

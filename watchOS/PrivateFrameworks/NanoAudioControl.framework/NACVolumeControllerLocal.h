@@ -37,9 +37,9 @@ __attribute__((visibility("hidden")))
     id <NACVolumeControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSystemMuted) _Bool systemMuted; // @synthesize systemMuted=_systemMuted;
 @property(nonatomic) __weak id <NACVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_volumeController;
 - (void)_updateMutedStateFromVolumeController:(id)arg1;
 - (void)_updateVolumeState;

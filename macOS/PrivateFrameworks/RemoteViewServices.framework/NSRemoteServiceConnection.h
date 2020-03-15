@@ -23,11 +23,11 @@
     NSRemoteServiceEndpoint *_endpoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSRemoteServiceEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property unsigned char errorsAreFatal; // @synthesize errorsAreFatal=_errorsAreFatal;
 @property(readonly) RVSLogger *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (BOOL)_setupConnection;
 - (void)setDelegate:(id)arg1;
 - (void)withDelegatePerform:(CDUnknownBlockType)arg1;

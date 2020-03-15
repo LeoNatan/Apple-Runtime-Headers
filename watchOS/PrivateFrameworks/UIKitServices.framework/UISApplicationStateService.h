@@ -22,8 +22,8 @@
     } _delegateFlags;
 }
 
-@property(nonatomic) __weak id <UISApplicationStateServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UISApplicationStateServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_dataSourceForApplicationBundleIdentifier:(id)arg1;
 - (_Bool)_isCurrentConnectionAuthorizedForApplicationBundleIdentifier:(id)arg1 description:(id)arg2 legacyEntitlement:(id)arg3;
 - (_Bool)_isCurrentConnectionAuthorizedForApplicationBundleIdentifier:(id)arg1 description:(id)arg2;

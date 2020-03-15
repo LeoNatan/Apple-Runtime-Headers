@@ -16,8 +16,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) NSMutableSet *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableSet *items; // @synthesize items=_items;
 - (void)fixSession:(id)arg1 didChangeState:(long long)arg2;
 - (id)_itemForFixSession:(id)arg1;
 - (id)_itemForSymptom:(id)arg1 accessory:(id)arg2;

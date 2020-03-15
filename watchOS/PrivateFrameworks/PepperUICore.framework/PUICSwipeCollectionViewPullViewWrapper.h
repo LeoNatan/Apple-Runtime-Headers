@@ -16,8 +16,8 @@
     PUICSwipeActionPullView *_pullView;
 }
 
-@property(retain, nonatomic) PUICSwipeActionPullView *pullView; // @synthesize pullView=_pullView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICSwipeActionPullView *pullView; // @synthesize pullView=_pullView;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

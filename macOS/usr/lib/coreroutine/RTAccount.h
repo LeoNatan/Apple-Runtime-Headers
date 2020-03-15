@@ -22,6 +22,7 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *appleIDAliases; // @synthesize appleIDAliases=_appleIDAliases;
 @property(retain, nonatomic) NSString *appleIDAlias; // @synthesize appleIDAlias=_appleIDAlias;
 @property(retain, nonatomic) NSString *primaryEmail; // @synthesize primaryEmail=_primaryEmail;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(retain, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)appleIDs;
 - (id)initWithACAccount:(id)arg1;

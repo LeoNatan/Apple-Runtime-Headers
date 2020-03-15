@@ -16,10 +16,10 @@
     id <IDSTransactionLogTaskHandlerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <IDSTransactionLogTaskHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IDSTransactionLogSyncTask *syncTask; // @synthesize syncTask=_syncTask;
-- (void).cxx_destruct;
 - (id)_transactionMessageFromTransportMessage:(id)arg1 withDecryptedPayload:(id)arg2 accountInfo:(id)arg3;
 - (id)_transactionMessageFromTransportMessage:(id)arg1 withParticipants:(id)arg2 accountInfo:(id)arg3;
 - (id)_transactionMessageFromTransportMessage:(id)arg1 withGroupID:(id)arg2 groups:(id)arg3 accountInfo:(id)arg4;

@@ -6,7 +6,7 @@
 
 #import <CloudDocs/NSFileProviderItem-Protocol.h>
 
-@class NSNumber, NSPersonNameComponents, NSSet, NSString, NSURL;
+@class NSData, NSNumber, NSPersonNameComponents, NSSet, NSString, NSURL;
 
 @protocol NSFileProviderItem_Private <NSFileProviderItem>
 
@@ -17,6 +17,8 @@
 @property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) BOOL fp_addedByCurrentUser;
 @property(readonly, nonatomic, getter=fp_isLastModifiedByCurrentUser) BOOL fp_lastModifiedByCurrentUser;
 @property(readonly, copy) NSString *fileSystemFilename;
+@property(getter=isSyncRoot) BOOL syncRoot;
+@property(readonly, copy, nonatomic) NSData *quarantineBlob;
 @property(readonly, nonatomic, getter=isTopLevelSharedItem) BOOL topLevelSharedItem;
 @property(readonly, copy, nonatomic) NSString *displayName;
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;

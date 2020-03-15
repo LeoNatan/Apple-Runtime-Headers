@@ -17,9 +17,9 @@
     _SFPBCommandValue *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBCommandValue *value; // @synthesize value=_value;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

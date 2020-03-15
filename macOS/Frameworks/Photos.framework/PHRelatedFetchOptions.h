@@ -18,13 +18,13 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDebugInfoEnabled) BOOL debugInfoEnabled; // @synthesize debugInfoEnabled=_debugInfoEnabled;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic) BOOL enableDiversity; // @synthesize enableDiversity=_enableDiversity;
 @property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(retain, nonatomic) PHAsset *referenceAsset; // @synthesize referenceAsset=_referenceAsset;
 @property(retain, nonatomic) NSArray *excludedAssetCollections; // @synthesize excludedAssetCollections=_excludedAssetCollections;
-- (void).cxx_destruct;
 
 @end
 

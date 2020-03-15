@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
     NSArray *_filteredCustomItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSearchControllerActive) _Bool searchControllerActive; // @synthesize searchControllerActive=_searchControllerActive;
 @property(copy, nonatomic) NSArray *filteredCustomItems; // @synthesize filteredCustomItems=_filteredCustomItems;
 @property(copy, nonatomic) NSArray *filteredBuiltinItems; // @synthesize filteredBuiltinItems=_filteredBuiltinItems;
@@ -77,7 +78,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *discoveredItems; // @synthesize discoveredItems=_discoveredItems;
 @property(nonatomic) __weak id <CNPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id selectedItem; // @synthesize selectedItem=_selectedItem;
-- (void).cxx_destruct;
 - (id)_itemAtIndexPath:(id)arg1 isPlaceholder:(_Bool *)arg2;
 - (unsigned long long)_indexForCustomItemAtIndexPath:(id)arg1;
 - (void)picker:(id)arg1 didDeleteItem:(id)arg2;

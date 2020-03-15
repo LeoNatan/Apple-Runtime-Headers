@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_temporaryBoundObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *temporaryBoundObjects; // @synthesize temporaryBoundObjects=_temporaryBoundObjects;
 @property(nonatomic, getter=isReset) _Bool reset; // @synthesize reset=_reset;
 @property(readonly, nonatomic) struct sqlite3_stmt *handle; // @synthesize handle=_handle;
 @property(readonly, nonatomic) NSString *SQL; // @synthesize SQL=_SQL;
 @property(readonly, nonatomic) __weak SFSQLite *SQLite; // @synthesize SQLite=_SQLite;
-- (void).cxx_destruct;
 - (id)allObjectsByColumnName;
 - (id)allObjects;
 - (id)objectAtIndex:(unsigned long long)arg1;

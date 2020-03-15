@@ -18,9 +18,9 @@
 
 + (id)withData:(id)arg1;
 + (id)withData:(id)arg1 contentType:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *httpContentType; // @synthesize httpContentType=_httpContentType;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (long long)httpContentLength;
 - (id)httpInputStream;
 - (id)initWithData:(id)arg1 contentType:(id)arg2;

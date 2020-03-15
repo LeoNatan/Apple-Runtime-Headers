@@ -22,9 +22,9 @@
 + (id)asciiPrintableCharacterClass;
 + (id)namedCharacterClassWithType:(long long)arg1;
 + (id)customCharacterClassWithValue:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithType:(long long)arg1 value:(id)arg2;

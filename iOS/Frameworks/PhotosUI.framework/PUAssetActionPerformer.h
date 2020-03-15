@@ -21,6 +21,7 @@
     NSDictionary *_assetsByAssetCollection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *assetsByAssetCollection; // @synthesize assetsByAssetCollection=_assetsByAssetCollection;
 @property(readonly, copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(nonatomic) __weak NSObject<OS_os_log> *actionPerformerLog; // @synthesize actionPerformerLog=_actionPerformerLog;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak id <PUAssetActionPerformerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (void)_completeStateWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_transitionToState:(unsigned long long)arg1 withSuccess:(_Bool)arg2 error:(id)arg3;
 - (void)_handleStepFinished:(unsigned long long)arg1 withSuccess:(_Bool)arg2 error:(id)arg3;

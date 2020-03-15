@@ -15,8 +15,8 @@
 }
 
 + (id)defaultBridge;
-@property(nonatomic) __weak id <KHStoreBridgeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <KHStoreBridgeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)requestCheckoutForProject:(id)arg1 cart:(id)arg2 completion:(CDUnknownBlockType)arg3 dismissal:(CDUnknownBlockType)arg4;
 - (void)requestCheckoutForProjectBundleController:(id)arg1 completion:(CDUnknownBlockType)arg2 dismissal:(CDUnknownBlockType)arg3;
 - (void)addPrintLayout:(id)arg1 toCart:(id)arg2;

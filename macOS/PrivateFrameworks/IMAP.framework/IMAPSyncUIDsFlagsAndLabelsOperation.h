@@ -22,12 +22,12 @@
     id <IMAPSyncUIDsFlagsAndLabelsOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int highestKnownUID; // @synthesize highestKnownUID=_highestKnownUID;
 @property(readonly, nonatomic) __weak id <IMAPSyncUIDsFlagsAndLabelsOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BOOL includeLabels; // @synthesize includeLabels=_includeLabels;
 @property(readonly, nonatomic) unsigned long long changedSince; // @synthesize changedSince=_changedSince;
 @property(readonly, copy, nonatomic) NSIndexSet *messageNumbers; // @synthesize messageNumbers=_messageNumbers;
-- (void).cxx_destruct;
 - (BOOL)handleResponse:(id)arg1 forCommand:(id)arg2;
 - (void)main;
 - (id)_syncUIDsFlagsAndLabelsOperationDescription:(id)arg1;

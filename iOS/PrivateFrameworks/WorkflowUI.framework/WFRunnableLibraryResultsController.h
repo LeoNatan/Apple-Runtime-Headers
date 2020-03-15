@@ -23,12 +23,12 @@
 }
 
 + (Class)libraryWorkflowCellClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(copy, nonatomic) id <WFBaseLibraryWorkflowCellMetrics> cellLayoutMetrics; // @synthesize cellLayoutMetrics=_cellLayoutMetrics;
 @property(nonatomic) __weak id <WFBaseLibraryWorkflowCellDelegate> cellDelegate; // @synthesize cellDelegate=_cellDelegate;
 @property(nonatomic) __weak id <WFRunnableLibraryResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFLibraryRunCoordinator *runCoordinator; // @synthesize runCoordinator=_runCoordinator;
-- (void).cxx_destruct;
 - (id)runCoordinator:(id)arg1 userInterfaceForWorkflow:(id)arg2;
 - (void)runCoordinator:(id)arg1 didChangeRunningStateWithProgress:(double)arg2 forWorkflow:(id)arg3;
 - (void)workflowCellDidRequestStop:(id)arg1;

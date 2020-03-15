@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     VSFontCenter *_fontCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(retain, nonatomic) VSIdentityProviderLogoView *logoView; // @synthesize logoView=_logoView;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VSViewModel *viewModel;
 @property(nonatomic) __weak id <VSAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
-- (void).cxx_destruct;
 - (void)twoFactorDigitView:(id)arg1 textDidChange:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -22,6 +22,7 @@
     struct CGAffineTransform _endValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUAnimationFloatFunction *tyFunction; // @synthesize tyFunction=_tyFunction;
 @property(retain, nonatomic) TUAnimationFloatFunction *txFunction; // @synthesize txFunction=_txFunction;
 @property(retain, nonatomic) TUAnimationFloatFunction *dFunction; // @synthesize dFunction=_dFunction;
@@ -32,7 +33,6 @@
 @property(nonatomic) struct CGAffineTransform endValue; // @synthesize endValue=_endValue;
 @property(nonatomic) struct CGAffineTransform startValue; // @synthesize startValue=_startValue;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
-- (void).cxx_destruct;
 - (void)_reloadFunctions;
 - (struct CGAffineTransform)solveForTime:(double)arg1;
 - (id)initWithTimingFunction:(id)arg1 startTransform:(struct CGAffineTransform)arg2 endTransform:(struct CGAffineTransform)arg3 speed:(double)arg4;

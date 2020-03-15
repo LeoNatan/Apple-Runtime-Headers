@@ -18,10 +18,10 @@
 
 + (id)dataclassesToWatch;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) EXSDataManager *dataManager; // @synthesize dataManager=_dataManager;
 @property(retain, nonatomic) EXSSyncEngine *syncEngine; // @synthesize syncEngine=_syncEngine;
-- (void).cxx_destruct;
 - (void)disableKeepAlive;
 - (void)enableKeepAlive;
 - (id)launchdKeepAlivePath;

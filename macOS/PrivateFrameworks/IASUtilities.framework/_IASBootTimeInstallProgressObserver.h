@@ -11,8 +11,8 @@
     CDUnknownBlockType _progressBlock;
 }
 
-@property(copy) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 
 @end

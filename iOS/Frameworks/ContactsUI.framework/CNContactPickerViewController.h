@@ -21,6 +21,7 @@
     _Bool _ignoresParentalRestrictions;
     _Bool _allowsEditing;
     _Bool _allowsCancel;
+    _Bool _allowsDone;
     _Bool _allowsDeletion;
     _Bool _hidesPromptInLandscape;
     _Bool _defaultViewControllerVisible;
@@ -42,6 +43,7 @@
     NSString *_bannerValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool autocloses; // @synthesize autocloses=_autocloses;
 @property(readonly, getter=isDefaultViewControllerVisible) _Bool defaultViewControllerVisible; // @synthesize defaultViewControllerVisible=_defaultViewControllerVisible;
 @property(copy, nonatomic) NSString *bannerValue; // @synthesize bannerValue=_bannerValue;
@@ -49,6 +51,7 @@
 @property(nonatomic) _Bool hidesPromptInLandscape; // @synthesize hidesPromptInLandscape=_hidesPromptInLandscape;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;
+@property(nonatomic) _Bool allowsDone; // @synthesize allowsDone=_allowsDone;
 @property(nonatomic) _Bool allowsCancel; // @synthesize allowsCancel=_allowsCancel;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
@@ -66,7 +69,6 @@
 @property(copy, nonatomic) NSPredicate *predicateForEnablingContact; // @synthesize predicateForEnablingContact=_predicateForEnablingContact;
 @property(nonatomic) __weak id <CNContactPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *displayedPropertyKeys; // @synthesize displayedPropertyKeys=_displayedPropertyKeys;
-- (void).cxx_destruct;
 - (void)pickerDidCancel;
 - (void)pickerDidSelectContacts:(id)arg1 properties:(id)arg2;
 - (void)pickerDidSelectContact:(id)arg1 property:(id)arg2;

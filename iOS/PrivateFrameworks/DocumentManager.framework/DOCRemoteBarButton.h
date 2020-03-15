@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) UIBarButtonItem *barButton; // @synthesize barButton=_barButton;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithBarButton:(id)arg1;

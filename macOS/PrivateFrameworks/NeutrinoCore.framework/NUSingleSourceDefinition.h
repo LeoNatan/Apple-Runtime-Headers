@@ -13,8 +13,8 @@
     id <NUSourceDerivation> _sourceDerivation;
 }
 
-@property(retain) id <NUSourceDerivation> sourceDerivation; // @synthesize sourceDerivation=_sourceDerivation;
 - (void).cxx_destruct;
+@property(retain) id <NUSourceDerivation> sourceDerivation; // @synthesize sourceDerivation=_sourceDerivation;
 - (id)init;
 - (id)generateSourceNodeWithIdentifier:(id)arg1 error:(out id *)arg2;
 - (id)sourceContainerNodeWithIdentifier:(id)arg1 error:(out id *)arg2;

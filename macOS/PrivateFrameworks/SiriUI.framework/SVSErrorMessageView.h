@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _actionButtonBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionButtonBlock; // @synthesize actionButtonBlock=_actionButtonBlock;
 @property(retain, nonatomic) NSString *actionButtonText; // @synthesize actionButtonText=_actionButtonText;
 @property(retain, nonatomic) NSString *subHeaderText; // @synthesize subHeaderText=_subHeaderText;
 @property(retain, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (struct CGSize)fittingSize;
 - (void)_onActionButton:(id)arg1;
 - (void)_createConstraints;

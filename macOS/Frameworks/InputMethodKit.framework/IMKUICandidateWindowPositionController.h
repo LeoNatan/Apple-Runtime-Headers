@@ -28,6 +28,7 @@
     struct CGRect _windowFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect windowFrame; // @synthesize windowFrame=_windowFrame;
 @property(nonatomic) BOOL updatePositionOnEachKeyPress; // @synthesize updatePositionOnEachKeyPress=_updatePositionOnEachKeyPress;
 @property(nonatomic) double textRectMargin; // @synthesize textRectMargin=_textRectMargin;
@@ -43,7 +44,6 @@
 @property(nonatomic) long long effectiveHorizontalPositionHint; // @synthesize effectiveHorizontalPositionHint=_effectiveHorizontalPositionHint;
 @property(nonatomic) __weak IMKUICandidateWindowController *candidateController; // @synthesize candidateController=_candidateController;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint topWindowPosition;
 - (struct CGRect)frameOfCurrentlyVisibleScreenUsingConstrainedFrame:(BOOL)arg1;
 - (struct CGPoint)positionWithPreferenceArray:(id)arg1 inlineAlignment:(unsigned long long)arg2;

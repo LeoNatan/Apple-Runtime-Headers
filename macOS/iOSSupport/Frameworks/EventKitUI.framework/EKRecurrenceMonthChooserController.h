@@ -14,8 +14,8 @@
     BOOL _prohibitsMultipleMonthsInYearlyRecurrence;
 }
 
-@property(nonatomic) BOOL prohibitsMultipleMonthsInYearlyRecurrence; // @synthesize prohibitsMultipleMonthsInYearlyRecurrence=_prohibitsMultipleMonthsInYearlyRecurrence;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL prohibitsMultipleMonthsInYearlyRecurrence; // @synthesize prohibitsMultipleMonthsInYearlyRecurrence=_prohibitsMultipleMonthsInYearlyRecurrence;
 - (void)selectCell:(id)arg1 atIndex:(long long)arg2;
 - (void)refreshCells;
 - (void)prepareForDisplay;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <BaseBoard/BSTransaction.h>
+#import <FrontBoardServices/BSTransaction.h>
 
 #import <HeadBoardUI/CAAnimationDelegate-Protocol.h>
 
@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_key;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) CAAnimation *animation; // @synthesize animation=_animation;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (_Bool)_canBeInterrupted;
 - (void)_begin;

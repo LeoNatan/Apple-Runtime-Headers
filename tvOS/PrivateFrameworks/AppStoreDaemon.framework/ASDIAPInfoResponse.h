@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSDictionary *iaps; // @synthesize iaps=_iaps;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *iaps; // @synthesize iaps=_iaps;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

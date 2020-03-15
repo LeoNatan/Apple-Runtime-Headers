@@ -26,6 +26,7 @@
 + (double)backgroundJobTimeout;
 + (_Bool)supportsBackgroundJob;
 + (id)graphDonationBundleId;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCountedSet *addressNodes; // @synthesize addressNodes=_addressNodes;
 @property(readonly, nonatomic) NSMutableDictionary *datesByAddressNode; // @synthesize datesByAddressNode=_datesByAddressNode;
 @property(readonly, nonatomic) NSCountedSet *performerNodes; // @synthesize performerNodes=_performerNodes;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSCountedSet *roiNodes; // @synthesize roiNodes=_roiNodes;
 @property(readonly, nonatomic) NSCountedSet *poiNodes; // @synthesize poiNodes=_poiNodes;
 @property(readonly, nonatomic) NSCountedSet *meaningNodes; // @synthesize meaningNodes=_meaningNodes;
-- (void).cxx_destruct;
 - (id)_namedEntitiesFromNamedEntityNodes:(id)arg1 currentProgress:(double *)arg2 progressFraction:(double)arg3 progressBlock:(CDUnknownBlockType)arg4;
 - (id)_locationNamedEntitiesFromAddressNodes:(id)arg1 dates:(id)arg2 currentProgress:(double *)arg3 progressFraction:(double)arg4 progressBlock:(CDUnknownBlockType)arg5;
 - (id)_topicsFromTopicNodes:(id)arg1 currentProgress:(double *)arg2 progressFraction:(double)arg3 progressBlock:(CDUnknownBlockType)arg4;

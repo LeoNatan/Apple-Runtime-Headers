@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
 @property(retain, nonatomic) NSMutableArray *shareRecordsToUpdate; // @synthesize shareRecordsToUpdate=_shareRecordsToUpdate;
 @property(retain, nonatomic) NSMutableDictionary *keyOrErrorForHostname; // @synthesize keyOrErrorForHostname=_keyOrErrorForHostname;
@@ -71,7 +72,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool forcePCSDecrypt; // @synthesize forcePCSDecrypt=_forcePCSDecrypt;
 @property(nonatomic) _Bool useRecordCache; // @synthesize useRecordCache=_useRecordCache;
 @property(nonatomic) _Bool useCachedEtags; // @synthesize useCachedEtags=_useCachedEtags;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)finishWithError:(id)arg1;

@@ -19,13 +19,13 @@
     unsigned long long _clientCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long clientCount; // @synthesize clientCount=_clientCount;
 @property(retain, nonatomic) NSMutableSet *serviceConnections; // @synthesize serviceConnections=_serviceConnections;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) id <XPCServiceListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)serviceConnectionDidDisconnect:(id)arg1;
 - (void)workQueueHandleIncomingConnection:(id)arg1;
 - (void)shutDownCompletionBlock:(CDUnknownBlockType)arg1;

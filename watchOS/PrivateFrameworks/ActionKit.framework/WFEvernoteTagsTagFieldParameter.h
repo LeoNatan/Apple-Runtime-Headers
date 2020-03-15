@@ -16,8 +16,8 @@
 }
 
 + (id)referencedActionResourceClasses;
-@property(retain, nonatomic) WFEvernoteAccessResource *evernoteAccessResource; // @synthesize evernoteAccessResource=_evernoteAccessResource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFEvernoteAccessResource *evernoteAccessResource; // @synthesize evernoteAccessResource=_evernoteAccessResource;
 - (id)suggestedTagsForTagField:(id)arg1;
 - (void)updateTags;
 - (void)wasAddedToWorkflow;

@@ -28,6 +28,7 @@
     NSString *_lastSignedInItunesAccountDSID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastSignedInItunesAccountDSID; // @synthesize lastSignedInItunesAccountDSID=_lastSignedInItunesAccountDSID;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) NSMutableDictionary *ongoingPurchaseEntriesByProductID; // @synthesize ongoingPurchaseEntriesByProductID=_ongoingPurchaseEntriesByProductID;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
 @property(retain, nonatomic) id <FCPurchaseFlowOverrideProviderType> purchaseFlowOverrideProvider; // @synthesize purchaseFlowOverrideProvider;
 @property(nonatomic) __weak id <FCPurchaseManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)simulateFailurePurchaseWithProductID:(id)arg1 transactionState:(long long)arg2 error:(id)arg3;
 - (void)simulateSuccessfulPurchaseWithProductID:(id)arg1 tagID:(id)arg2 purchaseID:(id)arg3;
 - (void)simulateSuccessfulPurchaseWithProductID:(id)arg1 tagID:(id)arg2;

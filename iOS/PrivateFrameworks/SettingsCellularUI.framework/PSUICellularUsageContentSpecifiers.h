@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_trailingContentSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *trailingContentSpecifiers; // @synthesize trailingContentSpecifiers=_trailingContentSpecifiers;
 @property(retain, nonatomic) NSMutableArray *appSpecifiers; // @synthesize appSpecifiers=_appSpecifiers;
 @property(retain, nonatomic) NSArray *leadingContentSpecifiers; // @synthesize leadingContentSpecifiers=_leadingContentSpecifiers;
-- (void).cxx_destruct;
 - (id)specifiers;
 
 @end

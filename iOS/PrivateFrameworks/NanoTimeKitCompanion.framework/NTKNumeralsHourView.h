@@ -17,8 +17,8 @@
     _Bool _isLoaded;
 }
 
-@property(readonly) _Bool isLoaded; // @synthesize isLoaded=_isLoaded;
 - (void).cxx_destruct;
+@property(readonly) _Bool isLoaded; // @synthesize isLoaded=_isLoaded;
 - (id)_imageNameForStyle:(unsigned long long)arg1 hour:(long long)arg2;
 - (void)_applyTintColor:(id)arg1;
 - (id)_hourColorForDevice:(id)arg1 faceColor:(unsigned long long)arg2 colorSchemeUnits:(unsigned long long)arg3;

@@ -15,10 +15,10 @@
     id <PVPersistenceDelegate> _persistenceDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sceneAlgorithmUmbrellaVersion; // @synthesize sceneAlgorithmUmbrellaVersion=_sceneAlgorithmUmbrellaVersion;
 @property(nonatomic) unsigned int faceAlgorithmUmbrellaVersion; // @synthesize faceAlgorithmUmbrellaVersion=_faceAlgorithmUmbrellaVersion;
 @property(retain, nonatomic) id <PVPersistenceDelegate> persistenceDelegate; // @synthesize persistenceDelegate=_persistenceDelegate;
-- (void).cxx_destruct;
 - (_Bool)deleteEmptyGroupsAndReturnError:(id *)arg1;
 - (_Bool)resetLibraryClustersWithCanceler:(id)arg1 error:(id *)arg2;
 - (_Bool)removeAlgorithmicallyGroupedFacesWithLocalIdentifiers:(id)arg1 error:(id *)arg2;

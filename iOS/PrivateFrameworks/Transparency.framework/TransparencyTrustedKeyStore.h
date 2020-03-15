@@ -14,9 +14,9 @@
     NSDictionary *_trustedKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *trustedKeys; // @synthesize trustedKeys=_trustedKeys;
 @property(retain) TransparencySignatureVerifier *signatureVerifier; // @synthesize signatureVerifier=_signatureVerifier;
-- (void).cxx_destruct;
 - (id)initWithTrustedKeys:(id)arg1;
 
 @end

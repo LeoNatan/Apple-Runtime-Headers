@@ -28,6 +28,7 @@
     NSDate *_proposedStartDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
 @property(readonly, nonatomic) _Bool proposedStartDateDeclined; // @synthesize proposedStartDateDeclined=_proposedStartDateDeclined;
 @property(readonly, nonatomic) NSDate *proposedStartDate; // @synthesize proposedStartDate=_proposedStartDate;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithParticipant:(id)arg1 forEvent:(id)arg2;
 
 // Remaining properties

@@ -16,10 +16,10 @@
     unsigned long long _imageRequestTag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long imageRequestTag; // @synthesize imageRequestTag=_imageRequestTag;
 @property(retain, nonatomic) NSTimer *imageLoadInvalidationTimer; // @synthesize imageLoadInvalidationTimer=_imageLoadInvalidationTimer;
 @property(readonly, nonatomic) id <PXPerson> person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)requestImageWithTargetSize:(struct CGSize)arg1 cropFactor:(unsigned long long)arg2 cacheResult:(_Bool)arg3 boundFaceRect:(_Bool)arg4 timeout:(double)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (void)dealloc;

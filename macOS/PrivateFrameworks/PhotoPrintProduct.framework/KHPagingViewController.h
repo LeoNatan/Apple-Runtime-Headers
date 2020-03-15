@@ -25,10 +25,10 @@
 
 + (id)editorCollectionViewLayout;
 + (long long)displayMode;
+- (void).cxx_destruct;
 @property(nonatomic) double maximumZoomScale; // @synthesize maximumZoomScale=_maximumZoomScale;
 @property(nonatomic) __weak KHPagingViewCell *centerCell; // @synthesize centerCell=_centerCell;
 @property(nonatomic) __weak id <KHPagingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)selectionManager:(id)arg1 didAddSelections:(id)arg2;
 - (void)updateAccessoryViewControllersForEditor:(id)arg1;
 - (void)editorController:(id)arg1 didApplyDisplayFilter:(id)arg2;

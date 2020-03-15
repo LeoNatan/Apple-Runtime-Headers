@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *trustedServerCertificateReferences; // @synthesize trustedServerCertificateReferences=_trustedServerCertificateReferences;
 @property(copy) NSData *identityReference; // @synthesize identityReference=_identityReference;
 @property(copy) NSArray *clientTrustChainReference; // @synthesize clientTrustChainReference=_clientTrustChainReference;
@@ -38,7 +39,6 @@
 @property(copy) NSString *outerIdentity; // @synthesize outerIdentity=_outerIdentity;
 @property(copy) NSString *username; // @synthesize username=_username;
 @property(copy) NSArray *supportedEAPTypes; // @synthesize supportedEAPTypes=_supportedEAPTypes;
-- (void).cxx_destruct;
 - (_Bool)setIdentity:(struct __SecIdentity *)arg1;
 - (_Bool)setTrustedServerCertificates:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

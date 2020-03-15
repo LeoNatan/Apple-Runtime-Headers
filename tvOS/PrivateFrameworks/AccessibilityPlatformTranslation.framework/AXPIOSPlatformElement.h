@@ -17,8 +17,8 @@
 
 + (id)platformElementWithTranslationObject:(id)arg1;
 + (id)platformElementWithTranslationObject:(id)arg1 rootParent:(id)arg2;
-@property(retain, nonatomic) AXPTranslationObject *translation; // @synthesize translation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXPTranslationObject *translation; // @synthesize translation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

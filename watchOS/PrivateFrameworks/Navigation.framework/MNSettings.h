@@ -37,6 +37,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldUseGuidanceEventManager; // @synthesize shouldUseGuidanceEventManager=_shouldUseGuidanceEventManager;
 @property(readonly, nonatomic) double simulationGPSError; // @synthesize simulationGPSError=_simulationGPSError;
 @property(readonly, nonatomic) double simulationSpeed; // @synthesize simulationSpeed=_simulationSpeed;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic) _Bool pauseSpokenAudio; // @synthesize pauseSpokenAudio=_pauseSpokenAudio;
 @property(readonly, nonatomic) unsigned int distanceUnits; // @synthesize distanceUnits=_distanceUnits;
 @property(readonly, nonatomic) unsigned int voiceVolume; // @synthesize voiceVolume=_voiceVolume;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

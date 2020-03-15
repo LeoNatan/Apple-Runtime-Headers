@@ -24,8 +24,8 @@
 }
 
 + (id)_chooseImageTableFormatForPreheatingFromFormats:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 returnBestTableRegardlessOfFit:(_Bool)arg4;
-@property(nonatomic) _Bool allowsCachingHighQualityImages; // @synthesize allowsCachingHighQualityImages=_allowsCachingHighQualityImages;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool allowsCachingHighQualityImages; // @synthesize allowsCachingHighQualityImages=_allowsCachingHighQualityImages;
 - (void)imageCache:(id)arg1 didEvictCacheEntry:(id)arg2;
 - (void)mediaRequestContext:(id)arg1 isQueryingCacheForRequest:(id)arg2 didWait:(_Bool *)arg3 didFindImage:(_Bool *)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (void)stopCachingImagesForAllAssets;

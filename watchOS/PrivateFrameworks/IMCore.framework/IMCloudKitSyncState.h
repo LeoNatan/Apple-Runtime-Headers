@@ -25,6 +25,7 @@
 }
 
 + (id)logHandle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int syncState; // @synthesize syncState=_syncState;
 @property(readonly, nonatomic) _Bool accountIsEnabled; // @synthesize accountIsEnabled=_accountIsEnabled;
 @property(readonly, nonatomic) int accountStatus; // @synthesize accountStatus=_accountStatus;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) int syncControllerRecordType; // @synthesize syncControllerRecordType=_syncControllerRecordType;
 @property(readonly, nonatomic) int syncControllerSyncType; // @synthesize syncControllerSyncType=_syncControllerSyncType;
 @property(readonly, nonatomic) unsigned int syncControllerSyncState; // @synthesize syncControllerSyncState=_syncControllerSyncState;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isSyncEnabledForDisplayOnly;
 @property(readonly, nonatomic) _Bool canChangeEnabledSetting;
 @property(readonly, nonatomic) _Bool canStartSyncing;

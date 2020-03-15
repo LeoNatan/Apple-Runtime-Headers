@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) UIImage *profileImageCache; // @synthesize profileImageCache=_profileImageCache;
 @property(retain, nonatomic) NSString *profile_image_url; // @synthesize profile_image_url=_profile_image_url;
 @property(retain, nonatomic) NSString *screen_name; // @synthesize screen_name=_screen_name;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

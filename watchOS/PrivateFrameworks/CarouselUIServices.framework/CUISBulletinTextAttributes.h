@@ -15,10 +15,10 @@
     CAFilter *_compositingFilter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAFilter *compositingFilter; // @synthesize compositingFilter=_compositingFilter;
 @property(readonly, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(readonly, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (id)initWithTextColor:(id)arg1 font:(id)arg2 compositingFilter:(id)arg3;
 
 @end

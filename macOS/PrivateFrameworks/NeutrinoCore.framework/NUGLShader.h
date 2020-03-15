@@ -16,9 +16,9 @@
     NSString *_source;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *source; // @synthesize source=_source;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_compile:(id)arg1;
 - (BOOL)compile:(id)arg1 error:(out id *)arg2;
 @property(readonly) unsigned int glStage;

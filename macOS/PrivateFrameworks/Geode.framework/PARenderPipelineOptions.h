@@ -24,6 +24,7 @@
 }
 
 + (void)setGlobalPreserveHueGamutMapOptions:(int)arg1;
+- (void).cxx_destruct;
 @property(retain) IPAColorProfile *linearOutputColorProfileImpl; // @synthesize linearOutputColorProfileImpl=_linearOutputColorProfileImpl;
 @property BOOL videoFrame; // @synthesize videoFrame=_videoFrame;
 @property(retain) PAImageRequestCacheHint *cacheHint; // @synthesize cacheHint=_cacheHint;
@@ -31,7 +32,6 @@
 @property int renderMode; // @synthesize renderMode=_renderMode;
 @property(retain) NSDictionary *cgImageProperties; // @synthesize cgImageProperties=_cgImageProperties;
 @property(retain) IPAColorProfile *outputColorProfile; // @synthesize outputColorProfile=_outputColorProfile;
-- (void).cxx_destruct;
 @property(retain) IPAColorProfile *linearOutputColorProfile; // @dynamic linearOutputColorProfile;
 - (id)_obtainLinearColorProfile:(id)arg1;
 @property(nonatomic) int gamutMode;

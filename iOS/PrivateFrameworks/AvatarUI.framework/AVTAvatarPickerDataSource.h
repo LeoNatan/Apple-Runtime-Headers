@@ -18,12 +18,12 @@
     id <AVTAvatarListItem> _addItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVTAvatarListItem> addItem; // @synthesize addItem=_addItem;
 @property(nonatomic) _Bool allowAddItem; // @synthesize allowAddItem=_allowAddItem;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) AVTAvatarRecordDataSource *recordDataSource; // @synthesize recordDataSource=_recordDataSource;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (long long)indexOfAddItem;
 - (_Bool)isItemAtIndexAddItem:(long long)arg1;
 - (id)itemAtIndex:(long long)arg1;

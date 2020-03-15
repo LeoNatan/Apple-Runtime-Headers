@@ -23,6 +23,7 @@
 }
 
 + (id)buttonWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property int tag; // @synthesize tag=_tag;
 @property int urlType; // @synthesize urlType=_urlType;
 @property(retain) NSString *title; // @synthesize title=_title;
@@ -31,7 +32,6 @@
 @property(retain) id parameter; // @synthesize parameter=_parameter;
 @property(retain) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property int actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (int)_urlTypeForString:(id)arg1;

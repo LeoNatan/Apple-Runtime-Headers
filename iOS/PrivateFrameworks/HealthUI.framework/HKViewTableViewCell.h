@@ -13,8 +13,8 @@
     UIView *_hostedView;
 }
 
-@property(readonly, nonatomic) UIView *hostedView; // @synthesize hostedView=_hostedView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *hostedView; // @synthesize hostedView=_hostedView;
 - (void)_pinViewToContent:(id)arg1;
 - (void)prepareForReuse;
 - (void)setHostedView:(id)arg1;

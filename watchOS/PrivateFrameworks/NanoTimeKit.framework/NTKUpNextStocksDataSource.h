@@ -22,8 +22,9 @@
 
 + (id)bundleIdentifier;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-@property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
++ (id)applicationBundleIdentifier;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver;

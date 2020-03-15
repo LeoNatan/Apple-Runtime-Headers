@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)postAnalyticKind:(long long)arg1;
++ (void)coreAnalyticsPostAnalyticKind:(long long)arg1;
 
 @end
 

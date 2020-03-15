@@ -42,6 +42,7 @@
     int _pid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *mountTime; // @synthesize mountTime=_mountTime;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) BOOL isBundled; // @synthesize isBundled=_isBundled;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) NSString *pathOnVolume; // @synthesize pathOnVolume=_pathOnVolume;
 @property(readonly, nonatomic) NSUUID *volumeUUID; // @synthesize volumeUUID=_volumeUUID;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isUserApproved;
 @property(readonly, nonatomic) BOOL isQuarantined;
 @property(readonly, nonatomic) NSString *signingID;

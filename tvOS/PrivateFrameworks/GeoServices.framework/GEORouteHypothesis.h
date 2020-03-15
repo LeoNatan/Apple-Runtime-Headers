@@ -34,6 +34,7 @@
 + (_Bool)supportsTravelState:(long long)arg1 forTransportType:(int)arg2;
 + (id)_routeHypothesisErrorWithUnderlyingError:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
 @property(readonly, nonatomic) double aggressiveTravelTime; // @synthesize aggressiveTravelTime=_aggressiveTravelTime;
 @property(readonly, nonatomic) double conservativeTravelTime; // @synthesize conservativeTravelTime=_conservativeTravelTime;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) GEOLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
 @property(readonly, nonatomic) NSDate *generationDate; // @synthesize generationDate=_generationDate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_clearHypothesisAndSetErrorWithCode:(long long)arg1;
 - (void)_setError:(id)arg1;

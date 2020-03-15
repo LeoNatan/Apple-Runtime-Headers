@@ -15,9 +15,9 @@
 }
 
 + (id)recentCheckIn;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly, copy, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *checkInDate;
 - (void)updateCheckInToNow;
 - (BOOL)isCheckInAllowed;

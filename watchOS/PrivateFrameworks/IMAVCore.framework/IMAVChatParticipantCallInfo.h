@@ -34,6 +34,7 @@
     NSData *_remoteSKEData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inviteNeedsDelivery; // @synthesize inviteNeedsDelivery=_inviteNeedsDelivery;
 @property(nonatomic) unsigned int remoteConnectionType; // @synthesize remoteConnectionType=_remoteConnectionType;
 @property(nonatomic) unsigned int localConnectionType; // @synthesize localConnectionType=_localConnectionType;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSDictionary *relayCancel; // @synthesize relayCancel=_relayCancel;
 @property(retain, nonatomic) NSDictionary *relayUpdate; // @synthesize relayUpdate=_relayUpdate;
 @property(retain, nonatomic) NSDictionary *relayInitiate; // @synthesize relayInitiate=_relayInitiate;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool isFinished;
 - (void)dealloc;

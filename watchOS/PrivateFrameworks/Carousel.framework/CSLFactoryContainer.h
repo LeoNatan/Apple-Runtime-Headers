@@ -15,9 +15,9 @@
     NSMutableSet *_supportedSectionIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *supportedSectionIDs; // @synthesize supportedSectionIDs=_supportedSectionIDs;
 @property(retain, nonatomic) id <CUISNotificationCenterCellFactory> factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

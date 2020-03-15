@@ -16,9 +16,9 @@
     NSSet *_allowedContentTypes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *allowedContentTypes; // @synthesize allowedContentTypes=_allowedContentTypes;
 @property(copy, nonatomic) NSIndexSet *allowedStatusCodes; // @synthesize allowedStatusCodes=_allowedStatusCodes;
-- (void).cxx_destruct;
 - (id)resultFromResult:(id)arg1 error:(id *)arg2;
 - (id)init;
 

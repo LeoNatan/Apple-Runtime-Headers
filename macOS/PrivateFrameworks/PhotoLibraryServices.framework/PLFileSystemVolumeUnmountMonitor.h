@@ -22,6 +22,7 @@
 - (void)diskUnmountApprovalForDisk:(struct __DADisk *)arg1;
 - (void)removeVolumeUnmountObserver:(id)arg1;
 - (void)addVolumeUnmountObserver:(id)arg1;
+- (id)description;
 - (void)dealloc;
 - (id)initWithVolumeURL:(id)arg1;
 

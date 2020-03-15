@@ -6,7 +6,10 @@
 
 #import <Foundation/NSData.h>
 
-@interface IOBluetoothSDPUUID : NSData
+#import <IOBluetooth/NSCoding-Protocol.h>
+#import <IOBluetooth/NSSecureCoding-Protocol.h>
+
+@interface IOBluetoothSDPUUID : NSData <NSCoding, NSSecureCoding>
 {
     NSData *mUUIDData;
     void *_mReserved;

@@ -16,10 +16,10 @@
 }
 
 + (id)detailItemViewControllerStateWithActionButtonTitle:(id)arg1 actionButtonView:(id)arg2 informationVisible:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(getter=isInformationVisible) _Bool informationVisible; // @synthesize informationVisible=_informationVisible;
 @property(retain) UIView *actionButtonView; // @synthesize actionButtonView=_actionButtonView;
 @property(retain) NSString *actionButtonTitle; // @synthesize actionButtonTitle=_actionButtonTitle;
-- (void).cxx_destruct;
 
 @end
 

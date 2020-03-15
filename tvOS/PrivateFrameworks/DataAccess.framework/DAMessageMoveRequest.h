@@ -16,11 +16,11 @@
     id _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *toFolder; // @synthesize toFolder=_toFolder;
 @property(copy, nonatomic) NSString *fromFolder; // @synthesize fromFolder=_fromFolder;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

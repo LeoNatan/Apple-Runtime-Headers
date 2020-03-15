@@ -22,12 +22,12 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (_Bool)supportsTaskServers;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType removedAchievementsHandler; // @synthesize removedAchievementsHandler=_removedAchievementsHandler;
 @property(copy, nonatomic) CDUnknownBlockType updatedAchievementsHandler; // @synthesize updatedAchievementsHandler=_updatedAchievementsHandler;
 @property(copy, nonatomic) CDUnknownBlockType newAchievementsHandler; // @synthesize newAchievementsHandler=_newAchievementsHandler;
 @property(copy, nonatomic) CDUnknownBlockType initialAchievementsHandler; // @synthesize initialAchievementsHandler=_initialAchievementsHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
-- (void).cxx_destruct;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)client_deliverRemovedAchievements:(id)arg1;

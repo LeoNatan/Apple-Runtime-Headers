@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)wantsHorizontalLayout;
 + (BOOL)wantsStandardConstraints;
 + (BOOL)wantsChevron;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
 @property(nonatomic) BOOL valueViewNeedsHuggingContent; // @synthesize valueViewNeedsHuggingContent=_valueViewNeedsHuggingContent;
 @property(nonatomic) BOOL labelViewNeedsHuggingContent; // @synthesize labelViewNeedsHuggingContent=_labelViewNeedsHuggingContent;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 @property(copy, nonatomic) NSDictionary *valueTextAttributes;
 @property(copy, nonatomic) NSDictionary *labelTextAttributes;

@@ -45,6 +45,7 @@
 }
 
 + (BOOL)isValidPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) PLMemory *memory; // @synthesize memory=_memory;
 @property(nonatomic) long long pendingViewCount; // @synthesize pendingViewCount=_pendingViewCount;
@@ -77,7 +78,6 @@
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)_saveMetadata;
 - (id)_metadataData;
 - (BOOL)_readMetadata;

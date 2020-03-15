@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UISearchBar *__searchBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setSearchBar:) __weak UISearchBar *_searchBar; // @synthesize _searchBar=__searchBar;
 @property(copy, nonatomic) CDUnknownBlockType resetAfterSearchFieldFade; // @synthesize resetAfterSearchFieldFade=_resetAfterSearchFieldFade;
 @property(nonatomic) BOOL ignoreGeometryChanges; // @synthesize ignoreGeometryChanges=_ignoreGeometryChanges;
-- (void).cxx_destruct;
 - (void)_propagateBackgroundToContents;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 @property(nonatomic, setter=_setShadowAlpha:) double _shadowAlpha;

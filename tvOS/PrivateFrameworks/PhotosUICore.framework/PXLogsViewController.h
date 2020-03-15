@@ -25,8 +25,8 @@
     NSDateFormatter *_dateFormatter;
 }
 
-@property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (id)substitutionForCollectionRepresentation:(id)arg1 attributes:(id)arg2;
 - (_Bool)isCollectionRepresentation:(id)arg1;
 - (id)substitutionForObjectRepresentation:(id)arg1;

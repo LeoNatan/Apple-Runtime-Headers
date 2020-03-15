@@ -33,6 +33,7 @@
 + (long long)ekFrequencyFromICSFrequency:(unsigned long long)arg1;
 + (int)intervalFromICSDate:(id)arg1 inTimezone:(id)arg2;
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property BOOL floating; // @synthesize floating=_floating;
 @property BOOL allDay; // @synthesize allDay=_allDay;
 @property(readonly, copy, nonatomic) NSArray *weeksOfTheYear; // @synthesize weeksOfTheYear;
@@ -46,7 +47,6 @@
 @property(readonly, copy, nonatomic) NSArray *daysOfTheWeek; // @synthesize daysOfTheWeek;
 @property(readonly, copy, nonatomic) NSArray *daysOfTheMonth; // @synthesize daysOfTheMonth;
 @property(readonly, copy, nonatomic) NSNumber *countNumber; // @synthesize countNumber;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL ruleIsForFloatingItem;
 @property(readonly, nonatomic) BOOL ruleIsForAllDayItem;
 - (id)initWithRuleString:(id)arg1 allDay:(BOOL)arg2 floating:(BOOL)arg3;

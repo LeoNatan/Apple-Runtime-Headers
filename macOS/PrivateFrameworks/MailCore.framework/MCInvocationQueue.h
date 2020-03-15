@@ -17,8 +17,8 @@
 
 + (BOOL)didCancelAllMonitoredItems;
 + (void)cancelAllMonitoredItems;
-@property(readonly, nonatomic) NSOperationQueue *secondaryQueue; // @synthesize secondaryQueue=_secondaryQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOperationQueue *secondaryQueue; // @synthesize secondaryQueue=_secondaryQueue;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_newOperationWithInvocation:(id)arg1;
 - (void)runInvocationOnQueueSynchronously:(id)arg1;

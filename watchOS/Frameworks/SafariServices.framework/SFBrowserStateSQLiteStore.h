@@ -18,9 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_tabUUIDStrings;
     NSMutableDictionary *_browserWindowDatabaseIDs;
     WBSSQLiteStatement *_cachedTabDeleteStatement;
+    _Bool _generateUUIDFunctionAttached;
 }
 
 - (void).cxx_destruct;
+- (void)_regenerateTabUUIDsForDeviceRestoration;
+- (void)regenerateTabUUIDsForDeviceRestoration;
 - (void)_vacuum;
 - (void)setSecureDeleteEnabled:(_Bool)arg1;
 - (void)checkPointWriteAheadLog;
@@ -65,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (int)_createTableForTabs;
 - (int)_createTableForTabSession;
 - (int)_recoverFromDatabaseInconsistencyFromSchemaVersion3Migration;
+- (int)_migrateToSchemaVersion_5;
 - (int)_migrateToSchemaVersion_3;
 - (int)_migrateToSchemaVersion_2;
 - (int)_migrateToSchemaVersion:(int)arg1;

@@ -15,8 +15,8 @@
     NSString *_revision;
 }
 
-@property(retain, nonatomic) NSString *revision; // @synthesize revision=_revision;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *revision; // @synthesize revision=_revision;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

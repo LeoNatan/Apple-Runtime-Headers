@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableSet *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 - (void)removeObserverForRequest:(id)arg1;
 - (void)addObserverForRequest:(id)arg1;
 - (_Bool)openURLForDialRequest:(id)arg1 withScene:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

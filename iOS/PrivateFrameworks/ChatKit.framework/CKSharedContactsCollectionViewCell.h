@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 - (void)layoutSubviews;
 - (void)configureWithContact:(id)arg1;
 

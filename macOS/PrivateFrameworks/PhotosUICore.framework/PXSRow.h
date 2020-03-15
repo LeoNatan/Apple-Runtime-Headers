@@ -15,9 +15,9 @@
 }
 
 + (id)rowWithTitle:(id)arg1 valueKeyPath:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType valueValidatator; // @synthesize valueValidatator=_valueValidatator;
 @property(retain, nonatomic) PXSRowAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)valueValidator:(CDUnknownBlockType)arg1;
 - (id)conditionFormat:(id)arg1;
 - (id)condition:(id)arg1;

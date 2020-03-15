@@ -20,10 +20,10 @@
 
 + (id)describeCategory:(unsigned short)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PPLocationRecord *mostRelevantRecord; // @synthesize mostRelevantRecord=_mostRelevantRecord;
 @property(readonly, nonatomic) unsigned short category; // @synthesize category=_category;
 @property(readonly, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)customizedDescription;

@@ -22,10 +22,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *shieldColorString; // @synthesize shieldColorString=_shieldColorString;
 @property(nonatomic) long long shieldType; // @synthesize shieldType=_shieldType;
 @property(retain, nonatomic) NSString *shieldText; // @synthesize shieldText=_shieldText;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

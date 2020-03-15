@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUPhotoMarkupViewControllerObserver> markupObserver; // @synthesize markupObserver=_markupObserver;
 @property(retain, nonatomic) id <PUReviewAssetProvider> reviewAssetProvider; // @synthesize reviewAssetProvider=_reviewAssetProvider;
-- (void).cxx_destruct;
 - (void)_presentMarkupViewControllerForReviewAsset:(id)arg1;
 - (void)performUserInteractionTask;
 

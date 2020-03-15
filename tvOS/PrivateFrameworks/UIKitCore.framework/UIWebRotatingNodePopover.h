@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     id <UIWebRotatingNodePopoverDelegate> _dismissDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <UIWebRotatingNodePopoverDelegate> dismissDelegate; // @synthesize dismissDelegate=_dismissDelegate;
 @property(retain, nonatomic) UIPopoverController *popoverController; // @synthesize popoverController=_popoverController;
 @property(nonatomic) struct CGPoint presentationPoint; // @synthesize presentationPoint=_presentationPoint;
 @property(retain, nonatomic) DOMNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)didRotate:(id)arg1;
 - (void)willRotate:(id)arg1;

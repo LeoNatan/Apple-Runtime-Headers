@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     double _topLayoutGuideInset;
 }
 
-@property(nonatomic) double topLayoutGuideInset; // @synthesize topLayoutGuideInset=_topLayoutGuideInset;
 - (void).cxx_destruct;
+@property(nonatomic) double topLayoutGuideInset; // @synthesize topLayoutGuideInset=_topLayoutGuideInset;
 - (void)updateBarTintColor:(id)arg1;
 - (long long)positionForBar:(id)arg1;
 - (void)layoutSubviews;

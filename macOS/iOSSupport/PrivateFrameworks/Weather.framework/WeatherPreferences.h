@@ -32,10 +32,10 @@
 + (id)preferencesWithPersistence:(id)arg1;
 + (id)userDefaultsPersistence;
 + (id)sharedPreferences;
+- (void).cxx_destruct;
 @property(retain) WeatherCloudPreferences *cloudPreferences; // @synthesize cloudPreferences=_cloudPreferences;
 @property(nonatomic) BOOL userGroupPrefsLockedWhenInit; // @synthesize userGroupPrefsLockedWhenInit=_userGroupPrefsLockedWhenInit;
 @property(nonatomic) __weak id <SynchronizedDefaultsDelegate> syncDelegate; // @synthesize syncDelegate=_syncDelegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSDate *lastUpdated;
 - (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnitTo:(int)arg2;
 - (BOOL)areCitiesDefault:(id)arg1;

@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)defaultTimeWindowForContextType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateInterval *timeWindow; // @synthesize timeWindow=_timeWindow;
 @property(readonly, nonatomic) unsigned long long contextType; // @synthesize contextType=_contextType;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithContextType:(unsigned long long)arg1 location:(id)arg2 timeWindow:(id)arg3;

@@ -16,8 +16,8 @@
     NUImageHistogram *_histogram;
 }
 
-@property(readonly) NUImageHistogram *histogram; // @synthesize histogram=_histogram;
 - (void).cxx_destruct;
+@property(readonly) NUImageHistogram *histogram; // @synthesize histogram=_histogram;
 - (id)initWithHistogram:(id)arg1;
 
 // Remaining properties

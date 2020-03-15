@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL allowsInstallLater; // @synthesize allowsInstallLater=_allowsInstallLater;
 @property(readonly, nonatomic) BOOL restartRequired; // @synthesize restartRequired=_restartRequired;
 @property(readonly, nonatomic) BOOL isCritical; // @synthesize isCritical=_isCritical;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSString *productName; // @synthesize productName=_productName;
 @property(readonly, copy, nonatomic) NSString *humanReadableName; // @synthesize humanReadableName=_humanReadableName;
 @property(readonly, copy, nonatomic) NSString *productKey; // @synthesize productKey=_productKey;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

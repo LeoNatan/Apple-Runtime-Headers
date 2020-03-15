@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *excludedNetworkRules; // @synthesize excludedNetworkRules=_excludedNetworkRules;
 @property(copy) NSArray *includedNetworkRules; // @synthesize includedNetworkRules=_includedNetworkRules;
-- (void).cxx_destruct;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (BOOL)validateNetworkRule:(id)arg1 collectErrors:(id)arg2;

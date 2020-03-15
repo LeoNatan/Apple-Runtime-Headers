@@ -13,8 +13,8 @@
     UITextView *_textView;
 }
 
-@property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

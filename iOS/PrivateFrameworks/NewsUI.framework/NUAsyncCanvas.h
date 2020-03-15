@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_layoutQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *layoutQueue; // @synthesize layoutQueue=_layoutQueue;
 @property(readonly, nonatomic) NUCanvas *canvas; // @synthesize canvas=_canvas;
-- (void).cxx_destruct;
 - (void)layoutInBounds:(struct CGRect)arg1 traitCollection:(id)arg2 callbackQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)layoutInBounds:(struct CGRect)arg1 traitCollection:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithCanvas:(id)arg1 layoutQueue:(id)arg2;

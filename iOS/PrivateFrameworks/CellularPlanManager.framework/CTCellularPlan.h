@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresUserConsent; // @synthesize requiresUserConsent=_requiresUserConsent;
 @property(retain, nonatomic) NSNumber *subscriptionStatusOverride; // @synthesize subscriptionStatusOverride=_subscriptionStatusOverride;
 @property(retain, nonatomic) CTCellularPlanSubscription *subscription; // @synthesize subscription=_subscription;
 @property(retain, nonatomic) CTCellularPlanProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) _Bool isHomePlan; // @synthesize isHomePlan=_isHomePlan;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (Class)referenceRangesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *referenceRanges; // @synthesize referenceRanges=_referenceRanges;
 @property(retain, nonatomic) HDCodableInspectableValue *value; // @synthesize value=_value;
 @property(retain, nonatomic) HDCodableMedicalCodingList *codings; // @synthesize codings=_codings;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

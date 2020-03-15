@@ -21,11 +21,11 @@
     NSNumber *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic) _Bool reachable; // @synthesize reachable=_reachable;
 @property(readonly, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *controllerName; // @synthesize controllerName=_controllerName;
-- (void).cxx_destruct;
 - (_Bool)_isSystemSleeping;
 - (void)_setReachableOrSelected:(_Bool)arg1 newValue:(_Bool)arg2;
 - (void)dispatchButtonEventWithInfo:(id)arg1;

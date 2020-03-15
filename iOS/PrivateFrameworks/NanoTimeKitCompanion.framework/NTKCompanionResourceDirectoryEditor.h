@@ -31,11 +31,11 @@
 + (_Bool)_transcodeStillImageOf:(id)arg1 forPhoto:(id)arg2 withCrop:(struct CGRect)arg3 into:(id)arg4;
 + (id)_transcodeAsset:(id)arg1 withCrop:(struct CGRect)arg2 into:(id)arg3 previewOnly:(_Bool)arg4;
 + (id)_linkPhoto:(id)arg1 to:(id)arg2 previewOnly:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *galleryPreviewResourceDirectory; // @synthesize galleryPreviewResourceDirectory=_galleryPreviewResourceDirectory;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *resourceDirectory; // @synthesize resourceDirectory=_resourceDirectory;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)finalizeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)generateGalleryPreviewResourceDirectoryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_deleteResourceDirectoryHardLinkIfNecessary;

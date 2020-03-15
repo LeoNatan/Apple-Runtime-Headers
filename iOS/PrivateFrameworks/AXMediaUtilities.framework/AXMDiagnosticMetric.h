@@ -24,9 +24,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long representedMetrics; // @synthesize representedMetrics=_representedMetrics;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)start;
 - (void)_capturMachAbsoluteTime:(unsigned long long *)arg1 taskInfo:(struct mach_task_basic_info *)arg2 vmInfo:(struct task_vm_info *)arg3;

@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
     _Bool _displayRedeem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIITunesPassConfiguration *ITunesPassConfiguration; // @synthesize ITunesPassConfiguration=_iTunesPassConfiguration;
 @property(nonatomic) __weak id <SKUIRedeemCameraViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_showRedeemer:(_Bool)arg1;
 - (void)_resumeRedeemer;
 - (void)_pauseRedeemer;

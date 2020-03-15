@@ -15,10 +15,10 @@
     NSString *_bundleId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(copy, nonatomic) NSArray *order; // @synthesize order=_order;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)_start;
 - (void)_handleReply:(id)arg1;
 - (id)initWithOrder:(id)arg1 bundleId:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

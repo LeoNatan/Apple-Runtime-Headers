@@ -20,10 +20,10 @@
 }
 
 + (id)_dataForHomeKitItem:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *sortedHomeKitObjectIdentifiers; // @synthesize sortedHomeKitObjectIdentifiers=_sortedHomeKitObjectIdentifiers;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, nonatomic) __weak id <HMApplicationData> applicationDataContainer; // @synthesize applicationDataContainer=_applicationDataContainer;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_actionSetTypeComparator;
 - (CDUnknownBlockType)_reorderableObjectDateAddedComparator;
 - (CDUnknownBlockType)_reorderableObjectTitleComparator;

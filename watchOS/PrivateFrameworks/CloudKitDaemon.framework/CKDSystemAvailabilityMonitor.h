@@ -17,10 +17,10 @@
 }
 
 + (id)sharedMonitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *availabilityQueue; // @synthesize availabilityQueue=_availabilityQueue;
 @property(retain, nonatomic) NSMutableSet *watcherWrappers; // @synthesize watcherWrappers=_watcherWrappers;
 @property unsigned int availabilityState; // @synthesize availabilityState=_availabilityState;
-- (void).cxx_destruct;
 - (void)unregisterWatcher:(id)arg1;
 - (void)registerWatcher:(id)arg1;
 - (_Bool)_systemMayNowBeReady;

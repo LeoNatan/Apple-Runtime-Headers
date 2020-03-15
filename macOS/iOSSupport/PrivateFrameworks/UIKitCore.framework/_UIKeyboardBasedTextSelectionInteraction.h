@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)beginOneFingerSelectWithTranslation:(struct CGPoint)arg1 executionContext:(id)arg2;
 - (void)transitionFromBlockMagnifyToBlockSelectWithLocation:(struct CGPoint)arg1 viaDrag:(BOOL)arg2;
 - (BOOL)enclosingScrollViewIsScrolling;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)owner;
 - (void)_processGestureForCustomHighlighter:(id)arg1;

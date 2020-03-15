@@ -10,7 +10,7 @@
 #import <SafariServices/_SFActivityDelegate-Protocol.h>
 #import <SafariServices/_SFLinkPreviewHeaderDelegate-Protocol.h>
 
-@class NSDate, NSString, NSTimer, SFBrowserPersonaAnalyticsHelper, SFUserNotification, WKProcessPool, _SFWebViewUsageMonitor;
+@class NSDate, NSString, NSTimer, SFBrowserPersonaAnalyticsHelper, SFSystemAlert, WKProcessPool, _SFWebViewUsageMonitor;
 
 __attribute__((visibility("hidden")))
 @interface SFBrowserServiceViewController : _SFBrowserContentViewController <_SFActivityDelegate, _SFLinkPreviewHeaderDelegate, SFServiceViewControllerProtocol>
@@ -27,15 +27,15 @@ __attribute__((visibility("hidden")))
     SFBrowserPersonaAnalyticsHelper *_cachedAnalyticsHelper;
     NSTimer *_redirectNotificationTimer;
     _Bool _hostApplicationIsForeground;
-    SFUserNotification *_userNotification;
+    SFSystemAlert *_webAuthenticationDataSharingConfirmation;
     NSString *_hostApplicationCallbackURLScheme;
 }
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
-@property(copy, nonatomic) NSString *hostApplicationCallbackURLScheme; // @synthesize hostApplicationCallbackURLScheme=_hostApplicationCallbackURLScheme;
-@property(retain, nonatomic) SFUserNotification *userNotification; // @synthesize userNotification=_userNotification;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *hostApplicationCallbackURLScheme; // @synthesize hostApplicationCallbackURLScheme=_hostApplicationCallbackURLScheme;
+@property(retain, nonatomic) SFSystemAlert *webAuthenticationDataSharingConfirmation; // @synthesize webAuthenticationDataSharingConfirmation=_webAuthenticationDataSharingConfirmation;
 - (void)linkPreviewHeader:(id)arg1 didEnableLinkPreview:(_Bool)arg2;
 - (void)browserViewDidReceiveTouchEvent:(id)arg1;
 - (void)safariActivity:(id)arg1 didFinish:(_Bool)arg2;
@@ -77,6 +77,7 @@ __attribute__((visibility("hidden")))
 - (id)_webDataStoreRootURL;
 - (void)openCurrentURLInSafari;
 - (void)_didResolveDestinationURL:(id)arg1 pendingAppLinkCheck:(_Bool)arg2;
+- (void)prepareForDisplayWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startResolveRedirectionForURL:(id)arg1;
 - (void)decideCookieSharingForURL:(id)arg1 callbackURLScheme:(id)arg2;
 - (void)loadURL:(id)arg1;

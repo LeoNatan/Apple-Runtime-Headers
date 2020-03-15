@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
-@property(nonatomic) _Bool shouldEdit; // @synthesize shouldEdit=_shouldEdit;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldEdit; // @synthesize shouldEdit=_shouldEdit;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (void)setRenameFunc:(const function_b1fce659 *)arg1;

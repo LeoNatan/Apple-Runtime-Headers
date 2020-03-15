@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _preferredContentPlatterTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldEnableUserInteractionOnPlatter; // @synthesize shouldEnableUserInteractionOnPlatter=_shouldEnableUserInteractionOnPlatter;
 @property(nonatomic) BOOL shouldScaleContentViewToAspectFitPlatter; // @synthesize shouldScaleContentViewToAspectFitPlatter=_shouldScaleContentViewToAspectFitPlatter;
 @property(retain, nonatomic) _UIPreviewPresentationPlatterView *contentPlatterView; // @synthesize contentPlatterView=_contentPlatterView;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasPerformedInitialLayout; // @synthesize hasPerformedInitialLayout=_hasPerformedInitialLayout;
 @property(retain, nonatomic) _UIPreviewPresentationPlatterView *revealPlatterView; // @synthesize revealPlatterView=_revealPlatterView;
 @property(nonatomic) __weak id <UIViewControllerPreviewing_Internal> previewingContext; // @synthesize previewingContext=_previewingContext;
-- (void).cxx_destruct;
 - (void)_updateFromInteractionEffect:(id)arg1;
 @property(readonly, nonatomic) struct CGRect _computedPlatterFrame;
 - (BOOL)_shouldReduceMotion;

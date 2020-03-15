@@ -25,6 +25,7 @@
 + (Class)defaultSuggestionsType;
 + (Class)serviceProviderCapabilitiesType;
 + (Class)serviceProviderSupportedNetworksType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *defaultSuggestions; // @synthesize defaultSuggestions=_defaultSuggestions;
 @property(retain, nonatomic) NSString *merchantID; // @synthesize merchantID=_merchantID;
 @property(retain, nonatomic) NSString *action; // @synthesize action=_action;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSMutableArray *serviceProviderSupportedNetworks; // @synthesize serviceProviderSupportedNetworks=_serviceProviderSupportedNetworks;
 @property(retain, nonatomic) NSString *serviceProviderCountryCode; // @synthesize serviceProviderCountryCode=_serviceProviderCountryCode;
 @property(retain, nonatomic) NSString *serviceProviderIdentifier; // @synthesize serviceProviderIdentifier=_serviceProviderIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

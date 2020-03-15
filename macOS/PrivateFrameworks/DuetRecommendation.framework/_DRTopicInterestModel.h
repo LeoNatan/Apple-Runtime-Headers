@@ -24,9 +24,9 @@
 + (id)topicPresentedCategory;
 + (id)topicActionCategoryType;
 + (id)newsStorageDirectory;
+- (void).cxx_destruct;
 @property(retain) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 @property(retain) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
-- (void).cxx_destruct;
 - (void)purgeEntriesWithPrefix:(id)arg1 earlierThanDate:(id)arg2;
 - (void)purgeEntriesEarlierThanDate:(id)arg1;
 - (id)computeSummaryWithFilter:(id)arg1;

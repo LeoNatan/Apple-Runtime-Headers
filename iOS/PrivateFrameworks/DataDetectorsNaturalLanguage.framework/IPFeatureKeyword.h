@@ -17,10 +17,10 @@
 }
 
 + (id)featureKeywordWithType:(unsigned long long)arg1 string:(id)arg2 matchRange:(struct _NSRange)arg3;
+- (void).cxx_destruct;
 @property unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSArray *eventTypes; // @synthesize eventTypes=_eventTypes;
 @property(retain) NSString *keywordString; // @synthesize keywordString=_keywordString;
-- (void).cxx_destruct;
 - (id)humandReadableEventTypes;
 - (id)description;
 - (id)typeDescription;

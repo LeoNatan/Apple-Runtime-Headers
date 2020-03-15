@@ -22,6 +22,7 @@
     CalUILayerBackedView *_colorBar;
 }
 
+- (void).cxx_destruct;
 @property BOOL isTransit; // @synthesize isTransit=_isTransit;
 @property BOOL isWalking; // @synthesize isWalking=_isWalking;
 @property(retain) CalUILayerBackedView *colorBar; // @synthesize colorBar=_colorBar;
@@ -32,7 +33,6 @@
 @property(retain) CalUILayerBackedView *divider; // @synthesize divider=_divider;
 @property(retain) CalUIAXTextField *text; // @synthesize text=_text;
 @property(retain) NSImageView *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)setFont:(id)arg1;
 - (void)setTravelDuration:(double)arg1;

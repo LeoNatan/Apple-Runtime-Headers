@@ -20,6 +20,7 @@
     NSString *_ppid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(readonly, nonatomic) NSString *ppid; // @synthesize ppid=_ppid;
 @property(readonly, nonatomic) NSString *blacklisted; // @synthesize blacklisted=_blacklisted;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(readonly, nonatomic) NSString *modelName; // @synthesize modelName=_modelName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isBlacklisted;
 - (_Bool)isCertified;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *servKey; // @synthesize servKey=_servKey;
 @property(nonatomic) void *sessionRef; // @synthesize sessionRef=_sessionRef;
-- (void).cxx_destruct;
 - (_Bool)_prepareContextWithBag:(id)arg1 error:(id *)arg2;
 - (_Bool)verifyData:(id)arg1 bag:(id)arg2 error:(id *)arg3;
 - (id)signData:(id)arg1 bag:(id)arg2 error:(id *)arg3;

@@ -20,11 +20,11 @@
     double _lastDrawnAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastDrawnAlpha; // @synthesize lastDrawnAlpha=_lastDrawnAlpha;
 @property(nonatomic) double transitionAlpha; // @synthesize transitionAlpha=_transitionAlpha;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) _Bool isLowEndDevice; // @synthesize isLowEndDevice=_isLowEndDevice;
-- (void).cxx_destruct;
 - (double)alphaForIndexPath:(id)arg1 visible:(_Bool)arg2 transition:(double)arg3;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

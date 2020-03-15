@@ -31,6 +31,7 @@
 }
 
 + (id)sceneWithSize:(struct CGSize)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldHideVariantsBelowCurrent; // @synthesize shouldHideVariantsBelowCurrent=_shouldHideVariantsBelowCurrent;
 @property(retain, nonatomic) UIColor *alternativeTickColor; // @synthesize alternativeTickColor=_alternativeTickColor;
 @property(retain, nonatomic) UIColor *tickColor; // @synthesize tickColor=_tickColor;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) SKNode *circle; // @synthesize circle=_circle;
 @property(readonly, nonatomic) SKNode *background; // @synthesize background=_background;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)handColor;
 - (id)auxiliaryScrubbingObscuredNodes;
 - (void)endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;

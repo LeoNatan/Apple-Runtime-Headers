@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     CKMessageAcknowledgmentDraftDescriptor *_draft;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKMessageAcknowledgmentDraftDescriptor *draft; // @synthesize draft=_draft;
 @property(retain, nonatomic) UIButton *itemButton; // @synthesize itemButton=_itemButton;
 @property(readonly, nonatomic) CKAcknowledgmentGlyphView *acknowledgmentGlyphView; // @synthesize acknowledgmentGlyphView=_acknowledgmentGlyphView;
 @property(nonatomic) __weak id <CKMessageAcknowledgmentPickerBarItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long messageAcknowledgmentType; // @synthesize messageAcknowledgmentType=_messageAcknowledgmentType;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool displaySelected;
 - (void)layoutSubviews;
 - (void)itemButtonTapped:(id)arg1;

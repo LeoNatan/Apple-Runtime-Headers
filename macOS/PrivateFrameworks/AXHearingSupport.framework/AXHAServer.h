@@ -22,12 +22,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *updates; // @synthesize updates=_updates;
 @property(nonatomic) BOOL hearingAidConnectedOrReachable; // @synthesize hearingAidConnectedOrReachable=_hearingAidConnectedOrReachable;
 @property(nonatomic) BOOL hearingAidReachableForAudioTransfer; // @synthesize hearingAidReachableForAudioTransfer=_hearingAidReachableForAudioTransfer;
 @property(retain, nonatomic) NSArray *availableControllers; // @synthesize availableControllers=_availableControllers;
 @property(retain, nonatomic) NSArray *availableHearingAids; // @synthesize availableHearingAids=_availableHearingAids;
-- (void).cxx_destruct;
 - (void)stopLiveListen;
 - (void)startLiveListen;
 - (void)registerListener:(id)arg1 forLiveListenLevelsHandler:(CDUnknownBlockType)arg2;

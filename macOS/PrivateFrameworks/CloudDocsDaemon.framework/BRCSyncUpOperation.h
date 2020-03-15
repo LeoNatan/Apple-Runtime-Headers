@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)syncUpOperationForZone:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BRCServerZone *serverZone; // @synthesize serverZone=_serverZone;
 @property(readonly, nonatomic) float cost; // @synthesize cost=_cost;
 @property(copy, nonatomic) CDUnknownBlockType syncUpCompletionBlock; // @synthesize syncUpCompletionBlock=_syncUpCompletionBlock;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableArray *createdAppLibraryNames; // @synthesize createdAppLibraryNames=_createdAppLibraryNames;
 @property(retain, nonatomic) NSMutableArray *packagesInFlight; // @synthesize packagesInFlight=_packagesInFlight;
 @property(retain, nonatomic) NSMutableArray *recordsToSave; // @synthesize recordsToSave=_recordsToSave;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_performUpdateSharingProtectionDataIfNecessary:(CDUnknownBlockType)arg1;
 - (BOOL)_recordIsIWorkShareable:(id)arg1;

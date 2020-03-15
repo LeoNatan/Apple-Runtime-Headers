@@ -14,6 +14,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)targetDataInfo;
+- (id)currentSelectedCalendar;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 @property(readonly, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (void)updateLists;

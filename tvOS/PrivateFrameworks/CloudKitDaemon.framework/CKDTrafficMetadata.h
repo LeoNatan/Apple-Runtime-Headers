@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool parsingStandaloneMessage; // @synthesize parsingStandaloneMessage=_parsingStandaloneMessage;
 @property(retain, nonatomic) NSString *requestClassName; // @synthesize requestClassName=_requestClassName;
 @property(retain, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *method; // @synthesize method=_method;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

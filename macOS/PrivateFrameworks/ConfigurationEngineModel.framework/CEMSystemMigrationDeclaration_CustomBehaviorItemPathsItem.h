@@ -19,11 +19,11 @@
 + (id)buildRequiredOnlyWithSourcePath:(id)arg1 withSourcePathInUserHome:(id)arg2 withTargetPath:(id)arg3 withTargetPathInUserHome:(id)arg4;
 + (id)buildWithSourcePath:(id)arg1 withSourcePathInUserHome:(id)arg2 withTargetPath:(id)arg3 withTargetPathInUserHome:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadTargetPathInUserHome; // @synthesize payloadTargetPathInUserHome=_payloadTargetPathInUserHome;
 @property(copy, nonatomic) NSString *payloadTargetPath; // @synthesize payloadTargetPath=_payloadTargetPath;
 @property(copy, nonatomic) NSNumber *payloadSourcePathInUserHome; // @synthesize payloadSourcePathInUserHome=_payloadSourcePathInUserHome;
 @property(copy, nonatomic) NSString *payloadSourcePath; // @synthesize payloadSourcePath=_payloadSourcePath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -22,6 +22,7 @@
     NSDate *_lastUpdateTime;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *lastUpdateTime; // @synthesize lastUpdateTime=_lastUpdateTime;
 @property(nonatomic) BOOL isDirty; // @synthesize isDirty=_isDirty;
 @property(copy, nonatomic) CDUnknownBlockType audioPropertyHandlerBlock; // @synthesize audioPropertyHandlerBlock=_audioPropertyHandlerBlock;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned int sourceID; // @synthesize sourceID=_sourceID;
 @property(nonatomic) unsigned int deviceID; // @synthesize deviceID=_deviceID;
 @property(nonatomic) __weak PLAudioAgent *ctx; // @synthesize ctx=_ctx;
-- (void).cxx_destruct;
 - (BOOL)updateDefaultAudioDeviceInfo;
 - (void)handleAudioDevicePropertyChange:(unsigned int)arg1 addresses:(const struct AudioObjectPropertyAddress *)arg2;
 - (void)cleanAndUpdateDeviceInfo;

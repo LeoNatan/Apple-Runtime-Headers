@@ -22,8 +22,8 @@
 + (id)slotFilterWithIdiomFilter:(id)arg1 scaleFilter:(id)arg2 memoryFilter:(id)arg3 graphicsFeatureSetFilter:(id)arg4 colorSpaceFilter:(id)arg5;
 + (id)slotFilterWithNilMatching:(long long)arg1 idioms:(id)arg2 scales:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
 + (id)slotFilterUnionedWithStandardUniversalCounterpart:(_Bool)arg1 idioms:(id)arg2 scales:(id)arg3 memoryClasses:(id)arg4 graphicsFeatureSets:(id)arg5 colorSpaces:(id)arg6;
-@property(readonly) IBICCubeFace *cubeFace; // @synthesize cubeFace=_cubeFace;
 - (void).cxx_destruct;
+@property(readonly) IBICCubeFace *cubeFace; // @synthesize cubeFace=_cubeFace;
 - (void)captureComponents;
 - (id)detailAreaPath;
 - (long long)compareDisplayOrder:(id)arg1;

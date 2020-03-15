@@ -14,8 +14,8 @@
     NSMutableDictionary *_dynamicInterfaceViews;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *dynamicInterfaceViews; // @synthesize dynamicInterfaceViews=_dynamicInterfaceViews;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *dynamicInterfaceViews; // @synthesize dynamicInterfaceViews=_dynamicInterfaceViews;
 - (id)actionGroup;
 - (void)action:(id)arg1 actionTarget:(id)arg2;
 - (void)removeDynamicInterfaceObject:(id)arg1;

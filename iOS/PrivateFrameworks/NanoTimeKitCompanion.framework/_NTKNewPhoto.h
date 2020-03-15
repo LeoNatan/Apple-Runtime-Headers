@@ -15,10 +15,10 @@
     struct CGRect _crop;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long subsampleFactor; // @synthesize subsampleFactor=_subsampleFactor;
 @property(nonatomic) struct CGRect crop; // @synthesize crop=_crop;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 
 @end
 

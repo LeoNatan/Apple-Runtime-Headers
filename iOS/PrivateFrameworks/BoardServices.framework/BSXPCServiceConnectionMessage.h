@@ -21,9 +21,9 @@
 }
 
 + (id)messageWithXPCConnection:(id)arg1 targetQueue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSServiceDispatchingQueue> replyQueue; // @synthesize replyQueue=_replyQueue;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)sendSynchronouslyWithError:(out id *)arg1;
 - (id)createReply;

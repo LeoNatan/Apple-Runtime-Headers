@@ -15,8 +15,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSXPCConnection *searchHelperConnection; // @synthesize searchHelperConnection=_searchHelperConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *searchHelperConnection; // @synthesize searchHelperConnection=_searchHelperConnection;
 - (void)removeClient:(id)arg1;
 - (id)searchHelperConnectionRequestedByClient:(id)arg1;
 - (id)init;

@@ -17,8 +17,8 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void)_handleProfileRemoveForSession:(id)arg1 request:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)_handleProfileInstallForSession:(id)arg1 request:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)_handleProfilesGetForSession:(id)arg1 request:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;

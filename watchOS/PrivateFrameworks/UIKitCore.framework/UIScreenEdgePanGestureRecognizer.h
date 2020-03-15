@@ -22,8 +22,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)_shouldSupportStylusTouches;
 + (_Bool)_shouldDefaultToTouches;
-@property(nonatomic) unsigned int edges; // @synthesize edges=_edges;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int edges; // @synthesize edges=_edges;
 - (id)debugDictionary;
 - (unsigned int)touchedEdges;
 - (void)setMinimumNumberOfTouches:(unsigned int)arg1;

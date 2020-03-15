@@ -17,9 +17,9 @@
     NSMutableArray *__pendingTimers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *_pendingTimers; // @synthesize _pendingTimers=__pendingTimers;
 @property(nonatomic) double currentSimulatedTime; // @synthesize currentSimulatedTime=_currentSimulatedTime;
-- (void).cxx_destruct;
 - (void)mockTimerInvalidated:(id)arg1;
 - (void)reset;
 - (void)fireAllPendingTimers;

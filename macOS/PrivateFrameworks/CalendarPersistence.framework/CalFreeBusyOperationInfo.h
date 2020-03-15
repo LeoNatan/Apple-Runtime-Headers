@@ -18,12 +18,12 @@
     id <CalFreeBusyCacheDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CalFreeBusyCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly) CalDateRange *timeRange; // @synthesize timeRange=_timeRange;
 @property(readonly) NSString *eventSharedUid; // @synthesize eventSharedUid=_eventSharedUid;
 @property(readonly) NSArray *addresses; // @synthesize addresses=_addresses;
-- (void).cxx_destruct;
 - (void)notifyFreeBusyOperationWithResponseInfo:(id)arg1;
 - (BOOL)containsAddress:(id)arg1;
 - (BOOL)matchesSharedUid:(id)arg1 andTimeRange:(id)arg2;

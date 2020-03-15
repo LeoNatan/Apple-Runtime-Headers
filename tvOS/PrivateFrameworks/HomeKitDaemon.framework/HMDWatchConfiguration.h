@@ -16,11 +16,11 @@
     NSUUID *_primaryHome;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *primaryHome; // @synthesize primaryHome=_primaryHome;
 @property(retain, nonatomic) NSDictionary *homeConfig; // @synthesize homeConfig=_homeConfig;
 @property(retain, nonatomic) NSDictionary *metadataConfig; // @synthesize metadataConfig=_metadataConfig;
 @property(retain, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
-- (void).cxx_destruct;
 - (void)setConfigVersion:(id)arg1 forHome:(id)arg2;
 - (void)setHomeConfiguration:(id)arg1;
 - (id)description;

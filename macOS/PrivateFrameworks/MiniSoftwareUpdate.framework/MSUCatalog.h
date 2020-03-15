@@ -21,13 +21,13 @@
 }
 
 + (BOOL)_validateDictionary:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *testMode; // @synthesize testMode=_testMode;
 @property(retain) NSDate *loadDate; // @synthesize loadDate=_loadDate;
 @property(retain) NSArray *products; // @synthesize products=_products;
 @property long long version; // @synthesize version=_version;
 @property unsigned long long options; // @synthesize options=_options;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_synthesizedCatalogDictionaryFromLocalDirectoryURL:(id)arg1 options:(unsigned long long)arg2;
 - (BOOL)_parseFromDictionary:(id)arg1 error:(id *)arg2;

@@ -21,10 +21,10 @@
     NSMutableSet *_updatingApps;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *updatingApps; // @synthesize updatingApps=_updatingApps;
 @property(readonly, nonatomic) __weak NSObject<OS_dispatch_queue> *callQueue; // @synthesize callQueue=_callQueue;
 @property(readonly, nonatomic) __weak id <CSLApplicationUpgradeMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removedBundleIdentifier:(id)arg1;
 - (void)_didAddApplication:(id)arg1;
 - (void)_upgradeEndedForBundleIdentifier:(id)arg1;

@@ -24,6 +24,7 @@
     NSDate *_lastSleepTime;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *lastSleepTime; // @synthesize lastSleepTime=_lastSleepTime;
 @property(retain) PLEntryNotificationOperatorComposition *wakeEntryNotification; // @synthesize wakeEntryNotification=_wakeEntryNotification;
 @property(retain) PLEntryNotificationOperatorComposition *sleepEntryNotification; // @synthesize sleepEntryNotification=_sleepEntryNotification;
@@ -34,7 +35,6 @@
 @property(retain) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)handleTimerFire;
 @property(retain, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(nonatomic) BOOL timerActive;

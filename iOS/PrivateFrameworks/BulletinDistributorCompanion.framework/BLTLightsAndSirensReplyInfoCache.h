@@ -17,10 +17,10 @@
 }
 
 + (id)sharedReplyCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSDate *timeToCheck; // @synthesize timeToCheck=_timeToCheck;
 @property(retain, nonatomic) NSMutableDictionary *localReplyInfo; // @synthesize localReplyInfo=_localReplyInfo;
-- (void).cxx_destruct;
 - (void)_checkCache;
 - (_Bool)_isTimeToCheck;
 - (void)_setNextTimeToCheck;

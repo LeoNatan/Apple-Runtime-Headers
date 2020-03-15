@@ -57,6 +57,7 @@
 + (id)defaultFont;
 + (Class)_backgroundViewClass;
 + (Class)_fieldEditorClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_drawsDebugBaselines, setter=_setDrawsDebugBaselines:) BOOL drawsDebugBaselines; // @synthesize drawsDebugBaselines=_drawsDebugBaselines;
 @property(nonatomic) struct NSDirectionalEdgeInsets clearButtonInsets; // @synthesize clearButtonInsets=_clearButtonInsets;
 @property(nonatomic) long long clearButtonMode; // @synthesize clearButtonMode=_clearButtonMode;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) __weak id <CNAtomTextViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (BOOL)isFirstResponder;
 - (BOOL)resignFirstResponder;

@@ -20,6 +20,7 @@
     PKPaymentTransactionGroup *_rewards;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentTransactionGroup *rewards; // @synthesize rewards=_rewards;
 @property(retain, nonatomic) PKPaymentTransactionGroup *orderedCredits; // @synthesize orderedCredits=_orderedCredits;
 @property(retain, nonatomic) PKPaymentTransactionGroup *orderedInterestCharges; // @synthesize orderedInterestCharges=_orderedInterestCharges;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned long long summaryType; // @synthesize summaryType=_summaryType;
-- (void).cxx_destruct;
 
 @end
 

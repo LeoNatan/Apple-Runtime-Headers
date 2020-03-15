@@ -17,12 +17,12 @@
     MTTimer *_nextTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s cacheLock; // @synthesize cacheLock=_cacheLock;
 @property(nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(retain, nonatomic) MTTimer *nextTimer; // @synthesize nextTimer=_nextTimer;
 @property(retain, nonatomic) NSMutableArray *orderedTimers; // @synthesize orderedTimers=_orderedTimers;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
-- (void).cxx_destruct;
 - (void)getCachedTimersSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getCachedTimersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_getCachedTimersWithCompletion:(CDUnknownBlockType)arg1 doSynchronous:(_Bool)arg2;

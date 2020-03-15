@@ -16,9 +16,9 @@
     long long _origin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)encodeToItems:(id)arg1;
 - (id)initFromItems:(id)arg1;
 - (id)initWithItems:(id)arg1 origin:(long long)arg2;

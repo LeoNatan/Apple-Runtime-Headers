@@ -14,11 +14,11 @@
 {
     BOOL _hasDarkBackground;
     id _iconImage;
-    struct NSColor *_bubbleColor;
-    struct NSColor *_thinkingDotColor;
+    NSColor *_bubbleColor;
+    NSColor *_thinkingDotColor;
     double _bubbleOpacity;
     double _thinkingDotOpacity;
-    struct NSColor *_customBubbleColor;
+    NSColor *_customBubbleColor;
     CALayer *_bubbleContainer;
     CALayer *_smallBubble;
     CALayer *_mediumBubble;
@@ -43,9 +43,10 @@
 + (struct CGPoint)smallBubbleGrowOffset;
 + (struct CGRect)smallBubbleFrame;
 + (BOOL)supportsTypingIndicatorAnimation;
-+ (struct NSColor *)defaultThinkingDotColor;
-+ (struct NSColor *)defaultBubbleColor;
++ (id)defaultThinkingDotColor;
++ (id)defaultBubbleColor;
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *iconImageLayer; // @synthesize iconImageLayer=_iconImageLayer;
 @property(retain, nonatomic) CAReplicatorLayer *thinkingDots; // @synthesize thinkingDots=_thinkingDots;
 @property(retain, nonatomic) CALayer *thinkingDot; // @synthesize thinkingDot=_thinkingDot;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSColor *bubbleColor; // @synthesize bubbleColor=_bubbleColor;
 @property(retain, nonatomic) id iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) BOOL hasDarkBackground; // @synthesize hasDarkBackground=_hasDarkBackground;
-- (void).cxx_destruct;
 - (void)stopAnimation;
 - (void)startShrinkAnimationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)stopPulseAnimation;

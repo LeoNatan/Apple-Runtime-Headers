@@ -24,10 +24,10 @@
 + (void)setRegistry:(id)arg1;
 + (id)registry;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFPromise *promise; // @synthesize promise=_promise;
 @property(readonly) MFMessageLoadingContext *loadingContext; // @synthesize loadingContext=_loadingContext;
 @property(readonly) EFCancelationToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)_didLoadContentEvent:(id)arg1 error:(id)arg2;
 - (void)stopLoading;
 - (void)startLoading;

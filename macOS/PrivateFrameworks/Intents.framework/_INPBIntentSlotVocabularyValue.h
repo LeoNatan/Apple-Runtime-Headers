@@ -22,11 +22,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSString *pronunciation; // @synthesize pronunciation=_pronunciation;
 @property(copy, nonatomic) NSString *phrase; // @synthesize phrase=_phrase;
 @property(copy, nonatomic) NSArray *examples; // @synthesize examples=_examples;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

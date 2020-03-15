@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSExtensionContext *_context;
 }
 
-@property __weak NSExtensionContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property __weak NSExtensionContext *context; // @synthesize context=_context;
 - (void)animateDismissalOfViewController:(id)arg1 fromViewController:(id)arg2;
 - (void)animatePresentationOfViewController:(id)arg1 fromViewController:(id)arg2;
 

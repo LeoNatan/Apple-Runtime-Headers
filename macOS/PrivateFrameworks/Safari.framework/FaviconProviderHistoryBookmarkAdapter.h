@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     id <FaviconProviderHistoryBookmarkAdapterDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FaviconProviderHistoryBookmarkAdapterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FaviconProviderHistoryBookmarkAdapterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_notifyDelegateIfReady;
 - (void)_bookmarksDidReload;
 - (void)_bookmarkURLDidChangeFrom:(id)arg1 to:(id)arg2;

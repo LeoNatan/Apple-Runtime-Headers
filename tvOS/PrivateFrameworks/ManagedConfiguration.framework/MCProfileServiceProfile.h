@@ -19,13 +19,13 @@
     NSArray *_bogusPayloads;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportedServerVersion; // @synthesize supportedServerVersion=_supportedServerVersion;
 @property(readonly, nonatomic) _Bool confirmInstallation; // @synthesize confirmInstallation=_confirmInstallation;
 @property(retain, nonatomic) NSData *enrollmentIdentityPersistentID; // @synthesize enrollmentIdentityPersistentID=_enrollmentIdentityPersistentID;
 @property(readonly, retain, nonatomic) id challenge; // @synthesize challenge=_challenge;
 @property(readonly, retain, nonatomic) NSArray *deviceAttributes; // @synthesize deviceAttributes=_deviceAttributes;
 @property(retain, nonatomic) NSString *URLString; // @synthesize URLString=_URLString;
-- (void).cxx_destruct;
 - (id)description;
 - (id)stubDictionary;
 - (id)managedPayloads;

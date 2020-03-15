@@ -18,8 +18,8 @@
     _Bool _allowIOSurface;
 }
 
-@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (id)fetchImage;
 - (id)initWithImage:(id)arg1 context:(id)arg2 scaleFactor:(double)arg3 allowIOSurface:(_Bool)arg4;
 

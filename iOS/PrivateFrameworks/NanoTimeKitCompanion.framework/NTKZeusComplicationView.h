@@ -24,6 +24,7 @@
 }
 
 + (id)viewForComplicationType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) _Bool legibilityEnabled; // @synthesize legibilityEnabled=_legibilityEnabled;
 @property(readonly, nonatomic) NTKZeusColorPalette *palette; // @synthesize palette=_palette;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
-- (void).cxx_destruct;
 - (void)applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (void)applyPalette:(id)arg1;
 - (void)_updateLegibility;

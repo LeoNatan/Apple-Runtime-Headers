@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)effect:(id)arg1 withSource:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <_UIImageContentLayoutSource> source; // @synthesize source=_source;
 @property(readonly, nonatomic) id <_UIImageContentEffect> effect; // @synthesize effect=_effect;
-- (void).cxx_destruct;
 - (id)_renditionWithCGImageProvider:(CDUnknownBlockType)arg1 size:(struct CGSize)arg2 lazy:(BOOL)arg3;
 
 @end

@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     UITextField *_passwordField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *passwordField; // @synthesize passwordField=_passwordField;
 @property(retain, nonatomic) MCProfile *updatingProfile; // @synthesize updatingProfile=_updatingProfile;
-- (void).cxx_destruct;
 - (void)_showWrongRemovalPasswordAlert;
 - (void)_showRemovalWarningActionSheet;
 - (void)_showRemovalWarningAlert;

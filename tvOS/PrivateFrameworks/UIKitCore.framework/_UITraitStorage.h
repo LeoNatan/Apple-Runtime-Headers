@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id _object;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)_propertyDescriptionString;
 - (id)description;
 - (void)applyRecordsMatchingTraitCollection:(id)arg1;

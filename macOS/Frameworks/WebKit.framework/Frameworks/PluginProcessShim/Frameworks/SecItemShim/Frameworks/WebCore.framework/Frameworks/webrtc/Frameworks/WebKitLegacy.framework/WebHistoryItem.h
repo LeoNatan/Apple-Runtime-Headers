@@ -39,7 +39,7 @@
 - (id)initWithURLString:(id)arg1 title:(id)arg2 lastVisitedTimeInterval:(double)arg3;
 - (id)init;
 - (BOOL)_hasCachedPageExpired;
-- (BOOL)_isInPageCache;
+- (BOOL)_isInBackForwardCache;
 - (id)_redirectURLs;
 - (BOOL)lastVisitWasFailure;
 - (id)URL;

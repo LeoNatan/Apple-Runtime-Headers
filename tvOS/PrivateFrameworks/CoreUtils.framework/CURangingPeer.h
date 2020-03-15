@@ -15,10 +15,10 @@
     NSString *_deviceModel;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(copy, nonatomic) NSData *deviceIRK; // @synthesize deviceIRK=_deviceIRK;
 @property(copy, nonatomic) NSData *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

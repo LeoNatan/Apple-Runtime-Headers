@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     AVPlayerViewController *_playerViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(nonatomic) __weak id <AVScanningDelegate> scanningDelegate; // @synthesize scanningDelegate=_scanningDelegate;
 @property(nonatomic) __weak id <AVPlayerViewControllerPlaybackDelegate><NSObject> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(nonatomic) __weak id <AVPlayerViewControllerDelegate><AVPlayerViewControllerDelegatePrivate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_hasStopScanning;
 - (id)delegateIfRespondsTo:(SEL)arg1;
 - (void)willTransitionToVisibilityOfTransportBar:(_Bool)arg1 withAnimationCoordinator:(id)arg2;

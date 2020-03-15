@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)subtitleTextColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *subtitleYToBottomConstraint; // @synthesize subtitleYToBottomConstraint=_subtitleYToBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *subtitleToTitleLabelYConstraint; // @synthesize subtitleToTitleLabelYConstraint=_subtitleToTitleLabelYConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelYConstraint; // @synthesize titleLabelYConstraint=_titleLabelYConstraint;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)updateFonts;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

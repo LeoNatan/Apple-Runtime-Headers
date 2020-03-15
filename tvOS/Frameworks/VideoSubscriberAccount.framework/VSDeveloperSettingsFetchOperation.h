@@ -14,9 +14,9 @@
     VSDeveloperServiceConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSDeveloperServiceConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)init;
 

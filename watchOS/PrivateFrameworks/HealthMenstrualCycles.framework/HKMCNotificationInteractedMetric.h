@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)eventName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *action; // @synthesize action=_action;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSDictionary *eventPayload; // @synthesize eventPayload=_eventPayload;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCategory:(id)arg1 action:(id)arg2;
 

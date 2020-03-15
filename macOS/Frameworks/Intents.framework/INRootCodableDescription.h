@@ -6,16 +6,20 @@
 
 #import <Intents/INCodableDescription.h>
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
 @interface INRootCodableDescription : INCodableDescription
 {
+    NSDictionary *_referencedCodableDescriptionsByClassName;
     NSArray *_referencedCodableDescriptions;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic, setter=_setReferencedCodableDescriptions:) NSArray *referencedCodableDescriptions; // @synthesize referencedCodableDescriptions=_referencedCodableDescriptions;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setReferencedCodableDescriptions:) NSArray *referencedCodableDescriptions; // @synthesize referencedCodableDescriptions=_referencedCodableDescriptions;
+- (void)_reestablishReferencedCodableDescriptionsUsingTypes:(id)arg1;
+- (void)_establishReferencedCodableDescriptionsUsingTypes:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *_referencedCodableDescriptionsByClassName; // @synthesize _referencedCodableDescriptionsByClassName;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

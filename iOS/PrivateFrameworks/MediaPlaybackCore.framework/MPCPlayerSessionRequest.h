@@ -17,9 +17,9 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) MPPropertySet *sessionProperties; // @synthesize sessionProperties=_sessionProperties;
 @property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MPPropertySet *queueSectionProperties;
 @property(readonly, nonatomic) MPPropertySet *queueItemProperties;
 @property(readonly, nonatomic) MPPropertySet *playingItemProperties;

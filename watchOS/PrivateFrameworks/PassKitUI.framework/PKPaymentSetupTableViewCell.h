@@ -16,9 +16,9 @@
 }
 
 + (struct CGSize)defaultImageViewSize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showBetaBadge; // @synthesize showBetaBadge=_showBetaBadge;
 @property(readonly, nonatomic) UIImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

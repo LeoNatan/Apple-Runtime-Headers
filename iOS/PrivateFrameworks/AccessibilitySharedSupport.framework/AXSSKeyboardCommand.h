@@ -19,9 +19,9 @@
 
 + (id)commandWithStandardCommandIdentifier:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *standardCommandIdentifier; // @synthesize standardCommandIdentifier=_standardCommandIdentifier;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualToCommand:(id)arg1;
@@ -30,6 +30,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithType:(id)arg1;
 - (id)initWithStandardCommandIdentifier:(id)arg1;
 - (id)_initWithType:(id)arg1 standardCommandIdentifier:(id)arg2;
 

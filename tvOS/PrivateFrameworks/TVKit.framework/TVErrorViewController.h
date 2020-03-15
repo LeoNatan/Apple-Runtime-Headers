@@ -16,9 +16,9 @@
     NSString *_errorMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(copy, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
-- (void).cxx_destruct;
 - (void)_updateColors;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;

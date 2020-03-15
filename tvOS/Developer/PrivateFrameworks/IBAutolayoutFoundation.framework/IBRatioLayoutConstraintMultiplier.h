@@ -15,10 +15,10 @@
     NSString *_separator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *separator; // @synthesize separator=_separator;
 @property(readonly, nonatomic) double denominator; // @synthesize denominator=_denominator;
 @property(readonly, nonatomic) double numerator; // @synthesize numerator=_numerator;
-- (void).cxx_destruct;
 - (id)multiplierBySimplifyingExpression;
 - (id)multiplierByIncrementing;
 - (id)multiplierByDecrementing;

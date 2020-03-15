@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSObject<TVPPlayback> *_player;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool playerHasFinishedLoading; // @synthesize playerHasFinishedLoading=_playerHasFinishedLoading;
 @property(nonatomic) __weak NSObject<TVPPlayback> *player; // @synthesize player=_player;
 @property(retain, nonatomic) NSTimer *bookmarkPeriodicSaveTimer; // @synthesize bookmarkPeriodicSaveTimer=_bookmarkPeriodicSaveTimer;
-- (void).cxx_destruct;
 - (void)_updatePlayCountForMediaItem:(id)arg1 player:(id)arg2;
 - (void)_updateBookmarkTimeForMediaItem:(id)arg1 player:(id)arg2 playbackOfMediaItemIsEnding:(_Bool)arg3;
 - (void)_bookmarkPeriodicSaveTimerFired:(id)arg1;

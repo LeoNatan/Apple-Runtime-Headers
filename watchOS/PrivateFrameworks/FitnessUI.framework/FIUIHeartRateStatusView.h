@@ -25,12 +25,12 @@
     UIImageView *_reloadArrowView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *reloadArrowView; // @synthesize reloadArrowView=_reloadArrowView;
 @property(retain, nonatomic) UIImageView *reloadOutlineView; // @synthesize reloadOutlineView=_reloadOutlineView;
 @property(retain, nonatomic) FIUIAnimatingSpriteImageView *animatingImageView; // @synthesize animatingImageView=_animatingImageView;
 @property(retain, nonatomic) UIImageView *fullHeartImageView; // @synthesize fullHeartImageView=_fullHeartImageView;
 @property(nonatomic) _Bool animationsSuspended; // @synthesize animationsSuspended=_animationsSuspended;
-- (void).cxx_destruct;
 - (void)unloadAnimationAssets;
 - (id)_loadHeartMeasuringImage;
 - (void)_startMeasuringAnimationAnimated:(_Bool)arg1;

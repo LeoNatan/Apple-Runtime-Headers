@@ -26,13 +26,13 @@
 + (id)aspectForObjectsWithClassNamed:(id)arg1 signalOrMethodName:(id)arg2 advice:(int)arg3 block:(CDUnknownBlockType)arg4;
 + (id)aspectForObjectsImplementingProtocolNamed:(id)arg1 signalOrMethodName:(id)arg2 advice:(int)arg3 block:(CDUnknownBlockType)arg4;
 + (id)aspectForRegistrationKey:(id)arg1 signalOrMethodName:(id)arg2 advice:(int)arg3 block:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unregisterBlock; // @synthesize unregisterBlock=_unregisterBlock;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) NSString *registrationKey; // @synthesize registrationKey=_registrationKey;
 @property(copy, nonatomic) NSString *signalName; // @synthesize signalName=_signalName;
 @property(nonatomic) int advice; // @synthesize advice=_advice;
 @property(nonatomic) __weak NSObject *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)unregister;
 - (void)activateWithObject:(id)arg1 arguments:(id)arg2 returnValue:(id)arg3 newArguments:(id *)arg4 newReturnValue:(id *)arg5;
 - (void)tmlDispose;

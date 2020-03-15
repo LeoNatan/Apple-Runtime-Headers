@@ -13,8 +13,8 @@
     NSString *_sceneID;
 }
 
-@property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 - (BOOL)isExternalSceneLayer;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

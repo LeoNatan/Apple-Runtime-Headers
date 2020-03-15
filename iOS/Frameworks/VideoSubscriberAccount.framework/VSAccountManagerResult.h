@@ -13,8 +13,8 @@
     NSOperation *_operation;
 }
 
-@property(retain, nonatomic) NSOperation *operation; // @synthesize operation=_operation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperation *operation; // @synthesize operation=_operation;
 - (void)cancel;
 - (id)initWithOperation:(id)arg1;
 - (id)init;

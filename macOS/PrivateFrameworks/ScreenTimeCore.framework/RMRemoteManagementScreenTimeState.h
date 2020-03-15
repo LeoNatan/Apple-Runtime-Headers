@@ -46,6 +46,7 @@
 }
 
 + (Class)limitedCategoriesType;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL contentPrivacyRestrictionsEnabled; // @synthesize contentPrivacyRestrictionsEnabled=_contentPrivacyRestrictionsEnabled;
 @property(nonatomic) unsigned long long alwaysAllowedAppsCount; // @synthesize alwaysAllowedAppsCount=_alwaysAllowedAppsCount;
 @property(retain, nonatomic) NSMutableArray *limitedCategories; // @synthesize limitedCategories=_limitedCategories;
@@ -59,7 +60,6 @@
 @property(nonatomic) unsigned long long daysWithScreenTimeEnabled; // @synthesize daysWithScreenTimeEnabled=_daysWithScreenTimeEnabled;
 @property(nonatomic) BOOL screenTimeEnabled; // @synthesize screenTimeEnabled=_screenTimeEnabled;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -26,9 +26,9 @@
 + (id)currentApplicationDataUrlQueue;
 + (id)applicationDataUrlQueueWithURL:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsVersioning; // @synthesize supportsVersioning=_supportsVersioning;
 @property(readonly, copy, nonatomic) NSURL *diskCacheURL; // @synthesize diskCacheURL=_diskCacheURL;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *dataModelName; // @synthesize dataModelName=_dataModelName;
 - (void)invalidateMemoryCaches;
 - (void)invalidateDiskCaches;

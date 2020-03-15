@@ -33,6 +33,7 @@
 + (BOOL)logSomethingAboutTheUsageOfPeriodsInTheseFileNames:(id)arg1 lastPathComponent:(id)arg2;
 + (id)_pathToDocumentsDirectory;
 + (BOOL)_path:(id)arg1 pointsToSameInodeAsPath:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL titleWasChosenAutomatically; // @synthesize titleWasChosenAutomatically=_titleWasChosenAutomatically;
 @property BOOL isDuplicate; // @synthesize isDuplicate=_isDuplicate;
 @property BOOL extensionHiddenEnd; // @synthesize extensionHiddenEnd=_extensionHiddenEnd;
@@ -48,7 +49,6 @@
 @property struct _NSRange startEditingRange; // @synthesize startEditingRange=_startEditingRange;
 @property(copy) NSString *userEditedDisplayName; // @synthesize userEditedDisplayName=_userEditedDisplayName;
 @property(copy) NSString *startDisplayName; // @synthesize startDisplayName=_startDisplayName;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)resolveFinalURLInPBOXOverwriteOK:(BOOL)arg1 forClientPID:(int)arg2 andEUID:(unsigned int)arg3 usingFinalTitle:(id)arg4;
 - (id)findAvailableURLForFinalDisplayName:(id)arg1 withFileSystemUniquing:(BOOL)arg2;

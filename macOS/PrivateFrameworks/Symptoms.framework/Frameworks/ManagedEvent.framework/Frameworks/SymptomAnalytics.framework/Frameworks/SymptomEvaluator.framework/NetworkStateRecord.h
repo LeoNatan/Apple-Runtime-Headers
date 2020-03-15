@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) long long stateLabelAssigned; // @synthesize stateLabelAssigned=_stateLabelAssigned;
 @property(readonly) long long stateType; // @synthesize stateType=_stateType;
 @property(readonly) NSString *stateEndingNetworkId; // @synthesize stateEndingNetworkId=_stateEndingNetworkId;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) long long stateSlotId; // @synthesize stateSlotId=_stateSlotId;
 @property(readonly) long long stateDayOfWeek; // @synthesize stateDayOfWeek=_stateDayOfWeek;
 @property(readonly) long long stateAge; // @synthesize stateAge=_stateAge;
-- (void).cxx_destruct;
 - (void)assignLabel:(long long)arg1;
 - (void)assignDayOfWeek:(long long)arg1;
 - (id)description;

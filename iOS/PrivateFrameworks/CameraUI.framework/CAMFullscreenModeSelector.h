@@ -25,6 +25,7 @@
     struct CGPoint __touchBeganPosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setHighlightedIndex:) long long _highlightedIndex; // @synthesize _highlightedIndex=__highlightedIndex;
 @property(nonatomic, setter=_setTouchBeganPosition:) struct CGPoint _touchBeganPosition; // @synthesize _touchBeganPosition=__touchBeganPosition;
 @property(nonatomic, setter=_setTouchBeganTime:) double _touchBeganTime; // @synthesize _touchBeganTime=__touchBeganTime;
@@ -35,7 +36,6 @@
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;
 @property(nonatomic) id <CAMFullscreenModeSelectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) id <CAMFullscreenModeSelectorDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateAlpha;
 - (void)_updateTitles;

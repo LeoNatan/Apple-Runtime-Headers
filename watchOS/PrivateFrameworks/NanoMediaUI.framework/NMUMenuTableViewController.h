@@ -16,9 +16,9 @@
     id <NMUMenuTableViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NMUMenuTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *sectionedItems; // @synthesize sectionedItems=_sectionedItems;
-- (void).cxx_destruct;
 - (void)_setNeedsVisibleItemsUpdate;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;

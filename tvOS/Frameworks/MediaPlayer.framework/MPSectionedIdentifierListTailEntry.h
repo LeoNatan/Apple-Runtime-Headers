@@ -16,8 +16,8 @@
 }
 
 + (id)tailEntryWithSectionHeadEntry:(id)arg1;
-@property(nonatomic) __weak MPSectionedIdentifierListHeadEntry *sectionHeadEntry; // @synthesize sectionHeadEntry=_sectionHeadEntry;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MPSectionedIdentifierListHeadEntry *sectionHeadEntry; // @synthesize sectionHeadEntry=_sectionHeadEntry;
 - (id)previousEntry;
 @property(readonly, nonatomic) long long entryType;
 

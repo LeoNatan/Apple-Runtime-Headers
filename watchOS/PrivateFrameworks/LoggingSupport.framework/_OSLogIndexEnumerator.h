@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     _OSLogCatalogFilter *_catalogFilter;
 }
 
-@property(readonly, nonatomic) NSMutableArray *oversizeChunks; // @synthesize oversizeChunks=_oversizeChunks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *oversizeChunks; // @synthesize oversizeChunks=_oversizeChunks;
 - (void)enumerateTracepointsInRange:(struct os_timesync_range_s *)arg1 timesync:(struct _os_timesync_db_s *)arg2 options:(unsigned int)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)_initTimesyncBounds:(CDStruct_42ec109f *)arg1;
 - (void)dealloc;

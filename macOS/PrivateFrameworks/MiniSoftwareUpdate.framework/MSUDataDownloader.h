@@ -16,9 +16,9 @@
 
 + (id)downloaderForCatalogURL:(id)arg1 options:(unsigned long long)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)sendSynchronousRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
 - (void)sendAsynchronousRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly) BOOL requiresEV;

@@ -18,8 +18,8 @@
     NSAppearance *_appearance;
 }
 
-@property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 - (void)cancel;
 @property(readonly, nonatomic, getter=isLoading) BOOL loading;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -22,6 +22,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSURL *heroFrameURL; // @synthesize heroFrameURL=_heroFrameURL;
 @property(readonly) unsigned long long confidenceLevel; // @synthesize confidenceLevel=_confidenceLevel;
 @property(readonly) NSDictionary *homePresenceByPairingIdentity; // @synthesize homePresenceByPairingIdentity=_homePresenceByPairingIdentity;
@@ -29,7 +30,6 @@
 @property(readonly) NSData *heroFrameData; // @synthesize heroFrameData=_heroFrameData;
 @property(readonly) unsigned long long significantEventReason; // @synthesize significantEventReason=_significantEventReason;
 @property(readonly) NSDate *dateOfOccurrence; // @synthesize dateOfOccurrence=_dateOfOccurrence;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (void)_cleanUpHeroFrameAsset;
 - (id)_assetForHeroFrame:(id *)arg1;

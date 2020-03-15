@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreCallingDeviceChanges; // @synthesize ignoreCallingDeviceChanges=_ignoreCallingDeviceChanges;
 @property(nonatomic) _Bool newestFirst; // @synthesize newestFirst=_newestFirst;
 @property(retain, nonatomic) CKDPAssetsToDownload *assetsToDownload; // @synthesize assetsToDownload=_assetsToDownload;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKDPRequestedFields *requestedFields; // @synthesize requestedFields=_requestedFields;
 @property(retain, nonatomic) CKDPRecordZoneIdentifier *zoneIdentifier; // @synthesize zoneIdentifier=_zoneIdentifier;
 @property(retain, nonatomic) NSData *syncContinuationToken; // @synthesize syncContinuationToken=_syncContinuationToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

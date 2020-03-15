@@ -35,6 +35,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)defaultContextWithPrimaryLanguage:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *dictationInputOrigin; // @synthesize dictationInputOrigin=_dictationInputOrigin;
 @property(copy, nonatomic) NSDictionary *keyboardGlobalLanguagePriors; // @synthesize keyboardGlobalLanguagePriors=_keyboardGlobalLanguagePriors;
 @property(copy, nonatomic) NSDictionary *keyboardConversationLanguagePriors; // @synthesize keyboardConversationLanguagePriors=_keyboardConversationLanguagePriors;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSDictionary *languageCodeOverrides; // @synthesize languageCodeOverrides=_languageCodeOverrides;
 @property(copy, nonatomic) NSString *primaryLanguageCode; // @synthesize primaryLanguageCode=_primaryLanguageCode;
 @property(copy, nonatomic) NSString *currentKeyboard; // @synthesize currentKeyboard=_currentKeyboard;
-- (void).cxx_destruct;
 - (id)simulatingLanguageCodes;
 - (void)setSimulatingLanguageCodes:(id)arg1;
 - (_Bool)shouldSimulateLanguageDetectorAssetsAvailability;

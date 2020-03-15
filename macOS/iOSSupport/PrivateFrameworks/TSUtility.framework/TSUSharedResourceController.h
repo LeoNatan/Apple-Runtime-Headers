@@ -30,8 +30,8 @@
     NSString *_UUID;
 }
 
-@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (id)description;
 - (void)waitForResourceWithLockAndPerformSynchronousAccessUsingBlock:(CDUnknownBlockType)arg1;
 - (void)acquireResourceWithLockAndPerformSynchronousAccessUsingBlock:(CDUnknownBlockType)arg1;

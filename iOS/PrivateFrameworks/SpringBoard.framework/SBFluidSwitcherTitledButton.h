@@ -13,8 +13,8 @@
     NSString *_title;
 }
 
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @end

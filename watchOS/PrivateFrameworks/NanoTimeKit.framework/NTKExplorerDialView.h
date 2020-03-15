@@ -26,8 +26,8 @@
     unsigned int _density;
 }
 
-@property(nonatomic) unsigned int density; // @synthesize density=_density;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int density; // @synthesize density=_density;
 - (id)_minuteTickShrinkAndGrow;
 - (id)_minuteClusterExpandAnimation;
 - (id)_minuteTickBreakAnimation;

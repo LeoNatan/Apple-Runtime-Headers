@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptorForContactPropertiesSupportingPredicateEvaluation;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSPredicate *predicateForSelectionOfProperty; // @synthesize predicateForSelectionOfProperty=_predicateForSelectionOfProperty;
 @property(copy, nonatomic) NSPredicate *predicateForSelectionOfContact; // @synthesize predicateForSelectionOfContact=_predicateForSelectionOfContact;
 @property(copy, nonatomic) NSPredicate *predicateForEnablingContact; // @synthesize predicateForEnablingContact=_predicateForEnablingContact;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool clientWantsSingleProperty; // @synthesize clientWantsSingleProperty=_clientWantsSingleProperty;
 @property(nonatomic) _Bool clientWantsSingleContact; // @synthesize clientWantsSingleContact=_clientWantsSingleContact;
 @property(nonatomic) __weak id <CNContactPickerContentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_selectedProperties:(id)arg1;
 - (void)_selectedContacts:(id)arg1;
 - (void)_selectedProperty:(id)arg1;

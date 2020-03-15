@@ -17,8 +17,8 @@
 }
 
 + (id)gapWrapperSearchConfigurationWithHeadlineSearchConfiguration:(id)arg1;
-@property(retain, nonatomic) id <NFLFeedLayoutSearchConfiguration> headlineSearchConfiguration; // @synthesize headlineSearchConfiguration=_headlineSearchConfiguration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <NFLFeedLayoutSearchConfiguration> headlineSearchConfiguration; // @synthesize headlineSearchConfiguration=_headlineSearchConfiguration;
 - (id)preferredOrderingOfTileInfos:(id)arg1;
 - (Class)rankedLayoutGenerationOperationClassForRequest:(id)arg1;
 - (double)transitionRankFromRowTypeToNone:(unsigned long long)arg1;

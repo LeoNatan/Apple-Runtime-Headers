@@ -29,6 +29,7 @@
     ACUICredentialPromptViewController *_credentialPromptVC;
 }
 
+- (void).cxx_destruct;
 @property(retain) ACUICredentialPromptViewController *credentialPromptVC; // @synthesize credentialPromptVC=_credentialPromptVC;
 @property(retain) ACUIAccountDetailsViewController *accountDetailsVC; // @synthesize accountDetailsVC=_accountDetailsVC;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
@@ -43,7 +44,6 @@
 @property(retain) NSButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(retain) NSView *dataclassesTableView; // @synthesize dataclassesTableView=_dataclassesTableView;
 @property(retain) NSString *password; // @synthesize password=_password;
-- (void).cxx_destruct;
 - (void)saveAccountFailedWithError:(id)arg1;
 - (void)saveAccountSucceeded;
 - (void)didUpdatePassword:(id)arg1;

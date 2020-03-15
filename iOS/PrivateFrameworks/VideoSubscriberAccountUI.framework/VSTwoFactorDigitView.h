@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSArray *_digits;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *digits; // @synthesize digits=_digits;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) unsigned long long digitCount; // @synthesize digitCount=_digitCount;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(readonly, nonatomic) _Bool hasText; // @synthesize hasText=_hasText;
-- (void).cxx_destruct;
 - (void)insertText:(id)arg1;
 - (void)deleteBackward;
 - (void)setupDigitViews;

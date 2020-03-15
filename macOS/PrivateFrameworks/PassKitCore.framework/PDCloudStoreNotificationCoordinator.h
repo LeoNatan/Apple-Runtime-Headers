@@ -25,9 +25,9 @@
     PDPassCloudStoreContainer *_passContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PDPassCloudStoreContainer *passContainer; // @synthesize passContainer=_passContainer;
 @property(retain, nonatomic) PDApplePayCloudStoreContainer *applePayContainer; // @synthesize applePayContainer=_applePayContainer;
-- (void).cxx_destruct;
 - (void)_unregisterForPushNotifications;
 - (void)_registerForPushNotifications;
 - (id)_containerForItemType:(unsigned long long)arg1;
@@ -35,7 +35,7 @@
 - (id)_containerWithIdentifier:(id)arg1;
 - (id)_containerWithZoneName:(id)arg1;
 - (void)applyPushNotificationToken:(id)arg1;
-- (void)_processCloudStorePushNotificationForContainer:(id)arg1;
+- (void)_processCloudStorePushNotificationForContainer:(id)arg1 zoneName:(id)arg2;
 - (void)handlePushNotificationForTopic:(id)arg1 userInfo:(id)arg2;
 - (id)pushNotificationTopics;
 - (void)_unscheduleBackgroundContainerSetupActivities;
@@ -57,16 +57,18 @@
 - (void)registerObserver:(id)arg1;
 - (void)cloudStoreContainerShouldUnscheduleAllBackgroundActivities:(id)arg1;
 - (void)cloudStoreContainer:(id)arg1 didChangeContainerState:(unsigned long long)arg2;
-- (void)cloudStoreContainer:(id)arg1 createdZoneWithName:(id)arg2;
+- (void)cloudStoreContainer:(id)arg1 createdZoneWithName:(id)arg2 forContainerName:(id)arg3;
 - (void)recreateZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)invalidateServerChangeTokens;
+- (void)deleteZone:(id)arg1 containerName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)copyDataFromZoneName:(id)arg1 toZoneName:(id)arg2 inContainerName:(id)arg3 passUniqueID:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)simulateCloudStorePushForContainerIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetContainerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)cloudStoreSpecificKeysForItem:(id)arg1;
+- (void)removeRecordWithRecordName:(id)arg1 zoneName:(id)arg2 containerName:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 includeServerData:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)cloudStoreStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cloudStoreStatusForContainer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_initialCloudDatabaseSetupForContainer:(id)arg1 operationGroupNameSuffix:(id)arg2 shouldScheduleBackgroundActivity:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;

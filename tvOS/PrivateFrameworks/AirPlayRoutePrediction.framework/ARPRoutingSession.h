@@ -24,10 +24,10 @@
 + (double)microLocationCorrelationGracePeriod;
 + (double)minimumRoutingEventDuration;
 + (double)routingSessionTimeout;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) NSDictionary *microLocationProbabilityVector; // @synthesize microLocationProbabilityVector=_microLocationProbabilityVector;
 @property(readonly, copy, nonatomic) NSString *outputDeviceID; // @synthesize outputDeviceID=_outputDeviceID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

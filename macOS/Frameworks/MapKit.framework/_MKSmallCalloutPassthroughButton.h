@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     NSControl *_targetControl;
 }
 
-@property(retain, nonatomic) NSControl *targetControl; // @synthesize targetControl=_targetControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSControl *targetControl; // @synthesize targetControl=_targetControl;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)_forwardAction:(SEL)arg1 toTargetViewWithEvent:(id)arg2;

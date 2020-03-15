@@ -19,6 +19,7 @@
     unsigned long long _singleEncodedWordLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long singleEncodedWordLength; // @synthesize singleEncodedWordLength=_singleEncodedWordLength;
 @property(copy, nonatomic) NSData *decodedText; // @synthesize decodedText=_decodedText;
 @property(nonatomic) long long encodedWordEncoding; // @synthesize encodedWordEncoding=_encodedWordEncoding;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, nonatomic) unsigned long long stringEncoding; // @synthesize stringEncoding=_stringEncoding;
-- (void).cxx_destruct;
 - (const char *)_findNextByteThatNeedsQEncodingBetweenStartByte:(const char *)arg1 endByte:(const char *)arg2;
 - (void)_writeQEncodedTextAndEndSequenceToHeaderBytes:(char *)arg1 fromDecodedBytes:(const char *)arg2 length:(unsigned long long)arg3;
 - (unsigned long long)_lengthOfQEncodedTextForBytes:(const char *)arg1 length:(unsigned long long)arg2;

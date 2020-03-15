@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSetupPayloadRetry;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL accessoryRequiresCode; // @synthesize accessoryRequiresCode=_accessoryRequiresCode;
 @property(retain, nonatomic) NSDate *phaseStartDate; // @synthesize phaseStartDate=_phaseStartDate;
 @property(retain, nonatomic) NAFuture *pairingFuture; // @synthesize pairingFuture=_pairingFuture;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) HMAccessorySetupCompletedInfo *completedInfo; // @synthesize completedInfo=_completedInfo;
 @property(retain, nonatomic) HFSetupAccessoryResult *setupResult; // @synthesize setupResult=_setupResult;
 @property(readonly, nonatomic) HFSetupPairingContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_assertValidTransitionFromPhase:(unsigned long long)arg1 toPhase:(unsigned long long)arg2;
 - (void)_failPairingWithDiscoveredAccessory:(id)arg1 error:(id)arg2;
 - (void)_finishPairingWithDiscoveredAccessory:(id)arg1;

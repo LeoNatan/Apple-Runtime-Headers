@@ -23,10 +23,10 @@
     UITabBarItem *_selectedTabBarItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITabBarItem *selectedTabBarItem; // @synthesize selectedTabBarItem=_selectedTabBarItem;
 @property(retain, nonatomic) NSArray *tabBarItems; // @synthesize tabBarItems=_tabBarItems;
 @property(readonly, nonatomic) PUTabbedLibraryViewController *tabbedLibraryViewController; // @synthesize tabbedLibraryViewController=_tabbedLibraryViewController;
-- (void).cxx_destruct;
 - (void)tabbedLibraryViewControllerDidChangeSelectedViewController:(id)arg1;
 - (void)tabbedLibraryViewControllerDidChangeViewControllers:(id)arg1;
 - (void)sidebarDataSourceController:(id)arg1 didChangeDataSourceWithChangeDetails:(id)arg2;

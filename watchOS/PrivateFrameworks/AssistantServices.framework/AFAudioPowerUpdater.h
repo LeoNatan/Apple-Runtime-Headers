@@ -20,9 +20,9 @@
     int _frequency;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int frequency; // @synthesize frequency=_frequency;
 @property(readonly, nonatomic) id <AFAudioPowerProviding> provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (float)_unsafePeakPower;
 - (float)_unsafeAveragePower;
 - (id)_createNewXPCWrapper;

@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *customClientId; // @synthesize customClientId=_customClientId;
 @property(readonly, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToChangeTrackingClientId:(id)arg1;

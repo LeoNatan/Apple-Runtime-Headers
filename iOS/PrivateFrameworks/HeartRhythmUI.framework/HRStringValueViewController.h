@@ -13,8 +13,8 @@
     NSString *_value;
 }
 
-@property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

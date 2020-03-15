@@ -16,9 +16,9 @@
     NSURL *_cardURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *homeURL; // @synthesize homeURL=_homeURL;
 @property(readonly, nonatomic) NSURL *cardURL; // @synthesize cardURL=_cardURL;
-- (void).cxx_destruct;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)startTaskGroup;
 - (id)_newPropPatchTask;

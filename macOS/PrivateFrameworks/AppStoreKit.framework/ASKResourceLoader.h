@@ -20,6 +20,7 @@
     ASKResourceCache *_cachedResources;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ASKResourceCache *cachedResources; // @synthesize cachedResources=_cachedResources;
 @property(readonly, nonatomic) NSMapTable *requestsByCacheKey; // @synthesize requestsByCacheKey=_requestsByCacheKey;
 @property(readonly, nonatomic) NSMutableDictionary *pendingOperations; // @synthesize pendingOperations=_pendingOperations;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSOperationQueue *requestQueue; // @synthesize requestQueue=_requestQueue;
 @property(readonly, nonatomic) NSOperationQueue *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property(readonly, nonatomic) NSOperationQueue *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (void)postDidLoadAllForReason:(long long)arg1;
 - (void)postDidIdleIfIdle;
 - (void)postDidBeginLoadingIfIdle;

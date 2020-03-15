@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) PXPlacesSnapshotFactory *factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (void)requestMapSnapshotForQuery:(id)arg1 ofSize:(struct CGSize)arg2 traitCollectionForSnapshot:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)init;
 

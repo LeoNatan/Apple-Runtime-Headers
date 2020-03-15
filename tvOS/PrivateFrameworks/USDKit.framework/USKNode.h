@@ -6,7 +6,7 @@
 
 #import <USDKit/USKObject.h>
 
-@class NSDictionary, NSString, USKToken;
+@class NSArray, NSDictionary, NSString, USKToken;
 
 @interface USKNode : USKObject
 {
@@ -18,17 +18,24 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)parent;
+@property(readonly, nonatomic) NSArray *schemaTypes;
 @property(readonly, nonatomic) USKToken *typeName;
 @property(readonly, nonatomic) NSString *type;
 - (id)propertyList;
+- (id)loadedSubtreeIterator;
+- (id)loadedChildIterator;
 - (id)subtreeIterator;
 - (id)childIterator;
 - (id)path;
 - (id)name;
 - (id)newCustomPropertyWithName:(id)arg1 type:(id)arg2 role:(id)arg3;
+- (id)newPropertyWithName:(id)arg1 type:(id)arg2 role:(id)arg3 variability:(_Bool)arg4;
 - (id)newPropertyWithName:(id)arg1 type:(id)arg2 role:(id)arg3;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
 - (id)masterNode;
 - (_Bool)isInstanceNode;
+- (_Bool)removeProperty:(id)arg1;
 - (id)property:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *properties;
 - (id)inheritedProperty:(id)arg1;
@@ -43,6 +50,8 @@
 - (_Bool)hasVariantSets;
 - (void)addVariant:(id)arg1 variantSet:(id)arg2;
 - (void)addVariantSet:(id)arg1;
+- (void)clearReferences;
+- (void)addReferenceWithPath:(id)arg1 nodePath:(id)arg2 offset:(id)arg3;
 - (void)addReferenceWithPath:(id)arg1 nodePath:(id)arg2;
 - (void)addReferenceWithURL:(id)arg1 nodePath:(id)arg2;
 - (id)customMetadataWithKey:(id)arg1;
@@ -52,6 +61,7 @@
 - (_Bool)setDictionaryMetadataWithKey:(id)arg1 dictionaryKey:(id)arg2 value:(id)arg3;
 - (_Bool)setMetadataWithKey:(id)arg1 value:(id)arg2;
 - (id)metadata;
+- (_Bool)hasSchemaType:(id)arg1;
 - (void)applyType:(id)arg1;
 - (struct UsdPrim)usdPrim;
 - (id)initWithUsdPrim:(struct UsdPrim)arg1;

@@ -22,6 +22,7 @@
     WiFiLexicon *_wifiLexicon;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WiFiLexicon *wifiLexicon; // @synthesize wifiLexicon=_wifiLexicon;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <WiFiLocationProvider> locationProvider; // @synthesize locationProvider=_locationProvider;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSSet *sources; // @synthesize sources=_sources;
 @property(copy, nonatomic) NSSet *providers; // @synthesize providers=_providers;
 @property(nonatomic) double availabilityMatchMaximumAge; // @synthesize availabilityMatchMaximumAge=_availabilityMatchMaximumAge;
-- (void).cxx_destruct;
 - (id)findRecommendationsForScannedNetwork:(id)arg1;
 - (id)findRecommendationForScannedNetwork:(id)arg1;
 - (void)_handle3BarsRelevancyAdded:(id)arg1 removed:(id)arg2;

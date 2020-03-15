@@ -17,11 +17,11 @@
     id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;
 @property(retain, nonatomic) FCFileCoordinatedNotificationDropbox *fileCoordinatedNotificationDropbox; // @synthesize fileCoordinatedNotificationDropbox=_fileCoordinatedNotificationDropbox;
 @property(copy, nonatomic) NSString *deviceOSVersion; // @synthesize deviceOSVersion=_deviceOSVersion;
 @property(copy, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 - (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
 - (id)_notificationDataInDropbox;
 - (void)_updateNotificationDropboxDataWithBaseURL:(id)arg1 notificationUserID:(id)arg2 deviceToken:(id)arg3 storefrontID:(id)arg4;

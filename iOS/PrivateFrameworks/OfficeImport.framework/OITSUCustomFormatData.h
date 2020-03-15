@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)customFormatData;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isComplexFormat; // @synthesize isComplexFormat=_isComplexFormat;
 @property(nonatomic) _Bool formatContainsIntegerToken; // @synthesize formatContainsIntegerToken=_formatContainsIntegerToken;
 @property(nonatomic) _Bool isConditional; // @synthesize isConditional=_isConditional;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSIndexSet *interstitialStringInsertionIndexes; // @synthesize interstitialStringInsertionIndexes=_interstitialStringInsertionIndexes;
 @property(copy, nonatomic) NSArray *interstitialStrings; // @synthesize interstitialStrings=_interstitialStrings;
 @property(copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

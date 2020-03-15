@@ -15,8 +15,8 @@
     NSXPCListenerEndpoint *_listenerEndpoint;
 }
 
-@property(retain, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;

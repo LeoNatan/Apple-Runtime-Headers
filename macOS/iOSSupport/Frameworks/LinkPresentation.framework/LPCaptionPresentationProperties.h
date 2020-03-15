@@ -17,12 +17,12 @@
     NSNumber *_maximumNumberOfLines;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maximumNumberOfLines; // @synthesize maximumNumberOfLines=_maximumNumberOfLines;
 @property(nonatomic) double textScale; // @synthesize textScale=_textScale;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

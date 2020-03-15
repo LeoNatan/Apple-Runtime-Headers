@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     id <SiriSuggestionsStartPageItemDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriSuggestionsStartPageItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double headerBottomMargin; // @synthesize headerBottomMargin=_headerBottomMargin;
 @property(nonatomic) BOOL usesCompactAppearance; // @synthesize usesCompactAppearance=_usesCompactAppearance;
 @property(readonly, nonatomic) NSViewController<SiriSuggestionsStartPageItemHostedViewControllerProtocol> *hostedViewController; // @synthesize hostedViewController=_hostedViewController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double expandedHeight;
 @property(readonly, nonatomic) double collapsedHeight;
 @property(readonly, nonatomic) BOOL supportsCollapsing;

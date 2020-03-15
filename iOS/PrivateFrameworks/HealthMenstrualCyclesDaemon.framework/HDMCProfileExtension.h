@@ -19,11 +19,11 @@
     HKMCSettingsManager *_settingsManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKMCSettingsManager *settingsManager; // @synthesize settingsManager=_settingsManager;
 @property(readonly, nonatomic) HDMCNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(retain, nonatomic) HDMCAnalysisManager *analysisManager; // @synthesize analysisManager=_analysisManager;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)initWithProfile:(id)arg1;
 
 // Remaining properties

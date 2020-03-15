@@ -8,8 +8,8 @@
 
 #import <Safari/NSFilePresenter-Protocol.h>
 
-@class BrowserWindowController, DownloadFile, NSArray, NSData, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSURLRequest, NSURLResponse, WBSCoalescedAsynchronousWriter, WBSDownloadFileUnarchiver;
-@protocol DownloadProgressEntryDelegate, OS_dispatch_queue, WBSSandboxExtensionToken, WebDownloadDelegate;
+@class BrowserWindowController, DownloadFile, NSArray, NSData, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSURLRequest, NSURLResponse, WBSCoalescedAsynchronousWriter, WBSDownloadFileUnarchiver, _WKDownload;
+@protocol DownloadProgressEntryDelegate, OS_dispatch_queue, WBSSandboxExtensionToken;
 
 __attribute__((visibility("hidden")))
 @interface DownloadProgressEntry : NSObject <NSFilePresenter>
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     long long _bytesExpected;
     NSError *_error;
     BOOL _done;
-    struct Download _wkDownload;
+    _WKDownload *_wkDownload;
     NSURLRequest *_request;
     NSURLResponse *_response;
     DownloadFile *_downloadFile;
@@ -57,12 +57,12 @@ __attribute__((visibility("hidden")))
     NSDate *_dateFinished;
     NSString *_directoryPath;
     id <DownloadProgressEntryDelegate> _delegate;
-    id <WebDownloadDelegate> _webDownloadDelegate;
     NSString *_cachedBundlePath;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cachedBundlePath; // @synthesize cachedBundlePath=_cachedBundlePath;
-@property(nonatomic) __weak id <WebDownloadDelegate> webDownloadDelegate; // @synthesize webDownloadDelegate=_webDownloadDelegate;
 @property(nonatomic) __weak id <DownloadProgressEntryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=wasResumed) BOOL resumed; // @synthesize resumed=_resumed;
 @property(nonatomic) BOOL didShowStorageManagerUI; // @synthesize didShowStorageManagerUI=_didShowStorageManagerUI;
@@ -71,8 +71,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSDate *dateFinished; // @synthesize dateFinished=_dateFinished;
 @property(readonly, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(copy, nonatomic) NSArray *tags; // @synthesize tags=_tags;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_stopObservingFileLocation;
 - (void)_startObservingFileLocation;
 - (void)_browserWindowWillClose:(id)arg1;
@@ -161,7 +159,7 @@ __attribute__((visibility("hidden")))
 - (id)currentPath;
 - (BOOL)fileExists;
 - (BOOL)aliasFileExists;
-- (const struct Download *)wkDownload;
+- (id)wkDownload;
 - (id)error;
 - (long long)bytesLoaded;
 - (id)URL;
@@ -179,7 +177,7 @@ __attribute__((visibility("hidden")))
 - (id)currentFile;
 - (void)removeDownloadBundleWithPath:(id)arg1;
 - (id)createDownloadBundleWithFilename:(id)arg1;
-- (id)initWithWKDownload:(const struct Download *)arg1 mayOpenWhenDone:(BOOL)arg2 allowOverwrite:(BOOL)arg3 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg4;
+- (id)initWithWKDownload:(id)arg1 mayOpenWhenDone:(BOOL)arg2 allowOverwrite:(BOOL)arg3 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg4;
 - (id)initWithDictionary:(id)arg1;
 - (id)_initWithRequest:(id)arg1 bytesLoaded:(long long)arg2 bytesExpected:(long long)arg3 error:(id)arg4 download:(id)arg5 downloadFile:(id)arg6 postDownloadFile:(id)arg7 downloadStage:(int)arg8 identifier:(id)arg9 mayOpenWhenDone:(BOOL)arg10 allowOverwrite:(BOOL)arg11 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg12;
 

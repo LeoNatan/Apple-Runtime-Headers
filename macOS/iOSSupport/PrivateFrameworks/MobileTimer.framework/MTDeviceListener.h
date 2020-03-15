@@ -21,9 +21,9 @@
 + (BOOL)_latestKeyBagValueForHasBeenUnlockedSinceBoot;
 + (BOOL)hasBeenUnlockedSinceBoot;
 + (id)sharedDeviceListener;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL internalHasBeenUnlockedSinceBoot; // @synthesize internalHasBeenUnlockedSinceBoot=_internalHasBeenUnlockedSinceBoot;
 @property(retain, nonatomic) id <NAScheduler> workScheduler; // @synthesize workScheduler=_workScheduler;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (BOOL)_hasBeenUnlockedSinceBoot;

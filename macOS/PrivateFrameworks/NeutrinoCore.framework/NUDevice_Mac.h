@@ -14,8 +14,8 @@
     NUCGLRendererInfo *_openGLRendererInfo;
 }
 
-@property(readonly, nonatomic) NUCGLRendererInfo *openGLRendererInfo; // @synthesize openGLRendererInfo=_openGLRendererInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NUCGLRendererInfo *openGLRendererInfo; // @synthesize openGLRendererInfo=_openGLRendererInfo;
 - (long long)_preferredSampleMode;
 - (long long)_computeOpenGLVirtualScreen;
 - (long long)_openGLVirtualScreen;

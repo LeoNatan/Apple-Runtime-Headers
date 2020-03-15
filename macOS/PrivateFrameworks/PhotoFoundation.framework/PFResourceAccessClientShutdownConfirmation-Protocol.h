@@ -6,12 +6,12 @@
 
 #import <PhotoFoundation/NSObject-Protocol.h>
 
-@class NSString;
+@class NSObject, NSString;
 
 @protocol PFResourceAccessClientShutdownConfirmation <NSObject>
 - (NSString *)alertDescriptionForMultipleTasks;
 - (NSString *)alertMessageForSingleTask;
 - (NSString *)alertTitleForSingleTask;
-- (BOOL)resourceCanShutdown:(struct NSObject *)arg1;
+- (BOOL)resourceCanShutdown:(NSObject *)arg1;
 @end
 

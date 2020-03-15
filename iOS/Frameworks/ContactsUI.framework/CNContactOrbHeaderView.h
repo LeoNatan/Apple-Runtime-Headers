@@ -30,6 +30,7 @@
 + (_Bool)requiresConstraintBasedLayout;
 + (id)descriptorForRequiredKeysForContactFormatter:(id)arg1 includingAvatarViewDescriptors:(_Bool)arg2;
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *markerView; // @synthesize markerView=_markerView;
 @property(retain, nonatomic) UILabel *fakeTaglineAlignmentLabel; // @synthesize fakeTaglineAlignmentLabel=_fakeTaglineAlignmentLabel;
 @property(retain, nonatomic) UILabel *taglineLabel; // @synthesize taglineLabel=_taglineLabel;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSString *alternateName; // @synthesize alternateName=_alternateName;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(nonatomic) struct UIEdgeInsets contentMargins; // @synthesize contentMargins=_contentMargins;
-- (void).cxx_destruct;
 - (void)menuWillHide:(id)arg1;
 - (void)handleNameLabelLongPress:(id)arg1;
 - (id)_taglineStringForContacts:(id)arg1;

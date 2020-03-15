@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)continuousReadingListPageItemForReadingListItem:(id)arg1;
-@property(readonly, retain, nonatomic) id <ReadingListTableViewContentProvider> contentProvider; // @synthesize contentProvider=_contentProvider;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) id <ReadingListTableViewContentProvider> contentProvider; // @synthesize contentProvider=_contentProvider;
 - (id)continuousReadingListPageItemFollowingPageItem:(id)arg1;
 - (id)continuousReadingListPageItemPrecedingPageItem:(id)arg1;
 - (id)initWithReadingListTableViewContentProvider:(id)arg1;

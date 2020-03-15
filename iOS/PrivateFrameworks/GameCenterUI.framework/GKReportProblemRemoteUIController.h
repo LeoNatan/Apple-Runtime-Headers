@@ -15,9 +15,9 @@
 }
 
 + (id)controllerForProblemPlayer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) GKPlayer *problemPlayer; // @synthesize problemPlayer=_problemPlayer;
-- (void).cxx_destruct;
 - (id)postBodyForInitialLoad;
 - (id)bagKey;
 - (id)fallbackURL;

@@ -21,11 +21,11 @@
     NSArray *_cities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cities; // @synthesize cities=_cities;
 @property(readonly, nonatomic) int chooserStyle; // @synthesize chooserStyle=_chooserStyle;
 @property(copy, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) __weak id <EKTimeZoneViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)willDismissSearchController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

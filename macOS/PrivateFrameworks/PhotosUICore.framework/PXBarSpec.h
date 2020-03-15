@@ -15,8 +15,8 @@
     PXExtendedTraitCollection *_extendedTraitCollection;
 }
 
-@property(readonly, nonatomic) PXExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)sortedBarItemsByPlacement:(id)arg1;
 - (id)initWithExtendedTraitCollection:(id)arg1;

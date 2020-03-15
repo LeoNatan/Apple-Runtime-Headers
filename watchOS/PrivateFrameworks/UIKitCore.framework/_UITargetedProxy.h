@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)proxyWithTarget:(id)arg1;
-@property(retain, nonatomic, setter=_setTarget:) id _target; // @synthesize _target=__target;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setTarget:) id _target; // @synthesize _target=__target;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

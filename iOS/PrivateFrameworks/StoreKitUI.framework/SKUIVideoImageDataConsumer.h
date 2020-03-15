@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct CGSize _portraitSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize portraitSize; // @synthesize portraitSize=_portraitSize;
 @property(nonatomic) struct CGSize landscapeSize; // @synthesize landscapeSize=_landscapeSize;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned long long allowedOrientations; // @synthesize allowedOrientations=_allowedOrientations;
-- (void).cxx_destruct;
 - (id)imageForImage:(id)arg1;
 - (id)imageForColor:(id)arg1 orientation:(unsigned long long)arg2;
 

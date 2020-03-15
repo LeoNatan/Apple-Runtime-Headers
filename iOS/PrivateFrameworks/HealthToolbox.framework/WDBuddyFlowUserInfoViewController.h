@@ -27,10 +27,10 @@
     WDBuddyFlowUserInfo *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDBuddyFlowUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSArray *dataEntryItems; // @synthesize dataEntryItems=_dataEntryItems;
 @property(nonatomic) __weak id <WDBuddyControllerUserInfoDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

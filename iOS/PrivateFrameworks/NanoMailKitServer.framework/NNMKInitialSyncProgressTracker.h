@@ -28,6 +28,7 @@
 }
 
 + (double)syncTimeout;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool timeoutCanceledForMessageContent; // @synthesize timeoutCanceledForMessageContent=_timeoutCanceledForMessageContent;
 @property(nonatomic) _Bool timeoutCanceledForMessageHeaders; // @synthesize timeoutCanceledForMessageHeaders=_timeoutCanceledForMessageHeaders;
 @property(nonatomic) _Bool timeoutCanceledForAccounts; // @synthesize timeoutCanceledForAccounts=_timeoutCanceledForAccounts;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
 @property(retain, nonatomic) id <NNMKSyncStateManager> syncStateManager; // @synthesize syncStateManager=_syncStateManager;
 @property(nonatomic) __weak id <NNMKInitialSyncProgressTrackerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)initialSyncTimedOut;
 - (void)resetFlags;
 - (void)cancelTimeout;

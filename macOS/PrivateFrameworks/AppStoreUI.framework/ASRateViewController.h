@@ -16,10 +16,10 @@
 }
 
 + (struct CGSize)preferredSizeForConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasActiveRequest; // @synthesize hasActiveRequest=_hasActiveRequest;
 @property(retain, nonatomic) ASWriteReviewConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ASWriteReviewRateView *rateView;
 - (void)updateControls;
 - (void)configureDialogView:(id)arg1;

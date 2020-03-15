@@ -18,13 +18,8 @@
 
 + (void)requestAuthorization:(CDUnknownBlockType)arg1;
 + (int)authorizationStatus;
-@property(nonatomic, setter=_setAllowsPromptingForPrivacyAcknowledgement:) _Bool _allowsPromptingForPrivacyAcknowledgement; // @synthesize _allowsPromptingForPrivacyAcknowledgement;
 - (void).cxx_destruct;
-- (void)_updateCapabilitiesWithResponse:(id)arg1 postNotification:(_Bool)arg2;
-- (void)_handleInvalidation;
-- (void)_playbackCapabilitiesDidChangeNotification;
-- (void)_storefrontDidChangeNotification;
-- (void)_accountStoreDidChangeNotification;
+@property(nonatomic, setter=_setAllowsPromptingForPrivacyAcknowledgement:) _Bool _allowsPromptingForPrivacyAcknowledgement; // @synthesize _allowsPromptingForPrivacyAcknowledgement;
 - (void)requestStorefrontCountryCodeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)requestPersonalizationTokenForClientToken:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestUserTokenForDeveloperToken:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

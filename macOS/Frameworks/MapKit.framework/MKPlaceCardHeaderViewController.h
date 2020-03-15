@@ -53,11 +53,11 @@
 }
 
 + (double)minimalModeHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MKLocalizedHoursBuilder *localizedHoursBuilder; // @synthesize localizedHoursBuilder=_localizedHoursBuilder;
 @property(nonatomic) __weak id <MKPlaceCardHeaderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
 @property(readonly, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
-- (void).cxx_destruct;
 - (void)infoCardThemeChanged;
 - (void)updateContent;
 - (void)_contentSizeDidChange;

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDictionary, NSString;
+#import <MobileAccessoryUpdater/NSSecureCoding-Protocol.h>
 
-@interface FudPersonalizationRequest : NSObject
+@class NSArray, NSData, NSString;
+
+@interface FudPersonalizationRequest : NSObject <NSSecureCoding>
 {
     BOOL _cproSet;
     BOOL _csecSet;
@@ -28,16 +30,15 @@
     unsigned long long _ecID;
     NSData *_extEcID;
     NSData *_nonceHash;
-    NSDictionary *_customManifestProperties;
     NSArray *_objectList;
     NSData *_payload;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned short responseAlignment; // @synthesize responseAlignment=_responseAlignment;
 @property(retain, nonatomic) NSData *payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) NSArray *objectList; // @synthesize objectList=_objectList;
 @property(nonatomic) BOOL enableMixMatch; // @synthesize enableMixMatch=_enableMixMatch;
-@property(retain, nonatomic) NSDictionary *customManifestProperties; // @synthesize customManifestProperties=_customManifestProperties;
 @property(nonatomic) unsigned int chipEpoch; // @synthesize chipEpoch=_chipEpoch;
 @property(retain, nonatomic) NSData *nonceHash; // @synthesize nonceHash=_nonceHash;
 @property(nonatomic) BOOL securityMode; // @synthesize securityMode=_securityMode;
@@ -51,6 +52,8 @@
 @property(nonatomic) int responseFormat; // @synthesize responseFormat=_responseFormat;
 @property(retain, nonatomic) NSString *requestPrefix; // @synthesize requestPrefix=_requestPrefix;
 @property(readonly, copy, nonatomic) NSString *requestName; // @synthesize requestName=_requestName;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)isChipEpochSet;
 - (BOOL)isProductionModeSet;
 - (BOOL)isSecurityModeSet;

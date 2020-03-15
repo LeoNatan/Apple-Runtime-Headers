@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     double _averageExpirationTime;
     double _maxExpirationTime;
     double _averageWiFiPacketDelay;
+    double _averageMaxAverageWiFiPacketDelay;
     unsigned int _averageWiFiThroughput;
     unsigned int _totalNACKCounter;
     unsigned int _averageBurstyPacketLossCount;

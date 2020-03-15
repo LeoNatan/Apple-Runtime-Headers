@@ -15,8 +15,8 @@
     long long _maxCount;
 }
 
-@property(nonatomic) long long maxCount; // @synthesize maxCount=_maxCount;
 - (void).cxx_destruct;
+@property(nonatomic) long long maxCount; // @synthesize maxCount=_maxCount;
 - (void)countInstances:(id)arg1 usingPredicate:(CDUnknownBlockType)arg2;
 - (id)highestMatches;
 - (void)dealloc;

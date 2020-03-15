@@ -28,6 +28,7 @@
     BOOL _showingResultsView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSArrayController *_resultsController; // @synthesize _resultsController;
 @property(nonatomic) __weak NSTextView *_oldViewResultsView; // @synthesize _oldViewResultsView;
 @property(nonatomic) __weak NSTextField *_resultsCountField; // @synthesize _resultsCountField;
@@ -43,7 +44,6 @@
 @property(nonatomic) __weak IKImageBrowserView *_imageBrowserView; // @synthesize _imageBrowserView;
 @property(nonatomic) double zoomValue; // @synthesize zoomValue=_zoomValue;
 @property(retain, nonatomic) AMAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (BOOL)_createListView;
 - (BOOL)_createIconView;
 - (BOOL)_createTextView;

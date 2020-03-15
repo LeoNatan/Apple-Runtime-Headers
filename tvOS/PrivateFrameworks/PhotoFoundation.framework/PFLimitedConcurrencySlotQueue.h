@@ -18,9 +18,9 @@
 }
 
 + (id)currentSlotQueue;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long slotIndex; // @synthesize slotIndex=_slotIndex;
 @property(readonly) __weak PFLimitedConcurrencyQueueClass *concurrentQueue; // @synthesize concurrentQueue=_concurrentQueue;
-- (void).cxx_destruct;
 - (const char *)label;
 - (void)resume;
 - (void)suspend;

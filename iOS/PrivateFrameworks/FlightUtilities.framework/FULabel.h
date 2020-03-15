@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     FULabel *_associatedScalingLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak FULabel *associatedScalingLabel; // @synthesize associatedScalingLabel=_associatedScalingLabel;
 @property(readonly) _Bool useCurrentLocale; // @synthesize useCurrentLocale=_useCurrentLocale;
 @property(readonly, nonatomic) _Bool uppercase; // @synthesize uppercase=_uppercase;
 @property(copy) CDUnknownBlockType onTap; // @synthesize onTap=_onTap;
-- (void).cxx_destruct;
 - (void)setAttributedText:(id)arg1;
 - (void)setStyleProvider:(id)arg1 primaryStyle:(_Bool)arg2;
 - (void)setText:(id)arg1;

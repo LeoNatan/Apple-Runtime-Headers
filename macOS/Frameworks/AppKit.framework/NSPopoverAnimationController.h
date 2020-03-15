@@ -21,11 +21,11 @@
 }
 
 + (id)popoverAnimationControllerWithPopover:(id)arg1;
+- (void).cxx_destruct;
 @property __weak NSView *anchorView; // @synthesize anchorView=_anchorView;
 @property(readonly) NSPopover *popover; // @synthesize popover=_popover;
 @property struct CGRect positioningRect; // @synthesize positioningRect=_positioningRect;
 @property unsigned long long preferredEdge; // @synthesize preferredEdge=_preferredEdge;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)recognizerDidCancelAnimation:(id)arg1;
 - (void)recognizerDidDismissAnimation:(id)arg1;

@@ -15,10 +15,10 @@
     CAShapeLayer *_borderLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(readonly, nonatomic) DOCTagDotView *tagDotView; // @synthesize tagDotView=_tagDotView;
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;
-- (void).cxx_destruct;
 - (void)updateLayoutOfLayers;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layoutSubviews;

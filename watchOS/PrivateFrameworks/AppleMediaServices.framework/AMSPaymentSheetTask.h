@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_authenticationContextForRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMSPaymentSheetRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) _PaymentSheetState *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *presentationQueue; // @synthesize presentationQueue=_presentationQueue;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AKAppleIDAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 @property(retain, nonatomic) AMSPaymentSheetAssetCache *assetCache; // @synthesize assetCache=_assetCache;
 @property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
-- (void).cxx_destruct;
 - (void)paymentAuthorizationController:(id)arg1 willFinishWithError:(id)arg2;
 - (void)paymentAuthorizationController:(id)arg1 didEncounterAuthorizationEvent:(unsigned int)arg2;
 - (void)paymentAuthorizationControllerDidFinish:(id)arg1;

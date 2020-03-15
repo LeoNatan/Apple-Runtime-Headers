@@ -14,9 +14,9 @@
     CAMVideoCaptureResult *_videoCaptureResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMVideoCaptureResult *videoCaptureResult; // @synthesize videoCaptureResult=_videoCaptureResult;
 @property(readonly, nonatomic) CAMStillImageCaptureRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)initWithRequest:(id)arg1 videoCaptureResult:(id)arg2;
 
 @end

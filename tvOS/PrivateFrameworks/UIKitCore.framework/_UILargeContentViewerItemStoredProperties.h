@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets largeContentImageInsets; // @synthesize largeContentImageInsets=_largeContentImageInsets;
 @property(nonatomic) _Bool didSetLargeContentImageInsets; // @synthesize didSetLargeContentImageInsets=_didSetLargeContentImageInsets;
 @property(nonatomic) _Bool scalesLargeContentImage; // @synthesize scalesLargeContentImage=_scalesLargeContentImage;
@@ -35,7 +36,6 @@
 @property(nonatomic) _Bool didSetLargeContentTitle; // @synthesize didSetLargeContentTitle=_didSetLargeContentTitle;
 @property(nonatomic) _Bool showsLargeContentViewer; // @synthesize showsLargeContentViewer=_showsLargeContentViewer;
 @property(nonatomic) _Bool didSetShowsLargeContentViewer; // @synthesize didSetShowsLargeContentViewer=_didSetShowsLargeContentViewer;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

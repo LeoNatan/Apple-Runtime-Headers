@@ -20,13 +20,15 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *recipeType; // @synthesize recipeType=_recipeType;
 @property(copy, nonatomic) NSString *recipeId; // @synthesize recipeId=_recipeId;
 @property(readonly, copy, nonatomic) NSDictionary *parametersUsed; // @synthesize parametersUsed=_parametersUsed;
 @property(copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(readonly, copy, nonatomic) NSDictionary *recipeUserInfo; // @synthesize recipeUserInfo=_recipeUserInfo;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy, nonatomic) NSDictionary *secureAggregationRecipeInfo;
+@property(readonly, nonatomic) _Bool supportsSecureAggregation;
 - (id)_initWithRecipeResponse:(id)arg1 recipeId:(id)arg2 recipeType:(id)arg3 error:(id *)arg4;
 - (id)_initWithRecipeUserInfo:(id)arg1 recipeId:(id)arg2 recipeType:(id)arg3;
 - (id)_inithWithContentsOfFile:(id)arg1 recipeId:(id)arg2 recipeType:(id)arg3 error:(id *)arg4;

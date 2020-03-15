@@ -22,12 +22,12 @@
     unsigned long long _currentLogSubSubState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentLogSubSubState; // @synthesize currentLogSubSubState=_currentLogSubSubState;
 @property(nonatomic) unsigned long long currentLogSubState; // @synthesize currentLogSubState=_currentLogSubState;
 @property(nonatomic) unsigned long long currentLogState; // @synthesize currentLogState=_currentLogState;
 @property(readonly, nonatomic) _Bool enableDetailedDebugLogging; // @synthesize enableDetailedDebugLogging=_enableDetailedDebugLogging;
 @property(nonatomic, setter=setCurrentTab:) unsigned long long currentTab; // @synthesize currentTab=_currentTab;
-- (void).cxx_destruct;
 - (id)PXLogSubSubStateDescription:(unsigned long long)arg1;
 - (id)PXLogSubStateDescription:(unsigned long long)arg1;
 - (id)PXLogStateDescription:(unsigned long long)arg1;

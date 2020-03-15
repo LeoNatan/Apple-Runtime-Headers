@@ -26,6 +26,7 @@
     UIView *_foregroundDimmingView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *foregroundDimmingView; // @synthesize foregroundDimmingView=_foregroundDimmingView;
 @property(readonly, nonatomic) __weak UIView *backgroundDimmingView; // @synthesize backgroundDimmingView=_backgroundDimmingView;
 @property(readonly, nonatomic) WFDrawerDismissalHelper *dismissalHelper; // @synthesize dismissalHelper=_dismissalHelper;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) unsigned long long visibility; // @synthesize visibility=_visibility;
 @property(readonly, nonatomic) UIViewController<WFDrawerPane> *drawerPane; // @synthesize drawerPane=_drawerPane;
 @property(nonatomic) __weak id <WFDrawerPaneContainerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)growingVisibilityForHeight:(double)arg1;
 - (unsigned long long)shrinkingVisibilityForHeight:(double)arg1;
 - (unsigned long long)closestVisibilityForHeight:(double)arg1;

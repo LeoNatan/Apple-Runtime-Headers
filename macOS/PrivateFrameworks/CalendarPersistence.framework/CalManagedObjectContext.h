@@ -36,6 +36,7 @@
 + (BOOL)isCalendarAgent;
 + (id)managedObjectContextWithOriginatorId:(id)arg1;
 + (id)managedObjectContext;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL notifyCalendarAgent; // @synthesize notifyCalendarAgent=_notifyCalendarAgent;
 @property(nonatomic) BOOL trackChangesToExchangeServer; // @synthesize trackChangesToExchangeServer=_trackChangesToExchangeServer;
 @property(nonatomic) BOOL trackChangesForCalDAVServer; // @synthesize trackChangesForCalDAVServer=_trackChangesForCalDAVServer;
@@ -43,7 +44,6 @@
 @property(nonatomic) BOOL writeChangesToCalDAVServer; // @synthesize writeChangesToCalDAVServer=_writeChangesToCalDAVServer;
 @property(nonatomic) BOOL containsCalendarData; // @synthesize containsCalendarData=_containsCalendarData;
 @property(retain, nonatomic) NSString *originatorId; // @synthesize originatorId=_originatorID;
-- (void).cxx_destruct;
 - (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (void)logDetailedValidationError:(id)arg1;
 - (BOOL)saveIfContextHasChanges;

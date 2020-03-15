@@ -20,6 +20,7 @@
     unsigned long long _currentApplicationState;
 }
 
+- (void).cxx_destruct;
 @property BOOL emergencyModeEnabled; // @synthesize emergencyModeEnabled=_emergencyModeEnabled;
 @property unsigned long long currentApplicationState; // @synthesize currentApplicationState=_currentApplicationState;
 @property(copy) NSDictionary *contactsByHandle; // @synthesize contactsByHandle=_contactsByHandle;
@@ -28,8 +29,9 @@
 @property BOOL applicationCurrentlyLimited; // @synthesize applicationCurrentlyLimited=_applicationCurrentlyLimited;
 @property(copy) NSDictionary *allowedByContactsHandle; // @synthesize allowedByContactsHandle=_allowedByContactsHandle;
 @property BOOL allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
-- (void).cxx_destruct;
+- (void)updateForThirdPartyApplicationState:(long long)arg1;
 - (void)updateShouldBeAllowedDuringGeneralScreenTime:(BOOL)arg1 shouldBeAllowedByScreenTimeWhenLimited:(BOOL)arg2 currentApplicationState:(unsigned long long)arg3 emergencyModeEnabled:(BOOL)arg4;
+- (id)init;
 
 @end
 

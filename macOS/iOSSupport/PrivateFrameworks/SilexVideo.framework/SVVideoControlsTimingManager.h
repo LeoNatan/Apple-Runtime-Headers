@@ -18,10 +18,10 @@
     SVTimeline *_timeline;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVTimeline *timeline; // @synthesize timeline=_timeline;
 @property(readonly, nonatomic) id <SVVideoSkipThresholdProviding> skipThresholdProvider; // @synthesize skipThresholdProvider=_skipThresholdProvider;
 @property(readonly, nonatomic) id <SVVideoControlsTimingConfiguration> timingConfiguration; // @synthesize timingConfiguration=_timingConfiguration;
-- (void).cxx_destruct;
 - (double)upNextAppearanceTimeIntervalForVideo:(id)arg1;
 - (double)moreFromVisibilityTimeIntervalForVideo:(id)arg1;
 - (double)nowPlayingVisibilityTimeIntervalForVideo:(id)arg1;

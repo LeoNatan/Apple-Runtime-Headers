@@ -22,6 +22,7 @@
 + (id)menuItemWithTitle:(id)arg1;
 + (id)menuItemWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 validate:(SEL)arg4 keyEquivalent:(id)arg5;
 + (id)menuItem;
+- (void).cxx_destruct;
 @property SEL validate; // @synthesize validate=_validate;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
@@ -29,7 +30,6 @@
 @property(getter=isChecked) BOOL checked; // @synthesize checked=_checked;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property __weak SODebugMenu *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 @property(retain) id representedObject;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)isResponsibleForMenuItem:(id)arg1;

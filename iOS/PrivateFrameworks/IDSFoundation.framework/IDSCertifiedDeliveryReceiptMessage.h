@@ -23,6 +23,7 @@
     NSData *_queryHash;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *queryHash; // @synthesize queryHash=_queryHash;
 @property(retain, nonatomic) NSString *remoteURI; // @synthesize remoteURI=_remoteURI;
 @property(retain, nonatomic) NSString *localURI; // @synthesize localURI=_localURI;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSData *certifiedDeliveryRTS; // @synthesize certifiedDeliveryRTS=_certifiedDeliveryRTS;
 @property(retain, nonatomic) NSData *senderToken; // @synthesize senderToken=_senderToken;
 @property(retain, nonatomic) NSString *originalGUID; // @synthesize originalGUID=_originalGUID;
-- (void).cxx_destruct;
 - (id)messageBody;
 - (id)requiredKeys;
 - (long long)responseCommand;

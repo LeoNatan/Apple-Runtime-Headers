@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CKTranscriptCollectionViewController *_collectionViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKTranscriptCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) CKNanoChatController *chatController; // @synthesize chatController=_chatController;
-- (void).cxx_destruct;
 - (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (void)shareCurrentLocation;
 - (void)showContactInfo:(id)arg1;

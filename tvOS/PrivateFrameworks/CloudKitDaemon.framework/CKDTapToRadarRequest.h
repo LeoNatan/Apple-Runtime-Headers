@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_relatedRadar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relatedRadar; // @synthesize relatedRadar=_relatedRadar;
 @property(retain, nonatomic) NSString *componentID; // @synthesize componentID=_componentID;
 @property(retain, nonatomic) NSString *componentVersion; // @synthesize componentVersion=_componentVersion;
 @property(retain, nonatomic) NSString *componentName; // @synthesize componentName=_componentName;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 
 @end
 

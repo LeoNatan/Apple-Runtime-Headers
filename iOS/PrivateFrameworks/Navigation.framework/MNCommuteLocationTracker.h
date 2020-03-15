@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     MNCommuteDestinationSuggestion *_suggestion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MNCommuteDestinationSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(nonatomic) _Bool routingInProgress; // @synthesize routingInProgress=_routingInProgress;
 @property(nonatomic) unsigned long long destinationID; // @synthesize destinationID=_destinationID;
-- (void).cxx_destruct;
 - (void)etaUpdaterReceivedInvalidRoute:(id)arg1 newRoute:(id)arg2 incidentsOnRoute:(id)arg3 incidentsOffRoute:(id)arg4;
 - (void)etaUpdaterUpdatedETA:(id)arg1;
 - (void)etaUpdater:(id)arg1 receivedError:(id)arg2;

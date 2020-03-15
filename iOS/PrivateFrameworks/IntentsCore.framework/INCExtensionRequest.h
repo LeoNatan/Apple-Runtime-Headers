@@ -23,12 +23,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresTCC; // @synthesize requiresTCC=_requiresTCC;
 @property(retain, nonatomic) NSArray *extensionInputItems; // @synthesize extensionInputItems=_extensionInputItems;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic, setter=_setError:) NSError *_error; // @synthesize _error;
 @property(retain, nonatomic, setter=_setExtension:) NSExtension *_extension; // @synthesize _extension;
-- (void).cxx_destruct;
 - (void)_scheduleContextTimer;
 - (void)_resetContextTimer;
 - (void)_resetExtensionContextHostWithCompletion:(CDUnknownBlockType)arg1;

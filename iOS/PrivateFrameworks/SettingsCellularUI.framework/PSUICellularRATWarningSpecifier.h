@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PSListController *_RATModeDrillDownController;
 }
 
-@property(retain, nonatomic) PSListController *RATModeDrillDownController; // @synthesize RATModeDrillDownController=_RATModeDrillDownController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSListController *RATModeDrillDownController; // @synthesize RATModeDrillDownController=_RATModeDrillDownController;
 - (void)canceledRATSwitch;
 - (void)acceptedRATSwitch;
 - (id)initWithDrillDownController:(id)arg1;

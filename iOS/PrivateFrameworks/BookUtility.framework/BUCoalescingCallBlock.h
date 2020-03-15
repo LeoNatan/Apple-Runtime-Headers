@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_group> *_group;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sync; // @synthesize sync=_sync;
 @property(retain, nonatomic) NSMutableArray *callbacks; // @synthesize callbacks=_callbacks;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) CDUnknownBlockType notifyBlock; // @synthesize notifyBlock=_notifyBlock;
 @property(nonatomic) double maximumDelay; // @synthesize maximumDelay=_maximumDelay;
 @property(nonatomic) double coalescingDelay; // @synthesize coalescingDelay=_coalescingDelay;
-- (void).cxx_destruct;
 - (void)signalWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_coalescingTimeExpired:(unsigned long long)arg1;
 - (void)_maxTimeExpired:(unsigned long long)arg1;

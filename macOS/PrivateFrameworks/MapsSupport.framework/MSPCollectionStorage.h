@@ -20,12 +20,12 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *itemData; // @synthesize itemData=_itemData;
 @property(retain, nonatomic) NSString *collectionDescription; // @synthesize collectionDescription=_collectionDescription;
 @property(retain, nonatomic) NSString *imageURL; // @synthesize imageURL=_imageURL;
 @property(retain, nonatomic) NSData *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

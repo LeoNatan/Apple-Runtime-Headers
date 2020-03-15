@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)unregisterCloudKitUploadActivities;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)uploadDecisionWithIdentifiers:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)uploadCasesWithIdentifiers:(id)arg1;
 - (void)uploadMostRecentCases:(unsigned long long)arg1;

@@ -21,9 +21,9 @@
 + (id)defaultName;
 + (Class)requiredParentClass;
 + (Class)assetRepClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBICAbstractTextureSet *enclosingTextureSet; // @synthesize enclosingTextureSet=_enclosingTextureSet;
 @property(nonatomic) long long levelMode; // @synthesize levelMode=_levelMode;
-- (void).cxx_destruct;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (id)childrenOrderedByMipmapLevel;
 - (id)childWithMipmapLevel:(long long)arg1;
@@ -32,7 +32,7 @@
 - (CDStruct_2a4d9400)taggingSupport;
 - (id)initializeManifestArchivist;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (void)enumerateDescriptionAttributeComponents:(CDUnknownBlockType)arg1;
 - (id)parent;

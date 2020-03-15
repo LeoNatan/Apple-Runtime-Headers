@@ -27,6 +27,7 @@
 }
 
 + (id)_diagnosticDictionaryForAlarm:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType currentDateProvider; // @synthesize currentDateProvider=_currentDateProvider;
 @property(retain, nonatomic) id <MTPersistence> persistence; // @synthesize persistence=_persistence;
 @property(retain, nonatomic) MTAlarmMigrator *migrator; // @synthesize migrator=_migrator;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) NSMutableArray *orderedAlarms; // @synthesize orderedAlarms=_orderedAlarms;
 @property(nonatomic) __weak MTAlarmScheduler *scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 - (void)_removeAlarmDataIfNecessary:(id)arg1;
 - (void)observedApplicationDidUninstallForBundleIdentifier:(id)arg1;
 - (id)_diagnosticAlarmDictionary;

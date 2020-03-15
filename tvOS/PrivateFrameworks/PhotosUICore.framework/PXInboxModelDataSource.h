@@ -15,8 +15,8 @@
     NSArray *_models;
 }
 
-@property(readonly, copy, nonatomic) NSArray *models; // @synthesize models=_models;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *models; // @synthesize models=_models;
 - (struct PXSimpleIndexPath)indexPathForModel:(id)arg1;
 - (id)modelAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;

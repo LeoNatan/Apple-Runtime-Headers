@@ -13,8 +13,8 @@
     ITIdleTimerConfiguration *_configuration;
 }
 
-@property(readonly, copy, nonatomic) ITIdleTimerConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) ITIdleTimerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, copy, nonatomic, getter=_uniqueReason) NSString *uniqueReason;
 - (id)succinctDescriptionBuilder;
 - (id)_initWithConfiguration:(id)arg1 forReason:(id)arg2 invalidationBlock:(CDUnknownBlockType)arg3;

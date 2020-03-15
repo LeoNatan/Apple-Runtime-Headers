@@ -25,12 +25,12 @@
 }
 
 + (Class)locationDataType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *locationDatas; // @synthesize locationDatas=_locationDatas;
 @property(nonatomic) _Bool final; // @synthesize final=_final;
 @property(retain, nonatomic) NSData *continuationUUID; // @synthesize continuationUUID=_continuationUUID;
 @property(nonatomic) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)operationForContext:(id)arg1;
-@property(retain) EKChangeTracker *originalChangeTracker; // @synthesize originalChangeTracker=_originalChangeTracker;
 - (void).cxx_destruct;
+@property(retain) EKChangeTracker *originalChangeTracker; // @synthesize originalChangeTracker=_originalChangeTracker;
 - (id)_inverseOperation;
 - (Class)_inverseOperationClass;
 - (BOOL)_execute:(id *)arg1;

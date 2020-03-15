@@ -22,6 +22,7 @@
     long long _internalTagIdentifier;
 }
 
+- (void).cxx_destruct;
 @property long long internalTagIdentifier; // @synthesize internalTagIdentifier=_internalTagIdentifier;
 @property(retain, nonatomic) NSString *choiceDescription; // @synthesize choiceDescription=_choiceDescription;
 @property(retain, nonatomic) NSString *user; // @synthesize user=_user;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSImageView *cellIcon; // @synthesize cellIcon=_cellIcon;
 @property(retain, nonatomic) NSButton *radioButton; // @synthesize radioButton=_radioButton;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_addBottomBorder;
 - (void)_addMiddleBorder;
 - (void)_addTopBorder;

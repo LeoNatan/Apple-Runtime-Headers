@@ -14,9 +14,9 @@
     NPTunnelFlow *_flow;
 }
 
+- (void).cxx_destruct;
 @property(retain) NPTunnelFlow *flow; // @synthesize flow=_flow;
 @property void *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)pingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)sendUsageReportWithRTT:(unsigned long long)arg1 geohash:(id)arg2 fallbackReason:(long long)arg3;
 - (void)cancelConnection;

@@ -16,9 +16,9 @@
     HTTPConnection *connection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *headers; // @synthesize headers;
 @property(readonly, nonatomic) __weak HTTPConnection *connection; // @synthesize connection;
-- (void).cxx_destruct;
 - (void)respondWithFile:(id)arg1 async:(BOOL)arg2;
 - (void)respondWithFile:(id)arg1;
 - (void)respondWithData:(id)arg1;

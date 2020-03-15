@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     id <VSObservanceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isObserving) _Bool observing; // @synthesize observing=_observing;
 @property(nonatomic) __weak id <VSObservanceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopObserving;
 - (void)startObserving;

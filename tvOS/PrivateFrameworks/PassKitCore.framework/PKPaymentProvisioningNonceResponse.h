@@ -13,8 +13,8 @@
     NSString *_nonce;
 }
 
-@property(readonly, copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 - (id)initWithData:(id)arg1;
 
 @end

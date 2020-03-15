@@ -27,6 +27,7 @@
 
 + (id)defaultOptionsForViewSize:(struct CGSize)arg1;
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *overrideSizeSubclass; // @synthesize overrideSizeSubclass=_overrideSizeSubclass;
 @property(readonly, nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(nonatomic) unsigned long long titlePosition; // @synthesize titlePosition=_titlePosition;
@@ -40,7 +41,6 @@
 @property(nonatomic) double interitemSpacingForSmallControlSize; // @synthesize interitemSpacingForSmallControlSize=_interitemSpacingForSmallControlSize;
 @property(nonatomic) double interitemSpacingForExtraSmallControlSize; // @synthesize interitemSpacingForExtraSmallControlSize=_interitemSpacingForExtraSmallControlSize;
 @property(nonatomic) double rowSpacing; // @synthesize rowSpacing=_rowSpacing;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long viewSizeSubclass;
 - (id)initWithViewSize:(struct CGSize)arg1;
 

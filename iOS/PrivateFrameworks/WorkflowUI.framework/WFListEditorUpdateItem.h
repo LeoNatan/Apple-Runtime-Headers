@@ -19,10 +19,10 @@
 + (id)itemUpdatedAtIndex:(unsigned long long)arg1;
 + (id)itemDeletedAtIndex:(unsigned long long)arg1;
 + (id)itemInsertedAtIndex:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long updateAction; // @synthesize updateAction=_updateAction;
 @property(readonly, nonatomic) NSNumber *indexAfterUpdate; // @synthesize indexAfterUpdate=_indexAfterUpdate;
 @property(readonly, nonatomic) NSNumber *indexBeforeUpdate; // @synthesize indexBeforeUpdate=_indexBeforeUpdate;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithAction:(unsigned long long)arg1 indexBeforeUpdate:(id)arg2 indexAfterUpdate:(id)arg3;

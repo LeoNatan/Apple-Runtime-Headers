@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)sourceWithEnvironment:(id)arg1 contactStore:(id)arg2;
 + (id)sourceKind;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)peopleInGroup:(id)arg1 keysToFetch:(id)arg2;
 - (CDUnknownBlockType)groupToPeopleGroupTransform;
 

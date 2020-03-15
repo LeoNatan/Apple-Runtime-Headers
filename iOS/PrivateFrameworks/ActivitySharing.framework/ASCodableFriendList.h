@@ -16,8 +16,8 @@
 }
 
 + (Class)friendType;
-@property(retain, nonatomic) NSMutableArray *friends; // @synthesize friends=_friends;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *friends; // @synthesize friends=_friends;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

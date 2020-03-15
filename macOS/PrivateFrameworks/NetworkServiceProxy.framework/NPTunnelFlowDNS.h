@@ -19,6 +19,7 @@
     void *_tunnelResponseTimer;
 }
 
+- (void).cxx_destruct;
 @property BOOL telemetryReported; // @synthesize telemetryReported=_telemetryReported;
 @property void *tunnelResponseTimer; // @synthesize tunnelResponseTimer=_tunnelResponseTimer;
 @property(retain) NSPDNSPacket *directDNSResponse; // @synthesize directDNSResponse=_directDNSResponse;
@@ -26,7 +27,6 @@
 @property(retain) NSPDNSPacket *tunnelDNSResponse; // @synthesize tunnelDNSResponse=_tunnelDNSResponse;
 @property long long tunnelResult; // @synthesize tunnelResult=_tunnelResult;
 @property(retain) NSPDNSPacket *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)handleAppData:(id)arg1;
 - (void)cleanupLosingConnection:(BOOL)arg1;
 - (id)addDNSInfoToTelemetry:(id)arg1;

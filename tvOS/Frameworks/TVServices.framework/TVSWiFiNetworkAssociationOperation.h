@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, copy, nonatomic) NSUUID *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)_interface;
 - (_Bool)_isDirected;
 - (void)cancel;

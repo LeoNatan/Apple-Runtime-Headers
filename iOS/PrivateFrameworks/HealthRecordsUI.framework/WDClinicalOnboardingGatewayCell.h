@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UILayoutGuide *_centerLogoInTitlesLayoutGuide;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILayoutGuide *centerLogoInTitlesLayoutGuide; // @synthesize centerLogoInTitlesLayoutGuide=_centerLogoInTitlesLayoutGuide;
 @property(readonly, nonatomic) UIStackView *verticalSpecContainerView; // @synthesize verticalSpecContainerView=_verticalSpecContainerView;
 @property(readonly, nonatomic) UILabel *tapToConnectLabel; // @synthesize tapToConnectLabel=_tapToConnectLabel;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) WDBrandLogoView *logoView; // @synthesize logoView=_logoView;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (void)_updateBasedOnAccessibilityCategory:(_Bool)arg1;
 - (void)_updateForContentSizeCategory:(id)arg1;

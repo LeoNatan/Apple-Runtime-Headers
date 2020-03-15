@@ -15,10 +15,10 @@
     NSString *_caption;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isOval; // @synthesize isOval=_isOval;
 @property(retain, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)init;
 

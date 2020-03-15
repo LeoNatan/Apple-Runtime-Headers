@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCVideoEncoder-Protocol.h>
+#import <webrtc/RTCVideoEncoder-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCWrappedNativeVideoEncoder : NSObject <WK_RTCVideoEncoder>
+@interface WK_RTCWrappedNativeVideoEncoder : NSObject <RTCVideoEncoder>
 {
     unique_ptr_2722152f _wrappedEncoder;
 }
@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)scalingSettings;
 - (id)implementationName;
-- (int)setRateAllocation:(id)arg1 framerate:(unsigned int)arg2;
 - (int)setBitrate:(unsigned int)arg1 framerate:(unsigned int)arg2;
 - (long long)encode:(id)arg1 codecSpecificInfo:(id)arg2 frameTypes:(id)arg3;
 - (long long)releaseEncoder;

@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSString *_fileName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly) __weak CMMapper *parent; // @synthesize parent=mParent;
-- (void).cxx_destruct;
 @property(readonly) OCDDocument *document;
 - (void)finishMappingWithState:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 isLastElement:(_Bool)arg4;

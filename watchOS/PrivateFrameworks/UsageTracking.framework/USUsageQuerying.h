@@ -16,9 +16,9 @@
 
 + (void)synchronizeUsageWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)getLocalDeviceIdentifierAndReturnError:(id *)arg1;
+- (void).cxx_destruct;
 @property(readonly) id <_DKKnowledgeQuerying> eventStorage; // @synthesize eventStorage=_eventStorage;
 @property(readonly) id <_CDUserContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_enumerateEvents:(id)arg1 intervalEndDate:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_updateNotificationsWithEvent:(id)arg1 deviceIdentifier:(id)arg2 notificationsByDevice:(id)arg3 timeZoneByDevice:(id)arg4 lastEventDateByDevice:(id)arg5;
 - (id)_computeNotificationsWithEvents:(id)arg1 timeZoneByDevice:(id)arg2 lastEventDateByDevice:(id)arg3 partition:(id)arg4;

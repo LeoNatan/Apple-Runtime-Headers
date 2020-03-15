@@ -31,6 +31,7 @@
 + (id)keyPathsForValuesAffectingSandboxedDestinationPath;
 + (id)keyPathsForValuesAffectingDestinationPath;
 + (id)keyPathsForValuesAffectingSourceURL;
+- (void).cxx_destruct;
 @property(retain) NSDate *startTime; // @synthesize startTime=_startTime;
 @property BOOL isParentExpectingProgress; // @synthesize isParentExpectingProgress=_isParentExpectingProgress;
 @property unsigned long long lastSizeUpdate; // @synthesize lastSizeUpdate=_lastSizeUpdate;
@@ -46,7 +47,6 @@
 @property(retain) NSURL *relativeDestinationPath; // @synthesize relativeDestinationPath=_relativeDestinationPath;
 @property(retain) NSURL *relativeSourcePath; // @synthesize relativeSourcePath=_relativeSourcePath;
 @property __weak SMCopyEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (void)sizeCompletedUpdate:(unsigned long long)arg1;
 - (void)finishedFileAtCPath:(const char *)arg1;

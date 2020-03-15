@@ -20,6 +20,7 @@
     NSDictionary *_candidateRefsDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *candidateRefsDictionary; // @synthesize candidateRefsDictionary=_candidateRefsDictionary;
 @property(readonly, nonatomic) NSArray *proactiveTriggers; // @synthesize proactiveTriggers=_proactiveTriggers;
 @property(readonly, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSArray *committedCandidates; // @synthesize committedCandidates=_committedCandidates;
 @property(readonly, nonatomic) CHRecognizer *recognizer; // @synthesize recognizer=_recognizer;
 @property(readonly, nonatomic) TIInputManagerHandwriting *inputManager; // @synthesize inputManager=_inputManager;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithInputManager:(id)arg1 predictionOptions:(unsigned long long)arg2 prefixContext:(id)arg3;
 

@@ -19,12 +19,12 @@
 
 + (id)screenSaverAnimationContextWithAnimationDirection:(long long)arg1;
 + (id)applicationAnimationContextWithApplicationBundleIdentifier:(id)arg1 animationDirection:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isResignScreenSaverAnimation) _Bool resignScreenSaverAnimation; // @synthesize resignScreenSaverAnimation=_resignScreenSaverAnimation;
 @property(readonly, nonatomic, getter=isLaunchScreenSaverAnimation) _Bool launchScreenSaverAnimation; // @synthesize launchScreenSaverAnimation=_launchScreenSaverAnimation;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
 @property(readonly, nonatomic, getter=isResignApplicationAnimation) _Bool resignApplicationAnimation; // @synthesize resignApplicationAnimation=_resignApplicationAnimation;
 @property(readonly, nonatomic, getter=isLaunchApplicationAnimation) _Bool launchApplicationAnimation; // @synthesize launchApplicationAnimation=_launchApplicationAnimation;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)_init;
 

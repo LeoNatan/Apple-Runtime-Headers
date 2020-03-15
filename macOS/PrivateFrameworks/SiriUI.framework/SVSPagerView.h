@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     id <SVSPagerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SVSPagerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SVSPagerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) unsigned long long transitionState; // @synthesize transitionState=_transitionState;
 @property(retain, nonatomic) NSView *activePageView; // @synthesize activePageView=_activePageView;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (BOOL)_containsPageView:(id)arg1;
 - (id)_pageViews;

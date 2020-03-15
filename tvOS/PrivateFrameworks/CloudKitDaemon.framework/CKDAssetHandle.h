@@ -26,6 +26,7 @@
 
 + (id)descriptionWithStatus:(long long)arg1;
 + (id)CKSQLiteClassName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *chunkCount; // @synthesize chunkCount=_chunkCount;
 @property(retain, nonatomic) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSNumber *modTime; // @synthesize modTime=_modTime;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (_Bool)isEqualRevisionOfAssetHandle:(id)arg1 differencesDescription:(id *)arg2;
 - (_Bool)isEqualToAssetHandle:(id)arg1 keys:(id)arg2 differencesDescription:(id *)arg3;
 - (id)initWithItemID:(id)arg1 UUID:(id)arg2 path:(id)arg3;

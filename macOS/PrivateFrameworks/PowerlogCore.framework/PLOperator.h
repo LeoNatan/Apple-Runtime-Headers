@@ -43,13 +43,13 @@
 + (id)storageQueueName;
 + (id)className;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *lastLogDateForEntryKey; // @synthesize lastLogDateForEntryKey=_lastLogDateForEntryKey;
 @property(retain) PLTimer *triggerBufferFlush; // @synthesize triggerBufferFlush=_triggerBufferFlush;
 @property(retain) NSMutableArray *bufferedEntries; // @synthesize bufferedEntries=_bufferedEntries;
 @property(retain) NSMutableDictionary *filterDeltaLastEntryIDs; // @synthesize filterDeltaLastEntryIDs=_filterDeltaLastEntryIDs;
 @property(retain) NSMutableDictionary *filterDefinitions; // @synthesize filterDefinitions=_filterDefinitions;
 @property(retain) NSMutableDictionary *localCache; // @synthesize localCache=_localCache;
-- (void).cxx_destruct;
 - (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
 - (id)tablesToTrimConditionsForTrimDate:(id)arg1;
 - (void)setupFilterRequest:(id)arg1;

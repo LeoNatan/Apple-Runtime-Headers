@@ -17,12 +17,12 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *options; // @synthesize options=_options;
 @property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSString *event; // @synthesize event=_event;
 @property(readonly) NSString *jid; // @synthesize jid=_jid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMessage:(id)arg1 options:(id)arg2;
 

@@ -18,13 +18,13 @@
     IKViewElementStyle *_resolvedStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isResolutionDone) _Bool resolutionDone; // @synthesize resolutionDone=_resolutionDone;
 @property(retain, nonatomic) IKViewElementStyle *resolvedStyle; // @synthesize resolvedStyle=_resolvedStyle;
 @property(readonly, copy, nonatomic) NSArray *styles; // @synthesize styles=_styles;
 @property(readonly, retain, nonatomic) IKStyleList *baseStyleList; // @synthesize baseStyleList=_baseStyleList;
 @property(readonly, copy, nonatomic) NSString *classSelector; // @synthesize classSelector=_classSelector;
 @property(readonly, nonatomic) _Bool requiresMediaQueryEvaluation; // @synthesize requiresMediaQueryEvaluation=_requiresMediaQueryEvaluation;
-- (void).cxx_destruct;
 - (void)_resolveWithMediaQueryEvaluator:(id)arg1;
 - (void)setNeedsReresolution;
 - (id)resolvedStyleWithMediaQueryEvaluator:(id)arg1;

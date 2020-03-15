@@ -15,9 +15,9 @@
 }
 
 + (id)defaultSchedulerManager;
+- (void).cxx_destruct;
 @property(readonly) CSLActivityScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly) NSMutableSet *schedulerHelpers; // @synthesize schedulerHelpers=_schedulerHelpers;
-- (void).cxx_destruct;
 - (id)_createSnapshotThrottlingPolicyWithDateSource:(id)arg1;
 - (void)_prepareDefaultScheduler;
 - (void)_registerDefaults;

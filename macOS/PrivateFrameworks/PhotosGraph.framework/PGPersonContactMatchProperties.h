@@ -38,6 +38,7 @@
     double _scoreAfterMessagePenalty;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scoreAfterMessagePenalty; // @synthesize scoreAfterMessagePenalty=_scoreAfterMessagePenalty;
 @property(nonatomic) double relationshipScore; // @synthesize relationshipScore=_relationshipScore;
 @property(nonatomic) double sharedCMMScore; // @synthesize sharedCMMScore=_sharedCMMScore;
@@ -63,7 +64,6 @@
 @property(nonatomic) unsigned long long numberOfWeakBirthdayMomentsAroundPotentialBirthdayDate; // @synthesize numberOfWeakBirthdayMomentsAroundPotentialBirthdayDate=_numberOfWeakBirthdayMomentsAroundPotentialBirthdayDate;
 @property(nonatomic) unsigned long long numberOfWeakBirthdayMomentsAroundBirthdayDate; // @synthesize numberOfWeakBirthdayMomentsAroundBirthdayDate=_numberOfWeakBirthdayMomentsAroundBirthdayDate;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (void)setPersonContactMatchScore:(double)arg1;
 @property(readonly, nonatomic) double matchScore; // @synthesize matchScore=_matchScore;
 - (id)edgeProperties;

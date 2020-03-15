@@ -42,6 +42,7 @@
     double _averageAcceleration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double averageAcceleration; // @synthesize averageAcceleration=_averageAcceleration;
 @property(nonatomic) double averageVelocity; // @synthesize averageVelocity=_averageVelocity;
 @property(nonatomic) double previousAcceleration; // @synthesize previousAcceleration=_previousAcceleration;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) _UINavigationParallaxTransition *animationController; // @synthesize animationController=_animationController;
 @property(nonatomic) _Bool shouldReverseTranslation; // @synthesize shouldReverseTranslation=_shouldReverseTranslation;
 @property(nonatomic) __weak UIPanGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
-- (void).cxx_destruct;
 - (void)startInteractiveTransition:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

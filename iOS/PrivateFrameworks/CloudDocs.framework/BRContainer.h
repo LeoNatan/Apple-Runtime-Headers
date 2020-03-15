@@ -85,10 +85,10 @@
 + (id)classesForDecoding;
 + (id)containerForMangledID:(id)arg1;
 + (void)unregisterCurrentProcessAsPriorityHint;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInCloudDocsZone; // @synthesize isInCloudDocsZone=_isInCloudDocsZone;
 @property(nonatomic) _Bool isInInitialState; // @synthesize isInInitialState=_isInInitialState;
 @property(nonatomic) _Bool isCloudSyncTCCDisabled; // @synthesize isCloudSyncTCCDisabled=_isCloudSyncTCCDisabled;
-- (void).cxx_destruct;
 - (void)_performWhileAccessingSecurityScopedContainer:(CDUnknownBlockType)arg1;
 - (id)_pathForIconName:(id)arg1;
 - (id)_pathForPlist;

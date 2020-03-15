@@ -17,10 +17,10 @@
 
 + (id)containerWithIdentifier:(id)arg1;
 + (Class)__class;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSCKDatabase *publicCloudDatabase; // @synthesize publicCloudDatabase=_publicCloudDatabase;
 @property(readonly, nonatomic) IDSCKDatabase *privateCloudDatabase; // @synthesize privateCloudDatabase=_privateCloudDatabase;
 @property(readonly) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
-- (void).cxx_destruct;
 
 @end
 

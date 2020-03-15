@@ -17,11 +17,11 @@
     NSImageView *_displayImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImageView *displayImageView; // @synthesize displayImageView=_displayImageView;
 @property(retain, nonatomic) id <CDPWindowDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSWindow *iCDPWindow; // @synthesize iCDPWindow=_iCDPWindow;
 @property(retain, nonatomic) NSView *iCDPWindowView; // @synthesize iCDPWindowView=_iCDPWindowView;
-- (void).cxx_destruct;
 - (void)changeView:(id)arg1;
 - (void)endCDPView;
 - (void)showCDPView:(id)arg1;

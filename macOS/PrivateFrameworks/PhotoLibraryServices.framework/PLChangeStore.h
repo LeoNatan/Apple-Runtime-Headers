@@ -20,9 +20,9 @@
     NSURL *_databaseFileURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *databaseFileURL; // @synthesize databaseFileURL=_databaseFileURL;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *photoLibraryPathManager; // @synthesize photoLibraryPathManager=_photoLibraryPathManager;
-- (void).cxx_destruct;
 - (void)_clearStore;
 - (void)_backupStore;
 - (void)bindUUID:(unsigned char [16])arg1 toStatement:(struct sqlite3_stmt *)arg2 column:(int)arg3;

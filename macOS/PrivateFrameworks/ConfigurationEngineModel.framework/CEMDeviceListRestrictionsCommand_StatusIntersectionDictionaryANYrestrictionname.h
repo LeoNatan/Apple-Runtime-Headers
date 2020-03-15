@@ -16,8 +16,8 @@
 + (id)buildRequiredOnlyWithValues:(id)arg1;
 + (id)buildWithValues:(id)arg1;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) NSArray *statusValues; // @synthesize statusValues=_statusValues;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *statusValues; // @synthesize statusValues=_statusValues;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

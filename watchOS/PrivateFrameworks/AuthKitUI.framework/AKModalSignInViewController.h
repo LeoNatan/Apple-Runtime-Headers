@@ -25,6 +25,7 @@
     NSString *_customButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customButtonTitle; // @synthesize customButtonTitle=_customButtonTitle;
 @property(retain, nonatomic) NSString *customBodyText; // @synthesize customBodyText=_customBodyText;
 @property(nonatomic) _Bool hideTitle; // @synthesize hideTitle=_hideTitle;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UITextField *passwordField; // @synthesize passwordField=_passwordField;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)context:(id)arg1 needsPasswordWithCompletion:(CDUnknownBlockType)arg2;
 - (void)displayAlertForContext:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)textFieldShouldReturn:(id)arg1;
@@ -44,9 +44,9 @@
 - (_Bool)becomeFirstResponder;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (_Bool)_isSignInAllowed;
-- (void)_hidebusyWorkUI;
+- (void)stopAnimating;
 - (_Bool)_shouldShowForgotGlyph;
-- (void)_startBusyWorkUI;
+- (void)startAnimating;
 - (void)_signInButtonTapped:(id)arg1;
 - (void)_passwordRecoveryButtonWasTapped:(id)arg1;
 - (void)_updateViewConstraints;

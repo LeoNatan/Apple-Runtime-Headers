@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     MAAsset *_rawAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MAAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
 @property(readonly) NSString *longDefinition; // @synthesize longDefinition=_longDefinition;
 @property(readonly) NSAttributedString *definition; // @synthesize definition=_definition;
 @property(readonly) NSString *term; // @synthesize term=_term;
 @property(readonly) NSString *localizedDictionaryName; // @synthesize localizedDictionaryName=_localizedDictionaryName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLocalizedDictionaryName:(id)arg1 term:(id)arg2 definition:(id)arg3 longDefinition:(id)arg4;
 

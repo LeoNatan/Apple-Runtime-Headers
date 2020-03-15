@@ -15,10 +15,10 @@
     NSURL *_fallbackURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *fallbackURL; // @synthesize fallbackURL=_fallbackURL;
 @property(readonly, nonatomic) BOOL presentDirections; // @synthesize presentDirections=_presentDirections;
 @property(readonly, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
-- (void).cxx_destruct;
 - (id)initWithPostalAddress:(id)arg1 presentDirections:(BOOL)arg2 fallbackURL:(id)arg3;
 
 @end

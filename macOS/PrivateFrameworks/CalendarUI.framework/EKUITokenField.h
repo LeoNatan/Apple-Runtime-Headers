@@ -19,12 +19,12 @@
     struct CGSize _intrinsicContentSize;
 }
 
+- (void).cxx_destruct;
 @property BOOL isInsideExpandableContainer; // @synthesize isInsideExpandableContainer=_isInsideExpandableContainer;
 @property BOOL isExpanded; // @synthesize isExpanded=_isExpanded;
 @property struct CGSize intrinsicContentSize; // @synthesize intrinsicContentSize=_intrinsicContentSize;
 @property(retain) NSColor *tokenTextColor; // @synthesize tokenTextColor=_tokenTextColor;
 @property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
-- (void).cxx_destruct;
 - (void)setCalUITextFieldDelegate:(id)arg1;
 - (void)effectiveAppearanceDidChange;
 - (void)setObjectValue:(id)arg1;

@@ -16,11 +16,11 @@
     long long _dislikeCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long dislikeCount; // @synthesize dislikeCount=_dislikeCount;
 @property(nonatomic) long long likeCount; // @synthesize likeCount=_likeCount;
 @property(copy, nonatomic) NSString *bottomCenterLabel; // @synthesize bottomCenterLabel=_bottomCenterLabel;
 @property(copy, nonatomic) NSString *bottomLeftLabel; // @synthesize bottomLeftLabel=_bottomLeftLabel;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

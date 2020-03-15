@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)clientOperationType;
 + (Class)operationGroupType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reportClientOperationFrequencyBase; // @synthesize reportClientOperationFrequencyBase=_reportClientOperationFrequencyBase;
 @property(nonatomic) unsigned long long reportClientOperationFrequency; // @synthesize reportClientOperationFrequency=_reportClientOperationFrequency;
 @property(retain, nonatomic) NSMutableArray *clientOperations; // @synthesize clientOperations=_clientOperations;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSString *clientBundleId; // @synthesize clientBundleId=_clientBundleId;
 @property(retain, nonatomic) NSString *clientProcessVersion; // @synthesize clientProcessVersion=_clientProcessVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

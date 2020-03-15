@@ -21,6 +21,7 @@
     DOCTagsLineView *_tagsView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) DOCTagsLineView *tagsView; // @synthesize tagsView=_tagsView;
 @property(readonly, nonatomic) DOCStackedThumbnailView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(readonly, nonatomic) DOCVisualEffectLabel *providerNameLabel; // @synthesize providerNameLabel=_providerNameLabel;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak id <DOCTagViewDelegate> tagDelegate; // @synthesize tagDelegate=_tagDelegate;
 @property(readonly, nonatomic) UIButton *addTagButton; // @synthesize addTagButton=_addTagButton;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *providerName;
 @property(retain, nonatomic) NSString *displayName;
 @property(retain, nonatomic) NSArray *items;

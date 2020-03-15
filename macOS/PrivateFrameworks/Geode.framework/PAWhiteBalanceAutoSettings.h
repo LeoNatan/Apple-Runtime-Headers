@@ -22,6 +22,7 @@
     double _grayWarmth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double grayWarmth; // @synthesize grayWarmth=_grayWarmth;
 @property(retain, nonatomic) NSColor *grayColor; // @synthesize grayColor=_grayColor;
 @property(nonatomic) double tint; // @synthesize tint=_tint;
@@ -32,7 +33,6 @@
 @property(nonatomic) float faceI; // @synthesize faceI=_faceI;
 @property(nonatomic) BOOL useFace; // @synthesize useFace=_useFace;
 @property(nonatomic) long long colorType; // @synthesize colorType=_colorType;
-- (void).cxx_destruct;
 - (BOOL)_applyArchiveDictionary:(id)arg1;
 - (void)_archiveIntoDictionary:(id)arg1;
 

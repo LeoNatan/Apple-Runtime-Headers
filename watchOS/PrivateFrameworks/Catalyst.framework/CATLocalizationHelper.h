@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)helperForBundle:(id)arg1;
-@property(readonly, nonatomic) __weak NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSBundle *bundle; // @synthesize bundle=_bundle;
 - (id)stringsForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)stringByKeyForTableName:(id)arg1;
 - (id)initWithBundle:(id)arg1;

@@ -27,6 +27,7 @@
     struct NSEdgeInsets _scrollInsetsBeforeKeyboard;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSView *collectionContainerView; // @synthesize collectionContainerView=_collectionContainerView;
 @property(nonatomic) NSView *keyboardAdjustedView; // @synthesize keyboardAdjustedView=_keyboardAdjustedView;
 @property(nonatomic) double keyboardConstraintDefaultConstant; // @synthesize keyboardConstraintDefaultConstant=_keyboardConstraintDefaultConstant;
@@ -38,7 +39,6 @@
 @property(nonatomic) BOOL autoWidthUsesTwoColumnsWhenSpace; // @synthesize autoWidthUsesTwoColumnsWhenSpace=_autoWidthUsesTwoColumnsWhenSpace;
 @property(retain, nonatomic) GKCollectionDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSUICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didFocusItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didUnfocusItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;

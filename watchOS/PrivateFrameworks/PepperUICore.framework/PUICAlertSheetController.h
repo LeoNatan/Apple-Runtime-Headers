@@ -31,6 +31,7 @@
 + (id)alertSheetControllerWithActions:(id)arg1 title:(id)arg2 attributedMessage:(id)arg3 style:(int)arg4;
 + (id)alertSheetControllerWithActions:(id)arg1 title:(id)arg2 message:(id)arg3 style:(int)arg4;
 + (id)alertSheetControllerWithActions:(id)arg1 message:(id)arg2 style:(int)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *footer; // @synthesize footer=_footer;
 @property(retain, nonatomic) NSNumber *messageLabelHyphenationFactor; // @synthesize messageLabelHyphenationFactor=_messageLabelHyphenationFactor;
 @property(nonatomic) _Bool shouldReloadTableView; // @synthesize shouldReloadTableView=_shouldReloadTableView;
@@ -43,7 +44,6 @@
 @property(nonatomic) int messageLocation; // @synthesize messageLocation=_messageLocation;
 @property(copy, nonatomic) NSAttributedString *attributedMessage; // @synthesize attributedMessage=_attributedMessage;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;

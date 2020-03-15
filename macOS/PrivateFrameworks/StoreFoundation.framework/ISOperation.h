@@ -31,6 +31,7 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property int requiredBagType; // @synthesize requiredBagType=_requiredBagType;
 @property(copy) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -43,7 +44,6 @@
 @property(retain) ISOperation *parentOperation; // @synthesize parentOperation=_parentOperation;
 @property(retain) NSRunLoop *operationRunLoop; // @synthesize operationRunLoop=_operationRunLoop;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)urlForURLBagKey:(id)arg1 dsID:(id)arg2;
 - (id)urlForURLBagKey:(id)arg1;
 - (id)valueForURLBagKey:(id)arg1 dsID:(id)arg2;

@@ -16,11 +16,11 @@
     HKRouteMapGenerator *_generator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKRouteMapGenerator *generator; // @synthesize generator=_generator;
 @property(retain, nonatomic) HKLocationFetcher *locationFetcher; // @synthesize locationFetcher=_locationFetcher;
 @property(readonly, nonatomic) HKLocationReadings *locationReadings; // @synthesize locationReadings=_locationReadings;
 @property(retain, nonatomic) HKDataMetadataWorkoutRouteCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (void)selectCellForIndex:(unsigned int)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (id)cellForIndex:(unsigned int)arg1 tableView:(id)arg2;
 - (unsigned int)numberOfRowsInSection;

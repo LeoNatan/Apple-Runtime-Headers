@@ -16,11 +16,11 @@
     NSMutableArray *_homePlayerViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *homePlayerViews; // @synthesize homePlayerViews=_homePlayerViews;
 @property(retain, nonatomic) NSMutableArray *awayPlayerViews; // @synthesize awayPlayerViews=_awayPlayerViews;
 @property(retain, nonatomic) TVImageView *courtImageView; // @synthesize courtImageView=_courtImageView;
 @property(retain, nonatomic) UIView *courtContainerView; // @synthesize courtContainerView=_courtContainerView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)commonInit;

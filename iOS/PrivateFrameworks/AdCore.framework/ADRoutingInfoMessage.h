@@ -17,10 +17,10 @@
     NSString *_searchType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *protoVersion; // @synthesize protoVersion=_protoVersion;
 @property(retain, nonatomic) NSString *environmentURL; // @synthesize environmentURL=_environmentURL;
 @property(retain, nonatomic) NSString *searchType; // @synthesize searchType=_searchType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

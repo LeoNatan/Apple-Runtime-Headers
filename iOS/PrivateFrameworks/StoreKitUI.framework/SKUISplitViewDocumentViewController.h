@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUINavigationDocumentController *rightNavigationDocumentController; // @synthesize rightNavigationDocumentController=_rightNavigationDocumentController;
 @property(retain, nonatomic) SKUINavigationDocumentController *leftNavigationDocumentController; // @synthesize leftNavigationDocumentController=_leftNavigationDocumentController;
-- (void).cxx_destruct;
 - (void)_skui_endDelayingPresentation;
 - (void)_reloadSplitViewControllers;
 - (_Bool)_isFullyPopulated;

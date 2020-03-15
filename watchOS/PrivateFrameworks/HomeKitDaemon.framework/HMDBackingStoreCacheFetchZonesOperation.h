@@ -11,8 +11,8 @@
     CDUnknownBlockType _fetchResult;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType fetchResult; // @synthesize fetchResult=_fetchResult;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType fetchResult; // @synthesize fetchResult=_fetchResult;
 - (id)mainReturningError;
 - (id)initWithFetchResult:(CDUnknownBlockType)arg1;
 

@@ -23,6 +23,7 @@
     unsigned long long _applicationCategory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long applicationCategory; // @synthesize applicationCategory=_applicationCategory;
 @property(nonatomic) _Bool launchUsingMapsTemplateUI; // @synthesize launchUsingMapsTemplateUI=_launchUsingMapsTemplateUI;
 @property(nonatomic) _Bool handlesCarIntents; // @synthesize handlesCarIntents=_handlesCarIntents;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool launchUsingSiri; // @synthesize launchUsingSiri=_launchUsingSiri;
 @property(nonatomic) _Bool canDisplayOnCarScreen; // @synthesize canDisplayOnCarScreen=_canDisplayOnCarScreen;
 @property(nonatomic, getter=isCarPlaySupported) _Bool carPlaySupported; // @synthesize carPlaySupported=_carPlaySupported;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

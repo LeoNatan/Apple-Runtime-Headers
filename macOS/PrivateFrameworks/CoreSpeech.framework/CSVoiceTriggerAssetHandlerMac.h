@@ -17,8 +17,8 @@
     CSAsset *_cachedAsset;
 }
 
-@property(retain) CSAsset *cachedAsset; // @synthesize cachedAsset=_cachedAsset;
 - (void).cxx_destruct;
+@property(retain) CSAsset *cachedAsset; // @synthesize cachedAsset=_cachedAsset;
 - (void)CSFirstUnlockMonitor:(id)arg1 didReceiveFirstUnlock:(BOOL)arg2;
 - (void)CSLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
 - (void)CSVoiceTriggerAssetDownloadMonitor:(id)arg1 didInstallNewAsset:(BOOL)arg2;

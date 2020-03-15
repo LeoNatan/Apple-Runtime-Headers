@@ -26,12 +26,12 @@
     _Bool _isWaitingToMoveToWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
 @property(nonatomic) double strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (void)_updateLegibilityView;
 - (_Bool)_needsColorImage;
 - (void)_updateLabelForLegibilitySettings;

@@ -25,6 +25,7 @@
 + (id)assetResourceQualityClasses;
 + (id)_cplDerivativeAssetResourceQualityClasses;
 + (id)_thumbnailAssetResourceQualityClassesForCurrentDevice;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maxNumberOfPixelsIfSquare; // @synthesize maxNumberOfPixelsIfSquare=_maxNumberOfPixelsIfSquare;
 @property(readonly, nonatomic) unsigned long long maxSideLengthIfSquare; // @synthesize maxSideLengthIfSquare=_maxSideLengthIfSquare;
 @property(readonly, nonatomic, getter=isThumbnail) _Bool thumbnail; // @synthesize thumbnail=_thumbnail;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic, getter=isVideo) _Bool video; // @synthesize video=_video;
 @property(nonatomic) unsigned long long backingCPLResourceType; // @synthesize backingCPLResourceType=_backingCPLResourceType;
 @property(retain, nonatomic) PLImageFormat *backingImageFormat; // @synthesize backingImageFormat=_backingImageFormat;
-- (void).cxx_destruct;
 - (id)description;
 - (void)preheatDataForThumbnailIndexes:(id)arg1 inLibrary:(id)arg2;
 - (id)tableThumbnailDataForAsset:(id)arg1 dataSpecification:(struct PHAssetResourceTableDataSpecification *)arg2;

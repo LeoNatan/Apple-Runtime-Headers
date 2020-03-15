@@ -16,9 +16,9 @@
 }
 
 + (id)sharedStyleProvider;
+- (void).cxx_destruct;
 @property(nonatomic) long long _horizontalSizeClassFromSplitView; // @synthesize _horizontalSizeClassFromSplitView=__horizontalSizeClassFromSplitView;
 @property long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
-- (void).cxx_destruct;
 - (_Bool)needsTouchDownWorkaround;
 - (_Bool)usesVectorGlyph;
 - (_Bool)usesTitleLabelPerfOptimization;

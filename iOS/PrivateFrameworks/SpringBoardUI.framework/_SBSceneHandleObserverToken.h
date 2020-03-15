@@ -15,8 +15,8 @@
     NSMutableDictionary *_owner;
 }
 
-@property(readonly, nonatomic) __weak NSMutableDictionary *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSMutableDictionary *owner; // @synthesize owner=_owner;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithOwner:(id)arg1;
 

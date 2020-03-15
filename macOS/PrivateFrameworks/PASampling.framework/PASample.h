@@ -20,9 +20,9 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) double wallTimestamp; // @synthesize wallTimestamp=_wallTimestamp;
 @property(readonly) double machTimestamp; // @synthesize machTimestamp=_machTimestamp;
-- (void).cxx_destruct;
 - (void)addSampleTask:(id)arg1;
 - (id)sampleTaskForPid:(int)arg1;
 @property(readonly) NSArray *sampleTasks;
@@ -35,7 +35,7 @@
 - (id)_initWithSerializedData:(const CDStruct_74e41edf *)arg1;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg2;
+- (BOOL)addSelfToBufferAtPosition:(void *)arg1 withCompletedSerializationDictionary:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -31,9 +31,9 @@
     AVPlayerLayer *_playerLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(nonatomic) long long desiredMode; // @synthesize desiredMode=_desiredMode;
-- (void).cxx_destruct;
 - (void)_applicationWillUnhide:(id)arg1;
 - (void)_applicationWillHide:(id)arg1;
 - (void)viewDidMoveToWindow;

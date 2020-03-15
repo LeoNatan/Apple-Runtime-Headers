@@ -15,9 +15,9 @@
     CDPiCloudPrefRecoveryKeyController *_cdpiCloudPrefRecoveryKeyController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPiCloudPrefRecoveryKeyController *cdpiCloudPrefRecoveryKeyController; // @synthesize cdpiCloudPrefRecoveryKeyController=_cdpiCloudPrefRecoveryKeyController;
 @property(retain, nonatomic) id <CDPiCloudPrefPaneDelegateProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)changeView:(id)arg1;
 - (void)cdpContext:(id)arg1 promptForRecoveryKeyWithValidator:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cdpContext:(id)arg1 presentRecoveryKeyWithValidator:(id)arg2 completion:(CDUnknownBlockType)arg3;

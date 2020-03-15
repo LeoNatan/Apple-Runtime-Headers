@@ -12,9 +12,9 @@
     unsigned int _count;
 }
 
-@property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (void)enumerateMediaTypesWithBlock:(CDUnknownBlockType)arg1;
 - (void)addMediaType:(unsigned long)arg1 count:(unsigned int)arg2;
 - (id)description;

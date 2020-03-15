@@ -15,8 +15,8 @@
     CDUnknownBlockType _completionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)deviceSimplePairingComplete:(id)arg1 status:(unsigned char)arg2;
 - (void)connectionComplete:(id)arg1 status:(int)arg2;
 - (void)devicePairingFinished:(id)arg1 error:(int)arg2;

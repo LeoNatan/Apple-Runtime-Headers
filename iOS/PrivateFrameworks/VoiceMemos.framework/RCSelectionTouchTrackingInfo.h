@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     long long _selectionAffinity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectionAffinity; // @synthesize selectionAffinity=_selectionAffinity;
 @property(nonatomic) long long selectionBarType; // @synthesize selectionBarType=_selectionBarType;
 @property(nonatomic) double trackingOffset; // @synthesize trackingOffset=_trackingOffset;
 @property(nonatomic) __weak UITouch *touch; // @synthesize touch=_touch;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateTrackingInfo;
 

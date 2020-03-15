@@ -19,13 +19,13 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(readonly, nonatomic) UIImageView *photoView; // @synthesize photoView=_photoView;
 @property(readonly, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateConstraints;
 @property(retain, nonatomic) UIImage *photo;

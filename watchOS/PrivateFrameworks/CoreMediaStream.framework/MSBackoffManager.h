@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *retryAfterDate; // @synthesize retryAfterDate=_retryAfterDate;
 @property(nonatomic) double currentInterval; // @synthesize currentInterval=_currentInterval;
 @property(nonatomic) double maxBackoffInterval; // @synthesize maxBackoffInterval=_maxBackoffInterval;
@@ -31,7 +32,6 @@
 @property(nonatomic) double backoffFactor; // @synthesize backoffFactor=_backoffFactor;
 @property(nonatomic) double initialInterval; // @synthesize initialInterval=_initialInterval;
 @property(nonatomic) id <MSBackoffManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)_complainAboutMissingKeyInArchive:(id)arg1;
 - (id)copyParameters;

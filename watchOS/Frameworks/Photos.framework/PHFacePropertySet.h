@@ -22,8 +22,8 @@
 + (id)entityName;
 + (id)propertiesToFetch;
 + (id)propertySetName;
-@property(readonly, nonatomic) __weak PHFace *face; // @synthesize face=_face;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PHFace *face; // @synthesize face=_face;
 - (id)initWithFetchDictionary:(id)arg1 face:(id)arg2 prefetched:(_Bool)arg3;
 
 // Remaining properties

@@ -10,10 +10,11 @@
 {
 }
 
-+ (float)_meanDepthValueFromFrame:(id)arg1;
++ (float)_meanDepthValueOfDepthBuffer:(struct __CVBuffer *)arg1 consideringSegmentation:(_Bool)arg2 ofSegmentationBuffer:(struct __CVBuffer *)arg3;
 + (id)arrayFromRaycastResults:(id)arg1;
 + (id)dictionaryFromRaycastQuery:(id)arg1;
 + (id)dictionaryFromCLLocation:(id)arg1;
++ (id)traceFrameData:(id)arg1 withFrameIndex:(unsigned long long)arg2 writeOBJ:(_Bool)arg3;
 + (id)traceFrameData:(id)arg1 withFrameIndex:(unsigned long long)arg2;
 + (id)extractDetectedBodiesForFrame:(id)arg1;
 + (id)extractAnchorDataForFrame:(id)arg1;

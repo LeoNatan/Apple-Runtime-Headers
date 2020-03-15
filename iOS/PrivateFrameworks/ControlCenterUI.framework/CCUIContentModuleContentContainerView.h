@@ -19,12 +19,12 @@
     double _expandedContinuousCornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double expandedContinuousCornerRadius; // @synthesize expandedContinuousCornerRadius=_expandedContinuousCornerRadius;
 @property(nonatomic) double compactContinuousCornerRadius; // @synthesize compactContinuousCornerRadius=_compactContinuousCornerRadius;
 @property(nonatomic) _Bool clipsContentInCompactMode; // @synthesize clipsContentInCompactMode=_clipsContentInCompactMode;
 @property(copy, nonatomic) NSString *materialViewGroupName; // @synthesize materialViewGroupName=_materialViewGroupName;
 @property(nonatomic) _Bool moduleProvidesOwnPlatter; // @synthesize moduleProvidesOwnPlatter=_moduleProvidesOwnPlatter;
-- (void).cxx_destruct;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (_Bool)_isContentClippingRequiredForSubview:(id)arg1;
 - (void)layoutSubviews;

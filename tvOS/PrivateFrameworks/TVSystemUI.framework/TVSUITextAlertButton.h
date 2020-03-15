@@ -18,10 +18,10 @@
 }
 
 + (id)buttonWithTitle:(id)arg1 type:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TVSUITextAlertButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType selectHandler; // @synthesize selectHandler=_selectHandler;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView<_TVSUITextAlertButtonViewInterface> *contentView;
 - (void)_handleSelect:(id)arg1;
 @property(readonly, nonatomic) double minimumWidth;

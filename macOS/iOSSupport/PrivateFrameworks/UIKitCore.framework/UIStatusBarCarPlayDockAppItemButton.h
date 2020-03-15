@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     UIImageView *_badgeView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasBadge; // @synthesize hasBadge=_hasBadge;
 @property(retain, nonatomic) UIImageView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UIImageView *iconHighlightImageView; // @synthesize iconHighlightImageView=_iconHighlightImageView;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)canBecomeFocused;
 - (void)_buttonPressed:(id)arg1;

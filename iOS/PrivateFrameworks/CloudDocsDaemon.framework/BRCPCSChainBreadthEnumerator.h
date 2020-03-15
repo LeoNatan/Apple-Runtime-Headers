@@ -6,13 +6,14 @@
 
 #import <Foundation/NSEnumerator.h>
 
-@class BRCPCSChainInfo;
+@class BRCPCSChainInfo, PQLResultSet;
+@protocol PQLEnumeration;
 
 __attribute__((visibility("hidden")))
 @interface BRCPCSChainBreadthEnumerator : NSEnumerator
 {
     BRCPCSChainInfo *_chainInfo;
-    struct PQLResultSet *_enumerator;
+    PQLResultSet<PQLEnumeration> *_enumerator;
 }
 
 - (void).cxx_destruct;

@@ -21,6 +21,7 @@
 
 + (id)newPayloadWithURL:(id)arg1 description:(id)arg2 previewImage:(id)arg3 identifier:(long long)arg4;
 + (id)newPayloadWithData:(id)arg1 ofType:(id)arg2 description:(id)arg3 previewImage:(id)arg4 identifier:(long long)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) long long identifer; // @synthesize identifer=_identifer;
 @property(copy, nonatomic) NSString *payloadDescription; // @synthesize payloadDescription=_payloadDescription;
 @property(retain, nonatomic) UIImage *previewImage; // @synthesize previewImage=_previewImage;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) _Bool wasString; // @synthesize wasString=_wasString;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

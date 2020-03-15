@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(readonly) SEL action; // @synthesize action=_action;
 @property(readonly) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)handleAction:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

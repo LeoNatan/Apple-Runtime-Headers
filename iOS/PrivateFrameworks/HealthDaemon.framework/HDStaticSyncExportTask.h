@@ -32,8 +32,8 @@
 + (id)_archiveCreatorInDirectory:(id)arg1 session:(id)arg2 count:(unsigned long long)arg3;
 + (_Bool)_updateAnchorRangeMap:(id)arg1 withChange:(id)arg2 outError:(id *)arg3;
 + (id)_createEmptyExportDirectoryForStoreIdentifier:(id)arg1 location:(id)arg2 error:(id *)arg3;
-@property(readonly, copy, nonatomic) NSURL *exportDirectoryURL; // @synthesize exportDirectoryURL=_exportDirectoryURL;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *exportDirectoryURL; // @synthesize exportDirectoryURL=_exportDirectoryURL;
 - (void)syncSession:(id)arg1 didFinishSuccessfully:(_Bool)arg2 error:(id)arg3;
 - (_Bool)syncSession:(id)arg1 didEndTransactionWithError:(id *)arg2;
 - (void)syncSession:(id)arg1 sendChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;

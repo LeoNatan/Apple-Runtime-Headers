@@ -39,6 +39,7 @@
     NSDictionary *_tcpInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *tcpInfo; // @synthesize tcpInfo=_tcpInfo;
 @property(nonatomic) unsigned int initialBytesLeftOver; // @synthesize initialBytesLeftOver=_initialBytesLeftOver;
 @property(nonatomic) _Bool isTFOProbeSucceeded; // @synthesize isTFOProbeSucceeded=_isTFOProbeSucceeded;
@@ -63,7 +64,6 @@
 @property(nonatomic) int fallbackReasonCategory; // @synthesize fallbackReasonCategory=_fallbackReasonCategory;
 @property(nonatomic) int fallbackReason; // @synthesize fallbackReason=_fallbackReason;
 @property(nonatomic) int pathType; // @synthesize pathType=_pathType;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

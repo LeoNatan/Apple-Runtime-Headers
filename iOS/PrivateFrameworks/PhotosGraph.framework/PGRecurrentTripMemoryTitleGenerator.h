@@ -13,8 +13,8 @@
     NSSet *_locationNodes;
 }
 
-@property(retain, nonatomic) NSSet *locationNodes; // @synthesize locationNodes=_locationNodes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *locationNodes; // @synthesize locationNodes=_locationNodes;
 - (id)_timeTitle;
 - (id)_locationTitle;
 - (void)_generateTitleAndSubtitleWithResult:(CDUnknownBlockType)arg1;

@@ -18,10 +18,10 @@
 + (id)sequenceOfRecordsFromData:(id)arg1;
 + (id)recordFromData:(id)arg1;
 + (id)parseFromDataSource:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSData *value; // @synthesize value=_value;
 @property(readonly, nonatomic) unsigned long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTag:(unsigned long long)arg1 value:(id)arg2 data:(id)arg3;
 

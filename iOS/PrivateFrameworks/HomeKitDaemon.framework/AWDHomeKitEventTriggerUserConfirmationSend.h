@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int resultErrorCode; // @synthesize resultErrorCode=_resultErrorCode;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

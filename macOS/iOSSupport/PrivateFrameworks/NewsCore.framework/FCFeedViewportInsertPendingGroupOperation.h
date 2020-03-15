@@ -25,6 +25,7 @@
     CDUnknownBlockType _insertGroupCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType insertGroupCompletionHandler; // @synthesize insertGroupCompletionHandler=_insertGroupCompletionHandler;
 @property(retain, nonatomic) NSArray *internalElements; // @synthesize internalElements=_internalElements;
 @property(retain, nonatomic) FCFeedGroupEmittingContext *groupEmittingContext; // @synthesize groupEmittingContext=_groupEmittingContext;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)_finishWithInsertedGroup:(id)arg1 backedByPendingGroup:(id)arg2 forEmitter:(id)arg3;
 - (id)_nextGroupToInsert:(id *)arg1;

@@ -23,10 +23,10 @@
     NSString *__extentionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *_extentionIdentifier; // @synthesize _extentionIdentifier=__extentionIdentifier;
 @property(readonly) id <SLWebClient> _webClient; // @synthesize _webClient=__webClient;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)_presentInternetOfflineError;
 - (void)_presentUsernameMismatchAlert;
 - (void)_dismissAndCompleteWithIdentity:(id)arg1 error:(id)arg2 extensionCompletion:(CDUnknownBlockType)arg3;

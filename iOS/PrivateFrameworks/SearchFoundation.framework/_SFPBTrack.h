@@ -21,13 +21,13 @@
     _SFPBActionItem *_playAction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBActionItem *playAction; // @synthesize playAction=_playAction;
 @property(retain, nonatomic) _SFPBURL *preview; // @synthesize preview=_preview;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(copy, nonatomic) NSString *duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *number; // @synthesize number=_number;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

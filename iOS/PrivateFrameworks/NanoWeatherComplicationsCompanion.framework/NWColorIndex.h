@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)zeroIndex;
 + (id)indexForValue:(double)arg1;
 + (id)colorForValue:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithValue:(double)arg1 color:(id)arg2;
 

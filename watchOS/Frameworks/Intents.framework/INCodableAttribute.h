@@ -28,13 +28,16 @@
     INCodableAttributeRelationship *_relationship;
     NSArray *_promptDialogs;
     NSArray *_unsupportedReasons;
+    NSString *_entityKeypath;
     NSNumber *_displayPriorityRank;
     Class __relationshipValueTransformerClass;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class _relationshipValueTransformerClass; // @synthesize _relationshipValueTransformerClass=__relationshipValueTransformerClass;
 @property(copy, nonatomic) NSNumber *displayPriorityRank; // @synthesize displayPriorityRank=_displayPriorityRank;
+@property(copy, nonatomic) NSString *entityKeypath; // @synthesize entityKeypath=_entityKeypath;
 @property(copy, nonatomic, setter=_setUnsupportedReasons:) NSArray *unsupportedReasons; // @synthesize unsupportedReasons=_unsupportedReasons;
 @property(copy, nonatomic, setter=_setPromptDialogs:) NSArray *promptDialogs; // @synthesize promptDialogs=_promptDialogs;
 @property(retain, nonatomic) INCodableAttributeRelationship *relationship; // @synthesize relationship=_relationship;
@@ -48,21 +51,21 @@
 @property(nonatomic) int modifier; // @synthesize modifier=_modifier;
 @property(copy, nonatomic, setter=_setTypeString:) NSString *_typeString; // @synthesize _typeString;
 @property(nonatomic, setter=_setCodableDescription:) __weak INCodableDescription *_codableDescription; // @synthesize _codableDescription=_internalCodableDescription;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *keyPrefix;
 @property(readonly, copy, nonatomic) NSString *cacheGroup;
 - (id)promptDialogWithType:(unsigned int)arg1;
-- (id)localizedDisplayNameForLanguage:(id)arg1;
+- (id)localizedDisplayNameWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDisplayName;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
+- (unsigned int)indexForUnsupportedReason:(id)arg1;
 - (id)unsupportedReasonWithIndex:(unsigned int)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;

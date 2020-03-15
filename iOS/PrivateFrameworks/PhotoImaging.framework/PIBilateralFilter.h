@@ -16,10 +16,10 @@
 }
 
 + (id)customAttributes;
+- (void).cxx_destruct;
 @property(retain) NSNumber *inputEdgeDetail; // @synthesize inputEdgeDetail=_inputEdgeDetail;
 @property(retain) NSNumber *inputRadius; // @synthesize inputRadius=_inputRadius;
 @property(retain) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 
 @end

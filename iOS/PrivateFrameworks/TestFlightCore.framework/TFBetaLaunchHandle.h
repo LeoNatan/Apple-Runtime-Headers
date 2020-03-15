@@ -18,10 +18,10 @@
     NSString *_logKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(readonly, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 @property(nonatomic) __weak id <TFBetaLaunchHandleActivationDelegate> activationDelegate; // @synthesize activationDelegate=_activationDelegate;
-- (void).cxx_destruct;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)_updatedLaunchInfoForActivation:(id)arg1;

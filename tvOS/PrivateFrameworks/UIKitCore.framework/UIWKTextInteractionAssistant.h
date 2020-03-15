@@ -29,6 +29,7 @@
 @property(nonatomic) _Bool shouldDelayActivatingSelectionView; // @synthesize shouldDelayActivatingSelectionView=_shouldDelayActivatingSelectionView;
 @property(nonatomic) struct CGRect caretBeforeTap; // @synthesize caretBeforeTap=_caretBeforeTap;
 @property(retain, nonatomic) NSString *wordBeforeTap; // @synthesize wordBeforeTap=_wordBeforeTap;
+- (void)willChangeSelection;
 - (void)didEndScrollingOverflow;
 - (void)willStartScrollingOverflow;
 - (_Bool)shouldEnqueueObserverUpdates;
@@ -61,7 +62,7 @@
 - (void)scheduleReplacementsForText:(id)arg1;
 - (void)scheduleReplacementsWithOptions:(unsigned long long)arg1;
 - (void)scheduleChineseTransliterationForText:(id)arg1;
-- (void)scrollSelectionToVisible;
+- (void)scrollSelectionToVisible:(_Bool)arg1;
 - (_Bool)wantsLinkInteraction;
 - (_Bool)containerIsBrowserView;
 - (_Bool)containerAllowsSelectionTintOnly;
@@ -71,7 +72,7 @@
 - (void)addGestureRecognizersToView:(id)arg1;
 - (_Bool)overrideGestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)overrideGestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (Class)loupeInteractionClass;
+- (_Bool)usesAsynchronousSelectionController;
 - (Class)selectionInteractionClass;
 - (void)dealloc;
 - (id)initWithView:(id)arg1;

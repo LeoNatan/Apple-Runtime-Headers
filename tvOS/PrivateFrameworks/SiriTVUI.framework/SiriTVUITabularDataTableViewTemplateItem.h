@@ -15,10 +15,10 @@
     NSDictionary *_dividerColors;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *dividerColors; // @synthesize dividerColors=_dividerColors;
 @property(retain, nonatomic) SiriTVUITabularDataRow *header; // @synthesize header=_header;
 @property(copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
-- (void).cxx_destruct;
 - (id)initWithRows:(id)arg1;
 
 @end

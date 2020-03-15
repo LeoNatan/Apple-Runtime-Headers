@@ -16,11 +16,11 @@
     PKAccountVirtualCardEncryptionFields *_encryptionFields;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKAccountVirtualCardEncryptionFields *encryptionFields; // @synthesize encryptionFields=_encryptionFields;
 @property(copy, nonatomic) NSString *virtualCardIdentifier; // @synthesize virtualCardIdentifier=_virtualCardIdentifier;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

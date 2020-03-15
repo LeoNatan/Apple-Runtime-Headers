@@ -23,6 +23,7 @@
     NSArray *_errors;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isBackgroundContentUpdatingEnabled) _Bool backgroundContentUpdatingEnabled; // @synthesize backgroundContentUpdatingEnabled=_backgroundContentUpdatingEnabled;
 @property(nonatomic, getter=isAutomaticContentUpdatingEnabled) _Bool automaticContentUpdatingEnabled; // @synthesize automaticContentUpdatingEnabled=_automaticContentUpdatingEnabled;
 @property(readonly, nonatomic) NSArray *errors; // @synthesize errors=_errors;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic, getter=isLoadingContent) _Bool loadingContent; // @synthesize loadingContent=_loadingContent;
 @property(nonatomic) __weak id <NMUMPModelRequestContentLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NMUMPModelRequestContentLoaderDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_handleModelResponseDidInvalidateNotification:(id)arg1;
 - (void)_handleApplicationWillEnterForegroundNotification:(id)arg1;
 - (void)_handleApplicationDidEnterBackgroundNotification:(id)arg1;

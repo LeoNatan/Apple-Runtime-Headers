@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableArray *vteiList; // @synthesize vteiList=_vteiList;
-- (void).cxx_destruct;
 - (void)siriClientBehaviorMonitor:(id)arg1 didStopStream:(id)arg2;
 - (void)siriClientBehaviorMonitor:(id)arg1 willStopStream:(id)arg2;
 - (void)siriClientBehaviorMonitor:(id)arg1 willStartStreamWithContext:(id)arg2 option:(id)arg3;

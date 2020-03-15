@@ -14,9 +14,9 @@
     ENGroupID *_groupID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENGroupID *groupID; // @synthesize groupID=_groupID;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

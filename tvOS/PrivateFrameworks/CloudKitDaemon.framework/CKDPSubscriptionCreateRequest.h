@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)options;
-@property(retain, nonatomic) CKDPSubscription *subscription; // @synthesize subscription=_subscription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPSubscription *subscription; // @synthesize subscription=_subscription;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

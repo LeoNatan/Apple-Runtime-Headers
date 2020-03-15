@@ -27,6 +27,7 @@
     NSTimer *_loadingDelayTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showTypeDebugColor; // @synthesize showTypeDebugColor=_showTypeDebugColor;
 @property(nonatomic) _Bool suggestionsPresented; // @synthesize suggestionsPresented=_suggestionsPresented;
 @property(retain, nonatomic) NSTimer *loadingDelayTimer; // @synthesize loadingDelayTimer=_loadingDelayTimer;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) PXAnimatedHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) PXPeopleSuggestionView *suggestionView; // @synthesize suggestionView=_suggestionView;
 @property(readonly) PXPeopleSuggestionManager *suggestionManager; // @synthesize suggestionManager=_suggestionManager;
-- (void).cxx_destruct;
 - (unsigned long long)autoConfirmedCountForSummaryViewController:(id)arg1;
 - (unsigned long long)userConfirmedCountForSummaryViewController:(id)arg1;
 - (id)personForSummaryViewController:(id)arg1;

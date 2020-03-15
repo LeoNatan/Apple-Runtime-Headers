@@ -58,6 +58,7 @@
 + (id)_visualProviderForTabBar:(id)arg1;
 + (void)_initializeForIdiom:(int)arg1;
 + (id)_unselectedTabTintColorForView:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
 @property(nonatomic, getter=_displayStyle, setter=_setDisplayStyle:) int displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) UIView *_expectedSuperviewFollowingAnimation; // @synthesize _expectedSuperviewFollowingAnimation=__expectedSuperviewFollowingAnimation;
@@ -72,7 +73,6 @@
 @property(nonatomic) float itemSpacing; // @synthesize itemSpacing=_itemSpacing;
 @property(nonatomic) float itemWidth; // @synthesize itemWidth=_itemDimension;
 @property(nonatomic) int itemPositioning; // @synthesize itemPositioning=_itemPositioning;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *trailingAccessoryView;
 @property(readonly, nonatomic) UIView *leadingAccessoryView;
 @property(readonly, nonatomic) _UITabBarAccessoryView *_trailingBarAccessoryView;
@@ -103,12 +103,14 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)dismissCustomizeSheet:(_Bool)arg1;
 - (void)_tabBarFinishedAnimating;
+@property(nonatomic, getter=_deferViewUpdateToFocusUpdate, setter=_setDeferViewUpdateToFocusUpdate:) _Bool deferViewUpdateToFocusUpdate;
 @property(readonly, nonatomic, getter=_focusedIndex) int focusedIndex;
 @property(readonly, nonatomic, getter=_focusedTabBarItem) UITabBarItem *focusedTabBarItem;
 @property(nonatomic, getter=_pendingFocusAction, setter=_setPendingFocusAction:) _Bool pendingFocusAction;
 @property(nonatomic, getter=_focusedItemHighlightShouldBeVisible, setter=_setFocusedItemHightlightShouldBeVisible:) _Bool focusedItemHighlightShouldBeVisible;
 @property(nonatomic, getter=_isHiddenAwaitingFocus, setter=_setHiddenAwaitingFocus:) _Bool hiddenAwaitingFocus;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (_Bool)canBecomeFocused;
 - (_Bool)_isEligibleForFocusInteraction;
 @property(nonatomic, setter=_setImageStyle:) int _imageStyle; // @synthesize _imageStyle;
@@ -142,6 +144,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (unsigned int)_edgesPropagatingSafeAreaInsetsToDescendants;
 @property(readonly, nonatomic) UIView *_externalViewForSafeAreaInsets;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (_Bool)_isTranslucent;

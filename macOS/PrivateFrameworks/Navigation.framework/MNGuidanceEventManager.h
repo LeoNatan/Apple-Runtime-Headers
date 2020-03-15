@@ -52,11 +52,11 @@
     GEOComposedGuidanceEvent *_previousLaneGuidanceEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) __weak id <MNGuidanceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL isInPreArrivalState; // @synthesize isInPreArrivalState=_isInPreArrivalState;
 @property(retain, nonatomic) MNLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)timeManagerDidChangeProvider:(id)arg1;
 - (id)_junctionViewEvents;
 - (BOOL)_isEventValid:(id)arg1 start:(double)arg2 end:(double)arg3;

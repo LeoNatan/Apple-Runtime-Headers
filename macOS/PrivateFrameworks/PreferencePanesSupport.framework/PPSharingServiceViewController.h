@@ -17,10 +17,10 @@
 
 + (id)homeFolder;
 + (BOOL)isBlockedByFirewall;
+- (void).cxx_destruct;
 @property(retain) NSString *firewallWarningText; // @synthesize firewallWarningText=_firewallWarningText;
 @property __weak NSTextField *stateText; // @synthesize stateText=_stateText;
 @property __weak NSImageView *stateImage; // @synthesize stateImage=_stateImage;
-- (void).cxx_destruct;
 - (void)revealElementForKey:(id)arg1;
 - (void)onOffButtonPressed;
 - (void)didSelect;

@@ -19,11 +19,11 @@
     NSMutableDictionary *_interactionStateByControlID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *interactionStateByControlID; // @synthesize interactionStateByControlID=_interactionStateByControlID;
 @property(readonly, nonatomic) NSSet *configurations; // @synthesize configurations=_configurations;
 @property(readonly, nonatomic) NSSet *allItems; // @synthesize allItems=_allItems;
 @property(readonly, nonatomic) __weak id <HUControlPanelControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)controlView:(id)arg1 valueDidChange:(id)arg2;
 - (void)controlViewDidEndUserInteraction:(id)arg1;
 - (void)controlViewDidBeginUserInteraction:(id)arg1;

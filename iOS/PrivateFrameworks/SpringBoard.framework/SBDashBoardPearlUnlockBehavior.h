@@ -19,9 +19,9 @@
     SBMesaUnlockTrigger *_trigger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_trigger, setter=_setTrigger:) SBMesaUnlockTrigger *trigger; // @synthesize trigger=_trigger;
 @property(nonatomic) __weak id <SBBiometricUnlockBehaviorDelegate> biometricUnlockBehaviorDelegate; // @synthesize biometricUnlockBehaviorDelegate=_biometricUnlockBehaviorDelegate;
-- (void).cxx_destruct;
 - (void)_handlePearlFailure;
 - (id)_feedbackForBioUnlockEventThatWasSpontaneous:(_Bool)arg1;
 - (id)_feedbackForPasscodeEvent;

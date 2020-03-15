@@ -22,6 +22,7 @@
 }
 
 + (id)configurationWithModelPath:(id)arg1 texturePath:(id)arg2 plistPath:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *enamelTriColors; // @synthesize enamelTriColors=_enamelTriColors;
 @property(nonatomic) _Bool faceHasMetalInlay; // @synthesize faceHasMetalInlay=_faceHasMetalInlay;
 @property(nonatomic) _Bool unearnedUsesTwoToneEnamel; // @synthesize unearnedUsesTwoToneEnamel=_unearnedUsesTwoToneEnamel;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *shapeName; // @synthesize shapeName=_shapeName;
 @property(copy, nonatomic) NSString *badgeTexturePath; // @synthesize badgeTexturePath=_badgeTexturePath;
 @property(copy, nonatomic) NSString *badgeModelPath; // @synthesize badgeModelPath=_badgeModelPath;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithModelPath:(id)arg1 texturePath:(id)arg2 shapeName:(id)arg3 metalColor:(id)arg4 useFullColorEnamel:(_Bool)arg5 modelEnamelColor:(id)arg6 unearnedUsesTwoToneEnamel:(_Bool)arg7 faceHasMetalInlay:(_Bool)arg8 enamelTricolors:(id)arg9;
 

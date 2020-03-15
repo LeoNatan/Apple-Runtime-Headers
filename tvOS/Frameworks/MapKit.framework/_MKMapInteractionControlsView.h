@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
     id <MKMapInteractionControlsViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MKMapInteractionControlAction *preferredFocusedAction; // @synthesize preferredFocusedAction=_preferredFocusedAction;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) __weak id <MKMapInteractionControlsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;

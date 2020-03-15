@@ -21,11 +21,11 @@
     id _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <IAAppTableControllerDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSMutableArray *pairedServices; // @synthesize pairedServices=_pairedServices;
 @property(retain) NSMutableArray *apps; // @synthesize apps=_apps;
 @property(retain) IAAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)checkboxClicked:(id)arg1;
 - (void)configureForProvider:(id)arg1;
 - (id)view;

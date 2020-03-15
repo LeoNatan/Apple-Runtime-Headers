@@ -20,11 +20,11 @@
 
 + (id)new;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL _forCache; // @synthesize _forCache=__forCache;
 @property(readonly, nonatomic) __CFN_TransactionMetrics *_metrics; // @synthesize _metrics=__metrics;
 @property(nonatomic) BOOL _connectionTimingCached; // @synthesize _connectionTimingCached=__connectionTimingCached;
 @property(nonatomic) CDStruct_c0a2f610 _connectionTiming; // @synthesize _connectionTiming=__connectionTiming;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, getter=isMultipath) BOOL multipath;
 @property(readonly, getter=isConstrained) BOOL constrained;

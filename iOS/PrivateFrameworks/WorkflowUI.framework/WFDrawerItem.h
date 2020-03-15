@@ -14,8 +14,8 @@
     UIViewController<WFDrawerPane> *_drawerPane;
 }
 
-@property(nonatomic) __weak UIViewController<WFDrawerPane> *drawerPane; // @synthesize drawerPane=_drawerPane;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController<WFDrawerPane> *drawerPane; // @synthesize drawerPane=_drawerPane;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;

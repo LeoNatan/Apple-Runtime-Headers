@@ -15,9 +15,9 @@
 }
 
 + (id)timeContentProviderWithDate:(id)arg1 timeZone:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)attributedStringRepresentation;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

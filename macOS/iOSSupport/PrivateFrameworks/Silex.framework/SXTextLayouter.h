@@ -17,12 +17,12 @@
     SXTextTangierContainerInfo *_textInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXTextTangierContainerInfo *textInfo; // @synthesize textInfo=_textInfo;
 @property(retain, nonatomic) TSDLayoutController *layoutController; // @synthesize layoutController=_layoutController;
 @property(retain, nonatomic) SXTextTangierDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
 @property(retain, nonatomic) NSSet *exclusionPaths; // @synthesize exclusionPaths=_exclusionPaths;
 @property(retain, nonatomic) SXTextSource *textSource; // @synthesize textSource=_textSource;
-- (void).cxx_destruct;
 - (id)exclusionPathIndexes;
 - (id)wpLayout;
 - (id)wpStorage;

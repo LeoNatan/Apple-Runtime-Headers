@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 
 - (id)init;
 - (id)nextUUID;
-- (double)nextNumber;
-- (_Bool)nextBoolean;
+- (id)nextNumber;
+- (id)nextBoolean;
 
 @end
 

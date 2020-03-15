@@ -18,10 +18,10 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) id <SVVideo> toVideo; // @synthesize toVideo=_toVideo;
 @property(readonly, nonatomic) id <SVVideo> fromVideo; // @synthesize fromVideo=_fromVideo;
-- (void).cxx_destruct;
 - (void)completeTransition:(_Bool)arg1;
 - (id)initWithFromVideo:(id)arg1 toVideo:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 

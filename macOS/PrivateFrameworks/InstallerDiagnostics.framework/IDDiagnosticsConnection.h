@@ -16,8 +16,8 @@
 }
 
 + (id)sharedConnection;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)clearDiagnosticMessages:(CDUnknownBlockType)arg1;
 - (void)clearSingleDiagnosticMessage:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)recordDiagnosticMessage:(long long)arg1 withData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

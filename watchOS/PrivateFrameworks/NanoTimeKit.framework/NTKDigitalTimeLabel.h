@@ -28,6 +28,7 @@
 }
 
 + (id)_tritiumOutlineColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=tritium_setFillColor:) UIColor *tritium_fillColor; // @synthesize tritium_fillColor=_tritium_fillColor;
 @property(retain, nonatomic, setter=tritium_setOutlineColor:) UIColor *tritium_outlineColor; // @synthesize tritium_outlineColor=_tritium_outlineColor;
 @property(nonatomic, setter=tritium_setTextAlignment:) int tritiumTextAlignment; // @synthesize tritiumTextAlignment=_tritiumTextAlignment;
@@ -35,7 +36,6 @@
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
-- (void).cxx_destruct;
 - (_Bool)_isDigitalTimeLabelInLatin;
 - (id)_tritiumFontForFont:(id)arg1 style:(unsigned int)arg2;
 - (id)_createTritiumLabelWithStyle:(unsigned int)arg1;

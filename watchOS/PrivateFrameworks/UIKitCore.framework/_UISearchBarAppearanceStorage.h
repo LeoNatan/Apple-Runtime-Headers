@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIImage *scopeBarBackgroundImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *scopeBarBackgroundImage; // @synthesize scopeBarBackgroundImage;
 @property(retain, nonatomic) UIImage *separatorImage; // @synthesize separatorImage;
 @property(retain, nonatomic) NSValue *searchFieldPositionAdjustment; // @synthesize searchFieldPositionAdjustment;
-- (void).cxx_destruct;
 - (id)imageForIcon:(int)arg1 state:(unsigned int)arg2;
 - (void)setImage:(id)arg1 forIcon:(int)arg2 state:(unsigned int)arg3;
 - (id)searchFieldBackgroundImageForState:(unsigned int)arg1;

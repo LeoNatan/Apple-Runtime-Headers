@@ -12,9 +12,9 @@
     unsigned int _index;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 index:(unsigned int)arg2;
 
 @end

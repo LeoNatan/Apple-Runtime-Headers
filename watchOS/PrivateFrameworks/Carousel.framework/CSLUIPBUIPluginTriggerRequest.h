@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSMutableArray *dictionarys; // @synthesize dictionarys=_dictionarys;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

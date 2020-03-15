@@ -17,9 +17,9 @@
     id <FCCKRecordNameCipher> _recordNameCipher;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCCKRecordNameCipher> recordNameCipher; // @synthesize recordNameCipher=_recordNameCipher;
 @property(retain, nonatomic) FCCKPrivateDatabaseSchema *encryptionSchema; // @synthesize encryptionSchema=_encryptionSchema;
-- (void).cxx_destruct;
 - (_Bool)_isEnabledForDatabase:(id)arg1;
 - (id)_encryptionKeyForServerRecordID:(id)arg1 inDatabase:(id)arg2;
 - (id)_encryptionKeyForClientRecordID:(id)arg1 inDatabase:(id)arg2;

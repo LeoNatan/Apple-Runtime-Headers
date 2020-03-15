@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSData *_nonce;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *nonce; // @synthesize nonce=_nonce;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned long long authTagLength; // @synthesize authTagLength=_authTagLength;
 @property(copy, nonatomic) NSData *aad; // @synthesize aad=_aad;
-- (void).cxx_destruct;
 
 @end
 

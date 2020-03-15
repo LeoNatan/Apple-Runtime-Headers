@@ -27,7 +27,8 @@
 + (unsigned long long)purgeableSpace;
 + (void)countOfAssetsInMstreamdSharingDownloadQueueWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)isMstreamdBusyPerformingSharingActivityWithCompletionBlock:(CDUnknownBlockType)arg1;
-+ (void)pruneNonRecentlyViewedCloudSharingAssetsInLibrary:(id)arg1;
++ (void)_markStreamVideosAsPurgeable;
++ (void)pruneCloudSharingContentIfNecessaryInLibrary:(id)arg1;
 + (void)applicationIsInForeground:(_Bool)arg1 photoLibraryURL:(id)arg2;
 + (double)intervalBetweenAlbumPolls;
 + (double)intervalBetweenPolls;

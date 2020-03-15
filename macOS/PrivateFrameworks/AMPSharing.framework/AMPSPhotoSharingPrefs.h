@@ -16,11 +16,11 @@
     AMPLSharingClient *_client;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMPLSharingClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) NSDictionary *photoSharingSettings; // @synthesize photoSharingSettings=_photoSharingSettings;
 @property(readonly, nonatomic) unsigned char sourceID; // @synthesize sourceID=_sourceID;
 @property(readonly, nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)disablePhotoSharingWithReply:(CDUnknownBlockType)arg1;
 - (void)enablePhotoSharingWithSourceID:(id)arg1 settings:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)updatePrefs:(BOOL)arg1 sourceID:(id)arg2 settings:(id)arg3;

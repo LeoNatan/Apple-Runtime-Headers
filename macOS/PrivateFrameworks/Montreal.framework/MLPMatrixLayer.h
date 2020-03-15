@@ -16,11 +16,11 @@
     NSMutableDictionary *_inputMatrixToFirstKernel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *inputMatrixToFirstKernel; // @synthesize inputMatrixToFirstKernel=_inputMatrixToFirstKernel;
 @property(retain) NSMutableDictionary *inputMatrixToSecondKernel; // @synthesize inputMatrixToSecondKernel=_inputMatrixToSecondKernel;
 @property unsigned long long numOutputs; // @synthesize numOutputs=_numOutputs;
 @property unsigned long long numInputs; // @synthesize numInputs=_numInputs;
-- (void).cxx_destruct;
 - (void)updateInputMatrixToSecondKernel:(id)arg1 index:(id)arg2 inference:(BOOL)arg3;
 - (void)updateInputMatrixToFirstKernel:(id)arg1 index:(id)arg2 inference:(BOOL)arg3;
 - (void)allocateInputDictionaries;

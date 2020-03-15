@@ -15,10 +15,10 @@
     id <CBPairingAgentParentDelegate> _parentManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CBPairingAgentParentDelegate> parentManager; // @synthesize parentManager=_parentManager;
 @property(nonatomic) _Bool useOOBMode; // @synthesize useOOBMode=_useOOBMode;
 @property(nonatomic) __weak id <CBPairingAgentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handlePairingMessage:(unsigned short)arg1 args:(id)arg2;
 - (void)handleUnpaired:(id)arg1;
 - (void)handlePairingCompleted:(id)arg1;

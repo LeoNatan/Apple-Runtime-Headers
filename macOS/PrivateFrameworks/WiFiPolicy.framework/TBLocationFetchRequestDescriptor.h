@@ -25,6 +25,7 @@
     double _longitude;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(nonatomic) unsigned long long primaryTileKey; // @synthesize primaryTileKey=_primaryTileKey;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSDate *maxCacheAge; // @synthesize maxCacheAge=_maxCacheAge;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSPredicate *localFetchPredicate; // @synthesize localFetchPredicate=_localFetchPredicate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_preferLocalCacheFetchRequest;
 - (id)_localFetchRequest;

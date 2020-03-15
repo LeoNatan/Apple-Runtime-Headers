@@ -17,10 +17,10 @@
 
 + (id)tokenWithIcon:(id)arg1 text:(id)arg2;
 + (id)tokenWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)_initToken;
 
 @end

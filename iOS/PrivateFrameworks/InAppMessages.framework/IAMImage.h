@@ -16,9 +16,9 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithICImage:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 url:(id)arg2;

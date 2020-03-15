@@ -29,6 +29,7 @@
     NSArray *_feedbacks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *feedbacks; // @synthesize feedbacks=_feedbacks;
 @property(copy, nonatomic) NSData *jsonFeedback; // @synthesize jsonFeedback=_jsonFeedback;
 @property(retain, nonatomic) _CPUsageEnvelope *cohortsFeedback; // @synthesize cohortsFeedback=_cohortsFeedback;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSDictionary *resourceVersions; // @synthesize resourceVersions=_resourceVersions;
 @property(copy, nonatomic) NSString *userGuidString; // @synthesize userGuidString=_userGuidString;
 @property(copy, nonatomic) NSString *agent; // @synthesize agent=_agent;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

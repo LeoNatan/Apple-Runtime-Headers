@@ -21,10 +21,10 @@
     id <AVCaptureMetadataOutputObjectsDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <AVCaptureMetadataOutputObjectsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool canUseCamera; // @synthesize canUseCamera=_canUseCamera;
 @property(readonly, nonatomic) AVCaptureVideoPreviewLayer *previewLayer; // @synthesize previewLayer=_previewLayer;
-- (void).cxx_destruct;
 - (void)_changeCameraConfiguration;
 - (void)_handleRuntimeError:(id)arg1;
 - (void)stopRunning;

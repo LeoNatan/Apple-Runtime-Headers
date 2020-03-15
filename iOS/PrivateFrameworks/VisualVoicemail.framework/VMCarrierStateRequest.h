@@ -18,11 +18,11 @@
 
 + (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *serviceCenter; // @synthesize serviceCenter=_serviceCenter;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *destination; // @synthesize destination=_destination;
-- (void).cxx_destruct;
 - (_Bool)isEqualToStateRequest:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -32,6 +32,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *effectiveEndDate; // @synthesize effectiveEndDate=_effectiveEndDate;
 @property(retain, nonatomic) NSData *effectiveStartDate; // @synthesize effectiveStartDate=_effectiveStartDate;
 @property(retain, nonatomic) HDCodableMedicalCodingListList *reasonsNotTakenCodings; // @synthesize reasonsNotTakenCodings=_reasonsNotTakenCodings;
@@ -45,7 +46,6 @@
 @property(nonatomic) long long assertionType; // @synthesize assertionType=_assertionType;
 @property(retain, nonatomic) HDCodableMedicalCodingList *medicationCodings; // @synthesize medicationCodings=_medicationCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

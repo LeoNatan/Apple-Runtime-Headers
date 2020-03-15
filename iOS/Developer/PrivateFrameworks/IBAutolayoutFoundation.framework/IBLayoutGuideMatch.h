@@ -18,12 +18,12 @@
     id _feedbackToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id feedbackToken; // @synthesize feedbackToken=_feedbackToken;
 @property(readonly) IBLayoutConstant *constant; // @synthesize constant=_constant;
 @property(readonly) unsigned long long relativeAttribute; // @synthesize relativeAttribute=_relativeAttribute;
 @property(readonly) NSObject<IBAutolayoutItem> *relativeTo; // @synthesize relativeTo=_relativeTo;
 @property(readonly) unsigned long long attribute; // @synthesize attribute=_attribute;
-- (void).cxx_destruct;
 - (id)layoutGuideMatchByConvertingToCoordinateSpaceOfView:(id)arg1 fromCoordinateSpaceOfView:(id)arg2;
 - (_Bool)exactlyMatchesView:(id)arg1 withConstantInCoordinateSpaceOfView:(id)arg2 userInterfaceLayoutDirection:(long long)arg3;
 - (id)constantInCoordinateSpaceOfView:(id)arg1 fromCoordinateSpaceOfView:(id)arg2;

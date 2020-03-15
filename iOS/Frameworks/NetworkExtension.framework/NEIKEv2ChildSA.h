@@ -27,20 +27,21 @@
     NSArray *_remoteTrafficSelectors;
     NSData *_localNonce;
     NSData *_remoteNonce;
-    struct NSMutableData *_dhPublicKey;
+    NSMutableData *_dhPublicKey;
     NSData *_dhRemotePublicKey;
     struct OpaqueSecDHContext *_dhContext;
     unsigned long long _dhPublicKeySize;
-    struct NSMutableData *_incomingEncryptionKey;
-    struct NSMutableData *_incomingIntegrityKey;
-    struct NSMutableData *_outgoingEncryptionKey;
-    struct NSMutableData *_outgoingIntegrityKey;
+    NSMutableData *_incomingEncryptionKey;
+    NSMutableData *_incomingIntegrityKey;
+    NSMutableData *_outgoingEncryptionKey;
+    NSMutableData *_outgoingIntegrityKey;
     NEIKEv2ChildSAProposal *_initiatorRekeyProposal;
     NEIKEv2ChildSAProposal *_initiatorRekeyNonPFSProposal;
     NEIKEv2ChildSAProposal *_responderRekeyProposal;
 }
 
 + (unsigned short)nextDatabaseReqID;
+- (void).cxx_destruct;
 @property _Bool sequencePerTrafficClassSupported; // @synthesize sequencePerTrafficClassSupported=_sequencePerTrafficClassSupported;
 @property(retain) NEIKEv2ChildSAProposal *responderRekeyProposal; // @synthesize responderRekeyProposal=_responderRekeyProposal;
 @property(retain) NEIKEv2ChildSAProposal *initiatorRekeyNonPFSProposal; // @synthesize initiatorRekeyNonPFSProposal=_initiatorRekeyNonPFSProposal;
@@ -68,7 +69,6 @@
 @property unsigned short incomingDatabaseReqID; // @synthesize incomingDatabaseReqID=_incomingDatabaseReqID;
 @property unsigned int childID; // @synthesize childID=_childID;
 @property __weak NEIKEv2IKESA *ikeSA; // @synthesize ikeSA=_ikeSA;
-- (void).cxx_destruct;
 @property(retain) NSArray *responderTrafficSelectors;
 @property(retain) NSArray *initiatorTrafficSelectors;
 @property(readonly) NSArray *configuredResponderTrafficSelectors;

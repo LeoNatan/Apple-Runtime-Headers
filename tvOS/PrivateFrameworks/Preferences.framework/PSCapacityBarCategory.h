@@ -18,11 +18,11 @@
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIColor *color; // @synthesize color=_color;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property unsigned long long bytes; // @synthesize bytes=_bytes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 color:(id)arg3 bytes:(long long)arg4;
 

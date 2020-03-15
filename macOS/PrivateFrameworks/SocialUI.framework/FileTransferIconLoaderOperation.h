@@ -18,11 +18,11 @@
     struct CGSize _thumbnailSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FileTransferIconLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGSize thumbnailSize; // @synthesize thumbnailSize=_thumbnailSize;
 @property(retain, nonatomic) NSData *bookmark; // @synthesize bookmark=_bookmark;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_notifyDelegate:(id)arg1;
 - (id)init;

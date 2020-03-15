@@ -34,14 +34,17 @@
     NSObject<OS_dispatch_queue> *_internalDelegateQueue;
     NSObject<OS_dispatch_queue> *_clientQueue;
     unsigned long long _stateNumber;
+    unsigned long long _compatibilityFeatures;
     id <HAPKeyStore> _keyStore;
     unsigned long long _pairSetupType;
 }
 
 + (BOOL)isAccessoryServerWithIdentifierPaired:(id)arg1 keyStore:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pairSetupType; // @synthesize pairSetupType=_pairSetupType;
 @property(readonly, nonatomic) __weak id <HAPKeyStore> keyStore; // @synthesize keyStore=_keyStore;
 @property(nonatomic, getter=isIncompatibleUpdate) BOOL incompatibleUpdate; // @synthesize incompatibleUpdate=_incompatibleUpdate;
+@property(nonatomic) unsigned long long compatibilityFeatures; // @synthesize compatibilityFeatures=_compatibilityFeatures;
 @property(nonatomic) unsigned long long stateNumber; // @synthesize stateNumber=_stateNumber;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalDelegateQueue; // @synthesize internalDelegateQueue=_internalDelegateQueue;
@@ -53,7 +56,6 @@
 @property(copy, nonatomic) NSArray *accessories; // @synthesize accessories=_accessories;
 @property(retain, nonatomic) HAPAccessory *primaryAccessory; // @synthesize primaryAccessory=_primaryAccessory;
 @property(nonatomic) unsigned long long configNumber; // @synthesize configNumber=_configNumber;
-- (void).cxx_destruct;
 - (void)enumerateInternalDelegatesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeInternalDelegate:(id)arg1;
 - (void)addInternalDelegate:(id)arg1;
@@ -61,8 +63,8 @@
 - (void)handleUpdatesForCharacteristics:(id)arg1 stateNumber:(id)arg2;
 - (void)identifyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3 queue:(id)arg4;
-- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)discoverAccessories;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;

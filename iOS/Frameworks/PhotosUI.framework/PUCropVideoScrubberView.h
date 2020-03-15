@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     NSObject<PUCropVideoScrubberViewDelegate> *_delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<PUCropVideoScrubberViewDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UILabel *afterTimeLabel; // @synthesize afterTimeLabel=_afterTimeLabel;
 @property(retain, nonatomic) UILabel *beforeTimeLabel; // @synthesize beforeTimeLabel=_beforeTimeLabel;
 @property(retain, nonatomic) UISlider *scrubberSlider; // @synthesize scrubberSlider=_scrubberSlider;
-- (void).cxx_destruct;
 - (void)offsetTimeLabelsIfNecessary;
 - (void)layoutSubviews;
 - (void)setCurrentTime:(CDStruct_1b6d18a9)arg1;

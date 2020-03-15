@@ -13,8 +13,8 @@
     NSArray *_socialGroup;
 }
 
-@property(readonly, nonatomic) NSArray *socialGroup; // @synthesize socialGroup=_socialGroup;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *socialGroup; // @synthesize socialGroup=_socialGroup;
 - (id)debugDictionary;
 - (id)initWithRepresentedObject:(id)arg1 representedSocialGroup:(id)arg2;
 

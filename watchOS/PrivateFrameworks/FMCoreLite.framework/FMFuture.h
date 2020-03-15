@@ -36,8 +36,8 @@
 + (id)futureWithNoResult;
 + (id)futureWithError:(id)arg1;
 + (id)futureWithResult:(id)arg1;
-@property(copy, nonatomic) NSString *descriptor; // @synthesize descriptor=_descriptor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *descriptor; // @synthesize descriptor=_descriptor;
 @property(readonly, copy) NSString *description;
 - (id)recover:(CDUnknownBlockType)arg1;
 - (id)reschedule:(id)arg1;

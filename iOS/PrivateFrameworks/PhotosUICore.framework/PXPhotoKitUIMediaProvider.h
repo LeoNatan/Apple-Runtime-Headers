@@ -29,9 +29,9 @@
 }
 
 + (id)defaultMediaProvider;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHCachingImageManager *cachingImageManager; // @synthesize cachingImageManager=_cachingImageManager;
 @property(readonly, nonatomic) PHImageManager *imageManager; // @synthesize imageManager=_imageManager;
-- (void).cxx_destruct;
 - (void)_preheatQueue_scheduleUpdateAfterDelay;
 - (void)_preheatQueue_schedulePreheat;
 - (void)_schedulePreheat;

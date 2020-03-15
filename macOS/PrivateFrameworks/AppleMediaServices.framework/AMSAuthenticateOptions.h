@@ -18,6 +18,7 @@
     BOOL _canMakeAccountActive;
     BOOL _usernameEditable;
     BOOL _allowSecondaryCredentialSource;
+    BOOL _demoAccountSetup;
     BOOL _remoteProxyAuthentication;
     NSString *_appProvidedContext;
     NSDictionary *_appProvidedData;
@@ -37,7 +38,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, getter=isRemoteProxyAuthentication) BOOL remoteProxyAuthentication; // @synthesize remoteProxyAuthentication=_remoteProxyAuthentication;
+@property(getter=isDemoAccountSetup) BOOL demoAccountSetup; // @synthesize demoAccountSetup=_demoAccountSetup;
 @property unsigned long long credentialSource; // @synthesize credentialSource=_credentialSource;
 @property BOOL allowSecondaryCredentialSource; // @synthesize allowSecondaryCredentialSource=_allowSecondaryCredentialSource;
 @property BOOL usernameEditable; // @synthesize usernameEditable=_usernameEditable;
@@ -57,7 +60,6 @@
 @property(copy) NSDictionary *appProvidedData; // @synthesize appProvidedData=_appProvidedData;
 @property(copy) NSString *appProvidedContext; // @synthesize appProvidedContext=_appProvidedContext;
 @property BOOL allowServerDialogs; // @synthesize allowServerDialogs=_allowServerDialogs;
-- (void).cxx_destruct;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setMediaType:(id)arg1;
 - (void)setAuthKitData:(id)arg1;

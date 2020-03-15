@@ -16,8 +16,8 @@
 + (id)implementedProperties;
 + (id)serviceUUID;
 + (int)serviceType;
-@property(retain, nonatomic) CBCharacteristic *batteryCharacteristic; // @synthesize batteryCharacteristic=_batteryCharacteristic;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CBCharacteristic *batteryCharacteristic; // @synthesize batteryCharacteristic=_batteryCharacteristic;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 updateTime:(id)arg3 error:(id)arg4;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristic:(id)arg2;
 - (id)handleBatteryLevel:(id)arg1;

@@ -10,6 +10,8 @@
 {
 }
 
+- (_Bool)isCurrentUserAnonymous;
+- (id)logoutWarningMessage;
 - (void)logoutToLoginWindowWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)logoutToLoginUserWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)logoutToLoginSessionWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -18,12 +18,12 @@
 }
 
 + (id)intentActionWithShortcut:(id)arg1 forceExecutionOnPhone:(BOOL)arg2 groupIdentifier:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic) BOOL forceExecutionOnPhone; // @synthesize forceExecutionOnPhone=_forceExecutionOnPhone;
 @property(retain, nonatomic) INIntent *intent; // @synthesize intent=_intent;
-- (void).cxx_destruct;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (id)slots;
 - (id)intentDescription;

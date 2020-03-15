@@ -18,9 +18,9 @@
 }
 
 + (Class)contentRequestHeadersType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long contentRequestAuthorizeGetOptions; // @synthesize contentRequestAuthorizeGetOptions=_contentRequestAuthorizeGetOptions;
 @property(retain, nonatomic) NSMutableArray *contentRequestHeaders; // @synthesize contentRequestHeaders=_contentRequestHeaders;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

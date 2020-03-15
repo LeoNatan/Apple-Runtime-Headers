@@ -30,6 +30,7 @@
     NSString *_accessibilityLabel;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(copy) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 @property(copy) NSString *accessibilityRoleDescription; // @synthesize accessibilityRoleDescription=_accessibilityRoleDescription;
@@ -42,7 +43,6 @@
 @property BOOL ignoresDowntime; // @synthesize ignoresDowntime;
 @property BOOL ignoresDND; // @synthesize ignoresDND=_ignoresDND;
 @property unsigned long long order; // @synthesize order=_order;
-- (void).cxx_destruct;
 - (void)releaseKey;
 - (void)makeKeyWithReady:(CDUnknownBlockType)arg1;
 - (void)dismissWithAnimation:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

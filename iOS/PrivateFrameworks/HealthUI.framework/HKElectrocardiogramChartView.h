@@ -21,6 +21,7 @@
 
 + (id)printedGridOptions;
 + (id)defaultGridOptions;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
 @property(nonatomic) _Bool allowsScrolling; // @synthesize allowsScrolling=_allowsScrolling;
 @property(retain, nonatomic) HKElectrocardiogram *sample; // @synthesize sample=_sample;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) HKElectrocardiogramWaveformView *waveformView; // @synthesize waveformView=_waveformView;
 @property(retain, nonatomic) HKElectrocardiogramGridView *gridView; // @synthesize gridView=_gridView;
 @property(nonatomic, getter=isEdgeMaskEnabled) _Bool edgeMaskEnabled; // @synthesize edgeMaskEnabled=_edgeMaskEnabled;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *lineColor;
 @property(nonatomic) double lineWidth;
 @property(readonly, nonatomic) double pointsPerMillivolt;

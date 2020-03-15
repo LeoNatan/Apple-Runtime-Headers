@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float outputVolume; // @synthesize outputVolume=_outputVolume;
 @property(readonly, nonatomic) long long gender; // @synthesize gender=_gender;
 @property(readonly, copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(readonly, nonatomic) long long transcriptID; // @synthesize transcriptID=_transcriptID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

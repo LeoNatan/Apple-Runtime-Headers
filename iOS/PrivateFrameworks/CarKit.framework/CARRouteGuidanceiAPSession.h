@@ -18,10 +18,10 @@
 }
 
 + (id)localizedNameForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *navigationAccessories; // @synthesize navigationAccessories=_navigationAccessories;
 @property(retain, nonatomic) IAPNavigation *iapNavigation; // @synthesize iapNavigation=_iapNavigation;
 @property(retain, nonatomic) NSString *currentNavigationOwnerIdentifier; // @synthesize currentNavigationOwnerIdentifier=_currentNavigationOwnerIdentifier;
-- (void).cxx_destruct;
 - (void)IAPNavigationAccessoryDidBecomeUnavailable:(id)arg1;
 - (void)IAPNavigationAccessoryDidBecomeAvailable:(id)arg1;
 - (void)IAPNavigationAccessory:(id)arg1 didEnableNavigationUpdatesForComponent:(id)arg2;

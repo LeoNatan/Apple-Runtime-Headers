@@ -21,21 +21,21 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL specifiedPresenceOfInjectedContent; // @synthesize specifiedPresenceOfInjectedContent=_specifiedPresenceOfInjectedContent;
 @property(readonly, nonatomic) BOOL hasInjectedContent; // @synthesize hasInjectedContent=_hasInjectedContent;
 @property(readonly, nonatomic) NSArray *allowedDomainsForHeaderInjection; // @synthesize allowedDomainsForHeaderInjection=_allowedDomainsForHeaderInjection;
 @property(readonly, nonatomic) NSArray *allowedDomains; // @synthesize allowedDomains=_allowedDomains;
 @property(readonly, nonatomic) int accessLevel; // @synthesize accessLevel=_accessLevel;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)canAccessURL:(id)arg1;
 - (BOOL)requiresAccessToAdditionalWebsitesThan:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
-@property(readonly, nonatomic) Vector_851fab59 allowedDomainPatternsForHeaderInjection;
-@property(readonly, nonatomic) Vector_851fab59 allowedDomainPatterns;
+@property(readonly, nonatomic) Vector_920cd39b allowedDomainPatternsForHeaderInjection;
+@property(readonly, nonatomic) Vector_920cd39b allowedDomainPatterns;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithAccessLevel:(int)arg1 allowedDomainPatterns:(Vector_851fab59)arg2 hasInjectedContent:(BOOL)arg3;
+- (id)initWithAccessLevel:(int)arg1 allowedDomainPatterns:(Vector_920cd39b)arg2 hasInjectedContent:(BOOL)arg3;
 
 @end
 

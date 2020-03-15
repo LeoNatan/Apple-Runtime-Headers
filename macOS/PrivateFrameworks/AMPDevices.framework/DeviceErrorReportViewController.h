@@ -31,6 +31,7 @@
     NSArray *_errorNodes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *errorNodes; // @synthesize errorNodes=_errorNodes;
 @property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(retain, nonatomic) NSString *defaultFileName; // @synthesize defaultFileName=_defaultFileName;
@@ -47,7 +48,6 @@
 @property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak NSTextField *explanationTextField; // @synthesize explanationTextField=_explanationTextField;
 @property(nonatomic) __weak NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
-- (void).cxx_destruct;
 - (void)clickDisclosureTriangle:(id)arg1;
 - (void)clickSaveButton:(id)arg1;
 - (void)clickCancelButton:(id)arg1;

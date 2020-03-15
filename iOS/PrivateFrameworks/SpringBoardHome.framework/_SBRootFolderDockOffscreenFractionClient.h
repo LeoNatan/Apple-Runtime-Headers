@@ -18,10 +18,10 @@
     double _desiredOffscreenFraction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double desiredOffscreenFraction; // @synthesize desiredOffscreenFraction=_desiredOffscreenFraction;
 @property(retain, nonatomic) SBRootFolderView *folderView; // @synthesize folderView=_folderView;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

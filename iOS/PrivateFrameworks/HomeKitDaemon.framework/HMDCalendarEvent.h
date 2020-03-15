@@ -21,8 +21,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
-@property(retain, nonatomic) NSDateComponents *fireDateComponents; // @synthesize fireDateComponents=_fireDateComponents;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDateComponents *fireDateComponents; // @synthesize fireDateComponents=_fireDateComponents;
 - (id)metricData;
 - (id)_nextTimerDate;
 - (_Bool)areMonthDayNotMatching:(id)arg1;

@@ -22,13 +22,13 @@
 }
 
 + (_Bool)isTapToWakeSupported;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBIdleTimerDefaults *idleTimerDefaults; // @synthesize idleTimerDefaults=_idleTimerDefaults;
 @property(retain, nonatomic) SBFTapToWakeGestureRecognizer *pencilToWakeGestureRecognizer; // @synthesize pencilToWakeGestureRecognizer=_pencilToWakeGestureRecognizer;
 @property(retain, nonatomic) SBFTapToWakeGestureRecognizer *tapToWakeGestureRecognizer; // @synthesize tapToWakeGestureRecognizer=_tapToWakeGestureRecognizer;
 @property(readonly, nonatomic) _Bool shouldTapToWake; // @synthesize shouldTapToWake=_shouldTapToWake;
 @property(nonatomic, getter=isScreenOff) _Bool screenOff; // @synthesize screenOff=_screenOff;
 @property(nonatomic) __weak id <SBTapToWakeDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)pencilToWakeDidRecognize:(id)arg1;
 - (void)tapToWakeDidRecognize:(id)arg1;

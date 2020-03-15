@@ -15,10 +15,10 @@
     NSArray *_foreignColumns;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *foreignColumns; // @synthesize foreignColumns=_foreignColumns;
 @property(readonly, nonatomic) NSArray *localColumns; // @synthesize localColumns=_localColumns;
 @property(readonly, nonatomic) ML3DatabaseTable *foreignTable; // @synthesize foreignTable=_foreignTable;
-- (void).cxx_destruct;
 - (id)_foreignKeyClauseSQL;
 - (id)initWithForeignTable:(id)arg1 localColumns:(id)arg2 foreignColumns:(id)arg3;
 

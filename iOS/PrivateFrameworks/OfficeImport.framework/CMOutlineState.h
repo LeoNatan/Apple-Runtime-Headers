@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     WDList *_currentList;
 }
 
+- (void).cxx_destruct;
 @property(readonly) WDListDefinition *listDefinition; // @synthesize listDefinition=_listDefinition;
 @property(retain) WDList *currentList; // @synthesize currentList=_currentList;
-- (void).cxx_destruct;
 - (void)increaseCounterAtLevel:(unsigned char)arg1;
 - (id)levelDescriptionAtIndex:(unsigned char)arg1;
 - (unsigned long long)counterAtLevel:(unsigned char)arg1;

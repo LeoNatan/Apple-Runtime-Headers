@@ -21,6 +21,7 @@
     NSNumber *_julianDayOfLastCycleStart;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *julianDayOfLastCycleStart; // @synthesize julianDayOfLastCycleStart=_julianDayOfLastCycleStart;
 @property(retain, nonatomic) NSNumber *julianDayOfFirstCycleStart; // @synthesize julianDayOfFirstCycleStart=_julianDayOfFirstCycleStart;
 @property(retain, nonatomic) NSNumber *numberOfCyclesFound; // @synthesize numberOfCyclesFound=_numberOfCyclesFound;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSNumber *lowerCycleLengthPercentile; // @synthesize lowerCycleLengthPercentile=_lowerCycleLengthPercentile;
 @property(retain, nonatomic) NSNumber *medianMenstruationLength; // @synthesize medianMenstruationLength=_medianMenstruationLength;
 @property(retain, nonatomic) NSNumber *medianCycleLength; // @synthesize medianCycleLength=_medianCycleLength;
-- (void).cxx_destruct;
 
 @end
 

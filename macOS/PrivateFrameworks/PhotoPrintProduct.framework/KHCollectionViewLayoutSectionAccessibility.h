@@ -13,8 +13,8 @@
     NSString *_accessibilityRoleDescription;
 }
 
-@property(copy, nonatomic) NSString *accessibilityRoleDescription; // @synthesize accessibilityRoleDescription=_accessibilityRoleDescription;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *accessibilityRoleDescription; // @synthesize accessibilityRoleDescription=_accessibilityRoleDescription;
 
 @end
 

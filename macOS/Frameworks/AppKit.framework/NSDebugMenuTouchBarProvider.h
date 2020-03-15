@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     BOOL _observingKeyWindow;
 }
 
-@property __weak id <NSDebugTouchBarUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 - (void).cxx_destruct;
+@property __weak id <NSDebugTouchBarUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 - (void)updateTouchBarProviderChain;
 - (void)switchObservedWindow:(id)arg1;
 - (void)toggleObservingKeyWindow:(BOOL)arg1;

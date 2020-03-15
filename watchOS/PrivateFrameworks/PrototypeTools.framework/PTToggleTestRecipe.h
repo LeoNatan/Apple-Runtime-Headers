@@ -14,9 +14,9 @@
 
 + (id)recipeWithTitle:(id)arg1 prepareBlock:(CDUnknownBlockType)arg2 toggleAction:(CDUnknownBlockType)arg3 cleanupBlock:(CDUnknownBlockType)arg4;
 + (id)recipeWithTitle:(id)arg1 toggleAction:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isOn) _Bool on; // @synthesize on=_on;
 @property(copy, nonatomic) CDUnknownBlockType toggleAction; // @synthesize toggleAction=_toggleAction;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)_handleEvent:(int)arg1;
 - (void)_deactivate;

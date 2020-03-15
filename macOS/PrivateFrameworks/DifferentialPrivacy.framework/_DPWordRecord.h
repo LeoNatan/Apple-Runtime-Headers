@@ -21,9 +21,9 @@
 + (id)sequenceAndFragmentsFrom:(id)arg1 fragmentLimit:(unsigned long long)arg2 fragmentWidth:(unsigned long long)arg3 puzzlePieceCount:(unsigned long long)arg4;
 + (id)bogusCharacter;
 + (id)word:(id)arg1 atPosition:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *word; // @synthesize word=_word;
 @property(readonly, nonatomic) NSNumber *wordPosition; // @synthesize wordPosition=_wordPosition;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToWordRecord:(id)arg1;

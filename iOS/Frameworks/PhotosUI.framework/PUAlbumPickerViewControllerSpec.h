@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     PUAlbumListViewControllerSpec *_albumListViewControllerSpec;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUAlbumListViewControllerSpec *albumListViewControllerSpec; // @synthesize albumListViewControllerSpec=_albumListViewControllerSpec;
 @property(readonly, nonatomic) unsigned long long supportedInterfaceOrientations; // @synthesize supportedInterfaceOrientations=_supportedInterfaceOrientations;
-- (void).cxx_destruct;
 - (void)configureSessionInfo:(id)arg1;
 @property(readonly, nonatomic) PUAlbumListViewController *newAlbumListViewController;
 

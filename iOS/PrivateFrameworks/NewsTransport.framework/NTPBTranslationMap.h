@@ -18,9 +18,9 @@
 
 + (Class)favoritesLanguageBucketsType;
 + (Class)topicLanguageBucketsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *favoritesLanguageBuckets; // @synthesize favoritesLanguageBuckets=_favoritesLanguageBuckets;
 @property(retain, nonatomic) NSMutableArray *topicLanguageBuckets; // @synthesize topicLanguageBuckets=_topicLanguageBuckets;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

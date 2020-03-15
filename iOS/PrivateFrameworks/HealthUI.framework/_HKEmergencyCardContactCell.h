@@ -16,11 +16,11 @@
     UILabel *_phoneNumberLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *phoneNumberLabel; // @synthesize phoneNumberLabel=_phoneNumberLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UILabel *relationshipLabel; // @synthesize relationshipLabel=_relationshipLabel;
 @property(retain, nonatomic) _HKEmergencyContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)setContact:(id)arg1 showRelationship:(_Bool)arg2 showPhoneIcon:(_Bool)arg3;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)setupConstraints;

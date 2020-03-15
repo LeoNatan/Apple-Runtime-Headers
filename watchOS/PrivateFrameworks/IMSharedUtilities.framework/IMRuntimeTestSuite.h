@@ -20,13 +20,13 @@
 
 + (void)runTestsIfNeededWithRepeatCount:(int)arg1;
 + (void)runTestsIfNeededWithRepeatCount:(int)arg1 withCount:(int)arg2;
+- (void).cxx_destruct;
 @property __weak NSTimer *timer; // @synthesize timer=_timer;
 @property(retain) IMRuntimeTest *currentTest; // @synthesize currentTest=_currentTest;
 @property(retain) NSMutableArray *runningTests; // @synthesize runningTests=_runningTests;
 @property double testStartDelay; // @synthesize testStartDelay=_testStartDelay;
 @property double testSuiteStartDelay; // @synthesize testSuiteStartDelay=_testSuiteStartDelay;
 @property(retain) NSArray *tests; // @synthesize tests=_tests;
-- (void).cxx_destruct;
 - (void)currentTestDidFinish;
 - (void)_timerExpired:(id)arg1;
 - (void)_startNextTest;

@@ -15,8 +15,8 @@
 }
 
 + (id)criticallyDampedSpringAnimation;
-@property(nonatomic) double completionEpsilon; // @synthesize completionEpsilon=_completionEpsilon;
 - (void).cxx_destruct;
+@property(nonatomic) double completionEpsilon; // @synthesize completionEpsilon=_completionEpsilon;
 - (void)_updateDuration;
 - (float)_solveForInput:(float)arg1;
 - (void)setDuration:(double)arg1;

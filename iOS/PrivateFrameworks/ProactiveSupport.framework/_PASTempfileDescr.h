@@ -17,9 +17,9 @@
 }
 
 + (id)tempfileDescrWithFd:(int)arg1 path:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, nonatomic) int fd; // @synthesize fd=_fd;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

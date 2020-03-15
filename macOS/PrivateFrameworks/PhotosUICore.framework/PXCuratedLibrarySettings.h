@@ -176,6 +176,7 @@
 + (id)allPhotosValidColumns;
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forceShowAllButtonsVisible; // @synthesize forceShowAllButtonsVisible=_forceShowAllButtonsVisible;
 @property(nonatomic) BOOL forceBadgesOnAllAssets; // @synthesize forceBadgesOnAllAssets=_forceBadgesOnAllAssets;
 @property(nonatomic) BOOL exaggerateContrast; // @synthesize exaggerateContrast=_exaggerateContrast;
@@ -331,7 +332,6 @@
 @property(nonatomic) BOOL enablePlayMovieInYears; // @synthesize enablePlayMovieInYears=_enablePlayMovieInYears;
 @property(nonatomic) BOOL showPhotosLibrarySettingsAtTopLevel; // @synthesize showPhotosLibrarySettingsAtTopLevel=_showPhotosLibrarySettingsAtTopLevel;
 @property(nonatomic) double recentHighlightsTimeInterval; // @synthesize recentHighlightsTimeInterval=_recentHighlightsTimeInterval;
-- (void).cxx_destruct;
 - (long long)version;
 - (BOOL)allowsModularLayoutForZoomLevel:(long long)arg1 sizeClass:(long long)arg2 orientation:(long long)arg3;
 - (CDUnknownBlockType)acceptableLargeHeroPredicate;

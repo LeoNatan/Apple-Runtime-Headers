@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)_layoutAxis;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIPrototypingValue *prototypingSetting; // @synthesize prototypingSetting=_prototypingSetting;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)_prototypingSettingDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

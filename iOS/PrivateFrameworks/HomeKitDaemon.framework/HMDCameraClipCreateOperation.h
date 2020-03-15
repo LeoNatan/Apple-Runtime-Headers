@@ -15,9 +15,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSDate *clipStartDate; // @synthesize clipStartDate=_clipStartDate;
 @property(readonly) NSNumber *targetFragmentDuration; // @synthesize targetFragmentDuration=_targetFragmentDuration;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithLocalZone:(id)arg1 targetFragmentDuration:(double)arg2 startDate:(id)arg3 dataSource:(id)arg4;
 

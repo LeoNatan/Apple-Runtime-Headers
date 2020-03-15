@@ -13,6 +13,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
+- (_Bool)_accessibilityIsFKARunningForFocusItem;
+- (id)_focusSystem;
 - (id)_accessibilityNativeFocusElement;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 

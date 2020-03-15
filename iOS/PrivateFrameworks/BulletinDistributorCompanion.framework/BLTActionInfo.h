@@ -19,12 +19,12 @@
     NSDictionary *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(copy, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
 @property(copy, nonatomic) NSString *publisherBulletinID; // @synthesize publisherBulletinID=_publisherBulletinID;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

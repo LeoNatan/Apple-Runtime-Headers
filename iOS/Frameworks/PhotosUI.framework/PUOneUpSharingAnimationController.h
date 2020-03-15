@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUOneUpSharingAnimationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIViewController<PUOneUpAssetTransitionViewController> *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly, nonatomic) PUOneUpPhotosSharingTransitionContext *oneUpTransitionContext; // @synthesize oneUpTransitionContext=_oneUpTransitionContext;
-- (void).cxx_destruct;
 - (void)_configurePhotoView:(id)arg1 withContentHelper:(id)arg2;
 - (void)_installTransitioningBadgeViewsForAssetTransitionInfo:(id)arg1 inTransitioningView:(id)arg2;
 - (id)interruptibleAnimatorForTransition:(id)arg1;

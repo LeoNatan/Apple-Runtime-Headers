@@ -15,9 +15,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NSData *dhPublicKey; // @synthesize dhPublicKey=_dhPublicKey;
 @property(retain) NEIKEv2DHProtocol *dh; // @synthesize dh=_dh;
-- (void).cxx_destruct;
 - (BOOL)parsePayloadData;
 - (BOOL)generatePayloadData;
 - (BOOL)hasRequiredFields;

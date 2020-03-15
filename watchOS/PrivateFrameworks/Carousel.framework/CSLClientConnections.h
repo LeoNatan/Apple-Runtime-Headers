@@ -16,10 +16,10 @@
     NSMutableDictionary *_associatedConnections;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *associatedConnections; // @synthesize associatedConnections=_associatedConnections;
 @property(retain) NSMutableSet *clientConnections; // @synthesize clientConnections=_clientConnections;
 @property(retain) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
-- (void).cxx_destruct;
 - (void)enumerateConnectionsWithBlock:(CDUnknownBlockType)arg1;
 - (id)getConnectionForBundleID:(id)arg1;
 - (void)associateConnection:(id)arg1 withBundleID:(id)arg2;

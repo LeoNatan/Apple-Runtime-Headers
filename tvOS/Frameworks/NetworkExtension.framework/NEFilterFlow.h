@@ -6,16 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <NetworkExtension/NEPrettyDescription-Protocol.h>
 #import <NetworkExtension/NSCopying-Protocol.h>
 #import <NetworkExtension/NSSecureCoding-Protocol.h>
 
 @class NEFilterAbsoluteVerdict, NSData, NSMutableArray, NSString, NSURL, NSUUID;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_xpc_object;
 
-@interface NEFilterFlow : NSObject <NSSecureCoding, NSCopying>
+@interface NEFilterFlow : NSObject <NEPrettyDescription, NSSecureCoding, NSCopying>
 {
-    _Bool _isOpen;
-    NEFilterAbsoluteVerdict *_currentVerdict;
     _Bool _isRemediationFlow;
     _Bool _isPaused;
     _Bool _reportAtEnd;
@@ -28,15 +27,19 @@
     NSString *_sourceAppVersion;
     long long _direction;
     NSData *_sourceAppAuditToken;
+    NEFilterAbsoluteVerdict *_currentVerdict;
     NSObject<OS_dispatch_queue> *_queue;
     NSUUID *_flowUUID;
     NSMutableArray *_savedMessageHandlerQueue;
     unsigned long long _inBytes;
     unsigned long long _outBytes;
     NSData *_crypto_signature;
+    NSObject<OS_xpc_object> *_connection;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(retain) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(retain) NSData *crypto_signature; // @synthesize crypto_signature=_crypto_signature;
 @property unsigned long long outBytes; // @synthesize outBytes=_outBytes;
 @property unsigned long long inBytes; // @synthesize inBytes=_inBytes;
@@ -49,20 +52,25 @@
 @property(copy) NSUUID *flowUUID; // @synthesize flowUUID=_flowUUID;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property _Bool isRemediationFlow; // @synthesize isRemediationFlow=_isRemediationFlow;
+@property(retain) NEFilterAbsoluteVerdict *currentVerdict; // @synthesize currentVerdict=_currentVerdict;
 @property(retain) NSData *sourceAppAuditToken; // @synthesize sourceAppAuditToken=_sourceAppAuditToken;
 @property long long direction; // @synthesize direction=_direction;
 @property(copy) NSString *sourceAppVersion; // @synthesize sourceAppVersion=_sourceAppVersion;
 @property(copy) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
 @property(copy) NSData *sourceAppUniqueIdentifier; // @synthesize sourceAppUniqueIdentifier=_sourceAppUniqueIdentifier;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
+- (_Bool)createDataCompleteReply:(id)arg1 controlSocket:(int)arg2 direction:(long long)arg3 verdict:(id)arg4 context:(id)arg5;
+- (_Bool)createDataReply:(id)arg1 controlSocket:(int)arg2 direction:(long long)arg3 verdict:(id)arg4 context:(id)arg5;
+- (_Bool)createNewFlowReply:(id)arg1 controlSocket:(int)arg2 verdict:(id)arg3 context:(id)arg4;
+- (_Bool)shouldCloseWithVerdict:(id)arg1;
+- (_Bool)updateCurrentVerdictFromDataVerdict:(id)arg1 direction:(long long)arg2;
+@property(readonly, nonatomic) NSString *identifierString;
 @property(readonly) NSUUID *identifier;
-- (void)copySourceAppInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-@property _Bool isOpen;
-@property(retain) NEFilterAbsoluteVerdict *currentVerdict;
-- (void)close;
+- (void)updateSourceAppInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithURL:(id)arg1 sourceAppIdentifier:(id)arg2;
 - (id)init;
+- (id)description;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

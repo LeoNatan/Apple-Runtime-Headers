@@ -17,8 +17,8 @@
 
 + (id)detailAreaGroupPathFromComponentSets:(id)arg1;
 + (id)detailAreaGroupPathFromComponent:(id)arg1;
-@property(readonly) NSArray *components; // @synthesize components=_components;
 - (void).cxx_destruct;
+@property(readonly) NSArray *components; // @synthesize components=_components;
 - (id)pathByAppendingPath:(id)arg1;
 - (id)pathByAppendingPathComponent:(id)arg1;
 - (id)pathAfterFirstComponent;

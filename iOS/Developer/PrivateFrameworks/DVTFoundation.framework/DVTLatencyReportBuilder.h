@@ -22,7 +22,7 @@
 @property unsigned long long ancestorsWithMultipleChildren; // @synthesize ancestorsWithMultipleChildren=_ancestorsWithMultipleChildren;
 @property(copy) NSString *indentString; // @synthesize indentString=_indentString;
 @property unsigned long long currentDepth; // @synthesize currentDepth=_currentDepth;
-- (void).cxx_destruct;
+- (void)dealloc;
 
 @end
 

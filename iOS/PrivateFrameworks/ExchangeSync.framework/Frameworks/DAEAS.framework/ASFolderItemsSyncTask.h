@@ -38,6 +38,7 @@
     NSMutableSet *_mRejectedServerIds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int numDownloadedElements; // @synthesize numDownloadedElements=_numDownloadedElements;
 @property(nonatomic) int numReplacedItems; // @synthesize numReplacedItems=_numReplacedItems;
 @property(nonatomic) _Bool haveShortcut121Response; // @synthesize haveShortcut121Response=_haveShortcut121Response;
@@ -62,7 +63,6 @@
 @property(nonatomic) long long dataclass; // @synthesize dataclass=_dataclass;
 @property(copy, nonatomic) NSString *previousSyncKey; // @synthesize previousSyncKey=_previousSyncKey;
 @property(copy, nonatomic) NSString *folderID; // @synthesize folderID=_folderID;
-- (void).cxx_destruct;
 - (void)reportStatusWithError:(id)arg1;
 @property(readonly, nonatomic) NSString *previousSyncKeyForAgent;
 - (long long)taskStatusForExchangeStatus:(int)arg1;

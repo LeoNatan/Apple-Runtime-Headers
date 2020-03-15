@@ -19,8 +19,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)contactRelationWithName:(id)arg1;
-@property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy) NSString *name; // @synthesize name=_name;
 - (BOOL)isValid:(id *)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;

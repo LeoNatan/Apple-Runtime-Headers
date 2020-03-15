@@ -16,10 +16,10 @@
 }
 
 + (long long)dataType;
+- (void).cxx_destruct;
 @property(nonatomic) long long paymentFrequency; // @synthesize paymentFrequency=_paymentFrequency;
 @property(retain, nonatomic) NSTimeZone *paymentTimeZone; // @synthesize paymentTimeZone=_paymentTimeZone;
 @property(retain, nonatomic) NSDate *paymentDate; // @synthesize paymentDate=_paymentDate;
-- (void).cxx_destruct;
 - (BOOL)isValidWithError:(id *)arg1;
 - (id)initWithModel:(id)arg1;
 

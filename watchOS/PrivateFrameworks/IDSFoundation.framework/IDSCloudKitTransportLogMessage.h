@@ -16,11 +16,11 @@
     NSString *_encryptionType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *encryptionType; // @synthesize encryptionType=_encryptionType;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain, nonatomic) NSString *secondaryID; // @synthesize secondaryID=_secondaryID;
 @property(retain, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *cypherIdentifier;
 @property(readonly, nonatomic) NSData *encryptedPayload;
 @property(readonly, nonatomic) IDSDestinationPushToken *destination;

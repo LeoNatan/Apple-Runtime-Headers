@@ -73,6 +73,7 @@
 }
 
 + (id)rendererWithCharacter:(unsigned long long)arg1 loader:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) float curTimeMod15Sec; // @synthesize curTimeMod15Sec=_curTimeMod15Sec;
 @property(readonly) float curTimeMod1Sec; // @synthesize curTimeMod1Sec=_curTimeMod1Sec;
 @property(readonly) float dampenBones; // @synthesize dampenBones=_dampenBones;
@@ -108,7 +109,6 @@
 @property(readonly, nonatomic) NTKCharacterResourceLoader *loader; // @synthesize loader=_loader;
 @property(readonly, nonatomic) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (int)curPose;
 - (int)curState;
 - (void)_drawCharacterWithEncoder:(id)arg1;

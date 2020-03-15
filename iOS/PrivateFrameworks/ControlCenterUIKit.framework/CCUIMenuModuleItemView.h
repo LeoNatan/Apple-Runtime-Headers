@@ -31,6 +31,7 @@
 + (id)_titleFontForContentSizeCategory:(id)arg1;
 + (id)_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2 contentSizeCategory:(id)arg3;
 + (_Bool)_shouldLimitContentSizeCategory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *trailingView; // @synthesize trailingView=_trailingView;
 @property(retain, nonatomic) UIView *leadingView; // @synthesize leadingView=_leadingView;
 @property(retain, nonatomic) CCUIMenuModuleItem *menuItem; // @synthesize menuItem=_menuItem;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool useTallLayout; // @synthesize useTallLayout=_useTallLayout;
 @property(nonatomic) double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
 @property(nonatomic) _Bool separatorVisible; // @synthesize separatorVisible=_separatorVisible;
-- (void).cxx_destruct;
 - (void)_stopAutomaticallyUpdatingView:(id)arg1 recursivelyIfNeeded:(_Bool)arg2;
 - (void)_updateVisualStyleOfView:(id)arg1 withStyle:(long long)arg2 recursivelyIfNeeded:(_Bool)arg3;
 - (void)_layoutTrailingCustomViews;

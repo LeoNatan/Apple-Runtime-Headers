@@ -11,11 +11,10 @@
     // Error parsing type: , name: details
     // Error parsing type: , name: offerButtonAction
     // Error parsing type: , name: offerDisplayProperties
-    // Error parsing type: , name: detailsDisplayProperties
     // Error parsing type: , name: buttonCallToAction
     // Error parsing type: , name: artwork
     // Error parsing type: , name: video
-    // Error parsing type: , name: backgroundColor
+    // Error parsing type: , name: displayProperties
     // Error parsing type: , name: impressionMetrics
     // Error parsing type: , name: clickAction
 }

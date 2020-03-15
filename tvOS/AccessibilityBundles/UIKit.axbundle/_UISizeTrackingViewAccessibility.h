@@ -16,7 +16,8 @@
 - (_Bool)_accessibilityHandlesRemoteFocusMovement;
 - (int)_accessibilityRemotePid;
 - (void)_accessibilitySetFocusOnElement:(_Bool)arg1;
-- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)_viewToAddFocusLayer;
+- (_Bool)_accessibilityInTopLevelTabLoop;
 - (_Bool)canBecomeFocused;
 
 @end

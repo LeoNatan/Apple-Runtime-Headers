@@ -15,8 +15,8 @@
     MLPLearningRateDecayHandler *_seqLearningRateDecayHandler;
 }
 
-@property(retain) MLPLearningRateDecayHandler *seqLearningRateDecayHandler; // @synthesize seqLearningRateDecayHandler=_seqLearningRateDecayHandler;
 - (void).cxx_destruct;
+@property(retain) MLPLearningRateDecayHandler *seqLearningRateDecayHandler; // @synthesize seqLearningRateDecayHandler=_seqLearningRateDecayHandler;
 - (void)decayHandler:(id)arg1 didUpdateLearningRate:(float)arg2;
 - (id)computeInference:(id)arg1;
 - (unsigned long long)runInference:(id)arg1 databatch:(id)arg2 inferredResult:(id)arg3 semaphore:(id)arg4;

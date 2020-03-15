@@ -19,12 +19,12 @@
     vector_e102d759 _observers;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) vector_e102d759 observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) long long busType; // @synthesize busType=_busType;
 @property(readonly, nonatomic) AUAudioUnit *ownerAudioUnit; // @synthesize ownerAudioUnit=_ownerAudioUnit;
 @property(readonly, nonatomic, getter=isCountChangeable) _Bool countChangeable; // @synthesize countChangeable=_countChangeable;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)replaceBusses:(id)arg1;
 - (void)indexBusses;
 - (void)removeObserverFromAllBusses:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;

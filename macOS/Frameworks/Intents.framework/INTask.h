@@ -31,6 +31,7 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
 @property(readonly) long long taskReference; // @synthesize taskReference=_taskReference;
 @property(readonly, copy) INContactEventTrigger *contactEventTrigger; // @synthesize contactEventTrigger=_contactEventTrigger;
@@ -43,7 +44,6 @@
 @property(readonly, copy) INSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
 @property(readonly) long long status; // @synthesize status=_status;
 @property(readonly, copy) INSpeakableString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

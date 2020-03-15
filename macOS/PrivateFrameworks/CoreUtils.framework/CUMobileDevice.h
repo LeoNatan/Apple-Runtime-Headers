@@ -27,6 +27,7 @@
     struct _AMDevice *_mdPlaceholderDevice;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL mdStartedService; // @synthesize mdStartedService=_mdStartedService;
 @property(nonatomic) BOOL mdStartedListener; // @synthesize mdStartedListener=_mdStartedListener;
 @property(nonatomic) struct _AMDevice *mdPlaceholderDevice; // @synthesize mdPlaceholderDevice=_mdPlaceholderDevice;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *internalModel; // @synthesize internalModel=_internalModel;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) BOOL connected; // @synthesize connected=_connected;
-- (void).cxx_destruct;
 - (unsigned int)updateWithAMDevice:(struct _AMDevice *)arg1 connect:(BOOL)arg2 paired:(int)arg3;
 - (BOOL)removeAMDevice:(struct _AMDevice *)arg1 changes:(unsigned int *)arg2;
 - (id)description;

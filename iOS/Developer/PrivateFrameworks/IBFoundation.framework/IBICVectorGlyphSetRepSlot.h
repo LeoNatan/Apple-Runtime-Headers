@@ -22,11 +22,11 @@
 + (id)slotFilterUnionedWithStandardUniversalCounterpart:(_Bool)arg1 idioms:(id)arg2 locales:(id)arg3 languageDirections:(id)arg4 luminositySlots:(id)arg5;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
+- (void).cxx_destruct;
 @property(readonly) IBICLuminosityAppearance *luminosityAppearance; // @synthesize luminosityAppearance=_luminosityAppearance;
 @property(readonly) IBICLocale *locale; // @synthesize locale=_locale;
 @property(readonly) IBICLanguageDirection *languageDirection; // @synthesize languageDirection=_languageDirection;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (_Bool)hasUnspecifiedLocale;
 - (_Bool)hasUnspecifiedAppearance;
 - (id)detailAreaPath;

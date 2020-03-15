@@ -24,12 +24,12 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect previousBounds; // @synthesize previousBounds=_previousBounds;
 @property(retain, nonatomic) KHTreatmentRenderLayer *treatmentRenderLayer; // @synthesize treatmentRenderLayer=_treatmentRenderLayer;
 @property __weak id <KHLayoutViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(getter=isAnimating) BOOL animating; // @synthesize animating=_animating;
 @property(readonly) struct CGPoint layoutTranslation; // @synthesize layoutTranslation=_layoutTranslation;
-- (void).cxx_destruct;
 - (BOOL)performDragOperation:(id)arg1;
 - (BOOL)prepareForDragOperation:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;

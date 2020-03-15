@@ -6,34 +6,41 @@
 
 #import <coreroutine/RTNotifier.h>
 
-@class RTMotionActivityManager, RTPlatform, RTWiFiFootprintMonitor;
+#import <coreroutine/RTPurgable-Protocol.h>
 
-@interface RTScenarioTriggerManager : RTNotifier
+@class NSString, RTLocationStore, RTMotionActivityManager, RTPlatform, RTSettledStateTransitionStore, RTWiFiFootprintMonitor;
+
+@interface RTScenarioTriggerManager : RTNotifier <RTPurgable>
 {
     unsigned long long _interestedInConstantFootprint;
     unsigned long long _interestedInSettledState;
+    RTLocationStore *_locationStore;
     RTMotionActivityManager *_motionActivityManager;
     unsigned long long _motionSettledState;
     RTPlatform *_platform;
     unsigned long long _settledState;
     unsigned long long _monitoredScenarioTriggerTypes;
+    RTSettledStateTransitionStore *_settledStateTransitionStore;
     RTWiFiFootprintMonitor *_wifiFootprintMonitor;
     long long _wiFiFootprintState;
 }
 
++ (long long)settledStateTypeForScenarioTriggerSettledState:(unsigned long long)arg1;
 + (id)scenarioTriggerTypeToNotificationName:(unsigned long long)arg1;
 + (id)settledStateName:(unsigned long long)arg1;
-@property(nonatomic) long long wiFiFootprintState; // @synthesize wiFiFootprintState=_wiFiFootprintState;
-@property(retain, nonatomic) RTWiFiFootprintMonitor *wifiFootprintMonitor; // @synthesize wifiFootprintMonitor=_wifiFootprintMonitor;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) long long wiFiFootprintState; // @synthesize wiFiFootprintState=_wiFiFootprintState;
+@property(readonly, nonatomic) RTWiFiFootprintMonitor *wifiFootprintMonitor; // @synthesize wifiFootprintMonitor=_wifiFootprintMonitor;
+@property(readonly, nonatomic) RTSettledStateTransitionStore *settledStateTransitionStore; // @synthesize settledStateTransitionStore=_settledStateTransitionStore;
 @property(nonatomic) unsigned long long monitoredScenarioTriggerTypes; // @synthesize monitoredScenarioTriggerTypes=_monitoredScenarioTriggerTypes;
 @property(nonatomic) unsigned long long settledState; // @synthesize settledState=_settledState;
-@property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
-@property(nonatomic) unsigned long long motionSettledState; // @synthesize motionSettledState=_motionSettledState;
-@property(retain, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
-@property(nonatomic) unsigned long long interestedInSettledState; // @synthesize interestedInSettledState=_interestedInSettledState;
-@property(nonatomic) unsigned long long interestedInConstantFootprint; // @synthesize interestedInConstantFootprint=_interestedInConstantFootprint;
-- (void).cxx_destruct;
-- (void)onPostScenarioTriggerNotificationFromDefaults;
+@property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
+@property(readonly, nonatomic) unsigned long long motionSettledState; // @synthesize motionSettledState=_motionSettledState;
+@property(readonly, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
+@property(readonly, nonatomic) RTLocationStore *locationStore; // @synthesize locationStore=_locationStore;
+@property(readonly, nonatomic) unsigned long long interestedInSettledState; // @synthesize interestedInSettledState=_interestedInSettledState;
+@property(readonly, nonatomic) unsigned long long interestedInConstantFootprint; // @synthesize interestedInConstantFootprint=_interestedInConstantFootprint;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_postScenarioTriggerNotification:(id)arg1;
 - (void)postScenarioTriggerNotification:(id)arg1;
 - (void)onWiFiFootprintStateNotification:(id)arg1;
@@ -45,11 +52,22 @@
 - (unsigned long long)_notificationNameToScenarioTriggerType:(id)arg1;
 - (void)_stopMonitoringScenarioTriggerOfType:(unsigned long long)arg1;
 - (void)_startMonitoringScenarioTriggerOfType:(unsigned long long)arg1;
+- (void)setWiFiFootprintState:(long long)arg1;
+- (void)setInterestedInConstantFootprint:(unsigned long long)arg1;
 - (void)_evaluateSettledState;
+- (void)setMotionSettledState:(unsigned long long)arg1;
+- (void)setInterestedInSettledState:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)initWithMotionActivityManager:(id)arg1 wifiFootprintMonitor:(id)arg2 platform:(id)arg3;
+- (id)initWithLocationStore:(id)arg1 motionActivityManager:(id)arg2 settledStateTransitionStore:(id)arg3 wifiFootprintMonitor:(id)arg4 platform:(id)arg5;
+- (id)initWithLocationStore:(id)arg1 motionActivityManager:(id)arg2 platform:(id)arg3 settledState:(unsigned long long)arg4 settledStateTransitionStore:(id)arg5 wifiFootprintMonitor:(id)arg6;
 - (id)init;
 - (void)simulateScenarioTrigger:(id)arg1 handler:(CDUnknownBlockType)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

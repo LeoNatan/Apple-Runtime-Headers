@@ -30,12 +30,12 @@
     id <_SFDialogPresenting> _dialogPresenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SFDialogPresenting> dialogPresenter; // @synthesize dialogPresenter=_dialogPresenter;
 @property(readonly, nonatomic) unsigned long long crashesSinceLastSuccessfulLoad; // @synthesize crashesSinceLastSuccessfulLoad=_crashesSinceLastSuccessfulLoad;
 @property(readonly, nonatomic) NSURLRequest *failedRequest; // @synthesize failedRequest=_failedRequest;
 @property(readonly, nonatomic) _Bool reloadingFailedRequest; // @synthesize reloadingFailedRequest=_reloadingFailedRequest;
 @property(nonatomic) __weak id <_SFPageLoadErrorControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)openClockSettings;
 - (void)_dismissCertificateViewButtonTapped;
 - (void)showCertificateInformation;

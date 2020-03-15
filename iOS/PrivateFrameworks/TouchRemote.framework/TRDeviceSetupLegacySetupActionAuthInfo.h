@@ -14,9 +14,9 @@
     NSDictionary *_body;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
-- (void).cxx_destruct;
 - (id)initWithHeaders:(id)arg1 body:(id)arg2;
 
 @end

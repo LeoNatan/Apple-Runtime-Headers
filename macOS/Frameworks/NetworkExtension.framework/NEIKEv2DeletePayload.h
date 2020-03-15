@@ -15,9 +15,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NSArray *spis; // @synthesize spis=_spis;
 @property unsigned long long protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (BOOL)parsePayloadData;
 - (BOOL)generatePayloadData;
 - (BOOL)hasRequiredFields;

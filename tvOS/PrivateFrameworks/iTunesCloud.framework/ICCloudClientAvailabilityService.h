@@ -18,9 +18,9 @@
     id <ICCloudServerListenerEndpointProvider> _listenerEndpointProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <ICCloudServerListenerEndpointProvider> listenerEndpointProvider; // @synthesize listenerEndpointProvider=_listenerEndpointProvider;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (id)_xpcConnectionWithListenerEndpoint:(id)arg1;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (_Bool)shouldProhibitActionsForCurrentNetworkConditions;

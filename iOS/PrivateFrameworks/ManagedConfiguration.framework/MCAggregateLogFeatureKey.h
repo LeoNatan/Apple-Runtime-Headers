@@ -27,10 +27,10 @@
 + (id)valueFeature:(id)arg1;
 + (id)falseFeature:(id)arg1;
 + (id)trueFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nameSuffix; // @synthesize nameSuffix=_nameSuffix;
 @property(retain, nonatomic) NSString *feature; // @synthesize feature=_feature;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

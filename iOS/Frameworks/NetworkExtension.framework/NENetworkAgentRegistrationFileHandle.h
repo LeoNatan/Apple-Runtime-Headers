@@ -17,12 +17,12 @@
     unsigned long long _agentFlags;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long agentFlags; // @synthesize agentFlags=_agentFlags;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSUUID *agentUUID; // @synthesize agentUUID=_agentUUID;
 @property(readonly) NSUUID *configurationIdentifier; // @synthesize configurationIdentifier=_configurationIdentifier;
 @property(readonly) NSNumber *sessionType; // @synthesize sessionType=_sessionType;
-- (void).cxx_destruct;
 - (unsigned long long)type;
 - (id)description;
 - (id)dictionary;

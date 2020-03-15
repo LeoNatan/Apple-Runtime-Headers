@@ -32,6 +32,7 @@
 
 + (id)prepareOfflineTermsResponse:(id)arg1;
 + (id)warrantyFilePathForLanguageCode:(id)arg1 countryCode:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType enableSiriCompletion; // @synthesize enableSiriCompletion=_enableSiriCompletion;
 @property(copy, nonatomic) CDUnknownBlockType siriStateCompletion; // @synthesize siriStateCompletion=_siriStateCompletion;
 @property(copy, nonatomic) CDUnknownBlockType activationCompletion; // @synthesize activationCompletion=_activationCompletion;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSString *regionIdentifer; // @synthesize regionIdentifer=_regionIdentifer;
 @property(readonly, nonatomic) NSString *languageIdentifer; // @synthesize languageIdentifer=_languageIdentifer;
 @property(nonatomic) __weak id <PBBridgeConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleBuysOnWatchIngestion:(id)arg1;
 - (void)companionTermsResponse:(id)arg1;
 - (void)fetchTermsAndConditions:(id)arg1;

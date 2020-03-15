@@ -16,11 +16,11 @@
     NSString *_bestAssetIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bestAssetIdentifier; // @synthesize bestAssetIdentifier=_bestAssetIdentifier;
 @property(readonly, copy, nonatomic) NSArray *goodAssetIdentifiers; // @synthesize goodAssetIdentifiers=_goodAssetIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *allAssetIdentifiers; // @synthesize allAssetIdentifiers=_allAssetIdentifiers;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 allAssetIdentifiers:(id)arg2 goodAssetIdentifiers:(id)arg3 bestAssetIdentifier:(id)arg4;
 - (id)init;

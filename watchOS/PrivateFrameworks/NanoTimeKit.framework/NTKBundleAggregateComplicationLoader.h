@@ -13,8 +13,8 @@
     NSOrderedSet *_loaders;
 }
 
-@property(copy, nonatomic) NSOrderedSet *loaders; // @synthesize loaders=_loaders;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSOrderedSet *loaders; // @synthesize loaders=_loaders;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_loadClassesUsingBlock:(CDUnknownBlockType)arg1;
 

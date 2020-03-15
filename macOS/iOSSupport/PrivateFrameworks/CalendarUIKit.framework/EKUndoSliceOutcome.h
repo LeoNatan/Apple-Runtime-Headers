@@ -18,11 +18,11 @@
     EKPostSliceDescription *_originalPostSliceDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly) EKPostSliceDescription *originalPostSliceDescription; // @synthesize originalPostSliceDescription=_originalPostSliceDescription;
 @property(copy) EKSeriesDetails *createdSeriesDetails; // @synthesize createdSeriesDetails=_createdSeriesDetails;
 @property(copy) EKSeriesDetails *mainSeriesDetails; // @synthesize mainSeriesDetails=_mainSeriesDetails;
 @property(copy) EKEvent *masterToDelete; // @synthesize masterToDelete=_masterToDelete;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

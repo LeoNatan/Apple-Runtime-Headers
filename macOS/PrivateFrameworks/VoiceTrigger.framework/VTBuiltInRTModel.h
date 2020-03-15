@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSDictionary *builtInRTModelDictionary; // @synthesize builtInRTModelDictionary=_builtInRTModelDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *builtInRTModelDictionary; // @synthesize builtInRTModelDictionary=_builtInRTModelDictionary;
 - (void)dealloc;
 
 @end

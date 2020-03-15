@@ -29,6 +29,7 @@
     struct CGAffineTransform preferredTransform;
 }
 
+- (void).cxx_destruct;
 @property BOOL initFailed; // @synthesize initFailed=_initFailed;
 @property long long frameIncr; // @synthesize frameIncr=_frameIncr;
 @property long long currFrameTime; // @synthesize currFrameTime=_currFrameTime;
@@ -45,7 +46,6 @@
 @property(readonly) unsigned int imgWidth; // @synthesize imgWidth;
 @property(readonly) long long currFrame; // @synthesize currFrame;
 @property(readonly) float fps; // @synthesize fps;
-- (void).cxx_destruct;
 - (id)finish;
 - (void)endSessionInfer;
 - (void)endSessionAtTime:(CDStruct_1b6d18a9)arg1;

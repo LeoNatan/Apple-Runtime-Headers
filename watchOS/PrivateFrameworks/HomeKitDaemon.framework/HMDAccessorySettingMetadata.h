@@ -23,13 +23,13 @@
 + (id)valueWithType:(int)arg1 constraints:(id)arg2 representation:(id)arg3;
 + (id)settingWithDictonaryRepresentation:(id)arg1;
 + (id)settingsWithArrayRepresenation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly, copy) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly) HMDAccessorySettingMergeStrategy *mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
 @property(readonly) unsigned int properties; // @synthesize properties=_properties;
 @property(readonly) int type; // @synthesize type=_type;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)modelWithParentIdentifier:(id)arg1;
 - (id)modelsWithParentIdentifier:(id)arg1;
 @property(readonly, copy) NSString *propertyDescription;

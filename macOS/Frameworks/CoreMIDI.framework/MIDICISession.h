@@ -24,13 +24,13 @@
     unsigned int _impl;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType propertyChangedCallback; // @synthesize propertyChangedCallback=_propertyChangedCallback;
 @property(copy, nonatomic) CDUnknownBlockType profileChangedCallback; // @synthesize profileChangedCallback=_profileChangedCallback;
 @property(readonly, nonatomic) unsigned int entity; // @synthesize entity=_entity;
 @property(readonly, nonatomic) struct MIDICIDeviceIdentification deviceIdentification; // @synthesize deviceIdentification=_deviceID;
 @property(readonly, nonatomic) BOOL supportsPropertyCapability; // @synthesize supportsPropertyCapability=_supportsPropertyCapability;
 @property(readonly, nonatomic) BOOL supportsProfileCapability; // @synthesize supportsProfileCapability=_supportsProfileCapability;
-- (void).cxx_destruct;
 - (_Bool)updateProfileStateForChannel:(unsigned char)arg1 withProfile:(id)arg2 enabled:(_Bool)arg3;
 - (void)addProfileState:(char *)arg1 length:(unsigned int)arg2 channel:(unsigned char)arg3;
 - (void)setProperty:(id)arg1 onChannel:(unsigned char)arg2 responseHandler:(CDUnknownBlockType)arg3;

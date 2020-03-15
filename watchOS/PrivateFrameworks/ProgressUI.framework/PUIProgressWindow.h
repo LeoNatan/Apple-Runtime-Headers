@@ -39,8 +39,8 @@
 
 + (_Bool)_usesPreBoardAppearance;
 + (void)setUsesPreBoardAppearance;
-@property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 - (struct CGImage *)_createImageWithName:(const char *)arg1 scale:(int)arg2 displayHeight:(int)arg3;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)_drawProgressLayerInContext:(struct CGContext *)arg1;

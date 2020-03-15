@@ -13,8 +13,8 @@
     NSDictionary *_nowPlayingInfo;
 }
 
-@property(readonly, nonatomic) NSDictionary *nowPlayingInfo; // @synthesize nowPlayingInfo=_nowPlayingInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *nowPlayingInfo; // @synthesize nowPlayingInfo=_nowPlayingInfo;
 @property(readonly, nonatomic, getter=isExplicitContent) _Bool explicitContent;
 @property(readonly, nonatomic, getter=isAlwaysLive) _Bool alwaysLive;
 @property(readonly, nonatomic, getter=isMusicApp) _Bool musicApp;

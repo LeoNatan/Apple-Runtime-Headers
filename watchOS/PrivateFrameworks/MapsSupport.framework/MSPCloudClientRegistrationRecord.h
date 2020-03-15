@@ -17,12 +17,12 @@
     unsigned int _earliestCompatibleEpoch;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isChanged; // @synthesize isChanged=_isChanged;
 @property(nonatomic) unsigned int earliestCompatibleEpoch; // @synthesize earliestCompatibleEpoch=_earliestCompatibleEpoch;
 @property(nonatomic) unsigned int desiredEpoch; // @synthesize desiredEpoch=_desiredEpoch;
 @property(retain, nonatomic) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain, nonatomic) NSDate *lastRegistrationDate; // @synthesize lastRegistrationDate=_lastRegistrationDate;
-- (void).cxx_destruct;
 - (id)recordRepresentation;
 - (id)initWithRecord:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1;

@@ -24,11 +24,11 @@
     NTKInfinityListing *_preparedListing;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKInfinityListing *preparedListing; // @synthesize preparedListing=_preparedListing;
 @property(retain, nonatomic) NTKInfinityListing *currentListing; // @synthesize currentListing=_currentListing;
 @property(nonatomic) unsigned long long currentStyle; // @synthesize currentStyle=_currentStyle;
 @property(nonatomic) unsigned long long controllerMode; // @synthesize controllerMode=_controllerMode;
-- (void).cxx_destruct;
 - (long long)currentReviewIndex;
 - (unsigned long long)totalReviewListings;
 - (id)_nextReviewListing;

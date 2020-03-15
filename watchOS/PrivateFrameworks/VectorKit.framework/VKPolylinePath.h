@@ -24,14 +24,14 @@ __attribute__((visibility("hidden")))
     double _sectionLengthScaleFactor;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double startDistance; // @synthesize startDistance=_startDistance;
 @property(nonatomic) unsigned char trafficSpeed; // @synthesize trafficSpeed=_trafficSpeed;
 @property(readonly, nonatomic) GEOComposedRouteSection *section; // @synthesize section=_section;
 @property(readonly, nonatomic) GEOSnappedRoutePath *snappedPath; // @synthesize snappedPath=_snappedPath;
 @property(nonatomic) struct PolylineCoordinate routeEnd; // @synthesize routeEnd=_routeEnd;
 @property(nonatomic) struct PolylineCoordinate routeStart; // @synthesize routeStart=_routeStart;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)splitTrafficSegmentationAndAddTo:(id)arg1 with:(struct TrafficSegmentsAlongRoute *)arg2 shouldSnap:(_Bool)arg3;
 - (void)assignTo:(id)arg1 withSegment:(const struct TrafficSegment *)arg2;
 - (void)updateDistances:(_Bool)arg1;

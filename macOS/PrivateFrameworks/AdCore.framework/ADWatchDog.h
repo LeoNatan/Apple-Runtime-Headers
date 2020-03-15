@@ -14,9 +14,9 @@
     unsigned long long _delayTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long delayTime; // @synthesize delayTime=_delayTime;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)updateReason:(id)arg1;
 - (id)initWithReason:(id)arg1 andDelay:(unsigned long long)arg2;
 

@@ -64,13 +64,13 @@
 }
 
 + (unsigned int)_maximumFacesAllowed;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool faceEditingOrbZoomActive; // @synthesize faceEditingOrbZoomActive=_faceEditingOrbZoomActive;
 @property(readonly, nonatomic) _Bool isFaceReordering; // @synthesize isFaceReordering=_isFaceReordering;
 @property(readonly, nonatomic) _Bool isFaceSwitching; // @synthesize isFaceSwitching=_isFaceSwitching;
 @property(nonatomic) _Bool isFaceEditing; // @synthesize isFaceEditing=_isFaceEditing;
 @property(readonly, nonatomic) NTKFaceViewController *selectedFaceViewController; // @synthesize selectedFaceViewController=_selectedFaceViewController;
 @property(nonatomic) __weak id <NTKFaceLibraryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)runPPTScrollAddableFacesTestNamed:(id)arg1 complection:(CDUnknownBlockType)arg2;
 - (void)PPTSelectFaceAtIndex:(unsigned int)arg1 animated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_iterateOutwardFrom:(int)arg1 min:(int)arg2 max:(int)arg3 withBlock:(CDUnknownBlockType)arg4;

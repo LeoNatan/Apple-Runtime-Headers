@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)updateChangeRequestForRevert:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _assetHasAdjustments; // @synthesize _assetHasAdjustments=__assetHasAdjustments;
 @property(readonly, nonatomic) unsigned short _assetVisibility; // @synthesize _assetVisibility=__assetVisibility;
 @property(nonatomic, setter=_setEditingVisibility:) unsigned short _editingVisibility; // @synthesize _editingVisibility=__editingVisibility;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool ignoresUpdates; // @synthesize ignoresUpdates=_ignoresUpdates;
 @property(nonatomic, getter=isVideoEnabled) _Bool videoEnabled; // @synthesize videoEnabled=_videoEnabled;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_setHidden:(_Bool)arg1 explicit:(_Bool)arg2 supportable:(_Bool)arg3;
 - (id)newViewModelChange;
 @property(readonly, nonatomic) PUPhotoEditIrisModelChange *currentChange;

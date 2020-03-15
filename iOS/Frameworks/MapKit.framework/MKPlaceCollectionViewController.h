@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id <MKCollectionViewProvider> _viewProvider;
 }
 
-@property(nonatomic) __weak id <MKCollectionViewProvider> viewProvider; // @synthesize viewProvider=_viewProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MKCollectionViewProvider> viewProvider; // @synthesize viewProvider=_viewProvider;
 - (void)sectionView:(id)arg1 didSelectFooter:(id)arg2;
 - (void)sectionView:(id)arg1 didDeselectRow:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)sectionView:(id)arg1 didSelectHeader:(id)arg2;

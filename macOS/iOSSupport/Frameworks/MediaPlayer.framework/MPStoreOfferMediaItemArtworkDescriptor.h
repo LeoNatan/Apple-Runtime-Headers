@@ -23,8 +23,8 @@
     NSString *_cacheID;
 }
 
-@property(readonly, nonatomic) NSString *cacheID; // @synthesize cacheID=_cacheID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *cacheID; // @synthesize cacheID=_cacheID;
 - (id)_sizeToURLDictionaryFromStoreDictionariesArray:(id)arg1;
 - (id)_availableSizesForArtworkURLs:(id)arg1;
 - (id)_preferredArtworkURLsForType:(long long)arg1;

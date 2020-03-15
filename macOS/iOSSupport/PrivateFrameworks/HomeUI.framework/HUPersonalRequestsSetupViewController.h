@@ -26,6 +26,7 @@
     HUPersonalRequestsDevicesModuleController *_prDevicesModuleController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUPersonalRequestsDevicesModuleController *prDevicesModuleController; // @synthesize prDevicesModuleController=_prDevicesModuleController;
 @property(retain, nonatomic) HUPersonalRequestsEditorItemManager *prEditorItemManager; // @synthesize prEditorItemManager=_prEditorItemManager;
 @property(retain, nonatomic) NSArray *supportedMultiUserLanguages; // @synthesize supportedMultiUserLanguages=_supportedMultiUserLanguages;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) OBTrayButton *usePRButton; // @synthesize usePRButton=_usePRButton;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;

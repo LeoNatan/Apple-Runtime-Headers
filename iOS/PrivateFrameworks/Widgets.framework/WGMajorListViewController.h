@@ -22,13 +22,13 @@
     WGWidgetListHeaderView *_headerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHeaderVisible) _Bool headerVisible; // @synthesize headerVisible=_headerVisible;
 @property(readonly, nonatomic) WGWidgetListHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIViewController *headerContentViewController; // @synthesize headerContentViewController=_headerContentViewController;
 @property(readonly, nonatomic) WGWidgetListFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic, getter=_isFooterVisible, setter=_setFooterVisible:) _Bool _footerVisible; // @synthesize _footerVisible;
-- (void).cxx_destruct;
 - (void)_updateEditButtonVisibilityAnimated:(_Bool)arg1;
 - (void)_updateFooterVisibility;
 - (void)_updateHeaderVisibility;

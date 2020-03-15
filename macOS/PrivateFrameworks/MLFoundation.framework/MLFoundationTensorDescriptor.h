@@ -30,6 +30,7 @@
 + (id)descriptorWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 featureChannels:(unsigned long long)arg3 batchSize:(unsigned long long)arg4;
 + (unsigned long long)maxTensorDimensions;
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fanOut; // @synthesize fanOut=_fanOut;
 @property(nonatomic) unsigned long long fanIn; // @synthesize fanIn=_fanIn;
 @property(readonly, nonatomic) unsigned long long tensorAllocationSizeInBytes; // @synthesize tensorAllocationSizeInBytes=_tensorAllocationSizeInBytes;
@@ -37,7 +38,6 @@
 @property(readonly, copy, nonatomic) NSArray *size; // @synthesize size=_size;
 @property(readonly, nonatomic) unsigned long long numberOfDimensions; // @synthesize numberOfDimensions=_numberOfDimensions;
 @property(readonly, nonatomic) int dataType; // @synthesize dataType=_dataType;
-- (void).cxx_destruct;
 - (id)tensorDimensionStrideInBytes;
 - (id)description;
 - (id)initTensorWithSize:(id)arg1 stride:(id)arg2 dataType:(int)arg3;

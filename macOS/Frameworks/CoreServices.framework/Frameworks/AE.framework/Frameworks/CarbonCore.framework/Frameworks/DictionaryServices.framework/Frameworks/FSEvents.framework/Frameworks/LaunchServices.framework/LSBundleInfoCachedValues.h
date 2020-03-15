@@ -16,9 +16,9 @@
     NSDictionary *_values;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allKeys; // @synthesize allKeys=_keys;
 @property(readonly, nonatomic) NSDictionary *rawValues; // @synthesize rawValues=_values;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)dictionaryForKey:(id)arg1;
 - (id)arrayForKey:(id)arg1 withValuesOfClass:(Class)arg2;

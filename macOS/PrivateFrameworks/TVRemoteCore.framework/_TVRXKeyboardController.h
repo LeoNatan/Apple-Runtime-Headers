@@ -15,9 +15,9 @@
     id <_TVRXKeyboardImpl> _impl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_impl, setter=_setImpl:) id <_TVRXKeyboardImpl> impl; // @synthesize impl=_impl;
 @property(nonatomic) __weak id <_TVRXKeyboardControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_endSession;
 - (void)_beginSessionWithAttributes:(id)arg1;
 - (void)_textActionPayloadGenerated:(id)arg1;

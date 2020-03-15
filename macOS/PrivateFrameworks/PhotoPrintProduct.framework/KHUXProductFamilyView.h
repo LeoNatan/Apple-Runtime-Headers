@@ -31,6 +31,7 @@
 + (BOOL)requiresConstraintBasedLayout;
 + (id)whiteGradientColors;
 + (id)defaultGradientColors;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
 @property(readonly, nonatomic) NSLayoutConstraint *detailHeightConstraint; // @synthesize detailHeightConstraint=_detailHeightConstraint;
 @property(readonly, nonatomic) NSMutableArray *masterConstraints; // @synthesize masterConstraints=_masterConstraints;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (BOOL)isFlipped;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;

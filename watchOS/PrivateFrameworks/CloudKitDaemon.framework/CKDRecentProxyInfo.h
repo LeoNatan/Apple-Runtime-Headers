@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_operationStatisticsByClassName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *operationStatisticsByClassName; // @synthesize operationStatisticsByClassName=_operationStatisticsByClassName;
 @property(readonly) unsigned int connectionCount; // @synthesize connectionCount=_connectionCount;
 @property(readonly, nonatomic) NSDate *lastSeen; // @synthesize lastSeen=_lastSeen;
 @property(readonly, nonatomic) NSMutableSet *containerIdentifiers; // @synthesize containerIdentifiers=_containerIdentifiers;
 @property(readonly, nonatomic) NSString *processName; // @synthesize processName=_processName;
-- (void).cxx_destruct;
 - (id)CKStatusReportArray;
 - (void)mergeProxy:(id)arg1;
 - (id)initWithProxy:(id)arg1;

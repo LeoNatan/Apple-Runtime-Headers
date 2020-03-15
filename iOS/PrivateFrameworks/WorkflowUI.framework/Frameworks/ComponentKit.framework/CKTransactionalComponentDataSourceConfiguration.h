@@ -17,11 +17,11 @@
     NSThread *_workThreadOverride;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSThread *workThreadOverride; // @synthesize workThreadOverride=_workThreadOverride;
 @property(readonly, nonatomic) id <NSObject> context; // @synthesize context=_context;
 @property(readonly, nonatomic) Class componentProvider; // @synthesize componentProvider=_componentProvider;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (const struct CKSizeRange *)sizeRange;

@@ -115,6 +115,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform __transform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *_mutableActiveReversedDetentIndexes; // @synthesize _mutableActiveReversedDetentIndexes=__mutableActiveReversedDetentIndexes;
 @property(readonly, nonatomic) NSMutableArray *_mutableActiveDetentValues; // @synthesize _mutableActiveDetentValues=__mutableActiveDetentValues;
 @property(retain, nonatomic, setter=_setReversedDetents:) NSArray *_reversedDetents; // @synthesize _reversedDetents=__reversedDetents;
@@ -150,7 +151,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *_containerView; // @synthesize _containerView=__containerView;
 @property(retain, nonatomic) UIViewController *_presentedViewController; // @synthesize _presentedViewController=__presentedViewController;
 @property(nonatomic) __weak UIViewController *_presentingViewController; // @synthesize _presentingViewController=__presentingViewController;
-- (void).cxx_destruct;
 - (void)_layout;
 @property(readonly, nonatomic) NSArray *_dimmedPassthroughViews; // @synthesize _dimmedPassthroughViews=__dimmedPassthroughViews;
 @property(readonly, nonatomic) _Bool _shouldDimmingIgnoreTouches; // @synthesize _shouldDimmingIgnoreTouches=__shouldDimmingIgnoreTouches;

@@ -15,10 +15,10 @@
     NSURL *_baseURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain, nonatomic) PKAccountAction *action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

@@ -25,12 +25,12 @@
 + (id)cloudPushSyncOperationWithBlock:(CDUnknownBlockType)arg1;
 + (id)cancelOperationWithBlock:(CDUnknownBlockType)arg1;
 + (id)queryDatabaseOperationWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDSyncOperationOptions *options; // @synthesize options=_options;
 @property(copy, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 @property(retain, nonatomic) HMFTimer *delayTimer; // @synthesize delayTimer=_delayTimer;
 @property(readonly, nonatomic) unsigned int operationType; // @synthesize operationType=_operationType;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *zoneName;
 - (id)description;
 - (id)_initWithOperationType:(unsigned int)arg1 options:(id)arg2 syncBlock:(CDUnknownBlockType)arg3;

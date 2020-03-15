@@ -27,6 +27,7 @@
     NSArray *_networks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *networks; // @synthesize networks=_networks;
 @property(retain, nonatomic) TVSWiFiNetworkConnectionOperation *connectionOperation; // @synthesize connectionOperation=_connectionOperation;
 @property(retain, nonatomic) TVSWiFiNetwork *associatingNetwork; // @synthesize associatingNetwork=_associatingNetwork;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) TVSWiFiNetwork *currentNetwork; // @synthesize currentNetwork=_currentNetwork;
 @property(retain, nonatomic) Class cellClass; // @synthesize cellClass=_cellClass;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)_changesFromUpdatedNetworks;
 - (id)_connectionQueue;
 - (void)_dispatchConnectionOperation:(id)arg1;

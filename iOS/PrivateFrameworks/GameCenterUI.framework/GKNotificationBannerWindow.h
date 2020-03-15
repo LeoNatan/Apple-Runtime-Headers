@@ -18,9 +18,9 @@
 + (void)enqueBanner:(id)arg1;
 + (id)queue;
 + (id)bannerWindow;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *bannerSemaphore; // @synthesize bannerSemaphore=_bannerSemaphore;
 @property(retain, nonatomic) GKNotificationBannerViewController *currentBannerViewController; // @synthesize currentBannerViewController=_currentBannerViewController;
-- (void).cxx_destruct;
 - (void)_hideBanner:(id)arg1 quickly:(_Bool)arg2;
 - (void)_showBanner:(id)arg1;
 - (void)handlePan:(id)arg1;

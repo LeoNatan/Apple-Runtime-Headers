@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int receiveWindow; // @synthesize receiveWindow=_receiveWindow;
 @property(retain, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
 @property(retain, nonatomic) NSString *clientUUID; // @synthesize clientUUID=_clientUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -23,10 +23,10 @@
 }
 
 + (id)localDataProviderStoreWithDelegate:(id)arg1 dataProviderQueue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *localFactories; // @synthesize localFactories=_localFactories;
 @property(retain, nonatomic) NSMutableDictionary *dataProvidersByUniversalSectionID; // @synthesize dataProvidersByUniversalSectionID=_dataProvidersByUniversalSectionID;
 @property(retain, nonatomic) NSMutableDictionary *dataProvidersBySectionID; // @synthesize dataProvidersBySectionID=_dataProvidersBySectionID;
-- (void).cxx_destruct;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 universalSectionID:(id)arg4;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
 - (void)removeDataProviderWithSectionID:(id)arg1;

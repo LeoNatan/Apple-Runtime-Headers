@@ -13,8 +13,8 @@
     NSAttributedString *_subject;
 }
 
-@property(readonly, copy, nonatomic) NSAttributedString *subject; // @synthesize subject=_subject;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSAttributedString *subject; // @synthesize subject=_subject;
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 messagePartRange:(struct _NSRange)arg4 subject:(id)arg5 visibleAssociatedMessageChatItems:(id)arg6;
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 messagePartRange:(struct _NSRange)arg4 subject:(id)arg5;
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 messagePartRange:(struct _NSRange)arg4 subject:(id)arg5 shouldDisplayLink:(_Bool)arg6;

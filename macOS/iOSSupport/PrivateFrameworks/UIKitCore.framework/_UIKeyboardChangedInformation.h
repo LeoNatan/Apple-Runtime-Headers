@@ -27,6 +27,7 @@
 + (id)informationForKeyboardUp:(struct CGRect)arg1 withIAV:(struct CGRect)arg2;
 + (id)informationForKeyboardDown;
 + (id)animationFence;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldTakeSnapshot; // @synthesize shouldTakeSnapshot=_shouldTakeSnapshot;
 @property(readonly) BOOL keyboardOnScreen; // @synthesize keyboardOnScreen=_keyboardOnScreen;
 @property(readonly) struct CGRect keyboardPositionWithIAV; // @synthesize keyboardPositionWithIAV=_keyboardPositionWithIAV;
@@ -35,7 +36,6 @@
 @property(readonly) BOOL avoidIntersectability; // @synthesize avoidIntersectability=_avoidIntersectability;
 @property(copy, nonatomic) NSString *sourceDisplayIdentifier; // @synthesize sourceDisplayIdentifier=_sourceDisplayIdentifier;
 @property(copy, nonatomic) NSString *sourceCanvasIdentifier; // @synthesize sourceCanvasIdentifier=_sourceCanvasIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (void)resetAnimationFencing;

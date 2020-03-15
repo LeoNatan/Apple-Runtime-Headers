@@ -13,8 +13,8 @@
     NSArray *_templateItems;
 }
 
-@property(copy, nonatomic) NSArray *templateItems; // @synthesize templateItems=_templateItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *templateItems; // @synthesize templateItems=_templateItems;
 - (id)initWithTemplateItems:(id)arg1;
 - (id)init;
 

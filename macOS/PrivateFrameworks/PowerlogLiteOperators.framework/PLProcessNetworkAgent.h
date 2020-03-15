@@ -32,6 +32,7 @@
 + (id)entryEventPointDefinitionConnection;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) PLCFNotificationOperatorComposition *flushNetworkBitmapsListener; // @synthesize flushNetworkBitmapsListener=_flushNetworkBitmapsListener;
 @property unsigned long long lastNetworkBitmapTimestamp; // @synthesize lastNetworkBitmapTimestamp=_lastNetworkBitmapTimestamp;
 @property(retain) NSMutableSet *processes; // @synthesize processes=_processes;
@@ -41,7 +42,6 @@
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
 @property(retain) UsageFeed *usageFeed; // @synthesize usageFeed=_usageFeed;
 @property struct __NStatManager *statManagerRef; // @synthesize statManagerRef=_statManagerRef;
-- (void).cxx_destruct;
 - (void)accountWithNetworkUsageDiffEntries:(id)arg1 withStartDate:(id)arg2 withEndDate:(id)arg3;
 - (void)logEventBackwardUsageWithOutcome:(id)arg1;
 - (BOOL)outcomeHasDataUsage:(id)arg1;

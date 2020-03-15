@@ -31,6 +31,7 @@
     Class _buttonClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class buttonClass; // @synthesize buttonClass=_buttonClass;
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) float horizontalMargin; // @synthesize horizontalMargin=_horizontalMargin;
@@ -38,7 +39,6 @@
 @property(nonatomic) float buttonSpacing; // @synthesize buttonSpacing=_buttonSpacing;
 @property(nonatomic) int actionStyle; // @synthesize actionStyle=_actionStyle;
 @property(readonly, nonatomic) NSIndexPath *swipedIndexPath; // @synthesize swipedIndexPath=_swipedIndexPath;
-- (void).cxx_destruct;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)pullView:(id)arg1 pressedActionAtIndex:(int)arg2;
 - (void)_updatePullView;

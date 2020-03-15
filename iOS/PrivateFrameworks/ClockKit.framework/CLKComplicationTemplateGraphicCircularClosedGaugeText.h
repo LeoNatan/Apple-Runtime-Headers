@@ -14,9 +14,9 @@
     CLKTextProvider *_centerTextProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKTextProvider *centerTextProvider; // @synthesize centerTextProvider=_centerTextProvider;
 @property(copy, nonatomic) CLKGaugeProvider *gaugeProvider; // @synthesize gaugeProvider=_gaugeProvider;
-- (void).cxx_destruct;
 - (void)_enumerateGaugeProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 

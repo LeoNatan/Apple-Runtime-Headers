@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <CSLSRawButtonEventListenerService> service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSRawButtonEventListenerService> service; // @synthesize service=_service;
 - (void)removeEventListener:(id)arg1;
 - (void)addEventListener:(id)arg1;
 

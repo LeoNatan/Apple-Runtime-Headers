@@ -41,6 +41,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=wasPINPairingCancelled) _Bool PINPairingCancelled; // @synthesize PINPairingCancelled=_PINPairingCancelled;
 @property(nonatomic, getter=didPINPairingFail) _Bool PINPairingFailed; // @synthesize PINPairingFailed=_PINPairingFailed;
 @property(nonatomic, getter=isPINPairing) _Bool PINPairing; // @synthesize PINPairing=_PINPairing;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) _Bool supportsIsCharging; // @synthesize supportsIsCharging=_supportsIsCharging;
 @property(readonly, nonatomic) _Bool supportsBatteryLevel; // @synthesize supportsBatteryLevel=_supportsBatteryLevel;
 @property(readonly, nonatomic) long long transportType; // @synthesize transportType=_transportType;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

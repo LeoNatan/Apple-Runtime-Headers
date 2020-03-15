@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_badgeTextLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *badgeTextLabel; // @synthesize badgeTextLabel=_badgeTextLabel;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (_Bool)isHighlighted;
 - (void)setHighlighted:(_Bool)arg1;
 @property(copy, nonatomic) NSString *text;

@@ -19,8 +19,8 @@
     ARRunLoop *_runloop;
 }
 
-@property(readonly, nonatomic) ARRunLoop *runloop; // @synthesize runloop=_runloop;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ARRunLoop *runloop; // @synthesize runloop=_runloop;
 - (void)displayLinkCallback;
 - (void)_recomputeActualVsyncOffsetWithVsyncOffset:(double)arg1 preferredFramesPerSecond:(long long)arg2;
 - (void)invalidate;

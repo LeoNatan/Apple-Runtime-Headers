@@ -18,9 +18,9 @@
 + (id)accountDescriptionWithACAccount:(id)arg1;
 + (id)getAppleIDSession;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool primaryICloudACAccountIsValid; // @synthesize primaryICloudACAccountIsValid=_primaryICloudACAccountIsValid;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (id)primaryICloudAccountCalDavService;
 @property(readonly) _Bool primaryICloudAccountEnabled;
 - (void)saveDidChooseToMigrate:(_Bool)arg1 didFinishMigration:(_Bool)arg2 toACAccount:(id)arg3 inStore:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;

@@ -30,6 +30,7 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSBundle *_frameworkBundle; // @synthesize _frameworkBundle=__frameworkBundle;
 @property(copy, nonatomic) UIView *_contentView; // @synthesize _contentView=__contentView;
 @property(nonatomic) __weak id <INKContentViewDelegate> _delegate; // @synthesize _delegate=__delegate;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) INKContent *content; // @synthesize content=_content;
 @property(nonatomic) _Bool displaysBottomSeparator; // @synthesize displaysBottomSeparator=_displaysBottomSeparator;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (void)willMoveToWindow:(id)arg1;
 - (void)contentDisplayDelay;
 - (void)cancelContentDisplayDelay;

@@ -37,6 +37,7 @@
     long long _disableSelectionNotificationsCount;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ABAccessoryViewProvider> accessoryViewProvider; // @synthesize accessoryViewProvider=_accessoryViewProvider;
 @property(copy) CDUnknownBlockType editCompletionHandler; // @synthesize editCompletionHandler=_editCompletionHandler;
 @property(copy) NSString *autosaveName; // @synthesize autosaveName=_autosaveName;
@@ -44,10 +45,10 @@
 @property(retain, nonatomic) ABGroupEntriesList *groupEntriesList; // @synthesize groupEntriesList=_groupEntriesList;
 @property(retain) id <ABGroupDropHelper> dropHelper; // @synthesize dropHelper=_drophelper;
 @property(retain) id <ABGroupDragHelper> dragHelper; // @synthesize dragHelper=_dragHelper;
-@property id <ABGroupHelperFactory> helperFactory; // @synthesize helperFactory=_helperFactory;
+@property __weak id <ABGroupHelperFactory> helperFactory; // @synthesize helperFactory=_helperFactory;
 @property(copy) NSString *selectedGroupName; // @synthesize selectedGroupName=_selectedGroupName;
 @property(copy) NSString *selectedGroupEntryIdentifier; // @synthesize selectedGroupEntryIdentifier=_selectedGroupEntryIdentifier;
-@property ABGroupListView *outlineView; // @synthesize outlineView=_outlineView;
+@property __weak ABGroupListView *outlineView; // @synthesize outlineView=_outlineView;
 - (void)reloadAccessoryViewsForEntries:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
 - (BOOL)canSelectEntryAtRow:(long long)arg1;
@@ -99,7 +100,7 @@
 - (id)outlineView:(id)arg1 namesOfPromisedFilesDroppedAtDestination:(id)arg2 forDraggedItems:(id)arg3;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
 - (BOOL)canDragEntries:(id)arg1;
-- (void)importFiles:(id)arg1 showImportConfirmation:(BOOL)arg2;
+- (void)importFiles:(id)arg1 showImportConfirmation:(BOOL)arg2 ignoresGuardianRestrictions:(BOOL)arg3;
 - (id)dropHelperWithDraggingInfo:(id)arg1 droppedEntry:(id)arg2 childIndex:(long long)arg3;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;

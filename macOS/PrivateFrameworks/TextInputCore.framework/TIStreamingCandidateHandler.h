@@ -23,12 +23,12 @@
     id <TIKeyboardInputManagerLogging> _logger;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TIKeyboardInputManagerLogging> logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 @property(readonly, copy, nonatomic) CDUnknownBlockType candidateHandler; // @synthesize candidateHandler=_candidateHandler;
 @property(readonly, nonatomic) TICandidateRequestToken *requestToken; // @synthesize requestToken=_requestToken;
 @property(readonly, nonatomic) id <TIClientProxy> clientProxy; // @synthesize clientProxy=_clientProxy;
-- (void).cxx_destruct;
 - (void)close;
 - (void)pushCandidates:(id)arg1;
 - (void)open;

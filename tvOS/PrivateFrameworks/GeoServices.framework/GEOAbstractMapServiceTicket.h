@@ -32,6 +32,7 @@
     GEOCategorySearchResultSection *_categorySearchResultSection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOCategorySearchResultSection *categorySearchResultSection; // @synthesize categorySearchResultSection=_categorySearchResultSection;
 @property(readonly, nonatomic) GEOPDMerchantLookupResult *merchantLookupResult; // @synthesize merchantLookupResult=_merchantLookupResult;
 @property(readonly, nonatomic) NSArray *searchResultSections; // @synthesize searchResultSections=_searchResultSections;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSArray *retainedSearchMetadata; // @synthesize retainedSearchMetadata=_retainedSearchMetadata;
 @property(readonly, nonatomic) GEODirectionIntent *directionIntent; // @synthesize directionIntent=_directionIntent;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolvedResult; // @synthesize clientResolvedResult=_clientResolvedResult;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 - (void)applyToPlaceInfo:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;

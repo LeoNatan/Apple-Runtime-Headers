@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PSListController *_hostController;
 }
 
-@property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
 - (id)isFallbackEnabled:(id)arg1;
 - (void)setFallbackEnabled:(id)arg1 specifier:(id)arg2;
 - (id)initWithHostController:(id)arg1;

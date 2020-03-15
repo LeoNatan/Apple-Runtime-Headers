@@ -20,6 +20,7 @@
 }
 
 + (id)propertyWithName:(id)arg1 displayName:(id)arg2 type:(id)arg3 code:(unsigned int)arg4 classCode:(unsigned int)arg5 readOnly:(BOOL)arg6 writeOnly:(BOOL)arg7;
+- (void).cxx_destruct;
 @property BOOL writeOnly; // @synthesize writeOnly=_writeOnly;
 @property BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property(retain) NSString *type; // @synthesize type=_type;
@@ -27,7 +28,6 @@
 @property unsigned int code; // @synthesize code=_code;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 displayName:(id)arg2 type:(id)arg3 code:(unsigned int)arg4 classCode:(unsigned int)arg5 readOnly:(BOOL)arg6 writeOnly:(BOOL)arg7;
 
 @end

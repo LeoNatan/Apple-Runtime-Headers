@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CALayer *_highlightLayer;
 }
 
-@property(retain, nonatomic) CALayer *highlightLayer; // @synthesize highlightLayer=_highlightLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayer *highlightLayer; // @synthesize highlightLayer=_highlightLayer;
 @property(readonly, nonatomic) BOOL highlighted;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 @property(retain, nonatomic) UIColor *highlightColor;

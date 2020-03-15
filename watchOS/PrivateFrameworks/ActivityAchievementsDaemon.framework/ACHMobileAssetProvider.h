@@ -13,8 +13,8 @@
     _HKMobileAssetDownloadManager *_mobileAssetDownloadManager;
 }
 
-@property(retain, nonatomic) _HKMobileAssetDownloadManager *mobileAssetDownloadManager; // @synthesize mobileAssetDownloadManager=_mobileAssetDownloadManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HKMobileAssetDownloadManager *mobileAssetDownloadManager; // @synthesize mobileAssetDownloadManager=_mobileAssetDownloadManager;
 - (id)_compatibilityVersionQueryParameters;
 - (void)_getCurrentAsssetAndOlderAssetsFromAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_assetsGroupedByUniqueNameAndType:(id)arg1;

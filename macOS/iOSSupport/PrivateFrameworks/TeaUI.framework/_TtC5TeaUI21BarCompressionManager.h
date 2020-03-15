@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <TeaUI/UICollectionViewDelegate-Protocol.h>
-
-@interface _TtC5TeaUI21BarCompressionManager : NSObject <UICollectionViewDelegate>
+@interface _TtC5TeaUI21BarCompressionManager : NSObject
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: scrollView

@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)description;
 - (void)clear;
 - (void)appendObject:(id)arg1 forTime:(double)arg2;
 - (id)nearestObjectForTime:(double)arg1;

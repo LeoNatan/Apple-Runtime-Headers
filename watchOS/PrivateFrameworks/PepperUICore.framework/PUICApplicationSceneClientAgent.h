@@ -15,9 +15,9 @@
     PUICApplicationSceneSettingsDiffInspector *_settingsDiffInspector;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICApplicationSceneSettingsDiffInspector *settingsDiffInspector; // @synthesize settingsDiffInspector=_settingsDiffInspector;
 @property(retain, nonatomic) FBSSceneSettingsDiffInspector *backgroundDiffInspector; // @synthesize backgroundDiffInspector=_backgroundDiffInspector;
-- (void).cxx_destruct;
 - (void)logEvent:(id)arg1 forScene:(id)arg2 withPrefix:(id)arg3 effectiveSettings:(id)arg4;
 - (void)scene:(id)arg1 handleEvent:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)scene:(id)arg1 didInitializeWithEvent:(id)arg2 completion:(CDUnknownBlockType)arg3;

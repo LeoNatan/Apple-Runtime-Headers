@@ -13,8 +13,8 @@
     MKLocalSearch *_localSearch;
 }
 
-@property(retain, nonatomic) MKLocalSearch *localSearch; // @synthesize localSearch=_localSearch;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKLocalSearch *localSearch; // @synthesize localSearch=_localSearch;
 - (_Bool)shouldUseMetricSystem;
 - (void)cancel;
 - (void)runSearchWithLocation:(id)arg1;

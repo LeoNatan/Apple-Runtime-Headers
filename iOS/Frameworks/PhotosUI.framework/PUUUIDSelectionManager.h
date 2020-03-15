@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSMutableSet *__mutableSelectedUUIDs;
 }
 
-@property(readonly, copy, nonatomic) NSMutableSet *_mutableSelectedUUIDs; // @synthesize _mutableSelectedUUIDs=__mutableSelectedUUIDs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSMutableSet *_mutableSelectedUUIDs; // @synthesize _mutableSelectedUUIDs=__mutableSelectedUUIDs;
 - (id)mutableChangeObject;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (void)deselectAllUUIDs;

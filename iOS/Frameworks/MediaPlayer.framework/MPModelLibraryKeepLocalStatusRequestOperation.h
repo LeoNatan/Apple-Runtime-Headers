@@ -19,6 +19,8 @@
     shared_ptr_e8455ceb _downloadableItemsQuery;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) NSNumber *redownloadableItemCount; // @synthesize redownloadableItemCount=_redownloadableItemCount;
 @property(copy, nonatomic) MPMediaLibraryView *libraryView; // @synthesize libraryView=_libraryView;
@@ -26,8 +28,6 @@
 @property(nonatomic) long long enableState; // @synthesize enableState=_enableState;
 @property(copy, nonatomic) CDUnknownBlockType downloadablePlaylistItemEntityQueryBlock; // @synthesize downloadablePlaylistItemEntityQueryBlock=_downloadablePlaylistItemEntityQueryBlock;
 @property(nonatomic) shared_ptr_e8455ceb downloadableItemsQuery; // @synthesize downloadableItemsQuery=_downloadableItemsQuery;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

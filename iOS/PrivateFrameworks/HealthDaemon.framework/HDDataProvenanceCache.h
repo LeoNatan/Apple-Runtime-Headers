@@ -24,6 +24,7 @@
     NSMutableDictionary *_codableObjectCollectionsByProvenance;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *codableObjectCollectionsByProvenance; // @synthesize codableObjectCollectionsByProvenance=_codableObjectCollectionsByProvenance;
 @property(retain, nonatomic) NSMutableDictionary *deviceByPersistentIDCache; // @synthesize deviceByPersistentIDCache=_deviceByPersistentIDCache;
 @property(retain, nonatomic) NSMutableDictionary *sourceRevisionsDictionaryBySourceCache; // @synthesize sourceRevisionsDictionaryBySourceCache=_sourceRevisionsDictionaryBySourceCache;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) HDDataProvenanceManager *provenanceManager; // @synthesize provenanceManager=_provenanceManager;
 @property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)deviceForPersistentID:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 - (id)sourceRevisionForProvenanceID:(id)arg1 dataProvenance:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 - (id)_sourceForPersistentID:(id)arg1 profile:(id)arg2 error:(id *)arg3;

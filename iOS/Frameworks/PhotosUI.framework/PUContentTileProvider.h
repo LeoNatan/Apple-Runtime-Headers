@@ -14,9 +14,9 @@
     UIWindow *_window;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(readonly, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-- (void).cxx_destruct;
 - (id)tileControllerForAsset:(id)arg1 viewModel:(id)arg2 tilingView:(id)arg3;
 - (void)registerTileControllerClassesWithTilingView:(id)arg1;
 - (id)initWithMediaProvider:(id)arg1;

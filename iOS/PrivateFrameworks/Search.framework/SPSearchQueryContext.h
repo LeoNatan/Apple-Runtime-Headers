@@ -36,6 +36,7 @@
 }
 
 + (id)queryContextWithSearchString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) _Bool internalValidation; // @synthesize internalValidation=_internalValidation;
 @property(nonatomic) _Bool internalDebug; // @synthesize internalDebug=_internalDebug;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(nonatomic) _Bool isPasscodeLocked; // @synthesize isPasscodeLocked=_isPasscodeLocked;
 @property(nonatomic) _Bool allowInternet; // @synthesize allowInternet=_allowInternet;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayedText;
 @property(readonly, nonatomic) _Bool hasMarkedText;
 - (id)initWithSearchString:(id)arg1;

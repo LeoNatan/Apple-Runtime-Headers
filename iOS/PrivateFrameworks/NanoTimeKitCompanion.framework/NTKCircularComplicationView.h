@@ -37,6 +37,7 @@
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 + (id)mediumViewForComplicationType:(unsigned long long)arg1;
 + (id)viewForComplicationType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
 @property(readonly) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(nonatomic) _Bool usesMultiColor; // @synthesize usesMultiColor=_usesMultiColor;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
-- (void).cxx_destruct;
 - (id)_fontForDynamicFontSize:(long long)arg1;
 - (CDStruct_69ceb9b6)_layoutConstants;
 - (void)_updateForTemplateChange;

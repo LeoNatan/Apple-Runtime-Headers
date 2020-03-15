@@ -28,10 +28,10 @@
 + (id)geminiHandleTypeMap;
 + (int)geminiHandleTypeForType:(unsigned int)arg1;
 + (id)geminiHandleForHandle:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *customIdentifier; // @synthesize customIdentifier=_customIdentifier;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (id)initWithStringValue:(id)arg1 type:(unsigned int)arg2;
 - (id)initWithStringValue:(id)arg1 customIdentifier:(id)arg2 type:(unsigned int)arg3;
 

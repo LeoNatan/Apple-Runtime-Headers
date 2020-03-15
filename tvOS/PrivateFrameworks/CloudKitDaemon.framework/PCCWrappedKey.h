@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSData *_routingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *routingToken; // @synthesize routingToken=_routingToken;
 @property struct pcc_wrapped_invocation_key *wrappedInvocationKey; // @synthesize wrappedInvocationKey=_wrappedInvocationKey;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)clear;
 - (id)data;

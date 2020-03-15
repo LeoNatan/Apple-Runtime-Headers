@@ -30,11 +30,11 @@
     NSArray *_vertexAttributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool isDoubleBuffered; // @synthesize isDoubleBuffered=_isDoubleBuffered;
 @property(nonatomic) unsigned int drawMode; // @synthesize drawMode=_drawMode;
 @property(readonly) NSArray *vertexAttributes; // @synthesize vertexAttributes=_vertexAttributes;
 @property(readonly) unsigned long long vertexCount; // @synthesize vertexCount=_vertexCount;
-- (void).cxx_destruct;
 - (_Bool)p_setAttributeUpdateData:(CDStruct_64113493 *)arg1 fromAttribute:(id)arg2;
 - (void)updateDataBufferAttributes:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)vertexAttributeNamed:(id)arg1;

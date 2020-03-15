@@ -13,8 +13,8 @@
     WFTableDataSource *_dataSource;
 }
 
-@property(nonatomic) __weak WFTableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFTableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 
 @end
 

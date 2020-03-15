@@ -14,9 +14,9 @@
     NSMutableDictionary *_preparedStatements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *preparedStatements; // @synthesize preparedStatements=_preparedStatements;
 @property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)preparedStatementForQueryString:(id)arg1;
 - (id)initWithConnection:(id)arg1;
 

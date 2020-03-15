@@ -21,13 +21,13 @@
     NSError *_smimeError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=setSMIMEError:) NSError *smimeError; // @synthesize smimeError=_smimeError;
 @property(retain, nonatomic) EMSecurityInformation *securityInformation; // @synthesize securityInformation=_securityInformation;
 @property(retain, nonatomic) MailAccount *legacyAccount; // @synthesize legacyAccount=_legacyAccount;
 @property(retain, nonatomic) EMAccount *account; // @synthesize account=_account;
 @property(nonatomic) __weak MFMessageLoadingContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <MFAddressAtomProvider> atomProvider; // @synthesize atomProvider=_atomProvider;
-- (void).cxx_destruct;
 - (_Bool)_atomContainsVIPSender:(id)arg1;
 - (void)_updateVIPStatus;
 - (void)_vipSendersDidChange:(id)arg1;

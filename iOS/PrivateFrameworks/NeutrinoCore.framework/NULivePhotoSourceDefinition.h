@@ -12,9 +12,9 @@
     NUSourceDefinition *_video;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NUSourceDefinition *video; // @synthesize video=_video;
 @property(readonly) NUSourceDefinition *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)mediaType;
 - (id)initWithImageSourceDefinition:(id)arg1 videoSourceDefinition:(id)arg2;

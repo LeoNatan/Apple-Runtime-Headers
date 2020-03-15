@@ -28,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)locationWithCalLocation:(void *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *altitudeAccuracy; // @synthesize altitudeAccuracy=_altitudeAccuracy;
 @property(retain, nonatomic) NSString *altitude; // @synthesize altitude=_altitude;
 @property(retain, nonatomic) NSString *accuracy; // @synthesize accuracy=_accuracy;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *street; // @synthesize street=_street;
 @property(retain, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (_Bool)isEmptyLocation;
 - (_Bool)isEqualToLocation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

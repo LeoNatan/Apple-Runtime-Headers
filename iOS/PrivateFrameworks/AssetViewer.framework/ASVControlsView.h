@@ -16,9 +16,9 @@
     UIAccessibilityHUDGestureManager *_largeTextHUDGestureManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAccessibilityHUDGestureManager *largeTextHUDGestureManager; // @synthesize largeTextHUDGestureManager=_largeTextHUDGestureManager;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint)arg2;

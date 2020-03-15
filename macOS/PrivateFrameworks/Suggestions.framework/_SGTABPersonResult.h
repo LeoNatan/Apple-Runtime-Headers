@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id representedObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values;
 @property(readonly, nonatomic) id representedObject; // @synthesize representedObject;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName;
-- (void).cxx_destruct;
 - (void)addValue:(id)arg1;
 - (id)initWithPerson:(id)arg1 includeAllScreenNames:(BOOL)arg2;
 - (id)initWithDisplayName:(id)arg1 values:(id)arg2;

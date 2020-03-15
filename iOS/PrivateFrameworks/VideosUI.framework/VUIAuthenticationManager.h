@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class SSAuthenticateRequest;
+@class NSString, SSAuthenticateRequest;
 
 @interface VUIAuthenticationManager : NSObject
 {
     _Bool __isObservingAccountStoreChange;
     SSAuthenticateRequest *__authRequest;
+    NSString *__accountIdentifier;
 }
 
 + (void)_performAuthenticationWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -26,9 +27,10 @@
 + (id)userAccountName;
 + (_Bool)userHasActiveAccount;
 + (id)sharedInstance;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *_accountIdentifier; // @synthesize _accountIdentifier=__accountIdentifier;
 @property(nonatomic) _Bool _isObservingAccountStoreChange; // @synthesize _isObservingAccountStoreChange=__isObservingAccountStoreChange;
 @property(retain, nonatomic) SSAuthenticateRequest *_authRequest; // @synthesize _authRequest=__authRequest;
-- (void).cxx_destruct;
 - (void)_accountStoreDidChange:(id)arg1;
 
 @end

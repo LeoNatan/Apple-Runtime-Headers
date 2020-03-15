@@ -22,9 +22,9 @@
 }
 
 + (id)iteratorForAssets:(id)arg1 withDatabaseReader:(id)arg2 resultTypes:(id)arg3 batchSize:(int)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *analysis; // @synthesize analysis=_analysis;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)nextBatch;
 - (BOOL)next;
 - (id)initWithDatabaseReader:(id)arg1 forAssets:(id)arg2 resultsTypes:(id)arg3 batchSize:(int)arg4;

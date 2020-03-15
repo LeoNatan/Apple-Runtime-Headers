@@ -20,6 +20,7 @@
     id _contentFetchedObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id contentFetchedObject; // @synthesize contentFetchedObject=_contentFetchedObject;
 @property(retain, nonatomic) id classificationFetchedObject; // @synthesize classificationFetchedObject=_classificationFetchedObject;
 @property(retain, nonatomic) id thumbnailFetchedObject; // @synthesize thumbnailFetchedObject=_thumbnailFetchedObject;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(retain, nonatomic) id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)completeFetchOperation;
 - (id)fetchContentWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchThumbnailWithCompletion:(CDUnknownBlockType)arg1;

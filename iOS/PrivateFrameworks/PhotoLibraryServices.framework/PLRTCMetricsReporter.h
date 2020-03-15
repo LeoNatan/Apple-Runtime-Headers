@@ -17,10 +17,10 @@
     PGManager *_graphManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PGManager *graphManager; // @synthesize graphManager=_graphManager;
 @property(retain, nonatomic) RTCReporting *reportingSession; // @synthesize reportingSession=_reportingSession;
 @property(retain, nonatomic) RTCSecureHierarchyToken *reportingSessionToken; // @synthesize reportingSessionToken=_reportingSessionToken;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)reportMetricsEvents:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (id)init;

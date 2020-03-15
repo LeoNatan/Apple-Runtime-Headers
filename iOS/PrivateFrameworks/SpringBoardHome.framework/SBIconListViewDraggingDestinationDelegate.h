@@ -29,6 +29,7 @@
 }
 
 + (unsigned long long)dragTypeForDropSession:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isWaitingForConcludeDrag) _Bool waitingForConcludeDrag; // @synthesize waitingForConcludeDrag=_waitingForConcludeDrag;
 @property(retain, nonatomic) id <SBIconListViewDraggingPolicyHandling> springLoadingPolicyHandler; // @synthesize springLoadingPolicyHandler=_springLoadingPolicyHandler;
 @property(nonatomic) unsigned long long currentSpringLoadedDragType; // @synthesize currentSpringLoadedDragType=_currentSpringLoadedDragType;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long currentDragType; // @synthesize currentDragType=_currentDragType;
 @property(readonly, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(readonly, nonatomic) __weak SBIconListView *iconListView; // @synthesize iconListView=_iconListView;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

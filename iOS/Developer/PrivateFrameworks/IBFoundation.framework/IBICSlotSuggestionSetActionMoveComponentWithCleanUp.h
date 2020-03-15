@@ -13,8 +13,8 @@
     NSSet *_cleanUpSlotComponents;
 }
 
-@property(readonly) NSSet *cleanUpSlotComponents; // @synthesize cleanUpSlotComponents=_cleanUpSlotComponents;
 - (void).cxx_destruct;
+@property(readonly) NSSet *cleanUpSlotComponents; // @synthesize cleanUpSlotComponents=_cleanUpSlotComponents;
 - (id)initWithSourceSlotComponents:(id)arg1 destinationSlotComponents:(id)arg2 cleanUpSlotComponents:(id)arg3;
 
 @end

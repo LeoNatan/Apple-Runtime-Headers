@@ -17,11 +17,11 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *registrationIdentifiers; // @synthesize registrationIdentifiers=_registrationIdentifiers;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(nonatomic, getter=isRequestingUpdates) _Bool requestingUpdates; // @synthesize requestingUpdates=_requestingUpdates;
 @property(readonly, nonatomic) PXContextualMemoriesSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)unregisterForLocationPrefetchingWithIdentifier:(id)arg1;
 - (void)registerForLocationPrefetchingWithIdentifier:(id)arg1;
 - (void)requestUpdatedContextualMemoriesSettingsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

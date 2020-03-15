@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_uid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long connectionType; // @synthesize connectionType=_connectionType;
 @property(readonly, nonatomic) BOOL requiresCustomPairing; // @synthesize requiresCustomPairing=_requiresCustomPairing;
 @property(readonly, nonatomic) NSString *uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (void)reset;
 - (BOOL)getInputStream:(id *)arg1 outputStream:(id *)arg2;
 @property(readonly, nonatomic) NSError *error;

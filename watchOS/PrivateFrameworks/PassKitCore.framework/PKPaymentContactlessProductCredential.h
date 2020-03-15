@@ -16,11 +16,11 @@
     PKPaymentSetupProduct *_product;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 @property(copy, nonatomic) NSString *cardSessionToken; // @synthesize cardSessionToken=_cardSessionToken;
 @property(copy, nonatomic) NSDictionary *readerModeMetadata; // @synthesize readerModeMetadata=_readerModeMetadata;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
-- (void).cxx_destruct;
 - (int)_cardTypeFromSetupProductType:(unsigned int)arg1;
 - (void)setRequirementsResponse:(id)arg1;
 - (id)initWithPaymentSetupProduct:(id)arg1 cardSessionToken:(id)arg2;

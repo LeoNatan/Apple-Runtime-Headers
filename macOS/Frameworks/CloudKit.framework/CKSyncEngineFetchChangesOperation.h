@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isFinished; // @synthesize isFinished=_isFinished;
 @property(nonatomic) BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKOperationGroup *group; // @synthesize group=_group;
 @property(copy, nonatomic) CKServerChangeToken *previousDatabaseServerChangeToken; // @synthesize previousDatabaseServerChangeToken=_previousDatabaseServerChangeToken;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)start;
 - (id)cancelledError;
 - (void)finishWithError:(id)arg1;

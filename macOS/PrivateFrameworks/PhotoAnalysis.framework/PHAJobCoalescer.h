@@ -13,8 +13,8 @@
     id <PHAJobCoalescerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PHAJobCoalescerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PHAJobCoalescerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)addJob:(id)arg1;
 - (id)init;
 

@@ -16,10 +16,10 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) SOAuthorizationRequestParameters *requestParameters; // @synthesize requestParameters=_requestParameters;
 @property(readonly, nonatomic) id <SOServiceProtocol> service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithService:(id)arg1 requestParameters:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 

@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 
 @property struct CGRect frameInScreenCoords; // @synthesize frameInScreenCoords=_frameInScreenCoords;
 - (void)dealloc;
-- (void)invalidate:(struct NSMutableDictionary *)arg1;
+- (void)invalidate:(id)arg1;
 - (void)windowForContextID:(unsigned int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)handlePotentialCommandEquivalent:(struct __CGEvent *)arg1 from:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (BOOL)potentialCommandEquivalentIsWhitelisted:(struct __CGEvent *)arg1;
@@ -35,8 +35,8 @@ __attribute__((visibility("hidden")))
 - (void)_requestFrame:(struct CGRect)arg1 serviceWindowBackgroundColor:(id)arg2 animate:(BOOL)arg3 transaction:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)frameOfServiceWindowDidChange:(struct CGRect)arg1 windowBackgroundColor:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_frameOfServiceWindowDidChange:(struct CGRect)arg1 windowBackgroundColor:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (struct CGRect)safeFrameStartingWithHost:(id)arg1 amongHostsAndServices:(struct NSMutableDictionary *)arg2 during:(const char *)arg3;
-- (id)viewServiceWhichSpawnedRendezvousChildWindowWithIdentifier:(id)arg1 amongHostsAndServices:(struct NSMutableDictionary *)arg2;
+- (struct CGRect)safeFrameStartingWithHost:(id)arg1 amongHostsAndServices:(id)arg2 during:(const char *)arg3;
+- (id)viewServiceWhichSpawnedRendezvousChildWindowWithIdentifier:(id)arg1 amongHostsAndServices:(id)arg2;
 - (void)joinPair:(id)arg1 window:(unsigned int)arg2 reply:(CDUnknownBlockType)arg3;
 - (BOOL)mayRequestArbitraryGeometryForTransparentSemiAutonomousWindows;
 @property(readonly) BOOL mayForwardEventsFromAccessoryView;

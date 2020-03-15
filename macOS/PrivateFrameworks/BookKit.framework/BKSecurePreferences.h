@@ -13,8 +13,8 @@
     id <BKSecurePreferencesDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BKSecurePreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BKSecurePreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)_parentalPreferenceIsForcedForKey:(id)arg1;
 - (void)_systemProfilePreferencesDidChange:(id)arg1;
 @property(readonly, nonatomic) BOOL explicitContentRestricted;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     id <EKStyleProvider> _styleProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain, nonatomic) id <EKStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) __weak id <EKCalendarEditItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)applyStyleProviderToCell:(id)arg1;
 - (_Bool)becomeFirstResponder;
 - (_Bool)saveStateToCalendar:(id)arg1;

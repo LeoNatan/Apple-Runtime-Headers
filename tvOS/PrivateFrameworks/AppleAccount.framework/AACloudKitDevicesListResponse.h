@@ -16,11 +16,11 @@
     NSArray *_needUpgradeDeviceNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *needUpgradeDeviceNames; // @synthesize needUpgradeDeviceNames=_needUpgradeDeviceNames;
 @property(readonly, nonatomic) NSArray *incompatibleDeviceNames; // @synthesize incompatibleDeviceNames=_incompatibleDeviceNames;
 @property(readonly, nonatomic) NSArray *needUpgradeDevices; // @synthesize needUpgradeDevices=_needUpgradeDevices;
 @property(readonly, nonatomic) NSArray *incompatibleDevices; // @synthesize incompatibleDevices=_incompatibleDevices;
-- (void).cxx_destruct;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

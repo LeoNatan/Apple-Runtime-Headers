@@ -6,16 +6,24 @@
 
 #import <PassKitUI/PKPaymentPreferenceCell.h>
 
-@class NSString, PKPassSnapshotter, PKPaymentPass, PKTransitBalanceModel, UIColor, UIImageView, UILabel, UIStackView;
+@class NSArray, NSLayoutConstraint, NSString, PKPassSnapshotter, PKPaymentPass, PKTransitBalanceModel, UIActivityIndicatorView, UIColor, UIImageView, UILabel, UIStackView, UISwitch, UIView;
+@protocol PKPaymentPreferenceCardCellAccessoryViewDelegate;
 
 @interface PKPaymentPreferenceCardCell : PKPaymentPreferenceCell
 {
     _Bool _isRightToLeft;
-    UIImageView *_cardArtView;
-    UIStackView *_stackView;
+    _Bool _editing;
+    UIActivityIndicatorView *_activityIndicator;
+    UIStackView *_labelStackView;
+    UIView *_accessoryView;
     UIColor *_subTextLabelColorOverride;
+    NSLayoutConstraint *_labelStackTrailingAnchorToCell;
+    NSArray *_accessoryStackConstraints;
     _Bool _showBillingAddress;
     _Bool _dimCardArt;
+    _Bool _activityIndicatorActive;
+    id <PKPaymentPreferenceCardCellAccessoryViewDelegate> _delegate;
+    int _accessoryViewType;
     PKPaymentPass *_pass;
     PKPassSnapshotter *_passSnapshotter;
     PKTransitBalanceModel *_transitBalanceModel;
@@ -23,20 +31,27 @@
     UIColor *_subTextLabelColor;
     UIColor *_disabledMainLabelColor;
     UIColor *_disabledSubTextLabelColor;
+    UIColor *_activityIndicatorColor;
     UILabel *_displayLabel;
     UILabel *_censoredPANLabel;
+    UIImageView *_cardArtView;
+    UISwitch *_actionSwitch;
     NSString *_availabilityString;
     NSString *_subTextOverrideString;
 }
 
 + (float)textOffset;
+- (void).cxx_destruct;
+@property(nonatomic, getter=isActivityIndicatorActive) _Bool activityIndicatorActive; // @synthesize activityIndicatorActive=_activityIndicatorActive;
 @property(nonatomic) _Bool dimCardArt; // @synthesize dimCardArt=_dimCardArt;
 @property(nonatomic) _Bool showBillingAddress; // @synthesize showBillingAddress=_showBillingAddress;
 @property(copy, nonatomic) NSString *subTextOverrideString; // @synthesize subTextOverrideString=_subTextOverrideString;
 @property(copy, nonatomic) NSString *availabilityString; // @synthesize availabilityString=_availabilityString;
+@property(readonly, nonatomic) UISwitch *actionSwitch; // @synthesize actionSwitch=_actionSwitch;
 @property(readonly, nonatomic) UIImageView *cardArtView; // @synthesize cardArtView=_cardArtView;
 @property(readonly, nonatomic) UILabel *censoredPANLabel; // @synthesize censoredPANLabel=_censoredPANLabel;
 @property(readonly, nonatomic) UILabel *displayLabel; // @synthesize displayLabel=_displayLabel;
+@property(retain, nonatomic) UIColor *activityIndicatorColor; // @synthesize activityIndicatorColor=_activityIndicatorColor;
 @property(retain, nonatomic) UIColor *disabledSubTextLabelColor; // @synthesize disabledSubTextLabelColor=_disabledSubTextLabelColor;
 @property(retain, nonatomic) UIColor *disabledMainLabelColor; // @synthesize disabledMainLabelColor=_disabledMainLabelColor;
 @property(retain, nonatomic) UIColor *subTextLabelColor; // @synthesize subTextLabelColor=_subTextLabelColor;
@@ -44,11 +59,14 @@
 @property(retain, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
 @property(retain, nonatomic) PKPassSnapshotter *passSnapshotter; // @synthesize passSnapshotter=_passSnapshotter;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
+@property(nonatomic) int accessoryViewType; // @synthesize accessoryViewType=_accessoryViewType;
+@property(nonatomic) __weak id <PKPaymentPreferenceCardCellAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_setupConstraints;
+- (void)_updateAccessoryView;
 - (void)_updateLabelTextColors;
 - (void)_updateCellContent;
 - (void)_updateCensoredPANLabel;
+- (void)_performSwitchToggle:(id)arg1;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;

@@ -19,6 +19,7 @@
     double _length;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsGroups; // @synthesize showsGroups=_showsGroups;
 @property(nonatomic) double length; // @synthesize length=_length;
 @property(retain, nonatomic) IMKUICandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *flatCandidateArray; // @synthesize flatCandidateArray=_flatCandidateArray;
 @property(retain, nonatomic) NSMutableDictionary *candidateToIndexMap; // @synthesize candidateToIndexMap=_candidateToIndexMap;
 @property(retain, nonatomic) NSMutableDictionary *candidateToGroupMap; // @synthesize candidateToGroupMap=_candidateToGroupMap;
-- (void).cxx_destruct;
 - (id)groupTitleForIndex:(long long)arg1;
 - (unsigned long long)indexForCandidate:(id)arg1;
 - (id)candidateAtIndexPath:(id)arg1;

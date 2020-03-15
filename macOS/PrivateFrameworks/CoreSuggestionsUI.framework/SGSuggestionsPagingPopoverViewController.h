@@ -25,13 +25,13 @@
 + (id)keyPathsForValuesAffectingHasNextSuggestion;
 + (id)keyPathsForValuesAffectingPagingTitle;
 + (id)keyPathsForValuesAffectingPagingUI;
+- (void).cxx_destruct;
 @property(nonatomic) long long currentSuggestionIndex; // @synthesize currentSuggestionIndex=_currentSuggestionIndex;
 @property(nonatomic) NSTextField *pagingTitleView; // @synthesize pagingTitleView=_pagingTitleView;
 @property(nonatomic) NSButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(nonatomic) NSButton *prevButton; // @synthesize prevButton=_prevButton;
 @property(nonatomic) NSView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) SGSuggestionStore *suggestionStore; // @synthesize suggestionStore=_suggestionStore;
-- (void).cxx_destruct;
 - (void)_updateSuggestion;
 - (void)prevSuggestion:(id)arg1;
 - (void)nextSuggestion:(id)arg1;

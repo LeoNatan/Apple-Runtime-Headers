@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDDevice, HMDHomeManager, HMDMessageDispatcher, HMDUser, HMDUserPresenceFeedRetryTimer, HMDUserPresenceRegion, HMDUserPresenceUpdateReason, HMUserPresenceAuthorization, HMUserPresenceCompute, NSDate, NSString, NSUUID;
+@class HMDDevice, HMDMessageDispatcher, HMDUser, HMDUserPresenceFeedRetryTimer, HMDUserPresenceRegion, HMDUserPresenceUpdateReason, HMUserPresenceAuthorization, HMUserPresenceCompute, NSDate, NSObject, NSString, NSUUID;
 @protocol HMDUserPresenceFeedSessionDelegate, OS_dispatch_queue;
 
-@interface HMDUserPresenceFeedSession : NSObject <HMFLogging, HMFTimerDelegate>
+@interface HMDUserPresenceFeedSession : HMFObject <HMFLogging, HMFTimerDelegate>
 {
     id <HMDUserPresenceFeedSessionDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_workQueue;
-    HMDHomeManager *_homeManager;
     NSUUID *_targetUUID;
     HMDMessageDispatcher *_remoteMessageDispatcher;
     HMDDevice *_residentDevice;
@@ -31,6 +30,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDUserPresenceFeedRetryTimer *statusUpdateRetryTimer; // @synthesize statusUpdateRetryTimer=_statusUpdateRetryTimer;
 @property(readonly, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) NSDate *statusChangeDate; // @synthesize statusChangeDate=_statusChangeDate;
@@ -42,22 +42,21 @@
 @property(readonly, nonatomic) HMDDevice *residentDevice; // @synthesize residentDevice=_residentDevice;
 @property(readonly, nonatomic) HMDMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
 @property(readonly, nonatomic) NSUUID *targetUUID; // @synthesize targetUUID=_targetUUID;
-@property(readonly, nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) __weak id <HMDUserPresenceFeedSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
-- (void)_callDelegate;
 - (void)timerDidFire:(id)arg1;
+- (id)logIdentifier;
+- (void)_callDelegate;
 - (void)_handleStatusUpdateMessageError:(id)arg1 responseTime:(double)arg2;
 - (void)_send;
 - (void)send;
-- (id)logIdentifier;
-@property(readonly, copy) NSString *description;
+- (id)attributeDescriptions;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1 homeManager:(id)arg2 workQueue:(id)arg3 targetUUID:(id)arg4 remoteMessageDispatcher:(id)arg5 residentDevice:(id)arg6 user:(id)arg7 presenceAuthStatus:(id)arg8 presenceComputeStatus:(id)arg9 presenceRegionStatus:(id)arg10 reason:(id)arg11;
+- (id)initWithDelegate:(id)arg1 workQueue:(id)arg2 targetUUID:(id)arg3 remoteMessageDispatcher:(id)arg4 residentDevice:(id)arg5 user:(id)arg6 presenceAuthStatus:(id)arg7 presenceComputeStatus:(id)arg8 presenceRegionStatus:(id)arg9 reason:(id)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

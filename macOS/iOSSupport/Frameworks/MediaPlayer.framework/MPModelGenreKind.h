@@ -16,8 +16,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)kindWithAlbumKind:(id)arg1;
 + (id)identityKind;
-@property(readonly, copy, nonatomic) MPModelAlbumKind *albumKind; // @synthesize albumKind=_albumKind;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) MPModelAlbumKind *albumKind; // @synthesize albumKind=_albumKind;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

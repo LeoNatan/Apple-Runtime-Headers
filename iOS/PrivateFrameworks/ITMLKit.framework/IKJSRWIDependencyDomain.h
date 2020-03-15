@@ -21,12 +21,12 @@
 + (id)allDomains;
 + (id)domainAgentClassMap;
 + (id)allowedDomains;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *events; // @synthesize events=_events;
 @property(readonly, nonatomic) NSDictionary *commands; // @synthesize commands=_commands;
 @property(readonly, nonatomic) NSDictionary *types; // @synthesize types=_types;
 @property(retain, nonatomic) Class agentClass; // @synthesize agentClass=_agentClass;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isValidForEventsWithError:(id *)arg1;
 - (_Bool)isValidForTypesWithError:(id *)arg1;
 - (_Bool)isValidForAgentWithError:(id *)arg1;

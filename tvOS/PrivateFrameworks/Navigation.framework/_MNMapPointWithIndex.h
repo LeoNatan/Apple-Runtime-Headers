@@ -17,13 +17,13 @@ __attribute__((visibility("hidden")))
     LineSegment_ede69d4d _segment;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) LineSegment_ede69d4d segment; // @synthesize segment=_segment;
 @property(nonatomic) _Bool isFlipped; // @synthesize isFlipped=_isFlipped;
 @property(nonatomic) _Bool isPolylineA; // @synthesize isPolylineA=_isPolylineA;
 @property(nonatomic) _Bool isStartOfSegment; // @synthesize isStartOfSegment=_isStartOfSegment;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(nonatomic) Matrix_2bdd42a3 point; // @synthesize point=_point;
-- (id).cxx_construct;
 
 @end
 

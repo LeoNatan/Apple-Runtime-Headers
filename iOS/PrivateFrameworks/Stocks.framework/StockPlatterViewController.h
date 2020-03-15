@@ -32,6 +32,7 @@
     long long _rowDataType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long rowDataType; // @synthesize rowDataType=_rowDataType;
 @property(retain, nonatomic) NSString *stockTicker; // @synthesize stockTicker=_stockTicker;
 @property(retain, nonatomic) UILabel *exchangeStatusLabel; // @synthesize exchangeStatusLabel=_exchangeStatusLabel;
@@ -48,7 +49,6 @@
 @property(nonatomic) long long chartInterval; // @synthesize chartInterval=_chartInterval;
 @property(retain, nonatomic) Stock *stock; // @synthesize stock=_stock;
 @property(retain, nonatomic) StockFetcher *stockFetcher; // @synthesize stockFetcher=_stockFetcher;
-- (void).cxx_destruct;
 - (void)_attributionButtonPressed:(id)arg1;
 - (void)stockChartViewNeedsLoadingStatusUpdated:(id)arg1;
 - (_Bool)stockChartViewIsCurrentChartView:(id)arg1;

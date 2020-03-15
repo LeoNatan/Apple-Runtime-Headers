@@ -8,15 +8,15 @@
 
 #import <Sharing/NSSecureCoding-Protocol.h>
 
-@class NSString, NSUUID;
+@class NSMutableDictionary, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface SFSessionCache : NSObject <NSSecureCoding>
 {
     BOOL _activated;
     BOOL _invalidated;
-    struct NSMutableDictionary *_sessions;
-    struct NSMutableDictionary *_timestamps;
+    NSMutableDictionary *_sessions;
+    NSMutableDictionary *_timestamps;
     unsigned long long _capacity;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _errorHandler;
@@ -25,12 +25,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
-- (void).cxx_destruct;
 - (BOOL)cacheFull;
 - (id)activeSessions;
 - (id)activePeerDeviceIDs;

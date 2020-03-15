@@ -14,6 +14,7 @@
 {
 }
 
+- (void)appContext:(id)arg1 needsReloadWithUrgency:(unsigned long long)arg2 options:(id)arg3;
 - (void)appContext:(id)arg1 scriptForURL:(id)arg2 cachePolicy:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 
 // Remaining properties

@@ -20,8 +20,8 @@
 + (id)itemWithDACardDAVRecord:(id)arg1 contactStore:(id)arg2 outNeedsDBSave:(_Bool *)arg3 maxImageSize:(long long)arg4 maxResourceSize:(long long)arg5 inContainerWithURL:(id)arg6;
 + (id)itemWithABRecord:(void *)arg1 addressBook:(void *)arg2 outNeedsDBSave:(_Bool *)arg3 maxImageSize:(long long)arg4 maxResourceSize:(long long)arg5 inContainerWithURL:(id)arg6;
 + (Class)currentImplementationClass;
-@property(readonly, nonatomic) id <DACardDAVRecord> cardDAVRecordItem; // @synthesize cardDAVRecordItem=_cardDAVRecordItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <DACardDAVRecord> cardDAVRecordItem; // @synthesize cardDAVRecordItem=_cardDAVRecordItem;
 @property(retain, nonatomic) NSMutableDictionary *UUIDToPersonCache;
 @property(readonly, nonatomic) NSString *syncKey;
 - (unsigned int)abRecordType;

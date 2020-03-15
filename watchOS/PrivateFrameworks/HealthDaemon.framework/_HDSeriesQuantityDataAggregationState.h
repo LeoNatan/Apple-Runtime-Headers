@@ -14,9 +14,9 @@
     int _length;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int length; // @synthesize length=_length;
 @property(readonly, nonatomic) HDQuantityDatum *lastDatum; // @synthesize lastDatum=_lastDatum;
-- (void).cxx_destruct;
 - (id)initWithRemainingSensorData:(id)arg1 currentSeries:(id)arg2 lastDatum:(id)arg3 length:(int)arg4;
 
 @end

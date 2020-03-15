@@ -20,12 +20,12 @@
     NSMutableDictionary *__pendingJobs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_pendingJobs; // @synthesize _pendingJobs=__pendingJobs;
 @property(readonly, nonatomic) NSMutableArray *_jobsToBeSent; // @synthesize _jobsToBeSent=__jobsToBeSent;
 @property(readonly, nonatomic) CAMNebulaDaemonProxyManager *_nebulaDaemonProxyManager; // @synthesize _nebulaDaemonProxyManager=__nebulaDaemonProxyManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_mutexQueue; // @synthesize _mutexQueue=__mutexQueue;
 @property(readonly, nonatomic) __weak id <CAMIrisVideoControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)nebulaDaemonDidCompleteLocalVideoPersistenceWithResult:(id)arg1;
 - (_Bool)isWaitingOnNebuladForRequest:(id)arg1;
 - (void)_notifyDelegateOfVideoLocalPersistenceResult:(id)arg1 forVideoPersistenceUUID:(id)arg2;

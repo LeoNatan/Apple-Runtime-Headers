@@ -21,12 +21,12 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long length; // @synthesize length=_length;
 @property(readonly) unsigned long long offsetIntoSymbolOwner; // @synthesize offsetIntoSymbolOwner=_offsetIntoSymbolOwner;
 @property(readonly) unsigned int sourceFileColumnNumber; // @synthesize sourceFileColumnNumber=_columnNumber;
 @property(readonly) unsigned int sourceFileLineNumber; // @synthesize sourceFileLineNumber=_lineNumber;
 @property(readonly) NSString *sourceFileName; // @synthesize sourceFileName=_fileName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (BOOL)isEmptySourceInfo;
 - (id)_initEmptySourceInfoWithOffsetIntoSymbolOwner:(unsigned long long)arg1;

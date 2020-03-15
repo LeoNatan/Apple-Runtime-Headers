@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) NSString *labelId; // @synthesize labelId=_labelId;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_labelKeyDescription;
 - (unsigned long long)hash;

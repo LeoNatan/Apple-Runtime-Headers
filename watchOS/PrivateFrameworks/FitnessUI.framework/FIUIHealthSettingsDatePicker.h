@@ -11,8 +11,8 @@
     CDUnknownBlockType _dateUpdateHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType dateUpdateHandler; // @synthesize dateUpdateHandler=_dateUpdateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dateUpdateHandler; // @synthesize dateUpdateHandler=_dateUpdateHandler;
 - (void)forceUpdate;
 - (void)_dateDidChange:(id)arg1;
 - (void)layoutSubviews;

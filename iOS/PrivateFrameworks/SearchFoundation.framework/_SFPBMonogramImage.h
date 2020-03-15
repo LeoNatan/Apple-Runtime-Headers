@@ -17,9 +17,9 @@
     NSString *_monogramLetters;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int monogramStyle; // @synthesize monogramStyle=_monogramStyle;
 @property(copy, nonatomic) NSString *monogramLetters; // @synthesize monogramLetters=_monogramLetters;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

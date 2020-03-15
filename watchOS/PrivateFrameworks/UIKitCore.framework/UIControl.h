@@ -39,6 +39,7 @@
 - (unsigned int)_stateForFocusUpdateContext:(id)arg1;
 - (int)_focusedSound;
 - (void)_diagnoseFocusabilityForReport:(id)arg1;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (_Bool)canBecomeFocused;
 - (void)_sendDelayedActions:(_Bool)arg1;
 - (void)_unhighlight;
@@ -70,6 +71,7 @@
 - (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned int)arg2;
 @property(readonly, nonatomic) unsigned int allControlEvents;
 @property(readonly, nonatomic) NSSet *allTargets;
+- (id)_allTargetActions;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
@@ -83,7 +85,7 @@
 @property(nonatomic, getter=isSelected) _Bool selected; // @dynamic selected;
 @property(readonly, nonatomic) int effectiveContentHorizontalAlignment;
 @property(nonatomic) int contentHorizontalAlignment; // @dynamic contentHorizontalAlignment;
-- (int)effectiveContentVerticalAlignment;
+@property(readonly, nonatomic) int effectiveContentVerticalAlignment;
 @property(nonatomic) int contentVerticalAlignment; // @dynamic contentVerticalAlignment;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @dynamic highlighted;
 - (void)cancelTrackingWithEvent:(id)arg1;

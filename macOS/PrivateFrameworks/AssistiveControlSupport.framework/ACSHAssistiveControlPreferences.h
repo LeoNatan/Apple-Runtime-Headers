@@ -17,8 +17,8 @@
 + (id)userDefaultsPreferencesSource;
 + (id)preferenceDomainForAssistiveControlType:(long long)arg1;
 + (id)preferenceDefaults;
-@property(retain) NSMutableDictionary *_colorsByThemeAndAttribute; // @synthesize _colorsByThemeAndAttribute=__colorsByThemeAndAttribute;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *_colorsByThemeAndAttribute; // @synthesize _colorsByThemeAndAttribute=__colorsByThemeAndAttribute;
 - (void)updateToolbarSetting:(unsigned long long)arg1 forToolbarIdentifier:(id)arg2 panelIdentifier:(id)arg3 productSupportType:(unsigned long long)arg4;
 - (unsigned long long)toolbarSettingForToolbarIdentifier:(id)arg1 panelIdentifier:(id)arg2 productSupportType:(unsigned long long)arg3;
 - (id)colorForTheme:(unsigned long long)arg1 attributeColor:(unsigned long long)arg2 baseColor:(id)arg3 prioritizeAdjustedColor:(BOOL)arg4;

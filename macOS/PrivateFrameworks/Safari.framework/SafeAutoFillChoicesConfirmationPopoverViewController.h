@@ -33,13 +33,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)test_sortKeysForDisplayOrder:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSImageView *contactImageView; // @synthesize contactImageView=_contactImageView;
 @property(nonatomic) __weak NSTextField *contactNameLabel; // @synthesize contactNameLabel=_contactNameLabel;
 @property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak NSButton *autoFillButton; // @synthesize autoFillButton=_autoFillButton;
 @property(nonatomic) __weak NSStackView *addressBookDisplayDataStackView; // @synthesize addressBookDisplayDataStackView=_addressBookDisplayDataStackView;
 @property(nonatomic) struct SafeAutoFillConfirmationController *safeAutoFillConfirmationController; // @synthesize safeAutoFillConfirmationController=_safeAutoFillConfirmationController;
-- (void).cxx_destruct;
 - (void)safeAutoFillChoicesPopUpButtonViewControllerDidChangeSelection:(id)arg1;
 - (void)popoverWillClose:(id)arg1;
 - (void)popoverDidShow:(id)arg1;

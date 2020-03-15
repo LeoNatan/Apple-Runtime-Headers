@@ -17,12 +17,12 @@
     NSView *_cachedNextKeyView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *cachedNextKeyView; // @synthesize cachedNextKeyView=_cachedNextKeyView;
 @property __weak NSView *cachedPreviousKeyView; // @synthesize cachedPreviousKeyView=_cachedPreviousKeyView;
 @property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property BOOL shouldAbsorbMouseClickEvents; // @synthesize shouldAbsorbMouseClickEvents=_shouldAbsorbMouseClickEvents;
 @property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
-- (void).cxx_destruct;
 - (unsigned long long)draggingEntered:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (void)layout;

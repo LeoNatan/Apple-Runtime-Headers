@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allAspectsWithOriginalSize:(struct CGSize)arg1 currentSize:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
 @property(readonly, nonatomic) double width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (id)description;
 - (id)inverseAspect;
 - (struct CGRect)constrainRect:(struct CGRect)arg1 boundingRect:(struct CGRect)arg2 boundingAngle:(double)arg3 minSize:(struct CGSize)arg4;

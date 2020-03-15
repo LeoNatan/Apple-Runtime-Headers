@@ -35,7 +35,6 @@
     UITapGestureRecognizer *_collectionViewDismissalTapGesture;
     UIPanGestureRecognizer *_collectionViewScrollPanGesture;
     NSHashTable *_blockingGestureRecognizers;
-    NSUUID *_currentTransitionUUID;
     CCUIOverlayTransitionState *_previousTransitionState;
     CCUIStatusBarStyleSnapshot *_hostStatusBarStyleSnapshot;
     FBSDisplayLayoutMonitor *_layoutMonitor;
@@ -43,6 +42,7 @@
     unsigned long long _presentationState;
     unsigned long long _transitionState;
     id <CCUIHostStatusBarStyleProvider> _hostStatusBarStyleProvider;
+    NSUUID *_currentTransitionUUID;
 }
 
 + (id)_presentationProviderForDevice;
@@ -52,11 +52,12 @@
 + (void)_executeAndCleanupBlocksForAllSignposts;
 + (void)_addBlockForSignpost:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 + (id)_blocksBySignpost;
-@property(nonatomic, getter=isReachabilityActive) _Bool reachabilityActive; // @synthesize reachabilityActive=_reachabilityActive;
-@property(nonatomic) __weak id <CCUIHostStatusBarStyleProvider> hostStatusBarStyleProvider; // @synthesize hostStatusBarStyleProvider=_hostStatusBarStyleProvider;
-@property(readonly, nonatomic) unsigned long long transitionState; // @synthesize transitionState=_transitionState;
-@property(nonatomic) unsigned long long presentationState; // @synthesize presentationState=_presentationState;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isReachabilityActive) _Bool reachabilityActive; // @synthesize reachabilityActive=_reachabilityActive;
+@property(copy, nonatomic) NSUUID *currentTransitionUUID; // @synthesize currentTransitionUUID=_currentTransitionUUID;
+@property(nonatomic) __weak id <CCUIHostStatusBarStyleProvider> hostStatusBarStyleProvider; // @synthesize hostStatusBarStyleProvider=_hostStatusBarStyleProvider;
+@property(nonatomic) unsigned long long transitionState; // @synthesize transitionState=_transitionState;
+@property(nonatomic) unsigned long long presentationState; // @synthesize presentationState=_presentationState;
 - (_Bool)_gestureRecognizerIsActive:(id)arg1;
 - (void)_setupPanGestureFailureRequirements;
 - (void)_updateHotPocket:(_Bool)arg1 animated:(_Bool)arg2;
@@ -128,10 +129,10 @@
 - (void)_reparentAndBecomeActive;
 - (void)_updatePresentationForTransitionState:(id)arg1 withCompletionHander:(CDUnknownBlockType)arg2;
 - (void)_updatePresentationForTransitionType:(unsigned long long)arg1 translation:(struct CGPoint)arg2 interactive:(_Bool)arg3;
-- (void)_endDismissalWithUUID:(id)arg1 animated:(_Bool)arg2 success:(_Bool)arg3;
+- (void)_endDismissalWithUUID:(id)arg1 animated:(_Bool)arg2;
 - (id)_beginDismissalAnimated:(_Bool)arg1 interactive:(_Bool)arg2;
 - (void)dismissAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)_endPresentationWithUUID:(id)arg1 success:(_Bool)arg2;
+- (void)_endPresentationWithUUID:(id)arg1;
 - (id)_beginPresentationAnimated:(_Bool)arg1 interactive:(_Bool)arg2;
 - (void)presentAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)_initWithSystemAgent:(id)arg1 presentationProvider:(id)arg2;

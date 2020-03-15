@@ -34,6 +34,7 @@
 + (id)familyHandleWithId:(id)arg1 dsid:(id)arg2;
 + (id)handleWithId:(id)arg1 serverId:(id)arg2;
 + (id)handleWithId:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *qualifiedIdentifier; // @synthesize qualifiedIdentifier=_qualifiedIdentifier;
 @property BOOL reachable; // @synthesize reachable=_reachable;
 @property long long idsStatus; // @synthesize idsStatus=_idsStatus;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(copy, nonatomic) NSString *serverId; // @synthesize serverId=_serverId;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isPhoneNumber;
 - (void)clearFavoriteOrder;
 - (id)recordId;

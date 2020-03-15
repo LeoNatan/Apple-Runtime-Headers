@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     UIImage *_advisoryImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=shouldIgnorePlayerStop) _Bool ignorePlayerStop; // @synthesize ignorePlayerStop=_ignorePlayerStop;
 @property(retain, nonatomic) UIImage *advisoryImage; // @synthesize advisoryImage=_advisoryImage;
 @property(retain, nonatomic) VUINowPlayingViewController *nowPlayingViewController; // @synthesize nowPlayingViewController=_nowPlayingViewController;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUINowPlayingFeatureMonitor *featureMonitor; // @synthesize featureMonitor=_featureMonitor;
 @property(retain, nonatomic) AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
 @property(retain, nonatomic) TVPPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_updateRequiresLinearPlayback;
 @property(readonly, nonatomic, getter=isCurrentMediaTVShow) _Bool currentMediaTVShow;
 - (id)initWithMediaInfo:(id)arg1;

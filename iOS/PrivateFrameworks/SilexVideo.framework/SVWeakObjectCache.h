@@ -15,8 +15,8 @@
     NSMutableDictionary *_cache;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
 - (void)removeObjectForIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *allObjects;
 - (void)removeObjectForKey:(id)arg1;

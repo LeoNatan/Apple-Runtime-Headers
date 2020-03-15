@@ -17,12 +17,12 @@
     NSCalendar *_gregorianCalendar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCalendar *gregorianCalendar; // @synthesize gregorianCalendar=_gregorianCalendar;
 @property(retain, nonatomic) NSDate *currentDateOverride; // @synthesize currentDateOverride=_currentDateOverride;
 @property(retain, nonatomic) FIUIUnitManager *unitManager; // @synthesize unitManager=_unitManager;
 @property(nonatomic) _Bool wheelchairUser; // @synthesize wheelchairUser=_wheelchairUser;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_remainingProgressValueWithUnit:(id)arg1 achievement:(id)arg2;
 - (id)_quantityToGoalValueWithAchievement:(id)arg1;
 - (id)_goalValueWithAchievement:(id)arg1;

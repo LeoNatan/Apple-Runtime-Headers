@@ -36,6 +36,7 @@
     FPItem *_destinationItemToPreflight;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) FPItem *destinationItemToPreflight; // @synthesize destinationItemToPreflight=_destinationItemToPreflight;
 @property(copy, nonatomic) NSArray *sourceItemsToPreflight; // @synthesize sourceItemsToPreflight=_sourceItemsToPreflight;
 @property(copy, nonatomic) NSString *action; // @synthesize action=_action;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) CDUnknownBlockType placeholdersCreationBlock; // @synthesize placeholdersCreationBlock=_placeholdersCreationBlock;
 @property(nonatomic) BOOL skipPreflight; // @synthesize skipPreflight=_skipPreflight;
 @property(nonatomic) BOOL finishAfterPreflight; // @synthesize finishAfterPreflight=_finishAfterPreflight;
-- (void).cxx_destruct;
 - (void)tryRecoveringFromPreflightErrors:(id)arg1 recoveryHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)tryRecoveringFromError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

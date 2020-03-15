@@ -17,12 +17,12 @@
     double _elapsedTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double elapsedTimeInterval; // @synthesize elapsedTimeInterval=_elapsedTimeInterval;
 @property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) NSArray *callStackSymbols; // @synthesize callStackSymbols=_callStackSymbols;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)initWithReason:(id)arg1;
 
 @end

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_recordZoneIDs;
 }
 
-@property(retain, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *recordZoneIDs; // @synthesize recordZoneIDs=_recordZoneIDs;
 
 @end
 

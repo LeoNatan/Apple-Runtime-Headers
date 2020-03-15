@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)readFromBuffer:(const char *)arg1;
+- (void).cxx_destruct;
 @property(readonly) ASFAsn1Token *contentToken; // @synthesize contentToken=mContentToken;
 @property(readonly) unsigned long long typeVersion; // @synthesize typeVersion=mTypeVersion;
 @property(readonly) unsigned long long type; // @synthesize type=mType;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long integerValue; // @dynamic integerValue;
 @property(readonly) NSString *stringValue; // @dynamic stringValue;
 - (id)description;

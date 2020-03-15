@@ -23,11 +23,11 @@
 }
 
 + (id)sharedService;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *clientDictionary; // @synthesize clientDictionary=_clientDictionary;
 @property(retain) WFQueryDispatcher *queryDispatcher; // @synthesize queryDispatcher=_queryDispatcher;
 @property(retain) WFWeatherStoreService *internalService; // @synthesize internalService=_internalService;
 @property(retain, nonatomic) WFTemperatureUnitProvider *temperatureUnitProvider; // @synthesize temperatureUnitProvider=_temperatureUnitProvider;
-- (void).cxx_destruct;
 - (void)queryDispatcherDidReceiveResponse:(id)arg1 identifier:(id)arg2;
 - (void)replaceTemperatureUnitWith:(int)arg1 identifier:(id)arg2;
 - (void)temperatureUnitWithIdentifier:(id)arg1;

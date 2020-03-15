@@ -22,9 +22,9 @@
     PAImageRenderService *_service;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PAImageRenderService *service; // @synthesize service=_service;
 @property(readonly) PAImageRenderRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_processRequest;
 - (void)_handleRequest;
 - (void)handleRequest;

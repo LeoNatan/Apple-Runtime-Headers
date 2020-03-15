@@ -17,8 +17,8 @@
     NSDictionary *_mathDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *mathDictionary; // @synthesize mathDictionary=_mathDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *mathDictionary; // @synthesize mathDictionary=_mathDictionary;
 - (void)_styleBarButtonItem:(id)arg1;
 - (void)_doneButtonTapped;
 - (id)_htmlString;

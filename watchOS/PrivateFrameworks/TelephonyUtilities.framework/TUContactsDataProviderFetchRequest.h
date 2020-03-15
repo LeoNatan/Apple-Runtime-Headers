@@ -25,6 +25,7 @@
     NSArray *_handles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *handles; // @synthesize handles=_handles;
 @property(readonly, copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(readonly, copy, nonatomic) NSString *callerNameFromNetwork; // @synthesize callerNameFromNetwork=_callerNameFromNetwork;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *phoneNumberPrefixHint; // @synthesize phoneNumberPrefixHint=_phoneNumberPrefixHint;
 @property(copy, nonatomic) NSArray *auxiliaryKeysToFetch; // @synthesize auxiliaryKeysToFetch=_auxiliaryKeysToFetch;
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithHandle:(id)arg1;
 - (id)initWithHandles:(id)arg1;

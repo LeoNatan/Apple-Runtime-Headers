@@ -41,6 +41,7 @@
     HMCameraClipFetchVideoAssetContextOperation *_exportDownloadOperation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMCameraClipFetchVideoAssetContextOperation *exportDownloadOperation; // @synthesize exportDownloadOperation=_exportDownloadOperation;
 @property(nonatomic) unsigned long long lastEngineMode; // @synthesize lastEngineMode=_lastEngineMode;
 @property(nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
@@ -64,7 +65,6 @@
 @property(copy, nonatomic) CDUnknownBlockType endEditingHandler; // @synthesize endEditingHandler=_endEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType beginEditingHandler; // @synthesize beginEditingHandler=_beginEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType accessoryButtonHandler; // @synthesize accessoryButtonHandler=_accessoryButtonHandler;
-- (void).cxx_destruct;
 - (void)manager:(id)arg1 didSubmitCameraClips:(id)arg2;
 - (void)manager:(id)arg1 didSubmitCameraClip:(id)arg2;
 - (void)submitAllUnsubmittedClips;

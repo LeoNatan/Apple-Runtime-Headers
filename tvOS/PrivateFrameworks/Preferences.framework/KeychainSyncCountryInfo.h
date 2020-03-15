@@ -22,11 +22,11 @@
 + (id)countryInfoWithDictionary:(id)arg1;
 + (id)allCountries;
 + (void)_loadCountriesIfNeeded;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dialingPrefix; // @synthesize dialingPrefix=_dialingPrefix;
 @property(retain, nonatomic) NSString *localizedCountryName; // @synthesize localizedCountryName=_localizedCountryName;
 @property(retain, nonatomic) NSString *countryName; // @synthesize countryName=_countryName;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

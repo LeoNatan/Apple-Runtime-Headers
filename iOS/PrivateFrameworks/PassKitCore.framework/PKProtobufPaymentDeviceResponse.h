@@ -34,6 +34,7 @@
 
 + (Class)supportedSetupFeaturesType;
 + (Class)paymentInstrumentsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *supportedSetupFeatures; // @synthesize supportedSetupFeatures=_supportedSetupFeatures;
 @property(nonatomic) _Bool supportsFaceID; // @synthesize supportsFaceID=_supportsFaceID;
 @property(nonatomic) unsigned int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned int defaultPaymentInstrumentIndex; // @synthesize defaultPaymentInstrumentIndex=_defaultPaymentInstrumentIndex;
 @property(retain, nonatomic) NSMutableArray *paymentInstruments; // @synthesize paymentInstruments=_paymentInstruments;
 @property(nonatomic) _Bool locked; // @synthesize locked=_locked;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -25,8 +25,8 @@
 }
 
 + (id)_deviceEligibilityInformationFromDictionaryRepresentation:(id)arg1;
-@property(retain, nonatomic) id <WBSLogger> keyActionsLogger; // @synthesize keyActionsLogger=_keyActionsLogger;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <WBSLogger> keyActionsLogger; // @synthesize keyActionsLogger=_keyActionsLogger;
 - (_Bool)_shouldWaitForCloudTabDevicesUpdate;
 - (_Bool)_shouldRequestCloudTabDevicesSync;
 - (_Bool)_isPastMinimumWaitAfterCloudTabDeviceSyncRequest;

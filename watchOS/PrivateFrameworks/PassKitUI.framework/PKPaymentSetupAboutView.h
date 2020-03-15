@@ -14,8 +14,8 @@
     UIScrollView *_scrollView;
 }
 
-@property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithBodyText:(id)arg1 detailButtonText:(id)arg2;

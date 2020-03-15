@@ -13,8 +13,8 @@
     PKPaymentProvisioningMethodMetadata *_provisioningMethodMetadata;
 }
 
-@property(readonly, nonatomic) PKPaymentProvisioningMethodMetadata *provisioningMethodMetadata; // @synthesize provisioningMethodMetadata=_provisioningMethodMetadata;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPaymentProvisioningMethodMetadata *provisioningMethodMetadata; // @synthesize provisioningMethodMetadata=_provisioningMethodMetadata;
 - (id)initWithData:(id)arg1;
 
 @end

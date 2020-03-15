@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     PUAssetsDataSource *_assetsDataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUAssetsDataSource *assetsDataSource; // @synthesize assetsDataSource=_assetsDataSource;
 @property(readonly, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
-- (void).cxx_destruct;
 - (id)init;
 - (void)_stateQueue_signalStateChange;
 - (void)_workQueue_finishWithMergedVideo:(id)arg1 error:(id)arg2;

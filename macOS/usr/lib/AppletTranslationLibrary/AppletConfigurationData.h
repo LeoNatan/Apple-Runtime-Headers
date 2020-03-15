@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)getStaticWuluSettings;
 + (id)getStaticNFCSettings;
 + (id)getStaticConfig;
+- (void).cxx_destruct;
 - (id)pluginDecoderForMid:(id)arg1 depth:(int)arg2;
 - (id)init;
 

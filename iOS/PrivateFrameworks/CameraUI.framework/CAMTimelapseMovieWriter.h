@@ -34,6 +34,7 @@
     CDUnknownBlockType __completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType _completion; // @synthesize _completion=__completion;
 @property(readonly, nonatomic) long long _currentOutputFrameIndex; // @synthesize _currentOutputFrameIndex=__currentOutputFrameIndex;
 @property(readonly, nonatomic) long long _nextWriteFileIndex; // @synthesize _nextWriteFileIndex=__nextWriteFileIndex;
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) long long _nextReadFileIndex; // @synthesize _nextReadFileIndex=__nextReadFileIndex;
 @property(readonly, nonatomic) NSArray *_frameFilePaths; // @synthesize _frameFilePaths=__frameFilePaths;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_finishMovieWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_appendPixelBuffer:(struct __CVBuffer *)arg1;

@@ -16,10 +16,10 @@
     id <CUISBulletinAlternativeAlertProvider> _alertProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <CUISBulletinAlternativeAlertProvider> alertProvider; // @synthesize alertProvider=_alertProvider;
 @property(retain, nonatomic) id <NTSAlertable> alert; // @synthesize alert=_alert;
 @property(retain, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 - (void)_releasePowerAssertion;
 - (void)_takePowerAssertion;
 - (double)_assertionTimeout;

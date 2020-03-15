@@ -19,13 +19,13 @@
     id <NWUDPListenerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <NWUDPListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NWEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(retain) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain) NSObject<OS_nw_listener> *internalListener; // @synthesize internalListener=_internalListener;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
-- (void).cxx_destruct;
 - (id)initWithParameters:(id)arg1 delegate:(id)arg2;
 - (void)handleError:(id)arg1;
 - (void)handleConnection:(id)arg1;

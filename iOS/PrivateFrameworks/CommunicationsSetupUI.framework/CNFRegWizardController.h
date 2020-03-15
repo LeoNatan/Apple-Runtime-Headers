@@ -36,10 +36,10 @@
 
 + (void)setSupportsAutoRotation:(_Bool)arg1;
 + (void)setGlobalAppearanceStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) CNFRegController *regController; // @synthesize regController=_regController;
 @property(nonatomic) id <CNFRegWizardControllerDelegate> firstRunDelegate; // @synthesize firstRunDelegate=_firstRunDelegate;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldTerminateInBackground; // @dynamic shouldTerminateInBackground;
 @property(nonatomic) _Bool showSplashOnSignin;
 @property(nonatomic) _Bool hideLearnMoreButton; // @dynamic hideLearnMoreButton;

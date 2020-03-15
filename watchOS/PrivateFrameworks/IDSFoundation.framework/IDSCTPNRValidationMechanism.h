@@ -18,9 +18,9 @@
 
 + (id)SMSLessMechanism;
 + (id)SMSMechanismWithContext:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *context; // @synthesize context=_context;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

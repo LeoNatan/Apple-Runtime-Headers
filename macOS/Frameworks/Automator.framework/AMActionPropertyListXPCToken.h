@@ -12,8 +12,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) id propertyList; // @synthesize propertyList=_propertyList;
 - (void).cxx_destruct;
+@property(retain) id propertyList; // @synthesize propertyList=_propertyList;
 - (id)_am_convertFromXPCWithWorkflow:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

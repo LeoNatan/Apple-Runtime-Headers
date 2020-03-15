@@ -39,13 +39,13 @@
 + (id)ticks60UtilitarianForDevice:(id)arg1;
 + (float)innerRadiusForDevice:(id)arg1;
 + (float)outerRadiusForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(copy, nonatomic) CDUnknownBlockType animateBlock; // @synthesize animateBlock=_animateBlock;
 @property(retain, nonatomic) SKAction *disappearAction; // @synthesize disappearAction=_disappearAction;
 @property(retain, nonatomic) SKAction *appearAction; // @synthesize appearAction=_appearAction;
 @property(retain, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)createSubNodes;
 - (void)scaleNodes:(id)arg1 fraction:(double)arg2;
 - (void)fade:(double)arg1 inverted:(_Bool)arg2;

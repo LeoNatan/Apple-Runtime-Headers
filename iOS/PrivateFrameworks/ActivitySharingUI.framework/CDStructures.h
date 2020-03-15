@@ -25,7 +25,3 @@ struct CGSize {
     double height;
 };
 
-struct _HKFitnessFriendActivitySnapshot {
-    Class _field1;
-};
-

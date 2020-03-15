@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UILabel *_promotionTitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *promotionTitleLabel; // @synthesize promotionTitleLabel=_promotionTitleLabel;
 @property(readonly, nonatomic) UIImageView *promotionImageView; // @synthesize promotionImageView=_promotionImageView;
 @property(retain, nonatomic) UIImage *promotionImage; // @synthesize promotionImage=_promotionImage;
 @property(retain, nonatomic) NSString *promotionTitleText; // @synthesize promotionTitleText=_promotionTitleText;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

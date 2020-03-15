@@ -18,11 +18,11 @@
 
 + (id)taskWithIdentifier:(id)arg1 delay:(double)arg2 completableBlock:(CDUnknownBlockType)arg3;
 + (id)taskWithIdentifier:(id)arg1 completableBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTGCDTimer *timer; // @synthesize timer=_timer;
 @property(copy, nonatomic) CDUnknownBlockType completableBlock; // @synthesize completableBlock=_completableBlock;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

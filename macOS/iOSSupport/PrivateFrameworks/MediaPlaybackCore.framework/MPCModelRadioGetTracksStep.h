@@ -22,6 +22,7 @@
     ICRadioGetTracksResponse *_siriAssetInfoGetTracksResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICRadioGetTracksResponse *siriAssetInfoGetTracksResponse; // @synthesize siriAssetInfoGetTracksResponse=_siriAssetInfoGetTracksResponse;
 @property(readonly, copy, nonatomic) ICRadioGetTracksResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) ICRadioGetTracksRequest *request; // @synthesize request=_request;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) ICUserIdentityProperties *delegatedIdentityProperties; // @synthesize delegatedIdentityProperties=_delegatedIdentityProperties;
-- (void).cxx_destruct;
 - (void)_presentServerDialog:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_performDefaultHandlingForButtonAction:(id)arg1;
 - (void)_fireAndForgetServerDialog:(id)arg1;

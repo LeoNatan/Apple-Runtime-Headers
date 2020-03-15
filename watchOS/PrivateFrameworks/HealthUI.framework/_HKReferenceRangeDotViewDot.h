@@ -13,8 +13,8 @@
     UIColor *_dotColor;
 }
 
-@property(retain, nonatomic) UIColor *dotColor; // @synthesize dotColor=_dotColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *dotColor; // @synthesize dotColor=_dotColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

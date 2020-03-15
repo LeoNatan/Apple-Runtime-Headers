@@ -14,9 +14,9 @@
     unsigned long long _jointCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long jointCount; // @synthesize jointCount=_jointCount;
 @property(readonly, nonatomic) ARSkeletonDefinition *definition; // @synthesize definition=_definition;
-- (void).cxx_destruct;
 - (_Bool)isJointTracked:(long long)arg1;
 - (id)initPrivate;
 

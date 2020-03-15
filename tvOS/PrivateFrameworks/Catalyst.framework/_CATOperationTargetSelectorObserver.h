@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) unsigned long long events; // @synthesize events=_events;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)invokeActionWithOperation:(id)arg1;
 - (void)operationDidFinish:(id)arg1;
 - (void)operationDidProgress:(id)arg1;

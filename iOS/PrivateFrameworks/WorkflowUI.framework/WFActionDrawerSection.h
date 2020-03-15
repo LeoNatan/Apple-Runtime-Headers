@@ -18,13 +18,13 @@
     long long _sectionType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long sectionType; // @synthesize sectionType=_sectionType;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSArray *donations; // @synthesize donations=_donations;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-- (void).cxx_destruct;
 - (id)initAsLoading;
 - (id)initWithLocalizedTitle:(id)arg1 donations:(id)arg2 bundleIdentifier:(id)arg3 sectionType:(long long)arg4 actions:(id)arg5;
 - (id)initWithLocalizedTitle:(id)arg1 actions:(id)arg2 bundleIdentifier:(id)arg3 sectionType:(long long)arg4;

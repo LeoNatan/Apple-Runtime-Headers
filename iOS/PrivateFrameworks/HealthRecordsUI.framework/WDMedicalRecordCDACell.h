@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIImageView *_discloseView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *discloseView; // @synthesize discloseView=_discloseView;
 @property(retain, nonatomic) HKSeparatorLineView *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) UILabel *institutionLabel; // @synthesize institutionLabel=_institutionLabel;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *background; // @synthesize background=_background;
 @property(retain, nonatomic) HKCDADocumentSample *cdaSample; // @synthesize cdaSample=_cdaSample;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_adjustFont;
 - (void)_setupSubviews;

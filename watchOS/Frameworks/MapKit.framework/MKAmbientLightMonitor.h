@@ -24,11 +24,11 @@
 }
 
 + (id)sharedAmbientLightMonitor;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool debugLogLux; // @synthesize debugLogLux=_debugLogLux;
 @property(readonly, nonatomic) int ambientLightLevel; // @synthesize ambientLightLevel=_ambientLightLevel;
 @property(readonly, nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)handleIOHIDEvent:(struct __IOHIDEvent *)arg1;
 - (void)stopMonitoringWithObserver:(id)arg1;
 - (void)startMonitoringWithObserver:(id)arg1;

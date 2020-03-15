@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)colorWithPaperTexturePatternImage;
 + (id)textureImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *textureHeightConstraint; // @synthesize textureHeightConstraint=_textureHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *textureYConstraint; // @synthesize textureYConstraint=_textureYConstraint;
 @property _Bool scrollsTexture; // @synthesize scrollsTexture=_scrollsTexture;
 @property(readonly, nonatomic) DCNotesTextureView *textureView; // @synthesize textureView=_textureView;
-- (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setContentOffset:(struct CGPoint)arg1;

@@ -19,11 +19,11 @@
 }
 
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPUISearchBarController *spotlightSearchBarViewController; // @synthesize spotlightSearchBarViewController=_spotlightSearchBarViewController;
 @property(retain, nonatomic) SBUISpotlightBarNavigationController *spotlightNavigationController; // @synthesize spotlightNavigationController=_spotlightNavigationController;
 @property(nonatomic, getter=isBouncing) _Bool bouncing; // @synthesize bouncing=_bouncing;
 @property(retain, nonatomic) CSTodayViewController *todayViewController; // @synthesize todayViewController=_todayViewController;
-- (void).cxx_destruct;
 - (void)_updateSpotlightLegibility;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 - (id)_todayContentView;

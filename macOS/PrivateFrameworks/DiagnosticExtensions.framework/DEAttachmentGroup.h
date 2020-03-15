@@ -19,9 +19,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)createWithName:(id)arg1 rootURL:(id)arg2 attachmentItems:(id)arg3;
 + (id)createWithName:(id)arg1 rootURL:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attachmentItems; // @synthesize attachmentItems=_attachmentItems;
 @property(retain, nonatomic) NSURL *rootURL; // @synthesize rootURL=_rootURL;
-- (void).cxx_destruct;
 - (id)attachToDestinationDir:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

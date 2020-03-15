@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     PHFetchResult *_fetchResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(nonatomic) _Bool hasPendingChanges; // @synthesize hasPendingChanges=_hasPendingChanges;
 @property(nonatomic) unsigned long long taskId; // @synthesize taskId=_taskId;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSSet *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(nonatomic) __weak id <PUSearchGridDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mergePendingChanges;
 - (void)_inqClearPendingChanges;
 - (void)updateAssetUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;

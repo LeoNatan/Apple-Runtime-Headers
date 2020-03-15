@@ -13,8 +13,8 @@
     UIImageView *_contentImageView;
 }
 
-@property(readonly, nonatomic) UIImageView *contentImageView; // @synthesize contentImageView=_contentImageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *contentImageView; // @synthesize contentImageView=_contentImageView;
 - (void)_updateContentMode;
 - (void)_viewDidUpdateContent;
 - (double)_contentAspectRatio;

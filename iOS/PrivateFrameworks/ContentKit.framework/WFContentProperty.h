@@ -37,6 +37,7 @@
     CDUnknownBlockType _possibleValuesGetter;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType possibleValuesGetter; // @synthesize possibleValuesGetter=_possibleValuesGetter;
 @property(copy, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -59,7 +60,6 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (unsigned long long)equivalentHash;
 - (_Bool)isEquivalentToProperty:(id)arg1;
 - (void)getValuesForObject:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

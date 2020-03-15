@@ -16,10 +16,10 @@
     MFMessageHeaders *_fakeHeaders;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFMessageHeaders *fakeHeaders; // @synthesize fakeHeaders=_fakeHeaders;
 @property(retain, nonatomic) MailAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) MFMailboxUid *mailbox; // @synthesize mailbox=_mailbox;
-- (void).cxx_destruct;
 - (long long)mailboxID;
 - (id)persistentID;
 @property(retain, nonatomic) MFMessageHeaders *headers;

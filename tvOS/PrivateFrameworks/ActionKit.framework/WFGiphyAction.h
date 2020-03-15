@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)targetDataInfo;
 - (void)runWithNoUserInterface;
 @property(readonly, nonatomic) WFGiphySessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 

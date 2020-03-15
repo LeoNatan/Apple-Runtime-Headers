@@ -18,9 +18,9 @@
 }
 
 + (id)userNotificationFromNotification:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMPUserNotificationContentViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, nonatomic) id <AMSURLBagContract> bagContract; // @synthesize bagContract=_bagContract;
-- (void).cxx_destruct;
 - (void)viewController:(id)arg1 didUpdatePreferredContentSize:(struct CGSize)arg2;
 - (void)openNotification;
 - (void)viewWillDisappear:(_Bool)arg1;

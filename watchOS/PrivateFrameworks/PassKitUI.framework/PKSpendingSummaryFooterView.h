@@ -27,12 +27,12 @@
     UILabel *_trailingDetail;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *trailingDetail; // @synthesize trailingDetail=_trailingDetail;
 @property(readonly, nonatomic) UILabel *trailingTitle; // @synthesize trailingTitle=_trailingTitle;
 @property(readonly, nonatomic) UILabel *leadingDetail; // @synthesize leadingDetail=_leadingDetail;
 @property(readonly, nonatomic) UILabel *leadingTitle; // @synthesize leadingTitle=_leadingTitle;
 @property(nonatomic) __weak id <PKSpendingSummaryFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isEqualToFooter:(id)arg1;
 - (void)_buttonTapped:(id)arg1;
 - (id)_payButtonWithCircleLayout:(_Bool)arg1;

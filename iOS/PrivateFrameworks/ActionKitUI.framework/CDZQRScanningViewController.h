@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_lastCapturedString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastCapturedString; // @synthesize lastCapturedString=_lastCapturedString;
 @property(nonatomic) __weak UILabel *cameraUnavailableLabel; // @synthesize cameraUnavailableLabel=_cameraUnavailableLabel;
 @property(retain, nonatomic) UIButton *torchButton; // @synthesize torchButton=_torchButton;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) CDUnknownBlockType errorBlock; // @synthesize errorBlock=_errorBlock;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
-- (void).cxx_destruct;
 - (void)sessionInterruptionEnded:(id)arg1;
 - (void)sessionWasInterrupted:(id)arg1;
 - (void)sessionRuntimeError:(id)arg1;

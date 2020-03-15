@@ -22,10 +22,10 @@
 + (id)enumerationSumExpression;
 + (id)enumerationCountExpresion;
 + (id)topicEnumerationQueryWithPredicate:(id)arg1 topicEnumerator:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType topicEnumerator; // @synthesize topicEnumerator=_topicEnumerator;
 @property unsigned long long limit; // @synthesize limit=_limit;
 @property(retain) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)executeUsingCoreDataStorage:(id)arg1 error:(id *)arg2;
 - (id)handleResults:(id)arg1 error:(id)arg2;
 - (id)initWithPredicate:(id)arg1 topicEnumerator:(CDUnknownBlockType)arg2;

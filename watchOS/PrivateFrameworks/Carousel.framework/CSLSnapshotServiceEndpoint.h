@@ -21,12 +21,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
 @property(readonly, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak CSLSnapshotContextHelper *snapshotContextHelper; // @synthesize snapshotContextHelper=_snapshotContextHelper;
 @property(nonatomic) __weak CSLSnapshotService *snapshotService; // @synthesize snapshotService=_snapshotService;
-- (void).cxx_destruct;
 - (void)registerPrivilegedSnapshotClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 returnToPrimaryUIInterval:(double)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)registerPrivilegedBackgroundClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)snapshotWhenBackgroundProcessingCompletes:(id)arg1 completion:(CDUnknownBlockType)arg2;

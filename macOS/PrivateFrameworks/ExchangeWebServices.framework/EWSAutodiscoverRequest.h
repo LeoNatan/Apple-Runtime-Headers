@@ -17,12 +17,12 @@
     NSString *_ewsExternalHostname;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *ewsExternalHostname; // @synthesize ewsExternalHostname=_ewsExternalHostname;
 @property(readonly, copy, nonatomic) NSString *ewsInternalHostname; // @synthesize ewsInternalHostname=_ewsInternalHostname;
 @property(readonly, nonatomic) NSURL *preferredAutodiscoverURL; // @synthesize preferredAutodiscoverURL=_preferredAutodiscoverURL;
 @property(readonly, copy, nonatomic) NSString *user; // @synthesize user=_user;
 @property(readonly, copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 user:(id)arg2 preferredAutodiscoverURL:(id)arg3 ewsInternalHostname:(id)arg4 ewsExternalHostname:(id)arg5;

@@ -24,9 +24,9 @@
 + (void)_handleVibrateOnRingOrSilentDidChangeNotification;
 + (void)_handleVibrationPreferencesDidChangeNotificationForPreferencesKinds:(unsigned long long)arg1 atInitiativeOfVibrationManager:(id)arg2;
 + (id)sharedVibrationManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsAutoRefresh; // @synthesize allowsAutoRefresh=_allowsAutoRefresh;
 @property(readonly, nonatomic) _Bool needsRefresh; // @synthesize needsRefresh=_needsRefresh;
-- (void).cxx_destruct;
 - (void)_performBlockInAccessQueue:(CDUnknownBlockType)arg1;
 - (void)_setCurrentVibrationWatchAlertPolicy:(long long)arg1 forAlertType:(long long)arg2 topic:(id)arg3;
 - (void)_setCurrentVibrationWatchAlertPolicy:(long long)arg1 forAlertType:(long long)arg2;

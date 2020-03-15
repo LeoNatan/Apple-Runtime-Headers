@@ -17,9 +17,9 @@
     NSSet *_actions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (void)scene:(id)arg1 didCompleteUpdateWithContext:(id)arg2 error:(id)arg3;
 - (void)scene:(id)arg1 didPrepareUpdateWithContext:(id)arg2;
 - (void)_begin;

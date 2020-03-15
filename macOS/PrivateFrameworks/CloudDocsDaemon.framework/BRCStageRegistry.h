@@ -34,9 +34,9 @@
 + (unsigned short)computeItemModeFromStatInfo:(id)arg1 isPackage:(BOOL)arg2;
 + (void)migrateStageToVersion2_0WithSession:(id)arg1;
 + (BOOL)applySharingReadonlyACLsToFD:(int)arg1 statInfo:(id)arg2 version:(id)arg3 clientZone:(id)arg4 sharingOptions:(unsigned long long)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) int deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)resume;
 - (void)disarmLockedTestTimer;

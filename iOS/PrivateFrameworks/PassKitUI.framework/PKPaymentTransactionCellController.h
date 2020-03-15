@@ -28,8 +28,8 @@
 + (id)_relativeDateForTransaction:(id)arg1;
 + (id)_billPaymentFundingSourceForTransaction:(id)arg1;
 + (id)presentationInformationForTransaction:(id)arg1 pass:(id)arg2 account:(id)arg3 deviceName:(id)arg4 context:(unsigned long long)arg5;
-@property(readonly, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 - (id)fileDownloader;
 - (id)_cacheImageFromDownloaderCacheForURL:(id)arg1;
 - (id)_iconCacheKeyForMerchant:(id)arg1 size:(struct CGSize)arg2 imageOut:(id *)arg3;

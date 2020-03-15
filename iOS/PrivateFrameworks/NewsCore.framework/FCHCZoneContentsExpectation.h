@@ -17,10 +17,10 @@
     NSArray *_recordTests;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *recordTests; // @synthesize recordTests=_recordTests;
 @property(copy, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 @property(retain, nonatomic) CKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)validate;
 
 // Remaining properties

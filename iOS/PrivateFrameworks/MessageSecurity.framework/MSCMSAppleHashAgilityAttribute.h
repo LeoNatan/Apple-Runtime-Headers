@@ -15,8 +15,8 @@
     NSData *_hashAgilityValue;
 }
 
-@property(readonly, retain) NSData *hashAgilityValue; // @synthesize hashAgilityValue=_hashAgilityValue;
 - (void).cxx_destruct;
+@property(readonly, retain) NSData *hashAgilityValue; // @synthesize hashAgilityValue=_hashAgilityValue;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (id)initWithHashAgilityValue:(id)arg1;
 - (id)initWithAttribute:(id)arg1 error:(id *)arg2;

@@ -15,8 +15,8 @@
     unsigned int _cacheSize;
 }
 
-@property(readonly, nonatomic) unsigned int cacheSize; // @synthesize cacheSize=_cacheSize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int cacheSize; // @synthesize cacheSize=_cacheSize;
 - (void)clearCache;
 - (void)cacheStatement:(id)arg1;
 - (id)allStatements;

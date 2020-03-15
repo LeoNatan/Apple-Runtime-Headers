@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentSize;
 }
 
-@property(readonly, nonatomic) struct CGSize calculatedContentSize; // @synthesize calculatedContentSize=_contentSize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGSize calculatedContentSize; // @synthesize calculatedContentSize=_contentSize;
 - (struct CGSize)collectionViewContentSize;
 - (void)prepareLayout;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

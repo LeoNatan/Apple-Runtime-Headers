@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (double)labelViewFirstBaselineAnchorConstraintConstant;
 + (double)minimumContentHeight;
 + (_Bool)wantsHorizontalLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomAnchorConstraint; // @synthesize contentViewBottomAnchorConstraint=_contentViewBottomAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *valueViewFirstBaselineAnchorConstraint; // @synthesize valueViewFirstBaselineAnchorConstraint=_valueViewFirstBaselineAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *labelViewFirstBaselineAnchorConstraint; // @synthesize labelViewFirstBaselineAnchorConstraint=_labelViewFirstBaselineAnchorConstraint;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CNStarkActionView *actionView2; // @synthesize actionView2=_actionView2;
 @property(readonly, nonatomic) CNStarkActionView *actionView1; // @synthesize actionView1=_actionView1;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (void)performActionForMessage;
 - (long long)transportTypeForActionType:(id)arg1;
 - (void)actionViewTapped:(id)arg1;

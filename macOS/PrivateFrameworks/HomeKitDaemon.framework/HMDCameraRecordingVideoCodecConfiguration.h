@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *videoAttributes; // @synthesize videoAttributes=_videoAttributes;
 @property(readonly, copy, nonatomic) HMDCameraRecordingVideoCodecParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, copy, nonatomic) HMDCameraRecordingVideoCodec *codec; // @synthesize codec=_codec;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;

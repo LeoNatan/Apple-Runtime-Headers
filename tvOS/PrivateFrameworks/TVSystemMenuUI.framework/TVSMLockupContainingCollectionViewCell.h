@@ -13,8 +13,8 @@
     TVLockupView *_lockupView;
 }
 
-@property(retain, nonatomic) TVLockupView *lockupView; // @synthesize lockupView=_lockupView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLockupView *lockupView; // @synthesize lockupView=_lockupView;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;

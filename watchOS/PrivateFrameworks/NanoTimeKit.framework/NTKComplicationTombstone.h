@@ -13,8 +13,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)tombstoneWithComplication:(id)arg1;
-@property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
 - (void)_addKeysToJSONDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

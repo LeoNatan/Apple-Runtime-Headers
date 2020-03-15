@@ -13,8 +13,8 @@
     UIMenuItem *_menuItem;
 }
 
-@property(retain, nonatomic) UIMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 
 @end
 

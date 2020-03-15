@@ -28,6 +28,7 @@
 + (id)optionsWithMessage:(id)arg1;
 + (id)optionsWithLabel:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) _Bool disallowsCellularAccessForMirrorOutput; // @synthesize disallowsCellularAccessForMirrorOutput=_disallowsCellularAccessForMirrorOutput;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSString *messageName; // @synthesize messageName=_messageName;
 @property(retain, nonatomic) NSDictionary *messagePayload; // @synthesize messagePayload=_messagePayload;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)callMessageResponseHandlerWithPayload:(id)arg1 error:(id)arg2;

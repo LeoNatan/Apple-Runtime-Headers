@@ -9,7 +9,7 @@
 #import <Rapport/NSSecureCoding-Protocol.h>
 #import <Rapport/RPAuthenticatable-Protocol.h>
 
-@class NSString, NSXPCConnection;
+@class NSMutableDictionary, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 @interface RPRemoteDisplayServer : NSObject <NSSecureCoding, RPAuthenticatable>
@@ -17,7 +17,7 @@
     _Bool _activateCalled;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
-    struct NSMutableDictionary *_sessions;
+    NSMutableDictionary *_sessions;
     NSXPCConnection *_xpcCnx;
     unsigned int _pairSetupFlags;
     unsigned int _pairVerifyFlags;
@@ -37,6 +37,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int internalAuthFlags; // @synthesize internalAuthFlags=_internalAuthFlags;
 @property(copy, nonatomic) CDUnknownBlockType sessionEndedHandler; // @synthesize sessionEndedHandler=_sessionEndedHandler;
 @property(copy, nonatomic) CDUnknownBlockType sessionStartHandler; // @synthesize sessionStartHandler=_sessionStartHandler;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
 @property(nonatomic) unsigned int pairSetupFlags; // @synthesize pairSetupFlags=_pairSetupFlags;
-- (void).cxx_destruct;
 - (void)remoteDisplayHidePasswordWithFlags:(unsigned int)arg1;
 - (void)remoteDisplayShowPassword:(id)arg1 flags:(unsigned int)arg2;
 - (void)remoteDisplayReceivedRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4 sessionID:(id)arg5;

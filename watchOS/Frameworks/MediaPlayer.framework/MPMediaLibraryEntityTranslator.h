@@ -23,12 +23,12 @@
 + (id)translatorForMPModelClass:(Class)arg1 mlcoreEntityClass:(struct EntityClass *)arg2;
 + (id)translatorForMPModelClass:(Class)arg1;
 + (id)_translatorForMPModelClass:(Class)arg1 mlcoreEntityClass:(struct EntityClass *)arg2 create:(_Bool)arg3 transient:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType entityQueryBlock; // @synthesize entityQueryBlock=_entityQueryBlock;
 @property(copy, nonatomic) CDUnknownBlockType allowedItemPredicatesBlock; // @synthesize allowedItemPredicatesBlock=_allowedItemPredicatesBlock;
 @property(readonly, nonatomic) struct EntityClass *entityClass; // @synthesize entityClass=_entityClass;
 @property(readonly, nonatomic, getter=isTransient) _Bool transient; // @synthesize transient=_transient;
 @property(readonly, nonatomic) Class MPModelClass; // @synthesize MPModelClass=_MPModelClass;
-- (void).cxx_destruct;
 - (vector_90d4f7ff)_MLCorePropertiesForPropertySet:(id)arg1 withForeignPropertyBase:(struct ModelPropertyBase *)arg2;
 - (id)_objectForPropertySet:(id)arg1 entity:(shared_ptr_27513921)arg2 baseTranslator:(id)arg3 prependKeyPath:(id)arg4 context:(id)arg5;
 - (id)_valueForKeyPath:(id)arg1 forEntity:(shared_ptr_27513921)arg2 context:(id)arg3;

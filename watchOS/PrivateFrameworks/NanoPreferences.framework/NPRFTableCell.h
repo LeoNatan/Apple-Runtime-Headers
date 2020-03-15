@@ -23,10 +23,10 @@
 + (id)reuseIdentifierForClassAndType:(int)arg1;
 + (id)reuseIdentifierForBasicCellTypes:(int)arg1;
 + (Class)cellClassForSpecifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedStringTable; // @synthesize localizedStringTable=_localizedStringTable;
 @property(retain, nonatomic) NSBundle *localizationBundle; // @synthesize localizationBundle=_localizationBundle;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
-- (void).cxx_destruct;
 - (id)localizedStringForKey:(id)arg1;
 @property(nonatomic, getter=isCellEnabled) _Bool cellEnabled; // @synthesize cellEnabled=_cellEnabled;
 - (id)cellAccesoryForSpecifier:(id)arg1 controller:(id)arg2;

@@ -16,8 +16,8 @@
     NSDictionary *_recipe;
 }
 
-@property(retain) NSDictionary *recipe; // @synthesize recipe=_recipe;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *recipe; // @synthesize recipe=_recipe;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

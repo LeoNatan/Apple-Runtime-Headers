@@ -14,9 +14,9 @@
     PHPersistentChangeToken *_changeToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool encounteredTargetToken; // @synthesize encounteredTargetToken=_encounteredTargetToken;
 @property(readonly, nonatomic) PHPersistentChangeToken *changeToken; // @synthesize changeToken=_changeToken;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPersistentChangeToken:(id)arg1;
 

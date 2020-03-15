@@ -20,9 +20,9 @@
 
 + (id)frameworkFallbackInstance;
 + (unsigned long long)currentDeviceScreenType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) unsigned long long screenType; // @synthesize screenType=_screenType;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -19,14 +19,14 @@
 + (id)buildRequiredOnlyWithVersion:(id)arg1 baseURL:(id)arg2;
 + (id)buildWithVersion:(id)arg1 baseURL:(id)arg2 pinnedCertificates:(id)arg3 pinningRevocationCheckRequired:(id)arg4;
 + (id)allowedResponseKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *responsePinningRevocationCheckRequired; // @synthesize responsePinningRevocationCheckRequired=_responsePinningRevocationCheckRequired;
 @property(copy, nonatomic) NSArray *responsePinnedCertificates; // @synthesize responsePinnedCertificates=_responsePinnedCertificates;
 @property(copy, nonatomic) NSString *responseBaseURL; // @synthesize responseBaseURL=_responseBaseURL;
 @property(copy, nonatomic) NSString *responseVersion; // @synthesize responseVersion=_responseVersion;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

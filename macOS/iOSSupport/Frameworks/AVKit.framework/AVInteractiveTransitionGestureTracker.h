@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _initialCoordinateSpaceBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) long long transitionInteraction; // @synthesize transitionInteraction=_transitionInteraction;
 @property(nonatomic) struct CGPoint anchorLocationInWindow; // @synthesize anchorLocationInWindow=_anchorLocationInWindow;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <AVTransitionDriverDelegate> transitionDriverDelegate; // @synthesize transitionDriverDelegate=_transitionDriverDelegate;
 @property(nonatomic) __weak UIPanGestureRecognizer *contentTransitioningViewGestureRecognizer; // @synthesize contentTransitioningViewGestureRecognizer=_contentTransitioningViewGestureRecognizer;
-- (void).cxx_destruct;
 - (void)_reset;
 - (void)_setHasContinuedIfNeeded;
 - (void)_resetGesturesIfPossible;

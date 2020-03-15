@@ -19,11 +19,11 @@
 }
 
 + (id)attributesWithFamilyName:(id)arg1 style:(long long)arg2 weight:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) long long weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

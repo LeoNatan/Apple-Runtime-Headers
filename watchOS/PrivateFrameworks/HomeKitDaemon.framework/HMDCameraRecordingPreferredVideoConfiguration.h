@@ -17,12 +17,12 @@
     int _h264Level;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int h264Level; // @synthesize h264Level=_h264Level;
 @property(readonly) int resolution; // @synthesize resolution=_resolution;
 @property(readonly) NSNumber *keyFrameInterval; // @synthesize keyFrameInterval=_keyFrameInterval;
 @property(readonly) NSNumber *bitRate; // @synthesize bitRate=_bitRate;
 @property(readonly) NSNumber *frameRate; // @synthesize frameRate=_frameRate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithResolution:(int)arg1 frameRate:(id)arg2 bitRate:(id)arg3 keyFrameInterval:(id)arg4 h264Level:(int)arg5;
 

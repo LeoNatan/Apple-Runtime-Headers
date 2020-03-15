@@ -17,10 +17,10 @@
     GEODataRequestThrottlerToken *_throttlerToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *responseUserInfo; // @synthesize responseUserInfo=_responseUserInfo;
 @property(nonatomic) unsigned long long cachePolicy; // @synthesize cachePolicy=_cachePolicy;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
-- (void).cxx_destruct;
 - (void)setThrottlerToken:(id)arg1;
 - (void)cancel;
 @property(readonly, getter=isCancelled) _Bool cancelled;

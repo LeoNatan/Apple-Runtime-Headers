@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSObject<OS_os_log> *_loggingCategory;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_os_log> *loggingCategory; // @synthesize loggingCategory=_loggingCategory;
 @property(readonly) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(readonly) NSXPCInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
 @property(readonly) NSXPCInterface *serviceInterface; // @synthesize serviceInterface=_serviceInterface;
 @property(readonly) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (id)initWithServiceName:(id)arg1 serviceInterface:(id)arg2 clientInterface:(id)arg3 errorDomain:(id)arg4 loggingCategory:(id)arg5;
 
 @end

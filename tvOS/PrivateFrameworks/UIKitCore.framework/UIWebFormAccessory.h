@@ -29,7 +29,8 @@
 }
 
 + (id)toolbarWithItems:(id)arg1;
-@property(nonatomic) id <UIWebFormAccessoryDelegate> delegate; // @synthesize delegate;
+- (void).cxx_destruct;
+@property(nonatomic) __weak id <UIWebFormAccessoryDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) UIBarButtonItem *_clearButton; // @synthesize _clearButton;
 @property(retain, nonatomic) UIBarButtonItem *_autofill; // @synthesize _autofill;
 @property(retain, nonatomic) UISegmentedControl *_tab; // @synthesize _tab;

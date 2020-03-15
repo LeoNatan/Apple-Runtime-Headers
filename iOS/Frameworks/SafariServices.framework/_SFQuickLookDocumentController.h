@@ -18,8 +18,8 @@
     _SFQuickLookDocument *_quickLookDocument;
 }
 
-@property(readonly, nonatomic) UIView *documentView; // @synthesize documentView=_documentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *documentView; // @synthesize documentView=_documentView;
 - (long long)dataOwnerForQuickLookDocumentView:(id)arg1;
 - (id)itemProviderForQuickLookDocumentView:(id)arg1;
 - (void)quickLookDocumentView:(id)arg1 didSelectActionAtIndex:(long long)arg2;

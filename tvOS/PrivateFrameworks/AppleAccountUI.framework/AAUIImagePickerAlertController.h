@@ -19,8 +19,8 @@
 }
 
 + (id)alertControllerWithSelectionHandler:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)documentPickerWasCancelled:(id)arg1;

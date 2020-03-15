@@ -58,11 +58,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (int)locateByFileID:(unsigned long long)arg1 session:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char itemScope; // @synthesize itemScope=_itemScope;
 @property(nonatomic) unsigned short type; // @synthesize type=_type;
 @property(retain, nonatomic) BRCAppLibrary *appLibrary; // @synthesize appLibrary=_appLibrary;
 @property(readonly, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

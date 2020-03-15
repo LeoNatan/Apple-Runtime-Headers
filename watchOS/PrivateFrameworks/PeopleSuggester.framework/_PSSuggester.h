@@ -16,8 +16,8 @@
 }
 
 + (id)suggesterWithDaemon;
-@property(readonly, nonatomic) _PSSuggesterConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _PSSuggesterConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)provideFeedbackForMessagesZkwSuggestions:(id)arg1;
 - (void)provideFeedbackForSuggestions:(id)arg1;
 - (id)relativeAppUsageProbabilitiesForCandidateBundleIds:(id)arg1 daysAgo:(int)arg2;
@@ -29,6 +29,7 @@
 - (id)rankedNameSuggestionsFromContext:(id)arg1 name:(id)arg2;
 - (id)shareExtensionSuggestionsFromContext:(id)arg1;
 - (id)suggestInteractionsFromContext:(id)arg1;
+- (id)shareSheetInteractionsFromContext:(id)arg1 maximumNumberOfSuggestions:(int)arg2;
 - (id)shareSheetInteractionsFromContext:(id)arg1;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;

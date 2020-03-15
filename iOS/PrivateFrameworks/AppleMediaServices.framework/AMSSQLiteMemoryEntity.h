@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 + (id)queryOnConnection:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryOnConnection:(id)arg1 predicate:(id)arg2;
 + (id)anyOnConnection:(id)arg1 predicate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *externalPropertyValues; // @synthesize externalPropertyValues=_externalPropertyValues;
 @property(readonly, copy, nonatomic) NSDictionary *propertyValues; // @synthesize propertyValues=_propertyValues;
 @property(nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

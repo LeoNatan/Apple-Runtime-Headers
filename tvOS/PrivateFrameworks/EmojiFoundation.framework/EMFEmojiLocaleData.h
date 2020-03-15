@@ -16,9 +16,9 @@
 
 + (id)emojiLocaleDataWithLocaleIdentifier:(id)arg1;
 + (id)emojiLocaleDataWithCEMEmojiLocaleData:(struct __EmojiLocaleDataWrapper *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const struct __EmojiLocaleDataWrapper *emojiLocaleDataRef; // @synthesize emojiLocaleDataRef=_localeDataRef;
 @property(readonly, copy, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
-- (void).cxx_destruct;
 - (id)emojiTokensForOptions:(unsigned long long)arg1 presentationStyle:(int)arg2;
 - (id)emojiTokensForText:(id)arg1 phoneticReading:(id)arg2 options:(unsigned long long)arg3 searchType:(int)arg4 includePrefixMatches:(_Bool)arg5;
 - (void)enumerateSearchResultsInText:(id)arg1 range:(struct _NSRange)arg2 options:(unsigned long long)arg3 searchType:(int)arg4 usingBlock:(CDUnknownBlockType)arg5;

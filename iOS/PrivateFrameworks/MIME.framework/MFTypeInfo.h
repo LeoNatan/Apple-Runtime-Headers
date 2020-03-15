@@ -16,11 +16,11 @@
     NSString *_filename;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int osType; // @synthesize osType=_osType;
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(copy, nonatomic) NSString *pathExtension; // @synthesize pathExtension=_pathExtension;
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
-- (void).cxx_destruct;
 
 @end
 

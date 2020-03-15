@@ -26,12 +26,12 @@
 + (id)errorWithCatalogItem:(id)arg1 classification:(long long)arg2 message:(id)arg3;
 + (id)warningWithCatalogItem:(id)arg1 classification:(long long)arg2 message:(id)arg3;
 + (id)relativeIdentifierPathsForItems:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long classification; // @synthesize classification=_classification;
 @property(readonly) long long severity; // @synthesize severity=_severity;
 @property(readonly) NSSet *catalogItemIdentifiers; // @synthesize catalogItemIdentifiers=_catalogItemIdentifiers;
 @property(readonly) NSString *catalogPath; // @synthesize catalogPath=_catalogPath;
 @property(readonly) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 @property(readonly) NSString *classificationDescription;
 @property(readonly) NSString *severityDescription;
 @property(readonly, copy) NSString *description;

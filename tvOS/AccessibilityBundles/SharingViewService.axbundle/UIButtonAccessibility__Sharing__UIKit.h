@@ -14,6 +14,8 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (id)accessibilityLabel;
+- (_Bool)_accessibilityUserTestingIsCancelButton;
+- (_Bool)_axIsDismissButton;
 
 @end
 

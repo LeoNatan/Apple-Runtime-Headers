@@ -13,8 +13,8 @@
     HMCameraSource *_cameraSource;
 }
 
-@property(retain, nonatomic) HMCameraSource *cameraSource; // @synthesize cameraSource=_cameraSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMCameraSource *cameraSource; // @synthesize cameraSource=_cameraSource;
 
 @end
 

@@ -29,6 +29,7 @@
     NSNumber *_lastSearchID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *lastSearchID; // @synthesize lastSearchID=_lastSearchID;
 @property(retain, nonatomic) NSMutableArray *searchResults; // @synthesize searchResults=_searchResults;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak id <WFRecipientFieldViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *fieldLabel; // @synthesize fieldLabel=_fieldLabel;
 @property(copy, nonatomic) NSSet *supportedPersonProperties; // @synthesize supportedPersonProperties=_supportedPersonProperties;
-- (void).cxx_destruct;
 - (void)_updateFetchContextChosenAddresses;
 - (void)_resetSearchResults;
 - (void)_cancelActiveSearchClearingText:(_Bool)arg1;

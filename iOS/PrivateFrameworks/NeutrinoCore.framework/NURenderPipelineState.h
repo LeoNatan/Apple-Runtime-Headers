@@ -28,6 +28,7 @@
     CDStruct_1b6d18a9 _time;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long groupCount; // @synthesize groupCount=_groupCount;
 @property(readonly) NURenderTagGroup *currentGroup; // @synthesize currentGroup=_currentGroup;
 @property(readonly) NURenderTagGroup *rootGroup; // @synthesize rootGroup=_rootGroup;
@@ -41,7 +42,6 @@
 @property long long mediaComponentType; // @synthesize mediaComponentType=_mediaComponentType;
 @property long long evaluationMode; // @synthesize evaluationMode=_evaluationMode;
 @property(readonly) long long serialNumber; // @synthesize serialNumber=_serialNumber;
-- (void).cxx_destruct;
 - (id)pipelineSettingsFromSourceSettings:(id)arg1;
 - (_Bool)applyPipelineSettings:(id)arg1 error:(out id *)arg2;
 - (_Bool)endGroupWithName:(id)arg1 error:(out id *)arg2;

@@ -13,8 +13,8 @@
     NSURL *_sandboxURL;
 }
 
-@property(retain) NSURL *sandboxURL; // @synthesize sandboxURL=_sandboxURL;
 - (void).cxx_destruct;
+@property(retain) NSURL *sandboxURL; // @synthesize sandboxURL=_sandboxURL;
 - (void)_verifyMembootImageChecksumAtPath:(id)arg1;
 - (unsigned long long)_sizeOfDirectoryAtPath:(id)arg1;
 - (void)_unmountESP;

@@ -23,6 +23,7 @@
     CSLAlertTransitionContext *_alertTransitionContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLAlertTransitionContext *alertTransitionContext; // @synthesize alertTransitionContext=_alertTransitionContext;
 @property(copy, nonatomic) NSArray *updatedPresentableItems; // @synthesize updatedPresentableItems=_updatedPresentableItems;
 @property(copy, nonatomic) NSArray *oldPresentableItems; // @synthesize oldPresentableItems=_oldPresentableItems;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool alertsWereUpdated; // @synthesize alertsWereUpdated=_alertsWereUpdated;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
 @property(retain, nonatomic) IOSSHLTransaction *appLaunchTransaction; // @synthesize appLaunchTransaction=_appLaunchTransaction;
-- (void).cxx_destruct;
 - (_Bool)hasRemovedItems;
 @property(readonly, nonatomic) NSArray *removedItems; // @synthesize removedItems=_removedItems;
 @property(readonly, nonatomic) NSArray *addedItems; // @synthesize addedItems=_addedItems;

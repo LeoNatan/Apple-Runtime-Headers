@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     unsigned int _currentCount;
 }
 
-@property(readonly, nonatomic) unsigned int currentCount; // @synthesize currentCount=_currentCount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int currentCount; // @synthesize currentCount=_currentCount;
 - (id)makeResourceProxyIfPossibleWithoutLocking:(_Bool)arg1;
 - (void)servicePendingWaitTokens;
 - (void)pendingWaitsNeedServicing;

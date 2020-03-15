@@ -26,11 +26,11 @@
     unsigned long long _tags;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long clip; // @synthesize clip=_clip;
 @property(readonly, nonatomic) long long variant; // @synthesize variant=_variant;
 @property(readonly, nonatomic) unsigned long long theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) UIColor *overlayColor; // @synthesize overlayColor=_overlayColor;
-- (void).cxx_destruct;
 - (void)discardAssets;
 - (_Bool)hasTag:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

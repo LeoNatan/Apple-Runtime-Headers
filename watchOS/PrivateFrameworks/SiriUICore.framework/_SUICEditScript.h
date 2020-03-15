@@ -20,9 +20,9 @@
     NSMutableArray *_script;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *script; // @synthesize script=_script;
 @property(copy, nonatomic) NSArray *operationPrecedenceArray; // @synthesize operationPrecedenceArray=_operationPrecedenceArray;
-- (void).cxx_destruct;
 - (void)finalizeCurrentScriptAtom;
 - (void)addToCurrentScriptAtomEditOperation:(int)arg1 editIndex:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
 - (void)initializeCurrentScriptAtom;

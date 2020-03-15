@@ -18,13 +18,13 @@
     NSOrderedSet *_screenwriters;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *screenwriters; // @synthesize screenwriters=_screenwriters;
 @property(copy, nonatomic) NSOrderedSet *producers; // @synthesize producers=_producers;
 @property(copy, nonatomic) NSOrderedSet *codirectors; // @synthesize codirectors=_codirectors;
 @property(copy, nonatomic) NSOrderedSet *directors; // @synthesize directors=_directors;
 @property(copy, nonatomic) NSOrderedSet *cast; // @synthesize cast=_cast;
 @property(copy, nonatomic) NSString *studio; // @synthesize studio=_studio;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

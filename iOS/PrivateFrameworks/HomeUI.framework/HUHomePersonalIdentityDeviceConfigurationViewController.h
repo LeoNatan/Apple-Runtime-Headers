@@ -24,13 +24,13 @@
     NSLayoutConstraint *_heightAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
 @property(nonatomic) long long selectedLanguageIndex; // @synthesize selectedLanguageIndex=_selectedLanguageIndex;
 @property(retain, nonatomic) NSArray *mediaProfilesAndLanguageInfoList; // @synthesize mediaProfilesAndLanguageInfoList=_mediaProfilesAndLanguageInfoList;
 @property(retain, nonatomic) OBLinkTrayButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) OBTrayButton *changeLanguageButton; // @synthesize changeLanguageButton=_changeLanguageButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

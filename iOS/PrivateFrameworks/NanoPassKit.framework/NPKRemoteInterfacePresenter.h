@@ -15,9 +15,11 @@
     NSXPCConnection *_xpcConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(nonatomic) __weak id <NPKRemoteInterfacePresenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (void)tearDownPasscodeUpgradeRequestWithPasscodeChanged:(_Bool)arg1 error:(id)arg2;
+- (void)presentPasscodeUpgradeRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentSetupApplePayAlert:(id)arg1;
 - (void)clearInAppInterfaceForSkeletonPeerPaymentQuote:(id)arg1 withError:(id)arg2;
 - (void)showInAppInterfaceWithSkeletonPeerPaymentQuote:(id)arg1 completion:(CDUnknownBlockType)arg2;

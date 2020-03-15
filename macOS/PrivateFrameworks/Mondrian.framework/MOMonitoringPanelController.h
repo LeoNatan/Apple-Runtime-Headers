@@ -80,6 +80,7 @@
 }
 
 + (id)panelControllerForMonitoringController:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSTextField *bestThumbnailsMemoryCacheSetMaximumDurationTextField; // @synthesize bestThumbnailsMemoryCacheSetMaximumDurationTextField=_bestThumbnailsMemoryCacheSetMaximumDurationTextField;
 @property(retain) NSTextField *bestThumbnailsMemoryCacheSetAverageDurationTextField; // @synthesize bestThumbnailsMemoryCacheSetAverageDurationTextField=_bestThumbnailsMemoryCacheSetAverageDurationTextField;
 @property(retain) NSTextField *bestThumbnailsMemoryCacheGetMaximumDurationTextField; // @synthesize bestThumbnailsMemoryCacheGetMaximumDurationTextField=_bestThumbnailsMemoryCacheGetMaximumDurationTextField;
@@ -145,7 +146,6 @@
 @property(retain) NSTextField *frameRateTextField; // @synthesize frameRateTextField=_frameRateTextField;
 @property(retain) MOUIProgressBar *frameRateProgressBar; // @synthesize frameRateProgressBar=_frameRateProgressBar;
 @property(nonatomic) __weak MOMonitoringController *monitoringController; // @synthesize monitoringController=_monitoringController;
-- (void).cxx_destruct;
 - (void)updateWithMeasurements:(id)arg1;
 - (id)_convertBytesToBestReadableFormat:(double)arg1;
 - (BOOL)isVisible;

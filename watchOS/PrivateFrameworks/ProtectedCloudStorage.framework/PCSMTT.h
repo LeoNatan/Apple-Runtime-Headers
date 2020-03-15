@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) double time; // @synthesize time=_time;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(readonly) NSUUID *parentUUID; // @synthesize parentUUID=_parentUUID;
 @property(retain) NSMutableArray *completedPoints; // @synthesize completedPoints=_completedPoints;
 @property(retain) NSDate *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)completePoint:(id)arg1;

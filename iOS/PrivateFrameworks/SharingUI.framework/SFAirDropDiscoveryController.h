@@ -26,9 +26,9 @@
     long long _discoverableMode;
 }
 
+- (void).cxx_destruct;
 @property __weak id <SFAirDropDiscoveryAlertControllerDelegate> alertControllerDelegate; // @synthesize alertControllerDelegate=_alertControllerDelegate;
 @property __weak id <SFAirDropDiscoveryControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)discoverableModeToString:(long long)arg1;
 - (long long)operationDiscoverableModeToInteger:(id)arg1;
 @property long long discoverableMode;

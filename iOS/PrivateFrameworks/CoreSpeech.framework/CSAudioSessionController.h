@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <CoreSpeech/CSAudioSessionInfoProvidingDelegate-Protocol.h>
+#import <CoreSpeech/CSCoreSpeechDaemonStateMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSXPCClientDelegate-Protocol.h>
 
 @class CSXPCClient, NSHashTable, NSString;
 @protocol CSAudioSessionInfoProviding, OS_dispatch_queue;
 
-@interface CSAudioSessionController : NSObject <CSAudioSessionInfoProvidingDelegate, CSXPCClientDelegate>
+@interface CSAudioSessionController : NSObject <CSAudioSessionInfoProvidingDelegate, CSXPCClientDelegate, CSCoreSpeechDaemonStateMonitorDelegate>
 {
     _Bool _shouldKeepConnection;
     NSObject<OS_dispatch_queue> *_queue;
@@ -22,12 +23,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property _Bool shouldKeepConnection; // @synthesize shouldKeepConnection=_shouldKeepConnection;
 @property(retain, nonatomic) CSXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(retain, nonatomic) id <CSAudioSessionInfoProviding> sessionInfoProvider; // @synthesize sessionInfoProvider=_sessionInfoProvider;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
+- (void)coreSpeechDaemonStateMonitor:(id)arg1 didReceiveStateChanged:(unsigned long long)arg2;
 - (void)CSXPCClient:(id)arg1 didDisconnect:(_Bool)arg2;
 - (void)_teardownXPCClientIfNeeded;
 - (void)_audioRouteChanged:(id)arg1;

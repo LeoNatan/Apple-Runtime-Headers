@@ -22,8 +22,8 @@
 
 + (void)removeReactiveValuesForTarget:(id)arg1;
 + (id)valueForTarget:(id)arg1 withKeyPath:(id)arg2;
-@property(readonly, nonatomic) NSArray *bindings; // @synthesize bindings=_bindings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *bindings; // @synthesize bindings=_bindings;
 - (void)bindingValueChanged:(id)arg1;
 - (void)unassign;
 - (void)assignToTarget:(id)arg1 withKeyPath:(id)arg2;

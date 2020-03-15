@@ -15,10 +15,10 @@
     NSString *_multitapCharacter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *multitapCharacter; // @synthesize multitapCharacter=_multitapCharacter;
 @property(retain, nonatomic) IMKKeyboardState *multitapKeyboardState; // @synthesize multitapKeyboardState=_multitapKeyboardState;
 @property(retain, nonatomic) IMKKey *multitapKey; // @synthesize multitapKey=_multitapKey;
-- (void).cxx_destruct;
 - (void)_resetCommitMultitapDelay;
 - (void)_commitMultitap;
 - (void)_updateMultitap;

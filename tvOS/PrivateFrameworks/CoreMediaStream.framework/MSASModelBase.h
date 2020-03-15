@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_dbQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dbWasRecreated; // @synthesize dbWasRecreated=_dbWasRecreated;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dbQueue; // @synthesize dbQueue=_dbQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *statementQueue; // @synthesize statementQueue=_statementQueue;
 @property(nonatomic) struct __CFDictionary *statements; // @synthesize statements=_statements;
 @property(readonly, nonatomic) NSString *personID; // @synthesize personID=_personID;
 @property(readonly, nonatomic) struct sqlite3 *dbQueueDB; // @synthesize dbQueueDB=_db;
-- (void).cxx_destruct;
 - (void)dbQueueRollbackTransaction;
 - (void)dbQueueEndTransaction;
 - (void)endTransaction;

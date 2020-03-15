@@ -53,6 +53,8 @@ __attribute__((visibility("hidden")))
 + (void)addTagsItemsToFileMenu:(id)arg1;
 + (_Bool)canDownloadNow:(const struct TFENode *)arg1;
 + (struct TTypeSelectController *)typeSelectControllerWithDelegate:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDarkBackground) _Bool darkBackground; // @synthesize darkBackground=_darkBackground;
 @property struct TFENode nodeToDoubleClick; // @synthesize nodeToDoubleClick=_nodeToDoubleClick;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
@@ -60,8 +62,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showIconPreview; // @synthesize showIconPreview=_showIconPreview;
 @property(nonatomic) double textSize; // @synthesize textSize=_textSize;
 @property(nonatomic) double iconSize; // @synthesize iconSize=_iconSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)cmdRename:(id)arg1;
 - (_Bool)validateRename:(id)arg1;
 - (void)cmdRemoveLabel7:(id)arg1;
@@ -110,6 +110,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)validateRemoveTag:(id)arg1;
 - (void)handleMoveToTrashCommand:(const struct TFENodeVector *)arg1 immediately:(_Bool)arg2;
 - (void)handleMoveToTrashOrPutBackCommand:(const struct TFENodeVector *)arg1;
+- (void)cmdPinItems:(id)arg1;
 - (_Bool)validatePinItems:(id)arg1;
 - (void)cmdRemoveDownload:(id)arg1;
 - (_Bool)validateRemoveDownload:(id)arg1;

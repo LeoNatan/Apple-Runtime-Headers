@@ -17,12 +17,12 @@
     struct _NSRange _rangeToReplace;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double probability; // @synthesize probability=_probability;
 @property(nonatomic) struct _NSRange rangeToReplace; // @synthesize rangeToReplace=_rangeToReplace;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(copy, nonatomic) NSString *textToInsert; // @synthesize textToInsert=_textToInsert;
 @property(copy, nonatomic) NSString *fullWord; // @synthesize fullWord=_fullWord;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -58,6 +58,7 @@
 + (id)_customAttributesForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (id)P3Kernel;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *inputColorSpace; // @synthesize inputColorSpace=_inputColorSpace;
 @property(retain, nonatomic) NSNumber *inputWhiteDstBlue; // @synthesize inputWhiteDstBlue=_inputWhiteDstBlue;
 @property(retain, nonatomic) NSNumber *inputWhiteSrcBlue; // @synthesize inputWhiteSrcBlue=_inputWhiteSrcBlue;
@@ -100,7 +101,6 @@
 @property(retain, nonatomic) NSNumber *inputBlackDstRGB; // @synthesize inputBlackDstRGB=_inputBlackDstRGB;
 @property(retain, nonatomic) NSNumber *inputBlackSrcRGB; // @synthesize inputBlackSrcRGB=_inputBlackSrcRGB;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)_LUTImage;
 - (double)floatValueForKey:(id)arg1 defaultValue:(double)arg2 clearIfNotDefault:(_Bool *)arg3;

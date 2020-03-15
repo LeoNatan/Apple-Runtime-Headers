@@ -23,6 +23,7 @@
     void *_channel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) void *channel; // @synthesize channel=_channel;
 @property(readonly, nonatomic) NSOutputStream *output; // @synthesize output=_output;
 @property(readonly, nonatomic) NSInputStream *input; // @synthesize input=_input;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) CBPeer *peer; // @synthesize peer=_peer;
 @property(readonly, nonatomic) CBCentral *central; // @synthesize central=_central;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (void)setOrphan;

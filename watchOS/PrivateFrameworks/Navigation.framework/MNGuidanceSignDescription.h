@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int composedGuidanceEventIndex; // @synthesize composedGuidanceEventIndex=_composedGuidanceEventIndex;
 @property(readonly, nonatomic) int distanceDetailLevel; // @synthesize distanceDetailLevel=_distanceDetailLevel;
 @property(readonly, nonatomic) NSDictionary *variableOverrides; // @synthesize variableOverrides=_variableOverrides;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSArray *details; // @synthesize details=_details;
 @property(readonly, nonatomic) NSArray *titles; // @synthesize titles=_titles;
 @property(readonly, nonatomic) NSUUID *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)debugDescription;

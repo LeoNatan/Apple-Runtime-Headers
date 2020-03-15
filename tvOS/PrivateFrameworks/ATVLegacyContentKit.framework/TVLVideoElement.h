@@ -15,10 +15,10 @@
     NSArray *_previewImages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *previewImages; // @synthesize previewImages=_previewImages;
 @property(retain, nonatomic) NSArray *badges; // @synthesize badges=_badges;
 @property(retain, nonatomic) NSString *caption; // @synthesize caption=_caption;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

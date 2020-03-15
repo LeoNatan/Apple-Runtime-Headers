@@ -27,12 +27,12 @@
 + (id)standardPorts;
 + (id)csAccountTypeString;
 + (id)accountTypeString;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasDoneBackgroundSynchronization; // @synthesize hasDoneBackgroundSynchronization=_hasDoneBackgroundSynchronization;
 @property(nonatomic) BOOL fetcherNeedsReset; // @synthesize fetcherNeedsReset=_fetcherNeedsReset;
 @property(retain, nonatomic) MCActivityMonitor *fetchMonitor; // @synthesize fetchMonitor=_fetchMonitor;
 @property(retain, nonatomic) MFPOPStore *fetcher; // @synthesize fetcher=_fetcher;
 @property(nonatomic) BOOL deletingMessages; // @synthesize deletingMessages=_deletingMessages;
-- (void).cxx_destruct;
 - (void)_sendMailboxDidEndSyncTaskNotification;
 - (void)_sendMailboxDidStartSyncTaskNotification;
 - (id)storeForMailbox:(id)arg1 createIfNeeded:(BOOL)arg2;

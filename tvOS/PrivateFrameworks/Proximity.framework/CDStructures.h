@@ -20,6 +20,7 @@ struct AdditionalInfo {
     unsigned short _field5;
     unsigned char _field6;
     unsigned int _field7;
+    basic_string_a1f69cfb _field8;
 };
 
 struct BtProxData {
@@ -51,6 +52,8 @@ struct GetPowerStatsResponse {
     unsigned int _field9;
     unsigned short _field10;
     unsigned short _field11;
+    unsigned int _field12;
+    unsigned int _field13;
 };
 
 struct HelloResponse {

@@ -19,8 +19,8 @@
 }
 
 + (Class)layerClass;
-@property(nonatomic) _Bool pausesAfterEachItem; // @synthesize pausesAfterEachItem=_pausesAfterEachItem;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool pausesAfterEachItem; // @synthesize pausesAfterEachItem=_pausesAfterEachItem;
 - (void)playerItemDidReachEnd:(id)arg1;
 - (void)setUpTimeRangeNotificationsForItem:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

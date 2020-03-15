@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CKConversation *_conversation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldInvalidateOnAddressBookChange; // @synthesize shouldInvalidateOnAddressBookChange=_shouldInvalidateOnAddressBookChange;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
-- (void).cxx_destruct;
 - (id)initWithConversation:(id)arg1;
 
 @end

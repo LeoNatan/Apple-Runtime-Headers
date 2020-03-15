@@ -14,14 +14,16 @@ __attribute__((visibility("hidden")))
     NSString *_text;
     NSString *_dominantLanguage;
     id _correctionIdentifier;
+    NSString *_interactionIdentifier;
     NSArray *_phrases;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *phrases; // @synthesize phrases=_phrases;
+@property(retain, nonatomic) NSString *interactionIdentifier; // @synthesize interactionIdentifier=_interactionIdentifier;
 @property(retain, nonatomic) id correctionIdentifier; // @synthesize correctionIdentifier=_correctionIdentifier;
 @property(copy, nonatomic) NSString *dominantLanguage; // @synthesize dominantLanguage=_dominantLanguage;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)dictionaryValue;
 - (id)description;
 - (unsigned long long)hash;

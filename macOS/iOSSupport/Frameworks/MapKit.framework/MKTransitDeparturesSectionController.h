@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     MKTransitDepartureServiceGapFormatter *_serviceGapFormatter;
 }
 
-@property(retain, nonatomic) MKTransitDepartureServiceGapFormatter *serviceGapFormatter; // @synthesize serviceGapFormatter=_serviceGapFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKTransitDepartureServiceGapFormatter *serviceGapFormatter; // @synthesize serviceGapFormatter=_serviceGapFormatter;
 - (id)serviceGapDescriptionForRow:(long long)arg1;
 - (void)_serviceGapDate:(out id *)arg1 string:(out id *)arg2 forSequence:(id)arg3 withDepartureIndex:(unsigned long long)arg4;
 - (id)_nextLastDepartureDateForSequence:(id)arg1 afterDate:(id)arg2;

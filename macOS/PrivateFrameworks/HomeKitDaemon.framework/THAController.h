@@ -20,6 +20,7 @@
 }
 
 + (id)selectButtonConfiguration:(id)arg1 supportsSiri:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *selectedButtons; // @synthesize selectedButtons=_selectedButtons;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) BOOL reachable; // @synthesize reachable=_reachable;
@@ -27,7 +28,6 @@
 @property(nonatomic) unsigned long long ticksPerSecond; // @synthesize ticksPerSecond=_ticksPerSecond;
 @property(readonly, nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)dispatchButtonEvent:(id)arg1;
 - (void)updateSelectedButtons:(id)arg1;
 - (id)initWithName:(id)arg1 identifier:(unsigned int)arg2 ticksPerSecond:(unsigned long long)arg3 supportedButtons:(id)arg4 supportsSiri:(BOOL)arg5;

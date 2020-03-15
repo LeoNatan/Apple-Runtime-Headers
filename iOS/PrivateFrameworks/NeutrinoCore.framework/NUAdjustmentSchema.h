@@ -10,13 +10,13 @@
 
 @interface NUAdjustmentSchema : NUSchema
 {
-    struct NSDictionary *_settings;
+    NSDictionary *_settings;
 }
 
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
-@property(readonly, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
-- (struct NSArray *)schemaDependencies;
+@property(readonly, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
+- (id)schemaDependencies;
 - (_Bool)serializeIntoDictionary:(id)arg1 error:(out id *)arg2;
 - (_Bool)deserializeSettings:(id)arg1 fromDictionary:(id)arg2 error:(out id *)arg3;
 - (_Bool)serializeSettings:(id)arg1 intoDictionary:(id)arg2 error:(out id *)arg3;
@@ -34,7 +34,7 @@
 - (_Bool)validate:(id)arg1 error:(out id *)arg2;
 - (_Bool)validateSettings:(out id *)arg1;
 - (_Bool)isValid:(out id *)arg1;
-- (id)initWithIdentifier:(id)arg1 settings:(struct NSDictionary *)arg2 attributes:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 settings:(id)arg2 attributes:(id)arg3;
 - (id)initWithIdentifier:(id)arg1 attributes:(id)arg2;
 - (long long)type;
 

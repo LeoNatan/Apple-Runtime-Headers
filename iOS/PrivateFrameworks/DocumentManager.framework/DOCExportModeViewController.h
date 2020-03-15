@@ -16,9 +16,9 @@
     DOCTargetSelectionBrowserViewController *_moveVC;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DOCTargetSelectionBrowserViewController *moveVC; // @synthesize moveVC=_moveVC;
 @property(copy, nonatomic) NSURL *directoryURLToReveal; // @synthesize directoryURLToReveal=_directoryURLToReveal;
-- (void).cxx_destruct;
 - (void)targetSelectionController:(id)arg1 didExportToURLs:(id)arg2;
 - (void)targetSelectionControllerWasCancelled:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

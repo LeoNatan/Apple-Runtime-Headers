@@ -29,6 +29,7 @@
 + (id)topNPredictionQueryForStream:(id)arg1 withPredicate:(id)arg2 withTopN:(long long)arg3 withMinLikelihood:(double)arg4;
 + (id)predictionQueryForStreams:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3;
 + (id)predictionQueryForStream:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double minLikelihood; // @synthesize minLikelihood=_minLikelihood;
 @property(nonatomic) long long topN; // @synthesize topN=_topN;
 @property(nonatomic) BOOL isTopNPrediction; // @synthesize isTopNPrediction=_isTopNPrediction;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) int minimumDaysOfHistory; // @synthesize minimumDaysOfHistory=_minimumDaysOfHistory;
 @property(nonatomic) int slotDuration; // @synthesize slotDuration=_slotDuration;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

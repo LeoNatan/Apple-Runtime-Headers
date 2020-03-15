@@ -17,8 +17,8 @@
 
 + (id)_toolWithInk:(id)arg1;
 + (BOOL)_inkIsInkingTool:(id)arg1;
-@property(readonly, nonatomic) PKInk *ink; // @synthesize ink=_ink;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKInk *ink; // @synthesize ink=_ink;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

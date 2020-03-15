@@ -14,9 +14,9 @@
     NSArray *_sortDescriptors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

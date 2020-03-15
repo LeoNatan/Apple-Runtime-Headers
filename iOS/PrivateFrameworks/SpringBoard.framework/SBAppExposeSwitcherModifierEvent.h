@@ -13,8 +13,8 @@
     NSString *_bundleID;
 }
 
-@property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (long long)type;
 - (id)initWithBundleID:(id)arg1;

@@ -37,6 +37,8 @@
 - (id)itemsQuery;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithMultiverseIdentifier:(id)arg1 library:(id)arg2;
 - (id)initWithItemsQuery:(id)arg1;

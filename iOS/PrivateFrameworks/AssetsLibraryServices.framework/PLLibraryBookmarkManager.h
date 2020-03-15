@@ -14,7 +14,7 @@
     NSMutableDictionary *_activeURLsByPathKey;
 }
 
-+ (id)resolveRegularBookmark:(id)arg1 error:(id *)arg2;
++ (id)_securityScopedURLWithURL:(id)arg1 sandboxExtension:(id)arg2;
 + (id)resolveSecurityScopedBookmark:(id)arg1 isStale:(_Bool *)arg2 error:(id *)arg3;
 + (id)sharedBookmarkManager;
 - (void).cxx_destruct;
@@ -34,7 +34,7 @@
 - (void)removeInvalidSSBsExcept:(id)arg1;
 - (void)removeSSBForLibraryURL:(id)arg1;
 - (id)sandboxExtensionsByPathForClient:(id)arg1 pathManager:(id)arg2;
-- (id)URLFromClientLibraryURL:(id)arg1 bookmark:(id)arg2 error:(id *)arg3;
+- (id)URLFromClientLibraryURL:(id)arg1 sandboxExtension:(id)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (id)init;
 

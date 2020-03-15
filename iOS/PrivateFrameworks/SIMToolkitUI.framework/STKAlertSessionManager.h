@@ -15,9 +15,9 @@
     STKAlertSessionEventQueue *_eventQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) STKAlertSessionEventQueue *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (void)enqueuePresentationForSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_willPresentAlertHandle:(id)arg1;
 - (id)remoteAlertDescriptorForSession:(id)arg1;

@@ -14,9 +14,9 @@
     long long _previousActionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long previousActionID; // @synthesize previousActionID=_previousActionID;
 @property(nonatomic) __weak id <MFEWSGetNewMessageActionsOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithPreviousActionID:(long long)arg1;
 

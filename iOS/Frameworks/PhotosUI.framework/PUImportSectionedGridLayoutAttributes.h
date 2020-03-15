@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIColor *_bottomStrokeColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *bottomStrokeColor; // @synthesize bottomStrokeColor=_bottomStrokeColor;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

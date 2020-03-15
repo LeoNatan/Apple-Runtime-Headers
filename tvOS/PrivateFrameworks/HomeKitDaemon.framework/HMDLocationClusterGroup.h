@@ -15,9 +15,9 @@
 }
 
 + (id)groupWithCenter:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) CLLocation *center; // @synthesize center=_center;
-- (void).cxx_destruct;
 
 @end
 

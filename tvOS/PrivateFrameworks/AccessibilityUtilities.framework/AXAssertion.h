@@ -15,9 +15,9 @@
 }
 
 + (id)assertionWithType:(id)arg1 identifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *assertionType; // @synthesize assertionType=_assertionType;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_notifyServerAssertionWasRelinquished;
 - (void)_notifyServerAssertionWasAcquired;

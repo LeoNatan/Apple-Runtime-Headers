@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSSet *_removedEntityIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *removedEntityIDs; // @synthesize removedEntityIDs=_removedEntityIDs;
 @property(copy, nonatomic) NSSet *addedEntityIDs; // @synthesize addedEntityIDs=_addedEntityIDs;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

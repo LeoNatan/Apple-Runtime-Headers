@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesInvalidatingLayout;
+- (void).cxx_destruct;
 @property CDStruct_99688279 proxyState; // @synthesize proxyState=_proxyState;
 @property double endcapCornerRadius; // @synthesize endcapCornerRadius=_endcapCornerRadius;
 @property(retain) id <NSScrubberSelectionLayout> selectionLayout; // @synthesize selectionLayout=_selectionLayout;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableDictionary *itemViewMap; // @synthesize itemViewMap=_itemViewMap;
 @property(readonly) NSView *contentView; // @synthesize contentView=_contentView;
 @property __weak NSScrubber *scrubber; // @synthesize scrubber=_scrubber;
-- (void).cxx_destruct;
 @property(copy) NSIndexSet *requiredPopulatedItemIndexes;
 - (id)populatedItemViews;
 - (long long)indexForItemView:(id)arg1;

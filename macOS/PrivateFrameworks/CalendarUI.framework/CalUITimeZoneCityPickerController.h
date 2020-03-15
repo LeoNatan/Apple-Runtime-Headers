@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSArray *topLevelObjects; // @synthesize topLevelObjects=_topLevelObjects;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *topLevelObjects; // @synthesize topLevelObjects=_topLevelObjects;
 - (void)clearDelegates;
 - (BOOL)popupOnView:(id)arg1;
 - (id)popup;

@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     id <SFNanoDomainViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SFNanoDomainViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool isSensitiveInputField; // @synthesize isSensitiveInputField=_isSensitiveInputField;
 @property(readonly, nonatomic) _Bool isSecure; // @synthesize isSecure=_isSecure;
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)_tapped;
 - (void)_setUpSecurityIndicator;
 - (_Bool)_showsSecurityIndicator;

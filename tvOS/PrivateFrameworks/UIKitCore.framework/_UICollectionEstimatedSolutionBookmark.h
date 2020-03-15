@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _solutionFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <_UICollectionLayoutAuxillaryOffsets> supplementaryOffsets; // @synthesize supplementaryOffsets=_supplementaryOffsets;
 @property(readonly, nonatomic) struct _NSRange itemRange; // @synthesize itemRange=_itemRange;
 @property(readonly, nonatomic) struct CGRect solutionFrame; // @synthesize solutionFrame=_solutionFrame;
 @property(readonly, nonatomic) _UICollectionLayoutItemSolver *solution; // @synthesize solution=_solution;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_supplementaryOffsetsForItemRange:(struct _NSRange)arg1 solution:(id)arg2 supplementaryOffsets:(id)arg3;
 - (id)initWithSolution:(id)arg1 frame:(struct CGRect)arg2 itemIndexOffset:(long long)arg3 supplementaryOffsets:(id)arg4 maxItemFrameCount:(long long)arg5;

@@ -16,11 +16,11 @@
     long long _acknowledgmentType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long acknowledgmentType; // @synthesize acknowledgmentType=_acknowledgmentType;
 @property(nonatomic) long long ackVoteCount; // @synthesize ackVoteCount=_ackVoteCount;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) CKEntity *entity; // @synthesize entity=_entity;
-- (void).cxx_destruct;
 
 @end
 

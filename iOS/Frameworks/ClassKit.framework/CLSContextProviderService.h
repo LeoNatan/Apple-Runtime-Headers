@@ -24,11 +24,11 @@
     NSString *_localizedAppName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedAppName; // @synthesize localizedAppName=_localizedAppName;
 @property(readonly, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(readonly, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
 @property(readonly, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateDescendantsOfContextPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getMainAppContextPathWithCompletion:(CDUnknownBlockType)arg1;

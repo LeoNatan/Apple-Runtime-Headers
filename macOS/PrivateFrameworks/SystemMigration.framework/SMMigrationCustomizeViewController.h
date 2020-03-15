@@ -63,6 +63,7 @@
 + (id)keyPathsForValuesAffectingDescriptiveTotalSize;
 + (id)keyPathsForValuesAffectingDescriptiveNetSpace;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL windowsUsersNeedLoginToTransfer; // @synthesize windowsUsersNeedLoginToTransfer=_windowsUsersNeedLoginToTransfer;
 @property(retain) NSAlert *reconnectAlert; // @synthesize reconnectAlert=_reconnectAlert;
 @property BOOL requestAlreadySubmitted; // @synthesize requestAlreadySubmitted=_requestAlreadySubmitted;
@@ -106,7 +107,6 @@
 @property(retain) SMSystem_Client *sourceSystem; // @synthesize sourceSystem=_sourceSystem;
 @property(retain) NSMutableArray *standardUserPasswordList; // @synthesize standardUserPasswordList;
 @property(retain) NSMutableArray *adminUserPasswordList; // @synthesize adminUserPasswordList;
-- (void).cxx_destruct;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)destinationSystem;
 - (id)customizeClientForSystem:(id)arg1;

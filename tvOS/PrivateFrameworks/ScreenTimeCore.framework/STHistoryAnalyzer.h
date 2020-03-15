@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSPersistentHistoryToken *_finalToken;
 }
 
-@property(readonly, nonatomic) NSPersistentHistoryToken *finalToken; // @synthesize finalToken=_finalToken;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSPersistentHistoryToken *finalToken; // @synthesize finalToken=_finalToken;
 - (_Bool)_isChangeInteresting:(id)arg1;
 - (id)deltasForStore:(id)arg1 inManagedObjectContext:(id)arg2 sinceToken:(id)arg3 ignoreAuthor:(id)arg4 finalToken:(id *)arg5 error:(id *)arg6;
 

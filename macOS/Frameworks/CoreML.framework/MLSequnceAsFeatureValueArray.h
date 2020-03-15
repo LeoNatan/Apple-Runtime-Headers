@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     MLSequence *_sequence;
 }
 
-@property(readonly, nonatomic) MLSequence *sequence; // @synthesize sequence=_sequence;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MLSequence *sequence; // @synthesize sequence=_sequence;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (id)initWrappingSequence:(id)arg1;

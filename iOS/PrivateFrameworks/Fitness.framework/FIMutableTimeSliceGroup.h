@@ -14,8 +14,8 @@
 }
 
 + (id)timeSliceGroupForQuantityTypes:(id)arg1 startDate:(id)arg2;
-@property(readonly, nonatomic) NSArray *slices; // @synthesize slices=_slices;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *slices; // @synthesize slices=_slices;
 @property(readonly, nonatomic) _Bool allSlicesFinalized; // @dynamic allSlicesFinalized;
 - (void)updateSlicesWithSample:(id)arg1;
 - (void)updateSlicesWithEndDate:(id)arg1;

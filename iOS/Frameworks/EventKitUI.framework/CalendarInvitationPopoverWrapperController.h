@@ -13,8 +13,8 @@
     EKEventViewController *_eventViewController;
 }
 
-@property(retain, nonatomic) EKEventViewController *eventViewController; // @synthesize eventViewController=_eventViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EKEventViewController *eventViewController; // @synthesize eventViewController=_eventViewController;
 - (id)initForEventUID:(int)arg1;
 
 @end

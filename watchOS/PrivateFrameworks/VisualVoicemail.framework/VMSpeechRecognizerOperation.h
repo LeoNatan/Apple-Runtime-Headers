@@ -13,8 +13,8 @@
     id <VMSpeechRecognizer> _speechRecognizer;
 }
 
-@property(readonly) id <VMSpeechRecognizer> speechRecognizer; // @synthesize speechRecognizer=_speechRecognizer;
 - (void).cxx_destruct;
+@property(readonly) id <VMSpeechRecognizer> speechRecognizer; // @synthesize speechRecognizer=_speechRecognizer;
 - (id)locale;
 - (id)initWithSpeechRecognizer:(id)arg1;
 - (id)initWithLocale:(id)arg1;

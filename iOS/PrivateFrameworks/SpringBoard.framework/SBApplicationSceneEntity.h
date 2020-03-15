@@ -17,10 +17,10 @@
     SBProcessSettings *_processSettings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) SBProcessSettings *processSettings; // @synthesize processSettings=_processSettings;
 @property(readonly, nonatomic) SBApplicationSceneHandle *sceneHandle; // @synthesize sceneHandle=_sceneHandle;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (Class)viewControllerClass;
 - (id)copyWithZone:(struct _NSZone *)arg1;

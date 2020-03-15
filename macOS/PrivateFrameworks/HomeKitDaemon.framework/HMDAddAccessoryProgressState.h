@@ -18,13 +18,13 @@
     NSString *_productData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *productData; // @synthesize productData=_productData;
 @property(readonly, nonatomic) unsigned long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(readonly, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *manufacturerName; // @synthesize manufacturerName=_manufacturerName;
 @property(readonly, nonatomic) NSString *accessoryName; // @synthesize accessoryName=_accessoryName;
 @property(readonly, nonatomic) NSUUID *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
-- (void).cxx_destruct;
 - (id)initWithUUID:(id)arg1 accessoryName:(id)arg2 manufacturerName:(id)arg3 category:(id)arg4 certificationStatus:(unsigned long long)arg5 productData:(id)arg6;
 
 @end

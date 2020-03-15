@@ -64,6 +64,7 @@
 + (id)defaultIconLocation;
 + (Class)defaultIconListViewClass;
 + (Class)_scrollViewClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBIconListPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) UIPanGestureRecognizer *scrollingDisabledGestureRecognizer; // @synthesize scrollingDisabledGestureRecognizer=_scrollingDisabledGestureRecognizer;
 @property(nonatomic) _Bool hasEverBeenInAWindow; // @synthesize hasEverBeenInAWindow=_hasEverBeenInAWindow;
@@ -88,7 +89,6 @@
 @property(nonatomic) double statusBarHeight; // @synthesize statusBarHeight=_statusBarHeight;
 @property(readonly, nonatomic) long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
 @property(readonly, nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_isEditing;
-- (void).cxx_destruct;
 - (void)_updateScrollingIfNeeded;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

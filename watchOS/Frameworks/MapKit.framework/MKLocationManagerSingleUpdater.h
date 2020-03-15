@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     double _maxLocationAge;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;

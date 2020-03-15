@@ -16,11 +16,11 @@
     NSDictionary *_payloadOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *payloadOptions; // @synthesize payloadOptions=_payloadOptions;
 @property(readonly, copy, nonatomic) NSString *clientBundleIdentifier; // @synthesize clientBundleIdentifier=_clientBundleIdentifier;
 @property(copy, nonatomic) NSDate *lastLaunchAttempt; // @synthesize lastLaunchAttempt=_lastLaunchAttempt;
 @property(nonatomic) long long launchCount; // @synthesize launchCount=_launchCount;
-- (void).cxx_destruct;
 - (id)initWithOwnerIdentifier:(id)arg1 clientBundleIdentifier:(id)arg2 payloadOptions:(id)arg3;
 
 @end

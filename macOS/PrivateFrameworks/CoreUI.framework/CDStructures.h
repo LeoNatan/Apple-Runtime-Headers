@@ -426,6 +426,13 @@ struct _psdGradientColor {
     double alpha;
 };
 
+struct _renditionkeyattributeindex {
+    unsigned long long keymask;
+    unsigned char keyindices[65];
+    unsigned int nkeys;
+    unsigned int keylist[29];
+};
+
 struct _renditionkeyfmt {
     unsigned int _field1;
     unsigned int _field2;

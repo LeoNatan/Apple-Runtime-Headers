@@ -22,8 +22,8 @@
     NSHashTable *_observers;
 }
 
-@property(readonly) NSHashTable *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+@property(readonly) NSHashTable *observers; // @synthesize observers=_observers;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_loadFactories;

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly) NSString *realHomeDirectory; // @synthesize realHomeDirectory=_realHomeDirectory;
 - (void).cxx_destruct;
+@property(readonly) NSString *realHomeDirectory; // @synthesize realHomeDirectory=_realHomeDirectory;
 - (id)changeRootForPath:(id)arg1 oldRoot:(id)arg2 newRoot:(id)arg3;
 - (id)convertURLToRealHome:(id)arg1;
 - (id)convertPathToRealHome:(id)arg1;

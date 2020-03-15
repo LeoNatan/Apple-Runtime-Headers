@@ -14,8 +14,8 @@
 }
 
 + (id)currentSession;
-@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) BOOL isCurrentSession;

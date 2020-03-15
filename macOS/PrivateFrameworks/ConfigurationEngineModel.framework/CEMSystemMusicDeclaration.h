@@ -15,19 +15,22 @@
     NSNumber *_payloadAllowMusicService;
     NSNumber *_payloadAllowRadioService;
     NSNumber *_payloadAllowMusicArtistActivity;
+    NSNumber *_payloadAllowMusicVideos;
 }
 
-+ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
 + (id)buildWithIdentifier:(id)arg1 withAllowMusicService:(id)arg2 withAllowRadioService:(id)arg3 withAllowMusicArtistActivity:(id)arg4;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1;
++ (id)buildWithIdentifier:(id)arg1 withAllowMusicService:(id)arg2 withAllowRadioService:(id)arg3 withAllowMusicArtistActivity:(id)arg4 withAllowMusicVideos:(id)arg5;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *payloadAllowMusicVideos; // @synthesize payloadAllowMusicVideos=_payloadAllowMusicVideos;
 @property(copy, nonatomic) NSNumber *payloadAllowMusicArtistActivity; // @synthesize payloadAllowMusicArtistActivity=_payloadAllowMusicArtistActivity;
 @property(copy, nonatomic) NSNumber *payloadAllowRadioService; // @synthesize payloadAllowRadioService=_payloadAllowRadioService;
 @property(copy, nonatomic) NSNumber *payloadAllowMusicService; // @synthesize payloadAllowMusicService=_payloadAllowMusicService;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

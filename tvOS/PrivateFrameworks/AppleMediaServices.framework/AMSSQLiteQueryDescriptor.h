@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _returnsDistinctEntities;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) AMSSQLitePredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) _Bool returnsDistinctEntities; // @synthesize returnsDistinctEntities=_returnsDistinctEntities;
 @property(copy, nonatomic) NSArray *orderingProperties; // @synthesize orderingProperties=_orderingProperties;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long limitCount; // @synthesize limitCount=_limitCount;
 @property(nonatomic) Class memoryEntityClass; // @synthesize memoryEntityClass=_memoryEntityClass;
 @property(nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
-- (void).cxx_destruct;
 - (id)_newSelectSQLWithProperties:(id)arg1 columns:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

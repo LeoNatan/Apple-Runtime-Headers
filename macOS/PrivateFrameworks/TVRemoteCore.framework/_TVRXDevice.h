@@ -21,6 +21,7 @@
     id <_TVRCDeviceImpl> _impl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_impl, setter=_setImpl:) id <_TVRCDeviceImpl> impl; // @synthesize impl=_impl;
 @property(copy, nonatomic) NSSet *supportedButtons; // @synthesize supportedButtons=_supportedButtons;
 @property(readonly, nonatomic) long long connectionState; // @synthesize connectionState=_connectionState;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSDictionary *alternateIdentifiers; // @synthesize alternateIdentifiers=_alternateIdentifiers;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <_TVRXDeviceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setIdentifier:(id)arg1 alternateIdentifiers:(id)arg2 name:(id)arg3 model:(id)arg4 supportedButtons:(id)arg5;
 - (void)sendEvent:(id)arg1 options:(id)arg2 response:(CDUnknownBlockType)arg3;
 - (id)description;

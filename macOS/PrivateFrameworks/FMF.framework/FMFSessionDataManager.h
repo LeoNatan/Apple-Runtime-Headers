@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *locationsCache; // @synthesize locationsCache=_locationsCache;
 @property(retain, nonatomic) NSSet *fences; // @synthesize fences=_fences;
 @property(retain, nonatomic) NSSet *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) NSSet *following; // @synthesize following=_following;
 @property(retain, nonatomic) NSSet *followers; // @synthesize followers=_followers;
-- (void).cxx_destruct;
 - (id)favoritesOrdered;
 - (void)abPreferencesDidChange;
 - (void)abDidChange;

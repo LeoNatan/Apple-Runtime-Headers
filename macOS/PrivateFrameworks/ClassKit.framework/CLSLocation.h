@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL isEditable; // @synthesize isEditable=_isEditable;
 @property(nonatomic) long long sourceType; // @synthesize sourceType=_sourceType;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(copy, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly, nonatomic) NSString *displayName;
 - (void)encodeWithCoder:(id)arg1;

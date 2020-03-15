@@ -14,9 +14,9 @@
     SBLShareKitSession *_session;
 }
 
+- (void).cxx_destruct;
 @property __weak SBLShareKitSession *session; // @synthesize session=_session;
 @property(retain) NSArray *providers; // @synthesize providers=_providers;
-- (void).cxx_destruct;
 - (long long)samplesPerUnit;
 - (id)initWithProviders:(id)arg1 session:(id)arg2;
 

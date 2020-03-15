@@ -24,8 +24,8 @@
     NSString *_name;
 }
 
-@property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (id)diagnosticDescription;
 - (void)_commitTransactionStorage:(id)arg1;
 - (id)_transactionStorageWithDatabase:(id)arg1 createIfNecessary:(_Bool)arg2;

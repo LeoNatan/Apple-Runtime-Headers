@@ -17,10 +17,10 @@
     NSMutableArray *_segments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool finishedSuccessfully; // @synthesize finishedSuccessfully=_finishedSuccessfully;
 @property(retain, nonatomic) NSMutableArray *segments; // @synthesize segments=_segments;
 @property(retain, nonatomic) RCWaveformGenerator *generator; // @synthesize generator=_generator;
-- (void).cxx_destruct;
 - (_Bool)waitUntilFinished;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;

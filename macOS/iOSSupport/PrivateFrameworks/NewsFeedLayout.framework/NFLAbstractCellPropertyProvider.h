@@ -22,13 +22,13 @@
 + (id)plistProvider;
 + (id)publisherTitleFontSmall;
 + (id)publisherTitleFontLarge;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFUnfairLock *propertiesLock; // @synthesize propertiesLock=_propertiesLock;
 @property(nonatomic) unsigned long long propertiesByColumnSpanSize; // @synthesize propertiesByColumnSpanSize=_propertiesByColumnSpanSize;
 @property(retain, nonatomic) NSString *plistName; // @synthesize plistName=_plistName;
 @property(nonatomic) Class propertyClass; // @synthesize propertyClass=_propertyClass;
 @property(readonly, nonatomic) NFLFontCache *fontCache; // @synthesize fontCache=_fontCache;
 @property(readonly, nonatomic) double scaleValue; // @synthesize scaleValue=_scaleValue;
-- (void).cxx_destruct;
 - (void)_loadIfNeeded;
 - (id)propertiesForColumnSpan:(long long)arg1;
 - (void)dealloc;

@@ -18,10 +18,10 @@
     long long _offset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSObject<OS_dispatch_data> *leftoverData; // @synthesize leftoverData=_leftoverData;
 @property(retain, nonatomic) id <BUReadChannel> readChannel; // @synthesize readChannel=_readChannel;
-- (void).cxx_destruct;
 - (id)closeLocalStream;
 - (void)enableSystemCaching;
 - (void)disableSystemCaching;

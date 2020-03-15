@@ -15,10 +15,10 @@
     CADChangeTrackingClientId *_CADChangeTrackingClientId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CADChangeTrackingClientId *CADChangeTrackingClientId; // @synthesize CADChangeTrackingClientId=_CADChangeTrackingClientId;
 @property(readonly, copy, nonatomic) NSString *customClientId; // @synthesize customClientId=_customClientId;
 @property(readonly, copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
-- (void).cxx_destruct;
 - (id)initWithCustomClientId:(id)arg1 suffix:(id)arg2;
 - (id)init;
 - (id)initWithSuffix:(id)arg1;

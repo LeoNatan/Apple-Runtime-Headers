@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NAFuture *future; // @synthesize future=_future;
 @property(readonly, copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
-- (void).cxx_destruct;
 - (void)main;
 - (void)cancelWithError:(id)arg1;
 - (id)initWithCloudZone:(id)arg1 block:(CDUnknownBlockType)arg2;

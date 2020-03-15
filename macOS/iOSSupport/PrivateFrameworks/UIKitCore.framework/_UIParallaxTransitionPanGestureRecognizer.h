@@ -6,7 +6,6 @@
 
 #import <UIKitCore/UIScreenEdgePanGestureRecognizer.h>
 
-__attribute__((visibility("hidden")))
 @interface _UIParallaxTransitionPanGestureRecognizer : UIScreenEdgePanGestureRecognizer
 {
 }

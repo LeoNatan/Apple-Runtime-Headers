@@ -20,6 +20,7 @@
     HFRoomBuilder *_roomBuilder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFRoomBuilder *roomBuilder; // @synthesize roomBuilder=_roomBuilder;
 @property(retain, nonatomic) HFZoneModule *zoneModule; // @synthesize zoneModule=_zoneModule;
 @property(retain, nonatomic) HFStaticItem *removeItem; // @synthesize removeItem=_removeItem;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) HFStaticItem *chooseWallpaperItem; // @synthesize chooseWallpaperItem=_chooseWallpaperItem;
 @property(retain, nonatomic) HFStaticItem *cameraItem; // @synthesize cameraItem=_cameraItem;
 @property(retain, nonatomic) HFStaticItem *nameItem; // @synthesize nameItem=_nameItem;
-- (void).cxx_destruct;
 - (_Bool)_canDeleteRoom;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;

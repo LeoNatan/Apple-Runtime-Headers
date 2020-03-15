@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_extractedCustodianName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *extractedCustodianName; // @synthesize extractedCustodianName=_extractedCustodianName;
 @property(readonly, nonatomic) NSString *extractedAuthorName; // @synthesize extractedAuthorName=_extractedAuthorName;
 @property(readonly, nonatomic) NSString *extractedPatient; // @synthesize extractedPatient=_extractedPatient;
 @property(readonly, nonatomic) NSString *extractedTitle; // @synthesize extractedTitle=_extractedTitle;
 @property(readonly, nonatomic) NSDate *extractedDate; // @synthesize extractedDate=_extractedDate;
-- (void).cxx_destruct;
 - (id)_parseCDADate:(id)arg1;
 - (id)_personNameFrom:(id)arg1 familyTagRule:(id)arg2 givenTagRule:(id)arg3 nilOnFail:(_Bool)arg4;
 - (id)_firstFrom:(id)arg1 tagRule:(id)arg2 nilOnFail:(_Bool)arg3;

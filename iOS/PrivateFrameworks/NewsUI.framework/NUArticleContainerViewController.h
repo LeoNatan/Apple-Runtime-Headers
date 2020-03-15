@@ -31,6 +31,7 @@
     id <NURouter> _router;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NURouter> router; // @synthesize router=_router;
 @property(readonly, nonatomic) NUArticleBarButtonItemManager *barButtonItemManager; // @synthesize barButtonItemManager=_barButtonItemManager;
 @property(retain, nonatomic) id <NUPaging> paging; // @synthesize paging=_paging;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NUArticleNavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic, getter=isLinkPreviewing) _Bool linkPreviewing; // @synthesize linkPreviewing=_linkPreviewing;
 @property(nonatomic) __weak id <NUArticleContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)childViewControllerForStatusBarHidden;
 - (id)viewControllerPageableForViewController:(id)arg1;
 - (void)styleNavigationForPage:(id)arg1;

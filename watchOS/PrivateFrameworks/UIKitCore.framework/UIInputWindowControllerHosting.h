@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     int _extraHostsRequired;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresConstraintUpdate; // @synthesize requiresConstraintUpdate=_requiresConstraintUpdate;
 @property(nonatomic) int extraHostsRequired; // @synthesize extraHostsRequired=_extraHostsRequired;
 @property(nonatomic) __weak UIInputWindowController *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (unsigned int)indexOfHost:(id)arg1;
 - (_Bool)host:(id)arg1 isForPurpose:(unsigned int)arg2;
 - (id)expectedPlacementForHost:(id)arg1;

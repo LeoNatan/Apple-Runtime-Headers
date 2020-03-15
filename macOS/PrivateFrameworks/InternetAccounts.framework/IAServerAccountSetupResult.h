@@ -14,9 +14,9 @@
     NSError *_setupError;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *setupError; // @synthesize setupError=_setupError;
 @property BOOL isExistingAccount; // @synthesize isExistingAccount=_isExistingAccount;
-- (void).cxx_destruct;
 
 @end
 

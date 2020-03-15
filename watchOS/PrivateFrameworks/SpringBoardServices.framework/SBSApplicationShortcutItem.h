@@ -24,6 +24,7 @@
 }
 
 + (id)_staticApplicationShortcutItemsFromInfoPlistEntry:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *userInfoData; // @synthesize userInfoData=_userInfoData;
 @property(copy, nonatomic) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifierToLaunch; // @synthesize bundleIdentifierToLaunch=_bundleIdentifierToLaunch;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_localizeWithHandler:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) NSDictionary *userInfo;
 - (id)copyWithZone:(struct _NSZone *)arg1;

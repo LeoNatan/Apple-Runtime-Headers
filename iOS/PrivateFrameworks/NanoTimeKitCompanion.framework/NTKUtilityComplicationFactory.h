@@ -44,6 +44,7 @@
 
 + (void)curvedCircleRadius:(double *)arg1 centerAngle:(double *)arg2 maxAngularWidth:(double *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(long long)arg6 forDevice:(id)arg7;
 + (unsigned long long)placementForSlot:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long bottomCenterLayout; // @synthesize bottomCenterLayout=_bottomCenterLayout;
 @property(nonatomic) double dateVerticalCenterOffset; // @synthesize dateVerticalCenterOffset=_dateVerticalCenterOffset;
 @property(nonatomic) double dateHorizontalCenterOffset; // @synthesize dateHorizontalCenterOffset=_dateHorizontalCenterOffset;
@@ -71,7 +72,6 @@
 @property(nonatomic) _Bool accommodatesTwoTopComplications; // @synthesize accommodatesTwoTopComplications=_accommodatesTwoTopComplications;
 @property(nonatomic) __weak id <NTKUtilityComplicationFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (id)newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)loadLayoutRules;

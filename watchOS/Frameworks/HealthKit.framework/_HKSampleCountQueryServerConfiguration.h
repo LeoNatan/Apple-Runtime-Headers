@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSSet *sampleQueryDescriptions; // @synthesize sampleQueryDescriptions=_sampleQueryDescriptions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *sampleQueryDescriptions; // @synthesize sampleQueryDescriptions=_sampleQueryDescriptions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

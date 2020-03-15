@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSObject *_inspectedObject;
 }
 
-@property(nonatomic) __weak NSObject *inspectedObject; // @synthesize inspectedObject=_inspectedObject;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject *inspectedObject; // @synthesize inspectedObject=_inspectedObject;
 - (void)prepareForDisplayAsTopLevelDebuggingViewController;
 - (id)_ivarsForInspectedObjectInClass:(Class)arg1;
 - (id)_classHierarchyForInspectedObject;

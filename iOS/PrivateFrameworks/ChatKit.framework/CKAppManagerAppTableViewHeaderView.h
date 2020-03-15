@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifier;
-@property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;

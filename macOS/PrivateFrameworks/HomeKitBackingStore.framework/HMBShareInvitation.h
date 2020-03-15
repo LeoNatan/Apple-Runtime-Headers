@@ -22,12 +22,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKDeviceToDeviceShareInvitationToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
 @property(readonly, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(readonly, nonatomic) HMBCloudZoneID *cloudZoneID; // @synthesize cloudZoneID=_cloudZoneID;
 @property(readonly, nonatomic) HMBShareInvitationContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

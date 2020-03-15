@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_providers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *providers; // @synthesize providers=_providers;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(readonly, nonatomic) PXExtendedTraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 - (id)gadgetProviders;
 - (id)initWithTraitCollection:(id)arg1 sessionInfo:(id)arg2;
 

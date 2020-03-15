@@ -30,6 +30,7 @@
 }
 
 + (struct CGGradient *)LineBackgroundGradient;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *xLabelViews; // @synthesize xLabelViews=_xLabelViews;
 @property(retain) NSMutableArray *axisViews; // @synthesize axisViews=_axisViews;
 @property(retain) StockChartDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
@@ -45,7 +46,6 @@
 @property __weak NSView *xAxisKeyline; // @synthesize xAxisKeyline=_xAxisKeyline;
 @property __weak NSView *chartBottomKeyline; // @synthesize chartBottomKeyline=_chartBottomKeyline;
 @property __weak NSView *chartTopKeyline; // @synthesize chartTopKeyline=_chartTopKeyline;
-- (void).cxx_destruct;
 - (struct CGRect)lineGraphFrame;
 - (void)layoutPriceLabels;
 - (void)layoutAxesAndXLabels;

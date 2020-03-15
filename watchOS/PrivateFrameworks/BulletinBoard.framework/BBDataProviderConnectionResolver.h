@@ -23,8 +23,8 @@
 
 + (id)xpcInterface;
 + (id)resolverForConnection:(id)arg1;
-@property(nonatomic) __weak BBDataProviderConnection *dataProviderConnection; // @synthesize dataProviderConnection=_dataProviderConnection;
 - (void).cxx_destruct;
+@property(nonatomic) __weak BBDataProviderConnection *dataProviderConnection; // @synthesize dataProviderConnection=_dataProviderConnection;
 - (void)ping:(CDUnknownBlockType)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_queue_registerWithServer:(CDUnknownBlockType)arg1;

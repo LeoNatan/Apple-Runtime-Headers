@@ -19,13 +19,13 @@
 }
 
 + (id)combinedScopeFromScopes:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NSString *authenticationMethod; // @synthesize authenticationMethod=_authenticationMethod;
 @property(readonly, copy, nonatomic) NSString *clientSecret; // @synthesize clientSecret=_clientSecret;
 @property(readonly, copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(readonly, copy, nonatomic) NSURL *authorizationURL; // @synthesize authorizationURL=_authorizationURL;
 @property(readonly, copy, nonatomic) NSURL *tokenURL; // @synthesize tokenURL=_tokenURL;
-- (void).cxx_destruct;
 - (id)authorizationSessionWithAuthorizationURL:(id)arg1 responseType:(id)arg2 scopes:(id)arg3 redirectURI:(id)arg4 specifyRedirectURI:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)authorizationSessionWithResponseType:(id)arg1 scopes:(id)arg2 redirectURI:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)sendRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

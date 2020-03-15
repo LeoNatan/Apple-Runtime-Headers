@@ -26,6 +26,7 @@
 + (struct CGSize)cellSizeForSectionItem:(id)arg1 inSection:(id)arg2 fittingWidth:(double)arg3 environment:(id)arg4;
 + (double)edgeLengthFittingWidth:(double)arg1 environment:(id)arg2;
 + (_Bool)supportsSelection;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTTaskScheduler> renderingScheduler; // @synthesize renderingScheduler=_renderingScheduler;
 @property(readonly, nonatomic) id <AVTIndexBasedTaskScheduler> thumbnailScheduler; // @synthesize thumbnailScheduler=_thumbnailScheduler;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) AVTAvatarAttributeEditorSection *section; // @synthesize section=_section;
 @property(nonatomic) __weak id <AVTAvatarAttributeEditorControllerSubSelectionDelegate> delegate; // @synthesize delegate;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
-- (void).cxx_destruct;
 - (_Bool)evaluateDisplayCondition:(id)arg1;
 - (void)didSelectItemAtIndex:(long long)arg1 cell:(id)arg2;
 - (void)didUnhighlightItemAtIndex:(long long)arg1 cell:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

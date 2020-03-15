@@ -24,6 +24,7 @@
     NSObject<OS_dispatch_source> *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool running; // @synthesize running=_running;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) CDUnknownBlockType timeoutCallback; // @synthesize timeoutCallback=_timeoutCallback;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)scheduleInDispatchQueue:(id)arg1;
 - (void)scheduleInOperationQueue:(id)arg1;

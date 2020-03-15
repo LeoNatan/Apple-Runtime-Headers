@@ -15,8 +15,8 @@
 
 + (Class)perWorkflowStateClass;
 + (BOOL)isSystemResource;
-@property(copy, nonatomic) NSArray *requestedURLs; // @synthesize requestedURLs=_requestedURLs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *requestedURLs; // @synthesize requestedURLs=_requestedURLs;
 - (id)localizedWorkflowLevelDeniedStatusMessage;
 - (id)localizedWorkflowLevelNotDeterminedStatusMessage;
 - (id)localizedWorkflowLevelMessageTemplate;

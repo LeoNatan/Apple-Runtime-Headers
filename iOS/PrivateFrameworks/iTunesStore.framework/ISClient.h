@@ -20,8 +20,8 @@
 }
 
 + (id)currentClient;
-@property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 - (id)_appleClientVersions;
 - (void)_softwareMapInvalidatedNotification:(id)arg1;
 - (id)localStoreFrontID;

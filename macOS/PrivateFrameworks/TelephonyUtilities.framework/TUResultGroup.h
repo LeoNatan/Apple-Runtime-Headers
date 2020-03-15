@@ -16,9 +16,9 @@
     NSMutableArray *_resultsCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *resultsCache; // @synthesize resultsCache=_resultsCache;
 @property(retain, nonatomic) TUGroupTitle *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long groupType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)removeSearchItem:(id)arg1;

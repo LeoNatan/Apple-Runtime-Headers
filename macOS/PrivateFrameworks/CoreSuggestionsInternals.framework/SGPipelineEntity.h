@@ -46,6 +46,7 @@
 + (id)phoneNumber:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5 contextRangeOfInterest:(struct _NSRange)arg6 extractionInfo:(id)arg7;
 + (id)address:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5 contextRangeOfInterest:(struct _NSRange)arg6 extractionInfo:(id)arg7;
 + (id)fromCloudKitRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *authorMatchingContactsKeys; // @synthesize authorMatchingContactsKeys=_authorMatchingContactsKeys;
 @property(retain, nonatomic) NSArray *authorMatchingContacts; // @synthesize authorMatchingContacts=_authorMatchingContacts;
 @property(retain) NSArray *invalidatedMessageIdentifiers; // @synthesize invalidatedMessageIdentifiers=_invalidatedMessageIdentifiers;
@@ -69,7 +70,6 @@
 @property(retain, nonatomic) NSIndexSet *plainTextQuotedRegions; // @synthesize plainTextQuotedRegions=_plainTextQuotedRegions;
 @property(retain, nonatomic) NSArray *externalEnrichments; // @synthesize externalEnrichments=_externalEnrichments;
 @property(retain, nonatomic) NSArray *enrichments; // @synthesize enrichments=_enrichments;
-- (void).cxx_destruct;
 - (void)runWithDissectorLock:(CDUnknownBlockType)arg1;
 - (void)releaseDissectorLock;
 - (void)acquireDissectorLock;

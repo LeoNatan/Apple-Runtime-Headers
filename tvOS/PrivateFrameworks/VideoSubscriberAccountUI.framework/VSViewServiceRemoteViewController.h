@@ -17,10 +17,11 @@ __attribute__((visibility("hidden")))
     id <VSViewServiceRemoteViewControllerDelegate> _delegate;
 }
 
++ (_Bool)shouldPropagateAppearanceCustomizations;
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(nonatomic) __weak id <VSViewServiceRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <VSViewServiceRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_didChooseProviderWithIdentifier:(id)arg1 vetoHandler:(CDUnknownBlockType)arg2;
 - (void)_didCancelRequest:(id)arg1;
 - (void)_didChooseAdditionalProvidersForRequest:(id)arg1;

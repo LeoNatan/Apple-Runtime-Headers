@@ -31,6 +31,7 @@
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5 instantMessageAddresses:(id)arg6 socialProfiles:(id)arg7 birthday:(id)arg8 photoPath:(id)arg9;
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5 instantMessageAddresses:(id)arg6 socialProfiles:(id)arg7;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int updatedFields; // @synthesize updatedFields=_updatedFields;
 @property(nonatomic) unsigned long long significanceOrigin; // @synthesize significanceOrigin=_significanceOrigin;
 @property(nonatomic) unsigned long long significance; // @synthesize significance=_significance;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(copy, nonatomic) SGName *name; // @synthesize name=_name;
 @property(readonly, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
-- (void).cxx_destruct;
 - (_Bool)hasNonTrivialInfo;
 - (id)cnContact;
 - (id)detailForRecordId:(id)arg1;

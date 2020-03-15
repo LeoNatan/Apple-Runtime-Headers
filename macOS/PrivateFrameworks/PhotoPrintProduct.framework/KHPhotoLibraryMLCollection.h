@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_semaphore> *_mediaObjectsHydrationSema;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *mediaObjectsHydrationSema; // @synthesize mediaObjectsHydrationSema=_mediaObjectsHydrationSema;
 @property(nonatomic) __weak KHPhotoLibraryMLSource *source; // @synthesize source=_source;
 @property BOOL isLoading; // @synthesize isLoading=_isLoading;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSMutableDictionary *photos; // @synthesize photos=_photos;
 @property(retain, nonatomic) NSMutableArray *arrangedPhotos; // @synthesize arrangedPhotos=_arrangedPhotos;
 @property(readonly, nonatomic) MLMediaGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (void)_hydrate;
 - (id)photoWithURL:(id)arg1;
 - (id)allPhotos;

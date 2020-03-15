@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void)_serviceStart;
 - (void)_completedWithError:(id)arg1;
 - (void)invalidate;

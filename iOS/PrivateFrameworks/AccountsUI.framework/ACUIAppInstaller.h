@@ -23,9 +23,9 @@
 }
 
 + (id)currentStoreFront;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ACUIAppInstallerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *publisherURL; // @synthesize publisherURL=_publisherURL;
-- (void).cxx_destruct;
 - (void)checkAvailabilityInStore:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool isAvailableInStore;
 - (void)_performAvailabilityCheck:(CDUnknownBlockType)arg1;

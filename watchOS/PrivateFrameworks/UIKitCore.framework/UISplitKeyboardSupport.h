@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)bounceAnimationDidFinish;
 - (void)cancelBounceAnimation;
 - (void)translateDetected:(id)arg1;
+- (void)cancelGestureRecognizers;
 - (_Bool)completedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (_Bool)startedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (void)translateToPlacement:(id)arg1 animated:(_Bool)arg2;

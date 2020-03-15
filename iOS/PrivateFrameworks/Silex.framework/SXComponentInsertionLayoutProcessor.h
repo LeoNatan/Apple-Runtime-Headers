@@ -17,9 +17,9 @@
     SXLayoutOptions *_layoutOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) id <SXComponentInsertionManager> componentInsertionManager; // @synthesize componentInsertionManager=_componentInsertionManager;
-- (void).cxx_destruct;
 - (void)processLayoutTask:(id)arg1 layoutBlueprint:(id)arg2 DOMObjectProvider:(id)arg3;
 - (id)initWithComponentInsertionManager:(id)arg1;
 

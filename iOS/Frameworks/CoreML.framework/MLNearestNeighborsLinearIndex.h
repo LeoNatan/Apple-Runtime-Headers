@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) unsigned long long numDimensions; // @synthesize numDimensions=_numDimensions;
-@property(nonatomic) unsigned long long numDataPoints; // @synthesize numDataPoints=_numDataPoints;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long numDimensions; // @synthesize numDimensions=_numDimensions;
+@property(nonatomic) unsigned long long numDataPoints; // @synthesize numDataPoints=_numDataPoints;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)dataPointCount;

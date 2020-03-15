@@ -41,10 +41,6 @@ struct MPCModelStorePlaybackItemsRequestAccumulatorResult {
     char _field2;
 };
 
-struct NSMapTable {
-    Class _field1;
-};
-
 struct _MPCAudioSpectrumAnalyzerBandInternal {
     struct MPCAudioSpectrumAnalyzerBand _field1;
     float _field2;

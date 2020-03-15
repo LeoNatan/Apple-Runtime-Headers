@@ -15,9 +15,9 @@
 }
 
 + (id)fingerprintWithMaster:(id)arg1 adjusted:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *adjusted; // @synthesize adjusted=_adjusted;
 @property(readonly) NSString *master; // @synthesize master=_master;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToFingerprint:(id)arg1;
 - (id)initWithMaster:(id)arg1 adjusted:(id)arg2;

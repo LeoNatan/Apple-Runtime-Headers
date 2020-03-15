@@ -19,8 +19,8 @@
 }
 
 + (id)sharedScheduler;
-@property(nonatomic, setter=_setActive:) _Bool _isActive; // @synthesize _isActive=__isActive;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setActive:) _Bool _isActive; // @synthesize _isActive=__isActive;
 - (void)scheduleTaskAfterCATransactionCommits:(CDUnknownBlockType)arg1;
 - (void)_updateIsActive;
 - (void)_runLoopWillStartWaiting;

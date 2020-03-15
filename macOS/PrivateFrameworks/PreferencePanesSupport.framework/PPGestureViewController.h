@@ -30,10 +30,10 @@
     CDUnknownBlockType mUserDidSelectGestureBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) PPGestureView *gestureTableView; // @synthesize gestureTableView=mGestureTableView;
 @property(readonly) NSArray *gestureRowsArray; // @synthesize gestureRowsArray=mGesturesArray;
 @property BOOL useNewUI; // @synthesize useNewUI=mUseNewUI;
-- (void).cxx_destruct;
 - (void)setUserDidSelectGestureBlock:(CDUnknownBlockType)arg1;
 - (void)setPlaybackCompleteBlock:(CDUnknownBlockType)arg1;
 - (void)setAVAsset:(id)arg1;

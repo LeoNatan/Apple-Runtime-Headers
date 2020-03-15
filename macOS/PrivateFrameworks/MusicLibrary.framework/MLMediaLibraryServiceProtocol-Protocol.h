@@ -11,8 +11,6 @@
 @protocol MLMediaLibraryServiceProtocol <NSObject>
 - (void)getMediaLibraryResourcesServiceListenerEndpointWithCompletion:(void (^)(NSXPCListenerEndpoint *, NSError *))arg1;
 - (void)performMaintenanceTasksForDatabaseAtPath:(NSString *)arg1 withCompletionHandler:(void (^)(BOOL, NSError *))arg2;
-- (void)performRestoreOfLatestBackupForDatabaseAtPath:(NSString *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
-- (void)performBackupOfDatabaseAtPath:(NSString *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
 - (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(NSArray *)arg1 bundleID:(NSString *)arg2 withCompletion:(void (^)(BOOL, NSError *))arg3;
 - (void)updateSpotlightIndexForBundleID:(NSString *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
 - (void)getLanguageResourcesWithCompletion:(void (^)(ML3LanguageResources *, NSError *))arg1;

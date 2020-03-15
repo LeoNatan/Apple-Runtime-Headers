@@ -15,8 +15,8 @@
     NRPBPropertyValue *_value;
 }
 
-@property(retain, nonatomic) NRPBPropertyValue *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NRPBPropertyValue *value; // @synthesize value=_value;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

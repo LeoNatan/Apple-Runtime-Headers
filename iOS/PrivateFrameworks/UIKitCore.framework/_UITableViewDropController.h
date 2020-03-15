@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSMapTable *_dragItemDropAnimations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *dragItemDropAnimations; // @synthesize dragItemDropAnimations=_dragItemDropAnimations;
 @property(nonatomic) long long ignoringDragsCount; // @synthesize ignoringDragsCount=_ignoringDragsCount;
 @property(retain, nonatomic) id <UIDropSession> dropSession; // @synthesize dropSession=_dropSession;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UITableView<_UITableViewDropControllerDelegate> *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(nonatomic) _Bool canOnlyHandleReordering; // @synthesize canOnlyHandleReordering=_canOnlyHandleReordering;
-- (void).cxx_destruct;
 - (_Bool)commitPlaceholderInsertionWithContext:(id)arg1 dataSourceUpdates:(CDUnknownBlockType)arg2;
 - (_Bool)deletePlaceholder:(id)arg1;
 - (void)insertPlaceholderAtIndexPath:(id)arg1 withContext:(id)arg2 previewParametersProvider:(CDUnknownBlockType)arg3;

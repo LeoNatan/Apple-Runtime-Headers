@@ -15,9 +15,9 @@
     NSMutableSet *_children;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *waitInfoString; // @synthesize waitInfoString=_waitInfoString;
 @property unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) BOOL isLeafFrame;

@@ -18,11 +18,11 @@
 
 + (id)_stringRepresentationFromArray:(id)arg1;
 + (id)_arrayFromStringRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *screenwriters; // @synthesize screenwriters=_screenwriters;
 @property(copy, nonatomic) NSOrderedSet *producers; // @synthesize producers=_producers;
 @property(copy, nonatomic) NSOrderedSet *directors; // @synthesize directors=_directors;
 @property(copy, nonatomic) NSOrderedSet *actors; // @synthesize actors=_actors;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

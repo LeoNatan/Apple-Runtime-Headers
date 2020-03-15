@@ -15,8 +15,8 @@
 }
 
 + (id)sharedMonitor;
-@property(retain) NSDictionary *cdDict; // @synthesize cdDict=_cdDict;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *cdDict; // @synthesize cdDict=_cdDict;
 - (void)refreshPurgeableSpace;
 - (id)cacheDeleteDict;
 - (void)stopMonitor;

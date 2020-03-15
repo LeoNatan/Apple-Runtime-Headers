@@ -21,12 +21,12 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UITextView *descriptionView; // @synthesize descriptionView=_descriptionView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) double contentBottomMargin; // @synthesize contentBottomMargin=_contentBottomMargin;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(BOOL)arg1;

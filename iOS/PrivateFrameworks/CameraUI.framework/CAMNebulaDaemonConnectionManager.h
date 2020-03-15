@@ -29,6 +29,7 @@
 
 + (id)_clientProtocolInterface;
 + (id)_daemonProtocolInterface;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *_registeredProtocols; // @synthesize _registeredProtocols=__registeredProtocols;
 @property(readonly, nonatomic) NSMutableArray *_registeredTargets; // @synthesize _registeredTargets=__registeredTargets;
 @property(readonly, nonatomic) NSMutableDictionary *_tasksPerIdentifier; // @synthesize _tasksPerIdentifier=__tasksPerIdentifier;
@@ -39,7 +40,6 @@
 @property(readonly, copy, nonatomic) Protocol *allowedProtocol; // @synthesize allowedProtocol=_allowedProtocol;
 @property(readonly, copy, nonatomic) NSString *clientAccess; // @synthesize clientAccess=_clientAccess;
 @property(nonatomic) __weak id <CAMNebulaDaemonConnectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)nebulaDaemonDidCompleteLocalVideoPersistenceWithResult:(id)arg1;
 - (void)forceStopTimelapseCaptureWithReasons:(long long)arg1;
 - (void)_getProxyForExecutingBlock:(CDUnknownBlockType)arg1;

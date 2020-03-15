@@ -17,8 +17,8 @@
     id <PLForegroundMonitorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PLForegroundMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PLForegroundMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleApplicationStateMonitorNotificationWithUserInfo:(id)arg1;
 - (void)_locked_applicationDidMoveToBackground:(id)arg1;
 - (void)_locked_applicationDidMoveToForeground:(id)arg1;

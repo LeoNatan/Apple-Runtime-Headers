@@ -14,9 +14,10 @@
     NSData *_encryptionSPKI;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) NSData *encryptionSPKI; // @synthesize encryptionSPKI=_encryptionSPKI;
 @property(readonly, retain) NSData *signingSPKI; // @synthesize signingSPKI=_signingSPKI;
-- (void).cxx_destruct;
+- (id)initWithStableInfo:(id)arg1;
 - (id)initWithSigningSPKI:(id)arg1 encryptionSPKI:(id)arg2;
 
 @end

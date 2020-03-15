@@ -13,6 +13,7 @@
 - (void)testContinuityKeyboardBegin:(_Bool)arg1;
 - (void)showDevicePickerWithInfo:(NSDictionary *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setupDevice:(SFDevice *)arg1 homeIdentifier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)setAudioRoutingScore:(int)arg1 completion:(void (^)(NSError *))arg2;
 - (void)retriggerProximitySetup:(void (^)(NSError *))arg1;
 - (void)retriggerProximityPairing:(void (^)(NSError *))arg1;
 - (void)repairDevice:(SFDevice *)arg1 flags:(unsigned int)arg2 completion:(void (^)(NSError *))arg3;

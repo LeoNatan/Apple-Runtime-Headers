@@ -36,9 +36,9 @@
 }
 
 + (double)distanceFromBoundingLeadingEdgeToIconTrailingEdge;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *headerItems; // @synthesize headerItems=_headerItems;
 @property(nonatomic) double textAlpha; // @synthesize textAlpha=_textAlpha;
-- (void).cxx_destruct;
 - (void)_updateTitleAlpha;
 - (id)_titleLabelFont;
 - (id)_subtitleLabelFont;

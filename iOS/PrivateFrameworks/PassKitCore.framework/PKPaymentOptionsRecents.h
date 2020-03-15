@@ -20,9 +20,9 @@
 
 + (id)_coreRecentsKindForPreference:(id)arg1;
 + (id)defaultInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CRRecentContactsLibrary *recentContactsLibrary; // @synthesize recentContactsLibrary=_recentContactsLibrary;
 @property(nonatomic, getter=isMeCardCachingEnabled) _Bool meCardCachingEnabled; // @synthesize meCardCachingEnabled=_meCardCachingEnabled;
-- (void).cxx_destruct;
 - (id)_contactsFromKeychainForPreference:(id)arg1;
 - (void)_deleteRecentContactsFromKeychainForContactKey:(id)arg1;
 - (void)_deleteRecentContactsFromKeychainForPreference:(id)arg1;

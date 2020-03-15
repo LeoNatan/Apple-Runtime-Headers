@@ -15,9 +15,9 @@
 }
 
 + (id)fieldWithName:(id)arg1 isEncrypted:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithFieldName:(id)arg1 isEncrypted:(BOOL)arg2;
 - (id)init;
 

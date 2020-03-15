@@ -33,11 +33,12 @@
 + (_Bool)_deleteSnapshotAtPath:(id)arg1 error:(id *)arg2;
 + (_Bool)updateSignaturesForFilesInItem:(id)arg1 fromCKPackage:(id)arg2 error:(id *)arg3;
 + (long long)aggregatePackageSizeForPackageID:(unsigned int)arg1 session:(id)arg2;
-+ (struct PQLResultSet *)packageItemsForItem:(id)arg1 order:(unsigned long long)arg2;
-+ (struct PQLResultSet *)packageItemsForDocumentID:(unsigned int)arg1 order:(unsigned long long)arg2 session:(id)arg3;
++ (id)packageItemsForItem:(id)arg1 order:(unsigned long long)arg2;
++ (id)packageItemsForDocumentID:(unsigned int)arg1 order:(unsigned long long)arg2 session:(id)arg3;
 + (long long)largestPackageItemSizeInDocumentID:(unsigned int)arg1 session:(id)arg2;
 + (id)packageItemForRelpath:(id)arg1;
 + (id)packageItemWithDocumentID:(unsigned int)arg1 relativePath:(id)arg2 session:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *xattrs; // @synthesize xattrs=_xattrs;
 @property(readonly, nonatomic) NSData *quarantineInfo; // @synthesize quarantineInfo=_quarantineInfo;
 @property(readonly, nonatomic) long long size; // @synthesize size=_size;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) unsigned long long packageDocumentID; // @synthesize packageDocumentID=_packageID;
 @property(readonly, nonatomic) long long assetRank; // @synthesize assetRank=_assetRank;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)setDirty:(_Bool)arg1 session:(id)arg2;
 - (_Bool)saveToDBWithSession:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 session:(id)arg2 error:(id *)arg3;

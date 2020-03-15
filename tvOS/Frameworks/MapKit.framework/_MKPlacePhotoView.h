@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     UIImage *_thumbnail;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoadedFullPhoto; // @synthesize hasLoadedFullPhoto=_hasLoadedFullPhoto;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)toggleBackground;

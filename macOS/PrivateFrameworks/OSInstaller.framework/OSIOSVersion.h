@@ -17,12 +17,12 @@
     NSString *_buildNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(retain) NSString *versionString; // @synthesize versionString=_versionString;
 @property long long versionPatch; // @synthesize versionPatch=_versionPatch;
 @property long long versionMinor; // @synthesize versionMinor=_versionMinor;
 @property long long versionMajor; // @synthesize versionMajor=_versionMajor;
-- (void).cxx_destruct;
 
 @end
 

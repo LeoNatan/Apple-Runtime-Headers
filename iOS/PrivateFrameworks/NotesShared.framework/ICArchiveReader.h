@@ -15,9 +15,9 @@
     NSString *_destinationPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
 @property(retain, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
-- (void).cxx_destruct;
 - (id)incrementalPathInDirectory:(id)arg1 withFilename:(id)arg2 andExtension:(id)arg3;
 - (_Bool)moveContentsOfDirectory:(id)arg1 toDirectory:(id)arg2 resultURLs:(id *)arg3 error:(id *)arg4;
 - (_Bool)unarchiveSourcePath:(id)arg1 toDestinationPath:(id)arg2 error:(id *)arg3;

@@ -15,9 +15,9 @@
     id <PKBusinessChatContext> _businessChatContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PKBusinessChatContext> businessChatContext; // @synthesize businessChatContext=_businessChatContext;
 @property(retain, nonatomic) PKInstallmentPlan *earlyInstallmentPlan; // @synthesize earlyInstallmentPlan=_earlyInstallmentPlan;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

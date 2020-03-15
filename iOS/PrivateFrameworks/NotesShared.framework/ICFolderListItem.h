@@ -23,6 +23,7 @@
     unsigned long long _folderListItemAccountType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long folderListItemAccountType; // @synthesize folderListItemAccountType=_folderListItemAccountType;
 @property(nonatomic) __weak ICFolderListViewState *viewState; // @synthesize viewState=_viewState;
 @property(nonatomic) __weak ICFolderListItem *parent; // @synthesize parent=_parent;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool isLegacy; // @synthesize isLegacy=_isLegacy;
 @property(nonatomic) _Bool isAccountProxy; // @synthesize isAccountProxy=_isAccountProxy;
 @property(nonatomic) _Bool isAccount; // @synthesize isAccount=_isAccount;
-- (void).cxx_destruct;
 - (void)insertChildItem:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)addChildItem:(id)arg1;
 - (void)addNoteContainer:(id)arg1 folderToExclude:(id)arg2;

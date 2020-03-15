@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)indexByMatchingIndexWithRawHandles:(id)arg1 toTargetHandleStrings:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *targetHandleStrings; // @synthesize targetHandleStrings=_targetHandleStrings;
 @property(readonly, nonatomic) CNCache *indexImpl; // @synthesize indexImpl=_indexImpl;
-- (void).cxx_destruct;
 - (void)indexPhoneNumbersOnContact:(id)arg1;
 - (void)indexEmailAddressesOnContact:(id)arg1;
 - (void)indexContact:(id)arg1;

@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 + (double)ringCornerRadius;
 + (double)ringStroke;
 + (struct CGSize)ringSize;
+- (void).cxx_destruct;
 @property(retain) CALayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(retain) CALayer *highlightLuminanceLayer; // @synthesize highlightLuminanceLayer=_highlightLuminanceLayer;
 @property(retain) CALayer *highlightDodgeLayer; // @synthesize highlightDodgeLayer=_highlightDodgeLayer;
 @property(retain) CALayer *dodgeRingLayer; // @synthesize dodgeRingLayer=_dodgeRingLayer;
 @property(retain) CALayer *luminanceRingLayer; // @synthesize luminanceRingLayer=_luminanceRingLayer;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)setEnabled:(_Bool)arg1;

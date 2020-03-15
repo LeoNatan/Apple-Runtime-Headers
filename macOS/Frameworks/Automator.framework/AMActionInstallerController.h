@@ -13,8 +13,8 @@
     NSURL *_actionURL;
 }
 
-@property(retain) NSURL *actionURL; // @synthesize actionURL=_actionURL;
 - (void).cxx_destruct;
+@property(retain) NSURL *actionURL; // @synthesize actionURL=_actionURL;
 - (BOOL)_doPostInstallWorkOnMainThreadWithDestinationURL:(id)arg1 error:(id *)arg2;
 - (id)_iconImage;
 - (id)_pluginURL;

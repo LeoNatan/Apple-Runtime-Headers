@@ -29,12 +29,12 @@
 
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *specifierTargetIfNotSelf; // @synthesize specifierTargetIfNotSelf=_specifierTargetIfNotSelf;
 @property(copy, nonatomic) CDUnknownBlockType passcodeEnteredCompletionBlock; // @synthesize passcodeEnteredCompletionBlock=_passcodeEnteredCompletionBlock;
 @property(nonatomic) __weak PSSpecifier *specifierForEnteredPasscode; // @synthesize specifierForEnteredPasscode=_specifierForEnteredPasscode;
 @property(retain, nonatomic) NSString *localizedStringTableName; // @synthesize localizedStringTableName=_localizedStringTableName;
 @property __weak PSSpecifier *activeSpecifier; // @synthesize activeSpecifier=_activeSpecifier;
-- (void).cxx_destruct;
 - (void)navigateToSpecifierWithID:(id)arg1;
 - (id)localizedStringForKey:(id)arg1 inBundle:(id)arg2;
 - (id)localizedStringForKey:(id)arg1;

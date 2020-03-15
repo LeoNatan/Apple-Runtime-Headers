@@ -54,6 +54,7 @@
     unsigned long long _hasValidSecurityConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isUpdatingContentView; // @synthesize isUpdatingContentView=_isUpdatingContentView;
 @property unsigned long long hasValidSecurityConfiguration; // @synthesize hasValidSecurityConfiguration=_hasValidSecurityConfiguration;
 @property(retain) PKInAppPaymentService *inAppPaymentService; // @synthesize inAppPaymentService=_inAppPaymentService;
@@ -91,7 +92,6 @@
 @property(retain) NSTabView *healthyCardTabView; // @synthesize healthyCardTabView=_healthyCardTabView;
 @property(retain) NSView *healthyCardView; // @synthesize healthyCardView=_healthyCardView;
 @property(retain) PKPaymentPass *card; // @synthesize card=_card;
-- (void).cxx_destruct;
 - (void)postalAddressEditorViewController:(id)arg1 didFinishEditingContact:(id)arg2;
 - (void)postalAddressEditorViewControllerDidCancel:(id)arg1;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;

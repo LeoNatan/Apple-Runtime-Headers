@@ -14,9 +14,9 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSDictionary *diskDictionary; // @synthesize diskDictionary=_diskDictionary;
-- (void).cxx_destruct;
 
 @end
 

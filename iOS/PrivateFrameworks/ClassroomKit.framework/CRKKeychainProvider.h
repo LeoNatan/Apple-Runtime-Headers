@@ -15,8 +15,8 @@
 
 + (id)makeKeychainForCurrentEnvironment;
 + (id)sharedProvider;
-@property(readonly, nonatomic) id <CRKKeychain> keychain; // @synthesize keychain=_keychain;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CRKKeychain> keychain; // @synthesize keychain=_keychain;
 - (id)initWithKeychain:(id)arg1;
 
 @end

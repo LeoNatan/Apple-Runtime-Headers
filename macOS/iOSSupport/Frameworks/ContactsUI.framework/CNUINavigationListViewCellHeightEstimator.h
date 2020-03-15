@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSNumber *_estimatedDetailCellHeightNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *estimatedDetailCellHeightNumber; // @synthesize estimatedDetailCellHeightNumber=_estimatedDetailCellHeightNumber;
 @property(retain, nonatomic) NSNumber *estimatedCellHeightNumber; // @synthesize estimatedCellHeightNumber=_estimatedCellHeightNumber;
 @property(retain, nonatomic) id <CNUINavigationListStyle> navigationListStyle; // @synthesize navigationListStyle=_navigationListStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double estimatedDetailCellHeight;
 @property(readonly, nonatomic) double estimatedCellHeight;
 - (id)initWithNavigationListStyle:(id)arg1;

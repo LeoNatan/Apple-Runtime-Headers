@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) CFCommandQueuer *commandQueuer; // @synthesize commandQueuer=_commandQueuer;
 @property(retain) id <AFServiceHelper> serviceHelper; // @synthesize serviceHelper=_serviceHelper;
-- (void).cxx_destruct;
 - (id)initWithClientLiteWithConnectionName:(id)arg1;
 - (id)initWithServiceHelper:(id)arg1 withConnectionName:(id)arg2;
 - (void)resetScriptExecutorCache;

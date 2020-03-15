@@ -19,8 +19,8 @@
 
 + (id)participantWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3 url:(id)arg4;
 + (id)participantWithName:(id)arg1 url:(id)arg2;
-@property(readonly, nonatomic) EKCalendarItem *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EKCalendarItem *owner; // @synthesize owner=_owner;
 @property(readonly, copy) NSString *description;
 - (id)semanticIdentifier;
 - (id)setInviterNameString;

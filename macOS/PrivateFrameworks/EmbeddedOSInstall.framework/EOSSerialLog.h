@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_q;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *q; // @synthesize q=_q;
 @property(retain) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 @property int serialFileDescriptor; // @synthesize serialFileDescriptor=_serialFileDescriptor;
 @property(retain) NSString *serialFilePath; // @synthesize serialFilePath=_serialFilePath;
-- (void).cxx_destruct;
 - (id)_defaultSerialFilePath;
 - (void)_closeSerialDevice;
 - (BOOL)_openSerialDevice;

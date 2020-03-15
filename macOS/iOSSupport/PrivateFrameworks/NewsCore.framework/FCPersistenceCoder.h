@@ -13,8 +13,8 @@
     NSData *_key;
 }
 
-@property(readonly, copy, nonatomic) NSData *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *key; // @synthesize key=_key;
 - (id)_codeData:(id)arg1;
 - (id)decodeData:(id)arg1;
 - (id)encodeData:(id)arg1;

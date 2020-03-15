@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIBlurEffect *_effect;
 }
 
-@property(nonatomic) UIBlurEffect *effect; // @synthesize effect=_effect;
 - (void).cxx_destruct;
+@property(nonatomic) UIBlurEffect *effect; // @synthesize effect=_effect;
 - (void)appendDescriptionTo:(id)arg1;
 - (BOOL)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
 - (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;

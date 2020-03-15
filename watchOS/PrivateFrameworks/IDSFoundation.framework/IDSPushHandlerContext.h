@@ -16,10 +16,10 @@
     NSSet *_commands;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSSet *commands; // @synthesize commands=_commands;
 @property(copy, nonatomic) NSSet *topics; // @synthesize topics=_topics;
-- (void).cxx_destruct;
 - (id)initWithQueue:(id)arg1 topics:(id)arg2 commands:(id)arg3;
 
 @end

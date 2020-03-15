@@ -288,7 +288,8 @@
 - (id)listWithID:(int)arg1 skipOffset:(unsigned int)arg2;
 - (id)listWithSpecialID:(int)arg1;
 - (id)listWithID:(int)arg1;
-- (unsigned int)numberOfLeafBookmarksInTopLevelOfBookmark:(id)arg1;
+- (id)leafChildCountForFoldersInFolderWithID:(int)arg1;
+- (unsigned int)leafChildCountForBookmarksInFolderWithID:(int)arg1;
 - (_Bool)bookmarkContainsLeafBookmark:(id)arg1;
 - (id)descendantsOfBookmarkFolder:(id)arg1;
 - (id)subfoldersOfID:(int)arg1;

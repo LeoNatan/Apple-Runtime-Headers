@@ -47,6 +47,7 @@
     unsigned long long _autoplayBehavior;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool autoplayTilesWaitForInput; // @synthesize autoplayTilesWaitForInput=_autoplayTilesWaitForInput;
 @property(nonatomic) unsigned long long autoplayBehavior; // @synthesize autoplayBehavior=_autoplayBehavior;
 @property(readonly, nonatomic) NSMutableArray *_anchors; // @synthesize _anchors=__anchors;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PXTilingController *tilingController; // @synthesize tilingController=_tilingController;
 @property(nonatomic) __weak id <PXAssetsSceneDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)checkInTile:(void *)arg1 withIdentifier:(struct PXTileIdentifier)arg2;
 - (void *)checkOutTileForIdentifier:(struct PXTileIdentifier)arg1 layout:(id)arg2;
 - (struct CGPoint)tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint)arg3;

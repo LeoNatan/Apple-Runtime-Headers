@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSPointerArray *_rebaseObservers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *rebaseObservers; // @synthesize rebaseObservers=_rebaseObservers;
 @property(retain, nonatomic) NSMutableArray *_shadowUpdates; // @synthesize _shadowUpdates=__shadowUpdates;
 @property(retain, nonatomic) _UIDataSourceUpdateMap *updateMap; // @synthesize updateMap=_updateMap;
 @property(retain, nonatomic) _UIDataSourceSnapshotter *initialSnapshot; // @synthesize initialSnapshot=_initialSnapshot;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)_pruneAndRebaseShadowUpdatesForShadowInsertWithIdentifier:(id)arg1;
 - (id)_findInsertShadowUpdateForFinalIndexPath:(id)arg1;
 - (id)_findShadowUpdateForIdentifier:(id)arg1 inShadowUpdates:(id)arg2;

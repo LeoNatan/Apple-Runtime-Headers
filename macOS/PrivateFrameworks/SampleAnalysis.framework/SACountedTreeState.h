@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 + (void)writeJSONDictionaryEntriesToStream:(id)arg1 microstackshotState:(unsigned int)arg2 primaryMicrostackshotState:(unsigned int)arg3 includeIdleAndBattery:(_Bool)arg4;
 + (id)treeCountedStateWithWaitInfo:(id)arg1 turnstileInfo:(id)arg2 state:(unsigned long long)arg3 microstackshotState:(unsigned int)arg4 pid:(int)arg5 threadId:(unsigned long long)arg6 threadPriority:(unsigned char)arg7 startSampleIndex:(unsigned long long)arg8 startTimestamp:(id)arg9 sampleCount:(unsigned long long)arg10;
+- (void).cxx_destruct;
 @property(readonly) unsigned int microstackshotState; // @synthesize microstackshotState=_microstackshotState;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
 @property(readonly) SATurnstileInfo *turnstileInfo; // @synthesize turnstileInfo=_turnstileInfo;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long threadId; // @synthesize threadId=_threadId;
 @property(readonly) int pid; // @synthesize pid=_pid;
 @property(readonly) SATimestamp *startTimestamp; // @synthesize startTimestamp=_startTimestamp;
-- (void).cxx_destruct;
 - (void)writeJSONDictionaryEntriesToStream:(id)arg1;
 - (id)initWithWaitInfo:(id)arg1 turnstileInfo:(id)arg2 state:(unsigned long long)arg3 microstackshotState:(unsigned int)arg4 pid:(int)arg5 threadId:(unsigned long long)arg6 threadPriority:(unsigned char)arg7 startSampleIndex:(unsigned long long)arg8 startTimestamp:(id)arg9 sampleCount:(unsigned long long)arg10;
 

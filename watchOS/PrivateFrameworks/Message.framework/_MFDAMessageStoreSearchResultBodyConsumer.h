@@ -19,9 +19,9 @@
     MFError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MFDAStreamingContentConsumer> streamConsumer; // @synthesize streamConsumer=_streamConsumer;
 @property(retain, nonatomic) MFError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)didEndStreamingForMailMessage:(id)arg1;
 - (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;
 - (_Bool)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;

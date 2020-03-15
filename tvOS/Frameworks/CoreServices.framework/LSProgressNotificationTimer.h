@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     SEL _appObserverSelector;
 }
 
+- (void).cxx_destruct;
 @property SEL appObserverSelector; // @synthesize appObserverSelector=_appObserverSelector;
 @property(readonly, nonatomic) double latency; // @synthesize latency=_latency;
 @property(readonly, nonatomic) double minInterval; // @synthesize minInterval=_minInterval;
 @property(retain, nonatomic) NSMutableSet *applications; // @synthesize applications=_applications;
 @property(retain, nonatomic) NSDate *lastFiredDate; // @synthesize lastFiredDate=_lastFiredDate;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
-- (void).cxx_destruct;
 - (id)description;
 - (void)sendMessage:(id)arg1;
 - (void)notifyObservers:(id)arg1 withApplications:(id)arg2;

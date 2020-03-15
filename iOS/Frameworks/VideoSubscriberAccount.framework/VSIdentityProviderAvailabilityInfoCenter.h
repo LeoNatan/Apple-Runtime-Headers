@@ -23,13 +23,13 @@
 
 + (_Bool)automaticallyNotifiesObserversOfStatus;
 + (id)defaultCenter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSDeveloperServiceConnection *developerServiceConnection; // @synthesize developerServiceConnection=_developerServiceConnection;
 @property(retain, nonatomic) VSPreferences *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) VSStoreURLBag *bag; // @synthesize bag=_bag;
 @property(retain, nonatomic) VSRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
 @property(nonatomic) _Bool hasDeterminedInitialStatus; // @synthesize hasDeterminedInitialStatus=_hasDeterminedInitialStatus;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
-- (void).cxx_destruct;
 - (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;
 - (void)determineIdentityProviderAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) long long status; // @synthesize status=_status;

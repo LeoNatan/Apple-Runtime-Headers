@@ -27,6 +27,7 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isInterestingToUser; // @synthesize isInterestingToUser=_isInterestingToUser;
 @property(readonly, nonatomic) NSString *commenterHashedPersonID; // @synthesize commenterHashedPersonID=_commenterHashedPersonID;
 @property(readonly, nonatomic) NSString *cloudGUID; // @synthesize cloudGUID=_cloudGUID;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) _Bool isBatchComment; // @synthesize isBatchComment=_isBatchComment;
 @property(readonly, nonatomic) _Bool isCaption; // @synthesize isCaption=_isCaption;
 @property(readonly, nonatomic) _Bool isLike; // @synthesize isLike=_isLike;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *commenterFullName;
 @property(readonly, nonatomic) NSString *commenterLastName;
 @property(readonly, nonatomic) NSString *commenterFirstName;

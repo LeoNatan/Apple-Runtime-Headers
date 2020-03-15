@@ -37,8 +37,8 @@ __attribute__((visibility("hidden")))
     _Bool _hasFileProviderPresenceTCCAccess;
 }
 
-@property(nonatomic) _Bool hasFileProviderPresenceTCCAccess; // @synthesize hasFileProviderPresenceTCCAccess=_hasFileProviderPresenceTCCAccess;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool hasFileProviderPresenceTCCAccess; // @synthesize hasFileProviderPresenceTCCAccess=_hasFileProviderPresenceTCCAccess;
 - (void)dumpStateTo:(id)arg1;
 - (void)processMonitor:(id)arg1 didBecomeForeground:(_Bool)arg2;
 - (void)_evaluateExtensionForegroundness;

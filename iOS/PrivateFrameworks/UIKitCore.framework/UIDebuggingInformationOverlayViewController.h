@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     struct CGPoint _offset;
 }
 
+- (void).cxx_destruct;
 @property struct CGPoint offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(retain, nonatomic) UIDebuggingInformationRootTableViewController *rootTableViewController; // @synthesize rootTableViewController=_rootTableViewController;
-- (void).cxx_destruct;
 - (void)didReceiveGesture:(id)arg1;
 - (void)toggleFullscreen;
 - (void)viewDidLayoutSubviews;

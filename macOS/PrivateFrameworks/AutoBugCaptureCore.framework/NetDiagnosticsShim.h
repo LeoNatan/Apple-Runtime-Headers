@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     NSString *_taskName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *taskName; // @synthesize taskName=_taskName;
 @property(retain, nonatomic) id <NetDiagnosticsShimDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_connectionForServiceNamed:(const char *)arg1 queue:(id)arg2 connectionInvalidHandler:(CDUnknownBlockType)arg3;
 - (void)sendNotificationListener;
 - (id)createNotificationListener;

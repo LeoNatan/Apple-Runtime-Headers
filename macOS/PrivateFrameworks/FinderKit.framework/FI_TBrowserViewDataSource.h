@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
     struct unordered_map<TFENode, TGroupModeData, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TGroupModeData>>> _containerNodeToGroupDataMap;
     int _groupBy;
     struct unordered_map<TFENode, TNSRef<FI_TBVDSBusyStateIncrementer, void>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<FI_TBVDSBusyStateIncrementer, void>>>> _firstPopBusyStateIncrementers;
-    // Error parsing type: {atomic<unsigned long>="__a_"AQ}, name: _busyStateRefCount
+    // Error parsing type: {atomic<unsigned long>="__a_"{__cxx_atomic_impl<unsigned long, std::__1::__cxx_atomic_base_impl<unsigned long> >="__a_value"AQ}}, name: _busyStateRefCount
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
     unordered_set_931aff12 _alwaysVisibleNodes;
     _Bool _isSwitchingViewStyles;

@@ -14,9 +14,9 @@
     NPKPaymentPassView *_rearPaymentPassView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKPaymentPassView *rearPaymentPassView; // @synthesize rearPaymentPassView=_rearPaymentPassView;
 @property(retain, nonatomic) PKPaymentPass *rearPaymentPass; // @synthesize rearPaymentPass=_rearPaymentPass;
-- (void).cxx_destruct;
 - (struct CGRect)animationCoordinator:(id)arg1 frameForBottomViewWhenOnscreen:(_Bool)arg2;
 - (struct CGRect)animationCoordinator:(id)arg1 frameForTopViewWhenOnscreen:(_Bool)arg2;
 - (float)_paymentPassYOffset;

@@ -28,11 +28,11 @@
     NTKDigitalTimeLabelStyle *_timeStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKDigitalTimeLabelStyle *timeStyle; // @synthesize timeStyle=_timeStyle;
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
 @property(retain, nonatomic) NTKCompanionCustomPhotosEditor *editor; // @synthesize editor=_editor;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (void)dismissWithSaving:(_Bool)arg1;
 - (void)_donePressed;
 - (void)_deletePressed;

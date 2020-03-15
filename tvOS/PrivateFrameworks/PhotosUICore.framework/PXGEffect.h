@@ -16,8 +16,8 @@
 
 + (id)createEffectForLayout:(id)arg1;
 + (int)type;
-@property(readonly, nonatomic) unsigned short effectId; // @synthesize effectId=_effectId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned short effectId; // @synthesize effectId=_effectId;
 @property(nonatomic) float value8;
 @property(nonatomic) float value7;
 @property(nonatomic) float value6;

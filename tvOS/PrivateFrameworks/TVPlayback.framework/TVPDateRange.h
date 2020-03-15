@@ -15,10 +15,10 @@
     double _durationInSeconds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double durationInSeconds; // @synthesize durationInSeconds=_durationInSeconds;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (_Bool)containsDate:(id)arg1;
 - (id)dateRangeByIntersectingDateRange:(id)arg1;
 - (id)description;

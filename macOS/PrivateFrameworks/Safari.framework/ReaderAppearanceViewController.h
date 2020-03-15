@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_tableViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *tableViewHeightConstraint; // @synthesize tableViewHeightConstraint=_tableViewHeightConstraint;
 @property(nonatomic) __weak NSTableView *fontTableView; // @synthesize fontTableView=_fontTableView;
 @property(nonatomic) __weak NSScrollView *fontTableScrollView; // @synthesize fontTableScrollView=_fontTableScrollView;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSButton *increaseTextSizeButton; // @synthesize increaseTextSizeButton=_increaseTextSizeButton;
 @property(nonatomic) __weak NSButton *decreaseTextSizeButton; // @synthesize decreaseTextSizeButton=_decreaseTextSizeButton;
 @property(nonatomic) __weak id <ReaderAppearanceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didPressDownloadButtonForReaderFontTableCellView:(id)arg1;
 - (id)_tableCellViewForFont:(id)arg1;
 - (id)_fontForFontDownloadNotification:(id)arg1;

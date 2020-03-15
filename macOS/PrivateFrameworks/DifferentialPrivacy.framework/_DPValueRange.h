@@ -16,10 +16,10 @@
 }
 
 + (id)rangeWithMin:(id)arg1 max:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *range; // @synthesize range=_range;
 @property(readonly, nonatomic) NSNumber *maxPossible; // @synthesize maxPossible=_maxPossible;
 @property(readonly, nonatomic) NSNumber *minPossible; // @synthesize minPossible=_minPossible;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToValueRange:(id)arg1;

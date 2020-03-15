@@ -15,10 +15,10 @@
     UIViewController *_toolsListController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *toolsListController; // @synthesize toolsListController=_toolsListController;
 @property(retain, nonatomic) UINavigationController *navController; // @synthesize navController=_navController;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (id)initWithController:(id)arg1;
 
 @end

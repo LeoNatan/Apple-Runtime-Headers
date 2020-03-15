@@ -14,8 +14,8 @@
     NSDate *_dateValue;
 }
 
-@property(retain, nonatomic) NSDate *dateValue; // @synthesize dateValue=_dateValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *dateValue; // @synthesize dateValue=_dateValue;
 - (void)commitEditing;
 - (void)beginEditing;
 - (void)_dateChanged:(id)arg1;

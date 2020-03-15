@@ -25,11 +25,11 @@
     CDUnknownBlockType _sleepWakeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sleepWakeHandler; // @synthesize sleepWakeHandler=_sleepWakeHandler;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_sleepWakeHandlerForService:(unsigned int)arg1 type:(unsigned int)arg2 arg:(void *)arg3;
 - (void)_ensureStopped;
 - (void)_ensureStarted;

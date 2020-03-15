@@ -14,9 +14,9 @@
     struct CGRect _untransformedContentFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUDisplayTileTransform *displayTileTransform; // @synthesize displayTileTransform=_displayTileTransform;
 @property(readonly, nonatomic) struct CGRect untransformedContentFrame; // @synthesize untransformedContentFrame=_untransformedContentFrame;
-- (void).cxx_destruct;
 - (id)description;
 - (id)clone;
 - (_Bool)isGeometryEqualToLayoutInfo:(id)arg1;

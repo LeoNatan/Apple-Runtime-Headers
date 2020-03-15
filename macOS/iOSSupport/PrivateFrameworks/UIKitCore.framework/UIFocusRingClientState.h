@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSString *_clientID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(retain, nonatomic) NSMapTable *activeFocusLayersToItems; // @synthesize activeFocusLayersToItems=_activeFocusLayersToItems;
 @property(retain, nonatomic) NSMutableArray *activeFocusLayers; // @synthesize activeFocusLayers=_activeFocusLayers;
 @property(nonatomic) __weak id <UIFocusItem> currentFocusItem; // @synthesize currentFocusItem=_currentFocusItem;
-- (void).cxx_destruct;
 - (id)initWithClientID:(id)arg1;
 
 @end

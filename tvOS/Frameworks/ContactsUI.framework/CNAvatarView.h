@@ -50,6 +50,7 @@
 + (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(_Bool)arg1;
 + (_Bool)defaultThreeDTouchSupport;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsAnimation; // @synthesize allowsAnimation=_allowsAnimation;
 @property(nonatomic) _Bool asynchronousRendering; // @synthesize asynchronousRendering=_asynchronousRendering;
 @property(nonatomic) _Bool autoUpdateContact; // @synthesize autoUpdateContact=_autoUpdateContact;
@@ -78,7 +79,6 @@
 @property(nonatomic, getter=isThreeDTouchEnabled) _Bool threeDTouchEnabled; // @synthesize threeDTouchEnabled=_threeDTouchEnabled;
 @property(readonly, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 @property _Bool transitioningImageVisible;
 @property(readonly, nonatomic) struct CGRect transitioningImageFrame;
 @property(readonly, nonatomic) UIImage *transitioningImage;

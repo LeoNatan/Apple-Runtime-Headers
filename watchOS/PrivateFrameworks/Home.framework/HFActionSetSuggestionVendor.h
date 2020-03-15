@@ -17,11 +17,11 @@
 }
 
 + (id)supportedBuiltInActionSetTypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *services; // @synthesize services=_services;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HMActionSet *actionSet; // @synthesize actionSet=_actionSet;
 @property(readonly, nonatomic) HFActionSetSuggestionFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)_controlItemValueSourceForService:(id)arg1;
 - (id)_deriveActionForSecondaryCharacteristic:(id)arg1 candidateServices:(id)arg2;
 - (id)_deriveActionForPrimaryCharacteristic:(id)arg1 candidateServices:(id)arg2 targetThreshold:(double)arg3;

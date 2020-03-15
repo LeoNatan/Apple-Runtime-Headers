@@ -16,9 +16,9 @@
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) unsigned long long processType; // @synthesize processType=_processType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithProcessType:(unsigned long long)arg1 bundleID:(id)arg2;
 - (id)init;

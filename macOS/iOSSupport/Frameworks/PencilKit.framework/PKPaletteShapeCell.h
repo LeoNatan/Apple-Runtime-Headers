@@ -14,9 +14,9 @@
     PKPaletteShape *_shape;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaletteShape *shape; // @synthesize shape=_shape;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

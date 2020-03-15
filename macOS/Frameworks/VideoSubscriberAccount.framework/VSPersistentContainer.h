@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)directoryURL;
 + (id)legacyDirectoryURL;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 @property(retain, nonatomic) NSManagedObjectContext *viewContext; // @synthesize viewContext=_viewContext;
 @property(readonly, nonatomic) long long modelVersion; // @synthesize modelVersion=_modelVersion;
-- (void).cxx_destruct;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (id)developerIdentityProviderFetchRequest;
 - (id)insertDeveloperIdentityProviderInContext:(id)arg1;

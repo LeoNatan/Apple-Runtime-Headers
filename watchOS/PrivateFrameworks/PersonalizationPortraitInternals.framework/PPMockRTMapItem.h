@@ -15,10 +15,10 @@
     PPMockRTLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PPMockRTLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) PPMockRTAddress *address; // @synthesize address=_address;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

@@ -18,8 +18,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 - (void)_updateForContentSize;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;

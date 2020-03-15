@@ -19,6 +19,7 @@
     NSArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool containsPostponedActions; // @synthesize containsPostponedActions=_containsPostponedActions;
 @property(nonatomic) _Bool isResyncAfterServerError; // @synthesize isResyncAfterServerError=_isResyncAfterServerError;
 @property(nonatomic) _Bool isResyncAfterConnectionFailed; // @synthesize isResyncAfterConnectionFailed=_isResyncAfterConnectionFailed;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool isInitialUberSync; // @synthesize isInitialUberSync=_isInitialUberSync;
 @property(nonatomic) _Bool hasRemoteChanges; // @synthesize hasRemoteChanges=_hasRemoteChanges;
 @property(retain, nonatomic) DAFolder *folder; // @synthesize folder=_folder;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFolder:(id)arg1 hasRemoteChanges:(_Bool)arg2 isInitialUberSync:(_Bool)arg3;
 

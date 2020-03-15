@@ -24,6 +24,7 @@
     struct CGPoint __initialCentroidLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double _initialAngleInDegrees; // @synthesize _initialAngleInDegrees=__initialAngleInDegrees;
 @property(nonatomic) struct CGPoint _initialCentroidLocation; // @synthesize _initialCentroidLocation=__initialCentroidLocation;
 @property(nonatomic) double _initialTouchSeparation; // @synthesize _initialTouchSeparation=__initialTouchSeparation;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) double minimumRotateAngleDeviation; // @synthesize minimumRotateAngleDeviation=_minimumRotateAngleDeviation;
 @property(readonly, nonatomic) double minimumPinchSeparationDeviation; // @synthesize minimumPinchSeparationDeviation=_minimumPinchSeparationDeviation;
 @property(readonly, nonatomic) double minimumPanDistance; // @synthesize minimumPanDistance=_minimumPanDistance;
-- (void).cxx_destruct;
 - (void)_signalEndOfGesture;
 - (void)_processGestureTouchEvents:(id)arg1;
 - (void)reset;

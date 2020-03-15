@@ -21,8 +21,8 @@
     _Bool _cancelled;
 }
 
-@property _Bool cancelled; // @synthesize cancelled=_cancelled;
 - (void).cxx_destruct;
+@property _Bool cancelled; // @synthesize cancelled=_cancelled;
 - (void)_runloop_popAutoreleasePool;
 - (void)_runloop_pushAutoreleasePool;
 - (void)_runloop_handleActivity:(unsigned long long)arg1;

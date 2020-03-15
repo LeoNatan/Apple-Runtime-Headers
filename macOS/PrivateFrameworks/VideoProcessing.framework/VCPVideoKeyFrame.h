@@ -39,6 +39,7 @@
     CDStruct_1b6d18a9 _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float humanActionScore; // @synthesize humanActionScore=_humanActionScore;
 @property(nonatomic) float humanPoseScore; // @synthesize humanPoseScore=_humanPoseScore;
 @property(nonatomic) float contentScore; // @synthesize contentScore=_contentScore;
@@ -59,7 +60,6 @@
 @property(nonatomic) float semanticScore; // @synthesize semanticScore=_semanticScore;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(nonatomic) CDStruct_1b6d18a9 timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)printStats;
 - (BOOL)hasGoodSubjectAction;
 - (float)computeScoreFromExposure;

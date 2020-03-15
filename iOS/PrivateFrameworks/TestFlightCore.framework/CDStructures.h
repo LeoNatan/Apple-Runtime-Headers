@@ -32,10 +32,6 @@ struct UIEdgeInsets {
     double right;
 };
 
-struct UIImage {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

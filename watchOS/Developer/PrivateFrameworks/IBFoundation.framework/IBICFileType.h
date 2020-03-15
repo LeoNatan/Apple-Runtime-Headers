@@ -20,12 +20,12 @@
 }
 
 + (id)fileTypeWithIdentifier:(id)arg1 title:(id)arg2 extensions:(id)arg3 displayOrder:(double)arg4 renderThumbnailWithImageIO:(_Bool)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool renderThumbnailWithImageIO; // @synthesize renderThumbnailWithImageIO=_renderThumbnailWithImageIO;
 @property(readonly, nonatomic) NSArray *extensions; // @synthesize extensions=_extensions;
 @property(readonly, nonatomic) double displayOrder; // @synthesize displayOrder=_displayOrder;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToFileType:(id)arg1;
 - (unsigned long long)hash;

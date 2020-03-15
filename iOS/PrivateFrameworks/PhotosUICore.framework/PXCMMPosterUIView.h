@@ -29,6 +29,7 @@
     long long _totalCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActionInProgress) _Bool actionInProgress; // @synthesize actionInProgress=_actionInProgress;
 @property(nonatomic) long long totalCount; // @synthesize totalCount=_totalCount;
 @property(nonatomic) long long selectedCount; // @synthesize selectedCount=_selectedCount;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) UIColor *opaqueAncestorBackgroundColor; // @synthesize opaqueAncestorBackgroundColor=_opaqueAncestorBackgroundColor;
 @property(copy, nonatomic) NSString *bannerSubheadline; // @synthesize bannerSubheadline=_bannerSubheadline;
 @property(copy, nonatomic) NSString *bannerHeadline; // @synthesize bannerHeadline=_bannerHeadline;
-- (void).cxx_destruct;
 - (id)_fontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
 - (void)_updateCorners;
 - (struct CGSize)_performLayoutInWidth:(double)arg1 updateSubviewFrames:(_Bool)arg2;

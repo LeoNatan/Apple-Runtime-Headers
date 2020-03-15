@@ -17,11 +17,11 @@
     NSMutableDictionary *_animationCompletionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *animationCompletionBlocks; // @synthesize animationCompletionBlocks=_animationCompletionBlocks;
 @property(readonly, nonatomic) NSMutableDictionary *animationBlocks; // @synthesize animationBlocks=_animationBlocks;
 @property(nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(nonatomic) double availableFraction; // @synthesize availableFraction=_availableFraction;
-- (void).cxx_destruct;
 - (void)addCoordinatedTransportBarAnimation:(long long)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setAvailableFraction:(double)arg1 animated:(_Bool)arg2;
 @property(nonatomic) double elapsedTime;

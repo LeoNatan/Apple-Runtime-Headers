@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_semaphore> *_dmWaitingSem;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *dmWaitingSem; // @synthesize dmWaitingSem=_dmWaitingSem;
 @property(retain) NSArray *usersToReplace; // @synthesize usersToReplace=_usersToReplace;
-- (void).cxx_destruct;
 - (void)dmAsyncFinishedForDisk:(struct __DADisk *)arg1 mainError:(int)arg2 detailError:(int)arg3 dictionary:(id)arg4;
 - (void)dmAsyncMessageForDisk:(struct __DADisk *)arg1 string:(id)arg2 dictionary:(id)arg3;
 - (void)dmAsyncProgressForDisk:(struct __DADisk *)arg1 barberPole:(BOOL)arg2 percent:(float)arg3;

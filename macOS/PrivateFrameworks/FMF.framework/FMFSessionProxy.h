@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     FMFSession *_session;
 }
 
-@property(nonatomic) __weak FMFSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(nonatomic) __weak FMFSession *session; // @synthesize session=_session;
 - (oneway void)didReceiveServerError:(id)arg1;
 - (oneway void)didUpdateLocations:(id)arg1;
 - (oneway void)didUpdateFollowing:(id)arg1;

@@ -17,8 +17,8 @@
     long long _authenticationState;
 }
 
-@property(readonly, nonatomic) ECAuthenticationScheme *authenticationScheme; // @synthesize authenticationScheme=_authenticationScheme;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ECAuthenticationScheme *authenticationScheme; // @synthesize authenticationScheme=_authenticationScheme;
 - (void)setMissingPasswordError;
 @property(readonly, nonatomic) BOOL couldRetry;
 @property(readonly, nonatomic) BOOL usesBase64EncodeResponseData;

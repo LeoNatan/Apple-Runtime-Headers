@@ -17,8 +17,8 @@
 }
 
 + (id)groupEmitterIdentifier;
-@property(copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
 - (BOOL)insertEveryRefreshSession;
 @property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) BOOL emitsSingleRefreshSessionGroups;

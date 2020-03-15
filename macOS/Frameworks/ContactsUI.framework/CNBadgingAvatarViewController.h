@@ -14,9 +14,9 @@
     CNBadgeViewController *_badgeViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNBadgeViewController *badgeViewController; // @synthesize badgeViewController=_badgeViewController;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *badgeImage;
 @property(copy, nonatomic) NSArray *contacts;
 - (void)setupViewHierarchy;

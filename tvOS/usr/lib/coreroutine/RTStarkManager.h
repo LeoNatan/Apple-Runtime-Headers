@@ -15,8 +15,8 @@
 
 + (_Bool)supportsNotificationName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 - (void)_fetchConnectionStateWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchConnectionStateWithHandler:(CDUnknownBlockType)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;

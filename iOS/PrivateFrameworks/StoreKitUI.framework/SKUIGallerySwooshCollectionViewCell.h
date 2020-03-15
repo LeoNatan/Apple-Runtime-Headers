@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
-@property(retain, nonatomic) UIView *contentChildView; // @synthesize contentChildView=_contentChildView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *contentChildView; // @synthesize contentChildView=_contentChildView;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *title;
 - (void)setColoringWithColorScheme:(id)arg1;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     UIScenePresentationContext *_currentPresentationContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBSceneLayer *sceneLayer; // @synthesize sceneLayer=_sceneLayer;
 @property(retain, nonatomic) UITransformer *transformer; // @synthesize transformer=_transformer;
 @property(retain, nonatomic) UIScenePresentationContext *currentPresentationContext; // @synthesize currentPresentationContext=_currentPresentationContext;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithSceneLayer:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

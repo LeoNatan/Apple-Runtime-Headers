@@ -16,8 +16,8 @@
 }
 
 + (_Bool)isSupportedEntityType:(long long)arg1;
-@property(readonly, nonatomic) NSString *externalId; // @synthesize externalId=_externalId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *externalId; // @synthesize externalId=_externalId;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqualToCuratedEventKey:(id)arg1;

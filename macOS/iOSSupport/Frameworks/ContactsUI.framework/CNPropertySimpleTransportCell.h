@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (id)standardStarView;
 + (void)_updateStarImageForView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsUpdateTouchAreas; // @synthesize needsUpdateTouchAreas=_needsUpdateTouchAreas;
 @property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) UIColor *actionsColor; // @synthesize actionsColor=_actionsColor;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldShowTransportButtons; // @synthesize shouldShowTransportButtons=_shouldShowTransportButtons;
 @property(nonatomic) BOOL shouldShowBadge; // @synthesize shouldShowBadge=_shouldShowBadge;
 @property(nonatomic) BOOL allowsActions; // @synthesize allowsActions=_allowsActions;
-- (void).cxx_destruct;
 - (void)transportButtonClicked:(id)arg1;
 - (BOOL)shouldPerformDefaultAction;
 - (id)variableConstraints;

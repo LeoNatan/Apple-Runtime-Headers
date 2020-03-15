@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     ReaderAppearanceViewController *_appearanceViewController;
 }
 
-@property(nonatomic) __weak ReaderAppearanceViewController *appearanceViewController; // @synthesize appearanceViewController=_appearanceViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ReaderAppearanceViewController *appearanceViewController; // @synthesize appearanceViewController=_appearanceViewController;
 - (void)cancelOperation:(id)arg1;
 - (void)keyDown:(id)arg1;
 

@@ -27,6 +27,7 @@
 + (id)assetTransitionInfoWithImage:(id)arg1 filters:(id)arg2;
 + (id)assetTransitionInfoWithImage:(id)arg1;
 + (id)assetTransitionInfoWithSnapshotView:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUPhotoViewContentHelper *contentHelper; // @synthesize contentHelper=_contentHelper;
 @property(copy, nonatomic) NSArray *badgeTransitionInfos; // @synthesize badgeTransitionInfos=_badgeTransitionInfos;
 @property(retain, nonatomic) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic, setter=_setFilters:) NSArray *filters; // @synthesize filters=_filters;
 @property(retain, nonatomic, setter=_setImage:) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic, setter=_setSnapshotView:) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

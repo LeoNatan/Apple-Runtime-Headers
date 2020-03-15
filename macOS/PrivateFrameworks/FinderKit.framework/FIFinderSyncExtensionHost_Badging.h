@@ -34,12 +34,12 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finishedRegisteringInterestedURLs; // @synthesize finishedRegisteringInterestedURLs=_finishedRegisteringInterestedURLs;
 @property(copy, nonatomic) NSDictionary *toolbarItemDictionary; // @synthesize toolbarItemDictionary=_toolbarItemDictionary;
 @property(retain, nonatomic) id requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)replyWithMessageInterfaceNames:(id)arg1 forURL:(id)arg2;
 - (void)executePlugInCommand:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;

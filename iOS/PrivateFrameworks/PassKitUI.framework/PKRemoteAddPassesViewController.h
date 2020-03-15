@@ -20,8 +20,8 @@
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 + (_Bool)shouldPropagateAppearanceCustomizations;
-@property(nonatomic) __weak id <PKAddPassesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKAddPassesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)ingestionDidFinishWithResult:(unsigned long long)arg1;
 - (void)dealloc;

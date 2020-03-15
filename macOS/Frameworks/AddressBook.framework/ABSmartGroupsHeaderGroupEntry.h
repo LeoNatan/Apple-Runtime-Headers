@@ -14,9 +14,9 @@
     ABGroup *_group;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) ABGroup *group; // @synthesize group=_group;
 @property(readonly, retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (id)createGroupInSectionHelperWithFactory:(id)arg1;
 - (BOOL)canCreateGroupInSection;
 - (id)iconWithStyleProvider:(id)arg1;

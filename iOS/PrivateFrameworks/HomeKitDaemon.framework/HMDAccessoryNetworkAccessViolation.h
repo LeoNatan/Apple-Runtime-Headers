@@ -18,9 +18,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)noViolation;
+- (void).cxx_destruct;
 @property(readonly) NSDate *lastResetDate; // @synthesize lastResetDate=_lastResetDate;
 @property(readonly) NSDate *lastViolationDate; // @synthesize lastViolationDate=_lastViolationDate;
-- (void).cxx_destruct;
+- (id)attributeDescriptions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

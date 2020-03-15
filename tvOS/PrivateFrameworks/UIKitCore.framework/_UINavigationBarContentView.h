@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
     _Bool _needsBackButtonUpdate;
     double _backButtonMargin;
     double _backButtonMaximumWidth;
-    _Bool _hitTestingExtensionsAreValid;
     _Bool _isHidingBackButton;
     _Bool _isShowingBackButton;
     _Bool _isHidingLeadingBar;
@@ -49,6 +48,7 @@ __attribute__((visibility("hidden")))
     struct UIOffset _titlePositionAdjustment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UINavigationBarContentViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) long long barMetrics; // @synthesize barMetrics=_barMetrics;
 @property(nonatomic) long long requestedContentSize; // @synthesize requestedContentSize=_requestedContentSize;
@@ -65,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool backButtonHidden; // @synthesize backButtonHidden=_backButtonHidden;
 @property(retain, nonatomic) UIBarButtonItem *backButtonItem; // @synthesize backButtonItem=_backButtonItem;
 @property(nonatomic) __weak id <_UINavigationBarContentViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_accessibility_controlToActivateForHUDGestureLiftAtPoint:(struct CGPoint)arg1;
 - (id)_accessibility_barButtonItemAtPoint:(struct CGPoint)arg1;
@@ -92,6 +91,8 @@ __attribute__((visibility("hidden")))
 - (void)titleView:(id)arg1 needsUpdatedContentOverlayRects:(id)arg2;
 - (id)_layoutForAugmentedTitleView:(id)arg1;
 - (struct CGRect)_overlayRectForView:(id)arg1 inTargetView:(id)arg2;
+- (void)_clearAssistants;
+- (void)_setAssistants;
 @property(copy, nonatomic) _UIBarButtonItemData *backButtonAppearance;
 @property(copy, nonatomic) _UIBarButtonItemData *doneItemAppearance;
 @property(copy, nonatomic) _UIBarButtonItemData *plainItemAppearance;
@@ -123,6 +124,7 @@ __attribute__((visibility("hidden")))
 - (void)_addCoordinatedAnimation:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) UIView *accessibilityBackButtonView;
 @property(readonly, nonatomic) UIView *accessibilityTitleView;
+- (void)layoutSubviews;
 - (void)_updateLayoutMarginsForLayout:(id)arg1;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutMarginsDidChange;
@@ -134,7 +136,6 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (double)_intrinsicHeight;
-- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_setupTitleViewAnimated:(_Bool)arg1;
 - (void)_applyTitleAttributesToLabel:(id)arg1 withString:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *effectiveTitleAttributes; // @synthesize effectiveTitleAttributes=_effectiveTitleAttributes;

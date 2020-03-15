@@ -21,9 +21,9 @@
     CDUnknownBlockType _itemChangeObserver;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemChangeObserver; // @synthesize itemChangeObserver=_itemChangeObserver;
 @property(nonatomic) __weak PSListController *listViewController; // @synthesize listViewController=_listViewController;
-- (void).cxx_destruct;
 - (void)stopSpinnerForSpecifier:(id)arg1;
 - (void)startSpinnerForSpecifier:(id)arg1;
 - (void)preflightNetworkConnectivityForHandler:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

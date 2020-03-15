@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <NewsUI2/FCForYouPluginGroupManaging-Protocol.h>
-
-@interface _TtC7NewsUI222ForYouTodayFeedManager : _TtCs12_SwiftObject <FCForYouPluginGroupManaging>
+@interface _TtC7NewsUI222ForYouTodayFeedManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: bundleSubscriptionManager
     // Error parsing type: , name: feedGroupEmitterFactory

@@ -33,6 +33,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableIntegralFrames; // @synthesize disableIntegralFrames=_disableIntegralFrames;
 @property(nonatomic) _Bool delayWindowOrderingOnClickThrough; // @synthesize delayWindowOrderingOnClickThrough=_delayWindowOrderingOnClickThrough;
 @property(nonatomic) _Bool drawGrayTextWhenDisabled; // @synthesize drawGrayTextWhenDisabled=_drawGrayTextWhenDisabled;
@@ -41,8 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool idealSizeIsDirty; // @synthesize idealSizeIsDirty=_idealSizeIsDirty;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setAccessibilityElement:(BOOL)arg1;
 - (void)setFormatter:(id)arg1 withAttributes:(id)arg2;
 - (void)setFormattersAndAttributes:(const unordered_map_6f91522d *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;

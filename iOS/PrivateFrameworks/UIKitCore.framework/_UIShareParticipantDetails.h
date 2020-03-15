@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) UIColor *participantColor; // @synthesize participantColor=_participantColor;
 @property(copy) NSString *detailText; // @synthesize detailText=_detailText;
 @property(copy) NSString *participantID; // @synthesize participantID=_participantID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

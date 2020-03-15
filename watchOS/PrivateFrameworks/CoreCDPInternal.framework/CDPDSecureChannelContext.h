@@ -17,10 +17,10 @@
     id <CDPDCircleProxy> _circleProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CDPDCircleProxy> circleProxy; // @synthesize circleProxy=_circleProxy;
 @property(retain, nonatomic) id <CDPSecureChannelProxy> secureChannelProxy; // @synthesize secureChannelProxy=_secureChannelProxy;
 @property(retain, nonatomic) id <CDPKeychainCircleProxy> keychainCircleProxy; // @synthesize keychainCircleProxy=_keychainCircleProxy;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)initialize:(id *)arg1;
 - (id)initWithChannel:(id)arg1 dataProvider:(id)arg2 circleProxy:(id)arg3;

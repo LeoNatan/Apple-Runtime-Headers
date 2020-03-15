@@ -18,9 +18,9 @@
 }
 
 + (id)proximityTargetClientInterface;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <BYBuddyDaemonProximityTargetProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)receivedLanguages:(id)arg1 locale:(id)arg2 model:(id)arg3 deviceClass:(id)arg4 accessibilitySettings:(id)arg5;
 - (void)proximityConnectionReconnected;
 - (void)proximityConnectionTerminated;

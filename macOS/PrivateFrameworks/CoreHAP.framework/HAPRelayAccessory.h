@@ -24,10 +24,10 @@
 }
 
 + (id)requiredRelayServiceCharacteristics;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relayAccessoryIdentifier; // @synthesize relayAccessoryIdentifier=_relayAccessoryIdentifier;
 @property(retain, nonatomic) HAPCharacteristic *relayEnabledCharacteristic; // @synthesize relayEnabledCharacteristic=_relayEnabledCharacteristic;
 @property(retain, nonatomic) HAPCharacteristic *relayControlPointCharacteristic; // @synthesize relayControlPointCharacteristic=_relayControlPointCharacteristic;
-- (void).cxx_destruct;
 - (void)accessoryServer:(id)arg1 didUpdateValueForCharacteristic:(id)arg2;
 - (BOOL)_parseRelayService:(id)arg1;
 - (BOOL)_parseServices;

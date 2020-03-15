@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) NSData *contactKey; // @synthesize contactKey=_contactKey;
 - (void).cxx_destruct;
+@property(readonly) NSData *contactKey; // @synthesize contactKey=_contactKey;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, SFDevice, SFSession, SFSessionRequestInfo;
+@class NSError, NSMutableArray, SFDevice, SFSession, SFSessionRequestInfo;
 @protocol OS_dispatch_queue;
 
 @interface SFSystemSession : NSObject
@@ -14,7 +14,7 @@
     SFSessionRequestInfo *_currentRequest;
     _Bool _invalidateCalled;
     _Bool _pairVerifyDone;
-    struct NSMutableArray *_requests;
+    NSMutableArray *_requests;
     SFSession *_sfSession;
     int _state;
     _Bool _stateDone;
@@ -24,10 +24,10 @@
     SFDevice *_peerDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) _Bool allowUnencrypted; // @synthesize allowUnencrypted=_allowUnencrypted;
-- (void).cxx_destruct;
 - (void)rebootSystemWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeProfileWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)installProfileResponse:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;

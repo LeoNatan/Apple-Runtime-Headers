@@ -13,8 +13,8 @@
     NSFileManager *_fileManager;
 }
 
-@property(readonly, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 - (_Bool)removeItemAtPath:(id)arg1 error:(id *)arg2;
 - (_Bool)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 - (_Bool)createFileAtPath:(id)arg1 contents:(id)arg2 attributes:(id)arg3;

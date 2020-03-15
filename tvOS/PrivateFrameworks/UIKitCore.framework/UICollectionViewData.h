@@ -38,12 +38,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(readonly, nonatomic) NSArray *clonedDecorationAttributes; // @synthesize clonedDecorationAttributes=_clonedDecorationAttributes;
 @property(readonly, nonatomic) NSArray *clonedSupplementaryAttributes; // @synthesize clonedSupplementaryAttributes=_clonedSupplementaryAttributes;
 @property(readonly, nonatomic) NSArray *clonedCellAttributes; // @synthesize clonedCellAttributes=_clonedCellAttributes;
-- (id).cxx_construct;
-- (void).cxx_destruct;
+- (struct CGRect)_TEST_validLayoutRect;
 @property(nonatomic, getter=isLayoutLocked) _Bool layoutLocked;
 @property(readonly, nonatomic) _Bool layoutIsPrepared;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

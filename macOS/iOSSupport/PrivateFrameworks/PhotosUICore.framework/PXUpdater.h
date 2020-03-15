@@ -22,11 +22,11 @@
     SEL _needsUpdateSelector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL extraChecksEnabled; // @synthesize extraChecksEnabled=_extraChecksEnabled;
 @property(nonatomic, getter=isUpdatePassScheduled) BOOL updatePassScheduled; // @synthesize updatePassScheduled=_updatePassScheduled;
 @property(nonatomic) SEL needsUpdateSelector; // @synthesize needsUpdateSelector=_needsUpdateSelector;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)updateIfNeeded;
 - (void)_scheduleUpdatePassIfNeeded;
 - (void)setNeedsUpdateOf:(SEL)arg1;

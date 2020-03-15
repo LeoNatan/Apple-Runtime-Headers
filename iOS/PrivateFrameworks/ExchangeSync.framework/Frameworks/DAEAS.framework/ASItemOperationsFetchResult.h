@@ -19,8 +19,8 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
-@property(retain, nonatomic) NSString *classString; // @synthesize classString=_classString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *classString; // @synthesize classString=_classString;
 - (_Bool)_isSearchResult;
 - (id)init;
 

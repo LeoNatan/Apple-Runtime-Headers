@@ -37,6 +37,7 @@
 + (BOOL)shouldDelayPhaticForMyriadDecision;
 + (BOOL)supportPhatic;
 + (BOOL)supportPremiumModel;
++ (BOOL)isIOSDeviceSupportingBargeIn;
 + (BOOL)supportPremiumWatchAssets;
 + (BOOL)supportCompactPlus;
 + (BOOL)supportRaiseToSpeak;
@@ -132,7 +133,6 @@
 + (id)stringForInvocationStyle:(unsigned long long)arg1;
 + (BOOL)_gibraltarHasBuiltInMic;
 + (BOOL)hasRemoteBuiltInMic;
-+ (BOOL)supportIOSBargeIn;
 + (id)speexRecordSettings;
 + (id)opusRecordSettings;
 + (id)lpcmRecordSettings;

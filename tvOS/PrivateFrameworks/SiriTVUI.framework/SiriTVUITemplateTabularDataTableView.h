@@ -18,11 +18,11 @@
     UIColor *_dividerColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *dividerColor; // @synthesize dividerColor=_dividerColor;
 @property(retain, nonatomic) SiriTVUIDividerTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) __weak id <SiriTVUITemplateTabularDataTableViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
-- (void).cxx_destruct;
 - (_Bool)_shouldShowDivider;
 - (id)preferredFocusEnvironments;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

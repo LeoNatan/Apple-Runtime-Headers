@@ -50,6 +50,7 @@
     CNPostalAddressFormattingSpecification *_formattingSpecification;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNPostalAddressFormattingSpecification *formattingSpecification; // @synthesize formattingSpecification=_formattingSpecification;
 @property(retain, nonatomic) NSDictionary *fieldViewDictionary; // @synthesize fieldViewDictionary=_fieldViewDictionary;
 @property(retain, nonatomic) PKContactLabelMenuController *labelMenuController; // @synthesize labelMenuController=_labelMenuController;
@@ -84,7 +85,6 @@
 @property(nonatomic) unsigned long long shippingType; // @synthesize shippingType=_shippingType;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)_ISOCountryCodeForCountryName:(id)arg1;
 - (id)_countryMenuItems;
 - (BOOL)_wantsFieldKey:(id)arg1;

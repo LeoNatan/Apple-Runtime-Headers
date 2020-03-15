@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _layoutBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKMessagePartChatItem *chatItem; // @synthesize chatItem=_chatItem;
 @property(nonatomic) struct CGRect layoutBounds; // @synthesize layoutBounds=_layoutBounds;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) CKMessageAcknowledgmentPickerBarViewController *pickerViewController; // @synthesize pickerViewController=_pickerViewController;
-- (void).cxx_destruct;
 - (struct CGPoint)attachmentOffsetWithReferenceFrame:(struct CGRect)arg1;
 - (void)setVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithChatItem:(id)arg1 layoutBounds:(struct CGRect)arg2;

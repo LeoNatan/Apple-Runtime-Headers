@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 + (id)WebHTMLViewAtLocation:(struct CGPoint)arg1;
 + (BOOL)canAccessTextInView:(id)arg1;
 + (BOOL)canAccessTextAtLocation:(struct CGPoint)arg1;
-@property(retain, nonatomic) WebFrameView *webFrameView; // @synthesize webFrameView=_webFrameView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WebFrameView *webFrameView; // @synthesize webFrameView=_webFrameView;
 - (id)termForRange:(id)arg1 textOrigin:(struct CGPoint *)arg2;
 - (id)_termAndTextOrigin:(struct CGPoint *)arg1;
 - (id)_termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2;

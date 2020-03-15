@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIWebSelection *selection;
 - (void)selectionChanged;
 - (void)clearSelection;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)hasSelectablePositionAtPoint:(struct CGPoint)arg1;

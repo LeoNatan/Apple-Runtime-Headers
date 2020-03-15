@@ -17,8 +17,8 @@
 }
 
 + (id)sectionPathWithSectionName:(id)arg1 element:(unsigned int)arg2;
-@property(nonatomic) unsigned int element; // @synthesize element=_element;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int element; // @synthesize element=_element;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

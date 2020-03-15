@@ -21,8 +21,8 @@
 + (id)suggestionSubtypes;
 + (id)suggestionTypes;
 + (id)suggesterWithSession:(id)arg1;
-@property(nonatomic) __weak PGSuggestionSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PGSuggestionSession *session; // @synthesize session=_session;
 - (id)reasonsForSuggestion:(id)arg1;
 - (id)suggestionsWithOptions:(id)arg1 progress:(CDUnknownBlockType)arg2;
 - (id)initWithSession:(id)arg1;

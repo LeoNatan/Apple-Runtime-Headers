@@ -43,6 +43,7 @@
 - (unsigned long long)numberOfSortedChildrenHidingGmail:(BOOL)arg1;
 - (unsigned long long)numberOfVisibleChildrenHidingGmail:(BOOL)arg1;
 - (unsigned long long)numberOfChildren;
+- (void)enumerateVisibleChildrenHidingGmail:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)visibleChildAtIndex:(unsigned long long)arg1;
 - (id)childAtIndex:(unsigned long long)arg1;
 - (id)mutableCopyOfChildrenIncludingHiddenChildren:(BOOL)arg1 hidingGmail:(BOOL)arg2;

@@ -18,11 +18,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) RKRankLearner *rankLearner; // @synthesize rankLearner=_rankLearner;
 @property(retain, nonatomic) NSArray *preferredLanguages; // @synthesize preferredLanguages=_preferredLanguages;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain) RKResponseCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (_Bool)isQuestion:(id)arg1 withLanguage:(id)arg2;
 - (void)flushDynamicData;
 - (void)resetRegisteredResponses;

@@ -27,8 +27,8 @@
 
 + (id)systemLockIdentifier;
 + (id)shouldDisplayEducationalScreenKey;
-@property(nonatomic) __weak id <CSLSystemLockViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSystemLockViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_callSOS;
 - (void)_chimeSOS;
 - (_Bool)_shouldChime;

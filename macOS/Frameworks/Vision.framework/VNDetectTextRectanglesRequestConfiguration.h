@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_textRecognition;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textRecognition; // @synthesize textRecognition=_textRecognition;
 @property(nonatomic) BOOL minimizeFalseDetections; // @synthesize minimizeFalseDetections=_minimizeFalseDetections;
 @property(nonatomic) BOOL detectDiacritics; // @synthesize detectDiacritics=_detectDiacritics;
 @property(nonatomic) unsigned long long minimumCharacterPixelHeight; // @synthesize minimumCharacterPixelHeight=_minimumCharacterPixelHeight;
 @property(nonatomic) unsigned long long algorithm; // @synthesize algorithm=_algorithm;
 @property(nonatomic) BOOL reportCharacterBoxes; // @synthesize reportCharacterBoxes=_reportCharacterBoxes;
-- (void).cxx_destruct;
 - (id)initWithRequestClass:(Class)arg1;
 
 @end

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_checkmarkLeadingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *checkmarkLeadingConstraint; // @synthesize checkmarkLeadingConstraint=_checkmarkLeadingConstraint;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)setIconImage:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 @property(readonly, nonatomic) struct CGSize iconSize;

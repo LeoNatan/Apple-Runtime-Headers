@@ -18,10 +18,10 @@
     id <EFSQLExpressable> _constValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EFSQLExpressable> constValue; // @synthesize constValue=_constValue;
 @property(readonly, nonatomic) unsigned long long predicateOperator; // @synthesize predicateOperator=_predicateOperator;
 @property(readonly, nonatomic) NSArray *keypathGenerators; // @synthesize keypathGenerators=_keypathGenerators;
-- (void).cxx_destruct;
 - (void)traverseTreeWithAliasMap:(id)arg1;
 - (id)sqlExpressableWithTableExpressions:(id)arg1;
 - (id)initWithKeypathGenerators:(id)arg1 predicateOperator:(unsigned long long)arg2 constValue:(id)arg3;

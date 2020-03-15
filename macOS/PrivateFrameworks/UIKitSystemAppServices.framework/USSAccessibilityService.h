@@ -14,9 +14,9 @@
     id <USSAccessibilityEnvironmentDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <USSAccessibilityEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL isGrayscaleEnabled; // @synthesize isGrayscaleEnabled=_isGrayscaleEnabled;
-- (void).cxx_destruct;
 - (void)_handleApplicationAccessibilityChangedNotification:(id)arg1;
 - (void)_handleAccessibilityInterfaceChangedNotification:(id)arg1;
 @property(readonly, nonatomic) BOOL isVoiceControlEnabled;

@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
-@property(nonatomic) struct CGSize size; // @synthesize size=_size;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize size; // @synthesize size=_size;
 - (BOOL)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (_Bool)fits:(const struct TString *)arg1;
 - (double)measure:(const struct TString *)arg1;

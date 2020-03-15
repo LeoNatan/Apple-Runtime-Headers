@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastReportedL2TxFail; // @synthesize lastReportedL2TxFail=_lastReportedL2TxFail;
 @property(nonatomic) unsigned long long lastReportedL2TxReTry; // @synthesize lastReportedL2TxReTry=_lastReportedL2TxReTry;
 @property(nonatomic) unsigned long long lastReportedL2TxFrames; // @synthesize lastReportedL2TxFrames=_lastReportedL2TxFrames;
@@ -90,7 +91,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasInternetConn; // @synthesize hasInternetConn=_hasInternetConn;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

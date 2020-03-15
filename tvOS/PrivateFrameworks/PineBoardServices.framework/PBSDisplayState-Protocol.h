@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) _Bool detectedPoorCableConnection;
 @property(readonly, nonatomic) long long displayConnection;
 @property(readonly, nonatomic) _Bool shouldModeSwitchForFrameRate;
+@property(readonly, nonatomic) _Bool atmosEnabled;
 @property(readonly, nonatomic) _Bool shouldModeSwitchForDynamicRange;
 @property(readonly, nonatomic) _Bool canHandleHighBandwidthModes;
 @property(readonly, nonatomic) NSString *currentDisplayID;

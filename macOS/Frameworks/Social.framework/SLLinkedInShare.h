@@ -18,12 +18,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *visibility; // @synthesize visibility=_visibility;
 @property(retain) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *comment; // @synthesize comment=_comment;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

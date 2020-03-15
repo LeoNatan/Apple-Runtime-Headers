@@ -15,10 +15,10 @@
     struct CGPoint _anchorOrigin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double distance; // @synthesize distance=_distance;
 @property(readonly, nonatomic) struct CGPoint anchorOrigin; // @synthesize anchorOrigin=_anchorOrigin;
 @property(readonly, nonatomic) PXAssetReference *assetReference; // @synthesize assetReference=_assetReference;
-- (void).cxx_destruct;
 - (id)initWithAssetReference:(id)arg1 anchorOrigin:(struct CGPoint)arg2 distance:(double)arg3;
 
 @end

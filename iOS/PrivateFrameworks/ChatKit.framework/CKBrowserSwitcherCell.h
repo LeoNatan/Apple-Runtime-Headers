@@ -18,12 +18,12 @@
 }
 
 + (id)identifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKSnapshotCacheKey *snapshotCacheKey; // @synthesize snapshotCacheKey=_snapshotCacheKey;
 @property(retain, nonatomic) UIView *extensionInterruptedView; // @synthesize extensionInterruptedView=_extensionInterruptedView;
 @property(retain, nonatomic) UIView *browserSnapshotView; // @synthesize browserSnapshotView=_browserSnapshotView;
 @property(nonatomic, getter=isUsingFallbackSnapshot) _Bool usingFallbackSnapshot; // @synthesize usingFallbackSnapshot=_usingFallbackSnapshot;
 @property(retain, nonatomic) IMBalloonPlugin *plugin; // @synthesize plugin=_plugin;
-- (void).cxx_destruct;
 - (void)_handleBrowserSnapshotDidChange:(id)arg1;
 - (void)_updateSnapshotView;
 - (void)layoutSubviews;

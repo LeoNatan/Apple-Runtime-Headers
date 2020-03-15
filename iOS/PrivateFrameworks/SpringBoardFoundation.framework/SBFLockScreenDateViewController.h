@@ -22,10 +22,10 @@
     id <SBFDateProviding> _dateProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBFDateProviding> dateProvider; // @synthesize dateProvider=_dateProvider;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) _Bool screenOff; // @synthesize screenOff=_screenOff;
-- (void).cxx_destruct;
 - (void)_startUpdateTimer;
 - (void)_stopUpdateTimer;
 - (void)_handleTimeZoneChange;

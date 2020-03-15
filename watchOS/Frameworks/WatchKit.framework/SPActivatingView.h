@@ -28,6 +28,7 @@
 + (id)getMessageForView:(id)arg1 below:(id)arg2;
 + (id)getLockedIconForView:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDisconnected) _Bool disconnected; // @synthesize disconnected=_disconnected;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(nonatomic, getter=isUpdating) _Bool updating; // @synthesize updating=_updating;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UIView *lockedView; // @synthesize lockedView=_lockedView;
 @property(nonatomic) __weak id <SPActivatingViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
-- (void).cxx_destruct;
 - (void)airplaneModeChanged;
 - (void)connectionStatusDidChange:(unsigned int)arg1;
 - (_Bool)_isAirplaneModeEnabled;

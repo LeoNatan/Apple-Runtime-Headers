@@ -16,11 +16,11 @@
     CDUnknownBlockType _resultHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(nonatomic) _Bool isCanceled; // @synthesize isCanceled=_isCanceled;
 @property(copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 
 @end
 

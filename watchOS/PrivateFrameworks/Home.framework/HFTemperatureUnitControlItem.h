@@ -14,8 +14,8 @@
 }
 
 + (Class)valueClass;
-@property(readonly, copy, nonatomic) NSString *temperatureUnitCharacteristicType; // @synthesize temperatureUnitCharacteristicType=_temperatureUnitCharacteristicType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *temperatureUnitCharacteristicType; // @synthesize temperatureUnitCharacteristicType=_temperatureUnitCharacteristicType;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;
 - (id)copyWithCharacteristicOptions:(id)arg1 valueSource:(id)arg2;

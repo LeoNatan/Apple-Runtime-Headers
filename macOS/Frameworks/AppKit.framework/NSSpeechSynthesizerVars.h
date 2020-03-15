@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
 
 + (id)voiceIdentifierForVoiceCreator:(unsigned int)arg1 voiceID:(unsigned int)arg2;
 + (BOOL)findVoiceByIdentifier:(id)arg1 returningCreator:(unsigned int *)arg2 returningID:(unsigned int *)arg3;
-@property __weak id <NSSpeechSynthesizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <NSSpeechSynthesizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) _NSPeriodicInvoker *speechFeedbackServicesInvoker;
 @property BOOL synthesizerIsRetained;
 @property BOOL speechFinishedSuccessfully;

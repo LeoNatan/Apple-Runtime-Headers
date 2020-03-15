@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     VUISportsProductBannerView *_bannerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISportsProductBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_configureViewSubviews;
 - (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;

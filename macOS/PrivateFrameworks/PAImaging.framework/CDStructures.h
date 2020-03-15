@@ -70,18 +70,6 @@ struct CVSMPTETime {
     short _field9;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
-struct PFAsyncDispatchMulticaster {
-    Class _field1;
-};
-
 struct PFIntPoint_st {
     long long _field1;
     long long _field2;

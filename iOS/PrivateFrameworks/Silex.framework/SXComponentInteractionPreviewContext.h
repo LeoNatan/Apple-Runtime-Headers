@@ -16,9 +16,9 @@
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)initWithViewController:(id)arg1 sourceRect:(struct CGRect)arg2;
 
 // Remaining properties

@@ -20,6 +20,7 @@
     NSString *_location;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *location; // @synthesize location=_location;
 @property(retain) NSString *notes; // @synthesize notes=_notes;
 @property(retain) NSURL *url; // @synthesize url=_url;
@@ -28,7 +29,6 @@
 @property(retain) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)dictionary;
 - (id)eventWithEventStore:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

@@ -21,9 +21,9 @@
 
 + (id)itemTypeIdentifier;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SOMessagePartLayoutItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMTranscriptChatItem *chatTranscriptItem; // @synthesize chatTranscriptItem=_chatTranscriptItem;
-- (void).cxx_destruct;
 - (long long)verticalSpaceToPrecedingItemOfClassification:(long long)arg1;
 - (struct CGSize)sizeConstrainedToWidth:(double)arg1;
 @property(readonly, nonatomic) long long layoutOrientation;

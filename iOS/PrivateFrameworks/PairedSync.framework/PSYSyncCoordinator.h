@@ -37,9 +37,9 @@
 + (id)filteredErrorWithError:(id)arg1;
 + (id)syncCoordinatorWithServiceName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)exitForTestInput:(id)arg1;
 - (void)beginDryRunSyncWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)syncSessionForOptions:(id)arg1 supportsMigrationSync:(_Bool)arg2;

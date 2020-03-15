@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_constraints;
 }
 
-@property(readonly, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 - (id)initWithConstraints:(id)arg1;
 
 @end

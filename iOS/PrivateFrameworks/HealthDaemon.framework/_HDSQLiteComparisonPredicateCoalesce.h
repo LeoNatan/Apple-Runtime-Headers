@@ -13,8 +13,8 @@
     NSArray *_properties;
 }
 
-@property(readonly, copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 - (id)description;
 - (_Bool)isCompatibleWithPredicate:(id)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;

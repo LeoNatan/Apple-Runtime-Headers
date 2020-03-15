@@ -16,9 +16,9 @@
 
 + (id)fieldsToIgnore;
 + (id)timeFields;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *latestTimestamp; // @synthesize latestTimestamp=_latestTimestamp;
 @property(readonly, nonatomic) EKPersistentHistoryTransactionChangeSummaryModel *summaryModel; // @synthesize summaryModel=_summaryModel;
-- (void).cxx_destruct;
 - (void)_filterAndPopulateChangesFromTransaction:(id)arg1;
 - (void)_updateLatestTimestampWithDate:(id)arg1;
 - (id)_queryCoreDataForTransactionsSinceLastCheckpoint:(id)arg1 error:(id *)arg2;

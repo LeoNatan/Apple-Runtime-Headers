@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) AVAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
-- (void).cxx_destruct;
 
 @end
 

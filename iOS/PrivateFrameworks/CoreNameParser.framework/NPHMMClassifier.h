@@ -18,8 +18,8 @@
     CDStruct_a720a2d7 _stateProbabilities;
 }
 
-@property CDStruct_a720a2d7 stateProbabilities; // @synthesize stateProbabilities=_stateProbabilities;
 - (void).cxx_destruct;
+@property CDStruct_a720a2d7 stateProbabilities; // @synthesize stateProbabilities=_stateProbabilities;
 - (unsigned long long)genderMajorityForGivenName:(id)arg1;
 - (id)compoundsFromName:(id)arg1 includeSpaceAsDelimiter:(_Bool)arg2;
 - (id)compoundsFromName:(id)arg1;

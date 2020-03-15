@@ -16,11 +16,11 @@
     CAShapeLayer *__triangleLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTriangleLayer:) CAShapeLayer *_triangleLayer; // @synthesize _triangleLayer=__triangleLayer;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_updateTriangleLayerPath;
 - (void)_updateTriangleLayer;
 - (void)_setupTriangleSublayer;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureWithElement:(id)arg1 existingButton:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(nonatomic) _Bool isWatchListed; // @synthesize isWatchListed=_isWatchListed;
 @property(nonatomic) _Bool dismissOnSelect; // @synthesize dismissOnSelect=_dismissOnSelect;
 @property(nonatomic) __weak VUIButton<VUIUpNextButtonProtocol> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) VUIUpNextStateView *removedStateView; // @synthesize removedStateView=_removedStateView;
 @property(readonly, nonatomic) VUIUpNextStateView *addedStateView; // @synthesize addedStateView=_addedStateView;
-- (void).cxx_destruct;
 - (void)_errorInUpdatingState:(id)arg1;
 - (void)dealloc;
 - (void)updateButtonContentView;

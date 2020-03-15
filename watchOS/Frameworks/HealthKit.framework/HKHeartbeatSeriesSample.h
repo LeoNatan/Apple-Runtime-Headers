@@ -23,8 +23,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)heartbeatSequenceSampleWithData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4;
 + (id)_heartbeatSeriesSampleWithData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 device:(id)arg4 metadata:(id)arg5;
-@property(readonly) int numberOfDataPoints; // @synthesize numberOfDataPoints=_numberOfDataPoints;
 - (void).cxx_destruct;
+@property(readonly) int numberOfDataPoints; // @synthesize numberOfDataPoints=_numberOfDataPoints;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_setPayload:(id)arg1;

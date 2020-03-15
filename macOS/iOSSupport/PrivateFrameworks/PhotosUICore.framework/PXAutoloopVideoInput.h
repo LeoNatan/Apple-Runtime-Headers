@@ -15,9 +15,9 @@
 }
 
 + (id)inputWithAsset:(id)arg1 imageURL:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(readonly, copy, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)initWithAsset:(id)arg1 imageURL:(id)arg2;
 
 @end

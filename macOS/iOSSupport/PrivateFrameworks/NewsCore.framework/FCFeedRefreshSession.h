@@ -25,6 +25,7 @@
 }
 
 + (id)currentEditionWithRefreshDate:(id)arg1 lastCompletedEdition:(id)arg2 fromPaginator:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isNewEdition; // @synthesize isNewEdition=_isNewEdition;
 @property(readonly, copy, nonatomic) id <FCFeedRefreshSessionForYouConfig> forYouConfig; // @synthesize forYouConfig=_forYouConfig;
 @property(readonly, nonatomic) BOOL isOffline; // @synthesize isOffline=_isOffline;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, nonatomic) NSDate *refreshDate; // @synthesize refreshDate=_refreshDate;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyByRemovingPendingGroupsAtIndexes:(id)arg1;
 - (id)copyByRemovingPendingGroupIdenticalTo:(id)arg1;

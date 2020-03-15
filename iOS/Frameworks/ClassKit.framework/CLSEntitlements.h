@@ -22,9 +22,9 @@
 + (id)entitlementsWithSecTask:(struct __SecTask *)arg1 overrides:(id)arg2 error:(id *)arg3;
 + (id)entitlementsWithConnection:(id)arg1 error:(id *)arg2;
 + (id)entitlementsForCurrentTaskWithError:(id *)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
-- (void).cxx_destruct;
 - (id)stringValueForEntitlement:(id)arg1 error:(id *)arg2;
 - (_Bool)boolValueForEntitlement:(id)arg1 error:(id *)arg2;
 - (_Bool)isInDevelopmentEnvironment;

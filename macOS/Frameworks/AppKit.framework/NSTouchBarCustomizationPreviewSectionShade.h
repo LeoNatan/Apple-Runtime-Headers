@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSString *_accessibilityLabel;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property long long tag; // @synthesize tag=_tag;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)handleClick:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

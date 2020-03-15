@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double endDate; // @synthesize endDate=_endDate;
 @property(nonatomic) double startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

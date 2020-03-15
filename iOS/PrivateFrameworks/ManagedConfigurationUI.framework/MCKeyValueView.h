@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)defaultPreferredValueLabelOriginX;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *verifiedLabel; // @synthesize verifiedLabel=_verifiedLabel;
 @property(retain, nonatomic) UIImageView *verifiedImageView; // @synthesize verifiedImageView=_verifiedImageView;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *keyLabel; // @synthesize keyLabel=_keyLabel;
 @property(nonatomic) double preferredValueLabelOriginX; // @synthesize preferredValueLabelOriginX=_preferredValueLabelOriginX;
-- (void).cxx_destruct;
 - (id)verifiedColor;
 - (id)verifiedFont;
 - (id)detailFont;

@@ -16,9 +16,9 @@
 
 + (id)sharedCollector;
 + (_Bool)isEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
 @property(retain, nonatomic) CNUIDataCollectorLogger *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)logAddProperty:(id)arg1 contact:(id)arg2;
 - (void)logGroupsShown:(long long)arg1 totalGroups:(long long)arg2;
 - (void)logRefreshUsage;

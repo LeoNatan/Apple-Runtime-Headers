@@ -19,8 +19,8 @@
     PKFelicaPassProperties *_properties;
 }
 
-@property(readonly, nonatomic) PKFelicaPassProperties *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKFelicaPassProperties *properties; // @synthesize properties=_properties;
 - (void)_prepareLabelsAndValues;
 - (id)_transitTicketValueForDetail:(unsigned long long)arg1 forSecondaryTrain:(_Bool)arg2;
 - (id)_transitTicketTitleForDetail:(unsigned long long)arg1;

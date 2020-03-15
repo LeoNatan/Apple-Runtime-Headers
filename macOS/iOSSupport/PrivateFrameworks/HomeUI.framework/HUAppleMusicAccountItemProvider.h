@@ -16,10 +16,10 @@
     CDUnknownBlockType _filter;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(retain, nonatomic) NSMutableSet *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)reloadItems;
 - (id)initWithMediaProfileContainer:(id)arg1;

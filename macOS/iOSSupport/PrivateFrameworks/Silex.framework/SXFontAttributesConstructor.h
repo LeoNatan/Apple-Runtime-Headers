@@ -16,8 +16,8 @@
     id <SXFontIndex> _fontIndex;
 }
 
-@property(readonly, nonatomic) id <SXFontIndex> fontIndex; // @synthesize fontIndex=_fontIndex;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXFontIndex> fontIndex; // @synthesize fontIndex=_fontIndex;
 - (long long)weightByApplyingWeightLabels:(id)arg1 toWeight:(long long)arg2;
 - (id)fontNameForAttributes:(id)arg1 size:(long long)arg2;
 - (id)fontAttributesForFontDescriptions:(id)arg1;

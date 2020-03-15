@@ -21,9 +21,9 @@
 + (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
 + (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (id)_swatchImageFaceName;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(nonatomic) unsigned long long density; // @synthesize density=_density;
-- (void).cxx_destruct;
 - (struct CGPoint)_dateComplicationCenterOffset;
 - (struct CGPoint)_dateComplicationRightAlignment;
 - (void)_updateDateComplicationPositionIfNecessary;

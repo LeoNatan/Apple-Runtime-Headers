@@ -50,10 +50,6 @@ struct CentralHeader {
     char *_field19;
 };
 
-struct EFPair {
-    Class _field1;
-};
-
 struct _CommandStackEntry {
     struct *_field1;
     id _field2;

@@ -24,13 +24,13 @@
 }
 
 + (_Bool)hasPhotosSectionForFace:(id)arg1 forEditMode:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *externalAssets; // @synthesize externalAssets=_externalAssets;
 @property(retain, nonatomic) NTKCompanionTransientCustomPhotosEditor *transientEditor; // @synthesize transientEditor=_transientEditor;
 @property(retain, nonatomic) NTKCompanionMemoriesEditor *memoriesEditor; // @synthesize memoriesEditor=_memoriesEditor;
 @property(retain, nonatomic) NTKCompanionSyncedAlbumEditor *syncedAlbumEditor; // @synthesize syncedAlbumEditor=_syncedAlbumEditor;
 @property(retain, nonatomic) NTKCompanionCustomPhotosEditor *customPhotosEditor; // @synthesize customPhotosEditor=_customPhotosEditor;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
-- (void).cxx_destruct;
 - (void)customPhotosControllerDidFinish:(id)arg1;
 - (id)_overrideTextForOption:(id)arg1;
 - (void)saveChangesWithCompletion:(CDUnknownBlockType)arg1;

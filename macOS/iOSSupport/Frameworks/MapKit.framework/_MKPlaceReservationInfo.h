@@ -17,11 +17,11 @@
     id <_MKPlaceReservationDelegate> _reservationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <_MKPlaceReservationDelegate> reservationDelegate; // @synthesize reservationDelegate=_reservationDelegate;
 @property(readonly, copy, nonatomic) NSArray *openTimes; // @synthesize openTimes=_openTimes;
 @property(readonly, nonatomic) UIImage *attributionProviderLogoImage; // @synthesize attributionProviderLogoImage=_attributionProviderLogoImage;
 @property(readonly, copy, nonatomic) NSString *attributionProviderDisplayName; // @synthesize attributionProviderDisplayName=_attributionProviderDisplayName;
-- (void).cxx_destruct;
 - (id)initWithOpenTimes:(id)arg1 attributionProviderName:(id)arg2 providerLogoImage:(id)arg3 delegate:(id)arg4;
 
 @end

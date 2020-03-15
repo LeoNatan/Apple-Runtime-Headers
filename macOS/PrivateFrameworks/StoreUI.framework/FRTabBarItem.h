@@ -18,13 +18,13 @@
     NSArray *_badgedIcons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *badgedIcons; // @synthesize badgedIcons=_badgedIcons;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

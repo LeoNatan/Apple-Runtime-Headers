@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long testCondition; // @synthesize testCondition=_testCondition;
 @property(retain, nonatomic) NSString *experimentIdentifier; // @synthesize experimentIdentifier=_experimentIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,11 +17,11 @@
     double _leadingOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumCellHeight; // @synthesize minimumCellHeight=_minimumCellHeight;
 @property(nonatomic) double leadingOffset; // @synthesize leadingOffset=_leadingOffset;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) _Bool inlineEditingEnabled; // @synthesize inlineEditingEnabled=_inlineEditingEnabled;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)showTextField:(_Bool)arg1;
 - (void)prepareForReuse;

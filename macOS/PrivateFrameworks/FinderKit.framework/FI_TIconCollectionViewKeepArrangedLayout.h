@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     _Bool _isJustifiedLayout;
 }
 
-@property(getter=isJustifiedLayout) _Bool justifiedLayout; // @synthesize justifiedLayout=_isJustifiedLayout;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isJustifiedLayout) _Bool justifiedLayout; // @synthesize justifiedLayout=_isJustifiedLayout;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (void)prepareLayout;

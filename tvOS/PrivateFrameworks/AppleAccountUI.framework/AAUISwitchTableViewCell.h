@@ -15,9 +15,9 @@
     id <AAUISwitchTableViewCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AAUISwitchTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UISwitch *control; // @synthesize control=_control;
-- (void).cxx_destruct;
 - (void)_delegate_switchTableViewCellDidUpdateValue;
 - (void)_controlValueChanged:(id)arg1;
 - (id)initWithCoder:(id)arg1;

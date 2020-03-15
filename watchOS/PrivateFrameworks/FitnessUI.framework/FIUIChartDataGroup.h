@@ -17,9 +17,9 @@
     NSArray *_dataSets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dataSets; // @synthesize dataSets=_dataSets;
 @property(nonatomic) __weak id <FIUIChartDataGroupDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_labelsForSetAtIndex:(unsigned int)arg1;
 - (id)_pointForSetAtIndex:(unsigned int)arg1 pointIndex:(unsigned int)arg2;
 - (unsigned int)_numberOfDataPointsInSetAtIndex:(unsigned int)arg1;

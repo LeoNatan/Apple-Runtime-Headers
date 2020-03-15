@@ -13,8 +13,8 @@
     NSDictionary *_lookupDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 @property(readonly, copy, nonatomic) NSString *title;
 @property(readonly, copy, nonatomic) MPStoreArtworkRequestToken *previewArtworkRequestToken;
 @property(readonly, copy, nonatomic) NSArray *assets;

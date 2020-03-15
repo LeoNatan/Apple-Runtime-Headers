@@ -30,9 +30,9 @@
 + (id)logCategory;
 + (id)accountWithHandle:(id)arg1;
 + (id)accountWithDestination:(id)arg1;
+- (void).cxx_destruct;
 @property __weak id <HMDAccountManager> manager; // @synthesize manager=_manager;
 @property(readonly, copy) HMDAccountIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)modelBackedObjects;
 - (id)currentDeviceModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;

@@ -12,6 +12,7 @@
 + (struct USet *)_fullwidthLettersAndSymbolsSet;
 + (struct USet *)_nonFullwidthLettersAndNumbersSet;
 + (struct USet *)_fullwidthLettersAndNumbersSet;
++ (struct USet *)_bopomofoWithoutToneSet;
 + (struct USet *)_bopomofoToneSet;
 + (struct USet *)_bopomofoSet;
 + (struct USet *)_ideographSet;
@@ -66,6 +67,7 @@
 - (BOOL)_containsCJKScriptsOnly;
 - (BOOL)_containsCJScriptsOnly;
 - (BOOL)_containsIdeographsOrBopomofoOnly;
+- (BOOL)_containsBopomofoWithoutToneOnly;
 - (BOOL)_containsBopomofoToneOnly;
 - (BOOL)_containsBopomofoOnly;
 - (BOOL)_containsEmojiOnly;

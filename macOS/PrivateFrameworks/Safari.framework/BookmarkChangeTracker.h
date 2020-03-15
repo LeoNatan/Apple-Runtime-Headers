@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     WebBookmarkGroup *_bookmarkGroup;
 }
 
-@property(readonly, nonatomic) __weak WebBookmarkGroup *bookmarkGroup; // @synthesize bookmarkGroup=_bookmarkGroup;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak WebBookmarkGroup *bookmarkGroup; // @synthesize bookmarkGroup=_bookmarkGroup;
 - (BOOL)_usesRealMoveOperation;
 - (void)_recordDelete:(id)arg1;
 - (void)_recordModify:(id)arg1 isMove:(BOOL)arg2 changedAttributes:(id)arg3;

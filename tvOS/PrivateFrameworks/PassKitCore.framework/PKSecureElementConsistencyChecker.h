@@ -17,14 +17,15 @@
     PKPaymentWebService *_paymentWebService;
 }
 
++ (id)checkConsistencyWithDeviceState:(id)arg1 registeredRegions:(id)arg2;
 + (_Bool)isCheckingConsistencyForSecureElementID:(id)arg1;
++ (long long)cleanupActionsForDeviceCredential:(id)arg1 withAssociatedPassCredential:(id)arg2;
++ (long long)cleanupActionsForApplet:(id)arg1 withAssociatedPaymentApplication:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
 @property(nonatomic) id <PKSecureElementConsistencyCheckerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_rescheduleWithBackoff;
 - (_Bool)_downloadPasses;
-- (void)queue_checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 registeredRegions:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)queue_startWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithPaymentWebService:(id)arg1 delegate:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3;

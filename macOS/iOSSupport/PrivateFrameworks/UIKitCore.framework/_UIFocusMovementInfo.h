@@ -13,6 +13,7 @@
 
 @interface _UIFocusMovementInfo : NSObject <NSCopying, BSXPCCoding>
 {
+    BOOL _looping;
     BOOL _shouldLoadScrollableContainer;
     BOOL _isInitialMovement;
     BOOL _isVelocityBased;
@@ -25,20 +26,23 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)_movementWithLinearHeading:(unsigned long long)arg1 isInitial:(BOOL)arg2 looping:(BOOL)arg3;
++ (id)_movementWithHeading:(unsigned long long)arg1 linearHeading:(unsigned long long)arg2 shouldLoadScrollableContainer:(BOOL)arg3 isInitial:(BOOL)arg4 looping:(BOOL)arg5;
 + (id)_movementWithHeading:(unsigned long long)arg1 linearHeading:(unsigned long long)arg2 shouldLoadScrollableContainer:(BOOL)arg3 isInitial:(BOOL)arg4;
 + (id)_movementWithHeading:(unsigned long long)arg1 linearHeading:(unsigned long long)arg2 isInitial:(BOOL)arg3;
 + (id)_movementWithHeading:(unsigned long long)arg1 secondaryHeading:(unsigned long long)arg2 velocity:(struct CGVector)arg3 isInitial:(BOOL)arg4;
 + (id)_movementWithHeading:(unsigned long long)arg1 velocity:(struct CGVector)arg2 isInitial:(BOOL)arg3;
 + (id)_movementWithVelocity:(struct CGVector)arg1 isInitial:(BOOL)arg2;
 + (id)_movementWithHeading:(unsigned long long)arg1 isInitial:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isVelocityBased, setter=_setIsVelocityBased:) BOOL isVelocityBased; // @synthesize isVelocityBased=_isVelocityBased;
 @property(nonatomic, getter=_isInitialMovement, setter=_setIsInitialMovement:) BOOL isInitialMovement; // @synthesize isInitialMovement=_isInitialMovement;
 @property(nonatomic, getter=_velocity, setter=_setVelocity:) struct CGVector velocity; // @synthesize velocity=_velocity;
 @property(nonatomic, getter=_shouldLoadScrollableContainer, setter=_setShouldLoadScrollableContainer:) BOOL shouldLoadScrollableContainer; // @synthesize shouldLoadScrollableContainer=_shouldLoadScrollableContainer;
 @property(nonatomic, getter=_linearHeading, setter=_setLinearHeading:) unsigned long long linearHeading; // @synthesize linearHeading=_linearHeading;
+@property(nonatomic, getter=_isLooping, setter=_setLooping:) BOOL looping; // @synthesize looping=_looping;
 @property(nonatomic, getter=_secondaryHeading, setter=_setSecondaryHeading:) unsigned long long secondaryHeading; // @synthesize secondaryHeading=_secondaryHeading;
 @property(nonatomic, setter=_setHeading:) unsigned long long heading; // @synthesize heading=_heading;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;

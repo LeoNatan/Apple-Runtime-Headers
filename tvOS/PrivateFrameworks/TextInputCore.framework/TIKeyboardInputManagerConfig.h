@@ -48,6 +48,7 @@
 }
 
 + (id)configurationForInputMode:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesUserModelLogging; // @synthesize usesUserModelLogging=_usesUserModelLogging;
 @property(nonatomic) _Bool allowRelaxedOVSPolicy; // @synthesize allowRelaxedOVSPolicy=_allowRelaxedOVSPolicy;
 @property(nonatomic) unsigned long long sensorKitWordsThreshold; // @synthesize sensorKitWordsThreshold=_sensorKitWordsThreshold;
@@ -83,7 +84,6 @@
 @property(copy, nonatomic) NSString *dynamicResourcePath; // @synthesize dynamicResourcePath=_dynamicResourcePath;
 @property(copy, nonatomic) NSString *staticDictionaryPath; // @synthesize staticDictionaryPath=_staticDictionaryPath;
 @property(retain, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
-- (void).cxx_destruct;
 - (id)propertyList;
 @property(nonatomic) _Bool usesWordNgramModelAdaptation;
 

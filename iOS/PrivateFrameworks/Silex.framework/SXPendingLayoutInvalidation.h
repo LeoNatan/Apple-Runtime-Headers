@@ -17,11 +17,11 @@
     struct CGSize _suggestedSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) NFPendingPromise *pendingPromise; // @synthesize pendingPromise=_pendingPromise;
 @property(readonly, nonatomic) struct CGSize suggestedSize; // @synthesize suggestedSize=_suggestedSize;
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
-- (void).cxx_destruct;
 - (id)initWithComponent:(id)arg1 suggestedSize:(struct CGSize)arg2 pendingPromise:(id)arg3 layoutOptions:(id)arg4;
 
 @end

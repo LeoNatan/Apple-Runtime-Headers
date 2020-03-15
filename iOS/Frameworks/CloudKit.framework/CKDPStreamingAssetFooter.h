@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     int _status;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *md5; // @synthesize md5=_md5;
 @property(nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

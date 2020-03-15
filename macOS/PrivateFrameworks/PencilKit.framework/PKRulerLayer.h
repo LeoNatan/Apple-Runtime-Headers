@@ -34,6 +34,7 @@
     struct CGAffineTransform _rulerZoomStartTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL zooming; // @synthesize zooming=_zooming;
 @property(nonatomic) struct CGAffineTransform rulerZoomStartTransform; // @synthesize rulerZoomStartTransform=_rulerZoomStartTransform;
 @property(nonatomic) double rulerZoomStartScale; // @synthesize rulerZoomStartScale=_rulerZoomStartScale;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) CALayer *rulerAngleMarker; // @synthesize rulerAngleMarker=_rulerAngleMarker;
 @property(nonatomic) double rulerAlpha; // @synthesize rulerAlpha=_rulerAlpha;
 @property(nonatomic) __weak PKRulerController *rulerController; // @synthesize rulerController=_rulerController;
-- (void).cxx_destruct;
 - (void)setImageTransformFrom:(struct CGAffineTransform)arg1 toTransform:(struct CGAffineTransform)arg2 animated:(BOOL)arg3 duration:(double)arg4;
 - (void)updateImageTransform:(id)arg1;
 - (void)removeRulerMarkers;

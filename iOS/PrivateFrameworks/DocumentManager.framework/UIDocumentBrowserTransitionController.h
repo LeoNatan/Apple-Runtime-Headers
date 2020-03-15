@@ -24,12 +24,12 @@
     NSOperationQueue *_transitionControllerQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *transitionControllerQueue; // @synthesize transitionControllerQueue=_transitionControllerQueue;
 @property(retain, nonatomic) id <DOCServiceTransitionProtocol> transitionController; // @synthesize transitionController=_transitionController;
 @property _Bool transitionDidFinish; // @synthesize transitionDidFinish=_transitionDidFinish;
 @property(nonatomic) __weak UIView *targetView; // @synthesize targetView=_targetView;
 @property(retain, nonatomic) NSProgress *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (void)dealloc;

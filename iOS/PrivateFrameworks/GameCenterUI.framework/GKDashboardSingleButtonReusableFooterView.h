@@ -15,10 +15,10 @@
     UIButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(copy, nonatomic) CDUnknownBlockType buttonTapHandler; // @synthesize buttonTapHandler=_buttonTapHandler;
 @property(retain, nonatomic) NSLayoutConstraint *buttonLeadingConstraint; // @synthesize buttonLeadingConstraint=_buttonLeadingConstraint;
-- (void).cxx_destruct;
 - (void)buttonTapped:(id)arg1;
 - (void)setButtonTitle:(id)arg1 forState:(unsigned long long)arg2;
 - (void)awakeFromNib;

@@ -21,6 +21,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
 @property(nonatomic) double systemWideSwipeDownHeight; // @synthesize systemWideSwipeDownHeight=_systemWideSwipeDownHeight;
 @property(nonatomic) double homeGestureSwipeDownHeight; // @synthesize homeGestureSwipeDownHeight=_homeGestureSwipeDownHeight;
@@ -29,7 +30,6 @@
 @property(nonatomic) double reachabilityInteractiveKeepAlive; // @synthesize reachabilityInteractiveKeepAlive=_reachabilityInteractiveKeepAlive;
 @property(nonatomic) double reachabilityDefaultKeepAlive; // @synthesize reachabilityDefaultKeepAlive=_reachabilityDefaultKeepAlive;
 @property(nonatomic) _Bool allowOnAllDevices; // @synthesize allowOnAllDevices=_allowOnAllDevices;
-- (void).cxx_destruct;
 - (double)yOffset;
 - (void)setDefaultValues;
 

@@ -19,12 +19,12 @@
     AMPLSharingClient *_client;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMPLSharingClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) unsigned long long mediaDomain; // @synthesize mediaDomain=_mediaDomain;
 @property(readonly, nonatomic) unsigned long long ID; // @synthesize ID=_ID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic, getter=isShared) BOOL shared; // @synthesize shared=_shared;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setPlaylistIsShared:(BOOL)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)updateWithPrefsDict:(id)arg1;

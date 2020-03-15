@@ -20,11 +20,11 @@
     CDUnknownBlockType _didFinish;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didFinish; // @synthesize didFinish=_didFinish;
 @property(copy, nonatomic) CDUnknownBlockType didProgress; // @synthesize didProgress=_didProgress;
 @property(copy, nonatomic) CDUnknownBlockType didStart; // @synthesize didStart=_didStart;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
-- (void).cxx_destruct;
 - (void)invokeBlock:(CDUnknownBlockType)arg1 operation:(id)arg2;
 - (void)operationDidFinish:(id)arg1;
 - (void)operationDidProgress:(id)arg1;

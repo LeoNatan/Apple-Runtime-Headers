@@ -44,6 +44,7 @@
 }
 
 + (_Bool)isControllerKeyAvailable;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFirstDBQueryRun) _Bool firstDBQueryRun; // @synthesize firstDBQueryRun=_firstDBQueryRun;
 @property(nonatomic, getter=isFirstV3FetchRun) _Bool firstV3FetchRun; // @synthesize firstV3FetchRun=_firstV3FetchRun;
 @property(copy, nonatomic) CDUnknownBlockType accountActiveUpdateHandler; // @synthesize accountActiveUpdateHandler=_accountActiveUpdateHandler;
@@ -72,7 +73,6 @@
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) _Bool accountActive; // @synthesize accountActive=_accountActive;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;

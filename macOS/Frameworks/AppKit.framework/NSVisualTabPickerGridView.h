@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     BOOL _shouldShowCloseButtons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldShowCloseButtons; // @synthesize shouldShowCloseButtons=_shouldShowCloseButtons;
 @property(nonatomic) BOOL shouldHighlightTiles; // @synthesize shouldHighlightTiles=_shouldHighlightTiles;
 @property(nonatomic) BOOL shouldShowNewTabButton; // @synthesize shouldShowNewTabButton=_shouldShowNewTabButton;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSVisualTabPickerRootViewController *visualTabPickerViewController; // @synthesize visualTabPickerViewController=_visualTabPickerViewController;
 @property(nonatomic) __weak id <NSVisualTabPickerGridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NSVisualTabPickerGridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_tabPickerThumbnailViews;
 - (double)_additionalHeightTakenByStackedTilesForRow:(unsigned long long)arg1;
 - (void)_getHorizontalLeadingOffset:(double *)arg1 trailingOffset:(double *)arg2;

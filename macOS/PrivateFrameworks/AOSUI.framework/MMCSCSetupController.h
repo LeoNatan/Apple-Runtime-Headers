@@ -34,6 +34,7 @@
     MMCSCSMSTargetSetupViewController *_cscSMSTargetVC;
 }
 
+- (void).cxx_destruct;
 @property BOOL isUpdatingPassphrase; // @synthesize isUpdatingPassphrase=_isUpdatingPassphrase;
 @property BOOL usingNumericPassphrase; // @synthesize usingNumericPassphrase=_usingNumericPassphrase;
 @property int numericPassphraseLength; // @synthesize numericPassphraseLength=_numericPassphraseLength;
@@ -49,7 +50,6 @@
 @property __weak NSWindow *dialog; // @synthesize dialog=_dialog;
 @property(retain) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property id <MMCSCSetupControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mmCSCOptionsSetupViewControllerDidCancel:(id)arg1;
 - (void)mmCSCOptionsSetupViewControllerDidReturn:(id)arg1;
 - (void)mmCSCOptionsSetupViewControllerDidEnd:(id)arg1;

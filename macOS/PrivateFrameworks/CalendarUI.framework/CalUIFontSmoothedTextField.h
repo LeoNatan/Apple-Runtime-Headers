@@ -13,8 +13,8 @@
     NSColor *_backgroundColorForFontSmoothing;
 }
 
-@property(retain) NSColor *backgroundColorForFontSmoothing; // @synthesize backgroundColorForFontSmoothing=_backgroundColorForFontSmoothing;
 - (void).cxx_destruct;
+@property(retain) NSColor *backgroundColorForFontSmoothing; // @synthesize backgroundColorForFontSmoothing=_backgroundColorForFontSmoothing;
 - (id)fontSmoothingBackgroundColor;
 
 @end

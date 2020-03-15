@@ -15,10 +15,10 @@
     PXRoundedCornerOverlayView *_roundCornerOverlay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXRoundedCornerOverlayView *roundCornerOverlay; // @synthesize roundCornerOverlay=_roundCornerOverlay;
 @property(retain, nonatomic) NSArray *groupAvatarViews; // @synthesize groupAvatarViews=_groupAvatarViews;
 @property(retain, nonatomic) NSArray *people; // @synthesize people=_people;
-- (void).cxx_destruct;
 - (void)_layoutAvatarViewsInFrame:(struct CGRect)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

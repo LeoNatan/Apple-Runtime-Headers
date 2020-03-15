@@ -22,6 +22,7 @@
     id <_UIHostedWindowDelegate> __hostedWindowDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIHostedWindowDelegate> _hostedWindowDelegate; // @synthesize _hostedWindowDelegate=__hostedWindowDelegate;
 @property(copy, nonatomic) CDUnknownBlockType frameChangeHandler; // @synthesize frameChangeHandler=_frameChangeHandler;
 @property(retain, nonatomic) NSUUID *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic, setter=_setHostTraitCollection:) UITraitCollection *_hostTraitCollection; // @synthesize _hostTraitCollection;
 @property(retain, nonatomic, setter=_setHostTintColor:) UIColor *_hostTintColor; // @synthesize _hostTintColor=__hostTintColor;
 @property(nonatomic, setter=_setHostTintAdjustmentMode:) long long _hostTintAdjustmentMode; // @synthesize _hostTintAdjustmentMode;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIHostedWindowMacComponent *_macComponent; // @synthesize _macComponent;
 @property(readonly, nonatomic) __weak CAContext *layerContext;
 - (void)setFrame:(struct CGRect)arg1;

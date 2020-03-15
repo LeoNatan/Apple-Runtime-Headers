@@ -50,6 +50,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *optOutMachineLearning; // @synthesize optOutMachineLearning=_optOutMachineLearning;
 @property(retain, nonatomic) NSNumber *shouldLogClientEvent; // @synthesize shouldLogClientEvent=_shouldLogClientEvent;
 @property(retain, nonatomic) NSNumber *salesforcePushEnabled; // @synthesize salesforcePushEnabled=_salesforcePushEnabled;
@@ -86,7 +87,6 @@
 @property(retain, nonatomic) NSNumber *defaultLongitude; // @synthesize defaultLongitude=_defaultLongitude;
 @property(retain, nonatomic) NSNumber *defaultLatitude; // @synthesize defaultLatitude=_defaultLatitude;
 @property(retain, nonatomic) NSString *defaultLocationName; // @synthesize defaultLocationName=_defaultLocationName;
-- (void).cxx_destruct;
 
 @end
 

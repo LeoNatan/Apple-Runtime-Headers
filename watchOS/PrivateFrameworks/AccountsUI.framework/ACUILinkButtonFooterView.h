@@ -16,8 +16,8 @@
     int _desiredTextAlignment;
 }
 
-@property(nonatomic) int alignment; // @synthesize alignment=_desiredTextAlignment;
 - (void).cxx_destruct;
+@property(nonatomic) int alignment; // @synthesize alignment=_desiredTextAlignment;
 - (void)layoutSubviews;
 - (float)preferredHeightForWidth:(float)arg1;
 - (id)initWithButton:(id)arg1;

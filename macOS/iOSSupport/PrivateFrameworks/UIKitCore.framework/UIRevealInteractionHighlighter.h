@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSArray *_highlightRects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *highlightRects; // @synthesize highlightRects=_highlightRects;
 @property(nonatomic) BOOL highlighting; // @synthesize highlighting=_highlighting;
 @property(readonly, nonatomic) __weak UITextSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) __weak id <UITextInput><UITextInput_Internal> textInput; // @synthesize textInput=_textInput;
-- (void).cxx_destruct;
 - (void)drawHighlightContentForItem:(id)arg1 context:(struct CGContext *)arg2;
 - (void)highlightRangeChangedForItem:(id)arg1;
 - (void)stopHighlightingItem:(id)arg1;

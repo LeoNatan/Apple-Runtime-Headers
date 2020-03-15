@@ -16,8 +16,8 @@
 
 + (id)reuseIdentifier;
 + (id)decorationViewKind;
-@property(nonatomic) __weak UIView<CKFullscreenEffectView> *effectView; // @synthesize effectView=_effectView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView<CKFullscreenEffectView> *effectView; // @synthesize effectView=_effectView;
 - (void)tearDownEffectView;
 - (void)setupForEffectView:(id)arg1;
 - (void)prepareForReuse;

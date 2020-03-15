@@ -13,8 +13,8 @@
     NUCanvas *_canvas;
 }
 
-@property(readonly, nonatomic) NUCanvas *canvas; // @synthesize canvas=_canvas;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NUCanvas *canvas; // @synthesize canvas=_canvas;
 - (id)buildCanvas;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

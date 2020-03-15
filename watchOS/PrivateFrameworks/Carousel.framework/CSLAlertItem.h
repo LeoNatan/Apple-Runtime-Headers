@@ -16,10 +16,10 @@
 }
 
 + (id)alertItemWithViewController:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *alertSuppressionContexts; // @synthesize alertSuppressionContexts=_alertSuppressionContexts;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) CUISAlertViewController *alertViewController; // @synthesize alertViewController=_alertViewController;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

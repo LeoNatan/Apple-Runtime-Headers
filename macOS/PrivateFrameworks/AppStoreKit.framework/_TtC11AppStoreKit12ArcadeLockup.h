@@ -9,9 +9,11 @@
 @interface _TtC11AppStoreKit12ArcadeLockup : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: title
-    // Error parsing type: , name: subtitle
+    // Error parsing type: , name: subscribedSubtitle
+    // Error parsing type: , name: nonsubscribedSubtitle
     // Error parsing type: , name: unsubscribedButtonAction
     // Error parsing type: , name: subscribedButtonAction
+    // Error parsing type: , name: offerDisplayProperties
     // Error parsing type: , name: impressionMetrics
 }
 

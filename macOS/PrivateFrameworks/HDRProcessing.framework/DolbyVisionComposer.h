@@ -21,6 +21,14 @@
     id <MTLComputePipelineState> _composeChromaKernel;
     id <MTLComputePipelineState> _composeYUVKernel;
     id <MTLComputePipelineState> _sdr2cif10;
+    id <MTLComputePipelineState> _packedDolbyIPT_ptv;
+    id <MTLComputePipelineState> _packed422DolbyIPT_ptv;
+    id <MTLComputePipelineState> _unpackedHDR10_ptv;
+    id <MTLComputePipelineState> _packedHDR10_ptv;
+    id <MTLComputePipelineState> _packed422HDR10_ptv;
+    id <MTLComputePipelineState> _unpackedHLG_ptv;
+    id <MTLComputePipelineState> _packedHLG_ptv;
+    id <MTLComputePipelineState> _packed422HLG_ptv;
     id <MTLComputePipelineState> _packedHDR10toRGB;
     id <MTLComputePipelineState> _packed422HDR10toRGB;
     id <MTLComputePipelineState> _unpackedHDR10toRGB;
@@ -128,10 +136,10 @@
     BOOL _bypassDisplayManagement;
 }
 
+- (void).cxx_destruct;
 @property BOOL bypassDisplayManagement; // @synthesize bypassDisplayManagement=_bypassDisplayManagement;
 @property BOOL preSubsampleLumaForMMR; // @synthesize preSubsampleLumaForMMR=_preSubsampleLumaForMMR;
 @property BOOL yuvCombinedCompose; // @synthesize yuvCombinedCompose=_yuvCombinedCompose;
-- (void).cxx_destruct;
 - (void)dumpPolynomialMappingResult:(struct __CVBuffer *)arg1;
 - (struct __CVBuffer *)setupPolynomiaResultTextures;
 - (void)initPolynomiaResultDump;
@@ -143,10 +151,10 @@
 - (BOOL)dovi_tm_configChanged:(CDStruct_78732a63 *)arg1;
 - (void)dovi_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 ApplyExtraAdaptation:(_Bool)arg2 AdaptationLut:(float *)arg3 NumOfEntryOfAdaptationLut:(int)arg4;
 - (void)hlg_tm_updateLUT;
-- (void)hlg_tm_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 ApplyExtraAdaptation:(_Bool)arg2 AdaptationLut:(float *)arg3 NumOfEntryOfAdaptationLut:(int)arg4;
-- (void)hlg_tm_reserveConfig:(CDStruct_78732a63 *)arg1;
-- (BOOL)hlg_tm_configChanged:(CDStruct_78732a63 *)arg1;
-- (void)hlg_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 ApplyExtraAdaptation:(_Bool)arg2 AdaptationLut:(float *)arg3 NumOfEntryOfAdaptationLut:(int)arg4;
+- (void)hlg_tm_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 TMParam:(struct _HDR10TMParam *)arg2 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg3 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg4 TMMode:(int)arg5;
+- (void)hlg_tm_reserveConfig:(CDStruct_78732a63 *)arg1 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg2 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg3;
+- (BOOL)hlg_tm_configChanged:(CDStruct_78732a63 *)arg1 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg2 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg3;
+- (void)hlg_createLUTFromDMConfig:(CDStruct_78732a63 *)arg1 TMParam:(struct _HDR10TMParam *)arg2 EdrAdaptationParam:(struct _HDR10EdrAdaptationParam *)arg3 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg4 TMMode:(int)arg5;
 - (void)hdr10_tm_updateLUT;
 - (void)hdr10_tm_createLUTFromDMConfig:(struct _HDR10TMParam *)arg1 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg2;
 - (void)hdr10_tm_reserveConfig:(struct _HDR10TMParam *)arg1 AmbAdaptationParam:(struct _HDR10AmbAdaptationParam *)arg2;
@@ -163,7 +171,7 @@
 - (void)encodeComposeLumaToCommandBuffer:(id)arg1;
 - (void)encodeSubsampleLumaVerticalToCommandBuffer:(id)arg1;
 - (void)encodeSubsampleLumaHorizontalToCommandBuffer:(id)arg1;
-- (long long)setupOutputTexturesWithBuffer:(struct __IOSurface *)arg1;
+- (long long)setupOutputTexturesWithBuffer:(struct __IOSurface *)arg1 ptvMode:(BOOL)arg2;
 - (id)getTextureFromCachedPool:(struct __IOSurface *)arg1 format:(unsigned long long)arg2 input:(_Bool)arg3;
 - (void)addTextureToCachedPool:(id)arg1 input:(_Bool)arg2;
 - (long long)setupInputTexturesWithBL:(struct __IOSurface *)arg1 EL:(struct __IOSurface *)arg2 Output:(struct __IOSurface *)arg3 MetaData:(CDStruct_895ff2bf *)arg4;
@@ -172,7 +180,7 @@
 - (void)encodeDualLayerToCommandBuffer:(id)arg1 BL:(struct __IOSurface *)arg2 EL:(struct __IOSurface *)arg3 Output:(struct __IOSurface *)arg4 MetaData:(CDStruct_895ff2bf *)arg5 tcControl:(struct ToneCurve_Control *)arg6;
 - (void)macSetupEncoderForCommandBuffer:(id)arg1 tcControl:(struct ToneCurve_Control *)arg2 hdrControl:(CDStruct_d76a58a8 *)arg3 DMData:(CDStruct_f4857302 *)arg4 dmConfig:(id)arg5 isHdr10OnMac:(BOOL)arg6 isHlgOnMac:(BOOL)arg7 onHDR10TV:(BOOL)arg8 lldovi:(BOOL)arg9;
 - (void)macSetupToneMappingWithContent:(BOOL)arg1 Output:(struct __IOSurface *)arg2 DMData:(CDStruct_f4857302 *)arg3 tcControl:(struct ToneCurve_Control *)arg4 hdrControl:(CDStruct_d76a58a8 *)arg5 hdr10InfoFrame:(CDStruct_52986d3b *)arg6 dmConfig:(CDStruct_78732a63 *)arg7 hdr10OnMac:(BOOL)arg8 hlgOnMac:(BOOL)arg9 onHDR10TV:(BOOL)arg10;
-- (void)embeddedSetupEncoderForCommandBuffer:(id)arg1 DMData:(CDStruct_f4857302 *)arg2 dmConfig:(id)arg3 isInput422:(BOOL)arg4 hasThreeOutputPlane:(BOOL)arg5 isSdrOnDolbyOrHDR10:(BOOL)arg6 isHDR10OnHDR10TV:(BOOL)arg7 isDolbyOnHDR10TV:(BOOL)arg8 isHDR10OnDolby:(BOOL)arg9 isHDR10OnPad:(BOOL)arg10 isHLGOnPad:(BOOL)arg11 isDoviOnPad:(BOOL)arg12 isDoviOnLLDovi:(BOOL)arg13 isHDR10OnLLDovi:(BOOL)arg14 isHLGOnHDR10TV:(BOOL)arg15 isHLGOnDolbyTV:(BOOL)arg16 isHLGOnLLDovi:(BOOL)arg17;
+- (void)embeddedSetupEncoderForCommandBuffer:(id)arg1 DMData:(CDStruct_f4857302 *)arg2 dmConfig:(id)arg3 isInput422:(BOOL)arg4 hasThreeOutputPlane:(BOOL)arg5 isSdrOnDolbyOrHDR10:(BOOL)arg6 isHDR10OnHDR10TV:(BOOL)arg7 isDolbyOnHDR10TV:(BOOL)arg8 isHDR10OnDolby:(BOOL)arg9 isHDR10OnPad:(BOOL)arg10 isHLGOnPad:(BOOL)arg11 isDoviOnPad:(BOOL)arg12 isDoviOnLLDovi:(BOOL)arg13 isHDR10OnLLDovi:(BOOL)arg14 isHLGOnHDR10TV:(BOOL)arg15 isHLGOnDolbyTV:(BOOL)arg16 isHLGOnLLDovi:(BOOL)arg17 isPtvMode:(BOOL)arg18;
 - (void)embeddedSetupToneMappingWithContent:(BOOL)arg1 Output:(struct __IOSurface *)arg2 DMData:(CDStruct_f4857302 *)arg3 tcControl:(struct ToneCurve_Control *)arg4 hdrControl:(CDStruct_d76a58a8 *)arg5 hdr10InfoFrame:(CDStruct_52986d3b *)arg6 dmConfig:(CDStruct_78732a63 *)arg7 hdr10OnPad:(BOOL)arg8 useYUVScalingTable:(BOOL)arg9;
 - (void)encodeSingleLayerToCommandBuffer:(id)arg1 BL:(struct __IOSurface *)arg2 Output:(struct __IOSurface *)arg3 ComposerData:(CDStruct_895ff2bf *)arg4 DMData:(CDStruct_f4857302 *)arg5 tcControl:(struct ToneCurve_Control *)arg6 hdrControl:(CDStruct_d76a58a8 *)arg7 hdr10InfoFrame:(CDStruct_52986d3b *)arg8;
 - (void)checkForContent:(unsigned int)arg1 contentReturn1:(char *)arg2 contentReturn2:(char *)arg3 contentReturn3:(char *)arg4 forDisplay:(unsigned int)arg5 displayReturn1:(char *)arg6 displayReturn2:(char *)arg7 displayReturn3:(char *)arg8 displayReturn4:(char *)arg9 displayReturn5:(char *)arg10;

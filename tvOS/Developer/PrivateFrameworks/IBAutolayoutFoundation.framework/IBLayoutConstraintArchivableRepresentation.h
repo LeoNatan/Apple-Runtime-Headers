@@ -31,6 +31,7 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(readonly, nonatomic) long long scoringClass; // @synthesize scoringClass=_scoringClass;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) long long relation; // @synthesize relation=_relation;
 @property(readonly, nonatomic) unsigned long long firstAttribute; // @synthesize firstAttribute=_firstAttribute;
 @property(readonly, nonatomic) NSString *firstItemIdentifier; // @synthesize firstItemIdentifier=_firstItemIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hashOfComponentsIgnoringScoring;
 - (unsigned long long)hashOfComponents;
 - (_Bool)hasComponentsEqualToComponentsOfRepresentationAllowingReversingIgnoringScoring:(id)arg1;

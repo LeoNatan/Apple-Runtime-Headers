@@ -16,8 +16,8 @@
 }
 
 + (unsigned long long)charactersThreshold;
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (CDUnknownBlockType)resultTransformWithFactory:(id)arg1 properties:(id)arg2;
 - (CDUnknownBlockType)resultTransformWithRequest:(id)arg1;
 - (id)convertContacts:(id)arg1 request:(id)arg2;

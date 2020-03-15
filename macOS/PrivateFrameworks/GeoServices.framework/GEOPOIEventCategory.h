@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)poiEventCategoriesForEventCategories:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *localizedNames; // @synthesize localizedNames=_localizedNames;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)parsePDCategories:(id)arg1;
 - (BOOL)isEqualToPOIEventCategory:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

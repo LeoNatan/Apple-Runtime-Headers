@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSDate *time; // @synthesize time=_time;
 @property(readonly, copy, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
 @property(readonly, nonatomic) long long eventID; // @synthesize eventID=_eventID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithType:(id)arg1 time:(id)arg2 value:(id)arg3;
 - (id)initWithCoder:(id)arg1;

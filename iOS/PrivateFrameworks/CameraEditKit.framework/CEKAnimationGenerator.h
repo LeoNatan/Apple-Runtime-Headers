@@ -14,9 +14,9 @@
     CADisplayLink *__displayLink;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *_displayLink; // @synthesize _displayLink=__displayLink;
 @property(retain, nonatomic) NSMutableDictionary *_animations; // @synthesize _animations=__animations;
-- (void).cxx_destruct;
 - (void)_updateAnimationForIdentifer:(id)arg1 timestamp:(double)arg2;
 - (void)_handleDisplayLinkFired:(id)arg1;
 - (_Bool)isAnimatingForIdentifier:(id)arg1;

@@ -15,10 +15,10 @@
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *type; // @synthesize type=_type;
 @property(readonly, copy) NSData *data; // @synthesize data=_data;
 @property(readonly, copy) HMDStreamDataSequenceNumber *sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

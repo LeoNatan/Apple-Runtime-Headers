@@ -17,9 +17,9 @@
     id <CalDateProvider> _dateProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CalDateProvider> dateProvider; // @synthesize dateProvider=_dateProvider;
 @property(readonly, nonatomic) id <CALNTravelAdvisoryAuthority> travelAdvisoryAuthority; // @synthesize travelAdvisoryAuthority=_travelAdvisoryAuthority;
-- (void).cxx_destruct;
 - (_Bool)_exceededMaximumTravelTimeThresholdForHypothesis:(id)arg1;
 - (_Bool)_eventWillEndBeforeUserArrivesForHypothesis:(id)arg1 eventEndDate:(id)arg2;
 - (_Bool)_shouldTriggerForTimeToLeaveRefreshGivenImmediateDepartureTimelinessStatusForSourceClientIdentifier:(id)arg1 oldNotificationData:(id)arg2;

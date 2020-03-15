@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_value;
 }
 
-@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 - (id)CKPropertiesDescription;
 - (BOOL)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithValue:(id)arg1;

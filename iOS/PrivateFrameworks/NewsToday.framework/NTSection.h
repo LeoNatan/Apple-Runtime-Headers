@@ -28,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)_itemClassesByType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NTPBSectionDisplayDescriptor *displayDescriptor; // @synthesize displayDescriptor=_displayDescriptor;
 @property(copy, nonatomic) NSURL *actionURL; // @synthesize actionURL=_actionURL;
 @property(copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSOrderedSet *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSString *personalizationFeatureID; // @synthesize personalizationFeatureID=_personalizationFeatureID;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool videoPlaysMutedByDefault;
 @property(readonly, copy, nonatomic) NSString *backgroundGradientColor;
 @property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;

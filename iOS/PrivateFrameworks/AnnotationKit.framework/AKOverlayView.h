@@ -19,13 +19,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property _Bool scrollViewIsInLiveMagnify; // @synthesize scrollViewIsInLiveMagnify=_scrollViewIsInLiveMagnify;
 @property(retain) UIScrollView *observedScrollView; // @synthesize observedScrollView=_observedScrollView;
 @property _Bool deferWasMovedToSuperviewUntilMoveToWindow; // @synthesize deferWasMovedToSuperviewUntilMoveToWindow=_deferWasMovedToSuperviewUntilMoveToWindow;
 @property _Bool isObserving; // @synthesize isObserving=_isObserving;
 @property __weak AKMainEventHandler *mainEventHandler; // @synthesize mainEventHandler=_mainEventHandler;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 - (void)_scrollViewDidScrollToTop:(id)arg1;
 - (void)_scrollViewDidEndAnimation:(id)arg1;
 - (void)_scrollViewDidEndDecelerating:(id)arg1;
@@ -41,9 +41,14 @@
 - (void)_postScrollViewScrollOrMagnifyEndNotification;
 - (void)_postScrollViewRectChangedNotification;
 - (void)editTextAnnotation:(id)arg1;
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)duplicate:(id)arg1;
 - (void)delete:(id)arg1;
-- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)paste:(id)arg1;
+- (void)copy:(id)arg1;
+- (void)cut:(id)arg1;
+- (id)keyCommands;
+- (id)annotationController;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)updateLayers;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

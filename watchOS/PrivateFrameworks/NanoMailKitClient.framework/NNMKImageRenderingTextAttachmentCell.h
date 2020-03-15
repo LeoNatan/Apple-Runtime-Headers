@@ -18,9 +18,9 @@
     UIImage *_loadedImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *loadedImage; // @synthesize loadedImage=_loadedImage;
 @property(nonatomic) __weak NNMKImageRenderingTextAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (void)_tryToLoadImage;
 - (struct CGRect)cellFrameForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned int)arg4;
 - (struct CGPoint)cellBaselineOffset;

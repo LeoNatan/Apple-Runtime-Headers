@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 + (id)compoundRequestProcessingDeviceFromOriginalRequestsProcessingDevice:(id)arg1;
 + (id)compoundRequestsForOriginalRequests:(id)arg1 withPerformingContext:(id)arg2 error:(id *)arg3;
-@property(readonly, copy, nonatomic) NSArray *originalRequests; // @synthesize originalRequests=_originalRequests;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *originalRequests; // @synthesize originalRequests=_originalRequests;
 - (id)description;
 - (_Bool)usesCPUOnly;
 - (void)recordWarningsInOriginalRequests;

@@ -16,11 +16,11 @@
     UILabel *_balanceLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *balanceLabel; // @synthesize balanceLabel=_balanceLabel;
 @property(retain, nonatomic) UILabel *transactionLabel; // @synthesize transactionLabel=_transactionLabel;
 @property(copy, nonatomic) NSString *balance; // @synthesize balance=_balance;
 @property(copy, nonatomic) NSString *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

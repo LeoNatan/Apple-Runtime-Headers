@@ -24,10 +24,10 @@
     NSString *_totalPointsLabelText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *totalPointsLabelText; // @synthesize totalPointsLabelText=_totalPointsLabelText;
 @property(retain, nonatomic) UIColor *totalPointsLabelColor; // @synthesize totalPointsLabelColor=_totalPointsLabelColor;
 @property(retain, nonatomic) UIColor *separatorViewColor; // @synthesize separatorViewColor=_separatorViewColor;
-- (void).cxx_destruct;
 - (void)layoutForWidth:(double)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

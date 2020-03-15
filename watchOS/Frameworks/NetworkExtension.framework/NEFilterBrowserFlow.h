@@ -19,11 +19,18 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSURL *parentURL; // @synthesize parentURL=_parentURL;
 @property(retain) NSURLResponse *response; // @synthesize response=_response;
 @property(retain) NSURLRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
-- (id)description;
+- (_Bool)createDataCompleteReply:(id)arg1 controlSocket:(int)arg2 direction:(int)arg3 verdict:(id)arg4 context:(id)arg5;
+- (_Bool)createDataReply:(id)arg1 controlSocket:(int)arg2 direction:(int)arg3 verdict:(id)arg4 context:(id)arg5;
+- (_Bool)createNewFlowReply:(id)arg1 controlSocket:(int)arg2 verdict:(id)arg3 context:(id)arg4;
+- (void)writeCurrentVerdictInReply:(id)arg1 direction:(int)arg2;
+- (_Bool)createDropReply:(id)arg1 verdict:(id)arg2 context:(id)arg3;
+- (id)sanitizeRemediationButtonText:(id)arg1;
+- (id)cleanRemediationURL:(id)arg1 flow:(id)arg2 providerConfiguration:(id)arg3;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (id)initWithURL:(id)arg1 parentURL:(id)arg2 sourceAppIdentifier:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

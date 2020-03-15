@@ -21,13 +21,13 @@
     NSURL *_downloadURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *downloadURL; // @synthesize downloadURL=_downloadURL;
 @property(readonly, nonatomic) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly, nonatomic) TMLJSONObject *response; // @synthesize response=_response;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) NSMutableURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
-- (void).cxx_destruct;
 - (void)handleDownloadResponse:(id)arg1 error:(id)arg2;
 - (void)downloadAssetFromCloudKit;
 - (void)handleResponse:(id)arg1 data:(id)arg2 responseError:(id)arg3;

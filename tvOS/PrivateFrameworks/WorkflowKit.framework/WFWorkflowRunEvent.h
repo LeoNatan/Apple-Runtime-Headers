@@ -16,11 +16,11 @@
     long long _outcome;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long outcome; // @synthesize outcome=_outcome;
 @property(readonly, copy, nonatomic) NSString *triggerID; // @synthesize triggerID=_triggerID;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 
 @end
 

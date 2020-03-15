@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_groupedSequences;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *groupedSequences; // @synthesize groupedSequences=_groupedSequences;
 @property(retain, nonatomic) NSMutableArray *sortedDepartures; // @synthesize sortedDepartures=_sortedDepartures;
-- (void).cxx_destruct;
 
 @end
 

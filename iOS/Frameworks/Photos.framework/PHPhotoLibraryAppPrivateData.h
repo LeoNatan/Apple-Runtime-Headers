@@ -6,22 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class PLAppPrivateData;
+@class PHPhotoLibrary, PLAppPrivateData;
 
 @interface PHPhotoLibraryAppPrivateData : NSObject
 {
     PLAppPrivateData *_impl;
+    PHPhotoLibrary *_photoLibrary;
 }
 
 + (_Bool)accessInstanceVariablesDirectly;
-@property(retain) PLAppPrivateData *impl; // @synthesize impl=_impl;
 - (void).cxx_destruct;
+@property __weak PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
+@property(retain) PLAppPrivateData *impl; // @synthesize impl=_impl;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
 - (id)dictionaryWithValuesForKeys:(id)arg1;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (id)valueForKeyPath:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
+- (void)_handleWriteException:(id)arg1;
 - (void)invalidate;
 - (id)debugDescription;
 - (id)initWithLibrary:(id)arg1;

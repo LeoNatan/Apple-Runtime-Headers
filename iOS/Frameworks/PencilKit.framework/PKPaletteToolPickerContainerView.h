@@ -25,6 +25,7 @@
     NSLayoutConstraint *_toolPickerViewRightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *toolPickerViewRightConstraint; // @synthesize toolPickerViewRightConstraint=_toolPickerViewRightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *toolPickerViewLeftConstraint; // @synthesize toolPickerViewLeftConstraint=_toolPickerViewLeftConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *toolPickerViewBottomConstraint; // @synthesize toolPickerViewBottomConstraint=_toolPickerViewBottomConstraint;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) PKPaletteToolPickerView *toolPickerView; // @synthesize toolPickerView=_toolPickerView;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (void)didChangeAnnotationSupport:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

@@ -24,6 +24,7 @@
     NSString *_locationStringWithoutPrediction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *locationStringWithoutPrediction; // @synthesize locationStringWithoutPrediction=_locationStringWithoutPrediction;
 @property(nonatomic) _Bool isOnSharedCalendar; // @synthesize isOnSharedCalendar=_isOnSharedCalendar;
 @property(nonatomic) _Bool hasPredictedLocation; // @synthesize hasPredictedLocation=_hasPredictedLocation;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *eventExternalURL; // @synthesize eventExternalURL=_eventExternalURL;
-- (void).cxx_destruct;
 - (_Bool)isEqualToOriginalEvent:(id)arg1;
 - (id)description;
 

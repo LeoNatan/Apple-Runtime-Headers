@@ -16,8 +16,8 @@
     id <FCFeedTransforming> _innerFilter;
 }
 
-@property(retain, nonatomic) id <FCFeedTransforming> innerFilter; // @synthesize innerFilter=_innerFilter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FCFeedTransforming> innerFilter; // @synthesize innerFilter=_innerFilter;
 - (id)transformFeedItems:(id)arg1;
 - (id)initWithFilterMethod:(unsigned long long)arg1 consumedArticleItems:(id)arg2 minimumTimeSinceFirstConsumedToFilter:(double)arg3 filterDate:(id)arg4 articleIDProvider:(CDUnknownBlockType)arg5 dateOfArticleIDConsumptionProvider:(CDUnknownBlockType)arg6 maxVersionConsumedProvider:(CDUnknownBlockType)arg7 dateOfMaxVersionConsumptionProvider:(CDUnknownBlockType)arg8;
 - (id)init;

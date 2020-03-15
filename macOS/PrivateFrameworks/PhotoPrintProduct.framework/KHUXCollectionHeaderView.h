@@ -18,13 +18,13 @@
     CAShapeLayer *_shapeLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL wasShowingFooterLine; // @synthesize wasShowingFooterLine=_wasShowingFooterLine;
 @property(readonly, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
 @property(nonatomic) BOOL showBlurBackground; // @synthesize showBlurBackground=_showBlurBackground;
 @property(nonatomic) BOOL showFooterLine; // @synthesize showFooterLine=_showFooterLine;
 @property(nonatomic) double footerLineInset; // @synthesize footerLineInset=_footerLineInset;
 @property(retain, nonatomic) NSColor *defaultBackgroundColor; // @synthesize defaultBackgroundColor=_defaultBackgroundColor;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;

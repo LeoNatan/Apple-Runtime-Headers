@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain) NSMutableSet *updaters; // @synthesize updaters=_updaters;
 - (void).cxx_destruct;
+@property(retain) NSMutableSet *updaters; // @synthesize updaters=_updaters;
 - (void)applicationWillTerminate:(id)arg1;
 - (void)performDelayedUpdates;
 - (void)removeUpdater:(id)arg1 selector:(SEL)arg2 object:(id)arg3;

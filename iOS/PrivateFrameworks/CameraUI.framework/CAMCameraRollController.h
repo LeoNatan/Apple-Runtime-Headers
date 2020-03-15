@@ -61,6 +61,7 @@
     NSObject<OS_dispatch_queue> *__photosFrameworksPreheatQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldSkipPhotosFrameworkPreheat:) _Bool _shouldSkipPhotosFrameworkPreheat; // @synthesize _shouldSkipPhotosFrameworkPreheat=__shouldSkipPhotosFrameworkPreheat;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_photosFrameworksPreheatQueue; // @synthesize _photosFrameworksPreheatQueue=__photosFrameworksPreheatQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *_memoryWarningSource; // @synthesize _memoryWarningSource=__memoryWarningSource;
@@ -87,7 +88,6 @@
 @property(nonatomic) __weak id <CAMCameraRollControllerImageWellDelegate> imageWellDelegate; // @synthesize imageWellDelegate=_imageWellDelegate;
 @property(nonatomic, setter=_setSessionIdentifier:) unsigned short sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(nonatomic) __weak id <CAMCameraRollControllerSessionDelegate> sessionDelegate; // @synthesize sessionDelegate=_sessionDelegate;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_unregisterBrowsingViewModelChangeObserver;
 - (void)_registerBrowsingViewModelChangeObserver;

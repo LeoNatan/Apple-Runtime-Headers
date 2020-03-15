@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isImportant) BOOL important; // @synthesize important=_important;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)variableByResolvingWithThemePath:(id)arg1;
 - (id)initWithName:(id)arg1 important:(BOOL)arg2;
 - (id)initWithName:(id)arg1;

@@ -42,6 +42,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long inAppPriority; // @synthesize inAppPriority=_inAppPriority;
 @property(nonatomic) _Bool auxiliary; // @synthesize auxiliary=_auxiliary;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) NSString *sanitizedDpan; // @synthesize sanitizedDpan=_sanitizedDpan;
 @property(retain, nonatomic) NSString *dpanSuffix; // @synthesize dpanSuffix=_dpanSuffix;
 @property(retain, nonatomic) NSString *dpanIdentifier; // @synthesize dpanIdentifier=_dpanIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

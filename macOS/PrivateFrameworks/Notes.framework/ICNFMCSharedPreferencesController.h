@@ -15,8 +15,8 @@
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(retain, nonatomic) NSUserDefaults *sharedMailUserDefaults; // @synthesize sharedMailUserDefaults=_sharedMailUserDefaults;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUserDefaults *sharedMailUserDefaults; // @synthesize sharedMailUserDefaults=_sharedMailUserDefaults;
 - (void)_preferencesChangedExternally:(id)arg1;
 - (void)_postPreferencesDidChangeNotifications;
 @property BOOL disableRemoteContent;

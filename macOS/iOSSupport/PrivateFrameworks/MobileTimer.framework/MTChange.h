@@ -15,10 +15,10 @@
     id _originalValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id originalValue; // @synthesize originalValue=_originalValue;
 @property(retain, nonatomic) id changedValue; // @synthesize changedValue=_changedValue;
 @property(copy, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithProperty:(id)arg1 changedValue:(id)arg2 originalValue:(id)arg3;
 

@@ -27,6 +27,7 @@
     long long _numberOfTimesVideoWasWatched;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL completedOnboarding; // @synthesize completedOnboarding=_completedOnboarding;
 @property(nonatomic) BOOL continueWasTapped; // @synthesize continueWasTapped=_continueWasTapped;
 @property(nonatomic) long long numberOfTimesVideoWasWatched; // @synthesize numberOfTimesVideoWasWatched=_numberOfTimesVideoWasWatched;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak UIButton *videoButton; // @synthesize videoButton=_videoButton;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <WFWidgetExplanationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)widgetOnboardingDidActivateWidget:(id)arg1;
 - (void)pageViewContinueTapped:(id)arg1;
 - (void)playVideo;

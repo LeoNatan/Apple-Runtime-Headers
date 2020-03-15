@@ -17,12 +17,12 @@
     UIColor *_diastolicFillColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *diastolicFillColor; // @synthesize diastolicFillColor=_diastolicFillColor;
 @property(retain, nonatomic) UIColor *diastolicSymbolColor; // @synthesize diastolicSymbolColor=_diastolicSymbolColor;
 @property(retain, nonatomic) UIColor *systolicFillColor; // @synthesize systolicFillColor=_systolicFillColor;
 @property(retain, nonatomic) UIColor *systolicSymbolColor; // @synthesize systolicSymbolColor=_systolicSymbolColor;
 @property(nonatomic) double width; // @synthesize width=_width;
-- (void).cxx_destruct;
 
 @end
 

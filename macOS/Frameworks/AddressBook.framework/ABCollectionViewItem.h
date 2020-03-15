@@ -44,6 +44,7 @@
     id <CNSchedulerProvider> _schedulerProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) NSFormatter *formatter; // @synthesize formatter=_formatter;
 @property BOOL hasValueChanges; // @synthesize hasValueChanges=_hasValueChanges;
@@ -70,7 +71,6 @@
 @property(retain, nonatomic) NSView<ABCardCollectionRowView> *editView; // @synthesize editView=_editView;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (void)restoreMenuItemsAfterDisplay:(id)arg1;
 - (void)menuDidClose:(id)arg1;
 - (void)prepareMenuItemsForDisplay:(id)arg1;
@@ -86,7 +86,9 @@
 - (id)_labelMenuItems;
 - (id)_localizedLabel;
 - (id)_label;
+- (BOOL)allowsLabelSelection;
 - (BOOL)allowsLabelCustomization;
+- (BOOL)allowsUserSettableLabel;
 - (id)labels;
 - (void)setLabel:(id)arg1;
 - (void)labelChanged:(id)arg1;

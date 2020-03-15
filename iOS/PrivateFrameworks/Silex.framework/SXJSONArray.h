@@ -19,12 +19,12 @@
     unsigned long long _count;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) NSMutableArray *objects; // @synthesize objects=_objects;
 @property(readonly, nonatomic) NSArray *json; // @synthesize json=_json;
 @property(readonly, nonatomic) CDUnknownBlockType valueClassBlock; // @synthesize valueClassBlock=_valueClassBlock;
 @property(readonly, nonatomic) CDUnknownBlockType objectValueClassBlock; // @synthesize objectValueClassBlock=_objectValueClassBlock;
-- (void).cxx_destruct;
 - (id)description;
 - (id)NSArray;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;

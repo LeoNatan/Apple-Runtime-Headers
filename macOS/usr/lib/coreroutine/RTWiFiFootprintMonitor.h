@@ -17,11 +17,11 @@
 }
 
 + (id)footprintStateToString:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTWiFiManager *wifiManager; // @synthesize wifiManager=_wifiManager;
 @property(retain, nonatomic) NSMutableArray *scanResults; // @synthesize scanResults=_scanResults;
 @property(retain, nonatomic) RTPersistentTimer *scanTimer; // @synthesize scanTimer=_scanTimer;
 @property(nonatomic) long long footprintState; // @synthesize footprintState=_footprintState;
-- (void).cxx_destruct;
 - (void)_pruneScanResults;
 - (void)_processScanResults:(id)arg1;
 - (void)_checkFootprint;

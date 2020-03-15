@@ -18,9 +18,9 @@
 + (_Bool)shouldShowWelcomeScreen;
 + (void)acceptGDPRAndSyncWithServers:(CDUnknownBlockType)arg1;
 + (_Bool)showGDPRWelcomeScreen:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 
 @end
 

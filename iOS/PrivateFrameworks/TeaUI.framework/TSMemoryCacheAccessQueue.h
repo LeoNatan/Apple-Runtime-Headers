@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <TeaUI/TSMemoryCacheAccessorType-Protocol.h>
-
-@interface TSMemoryCacheAccessQueue : NSObject <TSMemoryCacheAccessorType>
+@interface TSMemoryCacheAccessQueue : NSObject
 {
     // Error parsing type: , name: accessQueue
 }

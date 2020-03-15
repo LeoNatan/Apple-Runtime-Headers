@@ -13,8 +13,8 @@
     EKEvent *_displayedEvent;
 }
 
-@property(retain, nonatomic) EKEvent *displayedEvent; // @synthesize displayedEvent=_displayedEvent;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EKEvent *displayedEvent; // @synthesize displayedEvent=_displayedEvent;
 - (long long)backgroundStyle;
 - (BOOL)shouldDisplayPreviewEventsAsTentative;
 - (BOOL)shouldDisplayCurrentTime;

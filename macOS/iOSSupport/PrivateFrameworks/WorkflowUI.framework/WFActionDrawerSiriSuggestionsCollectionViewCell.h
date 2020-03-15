@@ -31,6 +31,7 @@
 + (struct CGSize)sizeForCellUsingVerticalStacking:(BOOL)arg1;
 + (struct CGSize)preferredSizeForType:(long long)arg1 forTraitCollection:(id)arg2;
 + (BOOL)shouldStackVerticallyForTraitCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *horizontalStackConstraints; // @synthesize horizontalStackConstraints=_horizontalStackConstraints;
 @property(retain, nonatomic) NSArray *verticalStackConstraints; // @synthesize verticalStackConstraints=_verticalStackConstraints;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) id <VCActionDonation> donation; // @synthesize donation=_donation;
 @property(readonly, nonatomic) long long cellType; // @synthesize cellType=_cellType;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)shouldStackVerticallyForTraitCollection:(id)arg1;

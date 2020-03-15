@@ -34,6 +34,7 @@
 }
 
 + (BOOL)canSendText;
+- (void).cxx_destruct;
 @property long long maxNumberPlayers; // @synthesize maxNumberPlayers=_maxNumberPlayers;
 @property(retain, nonatomic) NSMutableDictionary *addedGKPlayers; // @synthesize addedGKPlayers=_addedGKPlayers;
 @property(retain, nonatomic) NSMutableArray *messageSendRecipients; // @synthesize messageSendRecipients=_messageSendRecipients;
@@ -52,7 +53,6 @@
 @property(nonatomic) __weak id <GKDashboardNearbyBrowserDelegate> nearbyDelegate; // @synthesize nearbyDelegate=_nearbyDelegate;
 @property(nonatomic) __weak id <GKMessageComposeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
-- (void).cxx_destruct;
 - (void)_sendMessage:(id)arg1 withChat:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_sendMessageWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)checkAndUpdateLegacyPlayers:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

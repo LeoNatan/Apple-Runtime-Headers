@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     struct CGSize _badgeOutset;
 }
 
-@property(nonatomic) struct CGSize badgeOutset; // @synthesize badgeOutset=_badgeOutset;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize badgeOutset; // @synthesize badgeOutset=_badgeOutset;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;

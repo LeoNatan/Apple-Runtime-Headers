@@ -23,13 +23,13 @@
     ACHSyncingMonthlyChallengeTemplateCache *_templateCache;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppleWatch; // @synthesize isAppleWatch=_isAppleWatch;
 @property(retain, nonatomic) ACHSyncingMonthlyChallengeTemplateCache *templateCache; // @synthesize templateCache=_templateCache;
 @property(retain, nonatomic) ACHMonthlyChallengeTemplateDataProvider *templateDataProvider; // @synthesize templateDataProvider=_templateDataProvider;
 @property(retain, nonatomic) ACHMonthlyChallengeDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(retain, nonatomic) NSCalendar *currentCalendar; // @synthesize currentCalendar=_currentCalendar;
-- (void).cxx_destruct;
 - (_Bool)subObjectsHaveDatabaseAssertions;
 - (void)setCurrentCalendarOverride:(id)arg1;
 - (void)setCurrentDateOverride:(id)arg1;

@@ -13,8 +13,8 @@
     id <ABRTTServices> _ttyServices;
 }
 
-@property(readonly, nonatomic) id <ABRTTServices> ttyServices; // @synthesize ttyServices=_ttyServices;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <ABRTTServices> ttyServices; // @synthesize ttyServices=_ttyServices;
 - (id)contactInCollectionViewItem:(id)arg1;
 - (void)executeWithTarget:(id)arg1;
 - (BOOL)validateWithTarget:(id)arg1;

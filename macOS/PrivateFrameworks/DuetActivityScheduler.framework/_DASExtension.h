@@ -21,13 +21,13 @@
     NSDate *_startTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(retain, nonatomic) _DASActivity *activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) id <_DASExtensionRunner> runner; // @synthesize runner=_runner;
 @property(retain, nonatomic) _DASExtensionRemoteContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)suspend;
 - (void)runner:(id)arg1 performActivity:(id)arg2;
 - (void)_activityCompletedWithStatus:(unsigned char)arg1;

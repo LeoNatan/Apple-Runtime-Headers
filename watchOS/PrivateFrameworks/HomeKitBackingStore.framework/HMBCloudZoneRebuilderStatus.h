@@ -21,10 +21,10 @@
 + (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned int)arg2 error:(id *)arg3;
 + (id)keyStatusString:(int)arg1;
 + (id)rebuilderStateString:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int rebuildState; // @synthesize rebuildState=_rebuildState;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) int keyStatus; // @synthesize keyStatus=_keyStatus;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)hmbEncodeForStorageLocation:(unsigned int)arg1 error:(id *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

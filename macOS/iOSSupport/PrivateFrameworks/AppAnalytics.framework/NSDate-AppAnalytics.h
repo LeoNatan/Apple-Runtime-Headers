@@ -6,9 +6,7 @@
 
 #import <Foundation/NSDate.h>
 
-#import <AppAnalytics/AADataType-Protocol.h>
-
-@interface NSDate (AppAnalytics) <AADataType>
+@interface NSDate (AppAnalytics)
 - (id)toJsonValueAndReturnError:(id *)arg1;
 @end
 

@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
+#import <HeadBoardUI/_UISceneBSActionHandler-Protocol.h>
 #import <HeadBoardUI/_UISceneComponentProviding-Protocol.h>
 
 @class BSTransaction, NSString, UIScene;
 
-@interface HBUILaunchAnimator : NSObject <_UISceneComponentProviding>
+@interface HBUILaunchAnimator : NSObject <_UISceneBSActionHandler, _UISceneComponentProviding>
 {
     UIScene *_scene;
     BSTransaction *_animationTransaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSTransaction *animationTransaction; // @synthesize animationTransaction=_animationTransaction;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
-- (void).cxx_destruct;
+- (id)_respondToActions:(id)arg1 forFBSScene:(id)arg2 inUIScene:(id)arg3 fromTransitionContext:(id)arg4;
+- (id)_actionHandlersForScene:(id)arg1;
 - (void)_failAnimationWithAction:(id)arg1;
 - (void)_performLaunchAnimationWithAction:(id)arg1;
 - (void)_prepareForScreenSaverAnimationWithAction:(id)arg1;

@@ -16,8 +16,8 @@
 + (id)listsFromAccountStorages:(id)arg1 listStorages:(id)arg2 store:(id)arg3;
 + (id)listsFromAccountStorages:(id)arg1 listStorages:(id)arg2 store:(id)arg3 requestedExternalIdentifiers:(id)arg4;
 + (id)listsFromAccountStorages:(id)arg1 listStorages:(id)arg2 store:(id)arg3 requestedListIDs:(id)arg4;
-@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (id)fetchDefaultListWithError:(id *)arg1;
 - (id)fetchEligibleDefaultListsWithError:(id *)arg1;
 - (id)fetchListsWithObjectIDs:(id)arg1 error:(id *)arg2;

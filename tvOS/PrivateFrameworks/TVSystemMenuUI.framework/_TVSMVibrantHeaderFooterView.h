@@ -18,12 +18,12 @@
     NSLayoutConstraint *_checkmarkConstraint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *checkmarkConstraint; // @synthesize checkmarkConstraint=_checkmarkConstraint;
 @property(nonatomic) _Bool hasCheckmark; // @synthesize hasCheckmark=_hasCheckmark;
 @property(copy, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;
 @property(readonly, nonatomic) UIImageView *standardCheckmark; // @synthesize standardCheckmark=_standardCheckmark;
 @property(readonly, nonatomic) UILabel *standardLabel; // @synthesize standardLabel=_standardLabel;
-- (void).cxx_destruct;
 - (void)_updateCompositingEffects;
 - (void)updateAppearanceForLockupViewState:(unsigned long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

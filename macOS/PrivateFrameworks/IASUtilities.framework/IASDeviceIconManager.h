@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain) NSMutableDictionary *iconCache; // @synthesize iconCache=_iconCache;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *iconCache; // @synthesize iconCache=_iconCache;
 - (id)deviceTypeFromIdentifier:(id)arg1;
 - (id)deviceIconForIdentifier:(id)arg1 deviceColor:(id)arg2 enclosureColor:(id)arg3;
 - (id)deviceIconForIdentifier:(id)arg1 color:(id)arg2;

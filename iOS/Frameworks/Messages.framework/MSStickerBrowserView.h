@@ -32,6 +32,7 @@
     struct CGSize _browserSizeToRestoreFrom;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <MSStickerBrowserViewDisplayDelegate> displayDelegate; // @synthesize displayDelegate=_displayDelegate;
 @property(retain, nonatomic) CKDispatchQueue *stickerCacheQueue; // @synthesize stickerCacheQueue=_stickerCacheQueue;
 @property(retain, nonatomic) NSMutableDictionary *stickerCache; // @synthesize stickerCache=_stickerCache;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <MSStickerBrowserViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) long long stickerSize; // @synthesize stickerSize=_stickerSize;
-- (void).cxx_destruct;
 - (void)_stopAnimating;
 - (void)_startAnimating;
 - (void)invalidateFlowLayout;

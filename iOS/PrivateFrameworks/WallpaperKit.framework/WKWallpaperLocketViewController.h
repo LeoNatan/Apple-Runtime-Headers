@@ -19,12 +19,12 @@
 }
 
 + (id)locketCollectionViewLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *_tapGestureRecognizer; // @synthesize _tapGestureRecognizer=__tapGestureRecognizer;
 @property(retain, nonatomic) UIButton *_doneButton; // @synthesize _doneButton=__doneButton;
 @property(retain, nonatomic) UIButton *_setWallpaperButton; // @synthesize _setWallpaperButton=__setWallpaperButton;
 @property(retain, nonatomic) UIButton *_openSettingsButton; // @synthesize _openSettingsButton=__openSettingsButton;
 @property(nonatomic) __weak id <WKWallpaperLocketViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_userDidTapOnView:(id)arg1;
 - (void)_userDidTapOnSetWallpaperButton:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_domain;
 }
 
-@property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)dialogType;
 - (id)initWithDomain:(id)arg1 originStringForAccessibility:(id)arg2;

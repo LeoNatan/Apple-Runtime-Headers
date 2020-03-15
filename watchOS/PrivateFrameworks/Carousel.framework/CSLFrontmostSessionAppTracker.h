@@ -16,10 +16,10 @@
     CSLUIMainViewController *_mainViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSLUIMainViewController *mainViewController; // @synthesize mainViewController=_mainViewController;
 @property(nonatomic) __weak CSLForegroundMonitorService *foregroundMonitorService; // @synthesize foregroundMonitorService=_foregroundMonitorService;
 @property(nonatomic) __weak CSLSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
-- (void).cxx_destruct;
 - (void)sessionManager:(id)arg1 sessionDidEnd:(id)arg2;
 - (void)sessionManager:(id)arg1 sessionDidStart:(id)arg2;
 - (void)foregroundMonitorService:(id)arg1 application:(id)arg2 changedForegroundStatus:(_Bool)arg3;

@@ -42,7 +42,7 @@
 - (void)suspend;
 - (void)resume;
 - (void)invalidate;
-- (id)_initWithXPCListener:(id)arg1;
+- (id)_initWithXPCListener:(id)arg1 testingIdentityStore:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

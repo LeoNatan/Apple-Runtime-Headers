@@ -16,8 +16,8 @@
     MPInvalidationFuture *_future;
 }
 
-@property(retain, nonatomic) MPInvalidationFuture *future; // @synthesize future=_future;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPInvalidationFuture *future; // @synthesize future=_future;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

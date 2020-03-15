@@ -18,8 +18,8 @@
     HUPlaybackInfluencesItemManager *_playbackInfluencesItemManager;
 }
 
-@property(retain, nonatomic) HUPlaybackInfluencesItemManager *playbackInfluencesItemManager; // @synthesize playbackInfluencesItemManager=_playbackInfluencesItemManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUPlaybackInfluencesItemManager *playbackInfluencesItemManager; // @synthesize playbackInfluencesItemManager=_playbackInfluencesItemManager;
 - (void)dismissPrivacyController;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

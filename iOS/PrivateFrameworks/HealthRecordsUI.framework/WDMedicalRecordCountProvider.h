@@ -8,15 +8,17 @@
 
 #import <HealthRecordsUI/HKSampleTypeUpdateControllerObserver-Protocol.h>
 
-@class HRProfile, NSArray, NSHashTable, NSMutableDictionary, NSNumber, NSString;
+@class HKHealthStore, HKSampleTypeUpdateController, NSArray, NSHashTable, NSMutableDictionary, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordCountProvider : NSObject <HKSampleTypeUpdateControllerObserver>
 {
+    _Bool _hasLoaded;
     NSNumber *_allRecordsCount;
+    HKHealthStore *_healthStore;
     CDUnknownBlockType _unitTesting_allObserversReadyCallback;
-    HRProfile *_profile;
+    HKSampleTypeUpdateController *_updateController;
     NSMutableDictionary *_countByCategory;
     NSMutableDictionary *_countBySampleType;
     NSArray *_supportedCategories;
@@ -25,34 +27,37 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_countingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *countingQueue; // @synthesize countingQueue=_countingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSArray *supportedCategories; // @synthesize supportedCategories=_supportedCategories;
 @property(retain, nonatomic) NSMutableDictionary *countBySampleType; // @synthesize countBySampleType=_countBySampleType;
 @property(retain, nonatomic) NSMutableDictionary *countByCategory; // @synthesize countByCategory=_countByCategory;
-@property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
+@property(retain, nonatomic) HKSampleTypeUpdateController *updateController; // @synthesize updateController=_updateController;
+@property(nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(copy, nonatomic) CDUnknownBlockType unitTesting_allObserversReadyCallback; // @synthesize unitTesting_allObserversReadyCallback=_unitTesting_allObserversReadyCallback;
+@property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) NSNumber *allRecordsCount; // @synthesize allRecordsCount=_allRecordsCount;
-- (void).cxx_destruct;
 - (_Bool)_areAllObserverQueriesRunning;
 - (void)_sampleCountForSampleTypes:(id)arg1 predicate:(id)arg2 healthStore:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)loadCountOfSamplesForCategories:(id)arg1 additionalSampleTypes:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_includeCategoryInAllRecordCount:(id)arg1;
 - (void)_queue_updateAllCategoryRecordCount;
 - (void)_queue_incorporateAndNotifyObserversWithCategoryCounts:(id)arg1 sampleTypeCounts:(id)arg2;
+- (void)_loadInitialCounts;
+- (void)_callAllObserversReadyCallbackIfNecessary;
+- (void)_setupSampleUpdateObserver;
 - (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
-- (void)_loadInitialCounts;
+- (void)loadCountOfSamplesForCategories:(id)arg1 additionalSampleTypes:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)CDASampleCount;
 - (id)numberOfRecordsForSampleType:(id)arg1;
 - (id)numberOfRecordsForCategory:(id)arg1;
-- (void)_callAllObserversReadyCallbackIfNecessary;
-- (void)_setupSampleUpdateObserver;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
+- (id)initWithHealthStore:(id)arg1 updateController:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

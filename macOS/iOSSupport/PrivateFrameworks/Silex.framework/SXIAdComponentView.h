@@ -33,6 +33,7 @@
     struct CGSize _viewportSizeOnAdRequest;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didUnloadBannerView; // @synthesize didUnloadBannerView=_didUnloadBannerView;
 @property(nonatomic) BOOL isDisplayingBannerView; // @synthesize isDisplayingBannerView=_isDisplayingBannerView;
 @property(retain, nonatomic) NSString *generatedOpportunityIdentifier; // @synthesize generatedOpportunityIdentifier=_generatedOpportunityIdentifier;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporter; // @synthesize analyticsReporter=_analyticsReporter;
 @property(readonly, nonatomic) id <SXLayoutInvalidator> layoutInvalidator; // @synthesize layoutInvalidator=_layoutInvalidator;
 @property(readonly, nonatomic) __weak SXAdController *adController; // @synthesize adController=_adController;
-- (void).cxx_destruct;
 - (void)sendOpportunityEvent;
 - (BOOL)shouldSendOpportunityEvent;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;

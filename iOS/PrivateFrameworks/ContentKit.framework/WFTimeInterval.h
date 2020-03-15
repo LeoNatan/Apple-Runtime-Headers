@@ -24,12 +24,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)objectWithWFSerializedRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long zeroFormattingBehavior; // @synthesize zeroFormattingBehavior=_zeroFormattingBehavior;
 @property(readonly, nonatomic) long long unitsStyle; // @synthesize unitsStyle=_unitsStyle;
 @property(readonly, nonatomic) unsigned long long allowedUnits; // @synthesize allowedUnits=_allowedUnits;
 @property(readonly, nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 @property(readonly) unsigned long long hash; // @synthesize hash=_hash;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)wfSerializedRepresentation;

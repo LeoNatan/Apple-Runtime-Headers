@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSString *_flightBundleId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *flightBundleId; // @synthesize flightBundleId=_flightBundleId;
 @property(retain, nonatomic) _PARMapsSession *mapsSession; // @synthesize mapsSession=_mapsSession;
 @property(nonatomic) float uiScale; // @synthesize uiScale=_uiScale;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *secretKey; // @synthesize secretKey=_secretKey;
 @property(nonatomic) unsigned long long date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

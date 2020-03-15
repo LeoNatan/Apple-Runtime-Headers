@@ -26,6 +26,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(retain) NSURL *rootModelURL; // @synthesize rootModelURL=_rootModelURL;
 @property(retain) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) BOOL enableTestVectorMode; // @synthesize enableTestVectorMode=_enableTestVectorMode;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL useWatchSPIForScribble; // @synthesize useWatchSPIForScribble=_useWatchSPIForScribble;
 @property BOOL allowBackgroundGPUComputeSetting; // @synthesize allowBackgroundGPUComputeSetting=_allowBackgroundGPUComputeSetting;
 @property long long computeUnits; // @synthesize computeUnits=_computeUnits;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

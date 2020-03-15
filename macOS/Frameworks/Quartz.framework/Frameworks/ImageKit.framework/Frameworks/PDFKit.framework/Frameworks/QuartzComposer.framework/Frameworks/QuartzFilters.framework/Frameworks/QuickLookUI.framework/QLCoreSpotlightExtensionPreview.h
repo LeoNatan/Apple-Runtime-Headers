@@ -17,11 +17,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSURL *searchableItemURL; // @synthesize searchableItemURL=_searchableItemURL;
 @property(copy) NSString *searchableItemTitle; // @synthesize searchableItemTitle=_searchableItemTitle;
 @property(copy) NSString *query; // @synthesize query=_query;
 @property(copy) NSString *searchableItemUniqueIdentifier; // @synthesize searchableItemUniqueIdentifier=_searchableItemUniqueIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithPreview:(id)arg1;

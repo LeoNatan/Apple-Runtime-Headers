@@ -46,6 +46,7 @@
     NSMutableDictionary *_authKitData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *authKitData; // @synthesize authKitData=_authKitData;
 @property(retain) iCloudPurchaseStorageController *purchaseStorageController; // @synthesize purchaseStorageController=_purchaseStorageController;
 @property(retain) NSImage *displayImage; // @synthesize displayImage=_displayImage;
@@ -65,7 +66,6 @@
 @property(nonatomic) id <ICAWebKitViewControllerDelegate> icaWebKitViewControllerDelegate; // @synthesize icaWebKitViewControllerDelegate=_icaWebKitViewControllerDelegate;
 @property(nonatomic) id <MBICAUIDelegate> icaMBUIDelegate; // @synthesize icaMBUIDelegate=_icaMBUIDelegate;
 @property(nonatomic) id <ICAUIDelegate> icaUIDelegate; // @synthesize icaUIDelegate=_icaUIDelegate;
-- (void).cxx_destruct;
 - (BOOL)isSignedByApple:(id)arg1;
 - (id)_errorFromTransaction:(struct AOSTransactionC *)arg1;
 - (BOOL)_isTransactionSuccessful:(struct AOSTransactionC *)arg1;

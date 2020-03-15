@@ -13,8 +13,8 @@
     PATexture *referencedTexture;
 }
 
-@property(retain) PATexture *referencedTexture; // @synthesize referencedTexture;
 - (void).cxx_destruct;
+@property(retain) PATexture *referencedTexture; // @synthesize referencedTexture;
 
 @end
 

@@ -23,10 +23,10 @@
 + (id)and:(id)arg1 with:(id)arg2;
 + (id)rightShift:(id)arg1 by:(id)arg2;
 + (id)leftShift:(id)arg1 by:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bitwiseOperator; // @synthesize bitwiseOperator=_bitwiseOperator;
 @property(readonly, nonatomic) id <EFSQLExpressable> right; // @synthesize right=_right;
 @property(retain, nonatomic) id <EFSQLExpressable> left; // @synthesize left=_left;
-- (void).cxx_destruct;
 - (void)setColumnExpression:(id)arg1;
 - (id)_stringForOperator:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;

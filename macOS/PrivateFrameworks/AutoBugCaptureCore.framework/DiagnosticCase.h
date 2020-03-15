@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 + (id)_stringRepresentationOfJSONObject:(id)arg1 prettyPrint:(BOOL)arg2;
 + (id)_closureTypeString:(short)arg1;
 + (id)_caseDampeningTypeString:(short)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DiagnosticCaseManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) BOOL readyToEndSession; // @synthesize readyToEndSession=_readyToEndSession;
 @property(nonatomic) double preferredDuration; // @synthesize preferredDuration=_preferredDuration;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableArray *caseOutlets; // @synthesize caseOutlets=_caseOutlets;
 @property(readonly, nonatomic) NSMutableArray *caseReports; // @synthesize caseReports=_caseReports;
 @property(readonly, nonatomic) DiagnosticCaseStorage *caseStorage; // @synthesize caseStorage=_caseStorage;
-- (void).cxx_destruct;
 - (BOOL)_parseCaseStorageIntoSignature:(id)arg1;
 - (BOOL)_parseSignatureIntoCaseStorage:(id)arg1;
 - (void)prepareForSaving;

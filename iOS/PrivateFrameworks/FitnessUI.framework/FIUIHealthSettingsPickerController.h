@@ -18,9 +18,9 @@
     UIPickerView *_pickerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMetricLocale; // @synthesize isMetricLocale=_isMetricLocale;
 @property(retain, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
-- (void).cxx_destruct;
 - (void)forceUpdate;
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
 - (long long)numberOfComponentsInPickerView:(id)arg1;

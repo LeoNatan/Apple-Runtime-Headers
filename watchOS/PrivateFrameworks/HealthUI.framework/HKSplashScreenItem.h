@@ -17,10 +17,10 @@
 
 + (id)splashScreenItemWithDictionary:(id)arg1;
 + (id)splashScreenItemWithTitle:(id)arg1 icon:(id)arg2 fullDescription:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) NSString *fullDescription; // @synthesize fullDescription=_fullDescription;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

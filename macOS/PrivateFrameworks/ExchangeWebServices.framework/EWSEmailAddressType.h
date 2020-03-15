@@ -20,12 +20,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSItemIdType *ItemId; // @synthesize ItemId=_ItemId;
 @property(nonatomic) long long MailboxType; // @synthesize MailboxType=_MailboxType;
 @property(copy, nonatomic) NSString *RoutingType; // @synthesize RoutingType=_RoutingType;
 @property(copy, nonatomic) NSString *EmailAddress; // @synthesize EmailAddress=_EmailAddress;
 @property(copy, nonatomic) NSString *Name; // @synthesize Name=_Name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -30,6 +30,7 @@
     UICollectionViewFlowLayout *_collectionViewFlowLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionViewFlowLayout; // @synthesize collectionViewFlowLayout=_collectionViewFlowLayout;
 @property(retain, nonatomic) UICollectionView *colorSwatchCollectionView; // @synthesize colorSwatchCollectionView=_colorSwatchCollectionView;
 @property(retain, nonatomic) NSIndexPath *prevSelectedColorIndexPath; // @synthesize prevSelectedColorIndexPath=_prevSelectedColorIndexPath;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(nonatomic) __weak id <HUQuickControlColorPaletteViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlColorViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)_actuateImpactTapticFeedback;
 - (void)_actuateSelectionTapticFeedback;
 - (void)_prepareForTapticFeedback;

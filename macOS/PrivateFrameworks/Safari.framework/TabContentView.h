@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSView *_dockedInspectorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSView *dockedInspectorView; // @synthesize dockedInspectorView=_dockedInspectorView;
 @property(nonatomic) double topContentInset; // @synthesize topContentInset=_topContentInset;
 @property(readonly, nonatomic) NSView *snapshotView; // @synthesize snapshotView=_snapshotView;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) __weak id <TabContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) BrowserWKView *browserWKView; // @synthesize browserWKView=_browserWKView;
-- (void).cxx_destruct;
 - (id)_browserWindowController;
 - (void)_adjustSubviewsForTopContentInset;
 - (void)_currentContentViewDidChange;

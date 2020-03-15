@@ -14,10 +14,10 @@
 }
 
 + (id)newMessageInstanceWithAction:(CDUnknownBlockType)arg1 retryCount:(long long)arg2 retryInterval:(double)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType retryAction; // @synthesize retryAction=_retryAction;
 @property(nonatomic) double retryInterval; // @synthesize retryInterval=_retryInterval;
 @property(nonatomic) long long retryCount; // @synthesize retryCount=_retryCount;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

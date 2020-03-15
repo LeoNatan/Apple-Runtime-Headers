@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy) NSString *previewDescription; // @synthesize previewDescription=_previewDescription;
 - (void).cxx_destruct;
+@property(copy) NSString *previewDescription; // @synthesize previewDescription=_previewDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithPreview:(id)arg1;

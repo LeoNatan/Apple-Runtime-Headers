@@ -22,10 +22,10 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property BOOL disableAccountMediaTypeComponent; // @synthesize disableAccountMediaTypeComponent=_disableAccountMediaTypeComponent;
 @property(readonly) AMSURLRequestEncoder *requestEncoder; // @synthesize requestEncoder=_requestEncoder;
 @property(readonly) id <AMSMediaTokenServiceProtocol> tokenService; // @synthesize tokenService=_tokenService;
-- (void).cxx_destruct;
 - (id)requestByEncodingRequest:(id)arg1 parameters:(id)arg2;
 - (id)requestWithComponents:(id)arg1;
 @property BOOL URLKnownToBeTrusted;

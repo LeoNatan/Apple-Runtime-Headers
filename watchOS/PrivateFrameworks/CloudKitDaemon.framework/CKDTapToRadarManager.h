@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *lastPromptDateByMessageHash; // @synthesize lastPromptDateByMessageHash=_lastPromptDateByMessageHash;
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *alertQueue; // @synthesize alertQueue=_alertQueue;
-- (void).cxx_destruct;
 - (void)triggerTapToRadarWithRequest:(id)arg1;
 - (void)_lockedTriggerTapToRadarWithRequest:(id)arg1;
 - (void)_launchTTRWithRequest:(id)arg1;

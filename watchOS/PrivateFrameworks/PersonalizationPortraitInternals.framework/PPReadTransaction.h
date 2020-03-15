@@ -13,8 +13,8 @@
     _PASSqliteDatabase *_db;
 }
 
-@property(readonly) _PASSqliteDatabase *db; // @synthesize db=_db;
 - (void).cxx_destruct;
+@property(readonly) _PASSqliteDatabase *db; // @synthesize db=_db;
 - (id)initWithHandle:(id)arg1;
 
 @end

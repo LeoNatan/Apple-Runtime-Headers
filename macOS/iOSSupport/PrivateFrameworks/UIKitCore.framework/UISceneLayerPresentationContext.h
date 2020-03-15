@@ -22,13 +22,13 @@
     NSString *_minificationFilterName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setMinificationFilterName:) NSString *_minificationFilterName; // @synthesize _minificationFilterName;
 @property(nonatomic) unsigned long long renderingMode; // @synthesize renderingMode=_renderingMode;
 @property(nonatomic, getter=isClippingDisabled) BOOL clippingDisabled; // @synthesize clippingDisabled=_clippingDisabled;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(retain, nonatomic) UITransformer *transformer; // @synthesize transformer=_transformer;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

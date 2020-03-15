@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak id <MSSearchSessionControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSMutableArray *mutableSessionEngagements; // @synthesize mutableSessionEngagements=_mutableSessionEngagements;
 @property(readonly, nonatomic) int emailProvider; // @synthesize emailProvider=_emailProvider;
 @property(readonly, nonatomic) unsigned int percentOfMessagesIndexed; // @synthesize percentOfMessagesIndexed=_percentOfMessagesIndexed;
 @property(readonly, nonatomic) unsigned int numberOfMessagesLeftToIndex; // @synthesize numberOfMessagesLeftToIndex=_numberOfMessagesLeftToIndex;
-- (void).cxx_destruct;
 - (void)_addToLatestEngagementWithUserEngagement:(id)arg1;
 - (void)_recordEngagement:(int)arg1 forMessage:(id)arg2 isTopHit:(_Bool)arg3 messageListIndex:(int)arg4 spotlightListIndex:(int)arg5;
 - (void)recordUserDidRightClickMessage:(id)arg1;

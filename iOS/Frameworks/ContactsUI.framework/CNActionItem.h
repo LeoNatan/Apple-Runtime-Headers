@@ -16,11 +16,11 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithImage:(id)arg1 type:(id)arg2;
 

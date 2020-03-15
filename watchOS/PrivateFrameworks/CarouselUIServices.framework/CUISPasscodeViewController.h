@@ -40,6 +40,7 @@
 }
 
 + (_Bool)unlockDeviceWithPasscode:(id)arg1 outError:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CUISSetupAsyncPasscodeCreationViewControllerDelegate> asynchronousDelegate; // @synthesize asynchronousDelegate=_asynchronousDelegate;
 @property(retain, nonatomic) CUISAlertSheetController *errorAlertSheet; // @synthesize errorAlertSheet=_errorAlertSheet;
 @property(retain, nonatomic) UIViewController *alertSheetPresenter; // @synthesize alertSheetPresenter=_alertSheetPresenter;
@@ -51,7 +52,6 @@
 @property(nonatomic) _Bool shouldUseLockScreenAnimation; // @synthesize shouldUseLockScreenAnimation=_shouldUseLockScreenAnimation;
 @property(nonatomic) _Bool shouldShowCancel; // @synthesize shouldShowCancel=_shouldShowCancel;
 @property(nonatomic) __weak id <CUISPasscodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)actionSheetController:(id)arg1 didDismissWithActionAtIndexPath:(id)arg2;
 - (void)removeActionSheetPresenter;
 - (void)_passcodeEntered:(id)arg1;

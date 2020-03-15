@@ -14,8 +14,11 @@
     ABLazyGroup *_lazyGroup;
     NSSet *_newMemberUids;
     NSMutableDictionary *_memberUidToLazyParentGroupUids;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (id)newMembers;
 - (void)addMemberToPreviousGroup:(id)arg1;
 - (void)addMembersToPreviousGroups;

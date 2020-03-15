@@ -10,13 +10,13 @@
 
 @interface ICTintedLayer : CALayer
 {
-    struct UIColor *_tintColor;
+    UIColor *_tintColor;
     id _originalContents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id originalContents; // @synthesize originalContents=_originalContents;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (void)updateContents;
 - (void)setContents:(id)arg1;
 

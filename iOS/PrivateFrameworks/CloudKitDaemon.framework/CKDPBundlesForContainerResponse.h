@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)bundleIDType;
-@property(retain, nonatomic) NSMutableArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

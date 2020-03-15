@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)_userDefaults;
 + (void)setDidDisplayEducationalCard:(_Bool)arg1;
 + (_Bool)didDisplayEducationalCard;
-@property(readonly, nonatomic) PUOneUpAccessoryViewControllersManager *accessoryViewControllersManager; // @synthesize accessoryViewControllersManager=_accessoryViewControllersManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUOneUpAccessoryViewControllersManager *accessoryViewControllersManager; // @synthesize accessoryViewControllersManager=_accessoryViewControllersManager;
 - (id)requestSuggestionForAsset:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 - (_Bool)canProvideSuggestionForAsset:(id)arg1;
 - (id)initWithAccessoryViewControllersManager:(id)arg1;

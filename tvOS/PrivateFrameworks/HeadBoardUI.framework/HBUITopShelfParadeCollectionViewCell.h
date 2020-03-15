@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HBUITopShelfParadeContentCoordinator *_contentCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isParadeContentHidden) _Bool paradeContentHidden; // @synthesize paradeContentHidden=_paradeContentHidden;
 @property(retain, nonatomic) HBUITopShelfParadeContentCoordinator *contentCoordinator; // @synthesize contentCoordinator=_contentCoordinator;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFocused;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusEnvironments;

@@ -11,8 +11,8 @@
     CNAutocompleteQueryResponsePreparer *_preparer;
 }
 
-@property(readonly) CNAutocompleteQueryResponsePreparer *preparer; // @synthesize preparer=_preparer;
 - (void).cxx_destruct;
+@property(readonly) CNAutocompleteQueryResponsePreparer *preparer; // @synthesize preparer=_preparer;
 - (void)setMatchingPriorityResultsPromise:(id)arg1;
 - (void)setPriorityResultsFuture:(id)arg1;
 - (id)prepareResults:(id)arg1;

@@ -20,8 +20,8 @@
 
 + (id)_prefixFromBundleIdentifier:(id)arg1;
 + (id)redirectURLForItem:(id)arg1 withAction:(id)arg2;
-@property(copy, nonatomic) NSString *localizedDeviceRowTitle; // @synthesize localizedDeviceRowTitle=_localizedDeviceRowTitle;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *localizedDeviceRowTitle; // @synthesize localizedDeviceRowTitle=_localizedDeviceRowTitle;
 - (void)setItemChangeHandler:(CDUnknownBlockType)arg1;
 - (void)mapItemsToGroups:(id)arg1;
 - (id)groups;

@@ -19,12 +19,12 @@
 }
 
 + (id)_stopwordsForLanguage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *spotlightSearchScores; // @synthesize spotlightSearchScores=_spotlightSearchScores;
 @property(retain, nonatomic) CSPrivateSearchableIndex *privateSearchableIndex; // @synthesize privateSearchableIndex=_privateSearchableIndex;
 @property(retain, nonatomic) NSDictionary *searchIndex; // @synthesize searchIndex=_searchIndex;
 @property(retain, nonatomic) HLPHelpBookController *helpBookController; // @synthesize helpBookController=_helpBookController;
 @property(nonatomic) _Bool useCSSearch; // @synthesize useCSSearch=_useCSSearch;
-- (void).cxx_destruct;
 - (void)CSSearchForSearchText:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelSpotlightSearch;
 @property(readonly, nonatomic) NSArray *spotlightSearchResults; // @dynamic spotlightSearchResults;

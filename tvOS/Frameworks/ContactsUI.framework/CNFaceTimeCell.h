@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     CNActionView *_actionView2;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNActionView *actionView2; // @synthesize actionView2=_actionView2;
 @property(readonly, nonatomic) CNActionView *actionView1; // @synthesize actionView1=_actionView1;
 @property(nonatomic) _Bool isFaceTimeAudioAvailable; // @synthesize isFaceTimeAudioAvailable=_isFaceTimeAudioAvailable;
 @property(readonly, nonatomic) UILabel *faceTimeLabel; // @synthesize faceTimeLabel=_faceTimeLabel;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didPressActionView:(id)arg1 longPress:(_Bool)arg2;
 - (void)tintColorDidChange;
 - (id)variableConstraints;

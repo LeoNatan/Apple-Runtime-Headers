@@ -32,6 +32,7 @@
 + (BOOL)registerSubclass:(Class)arg1 forFormat:(id)arg2;
 + (Class)outputStreamSubclassForFormat:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int internalDestinationFileDescriptor; // @synthesize internalDestinationFileDescriptor=_internalDestinationFileDescriptor;
 @property(nonatomic, setter=setWritingToFileDescriptor:) BOOL isWritingToFileDescriptor; // @synthesize isWritingToFileDescriptor=_isWritingToFileDescriptor;
 @property(nonatomic) BOOL managingSourceStreamLifecycle; // @synthesize managingSourceStreamLifecycle=_managingSourceStreamLifecycle;
@@ -45,7 +46,6 @@
 @property(nonatomic) void *inputDigestContext; // @synthesize inputDigestContext=_inputDigestContext;
 @property(nonatomic) BOOL isClosed; // @synthesize isClosed=_isClosed;
 @property(nonatomic) BOOL isOpen; // @synthesize isOpen=_isOpen;
-- (void).cxx_destruct;
 - (void)setDestinationData:(id)arg1;
 - (id)destinationData;
 @property(readonly, nonatomic) NSData *outputDigestData;

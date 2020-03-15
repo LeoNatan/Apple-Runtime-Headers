@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_mediaEntityIdentifierByMediaServerRequestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *mediaEntityIdentifierByMediaServerRequestIdentifier; // @synthesize mediaEntityIdentifierByMediaServerRequestIdentifier=_mediaEntityIdentifierByMediaServerRequestIdentifier;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSDictionary *imageURLByMediaEntityIdentifier; // @synthesize imageURLByMediaEntityIdentifier=_imageURLByMediaEntityIdentifier;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long DAAPDatabaseID; // @synthesize DAAPDatabaseID=_DAAPDatabaseID;
 @property(copy, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
 @property(copy, nonatomic) TVHKMediaEntityImageURLsFetchRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithRequest:(id)arg1 mediaServerIdentifier:(id)arg2 DAAPDatabaseID:(unsigned long long)arg3 DPAPDatabaseID:(unsigned long long)arg4;
 - (id)init;

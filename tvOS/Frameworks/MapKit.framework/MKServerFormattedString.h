@@ -20,9 +20,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)attributesForServerFormatStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) MKServerFormattedStringParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) id <GEOServerFormattedString> geoServerString; // @synthesize geoServerString=_geoServerString;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (unsigned long long)hash;
 - (_Bool)isEqualToServerFormattedString:(id)arg1;

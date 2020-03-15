@@ -24,9 +24,9 @@
 - (void)_cleanup;
 - (void)removeItemAtIndex:(unsigned int)arg1;
 - (void)insertItemAtIndex:(unsigned int)arg1;
-- (struct NSObject *)imageForItemAtIndex:(unsigned int)arg1;
+- (id)imageForItemAtIndex:(unsigned int)arg1;
 - (unsigned int)_imageTableIndexForItemIndex:(unsigned int)arg1;
-- (void)setImage:(struct NSObject *)arg1 forItemAtIndex:(unsigned int)arg2;
+- (void)setImage:(id)arg1 forItemAtIndex:(unsigned int)arg2;
 - (id)initWithWithPath:(id)arg1 imageFormat:(unsigned short)arg2;
 - (void)_positional_setThumbnailsWithIdentifier:(id)arg1 thumbnailIndex:(unsigned int)arg2 image:(id)arg3 assetUUID:(id)arg4;
 

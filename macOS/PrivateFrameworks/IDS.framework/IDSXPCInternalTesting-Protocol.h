@@ -10,6 +10,7 @@
 
 @protocol IDSXPCInternalTesting <NSObject>
 - (void)fetchStoredUserDescriptions:(void (^)(NSString *))arg1;
+- (void)deviceChangedForDeviceID:(NSString *)arg1 isNearby:(BOOL)arg2 isConnected:(BOOL)arg3 isCloudConnected:(BOOL)arg4 completionHandler:(void (^)(NSError *))arg5;
 - (void)removeConnectionWithConnectionName:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)nukeTransparencyStateWithCompletion:(void (^)(NSError *))arg1;
 - (void)nukeCloudKitTransparencyStateWithCompletion:(void (^)(NSError *))arg1;

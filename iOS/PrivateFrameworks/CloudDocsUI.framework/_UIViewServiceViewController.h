@@ -16,9 +16,9 @@
     UINavigationController *_containedNavController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UINavigationController *containedNavController; // @synthesize containedNavController=_containedNavController;
 @property(readonly, nonatomic) id hostingViewController; // @synthesize hostingViewController=_hostingViewController;
-- (void).cxx_destruct;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (struct CGSize)_updatedContentSizeForPreferredContentSize:(struct CGSize)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;

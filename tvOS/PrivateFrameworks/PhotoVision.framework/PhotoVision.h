@@ -36,9 +36,9 @@
 + (unsigned int)maximumFaceAlgorithmUmbrellaVersion;
 + (unsigned int)minimumFaceAlgorithmUmbrellaVersion;
 + (int)_intValueForKey:(id)arg1 defaultValue:(int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int sceneAlgorithmUmbrellaVersion; // @synthesize sceneAlgorithmUmbrellaVersion=_sceneAlgorithmUmbrellaVersion;
 @property(readonly, nonatomic) unsigned int faceAlgorithmUmbrellaVersion; // @synthesize faceAlgorithmUmbrellaVersion=_faceAlgorithmUmbrellaVersion;
-- (void).cxx_destruct;
 - (id)suggestedPersonLocalIdentifierForPersonLocalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)suggestedPersonLocalIdentifierForFaceLocalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)suggestionsForFaceClusterSequenceNumbers:(id)arg1 error:(id *)arg2;

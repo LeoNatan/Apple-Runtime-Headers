@@ -21,10 +21,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SFTranscription *rawTranscription; // @synthesize rawTranscription=_rawTranscription;
 @property(readonly, nonatomic, getter=isFinal) _Bool final; // @synthesize final=_final;
 @property(readonly, copy, nonatomic) SFTranscription *bestTranscription; // @synthesize bestTranscription=_bestTranscription;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *rawTranscriptions;
 @property(readonly, copy, nonatomic) NSArray *transcriptions;
 - (id)expandTranscription:(id)arg1;

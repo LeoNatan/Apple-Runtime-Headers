@@ -12,9 +12,9 @@
     float _totalWeight;
 }
 
-@property(readonly, nonatomic) float totalWeight; // @synthesize totalWeight=_totalWeight;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) float totalWeight; // @synthesize totalWeight=_totalWeight;
 - (void)enumerateDataSourcesAndWeightsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)addDataSource:(id)arg1 weight:(float)arg2;
 

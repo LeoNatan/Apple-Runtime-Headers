@@ -26,12 +26,12 @@
 }
 
 + (Class)exerciseMinuteHoursType;
+- (void).cxx_destruct;
 @property(nonatomic) long long monthsSinceFirstWatchUsage; // @synthesize monthsSinceFirstWatchUsage=_monthsSinceFirstWatchUsage;
 @property(nonatomic) long long moveRingCompletionPercentage; // @synthesize moveRingCompletionPercentage=_moveRingCompletionPercentage;
 @property(retain, nonatomic) NSMutableArray *exerciseMinuteHours; // @synthesize exerciseMinuteHours=_exerciseMinuteHours;
 @property(retain, nonatomic) NSString *userToken; // @synthesize userToken=_userToken;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

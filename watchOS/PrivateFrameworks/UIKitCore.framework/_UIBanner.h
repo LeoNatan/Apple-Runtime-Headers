@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_tapHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tapHandlers; // @synthesize tapHandlers=_tapHandlers;
 @property(retain, nonatomic) NSMutableArray *dismissalCompletionHandlers; // @synthesize dismissalCompletionHandlers=_dismissalCompletionHandlers;
 @property(retain, nonatomic) NSMutableArray *dismissalAnimations; // @synthesize dismissalAnimations=_dismissalAnimations;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak _UIBannerManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) _UIBannerContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) _UIBannerView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)addTapHandler:(CDUnknownBlockType)arg1;
 - (void)addDismissalCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addDismissalAnimations:(CDUnknownBlockType)arg1;

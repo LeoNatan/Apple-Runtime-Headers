@@ -16,8 +16,8 @@
     id <PHProjectTypeDescriptionInvalidator> _target;
 }
 
-@property(retain, nonatomic) id <PHProjectTypeDescriptionInvalidator> target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PHProjectTypeDescriptionInvalidator> target; // @synthesize target=_target;
 - (void)invalidateFooterTextForSubtypesOfProjectType:(id)arg1;
 - (void)invalidateTypeDescriptionForProjectType:(id)arg1;
 

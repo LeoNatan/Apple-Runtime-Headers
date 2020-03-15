@@ -16,10 +16,10 @@
 }
 
 + (id)newSectionSpecifierFromPart:(id)arg1 text:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *partSectionSpecifier; // @synthesize partSectionSpecifier=_partSectionSpecifier;
 @property(readonly) long long textSectionSpecifier; // @synthesize textSectionSpecifier=_textSectionSpecifier;
 @property(readonly) struct _NSRange dataRange; // @synthesize dataRange=_dataRange;
-- (void).cxx_destruct;
 @property(readonly) BOOL isHeader;
 - (void)_finalizeCommandStringWithHeaderFieldNames:(id)arg1 peek:(BOOL)arg2;
 - (id)initWithHeaderFieldNames:(id)arg1;

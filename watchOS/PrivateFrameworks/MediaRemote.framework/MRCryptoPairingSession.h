@@ -17,10 +17,10 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MRCryptoPairingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int role; // @synthesize role=_role;
 @property(readonly, nonatomic) _MRDeviceInfoMessageProtobuf *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (_Bool)deleteIdentityWithError:(id *)arg1;
 - (id)decryptData:(id)arg1 withError:(id *)arg2;
 - (id)encryptData:(id)arg1 withError:(id *)arg2;

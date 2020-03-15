@@ -21,6 +21,7 @@
     struct CGSize _aspectRatio;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVTViewSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType tearDownHandler; // @synthesize tearDownHandler=_tearDownHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType becomeActiveHandler; // @synthesize becomeActiveHandler=_becomeActiveHandler;
@@ -29,7 +30,6 @@
 @property(nonatomic) AVTView *avtView; // @synthesize avtView=_avtView;
 @property(nonatomic) UIView *avtViewContainer; // @synthesize avtViewContainer=_avtViewContainer;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)tearDownWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)activateWithAVTView:(id)arg1 container:(id)arg2 updater:(id)arg3;
 - (id)initWithBecomeActiveHandler:(CDUnknownBlockType)arg1 tearDownHandler:(CDUnknownBlockType)arg2 aspectRatio:(struct CGSize)arg3;

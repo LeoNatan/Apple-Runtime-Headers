@@ -36,6 +36,7 @@
 }
 
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(nonatomic) double relativeDistanceFromFloatingPosition; // @synthesize relativeDistanceFromFloatingPosition=_relativeDistanceFromFloatingPosition;
 @property(retain, nonatomic) NSColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(nonatomic) double textFieldSpacing; // @synthesize textFieldSpacing=_textFieldSpacing;
@@ -50,7 +51,6 @@
 @property(nonatomic) BOOL showFooterLine; // @synthesize showFooterLine=_showFooterLine;
 @property(readonly, nonatomic) NSTextField *subtitleTextField; // @synthesize subtitleTextField=_subtitleTextField;
 @property(readonly, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 - (id)accessibilityRole;
 - (id)accessibilityLabel;
 - (id)mediaSection:(id)arg1 stringForRangeFromDate:(id)arg2 toDate:(id)arg3;

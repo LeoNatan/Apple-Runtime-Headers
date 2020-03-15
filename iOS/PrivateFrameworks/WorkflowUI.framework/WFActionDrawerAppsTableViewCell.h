@@ -21,11 +21,11 @@
     NSArray *_appItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *appItems; // @synthesize appItems=_appItems;
 @property(retain, nonatomic) UICollectionView *appsCollectionView; // @synthesize appsCollectionView=_appsCollectionView;
 @property(nonatomic) __weak id <WFActionDrawerAppsTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *appSections; // @synthesize appSections=_appSections;
-- (void).cxx_destruct;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

@@ -19,12 +19,12 @@
     NSData *_tokenData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *tokenData; // @synthesize tokenData=_tokenData;
 @property(copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(copy, nonatomic) NSString *keybagPath; // @synthesize keybagPath=_keybagPath;
-- (void).cxx_destruct;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestContext:(id)arg1;

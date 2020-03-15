@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)processSerialNumber:(struct ProcessSerialNumber *)arg1 forPid:(int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *_launchSet; // @synthesize _launchSet=__launchSet;
 @property(retain, nonatomic) NSMutableDictionary *_appByURLDictionary; // @synthesize _appByURLDictionary=__appByURLDictionary;
 @property(retain, nonatomic) SCRSetupAssistantApplication *setupAssistantApplication; // @synthesize setupAssistantApplication=_setupAssistantApplication;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *_busyApplications; // @synthesize _busyApplications=__busyApplications;
 @property(retain, nonatomic) NSMutableArray *_applications; // @synthesize _applications=__applications;
 @property(readonly, nonatomic) double lastFocusedApplicationDidChange; // @synthesize lastFocusedApplicationDidChange=_lastFocusedApplicationDidChange;
-- (void).cxx_destruct;
 - (id)firstApplicationMenuExtraItem;
 - (id)applicationMenuExtraItems;
 - (id)_applicationMenuExtraItems:(long long)arg1;

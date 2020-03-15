@@ -15,8 +15,8 @@
     NSString *_content;
 }
 
-@property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,10 +15,10 @@
     MPPlaybackArchive *_playbackArchive;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) MPMediaItemCollection *mediaCollection; // @synthesize mediaCollection=_mediaCollection;
 @property(copy, nonatomic) NSArray *storeIDs; // @synthesize storeIDs=_storeIDs;
-- (void).cxx_destruct;
 - (id)initWithPlaybackArchive:(id)arg1;
 - (id)initWithMediaCollection:(id)arg1;
 - (id)initWithStoreIDs:(id)arg1;

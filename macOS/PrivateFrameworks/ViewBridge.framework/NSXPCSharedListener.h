@@ -35,7 +35,7 @@
 - (void)didAcceptNewConnection:(id)arg1;
 - (id)listenerEndpointWithName:(id)arg1;
 - (void)addListener:(id)arg1 withName:(id)arg2;
-- (void)addDelegate:(struct NSObject *)arg1;
+- (void)addDelegate:(id)arg1;
 - (void)dealloc;
 
 @end

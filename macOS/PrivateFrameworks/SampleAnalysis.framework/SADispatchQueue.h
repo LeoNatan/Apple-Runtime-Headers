@@ -21,11 +21,11 @@
 + (id)dispatchQueueWithId:(unsigned long long)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_0eb10942 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property BOOL isConcurrent; // @synthesize isConcurrent=_isConcurrent;
 @property(retain) NSString *dispatchQueueLabel; // @synthesize dispatchQueueLabel=_dispatchQueueLabel;
 @property(readonly) unsigned long long dispatchQueueId; // @synthesize dispatchQueueId=_dispatchQueueId;
 @property(readonly) NSArray *dispatchQueueStates; // @synthesize dispatchQueueStates=_dispatchQueueStates;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (id)lastDispatchQueueStateOnOrBeforeTime:(id)arg1 withSampleIndex:(BOOL)arg2;
 - (unsigned long long)indexOfLastDispatchQueueStateOnOrBeforeTime:(id)arg1 withSampleIndex:(BOOL)arg2;
@@ -37,9 +37,9 @@
 - (unsigned long long)addState:(id)arg1;
 - (id)initWithId:(unsigned long long)arg1;
 - (void)paDeserializationAppendState:(id)arg1;
-- (void)populateReferencesUsingBuffer:(const CDStruct_0eb10942 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_0eb10942 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_0eb10942 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_0eb10942 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

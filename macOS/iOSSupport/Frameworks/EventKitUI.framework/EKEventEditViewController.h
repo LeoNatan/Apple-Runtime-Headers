@@ -17,6 +17,7 @@
     EKEvent *_event;
     NSString *_eventId;
     BOOL _completedWithAction;
+    BOOL _ignoreUnsavedChanges;
     int _transitionForModalViewPresentation;
     id <EKEventEditViewDelegate> _editViewDelegate;
     EKEventEditor *_editor;
@@ -26,12 +27,13 @@
 
 + (void)setDefaultDatesForEvent:(id)arg1;
 + (id)eventEditViewControllerWithEvent:(id)arg1 eventStore:(id)arg2 editViewDelegate:(id)arg3;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL ignoreUnsavedChanges; // @synthesize ignoreUnsavedChanges=_ignoreUnsavedChanges;
 @property(retain, nonatomic) NSString *suggestionKey; // @synthesize suggestionKey=_suggestionKey;
 @property(nonatomic) int transitionForModalViewPresentation; // @synthesize transitionForModalViewPresentation=_transitionForModalViewPresentation;
 @property(retain, nonatomic) EKEventEditViewController *strongSelf; // @synthesize strongSelf=_strongSelf;
 @property(retain, nonatomic) EKEventEditor *editor; // @synthesize editor=_editor;
 @property(nonatomic) __weak id <EKEventEditViewDelegate> editViewDelegate; // @synthesize editViewDelegate=_editViewDelegate;
-- (void).cxx_destruct;
 - (void)presentationControllerDidAttemptToDismiss:(id)arg1;
 - (id)confirmDismissAlertController;
 - (id)_confirmDismissAlertExplanationText;
@@ -47,6 +49,7 @@
 - (void)focusAndSelectTitle;
 - (BOOL)hasUnsavedChanges;
 - (BOOL)willPresentDialogOnSave;
+- (void)completeAndSaveWithContinueBlock:(CDUnknownBlockType)arg1;
 - (void)completeAndSave;
 - (void)handleTapOutside;
 @property(nonatomic) BOOL canHideDoneAndCancelButtons;
@@ -67,7 +70,7 @@
 - (void)dealloc;
 - (BOOL)isModalInPresentation;
 - (BOOL)shouldAutorotate;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

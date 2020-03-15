@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *imageLoadingQueue; // @synthesize imageLoadingQueue=_imageLoadingQueue;
-- (void).cxx_destruct;
 - (id)loadImagesForInteractionDonation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)init;
 

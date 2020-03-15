@@ -28,7 +28,7 @@
 - (id)insertedIndexes;
 - (id)deletedIndexes;
 - (BOOL)shouldReload;
-- (struct NSObject *)albumList;
+- (id)albumList;
 - (id)object;
 - (void)dealloc;
 - (id)initWithAggregateAlbumList:(id)arg1 fromAlbumListChangeNotification:(id)arg2 indexOffset:(unsigned long long)arg3;

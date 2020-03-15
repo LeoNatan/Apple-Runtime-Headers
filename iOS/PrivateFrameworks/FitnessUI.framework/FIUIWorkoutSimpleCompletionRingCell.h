@@ -18,12 +18,12 @@
 }
 
 + (double)preferredHeightForWorkout:(id)arg1 fittingWidth:(double)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *typeLabel; // @synthesize typeLabel=_typeLabel;
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UIImageView *ringImageView; // @synthesize ringImageView=_ringImageView;
 @property(retain, nonatomic) ARUIRingsView *ringsView; // @synthesize ringsView=_ringsView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)configureWithWorkout:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

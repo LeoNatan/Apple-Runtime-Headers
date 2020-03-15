@@ -16,10 +16,10 @@
     NSArray *_recoveryRecords;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recoveryRecords; // @synthesize recoveryRecords=_recoveryRecords;
 @property(retain, nonatomic) id <CDPDBackupRecoveryErrorProvider> errorProvider; // @synthesize errorProvider=_errorProvider;
 @property(retain, nonatomic) id <CDPDBackupRecoveryResultsParser> resultParser; // @synthesize resultParser=_resultParser;
-- (void).cxx_destruct;
 - (void)_updateRecordRecoveryStatusForRecordDictionary:(id)arg1;
 - (void)secretValidator:(id)arg1 didFailRecoveryWithErrors:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)secretValidator:(id)arg1 shouldContinueValidationAfterError:(id)arg2;

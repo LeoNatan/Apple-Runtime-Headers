@@ -20,8 +20,8 @@
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 + (_Bool)shouldPropagateAppearanceCustomizations;
-@property(nonatomic) __weak id <PKAddPaymentPassViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKAddPaymentPassViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_addPaymentPassVC;
 - (void)generateRequestWithCertificateChain:(id)arg1 nonce:(id)arg2 nonceSignature:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)didFinishWithPass:(id)arg1 error:(id)arg2;

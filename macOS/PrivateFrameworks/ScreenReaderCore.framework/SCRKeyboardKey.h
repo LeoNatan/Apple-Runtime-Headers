@@ -29,6 +29,7 @@
 + (BOOL)isEqualIgnoringCount:(id)arg1 object2:(id)arg2 ignorePressCount:(BOOL)arg3;
 + (id)keysWithPressCountGreaterThanOne;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL function; // @synthesize function=_function;
 @property(nonatomic) BOOL fned; // @synthesize fned=_fned;
 @property(nonatomic) BOOL commanded; // @synthesize commanded=_commanded;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned short keyCode; // @synthesize keyCode=_keyCode;
 @property(copy, nonatomic) NSString *rawCharacters; // @synthesize rawCharacters=_rawCharacters;
 @property(copy, nonatomic) NSString *characters; // @synthesize characters=_characters;
-- (void).cxx_destruct;
 - (long long)modifierMask;
 - (long long)modifierMaskForGuide;
 - (id)charactersWithPunctuationConvertedToLowercaseForm;

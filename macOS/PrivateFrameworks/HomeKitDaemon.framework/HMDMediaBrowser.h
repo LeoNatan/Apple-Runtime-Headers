@@ -32,6 +32,7 @@
 + (id)logCategory;
 + (id)advertisementsFromOutputDevices:(struct __CFArray *)arg1;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *mediaEndpoints; // @synthesize mediaEndpoints=_mediaEndpoints;
 @property(retain, nonatomic) NSMutableSet *identifiersOfAssociatedMediaAccessories; // @synthesize identifiersOfAssociatedMediaAccessories=_identifiersOfAssociatedMediaAccessories;
 @property(nonatomic) BOOL updateAvailableOutputDevices; // @synthesize updateAvailableOutputDevices=_updateAvailableOutputDevices;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property __weak id <HMDMediaBrowserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)deregisterAccessories:(id)arg1;
 - (void)_updateSessionsForAccessories:(id)arg1;

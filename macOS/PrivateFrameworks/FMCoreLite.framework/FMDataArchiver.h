@@ -18,12 +18,12 @@
 }
 
 + (id)defaultClasses;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *unitTestData; // @synthesize unitTestData=_unitTestData;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(nonatomic) BOOL createDirectories; // @synthesize createDirectories=_createDirectories;
 @property(nonatomic) BOOL backedUp; // @synthesize backedUp=_backedUp;
 @property(nonatomic) long long dataProtectionClass; // @synthesize dataProtectionClass=_dataProtectionClass;
-- (void).cxx_destruct;
 - (id)saveObject:(id)arg1;
 - (BOOL)saveDictionary:(id)arg1 error:(id *)arg2;
 - (BOOL)saveArray:(id)arg1 error:(id *)arg2;

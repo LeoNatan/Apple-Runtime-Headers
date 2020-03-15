@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     UIDragInteraction *_associatedDragInteraction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIDragInteraction *associatedDragInteraction; // @synthesize associatedDragInteraction=_associatedDragInteraction;
 @property(retain, nonatomic) _UIPreviewInteractionHighlighter *highlighter; // @synthesize highlighter=_highlighter;
 @property(retain, nonatomic) _UIPreviewInteractionPresentationAssistant *presentationAssistant; // @synthesize presentationAssistant=_presentationAssistant;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <_UIPreviewInteractionTouchForceProviding> touchForceProvider; // @synthesize touchForceProvider=_touchForceProvider;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <UIPreviewInteractionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)_gestureRecognizerForExclusionRelationship;
 - (void)_toBeRemoved_CallHighlighterCompletion;

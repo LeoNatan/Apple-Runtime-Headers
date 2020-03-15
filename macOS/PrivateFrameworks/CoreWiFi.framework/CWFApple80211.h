@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _eventHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(readonly, copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
-- (void).cxx_destruct;
 - (id)AWDLSidecarDiagnostics:(id *)arg1;
 - (id)rangingCapabilities:(id *)arg1;
 - (id)AWDLStrategy:(id *)arg1;

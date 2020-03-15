@@ -18,9 +18,9 @@
 
 + (id)properties;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *orderedWorkflowIDs; // @synthesize orderedWorkflowIDs=_orderedWorkflowIDs;
 @property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithZoneID:(id)arg1;
 
 // Remaining properties

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logCategory;
-@property(readonly) __weak HMICameraVideoAnalyzerRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly) __weak HMICameraVideoAnalyzerRequest *request; // @synthesize request=_request;
 - (id)stringWithFormat:(id)arg1;
 - (void)debug:(id)arg1;
 - (void)info:(id)arg1;

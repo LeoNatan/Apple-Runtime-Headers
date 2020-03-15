@@ -21,6 +21,7 @@
 }
 
 + (id)coalesceMixParamsA:(id)arg1 withMixParamsB:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<FlexSongProtocol> *song; // @synthesize song=_song;
 @property(nonatomic) long long durationOfMusic; // @synthesize durationOfMusic=_durationOfMusic;
 @property(nonatomic) long long durationOfSilence; // @synthesize durationOfSilence=_durationOfSilence;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(retain, nonatomic) FMTrack *trackB; // @synthesize trackB=_trackB;
 @property(retain, nonatomic) FMTrack *trackA; // @synthesize trackA=_trackA;
-- (void).cxx_destruct;
 - (id)_buildOutroFadeoutMixParams;
 - (double)_maxPeakAndLoudness:(double *)arg1 missingPeakValueCount:(int *)arg2 missingLoudnessCount:(int *)arg3;
 - (id)timedMetadataItemsWithIdentifier:(id)arg1;

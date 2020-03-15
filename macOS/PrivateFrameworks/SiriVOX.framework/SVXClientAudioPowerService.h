@@ -25,8 +25,8 @@
     id <SVXClientAudioPowerServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SVXClientAudioPowerServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SVXClientAudioPowerServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_destroyUpdater;
 - (void)_createUpdater;
 - (void)_handleDidEndUpdateAudioPower;

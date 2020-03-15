@@ -17,11 +17,11 @@
     BOOL _badgesVisibleWhileScrolling;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL badgesVisibleWhileScrolling; // @synthesize badgesVisibleWhileScrolling=_badgesVisibleWhileScrolling;
 @property(readonly) MOMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(readonly, nonatomic) __weak MOMediaView *mediaView; // @synthesize mediaView=_mediaView;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseEntered:(id)arg1;

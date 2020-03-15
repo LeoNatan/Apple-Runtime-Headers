@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSCacheFlushingManagerType-Protocol.h>
-
-@interface TSCacheFlushingManager : NSObject <TSCacheFlushingManagerType>
+@interface TSCacheFlushingManager : NSObject
 {
     // Error parsing type: , name: cacheFlusher
     // Error parsing type: , name: storageLevelProvider

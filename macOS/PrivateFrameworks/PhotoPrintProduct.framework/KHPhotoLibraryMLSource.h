@@ -19,10 +19,10 @@
     NSMutableDictionary *_sectionsByKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *sectionsByKey; // @synthesize sectionsByKey=_sectionsByKey;
 @property(readonly, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) MLMediaSource *mediaSource; // @synthesize mediaSource=_mediaSource;
-- (void).cxx_destruct;
 - (void)executeHydration;
 - (void)executeHydrationOnQueue;
 - (id)sectionForIdentifier:(id)arg1;

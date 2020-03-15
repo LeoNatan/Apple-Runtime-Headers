@@ -15,8 +15,8 @@
     BCAuthenticationRequest *_authenticationRequest;
 }
 
-@property(retain, nonatomic) BCAuthenticationRequest *authenticationRequest; // @synthesize authenticationRequest=_authenticationRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BCAuthenticationRequest *authenticationRequest; // @synthesize authenticationRequest=_authenticationRequest;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)accessTokenForData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exchangeCode:(id)arg1 completion:(CDUnknownBlockType)arg2;

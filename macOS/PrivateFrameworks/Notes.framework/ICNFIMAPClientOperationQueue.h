@@ -23,11 +23,11 @@
     ICNFMCActivityMonitor *_activityMonitor;
 }
 
+- (void).cxx_destruct;
 @property(readonly) ICNFMCActivityMonitor *activityMonitor; // @synthesize activityMonitor=_activityMonitor;
 @property(copy) NSString *activityName; // @synthesize activityName=_activityName;
 @property(retain) ICNFIMAPGateway *gateway; // @synthesize gateway=_gateway;
 @property(retain, nonatomic) NSRecursiveLock *addOperationLock; // @synthesize addOperationLock=_addOperationLock;
-- (void).cxx_destruct;
 - (id)description;
 - (void)refreshIdle;
 - (void)finishIdling;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UIStatusBarImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarImageView *imageView; // @synthesize imageView=_imageView;
 @property(copy, nonatomic) NSArray *currentImageNamePrefixes; // @synthesize currentImageNamePrefixes=_currentImageNamePrefixes;
-- (void).cxx_destruct;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (_Bool)shouldUpdateIndicatorForIdentifier:(id)arg1;
 - (id)viewForIdentifier:(id)arg1;

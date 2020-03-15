@@ -12,6 +12,7 @@
 @class NSString;
 
 @interface UIColor (IBBinaryArchivingAdditions) <IBBinaryArchiving, IBBinaryArchivableColor>
++ (id)ibSimpleColorPairWithAnyOrLightColor:(id)arg1 darkColor:(id)arg2;
 + (id)ibColorWithName:(id)arg1 bundleID:(id)arg2 fallbackColor:(id)arg3 unarchiveAsColorWrapper:(_Bool)arg4;
 + (id)ibColorWithPatternBitmap:(id)arg1 colorSpace:(struct CGColorSpace *)arg2;
 + (id)ibColorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
@@ -20,10 +21,9 @@
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
 + (id)ibArchivedDataForColor:(id)arg1;
 + (id)ibDefaultTintColor;
-+ (id)computeSystemColors;
-+ (id)darkSystemColors;
-+ (id)systemColors;
-+ (id)fallbackSystemColorNames;
++ (id)ibComputeSystemColors;
++ (id)ibSystemColors;
++ (id)ibFallbackSystemColorNames;
 - (const char *)cStringClassNameForBinaryArchiver:(id)arg1;
 - (id)ibArchivedSystemKeyPathForBinaryArchiver:(id)arg1 fallbackColor:(id *)arg2;
 - (_Bool)ibGetColorName:(id *)arg1 bundleID:(id *)arg2 fallbackColor:(id *)arg3 unarchiveAsColorWrapper:(_Bool *)arg4;

@@ -27,6 +27,7 @@
 + (id)delegatesForCalManagedCalDAVPrincipal:(id)arg1;
 + (id)infoWithCalDAVDetails:(id)arg1 allowWrite:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL alarmsEnabled; // @synthesize alarmsEnabled=_alarmsEnabled;
 @property int tasksPermission; // @synthesize tasksPermission=_tasksPermission;
 @property int calendarsPermission; // @synthesize calendarsPermission=_calendarsPermission;
@@ -35,7 +36,6 @@
 @property(retain) NSString *displayString; // @synthesize displayString=_displayString;
 @property(retain) NSString *commonName; // @synthesize commonName=_commonName;
 @property(retain) NSString *uri; // @synthesize uri=_uri;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)caseInsensitiveCompare:(id)arg1;
 - (void)setAllowWrite:(BOOL)arg1;

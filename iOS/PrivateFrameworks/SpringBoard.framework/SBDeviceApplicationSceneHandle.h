@@ -30,6 +30,7 @@
     struct CGRect _statusBarAvoidanceFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBDeviceApplicationSceneStatusBarBreadcrumbProvider *breadcrumbProvider; // @synthesize breadcrumbProvider=_breadcrumbProvider;
 @property(nonatomic) struct CGRect statusBarAvoidanceFrame; // @synthesize statusBarAvoidanceFrame=_statusBarAvoidanceFrame;
 @property(nonatomic, getter=_idleTimerCoordinator, setter=_setIdleTimerCoordinator:) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool hasMainSceneBeenForegroundAtLeastOnce; // @synthesize hasMainSceneBeenForegroundAtLeastOnce=_hasMainSceneBeenForegroundAtLeastOnce;
 @property(readonly, nonatomic, getter=isEffectivelyForeground) _Bool effectivelyForeground; // @synthesize effectivelyForeground=_isEffectivelyForeground;
 @property(nonatomic) long long lastActivationSource; // @synthesize lastActivationSource=_lastActivationSource;
-- (void).cxx_destruct;
 - (id)_potentiallyJailedDisplayConfiguration;
 - (id)_generateIdleTimerBehavior;
 - (void)_updateIdleTimerForReason:(id)arg1;

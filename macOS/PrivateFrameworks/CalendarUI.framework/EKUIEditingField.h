@@ -15,8 +15,8 @@
     EKUIGadget *_gadget;
 }
 
-@property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
+@property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
 - (void)configureText;
 - (BOOL)canBecomeKeyView;
 - (BOOL)becomeFirstResponder;

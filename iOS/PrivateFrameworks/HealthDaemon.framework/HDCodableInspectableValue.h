@@ -23,6 +23,7 @@
     NSString *_stringValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCodingList *dataAbsentReasonCodingsValue; // @synthesize dataAbsentReasonCodingsValue=_dataAbsentReasonCodingsValue;
 @property(retain, nonatomic) HDCodableMedicalDateInterval *medicalDateIntervalValue; // @synthesize medicalDateIntervalValue=_medicalDateIntervalValue;
 @property(retain, nonatomic) HDCodableMedicalDate *medicalDateValue; // @synthesize medicalDateValue=_medicalDateValue;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) HDCodableDateComponents *dateComponentsValue; // @synthesize dateComponentsValue=_dateComponentsValue;
 @property(retain, nonatomic) HDCodableRatioValue *ratioValue; // @synthesize ratioValue=_ratioValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

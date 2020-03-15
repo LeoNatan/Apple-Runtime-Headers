@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
-@property(nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
+@property(nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (id)probeOutputFilePaths;
 - (void)stopTest;
 - (void)netDiagnosticTaskStatusChangedFor:(id)arg1 toStatus:(int)arg2;

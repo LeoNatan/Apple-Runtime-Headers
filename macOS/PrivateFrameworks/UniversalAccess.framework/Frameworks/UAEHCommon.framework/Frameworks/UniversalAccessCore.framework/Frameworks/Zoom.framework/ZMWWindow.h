@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)multiMonitorSpace;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int windowID; // @synthesize windowID=_window;
 @property(readonly, nonatomic) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_deallocRT;
 - (void)_deallocMT;

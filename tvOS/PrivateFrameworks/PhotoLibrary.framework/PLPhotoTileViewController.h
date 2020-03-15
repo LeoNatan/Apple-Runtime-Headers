@@ -231,6 +231,7 @@
 - (void)_updateVideoViewForModelPhoto;
 - (void)_setPhoto:(id)arg1;
 - (_Bool)tileIsOnScreen;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (void)_teardownDispatchTimer;
 - (id)cachingImageManager;

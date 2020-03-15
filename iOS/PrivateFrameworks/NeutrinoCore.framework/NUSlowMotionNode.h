@@ -15,21 +15,21 @@
     CDStruct_e83c9415 _range;
 }
 
+- (void).cxx_destruct;
 @property(readonly) float rate; // @synthesize rate=_rate;
 @property(readonly) CDStruct_e83c9415 range; // @synthesize range=_range;
 @property(readonly) NUGeometryTransform *geomTransform; // @synthesize geomTransform=_geomTransform;
-- (void).cxx_destruct;
 - (id)_evaluateAudioMix:(out id *)arg1;
 - (_Bool)requiresAudioMix;
 - (id)_evaluateVideo:(out id *)arg1;
 - (id)_evaluateVideoComposition:(out id *)arg1;
 - (_Bool)requiresVideoComposition;
 - (id)_evaluateImage:(out id *)arg1;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (_Bool)shouldCacheNodeForPipelineState:(id)arg1;
 - (id)_transformWithError:(out id *)arg1;
 - (id)initWithTimeRange:(CDStruct_e83c9415)arg1 rate:(float)arg2 input:(id)arg3;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

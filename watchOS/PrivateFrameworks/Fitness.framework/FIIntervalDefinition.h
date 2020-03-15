@@ -18,9 +18,9 @@
 
 + (id)definitionFromDictionary:(id)arg1 error:(id *)arg2;
 + (id)intervalDefinitionWithTypeIdentifier:(int)arg1 quantity:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKQuantity *quantity; // @synthesize quantity=_quantity;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)byChangingType:(int)arg1 quantity:(id)arg2;
 - (id)dictionaryRepresentation;
 - (id)initWithTypeIdentifier:(int)arg1 quantity:(id)arg2;

@@ -365,6 +365,7 @@
 + (void)_setupIdiom:(long long)arg1 forTableViewStyle:(long long)arg2 includingBackground:(_Bool)arg3;
 + (void)_initializeForIdiom:(long long)arg1;
 + (_Bool)_isInternalTableView;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UITableViewDragDestinationDelegate> dragDestinationDelegate; // @synthesize dragDestinationDelegate=_dragDestinationDelegate;
 @property(nonatomic) __weak id <UITableViewDragSourceDelegate> dragSourceDelegate; // @synthesize dragSourceDelegate=_dragSourceDelegate;
 @property(retain, nonatomic, getter=_placeholderContexts, setter=_setPlaceholderContexts:) NSMutableArray *placeholderContexts; // @synthesize placeholderContexts=_placeholderContexts;
@@ -382,7 +383,6 @@
 @property(nonatomic) double estimatedSectionHeaderHeight; // @synthesize estimatedSectionHeaderHeight=_estimatedSectionHeaderHeight;
 @property(nonatomic) double estimatedRowHeight; // @synthesize estimatedRowHeight=_estimatedRowHeight;
 @property(retain, nonatomic) UITouch *currentTouch; // @synthesize currentTouch=_currentTouch;
-- (void).cxx_destruct;
 - (void)_highlightDidEndForCell:(id)arg1 withInteraction:(id)arg2;
 - (void)_prepareHighlightForCell:(id)arg1 withInteraction:(id)arg2;
 - (void)setSpringLoaded:(_Bool)arg1;
@@ -549,7 +549,7 @@
 - (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
-- (id)_defaultTargetedPreviewForIdentifier:(id)arg1;
+- (id)_defaultContextMenuTargetedPreviewForIdentifier:(id)arg1;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (_Bool)_canBeginMenuInteractionAtLocation:(struct CGPoint)arg1;
 - (void)_configureContextMenuInteractionIfNeeded;

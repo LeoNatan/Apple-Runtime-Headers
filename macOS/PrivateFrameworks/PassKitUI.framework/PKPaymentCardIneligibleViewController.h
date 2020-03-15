@@ -18,12 +18,12 @@
     NSURL *_learnMoreURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *learnMoreURL; // @synthesize learnMoreURL=_learnMoreURL;
 @property(nonatomic) __weak id <PKPaymentSetupDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) __weak PKPaymentSetupViewController *setupVC; // @synthesize setupVC=_setupVC;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(nonatomic) long long reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)beginSheetInWindow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

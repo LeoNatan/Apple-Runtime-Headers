@@ -14,9 +14,9 @@
     NSString *_appleID;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)deleteKey:(CDUnknownBlockType)arg1;
 - (void)signChallenge:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getAttestationBlob:(CDUnknownBlockType)arg1;

@@ -18,13 +18,13 @@
     id <NLFirstGlanceEngineDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NLFirstGlanceEngineDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate=_coachingSubmanagerDelegate;
 @property(retain, nonatomic) id <NLFirstGlanceWorkoutDataProvider> workoutDataProvider; // @synthesize workoutDataProvider=_workoutDataProvider;
 @property(retain, nonatomic) id <NLFirstGlanceActivitySharingDataProvider> activitySharingDataProvider; // @synthesize activitySharingDataProvider=_activitySharingDataProvider;
 @property(retain, nonatomic) id <NLFirstGlanceActivityDataProvider> activityDataProvider; // @synthesize activityDataProvider=_activityDataProvider;
 @property(retain, nonatomic) id <NLFirstGlanceAchievementDataProvider> achievementDataProvider; // @synthesize achievementDataProvider=_achievementDataProvider;
-- (void).cxx_destruct;
 - (unsigned int)firstGlanceTypeForToday;
 - (id)initWithDataSource:(id)arg1 coachingSubmanagerDelegate:(id)arg2;
 - (id)initWithProfile:(id)arg1 coachingSubmanagerDelegate:(id)arg2 typicalDayModel:(id)arg3;

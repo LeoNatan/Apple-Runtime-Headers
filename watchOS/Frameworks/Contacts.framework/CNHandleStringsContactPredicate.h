@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *containerIdentifiers; // @synthesize containerIdentifiers=_containerIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *handleStrings; // @synthesize handleStrings=_handleStrings;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)cn_resultTransformWithMatchInfos:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

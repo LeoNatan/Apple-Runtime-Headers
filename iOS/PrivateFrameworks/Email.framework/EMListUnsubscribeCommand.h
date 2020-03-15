@@ -24,11 +24,11 @@
 + (_Bool)supportsSecureCoding;
 + (void)setAccountFinderBlock:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)accountFinderBlock;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EMListUnsubscribeCommandMessageHeaders *originalMessageHeaders; // @synthesize originalMessageHeaders=_originalMessageHeaders;
 @property(readonly, nonatomic) NSString *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(readonly, nonatomic) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_accountWithIdentifier:(id)arg1;

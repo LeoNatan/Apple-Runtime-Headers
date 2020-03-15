@@ -26,6 +26,7 @@
 }
 
 + (id)newSessionWithProviders:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) SBLFullfillProvidersOperation *fullfillOp; // @synthesize fullfillOp=_fullfillOp;
 @property(retain) SBLDownloadProvidersOperation *downloadOp; // @synthesize downloadOp=_downloadOp;
 @property(retain) SBLReconnectProvidersOperation *reconnectOp; // @synthesize reconnectOp=_reconnectOp;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, nonatomic) NSProgress *sessionProgress; // @synthesize sessionProgress=_sessionProgress;
 @property(retain, nonatomic) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopModalProgress;
 - (void)cancelProgressRequest;

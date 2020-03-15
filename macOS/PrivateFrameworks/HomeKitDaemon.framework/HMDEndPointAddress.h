@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *audioRTPPort; // @synthesize audioRTPPort=_audioRTPPort;
 @property(readonly, copy, nonatomic) NSNumber *videoRTPPort; // @synthesize videoRTPPort=_videoRTPPort;
 @property(readonly, nonatomic) BOOL isIPv6Address; // @synthesize isIPv6Address=_isIPv6Address;
 @property(readonly, copy, nonatomic) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;

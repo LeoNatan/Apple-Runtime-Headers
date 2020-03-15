@@ -23,9 +23,9 @@
     id <DNDSAssertionSyncManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_queue_sendStateSnapshotToPairedDevice:(id)arg1 force:(_Bool)arg2;
 - (void)_queue_handleMessage:(id)arg1 withVersionNumber:(unsigned int)arg2;
 - (void)syncService:(id)arg1 didReceiveMessage:(id)arg2 withVersionNumber:(unsigned int)arg3 fromDeviceIdentifier:(id)arg4;

@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *configDictionary; // @synthesize configDictionary=_configDictionary;
 @property(copy, nonatomic) NTPBWidgetConfig *pbWidgetConfig; // @synthesize pbWidgetConfig=_pbWidgetConfig;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

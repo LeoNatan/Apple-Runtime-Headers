@@ -35,6 +35,7 @@
     NSString *_file_system_name;
 }
 
+- (void).cxx_destruct;
 @property unsigned int isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property unsigned int fstype; // @synthesize fstype=_fstype;
 @property(retain) NSString *file_system_name; // @synthesize file_system_name=_file_system_name;
@@ -57,7 +58,6 @@
 @property unsigned int share_capabilities; // @synthesize share_capabilities=_share_capabilities;
 @property unsigned int share_type; // @synthesize share_type=_share_type;
 @property unsigned int tree_id; // @synthesize tree_id=_tree_id;
-- (void).cxx_destruct;
 - (void)statfs_unlock;
 - (void)statfs_lock;
 - (void)dealloc;

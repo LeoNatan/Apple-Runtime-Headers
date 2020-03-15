@@ -24,10 +24,10 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadSafariPasswordAutoFillDomains; // @synthesize payloadSafariPasswordAutoFillDomains=_payloadSafariPasswordAutoFillDomains;
 @property(copy, nonatomic) NSArray *payloadWebDomains; // @synthesize payloadWebDomains=_payloadWebDomains;
 @property(copy, nonatomic) NSArray *payloadEmailDomains; // @synthesize payloadEmailDomains=_payloadEmailDomains;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

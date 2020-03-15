@@ -33,6 +33,7 @@
     long long _registrationRejectionCauseCode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long registrationRejectionCauseCode; // @synthesize registrationRejectionCauseCode=_registrationRejectionCauseCode;
 @property(readonly, nonatomic, getter=isNetworkReselectionNeeded) _Bool networkReselectionNeeded; // @synthesize networkReselectionNeeded=_networkReselectionNeeded;
 @property(readonly, nonatomic) unsigned long long callForwardingIndicator; // @synthesize callForwardingIndicator=_callForwardingIndicator;
@@ -50,7 +51,6 @@
 @property(readonly, copy, nonatomic) NSString *shortSIMLabel; // @synthesize shortSIMLabel=_shortSIMLabel;
 @property(readonly, copy, nonatomic) NSString *SIMLabel; // @synthesize SIMLabel=_SIMLabel;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)debugDescriptionWithMultilinePrefix:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

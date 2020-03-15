@@ -21,10 +21,10 @@
 - (id)_primaryFundingSourceLineItemForTransaction:(id)arg1 pass:(id)arg2;
 - (id)_secondaryFundingSourceLineItemForTransaction:(id)arg1;
 - (id)_lineItemsForPeerPaymentTransaction:(id)arg1 pass:(id)arg2;
-- (id)_lineItemsForPurchaseTransaction:(id)arg1 pass:(id)arg2;
+- (id)_lineItemsForPurchaseTransaction:(id)arg1 pass:(id)arg2 associatedReceipt:(id)arg3;
 - (id)_lineItemsForWithdrawalTransaction:(id)arg1 pass:(id)arg2;
 - (id)lineItemsForInstallmentPlan:(id)arg1 paymentPass:(id)arg2;
-- (id)lineItemsForTransaction:(id)arg1 pass:(id)arg2 associatedTransaction:(id)arg3;
+- (id)lineItemsForTransaction:(id)arg1 pass:(id)arg2 associatedTransaction:(id)arg3 associatedReceipt:(id)arg4;
 
 @end
 

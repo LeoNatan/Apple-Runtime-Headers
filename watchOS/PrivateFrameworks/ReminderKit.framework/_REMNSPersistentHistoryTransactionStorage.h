@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) REMObjectID *accountID; // @synthesize accountID=_accountID;
 @property(retain, nonatomic) REMNSPersistentHistoryToken *token; // @synthesize token=_token;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
@@ -35,7 +36,6 @@
 @property(nonatomic) long long transactionNumber; // @synthesize transactionNumber=_transactionNumber;
 @property(copy, nonatomic) NSArray *changes; // @synthesize changes=_changes;
 @property(copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

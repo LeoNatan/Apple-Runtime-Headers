@@ -19,8 +19,8 @@
     double _contentHeightAdjustment;
 }
 
-@property(nonatomic) double contentHeightAdjustment; // @synthesize contentHeightAdjustment=_contentHeightAdjustment;
 - (void).cxx_destruct;
+@property(nonatomic) double contentHeightAdjustment; // @synthesize contentHeightAdjustment=_contentHeightAdjustment;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateGadgets;
 - (void)generateGadgets;

@@ -15,9 +15,9 @@
     NSString *_localizedTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(retain) NSString *localizedMessage; // @synthesize localizedMessage=_localizedMessage;
-- (void).cxx_destruct;
 @property(readonly) BOOL userNameIsEmail;
 @property(readonly) BOOL userNameIsEditable;
 - (void)useCredential:(id)arg1;

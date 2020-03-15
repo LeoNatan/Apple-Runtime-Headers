@@ -18,13 +18,13 @@
     NAFuture *_activeArbitrationFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *activeArbitrationFuture; // @synthesize activeArbitrationFuture=_activeArbitrationFuture;
 @property(nonatomic) _Bool forceLogout; // @synthesize forceLogout=_forceLogout;
 @property(nonatomic) int loginType; // @synthesize loginType=_loginType;
 @property(readonly, copy, nonatomic) CDUnknownBlockType contextGenerator; // @synthesize contextGenerator=_contextGenerator;
 @property(readonly, copy, nonatomic) NSSet *accessories; // @synthesize accessories=_accessories;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (int)_resolvedLoginType:(id *)arg1;
 - (id)pendingArbitrationExecutionFuture;
 - (id)init;

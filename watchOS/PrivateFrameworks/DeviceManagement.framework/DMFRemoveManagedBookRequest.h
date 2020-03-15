@@ -18,9 +18,9 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSNumber *iTunesStoreID; // @synthesize iTunesStoreID=_iTunesStoreID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

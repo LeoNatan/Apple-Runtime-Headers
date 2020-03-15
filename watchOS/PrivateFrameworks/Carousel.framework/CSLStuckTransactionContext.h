@@ -26,6 +26,7 @@
     NSPointerArray *_functions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPointerArray *functions; // @synthesize functions=_functions;
 @property(readonly, nonatomic) _Bool didObserveSystemWillWake; // @synthesize didObserveSystemWillWake=_didObserveSystemWillWake;
 @property(readonly, nonatomic) CSLHangObserver *hangObserver; // @synthesize hangObserver=_hangObserver;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *categorizationString; // @synthesize categorizationString=_categorizationString;
 @property(readonly, nonatomic) NSArray *secondaryCategorizations; // @synthesize secondaryCategorizations=_secondaryCategorizations;
 @property(nonatomic) unsigned int categorization; // @synthesize categorization=_categorization;
-- (void).cxx_destruct;
 - (CDUnknownFunctionPointerType)contextFunctionForMainUIEntity:(id)arg1;
 - (void)appendContextFunctionsForTransitionRequest:(id)arg1;
 - (CDUnknownFunctionPointerType)contextFunctionForPidState:(int)arg1;

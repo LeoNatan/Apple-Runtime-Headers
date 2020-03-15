@@ -16,10 +16,10 @@
 }
 
 + (id)upgradeCompletePageSpecificationSampleForLevel:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICQLink *doneLink; // @synthesize doneLink=_doneLink;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)hasCancelButtonForBack;
 - (id)pageIdentifier;
 

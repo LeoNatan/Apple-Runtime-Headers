@@ -20,7 +20,7 @@
 
 + (unsigned char)classIdentifier;
 + (void)preloadAnimojiNamed:(id)arg1;
-+ (struct UIImage *)thumbnailForAnimojiNamed:(id)arg1 options:(id)arg2;
++ (id)thumbnailForAnimojiNamed:(id)arg1 options:(id)arg2;
 + (id)animojiNamed:(id)arg1;
 + (id)animojiWithContentsOfURL:(id)arg1;
 + (id)animoji;
@@ -28,11 +28,11 @@
 + (id)animojiNames;
 + (void)preloadPuppetNamed:(id)arg1;
 + (void)preloadPuppet:(id)arg1;
-+ (struct UIImage *)thumbnailForPuppetNamed:(id)arg1 options:(id)arg2;
++ (id)thumbnailForPuppetNamed:(id)arg1 options:(id)arg2;
 + (id)puppetNamed:(id)arg1 options:(id)arg2;
 + (id)puppetNames;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)stickerPhysicsStateIdentifier;
 - (id)specializationSettings;
 - (id)arTechniqueName;

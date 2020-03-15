@@ -14,9 +14,9 @@
     NSDictionary *_tuples;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *tuples; // @synthesize tuples=_tuples;
 @property(readonly, nonatomic) unsigned int recordRow; // @synthesize recordRow=_recordRow;
-- (void).cxx_destruct;
 - (id)initWithRecordRow:(unsigned int)arg1 tuples:(id)arg2;
 
 @end

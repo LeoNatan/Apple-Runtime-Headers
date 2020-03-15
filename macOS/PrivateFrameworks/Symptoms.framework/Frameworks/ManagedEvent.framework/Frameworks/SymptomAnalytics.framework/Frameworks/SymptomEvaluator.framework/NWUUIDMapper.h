@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _usageFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long usageFlags; // @synthesize usageFlags=_usageFlags;
 @property(retain, nonatomic) NSUUID *externalUUID; // @synthesize externalUUID=_externalUUID;
 @property(nonatomic) double lastAccessDate; // @synthesize lastAccessDate=_lastAccessDate;
-- (void).cxx_destruct;
 - (void)ensureReportDestinationsConfigured;
 - (void)inheritReportDestinations:(id)arg1;
 @property(readonly, nonatomic) BOOL reportDestinationsConfigured;

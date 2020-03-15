@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSConflictResultsType *ConflictResults; // @synthesize ConflictResults=_ConflictResults;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSConflictResultsType *ConflictResults; // @synthesize ConflictResults=_ConflictResults;
 
 @end
 

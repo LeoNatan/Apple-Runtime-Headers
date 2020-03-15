@@ -34,6 +34,7 @@
     double _intensity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double intensity; // @synthesize intensity=_intensity;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) float hdrGain; // @synthesize hdrGain=_hdrGain;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic, getter=isDisplayingVideoComplement) BOOL displayingVideoComplement; // @synthesize displayingVideoComplement=_displayingVideoComplement;
 @property(readonly, nonatomic) ISLivePhotoUIView *livePhotoView; // @synthesize livePhotoView=_livePhotoView;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)basePlayerUIView:(id)arg1 didChange:(unsigned long long)arg2 withAnimationDuration:(double)arg3;
 - (void)_updateFilterIntensityIfNeeded;
 - (void)_invalidateFilterIntensity;

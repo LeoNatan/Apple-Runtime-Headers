@@ -13,8 +13,8 @@
     NSMutableDictionary *_cachedBackgroundImages;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *cachedBackgroundImages; // @synthesize cachedBackgroundImages=_cachedBackgroundImages;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *cachedBackgroundImages; // @synthesize cachedBackgroundImages=_cachedBackgroundImages;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)prefersFocus;
 - (id)_imageWithRightBorderOfColor:(id)arg1 fromImage:(id)arg2 forDisplayScale:(double)arg3;

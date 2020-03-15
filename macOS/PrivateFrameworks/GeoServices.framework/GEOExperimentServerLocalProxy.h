@@ -25,8 +25,8 @@
 }
 
 + (void)cancelOldActivities;
-@property(nonatomic) __weak id <GEOExperimentServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GEOExperimentServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)_deleteExperimentInfoFromDisk;
 - (id)captureStatePlistWithHints:(struct os_state_hints_s *)arg1;

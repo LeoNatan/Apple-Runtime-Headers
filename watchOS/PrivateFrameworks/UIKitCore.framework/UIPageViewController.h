@@ -65,10 +65,10 @@
 + (_Bool)_isSpineLocation:(int)arg1 supportedForTransitionStyle:(int)arg2;
 + (_Bool)_isNavigationOrientation:(int)arg1 supportedForTransitionStyle:(int)arg2;
 + (_Bool)_isSupportedTransitionStyle:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isInterfaceRotating) _Bool _interfaceRotating; // @synthesize _interfaceRotating;
 @property(retain, nonatomic, setter=_setViewControllersStashedForRotation:) NSArray *_viewControllersStashedForRotation; // @synthesize _viewControllersStashedForRotation;
 @property(retain, nonatomic, setter=_setViewControllers:) NSArray *_viewControllers; // @synthesize _viewControllers;
-- (void).cxx_destruct;
 - (void)_pageControlValueChanged:(id)arg1;
 - (_Bool)queuingScrollViewShouldLayoutSubviews:(id)arg1;
 - (void)queuingScrollView:(id)arg1 attemptToPageInDirection:(int)arg2;

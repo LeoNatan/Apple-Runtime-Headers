@@ -18,11 +18,11 @@
     NSPopUpButton *_captionButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *captionButton; // @synthesize captionButton=_captionButton;
 @property BOOL showCaption; // @synthesize showCaption=_showCaption;
 @property(retain) KHProject *project; // @synthesize project=_project;
 @property(retain, nonatomic) KHCalendarCell *currentCell; // @synthesize currentCell=_currentCell;
-- (void).cxx_destruct;
 - (id)_captionEntry;
 - (void)captionLeft:(id)arg1;
 - (void)captionBottom:(id)arg1;

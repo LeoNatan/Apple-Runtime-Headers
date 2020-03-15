@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     _Bool _isPad;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *placeholderView; // @synthesize placeholderView=_placeholderView;
 @property(nonatomic) double offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool isPad; // @synthesize isPad=_isPad;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

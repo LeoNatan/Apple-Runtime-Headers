@@ -28,9 +28,9 @@
 + (id)scopedIdentifiersFromSetOfUnknownIdentifiers:(id)arg1;
 + (id)scopedIdentifiersFromArrayOfUnknownIdentifiers:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
-- (void).cxx_destruct;
 - (id)safeFilename;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

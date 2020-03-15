@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     int _discoverableTrinary;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int discoverableTrinary; // @synthesize discoverableTrinary=_discoverableTrinary;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;
 - (_Bool)requiresTokenRegistration;

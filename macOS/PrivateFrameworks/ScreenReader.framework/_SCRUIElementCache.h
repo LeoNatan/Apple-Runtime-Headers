@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
 + (id)cacheForAXUIElementRef:(struct __AXUIElement *)arg1 createIfNeeded:(BOOL)arg2;
 + (id)cacheForAXUIElementRef:(struct __AXUIElement *)arg1;
 + (void)invalidateAll;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_attributeToValueCache; // @synthesize _attributeToValueCache=__attributeToValueCache;
 @property(retain, nonatomic) NSArray *accessibilityRows; // @synthesize accessibilityRows=_accessibilityRows;
 @property(nonatomic) long long populationLevel; // @synthesize populationLevel=_populationLevel;
-- (void).cxx_destruct;
 - (id)canSetAttribute:(id)arg1;
 - (id)valueForAttribute:(id)arg1;
 - (id)cachedAttributes;

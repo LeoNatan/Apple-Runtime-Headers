@@ -11,12 +11,12 @@
 @interface ASKResourceCache : NSObject
 {
     _ASKResourceCacheGroup *_group;
-    struct NSCache *_contents;
+    NSCache *_contents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCache *contents; // @synthesize contents=_contents;
 @property(readonly, nonatomic) _ASKResourceCacheGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (void)removeAllResources;
 - (void)replaceResourcesForKey:(id)arg1 withResource:(id)arg2;
 - (void)addResource:(id)arg1 forKey:(id)arg2;

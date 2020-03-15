@@ -23,6 +23,7 @@
 
 + (id)searchPropertySetForAccount:(id)arg1;
 + (id)providerFromPrincipal:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CalDAVPrincipalSearchPropertySet *accountSearchPropertySet; // @synthesize accountSearchPropertySet=_accountSearchPropertySet;
 @property(retain) NSString *accountCollectionSetName; // @synthesize accountCollectionSetName=_accountCollectionSetName;
 @property(retain) NSManagedObjectID *mainPrincipalID; // @synthesize mainPrincipalID=_mainPrincipalID;
@@ -32,7 +33,6 @@
 @property BOOL isDelegate; // @synthesize isDelegate=_isDelegate;
 @property BOOL useKerberos; // @synthesize useKerberos=_useKerberos;
 @property(retain) NSURL *overrideBaseURL; // @synthesize overrideBaseURL=_overrideBaseURL;
-- (void).cxx_destruct;
 - (id)additionalHeaderValues;
 - (BOOL)shouldSendClientInfoHeaderForURL:(id)arg1;
 - (void)noteSearchPropertySetChange:(id)arg1;

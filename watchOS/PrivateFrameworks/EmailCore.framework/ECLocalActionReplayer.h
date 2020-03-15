@@ -19,10 +19,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) ECLocalMessageAction *action; // @synthesize action=_action;
 @property(nonatomic) __weak id <ECLocalActionReplayerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)failActionWithError:(id)arg1;
 - (id)replayAction;
 - (id)initWithAction:(id)arg1;

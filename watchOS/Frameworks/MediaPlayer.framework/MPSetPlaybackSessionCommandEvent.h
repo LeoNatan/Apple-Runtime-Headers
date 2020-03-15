@@ -15,10 +15,10 @@
     NSData *_playbackSessionData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *playbackSessionData; // @synthesize playbackSessionData=_playbackSessionData;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 
 @end

@@ -27,6 +27,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int currentScrubSpeed; // @synthesize currentScrubSpeed=_currentScrubSpeed;
 @property(readonly, nonatomic) _Bool isTracking; // @synthesize isTracking=_isTracking;
 @property(nonatomic) _Bool detailedScrubbingEnabled; // @synthesize detailedScrubbingEnabled=_detailedScrubbingEnabled;
@@ -34,7 +35,6 @@
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) __weak id <MPDetailScrubControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIControl<MPDetailedScrubbing> *scrubbingControl; // @synthesize scrubbingControl=_scrubbingControl;
-- (void).cxx_destruct;
 - (void)_commitValue:(float)arg1;
 - (void)_endScrubbing;
 - (void)_beginScrubbing;

@@ -18,9 +18,9 @@
 
 + (Class)replyClass;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) GEOImageServiceRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (BOOL)expectsReply;
 - (BOOL)isValid;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,10 +15,10 @@
     UIColor *_offColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *offColor; // @synthesize offColor=_offColor;
 @property(retain, nonatomic) MediaControlsHapticPlayer *hapticPlayer; // @synthesize hapticPlayer=_hapticPlayer;
 @property(retain, nonatomic) NSSet *availableListeningModes; // @synthesize availableListeningModes=_availableListeningModes;
-- (void).cxx_destruct;
 - (void)_springAnimate:(CDUnknownBlockType)arg1;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

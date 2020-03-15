@@ -16,19 +16,18 @@
 - (void)resetApplePayManateeViewWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)checkTLKsMissingWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)cloudStoreStatusForContainer:(NSString *)arg1 completion:(void (^)(CKAccountInfo *, _Bool, NSError *))arg2;
-- (void)uploadTransaction:(PKPaymentTransaction *)arg1 forPassWithUniqueIdentifier:(NSString *)arg2 completion:(void (^)(PKCloudRecordArray *, NSError *))arg3;
+- (void)deleteZone:(NSString *)arg1 containerName:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
+- (void)copyDataFromZoneName:(NSString *)arg1 toZoneName:(NSString *)arg2 inContainerName:(NSString *)arg3 passUniqueID:(NSString *)arg4 completion:(void (^)(_Bool, NSError *))arg5;
+- (void)recreateZone:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)uploadTransaction:(PKPaymentTransaction *)arg1 forPassWithUniqueIdentifier:(NSString *)arg2 includeServerData:(_Bool)arg3 completion:(void (^)(PKCloudRecordArray *, NSError *))arg4;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
 - (void)simulateCloudStorePushForContainerIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSArray *, NSError *))arg2;
 - (void)resetContainerWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)itemOfItemType:(unsigned int)arg1 recordName:(NSString *)arg2 qualityOfService:(int)arg3 completion:(void (^)(PKCloudRecordObject *, NSError *))arg4;
 - (void)allItemsOfItemType:(unsigned int)arg1 storeLocally:(_Bool)arg2 completion:(void (^)(PKCloudRecordArray *, NSError *))arg3;
+- (void)removeRecordWithRecordName:(NSString *)arg1 zoneName:(NSString *)arg2 containerName:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)removeItemsWithRecordNames:(NSArray *)arg1 itemType:(unsigned int)arg2 completion:(void (^)(NSError *))arg3;
-- (void)updateCloudStoreWithLocalItems:(NSArray *)arg1 recordSpecificKeys:(NSArray *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
-
-@optional
-- (void)resetContainerWithCompletion:(void (^)(_Bool))arg1;
-- (void)resetContainerWithHandler:(void (^)(_Bool, NSError *))arg1;
-- (void)simulateCloudStorePushWithCompletion:(void (^)(PKCloudRecordArray *, NSArray *, NSError *))arg1;
+- (void)updateCloudStoreWithLocalItems:(NSArray *)arg1 recordSpecificKeys:(NSArray *)arg2 includeServerData:(_Bool)arg3 completion:(void (^)(NSArray *, NSError *))arg4;
 @end
 

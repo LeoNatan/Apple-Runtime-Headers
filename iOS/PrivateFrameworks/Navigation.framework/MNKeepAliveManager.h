@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(retain, nonatomic) NSString *launchdKeepAliveFile; // @synthesize launchdKeepAliveFile=_launchdKeepAliveFile;
 @property unsigned long long counter; // @synthesize counter=_counter;
-- (void).cxx_destruct;
 - (void)checkOut;
 - (void)checkIn;
 - (id)init;

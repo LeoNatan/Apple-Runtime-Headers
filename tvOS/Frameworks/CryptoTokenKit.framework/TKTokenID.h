@@ -18,8 +18,8 @@
 
 + (id)encodedObjectID:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(readonly) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 - (void).cxx_destruct;
+@property(readonly) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 - (id)decodedObjectID:(id)arg1 error:(id *)arg2;
 - (id)description;
 @property(readonly) NSString *instanceID;

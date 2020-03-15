@@ -25,6 +25,7 @@
     UIViewController<SBHLegibility> *_portraitHeaderViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController<SBHLegibility> *portraitHeaderViewController; // @synthesize portraitHeaderViewController=_portraitHeaderViewController;
 @property(nonatomic) unsigned long long ignoresOverscrollOnFirstPageOrientations; // @synthesize ignoresOverscrollOnFirstPageOrientations=_ignoresOverscrollOnFirstPageOrientations;
 @property(nonatomic) unsigned long long sidebarAllowedOrientations; // @synthesize sidebarAllowedOrientations=_sidebarAllowedOrientations;
@@ -37,7 +38,6 @@
 @property(nonatomic, getter=isDockPinnedForRotation) _Bool dockPinnedForRotation; // @synthesize dockPinnedForRotation=_dockPinnedForRotation;
 @property(nonatomic, getter=isDockExternal) _Bool dockExternal; // @synthesize dockExternal=_dockExternal;
 @property(nonatomic, getter=isForSnapshot) _Bool forSnapshot; // @synthesize forSnapshot=_forSnapshot;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
 - (id)init;

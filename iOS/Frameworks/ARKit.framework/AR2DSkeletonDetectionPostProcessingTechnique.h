@@ -6,23 +6,30 @@
 
 #import <ARKit/ARImageBasedTechnique.h>
 
-@class AR2DSkeletonDetectionPostProcessGPU, AR2DSkeletonRawEspressoResult, NSObject;
+@class AR2DSkeletonDetectionPostProcessGPU, AR2DSkeletonDetectionResult, AR2DSkeletonRawEspressoResult, NSObject;
 @protocol OS_dispatch_queue;
 
 @interface AR2DSkeletonDetectionPostProcessingTechnique : ARImageBasedTechnique
 {
     AR2DSkeletonDetectionPostProcessGPU *_postProcessorGPU;
     struct SkeletonJointFilter<float> _extrapolationFilter2D;
+    double _extrapolationTime;
     struct SkeletonJointFilter<float> _extrapolationFilter2DForLiftingData;
+    AR2DSkeletonDetectionResult *_previous3DSkeleton;
+    _Bool _shouldPush3DSupportSkeleton;
+    _Bool _use3DSupportSkeletonForExtrapolation;
     NSObject<OS_dispatch_queue> *_processingQueue;
+    _Bool _deterministic;
     AR2DSkeletonRawEspressoResult *_previousRawEspressoResult;
 }
 
-@property(retain, nonatomic) AR2DSkeletonRawEspressoResult *previousRawEspressoResult; // @synthesize previousRawEspressoResult=_previousRawEspressoResult;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AR2DSkeletonRawEspressoResult *previousRawEspressoResult; // @synthesize previousRawEspressoResult=_previousRawEspressoResult;
+- (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (id)processData:(id)arg1;
 - (double)requiredTimeInterval;
+- (void)prepare:(_Bool)arg1;
 - (id)init;
 
 @end

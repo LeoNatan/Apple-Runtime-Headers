@@ -6,9 +6,9 @@
 
 #import <CPAnalytics/NSObject-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSObject, NSString;
 
 @protocol CPAnalyticsDynamicPropertyProvider <NSObject>
-- (struct NSObject *)getDynamicProperty:(NSString *)arg1 forEventName:(NSString *)arg2 withPayload:(NSDictionary *)arg3;
+- (NSObject *)getDynamicProperty:(NSString *)arg1 forEventName:(NSString *)arg2 payloadForSystemPropertyExtraction:(NSDictionary *)arg3;
 @end
 

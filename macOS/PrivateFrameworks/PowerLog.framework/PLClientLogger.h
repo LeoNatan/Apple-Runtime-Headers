@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedInstance;
 + (BOOL)allowMessageOnDevice;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *adaptivePermissionWorkQueue; // @synthesize adaptivePermissionWorkQueue=_adaptivePermissionWorkQueue;
 @property int batchedDropMessageCount; // @synthesize batchedDropMessageCount=_batchedDropMessageCount;
 @property(readonly) NSSet *batchingClientWhitelist; // @synthesize batchingClientWhitelist=_batchingClientWhitelist;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSObject<OS_dispatch_queue> *batchFlushQueue; // @synthesize batchFlushQueue=_batchFlushQueue;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property BOOL clientDebug; // @synthesize clientDebug=_clientDebug;
-- (void).cxx_destruct;
 - (id)queryForClientID:(short)arg1 withKey:(id)arg2 withPayload:(id)arg3;
 - (void)batchTasksCacheFlush;
 - (id)getWorkQueueForClientID:(short)arg1;

@@ -12,9 +12,9 @@
     double _lastTouchTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastTouchTimestamp; // @synthesize lastTouchTimestamp=_lastTouchTimestamp;
 @property(copy, nonatomic, setter=onTouch:) CDUnknownBlockType touchedBlock; // @synthesize touchedBlock=_touchedBlock;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end

@@ -17,9 +17,9 @@
     NSMapTable *_cellToItemMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *cellToItemMap; // @synthesize cellToItemMap=_cellToItemMap;
 @property(nonatomic) __weak id <HUHomePodAlarmItemModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setAlarmEnabled:(_Bool)arg1 forCell:(id)arg2;
 - (unsigned long long)didSelectItem:(id)arg1;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(_Bool)arg3;

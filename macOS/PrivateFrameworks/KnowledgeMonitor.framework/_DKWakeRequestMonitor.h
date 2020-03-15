@@ -20,11 +20,11 @@
 
 + (id)entitlements;
 + (id)eventStream;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(nonatomic) int wakeRequestToken; // @synthesize wakeRequestToken=_wakeRequestToken;
 @property(retain, nonatomic) NSString *nextUserVisibleWakeRequestor; // @synthesize nextUserVisibleWakeRequestor=_nextUserVisibleWakeRequestor;
 @property(retain, nonatomic) NSDate *nextUserVisibleWakeRequestDate; // @synthesize nextUserVisibleWakeRequestDate=_nextUserVisibleWakeRequestDate;
-- (void).cxx_destruct;
 - (void)obtainNextUserVisibleWakeRequest;
 - (void)synchronouslyReflectCurrentValue;
 - (void)deactivate;

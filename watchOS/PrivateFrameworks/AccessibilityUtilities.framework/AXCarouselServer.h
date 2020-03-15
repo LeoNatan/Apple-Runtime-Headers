@@ -19,9 +19,9 @@
 
 + (id)carouselServer;
 + (id)server;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serverConnectionQueue; // @synthesize serverConnectionQueue=_serverConnectionQueue;
 @property(nonatomic) __weak id <AXCarouselAppServer> localServiceProvider; // @synthesize localServiceProvider=_localServiceProvider;
-- (void).cxx_destruct;
 - (id)currentFaceClass;
 - (_Bool)showHearingDevicesControl:(_Bool)arg1;
 - (_Bool)showControlCenter:(_Bool)arg1;
@@ -30,7 +30,7 @@
 - (_Bool)showNotificationCenter:(_Bool)arg1;
 - (_Bool)canShowNotificationCenter;
 - (_Bool)isNotificationCenterVisible;
-- (_Bool)isNonExclusiveSystemUIFocusable;
+- (_Bool)isNonExclusiveSystemUIFocusableIncludingPIPWindow:(_Bool)arg1;
 - (_Bool)isSystemSleeping;
 - (void)wakeUpDeviceIfNecessary;
 - (void)activeInterfaceOrientation:(CDUnknownBlockType)arg1;

@@ -24,13 +24,13 @@
     NSData *_resumeData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *resumeData; // @synthesize resumeData=_resumeData;
 @property(nonatomic) _Bool requiresPower; // @synthesize requiresPower=_requiresPower;
 @property(nonatomic, getter=isDiscretionary) _Bool discretionary; // @synthesize discretionary=_discretionary;
 @property(nonatomic) _Bool allowsCellularFallback; // @synthesize allowsCellularFallback=_allowsCellularFallback;
 @property(nonatomic) _Bool allowsCellularData; // @synthesize allowsCellularData=_allowsCellularData;
 @property(copy, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
-- (void).cxx_destruct;
 - (id)_sessionIdentifier;
 - (void)finishWithError:(id)arg1;
 - (void)cancel;

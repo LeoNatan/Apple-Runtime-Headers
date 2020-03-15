@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *offerIdentifier; // @synthesize offerIdentifier=_offerIdentifier;
 @property(copy, nonatomic) NSString *offerDetailText; // @synthesize offerDetailText=_offerDetailText;
 @property(copy, nonatomic) NSString *offerTitleText; // @synthesize offerTitleText=_offerTitleText;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

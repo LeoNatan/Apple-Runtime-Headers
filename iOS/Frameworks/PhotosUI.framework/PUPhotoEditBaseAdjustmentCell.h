@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     PUPhotoEditAdjustmentControl *_containerButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUPhotoEditAdjustmentControl *containerButton; // @synthesize containerButton=_containerButton;
 @property(nonatomic) _Bool isUserModifying; // @synthesize isUserModifying=_isUserModifying;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 - (void)resetToDefault;
 - (void)setSelected:(_Bool)arg1;
 @property(nonatomic) double maxValue;

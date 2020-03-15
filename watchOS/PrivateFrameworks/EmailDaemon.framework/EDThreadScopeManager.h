@@ -21,13 +21,13 @@
 
 + (id)mailboxTypesToPrecompute;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EFScheduler> evictionScheduler; // @synthesize evictionScheduler=_evictionScheduler;
 @property(readonly, nonatomic) __weak id <EDThreadScopeManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (unsigned int)_numberOfThreadScopesToEvictFrom:(id)arg1 upTo:(unsigned int *)arg2;
 - (id)_threadScopesWithLastViewedOlderThanLimit;
 - (double)_evictionScoreForCount:(unsigned int)arg1 timeInterval:(double)arg2;
-- (void)_evictAtLeast:(unsigned int)arg1 upTo:(unsigned int)arg2 threadScopesFrom:(id)arg3;
+- (void)_evictAtLeast:(unsigned int)arg1 upTo:(unsigned int)arg2 fromThreadScopesWithDatabaseIDs:(id)arg3;
 - (void)_initializeThreadScopesIfNeeded;
 - (void)removeThreadScopesForMailboxScope:(id)arg1;
 - (void)removeThreadScope:(id)arg1;

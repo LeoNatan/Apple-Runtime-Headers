@@ -21,10 +21,10 @@
 @property(nonatomic) _Bool perservesAlpha;
 - (id)_initWithReflection:(struct CIKernelReflection)arg1 constants:(id)arg2;
 - (id)initWithString:(id)arg1;
--     // Error parsing type: {CGRect={CGPoint=ff}{CGSize=ff}}36@0:4^{WarpKernel=^^?{atomic<unsigned int>=AI}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=II}BBBBBB^^?}8^{SerialObjectPtrArray=iii^^v}12@16{CGRect={CGPoint=ff}{CGSize=ff}}20, name: autogenerateROI:args:arguments:extent:
+-     // Error parsing type: {CGRect={CGPoint=ff}{CGSize=ff}}36@0:4^{WarpKernel=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=II}BBBBBB^^?}8^{SerialObjectPtrArray=iii^^v}12@16{CGRect={CGPoint=ff}{CGSize=ff}}20, name: autogenerateROI:args:arguments:extent:
 - (id)makeGridImage:(struct CGRect)arg1 nx:(int)arg2 ny:(int)arg3;
--     // Error parsing type: @16@0:4^{WarpKernel=^^?{atomic<unsigned int>=AI}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=II}BBBBBB^^?}8^{SerialObjectPtrArray=iii^^v}12, name: generateGeneralKernelFromWarpKernel:args:
--     // Error parsing type: @16@0:4^{WarpKernel=^^?{atomic<unsigned int>=AI}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=II}BBBBBB^^?}8^{SerialObjectPtrArray=iii^^v}12, name: generateMainFromWarpKernel:args:
+-     // Error parsing type: @16@0:4^{WarpKernel=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=II}BBBBBB^^?}8^{SerialObjectPtrArray=iii^^v}12, name: generateGeneralKernelFromWarpKernel:args:
+-     // Error parsing type: @16@0:4^{WarpKernel=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=II}BBBBBB^^?}8^{SerialObjectPtrArray=iii^^v}12, name: generateMainFromWarpKernel:args:
 
 @end
 

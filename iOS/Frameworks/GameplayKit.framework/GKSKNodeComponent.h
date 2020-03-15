@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)componentWithNode:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKNode *node; // @synthesize node=_node;
 @property(retain, nonatomic) NSIndexPath *serializableNodeIndexPath; // @synthesize serializableNodeIndexPath=_serializableNodeIndexPath;
-- (void).cxx_destruct;
 - (void)agentDidUpdate:(id)arg1;
 - (void)agentWillUpdate:(id)arg1;
 - (void)setEntity:(id)arg1;

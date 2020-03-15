@@ -14,9 +14,9 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 - (id)initWithBounds:(struct CGRect)arg1 traitCollection:(id)arg2;
 
 @end

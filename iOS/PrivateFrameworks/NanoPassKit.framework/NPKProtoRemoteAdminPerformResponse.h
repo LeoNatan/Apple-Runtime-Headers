@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int httpStatus; // @synthesize httpStatus=_httpStatus;
 @property(retain, nonatomic) NSData *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(nonatomic) unsigned int resultCode; // @synthesize resultCode=_resultCode;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

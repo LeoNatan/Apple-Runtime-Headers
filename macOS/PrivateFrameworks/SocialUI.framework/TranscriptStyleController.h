@@ -33,13 +33,13 @@
 
 + (id)scriptFileURLs;
 + (id)cssFilePath;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) DOMHTMLBodyElement *body; // @synthesize body=_body;
 @property(retain, nonatomic) DOMHTMLHeadElement *head; // @synthesize head=_head;
 @property(retain, nonatomic) DOMDocument *DOM; // @synthesize DOM=_DOM;
 @property(nonatomic) WebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) BuddyCSSProvider *buddyCSSProvider; // @synthesize buddyCSSProvider=_buddyCSSProvider;
 @property BOOL requiresCSSRebuild; // @synthesize requiresCSSRebuild=_requiresCSSRebuild;
-- (void).cxx_destruct;
 - (double)minHeightPerMessage;
 - (id)chatItemGUIDs;
 - (short)acceptNode:(id)arg1;

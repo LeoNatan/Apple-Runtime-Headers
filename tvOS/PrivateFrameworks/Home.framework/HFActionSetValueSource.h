@@ -20,10 +20,10 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HFActionSetValueSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HMActionSet *actionSet; // @synthesize actionSet=_actionSet;
 @property(retain, nonatomic) HFItemBuilder<HFActionSetBuilderProtocol> *actionSetBuilder; // @synthesize actionSetBuilder=_actionSetBuilder;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)_valueForCurrentStateCharacteristic:(id)arg1;

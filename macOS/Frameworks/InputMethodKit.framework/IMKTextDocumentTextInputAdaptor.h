@@ -33,6 +33,7 @@
 }
 
 + (id)appsWithUnreliableTextInputImplementation;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowClientQueries; // @synthesize allowClientQueries=_allowClientQueries;
 @property(nonatomic, getter=isRecomposing) BOOL recomposing; // @synthesize recomposing=_recomposing;
 @property(readonly, nonatomic) BOOL alwaysShowsComposingTextAsMarkedText; // @synthesize alwaysShowsComposingTextAsMarkedText=_alwaysShowsComposingTextAsMarkedText;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) NSMutableSet *unreliableApps; // @synthesize unreliableApps=_unreliableApps;
 @property(readonly, nonatomic) __weak id <IMKTextInput> textInput; // @synthesize textInput=_textInput;
 @property(readonly, nonatomic) IMKTextDocumentTraits *clientTraits; // @synthesize clientTraits=_clientTraits;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_substringFromRange:(struct _NSRange)arg1;
 - (void)_insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;

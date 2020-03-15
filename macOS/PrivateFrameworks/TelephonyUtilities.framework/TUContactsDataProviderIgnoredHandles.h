@@ -13,8 +13,8 @@
     NSSet *_handlesToIgnore;
 }
 
-@property(readonly, copy, nonatomic) NSSet *handlesToIgnore; // @synthesize handlesToIgnore=_handlesToIgnore;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *handlesToIgnore; // @synthesize handlesToIgnore=_handlesToIgnore;
 - (BOOL)contains:(id)arg1;
 - (void)loadHandles;
 - (id)init;

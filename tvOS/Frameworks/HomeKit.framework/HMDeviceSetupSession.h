@@ -25,12 +25,12 @@
 
 + (id)logCategory;
 + (id)homeManagerDestination;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
 @property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly) long long role; // @synthesize role=_role;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly) __weak id <HMDeviceSetupSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (id)logIdentifier;

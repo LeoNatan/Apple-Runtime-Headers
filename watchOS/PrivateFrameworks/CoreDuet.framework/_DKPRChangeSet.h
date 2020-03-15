@@ -18,9 +18,9 @@
 
 + (Class)deleteEventIDType;
 + (Class)eventsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *deleteEventIDs; // @synthesize deleteEventIDs=_deleteEventIDs;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

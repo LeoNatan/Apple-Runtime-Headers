@@ -15,25 +15,25 @@ __attribute__((visibility("hidden")))
     _Bool _supportsShadowAndGrabber;
     UIView *_contentView;
     UIView *_overlayView;
+    _UIGrabber *_grabber;
     long long _independentCorners;
     UIView *_firstCornerClippingDescendant;
     NSArray *_cornerClippingDescendants;
-    _UIGrabber *_grabber;
     _UICutoutShadowView *_magicShadowView;
     struct UIRectCornerRadii _environmentMatchingCornerRadii;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UICutoutShadowView *magicShadowView; // @synthesize magicShadowView=_magicShadowView;
-@property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(readonly, nonatomic) NSArray *cornerClippingDescendants; // @synthesize cornerClippingDescendants=_cornerClippingDescendants;
 @property(readonly, nonatomic) __weak UIView *firstCornerClippingDescendant; // @synthesize firstCornerClippingDescendant=_firstCornerClippingDescendant;
 @property(readonly, nonatomic) long long independentCorners; // @synthesize independentCorners=_independentCorners;
 @property(readonly, nonatomic) _Bool supportsShadowAndGrabber; // @synthesize supportsShadowAndGrabber=_supportsShadowAndGrabber;
 @property(nonatomic) _Bool masksTopCornersOnly; // @synthesize masksTopCornersOnly=_masksTopCornersOnly;
+@property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct UIRectCornerRadii environmentMatchingCornerRadii; // @synthesize environmentMatchingCornerRadii=_environmentMatchingCornerRadii;
-- (void).cxx_destruct;
 - (void)didFinishRotation;
 - (void)willBeginRotationWithOriginalBounds:(struct CGRect)arg1 newBounds:(struct CGRect)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

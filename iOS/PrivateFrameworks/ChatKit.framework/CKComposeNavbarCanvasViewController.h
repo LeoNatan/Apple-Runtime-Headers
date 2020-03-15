@@ -19,11 +19,11 @@
     CKNavigationBarCanvasView *_canvasView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKNavigationBarCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak id <CKNavbarCanvasViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct NSDirectionalEdgeInsets)systemMinimumLayoutMarginsForView:(id)arg1;
 - (void)_initializeForTraitCollection:(id)arg1;
 - (double)_preferredHeightForTraitCollection:(id)arg1;

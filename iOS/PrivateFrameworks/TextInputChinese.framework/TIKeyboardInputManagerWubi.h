@@ -16,8 +16,8 @@
 }
 
 + (Class)wordSearchClass;
-@property(retain, nonatomic) TIKeyboardCandidate *autoConfirmationCandidate; // @synthesize autoConfirmationCandidate=_autoConfirmationCandidate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIKeyboardCandidate *autoConfirmationCandidate; // @synthesize autoConfirmationCandidate=_autoConfirmationCandidate;
 - (_Bool)supportsPairedPunctutationInput;
 - (_Bool)isWubi:(id)arg1;
 - (id)inputsToReject;

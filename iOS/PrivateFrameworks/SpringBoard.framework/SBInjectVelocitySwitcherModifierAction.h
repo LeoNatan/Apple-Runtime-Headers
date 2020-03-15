@@ -14,9 +14,9 @@
     struct CGPoint _velocity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
 @property(readonly, nonatomic) struct CGPoint velocity; // @synthesize velocity=_velocity;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithVelocity:(struct CGPoint)arg1 appLayout:(id)arg2;
 - (long long)type;

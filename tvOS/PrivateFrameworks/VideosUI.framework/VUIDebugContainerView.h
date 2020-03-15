@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UICollectionView *_collectionView;
 }
 
-@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void)layoutSubviews;
 
 @end

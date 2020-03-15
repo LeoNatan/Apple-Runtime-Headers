@@ -17,12 +17,12 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 
 @end
 

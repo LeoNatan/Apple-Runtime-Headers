@@ -22,6 +22,7 @@
     NSObject<OS_xpc_object> *_xpcActivity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcActivity; // @synthesize xpcActivity=_xpcActivity;
 @property(copy, nonatomic) NSDictionary *additionalXPCActivityCriteria; // @synthesize additionalXPCActivityCriteria=_additionalXPCActivityCriteria;
 @property(retain, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool shouldDefer; // @synthesize shouldDefer=_shouldDefer;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (id)initWithIdentifier:(id)arg1 container:(id)arg2 priority:(int)arg3;

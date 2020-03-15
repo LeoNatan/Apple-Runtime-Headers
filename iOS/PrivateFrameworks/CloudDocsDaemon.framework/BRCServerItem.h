@@ -33,6 +33,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long directoryMtime; // @synthesize directoryMtime=_directoryMtime;
 @property(readonly, nonatomic) NSString *symlinkTarget; // @synthesize symlinkTarget=_symlinkTarget;
 @property(nonatomic) unsigned long long sharingOptions; // @synthesize sharingOptions=_sharingOptions;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSString *originalName; // @synthesize originalName=_originalName;
 @property(readonly, nonatomic) BRCItemID *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic) BRCUserRowID *ownerKey; // @synthesize ownerKey=_ownerKey;
-- (void).cxx_destruct;
 - (id)aliasTargetItemID;
 - (id)aliasTargetAppLibrary;
 - (id)aliasTargetClientZone;

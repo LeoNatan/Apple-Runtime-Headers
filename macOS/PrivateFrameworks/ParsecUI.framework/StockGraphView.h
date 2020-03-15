@@ -37,11 +37,11 @@
     struct NSEdgeInsets _graphInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) StockChartDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
 @property(nonatomic) struct NSEdgeInsets graphInsets; // @synthesize graphInsets=_graphInsets;
 @property(readonly, nonatomic) BOOL isRendered; // @synthesize isRendered=_isRendered;
 @property(nonatomic) __weak NSView<StockGraphViewContainer> *chartViewDelegate; // @synthesize chartViewDelegate=_chartViewDelegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (struct CGRect)volumeBarRectNearestToPoint:(struct CGPoint)arg1;
 - (CDStruct_8cc9ba3e)plottedPointNearestToPoint:(struct CGPoint *)arg1;

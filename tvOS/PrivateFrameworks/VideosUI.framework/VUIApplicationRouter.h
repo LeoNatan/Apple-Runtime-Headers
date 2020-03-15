@@ -16,15 +16,16 @@
 + (id)currentNavigationController;
 + (void)_dismissPresentedViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 + (void)_amsBagURLForKey:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-+ (_Bool)_handleDocumentDataSource:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 completion:(CDUnknownBlockType)arg4;
-+ (void)_handleAccountSettingsPresentationWithViewController:(id)arg1;
++ (_Bool)_handleDocumentDataSource:(id)arg1 targetResponder:(id)arg2 appContext:(id)arg3 viewElement:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)dismissOrPopLastViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 + (void)dismissOrPopViewControllerWithId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)dismissPresentedViewController;
-+ (_Bool)handleAccountSettingsEvent:(id)arg1 urlString:(id)arg2 amsBagKey:(id)arg3;
-+ (void)_performForType:(long long)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 eventDataSource:(id)arg4;
++ (void)_performForType:(long long)arg1 targetResponder:(id)arg2 appContext:(id)arg3 viewElement:(id)arg4 eventDataSource:(id)arg5;
++ (_Bool)_handleEvent:(id)arg1 targetResponder:(id)arg2 appContext:(id)arg3 viewElement:(id)arg4 eventDataSource:(id)arg5 extraInfo:(id *)arg6;
 + (_Bool)handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id *)arg4;
++ (id)_eventDataSourceForEvent:(id)arg1 routerDataSource:(id)arg2;
 + (id)eventDataSourceForEvent:(id)arg1 viewElement:(id)arg2;
++ (_Bool)handleEvent:(id)arg1 targetResponder:(id)arg2 appContext:(id)arg3 routerDataSource:(id)arg4 extraInfo:(id *)arg5;
 
 @end
 

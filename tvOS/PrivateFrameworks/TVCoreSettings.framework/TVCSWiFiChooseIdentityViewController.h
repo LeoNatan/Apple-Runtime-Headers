@@ -18,12 +18,12 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
 @property(retain, nonatomic) NSArray *identities; // @synthesize identities=_identities;
 @property(nonatomic) __weak id <TVCSWiFiChooseIdentityDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

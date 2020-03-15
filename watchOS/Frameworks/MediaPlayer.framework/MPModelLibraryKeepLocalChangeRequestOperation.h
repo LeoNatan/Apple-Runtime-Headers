@@ -15,9 +15,9 @@
     MPModelLibraryKeepLocalChangeRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MPModelLibraryKeepLocalChangeRequest *request; // @synthesize request=_request;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
-- (void).cxx_destruct;
 - (void)_handleKeepLocalUpdateStatus:(int)arg1 forLibraryIdentifier:(long long)arg2 mediaType:(int)arg3 completedWithError:(id)arg4;
 - (void)_handlePersistentID:(long long)arg1 modelClass:(Class)arg2 keepLocal:(int)arg3 mediaLibrary:(id)arg4;
 - (void)execute;

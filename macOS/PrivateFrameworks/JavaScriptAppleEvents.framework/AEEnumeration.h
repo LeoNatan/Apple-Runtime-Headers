@@ -15,9 +15,9 @@
 }
 
 + (id)enumerationWithCode:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *enumerators; // @synthesize enumerators=_enumerators;
 @property unsigned int code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)enumeratorNames;
 - (id)getEnumeratorNameForCode:(unsigned int)arg1;
 - (unsigned int)getEnumeratorCodeForName:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UITableViewCellSeparatorView *_separatorView;
 }
 
-@property(retain, nonatomic) _UITableViewCellSeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UITableViewCellSeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 - (void)layoutSubviews;
 - (void)applyLayoutAttributes:(id)arg1;
 

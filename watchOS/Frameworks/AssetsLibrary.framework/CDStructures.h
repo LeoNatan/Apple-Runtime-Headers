@@ -15,7 +15,3 @@ struct CGSize {
     float _field2;
 };
 
-struct NSObject {
-    Class _field1;
-};
-

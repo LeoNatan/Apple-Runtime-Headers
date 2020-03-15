@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     CKDAssetTokenRequest *_assetTokenRequest;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useMMCSEncryptionV2; // @synthesize useMMCSEncryptionV2=_useMMCSEncryptionV2;
 @property(nonatomic) __weak CKDAssetTokenRequest *assetTokenRequest; // @synthesize assetTokenRequest=_assetTokenRequest;
 @property(nonatomic) _Bool isFailed; // @synthesize isFailed=_isFailed;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *authPutRequest; // @synthesize authPutRequest=_authPutRequest;
 @property(retain, nonatomic) CKDAssetZone *assetZone; // @synthesize assetZone=_assetZone;
 @property(retain, nonatomic) NSMutableArray *assetRecords; // @synthesize assetRecords=_assetRecords;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (_Bool)isEmptyOfRereferencesAssets;

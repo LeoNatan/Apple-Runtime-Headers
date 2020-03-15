@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSSet *eventTypesToCollect; // @synthesize eventTypesToCollect=_eventTypesToCollect;
 @property(readonly, copy) NSDictionary *filtersBySampleType; // @synthesize filtersBySampleType=_filtersBySampleType;
 @property(readonly, copy) NSSet *sampleTypesToCollect; // @synthesize sampleTypesToCollect=_sampleTypesToCollect;
 @property(readonly, copy) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

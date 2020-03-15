@@ -16,8 +16,8 @@
     NSURL *_cacheURL;
 }
 
-@property(readonly) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 - (BOOL)_removeCachesForURL:(id)arg1;
 - (void)_saveToMemoryCache:(id)arg1 forFileURL:(id)arg2 fileSize:(unsigned long long)arg3;
 - (id)_readInfoForURL:(id)arg1;

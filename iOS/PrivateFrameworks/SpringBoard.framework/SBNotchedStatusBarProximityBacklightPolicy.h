@@ -22,8 +22,8 @@
     SBProximitySettings *_lazy_proximitySettings;
 }
 
-@property(retain, nonatomic, setter=_setProximitySettings:) SBProximitySettings *_proximitySettings; // @synthesize _proximitySettings=_lazy_proximitySettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setProximitySettings:) SBProximitySettings *_proximitySettings; // @synthesize _proximitySettings=_lazy_proximitySettings;
 - (double)_debounceDurationForNumberOfTouchesReceivedWithObjectInProximity:(_Bool)arg1;
 - (void)_setHandleTouchesIfNecessary:(_Bool)arg1;
 - (void)condition:(id)arg1 enablementDidChange:(_Bool)arg2;

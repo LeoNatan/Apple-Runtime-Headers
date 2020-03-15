@@ -37,9 +37,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool transitionSoundEffectsEnabled; // @synthesize transitionSoundEffectsEnabled=_transitionSoundEffectsEnabled;
 @property(nonatomic) long long audioOutputFormat; // @synthesize audioOutputFormat=_audioOutputFormat;
-- (void).cxx_destruct;
 - (long long)_repeatTypeFromMediaRepeatMode:(long long)arg1;
 - (long long)_mediaRepeatModeFromMPRepeatType:(long long)arg1;
 - (int)_surroundSoundPrefValueFromAudioOutputFormat:(long long)arg1;

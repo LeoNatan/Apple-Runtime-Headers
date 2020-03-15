@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     Protocol *_protocol;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldLaunchMobileMail; // @synthesize shouldLaunchMobileMail=_shouldLaunchMobileMail;
 @property(readonly, retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (void)_sendInvocation:(id)arg1 remoteInterface:(id)arg2 remoteProxy:(id)arg3 errorHandler:(CDUnknownBlockType)arg4;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxy;

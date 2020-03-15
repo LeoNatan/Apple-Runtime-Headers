@@ -23,9 +23,9 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowDefinitionLookup; // @synthesize payloadAllowDefinitionLookup=_payloadAllowDefinitionLookup;
 @property(copy, nonatomic) NSNumber *payloadAllowSpotlightInternetResults; // @synthesize payloadAllowSpotlightInternetResults=_payloadAllowSpotlightInternetResults;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

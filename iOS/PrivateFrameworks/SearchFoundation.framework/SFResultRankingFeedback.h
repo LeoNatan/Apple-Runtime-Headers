@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double personalizationScore; // @synthesize personalizationScore=_personalizationScore;
 @property(nonatomic) unsigned long long localResultPosition; // @synthesize localResultPosition=_localResultPosition;
 @property(copy, nonatomic) NSArray *duplicateResults; // @synthesize duplicateResults=_duplicateResults;
 @property(copy, nonatomic) NSArray *hiddenResults; // @synthesize hiddenResults=_hiddenResults;
 @property(retain, nonatomic) SFSearchResult *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

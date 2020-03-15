@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)manifestFromURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKDiscoveryMessagesMetadata *messagesMetadata; // @synthesize messagesMetadata=_messagesMetadata;
 @property(readonly, nonatomic) NSArray *discoveryItems; // @synthesize discoveryItems=_discoveryItems;
 @property(readonly, nonatomic) NSArray *rules; // @synthesize rules=_rules;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithVersion:(long long)arg1 rules:(id)arg2 discoveryItems:(id)arg3 engagementMessagesMetadata:(id)arg4;

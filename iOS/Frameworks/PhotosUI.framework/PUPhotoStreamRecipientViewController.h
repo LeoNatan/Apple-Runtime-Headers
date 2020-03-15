@@ -38,9 +38,9 @@
 }
 
 + (void)recordRecentInvitationRecipient:(id)arg1 displayName:(id)arg2 date:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double bottomTableOffset; // @synthesize bottomTableOffset=_bottomTableOffset;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)_dismissContactPicker;

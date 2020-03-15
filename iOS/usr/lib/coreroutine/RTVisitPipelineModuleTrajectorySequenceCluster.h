@@ -27,13 +27,13 @@
 }
 
 + (double)normalizeFeature:(double)arg1 min:(double)arg2 max:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *residualLocations; // @synthesize residualLocations=_residualLocations;
 @property(readonly, nonatomic) unsigned long long numOfLocations; // @synthesize numOfLocations=_numOfLocations;
 @property(readonly, nonatomic) RTVisitCluster *workingVisitCluster; // @synthesize workingVisitCluster=_workingVisitCluster;
 @property(readonly, nonatomic) RTVisitDecoder *decoder; // @synthesize decoder=_decoder;
 @property(readonly, nonatomic) RTVisitHyperParameter *hyperParameter; // @synthesize hyperParameter=_hyperParameter;
 @property(readonly, nonatomic) id <RTVisitModelController> trajectorySequenceClassifier; // @synthesize trajectorySequenceClassifier=_trajectorySequenceClassifier;
-- (void).cxx_destruct;
 - (id)process:(id)arg1;
 - (id)performBatchInferenceWithFeatureVector:(const float *)arg1 featureVectorLength:(unsigned long long)arg2 start:(unsigned long long)arg3 firstTimeStepDate:(id)arg4;
 - (void)clearWorkingVisitCluster;

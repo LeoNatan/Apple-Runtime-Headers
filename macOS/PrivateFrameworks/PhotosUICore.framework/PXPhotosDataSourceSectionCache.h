@@ -27,6 +27,7 @@
     long long _estimatedAssetCountWithEnrichmentStateComplete;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long estimatedAssetCountWithEnrichmentStateComplete; // @synthesize estimatedAssetCountWithEnrichmentStateComplete=_estimatedAssetCountWithEnrichmentStateComplete;
 @property(readonly, nonatomic) long long estimatedAssetCountWithEnrichmentStateAssetMetadataAndScenesProcessed; // @synthesize estimatedAssetCountWithEnrichmentStateAssetMetadataAndScenesProcessed=_estimatedAssetCountWithEnrichmentStateAssetMetadataAndScenesProcessed;
 @property(readonly, nonatomic) long long estimatedAssetCountWithEnrichmentStateAssetMetadataAndScore; // @synthesize estimatedAssetCountWithEnrichmentStateAssetMetadataAndScore=_estimatedAssetCountWithEnrichmentStateAssetMetadataAndScore;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) long long estimatedPhotosCount; // @synthesize estimatedPhotosCount=_estimatedPhotosCount;
 @property(readonly, nonatomic) NSDictionary *assetCollectionToSection; // @synthesize assetCollectionToSection=_assetCollectionToSection;
 @property(readonly, nonatomic) PHFetchResult *collectionListFetchResult; // @synthesize collectionListFetchResult=_collectionListFetchResult;
-- (void).cxx_destruct;
 - (id)initWithCollectionListFetchResult:(id)arg1;
 
 @end

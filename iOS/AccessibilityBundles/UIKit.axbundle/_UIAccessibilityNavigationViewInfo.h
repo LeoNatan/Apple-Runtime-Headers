@@ -17,12 +17,12 @@
     UINavigationBar *_navigationBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRightItem; // @synthesize isRightItem=_isRightItem;
 @property(nonatomic) _Bool isCancelItem; // @synthesize isCancelItem=_isCancelItem;
 @property(nonatomic) __weak UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(nonatomic) __weak UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(nonatomic) __weak UINavigationItem *navigationItem; // @synthesize navigationItem=_navigationItem;
-- (void).cxx_destruct;
 
 @end
 

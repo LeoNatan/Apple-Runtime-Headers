@@ -17,9 +17,9 @@
 }
 
 + (id)defaultOptionsForViewSizeSubclass:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double minTextButtonWidth; // @synthesize minTextButtonWidth=_minTextButtonWidth;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

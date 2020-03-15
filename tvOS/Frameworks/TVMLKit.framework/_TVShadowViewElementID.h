@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_itemID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

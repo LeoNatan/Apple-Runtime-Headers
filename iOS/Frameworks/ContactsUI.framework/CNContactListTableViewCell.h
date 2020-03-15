@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     id <CNCancelable> _summaryCancelationToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBeenDisplayed; // @synthesize hasBeenDisplayed=_hasBeenDisplayed;
 @property(retain, nonatomic) id <CNCancelable> summaryCancelationToken; // @synthesize summaryCancelationToken=_summaryCancelationToken;
 @property(copy, nonatomic) CDUnknownBlockType selectedBackgroundViewConfiguration; // @synthesize selectedBackgroundViewConfiguration=_selectedBackgroundViewConfiguration;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(retain, nonatomic) CNContactMatchInfo *contactMatchInfo; // @synthesize contactMatchInfo=_contactMatchInfo;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)prepareForReuse;
 - (void)cancelAsyncOperations;

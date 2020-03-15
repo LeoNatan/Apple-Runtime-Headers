@@ -14,9 +14,9 @@
     _UITextPlaceholderAttachment *_attachment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UITextPlaceholderAttachment *attachment; // @synthesize attachment=_attachment;
 @property(copy, nonatomic) NSArray *rects; // @synthesize rects=_rects;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

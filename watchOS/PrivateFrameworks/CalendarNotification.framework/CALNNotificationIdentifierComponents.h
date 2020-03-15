@@ -14,9 +14,9 @@
     NSString *_sourceClientIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *sourceClientIdentifier; // @synthesize sourceClientIdentifier=_sourceClientIdentifier;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSourceIdentifier:(id)arg1 sourceClientIdentifier:(id)arg2;
 

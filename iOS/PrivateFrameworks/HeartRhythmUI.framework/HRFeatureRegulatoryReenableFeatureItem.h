@@ -17,9 +17,9 @@
     id <HRFeatureRegulatoryReenableFeatureActionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HRFeatureRegulatoryReenableFeatureActionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) NSString *productName; // @synthesize productName=_productName;
-- (void).cxx_destruct;
 - (void)handleUserInteractionWithItemWithHostViewController:(id)arg1;
 @property(readonly, nonatomic) long long cellAccessoryType;
 @property(readonly, nonatomic) _Bool isInteractive;

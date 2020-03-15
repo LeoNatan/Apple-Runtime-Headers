@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_resourceQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *summaryQueue; // @synthesize summaryQueue=_summaryQueue;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableOrderedSet *allRecords; // @synthesize allRecords=_allRecords;
 @property(nonatomic) __weak id <WDMedicalRecordSummaryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)_appendixItemForCount:(long long)arg1;
 - (void)_displayItemsForUnknownRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_displayItemsForPanel:(id)arg1 completion:(CDUnknownBlockType)arg2;

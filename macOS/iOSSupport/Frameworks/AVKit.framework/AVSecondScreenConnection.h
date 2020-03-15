@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _maximumVideoResolution;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVSecondScreenViewController *secondScreenViewController; // @synthesize secondScreenViewController=_secondScreenViewController;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isReadyToConnect) BOOL readyToConnect; // @synthesize readyToConnect=_readyToConnect;
 @property(readonly, nonatomic) __weak AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (BOOL)_currentItemIsReadyToPlayVideoOrLoadingWhileActive;
 - (BOOL)_allowsNonAirPlayExternalPlayback;
 - (BOOL)_determineIsReadyToConnect;

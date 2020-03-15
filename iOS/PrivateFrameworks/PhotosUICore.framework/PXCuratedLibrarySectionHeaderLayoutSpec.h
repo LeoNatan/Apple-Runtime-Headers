@@ -44,6 +44,7 @@
     struct UIEdgeInsets _titlePadding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXCuratedLibrarySectionHeaderLayoutSpec *smallVariantSpec; // @synthesize smallVariantSpec=_smallVariantSpec;
 @property(readonly, nonatomic) PXCuratedLibraryStyleGuide *styleGuide; // @synthesize styleGuide=_styleGuide;
 @property(readonly, nonatomic) double minimumSpacingBetweenTopSafeAreaAndTitleTop; // @synthesize minimumSpacingBetweenTopSafeAreaAndTitleTop=_minimumSpacingBetweenTopSafeAreaAndTitleTop;
@@ -76,7 +77,6 @@
 @property(nonatomic) double buttonHeight; // @synthesize buttonHeight=_buttonHeight;
 @property(nonatomic) CDStruct_2bd92d94 cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double maximumTitleSubtitleHeight;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 

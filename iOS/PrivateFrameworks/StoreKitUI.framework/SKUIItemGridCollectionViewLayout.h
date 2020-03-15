@@ -16,10 +16,10 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *oddRowBackgroundColor; // @synthesize oddRowBackgroundColor=_oddColor;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(copy, nonatomic) UIColor *evenRowBackgroundColor; // @synthesize evenRowBackgroundColor=_evenColor;
-- (void).cxx_destruct;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)init;
 

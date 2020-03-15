@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *notFoundZoneIDs; // @synthesize notFoundZoneIDs=_notFoundZoneIDs;
 @property(retain, nonatomic) NSMutableDictionary *pcsInfoByZoneID; // @synthesize pcsInfoByZoneID=_pcsInfoByZoneID;
 @property(retain, nonatomic) NSString *serviceIdentityInfo; // @synthesize serviceIdentityInfo=_serviceIdentityInfo;
 @property(retain, nonatomic) NSString *identityInfo; // @synthesize identityInfo=_identityInfo;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

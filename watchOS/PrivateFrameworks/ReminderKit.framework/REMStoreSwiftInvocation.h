@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) REMFetchResultToken *fetchResultTokenToDiffAgainst; // @synthesize fetchResultTokenToDiffAgainst=_fetchResultTokenToDiffAgainst;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMFetchResultToken *fetchResultTokenToDiffAgainst; // @synthesize fetchResultTokenToDiffAgainst=_fetchResultTokenToDiffAgainst;
 @property(readonly, nonatomic) NSString *name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

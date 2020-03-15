@@ -9,7 +9,7 @@
 #import <VideoSubscriberAccountUI/NSCopying-Protocol.h>
 #import <VideoSubscriberAccountUI/VSJSRequest-Protocol.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface VSJSRequest : IKJSObject <VSJSRequest, NSCopying>
@@ -20,17 +20,15 @@ __attribute__((visibility("hidden")))
     NSString *_appleVerificationToken;
     NSString *_requestorVerificationToken;
     NSArray *_attributeNames;
-    NSDictionary *_requestorInfo;
 }
 
-@property(copy, nonatomic) NSDictionary *requestorInfo; // @synthesize requestorInfo=_requestorInfo;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *attributeNames; // @synthesize attributeNames=_attributeNames;
 @property(copy, nonatomic) NSString *requestorVerificationToken; // @synthesize requestorVerificationToken=_requestorVerificationToken;
 @property(copy, nonatomic) NSString *appleVerificationToken; // @synthesize appleVerificationToken=_appleVerificationToken;
 @property(copy, nonatomic) NSString *currentAuthentication; // @synthesize currentAuthentication=_currentAuthentication;
 @property(copy, nonatomic) NSString *requestBody; // @synthesize requestBody=_requestBody;
 @property(copy, nonatomic) NSString *requestType; // @synthesize requestType=_requestType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

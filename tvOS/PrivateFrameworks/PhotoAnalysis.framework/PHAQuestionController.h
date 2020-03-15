@@ -6,24 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class PGManager, PHFetchResult;
+@class NSUbiquitousKeyValueStore, PGManager;
 @protocol OS_os_log;
 
 @interface PHAQuestionController : NSObject
 {
     PGManager *_graphManager;
     NSObject<OS_os_log> *_loggingConnection;
-    PHFetchResult *_persons;
+    NSUbiquitousKeyValueStore *_store;
 }
 
-@property(retain, nonatomic) PHFetchResult *persons; // @synthesize persons=_persons;
-@property(retain, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
-@property(retain, nonatomic) PGManager *graphManager; // @synthesize graphManager=_graphManager;
 - (void).cxx_destruct;
-- (id)_stringForQuestionType:(long long)arg1;
-- (id)_factoryForType:(long long)arg1 manager:(id)arg2;
-- (id)existingQuestionsForType:(long long)arg1;
-- (_Bool)generateQuestionsWithType:(long long)arg1 limit:(unsigned long long)arg2 progress:(CDUnknownBlockType)arg3;
+@property(retain, nonatomic) NSUbiquitousKeyValueStore *store; // @synthesize store=_store;
+@property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
+@property(retain, nonatomic) PGManager *graphManager; // @synthesize graphManager=_graphManager;
+- (void)removeCurrentKVSData;
+- (id)currentQuestionsKVSData;
+- (void)_handleKVSQuestionsUpdateIfNeeded;
+- (void)_syncAnsweredQuestions;
+- (id)allQuestionFactories;
+- (id)questionFactoriesForOptions:(long long)arg1;
+- (double)importanceOfFactory:(Class)arg1;
+- (_Bool)persistQuestions:(id)arg1;
+- (void)assignScoreToQuestions:(id)arg1;
+- (id)selectedQuestionsFromSortedQuestionsByQuestionFactory:(id)arg1 withLimit:(unsigned long long)arg2;
+- (_Bool)generateQuestionsWithOptions:(long long)arg1 limit:(unsigned long long)arg2 progress:(CDUnknownBlockType)arg3;
 - (id)initWithGraphManager:(id)arg1;
 
 @end

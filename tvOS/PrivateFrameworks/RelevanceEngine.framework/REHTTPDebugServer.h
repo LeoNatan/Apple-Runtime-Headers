@@ -25,10 +25,10 @@
     NSString *_processName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *processName; // @synthesize processName=_processName;
 @property(retain) NSArray *availableEngines; // @synthesize availableEngines=_availableEngines;
 @property(readonly, nonatomic) __weak id <REHTTPDebugServerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_loadEngineListWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_engineList;
 - (id)_aboutPage;

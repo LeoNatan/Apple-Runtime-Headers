@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool __needsUpdateWallpaperModificationAllowed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateWallpaperModificationAllowed:) _Bool _needsUpdateWallpaperModificationAllowed; // @synthesize _needsUpdateWallpaperModificationAllowed=__needsUpdateWallpaperModificationAllowed;
 @property(nonatomic, getter=_isWallpaperModificationAllowed, setter=_setWallpaperModificationAllowed:) _Bool _wallpaperModificationAllowed; // @synthesize _wallpaperModificationAllowed=__wallpaperModificationAllowed;
-- (void).cxx_destruct;
 - (void)wallpaperPreviewViewControllerSetButtonPressed:(id)arg1;
 - (void)wallpaperPreviewViewControllerCancelButtonPressed:(id)arg1;
 - (void)_updateWallpaperModificationAllowedIfNeeded;

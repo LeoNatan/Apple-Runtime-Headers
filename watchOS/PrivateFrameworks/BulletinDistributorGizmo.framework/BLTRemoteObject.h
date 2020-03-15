@@ -32,12 +32,12 @@
     BLTPBProtobufSequenceNumberManager *_sequenceNumberManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BLTPBProtobufSequenceNumberManager *sequenceNumberManager; // @synthesize sequenceNumberManager=_sequenceNumberManager;
 @property(readonly, nonatomic) id <BLTAbstractIDSService> service; // @synthesize service=_service;
 @property(getter=isPairedDeviceReady) _Bool pairedDeviceReady; // @synthesize pairedDeviceReady=_pairedDeviceReady;
 @property(nonatomic) unsigned int lastKnownConnectionStatus; // @synthesize lastKnownConnectionStatus=_lastKnownConnectionStatus;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)handleFileURL:(id)arg1 extraMetadata:(id)arg2;
 - (void)service:(id)arg1 account:(id)arg2 incomingResourceAtURL:(id)arg3 metadata:(id)arg4 fromID:(id)arg5 context:(id)arg6;
 - (_Bool)_callSendCompletionHandlerWithSuccess:(_Bool)arg1 identifier:(id)arg2 error:(id)arg3;

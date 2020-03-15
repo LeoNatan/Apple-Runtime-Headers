@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     NACAudioRoute *_pickedRoute;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NACAudioRoute *pickedRoute; // @synthesize pickedRoute=_pickedRoute;
 @property(readonly, nonatomic) NSArray *availableAudioRoutes; // @synthesize availableAudioRoutes=_availableAudioRoutes;
 @property(nonatomic) __weak id <NACRoutingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_audioRoutesDidChange;

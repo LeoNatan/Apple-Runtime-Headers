@@ -16,10 +16,10 @@
     PHAsset *_keyAsset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(nonatomic) __weak id <PXMovieProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)ppt_runTest:(id)arg1 options:(id)arg2;
 @property(readonly, nonatomic) PXDiagnosticsItemProvider *diagnosticsItemProvider;
 @property(readonly, nonatomic) _Bool canPlayMovie;

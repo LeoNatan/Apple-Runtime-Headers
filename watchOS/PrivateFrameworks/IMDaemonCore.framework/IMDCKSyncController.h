@@ -25,6 +25,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSTimer *reloadTimer; // @synthesize reloadTimer=_reloadTimer;
 @property _Bool shouldReloadConversations; // @synthesize shouldReloadConversations=_shouldReloadConversations;
 @property(retain, nonatomic) NSDate *lastRestoreFailureLogDumpDate; // @synthesize lastRestoreFailureLogDumpDate=_lastRestoreFailureLogDumpDate;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) IMTimer *nightlySyncTimer; // @synthesize nightlySyncTimer=_nightlySyncTimer;
 @property(retain, nonatomic) NSTimer *longRunningSyncTimer; // @synthesize longRunningSyncTimer=_longRunningSyncTimer;
 @property(retain, nonatomic) NSDate *syncStartDate; // @synthesize syncStartDate=_syncStartDate;
-- (void).cxx_destruct;
 - (_Bool)logCloudKitAnalytics;
 - (void)_submitCloudKitAnalyticWithOperationGroupName:(id)arg1 analyticDictionary:(id)arg2;
 - (_Bool)_serverDeniesDailySyncStateAnalytics;

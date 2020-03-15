@@ -17,12 +17,12 @@
     long long _masterStatusCellIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long masterStatusCellIndex; // @synthesize masterStatusCellIndex=_masterStatusCellIndex;
 @property(nonatomic) int virtualAlignment; // @synthesize virtualAlignment=_virtualAlignment;
 @property(retain, nonatomic) NSData *aggregatedData; // @synthesize aggregatedData=_aggregatedData;
 @property(retain, nonatomic) NSData *virtualData; // @synthesize virtualData=_virtualData;
 @property(retain, nonatomic) NSData *realData; // @synthesize realData=_realData;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,11 +17,11 @@
     unsigned long long _totalBytesPurged;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalBytesPurged; // @synthesize totalBytesPurged=_totalBytesPurged;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly, nonatomic) int urgency; // @synthesize urgency=_urgency;
 @property(readonly, copy, nonatomic) id <NSCopying><NSObject> volumeIdentifier; // @synthesize volumeIdentifier=_volumeIdentifier;
-- (void).cxx_destruct;
 - (BOOL)_deleteAttachmentFile:(id)arg1;
 - (id)_purgeQueue;
 - (void)_attachmentsForAccounts:(id)arg1 startTimeInterval:(double)arg2 endTimeInterval:(double)arg3 withBlock:(CDUnknownBlockType)arg4;

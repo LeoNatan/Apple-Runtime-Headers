@@ -16,10 +16,10 @@
 }
 
 + (id)_simpleTextLabelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *simpleText; // @synthesize simpleText=_simpleText;
 @property(retain, nonatomic) NSArray *persistentConstraints; // @synthesize persistentConstraints=_persistentConstraints;
 @property(retain, nonatomic) UILabel *simpleTextLabel; // @synthesize simpleTextLabel=_simpleTextLabel;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _perDownloadCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType perDownloadCompletionBlock; // @synthesize perDownloadCompletionBlock=_perDownloadCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType perDownloadCompletionBlock; // @synthesize perDownloadCompletionBlock=_perDownloadCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)actionPrettyName;
 - (id)transferredObjectsPrettyName;

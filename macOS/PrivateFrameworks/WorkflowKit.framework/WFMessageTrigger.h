@@ -18,10 +18,10 @@
 + (BOOL)supportsSecureCoding;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selectedSendersStrings; // @synthesize selectedSendersStrings=_selectedSendersStrings;
 @property(retain, nonatomic) NSArray *selectedSenders; // @synthesize selectedSenders=_selectedSenders;
 @property(retain, nonatomic) NSString *selectedContents; // @synthesize selectedContents=_selectedContents;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

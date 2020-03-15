@@ -22,6 +22,7 @@
 
 + (id)new;
 + (id)sharedSystemState;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AFNotifyObserver *observerBluetoothGuestConnected; // @synthesize observerBluetoothGuestConnected=_observerBluetoothGuestConnected;
 @property(retain, nonatomic) AFNotifyObserver *observerWirelessSplitter; // @synthesize observerWirelessSplitter=_observerWirelessSplitter;
 @property(retain, nonatomic) NSHashTable *listeners; // @synthesize listeners=_listeners;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool accessibilityShortcutEnabled; // @synthesize accessibilityShortcutEnabled=_accessibilityShortcutEnabled;
 @property(nonatomic) int carPlayConnectionState; // @synthesize carPlayConnectionState=_carPlayConnectionState;
 @property(retain, nonatomic) SASLockStateMonitor *lockStateMonitor; // @synthesize lockStateMonitor=_lockStateMonitor;
-- (void).cxx_destruct;
 - (_Bool)siriIsSupported;
 - (_Bool)siriIsRestricted;
 - (_Bool)siriIsEnabled;

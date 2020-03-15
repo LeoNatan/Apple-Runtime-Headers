@@ -55,6 +55,7 @@
 + (BOOL)validateProvidedName:(id)arg1;
 + (id)logCategory;
 + (id)generateUUIDWithAccessoryUUID:(id)arg1 serviceID:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *providedName; // @synthesize providedName=_providedName;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(retain, nonatomic) NSMutableDictionary *deviceLastRequestPresenceDateMap; // @synthesize deviceLastRequestPresenceDateMap=_deviceLastRequestPresenceDateMap;
@@ -82,7 +83,6 @@
 @property(retain, nonatomic) NSNumber *labelNamespace; // @synthesize labelNamespace=_labelNamespace;
 @property(retain, nonatomic) NSNumber *labelIndex; // @synthesize labelIndex=_labelIndex;
 @property(copy, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
-- (void).cxx_destruct;
 - (BOOL)shouldUpdateLastSeenConfiguredName:(id)arg1;
 - (void)_writeConfiguredNameToAccessory:(id)arg1;
 - (void)_saveCurrentNameAsExpectedAndLastSeen:(id)arg1;
@@ -160,7 +160,7 @@
 @property(readonly, copy, nonatomic) NSUUID *contextSPIUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *contextID;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 - (id)_serviceSubtypeFromLinkedServicesForServiceType:(id)arg1 accessoryCategory:(id)arg2;
 
 // Remaining properties

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UILabel *_weekdayLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *weekdayLabel; // @synthesize weekdayLabel=_weekdayLabel;
 @property(readonly, nonatomic) LinearGaugeView *linearGaugeView; // @synthesize linearGaugeView=_linearGaugeView;
 @property(nonatomic) double percentage; // @synthesize percentage=_percentage;
-- (void).cxx_destruct;
 - (void)_applyLayoutConstraints:(CDStruct_d2b197d1)arg1;
 - (void)updateMonochromeColor:(id)arg1 fraction:(double)arg2;
 - (void)applyFilter:(id)arg1;

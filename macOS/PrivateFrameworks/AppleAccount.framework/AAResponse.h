@@ -18,13 +18,13 @@
     NSNumber *_maxAge;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *maxAge; // @synthesize maxAge=_maxAge;
 @property(readonly, nonatomic) NSHTTPURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *protocolVersion;
 - (id)_deviceSpecificLocalizedString:(id)arg1;
 - (id)_stringWithDescriptionForResponseError:(id)arg1;

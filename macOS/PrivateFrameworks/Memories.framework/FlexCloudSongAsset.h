@@ -13,8 +13,8 @@
     FlexCloudManager *_cloudManager;
 }
 
-@property(readonly) FlexCloudManager *cloudManager; // @synthesize cloudManager=_cloudManager;
 - (void).cxx_destruct;
+@property(readonly) FlexCloudManager *cloudManager; // @synthesize cloudManager=_cloudManager;
 - (long long)compatibilityVersionForAssetLocation:(unsigned long long)arg1;
 - (long long)contentVersionForAssetLocation:(unsigned long long)arg1;
 - (BOOL)contentUpdateAvaliable;

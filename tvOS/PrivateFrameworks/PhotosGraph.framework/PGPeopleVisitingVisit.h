@@ -15,9 +15,9 @@
     PGGraphNode *_addressNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *momentNodes; // @synthesize momentNodes=_momentNodes;
 @property(readonly) PGGraphNode *addressNode; // @synthesize addressNode=_addressNode;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) _Bool matchesCloseVisitCriteria;
 @property(readonly) _Bool matchesFarVisitCriteria;

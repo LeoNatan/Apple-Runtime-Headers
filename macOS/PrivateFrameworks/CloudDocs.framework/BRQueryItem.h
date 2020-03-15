@@ -200,7 +200,10 @@
 @property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
 @property(readonly, nonatomic) NSString *preformattedOwnerName;
 @property(readonly, copy) NSString *providerIdentifier;
+@property(readonly, copy, nonatomic) NSData *quarantineBlob;
 @property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) NSString *symlinkTargetPath;
+@property(getter=isSyncRoot) BOOL syncRoot;
 
 @end
 

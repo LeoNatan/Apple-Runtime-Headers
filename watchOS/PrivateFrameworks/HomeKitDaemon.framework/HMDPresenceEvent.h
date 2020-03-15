@@ -27,13 +27,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMDEventTriggerExecutionSession *executionSession; // @synthesize executionSession=_executionSession;
 @property(nonatomic) _Bool currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(readonly, nonatomic) NSMutableArray *userUUIDs; // @synthesize userUUIDs=_userUUIDs;
 @property(readonly, nonatomic) NSMutableDictionary *users; // @synthesize users=_users;
 @property(readonly, nonatomic) HMPresenceEventActivation *activation; // @synthesize activation=_activation;
 @property(retain, nonatomic) NSString *presenceType; // @synthesize presenceType=_presenceType;
-- (void).cxx_destruct;
 - (id)presenceMetricData;
 - (id)metricData;
 - (void)_transactionObjectRemoved:(id)arg1 message:(id)arg2;

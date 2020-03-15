@@ -24,12 +24,12 @@
 + (void)addFunctionToGlobalCache:(id)arg1;
 + (id)functionForJSFunction:(struct OpaqueJSValue *)arg1 inContext:(struct OpaqueJSContext *)arg2;
 + (id)functionForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FRJSMessagingDelegate> messagingDelegate; // @synthesize messagingDelegate=_messagingDelegate;
 @property(nonatomic) BOOL capture; // @synthesize capture=_capture;
 @property(readonly, nonatomic) NSUUID *functionID; // @synthesize functionID=_functionID;
 @property(readonly, nonatomic) struct OpaqueJSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(readonly, nonatomic) struct OpaqueJSValue *jsFunction; // @synthesize jsFunction=_jsFunction;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

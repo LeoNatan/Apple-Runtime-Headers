@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *privilege; // @synthesize privilege=_privilege;
 @property(retain, nonatomic) NSArray *recipientContacts; // @synthesize recipientContacts=_recipientContacts;
 @property(retain, nonatomic) NSNumber *recipientThreadId; // @synthesize recipientThreadId=_recipientThreadId;
 @property(retain, nonatomic) NSString *notebookGuid; // @synthesize notebookGuid=_notebookGuid;
-- (void).cxx_destruct;
 
 @end
 

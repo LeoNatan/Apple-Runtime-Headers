@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(retain, nonatomic) HBUITopShelfAsyncImage *asyncImage; // @synthesize asyncImage=_asyncImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
 - (struct CGSize)_contentSize;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;

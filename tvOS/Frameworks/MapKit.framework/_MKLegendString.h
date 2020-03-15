@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSAttributedString *_string;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double baselineDistanceFromBottom; // @synthesize baselineDistanceFromBottom=_baselineDistanceFromBottom;
 @property(retain, nonatomic) NSAttributedString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)actionForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)setFrame:(struct CGRect)arg1;

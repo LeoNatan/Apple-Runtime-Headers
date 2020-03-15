@@ -30,13 +30,13 @@
     NSData *_tabPrefixData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *tabPrefixData; // @synthesize tabPrefixData=_tabPrefixData;
 @property(retain, nonatomic) NSMutableString *tabPrefix; // @synthesize tabPrefix=_tabPrefix;
 @property(retain, nonatomic) NSMutableArray *containerStack; // @synthesize containerStack=_containerStack;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) NSMutableData *outputBuffer; // @synthesize outputBuffer=_outputBuffer;
 @property(retain, nonatomic) NSFileHandle *outputFileHandle; // @synthesize outputFileHandle=_outputFileHandle;
-- (void).cxx_destruct;
 - (void)_writeString:(id)arg1;
 - (void)_writeDictionaryKey:(id)arg1;
 - (void)_decrementTabPrefix;

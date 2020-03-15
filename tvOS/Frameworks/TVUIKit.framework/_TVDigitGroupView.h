@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _shakeCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType shakeCompletionBlock; // @synthesize shakeCompletionBlock=_shakeCompletionBlock;
 @property(nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_secure;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSIndexSet *separatorIndexes; // @synthesize separatorIndexes=_separatorIndexes;
 @property(retain, nonatomic) NSArray *digitViews; // @synthesize digitViews=_digitViews;
 @property(nonatomic) unsigned long long numberOfDigits; // @synthesize numberOfDigits=_numberOfDigits;
-- (void).cxx_destruct;
 - (void)_updateDigitViews;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)shakeWithCompletion:(CDUnknownBlockType)arg1;

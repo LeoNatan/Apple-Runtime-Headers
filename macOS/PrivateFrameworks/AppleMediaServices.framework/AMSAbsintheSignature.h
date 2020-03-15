@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_servKey;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *servKey; // @synthesize servKey=_servKey;
 @property(retain) NSString *signature; // @synthesize signature=_signature;
-- (void).cxx_destruct;
 
 @end
 

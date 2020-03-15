@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     CDStruct_cfb9664d _schedule;
 }
 
-@property(nonatomic) CDStruct_cfb9664d schedule; // @synthesize schedule=_schedule;
 - (void).cxx_destruct;
+@property(nonatomic) CDStruct_cfb9664d schedule; // @synthesize schedule=_schedule;
 - (void)_significantTimeChange;
 - (void)_updateTimeMonitoring:(_Bool)arg1;
 - (void)_updateTimeMonitoring;

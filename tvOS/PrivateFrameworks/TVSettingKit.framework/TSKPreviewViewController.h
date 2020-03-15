@@ -21,6 +21,7 @@
     UIProgressView *_progressView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIProgressView *progressView; // @synthesize progressView=_progressView;
 @property(readonly, nonatomic) UILabel *progressLabel; // @synthesize progressLabel=_progressLabel;
 @property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
@@ -29,7 +30,6 @@
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool shouldShowProgress; // @synthesize shouldShowProgress=_shouldShowProgress;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)setProgress:(float)arg1 animated:(_Bool)arg2;
 @property(copy, nonatomic) NSAttributedString *attributedDescriptionText;
 @property(copy, nonatomic) NSString *descriptionText;

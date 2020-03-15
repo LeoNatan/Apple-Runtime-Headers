@@ -15,10 +15,10 @@
     unsigned long long _action;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long action; // @synthesize action=_action;
 @property(readonly, retain) NSDate *when; // @synthesize when=_when;
 @property(readonly, retain) NSString *topic; // @synthesize topic=_topic;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTopic:(id)arg1 when:(id)arg2 action:(unsigned long long)arg3;
 

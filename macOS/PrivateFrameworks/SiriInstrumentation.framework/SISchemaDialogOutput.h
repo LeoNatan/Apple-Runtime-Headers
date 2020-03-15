@@ -15,10 +15,10 @@
     SISchemaRedactableString *_displayedDialogOutput;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SISchemaRedactableString *displayedDialogOutput; // @synthesize displayedDialogOutput=_displayedDialogOutput;
 @property(retain, nonatomic) SISchemaRedactableString *spokenDialogOutput; // @synthesize spokenDialogOutput=_spokenDialogOutput;
 @property(copy, nonatomic) NSString *viewID; // @synthesize viewID=_viewID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

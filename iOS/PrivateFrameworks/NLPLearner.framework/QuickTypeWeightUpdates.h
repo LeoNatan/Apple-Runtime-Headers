@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_weightUpdatesDiagnosticReport;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *weightUpdatesDiagnosticReport; // @synthesize weightUpdatesDiagnosticReport=_weightUpdatesDiagnosticReport;
 @property(copy, nonatomic) NSString *privacyDiagnosticReport; // @synthesize privacyDiagnosticReport=_privacyDiagnosticReport;
 @property(copy, nonatomic) NSNumber *maxNorm; // @synthesize maxNorm=_maxNorm;
 @property(copy, nonatomic) NSNumber *l2Norm; // @synthesize l2Norm=_l2Norm;
 @property(retain, nonatomic) NSData *weightUpdates; // @synthesize weightUpdates=_weightUpdates;
-- (void).cxx_destruct;
 
 @end
 

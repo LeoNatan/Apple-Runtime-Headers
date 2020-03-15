@@ -25,6 +25,7 @@
     NSDate *_expiryDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(nonatomic) unsigned short streamID; // @synthesize streamID=_streamID;
 @property(retain, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) _Bool expectsPeerResponse; // @synthesize expectsPeerResponse=_expectsPeerResponse;
 @property(readonly, nonatomic) NSString *messageUUID; // @synthesize messageUUID=_messageUUID;
 @property(nonatomic) _Bool compressed; // @synthesize compressed=_compressed;
-- (void).cxx_destruct;
 - (id)_nonHeaderData;
 @property(readonly, nonatomic) NSData *data;
 - (unsigned char)command;

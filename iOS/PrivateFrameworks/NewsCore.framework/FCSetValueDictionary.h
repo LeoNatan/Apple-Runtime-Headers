@@ -16,8 +16,8 @@
     NSMutableDictionary *_backingDictionary;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
 - (id)_setForKey:(id)arg1;
 - (id)keyEnumerator;
 - (void)removeObjectsForKey:(id)arg1;

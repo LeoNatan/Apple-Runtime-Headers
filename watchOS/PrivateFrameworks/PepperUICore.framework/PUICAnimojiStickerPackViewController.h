@@ -16,8 +16,8 @@
     id <PUICAnimojiStickerViewDelegate> _animojiViewDelegate;
 }
 
-@property(nonatomic) __weak id <PUICAnimojiStickerViewDelegate> animojiViewDelegate; // @synthesize animojiViewDelegate=_animojiViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICAnimojiStickerViewDelegate> animojiViewDelegate; // @synthesize animojiViewDelegate=_animojiViewDelegate;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithDelegate:(id)arg1 identifier:(id)arg2;

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class CXCallObserver, NSDate;
+#import <IMFoundation/CXCallObserverDelegate-Protocol.h>
 
-@interface IMCallMonitor : NSObject
+@class CXCallObserver, NSDate, NSString;
+
+@interface IMCallMonitor : NSObject <CXCallObserverDelegate>
 {
     CXCallObserver *_callCenter;
     _Bool _wasOnCall;
@@ -17,9 +19,16 @@
 
 + (id)sharedInstance;
 @property(readonly, retain, nonatomic) NSDate *dateLastCallEnded; // @synthesize dateLastCallEnded=_lastCallDate;
+- (void)callObserver:(id)arg1 callChanged:(id)arg2;
 @property(readonly, nonatomic) _Bool isOnCall;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

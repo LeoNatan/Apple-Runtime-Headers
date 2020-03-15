@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 + (id)showTwoButtonAlertWithTitle:(id)arg1 message:(id)arg2 button1Title:(id)arg3 button1Style:(int)arg4 button1Handler:(CDUnknownBlockType)arg5 button2Title:(id)arg6 button2Style:(int)arg7 button2Handler:(CDUnknownBlockType)arg8;
 + (id)showOneButtonSheetOnViewController:(id)arg1 withTitle:(id)arg2 message:(id)arg3 buttonTitle:(id)arg4 buttonHandler:(CDUnknownBlockType)arg5;
 + (id)showOneButtonAlertWithTitle:(id)arg1 message:(id)arg2 buttonTitle:(id)arg3 buttonHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id textFields; // @synthesize textFields=_textFields;
 @property(readonly, nonatomic) id actions; // @synthesize actions=_actions;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(nonatomic) BOOL isSheet; // @synthesize isSheet=_isSheet;
 @property(nonatomic) BOOL isBeingDismissed; // @synthesize isBeingDismissed=_isBeingDismissed;
-- (void).cxx_destruct;
 - (id)textInFieldWithTag:(long long)arg1;
 - (long long)textFieldCount;
 - (id)textFieldWithTag:(long long)arg1;

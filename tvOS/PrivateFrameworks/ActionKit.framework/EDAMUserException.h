@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *parameter; // @synthesize parameter=_parameter;
 @property(retain, nonatomic) NSNumber *errorCode; // @synthesize errorCode=_errorCode;
-- (void).cxx_destruct;
 
 @end
 

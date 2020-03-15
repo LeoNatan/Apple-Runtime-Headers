@@ -17,10 +17,10 @@
     NSURL *_baseURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *apiKey; // @synthesize apiKey=_apiKey;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)sendRequestWithPath:(id)arg1 parameters:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)search:(id)arg1 limit:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)trendingWithLimit:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

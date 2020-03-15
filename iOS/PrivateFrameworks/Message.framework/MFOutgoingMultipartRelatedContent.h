@@ -13,8 +13,8 @@
     NSString *_htmlBody;
 }
 
-@property(retain, nonatomic) NSString *htmlBody; // @synthesize htmlBody=_htmlBody;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *htmlBody; // @synthesize htmlBody=_htmlBody;
 - (id)multipartContent;
 - (id)copy;
 

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool explicit; // @synthesize explicit=_explicit;
 @property(nonatomic) _Bool streaming; // @synthesize streaming=_streaming;
 @property(nonatomic) _Bool repeating; // @synthesize repeating=_repeating;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *albumTitle; // @synthesize albumTitle=_albumTitle;
 @property(copy, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(copy, nonatomic) NSString *trackTitle; // @synthesize trackTitle=_trackTitle;
-- (void).cxx_destruct;
 - (_Bool)_isStringEqual:(id)arg1 rhsString:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
 

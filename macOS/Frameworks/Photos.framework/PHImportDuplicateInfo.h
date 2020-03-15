@@ -13,8 +13,8 @@
     NSMutableDictionary *_info;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *info; // @synthesize info=_info;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *info; // @synthesize info=_info;
 @property(readonly, nonatomic) double timezoneOffset;
 - (id)originatingAssetIdentifier;
 @property(readonly, nonatomic) NSString *avchdFingerprint;

@@ -16,11 +16,11 @@
     NSArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) NSDate *horizontalDate; // @synthesize horizontalDate=_horizontalDate;
 @property(readonly, nonatomic) NSString *horizontalTimeCoordinate; // @synthesize horizontalTimeCoordinate=_horizontalTimeCoordinate;
 @property(readonly, nonatomic) float horizontalScreenCoordinate; // @synthesize horizontalScreenCoordinate=_horizontalScreenCoordinate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithHorizontalScreenCoordinate:(float)arg1 horizontalTimeCoordinate:(id)arg2 horizontalDate:(id)arg3 values:(id)arg4;
 

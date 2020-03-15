@@ -13,8 +13,8 @@
     NSMutableArray *_children;
 }
 
-@property(readonly, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 
 @end
 

@@ -28,6 +28,7 @@
     NSArray *_selectedPlanItems;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *selectedPlanItems; // @synthesize selectedPlanItems=_selectedPlanItems;
 @property(retain) NSArray *planItemBadges; // @synthesize planItemBadges=_planItemBadges;
 @property(retain) NSMutableArray *chosenUseIndexPaths; // @synthesize chosenUseIndexPaths=_chosenUseIndexPaths;
@@ -37,7 +38,6 @@
 @property _Bool hasDoneButton; // @synthesize hasDoneButton=_hasDoneButton;
 @property(readonly, nonatomic) unsigned long long usesType; // @synthesize usesType=_usesType;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)saveDefaultUse:(CDUnknownBlockType)arg1;
 - (void)dataSwitchChanged:(id)arg1;
 - (void)_doneButtonTapped;

@@ -27,6 +27,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsListeningModeTransparency; // @synthesize supportsListeningModeTransparency=_supportsListeningModeTransparency;
 @property(readonly, nonatomic) _Bool supportsListeningModeANC; // @synthesize supportsListeningModeANC=_supportsListeningModeANC;
 @property(readonly, nonatomic) _Bool supportsSpokenNotification; // @synthesize supportsSpokenNotification=_supportsSpokenNotification;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) unsigned int vendorID; // @synthesize vendorID=_vendorID;
 @property(readonly, copy, nonatomic) NSUUID *deviceUID; // @synthesize deviceUID=_deviceUID;
 @property(readonly, copy, nonatomic) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

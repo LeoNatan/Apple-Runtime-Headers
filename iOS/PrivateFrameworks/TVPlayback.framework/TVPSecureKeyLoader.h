@@ -15,9 +15,9 @@
     TVPPlaybackReportingEventCollection *_eventCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPPlaybackReportingEventCollection *eventCollection; // @synthesize eventCollection=_eventCollection;
 @property(nonatomic) __weak id <TVPSecureKeyLoaderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sendStopRequest;
 - (void)startLoadingKeyResponseDataForRequest:(id)arg1;
 - (void)startLoadingContentIdentifierDataForRequest:(id)arg1;

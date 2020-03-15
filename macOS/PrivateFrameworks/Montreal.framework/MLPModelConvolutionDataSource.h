@@ -36,6 +36,8 @@
     struct MLPModelOptimizerOptions _optimizerOptions;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPSVector *biasVelocityVector; // @synthesize biasVelocityVector=_biasVelocityVector;
 @property(readonly, nonatomic) MPSVector *biasMomentumVector; // @synthesize biasMomentumVector=_biasMomentumVector;
 @property(readonly, nonatomic) MPSVector *weightVelocityVector; // @synthesize weightVelocityVector=_weightVelocityVector;
@@ -57,8 +59,6 @@
 @property(readonly) unsigned long long kernelHeight; // @synthesize kernelHeight=_kernelHeight;
 @property(readonly) unsigned long long inputFeatureChannels; // @synthesize inputFeatureChannels=_inputFeatureChannels;
 @property(readonly) unsigned long long outputFeatureChannels; // @synthesize outputFeatureChannels=_outputFeatureChannels;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)label;
 - (void)checkpointWithCommandQueue:(id)arg1;
 - (id)updateWithCommandBuffer:(id)arg1 gradientState:(id)arg2 sourceState:(id)arg3;

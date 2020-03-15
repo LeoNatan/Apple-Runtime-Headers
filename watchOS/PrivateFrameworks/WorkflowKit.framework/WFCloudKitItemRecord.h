@@ -15,9 +15,9 @@
     id <WFCloudKitItem> _item;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WFCloudKitItem> item; // @synthesize item=_item;
 @property(readonly, nonatomic) CKRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)initWithRecord:(id)arg1 item:(id)arg2;
 
 @end

@@ -13,8 +13,8 @@
     NSArray *_scanResults;
 }
 
-@property(readonly, nonatomic) NSArray *scanResults; // @synthesize scanResults=_scanResults;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *scanResults; // @synthesize scanResults=_scanResults;
 - (id)initWithScanResults:(id)arg1;
 
 @end

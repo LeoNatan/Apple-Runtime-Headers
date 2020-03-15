@@ -15,9 +15,9 @@
     id <NACancelable> _activationTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NACancelable> activationTimer; // @synthesize activationTimer=_activationTimer;
 @property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
-- (void).cxx_destruct;
 - (id)initWithGestureRecognizer:(id)arg1;
 
 @end

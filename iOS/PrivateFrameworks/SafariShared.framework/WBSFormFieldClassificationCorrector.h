@@ -19,11 +19,11 @@
     NSDictionary *_formValues;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *formValues; // @synthesize formValues=_formValues;
 @property(readonly, copy, nonatomic) WBSFormMetadata *formMetadata; // @synthesize formMetadata=_formMetadata;
 @property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(nonatomic) __weak id <WBSFormFieldClassificationCorrectorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_classificationCorrectionsForControlWithMetadata:(id)arg1 wasIdentifiedAsAddressBookField:(_Bool *)arg2;
 - (void)processCorrections;
 - (id)init;

@@ -17,11 +17,11 @@
 }
 
 + (id)assetPropertySetsForUserBehavioralProcessing;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *algorithmData; // @synthesize algorithmData=_algorithmData;
 @property(nonatomic) long long algorithm; // @synthesize algorithm=_algorithm;
 @property(retain, nonatomic) NSSet *previousGoldAssetUUIDs; // @synthesize previousGoldAssetUUIDs=_previousGoldAssetUUIDs;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (float)semanticScoreFromBehavioralScore:(float)arg1;
 - (float)behavioralScoreFromBaseScore:(float)arg1 semanticScore:(float)arg2;
 - (id)behavioralScoreByAssetUUIDForAssets:(id)arg1 algorithmProcessor:(id)arg2 personalHighAestheticsThreshold:(double)arg3 personalGoodAestheticsThreshold:(double)arg4;

@@ -14,9 +14,9 @@
     MCQuotaUsage *_usage;
 }
 
+- (void).cxx_destruct;
 @property(retain) MCQuotaUsage *usage; // @synthesize usage=_usage;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)setUsageFromResponse:(id)arg1;
 - (id)description;
 - (id)init;

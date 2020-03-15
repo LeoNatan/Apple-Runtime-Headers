@@ -35,6 +35,7 @@
     double _fallbackDelay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double fallbackDelay; // @synthesize fallbackDelay=_fallbackDelay;
 @property(nonatomic) void *telemetryTimer; // @synthesize telemetryTimer=_telemetryTimer;
 @property(nonatomic) void *fallbackTimer; // @synthesize fallbackTimer=_fallbackTimer;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) NPTunnel *tunnel; // @synthesize tunnel=_tunnel;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long hashKey; // @synthesize hashKey=_hashKey;
-- (void).cxx_destruct;
 - (void)handleTunnelReadyForData;
 - (void)reportTelemetry:(id)arg1 withService:(id)arg2 url:(id)arg3;
 - (void)createTelemetryDataWithCompletionHandler:(CDUnknownBlockType)arg1;

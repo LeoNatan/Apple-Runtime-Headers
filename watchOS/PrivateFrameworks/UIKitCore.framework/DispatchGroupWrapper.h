@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_dispatchGroup;
 }
 
-@property(nonatomic) NSObject<OS_dispatch_group> *dispatchGroup; // @synthesize dispatchGroup=_dispatchGroup;
+@property(retain, nonatomic) NSObject<OS_dispatch_group> *dispatchGroup; // @synthesize dispatchGroup=_dispatchGroup;
 - (void)notify:(CDUnknownBlockType)arg1;
 - (void)executeWithDispatchGroup:(CDUnknownBlockType)arg1;
 - (void)dealloc;

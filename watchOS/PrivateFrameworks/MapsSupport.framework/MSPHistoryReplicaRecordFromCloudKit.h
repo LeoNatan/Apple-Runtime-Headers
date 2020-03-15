@@ -18,8 +18,8 @@
 
 + (id)tombstoneWithRecordIdentifier:(id)arg1;
 + (id)recordFromInsertEdit:(id)arg1;
-@property(readonly, copy, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, copy) NSString *description;
 - (void)applyDeleteTombstoneEdit:(id)arg1;
 - (void)applyUpdateModificationDateEdit:(id)arg1;

@@ -19,6 +19,7 @@
     float _bottomBaselineMargin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float bottomBaselineMargin; // @synthesize bottomBaselineMargin=_bottomBaselineMargin;
 @property(readonly, nonatomic) float topBaselineMargin; // @synthesize topBaselineMargin=_topBaselineMargin;
 @property(readonly, nonatomic) float axisLineToLabelSpacing; // @synthesize axisLineToLabelSpacing=_axisLineToLabelSpacing;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(readonly, nonatomic) _Bool scaleMetricsAutomatically; // @synthesize scaleMetricsAutomatically=_scaleMetricsAutomatically;
 @property(readonly, nonatomic) UIFont *axisLabelFont; // @synthesize axisLabelFont=_axisLabelFont;
-- (void).cxx_destruct;
 - (id)initWithAxisLabelFont:(id)arg1 scaleMetricsAutomatically:(_Bool)arg2 lineColor:(id)arg3 lineWidth:(float)arg4 axisLineToLabelSpacing:(float)arg5 topBaselineMargin:(float)arg6 bottomBaselineMargin:(float)arg7;
 
 @end

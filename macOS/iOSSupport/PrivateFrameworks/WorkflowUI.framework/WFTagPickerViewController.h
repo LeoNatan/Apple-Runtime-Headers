@@ -19,11 +19,11 @@
     UISearchController *_searchController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(readonly, nonatomic) NSMutableOrderedSet *selectedTags; // @synthesize selectedTags=_selectedTags;
 @property(readonly, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(nonatomic) __weak id <WFTagPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

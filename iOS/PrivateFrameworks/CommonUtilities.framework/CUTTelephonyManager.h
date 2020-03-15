@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool registered; // @synthesize registered=_registered;
 @property(retain, nonatomic) NSMutableSet *disableFastDormancyTokens; // @synthesize disableFastDormancyTokens=_disableFastDormancyTokens;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (void)removeFastDormancyDisableToken:(id)arg1;
 - (void)addFastDormancyDisableToken:(id)arg1;
 @property(readonly, nonatomic) _Bool disableFastDormancy;

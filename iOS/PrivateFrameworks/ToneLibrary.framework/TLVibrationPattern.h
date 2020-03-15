@@ -19,8 +19,8 @@
 + (id)complexVibrationPatternWithDurationsForVibrationsAndPauses:(double)arg1;
 + (id)simpleVibrationPatternWithVibrationDuration:(double)arg1 pauseDuration:(double)arg2;
 + (_Bool)isValidVibrationPatternPropertyListRepresentation:(id)arg1;
-@property(retain, nonatomic) id contextObject; // @synthesize contextObject=_contextObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id contextObject; // @synthesize contextObject=_contextObject;
 - (void)appendVibrationComponentWithDuration:(double)arg1 isPause:(_Bool)arg2;
 - (double)_computedDuration;
 @property(readonly, nonatomic) id _artificiallyRepeatingPropertyListRepresentation;

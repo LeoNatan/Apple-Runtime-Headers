@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _videoContentFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isObservingStatusBarHidden) _Bool observingStatusBarHidden; // @synthesize observingStatusBarHidden=_observingStatusBarHidden;
 @property(readonly, nonatomic) AVStatusBarBackgroundGradientView *statusBarBackgroundGradientView; // @synthesize statusBarBackgroundGradientView=_statusBarBackgroundGradientView;
 @property(nonatomic) _Bool canShowStatusBarBackgroundGradientWhenStatusBarVisible; // @synthesize canShowStatusBarBackgroundGradientWhenStatusBarVisible=_canShowStatusBarBackgroundGradientWhenStatusBarVisible;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) __AVPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
 @property(nonatomic) struct CGRect videoContentFrame; // @synthesize videoContentFrame=_videoContentFrame;
 @property(nonatomic, getter=isPlayingOnSecondScreen) _Bool playingOnSecondScreen; // @synthesize playingOnSecondScreen=_playingOnSecondScreen;
-- (void).cxx_destruct;
 - (struct CGRect)_resolvedContentFrame;
 - (struct CGRect)_frameForStatusBarBackgroundGradientView;
 - (void)_updateStatusBarBackgroundGradientViewAlpha;

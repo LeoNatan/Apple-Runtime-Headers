@@ -21,10 +21,10 @@
 + (_Bool)isTranscriptionAvailable;
 + (_Bool)isSupportedTranscriptionLanguageCode:(id)arg1;
 + (id)transcriptionLanguageCodes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) VMVoicemailTranscriptionController *transcriptionController; // @synthesize transcriptionController=_transcriptionController;
 @property(retain, nonatomic) VMVoicemailTranscriptionTask *transcriptionTask; // @synthesize transcriptionTask=_transcriptionTask;
-- (void).cxx_destruct;
 - (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
 - (void)handleAFLanguageCodeDidChangeNotification:(id)arg1;
 - (void)reportTranscriptionRatedAccurate:(_Bool)arg1 forRecord:(const void *)arg2;

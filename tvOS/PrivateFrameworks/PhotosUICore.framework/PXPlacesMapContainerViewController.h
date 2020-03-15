@@ -19,11 +19,11 @@
     UISegmentedControl *_subviewControl;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool gridControllerEditing; // @synthesize gridControllerEditing=_gridControllerEditing;
 @property(retain, nonatomic) UISegmentedControl *subviewControl; // @synthesize subviewControl=_subviewControl;
 @property(retain, nonatomic) UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(readonly, nonatomic) PXPlacesMapFetchResultViewController *fetchResultViewController; // @synthesize fetchResultViewController=_fetchResultViewController;
-- (void).cxx_destruct;
 - (void)setBarButtonItems:(id)arg1;
 - (void)_resetNavigationItem;
 - (void)viewController:(id)arg1 updatedNavigationItem:(id)arg2 animated:(_Bool)arg3;

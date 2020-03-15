@@ -23,6 +23,7 @@
 }
 
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL compactMode; // @synthesize compactMode=_compactMode;
 @property(nonatomic) Class productItemClass; // @synthesize productItemClass=_productItemClass;
 @property(readonly, nonatomic) UXBarButtonItem *helpButtonItem; // @synthesize helpButtonItem=_helpButtonItem;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) CDUnknownBlockType addPhotosRequestHandler; // @synthesize addPhotosRequestHandler=_addPhotosRequestHandler;
 @property(copy, nonatomic) CDUnknownBlockType productSubgroupSelectionHandler; // @synthesize productSubgroupSelectionHandler=_productSubgroupSelectionHandler;
 @property(readonly, nonatomic) KHPrintsProjectBundleController *projectBundleController; // @synthesize projectBundleController=_projectBundleController;
-- (void).cxx_destruct;
 - (void)cancelOperation:(id)arg1;
 - (void)viewWillLayout;
 - (void)viewDidAppear;

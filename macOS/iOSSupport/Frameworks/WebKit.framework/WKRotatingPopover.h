@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     id <WKRotatingPopoverDelegate> _dismissionDelegate;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) id <WKRotatingPopoverDelegate> dismissionDelegate; // @synthesize dismissionDelegate=_dismissionDelegate;
 @property(nonatomic) struct CGPoint presentationPoint; // @synthesize presentationPoint=_presentationPoint;
 @property(readonly, nonatomic) WKContentView *view; // @synthesize view=_view;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)didRotate:(id)arg1;
 - (void)willRotate:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *configurationSource; // @synthesize configurationSource=_configurationSource;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *configurationSource; // @synthesize configurationSource=_configurationSource;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

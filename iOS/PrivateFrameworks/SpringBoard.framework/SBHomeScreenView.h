@@ -13,8 +13,8 @@
     SBFStatusBarLegibilityView *_statusBarLegibilityView;
 }
 
-@property(readonly, nonatomic) SBFStatusBarLegibilityView *statusBarLegibilityView; // @synthesize statusBarLegibilityView=_statusBarLegibilityView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBFStatusBarLegibilityView *statusBarLegibilityView; // @synthesize statusBarLegibilityView=_statusBarLegibilityView;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
 - (void)setFrame:(struct CGRect)arg1;

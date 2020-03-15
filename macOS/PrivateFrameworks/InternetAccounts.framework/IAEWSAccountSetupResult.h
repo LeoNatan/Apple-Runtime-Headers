@@ -26,6 +26,7 @@
     NSURL *_autodiscoverURL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *autodiscoverURL; // @synthesize autodiscoverURL=_autodiscoverURL;
 @property(retain) NSString *rootFolderID; // @synthesize rootFolderID=_rootFolderID;
 @property(retain) NSURL *externalURL; // @synthesize externalURL=_externalURL;
@@ -40,7 +41,6 @@
 @property(retain) NSString *internalHost; // @synthesize internalHost=_internalHost;
 @property(retain) NSString *email; // @synthesize email=_email;
 @property(retain) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 
 @end
 

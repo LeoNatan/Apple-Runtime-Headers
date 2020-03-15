@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _centroid;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) id <_UIDruidDestinationConnection> druidConnection; // @synthesize druidConnection=_druidConnection;
 @property(nonatomic) unsigned long long progressIndicatorStyle; // @synthesize progressIndicatorStyle=_progressIndicatorStyle;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint centroid; // @synthesize centroid=_centroid;
 @property(readonly, nonatomic) _UIDropSessionImpl *dropSession; // @synthesize dropSession=_dropSession;
 @property(readonly, nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long draggingSourceOperationMask;
 - (struct CGPoint)draggingLocationInCoordinateSpace:(id)arg1;
 - (void)enumerateItemsUsingBlock:(CDUnknownBlockType)arg1;

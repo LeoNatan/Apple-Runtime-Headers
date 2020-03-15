@@ -17,12 +17,12 @@
     NSUUID *_sosTriggerUUID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *sosTriggerUUID; // @synthesize sosTriggerUUID=_sosTriggerUUID;
 @property(nonatomic) unsigned long long clickMax; // @synthesize clickMax=_clickMax;
 @property(nonatomic) _Bool didTriggerSOS; // @synthesize didTriggerSOS=_didTriggerSOS;
 @property(copy, nonatomic) NSArray *pressSequence; // @synthesize pressSequence=_pressSequence;
 @property(copy, nonatomic) NSString *pressName; // @synthesize pressName=_pressName;
-- (void).cxx_destruct;
 
 @end
 

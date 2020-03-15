@@ -25,12 +25,12 @@
 }
 
 + (id)passViewController;
+- (void).cxx_destruct;
 @property BOOL disableActions; // @synthesize disableActions=_disableActions;
 @property(readonly) BOOL isFlipped; // @synthesize isFlipped=_isFlipped;
 @property(readonly) PKPassBackView *backView; // @synthesize backView=_backView;
 @property(readonly) PKPassFrontView *frontView; // @synthesize frontView=_frontView;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)flipClicked:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)flipWithCompletionBlock:(CDUnknownBlockType)arg1;

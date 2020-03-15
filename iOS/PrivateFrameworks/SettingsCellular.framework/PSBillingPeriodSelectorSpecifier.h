@@ -16,9 +16,9 @@
     unsigned long long _selectedPeriod;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedPeriod; // @synthesize selectedPeriod=_selectedPeriod;
 @property(nonatomic) __weak id <PSBillingPeriodSelectorSpecifierDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)getBillingPeriod:(id)arg1;
 - (void)setBillingPeriod:(id)arg1 specifier:(id)arg2;
 - (id)initWithStatisticsCache:(id)arg1;

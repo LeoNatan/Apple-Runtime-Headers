@@ -19,6 +19,7 @@
     NSLayoutConstraint *_trailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *trailingConstraint; // @synthesize trailingConstraint=_trailingConstraint;
 @property(retain) NSLayoutConstraint *leadingConstraint; // @synthesize leadingConstraint=_leadingConstraint;
 @property(retain) NSMutableArray *spacingConstraints; // @synthesize spacingConstraints=_spacingConstraints;
@@ -26,7 +27,6 @@
 @property(retain) NSMutableArray *iViews; // @synthesize iViews=_iViews;
 @property(nonatomic) double padding; // @synthesize padding=_padding;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)removeView:(id)arg1;
 - (void)removeViewAtIndex:(unsigned long long)arg1;

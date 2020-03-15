@@ -15,10 +15,10 @@
     UIView *_selectedRingView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *selectedRingView; // @synthesize selectedRingView=_selectedRingView;
 @property(readonly, nonatomic) WFFloatingView *floatingView; // @synthesize floatingView=_floatingView;
 @property(copy, nonatomic) NSString *colorName; // @synthesize colorName=_colorName;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;

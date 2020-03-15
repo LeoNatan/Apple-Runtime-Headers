@@ -13,8 +13,9 @@
     NSArray *_contentClasses;
 }
 
-@property(retain, nonatomic) NSArray *contentClasses; // @synthesize contentClasses=_contentClasses;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *contentClasses; // @synthesize contentClasses=_contentClasses;
+- (id)targetDataInfo;
 - (id)selectedApp;
 - (id)outputContentClasses;
 - (id)inputContentClasses;

@@ -35,8 +35,8 @@
 }
 
 + (id)_assetFileHandleWithName:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, copy) NSString *description;
 - (void)_queue_endFetchChangesOperation:(id)arg1 success:(_Bool)arg2 error:(id)arg3;
 - (id)_assetExtractionFailureCountKey;

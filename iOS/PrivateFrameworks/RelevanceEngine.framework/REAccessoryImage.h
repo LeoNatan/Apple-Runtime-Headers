@@ -16,8 +16,8 @@
     REImage *_image;
 }
 
-@property(copy, nonatomic) REImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(copy, nonatomic) REImage *image; // @synthesize image=_image;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

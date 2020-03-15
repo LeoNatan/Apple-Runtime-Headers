@@ -14,8 +14,8 @@
 }
 
 + (id)languageMapping;
-@property(retain, nonatomic) NSCharacterSet *characterSet; // @synthesize characterSet=_characterSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCharacterSet *characterSet; // @synthesize characterSet=_characterSet;
 - (id)unspeakableRangeOfText:(id)arg1;
 - (id)initWithLanguage:(id)arg1;
 

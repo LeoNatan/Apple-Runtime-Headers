@@ -15,9 +15,9 @@
     id <SVXTaskTracking> _taskTracker;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVXTaskTracking> taskTracker; // @synthesize taskTracker=_taskTracker;
 @property(readonly, copy, nonatomic) SAUIDelayedActionCommand *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 taskTracker:(id)arg2;
 
 @end

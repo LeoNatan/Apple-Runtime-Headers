@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     CNContactStore *_contactStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNContactListBannerView *meBanner; // @synthesize meBanner=_meBanner;
 @property(retain, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) CNContactFormatter *formatter; // @synthesize formatter=_formatter;
 @property(retain, nonatomic) NSArray *people; // @synthesize people=_people;
-- (void).cxx_destruct;
 - (void)bannerViewWasSelectedToPresentPeoplePicker:(id)arg1;
 - (void)bannerView:(id)arg1 wasSelectedToPresentMeContact:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

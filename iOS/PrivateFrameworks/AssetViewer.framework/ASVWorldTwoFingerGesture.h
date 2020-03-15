@@ -15,9 +15,9 @@
     ASVWorldGestureDragOffsetCorrector *_dragOffsetCorrector;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASVWorldGestureDragOffsetCorrector *dragOffsetCorrector; // @synthesize dragOffsetCorrector=_dragOffsetCorrector;
 @property(nonatomic) __weak id <ASVWorldTwoFingerGestureDelegate> worldDelegate; // @synthesize worldDelegate=_worldDelegate;
-- (void).cxx_destruct;
 - (void)finishGesture;
 - (void)updatePanWithFirstTouchLocation:secondTouchLocation:midPoint: /* Error: Ran out of types for this method. */;
 - (id)initWithFirstTouch:(id)arg1 secondTouch:(id)arg2 dataSource:(id)arg3 worldDelegate:(id)arg4;

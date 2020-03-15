@@ -49,6 +49,7 @@
 + (id)knownImmutableKeys;
 + (id)notificationWithCalendarNotification:(id)arg1 eventStore:(id)arg2;
 + (Class)_realClassForNotification:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *proposedEndDateUnadjustedFromUTC; // @synthesize proposedEndDateUnadjustedFromUTC;
 @property(readonly, nonatomic) NSDate *proposedStartDateUnadjustedFromUTC; // @synthesize proposedStartDateUnadjustedFromUTC;
 @property(readonly, nonatomic) NSNumber *senders; // @synthesize senders;
@@ -73,7 +74,6 @@
 @property(readonly, nonatomic) NSString *title; // @synthesize title;
 @property(readonly) NSString *uuid; // @synthesize uuid;
 @property(readonly, nonatomic) NSNumber *notificationType; // @synthesize notificationType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsJunkReporting;
 @property(readonly, nonatomic) NSString *sendersPhoneNumber;
 @property(readonly, nonatomic) NSString *sendersEmail;

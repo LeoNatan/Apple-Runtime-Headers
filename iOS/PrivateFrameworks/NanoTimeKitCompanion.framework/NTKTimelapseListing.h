@@ -23,10 +23,10 @@
     long long _videoIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKPhotoAnalysis *photoAnalysis; // @synthesize photoAnalysis=_photoAnalysis;
 @property(readonly, nonatomic) long long videoIndex; // @synthesize videoIndex=_videoIndex;
 @property(readonly, nonatomic) unsigned long long theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (void)discardAssets;
 - (_Bool)snapshotDiffers:(id)arg1;
 @property(readonly, nonatomic) UIImage *image;

@@ -23,9 +23,9 @@
 
 + (id)daemonProtocolInterface;
 + (id)daemonProtocolInterfaceInstance;
+- (void).cxx_destruct;
 @property(retain) SMWindowsAnalyzer *windowsAnalyzer; // @synthesize windowsAnalyzer=_windowsAnalyzer;
 @property(retain) SMPaths *pather; // @synthesize pather=_pather;
-- (void).cxx_destruct;
 - (void)submitMigrationRequest:(id)arg1;
 - (void)cancelSizingForSystemID:(id)arg1;
 - (void)hasCustomPathsForSourceSystem:(id)arg1 andDestinationSystem:(id)arg2 reply:(CDUnknownBlockType)arg3;

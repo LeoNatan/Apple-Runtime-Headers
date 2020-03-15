@@ -17,10 +17,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain) NSMutableSet *bugSessionIdentifiers; // @synthesize bugSessionIdentifiers=_bugSessionIdentifiers;
-- (void).cxx_destruct;
 - (id)_indexKeyForBugSessionIdentifier:(id)arg1;
 - (id)_indexKeyForBugSession:(id)arg1;
 - (void)removeBugSession:(id)arg1;

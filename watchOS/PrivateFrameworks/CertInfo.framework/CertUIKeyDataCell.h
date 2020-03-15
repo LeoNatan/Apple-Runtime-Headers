@@ -15,10 +15,10 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *keyLabel; // @synthesize keyLabel=_keyLabel;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

@@ -18,10 +18,10 @@
     CDUnknownBlockType _callback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) id <_CDUserContext> context; // @synthesize context=_context;
 @property(readonly, nonatomic) REDuetContextQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)_evaluateQueryWithRegistration:(_Bool)arg1;
 - (void)evaluateQuery;
 - (void)deregisterWithContext;

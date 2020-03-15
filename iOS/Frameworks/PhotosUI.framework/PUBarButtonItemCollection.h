@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *__placeholderBarButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBarButtonItem *_placeholderBarButtonItem; // @synthesize _placeholderBarButtonItem=__placeholderBarButtonItem;
 @property(readonly, nonatomic) UIBarButtonItem *_flexibleSpaceBarButtonItem; // @synthesize _flexibleSpaceBarButtonItem=__flexibleSpaceBarButtonItem;
 @property(retain, nonatomic, setter=_setPreviousResult:) NSArray *_previousResult; // @synthesize _previousResult=__previousResult;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUBarButtonItemCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSIndexSet *centeredItemIdentifiers; // @synthesize centeredItemIdentifiers=_centeredItemIdentifiers;
 @property(retain, nonatomic) NSArray *identifiersOrder; // @synthesize identifiersOrder=_identifiersOrder;
-- (void).cxx_destruct;
 - (void)_centersButtonsIfNeeded:(id)arg1 identifiers:(id)arg2;
 - (id)_arrangedBarButtonItems:(id)arg1 identifiers:(id)arg2;
 - (id)_newEntryForIdentifiers:(id)arg1;

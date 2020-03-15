@@ -25,12 +25,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL synchronizesToBackingStoreAutomatically; // @synthesize synchronizesToBackingStoreAutomatically=_synchronizesToBackingStoreAutomatically;
 @property BOOL synchronizesTextLayoutManagersAutomatically; // @synthesize synchronizesTextLayoutManagersAutomatically=_synchronizesTextLayoutManagersAutomatically;
 @property unsigned long long maximumNumberOfUncachedElements; // @synthesize maximumNumberOfUncachedElements=_maximumNumberOfUncachedElements;
 @property(readonly, copy) NSArray *textLayoutManagers; // @synthesize textLayoutManagers=_textLayoutManagers;
 @property __weak id <NSTextContentManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)synchronizeToBackingStore:(CDUnknownBlockType)arg1;
 - (void)replaceCharactersInRange:(id)arg1 withTextElements:(id)arg2;
 - (id)enumerateTextElementsFromLocation:(id)arg1 options:(long long)arg2 usingBlock:(CDUnknownBlockType)arg3;

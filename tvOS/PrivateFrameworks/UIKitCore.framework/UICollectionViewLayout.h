@@ -34,7 +34,7 @@
     NSIndexSet *_sections;
     NSIndexSet *_items;
     NSArray *_elementKinds;
-    struct _UICollectionViewCompositionLayout *_compositionLayout;
+    _UICollectionViewCompositionLayout *_compositionLayout;
     UICollectionViewLayout *_siblingLayout;
     struct CGPoint _layoutOffset;
     unsigned long long _layoutOffsetEdges;
@@ -49,15 +49,15 @@
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
-@property(nonatomic, getter=_sublayoutType, setter=_setSublayoutType:) long long sublayoutType; // @synthesize sublayoutType=_sublayoutType;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_sublayoutType, setter=_setSublayoutType:) long long sublayoutType; // @synthesize sublayoutType=_sublayoutType;
 - (id)_orthogonalScrollingTrace;
 - (_Bool)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
 - (struct CGRect)_orthogonalFrameWithOffsetElidedForItemWithLayoutAttributes:(id)arg1 frame:(struct CGRect)arg2;
 - (_Bool)_shouldOrthogonalScrollingSectionDecorationScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
 - (_Bool)_shouldOrthogonalScrollingSectionSupplementaryScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
 - (double)_orthogonalScrollingDecelerationRateForSection:(long long)arg1;
-- (int)_orthogonalScrollingAxis;
+- (unsigned long long)_orthogonalScrollingAxis;
 - (struct CGPoint)_orthogonalScrollingTargetContentOffsetForOffset:(struct CGPoint)arg1 section:(long long)arg2;
 - (_Bool)_orthogonalScrollingUsesTargetContentOffsetForSection:(long long)arg1;
 - (_Bool)_orthogonalScrollingShouldCenterCustomPagingSizeForSection:(long long)arg1;
@@ -72,7 +72,7 @@
 - (void)_setOffset:(struct CGPoint)arg1 forOrthogonalScrollingSection:(long long)arg2;
 - (id)_orthogonalScrollingSections;
 - (_Bool)_hasOrthogonalScrollingSections;
-- (int)_layoutAxis;
+- (unsigned long long)_layoutAxis;
 - (_Bool)_disallowsFadeCellsForBoundsChange;
 - (unsigned long long)_edgesForSafeAreaPropagationToDescendants;
 - (_Bool)_overridesSafeAreaPropagationToDescendants;
@@ -107,7 +107,7 @@
 @property(nonatomic, getter=_isPrepared, setter=_setPrepared:) _Bool prepared;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromLayout:(id)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toLayout:(id)arg2;
-- (struct CGPoint)_offsetInTopParentLayout:(struct _UICollectionViewCompositionLayout **)arg1;
+- (struct CGPoint)_offsetInTopParentLayout:(id *)arg1;
 @property(nonatomic, getter=_layoutOffsetEdges, setter=_setLayoutOffsetEdges:) unsigned long long layoutOffsetEdges;
 @property(nonatomic, getter=_layoutOffset, setter=_setLayoutOffset:) struct CGPoint layoutOffset;
 @property(nonatomic, getter=_siblingLayout, setter=_setSiblingLayout:) UICollectionViewLayout *siblingLayout;

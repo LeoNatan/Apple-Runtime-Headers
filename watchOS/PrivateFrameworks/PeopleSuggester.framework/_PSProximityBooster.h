@@ -13,8 +13,8 @@
     RPPeopleDiscovery *_peopleDiscovery;
 }
 
-@property(retain, nonatomic) RPPeopleDiscovery *peopleDiscovery; // @synthesize peopleDiscovery=_peopleDiscovery;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RPPeopleDiscovery *peopleDiscovery; // @synthesize peopleDiscovery=_peopleDiscovery;
 - (id)suggestionsByBoostingNearbySuggestions:(id)arg1;
 - (void)stopMonitoringProximity;
 - (void)startMonitoringProximity;

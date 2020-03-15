@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoard/SBBarSwipeAffordanceDelegate-Protocol.h>
 #import <SpringBoard/SBBarSwipeAffordanceObserver-Protocol.h>
 #import <SpringBoard/SBHomeGestureParticipantDelegate-Protocol.h>
 #import <SpringBoard/SBModalViewControllerStackDelegate-Protocol.h>
@@ -16,7 +17,7 @@
 @class NSString, SBAlertItem, SBBarSwipeAffordanceView, SBFWindow, SBHomeGestureArbiter, SBHomeGestureParticipant, SBModalViewControllerStack, SBSystemGestureManager;
 @protocol SBFLockOutStatusProvider;
 
-@interface SBSharedModalAlertItemPresenter : NSObject <_SBAlertControllerDelegate, SBModalViewControllerStackDelegate, UIAlertControllerCoordinatedActionPerforming, SBBarSwipeAffordanceObserver, SBHomeGestureParticipantDelegate, SBReachabilityObserver>
+@interface SBSharedModalAlertItemPresenter : NSObject <_SBAlertControllerDelegate, SBModalViewControllerStackDelegate, UIAlertControllerCoordinatedActionPerforming, SBBarSwipeAffordanceObserver, SBBarSwipeAffordanceDelegate, SBHomeGestureParticipantDelegate, SBReachabilityObserver>
 {
     id <SBFLockOutStatusProvider> _lockOutProvider;
     SBSystemGestureManager *_systemGestureManager;
@@ -27,9 +28,10 @@
     SBFWindow *_window;
 }
 
-@property(retain, nonatomic, getter=_modalViewControllerStack, setter=_setModalViewControllerStack:) SBModalViewControllerStack *modalViewControllerStack; // @synthesize modalViewControllerStack=_modalViewControllerStack;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_modalViewControllerStack, setter=_setModalViewControllerStack:) SBModalViewControllerStack *modalViewControllerStack; // @synthesize modalViewControllerStack=_modalViewControllerStack;
 - (void)homeGesturePerformedForBarSwipeAffordanceView:(id)arg1;
+- (unsigned long long)barSwipeAffordanceView:(id)arg1 systemGestureTypeForType:(long long)arg2;
 - (void)homeGestureParticipantOwningHomeGestureDidChange:(id)arg1;
 - (void)_updateBarSwipeViewWithAlertController:(id)arg1;
 - (void)_updateHomeGestureParticipantWithItemCountAdjustment:(long long)arg1;

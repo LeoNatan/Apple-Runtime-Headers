@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)contextUsingProfile:(id)arg1 source:(id)arg2;
-@property(readonly, nonatomic) __weak HRProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HRProfile *profile; // @synthesize profile=_profile;
 - (id)initWithProfile:(id)arg1 source:(id)arg2;
 - (id)initWithContext:(id)arg1 style:(long long)arg2;
 

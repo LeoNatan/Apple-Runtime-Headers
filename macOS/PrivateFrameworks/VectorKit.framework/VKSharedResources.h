@@ -36,9 +36,9 @@ __attribute__((visibility("hidden")))
     unsigned int _referenceCount;
 }
 
-@property(readonly, nonatomic) shared_ptr_dd2d1f5e stylesheetVendor; // @synthesize stylesheetVendor=_stylesheetVendor;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) shared_ptr_dd2d1f5e stylesheetVendor; // @synthesize stylesheetVendor=_stylesheetVendor;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)purgeDecompressSessionCachedBuffers;

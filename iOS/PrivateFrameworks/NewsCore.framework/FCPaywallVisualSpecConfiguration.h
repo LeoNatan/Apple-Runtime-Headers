@@ -30,6 +30,7 @@
 + (id)defaultMagazineFeedPaywallVisualSpecConfigurationLarge;
 + (id)defaultMagazineFeedPaywallVisualSpecConfigurationMedium;
 + (id)defaultMagazineFeedPaywallVisualSpecConfigurationSmall;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCColor *smallTextColor; // @synthesize smallTextColor=_smallTextColor;
 @property(retain, nonatomic) FCColor *largeTextColor; // @synthesize largeTextColor=_largeTextColor;
 @property(retain, nonatomic) FCColor *mastheadTextColor; // @synthesize mastheadTextColor=_mastheadTextColor;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(retain, nonatomic) FCMultiResolutionImage *darkStyleMultiResolutionImage; // @synthesize darkStyleMultiResolutionImage=_darkStyleMultiResolutionImage;
 @property(retain, nonatomic) FCMultiResolutionImage *multiResolutionImage; // @synthesize multiResolutionImage=_multiResolutionImage;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

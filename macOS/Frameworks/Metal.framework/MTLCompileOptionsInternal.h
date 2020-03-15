@@ -6,7 +6,7 @@
 
 #import <Metal/MTLCompileOptions.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MTLCompileOptionsInternal : MTLCompileOptions
@@ -21,8 +21,12 @@ __attribute__((visibility("hidden")))
     BOOL _compileTimeStatisticsEnabled;
     NSString *_additionalCompilerArguments;
     unsigned char _sourceLanguage;
+    unsigned long long _libraryType;
+    NSArray *_libraries;
 }
 
+- (void)setLibraryType:(unsigned long long)arg1;
+- (unsigned long long)libraryType;
 - (void)setSourceLanguage:(unsigned char)arg1;
 - (unsigned char)sourceLanguage;
 - (void)setCompileTimeStatisticsEnabled:(BOOL)arg1;
@@ -45,6 +49,8 @@ __attribute__((visibility("hidden")))
 - (id)additionalCompilerArguments;
 - (void)setPreprocessorMacros:(id)arg1;
 - (id)preprocessorMacros;
+- (void)setLibraries:(id)arg1;
+- (id)libraries;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

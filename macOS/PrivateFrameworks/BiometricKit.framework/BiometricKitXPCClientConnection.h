@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)connectionWithDeviceType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (void)taskResumeStatus:(int)arg1 client:(unsigned long long)arg2;
 - (void)templateUpdate:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;
 - (void)touchIDButtonPressed:(BOOL)arg1 client:(unsigned long long)arg2;

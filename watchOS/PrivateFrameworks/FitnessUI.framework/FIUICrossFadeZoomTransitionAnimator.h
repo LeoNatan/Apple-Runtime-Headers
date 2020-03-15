@@ -20,11 +20,11 @@
     UIView *_largeView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool zoomingUp; // @synthesize zoomingUp=_zoomingUp;
 @property(retain, nonatomic) UIView *largeView; // @synthesize largeView=_largeView;
 @property(retain, nonatomic) UIView *smallView; // @synthesize smallView=_smallView;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)completeTransitionImmediately;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;

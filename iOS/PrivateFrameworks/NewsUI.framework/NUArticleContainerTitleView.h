@@ -14,9 +14,9 @@
     NUPageStyle *_pageStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUPageStyle *pageStyle; // @synthesize pageStyle=_pageStyle;
 @property(readonly, nonatomic) NUTitleView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (void)applyPageStyle:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

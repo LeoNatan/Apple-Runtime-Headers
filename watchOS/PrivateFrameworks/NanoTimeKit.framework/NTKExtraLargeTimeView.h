@@ -22,10 +22,10 @@
     NTKDigitalTimeLabel *_timeMinuteView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKDigitalTimeLabel *timeMinuteView; // @synthesize timeMinuteView=_timeMinuteView;
 @property(retain, nonatomic) NTKDigitalTimeLabel *timeHourView; // @synthesize timeHourView=_timeHourView;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
-- (void).cxx_destruct;
 - (void)tritium_didTransitionToTritiumOff;
 - (void)tritium_willTransitionToTritiumOn;
 - (void)tritium_transitionToFrameSpecifier:(id)arg1;

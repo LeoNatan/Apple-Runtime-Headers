@@ -42,6 +42,7 @@
     unsigned long long _peerFeatureFlags;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType promptForRoomHandler; // @synthesize promptForRoomHandler=_promptForRoomHandler;
 @property(copy, nonatomic) CDUnknownBlockType promptForPINHandler; // @synthesize promptForPINHandler=_promptForPINHandler;
 @property(copy, nonatomic) CDUnknownBlockType promptForHomeiCloudHandler; // @synthesize promptForHomeiCloudHandler=_promptForHomeiCloudHandler;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned long long peerFeatureFlags; // @synthesize peerFeatureFlags=_peerFeatureFlags;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (_Bool)_verifyiCloudMatch:(unsigned long long)arg1 error:(id *)arg2;
 - (void)_homeKitUpdateiCloudSwitchState:(_Bool)arg1;
 - (int)_runFinish:(_Bool)arg1;

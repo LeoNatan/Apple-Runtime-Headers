@@ -20,9 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasUnknownSection; // @synthesize hasUnknownSection=_hasUnknownSection;
 @property(readonly, copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long count;
 - (unsigned long long)indexOfSectionForSectionIndexTitleAtIndex:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

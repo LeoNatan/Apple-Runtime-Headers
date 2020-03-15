@@ -16,11 +16,11 @@
     SFPunchout *_trailer_punchout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFPunchout *trailer_punchout; // @synthesize trailer_punchout=_trailer_punchout;
 @property(retain, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(retain, nonatomic) NSImage *image_overlay; // @synthesize image_overlay=_image_overlay;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithSFSearchResult:(id)arg1 mediaItem:(id)arg2;
 
 @end

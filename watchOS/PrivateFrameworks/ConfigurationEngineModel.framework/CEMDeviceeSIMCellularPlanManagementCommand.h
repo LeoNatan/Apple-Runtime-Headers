@@ -20,8 +20,8 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
-@property(copy, nonatomic) NSString *payloadESIMServerURL; // @synthesize payloadESIMServerURL=_payloadESIMServerURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadESIMServerURL; // @synthesize payloadESIMServerURL=_payloadESIMServerURL;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

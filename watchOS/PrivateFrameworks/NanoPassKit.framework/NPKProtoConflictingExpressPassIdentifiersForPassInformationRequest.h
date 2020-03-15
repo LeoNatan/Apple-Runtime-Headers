@@ -17,9 +17,9 @@
 }
 
 + (Class)referenceExpressPassesInformationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *referenceExpressPassesInformations; // @synthesize referenceExpressPassesInformations=_referenceExpressPassesInformations;
 @property(retain, nonatomic) NSData *expressPassInformation; // @synthesize expressPassInformation=_expressPassInformation;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

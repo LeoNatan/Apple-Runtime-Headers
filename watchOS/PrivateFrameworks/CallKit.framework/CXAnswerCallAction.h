@@ -18,13 +18,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (double)timeout;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *dateConnected; // @synthesize dateConnected=_dateConnected;
 @property(nonatomic) _Bool downgradeToAudio; // @synthesize downgradeToAudio=_downgradeToAudio;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize)arg1;
 - (struct CGSize)localLandscapeAspectRatio;
 - (void)setLocalPortraitAspectRatio:(struct CGSize)arg1;
 - (struct CGSize)localPortraitAspectRatio;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone *)arg2;

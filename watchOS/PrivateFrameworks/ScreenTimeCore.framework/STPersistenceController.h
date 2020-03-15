@@ -19,10 +19,10 @@
     NSObject<OS_dispatch_queue> *_coreDataQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *coreDataQueue; // @synthesize coreDataQueue=_coreDataQueue;
 @property(readonly, copy, nonatomic) NSMutableDictionary *lastPersistentHistoryTokenByStoreIdentifier; // @synthesize lastPersistentHistoryTokenByStoreIdentifier=_lastPersistentHistoryTokenByStoreIdentifier;
 @property(retain, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
-- (void).cxx_destruct;
 - (void)_logAboutMissingStoreName:(id)arg1;
 - (void)_persistentStoreCoordinatorStoresDidChange:(id)arg1;
 - (void)_remotePersistentStoreDidChange:(id)arg1;

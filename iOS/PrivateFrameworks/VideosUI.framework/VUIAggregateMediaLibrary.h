@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingConnectionState;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUISidebandMediaLibrary *sidebandMediaLibrary; // @synthesize sidebandMediaLibrary=_sidebandMediaLibrary;
 @property(readonly, nonatomic) VUIDeviceMediaLibrary *deviceMediaLibrary; // @synthesize deviceMediaLibrary=_deviceMediaLibrary;
-- (void).cxx_destruct;
 - (void)_sidebandMediaLibraryContentsDidChangeNotification:(id)arg1;
 - (void)_deviceMediaLibraryContentsDidChange:(id)arg1;
 - (id)_imageLoadOperationWithParams:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3;

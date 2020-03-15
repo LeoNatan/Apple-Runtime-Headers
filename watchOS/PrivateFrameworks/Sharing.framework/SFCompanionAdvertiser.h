@@ -16,10 +16,10 @@
     NSString *_serviceType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property _Bool supportsStreams; // @synthesize supportsStreams=_supportsStreams;
 @property id <SFCompanionAdvertiserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (void)getContinuationStreamsWithEndpointData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

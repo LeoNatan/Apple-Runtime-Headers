@@ -21,10 +21,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)successfullyPurchasedItemID:(id)arg1;
 + (id)failedToPurchaseItemID:(id)arg1 withError:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSNumber *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

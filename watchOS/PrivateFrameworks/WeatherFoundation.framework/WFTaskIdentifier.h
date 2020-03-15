@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)defaultIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

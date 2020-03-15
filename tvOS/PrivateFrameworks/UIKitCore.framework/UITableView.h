@@ -354,6 +354,7 @@
 + (void)_setupIdiom:(long long)arg1 forTableViewStyle:(long long)arg2 includingBackground:(_Bool)arg3;
 + (void)_initializeForIdiom:(long long)arg1;
 + (_Bool)_isInternalTableView;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_cachedSectionIndexBarInsets, setter=_setCachedSectionIndexBarInsets:) struct UIEdgeInsets cachedSectionIndexBarInsets; // @synthesize cachedSectionIndexBarInsets=_cachedSectionIndexBarInsets;
 @property(copy, nonatomic, getter=_indexPathToFocus, setter=_setIndexPathToFocus:) NSIndexPath *indexPathToFocus; // @synthesize indexPathToFocus=_indexPathToFocus;
 @property(retain, nonatomic, getter=_focusedCell, setter=_setFocusedCell:) UIView *focusedCell; // @synthesize focusedCell=_focusedCell;
@@ -369,7 +370,6 @@
 @property(nonatomic) double estimatedSectionHeaderHeight; // @synthesize estimatedSectionHeaderHeight=_estimatedSectionHeaderHeight;
 @property(nonatomic) double estimatedRowHeight; // @synthesize estimatedRowHeight=_estimatedRowHeight;
 @property(retain, nonatomic) UITouch *currentTouch; // @synthesize currentTouch=_currentTouch;
-- (void).cxx_destruct;
 - (void)_performUsingPresentationValues:(CDUnknownBlockType)arg1;
 - (id)_dataSourceIndexPathForPresentationIndexPath:(id)arg1;
 - (id)_presentationIndexPathForDataSourceIndexPath:(id)arg1;

@@ -12,8 +12,8 @@
 
 + (id)_fakeWorkoutsForLastWeekWithPersonUUID:(id)arg1 dailySnapshotProbability:(double)arg2;
 + (id)_fakeWorkoutsForIndex:(long long)arg1 personUUID:(id)arg2;
-+ (struct _HKFitnessFriendWorkout *)_fakeWorkoutDuringDayStartingAtDate:(id)arg1 personUUID:(id)arg2;
-+ (struct _HKFitnessFriendAchievement *)_fakeAchievementDuringDayStartingAtDate:(id)arg1 personUUID:(id)arg2;
++ (id)_fakeWorkoutDuringDayStartingAtDate:(id)arg1 personUUID:(id)arg2;
++ (id)_fakeAchievementDuringDayStartingAtDate:(id)arg1 personUUID:(id)arg2;
 + (id)_appleWatchSourceRevision;
 + (id)_fakeFriendListWithDemoFileName:(id)arg1;
 + (id)fakeFirstGlanceFriendListForMarketing;

@@ -21,8 +21,8 @@
     NSLayoutManager *_layoutManager;
 }
 
-@property(readonly, nonatomic) NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 - (void)adjustFirstLineRect:(inout struct CGRect *)arg1 bodyRect:(inout struct CGRect *)arg2 lastLineRect:(inout struct CGRect *)arg3 textOrigin:(struct CGPoint)arg4;
 - (struct CGRect)_rawBoundingRect;
 - (struct CGRect)_correctlyOffsetBoundingRect;

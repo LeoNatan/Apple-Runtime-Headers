@@ -30,6 +30,7 @@
     NSMutableArray *_updatedActions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updatedActions; // @synthesize updatedActions=_updatedActions;
 @property(nonatomic) _Bool shouldPlayMediaAfterExpanded; // @synthesize shouldPlayMediaAfterExpanded=_shouldPlayMediaAfterExpanded;
 @property(retain, nonatomic) NSMutableArray *queuedRequests; // @synthesize queuedRequests=_queuedRequests;
@@ -44,7 +45,6 @@
 @property(nonatomic) double contentSizeRatio; // @synthesize contentSizeRatio=_contentSizeRatio;
 @property(retain, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(nonatomic) __weak id <NCNotificationCustomContentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_contentHeightForWidth:(double)arg1;
 - (void)_loadExtensionViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (id)remoteService;

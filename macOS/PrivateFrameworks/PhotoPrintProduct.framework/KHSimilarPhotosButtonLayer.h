@@ -15,10 +15,10 @@
     CAShapeLayer *_tildeLayer2;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *tildeLayer2; // @synthesize tildeLayer2=_tildeLayer2;
 @property(retain, nonatomic) CAShapeLayer *tildeLayer1; // @synthesize tildeLayer1=_tildeLayer1;
 @property(retain, nonatomic) CAShapeLayer *roundShapeLayer; // @synthesize roundShapeLayer=_roundShapeLayer;
-- (void).cxx_destruct;
 - (BOOL)containsPoint:(struct CGPoint)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)_configureTildeLayer:(id)arg1 isUpperChain:(BOOL)arg2;

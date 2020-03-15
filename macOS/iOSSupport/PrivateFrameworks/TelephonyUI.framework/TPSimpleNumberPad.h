@@ -17,9 +17,9 @@
 }
 
 + (id)_numberPadCharacters;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsDeleteButton; // @synthesize showsDeleteButton=_showsDeleteButton;
 @property id <TPSimpleNumberPadDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setNumberButtonsEnabled:(BOOL)arg1;
 - (void)_updateDeleteButton;
 - (void)_deleteButtonClicked:(id)arg1 withEvent:(id)arg2;

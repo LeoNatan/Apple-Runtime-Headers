@@ -16,9 +16,9 @@
     _Bool _shouldSnapRouteMatchToRoute;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSnapRouteMatchToRoute; // @synthesize shouldSnapRouteMatchToRoute=_shouldSnapRouteMatchToRoute;
 @property(nonatomic) _Bool useStrictInitialOnRouteCriteria; // @synthesize useStrictInitialOnRouteCriteria=_useStrictInitialOnRouteCriteria;
-- (void).cxx_destruct;
 - (_Bool)_supportsSnapping;
 - (_Bool)_shouldConsiderCourseForLocation:(id)arg1;
 - (double)_scoreModifierForStep:(id)arg1 previousStep:(id)arg2;

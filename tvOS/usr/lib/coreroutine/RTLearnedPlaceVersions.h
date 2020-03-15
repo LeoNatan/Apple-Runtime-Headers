@@ -18,11 +18,11 @@
     RTLearnedPlace *_truthfulCounterpart;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRotted; // @synthesize isRotted=_isRotted;
 @property(retain, nonatomic) RTLearnedPlace *truthfulCounterpart; // @synthesize truthfulCounterpart=_truthfulCounterpart;
 @property(retain, nonatomic) RTLearnedPlace *existingVersion; // @synthesize existingVersion=_existingVersion;
 @property(retain, nonatomic) RTLearnedPlace *inferredVersion; // @synthesize inferredVersion=_inferredVersion;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)trueVersion;
 

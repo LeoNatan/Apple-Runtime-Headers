@@ -15,10 +15,10 @@
     NSMutableDictionary *_reuseableObjects;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableDictionary *reuseableObjects; // @synthesize reuseableObjects=_reuseableObjects;
 @property(copy, nonatomic) NSMutableDictionary *inuseObjects; // @synthesize inuseObjects=_inuseObjects;
 @property(copy, nonatomic) CDUnknownBlockType reuseFactory; // @synthesize reuseFactory=_reuseFactory;
-- (void).cxx_destruct;
 - (id)inUseObjectForIdentifier:(id)arg1;
 - (_Bool)isInUse:(id)arg1;
 - (void)purgeObjectForIdentifier:(id)arg1;

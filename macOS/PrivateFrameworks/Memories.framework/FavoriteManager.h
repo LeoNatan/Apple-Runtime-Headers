@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 + (id)subtractRange:(struct _NSRange)arg1 fromRange:(struct _NSRange)arg2;
 + (BOOL)favoriteRanges:(id)arg1 containRange:(struct _NSRange)arg2;
 + (id)sharedFavoriteManager;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMigrating) BOOL migrating; // @synthesize migrating=_migrating;
 @property(retain, nonatomic) NSRecursiveLock *dictLock; // @synthesize dictLock=_dictLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *serialQueueGroup; // @synthesize serialQueueGroup=_serialQueueGroup;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) NSMutableDictionary *favoriteDictionary; // @synthesize favoriteDictionary=_favoriteDictionary;
-- (void).cxx_destruct;
 - (id)combinedRCRangeArrayFromNSRangeArray:(id)arg1;
 - (void)_setFavoriteInfo:(id)arg1 forURL:(id)arg2;
 - (void)_removeFavoriteInfoForURL:(id)arg1;

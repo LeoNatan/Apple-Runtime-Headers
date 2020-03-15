@@ -21,8 +21,8 @@
     id <EFLazyCacheDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <EFLazyCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <EFLazyCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
 - (id)cachedObjectForKey:(id)arg1;
 - (id)storedObjectForKey:(id)arg1;

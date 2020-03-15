@@ -16,11 +16,11 @@
     UIImageView *_rightArrowView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *rightArrowView; // @synthesize rightArrowView=_rightArrowView;
 @property(retain, nonatomic) UIImageView *leftArrowView; // @synthesize leftArrowView=_leftArrowView;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_animateLabel:(id)arg1 withNewText:(id)arg2 inDirection:(struct CGSize)arg3;
 - (struct CGSize)_normalizedVector:(struct CGSize)arg1;
 - (struct CGSize)_vectorFromEdge:(unsigned long long)arg1;

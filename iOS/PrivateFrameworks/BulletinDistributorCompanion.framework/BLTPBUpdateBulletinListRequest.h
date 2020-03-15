@@ -15,8 +15,8 @@
     BLTPBFullBulletinList *_bulletinList;
 }
 
-@property(retain, nonatomic) BLTPBFullBulletinList *bulletinList; // @synthesize bulletinList=_bulletinList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BLTPBFullBulletinList *bulletinList; // @synthesize bulletinList=_bulletinList;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

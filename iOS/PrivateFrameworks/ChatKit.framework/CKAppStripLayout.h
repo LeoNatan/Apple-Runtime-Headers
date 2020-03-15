@@ -22,10 +22,10 @@
 
 + (double)maxHeight;
 + (double)minHeight;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowCellBorders; // @synthesize shouldShowCellBorders=_shouldShowCellBorders;
 @property(nonatomic) _Bool shouldDimPluginCells; // @synthesize shouldDimPluginCells=_shouldDimPluginCells;
 @property(nonatomic) unsigned long long layoutMode; // @synthesize layoutMode=_layoutMode;
-- (void).cxx_destruct;
 - (id)layoutAttributesForInteractivelyMovingItemAtIndexPath:(id)arg1 withTargetPosition:(struct CGPoint)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;

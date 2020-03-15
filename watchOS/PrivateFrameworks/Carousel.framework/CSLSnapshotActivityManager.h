@@ -23,6 +23,7 @@
     CSLApplicationUpgradeMonitor *_upgradeMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLApplicationUpgradeMonitor *upgradeMonitor; // @synthesize upgradeMonitor=_upgradeMonitor;
 @property(retain, nonatomic) NSSet *complicationBundleIDs; // @synthesize complicationBundleIDs=_complicationBundleIDs;
 @property(retain, nonatomic) NSSet *dockBundleIDs; // @synthesize dockBundleIDs=_dockBundleIDs;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *controllerMap; // @synthesize controllerMap=_controllerMap;
 @property(nonatomic) __weak CSLSnapshotService *snapshotService; // @synthesize snapshotService=_snapshotService;
 @property __weak id <CSLSnapshotActivityManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (double)returnToPrimaryUIIntervalForBundleID:(id)arg1;

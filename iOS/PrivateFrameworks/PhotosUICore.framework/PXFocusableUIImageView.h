@@ -6,13 +6,19 @@
 
 #import <UIKit/UIImageView.h>
 
+@class UIView;
+
 @interface PXFocusableUIImageView : UIImageView
 {
+    UIView *_overlayView;
     _Bool _allowsFocus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;
+- (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

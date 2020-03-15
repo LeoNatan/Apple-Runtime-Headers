@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     MPUContentSizeLayoutConstraint *_bottomLabelConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool overlayHidden; // @synthesize overlayHidden=_overlayHidden;
 @property(retain, nonatomic) MPUContentSizeLayoutConstraint *bottomLabelConstraint; // @synthesize bottomLabelConstraint=_bottomLabelConstraint;
 @property(retain, nonatomic) MPUContentSizeLayoutConstraint *descriptionLeadingConstraint; // @synthesize descriptionLeadingConstraint=_descriptionLeadingConstraint;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *zoomingImageTransitionIdentifier; // @synthesize zoomingImageTransitionIdentifier=_zoomingImageTransitionIdentifier;
 @property(nonatomic) _Bool allowsPinchingImageForInteractiveZoomingImageTransition; // @synthesize allowsPinchingImageForInteractiveZoomingImageTransition=_allowsPinchingImageForInteractiveZoomingImageTransition;
 @property(nonatomic) unsigned long long imageIndex; // @synthesize imageIndex=_imageIndex;
-- (void).cxx_destruct;
 - (void)_handleSingleTap:(id)arg1;
 - (void)_handlePinch:(id)arg1;
 - (void)_handleDoubleTap:(id)arg1;

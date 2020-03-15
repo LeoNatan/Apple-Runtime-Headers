@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
     double _builtViewUnitsPerPoint;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VKPolylineOverlayRenderRegion *renderRegion; // @synthesize renderRegion=_renderRegion;
 @property(nonatomic) id <VKRouteLineObserverProtocol> observer; // @synthesize observer=_observer;
 @property(nonatomic) double simplificationEpsilonPoints; // @synthesize simplificationEpsilonPoints=_simplificationEpsilonPoints;
@@ -41,8 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VKPolylineOverlay *overlay; // @synthesize overlay=_overlay;
 @property(readonly, nonatomic) Box_3d7e3c2c bounds; // @synthesize bounds=_bounds;
 @property(readonly, nonatomic) vector_78427fd2 sections; // @synthesize sections=_sections;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (double)boundsUnitsPerMeter;
 - (Matrix_08d701e4)maneuverTransform;
 - (Matrix_08d701e4)inverseManeuverTransform;

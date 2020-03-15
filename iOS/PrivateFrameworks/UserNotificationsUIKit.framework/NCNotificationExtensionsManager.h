@@ -16,9 +16,9 @@
 
 + (id)sharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id extensionsDiscoveryToken; // @synthesize extensionsDiscoveryToken=_extensionsDiscoveryToken;
 @property(retain, nonatomic) NCNotificationExtensionCache *extensionsCache; // @synthesize extensionsCache=_extensionsCache;
-- (void).cxx_destruct;
 - (void)_stopMatchingExtensions;
 - (void)_beginMatchingExtensions;
 - (id)_matchingAttributes;

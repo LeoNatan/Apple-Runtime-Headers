@@ -32,8 +32,8 @@
 + (void)enumerateSystemBudgets:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (id)descriptionForBudgets:(unsigned int)arg1;
 + (id)descriptionForBudget:(unsigned int)arg1;
-@property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void)watcher:(id)arg1 stateDidChangeToNetworkState:(id)arg2;
 - (void)scheduledOverrideDidEnd:(id)arg1;
 @property(readonly) _Bool isDataBudgetOverriden;

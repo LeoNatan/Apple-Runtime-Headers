@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long height; // @synthesize height=_height;
 @property(readonly) unsigned long long width; // @synthesize width=_width;
 @property(readonly) CDStruct_1b6d18a9 timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(readonly) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 timeOffset:(CDStruct_1b6d18a9)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

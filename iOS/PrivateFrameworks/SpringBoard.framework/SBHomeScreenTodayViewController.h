@@ -33,6 +33,7 @@
 }
 
 + (double)_verticalSpacingBetweenWidgets;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresScrolling; // @synthesize ignoresScrolling=_ignoresScrolling;
 @property(nonatomic) long long pullToSearchState; // @synthesize pullToSearchState=_pullToSearchState;
 @property(nonatomic) __weak id <SBHomeScreenTodayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) UIViewController *spotlightViewController; // @synthesize spotlightViewController=_spotlightViewController;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) SBViewControllerTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
-- (void).cxx_destruct;
 - (void)_updateScrollViewContentInsetAndOffsetIfNecessary;
 - (void)_statusBarHeightDidChange:(id)arg1;
 - (void)_updateLegibilitySettings;

@@ -8,7 +8,7 @@
 
 #import <Network/NSCopying-Protocol.h>
 
-@class NSString, NWAWDNWL2Report;
+@class NSString, NWAWDNWDeviceReport, NWAWDNWL2Report;
 
 __attribute__((visibility("hidden")))
 @interface NWAWDNWActivity : PBCodable <NSCopying>
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _activityLabel;
     unsigned long long _timestamp;
     NSString *_activityUUID;
+    NWAWDNWDeviceReport *_deviceReport;
     NWAWDNWL2Report *_l2Report;
     NSString *_parentActivityUUID;
     BOOL _isRetry;
@@ -28,6 +29,8 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NWAWDNWDeviceReport *deviceReport; // @synthesize deviceReport=_deviceReport;
 @property(retain, nonatomic) NWAWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
 @property(nonatomic) BOOL isRetry; // @synthesize isRetry=_isRetry;
 @property(retain, nonatomic) NSString *parentActivityUUID; // @synthesize parentActivityUUID=_parentActivityUUID;
@@ -35,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long activityLabel; // @synthesize activityLabel=_activityLabel;
 @property(nonatomic) unsigned long long activityDomain; // @synthesize activityDomain=_activityDomain;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasDeviceReport;
 @property(readonly, nonatomic) BOOL hasL2Report;
 @property(nonatomic) BOOL hasIsRetry;
 @property(readonly, nonatomic) BOOL hasParentActivityUUID;

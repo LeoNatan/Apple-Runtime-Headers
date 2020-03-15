@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isIdentity; // @synthesize isIdentity=_isIdentity;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, copy, nonatomic) NSString *commonName; // @synthesize commonName=_commonName;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

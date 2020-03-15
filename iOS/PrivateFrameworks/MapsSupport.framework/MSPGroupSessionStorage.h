@@ -32,6 +32,7 @@
 + (Class)liveStrategyIdentifierType;
 + (Class)minimalStrategyIdentifierType;
 + (id)groupStorageWithIdentifier:(id)arg1 originator:(id)arg2 receivingHandle:(id)arg3 receivingAccountIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *receivingAccountIdentifier; // @synthesize receivingAccountIdentifier=_receivingAccountIdentifier;
 @property(retain, nonatomic) NSString *receivingHandle; // @synthesize receivingHandle=_receivingHandle;
 @property(retain, nonatomic) NSMutableArray *messageStrategyIdentifiers; // @synthesize messageStrategyIdentifiers=_messageStrategyIdentifiers;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) GEOSharedNavState *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *originatorIdentifier; // @synthesize originatorIdentifier=_originatorIdentifier;
 @property(retain, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

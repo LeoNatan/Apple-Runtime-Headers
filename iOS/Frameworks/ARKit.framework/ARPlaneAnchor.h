@@ -25,6 +25,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isClassificationSupported;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *classificationLabel; // @synthesize classificationLabel=_classificationLabel;
 @property(copy, nonatomic) NSDictionary *possibleClassifications; // @synthesize possibleClassifications=_possibleClassifications;
 @property(nonatomic) long long worldAlignmentRotation; // @synthesize worldAlignmentRotation=_worldAlignmentRotation;
@@ -32,7 +33,7 @@
 @property(retain, nonatomic) ARPatchGrid *gridExtent; // @synthesize gridExtent=_gridExtent;
 @property(nonatomic) long long classification; // @synthesize classification=_classification;
 @property(nonatomic) long long classificationStatus; // @synthesize classificationStatus=_classificationStatus;
-@property(retain, nonatomic) ARPlaneGeometry *geometry; // @synthesize geometry=_geometry;
+@property(retain) ARPlaneGeometry *geometry; // @synthesize geometry=_geometry;
 // Error parsing type for property extent:
 // Property attributes: T,N,V_extent
 
@@ -40,7 +41,6 @@
 // Property attributes: T,N,V_center
 
 @property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAnchor:(id)arg1;

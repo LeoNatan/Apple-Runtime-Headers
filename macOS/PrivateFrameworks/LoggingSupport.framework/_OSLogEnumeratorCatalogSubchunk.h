@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _et;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long endTime; // @synthesize endTime=_et;
 @property(readonly, nonatomic) unsigned long long oldestTime; // @synthesize oldestTime=_ot;
 @property(readonly, nonatomic) _OSLogEnumeratorCatalog *catalog; // @synthesize catalog=_catalog;
-- (void).cxx_destruct;
 - (void)enumerateChunksUsingBlock:(CDUnknownBlockType)arg1;
 - (id)_decompressedBufferForChunk:(struct tracev3_chunk_s *)arg1 subchunk:(struct catalog_subchunk_s *)arg2;
 - (long long)endTimeCompare:(id)arg1;

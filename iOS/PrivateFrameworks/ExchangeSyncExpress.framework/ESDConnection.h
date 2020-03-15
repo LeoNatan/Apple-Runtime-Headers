@@ -29,8 +29,8 @@
 
 + (unsigned long long)_nextStopMonitoringStatusToken;
 + (id)sharedConnection;
-@property(nonatomic) _Bool registered; // @synthesize registered=_registered;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool registered; // @synthesize registered=_registered;
 - (void)_dispatchMessage:(id)arg1;
 - (void)_registerForAppResumedNotification;
 - (void)resetTimersAndWarnings;

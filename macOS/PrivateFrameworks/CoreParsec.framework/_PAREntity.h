@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSArray *_topics;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *topics; // @synthesize topics=_topics;
 @property(nonatomic) int category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) float probabilityScore; // @synthesize probabilityScore=_probabilityScore;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

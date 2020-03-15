@@ -8,16 +8,14 @@
 
 @class NSNumber, NSString;
 
-__attribute__((visibility("hidden")))
 @interface SystemProperties : NSObject
 {
     BOOL _internalBuild;
     BOOL _seedBuild;
     BOOL _carrierBuild;
-    BOOL _dualSIMCapable;
-    BOOL _dualSIMEnabled;
     BOOL _basebandCapability;
     BOOL _internalBuildDisabledByOverride;
+    int _dualSIMCapability;
     int _deviceClass;
     NSString *_buildVariant;
     NSString *_productType;
@@ -31,9 +29,15 @@ __attribute__((visibility("hidden")))
     NSNumber *_seedBuildOverride;
 }
 
++ (void)setDeviceConfigTypeForSerialNumber:(id)arg1;
++ (void)deleteDeviceConfigTypePreferenceForKey:(struct __CFString *)arg1;
++ (void)deleteDeviceConfigTypePreference;
++ (unsigned long long)retrieveDeviceConfigTypePreference;
++ (unsigned long long)retrieveDeviceConfigTypePreferenceForKey:(struct __CFString *)arg1;
 + (unsigned long long)retrieveDeviceConfigTypeForKey:(struct __CFString *)arg1;
 + (void)saveDeviceConfigType:(unsigned long long)arg1 forKey:(struct __CFString *)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *seedBuildOverride; // @synthesize seedBuildOverride=_seedBuildOverride;
 @property(retain, nonatomic) NSNumber *carrierSeedBuildOverride; // @synthesize carrierSeedBuildOverride=_carrierSeedBuildOverride;
 @property(nonatomic) BOOL internalBuildDisabledByOverride; // @synthesize internalBuildDisabledByOverride=_internalBuildDisabledByOverride;
@@ -46,10 +50,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL basebandCapability; // @synthesize basebandCapability=_basebandCapability;
 @property(readonly, nonatomic) int deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(readonly, nonatomic) NSString *productType; // @synthesize productType=_productType;
-- (void).cxx_destruct;
-- (void)getDualSIMCapability;
-@property(readonly, nonatomic) BOOL dualSIMEnabled; // @synthesize dualSIMEnabled=_dualSIMEnabled;
-@property(readonly, nonatomic) BOOL dualSIMCapable; // @synthesize dualSIMCapable=_dualSIMCapable;
+- (int)refreshDualSIMCapability;
+@property(readonly, nonatomic) int dualSIMCapability; // @synthesize dualSIMCapability=_dualSIMCapability;
 @property(readonly, nonatomic) NSString *buildVariant; // @synthesize buildVariant=_buildVariant;
 @property(readonly, nonatomic) BOOL carrierSeedBuild; // @dynamic carrierSeedBuild;
 @property(readonly, nonatomic) BOOL carrierBuild; // @synthesize carrierBuild=_carrierBuild;
@@ -57,6 +59,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL seedBuild; // @synthesize seedBuild=_seedBuild;
 @property(readonly, nonatomic) BOOL internalBuild; // @synthesize internalBuild=_internalBuild;
 @property(readonly, nonatomic) NSString *deviceClassString;
+- (const char *)dualSIMCapabilityString;
 - (id)init;
 - (id)description;
 

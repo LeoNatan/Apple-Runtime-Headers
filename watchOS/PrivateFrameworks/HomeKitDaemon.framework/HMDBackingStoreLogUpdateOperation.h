@@ -15,10 +15,10 @@
     long long _setValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long setValue; // @synthesize setValue=_setValue;
 @property(nonatomic) long long maskValue; // @synthesize maskValue=_maskValue;
 @property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithRowIDs:(id)arg1 failedPushedTo:(unsigned int)arg2;
 - (id)initWithRowIDs:(id)arg1 successfullyPushedTo:(unsigned int)arg2;

@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool reResolve; // @synthesize reResolve=_reResolve;
 @property(retain) NWEndpoint *savedEndpoint; // @synthesize savedEndpoint=_savedEndpoint;
 @property __weak NPWaldo *parentWaldo; // @synthesize parentWaldo=_parentWaldo;
@@ -41,7 +42,6 @@
 @property(readonly) NPLocation *location; // @synthesize location=_location;
 @property unsigned long long index; // @synthesize index=_index;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)linkWithOnRampsRetainMissingAddressFamilies:(_Bool)arg1;
 - (id)getPortFromEndpoint:(id)arg1 defaultPort:(id)arg2;
 - (void)resolveWithCompletionHandler:(CDUnknownBlockType)arg1;

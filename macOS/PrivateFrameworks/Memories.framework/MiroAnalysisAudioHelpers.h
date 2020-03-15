@@ -29,10 +29,10 @@ __attribute__((visibility("hidden")))
     NSArray *_timeRanges;
 }
 
-@property(nonatomic) NSArray *timeRanges; // @synthesize timeRanges=_timeRanges;
-@property(nonatomic) long long projectNaturalFrameRate; // @synthesize projectNaturalFrameRate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) NSArray *timeRanges; // @synthesize timeRanges=_timeRanges;
+@property(nonatomic) long long projectNaturalFrameRate; // @synthesize projectNaturalFrameRate;
 - (void)processAVAsset:(id)arg1 options:(unsigned long long)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_stopProcessing;
 - (void)_stopDetectingLoudnessWithTimeRange:(CDStruct_e83c9415)arg1 loudnessRanges:(id *)arg2;

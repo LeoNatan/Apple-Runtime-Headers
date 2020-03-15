@@ -16,8 +16,8 @@
     iCloudAccountDetailsWebTabView *_detailWebViewController;
 }
 
-@property(retain, nonatomic) iCloudAccountDetailsWebTabView *detailWebViewController; // @synthesize detailWebViewController=_detailWebViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) iCloudAccountDetailsWebTabView *detailWebViewController; // @synthesize detailWebViewController=_detailWebViewController;
 - (BOOL)shouldSelect;
 - (void)didSelect;
 - (void)loadView;

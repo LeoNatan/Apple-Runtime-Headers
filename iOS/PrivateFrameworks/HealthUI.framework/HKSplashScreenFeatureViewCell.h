@@ -23,6 +23,7 @@
 + (id)_descriptionFont;
 + (id)_titleFont;
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *featureDescription; // @synthesize featureDescription=_featureDescription;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIImageView *itemIconView; // @synthesize itemIconView=_itemIconView;
 @property(retain, nonatomic) UILabel *fullDescriptionLabel; // @synthesize fullDescriptionLabel=_fullDescriptionLabel;
 @property(retain, nonatomic) HKSplashScreenItem *splashScreenItem; // @synthesize splashScreenItem=_splashScreenItem;
-- (void).cxx_destruct;
 - (id)lastBaselineAnchor;
 - (id)firstBaselineAnchor;
 - (void)createSubviews;

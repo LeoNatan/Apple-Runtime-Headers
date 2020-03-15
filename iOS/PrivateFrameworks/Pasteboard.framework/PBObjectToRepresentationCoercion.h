@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *_typeOrder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *typeOrder; // @synthesize typeOrder=_typeOrder;
 @property(retain, nonatomic) NSMutableDictionary *coercionBlockByType; // @synthesize coercionBlockByType=_coercionBlockByType;
 @property(retain, nonatomic) Class theClass; // @synthesize theClass=_theClass;
-- (void).cxx_destruct;
 - (void)createRepresentationOfType:(id)arg1 fromObject:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (_Bool)canCoerceToType:(id)arg1;
 - (id)availableExportTypes;

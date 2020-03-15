@@ -20,11 +20,11 @@
     id <GEOMotionContextDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <GEOMotionContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned long long exitType; // @synthesize exitType=_exitType;
 @property(readonly, nonatomic) unsigned long long motionType; // @synthesize motionType=_motionType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)motionContextProvider:(id)arg1 didUpdateMotion:(unsigned long long)arg2 exitType:(unsigned long long)arg3 confidence:(unsigned long long)arg4;
 @property(readonly, nonatomic) BOOL isDriving;

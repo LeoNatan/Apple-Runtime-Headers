@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)iconSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *secondaryLinkButton; // @synthesize secondaryLinkButton=_secondaryLinkButton;
 @property(retain, nonatomic) UIButton *appStoreButton; // @synthesize appStoreButton=_appStoreButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) VUIAppInstallLockup *lockupView; // @synthesize lockupView=_lockupView;
-- (void).cxx_destruct;
 - (id)_buttonWithTitleForTV:(id)arg1 textStyle:(id)arg2;
 - (void)_layoutForIos;
 - (void)_layoutForTvos;

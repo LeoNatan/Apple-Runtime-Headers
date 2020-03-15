@@ -14,8 +14,8 @@
     _Bool _ignoreMerchantIdentifiers;
 }
 
-@property(readonly, nonatomic) _Bool ignoreMerchantIdentifiers; // @synthesize ignoreMerchantIdentifiers=_ignoreMerchantIdentifiers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool ignoreMerchantIdentifiers; // @synthesize ignoreMerchantIdentifiers=_ignoreMerchantIdentifiers;
 - (void)_probeEntitlementsWithToken:(CDStruct_6ad76789)arg1;
 @property(readonly, nonatomic) _Bool hasMerchantIdentifiers;
 - (_Bool)hasMerchantIdentifier:(id)arg1;

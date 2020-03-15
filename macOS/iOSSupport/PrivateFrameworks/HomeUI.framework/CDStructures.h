@@ -63,10 +63,6 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct HFTransformItemProvider {
-    Class _field1;
-};
-
 struct HUGridPosition {
     long long _field1;
     long long _field2;

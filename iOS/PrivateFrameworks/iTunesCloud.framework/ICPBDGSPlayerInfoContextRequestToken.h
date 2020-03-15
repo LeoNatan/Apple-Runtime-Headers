@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) NSData *token; // @synthesize token=_token;
 @property(nonatomic) unsigned long long accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

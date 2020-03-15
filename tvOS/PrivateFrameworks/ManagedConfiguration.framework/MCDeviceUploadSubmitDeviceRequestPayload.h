@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *soldToId; // @synthesize soldToId=_soldToId;
 @property(readonly, nonatomic) MCDeviceUploadUser *approver; // @synthesize approver=_approver;
 @property(readonly, nonatomic) MCDeviceUploadUser *submitter; // @synthesize submitter=_submitter;
 @property(readonly, nonatomic) MCDeviceUploadRequestType *requestType; // @synthesize requestType=_requestType;
 @property(readonly, nonatomic) NSString *orgName; // @synthesize orgName=_orgName;
 @property(readonly, nonatomic) NSString *orgId; // @synthesize orgId=_orgId;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithOrgId:(id)arg1 orgName:(id)arg2 requestType:(id)arg3 submitter:(id)arg4 approver:(id)arg5 soldToId:(id)arg6;

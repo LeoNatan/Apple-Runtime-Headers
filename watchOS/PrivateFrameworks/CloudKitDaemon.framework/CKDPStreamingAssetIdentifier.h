@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSData *_referenceSignature;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *referenceSignature; // @synthesize referenceSignature=_referenceSignature;
 @property(retain, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
 @property(retain, nonatomic) NSString *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

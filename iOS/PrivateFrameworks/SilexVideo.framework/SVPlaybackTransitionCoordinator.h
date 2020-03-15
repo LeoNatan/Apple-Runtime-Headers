@@ -21,12 +21,12 @@
     NFStateMachineState *_transitioningState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NFStateMachineState *transitioningState; // @synthesize transitioningState=_transitioningState;
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) id <SVPlaybackTransitionContext> context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(readonly, nonatomic) NSMutableArray *transitionAlongsideBlocks; // @synthesize transitionAlongsideBlocks=_transitionAlongsideBlocks;
-- (void).cxx_destruct;
 - (void)transitionAlongside:(CDUnknownBlockType)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)cancelInteractiveTransition;
 - (void)finishInteractiveTransition;

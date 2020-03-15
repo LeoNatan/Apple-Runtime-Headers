@@ -21,6 +21,7 @@
     NSMutableSet *_memoryRegions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *memoryRegions; // @synthesize memoryRegions=_memoryRegions;
 @property(readonly, nonatomic) unsigned char segment; // @synthesize segment=_segment;
 @property(nonatomic) unsigned long long totalWiredSize; // @synthesize totalWiredSize=_totalWiredSize;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long totalSwappedSize; // @synthesize totalSwappedSize=_totalSwappedSize;
 @property(nonatomic) unsigned long long totalDirtySize; // @synthesize totalDirtySize=_totalDirtySize;
 @property(readonly, nonatomic) NSSet *memoryObjects; // @synthesize memoryObjects=_memoryObjects;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int totalRegions;
 - (void)addMemoryObject:(id)arg1;
 @property(readonly, nonatomic) NSString *fullName;

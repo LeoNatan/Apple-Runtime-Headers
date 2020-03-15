@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldHighlight;
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UIView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *mapView; // @synthesize mapView=_mapView;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

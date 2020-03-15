@@ -28,11 +28,11 @@
 
 + (id)logCategory;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) NSMutableArray *resolveOperations; // @synthesize resolveOperations=_resolveOperations;
 @property(nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
 @property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5 context:(id)arg6;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)processAccountModelRemove:(id)arg1 message:(id)arg2;

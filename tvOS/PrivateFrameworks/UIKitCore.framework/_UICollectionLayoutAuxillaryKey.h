@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     long long _auxillaryKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isSupplementary; // @synthesize isSupplementary=_isSupplementary;
 @property(readonly, nonatomic) long long auxillaryKind; // @synthesize auxillaryKind=_auxillaryKind;
 @property(readonly, nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSString *elementKind; // @synthesize elementKind=_elementKind;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

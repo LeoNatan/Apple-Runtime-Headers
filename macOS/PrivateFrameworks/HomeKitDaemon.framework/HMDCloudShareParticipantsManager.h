@@ -21,12 +21,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) HMDHome *home; // @synthesize home=_home;
 @property(readonly) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property __weak id <HMDCloudShareParticipantsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak id <HMDCloudShareParticipantsManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)handleHomeUserRemovedNotification:(id)arg1;
 - (void)handleHomeUserAddedNotification:(id)arg1;

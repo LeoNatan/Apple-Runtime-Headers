@@ -18,9 +18,9 @@
 
 + (id)sharedInstance;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s fileCompressionQueueLock; // @synthesize fileCompressionQueueLock=_fileCompressionQueueLock;
 @property(retain, nonatomic) NSMutableArray *fileCompressionQueue; // @synthesize fileCompressionQueue=_fileCompressionQueue;
-- (void).cxx_destruct;
 - (int)size;
 - (id)nextFile;
 - (_Bool)hasNext;

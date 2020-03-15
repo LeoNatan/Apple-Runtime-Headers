@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     BRFieldCKInfo *_ckInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRFieldCKInfo *ckInfo; // @synthesize ckInfo=_ckInfo;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)initWithRecord:(id)arg1 ckInfo:(id)arg2;
 
 @end

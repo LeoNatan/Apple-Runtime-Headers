@@ -32,8 +32,8 @@
 + (id)keyCommands;
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
-@property(readonly, nonatomic) SBWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBWindow *window; // @synthesize window=_window;
 - (void)_disallowAppFromAppearingWhileHidden:(id)arg1;
 - (void)_allowAppToAppearWhileHidden:(id)arg1;
 - (void)_clearTimer;

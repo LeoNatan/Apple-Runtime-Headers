@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIEvent *_event;
 }
 
-@property(retain, nonatomic) UIEvent *event; // @synthesize event=_event;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIEvent *event; // @synthesize event=_event;
 
 @end
 

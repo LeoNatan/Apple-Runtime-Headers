@@ -28,8 +28,8 @@
 + (id)lookupHandlesForDefinition:(id)arg1 creatingIfNone:(_Bool)arg2 configurationContext:(id)arg3;
 + (id)lookupHandlesForDefinition:(id)arg1 creatingIfNone:(_Bool)arg2;
 + (id)lookupHandlesForDefinition:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *handleID; // @synthesize handleID=_handleID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *handleID; // @synthesize handleID=_handleID;
 - (void)_invalidateWithError:(id)arg1 shouldInvalidateHandleClient:(_Bool)arg2;
 - (void)_receivedInvalidationWithError:(id)arg1;
 - (void)_didDeactivate;

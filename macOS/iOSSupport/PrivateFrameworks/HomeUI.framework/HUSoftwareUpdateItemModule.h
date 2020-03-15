@@ -21,6 +21,7 @@
     HUSoftwareUpdateInfoItemProvider *_softwareUpdateInfoItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUSoftwareUpdateInfoItemProvider *softwareUpdateInfoItemProvider; // @synthesize softwareUpdateInfoItemProvider=_softwareUpdateInfoItemProvider;
 @property(retain, nonatomic) HFStaticItem *learnMoreItem; // @synthesize learnMoreItem=_learnMoreItem;
 @property(retain, nonatomic) HUSoftwareUpdateActionAndProgressItem *actionAndProgressItem; // @synthesize actionAndProgressItem=_actionAndProgressItem;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSSet *accessories; // @synthesize accessories=_accessories;
 @property(readonly, nonatomic) HFItem<HFSoftwareUpdatableItemProtocol> *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
 - (id)initWithItemUpdater:(id)arg1 home:(id)arg2 sourceItem:(id)arg3;

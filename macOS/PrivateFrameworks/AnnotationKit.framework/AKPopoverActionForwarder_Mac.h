@@ -12,8 +12,8 @@
 }
 
 + (void)insertForwarderInstanceIntoResponderChainOfPopover:(id)arg1 usingFirstResponder:(id)arg2;
-@property(retain) NSResponder *firstResponderToUse; // @synthesize firstResponderToUse=_firstResponderToUse;
 - (void).cxx_destruct;
+@property(retain) NSResponder *firstResponderToUse; // @synthesize firstResponderToUse=_firstResponderToUse;
 - (void)_findTargetAndPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)deleteMessages:(id)arg1;
 - (void)duplicate:(id)arg1;

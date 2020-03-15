@@ -18,13 +18,13 @@
     FCFeedViewportDiff *_viewportDiff;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCFeedViewportDiff *viewportDiff; // @synthesize viewportDiff=_viewportDiff;
 @property(retain, nonatomic) FCFeedViewport *resultViewport; // @synthesize resultViewport=_resultViewport;
 @property(copy, nonatomic) CDUnknownBlockType removeGroupsCompletionHandler; // @synthesize removeGroupsCompletionHandler=_removeGroupsCompletionHandler;
 @property(retain, nonatomic) FCFeedDescriptor *feedDescriptor; // @synthesize feedDescriptor=_feedDescriptor;
 @property(copy, nonatomic) CDUnknownBlockType groupRemovalTestBlock; // @synthesize groupRemovalTestBlock=_groupRemovalTestBlock;
 @property(retain, nonatomic) FCFeedViewport *viewport; // @synthesize viewport=_viewport;
-- (void).cxx_destruct;
 - (void)operationDidFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

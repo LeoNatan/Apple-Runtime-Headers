@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_searches;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *searches; // @synthesize searches=_searches;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

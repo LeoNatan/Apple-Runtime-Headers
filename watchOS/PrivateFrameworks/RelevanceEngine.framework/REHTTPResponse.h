@@ -15,8 +15,8 @@
     int _statusCode;
 }
 
-@property(readonly, nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
 - (struct _CFHTTPServerResponse *)response;
 - (id)headerValueForKey:(id)arg1;
 - (void)setHeaderValue:(id)arg1 forKey:(id)arg2;

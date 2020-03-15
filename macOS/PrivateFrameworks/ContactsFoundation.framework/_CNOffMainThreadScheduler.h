@@ -18,9 +18,9 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> needToGetOffMainThreadScheduler; // @synthesize needToGetOffMainThreadScheduler=_needToGetOffMainThreadScheduler;
 @property(readonly, nonatomic) id <CNScheduler> alreadyOffMainThreadScheduler; // @synthesize alreadyOffMainThreadScheduler=_alreadyOffMainThreadScheduler;
-- (void).cxx_destruct;
 @property(readonly) double timestamp;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2 qualityOfService:(unsigned long long)arg3;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2;

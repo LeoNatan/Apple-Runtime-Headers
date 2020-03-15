@@ -14,9 +14,9 @@
     long long _currentlyPlayingSoundType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentlyPlayingSoundType; // @synthesize currentlyPlayingSoundType=_currentlyPlayingSoundType;
 @property(retain, nonatomic) TUNSSoundPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPlaying) BOOL playing;
 - (void)stopPlaying;
 - (BOOL)attemptToPlayDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;

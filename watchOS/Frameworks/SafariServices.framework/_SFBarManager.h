@@ -24,10 +24,10 @@
     double _downloadsItemProgress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double downloadsItemProgress; // @synthesize downloadsItemProgress=_downloadsItemProgress;
 @property(nonatomic, getter=isBookmarksItemSelected) _Bool bookmarksItemSelected; // @synthesize bookmarksItemSelected=_bookmarksItemSelected;
 @property(nonatomic) __weak id <_SFBarManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)test_registrationForBar:(id)arg1;
 - (unsigned int)test_numberOfRegistrations;
 - (void)_updateRegistration:(id)arg1;

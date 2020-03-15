@@ -33,6 +33,7 @@
     id <PKEnterValueNewBalanceViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool amountIsWithdrawal; // @synthesize amountIsWithdrawal=_amountIsWithdrawal;
 @property(nonatomic) __weak id <PKEnterValueNewBalanceViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDecimalNumber *minLoadAmount; // @synthesize minLoadAmount=_minLoadAmount;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSString *maxLoadAmountText; // @synthesize maxLoadAmountText=_maxLoadAmountText;
 @property(copy, nonatomic) NSString *updatedBalancePromptText; // @synthesize updatedBalancePromptText=_updatedBalancePromptText;
 @property(copy, nonatomic) NSString *promptText; // @synthesize promptText=_promptText;
-- (void).cxx_destruct;
 - (void)_addSubviews;
 - (void)_createAmountFormatter;
 - (void)currentBalanceTapRecognized;

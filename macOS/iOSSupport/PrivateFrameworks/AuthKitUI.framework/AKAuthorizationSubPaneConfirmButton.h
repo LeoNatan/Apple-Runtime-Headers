@@ -25,6 +25,7 @@
 }
 
 + (id)_createMainStackView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *bioLabel; // @synthesize bioLabel=_bioLabel;
 @property BOOL canPerformBiometricValidation; // @synthesize canPerformBiometricValidation=_canPerformBiometricValidation;
 @property BOOL hasTouchIDOnly; // @synthesize hasTouchIDOnly=_hasTouchIDOnly;
@@ -34,7 +35,6 @@
 @property(nonatomic) __weak id <AKAuthorizationSubPaneConfirmButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AKAuthorizationButton *authorizationButton; // @synthesize authorizationButton=_authorizationButton;
 @property(copy, nonatomic) NSString *bioTextForInactiveState; // @synthesize bioTextForInactiveState=_bioTextForInactiveState;
-- (void).cxx_destruct;
 - (void)_performPasscodeValidations:(CDUnknownBlockType)arg1;
 - (id)_passcodeButtonTitle;
 - (id)_passwordButtonTitle;

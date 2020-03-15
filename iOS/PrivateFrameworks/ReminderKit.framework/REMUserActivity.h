@@ -22,9 +22,9 @@
 + (id)userActivityWithDictionaryData:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
 + (void)userActivityWithUserActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)debugDescriptionDetails;
 - (id)debugDescription;
 - (id)siriIntent;

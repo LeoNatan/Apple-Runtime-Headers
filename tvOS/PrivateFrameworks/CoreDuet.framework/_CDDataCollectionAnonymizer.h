@@ -15,8 +15,8 @@
     NSData *_salt;
 }
 
-@property(readonly, copy, nonatomic) NSData *salt; // @synthesize salt=_salt;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *salt; // @synthesize salt=_salt;
 - (id)anonymizeObject:(id)arg1;
 - (id)anonymizeDictionary:(id)arg1;
 - (id)anonymizeArray:(id)arg1;

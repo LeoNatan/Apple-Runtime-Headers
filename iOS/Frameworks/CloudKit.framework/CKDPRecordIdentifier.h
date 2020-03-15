@@ -16,9 +16,9 @@
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRecordZoneIdentifier *zoneIdentifier; // @synthesize zoneIdentifier=_zoneIdentifier;
 @property(retain, nonatomic) CKDPIdentifier *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

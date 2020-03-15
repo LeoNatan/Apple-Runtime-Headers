@@ -18,9 +18,9 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *status; // @synthesize status=_status;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

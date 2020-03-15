@@ -35,12 +35,12 @@
     struct UIEdgeInsets _hitTestEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIIndexBarControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *defaultTextAttributes; // @synthesize defaultTextAttributes=_defaultTextAttributes;
 @property(nonatomic) __weak id <SKUIIndexBarControlDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) struct UIEdgeInsets hitTestEdgeInsets; // @synthesize hitTestEdgeInsets=_hitTestEdgeInsets;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
-- (void).cxx_destruct;
 - (struct CGRect)_visibleBounds;
 - (struct CGSize)_totalSize;
 - (long long)_totalEntryCount;

@@ -17,11 +17,11 @@
     NSSet *_localSymptoms;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *localSymptoms; // @synthesize localSymptoms=_localSymptoms;
 @property(copy, nonatomic) NSSet *broadcastedSymptoms; // @synthesize broadcastedSymptoms=_broadcastedSymptoms;
 @property(nonatomic) __weak id <HMDAccessorySymptomsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
-- (void).cxx_destruct;
 - (id)initWithIDSIdentifier:(id)arg1;
 
 @end

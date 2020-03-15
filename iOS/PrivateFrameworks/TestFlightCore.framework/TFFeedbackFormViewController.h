@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_activityIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(readonly, nonatomic) UIBarButtonItem *activityItem; // @synthesize activityItem=_activityItem;
 @property(readonly, nonatomic) UIBarButtonItem *submitButtonItem; // @synthesize submitButtonItem=_submitButtonItem;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) TFFeedbackFormViewDataSource *viewDataSource; // @synthesize viewDataSource=_viewDataSource;
 @property(readonly, nonatomic) TFFeedbackFormPresenter *presenter; // @synthesize presenter=_presenter;
-- (void).cxx_destruct;
 - (void)submitButtonPressed:(id)arg1;
 - (void)adjustContentOffsetForKeyboardNotification:(id)arg1;
 - (void)showErrorAlertWithTitle:(id)arg1 message:(id)arg2;

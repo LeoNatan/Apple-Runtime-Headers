@@ -13,8 +13,8 @@
     NSString *_tokenString;
 }
 
-@property(readonly, nonatomic) NSString *tokenString; // @synthesize tokenString=_tokenString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *tokenString; // @synthesize tokenString=_tokenString;
 - (id)initWithTokenString:(id)arg1;
 
 @end

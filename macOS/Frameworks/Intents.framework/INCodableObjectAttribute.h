@@ -17,15 +17,15 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(copy, nonatomic, setter=_setOriginalTypeName:) NSString *_originalTypeName; // @synthesize _originalTypeName;
-- (void).cxx_destruct;
 - (void)setClassName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *className;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

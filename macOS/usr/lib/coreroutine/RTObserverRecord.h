@@ -12,9 +12,9 @@
     SEL _selector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) __weak id observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)initWithObserver:(id)arg1 selector:(SEL)arg2;
 
 @end

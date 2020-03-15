@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     VUILabel *_titleLabel;
 }
 
-@property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 
 @end
 

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)roundImage:(id)arg1;
-@property(readonly, nonatomic) id <CNUIPRLikenessProvider> likenessProvider; // @synthesize likenessProvider=_likenessProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CNUIPRLikenessProvider> likenessProvider; // @synthesize likenessProvider=_likenessProvider;
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2 style:(unsigned long long)arg3;
 - (id)imageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)initWithLikenessProvider:(id)arg1;

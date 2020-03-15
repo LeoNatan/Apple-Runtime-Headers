@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _fileID;
 }
 
-@property(retain) GSAddition *addition; // @synthesize addition=_addition;
 - (void).cxx_destruct;
+@property(retain) GSAddition *addition; // @synthesize addition=_addition;
 - (_Bool)isStillValid;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

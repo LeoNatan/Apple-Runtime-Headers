@@ -15,10 +15,10 @@
     NSString *_transactionDataHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *transactionDataHash; // @synthesize transactionDataHash=_transactionDataHash;
 @property(readonly, copy, nonatomic) NSString *transactionDataFilename; // @synthesize transactionDataFilename=_transactionDataFilename;
 @property(readonly, copy, nonatomic) NSData *transactionData; // @synthesize transactionData=_transactionData;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

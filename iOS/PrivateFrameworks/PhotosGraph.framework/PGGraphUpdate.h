@@ -52,6 +52,7 @@
     NSSet *_insertedHighlightDayGroupNodes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *insertedHighlightDayGroupNodes; // @synthesize insertedHighlightDayGroupNodes=_insertedHighlightDayGroupNodes;
 @property(copy, nonatomic) NSSet *insertedHighlightNodes; // @synthesize insertedHighlightNodes=_insertedHighlightNodes;
 @property(readonly, nonatomic) NSSet *localIdentifiersOfHighlightsToUpdate; // @synthesize localIdentifiersOfHighlightsToUpdate=_localIdentifiersOfHighlightsToUpdate;
@@ -80,7 +81,6 @@
 @property(readonly, nonatomic) NSMutableArray *inputChanges; // @synthesize inputChanges=_inputChanges;
 @property(readonly, nonatomic) PGManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) long long updateType; // @synthesize updateType=_updateType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *identifiersForMomentRelatedToDeletedPersons;
 @property(readonly, nonatomic) NSSet *identifiersForMomentRelatedToUpdatedPersons;
 - (id)highlightsToProcessForKind:(unsigned short)arg1 withHighlightUpdateTypes:(unsigned long long)arg2 includeHighlightsToIngest:(_Bool)arg3;

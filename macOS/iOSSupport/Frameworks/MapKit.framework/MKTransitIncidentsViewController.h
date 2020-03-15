@@ -13,8 +13,8 @@
     NSArray *_incidents;
 }
 
-@property(copy, nonatomic) NSArray *incidents; // @synthesize incidents=_incidents;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *incidents; // @synthesize incidents=_incidents;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

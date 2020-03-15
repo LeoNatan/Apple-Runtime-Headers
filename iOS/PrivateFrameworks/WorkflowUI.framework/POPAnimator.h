@@ -27,11 +27,11 @@
 }
 
 + (id)sharedAnimator;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double beginTime; // @synthesize beginTime=_beginTime;
 @property(nonatomic) _Bool disableDisplayLink; // @synthesize disableDisplayLink=_disableDisplayLink;
 @property(nonatomic) __weak id <POPAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)renderTime:(double)arg1;

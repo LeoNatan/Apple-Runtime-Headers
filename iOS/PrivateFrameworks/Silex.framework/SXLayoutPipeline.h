@@ -21,13 +21,13 @@
     NSMutableArray *_postProcessors;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *postProcessors; // @synthesize postProcessors=_postProcessors;
 @property(readonly, nonatomic) NSMutableArray *preProcessors; // @synthesize preProcessors=_preProcessors;
 @property(readonly, nonatomic) NSOperationQueue *layoutOperationQueue; // @synthesize layoutOperationQueue=_layoutOperationQueue;
 @property(readonly, nonatomic) id <SXDOMObjectProviderFactory> DOMObjectProviderFactory; // @synthesize DOMObjectProviderFactory=_DOMObjectProviderFactory;
 @property(readonly, nonatomic) id <SXLayoutOperationFactory> layoutOperationFactory; // @synthesize layoutOperationFactory=_layoutOperationFactory;
 @property(nonatomic) __weak id <SXLayoutPipelineDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)cancelTasks;
 - (void)removeProcessor:(id)arg1 type:(unsigned long long)arg2;
 - (void)addProcessor:(id)arg1 type:(unsigned long long)arg2;

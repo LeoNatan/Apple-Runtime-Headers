@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _Bool _isPad;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIControl *sectionControl; // @synthesize sectionControl=_sectionControl;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (void)_reloadBackdropView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

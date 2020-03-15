@@ -15,8 +15,8 @@
     CNAutocompleteAggdProbe *_probe;
 }
 
-@property(readonly) CNAutocompleteAggdProbe *probe; // @synthesize probe=_probe;
 - (void).cxx_destruct;
+@property(readonly) CNAutocompleteAggdProbe *probe; // @synthesize probe=_probe;
 - (void)didReturnCacheFalsePositives:(id)arg1;
 - (void)didReturnCacheFalseNegatives:(id)arg1;
 - (id)initWithProbe:(id)arg1;

@@ -28,6 +28,7 @@
     NSLayoutConstraint *_addedToSiriLeadingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *addedToSiriLeadingConstraint; // @synthesize addedToSiriLeadingConstraint=_addedToSiriLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *addToSiriLeadingConstraint; // @synthesize addToSiriLeadingConstraint=_addToSiriLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *checkmarkHeightConstraint; // @synthesize checkmarkHeightConstraint=_checkmarkHeightConstraint;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) INShortcut *shortcut; // @synthesize shortcut=_shortcut;
 @property(nonatomic) __weak id <INUIAddVoiceShortcutButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (void)prepareForInterfaceBuilder;
 - (id)accessibilityLabel;

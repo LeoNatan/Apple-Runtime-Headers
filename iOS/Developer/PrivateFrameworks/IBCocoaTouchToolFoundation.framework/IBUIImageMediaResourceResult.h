@@ -15,9 +15,9 @@
 }
 
 + (id)resultWithBitmap:(id)arg1 scale:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) IBBitmap *bitmap; // @synthesize bitmap=_bitmap;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithBitmap:(id)arg1 scale:(double)arg2;

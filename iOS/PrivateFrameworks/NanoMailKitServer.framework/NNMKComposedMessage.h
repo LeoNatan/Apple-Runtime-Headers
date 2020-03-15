@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includeAttachments; // @synthesize includeAttachments=_includeAttachments;
 @property(retain, nonatomic) NSString *standaloneReferenceMessageId; // @synthesize standaloneReferenceMessageId=_standaloneReferenceMessageId;
 @property(retain, nonatomic) NSString *referenceMessageId; // @synthesize referenceMessageId=_referenceMessageId;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSArray *to; // @synthesize to=_to;
 @property(nonatomic) unsigned long long sendingType; // @synthesize sendingType=_sendingType;
 @property(retain, nonatomic) NSString *composedMessageId; // @synthesize composedMessageId=_composedMessageId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithNewId;
 - (void)encodeWithCoder:(id)arg1;

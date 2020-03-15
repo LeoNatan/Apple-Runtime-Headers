@@ -17,9 +17,9 @@
     id <AFServiceHelper> _serviceHelper;
 }
 
+- (void).cxx_destruct;
 @property _Bool isClientLiteHelper; // @synthesize isClientLiteHelper=_isClientLiteHelper;
 @property(retain) id <AFServiceHelper> serviceHelper; // @synthesize serviceHelper=_serviceHelper;
-- (void).cxx_destruct;
 - (id)initClientLiteHelper;
 - (id)initWithServiceHelper:(id)arg1;
 - (void)handleRemoteCommand:(id)arg1 isOneWay:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
@@ -29,6 +29,8 @@
 - (id)peerInfoForCurrentCommand;
 - (void)handleCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)isTimeoutSuspended;
+- (_Bool)isDeviceInCarDND;
+- (_Bool)isDeviceInStarkMode;
 - (_Bool)isDeviceLockedWithPasscode;
 - (id)assistantLocalizedStringForKey:(id)arg1 table:(id)arg2 bundle:(id)arg3;
 - (void)dismissAssistant;

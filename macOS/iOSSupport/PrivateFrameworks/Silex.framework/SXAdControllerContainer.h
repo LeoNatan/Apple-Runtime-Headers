@@ -15,8 +15,8 @@
     SXAdController *_adController;
 }
 
-@property(readonly, nonatomic) SXAdController *adController; // @synthesize adController=_adController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXAdController *adController; // @synthesize adController=_adController;
 - (void)registerAdController:(id)arg1;
 
 // Remaining properties

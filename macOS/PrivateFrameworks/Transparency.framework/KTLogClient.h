@@ -21,15 +21,15 @@
 + (id)formatEventName:(id)arg1 application:(id)arg2 state:(id)arg3;
 + (id)formatEventName:(id)arg1 state:(id)arg2;
 + (id)configBagURL;
+- (void).cxx_destruct;
 @property double expirationTime; // @synthesize expirationTime=_expirationTime;
 @property(retain) NSURL *publicKeysURI; // @synthesize publicKeysURI=_publicKeysURI;
 @property(retain) NSURL *consistencyProofURI; // @synthesize consistencyProofURI=_consistencyProofURI;
 @property(retain) NSURL *queryURI; // @synthesize queryURI=_queryURI;
 @property BOOL configured; // @synthesize configured=_configured;
-- (void).cxx_destruct;
+- (void)downloadPublicKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)downloadConsistencyProof:(id)arg1 uuid:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)downloadQuery:(id)arg1 uuid:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)downloadPublicKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchQuery:(id)arg1 uuid:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)handleQueryResponse:(id)arg1 fetchError:(id)arg2 application:(id)arg3 error:(id *)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchPublicKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

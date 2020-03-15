@@ -30,6 +30,7 @@
     unsigned long long _overflowLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool compact; // @synthesize compact=_compact;
 @property(nonatomic) _Bool useMetadata; // @synthesize useMetadata=_useMetadata;
 @property(nonatomic) _Bool oldFormat; // @synthesize oldFormat=_oldFormat;
@@ -47,7 +48,6 @@
 @property(nonatomic) char *bytesToConsumeEnd; // @synthesize bytesToConsumeEnd=_bytesToConsumeEnd;
 @property(nonatomic) unsigned long long bytesToConsumeCount; // @synthesize bytesToConsumeCount=_bytesToConsumeCount;
 @property(nonatomic) char *bytesToConsumeVector; // @synthesize bytesToConsumeVector=_bytesToConsumeVector;
-- (void).cxx_destruct;
 - (id)initUsingMetadata:(_Bool)arg1;
 - (void)handleBytesAvailable;
 - (long long)writableBufferSize;

@@ -16,9 +16,9 @@
     id <PXPhotosDetailsInlinePlaybackControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXPhotosDetailsInlinePlaybackControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXTilingController *tilingController; // @synthesize tilingController=_tilingController;
-- (void).cxx_destruct;
 - (_Bool)canPlayAsset:(id)arg1;
 - (struct CGRect)frameForPlaybackRecord:(id)arg1 minPlayableSize:(out struct CGSize *)arg2;
 - (struct CGRect)currentVisibleRect;

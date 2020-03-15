@@ -25,8 +25,8 @@
     NSString *_temporaryFilesDirectory;
 }
 
-@property(readonly, copy, nonatomic) NSString *temporaryFilesDirectory; // @synthesize temporaryFilesDirectory=_temporaryFilesDirectory;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *temporaryFilesDirectory; // @synthesize temporaryFilesDirectory=_temporaryFilesDirectory;
 - (void)_performIvarWrite:(CDUnknownBlockType)arg1;
 - (void)_performIvarRead:(CDUnknownBlockType)arg1;
 - (_Bool)_isOnIvarQueue;

@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionIndexPathsBeingDeleted; // @synthesize sectionIndexPathsBeingDeleted=_sectionIndexPathsBeingDeleted;
 @property(nonatomic) double emphasizedSectionBottomStrokeWidth; // @synthesize emphasizedSectionBottomStrokeWidth=_emphasizedSectionBottomStrokeWidth;
 @property(retain, nonatomic) UIColor *emphasizedSectionBottomStrokeColor; // @synthesize emphasizedSectionBottomStrokeColor=_emphasizedSectionBottomStrokeColor;
 @property(retain, nonatomic) UIColor *emphasizedSectionBackgroundColor; // @synthesize emphasizedSectionBackgroundColor=_emphasizedSectionBackgroundColor;
 @property(retain, nonatomic) NSMutableDictionary *preUpdateSectionDecorationAttributesBySection; // @synthesize preUpdateSectionDecorationAttributesBySection=_preUpdateSectionDecorationAttributesBySection;
 @property(retain, nonatomic) NSMutableDictionary *sectionDecorationAttributesBySection; // @synthesize sectionDecorationAttributesBySection=_sectionDecorationAttributesBySection;
-- (void).cxx_destruct;
 - (id)indexPathsToDeleteForDecorationViewOfKind:(id)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

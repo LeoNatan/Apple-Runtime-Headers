@@ -21,8 +21,8 @@
     id <DNDSSettingsManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DNDSSettingsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSSettingsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)sysdiagnoseDataForDate:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *sysdiagnoseDataIdentifier; // @dynamic sysdiagnoseDataIdentifier;
 - (void)syncSettingsProvider:(id)arg1 didReceiveUpdatedSyncSettings:(id)arg2;

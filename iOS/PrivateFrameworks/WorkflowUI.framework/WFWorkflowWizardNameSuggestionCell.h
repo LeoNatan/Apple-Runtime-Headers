@@ -24,12 +24,12 @@
 + (id)suggestionsFont;
 + (id)infoFont;
 + (double)preferredHeightForWidth:(double)arg1 infoText:(id)arg2 suggestedPhrases:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *suggestionsViews; // @synthesize suggestionsViews=_suggestionsViews;
 @property(retain, nonatomic) UILabel *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(copy, nonatomic) NSArray *suggestedPhrases; // @synthesize suggestedPhrases=_suggestedPhrases;
 @property(nonatomic) __weak id <WFWorkflowWizardNameSuggestionCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)workflowWizardSuggestedPhraseViewDidSelectSuggestedPhrase:(id)arg1;
 @property(copy, nonatomic) NSString *infoText;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

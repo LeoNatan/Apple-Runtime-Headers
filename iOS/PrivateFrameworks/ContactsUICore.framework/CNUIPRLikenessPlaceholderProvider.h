@@ -17,8 +17,8 @@
 
 + (id)companyImageNameForDiameter:(double)arg1;
 + (id)imageNameForDiameter:(double)arg1;
-@property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
 - (unsigned long long)_cnui_likenessType;
 - (id)_cnui_likenessForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (struct CGImage *)_cnui_roundedRectImageForSize:(struct CGSize)arg1 scale:(double)arg2;

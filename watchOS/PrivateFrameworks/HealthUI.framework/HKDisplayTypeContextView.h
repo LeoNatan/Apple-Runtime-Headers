@@ -23,9 +23,9 @@
     id <HKDisplayTypeContextViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKDisplayTypeContextViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *displayTypeContextItems; // @synthesize displayTypeContextItems=_displayTypeContextItems;
-- (void).cxx_destruct;
 - (void)didTapOnInfoButtonForCollectionViewCell:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;

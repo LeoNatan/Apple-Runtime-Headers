@@ -19,9 +19,9 @@
     CDStruct_5f298e02 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL selfId; // @synthesize selfId=_selfId;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

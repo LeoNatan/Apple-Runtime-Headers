@@ -25,6 +25,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long speechEndHostTime; // @synthesize speechEndHostTime=_speechEndHostTime;
 @property(readonly, nonatomic) BOOL isTwoShot; // @synthesize isTwoShot=_isTwoShot;
 @property(readonly, nonatomic) BOOL isDucking; // @synthesize isDucking=_isDucking;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) long long gender; // @synthesize gender=_gender;
 @property(readonly, copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -27,6 +27,7 @@
 
 + (void)setRichTextWebPreferences:(id)arg1;
 + (void)setPlainTextWebPreferences:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *smimeError; // @synthesize smimeError=_smimeError;
 @property(nonatomic) BOOL hasEncryptedDescendantPart; // @synthesize hasEncryptedDescendantPart=_hasEncryptedDescendantPart;
 @property(nonatomic) BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(nonatomic) unsigned long long originalEncoding; // @synthesize originalEncoding=_originalEncoding;
 @property(copy, nonatomic) NSString *html; // @synthesize html=_html;
-- (void).cxx_destruct;
 - (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 @property(readonly, copy, nonatomic) NSArray *signerLabels;
 - (void)setBaseURLFromHtml;

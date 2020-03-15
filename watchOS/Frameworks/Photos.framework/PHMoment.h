@@ -30,6 +30,7 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double approximateLongitude; // @synthesize approximateLongitude=_approximateLongitude;
 @property(readonly, nonatomic) double approximateLatitude; // @synthesize approximateLatitude=_approximateLatitude;
 @property(nonatomic) unsigned short processedLocation; // @synthesize processedLocation=_processedLocation;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, nonatomic) NSDate *representativeDate; // @synthesize representativeDate=_representativeDate;
 @property(readonly, nonatomic) int timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_cacheLocationWithCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(readonly, nonatomic) NSString *processedLocationTypeString;

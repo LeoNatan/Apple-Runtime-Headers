@@ -24,6 +24,7 @@
     id <NSObject> __windowMoveObservation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> _windowMoveObservation; // @synthesize _windowMoveObservation=__windowMoveObservation;
 @property(retain, nonatomic) CAShapeLayer *_backdropAlphaMaskShapeLayer; // @synthesize _backdropAlphaMaskShapeLayer=__backdropAlphaMaskShapeLayer;
 @property(retain, nonatomic) CALayer *_backdropMaskLayer; // @synthesize _backdropMaskLayer=__backdropMaskLayer;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic, setter=_setCutoutFramesInWindowCoordinates:) NSArray *_cutoutFramesInWindowCoordinates; // @synthesize _cutoutFramesInWindowCoordinates=__cutoutFramesInWindowCoordinates;
 @property(nonatomic) double padding; // @synthesize padding=_padding;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (void)_updateShapesBasedOnCutoutFramesInWindowCoordinates:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 @property(retain, nonatomic) NSColor *backdropColor;

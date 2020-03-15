@@ -18,12 +18,12 @@
     id <NFStateMachineContextType> _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NFStateMachineContextType> context; // @synthesize context=_context;
 @property(retain, nonatomic) NFStateMachineState *toState; // @synthesize toState=_toState;
 @property(retain, nonatomic) NFStateMachineState *fromState; // @synthesize fromState=_fromState;
 @property(retain, nonatomic) NFStateMachineEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithStateMachine:(id)arg1 event:(id)arg2 fromState:(id)arg3 toState:(id)arg4 context:(id)arg5;
 

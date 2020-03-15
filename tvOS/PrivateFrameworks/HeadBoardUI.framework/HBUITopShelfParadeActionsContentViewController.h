@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     id <HBUITopShelfParadeAction> _secondaryAction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HBUITopShelfParadeAction> secondaryAction; // @synthesize secondaryAction=_secondaryAction;
 @property(retain, nonatomic) id <HBUITopShelfParadeAction> primaryAction; // @synthesize primaryAction=_primaryAction;
 @property(readonly, nonatomic) HBUITopShelfParadeActionsView *actionsView; // @synthesize actionsView=_actionsView;
 @property(nonatomic) __weak id <HBUITopShelfParadeContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <HBUITopShelfParadeItem> paradeItem; // @synthesize paradeItem=_paradeItem;
-- (void).cxx_destruct;
 - (void)paradeItemSecondaryActionDidChange:(id)arg1;
 - (void)paradeItemPrimaryActionDidChange:(id)arg1;
 - (id)preferredFocusEnvironments;

@@ -26,8 +26,8 @@
     _Bool _waitingForRemoteDeviceUnlock;
 }
 
-@property(nonatomic, getter=isWaitingForRemoteDeviceUnlock) _Bool waitingForRemoteDeviceUnlock; // @synthesize waitingForRemoteDeviceUnlock=_waitingForRemoteDeviceUnlock;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isWaitingForRemoteDeviceUnlock) _Bool waitingForRemoteDeviceUnlock; // @synthesize waitingForRemoteDeviceUnlock=_waitingForRemoteDeviceUnlock;
 - (void)unlockConnectionRemoteDeviceDidUnlock:(id)arg1;
 - (void)unlockConnection:(id)arg1 didEnableOnlyRemoteUnlock:(_Bool)arg2 error:(id)arg3;
 - (void)passcodeViewController:(id)arg1 didVerifyPasscode:(id)arg2;

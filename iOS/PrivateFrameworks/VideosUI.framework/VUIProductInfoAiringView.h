@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 + (id)airingLogoWithImageDictionary:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)airingTextWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)configureViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVImageView *logo; // @synthesize logo=_logo;
 @property(retain, nonatomic) VUILabel *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property(retain, nonatomic) VUIProductInfoAiringLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (struct CGSize)layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

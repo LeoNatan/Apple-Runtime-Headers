@@ -22,13 +22,13 @@
 }
 
 + (id)layerWithFBSSceneLayer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sceneID; // @synthesize sceneID=_sceneID;
 @property(copy, nonatomic) NSString *externalSceneID; // @synthesize externalSceneID=_externalSceneID;
 @property(nonatomic) int alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) float level; // @synthesize level=_level;
 @property(readonly, nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

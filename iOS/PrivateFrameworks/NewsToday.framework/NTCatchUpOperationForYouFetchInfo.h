@@ -14,15 +14,13 @@
 {
     _Bool _attemptedCachedOnly;
     NSDictionary *_feedContextByFeedID;
-    NSObject *_fetchedRecordsInterestToken;
 }
 
-@property(readonly, copy, nonatomic) NSObject *fetchedRecordsInterestToken; // @synthesize fetchedRecordsInterestToken=_fetchedRecordsInterestToken;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *feedContextByFeedID; // @synthesize feedContextByFeedID=_feedContextByFeedID;
 @property(readonly, nonatomic) _Bool attemptedCachedOnly; // @synthesize attemptedCachedOnly=_attemptedCachedOnly;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithAttemptedCachedOnly:(_Bool)arg1 feedContextByFeedID:(id)arg2 fetchedRecordsInterestToken:(id)arg3;
+- (id)initWithAttemptedCachedOnly:(_Bool)arg1 feedContextByFeedID:(id)arg2;
 - (id)init;
 
 @end

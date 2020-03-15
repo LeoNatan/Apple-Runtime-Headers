@@ -14,8 +14,8 @@
     id <REScriptParserDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <REScriptParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <REScriptParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)parse;
 - (id)initWithBacktrackingBuffer:(id)arg1;
 

@@ -23,13 +23,13 @@
     UIView *_horizontalScrollPreventerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *horizontalScrollPreventerView; // @synthesize horizontalScrollPreventerView=_horizontalScrollPreventerView;
 @property(retain, nonatomic) UIScrollView *horizontalScrollView; // @synthesize horizontalScrollView=_horizontalScrollView;
 @property(nonatomic) __weak id <CKBrowserSwitcherScrollPreventerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(nonatomic, getter=isSwitching) _Bool switching; // @synthesize switching=_switching;
 @property(nonatomic, getter=isEngaged) _Bool engaged; // @synthesize engaged=_engaged;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize;
 @property(nonatomic) struct CGPoint contentOffset;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

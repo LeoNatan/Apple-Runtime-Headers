@@ -19,10 +19,10 @@
     AKNoteEditorViewController *_contentViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKNoteEditorViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) __weak id <AKNoteEditorControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AKPopupAnnotation *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 - (id)_popupBackgroundColorForPopupAnnotation:(id)arg1;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;

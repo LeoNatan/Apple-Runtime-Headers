@@ -13,8 +13,8 @@
     MPAVController *player;
 }
 
-@property(retain, nonatomic) MPAVController *player; // @synthesize player;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPAVController *player; // @synthesize player;
 - (id)_automationID;
 
 @end

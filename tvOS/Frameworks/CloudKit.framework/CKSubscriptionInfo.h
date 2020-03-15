@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) CKSubscription *subscription; // @synthesize subscription=_subscription;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

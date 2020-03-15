@@ -29,6 +29,7 @@
     _MLTLogger *_logger;
 }
 
+- (void).cxx_destruct;
 @property BOOL measurePredictionANEMemory; // @synthesize measurePredictionANEMemory=_measurePredictionANEMemory;
 @property BOOL measurePredictionGPUMemory; // @synthesize measurePredictionGPUMemory=_measurePredictionGPUMemory;
 @property BOOL measurePredictionCPUMemory; // @synthesize measurePredictionCPUMemory=_measurePredictionCPUMemory;
@@ -45,7 +46,6 @@
 @property(retain) MLModel *model; // @synthesize model=_model;
 @property BOOL tested; // @synthesize tested=_tested;
 @property(retain) NSError *testError; // @synthesize testError=_testError;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)meanCPUCyclesPerPrediction:(id *)arg1;
 - (id)peakModelLoadMemory:(id *)arg1;

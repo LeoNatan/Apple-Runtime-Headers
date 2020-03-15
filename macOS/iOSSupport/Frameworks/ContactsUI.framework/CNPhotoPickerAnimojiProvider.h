@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (id)providerItemForAvatarRecord:(id)arg1 imageProvider:(id)arg2 renderingQueue:(id)arg3 callbackQueue:(id)arg4;
 + (id)providerItemForAvatarRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTAvatarStore> avatarStore; // @synthesize avatarStore=_avatarStore;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (BOOL)canCreateMemoji;
 - (id)loadItemsForSize:(struct CGSize)arg1 scale:(double)arg2 RTL:(BOOL)arg3 renderingQueue:(id)arg4 callbackQueue:(id)arg5 itemDelegate:(id)arg6;
 - (id)initWithContact:(id)arg1 avatarStore:(id)arg2;

@@ -13,8 +13,8 @@
     NSString *_zeroLabel;
 }
 
-@property(readonly, nonatomic) NSString *zeroLabel; // @synthesize zeroLabel=_zeroLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *zeroLabel; // @synthesize zeroLabel=_zeroLabel;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(float)arg2;
 - (id)initWithZeroLabel:(id)arg1;

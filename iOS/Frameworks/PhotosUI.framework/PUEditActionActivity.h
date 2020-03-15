@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)activityCategory;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType activityBlock; // @synthesize activityBlock=_activityBlock;
 @property(retain, nonatomic) NSString *internalActivityType; // @synthesize internalActivityType=_internalActivityType;
 @property(copy, nonatomic) CDUnknownBlockType canPerformActivityActionHandler; // @synthesize canPerformActivityActionHandler=_canPerformActivityActionHandler;
 @property(copy, nonatomic) CDUnknownBlockType performActivityActionHandler; // @synthesize performActivityActionHandler=_performActivityActionHandler;
 @property(copy, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
-- (void).cxx_destruct;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_systemImageName;

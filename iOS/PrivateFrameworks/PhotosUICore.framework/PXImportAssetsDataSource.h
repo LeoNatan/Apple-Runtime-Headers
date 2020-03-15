@@ -15,10 +15,10 @@
     NSDictionary *_assetsMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *assetsMap; // @synthesize assetsMap=_assetsMap;
 @property(readonly, nonatomic) NSDictionary *assetCollectionsById; // @synthesize assetCollectionsById=_assetCollectionsById;
 @property(readonly, nonatomic) NSArray *assetCollections; // @synthesize assetCollections=_assetCollections;
-- (void).cxx_destruct;
 - (id)itemForImportAssetUuid:(id)arg1;
 - (id)alreadyImportedItems;
 - (id)notYetImportedItems;

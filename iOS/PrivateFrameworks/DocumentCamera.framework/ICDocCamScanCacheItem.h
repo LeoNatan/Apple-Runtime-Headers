@@ -14,9 +14,9 @@
     NSArray *_docInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *docInfos; // @synthesize docInfos=_docInfos;
 @property(retain, nonatomic) ICDocCamImageCache *imageCache; // @synthesize imageCache=_imageCache;
-- (void).cxx_destruct;
 - (void)doneBuildingCache;
 - (void)deleteCacheImages;
 - (id)imageForScanDataDelegateIdentifier:(id)arg1;

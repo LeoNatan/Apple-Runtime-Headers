@@ -15,10 +15,10 @@
     NSSet *_workoutNotifications;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *workoutNotifications; // @synthesize workoutNotifications=_workoutNotifications;
 @property(retain, nonatomic) NSSet *achievementNotifications; // @synthesize achievementNotifications=_achievementNotifications;
 @property(retain, nonatomic) NSSet *goalCompletionNotifications; // @synthesize goalCompletionNotifications=_goalCompletionNotifications;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allNotifications;
 - (unsigned long long)notificationCount;
 

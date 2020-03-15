@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSArray *_objects;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 @property(readonly, nonatomic) WFGiphySessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WFGiphyViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(nonatomic) _Bool selectMultiple; // @synthesize selectMultiple=_selectMultiple;
-- (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

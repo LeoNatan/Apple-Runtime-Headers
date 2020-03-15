@@ -15,17 +15,20 @@
 + (id)safeCategoryTargetClassName;
 - (void)setAlpha:(double)arg1;
 - (void)setState:(long long)arg1;
+- (void)_axAnnounceReticleStateAfterDelay;
+- (void)_axAnnounceReticleState;
+- (void)_axSetLastAnnouncementForReticleState:(id)arg1;
+- (id)_axLastAnnouncementForReticleState;
 - (id)_axStringForReticleState;
 - (long long)_axReticleState;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityHint;
-- (_Bool)_axIsFocusedOnRectangle;
-- (id)accessibilityValue;
-- (id)accessibilityPath;
-- (struct CGRect)accessibilityFrame;
-- (id)_axShapeLayer;
-- (id)accessibilityLabel;
-- (_Bool)isAccessibilityElement;
+- (unsigned long long)_axTraitsForReticleElement;
+- (id)_axHintForReticleElement;
+- (struct CGRect)_axFrameForReticleElement;
+- (id)accessibilityElements;
+- (void)_axSetReticleElement:(id)arg1;
+- (id)_axReticleElement;
+@property(readonly, nonatomic) _Bool axIsFocusedOnRectangle;
+@property(readonly, nonatomic) id axFirstLabelElement;
 
 @end
 

@@ -21,13 +21,13 @@
     NSIndexPath *_overrideItemPath;
 }
 
+- (void).cxx_destruct;
 @property BOOL acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
 @property BOOL wasHiddenOnLastSetFrameSize; // @synthesize wasHiddenOnLastSetFrameSize=_wasHiddenOnLastSetFrameSize;
 @property(retain) NSIndexPath *overrideItemPath; // @synthesize overrideItemPath=_overrideItemPath;
 @property(retain) NSArray *previewItems; // @synthesize previewItems=_previewItems;
 @property(retain) QLPreviewPanel *previewPanel; // @synthesize previewPanel=_previewPanel;
 @property __weak SiriUIClumpView *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (BOOL)isAccessibilitySelectorAllowed:(SEL)arg1;
 - (id)accessibilityIdentifier;
 - (id)accessibilityLabel;

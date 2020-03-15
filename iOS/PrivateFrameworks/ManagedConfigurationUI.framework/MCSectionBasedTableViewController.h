@@ -17,9 +17,9 @@
     MCSectionBasedTableView *_sectionBasedTableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCSectionBasedTableView *sectionBasedTableView; // @synthesize sectionBasedTableView=_sectionBasedTableView;
 @property(copy, nonatomic) NSArray *sectionControllers; // @synthesize sectionControllers=_sectionControllers;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 estimatedHeightForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

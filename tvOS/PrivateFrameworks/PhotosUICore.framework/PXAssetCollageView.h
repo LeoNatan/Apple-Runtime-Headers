@@ -25,6 +25,7 @@
 }
 
 + (long long)maximumNumberOfItems;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXLayoutPerformerOutput *layoutOutput; // @synthesize layoutOutput=_layoutOutput;
 @property(readonly, nonatomic) NSMutableIndexSet *hiddenItemIndexes; // @synthesize hiddenItemIndexes=_hiddenItemIndexes;
 @property(readonly, nonatomic) PXRoundedCornerOverlayView *roundedCornerOverlayView; // @synthesize roundedCornerOverlayView=_roundedCornerOverlayView;
@@ -37,7 +38,6 @@
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(readonly, nonatomic) PXUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-- (void).cxx_destruct;
 - (void)_updateRoundedCornerOverlayView;
 - (void)_removeAllAssetViews;
 - (void)_removeAssetView:(id)arg1;

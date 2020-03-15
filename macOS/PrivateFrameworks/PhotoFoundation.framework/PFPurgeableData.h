@@ -30,9 +30,9 @@
 + (id)purgeLevelToString:(int)arg1;
 + (void)_checkVMError:(int)arg1 function:(const char *)arg2;
 + (id)allInstances;
+- (void).cxx_destruct;
 @property BOOL recycle; // @synthesize recycle=_recycle;
 @property(retain) NSString *memoryNote; // @synthesize memoryNote=_memoryNote;
-- (void).cxx_destruct;
 - (void)endAccess;
 - (void)beginAccess:(CDUnknownBlockType)arg1;
 - (BOOL)beginAccess;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 
 + (id)listenerForKeyHelper:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
 + (id)listenerForKeyHelper:(id)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <GEOConfigChangeListenerDelegate> delegate; // @synthesize delegate;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue;
 @property(nonatomic) __weak _GEOConfigKeyHelper *keyHelper; // @synthesize keyHelper;
-- (void).cxx_destruct;
 - (id)description;
 - (void)callListener;
 

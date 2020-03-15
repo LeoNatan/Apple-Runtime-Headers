@@ -22,13 +22,13 @@
 }
 
 + (id)matchWithNetwork:(id)arg1 scannedNetwork:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL unwantedNetworkName; // @synthesize unwantedNetworkName=_unwantedNetworkName;
 @property(retain, nonatomic) NSDate *matchedAt; // @synthesize matchedAt=_matchedAt;
 @property(retain, nonatomic) id <WiFiScannedNetwork> scannedNetwork; // @synthesize scannedNetwork=_scannedNetwork;
 @property(readonly, copy, nonatomic) NSString *SSID; // @synthesize SSID=_SSID;
 @property(readonly, nonatomic) id <WiFiCandidateNetwork> network; // @synthesize network=_network;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqualToAvailabilityMatch:(id)arg1;

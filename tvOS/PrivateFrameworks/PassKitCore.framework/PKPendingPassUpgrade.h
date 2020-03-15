@@ -20,6 +20,7 @@
     NSURL *_upgradePassURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool passUpgradeInProgress; // @synthesize passUpgradeInProgress=_passUpgradeInProgress;
 @property(copy, nonatomic) NSURL *upgradePassURL; // @synthesize upgradePassURL=_upgradePassURL;
 @property(retain, nonatomic) PKPaymentPass *upgradedPass; // @synthesize upgradedPass=_upgradedPass;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool webRequestFinished; // @synthesize webRequestFinished=_webRequestFinished;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(readonly, nonatomic) PKPassUpgradeRequest *upgradeRequest; // @synthesize upgradeRequest=_upgradeRequest;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool upgradeIsComplete;
 - (id)initWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 

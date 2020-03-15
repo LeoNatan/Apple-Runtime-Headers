@@ -28,11 +28,11 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(nonatomic) double offsetCast; // @synthesize offsetCast=_offsetCast;
 @property(nonatomic) double offsetContrast; // @synthesize offsetContrast=_offsetContrast;
 @property(nonatomic) double offsetSaturation; // @synthesize offsetSaturation=_offsetSaturation;
 @property(nonatomic) double inputColor; // @synthesize inputColor=_inputColor;
-- (void).cxx_destruct;
 - (void)resetAllAutoSettingsToPending;
 - (void)_applyAutoSettings:(id)arg1;
 - (double)getAutoValueForInputKey:(id)arg1;

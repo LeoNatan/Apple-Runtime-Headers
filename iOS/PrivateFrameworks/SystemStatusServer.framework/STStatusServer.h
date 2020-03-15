@@ -23,13 +23,13 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(readonly, nonatomic) STStatusDomainPublisherXPCClientListener *publisherXPCClientListener; // @synthesize publisherXPCClientListener=_publisherXPCClientListener;
 @property(readonly, nonatomic) STStatusDomainXPCClientListener *xpcClientListener; // @synthesize xpcClientListener=_xpcClientListener;
 @property(readonly, nonatomic) NSMutableDictionary *dataByDomain; // @synthesize dataByDomain=_dataByDomain;
 @property(readonly, nonatomic) NSMutableDictionary *clientsByDomain; // @synthesize clientsByDomain=_clientsByDomain;
-- (void).cxx_destruct;
 - (id)_newEmptyDataForDomain:(unsigned long long)arg1;
 - (id)_internalQueue_dataForDomainCreatingIfNecessary:(unsigned long long)arg1;
 - (id)_internalQueue_dataForDomain:(unsigned long long)arg1;

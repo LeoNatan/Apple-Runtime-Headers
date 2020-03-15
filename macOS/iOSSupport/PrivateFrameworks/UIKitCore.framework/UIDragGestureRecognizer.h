@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIDragEvent *_dragEvent;
 }
 
-@property(readonly, nonatomic, getter=_dragEvent) __weak UIDragEvent *dragEvent; // @synthesize dragEvent=_dragEvent;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_dragEvent) __weak UIDragEvent *dragEvent; // @synthesize dragEvent=_dragEvent;
 - (struct CGPoint)locationInView:(id)arg1;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;

@@ -42,6 +42,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int internalAuthFlags; // @synthesize internalAuthFlags=_internalAuthFlags;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -60,7 +61,6 @@
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
 @property(nonatomic) unsigned int pairSetupFlags; // @synthesize pairSetupFlags=_pairSetupFlags;
-- (void).cxx_destruct;
 - (void)xpcServerHidePassword:(unsigned int)arg1;
 - (void)xpcServerShowPassword:(id)arg1 flags:(unsigned int)arg2;
 - (void)xpcServerAcceptSession:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -14,9 +14,9 @@
     MPSectionedCollection *_tracks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) MPSectionedCollection *tracks; // @synthesize tracks=_tracks;
 @property(readonly, nonatomic) int tracklistAction; // @synthesize tracklistAction=_tracklistAction;
-- (void).cxx_destruct;
 - (id)initWithTracks:(id)arg1 tracklistAction:(int)arg2;
 
 @end

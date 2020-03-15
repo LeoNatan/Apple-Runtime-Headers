@@ -14,9 +14,9 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) unsigned long long token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithToken:(unsigned long long)arg1 text:(id)arg2;
 

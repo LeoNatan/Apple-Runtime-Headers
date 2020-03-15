@@ -21,6 +21,7 @@
 
 + (id)videoComplementURLForSharingFromAsset:(id)arg1;
 + (void)publishBatchOfOriginalAssetUUIDs:(id)arg1 toSharedAlbum:(id)arg2 withAssetsSharingInfos:(id)arg3 customExportsInfo:(id)arg4 trimmedVideoPathInfo:(id)arg5 isNewAlbum:(BOOL)arg6 batchCommentText:(id)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *batchCommentText; // @synthesize batchCommentText=_batchCommentText;
 @property(nonatomic) BOOL isNewAlbum; // @synthesize isNewAlbum=_isNewAlbum;
 @property(retain, nonatomic) NSDictionary *trimmedVideoPathInfo; // @synthesize trimmedVideoPathInfo=_trimmedVideoPathInfo;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSArray *stillImageOnlyAssetUUIDs; // @synthesize stillImageOnlyAssetUUIDs=_stillImageOnlyAssetUUIDs;
 @property(retain, nonatomic) NSArray *originalAssetUUIDs; // @synthesize originalAssetUUIDs=_originalAssetUUIDs;
 @property(retain, nonatomic) NSString *publishAlbumCloudGUID; // @synthesize publishAlbumCloudGUID=_publishAlbumCloudGUID;
-- (void).cxx_destruct;
 - (void)retrieveURLsFromAsset:(id)arg1 withExportedFileURL:(id)arg2 primaryURL:(id *)arg3 videoComplementURL:(id *)arg4;
 - (void)executeDaemonOperation;
 - (void)runDaemonSide;

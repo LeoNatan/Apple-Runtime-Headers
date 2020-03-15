@@ -23,8 +23,8 @@
     id <BBSyncServiceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BBSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BBSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_dismissalDictionaryForBulletin:(id)arg1;
 - (void)_sendSyncMessage:(id)arg1;
 - (id)_syncLocalDevices;

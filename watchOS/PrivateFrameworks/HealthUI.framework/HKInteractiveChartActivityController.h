@@ -29,6 +29,7 @@
     HKInteractiveChartDisplayType *_standGoalDisplayType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKInteractiveChartDisplayType *standGoalDisplayType; // @synthesize standGoalDisplayType=_standGoalDisplayType;
 @property(readonly, nonatomic) HKInteractiveChartDisplayType *standValueDisplayType; // @synthesize standValueDisplayType=_standValueDisplayType;
 @property(readonly, nonatomic) HKInteractiveChartDisplayType *exerciseGoalDisplayType; // @synthesize exerciseGoalDisplayType=_exerciseGoalDisplayType;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) HKActivitySummaryAnnotationViewDataSource *activityAnnotationDataSource; // @synthesize activityAnnotationDataSource=_activityAnnotationDataSource;
 @property(retain, nonatomic) HKActivitySummaryDataProvider *activityDataProvider; // @synthesize activityDataProvider=_activityDataProvider;
 @property(retain, nonatomic) NSMapTable *yAxisAccessoryViewsByGraphSeries; // @synthesize yAxisAccessoryViewsByGraphSeries=_yAxisAccessoryViewsByGraphSeries;
-- (void).cxx_destruct;
 - (id)_dayActivitySummaryForDateRange:(id)arg1;
 - (id)activitySummaryForCurrentRange;
 - (int)graphSeriesTimeScope;

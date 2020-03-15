@@ -16,11 +16,11 @@
     ASVHitTestResult *_interpolatedOrFinalResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASVHitTestResult *interpolatedOrFinalResult; // @synthesize interpolatedOrFinalResult=_interpolatedOrFinalResult;
 @property(retain, nonatomic) ASVHitTestResult *finalResult; // @synthesize finalResult=_finalResult;
 @property(retain, nonatomic) ASVHitTestResult *interpolatedResult; // @synthesize interpolatedResult=_interpolatedResult;
 @property(retain, nonatomic) ASVRealHitTestResult *originalResult; // @synthesize originalResult=_originalResult;
-- (void).cxx_destruct;
 - (id)initWithOriginalResult:(id)arg1 interpolatedResult:(id)arg2 finalResult:(id)arg3;
 
 @end

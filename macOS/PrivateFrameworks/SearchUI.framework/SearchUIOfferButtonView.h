@@ -16,10 +16,10 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) TLKEmbossedLabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *offerTitle; // @synthesize offerTitle=_offerTitle;
-- (void).cxx_destruct;
 - (void)layout;
 - (id)accessibilityTitle;
 - (id)hitTest:(struct CGPoint)arg1;

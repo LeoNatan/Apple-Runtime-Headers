@@ -32,6 +32,7 @@
 + (id)loadMobileAssetContentsWhenMobileAssetChangesForMecabra:(struct __Mecabra *)arg1 inputModes:(id)arg2 onQueue:(id)arg3 oldMobileAssetChangeListener:(id)arg4;
 + (int)maxNumberOfDrawSamples;
 + (id)baseLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *candidatesToDelete; // @synthesize candidatesToDelete=_candidatesToDelete;
 @property(nonatomic) struct _NSRange rightDocumentContextCorrespondingToCandidatesRange; // @synthesize rightDocumentContextCorrespondingToCandidatesRange=_rightDocumentContextCorrespondingToCandidatesRange;
 @property(nonatomic) struct _NSRange leftDocumentContextCorrespondingToCandidatesRange; // @synthesize leftDocumentContextCorrespondingToCandidatesRange=_leftDocumentContextCorrespondingToCandidatesRange;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSMutableArray *candidatesLeftOfCaret; // @synthesize candidatesLeftOfCaret=_candidatesLeftOfCaret;
 @property(nonatomic) _Bool shouldAdjustOnAnalyze; // @synthesize shouldAdjustOnAnalyze=_shouldAdjustOnAnalyze;
 @property(retain, nonatomic) TIMecabraEnvironmentContextWrapper *mecabraContextWrapper; // @synthesize mecabraContextWrapper=_mecabraContextWrapper;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *rightCandidateSurfaces;
 @property(readonly, nonatomic) NSArray *inlineCandidateSurfaces;
 @property(readonly, nonatomic) NSArray *contextCandidateSurfaces;

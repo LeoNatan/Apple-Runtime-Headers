@@ -23,6 +23,7 @@
 }
 
 + (Class)prewarmsType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool development; // @synthesize development=_development;
 @property(retain, nonatomic) AWDCarouselPreviousExit *previousExit; // @synthesize previousExit=_previousExit;
 @property(retain, nonatomic) NSMutableArray *prewarms; // @synthesize prewarms=_prewarms;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned int reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

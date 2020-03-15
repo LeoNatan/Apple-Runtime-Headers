@@ -18,10 +18,10 @@
     NSMutableArray *_onRetryBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *onRetryBlocks; // @synthesize onRetryBlocks=_onRetryBlocks;
 @property(readonly, nonatomic) id <SWErrorReporting> errorReporter; // @synthesize errorReporter=_errorReporter;
 @property(readonly, nonatomic) id <SWProcessTerminationPolicyDecider> throttler; // @synthesize throttler=_throttler;
-- (void).cxx_destruct;
 - (void)onRetry:(CDUnknownBlockType)arg1;
 - (void)webContentProcessTerminated;
 - (id)initWithTerminationThrottler:(id)arg1 errorReporter:(id)arg2;

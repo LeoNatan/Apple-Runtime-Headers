@@ -14,9 +14,9 @@
     NSMapTable *_delegateToQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(nonatomic) struct os_unfair_lock_s delegateLock; // @synthesize delegateLock=_delegateLock;
-- (void).cxx_destruct;
 - (void)performAtomicDelegateBlock:(CDUnknownBlockType)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;

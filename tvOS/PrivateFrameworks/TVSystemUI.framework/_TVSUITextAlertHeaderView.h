@@ -15,8 +15,8 @@
     NSString *_title;
 }
 
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)_textColor;
 - (void)setTitleLabelLeadingConstant:(double)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

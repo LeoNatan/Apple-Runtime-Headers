@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (id)logCategory;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
-@property(readonly) HMFLocationAuthorization *authorization; // @synthesize authorization=_authorization;
 - (void).cxx_destruct;
+@property(readonly) HMFLocationAuthorization *authorization; // @synthesize authorization=_authorization;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)main;
 - (BOOL)isReady;

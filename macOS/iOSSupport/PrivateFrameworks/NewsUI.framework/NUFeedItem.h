@@ -11,8 +11,8 @@
     id _value;
 }
 
-@property(retain, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id value; // @synthesize value=_value;
 - (id)initWithValue:(id)arg1;
 
 @end

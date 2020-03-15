@@ -18,11 +18,11 @@
 
 + (id)_sortPoints:(id)arg1;
 + (struct CGPoint)_pointAtIndex:(unsigned long long)arg1 ofPointArray:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_weightedCentroid, setter=_setWeightedCentroid:) struct CGPoint weightedCentroid; // @synthesize weightedCentroid=_weightedCentroid;
 @property(retain, nonatomic, getter=_weights, setter=_setWeights:) NSMutableArray *weights; // @synthesize weights=_weights;
 @property(nonatomic, getter=_centroid, setter=_setCentroid:) struct CGPoint centroid; // @synthesize centroid=_centroid;
 @property(retain, nonatomic, getter=_points, setter=_setPoints:) NSMutableArray *mutablePoints; // @synthesize mutablePoints=_mutablePoints;
-- (void).cxx_destruct;
 - (double)_meanRadius;
 - (double)_meanFingertipRowAngle;
 - (double)_baseOrientation;

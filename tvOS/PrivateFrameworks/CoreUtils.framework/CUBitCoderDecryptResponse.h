@@ -14,9 +14,9 @@
     id _identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 
 @end
 

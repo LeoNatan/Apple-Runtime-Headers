@@ -21,11 +21,11 @@
 }
 
 + (id)stringAttributesForFont:(id)arg1 lineBreakMode:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKArtworkDataSourceCache *artworkCache; // @synthesize artworkCache=_artworkCache;
 @property(nonatomic) double spaceBetweenShields; // @synthesize spaceBetweenShields=_spaceBetweenShields;
 @property(copy, nonatomic) NSArray *labelItems; // @synthesize labelItems=_labelItems;
 @property(nonatomic) long long shieldSize; // @synthesize shieldSize=_shieldSize;
-- (void).cxx_destruct;
 - (id)_imageForShieldDataSource:(id)arg1;
 - (id)_imageForArtworkDataSource:(id)arg1;
 - (id)_imageForLabelItem:(id)arg1;

@@ -32,6 +32,7 @@
 + (id)stringForOPMode:(long long)arg1;
 + (id)stringForSecurityType:(unsigned long long)arg1;
 + (id)sharedController;
+- (void).cxx_destruct;
 @property BOOL ipv4ConfigStarted; // @synthesize ipv4ConfigStarted=_ipv4ConfigStarted;
 @property struct __IPConfigurationService *ipConfigService; // @synthesize ipConfigService=_ipConfigService;
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
@@ -44,7 +45,6 @@
 @property BOOL attemptingWirelessSwitch; // @synthesize attemptingWirelessSwitch=_attemptingWirelessSwitch;
 @property BOOL connectedToAP; // @synthesize connectedToAP=_connectedToAP;
 @property BOOL hostingAP; // @synthesize hostingAP=_hostingAP;
-- (void).cxx_destruct;
 - (id)wirelessInformation;
 - (void)printWirelessInformation;
 - (void)restoreWirelessConfiguration;

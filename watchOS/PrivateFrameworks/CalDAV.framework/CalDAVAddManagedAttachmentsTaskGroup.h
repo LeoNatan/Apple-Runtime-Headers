@@ -25,6 +25,7 @@
     NSMutableDictionary *_filenamesToServerLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *filenamesToServerLocation; // @synthesize filenamesToServerLocation=_filenamesToServerLocation;
 @property(retain, nonatomic) NSDictionary *contentTypes; // @synthesize contentTypes=_contentTypes;
 @property(retain, nonatomic) NSDictionary *attachments; // @synthesize attachments=_attachments;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *previousScheduleTag; // @synthesize previousScheduleTag=_previousScheduleTag;
 @property(retain, nonatomic) NSString *previousETag; // @synthesize previousETag=_previousETag;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)startTaskGroup;
 - (void)_sendAttachments;
 - (void)_handlePostResponse:(id)arg1;

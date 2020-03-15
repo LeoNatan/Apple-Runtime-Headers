@@ -21,6 +21,7 @@
     NSDateComponents *_statisticsInterval;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *statisticsInterval; // @synthesize statisticsInterval=_statisticsInterval;
 @property(nonatomic) double maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) double minValue; // @synthesize minValue=_minValue;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool representsRange; // @synthesize representsRange=_representsRange;
 @property(retain, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

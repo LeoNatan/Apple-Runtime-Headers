@@ -35,6 +35,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)contactsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int ttyType; // @synthesize ttyType=_ttyType;
 @property(nonatomic) int recordTypeForRedialing; // @synthesize recordTypeForRedialing=_recordTypeForRedialing;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(nonatomic) int callCapability; // @synthesize callCapability=_callCapability;
 @property(nonatomic) int audioRoute; // @synthesize audioRoute=_audioRoute;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

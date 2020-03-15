@@ -17,11 +17,11 @@
 }
 
 + (id)sharedHelper;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 @property(retain) NSObject<OS_dispatch_queue> *sharedConcurrentQueueAtBackground; // @synthesize sharedConcurrentQueueAtBackground=_sharedConcurrentQueueAtBackground;
 @property(retain) NSObject<OS_dispatch_queue> *sharedConcurrentQueueAtUtility; // @synthesize sharedConcurrentQueueAtUtility=_sharedConcurrentQueueAtUtility;
 @property(retain) NSObject<OS_dispatch_queue> *sharedSerialQueueAtUtility; // @synthesize sharedSerialQueueAtUtility=_sharedSerialQueueAtUtility;
-- (void).cxx_destruct;
 - (id)subsystemForSignposts;
 
 @end

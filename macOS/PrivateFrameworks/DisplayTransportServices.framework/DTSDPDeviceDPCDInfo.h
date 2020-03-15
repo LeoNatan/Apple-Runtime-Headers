@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char firmwareMinorVersion; // @synthesize firmwareMinorVersion=_firmwareMinorVersion;
 @property(nonatomic) unsigned char firmwareMajorVersion; // @synthesize firmwareMajorVersion=_firmwareMajorVersion;
 @property(nonatomic) unsigned char hardwareMinorVersion; // @synthesize hardwareMinorVersion=_hardwareMinorVersion;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=isBranch) BOOL branch; // @synthesize branch=_branch;
 @property(retain, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(nonatomic) unsigned int oui; // @synthesize oui=_oui;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

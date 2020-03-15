@@ -33,6 +33,7 @@
 
 + (id)dummyForcedGeneratorInfo;
 + (id)getGeneratorInfo:(id)arg1 isDatabaseUpdating:(char *)arg2;
+- (void).cxx_destruct;
 @property BOOL startedOnServer; // @synthesize startedOnServer=_startedOnServer;
 @property struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(retain) FPItem *fpitem; // @synthesize fpitem=_fpitem;
@@ -50,7 +51,6 @@
 @property(retain) QLThumbnailGenerationRequest *generationRequest; // @synthesize generationRequest=_generationRequest;
 @property(retain) id <QLThumbnailGeneratorInfo> generatorInfo; // @synthesize generatorInfo=_generatorInfo;
 @property(retain) QLThumbnailMetadata *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (id)description;
 - (void)startedOnServerWithContentType:(id)arg1;
 - (void)failedFromServer:(int)arg1;

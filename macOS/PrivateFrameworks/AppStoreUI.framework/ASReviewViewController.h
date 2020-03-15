@@ -23,12 +23,12 @@
 + (id)stringByEscapingString:(id)arg1;
 + (id)queryStringForDictionary:(id)arg1 escapedValues:(BOOL)arg2;
 + (struct CGSize)preferredSizeForConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) BOOL isReadyToPublish; // @synthesize isReadyToPublish=_isReadyToPublish;
 @property(retain, nonatomic) NSAlert *alert; // @synthesize alert=_alert;
 @property(retain, nonatomic) ASWriteReviewConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ASWriteReviewBodyView *reviewView;
 - (void)controlTextDidChange:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;

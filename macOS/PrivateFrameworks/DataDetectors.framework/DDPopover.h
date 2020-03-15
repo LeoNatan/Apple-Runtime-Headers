@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _ddRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGRect ddRect; // @synthesize ddRect=_ddRect;
 @property(readonly) unsigned long long ddEdge; // @synthesize ddEdge=_ddEdge;
-- (void).cxx_destruct;
 - (void)setAltPresentationBehavior:(BOOL)arg1;
 - (void)presentationEndedForController:(id)arg1;
 - (void)popoverWillClose:(id)arg1;

@@ -32,6 +32,7 @@
     NSSet *_providers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *providers; // @synthesize providers=_providers;
 @property(retain, nonatomic) NSMutableArray *evalPredictedExitDates; // @synthesize evalPredictedExitDates=_evalPredictedExitDates;
 @property(retain, nonatomic) NSMutableArray *evalPredictedLocationsOfInterest; // @synthesize evalPredictedLocationsOfInterest=_evalPredictedLocationsOfInterest;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
-- (void).cxx_destruct;
 - (void)onLearnedLocationManagerNotification:(id)arg1;
 - (void)_onLearnedLocationManagerNotification:(id)arg1;
 - (void)_updateEvalMode;

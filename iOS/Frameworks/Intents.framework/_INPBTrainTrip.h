@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDateTimeRange *tripDuration; // @synthesize tripDuration=_tripDuration;
 @property(copy, nonatomic) NSString *trainNumber; // @synthesize trainNumber=_trainNumber;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *departurePlatform; // @synthesize departurePlatform=_departurePlatform;
 @property(retain, nonatomic) _INPBLocationValue *arrivalStationLocation; // @synthesize arrivalStationLocation=_arrivalStationLocation;
 @property(copy, nonatomic) NSString *arrivalPlatform; // @synthesize arrivalPlatform=_arrivalPlatform;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct PPMBoolOption_ {
     unsigned long long _field1;
 };
@@ -60,10 +56,6 @@ struct PPMTopicDonationSource_ {
 
 struct PPMTypeSafeBool_ {
     unsigned long long _field1;
-};
-
-struct PPScoredItem {
-    Class _field1;
 };
 
 struct _NSRange {

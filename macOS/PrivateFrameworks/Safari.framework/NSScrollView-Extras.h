@@ -7,6 +7,5 @@
 #import <AppKit/NSScrollView.h>
 
 @interface NSScrollView (Extras)
-- (id)safari_swapClipViewForNewClipViewWithClassIfNecessary:(Class)arg1;
 @end
 

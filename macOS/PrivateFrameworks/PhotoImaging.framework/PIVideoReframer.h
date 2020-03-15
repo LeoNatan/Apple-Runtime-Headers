@@ -24,10 +24,10 @@
 + (id)reframerWithRevision:(long long)arg1 encodedPixelSize:(CDStruct_912cb5d2)arg2 orientation:(long long)arg3 clapRect:(CDStruct_996ac03c)arg4 viewRect:(CDStruct_996ac03c)arg5 config:(const CDUnion_b42e088f *)arg6;
 + (CDUnion_b42e088f)defaultConfigForRevision:(long long)arg1;
 + (long long)defaultRevision;
-@property(readonly, nonatomic) long long revision; // @synthesize revision=_revision;
-@property(copy, nonatomic) CDUnknownBlockType frameProvider; // @synthesize frameProvider=_frameProvider;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long revision; // @synthesize revision=_revision;
+@property(copy, nonatomic) CDUnknownBlockType frameProvider; // @synthesize frameProvider=_frameProvider;
 - (struct CGRect)reframedViewRectAtTime:(CDStruct_1b6d18a9)arg1;
 - (void)processReframe:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (double)confidence;

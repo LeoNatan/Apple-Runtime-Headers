@@ -17,10 +17,10 @@
 }
 
 + (id)serializationTypeNumber;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timeoutSource; // @synthesize timeoutSource=_timeoutSource;
 @property(nonatomic) unsigned long long _totalFrameCount; // @synthesize _totalFrameCount;
-- (void).cxx_destruct;
 - (_Bool)_hasTotalFrames;
 - (id)initWithDictionary:(id)arg1;
 - (id)_dictionaryRepresentationWithIsHumanReadable:(_Bool)arg1 shouldRedact:(_Bool)arg2;

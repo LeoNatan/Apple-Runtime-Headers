@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *secretKey; // @synthesize secretKey=_secretKey;
 @property(copy, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSData *altIRK; // @synthesize altIRK=_altIRK;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

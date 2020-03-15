@@ -15,12 +15,12 @@
     struct CGRect _endFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool scaleSize; // @synthesize scaleSize=_scaleSize;
 @property(readonly, nonatomic) struct CGRect endFrame; // @synthesize endFrame=_endFrame;
 @property(readonly, nonatomic) struct CGRect startFrame; // @synthesize startFrame=_startFrame;
 @property(readonly, nonatomic) UIView *endView; // @synthesize endView=_endView;
 @property(readonly, nonatomic) UIView *startView; // @synthesize startView=_startView;
-- (void).cxx_destruct;
 - (id)description;
 - (void)haltAnimation;
 - (void)setToEndState;

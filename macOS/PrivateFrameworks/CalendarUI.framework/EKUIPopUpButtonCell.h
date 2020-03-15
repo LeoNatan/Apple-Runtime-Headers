@@ -18,13 +18,13 @@
     EKViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property __weak EKViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain) NSDictionary *disabledTitleAttributes; // @synthesize disabledTitleAttributes=_disabledTitleAttributes;
 @property(retain) NSDictionary *enabledTitleAttributes; // @synthesize enabledTitleAttributes=_enabledTitleAttributes;
 @property BOOL mouseOver; // @synthesize mouseOver=_mouseOver;
 @property BOOL useAlternateTitle; // @synthesize useAlternateTitle=_useAlternateTitle;
 @property __weak EKUIPopUpButton *uiPopUpbutton; // @synthesize uiPopUpbutton=_uiPopUpbutton;
-- (void).cxx_destruct;
 - (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (void)drawBorderAndBackgroundWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_setMouseTrackingInRect:(struct CGRect)arg1 ofView:(id)arg2;

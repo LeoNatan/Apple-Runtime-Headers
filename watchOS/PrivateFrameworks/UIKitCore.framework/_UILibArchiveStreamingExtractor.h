@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldExtractPathInArchive:(id)arg1 forExtractionRootedAtStandardizedSubpathInArchive:(id)arg2;
 + (id)archiveSubpathByStandardizingArchiveSubpath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *extractedContentAbsolutePaths; // @synthesize extractedContentAbsolutePaths=_extractedContentAbsolutePaths;
 @property(readonly, nonatomic) NSString *archivePath; // @synthesize archivePath=_archivePath;
-- (void).cxx_destruct;
 - (_Bool)extractArchivePath:(id)arg1 toDirectory:(id)arg2 error:(id *)arg3;
 - (id)initForExtractingArchivePath:(id)arg1;
 

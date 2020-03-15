@@ -6,15 +6,21 @@
 
 #import <OSUpdate/SUOSUProduct.h>
 
-@class NSImage, NSString, SUMajorProduct;
+@class NSDate, NSImage, NSString, SUMajorProduct;
 
 @interface SUOSUMajorProduct : SUOSUProduct
 {
+    BOOL __adminDeferred;
     SUMajorProduct *_majorProduct;
+    NSDate *__adminDeferredDate;
 }
 
-@property(readonly) SUMajorProduct *majorProduct; // @synthesize majorProduct=_majorProduct;
 - (void).cxx_destruct;
+@property BOOL _adminDeferred; // @synthesize _adminDeferred=__adminDeferred;
+@property(retain) NSDate *_adminDeferredDate; // @synthesize _adminDeferredDate=__adminDeferredDate;
+@property(readonly) SUMajorProduct *majorProduct; // @synthesize majorProduct=_majorProduct;
+- (id)description;
+@property(readonly) BOOL isAdminDeferred;
 - (void)updateMajorProduct:(id)arg1;
 - (id)installerApplicationBundleURLOnDisk;
 @property(readonly) NSImage *majorOSIconImage;

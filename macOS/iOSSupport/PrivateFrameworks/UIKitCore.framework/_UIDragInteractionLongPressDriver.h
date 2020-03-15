@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, UIDelayedAction, _UIDragAcceleratorGestureRecognizer, _UIDragLiftGestureRecognizer, _UIRelationshipGestureRecognizer;
+@class NSString, UIDelayedAction, _UIDragLiftGestureRecognizer, _UIRelationshipGestureRecognizer;
 
 __attribute__((visibility("hidden")))
 @interface _UIDragInteractionLongPressDriver : _UIDragInteractionDriver <UIGestureRecognizerDelegate>
@@ -16,16 +16,14 @@ __attribute__((visibility("hidden")))
     UIDelayedAction *_gateTimer;
     UIDelayedAction *_cancellationTimer;
     _UIDragLiftGestureRecognizer *_gestureRecognizerForDragInitiation;
-    _UIDragAcceleratorGestureRecognizer *_gestureRecognizerForAcceleratedDragInitiation;
     _UIRelationshipGestureRecognizer *_gestureRecognizerForFailureRelationship;
     _UIRelationshipGestureRecognizer *_gestureRecognizerForExclusionRelationship;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIRelationshipGestureRecognizer *gestureRecognizerForExclusionRelationship; // @synthesize gestureRecognizerForExclusionRelationship=_gestureRecognizerForExclusionRelationship;
 @property(readonly, nonatomic) _UIRelationshipGestureRecognizer *gestureRecognizerForFailureRelationship; // @synthesize gestureRecognizerForFailureRelationship=_gestureRecognizerForFailureRelationship;
-@property(readonly, nonatomic) _UIDragAcceleratorGestureRecognizer *gestureRecognizerForAcceleratedDragInitiation; // @synthesize gestureRecognizerForAcceleratedDragInitiation=_gestureRecognizerForAcceleratedDragInitiation;
 @property(readonly, nonatomic) _UIDragLiftGestureRecognizer *gestureRecognizerForDragInitiation; // @synthesize gestureRecognizerForDragInitiation=_gestureRecognizerForDragInitiation;
-- (void).cxx_destruct;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
@@ -37,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasExceededAllowableMovement;
 - (BOOL)hasMoveHysteresisBeenReached;
 - (double)translationInWindow;
+- (void)_updateLiftMoveHysteresisInDragInitiationGesture;
 - (void)_dragInitiationGestureStateChanged:(id)arg1;
 - (void)openGateCancelingAddItemsGestures;
 - (void)openCompetingGestureRecognizerGateCancelingGestures:(id)arg1;
@@ -45,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (void)_gateCompetingGestureRecognizers;
 - (BOOL)_wantsTimeDelayedFailureRequirementGate;
 - (BOOL)isGestureRecognizerForDragInitiation:(id)arg1;
-- (void)setAcceleratedDragGestureEnabled:(BOOL)arg1;
 - (void)setLiftDelay:(double)arg1;
 - (void)setLiftMoveHysteresis:(double)arg1;
 - (void)setAllowedTouchTypes:(id)arg1;

@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(nonatomic) float volumeValue; // @synthesize volumeValue=_volumeValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

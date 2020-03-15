@@ -14,9 +14,9 @@
     NSArray *_itemIdTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *itemIdTypes; // @synthesize itemIdTypes=_itemIdTypes;
 @property(copy, nonatomic) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
-- (void).cxx_destruct;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSGetItemResponseType *response;

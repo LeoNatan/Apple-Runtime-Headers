@@ -16,11 +16,11 @@
     double _speed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) double endValue; // @synthesize endValue=_endValue;
 @property(nonatomic) double startValue; // @synthesize startValue=_startValue;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
-- (void).cxx_destruct;
 - (double)solveForTime:(double)arg1;
 - (id)initWithTimingFunction:(id)arg1 startValue:(double)arg2 endValue:(double)arg3 speed:(double)arg4;
 - (id)init;

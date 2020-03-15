@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     NSView *_contentView;
 }
 
-@property __weak NSView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property __weak NSView *contentView; // @synthesize contentView=_contentView;
 - (id)hitTest:(struct CGPoint)arg1;
 
 @end

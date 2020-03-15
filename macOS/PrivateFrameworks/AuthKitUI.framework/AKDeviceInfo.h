@@ -17,11 +17,11 @@
 }
 
 + (id)deviceInfo;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(readonly, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(readonly, nonatomic) NSString *udid; // @synthesize udid=_udid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long osTheme;
 - (id)init;
 

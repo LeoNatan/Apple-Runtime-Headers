@@ -19,13 +19,13 @@
     long long _compatibilityVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 @property(readonly, nonatomic) long long contentVersion; // @synthesize contentVersion=_contentVersion;
 @property(readonly) NSURL *localURL; // @synthesize localURL=_localURL;
 @property(readonly) unsigned long long assetStatus; // @synthesize assetStatus=_assetStatus;
 @property(retain) NSString *songUID; // @synthesize songUID=_songUID;
 @property(readonly) NSString *assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 - (long long)compatibilityVersionForAssetLocation:(unsigned long long)arg1;
 - (long long)contentVersionForAssetLocation:(unsigned long long)arg1;
 - (BOOL)contentUpdateAvaliable;

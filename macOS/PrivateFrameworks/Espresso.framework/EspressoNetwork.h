@@ -13,9 +13,9 @@
     shared_ptr_d082c67d _net;
 }
 
-@property(readonly) shared_ptr_d082c67d net; // @synthesize net=_net;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) shared_ptr_d082c67d net; // @synthesize net=_net;
 - (void)wipe_layers_blobs;
 @property(readonly) unsigned long long layers_size;
 - (id)initWithJSFile:(const char *)arg1 binSerializerId:(const char *)arg2 context:(id)arg3 computePath:(int)arg4;

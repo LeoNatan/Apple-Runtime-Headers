@@ -19,9 +19,9 @@
 }
 
 + (id)storePlatformConfiguration;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *signatureDataHeaderName; // @synthesize signatureDataHeaderName=_signatureDataHeaderName;
 @property(copy, nonatomic) NSString *signatureDataCookieName; // @synthesize signatureDataCookieName=_signatureDataCookieName;
-- (void).cxx_destruct;
 - (void)_enumerateComponentsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_addRequestComponent:(long long)arg1 withName:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

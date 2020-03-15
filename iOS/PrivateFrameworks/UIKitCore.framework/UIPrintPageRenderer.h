@@ -19,11 +19,11 @@
     long long _cachedPageCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect printableRect; // @synthesize printableRect=_printableRect;
 @property(nonatomic) struct CGRect paperRect; // @synthesize paperRect=_paperRect;
 @property(nonatomic) double footerHeight; // @synthesize footerHeight=_footerHeight;
 @property(nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;
-- (void).cxx_destruct;
 - (void)_endPrintContext:(id)arg1 success:(_Bool)arg2;
 - (void)_drawPage:(long long)arg1;
 - (void)_endSaveContext;

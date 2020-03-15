@@ -14,8 +14,8 @@
 }
 
 + (id)userDataWithViewSpec:(id)arg1;
-@property(readonly, nonatomic) PXViewSpec *viewSpec; // @synthesize viewSpec=_viewSpec;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXViewSpec *viewSpec; // @synthesize viewSpec=_viewSpec;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)_initWithViewSpec:(id)arg1;

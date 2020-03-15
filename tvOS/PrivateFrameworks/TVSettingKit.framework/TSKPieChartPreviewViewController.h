@@ -18,13 +18,13 @@
     UILabel *_auxiliaryLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *auxiliaryLabel; // @synthesize auxiliaryLabel=_auxiliaryLabel;
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) NSArray *dots; // @synthesize dots=_dots;
 @property(retain, nonatomic) TSKPieChartView *pieChartView; // @synthesize pieChartView=_pieChartView;
 @property(copy, nonatomic) NSString *auxiliaryMessage; // @synthesize auxiliaryMessage=_auxiliaryMessage;
 @property(readonly, copy, nonatomic) NSArray *pieChartItems; // @synthesize pieChartItems=_pieChartItems;
-- (void).cxx_destruct;
 - (id)itemWithTitle:(id)arg1;
 - (void)applyValues:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;

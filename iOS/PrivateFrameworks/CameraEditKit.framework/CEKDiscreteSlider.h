@@ -46,6 +46,7 @@
     CDStruct_ae5a35ae _gradientInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(nonatomic) unsigned long long colorHighlight; // @synthesize colorHighlight=_colorHighlight;
 @property(nonatomic) double tickMarksHeight; // @synthesize tickMarksHeight=_tickMarksHeight;
@@ -75,7 +76,6 @@
 @property(nonatomic) double sliderVerticalOffset; // @synthesize sliderVerticalOffset=_sliderVerticalOffset;
 @property(nonatomic) long long sliderVerticalAlignment; // @synthesize sliderVerticalAlignment=_sliderVerticalAlignment;
 @property(nonatomic) double labelVerticalPadding; // @synthesize labelVerticalPadding=_labelVerticalPadding;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *gradientColor;
 @property(nonatomic) _Bool useLegibilityBackgrounds;
 @property(nonatomic) _Bool useLegibilityShadows;

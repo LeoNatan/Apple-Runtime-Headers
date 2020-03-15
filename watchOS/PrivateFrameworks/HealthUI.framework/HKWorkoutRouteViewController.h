@@ -21,13 +21,13 @@
     NSArray *_excludedActivityTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *excludedActivityTypes; // @synthesize excludedActivityTypes=_excludedActivityTypes;
 @property(retain, nonatomic) NSString *shareText; // @synthesize shareText=_shareText;
 @property(nonatomic) _Bool sharingEnabled; // @synthesize sharingEnabled=_sharingEnabled;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) HKLocationReadings *unsmoothedLocationReadings; // @synthesize unsmoothedLocationReadings=_unsmoothedLocationReadings;
 @property(retain, nonatomic) HKRouteView *routeView; // @synthesize routeView=_routeView;
-- (void).cxx_destruct;
 - (void)_toggleRouteViewMapType:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)_shareButtonPressed:(id)arg1;

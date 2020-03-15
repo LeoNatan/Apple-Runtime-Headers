@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *flushTimer; // @synthesize flushTimer=_flushTimer;
 @property(retain) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
 @property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 @property unsigned char numAggregations; // @synthesize numAggregations=_numAggregations;
 @property unsigned char numAggregates; // @synthesize numAggregates=_numAggregates;
 @property(readonly) NSMutableDictionary *aggregatesCache; // @synthesize aggregatesCache=_aggregatesCache;
-- (void).cxx_destruct;
 - (BOOL)_setEventAggregate:(id)arg1 eventName:(id)arg2 aggregateKey:(id)arg3 valueLabel:(id)arg4 value:(id)arg5;
 - (id)_eventAggregate:(id)arg1 eventName:(id)arg2 aggregateKey:(id)arg3 valueLabel:(id)arg4;
 - (void)cleanCache;

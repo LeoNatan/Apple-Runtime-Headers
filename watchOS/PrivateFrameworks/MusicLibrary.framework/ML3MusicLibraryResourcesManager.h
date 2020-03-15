@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _ML3BaseMusicLibraryResourcesManager *implementation; // @synthesize implementation=_implementation;
 @property(retain, nonatomic) ML3MusicLibraryResourcesManagerContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithBaseResourcesManager:(id)arg1;

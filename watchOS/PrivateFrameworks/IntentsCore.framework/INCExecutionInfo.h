@@ -19,10 +19,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *containingAppBundleURL; // @synthesize containingAppBundleURL=_containingAppBundleURL;
 @property(readonly, copy, nonatomic) NSString *displayableAppBundleId; // @synthesize displayableAppBundleId=_displayableAppBundleId;
 @property(readonly, copy, nonatomic) NSString *launchableAppBundleId; // @synthesize launchableAppBundleId=_launchableAppBundleId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canRunOnLocalDevice;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) LSApplicationProxy *_applicationProxy;

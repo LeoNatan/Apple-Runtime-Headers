@@ -36,6 +36,7 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldActiveScan; // @synthesize shouldActiveScan=_shouldActiveScan;
 @property(retain, nonatomic) NSMutableArray *persistentDevices; // @synthesize persistentDevices=_persistentDevices;
 @property(retain, nonatomic) NSMutableArray *updateDeviceBlocks; // @synthesize updateDeviceBlocks=_updateDeviceBlocks;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSMutableArray *connectedDevices; // @synthesize connectedDevices=_connectedDevices;
 @property(retain) NSMutableArray *loadedDevices; // @synthesize loadedDevices=_loadedDevices;
 @property(retain, nonatomic) NSMutableArray *availablePeripherals; // @synthesize availablePeripherals=_availablePeripherals;
-- (void).cxx_destruct;
 - (BOOL)representsLocalDevices;
 - (id)valueForProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;
 - (void)pairedHearingAidsDidChange;

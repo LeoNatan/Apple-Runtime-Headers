@@ -18,13 +18,13 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) __weak MTKMesh *mesh; // @synthesize mesh=_mesh;
 @property(readonly, nonatomic) unsigned long long indexCount; // @synthesize indexCount=_indexCount;
 @property(readonly, nonatomic) MTKMeshBuffer *indexBuffer; // @synthesize indexBuffer=_indexBuffer;
 @property(readonly, nonatomic) unsigned long long indexType; // @synthesize indexType=_indexType;
 @property(readonly, nonatomic) unsigned long long primitiveType; // @synthesize primitiveType=_primitiveType;
-- (void).cxx_destruct;
 - (id)initWithMesh:(id)arg1 submesh:(id)arg2 device:(id)arg3 error:(id *)arg4;
 
 @end

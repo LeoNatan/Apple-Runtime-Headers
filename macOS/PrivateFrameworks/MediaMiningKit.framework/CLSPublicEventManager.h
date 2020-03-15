@@ -15,9 +15,9 @@
 }
 
 + (id)urlForEventsForCacheInvalidation;
+- (void).cxx_destruct;
 @property(nonatomic) double queryRadius; // @synthesize queryRadius=_queryRadius;
 @property(readonly, nonatomic) CLSPublicEventCache *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)loadInvalidationTokensAndInvalidateCachesIfNeeded;
 - (void)saveEventsForCacheInvalidation:(id)arg1;
 - (id)publicEventsByTimeLocationTupleIdentifierForTimeLocationTuples:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;

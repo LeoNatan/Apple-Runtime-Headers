@@ -21,11 +21,11 @@
     id <_TVAppNavigationControllerDelegate> _appNavigationControllerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_TVAppNavigationControllerDelegate> appNavigationControllerDelegate; // @synthesize appNavigationControllerDelegate=_appNavigationControllerDelegate;
 @property(nonatomic) unsigned long long previousSelectedIndex; // @synthesize previousSelectedIndex=_previousSelectedIndex;
 @property(retain, nonatomic) NSArray *appTabBarItems; // @synthesize appTabBarItems=_appTabBarItems;
 @property(readonly, nonatomic) IKAppTabBar *appTabBar; // @synthesize appTabBar=_appTabBar;
-- (void).cxx_destruct;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)transientTabItemForTabBar:(id)arg1;
 - (void)tabBar:(id)arg1 setSelectedTabItem:(id)arg2;

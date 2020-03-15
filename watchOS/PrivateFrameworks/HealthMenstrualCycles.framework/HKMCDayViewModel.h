@@ -19,11 +19,11 @@
 + (id)dayViewModelWithMenstruationLevel:(unsigned int)arg1 fertileWindowLevel:(unsigned int)arg2 daySummary:(id)arg3 fetched:(_Bool)arg4;
 + (id)emptyDayViewModel;
 + (id)unfetchedDayViewModel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKMCDaySummary *daySummary; // @synthesize daySummary=_daySummary;
 @property(readonly, nonatomic, getter=isFetched) _Bool fetched; // @synthesize fetched=_fetched;
 @property(readonly, nonatomic) unsigned int fertileWindowLevel; // @synthesize fertileWindowLevel=_fertileWindowLevel;
 @property(readonly, nonatomic) unsigned int menstruationLevel; // @synthesize menstruationLevel=_menstruationLevel;
-- (void).cxx_destruct;
 - (id)redactedDescription;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

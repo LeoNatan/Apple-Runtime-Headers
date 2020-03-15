@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)peerType;
 + (Class)transportOptionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSMutableArray *peers; // @synthesize peers=_peers;
 @property(retain, nonatomic) NSMutableArray *transportOptions; // @synthesize transportOptions=_transportOptions;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isSending; // @synthesize isSending=_isSending;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

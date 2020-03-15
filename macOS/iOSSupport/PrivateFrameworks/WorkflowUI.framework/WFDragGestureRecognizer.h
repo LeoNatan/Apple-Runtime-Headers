@@ -23,9 +23,9 @@
     double _allowableMovement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(nonatomic) double minimumPressDuration; // @synthesize minimumPressDuration=_minimumPressDuration;
-- (void).cxx_destruct;
 - (struct CGPoint)locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (unsigned long long)numberOfTouches;
 - (struct CGPoint)velocityInView:(id)arg1;

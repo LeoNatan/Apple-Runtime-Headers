@@ -173,6 +173,7 @@
 - (void)logCreatingImageStoreForPath:(NSString *)arg1;
 - (void)logFileSystemError:(NSString *)arg1;
 - (void)logPerformedRecentStickersMigration:(_Bool)arg1;
+- (void)logFetchedRecentStickerWithNoStickerConfiguration:(NSString *)arg1;
 - (void)logFetchedOrphanedRecentSticker:(NSString *)arg1;
 - (void)logErrorFetchingRecentStickers:(NSString *)arg1;
 - (void)logErrorSavingRecentSticker:(NSString *)arg1;

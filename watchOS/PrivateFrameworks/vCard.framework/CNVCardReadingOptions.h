@@ -16,11 +16,11 @@
     unsigned int _maximumValueLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useConcurrentParsing; // @synthesize useConcurrentParsing=_useConcurrentParsing;
 @property(nonatomic) unsigned int maximumValueLength; // @synthesize maximumValueLength=_maximumValueLength;
 @property(copy, nonatomic) NSArray *propertiesToFetch; // @synthesize propertiesToFetch=_propertiesToFetch;
 @property(nonatomic) unsigned int contactLimit; // @synthesize contactLimit=_contactLimit;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

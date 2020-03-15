@@ -13,8 +13,8 @@
     NSRemoteView *_remoteView;
 }
 
-@property(nonatomic) __weak NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 andRemoteView:(id)arg2;
 

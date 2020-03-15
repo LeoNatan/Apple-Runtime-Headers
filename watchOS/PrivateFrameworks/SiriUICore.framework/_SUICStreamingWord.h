@@ -19,6 +19,7 @@
     struct _NSRange _textRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *endImage; // @synthesize endImage=_endImage;
 @property(retain, nonatomic) UIImage *beginImage; // @synthesize beginImage=_beginImage;
 @property(retain, nonatomic) CALayer *wordLayer; // @synthesize wordLayer=_wordLayer;
@@ -26,7 +27,6 @@
 @property(nonatomic) struct _NSRange textRange; // @synthesize textRange=_textRange;
 @property(nonatomic) int insertType; // @synthesize insertType=_insertType;
 @property(retain, nonatomic) _SUICStreamingWord *previous; // @synthesize previous=_previous;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

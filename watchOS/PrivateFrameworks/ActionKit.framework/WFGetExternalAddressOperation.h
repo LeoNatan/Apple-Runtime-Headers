@@ -17,12 +17,12 @@
     struct __CFReadStream *_stream;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFReadStream *stream; // @synthesize stream=_stream;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *result; // @synthesize result=_result;
 @property(nonatomic) _Bool useIPv6; // @synthesize useIPv6=_useIPv6;
-- (void).cxx_destruct;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;
 - (_Bool)isReady;

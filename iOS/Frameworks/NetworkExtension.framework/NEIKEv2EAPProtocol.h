@@ -16,9 +16,9 @@
     NSDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *properties; // @synthesize properties=_properties;
 @property unsigned long long method; // @synthesize method=_method;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

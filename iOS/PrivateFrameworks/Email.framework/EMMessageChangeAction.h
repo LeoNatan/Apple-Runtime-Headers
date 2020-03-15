@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *objectIDs; // @synthesize objectIDs=_objectIDs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *objectIDs; // @synthesize objectIDs=_objectIDs;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) long long signpostType;

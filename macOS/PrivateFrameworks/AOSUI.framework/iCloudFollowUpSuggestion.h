@@ -30,6 +30,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -44,7 +45,6 @@
 @property __weak NSButton *continueButton; // @synthesize continueButton=_continueButton;
 @property __weak NSTableView *emailAddressTable; // @synthesize emailAddressTable=_emailAddressTable;
 @property(retain) NSWindow *suggestionSheet; // @synthesize suggestionSheet=_suggestionSheet;
-- (void).cxx_destruct;
 - (BOOL)isShowingSheet;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)continueButtonPressed:(id)arg1;

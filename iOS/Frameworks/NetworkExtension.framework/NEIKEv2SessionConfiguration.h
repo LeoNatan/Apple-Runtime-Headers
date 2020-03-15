@@ -62,6 +62,7 @@
     NSArray *_customIKEAuthPrivateNotifies;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customIKEAuthPrivateNotifies; // @synthesize customIKEAuthPrivateNotifies=_customIKEAuthPrivateNotifies;
 @property(retain) NSArray *customIKEAuthVendorPayloads; // @synthesize customIKEAuthVendorPayloads=_customIKEAuthVendorPayloads;
 @property(retain) NSArray *customIKEAuthPayloads; // @synthesize customIKEAuthPayloads=_customIKEAuthPayloads;
@@ -108,7 +109,6 @@
 @property _Bool initialContactDisabled; // @synthesize initialContactDisabled=_initialContactDisabled;
 @property(retain) NEIKEv2Identifier *remoteIdentifier; // @synthesize remoteIdentifier=_remoteIdentifier;
 @property(retain) NEIKEv2Identifier *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
-- (void).cxx_destruct;
 @property(retain) NEIKEv2ConfigurationMessage *configurationReply;
 @property(retain) NEIKEv2ConfigurationMessage *configurationRequest;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -13,8 +13,8 @@
     id <FIUIDiscreteSizingLabelDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FIUIDiscreteSizingLabelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FIUIDiscreteSizingLabelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setText:(id)arg1;
 
 @end

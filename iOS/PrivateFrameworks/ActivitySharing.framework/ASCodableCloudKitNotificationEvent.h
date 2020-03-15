@@ -23,11 +23,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long triggerSnapshotIndex; // @synthesize triggerSnapshotIndex=_triggerSnapshotIndex;
 @property(retain, nonatomic) NSData *triggerUUID; // @synthesize triggerUUID=_triggerUUID;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) double date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

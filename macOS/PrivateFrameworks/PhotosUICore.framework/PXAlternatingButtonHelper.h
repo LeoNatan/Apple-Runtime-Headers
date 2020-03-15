@@ -26,6 +26,7 @@
     unsigned long long _currentModifierFlags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useAlternateState; // @synthesize useAlternateState=_useAlternateState;
 @property(nonatomic) unsigned long long currentModifierFlags; // @synthesize currentModifierFlags=_currentModifierFlags;
 @property(nonatomic) BOOL monitorModifierFlags; // @synthesize monitorModifierFlags=_monitorModifierFlags;
@@ -34,7 +35,6 @@
 @property(nonatomic) SEL alternateAction; // @synthesize alternateAction=_alternateAction;
 @property(nonatomic) unsigned long long alternateModifierFlags; // @synthesize alternateModifierFlags=_alternateModifierFlags;
 @property(readonly, nonatomic) __weak NSButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)_updateState;
 - (void)dealloc;
 - (id)initWithButton:(id)arg1;

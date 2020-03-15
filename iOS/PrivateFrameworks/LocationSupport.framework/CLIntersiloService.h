@@ -23,10 +23,10 @@
 + (void)performSyncOnSilo:(id)arg1 invoker:(CDUnknownBlockType)arg2;
 + (void)becameFatallyBlocked:(id)arg1 index:(unsigned long long)arg2;
 + (id)getSilo;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) CLServiceVendor *vendor; // @synthesize vendor=_vendor;
 @property(readonly, nonatomic) CLSilo *silo; // @synthesize silo=_silo;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic) id <CLIntersiloUniverse> universe;
 - (void)setVendor:(id)arg1;

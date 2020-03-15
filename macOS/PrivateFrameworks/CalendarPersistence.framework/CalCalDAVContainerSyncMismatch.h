@@ -18,13 +18,13 @@
     int _mismatchType;
 }
 
+- (void).cxx_destruct;
 @property int mismatchType; // @synthesize mismatchType=_mismatchType;
 @property(retain) NSString *syncToken; // @synthesize syncToken=_syncToken;
 @property(retain) NSString *cTag; // @synthesize cTag=_cTag;
 @property(retain) NSURL *folderURL; // @synthesize folderURL=_folderURL;
 @property(retain) NSString *serverETag; // @synthesize serverETag=_serverETag;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 
 @end
 

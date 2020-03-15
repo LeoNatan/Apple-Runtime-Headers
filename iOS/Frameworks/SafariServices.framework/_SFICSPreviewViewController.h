@@ -20,8 +20,8 @@
     CDUnknownBlockType _beforeDismissHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType beforeDismissHandler; // @synthesize beforeDismissHandler=_beforeDismissHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType beforeDismissHandler; // @synthesize beforeDismissHandler=_beforeDismissHandler;
 - (void)_updateNavigationBarItems;
 - (void)_ensureLeftBarButtonItemsIncludesDoneItem:(id)arg1;
 - (void)_ensureLeftBarButtonItemsIncludesActivityItem:(id)arg1;

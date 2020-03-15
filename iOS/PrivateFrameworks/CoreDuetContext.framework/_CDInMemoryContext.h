@@ -26,6 +26,7 @@
 
 + (id)contextWithDeviceID:(id)arg1;
 + (id)context;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CDDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) _CDSystemTimeCallbackScheduler *systemTimeCallbackScheduler; // @synthesize systemTimeCallbackScheduler=_systemTimeCallbackScheduler;
 @property(retain, nonatomic) NSMutableDictionary *registrations; // @synthesize registrations=_registrations;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_workloop> *callbackWorkloop; // @synthesize callbackWorkloop=_callbackWorkloop;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)allRegistrations;
 - (id)unsafe_evaluatedContextWithRegistration:(id)arg1 date:(id)arg2;

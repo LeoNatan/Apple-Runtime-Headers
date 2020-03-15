@@ -36,6 +36,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long tdsHashSeek; // @synthesize tdsHashSeek=_tdsHashSeek;
 @property(nonatomic) unsigned long long tdsHashProvide; // @synthesize tdsHashProvide=_tdsHashProvide;
 @property(nonatomic) unsigned long long tdsHashActivate; // @synthesize tdsHashActivate=_tdsHashActivate;
@@ -50,11 +51,10 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) _Bool directedOnly; // @synthesize directedOnly=_directedOnly;
 @property(nonatomic) int dataLinkType; // @synthesize dataLinkType=_dataLinkType;
-- (void).cxx_destruct;
 - (void)xpcTDSSeekerEndpointLost:(id)arg1;
 - (void)xpcTDSSeekerEndpointFound:(id)arg1;
 - (void)xpcTDSProviderStateChanged:(unsigned int)arg1;
-- (_Bool)updateForDevices:(struct NSMutableDictionary *)arg1;
+- (_Bool)updateForDevices:(id)arg1;
 - (void)updateDeviceActivateHash:(const char *)arg1;
 - (void)_invalidated;
 - (void)_invalidate;

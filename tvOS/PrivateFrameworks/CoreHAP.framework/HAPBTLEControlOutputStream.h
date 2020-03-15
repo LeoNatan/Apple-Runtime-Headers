@@ -25,6 +25,7 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) unsigned long long controlPayloadWrittenLength; // @synthesize controlPayloadWrittenLength=_controlPayloadWrittenLength;
 @property(nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) HAPBTLETransactionIdentifier *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
 @property __weak id <HAPBTLEControlOutputStreamDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_nextPacketWithMaximumLength:(unsigned long long)arg1 error:(id *)arg2;
 - (void)_sendNextPayloadFragmentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)sendNextPayloadFragment;

@@ -22,12 +22,12 @@
     _Bool _nonDiscretionary;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool nonDiscretionary; // @synthesize nonDiscretionary=_nonDiscretionary;
 @property(nonatomic) _Bool waitForRemoteToBeCancelled; // @synthesize waitForRemoteToBeCancelled=_waitForRemoteToBeCancelled;
 @property(retain, nonatomic) NSObject<BRCancellable> *remoteOperation; // @synthesize remoteOperation=_remoteOperation;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_queue;
 @property(readonly, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (oneway void)invalidate;
 - (oneway void)progressCallbackWithTopic:(id)arg1 userInfo:(id)arg2;
 - (oneway void)setRemoteOperationProxy:(id)arg1 userInfo:(id)arg2;

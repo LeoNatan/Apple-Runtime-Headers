@@ -19,10 +19,10 @@
 }
 
 + (int)messageType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *files; // @synthesize files=_files;
 @property(nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *objectIdentifier;
-- (void).cxx_destruct;
 - (_Bool)readFrom:(id)arg1 error:(id *)arg2;
 - (_Bool)writeTo:(id)arg1 error:(id *)arg2;
 @property(readonly, copy, nonatomic) NSString *checksum; // @synthesize checksum=_checksum;

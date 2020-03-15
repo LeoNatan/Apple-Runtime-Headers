@@ -26,11 +26,11 @@
     NSNumber *_organDonationStatus;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *organDonationStatus; // @synthesize organDonationStatus=_organDonationStatus;
 @property(retain, nonatomic) NSDateComponents *gregorianBirthday; // @synthesize gregorianBirthday=_gregorianBirthday;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) UIImage *picture; // @synthesize picture=_picture;
-- (void).cxx_destruct;
 - (id)_cachedCalendar;
 - (id)notOrganDonorString;
 - (id)organDonorStringWithTemplate:(id)arg1;

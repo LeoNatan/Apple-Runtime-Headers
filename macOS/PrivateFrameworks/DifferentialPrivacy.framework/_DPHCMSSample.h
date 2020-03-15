@@ -20,10 +20,10 @@
 + (id)convertDataToString:(id)arg1;
 + (id)dataFor:(id)arg1 hashAtIndex:(unsigned long long)arg2 epsilon:(double)arg3 bitCount:(unsigned long long)arg4 bitIndex:(unsigned long long)arg5;
 + (id)hcmsSampleWith:(id)arg1 privacyParameter:(double)arg2 hashFunctionCount:(unsigned long long)arg3 bitCount:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *bitString; // @synthesize bitString=_bitString;
 @property(readonly, nonatomic) unsigned long long bitIndex; // @synthesize bitIndex=_bitIndex;
 @property(readonly, nonatomic) unsigned long long hashFunctionIndex; // @synthesize hashFunctionIndex=_hashFunctionIndex;
-- (void).cxx_destruct;
 - (id)initWith:(id)arg1 privacyParameter:(double)arg2 hashFunctionCount:(unsigned long long)arg3 bitCount:(unsigned long long)arg4;
 - (id)init;
 

@@ -31,6 +31,7 @@
 + (id)railDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) PLIOKitOperatorComposition *lidComposition; // @synthesize lidComposition=_lidComposition;
 @property(retain) PLIOKitOperatorComposition *externalDisplayRemoveComposition; // @synthesize externalDisplayRemoveComposition=_externalDisplayRemoveComposition;
 @property(retain) PLIOKitOperatorComposition *externalDisplayAddComposition; // @synthesize externalDisplayAddComposition=_externalDisplayAddComposition;
@@ -38,7 +39,6 @@
 @property(retain) PLIOKitOperatorComposition *thunderboltAddComposition; // @synthesize thunderboltAddComposition=_thunderboltAddComposition;
 @property(retain) PLIOKitOperatorComposition *USBRemoveComposition; // @synthesize USBRemoveComposition=_USBRemoveComposition;
 @property(retain) PLIOKitOperatorComposition *USBAddComposition; // @synthesize USBAddComposition=_USBAddComposition;
-- (void).cxx_destruct;
 - (void)logEventForwardClamshellState:(BOOL)arg1;
 - (void)logEventForwardDeviceState:(const struct PLPeripheralDeviceState *)arg1;
 - (void)log;

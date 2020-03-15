@@ -21,11 +21,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _KDNode *root; // @synthesize root=_root;
 @property(nonatomic) unsigned long long leafSize; // @synthesize leafSize=_leafSize;
 @property(nonatomic) unsigned long long numDimensions; // @synthesize numDimensions=_numDimensions;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)findK:(unsigned long long)arg1 nearestNeighbors:(struct _KDPriorityQueue *)arg2 toQueryPoint:(const vector_7584168e *)arg3 inTree:(id)arg4;

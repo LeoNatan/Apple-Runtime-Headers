@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 + (double)_topToIconHeightWithDisplayMode:(unsigned long long)arg1;
 + (double)heightWithIconSize:(struct CGSize)arg1 displayMode:(unsigned long long)arg2;
 + (id)reuseIdentifier;
-@property(retain, nonatomic) NSDictionary *storeData; // @synthesize storeData=_storeData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *storeData; // @synthesize storeData=_storeData;
 - (void)setImage:(id)arg1 animated:(_Bool)arg2;
 - (void)setDisplayMode:(unsigned long long)arg1;
 - (void)prepareForReuse;

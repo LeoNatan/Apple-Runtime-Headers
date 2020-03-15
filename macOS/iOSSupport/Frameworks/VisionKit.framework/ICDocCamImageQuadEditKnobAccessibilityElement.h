@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     ICDocCamImageQuadEditOverlay *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak ICDocCamImageQuadEditOverlay *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic) __weak CALayer *knobLayer; // @synthesize knobLayer=_knobLayer;
-- (void).cxx_destruct;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;

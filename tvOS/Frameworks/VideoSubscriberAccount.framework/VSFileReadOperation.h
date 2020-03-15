@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     VSOptional *_result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) NSURL *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)init;
 

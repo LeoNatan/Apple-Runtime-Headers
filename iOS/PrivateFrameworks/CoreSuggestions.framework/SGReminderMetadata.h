@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sourceUniqueIdentifier; // @synthesize sourceUniqueIdentifier=_sourceUniqueIdentifier;
 @property(readonly, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
-- (void).cxx_destruct;
 - (_Bool)isEqualToReminderMetadata:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

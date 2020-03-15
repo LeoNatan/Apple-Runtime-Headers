@@ -14,9 +14,9 @@
     NSString *_localizedLabel;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedLabel; // @synthesize localizedLabel=_localizedLabel;
 @property(copy, nonatomic) NSString *extensionBundleIdentifier; // @synthesize extensionBundleIdentifier=_extensionBundleIdentifier;
-- (void).cxx_destruct;
 
 @end
 

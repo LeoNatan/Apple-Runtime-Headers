@@ -13,8 +13,8 @@
     NSString *_internalDate;
 }
 
-@property(copy, nonatomic) NSString *internalDate; // @synthesize internalDate=_internalDate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *internalDate; // @synthesize internalDate=_internalDate;
 - (id)description;
 
 @end

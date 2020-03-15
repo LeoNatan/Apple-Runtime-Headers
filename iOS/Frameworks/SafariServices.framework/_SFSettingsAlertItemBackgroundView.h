@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     long long _mode;
 }
 
-@property(nonatomic) long long mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
+@property(nonatomic) long long mode; // @synthesize mode=_mode;
 - (void)updateConstraints;
 - (id)_highlightEffect;
 - (id)initWithFrame:(struct CGRect)arg1;

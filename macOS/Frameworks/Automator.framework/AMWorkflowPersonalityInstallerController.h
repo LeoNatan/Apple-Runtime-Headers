@@ -15,10 +15,10 @@
     BOOL __shouldRecoverByOpeningInAutomator;
 }
 
+- (void).cxx_destruct;
 @property BOOL _shouldRecoverByOpeningInAutomator; // @synthesize _shouldRecoverByOpeningInAutomator=__shouldRecoverByOpeningInAutomator;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) AMWorkflow *pluginWorkflow; // @synthesize pluginWorkflow=_pluginWorkflow;
-- (void).cxx_destruct;
 - (void)_didPresentPreInstallErrorWithRecovery:(BOOL)arg1 contextInfo:(void *)arg2;
 - (id)_userVisibleInstallErrorForPluginInstallationError:(id)arg1;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;

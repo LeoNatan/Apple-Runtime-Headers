@@ -14,9 +14,9 @@
     NSObject<OS_nw_content_context> *_internalContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_nw_content_context> *internalContext; // @synthesize internalContext=_internalContext;
 @property(retain, nonatomic) NSObject<OS_dispatch_data> *internalContent; // @synthesize internalContent=_internalContent;
-- (void).cxx_destruct;
 - (id)initWithContent:(id)arg1 context:(id)arg2;
 
 @end

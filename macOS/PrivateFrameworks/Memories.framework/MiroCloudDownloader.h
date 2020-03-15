@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cloudDownloaderWithAssets:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *requests; // @synthesize requests=_requests;
 @property(nonatomic) double totalInitialDownloadSize; // @synthesize totalInitialDownloadSize=_totalInitialDownloadSize;
 @property(copy, nonatomic) CDUnknownBlockType itemCompletedBlock; // @synthesize itemCompletedBlock=_itemCompletedBlock;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 @property(readonly, nonatomic) float progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *localAssets;
 @property(readonly, nonatomic) unsigned long long nonLocalCount;
 - (void)cancelDownloads;

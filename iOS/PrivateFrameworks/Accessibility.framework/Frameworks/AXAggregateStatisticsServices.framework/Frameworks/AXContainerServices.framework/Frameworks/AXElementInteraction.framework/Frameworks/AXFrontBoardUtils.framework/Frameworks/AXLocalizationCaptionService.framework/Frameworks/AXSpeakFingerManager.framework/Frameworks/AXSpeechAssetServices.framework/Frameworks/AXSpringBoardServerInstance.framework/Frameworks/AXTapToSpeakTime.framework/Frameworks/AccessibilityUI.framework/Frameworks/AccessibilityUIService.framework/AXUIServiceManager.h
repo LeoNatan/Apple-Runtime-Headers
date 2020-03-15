@@ -28,6 +28,7 @@
 
 + (void)_releaseSharedServiceManager;
 + (id)sharedServiceManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *transactions; // @synthesize transactions=_transactions;
 @property(nonatomic) _Bool shouldAllowServicesToProcessMessages; // @synthesize shouldAllowServicesToProcessMessages=_shouldAllowServicesToProcessMessages;
 @property(nonatomic) unsigned long long lastUsedServiceIdentifier; // @synthesize lastUsedServiceIdentifier=_lastUsedServiceIdentifier;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSMutableArray *pausedConnections; // @synthesize pausedConnections=_pausedConnections;
 @property(retain, nonatomic) AXAccessQueue *resumingConnectionsQueue; // @synthesize resumingConnectionsQueue=_resumingConnectionsQueue;
 @property(retain, nonatomic) AXUIDisplayManager *displayManager; // @synthesize displayManager=_displayManager;
-- (void).cxx_destruct;
 - (id)_servicesForUniqueIdentifiers:(id)arg1;
 - (id)_uniqueIdentifierForService:(id)arg1;
 - (id)_serviceContextForService:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CTCarrierSpaceAppsInfo *appsInfo; // @synthesize appsInfo=_appsInfo;
 @property(retain, nonatomic) CTCarrierSpacePlansInfo *plansInfo; // @synthesize plansInfo=_plansInfo;
 @property(retain, nonatomic) CTCarrierSpaceUsageInfo *usageInfo; // @synthesize usageInfo=_usageInfo;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

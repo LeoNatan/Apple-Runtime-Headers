@@ -14,9 +14,9 @@
     NSArray *_relatedChannelsForOnboarding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *relatedChannelsForOnboarding; // @synthesize relatedChannelsForOnboarding=_relatedChannelsForOnboarding;
 @property(readonly, copy, nonatomic) NSArray *relatedTopicsForOnboarding; // @synthesize relatedTopicsForOnboarding=_relatedTopicsForOnboarding;
-- (void).cxx_destruct;
 - (id)initWithRelatedTopicsForOnboarding:(id)arg1 relatedChannelsForOnboarding:(id)arg2;
 
 @end

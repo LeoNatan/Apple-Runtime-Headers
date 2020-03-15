@@ -24,6 +24,7 @@
 }
 
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *subscriptionNotes; // @synthesize subscriptionNotes;
 @property(readonly, nonatomic) NSString *subscriptionTitle; // @synthesize subscriptionTitle;
 @property(readonly, nonatomic) NSString *subscriptionID; // @synthesize subscriptionID;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) double refreshInterval; // @synthesize refreshInterval;
 @property(readonly, nonatomic) BOOL removeAttachments; // @synthesize removeAttachments;
 @property(readonly, nonatomic) BOOL removeAlarms; // @synthesize removeAlarms;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 
 // Remaining properties

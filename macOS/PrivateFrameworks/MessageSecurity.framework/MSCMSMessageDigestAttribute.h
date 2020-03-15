@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)messageDigestAttributeWithDigest:(id)arg1;
-@property(retain) NSData *messageDigest; // @synthesize messageDigest=_messageDigest;
 - (void).cxx_destruct;
+@property(retain) NSData *messageDigest; // @synthesize messageDigest=_messageDigest;
 - (id)initWithDigest:(id)arg1;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (id)initWithAttribute:(id)arg1 error:(id *)arg2;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)responseHeadersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *responseHeaders; // @synthesize responseHeaders=_responseHeaders;
 @property(retain, nonatomic) NSData *authGetResponseBody; // @synthesize authGetResponseBody=_authGetResponseBody;
 @property(retain, nonatomic) NSString *responseUUID; // @synthesize responseUUID=_responseUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

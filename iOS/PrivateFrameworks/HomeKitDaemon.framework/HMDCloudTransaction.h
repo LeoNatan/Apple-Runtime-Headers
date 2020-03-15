@@ -30,6 +30,7 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDCloudChange *homeDataChange; // @synthesize homeDataChange=_homeDataChange;
 @property(retain, nonatomic) HMDCloudZoneChange *cloudZoneChange; // @synthesize cloudZoneChange=_cloudZoneChange;
 @property(nonatomic) unsigned long long transactionType; // @synthesize transactionType=_transactionType;
@@ -46,7 +47,6 @@
 @property(nonatomic) _Bool needConflictResolution; // @synthesize needConflictResolution=_needConflictResolution;
 @property(nonatomic) __weak HMDCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *objectChanges;
 - (id)replayTransaction:(id)arg1 stagedTransaction:(id)arg2;
 - (void)loadObjectChanges;

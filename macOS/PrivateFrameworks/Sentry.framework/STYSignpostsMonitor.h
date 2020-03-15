@@ -24,6 +24,7 @@
 }
 
 + (id)sharedMonitor;
+- (void).cxx_destruct;
 @property(retain) STYAbcHelper *abcHelper; // @synthesize abcHelper=_abcHelper;
 @property BOOL seedUserMode; // @synthesize seedUserMode=_seedUserMode;
 @property BOOL autoUploadThroughAbc; // @synthesize autoUploadThroughAbc=_autoUploadThroughAbc;
@@ -34,7 +35,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain) NSObject<OS_dispatch_queue> *spObjectProcessingQueue; // @synthesize spObjectProcessingQueue=_spObjectProcessingQueue;
 @property(retain) SignpostSupportObjectExtractor *notificationExtractor; // @synthesize notificationExtractor=_notificationExtractor;
-- (void).cxx_destruct;
 - (void)stopMonitoringSignposts;
 - (BOOL)monitorSignposts:(BOOL)arg1;
 - (BOOL)getCoinTossResult;

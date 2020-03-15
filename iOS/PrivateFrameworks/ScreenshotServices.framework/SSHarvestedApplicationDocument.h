@@ -18,10 +18,10 @@
     struct CGRect _PDFVisibleRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect PDFVisibleRect; // @synthesize PDFVisibleRect=_PDFVisibleRect;
 @property(nonatomic) long long PDFPage; // @synthesize PDFPage=_PDFPage;
 @property(copy, nonatomic) NSData *PDFData; // @synthesize PDFData=_PDFData;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *loggableDescription;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

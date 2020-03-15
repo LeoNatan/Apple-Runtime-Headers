@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     SBKTransactionController *_transactionController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(readonly, nonatomic) SBKTransactionController *transactionController; // @synthesize transactionController=_transactionController;
-- (void).cxx_destruct;
 - (void)cancelWithError:(id)arg1;
 - (void)cancel;
 - (void)timeout;

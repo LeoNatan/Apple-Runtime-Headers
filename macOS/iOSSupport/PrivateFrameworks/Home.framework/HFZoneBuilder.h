@@ -16,9 +16,9 @@
 
 + (id)na_identity;
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFMutableSetDiff *roomUUIDs; // @synthesize roomUUIDs=_roomUUIDs;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)_updateRooms;

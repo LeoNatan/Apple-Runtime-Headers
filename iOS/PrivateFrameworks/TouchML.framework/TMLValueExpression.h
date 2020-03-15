@@ -17,9 +17,9 @@
 }
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *bindings; // @synthesize bindings=_bindings;
 @property(readonly, nonatomic) NSString *expressionText; // @synthesize expressionText=_expressionText;
-- (void).cxx_destruct;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithExpressionText:(id)arg1 bindings:(id)arg2;

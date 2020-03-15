@@ -23,10 +23,10 @@
 + (id)lazyImplWithBlock:(CDUnknownBlockType)arg1;
 + (id)implWithSchedulerProvider:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)implWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNSuspendableSchedulerDecorator *blockScheduler; // @synthesize blockScheduler=_blockScheduler;
 @property(readonly, nonatomic) NSConditionLock *stateLock; // @synthesize stateLock=_stateLock;
 @property(nonatomic) _Bool workBlockScheduled; // @synthesize workBlockScheduled=_workBlockScheduled;
-- (void).cxx_destruct;
 - (void)_flushCompletionBlocks;
 - (id)futureResult;
 - (void)addFailureBlock:(CDUnknownBlockType)arg1;

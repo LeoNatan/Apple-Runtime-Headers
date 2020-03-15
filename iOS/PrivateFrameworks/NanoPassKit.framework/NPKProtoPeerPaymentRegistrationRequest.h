@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceReRegistration; // @synthesize forceReRegistration=_forceReRegistration;
 @property(retain, nonatomic) NSString *serviceURL; // @synthesize serviceURL=_serviceURL;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

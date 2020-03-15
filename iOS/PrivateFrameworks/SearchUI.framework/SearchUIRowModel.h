@@ -28,6 +28,7 @@
     NSString *_dragAppBundleID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dragAppBundleID; // @synthesize dragAppBundleID=_dragAppBundleID;
 @property(readonly, nonatomic) NSURL *dragURL; // @synthesize dragURL=_dragURL;
 @property(readonly, nonatomic) NSString *dragText; // @synthesize dragText=_dragText;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) SFCardSection *cardSection; // @synthesize cardSection=_cardSection;
 @property(retain, nonatomic) SFSearchResult *identifyingResult; // @synthesize identifyingResult=_identifyingResult;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isQuerySuggestion;
 @property(readonly, nonatomic) NSString *reuseIdentifier;
 @property(readonly, nonatomic) int separatorStyle;

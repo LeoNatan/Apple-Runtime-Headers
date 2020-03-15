@@ -21,13 +21,13 @@
     id <NUAdContextProvider> _subscriptionAdContextProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUAdContextProvider> subscriptionAdContextProvider; // @synthesize subscriptionAdContextProvider=_subscriptionAdContextProvider;
 @property(readonly, nonatomic) id <NUAdLayoutOptionsFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 @property(readonly, nonatomic) id <NUDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) id <NUAdControllerFactory> adControllerFactory; // @synthesize adControllerFactory=_adControllerFactory;
 @property(readonly, nonatomic) id <NUAdMetadataFactory> adMetadataFactory; // @synthesize adMetadataFactory=_adMetadataFactory;
 @property(readonly, nonatomic) id <NUAdProvider> adProvider; // @synthesize adProvider=_adProvider;
-- (void).cxx_destruct;
 - (id)createArticleAdManagerForArticle:(id)arg1 issue:(id)arg2;
 - (id)initWithAdProvider:(id)arg1 adMetadataFactory:(id)arg2 adControllerFactory:(id)arg3 device:(id)arg4 layoutOptionsFactory:(id)arg5 subscriptionAdContextProvider:(id)arg6;
 

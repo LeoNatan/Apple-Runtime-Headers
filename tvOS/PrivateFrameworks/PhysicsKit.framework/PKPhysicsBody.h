@@ -53,9 +53,9 @@
 + (id)initWithQuadTree:(id)arg1;
 + (id)bodyWithOutline:(shared_ptr_2aaf3a07)arg1 offset:(struct CGPoint)arg2;
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) CDUnknownBlockType postStepBlock; // @synthesize postStepBlock=_postStepBlock;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType postStepBlock; // @synthesize postStepBlock=_postStepBlock;
 - (id)allContactedBodies;
 - (id)description;
 - (id)_descriptionFormat;

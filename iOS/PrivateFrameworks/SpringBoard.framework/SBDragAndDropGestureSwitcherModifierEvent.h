@@ -16,11 +16,11 @@
     struct CGRect _platterViewFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double platterScale; // @synthesize platterScale=_platterScale;
 @property(nonatomic) struct CGRect platterViewFrame; // @synthesize platterViewFrame=_platterViewFrame;
 @property(retain, nonatomic) NSString *draggedSceneIdentifier; // @synthesize draggedSceneIdentifier=_draggedSceneIdentifier;
 @property(nonatomic) long long dropAction; // @synthesize dropAction=_dropAction;
-- (void).cxx_destruct;
 - (long long)type;
 
 @end

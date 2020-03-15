@@ -11,8 +11,8 @@
     RCComposition *_underlyingComposition;
 }
 
-@property(readonly, nonatomic) RCComposition *underlyingComposition; // @synthesize underlyingComposition=_underlyingComposition;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RCComposition *underlyingComposition; // @synthesize underlyingComposition=_underlyingComposition;
 - (id)initWithUnderlyingComposition:(id)arg1;
 
 @end

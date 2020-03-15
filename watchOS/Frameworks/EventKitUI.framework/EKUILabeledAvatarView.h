@@ -24,13 +24,13 @@
 + (id)contactForEmailAddress:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 + (id)_createAvatarView;
 + (id)contactKeysToFetch;
+- (void).cxx_destruct;
 @property unsigned int options; // @synthesize options=_options;
 @property unsigned int labelPlacement; // @synthesize labelPlacement=_labelPlacement;
 @property(retain) CNAvatarView *avatar; // @synthesize avatar=_avatar;
 @property(nonatomic) _Bool loadContactsAsynchronously; // @synthesize loadContactsAsynchronously=_loadContactsAsynchronously;
 @property __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)updateAvatarViewWithAddress:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 - (void)updateWithContacts:(id)arg1;
 - (void)updateWithParticipant:(id)arg1;

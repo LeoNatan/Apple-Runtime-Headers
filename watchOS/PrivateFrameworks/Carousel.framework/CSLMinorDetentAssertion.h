@@ -16,11 +16,11 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSDate *dateTaken; // @synthesize dateTaken=_dateTaken;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)_buildDescriptionWithBuilder:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

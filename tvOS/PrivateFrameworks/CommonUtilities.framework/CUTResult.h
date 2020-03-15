@@ -15,10 +15,10 @@
     id _inValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id inValue; // @synthesize inValue=_inValue;
 @property(retain, nonatomic) NSError *inError; // @synthesize inError=_inError;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) id value;
 - (id)initWithSuccess:(id)arg1;

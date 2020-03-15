@@ -17,11 +17,11 @@
 }
 
 + (void)cascadeAnnotations:(id)arg1 onPageController:(id)arg2 forPaste:(_Bool)arg3;
+- (void).cxx_destruct;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property _Bool pencilInkEnabled; // @synthesize pencilInkEnabled=_pencilInkEnabled;
 @property _Bool allInkEnabled; // @synthesize allInkEnabled=_allInkEnabled;
 @property unsigned long long toolMode; // @synthesize toolMode=_toolMode;
-- (void).cxx_destruct;
 - (void)_peripheralAvailabilityDidUpdate:(id)arg1;
 - (unsigned long long)_arrowStyleForToolTag:(long long)arg1;
 - (void)_setRectangleToFitTextOnTextAnnotation:(id)arg1;

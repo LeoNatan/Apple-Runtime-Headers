@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)_textFieldInsetsInTraitEnvironment:(id)arg1;
 + (struct CGSize)_sizeToFitText:(id)arg1 fittingSize:(struct CGSize)arg2 inTraitEnvironment:(id)arg3;
 + (struct CGSize)sizeForEntry:(id)arg1 dataSource:(id)arg2 fittingSize:(struct CGSize)arg3 inTraitEnvironment:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TFFeedbackEntryShortText *shortTextEntry; // @synthesize shortTextEntry=_shortTextEntry;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)_prepareForDisplayWithTraitCollection:(id)arg1;
 - (void)_configureTextFieldForContentType:(unsigned long long)arg1;
 - (void)textFieldDidEndEditing:(id)arg1 reason:(long long)arg2;

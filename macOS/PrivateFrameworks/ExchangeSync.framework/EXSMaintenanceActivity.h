@@ -15,9 +15,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSBackgroundActivityScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(nonatomic) __weak EXSDataManager *dataManager; // @synthesize dataManager=_dataManager;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_doMaintenanceActivity;
 - (void)invalidate;
 - (void)scheduleMaintenanceActivity;

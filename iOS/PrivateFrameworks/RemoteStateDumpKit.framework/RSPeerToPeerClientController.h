@@ -15,8 +15,8 @@
     MCNearbyServiceBrowser *_serviceBrowser;
 }
 
-@property(retain, nonatomic) MCNearbyServiceBrowser *serviceBrowser; // @synthesize serviceBrowser=_serviceBrowser;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MCNearbyServiceBrowser *serviceBrowser; // @synthesize serviceBrowser=_serviceBrowser;
 - (void)browser:(id)arg1 didNotStartBrowsingForPeers:(id)arg2;
 - (void)browser:(id)arg1 lostPeer:(id)arg2;
 - (void)browser:(id)arg1 foundPeer:(id)arg2 withDiscoveryInfo:(id)arg3;

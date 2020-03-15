@@ -13,10 +13,10 @@
     AFLinkedListItem *_nextItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AFLinkedListItem *nextItem; // @synthesize nextItem=_nextItem;
 @property(retain, nonatomic) AFLinkedListItem *previousItem; // @synthesize previousItem=_previousItem;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)removeFromList;
 - (void)insertAfterItem:(id)arg1;
 - (void)insertBeforeItem:(id)arg1;

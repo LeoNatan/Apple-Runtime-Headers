@@ -18,11 +18,11 @@
 
 + (_Bool)shouldShowZhuyinSortingMethod;
 + (id)sortTitleFromSortingMethod:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *candidateInfoCache; // @synthesize candidateInfoCache=_candidateInfoCache;
 @property(retain, nonatomic) NSArray *storedCandidates; // @synthesize storedCandidates=_storedCandidates;
 @property(nonatomic) int sortingMethod; // @synthesize sortingMethod=_sortingMethod;
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
-- (void).cxx_destruct;
 - (id)candidatesSortedByMethod:(int)arg1;
 - (void)setCandidates:(id)arg1;
 - (id)candidatesSortedByPinyinOrZhuyin:(id)arg1 simplified:(_Bool)arg2 zhuyin:(_Bool)arg3;

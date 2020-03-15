@@ -18,8 +18,8 @@
     CSLBackgroundUpdatePolicy *_backgroundUpdatePolicy;
 }
 
-@property(readonly, nonatomic) __weak CSLBackgroundUpdatePolicy *backgroundUpdatePolicy; // @synthesize backgroundUpdatePolicy=_backgroundUpdatePolicy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak CSLBackgroundUpdatePolicy *backgroundUpdatePolicy; // @synthesize backgroundUpdatePolicy=_backgroundUpdatePolicy;
 - (void)backgroundUpdatePolicyDidChange:(id)arg1 enabled:(id)arg2 disabled:(id)arg3 changed:(id)arg4;
 - (id)init;
 - (id)initWithBackgroundUpdatePolicy:(id)arg1;

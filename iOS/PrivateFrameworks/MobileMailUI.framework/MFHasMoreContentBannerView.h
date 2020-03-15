@@ -15,8 +15,8 @@
 }
 
 + (id)bannerWithFrame:(struct CGRect)arg1 isPlainText:(_Bool)arg2 remainingBytes:(unsigned long long)arg3;
-@property(nonatomic) __weak id <MFHasMoreContentBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MFHasMoreContentBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)requestLoad;
 - (void)reloadData;
 - (void)_titleControlTapped:(id)arg1;

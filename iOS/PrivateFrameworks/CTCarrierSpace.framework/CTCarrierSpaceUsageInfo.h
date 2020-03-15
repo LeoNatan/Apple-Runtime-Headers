@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *moreDetailsURL; // @synthesize moreDetailsURL=_moreDetailsURL;
 @property(retain, nonatomic) NSArray *accountMetrics; // @synthesize accountMetrics=_accountMetrics;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

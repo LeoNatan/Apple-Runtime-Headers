@@ -14,9 +14,9 @@
     NSMutableArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) _Bool shouldRemoveEmptySections; // @synthesize shouldRemoveEmptySections=_shouldRemoveEmptySections;
-- (void).cxx_destruct;
 - (id)titleForFooterInSection:(long long)arg1;
 - (id)titleForHeaderInSection:(long long)arg1;
 - (double)heightForFooterInSection:(long long)arg1;

@@ -17,10 +17,10 @@
     NSString *_localizedName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDonation; // @synthesize isDonation=_isDonation;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain, nonatomic) NSSet *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDataSourceIdentifiers:(id)arg1 localizedName:(id)arg2 isDonation:(_Bool)arg3;

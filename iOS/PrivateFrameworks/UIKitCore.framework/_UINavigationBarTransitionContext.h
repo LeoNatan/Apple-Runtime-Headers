@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)contextForTransition:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UINavigationBarLayout *toLayout; // @synthesize toLayout=_toLayout;
 @property(retain, nonatomic) _UINavigationBarLayout *fromLayout; // @synthesize fromLayout=_fromLayout;
 @property(nonatomic) struct CGPoint startingContentOffsetForObservedScrollView; // @synthesize startingContentOffsetForObservedScrollView=_startingContentOffsetForObservedScrollView;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long apiVersion; // @synthesize apiVersion=_apiVersion;
 @property(retain, nonatomic) _UINavigationBarItemStack *stack; // @synthesize stack=_stack;
 @property(nonatomic) UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
-- (void).cxx_destruct;
 - (void)_updateIncomingLayoutWidthToMatchOutgoingLayout;
 - (void)_animateAsTwoPartsWithoutOverlap:(CDUnknownBlockType)arg1 partTwo:(CDUnknownBlockType)arg2;
 - (void)_animateAsTwoPartsWithOverlapIfNecessaryPartOne:(CDUnknownBlockType)arg1 partTwo:(CDUnknownBlockType)arg2;

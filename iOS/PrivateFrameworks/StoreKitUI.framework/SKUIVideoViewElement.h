@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     long long _kind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) long long playbackStyle; // @synthesize playbackStyle=_playbackStyle;
 @property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEnabled;
 - (id)applyUpdatesWithElement:(id)arg1;
 @property(readonly, nonatomic) SKUIImageViewElement *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;

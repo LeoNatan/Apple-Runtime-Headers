@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_panelWrapperViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *panelWrapperViewHeightConstraint; // @synthesize panelWrapperViewHeightConstraint=_panelWrapperViewHeightConstraint;
 @property(readonly, nonatomic) UIView *panelWrapperView; // @synthesize panelWrapperView=_panelWrapperView;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(nonatomic) __weak id <AVInfoMenuDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_interruptTransitioningAnimation;
 - (_Bool)_isTransitioning;
 - (void)transitionSelectionFrom:(id)arg1 to:(id)arg2 animated:(_Bool)arg3;

@@ -16,11 +16,11 @@
     CSLNavigationStackController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didUseCustomAnimator; // @synthesize didUseCustomAnimator=_didUseCustomAnimator;
 @property(nonatomic) _Bool didShowRequestedViewController; // @synthesize didShowRequestedViewController=_didShowRequestedViewController;
 @property(retain, nonatomic) CSLNavigationStackController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) CSLNavigationStackRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 
 @end
 

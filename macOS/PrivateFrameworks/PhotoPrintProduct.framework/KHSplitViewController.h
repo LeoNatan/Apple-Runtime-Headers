@@ -24,13 +24,13 @@
     NSMutableArray *_addedConstraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *addedConstraints; // @synthesize addedConstraints=_addedConstraints;
 @property(nonatomic) double splitWidth; // @synthesize splitWidth=_splitWidth;
 @property(nonatomic) double splitPosition; // @synthesize splitPosition=_splitPosition;
 @property(nonatomic) unsigned long long displayState; // @synthesize displayState=_displayState;
 @property(nonatomic) __weak id <KHSplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)updateViewConstraints;
 - (void)_updateConstraintForLayout;
 - (void)viewWillAppear:(BOOL)arg1;

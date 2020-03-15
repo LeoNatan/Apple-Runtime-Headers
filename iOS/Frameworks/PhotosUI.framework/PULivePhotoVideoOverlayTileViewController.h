@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     PUAssetReference *_playbackAssetReference;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool willEndCurrentPlayback; // @synthesize willEndCurrentPlayback=_willEndCurrentPlayback;
 @property(retain, nonatomic) PUAssetReference *playbackAssetReference; // @synthesize playbackAssetReference=_playbackAssetReference;
 @property(retain, nonatomic) PXImageLayerModulator *imageLayerModulator; // @synthesize imageLayerModulator=_imageLayerModulator;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isPresentedForSecondScreen; // @synthesize isPresentedForSecondScreen=_isPresentedForSecondScreen;
 @property(retain, nonatomic) PUOneUpMergedVideoProvider *mergedVideoProvider; // @synthesize mergedVideoProvider=_mergedVideoProvider;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
-- (void).cxx_destruct;
 - (void)_updatePlaybackEnabled;
 - (void)_videoCurrentTimeDidChange:(CDStruct_1b6d18a9)arg1;
 - (void)_updateMergedVideo;

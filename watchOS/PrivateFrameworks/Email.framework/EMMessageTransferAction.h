@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool copyMessages; // @synthesize copyMessages=_copyMessages;
 @property(readonly, nonatomic) ECMessageFlagChange *flagChange; // @synthesize flagChange=_flagChange;
 @property(readonly, nonatomic) int specialDestinationMailboxType; // @synthesize specialDestinationMailboxType=_specialDestinationMailboxType;
 @property(readonly, nonatomic) NSURL *destinationMailboxURL; // @synthesize destinationMailboxURL=_destinationMailboxURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (int)signpostType;

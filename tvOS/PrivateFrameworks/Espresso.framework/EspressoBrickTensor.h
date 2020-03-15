@@ -13,8 +13,8 @@
     EspressoBrickTensorShape *_shape;
 }
 
-@property(retain) EspressoBrickTensorShape *shape; // @synthesize shape=_shape;
 - (void).cxx_destruct;
+@property(retain) EspressoBrickTensorShape *shape; // @synthesize shape=_shape;
 - (id)init;
 
 @end

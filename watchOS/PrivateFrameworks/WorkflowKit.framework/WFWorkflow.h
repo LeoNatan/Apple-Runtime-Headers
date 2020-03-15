@@ -25,8 +25,8 @@
     WFWorkflowRecord *_record;
     int _environment;
     WFWorkflowQuarantine *_quarantine;
-    WFWorkflowReference *_overridenReference;
     id <WFRecordStorageProvider> _storageProvider;
+    WFWorkflowReference *_overridenReference;
 }
 
 + (_Bool)checkClientVersion:(id)arg1 currentVersion:(id)arg2 error:(id *)arg3;
@@ -38,15 +38,15 @@
 + (id)supportedInputClasses;
 + (id)workflowWithReference:(id)arg1 storageProvider:(id)arg2 migrateIfNecessary:(_Bool)arg3 environment:(int)arg4 error:(id *)arg5;
 + (id)workflowWithReference:(id)arg1 storageProvider:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) id <WFRecordStorageProvider> storageProvider; // @synthesize storageProvider=_storageProvider;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool saveDisabled; // @synthesize saveDisabled=_saveDisabled;
 @property(readonly, nonatomic) WFWorkflowReference *overridenReference; // @synthesize overridenReference=_overridenReference;
+@property(retain, nonatomic) id <WFRecordStorageProvider> storageProvider; // @synthesize storageProvider=_storageProvider;
 @property(retain, nonatomic) WFWorkflowQuarantine *quarantine; // @synthesize quarantine=_quarantine;
 @property(readonly, nonatomic) int environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) WFWorkflowRecord *record; // @synthesize record=_record;
 @property(copy, nonatomic) NSArray *importQuestions; // @synthesize importQuestions=_importQuestions;
 @property(copy, nonatomic) NSArray *inputClasses; // @synthesize inputClasses=_inputClasses;
-- (void).cxx_destruct;
 - (_Bool)isUntitled;
 - (_Bool)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2;
 - (void)loadActionDescriptionIconsMaxCount:(int)arg1 completion:(CDUnknownBlockType)arg2;

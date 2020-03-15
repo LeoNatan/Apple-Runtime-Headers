@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (long long)_cardLayoutTypeForElement:(id)arg1;
 + (id)cardCellWithElement:(id)arg1 existingCell:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUICardViewLayoutFactory *layoutFactory; // @synthesize layoutFactory=_layoutFactory;
 @property(retain, nonatomic) VUICardView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_updateBackgroundAndHighlightColor;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <SKUIJSDOMFeatureCollectionAppBridge> _appBridge;
 }
 
-@property(nonatomic) __weak id <SKUIJSDOMFeatureCollectionAppBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIJSDOMFeatureCollectionAppBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (void)setEditing:(_Bool)arg1:(id)arg2;
 
 @end

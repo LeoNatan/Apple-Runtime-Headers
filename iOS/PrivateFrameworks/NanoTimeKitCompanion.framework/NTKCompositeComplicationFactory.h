@@ -16,9 +16,9 @@
     NSMutableOrderedSet *_factories;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *factories; // @synthesize factories=_factories;
 @property(retain, nonatomic) NSMutableDictionary *factoriesBySlot; // @synthesize factoriesBySlot=_factoriesBySlot;
-- (void).cxx_destruct;
 - (_Bool)slotSupportsCurvedText:(id)arg1;
 - (id)newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)loadLayoutRules;

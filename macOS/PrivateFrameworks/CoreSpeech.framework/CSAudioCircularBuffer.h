@@ -13,9 +13,9 @@
 }
 
 + (id)createAudioCircularBufferWithDefaultSettings;
-@property(nonatomic) unsigned long long bufferLength; // @synthesize bufferLength=_bufferLength;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long bufferLength; // @synthesize bufferLength=_bufferLength;
 - (void)saveRecordingBufferFrom:(unsigned long long)arg1 to:(unsigned long long)arg2 toURL:(id)arg3;
 - (unsigned long long)sampleCount;
 - (void)reset;

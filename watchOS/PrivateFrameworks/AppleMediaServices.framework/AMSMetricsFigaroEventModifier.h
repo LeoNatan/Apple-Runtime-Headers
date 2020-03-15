@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_overrideDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *overrideDictionary; // @synthesize overrideDictionary=_overrideDictionary;
 @property(readonly, nonatomic) NSDictionary *metricsDictionary; // @synthesize metricsDictionary=_metricsDictionary;
 @property(readonly, nonatomic) NSString *sampleSessionKey; // @synthesize sampleSessionKey=_sampleSessionKey;
 @property(readonly, nonatomic) NSDictionary *fieldFilters; // @synthesize fieldFilters=_fieldFilters;
-- (void).cxx_destruct;
 - (id)_fieldFiltersFromOverrides:(id)arg1;
 - (id)_createSampleSessionKey;
 - (_Bool)_shouldSampleEvent:(id)arg1;

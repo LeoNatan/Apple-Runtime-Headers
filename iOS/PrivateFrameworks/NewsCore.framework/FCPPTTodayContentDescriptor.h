@@ -18,10 +18,10 @@
 + (id)descriptorWithForYouConfigID:(id)arg1;
 + (id)descriptorWithForYouConfigID:(id)arg1 tagID:(id)arg2;
 + (id)descriptorWithTagID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *forYouConfigID; // @synthesize forYouConfigID=_forYouConfigID;
 @property(readonly, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 @property(readonly, nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
-- (void).cxx_destruct;
 - (id)_initWithForYouConfigID:(id)arg1 tagID:(id)arg2;
 - (id)_initWithTagID:(id)arg1;
 

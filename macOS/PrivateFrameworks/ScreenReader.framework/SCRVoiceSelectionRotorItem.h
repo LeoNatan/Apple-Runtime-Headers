@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_voiceLanguage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasBeenSelected; // @synthesize hasBeenSelected=_hasBeenSelected;
 @property(copy, nonatomic) NSString *voiceLanguage; // @synthesize voiceLanguage=_voiceLanguage;
 @property(copy, nonatomic) NSString *shortVoiceName; // @synthesize shortVoiceName=_shortVoiceName;
 @property(copy, nonatomic) NSString *voiceIdentifier; // @synthesize voiceIdentifier=_voiceIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithVoiceIdentifier:(id)arg1 shortVoiceName:(id)arg2 voiceLanguage:(id)arg3 hasBeenSelected:(BOOL)arg4;

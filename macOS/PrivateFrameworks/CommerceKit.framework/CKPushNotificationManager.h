@@ -17,9 +17,9 @@
 
 + (id)pushNotificationManagerForStoreClient:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property __weak id <CKPushNotificationManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendChangedToDelegate;
 - (void)_sendSuccessToDelegate;
 - (void)_sendErrorToDelegate:(id)arg1;

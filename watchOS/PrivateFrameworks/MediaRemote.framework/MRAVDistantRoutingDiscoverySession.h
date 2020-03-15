@@ -28,9 +28,9 @@
 
 + (id)clientInterface;
 + (id)serviceInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *distantExternalDevices; // @synthesize distantExternalDevices=_distantExternalDevices;
 @property(retain, nonatomic) NSXPCConnection *hostedRoutingSessionConnection; // @synthesize hostedRoutingSessionConnection=_hostedRoutingSessionConnection;
-- (void).cxx_destruct;
 - (void)_reloadAvailableDistantOutputDevices;
 - (void)_reloadAvailableDistantOutputDevicesWithOutputDevices:(id)arg1;
 - (void)_reloadAvailableDistantEndpoints;

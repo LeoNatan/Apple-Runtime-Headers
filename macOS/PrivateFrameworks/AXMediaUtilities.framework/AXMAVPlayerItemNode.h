@@ -22,10 +22,10 @@
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMVisionAnalysisOptions *analysisOptions; // @synthesize analysisOptions=_analysisOptions;
 @property(nonatomic) __weak AVPlayerItem *targetPlayerItem; // @synthesize targetPlayerItem=_targetPlayerItem;
 @property(readonly, nonatomic, getter=isTriggeringLegibilityEvents) BOOL triggeringLegibilityEvents; // @synthesize triggeringLegibilityEvents=_triggeringLegibilityEvents;
-- (void).cxx_destruct;
 - (void)legibleOutput:(id)arg1 didOutputAttributedStrings:(id)arg2 nativeSampleBuffers:(id)arg3 forItemTime:(CDStruct_198678f7)arg4;
 - (void)outputSequenceWasFlushed:(id)arg1;
 - (id)axmDescription;

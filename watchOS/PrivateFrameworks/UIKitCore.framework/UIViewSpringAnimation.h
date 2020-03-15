@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
     id <UIVectorOperatable> _intermediateVelocity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIVectorOperatable> intermediateVelocity; // @synthesize intermediateVelocity=_intermediateVelocity;
 @property(retain, nonatomic) id <UIVectorOperatable> intermediate; // @synthesize intermediate=_intermediate;
 @property(retain, nonatomic) id <UIVectorOperatable> value; // @synthesize value=_value;
 @property(retain, nonatomic) id <UIVectorOperatable> targetValue; // @synthesize targetValue=_targetValue;
-- (void).cxx_destruct;
 - (_Bool)isStable;
 @property(retain, nonatomic) id <UIVectorOperatable> velocity;
 - (id)stepWithDelta:(double)arg1;

@@ -20,8 +20,8 @@
     id <TCSServerXPC> _delegate;
 }
 
-@property(nonatomic) __weak id <TCSServerXPC> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TCSServerXPC> delegate; // @synthesize delegate=_delegate;
 - (void)_removeConnection:(id)arg1;
 - (void)_enumerateConnectionsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_addConnection:(id)arg1;

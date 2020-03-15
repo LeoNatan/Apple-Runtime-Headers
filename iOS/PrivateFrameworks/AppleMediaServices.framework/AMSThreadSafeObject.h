@@ -14,8 +14,8 @@
     NSObject<OS_dispatch_queue> *_objectAccessQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *objectAccessQueue; // @synthesize objectAccessQueue=_objectAccessQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *objectAccessQueue; // @synthesize objectAccessQueue=_objectAccessQueue;
 - (id)accessAndSetObjectWithBlock:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 - (id)initWithObject:(id)arg1;

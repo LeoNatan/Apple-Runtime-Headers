@@ -23,8 +23,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
-@property(readonly, nonatomic) NSString *normalizedString; // @synthesize normalizedString=_string;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *normalizedString; // @synthesize normalizedString=_string;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

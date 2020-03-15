@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <CNScheduler> _storeScheduler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> storeScheduler; // @synthesize storeScheduler=_storeScheduler;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)contactsForPredicate:(id)arg1 keys:(id)arg2;
 - (id)contactsForPhoneNumber:(id)arg1;
 - (id)contactsForEmailAddress:(id)arg1;

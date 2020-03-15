@@ -28,6 +28,7 @@
 + (unsigned long long)maxFeatureCount;
 + (unsigned long long)featureBitWidth;
 + (id)modelWithFeatureSet:(id)arg1 priorMean:(float)arg2 modelVarianceEpsilon:(float)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *metricsInteraction; // @synthesize metricsInteraction=_metricsInteraction;
 @property(retain, nonatomic) id <RERelevanceEngineMetricsRecorder> metricsRecorder; // @synthesize metricsRecorder=_metricsRecorder;
 @property(nonatomic) float simulationExploreExploitModulator; // @synthesize simulationExploreExploitModulator=_simulationExploreExploitModulator;
@@ -35,7 +36,6 @@
 @property(nonatomic) float priorMean; // @synthesize priorMean=_priorMean;
 @property(nonatomic) float exploreExploitModulator; // @synthesize exploreExploitModulator=_exploreExploitModulator;
 @property(nonatomic) _Bool allowsExploreExploit; // @synthesize allowsExploreExploit=_allowsExploreExploit;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maxFeatureCount;
 @property(readonly, nonatomic) unsigned long long featureBitWidth;
 @property(readonly, nonatomic) NSString *name;

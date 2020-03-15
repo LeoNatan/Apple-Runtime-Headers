@@ -17,9 +17,9 @@
     NSArray *_tokens;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(copy, nonatomic, setter=setUUID:) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)reverse;
 - (void)enumerateSynonymsForOriginalContentString:(id)arg1 handler:(CDUnknownBlockType)arg2;

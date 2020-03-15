@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSString *_eventTypeLabelStr;
     NSString *_subhead1LabelStr;
     NSString *_subhead2LabelStr;
+    NSString *_subhead3LabelStr;
     NSString *_tabName;
     VUILabel *_eventTypeLabel;
     VUITextLayout *_eventTypeLabelLayout;
@@ -21,16 +22,21 @@ __attribute__((visibility("hidden")))
     VUITextLayout *_subhead1LabelLayout;
     VUILabel *_subhead2Label;
     VUITextLayout *_subhead2LabelLayout;
+    VUILabel *_subhead3Label;
+    VUITextLayout *_subhead3LabelLayout;
     VUILabel *_tabNameLabel;
     VUITextLayout *_tabNameLabelLayout;
     UIImageView *_tabImageView;
     VUISeparatorView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIImageView *tabImageView; // @synthesize tabImageView=_tabImageView;
 @property(retain, nonatomic) VUITextLayout *tabNameLabelLayout; // @synthesize tabNameLabelLayout=_tabNameLabelLayout;
 @property(retain, nonatomic) VUILabel *tabNameLabel; // @synthesize tabNameLabel=_tabNameLabel;
+@property(retain, nonatomic) VUITextLayout *subhead3LabelLayout; // @synthesize subhead3LabelLayout=_subhead3LabelLayout;
+@property(retain, nonatomic) VUILabel *subhead3Label; // @synthesize subhead3Label=_subhead3Label;
 @property(retain, nonatomic) VUITextLayout *subhead2LabelLayout; // @synthesize subhead2LabelLayout=_subhead2LabelLayout;
 @property(retain, nonatomic) VUILabel *subhead2Label; // @synthesize subhead2Label=_subhead2Label;
 @property(retain, nonatomic) VUITextLayout *subhead1LabelLayout; // @synthesize subhead1LabelLayout=_subhead1LabelLayout;
@@ -38,13 +44,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUITextLayout *eventTypeLabelLayout; // @synthesize eventTypeLabelLayout=_eventTypeLabelLayout;
 @property(retain, nonatomic) VUILabel *eventTypeLabel; // @synthesize eventTypeLabel=_eventTypeLabel;
 @property(copy, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;
+@property(copy, nonatomic) NSString *subhead3LabelStr; // @synthesize subhead3LabelStr=_subhead3LabelStr;
 @property(copy, nonatomic) NSString *subhead2LabelStr; // @synthesize subhead2LabelStr=_subhead2LabelStr;
 @property(copy, nonatomic) NSString *subhead1LabelStr; // @synthesize subhead1LabelStr=_subhead1LabelStr;
 @property(copy, nonatomic) NSString *eventTypeLabelStr; // @synthesize eventTypeLabelStr=_eventTypeLabelStr;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 @property(copy, nonatomic) UIImage *tabImage;
+- (void)setSubhead3LabelColor:(id)arg1;
+- (void)setSubhead2LabelColor:(id)arg1;
+- (void)setSubhead1LabelColor:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

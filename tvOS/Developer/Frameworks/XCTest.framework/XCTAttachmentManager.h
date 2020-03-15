@@ -11,15 +11,15 @@
 @interface XCTAttachmentManager : NSObject
 {
     _Bool _isValid;
-    NSMutableArray *_attachments;
     XCTestCase *_testCase;
+    NSMutableArray *_attachments;
 }
 
 + (void)_synthesizeActivityForAttachment:(id)arg1 testCase:(id)arg2;
-@property _Bool isValid; // @synthesize isValid=_isValid;
-@property(readonly) XCTestCase *testCase; // @synthesize testCase=_testCase;
-@property(readonly) NSMutableArray *attachments; // @synthesize attachments=_attachments;
 - (void).cxx_destruct;
+@property _Bool isValid; // @synthesize isValid=_isValid;
+@property(readonly) NSMutableArray *attachments; // @synthesize attachments=_attachments;
+@property(readonly) XCTestCase *testCase; // @synthesize testCase=_testCase;
 - (void)enqueueAttachment:(id)arg1;
 - (void)dequeueAndReportBackgroundAttachments;
 - (void)ensureNoRemainingAttachments;

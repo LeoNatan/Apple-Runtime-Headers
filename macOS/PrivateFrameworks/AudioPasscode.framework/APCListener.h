@@ -19,17 +19,17 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
-+ (struct NSData *)capabilityData;
++ (id)capabilityData;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType retrievedDataHandler; // @synthesize retrievedDataHandler=_retrievedDataHandler;
-- (void).cxx_destruct;
 - (BOOL)getResultData:(id *)arg1;
 - (void)stopListening;
 - (void)startListeningWithError:(id *)arg1;
 - (void)startListening;
 - (id)initWithCodecConfiguration:(id)arg1;
-- (id)initWithConfigurationData:(struct NSData *)arg1;
+- (id)initWithConfigurationData:(id)arg1;
 - (id)init;
 
 @end

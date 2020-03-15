@@ -16,8 +16,8 @@
     CDUnknownBlockType _comparator;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 - (void)enumerateObjects:(CDUnknownBlockType)arg1;
 - (_Bool)containsObject:(id)arg1;
 - (void)removeMinimumObject;

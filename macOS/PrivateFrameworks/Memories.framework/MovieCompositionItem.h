@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     AVURLAsset *m_audioProxyAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVURLAsset *audioProxyAsset; // @synthesize audioProxyAsset=m_audioProxyAsset;
 @property(retain, nonatomic) AVAsset *asset; // @synthesize asset=m_asset;
-- (void).cxx_destruct;
 - (id)audioTrackSegmentsLoopedForDestinationTimeRange:(CDStruct_e83c9415)arg1;
 - (id)audioTrackSegmentsWithDestinationTime:(CDStruct_1b6d18a9)arg1 paddedFromTime:(CDStruct_1b6d18a9)arg2;
 - (id)audioTrackSegmentsWithDestinationTime:(CDStruct_1b6d18a9)arg1;

@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)paymentMarketsConfigurationWithURL:(id)arg1 forDeviceClass:(id)arg2 version:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy) NSString *version; // @synthesize version=_version;
 @property(readonly, copy) NSSet *markets; // @synthesize markets=_markets;
-- (void).cxx_destruct;
 - (id)expressTransitNetworksForLocation:(id)arg1;
 - (id)supportedTransitNetworksForLocation:(id)arg1;
 - (id)expressCredentialTypesForLocation:(id)arg1;

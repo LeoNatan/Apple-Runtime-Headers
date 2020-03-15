@@ -17,9 +17,9 @@
     struct CGRect _clippingRect;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) PXGNamedImageViewConfiguration *userData; // @synthesize userData=_userData;
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *accessibilityRole;
 - (id)hitTest:(struct CGPoint)arg1;
 @property(readonly, copy, nonatomic) NSString *accessibilityLabel;

@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     id <MLMediaLibraryAccountChangeObserver> _accountChangeObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MLMediaLibraryAccountChangeObserver> accountChangeObserver; // @synthesize accountChangeObserver=_accountChangeObserver;
 @property(retain, nonatomic) id <ML3AccountInformationProviding> accountInfo; // @synthesize accountInfo=_accountInfo;
 @property(retain, nonatomic) NSOperationQueue *accountChangeOperationQueue; // @synthesize accountChangeOperationQueue=_accountChangeOperationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (void)accountChangeOperationWillStartPerformingDatabasePathChange:(id)arg1 newDatabasePath:(id)arg2;
 - (id)databasePathForDSID:(id)arg1;
 - (BOOL)shouldExecuteAccountChangeOperation:(id)arg1 reason:(id *)arg2;

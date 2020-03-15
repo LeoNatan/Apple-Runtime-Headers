@@ -23,6 +23,7 @@
 + (id)_sortedEntitiesArray:(id)arg1;
 + (void)_removeItem:(id)arg1 itemByIdentifier:(id)arg2;
 + (void)_addItem:(id)arg1 itemByIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *showByIdentifier; // @synthesize showByIdentifier=_showByIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *movieRentalByIdentifier; // @synthesize movieRentalByIdentifier=_movieRentalByIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *movieByIdentifier; // @synthesize movieByIdentifier=_movieByIdentifier;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *databaseFileDispatchSource; // @synthesize databaseFileDispatchSource=_databaseFileDispatchSource;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (void)_startMonitoringDatabaseFile;
 - (void)_removeEntityWithIdentifier:(id)arg1;
 - (void)_removeMovieRental:(id)arg1;

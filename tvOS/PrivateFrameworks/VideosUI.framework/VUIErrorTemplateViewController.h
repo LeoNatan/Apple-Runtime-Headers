@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     IKViewElement *_viewElement;
 }
 
-@property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(readonly, nonatomic) VUIErrorView *errorView;
 - (void)loadView;
 - (void)updateWithViewElement:(id)arg1;

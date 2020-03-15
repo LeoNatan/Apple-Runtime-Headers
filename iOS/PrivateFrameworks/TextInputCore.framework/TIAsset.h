@@ -22,13 +22,13 @@
 + (_Bool)shouldLenientlyMatchWithContentItemsForRegion:(id)arg1;
 + (long long)supportedCompatibilityVersion;
 + (id)knownAssetTypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 @property(readonly, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 @property(readonly, nonatomic) long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 @property(readonly, nonatomic) long long contentVersion; // @synthesize contentVersion=_contentVersion;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) TIAssetAttributes *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (_Bool)hasAssertions;
 - (void)removeAssertion;
 - (void)addAssertion;

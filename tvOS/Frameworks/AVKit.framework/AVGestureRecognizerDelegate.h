@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _shouldBeginOtherMenuTapBlockGesture;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType shouldBeginOtherMenuTapBlockGesture; // @synthesize shouldBeginOtherMenuTapBlockGesture=_shouldBeginOtherMenuTapBlockGesture;
 @property(copy, nonatomic) CDUnknownBlockType shouldBeginDismissalMenuTapGesture; // @synthesize shouldBeginDismissalMenuTapGesture=_shouldBeginDismissalMenuTapGesture;
 @property(copy, nonatomic) CDUnknownBlockType userInteractionAllowedBlock; // @synthesize userInteractionAllowedBlock=_userInteractionAllowedBlock;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITapGestureRecognizer *dismissalMenuTapRecognizer; // @synthesize dismissalMenuTapRecognizer=_dismissalMenuTapRecognizer;
 @property(retain, nonatomic) NSSet *gestureRecognizersThatMustFail; // @synthesize gestureRecognizersThatMustFail=_gestureRecognizersThatMustFail;
 @property(retain, nonatomic) NSSet *exclusiveGestureRecognizers; // @synthesize exclusiveGestureRecognizers=_exclusiveGestureRecognizers;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

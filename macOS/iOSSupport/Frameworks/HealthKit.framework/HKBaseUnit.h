@@ -26,8 +26,8 @@
 + (id)_uniquedRootUnitFromDefinition:(CDStruct_d002b06d)arg1;
 + (id)_uniquedRootUnit:(id)arg1;
 + (id)unitFromString:(id)arg1;
-@property(readonly, nonatomic) double proportionalSize; // @synthesize proportionalSize=_proportionalSize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double proportionalSize; // @synthesize proportionalSize=_proportionalSize;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

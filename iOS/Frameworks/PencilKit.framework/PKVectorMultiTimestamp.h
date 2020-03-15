@@ -15,8 +15,8 @@
     NSArray *_timestamps;
 }
 
-@property(readonly, nonatomic) NSArray *timestamps; // @synthesize timestamps=_timestamps;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *timestamps; // @synthesize timestamps=_timestamps;
 - (id)description;
 - (void)mergeWithTimestamp:(id)arg1;
 - (unsigned long long)compareTo:(id)arg1;

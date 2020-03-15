@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pendingOperation:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long errorCount; // @synthesize errorCount=_errorCount;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy, nonatomic) CDUnknownBlockType operationHandler; // @synthesize operationHandler=_operationHandler;
-- (void).cxx_destruct;
 
 @end
 

@@ -47,6 +47,7 @@
 - (id)ams_IDSAccountForAccount:(id)arg1;
 - (id)ams_IDMSAccountForAccount:(id)arg1;
 - (id)ams_iCloudAccountForAccount:(id)arg1;
+- (id)ams_demoAccount;
 - (id)ams_cookiesForURL:(id)arg1;
 - (id)ams_fetchGrandSlamTokenForAccount:(id)arg1 withIdentifier:(id)arg2 error:(id *)arg3;
 - (id)ams_accountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3 accountTypeIdentifier:(id)arg4;

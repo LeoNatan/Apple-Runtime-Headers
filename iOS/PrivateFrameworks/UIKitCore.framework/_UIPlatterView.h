@@ -40,6 +40,7 @@
     struct CGAffineTransform _containerCounterRotationTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform containerCounterRotationTransform; // @synthesize containerCounterRotationTransform=_containerCounterRotationTransform;
 @property(nonatomic) struct CGAffineTransform containerCounterScaleTransform; // @synthesize containerCounterScaleTransform=_containerCounterScaleTransform;
 @property(readonly, nonatomic) _UIPlatterSoftShadowView *shadowView; // @synthesize shadowView=_shadowView;
@@ -68,7 +69,6 @@
 @property(readonly, nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) _Bool constrainSize; // @synthesize constrainSize=_constrainSize;
 @property(readonly, copy, nonatomic) _DUIPreview *preview; // @synthesize preview=_preview;
-- (void).cxx_destruct;
 - (void)_unmaskPlatterView;
 - (void)updateTransform;
 - (void)didMoveToSuperview;

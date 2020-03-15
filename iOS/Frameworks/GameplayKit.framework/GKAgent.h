@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) GKBehavior *behavior; // @synthesize behavior=_behavior;
-@property(nonatomic) __weak id <GKAgentDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GKBehavior *behavior; // @synthesize behavior=_behavior;
+@property(nonatomic) __weak id <GKAgentDelegate> delegate; // @synthesize delegate=_delegate;
 -     // Error parsing type: 32@0:8@16d24, name: steerToStayOnPath:maxPredictionTime:
 -     // Error parsing type: 36@0:8@16d24B32, name: steerToFollowPath:maxPredictionTime:forward:
 -     // Error parsing type: 32@0:8@16d24, name: steerForIntercept:maxPredictionTime:

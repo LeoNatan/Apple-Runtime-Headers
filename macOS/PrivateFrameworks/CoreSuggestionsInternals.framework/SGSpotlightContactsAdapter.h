@@ -19,8 +19,8 @@
 
 + (id)entityIdentifiersFromCNIdentifiers:(id)arg1;
 + (id)searchableIndex;
-@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void)removeAllPseudoContactsInIdSet:(id)arg1;
 - (void)removeAllStoredPseudoContacts;
 - (void)rejectContact:(id)arg1;

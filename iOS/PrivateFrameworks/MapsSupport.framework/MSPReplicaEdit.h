@@ -15,8 +15,8 @@
     NSUUID *_identifierOfAffectedRecord;
 }
 
-@property(readonly, nonatomic) NSUUID *identifierOfAffectedRecord; // @synthesize identifierOfAffectedRecord=_identifierOfAffectedRecord;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUUID *identifierOfAffectedRecord; // @synthesize identifierOfAffectedRecord=_identifierOfAffectedRecord;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

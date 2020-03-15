@@ -21,11 +21,11 @@
     SBMesaUnlockTrigger *_trigger;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBBiometricUnlockBehaviorDelegate> biometricUnlockBehaviorDelegate; // @synthesize biometricUnlockBehaviorDelegate=_biometricUnlockBehaviorDelegate;
 @property(retain, nonatomic, getter=_getHomeHardwareButton, setter=_setHomeHardwareButton:) SBHomeHardwareButton *homeHardwareButton; // @synthesize homeHardwareButton=_homeHardwareButton;
 @property(readonly, nonatomic, getter=_mesaSettings) CSLockScreenMesaSettings *mesaSettings; // @synthesize mesaSettings=_mesaSettings;
 @property(retain, nonatomic, getter=_trigger, setter=_setTrigger:) SBMesaUnlockTrigger *trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (id)_failureSettingsForFailAttempt:(long long)arg1;
 - (void)_handleMesaFailure;
 - (void)mesaUnlockTriggerFired:(id)arg1;

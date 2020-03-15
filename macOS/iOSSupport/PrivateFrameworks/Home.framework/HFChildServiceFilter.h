@@ -13,8 +13,8 @@
     NSSet *_childServiceTypes;
 }
 
-@property(readonly, copy, nonatomic) NSSet *childServiceTypes; // @synthesize childServiceTypes=_childServiceTypes;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *childServiceTypes; // @synthesize childServiceTypes=_childServiceTypes;
 - (id)filteredChildServicesForParentService:(id)arg1;
 - (id)initWithChildServiceTypes:(id)arg1;
 

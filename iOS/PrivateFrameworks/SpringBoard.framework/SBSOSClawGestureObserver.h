@@ -25,6 +25,7 @@
     BSTimer *_sosTriggerTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_wasSOSTriggeredByClaw, setter=_setWasSOSTriggeredByClaw:) _Bool wasSOSTiggeredByClaw; // @synthesize wasSOSTiggeredByClaw=_wasSOSTiggeredByClaw;
 @property(retain, nonatomic) BSTimer *sosTriggerTimer; // @synthesize sosTriggerTimer=_sosTriggerTimer;
 @property(nonatomic, getter=isSOSEnabled, setter=setSOSEnabled:) _Bool sosEnabled; // @synthesize sosEnabled=_sosEnabled;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak id <SBSOSClawGestureObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SBClawGestureLogger *clawGestureLogger; // @synthesize clawGestureLogger=_clawGestureLogger;
 @property(retain, nonatomic) NSMutableSet *activePressTypes; // @synthesize activePressTypes=_activePressTypes;
-- (void).cxx_destruct;
 - (void)handleVolumeDecrease;
 - (void)handleVolumeIncrease;
 - (void)didUpdateCurrentSOSInitiationState:(long long)arg1;

@@ -43,8 +43,8 @@
     CATransactionCompletionItem *_completionItem;
 }
 
-@property(readonly) __weak PAImageContainerLayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 - (void).cxx_destruct;
+@property(readonly) __weak PAImageContainerLayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 - (void)abortAnimation;
 - (void)_completeAnimations;
 - (void)_completeAnimationsWhenDone;

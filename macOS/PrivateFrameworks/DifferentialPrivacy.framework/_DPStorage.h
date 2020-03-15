@@ -24,12 +24,12 @@
 + (id)createFetchRequestFor:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 fetchLimit:(unsigned long long)arg4 fetchOffset:(unsigned long long)arg5;
 + (id)errorStringFor:(long long)arg1;
 + (id)storageWithDirectory:(id)arg1 readOnly:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DPCoreDataStorage *coredataStorage; // @synthesize coredataStorage=_coredataStorage;
 @property(readonly, nonatomic) NSDictionary *converterFromClass; // @synthesize converterFromClass=_converterFromClass;
 @property(readonly, nonatomic) NSDictionary *converterFromEntity; // @synthesize converterFromEntity=_converterFromEntity;
 @property(readonly, nonatomic) BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)scheduleMaintenanceWithName:(id)arg1 database:(id)arg2;
 - (void)scheduleStorageCullingWithName:(id)arg1 database:(id)arg2;
 - (void)dealloc;

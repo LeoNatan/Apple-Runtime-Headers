@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     unsigned long long identifier;
 }
 
-@property unsigned long long identifier; // @synthesize identifier;
 - (void).cxx_destruct;
+@property unsigned long long identifier; // @synthesize identifier;
 - (id)description;
 - (_Bool)isEmpty;
 - (int)blockType;

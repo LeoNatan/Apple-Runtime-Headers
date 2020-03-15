@@ -17,10 +17,13 @@
 
 + (id)controlObject:(_Bool)arg1 error:(id *)arg2;
 + (id)controlObject:(id *)arg1;
+- (void).cxx_destruct;
 @property _Bool sync; // @synthesize sync=_sync;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property _Bool synchronous; // @synthesize synchronous=_synchronous;
-- (void).cxx_destruct;
+- (void)getCDPStatus:(id)arg1 contextID:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)setCDPEnabled:(id)arg1 contextID:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)refetchCKKSPolicy:(id)arg1 contextID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)tapToRadar:(id)arg1 description:(id)arg2 radar:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)postCDPFollowupResult:(_Bool)arg1 type:(id)arg2 error:(id)arg3 containerName:(id)arg4 contextName:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)waitForOctagonUpgrade:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -44,7 +47,7 @@
 - (void)scrubBottledPeer:(id)arg1 bottleID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)launchBottledPeer:(id)arg1 bottleID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)preflightBottledPeer:(id)arg1 dsid:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)rpcJoinWithConfiguration:(id)arg1 vouchData:(id)arg2 vouchSig:(id)arg3 preapprovedKeys:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)rpcJoinWithConfiguration:(id)arg1 vouchData:(id)arg2 vouchSig:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)rpcVoucherWithConfiguration:(id)arg1 peerID:(id)arg2 permanentInfo:(id)arg3 permanentInfoSig:(id)arg4 stableInfo:(id)arg5 stableInfoSig:(id)arg6 reply:(CDUnknownBlockType)arg7;
 - (void)rpcPrepareIdentityAsApplicantWithConfiguration:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)rpcEpochWithConfiguration:(id)arg1 reply:(CDUnknownBlockType)arg2;

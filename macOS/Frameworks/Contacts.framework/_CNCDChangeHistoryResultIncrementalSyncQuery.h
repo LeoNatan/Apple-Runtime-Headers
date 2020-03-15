@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 
 + (long long)linkingContactsChangeTypeForPersistentChangeType:(long long)arg1;
 + (long long)contactsChangeTypeForPersistentChangeType:(long long)arg1;
+- (id)groupChangeForHistoryChange:(id)arg1;
+- (id)groupChangesForHistoryChanges:(id)arg1;
 - (id)nonUnifiedContactChangeForHistoryChange:(id)arg1;
 - (id)unifiedContactChangeForHistoryChange:(id)arg1;
 - (id)contactChangeForHistoryChange:(id)arg1;

@@ -34,6 +34,7 @@
 + (id)csk_propertiesNameFromTableColumnIdentifiers:(id)arg1;
 + (id)overridedFilterValueForFilter:(id)arg1;
 + (id)propertyNameForFilter:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *formattedTime; // @synthesize formattedTime=_formattedTime;
 @property(copy, nonatomic) NSNumber *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(copy, nonatomic) NSString *libraryImageUUID; // @synthesize libraryImageUUID=_libraryImageUUID;
@@ -47,7 +48,6 @@
 @property(readonly, copy, nonatomic) NSString *libraryImagePath; // @synthesize libraryImagePath=_libraryImagePath;
 @property(readonly, copy, nonatomic) NSString *processImagePath; // @synthesize processImagePath=_processImagePath;
 @property(readonly, copy, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

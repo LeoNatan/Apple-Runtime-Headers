@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     PerSitePreferencePopUpButton *_permissionsPopUpButton;
 }
 
+- (void).cxx_destruct;
 - (void)setPermissionsPopUpButton:(id)arg1;
 - (id)permissionsPopUpButton;
 - (void)setPreferenceTitleTextField:(id)arg1;
 - (id)preferenceTitleTextField;
-- (void).cxx_destruct;
 - (void)updateToReflectPreferenceValue:(id)arg1;
 - (void)_updatePopUpStateForDomain:(id)arg1;
 - (void)updateStateForDomain:(id)arg1;

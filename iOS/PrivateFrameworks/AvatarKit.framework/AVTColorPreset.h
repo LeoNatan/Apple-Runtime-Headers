@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString, UIImage;
+@class NSArray, NSDictionary, NSString, UIColor, UIImage;
 
 @interface AVTColorPreset : NSObject
 {
@@ -14,12 +14,12 @@
     long long _category;
     NSDictionary *_derivedColors;
     NSArray *_colors;
-    struct UIColor *_previewColorMin;
-    struct UIColor *_previewColorMid;
-    struct UIColor *_previewColorMax;
-    struct UIColor *_previewAccentColorMin;
-    struct UIColor *_previewAccentColorMid;
-    struct UIColor *_previewAccentColorMax;
+    UIColor *_previewColorMin;
+    UIColor *_previewColorMid;
+    UIColor *_previewColorMax;
+    UIColor *_previewAccentColorMin;
+    UIColor *_previewAccentColorMid;
+    UIColor *_previewAccentColorMax;
     unsigned long long _previewAccentType;
     float _variation;
     NSArray *_materials;
@@ -29,8 +29,8 @@
 + (id)secondaryColorPresetWithName:(id)arg1 category:(long long)arg2 variation:(float)arg3;
 + (id)colorPresetWithName:(id)arg1 category:(long long)arg2 colorIndex:(unsigned long long)arg3 variation:(float)arg4;
 + (id)colorPresetWithName:(id)arg1 category:(long long)arg2 variation:(float)arg3;
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) NSString *name; // @synthesize name=_name;
 - (id)description;
 - (id)gradientLayerForNaturalColorWithSkinColor:(id)arg1;
 - (void)renderNaturalSkinColorIntoCALayer:(id)arg1 withSkinColor:(id)arg2;
@@ -49,8 +49,8 @@
 - (id)materialAtIndex:(unsigned long long)arg1;
 - (unsigned long long)materialCount;
 - (void)updateMaterialsIfNeeded;
-- (struct UIColor *)previewAccentColor;
-- (struct UIColor *)previewColor;
+- (id)previewAccentColor;
+- (id)previewColor;
 @property(readonly) UIImage *thumbnail;
 - (_Bool)shouldBlendWithSkinColor;
 @property(readonly) _Bool isNatural;

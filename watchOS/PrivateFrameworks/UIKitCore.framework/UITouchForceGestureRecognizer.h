@@ -30,6 +30,7 @@
     double _automaticTouchForceDuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
 @property(nonatomic) double automaticTouchForceDuration; // @synthesize automaticTouchForceDuration=_automaticTouchForceDuration;
 @property(nonatomic) float automaticTouchForce; // @synthesize automaticTouchForce=_automaticTouchForce;
@@ -39,7 +40,6 @@
 @property(nonatomic) float velocity; // @synthesize velocity=_velocity;
 @property(nonatomic) float minimumRequiredTouchForce; // @synthesize minimumRequiredTouchForce=_minimumRequiredTouchForce;
 @property(nonatomic) float touchForce; // @synthesize touchForce=_touchForce;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double touchDuration;
 - (float)_evaluateAutomaticTouchForceForTimeInterval:(double)arg1 actualTouchForce:(float)arg2;
 - (void)_endContinuousEvaluation;

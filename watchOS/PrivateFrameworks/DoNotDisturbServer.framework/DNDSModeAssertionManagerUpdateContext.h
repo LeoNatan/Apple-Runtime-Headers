@@ -17,9 +17,9 @@
     DNDSModeAssertionUpdateResult *_updateResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) DNDSModeAssertionUpdateResult *updateResult; // @synthesize updateResult=_updateResult;
 @property(readonly, copy, nonatomic) DNDSModeAssertionStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (id)_calculateUpdateResultForStore:(id)arg1 previousStore:(id)arg2;
 - (void)_cleanupStore:(inout id)arg1;
 - (void)_resolveStore:(inout id)arg1;

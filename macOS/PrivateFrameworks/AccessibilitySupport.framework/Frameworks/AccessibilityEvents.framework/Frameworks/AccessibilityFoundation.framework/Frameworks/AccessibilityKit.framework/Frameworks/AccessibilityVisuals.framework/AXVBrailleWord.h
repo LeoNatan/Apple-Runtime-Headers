@@ -19,12 +19,12 @@
     struct _NSRange _highlightCharacterRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long brailleCursorIndex; // @synthesize brailleCursorIndex=_brailleCursorIndex;
 @property(nonatomic) struct _NSRange highlightCharacterRange; // @synthesize highlightCharacterRange=_highlightCharacterRange;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *transliterationWord; // @synthesize transliterationWord=_transliterationWord;
 @property(copy, nonatomic) NSString *brailleString; // @synthesize brailleString=_brailleString;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)_isEqualToBrailleWord:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

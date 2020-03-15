@@ -37,6 +37,7 @@
 }
 
 + (_Bool)shouldPersistToIncomingDirectoryWithPersistenceOptions:(long long)arg1 temporaryPersistenceOptions:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldDelayRemotePersistence; // @synthesize shouldDelayRemotePersistence=_shouldDelayRemotePersistence;
 @property(readonly, nonatomic) _Bool shouldPersistDiagnosticsToSidecar; // @synthesize shouldPersistDiagnosticsToSidecar=_shouldPersistDiagnosticsToSidecar;
 @property(readonly, nonatomic) _Bool shouldExtractDiagnosticsFromMetadata; // @synthesize shouldExtractDiagnosticsFromMetadata=_shouldExtractDiagnosticsFromMetadata;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic) long long captureDevice; // @synthesize captureDevice=_captureDevice;
 @property(readonly, nonatomic) long long captureOrientation; // @synthesize captureOrientation=_captureOrientation;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldProtectPersistenceForVideo;
 @property(readonly, nonatomic) _Bool shouldProtectPersistence;
 @property(readonly, nonatomic) _Bool shouldPersistToIncomingDirectory;

@@ -22,12 +22,12 @@
 
 + (void)generateProminentDetent;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICDetentPlayer *detentPlayer; // @synthesize detentPlayer=_detentPlayer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *minorDetentsStateAccessQueue; // @synthesize minorDetentsStateAccessQueue=_minorDetentsStateAccessQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *aopCommandsQueue; // @synthesize aopCommandsQueue=_aopCommandsQueue;
 @property _Bool minorDetentsAreEnabled; // @synthesize minorDetentsAreEnabled=_minorDetentsAreEnabled;
 @property(nonatomic) _Bool detentsEnabledForDevice; // @synthesize detentsEnabledForDevice=_detentsEnabledForDevice;
-- (void).cxx_destruct;
 - (void)detentService:(id)arg1 detentsDisabledChanged:(_Bool)arg2;
 - (void)_dispatchDetentsCommand:(CDUnknownBlockType)arg1;
 - (_Bool)deviceSupportsHardwareDetents;

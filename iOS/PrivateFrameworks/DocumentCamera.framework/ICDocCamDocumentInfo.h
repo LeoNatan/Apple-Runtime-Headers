@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property __weak id <ICDocCamViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSData *markupModelData; // @synthesize markupModelData=_markupModelData;
 @property(retain, nonatomic) NSString *scanDataDelegateIdentifier; // @synthesize scanDataDelegateIdentifier=_scanDataDelegateIdentifier;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *croppedAndFilteredImageUUID; // @synthesize croppedAndFilteredImageUUID=_croppedAndFilteredImageUUID;
 @property(retain, nonatomic) ICDocCamImageQuad *imageQuad; // @synthesize imageQuad=_imageQuad;
 @property(retain, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

@@ -16,10 +16,10 @@
     UIViewController *_idleViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(readonly, nonatomic) UIViewController *idleViewController; // @synthesize idleViewController=_idleViewController;
 @property(readonly, nonatomic) id <TVPMediaItem> mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (void)finishWithIdleViewController:(id)arg1;
 - (id)initWithMediaItem:(id)arg1;
 

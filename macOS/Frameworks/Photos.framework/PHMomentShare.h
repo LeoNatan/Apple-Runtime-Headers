@@ -46,6 +46,7 @@
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 + (id)invitedMomentSharesExpiringInDays:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
 @property(readonly, nonatomic) NSData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
 @property(readonly, nonatomic) NSData *previewData; // @synthesize previewData=_previewData;
@@ -62,7 +63,6 @@
 @property(readonly, nonatomic) unsigned short trashedState; // @synthesize trashedState=_trashedState;
 @property(readonly, nonatomic) short mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) unsigned short status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)publishWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)forceSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)acceptShareWithCompletion:(CDUnknownBlockType)arg1;

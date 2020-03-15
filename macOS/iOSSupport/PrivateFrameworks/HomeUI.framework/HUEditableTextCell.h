@@ -16,8 +16,8 @@
     UITextField *_textField;
 }
 
-@property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void)prepareForReuse;
 @property(nonatomic, getter=isDisabled) BOOL disabled;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;

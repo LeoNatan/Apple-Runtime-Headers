@@ -20,10 +20,10 @@
     CoreDAVItemParserMapping *_bestServerChecksumVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool mismatchDetected; // @synthesize mismatchDetected=_mismatchDetected;
 @property(retain, nonatomic) CoreDAVItemParserMapping *bestServerChecksumVersion; // @synthesize bestServerChecksumVersion=_bestServerChecksumVersion;
 @property(retain, nonatomic) NSArray *preferredChecksumVersions; // @synthesize preferredChecksumVersions=_preferredChecksumVersions;
-- (void).cxx_destruct;
 - (void)deleteResourceURLs:(id)arg1;
 - (_Bool)shouldDownloadResource:(id)arg1 localETag:(id)arg2 serverETag:(id)arg3;
 - (void)receivedPropertiesToValues:(id)arg1 forURL:(id)arg2;

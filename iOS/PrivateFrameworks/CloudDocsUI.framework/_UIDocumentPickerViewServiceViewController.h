@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 + (id)_urlByResolvingExternalDocumentReferenceForURL:(id)arg1;
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *currentPicker; // @synthesize currentPicker=_currentPicker;
 @property(nonatomic) _Bool showingSpinner; // @synthesize showingSpinner=_showingSpinner;
 @property(nonatomic) _Bool hasBeenDismissed; // @synthesize hasBeenDismissed=_hasBeenDismissed;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic, setter=_setUploadURL:) NSURL *uploadURL; // @synthesize uploadURL=_uploadURL;
 @property(nonatomic, setter=_setPickerMode:) unsigned long long pickerMode; // @synthesize pickerMode=_pickerMode;
 @property(copy, nonatomic, setter=_setPickableTypes:) NSArray *pickableTypes; // @synthesize pickableTypes=_pickableTypes;
-- (void).cxx_destruct;
 - (void)_warnSharingForTarget:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_warnSharingPreMove;
 - (_Bool)_shouldWarnForSharing;

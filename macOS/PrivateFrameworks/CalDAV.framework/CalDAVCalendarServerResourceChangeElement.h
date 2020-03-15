@@ -13,8 +13,8 @@
     CalDAVUpdateOwnerItem *_changedBy;
 }
 
-@property(retain, nonatomic) CalDAVUpdateOwnerItem *changedBy; // @synthesize changedBy=_changedBy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CalDAVUpdateOwnerItem *changedBy; // @synthesize changedBy=_changedBy;
 - (id)copyParseRules;
 @property(readonly, nonatomic) NSURL *fullHrefURL;
 - (id)init;

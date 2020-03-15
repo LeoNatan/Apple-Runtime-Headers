@@ -17,9 +17,9 @@
 + (id)buildRequiredOnlyWithUserName:(id)arg1 withPassword:(id)arg2;
 + (id)buildWithUserName:(id)arg1 withPassword:(id)arg2;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadPassword; // @synthesize payloadPassword=_payloadPassword;
 @property(copy, nonatomic) NSString *payloadUserName; // @synthesize payloadUserName=_payloadUserName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

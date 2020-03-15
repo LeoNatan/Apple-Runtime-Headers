@@ -21,10 +21,10 @@
 }
 
 + (id)_sharedMenuIndicatorImage;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(retain) AKPopoverColorWell *colorWell; // @synthesize colorWell=_colorWell;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 @property(copy, nonatomic) NSString *title;
 - (void)_configureForDisplayMode:(unsigned long long)arg1;

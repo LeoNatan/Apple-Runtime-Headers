@@ -21,10 +21,10 @@
 
 + (long long)activityCategory;
 + (unsigned long long)_xpcAttributes;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialSharing; // @synthesize initialSharing=_initialSharing;
 @property(retain, nonatomic) UIImage *activityImage; // @synthesize activityImage=_activityImage;
 @property(retain, nonatomic) NSString *activityTitle; // @synthesize activityTitle=_activityTitle;
-- (void).cxx_destruct;
 - (_Bool)_activitySupportsPromiseURLs;
 - (void)_documentSharingControllerDidDismiss:(id)arg1;
 - (void)_cloudShareControllerDidDismiss:(id)arg1;

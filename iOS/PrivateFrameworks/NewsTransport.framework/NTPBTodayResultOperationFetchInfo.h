@@ -37,6 +37,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleIap; // @synthesize bundleIap=_bundleIap;
 @property(nonatomic) _Bool isBundleSubscriber; // @synthesize isBundleSubscriber=_isBundleSubscriber;
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *userID; // @synthesize userID=_userID;
 @property(nonatomic) long long appConfigTreatmentIDInteger; // @synthesize appConfigTreatmentIDInteger=_appConfigTreatmentIDInteger;
 @property(retain, nonatomic) NSString *todaySourceIdentifier; // @synthesize todaySourceIdentifier=_todaySourceIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

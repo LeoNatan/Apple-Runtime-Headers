@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_classNameFromAttributeType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType DMAPQueryTermBlock; // @synthesize DMAPQueryTermBlock=_DMAPQueryTermBlock;
 @property(copy, nonatomic) CDUnknownBlockType DMAPQueryTermValueBlock; // @synthesize DMAPQueryTermValueBlock=_DMAPQueryTermValueBlock;
 @property(copy, nonatomic) NSString *DMAPQueryTermValueClassName; // @synthesize DMAPQueryTermValueClassName=_DMAPQueryTermValueClassName;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long attributeType; // @synthesize attributeType=_attributeType;
 @property(copy, nonatomic) NSString *sortAsName; // @synthesize sortAsName=_sortAsName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

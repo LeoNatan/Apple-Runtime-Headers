@@ -119,10 +119,6 @@ struct MPSStateTextureInfo {
     unsigned long long _field8[4];
 };
 
-struct NSArray {
-    Class _field1;
-};
-
 struct ResourceListNode {
     CDUnknownFunctionPointerType *_field1;
     struct ResourceListNode *_field2;

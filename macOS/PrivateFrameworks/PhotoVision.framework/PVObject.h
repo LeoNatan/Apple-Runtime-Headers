@@ -15,8 +15,8 @@
     NSString *_localIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithLocalIdentifier:(id)arg1;

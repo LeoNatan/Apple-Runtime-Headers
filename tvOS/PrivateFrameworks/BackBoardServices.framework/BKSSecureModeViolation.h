@@ -17,10 +17,10 @@
     NSDictionary *_layerNamesByContext;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *layerNamesByContext; // @synthesize layerNamesByContext=_layerNamesByContext;
 @property(copy, nonatomic) NSArray *contextIds; // @synthesize contextIds=_contextIds;
 @property(retain, nonatomic) NSNumber *processId; // @synthesize processId=_processId;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

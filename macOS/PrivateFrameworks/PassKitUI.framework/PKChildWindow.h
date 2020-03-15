@@ -14,8 +14,8 @@
     PKPassWindowController *_passWindowController;
 }
 
-@property(retain) PKPassWindowController *passWindowController; // @synthesize passWindowController=_passWindowController;
 - (void).cxx_destruct;
+@property(retain) PKPassWindowController *passWindowController; // @synthesize passWindowController=_passWindowController;
 - (BOOL)canBecomeKeyWindow;
 - (void)mouseDown:(id)arg1;
 - (void)mouseDragged:(id)arg1;

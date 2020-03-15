@@ -15,9 +15,9 @@
 }
 
 + (id)tupleWithFirst:(id)arg1 second:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject *second; // @synthesize second=_second;
 @property(readonly, nonatomic) NSObject *first; // @synthesize first=_first;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqualToTuple2:(id)arg1;

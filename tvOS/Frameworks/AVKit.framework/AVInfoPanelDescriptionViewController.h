@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     AVPlayerController *_playerController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(nonatomic) long long audioFormat; // @synthesize audioFormat=_audioFormat;
 @property(nonatomic) long long videoRange; // @synthesize videoRange=_videoRange;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSArray *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (void)_presentFullScreenDescription;
 - (id)_durationString;
 - (id)_releaseDateStringStyle:(long long)arg1;

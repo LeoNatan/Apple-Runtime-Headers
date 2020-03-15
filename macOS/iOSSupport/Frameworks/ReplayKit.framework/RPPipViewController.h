@@ -20,6 +20,7 @@
     double _previousOrientationHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double previousOrientationHeight; // @synthesize previousOrientationHeight=_previousOrientationHeight;
 @property(nonatomic) double previousOrientationWidth; // @synthesize previousOrientationWidth=_previousOrientationWidth;
 @property(nonatomic) long long previousOrientation; // @synthesize previousOrientation=_previousOrientation;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) AVCaptureDevice *videoDevice; // @synthesize videoDevice=_videoDevice;
 @property(retain, nonatomic) AVCaptureSession *pipSession; // @synthesize pipSession=_pipSession;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
-- (void).cxx_destruct;
 - (long long)_captureVideoOrientationForUIDeviceOrientation:(long long)arg1;
 - (void)_deviceOrientationDidChange;
 - (void)_updateViewGeometry;

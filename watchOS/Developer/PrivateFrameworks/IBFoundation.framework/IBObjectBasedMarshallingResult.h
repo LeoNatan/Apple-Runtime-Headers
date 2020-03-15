@@ -17,9 +17,9 @@
     NSObject<IBObjectRepresentationTranslator> *_archivingTranslationContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<IBObjectRepresentationTranslator> *archivingTranslationContext; // @synthesize archivingTranslationContext=_archivingTranslationContext;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)didFinishEncodingWithBinaryArchiver:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (void)didFinishDecodingWithBinaryUnarchiver:(id)arg1;

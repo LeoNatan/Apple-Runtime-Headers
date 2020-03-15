@@ -13,8 +13,8 @@
     CalUISuggestionsField *_suggestionsField;
 }
 
-@property __weak CalUISuggestionsField *suggestionsField; // @synthesize suggestionsField=_suggestionsField;
 - (void).cxx_destruct;
+@property __weak CalUISuggestionsField *suggestionsField; // @synthesize suggestionsField=_suggestionsField;
 - (void)mouseDown:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseExited:(id)arg1;

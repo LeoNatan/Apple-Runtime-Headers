@@ -19,11 +19,11 @@
     HFAccessorySettingManagedConfigurationAdapter *_adapter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFAccessorySettingManagedConfigurationAdapter *adapter; // @synthesize adapter=_adapter;
 @property(readonly, nonatomic) HFAccessorySettingGroupItem *settingGroupItem; // @synthesize settingGroupItem=_settingGroupItem;
 @property(readonly, nonatomic) HUAccessorySettingsProfileItemProvider *profileItemProvider; // @synthesize profileItemProvider=_profileItemProvider;
 @property(nonatomic) __weak id <HUAccessorySettingsProfileModuleDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)managedConfigurationAdapterSettingsWereUpdated:(id)arg1;
 - (id)_actuallyRemoveProfileItem:(id)arg1;
 - (id)promptForRemoveProfileItem:(id)arg1;

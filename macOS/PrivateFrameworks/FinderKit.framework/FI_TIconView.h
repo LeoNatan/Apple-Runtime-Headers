@@ -70,11 +70,11 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingTitleBubbleViewIsSelected;
 + (id)keyPathsForValuesAffectingIconSelectionViewIsHidden;
 + (Class)iconSelectionViewClass;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(getter=isSpringBlinkingOff) _Bool springBlinkingOff; // @synthesize springBlinkingOff=_isSpringBlinkingOff;
 @property(getter=isEditing) _Bool editing; // @synthesize editing=_isEditing;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionNames;

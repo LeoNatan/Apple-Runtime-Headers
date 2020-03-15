@@ -26,12 +26,12 @@
     MPRemoteCommandCenter *_commandCenter;
 }
 
-@property(readonly, nonatomic) MPRemoteCommandCenter *commandCenter; // @synthesize commandCenter=_commandCenter;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEngineRestoringState) BOOL engineRestoringState; // @synthesize engineRestoringState=_engineRestoringState;
+@property(readonly, nonatomic) MPRemoteCommandCenter *commandCenter; // @synthesize commandCenter=_commandCenter;
 @property(readonly, nonatomic) MPNowPlayingInfoCenter *infoCenter; // @synthesize infoCenter=_infoCenter;
 @property(nonatomic, getter=hasInitializedSupportedCommands) BOOL initializedSupportedCommands; // @synthesize initializedSupportedCommands=_initializedSupportedCommands;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
-- (void).cxx_destruct;
 - (void)_performCommandEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateSupportedCommands;
 - (BOOL)_playbackStateIsIdle:(long long)arg1;
@@ -54,6 +54,7 @@
 - (void)engine:(id)arg1 didChangeToState:(unsigned long long)arg2;
 - (void)engine:(id)arg1 didChangeToItem:(id)arg2;
 - (void)getShouldRestoreStateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)reportUserBackgroundedApplication;
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;
 - (void)addSupportedSpecializedQueueIdentifier:(id)arg1 localizedName:(id)arg2 queueType:(long long)arg3 queueParameters:(id)arg4;
 - (void)publishIfNeeded;

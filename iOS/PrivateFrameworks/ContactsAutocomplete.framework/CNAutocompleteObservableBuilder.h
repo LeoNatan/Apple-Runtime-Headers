@@ -24,6 +24,7 @@
 
 + (_Bool)supplementalResultsUseNetwork:(unsigned long long)arg1;
 + (id)builderWithSearchType:(unsigned long long)arg1 scheduler:(id)arg2 probeProvider:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(copy, nonatomic) CDUnknownBlockType networkActivityDidStopHandler; // @synthesize networkActivityDidStopHandler=_networkActivityDidStopHandler;
 @property(copy, nonatomic) CDUnknownBlockType networkActivityDidStartHandler; // @synthesize networkActivityDidStartHandler=_networkActivityDidStartHandler;
@@ -31,7 +32,6 @@
 @property(nonatomic) double networkActivityStartDelay; // @synthesize networkActivityStartDelay=_networkActivityStartDelay;
 @property(readonly, nonatomic) id <CNAutocompleteProbeProvider> probeProvider; // @synthesize probeProvider=_probeProvider;
 @property(readonly, nonatomic) id <CNAutocompleteObservableBuilderBatchingHelper> batchingHelper; // @synthesize batchingHelper=_batchingHelper;
-- (void).cxx_destruct;
 - (id)makeObservable;
 - (id)combineObservablesInBatch:(id)arg1 scheduler:(id)arg2;
 - (void)addCalendarServerObservable:(id)arg1;

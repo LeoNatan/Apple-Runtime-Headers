@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSDate *_timestampTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *timestampTime; // @synthesize timestampTime=_timestampTime;
 @property(readonly) MSOID *digestAlgorithm; // @synthesize digestAlgorithm=_digestAlgorithm;
 @property(readonly) NSArray *certificates; // @synthesize certificates=_certificates;
 @property(readonly) MSCMSSignerInfo *singerInfo; // @synthesize singerInfo=_singerInfo;
 @property _Bool certChainRequested; // @synthesize certChainRequested=_certChainRequested;
 @property(retain) NSURL *serverURL; // @synthesize serverURL=_serverURL;
-- (void).cxx_destruct;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (_Bool)verifyTimestamps:(id *)arg1;
 - (id)initWithTimestampToken:(id)arg1;

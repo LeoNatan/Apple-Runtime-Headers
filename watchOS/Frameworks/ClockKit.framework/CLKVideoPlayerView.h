@@ -34,11 +34,11 @@
 }
 
 + (void)_prewarm;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool playing; // @synthesize playing=_playing;
 @property(nonatomic) _Bool pausedViewEnabled; // @synthesize pausedViewEnabled=_pausedViewEnabled;
 @property(nonatomic) int gravityResize; // @synthesize gravityResize=_gravityResize;
 @property(nonatomic) __weak id <CLKVideoPlayerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)queueVideo:(id)arg1;
 - (void)play;
 - (void)_play;

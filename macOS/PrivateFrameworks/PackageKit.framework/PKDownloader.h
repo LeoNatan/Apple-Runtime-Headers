@@ -24,10 +24,10 @@
 
 + (void)setUserAgent:(id)arg1;
 + (id)userAgent;
+- (void).cxx_destruct;
 @property __weak id delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType loggingBlock; // @synthesize loggingBlock=_loggingBlock;
 @property BOOL downloadInBackground; // @synthesize downloadInBackground=_downloadInBackground;
-- (void).cxx_destruct;
 - (void)__runBlock:(CDUnknownBlockType)arg1;
 - (void)_runBlockOnThread:(id)arg1 withBlock:(CDUnknownBlockType)arg2 waitUntilDone:(BOOL)arg3;
 - (id)_peerAddressForURLResponse:(id)arg1;

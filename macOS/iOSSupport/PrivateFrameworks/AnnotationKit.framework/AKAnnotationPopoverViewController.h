@@ -26,6 +26,7 @@
     struct CGRect _presentationRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AKAnnotationEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL editsOnLaunch; // @synthesize editsOnLaunch=_editsOnLaunch;
 @property(retain, nonatomic) UIView *presentationView; // @synthesize presentationView=_presentationView;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) AKAnnotationTheme *annotationTheme; // @synthesize annotationTheme=mAnnotationTheme;
 @property(retain, nonatomic) AKPageController *annotationPageController; // @synthesize annotationPageController=mAnnotationPageController;
 @property(retain, nonatomic) AKAnnotation *annotation; // @synthesize annotation=mAnnotation;
-- (void).cxx_destruct;
 - (void)hide;
 - (void)didHide;
 - (void)willHide;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     UITabBarItem *_searchTabBarItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITabBarItem *searchTabBarItem; // @synthesize searchTabBarItem=_searchTabBarItem;
 @property(retain, nonatomic) UIColor *selectionTintColor; // @synthesize selectionTintColor=_selectionTintColor;
 @property(retain, nonatomic) UIView *trailingAccessory; // @synthesize trailingAccessory=_trailingAccessory;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *menuItemElements; // @synthesize menuItemElements=_menuItemElements;
 @property(retain, nonatomic) IKAppMenuBarDocument *menuBarDocument; // @synthesize menuBarDocument=_menuBarDocument;
 @property(retain, nonatomic) IKViewElement *menuBarTemplate; // @synthesize menuBarTemplate=_menuBarTemplate;
-- (void).cxx_destruct;
 - (id)activeDocument;
 - (void)appDocumentController:(id)arg1 didHostTemplateViewController:(id)arg2 usedTransitions:(_Bool)arg3;
 - (void)_updateNowPlayingPlayer:(id)arg1;

@@ -37,6 +37,7 @@
     NSString *_madridAccountLogin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *plainBody; // @synthesize plainBody=_plainBody;
 @property(readonly, nonatomic) NSArray *mediaObjects; // @synthesize mediaObjects=_mediaObjects;
@@ -59,7 +60,6 @@
 @property(readonly, nonatomic) NSString *address; // @synthesize address=_address;
 @property(readonly, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)attachmentText:(_Bool)arg1;
 - (id)previewText;
 - (id)alertImage;

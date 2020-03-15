@@ -15,8 +15,8 @@
 }
 
 + (BOOL)canInitWithPasteboard:(id)arg1;
-@property(retain) NSData *originalData; // @synthesize originalData=_originalData;
 - (void).cxx_destruct;
+@property(retain) NSData *originalData; // @synthesize originalData=_originalData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPasteboard:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;

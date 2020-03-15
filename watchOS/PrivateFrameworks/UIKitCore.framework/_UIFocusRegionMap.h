@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _minimumSearchArea;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIFocusRegionMapSnapshot *lastSnapshot; // @synthesize lastSnapshot=_lastSnapshot;
 @property(nonatomic) struct CGRect minimumSearchArea; // @synthesize minimumSearchArea=_minimumSearchArea;
 @property(retain, nonatomic) UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
 @property(nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
-- (void).cxx_destruct;
 - (_Bool)_containsFocusableRegionForView:(id)arg1;
 - (id)debugQuickLookObject;
 - (id)_contextWithSourceView:(id)arg1 focusedContainerGuide:(id)arg2 movement:(id)arg3;

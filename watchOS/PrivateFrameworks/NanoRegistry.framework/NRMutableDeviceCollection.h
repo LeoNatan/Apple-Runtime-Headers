@@ -21,10 +21,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)diffFrom:(id)arg1 to:(id)arg2;
 + (void)parseDiff:(id)arg1 forPropertyChange:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *childMap; // @synthesize childMap=_childMap;
 @property(retain, nonatomic) NSMutableDictionary *deviceCollection; // @synthesize deviceCollection=_deviceCollection;
 @property(retain, nonatomic) NRPBMutableDeviceCollection *protobuf; // @synthesize protobuf=_protobuf;
-- (void).cxx_destruct;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

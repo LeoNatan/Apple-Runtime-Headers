@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)recordType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPZone *recordZone; // @synthesize recordZone=_recordZone;
 @property(retain, nonatomic) CKDPProtectionInfo *recordProtectionInfo; // @synthesize recordProtectionInfo=_recordProtectionInfo;
 @property(retain, nonatomic) CKDPProtectionInfo *protectionInfo; // @synthesize protectionInfo=_protectionInfo;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKDPRecord *shareRecord; // @synthesize shareRecord=_shareRecord;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
 @property(retain, nonatomic) NSString *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

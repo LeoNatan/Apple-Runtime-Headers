@@ -72,10 +72,10 @@
 
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> suspendWallpaperAnimationAssertion; // @synthesize suspendWallpaperAnimationAssertion=_suspendWallpaperAnimationAssertion;
 @property(retain, nonatomic, setter=_setHideStatusBarAssertions:) NSHashTable *_hideStatusBarAssertions; // @synthesize _hideStatusBarAssertions=__hideStatusBarAssertions;
 @property(readonly, nonatomic) UIViewController<SBSwitcherContentViewControlling> *contentViewController; // @synthesize contentViewController=_mainContentViewController;
-- (void).cxx_destruct;
 - (void)_setAsynchronousRenderingEnabled:(_Bool)arg1 withMinificationFilter:(_Bool)arg2 forLayerTarget:(id)arg3 presentationManager:(id)arg4;
 - (void)_evaluateAsynchronousRenderingEnablement;
 - (void)_reqlinquishAssertion:(id)arg1;

@@ -15,9 +15,9 @@
     CSImportAgentConnection *_agentConnection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSImportAgentConnection *agentConnection; // @synthesize agentConnection=_agentConnection;
 @property __weak id <CSIndexExtensionDelegate> extensionDelegate; // @synthesize extensionDelegate=_extensionDelegate;
-- (void).cxx_destruct;
 - (void)start;
 - (void)extensionsLoaded;
 - (id)init;

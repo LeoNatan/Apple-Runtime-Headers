@@ -14,9 +14,9 @@
     NSArray *_verificationFields;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *verificationFields; // @synthesize verificationFields=_verificationFields;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

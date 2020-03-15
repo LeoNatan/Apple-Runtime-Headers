@@ -38,11 +38,11 @@
     struct CGAffineTransform _drawingTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform drawingTransform; // @synthesize drawingTransform=_drawingTransform;
 @property(nonatomic) __weak id <PKRulerHostingDelegate> rulerHostingDelegate; // @synthesize rulerHostingDelegate=_rulerHostingDelegate;
 @property(nonatomic) BOOL disableWideGamut; // @synthesize disableWideGamut=_disableWideGamut;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL predictionDisabled; // @dynamic predictionDisabled;
 @property(nonatomic) BOOL rulerEnabled;
 - (BOOL)canvasView:(id)arg1 shouldBeginDrawingWithTouch:(id)arg2;

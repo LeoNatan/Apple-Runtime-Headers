@@ -10,6 +10,7 @@
 @protocol XCUIEventSynthesisRequest;
 
 @protocol XCUIEventSynthesizing <NSObject>
+@property double implicitEventConfirmationIntervalForCurrentContext;
 - (_Bool)requestPressureEventsSupportedOrError:(id *)arg1;
 - (id <XCUIEventSynthesisRequest>)synthesizeEvent:(XCSynthesizedEventRecord *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 @end

@@ -15,8 +15,8 @@
     SiriTVUITemplateItem *_templateItem;
 }
 
-@property(retain, nonatomic) SiriTVUITemplateItem *templateItem; // @synthesize templateItem=_templateItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SiriTVUITemplateItem *templateItem; // @synthesize templateItem=_templateItem;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTemplateItem:(id)arg1;
 

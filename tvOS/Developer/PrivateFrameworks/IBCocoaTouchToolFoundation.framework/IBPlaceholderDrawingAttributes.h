@@ -20,13 +20,13 @@
     IBCustomViewDrawingDescription *_customViewDrawingDescription;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool drawTopEdgeShadow; // @synthesize drawTopEdgeShadow=_drawTopEdgeShadow;
 @property(retain, nonatomic) IBCustomViewDrawingDescription *customViewDrawingDescription; // @synthesize customViewDrawingDescription=_customViewDrawingDescription;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *explanatoryText; // @synthesize explanatoryText=_explanatoryText;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 

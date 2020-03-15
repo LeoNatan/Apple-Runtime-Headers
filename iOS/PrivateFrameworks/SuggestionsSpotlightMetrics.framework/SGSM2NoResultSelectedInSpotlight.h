@@ -15,8 +15,8 @@
     NSString *_key;
 }
 
-@property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

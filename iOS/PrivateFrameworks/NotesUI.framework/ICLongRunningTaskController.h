@@ -20,8 +20,8 @@
     _Bool _shouldDismissProgressViewController;
     NSString *_customCancelButtonTitle;
     NSString *_progressFormatString;
-    struct UIViewController *_viewControllerToPresentFrom;
-    struct UIWindow *_window;
+    UIViewController *_viewControllerToPresentFrom;
+    UIWindow *_window;
     double _intervalBeforeOpeningProgressDialog;
     id _keepAlive;
     CDUnknownBlockType _completionBlock;
@@ -32,7 +32,8 @@
     ICProgressViewController *_progressViewController;
 }
 
-+ (void)setMainWindow:(struct UIWindow *)arg1;
++ (void)setMainWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDismissProgressViewController; // @synthesize shouldDismissProgressViewController=_shouldDismissProgressViewController;
 @property(nonatomic) _Bool progressViewControllerDidFinishPresenting; // @synthesize progressViewControllerDidFinishPresenting=_progressViewControllerDidFinishPresenting;
 @property(retain, nonatomic) ICProgressViewController *progressViewController; // @synthesize progressViewController=_progressViewController;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) NSString *customCancelButtonTitle; // @synthesize customCancelButtonTitle=_customCancelButtonTitle;
 @property(nonatomic) _Bool shouldShowCancelButton; // @synthesize shouldShowCancelButton=_shouldShowCancelButton;
 @property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
-- (void).cxx_destruct;
 - (void)willDismissProgressViewController:(id)arg1;
 - (void)closeProgressDialog;
 - (void)openProgressDialog;
@@ -59,7 +59,7 @@
 - (void)completeTaskIfNecessary;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)startTask:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)initWithWindow:(struct UIWindow *)arg1 intervalBeforeOpeningProgressDialog:(double)arg2;
+- (id)initWithWindow:(id)arg1 intervalBeforeOpeningProgressDialog:(double)arg2;
 - (id)init;
 
 @end

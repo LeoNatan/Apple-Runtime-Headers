@@ -14,9 +14,9 @@
     long long _receiveTimeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long receiveTimeout; // @synthesize receiveTimeout=_receiveTimeout;
 @property(readonly, nonatomic) NSMutableDictionary *networkOptions; // @synthesize networkOptions=_networkOptions;
-- (void).cxx_destruct;
 - (long long)receiveTimeoutValue;
 - (const char *)port;
 - (const char *)networkNameIdentifier;

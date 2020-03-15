@@ -18,11 +18,11 @@
     unsigned long long _maximumConcurrentTransportTasks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maximumConcurrentTransportTasks; // @synthesize maximumConcurrentTransportTasks=_maximumConcurrentTransportTasks;
 @property(readonly, nonatomic) unsigned long long maximumBatchSize; // @synthesize maximumBatchSize=_maximumBatchSize;
 @property(readonly, nonatomic, getter=isFIFOQueue) _Bool FIFOQueue; // @synthesize FIFOQueue=_FIFOQueue;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)status;
 - (id)dequeueLastTransportTask;
 @property(readonly, nonatomic) unsigned long long countOfTransferTasksInTransportTasks;

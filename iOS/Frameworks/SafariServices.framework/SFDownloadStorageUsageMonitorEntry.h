@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     id <SFDownloadStorageUsageMonitorEntryDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SFDownloadStorageUsageMonitorEntryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long cachedUsage; // @synthesize cachedUsage=_cachedUsage;
 @property(retain, nonatomic) NSData *progressData; // @synthesize progressData=_progressData;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id progressSubscriber; // @synthesize progressSubscriber=_progressSubscriber;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)updateWithDictionaryRepresentation:(id)arg1;
 - (void)_updateProgressSubscriptionWithData:(id)arg1;
 - (void)_didLoseProgress:(id)arg1;

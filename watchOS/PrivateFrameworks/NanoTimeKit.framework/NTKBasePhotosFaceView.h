@@ -45,12 +45,12 @@
 + (id)_saveSidecarPhotoAnalysis:(id)arg1;
 + (id)_analysisForPhoto:(id)arg1 dateAlignment:(unsigned int)arg2;
 + (id)_temporaryDirectory;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isNoPhotosViewVisible) _Bool noPhotosViewVisible; // @synthesize noPhotosViewVisible=_noPhotosViewVisible;
 @property(readonly, nonatomic) NTKAlbumEmptyView *noPhotosView; // @synthesize noPhotosView=_noPhotosView;
 @property(readonly, nonatomic) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(readonly, nonatomic) NTKPhotoImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
 @property(readonly, nonatomic) UIView *cornerView; // @synthesize cornerView=_cornerView;
-- (void).cxx_destruct;
 - (void)tritium_loadContentViews;
 - (_Bool)isCheapCopy;
 - (_Bool)screenWillGoDark;

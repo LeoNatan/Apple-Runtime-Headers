@@ -23,11 +23,11 @@
 + (id)domainForExtrasValues;
 + (id)domainForSyncingMusicLibraryWithLibraryPath:(id)arg1;
 + (id)allSyncingDomains;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsSyncProtocol; // @synthesize supportsSyncProtocol=_supportsSyncProtocol;
 @property(readonly, nonatomic) NSString *foreignDatabasePath; // @synthesize foreignDatabasePath=_foreignDatabasePath;
 @property(retain, nonatomic) NSString *ubiquitousDatabasePath; // @synthesize ubiquitousDatabasePath=_ubiquitousDatabasePath;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

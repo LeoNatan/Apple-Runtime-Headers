@@ -15,10 +15,10 @@
     ASRatingControl *_ratingControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ASRatingControl *ratingControl; // @synthesize ratingControl=_ratingControl;
 @property(readonly, nonatomic) NSTextField *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)layout;
 - (id)initWithConfiguration:(id)arg1 frame:(struct CGRect)arg2;
 

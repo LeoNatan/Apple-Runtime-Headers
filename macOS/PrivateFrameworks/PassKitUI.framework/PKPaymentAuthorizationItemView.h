@@ -27,6 +27,7 @@
     NSLayoutGuide *_viewContentTrailingGuide;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutGuide *viewContentTrailingGuide; // @synthesize viewContentTrailingGuide=_viewContentTrailingGuide;
 @property(retain, nonatomic) NSLayoutGuide *viewContentLeadingGuide; // @synthesize viewContentLeadingGuide=_viewContentLeadingGuide;
 @property(retain, nonatomic) NSMutableArray *badgeConstraints; // @synthesize badgeConstraints=_badgeConstraints;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) NSView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) PKPaymentAuthorizationLayout *paymentAuthorizationLayout; // @synthesize paymentAuthorizationLayout=_paymentAuthorizationLayout;
-- (void).cxx_destruct;
 - (id)accessibilityChildrenInNavigationOrder;
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;

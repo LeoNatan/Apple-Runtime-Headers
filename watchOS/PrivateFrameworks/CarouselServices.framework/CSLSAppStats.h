@@ -19,6 +19,7 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSMutableArray *stateTransitions; // @synthesize stateTransitions=_stateTransitions;
 @property(retain, nonatomic) NSMutableArray *recentEvents; // @synthesize recentEvents=_recentEvents;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned int dockIndex; // @synthesize dockIndex=_dockIndex;
 @property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(nonatomic) unsigned int memoryUsage; // @synthesize memoryUsage=_memoryUsage;
-- (void).cxx_destruct;
 - (void)addStateTransition:(id)arg1;
 - (void)addAppEvent:(id)arg1;
 - (id)description;

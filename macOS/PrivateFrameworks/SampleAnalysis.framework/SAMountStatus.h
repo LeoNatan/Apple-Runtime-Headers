@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_b403be1b *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSArray *snapshots; // @synthesize snapshots=_snapshots;
-- (void).cxx_destruct;
 - (id)copySanitizedName;
 - (id)copyName;
 - (BOOL)isUnresponsiveBetweenStartTime:(id)arg1 andEndTime:(id)arg2;

@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSBasePathToElementType *Path; // @synthesize Path=_Path;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSBasePathToElementType *Path; // @synthesize Path=_Path;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -20,7 +20,3 @@ struct CGSize {
     float _field2;
 };
 
-struct NSNumber {
-    Class _field1;
-};
-

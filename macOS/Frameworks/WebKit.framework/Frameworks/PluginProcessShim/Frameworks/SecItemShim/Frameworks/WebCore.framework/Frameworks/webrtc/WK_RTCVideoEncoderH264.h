@@ -6,26 +6,53 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCVideoEncoder-Protocol.h>
+#import <webrtc/RTCVideoEncoder-Protocol.h>
 
-@class NSMutableArray, NSString, WK_RTCVideoCodecInfo;
+@class NSString, WK_RTCVideoCodecInfo;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCVideoEncoderH264 : NSObject <WK_RTCVideoEncoder>
+@interface WK_RTCVideoEncoderH264 : NSObject <RTCVideoEncoder>
 {
-    NSMutableArray *_codecs;
     WK_RTCVideoCodecInfo *_codecInfo;
+    struct unique_ptr<webrtc::BitrateAdjuster, std::__1::default_delete<webrtc::BitrateAdjuster>> _bitrateAdjuster;
+    unsigned int _targetBitrateBps;
+    unsigned int _encoderBitrateBps;
+    unsigned int _encoderFrameRate;
+    unsigned int _maxAllowedFrameRate;
+    unsigned long long _packetizationMode;
+    struct optional<webrtc::H264::ProfileLevelId> _profile_level_id;
+    CDUnknownBlockType _callback;
+    int _width;
+    int _height;
+    _Bool _useVCP;
+    struct OpaqueVTCompressionSession *_vtCompressionSession;
+    struct _VCPCompressionSession *_vcpCompressionSession;
+    struct __CVPixelBufferPool *_pixelBufferPool;
+    unsigned long long _mode;
+    struct H264BitstreamParser _h264BitstreamParser;
+    struct vector<unsigned char, std::__1::allocator<unsigned char>> _frameScaleBuffer;
+    _Bool _disableEncoding;
 }
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
-- (int)setBitrate:(unsigned int)arg1 framerate:(unsigned int)arg2;
 - (id)scalingSettings;
+- (void)frameWasEncoded:(int)arg1 flags:(unsigned int)arg2 sampleBuffer:(struct opaqueCMSampleBuffer *)arg3 codecSpecificInfo:(id)arg4 width:(int)arg5 height:(int)arg6 renderTimeMs:(long long)arg7 timestamp:(unsigned int)arg8 rotation:(long long)arg9;
+- (void)setEncoderBitrateBps:(unsigned int)arg1 frameRate:(unsigned int)arg2;
+- (void)setBitrateBps:(unsigned int)arg1 frameRate:(unsigned int)arg2;
 - (id)implementationName;
-- (int)setRateAllocation:(id)arg1 framerate:(unsigned int)arg2;
-- (long long)encode:(id)arg1 codecSpecificInfo:(id)arg2 frameTypes:(id)arg3;
+- (void)destroyCompressionSession;
+- (void)configureCompressionSession;
+- (int)resetCompressionSessionWithPixelFormat:(unsigned int)arg1;
+- (BOOL)resetCompressionSessionIfNeededWithFrame:(id)arg1;
+- (unsigned int)pixelFormatOfFrame:(id)arg1;
 - (long long)releaseEncoder;
-- (long long)startEncodeWithSettings:(id)arg1 numberOfCores:(int)arg2;
+- (int)setBitrate:(unsigned int)arg1 framerate:(unsigned int)arg2;
 - (void)setCallback:(CDUnknownBlockType)arg1;
+- (long long)encode:(id)arg1 codecSpecificInfo:(id)arg2 frameTypes:(id)arg3;
+- (_Bool)hasCompressionSession;
+- (long long)startEncodeWithSettings:(id)arg1 numberOfCores:(int)arg2;
+- (void)dealloc;
 - (id)initWithCodecInfo:(id)arg1;
 
 // Remaining properties

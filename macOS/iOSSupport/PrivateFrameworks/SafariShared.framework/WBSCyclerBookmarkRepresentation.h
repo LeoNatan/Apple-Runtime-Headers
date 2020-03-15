@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *extraAttributes; // @synthesize extraAttributes=_extraAttributes;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (id)pairsOfBookmarksWithDifferingExtraAttributesComparedTo:(id)arg1;
 - (BOOL)isEquivalent:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

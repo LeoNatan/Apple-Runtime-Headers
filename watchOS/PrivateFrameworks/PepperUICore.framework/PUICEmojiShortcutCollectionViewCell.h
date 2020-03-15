@@ -14,9 +14,9 @@
     UIImageView *_categoryImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *categoryImageView; // @synthesize categoryImageView=_categoryImageView;
 @property(retain, nonatomic) UILabel *categoryLabel; // @synthesize categoryLabel=_categoryLabel;
-- (void).cxx_destruct;
 - (void)_createConstraints;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)description;

@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
     unordered_map_aadc992e namespaces;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property unordered_map_aadc992e namespaces; // @synthesize namespaces;
 @property vector_61f1bb43 stack; // @synthesize stack;
 @property unique_ptr_bd23540c *root; // @synthesize root;
@@ -29,8 +31,6 @@ __attribute__((visibility("hidden")))
 @property unsigned int unitsPerEm; // @synthesize unitsPerEm;
 @property unsigned int skipDepth; // @synthesize skipDepth;
 @property _Bool errorOccurred; // @synthesize errorOccurred;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 didEndMappingPrefix:(id)arg2;

@@ -15,8 +15,8 @@
     NSMutableArray *_processors;
 }
 
-@property(readonly, nonatomic) NSMutableArray *processors; // @synthesize processors=_processors;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *processors; // @synthesize processors=_processors;
 - (void)removeProcessor:(id)arg1;
 - (void)addProcessor:(id)arg1;
 - (void)processComponent:(id)arg1 view:(id)arg2;

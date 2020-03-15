@@ -22,13 +22,13 @@
 
 + (id)starkCardControllerForCalendarEventWithContact:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(readonly, nonatomic) NSArray *displayedContactProperties; // @synthesize displayedContactProperties=_displayedContactProperties;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) CNStarkActionsController *actionsController; // @synthesize actionsController=_actionsController;
 @property(readonly, nonatomic) CNStarkNameViewController *nameViewController; // @synthesize nameViewController=_nameViewController;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
-- (void).cxx_destruct;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (void)showMore:(id)arg1;
 - (void)updateNavigationItems;

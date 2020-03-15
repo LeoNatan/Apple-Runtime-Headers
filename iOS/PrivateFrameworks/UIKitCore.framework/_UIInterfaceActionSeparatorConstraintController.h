@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     long long _constantSizedAxis;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long constantSizedAxis; // @synthesize constantSizedAxis=_constantSizedAxis;
 @property(readonly, nonatomic) NSLayoutConstraint *fixedWidthConstraint; // @synthesize fixedWidthConstraint=_fixedWidthConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *fixedHeightConstraint; // @synthesize fixedHeightConstraint=_fixedHeightConstraint;
 @property(readonly, nonatomic) __weak UIView<UIInterfaceActionVisualSeparatorDisplaying><UIInterfaceActionVisualSectionSeparatorDisplaying> *separatorView; // @synthesize separatorView=_separatorView;
-- (void).cxx_destruct;
 - (_Bool)_isFixedWidth;
 - (void)_updateConstantSizedConstraints;
 - (void)separatorViewDidUpdateConstraints;

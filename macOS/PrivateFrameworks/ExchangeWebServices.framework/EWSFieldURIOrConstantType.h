@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) id Item; // @synthesize Item=_Item;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id Item; // @synthesize Item=_Item;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

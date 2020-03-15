@@ -19,12 +19,12 @@
 
 + (id)serializablePropertyTransformers;
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *galleryIdentifier; // @synthesize galleryIdentifier=_galleryIdentifier;
 @property(copy, nonatomic) NSString *addToSiriBundleIdentifier; // @synthesize addToSiriBundleIdentifier=_addToSiriBundleIdentifier;
 @property(nonatomic) unsigned int actionCount; // @synthesize actionCount=_actionCount;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

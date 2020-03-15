@@ -17,10 +17,10 @@
 
 + (id)notificationWithType:(long long)arg1 name:(id)arg2 powerAssertionTimeout:(double)arg3;
 + (id)notificationWithType:(long long)arg1 name:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTPowerAssertion *powerAssertion; // @synthesize powerAssertion=_powerAssertion;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)releaseAssertion;
 - (id)initWithType:(long long)arg1 name:(id)arg2 powerAssertionTimeout:(double)arg3;

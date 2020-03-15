@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <_NSCollectionViewItem> _collectionViewItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <_NSCollectionViewItem> collectionViewItem; // @synthesize collectionViewItem=_collectionViewItem;
 @property(nonatomic) BOOL hasPrefetchedData; // @synthesize hasPrefetchedData=_hasPrefetchedData;
 @property(retain, nonatomic) NSCollectionViewLayoutAttributes *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAttributes:(id)arg1;
 @property(readonly) BOOL hasItemView;

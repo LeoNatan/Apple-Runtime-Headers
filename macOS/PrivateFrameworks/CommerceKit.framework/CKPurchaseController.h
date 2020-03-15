@@ -20,8 +20,8 @@
 
 + (void)setNeedsSilentMachineAuthorization:(BOOL)arg1;
 + (id)sharedPurchaseController;
-@property(copy) CDUnknownBlockType dialogHandler; // @synthesize dialogHandler=_dialogHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType dialogHandler; // @synthesize dialogHandler=_dialogHandler;
 - (BOOL)adoptionCompletedForBundleID:(id)arg1;
 - (void)_performVPPReceiptRenewal;
 - (void)checkServerDownloadQueue;

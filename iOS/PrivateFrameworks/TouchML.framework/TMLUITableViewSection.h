@@ -15,10 +15,10 @@
     NSString *_footer;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
 @property(copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
-- (void).cxx_destruct;
 - (id)cellForRow:(long long)arg1;
 @property(readonly, nonatomic) long long numberOfRows;
 

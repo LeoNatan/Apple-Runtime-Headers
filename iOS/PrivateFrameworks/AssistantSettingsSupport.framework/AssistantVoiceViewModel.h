@@ -20,6 +20,7 @@
     NSString *_genderGroupFooterText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *genderGroupFooterText; // @synthesize genderGroupFooterText=_genderGroupFooterText;
 @property(nonatomic) long long genderToCheckmark; // @synthesize genderToCheckmark=_genderToCheckmark;
 @property(nonatomic) long long genderToSpin; // @synthesize genderToSpin=_genderToSpin;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *selectedLanguage; // @synthesize selectedLanguage=_selectedLanguage;
 @property(copy, nonatomic) NSSet *languageOptions; // @synthesize languageOptions=_languageOptions;
 @property(nonatomic) _Bool spinningOnLanguage; // @synthesize spinningOnLanguage=_spinningOnLanguage;
-- (void).cxx_destruct;
 
 @end
 

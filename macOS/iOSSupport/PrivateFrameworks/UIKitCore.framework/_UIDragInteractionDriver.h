@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 {
     BOOL _enabled;
     BOOL _additionalTouchesCancelLift;
-    BOOL _acceleratedDragGestureEnabled;
     BOOL _allowsSimultaneousRecognitionDuringLift;
     BOOL _shouldAnimateLift;
     BOOL _cancellationTimerEnabled;
@@ -33,6 +32,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _initialLocationInWindow;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIDragInteractionDriverStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(copy, nonatomic) NSArray *allowedTouchTypes; // @synthesize allowedTouchTypes=_allowedTouchTypes;
 @property(nonatomic) BOOL automaticallyAddsFailureRelationships; // @synthesize automaticallyAddsFailureRelationships=_automaticallyAddsFailureRelationships;
@@ -45,12 +45,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldAnimateLift; // @synthesize shouldAnimateLift=_shouldAnimateLift;
 @property(nonatomic) struct CGPoint initialLocationInWindow; // @synthesize initialLocationInWindow=_initialLocationInWindow;
 @property(nonatomic) BOOL allowsSimultaneousRecognitionDuringLift; // @synthesize allowsSimultaneousRecognitionDuringLift=_allowsSimultaneousRecognitionDuringLift;
-@property(nonatomic, getter=isAcceleratedDragGestureEnabled) BOOL acceleratedDragGestureEnabled; // @synthesize acceleratedDragGestureEnabled=_acceleratedDragGestureEnabled;
 @property(nonatomic) BOOL additionalTouchesCancelLift; // @synthesize additionalTouchesCancelLift=_additionalTouchesCancelLift;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIDragInteractionDriverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)detachFromView:(id)arg1;
 - (void)attachToView:(id)arg1;
 - (void)didTransitionToInactiveState;
@@ -58,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)didTransitionToCancelState;
 - (void)didTransitionToInflightState;
 - (void)didTransitionToPreparing;
+@property(readonly, nonatomic, getter=isActive) BOOL active;
 - (BOOL)isGestureRecognizerForDragInitiation:(id)arg1;
 - (void)cancel;
 - (id)init;

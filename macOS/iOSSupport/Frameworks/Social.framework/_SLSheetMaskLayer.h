@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIColor *_clipBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *clipBackgroundColor; // @synthesize clipBackgroundColor=_clipBackgroundColor;
 @property(nonatomic) double clipCornerRadius; // @synthesize clipCornerRadius=_clipCornerRadius;
-- (void).cxx_destruct;
 - (void)drawInContext:(struct CGContext *)arg1;
 
 @end

@@ -40,6 +40,7 @@
 + (Class)postalAddressesType;
 + (Class)emailAddressesType;
 + (Class)phoneNumbersType;
+- (void).cxx_destruct;
 @property(nonatomic) long long createdAt; // @synthesize createdAt=_createdAt;
 @property(retain, nonatomic) NSString *sortingFamilyName; // @synthesize sortingFamilyName=_sortingFamilyName;
 @property(retain, nonatomic) NSString *sortingGivenName; // @synthesize sortingGivenName=_sortingGivenName;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) NSString *middleName; // @synthesize middleName=_middleName;
 @property(retain, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     NSMutableArray *_mutableCallSources;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *mutableCallSources; // @synthesize mutableCallSources=_mutableCallSources;
 @property(readonly, nonatomic) NSMutableDictionary *callSourceIdentifierToTransaction; // @synthesize callSourceIdentifierToTransaction=_callSourceIdentifierToTransaction;
-- (void).cxx_destruct;
 - (void)addAction:(id)arg1 forCallSource:(id)arg2;
 - (id)transactionForCallSource:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *allActions;

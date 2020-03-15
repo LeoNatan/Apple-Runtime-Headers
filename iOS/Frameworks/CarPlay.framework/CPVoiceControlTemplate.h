@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *activeStateIdentifier; // @synthesize activeStateIdentifier=_activeStateIdentifier;
 @property(readonly, copy, nonatomic) NSArray *voiceControlStates; // @synthesize voiceControlStates=_voiceControlStates;
-- (void).cxx_destruct;
 - (void)setTrailingNavigationBarButtons:(id)arg1;
 - (id)trailingNavigationBarButtons;
 - (void)setLeadingNavigationBarButtons:(id)arg1;

@@ -15,10 +15,10 @@
     struct CGSize _patternSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXClippingView *clippingView; // @synthesize clippingView=_clippingView;
 @property(readonly, nonatomic) SXRepeatableImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct CGSize patternSize; // @synthesize patternSize=_patternSize;
-- (void).cxx_destruct;
 - (void)pause;
 - (void)play;
 - (void)setContentFrame:(struct CGRect)arg1;

@@ -14,9 +14,9 @@
     NSURL *destinationPath;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *destinationPath; // @synthesize destinationPath;
 @property(retain) NSURL *sourcePath; // @synthesize sourcePath;
-- (void).cxx_destruct;
 - (BOOL)unarchive;
 - (BOOL)archive;
 - (id)initWithSourcePath:(id)arg1 destinationPath:(id)arg2;

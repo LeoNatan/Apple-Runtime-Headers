@@ -78,13 +78,13 @@
 + (void)initialize;
 + (id)spotlightLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFLazyCache *selectClauseCache; // @synthesize selectClauseCache=_selectClauseCache;
 @property(readonly, nonatomic) NSMutableArray *mostRecentSpotlightQueries; // @synthesize mostRecentSpotlightQueries=_mostRecentSpotlightQueries;
 @property(readonly, nonatomic) EDConversationPersistence *conversationPersistence; // @synthesize conversationPersistence=_conversationPersistence;
 @property(readonly, nonatomic) MFMessageChangeManager_macOS *messageChangeManager; // @synthesize messageChangeManager=_messageChangeManager;
 @property(readonly, nonatomic) EDPersistenceDatabase *libraryDatabase; // @synthesize libraryDatabase=_libraryDatabase;
 @property(readonly, nonatomic) EDPersistence *libraryPersistence; // @synthesize libraryPersistence=_libraryPersistence;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *currentReasons;
 @property(readonly, copy, nonatomic) NSSet *exclusionReasons;
 @property(readonly, copy, nonatomic) NSSet *purgeReasons;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (double)desiredMinimumCellHeight;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
 @property(retain, nonatomic) UIView *fakeSeparator; // @synthesize fakeSeparator=_fakeSeparator;
 @property(retain, nonatomic) UITextField *familyNameField; // @synthesize familyNameField=_familyNameField;
 @property(retain, nonatomic) UITextField *givenNameField; // @synthesize givenNameField=_givenNameField;
 @property(retain, nonatomic) UIImage *avatarImage; // @synthesize avatarImage=_avatarImage;
 @property(nonatomic) long long nameOrder; // @synthesize nameOrder=_nameOrder;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 @property(copy, nonatomic) NSString *familyName;
 @property(copy, nonatomic) NSString *givenName;

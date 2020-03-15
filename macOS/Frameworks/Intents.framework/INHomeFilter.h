@@ -25,10 +25,15 @@
     INSpeakableString *_zone;
     INSpeakableString *_group;
     INSpeakableString *_room;
+    INSpeakableString *_accessory;
+    long long _subServiceType;
 }
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(readonly) long long subServiceType; // @synthesize subServiceType=_subServiceType;
+@property(readonly, copy) INSpeakableString *accessory; // @synthesize accessory=_accessory;
 @property(readonly) BOOL isExcludeFilter; // @synthesize isExcludeFilter=_isExcludeFilter;
 @property(readonly, copy) INSpeakableString *room; // @synthesize room=_room;
 @property(readonly, copy) INSpeakableString *group; // @synthesize group=_group;
@@ -40,7 +45,6 @@
 @property(readonly) long long entityType; // @synthesize entityType=_entityType;
 @property(readonly, copy) INSpeakableString *entityName; // @synthesize entityName=_entityName;
 @property(readonly, copy) NSArray *entityIdentifiers; // @synthesize entityIdentifiers=_entityIdentifiers;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
@@ -50,7 +54,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-@property(readonly) long long deviceProfileType;
+- (long long)deviceProfileType;
 @property(readonly) long long serviceType;
 @property(readonly, copy) INSpeakableString *service;
 @property(readonly, copy) INSpeakableString *scene;

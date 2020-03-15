@@ -15,10 +15,10 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSData *signatureData; // @synthesize signatureData=_signatureData;
-- (void).cxx_destruct;
 - (void)finishWithSAPContextPreparationError:(id)arg1;
 - (void)executeWithSAPContext:(id)arg1;
 

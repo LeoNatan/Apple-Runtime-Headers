@@ -29,7 +29,7 @@
 #import <UIKitCore/_UITextFieldVisualStyleSubject-Protocol.h>
 #import <UIKitCore/_UITextItemDiscoverable-Protocol.h>
 
-@class CUICatalog, CUIStyleEffectConfiguration, NSArray, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutConstraint, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIButton, UIColor, UIDragInteraction, UIDropInteraction, UIFieldEditor, UIFont, UIImage, UIImageView, UIInputContextHistory, UILabel, UIPasteConfiguration, UISystemInputViewController, UITapGestureRecognizer, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPasteController, UITextPosition, UITextRange, UIView, UIVisualEffectView, _UIBaselineLayoutStrut, _UICascadingTextStorage, _UIDetachedFieldEditorBackgroundView, _UIFieldEditorLayoutManager, _UIFloatingContentView, _UIFullFontSize, _UITextFieldCanvasView, _UITextFieldVisualStyle, _UITextItemDiscoverer;
+@class CUICatalog, CUIStyleEffectConfiguration, NSArray, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutConstraint, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIColor, UIDragInteraction, UIDropInteraction, UIFieldEditor, UIFont, UIImage, UIImageView, UIInputContextHistory, UILabel, UIPasteConfiguration, UISystemInputViewController, UITapGestureRecognizer, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPasteController, UITextPosition, UITextRange, UIView, UIVisualEffectView, _UIBaselineLayoutStrut, _UICascadingTextStorage, _UIDetachedFieldEditorBackgroundView, _UIFieldEditorLayoutManager, _UIFloatingContentView, _UIFullFontSize, _UITextFieldCanvasView, _UITextFieldClearButton, _UITextFieldVisualStyle, _UITextItemDiscoverer;
 @protocol UICoordinateSpace, UITextDragDelegate, UITextDragDropSupport, UITextDropDelegate, UITextFieldDelegate, UITextInputDelegate, UITextInputTokenizer, UITextPasteDelegate;
 
 @interface UITextField : UIControl <UIKeyboardInput, _UILayoutBaselineUpdating, _UIFloatingContentViewDelegate, UIGestureRecognizerDelegate, _UITextFieldVisualStyleSubject, UIViewGhostedRangeSupporting, _UIDrawsTextInRect, UITextInputTraits_Private, UIPopoverControllerDelegate, _UITextFieldCanvasViewContext, UIKeyInputPrivate, UITextDragSupporting, UITextDropSupporting, UITextPasteConfigurationSupporting_Internal, UITextFieldContent, _UITextItemDiscoverable, UITextDraggable, UITextDroppable, UITextPasteConfigurationSupporting, UITextInput, NSCoding, UIContentSizeCategoryAdjusting>
@@ -53,7 +53,7 @@
     _UIFullFontSize *_fullFontSize;
     struct UIEdgeInsets _padding;
     float _progress;
-    UIButton *_clearButton;
+    _UITextFieldClearButton *_clearButton;
     struct CGSize _clearButtonOffset;
     struct CGSize _leftViewOffset;
     struct CGSize _rightViewOffset;
@@ -144,6 +144,7 @@
 + (Class)_fieldEditorClass;
 + (BOOL)_wantsFadedEdges;
 + (BOOL)_isCompatibilityTextField;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UITextFieldVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(nonatomic) __weak id <UITextDropDelegate> textDropDelegate; // @synthesize textDropDelegate=_textDropDelegate;
 @property(nonatomic) __weak id <UITextDragDelegate> textDragDelegate; // @synthesize textDragDelegate=_textDragDelegate;
@@ -163,7 +164,6 @@
 @property(retain, nonatomic, setter=_setBaselineLayoutConstraint:) NSLayoutConstraint *_baselineLayoutConstraint; // @synthesize _baselineLayoutConstraint;
 @property(nonatomic) __weak id <UITextPasteDelegate> pasteDelegate; // @synthesize pasteDelegate=_pasteDelegate;
 @property(nonatomic) BOOL adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)_setPasscodeStyleAlpha:(double)arg1;
 - (double)_passcodeStyleAlpha;
 - (void)_updateForPasscodeAppearance;
@@ -640,6 +640,7 @@
 - (void)_ensureClearButtonImageForControlState:(unsigned long long)arg1;
 - (id)_clearButton;
 - (id)clearButton;
+- (BOOL)_hasCustomClearButtonImage;
 - (id)_clearButtonImageForState:(unsigned long long)arg1;
 - (float)_marginTopForBounds:(struct CGRect)arg1;
 - (float)_marginTop;
@@ -673,6 +674,7 @@
 - (void)_activateSelectionView;
 - (void)_stopObservingFieldEditorScroll;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)canBecomeFocused;
 - (void)_setForegroundViewsAlpha:(double)arg1;

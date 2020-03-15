@@ -29,6 +29,7 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(nonatomic) _Bool usesInsetRoundedSections; // @synthesize usesInsetRoundedSections=_usesInsetRoundedSections;
 @property(retain, nonatomic) TLKStackView *stackView; // @synthesize stackView=_stackView;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned long long headerType; // @synthesize headerType=_headerType;
 @property(nonatomic) __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
 @property(nonatomic) __weak id <SearchUITableHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly) NSString *title;
 - (void)setFloating:(_Bool)arg1;
 - (void)moreButtonPressed;

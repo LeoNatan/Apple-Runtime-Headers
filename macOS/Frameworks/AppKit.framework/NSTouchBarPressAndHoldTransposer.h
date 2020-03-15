@@ -16,9 +16,9 @@
     BOOL _transposingTouches;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double initialXLocation; // @synthesize initialXLocation=_initialXLocation;
 @property __weak id <NSTouchBarPressAndHoldTransposerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)touchCancelled:(id)arg1 withEvent:(id)arg2;
 - (BOOL)touchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)transposeTouch:(id)arg1;

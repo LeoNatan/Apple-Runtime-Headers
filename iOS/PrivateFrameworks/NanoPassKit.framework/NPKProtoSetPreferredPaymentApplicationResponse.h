@@ -16,9 +16,9 @@
     NSString *_preferredApplicationAID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preferredApplicationAID; // @synthesize preferredApplicationAID=_preferredApplicationAID;
 @property(retain, nonatomic) NSString *passID; // @synthesize passID=_passID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

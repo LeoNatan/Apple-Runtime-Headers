@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <CNContactViewHostProtocol> delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CNContactViewHostProtocol> delegate; // @synthesize delegate;
 @property(nonatomic) __weak id <CNContactViewControllerPPTDelegate> pptDelegate; // @synthesize pptDelegate;
-- (void).cxx_destruct;
 - (void)toggleEditing;
 - (void)editCancel;
 - (void)didChangeToEditMode:(BOOL)arg1;

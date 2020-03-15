@@ -26,8 +26,8 @@
 + (id)titleForType:(long long)arg1;
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
 + (Class)layerClass;
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_createHighlightFilterIfNecessary;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;

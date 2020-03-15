@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *fullMap; // @synthesize fullMap=_fullMap;
 @property(retain, nonatomic) NSSet *keysOnly; // @synthesize keysOnly=_keysOnly;
-- (void).cxx_destruct;
 
 @end
 

@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *artworkIdentifier; // @synthesize artworkIdentifier=_artworkIdentifier;
 @property(copy, nonatomic) NSString *nameOnCard; // @synthesize nameOnCard=_nameOnCard;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

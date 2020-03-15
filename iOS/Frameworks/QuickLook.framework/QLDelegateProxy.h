@@ -12,9 +12,9 @@
     id _secondDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id secondDelegate; // @synthesize secondDelegate=_secondDelegate;
 @property __weak id firstDelegate; // @synthesize firstDelegate=_firstDelegate;
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

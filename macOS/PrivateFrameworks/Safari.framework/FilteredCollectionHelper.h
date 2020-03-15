@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSSet *_filteredSet;
 }
 
-@property(copy, nonatomic) NSArray *fullCollection; // @synthesize fullCollection=_fullCollection;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *fullCollection; // @synthesize fullCollection=_fullCollection;
 - (id)_filteredSet;
 - (id)filteredItemPrecedingItem:(id)arg1;
 - (id)filteredItemFollowingItem:(id)arg1;

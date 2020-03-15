@@ -13,8 +13,8 @@
     UIView *_hostedContentView;
 }
 
-@property(retain, nonatomic) UIView *hostedContentView; // @synthesize hostedContentView=_hostedContentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *hostedContentView; // @synthesize hostedContentView=_hostedContentView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

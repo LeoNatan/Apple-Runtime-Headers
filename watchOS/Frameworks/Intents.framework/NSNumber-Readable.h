@@ -13,7 +13,7 @@
 
 @interface NSNumber (Readable) <INCodableAttributeRelationComparing, INJSONSerializable>
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 - (_Bool)_intents_compareValue:(id)arg1 relation:(unsigned int)arg2;
 - (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (_Bool)_intents_isDouble;

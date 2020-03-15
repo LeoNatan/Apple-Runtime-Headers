@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int grade; // @synthesize grade=_grade;
 @property(nonatomic) _Bool discarded; // @synthesize discarded=_discarded;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(nonatomic) struct _NSRange hintRange; // @synthesize hintRange=_hintRange;
 @property(copy, nonatomic) NSString *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContext:(id)arg1 hintRange:(struct _NSRange)arg2 domain:(id)arg3 discarded:(_Bool)arg4 grade:(unsigned int)arg5;

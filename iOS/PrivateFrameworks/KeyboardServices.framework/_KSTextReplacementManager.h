@@ -15,7 +15,6 @@
 {
     NSObject<OS_dispatch_queue> *_migrationQueue;
     _Bool _didMigrateForCurrentAccount;
-    _Bool _pendingMigration;
     _Bool _deviceDidMigrateOnCloud;
     _Bool _didCheckMigrationOnCloud;
     _KSTextReplacementCKStore *_ckStore;
@@ -26,16 +25,15 @@
 }
 
 + (id)textReplacementStoreWithTestDirectory:(id)arg1 withDelegate:(id)arg2 forceMigration:(_Bool)arg3 forceCloudKitSync:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_KSMigrationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool didCheckMigrationOnCloud; // @synthesize didCheckMigrationOnCloud=_didCheckMigrationOnCloud;
 @property(nonatomic) _Bool deviceDidMigrateOnCloud; // @synthesize deviceDidMigrateOnCloud=_deviceDidMigrateOnCloud;
-@property(nonatomic) _Bool pendingMigration; // @synthesize pendingMigration=_pendingMigration;
 @property(nonatomic) _Bool didMigrateForCurrentAccount; // @synthesize didMigrateForCurrentAccount=_didMigrateForCurrentAccount;
 @property(copy, nonatomic) NSString *directoryPath; // @synthesize directoryPath=_directoryPath;
 @property(retain, nonatomic) NSObject<_KSTextReplacementSyncProtocol> *textReplacementStore; // @synthesize textReplacementStore=_textReplacementStore;
 @property(retain, nonatomic) _KSTextReplacementLegacyStore *legacyStore; // @synthesize legacyStore=_legacyStore;
 @property(retain, nonatomic) _KSTextReplacementCKStore *ckStore; // @synthesize ckStore=_ckStore;
-- (void).cxx_destruct;
 - (void)recordSyncStatus;
 - (double)minimumUptimeRemaining;
 - (void)requestSync:(unsigned long long)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
@@ -45,10 +43,6 @@
 - (void)respondToMigrationCompletion;
 - (void)_migrateEntriesSinceDate:(id)arg1 repeatCount:(unsigned long long)arg2;
 - (void)migrateLegacyStore;
-- (void)pullMigrationSettings;
-- (void)_migrateDevice;
-- (void)respondToMigrationCompatibilityChange:(id)arg1;
-- (void)migrateLocallyCheckCompatibility:(_Bool)arg1;
 - (void)checkForMigration;
 - (void)notifyTextReplacementDidChange;
 - (void)dealloc;
@@ -56,7 +50,6 @@
 - (void)resetMigrationState;
 - (void)accountDidChange:(id)arg1;
 - (id)initWithDirectoryPath:(id)arg1;
-- (id)initWithDirectoryPath:(id)arg1 ignoreMigrationBatchCheck:(_Bool)arg2 syncMode:(int)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

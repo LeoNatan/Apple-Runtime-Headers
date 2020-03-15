@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <DelayedPopUpButtonCellDelegate> _delayedPopUpButtonCellDelegate;
 }
 
-@property(nonatomic) __weak id <DelayedPopUpButtonCellDelegate> delayedPopUpButtonCellDelegate; // @synthesize delayedPopUpButtonCellDelegate=_delayedPopUpButtonCellDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DelayedPopUpButtonCellDelegate> delayedPopUpButtonCellDelegate; // @synthesize delayedPopUpButtonCellDelegate=_delayedPopUpButtonCellDelegate;
 - (id)accessibilityTitle;
 - (id)accessibilityLabel;
 - (void)stopTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 mouseIsUp:(BOOL)arg4;

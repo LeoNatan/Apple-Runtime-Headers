@@ -29,8 +29,8 @@
 + (id)urlForMessageContentWithId:(id)arg1 mailboxId:(id)arg2;
 + (id)messageContentWithId:(id)arg1 mailboxId:(id)arg2;
 + (id)messageContentForMessage:(id)arg1;
-@property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void)_scaleImageForAttachment:(id)arg1 fileURL:(id)arg2 destinationURL:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_doScheduleToScaleImageForAttachment:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)scheduleToScaleImageDownForAttachment:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

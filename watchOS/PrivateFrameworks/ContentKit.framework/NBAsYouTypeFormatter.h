@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     NBPhoneMetaData *_EMPTY_METADATA_;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NBPhoneMetaData *EMPTY_METADATA_; // @synthesize EMPTY_METADATA_=_EMPTY_METADATA_;
 @property(retain, nonatomic) NBPhoneMetaData *defaultMetaData_; // @synthesize defaultMetaData_=_defaultMetaData_;
 @property(retain, nonatomic) NBPhoneMetaData *currentMetaData_; // @synthesize currentMetaData_=_currentMetaData_;
@@ -75,7 +76,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) NSString *SEPARATOR_BEFORE_NATIONAL_NUMBER_; // @synthesize SEPARATOR_BEFORE_NATIONAL_NUMBER_=_SEPARATOR_BEFORE_NATIONAL_NUMBER_;
 @property(retain, nonatomic) NSString *DIGIT_PLACEHOLDER_; // @synthesize DIGIT_PLACEHOLDER_=_DIGIT_PLACEHOLDER_;
 @property(readonly, nonatomic) _Bool isSuccessfulFormatting; // @synthesize isSuccessfulFormatting=_isSuccessfulFormatting;
-- (void).cxx_destruct;
 - (id)description;
 - (id)inputDigitHelper_:(id)arg1;
 - (id)normalizeAndAccrueDigitsAndPlusSign_:(id)arg1 rememberPosition:(_Bool)arg2;

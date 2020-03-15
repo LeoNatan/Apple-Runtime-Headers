@@ -36,8 +36,8 @@
 + (id)_defaultCurveArray;
 + (id)attributes;
 + (id)_stringsTableName;
-@property(nonatomic) double gamma; // @synthesize gamma=_gamma;
 - (void).cxx_destruct;
+@property(nonatomic) double gamma; // @synthesize gamma=_gamma;
 - (void)_applyAutoSettings:(id)arg1;
 - (float *)tableValues:(int)arg1;
 - (float *)blueValues;

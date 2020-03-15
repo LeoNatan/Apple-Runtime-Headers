@@ -28,6 +28,7 @@
     long long _currentAlarmType;
 }
 
+- (void).cxx_destruct;
 @property long long currentAlarmType; // @synthesize currentAlarmType=_currentAlarmType;
 @property(retain) CalUIIntegerFormatter *countFormatter; // @synthesize countFormatter=_countFormatter;
 @property __weak NSView *lastKeyView; // @synthesize lastKeyView=_lastKeyView;
@@ -41,7 +42,6 @@
 @property(retain) NSPopUpButton *alarmTypeButton; // @synthesize alarmTypeButton=_alarmTypeButton;
 @property(retain) EKAlarm *alarm; // @synthesize alarm=_alarm;
 @property(retain) EKUIAlarmGadget *gadget; // @synthesize gadget=_gadget;
-- (void).cxx_destruct;
 - (id)startDate;
 - (double)additionalVerticalOffsetForPickerPopover;
 - (void)datePickerDidResignFirstResponder:(id)arg1;

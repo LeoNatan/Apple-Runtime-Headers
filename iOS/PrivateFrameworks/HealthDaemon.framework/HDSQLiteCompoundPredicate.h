@@ -24,8 +24,8 @@
 + (id)negatedPredicate:(id)arg1;
 + (id)predicateMatchingAnyPredicates:(id)arg1;
 + (id)predicateMatchingAllPredicates:(id)arg1;
-@property(readonly, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (id)description;
 - (_Bool)isCompatibleWithPredicate:(id)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;

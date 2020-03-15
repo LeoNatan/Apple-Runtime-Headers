@@ -18,7 +18,6 @@
 }
 
 + (Class)simpleRequesterClass;
-+ (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (CDStruct_e4886f83 *)newExpiringTilesets;
 + (unsigned long long)expiringTilesetsCount;
 + (unsigned char)tileProviderIdentifier;

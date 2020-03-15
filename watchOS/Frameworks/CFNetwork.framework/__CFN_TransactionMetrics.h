@@ -53,6 +53,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)nstatCountsFromTCPInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long lastResponseBodyTransferSize; // @synthesize lastResponseBodyTransferSize=_lastResponseBodyTransferSize;
 @property(nonatomic) long long lastResponseBodySize; // @synthesize lastResponseBodySize=_lastResponseBodySize;
 @property(nonatomic) long long lastResponseHeaderSize; // @synthesize lastResponseHeaderSize=_lastResponseHeaderSize;
@@ -90,7 +91,6 @@
 @property(retain, nonatomic) NSURLRequest *transferredRequest; // @synthesize transferredRequest=_transferredRequest;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)end:(unsigned int)arg1;

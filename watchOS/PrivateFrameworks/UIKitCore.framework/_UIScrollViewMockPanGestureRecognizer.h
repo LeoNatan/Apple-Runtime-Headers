@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIScrollViewPanGestureRecognizer *_gestureRecognizer;
 }
 
-@property(retain, nonatomic) UIScrollViewPanGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIScrollViewPanGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 - (struct CGPoint)locationInView:(id)arg1;
 - (struct CGPoint)velocityInView:(id)arg1;
 - (void)setTranslation:(struct CGPoint)arg1 inView:(id)arg2;

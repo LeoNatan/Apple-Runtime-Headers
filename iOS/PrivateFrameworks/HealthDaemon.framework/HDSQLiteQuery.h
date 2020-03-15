@@ -15,9 +15,9 @@
     NSString *_lastSQLStatement;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *lastSQLStatement; // @synthesize lastSQLStatement=_lastSQLStatement;
 @property(readonly) HDSQLiteDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (_Bool)enumerateProperties:(id)arg1 error:(id *)arg2 enumerationHandler:(CDUnknownBlockType)arg3;
 - (_Bool)enumeratePersistentIDsAndProperties:(id)arg1 error:(id *)arg2 enumerationHandler:(CDUnknownBlockType)arg3;
 - (void)enumerateEntitiesUsingBlock:(CDUnknownBlockType)arg1;

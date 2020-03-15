@@ -28,6 +28,7 @@
     NSTimer *_updateTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(nonatomic) long long currentBannerIndex; // @synthesize currentBannerIndex=_currentBannerIndex;
 @property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) TVLItemTitleView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) TVLBaseballLineScorePreviewElement *previewElement; // @synthesize previewElement=_previewElement;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
-- (void).cxx_destruct;
 - (void)updateToNextInningsPage;
 - (void)updateToNextBanner;
 - (void)updateViews;

@@ -30,11 +30,11 @@
 + (id)getBlurImageForHeader;
 + (id)imageForRectCorner:(unsigned int)arg1;
 + (id)defaultHeaderColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISAlertPlatterColorConfiguration *colorConfiguration; // @synthesize colorConfiguration=_colorConfiguration;
 @property(retain, nonatomic) NSArray *cornerViews; // @synthesize cornerViews=_cornerViews;
 @property(nonatomic) _Bool isHeaderPlatterView; // @synthesize isHeaderPlatterView=_isHeaderPlatterView;
 @property(nonatomic) unsigned int roundedCorners; // @synthesize roundedCorners=_roundedCorners;
-- (void).cxx_destruct;
 - (void)createClippingViews;
 - (void)_applyCornerConfiguration:(CDStruct_d8831046)arg1;
 @property(nonatomic) _Bool useLayerCornerRadius;

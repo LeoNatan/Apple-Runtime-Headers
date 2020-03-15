@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_actions;
 }
 
-@property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void)transportButton3Clicked:(id)arg1;
 - (void)transportButton2Clicked:(id)arg1;
 - (void)transportButton1Clicked:(id)arg1;

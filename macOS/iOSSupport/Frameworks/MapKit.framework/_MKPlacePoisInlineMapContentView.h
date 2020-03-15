@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     BOOL _visible;
 }
 
-@property(nonatomic) BOOL visible; // @synthesize visible=_visible;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL visible; // @synthesize visible=_visible;
 - (struct CGSize)intrinsicContentSize;
 - (double)mapViewHeight;
 - (void)setLocationsNumber:(unsigned long long)arg1;

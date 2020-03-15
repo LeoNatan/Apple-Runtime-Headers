@@ -17,10 +17,10 @@
     UIColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
-- (void).cxx_destruct;
 - (BOOL)_hasNonClearBackgroundColor;
 - (id)newBackgroundHighlightView;
 - (BOOL)isEqual:(id)arg1;

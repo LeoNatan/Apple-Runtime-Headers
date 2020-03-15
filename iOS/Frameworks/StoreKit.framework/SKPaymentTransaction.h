@@ -40,6 +40,7 @@
 @property(readonly, nonatomic) SKPaymentTransaction *originalTransaction;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) NSArray *downloads;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithPayment:(id)arg1;
 - (id)init;
 

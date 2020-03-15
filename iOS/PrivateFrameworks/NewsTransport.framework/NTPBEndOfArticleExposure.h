@@ -47,6 +47,7 @@
 + (Class)namedEntitiesType;
 + (Class)referencedRecommendedArticleIdsType;
 + (Class)recommendedArticleIdType;
+- (void).cxx_destruct;
 @property(nonatomic) long long backendArticleVersionInt64; // @synthesize backendArticleVersionInt64=_backendArticleVersionInt64;
 @property(nonatomic) long long publisherArticleVersionInt64; // @synthesize publisherArticleVersionInt64=_publisherArticleVersionInt64;
 @property(nonatomic) long long personalizationTreatmentId; // @synthesize personalizationTreatmentId=_personalizationTreatmentId;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 @property(retain, nonatomic) NSString *referencedArticleId; // @synthesize referencedArticleId=_referencedArticleId;
 @property(retain, nonatomic) NSString *articleId; // @synthesize articleId=_articleId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

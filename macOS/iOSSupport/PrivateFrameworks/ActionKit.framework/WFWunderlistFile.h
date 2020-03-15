@@ -30,6 +30,7 @@
 + (id)localCreatedAtJSONTransformer;
 + (id)urlJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long revision; // @synthesize revision=_revision;
 @property(readonly, nonatomic) NSDate *updatedAt; // @synthesize updatedAt=_updatedAt;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) long long listId; // @synthesize listId=_listId;
 @property(readonly, nonatomic) long long taskId; // @synthesize taskId=_taskId;
 @property(readonly, nonatomic) long long fileId; // @synthesize fileId=_fileId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

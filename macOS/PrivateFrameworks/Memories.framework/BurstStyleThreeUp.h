@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSColor *_popBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *popBackgroundColor; // @synthesize popBackgroundColor=_popBackgroundColor;
 @property(retain, nonatomic) NSColor *gapColor; // @synthesize gapColor=_gapColor;
-- (void).cxx_destruct;
 - (double)maximumContainedClipDuration;
 - (double)idealContainedClipDuration;
 - (double)minimumContainedClipDuration;

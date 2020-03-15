@@ -17,8 +17,8 @@
     id <VMCoreTelephonyClient> _telephonyClient;
 }
 
-@property(readonly, nonatomic) id <VMCoreTelephonyClient> telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <VMCoreTelephonyClient> telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 - (void)postSMSMessageSent:(id)arg1 success:(_Bool)arg2 messageID:(long long)arg3 err1:(long long)arg4 err2:(long long)arg5;
 @property(readonly, nonatomic) id <VMCTMessageCenter> messageCenter; // @synthesize messageCenter=_messageCenter;
 - (void)executeRequest:(id)arg1;

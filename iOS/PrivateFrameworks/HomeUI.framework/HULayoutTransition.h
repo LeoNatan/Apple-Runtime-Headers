@@ -19,6 +19,7 @@
     id _toState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id toState; // @synthesize toState=_toState;
 @property(retain, nonatomic) id fromState; // @synthesize fromState=_fromState;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType setupBlock; // @synthesize setupBlock=_setupBlock;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) unsigned long long phase; // @synthesize phase=_phase;
-- (void).cxx_destruct;
 - (void)completeTransition;
 - (void)executeTransition;
 - (void)setupTransitionWithFromState:(id)arg1 toState:(id)arg2;

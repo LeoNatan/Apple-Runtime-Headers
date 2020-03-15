@@ -21,6 +21,7 @@
 }
 
 + (id)topLevelCategoryIdentifiers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *shareIconName; // @synthesize shareIconName=_shareIconName;
 @property(readonly, nonatomic) NSString *healthDataIconName; // @synthesize healthDataIconName=_healthDataIconName;
 @property(readonly, nonatomic) NSString *listIconName; // @synthesize listIconName=_listIconName;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 @property(readonly, nonatomic) long long categoryID; // @synthesize categoryID=_categoryID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) _Bool isTopLevelCategory;
 @property(readonly, nonatomic) _Bool isMeCategory;

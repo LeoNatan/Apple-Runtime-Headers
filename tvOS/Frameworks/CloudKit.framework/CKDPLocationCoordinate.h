@@ -31,6 +31,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) double course; // @synthesize course=_course;
@@ -39,7 +40,6 @@
 @property(nonatomic) double horizontalAccuracy; // @synthesize horizontalAccuracy=_horizontalAccuracy;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

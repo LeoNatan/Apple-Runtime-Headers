@@ -16,9 +16,9 @@
     NSString *_uniqueID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *commutePlanBytes; // @synthesize commutePlanBytes=_commutePlanBytes;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

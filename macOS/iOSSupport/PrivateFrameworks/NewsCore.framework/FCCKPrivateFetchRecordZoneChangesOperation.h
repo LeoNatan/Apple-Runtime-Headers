@@ -22,6 +22,7 @@
     FCCKPrivateDatabaseServerChangeToken *_resultServerChangeToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL resultMoreComing; // @synthesize resultMoreComing=_resultMoreComing;
 @property(retain, nonatomic) FCCKPrivateDatabaseServerChangeToken *resultServerChangeToken; // @synthesize resultServerChangeToken=_resultServerChangeToken;
 @property(retain, nonatomic) NSArray *resultDeletedRecordIDs; // @synthesize resultDeletedRecordIDs=_resultDeletedRecordIDs;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(copy, nonatomic) FCCKPrivateDatabaseServerChangeToken *previousServerChangeToken; // @synthesize previousServerChangeToken=_previousServerChangeToken;
 @property(copy, nonatomic) CKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;
-- (void).cxx_destruct;
 - (id)_configurationForDestination:(long long)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

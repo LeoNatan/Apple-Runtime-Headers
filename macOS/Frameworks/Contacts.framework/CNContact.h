@@ -108,6 +108,7 @@
 + (id)makeContactAndMergeValuesFromAvailableKeysInContact:(id)arg1;
 + (id)newContactWithPropertyKeys:(id)arg1 withValuesFromContact:(id)arg2;
 + (id)contactWithContact:(id)arg1;
++ (id)emptyContact;
 + (id)_contactWithContact:(id)arg1 createNewInstance:(BOOL)arg2 propertyDescriptions:(id)arg3;
 + (void)freezeIfInstancetypeIsImmutable:(id)arg1;
 + (id)contactWithDisplayName:(id)arg1 handleStrings:(id)arg2;
@@ -126,6 +127,7 @@
 + (id)predicateForContactsInGroupWithIdentifier:(id)arg1;
 + (id)predicateForContactsWithIdentifiers:(id)arg1;
 + (id)predicateForContactsMatchingName:(id)arg1;
++ (id)predicateForMeContact;
 + (id)predicateForContactsMatchingPhoneNumber:(id)arg1 prefixHint:(id)arg2 groupIdentifiers:(id)arg3 limitToOneResult:(BOOL)arg4;
 + (id)predicateForContactsMatchingEmailAddress:(id)arg1 groupIdentifiers:(id)arg2 limitToOneResult:(BOOL)arg3;
 + (id)predicateForContactsLinkedToContactWithIdentifier:(id)arg1;
@@ -150,7 +152,6 @@
 + (id)predicateForContactMatchingEmailAddress:(id)arg1;
 + (id)predicateForContactsMatchingName:(id)arg1 options:(unsigned long long)arg2;
 + (id)predicateForAllContacts;
-+ (id)predicateForMeContact;
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)contactWithVCardData:(id)arg1 error:(id *)arg2;
 + (id)contactWithArchivedData:(id)arg1 error:(id *)arg2;
@@ -160,6 +161,7 @@
 + (id)contactIdentifierFromSuggestionID:(id)arg1;
 + (id)contactFromSuggestion:(id)arg1;
 + (id)predicateForSuggestionIdentifier:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *preferredChannel; // @synthesize preferredChannel=_preferredChannel;
 @property(readonly, copy) NSString *pronunciationFamilyName; // @synthesize pronunciationFamilyName=_pronunciationFamilyName;
 @property(readonly, copy) NSString *pronunciationGivenName; // @synthesize pronunciationGivenName=_pronunciationGivenName;
@@ -169,7 +171,6 @@
 @property(readonly, copy) NSDictionary *storeInfo; // @synthesize storeInfo=_storeInfo;
 @property(readonly, copy) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(readonly, copy) NSString *internalIdentifier; // @synthesize internalIdentifier=_internalIdentifier;
-- (void).cxx_destruct;
 - (id)linkedIdentifierMap;
 - (BOOL)isEqualIgnoringIdentifiers:(id)arg1;
 - (BOOL)areAllPropertiesEqualToContactIgnoringIdentifiers:(id)arg1;
@@ -225,6 +226,7 @@
 @property(readonly, copy) NSString *externalModificationTag;
 @property(readonly, copy) NSData *externalRepresentation;
 @property(readonly, copy) NSString *externalIdentifier;
+@property(readonly, copy) NSString *externalURI;
 @property(readonly, copy) CNActivityAlert *textAlert;
 @property(readonly, copy) CNActivityAlert *callAlert;
 @property(readonly, copy) NSString *phonemeData;

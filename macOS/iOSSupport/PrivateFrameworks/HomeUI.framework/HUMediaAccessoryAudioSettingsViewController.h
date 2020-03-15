@@ -21,11 +21,11 @@
     NAFuture *_accessoryIdentifyFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *accessoryIdentifyFuture; // @synthesize accessoryIdentifyFuture=_accessoryIdentifyFuture;
 @property(readonly, nonatomic) HFMediaSystemBuilder *mediaSystemBuilder; // @synthesize mediaSystemBuilder=_mediaSystemBuilder;
 @property(nonatomic) BOOL requiresPresentingViewControllerDismissal; // @synthesize requiresPresentingViewControllerDismissal=_requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (id)_homePodStereoSwapperCell;
 - (void)_updateSwapperCell:(id)arg1;
 - (void)didPressSwapButton:(id)arg1;

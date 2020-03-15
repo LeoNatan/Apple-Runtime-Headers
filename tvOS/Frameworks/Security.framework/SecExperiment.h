@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SecExperimentConfig *_cachedConfig;
 }
 
+- (void).cxx_destruct;
 @property(retain) SecExperimentConfig *cachedConfig; // @synthesize cachedConfig=_cachedConfig;
 @property(nonatomic) _Bool samplingDisabled; // @synthesize samplingDisabled=_samplingDisabled;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly) NSString *identifier;
 - (id)copyExperimentConfiguration;
 - (id)copyRandomExperimentConfigurationFromAsset:(id)arg1;

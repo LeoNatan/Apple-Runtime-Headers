@@ -21,9 +21,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRVoiceInputDeviceDescriptorProtobuf *descriptor; // @synthesize descriptor=_descriptor;
 @property(nonatomic) unsigned int deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

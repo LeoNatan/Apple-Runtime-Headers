@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     unsigned int _recognizes;
 }
 
-@property(readonly, nonatomic) NSDictionary *subfeatures; // @synthesize subfeatures=_subfeatures;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *subfeatures; // @synthesize subfeatures=_subfeatures;
 - (void)_incorporateSample:(const struct _UISEGestureFeatureSample *)arg1;
 - (id)debugDictionary;
 - (void)featureDidChangeState:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *exposureScore; // @synthesize exposureScore=_exposureScore;
 @property(retain, nonatomic) NSNumber *blurScore; // @synthesize blurScore=_blurScore;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

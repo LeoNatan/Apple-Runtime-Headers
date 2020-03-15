@@ -19,9 +19,9 @@
 
 + (id)alloc;
 + (Class)__class;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *ownerName; // @synthesize ownerName=_ownerName;
 @property(readonly, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
-- (void).cxx_destruct;
 
 @end
 

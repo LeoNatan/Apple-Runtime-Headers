@@ -15,9 +15,9 @@
 }
 
 + (id)entitlement;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSUIServiceOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 

@@ -17,8 +17,8 @@
 }
 
 + (id)keylineWithImage:(id)arg1 secondaryKeylineView:(id)arg2;
-@property(retain, nonatomic) UIView<NTKKeylineView> *secondaryKeylineView; // @synthesize secondaryKeylineView=_secondaryKeylineView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView<NTKKeylineView> *secondaryKeylineView; // @synthesize secondaryKeylineView=_secondaryKeylineView;
 @property(retain, nonatomic) UIColor *overrideColor;
 @property(nonatomic) _Bool usesLegibility;
 @property(retain, nonatomic) UIColor *color;

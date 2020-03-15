@@ -20,13 +20,13 @@
     NSLayoutConstraint *_topSpaceConstraintContinueButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *topSpaceConstraintContinueButton; // @synthesize topSpaceConstraintContinueButton=_topSpaceConstraintContinueButton;
 @property __weak NSButton *continueButton; // @synthesize continueButton=_continueButton;
 @property __weak NSTextField *secondaryPriceLabel; // @synthesize secondaryPriceLabel=_secondaryPriceLabel;
 @property __weak NSTextField *primaryPriceLabelInfo; // @synthesize primaryPriceLabelInfo=_primaryPriceLabelInfo;
 @property __weak NSTextField *primaryPriceLabel; // @synthesize primaryPriceLabel=_primaryPriceLabel;
 @property __weak NSTextField *productSizeLabel; // @synthesize productSizeLabel=_productSizeLabel;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

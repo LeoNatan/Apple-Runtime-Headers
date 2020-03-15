@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     UILabel *_nextLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UILabel *nextLabel; // @synthesize nextLabel=_nextLabel;
 @property(readonly, nonatomic) __weak UIView *topBorder; // @synthesize topBorder=_topBorder;
 @property(readonly, nonatomic) __weak WFOverlayImageEditorOptionButton *opacityButton; // @synthesize opacityButton=_opacityButton;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WFOverlayImageEditorOptionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(readonly, nonatomic) __weak UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-- (void).cxx_destruct;
 - (void)didTapNextButton;
 - (void)didTapCancelButton;
 - (void)didTapOpacityButton;

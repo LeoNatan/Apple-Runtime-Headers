@@ -21,8 +21,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic, setter=_setRelatedLookupTable:) NSHashTable *_relatedLookupTable; // @synthesize _relatedLookupTable=__relatedLookupTable;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setRelatedLookupTable:) NSHashTable *_relatedLookupTable; // @synthesize _relatedLookupTable=__relatedLookupTable;
 - (void)_messageTracerJumpCountLoggingDryrun:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
 - (void)_messageTracerDurationLoggingDryrun:(unsigned long long)arg1 duration:(double)arg2;
 - (void)_messageTracerDurationLoggingDryrunForSubState:(unsigned long long)arg1 duration:(double)arg2;

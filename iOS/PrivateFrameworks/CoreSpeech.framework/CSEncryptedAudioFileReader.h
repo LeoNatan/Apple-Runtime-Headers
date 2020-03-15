@@ -16,11 +16,11 @@
     unsigned long long _sampleByteDepth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sampleByteDepth; // @synthesize sampleByteDepth=_sampleByteDepth;
 @property(retain, nonatomic) NSData *readBuffer; // @synthesize readBuffer=_readBuffer;
 @property(retain, nonatomic) NSData *aesKey; // @synthesize aesKey=_aesKey;
 @property(retain, nonatomic) NSURL *fileUrl; // @synthesize fileUrl=_fileUrl;
-- (void).cxx_destruct;
 - (_Bool)readAudioChunksWithCallback:(CDUnknownBlockType)arg1;
 - (id)initWithFileUrl:(id)arg1 aesKey:(id)arg2 sampleByteDepth:(unsigned long long)arg3;
 

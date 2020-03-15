@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *defaultFocusView; // @synthesize defaultFocusView=_defaultFocusView;
 @property(retain, nonatomic) VUIProductMetadataLayout *viewLayout; // @synthesize viewLayout=_viewLayout;
 @property(retain, nonatomic) NSArray *sectionViews; // @synthesize sectionViews=_sectionViews;
-- (void).cxx_destruct;
 - (id)_generateSectionViewFromElement:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (_Bool)canBecomeFocused;

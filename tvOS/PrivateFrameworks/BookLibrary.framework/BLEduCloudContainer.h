@@ -18,10 +18,10 @@
 }
 
 + (id)sharedEduCloudContainer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *containerQueue; // @synthesize containerQueue=_containerQueue;
 @property(retain, nonatomic) NSURL *containerURL; // @synthesize containerURL=_containerURL;
 @property(retain, nonatomic) id cloudToken; // @synthesize cloudToken=_cloudToken;
-- (void).cxx_destruct;
 - (id)bookItemsForPermlinks:(id)arg1;
 - (id)bookItemForPermlink:(id)arg1;
 - (id)bookItemForURL:(id)arg1;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     id _destinationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool destinationIdentifierIsSectionIdentifier; // @synthesize destinationIdentifierIsSectionIdentifier=_destinationIdentifierIsSectionIdentifier;
 @property(readonly, nonatomic) id destinationIdentifier; // @synthesize destinationIdentifier=_destinationIdentifier;
 @property(readonly, nonatomic) long long relativePosition; // @synthesize relativePosition=_relativePosition;
 @property(readonly, nonatomic) long long action; // @synthesize action=_action;
 @property(readonly, nonatomic) NSOrderedSet *identifiers; // @synthesize identifiers=_identifiers;
 @property(readonly, nonatomic) _Bool isSectionOperation; // @synthesize isSectionOperation=_isSectionOperation;
-- (void).cxx_destruct;
 - (void)_throwIfInvalid;
 @property(readonly, copy) NSString *description;
 - (id)initWithSectionIdentifiers:(id)arg1 appendingToDestinationSectionIdentifier:(id)arg2;

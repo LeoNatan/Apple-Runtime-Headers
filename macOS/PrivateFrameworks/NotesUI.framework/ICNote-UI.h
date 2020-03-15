@@ -9,8 +9,8 @@
 @class ICCollaborationColorManager, NSArray, PKInk, TTTextStorage;
 
 @interface ICNote (UI)
-+ (id)hexStringForColor:(struct NSColor *)arg1;
-+ (BOOL)isDefaultColor:(struct NSColor *)arg1;
++ (id)hexStringForColor:(id)arg1;
++ (BOOL)isDefaultColor:(id)arg1;
 + (id)tagDictionariesForAttributes:(id)arg1 attachmentConversionHandler:(CDUnknownBlockType)arg2;
 + (id)tagDictionaryForWrapperAroundParagraphStyle:(id)arg1;
 + (id)htmlStringFromAttributedString:(id)arg1 attachmentConversionHandler:(CDUnknownBlockType)arg2;
@@ -48,8 +48,8 @@
 - (void)saveAfterDelay;
 - (void)save;
 - (id)thumbnailImageCacheKeyWithItemSize:(struct CGSize)arg1 appearanceType:(unsigned long long)arg2;
-- (struct NSImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(BOOL)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(char *)arg6 isMovie:(char *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8 attachment:(id *)arg9;
-- (struct NSImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(BOOL)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(char *)arg6 isMovie:(char *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8;
+- (id)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(BOOL)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(char *)arg6 isMovie:(char *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8 attachment:(id *)arg9;
+- (id)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(BOOL)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(char *)arg6 isMovie:(char *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8;
 - (id)attachmentFromRemoteFileWrapper:(id)arg1;
 - (id)attachmentFromLegacyAttachmentFileWrapper:(id)arg1;
 - (id)attachmentFromStandardFileWrapper:(id)arg1;

@@ -19,9 +19,9 @@
 + (id)codingTypesToCodingKeys;
 + (unsigned int)currentCodingVersion;
 + (id)currentVersion;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VNTorsoprint *torsoprint; // @synthesize torsoprint=_torsoprint;
 @property(readonly, nonatomic) VNFaceprint *faceprint; // @synthesize faceprint=_faceprint;
-- (void).cxx_destruct;
 - (unsigned long long)serializedLength;
 - (id)serializeStateAndReturnError:(id *)arg1;
 - (unsigned long long)serializeStateIntoData:(id)arg1 startingAtByteOffset:(unsigned long long)arg2 error:(id *)arg3;

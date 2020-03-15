@@ -14,9 +14,9 @@
     NSArray *_nearbyKeys;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *nearbyKeys; // @synthesize nearbyKeys=_nearbyKeys;
 @property(readonly, copy, nonatomic) NSString *characters; // @synthesize characters=_characters;
-- (void).cxx_destruct;
 - (BOOL)canComposeNew:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCharacters:(id)arg1 nearbyKeys:(id)arg2;

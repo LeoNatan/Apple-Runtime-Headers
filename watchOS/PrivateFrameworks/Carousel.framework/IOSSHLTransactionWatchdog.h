@@ -30,13 +30,13 @@
     CSLHangObserver *_hangObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLHangObserver *hangObserver; // @synthesize hangObserver=_hangObserver;
 @property(retain, nonatomic) BSPowerMonitor *powerMonitor; // @synthesize powerMonitor=_powerMonitor;
 @property(retain, nonatomic) id <IOSSHLTransactionWatchdogDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=hasFired) _Bool fired; // @synthesize fired=_fired;
 @property(readonly, nonatomic) _Bool shouldContinueAfterWatchdog; // @synthesize shouldContinueAfterWatchdog=_shouldContinueAfterWatchdog;
 @property(readonly, nonatomic) BSTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool observedSystemWillWake;
 - (void)powerMonitorSystemWillWakeFromSleep:(id)arg1;
 - (void)_timerToStartTailspinFired:(id)arg1;

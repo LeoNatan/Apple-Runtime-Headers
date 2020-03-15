@@ -16,8 +16,8 @@
 
 + (void)deleteAllLocalKeychainOwnershipTokens;
 + (void)queryKeychainForOwnershipTokens:(CDUnknownBlockType)arg1;
-@property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier; // @synthesize ownershipTokenIdentifier=_ownershipTokenIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *ownershipTokenIdentifier; // @synthesize ownershipTokenIdentifier=_ownershipTokenIdentifier;
 - (id)_wrapperWithType:(unsigned long long)arg1 identifier:(id)arg2;
 - (void)_readFromKeychain;
 - (void)_writeToKeychain;

@@ -16,9 +16,9 @@
     id <PUICNavigationInteractiveTransitionStopDelegate> _stopAnimationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICNavigationInteractiveTransitionStopDelegate> stopAnimationDelegate; // @synthesize stopAnimationDelegate=_stopAnimationDelegate;
 @property(nonatomic) _Bool useScreenEdgePopGesture; // @synthesize useScreenEdgePopGesture=_useScreenEdgePopGesture;
-- (void).cxx_destruct;
 - (void)finalizeStoppedTransition:(_Bool)arg1;
 - (void)_stopInteractiveTransition;
 - (_Bool)transitionWasStopped;

@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     id <ARUIRingsRendering> _ringsRenderer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ARUIRingsRendering> ringsRenderer; // @synthesize ringsRenderer=_ringsRenderer;
 @property(nonatomic) __weak id <ARUIBlurRendering> blurRenderer; // @synthesize blurRenderer=_blurRenderer;
 @property(nonatomic) __weak id <ARUICompositeRendering> compositeRenderer; // @synthesize compositeRenderer=_compositeRenderer;
-- (void).cxx_destruct;
 - (void)_renderWithCommandEncoder:(id)arg1 ring:(id)arg2 wavesCelebration:(id)arg3;
 - (id)_wavesTextureWithCommandBuffer:(id)arg1 wavesMap:(id)arg2 size: /* Error: Ran out of types for this method. */;
 - (void)_computeWithCommandEncoder:(id)arg1 ring:(id)arg2 wavesCelebration:(id)arg3;

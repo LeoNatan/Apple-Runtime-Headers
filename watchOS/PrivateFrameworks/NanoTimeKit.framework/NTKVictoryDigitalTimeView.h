@@ -29,12 +29,12 @@
 }
 
 + (id)transitionTimingFunction;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKVictoryDigitalTimeViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) _Bool invertedColors; // @synthesize invertedColors=_invertedColors;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
-- (void).cxx_destruct;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)tritium_willTransitionToTritiumOn;

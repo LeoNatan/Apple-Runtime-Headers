@@ -14,9 +14,9 @@
     JSOCType *_type;
 }
 
+- (void).cxx_destruct;
 @property(readonly) JSOCType *type; // @synthesize type=_type;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1 type:(id)arg2;
 
 @end

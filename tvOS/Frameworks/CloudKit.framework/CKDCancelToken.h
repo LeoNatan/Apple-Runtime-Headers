@@ -14,8 +14,8 @@
     CDUnknownBlockType _cancelAction;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType cancelAction; // @synthesize cancelAction=_cancelAction;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType cancelAction; // @synthesize cancelAction=_cancelAction;
 - (void)cancel;
 - (_Bool)isCancelled;
 

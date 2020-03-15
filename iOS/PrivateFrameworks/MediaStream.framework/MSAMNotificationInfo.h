@@ -18,10 +18,10 @@
 }
 
 + (id)info;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) NSString *personID; // @synthesize personID=_personID;
 @property(nonatomic) __weak MSAlertManager *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(nonatomic) struct __CFUserNotification *userNotification;
 @property(nonatomic) struct __CFRunLoopSource *runLoopSource;

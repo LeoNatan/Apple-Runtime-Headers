@@ -33,6 +33,7 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPLEngineScope *scope; // @synthesize scope=_scope;
 @property(nonatomic) unsigned long long pullTaskItem; // @synthesize pullTaskItem=_pullTaskItem;
 @property(copy, nonatomic) NSData *accountFlagsData; // @synthesize accountFlagsData=_accountFlagsData;
@@ -41,7 +42,6 @@
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 @property(copy, nonatomic) NSDictionary *assetCountPerType; // @synthesize assetCountPerType=_assetCountPerType;
 @property(nonatomic) long long scopeType; // @synthesize scopeType=_scopeType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)accountFlags;
 - (id)scopeIdentifier;

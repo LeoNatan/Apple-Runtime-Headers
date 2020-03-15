@@ -183,6 +183,7 @@
 + (double)customTransitionDuration;
 + (void)setCustomTransitionDuration:(double)arg1;
 + (id)_viewControllerForFullScreenPresentationFromView:(id)arg1;
++ (BOOL)_shouldRememberFocusForDismissal;
 + (void)_scheduleTransition:(CDUnknownBlockType)arg1;
 + (void)_performWithoutDeferringTransitionsAllowingAnimation:(BOOL)arg1 actions:(CDUnknownBlockType)arg2;
 + (void)_performWithoutDeferringTransitions:(CDUnknownBlockType)arg1;
@@ -224,6 +225,7 @@
 + (id)_remoteViewControllerInterface;
 + (BOOL)_isSecureForRemoteViewService;
 + (id)XPCInterface;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ignoresParentMargins; // @synthesize ignoresParentMargins=_ignoresParentMargins;
 @property(nonatomic) __weak UIView *preferredFocusedItem; // @synthesize preferredFocusedItem=_preferredFocusedItem;
 @property(retain, nonatomic, getter=_temporaryPresentationController, setter=_setTemporaryPresentationController:) UIPresentationController *temporaryPresentationController; // @synthesize temporaryPresentationController=_temporaryPresentationController;
@@ -273,7 +275,6 @@
 @property(nonatomic) double customNavigationInteractiveTransitionPercentComplete; // @synthesize customNavigationInteractiveTransitionPercentComplete=_customNavigationInteractiveTransitionPercentComplete;
 @property(nonatomic) double customNavigationInteractiveTransitionDuration; // @synthesize customNavigationInteractiveTransitionDuration=_customNavigationInteractiveTransitionDuration;
 @property(retain, nonatomic) NSMutableArray *mutableChildViewControllers; // @synthesize mutableChildViewControllers=_childViewControllers;
-- (void).cxx_destruct;
 - (BOOL)_shouldIgnoreChildFocusRegions;
 - (void)_setNeedsNonDeferredFocusUpdate;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

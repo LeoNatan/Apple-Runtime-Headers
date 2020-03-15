@@ -16,9 +16,9 @@
     CSLSnapshotService *_snapshotService;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSLSnapshotService *snapshotService; // @synthesize snapshotService=_snapshotService;
 @property(nonatomic) __weak CSLComplicationObserver *complicationObserver; // @synthesize complicationObserver=_complicationObserver;
-- (void).cxx_destruct;
 - (void)complicationDidReloadOrExtendForBundleIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)initWithComplicationObserver:(id)arg1;

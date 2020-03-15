@@ -22,13 +22,13 @@
 + (id)connectionWithConnectedSocket:(int)arg1;
 + (id)connectionWithEndpoint:(id)arg1 parameters:(id)arg2;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NWConcrete_nw_connection *internalConnection; // @synthesize internalConnection=_internalConnection;
 @property(retain) NWPath *internalPath; // @synthesize internalPath=_internalPath;
 @property(retain) NSError *internalError; // @synthesize internalError=_internalError;
 @property _Bool internalHasBetterPath; // @synthesize internalHasBetterPath=_internalHasBetterPath;
 @property _Bool internalIsViable; // @synthesize internalIsViable=_internalIsViable;
 @property long long internalConnectionState; // @synthesize internalConnectionState=_internalConnectionState;
-- (void).cxx_destruct;
 - (void)dumpTimestamps;
 @property(readonly, nonatomic) NWParameters *parameters;
 @property(readonly, nonatomic) NWEndpoint *endpoint;

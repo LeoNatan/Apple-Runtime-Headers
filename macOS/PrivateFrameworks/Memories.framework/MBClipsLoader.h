@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_previousClips;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *previousClips; // @synthesize previousClips=_previousClips;
 @property(retain) NSMutableArray *clips; // @synthesize clips=_clips;
 @property(nonatomic) BOOL showOnlyFavorites; // @synthesize showOnlyFavorites=_showOnlyFavorites;
 @property(nonatomic, getter=isLoading) BOOL loading; // @synthesize loading=_loading;
-- (void).cxx_destruct;
 - (void)load;
 - (void)stopLoading;
 - (void)startLoading;

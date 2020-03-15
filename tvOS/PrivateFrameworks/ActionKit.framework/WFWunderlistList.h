@@ -23,11 +23,11 @@
 + (id)createdAtJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long revision; // @synthesize revision=_revision;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long listId; // @synthesize listId=_listId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

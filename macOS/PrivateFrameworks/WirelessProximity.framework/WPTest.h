@@ -16,9 +16,9 @@
 }
 
 + (BOOL)holdVoucherForConnections;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *transfers; // @synthesize transfers=_transfers;
 @property(nonatomic) __weak id <WPTestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stateDidChange:(long long)arg1;
 - (void)disconnectedDeviceOverLEPipe:(id)arg1 withError:(id)arg2;
 - (void)disconnectedDevice:(id)arg1 withError:(id)arg2;

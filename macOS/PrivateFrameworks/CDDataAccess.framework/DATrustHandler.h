@@ -15,9 +15,9 @@
     NSMutableDictionary *_haveWarnedAboutCertDict;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *haveWarnedAboutCertDict; // @synthesize haveWarnedAboutCertDict=_haveWarnedAboutCertDict;
 @property(nonatomic) __weak id <DATrustHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned int)evaluateTrust:(struct __SecTrust *)arg1;
 - (BOOL)handleTrustChallenge:(id)arg1 forAccount:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)handleTrustChallenge:(id)arg1 forAccount:(id)arg2;

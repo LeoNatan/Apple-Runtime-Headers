@@ -15,10 +15,10 @@
     EKCalendarSuggestionNotification *_earliestSuggestionNotification;
 }
 
+- (void).cxx_destruct;
 @property(readonly) EKCalendarSuggestionNotification *earliestSuggestionNotification; // @synthesize earliestSuggestionNotification=_earliestSuggestionNotification;
 @property(readonly) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 descriptionText:(id)arg2 earliestSuggestionNotification:(id)arg3;
 
 @end

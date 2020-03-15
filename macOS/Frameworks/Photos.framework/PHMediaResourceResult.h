@@ -15,9 +15,9 @@
     NSURL *_assetResourceFileURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *assetResourceFileURL; // @synthesize assetResourceFileURL=_assetResourceFileURL;
 @property(retain, nonatomic) NSData *assetResourceData; // @synthesize assetResourceData=_assetResourceData;
-- (void).cxx_destruct;
 - (id)mediaMetadata;
 - (id)adjustmentData;
 - (id)videoURL;

@@ -15,8 +15,8 @@
 }
 
 + (id)defaultObserver;
-@property(copy, nonatomic) CDUnknownBlockType onUpdate; // @synthesize onUpdate=_onUpdate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType onUpdate; // @synthesize onUpdate=_onUpdate;
 - (void)finishReport;
 - (void)beginReport;
 - (void)_resizeBandStorage;

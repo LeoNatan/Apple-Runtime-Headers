@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *__progressByAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setProgressByAsset:) NSDictionary *_progressByAsset; // @synthesize _progressByAsset=__progressByAsset;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *_dataSourceManager; // @synthesize _dataSourceManager=__dataSourceManager;
-- (void).cxx_destruct;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)mutableChangeObject;

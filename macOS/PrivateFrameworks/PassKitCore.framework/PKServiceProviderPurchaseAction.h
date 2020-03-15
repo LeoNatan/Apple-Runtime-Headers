@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)actionWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToServiceProviderPurchaseAction:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

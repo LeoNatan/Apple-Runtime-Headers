@@ -39,6 +39,7 @@
 + (id)inputForSettings:(id)arg1 pluginID:(id)arg2;
 + (id)createAccountForApp:(id)arg1 settings:(id)arg2 providerID:(id)arg3 error:(id *)arg4;
 + (id)accountCreatorWithSettings:(id)arg1 pluginID:(id)arg2 providerID:(id)arg3;
+- (void).cxx_destruct;
 @property BOOL continueWithoutSSL; // @synthesize continueWithoutSSL=_continueWithoutSSL;
 @property BOOL continueThroughError; // @synthesize continueThroughError=_continueThroughError;
 @property(retain) NSString *token; // @synthesize token=_token;
@@ -49,7 +50,6 @@
 @property(retain) NSString *createdUID; // @synthesize createdUID=_createdUID;
 @property(retain) NSString *appleID; // @synthesize appleID=_appleID;
 @property(retain) IAProvider *provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (void)setResult:(id)arg1;
 - (void)_dataPluginSetupCertificateRefused:(id)arg1;
 - (void)_dataPluginSetupSucceeded:(id)arg1;

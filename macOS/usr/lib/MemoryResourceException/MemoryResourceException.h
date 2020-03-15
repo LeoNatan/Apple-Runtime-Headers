@@ -56,6 +56,7 @@
 
 + (id)resourceExceptionFromLogFileHandle:(id)arg1 error:(id *)arg2;
 + (id)resourceExceptionFromTask:(unsigned int)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *cachedMetaDataDict; // @synthesize cachedMetaDataDict=_cachedMetaDataDict;
 @property(readonly) NSArray *osLogs; // @synthesize osLogs=_osLogs;
 @property(readonly) unsigned long long ledgerNetworkNonvolatileCompressed; // @synthesize ledgerNetworkNonvolatileCompressed=_ledgerNetworkNonvolatileCompressed;
@@ -96,7 +97,6 @@
 @property(readonly) NSString *execName; // @synthesize execName=_execName;
 @property(readonly) NSDictionary *executionStack; // @synthesize executionStack=_executionStack;
 @property(readonly) VMUProcessObjectGraph *memoryGraph; // @synthesize memoryGraph=_memoryGraph;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMetaDataDict:(id)arg1 andMemoryGraph:(id)arg2;
 - (BOOL)isFirstParty;

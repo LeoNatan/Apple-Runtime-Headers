@@ -14,8 +14,8 @@
 }
 
 + (id)collectionWithSpecPools:(id)arg1;
-@property(readonly, nonatomic) NSArray *specPools; // @synthesize specPools=_specPools;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *specPools; // @synthesize specPools=_specPools;
 - (id)description;
 - (id)_allPossibleTitlesWithMomentNodes:(id)arg1 forHighlight:(_Bool)arg2;
 - (id)allPossibleTitlesWithHighlightMomentNodes:(id)arg1;

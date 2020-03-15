@@ -37,9 +37,9 @@
 }
 
 + (double)defaultDurationForTransition:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ignoreDirectTouchEvents; // @synthesize ignoreDirectTouchEvents=_ignoreDirectTouchEvents;
 @property(nonatomic) long long animationTimingCurve; // @synthesize animationTimingCurve=_animationTimingCurve;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)safeAreaInsetsDidChange;

@@ -19,12 +19,12 @@
 }
 
 + (id)defaultAggregateDictionary;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int requestSuccesses; // @synthesize requestSuccesses=_requestSuccesses;
 @property(nonatomic) unsigned int requestFailures; // @synthesize requestFailures=_requestFailures;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) NSMutableDictionary *failTrackerDict; // @synthesize failTrackerDict=_failTrackerDict;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_queue_addValueForScalarKey:(id)arg1 value:(int)arg2;
 - (void)_queue_pushValue:(double)arg1 forKey:(id)arg2;
 - (void)logLocationAccuracy:(double)arg1;

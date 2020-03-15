@@ -6,11 +6,12 @@
 
 #import <HealthDaemon/HKCodedObject-Protocol.h>
 
-@class NSArray, NSLocale, NSUUID;
+@class NSArray, NSLocale, NSString, NSUUID;
 
 @protocol HKConceptIndexable <HKCodedObject>
 + (NSArray *)cachedConceptRelationshipKeyPaths;
 + (NSArray *)indexableConceptKeyPaths;
+@property(readonly, copy, nonatomic) NSString *country;
 @property(readonly, copy, nonatomic) NSLocale *locale;
 @property(readonly) NSUUID *UUID;
 @end

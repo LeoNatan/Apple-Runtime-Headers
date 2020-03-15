@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     VideosExtrasGridSectionHeaderStyle *_sectionStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VideosExtrasGridSectionHeaderStyle *sectionStyle; // @synthesize sectionStyle=_sectionStyle;
 @property(retain, nonatomic) VideosExtrasGridElementViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) VideosExtrasStackTemplateViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
-- (void).cxx_destruct;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

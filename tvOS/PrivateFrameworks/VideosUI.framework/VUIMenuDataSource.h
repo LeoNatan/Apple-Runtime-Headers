@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_genreMenuItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *genreMenuItems; // @synthesize genreMenuItems=_genreMenuItems;
 @property(retain, nonatomic) NSArray *mainMenuItems; // @synthesize mainMenuItems=_mainMenuItems;
-- (void).cxx_destruct;
 - (id)initWithMainMenuItems:(id)arg1 genreMenuItems:(id)arg2;
 
 @end

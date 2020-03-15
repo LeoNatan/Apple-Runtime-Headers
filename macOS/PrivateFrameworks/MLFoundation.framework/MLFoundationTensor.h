@@ -33,6 +33,7 @@
 + (id)tensorWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 featureChannels:(unsigned long long)arg3 batchSize:(unsigned long long)arg4 fillWithFloatData:(float)arg5;
 + (id)tensorWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 featureChannels:(unsigned long long)arg3 batchSize:(unsigned long long)arg4;
 + (id)tensorWithDescriptor:(id)arg1 randomData:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *tensorDataOHWIForMPSConvolution; // @synthesize tensorDataOHWIForMPSConvolution=_tensorDataOHWIForMPSConvolution;
 @property(retain, nonatomic) NSMutableArray *deviceMemory; // @synthesize deviceMemory=_deviceMemory;
 @property(retain, nonatomic) NSMutableArray *childLayers; // @synthesize childLayers=_childLayers;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) int tensorValue; // @synthesize tensorValue=_tensorValue;
 @property(readonly, nonatomic) MLFoundationTensorDescriptor *tensorDescriptor; // @synthesize tensorDescriptor=_tensorDescriptor;
 @property(nonatomic) unsigned long long nextTensorID; // @synthesize nextTensorID=_nextTensorID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)readTensorDataFromAnyOneDevice:(id)arg1;
 - (void)dispatchWriteTensorDataToAllDevices:(id)arg1;

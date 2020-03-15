@@ -20,12 +20,12 @@
     id <CPSPanViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPSPanViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CPSPanButton *panDownButton; // @synthesize panDownButton=_panDownButton;
 @property(readonly, nonatomic) CPSPanButton *panUpButton; // @synthesize panUpButton=_panUpButton;
 @property(readonly, nonatomic) CPSPanButton *panRightButton; // @synthesize panRightButton=_panRightButton;
 @property(readonly, nonatomic) CPSPanButton *panLeftButton; // @synthesize panLeftButton=_panLeftButton;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double sideButtonTopInset;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;

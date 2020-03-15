@@ -15,8 +15,8 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
-@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void)reloadData;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (long long)_personTypeForSection:(long long)arg1;

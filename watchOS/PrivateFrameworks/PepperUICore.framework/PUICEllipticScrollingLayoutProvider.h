@@ -33,6 +33,7 @@
     float _alphaAccentuate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceCurvesBottom; // @synthesize forceCurvesBottom=_forceCurvesBottom;
 @property(nonatomic) _Bool curvesBottom; // @synthesize curvesBottom=_curvesBottom;
 @property(nonatomic) _Bool forceCurvesTop; // @synthesize forceCurvesTop=_forceCurvesTop;
@@ -47,7 +48,6 @@
 @property(nonatomic) _Bool flattenExtremesBottom; // @synthesize flattenExtremesBottom=_flattenExtremesBottom;
 @property(nonatomic) _Bool flattenExtremesTop; // @synthesize flattenExtremesTop=_flattenExtremesTop;
 @property(nonatomic) __weak id <PUICEllipticScrollingLayoutProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)parametersForIdentifier:(id)arg1;
 - (void)invalidate;
 - (void)_rebuildScrollingParameters;

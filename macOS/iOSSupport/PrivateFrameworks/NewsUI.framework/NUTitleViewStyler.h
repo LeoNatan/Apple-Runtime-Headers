@@ -15,8 +15,8 @@
     UIColor *_textColor;
 }
 
-@property(readonly, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (id)titleParagraphStyleWithWrapping:(BOOL)arg1;
 - (id)titleSmallFont;
 - (id)titleLargeFont;

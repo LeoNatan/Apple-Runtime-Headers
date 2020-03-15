@@ -21,9 +21,9 @@
 + (id)reviewAssetForLivePhoto:(id)arg1 withProperties:(id)arg2;
 + (id)reviewAssetForPhoto:(id)arg1 withProperties:(id)arg2;
 + (Class)cameraReviewViewControllerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_cachedReviewViewController, setter=_setCachedReviewViewController:) UIViewController<CAMCameraReviewViewController> *cachedReviewViewController; // @synthesize cachedReviewViewController=_cachedReviewViewController;
 @property(readonly, nonatomic) NSMutableArray *_pendingAssetsForReview; // @synthesize _pendingAssetsForReview=__pendingAssetsForReview;
-- (void).cxx_destruct;
 - (void)cameraViewController:(id)arg1 didCaptureAVAsset:(id)arg2 andAudioMix:(id)arg3 withProperties:(id)arg4 error:(id)arg5;
 - (void)cameraViewController:(id)arg1 didCaptureLivePhoto:(id)arg2 withProperties:(id)arg3 error:(id)arg4;
 - (void)cameraViewController:(id)arg1 didCapturePhoto:(id)arg2 withProperties:(id)arg3 error:(id)arg4;

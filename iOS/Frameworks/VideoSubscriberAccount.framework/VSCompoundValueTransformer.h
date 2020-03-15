@@ -13,8 +13,8 @@
     NSArray *_valueTransformers;
 }
 
-@property(copy, nonatomic) NSArray *valueTransformers; // @synthesize valueTransformers=_valueTransformers;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *valueTransformers; // @synthesize valueTransformers=_valueTransformers;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 - (id)init;

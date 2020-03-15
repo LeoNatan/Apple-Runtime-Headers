@@ -13,8 +13,8 @@
     NSString *_defaultNamingContext;
 }
 
-@property(retain, nonatomic) NSString *defaultNamingContext; // @synthesize defaultNamingContext=_defaultNamingContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *defaultNamingContext; // @synthesize defaultNamingContext=_defaultNamingContext;
 - (id)daLevelErrorForLDAPError:(int)arg1;
 - (int)numDownloadedElements;
 - (void)finishWithError:(id)arg1;

@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) PXPlacesMapPipeline *currentPipeline; // @synthesize currentPipeline=_currentPipeline;
 @property(retain, nonatomic) PXPlacesMapPipeline *albumPipeline; // @synthesize albumPipeline=_albumPipeline;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <PXPlacesMapGeotaggableInfoDelegate> geotaggableInfoDelegate; // @synthesize geotaggableInfoDelegate=_geotaggableInfoDelegate;
 @property(nonatomic) unsigned long long contentMode; // @synthesize contentMode=_contentMode;
 @property(retain, nonatomic) id <PXPlacesMapControllerAccess> mapViewController; // @synthesize mapViewController=_mapViewController;
-- (void).cxx_destruct;
 - (void)focusOnMapRect:(CDStruct_02837cd9)arg1 animated:(_Bool)arg2;
 - (void)focusOnGeotaggablesAnimated:(_Bool)arg1;
 - (void)focusOnProvidedAssetsImmediately;

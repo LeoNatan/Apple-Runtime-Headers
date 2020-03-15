@@ -18,9 +18,9 @@
 
 + (id)new;
 + (id)analytics;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingAnalyticsEventQueue; // @synthesize pendingAnalyticsEventQueue=_pendingAnalyticsEventQueue;
 @property(nonatomic) _Bool shouldLogAnalyticsEvents; // @synthesize shouldLogAnalyticsEvents=_shouldLogAnalyticsEvents;
-- (void).cxx_destruct;
 - (void)flushPendingAnalyticsEventQueue;
 - (void)_enqueueAnalyticsEvent:(id)arg1;
 - (void)enqueueCurrentAnalyticsEventWithType:(long long)arg1 context:(id)arg2;

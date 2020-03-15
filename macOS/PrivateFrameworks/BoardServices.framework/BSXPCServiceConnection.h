@@ -44,8 +44,8 @@
 + (id)connectionWithConnection:(id)arg1;
 + (id)connectionWithEndpoint:(id)arg1 nonLaunching:(BOOL)arg2 description:(id)arg3;
 + (id)connectionWithServiceName:(id)arg1 privileged:(BOOL)arg2;
-@property(readonly, nonatomic) BSXPCServiceConnectionContext *_context; // @synthesize _context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSXPCServiceConnectionContext *_context; // @synthesize _context;
 @property(readonly, copy) NSString *description;
 - (void)invalidate;
 - (id)createMessageWithCompletion:(CDUnknownBlockType)arg1;

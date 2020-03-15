@@ -17,10 +17,10 @@
 
 + (id)itemWithTitle:(id)arg1 subtitle:(id)arg2 andBlock:(CDUnknownBlockType)arg3;
 + (id)itemWithTitle:(id)arg1 andBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 andBlock:(CDUnknownBlockType)arg3;
 
 @end

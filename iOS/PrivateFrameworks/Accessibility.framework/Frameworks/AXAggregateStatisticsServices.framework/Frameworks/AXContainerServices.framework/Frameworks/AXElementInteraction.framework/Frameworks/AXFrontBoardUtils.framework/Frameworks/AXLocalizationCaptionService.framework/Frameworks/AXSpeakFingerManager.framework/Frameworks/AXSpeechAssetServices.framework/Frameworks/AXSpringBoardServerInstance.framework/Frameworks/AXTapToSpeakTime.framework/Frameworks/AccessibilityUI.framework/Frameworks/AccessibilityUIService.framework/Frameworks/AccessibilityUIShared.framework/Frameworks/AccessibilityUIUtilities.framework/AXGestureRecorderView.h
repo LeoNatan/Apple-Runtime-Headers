@@ -32,6 +32,7 @@
     struct CGRect _constrainedBoundsForDrawing;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *previouslyActiveLayersByInstantReplayFingerIndex; // @synthesize previouslyActiveLayersByInstantReplayFingerIndex=_previouslyActiveLayersByInstantReplayFingerIndex;
 @property(retain, nonatomic) UIAccessibilityCustomAction *showControlsAction; // @synthesize showControlsAction=_showControlsAction;
 @property(retain, nonatomic) UIAccessibilityCustomAction *hideControlsAction; // @synthesize hideControlsAction=_hideControlsAction;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) UIView *dynamicFingerPathsContainerView; // @synthesize dynamicFingerPathsContainerView=_dynamicFingerPathsContainerView;
 @property(retain, nonatomic) AXGestureRecorderStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) __weak id <AXGestureRecorderViewDelegate> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)hideStaticView;
 - (void)deleteAllFingerPaths;

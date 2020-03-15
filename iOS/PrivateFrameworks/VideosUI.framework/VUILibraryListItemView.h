@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIImageView *_listImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *listImageView; // @synthesize listImageView=_listImageView;
 @property(retain, nonatomic) UIImage *itemImage; // @synthesize itemImage=_itemImage;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (struct CGSize)_layoutWithSize:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

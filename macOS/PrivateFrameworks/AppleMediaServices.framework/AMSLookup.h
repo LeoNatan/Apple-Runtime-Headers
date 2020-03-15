@@ -28,6 +28,7 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property(retain) NSString *language; // @synthesize language=_language;
 @property long long version; // @synthesize version=_version;
 @property long long signatureType; // @synthesize signatureType=_signatureType;
@@ -37,7 +38,6 @@
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain) NSString *caller; // @synthesize caller=_caller;
 @property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
-- (void).cxx_destruct;
 - (void)setContract:(id)arg1;
 - (id)contract;
 - (id)initWithBagContract:(id)arg1 caller:(id)arg2 keyProfile:(id)arg3;

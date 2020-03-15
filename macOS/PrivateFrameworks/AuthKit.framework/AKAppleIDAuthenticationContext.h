@@ -65,6 +65,7 @@
     AKAnisetteData *_companionDeviceAnisetteData;
     AKAnisetteData *_proxiedDeviceAnisetteData;
     NSString *_appProvidedContext;
+    NSString *_masterKey;
     NSString *_username;
     long long _serviceType;
     NSString *_reason;
@@ -90,6 +91,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayTitle; // @synthesize displayTitle=_displayTitle;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(copy, nonatomic) NSString *securityUpgradeContext; // @synthesize securityUpgradeContext=_securityUpgradeContext;
@@ -130,6 +132,7 @@
 @property BOOL shouldAllowAppleIDCreation; // @synthesize shouldAllowAppleIDCreation=_shouldAllowAppleIDCreation;
 @property BOOL isUsernameEditable; // @synthesize isUsernameEditable=_isUsernameEditable;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
+@property(copy, setter=_setMasterKey:) NSString *_masterKey; // @synthesize _masterKey;
 @property(copy) NSString *appProvidedContext; // @synthesize appProvidedContext=_appProvidedContext;
 @property(retain) AKAnisetteData *proxiedDeviceAnisetteData; // @synthesize proxiedDeviceAnisetteData=_proxiedDeviceAnisetteData;
 @property(retain) AKAnisetteData *companionDeviceAnisetteData; // @synthesize companionDeviceAnisetteData=_companionDeviceAnisetteData;
@@ -147,7 +150,6 @@
 @property(readonly) NSUUID *_identifier; // @synthesize _identifier;
 @property(copy, setter=_setProxiedAppBundleID:) NSString *_proxiedAppBundleID; // @synthesize _proxiedAppBundleID;
 @property(setter=_setProxyingForApp:) BOOL _isProxyingForApp; // @synthesize _isProxyingForApp;
-- (void).cxx_destruct;
 - (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentSecondFactorAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dismissSecondFactorUIWithCompletion:(CDUnknownBlockType)arg1;

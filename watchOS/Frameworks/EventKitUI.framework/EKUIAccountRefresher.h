@@ -19,10 +19,10 @@
     NSSet *_refreshingSources;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *refreshingSources; // @synthesize refreshingSources=_refreshingSources;
 @property(readonly, nonatomic) _Bool refreshing; // @synthesize refreshing=_refreshing;
 @property(nonatomic) __weak id <EKUIAccountRefresherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allAccountsOffline;
 - (_Bool)sourceFinishedRefreshing:(id)arg1;
 - (void)_syncCompleted;

@@ -25,9 +25,9 @@
 + (id)storeFrontHeaderSuffix;
 + (void)incrementNetworkCounterForBagContext:(id)arg1;
 + (void)decrementNetworkCounterForBagContext:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *accountDSID; // @synthesize accountDSID=_accountDSID;
 @property(readonly) SSURLBagContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (_Bool)_setURLBagWithDictionary:(id)arg1 response:(id)arg2 error:(id *)arg3;
 - (void)_setOutputURLBag:(id)arg1;
 - (void)_sendPingsForURLBag:(id)arg1;

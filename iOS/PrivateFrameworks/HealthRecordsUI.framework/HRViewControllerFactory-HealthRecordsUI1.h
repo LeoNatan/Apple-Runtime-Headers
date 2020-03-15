@@ -9,5 +9,6 @@
 #import <HealthRecordsUI/HRConceptViewControllerFactory-Protocol.h>
 
 @interface HRViewControllerFactory (HealthRecordsUI1) <HRConceptViewControllerFactory>
+- (id)makeViewControllerForConcept:(id)arg1 fromCategory:(id)arg2 highlightedRecordId:(id)arg3;
 @end
 

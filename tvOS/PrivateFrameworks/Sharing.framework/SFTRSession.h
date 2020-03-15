@@ -23,13 +23,13 @@
     CDUnknownBlockType _sendRequestImpHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sendRequestImpHandler; // @synthesize sendRequestImpHandler=_sendRequestImpHandler;
 @property(copy, nonatomic) CDUnknownBlockType sendEventImpHandler; // @synthesize sendEventImpHandler=_sendEventImpHandler;
 @property(copy, nonatomic) CDUnknownBlockType disconnectHandler; // @synthesize disconnectHandler=_disconnectHandler;
 @property(nonatomic, getter=isConnected) _Bool connected; // @synthesize connected=_connected;
 @property(retain, nonatomic) SFSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (id)_decodeTRMessageData:(id)arg1 kindOfClass:(Class)arg2;
 @property(readonly, nonatomic) TRSession *trSession;
 - (void)setRequestHandler:(CDUnknownBlockType)arg1 forRequestClass:(Class)arg2;

@@ -10,13 +10,13 @@
 
 @interface DOCManagedPermission : NSObject
 {
-    _Bool _isEphemeralMultiUser;
     _Bool _mayOpenFromManagedToUnmanaged;
     _Bool _mayOpenFromUnmanagedToManaged;
     _Bool _isManagedAppsCloudSyncDisallowed;
     _Bool _hasOpenInRestrictions;
     _Bool _isUSBAccessAllowed;
     _Bool _isNetworkDriveAccessInFilesAllowed;
+    _Bool _isLocalStorageAllowed;
     _Bool _didLoadSharedConnectionValues;
     NSString *_hostIdentifier;
     unsigned long long _hostAccountDataOwnerState;
@@ -26,12 +26,12 @@
 }
 
 + (id)defaultPermission;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) NSCache *appContainerIDCache; // @synthesize appContainerIDCache=_appContainerIDCache;
 @property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 @property(nonatomic) unsigned long long hostAccountDataOwnerState; // @synthesize hostAccountDataOwnerState=_hostAccountDataOwnerState;
 @property(retain, nonatomic) NSString *hostIdentifier; // @synthesize hostIdentifier=_hostIdentifier;
-- (void).cxx_destruct;
 - (id)allowedFileProviderBundleIdentifiersForHostBundleIdentifier:(id)arg1;
 - (void)cleanAppContainerBundleIDCache;
 - (id)appContainerBundleIDForFPItem:(id)arg1;
@@ -56,13 +56,12 @@
 - (void)dealloc;
 - (id)init;
 - (_Bool)hasAnyEffectiveRestrictions;
+- (_Bool)isLocalStorageAllowed;
 @property(readonly, nonatomic) _Bool isNetworkDriveAllowed;
 @property(readonly, nonatomic) _Bool isUSBAccessAllowed;
 @property(readonly, nonatomic) _Bool hasOpenInRestrictions;
 - (_Bool)isManagedAppsCloudSyncAllowed;
 - (_Bool)isManagedAppsCloudSyncDisallowed;
-@property(readonly, nonatomic) _Bool isInEducationMode;
-- (_Bool)isEphemeralMultiUser;
 - (_Bool)mayOpenFromUnmanagedToManaged;
 - (_Bool)mayOpenFromManagedToUnmanaged;
 - (void)_loadSharedConnectionValues;

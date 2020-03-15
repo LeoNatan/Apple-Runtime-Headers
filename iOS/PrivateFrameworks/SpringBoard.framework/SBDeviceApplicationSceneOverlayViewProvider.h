@@ -16,9 +16,9 @@
     SBDeviceApplicationSceneHandle *_sceneHandle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBDeviceApplicationSceneHandle *sceneHandle; // @synthesize sceneHandle=_sceneHandle;
 @property(readonly, nonatomic) __weak id <SBDeviceApplicationSceneOverlayViewProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_realOverlayViewController;
 - (void)_deactivateIfPossible;
 - (void)_activateIfPossible;

@@ -22,11 +22,11 @@
 }
 
 + (_Bool)shouldNotificationRequestPresentAsLongLook:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> starModeDisableAssertion; // @synthesize starModeDisableAssertion=_starModeDisableAssertion;
 @property(retain, nonatomic) id <BSInvalidatable> idleTimerDisableAssertion; // @synthesize idleTimerDisableAssertion=_idleTimerDisableAssertion;
 @property(nonatomic) __weak id <NCNotificationAlertDestination><NCNotificationViewControllerDelegatePrivate><NCNotificationViewControllerObserving> parentDestination; // @synthesize parentDestination=_parentDestination;
 @property(retain, nonatomic) NCNotificationViewController *presentedBanner; // @synthesize presentedBanner=_presentedBanner;
-- (void).cxx_destruct;
 - (void)homeGestureParticipantOwningHomeGestureDidChange:(id)arg1;
 - (void)notificationViewControllerDidDismiss:(id)arg1;
 - (void)notificationViewControllerWillDismiss:(id)arg1;

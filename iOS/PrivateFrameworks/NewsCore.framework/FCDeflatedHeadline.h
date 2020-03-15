@@ -17,9 +17,9 @@
     FCSharedStringIndex *_sharedStrings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCSharedStringIndex *sharedStrings; // @synthesize sharedStrings=_sharedStrings;
 @property(readonly, nonatomic) NTPBFeedViewportHeadline *pbHeadline; // @synthesize pbHeadline=_pbHeadline;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool useTransparentNavigationBar;
 @property(readonly, nonatomic) unsigned long long role;
 @property(readonly, copy, nonatomic) NSString *language;

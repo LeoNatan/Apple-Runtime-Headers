@@ -16,9 +16,9 @@
     NSDictionary *_momentNodesToResolvePOIAndEnrichByBusinessItemMuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *momentNodesToResolvePOIAndEnrichByBusinessItemMuid; // @synthesize momentNodesToResolvePOIAndEnrichByBusinessItemMuid=_momentNodesToResolvePOIAndEnrichByBusinessItemMuid;
 @property(readonly, nonatomic) NSDictionary *momentNodesToResolvePOIByRegion; // @synthesize momentNodesToResolvePOIByRegion=_momentNodesToResolvePOIByRegion;
-- (void).cxx_destruct;
 - (_Bool)_fetchPointsOfInterestForRegions:(id)arg1 graph:(id)arg2 progress:(CDUnknownBlockType)arg3;
 - (void)_collectPOIsToResolveWithMomentNodes:(id)arg1 graphUpdate:(id)arg2 progress:(CDUnknownBlockType)arg3;
 - (id)_pointOfInterestTypeStringsFromBusinessItems:(id)arg1 withOriginalCoordinate:(struct CLLocationCoordinate2D)arg2;

@@ -15,9 +15,9 @@
     UIView *_overlayView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AAUILabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)_updateOverlayViewVisibility;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_updateLabelVisibility;

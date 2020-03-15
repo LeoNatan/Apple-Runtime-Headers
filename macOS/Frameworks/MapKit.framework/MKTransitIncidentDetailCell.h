@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSDate *_lastUpdated;
 }
 
-@property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 - (id)multilineTextFieldsWithinContainer;
 - (void)_updateLastUpdatedLabel;
 @property(copy, nonatomic) NSString *incidentDescription;

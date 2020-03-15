@@ -51,9 +51,9 @@
 + (long long)defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2;
 + (double)_heightForStyle:(long long)arg1 orientation:(long long)arg2 forStatusBarFrame:(BOOL)arg3;
 + (BOOL)_shouldForwardToImplementationClassForStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTimeHidden) BOOL timeHidden; // @synthesize timeHidden=_timeHidden;
 - (BOOL)disablesRasterization;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_dateTimePreferencesUpdated;
 - (BOOL)_rectIntersectsTimeItem:(struct CGRect)arg1;

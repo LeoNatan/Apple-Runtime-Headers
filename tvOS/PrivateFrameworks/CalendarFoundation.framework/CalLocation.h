@@ -32,6 +32,7 @@
 + (id)coordinatesFromGeoURLString:(id)arg1;
 + (id)geoURLStringFromCoordinates:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSData *mapKitHandle; // @synthesize mapKitHandle=_mapKitHandle;
 @property(copy) NSString *routeType; // @synthesize routeType=_routeType;
 @property int type; // @synthesize type=_type;
@@ -40,7 +41,6 @@
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)geoURLString;
 - (id)fullTitleAndAddressString;
 - (id)displayString;

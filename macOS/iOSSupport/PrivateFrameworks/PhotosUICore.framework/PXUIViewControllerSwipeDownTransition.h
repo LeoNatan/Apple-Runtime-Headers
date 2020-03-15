@@ -23,13 +23,13 @@
 }
 
 + (BOOL)isTransitionSupportedWithMasterViewController:(id)arg1 detailViewController:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) PXSwipeDownTracker *swipeDownTracker; // @synthesize swipeDownTracker=_swipeDownTracker;
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(nonatomic) struct CGPoint swipeViewInitialCenter; // @synthesize swipeViewInitialCenter=_swipeViewInitialCenter;
 @property(retain, nonatomic) UIView *swipedView; // @synthesize swipedView=_swipedView;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (BOOL)isInteractive;
 - (void)_updateDimmingViewOrder;

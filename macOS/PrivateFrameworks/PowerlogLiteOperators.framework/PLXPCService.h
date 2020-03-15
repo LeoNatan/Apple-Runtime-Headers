@@ -24,6 +24,7 @@
     PLSemaphore *_satelliteProcessSemaphore;
 }
 
++ (BOOL)allowQueryFromPeer:(id)arg1;
 + (id)defaults;
 + (id)entryAggregateDefinitionXPCEvent;
 + (id)entryAggregateDefinitions;
@@ -33,6 +34,7 @@
 + (id)entryEventPointDefinitionClientLoggingDrops;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property unsigned int responderWaitTime; // @synthesize responderWaitTime=_responderWaitTime;
 @property(retain) PLSemaphore *satelliteProcessSemaphore; // @synthesize satelliteProcessSemaphore=_satelliteProcessSemaphore;
 @property(retain) PLNSNotificationOperatorComposition *dailyTaskNotification; // @synthesize dailyTaskNotification=_dailyTaskNotification;
@@ -44,7 +46,6 @@
 @property(retain) NSMutableDictionary *registeredResponders; // @synthesize registeredResponders=_registeredResponders;
 @property(retain) NSMutableDictionary *registeredListeners; // @synthesize registeredListeners=_registeredListeners;
 @property(retain) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (void)setSatelliteProcessExit;
 - (void)setSatelliteProcessExitWithTime:(double)arg1;
 - (void)stopPowerlogHelperd:(id)arg1;

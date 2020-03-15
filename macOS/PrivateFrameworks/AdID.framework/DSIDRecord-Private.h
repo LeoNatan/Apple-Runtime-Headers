@@ -19,6 +19,7 @@
 - (void)sendSegmentDataToAdPlatforms:(CDUnknownBlockType)arg1;
 - (void)retrieveSegmentDataFromiTunes:(CDUnknownBlockType)arg1;
 - (BOOL)isActiveRecord;
+- (void)reconcileIDFAandLATSkippingEnabledCheck:(BOOL)arg1;
 - (void)reconcileIDFAandLAT;
 - (void)resetiAdIDsAndDPID:(CDUnknownBlockType)arg1;
 - (void)resetiAdIDs;

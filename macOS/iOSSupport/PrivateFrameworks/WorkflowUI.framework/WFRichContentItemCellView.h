@@ -26,6 +26,7 @@
     NSArray *_verticalConstraintsWithoutSubtitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *verticalConstraintsWithoutSubtitle; // @synthesize verticalConstraintsWithoutSubtitle=_verticalConstraintsWithoutSubtitle;
 @property(copy, nonatomic) NSArray *verticalConstraintsWithSubtitle; // @synthesize verticalConstraintsWithSubtitle=_verticalConstraintsWithSubtitle;
 @property(copy, nonatomic) NSArray *firstRowConstraintsWithoutAltText; // @synthesize firstRowConstraintsWithoutAltText=_firstRowConstraintsWithoutAltText;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) WFContentItem *item; // @synthesize item=_item;
 @property(nonatomic) BOOL alwaysLeftAlign; // @synthesize alwaysLeftAlign=_alwaysLeftAlign;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *accessibilityLabel;
 - (void)setContentAlertButton:(id)arg1;
 - (void)setAttributedAlertButton:(id)arg1;

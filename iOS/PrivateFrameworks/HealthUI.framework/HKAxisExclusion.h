@@ -15,8 +15,8 @@
     NSMutableArray *_excludedRects;
 }
 
-@property(retain, nonatomic) NSMutableArray *excludedRects; // @synthesize excludedRects=_excludedRects;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *excludedRects; // @synthesize excludedRects=_excludedRects;
 - (_Bool)excludeRect:(struct CGRect)arg1;
 - (id)init;
 

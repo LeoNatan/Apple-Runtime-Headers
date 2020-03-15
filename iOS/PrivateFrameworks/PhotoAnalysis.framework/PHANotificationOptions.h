@@ -22,6 +22,7 @@
 }
 
 + (id)stringFromNotificationType:(unsigned char)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *collectionUUID; // @synthesize collectionUUID=_collectionUUID;
 @property(retain, nonatomic) PHAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(unsigned char)arg1;
 

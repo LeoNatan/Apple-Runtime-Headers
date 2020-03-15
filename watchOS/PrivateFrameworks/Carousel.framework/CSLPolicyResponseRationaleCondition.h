@@ -15,10 +15,10 @@
     double _requiredValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double requiredValue; // @synthesize requiredValue=_requiredValue;
 @property(nonatomic) double currentValue; // @synthesize currentValue=_currentValue;
 @property(copy, nonatomic) NSString *condition; // @synthesize condition=_condition;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *rationaleDescription;
 - (id)initWithCondition:(id)arg1 currentValue:(double)arg2 requiredValue:(double)arg3;
 

@@ -15,8 +15,8 @@
     SVVideoPlaybackManager *_playbackManager;
 }
 
-@property(readonly, nonatomic) __weak SVVideoPlaybackManager *playbackManager; // @synthesize playbackManager=_playbackManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak SVVideoPlaybackManager *playbackManager; // @synthesize playbackManager=_playbackManager;
 - (void)pause;
 - (void)play;
 - (id)initWithPlaybackManager:(id)arg1;

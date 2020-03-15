@@ -17,8 +17,8 @@
 
 + (id)uuid;
 + (void)initialize;
-@property(readonly, nonatomic) AWDHomeKitEventTriggerExecutionSession *metric; // @synthesize metric=_metric;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AWDHomeKitEventTriggerExecutionSession *metric; // @synthesize metric=_metric;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 - (id)initWithSessionID:(id)arg1;

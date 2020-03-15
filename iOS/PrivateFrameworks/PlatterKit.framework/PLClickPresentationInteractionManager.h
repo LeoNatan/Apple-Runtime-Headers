@@ -39,11 +39,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_willPresent, setter=_setWillPresent:) _Bool willPresent; // @synthesize willPresent=_willPresent;
 @property(nonatomic, setter=_setDidInteractionInitiateWithHint:) _Bool didInteractionInitiateWithHint; // @synthesize didInteractionInitiateWithHint=_didInteractionInitiateWithHint;
 @property(readonly, nonatomic) __weak UIViewController<PLClickPresentationInteractionPresentable> *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(nonatomic) __weak id <PLClickPresentationInteractionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_delegateShouldAllowLongPressGesture;
 - (void)_setPresentingViewControllerHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)_presentedViewController;

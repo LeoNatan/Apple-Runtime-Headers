@@ -17,12 +17,12 @@
     NSString *_emailAddress;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property BOOL migrateLocalData; // @synthesize migrateLocalData=_migrateLocalData;
 @property(retain) NSString *autoSchema; // @synthesize autoSchema=_autoSchema;
 @property(retain) NSString *autoHostname; // @synthesize autoHostname=_autoHostname;
 @property(retain) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
-- (void).cxx_destruct;
 
 @end
 

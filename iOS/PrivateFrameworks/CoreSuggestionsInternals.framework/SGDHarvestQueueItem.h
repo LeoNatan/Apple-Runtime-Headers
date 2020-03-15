@@ -15,10 +15,10 @@
     unsigned long long _fails;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long fails; // @synthesize fails=_fails;
 @property(readonly) CSSearchableItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) long long itemId; // @synthesize itemId=_itemId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool highPriority;
 - (void)markAsFailed;
 - (void)finish;

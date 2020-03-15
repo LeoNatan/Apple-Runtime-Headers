@@ -36,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *txMaxBitrate; // @synthesize txMaxBitrate=_txMaxBitrate;
 @property(retain, nonatomic) NSNumber *txMinBitrate; // @synthesize txMinBitrate=_txMinBitrate;
 @property(retain, nonatomic) NSNumber *dataLink; // @synthesize dataLink=_dataLink;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSNumber *codec; // @synthesize codec=_codec;
 @property(retain, nonatomic) NSNumber *cipher; // @synthesize cipher=_cipher;
 @property(retain, nonatomic) SidecarDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

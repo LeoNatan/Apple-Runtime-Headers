@@ -17,6 +17,7 @@
 - (void)conditionallyPinTags:(NSSet *)arg1 inBundle:(NSURL *)arg2 completionHandler:(void (^)(_Bool, NSDictionary *))arg3;
 - (void)pinTags:(NSSet *)arg1 inBundle:(NSURL *)arg2 priority:(double)arg3 completionHandler:(void (^)(NSDictionary *, NSError *))arg4;
 - (void)tagStateInBundle:(NSURL *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)beginWithBundleURL:(NSURL *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)beginODRSessionWithBundleURL:(NSURL *)arg1 completionHandler:(void (^)(NSDictionary *))arg2;
 - (void)hello:(void (^)(void))arg1;
 @end

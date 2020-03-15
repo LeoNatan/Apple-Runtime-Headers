@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     CKDOperationMetrics *_aggregateMMCSMetrics;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKDOperationMetrics *aggregateMMCSMetrics; // @synthesize aggregateMMCSMetrics=_aggregateMMCSMetrics;
 @property(readonly, nonatomic) CKDOperationMetrics *aggregateCKMetrics; // @synthesize aggregateCKMetrics=_aggregateCKMetrics;
 @property(readonly) unsigned long long operationCount; // @synthesize operationCount=_operationCount;
 @property(readonly, nonatomic) NSMutableDictionary *recentErrorsByDate; // @synthesize recentErrorsByDate=_recentErrorsByDate;
 @property(readonly, nonatomic) NSString *operationClassName; // @synthesize operationClassName=_operationClassName;
-- (void).cxx_destruct;
 - (id)CKStatusReportArray;
 - (void)merge:(id)arg1;
 - (void)addOperation:(id)arg1;

@@ -26,11 +26,11 @@
     id <HKDocumentPickerViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKDocumentPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableSet *enabledSamples; // @synthesize enabledSamples=_enabledSamples;
 @property(readonly, nonatomic) NSSet *allSamples; // @synthesize allSamples=_allSamples;
 @property(retain, nonatomic) HKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) HKHealthStore *healthStore;
 - (void)cdaDocumentTableViewCellDidChangeValue:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

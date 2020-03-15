@@ -25,11 +25,3 @@ struct CGSize {
     double height;
 };
 
-struct NSImage {
-    Class _field1;
-};
-
-struct NSWindowController {
-    Class _field1;
-};
-

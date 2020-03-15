@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UILabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_setupSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;
 

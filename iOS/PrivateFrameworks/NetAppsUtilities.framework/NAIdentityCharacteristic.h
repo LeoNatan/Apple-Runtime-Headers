@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     long long _role;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long role; // @synthesize role=_role;
 @property(copy, nonatomic) CDUnknownBlockType hashBlock; // @synthesize hashBlock=_hashBlock;
 @property(copy, nonatomic) CDUnknownBlockType comparisonBlock; // @synthesize comparisonBlock=_comparisonBlock;
 @property(copy, nonatomic) CDUnknownBlockType retrievalBlock; // @synthesize retrievalBlock=_retrievalBlock;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

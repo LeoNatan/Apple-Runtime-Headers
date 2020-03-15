@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_attributedStringWithMenuItem:(id)arg1 context:(id)arg2;
 + (void)requestLayoutWithMenus:(id)arg1 width:(long long)arg2 context:(id)arg3;
-@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)setButtonTarget:(id)arg1 action:(SEL)arg2;

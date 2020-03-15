@@ -30,10 +30,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) __weak HMBulletinBoardNotification *bulletinBoardNotification; // @synthesize bulletinBoardNotification=_bulletinBoardNotification;
-- (void).cxx_destruct;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -30,6 +30,7 @@
     NSMutableArray *_pendingSnapshotUpdates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *pendingSnapshotUpdates; // @synthesize pendingSnapshotUpdates=_pendingSnapshotUpdates;
 @property(readonly, nonatomic) BOOL isSnapshot; // @synthesize isSnapshot=_isSnapshot;
 @property(retain, nonatomic) _NSDataSourceSnapshotter *dataSourceSnapshot; // @synthesize dataSourceSnapshot=_dataSourceSnapshot;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) CDUnknownBlockType collectionViewItemProvider; // @synthesize collectionViewItemProvider=_collectionViewItemProvider;
 @property(copy, nonatomic) CDUnknownBlockType nsSupplementaryViewProvider; // @synthesize nsSupplementaryViewProvider=_nsSupplementaryViewProvider;
 @property(readonly, nonatomic) __weak NSCollectionView *nsCollectionView; // @synthesize nsCollectionView=_nsCollectionView;
-- (void).cxx_destruct;
 - (id)_viewForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2 nsCollectionView:(id)arg3;
 - (id)_itemAtIndexPath:(id)arg1 nsCollectionView:(id)arg2;
 - (long long)_numberOfItemsInSection:(long long)arg1 nsCollectionView:(id)arg2;

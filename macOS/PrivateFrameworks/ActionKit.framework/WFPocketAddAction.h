@@ -17,9 +17,9 @@
     NSError *_lastError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *lastError; // @synthesize lastError=_lastError;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *addGroup; // @synthesize addGroup=_addGroup;
-- (void).cxx_destruct;
 - (void)pocketAPI:(id)arg1 receivedResponse:(id)arg2 forAPIMethod:(id)arg3 error:(id)arg4;
 - (void)finishRunningWithError:(id)arg1;
 - (void)runAsynchronouslyWithInput:(id)arg1;

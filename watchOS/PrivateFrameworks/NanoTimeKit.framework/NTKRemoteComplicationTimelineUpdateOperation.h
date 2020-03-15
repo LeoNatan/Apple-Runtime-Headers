@@ -16,8 +16,8 @@
     CDUnknownBlockType _getControllersHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType getControllersHandler; // @synthesize getControllersHandler=_getControllersHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType getControllersHandler; // @synthesize getControllersHandler=_getControllersHandler;
 - (int)blacklistPolicy;
 - (_Bool)requiresActiveComplications;
 - (void)_endSession;

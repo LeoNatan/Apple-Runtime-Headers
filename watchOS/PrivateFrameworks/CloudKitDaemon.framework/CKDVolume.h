@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_mountToPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mountToPath; // @synthesize mountToPath=_mountToPath;
 @property(retain, nonatomic) NSNumber *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain, nonatomic) NSUUID *volumeUUID; // @synthesize volumeUUID=_volumeUUID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)initWithVolumeUUID:(id)arg1 deviceID:(id)arg2 mountToPath:(id)arg3;

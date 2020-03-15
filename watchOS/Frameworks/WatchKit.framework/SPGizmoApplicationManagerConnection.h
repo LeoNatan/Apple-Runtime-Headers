@@ -27,6 +27,7 @@
 + (id)extensionIdentifierForCompanionApplicationBundleIdentifier:(id)arg1;
 + (id)companionApplicationBundleIdentifierForExtensionIdentifier:(id)arg1;
 + (id)sharedConnection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectQueue; // @synthesize connectQueue=_connectQueue;
 @property(nonatomic) unsigned int wkAppActiveUIStateInterestedStateTypes; // @synthesize wkAppActiveUIStateInterestedStateTypes=_wkAppActiveUIStateInterestedStateTypes;
 @property(retain, nonatomic) NSMutableSet *wkAppActiveUIStateBundleIDs; // @synthesize wkAppActiveUIStateBundleIDs=_wkAppActiveUIStateBundleIDs;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) CDUnknownBlockType wkAppStateCallback; // @synthesize wkAppStateCallback=_wkAppStateCallback;
 @property _Bool connectionIsValid; // @synthesize connectionIsValid=_connectionIsValid;
 @property(retain) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
-- (void).cxx_destruct;
 - (void)receiveData:(id)arg1;
 - (void)_watchKitAppActiveUIStateDidChange;
 - (void)removeObservedWatchKitApplicationUIActiveState:(id)arg1;

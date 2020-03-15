@@ -22,6 +22,7 @@
     CKTranscriptTypingIndicatorCell *_fakeTypingIndicatorCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKTranscriptTypingIndicatorCell *fakeTypingIndicatorCell; // @synthesize fakeTypingIndicatorCell=_fakeTypingIndicatorCell;
 @property(retain, nonatomic) CKChatControllerDummyAnimator *animator; // @synthesize animator=_animator;
 @property(retain, nonatomic) CKSendAnimationWindow *sendAnimationWindow; // @synthesize sendAnimationWindow=_sendAnimationWindow;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <CKThrowAnimationManagerDelegate> throwManagerDelegate; // @synthesize throwManagerDelegate=_throwManagerDelegate;
 @property(nonatomic) __weak id <CKSendAnimationBalloonProvider> sendAnimationBalloonProvider; // @synthesize sendAnimationBalloonProvider=_sendAnimationBalloonProvider;
 @property(nonatomic) __weak id <CKSendAnimationManagerDelegate> sendAnimationManagerDelegate; // @synthesize sendAnimationManagerDelegate=_sendAnimationManagerDelegate;
-- (void).cxx_destruct;
 - (struct CGPoint)bestVisibleOffsetForBubbleAtIndex:(long long)arg1;
 - (void)_setupThrowBalloonViews;
 - (double)_changeInEntryViewHeight;

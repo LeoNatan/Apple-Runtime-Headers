@@ -14,8 +14,8 @@
     unsigned int _uid;
 }
 
-@property(readonly, nonatomic) unsigned int uid; // @synthesize uid=_uid;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int uid; // @synthesize uid=_uid;
 - (void)sortPendingFetchResultsUsingFunction:(CDUnknownFunctionPointerType)arg1 context:(void *)arg2;
 - (void)removeObjectFromPendingFetchResultsAtIndex:(unsigned long long)arg1;
 - (void)addPendingFetchResultsObject:(id)arg1;

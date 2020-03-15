@@ -15,9 +15,9 @@
     KHImageProperties *_imageProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHImageProperties *imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(retain, nonatomic) MLMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
-- (void).cxx_destruct;
 - (unsigned long long)imageOrientation;
 - (id)pageLayoutImage;
 - (id)pageLayoutPhotoDate;

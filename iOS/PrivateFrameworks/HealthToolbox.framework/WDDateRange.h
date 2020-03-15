@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)dateRangeWithTimePeriod:(long long)arg1 anchorDate:(id)arg2;
 + (id)dateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)_getEndDateFromStartDate:(id)arg1 timePeriod:(long long)arg2;
 - (id)_getStartDateFromAnchorDate:(id)arg1 timePeriod:(long long)arg2;
 - (id)description;

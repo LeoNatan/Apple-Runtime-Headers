@@ -55,12 +55,12 @@
 
 + (void)animateViewWithAnimationType:(long long)arg1 initialSpringVelocity:(double)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 + (double)contentViewCornerRadius;
+- (void).cxx_destruct;
 @property(nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
 @property(copy, nonatomic) CDUnknownBlockType waitForUIFinalizationCompletionBlock; // @synthesize waitForUIFinalizationCompletionBlock=_waitForUIFinalizationCompletionBlock;
 @property(nonatomic) _Bool canStartShowingChrome; // @synthesize canStartShowingChrome=_canStartShowingChrome;
 @property(nonatomic) __weak id <PGPictureInPictureViewControllerContentContainer> contentContainer; // @synthesize contentContainer=_contentContainer;
 @property(readonly, nonatomic) __weak PGPictureInPictureApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (_Bool)pictureInPictureControlsViewControllerShouldHandleDoubleTapGesture:(id)arg1;
 - (_Bool)pictureInPictureControlsViewControllerShouldHandleTapGesture:(id)arg1;
 - (void)pictureInPictureControlsViewControllerCancelButtonTapped:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIViewPropertyAnimator *_animator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
 @property(nonatomic, getter=isStopping) _Bool stopping; // @synthesize stopping=_stopping;
-- (void).cxx_destruct;
 - (void)stopAnimatingAndRemoveFromSuperview;
 - (void)continueAnimating;
 - (void)startAnimating;

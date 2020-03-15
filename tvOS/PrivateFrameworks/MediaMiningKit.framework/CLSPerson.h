@@ -51,6 +51,7 @@
 + (id)personWithPHIdentifier:(id)arg1;
 + (id)personWithCNIdentifier:(id)arg1;
 + (id)person;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *inferredLastName; // @synthesize inferredLastName=_inferredLastName;
 @property(readonly, nonatomic) NSArray *sourceURLs; // @synthesize sourceURLs=_sourceURLs;
 @property(nonatomic) unsigned long long relationship; // @synthesize relationship=_relationship;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) NSString *CNIdentifier; // @synthesize CNIdentifier=_CNIdentifier;
 @property(retain, nonatomic) NSString *PHIdentifier; // @synthesize PHIdentifier=_PHIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isOrganization;
 - (id)_motherAndFatherRelationships;
 - (unsigned long long)relationshipHintFromNameUsingLocales:(id)arg1;

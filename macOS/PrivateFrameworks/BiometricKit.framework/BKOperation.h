@@ -22,11 +22,11 @@
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <BKOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (BOOL)isDelegate;
 - (void)taskResumeStatus:(int)arg1 client:(unsigned long long)arg2;
 - (void)templateUpdate:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;

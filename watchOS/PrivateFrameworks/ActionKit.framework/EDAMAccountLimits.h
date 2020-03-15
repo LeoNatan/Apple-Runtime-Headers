@@ -27,6 +27,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *userAdvertisedDeviceLimit; // @synthesize userAdvertisedDeviceLimit=_userAdvertisedDeviceLimit;
 @property(retain, nonatomic) NSNumber *userDeviceLimit; // @synthesize userDeviceLimit=_userDeviceLimit;
 @property(retain, nonatomic) NSNumber *noteResourceCountMax; // @synthesize noteResourceCountMax=_noteResourceCountMax;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSNumber *resourceSizeMax; // @synthesize resourceSizeMax=_resourceSizeMax;
 @property(retain, nonatomic) NSNumber *noteSizeMax; // @synthesize noteSizeMax=_noteSizeMax;
 @property(retain, nonatomic) NSNumber *userMailLimitDaily; // @synthesize userMailLimitDaily=_userMailLimitDaily;
-- (void).cxx_destruct;
 
 @end
 

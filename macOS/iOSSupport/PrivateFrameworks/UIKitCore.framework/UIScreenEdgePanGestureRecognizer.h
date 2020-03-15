@@ -22,8 +22,8 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)_shouldSupportStylusTouches;
 + (BOOL)_shouldDefaultToTouches;
-@property(nonatomic) unsigned long long edges; // @synthesize edges=_edges;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long edges; // @synthesize edges=_edges;
 - (id)debugDictionary;
 - (unsigned long long)touchedEdges;
 - (void)setMinimumNumberOfTouches:(unsigned long long)arg1;

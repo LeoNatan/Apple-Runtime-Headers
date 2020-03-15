@@ -15,8 +15,11 @@
     ABGroupEntriesList *_groupEntriesList;
     NSString *_groupUid;
     NSString *_groupName;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 @property(copy) NSString *groupName; // @synthesize groupName=_groupName;
 @property(copy) NSString *groupUid; // @synthesize groupUid=_groupUid;
 - (void)executeRedo;

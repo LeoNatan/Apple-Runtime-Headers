@@ -28,9 +28,9 @@
     UIView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesLocalZoomBehavior; // @synthesize usesLocalZoomBehavior=_usesLocalZoomBehavior;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)cleanupAfterZoom;
 - (void)setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_centerView:(id)arg1;

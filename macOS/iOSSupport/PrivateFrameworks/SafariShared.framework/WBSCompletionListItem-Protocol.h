@@ -9,7 +9,7 @@
 @class NSString, SFSearchResult, WBSQuerySuggestion;
 
 @protocol WBSCompletionListItem <NSObject>
-@property(readonly, nonatomic) long long parsecQueryID;
+@property(nonatomic) long long parsecQueryID;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;

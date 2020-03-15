@@ -19,6 +19,7 @@
     NSString *_taskName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *taskName; // @synthesize taskName=_taskName;
 @property(nonatomic) long long processedAudioDurationInMilliseconds; // @synthesize processedAudioDurationInMilliseconds=_processedAudioDurationInMilliseconds;
 @property(nonatomic) double silencePosterior; // @synthesize silencePosterior=_silencePosterior;
@@ -26,7 +27,6 @@
 @property(nonatomic) double eosLikelihood; // @synthesize eosLikelihood=_eosLikelihood;
 @property(nonatomic) long long trailingSilenceDuration; // @synthesize trailingSilenceDuration=_trailingSilenceDuration;
 @property(nonatomic) long long wordCount; // @synthesize wordCount=_wordCount;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithWordCount:(long long)arg1 trailingSilenceFrames:(long long)arg2 endOfSilenceLikelihood:(double)arg3 pauseCounts:(id)arg4 silencePosterior:(double)arg5 taskName:(id)arg6;
 - (id)initWithWordCount:(long long)arg1 trailingSilenceDuration:(long long)arg2 eosLikelihood:(double)arg3 pauseCounts:(id)arg4 silencePosterior:(double)arg5 taskName:(id)arg6 processedAudioDurationInMilliseconds:(long long)arg7;

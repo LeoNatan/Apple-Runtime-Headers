@@ -16,10 +16,10 @@
     NSMutableSet *_ignoredDevices;
 }
 
+- (void).cxx_destruct;
 @property BOOL allowScreenOffScanning; // @synthesize allowScreenOffScanning=_allowScreenOffScanning;
 @property(retain) NSMutableSet *ignoredDevices; // @synthesize ignoredDevices=_ignoredDevices;
 @property(nonatomic) __weak id <WPPairingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stateDidChange:(long long)arg1;
 - (void)ignoreDeviceUntilNextUnlock:(id)arg1 ignoreDevice:(BOOL)arg2;
 - (void)scanningStoppedOfType:(unsigned char)arg1;

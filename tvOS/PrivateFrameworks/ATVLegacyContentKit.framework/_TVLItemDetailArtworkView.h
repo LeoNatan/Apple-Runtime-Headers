@@ -16,10 +16,10 @@
     TVImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) __weak UILabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain, nonatomic) TVLImageElement *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_maximumImageSize;

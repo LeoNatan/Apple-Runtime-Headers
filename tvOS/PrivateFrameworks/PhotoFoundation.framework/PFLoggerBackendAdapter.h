@@ -23,8 +23,8 @@
 + (long long)fileSizeMaxBytesFromString:(id)arg1;
 + (id)pathWithoutParametersFromString:(id)arg1;
 + (id)backendsFromUserDefaultsWithLogLevel:(int)arg1;
-@property _Bool runningUnderDebugger; // @synthesize runningUnderDebugger=_runningUnderDebugger;
 - (void).cxx_destruct;
+@property _Bool runningUnderDebugger; // @synthesize runningUnderDebugger=_runningUnderDebugger;
 - (void)flushWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool outputsToDebuggerConsole;
 @property(readonly, nonatomic) _Bool formatsMessage;

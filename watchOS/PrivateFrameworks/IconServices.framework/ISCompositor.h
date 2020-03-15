@@ -24,9 +24,9 @@
 + (id)iosAppIconRecipe;
 + (id)macosIconRecipe;
 + (id)iosmacAppIconRecipe;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *elements; // @synthesize elements=_elements;
 @property unsigned int renderingMode; // @synthesize renderingMode=_renderingMode;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)imageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (void)addElement:(id)arg1;

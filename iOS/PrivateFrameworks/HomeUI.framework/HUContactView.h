@@ -24,6 +24,7 @@
     UILabel *_appleMusicAccountLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *appleMusicAccountLabel; // @synthesize appleMusicAccountLabel=_appleMusicAccountLabel;
 @property(retain, nonatomic) UILabel *appleIDAccountLabel; // @synthesize appleIDAccountLabel=_appleIDAccountLabel;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
@@ -36,7 +37,6 @@
 @property(nonatomic) long long contactNameFormatStyle; // @synthesize contactNameFormatStyle=_contactNameFormatStyle;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) double avatarDiameter; // @synthesize avatarDiameter=_avatarDiameter;
-- (void).cxx_destruct;
 - (_Bool)_isPhoneNumberOnlyAccount;
 - (void)_updateConstraints;
 - (void)_updateNameLabelFont;

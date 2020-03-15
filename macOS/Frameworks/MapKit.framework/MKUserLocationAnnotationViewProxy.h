@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSHashTable *_presentationCoordinateObservers;
 }
 
-@property(nonatomic) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void)removePresentationCoordinateChangedObserver:(id)arg1;
 - (void)addPresentationCoordinateChangedObserver:(id)arg1;
 @property(retain, nonatomic) GEORouteMatch *routeMatch;

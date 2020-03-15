@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     double _maxWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(copy, nonatomic) NSArray *textItemViews; // @synthesize textItemViews=_textItemViews;
 @property(readonly, nonatomic) id <GEOTextItemContainer> textItemContainer; // @synthesize textItemContainer=_textItemContainer;
-- (void).cxx_destruct;
 - (void)updateUIForTheme:(id)arg1;
 - (void)infoCardThemeChanged;
 - (void)contentSizeCategoryDidChange:(id)arg1;

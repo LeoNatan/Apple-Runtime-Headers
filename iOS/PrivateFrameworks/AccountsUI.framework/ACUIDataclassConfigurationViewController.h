@@ -32,6 +32,7 @@
 }
 
 + (_Bool)shouldPresentAsModalSheet;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType configurationCompletion; // @synthesize configurationCompletion=_configurationCompletion;
 @property(nonatomic) _Bool isMailSetupForced; // @synthesize isMailSetupForced=_isMailSetupForced;
 @property(nonatomic) _Bool shouldEnableAccountSummaryCell; // @synthesize shouldEnableAccountSummaryCell=_shouldEnableAccountSummaryCell;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic) NSArray *preEnabledDataclasses; // @synthesize preEnabledDataclasses=_preEnabledDataclasses;
 @property(nonatomic, getter=isFirstTimeSetup) _Bool firstTimeSetup; // @synthesize firstTimeSetup=_firstTimeSetup;
-- (void).cxx_destruct;
 - (id)userEnrollmentAccountSpecifierProvider;
 - (_Bool)isUserEnrollment;
 - (_Bool)_confirmSyncDelete;
@@ -89,6 +89,7 @@
 - (void)viewDidLoad;
 - (_Bool)shouldShowOtherSpecifiersDuringFirstSetup;
 - (id)messageForAccountDeletionProgressUI;
+- (id)messageForAccountDeletionWarning;
 - (id)titleForDeleteButton;
 - (long long)deleteButtonIndex;
 - (id)valueForAccountSummaryCell;

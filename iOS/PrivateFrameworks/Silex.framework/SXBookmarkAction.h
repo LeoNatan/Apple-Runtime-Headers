@@ -16,8 +16,8 @@
     id <SXBookmark> _bookmark;
 }
 
-@property(readonly, nonatomic) id <SXBookmark> bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXBookmark> bookmark; // @synthesize bookmark=_bookmark;
 @property(readonly, nonatomic) NSString *type;
 - (id)initWithBookmark:(id)arg1;
 

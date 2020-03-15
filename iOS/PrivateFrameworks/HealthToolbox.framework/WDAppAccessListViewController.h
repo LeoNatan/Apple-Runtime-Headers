@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     UIFont *_bodyFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *bodyFont; // @synthesize bodyFont=_bodyFont;
 @property(retain, nonatomic) HKSample *sample; // @synthesize sample=_sample;
 @property(retain, nonatomic) NSArray *disallowedApps; // @synthesize disallowedApps=_disallowedApps;
 @property(retain, nonatomic) NSArray *allowedApps; // @synthesize allowedApps=_allowedApps;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)resetAccess;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSObject<VUIMediaEntityAssetController> *_assetController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<VUIMediaEntityAssetController> *assetController; // @synthesize assetController=_assetController;
 @property(retain, nonatomic) VUIMediaItem *episode; // @synthesize episode=_episode;
-- (void).cxx_destruct;
 
 @end
 

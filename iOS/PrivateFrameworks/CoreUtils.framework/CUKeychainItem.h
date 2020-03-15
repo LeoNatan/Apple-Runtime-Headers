@@ -28,6 +28,7 @@
     NSString *_viewHint;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *viewHint; // @synthesize viewHint=_viewHint;
 @property(copy, nonatomic) NSString *userDescription; // @synthesize userDescription=_userDescription;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
@@ -44,7 +45,6 @@
 @property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(nonatomic) int accessibleType; // @synthesize accessibleType=_accessibleType;
 @property(copy, nonatomic) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
-- (void).cxx_destruct;
 - (_Bool)_updateWithAttributesDictionary:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (void)_mergeItem:(id)arg1;
 - (id)_attributesDictionaryWithFlags:(unsigned int)arg1 error:(id *)arg2;

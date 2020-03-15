@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <_MKPlaceItem> _placeItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
 @property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
-- (void).cxx_destruct;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;

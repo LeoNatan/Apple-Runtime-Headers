@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) SSDownload *download; // @synthesize download=_download;
 @property(retain, nonatomic) SSDownloadManager *downloadManager; // @synthesize downloadManager=_downloadManager;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;

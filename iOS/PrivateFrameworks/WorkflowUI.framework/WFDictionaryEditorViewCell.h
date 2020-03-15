@@ -14,9 +14,9 @@
     WFTextTokenEditorView *_keyEditor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFTextTokenEditorView *keyEditor; // @synthesize keyEditor=_keyEditor;
 @property(readonly, nonatomic) __weak UIView *separatorView; // @synthesize separatorView=_separatorView;
-- (void).cxx_destruct;
 - (void)setAllowedVariableTypes:(id)arg1;
 - (void)setVariablesDisabled:(_Bool)arg1;
 - (void)setVariableProvider:(id)arg1;

@@ -15,8 +15,8 @@
 
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
-@property(retain) NSArray *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(retain) NSArray *settings; // @synthesize settings=_settings;
 - (id)copyAgentData;
 
 @end

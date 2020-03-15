@@ -29,6 +29,7 @@
 
 + (id)representationWithHandInfo:(CDStruct_f2c5c900 *)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char swipe; // @synthesize swipe=_swipe;
 @property(nonatomic) unsigned int additionalHandEventFlagsForGeneratedEvents; // @synthesize additionalHandEventFlagsForGeneratedEvents=_additionalHandEventFlagsForGeneratedEvents;
 @property(nonatomic) unsigned int handEventMask; // @synthesize handEventMask=_handEventMask;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned short currentFingerCount; // @synthesize currentFingerCount=_currentFingerCount;
 @property(nonatomic) unsigned short initialFingerCount; // @synthesize initialFingerCount=_initialFingerCount;
 @property(nonatomic) unsigned int eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool isStylus;
 - (id)accessibilityEventRepresentationTabularDescription;

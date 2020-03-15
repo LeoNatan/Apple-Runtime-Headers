@@ -17,12 +17,12 @@
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) Class principalClass; // @synthesize principalClass=_principalClass;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 
 @end
 

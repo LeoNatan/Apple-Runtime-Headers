@@ -34,11 +34,11 @@
     _Bool _showsNumbers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsNumbers; // @synthesize showsNumbers=_showsNumbers;
 @property(nonatomic) _Bool showsBlinker; // @synthesize showsBlinker=_showsBlinker;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(nonatomic) _Bool animationsPaused; // @synthesize animationsPaused=_animationsPaused;
-- (void).cxx_destruct;
 - (id)_attributedTextShowingBlinker:(_Bool)arg1 numbers:(_Bool)arg2;
 - (void)_updateAttributedText;
 - (void)enumerateUnderlyingLabelsWithBlock:(CDUnknownBlockType)arg1;

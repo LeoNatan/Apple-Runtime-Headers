@@ -33,6 +33,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSDictionary *serviceInfo; // @synthesize serviceInfo=_serviceInfo;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
-- (void).cxx_destruct;
 - (void)xpcPrivateDiscoveryEndpointChanged:(id)arg1;
 - (void)xpcPrivateDiscoveryEndpointLost:(id)arg1;
 - (void)xpcPrivateDiscoveryEndpointFound:(id)arg1;

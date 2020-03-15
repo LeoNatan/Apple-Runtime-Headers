@@ -17,10 +17,10 @@
     struct _NSRange _baseWordRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange baseWordRange; // @synthesize baseWordRange=_baseWordRange;
 @property(readonly, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
 @property(readonly, nonatomic) NSArray *candidateStrings; // @synthesize candidateStrings=_candidateStrings;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *baseWord;
 - (int)candidateTypeAtIndex:(int)arg1;

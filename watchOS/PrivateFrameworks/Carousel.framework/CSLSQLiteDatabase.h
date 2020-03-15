@@ -17,8 +17,8 @@
     NSString *_path;
 }
 
-@property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (_Bool)_createDatabaseWithSQL:(id)arg1 atPath:(id)arg2 withFilename:(id)arg3;
 - (_Bool)_truncateDatabase;
 - (_Bool)_databaseIntegrityCheck;

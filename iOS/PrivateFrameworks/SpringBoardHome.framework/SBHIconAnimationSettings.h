@@ -14,8 +14,8 @@
 }
 
 + (id)settingsControllerModule;
-@property(retain, nonatomic) SBFAnimationSettings *centralAnimationSettings; // @synthesize centralAnimationSettings=_centralAnimationSettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBFAnimationSettings *centralAnimationSettings; // @synthesize centralAnimationSettings=_centralAnimationSettings;
 - (void)setDefaultValues;
 
 @end

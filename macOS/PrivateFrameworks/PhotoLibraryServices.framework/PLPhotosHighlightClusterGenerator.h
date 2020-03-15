@@ -17,12 +17,12 @@
     PLDateRangeTitleGenerator *_dateRangeTitleGenerator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLDateRangeTitleGenerator *dateRangeTitleGenerator; // @synthesize dateRangeTitleGenerator=_dateRangeTitleGenerator;
 @property(readonly, nonatomic) PLLocalCreationDateCreator *localCreationDateCreator; // @synthesize localCreationDateCreator=_localCreationDateCreator;
 @property(readonly, nonatomic) NSDateInterval *recentHighlightsDateInterval; // @synthesize recentHighlightsDateInterval=_recentHighlightsDateInterval;
 @property(readonly, nonatomic) PLFrequentLocationManager *frequentLocationManager; // @synthesize frequentLocationManager=_frequentLocationManager;
 @property(readonly, nonatomic) NSArray *allMoments; // @synthesize allMoments=_allMoments;
-- (void).cxx_destruct;
 - (id)_remainingHighlightClustersWithClusters:(id)arg1 intersectingMoments:(id)arg2;
 - (id)_remainingHighlightClusterWithMoments:(id)arg1;
 - (id)_remainingMomentClustersWithMomentsSortedByDate:(id)arg1;

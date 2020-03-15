@@ -17,10 +17,10 @@
     MPExportableArtworkProperties *_artworkProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) MPExportableArtworkProperties *artworkProperties; // @synthesize artworkProperties=_artworkProperties;
 @property(readonly, copy, nonatomic) NSString *artworkIdentifier; // @synthesize artworkIdentifier=_artworkIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

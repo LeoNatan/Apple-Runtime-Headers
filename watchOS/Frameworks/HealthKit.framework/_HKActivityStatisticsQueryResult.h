@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *workoutResults; // @synthesize workoutResults=_workoutResults;
 @property(copy, nonatomic) NSArray *appleStandHourResults; // @synthesize appleStandHourResults=_appleStandHourResults;
 @property(copy, nonatomic) NSArray *appleExerciseTimeResults; // @synthesize appleExerciseTimeResults=_appleExerciseTimeResults;
 @property(copy, nonatomic) NSArray *appleMoveTimeResults; // @synthesize appleMoveTimeResults=_appleMoveTimeResults;
 @property(copy, nonatomic) NSArray *activeEnergyResults; // @synthesize activeEnergyResults=_activeEnergyResults;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

@@ -29,6 +29,7 @@
 + (id)_storeAccountFromLegacyStoreAccount:(id)arg1 client:(id)arg2;
 + (id)_storeAccountFromACAccount:(id)arg1 client:(id)arg2;
 + (id)_acAccountFromStoreAccount:(id)arg1 client:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *credit; // @synthesize credit=_credit;
 @property(readonly) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly) BOOL isManagedStudent; // @synthesize isManagedStudent=_isManagedStudent;
@@ -36,7 +37,6 @@
 @property(readonly) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly) NSNumber *dsID; // @synthesize dsID=_dsID;
 @property(readonly) unsigned char kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

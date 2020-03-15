@@ -53,12 +53,12 @@ __attribute__((visibility("hidden")))
     GEOCountryConfiguration *_countryConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *devicePostureRegion; // @synthesize devicePostureRegion=_devicePostureRegion;
 @property(readonly, nonatomic) NSString *devicePostureCountry; // @synthesize devicePostureCountry=_devicePostureCountry;
 @property(nonatomic) unsigned long long maxDatabaseSize; // @synthesize maxDatabaseSize=_maxDatabaseSize;
 @property(readonly, nonatomic) unsigned long long databaseSize; // @synthesize databaseSize=_databaseSize;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;

@@ -17,10 +17,10 @@
     id <MPAVLightweightRoutingControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MPAVLightweightRoutingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long discoveryMode; // @synthesize discoveryMode=_discoveryMode;
-- (void).cxx_destruct;
 - (void)_outputContextDevicesDidChangeNotification:(id)arg1;
 - (void)_availableOutputDevicesDidChangeNotification:(id)arg1;
 @property(readonly, nonatomic) NSArray *pickedRoutes;

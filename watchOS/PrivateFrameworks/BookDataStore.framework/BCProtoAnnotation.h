@@ -58,6 +58,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double locationModificationDate; // @synthesize locationModificationDate=_locationModificationDate;
 @property(retain, nonatomic) NSData *plUserData; // @synthesize plUserData=_plUserData;
 @property(retain, nonatomic) NSString *plLocationStorageUUID; // @synthesize plLocationStorageUUID=_plLocationStorageUUID;
@@ -88,7 +89,6 @@
 @property(nonatomic) _Bool deleted; // @synthesize deleted=_deleted;
 @property(retain, nonatomic) NSString *creatorIdentifier; // @synthesize creatorIdentifier=_creatorIdentifier;
 @property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

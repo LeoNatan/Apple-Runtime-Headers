@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id _lifetimeExtender;
 }
 
-@property(retain, nonatomic) id lifetimeExtender; // @synthesize lifetimeExtender=_lifetimeExtender;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id lifetimeExtender; // @synthesize lifetimeExtender=_lifetimeExtender;
 - (void)dealloc;
 - (void)windowWillClose:(id)arg1;
 - (void)_createTreeFromWKView:(id)arg1;

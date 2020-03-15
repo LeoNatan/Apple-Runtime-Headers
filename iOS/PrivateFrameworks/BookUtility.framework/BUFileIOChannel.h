@@ -20,10 +20,10 @@
     NSObject<OS_dispatch_io> *_channel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_io> *channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(nonatomic, getter=isClosed) _Bool closed; // @synthesize closed=_closed;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (void)truncateToLength:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)flushWithCompletion:(CDUnknownBlockType)arg1;

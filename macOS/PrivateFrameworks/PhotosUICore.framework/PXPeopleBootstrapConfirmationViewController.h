@@ -26,6 +26,7 @@
     struct CGSize _lastSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastSize; // @synthesize lastSize=_lastSize;
 @property(nonatomic) BOOL willAppear; // @synthesize willAppear=_willAppear;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) PXPeopleSuggestionManager *suggestionManager; // @synthesize suggestionManager=_suggestionManager;
 @property(nonatomic) __weak id <PXPeopleFlowViewControllerActionDelegate> actionDelegate; // @synthesize actionDelegate;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)keyFaceUpdated:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)willTransitionToNextInFlow;

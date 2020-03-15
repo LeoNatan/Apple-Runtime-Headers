@@ -18,8 +18,8 @@
 + (id)formatEventName:(id)arg1 application:(id)arg2;
 + (_Bool)hasInternalDiagnostics;
 + (id)logger;
-@property(retain) TransparencySFAnalytics *sfanalytics; // @synthesize sfanalytics=_sfanalytics;
 - (void).cxx_destruct;
+@property(retain) TransparencySFAnalytics *sfanalytics; // @synthesize sfanalytics=_sfanalytics;
 - (void)removeMultiSamplerForName:(id)arg1;
 - (void)addMultiSamplerForName:(id)arg1 withTimeInterval:(double)arg2 block:(CDUnknownBlockType)arg3;
 - (void)logMetric:(id)arg1 withName:(id)arg2;

@@ -19,12 +19,12 @@
 }
 
 + (id)snapshotCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *snapshotQueue; // @synthesize snapshotQueue=_snapshotQueue;
 @property(readonly, nonatomic) NSMapTable *callCount; // @synthesize callCount=_callCount;
 @property(readonly, nonatomic) NSMapTable *faceQOS; // @synthesize faceQOS=_faceQOS;
 @property(readonly, nonatomic) NSMapTable *callbacks; // @synthesize callbacks=_callbacks;
 @property(readonly, nonatomic) NSMutableDictionary *snapshots; // @synthesize snapshots=_snapshots;
-- (void).cxx_destruct;
 - (void)_invokeCallbacksOfFace:(id)arg1 withSnapshot:(id)arg2;
 - (void)_snapshotProcessInterrupted:(id)arg1;
 - (void)_attemptSnapshotOfFace:(id)arg1;

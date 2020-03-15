@@ -10,11 +10,11 @@
 
 @interface NEIKEv2EAP : NSObject
 {
-    struct NSMutableData *_sessionKey;
+    NSMutableData *_sessionKey;
 }
 
-@property(readonly) NSMutableData *sessionKey; // @synthesize sessionKey=_sessionKey;
 - (void).cxx_destruct;
+@property(readonly) NSMutableData *sessionKey; // @synthesize sessionKey=_sessionKey;
 - (id)createPayloadResponseForRequest:(id)arg1 ikeSA:(id)arg2 success:(_Bool *)arg3 reportEAPError:(_Bool *)arg4;
 - (id)init;
 

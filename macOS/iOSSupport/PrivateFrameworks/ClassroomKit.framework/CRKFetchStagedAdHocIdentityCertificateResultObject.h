@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSData *stagedAdHocIdentityCertificate; // @synthesize stagedAdHocIdentityCertificate=_stagedAdHocIdentityCertificate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *stagedAdHocIdentityCertificate; // @synthesize stagedAdHocIdentityCertificate=_stagedAdHocIdentityCertificate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

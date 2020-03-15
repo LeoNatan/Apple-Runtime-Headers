@@ -18,10 +18,10 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(readonly, nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(readonly, nonatomic) UIView *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

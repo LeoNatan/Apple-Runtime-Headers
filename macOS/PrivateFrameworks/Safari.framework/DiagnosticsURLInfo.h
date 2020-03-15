@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _visitTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double visitTime; // @synthesize visitTime=_visitTime;
 @property(readonly) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)filteredDictionaryRepresentationExcludingURLs:(id)arg1;
 - (id)initWithURL:(id)arg1 visitTime:(double)arg2;
 

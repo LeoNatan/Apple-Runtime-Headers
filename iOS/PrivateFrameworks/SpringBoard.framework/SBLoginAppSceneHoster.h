@@ -25,9 +25,9 @@
     id <SBLoginAppSceneHosterDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBLoginAppSceneHosterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool deferHIDEvents; // @synthesize deferHIDEvents=_deferHIDEvents;
-- (void).cxx_destruct;
 - (void)sceneDidInvalidate:(id)arg1;
 - (void)scene:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 oldClientSettings:(id)arg3 transitionContext:(id)arg4;
 - (void)_updateHIDEventDeferralsIfNecessary;

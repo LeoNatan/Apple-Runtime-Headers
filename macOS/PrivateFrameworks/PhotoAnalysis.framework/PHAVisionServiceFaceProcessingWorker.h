@@ -39,10 +39,10 @@
 + (long long)applicationDataFolderIdentifier;
 + (BOOL)runsExclusively;
 + (short)workerType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastMinimumFaceGroupSizeForCreatingMergeCandidates; // @synthesize lastMinimumFaceGroupSizeForCreatingMergeCandidates=_lastMinimumFaceGroupSizeForCreatingMergeCandidates;
 @property(nonatomic) BOOL personBuilderMergeCandidatesEnabled; // @synthesize personBuilderMergeCandidatesEnabled=_personBuilderMergeCandidatesEnabled;
 @property(nonatomic) unsigned long long incrementalPersonProcessingStage; // @synthesize incrementalPersonProcessingStage=_incrementalPersonProcessingStage;
-- (void).cxx_destruct;
 - (BOOL)shouldProcessContact:(id)arg1;
 - (id)sortedPoolOfContactIdentifiersExcludingContactIdentifiers:(id)arg1;
 - (id)_persistentStorageDirectoryURLWithPhotoLibrary:(id)arg1;

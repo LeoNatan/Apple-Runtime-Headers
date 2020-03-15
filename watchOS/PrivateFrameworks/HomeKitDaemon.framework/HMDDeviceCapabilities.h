@@ -38,8 +38,8 @@
 + (_Bool)supportsIntentDonation;
 + (_Bool)supportsHomeApp;
 + (_Bool)supportsLocalization;
-@property(retain, nonatomic) HMDDeviceCapabilitiesModel *objectModel; // @synthesize objectModel=_objectModel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMDDeviceCapabilitiesModel *objectModel; // @synthesize objectModel=_objectModel;
 - (id)modelBackedObjects;
 - (id)backingStoreObjectsWithChangeType:(unsigned int)arg1 version:(int)arg2;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;

@@ -8,6 +8,6 @@
 
 @protocol PREResponsesProtocol
 - (void)registerResponse:(NSString *)arg1 position:(NSNumber *)arg2 isCanned:(_Bool)arg3 isUsingQuickResponses:(_Bool)arg4 locale:(NSString *)arg5 modelConfigPath:(NSString *)arg6;
-- (void)preResponseItemsForMessage:(NSString *)arg1 maximumResponses:(unsigned long long)arg2 conversationHistory:(NSArray *)arg3 forContext:(NSString *)arg4 time:(NSDate *)arg5 language:(NSString *)arg6 modelFilePath:(NSString *)arg7 modelConfigPath:(NSString *)arg8 registerDisplayed:(_Bool)arg9 completion:(void (^)(NSArray *, NSError *))arg10;
+- (void)preResponseItemsForMessage:(NSString *)arg1 maximumResponses:(unsigned long long)arg2 conversationHistory:(NSArray *)arg3 forContext:(NSString *)arg4 time:(NSDate *)arg5 language:(NSString *)arg6 modelFilePath:(NSString *)arg7 modelConfigPath:(NSString *)arg8 espressoBinFilePath:(NSString *)arg9 espressoShapeFilePath:(NSString *)arg10 lexiconFilePath:(NSString *)arg11 registerDisplayed:(_Bool)arg12 completion:(void (^)(NSArray *, NSError *))arg13;
 @end
 

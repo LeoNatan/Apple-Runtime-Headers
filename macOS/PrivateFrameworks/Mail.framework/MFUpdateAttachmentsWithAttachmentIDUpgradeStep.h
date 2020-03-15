@@ -21,10 +21,10 @@
 
 + (unsigned long long)targetVersion;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MFUpdateAttachmentsWithAttachmentIDUpgradeStepDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSRegularExpression *attachmentFileRegularExpression; // @synthesize attachmentFileRegularExpression=_attachmentFileRegularExpression;
 @property(retain, nonatomic) NSDirectoryEnumerator *directoryEnumerator; // @synthesize directoryEnumerator=_directoryEnumerator;
-- (void).cxx_destruct;
 - (BOOL)updateAttachmentsWithAttachmentIDUpgradeStep:(id)arg1 isDirectoryForFileURL:(id)arg2;
 - (CDUnknownBlockType)skipDescendantsBlockForUpdateAttachmentsWithAttachmentIDUpgradeStep:(id)arg1;
 - (id)fileURLEnumeratorForUpdateAttachmentsWithAttachmentIDUpgradeStep:(id)arg1;

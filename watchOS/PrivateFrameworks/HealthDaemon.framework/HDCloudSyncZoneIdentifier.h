@@ -19,10 +19,10 @@
 
 + (id)identifierForZone:(id)arg1 container:(id)arg2 scope:(int)arg3;
 + (id)identifierForZone:(id)arg1 container:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int scope; // @synthesize scope=_scope;
 @property(readonly, copy, nonatomic) CKRecordZoneID *zoneIdentifier; // @synthesize zoneIdentifier=_zoneIdentifier;
 @property(readonly, copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIColor *_highlightColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(readonly, copy, nonatomic) NSArray *groupOptions; // @synthesize groupOptions=_groupOptions;
 @property(readonly, nonatomic) IKTextElement *titleElement; // @synthesize titleElement=_titleElement;
 @property(readonly, nonatomic) IKImageElement *upImageElement; // @synthesize upImageElement=_upImageElement;
 @property(readonly, nonatomic) IKImageElement *downImageElement; // @synthesize downImageElement=_downImageElement;
 @property(readonly, nonatomic) IKViewElement *groupElement; // @synthesize groupElement=_groupElement;
-- (void).cxx_destruct;
 - (void)_populateWithElement:(id)arg1;
 - (id)_init;
 @property(readonly, nonatomic) TVImageProxy *upImageProxy;

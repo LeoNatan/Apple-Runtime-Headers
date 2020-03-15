@@ -13,8 +13,8 @@
     SKUIItemBrowseCellLayout *_layout;
 }
 
-@property(readonly, nonatomic) SKUIItemBrowseCellLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIItemBrowseCellLayout *layout; // @synthesize layout=_layout;
 - (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(long long)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

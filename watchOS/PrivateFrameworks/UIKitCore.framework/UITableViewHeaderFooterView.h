@@ -48,12 +48,12 @@
 + (id)_defaultTextColorForTableViewStyle:(int)arg1 isSectionHeader:(_Bool)arg2;
 + (id)_defaultFontForHeaderFooterView:(id)arg1;
 + (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(nonatomic) float maxTitleWidth; // @synthesize maxTitleWidth=_maxTitleWidth;
 @property(nonatomic) __weak id <UITable> table; // @synthesize table=_table;
 @property(copy, nonatomic) NSString *reuseIdentifier; // @synthesize reuseIdentifier=_reuseIdentifier;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_constants, setter=_setConstants:) id <UITableConstants> constants;
 - (_Bool)_isTransparentFocusRegion;
 @property(nonatomic, getter=_isTopHeader, setter=_setTopHeader:) _Bool topHeader;

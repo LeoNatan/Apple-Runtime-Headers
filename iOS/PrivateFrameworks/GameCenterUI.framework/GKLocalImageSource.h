@@ -13,8 +13,8 @@
     NSMapTable *_keysForSizes;
 }
 
-@property(retain, nonatomic) NSMapTable *keysForSizes; // @synthesize keysForSizes=_keysForSizes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *keysForSizes; // @synthesize keysForSizes=_keysForSizes;
 - (void)deleteImageUsingGamedWithSubdirectory:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)cacheImageUsingGamed:(id)arg1 cacheSubdirectory:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)cachedImageFromGamedWithSubdirectory:(id)arg1 handler:(CDUnknownBlockType)arg2;

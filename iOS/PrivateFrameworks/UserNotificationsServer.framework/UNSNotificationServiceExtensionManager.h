@@ -14,8 +14,8 @@
     NSDictionary *_extensionIdentifierByContainingAppIdentifier;
 }
 
-@property(copy) NSDictionary *extensionIdentifierByContainingAppIdentifier; // @synthesize extensionIdentifierByContainingAppIdentifier=_extensionIdentifierByContainingAppIdentifier;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *extensionIdentifierByContainingAppIdentifier; // @synthesize extensionIdentifierByContainingAppIdentifier=_extensionIdentifierByContainingAppIdentifier;
 - (void)_stopMonitoringExtensions;
 - (void)_startMonitoringExtensions;
 - (id)extensionForBundleIdentifier:(id)arg1 error:(id *)arg2;

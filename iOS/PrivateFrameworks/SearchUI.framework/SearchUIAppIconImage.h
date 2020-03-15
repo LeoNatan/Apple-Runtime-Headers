@@ -21,9 +21,9 @@
 + (id)descriptorNameForVariant:(unsigned long long)arg1;
 + (id)appIconForBundleIdentifier:(id)arg1 variant:(unsigned long long)arg2;
 + (id)appIconForResult:(id)arg1 variant:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long variant; // @synthesize variant=_variant;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)uniqueIdentifier;

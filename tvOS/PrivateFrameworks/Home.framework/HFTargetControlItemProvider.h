@@ -15,10 +15,10 @@
     NSMutableSet *_remoteControlAccessoryItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *remoteControlAccessoryItems; // @synthesize remoteControlAccessoryItems=_remoteControlAccessoryItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

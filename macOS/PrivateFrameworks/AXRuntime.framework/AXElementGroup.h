@@ -28,6 +28,7 @@
 + (id)groupWithGenerator:(id)arg1;
 + (id)groupWithElements:(id)arg1 label:(id)arg2;
 + (id)groupWithElements:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) AXElement *elementCommunity; // @synthesize elementCommunity=_elementCommunity;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned long long userDefinedScanningBehaviorTraits; // @synthesize userDefinedScanningBehaviorTraits=_userDefinedScanningBehaviorTraits;
 @property(nonatomic) unsigned long long groupTraits; // @synthesize groupTraits=_groupTraits;
 @property(nonatomic) __weak id <AXElementGroupGenerator> generator; // @synthesize generator=_generator;
-- (void).cxx_destruct;
 - (id)_debugFullDescriptionWithIndent:(id)arg1;
 - (id)debugFullDescription;
 - (id)_debugBriefDescription;

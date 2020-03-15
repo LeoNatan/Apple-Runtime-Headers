@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *deviceIdentifiers; // @synthesize deviceIdentifiers=_deviceIdentifiers;
 @property(retain, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
-- (void).cxx_destruct;
 - (void)_writeIdentifierStore;
 - (void)_readIdentifierStore;
 - (id)identifierForBundleId:(id)arg1;

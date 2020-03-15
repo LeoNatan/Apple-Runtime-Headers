@@ -19,9 +19,9 @@
     AKAuthorizationPresentationContext *_presentationContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) __weak id <AKAuthorizationPasswordAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (void)keyboardDidShow:(id)arg1;
 - (void)sizeToFitPaneContentAnimated:(BOOL)arg1;

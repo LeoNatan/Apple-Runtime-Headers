@@ -37,6 +37,7 @@
     NSString *_dateFilterString;
 }
 
+- (void).cxx_destruct;
 @property(retain, setter=_setDateFilterString:) NSString *dateFilterString; // @synthesize dateFilterString=_dateFilterString;
 @property(retain, nonatomic, setter=_setDate:) NSDate *date; // @synthesize date=_date;
 @property(retain, setter=_setSearchResult:) PLSearchResult *searchResult; // @synthesize searchResult=_searchResult;
@@ -50,7 +51,6 @@
 @property(readonly) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
 @property(retain, setter=_setAssetUUIDs:) NSArray *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(copy, nonatomic) NSString *transientToken; // @synthesize transientToken=_transientToken;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long itemType;
 - (void)setStartDate:(id)arg1 endDate:(id)arg2;
 @property(readonly) NSString *collectionSubtitle; // @synthesize collectionSubtitle=_collectionSubtitle;

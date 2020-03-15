@@ -40,6 +40,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsOfflineKeysIfPossible; // @synthesize wantsOfflineKeysIfPossible=_wantsOfflineKeysIfPossible;
 @property(nonatomic) __weak TVPContentKeySession *contentKeySession; // @synthesize contentKeySession=_contentKeySession;
 @property(readonly, nonatomic) AVContentKeyRequest *avContentKeyRequest; // @synthesize avContentKeyRequest=_avContentKeyRequest;
@@ -67,7 +68,6 @@
 @property(readonly, nonatomic) NSString *eventReportingID; // @synthesize eventReportingID=_eventReportingID;
 @property(readonly, nonatomic) unsigned long long requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) NSURL *keyIdentifier; // @synthesize keyIdentifier=_keyIdentifier;
-- (void).cxx_destruct;
 - (void)finishByRequestingOfflineKeysIfPossible;
 - (void)finish;
 - (id)offlineKeyDataFromServerKeyData:(id)arg1 error:(id *)arg2;

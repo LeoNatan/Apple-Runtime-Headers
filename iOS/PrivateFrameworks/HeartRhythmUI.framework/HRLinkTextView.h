@@ -20,6 +20,7 @@
     struct _NSRange _linkRange;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType userInterfaceStyleChanged; // @synthesize userInterfaceStyleChanged=_userInterfaceStyleChanged;
 @property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
@@ -27,7 +28,6 @@
 @property(nonatomic) struct _NSRange linkRange; // @synthesize linkRange=_linkRange;
 @property(nonatomic) long long URLIdentifier; // @synthesize URLIdentifier=_URLIdentifier;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)_setUpConstraints;
 - (void)_setUpUI;
 - (id)lastBaselineAnchor;

@@ -6,12 +6,14 @@
 
 #import <ActionKit/NSObject-Protocol.h>
 
-@class NSProgress, NSString, WFContentCollection;
+@class NSProgress, NSString, WFContentCollection, WFContentSource;
 @protocol WFFileStorageServiceOperation, WFUserInterface;
 
 @protocol WFFileStorageService <NSObject>
 + (Class)resultItemClass;
 + (NSString *)serviceName;
+@property(readonly, nonatomic) WFContentSource *contentSource;
+@property(readonly, nonatomic) NSString *associatedAppBundleIdentifier;
 @property(readonly, nonatomic) BOOL supportsJumpingToSubdirectoryInUI;
 @property(readonly, nonatomic) BOOL hasPublicURLs;
 @property(readonly, nonatomic) NSString *storageLocationPrefix;

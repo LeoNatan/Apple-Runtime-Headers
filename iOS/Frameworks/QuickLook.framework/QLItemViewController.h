@@ -35,6 +35,7 @@
 
 + (_Bool)shouldBeRemoteForMediaContentType:(id)arg1;
 + (id)supportedAudiovisualContentTypes;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSavingEdits; // @synthesize isSavingEdits=_isSavingEdits;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *saveEditsQueue; // @synthesize saveEditsQueue=_saveEditsQueue;
 @property(retain, nonatomic) PUProgressIndicatorView *saveEditProgressView; // @synthesize saveEditProgressView=_saveEditProgressView;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) UIDragInteraction *dragInteraction; // @synthesize dragInteraction=_dragInteraction;
 @property(nonatomic) __weak id <QLPreviewItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
-- (void).cxx_destruct;
 - (id)additionalItemViewControllerDescription;
 @property(readonly, copy) NSString *description;
 - (void)updateInterfaceAfterSavingEdits;
@@ -100,6 +100,7 @@
 - (id)excludedToolbarButtonIdentifiersForTraitCollection:(id)arg1;
 - (id)toolbarButtonsForTraitCollection:(id)arg1;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)canClickToToggleFullscreen;
 - (_Bool)canToggleFullScreen;
 - (_Bool)canEnterFullScreen;
 - (void)prepareForActionSheetPresentation;

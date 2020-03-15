@@ -14,8 +14,8 @@
 }
 
 + (id)testPrefix;
-@property(retain, nonatomic) NSString *testName; // @synthesize testName=_testName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *testName; // @synthesize testName=_testName;
 - (void)lock;
 - (void)unlock;
 - (void)runTest:(id)arg1;

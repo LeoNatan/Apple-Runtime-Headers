@@ -19,8 +19,8 @@
     id <AFQueueDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AFQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AFQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)description;
 - (id)dequeueAllObjects;
 - (id)dequeueObject;

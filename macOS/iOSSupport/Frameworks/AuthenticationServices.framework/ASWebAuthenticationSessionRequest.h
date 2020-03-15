@@ -23,13 +23,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak ASWebAuthenticationSessionController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <ASWebAuthenticationSessionRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BOOL shouldUseEphemeralSession; // @synthesize shouldUseEphemeralSession=_shouldUseEphemeralSession;
 @property(readonly, copy, nonatomic) NSString *callbackURLScheme; // @synthesize callbackURLScheme=_callbackURLScheme;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)completeWithCallbackURL:(id)arg1;
 - (void)cancelWithError:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

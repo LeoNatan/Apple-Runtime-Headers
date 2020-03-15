@@ -17,12 +17,12 @@
     NSArray *_cachedLoadingToolbarItems;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *cachedLoadingToolbarItems; // @synthesize cachedLoadingToolbarItems=_cachedLoadingToolbarItems;
 @property(retain) NSArray *cachedConfirmationToolbarItems; // @synthesize cachedConfirmationToolbarItems=_cachedConfirmationToolbarItems;
 @property(retain) UXBarButtonItem *doneButtonItem; // @synthesize doneButtonItem=_doneButtonItem;
 @property(retain) UXBarButtonItem *denyButton; // @synthesize denyButton=_denyButton;
 @property(retain) UXBarButtonItem *confirmButton; // @synthesize confirmButton=_confirmButton;
-- (void).cxx_destruct;
 - (void)_setupToolbarItemsIfNeeded;
 - (id)_newButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 keyEquivalent:(id)arg4;
 - (void)_disableActionButtonsWithSelectedButton:(id)arg1;

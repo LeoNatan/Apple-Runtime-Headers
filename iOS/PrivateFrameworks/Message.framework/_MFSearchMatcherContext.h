@@ -16,11 +16,11 @@
     NSMutableDictionary *_matchers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *matchers; // @synthesize matchers=_matchers;
 @property(nonatomic) unsigned long long lastSearchStringLength; // @synthesize lastSearchStringLength=_lastSearchStringLength;
 @property(nonatomic) char *lastSearchString; // @synthesize lastSearchString=_lastSearchString;
 @property(retain, nonatomic) CPSearchMatcher *lastMatcher; // @synthesize lastMatcher=_lastMatcher;
-- (void).cxx_destruct;
 - (void)flush;
 - (void)dealloc;
 

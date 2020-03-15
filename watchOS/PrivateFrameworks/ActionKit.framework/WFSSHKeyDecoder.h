@@ -15,10 +15,10 @@
     unsigned int _length;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int length; // @synthesize length=_length;
 @property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)decodeDataWithPrecedingLength;
 - (id)decodeDataWithLength:(unsigned int)arg1;
 - (id)decodeStringWithPrecedingLength;

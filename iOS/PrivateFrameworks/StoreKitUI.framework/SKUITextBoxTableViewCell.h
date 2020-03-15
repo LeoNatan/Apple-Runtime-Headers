@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _textBoxInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets textBoxInsets; // @synthesize textBoxInsets=_textBoxInsets;
 @property(readonly, nonatomic) SKUITextBoxView *textBoxView; // @synthesize textBoxView=_textBoxView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)prepareForReuse;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSExtensionContext *_extensionContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(readonly, nonatomic) NCRemoteViewServiceWindow *serviceWindow; // @synthesize serviceWindow=_ncServiceWindow;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (unsigned long long)awakeFromRemoteView;
 - (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;

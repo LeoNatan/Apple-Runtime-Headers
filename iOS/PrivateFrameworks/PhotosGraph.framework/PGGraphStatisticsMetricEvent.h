@@ -110,6 +110,7 @@
     double _ratioOfMomentsWithAtLeastOneGemAsset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double ratioOfMomentsWithAtLeastOneGemAsset; // @synthesize ratioOfMomentsWithAtLeastOneGemAsset=_ratioOfMomentsWithAtLeastOneGemAsset;
 @property(nonatomic) unsigned long long numberOfMomentsWithAtLeastOneGemAsset; // @synthesize numberOfMomentsWithAtLeastOneGemAsset=_numberOfMomentsWithAtLeastOneGemAsset;
 @property(nonatomic) double ratioOfMomentsInTrip; // @synthesize ratioOfMomentsInTrip=_ratioOfMomentsInTrip;
@@ -206,7 +207,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) PGManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (void)_saveKey:(id)arg1 stringValue:(id)arg2 payload:(id)arg3;
 - (void)_saveKey:(id)arg1 integerValue:(unsigned long long)arg2 payload:(id)arg3;
 - (void)_saveKey:(id)arg1 boolValue:(_Bool)arg2 payload:(id)arg3;

@@ -16,8 +16,8 @@
 }
 
 + (Class)eventsType;
-@property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

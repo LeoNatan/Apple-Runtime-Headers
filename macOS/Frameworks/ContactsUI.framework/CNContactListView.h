@@ -10,11 +10,8 @@
 {
 }
 
-+ (BOOL)isCompatibleWithResponsiveScrolling;
 - (void)awakeFromNib;
-- (BOOL)cn_isRubberBandAreaExposedAtTop;
-- (id)cn_adjustedClipPath;
-- (void)_setClipPath:(id)arg1;
+- (void)mouseDown:(id)arg1;
 
 @end
 

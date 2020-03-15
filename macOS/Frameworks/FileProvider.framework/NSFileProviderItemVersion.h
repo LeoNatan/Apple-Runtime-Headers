@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *metadataVersion; // @synthesize metadataVersion=_metadataVersion;
 @property(readonly, nonatomic) NSData *contentVersion; // @synthesize contentVersion=_contentVersion;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

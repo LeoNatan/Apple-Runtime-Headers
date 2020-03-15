@@ -11,8 +11,9 @@
 
 @protocol AKAppleIDAuthenticationDaemonProtocol <NSObject>
 - (void)fetchUserInformationForAltDSID:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
-- (void)fetchURLBagFromCache:(BOOL)arg1 withCompletion:(void (^)(NSDictionary *, NSError *))arg2;
-- (void)fetchURLBagWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)forceURLBagUpdateForAltDSID:(NSString *)arg1 urlSwitchData:(NSString *)arg2 completion:(void (^)(BOOL, NSError *))arg3;
+- (void)fetchURLBagFromCache:(BOOL)arg1 altDSID:(NSString *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)fetchURLBagForAltDSID:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)accountNamesForAltDSID:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)activeLoginCode:(void (^)(NSString *, NSError *))arg1;
 - (void)isDevicePasscodeProtected:(void (^)(BOOL, NSError *))arg1;

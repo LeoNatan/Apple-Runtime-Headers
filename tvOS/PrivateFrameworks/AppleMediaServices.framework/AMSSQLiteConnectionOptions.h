@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(copy, nonatomic) NSString *protectionType; // @synthesize protectionType=_protectionType;
 @property(nonatomic) long long cacheSize; // @synthesize cacheSize=_cacheSize;
 @property(copy, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

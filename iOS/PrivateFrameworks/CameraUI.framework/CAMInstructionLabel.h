@@ -18,12 +18,12 @@
     UILabel *__label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *_label; // @synthesize _label=__label;
 @property(nonatomic) _Bool useModeDialFontSize; // @synthesize useModeDialFontSize=_useModeDialFontSize;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <CAMInstructionLabelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double _backgroundAlpha;
 @property(readonly, nonatomic) struct UIEdgeInsets _textInsets;
 - (void)_updateLayer;

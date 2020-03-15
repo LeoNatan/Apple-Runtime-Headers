@@ -16,8 +16,8 @@
     NSDictionary *_iaps;
 }
 
-@property(readonly, nonatomic) NSDictionary *iaps; // @synthesize iaps=_iaps;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *iaps; // @synthesize iaps=_iaps;
 - (id)initWithIAPs:(id)arg1;
 - (id)init;
 

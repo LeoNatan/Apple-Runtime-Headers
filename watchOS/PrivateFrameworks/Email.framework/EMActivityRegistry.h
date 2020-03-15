@@ -17,8 +17,8 @@
 
 + (id)observerInterface;
 + (id)remoteInterface;
-@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 - (id)registerActivityObserver:(id)arg1;
 - (id)initWithRemoteConnection:(id)arg1;
 

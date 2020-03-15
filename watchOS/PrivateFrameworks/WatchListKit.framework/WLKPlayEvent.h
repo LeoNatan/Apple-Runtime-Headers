@@ -20,6 +20,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *occurrenceDate; // @synthesize occurrenceDate=_occurrenceDate;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSString *externalPlayableID; // @synthesize externalPlayableID=_externalPlayableID;
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

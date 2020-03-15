@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CTPlanTransferAttributes *transferAttributes; // @synthesize transferAttributes=_transferAttributes;
 @property(retain, nonatomic) CTRemotePlanIdentifier *planID; // @synthesize planID=_planID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)label;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isClassAllowedFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *actionClass; // @synthesize actionClass=_actionClass;
 @property(copy) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
 @property(retain) NSArray *associatedResults; // @synthesize associatedResults=_associatedResults;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 // Property attributes: T^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf},V_result
 
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 -     // Error parsing type: @56@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32@40@48, name: initWithURL:result:context:associatedResults:className:

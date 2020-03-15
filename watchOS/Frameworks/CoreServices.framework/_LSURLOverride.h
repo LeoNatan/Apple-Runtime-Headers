@@ -32,9 +32,9 @@
 + (id)fmipURL:(State_0f18e2a3 *)arg1;
 + (id)fmfURL:(State_0f18e2a3 *)arg1;
 + (id)mapsURL:(State_0f18e2a3 *)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *overrideURL; // @synthesize overrideURL=_overrideURL;
 @property(readonly, nonatomic) NSURL *originalURL; // @synthesize originalURL=_originalURL;
-- (void).cxx_destruct;
 - (id)initWithOriginalURL:(id)arg1;
 - (id)initWithOriginalURL:(id)arg1 newsOnly:(_Bool)arg2;
 - (id)initWithOriginalURL:(id)arg1 checkingForAvailableApplications:(_Bool)arg2;

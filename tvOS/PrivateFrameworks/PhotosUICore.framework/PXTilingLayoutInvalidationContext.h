@@ -20,13 +20,13 @@
     NSString *_tag;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(readonly, nonatomic) _Bool invalidatedScrollInfo; // @synthesize invalidatedScrollInfo=_invalidatedScrollInfo;
 @property(readonly, nonatomic) _Bool invalidatedVisibleRect; // @synthesize invalidatedVisibleRect=_invalidatedVisibleRect;
 @property(readonly, nonatomic) _Bool invalidatedScrollBounds; // @synthesize invalidatedScrollBounds=_invalidatedScrollBounds;
 @property(readonly, nonatomic) _Bool invalidatedContentBounds; // @synthesize invalidatedContentBounds=_invalidatedContentBounds;
 @property(readonly, nonatomic) _Bool invalidatedAllTiles; // @synthesize invalidatedAllTiles=_invalidatedAllTiles;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSIndexSet *invalidatedTileGroups;
 - (void)invalidateEverything;

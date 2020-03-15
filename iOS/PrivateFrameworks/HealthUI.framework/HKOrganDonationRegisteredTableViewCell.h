@@ -15,9 +15,9 @@
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *registrarLabel; // @synthesize registrarLabel=_registrarLabel;
 @property(retain, nonatomic) UILabel *introLabel; // @synthesize introLabel=_introLabel;
-- (void).cxx_destruct;
 - (void)setupConstraints;
 - (void)setupSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

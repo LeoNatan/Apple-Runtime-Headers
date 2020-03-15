@@ -17,10 +17,10 @@
 }
 
 + (id)currentDevice;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool lastFetchSucceeded; // @synthesize lastFetchSucceeded=_lastFetchSucceeded;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(copy, nonatomic) NSString *routeIdentifier; // @synthesize routeIdentifier=_routeIdentifier;
-- (void).cxx_destruct;
 - (void)getRouteIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateRouteIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_activeDeviceInfoChanged:(id)arg1;

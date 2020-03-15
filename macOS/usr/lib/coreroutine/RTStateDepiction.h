@@ -20,9 +20,9 @@
 + (double)quantizeTimeIntervalSinceReferenceDate:(double)arg1;
 + (long long)maximumNumberOfDataPoints;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTStateDepictionOneState *clusterState; // @synthesize clusterState=_clusterState;
 @property(nonatomic) long long numOfDataPts; // @synthesize numOfDataPts=_numOfDataPts;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)exemptFromPurge;
 - (void)removeAllVisitsExceptMostRecent;
@@ -41,7 +41,7 @@
 - (double)getAggTimeScaleFactor:(double)arg1 predictionWindow:(double)arg2;
 @property(copy, nonatomic) NSString *customLabel;
 @property(retain, nonatomic) NSDate *geocodeDate;
-@property(nonatomic) long long typeSource;
+@property(nonatomic) unsigned long long typeSource;
 @property(nonatomic) long long type;
 @property(nonatomic) long long mapItemSource;
 @property(retain, nonatomic) RTMapItem *mapItem;
@@ -54,7 +54,7 @@
 - (void)_performIntegrityCheck;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithLocation:(id)arg1 type:(long long)arg2 typeSource:(long long)arg3 customLabel:(id)arg4 mapItem:(id)arg5;
+- (id)initWithLocation:(id)arg1 type:(long long)arg2 typeSource:(unsigned long long)arg3 customLabel:(id)arg4 mapItem:(id)arg5;
 - (id)init;
 - (id)_excludeEntryExitOutlierDates:(id)arg1 options:(id)arg2;
 - (id)_filterEntryExitData:(id)arg1 options:(id)arg2;

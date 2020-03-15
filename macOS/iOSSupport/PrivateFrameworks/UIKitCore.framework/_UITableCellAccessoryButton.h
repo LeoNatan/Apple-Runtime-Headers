@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _backgroundImageProvider;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType backgroundImageProvider; // @synthesize backgroundImageProvider=_backgroundImageProvider;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType backgroundImageProvider; // @synthesize backgroundImageProvider=_backgroundImageProvider;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (void)_dynamicUserInterfaceTraitDidChange;

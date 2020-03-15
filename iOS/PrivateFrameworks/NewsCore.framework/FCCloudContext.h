@@ -41,6 +41,7 @@
     id <FCFlintHelper> _flintHelper;
     id <FCBackgroundTaskable> _backgroundTaskable;
     id <FCForYouMagazineFeedManaging> _forYouMagazineFeedManager;
+    CDUnknownBlockType _forYouPluginGroupManagingProvider;
     id <FCForYouPluginGroupManaging> _forYouPluginGroupManager;
     id <FCForYouBridgedConfigurationParser> _forYouBridgedConfigurationParser;
     id <FCPPTContext> _pptContext;
@@ -52,6 +53,7 @@
 + (id)testingContextWithDesiredHeadlineFieldOptions:(unsigned long long)arg1;
 + (id)testingContext;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(retain, nonatomic) id <FCPrivateDataContext> privateDataContext; // @synthesize privateDataContext=_privateDataContext;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
@@ -59,6 +61,7 @@
 @property(readonly, nonatomic) _Bool deviceIsiPad; // @synthesize deviceIsiPad=_deviceIsiPad;
 @property(retain, nonatomic) id <FCForYouBridgedConfigurationParser> forYouBridgedConfigurationParser; // @synthesize forYouBridgedConfigurationParser=_forYouBridgedConfigurationParser;
 @property(nonatomic) __weak id <FCForYouPluginGroupManaging> forYouPluginGroupManager; // @synthesize forYouPluginGroupManager=_forYouPluginGroupManager;
+@property(copy, nonatomic) CDUnknownBlockType forYouPluginGroupManagingProvider; // @synthesize forYouPluginGroupManagingProvider=_forYouPluginGroupManagingProvider;
 @property(nonatomic) __weak id <FCForYouMagazineFeedManaging> forYouMagazineFeedManager; // @synthesize forYouMagazineFeedManager=_forYouMagazineFeedManager;
 @property(nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
 @property(nonatomic) __weak id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
@@ -73,7 +76,6 @@
 @property(readonly, nonatomic) FCPurchaseController *purchaseController; // @synthesize purchaseController=_purchaseController;
 @property(readonly, nonatomic) FCNotificationController *notificationController; // @synthesize notificationController=_notificationController;
 @property(retain, nonatomic) id <FCAppActivityMonitor> appActivityMonitor; // @synthesize appActivityMonitor=_appActivityMonitor;
-- (void).cxx_destruct;
 - (void)_purchaseControllerDidAddALaCarteSubscription;
 - (void)bundleSubscriptionDidSubscribe:(id)arg1;
 - (_Bool)shouldAssetKeyManagerSimulateUnauthorizedAssetKeys:(id)arg1;

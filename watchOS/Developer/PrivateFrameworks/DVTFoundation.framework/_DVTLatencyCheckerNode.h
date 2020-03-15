@@ -45,13 +45,13 @@
 @property double duration; // @synthesize duration=_duration;
 @property unsigned long long endTime; // @synthesize endTime=_endTime;
 @property unsigned long long startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)frameTree;
 - (double)minimumDurationForReporting;
 - (void)_frameTreeWithParent:(id)arg1;
 - (id)_longestToShortestChildNodes;
 - (id)description;
 - (void)invalidate;
+- (void)dealloc;
 - (id)init;
 
 @end

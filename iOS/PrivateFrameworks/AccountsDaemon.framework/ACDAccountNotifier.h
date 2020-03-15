@@ -16,8 +16,8 @@
 }
 
 + (id)allNotificationEntries;
-@property(readonly, copy, nonatomic) NSArray *notificationEntries; // @synthesize notificationEntries=_notificationEntries;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *notificationEntries; // @synthesize notificationEntries=_notificationEntries;
 - (id)_provisionedDataclassesForNewAccount:(id)arg1 oldAccount:(id)arg2;
 - (id)_unsafe_pluginsRegisteredForNewAccount:(id)arg1 oldAccount:(id)arg2;
 - (id)_pluginsRegisteredForNewAccount:(id)arg1 oldAccount:(id)arg2;

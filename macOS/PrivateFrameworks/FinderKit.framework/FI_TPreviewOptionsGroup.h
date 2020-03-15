@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)groupForTitle:(const struct TString *)arg1 validKeys:(id)arg2 hasCompositeKeys:(_Bool)arg3;
 + (id)groupForTitle:(const struct TString *)arg1 validKeys:(id)arg2;
-@property(readonly, nonatomic) _Bool hasCompositeKeys; // @synthesize hasCompositeKeys=_hasCompositeKeys;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasCompositeKeys; // @synthesize hasCompositeKeys=_hasCompositeKeys;
 - (struct TString)displayNameForKey:(const struct TString *)arg1;
 @property(readonly, nonatomic) _Bool hasSpotlightAttributes; // @dynamic hasSpotlightAttributes;
 @property(readonly, retain, nonatomic) NSArray *optionKeys; // @dynamic optionKeys;

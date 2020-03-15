@@ -33,6 +33,7 @@
 + (int)budgetDefaultMaxDockApps;
 + (id)defaultBudgetController;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(nonatomic) __weak id <CSLDuetBudgetControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(readonly, nonatomic) CSLDuetActivityBudget *budget; // @synthesize budget=_budget;
 @property(readonly, nonatomic) CSLDuetActivityBudgetDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *complicationBundleIDs;
 @property(readonly, nonatomic) NSSet *dockBundleIDs;
 @property(readonly, nonatomic) NSSet *eligibleBundleIDs;

@@ -19,11 +19,11 @@
     CNScrollableContainerView *_container;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ABCardCollectionViewPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) CNScrollableContainerView *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)showItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setSpacing:(double)arg1 afterItem:(id)arg2;
 - (void)reloadItem:(id)arg1 animated:(BOOL)arg2;

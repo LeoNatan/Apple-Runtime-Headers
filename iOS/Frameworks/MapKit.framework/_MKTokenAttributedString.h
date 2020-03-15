@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_string;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEmpty;
 

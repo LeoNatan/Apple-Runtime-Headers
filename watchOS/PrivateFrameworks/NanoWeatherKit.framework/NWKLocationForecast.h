@@ -28,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (double)durationForConditions:(id)arg1 ofType:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *now; // @synthesize now=_now;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *endConditionsDate; // @synthesize endConditionsDate=_endConditionsDate;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) WFAirQualityConditions *airQualityConditions; // @synthesize airQualityConditions=_airQualityConditions;
 @property(readonly, nonatomic) WFWeatherConditions *currentConditions; // @synthesize currentConditions=_currentConditions;
 @property(retain, nonatomic) WFLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WFWeatherConditions *nowConditions;
 @property(readonly, nonatomic) NSString *naturalLanguageDescription;
 - (void)encodeWithCoder:(id)arg1;

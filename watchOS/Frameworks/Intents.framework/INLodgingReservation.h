@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *numberOfChildren; // @synthesize numberOfChildren=_numberOfChildren;
 @property(readonly, copy, nonatomic) NSNumber *numberOfAdults; // @synthesize numberOfAdults=_numberOfAdults;
 @property(readonly, copy, nonatomic) INDateComponentsRange *reservationDuration; // @synthesize reservationDuration=_reservationDuration;
 @property(readonly, copy, nonatomic) CLPlacemark *lodgingBusinessLocation; // @synthesize lodgingBusinessLocation=_lodgingBusinessLocation;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -26,6 +26,7 @@
 }
 
 + (id)withDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long bytesWritten; // @synthesize bytesWritten=_bytesWritten;
 @property(nonatomic) long long httpContentLength; // @synthesize httpContentLength=_httpContentLength;
 @property(retain, nonatomic) NSMutableData *bodyDataBuffer; // @synthesize bodyDataBuffer=_bodyDataBuffer;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *boundaryString; // @synthesize boundaryString=_boundaryString;
 @property(retain, nonatomic) NSMutableArray *partsArray; // @synthesize partsArray=_partsArray;
 @property(nonatomic) unsigned long long streamBufferLength; // @synthesize streamBufferLength=_streamBufferLength;
-- (void).cxx_destruct;
 - (void)setFile:(id)arg1 forKey:(id)arg2 contentType:(id)arg3 fileName:(id)arg4;
 - (void)addFile:(id)arg1 forKey:(id)arg2 contentType:(id)arg3 fileName:(id)arg4;
 - (void)setData:(id)arg1 forKey:(id)arg2 contentType:(id)arg3 fileName:(id)arg4;

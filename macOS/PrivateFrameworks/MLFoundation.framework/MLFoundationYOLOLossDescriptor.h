@@ -28,6 +28,7 @@
 }
 
 + (id)lossDescriptorWithSpatialPositionLossType:(int)arg1 spatialSizeLossType:(int)arg2 confidenceLossType:(int)arg3 classesLossType:(int)arg4 reduceType:(int)arg5 numberOfAnchorBoxes:(unsigned long long)arg6 anchorBoxes:(id)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) float maximumIOUForObjectAbsence; // @synthesize maximumIOUForObjectAbsence=_maximumIOUForObjectAbsence;
 @property(nonatomic) float minimumIOUForObjectPresence; // @synthesize minimumIOUForObjectPresence=_minimumIOUForObjectPresence;
 @property(nonatomic) float scaleClassLoss; // @synthesize scaleClassLoss=_scaleClassLoss;
@@ -43,7 +44,6 @@
 @property(readonly, retain) MLFoundationLossDescriptor *confidenceLossDescriptor; // @synthesize confidenceLossDescriptor=_confidenceLossDescriptor;
 @property(readonly, retain) MLFoundationLossDescriptor *spatialSizeLossDescriptor; // @synthesize spatialSizeLossDescriptor=_spatialSizeLossDescriptor;
 @property(readonly, retain) MLFoundationLossDescriptor *spatialPositionLossDescriptor; // @synthesize spatialPositionLossDescriptor=_spatialPositionLossDescriptor;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLossDescriptorWithSpatialPositionLossType:(int)arg1 spatialSizeLossType:(int)arg2 confidenceLossType:(int)arg3 classesLossType:(int)arg4 reduceType:(int)arg5 numberOfAnchorBoxes:(unsigned long long)arg6 anchorBoxes:(id)arg7;
 

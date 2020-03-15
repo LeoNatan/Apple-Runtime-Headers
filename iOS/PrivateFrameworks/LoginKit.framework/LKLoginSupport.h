@@ -15,9 +15,11 @@
 }
 
 + (_Bool)isNewUserAbleToLogin;
++ (_Bool)hasCleanUser;
++ (id)findLeastRecentlyUsedCleanUser;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) NSOperationQueue *listenerQueue; // @synthesize listenerQueue=_listenerQueue;
-- (void).cxx_destruct;
 - (void)runWithTimeOutPeriod:(double)arg1 readyToLoginBlock:(CDUnknownBlockType)arg2;
 - (void)runWithTimeOutPeriod:(double)arg1 loggedInBlock:(CDUnknownBlockType)arg2;
 - (void)_runWithTimeOutPeriod:(double)arg1 notificationType:(unsigned long long)arg2 completionBlock:(CDUnknownBlockType)arg3;

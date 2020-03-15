@@ -27,10 +27,10 @@
 + (BOOL)runsExclusively;
 + (short)workerType;
 + (long long)applicationDataFolderIdentifier;
+- (void).cxx_destruct;
 @property(retain) PHAServiceCancelableOperation *currentOperation; // @synthesize currentOperation=_currentOperation;
 @property(retain, nonatomic) id <PHAAssetResourceDataLoading> dataLoader; // @synthesize dataLoader=_dataLoader;
 @property(nonatomic, getter=isWarmedUp) BOOL warmedUp; // @synthesize warmedUp=_warmedUp;
-- (void).cxx_destruct;
 - (void)pingWorkerWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 @property(readonly, getter=isQuiescent) BOOL quiescent;
 - (BOOL)canRunWhenGraphIsLoaded;

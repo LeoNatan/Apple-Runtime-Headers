@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newController;
+- (void).cxx_destruct;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) NSSecureTextField *pwdField; // @synthesize pwdField=_pwdField;
 @property(retain) NSTextField *userNameField; // @synthesize userNameField=_userNameField;
 @property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain) NSButton *okButton; // @synthesize okButton=_okButton;
 @property(retain) NSTextField *promptField; // @synthesize promptField=_promptField;
-- (void).cxx_destruct;
 - (void)sheetAction:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (void)resetWithParentWindow:(id)arg1 prompt:(id)arg2;

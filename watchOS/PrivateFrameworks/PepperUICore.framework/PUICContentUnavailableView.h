@@ -22,6 +22,7 @@
 }
 
 + (void)_setupLayoutSpec;
+- (void).cxx_destruct;
 @property(nonatomic) float scrollViewMinimumTopInset; // @synthesize scrollViewMinimumTopInset=_scrollViewMinimumTopInset;
 @property(retain, nonatomic) PUICButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool centerContentVertically; // @synthesize centerContentVertically=_centerContentVertically;
 @property(copy, nonatomic) CDUnknownBlockType buttonAction; // @synthesize buttonAction=_buttonAction;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_handleContentSizeCategoryDidChange:(id)arg1;
 - (id)_preferredTitleFont;

@@ -17,12 +17,12 @@
     NSSet *_deletedEntityNonPersistentIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *deletedEntityNonPersistentIDs; // @synthesize deletedEntityNonPersistentIDs=_deletedEntityNonPersistentIDs;
 @property(copy, nonatomic) NSArray *sortHeaders; // @synthesize sortHeaders=_sortHeaders;
 @property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 @property(nonatomic) unsigned long long entityType; // @synthesize entityType=_entityType;
 @property(nonatomic) unsigned long long responseType; // @synthesize responseType=_responseType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

@@ -22,9 +22,9 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_idleTimerDefaults, setter=_setIdleTimerDefaults:) SBIdleTimerDefaults *idleTimerDefaults; // @synthesize idleTimerDefaults=_idleTimerDefaults;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_isEnabled;
-- (void).cxx_destruct;
 - (void)wakeGestureManager:(id)arg1 didUpdateWakeGesture:(long long)arg2 orientation:(int)arg3;
 - (void)wakeGestureManager:(id)arg1 didUpdateWakeGesture:(long long)arg2;
 - (void)wakeGestureManager:(id)arg1 didUpdateWakeGesture:(long long)arg2 orientation:(int)arg3 detectedAt:(unsigned long long)arg4;

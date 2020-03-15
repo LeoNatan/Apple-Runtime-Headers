@@ -18,11 +18,11 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(readonly, nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(readonly, nonatomic) struct CGSize containerSize; // @synthesize containerSize=_containerSize;
-- (void).cxx_destruct;
 - (void)raiseExceptionForPropertyString:(id)arg1;
 @property(readonly, nonatomic) unsigned long long supportedLayoutOrientation;
 - (id)backgroundColor;

@@ -14,9 +14,9 @@
     NSURLRequest *_continuationRequest;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURLRequest *continuationRequest; // @synthesize continuationRequest=_continuationRequest;
 @property(copy, nonatomic) NSDictionary *additionalPayload; // @synthesize additionalPayload=_additionalPayload;
-- (void).cxx_destruct;
 
 @end
 

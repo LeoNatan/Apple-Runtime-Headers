@@ -16,8 +16,8 @@
 }
 
 + (Class)homeKitRepresentationClass;
-@property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

@@ -9,7 +9,7 @@
 @interface _TtC9JetEngine12ReplayLogger : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: stateLock
-    // Error parsing type: , name: rawMessages
+    // Error parsing type: , name: rawRecords
 }
 
 @end

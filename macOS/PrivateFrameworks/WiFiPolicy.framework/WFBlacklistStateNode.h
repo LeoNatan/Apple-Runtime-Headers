@@ -18,13 +18,13 @@
     NSString *_blacklistedReasonString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *blacklistedReasonString; // @synthesize blacklistedReasonString=_blacklistedReasonString;
 @property long long blacklistedReasonData; // @synthesize blacklistedReasonData=_blacklistedReasonData;
 @property unsigned long long blacklistedReason; // @synthesize blacklistedReason=_blacklistedReason;
 @property double blacklistedStateTimestamp; // @synthesize blacklistedStateTimestamp=_blacklistedStateTimestamp;
 @property(copy) NSString *blacklistedStateString; // @synthesize blacklistedStateString=_blacklistedStateString;
 @property unsigned long long blacklistedState; // @synthesize blacklistedState=_blacklistedState;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

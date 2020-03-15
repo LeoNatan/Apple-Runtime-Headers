@@ -29,13 +29,13 @@
 + (id)_lightingEffectWithIdentifier:(id)arg1 CIFilterName:(id)arg2 lightingVersion:(long long)arg3;
 + (id)_effectWithIdentifier:(id)arg1 CIFilterName:(id)arg2 displayName:(id)arg3;
 + (id)_legacyEffectWithIdentifier:(id)arg1 CIFilterName:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isLegacy; // @synthesize isLegacy=_isLegacy;
 @property(readonly, nonatomic) _Bool isPortrait; // @synthesize isPortrait=_isPortrait;
 @property(readonly, nonatomic) long long lightingVersion; // @synthesize lightingVersion=_lightingVersion;
 @property(readonly, copy, nonatomic) NSString *CIFilterName; // @synthesize CIFilterName=_CIFilterName;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *filterIdentifier; // @synthesize filterIdentifier=_filterIdentifier;
-- (void).cxx_destruct;
 - (id)newEffectFilter;
 @property(readonly, nonatomic) long long latestVersion;
 - (id)description;

@@ -12,6 +12,7 @@
 
 @optional
 - (void)navigator:(CPSNavigator *)arg1 didEndTrip:(_Bool)arg2;
+- (void)updateTripEstimates:(CPTravelEstimates *)arg1;
 - (void)navigator:(CPSNavigator *)arg1 pausedTripForReason:(unsigned long long)arg2 description:(NSString *)arg3;
 - (void)updateEstimates:(CPTravelEstimates *)arg1 forManeuver:(CPManeuver *)arg2;
 - (void)showManeuvers:(NSArray *)arg1 usingDisplayStyles:(NSArray *)arg2;

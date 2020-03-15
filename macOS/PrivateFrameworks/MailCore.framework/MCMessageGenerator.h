@@ -23,6 +23,7 @@
 }
 
 + (id)domainHintForResentIDFromHeaders:(id)arg1 hasResentFromHeaders:(char *)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *encryptionCertificates; // @synthesize encryptionCertificates=_encryptionCertificates;
 @property(nonatomic) BOOL allowsAppleDoubleAttachments; // @synthesize allowsAppleDoubleAttachments=_allowsAppleDoubleAttachments;
 @property(nonatomic) BOOL allowsBinaryMimeParts; // @synthesize allowsBinaryMimeParts=_allowsBinaryMimeParts;
@@ -31,7 +32,6 @@
 @property(nonatomic) BOOL createsPlainTextOnly; // @synthesize createsPlainTextOnly=_createsPlainTextOnly;
 @property(nonatomic) BOOL createsMimeAlternatives; // @synthesize createsMimeAlternatives=_createsMimeAlternatives;
 @property(nonatomic) unsigned long long encodingHint; // @synthesize encodingHint=_encodingHint;
-- (void).cxx_destruct;
 - (id)_newRFC2047NameParameterDataForMimePart:(id)arg1;
 - (id)_hfsFilenameDataWithFilename:(id)arg1 partData:(id)arg2;
 - (void)_setMimeTypeFromAttachment:(id)arg1 onMimePart:(id)arg2 filename:(id *)arg3;

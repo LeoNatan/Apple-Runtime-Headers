@@ -16,9 +16,9 @@
     NSColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSColor *color; // @synthesize color=_color;
 @property long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

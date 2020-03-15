@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     BOOL _shouldUseVisualEffectViewBackground;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldUseVisualEffectViewBackground; // @synthesize shouldUseVisualEffectViewBackground=_shouldUseVisualEffectViewBackground;
 @property(nonatomic) BOOL shouldDrawSeparator; // @synthesize shouldDrawSeparator=_shouldDrawSeparator;
-- (void).cxx_destruct;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
 - (void)drawBackgroundInRect:(struct CGRect)arg1;
 

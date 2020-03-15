@@ -15,8 +15,8 @@
     NSError *_error;
 }
 
-@property(retain) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain) NSError *error; // @synthesize error=_error;
 - (void)handleEWSError:(id)arg1;
 - (long long)deliverSynchronously;
 - (id)headersForDelivery;

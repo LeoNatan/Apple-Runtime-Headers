@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _eventID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long eventID; // @synthesize eventID=_eventID;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)initWithPath:(id)arg1 flags:(unsigned int)arg2 eventID:(unsigned long long)arg3;
 
 @end

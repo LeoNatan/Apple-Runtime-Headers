@@ -15,10 +15,10 @@
     HMFTimer *_sendCloseEventTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain) HMFTimer *sendCloseEventTimer; // @synthesize sendCloseEventTimer=_sendCloseEventTimer;
 @property(retain) HMFTimer *handleOpenRequestResponseTimer; // @synthesize handleOpenRequestResponseTimer=_handleOpenRequestResponseTimer;
 @property(readonly) CDUnknownBlockType sessionStartCallback; // @synthesize sessionStartCallback=_sessionStartCallback;
-- (void).cxx_destruct;
 @property(readonly) _Bool shouldCloseSessionWithTimeoutReason;
 - (id)initWithSessionStartCallback:(CDUnknownBlockType)arg1 handleOpenRequestResponseTimer:(id)arg2 sendCloseEventTimer:(id)arg3;
 

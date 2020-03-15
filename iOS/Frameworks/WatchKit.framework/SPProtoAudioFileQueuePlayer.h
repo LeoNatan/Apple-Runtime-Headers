@@ -24,6 +24,7 @@
     SPProtoAudioFileQueuePlayerSetItems *_upsertWithItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoAudioFilePlayerUpdateContainedIdentifier *setCurrentItem; // @synthesize setCurrentItem=_setCurrentItem;
 @property(retain, nonatomic) SPProtoObjectMessage *removeAllItems; // @synthesize removeAllItems=_removeAllItems;
 @property(retain, nonatomic) SPProtoAudioFilePlayerUpdateContainedIdentifier *removeItem; // @synthesize removeItem=_removeItem;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) SPProtoAudioFileQueuePlayerSetRate *setRate; // @synthesize setRate=_setRate;
 @property(retain, nonatomic) SPProtoObjectMessage *destroy; // @synthesize destroy=_destroy;
 @property(retain, nonatomic) SPProtoAudioFileQueuePlayerSetItems *upsertWithItems; // @synthesize upsertWithItems=_upsertWithItems;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

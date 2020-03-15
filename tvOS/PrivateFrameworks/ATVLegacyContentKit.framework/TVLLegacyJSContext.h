@@ -24,10 +24,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) long long configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak TVLDocument *feedDocument; // @synthesize feedDocument=_feedDocument;
 @property(nonatomic) __weak TVLAppliance *appliance; // @synthesize appliance=_appliance;
-- (void).cxx_destruct;
 - (void)_cleanUpContextMenu;
 - (_Bool)_isContextMenuSessionValid;
 - (void)_endContextMenuSessionByDismissing:(_Bool)arg1;

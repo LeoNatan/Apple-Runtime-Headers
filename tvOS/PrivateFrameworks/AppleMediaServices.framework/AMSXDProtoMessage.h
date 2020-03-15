@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_messageData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

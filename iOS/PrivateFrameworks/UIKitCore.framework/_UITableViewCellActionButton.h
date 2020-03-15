@@ -14,8 +14,8 @@
 }
 
 + (id)actionButtonWithStyle:(unsigned long long)arg1;
-@property(copy, nonatomic) UIVisualEffect *backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIVisualEffect *backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
 
 @end
 

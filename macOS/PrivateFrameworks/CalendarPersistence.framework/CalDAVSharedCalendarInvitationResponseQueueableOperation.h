@@ -18,10 +18,10 @@
     NSURL *_calendarHomeURL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *calendarHomeURL; // @synthesize calendarHomeURL=_calendarHomeURL;
 @property(retain) NSData *invitation; // @synthesize invitation=_invitation;
 @property(retain) CalDAVReplyToSharedCalendarInvitationTaskGroup *taskGroup; // @synthesize taskGroup=_taskGroup;
-- (void).cxx_destruct;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (id)_originalManagedMessageInNewContext;
 - (void)useCoreDAV;

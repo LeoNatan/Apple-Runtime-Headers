@@ -17,9 +17,9 @@
     id <SXActionManager> _actionManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
 @property(readonly, nonatomic) id <SXActionProvider> actionProvider; // @synthesize actionProvider=_actionProvider;
-- (void).cxx_destruct;
 - (unsigned long long)handleRequest:(id)arg1;
 - (id)initWithActionProvider:(id)arg1 actionManager:(id)arg2;
 

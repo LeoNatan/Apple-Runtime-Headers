@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _MKPlaceViewController *infoCardController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showReportAProblem; // @synthesize showReportAProblem=_showReportAProblem;
 @property(nonatomic) __weak _MKPlaceViewController *infoCardController; // @synthesize infoCardController;
-- (void).cxx_destruct;
 - (BOOL)isReportAProblemAvailable;
 - (void)reportAProblem:(id)arg1;
 - (void)awakeFromNib;

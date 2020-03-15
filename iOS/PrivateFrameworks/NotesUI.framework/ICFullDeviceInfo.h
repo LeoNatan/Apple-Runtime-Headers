@@ -16,11 +16,11 @@
     struct ICDeviceHardwareInfo _hardwareInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
 @property(readonly, nonatomic) NSString *modelDisplayName; // @synthesize modelDisplayName=_modelDisplayName;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, nonatomic) struct ICDeviceHardwareInfo hardwareInfo; // @synthesize hardwareInfo=_hardwareInfo;
-- (void).cxx_destruct;
 - (_Bool)shouldBeHidden;
 - (unsigned long long)hardwareInfoNameFromString:(id)arg1;
 - (struct ICDeviceHardwareInfo)hardwareInfoFromModelId:(id)arg1;

@@ -16,8 +16,8 @@
     id <SXScrollPositionRestoring> _scrollPositionRestoring;
 }
 
-@property(readonly, nonatomic) id <SXScrollPositionRestoring> scrollPositionRestoring; // @synthesize scrollPositionRestoring=_scrollPositionRestoring;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXScrollPositionRestoring> scrollPositionRestoring; // @synthesize scrollPositionRestoring=_scrollPositionRestoring;
 - (void)applyBookmark:(id)arg1;
 - (id)initWithScrollPositionRestoring:(id)arg1;
 

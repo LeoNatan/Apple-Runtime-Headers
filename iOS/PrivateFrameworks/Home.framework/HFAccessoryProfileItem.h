@@ -21,9 +21,9 @@
     HMAccessoryProfile *_profile;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMAccessoryProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *services;
 - (id)copyWithValueSource:(id)arg1;
 - (id)serviceLikeBuilderInHome:(id)arg1;

@@ -52,10 +52,10 @@ __attribute__((visibility("hidden")))
     _Bool tornDown;
 }
 
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
-@property(readonly, nonatomic) _Bool atLeastOneTransferStarted; // @synthesize atLeastOneTransferStarted=_atLeastOneTransferStarted;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
+@property(readonly, nonatomic) _Bool atLeastOneTransferStarted; // @synthesize atLeastOneTransferStarted=_atLeastOneTransferStarted;
 - (void)nwOperationEventConverting:(id)arg1 opController:(struct INWOperationController *)arg2;
 - (void)nwOperationEventFinished:(id)arg1 opController:(struct INWOperationController *)arg2;
 - (void)nwOperationEventErrorOccurred:(id)arg1 opController:(struct INWOperationController *)arg2;

@@ -13,8 +13,8 @@
     id <CSLPanGestureForwardingScrollViewDelegate> _panDelegate;
 }
 
-@property(nonatomic) __weak id <CSLPanGestureForwardingScrollViewDelegate> panDelegate; // @synthesize panDelegate=_panDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLPanGestureForwardingScrollViewDelegate> panDelegate; // @synthesize panDelegate=_panDelegate;
 - (void)handlePan:(id)arg1;
 
 @end

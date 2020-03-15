@@ -16,11 +16,11 @@
     CDUnknownBlockType _fireBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fireBlock; // @synthesize fireBlock=_fireBlock;
 @property(retain, nonatomic) NFStateMachineState *destinationState; // @synthesize destinationState=_destinationState;
 @property(retain, nonatomic) NSSet *states; // @synthesize states=_states;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)fired:(id)arg1 withOwner:(id)arg2;
 - (id)onFire:(CDUnknownBlockType)arg1;
 - (id)description;

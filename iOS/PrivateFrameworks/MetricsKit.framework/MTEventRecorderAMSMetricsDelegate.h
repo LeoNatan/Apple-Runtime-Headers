@@ -25,6 +25,8 @@
 }
 
 + (id)bundleIdentifier;
++ (id)amsMetricsObjectCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMSMetrics *backgroundAMSMetrics; // @synthesize backgroundAMSMetrics=_backgroundAMSMetrics;
 @property(retain, nonatomic) AMSMetrics *contractBasedAMSMetrics; // @synthesize contractBasedAMSMetrics=_contractBasedAMSMetrics;
 @property(retain, nonatomic) AMSMetrics *bagBasedAMSMetrics; // @synthesize bagBasedAMSMetrics=_bagBasedAMSMetrics;
@@ -33,7 +35,6 @@
 @property(retain, nonatomic) NSString *containerId; // @synthesize containerId=_containerId;
 @property(nonatomic) _Bool personalizedWithItunesAccount; // @synthesize personalizedWithItunesAccount=_personalizedWithItunesAccount;
 @property(nonatomic) _Bool monitorsLifecycleEvents; // @synthesize monitorsLifecycleEvents=_monitorsLifecycleEvents;
-- (void).cxx_destruct;
 - (_Bool)shouldFlushBackgroundMetrics;
 @property(readonly, nonatomic) id <AMSMescalBagContract> mescalContract;
 @property(readonly, nonatomic) AMSBagValue *trustedDomains;

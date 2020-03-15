@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSUUID *callUUID; // @synthesize callUUID=_callUUID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSUUID *callUUID; // @synthesize callUUID=_callUUID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

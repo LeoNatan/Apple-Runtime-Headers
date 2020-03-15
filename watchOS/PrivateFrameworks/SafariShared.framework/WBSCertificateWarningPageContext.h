@@ -26,12 +26,12 @@
 + (id)permanentAcceptanceConfirmationButtonTitle;
 + (id)permanentAcceptanceConfirmationDescription;
 + (id)permanentAcceptanceConfirmationTitle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double clockSkew; // @synthesize clockSkew=_clockSkew;
 @property(readonly, nonatomic) int numberOfDaysInvalid; // @synthesize numberOfDaysInvalid=_numberOfDaysInvalid;
 @property(readonly, nonatomic) _Bool canGoBack; // @synthesize canGoBack=_canGoBack;
 @property(readonly, nonatomic) int warningCategory; // @synthesize warningCategory=_warningCategory;
 @property(readonly, nonatomic) NSURL *failingURL; // @synthesize failingURL=_failingURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *expiredCerticateDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

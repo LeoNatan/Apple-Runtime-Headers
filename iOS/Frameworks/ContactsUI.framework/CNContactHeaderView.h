@@ -40,6 +40,7 @@
 + (_Bool)requiresConstraintBasedLayout;
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(_Bool)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowBelowNavigationTitle; // @synthesize shouldShowBelowNavigationTitle=_shouldShowBelowNavigationTitle;
 @property(nonatomic) _Bool showMonogramsOnly; // @synthesize showMonogramsOnly=_showMonogramsOnly;
 @property(nonatomic) _Bool visibleToScrollViews; // @synthesize visibleToScrollViews=_visibleToScrollViews;
@@ -58,7 +59,6 @@
 @property(nonatomic) __weak id <CNContactHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CNPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate=_presenterDelegate;
 @property(copy, nonatomic) NSDictionary *nameTextAttributes; // @synthesize nameTextAttributes=_nameTextAttributes;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)contactViewCache;
 - (id)viewControllerForPhotoView:(id)arg1;

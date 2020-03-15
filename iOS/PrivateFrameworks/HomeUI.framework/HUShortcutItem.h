@@ -16,9 +16,9 @@
     HFTriggerBuilder *_triggerBuilder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool selectable; // @synthesize selectable=_selectable;
 @property(readonly, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

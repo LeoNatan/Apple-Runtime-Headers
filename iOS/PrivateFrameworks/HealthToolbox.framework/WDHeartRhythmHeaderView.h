@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomMarginToBodyLastBaselineConstraint; // @synthesize bottomMarginToBodyLastBaselineConstraint=_bottomMarginToBodyLastBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bodyFirstBaslineToTitleLastBaslineConstraint; // @synthesize bodyFirstBaslineToTitleLastBaslineConstraint=_bodyFirstBaslineToTitleLastBaslineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleFirstBaselineToTopMarginConstraint; // @synthesize titleFirstBaselineToTopMarginConstraint=_titleFirstBaselineToTopMarginConstraint;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *bodyText; // @synthesize bodyText=_bodyText;
 @property(retain, nonatomic) UITextView *bodyTextView; // @synthesize bodyTextView=_bodyTextView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 @property(readonly, nonatomic) NSAttributedString *bodyURLAttributedString;
 @property(readonly, nonatomic) NSAttributedString *bodyTextAttributedString;

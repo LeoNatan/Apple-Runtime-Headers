@@ -20,8 +20,8 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
-@property(nonatomic) __weak HKWorkoutBuilder *workoutBuilder; // @synthesize workoutBuilder=_workoutBuilder;
 - (void).cxx_destruct;
+@property(nonatomic) __weak HKWorkoutBuilder *workoutBuilder; // @synthesize workoutBuilder=_workoutBuilder;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_validate;

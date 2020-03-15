@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) id <_DKSyncRemoteKnowledgeStorageFetchDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) _DKSyncCloudKitKnowledgeStorage *common; // @synthesize common=_common;
-- (void).cxx_destruct;
 - (long long)transportType;
 - (id)name;
 - (void)updateStorageWithAddedEvents:(id)arg1 deletedEventIDs:(id)arg2 highPriority:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

@@ -20,6 +20,7 @@
     ICUserIdentity *_userIdentity;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(copy, nonatomic) NSDictionary *siriWHAMetricsInfo; // @synthesize siriWHAMetricsInfo=_siriWHAMetricsInfo;
 @property(copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool shouldImmediatelyStartPlayback; // @synthesize shouldImmediatelyStartPlayback=_shouldImmediatelyStartPlayback;
 @property(nonatomic) _Bool shouldOverrideManuallyCuratedQueue; // @synthesize shouldOverrideManuallyCuratedQueue=_shouldOverrideManuallyCuratedQueue;
 @property(readonly, copy, nonatomic) NSString *contextID; // @synthesize contextID=_contextID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportedOnCurrentPlatform;
 - (struct _MRSystemAppPlaybackQueue *)createRemotePlaybackQueue;
 - (id)initWithContextID:(id)arg1;

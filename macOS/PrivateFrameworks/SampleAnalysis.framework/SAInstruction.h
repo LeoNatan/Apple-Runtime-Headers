@@ -22,16 +22,16 @@
 + (id)instructionWithBinary:(id)arg1 offsetIntoTextSegment:(unsigned long long)arg2;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_e7a0f457 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(retain) SASourceInfo *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(retain) SASymbol *symbol; // @synthesize symbol=_symbol;
 @property __weak SABinary *binary; // @synthesize binary=_binary;
 @property unsigned long long offsetIntoTextSegment; // @synthesize offsetIntoTextSegment=_offsetIntoTextSegment;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (BOOL)symbolicateWithOptions:(unsigned long long)arg1 pid:(int)arg2;
-- (void)populateReferencesUsingBuffer:(const CDStruct_e7a0f457 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_0ce2a4d3 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_e7a0f457 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_0ce2a4d3 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

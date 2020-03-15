@@ -20,9 +20,9 @@
     CDDebug *_debug;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDDebug *debug; // @synthesize debug=_debug;
 @property(readonly) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (_Bool)establishConnection;
 - (void)invalidateConnection;
 - (void)cancelConnection;

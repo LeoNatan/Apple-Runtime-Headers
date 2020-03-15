@@ -20,9 +20,9 @@
     CLLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(retain) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) RELocationManager *locationManager;
 @property(readonly, nonatomic) _Bool monitoringLocation;
 - (void)_stopMonitoringLocationForManager:(id)arg1;

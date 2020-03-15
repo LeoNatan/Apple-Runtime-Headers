@@ -15,9 +15,9 @@
     BOOL _preferPassword;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL preferPassword; // @synthesize preferPassword=_preferPassword;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)urlRequest;
 - (id)initWithURLString:(id)arg1 account:(id)arg2;
 

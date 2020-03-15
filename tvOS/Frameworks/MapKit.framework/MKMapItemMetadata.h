@@ -14,9 +14,9 @@
     NSMutableDictionary *_imageCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 @property(readonly, nonatomic) GEOBusiness *business; // @synthesize business=_business;
-- (void).cxx_destruct;
 - (id)imageForURL:(id)arg1;
 - (void)addImage:(id)arg1 forURL:(id)arg2;
 - (id)description;

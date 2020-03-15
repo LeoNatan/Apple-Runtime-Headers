@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-@property(nonatomic) __weak id <WDCheckmarkTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WDCheckmarkTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clickToggle:(id)arg1;
 @property(nonatomic, getter=isOn) _Bool on;
 - (void)setDisplayText:(id)arg1;

@@ -14,9 +14,9 @@
     NSURL *_clientDatabaseURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *clientDatabaseURL; // @synthesize clientDatabaseURL=_clientDatabaseURL;
 @property(retain, nonatomic) NSURL *userURL; // @synthesize userURL=_userURL;
-- (void).cxx_destruct;
 - (void)restoreWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithUserURL:(id)arg1;
 

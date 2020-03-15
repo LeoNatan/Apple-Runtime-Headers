@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     LPPointUnit *_height;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) LPPointUnit *height; // @synthesize height=_height;
 @property(readonly, retain, nonatomic) LPPointUnit *width; // @synthesize width=_width;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 @property(readonly, nonatomic) struct CGSize asSize;
 - (id)copyWithZone:(struct _NSZone *)arg1;

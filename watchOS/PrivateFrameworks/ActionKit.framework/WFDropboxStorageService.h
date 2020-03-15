@@ -8,7 +8,7 @@
 
 #import <ActionKit/WFFileStorageService-Protocol.h>
 
-@class NSString;
+@class NSString, WFContentSource;
 
 @interface WFDropboxStorageService : NSObject <WFFileStorageService>
 {
@@ -16,6 +16,8 @@
 
 + (Class)resultItemClass;
 + (id)serviceName;
+@property(readonly, nonatomic) WFContentSource *contentSource;
+@property(readonly, nonatomic) NSString *associatedAppBundleIdentifier;
 @property(readonly, nonatomic) _Bool supportsJumpingToSubdirectoryInUI;
 @property(readonly, nonatomic) NSString *storageLocationPrefix;
 @property(readonly, nonatomic) Class accessResourceClass;

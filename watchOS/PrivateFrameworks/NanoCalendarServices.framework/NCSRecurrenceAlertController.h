@@ -20,9 +20,9 @@
 + (id)_newAlertControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)presentDeleteAlertFromViewController:(id)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)presentDetachAlertViewController:(id)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) int recurrenceAlertSelection; // @synthesize recurrenceAlertSelection=_recurrenceAlertSelection;
-- (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_completeWithSelection:(int)arg1;
 - (void)_presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2;

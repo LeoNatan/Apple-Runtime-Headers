@@ -17,7 +17,7 @@
 }
 
 + (id)normalizedDigits:(id)arg1;
-+ (_Bool)contactExistsInArray:(id)arg1 withName:(id)arg2;
++ (_Bool)contactExistsInArray:(id)arg1 withName:(id)arg2 andHandle:(id)arg3;
 + (id)findContactsForDetailType:(unsigned long long)arg1 andValue:(id)arg2;
 + (id)findContactsForPerson:(id)arg1 fetchingKeys:(id)arg2;
 + (id)sharedInstance;

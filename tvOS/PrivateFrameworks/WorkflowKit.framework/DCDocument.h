@@ -16,9 +16,9 @@
 
 + (id)documentWithURL:(id)arg1 annotation:(id)arg2;
 + (id)documentWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id annotation; // @synthesize annotation=_annotation;
 @property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (void)openWithAppBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithURL:(id)arg1 annotation:(id)arg2;
 

@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
 + (id)currentBundleInfo;
 + (id)bundleInfoForProcessInfo:(id)arg1;
 + (id)accountMediaTypeInfoForProcessInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accountMediaType; // @synthesize accountMediaType=_accountMediaType;
 @property(retain, nonatomic) NSString *secureScheme; // @synthesize secureScheme=_secureScheme;
 @property(retain, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;
 @property(retain, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(retain, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)_initWithClient:(long long)arg1 processInfo:(id)arg2;
 
 @end

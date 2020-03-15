@@ -18,8 +18,8 @@
 + (struct CGRect)suggestedFrameForPageBounds:(struct CGRect)arg1 desiredSize:(struct CGSize)arg2;
 + (struct CGRect)suggestedFrameForPageBounds:(struct CGRect)arg1;
 + (struct CGSize)defaultSize;
-@property(nonatomic) unsigned long long cameraPageIndex; // @synthesize cameraPageIndex=_cameraPageIndex;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long cameraPageIndex; // @synthesize cameraPageIndex=_cameraPageIndex;
 - (double)_indicatorSpacing;
 - (struct CGRect)_modernBounds;
 - (void)_transitionIndicator:(id)arg1 toEnabled:(_Bool)arg2 index:(long long)arg3;

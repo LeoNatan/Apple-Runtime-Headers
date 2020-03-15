@@ -18,11 +18,11 @@
     CDUnknownBlockType _childRekeyHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType childRekeyHandler; // @synthesize childRekeyHandler=_childRekeyHandler;
 @property(copy) CDUnknownBlockType ikeRekeyHandler; // @synthesize ikeRekeyHandler=_ikeRekeyHandler;
 @property int childLifetimeMinutes; // @synthesize childLifetimeMinutes=_childLifetimeMinutes;
 @property int ikeLifetimeMinutes; // @synthesize ikeLifetimeMinutes=_ikeLifetimeMinutes;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invokeChildRekeyHandler;
 - (void)invokeIKERekeyHandler;

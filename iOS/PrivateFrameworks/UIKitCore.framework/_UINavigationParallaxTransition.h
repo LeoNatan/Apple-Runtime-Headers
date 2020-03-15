@@ -34,6 +34,7 @@
 
 + (double)defaultSlidingTransitionDuration;
 + (void)setDefaultSlidingTransitionDuration:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *overrideDimmingColor; // @synthesize overrideDimmingColor=_overrideDimmingColor;
 @property(nonatomic, setter=_setShouldReverseLayoutDirection:) _Bool _shouldReverseLayoutDirection; // @synthesize _shouldReverseLayoutDirection=__shouldReverseLayoutDirection;
 @property(nonatomic) double transitionGap; // @synthesize transitionGap=_transitionGap;
@@ -48,7 +49,6 @@
 @property(nonatomic) _Bool interactionAborted; // @synthesize interactionAborted=_interactionAborted;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (void)_stopTransitionImmediately;
 - (id)_timingFunctionForAnimation;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;

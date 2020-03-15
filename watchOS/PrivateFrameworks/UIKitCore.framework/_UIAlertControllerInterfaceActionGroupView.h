@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool scrollableHeaderViewHasRealContent; // @synthesize scrollableHeaderViewHasRealContent=_scrollableHeaderViewHasRealContent;
 @property(nonatomic) __weak UIAlertController *alertController; // @synthesize alertController=_alertController;
-- (void).cxx_destruct;
 - (_Bool)_shouldInstallContentGuideConstraints;
 - (_Bool)_shouldShowSeparatorAboveActionsSequenceView;
 - (id)defaultVisualStyleForTraitCollection:(id)arg1 presentationStyle:(int)arg2;

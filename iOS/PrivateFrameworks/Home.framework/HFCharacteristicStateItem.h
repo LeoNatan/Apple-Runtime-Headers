@@ -18,10 +18,10 @@
     CDUnknownBlockType _resultsProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultsProvider; // @synthesize resultsProvider=_resultsProvider;
 @property(readonly, nonatomic) id <HFAggregatedCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

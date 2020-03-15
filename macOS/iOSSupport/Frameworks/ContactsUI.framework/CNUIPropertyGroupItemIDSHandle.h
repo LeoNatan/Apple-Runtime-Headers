@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsPropertyGroupItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUIContactPropertyIDSHandle *contactPropertyHandle; // @synthesize contactPropertyHandle=_contactPropertyHandle;
 @property(readonly, copy, nonatomic) CNContactProperty *contactProperty; // @synthesize contactProperty=_contactProperty;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -16,9 +16,9 @@
     HMFTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFTimer *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) HMDRemoteMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *propertyDescription;
 @property(readonly, copy) NSString *shortDescription;
 - (id)initWithMessage:(id)arg1;

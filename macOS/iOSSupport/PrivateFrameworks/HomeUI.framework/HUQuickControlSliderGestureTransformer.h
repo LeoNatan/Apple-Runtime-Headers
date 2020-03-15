@@ -23,6 +23,7 @@
     struct CGPoint _lastTouchLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double accumulatedDragDistance; // @synthesize accumulatedDragDistance=_accumulatedDragDistance;
 @property(nonatomic) struct CGPoint lastTouchLocation; // @synthesize lastTouchLocation=_lastTouchLocation;
 @property(nonatomic) struct CGPoint referenceTouchLocation; // @synthesize referenceTouchLocation=_referenceTouchLocation;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) HUQuickControlPanningContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(nonatomic) __weak id <HUQuickControlSliderGestureTransformerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_rawSliderValueForLocation:(struct CGPoint)arg1;
 - (void)_handleSliderValuePan:(struct CGPoint)arg1;
 - (void)_handleGesturePan:(id)arg1;

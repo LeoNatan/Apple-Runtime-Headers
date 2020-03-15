@@ -13,8 +13,8 @@
     NSDate *_date;
 }
 
-@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)loadImage;

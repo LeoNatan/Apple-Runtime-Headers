@@ -27,12 +27,12 @@
     NSString *_compositingFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *compositingFilter; // @synthesize compositingFilter=_compositingFilter;
 @property(readonly, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
 @property(readonly, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(retain, nonatomic) UIColor *fallbackTintColor; // @synthesize fallbackTintColor=_fallbackTintColor;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)setContentMode:(long long)arg1;

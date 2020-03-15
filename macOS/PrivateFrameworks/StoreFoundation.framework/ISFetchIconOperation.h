@@ -16,9 +16,9 @@
     NSNumber *_productID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *productID; // @synthesize productID=_productID;
 @property(readonly) NSURL *iconURL; // @synthesize iconURL=_localIconURL;
-- (void).cxx_destruct;
 - (void)run;
 - (id)initWithProductID:(id)arg1 url:(id)arg2 storeClient:(id)arg3;
 

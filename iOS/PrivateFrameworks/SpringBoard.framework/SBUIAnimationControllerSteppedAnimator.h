@@ -15,8 +15,8 @@
     SBAnimationStepper *_stepper;
 }
 
-@property(readonly, nonatomic) SBAnimationStepper *stepper; // @synthesize stepper=_stepper;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBAnimationStepper *stepper; // @synthesize stepper=_stepper;
 - (double)percentComplete;
 - (void)finishInteractiveTransition:(id)arg1 withCompletionSpeed:(double)arg2 completionCurve:(long long)arg3;
 - (void)cancelTransition:(id)arg1 withCompletionSpeed:(double)arg2 completionCurve:(long long)arg3;

@@ -18,8 +18,8 @@
     _Bool _preventWhitePointAdaptationStrengthUpdateOnComplete;
 }
 
-@property(nonatomic) _Bool preventWhitePointAdaptationStrengthUpdateOnComplete; // @synthesize preventWhitePointAdaptationStrengthUpdateOnComplete=_preventWhitePointAdaptationStrengthUpdateOnComplete;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool preventWhitePointAdaptationStrengthUpdateOnComplete; // @synthesize preventWhitePointAdaptationStrengthUpdateOnComplete=_preventWhitePointAdaptationStrengthUpdateOnComplete;
 - (id)_setupAnimationFrom:(id)arg1 to:(id)arg2;
 - (void)_cleanUpAfterAnimation;
 - (void)_clearAnimation;

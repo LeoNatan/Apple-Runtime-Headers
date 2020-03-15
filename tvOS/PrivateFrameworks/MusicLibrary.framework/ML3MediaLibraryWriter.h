@@ -23,6 +23,7 @@
 
 + (id)writerErrorWithCode:(long long)arg1 description:(id)arg2;
 + (id)writerErrorWithCode:(long long)arg1 description:(id)arg2 userInfo:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *databaseOperationSerialQueue; // @synthesize databaseOperationSerialQueue=_databaseOperationSerialQueue;
 @property(readonly, nonatomic) NSOperationQueue *databaseOperationQueue; // @synthesize databaseOperationQueue=_databaseOperationQueue;
 @property(readonly, nonatomic) NSMutableDictionary *transactionMap; // @synthesize transactionMap=_transactionMap;
@@ -30,7 +31,6 @@
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(nonatomic) double transactionTimeout; // @synthesize transactionTimeout=_transactionTimeout;
 @property(nonatomic) __weak id <ML3MediaLibraryWriterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_watchdogTimerFired:(id)arg1;
 - (_Bool)_shouldWatchdogTransaction:(id)arg1;
 - (void)_tearDownWatchdogTimer;

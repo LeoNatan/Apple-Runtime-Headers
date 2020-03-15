@@ -22,10 +22,10 @@
     id <iCloudUserNotificationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <iCloudUserNotificationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)didClearNotification:(id)arg1;
 - (void)didDismissNotification:(id)arg1;
 - (void)didActivateNotification:(id)arg1;

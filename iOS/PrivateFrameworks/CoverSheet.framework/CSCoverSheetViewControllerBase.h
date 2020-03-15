@@ -27,9 +27,9 @@
 
 + (id)coverSheetIdentifier;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSCoverSheetViewPresenting> presenter; // @synthesize presenter=_presenter;
 @property(readonly, nonatomic, getter=isPresentation) _Bool presentation; // @synthesize presentation=_isBeingPresented;
-- (void).cxx_destruct;
 - (struct CGSize)effectiveContentSizeForScrollView:(id)arg1;
 - (id)_regionsForView:(id)arg1;
 - (_Bool)_presentationParticipant;

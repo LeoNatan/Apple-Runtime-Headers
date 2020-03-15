@@ -21,6 +21,7 @@
 
 + (id)_typeMatchings;
 + (_Bool)type:(long long)arg1 isBetterThanType:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long lineBreakBehavior; // @synthesize lineBreakBehavior=_lineBreakBehavior;
 @property(readonly, nonatomic) _Bool isForHighlight; // @synthesize isForHighlight=_isForHighlight;
 @property(readonly, nonatomic) NSSet *momentNodes; // @synthesize momentNodes=_momentNodes;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSDateInterval *referenceDateInterval; // @synthesize referenceDateInterval=_referenceDateInterval;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (long long)_matchingTypeForDateNode:(id)arg1;
 - (long long)_findBestType;
 - (_Bool)_dateNodeIntersectsWithReferenceDateIntervalByIgnoringYear;

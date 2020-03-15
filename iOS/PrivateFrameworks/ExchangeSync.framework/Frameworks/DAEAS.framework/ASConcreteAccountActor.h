@@ -20,8 +20,8 @@
 + (struct _opaque_pthread_t *)_actorPThread;
 + (struct __CFRunLoop *)_actorRunLoop;
 + (void)_runActorThreadWithStartupLock:(id)arg1;
-@property(retain, nonatomic) ASClientAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ASClientAccount *account; // @synthesize account=_account;
 - (oneway void)_foldersThatExternalClientsCareAboutChanged;
 - (oneway void)_folderHierarchyChanged;
 - (oneway void)_newASPolicyKeyNotification:(id)arg1;

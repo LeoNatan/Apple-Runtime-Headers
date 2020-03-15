@@ -15,9 +15,9 @@
     NSString *_defaultActionType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *defaultActionType; // @synthesize defaultActionType=_defaultActionType;
 @property(retain, nonatomic) NSString *defaultEventType; // @synthesize defaultEventType=_defaultEventType;
-- (void).cxx_destruct;
 - (id)actionType;
 - (id)eventType;
 - (id)eventVersion:(id)arg1;

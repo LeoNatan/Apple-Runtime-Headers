@@ -13,8 +13,8 @@
     NSArray *_leechedLocations;
 }
 
-@property(readonly, nonatomic) NSArray *leechedLocations; // @synthesize leechedLocations=_leechedLocations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *leechedLocations; // @synthesize leechedLocations=_leechedLocations;
 - (id)initWithLocations:(id)arg1;
 
 @end

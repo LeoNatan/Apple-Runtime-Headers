@@ -18,8 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *storeID; // @synthesize storeID=_storeID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *storeID; // @synthesize storeID=_storeID;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)configuredRecordFromAttributes;

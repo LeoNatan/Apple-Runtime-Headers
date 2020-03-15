@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)sortUsingCoreDuetAvailable;
 + (id)managerForContact:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *cachedInteractionsDate; // @synthesize cachedInteractionsDate=_cachedInteractionsDate;
 @property(retain, nonatomic) NSArray *cachedInteractions; // @synthesize cachedInteractions=_cachedInteractions;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSMutableSet *enabledActionIdentifiers; // @synthesize enabledActionIdentifiers=_enabledActionIdentifiers;
 @property(retain, nonatomic) NSCountedSet *actionsUsageSet; // @synthesize actionsUsageSet=_actionsUsageSet;
 @property(nonatomic) BOOL sortsWithDuet; // @synthesize sortsWithDuet=_sortsWithDuet;
-- (void).cxx_destruct;
 - (id)sortedActions:(id)arg1;
 - (void)_updateDuetInteractionsIfNeeded;
 - (void)updateCachedEnabledStateForAction:(id)arg1;

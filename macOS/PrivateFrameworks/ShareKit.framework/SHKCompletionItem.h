@@ -18,12 +18,12 @@
 }
 
 + (id)completionWithValue:(id)arg1 title:(id)arg2 subtitle:(id)arg3 image:(id)arg4 range:(struct _NSRange)arg5;
+- (void).cxx_destruct;
 @property struct _NSRange range; // @synthesize range=_range;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 
 @end
 

@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIEditorTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) double bottomInset; // @synthesize bottomInset=_bottomInset;
-- (void).cxx_destruct;
 - (id)_textFromViewElement:(id)arg1;
 - (void)_reloadSubviews;
 @property(readonly, nonatomic) NSString *text;

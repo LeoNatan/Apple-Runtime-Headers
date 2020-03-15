@@ -28,6 +28,7 @@
     BOOL _willSendRequestDelegateCalled;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(nonatomic) __weak id <GEODataSessionTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak GEODataSession *session; // @synthesize session=_session;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) GEODataURLSessionTask *urlTask; // @synthesize urlTask=_urlTask;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sessionIsolation; // @synthesize sessionIsolation=_sessionIsolation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL receivedRNFNotification;
 @property(readonly, nonatomic) BOOL mptcpNegotiated;
 @property(readonly, nonatomic) unsigned long long requestedMultipathServiceType;

@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL shouldIgnoreTeamID; // @synthesize shouldIgnoreTeamID=_shouldIgnoreTeamID;
 @property BOOL shouldIgnoreUserID; // @synthesize shouldIgnoreUserID=_shouldIgnoreUserID;
 @property(copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy) NSString *clientID; // @synthesize clientID=_clientID;
 @property(copy) NSString *teamID; // @synthesize teamID=_teamID;
 @property(copy) NSString *userID; // @synthesize userID=_userID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id _stalenessToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id stalenessToken; // @synthesize stalenessToken=_stalenessToken;
 @property(readonly, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 constraints:(id)arg2 stalenessToken:(id)arg3;
 
 @end

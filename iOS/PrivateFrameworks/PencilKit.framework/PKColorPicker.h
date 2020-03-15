@@ -18,9 +18,9 @@
 }
 
 + (id)_representableColorForColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PKColorPickerView *colorPickerView; // @synthesize colorPickerView=_colorPickerView;
 @property(nonatomic) __weak id <PKColorPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_colorPickerViewUserDidTouchUpInside:(id)arg1;
 - (void)_colorPickerViewDidChangeSelectedColor:(id)arg1;
 - (id)_colorPickerView;

@@ -15,10 +15,10 @@
     NSMutableSet *_mutableChangedKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *mutableChangedKeys; // @synthesize mutableChangedKeys=_mutableChangedKeys;
 @property(retain, nonatomic) NSArray *keysToObserve; // @synthesize keysToObserve=_keysToObserve;
 @property(readonly, nonatomic) NSObject *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *changedKeys;
 - (void)keyDidChange:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

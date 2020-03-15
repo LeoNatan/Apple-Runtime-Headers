@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     CKOperationGroup *_operationGroup;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool nonDiscretionary; // @synthesize nonDiscretionary=_nonDiscretionary;
 @property(retain, nonatomic) CKOperationGroup *group; // @synthesize group=_operationGroup;
 @property(readonly, nonatomic) BRCSyncContext *syncContext; // @synthesize syncContext=_syncContext;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BRCThrottle *operationThrottle; // @synthesize operationThrottle=_operationThrottle;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (void)associateCKOperationsToEventMetric:(id)arg1;
 - (void)addSubOperation:(id)arg1;
 - (void)addSubOperation:(id)arg1 overrideContext:(id)arg2 allowsCellularAccess:(id)arg3;

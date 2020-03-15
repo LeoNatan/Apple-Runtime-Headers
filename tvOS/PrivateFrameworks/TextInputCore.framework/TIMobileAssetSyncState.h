@@ -18,11 +18,11 @@
 }
 
 + (id)buildVersionString;
+- (void).cxx_destruct;
 @property(nonatomic) long long attemptCount; // @synthesize attemptCount=_attemptCount;
 @property(copy, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)didSyncToRemoteMetadataWithError:(id)arg1;
 - (_Bool)shouldSyncToRemoteMetadata;
 - (void)updateState;

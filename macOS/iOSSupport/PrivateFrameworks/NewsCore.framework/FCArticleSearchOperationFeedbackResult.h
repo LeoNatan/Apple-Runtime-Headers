@@ -13,8 +13,8 @@
     SFRankingFeedback *_resultRankingFeedback;
 }
 
-@property(readonly, copy, nonatomic) SFRankingFeedback *resultRankingFeedback; // @synthesize resultRankingFeedback=_resultRankingFeedback;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) SFRankingFeedback *resultRankingFeedback; // @synthesize resultRankingFeedback=_resultRankingFeedback;
 - (id)initWithSearchOperationRankingFeedBack:(id)arg1;
 
 @end

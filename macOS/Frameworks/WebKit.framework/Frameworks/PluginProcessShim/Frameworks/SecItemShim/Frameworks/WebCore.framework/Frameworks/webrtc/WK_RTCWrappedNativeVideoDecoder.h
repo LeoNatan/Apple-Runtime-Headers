@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <webrtc/WK_RTCVideoDecoder-Protocol.h>
+#import <webrtc/RTCVideoDecoder-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCWrappedNativeVideoDecoder : NSObject <WK_RTCVideoDecoder>
+@interface WK_RTCWrappedNativeVideoDecoder : NSObject <RTCVideoDecoder>
 {
     unique_ptr_28850a1b _wrappedDecoder;
 }
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (id)implementationName;
 - (long long)decode:(id)arg1 missingFrames:(BOOL)arg2 codecSpecificInfo:(id)arg3 renderTimeMs:(long long)arg4;
 - (long long)releaseDecoder;
-- (long long)startDecodeWithSettings:(id)arg1 numberOfCores:(int)arg2;
 - (long long)startDecodeWithNumberOfCores:(int)arg1;
 - (void)setCallback:(CDUnknownBlockType)arg1;
 - (unique_ptr_28850a1b)releaseWrappedDecoder;

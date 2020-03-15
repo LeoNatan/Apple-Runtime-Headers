@@ -18,10 +18,10 @@
 + (id)actionCustomizationWithTitle:(id)arg1 identifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)pickerCustomizationWithTitle:(id)arg1 identifier:(id)arg2 options:(id)arg3 selectedOptionIndex:(long long)arg4 valueChangedHandler:(CDUnknownBlockType)arg5;
 + (id)switchCustomizationWithTitle:(id)arg1 identifier:(id)arg2 value:(_Bool)arg3 valueChangedHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_initWithTitle:(id)arg1 identifier:(id)arg2;
 
 @end

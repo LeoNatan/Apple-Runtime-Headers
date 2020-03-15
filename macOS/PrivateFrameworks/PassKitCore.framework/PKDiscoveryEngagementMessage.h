@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedMessage; // @synthesize localizedMessage=_localizedMessage;
 @property(readonly, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(nonatomic, getter=canReportIdentifierToAggd) BOOL reportIdentifierToAggd; // @synthesize reportIdentifierToAggd=_reportIdentifierToAggd;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *titleKey; // @synthesize titleKey=_titleKey;
 @property(nonatomic) long long passQualifier; // @synthesize passQualifier=_passQualifier;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

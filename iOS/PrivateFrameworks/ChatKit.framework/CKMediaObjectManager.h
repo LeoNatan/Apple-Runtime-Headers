@@ -17,11 +17,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *dynTypes; // @synthesize dynTypes=_dynTypes;
 @property(copy, nonatomic) NSDictionary *UTITypes; // @synthesize UTITypes=_UTITypes;
 @property(copy, nonatomic) NSArray *classes; // @synthesize classes=_classes;
 @property(retain, nonatomic) NSMutableDictionary *transfers; // @synthesize transfers=_transfers;
-- (void).cxx_destruct;
 - (void)transferRemoved:(id)arg1;
 - (Class)transferClass;
 - (id)fileManager;

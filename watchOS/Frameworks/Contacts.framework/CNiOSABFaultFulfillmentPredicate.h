@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)os_log;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) int legacyIdentifier; // @synthesize legacyIdentifier=_legacyIdentifier;
-- (void).cxx_destruct;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

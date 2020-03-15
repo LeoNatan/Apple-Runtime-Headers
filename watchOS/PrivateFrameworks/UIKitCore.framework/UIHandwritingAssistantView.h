@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIKeyboardCandidatePocketShadow *_rightBorder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKeyboardCandidatePocketShadow *rightBorder; // @synthesize rightBorder=_rightBorder;
 @property(retain, nonatomic) UIKBHandwritingCandidateView *candidateView; // @synthesize candidateView=_candidateView;
 @property(retain, nonatomic) TUISystemInputAssistantView *systemInputAssistantView; // @synthesize systemInputAssistantView=_systemInputAssistantView;
-- (void).cxx_destruct;
 - (struct CGRect)assistantFrameForKeyplane:(id)arg1 key:(id)arg2;
 - (id)candidateList;
 

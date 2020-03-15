@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy) CDUnknownBlockType preparationBlock; // @synthesize preparationBlock=_preparationBlock;
 @property unsigned int effectID; // @synthesize effectID=_effectID;
 @property(readonly) NSWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)done;
 - (void)abort;
 - (void)invoke;

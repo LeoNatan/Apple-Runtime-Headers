@@ -14,9 +14,9 @@
     NSMutableDictionary *_manifest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *manifest; // @synthesize manifest=_manifest;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *version;
 @property(readonly, nonatomic) NSNumber *catalogVersion;
 @property(readonly, nonatomic) NSString *packageIdentifier;

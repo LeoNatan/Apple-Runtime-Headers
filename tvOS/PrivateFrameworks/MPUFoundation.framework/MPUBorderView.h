@@ -15,9 +15,9 @@
 }
 
 + (double)requiredOutsetForDropShadow;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidesWhenFullyTransparent; // @synthesize hidesWhenFullyTransparent=_hidesWhenFullyTransparent;
 @property(copy, nonatomic) MPUBorderConfiguration *borderConfiguration; // @synthesize borderConfiguration=_borderConfiguration;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct UIEdgeInsets resizableImageCapInsets;
 @property(readonly, nonatomic) double requiredOutsetForDropShadow;

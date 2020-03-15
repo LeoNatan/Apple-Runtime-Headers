@@ -26,6 +26,7 @@
 + (id)linkWithBundleIdentifier:(id)arg1;
 + (id)linkWithBundleIdentifiers:(id)arg1;
 + (Class)_platformSpecificClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsLinkToUnifiedAbout; // @synthesize showsLinkToUnifiedAbout=_showsLinkToUnifiedAbout;
 @property _Bool allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
@@ -34,7 +35,6 @@
 @property _Bool displayLargeIcon; // @synthesize displayLargeIcon=_displayLargeIcon;
 @property _Bool displayIcon; // @synthesize displayIcon=_displayIcon;
 @property(nonatomic) _Bool presentedViewControllerShouldUseDarkMode; // @synthesize presentedViewControllerShouldUseDarkMode=_presentedViewControllerShouldUseDarkMode;
-- (void).cxx_destruct;
 - (void)linkPressed;
 - (void)setLinkEnabled:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

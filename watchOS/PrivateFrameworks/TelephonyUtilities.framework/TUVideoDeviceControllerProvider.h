@@ -18,13 +18,15 @@ __attribute__((visibility("hidden")))
 {
     id <TUVideoDeviceControllerProviderDelegate> _delegate;
     TUVideoEffect *_currentVideoEffect;
+    NSArray *inputDevices;
     AVConferencePreview *_preview;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVConferencePreview *preview; // @synthesize preview=_preview;
+@property(readonly, copy, nonatomic) NSArray *inputDevices; // @synthesize inputDevices;
 @property(retain, nonatomic) TUVideoEffect *currentVideoEffect; // @synthesize currentVideoEffect=_currentVideoEffect;
 @property(nonatomic) __weak id <TUVideoDeviceControllerProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)captureDevicesChanged:(id)arg1;
 @property(readonly, nonatomic) NSArray *availableVideoEffects;
 - (void)cameraZoomAvailabilityDidChange:(_Bool)arg1;
@@ -49,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (id)localVideoLayer:(_Bool)arg1;
 - (void)setLocalCameraWithUID:(id)arg1;
 @property(copy, nonatomic) VideoAttributes *localVideoAttributes;
-@property(readonly, copy, nonatomic) NSArray *inputDevices;
 @property(readonly, copy, nonatomic) NSString *localCameraUID;
 @property(readonly, nonatomic, getter=isPreviewRunning) _Bool previewRunning;
 - (id)init;

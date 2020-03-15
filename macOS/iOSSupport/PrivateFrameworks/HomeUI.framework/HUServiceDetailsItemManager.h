@@ -19,7 +19,7 @@
     BOOL _shouldHideSeparateTileItem;
     BOOL _showRoomsList;
     BOOL _showAssociatedServiceTypeList;
-    BOOL _homePodsActiveInStereoSetUp;
+    BOOL _groupedAccessoryReachableOverRapport;
     HFItem<HFItemBuilderItem> *_builderItem;
     HFItemBuilder<HFServiceLikeBuilder> *_serviceLikeBuilder;
     HFItemProvider *_existingRoomItemProvider;
@@ -87,8 +87,9 @@
     id <HUServiceDetailsItemManagerDelegate> _serviceDetailsDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUServiceDetailsItemManagerDelegate> serviceDetailsDelegate; // @synthesize serviceDetailsDelegate=_serviceDetailsDelegate;
-@property(nonatomic) BOOL homePodsActiveInStereoSetUp; // @synthesize homePodsActiveInStereoSetUp=_homePodsActiveInStereoSetUp;
+@property(nonatomic) BOOL groupedAccessoryReachableOverRapport; // @synthesize groupedAccessoryReachableOverRapport=_groupedAccessoryReachableOverRapport;
 @property(retain, nonatomic) HFAccessorySettingDeviceOptionsAdapterUtility *deviceOptionsAdapterUtility; // @synthesize deviceOptionsAdapterUtility=_deviceOptionsAdapterUtility;
 @property(retain, nonatomic) HFAccessorySettingDeviceOptionsAdapter *deviceOptionsAdapter; // @synthesize deviceOptionsAdapter=_deviceOptionsAdapter;
 @property(retain, nonatomic) HUFirmwareUpdateItemProvider *firmwareUpdateItemProvider; // @synthesize firmwareUpdateItemProvider=_firmwareUpdateItemProvider;
@@ -157,10 +158,11 @@
 @property(retain, nonatomic) HFItemProvider *existingRoomItemProvider; // @synthesize existingRoomItemProvider=_existingRoomItemProvider;
 @property(retain, nonatomic) HFItemBuilder<HFServiceLikeBuilder> *serviceLikeBuilder; // @synthesize serviceLikeBuilder=_serviceLikeBuilder;
 @property(readonly, nonatomic) HFItem<HFItemBuilderItem> *builderItem; // @synthesize builderItem=_builderItem;
-- (void).cxx_destruct;
+- (void)settingsDidUpdate:(id)arg1;
+- (void)settings:(id)arg1 didUpdateSetting:(id)arg2;
 - (BOOL)_shouldShowSplitAccountUI;
 - (BOOL)_shouldShowAccessoryInfoItems;
-- (void)currentAccessoryReachableOverRapportUpdated:(BOOL)arg1;
+- (void)accessoryReachableOverRapport:(BOOL)arg1;
 - (void)_setupDeviceOptionsAdapterUtilityForGroupedAccessories:(id)arg1;
 - (id)_restartAccessory;
 - (void)restartAccessory;
@@ -174,7 +176,7 @@
 - (BOOL)_hasDismissedHomePodHasNonMemberMediaAccountWarning;
 - (BOOL)_areHomePodMediaAccountsMismatched;
 - (BOOL)_isRestartSupportedForGroupedHomePod:(id)arg1;
-- (BOOL)_isGroupedHomePod:(id)arg1;
+- (BOOL)_isGroupedHomePod;
 - (BOOL)_shouldShowLinkedApplicationSection;
 - (BOOL)_shouldShowFirmwareUpdateSection;
 - (id)_characteristicSectionForIdentifier:(id)arg1;

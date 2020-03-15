@@ -17,8 +17,8 @@
     NMROrigin *_origin;
 }
 
-@property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void)_retryButtonPressed;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (id)contentUnavailableMessage;

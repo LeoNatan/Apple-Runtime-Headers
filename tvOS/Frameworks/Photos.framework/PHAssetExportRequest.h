@@ -24,14 +24,14 @@
 + (id)assetExportLog;
 + (id)exportRequestForAsset:(id)arg1 variants:(id)arg2 error:(id *)arg3;
 + (id)exportRequestForAsset:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *variants; // @synthesize variants=_variants;
 @property(nonatomic) __weak id <PHAssetExportRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)exportWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)preflightExportWithOptions:(id)arg1 isDownloadingRequired:(_Bool *)arg2 isProcessingRequired:(_Bool *)arg3 fileURLs:(id *)arg4 info:(id *)arg5;
+- (void)preflightExportWithOptions:(id)arg1 assetAvailability:(long long *)arg2 isProcessingRequired:(_Bool *)arg3 fileURLs:(id *)arg4 info:(id *)arg5;
 - (void)performCompletionWithFileURLs:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)outputDirectory;
 @property(readonly, copy) NSString *description;

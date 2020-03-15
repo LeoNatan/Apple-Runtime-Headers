@@ -26,13 +26,13 @@
 
 + (_Bool)supportsBSXPCSecureCoding;
 + (unsigned long long)_nextIdentifier;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(nonatomic) unsigned int serviceClass; // @synthesize serviceClass=_serviceClass;
 @property(copy, nonatomic) RBSProcessStateDescriptor *stateDescriptor; // @synthesize stateDescriptor=_stateDescriptor;
 @property(copy, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 @property(readonly, nonatomic) int clientPid; // @synthesize clientPid=_clientPid;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

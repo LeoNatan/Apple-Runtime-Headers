@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIGiftItemView *itemView; // @synthesize itemView=_itemView;
 @property(readonly, nonatomic) UIButton *giftAgainButton; // @synthesize giftAgainButton=_giftAgainButton;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *title;
 @property(retain, nonatomic) UIImage *image;

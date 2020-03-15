@@ -17,8 +17,8 @@
     NSArray *_viewConfigurations;
 }
 
-@property(readonly, nonatomic) id <CRCard> card; // @synthesize card=_card;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CRCard> card; // @synthesize card=_card;
 @property(readonly, copy, nonatomic) NSString *providerIdentifier;
 @property(readonly, nonatomic) NSArray *viewConfigurations; // @synthesize viewConfigurations=_viewConfigurations;
 - (id)initWithCard:(id)arg1;

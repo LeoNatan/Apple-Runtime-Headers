@@ -70,10 +70,10 @@
 + (id)initializeDatabase:(id)arg1 withContentProtection:(long long)arg2 newDatabaseCreated:(_Bool *)arg3 errorHandler:(id)arg4;
 + (_Bool)contentProtectionTypeRequiresDeviceToHaveBeenUnlockedOnce:(long long)arg1;
 + (_Bool)contentProtectionTypeRequiresDeviceToBeUnlocked:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long contentProtectionType; // @synthesize contentProtectionType=_contentProtectionType;
 @property(readonly, nonatomic) _Bool isInMemory; // @synthesize isInMemory=_isInMemory;
 @property(readonly, nonatomic) NSString *filename; // @synthesize filename=_filename;
-- (void).cxx_destruct;
 - (void)disableQueryPlanLogging;
 - (_Bool)enableQueryPlanLoggingWithPath:(id)arg1;
 - (id)languageForFTSTable:(id)arg1;

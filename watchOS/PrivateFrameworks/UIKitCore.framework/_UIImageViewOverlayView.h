@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <_UIImageViewOverlayViewDelegate> _overlayViewDelegate;
 }
 
-@property(nonatomic) __weak id <_UIImageViewOverlayViewDelegate> overlayViewDelegate; // @synthesize overlayViewDelegate=_overlayViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_UIImageViewOverlayViewDelegate> overlayViewDelegate; // @synthesize overlayViewDelegate=_overlayViewDelegate;
 - (void)setClipsToBounds:(_Bool)arg1;
 
 @end

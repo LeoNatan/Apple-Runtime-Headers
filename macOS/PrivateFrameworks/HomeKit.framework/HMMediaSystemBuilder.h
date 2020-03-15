@@ -28,6 +28,7 @@
 + (id)logCategory;
 + (BOOL)supportsMediaSystem:(id)arg1;
 + (BOOL)canSupportMediaSystem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMMutableArray *componentsArray; // @synthesize componentsArray=_componentsArray;
 @property(readonly, nonatomic) HMMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
 @property(readonly, nonatomic) __weak HMHome *home; // @synthesize home=_home;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_callCompletion:(CDUnknownBlockType)arg1 builderSessionID:(id)arg2 error:(id)arg3 response:(id)arg4;
 - (void)_commitWithCompletionHandler:(CDUnknownBlockType)arg1;

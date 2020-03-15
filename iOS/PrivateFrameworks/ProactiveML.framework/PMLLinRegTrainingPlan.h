@@ -22,18 +22,18 @@
     unsigned long long _maxSessionsLimit;
     unsigned long long _sessionsInBatch;
     _Bool _useOnlyAppleInternalSessions;
-    struct NSString *_planId;
+    NSString *_planId;
 }
 
 + (id)_objectiveFeaturesWithNoiseFromCovariates:(id)arg1 objectives:(id)arg2;
 + (id)featureMatrixWithNoiseFromCovariates:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool useOnlyAppleInternalSessions; // @synthesize useOnlyAppleInternalSessions=_useOnlyAppleInternalSessions;
 @property(readonly, nonatomic) unsigned long long maxSessionsLimit; // @synthesize maxSessionsLimit=_maxSessionsLimit;
 @property(readonly, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
 @property(readonly, nonatomic) id <PMLLinRegTrackerProtocol> tracker; // @synthesize tracker=_tracker;
 @property(readonly, nonatomic) PMLTrainingStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) NSString *planId; // @synthesize planId=_planId;
-- (void).cxx_destruct;
 - (void)runUntilDoneForTesting;
 - (id)runWhile:(CDUnknownBlockType)arg1 didFinish:(_Bool *)arg2;
 @property(readonly, copy) NSString *description;
@@ -42,7 +42,7 @@
 - (id)normalizeRegressor:(id)arg1;
 - (void)loadSessionsWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)train;
-- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString *)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 sessionDescriptor:(id)arg7 maxSessionsLimit:(unsigned long long)arg8 sessionsInBatch:(unsigned long long)arg9 useOnlyAppleInternalSessions:(_Bool)arg10;
+- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(id)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 sessionDescriptor:(id)arg7 maxSessionsLimit:(unsigned long long)arg8 sessionsInBatch:(unsigned long long)arg9 useOnlyAppleInternalSessions:(_Bool)arg10;
 - (id)init;
 
 // Remaining properties

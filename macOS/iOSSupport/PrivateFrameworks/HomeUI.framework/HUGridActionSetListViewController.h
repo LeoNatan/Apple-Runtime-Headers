@@ -19,9 +19,9 @@
 
 + (double)requiredHeightWithLayoutOptions:(id)arg1 numberOfItems:(unsigned long long)arg2;
 + (unsigned long long)updateMode;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <HUGridActionSetListViewControllerItemUpdateDelegate> itemUpdateDelegate; // @synthesize itemUpdateDelegate=_itemUpdateDelegate;
-- (void).cxx_destruct;
 - (long long)_scrollDirectionForLayoutOptions:(id)arg1;
 - (void)_updateLayoutScrollDirectionIfNeeded;
 - (id)_detailsViewControllerForActionSetItem:(id)arg1;

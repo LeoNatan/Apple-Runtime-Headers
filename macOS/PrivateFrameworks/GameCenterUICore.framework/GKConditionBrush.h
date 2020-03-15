@@ -15,10 +15,10 @@
     GKBrush *_noBrush;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKBrush *noBrush; // @synthesize noBrush=_noBrush;
 @property(retain, nonatomic) GKBrush *yesBrush; // @synthesize yesBrush=_yesBrush;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (struct CGSize)sizeForInput:(id)arg1;
 - (void)drawInRect:(struct CGRect)arg1 withContext:(struct CGContext *)arg2 input:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;

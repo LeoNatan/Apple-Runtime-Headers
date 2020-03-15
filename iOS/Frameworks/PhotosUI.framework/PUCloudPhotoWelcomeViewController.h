@@ -17,8 +17,8 @@
 
 + (void)resetLastPresentationInfo;
 + (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithDefaultTitle;

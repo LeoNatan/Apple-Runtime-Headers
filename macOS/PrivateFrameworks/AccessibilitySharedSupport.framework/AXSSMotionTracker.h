@@ -8,7 +8,7 @@
 
 #import <AccessibilitySharedSupport/AXSSMotionTrackingDaemonDelegateProtocol-Protocol.h>
 
-@class AXSSMotionTrackingInputConfiguration, AXSSMotionTrackingState, NSXPCConnection;
+@class AXSSMotionTrackingInputConfiguration, AXSSMotionTrackingState, NSValue, NSXPCConnection;
 @protocol AXSSMotionTrackerDelegate, AXSSMotionTrackingDaemonProtocol;
 
 @interface AXSSMotionTracker : NSObject <AXSSMotionTrackingDaemonDelegateProtocol>
@@ -26,6 +26,7 @@
 }
 
 + (id)supportedExpressions;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _hasBeenStarted; // @synthesize _hasBeenStarted=__hasBeenStarted;
 @property(nonatomic) BOOL _tracking; // @synthesize _tracking=__tracking;
 @property(retain, nonatomic) NSXPCConnection *_motionTrackingDaemonConnection; // @synthesize _motionTrackingDaemonConnection=__motionTrackingDaemonConnection;
@@ -34,12 +35,12 @@
 @property(nonatomic) BOOL debugOverlayEnabled; // @synthesize debugOverlayEnabled=_debugOverlayEnabled;
 @property(nonatomic) double joystickModeMovementThreshold; // @synthesize joystickModeMovementThreshold=_joystickModeMovementThreshold;
 @property(nonatomic) double sensitivity; // @synthesize sensitivity=_sensitivity;
-- (void).cxx_destruct;
 - (void)motionTrackingDaemonUpdatedState:(id)arg1;
 - (void)_motionTrackingDaemonWasInterruptedFromXPC;
 @property(readonly, nonatomic) id <AXSSMotionTrackingDaemonProtocol> _motionTrackingDaemon;
 - (void)_changeState:(id)arg1;
 - (void)_updateState:(id)arg1;
+@property(retain, nonatomic) NSValue *lookAtPoint;
 @property(copy, nonatomic) AXSSMotionTrackingInputConfiguration *inputConfiguration; // @synthesize inputConfiguration=_inputConfiguration;
 @property(nonatomic) unsigned long long motionTrackingMode; // @synthesize motionTrackingMode=_motionTrackingMode;
 - (void)invalidate;

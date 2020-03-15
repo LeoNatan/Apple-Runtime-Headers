@@ -15,8 +15,8 @@
 
 + (BOOL)isSingleUserSystem;
 + (id)sharedDefaultsManager;
-@property(retain, nonatomic) SFAuthorization *authorization; // @synthesize authorization=_authorization;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFAuthorization *authorization; // @synthesize authorization=_authorization;
 - (void)updateNVRAM;
 - (void)updatePreboot;
 - (BOOL)setSystemLanguages:(id)arg1 locale:(id)arg2 isRightToLeft:(BOOL)arg3 interactionAllowed:(BOOL)arg4;

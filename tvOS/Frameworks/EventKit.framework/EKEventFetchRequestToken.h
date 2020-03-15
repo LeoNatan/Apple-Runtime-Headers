@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     EKEventStore *_eventStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int token; // @synthesize token=_token;
 @property(readonly, nonatomic) __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithEventStore:(id)arg1 token:(int)arg2;
 

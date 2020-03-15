@@ -23,11 +23,11 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) SVVideoAccessoryBarDisplayState *toState; // @synthesize toState=_toState;
 @property(readonly, nonatomic) SVVideoAccessoryBarDisplayState *fromState; // @synthesize fromState=_fromState;
 @property(nonatomic) _Bool transitionWasCancelled; // @synthesize transitionWasCancelled=_transitionWasCancelled;
-- (void).cxx_destruct;
 - (struct CGRect)targetFrameForView:(id)arg1 inState:(id)arg2 basedOnPositionInState:(id)arg3;
 - (struct CGRect)initialFrameForView:(id)arg1 inState:(id)arg2 basedOnPositionInState:(id)arg3;
 - (unsigned long long)displayModeForView:(id)arg1 inState:(id)arg2;

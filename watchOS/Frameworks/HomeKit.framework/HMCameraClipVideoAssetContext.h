@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy) NSData *hlsPlaylist; // @synthesize hlsPlaylist=_hlsPlaylist;
 - (void).cxx_destruct;
+@property(readonly, copy) NSData *hlsPlaylist; // @synthesize hlsPlaylist=_hlsPlaylist;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

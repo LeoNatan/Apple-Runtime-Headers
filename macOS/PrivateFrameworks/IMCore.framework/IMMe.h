@@ -26,8 +26,8 @@
 + (id)lastNameFromFallbackUserName;
 + (id)firstNameFromFallbackUserName;
 + (id)fallbackUserName;
-@property(readonly, nonatomic) CNContact *cnContact; // @synthesize cnContact=_cnContact;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContact *cnContact; // @synthesize cnContact=_cnContact;
 - (id)description;
 - (void)myPictureChanged;
 @property(readonly, nonatomic) NSArray *imHandles;

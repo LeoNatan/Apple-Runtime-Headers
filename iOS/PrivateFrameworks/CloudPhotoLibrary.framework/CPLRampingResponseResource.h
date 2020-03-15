@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long retryAfterMillis; // @synthesize retryAfterMillis=_retryAfterMillis;
 @property(nonatomic) _Bool allowed; // @synthesize allowed=_allowed;
 @property(retain, nonatomic) NSString *resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

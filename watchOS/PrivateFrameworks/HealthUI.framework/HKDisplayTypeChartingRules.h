@@ -22,12 +22,12 @@
     int _preferredTimeScope;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int preferredTimeScope; // @synthesize preferredTimeScope=_preferredTimeScope;
 @property(nonatomic) _Bool shouldConnectSamplesWithLines; // @synthesize shouldConnectSamplesWithLines=_shouldConnectSamplesWithLines;
 @property(retain, nonatomic) id <HKInteractiveChartsAxisScalingRule> axisScalingRule; // @synthesize axisScalingRule=_axisScalingRule;
 @property(nonatomic) _Bool shouldHideAverageLine; // @synthesize shouldHideAverageLine=_shouldHideAverageLine;
 @property(readonly, nonatomic) int defaultChartStyle; // @synthesize defaultChartStyle=_defaultChartStyle;
-- (void).cxx_destruct;
 - (id)allowedDecimalPrecisionRuleForUnit:(id)arg1;
 - (void)setAllowedDecimalPrecisionRule:(id)arg1 perUnitPrecisionRules:(id)arg2;
 - (void)adjustedBoundsForPortraitChartWithMin:(double)arg1 max:(double)arg2 minOut:(double *)arg3 maxOut:(double *)arg4 decimalPrecision:(int *)arg5 unit:(id)arg6 timeScope:(int)arg7;

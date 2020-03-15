@@ -77,6 +77,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)shouldForwardSelectorToViewController:(SEL)arg1;
 + (_Bool)suggestionsFrameworkAvailable;
 + (id)defaultFileSuggesters;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool flushDataSourceAllowed; // @synthesize flushDataSourceAllowed=_flushDataSourceAllowed;
 @property(nonatomic) _Bool isSearchInProgress; // @synthesize isSearchInProgress=_isSearchInProgress;
 @property(nonatomic) _Bool isPopulationInProgress; // @synthesize isPopulationInProgress=_isPopulationInProgress;
@@ -88,8 +90,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long itemCount; // @synthesize itemCount=_itemCount;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(readonly, nonatomic) _Bool containerIsBeingCreated; // @synthesize containerIsBeingCreated=_containerIsBeingCreated;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)saveShowSidebarStateToPrefs;
 - (void)sidebarDidChangeCollapsedState:(id)arg1;
 - (void)configureTagsColumn:(_Bool)arg1;
@@ -245,7 +245,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidAppear;
 - (BOOL)_viewControllerSupports10_10Features;
 - (void)viewLoaded;
-- (id)initWithWindowState:(id)arg1 targetPath:(const struct TFENodeVector *)arg2 containerLayoutManager:(id)arg3 containerDelegate:(struct NSObject *)arg4;
+- (id)initWithWindowState:(id)arg1 targetPath:(const struct TFENodeVector *)arg2 containerLayoutManager:(id)arg3 containerDelegate:(id)arg4;
 - (void)initCommon;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

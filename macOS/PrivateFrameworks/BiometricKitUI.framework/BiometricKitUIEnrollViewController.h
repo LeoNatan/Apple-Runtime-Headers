@@ -19,10 +19,10 @@
     id <BiometricKitUIEnrollResultDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <BiometricKitUIEnrollResultDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) BiometricKit *biometricKit; // @synthesize biometricKit=_biometricKit;
 @property(nonatomic) id <MBSecondPartyHost> titleDelegate; // @synthesize titleDelegate=_titleDelegate;
-- (void).cxx_destruct;
 - (void)restartEnroll;
 - (void)cancelEnroll;
 - (id)propertyForKey:(id)arg1;

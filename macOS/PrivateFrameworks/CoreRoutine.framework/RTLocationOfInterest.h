@@ -19,7 +19,7 @@
     double _confidence;
     NSUUID *_identifier;
     long long _type;
-    long long _typeSource;
+    unsigned long long _typeSource;
     RTMapItem *_mapItem;
     NSArray *_visits;
     NSString *_customLabel;
@@ -27,20 +27,20 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)geoMapItemSourceToString:(long long)arg1;
-+ (id)locationOfInterestTypeSourceToString:(long long)arg1;
++ (id)locationOfInterestTypeSourceToString:(unsigned long long)arg1;
 + (id)locationOfInterestTypeToString:(long long)arg1;
 + (BOOL)locationOfInterestTypeIsValid:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property(readonly, nonatomic) NSArray *visits; // @synthesize visits=_visits;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
-@property(readonly, nonatomic) long long typeSource; // @synthesize typeSource=_typeSource;
+@property(readonly, nonatomic) unsigned long long typeSource; // @synthesize typeSource=_typeSource;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) double uncertainty; // @synthesize uncertainty=_uncertainty;
 @property(readonly, nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(readonly, nonatomic) double latitude; // @synthesize latitude=_latitude;
-- (void).cxx_destruct;
 - (long long)recentCompare:(id)arg1;
 - (id)nameFromType:(long long)arg1;
 @property(readonly, nonatomic) NSString *preferredName;
@@ -50,7 +50,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 confidence:(double)arg4 identifier:(id)arg5 type:(long long)arg6 typeSource:(long long)arg7 visits:(id)arg8 customLabel:(id)arg9 mapItem:(id)arg10;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 confidence:(double)arg4 identifier:(id)arg5 type:(long long)arg6 typeSource:(unsigned long long)arg7 visits:(id)arg8 customLabel:(id)arg9 mapItem:(id)arg10;
 - (id)init;
 @property(readonly, nonatomic) long long geoMapItemSource;
 

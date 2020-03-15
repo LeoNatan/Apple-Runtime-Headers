@@ -24,6 +24,7 @@
 }
 
 + (double)viewHeight;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIButton *installButton; // @synthesize installButton=_installButton;
 @property(nonatomic) __weak UIButton *handoffButton; // @synthesize handoffButton=_handoffButton;
 @property(readonly, nonatomic) __weak WFModuleTitleButton *titleButton; // @synthesize titleButton=_titleButton;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long accessoryMode; // @synthesize accessoryMode=_accessoryMode;
 @property(retain, nonatomic) WFAction *action; // @synthesize action=_action;
 @property(nonatomic) __weak id <WFModuleTitleViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)toggleFavorited;
 - (_Bool)installAction;
 - (id)accessibilityCustomActions;

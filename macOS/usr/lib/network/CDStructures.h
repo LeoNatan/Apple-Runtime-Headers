@@ -312,7 +312,7 @@ struct nw_connection_report_s {
     unsigned char _field43;
     unsigned char _field44;
     unsigned char _field45[16];
-    unsigned char _field46[10][16];
+    unsigned char _field46[50][16];
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;

@@ -15,8 +15,8 @@
     NWPBPath *_responsePath;
 }
 
-@property(retain, nonatomic) NWPBPath *responsePath; // @synthesize responsePath=_responsePath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NWPBPath *responsePath; // @synthesize responsePath=_responsePath;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

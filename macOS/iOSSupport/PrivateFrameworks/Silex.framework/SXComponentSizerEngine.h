@@ -15,8 +15,8 @@
     SXComponentTypeMatching *_factoryMatching;
 }
 
-@property(readonly, nonatomic) SXComponentTypeMatching *factoryMatching; // @synthesize factoryMatching=_factoryMatching;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXComponentTypeMatching *factoryMatching; // @synthesize factoryMatching=_factoryMatching;
 - (void)removeFactory:(id)arg1;
 - (void)addFactory:(id)arg1;
 - (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutOptions:(id)arg3 DOMObjectProvider:(id)arg4;

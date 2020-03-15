@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *values; // @synthesize values=_values;
 @property(readonly) NSMutableArray *dimensions; // @synthesize dimensions=_dimensions;
 @property unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (double)interpolationFactorForSize:(struct CGSize)arg1;
 - (double)scaleFactorForSize:(struct CGSize)arg1;
 - (_Bool)sizeOutsideHintedRange:(struct CGSize)arg1;

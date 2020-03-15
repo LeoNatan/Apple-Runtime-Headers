@@ -24,9 +24,9 @@
 + (id)labelWithLightWeightRegularFont;
 + (id)labelWithThinWeightRegularFont;
 + (id)label;
+- (void).cxx_destruct;
 @property(retain) NSFont *superScriptFont; // @synthesize superScriptFont=_superScriptFont;
 @property(nonatomic) BOOL willAppearDirectlyOverUltraDarkBackground; // @synthesize willAppearDirectlyOverUltraDarkBackground=_willAppearDirectlyOverUltraDarkBackground;
-- (void).cxx_destruct;
 - (void)setAttributedStringValue:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)initWithCoder:(id)arg1;

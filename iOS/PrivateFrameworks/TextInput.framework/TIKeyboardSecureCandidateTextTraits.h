@@ -23,13 +23,13 @@
 
 + (id)traitsWithFontName:(id)arg1 maxFontSize:(double)arg2 minFontSize:(double)arg3 textColor:(id)arg4 yCoordinate:(double)arg5 baselineOffset:(double)arg6;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
 @property(nonatomic) double yCoordinate; // @synthesize yCoordinate=_yCoordinate;
 @property(retain, nonatomic) TIKeyboardSecureCandidateRGBColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) double minFontSize; // @synthesize minFontSize=_minFontSize;
 @property(nonatomic) double maxFontSize; // @synthesize maxFontSize=_maxFontSize;
 @property(copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -23,9 +23,9 @@
 + (id)localizedNameForLanguage:(id)arg1;
 + (id)localizedNameForLanguageAgnosticTableIdentifier:(id)arg1;
 + (id)localizedNameForServiceWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *translatorBundlePath; // @synthesize translatorBundlePath=_translatorBundlePath;
 @property(retain, nonatomic) NSMutableDictionary *languageAgnosticIdentifiersToTables; // @synthesize languageAgnosticIdentifiersToTables=_languageAgnosticIdentifiersToTables;
-- (void).cxx_destruct;
 - (id)tablesForLocale:(id)arg1 inBundle:(id)arg2;
 - (id)languageAgnosticTablesForIdentifier:(id)arg1 inBundle:(id)arg2;
 - (id)languageAgnosticTablesInBundle:(id)arg1;

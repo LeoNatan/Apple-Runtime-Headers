@@ -22,10 +22,10 @@
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *preferredTypes; // @synthesize preferredTypes=_preferredTypes;
 @property(retain, nonatomic) NSString *localizedItemName; // @synthesize localizedItemName=_localizedItemName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

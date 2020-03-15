@@ -29,6 +29,7 @@
 
 + (id)logCategory;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsRegisteringAccessories; // @synthesize supportsRegisteringAccessories=_supportsRegisteringAccessories;
 @property(nonatomic, getter=isDeviceProblemNotificationTokenValid) BOOL deviceProblemNotificationTokenValid; // @synthesize deviceProblemNotificationTokenValid=_deviceProblemNotificationTokenValid;
 @property(nonatomic) int deviceProblemNotificationToken; // @synthesize deviceProblemNotificationToken=_deviceProblemNotificationToken;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) id <HMDSharingDeviceDiscovery> deviceDiscovery; // @synthesize deviceDiscovery=_deviceDiscovery;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)handleCurrentNetworkDidChangeNotification:(id)arg1;
 - (void)handleAccessoryWiFiNetworkInfoUpdatedNotification:(id)arg1;
 - (void)handleAccessoryRemovedNotification:(id)arg1;

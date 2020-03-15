@@ -20,9 +20,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool navigationInterrupted; // @synthesize navigationInterrupted=_navigationInterrupted;
 @property(retain, nonatomic) GEOStorageRouteRequestStorage *routeRequestStorage; // @synthesize routeRequestStorage=_routeRequestStorage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

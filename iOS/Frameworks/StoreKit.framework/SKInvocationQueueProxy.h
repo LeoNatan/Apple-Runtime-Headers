@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     Protocol *_protocol;
 }
 
-@property(retain, nonatomic) id invocationTarget; // @synthesize invocationTarget=_invocationTarget;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id invocationTarget; // @synthesize invocationTarget=_invocationTarget;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithProtocol:(id)arg1;

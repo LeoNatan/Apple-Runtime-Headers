@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSHashTable *itemManagers; // @synthesize itemManagers=_itemManagers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *itemManagers; // @synthesize itemManagers=_itemManagers;
 - (id)_performStateDump;
 - (void)registerItemManager:(id)arg1;
 - (id)init;

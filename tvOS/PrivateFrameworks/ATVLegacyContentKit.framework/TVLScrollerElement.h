@@ -15,10 +15,10 @@
     NSArray *_scrollerItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *scrollerItems; // @synthesize scrollerItems=_scrollerItems;
 @property(nonatomic) _Bool fixedHeader; // @synthesize fixedHeader=_fixedHeader;
 @property(retain, nonatomic) TVLHeaderElement *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

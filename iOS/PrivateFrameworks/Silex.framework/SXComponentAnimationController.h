@@ -19,12 +19,12 @@
     NSMutableSet *_animationHandlersToFinish;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *animationHandlersToFinish; // @synthesize animationHandlersToFinish=_animationHandlersToFinish;
 @property(readonly, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(retain, nonatomic) NSMutableSet *animatingComponents; // @synthesize animatingComponents=_animatingComponents;
 @property(retain, nonatomic) NSMutableSet *registeredComponents; // @synthesize registeredComponents=_registeredComponents;
-- (void).cxx_destruct;
 - (void)displayLinkTick:(id)arg1;
 - (void)startOrStopDisplayLink;
 - (void)finishAnimationHandlerAnimated:(id)arg1;

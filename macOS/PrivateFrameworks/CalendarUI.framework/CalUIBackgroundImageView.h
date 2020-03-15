@@ -13,8 +13,8 @@
     NSImage *_backgroundImage;
 }
 
-@property(retain) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 - (void).cxx_destruct;
+@property(retain) NSImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithBackgroundImage:(id)arg1;
 

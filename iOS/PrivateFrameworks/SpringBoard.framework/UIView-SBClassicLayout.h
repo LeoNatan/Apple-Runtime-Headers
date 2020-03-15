@@ -7,8 +7,6 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (SBClassicLayout)
-+ (void)sb_animateWithSettings:(id)arg1 mode:(long long)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
-+ (void)sb_animateWithSettings:(id)arg1 interactive:(_Bool)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)sb_firstDescendantOfViews:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (void)_sbClassicLayout_applyTransformsForClassicPresentationInReferenceSpace:(_Bool)arg1 forInterfaceOrientation:(long long)arg2 withInheritedScaleFromContainer:(double)arg3 applyInheritedScaleToTranslationAndCorners:(_Bool)arg4;
 - (void)sbClassicLayout_applyTransformsForClassicPresentationInLayoutSpaceForInterfaceOrientation:(long long)arg1 withInheritedScaleFromContainer:(double)arg2 applyInheritedScaleToTranslationAndCorners:(_Bool)arg3;

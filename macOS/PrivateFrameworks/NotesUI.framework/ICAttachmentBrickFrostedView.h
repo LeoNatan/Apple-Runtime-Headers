@@ -14,9 +14,9 @@
     NSVisualEffectView *_visualEffectView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forManualRendering; // @synthesize forManualRendering=_forManualRendering;
 @property(retain, nonatomic) NSVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-- (void).cxx_destruct;
 - (void)adjustBackgroundIfNecessary;
 - (void)disableVibrancyDidChange:(id)arg1;
 @property(nonatomic) BOOL clear;

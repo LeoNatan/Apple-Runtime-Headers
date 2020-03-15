@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 + (void)makeTextureCoherent:(id)arg1 texture:(id)arg2;
 + (unsigned long long)bytesPerPixelForTextureFormat:(unsigned long long)arg1;
 + (id)metalContextForDevice:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MTLLibrary> library; // @synthesize library=_library;
 @property(readonly, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (unsigned long long)textureBytesPerRow:(unsigned long long)arg1 format:(unsigned long long)arg2;
 - (id)bindPixelBufferToMTL2DTexture:(struct __CVBuffer *)arg1 pixelFormat:(unsigned long long)arg2 textureSize:(struct CGSize)arg3 plane:(unsigned long long)arg4 error:(id *)arg5;
 - (id)bindPixelBufferToMTL2DTexture:(struct __CVBuffer *)arg1 pixelFormat:(unsigned long long)arg2 plane:(unsigned long long)arg3 error:(id *)arg4;

@@ -16,9 +16,9 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) PUICCAAnimationDelegateBlockCaller *circleOfLife; // @synthesize circleOfLife=_circleOfLife;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (id)init;
 

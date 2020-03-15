@@ -18,8 +18,8 @@
     BOOL _settingsUIVisible;
 }
 
-@property BOOL settingsUIVisible; // @synthesize settingsUIVisible=_settingsUIVisible;
 - (void).cxx_destruct;
+@property BOOL settingsUIVisible; // @synthesize settingsUIVisible=_settingsUIVisible;
 - (void)enrollmentControllerDidUpdateSettingsUIVisibility:(id)arg1;
 - (void)connectToDaemon;
 - (void)updateVisibilityState;

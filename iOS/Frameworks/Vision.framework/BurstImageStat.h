@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
     struct CGRect facesRoiRect;
 }
 
+- (void).cxx_destruct;
 @property int version; // @synthesize version=_version;
 @property int AEDelta; // @synthesize AEDelta=_AEDelta;
 @property(retain) NSMutableArray *faceStatArray; // @synthesize faceStatArray=_faceStatArray;
@@ -87,7 +88,6 @@ __attribute__((visibility("hidden")))
 @property _Bool AEStable; // @synthesize AEStable;
 @property _Bool exclude; // @synthesize exclude;
 @property int orientation; // @synthesize orientation;
-- (void).cxx_destruct;
 - (float *)colorHistogram;
 - (long long)compareImageOrder:(id)arg1;
 - (long long)compareImageStats:(id)arg1;

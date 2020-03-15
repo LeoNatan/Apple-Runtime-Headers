@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDecimalNumber *paymentsToDateAmount; // @synthesize paymentsToDateAmount=_paymentsToDateAmount;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

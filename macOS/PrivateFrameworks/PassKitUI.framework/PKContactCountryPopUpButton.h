@@ -15,9 +15,9 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMenuItem *errorItem; // @synthesize errorItem=_errorItem;
 @property(nonatomic) BOOL hasError; // @synthesize hasError=_hasError;
-- (void).cxx_destruct;
 - (void)_notifySelectionWillChange:(id)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)dealloc;

@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_buttonBarTrailingConstraint;
     NSMapTable *_absorptionTable;
     double _standardEdgeSpacing;
-    _Bool _hitTestingExtensionsAreValid;
     _Bool _compactMetrics;
     long long _itemDistribution;
     _UIBarButtonItemData *_plainItemAppearance;
@@ -24,12 +23,12 @@ __attribute__((visibility("hidden")))
     struct NSDirectionalEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
 @property(copy, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
 @property(nonatomic) long long itemDistribution; // @synthesize itemDistribution=_itemDistribution;
 @property(nonatomic) struct NSDirectionalEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) _Bool compactMetrics; // @synthesize compactMetrics=_compactMetrics;
-- (void).cxx_destruct;
 - (void)_setBackButtonBackgroundVerticalPositionAdjustment:(double)arg1 forBarMetrics:(long long)arg2;
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(double)arg1 forBarMetrics:(long long)arg2;
 - (void)_setBackButtonTitlePositionAdjustment:(struct UIOffset)arg1 forBarMetrics:(long long)arg2;
@@ -37,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)_appearanceChanged;
-- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (double)defaultTextPadding;
 - (double)defaultEdgeSpacing;
 - (double)absorptionForItem:(id)arg1;
@@ -46,10 +44,10 @@ __attribute__((visibility("hidden")))
 - (void)updateWithItems:(id)arg1 fromOldItems:(id)arg2 animate:(_Bool)arg3;
 - (void)_updateThreeUpFlagsForItems:(id)arg1;
 - (void)reloadWithItems:(id)arg1;
-- (void)updateContent;
 - (void)updateConstraints;
-- (id)_newButtonBarWithItems:(id)arg1;
-- (void)_updateButtonBarConstraintConstants;
+- (void)_ensureButtonBar;
+- (void)updateContent;
+- (void)_setButtonBarLeadingInset:(double)arg1 trailingInset:(double)arg2;
 - (struct NSDirectionalEdgeInsets)_directionalSafeArea;
 - (void)tintColorDidChange;
 - (void)layoutMarginsDidChange;

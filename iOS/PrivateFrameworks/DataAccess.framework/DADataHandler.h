@@ -15,9 +15,9 @@
 }
 
 + (id)newDataHandlerForDataclass:(long long)arg1 container:(void *)arg2 changeTrackingID:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *changeTrackingID; // @synthesize changeTrackingID=_changeTrackingID;
 @property(nonatomic) void *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)getDAExceptionObjectWithLocalItem:(void *)arg1 originalEvent:(id)arg2 account:(id)arg3;
 - (id)getDAObjectWithLocalItem:(void *)arg1 serverId:(id)arg2 account:(id)arg3;
 - (_Bool)closeDBAndSave:(_Bool)arg1;

@@ -17,11 +17,11 @@
     UXView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UXView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UXLabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
 @property(retain, nonatomic) UXLabel *textLabel; // @synthesize textLabel=_textLabel;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)updateConstraints;
 - (id)initWithReuseIdentifier:(id)arg1;

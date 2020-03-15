@@ -18,13 +18,13 @@
     NSNumber *_preferredPrimaryColumnWidthFraction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool presentsWithGesture; // @synthesize presentsWithGesture=_presentsWithGesture;
 @property(retain, nonatomic) NSNumber *preferredPrimaryColumnWidthFraction; // @synthesize preferredPrimaryColumnWidthFraction=_preferredPrimaryColumnWidthFraction;
 @property(retain, nonatomic) NSNumber *minimumPrimaryColumnWidth; // @synthesize minimumPrimaryColumnWidth=_minimumPrimaryColumnWidth;
 @property(retain, nonatomic) NSNumber *maximumPrimaryColumnWidth; // @synthesize maximumPrimaryColumnWidth=_maximumPrimaryColumnWidth;
 @property(retain, nonatomic) UIViewControllerTemplate *detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(retain, nonatomic) UIViewControllerTemplate *masterViewController; // @synthesize masterViewController=_masterViewController;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (void)updateChildViewControllers;
 

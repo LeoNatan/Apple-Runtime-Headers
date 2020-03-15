@@ -43,6 +43,7 @@
 
 + (id)defaultScheduler;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) int localCount; // @synthesize localCount=_localCount;
 @property(readonly) NSString *pendingFlagChangesKey; // @synthesize pendingFlagChangesKey=_pendingFlagChangesKey;
 @property(retain, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) NSPredicate *predicateIgnoringFlags; // @synthesize predicateIgnoringFlags=_predicateIgnoringFlags;
 @property(retain, nonatomic) EFQuery *expandedQuery; // @synthesize expandedQuery=_expandedQuery;
 @property(retain, nonatomic) EFQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)mailboxListChanged:(id)arg1;
 - (void)persistenceDidUpdateLastSyncAndMostRecentStatusCount:(int)arg1 forMailboxWithObjectID:(id)arg2 generationWindow:(id)arg3;
 - (void)persistenceDidUpdateMostRecentStatusCount:(int)arg1 forMailboxWithObjectID:(id)arg2 generationWindow:(id)arg3;

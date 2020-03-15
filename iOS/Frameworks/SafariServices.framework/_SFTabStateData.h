@@ -31,6 +31,7 @@
 }
 
 + (id)uncompressedDataWithRawData:(id)arg1 uncompressedSize:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool skipSavingSessionState; // @synthesize skipSavingSessionState=_skipSavingSessionState;
 @property(nonatomic) unsigned long long uncompressedSessionStateDataSize; // @synthesize uncompressedSessionStateDataSize=_uncompressedSessionStateDataSize;
 @property(nonatomic) _Bool skipUpdate; // @synthesize skipUpdate=_skipUpdate;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *UUIDString; // @synthesize UUIDString=_UUIDString;
-- (void).cxx_destruct;
 - (id)toDictionary;
 @property(readonly, nonatomic) _Bool isSessionStateDataCompressed;
 - (void)_uncompressSessionStateDataIfNeeded;

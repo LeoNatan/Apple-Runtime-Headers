@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double canvasWidth; // @synthesize canvasWidth=_canvasWidth;
 @property(nonatomic) double relativePageOffset; // @synthesize relativePageOffset=_relativePageOffset;
 @property(retain, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -22,11 +22,11 @@
 + (void)eventWithLabel:(id)arg1 comment:(id)arg2;
 + (id)stopwatchWithLabel:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) NSString *comment; // @synthesize comment=_comment;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)descriptionAsData;
 - (id)description;
 - (void)stop;

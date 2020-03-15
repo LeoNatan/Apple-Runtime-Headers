@@ -35,6 +35,7 @@
     void *_input_source;
 }
 
+- (void).cxx_destruct;
 @property _Bool input_suspended; // @synthesize input_suspended=_input_suspended;
 @property void *input_source; // @synthesize input_source=_input_source;
 @property unsigned int keyLength; // @synthesize keyLength=_keyLength;
@@ -42,7 +43,6 @@
 @property unsigned int nexusPort; // @synthesize nexusPort=_nexusPort;
 @property(retain) NSUUID *nexusInstance; // @synthesize nexusInstance=_nexusInstance;
 @property(retain) NSUUID *flowId; // @synthesize flowId=_flowId;
-- (void).cxx_destruct;
 - (void)deallocateFrame:(struct interpose_frame *)arg1;
 - (struct interpose_frame *)allocateFrame:(struct interpose_frame *)arg1;
 - (void)freePacket:(id)arg1;

@@ -16,8 +16,8 @@
     id <PKNFCTagReaderSessionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKNFCTagReaderSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKNFCTagReaderSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)readerSessionDidEndUnexpectedly:(id)arg1;
 - (void)readerSession:(id)arg1 didDetectTags:(id)arg2;
 - (void)readNDEFMessageFromTag:(id)arg1 completion:(CDUnknownBlockType)arg2;

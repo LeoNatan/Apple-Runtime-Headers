@@ -16,8 +16,8 @@
     id <FPArchiveServiceUnarchivingDelegate> _unarchivingDelegate;
 }
 
-@property(nonatomic) __weak id <FPArchiveServiceUnarchivingDelegate> unarchivingDelegate; // @synthesize unarchivingDelegate=_unarchivingDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FPArchiveServiceUnarchivingDelegate> unarchivingDelegate; // @synthesize unarchivingDelegate=_unarchivingDelegate;
 - (void)receiveArchivedItemsDescriptors:(id)arg1;
 - (id)unarchiveItemAtURL:(id)arg1 passphrases:(id)arg2 destinationFolderURL:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)unarchiveItemAtURL:(id)arg1 passphrase:(id)arg2 destinationFolderURL:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

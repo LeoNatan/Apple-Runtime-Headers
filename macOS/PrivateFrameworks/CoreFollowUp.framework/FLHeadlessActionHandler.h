@@ -14,8 +14,8 @@
 }
 
 + (id)handlerWithItem:(id)arg1;
-@property(retain, nonatomic) FLFollowUpItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FLFollowUpItem *item; // @synthesize item=_item;
 - (void)dealloc;
 - (void)handleExtensionBasedAction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleAction:(id)arg1 completion:(CDUnknownBlockType)arg2;

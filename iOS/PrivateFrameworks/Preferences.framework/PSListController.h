@@ -85,6 +85,7 @@
 + (id)aggregateReportingDomainOverride;
 + (void)setAggregateReportingDomainOverride:(id)arg1;
 + (_Bool)displaysButtonBar;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *segmentedSliderTrackColor; // @synthesize segmentedSliderTrackColor=_segmentedSliderTrackColor;
 @property(retain, nonatomic) UIColor *footerHyperlinkColor; // @synthesize footerHyperlinkColor=_footerHyperlinkColor;
 @property(retain, nonatomic) UIColor *editableSelectionHighlightColor; // @synthesize editableSelectionHighlightColor=_editableSelectionHighlightColor;
@@ -112,7 +113,6 @@
 @property(nonatomic) _Bool edgeToEdgeCells; // @synthesize edgeToEdgeCells=_edgeToEdgeCells;
 @property(nonatomic, getter=isShowingSetupController) _Bool showingSetupController; // @synthesize showingSetupController=_showingSetupController;
 @property(nonatomic) _Bool forceSynchronousIconLoadForCreatedCells; // @synthesize forceSynchronousIconLoadForCreatedCells=_forceSynchronousIconLoadForCreatedCells;
-- (void).cxx_destruct;
 - (void)prefetchResourcesFor:(id)arg1;
 - (void)tableView:(id)arg1 prefetchRowsAtIndexPaths:(id)arg2;
 - (void)invalidateSpecifiersForDataSource:(id)arg1;

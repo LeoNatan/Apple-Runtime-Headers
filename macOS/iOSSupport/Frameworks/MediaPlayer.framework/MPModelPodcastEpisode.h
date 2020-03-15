@@ -33,8 +33,8 @@
 + (id)__title_KEY;
 + (id)kindWithVariants:(unsigned long long)arg1 options:(unsigned long long)arg2;
 + (id)kindWithVariants:(unsigned long long)arg1;
-@property(copy, nonatomic) NSString *commentText; // @synthesize commentText=_commentText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *commentText; // @synthesize commentText=_commentText;
 - (id)artworkCatalog;
 - (id)humanDescription;
 

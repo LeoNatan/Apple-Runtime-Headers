@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *streams; // @synthesize streams=_streams;
 @property(readonly, nonatomic) AVAudioSession_New *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithSession:(id)arg1 streams:(id)arg2 error:(id *)arg3;

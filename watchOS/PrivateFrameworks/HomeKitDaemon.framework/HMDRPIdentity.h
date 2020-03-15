@@ -19,8 +19,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 + (id)identityWithRPIdentity:(id)arg1;
-@property(readonly, copy) HMFKey *deviceIRK; // @synthesize deviceIRK=_deviceIRK;
 - (void).cxx_destruct;
+@property(readonly, copy) HMFKey *deviceIRK; // @synthesize deviceIRK=_deviceIRK;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

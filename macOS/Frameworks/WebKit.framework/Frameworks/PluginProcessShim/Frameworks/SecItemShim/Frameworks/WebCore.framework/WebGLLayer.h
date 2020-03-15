@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     BOOL _usingAlpha;
 }
 
-@property(nonatomic) struct GraphicsContext3D *context; // @synthesize context=_context;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct GraphicsContext3D *context; // @synthesize context=_context;
 - (void)bindFramebufferToNextAvailableSurface;
 - (void)allocateIOSurfaceBackingStoreWithSize:(struct IntSize)arg1 usingAlpha:(BOOL)arg2;
 - (void)display;

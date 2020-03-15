@@ -20,16 +20,16 @@ __attribute__((visibility("hidden")))
 
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_c524502b *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(retain) NSString *filePath; // @synthesize filePath=_filePath;
 @property unsigned int columnNum; // @synthesize columnNum=_columnNum;
 @property unsigned int lineNum; // @synthesize lineNum=_lineNum;
 @property unsigned long long length; // @synthesize length=_length;
 @property unsigned long long offsetIntoTextSegment; // @synthesize offsetIntoTextSegment=_offsetIntoTextSegment;
-- (void).cxx_destruct;
 - (void)populateReferencesUsingBuffer:(const CDStruct_c524502b *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 
 @end
 

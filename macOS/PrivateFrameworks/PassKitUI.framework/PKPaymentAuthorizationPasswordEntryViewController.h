@@ -21,13 +21,13 @@
     NSButton *_payButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didReceiveViewDidAppear; // @synthesize didReceiveViewDidAppear=_didReceiveViewDidAppear;
 @property(retain, nonatomic) NSButton *payButton; // @synthesize payButton=_payButton;
 @property(retain, nonatomic) NSView *passwordFieldPlaceholderView; // @synthesize passwordFieldPlaceholderView=_passwordFieldPlaceholderView;
 @property(retain, nonatomic) NSTextField *promptTextField; // @synthesize promptTextField=_promptTextField;
 @property(retain, nonatomic) LAUIUserPasswordViewController *passwordViewController; // @synthesize passwordViewController=_passwordViewController;
 @property(nonatomic) __weak id <PKPaymentAuthorizationPasswordEntryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)requestCancelAuthentication;
 - (void)passwordFieldDidResignFirstResponder;
 - (void)didSubmitWrongPassword:(BOOL)arg1;

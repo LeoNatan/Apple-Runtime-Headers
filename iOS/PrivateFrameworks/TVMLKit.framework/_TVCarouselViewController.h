@@ -13,7 +13,6 @@
 
 @class IKCollectionElement, IKViewElement, NSString, TVCarouselLayout, _TVCarouselView;
 
-__attribute__((visibility("hidden")))
 @interface _TVCarouselViewController : UIViewController <TVCarouselViewDataSource, TVCarouselViewDelegate, TVCollectionViewLockupCellDelegate, TVAppTemplateImpressionable>
 {
     TVCarouselLayout *_carouselLayout;
@@ -31,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateLayoutAndReload;
 - (void)_updateLayout;
 - (void)_updateAutoScrollInterval;
+- (void)centerItemAtPageIndex:(long long)arg1;
 - (void)updateWithViewElement:(id)arg1 layout:(id)arg2;
 - (void)_dispatchEvent:(id)arg1 forItemAtIndex:(unsigned long long)arg2 cell:(id)arg3;
 - (void)_applicationWillResignActive:(id)arg1;

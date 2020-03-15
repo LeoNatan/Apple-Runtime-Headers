@@ -16,12 +16,12 @@
     unordered_map_083ec55b _sourcesByID;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDefaultSourceOrder; // @synthesize isDefaultSourceOrder=_isDefaultSourceOrder;
 @property(readonly, nonatomic) _Bool userOrdered; // @synthesize userOrdered=_userOrdered;
 @property(nonatomic) unordered_map_083ec55b sourcesByID; // @synthesize sourcesByID=_sourcesByID;
 @property(nonatomic) vector_f9051771 orderedSources; // @synthesize orderedSources=_orderedSources;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 @property(readonly, copy, nonatomic) NSArray *sourceIDs;

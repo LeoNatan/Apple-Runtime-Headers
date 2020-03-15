@@ -27,11 +27,11 @@
 }
 
 + (Class)eventsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDHomeKitPredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) BOOL containsRecurrences; // @synthesize containsRecurrences=_containsRecurrences;
 @property(nonatomic) BOOL executeOnce; // @synthesize executeOnce=_executeOnce;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

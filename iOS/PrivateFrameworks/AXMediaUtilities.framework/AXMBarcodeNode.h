@@ -18,8 +18,8 @@
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) AVCaptureMetadataOutput *captureOutput; // @synthesize captureOutput=_captureOutput;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVCaptureMetadataOutput *captureOutput; // @synthesize captureOutput=_captureOutput;
 
 @end
 

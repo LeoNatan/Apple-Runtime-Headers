@@ -14,9 +14,9 @@
     NSArray *_menuItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(copy, nonatomic) NSString *heading; // @synthesize heading=_heading;
-- (void).cxx_destruct;
 - (id)initWithHeading:(id)arg1 menuItems:(id)arg2;
 - (id)initWithMenuItems:(id)arg1;
 

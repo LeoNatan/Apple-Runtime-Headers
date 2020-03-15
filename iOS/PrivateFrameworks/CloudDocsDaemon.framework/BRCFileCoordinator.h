@@ -27,9 +27,9 @@
 + (void)itemDidDisappearAtPath:(id)arg1 logicalFilename:(id)arg2;
 + (void)itemDidAppearAtPath:(id)arg1 logicalFilename:(id)arg2;
 + (void)itemDidChangeAtPath:(id)arg1 logicalFilename:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool forRead; // @synthesize forRead=_forRead;
 @property(nonatomic) _Bool isUpdateForReconnecting; // @synthesize isUpdateForReconnecting=_isUpdateForReconnecting;
-- (void).cxx_destruct;
 - (void)scheduleRenameOfItemAtURL:(id)arg1 toItemAtURL:(id)arg2 contentUpdate:(_Bool)arg3 queue:(id)arg4 taskTracker:(id)arg5 accessor:(CDUnknownBlockType)arg6;
 - (void)scheduleUpdateOfItemAtURL:(id)arg1 queue:(id)arg2 taskTracker:(id)arg3 accessor:(CDUnknownBlockType)arg4;
 - (void)scheduleDeleteOfItemAtURL:(id)arg1 queue:(id)arg2 taskTracker:(id)arg3 accessor:(CDUnknownBlockType)arg4;

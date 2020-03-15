@@ -32,6 +32,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long eventTimestamp; // @synthesize eventTimestamp=_eventTimestamp;
 @property(retain, nonatomic) HDAWDHealthKitCoachingFeatureGroup *features; // @synthesize features=_features;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned int dismissReason; // @synthesize dismissReason=_dismissReason;
 @property(nonatomic) unsigned int eventType; // @synthesize eventType=_eventType;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

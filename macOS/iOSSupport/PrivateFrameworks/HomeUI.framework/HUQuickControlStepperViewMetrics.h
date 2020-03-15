@@ -15,10 +15,10 @@
     double _cornerRadius;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) HUIntrinsicSizeDescriptor *sizeDescriptor; // @synthesize sizeDescriptor=_sizeDescriptor;
-- (void).cxx_destruct;
 - (id)initWithSizeDescriptor:(id)arg1 orientation:(unsigned long long)arg2 cornerRadius:(double)arg3;
 
 @end

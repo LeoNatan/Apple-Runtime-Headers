@@ -26,13 +26,13 @@
     NSURL *_avAttachmentURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CUISAlertPlatterView *background; // @synthesize background=_background;
 @property(readonly, nonatomic) NSURL *avAttachmentURL; // @synthesize avAttachmentURL=_avAttachmentURL;
 @property(retain, nonatomic) UIImage *attachment; // @synthesize attachment=_attachment;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)preferredBlurView;
 - (void)updateBodyFitSize;
 - (void)updateSubtitleFitSize;

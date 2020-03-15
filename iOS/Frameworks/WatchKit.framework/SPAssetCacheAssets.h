@@ -15,8 +15,8 @@
 
 + (id)fromProto:(id)arg1;
 + (id)toProto:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *assets; // @synthesize assets=_assets;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *assets; // @synthesize assets=_assets;
 - (void)addAsset:(id)arg1;
 - (id)init;
 

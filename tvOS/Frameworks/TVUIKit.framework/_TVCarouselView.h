@@ -9,7 +9,7 @@
 #import <TVUIKit/UICollectionViewDataSource-Protocol.h>
 #import <TVUIKit/UICollectionViewDelegate-Protocol.h>
 
-@class CADisplayLink, NSArray, NSDate, NSDictionary, NSIndexPath, NSObject, NSString, UIFocusGuide, _TVCarouselCollectionView;
+@class CADisplayLink, NSArray, NSDate, NSDictionary, NSIndexPath, NSObject, NSString, UIFocusGuide, UIPageControl, _TVCarouselCollectionView;
 @protocol OS_dispatch_source, TVCarouselViewDataSource, TVCarouselViewDelegate;
 
 @interface _TVCarouselView : UIView <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -30,6 +30,7 @@
         unsigned int delegateDidPlayItemAtIndex:1;
         unsigned int delegateWillDisplayItemAtIndex:1;
         unsigned int delegateDidEndDisplayingItemAtIndex:1;
+        unsigned int delegateDidCenterItemAtIndex:1;
     } _carouselViewFlags;
     NSObject<OS_dispatch_source> *_autoScrollTimer;
     _TVCarouselCollectionView *_collectionView;
@@ -45,6 +46,7 @@
         _Bool firstLayoutPass;
     } _flags;
     _Bool _shouldScaleOnIdleFocus;
+    _Bool _showsPageControl;
     id <TVCarouselViewDataSource> _dataSource;
     id <TVCarouselViewDelegate> _delegate;
     double _interitemSpacing;
@@ -53,19 +55,23 @@
     double _unitScrollDuration;
     UIView *_headerView;
     double _showcaseFactor;
+    double _pageControlMargin;
     NSDictionary *_collectionToDatasourceIndexMap;
     UIFocusGuide *_focusGuide;
     CADisplayLink *_displayLink;
     double _previousDisplayLinkTimestamp;
     double _offsetChangePerSecond;
     NSDate *_firstFocusChangeInInterval;
+    UIPageControl *_pageControl;
     double _focusThrottleTimeInterval;
     struct CGSize _itemSize;
     struct CGPoint _focusDirection;
     struct CGPoint _targetContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double focusThrottleTimeInterval; // @synthesize focusThrottleTimeInterval=_focusThrottleTimeInterval;
+@property(retain, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) NSDate *firstFocusChangeInInterval; // @synthesize firstFocusChangeInInterval=_firstFocusChangeInInterval;
 @property(nonatomic) double offsetChangePerSecond; // @synthesize offsetChangePerSecond=_offsetChangePerSecond;
 @property(nonatomic) struct CGPoint targetContentOffset; // @synthesize targetContentOffset=_targetContentOffset;
@@ -73,6 +79,8 @@
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) UIFocusGuide *focusGuide; // @synthesize focusGuide=_focusGuide;
 @property(retain, nonatomic) NSDictionary *collectionToDatasourceIndexMap; // @synthesize collectionToDatasourceIndexMap=_collectionToDatasourceIndexMap;
+@property(nonatomic) double pageControlMargin; // @synthesize pageControlMargin=_pageControlMargin;
+@property(nonatomic) _Bool showsPageControl; // @synthesize showsPageControl=_showsPageControl;
 @property(nonatomic) _Bool shouldScaleOnIdleFocus; // @synthesize shouldScaleOnIdleFocus=_shouldScaleOnIdleFocus;
 @property(nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
@@ -84,7 +92,7 @@
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) __weak id <TVCarouselViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <TVCarouselViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
+- (void)_updatePageControl;
 - (double)_centeringAnimationDuration;
 - (struct CGSize)_collectionViewLayoutItemSize;
 - (unsigned long long)_itemIndexForIndexPath:(id)arg1;
@@ -108,6 +116,7 @@
 - (long long)_numberOfCells;
 - (long long)_centerCollectionViewCellIndex;
 - (void)_updateContentForNewCenterIndex:(long long)arg1;
+- (void)centerItemAtPageIndex:(long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *visibleCells;
 - (void)setInteritemSpacing:(double)arg1 animated:(_Bool)arg2;
 - (void)reloadData;
@@ -118,6 +127,7 @@
 - (id)focusedCell;
 - (id)_cellForItemAtIndex:(unsigned long long)arg1;
 - (void)_handlePlayGesture:(id)arg1;
+- (void)_accessibilityReducedMotionNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;

@@ -19,12 +19,12 @@
     TVCSEndpointServiceConnection *_serviceConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVCSEndpointServiceConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 @property(nonatomic) _Bool startedManagement; // @synthesize startedManagement=_startedManagement;
 @property(nonatomic, getter=isStartingManagement) _Bool startingManagement; // @synthesize startingManagement=_startingManagement;
 @property(copy, nonatomic) NSArray *pairableEndpoints; // @synthesize pairableEndpoints=_pairableEndpoints;
 @property(copy, nonatomic) NSArray *pairedEndpoints; // @synthesize pairedEndpoints=_pairedEndpoints;
-- (void).cxx_destruct;
 - (void)_stopManagement;
 - (void)_stopManagementIfStarted;
 - (void)_startManagement;

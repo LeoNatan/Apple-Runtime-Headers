@@ -21,8 +21,8 @@
 
 + (id)_callOutQueue;
 + (id)_sharedQueue;
-@property(nonatomic) __weak FBSApplicationLibrary *appLibrary; // @synthesize appLibrary=_appLibrary;
 - (void).cxx_destruct;
+@property(nonatomic) __weak FBSApplicationLibrary *appLibrary; // @synthesize appLibrary=_appLibrary;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (unsigned long long)installPhase;

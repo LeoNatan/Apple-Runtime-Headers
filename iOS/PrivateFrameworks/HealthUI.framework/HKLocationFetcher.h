@@ -16,11 +16,11 @@
     HKAnchoredObjectQuery *_routesQuery;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKAnchoredObjectQuery *routesQuery; // @synthesize routesQuery=_routesQuery;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) _HKWorkoutRouteStore *routesStore; // @synthesize routesStore=_routesStore;
 @property(retain, nonatomic) _HKLocationShifter *shifter; // @synthesize shifter=_shifter;
-- (void).cxx_destruct;
 - (id)_workoutRoutesQueryForWorkout:(id)arg1 withUpdateHandler:(CDUnknownBlockType)arg2;
 - (void)fetchRoutesFromWorkout:(id)arg1 withUpdateHandler:(CDUnknownBlockType)arg2;
 - (void)_handleAndShiftLocations:(id)arg1 forWorkout:(id)arg2 withSamplesHandler:(CDUnknownBlockType)arg3;

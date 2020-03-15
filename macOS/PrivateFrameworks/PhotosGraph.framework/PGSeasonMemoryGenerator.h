@@ -17,9 +17,9 @@
 + (unsigned long long)numberOfPotentialMemoriesWithGraph:(id)arg1;
 + (BOOL)isMoment:(id)arg1 duringSeason:(id)arg2;
 + (id)seasonNodeForMomentNode:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSDate *localDate; // @synthesize localDate=_localDate;
-- (void).cxx_destruct;
 - (id)_potentialMemoriesForDryTesting;
 - (void)_postProcessMemory:(id)arg1 withPotentialMemory:(id)arg2;
 - (void)_enumeratePotentialMemoriesUsingBlock:(CDUnknownBlockType)arg1;

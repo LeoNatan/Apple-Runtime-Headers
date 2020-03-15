@@ -22,12 +22,12 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic) BOOL installsMotionEffectsWhenFocused; // @synthesize installsMotionEffectsWhenFocused=_installsMotionEffectsWhenFocused;
 @property(copy, nonatomic) _UIStackedImageConfiguration *config; // @synthesize config=_config;
 @property(retain, nonatomic) NSObject<UINamedLayerStack> *constructedStackImage; // @synthesize constructedStackImage=_constructedStackImage;
 @property(retain, nonatomic) UIImage *stackImage; // @synthesize stackImage=_stackImage;
-- (void).cxx_destruct;
 - (void)overlayView:(id)arg1 didChangeClipsToBounds:(BOOL)arg2;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
 - (BOOL)_applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2;

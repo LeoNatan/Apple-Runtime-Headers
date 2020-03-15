@@ -38,6 +38,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsRelay; // @synthesize supportsRelay=_supportsRelay;
 @property(copy, nonatomic) NSArray *identifiersOfOtherConnectedDevices; // @synthesize identifiersOfOtherConnectedDevices=_identifiersOfOtherConnectedDevices;
 @property(nonatomic) BOOL supportsPreferredAndActive; // @synthesize supportsPreferredAndActive=_supportsPreferredAndActive;
@@ -59,7 +60,6 @@
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

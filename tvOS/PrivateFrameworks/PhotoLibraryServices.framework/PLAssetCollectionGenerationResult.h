@@ -14,9 +14,9 @@
     NSSet *_insertedOrUpdatedMoments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool frequentLocationsDidChange; // @synthesize frequentLocationsDidChange=_frequentLocationsDidChange;
 @property(readonly, nonatomic) NSSet *insertedOrUpdatedMoments; // @synthesize insertedOrUpdatedMoments=_insertedOrUpdatedMoments;
-- (void).cxx_destruct;
 - (id)initWithInsertedOrUpdatedMoments:(id)arg1 frequentLocationsDidChange:(_Bool)arg2;
 
 @end

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)entryWithResponder:(id)arg1 forType:(int)arg2;
+- (void).cxx_destruct;
 @property(readonly) int type; // @synthesize type=_type;
 @property(readonly) __weak UIResponder *overridden; // @synthesize overridden=_overridden;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 

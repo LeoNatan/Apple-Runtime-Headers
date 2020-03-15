@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSClipView *_passwordReusedWarningLabelEnclosingClipView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSClipView *passwordReusedWarningLabelEnclosingClipView; // @synthesize passwordReusedWarningLabelEnclosingClipView=_passwordReusedWarningLabelEnclosingClipView;
 @property(nonatomic) __weak NSScrollView *passwordReusedWarningLabelEnclosingScrollView; // @synthesize passwordReusedWarningLabelEnclosingScrollView=_passwordReusedWarningLabelEnclosingScrollView;
 @property ContentHuggingTextView *passwordReusedWarningLabel; // @synthesize passwordReusedWarningLabel=_passwordReusedWarningLabel;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PasswordsAuditingHandler> passwordAuditingHandler; // @synthesize passwordAuditingHandler=_passwordAuditingHandler;
 @property(readonly, nonatomic) WBSSavedPassword *password; // @synthesize password=_password;
 @property(nonatomic) __weak id <PasswordsDetailSheetControllerDecisionHandler> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)sharingServiceWindowDidResignMain:(id)arg1;
 - (void)sharingServiceWindowDidBecomeMain:(id)arg1;

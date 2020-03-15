@@ -7,13 +7,13 @@
 #import <MPSCore/NSObject-Protocol.h>
 #import <MPSCore/NSSecureCoding-Protocol.h>
 
-@class MPSImage, MPSImageDescriptor, MPSKernel;
+@class MPSImage, MPSImageDescriptor, MPSKernel, NSArray;
 @protocol MTLCommandBuffer;
 
 @protocol MPSImageAllocator <NSObject, NSSecureCoding>
 - (MPSImage *)imageForCommandBuffer:(id <MTLCommandBuffer>)arg1 imageDescriptor:(MPSImageDescriptor *)arg2 kernel:(MPSKernel *)arg3;
 
 @optional
-- (struct NSArray *)imageBatchForCommandBuffer:(id <MTLCommandBuffer>)arg1 imageDescriptor:(MPSImageDescriptor *)arg2 kernel:(MPSKernel *)arg3 count:(unsigned long long)arg4;
+- (NSArray *)imageBatchForCommandBuffer:(id <MTLCommandBuffer>)arg1 imageDescriptor:(MPSImageDescriptor *)arg2 kernel:(MPSKernel *)arg3 count:(unsigned long long)arg4;
 @end
 

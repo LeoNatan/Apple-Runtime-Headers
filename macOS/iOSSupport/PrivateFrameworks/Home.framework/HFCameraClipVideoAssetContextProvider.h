@@ -20,11 +20,11 @@
 }
 
 + (id)defaultProvider;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <HFCameraClipVideoAssetContextProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) NSMutableDictionary *videoContextFuturesByClipID; // @synthesize videoContextFuturesByClipID=_videoContextFuturesByClipID;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (id)cachedVideoAssetContextForClip:(id)arg1 clipManager:(id)arg2;
 - (id)newFetchVideoAssetContextOperationForClip:(id)arg1 clipManager:(id)arg2;
 - (id)fetchVideoAssetContextForClip:(id)arg1 clipManager:(id)arg2;

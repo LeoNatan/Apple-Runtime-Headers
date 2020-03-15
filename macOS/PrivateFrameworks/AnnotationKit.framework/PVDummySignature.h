@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSData *undecryptedData; // @synthesize undecryptedData=_undecryptedData;
 @property(retain) AKPVSignaturePayload *payload; // @synthesize payload=_payload;
 @property BOOL cannotDecrypt; // @synthesize cannotDecrypt=_cannotDecrypt;
-- (void).cxx_destruct;
 - (void)decrypt;
 - (BOOL)isDecrypted;
 - (void)encodeWithCoder:(id)arg1;

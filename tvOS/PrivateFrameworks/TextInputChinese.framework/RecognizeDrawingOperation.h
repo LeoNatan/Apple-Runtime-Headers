@@ -19,11 +19,11 @@
 }
 
 + (id)recognitionResultsForStrokes:(id)arg1 withRecognizer:(id)arg2 history:(id)arg3 shouldCancel:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CHRecognizer *recognizer; // @synthesize recognizer=_recognizer;
 @property(retain, nonatomic) NSString *history; // @synthesize history=_history;
 @property(retain, nonatomic) TIInputManagerHandwriting *manager; // @synthesize manager=_im;
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
-- (void).cxx_destruct;
 - (void)main;
 - (void)dealloc;
 - (id)initWithInputManager:(id)arg1 strokes:(id)arg2 history:(id)arg3;

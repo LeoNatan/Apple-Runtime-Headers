@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int logSizeTotal; // @synthesize logSizeTotal=_logSizeTotal;
 @property(retain, nonatomic) NSString *caseGroupIdentifier; // @synthesize caseGroupIdentifier=_caseGroupIdentifier;
 @property(retain, nonatomic) NSString *buildVariant; // @synthesize buildVariant=_buildVariant;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *subtype; // @synthesize subtype=_subtype;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

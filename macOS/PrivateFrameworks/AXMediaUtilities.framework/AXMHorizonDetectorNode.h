@@ -16,8 +16,8 @@
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic, setter=_setDetectHorizonRequest:) VNDetectHorizonRequest *_detectHorizonRequest; // @synthesize _detectHorizonRequest=__detectHorizonRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setDetectHorizonRequest:) VNDetectHorizonRequest *_detectHorizonRequest; // @synthesize _detectHorizonRequest=__detectHorizonRequest;
 - (void)evaluate:(id)arg1;
 - (BOOL)validateVisionKitSoftLinkSymbols;
 - (BOOL)requiresVisionFramework;

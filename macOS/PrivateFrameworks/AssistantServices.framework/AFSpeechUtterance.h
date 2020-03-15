@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long source; // @synthesize source=_source;
 @property(nonatomic) long long confidenceScore; // @synthesize confidenceScore=_confidenceScore;
 @property(copy, nonatomic) NSArray *interpretationIndices; // @synthesize interpretationIndices=_interpretationIndices;
-- (void).cxx_destruct;
 - (id)initWithInterpretationIndices:(id)arg1 confidenceScore:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

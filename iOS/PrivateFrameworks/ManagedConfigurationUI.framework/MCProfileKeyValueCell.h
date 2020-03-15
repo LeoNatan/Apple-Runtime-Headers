@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UILabel *keyLabel; // @synthesize keyLabel=_keyLabel;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setKeyValue:(id)arg1;

@@ -18,12 +18,12 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dismissPresentedControllerIfNeeded; // @synthesize dismissPresentedControllerIfNeeded=_dismissPresentedControllerIfNeeded;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) id <CSLNavigationStackControllerAnimationProvider> animationProvider; // @synthesize animationProvider=_animationProvider;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)sendResponse:(id)arg1;
 
 @end

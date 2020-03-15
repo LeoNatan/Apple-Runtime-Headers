@@ -19,13 +19,13 @@
     long long _nestedRegistration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long nestedRegistration; // @synthesize nestedRegistration=_nestedRegistration;
 @property(nonatomic) _Bool needsSorting; // @synthesize needsSorting=_needsSorting;
 @property(readonly, nonatomic) id <PXGadgetRankStorage> rankStorage; // @synthesize rankStorage=_rankStorage;
 @property(readonly, nonatomic) NSMutableDictionary *currentEntries; // @synthesize currentEntries=_currentEntries;
 @property(nonatomic) long long sortingAlgorithm; // @synthesize sortingAlgorithm=_sortingAlgorithm;
 @property(retain, nonatomic) NSDate *baseNewDate; // @synthesize baseNewDate=_baseNewDate;
-- (void).cxx_destruct;
 - (id)_sortingKeyForOldEntries;
 - (void)_persistSortedEntries:(id)arg1;
 - (void)_splitCurrentEntriesIntoNew:(id)arg1 andOld:(id)arg2;

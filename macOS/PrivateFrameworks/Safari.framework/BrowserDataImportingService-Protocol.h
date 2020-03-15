@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class BrowserDataDirectories;
 
 @protocol BrowserDataImportingService
 - (void)exit;
-- (void)createCredentialImporterForBrowserWithBundleIdentifier:(NSString *)arg1 reply:(void (^)(id <BrowserCredentialImporter>))arg2;
-- (void)createHistoryImporterForBrowserWithBundleIdentifier:(NSString *)arg1 reply:(void (^)(id <BrowserHistoryImporter>))arg2;
-- (void)createBookmarkImporterForBrowserWithBundleIdentifier:(NSString *)arg1 reply:(void (^)(id <BrowserBookmarkImportEngine>))arg2;
+- (void)createCredentialImporterWithBrowserDataDirectories:(BrowserDataDirectories *)arg1 reply:(void (^)(id <BrowserCredentialImportEngine>))arg2;
+- (void)createHistoryImporterWithBrowserDataDirectories:(BrowserDataDirectories *)arg1 reply:(void (^)(id <BrowserHistoryImporter>))arg2;
+- (void)createBookmarkImporterWithBrowserDataDirectories:(BrowserDataDirectories *)arg1 reply:(void (^)(id <BrowserBookmarkImportEngine>))arg2;
 @end
 

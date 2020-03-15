@@ -20,12 +20,12 @@
     unsigned long long _conflictResolution;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long conflictResolution; // @synthesize conflictResolution=_conflictResolution;
 @property(retain, nonatomic) NSString *table; // @synthesize table=_table;
 @property(retain, nonatomic) NSMutableDictionary *expressables; // @synthesize expressables=_expressables;
 @property(retain, nonatomic) NSMutableDictionary *bindables; // @synthesize bindables=_bindables;
 @property(retain, nonatomic) id <EFSQLExpressable> whereClause; // @synthesize whereClause=_whereClause;
-- (void).cxx_destruct;
 - (id)_queryStringForUpsert:(_Bool)arg1;
 @property(readonly, copy, nonatomic) NSString *queryString;
 - (id)queryStringForUpsert;

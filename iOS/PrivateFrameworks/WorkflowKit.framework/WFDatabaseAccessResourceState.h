@@ -14,9 +14,9 @@
     NSData *_perWorkflowStateData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *perWorkflowStateData; // @synthesize perWorkflowStateData=_perWorkflowStateData;
 @property(readonly, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
-- (void).cxx_destruct;
 - (id)initWithPersistentIdentifier:(id)arg1 perWorkflowStateData:(id)arg2;
 
 @end

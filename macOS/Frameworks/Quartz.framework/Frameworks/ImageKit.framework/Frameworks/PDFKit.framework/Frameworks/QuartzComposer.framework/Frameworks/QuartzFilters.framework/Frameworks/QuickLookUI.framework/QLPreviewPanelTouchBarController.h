@@ -30,6 +30,7 @@
     NSGroupTouchBarItem *_contentItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSGroupTouchBarItem *contentItem; // @synthesize contentItem=_contentItem;
 @property(retain) NSTouchBarItem *indexItem; // @synthesize indexItem=_indexItem;
 @property(retain) NSTouchBarItem *prevNextItem; // @synthesize prevNextItem=_prevNextItem;
@@ -44,7 +45,6 @@
 @property(retain) NSTouchBarItem *openItem; // @synthesize openItem=_openItem;
 @property(retain, nonatomic) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <QLPreviewTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)toggleIndexSheet:(id)arg1;
 - (void)prevNextSegmentPushed:(id)arg1;
 - (void)closeButtonPressed:(id)arg1;

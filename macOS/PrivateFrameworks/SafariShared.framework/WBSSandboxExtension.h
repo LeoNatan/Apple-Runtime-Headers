@@ -14,8 +14,8 @@
     NSURL *_url;
 }
 
-@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void)releaseResource;
 - (BOOL)consumeResource;
 - (void)stopAccessingResource;

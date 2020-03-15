@@ -20,10 +20,10 @@
 
 + (Class)queryClass;
 + (id)requiredEntitlements;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool includeDocumentData; // @synthesize includeDocumentData=_includeDocumentData;
 @property(readonly, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly, nonatomic) unsigned long long maxResults; // @synthesize maxResults=_maxResults;
-- (void).cxx_destruct;
 - (void)_queue_start;
 - (void)authorizeSamples:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_deliverAuthorizedSamplesToClient:(id)arg1 errorOut:(id *)arg2;

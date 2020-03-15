@@ -16,11 +16,11 @@
     NSData *_signature;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) NSData *instructions; // @synthesize instructions=_instructions;
 @property(readonly, nonatomic) NSString *secureElementIdentifier; // @synthesize secureElementIdentifier=_secureElementIdentifier;
 @property(readonly, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
     UIView *_floatingKeyboardMaskView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *floatingKeyboardMaskView; // @synthesize floatingKeyboardMaskView=_floatingKeyboardMaskView;
 @property(retain, nonatomic) id <UIInputViewSetPlacementApplicator> applicator; // @synthesize applicator=_applicator;
 @property(retain, nonatomic) UIInputSetHostView *hostView; // @synthesize hostView=_hostView;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak UIInputWindowControllerHosting *container; // @synthesize container=_container;
 @property(readonly, nonatomic) BOOL scrollKeyboardActive; // @synthesize scrollKeyboardActive=_scrolling;
 @property(readonly, retain, nonatomic) UISplitKeyboardSupport *splitKeyboardController; // @synthesize splitKeyboardController=_cachedSplitKeyboardController;
-- (void).cxx_destruct;
 - (void)enumerateBoundingRects:(CDUnknownBlockType)arg1;
 - (void)clearInteractiveTransitionStateIfNecessary;
 - (void)finishScrollViewTransition;

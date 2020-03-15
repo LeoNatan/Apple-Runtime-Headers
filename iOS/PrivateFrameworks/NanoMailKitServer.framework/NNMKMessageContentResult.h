@@ -20,6 +20,7 @@
     long long _compressedTextDataLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool messageDoesNotExist; // @synthesize messageDoesNotExist=_messageDoesNotExist;
 @property(nonatomic) _Bool alreadySyncedWithCurrentPriority; // @synthesize alreadySyncedWithCurrentPriority=_alreadySyncedWithCurrentPriority;
 @property(nonatomic) _Bool isUserRequest; // @synthesize isUserRequest=_isUserRequest;
@@ -28,7 +29,6 @@
 @property(nonatomic) long long compressedTextDataLength; // @synthesize compressedTextDataLength=_compressedTextDataLength;
 @property(nonatomic) unsigned long long resendInterval; // @synthesize resendInterval=_resendInterval;
 @property(retain, nonatomic) NNMKProtoMessageContentSync *protoMessageContentSync; // @synthesize protoMessageContentSync=_protoMessageContentSync;
-- (void).cxx_destruct;
 
 @end
 

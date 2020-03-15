@@ -18,13 +18,13 @@
     NSMutableArray *_records;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
 @property(copy, nonatomic) NSError *shouldPromptError; // @synthesize shouldPromptError=_shouldPromptError;
 @property(copy, nonatomic) NSString *hostAppName; // @synthesize hostAppName=_hostAppName;
 @property(nonatomic) _Bool shouldPrompt; // @synthesize shouldPrompt=_shouldPrompt;
 @property(nonatomic) _Bool didRecieveShouldPrompt; // @synthesize didRecieveShouldPrompt=_didRecieveShouldPrompt;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)initWithBundleID:(id)arg1;
 
 @end

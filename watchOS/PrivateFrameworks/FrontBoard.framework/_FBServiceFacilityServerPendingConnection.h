@@ -15,9 +15,9 @@
 }
 
 + (id)pendingConnectionToFacility:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) FBSServiceFacility *facility; // @synthesize facility=_facility;
-- (void).cxx_destruct;
 - (id)initWithFacility:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

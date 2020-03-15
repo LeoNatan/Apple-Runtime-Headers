@@ -26,6 +26,7 @@
 + (id)displayMetadataForMediaProfile:(id)arg1 withContextProvider:(id)arg2;
 + (id)displayMetadataForAccessory:(id)arg1 withContextProvider:(id)arg2;
 + (id)displayMetadataForServiceDescriptor:(id)arg1 characteristicReadResponse:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *splitAccountFuture; // @synthesize splitAccountFuture=_splitAccountFuture;
 @property(retain, nonatomic) HFServiceState *serviceState; // @synthesize serviceState=_serviceState;
 @property(retain, nonatomic) HFCharacteristicValueDisplayError *error; // @synthesize error=_error;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *sortKey; // @synthesize sortKey=_sortKey;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(nonatomic) int primaryState; // @synthesize primaryState=_primaryState;
-- (void).cxx_destruct;
 - (void)parseProgammableSwitchOfType:(id)arg1 response:(id)arg2;
 - (void)parseCurrentTargetPositionForServiceType:(id)arg1 response:(id)arg2;
 - (void)parseHumidifierDehumidifierResponse:(id)arg1;

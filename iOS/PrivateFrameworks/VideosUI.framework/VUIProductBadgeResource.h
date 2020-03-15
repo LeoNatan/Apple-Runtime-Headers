@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTemplated) _Bool templated; // @synthesize templated=_templated;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

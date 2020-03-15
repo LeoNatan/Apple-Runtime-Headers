@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _selectionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType selectionBlock; // @synthesize selectionBlock=_selectionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType selectionBlock; // @synthesize selectionBlock=_selectionBlock;
 - (void)_suggestAnEditButtonPressed;
 - (void)_contentSizeDidChange;
 - (void)_updateConstraints;

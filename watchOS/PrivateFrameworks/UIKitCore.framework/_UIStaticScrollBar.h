@@ -22,15 +22,15 @@
     int _edge;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldInsetButtonsForIndex; // @synthesize shouldInsetButtonsForIndex=_shouldInsetButtonsForIndex;
 @property(nonatomic) int edge; // @synthesize edge=_edge;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (struct CGRect)centeringBounds;
 @property(readonly, nonatomic) int desiredAccessoryEdge;
 - (void)buttonTapped:(id)arg1;
 - (void)update;
-- (int)_axis;
+- (unsigned int)_axis;
 @property(readonly, nonatomic) _Bool overlay;
 - (id)_constraintsForEdge:(int)arg1;
 - (void)updateConstraints;

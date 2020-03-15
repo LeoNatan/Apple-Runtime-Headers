@@ -26,6 +26,7 @@
 + (id)buildRequiredOnly;
 + (id)buildWithAuthName:(id)arg1 withAuthPassword:(id)arg2 withTokenCard:(id)arg3 withCommRemoteAddress:(id)arg4 withAuthEAPPlugins:(id)arg5 withAuthProtocol:(id)arg6 withCCPMPPE40Enabled:(id)arg7 withCCPMPPE128Enabled:(id)arg8 withCCPEnabled:(id)arg9 withDisconnectOnIdle:(id)arg10 withDisconnectOnIdleTimer:(id)arg11;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadDisconnectOnIdleTimer; // @synthesize payloadDisconnectOnIdleTimer=_payloadDisconnectOnIdleTimer;
 @property(copy, nonatomic) NSNumber *payloadDisconnectOnIdle; // @synthesize payloadDisconnectOnIdle=_payloadDisconnectOnIdle;
 @property(copy, nonatomic) NSNumber *payloadCCPEnabled; // @synthesize payloadCCPEnabled=_payloadCCPEnabled;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSNumber *payloadTokenCard; // @synthesize payloadTokenCard=_payloadTokenCard;
 @property(copy, nonatomic) NSString *payloadAuthPassword; // @synthesize payloadAuthPassword=_payloadAuthPassword;
 @property(copy, nonatomic) NSString *payloadAuthName; // @synthesize payloadAuthName=_payloadAuthName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

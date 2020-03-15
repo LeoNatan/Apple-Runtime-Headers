@@ -31,6 +31,7 @@
 + (double)atvImageToTextBaselineConstantForViewSizeSubclass:(long long)arg1;
 + (double)scrollViewTopToATVImageConstant;
 + (double)subtitleBaselineToATVImageConstant;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *iPadTextLabel; // @synthesize iPadTextLabel=_iPadTextLabel;
 @property(retain, nonatomic) UIImageView *iPadImageView; // @synthesize iPadImageView=_iPadImageView;
 @property(retain, nonatomic) UILabel *homeHubTextLabel; // @synthesize homeHubTextLabel=_homeHubTextLabel;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) HUGridLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <HUAboutResidentDeviceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setNavigationBarVisibility;
 - (void)updateViewsAndConstraints;
 - (void)updateViews;

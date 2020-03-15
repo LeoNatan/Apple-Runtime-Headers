@@ -16,10 +16,10 @@
     NSArray *_tabBarItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tabBarItems; // @synthesize tabBarItems=_tabBarItems;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak id <_TVMenuBarStackViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_configureView;
 - (void)_buttonEventTouchUpInside:(id)arg1;
 - (id)initWithCoder:(id)arg1;

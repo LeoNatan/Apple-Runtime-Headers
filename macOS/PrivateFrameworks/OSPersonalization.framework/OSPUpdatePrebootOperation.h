@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_semaphore> *_stopDiskManagementThread;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *stopDiskManagementThread; // @synthesize stopDiskManagementThread=_stopDiskManagementThread;
 @property(retain) NSObject<OS_dispatch_semaphore> *ensureRecoveryBooterFinished; // @synthesize ensureRecoveryBooterFinished=_ensureRecoveryBooterFinished;
 @property(retain) NSThread *diskManagementThread; // @synthesize diskManagementThread=_diskManagementThread;
-- (void).cxx_destruct;
 - (void)dmAsyncStartedForDisk:(struct __DADisk *)arg1;
 - (void)dmAsyncProgressForDisk:(struct __DADisk *)arg1 barberPole:(BOOL)arg2 percent:(float)arg3;
 - (void)dmAsyncMessageForDisk:(struct __DADisk *)arg1 string:(id)arg2 dictionary:(id)arg3;

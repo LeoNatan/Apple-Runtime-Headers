@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
     UIView *_toViewXFlippedScreenShot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *toViewXFlippedScreenShot; // @synthesize toViewXFlippedScreenShot=_toViewXFlippedScreenShot;
 @property(retain, nonatomic) UISpringTimingParameters *slideTimingParameters; // @synthesize slideTimingParameters=_slideTimingParameters;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) _Bool transitionFromRight; // @synthesize transitionFromRight=_transitionFromRight;
 @property(nonatomic) long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (void)finishTransition;

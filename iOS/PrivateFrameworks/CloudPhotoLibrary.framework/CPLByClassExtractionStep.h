@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSString *_queryDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *queryDescription; // @synthesize queryDescription=_queryDescription;
 @property(readonly, nonatomic) unsigned long long maximumCount; // @synthesize maximumCount=_maximumCount;
 @property(readonly, nonatomic) Class extractionClass; // @synthesize extractionClass=_extractionClass;
-- (void).cxx_destruct;
 - (id)shortDescription;
 - (_Bool)shouldResetFromThisStepWithIncomingChange:(id)arg1;
 - (void)reset;

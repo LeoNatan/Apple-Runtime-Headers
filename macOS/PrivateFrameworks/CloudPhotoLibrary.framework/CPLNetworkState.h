@@ -13,8 +13,8 @@
     NSObject<OS_nw_path> *_networkPath;
 }
 
-@property(readonly, nonatomic) NSObject<OS_nw_path> *networkPath; // @synthesize networkPath=_networkPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_nw_path> *networkPath; // @synthesize networkPath=_networkPath;
 - (BOOL)isEqual:(id)arg1;
 - (id)redactedDescription;
 - (id)description;

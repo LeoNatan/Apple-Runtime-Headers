@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_replacedFontMap;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *replacedFontMap; // @synthesize replacedFontMap=_replacedFontMap;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *replacedFontMap; // @synthesize replacedFontMap=_replacedFontMap;
 - (id)init;
 
 @end

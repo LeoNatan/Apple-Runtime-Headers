@@ -14,9 +14,9 @@
     RTIDocumentState *_documentState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTIDocumentState *documentState; // @synthesize documentState=_documentState;
 @property(retain, nonatomic) RTIDocumentTraits *documentTraits; // @synthesize documentTraits=_documentTraits;
-- (void).cxx_destruct;
 
 @end
 

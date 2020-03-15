@@ -17,7 +17,7 @@
     AUPasscodeCodecConfiguration *_codecConfig;
     BOOL _isPlaying;
     NSData *_payload;
-    struct NSData *_configurationData;
+    NSData *_configurationData;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     unsigned long long _callbackTimingMSec;
 }
@@ -26,12 +26,12 @@
 + (id)carrierAssetIdentifiers;
 + (id)fileNameForCarrierAsset:(unsigned long long)arg1;
 + (id)urlForCarrierAsset:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long callbackTimingMSec; // @synthesize callbackTimingMSec=_callbackTimingMSec;
 @property(readonly) BOOL isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(readonly, copy, nonatomic) NSData *configurationData; // @synthesize configurationData=_configurationData;
 @property(readonly, copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) APCPlayerEmbedInfo *embeddingInfo;
 - (void)stopSendWithFadeOut:(float)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)stopSendAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -42,8 +42,8 @@
 - (float)preparePayload:(id)arg1 usingCarrierAtURL:(id)arg2 error:(id *)arg3;
 - (float)preparePayload:(id)arg1 usingCarrierAsset:(unsigned long long)arg2 error:(id *)arg3;
 - (id)initWithCodecConfiguration:(id)arg1;
-- (id)initWithListenerCapabilityData:(struct NSData *)arg1 payloadLength:(unsigned long long)arg2;
-- (id)initWithListenerCapabilityData:(struct NSData *)arg1;
+- (id)initWithListenerCapabilityData:(id)arg1 payloadLength:(unsigned long long)arg2;
+- (id)initWithListenerCapabilityData:(id)arg1;
 - (id)createCompatibleConfigForCapabilites:(id)arg1;
 - (id)init;
 

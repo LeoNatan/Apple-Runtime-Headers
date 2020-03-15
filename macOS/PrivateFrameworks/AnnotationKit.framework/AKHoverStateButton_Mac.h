@@ -12,9 +12,9 @@
     id _viewEventMonitor;
 }
 
+- (void).cxx_destruct;
 @property BOOL eventsCurrentlyInside; // @synthesize eventsCurrentlyInside=_eventsCurrentlyInside;
 @property(retain) id viewEventMonitor; // @synthesize viewEventMonitor=_viewEventMonitor;
-- (void).cxx_destruct;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
 

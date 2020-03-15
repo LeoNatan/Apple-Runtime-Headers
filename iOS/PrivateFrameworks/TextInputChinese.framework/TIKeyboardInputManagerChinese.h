@@ -31,6 +31,7 @@
 + (id)unicodeCandidateFromString:(id)arg1;
 + (id)GB18030CandidateFromString:(id)arg1;
 + (id)punctuationPredictionsForString:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool duringDeleteFromInputWithContext; // @synthesize duringDeleteFromInputWithContext=_duringDeleteFromInputWithContext;
 @property(readonly) TIMathSymbolPunctuationController *mathSymbolPunctuationController; // @synthesize mathSymbolPunctuationController=_mathSymbolPunctuationController;
 @property(copy, nonatomic) NSString *currentKeyHint; // @synthesize currentKeyHint=_currentKeyHint;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *modeName; // @synthesize modeName=_modeName;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 - (id)wordSearch;
-- (void).cxx_destruct;
 - (id)searchStringForMarkedText;
 - (_Bool)handlePairedPunctuationInput:(id)arg1 context:(id)arg2;
 - (_Bool)supportsPairedPunctutationInput;

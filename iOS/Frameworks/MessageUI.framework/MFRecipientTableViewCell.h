@@ -41,12 +41,12 @@
 + (double)_deviceSpecificLayoutMargin;
 + (id)cellForRecipient:(id)arg1;
 + (id)identifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(readonly, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool shouldDimIrrelevantInformation; // @synthesize shouldDimIrrelevantInformation=_shouldDimIrrelevantInformation;
 @property(nonatomic) _Bool shouldHighlightCompleteMatches; // @synthesize shouldHighlightCompleteMatches=_shouldHighlightCompleteMatches;
-- (void).cxx_destruct;
 - (void)animateSnapshotOfLabel:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)setTintColor:(id)arg1 animated:(_Bool)arg2;
 - (id)tintColor;

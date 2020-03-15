@@ -70,8 +70,10 @@
 + (id)snapshotSortDescriptorForScheme:(id)arg1;
 + (id)snapshotSortDescriptorForNames:(id)arg1;
 + (id)snapshotSortDescriptorsForNames:(id)arg1 scheme:(id)arg2 imageScale:(double)arg3 userInterfaceStyle:(long long)arg4 statusBarStateMask:(unsigned long long)arg5 interfaceOrientationMask:(unsigned long long)arg6 requiredOSVersion:(id)arg7;
++ (id)_deviceSafeAreaInsets;
 + (void)_reingestStaticDefaultImagesForAllApps;
 + (void)_markAllManifestsForReingestion;
+- (void).cxx_destruct;
 @property(retain, getter=_internalProcessState, setter=_setInternalProcessState:) SBApplicationProcessState *internalProcessState; // @synthesize internalProcessState=_threadUnsafe_processState;
 @property(nonatomic, getter=isConnectedToExternalAccessory) _Bool connectedToExternalAccessory; // @synthesize connectedToExternalAccessory=_isConnectedToExternalAccessory;
 @property(nonatomic, getter=isNowRecordingApplication) _Bool nowRecordingApplication; // @synthesize nowRecordingApplication=_isNowRecordingApplication;
@@ -84,7 +86,6 @@
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) unsigned long long failedLaunchCount; // @synthesize failedLaunchCount=_failedLaunchCount;
 @property(readonly, nonatomic) FBProcessExitContext *lastExitContext; // @synthesize lastExitContext=_lastExitContext;
-- (void).cxx_destruct;
 - (void)_noteIconDataSourceDidChange;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

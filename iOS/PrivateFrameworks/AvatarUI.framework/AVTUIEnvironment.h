@@ -32,6 +32,7 @@
 + (id)createQueueWithQoSClass:(unsigned int)arg1 label:(const char *)arg2;
 + (id)createFunCamEnvironment;
 + (id)defaultEnvironment;
+- (void).cxx_destruct;
 @property(nonatomic) double actionAnimationsMultiplier; // @synthesize actionAnimationsMultiplier=_actionAnimationsMultiplier;
 @property(readonly, nonatomic) AVTDeviceResourceManager *deviceResourceManager; // @synthesize deviceResourceManager=_deviceResourceManager;
 @property(readonly, copy, nonatomic) NSObject<OS_dispatch_queue> *backgroundEncodingQueue; // @synthesize backgroundEncodingQueue=_backgroundEncodingQueue;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) struct CGSize mainScreenSize; // @synthesize mainScreenSize=_mainScreenSize;
 @property(readonly, nonatomic) double mainScreenScale; // @synthesize mainScreenScale=_mainScreenScale;
 @property(readonly, nonatomic) AVTCoreEnvironment *coreEnvironment; // @synthesize coreEnvironment=_coreEnvironment;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter;
 @property(readonly, copy, nonatomic) NSURL *stickerImageStoreLocation;
 @property(readonly, copy, nonatomic) NSURL *imageCacheStoreLocation;

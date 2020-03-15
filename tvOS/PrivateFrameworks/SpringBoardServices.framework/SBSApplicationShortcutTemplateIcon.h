@@ -13,8 +13,8 @@
     NSString *_templateImageName;
 }
 
-@property(readonly, nonatomic) NSString *templateImageName; // @synthesize templateImageName=_templateImageName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *templateImageName; // @synthesize templateImageName=_templateImageName;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (unsigned long long)hash;

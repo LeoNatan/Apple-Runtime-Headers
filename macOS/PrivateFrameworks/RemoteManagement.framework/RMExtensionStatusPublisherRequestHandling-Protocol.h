@@ -6,9 +6,9 @@
 
 #import <RemoteManagement/NSObject-Protocol.h>
 
-@class NSArray, RMConfigurationAccount;
+@class NSArray, RMManagementChannel;
 
 @protocol RMExtensionStatusPublisherRequestHandling <NSObject>
-- (void)queryStatusesOfTypes:(NSArray *)arg1 onBehalfOfAccount:(RMConfigurationAccount *)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)queryForStatusWithKeyPaths:(NSArray *)arg1 onBehalfOfManagementChannel:(RMManagementChannel *)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
 @end
 

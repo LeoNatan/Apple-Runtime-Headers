@@ -19,10 +19,10 @@
     HUDataAnalyticsModuleController *_analyticsModuleController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUDataAnalyticsModuleController *analyticsModuleController; // @synthesize analyticsModuleController=_analyticsModuleController;
 @property(readonly, nonatomic) HUActivityLoadingView *activityLoadingView; // @synthesize activityLoadingView=_activityLoadingView;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (void)_watchForReload;
 - (void)_kickoffReload;
 - (void)dataAnalyticsModuleController:(id)arg1 didSelectItem:(id)arg2;

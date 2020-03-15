@@ -26,6 +26,7 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
 @property(copy, nonatomic) CDUnknownBlockType customButtonBlock; // @synthesize customButtonBlock=_customButtonBlock;
 @property(copy, nonatomic) CDUnknownBlockType variableBlock; // @synthesize variableBlock=_variableBlock;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(copy, nonatomic) NSSet *allowedVariableTypes; // @synthesize allowedVariableTypes=_allowedVariableTypes;
-- (void).cxx_destruct;
 - (void)cut:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)convertNonbreakingSpacesInClipboardIfNecessary;

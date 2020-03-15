@@ -37,6 +37,7 @@
 + (id)plansForEventsInCalendar:(id)arg1 toCalendar:(id)arg2;
 + (id)plansForTasksInCalendar:(id)arg1 toCalendar:(id)arg2;
 + (id)plansForEventsOrTasksInCalendar:(id)arg1 toCalendar:(id)arg2 tasksOnly:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *plansToMoveLocal; // @synthesize plansToMoveLocal=_plansToMoveLocal;
 @property(retain) NSMutableArray *plansToPostProcess; // @synthesize plansToPostProcess=_plansToPostProcess;
 @property(retain) NSArray *inProgressPlans; // @synthesize inProgressPlans=_inProgressPlans;
@@ -50,7 +51,6 @@
 @property(retain) NSMutableArray *unprocessedCalendars; // @synthesize unprocessedCalendars=_unprocessedCalendars;
 @property(retain) CalManagedObjectContext *context; // @synthesize context=_context;
 @property int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (BOOL)_shouldKillAgentIfThisTakesTooLong;
 - (void)deleteComplete:(id)arg1;
 - (void)_postProcessDeletionAndContinue;

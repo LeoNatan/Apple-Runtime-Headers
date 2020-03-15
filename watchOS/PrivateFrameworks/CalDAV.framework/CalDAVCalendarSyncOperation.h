@@ -21,9 +21,9 @@
     _Bool _getScheduleChanges;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool getScheduleChanges; // @synthesize getScheduleChanges=_getScheduleChanges;
 @property(nonatomic) _Bool getScheduleTags; // @synthesize getScheduleTags=_getScheduleTags;
-- (void).cxx_destruct;
 - (void)recurrenceSplitAction:(id)arg1 failedWithError:(id)arg2;
 - (void)recurrenceSplitAction:(id)arg1 completedWithUpdatedETag:(id)arg2 updatedScheduleTag:(id)arg3 createdURL:(id)arg4 createdETag:(id)arg5 createdScheduleTag:(id)arg6;
 - (void)containerSyncTask:(id)arg1 completedWithNewCTag:(id)arg2 newSyncToken:(id)arg3 addedOrModified:(id)arg4 removed:(id)arg5 error:(id)arg6;

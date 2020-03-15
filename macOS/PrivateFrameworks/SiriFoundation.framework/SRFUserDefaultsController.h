@@ -30,6 +30,7 @@
 @property(nonatomic, getter=isTypeToSiriEnabled) BOOL typeToSiriEnabled;
 @property NSDictionary *mostRecentCustomizedKeyboardShorcutDictionary; // @dynamic mostRecentCustomizedKeyboardShorcutDictionary;
 @property NSDictionary *keyboardShortcutDictionary; // @dynamic keyboardShortcutDictionary;
+- (void)notifyInvocationSuppressionNoLongerHonored;
 - (void)notifyVoiceTriggerSuppressionNoLongerHonored;
 - (void)notifyUserDidSwitchOnVoiceTrigger;
 @property(readonly) NSString *preferredBluetoothMicrophoneIdentifier;

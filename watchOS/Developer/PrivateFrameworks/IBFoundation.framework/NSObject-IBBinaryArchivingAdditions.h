@@ -10,7 +10,7 @@
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
 + (_Bool)ib_overridesClassMethod:(SEL)arg1;
 + (_Bool)ib_overridesInstanceMethod:(SEL)arg1;
-+ (_Bool)isInstance;
++ (_Bool)ibic_isInstance;
 - (void)didFinishEncodingWithBinaryArchiver:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (const char *)cStringClassNameForBinaryArchiver:(id)arg1;
@@ -22,7 +22,7 @@
 - (id)ib_initialPlistOverlayInstance;
 - (id)ib_deepCloneForPlistOverlay;
 - (Class)ib_immutableClassForPlistOverlay;
-- (_Bool)isInstance;
+- (_Bool)ibic_isInstance;
 - (id)ibic_schemaDebugDescription;
 - (id)ibic_attributeValueDescription;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;

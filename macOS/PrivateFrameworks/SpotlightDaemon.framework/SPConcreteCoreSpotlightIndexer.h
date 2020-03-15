@@ -36,6 +36,7 @@
 + (id)fetchParentsForItemID:(id)arg1 recursively:(BOOL)arg2 timeout:(unsigned long long)arg3;
 + (id)fetchItemForURL:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *dirtyTransaction; // @synthesize dirtyTransaction=_dirtyTransaction;
 @property(readonly, nonatomic) NSMapTable *checkedInClients; // @synthesize checkedInClients=_checkedInClients;
 @property(readonly, nonatomic) NSMutableSet *knownClients; // @synthesize knownClients=_knownClients;
@@ -48,7 +49,6 @@
 @property(nonatomic) struct __SIResultQueue *resultQueue; // @synthesize resultQueue=_resultQueue;
 @property(nonatomic) struct __SI *index; // @synthesize index=_index;
 @property(nonatomic) __weak SPCoreSpotlightIndexer *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)_fetchAccumulatedStorageSizeForBundleId:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_startInternalQueryWithIndex:(struct __SI *)arg1 query:(id)arg2 fetchAttributes:(id)arg3 forBundleIds:(id)arg4 resultsHandler:(CDUnknownBlockType)arg5;
 - (void)powerStateChanged;

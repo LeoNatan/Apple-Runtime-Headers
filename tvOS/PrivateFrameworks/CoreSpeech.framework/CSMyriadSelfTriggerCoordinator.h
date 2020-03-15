@@ -16,8 +16,8 @@
     id <CSMyriadSelfTriggerCoordinatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSMyriadSelfTriggerCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSMyriadSelfTriggerCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)selfTriggerDetector:(id)arg1 didDetectSelfTrigger:(id)arg2;
 
 // Remaining properties

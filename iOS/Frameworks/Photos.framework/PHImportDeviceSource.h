@@ -38,6 +38,7 @@
     ICCameraDevice *_camera;
 }
 
+- (void).cxx_destruct;
 @property(retain) ICCameraDevice *camera; // @synthesize camera=_camera;
 @property(retain, nonatomic) NSMutableArray *deleteJobs; // @synthesize deleteJobs=_deleteJobs;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialHackQueue; // @synthesize serialHackQueue=_serialHackQueue;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSMutableSet *removedCameraFiles; // @synthesize removedCameraFiles=_removedCameraFiles;
 @property(retain, nonatomic) ICCameraDeviceRemovedItemsCoalescer *removalCoalescer; // @synthesize removalCoalescer=_removalCoalescer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *deleteEjectQueue; // @synthesize deleteEjectQueue=_deleteEjectQueue;
-- (void).cxx_destruct;
 - (void)deviceFinishedEnumeratingItems:(id)arg1;
 - (void)cameraDevice:(id)arg1 didReceiveMetadataForItem:(id)arg2;
 - (void)cameraDevice:(id)arg1 didReceiveThumbnailForItem:(id)arg2;

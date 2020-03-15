@@ -47,6 +47,7 @@
 + (id)sharedTelephonyManagerCreatingIfNecessary:(_Bool)arg1;
 + (id)sharedTelephonyManager;
 + (struct __CTServerConnection *)defaultTelephonyCenter;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cachedSlot2SIMStatus; // @synthesize cachedSlot2SIMStatus=_cachedSlot2SIMStatus;
 @property(copy, nonatomic) NSString *cachedSlot1SIMStatus; // @synthesize cachedSlot1SIMStatus=_cachedSlot1SIMStatus;
 @property(copy, nonatomic) NSString *cachedSlot2CountryCode; // @synthesize cachedSlot2CountryCode=_cachedSlot2CountryCode;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) TUCall *heldCall; // @synthesize heldCall=_heldCall;
 @property(retain, nonatomic) TUCall *activeCall; // @synthesize activeCall=_activeCall;
 @property(retain, nonatomic) TUCall *incomingCall; // @synthesize incomingCall=_incomingCall;
-- (void).cxx_destruct;
 - (void)preHeatDataLinkForDomains:(id)arg1;
 - (void)_setIsNetworkTethering:(_Bool)arg1 withNumberOfDevices:(int)arg2;
 - (int)numberOfNetworkTetheredDevices;

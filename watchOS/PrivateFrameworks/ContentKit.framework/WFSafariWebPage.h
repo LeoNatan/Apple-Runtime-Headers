@@ -25,13 +25,13 @@
 + (id)objectWithWFSerializedRepresentation:(id)arg1;
 + (id)webPageFromItemDictionary:(id)arg1;
 + (void)retrieveWebPageFromItemProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
 @property(readonly, copy, nonatomic) NSData *documentHTML; // @synthesize documentHTML=_documentHTML;
 @property(readonly, copy, nonatomic) NSData *selectionHTML; // @synthesize selectionHTML=_selectionHTML;
 @property(readonly, copy, nonatomic) NSString *selectionText; // @synthesize selectionText=_selectionText;
 @property(readonly, copy, nonatomic) NSString *pageTitle; // @synthesize pageTitle=_pageTitle;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 @property(readonly, copy, nonatomic) NSString *wfName;
 - (id)copyWithZone:(struct _NSZone *)arg1;

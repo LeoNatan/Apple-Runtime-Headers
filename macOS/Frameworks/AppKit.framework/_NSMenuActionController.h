@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     } _flags;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGRect aimFrame; // @synthesize aimFrame=_aimFrame;
 @property(readonly) struct CGRect itemFrame; // @synthesize itemFrame=_itemFrame;
 @property(readonly) id item; // @synthesize item=_item;
 @property(readonly) __weak NSView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (struct CGPoint)menuItem:(id)arg1 aimPointForPoint:(struct CGPoint)arg2;
 - (struct CGSize)menuItem:(id)arg1 maxSizeForPoint:(struct CGPoint)arg2;
 - (struct CGRect)menuItem:(id)arg1 itemFrameForPoint:(struct CGPoint)arg2;

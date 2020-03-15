@@ -13,8 +13,8 @@
     PHFetchResult *_fetchResult;
 }
 
-@property(readonly, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)objectsAtIndexes:(id)arg1;
 - (id)objectAtIndex:(long long)arg1;

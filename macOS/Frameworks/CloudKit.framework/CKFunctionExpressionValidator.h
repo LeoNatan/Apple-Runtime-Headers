@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_argumentValidators;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *argumentValidators; // @synthesize argumentValidators=_argumentValidators;
 @property(retain, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
-- (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (BOOL)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithFunctionName:(id)arg1 validators:(id)arg2;

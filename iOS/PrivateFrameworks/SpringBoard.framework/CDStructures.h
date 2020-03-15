@@ -78,10 +78,6 @@ struct CGSize {
     double height;
 };
 
-struct NSMutableSet {
-    Class _field1;
-};
-
 struct SBDeviceApplicationSceneStatusBarStateObserverFlags {
     unsigned int wantsDidChangeStatusBarStyleTo:1;
     unsigned int wantsDidChangeStatusBarPartStylesTo:1;

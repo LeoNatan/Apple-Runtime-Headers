@@ -13,8 +13,8 @@
     NSArray *_movies;
 }
 
-@property(readonly, nonatomic) NSArray *movies; // @synthesize movies=_movies;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *movies; // @synthesize movies=_movies;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 movies:(id)arg3;

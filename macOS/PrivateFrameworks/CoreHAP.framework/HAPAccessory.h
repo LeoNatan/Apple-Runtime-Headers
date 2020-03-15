@@ -39,6 +39,7 @@
 + (id)serverIdentifierWithUniqueIdentifier:(id)arg1;
 + (id)productDataStringFromData:(id)arg1;
 + (BOOL)isAccessoryPairedWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(copy, nonatomic) NSString *productData; // @synthesize productData=_productData;
 @property(copy, nonatomic) NSString *firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
@@ -57,7 +58,6 @@
 @property(nonatomic, getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
 @property(nonatomic) __weak HAPAccessoryServer *server; // @synthesize server=_server;
 @property(nonatomic) __weak id <HAPAccessoryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)mergeObject:(id)arg1;
 - (BOOL)shouldMergeObject:(id)arg1;
 - (id)characteristicOfType:(id)arg1 serviceType:(id)arg2;
@@ -68,10 +68,10 @@
 - (BOOL)_updateForAccessoryInformationService;
 - (BOOL)_updateService:(id)arg1;
 - (BOOL)_updateAndValidateServices;
-- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)writeCharacteristicValue:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)readValueForCharacteristic:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)writeCharacteristicValue:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)readValueForCharacteristic:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 @property(readonly, copy, nonatomic) NSNumber *category;
 - (void)_setReachable:(BOOL)arg1;
 @property(nonatomic, getter=isReachable) BOOL reachable; // @synthesize reachable=_reachable;

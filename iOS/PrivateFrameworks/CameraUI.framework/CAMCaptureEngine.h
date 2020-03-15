@@ -61,6 +61,7 @@
 
 + (id)_cacheKeyForDeviceType:(id)arg1 position:(long long)arg2;
 + (void)preheatCaptureResources;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNumberOfRecoveryAttempts:) unsigned long long _numberOfRecoveryAttempts; // @synthesize _numberOfRecoveryAttempts=__numberOfRecoveryAttempts;
 @property(nonatomic, getter=_isPerformingRecovery, setter=_setPerformingRecovery:) _Bool _performingRecovery; // @synthesize _performingRecovery=__performingRecovery;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_recoveryMutexQueue; // @synthesize _recoveryMutexQueue=__recoveryMutexQueue;
@@ -95,7 +96,6 @@
 @property(readonly, nonatomic) long long _engineOptions; // @synthesize _engineOptions=__engineOptions;
 @property(readonly, nonatomic) CAMMemoizationCache *_captureEngineDeviceCache; // @synthesize _captureEngineDeviceCache=__captureEngineDeviceCache;
 @property(nonatomic, getter=isInterrupted, setter=_setInterrupted:) _Bool interrupted; // @synthesize interrupted=_interrupted;
-- (void).cxx_destruct;
 - (id)videoThumbnailOutput;
 - (id)effectsPreviewVideoDataOutput;
 - (id)metadataOutput;

@@ -11,7 +11,7 @@
 
 @interface _MTLDevice : NSObject
 {
-    CDStruct_ba442ac5 _limits;
+    CDStruct_210bae5a _limits;
     void *_supportedGPUFamilies;
     MTLCompiler *_compiler;
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -32,6 +32,7 @@
     BOOL _utilityBufferRequired;
     NSArray *_utilityBuffers;
     unsigned long long _currentUtilityBufferIndex;
+    struct MTLTargetDeviceArch _defaultArchitecture;
 }
 
 + (BOOL)featureProfile:(unsigned long long)arg1 supportsFeatureSet:(unsigned long long)arg2;
@@ -46,6 +47,10 @@
 - (id)resolveCounters:(id)arg1 withRange:(struct _NSRange)arg2;
 - (id)newCounterSampleBufferWithDescriptor:(id)arg1 error:(id *)arg2;
 @property(readonly) NSArray *counterSets; // @dynamic counterSets;
+- (BOOL)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
+- (id)newRasterizationRateMapWithScreenSize:(CDStruct_da2e99ad)arg1 layerCount:(unsigned long long)arg2 layers:(const id *)arg3;
+@property(readonly) unsigned long long maxRasterizationRateLayerCount; // @dynamic maxRasterizationRateLayerCount;
 - (unsigned long long)offsetFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)resourceIndexFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)indirectBufferAddressForResourceIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;
@@ -96,28 +101,30 @@
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
-- (id)computeResourceBindingIndexRemappingTableWithVariant:(struct NSObject *)arg1;
+- (id)computeResourceBindingIndexRemappingTableWithVariant:(id)arg1;
 - (id)fragmentResourceBindingIndexRemappingTableWithVariant:(id)arg1;
 - (id)vertexResourceBindingIndexRemappingTableWithVariant:(id)arg1;
-- (void)getConstantSamplersBitmasks:(unsigned long long **)arg1 uniqueIdentifiers:(unsigned long long **)arg2 constantSamplerCount:(unsigned long long *)arg3 forComputeVariant:(struct NSObject *)arg4;
+- (void)getConstantSamplersBitmasks:(unsigned long long **)arg1 uniqueIdentifiers:(unsigned long long **)arg2 constantSamplerCount:(unsigned long long *)arg3 forComputeVariant:(id)arg4;
 - (void)getConstantSamplersBitmasks:(unsigned long long **)arg1 uniqueIdentifiers:(unsigned long long **)arg2 constantSamplerCount:(unsigned long long *)arg3 forVertexVariant:(id)arg4 fragmentVariant:(id)arg5;
-- (id)pipelinePerformanceStatisticsWithComputeVariant:(struct NSObject *)arg1 compileTimeOutput:(id)arg2;
+- (id)pipelinePerformanceStatisticsWithComputeVariant:(id)arg1 compileTimeOutput:(id)arg2;
 - (id)pipelinePerformanceStatisticsWithVertexVariant:(id)arg1 fragmentVariant:(id)arg2 vertexCompileTimeOutput:(id)arg3 fragmentCompileTimeOutput:(id)arg4;
-- (id)pipelinePerformanceStatisticsWithComputeVariant:(struct NSObject *)arg1;
+- (id)pipelinePerformanceStatisticsWithComputeVariant:(id)arg1;
 - (id)pipelinePerformanceStatisticsWithVertexVariant:(id)arg1 fragmentVariant:(id)arg2;
-- (CDStruct_596dc0d1)pipelineFlagsWithComputeVariant:(struct NSObject *)arg1;
+- (CDStruct_596dc0d1)pipelineFlagsWithComputeVariant:(id)arg1;
 - (CDStruct_6b0207e2)pipelineFlagsWithVertexVariant:(id)arg1 fragmentVariant:(id)arg2;
-- (id)newComputePipelineWithDescriptor:(id)arg1 variant:(struct NSObject *)arg2 errorMessage:(id *)arg3;
-- (id)newComputePipelineWithDescriptor:(id)arg1 variant:(struct NSObject *)arg2;
+- (id)newComputePipelineWithDescriptor:(id)arg1 variant:(id)arg2 errorMessage:(id *)arg3;
+- (id)newComputePipelineWithDescriptor:(id)arg1 variant:(id)arg2;
 - (id)newRenderPipelineWithDescriptor:(id)arg1 vertexVariant:(id)arg2 fragmentVariant:(id)arg3 errorMessage:(id *)arg4;
 - (id)newRenderPipelineWithDescriptor:(id)arg1 vertexVariant:(id)arg2 fragmentVariant:(id)arg3;
 - (id)newVertexVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
 - (id)newFragmentVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
-- (struct NSObject *)newComputeVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
+- (id)newComputeVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
 - (id)vertexVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
 - (id)fragmentVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
-- (struct NSObject *)computeVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
+- (id)computeVariantWithCompilerOutput:(id)arg1 pipelineStatisticsOutput:(id)arg2;
 - (void)freeComputeFunctionKey:(void *)arg1 keySize:(unsigned long long)arg2;
+- (void)freeComputeLibraryKey:(void *)arg1 libraryKeySize:(unsigned long long)arg2;
+- (void *)libraryKeyWithComputePipelineDescriptor:(id)arg1 options:(unsigned long long)arg2 keySize:(unsigned long long *)arg3;
 - (void *)computeFunctionKeyWithComputePipelineDescriptor:(id)arg1 options:(unsigned long long)arg2 keySize:(unsigned long long *)arg3;
 - (void *)computeFunctionKeyWithComputePipelineDescriptor:(id)arg1 keySize:(unsigned long long *)arg2;
 - (void)freeVertexFunctionKey:(void *)arg1 vertexKeySize:(unsigned long long)arg2;
@@ -140,6 +147,8 @@
 @property(readonly) unsigned int acceleratorPort;
 @property(readonly) unsigned long long maxComputeAttributes;
 @property(readonly) unsigned long long maxTextureBufferWidth;
+@property(readonly) unsigned long long maxVertexAmplificationCount;
+@property(readonly) unsigned long long maxVertexAmplificationFactor;
 @property(readonly) unsigned long long maxCustomSamplePositions;
 @property(readonly) unsigned long long maxViewportCount;
 @property(readonly) unsigned long long maxIndirectSamplersPerDevice;
@@ -186,7 +195,7 @@
 @property(readonly) unsigned long long maxVertexBuffers;
 @property(readonly) unsigned long long maxVertexAttributes;
 @property(readonly) unsigned long long maxColorAttachments;
-@property(readonly) const CDStruct_ba442ac5 *limits;
+@property(readonly) const CDStruct_210bae5a *limits;
 - (void)initLimits;
 - (BOOL)deviceOrFeatureProfileSupportsFeatureSet:(unsigned long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
@@ -204,9 +213,17 @@
 - (void)startCollectingPipelineDescriptorsFromLibrary:(id)arg1 filePath:(id)arg2;
 - (void)startCollectingPipelineDescriptorsUsingPrefixForNames:(id)arg1;
 - (void)startCollectingPipelineDescriptors;
+- (unsigned long long)optionsForPipelineLibrarySerialization;
 - (void)registerComputePipelineDescriptor:(id)arg1;
 - (void)registerRenderPipelineDescriptor:(id)arg1;
 - (id)newPipelineLibraryWithFilePath:(id)arg1 error:(id *)arg2;
+- (id)newBinaryLibraryWithOptions:(unsigned long long)arg1 url:(id)arg2 error:(id *)arg3;
+- (id)newDynamicLibraryFromURL:(id)arg1 error:(id *)arg2;
+- (id)newDynamicLibrary:(id)arg1 computeDescriptor:(id)arg2 error:(id *)arg3;
+- (id)newDynamicLibrary:(id)arg1 error:(id *)arg2;
+- (BOOL)validateDynamicLibrary:(id)arg1 computeDescriptor:(id)arg2 error:(id *)arg3;
+- (id)newBinaryLibraryError:(unsigned long long)arg1 message:(id)arg2;
+- (id)newBinaryArchiveWithDescriptor:(id)arg1 error:(id *)arg2;
 - (id)newLibraryWithCIFilters:(id)arg1 imageFilterFunctionInfo:(const CDStruct_dbc1e4aa *)arg2 error:(id *)arg3;
 - (void)newLibraryWithSource:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)newLibraryWithSource:(id)arg1 options:(id)arg2 error:(id *)arg3;
@@ -254,6 +271,7 @@
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (BOOL)areProgrammableSamplePositionsSupported;
+- (const struct MTLTargetDeviceArch *)targetDeviceInfo;
 - (BOOL)supportsFamily:(long long)arg1;
 - (void)initGPUFamilySupport;
 - (void)initFeatureQueries;
@@ -268,6 +286,7 @@
 @property(readonly, nonatomic) BOOL supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) BOOL supportsBlackOrWhiteSamplerBorderColors;
 @property(readonly, nonatomic) BOOL supportsShaderBarycentricCoordinates;
+@property(readonly, nonatomic) BOOL supportsVariableRateRasterization;
 @property(readonly, nonatomic) BOOL supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) BOOL supportsShaderMinLODClamp;
 @property(readonly, nonatomic) BOOL supportsSIMDGroup;
@@ -326,6 +345,9 @@
 @property(readonly, nonatomic) BOOL supportsSRGBwrites;
 @property(readonly, nonatomic) BOOL supportsPublicXR10Formats;
 @property(readonly, nonatomic) BOOL supportsASTCTextureCompression;
+@property(readonly, nonatomic) BOOL supportsBinaryLibraries;
+@property(readonly, nonatomic) BOOL supportsDynamicLibraries;
+@property(readonly, nonatomic) BOOL supportsBinaryArchives;
 @property(readonly, nonatomic) BOOL supportsGPUStatistics;
 @property(readonly, nonatomic) BOOL supportsSeparateDepthStencil;
 @property(readonly, nonatomic) BOOL supportsRelaxedTextureViewRequirements;
@@ -344,6 +366,7 @@
 @property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
+@property(readonly, nonatomic) BOOL supportsVertexAmplification;
 @property(readonly, nonatomic) BOOL supportsQueryTextureLOD;
 @property(readonly, nonatomic) BOOL supports32bpcMSAATextures;
 @property(readonly, nonatomic) BOOL supportsSamplerAddressModeClampToHalfBorder;

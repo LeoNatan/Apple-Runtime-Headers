@@ -39,8 +39,8 @@
     id <SBInteractiveScreenshotGestureManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBInteractiveScreenshotGestureManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBInteractiveScreenshotGestureManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_screenshotPresentationOptions;
 - (void)_performPendingCommitWorkspaceTransactionBlocksWithTransaction:(id)arg1;
 - (void)_performCommitWorkspaceTransactionBlock:(CDUnknownBlockType)arg1;

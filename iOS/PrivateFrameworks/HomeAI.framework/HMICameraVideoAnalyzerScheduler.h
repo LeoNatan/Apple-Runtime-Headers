@@ -32,6 +32,7 @@
 
 + (id)logCategory;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) double analysisFPSPreference; // @synthesize analysisFPSPreference=_analysisFPSPreference;
 @property(readonly) MovingAverage *averageTotalAnalysisTimeMovingAverage; // @synthesize averageTotalAnalysisTimeMovingAverage=_averageTotalAnalysisTimeMovingAverage;
 @property(readonly) MovingAverage *averageAnalysisTimeMovingAverage; // @synthesize averageAnalysisTimeMovingAverage=_averageAnalysisTimeMovingAverage;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(getter=isPaused) _Bool paused; // @synthesize paused=_paused;
-- (void).cxx_destruct;
 @property(readonly) NSArray *analyzers;
 - (void)logState;
 - (void)timerDidFire:(id)arg1;

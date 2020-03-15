@@ -26,6 +26,7 @@
 
 + (void)__unregisterActivity:(id)arg1;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double currentInterval; // @synthesize currentInterval=_currentInterval;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *overrideCriteria; // @synthesize overrideCriteria=_overrideCriteria;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *runningActivity; // @synthesize runningActivity=_runningActivity;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) double retryInterval; // @synthesize retryInterval=_retryInterval;
 @property(readonly, nonatomic) double interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (void)__transitionActivity:(id)arg1 state:(long long)arg2;

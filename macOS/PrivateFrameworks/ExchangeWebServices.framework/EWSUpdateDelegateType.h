@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long DeliverMeetingRequests; // @synthesize DeliverMeetingRequests=_DeliverMeetingRequests;
 @property(copy, nonatomic) NSArray *DelegateUsers; // @synthesize DelegateUsers=_DelegateUsers;
-- (void).cxx_destruct;
 
 @end
 

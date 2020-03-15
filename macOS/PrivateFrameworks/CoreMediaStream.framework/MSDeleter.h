@@ -35,10 +35,10 @@
 + (id)_clearInstantiatedDeletersByPersonID;
 + (id)existingDeleterForPersonID:(id)arg1;
 + (id)deleterForPersonID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int batchSize; // @synthesize batchSize=_batchSize;
 @property(nonatomic) MSMediaStreamDaemon *daemon; // @synthesize daemon=_daemon;
 @property(nonatomic) id <MSDeleterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_isInRetryState;
 - (void)stop;
 - (void)abort;

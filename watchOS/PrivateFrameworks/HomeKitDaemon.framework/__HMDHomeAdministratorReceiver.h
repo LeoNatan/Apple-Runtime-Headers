@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) __weak HMDHomeAdministratorHandler *handler; // @synthesize handler=_handler;
 @property(readonly) __weak id <HMFMessageReceiver> receiver; // @synthesize receiver=_receiver;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;

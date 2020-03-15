@@ -25,6 +25,7 @@
 + (id)mailboxChangesApplyingSelection:(id)arg1 previousSelection:(id)arg2;
 + (unsigned long long)firstFilterTypeFromTypes:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *allMailboxesSyncEnabledById; // @synthesize allMailboxesSyncEnabledById=_allMailboxesSyncEnabledById;
 @property(retain, nonatomic) NSArray *allMailboxesSyncEnabled; // @synthesize allMailboxesSyncEnabled=_allMailboxesSyncEnabled;
 @property(retain, nonatomic) NSSet *aggregatedMailboxesId; // @synthesize aggregatedMailboxesId=_aggregatedMailboxesId;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long aggregatedMailboxesFilterTypes; // @synthesize aggregatedMailboxesFilterTypes=_aggregatedMailboxesFilterTypes;
 @property(retain, nonatomic) NSArray *aggregatedMailboxes; // @synthesize aggregatedMailboxes=_aggregatedMailboxes;
 @property(retain, nonatomic) NSArray *mailboxesWithAllMessagesSyncEnabled; // @synthesize mailboxesWithAllMessagesSyncEnabled=_mailboxesWithAllMessagesSyncEnabled;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isMailboxFilterEnabled:(unsigned long long)arg1;

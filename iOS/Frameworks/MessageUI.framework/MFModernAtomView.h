@@ -47,6 +47,7 @@
 + (double)horizontalPadding;
 + (struct CGPoint)defaultBaselinePoint;
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(nonatomic) double firstLineIndent; // @synthesize firstLineIndent=_firstLineIndent;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic) unsigned long long presentationOptions; // @synthesize presentationOptions=_presentationOptions;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) MFModernAtomIconView *accessoryIconView; // @synthesize accessoryIconView=_accessoryIconView;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_label;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)performBuildInAnimationFromTextColor:(id)arg1 withDuration:(double)arg2;
 - (struct CGSize)intrinsicContentSize;
 - (id)viewForLastBaselineLayout;

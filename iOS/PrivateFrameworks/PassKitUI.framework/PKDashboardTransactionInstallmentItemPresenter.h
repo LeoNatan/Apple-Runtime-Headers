@@ -8,11 +8,11 @@
 
 #import <PassKitUI/PKDashboardItemPresenter-Protocol.h>
 
-@class NSString, PKPaymentTransactionInstallmentCollectionViewCell;
+@class NSString, PKDashboardStackedImageCollectionViewCell;
 
 @interface PKDashboardTransactionInstallmentItemPresenter : NSObject <PKDashboardItemPresenter>
 {
-    PKPaymentTransactionInstallmentCollectionViewCell *_sampleCell;
+    PKDashboardStackedImageCollectionViewCell *_sampleCell;
 }
 
 - (void).cxx_destruct;

@@ -22,11 +22,11 @@
 
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <HDTaskServerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, copy, nonatomic) NSUUID *taskUUID; // @synthesize taskUUID=_taskUUID;
-- (void).cxx_destruct;
 - (void)remote_unitTesting_createTaskServerNoOpWithCompletion:(CDUnknownBlockType)arg1;
 - (void)connectionInvalidated;
 - (id)remoteInterface;

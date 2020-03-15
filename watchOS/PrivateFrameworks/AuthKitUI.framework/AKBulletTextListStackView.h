@@ -13,8 +13,8 @@
     NSMutableArray *_bulletTextViewList;
 }
 
-@property(retain, nonatomic) NSMutableArray *bulletTextViewList; // @synthesize bulletTextViewList=_bulletTextViewList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *bulletTextViewList; // @synthesize bulletTextViewList=_bulletTextViewList;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (id)bulletStringList;

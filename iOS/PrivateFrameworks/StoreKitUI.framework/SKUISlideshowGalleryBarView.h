@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _selectedImageIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectedImageIndex; // @synthesize selectedImageIndex=_selectedImageIndex;
 @property(nonatomic) unsigned long long numberOfImages; // @synthesize numberOfImages=_numberOfImages;
 @property(nonatomic) __weak id <SKUISlideshowGalleryBarViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleTouch:(id)arg1 withEvent:(id)arg2;
 - (id)_newImageView;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

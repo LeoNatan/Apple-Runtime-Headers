@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) FPItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) FPSandboxingURLWrapper *genericSandboxWrapper; // @synthesize genericSandboxWrapper=_genericSandboxWrapper;
 @property(readonly, nonatomic) FPSandboxingURLWrapper *quicklookSandboxWrapper; // @synthesize quicklookSandboxWrapper=_quicklookSandboxWrapper;
-- (void).cxx_destruct;
 - (_Bool)shouldProvideFoldedGenericIcon;
 - (id)computeContentType;
 - (id)copyWithZone:(struct _NSZone *)arg1;

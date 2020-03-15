@@ -23,9 +23,9 @@
 + (id)railDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) PLSemaphore *canSleepSemaphore; // @synthesize canSleepSemaphore=_canSleepSemaphore;
 @property(retain) PLEntryNotificationOperatorComposition *canSleepNotification; // @synthesize canSleepNotification=_canSleepNotification;
-- (void).cxx_destruct;
 - (id)humanReadableScheduledWakeString:(id)arg1;
 - (void)logEventForwardScheduledEvent;
 - (void)log;

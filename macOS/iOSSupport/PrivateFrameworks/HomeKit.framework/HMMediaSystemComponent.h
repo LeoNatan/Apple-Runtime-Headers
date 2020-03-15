@@ -27,8 +27,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)logCategory;
 + (id)mediaSystemComponentWithDictionary:(id)arg1 home:(id)arg2;
-@property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;

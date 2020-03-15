@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_slotName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *slotName; // @synthesize slotName=_slotName;
 @property(readonly, nonatomic) NSString *driverName; // @synthesize driverName=_driverName;
 @property(readonly, nonatomic) NSString *tokenID; // @synthesize tokenID=_tokenID;
-- (void).cxx_destruct;
 - (id)initWithTokenInfo:(id)arg1;
 
 @end

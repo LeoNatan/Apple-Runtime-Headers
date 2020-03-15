@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) BOOL supportsBlackOrWhiteSamplerBorderColors;
 @property(readonly, nonatomic) BOOL supportsShaderBarycentricCoordinates;
+@property(readonly, nonatomic) BOOL supportsVariableRateRasterization;
 @property(readonly, nonatomic) BOOL supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) BOOL supportsShaderMinLODClamp;
 @property(readonly, nonatomic) BOOL supportsSIMDGroup;
@@ -79,6 +80,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL supportsSRGBwrites;
 @property(readonly, nonatomic) BOOL supportsPublicXR10Formats;
 @property(readonly, nonatomic) BOOL supportsASTCTextureCompression;
+@property(readonly, nonatomic) BOOL supportsBinaryLibraries;
+@property(readonly, nonatomic) BOOL supportsDynamicLibraries;
+@property(readonly, nonatomic) BOOL supportsBinaryArchives;
 @property(readonly, nonatomic) BOOL supportsGPUStatistics;
 @property(readonly, nonatomic) BOOL supportsSeparateDepthStencil;
 @property(readonly, nonatomic) BOOL supportsRelaxedTextureViewRequirements;
@@ -97,6 +101,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) BOOL supportsPlacementHeaps;
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
+@property(readonly, nonatomic) BOOL supportsVertexAmplification;
 @property(readonly, nonatomic) BOOL supportsQueryTextureLOD;
 @property(readonly, nonatomic) BOOL supports32bpcMSAATextures;
 @property(readonly, nonatomic) BOOL supportsSamplerAddressModeClampToHalfBorder;

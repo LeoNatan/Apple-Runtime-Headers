@@ -19,11 +19,11 @@
     CNContact *_meContact;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=hasRequestedMeContact) _Bool requestedMeContact; // @synthesize requestedMeContact=_requestedMeContact;
 @property(nonatomic, getter=hasRequestedSuggestedPerson) _Bool requestedSuggestedPerson; // @synthesize requestedSuggestedPerson=_requestedSuggestedPerson;
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(retain, nonatomic) id <PXPerson> suggestedPerson; // @synthesize suggestedPerson=_suggestedPerson;
-- (void).cxx_destruct;
 - (void)userDidAnswerMeViewController:(id)arg1 withResponse:(_Bool)arg2 suggestedPerson:(id)arg3;
 - (id)suggestedPersonForMeViewController:(id)arg1;
 - (id)_fetchPersonWithUri:(id)arg1;

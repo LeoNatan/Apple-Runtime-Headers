@@ -17,9 +17,9 @@
 
 + (id)changeWithItem:(id)arg1;
 + (id)changeWithOccurrenceID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) ICSDate *recurrenceID; // @synthesize recurrenceID=_recurrenceID;
 @property BOOL isMaster; // @synthesize isMaster=_isMaster;
-- (void).cxx_destruct;
 @property(readonly) BOOL allDayChanged;
 @property(readonly) BOOL privateCommentChanged;
 @property(readonly) BOOL alternateTimeProposalChanged;

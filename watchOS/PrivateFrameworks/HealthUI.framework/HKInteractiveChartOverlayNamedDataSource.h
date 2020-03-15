@@ -16,10 +16,10 @@
     CDUnknownBlockType _contextTitleForTimeScope;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType contextTitleForTimeScope; // @synthesize contextTitleForTimeScope=_contextTitleForTimeScope;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) id <HKChartCacheDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)initWithDataSource:(id)arg1 named:(id)arg2 withContextTitleForTimeScope:(CDUnknownBlockType)arg3;
 
 @end

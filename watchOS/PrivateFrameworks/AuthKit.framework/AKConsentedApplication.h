@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *primaryClientID; // @synthesize primaryClientID=_primaryClientID;
 @property(retain, nonatomic) NSString *transferState; // @synthesize transferState=_transferState;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(copy, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

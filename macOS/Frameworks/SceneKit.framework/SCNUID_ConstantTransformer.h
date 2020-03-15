@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;
-@property(retain, nonatomic) NSDictionary *constantToString; // @synthesize constantToString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *constantToString; // @synthesize constantToString;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 

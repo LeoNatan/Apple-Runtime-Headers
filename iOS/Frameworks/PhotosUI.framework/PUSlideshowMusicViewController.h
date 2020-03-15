@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
     id <PUSlideshowMusicDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateTableView:) _Bool _needsUpdateTableView; // @synthesize _needsUpdateTableView=__needsUpdateTableView;
 @property(nonatomic, setter=_setNeedsUpdateBackgroundView:) _Bool _needsUpdateBackgroundView; // @synthesize _needsUpdateBackgroundView=__needsUpdateBackgroundView;
 @property(nonatomic, setter=_setNeedsUpdateSpec:) _Bool _needsUpdateSpec; // @synthesize _needsUpdateSpec=__needsUpdateSpec;
 @property(nonatomic) __weak id <PUSlideshowMusicDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PUSlideshowMediaItem *currentMediaItem; // @synthesize currentMediaItem=_currentMediaItem;
-- (void).cxx_destruct;
 - (_Bool)pu_wantsNavigationBarVisible;
 - (void)viewControllerSpec:(id)arg1 didChange:(id)arg2;
 - (void)mediaPickerDidCancel:(id)arg1;

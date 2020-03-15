@@ -16,11 +16,11 @@
     NSMutableOrderedSet *_pausedTasks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *pausedTasks; // @synthesize pausedTasks=_pausedTasks;
 @property(retain, nonatomic) SDConnectionConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) NSMutableDictionary *queryTasks; // @synthesize queryTasks=_queryTasks;
 @property(readonly, nonatomic) unsigned int outBatchCount; // @synthesize outBatchCount=_outBatchCount;
-- (void).cxx_destruct;
 - (id)protectionClass;
 - (BOOL)searchInternal;
 - (id)bundleID;

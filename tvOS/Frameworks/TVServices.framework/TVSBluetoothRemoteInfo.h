@@ -18,12 +18,12 @@
 }
 
 + (id)remoteWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCharging) _Bool charging; // @synthesize charging=_charging;
 @property(nonatomic) long long batteryLevel; // @synthesize batteryLevel=_batteryLevel;
 @property(nonatomic) double lastDisconnectTime; // @synthesize lastDisconnectTime=_lastDisconnectTime;
 @property(nonatomic, getter=isConnected) _Bool connected; // @synthesize connected=_connected;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)notePowerSourceInfoDidUpdate;
 
 @end

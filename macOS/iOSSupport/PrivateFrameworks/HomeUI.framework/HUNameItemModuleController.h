@@ -20,12 +20,12 @@
     HFNamingComponents *_namingComponent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
 @property(retain, nonatomic) HUNameItemModule *nameModule; // @synthesize nameModule=_nameModule;
 @property(nonatomic) BOOL shouldUseAccessoryName; // @synthesize shouldUseAccessoryName=_shouldUseAccessoryName;
 @property(nonatomic) BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(nonatomic) BOOL nameFieldHasClearButton; // @synthesize nameFieldHasClearButton=_nameFieldHasClearButton;
-- (void).cxx_destruct;
 - (void)iconPicker:(id)arg1 didPickIconDescriptor:(id)arg2;
 - (void)iconPickerDidCancel:(id)arg1;
 - (void)nameAndIconEditorCellDidTapIcon:(id)arg1;

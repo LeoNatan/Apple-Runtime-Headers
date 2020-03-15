@@ -14,9 +14,9 @@
     MKMapView *mapView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isMouseDown) BOOL mouseDown; // @synthesize mouseDown=_mouseDown;
 @property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView;
-- (void).cxx_destruct;
 - (void)keyDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (long long)_selectedIndexForEvent:(id)arg1;

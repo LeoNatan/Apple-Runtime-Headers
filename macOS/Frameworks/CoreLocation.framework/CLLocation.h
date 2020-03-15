@@ -18,6 +18,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)locationByReductivelyFilteringLocations:(id)arg1;
++ (id)deriveLocationFromLocations:(id)arg1;
++ (id)filterOutliers:(id)arg1;
 - (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3 groundAltitude:(id)arg4;
 - (void)setHorizontalAccuracy:(double)arg1;
 @property(readonly, nonatomic) NSString *iso6709Notation;
@@ -31,6 +33,7 @@
 @property(readonly) double trustedTimestamp;
 @property(readonly) unsigned int integrity;
 @property(readonly, nonatomic) double rawCourse;
+@property(readonly, nonatomic) double courseAccuracy;
 @property(readonly, nonatomic) double course;
 @property(readonly, nonatomic) double speedAccuracy;
 @property(readonly, nonatomic) double speed;
@@ -51,9 +54,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1 clientLocationPrivate:(CDStruct_44e85285)arg2;
 - (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 courseAccuracy:(double)arg6 speed:(double)arg7 speedAccuracy:(double)arg8 timestamp:(id)arg9;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
-- (id)_initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7 floor:(int)arg8;
+- (id)_initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 courseAccuracy:(double)arg6 speed:(double)arg7 speedAccuracy:(double)arg8 timestamp:(id)arg9 floor:(int)arg10;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)init;
 - (void)unmatch;

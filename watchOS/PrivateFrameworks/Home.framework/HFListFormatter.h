@@ -15,9 +15,9 @@
     struct UListFormatter *_formatter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UListFormatter *formatter; // @synthesize formatter=_formatter;
 @property(nonatomic) unsigned int listStyle; // @synthesize listStyle=_listStyle;
-- (void).cxx_destruct;
 - (id)_formatAndListWithElements:(id)arg1;
 - (id)_formatOrListWithElements:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;

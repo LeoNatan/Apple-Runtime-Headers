@@ -11,8 +11,8 @@
     id _fcAVTPickerController;
 }
 
-@property(nonatomic) __weak id fcAVTPickerController; // @synthesize fcAVTPickerController=_fcAVTPickerController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id fcAVTPickerController; // @synthesize fcAVTPickerController=_fcAVTPickerController;
 - (struct CGRect)accessibilityFrameInContainerSpace;
 - (_Bool)accessibilityScroll:(long long)arg1;
 - (void)accessibilityDecrement;

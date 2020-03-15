@@ -16,8 +16,8 @@
     CDUnknownBlockType __handler;
 }
 
-@property(copy, nonatomic, setter=_setHandler:) CDUnknownBlockType _handler; // @synthesize _handler=__handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setHandler:) CDUnknownBlockType _handler; // @synthesize _handler=__handler;
 - (void)_setValue:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL value;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2 value:(BOOL)arg3 footerText:(id)arg4;

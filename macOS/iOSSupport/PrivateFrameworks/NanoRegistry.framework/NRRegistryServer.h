@@ -21,9 +21,9 @@
 
 + (Class)xpcListenerClass;
 + (Class)proxyClass;
+- (void).cxx_destruct;
 @property(nonatomic) int devicesUpdateCounterNotifyToken; // @synthesize devicesUpdateCounterNotifyToken=_devicesUpdateCounterNotifyToken;
 @property(retain, nonatomic) NRXPCServer *registryServer; // @synthesize registryServer=_registryServer;
-- (void).cxx_destruct;
 - (void)xpcSwitchIndex:(CDUnknownBlockType)arg1;
 - (void)xpcSetMigrationConsented:(BOOL)arg1 forDeviceID:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)xpcDeviceIDAtSwitchIndex:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;

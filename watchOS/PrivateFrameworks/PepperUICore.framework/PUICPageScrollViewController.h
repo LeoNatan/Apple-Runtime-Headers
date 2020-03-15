@@ -50,6 +50,7 @@
     UIView *_deleteConfirmationView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *deleteConfirmationView; // @synthesize deleteConfirmationView=_deleteConfirmationView;
 @property(nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(nonatomic) unsigned int pageDeleteEdge; // @synthesize pageDeleteEdge=_pageDeleteEdge;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) PUICPageScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <PUICPageScrollViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PUICPageScrollViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_tearDownPageDeletion;
 - (void)_handleDidAnimatePageDeletion;
 - (void)_handleIsAnimatingPageDeletion;

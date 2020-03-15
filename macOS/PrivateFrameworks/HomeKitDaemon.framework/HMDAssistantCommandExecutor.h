@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAssistantCommand, HMFMessageDispatcher, HMFTimer, NSMutableArray, NSMutableDictionary, NSString;
+@class HMDAssistantCommand, HMFLogEventSession, HMFMessageDispatcher, HMFTimer, NSMutableArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HMDAssistantCommandExecutor : NSObject <HMFTimerDelegate>
@@ -21,9 +21,13 @@
     NSString *_clientValidity;
     HMFTimer *_executionTimer;
     CDUnknownBlockType _completionHandler;
+    HMFLogEventSession *_logEventSession;
 }
 
++ (id)executorWithCommand:(id)arg1 workQueue:(id)arg2 messageDispatcher:(id)arg3 logEventSession:(id)arg4;
 + (id)executorWithCommand:(id)arg1 workQueue:(id)arg2 messageDispatcher:(id)arg3;
+- (void).cxx_destruct;
+@property(retain, nonatomic) HMFLogEventSession *logEventSession; // @synthesize logEventSession=_logEventSession;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) HMFTimer *executionTimer; // @synthesize executionTimer=_executionTimer;
 @property(retain, nonatomic) NSString *clientValidity; // @synthesize clientValidity=_clientValidity;
@@ -32,7 +36,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) HMDAssistantCommand *initialCommand; // @synthesize initialCommand=_initialCommand;
-- (void).cxx_destruct;
 - (void)_startExecutionTimer;
 - (void)timerDidFire:(id)arg1;
 - (void)_sendResponse:(id)arg1;
@@ -44,7 +47,7 @@
 - (id)_command;
 - (BOOL)_initialCommandIsMultipleActions;
 - (void)performWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithCommand:(id)arg1 workQueue:(id)arg2 messageDispatcher:(id)arg3;
+- (id)initWithCommand:(id)arg1 workQueue:(id)arg2 messageDispatcher:(id)arg3 logEventSession:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

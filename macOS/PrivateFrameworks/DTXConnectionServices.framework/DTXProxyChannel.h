@@ -17,10 +17,10 @@
     // Error parsing type: AB, name: _hasProcessedMessage
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *additionalAllowedClassesForProtocolMethods; // @synthesize additionalAllowedClassesForProtocolMethods=_additionalAllowedClassesForProtocolMethods;
 @property(retain, nonatomic) DTXChannel *channel; // @synthesize channel=_channel;
 @property(retain) Protocol *remoteInterface; // @synthesize remoteInterface=_remoteInterface;
-- (void).cxx_destruct;
 - (void)_sendInvocationMessage:(id)arg1;
 - (void)setExportedObject:(id)arg1 queue:(id)arg2;
 - (id)_validateDispatch:(id)arg1;

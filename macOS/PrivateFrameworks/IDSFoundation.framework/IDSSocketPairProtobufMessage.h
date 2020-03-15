@@ -27,6 +27,7 @@
     NSDate *_expiryDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
 @property(nonatomic) BOOL compressed; // @synthesize compressed=_compressed;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) BOOL wantsAppAck; // @synthesize wantsAppAck=_wantsAppAck;
 @property(readonly, nonatomic) NSString *messageUUID; // @synthesize messageUUID=_messageUUID;
 @property(readonly, nonatomic) BOOL expectsPeerResponse; // @synthesize expectsPeerResponse=_expectsPeerResponse;
-- (void).cxx_destruct;
 - (id)_nonHeaderData;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (unsigned char)command;

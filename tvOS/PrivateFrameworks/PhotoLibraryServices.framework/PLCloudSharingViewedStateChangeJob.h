@@ -23,6 +23,7 @@
 + (void)markAssetCollection:(id)arg1 asHavingUnreadComments:(_Bool)arg2 inAlbum:(id)arg3;
 + (void)updateUnviewedAssetCollectionCount:(int)arg1 forAlbum:(id)arg2;
 + (void)markAlbum:(id)arg1 asHavingUnseenContent:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *assetCollectionLastViewedCommentDate; // @synthesize assetCollectionLastViewedCommentDate=_assetCollectionLastViewedCommentDate;
 @property(nonatomic) _Bool assetCollectionHasUnreadComments; // @synthesize assetCollectionHasUnreadComments=_assetCollectionHasUnreadComments;
 @property(retain, nonatomic) NSString *assetCollectionGUID; // @synthesize assetCollectionGUID=_assetCollectionGUID;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool albumHasUnseenContent; // @synthesize albumHasUnseenContent=_albumHasUnseenContent;
 @property(retain, nonatomic) NSString *albumGUID; // @synthesize albumGUID=_albumGUID;
 @property(nonatomic) long long jobType; // @synthesize jobType=_jobType;
-- (void).cxx_destruct;
 - (void)_executeAssetLastViewedCommentDateChangedWithGroup;
 - (void)_executeAssetCommentsReadStateChangedWithGroup;
 - (void)_executeAlbumUnviewedAssetCountChangedWithGroup;

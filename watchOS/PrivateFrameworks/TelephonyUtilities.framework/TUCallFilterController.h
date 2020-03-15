@@ -14,9 +14,9 @@
     id <TUCallFilterControllerActions> _actionsDelegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <TUCallFilterControllerActions> actionsDelegate; // @synthesize actionsDelegate=_actionsDelegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)bundleIdentifierForDialRequest:(id)arg1;
 - (_Bool)isUnknownAddress:(id)arg1 normalizedAddress:(id)arg2 forBundleIdentifier:(id)arg3;
 - (_Bool)willRestrictAddresses:(id)arg1 forBundleIdentifier:(id)arg2;

@@ -26,6 +26,7 @@
     PXSModuleController *_moduleController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PXSModuleController *moduleController; // @synthesize moduleController=_moduleController;
 @property(copy, nonatomic) NSString *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
 @property(retain, nonatomic) id modelObject; // @synthesize modelObject=_modelObject;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) id currentValue; // @synthesize currentValue=_currentValue;
 @property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(retain, nonatomic) PXSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)prepareValueViewForReuse:(id)arg1;

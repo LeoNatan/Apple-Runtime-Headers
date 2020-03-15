@@ -19,13 +19,13 @@
     UITextView *_descriptionView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITextView *descriptionView; // @synthesize descriptionView=_descriptionView;
 @property(nonatomic) __weak UIStackView *buttonStackView; // @synthesize buttonStackView=_buttonStackView;
 @property(nonatomic) __weak WFActionDrawerButton *addToWorkflowButton; // @synthesize addToWorkflowButton=_addToWorkflowButton;
 @property(nonatomic) __weak WFActionDrawerButton *favoriteButton; // @synthesize favoriteButton=_favoriteButton;
 @property(retain, nonatomic) WFAction *action; // @synthesize action=_action;
 @property(nonatomic) __weak id <WFActionDocumentationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateFavoriteButton;
 - (void)didSelectAddToThisWorkflow;
 - (void)didSelectFavorite;

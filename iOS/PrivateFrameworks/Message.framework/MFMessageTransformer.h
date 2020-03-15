@@ -17,9 +17,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
 @property(retain, nonatomic) MFMailMessageLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (id)transformLegacyMailMessages:(id)arg1 mailboxScope:(id)arg2;
 - (id)_transformLegacyMailMessage:(id)arg1 mailboxScope:(id)arg2 duplicateInfo:(id)arg3 loaderBlock:(CDUnknownBlockType)arg4;
 - (id)transformLegacyMailMessage:(id)arg1 mailboxScope:(id)arg2 loaderBlock:(CDUnknownBlockType)arg3;

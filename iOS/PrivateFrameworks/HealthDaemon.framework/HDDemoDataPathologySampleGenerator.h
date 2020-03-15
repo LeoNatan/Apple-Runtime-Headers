@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forcePEFR; // @synthesize forcePEFR=_forcePEFR;
 @property(nonatomic) double nextAsthmaAttackEndTime; // @synthesize nextAsthmaAttackEndTime=_nextAsthmaAttackEndTime;
 @property(nonatomic) double nextAsthmaAttackSampleTime; // @synthesize nextAsthmaAttackSampleTime=_nextAsthmaAttackSampleTime;
 @property(retain, nonatomic) NSMutableDictionary *nextSpirometrySampleTimes; // @synthesize nextSpirometrySampleTimes=_nextSpirometrySampleTimes;
-- (void).cxx_destruct;
 - (_Bool)_isAsthmaAttackAllowedForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_computeSpirometryForDemoPerson:(id)arg1 atTime:(double)arg2 type:(long long)arg3 computeLowerLimitOfNormality:(_Bool)arg4 height:(double)arg5;
 - (id)inhalerUsageForDemoPerson:(id)arg1 atTime:(double)arg2;

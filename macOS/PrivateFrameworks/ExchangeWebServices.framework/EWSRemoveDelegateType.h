@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *UserIds; // @synthesize UserIds=_UserIds;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *UserIds; // @synthesize UserIds=_UserIds;
 
 @end
 

@@ -14,8 +14,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) __weak id <HMDRemoteLoginInitiatorAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <HMDRemoteLoginInitiatorAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleAuthenticationResponse:(id)arg1 error:(id)arg2;
 - (int)loginType;
 - (void)authenticate;

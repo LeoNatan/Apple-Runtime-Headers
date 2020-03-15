@@ -16,11 +16,11 @@
     unsigned long long _failures;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isStreaming; // @synthesize isStreaming=_isStreaming;
 @property(nonatomic) unsigned long long failures; // @synthesize failures=_failures;
 @property(nonatomic) unsigned long long total; // @synthesize total=_total;
 @property(nonatomic) __weak id <CSKStreamSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleActivityEvents:(id)arg1 usingTimeZone:(id)arg2 fromBackward:(BOOL)arg3;
 - (void)fetchForward;
 - (void)fetchBackward;

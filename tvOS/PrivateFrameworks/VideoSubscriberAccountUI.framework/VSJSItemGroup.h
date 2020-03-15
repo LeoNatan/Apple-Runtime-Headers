@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <VSJSItemGroupBridge> _bridge;
 }
 
-@property(retain, nonatomic) id <VSJSItemGroupBridge> bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <VSJSItemGroupBridge> bridge; // @synthesize bridge=_bridge;
 @property(nonatomic) long long selectedItem; // @synthesize selectedItem=_selectedItem;
 
 @end

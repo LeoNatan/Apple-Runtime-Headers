@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NSData *nonce; // @synthesize nonce=_nonce;
 - (void).cxx_destruct;
+@property(retain) NSData *nonce; // @synthesize nonce=_nonce;
 - (_Bool)parsePayloadData;
 - (_Bool)generatePayloadData;
 - (_Bool)hasRequiredFields;

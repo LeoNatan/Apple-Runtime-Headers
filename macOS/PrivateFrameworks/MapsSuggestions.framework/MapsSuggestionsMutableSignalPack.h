@@ -22,7 +22,7 @@
 - (BOOL)writeSignalValue:(float)arg1 forType:(long long)arg2 gathered:(id)arg3;
 - (BOOL)writeSignalValue:(float)arg1 forType:(long long)arg2 gathered:(id)arg3 expires:(id)arg4;
 - (id)initWithCapacity:(unsigned long long)arg1;
-- (BOOL)addFromMapItem:(struct GEOMapItemStorage *)arg1;
+- (BOOL)addFromMapItem:(id)arg1;
 - (BOOL)addFromEntry:(id)arg1;
 
 @end

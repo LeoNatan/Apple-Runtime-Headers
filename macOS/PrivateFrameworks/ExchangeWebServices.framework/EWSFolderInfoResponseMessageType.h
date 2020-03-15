@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *Folders; // @synthesize Folders=_Folders;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *Folders; // @synthesize Folders=_Folders;
 
 @end
 

@@ -17,8 +17,8 @@
     long long _completeCount;
 }
 
-@property(readonly, nonatomic) long long completeCount; // @synthesize completeCount=_completeCount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long completeCount; // @synthesize completeCount=_completeCount;
 - (void)clearCompleteCount;
 - (void)clearErrors;
 @property(readonly, nonatomic) NSArray *errors;

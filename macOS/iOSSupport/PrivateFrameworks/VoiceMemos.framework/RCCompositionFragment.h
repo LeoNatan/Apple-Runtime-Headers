@@ -20,11 +20,11 @@
     CDStruct_73a5d3ca _timeRangeInComposition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_73a5d3ca timeRangeInContentToUse; // @synthesize timeRangeInContentToUse=_timeRangeInContentToUse;
 @property(nonatomic) CDStruct_73a5d3ca timeRangeInComposition; // @synthesize timeRangeInComposition=_timeRangeInComposition;
 @property(nonatomic) double contentDuration; // @synthesize contentDuration=_contentDuration;
 @property(retain, nonatomic) NSURL *AVOutputURL; // @synthesize AVOutputURL=_AVOutputURL;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)dictionaryPListRepresentation;

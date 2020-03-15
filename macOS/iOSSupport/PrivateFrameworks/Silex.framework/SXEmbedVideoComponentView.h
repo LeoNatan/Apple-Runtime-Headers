@@ -26,6 +26,7 @@
 }
 
 + (id)sharedConfiguration;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(readonly, nonatomic) WKWebsiteDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(nonatomic) BOOL isPresentingFullscreen; // @synthesize isPresentingFullscreen=_isPresentingFullscreen;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) SWCrashRetryThrottler *webCrashRetryThrottler; // @synthesize webCrashRetryThrottler=_webCrashRetryThrottler;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
-- (void).cxx_destruct;
 - (BOOL)allowHierarchyRemoval;
 - (unsigned long long)analyticsVideoType;
 - (unsigned long long)analyticsMediaType;

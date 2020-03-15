@@ -13,8 +13,8 @@
     CNLikenessCircleView *_circleButton;
 }
 
-@property(retain) CNLikenessCircleView *circleButton; // @synthesize circleButton=_circleButton;
 - (void).cxx_destruct;
+@property(retain) CNLikenessCircleView *circleButton; // @synthesize circleButton=_circleButton;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (void)mouseDown:(id)arg1;

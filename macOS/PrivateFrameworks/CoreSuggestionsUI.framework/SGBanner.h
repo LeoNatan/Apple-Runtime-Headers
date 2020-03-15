@@ -27,6 +27,7 @@
 
 + (id)_cancelImage;
 + (id)bannerFromNIB;
+- (void).cxx_destruct;
 @property NSLayoutConstraint *imageHorizontalOffsetConstraint; // @synthesize imageHorizontalOffsetConstraint=_imageHorizontalOffsetConstraint;
 @property NSLayoutConstraint *imagesVerticalOffsetConstraint; // @synthesize imagesVerticalOffsetConstraint=_imagesVerticalOffsetConstraint;
 @property(readonly, nonatomic) unsigned long long bannerEvent; // @synthesize bannerEvent=_bannerEvent;
@@ -38,7 +39,6 @@
 @property(nonatomic) NSTextField *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(nonatomic) NSButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) NSButton *actionButton; // @synthesize actionButton=_actionButton;
-- (void).cxx_destruct;
 - (id)accessibilityChildren;
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityParent;

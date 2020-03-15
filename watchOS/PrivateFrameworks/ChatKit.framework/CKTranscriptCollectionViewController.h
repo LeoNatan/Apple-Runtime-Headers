@@ -88,6 +88,7 @@
     struct UIEdgeInsets _marginInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transcriptUpdateCompletion; // @synthesize transcriptUpdateCompletion=_transcriptUpdateCompletion;
 @property(nonatomic) NSString *mostRecentlyTouchedPlugin; // @synthesize mostRecentlyTouchedPlugin=_mostRecentlyTouchedPlugin;
 @property(retain, nonatomic) NSArray *notchProviderFrames; // @synthesize notchProviderFrames=_notchProviderFrames;
@@ -143,7 +144,6 @@
 @property(copy, nonatomic) NSArray *associatedChatItems; // @synthesize associatedChatItems=_associatedChatItems;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(copy, nonatomic) NSArray *chatItems; // @synthesize chatItems=_chatItems;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)repliesLoadedPPTCompletionBlock;
 - (void)languageControllerDidChangePrimaryLanguage:(id)arg1;
 - (void)suggestedRepliesDidChange:(id)arg1;

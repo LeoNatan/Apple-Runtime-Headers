@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     _Bool _shouldAutoFlow;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldAutoFlow; // @synthesize shouldAutoFlow=_shouldAutoFlow;
 @property(readonly, nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) NSArray *columnWidths; // @synthesize columnWidths=_columnWidths;
 @property(readonly, nonatomic) NSArray *childComponents; // @synthesize childComponents=_childComponents;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_isChildMissingItemData:(id)arg1;
 - (id)_childComponentWithContext:(id)arg1;

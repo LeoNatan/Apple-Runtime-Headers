@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSButton *_showDevelopMenuSwitch;
 }
 
-@property(nonatomic) __weak NSButton *showDevelopMenuSwitch; // @synthesize showDevelopMenuSwitch=_showDevelopMenuSwitch;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSButton *showDevelopMenuSwitch; // @synthesize showDevelopMenuSwitch=_showDevelopMenuSwitch;
 - (void)toggleShowDevelopMenu:(id)arg1;
 - (void)viewDidLoad;
 - (id)nibBundle;

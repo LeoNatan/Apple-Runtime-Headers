@@ -17,9 +17,9 @@
     id <SUICProgressIndicatorViewControllerDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SUICProgressIndicatorViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic, getter=_progressIndicatorView, setter=_setProgressIndicatorView:) SUICProgressIndicatorView *progressIndicatorView; // @synthesize progressIndicatorView=_progressIndicatorView;
-- (void).cxx_destruct;
 - (void)progressStateMachine:(id)arg1 ignoredEvent:(unsigned int)arg2;
 - (void)progressStateMachine:(id)arg1 didTransitionToState:(unsigned int)arg2 fromState:(unsigned int)arg3 forEvent:(unsigned int)arg4;
 - (_Bool)_canShowWhileLocked;

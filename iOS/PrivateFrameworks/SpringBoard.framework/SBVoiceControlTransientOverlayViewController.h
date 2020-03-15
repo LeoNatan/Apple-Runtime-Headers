@@ -19,8 +19,8 @@
     id <SBVoiceControlTransientOverlayViewControllerDelegate> _voiceControlDelegate;
 }
 
-@property(nonatomic) __weak id <SBVoiceControlTransientOverlayViewControllerDelegate> voiceControlDelegate; // @synthesize voiceControlDelegate=_voiceControlDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBVoiceControlTransientOverlayViewControllerDelegate> voiceControlDelegate; // @synthesize voiceControlDelegate=_voiceControlDelegate;
 - (void)resetSessionWithSource:(id)arg1;
 - (void)handleHeadsetButtonUpFromButtonDownSource:(_Bool)arg1;
 @property(nonatomic) _Bool shouldDisableVoiceControlForBluetoothRequests;

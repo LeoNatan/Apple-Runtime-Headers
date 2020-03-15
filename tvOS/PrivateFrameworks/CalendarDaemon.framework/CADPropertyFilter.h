@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *dateValue; // @synthesize dateValue=_dateValue;
 @property(readonly, nonatomic) long long integerValue; // @synthesize integerValue=_integerValue;
 @property(readonly, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, nonatomic) long long comparison; // @synthesize comparison=_comparison;
 @property(readonly, nonatomic) long long property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)extendWhereClause:(id)arg1 usingOperation:(long long)arg2 withValues:(id)arg3 andTypes:(id)arg4;

@@ -18,8 +18,8 @@
 
 + (id)progressAlertControllerWithMessage:(id)arg1;
 + (id)activityAlertControllerWithTitle:(id)arg1 cancelHandler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)setProgress:(float)arg1 animated:(_Bool)arg2;

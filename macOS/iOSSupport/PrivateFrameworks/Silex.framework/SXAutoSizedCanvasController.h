@@ -24,13 +24,13 @@
     id <SXTangierDragItemProvider> _dragItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXTangierDragItemProvider> dragItemProvider; // @synthesize dragItemProvider=_dragItemProvider;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(readonly, nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
 @property(readonly, nonatomic) SXTextTangierCanvasViewController *cvc; // @synthesize cvc=_cvc;
 @property(readonly, nonatomic) SXTextTangierInteractiveCanvasController *icc; // @synthesize icc=_icc;
 @property(nonatomic) __weak id <SXAutoSizedCanvasControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)interactiveCanvasController:(id)arg1 dragItemForSmartField:(id)arg2 interaction:(id)arg3 session:(id)arg4;
 - (BOOL)interactiveCanvasController:(id)arg1 shouldBeginInteraction:(id)arg2 atPoint:(struct CGPoint)arg3;
 @property(readonly, nonatomic) BOOL isCanvasInteractive;

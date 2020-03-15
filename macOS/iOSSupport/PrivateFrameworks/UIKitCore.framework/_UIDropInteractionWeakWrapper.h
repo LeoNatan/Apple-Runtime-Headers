@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIDropInteraction *_dropInteraction;
 }
 
-@property(readonly, nonatomic) __weak UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 - (id)initWithDropInteraction:(id)arg1;
 
 @end

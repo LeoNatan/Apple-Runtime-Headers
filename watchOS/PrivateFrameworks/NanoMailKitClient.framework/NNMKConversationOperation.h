@@ -33,6 +33,7 @@
 + (id)conversationDeleteOperationForConversationId:(id)arg1 previousIndex:(unsigned int)arg2 messagesDeleted:(id)arg3;
 + (id)conversationUpdateOperationForConversation:(id)arg1 previousIndex:(unsigned int)arg2 newIndex:(unsigned int)arg3 messagesAdded:(id)arg4 messagesAddedIndexes:(id)arg5 messagesUpdated:(id)arg6 messagesUpdatedIndexes:(id)arg7 messagesDeleted:(id)arg8 messagesDeletedIndexes:(id)arg9 messagesUnchanged:(id)arg10;
 + (id)conversationAddOperationForConversation:(id)arg1 index:(unsigned int)arg2 messages:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKMailboxFilter *mailboxFilter; // @synthesize mailboxFilter=_mailboxFilter;
 @property(nonatomic) unsigned int newIndex; // @synthesize newIndex=_newIndex;
 @property(nonatomic) unsigned int previousIndex; // @synthesize previousIndex=_previousIndex;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSString *conversationId; // @synthesize conversationId=_conversationId;
 @property(retain, nonatomic) NNMKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSCollectionLayoutItem *_layoutItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
 @property(retain, nonatomic) NSCollectionLayoutItem *layoutItem; // @synthesize layoutItem=_layoutItem;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect bounds;
 @property(nonatomic) struct CGPoint center;
 @property(readonly, nonatomic) struct CGRect frame;

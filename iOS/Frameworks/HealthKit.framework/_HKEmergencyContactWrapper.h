@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _HKEmergencyContact *_contact;
 }
 
-@property(retain, nonatomic) _HKEmergencyContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HKEmergencyContact *contact; // @synthesize contact=_contact;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

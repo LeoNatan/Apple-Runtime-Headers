@@ -28,8 +28,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) BOOL isAvailable; // @synthesize isAvailable=_isAvailable;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isAvailable; // @synthesize isAvailable=_isAvailable;
 - (void)handleAvailabilityFailureWithPeer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performCompanionLinkCleanup;
 - (void)companionLinkCleanupTimerFired;

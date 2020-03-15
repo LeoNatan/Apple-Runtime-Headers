@@ -14,8 +14,8 @@
 }
 
 + (id)getInternalFrameworkVersion;
-@property(copy, nonatomic) NSNumber *frameworkVersionNumber; // @synthesize frameworkVersionNumber=_frameworkVersionNumber;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *frameworkVersionNumber; // @synthesize frameworkVersionNumber=_frameworkVersionNumber;
 - (id)init;
 
 @end

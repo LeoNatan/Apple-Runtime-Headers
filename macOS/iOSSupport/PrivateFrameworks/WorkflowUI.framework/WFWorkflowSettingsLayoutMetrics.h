@@ -13,8 +13,8 @@
     UITraitCollection *_traitCollection;
 }
 
-@property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (id)scaledFont;
 - (id)baseFont;
 - (double)scaledValueForValue:(double)arg1;

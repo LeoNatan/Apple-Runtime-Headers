@@ -15,8 +15,8 @@
     NSString *_accessibilityText;
 }
 
-@property(copy, nonatomic) NSString *accessibilityText; // @synthesize accessibilityText=_accessibilityText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *accessibilityText; // @synthesize accessibilityText=_accessibilityText;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

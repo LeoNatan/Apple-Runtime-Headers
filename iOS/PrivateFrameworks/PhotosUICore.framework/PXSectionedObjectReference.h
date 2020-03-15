@@ -19,12 +19,12 @@
     struct PXSimpleIndexPath _indexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> leafObject; // @synthesize leafObject=_leafObject;
 @property(readonly, nonatomic) struct PXSimpleIndexPath indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> subitemObject; // @synthesize subitemObject=_subitemObject;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> itemObject; // @synthesize itemObject=_itemObject;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> sectionObject; // @synthesize sectionObject=_sectionObject;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

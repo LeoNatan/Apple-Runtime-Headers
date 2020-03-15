@@ -18,10 +18,10 @@
     FCInterestToken *_holdToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCInterestToken *holdToken; // @synthesize holdToken=_holdToken;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSData *wrappingKey; // @synthesize wrappingKey=_wrappingKey;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isRawFileConsumable;
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) NSData *data;

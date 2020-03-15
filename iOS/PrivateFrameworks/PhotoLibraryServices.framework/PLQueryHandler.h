@@ -25,7 +25,6 @@
 + (id)_predicateForLoopingQuery:(id)arg1 inLibrary:(id)arg2;
 + (id)_predicateForIsReferencedQuery:(id)arg1 inLibrary:(id)arg2;
 + (id)_predicateForPersonQuery:(id)arg1 inLibrary:(id)arg2 changeDetectionCriteria:(id)arg3;
-+ (id)_invertedPersonMatchesPredicateForCriteria:(id)arg1;
 + (id)_personMatchesPredicateForCriteria:(id)arg1;
 + (id)_personNameQueryKeyPaths;
 + (id)_predicateForDoubleQuery:(id)arg1 inLibrary:(id)arg2;

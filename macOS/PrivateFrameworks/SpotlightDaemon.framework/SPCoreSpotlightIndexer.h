@@ -58,6 +58,7 @@
 + (void)cooldown;
 + (void)preheat;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long transactionCount; // @synthesize transactionCount=_transactionCount;
 @property(nonatomic) unsigned long long dataMigrationStage; // @synthesize dataMigrationStage=_dataMigrationStage;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reindexAllQueue; // @synthesize reindexAllQueue=_reindexAllQueue;
@@ -76,7 +77,6 @@
 @property(retain) NSDictionary *concreteIndexers; // @synthesize concreteIndexers=_concreteIndexers;
 @property __weak id <SPCoreSpotlightIndexerDelegate> indexerDelegate; // @synthesize indexerDelegate=_indexerDelegate;
 @property __weak id <CSIndexExtensionDelegate> extensionDelegate; // @synthesize extensionDelegate;
-- (void).cxx_destruct;
 - (void)_reindexAllItemsWithExtensionsAndIdentifiersAndCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_reindexAllItemsWithExtensionsAndCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_reindexAllIdentifiersWithExtension:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

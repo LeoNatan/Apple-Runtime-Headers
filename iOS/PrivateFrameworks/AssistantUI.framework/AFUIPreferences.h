@@ -15,8 +15,8 @@
     id <AFUIPreferencesDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AFUIPreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AFUIPreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)synchronize;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setBool:(_Bool)arg1 forKey:(id)arg2;

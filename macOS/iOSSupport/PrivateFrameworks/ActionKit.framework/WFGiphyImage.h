@@ -22,13 +22,13 @@
 
 + (id)JSONTransformerForKey:(id)arg1;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFImage *cachedImage; // @synthesize cachedImage=_cachedImage;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(readonly, copy, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

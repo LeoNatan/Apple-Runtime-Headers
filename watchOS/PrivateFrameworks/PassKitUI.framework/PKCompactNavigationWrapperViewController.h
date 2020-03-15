@@ -17,10 +17,10 @@
     float _targetNavigationHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float targetNavigationHeight; // @synthesize targetNavigationHeight=_targetNavigationHeight;
 @property(readonly, nonatomic) _Bool hasExplicitTargetNavigationHeight; // @synthesize hasExplicitTargetNavigationHeight=_hasExplicitTargetNavigationHeight;
 @property(readonly, nonatomic) _Bool needsInitialLayout; // @synthesize needsInitialLayout=_needsInitialLayout;
-- (void).cxx_destruct;
 - (struct CGRect)_wrappedViewControllerFrameForBounds:(struct CGRect)arg1 navigationBarHeight:(float)arg2;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;

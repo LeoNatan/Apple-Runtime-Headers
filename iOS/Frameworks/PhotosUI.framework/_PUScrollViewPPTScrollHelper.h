@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct CGPoint _originContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 @property(copy, nonatomic, setter=_setIncrementHandler:) CDUnknownBlockType _incrementHandler; // @synthesize _incrementHandler=__incrementHandler;
 @property(nonatomic, setter=_setLastIncrementTime:) double _lastIncrementTime; // @synthesize _lastIncrementTime=__lastIncrementTime;
 @property(nonatomic, setter=_setDisplayLink:) __weak CADisplayLink *_displayLink; // @synthesize _displayLink=__displayLink;
 @property(nonatomic, setter=_setOriginContentOffset:) struct CGPoint originContentOffset; // @synthesize originContentOffset=_originContentOffset;
 @property(readonly, nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)_endScroll;
 - (void)_incrementScroll;
 - (void)scrollWithStartHandler:(CDUnknownBlockType)arg1 incrementHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;

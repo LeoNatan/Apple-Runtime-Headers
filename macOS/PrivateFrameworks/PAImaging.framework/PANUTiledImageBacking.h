@@ -23,8 +23,8 @@
     id <NUPurgeableSurfaceImage> _image;
 }
 
-@property(readonly) id <NUPurgeableSurfaceImage> image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(readonly) id <NUPurgeableSurfaceImage> image; // @synthesize image=_image;
 - (void)validateRegion:(id)arg1;
 - (id)validRegion;
 - (struct CGSize)tileSize;

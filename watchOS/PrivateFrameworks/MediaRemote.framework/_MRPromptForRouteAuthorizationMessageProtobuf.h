@@ -19,8 +19,8 @@
     } _has;
 }
 
-@property(retain, nonatomic) _MRAVOutputDeviceDescriptorProtobuf *route; // @synthesize route=_route;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MRAVOutputDeviceDescriptorProtobuf *route; // @synthesize route=_route;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

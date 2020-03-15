@@ -22,11 +22,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool inverted; // @synthesize inverted=_inverted;
 @property(copy, nonatomic) NSString *charactersRemovedFromBase; // @synthesize charactersRemovedFromBase=_charactersRemovedFromBase;
 @property(copy, nonatomic) NSString *charactersAddedToBase; // @synthesize charactersAddedToBase=_charactersAddedToBase;
 @property(readonly, nonatomic) long baseIdentifier; // @synthesize baseIdentifier=_baseIdentifier;
-- (void).cxx_destruct;
 - (void)clearCachedCharacterSet;
 @property(readonly, nonatomic) NSCharacterSet *characterSet;
 - (id)newCharacterSetFromDescription;

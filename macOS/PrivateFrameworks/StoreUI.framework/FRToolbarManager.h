@@ -13,8 +13,8 @@
     FRViewNavigationController *_navigationController;
 }
 
-@property(nonatomic) __weak FRViewNavigationController *navigationController; // @synthesize navigationController=_navigationController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak FRViewNavigationController *navigationController; // @synthesize navigationController=_navigationController;
 - (void)startSearch:(id)arg1;
 - (void)setTrailingToolbarItem:(id)arg1;
 - (void)setLeadingToolbarItem:(id)arg1;

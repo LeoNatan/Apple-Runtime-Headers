@@ -20,12 +20,12 @@
 }
 
 + (id)writableTypeIdentifiersForItemProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TTTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(retain, nonatomic) ICNote *workerContextNote; // @synthesize workerContextNote=_workerContextNote;
 @property(retain, nonatomic) NSManagedObjectContext *workerContext; // @synthesize workerContext=_workerContext;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) ICNote *note; // @synthesize note=_note;
-- (void).cxx_destruct;
 - (id)_loadFileRepresentationOfTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)_preferredRepresentationForItemProviderWritableTypeIdentifier:(id)arg1;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;

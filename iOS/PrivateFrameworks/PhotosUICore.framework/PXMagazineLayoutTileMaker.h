@@ -32,6 +32,7 @@
 + (void)printLayout:(id)arg1 numOfColumns:(unsigned long long)arg2;
 + (void)printInputs:(id)arg1;
 + (void)printPossibleFrames:(unsigned long long)arg1 cellAspectRatio:(double)arg2 maxAspectRatio:(double)arg3 minAspectRato:(double)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool layoutFromRightToLeft; // @synthesize layoutFromRightToLeft=_layoutFromRightToLeft;
 @property(nonatomic) unsigned long long maxTilesInFrame; // @synthesize maxTilesInFrame=_maxTilesInFrame;
 @property(nonatomic) double interTileSpacing; // @synthesize interTileSpacing=_interTileSpacing;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
 @property(readonly, nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;
 @property(readonly, nonatomic) double tileAspectRatio; // @synthesize tileAspectRatio=_tileAspectRatio;
-- (void).cxx_destruct;
 - (_Bool)checkAndPrintResults:(_Bool)arg1;
 - (long long)_availableFrames:(id *)arg1 maxReturnCount:(unsigned long long)arg2 forAspectRatio:(double)arg3 weight:(double)arg4 maxWidth:(unsigned long long)arg5;
 - (id)_getAllFramesInOrder;

@@ -23,6 +23,7 @@
     UIResponder *_responderToRestore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIResponder *responderToRestore; // @synthesize responderToRestore=_responderToRestore;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) AKSmoothPathView *pathView; // @synthesize pathView=_pathView;
 @property(retain, nonatomic) UINavigationBar *navBar; // @synthesize navBar=_navBar;
 @property __weak id <AKSignatureCreationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)positionForBar:(id)arg1;
 - (void)_done:(id)arg1;
 - (void)_clear:(id)arg1;

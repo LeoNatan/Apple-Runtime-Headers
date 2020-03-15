@@ -6,9 +6,7 @@
 
 #import <Foundation/NSNull.h>
 
-#import <AppAnalytics/AADataType-Protocol.h>
-
-@interface NSNull (AppAnalytics) <AADataType>
+@interface NSNull (AppAnalytics)
 - (id)toJsonValueAndReturnError:(id *)arg1;
 @end
 

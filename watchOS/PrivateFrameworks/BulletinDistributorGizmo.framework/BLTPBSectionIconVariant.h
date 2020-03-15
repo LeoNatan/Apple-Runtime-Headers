@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool precomposed; // @synthesize precomposed=_precomposed;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(nonatomic) unsigned int format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

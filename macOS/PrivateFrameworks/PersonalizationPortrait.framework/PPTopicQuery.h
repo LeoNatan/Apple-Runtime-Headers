@@ -35,6 +35,7 @@
 
 + (id)_algorithmsDescription:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL orderByIdentifier; // @synthesize orderByIdentifier=_orderByIdentifier;
 @property(retain, nonatomic) NSString *matchingTopicTrie; // @synthesize matchingTopicTrie=_matchingTopicTrie;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSDate *toDate; // @synthesize toDate=_toDate;
 @property(retain, nonatomic) NSDate *fromDate; // @synthesize fromDate=_fromDate;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (id)customizedDescription;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

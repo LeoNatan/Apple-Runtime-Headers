@@ -17,9 +17,9 @@
     BSWatchdog *_watchdog;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, nonatomic) FBProcess *process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;
 - (void)processManager:(id)arg1 didAddProcess:(id)arg2;
 - (id)_customizedDescriptionProperties;

@@ -16,9 +16,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) __weak id <CNUIUserActivityRestorerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)restoreUserActivity:(id)arg1;
 - (_Bool)shouldEnableActivityIndicatorWhenRestoringUserActivityWithType:(id)arg1;
 - (id)initWithContactStore:(id)arg1;

@@ -19,12 +19,12 @@
     struct _opaque_pthread_mutex_t _lock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int currentFrameNumber; // @synthesize currentFrameNumber=_currentFrameNumber;
 @property(nonatomic) int nextFrameNumberToPlay; // @synthesize nextFrameNumberToPlay=_nextFrameNumberToPlay;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) NSMutableArray *queuedDetents; // @synthesize queuedDetents=_queuedDetents;
 @property(nonatomic) struct _opaque_pthread_mutex_t lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (void)backlightDidTurnOff:(id)arg1 forReason:(unsigned int)arg2;
 - (void)_playDetent:(id)arg1;
 - (void)_displayLinkFired:(id)arg1;

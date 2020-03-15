@@ -14,9 +14,9 @@
     UNNotification *_notification;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDeliverable; // @synthesize isDeliverable=_isDeliverable;
 @property(readonly, retain, nonatomic) UNNotification *notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

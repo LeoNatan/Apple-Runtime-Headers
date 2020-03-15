@@ -24,6 +24,7 @@
     PKTransitAppletState *_transactionStartAppletState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKTransitAppletState *transactionStartAppletState; // @synthesize transactionStartAppletState=_transactionStartAppletState;
 @property(readonly, nonatomic) NPKExpressPassController *expressPassController; // @synthesize expressPassController=_expressPassController;
 @property(retain, nonatomic) PKPaymentApplication *expressTransitPaymentApplication; // @synthesize expressTransitPaymentApplication=_expressTransitPaymentApplication;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *dismissalTimer; // @synthesize dismissalTimer=_dismissalTimer;
 @property(nonatomic) __weak id <NPKExpressTransitInterfaceControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NPKExpressTransitInterfaceControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_paymentApplicationFromPass:(id)arg1 applicationIdentifier:(id)arg2;
 - (void)transitAppletHistoryFetcher:(id)arg1 gotTransitAppletHistory:(id)arg2 forAppletWithAID:(id)arg3;
 - (void)_dismissExpressTransitAlert;

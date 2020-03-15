@@ -15,10 +15,10 @@
     ACAccountStore *_accountStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) BCInternalAuthenticationRequest *authenticationRequest; // @synthesize authenticationRequest=_authenticationRequest;
-- (void).cxx_destruct;
 - (id)labelCategory;
 - (id)globalAuthToken;
 - (id)deviceSerialNumber;

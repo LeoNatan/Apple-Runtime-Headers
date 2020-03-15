@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSBookmarkFolderTouchIconProvider.h>
+#import <SafariSharedUI/WBSBookmarkFolderTouchIconProvider.h>
 
 @class NSObject, WebBookmarkCollection;
 @protocol OS_dispatch_queue;
@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)displayableFolderContentsForRequest:(id)arg1;
 - (id)bookmarkUUIDForRequest:(id)arg1;
 - (id)defaultFolderIconForRequest:(id)arg1;
+- (id)backgroundColor;
 - (_Bool)canHandleRequest:(id)arg1;
 - (id)init;
 

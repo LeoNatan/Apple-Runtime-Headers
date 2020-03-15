@@ -32,6 +32,7 @@
 
 + (id)setOfActiveRestrictionUUIDs;
 + (id)activeRestrictionsURL;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *registerConfigurationSource; // @synthesize registerConfigurationSource=_registerConfigurationSource;
 @property(retain, nonatomic) CATOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) DMFConnection *connection; // @synthesize connection=_connection;
 @property unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <DMFConfigurationSourceClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)configurationEngineRequestedAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)configurationEventsDidChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)configurationStatusDidChange:(id)arg1 completion:(CDUnknownBlockType)arg2;

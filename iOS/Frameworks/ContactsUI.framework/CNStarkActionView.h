@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 
 + (id)propertyTransportButtonWithDelegate:(id)arg1;
 + (id)quickActionButtonWithDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disabledButtonFocused; // @synthesize disabledButtonFocused=_disabledButtonFocused;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (void)stateUpdated;
 - (void)updateForFocusedState:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

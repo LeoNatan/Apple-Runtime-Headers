@@ -21,14 +21,14 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)fromPBCodable:(id)arg1;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 cache:(id)arg3;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(_Bool)arg2 excludedMetadataKeys:(id)arg3 cache:(id)arg4;
 + (id)fetchObjectWithUUID:(id)arg1 context:(id)arg2;
 + (id)entityName;
+- (void).cxx_destruct;
 @property(retain) NSDate *localCreationDate; // @synthesize localCreationDate=_localCreationDate;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain) _DKSource *source; // @synthesize source=_source;
 @property(retain) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)stringValue;
 - (double)doubleValue;

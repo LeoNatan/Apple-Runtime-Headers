@@ -19,12 +19,12 @@
     NSDictionary *_info;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *info; // @synthesize info=_info;
 @property(nonatomic) double eventTime; // @synthesize eventTime=_eventTime;
 @property(retain, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;
 @property(retain, nonatomic) NSString *qToken; // @synthesize qToken=_qToken;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithType:(long long)arg1 withQToken:(id)arg2 withSourceID:(id)arg3 withEventTime:(double)arg4 withInfo:(id)arg5;
 

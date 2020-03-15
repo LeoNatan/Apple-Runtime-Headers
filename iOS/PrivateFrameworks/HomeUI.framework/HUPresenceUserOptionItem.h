@@ -15,10 +15,10 @@
     HUPresenceCurrentUserLocationDevice *_selectedLocationDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUPresenceCurrentUserLocationDevice *selectedLocationDevice; // @synthesize selectedLocationDevice=_selectedLocationDevice;
 @property(readonly, nonatomic) HULocationDeviceManager *locationDeviceManager; // @synthesize locationDeviceManager=_locationDeviceManager;
 @property(readonly, nonatomic) HFUserItem *userItem; // @synthesize userItem=_userItem;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithUserItem:(id)arg1 selectedLocationDevice:(id)arg2 locationDeviceManager:(id)arg3;
 

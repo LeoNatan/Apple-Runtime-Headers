@@ -38,6 +38,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *arrivalGateTime; // @synthesize arrivalGateTime=_arrivalGateTime;
 @property(copy, nonatomic) NSDate *arrivalRunwayTime; // @synthesize arrivalRunwayTime=_arrivalRunwayTime;
 @property(copy, nonatomic) NSDate *departureRunwayTime; // @synthesize departureRunwayTime=_departureRunwayTime;
@@ -56,7 +57,6 @@
 @property(copy, nonatomic) NSDate *departureActualTime; // @synthesize departureActualTime=_departureActualTime;
 @property(copy, nonatomic) NSDate *departurePublishedTime; // @synthesize departurePublishedTime=_departurePublishedTime;
 @property(nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

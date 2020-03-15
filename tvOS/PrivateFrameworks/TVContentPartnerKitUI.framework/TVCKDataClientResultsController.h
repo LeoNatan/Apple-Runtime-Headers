@@ -24,6 +24,7 @@
     NSDictionary *_pausedDataClientDataUpdateInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *pausedDataClientDataUpdateInfo; // @synthesize pausedDataClientDataUpdateInfo=_pausedDataClientDataUpdateInfo;
 @property(nonatomic) _Bool pausedUpdateHandling; // @synthesize pausedUpdateHandling=_pausedUpdateHandling;
 @property(nonatomic) _Bool initialResultsNeedUpdating; // @synthesize initialResultsNeedUpdating=_initialResultsNeedUpdating;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak id <TVCKDataClientResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <TVCKDataClientResultsControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) CDUnknownBlockType dataQueryBlock; // @synthesize dataQueryBlock=_dataQueryBlock;
-- (void).cxx_destruct;
 - (void)resumeUpdateHandling;
 - (void)pauseUpdateHandling;
 - (void)stop;

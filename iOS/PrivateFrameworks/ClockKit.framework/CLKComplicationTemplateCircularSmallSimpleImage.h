@@ -14,8 +14,8 @@
 }
 
 + (struct CGSize)_imageSize;
-@property(copy, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 - (void)_enumerateImageProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isCompatibleWithFamily:(long long)arg1;
 

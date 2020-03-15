@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSDictionary, NSNumber, NSString, NSURL, VUIContentMetadata, VUIExtrasInfo;
+@class NSDate, NSDictionary, NSNumber, NSString, NSURL, VUIContentMetadata, VUIExtrasInfo, VUIRouterDataSource;
 
 __attribute__((visibility("hidden")))
 @interface VUIVideosPlayable : NSObject
@@ -18,10 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)videosPlayablesFromDictionaries:(id)arg1 andMetadataDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUIContentMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSURL *previewArtwork; // @synthesize previewArtwork=_previewArtwork;
 @property(readonly, nonatomic) NSString *bookmarkID; // @synthesize bookmarkID=_bookmarkID;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) VUIRouterDataSource *upsellRouterDataSource;
 @property(readonly, nonatomic, getter=isSharedPurchase) _Bool sharedPurchase;
 @property(readonly, nonatomic) _Bool isiTunesPurchaseOrRental;
 @property(readonly, nonatomic) NSNumber *frequencyOfAgeConfirmation;

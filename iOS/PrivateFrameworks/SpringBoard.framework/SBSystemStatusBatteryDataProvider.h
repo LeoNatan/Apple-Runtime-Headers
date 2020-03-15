@@ -16,9 +16,9 @@
     STBatteryStatusDomainPublisher *_batteryDataPublisher;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldExposeNotChargingState; // @synthesize shouldExposeNotChargingState=_shouldExposeNotChargingState;
 @property(readonly, nonatomic) STBatteryStatusDomainPublisher *batteryDataPublisher; // @synthesize batteryDataPublisher=_batteryDataPublisher;
-- (void).cxx_destruct;
 - (_Bool)_isInNotChargingState;
 - (void)_updateShouldExposeNotChargingState;
 - (void)_noteNotChargingStatusChanged;

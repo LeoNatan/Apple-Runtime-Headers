@@ -16,10 +16,10 @@
 }
 
 + (id)representationWithSize:(struct CGSize)arg1 image:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id representationToken; // @synthesize representationToken=_representationToken;
 @property(nonatomic) struct CGSize representationSize; // @synthesize representationSize=_representationSize;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)debugQuickLookObject;
 
 @end

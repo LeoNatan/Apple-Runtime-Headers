@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainer, NSArray, NSError, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, PDCloudStoreRecordsRequest;
+@class CKContainer, NSError, NSMutableOrderedSet, NSMutableSet, PDCloudStoreRecordsRequest, PDCloudStoreZoneManager;
 @protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source, PDCloudStoreContainerDelegate, PDCloudStoreDataSource;
 
 @interface PDCloudStoreContainer : NSObject
@@ -25,48 +25,29 @@
     CKContainer *_container;
     id <PDCloudStoreContainerDelegate> _delegate;
     id <PDCloudStoreDataSource> _dataSource;
-    NSArray *_subscriptionIdentifiers;
-    NSArray *_zoneNames;
-    NSMutableDictionary *_subscriptionsByIdentifier;
-    NSMutableDictionary *_zonesByName;
-    NSMutableDictionary *_completedFetchTimestampByZoneID;
+    PDCloudStoreZoneManager *_zoneManager;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSError *_operationError;
     unsigned long long _nextExpectedState;
 }
 
-+ (id)serverChangeTokenFromArchiveData:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool resettingCloudContainer; // @synthesize resettingCloudContainer=_resettingCloudContainer;
 @property(nonatomic) _Bool cloudContainerSetupInProgress; // @synthesize cloudContainerSetupInProgress=_cloudContainerSetupInProgress;
 @property(nonatomic) _Bool accountChangedNotificationReceived; // @synthesize accountChangedNotificationReceived=_accountChangedNotificationReceived;
 @property(nonatomic) unsigned long long nextExpectedState; // @synthesize nextExpectedState=_nextExpectedState;
 @property(retain, nonatomic) NSError *operationError; // @synthesize operationError=_operationError;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) NSMutableDictionary *completedFetchTimestampByZoneID; // @synthesize completedFetchTimestampByZoneID=_completedFetchTimestampByZoneID;
-@property(readonly, nonatomic) NSMutableDictionary *zonesByName; // @synthesize zonesByName=_zonesByName;
-@property(readonly, nonatomic) NSMutableDictionary *subscriptionsByIdentifier; // @synthesize subscriptionsByIdentifier=_subscriptionsByIdentifier;
-@property(retain, nonatomic) NSArray *zoneNames; // @synthesize zoneNames=_zoneNames;
-@property(retain, nonatomic) NSArray *subscriptionIdentifiers; // @synthesize subscriptionIdentifiers=_subscriptionIdentifiers;
+@property(readonly, nonatomic) PDCloudStoreZoneManager *zoneManager; // @synthesize zoneManager=_zoneManager;
 @property(readonly, nonatomic) __weak id <PDCloudStoreDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PDCloudStoreContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)_markEndCloudStoreDatabaseSetupWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (id)_cannotPerformActionErrorWithFailureReason:(id)arg1;
-- (void)_resetContainerValues;
-- (void)_resetCachedZoneDataForZoneID:(id)arg1;
 - (id)description;
 - (void)_cloudStoreInitializationTimerFired;
 - (void)_cancelCloudStoreInitializationTimer;
 - (void)_startCloudStoreInitializationTimer;
-- (void)invalidateServerChangeTokens;
-- (void)saveServerSubscriptionsForKey:(id)arg1;
-- (void)saveServerZonesForKey:(id)arg1;
-- (void)saveServerFetchTimestampsForKey:(id)arg1;
-- (void)resetCachedContainerValues;
-- (void)retrieveCachedServerSubscriptionsForKey:(id)arg1;
-- (void)retrieveCachedServerZonesForKey:(id)arg1;
-- (void)retrieveCachedServerFetchTimestampsForKey:(id)arg1;
 - (id)errorWithCode:(long long)arg1 description:(id)arg2;
 - (void)_addOperation:(id)arg1;
 - (void)_cancelAllOperations;
@@ -80,20 +61,23 @@
 - (void)_fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 qualityOfService:(long long)arg4 cursor:(id)arg5 fetchedRecords:(id)arg6 zone:(id)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 qualityOfService:(long long)arg4 zone:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)modifyRecordsOperationWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 qualityOfService:(long long)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)deleteZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetContainerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)removeRecordWithRecordName:(id)arg1 zoneName:(id)arg2 groupName:(id)arg3 groupNameSuffix:(id)arg4 qualityOfService:(long long)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 groupName:(id)arg3 groupNameSuffix:(id)arg4 qualityOfService:(long long)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchRecordsWithRecordIDs:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 qualityOfService:(long long)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)_queue_fetchAllRecordsUsingStoredChangeToken:(_Bool)arg1 changeToken:(id)arg2 shouldSaveToken:(_Bool)arg3 operationGroupName:(id)arg4 operationGroupNameSuffix:(id)arg5 qualityOfService:(long long)arg6 batchHandler:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)_queue_fetchAllRecordsUsingStoredChangeToken:(_Bool)arg1 changeToken:(id)arg2 shouldSaveToken:(_Bool)arg3 zoneName:(id)arg4 operationGroupName:(id)arg5 operationGroupNameSuffix:(id)arg6 qualityOfService:(long long)arg7 batchHandler:(CDUnknownBlockType)arg8 completion:(CDUnknownBlockType)arg9;
 - (_Bool)shouldContinueWithRequest:(id)arg1;
 - (void)coalesceRequest:(id)arg1 withNewRequest:(id)arg2;
 - (_Bool)canCoalesceRequest:(id)arg1 withNewRequest:(id)arg2;
 - (void)_queue_executeNextFecthRequestIfPossible;
 - (void)executeRecordsRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)createZoneSubscriptions:(id)arg1 operationGroupNameSuffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)createZones:(id)arg1 operationGroupNameSuffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 groupName:(id)arg3 groupNameSuffix:(id)arg4 qualityOfService:(long long)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)createZones:(id)arg1 shouldFetchData:(_Bool)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 includeServerData:(_Bool)arg3 groupName:(id)arg4 groupNameSuffix:(id)arg5 qualityOfService:(long long)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)shouldCreateZoneWithNames:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_keychainSyncFinishedFired;
 - (void)cloudStoreAccountChanged:(id)arg1;
 - (void)processResultWithError:(id)arg1 nextExpectedState:(unsigned long long)arg2 operationGroupNameSuffix:(id)arg3 retryCount:(unsigned long long)arg4 shouldRetry:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
@@ -108,15 +92,11 @@
 - (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1 clearCache:(_Bool)arg2;
 - (id)lastFetchDateForZoneWithName:(id)arg1;
 - (id)cloudStoreSpecificKeysForItem:(id)arg1;
-- (id)recordTypeForRecordID:(id)arg1;
-- (id)allRecordNamesAssociatedWithRecordName:(id)arg1 inZone:(id)arg2;
-- (void)saveCachedContainerValues;
-- (void)readCachedContainerValues;
+- (id)allRecordNamesAssociatedWithRecordName:(id)arg1 itemType:(unsigned long long)arg2 inZone:(id)arg3;
 - (id)recordTypesForCloudStoreItemType:(unsigned long long)arg1;
-- (id)zoneForCloudStoreItemType:(unsigned long long)arg1;
-- (id)cloudRecordObjectFromItemType:(unsigned long long)arg1 records:(id)arg2;
 - (void)shouldFetchAndStoreCloudDataAtStartupWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)canUpdateAndFetchRecords;
+- (_Bool)canInvalidateContainer;
 - (_Bool)canInitializeContainer;
 - (_Bool)isSetup;
 - (_Bool)ensureContainerState:(unsigned long long)arg1;

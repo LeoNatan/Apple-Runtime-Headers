@@ -28,6 +28,7 @@
 
 + (_Bool)shouldDumpToJSON;
 + (id)persistenceQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <RCOperationThrottler> saveThrottler; // @synthesize saveThrottler=_saveThrottler;
 @property(retain, nonatomic) RCMutexLock *writeLock; // @synthesize writeLock=_writeLock;
 @property(retain, nonatomic) id <RCKeyValueStoreMigrating> migrator; // @synthesize migrator=_migrator;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned long long storeSize; // @synthesize storeSize=_storeSize;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool shouldExportJSONSidecar; // @synthesize shouldExportJSONSidecar=_shouldExportJSONSidecar;
-- (void).cxx_destruct;
 - (void)setOptionBackupEnabled:(_Bool)arg1;
 - (_Bool)_persistOnlyInMemoryEnabled;
 - (_Bool)_isBackupEnabled;

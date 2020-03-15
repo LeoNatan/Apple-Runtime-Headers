@@ -20,13 +20,13 @@
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property BOOL suggestedEvent; // @synthesize suggestedEvent=_suggestedEvent;
 @property BOOL directionsAreWalking; // @synthesize directionsAreWalking=_directionsAreWalking;
 @property(copy) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain) MKMapItem *startLocation; // @synthesize startLocation=_startLocation;
 @property(retain) MKMapItem *location; // @synthesize location=_location;
 @property(retain) NSURL *mapHandleURL; // @synthesize mapHandleURL=_mapHandleURL;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (void)scrollWheel:(id)arg1;
 - (void)mouseDown:(id)arg1;

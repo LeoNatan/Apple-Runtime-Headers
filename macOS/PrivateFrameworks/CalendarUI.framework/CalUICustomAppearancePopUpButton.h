@@ -13,8 +13,8 @@
     NSString *_baseAppearanceName;
 }
 
-@property(retain) NSString *baseAppearanceName; // @synthesize baseAppearanceName=_baseAppearanceName;
 - (void).cxx_destruct;
+@property(retain) NSString *baseAppearanceName; // @synthesize baseAppearanceName=_baseAppearanceName;
 - (id)_skyglowAppearanceName;
 - (void)_configureWithAppearanceNamed:(id)arg1;
 - (void)effectiveAppearanceDidChange;

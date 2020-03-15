@@ -29,6 +29,7 @@
 }
 
 + (void)flushImmediately;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *windowOrientation; // @synthesize windowOrientation=_windowOrientation;
 @property(copy, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
 @property(readonly, nonatomic) SSMetricsConfiguration *globalConfiguration; // @synthesize globalConfiguration=_globalConfiguration;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (void)_recordActiveImpressions;
 - (void)_insertEvent:(id)arg1;
 - (void)_waitUntilRecordingComplete;

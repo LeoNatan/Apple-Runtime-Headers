@@ -15,8 +15,8 @@
     id <HKEmergencyCardDeletionDelegate> _deletionDelegate;
 }
 
-@property(nonatomic) __weak id <HKEmergencyCardDeletionDelegate> deletionDelegate; // @synthesize deletionDelegate=_deletionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HKEmergencyCardDeletionDelegate> deletionDelegate; // @synthesize deletionDelegate=_deletionDelegate;
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;
 - (_Bool)shouldHighlightRowAtIndex:(long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;

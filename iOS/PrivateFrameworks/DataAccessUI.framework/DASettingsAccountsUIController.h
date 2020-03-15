@@ -26,6 +26,7 @@
     _Bool _transitioningToFinishedAccountSetup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DAAccount *account; // @synthesize account=_account;
 @property(nonatomic) _Bool transitioningToFinishedAccountSetup; // @synthesize transitioningToFinishedAccountSetup=_transitioningToFinishedAccountSetup;
 @property(nonatomic) _Bool haveRegisteredForAccountsChanged; // @synthesize haveRegisteredForAccountsChanged=_haveRegisteredForAccountsChanged;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool attemptedValidation; // @synthesize attemptedValidation=_attemptedValidation;
 @property(nonatomic) _Bool needsSave; // @synthesize needsSave=_needsSave;
 @property(nonatomic) _Bool didSetFullHostURL; // @synthesize didSetFullHostURL=_didSetFullHostURL;
-- (void).cxx_destruct;
 - (void)deleteAccountButtonTapped;
 - (id)localizedAccountTitleString;
 - (id)localizedAccountSetupTitleString;
@@ -79,6 +79,7 @@
 - (void)showSSLFailureView;
 - (void)showIdenticalAccountFailureView;
 - (_Bool)validateAccount;
+- (void)showAlertWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)accountSpecifiers;

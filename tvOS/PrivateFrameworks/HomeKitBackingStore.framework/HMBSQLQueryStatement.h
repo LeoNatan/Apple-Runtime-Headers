@@ -13,8 +13,8 @@
     NSDictionary *_arguments;
 }
 
-@property(readonly, nonatomic) NSDictionary *arguments; // @synthesize arguments=_arguments;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *arguments; // @synthesize arguments=_arguments;
 - (id)initWithContext:(id)arg1 statement:(id)arg2;
 - (id)initWithContext:(id)arg1 statement:(struct sqlite3_stmt *)arg2 queryPlans:(id)arg3 arguments:(id)arg4;
 

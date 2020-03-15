@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSPermissionSetType *PermissionSet; // @synthesize PermissionSet=_PermissionSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSPermissionSetType *PermissionSet; // @synthesize PermissionSet=_PermissionSet;
 
 @end
 

@@ -21,12 +21,12 @@
     AKPinFieldView *_pinView;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKPinFieldView *pinView; // @synthesize pinView=_pinView;
 @property(retain) NSTextField *passwordField; // @synthesize passwordField=_passwordField;
 @property long long icscType; // @synthesize icscType=_icscType;
 @property id <AKiCSCEntryViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL isCodeEditable; // @synthesize isCodeEditable=_isCodeEditable;
-- (void).cxx_destruct;
 - (void)pinFieldViewTextDidComplete:(id)arg1;
 - (void)pinFieldViewTextDidChange:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;

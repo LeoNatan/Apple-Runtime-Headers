@@ -16,11 +16,11 @@
     NSObject<OS_dispatch_queue> *__heartbeatQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_heartbeatQueue; // @synthesize _heartbeatQueue=__heartbeatQueue;
 @property(retain, nonatomic, setter=_setHeartbeatSource:) NSObject<OS_dispatch_source> *_heartbeatSource; // @synthesize _heartbeatSource=__heartbeatSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_keepAliveQueue; // @synthesize _keepAliveQueue=__keepAliveQueue;
 @property(retain, nonatomic, setter=_setConnection:) NSObject<OS_xpc_object> *_connection; // @synthesize _connection=__connection;
-- (void).cxx_destruct;
 - (void)_teardownHeartbeat;
 - (void)_keepAliveQueueTeardownHeartbeat;
 - (void)_keepAliveQueueCreateHeartbeatIfNecessary;

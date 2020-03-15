@@ -31,11 +31,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)defaultWidth;
+- (void).cxx_destruct;
 @property(nonatomic) double bottomOffset; // @synthesize bottomOffset=_bottomOffset;
 @property(nonatomic) double topOffset; // @synthesize topOffset=_topOffset;
 @property __weak id <QLScrubViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak id <QLScrubViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_updateSelectedThumbnailView;
 - (void)layoutSubviews;
 - (void)_hidePageLabel;

@@ -17,10 +17,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) struct _xmlParserCtxt *_parserContext; // @synthesize _parserContext=__parserContext;
 @property(nonatomic) __weak id <ASKNQMLParser> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)parse;
 - (void)reportParseError:(struct _xmlError *)arg1;
 - (void)reportErrorWithCode:(unsigned long long)arg1 userInfo:(id)arg2;

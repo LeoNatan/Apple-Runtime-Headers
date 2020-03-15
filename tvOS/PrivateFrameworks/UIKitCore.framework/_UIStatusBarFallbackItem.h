@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UIStatusBarStringView *_label;
 }
 
-@property(retain, nonatomic) _UIStatusBarStringView *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarStringView *label; // @synthesize label=_label;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_label;
 - (_Bool)canEnableDisplayItem:(id)arg1 fromData:(id)arg2;

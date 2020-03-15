@@ -16,9 +16,9 @@
     UIImageView *_chevron;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
 @property(nonatomic) _Bool avoidTextLineBreaks; // @synthesize avoidTextLineBreaks=_avoidTextLineBreaks;
-- (void).cxx_destruct;
 - (void)prepareForDisplay;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(struct UIEdgeInsets *)arg2;
 - (void)layoutSubviews;

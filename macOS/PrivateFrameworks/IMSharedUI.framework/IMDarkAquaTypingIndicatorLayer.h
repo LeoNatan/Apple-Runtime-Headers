@@ -12,8 +12,8 @@
 
 + (double)defaultThinkingDotOpacity;
 + (double)defaultBubbleOpacity;
-+ (struct NSColor *)defaultBubbleColor;
-+ (struct NSColor *)defaultThinkingDotColor;
++ (id)defaultBubbleColor;
++ (id)defaultThinkingDotColor;
 
 @end
 

@@ -27,8 +27,8 @@
     id <PRSharingSessionDelegate> _delegate;
 }
 
-@property __weak id <PRSharingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <PRSharingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)invokeDelegateBlock:(CDUnknownBlockType)arg1;
 - (void)onNewSharingChoiceScores:(id)arg1;
 - (void)didFailWithError:(id)arg1;

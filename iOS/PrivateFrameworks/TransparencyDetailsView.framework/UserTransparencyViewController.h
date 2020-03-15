@@ -26,6 +26,7 @@
     WKWebView *_myUserPrivacyWebView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isiPad; // @synthesize isiPad=_isiPad;
 @property(retain, nonatomic) WKWebView *myUserPrivacyWebView; // @synthesize myUserPrivacyWebView=_myUserPrivacyWebView;
 @property(retain, nonatomic) UINavigationBar *transparencyNavBar; // @synthesize transparencyNavBar=_transparencyNavBar;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) ADUserTransparencyResponse *userTransparencyResponseData; // @synthesize userTransparencyResponseData=_userTransparencyResponseData;
 @property(copy, nonatomic) NSString *userTransparencyDetails; // @synthesize userTransparencyDetails=_userTransparencyDetails;
 @property(retain, nonatomic) id <UserTransparencyViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)bundleForTransparencyDetailsViewFramework;
 - (id)normalizeChineseLanguage:(id)arg1;
 - (void)_reportUserTransparencyViewControllerEventWithType:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

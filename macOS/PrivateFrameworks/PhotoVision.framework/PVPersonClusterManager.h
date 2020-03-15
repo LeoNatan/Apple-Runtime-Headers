@@ -29,11 +29,11 @@
 + (id)assetSortDescriptors;
 + (id)momentSortDescriptors;
 + (id)personProcessingSortDescriptors;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *assetsToIgnore; // @synthesize assetsToIgnore=_assetsToIgnore;
 @property(retain, nonatomic) NSMutableDictionary *personClusters; // @synthesize personClusters=_personClusters;
 @property(retain, nonatomic) PVVisionHelper *visionHelper; // @synthesize visionHelper=_visionHelper;
 @property(retain, nonatomic) id <PVPhotoLibraryProtocol> photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-- (void).cxx_destruct;
 - (id)pv_lastAssetDate;
 - (float)pv_faceProcessingProgress;
 - (id)pv_fetchInvalidAssetIdentifiersForCommonComparison;

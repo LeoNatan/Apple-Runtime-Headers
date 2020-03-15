@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (double)defaultGap;
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *separatorTrailingConstraint; // @synthesize separatorTrailingConstraint=_separatorTrailingConstraint;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *pillBackgroundView; // @synthesize pillBackgroundView=_pillBackgroundView;
 @property(nonatomic) long long intendedPlacement; // @synthesize intendedPlacement=_intendedPlacement;
 @property(nonatomic) _Bool extraTopPadding; // @synthesize extraTopPadding=_extraTopPadding;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateForContentSizeCategory:(id)arg1;
 - (void)_updateBasedOnAccessibilityCategory:(_Bool)arg1;

@@ -28,12 +28,12 @@
 + (_Bool)supportsSecureCoding;
 + (void)setTestData:(id)arg1;
 + (id)testData;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesExtendedSlider; // @synthesize usesExtendedSlider=_usesExtendedSlider;
 @property(retain, nonatomic) NSString *axPreferredContentSizeCategoryName; // @synthesize axPreferredContentSizeCategoryName=_axPreferredContentSizeCategoryName;
 @property(retain, nonatomic) NSString *axModel; // @synthesize axModel=_axModel;
 @property(retain, nonatomic) NSString *axOSVersion; // @synthesize axOSVersion=_axOSVersion;
 @property(retain, nonatomic) NSDictionary *accessibilityOptions; // @synthesize accessibilityOptions=_accessibilityOptions;
-- (void).cxx_destruct;
 - (void)processDomainDictionary:(id)arg1;
 - (void)applySavedSettings;
 - (void)encodeWithCoder:(id)arg1;

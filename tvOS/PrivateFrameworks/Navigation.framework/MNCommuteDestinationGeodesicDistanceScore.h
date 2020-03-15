@@ -18,9 +18,9 @@
 }
 
 + (double)weight;
+- (void).cxx_destruct;
 @property(nonatomic) double slope; // @synthesize slope=_slope;
 @property(retain, nonatomic) NSMutableArray *geodesicDistances; // @synthesize geodesicDistances=_geodesicDistances;
-- (void).cxx_destruct;
 - (void)_updateScoreAndDestinationInvalid;
 - (id)descriptionExtras;
 - (_Bool)destinationInvalid;

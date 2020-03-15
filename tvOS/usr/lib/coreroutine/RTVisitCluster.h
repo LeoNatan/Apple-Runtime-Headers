@@ -14,9 +14,9 @@
     RTVisit *_visit;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTVisit *visit; // @synthesize visit=_visit;
 @property(readonly, nonatomic) RTVisitLocationPoints *points; // @synthesize points=_points;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isCompleteAndExitDateIsEqualToDate:(id)arg1;
 - (_Bool)isPartialAndExitDateIsEqualToDate:(id)arg1;

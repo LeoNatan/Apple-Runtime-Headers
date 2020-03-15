@@ -22,9 +22,9 @@
     id <ICSuzeLeaseSessionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ICSuzeLeaseSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) ICSuzeLeaseSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_updateRenewalTimerWithResponse:(id)arg1;
 - (void)_updateRenewalTimer;
 - (void)_renewLeaseTimerAction;

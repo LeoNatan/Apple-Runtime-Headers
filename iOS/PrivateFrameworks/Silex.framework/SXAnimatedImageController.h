@@ -19,12 +19,12 @@
     SXComponentView *_componentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isReceivingViewportChanges; // @synthesize isReceivingViewportChanges=_isReceivingViewportChanges;
 @property(nonatomic) __weak SXComponentView *componentView; // @synthesize componentView=_componentView;
 @property(nonatomic) double previousYOffset; // @synthesize previousYOffset=_previousYOffset;
 @property(retain, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak SXViewport *viewport; // @synthesize viewport=_viewport;
-- (void).cxx_destruct;
 - (void)unregisterForViewportChanges;
 - (void)registerForViewportChanges;
 - (void)viewport:(id)arg1 dynamicBoundsDidChangeFromBounds:(struct CGRect)arg2;

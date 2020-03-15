@@ -28,9 +28,9 @@
 + (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D *)arg1 count:(unsigned long long)arg2;
 + (id)polygonWithPoints:(const CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2 interiorPolygons:(id)arg3;
 + (id)polygonWithPoints:(const CDStruct_c3b9c2ee *)arg1 count:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _isDefinitelyConvex; // @synthesize _isDefinitelyConvex;
 @property(readonly) NSArray *interiorPolygons; // @synthesize interiorPolygons=_interiorPolygons;
-- (void).cxx_destruct;
 - (void)_determineSimple;
 @property(readonly, nonatomic, getter=_isSimple) _Bool simple; // @synthesize simple=_simple;
 - (void)_calculateBounds;

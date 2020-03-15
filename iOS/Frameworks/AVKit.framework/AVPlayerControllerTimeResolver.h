@@ -32,9 +32,9 @@
 + (id)keyPathsForValuesAffectingRemainingTargetTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingTargetTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingTargetTime;
+- (void).cxx_destruct;
 @property double maxTime; // @synthesize maxTime=_maxTime;
 @property double minTime; // @synthesize minTime=_minTime;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property double currentTime;
 @property double resolution;

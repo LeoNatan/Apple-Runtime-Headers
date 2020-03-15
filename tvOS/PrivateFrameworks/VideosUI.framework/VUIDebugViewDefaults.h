@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _defaultIntegerValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long defaultIntegerValue; // @synthesize defaultIntegerValue=_defaultIntegerValue;
 @property(nonatomic) _Bool integerValueType; // @synthesize integerValueType=_integerValueType;
 @property(nonatomic) _Bool defaultBoolValue; // @synthesize defaultBoolValue=_defaultBoolValue;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)toggleDefaultBoolValue;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 domain:(id)arg3 defaultName:(id)arg4 boolType:(_Bool)arg5;
 

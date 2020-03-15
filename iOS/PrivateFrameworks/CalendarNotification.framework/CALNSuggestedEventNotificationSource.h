@@ -25,10 +25,10 @@
 + (id)suggestedEventCanceledCategoryIdentifier;
 + (id)coalescedSuggestedEventCategoryIdentifier;
 + (id)defaultSuggestedEventCategoryIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CALNCalendarIconIdentifierProvider> iconIdentifierProvider; // @synthesize iconIdentifierProvider=_iconIdentifierProvider;
 @property(readonly, nonatomic) __weak id <CALNNotificationManager> notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) id <CALNSuggestedEventNotificationDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)didReceiveResponse:(id)arg1;
 - (id)_sourceClientIdentifiersForObjectIDs:(id)arg1;
 - (void)refreshNotifications:(id)arg1;

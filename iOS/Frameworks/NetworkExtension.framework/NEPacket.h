@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NEFilterPacketInterpose *interpose; // @synthesize interpose=_interpose;
 @property void *context; // @synthesize context=_context;
 @property(readonly) NEFlowMetaData *metadata; // @synthesize metadata=_metadata;
 @property(readonly) long long direction; // @synthesize direction=_direction;
 @property(readonly) unsigned char protocolFamily; // @synthesize protocolFamily=_protocolFamily;
 @property(readonly, copy) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

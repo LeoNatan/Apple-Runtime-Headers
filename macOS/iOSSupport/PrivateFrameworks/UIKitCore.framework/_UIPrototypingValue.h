@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     double _stepSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double stepSize; // @synthesize stepSize=_stepSize;
 @property(retain, nonatomic) NSValue *currentValue; // @synthesize currentValue=_currentValue;
 @property(retain, nonatomic) NSValue *maximumValue; // @synthesize maximumValue=_maximumValue;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSValue *defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 

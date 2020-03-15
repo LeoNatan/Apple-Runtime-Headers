@@ -26,6 +26,7 @@
     IOUSBHostInterestNotificationReference *_interestNotificationReference;
 }
 
+- (void).cxx_destruct;
 @property(retain) IOUSBHostInterestNotificationReference *interestNotificationReference; // @synthesize interestNotificationReference=_interestNotificationReference;
 @property(retain) NSArray *supportedStringLanguages; // @synthesize supportedStringLanguages=_supportedStringLanguages;
 @property(retain) NSMutableDictionary *descriptorCache; // @synthesize descriptorCache=_descriptorCache;
@@ -39,7 +40,6 @@
 @property unsigned long long debugLoggingMask; // @synthesize debugLoggingMask=_debugLoggingMask;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property unsigned int ioService; // @synthesize ioService=_ioService;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long deviceAddress;
 - (id)ioDataWithCapacity:(unsigned long long)arg1 error:(id *)arg2;
 - (unsigned long long)frameNumberWithTime:(unsigned long long *)arg1;

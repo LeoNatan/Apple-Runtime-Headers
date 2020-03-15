@@ -24,6 +24,7 @@
     double __recentDeletionsTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double _recentDeletionsTimestamp; // @synthesize _recentDeletionsTimestamp=__recentDeletionsTimestamp;
 @property(nonatomic) int _recentDeletionsLocation; // @synthesize _recentDeletionsLocation=__recentDeletionsLocation;
 @property(readonly, nonatomic) NSMutableArray *_recentDeletions; // @synthesize _recentDeletions=__recentDeletions;
@@ -35,7 +36,6 @@
 @property(nonatomic, setter=_setSelectedRange:) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(copy, nonatomic, setter=_setInputText:) NSString *inputText; // @synthesize inputText=_inputText;
 @property(readonly, nonatomic) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
-- (void).cxx_destruct;
 - (void)_clearRecentDeletions;
 - (void)_recordRecentDeletionOfRange:(struct _NSRange)arg1 inString:(id)arg2;
 - (void)_performChangesAndNotify:(CDUnknownBlockType)arg1;

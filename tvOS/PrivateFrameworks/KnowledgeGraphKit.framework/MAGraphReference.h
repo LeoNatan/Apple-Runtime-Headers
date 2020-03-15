@@ -13,8 +13,8 @@
     MAGraph *_graph;
 }
 
-@property(readonly) __weak MAGraph *graph; // @synthesize graph=_graph;
 - (void).cxx_destruct;
+@property(readonly) __weak MAGraph *graph; // @synthesize graph=_graph;
 - (unsigned long long)hash;
 - (id)initWithGraph:(id)arg1;
 

@@ -18,9 +18,9 @@
 + (_Bool)supportsResolverCallback;
 + (id)encodeHosts:(id)arg1;
 + (unsigned int)endpointType;
+- (void).cxx_destruct;
 @property(readonly) NSData *hostsData; // @synthesize hostsData=_hostsData;
 @property(readonly) NSArray *hosts; // @synthesize hosts=_hosts;
-- (void).cxx_destruct;
 - (id)copyHostsWithPort:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

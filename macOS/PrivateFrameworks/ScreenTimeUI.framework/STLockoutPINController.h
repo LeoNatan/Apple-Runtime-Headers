@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedPINControllerWithStyle:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property __weak NSTextField *errorLabel; // @synthesize errorLabel=_errorLabel;
 @property __weak NSTextField *tileLabel; // @synthesize tileLabel=_tileLabel;
 @property __weak NSSecureTextField *pinSecureTextField; // @synthesize pinSecureTextField=_pinSecureTextField;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)changePin:(id)arg1;
 - (int)verifyPin:(id)arg1;
 - (void)setupVerifyPin:(int)arg1;

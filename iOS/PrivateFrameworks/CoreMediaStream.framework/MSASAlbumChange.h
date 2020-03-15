@@ -22,6 +22,7 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wasDeleted; // @synthesize wasDeleted=_wasDeleted;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) MSASInvitation *invitation; // @synthesize invitation=_invitation;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *ownerPersonID; // @synthesize ownerPersonID=_ownerPersonID;
 @property(copy, nonatomic) NSString *ownerEmail; // @synthesize ownerEmail=_ownerEmail;
 @property(retain, nonatomic) NSString *GUID; // @synthesize GUID=_GUID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

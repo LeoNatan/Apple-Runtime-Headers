@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     UIColor *_tintColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) BOOL canShowBreadcrumbs; // @synthesize canShowBreadcrumbs=_canShowBreadcrumbs;
-- (void).cxx_destruct;
 - (BOOL)supportsShowingBuildVersion;
 - (long long)idiom;
 - (BOOL)usesVerticalLayout;

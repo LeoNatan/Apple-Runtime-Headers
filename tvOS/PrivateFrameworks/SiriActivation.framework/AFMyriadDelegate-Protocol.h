@@ -15,6 +15,7 @@
 - (void)listeningDidBegin:(AFMyriadCoordinator *)arg1;
 - (void)advertisingDidEnd:(AFMyriadCoordinator *)arg1;
 - (void)advertisingDidBegin:(AFMyriadCoordinator *)arg1;
+- (void)advertisingWillBeginWithDelay:(float)arg1 advertisingInterval:(float)arg2;
 - (void)shouldHandleEmergency:(AFMyriadCoordinator *)arg1;
 - (void)shouldUnduck:(AFMyriadCoordinator *)arg1;
 - (void)shouldContinue:(AFMyriadCoordinator *)arg1;

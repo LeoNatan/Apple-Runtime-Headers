@@ -16,11 +16,11 @@
     NSMutableDictionary *_pendingAlbumGUIDToAssetCollections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingAlbumGUIDToAssetCollections; // @synthesize pendingAlbumGUIDToAssetCollections=_pendingAlbumGUIDToAssetCollections;
 @property(retain, nonatomic) NSMutableSet *pendingAlbumGUIDsWithSharingInfoChanges; // @synthesize pendingAlbumGUIDsWithSharingInfoChanges=_pendingAlbumGUIDsWithSharingInfoChanges;
 @property(retain, nonatomic) NSMutableSet *pendingAlbumChanges; // @synthesize pendingAlbumChanges=_pendingAlbumChanges;
 @property(retain, nonatomic) NSMutableSet *pendingAlbumGUIDsWithKeyValueChanges; // @synthesize pendingAlbumGUIDsWithKeyValueChanges=_pendingAlbumGUIDsWithKeyValueChanges;
-- (void).cxx_destruct;
 - (_Bool)hasPendingChanges;
 - (void)removePendingSharingInfoChangesForAlbumGUID:(id)arg1;
 - (void)removePendingAssetCollection:(id)arg1 forAlbumGUID:(id)arg2;

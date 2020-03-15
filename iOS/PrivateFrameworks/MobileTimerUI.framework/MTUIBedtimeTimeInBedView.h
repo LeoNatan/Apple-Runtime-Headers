@@ -22,6 +22,7 @@
 }
 
 + (long long)defaultOptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *moreHistoryButton; // @synthesize moreHistoryButton=_moreHistoryButton;
 @property(retain, nonatomic) MTUIBedtimeGraphView *graphView; // @synthesize graphView=_graphView;
 @property(retain, nonatomic) UIImageView *wakeGlyph; // @synthesize wakeGlyph=_wakeGlyph;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(nonatomic) double glyphSize; // @synthesize glyphSize=_glyphSize;
-- (void).cxx_destruct;
 - (void)moreHistoryButtonPressed:(id)arg1;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;

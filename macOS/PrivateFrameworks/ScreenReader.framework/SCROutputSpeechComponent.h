@@ -27,13 +27,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_createSanitizedAvailableVoices;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLastSpokenWordRange:) struct _NSRange _lastSpokenWordRange; // @synthesize _lastSpokenWordRange=__lastSpokenWordRange;
 @property(retain, nonatomic) NSDictionary *customPunctuationTableReplacements; // @synthesize customPunctuationTableReplacements=_customPunctuationTableReplacements;
 @property(retain, nonatomic) NSDictionary *customPunctuationTableRules; // @synthesize customPunctuationTableRules=_customPunctuationTableRules;
 @property(copy, nonatomic) NSString *lastSpokenString; // @synthesize lastSpokenString=_lastSpokenString;
 @property(retain, nonatomic) NSDictionary *defaultLanguageTextProcessingProperties; // @synthesize defaultLanguageTextProcessingProperties=_defaultLanguageTextProcessingProperties;
 @property(nonatomic) BOOL needToRebuildDefaultLanguageTextProcessingProperties; // @synthesize needToRebuildDefaultLanguageTextProcessingProperties=_needToRebuildDefaultLanguageTextProcessingProperties;
-- (void).cxx_destruct;
 - (void)_updateCustomPunctuationTables;
 - (id)_replaceEmbeddedTTSCommandsAttributedString:(id)arg1;
 - (id)_replaceEmbeddedTTSCommands:(id)arg1;

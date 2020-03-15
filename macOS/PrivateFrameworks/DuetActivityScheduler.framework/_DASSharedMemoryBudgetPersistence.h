@@ -28,8 +28,8 @@
 + (id)persistence;
 + (void)initialize;
 + (id)log;
-@property(retain, nonatomic) NSMutableDictionary *budgetToIndex; // @synthesize budgetToIndex=_budgetToIndex;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *budgetToIndex; // @synthesize budgetToIndex=_budgetToIndex;
 - (id)lastModulationDate;
 - (void)saveModulationDate:(id)arg1;
 - (id)loadBudgetsWithExpectedNames:(id)arg1;

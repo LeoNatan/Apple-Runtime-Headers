@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)_playButtonActivate:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGSize)intrinsicContentSize;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

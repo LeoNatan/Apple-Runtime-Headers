@@ -18,12 +18,12 @@
     CoreTelephonyClient *_telephonyClient;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(retain, nonatomic) NSMutableOrderedSet *requests; // @synthesize requests=_requests;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(retain, nonatomic) TPSRequest *pendingRequest; // @synthesize pendingRequest=_pendingRequest;
-- (void).cxx_destruct;
 - (void)postResponse:(id)arg1;
 - (void)executeRequest:(id)arg1;
 - (void)execute;

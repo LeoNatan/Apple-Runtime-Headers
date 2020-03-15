@@ -20,11 +20,11 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) PHLivePhotoRequestOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
-- (void).cxx_destruct;
 - (void)_prepareLivePhotoIfPossible;
 - (void)_handleVideoRequestResult:(id)arg1 info:(id)arg2;
 - (void)_handleImageRequestResult:(id)arg1 info:(id)arg2;

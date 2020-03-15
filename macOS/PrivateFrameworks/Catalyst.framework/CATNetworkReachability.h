@@ -23,10 +23,10 @@
 + (id)reachabilityForInternetConnection;
 + (id)reachabilityWithAddress:(id)arg1;
 + (id)keyPathsForValuesAffectingReachable;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(nonatomic) __weak id <CATNetworkReachabilityDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CATAddress *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (void)configureCallback;
 - (void)delegateDidChange;
 - (void)reachabilityDidChangeWithFlags:(unsigned int)arg1;

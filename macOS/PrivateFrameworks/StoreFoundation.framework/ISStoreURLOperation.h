@@ -33,6 +33,7 @@
 + (id)pingOperationWithUrl:(id)arg1 storeClient:(id)arg2;
 + (void)addITunesStoreHeadersToRequest:(id)arg1 withStoreClient:(id)arg2 storeAccount:(id)arg3;
 + (id)acceptLanguageHeaderString;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *strongToken; // @synthesize strongToken=_strongToken;
 @property BOOL shouldRetryOnSilentADIAction; // @synthesize shouldRetryOnSilentADIAction=_shouldRetryOnSilentADIAction;
 @property(copy) CDUnknownBlockType requestMutationHandler; // @synthesize requestMutationHandler=_requestMutationHandler;
@@ -44,7 +45,6 @@
 @property BOOL needsAuthentication; // @synthesize needsAuthentication=_needsAuthentication;
 @property(retain) NSNumber *authenticatedDSID; // @synthesize authenticatedDSID=_authenticatedDSID;
 @property(retain) ISAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
-- (void).cxx_destruct;
 - (void)_runURLOperation;
 - (BOOL)_canSendTokenToURL:(id)arg1;
 - (BOOL)_authenticateReturningError:(id *)arg1;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _totalFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *finalAlphas; // @synthesize finalAlphas=_finalAlphas;
 @property(retain, nonatomic) NSMutableDictionary *initialAlphas; // @synthesize initialAlphas=_initialAlphas;
 @property(retain, nonatomic) NSDictionary *finalFrames; // @synthesize finalFrames=_finalFrames;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float safeAreaInset; // @synthesize safeAreaInset=_safeAreaInset;
 @property(nonatomic) unsigned int edge; // @synthesize edge=_edge;
 @property(nonatomic) __weak UICellAccessoryManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (struct CGRect)endLayout;
 - (float)finalAlphaForAccessory:(id)arg1;
 - (float)initialAlphaForAccessory:(id)arg1;

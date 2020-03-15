@@ -16,11 +16,11 @@
     CDUnknownBlockType _clearButtonAction;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType clearButtonAction; // @synthesize clearButtonAction=_clearButtonAction;
 @property(readonly, nonatomic) UIButton *clearButton; // @synthesize clearButton=_clearButton;
 @property(readonly, nonatomic) UILabel *screenshotDateLabel; // @synthesize screenshotDateLabel=_screenshotDateLabel;
 @property(readonly, nonatomic) UIImageView *screenshotImageView; // @synthesize screenshotImageView=_screenshotImageView;
-- (void).cxx_destruct;
 - (void)clearButtonTapped:(id)arg1;
 - (id)_createScreenshotImageView;
 - (id)_createScreenshotDateLabel;

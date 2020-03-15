@@ -16,9 +16,9 @@
     NSRemoteView *_remoteView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *remoteViewClass; // @synthesize remoteViewClass=_remoteViewClass;
 @property(retain) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
-- (void).cxx_destruct;
 - (void)didUnselect;
 - (void)didSelect;
 @property(readonly) NSXPCInterface *remoteObjectInterface; // @dynamic remoteObjectInterface;

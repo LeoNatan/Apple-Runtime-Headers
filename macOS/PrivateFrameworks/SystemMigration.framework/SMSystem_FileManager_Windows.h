@@ -18,11 +18,11 @@
     SMSystem_Daemon_Windows *_system;
 }
 
+- (void).cxx_destruct;
 @property(retain) SMSystem_Daemon_Windows *system; // @synthesize system=_system;
 @property(readonly) NSURL *userHomeRoot; // @synthesize userHomeRoot;
 @property(readonly) NSURL *userContentRoot; // @synthesize userContentRoot;
 @property(readonly) NSString *productVersion; // @synthesize productVersion;
-- (void).cxx_destruct;
 - (id)bundleInformationAtPaths:(id)arg1;
 - (id)resourceValuesForKeys:(id)arg1 onPaths:(id)arg2 error:(id *)arg3;
 - (id)pathToRemoteFile:(id)arg1 exists:(char *)arg2 makeAvailable:(BOOL)arg3;

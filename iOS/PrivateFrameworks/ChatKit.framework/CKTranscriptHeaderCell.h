@@ -14,8 +14,8 @@
 }
 
 + (double)defaultCellHeight;
-@property(retain, nonatomic) UIView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 - (void)startAnimatingActivityIndicator;
 - (void)layoutSubviewsForAlignmentContents;
 - (id)initWithFrame:(struct CGRect)arg1;

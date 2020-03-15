@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)policyWithPolicies:(id)arg1;
-@property(retain) NSArray *policies; // @synthesize policies=_policies;
 - (void).cxx_destruct;
+@property(retain) NSArray *policies; // @synthesize policies=_policies;
 - (id)processMetadata:(id)arg1;
 - (BOOL)metadataNeedsProcessing:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

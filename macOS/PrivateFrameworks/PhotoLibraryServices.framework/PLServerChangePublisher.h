@@ -25,6 +25,8 @@
 - (void)_postChangeHubNotification;
 - (void)distributeChangeEvent:(id)arg1 transaction:(id)arg2;
 - (id)publishChangeEvent:(id)arg1 delayedSaveActionsDetail:(id)arg2 transaction:(id)arg3;
+- (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

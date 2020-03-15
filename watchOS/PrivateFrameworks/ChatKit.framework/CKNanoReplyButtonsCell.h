@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (float)defaultCellHeightForLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2;
 + (float)defaultCellHeightForLanguage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKNanoReplyButtonsView *replyButtons; // @synthesize replyButtons=_replyButtons;
 @property(nonatomic) __weak id <CKNanoReplyButtonsCellDelegate> replyDelegate; // @synthesize replyDelegate=_replyDelegate;
-- (void).cxx_destruct;
 - (void)replyButtonsView:(id)arg1 tappedReplyType:(unsigned int)arg2;
 @property(readonly, nonatomic) _Bool shouldShowSurf;
 @property(readonly, copy, nonatomic) NSString *primaryLanguage;

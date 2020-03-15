@@ -13,8 +13,8 @@
     JSManagedValue *_managedWeakMap;
 }
 
-@property(readonly, nonatomic) JSManagedValue *managedWeakMap; // @synthesize managedWeakMap=_managedWeakMap;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) JSManagedValue *managedWeakMap; // @synthesize managedWeakMap=_managedWeakMap;
 - (id)_jsWeakMap;
 - (const struct OpaqueJSValue *)valueRefForWeakKeyRef:(struct OpaqueJSValue *)arg1;
 - (id)valueForWeakKey:(id)arg1;

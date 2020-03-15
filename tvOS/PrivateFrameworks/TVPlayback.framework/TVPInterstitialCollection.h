@@ -15,10 +15,10 @@
     id _backingData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id backingData; // @synthesize backingData=_backingData;
 @property(retain, nonatomic) NSArray *interstitialsWithAdjacentsMerged; // @synthesize interstitialsWithAdjacentsMerged=_interstitialsWithAdjacentsMerged;
 @property(retain, nonatomic) NSArray *interstitials; // @synthesize interstitials=_interstitials;
-- (void).cxx_destruct;
 - (id)mergedInterstitialForTime:(double)arg1;
 - (id)interstitialForTime:(double)arg1;
 - (double)timeAdjustedByIncludingInterstitials:(double)arg1;

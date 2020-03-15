@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSArray *_loadedTimeRanges;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *loadedTimeRanges; // @synthesize loadedTimeRanges=_loadedTimeRanges;
 @property(retain, nonatomic) PGPlaybackProgress *playbackProgress; // @synthesize playbackProgress=_playbackProgress;
-- (void).cxx_destruct;
 - (void)_updateLoadedTimeRangesMaskViewMaskRanges;
 - (void)_updatePlaybackProgressMaskViewMaskRanges;
 - (void)_updatePlaybackProgressTimer;

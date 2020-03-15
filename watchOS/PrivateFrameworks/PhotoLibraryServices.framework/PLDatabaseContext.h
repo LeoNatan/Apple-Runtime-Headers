@@ -34,6 +34,8 @@
 - (id)newLowPriorityTransientLibrary;
 - (id)highPriorityTransientLibrary;
 - (id)newHighPriorityTransientLibrary;
+- (void)dealloc;
+- (void)invalidate;
 - (id)initWithLibraryBundle:(id)arg1;
 
 @end

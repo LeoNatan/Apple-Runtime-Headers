@@ -17,10 +17,10 @@
     PXAssetCollectionActionPerformer *__activePerformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setActivePerformer:) PXAssetCollectionActionPerformer *_activePerformer; // @synthesize _activePerformer=__activePerformer;
 @property(readonly, nonatomic) NSDictionary *_performerClassesByType; // @synthesize _performerClassesByType=__performerClassesByType;
 @property(readonly, nonatomic) NSMapTable *_actionTypeByBarButtonItem; // @synthesize _actionTypeByBarButtonItem=__actionTypeByBarButtonItem;
-- (void).cxx_destruct;
 - (void)performActivity:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1 forActivity:(id)arg2;
 - (void)_handleActionPerformerComplete:(id)arg1 success:(_Bool)arg2 error:(id)arg3;

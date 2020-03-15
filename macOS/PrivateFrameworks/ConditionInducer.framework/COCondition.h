@@ -18,8 +18,8 @@
 + (id)info;
 + (id)profileFriendlyName;
 + (id)description;
-@property(retain, nonatomic) NSArray *additionalArguments; // @synthesize additionalArguments=_additionalArguments;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *additionalArguments; // @synthesize additionalArguments=_additionalArguments;
 - (BOOL)isInternalOnlyFromDict:(id)arg1;
 - (BOOL)isDestructiveFromDict:(id)arg1;
 - (id)userFriendlyNameFromDict:(id)arg1;

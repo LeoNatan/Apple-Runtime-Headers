@@ -24,6 +24,7 @@
 
 + (id)sleepSampleWithInterval:(id)arg1 sampleType:(long long)arg2 metadata:(id)arg3;
 + (id)platformSpecificSourceBundleIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MTBedtimeSessionTrackerDelegate> bedtimeSessionTrackerDelegate; // @synthesize bedtimeSessionTrackerDelegate=_bedtimeSessionTrackerDelegate;
 @property(retain, nonatomic) id <MTBedtimeSessionTracker> bedtimeSessionTracker; // @synthesize bedtimeSessionTracker=_bedtimeSessionTracker;
 @property(copy, nonatomic) NSString *archivedSessionDataFile; // @synthesize archivedSessionDataFile=_archivedSessionDataFile;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) MTAlarmStorage *alarmStorage; // @synthesize alarmStorage=_alarmStorage;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
-- (void).cxx_destruct;
 - (id)_writeSessions:(id)arg1;
 - (id)_writeSessionData;
 - (void)_removeSessionDataFile;

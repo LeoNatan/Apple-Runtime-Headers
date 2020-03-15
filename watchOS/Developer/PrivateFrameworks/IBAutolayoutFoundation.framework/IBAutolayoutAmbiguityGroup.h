@@ -19,12 +19,12 @@
     unsigned long long _orientationMask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long orientationMask; // @synthesize orientationMask=_orientationMask;
 @property(readonly, nonatomic) NSSet *contentSizePriorityChangesResolvingAmbiguity; // @synthesize contentSizePriorityChangesResolvingAmbiguity=_contentSizePriorityChangesResolvingAmbiguity;
 @property(readonly, nonatomic) NSSet *inequalityConstraintsResolvingAmbiguity; // @synthesize inequalityConstraintsResolvingAmbiguity=_inequalityConstraintsResolvingAmbiguity;
 @property(readonly, nonatomic) NSSet *constraintAbstractionsAffectingLayout; // @synthesize constraintAbstractionsAffectingLayout=_constraintAbstractionsAffectingLayout;
 @property(readonly, nonatomic) NSDictionary *ambiguousViewsToAmbiguityStatus; // @synthesize ambiguousViewsToAmbiguityStatus=_ambiguousViewsToAmbiguityStatus;
-- (void).cxx_destruct;
 - (id)ambiguityGroupByRemovingReferencesToItem:(id)arg1;
 - (id)viewsWithScrollableContentSizeAmbiguity;
 - (id)viewsCompletelyMissingConstraintsForSomeVariables;

@@ -15,8 +15,8 @@
     NSString *_identifier;
 }
 
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
 

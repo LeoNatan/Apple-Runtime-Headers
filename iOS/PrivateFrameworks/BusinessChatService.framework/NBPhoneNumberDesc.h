@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSData *_possibleNumberMatcherData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *possibleNumberMatcherData; // @synthesize possibleNumberMatcherData=_possibleNumberMatcherData;
 @property(readonly, nonatomic) NSData *nationalNumberMatcherData; // @synthesize nationalNumberMatcherData=_nationalNumberMatcherData;
 @property(readonly, nonatomic) NSString *exampleNumber; // @synthesize exampleNumber=_exampleNumber;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *possibleLength; // @synthesize possibleLength=_possibleLength;
 @property(readonly, nonatomic) NSString *possibleNumberPattern; // @synthesize possibleNumberPattern=_possibleNumberPattern;
 @property(readonly, nonatomic) NSString *nationalNumberPattern; // @synthesize nationalNumberPattern=_nationalNumberPattern;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithEntry:(id)arg1;
 

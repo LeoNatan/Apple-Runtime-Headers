@@ -21,12 +21,12 @@
 }
 
 + (id)optimizerWithDescriptor:(id)arg1 beta1:(double)arg2 beta2:(double)arg3 epsilon:(float)arg4 timeStep:(unsigned long long)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLFoundationOptimizerDescriptor *optimizerDescriptor; // @synthesize optimizerDescriptor=_optimizerDescriptor;
 @property(readonly, nonatomic) unsigned long long timeStep; // @synthesize timeStep=_timeStep;
 @property(readonly, nonatomic) float epsilon; // @synthesize epsilon=_epsilon;
 @property(readonly, nonatomic) double beta2; // @synthesize beta2=_beta2;
 @property(readonly, nonatomic) double beta1; // @synthesize beta1=_beta1;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (BOOL)compileForDevice:(id)arg1;

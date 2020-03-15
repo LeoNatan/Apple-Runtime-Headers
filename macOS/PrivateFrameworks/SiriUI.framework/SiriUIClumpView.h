@@ -17,11 +17,11 @@
     id <SiriUIClumpViewDelegate> _clumpViewDelegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL allowsQuickLook; // @synthesize allowsQuickLook=_allowsQuickLook;
 @property __weak id <SiriUIClumpViewDelegate> clumpViewDelegate; // @synthesize clumpViewDelegate=_clumpViewDelegate;
 @property __weak NSCollectionViewLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(readonly) NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 @property BOOL acceptsFirstMouse;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 collectionView:(id)arg2 collectionViewLayout:(id)arg3;

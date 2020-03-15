@@ -12,9 +12,9 @@
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) id key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
 
 @end

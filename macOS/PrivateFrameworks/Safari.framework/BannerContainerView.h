@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     id <BannerContainerViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BannerContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BannerContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_moveBannerIntoPlace:(id)arg1 bannerIsAppearing:(BOOL)arg2 withAnimation:(BOOL)arg3;
 @property(readonly, nonatomic, getter=isAnimating) BOOL animating;
 - (void)uninstallBanner:(id)arg1 withAnimation:(BOOL)arg2;

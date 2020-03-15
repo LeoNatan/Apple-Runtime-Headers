@@ -27,10 +27,10 @@
 + (id)accessSpecifierUnrestrictedWithAssociatedAppBundleIdentifier:(id)arg1 bundleIdentifier:(id)arg2;
 + (id)accessSpecifierUnrestricted;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *associatedAppBundleIdentifier; // @synthesize associatedAppBundleIdentifier=_associatedAppBundleIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isRemovalService;
 - (BOOL)isSettingsApp;
 - (BOOL)allowHomeResidentShortcutRunning;

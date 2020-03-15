@@ -30,9 +30,9 @@
 + (id)historyDatabaseURL;
 + (id)historyPropertyListURL;
 + (id)existingSharedHistory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryTagMap *historyTagMap; // @synthesize historyTagMap=_historyTagMap;
 @property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
-- (void).cxx_destruct;
 - (Class)_historyItemClass;
 - (void)_addVisitedLinksForItemsIfNeeded:(id)arg1;
 - (void)_removeAllVisitedLinks;
@@ -86,6 +86,7 @@
 - (void)updateTitle:(id)arg1 forVisit:(id)arg2;
 - (BOOL)canRecordRedirectFromVisit:(id)arg1 to:(id)arg2;
 - (void)checkIfLocalVisitExistsInAnyOfItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)getHighLevelHTTPFamilyDomainsVisitedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getVisitsCreatedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)itemRedirectedFrom:(id)arg1 to:(id)arg2 origin:(long long)arg3 date:(id)arg4;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(BOOL)arg4 wasFailure:(BOOL)arg5 increaseVisitCount:(BOOL)arg6 origin:(long long)arg7 attributes:(unsigned long long)arg8;

@@ -25,6 +25,7 @@
 
 + (long long)appletTypeForDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKFelicaGreenCarTicket *greenCarTicket; // @synthesize greenCarTicket=_greenCarTicket;
 @property(readonly, copy, nonatomic) PKFelicaShinkansenTicket *shinkansenTicket; // @synthesize shinkansenTicket=_shinkansenTicket;
 @property(readonly, nonatomic, getter=isLowBalanceNotificationEnabled) _Bool lowBalanceNotificationEnabled; // @synthesize lowBalanceNotificationEnabled=_lowBalanceNotificationEnabled;
@@ -35,7 +36,6 @@
 @property(readonly, copy, nonatomic) NSNumber *SPID; // @synthesize SPID=_SPID;
 @property(readonly, copy, nonatomic) NSString *transactionID; // @synthesize transactionID=_transactionID;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_addEnrouteTransitType:(id)arg1;
 - (BOOL)isInStation;
 @property(readonly, nonatomic, getter=isInShinkansenStation) _Bool inShinkansenStation; // @dynamic inShinkansenStation;

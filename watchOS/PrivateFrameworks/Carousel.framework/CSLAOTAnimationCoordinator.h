@@ -19,8 +19,8 @@
     id <CSLAOTAnimationCoordinatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLAOTAnimationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLAOTAnimationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_createAnimationWithIsAOTOn:(_Bool)arg1 initialProgress:(float)arg2 interruptedExistingAnimation:(_Bool)arg3 animationSpeed:(float)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_configureViewsWithAOTOffProgress:(float)arg1;
 - (void)_configureViewsWithAOTOnProgress:(float)arg1;

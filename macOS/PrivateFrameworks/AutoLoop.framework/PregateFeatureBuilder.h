@@ -24,6 +24,8 @@
     vector_f72cac12 _frameBlurVectors;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *videoTrackMetadataDict; // @synthesize videoTrackMetadataDict=_videoTrackMetadataDict;
 @property(retain) NSArray *movieMetadata; // @synthesize movieMetadata=_movieMetadata;
 @property(retain) NSArray *facesArray; // @synthesize facesArray=_facesArray;
@@ -36,8 +38,6 @@
 @property(retain) IrisVideoMetadataExtractor *irisVideoExtractor; // @synthesize irisVideoExtractor;
 @property(retain) NSArray *stdProcessInputKeysArray; // @synthesize stdProcessInputKeysArray;
 @property(readonly) NSMutableDictionary *featuresDict; // @synthesize featuresDict;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)processFullDictionary:(BOOL)arg1;
 - (void)buildFullDictionary;
 - (int)processVideo;

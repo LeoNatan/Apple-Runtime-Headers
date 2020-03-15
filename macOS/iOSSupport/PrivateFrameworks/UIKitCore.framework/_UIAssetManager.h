@@ -36,8 +36,6 @@
     _UIAssetManager *_nextAssetManager;
 }
 
-+ (BOOL)_validStackImageData:(id)arg1;
-+ (BOOL)validStackImageFile:(id)arg1;
 + (double)_watchScreenScale;
 + (void)_clearAllCachedImagesAndAssets;
 + (void)_dropResourceReferencesForURL:(id)arg1;
@@ -62,8 +60,6 @@
 - (id)_defaultAppearanceNames;
 - (id)_appearanceNames;
 - (BOOL)_hasMultipleAppearances;
-- (id)stackImageWithData:(id)arg1 forTraitCollection:(id)arg2;
-- (id)stackImageWithContentsOfFile:(id)arg1 forTraitCollection:(id)arg2;
 - (id)description;
 - (void)_disconnectImageAssets;
 - (id)_allImageNames;

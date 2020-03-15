@@ -15,8 +15,8 @@
     CDUnknownBlockType _completionHandler;
 }
 
-@property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)feedParser:(id)arg1 parsedFeedWithMetadata:(id)arg2 entries:(id)arg3;
 - (void)feedParser:(id)arg1 failedParsingFeedWithError:(id)arg2;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;

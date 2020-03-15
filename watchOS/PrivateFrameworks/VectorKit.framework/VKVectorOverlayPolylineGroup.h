@@ -21,10 +21,10 @@
     NSArray *_polylines;
 }
 
-@property(readonly, nonatomic) NSArray *polylines; // @synthesize polylines=_polylines;
-@property(readonly, nonatomic) shared_ptr_e2cb55c7 style; // @synthesize style=_style;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *polylines; // @synthesize polylines=_polylines;
+@property(readonly, nonatomic) shared_ptr_e2cb55c7 style; // @synthesize style=_style;
 @property(nonatomic) float miterLimit;
 @property(nonatomic) int lineCap;
 @property(nonatomic) int lineJoin;

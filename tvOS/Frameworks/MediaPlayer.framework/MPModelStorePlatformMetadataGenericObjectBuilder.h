@@ -58,8 +58,8 @@
     MPPropertySet *_requestedProperties;
 }
 
-@property(readonly, copy, nonatomic) MPPropertySet *requestedProperties; // @synthesize requestedProperties=_requestedProperties;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) MPPropertySet *requestedProperties; // @synthesize requestedProperties=_requestedProperties;
 - (id)genericObjectForStorePlatformMetadata:(id)arg1 userIdentity:(id)arg2;
 - (id)initWithRequestedProperties:(id)arg1;
 

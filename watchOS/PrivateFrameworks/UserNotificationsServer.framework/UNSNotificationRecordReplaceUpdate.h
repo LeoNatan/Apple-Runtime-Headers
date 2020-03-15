@@ -15,9 +15,9 @@
 }
 
 + (id)updateWithNotificationRecord:(id)arg1 replacedNotificationRecord:(id)arg2 shouldRepost:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldRepost; // @synthesize shouldRepost=_shouldRepost;
 @property(readonly, nonatomic) UNSNotificationRecord *replacedNotificationRecord; // @synthesize replacedNotificationRecord=_replacedNotificationRecord;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)_initWithNotificationRecord:(id)arg1 replacedNotificationRecord:(id)arg2 shouldRepost:(_Bool)arg3;

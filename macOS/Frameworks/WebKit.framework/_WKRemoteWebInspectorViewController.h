@@ -16,14 +16,16 @@
     id <_WKRemoteWebInspectorViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) id <_WKRemoteWebInspectorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) id <_WKRemoteWebInspectorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)_setDiagnosticLoggingDelegate:(id)arg1;
 - (void)closeFromFrontend;
 - (void)sendMessageToBackend:(id)arg1;
 - (void)sendMessageToFrontend:(id)arg1;
 - (void)show;
 - (void)close;
+- (void)loadForDebuggable:(id)arg1 backendCommandsURL:(id)arg2;
 - (void)loadForDebuggableType:(long long)arg1 backendCommandsURL:(id)arg2;
 @property(readonly, retain, nonatomic) WKWebView *webView;
 @property(readonly, retain, nonatomic) NSWindow *window;

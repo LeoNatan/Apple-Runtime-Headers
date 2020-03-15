@@ -30,11 +30,11 @@
 + (id)_relativeDateFormatter;
 + (id)_timeOnlyDateFormatter;
 + (id)_dateFormatter;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldRecomputeText; // @synthesize shouldRecomputeText=_shouldRecomputeText;
 @property(nonatomic) double paddingFromTimeToDesignator; // @synthesize paddingFromTimeToDesignator=_paddingFromTimeToDesignator;
 @property(nonatomic) BOOL boldForAllLocales; // @synthesize boldForAllLocales=_boldForAllLocales;
 @property(nonatomic) BOOL forceTimeOnly; // @synthesize forceTimeOnly=_forceTimeOnly;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize timeDesignatorSize;
 @property(readonly, nonatomic) UIFont *timeDesignatorFont;
 @property(readonly, nonatomic) NSString *timeDesignator;

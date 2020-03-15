@@ -13,6 +13,7 @@
     _Bool _shouldPersistAdjustmentSidecar;
     _Bool _expectingPairedVideo;
     AVCapturePhoto *_capturePhoto;
+    NSString *_deferredPhotoIdentifier;
     NSDate *_captureDate;
     NSDictionary *_metadata;
     NSError *_error;
@@ -21,6 +22,7 @@
     CAMCaptureCoordinationInfo *_coordinationInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isExpectingPairedVideo) _Bool expectingPairedVideo; // @synthesize expectingPairedVideo=_expectingPairedVideo;
 @property(readonly, nonatomic) CAMCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
 @property(readonly, copy, nonatomic) NSString *persistenceUUID; // @synthesize persistenceUUID=_persistenceUUID;
@@ -29,8 +31,8 @@
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
+@property(readonly, copy, nonatomic) NSString *deferredPhotoIdentifier; // @synthesize deferredPhotoIdentifier=_deferredPhotoIdentifier;
 @property(readonly, nonatomic) AVCapturePhoto *capturePhoto; // @synthesize capturePhoto=_capturePhoto;
-- (void).cxx_destruct;
 - (id)description;
 - (id)compactMetadataWithSecondaryMakerNote:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *compactMetadata;

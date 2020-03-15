@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSData *resourceData; // @synthesize resourceData=_resourceData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *resourceData; // @synthesize resourceData=_resourceData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

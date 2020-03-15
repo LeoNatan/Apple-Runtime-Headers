@@ -23,10 +23,10 @@
 + (double)defaultHeightForColor:(int)arg1;
 + (double)defaultHeight;
 + (id)defaultStandardFont;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesOverlayBlendingForContents; // @synthesize usesOverlayBlendingForContents=_usesOverlayBlendingForContents;
 @property(nonatomic) BOOL roundsCorners; // @synthesize roundsCorners=_roundsCorners;
 @property(nonatomic) BOOL blursBackground; // @synthesize blursBackground=_blursBackground;
-- (void).cxx_destruct;
 - (void)setDisabledButtonColor:(int)arg1;
 - (void)setTitleVerticalOffset:(double)arg1;
 - (void)setIconVerticalOffset:(double)arg1;

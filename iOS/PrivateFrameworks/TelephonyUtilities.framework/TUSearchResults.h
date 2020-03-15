@@ -19,12 +19,12 @@
     NSMutableArray *_allDataItemsCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *allDataItemsCache; // @synthesize allDataItemsCache=_allDataItemsCache;
 @property(retain, nonatomic) NSMutableArray *allSearchItemsCache; // @synthesize allSearchItemsCache=_allSearchItemsCache;
 @property __weak TUSearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain, nonatomic) NSMutableArray *resultGroups; // @synthesize resultGroups=_resultGroups;
 @property(retain, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NSArray *allDataItems;
 @property(readonly) NSArray *allSearchItems;

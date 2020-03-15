@@ -16,8 +16,8 @@
     id <SXComponentInsertionConditionEngine> _conditionEngine;
 }
 
-@property(readonly, nonatomic) id <SXComponentInsertionConditionEngine> conditionEngine; // @synthesize conditionEngine=_conditionEngine;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXComponentInsertionConditionEngine> conditionEngine; // @synthesize conditionEngine=_conditionEngine;
 - (id)componentInsertForMarker:(id)arg1 DOMObjectProvider:(id)arg2 layoutProvider:(id)arg3;
 - (_Bool)validateMarker:(id)arg1 DOMObjectProvider:(id)arg2 layoutProvider:(id)arg3;
 @property(readonly, nonatomic) unsigned long long componentTraits;

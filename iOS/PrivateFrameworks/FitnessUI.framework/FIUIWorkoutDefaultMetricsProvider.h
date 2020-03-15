@@ -18,10 +18,10 @@
     NSArray *_supportedMetrics;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *supportedMetrics; // @synthesize supportedMetrics=_supportedMetrics;
 @property(readonly, copy, nonatomic) NSArray *defaultEnabledMetrics; // @synthesize defaultEnabledMetrics=_defaultEnabledMetrics;
 @property(readonly, nonatomic) long long metricsVersion; // @synthesize metricsVersion=_metricsVersion;
-- (void).cxx_destruct;
 - (id)supportedMetricsWithIsMachineWorkout:(_Bool)arg1 activityType:(id)arg2;
 - (_Bool)isMetricTypeSupported:(unsigned long long)arg1 isMachineWorkout:(_Bool)arg2 activityType:(id)arg3;
 - (id)appendMachineMetricsToMetrics:(id)arg1 maxNumMetrics:(long long)arg2 activityType:(id)arg3;

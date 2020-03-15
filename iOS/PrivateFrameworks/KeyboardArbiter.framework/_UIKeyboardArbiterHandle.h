@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)handlerWithArbiter:(id)arg1 forConnection:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) _Bool wantsFence; // @synthesize wantsFence=_wantsFence;
 @property(readonly) double iavHeight; // @synthesize iavHeight=_iavHeight;
 @property(readonly) double level; // @synthesize level=_level;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property _Bool running; // @synthesize running=_running;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)signalEventSourceChanged:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setKeyboardTotalDisable:(_Bool)arg1 withFence:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)focusApplicationWithProcessIdentifier:(int)arg1 sceneDeferringToken:(id)arg2 onCompletion:(CDUnknownBlockType)arg3;

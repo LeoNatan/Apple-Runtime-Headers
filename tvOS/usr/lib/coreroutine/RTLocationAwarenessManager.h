@@ -29,8 +29,8 @@
     NSDate *_scheduledHeartbeatFiringTime;
     NSDate *_scheduledRestTimerFiringTime;
     RTLocationAwarenessManagerConfig *_config;
-    struct NSMapTable *_requesterToHeartbeatBucket;
-    struct NSMapTable *_heartbeatBucketToRequesters;
+    NSMapTable *_requesterToHeartbeatBucket;
+    NSMapTable *_heartbeatBucketToRequesters;
     RTLocationManager *_locationManager;
     NSObject<OS_dispatch_source> *_heartbeatTimer;
     NSObject<OS_dispatch_source> *_restTimer;
@@ -49,6 +49,7 @@
 + (void)invalidateDispatchTimer:(id)arg1;
 + (id)createDefaultDispatchTimerWithQueue:(id)arg1;
 + (long long)localHourFromTimestamp:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RTInvocationDispatcher *heartbeatBuffer; // @synthesize heartbeatBuffer=_heartbeatBuffer;
 @property(copy, nonatomic) NSDate *stationaryStartTimestamp; // @synthesize stationaryStartTimestamp=_stationaryStartTimestamp;
 @property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
@@ -80,7 +81,6 @@
 @property(retain, nonatomic) RTAuthorizationManager *authorizationManager; // @synthesize authorizationManager=_authorizationManager;
 @property(retain, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(retain, nonatomic) RTLocationAwarenessMetrics *metrics; // @synthesize metrics=_metrics;
-- (void).cxx_destruct;
 - (double)intervalForHeartbeatBucket:(id)arg1;
 - (id)heartbeatBucketForInterval:(double)arg1;
 - (_Bool)coarseLocation:(id)arg1;

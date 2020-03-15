@@ -14,9 +14,9 @@
     NSButton *_aboutButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *aboutButton; // @synthesize aboutButton=_aboutButton;
 @property(retain, nonatomic) NSTextField *descriptionTextField; // @synthesize descriptionTextField=_descriptionTextField;
-- (void).cxx_destruct;
 - (void)clickedAboutButton:(id)arg1;
 - (void)setDescriptionTextFieldString:(id)arg1;
 - (void)viewDidLoad;

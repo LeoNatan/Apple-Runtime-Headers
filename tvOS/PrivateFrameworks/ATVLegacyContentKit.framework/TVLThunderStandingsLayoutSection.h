@@ -13,8 +13,8 @@
     NSArray *_itemFrames;
 }
 
-@property(retain, nonatomic) NSArray *itemFrames; // @synthesize itemFrames=_itemFrames;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *itemFrames; // @synthesize itemFrames=_itemFrames;
 
 @end
 

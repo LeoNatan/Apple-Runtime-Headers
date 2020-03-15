@@ -48,6 +48,7 @@
 }
 
 + (id)timeStampString;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL finishedSkippingSamplesForVT; // @synthesize finishedSkippingSamplesForVT=_finishedSkippingSamplesForVT;
 @property(nonatomic) unsigned long long numSamplesSkippedForVT; // @synthesize numSamplesSkippedForVT=_numSamplesSkippedForVT;
 @property(nonatomic) long long firstSampleId; // @synthesize firstSampleId=_firstSampleId;
@@ -79,7 +80,6 @@
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
 @property(nonatomic) __weak id <CSEndpointAnalyzerImplDelegate> implDelegate; // @synthesize implDelegate=_implDelegate;
 @property(nonatomic) __weak id <CSEndpointAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)preheat;
 - (double)trailingSilenceDurationAtEndpoint;

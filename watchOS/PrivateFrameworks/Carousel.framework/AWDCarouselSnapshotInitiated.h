@@ -25,11 +25,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long leeway; // @synthesize leeway=_leeway;
 @property(nonatomic) unsigned long long latency; // @synthesize latency=_latency;
 @property(retain, nonatomic) AWDCarouselAppInfo *app; // @synthesize app=_app;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

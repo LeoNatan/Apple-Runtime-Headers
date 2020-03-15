@@ -33,6 +33,7 @@
 
 + (id)emptyPlaceholderTitleString;
 + (id)newPlaceholderTitleString;
+- (void).cxx_destruct;
 @property BOOL isProposedEvent; // @synthesize isProposedEvent=_isProposedEvent;
 @property BOOL footerVisible; // @synthesize footerVisible=_footerVisible;
 @property long long numOccurrencesSelected; // @synthesize numOccurrencesSelected=_numOccurrencesSelected;
@@ -50,7 +51,6 @@
 @property(retain) EKUITitleCalendarCompositeGadget *titleGadget; // @synthesize titleGadget=_titleGadget;
 @property(retain) EKUIGadgetContainer *titleLocationContainer; // @synthesize titleLocationContainer=_titleLocationContainer;
 @property(retain) EKDiff *diffFromCommitted; // @synthesize diffFromCommitted=_diffFromCommitted;
-- (void).cxx_destruct;
 - (BOOL)proposedEvent;
 - (void)cancelProposedEvent;
 - (id)oldEvent:(id)arg1 didUpdateTo:(id)arg2;

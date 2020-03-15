@@ -17,11 +17,10 @@ __attribute__((visibility("hidden")))
     CKRecordID *_shareID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecordID *shareID; // @synthesize shareID=_shareID;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (void)main;
-- (_Bool)shouldRetryForError:(id)arg1;
 - (id)createActivity;
 - (id)initWithItem:(id)arg1;
 

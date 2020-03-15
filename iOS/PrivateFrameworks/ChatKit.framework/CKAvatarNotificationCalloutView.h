@@ -22,6 +22,7 @@
     long long _mode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) CAAnimation *finisherAnimation; // @synthesize finisherAnimation=_finisherAnimation;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIImageView *tailImageView; // @synthesize tailImageView=_tailImageView;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak id <CKAvatarNotificationCalloutViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_handleTap:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;

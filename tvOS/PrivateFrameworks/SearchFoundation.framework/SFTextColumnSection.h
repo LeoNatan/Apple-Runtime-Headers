@@ -24,10 +24,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long textWeight; // @synthesize textWeight=_textWeight;
 @property(nonatomic) _Bool textNoWrap; // @synthesize textNoWrap=_textNoWrap;
 @property(copy, nonatomic) NSArray *textLines; // @synthesize textLines=_textLines;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

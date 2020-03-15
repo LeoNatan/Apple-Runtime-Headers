@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressSelectionClearForScreenCapture; // @synthesize suppressSelectionClearForScreenCapture=_suppressSelectionClearForScreenCapture;
 @property(nonatomic) _Bool handlingItemClick; // @synthesize handlingItemClick=_handlingItemClick;
 @property(nonatomic) _Bool keyOnMouseDown; // @synthesize keyOnMouseDown=_keyOnMouseDown;
 @property(nonatomic) _Bool shouldCancelPendingInvoke; // @synthesize shouldCancelPendingInvoke=_shouldCancelPendingInvoke;
 @property(nonatomic) _Bool shouldHandleCommandClickOnMouseUp; // @synthesize shouldHandleCommandClickOnMouseUp=_shouldHandleCommandClickOnMouseUp;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct CGRect)selectionRect;
 - (void)viewDidMoveToWindow;
 - (void)_drawClearForSelectionArea;

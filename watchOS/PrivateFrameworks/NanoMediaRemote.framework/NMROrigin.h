@@ -19,8 +19,8 @@
     NSString *_cachedDisplayName;
 }
 
-@property(readonly, nonatomic) void *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) void *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 - (void)_updateConnectionState;
 - (void)_handleExternalDeviceConnectionStateDidChangeNotification:(id)arg1;
 - (void)_handleRouteConnectionDidInvalidateNotification:(id)arg1;

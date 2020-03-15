@@ -23,11 +23,11 @@
     struct CGPoint _presentationValue;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(nonatomic) struct CGPoint presentationValue; // @synthesize presentationValue=_presentationValue;
 @property(readonly, nonatomic) struct CGPoint value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)_handleDisplayLink:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 @property(readonly, nonatomic) PXNumberAnimator<PXMutableNumberAnimator> *yAnimator;

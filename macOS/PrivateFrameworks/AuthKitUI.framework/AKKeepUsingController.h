@@ -17,12 +17,12 @@
     CDUnknownBlockType _useOtherAction;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType useOtherAction; // @synthesize useOtherAction=_useOtherAction;
 @property(copy) CDUnknownBlockType useExistingAction; // @synthesize useExistingAction=_useExistingAction;
 @property NSButton *useExistingAccountButton; // @synthesize useExistingAccountButton=_useExistingAccountButton;
 @property NSTextField *header; // @synthesize header=_header;
 @property(retain) NSString *existingAccount; // @synthesize existingAccount=_existingAccount;
-- (void).cxx_destruct;
 - (void)useOtherAccountButtonPressed:(id)arg1;
 - (void)keepUsingExistingAccountbuttonPressed:(id)arg1;
 - (void)awakeFromNib;

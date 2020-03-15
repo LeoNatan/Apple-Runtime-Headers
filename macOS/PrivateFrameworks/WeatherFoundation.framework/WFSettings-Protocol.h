@@ -7,9 +7,13 @@
 #import <WeatherFoundation/NSCopying-Protocol.h>
 #import <WeatherFoundation/NSObject-Protocol.h>
 
-@class NSSet, NSString;
+@class NSSet, NSString, NSURL;
 
 @protocol WFSettings <NSObject, NSCopying>
+@property(readonly, nonatomic) double privateUserIdentifierResetTimeInterval;
+@property(readonly, nonatomic) double userIdentifierResetTimeInterval;
+@property(readonly, nonatomic) float dataSamplingRate;
+@property(readonly, nonatomic) NSURL *appAnalyticsEndpointUrl;
 @property(readonly, nonatomic) unsigned long long locationNumDecimalsOfPrecision;
 @property(readonly, nonatomic) unsigned long long networkSwitchExpirationTimeInSeconds;
 @property(readonly, nonatomic) unsigned long long networkFailedAttemptsLimit;

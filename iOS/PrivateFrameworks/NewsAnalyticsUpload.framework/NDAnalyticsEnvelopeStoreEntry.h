@@ -17,9 +17,9 @@
     NSString *_envelopeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int envelopeContentType; // @synthesize envelopeContentType=_envelopeContentType;
 @property(copy, nonatomic) NSString *envelopeIdentifier; // @synthesize envelopeIdentifier=_envelopeIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

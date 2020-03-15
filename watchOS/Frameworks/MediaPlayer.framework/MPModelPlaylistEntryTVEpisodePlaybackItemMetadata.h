@@ -15,8 +15,8 @@
 }
 
 + (id)requiredProperties;
-@property(retain, nonatomic) MPModelPlaylistEntry *playlistEntry; // @synthesize playlistEntry=_playlistEntry;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelPlaylistEntry *playlistEntry; // @synthesize playlistEntry=_playlistEntry;
 - (id)episode;
 - (void)setEpisode:(id)arg1;
 - (void)_invalidateModelObjectPlaybackItemMetadata;

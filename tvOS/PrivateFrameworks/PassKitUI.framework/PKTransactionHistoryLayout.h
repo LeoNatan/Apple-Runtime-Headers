@@ -18,9 +18,9 @@
     _Bool _useCompactInsetForTitle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useCompactInsetForTitle; // @synthesize useCompactInsetForTitle=_useCompactInsetForTitle;
 @property(nonatomic) _Bool useStickyHeader; // @synthesize useStickyHeader=_useStickyHeader;
-- (void).cxx_destruct;
 - (_Bool)_indexPathIsHeaderIndexPath:(id)arg1;
 - (id)_customAttributesForStickyHeader:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

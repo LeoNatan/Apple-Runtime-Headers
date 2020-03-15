@@ -18,12 +18,12 @@
     NSHashTable *_pendingActivityTokens;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSHashTable *pendingActivityTokens; // @synthesize pendingActivityTokens=_pendingActivityTokens;
 @property(retain) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property(retain) NSObject<OS_dispatch_queue> *isolationQueue; // @synthesize isolationQueue=_isolationQueue;
 @property __weak PFCoalescer *coalescer; // @synthesize coalescer=_coalescer;
 @property unsigned long long coalescedUpdatesCount; // @synthesize coalescedUpdatesCount=_coalescedUpdatesCount;
-- (void).cxx_destruct;
 - (void)notifyActivityTokenCompletionOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 @property(readonly) NSArray *pendingActivityTokensSnapshot;
 - (void)cancelPendingActivityTokens;

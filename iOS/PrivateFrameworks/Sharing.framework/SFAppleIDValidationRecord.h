@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSDate *validStartDate; // @synthesize validStartDate=_validStartDate;
 @property(retain, nonatomic) NSArray *validatedPhoneHashes; // @synthesize validatedPhoneHashes=_validatedPhoneHashes;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool needsUpdate;
 @property(readonly, nonatomic) _Bool isInvalid;
 - (id)description;

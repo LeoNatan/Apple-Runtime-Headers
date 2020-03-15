@@ -14,9 +14,9 @@
     UILabel *_downloadLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *downloadLabel; // @synthesize downloadLabel=_downloadLabel;
 @property(retain, nonatomic) UIActivityIndicatorView *indicator; // @synthesize indicator=_indicator;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)sizeToFit;
 - (id)initWithActivityIndicatorStyle:(long long)arg1;

@@ -27,6 +27,7 @@
 
 + (_Bool)clearStickersForAvatarRecordIdentifier:(id)arg1 withEnvironment:(id)arg2;
 + (id)imageEncoder;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool parallelizeEncoding; // @synthesize parallelizeEncoding=_parallelizeEncoding;
 @property(readonly, nonatomic) AVTUIStickerGeneratorPool *stickerGeneratorPool; // @synthesize stickerGeneratorPool=_stickerGeneratorPool;
 @property(readonly, nonatomic) id <AVTCacheableResource> cacheableResourceItem; // @synthesize cacheableResourceItem=_cacheableResourceItem;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) AVTClippableImageStore *imageStore; // @synthesize imageStore=_imageStore;
 @property(readonly, nonatomic) id <AVTResourceCache> cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (void)stopUsingResources;
 - (CDUnknownBlockType)scheduledStickerResourceProviderForStickerConfiguration:(id)arg1;
 - (id)renderStickerResourceForItem:(id)arg1 scope:(id)arg2 configuration:(id)arg3;

@@ -42,13 +42,13 @@
 + (id)measuringLabel;
 + (double)preferredHeightForStyle:(long long)arg1;
 + (void)preloadResourcesForStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize bottomElementsPadding; // @synthesize bottomElementsPadding=_bottomElementsPadding;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(nonatomic, getter=isOverContent) _Bool overContent; // @synthesize overContent=_overContent;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) struct PXAssetBadgeInfo badgeInfo; // @synthesize badgeInfo=_badgeInfo;
 @property(nonatomic) __weak id <PXUIAssetBadgeViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_updateContentSizeIfNeeded;
 - (void)_invalidateContentSize;

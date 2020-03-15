@@ -17,10 +17,10 @@
     NSMutableDictionary *_labelToLabelDataOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *labelToLabelDataOffset; // @synthesize labelToLabelDataOffset=_labelToLabelDataOffset;
 @property(retain, nonatomic) NSMutableData *mutableLabelData; // @synthesize mutableLabelData=_mutableLabelData;
 @property(retain, nonatomic) NSMutableData *mutablePhoneNumberData; // @synthesize mutablePhoneNumberData=_mutablePhoneNumberData;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)appendPhoneNumber:(long long)arg1 label:(id)arg2;
 - (id)init;

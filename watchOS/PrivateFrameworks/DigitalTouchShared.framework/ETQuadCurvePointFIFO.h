@@ -17,6 +17,8 @@
     vector_e654105b _controlPoints;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 // Error parsing type for property lastPoint:
 // Property attributes: T,N,V_lastPoint
 
@@ -26,8 +28,6 @@
 @property(copy) CDUnknownBlockType emissionHandler; // @synthesize emissionHandler=_emissionHandler;
 @property(nonatomic) _Bool emitInterpolatedPoints; // @synthesize emitInterpolatedPoints=_emitInterpolatedPoints;
 @property(nonatomic) float unitSize; // @synthesize unitSize=_unitSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)flush;
 -     // Error parsing type: v16@0:4^8L12, name: addPoints:count:

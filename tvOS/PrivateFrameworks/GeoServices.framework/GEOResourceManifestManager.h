@@ -49,8 +49,8 @@
 + (void)useRemoteProxy;
 + (void)setServerProxyClass:(Class)arg1;
 + (void)disableServerConnection;
-@property(readonly, nonatomic) id <GEOResourceManifestServerProxy> serverProxy; // @synthesize serverProxy=_serverProxy;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <GEOResourceManifestServerProxy> serverProxy; // @synthesize serverProxy=_serverProxy;
 - (id)captureStatePlistWithHints:(struct os_state_hints_s *)arg1;
 - (void)removeDevResources;
 - (void)devResourcesFolderDidChange;

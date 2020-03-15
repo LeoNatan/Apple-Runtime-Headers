@@ -13,8 +13,8 @@
     NSWindow *_window;
 }
 
-@property(readonly) __weak NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+@property(readonly) __weak NSWindow *window; // @synthesize window=_window;
 - (id)callFunction:(id)arg1 withArguments:(id)arg2;
 - (id)initWithWindow:(id)arg1 identifier:(id)arg2;
 

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *childDSID; // @synthesize childDSID=_childDSID;
 @property(copy, nonatomic) NSString *childName; // @synthesize childName=_childName;
-- (void).cxx_destruct;
 - (void)_fetchAndWriteFamilyPhotoURLIfNeeded:(CDUnknownBlockType)arg1;
 - (void)customizeNotificationContent:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)encodeWithCoder:(id)arg1;

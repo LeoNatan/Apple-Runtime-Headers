@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property double interactionTimeout; // @synthesize interactionTimeout=_interactionTimeout;
 @property double initialTimeout; // @synthesize initialTimeout=_initialTimeout;
 @property __weak id <TKSmartCardUserInteractionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)cancel;
 - (void)runWithReply:(CDUnknownBlockType)arg1;
 - (void)encodeWithCoder:(id)arg1;

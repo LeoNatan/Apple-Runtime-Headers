@@ -20,13 +20,13 @@
     NSNumber *_returnedDuetResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *returnedDuetResults; // @synthesize returnedDuetResults=_returnedDuetResults;
 @property(retain, nonatomic) NSNumber *sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) NSNumber *lengthOfSearchString; // @synthesize lengthOfSearchString=_lengthOfSearchString;
 @property(retain, nonatomic) NSNumber *selectedPredictionIndex; // @synthesize selectedPredictionIndex=_selectedPredictionIndex;
 @property(retain, nonatomic) NSNumber *selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) CNAutocompleteAggdProbe *aggdProbe; // @synthesize aggdProbe=_aggdProbe;
-- (void).cxx_destruct;
 - (void)sendData;
 - (void)recordUserIgnoredPrefixedResultAfterDelay:(double)arg1 batch:(unsigned long long)arg2;
 - (void)recordUserIgnoredPredictionAfterDelay:(double)arg1;

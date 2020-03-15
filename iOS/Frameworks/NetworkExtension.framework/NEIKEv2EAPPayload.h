@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NSData *eapMessage; // @synthesize eapMessage=_eapMessage;
 - (void).cxx_destruct;
+@property(retain) NSData *eapMessage; // @synthesize eapMessage=_eapMessage;
 - (_Bool)parsePayloadData;
 - (_Bool)generatePayloadData;
 - (_Bool)hasRequiredFields;

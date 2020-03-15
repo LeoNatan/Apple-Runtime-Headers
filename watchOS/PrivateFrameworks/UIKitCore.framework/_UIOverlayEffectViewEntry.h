@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)newEntryWithFilterType:(id)arg1 image:(id)arg2 alpha:(float)arg3;
 + (id)newEntryWithFilterType:(id)arg1 color:(id)arg2 alpha:(float)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)canTransitionToEffect:(id)arg1;
 - (void)removeEffectFromView:(id)arg1;

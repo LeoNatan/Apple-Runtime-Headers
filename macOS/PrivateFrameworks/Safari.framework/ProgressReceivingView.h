@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <ProgressReceivingViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ProgressReceivingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ProgressReceivingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)progressSenderProgressDidComplete:(id)arg1;
 - (void)progressSenderProgressDidChange:(id)arg1;
 - (void)progressSenderProgressWillStart:(id)arg1;

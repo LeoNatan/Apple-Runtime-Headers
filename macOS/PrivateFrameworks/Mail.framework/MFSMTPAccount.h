@@ -21,9 +21,9 @@
 + (id)standardPorts;
 + (id)csAccountTypeString;
 + (id)accountTypeString;
+- (void).cxx_destruct;
 @property(nonatomic) long long lastTimerSetTime; // @synthesize lastTimerSetTime=_lastTimerSetTime;
 @property(readonly, nonatomic) NSOperationQueue *connectionCleanupQueue; // @synthesize connectionCleanupQueue=_connectionCleanupQueue;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)_disconnect:(id)arg1;

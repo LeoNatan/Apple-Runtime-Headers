@@ -34,6 +34,7 @@
 + (id)_detectedFaceRelationshipKeyPathsToPrefetch;
 + (id)_detectedFacePropertiesToFetch;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic, getter=isHidden) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(nonatomic) int cloudNameSource; // @synthesize cloudNameSource=_cloudNameSource;
@@ -46,7 +47,6 @@
 @property(nonatomic) double centerX; // @synthesize centerX=_centerX;
 @property(copy, nonatomic) NSString *assetCloudGUID; // @synthesize assetCloudGUID=_assetCloudGUID;
 @property(copy, nonatomic) NSString *assetUUID; // @synthesize assetUUID=_assetUUID;
-- (void).cxx_destruct;
 - (id)jsonDictionary;
 - (_Bool)matchesEntityInLibraryBackedByManagedObjectContext:(id)arg1 forRejectedPersonUUID:(id)arg2 diff:(id *)arg3;
 - (_Bool)matchesEntityInLibraryBackedByManagedObjectContext:(id)arg1 forConfirmedPersonUUID:(id)arg2 diff:(id *)arg3;

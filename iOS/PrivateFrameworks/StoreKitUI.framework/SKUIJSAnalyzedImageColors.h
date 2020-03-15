@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     _Bool _isBackgroundLight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBackgroundLight; // @synthesize isBackgroundLight=_isBackgroundLight;
 @property(readonly, nonatomic) SKUIJSColor *textSecondaryColor; // @synthesize textSecondaryColor=_textSecondaryColor;
 @property(readonly, nonatomic) SKUIJSColor *textPrimaryColor; // @synthesize textPrimaryColor=_textPrimaryColor;
 @property(readonly, nonatomic) SKUIJSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)initWithAppContext:(id)arg1 analyzedImageColors:(id)arg2;
 
 @end

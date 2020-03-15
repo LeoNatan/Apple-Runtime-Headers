@@ -20,9 +20,9 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(readonly, nonatomic) TVLHeaderElement *headerElement; // @synthesize headerElement=_headerElement;
-- (void).cxx_destruct;
 - (void)updateWithFeedElement:(id)arg1;
 - (id)currentFeedElement;
 - (void)_setTitle:(id)arg1;

@@ -18,10 +18,10 @@
 
 + (id)backgroundAccessQueue;
 + (id)mainAccessQueue;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long specialBehaviors; // @synthesize specialBehaviors=_specialBehaviors;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *concurrentQueue; // @synthesize concurrentQueue=_concurrentQueue;
 @property(copy, nonatomic) NSString *threadLocalStorageKey; // @synthesize threadLocalStorageKey=_threadLocalStorageKey;
-- (void).cxx_destruct;
 - (void)_performBlock:(CDUnknownBlockType)arg1 withDispatchFunction:(CDUnknownFunctionPointerType)arg2 synchronously:(_Bool)arg3 accessQueueContext:(unsigned long long)arg4;
 - (unsigned long long)_accessQueueContextInCurrentExecutionThread;
 - (id)description;

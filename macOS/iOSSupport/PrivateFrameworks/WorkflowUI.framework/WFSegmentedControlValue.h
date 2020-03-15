@@ -19,10 +19,10 @@
 + (id)valueWithImage:(id)arg1;
 + (id)valueWithDisplayName:(id)arg1 representedObject:(id)arg2;
 + (id)valueWithDisplayName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithDisplayName:(id)arg1 image:(id)arg2 representedObject:(id)arg3;
 
 @end

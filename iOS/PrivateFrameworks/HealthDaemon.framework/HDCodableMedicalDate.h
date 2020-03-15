@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originalTimeZoneString; // @synthesize originalTimeZoneString=_originalTimeZoneString;
 @property(nonatomic) double underlyingDate; // @synthesize underlyingDate=_underlyingDate;
 @property(nonatomic) long long form; // @synthesize form=_form;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

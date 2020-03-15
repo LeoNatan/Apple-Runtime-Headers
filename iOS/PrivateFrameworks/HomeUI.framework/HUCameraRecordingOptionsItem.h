@@ -13,8 +13,8 @@
     NSSet *_cameraProfiles;
 }
 
-@property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithCameraProfiles:(id)arg1;
 

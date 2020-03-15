@@ -15,10 +15,10 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int imageAlign; // @synthesize imageAlign=_imageAlign;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithSFAppLink:(id)arg1;
 
 @end

@@ -28,6 +28,7 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) NSString *binaryVersion; // @synthesize binaryVersion=_binaryVersion;
 @property(readonly) NSString *bundleShortVersion; // @synthesize bundleShortVersion=_bundleShortVersion;
 @property(readonly) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
@@ -36,7 +37,6 @@
 @property(readonly) BOOL isTextExecSegment; // @synthesize isTextExecSegment=_isTextExecSegment;
 @property unsigned long long textSegmentLength; // @synthesize textSegmentLength=_textSegmentLength;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (long long)compareInfoRichnessToSymbolOwner:(id)arg1;
 - (void)addTailspinSymbols:(id)arg1;

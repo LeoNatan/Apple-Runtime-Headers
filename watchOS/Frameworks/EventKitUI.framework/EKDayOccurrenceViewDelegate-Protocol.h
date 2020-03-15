@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class EKDayOccurrenceView;
+@class EKDayOccurrenceView, UIView;
 
 @protocol EKDayOccurrenceViewDelegate
 
 @optional
+- (UIView *)selectedCopyViewForDayOccurrenceView:(EKDayOccurrenceView *)arg1;
 - (void)dayOccurrenceViewSelected:(EKDayOccurrenceView *)arg1 atPoint:(struct CGPoint)arg2 wasTapped:(_Bool)arg3;
 @end
 

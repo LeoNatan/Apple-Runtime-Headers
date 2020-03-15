@@ -31,6 +31,7 @@
 
 + (Class)transformedValueClass;
 + (_Bool)allowsReverseTransformation;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inTitleElement; // @synthesize inTitleElement=_inTitleElement;
 @property(nonatomic) unsigned long long ignoreElementCount; // @synthesize ignoreElementCount=_ignoreElementCount;
 @property(retain, nonatomic) NSArray *inlineElements; // @synthesize inlineElements=_inlineElements;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)parser:(id)arg1 didFailWithError:(id)arg2;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parser:(id)arg1 didEndElement:(id)arg2;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUITextLayout *descriptionTextLayout; // @synthesize descriptionTextLayout=_descriptionTextLayout;
 @property(retain, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 @property(retain, nonatomic) TVImageLayout *backgroundImageLayout; // @synthesize backgroundImageLayout=_backgroundImageLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -22,8 +22,8 @@
     MediaControlsVolumeController *_volumeController;
 }
 
-@property(retain, nonatomic) MediaControlsVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MediaControlsVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 - (void)_springAnimate:(CDUnknownBlockType)arg1;
 - (void)_performLayoutWithAnimation:(CDUnknownBlockType)arg1;
 - (void)_updateVisibility;

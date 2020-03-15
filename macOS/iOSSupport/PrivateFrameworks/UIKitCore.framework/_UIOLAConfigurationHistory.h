@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     double _proportionalFillDenominator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double proportionalFillDenominator; // @synthesize proportionalFillDenominator=_proportionalFillDenominator;
 @property(nonatomic, getter=isInOrderedArrangementUpdateSection) BOOL inOrderedArrangementUpdateSection; // @synthesize inOrderedArrangementUpdateSection=_inOrderedArrangementUpdateSection;
 @property(nonatomic) BOOL hasEstablishedOrderingValues; // @synthesize hasEstablishedOrderingValues=_hasEstablishedOrderingValues;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isBaselineRelativeArrangement) BOOL baselineRelativeArrangement; // @synthesize baselineRelativeArrangement=_baselineRelativeArrangement;
 @property(nonatomic) long long distribution; // @synthesize distribution=_distribution;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
-- (void).cxx_destruct;
 - (double)customSpacingAfterItem:(id)arg1;
 - (void)setCustomSpacing:(double)arg1 afterItem:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

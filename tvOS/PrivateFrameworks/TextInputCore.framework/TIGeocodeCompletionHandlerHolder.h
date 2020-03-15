@@ -11,8 +11,8 @@
     CDUnknownBlockType _geocodeCompletionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType geocodeCompletionHandler; // @synthesize geocodeCompletionHandler=_geocodeCompletionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType geocodeCompletionHandler; // @synthesize geocodeCompletionHandler=_geocodeCompletionHandler;
 
 @end
 

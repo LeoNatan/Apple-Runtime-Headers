@@ -48,11 +48,11 @@
     NSString *specifierIDPendingPush;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *specifierIDPendingPush; // @synthesize specifierIDPendingPush;
 @property(retain, nonatomic) NSDictionary *pendingURLResourceDictionary; // @synthesize pendingURLResourceDictionary;
 @property(nonatomic) _Bool edgeToEdgeCells; // @synthesize edgeToEdgeCells;
 @property(nonatomic) _Bool forceSynchronousIconLoadForCreatedCells; // @synthesize forceSynchronousIconLoadForCreatedCells;
-- (void).cxx_destruct;
 - (void)showController:(id)arg1 animate:(_Bool)arg2;
 - (void)showPINSheet:(id)arg1;
 - (void)showPINSheet:(id)arg1 allowOptionsButton:(_Bool)arg2;

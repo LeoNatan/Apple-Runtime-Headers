@@ -22,20 +22,20 @@
     PKPeerPaymentDocumentSubmissionController *_captureController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPeerPaymentDocumentSubmissionController *captureController; // @synthesize captureController=_captureController;
 @property(readonly, nonatomic) PKPeerPaymentIdentityVerificationResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) PKPeerPaymentWebService *webService; // @synthesize webService=_webService;
 @property(readonly, nonatomic) UIViewController *firstViewController; // @synthesize firstViewController=_firstViewController;
 @property(readonly, nonatomic) long long context; // @synthesize context=_context;
 @property(readonly, nonatomic) PKPaymentSetupFieldsModel *fieldsModel; // @synthesize fieldsModel=_fieldsModel;
-- (void).cxx_destruct;
 - (_Bool)_hasRequiredFields;
 - (id)_nextLocalViewController;
 - (id)_generateFieldsModel;
 - (void)_formViewControllersWithExplanationView:(_Bool)arg1;
 - (id)_accountLockedErrorViewController;
 - (id)_accountRestrictedErrorViewController;
-- (id)_verificationErrorViewController;
+- (id)_verificationErrorViewControllerWithError:(id)arg1;
 - (void)_resetViewControllers;
 - (void)_identityVerificationResquestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)nextViewControllerWithCompletion:(CDUnknownBlockType)arg1;

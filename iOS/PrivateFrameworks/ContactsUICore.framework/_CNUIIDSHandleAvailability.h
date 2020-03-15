@@ -17,9 +17,9 @@
     id <CNUIIDSHandle> _handle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAvailable; // @dynamic isAvailable;
 @property(readonly, nonatomic) id <CNUIIDSHandle> handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithHandle:(id)arg1 available:(_Bool)arg2;
 

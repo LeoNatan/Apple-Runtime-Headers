@@ -17,9 +17,9 @@
     struct CGSize _containerContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize containerContentSize; // @synthesize containerContentSize=_containerContentSize;
 @property(retain, nonatomic) UIVisualEffectView *blurBackgroundView; // @synthesize blurBackgroundView=_blurBackgroundView;
-- (void).cxx_destruct;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

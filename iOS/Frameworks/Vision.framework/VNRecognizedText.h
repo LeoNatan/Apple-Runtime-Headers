@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 @property(readonly, copy) CRImageReaderOutput *crOutput; // @synthesize crOutput=_crOutput;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)boundingBoxForRange:(struct _NSRange)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) float confidence;

@@ -15,8 +15,8 @@
     SXQuickLookFile *_file;
 }
 
-@property(readonly, nonatomic) SXQuickLookFile *file; // @synthesize file=_file;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXQuickLookFile *file; // @synthesize file=_file;
 - (id)initWithFile:(id)arg1;
 
 // Remaining properties

@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)keyboardStateFromDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) TVRCKeyboardAttributes *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

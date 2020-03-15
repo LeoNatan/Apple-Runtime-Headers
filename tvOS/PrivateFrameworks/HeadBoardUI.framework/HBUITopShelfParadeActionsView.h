@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HBUITopShelfParadeButton *_secondaryActionButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HBUITopShelfParadeButton *secondaryActionButton; // @synthesize secondaryActionButton=_secondaryActionButton;
 @property(readonly, nonatomic) HBUITopShelfParadeButton *primaryActionButton; // @synthesize primaryActionButton=_primaryActionButton;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
 - (id)initWithFrame:(struct CGRect)arg1;

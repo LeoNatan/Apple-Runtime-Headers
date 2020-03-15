@@ -67,6 +67,7 @@
     double _hourScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double hourScale; // @synthesize hourScale=_hourScale;
 @property(nonatomic) double scrollAnimationDurationOverride; // @synthesize scrollAnimationDurationOverride=_scrollAnimationDurationOverride;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
@@ -91,7 +92,6 @@
 @property(copy, nonatomic) NSDateComponents *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) __weak id <EKDayViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <EKDayViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (void)addViewToScroller:(id)arg1 isAllDay:(BOOL)arg2;
 - (BOOL)isAllDayLabelHighlighted;

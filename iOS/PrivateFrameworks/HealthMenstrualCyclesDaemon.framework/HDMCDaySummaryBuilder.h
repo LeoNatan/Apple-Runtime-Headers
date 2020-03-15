@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface HDMCDaySummaryBuilder : NSObject
 {
@@ -17,11 +17,12 @@
     NSMutableArray *_ovulationTestResultSamples;
     NSMutableArray *_cervicalMucusQualitySamples;
     NSMutableArray *_basalBodyTemperatureSamples;
+    NSMutableDictionary *_sampleCountByType;
     long long _dayIndex;
 }
 
-@property(readonly, nonatomic) long long dayIndex; // @synthesize dayIndex=_dayIndex;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long dayIndex; // @synthesize dayIndex=_dayIndex;
 - (id)createDaySummaryWithDevice:(id)arg1 calendarCache:(id)arg2;
 - (id)_basalBodyTemperature;
 - (long long)_cervicalMucusQuality;

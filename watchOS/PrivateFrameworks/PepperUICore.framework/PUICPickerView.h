@@ -27,13 +27,13 @@
     NSArray *_coordinatedImageViews;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *coordinatedImageViews; // @synthesize coordinatedImageViews=_coordinatedImageViews;
 @property(nonatomic) __weak id <PUICPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PUICPickerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) int indicatorMode; // @synthesize indicatorMode=_indicatorMode;
 @property(nonatomic) unsigned int focusStyle; // @synthesize focusStyle=_focusStyle;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_updateCaptionVisibility;
 - (void)_updateForFirstResponderStatus;
 - (int)_numberOfItems;

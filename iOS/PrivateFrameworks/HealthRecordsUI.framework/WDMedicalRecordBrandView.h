@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIStackView *_verticalSpecContainerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIStackView *verticalSpecContainerView; // @synthesize verticalSpecContainerView=_verticalSpecContainerView;
 @property(readonly, nonatomic) UIView *logoAlignedContentView; // @synthesize logoAlignedContentView=_logoAlignedContentView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILabel *brandDetailLabel; // @synthesize brandDetailLabel=_brandDetailLabel;
 @property(readonly, nonatomic) UILabel *brandSubtitleLabel; // @synthesize brandSubtitleLabel=_brandSubtitleLabel;
 @property(readonly, nonatomic) UILabel *brandTitleLabel; // @synthesize brandTitleLabel=_brandTitleLabel;
-- (void).cxx_destruct;
 - (void)_updateForContentSizeCategory:(id)arg1;
 - (void)_updateLabelVisibility;
 - (void)_updateForCurrentSizeCategory;

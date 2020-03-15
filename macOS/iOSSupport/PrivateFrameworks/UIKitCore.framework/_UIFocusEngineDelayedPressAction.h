@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)sendDelayedPressWithType:(long long)arg1 timestamp:(double)arg2 sender:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) long long pressType; // @synthesize pressType=_pressType;
 @property(readonly, nonatomic) __weak _UIFocusEventRecognizer *sender; // @synthesize sender=_sender;
-- (void).cxx_destruct;
 - (void)_sendPressEvent;
 - (id)_initWithPressType:(long long)arg1 timestamp:(double)arg2 sender:(id)arg3;
 

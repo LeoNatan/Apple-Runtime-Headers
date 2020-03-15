@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 + (id)defaultProperties;
 + (id)blackStroke;
 + (id)nullStroke;
+- (void).cxx_destruct;
 @property(retain, nonatomic) OADLineEnd *tail; // @synthesize tail=mTail;
 @property(retain, nonatomic) OADLineEnd *head; // @synthesize head=mHead;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setStyleColor:(id)arg1;

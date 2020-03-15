@@ -14,9 +14,9 @@
     HUAccessorySceneListContentViewController *_suggestedSceneListContentViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUAccessorySceneListContentViewController *suggestedSceneListContentViewController; // @synthesize suggestedSceneListContentViewController=_suggestedSceneListContentViewController;
 @property(retain, nonatomic) HUAccessorySceneListContentViewController *existingSceneListContentViewController; // @synthesize existingSceneListContentViewController=_existingSceneListContentViewController;
-- (void).cxx_destruct;
 - (id)childViewControllersToPreload;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;

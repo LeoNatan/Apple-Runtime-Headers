@@ -25,8 +25,8 @@
 - (void)_invokeHandlers;
 - (void)_tick:(id)arg1;
 - (void)_updateTimer;
-- (void)stopTimerUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startTimerUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopTimerUpdatesForToken:(id)arg1;
+- (id)startTimerUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
 

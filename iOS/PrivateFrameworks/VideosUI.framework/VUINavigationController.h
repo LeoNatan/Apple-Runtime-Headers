@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     VUIDocumentUIConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIDocumentUIConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) UITapGestureRecognizer *gesture; // @synthesize gesture=_gesture;
-- (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

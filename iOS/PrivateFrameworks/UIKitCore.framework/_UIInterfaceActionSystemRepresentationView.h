@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSArray *_displayedViewsPositioningConstraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *displayedViewsPositioningConstraints; // @synthesize displayedViewsPositioningConstraints=_displayedViewsPositioningConstraints;
 @property(readonly, nonatomic) NSArray *displayedViewsSpacingConstraints; // @synthesize displayedViewsSpacingConstraints=_displayedViewsSpacingConstraints;
 @property(retain, nonatomic) NSSet *displayedViews; // @synthesize displayedViews=_displayedViews;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UIInterfaceActionLabelsPropertyView *labelsView; // @synthesize labelsView=_labelsView;
 @property(readonly, nonatomic) _UIInterfaceActionImagePropertyView *trailingImageView; // @synthesize trailingImageView=_trailingImageView;
 @property(readonly, nonatomic) _UIInterfaceActionImagePropertyView *leadingImageView; // @synthesize leadingImageView=_leadingImageView;
-- (void).cxx_destruct;
 - (_Bool)_isDisplayingTrailingImageView;
 - (_Bool)_isDisplayingLeadingImageView;
 - (_Bool)_displayedViewsConstraintsNeedsLoading;

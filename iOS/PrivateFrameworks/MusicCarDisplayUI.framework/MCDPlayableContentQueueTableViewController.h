@@ -13,8 +13,8 @@
     MCDPlayableContentPlaybackManager *_contentManager;
 }
 
-@property(retain, nonatomic) MCDPlayableContentPlaybackManager *contentManager; // @synthesize contentManager=_contentManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MCDPlayableContentPlaybackManager *contentManager; // @synthesize contentManager=_contentManager;
 - (void)viewDidLoad;
 - (id)initWithContentManager:(id)arg1;
 

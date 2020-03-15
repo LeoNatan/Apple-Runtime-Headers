@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predicateMatchingPredicates:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *predicates; // @synthesize predicates=_predicates;
 - (id)protobufferEncodableObjectFromLibrary:(id)arg1;
 - (id)initWithProtobufferDecodableObject:(id)arg1 library:(id)arg2;
 @property(readonly) unsigned long long hash;

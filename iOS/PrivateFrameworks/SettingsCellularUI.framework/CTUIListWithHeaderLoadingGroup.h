@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     PSSpecifier *_spinnerSpecifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSSpecifier *spinnerSpecifier; // @synthesize spinnerSpecifier=_spinnerSpecifier;
 @property(retain, nonatomic) NSArray *contentSpecifiers; // @synthesize contentSpecifiers=_contentSpecifiers;
 @property(retain, nonatomic) NSArray *headerSpecifiers; // @synthesize headerSpecifiers=_headerSpecifiers;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
 - (id)specifiers;
 - (id)initWithHostController:(id)arg1;
 

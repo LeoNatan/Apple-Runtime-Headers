@@ -20,10 +20,10 @@
     _Bool _shouldSendActivationResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSendActivationResult; // @synthesize shouldSendActivationResult=_shouldSendActivationResult;
 @property(readonly, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(readonly, nonatomic) SBApplicationSceneEntity *applicationSceneEntity; // @synthesize applicationSceneEntity=_applicationSceneEntity;
-- (void).cxx_destruct;
 - (void)_sendActivationResultWithSuccess:(_Bool)arg1;
 - (id)_customizedDescriptionProperties;
 - (void)_performSynchronizedCommit:(id)arg1;

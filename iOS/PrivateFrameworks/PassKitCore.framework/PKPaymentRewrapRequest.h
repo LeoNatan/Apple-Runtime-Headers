@@ -14,9 +14,9 @@
     NSString *_hostApplicationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
 @property(copy, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
-- (void).cxx_destruct;
 - (id)bodyDictionary;
 - (id)endpointName;
 

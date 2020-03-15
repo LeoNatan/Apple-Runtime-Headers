@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CADisplayLink *_displayLink;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
-- (void).cxx_destruct;
 - (void)_update:(id)arg1;
 - (void)_callUpdateHandler;
 - (void)stop;

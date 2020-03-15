@@ -17,9 +17,9 @@
     const struct __CFArray *_assetIds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PSITopAssetsResultDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) const struct __CFArray *assetIds; // @synthesize assetIds=_assetIds;
-- (void).cxx_destruct;
 - (void)fetchAssetUUIDsWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSArray *assetUUIDs;
 @property(readonly, nonatomic) unsigned long long assetMatchCount;

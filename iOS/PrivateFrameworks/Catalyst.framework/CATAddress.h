@@ -16,8 +16,8 @@
 
 + (id)localWiFi;
 + (id)any;
-@property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToAddress:(id)arg1;
 - (unsigned long long)hash;

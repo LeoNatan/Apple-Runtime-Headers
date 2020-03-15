@@ -13,8 +13,8 @@
     UICollectionView *_collectionView;
 }
 
-@property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;

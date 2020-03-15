@@ -18,10 +18,10 @@
 
 + (id)CKKSControlObject:(_Bool)arg1 error:(id *)arg2;
 + (id)controlObject:(id *)arg1;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) NSObject<OS_xpc_object> *endpoint; // @synthesize endpoint=_endpoint;
 @property _Bool synchronous; // @synthesize synchronous=_synchronous;
-- (void).cxx_destruct;
 - (void)rpcKnownBadState:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)rpcTLKMissing:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)rpcGetCKDeviceIDWithReply:(CDUnknownBlockType)arg1;

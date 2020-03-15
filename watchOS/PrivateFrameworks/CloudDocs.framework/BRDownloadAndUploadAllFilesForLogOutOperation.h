@@ -19,9 +19,9 @@
     BRUploadAllFilesForLogOutOperation *_uploadOp;
 }
 
+- (void).cxx_destruct;
 @property(retain) BRGlobalProgressProxy *progress; // @synthesize progress=_progress;
 @property(copy) CDUnknownBlockType downloadAllFilesCompletionBlock; // @synthesize downloadAllFilesCompletionBlock=_downloadAllFilesCompletionBlock;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (void)cancel;

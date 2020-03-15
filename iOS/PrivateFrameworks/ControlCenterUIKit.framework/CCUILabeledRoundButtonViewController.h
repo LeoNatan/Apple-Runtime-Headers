@@ -25,6 +25,7 @@
     UIControl *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIControl *button; // @synthesize button=_button;
 @property(retain, nonatomic) CCUILabeledRoundButton *buttonContainer; // @synthesize buttonContainer=_buttonContainer;
 @property(nonatomic) _Bool useLightStyle; // @synthesize useLightStyle=_useLightStyle;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *glyphState; // @synthesize glyphState=_glyphState;
 @property(retain, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)loadView;
 @property(copy, nonatomic) NSString *title; // @dynamic title;

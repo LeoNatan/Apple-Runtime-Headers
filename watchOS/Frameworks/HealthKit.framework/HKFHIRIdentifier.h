@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)FHIRIdentifierWithString:(id)arg1 error:(out id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *resourceType; // @synthesize resourceType=_resourceType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned int)hash;

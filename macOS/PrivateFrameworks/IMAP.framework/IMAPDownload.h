@@ -15,9 +15,9 @@
     NSProgress *_downloadProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(readonly, nonatomic) unsigned int uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (void)sortPendingFetchResultsUsingFunction:(CDUnknownFunctionPointerType)arg1 context:(void *)arg2;
 - (void)removeObjectFromPendingFetchResultsAtIndex:(unsigned long long)arg1;
 - (void)addPendingFetchResultsObject:(id)arg1;

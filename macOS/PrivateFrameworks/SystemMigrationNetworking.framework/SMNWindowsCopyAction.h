@@ -22,12 +22,12 @@
 
 + (BOOL)streamsResults;
 + (int)actionID;
+- (void).cxx_destruct;
 @property id <SMNWindowsCopyActionDelegate> delegate; // @synthesize delegate;
 @property unsigned long long totalWrittenLength; // @synthesize totalWrittenLength;
 @property(retain) NSObject *retryContext; // @synthesize retryContext;
 @property(retain) NSNumber *componentSize; // @synthesize componentSize;
 @property(retain) NSNumber *componentIdentifier; // @synthesize componentIdentifier;
-- (void).cxx_destruct;
 - (void)finishedFile:(id)arg1 length:(unsigned long long)arg2;
 - (void)updatedFile:(id)arg1 partialLength:(unsigned long long)arg2;
 - (id)localPathForFile:(id)arg1;

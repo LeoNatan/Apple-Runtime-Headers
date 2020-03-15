@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPSearchResultMarker *searchResultMarker; // @synthesize searchResultMarker=_searchResultMarker;
 @property(copy, nonatomic) NSArray *fileURLs; // @synthesize fileURLs=_fileURLs;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileURLs:(id)arg1 searchResultMarker:(id)arg2 error:(id)arg3;

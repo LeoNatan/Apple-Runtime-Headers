@@ -23,22 +23,32 @@
     NSString *_unmodifiedInput;
     NSString *_modifiedInput;
     NSString *_shiftModifiedInput;
+    NSString *_backupUnmodifiedInput;
+    NSString *_backupModifiedInput;
+    NSString *_backupShiftModifiedInput;
 }
 
++ (struct __GSKeyboard *)_getUIKitKeyboardRef;
++ (struct __GSKeyboard *)_getUSUIKitKeyboardRef;
++ (void)prepareForKeycodeTranslation;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int gsModifierState; // @synthesize gsModifierState=_gsModifierState;
+@property(copy, nonatomic) NSString *backupShiftModifiedInput; // @synthesize backupShiftModifiedInput=_backupShiftModifiedInput;
+@property(copy, nonatomic) NSString *backupModifiedInput; // @synthesize backupModifiedInput=_backupModifiedInput;
+@property(copy, nonatomic) NSString *backupUnmodifiedInput; // @synthesize backupUnmodifiedInput=_backupUnmodifiedInput;
 @property(nonatomic) unsigned int modifierState; // @synthesize modifierState=_modifierState;
-@property(retain, nonatomic) NSString *shiftModifiedInput; // @synthesize shiftModifiedInput=_shiftModifiedInput;
-@property(retain, nonatomic) NSString *modifiedInput; // @synthesize modifiedInput=_modifiedInput;
-@property(retain, nonatomic) NSString *unmodifiedInput; // @synthesize unmodifiedInput=_unmodifiedInput;
+@property(copy, nonatomic) NSString *shiftModifiedInput; // @synthesize shiftModifiedInput=_shiftModifiedInput;
+@property(copy, nonatomic) NSString *modifiedInput; // @synthesize modifiedInput=_modifiedInput;
+@property(copy, nonatomic) NSString *unmodifiedInput; // @synthesize unmodifiedInput=_unmodifiedInput;
 @property(nonatomic) _Bool keyDown; // @synthesize keyDown=_keyDown;
 @property(nonatomic) unsigned int usagePage; // @synthesize usagePage=_usagePage;
 @property(nonatomic) unsigned short alternativeKeyCode; // @synthesize alternativeKeyCode=_alternativeKeyCode;
 @property(nonatomic) unsigned short keyCode; // @synthesize keyCode=_keyCode;
-- (void).cxx_destruct;
 - (id)accessibilityEventRepresentationTabularDescription;
 - (void)translateKeycode;
 - (void)translateStringToKeycode;
+- (struct __GSKeyboard *)_getUSUIKitKeyboardRef;
 - (struct __GSKeyboard *)_getUIKitKeyboardRef;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

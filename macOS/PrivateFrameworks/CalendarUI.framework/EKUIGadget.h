@@ -30,6 +30,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property BOOL scrollsOutsideMainScrollArea; // @synthesize scrollsOutsideMainScrollArea=_scrollsOutsideMainScrollArea;
 @property BOOL isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(retain) NSLayoutConstraint *scrollViewMaxHeightConstraint; // @synthesize scrollViewMaxHeightConstraint=_scrollViewMaxHeightConstraint;
@@ -44,7 +45,6 @@
 @property(nonatomic) __weak NSView *firstKeyView; // @synthesize firstKeyView=_firstKeyView;
 @property __weak id <EKUILayoutItem> parentItem; // @synthesize parentItem=_parentItem;
 @property(retain) NSView *gadgetView; // @synthesize gadgetView=_gadgetView;
-- (void).cxx_destruct;
 - (id)timeZoneToDisplayIn;
 - (id)calendar;
 - (id)reminder;

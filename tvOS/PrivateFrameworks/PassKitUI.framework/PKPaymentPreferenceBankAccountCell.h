@@ -14,8 +14,8 @@
     PKBankAccountInformation *_bankAccount;
 }
 
-@property(retain, nonatomic) PKBankAccountInformation *bankAccount; // @synthesize bankAccount=_bankAccount;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKBankAccountInformation *bankAccount; // @synthesize bankAccount=_bankAccount;
 - (void)_updateCensoredPANLabel;
 - (void)_updateCellContent;
 - (id)initWithReuseIdentifier:(id)arg1;

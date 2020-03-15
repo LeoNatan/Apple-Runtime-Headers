@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSTextField *_safeBrowsingExplanationLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *safeBrowsingExplanationLabel; // @synthesize safeBrowsingExplanationLabel=_safeBrowsingExplanationLabel;
 @property(nonatomic) __weak NSButton *antiPhishingCheckbox; // @synthesize antiPhishingCheckbox=_antiPhishingCheckbox;
 @property(nonatomic) __weak NSButton *blockPopUpsCheckbox; // @synthesize blockPopUpsCheckbox=_blockPopUpsCheckbox;
 @property(nonatomic) __weak NSButton *javaScriptEnabledCheckbox; // @synthesize javaScriptEnabledCheckbox=_javaScriptEnabledCheckbox;
 @property(nonatomic) __weak NSView *mainContentView; // @synthesize mainContentView=_mainContentView;
-- (void).cxx_destruct;
 - (void)_updateEverything;
 - (void)_updateAntiPhishingViews;
 - (void)_updateJavaScriptViews;

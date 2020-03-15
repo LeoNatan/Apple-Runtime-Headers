@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCMessageBody *messageBody; // @synthesize messageBody=_messageBody;
 @property(retain, nonatomic) MFRecoveredMessage *recoveredMessage; // @synthesize recoveredMessage=_recoveredMessage;
 @property(copy, nonatomic) NSString *snippet; // @synthesize snippet=_snippet;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSArray *bccRecipients; // @synthesize bccRecipients=_bccRecipients;
 @property(copy, nonatomic) NSArray *ccRecipients; // @synthesize ccRecipients=_ccRecipients;
 @property(copy, nonatomic) NSArray *toRecipients; // @synthesize toRecipients=_toRecipients;
-- (void).cxx_destruct;
 - (id)_htmlForAttributedString:(id)arg1;
 - (void)_addReplyAllRecipientsToMessage:(id)arg1 fromAddressList:(id)arg2;
 - (void)generateRequestedMessageWithString:(id)arg1 messageType:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

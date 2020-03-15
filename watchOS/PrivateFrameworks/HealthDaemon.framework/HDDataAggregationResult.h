@@ -15,10 +15,10 @@
     CDUnknownBlockType _persistenceHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType persistenceHandler; // @synthesize persistenceHandler=_persistenceHandler;
 @property(readonly, copy, nonatomic) NSArray *consumedSensorData; // @synthesize consumedSensorData=_consumedSensorData;
 @property(readonly, copy, nonatomic) HDDataAggregationState *aggregationState; // @synthesize aggregationState=_aggregationState;
-- (void).cxx_destruct;
 - (id)initWithResultingAggregationState:(id)arg1 consumedSensorData:(id)arg2 persistenceHandler:(CDUnknownBlockType)arg3;
 
 @end

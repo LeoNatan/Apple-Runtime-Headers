@@ -26,8 +26,8 @@
 
 + (void)_updateEventStatsWithTotal:(unsigned int)arg1 streamNameCounts:(id)arg2 transportType:(int)arg3;
 + (void)_updateEventStatsWithPreviousSyncDate:(id)arg1 transportType:(int)arg2;
-@property(readonly) _DKSyncHistory *history; // @synthesize history=_history;
 - (void).cxx_destruct;
+@property(readonly) _DKSyncHistory *history; // @synthesize history=_history;
 - (void)endPerfMetrics;
 - (void)startPerfMetrics;
 - (void)endOperation;

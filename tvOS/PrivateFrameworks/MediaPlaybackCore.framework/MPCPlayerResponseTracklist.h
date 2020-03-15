@@ -18,6 +18,7 @@
     long long _upNextItemCount;
     long long _repeatType;
     long long _shuffleType;
+    long long _actionAtQueueEnd;
     MPCPlayerResponse *_response;
     MPSectionedCollection *_items;
     NSIndexPath *_playingItemIndexPath;
@@ -27,21 +28,23 @@
 
 + (id)insertCommandForPlayerPath:(id)arg1 devices:(id)arg2;
 + (id)resetCommandForPlayerPath:(id)arg1 devices:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long globalItemCount; // @synthesize globalItemCount=_globalItemCount;
 @property(readonly, nonatomic) long long playingItemGlobalIndex; // @synthesize playingItemGlobalIndex=_playingItemGlobalIndex;
 @property(readonly, copy, nonatomic) NSIndexPath *playingItemIndexPath; // @synthesize playingItemIndexPath=_playingItemIndexPath;
 @property(readonly, copy, nonatomic) MPSectionedCollection *items; // @synthesize items=_items;
 @property(readonly, nonatomic) __weak MPCPlayerResponse *response; // @synthesize response=_response;
+@property(readonly, nonatomic) long long actionAtQueueEnd; // @synthesize actionAtQueueEnd=_actionAtQueueEnd;
 @property(readonly, nonatomic) long long shuffleType; // @synthesize shuffleType=_shuffleType;
 @property(readonly, nonatomic) long long repeatType; // @synthesize repeatType=_repeatType;
 @property(readonly, nonatomic) long long upNextItemCount; // @synthesize upNextItemCount=_upNextItemCount;
 @property(readonly, nonatomic) long long lastChangeDirection; // @synthesize lastChangeDirection=_lastChangeDirection;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)_determineChangeItemSupport;
 - (id)_stateDumpObject;
 - (id)disableModificationsCommand;
 - (id)changeItemCommand;
+- (id)actionAtQueueEndCommand;
 - (id)shuffleCommand;
 - (id)repeatCommand;
 - (id)reorderCommand;

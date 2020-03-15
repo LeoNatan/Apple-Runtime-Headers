@@ -16,8 +16,8 @@
     _SFPBDate *_date;
 }
 
-@property(retain, nonatomic) _SFPBDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _SFPBDate *date; // @synthesize date=_date;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

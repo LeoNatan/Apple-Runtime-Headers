@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(readonly) NSDictionary *plugins; // @synthesize plugins=_plugins;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *plugins; // @synthesize plugins=_plugins;
 - (id)pluginForAccountType:(id)arg1;
 - (id)_validateAndLoadPlugin:(id)arg1;
 - (id)_loadPlugins;

@@ -17,8 +17,8 @@
 
 + (id)openConfigurationWithEndpoint:(id)arg1 isSensitive:(_Bool)arg2;
 + (id)urlCouldNotBeOpenedErrorWithURL:(id)arg1;
-@property(readonly, nonatomic) LSApplicationWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) LSApplicationWorkspace *workspace; // @synthesize workspace=_workspace;
 - (id)openURL:(id)arg1 isSensitive:(_Bool)arg2 connectionEndpoint:(id)arg3 withScheduler:(id)arg4;
 - (id)openURL:(id)arg1 isSensitive:(_Bool)arg2 withScheduler:(id)arg3;
 - (id)openURL:(id)arg1 withScheduler:(id)arg2;

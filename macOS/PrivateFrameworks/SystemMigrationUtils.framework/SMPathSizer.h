@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_keepSizingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *keepSizingQueue; // @synthesize keepSizingQueue=_keepSizingQueue;
 @property(retain) NSObject<OS_dispatch_queue> *fileSizeQueue; // @synthesize fileSizeQueue=_fileSizeQueue;
 @property BOOL keepSizing; // @synthesize keepSizing=_keepSizing;
 @property(retain) NSMutableSet *hardlinkInodes; // @synthesize hardlinkInodes=_hardlinkInodes;
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes=_useTrueOnDiskSizes;
-- (void).cxx_destruct;
 - (unsigned long long)directorySizeAtURL:(id)arg1;
 - (unsigned long long)fileSizeAtURL:(id)arg1;
 - (unsigned long long)getHFSFolderSize:(id)arg1;

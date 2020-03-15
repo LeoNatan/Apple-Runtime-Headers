@@ -63,6 +63,7 @@
 + (id)akBundleIdentifier;
 + (id)akBundle;
 + (id)controllerWithDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useHighVisibilityDefaultInks; // @synthesize useHighVisibilityDefaultInks=_useHighVisibilityDefaultInks;
 @property(nonatomic) __weak AKToolbarView *modernToolbarView; // @synthesize modernToolbarView=_modernToolbarView;
 @property(nonatomic) BOOL shapeDetectionEnabled; // @synthesize shapeDetectionEnabled=_shapeDetectionEnabled;
@@ -105,7 +106,6 @@
 @property __weak id <AKControllerDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property BOOL isTornDown; // @synthesize isTornDown=_isTornDown;
 @property(nonatomic) BOOL overlayShouldPixelate; // @synthesize overlayShouldPixelate;
-- (void).cxx_destruct;
 - (void)endLogging;
 - (void)beginLogging:(id)arg1 documentType:(id)arg2;
 - (void)strokeAddedNotification:(id)arg1;

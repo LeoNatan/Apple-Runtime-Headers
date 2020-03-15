@@ -18,12 +18,12 @@
 }
 
 + (id)templateWithName:(id)arg1 withKeyPath:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *specificDateRangePopup; // @synthesize specificDateRangePopup=_specificDateRangePopup;
 @property(retain) NSPopUpButton *leftExpressionPopup; // @synthesize leftExpressionPopup=_leftExpressionPopup;
 @property BOOL hasCreatedViews; // @synthesize hasCreatedViews=_hasCreatedViews;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)predicateWithSubpredicates:(id)arg1;
 - (id)displayableSubpredicatesOfPredicate:(id)arg1;
 - (void)setPredicate:(id)arg1;

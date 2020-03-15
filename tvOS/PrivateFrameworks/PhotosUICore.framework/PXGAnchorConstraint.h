@@ -23,6 +23,7 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double offset; // @synthesize offset=_offset;
 @property(nonatomic) unsigned int visibleRectEdge; // @synthesize visibleRectEdge=_visibleRectEdge;
 @property(nonatomic) unsigned int spriteEdge; // @synthesize spriteEdge=_spriteEdge;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long spriteAttribute; // @synthesize spriteAttribute=_spriteAttribute;
 @property(nonatomic) unsigned long long referencingOptions; // @synthesize referencingOptions=_referencingOptions;
 @property(retain, nonatomic) PXGSpriteReference *spriteReference; // @synthesize spriteReference=_spriteReference;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

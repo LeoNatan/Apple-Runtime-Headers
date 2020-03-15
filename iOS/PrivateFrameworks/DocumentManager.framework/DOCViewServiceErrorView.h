@@ -17,11 +17,11 @@
     id <DOCViewServiceErrorViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <DOCViewServiceErrorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *tryAgainButton; // @synthesize tryAgainButton=_tryAgainButton;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)didTapTryAgain;
 - (id)init;
 

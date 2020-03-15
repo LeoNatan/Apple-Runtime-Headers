@@ -13,8 +13,8 @@
     UITextView *_aboutView;
 }
 
-@property(retain, nonatomic) UITextView *aboutView; // @synthesize aboutView=_aboutView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextView *aboutView; // @synthesize aboutView=_aboutView;
 - (void)done:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;

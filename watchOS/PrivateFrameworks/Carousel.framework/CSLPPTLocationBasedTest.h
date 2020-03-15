@@ -16,11 +16,11 @@
     IOSSHLApplication *_application;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *launchLocation; // @synthesize launchLocation=_launchLocation;
 @property(retain, nonatomic) NSString *testName; // @synthesize testName=_testName;
-- (void).cxx_destruct;
 - (void)touchApplicationForMRU;
 - (void)flagNextActivationForTesting;
 - (void)performActivationWithInitialDelay:(CDUnknownBlockType)arg1 afterNavigationDelay:(CDUnknownBlockType)arg2;

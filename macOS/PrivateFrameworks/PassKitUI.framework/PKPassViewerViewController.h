@@ -48,12 +48,12 @@
     id <PKPassViewerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL canGoForward; // @synthesize canGoForward=_canGoForward;
 @property BOOL canGoBack; // @synthesize canGoBack=_canGoBack;
 @property __weak id <PKPassViewerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(readonly) NSArray *passes; // @synthesize passes=_passes;
-- (void).cxx_destruct;
 - (void)pageDotView:(id)arg1 dotClickedAtIndex:(unsigned long long)arg2;
 - (void)performClose:(id)arg1;
 - (void)closeClicked:(id)arg1;

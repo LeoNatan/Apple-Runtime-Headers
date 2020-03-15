@@ -21,11 +21,11 @@
 + (void)expire;
 + (void)expireForTesting;
 + (id)sharedReplyCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLTBulletinStore *bulletinStore; // @synthesize bulletinStore=_bulletinStore;
 @property(retain, nonatomic) NSDate *timeToCheck; // @synthesize timeToCheck=_timeToCheck;
 @property(retain, nonatomic) NSMutableDictionary *localReplyInfo; // @synthesize localReplyInfo=_localReplyInfo;
 @property(nonatomic) __weak id <BLTLightsAndSirensSystemStateProvider> systemStateProvider; // @synthesize systemStateProvider=_systemStateProvider;
-- (void).cxx_destruct;
 - (void)_checkCacheWithForce:(_Bool)arg1;
 - (void)_checkCache;
 - (_Bool)_isTimeToCheck;

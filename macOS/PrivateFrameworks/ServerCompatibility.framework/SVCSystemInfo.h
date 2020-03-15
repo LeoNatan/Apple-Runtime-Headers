@@ -23,6 +23,7 @@
 }
 
 + (id)currentSystemInfo;
+- (void).cxx_destruct;
 @property long long memorySize; // @synthesize memorySize=_memorySize;
 @property long long cpuSpeedInHz; // @synthesize cpuSpeedInHz=_cpuSpeedInHz;
 @property long long numberOfCPUs; // @synthesize numberOfCPUs=_numberOfCPUs;
@@ -33,7 +34,6 @@
 @property(copy) NSString *operatingSystemName; // @synthesize operatingSystemName=_operatingSystemName;
 @property(copy) NSString *computerModelName; // @synthesize computerModelName=_computerModelName;
 @property(copy) NSString *computerModelIdentifier; // @synthesize computerModelIdentifier=_computerModelIdentifier;
-- (void).cxx_destruct;
 @property(readonly) BOOL isMobileHardware;
 @property(readonly) NSString *cpuDescription;
 

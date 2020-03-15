@@ -15,6 +15,7 @@
 + (Class)repIdentifierClass;
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(_Bool)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;
++ (id)createDefaultInstancesForUnitTesting;
 - (_Bool)isMinimallyFitForCompiling;
 - (_Bool)isImageDataSizedProperly;
 - (void)setSlot:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)sharedRegistry;
 + (id)allContentItemClassesInContentKit;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s discoveryLock; // @synthesize discoveryLock=_discoveryLock;
 @property(readonly, nonatomic) NSMutableSet *allItemClasses; // @synthesize allItemClasses=_allItemClasses;
 @property(readonly, nonatomic) NSMutableDictionary *contentItemClassesByType; // @synthesize contentItemClassesByType=_contentItemClassesByType;
-- (void).cxx_destruct;
 - (id)contentItemClassesSupportingType:(id)arg1;
 - (Class)contentItemClassForType:(id)arg1;
 @property(readonly, nonatomic) NSSet *contentItemClasses;

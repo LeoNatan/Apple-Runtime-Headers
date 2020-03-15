@@ -13,8 +13,8 @@
     NSString *_message;
 }
 
-@property(readonly) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(readonly) NSString *message; // @synthesize message=_message;
 - (id)description;
 - (id)initWithEventLog:(id)arg1 message:(id)arg2;
 - (id)initWithAction:(id)arg1 message:(id)arg2;

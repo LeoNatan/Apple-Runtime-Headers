@@ -26,8 +26,8 @@
 + (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3 dependent:(_Bool)arg4;
 + (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3;
 + (void)initialize;
-@property(retain, nonatomic) IKViewElementStyleFactory *styleFactory; // @synthesize styleFactory=_styleFactory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKViewElementStyleFactory *styleFactory; // @synthesize styleFactory=_styleFactory;
 - (id)elementForDOMElement:(id)arg1 parent:(id)arg2;
 @property(nonatomic, getter=isSparse) _Bool sparse;
 - (unsigned long long)elementTypeByTagName:(id)arg1;

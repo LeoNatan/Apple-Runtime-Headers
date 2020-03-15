@@ -18,11 +18,11 @@
     WFVariableString *_legacyVariableString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFVariableString *legacyVariableString; // @synthesize legacyVariableString=_legacyVariableString;
 @property(readonly, nonatomic, getter=isCurrentLocation) _Bool currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(readonly, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 @property(readonly, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;
-- (void).cxx_destruct;
 - (id)serializedRepresentation;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 - (id)initWithLegacyVariableString:(id)arg1;

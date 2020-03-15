@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *matchingShares; // @synthesize matchingShares=_matchingShares;
 @property(retain, nonatomic) NSNumber *updateSequenceNum; // @synthesize updateSequenceNum=_updateSequenceNum;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,11 +16,11 @@
     WFFileType *_dictionaryType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFFileType *dictionaryType; // @synthesize dictionaryType=_dictionaryType;
 @property(readonly, nonatomic) NSArray *dictionaries; // @synthesize dictionaries=_dictionaries;
 @property(readonly, nonatomic) NSNumber *number; // @synthesize number=_number;
 @property(readonly, nonatomic) NSArray *textCheckingResults; // @synthesize textCheckingResults=_textCheckingResults;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *dates;
 @property(readonly, nonatomic) NSArray *phoneNumbers;
 @property(readonly, nonatomic) NSArray *streetAddresses;

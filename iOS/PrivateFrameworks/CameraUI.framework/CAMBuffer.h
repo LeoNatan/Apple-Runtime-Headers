@@ -21,13 +21,13 @@
 
 + (id)keyPathsForValuesAffectingCurrentValue;
 + (id)keyPathsForValuesAffectingEnabled;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *_bufferQueueObservances; // @synthesize _bufferQueueObservances=__bufferQueueObservances;
 @property(readonly, nonatomic) NSMutableDictionary *_bufferQueueObservers; // @synthesize _bufferQueueObservers=__bufferQueueObservers;
 @property(readonly, nonatomic) NSMutableArray *_bufferQueueBufferedValues; // @synthesize _bufferQueueBufferedValues=__bufferQueueBufferedValues;
 @property(retain, nonatomic) id <NSCopying> bufferQueueCurrentValue; // @synthesize bufferQueueCurrentValue=_bufferQueueCurrentValue;
 @property(nonatomic, getter=isBufferQueueEnabled) _Bool bufferQueueEnabled; // @synthesize bufferQueueEnabled=_bufferQueueEnabled;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_bufferQueue; // @synthesize _bufferQueue=__bufferQueue;
-- (void).cxx_destruct;
 - (void)handleObservedNotification:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)removeObserverForKey:(id)arg1;

@@ -35,6 +35,7 @@
     CDUnknownBlockType _calDAVCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType calDAVCompletionHandler; // @synthesize calDAVCompletionHandler=_calDAVCompletionHandler;
 @property(retain) CalDAVAutocompleteOperation *cdQuerySession; // @synthesize cdQuerySession=_cdQuerySession;
 @property(retain) ACAccount *account; // @synthesize account=_account;
@@ -54,7 +55,6 @@
 @property BOOL doPeople; // @synthesize doPeople=_doPeople;
 @property BOOL doRooms; // @synthesize doRooms=_doRooms;
 @property __weak id <CalAutoCompleteDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)autocompleteFetchDidEndNetworkActivity:(id)arg1;
 - (void)autocompleteFetchDidBeginNetworkActivity:(id)arg1;
 - (void)autocompleteFetchDidFinish:(id)arg1;

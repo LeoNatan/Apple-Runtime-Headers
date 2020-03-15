@@ -29,12 +29,12 @@
 + (BOOL)forceClickUserPreferencesEnabled;
 + (BOOL)_forceClickPossibleFromEvent:(id)arg1 respectUserPreferences:(BOOL)arg2;
 + (void)_lookupStyleSettingDidChangeNotification:(id)arg1;
+- (void).cxx_destruct;
 @property double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
 @property double progress; // @synthesize progress=_progress;
 @property long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)pressureChangeWithEvent:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;

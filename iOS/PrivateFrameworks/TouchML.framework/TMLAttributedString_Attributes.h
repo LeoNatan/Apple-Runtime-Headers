@@ -18,9 +18,9 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *accessibilityTextHeadingLevel;
 @property(retain, nonatomic) NSString *accessibilitySpeechIPANotation;
 @property(retain, nonatomic) NSNumber *accessibilitySpeechQueueAnnouncement;

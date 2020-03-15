@@ -28,11 +28,11 @@
 + (id)existingItemControllerForAsset:(id)arg1;
 + (id)itemControllerForAsset:(id)arg1;
 + (Class)itemControllerClassForAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *editQueue; // @synthesize editQueue=_editQueue;
 @property(retain) PHAdjustmentData *assetAdjustmentData; // @synthesize assetAdjustmentData=_assetAdjustmentData;
 @property(retain) PHContentEditingInput *assetContentEditingInput; // @synthesize assetContentEditingInput=_assetContentEditingInput;
 @property(retain, nonatomic) PAEditSupport *editSupport; // @synthesize editSupport=_editSupport;
-- (void).cxx_destruct;
 - (void)didEndEditing:(BOOL)arg1 discard:(BOOL)arg2;
 - (void)resetEditingWithContentEditingInput:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)commitEditingToAsset:(id)arg1 contentEditingInput:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;

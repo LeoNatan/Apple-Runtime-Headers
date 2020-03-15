@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id _tokenFromAVPlayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id tokenFromAVPlayer; // @synthesize tokenFromAVPlayer=_tokenFromAVPlayer;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSArray *times; // @synthesize times=_times;
-- (void).cxx_destruct;
 
 @end
 

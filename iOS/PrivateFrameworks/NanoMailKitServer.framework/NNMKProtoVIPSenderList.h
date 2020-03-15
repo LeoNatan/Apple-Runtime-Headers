@@ -17,8 +17,8 @@
 
 + (Class)vipsType;
 + (id)protoVIPList:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *vips; // @synthesize vips=_vips;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *vips; // @synthesize vips=_vips;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

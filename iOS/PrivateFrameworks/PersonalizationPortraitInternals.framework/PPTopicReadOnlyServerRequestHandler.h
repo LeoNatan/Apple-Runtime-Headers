@@ -22,9 +22,9 @@
 + (id)filterQIDDictionary:(id)arg1 withWhitelistOfProcess:(id)arg2;
 + (id)filterTopicRecordsNotInWhitelist:(id)arg1 withWhitelistOfProcess:(id)arg2;
 + (id)filterScoredTopicsNotInWhitelist:(id)arg1 withWhitelistOfProcess:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PASBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
 @property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
-- (void).cxx_destruct;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unmapMappedTopicIdentifier:(id)arg1 mappingIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)scoresForTopicMapping:(id)arg1 query:(id)arg2 queryId:(unsigned long long)arg3;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     double _scale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) BOOL reverseLayoutDirection; // @synthesize reverseLayoutDirection=_reverseLayoutDirection;
 @property(nonatomic) BOOL showBolt; // @synthesize showBolt=_showBolt;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) UIImage *cachedImage; // @synthesize cachedImage=_cachedImage;
-- (void).cxx_destruct;
 - (BOOL)cacheMatchesCapacity:(double)arg1 fillColor:(id)arg2 tintColor:(id)arg3 showingBolt:(BOOL)arg4 reverseLayout:(BOOL)arg5 scale:(double)arg6;
 
 @end

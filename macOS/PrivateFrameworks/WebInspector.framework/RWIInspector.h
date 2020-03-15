@@ -21,16 +21,15 @@
     NSString *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) RWIManager *manager; // @synthesize manager=_manager;
 @property(readonly, nonatomic) RWIDebuggable *debuggable; // @synthesize debuggable=_debuggable;
-- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (void)inspectorViewControllerInspectorDidClose:(id)arg1;
 - (void)inspectorViewController:(id)arg1 sendMessageToBackend:(id)arg2;
 - (id)_backendCommandsURL;
 - (long long)_debuggableType;
-- (void)_updateWindowTitleWithLastComponent:(id)arg1;
 - (void)_updateWindowTitle;
 - (void)debuggableDidChange:(id)arg1;
 - (void)close;
@@ -39,6 +38,8 @@
 - (void)loadAndShow;
 - (void)_closeInternal;
 - (void)show;
+- (id)diagnosticLoggingDelegate;
+- (void)setDiagnosticLoggingDelegate:(id)arg1;
 - (id)initWithManager:(id)arg1 debuggable:(id)arg2 pauseImmediately:(BOOL)arg3;
 
 // Remaining properties

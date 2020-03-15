@@ -15,10 +15,9 @@
     int _intent;
 }
 
-+ (int)type;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int intent; // @synthesize intent=_intent;
 @property(readonly, nonatomic) PHVideoRequestOptions *videoOptions; // @synthesize videoOptions=_videoOptions;
-- (void).cxx_destruct;
 - (void)processMediaResult:(id)arg1 forRequest:(id)arg2;
 - (id)progresses;
 - (CDUnknownBlockType)progressHandler;
@@ -26,6 +25,7 @@
 - (id)initialRequests;
 - (_Bool)representsShareableHighQualityResource;
 - (_Bool)isNetworkAccessAllowed;
+- (int)type;
 - (id)_lazyProgress;
 - (id)initWithRequestID:(int)arg1 managerID:(unsigned long long)arg2 asset:(id)arg3 displaySpec:(id)arg4 options:(id)arg5 intent:(int)arg6 resultHandler:(CDUnknownBlockType)arg7;
 

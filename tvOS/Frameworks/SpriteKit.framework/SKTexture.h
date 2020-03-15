@@ -71,6 +71,7 @@
 + (id)compressedTextureWithData:(id)arg1;
 + (id)_cachedTextureNames;
 + (void)_reloadTextureCacheForImageNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_needsExtrusionWorkaround) _Bool needsExtrusionWorkaround; // @synthesize needsExtrusionWorkaround=_needsExtrusionWorkaround;
 @property(readonly, nonatomic) struct CGSize alphaMapSize; // @synthesize alphaMapSize=_alphaMapSize;
 @property(readonly, nonatomic) unsigned int *alphaMap; // @synthesize alphaMap=_alphaMap;
@@ -81,7 +82,6 @@
 @property(copy, nonatomic) NSString *originalAtlasName; // @synthesize originalAtlasName=_originalAtlasName;
 @property(nonatomic) struct CGPoint cropOffset; // @synthesize cropOffset=_cropOffset;
 @property(nonatomic) struct CGPoint cropScale; // @synthesize cropScale=_cropScale;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(nonatomic) long long filteringMode;
 @property(nonatomic) int wrapMode;

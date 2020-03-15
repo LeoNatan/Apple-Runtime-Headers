@@ -35,8 +35,8 @@
 + (id)clientInterface;
 + (BOOL)_applicationHasRunningWorkout;
 + (id)targetWorkoutSessionStateMachineForSessionUUID:(id)arg1;
-@property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void)_unitTest_discardAssociatedWorkoutBuilder;
 - (void)stopActivity;
 - (void)startActivity;

@@ -16,11 +16,11 @@
     IMMessagePartChatItem *_chatItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMMessagePartChatItem *chatItem; // @synthesize chatItem=_chatItem;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) DDScannerResult *ddResult; // @synthesize ddResult=_ddResult;
 @property(retain, nonatomic) DOMElement *domElement; // @synthesize domElement=_domElement;
-- (void).cxx_destruct;
 
 @end
 

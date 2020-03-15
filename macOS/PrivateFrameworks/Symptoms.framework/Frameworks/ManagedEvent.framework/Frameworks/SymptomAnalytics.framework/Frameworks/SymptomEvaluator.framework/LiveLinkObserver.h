@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _tcpProgressScore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL premiumModeEnabled; // @synthesize premiumModeEnabled=_premiumModeEnabled;
 @property(readonly, nonatomic) unsigned long long tcpProgressScore; // @synthesize tcpProgressScore=_tcpProgressScore;
 @property(readonly, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
-- (void).cxx_destruct;
 - (unsigned long long)_assessProgressFromBaseline:(struct xtcpprogress_indicators *)arg1 toMetrics:(struct xtcpprogress_indicators *)arg2;
 - (void)_captureProgressWithInterval:(unsigned long long)arg1 capWindowTo:(unsigned long long)arg2;
 - (void)stopProgressProbeTimer;

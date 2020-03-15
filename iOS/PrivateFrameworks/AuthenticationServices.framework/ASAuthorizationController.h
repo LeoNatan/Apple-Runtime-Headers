@@ -8,23 +8,26 @@
 
 #import <AuthenticationServices/SOAuthorizationDelegate-Protocol.h>
 
-@class NSArray, NSString, NSURL, SOAuthorization;
+@class NSArray, NSString, NSURL, SOAuthorization, UIViewController, UIWindow;
 @protocol ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding;
 
 @interface ASAuthorizationController : NSObject <SOAuthorizationDelegate>
 {
     SOAuthorization *_appSSOAuthorization;
     NSURL *_appSSORequestURL;
+    UIWindow *_appSSOPresentationAnchor;
+    UIViewController *_appSSOViewController;
     NSArray *_authorizationRequests;
     id <ASAuthorizationControllerDelegate> _delegate;
     id <ASAuthorizationControllerPresentationContextProviding> _presentationContextProvider;
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ASAuthorizationControllerPresentationContextProviding> presentationContextProvider; // @synthesize presentationContextProvider=_presentationContextProvider;
 @property(nonatomic) __weak id <ASAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *authorizationRequests; // @synthesize authorizationRequests=_authorizationRequests;
-- (void).cxx_destruct;
+- (void)authorization:(id)arg1 presentViewController:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)authorization:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)authorization:(id)arg1 didCompleteWithHTTPResponse:(id)arg2 httpBody:(id)arg3;
 - (void)authorization:(id)arg1 didCompleteWithHTTPAuthorizationHeaders:(id)arg2;

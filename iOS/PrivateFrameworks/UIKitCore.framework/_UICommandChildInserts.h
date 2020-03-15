@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_afterElements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *afterElements; // @synthesize afterElements=_afterElements;
 @property(readonly, nonatomic) NSArray *beforeElements; // @synthesize beforeElements=_beforeElements;
-- (void).cxx_destruct;
 - (void)_setBeforeElements:(id)arg1 afterElements:(id)arg2;
 
 @end

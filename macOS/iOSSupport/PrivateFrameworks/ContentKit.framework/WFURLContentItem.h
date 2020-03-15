@@ -14,6 +14,7 @@
 {
 }
 
++ (id)contentSourceContentOfURL:(id)arg1;
 + (id)countDescription;
 + (id)pluralTypeDescription;
 + (id)typeDescription;
@@ -22,7 +23,7 @@
 + (id)ownedPasteboardTypes;
 + (id)ownedTypes;
 + (BOOL)supportedTypeMustBeDeterminedByInstance:(id)arg1;
-+ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3;
++ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3 contentSource:(id)arg4;
 + (id)filterRepresentationsForAllowedContent:(id)arg1;
 + (void)rediscoverURLCoercionClassesIfNeeded;
 + (void)registerURLCoercion:(Class)arg1;

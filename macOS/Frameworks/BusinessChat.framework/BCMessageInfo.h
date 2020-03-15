@@ -21,6 +21,7 @@
     NSString *__style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSString *_style; // @synthesize _style=__style;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *imageDescription; // @synthesize imageDescription=_imageDescription;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSString *alternateTitle; // @synthesize alternateTitle=_alternateTitle;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *style;
 @property(readonly, nonatomic) NSDictionary *dictionaryValue;
 - (id)initWithDictionary:(id)arg1 imageDictionary:(id)arg2;

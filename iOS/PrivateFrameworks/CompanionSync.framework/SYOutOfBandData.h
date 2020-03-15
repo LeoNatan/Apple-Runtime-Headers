@@ -15,8 +15,8 @@
     NSData *_payload;
 }
 
-@property(retain, nonatomic) NSData *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *payload; // @synthesize payload=_payload;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

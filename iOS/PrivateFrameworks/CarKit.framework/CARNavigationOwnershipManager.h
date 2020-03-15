@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <CarKit/BSInvalidatable-Protocol.h>
 #import <CarKit/CRCarPlayNavigationOwnerClient-Protocol.h>
 
 @class NSString, NSXPCConnection;
 @protocol CARNavigationOwnershipManagerDelegate;
 
-@interface CARNavigationOwnershipManager : NSObject <CRCarPlayNavigationOwnerClient>
+@interface CARNavigationOwnershipManager : NSObject <CRCarPlayNavigationOwnerClient, BSInvalidatable>
 {
     _Bool _ownershipRequested;
     NSXPCConnection *_connection;
@@ -19,11 +20,11 @@
     id <CARNavigationOwnershipManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CARNavigationOwnershipManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool ownershipRequested; // @synthesize ownershipRequested=_ownershipRequested;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)navigationOwnershipChangedTo:(unsigned long long)arg1;
 - (void)_handleConnectionReset;
 - (void)_setupConnection;
@@ -31,7 +32,7 @@
 @property(readonly, nonatomic) unsigned long long owner;
 - (void)releaseNavigationOwnership;
 - (void)requestNavigationOwnership;
-- (void)dealloc;
+- (void)invalidate;
 - (id)initWithIdentifier:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties

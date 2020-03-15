@@ -24,10 +24,10 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowAirPlayIncomingRequests; // @synthesize payloadAllowAirPlayIncomingRequests=_payloadAllowAirPlayIncomingRequests;
 @property(copy, nonatomic) NSNumber *payloadForceAirPlayIncomingRequestsPairingPassword; // @synthesize payloadForceAirPlayIncomingRequestsPairingPassword=_payloadForceAirPlayIncomingRequestsPairingPassword;
 @property(copy, nonatomic) NSNumber *payloadForceAirPlayOutgoingRequestsPairingPassword; // @synthesize payloadForceAirPlayOutgoingRequestsPairingPassword=_payloadForceAirPlayOutgoingRequestsPairingPassword;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

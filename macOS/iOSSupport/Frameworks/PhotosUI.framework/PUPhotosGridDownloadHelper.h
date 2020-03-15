@@ -19,10 +19,10 @@
 }
 
 + (id)createAlertControllerForDownloadErrorWithAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) BOOL shouldTreatLivePhotosAsStills; // @synthesize shouldTreatLivePhotosAsStills=_shouldTreatLivePhotosAsStills;
 @property(readonly, nonatomic) __weak PUPhotosGridViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
-- (void).cxx_destruct;
 - (void)_removeDownloadRequestForIdentifier:(id)arg1;
 - (id)_downloadContextForIdentifier:(id)arg1;
 - (void)_setDownloadContext:(id)arg1 forIdentifier:(id)arg2;
@@ -32,7 +32,7 @@
 - (void)cancelAllDownloads;
 - (void)cancelDownloadForIdentifier:(id)arg1;
 - (id)_defaultOptions;
-- (void)_checkIfDownloadIsRequiredForAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_checkIfRetrievalIsRequiredForAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_cancelPreviousDownloadsForAsset:(id)arg1;
 - (BOOL)isAnyPickerAssetDownloading:(id)arg1;
 - (void)checkIfDownloadIsRequiredForAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;

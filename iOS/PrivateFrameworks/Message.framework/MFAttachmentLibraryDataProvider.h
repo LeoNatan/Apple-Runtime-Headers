@@ -15,8 +15,8 @@
     MFMessageLibrary *_messageLibrary;
 }
 
-@property __weak MFMessageLibrary *messageLibrary; // @synthesize messageLibrary=_messageLibrary;
 - (void).cxx_destruct;
+@property __weak MFMessageLibrary *messageLibrary; // @synthesize messageLibrary=_messageLibrary;
 - (id)storageLocationForAttachment:(id)arg1 withMessage:(id)arg2;
 - (id)messageForAttachment:(id)arg1;
 - (void)fetchDataForAttachment:(id)arg1 consumer:(id)arg2 progress:(id)arg3 completion:(CDUnknownBlockType)arg4;

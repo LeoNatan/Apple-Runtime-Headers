@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)controllerForCollectionView:(id)arg1 delegate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UICollectionViewDragSourceControllerDragState *dragState; // @synthesize dragState=_dragState;
 @property(retain, nonatomic) _UICollectionViewDragSourceControllerSessionState *sessionState; // @synthesize sessionState=_sessionState;
 @property(nonatomic) __weak id <_UICollectionViewDragSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIDragInteraction *dragInteraction; // @synthesize dragInteraction=_dragInteraction;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)applyingRebasingUpdatesWithUpdateMap:(id)arg1;
 - (id)_filterCandidateIndexPaths:(id)arg1 forUserSelectedIndexPath:(id)arg2 session:(id)arg3;
 - (void)_sessionWillBegin:(id)arg1 forDragInteraction:(id)arg2;

@@ -15,10 +15,10 @@
     NSData *_encryptedID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *encryptedID; // @synthesize encryptedID=_encryptedID;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 @property(retain, nonatomic) NSString *ID; // @synthesize ID=_ID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;

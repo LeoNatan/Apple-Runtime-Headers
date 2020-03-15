@@ -13,8 +13,8 @@
     EKUIMapView *_mapView;
 }
 
-@property(retain) EKUIMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+@property(retain) EKUIMapView *mapView; // @synthesize mapView=_mapView;
 - (void)updateLayer;
 - (void)configureWithMapView:(id)arg1;
 

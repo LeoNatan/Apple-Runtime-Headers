@@ -6,10 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
-@class AKAppleIDAuthenticationController, AKAppleIDAuthenticationInAppContext;
+#import <AuthKitUI/AKBasicLoginAnimateProtocol-Protocol.h>
+
+@class AKAppleIDAuthenticationController, AKAppleIDAuthenticationInAppContext, NSString;
 @protocol AKSignInViewControllerDelegate;
 
-@interface AKBaseSignInViewController : UIViewController
+@interface AKBaseSignInViewController : UIViewController <AKBasicLoginAnimateProtocol>
 {
     AKAppleIDAuthenticationController *_authenticationController;
     _Bool _usesDarkMode;
@@ -18,13 +20,13 @@
     id <AKSignInViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAuthInProgress) _Bool authInProgress; // @synthesize authInProgress=_authInProgress;
 @property __weak id <AKSignInViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) AKAppleIDAuthenticationInAppContext *context; // @synthesize context=_context;
 @property(nonatomic) _Bool usesDarkMode; // @synthesize usesDarkMode=_usesDarkMode;
-- (void).cxx_destruct;
-- (void)_startBusyWorkUI;
-- (void)_hidebusyWorkUI;
+- (void)stopAnimating;
+- (void)startAnimating;
 - (void)_setPasswordFieldHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_provideDelegateWithAuthResults:(id)arg1 error:(id)arg2;
 - (void)_authenticateWithContext:(id)arg1;
@@ -37,6 +39,12 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)_initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)_initWithAuthController:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

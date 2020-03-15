@@ -14,9 +14,9 @@
     SAHAAttributeValue *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SAHAAttributeValue *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *attribute; // @synthesize attribute=_attribute;
-- (void).cxx_destruct;
 - (id)initWithAttribute:(id)arg1 value:(id)arg2;
 - (id)init;
 

@@ -27,6 +27,7 @@
     struct CGRect _contentViewFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(nonatomic) double currentScale; // @synthesize currentScale=_currentScale;
 @property(nonatomic) struct CGPoint currentTranslation; // @synthesize currentTranslation=_currentTranslation;
@@ -38,7 +39,6 @@
 @property(nonatomic) struct CGRect contentViewFrame; // @synthesize contentViewFrame=_contentViewFrame;
 @property(retain, nonatomic) SXImageView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <SXFullscreenImageViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)scrollViewDidZoom:(id)arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (_Bool)allowsDismissal;

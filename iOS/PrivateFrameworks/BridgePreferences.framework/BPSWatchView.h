@@ -20,6 +20,7 @@
     UIImageView *_watchScreenImageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsLightenBlendedScreen; // @synthesize wantsLightenBlendedScreen=_wantsLightenBlendedScreen;
 @property(readonly, nonatomic) UIImageView *watchScreenImageView; // @synthesize watchScreenImageView=_watchScreenImageView;
 @property(copy, nonatomic) NSString *styleVersionSuffix; // @synthesize styleVersionSuffix=_styleVersionSuffix;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *screenImageName; // @synthesize screenImageName=_screenImageName;
 @property(retain, nonatomic) NSString *screenImageSearchBundleIdentifier; // @synthesize screenImageSearchBundleIdentifier=_screenImageSearchBundleIdentifier;
-- (void).cxx_destruct;
 - (id)image;
 - (struct CGSize)screenImageSize;
 - (unsigned long long)deviceSize;

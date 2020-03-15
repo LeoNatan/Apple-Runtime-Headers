@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_observationKeys;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL preferLandscapeOrientations; // @synthesize preferLandscapeOrientations=_preferLandscapeOrientations;
 @property(nonatomic, getter=_updatesEnabled, setter=_setUpdatesEnabled:) BOOL updatesEnabled; // @synthesize updatesEnabled=_updatesEnabled;
 @property(readonly, nonatomic) unsigned long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double arrowOffset; // @synthesize arrowOffset=_arrowOffset;
 @property(nonatomic) double arrowHeight; // @synthesize arrowHeight=_arrowHeight;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_updateOutputs;
 - (struct CGSize)_popoverViewSizeForContentSize:(struct CGSize)arg1 arrowDirection:(unsigned long long)arg2;

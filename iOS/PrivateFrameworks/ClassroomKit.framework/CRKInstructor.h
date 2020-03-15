@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(copy, nonatomic) NSString *courseName; // @synthesize courseName=_courseName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(copy, nonatomic) DMFControlSessionIdentifier *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqualToInstructor:(id)arg1;

@@ -22,13 +22,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PBSPictureInPicturePlaybackDelegate> playbackDelegate; // @synthesize playbackDelegate=_playbackDelegate;
 @property(retain, nonatomic) PBSPictureInPictureState *currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) PBSPictureInPictureServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
-- (void).cxx_destruct;
 - (void)_notifyObserversPictureInPictureShouldMute:(_Bool)arg1;
 - (void)_handleStateChange:(id)arg1 error:(id)arg2;
 - (void)_configureRemoteProxy:(id)arg1;

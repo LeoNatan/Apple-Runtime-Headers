@@ -19,9 +19,9 @@
 
 + (id)manyEventSummariesToCSV:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double timebaseRatio; // @synthesize timebaseRatio=_timebaseRatio;
 @property(copy, nonatomic) NSArray *eventResults; // @synthesize eventResults=_eventResults;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)writeEventSummariesToFile:(id)arg1;
 - (id)eventSummariesToCSV;

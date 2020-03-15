@@ -21,8 +21,8 @@
 }
 
 + (id)sharedGenerator;
-@property(readonly) id <XCUIAccessibilityInterface> accessibilityInterface; // @synthesize accessibilityInterface=_accessibilityInterface;
 - (void).cxx_destruct;
+@property(readonly) __weak id <XCUIAccessibilityInterface> accessibilityInterface; // @synthesize accessibilityInterface=_accessibilityInterface;
 - (double)pressTouchBarAtPoint:(struct CGPoint)arg1 forDuration:(double)arg2 liftAtPoint:(struct CGPoint)arg3 velocity:(double)arg4 handler:(CDUnknownBlockType)arg5;
 - (double)pressTouchBarAtPoint:(struct CGPoint)arg1 forDuration:(double)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)doubleTapTouchBarAtPoint:(struct CGPoint)arg1 handler:(CDUnknownBlockType)arg2;
@@ -38,7 +38,8 @@
 - (double)sendString:(id)arg1 maximumFrequency:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)sendKey:(id)arg1 modifierFlags:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)setModifiers:(unsigned long long)arg1 merge:(BOOL)arg2 original:(unsigned long long *)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)_finalizeRequest:(id)arg1 error:(id)arg2;
+@property double implicitEventConfirmationIntervalForCurrentContext;
+- (void)_finalizeRequest:(id)arg1 timedOut:(BOOL)arg2 error:(id)arg3;
 - (void)eventRequestDidFinishPostingEvents:(id)arg1;
 - (void)eventRequest:(id)arg1 didFailWithError:(id)arg2;
 - (void)eventRequestWasInvalidated:(id)arg1;

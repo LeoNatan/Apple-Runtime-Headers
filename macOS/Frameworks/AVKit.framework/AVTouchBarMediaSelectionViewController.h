@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     id <AVTouchBarMediaSelectionViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVTouchBarMediaSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) id <AVTouchBarMediaSelectionControlling> playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)_updateButtonStatesForCurrentTouchBarMediaSelectionOption:(id)arg1 containerView:(id)arg2;
 - (void)_updateTouchBarMediaSelectionOptionInContainerView:(id)arg1 mediaSelectionOptions:(id)arg2 currentMediaSelectionOption:(id)arg3 selectionAction:(SEL)arg4;
 - (void)actionLegibleTouchBarMediaSelectionOptionSelected:(id)arg1;

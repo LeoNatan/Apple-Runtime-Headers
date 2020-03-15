@@ -22,8 +22,8 @@
 
 + (id)serviceForClientIdentifier:(id)arg1;
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void)_handleLostXPCConnection;
 - (_Bool)_queue_registerForStateUpdatesIfRequired;
 - (void)remoteService:(id)arg1 didReceiveDoNotDisturbStateUpdate:(id)arg2;

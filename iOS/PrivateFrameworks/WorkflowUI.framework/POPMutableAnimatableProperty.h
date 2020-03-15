@@ -16,11 +16,11 @@
     double threshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double threshold; // @synthesize threshold;
 @property(copy, nonatomic) CDUnknownBlockType writeBlock; // @synthesize writeBlock;
 @property(copy, nonatomic) CDUnknownBlockType readBlock; // @synthesize readBlock;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 
 @end
 

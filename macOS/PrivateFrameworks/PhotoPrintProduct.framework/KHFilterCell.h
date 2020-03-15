@@ -15,8 +15,8 @@
     NSColor *_buttonBackgroundColor;
 }
 
-@property(retain, nonatomic) NSColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)accessibilityPerformPress;

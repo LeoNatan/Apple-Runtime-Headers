@@ -13,8 +13,8 @@
     NSData *_pushToken;
 }
 
-@property(readonly, copy) NSData *pushToken; // @synthesize pushToken=_pushToken;
 - (void).cxx_destruct;
+@property(readonly, copy) NSData *pushToken; // @synthesize pushToken=_pushToken;
 - (void)startRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithPushToken:(id)arg1;
 

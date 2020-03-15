@@ -34,6 +34,7 @@
 + (void)abSetTestABDBDir:(id)arg1;
 + (id)sharedInstanceForAccountType:(id)arg1 creatingClass:(Class)arg2;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType calUnitTestCallbackBlock; // @synthesize calUnitTestCallbackBlock=_calUnitTestCallbackBlock;
 @property(nonatomic) int noteConnectionCount; // @synthesize noteConnectionCount=_noteConnectionCount;
 @property(retain, nonatomic) NoteContext *noteDB; // @synthesize noteDB=_noteDB;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSString *familyDelegateAltDSID; // @synthesize familyDelegateAltDSID=_familyDelegateAltDSID;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) void *abDB; // @synthesize abDB=_abDB;
-- (void).cxx_destruct;
 - (void)calUnitTestsSetCallbackBlockForSave:(CDUnknownBlockType)arg1;
 - (_Bool)noteCloseDBAndSave:(_Bool)arg1;
 - (_Bool)noteSaveDB;

@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)_startProvisioningWithOutputSessionID:(unsigned int *)arg1 error:(id *)arg2;
 - (BOOL)_processFinishProvisioningResult:(id)arg1 sessionID:(unsigned int)arg2 error:(id *)arg3;
 - (id)_createFinishProvisioningRequestWithClientData:(id)arg1 error:(id *)arg2;

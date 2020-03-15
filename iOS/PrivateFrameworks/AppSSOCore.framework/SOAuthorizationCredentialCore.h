@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *httpBody; // @synthesize httpBody=_httpBody;
 @property(copy, nonatomic) NSHTTPURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;
 @property(retain, nonatomic) NSDictionary *httpAuthorizationHeaders; // @synthesize httpAuthorizationHeaders=_httpAuthorizationHeaders;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAuthorizationCredential:(id)arg1;

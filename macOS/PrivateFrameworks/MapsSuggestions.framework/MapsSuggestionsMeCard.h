@@ -8,24 +8,25 @@
 
 #import <MapsSuggestions/NSCopying-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
 @interface MapsSuggestionsMeCard : NSObject <NSCopying>
 {
-    struct NSDictionary *_perCNPostalAddress;
+    NSDictionary *_perCNPostalAddress;
     BOOL _hasCorrected;
     BOOL _hasGeocoded;
     BOOL _hasHomeOrWork;
-    struct NSArray *_shortcutsForHome;
-    struct NSArray *_shortcutsForWork;
-    struct NSArray *_hiddenShortcutsForHome;
-    struct NSArray *_hiddenShortcutsForWork;
-    struct NSArray *_shortcutsForAll;
-    struct NSArray *_mapItemsForHome;
-    struct NSArray *_mapItemsForWork;
-    struct NSArray *_mapItemsForAll;
+    NSArray *_shortcutsForHome;
+    NSArray *_shortcutsForWork;
+    NSArray *_hiddenShortcutsForHome;
+    NSArray *_hiddenShortcutsForWork;
+    NSArray *_shortcutsForAll;
+    NSArray *_mapItemsForHome;
+    NSArray *_mapItemsForWork;
+    NSArray *_mapItemsForAll;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasHomeOrWork; // @synthesize hasHomeOrWork=_hasHomeOrWork;
 @property(readonly, nonatomic) BOOL hasGeocoded; // @synthesize hasGeocoded=_hasGeocoded;
 @property(readonly, nonatomic) BOOL hasCorrected; // @synthesize hasCorrected=_hasCorrected;
@@ -37,16 +38,15 @@
 @property(readonly, nonatomic) NSArray *hiddenShortcutsForHome; // @synthesize hiddenShortcutsForHome=_hiddenShortcutsForHome;
 @property(readonly, nonatomic) NSArray *shortcutsForWork; // @synthesize shortcutsForWork=_shortcutsForWork;
 @property(readonly, nonatomic) NSArray *shortcutsForHome; // @synthesize shortcutsForHome=_shortcutsForHome;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToMeCard:(id)arg1;
 - (id)shortcutForCNPostalAddressIdentifier:(id)arg1;
-- (struct NSDictionary *)shortcutsPerCNPostalAddress;
-- (id)initWithShortcuts:(struct NSArray *)arg1 hasCorrected:(BOOL)arg2 hasGeocoded:(BOOL)arg3;
-- (id)initWithShortcuts:(struct NSArray *)arg1 perCNPostalAddress:(struct NSDictionary *)arg2 hasCorrected:(BOOL)arg3 hasGeocoded:(BOOL)arg4;
-- (id)initWithHomes:(struct NSArray *)arg1 works:(struct NSArray *)arg2 hiddenHomes:(struct NSArray *)arg3 hiddenWorks:(struct NSArray *)arg4 all:(struct NSArray *)arg5 perCNPostalAddress:(struct NSDictionary *)arg6 hasCorrect:(BOOL)arg7 hasGeocoded:(BOOL)arg8;
+- (id)shortcutsPerCNPostalAddress;
+- (id)initWithShortcuts:(id)arg1 hasCorrected:(BOOL)arg2 hasGeocoded:(BOOL)arg3;
+- (id)initWithShortcuts:(id)arg1 perCNPostalAddress:(id)arg2 hasCorrected:(BOOL)arg3 hasGeocoded:(BOOL)arg4;
+- (id)initWithHomes:(id)arg1 works:(id)arg2 hiddenHomes:(id)arg3 hiddenWorks:(id)arg4 all:(id)arg5 perCNPostalAddress:(id)arg6 hasCorrect:(BOOL)arg7 hasGeocoded:(BOOL)arg8;
 
 @end
 

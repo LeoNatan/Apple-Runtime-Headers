@@ -18,18 +18,17 @@
 }
 
 - (void).cxx_destruct;
-- (id)_identifierForResource:(id)arg1;
-- (void)_removeTaskIdentifiersForResource:(id)arg1 highPriority:(BOOL)arg2;
-- (void)_setTaskIdentifiers:(id)arg1 forResource:(id)arg2 highPriority:(BOOL)arg3;
-- (id)_taskIdentifiersForResource:(id)arg1 highPriority:(BOOL)arg2;
-- (id)_taskForResource:(id)arg1 highPriority:(BOOL)arg2;
+- (void)_removeTaskIdentifiersForResourceIdentifier:(id)arg1 highPriority:(BOOL)arg2;
+- (void)_setTaskIdentifiers:(id)arg1 forResourceIdentifier:(id)arg2 highPriority:(BOOL)arg3;
+- (id)_taskIdentifiersForResourceIdentifier:(id)arg1 highPriority:(BOOL)arg2;
+- (id)_taskForResourceIdentifier:(id)arg1 highPriority:(BOOL)arg2;
 - (void)reset;
 - (void)cancelTaskWithTaskIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getPendingTaskForTaskIdentifier:(id)arg1;
-- (void)reportCompletionForResourceTransferTask:(id)arg1 withError:(id)arg2;
-- (void)reportProgress:(float)arg1 forResourceTransferTask:(id)arg2;
+- (void)reportCompletionForResourceIdentifier:(id)arg1 highPriority:(BOOL)arg2 withError:(id)arg3;
+- (void)reportProgress:(float)arg1 forResourceIdentifier:(id)arg2 highPriority:(BOOL)arg3;
 - (void)setPendingTaskWithTransferTask:(id)arg1 withTaskIdentifier:(id)arg2;
-- (BOOL)addProgressBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
+- (BOOL)addProgressBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2 forResourceIdentifier:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
 - (id)init;
 
 @end

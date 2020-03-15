@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) CTSubscriberAlgorithm *algorithm; // @synthesize algorithm=_algorithm;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CTSubscriberAlgorithm *algorithm; // @synthesize algorithm=_algorithm;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

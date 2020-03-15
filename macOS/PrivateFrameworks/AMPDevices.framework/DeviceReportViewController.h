@@ -27,6 +27,7 @@
     NSString *_defaultFileName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hideSaveButton; // @synthesize hideSaveButton=_hideSaveButton;
 @property(retain, nonatomic) NSString *defaultFileName; // @synthesize defaultFileName=_defaultFileName;
 @property(retain, nonatomic) NSString *safetyInfo; // @synthesize safetyInfo=_safetyInfo;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak NSTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak NSTextField *safetyInfoTextField; // @synthesize safetyInfoTextField=_safetyInfoTextField;
 @property(nonatomic) __weak NSTextField *safetyInfoTitleTextField; // @synthesize safetyInfoTitleTextField=_safetyInfoTitleTextField;
-- (void).cxx_destruct;
 - (void)clickSaveButton:(id)arg1;
 - (void)clickCancelButton:(id)arg1;
 - (void)clickOKButton:(id)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISwitch *switchView; // @synthesize switchView=_switchView;
 @property(nonatomic) __weak id <HUControlViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_switchValueChanged:(id)arg1;
 @property(nonatomic, getter=isDisabled) _Bool disabled;
 @property(retain, nonatomic) id value;

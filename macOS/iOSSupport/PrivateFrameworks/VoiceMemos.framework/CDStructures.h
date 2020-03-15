@@ -43,14 +43,6 @@ struct CGSize {
     double height;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSNumber {
-    Class _field1;
-};
-
 struct PowerMeter {
     double mSampleRate;
     double mPeakDecay1;

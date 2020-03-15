@@ -17,9 +17,9 @@
 }
 
 + (BOOL)isAttachment:(id)arg1 equalToModelComparable:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *attachmentUTI; // @synthesize attachmentUTI=_attachmentUTI;
 @property(retain, nonatomic) NSString *attachmentIdentifier; // @synthesize attachmentIdentifier=_attachmentIdentifier;
-- (void).cxx_destruct;
 - (id)attachmentInContext:(id)arg1;
 - (BOOL)isEqualToModelComparable:(id)arg1;
 

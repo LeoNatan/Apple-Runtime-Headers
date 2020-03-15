@@ -13,8 +13,8 @@
     PKAccountPreferences *_preferences;
 }
 
-@property(readonly, copy, nonatomic) PKAccountPreferences *preferences; // @synthesize preferences=_preferences;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) PKAccountPreferences *preferences; // @synthesize preferences=_preferences;
 - (id)initWithData:(id)arg1;
 
 @end

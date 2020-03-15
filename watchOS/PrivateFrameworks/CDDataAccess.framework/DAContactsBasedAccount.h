@@ -16,9 +16,9 @@
     CNAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool markedForDeletion; // @synthesize markedForDeletion=_markedForDeletion;
 @property(readonly, nonatomic) CNAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)markForDeletion;
 - (void)updateSaveRequest:(id)arg1;
 - (_Bool)isAccount;

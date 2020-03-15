@@ -10,7 +10,7 @@
 #import <Sharing/WPAWDLDelegate-Protocol.h>
 #import <Sharing/WPNearbyDelegate-Protocol.h>
 
-@class CBCentralManager, CURetrier, NSArray, NSData, NSSet, NSString, WPAWDL, WPNearby, WPPairing;
+@class CBCentralManager, CURetrier, NSArray, NSData, NSMutableDictionary, NSSet, NSString, WPAWDL, WPNearby, WPPairing;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFBLEScanner : NSObject <CBCentralManagerDelegate, WPAWDLDelegate, WPNearbyDelegate>
@@ -18,8 +18,10 @@
     BOOL _activateCalled;
     BOOL _activated;
     BOOL _activeScan;
+    struct BTSessionImpl *_btSession;
+    BOOL _btStarted;
     CBCentralManager *_centralManager;
-    struct NSMutableDictionary *_devices;
+    NSMutableDictionary *_devices;
     BOOL _invalidateCalled;
     NSObject<OS_dispatch_source> *_lostTimer;
     BOOL _needDups;
@@ -95,6 +97,7 @@
     NSSet *_trackedPeers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *trackedPeers; // @synthesize trackedPeers=_trackedPeers;
 @property(copy, nonatomic) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
@@ -118,10 +121,11 @@
 @property(copy, nonatomic) NSArray *deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
-- (void).cxx_destruct;
-- (unsigned int)statusToHeadsetStatus:(unsigned char)arg1;
+- (unsigned int)statusToHeadsetStatus:(unsigned char)arg1 forProductID:(unsigned short)arg2;
 - (void)parseStatus3:(unsigned char)arg1 productID:(unsigned int)arg2 caseLEDColor:(char *)arg3 caseLEDStatus:(char *)arg4;
 - (id)modelWithProductID:(unsigned short)arg1;
+- (BOOL)pairingUpdatePairedInfoIOBT:(id)arg1 fields:(id)arg2 bleDevice:(id)arg3;
+- (BOOL)pairingUpdatePairedInfoMB:(id)arg1 fields:(id)arg2 bleDevice:(id)arg3;
 - (BOOL)pairingUpdatePairedInfo:(id)arg1 fields:(id)arg2 bleDevice:(id)arg3;
 - (id)pairingParsePayload:(id)arg1 identifier:(id)arg2 bleDevice:(id)arg3;
 - (void)pairing:(id)arg1 foundDevice:(id)arg2 payload:(id)arg3 rssi:(id)arg4 peerInfo:(id)arg5;
@@ -140,6 +144,9 @@
 - (void)awdl:(id)arg1 failedToStartScanningWithError:(id)arg2;
 - (void)awdlStartedScanning:(id)arg1;
 - (void)awdlDidUpdateState:(id)arg1;
+- (void)_btSessionEnsureStopped;
+- (int)_btSessionEnsureStarted;
+- (BOOL)_btSessionUsable;
 - (void)_watchSetupParseName:(id)arg1 fields:(id)arg2;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;

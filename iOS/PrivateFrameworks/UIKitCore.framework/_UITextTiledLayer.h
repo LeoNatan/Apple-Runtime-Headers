@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
     double _maxPrefetchedTiles;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double maxPrefetchedTiles; // @synthesize maxPrefetchedTiles=_maxPrefetchedTiles;
 @property(nonatomic) double maxTileHeight; // @synthesize maxTileHeight=_maxTileHeight;
-- (void).cxx_destruct;
 - (void)resumeTiling;
 - (void)suspendTiling;
 - (void)dealloc;

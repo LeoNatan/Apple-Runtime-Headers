@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)clipFormatValid:(id)arg1 validateVideoFormat:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *assetURLs; // @synthesize assetURLs=_assetURLs;
 @property(retain) NSMutableDictionary *identifierURLsToClipsMap; // @synthesize identifierURLsToClipsMap=_identifierURLsToClipsMap;
 @property(retain, nonatomic) Project *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (void)load;
 - (long long)countForAllClips;
 - (void)removeClipWithURL:(id)arg1;

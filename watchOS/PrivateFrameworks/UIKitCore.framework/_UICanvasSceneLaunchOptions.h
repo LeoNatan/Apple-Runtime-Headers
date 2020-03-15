@@ -14,9 +14,9 @@
     NSSet *_unprocessedActions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *unprocessedActions; // @synthesize unprocessedActions=_unprocessedActions;
 @property(retain, nonatomic) NSDictionary *launchOptionsDictionary; // @synthesize launchOptionsDictionary=_launchOptionsDictionary;
-- (void).cxx_destruct;
 
 @end
 

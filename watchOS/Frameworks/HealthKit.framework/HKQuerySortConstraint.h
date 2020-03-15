@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)sortConstraintByRelaxingSortConstraint:(id)arg1 error:(id *)arg2;
 + (id)sortConstraintWithSortDescriptor:(id)arg1 predicate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSComparisonPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy, nonatomic) NSSortDescriptor *sortDescriptor; // @synthesize sortDescriptor=_sortDescriptor;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

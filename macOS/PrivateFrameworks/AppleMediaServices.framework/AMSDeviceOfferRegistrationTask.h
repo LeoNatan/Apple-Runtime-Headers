@@ -24,12 +24,17 @@
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property BOOL lightweightCheckOnly; // @synthesize lightweightCheckOnly=_lightweightCheckOnly;
 @property(retain) NSSet *offerIdentifiers; // @synthesize offerIdentifiers=_offerIdentifiers;
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(retain) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
+- (void)_updateWithDeviceOffers:(id)arg1;
+- (id)_requestParameters;
+- (id)_latestOffersWithFetchedDeviceOffers:(id)arg1 offersStore:(id)arg2;
+- (id)_deviceOffersURL;
+- (id)_bucketedOffers:(id)arg1;
 - (id)perform;
 - (id)initWithAccount:(id)arg1 bag:(id)arg2;
 

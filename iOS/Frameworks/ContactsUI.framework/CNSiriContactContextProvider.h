@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
-- (void).cxx_destruct;
 - (id)defaultContextManager;
 - (void)_removeContextProviderOnMainThread;
 - (void)setEnabled:(_Bool)arg1;

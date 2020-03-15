@@ -16,9 +16,9 @@
     struct UIEdgeInsets _touchAllowance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets touchAllowance; // @synthesize touchAllowance=_touchAllowance;
 @property(readonly, nonatomic) UIView *focusedView; // @synthesize focusedView=_focusedView;
-- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)reset;

@@ -15,10 +15,10 @@
     HMDSupportedRTPConfiguration *_supportedRTPConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDSupportedRTPConfiguration *supportedRTPConfiguration; // @synthesize supportedRTPConfiguration=_supportedRTPConfiguration;
 @property(retain, nonatomic) HMDSupportedAudioStreamConfiguration *supportedAudioStreamConfiguration; // @synthesize supportedAudioStreamConfiguration=_supportedAudioStreamConfiguration;
 @property(retain, nonatomic) HMDSupportedVideoStreamConfiguration *supportedVideoStreamConfiguration; // @synthesize supportedVideoStreamConfiguration=_supportedVideoStreamConfiguration;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 
 @end

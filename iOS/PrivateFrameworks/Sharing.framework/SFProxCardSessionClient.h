@@ -35,6 +35,7 @@
     NSString *_viewServiceName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *viewServiceName; // @synthesize viewServiceName=_viewServiceName;
 @property(copy, nonatomic) NSString *viewControllerClassName; // @synthesize viewControllerClassName=_viewControllerClassName;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) id <SFProxCardXPCClientInterface> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)xpcPerformAction:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)xpcCheckinWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_xpcCheckinTimerFired;

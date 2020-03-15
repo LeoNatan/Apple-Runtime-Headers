@@ -16,8 +16,8 @@
     TVLImageAssetElementType *_assetElement;
 }
 
-@property(retain, nonatomic) TVLImageAssetElementType *assetElement; // @synthesize assetElement=_assetElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLImageAssetElementType *assetElement; // @synthesize assetElement=_assetElement;
 - (_Bool)_unapplyMotionEffect:(id)arg1;
 - (void)_detachMotionEffects;
 - (void)_attachMotionEffects;

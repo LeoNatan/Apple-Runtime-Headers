@@ -46,8 +46,8 @@
     id <PKAccountBillPaymentObserver> _observer;
 }
 
-@property(nonatomic) __weak id <PKAccountBillPaymentObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKAccountBillPaymentObserver> observer; // @synthesize observer=_observer;
 - (void)_presentAlertControllerForError:(id)arg1;
 - (void)_dismissViewControllerWithSuccess:(_Bool)arg1;
 - (id)_addBankAccountInformationViewController;

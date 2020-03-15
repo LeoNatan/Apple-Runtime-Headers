@@ -23,12 +23,12 @@
 + (Class)achievementsType;
 + (Class)workoutsType;
 + (Class)snapshotsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *competitions; // @synthesize competitions=_competitions;
 @property(retain, nonatomic) NSMutableArray *achievements; // @synthesize achievements=_achievements;
 @property(retain, nonatomic) NSMutableArray *workouts; // @synthesize workouts=_workouts;
 @property(retain, nonatomic) NSMutableArray *snapshots; // @synthesize snapshots=_snapshots;
 @property(retain, nonatomic) ASCodableContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

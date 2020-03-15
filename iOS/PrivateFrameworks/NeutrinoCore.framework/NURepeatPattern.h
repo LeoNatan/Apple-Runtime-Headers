@@ -13,10 +13,10 @@
     long long _maxCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long maxCount; // @synthesize maxCount=_maxCount;
 @property(readonly) long long minCount; // @synthesize minCount=_minCount;
 @property(readonly) NUPattern *pattern; // @synthesize pattern=_pattern;
-- (void).cxx_destruct;
 - (_Bool)match:(id)arg1 location:(unsigned long long *)arg2 count:(unsigned long long *)arg3;
 - (_Bool)isEqualToRepeatPattern:(id)arg1;
 - (_Bool)isEqualToPattern:(id)arg1;

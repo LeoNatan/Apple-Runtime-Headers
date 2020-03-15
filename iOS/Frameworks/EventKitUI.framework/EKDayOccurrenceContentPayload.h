@@ -18,13 +18,13 @@
     NSAttributedString *_travelTimeString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *travelTimeString; // @synthesize travelTimeString=_travelTimeString;
 @property(readonly, nonatomic) UIImage *travelTimeImage; // @synthesize travelTimeImage=_travelTimeImage;
 @property(readonly, nonatomic) UIImage *textImage; // @synthesize textImage=_textImage;
 @property(readonly, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(readonly, nonatomic) unsigned long long requestOptions; // @synthesize requestOptions=_requestOptions;
 @property(readonly, nonatomic) long long requestId; // @synthesize requestId=_requestId;
-- (void).cxx_destruct;
 - (id)initWithRequestId:(long long)arg1 requestOptions:(unsigned long long)arg2 backgroundImage:(id)arg3 textImage:(id)arg4 travelTimeImage:(id)arg5 travelTimeString:(id)arg6;
 
 @end

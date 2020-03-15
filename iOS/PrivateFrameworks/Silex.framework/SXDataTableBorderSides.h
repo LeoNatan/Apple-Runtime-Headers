@@ -13,8 +13,8 @@
     SXUnitConverter *_unitConverter;
 }
 
-@property(retain, nonatomic) SXUnitConverter *unitConverter; // @synthesize unitConverter=_unitConverter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXUnitConverter *unitConverter; // @synthesize unitConverter=_unitConverter;
 - (id)borderForValue:(id)arg1;
 - (id)leftWithValue:(id)arg1 withType:(int)arg2;
 - (id)bottomWithValue:(id)arg1 withType:(int)arg2;

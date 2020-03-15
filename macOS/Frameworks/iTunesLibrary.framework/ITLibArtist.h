@@ -16,10 +16,10 @@
 }
 
 + (id)artistWithDict:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSString *sortName; // @synthesize sortName=_sortName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

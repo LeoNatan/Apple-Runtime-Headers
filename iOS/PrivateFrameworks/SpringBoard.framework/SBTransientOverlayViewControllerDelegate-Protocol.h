@@ -19,6 +19,7 @@
 - (void)transientOverlayViewControllerNeedsGestureDismissalStyleUpdate:(SBTransientOverlayViewController *)arg1;
 - (void)transientOverlayViewControllerNeedsFeaturePolicyUpdate:(SBTransientOverlayViewController *)arg1;
 - (void)transientOverlayViewControllerNeedsContentOpaqueUpdate:(SBTransientOverlayViewController *)arg1;
+- (_Bool)isKeyboardVisibleForSpringBoardForTransientOverlayViewController:(SBTransientOverlayViewController *)arg1;
 - (_Bool)defaultShouldAutorotateForTransientOverlayViewController:(SBTransientOverlayViewController *)arg1;
 - (long long)defaultPreferredInterfaceOrientationForPresentationForTransientOverlayViewController:(SBTransientOverlayViewController *)arg1;
 - (unsigned long long)defaultSupportedInterfaceOrientationsForTransientOverlayViewController:(SBTransientOverlayViewController *)arg1;

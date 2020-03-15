@@ -19,9 +19,9 @@
     NSString *_faultString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) NSString *method; // @synthesize method=_method;
-- (void).cxx_destruct;
 - (id)tmpFilePathForCache;
 - (void)appendFormat:(id)arg1;
 - (void)appendString:(id)arg1;

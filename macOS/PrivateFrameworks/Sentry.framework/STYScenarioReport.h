@@ -25,6 +25,7 @@
 + (id)reportForSystemWake:(id)arg1 wakeSubtype:(id)arg2 observedLatencyInMs:(float)arg3 error:(id *)arg4;
 + (id)reportFromSignpostInterval:(id)arg1 error:(id *)arg2;
 + (id)reportFromSignpostEvent:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *symptomsSignature; // @synthesize symptomsSignature=_symptomsSignature;
 @property(retain) SignpostInterval *interval; // @synthesize interval=_interval;
 @property(retain) NSString *metadata; // @synthesize metadata=_metadata;
@@ -35,7 +36,6 @@
 @property(readonly) float observedFps; // @synthesize observedFps=_observedFps;
 @property(readonly) float targetLatencyInMs; // @synthesize targetLatencyInMs=_targetLatencyInMs;
 @property(readonly) float observedLatencyInMs; // @synthesize observedLatencyInMs=_observedLatencyInMs;
-- (void).cxx_destruct;
 - (id)initWithLifecycleScenarioAndLatency:(id)arg1 wakeType:(id)arg2 wakeSubtype:(id)arg3 observedLatencyInMs:(float)arg4;
 - (id)convertDictionaryToString:(id)arg1;
 - (id)symptomsSignatureForReport;

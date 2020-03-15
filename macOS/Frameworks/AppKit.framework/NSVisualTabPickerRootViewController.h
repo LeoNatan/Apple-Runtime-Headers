@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)springAnimationForVisualTabPicker;
+- (void).cxx_destruct;
 @property BOOL isClosing; // @synthesize isClosing=_isClosing;
 @property(nonatomic) BOOL shouldShowCloseButtons; // @synthesize shouldShowCloseButtons=_shouldShowCloseButtons;
 @property(nonatomic) BOOL shouldHighlightTiles; // @synthesize shouldHighlightTiles=_shouldHighlightTiles;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL tabsShouldBeClosable; // @synthesize tabsShouldBeClosable=_tabsShouldBeClosable;
 @property(nonatomic) BOOL shouldStackThumbnails; // @synthesize shouldStackThumbnails=_shouldStackThumbnails;
 @property(nonatomic) __weak id <NSVisualTabPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_tabPickerThumbnailViews;
 - (void)_updateTabsShouldBeClosable;
 - (void)tabPickerItemsDidChange;

@@ -48,6 +48,7 @@
 + (id)sortedEnabledDelegateSourcesFromStore:(id)arg1;
 + (id)calendarModelWithEventStore:(id)arg1;
 + (id)calendarModelWithDataPath:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool autoStartNotificationMonitor; // @synthesize autoStartNotificationMonitor=_autoStartNotificationMonitor;
 @property(copy, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(retain, nonatomic) NSArray *sortedEnabledDelegates; // @synthesize sortedEnabledDelegates=_sortedEnabledDelegates;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) EKCalendarDate *selectedDate; // @synthesize selectedDate=_selectedDate;
 @property(copy, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (_Bool)searchingOccurrences;
 - (id)eventNotificationReferencesForIdentity:(id)arg1;
 - (id)eventNotificationReferencesForCurrentIdentity;

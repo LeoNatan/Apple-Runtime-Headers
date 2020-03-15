@@ -15,10 +15,10 @@
     double _collectionInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double collectionInterval; // @synthesize collectionInterval=_collectionInterval;
 @property(copy, nonatomic) HDDataCollectionObserverState *state; // @synthesize state=_state;
 @property(readonly, nonatomic) __weak id observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithObserver:(id)arg1 state:(id)arg2 collectionInterval:(double)arg3;
 

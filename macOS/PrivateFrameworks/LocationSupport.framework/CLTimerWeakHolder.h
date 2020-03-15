@@ -14,8 +14,8 @@
 }
 
 + (id)holderWithTimer:(id)arg1;
-@property(readonly, nonatomic) __weak CLTimer *timer; // @synthesize timer=_timer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak CLTimer *timer; // @synthesize timer=_timer;
 - (id)initWithTimer:(id)arg1;
 
 @end

@@ -25,6 +25,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(nonatomic) double age; // @synthesize age=_age;
 @property(nonatomic) int rssi; // @synthesize rssi=_rssi;
@@ -32,7 +33,6 @@
 @property(nonatomic) int channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) NSString *mac; // @synthesize mac=_mac;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

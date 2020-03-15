@@ -21,9 +21,11 @@
     int _HDRMode;
     _Bool _autoOriginalPhotoDeliveryEnabled;
     _Bool _autoSpatialOverCaptureEnabled;
+    _Bool _autoDeferredProcessingEnabled;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, getter=isAutoDeferredProcessingEnabled) _Bool autoDeferredProcessingEnabled; // @synthesize autoDeferredProcessingEnabled=_autoDeferredProcessingEnabled;
 @property(nonatomic, getter=isAutoSpatialOverCaptureEnabled) _Bool autoSpatialOverCaptureEnabled; // @synthesize autoSpatialOverCaptureEnabled=_autoSpatialOverCaptureEnabled;
 @property(nonatomic, getter=isAutoOriginalPhotoDeliveryEnabled) _Bool autoOriginalPhotoDeliveryEnabled; // @synthesize autoOriginalPhotoDeliveryEnabled=_autoOriginalPhotoDeliveryEnabled;
 @property(nonatomic) int HDRMode; // @synthesize HDRMode=_HDRMode;

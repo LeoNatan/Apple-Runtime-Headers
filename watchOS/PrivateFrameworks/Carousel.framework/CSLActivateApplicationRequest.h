@@ -28,6 +28,7 @@
 }
 
 + (id)requestForApplication:(id)arg1 actions:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasStartedFulfillment; // @synthesize hasStartedFulfillment=_hasStartedFulfillment;
 @property(nonatomic) int allowsCoalescingCancellation; // @synthesize allowsCoalescingCancellation=_allowsCoalescingCancellation;
 @property(nonatomic) unsigned int transitionReason; // @synthesize transitionReason=_transitionReason;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 @property(copy, nonatomic) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

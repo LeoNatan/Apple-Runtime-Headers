@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)leadingTrailingOffset:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak id <ICDocCamPageContentViewTapDelegate> tapDelegate; // @synthesize tapDelegate=_tapDelegate;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) unsigned long long pageIndex; // @synthesize pageIndex=_pageIndex;
-- (void).cxx_destruct;
 - (void)didReceiveMemoryWarning;
 - (void)handleSingleTap:(id)arg1;
 - (void)viewDidLoad;

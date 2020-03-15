@@ -16,8 +16,8 @@
 }
 
 + (id)logCategory;
-@property(retain, nonatomic) HMDRemoteLoginReceiverSession *loginSession; // @synthesize loginSession=_loginSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMDRemoteLoginReceiverSession *loginSession; // @synthesize loginSession=_loginSession;
 - (void)didCompleteAuthentication:(id)arg1 response:(id)arg2;
 - (void)_callCompletion:(id)arg1;
 - (void)_auditLoggedInAccountFor:(id)arg1;

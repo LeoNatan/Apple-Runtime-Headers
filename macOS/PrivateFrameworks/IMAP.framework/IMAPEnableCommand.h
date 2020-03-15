@@ -13,8 +13,8 @@
     NSArray *_capabilities;
 }
 
-@property(readonly, copy, nonatomic) NSArray *capabilities; // @synthesize capabilities=_capabilities;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *capabilities; // @synthesize capabilities=_capabilities;
 - (BOOL)handlesAllUntaggedResponses;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;

@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _maximumTilesPerRow;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maximumTilesPerRow; // @synthesize maximumTilesPerRow=_maximumTilesPerRow;
 @property(readonly, nonatomic) unsigned long long numberOfTiles; // @synthesize numberOfTiles=_numberOfTiles;
 @property(readonly, nonatomic) __weak id <VisualTabPickerLayoutEngineInputProvider> inputProvider; // @synthesize inputProvider=_inputProvider;
-- (void).cxx_destruct;
 - (void)_recomputeTileSize;
 - (double)_computedHorizontalMargin;
 - (void)_recomputeHorizontalInsets;

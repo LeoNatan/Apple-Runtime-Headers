@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSSet *_addedBookmarks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *addedBookmarks; // @synthesize addedBookmarks=_addedBookmarks;
 @property(nonatomic) BOOL keepsBookmarksWithSyncData; // @synthesize keepsBookmarksWithSyncData=_keepsBookmarksWithSyncData;
 @property(retain, nonatomic, setter=setDAVHomeURL:) NSURL *davHomeURL; // @synthesize davHomeURL=_davHomeURL;
-- (void).cxx_destruct;
 - (id)_moveBookmark:(id)arg1 intoFolder:(id)arg2 index:(unsigned long long)arg3;
 - (unsigned long long)_numberOfDuplicateBookmarksUnderFolder:(id)arg1 recurse:(BOOL)arg2;
 - (BOOL)_deduplicateSubtreeRootedAtFolder:(id)arg1 mergingAdditionalChildren:(id)arg2;

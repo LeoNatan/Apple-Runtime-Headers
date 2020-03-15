@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     long long _spacingStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long spacingStyle; // @synthesize spacingStyle=_spacingStyle;
 @property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 @property(retain, nonatomic) UIImage *image;

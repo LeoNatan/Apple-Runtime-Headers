@@ -21,6 +21,7 @@
     double _fadeInLengthOverride;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double fadeInLengthOverride; // @synthesize fadeInLengthOverride=_fadeInLengthOverride;
 @property(nonatomic) double fadeOutLengthOverride; // @synthesize fadeOutLengthOverride=_fadeOutLengthOverride;
 @property(nonatomic) double fadeInOverride; // @synthesize fadeInOverride=_fadeInOverride;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool useOverrides; // @synthesize useOverrides=_useOverrides;
 @property(nonatomic) _Bool suppressFlavorSpeech; // @synthesize suppressFlavorSpeech=_suppressFlavorSpeech;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

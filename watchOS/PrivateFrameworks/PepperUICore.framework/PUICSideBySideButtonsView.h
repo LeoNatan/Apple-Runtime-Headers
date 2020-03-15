@@ -31,6 +31,7 @@
 }
 
 + (void)_setupSideBySideButtonsSpec;
+- (void).cxx_destruct;
 @property(nonatomic) float secondaryTextFontWeight; // @synthesize secondaryTextFontWeight=_secondaryTextFontWeight;
 @property(nonatomic) float primaryTextFontWeight; // @synthesize primaryTextFontWeight=_primaryTextFontWeight;
 @property(nonatomic) float secondaryButtonPlatterAlpha; // @synthesize secondaryButtonPlatterAlpha=_secondaryButtonPlatterAlpha;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) CDUnknownBlockType primaryActionBlock; // @synthesize primaryActionBlock=_primaryActionBlock;
 @property(copy, nonatomic) NSString *secondaryButtonTitle; // @synthesize secondaryButtonTitle=_secondaryButtonTitle;
 @property(copy, nonatomic) NSString *primaryButtonTitle; // @synthesize primaryButtonTitle=_primaryButtonTitle;
-- (void).cxx_destruct;
 - (void)_adjustFontSizeFittingPrimaryLabel:(id)arg1 secondaryLabel:(id)arg2 inSize:(struct CGSize)arg3;
 - (id)_primaryAppColor;
 - (id)_defaultBackgroundColor;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _UIPrintMessageAndSpinnerView *_messageAndSpinner;
 }
 
-@property(nonatomic) __weak _UIPrintMessageAndSpinnerView *messageAndSpinner; // @synthesize messageAndSpinner=_messageAndSpinner;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _UIPrintMessageAndSpinnerView *messageAndSpinner; // @synthesize messageAndSpinner=_messageAndSpinner;
 - (void)updateFont;
 - (void)setSearching:(_Bool)arg1;
 - (void)searchTimeout;

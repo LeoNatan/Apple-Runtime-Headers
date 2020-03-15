@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) INImageBundle *imageBundle; // @synthesize imageBundle=_imageBundle;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)_setBundleIdentifier:(id)arg1;

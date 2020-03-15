@@ -19,9 +19,9 @@
 + (id)concurrent;
 + (id)serial;
 + (id)_attributesWithAttributes:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *targetQueue; // @synthesize targetQueue=_targetQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue_attr> *attributes; // @synthesize attributes=_attrs;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)inactive;
 - (id)targetQueue:(id)arg1;

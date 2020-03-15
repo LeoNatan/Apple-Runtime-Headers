@@ -27,6 +27,7 @@
     NSLayoutConstraint *_centerViewSizeConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *centerViewSizeConstraint; // @synthesize centerViewSizeConstraint=_centerViewSizeConstraint;
 @property(retain) NSLayoutGuide *centerViewOffsetGuide; // @synthesize centerViewOffsetGuide=_centerViewOffsetGuide;
 @property(retain) NSLayoutConstraint *centerViewAlignmentConstraint; // @synthesize centerViewAlignmentConstraint=_centerViewAlignmentConstraint;
@@ -41,7 +42,6 @@
 @property(nonatomic) long long level; // @synthesize level=_level;
 @property long long orientation; // @synthesize orientation=_orientation;
 @property __weak id <CalUIAccordionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)indexAndOffsetOfPoint:(struct CGPoint)arg1;
 - (id)viewAtPoint:(struct CGPoint)arg1;
 - (long long)_convertFromStackViewIndex:(long long)arg1;

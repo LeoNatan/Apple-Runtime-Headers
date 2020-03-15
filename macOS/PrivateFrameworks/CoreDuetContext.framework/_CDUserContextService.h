@@ -32,6 +32,7 @@
 
 + (id)sharedInstanceWithSharedMemoryStore:(id)arg1;
 + (id)sharedInstanceWithPersistence:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *remoteDevicesByDeviceID; // @synthesize remoteDevicesByDeviceID=_remoteDevicesByDeviceID;
 @property(nonatomic) BOOL remoteDevicesHaveBeenActivated; // @synthesize remoteDevicesHaveBeenActivated=_remoteDevicesHaveBeenActivated;
 @property(retain, nonatomic) NSMutableDictionary *notificationEventSubscribersByClientIdentifier; // @synthesize notificationEventSubscribersByClientIdentifier=_notificationEventSubscribersByClientIdentifier;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSMutableSet *clients; // @synthesize clients=_clients;
 @property(retain, nonatomic) _CDInMemoryUserContext *userContext; // @synthesize userContext=_userContext;
 @property(retain, nonatomic) id <_CDContextPersisting> persistence; // @synthesize persistence=_persistence;
-- (void).cxx_destruct;
 - (void)removeSubscriberWithToken:(unsigned long long)arg1 streamName:(id)arg2;
 - (void)addSubscriber:(id)arg1;
 - (void)requestActivateDevicesFromSubscriber:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

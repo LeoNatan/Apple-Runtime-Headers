@@ -29,6 +29,7 @@
 }
 
 + (id)_dictionaryWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(_Bool)arg4 readerScrollPosition:(id)arg5 isPinned:(_Bool)arg6 sceneID:(id)arg7;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 @property(nonatomic, getter=isPinned) _Bool pinned; // @synthesize pinned=_pinned;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *URLStringForLastSearch; // @synthesize URLStringForLastSearch=_URLStringForLastSearch;
 @property(copy, nonatomic) NSArray *titleWords; // @synthesize titleWords=_titleWords;
 @property(copy, nonatomic) NSString *titleForLastSearch; // @synthesize titleForLastSearch=_titleForLastSearch;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentationForUserActivityUserInfo;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

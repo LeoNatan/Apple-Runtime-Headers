@@ -64,12 +64,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _signpostId;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldRasterize; // @synthesize shouldRasterize=_shouldRasterize;
 @property(readonly, nonatomic) _Bool multiSample; // @synthesize multiSample=_useMultisampling;
 @property(nonatomic) id <GGLRenderQueueSource> renderSource; // @synthesize renderSource=_renderSource;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct DebugConsole *)debugConsoleForId:(int)arg1;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 toLayer:(id)arg2;
 @property(readonly, nonatomic) float averageFPS;

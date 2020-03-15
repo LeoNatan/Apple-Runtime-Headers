@@ -18,13 +18,13 @@
     NSURLSessionDataTask *_dataTask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionDataTask *dataTask; // @synthesize dataTask=_dataTask;
 @property(retain, nonatomic) NSUUID *requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) NSString *scriptStr; // @synthesize scriptStr=_scriptStr;
 @property(nonatomic) _Bool loadCompleted; // @synthesize loadCompleted=_loadCompleted;
 @property(retain, nonatomic) ISURLOperation *opertaion; // @synthesize opertaion=_opertaion;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 
 @end
 

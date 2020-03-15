@@ -15,8 +15,8 @@
     struct _NSRange _highlightedRange;
 }
 
-@property(nonatomic) struct _NSRange highlightedRange; // @synthesize highlightedRange=_highlightedRange;
 - (void).cxx_destruct;
+@property(nonatomic) struct _NSRange highlightedRange; // @synthesize highlightedRange=_highlightedRange;
 - (void)layoutHighlight;
 - (id)initWithTextComponentLayer:(id)arg1;
 

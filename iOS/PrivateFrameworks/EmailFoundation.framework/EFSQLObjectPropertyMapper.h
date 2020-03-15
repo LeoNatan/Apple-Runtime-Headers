@@ -22,6 +22,7 @@
     id <EFSQLExpressable> _bitExpression;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EFSQLExpressable> bitExpression; // @synthesize bitExpression=_bitExpression;
 @property(nonatomic) _Bool isPlaceholder; // @synthesize isPlaceholder=_isPlaceholder;
 @property(readonly, nonatomic) NSArray *additionalColumns; // @synthesize additionalColumns=_additionalColumns;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) EFSQLColumnSchema *sourceColumn; // @synthesize sourceColumn=_sourceColumn;
 @property(readonly, nonatomic) EFSQLTableSchema *table; // @synthesize table=_table;
 @property(copy, nonatomic) NSDictionary *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)childForKey:(id)arg1;
 - (id)initPlaceholderMapperWithChildren:(id)arg1;
 - (id)initWithColumn:(id)arg1 condition:(id)arg2 additionalColumns:(id)arg3 bitExpression:(id)arg4;

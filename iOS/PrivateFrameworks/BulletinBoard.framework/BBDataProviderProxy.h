@@ -23,8 +23,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) BBDataProviderIdentity *identity; // @synthesize identity=_identity;
 - (void).cxx_destruct;
+@property(retain) BBDataProviderIdentity *identity; // @synthesize identity=_identity;
 - (void)deliverBulletinActionResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;

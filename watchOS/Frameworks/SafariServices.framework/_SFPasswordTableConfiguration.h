@@ -11,8 +11,12 @@ __attribute__((visibility("hidden")))
 {
     _Bool _shouldShowIcons;
     _Bool _shouldShowSearchBar;
+    _Bool _supportsDelete;
+    _Bool _supportsShare;
 }
 
+@property(nonatomic) _Bool supportsShare; // @synthesize supportsShare=_supportsShare;
+@property(nonatomic) _Bool supportsDelete; // @synthesize supportsDelete=_supportsDelete;
 @property(nonatomic) _Bool shouldShowSearchBar; // @synthesize shouldShowSearchBar=_shouldShowSearchBar;
 @property(nonatomic) _Bool shouldShowIcons; // @synthesize shouldShowIcons=_shouldShowIcons;
 

@@ -20,7 +20,6 @@
 - (void)didAttemptToDisableAllDevicesResult:(_Bool)arg1;
 - (void)didPerformAdditionalStorageRequiredCheckWithSuccess:(_Bool)arg1 additionalStorageRequired:(unsigned long long)arg2 forAccountId:(NSString *)arg3 error:(NSError *)arg4;
 - (void)didAttemptToSetEnabledTo:(_Bool)arg1 result:(_Bool)arg2;
-- (void)returnMOCEnabledState:(unsigned int)arg1;
 - (void)updateCloudKitStateWithDictionary:(NSDictionary *)arg1;
 - (void)updateCloudKitState;
 - (void)updatePersonalNickname:(IMNickname *)arg1;

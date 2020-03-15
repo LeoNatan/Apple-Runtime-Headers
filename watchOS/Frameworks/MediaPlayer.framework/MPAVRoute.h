@@ -40,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPAVRouteConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic, getter=_externalDevice) void *externalDevice; // @synthesize externalDevice=_externalDevice;
 @property(readonly, nonatomic, getter=isHomePodRoute) _Bool homePodRoute; // @synthesize homePodRoute=_homePodRoute;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) NSString *groupUID; // @synthesize groupUID=_groupUID;
 @property(readonly, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(readonly, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)debugDescription;

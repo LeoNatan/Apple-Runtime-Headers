@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
     function_0f3b3c36 _sortComparator;
 }
 
-@property function_0f3b3c36 sortComparator; // @synthesize sortComparator=_sortComparator;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property function_0f3b3c36 sortComparator; // @synthesize sortComparator=_sortComparator;
 - (void)sortSubviewsForView:(id)arg1;
 
 @end

@@ -18,10 +18,10 @@
     _Bool _runIndependently;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool runIndependently; // @synthesize runIndependently=_runIndependently;
 @property(retain, nonatomic) id <FBProcessWatchdogProviding> watchdogProvider; // @synthesize watchdogProvider=_watchdogProvider;
 @property(nonatomic) long long watchdogBehavior; // @synthesize watchdogBehavior=_watchdogBehavior;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

@@ -14,9 +14,9 @@
     NSObject<OS_os_log> *_log;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property _Bool compressOnAttach; // @synthesize compressOnAttach=_compressOnAttach;
-- (void).cxx_destruct;
 - (id)directoryForBugSession:(id)arg1 extension:(id)arg2 rootDirectory:(id)arg3;
 - (id)directoryForBugSession:(id)arg1 extension:(id)arg2 rootDirectory:(id)arg3 createIfNeeded:(_Bool)arg4;
 - (id)directoryForBugSession:(id)arg1 rootDirectory:(id)arg2 createIfNeeded:(_Bool)arg3;

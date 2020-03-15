@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <JetEngine/AMSMescalBagContract-Protocol.h>
-
-@interface _TtC9JetEngine17MescalBagContract : NSObject <AMSMescalBagContract>
+@interface _TtC9JetEngine17MescalBagContract : NSObject
 {
     // Error parsing type: , name: backing
 }

@@ -29,6 +29,7 @@
     id <PGGraphUpdateHealthRecording> _updateHealthRecorder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PGGraphUpdateHealthRecording> updateHealthRecorder; // @synthesize updateHealthRecorder=_updateHealthRecorder;
 @property long long executionContext; // @synthesize executionContext=_executionContext;
 @property(retain, nonatomic) PGGraphUpdateManagerTargetTokenState *targetTokenState; // @synthesize targetTokenState=_targetTokenState;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) PGLibraryChangeListener *libraryChangeListener; // @synthesize libraryChangeListener=_libraryChangeListener;
 @property(readonly, nonatomic) NSMutableSet *listeners; // @synthesize listeners=_listeners;
-- (void).cxx_destruct;
 - (void)_recordInformationFromGraphChanges:(id)arg1;
 - (void)_recordInformationFromDatabaseChange:(id)arg1;
 - (id)_graphUpdateForPhotoChanges:(id)arg1;

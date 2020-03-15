@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSMutableDictionary *storedSettings; // @synthesize storedSettings=_storedSettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *storedSettings; // @synthesize storedSettings=_storedSettings;
 - (void)deleteAllStoredSettings;
 - (void)synchronizeStoredSettings;
 @property(readonly, nonatomic) NSArray *allSettings;

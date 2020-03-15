@@ -16,10 +16,10 @@
 }
 
 + (id)buttonWithColor:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *colorRingView; // @synthesize colorRingView=_colorRingView;
 @property(retain, nonatomic) UIView *colorView; // @synthesize colorView=_colorView;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

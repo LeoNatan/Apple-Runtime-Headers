@@ -15,10 +15,10 @@
     NSSet *_mountedComponents;
 }
 
-@property(readonly, nonatomic) int scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
-@property(readonly, nonatomic) NSSet *mountedComponents; // @synthesize mountedComponents=_mountedComponents;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int scopeIdentifier; // @synthesize scopeIdentifier=_scopeIdentifier;
+@property(readonly, nonatomic) NSSet *mountedComponents; // @synthesize mountedComponents=_mountedComponents;
 - (const struct CKComponentLayout *)layout;
 - (id)initWithScopeIdentifier:(int)arg1 mountedComponents:(id)arg2 layout:(const struct CKComponentLayout *)arg3;
 

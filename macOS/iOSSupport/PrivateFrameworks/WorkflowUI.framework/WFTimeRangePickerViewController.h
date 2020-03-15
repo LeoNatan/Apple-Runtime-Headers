@@ -17,11 +17,11 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) __weak id <WFTimeRangePickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)endTimeChanged:(id)arg1;

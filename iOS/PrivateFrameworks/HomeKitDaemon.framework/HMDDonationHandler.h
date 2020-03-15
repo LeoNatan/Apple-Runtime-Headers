@@ -18,8 +18,8 @@
 
 + (id)logCategory;
 + (id)sharedDonationHandler;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void)_removeIntentForActionSet:(id)arg1;
 - (void)_donateIntent:(id)arg1 withActionSet:(id)arg2;
 - (void)_donateActionSet:(id)arg1 withMessage:(id)arg2;

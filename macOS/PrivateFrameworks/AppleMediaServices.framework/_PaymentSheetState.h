@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     AMSBiometricsSignatureResult *_signatureResult;
 }
 
+- (void).cxx_destruct;
 @property(retain) AMSBiometricsSignatureResult *signatureResult; // @synthesize signatureResult=_signatureResult;
 @property(retain) NSString *paymentToken; // @synthesize paymentToken=_paymentToken;
 @property(retain) NSString *passwordEquivalentToken; // @synthesize passwordEquivalentToken=_passwordEquivalentToken;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property BOOL didBiometricLockout; // @synthesize didBiometricLockout=_didBiometricLockout;
 @property BOOL didAuthorizePayment; // @synthesize didAuthorizePayment=_didAuthorizePayment;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -16,11 +16,11 @@
     CDUnknownBlockType _resultsHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 @property(nonatomic) __weak SPQueryResultsQueue *resultsQueue; // @synthesize resultsQueue=_resultsQueue;
 @property(retain, nonatomic) NSString *dataclass; // @synthesize dataclass=_dataclass;
 @property(nonatomic) struct __SIJobRef *siJob; // @synthesize siJob=_siJob;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithSIJob:(struct __SIJobRef *)arg1 dataclass:(id)arg2 eventHandler:(CDUnknownBlockType)arg3 resultsHandler:(CDUnknownBlockType)arg4;

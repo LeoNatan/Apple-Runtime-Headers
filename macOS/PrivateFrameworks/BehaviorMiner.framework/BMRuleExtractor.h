@@ -15,12 +15,12 @@
     unsigned long long _basketCount;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long basketCount; // @synthesize basketCount=_basketCount;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSMutableDictionary *patterns; // @synthesize patterns=_patterns;
-- (void).cxx_destruct;
 - (void)extractRulesWithMinSupport:(unsigned long long)arg1 minConfidence:(double)arg2 targetTypes:(id)arg3 batchSize:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
-- (struct NSSet *)itemSetForItemIndexSet:(id)arg1;
+- (id)itemSetForItemIndexSet:(id)arg1;
 - (id)supportOfItemSet:(id)arg1;
 - (id)subsetsOfItemset:(id)arg1;
 - (id)initWithPatterns:(id)arg1 items:(id)arg2 basketCount:(unsigned long long)arg3;

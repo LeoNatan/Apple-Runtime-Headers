@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TVPAVMetadataItemImageLoader *_imageLoader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPAVMetadataItemImageLoader *imageLoader; // @synthesize imageLoader=_imageLoader;
 @property(retain, nonatomic) AVMetadataItem *imageMetadataItem; // @synthesize imageMetadataItem=_imageMetadataItem;
-- (void).cxx_destruct;
 - (void)_loadChapterNameFromMetadataItem:(id)arg1;
 - (id)imageProxy;
 - (id)initWithAVTimedMetadataGroup:(id)arg1 filterByLanguages:(id)arg2;

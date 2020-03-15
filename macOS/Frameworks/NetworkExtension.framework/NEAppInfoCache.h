@@ -15,9 +15,9 @@
 }
 
 + (id)sharedAppInfoCache;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *cachedSourceAppInfo; // @synthesize cachedSourceAppInfo=_cachedSourceAppInfo;
 @property(copy, nonatomic) CDUnknownBlockType customLookupHandler; // @synthesize customLookupHandler=_customLookupHandler;
-- (void).cxx_destruct;
 - (id)bundleIDWithoutTeamID:(id)arg1;
 - (id)lookupAppInfoForPid:(int)arg1 bundleID:(id)arg2;
 - (void)performCustomLookupIfNecessaryForPid:(int)arg1 UUID:(id)arg2 bundleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

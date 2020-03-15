@@ -10,11 +10,12 @@
 #import <Safari/BannerDelegate-Protocol.h>
 #import <Safari/FindBannerDelegate-Protocol.h>
 #import <Safari/SearchableWKViewFullScreenDelegate-Protocol.h>
+#import <Safari/_WKFindDelegate-Protocol.h>
 
 @class BannerContainerView, FileWrapper, FindBanner, HeaderFooterPrintRenderer, NSArray, NSData, NSMutableArray, NSString, NSURL, SearchableWKView, TabContentViewController, WKWebViewConfiguration, WKWebsiteDataStore;
 
 __attribute__((visibility("hidden")))
-@interface WebViewController : NSViewController <FindBannerDelegate, BannerContainerViewDelegate, BannerDelegate, SearchableWKViewFullScreenDelegate>
+@interface WebViewController : NSViewController <FindBannerDelegate, _WKFindDelegate, BannerContainerViewDelegate, BannerDelegate, SearchableWKViewFullScreenDelegate>
 {
     struct RefPtr<Safari::WebViewControllerWKAdapter, WTF::DumbPtrTraits<Safari::WebViewControllerWKAdapter>> _webViewControllerWKAdapter;
     NSMutableArray *_bannerActionQueue;
@@ -42,6 +43,8 @@ __attribute__((visibility("hidden")))
 + (void)enumerateWebViewControllersUsingBlock:(CDUnknownBlockType)arg1;
 + (id)webViewControllerForPage:(const struct Page *)arg1;
 + (id)_pagesToWebViewControllers;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double topContentInset; // @synthesize topContentInset=_topContentInset;
 @property(readonly, nonatomic) FindBanner *findBanner; // @synthesize findBanner=_findBanner;
 @property(readonly, copy, nonatomic) NSArray *installedBanners; // @synthesize installedBanners=_installedBanners;
@@ -55,8 +58,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isClosed; // @synthesize isClosed=_isClosed;
 @property(readonly, nonatomic) WKWebsiteDataStore *websiteDataStore; // @synthesize websiteDataStore=_websiteDataStore;
 @property(readonly, nonatomic) unsigned long long browsingMode; // @synthesize browsingMode=_browsingMode;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)_isWebViewInFullScreenMode;
 - (void)toggleWebInspector;
 - (BOOL)setCustomUserAgent:(id)arg1 reloadPage:(BOOL)arg2;
@@ -87,8 +88,8 @@ __attribute__((visibility("hidden")))
 - (void)_zoomPreferencesDidLoad:(id)arg1;
 - (void)updateSiteZoomPreference;
 - (void)moveBannerContainerToFollowWebContent;
-- (void)findBanner:(id)arg1 highlightAllMatchesForString:(id)arg2 findOptions:(unsigned int)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
-- (void)findBanner:(id)arg1 startFindingString:(id)arg2 findOptions:(unsigned int)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
+- (void)findBanner:(id)arg1 highlightAllMatchesForString:(id)arg2 findOptions:(unsigned long long)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
+- (void)findBanner:(id)arg1 startFindingString:(id)arg2 findOptions:(unsigned long long)arg3 maximumNumberOfMatches:(unsigned long long)arg4;
 - (void)hideFindOverlayForBanner:(id)arg1;
 - (BOOL)shouldUpdateFindPasteboardForBanner:(id)arg1;
 - (BOOL)isReadyToFindForBanner:(id)arg1;
@@ -105,6 +106,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL canHideFindInPageBanner;
 @property(readonly, nonatomic) BOOL canShowFindInPageBanner;
 @property(readonly, nonatomic, getter=isShowingFindInPageBanner) BOOL showingFindInPageBanner;
+- (void)_webView:(id)arg1 didFailToFindString:(id)arg2;
+- (void)_webView:(id)arg1 didFindMatches:(unsigned long long)arg2 forString:(id)arg3 withMatchIndex:(long long)arg4;
+- (void)_webView:(id)arg1 didCountMatches:(unsigned long long)arg2 forString:(id)arg3;
 - (void)uninstallBanner:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateFocusAfterBannerUninstall;
 - (void)bannerContainerViewDidUninstall:(id)arg1;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_containingAppIdentifer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *containingAppIdentifer; // @synthesize containingAppIdentifer=_containingAppIdentifer;
 @property(retain, nonatomic) NSMutableSet *extensionNonUIIdentifiers; // @synthesize extensionNonUIIdentifiers=_extensionNonUIIdentifiers;
 @property(retain, nonatomic) NSMutableSet *extensionUIIdentifiers; // @synthesize extensionUIIdentifiers=_extensionUIIdentifiers;
-- (void).cxx_destruct;
 - (id)initWithContainingAppIdentifer:(id)arg1;
 
 @end

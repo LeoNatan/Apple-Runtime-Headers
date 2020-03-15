@@ -68,8 +68,8 @@
 + (id)modelGeneratedAt;
 + (unsigned long long)modelResolution;
 + (id)fetchPredictionsForInterfaceType:(long long)arg1 isAny:(BOOL)arg2 isBuiltin:(BOOL)arg3 scopedToLOI:(long long)arg4 hasCustomSignature:(id)arg5 error:(id *)arg6;
-@property(nonatomic) BOOL isHelper; // @synthesize isHelper=_isHelper;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL isHelper; // @synthesize isHelper=_isHelper;
 - (void)_finishedReadingLowInternetModeRecords:(id)arg1;
 - (void)_processLowInternetModeRecord:(id)arg1 addTo:(id)arg2;
 - (void)_setCalendar:(id)arg1;

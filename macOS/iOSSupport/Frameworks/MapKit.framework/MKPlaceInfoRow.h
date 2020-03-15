@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)infoRow:(id)arg1 ofType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(nonatomic) BOOL enable; // @synthesize enable=_enable;
 @property(readonly, nonatomic) MKPlaceSectionRowView *rowView; // @synthesize rowView=_rowView;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

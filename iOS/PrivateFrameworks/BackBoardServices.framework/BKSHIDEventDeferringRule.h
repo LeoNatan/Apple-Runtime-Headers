@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)ruleForDeferringEventsMatchingPredicate:(id)arg1 toTarget:(id)arg2 withReason:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringTarget *target; // @synthesize target=_target;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

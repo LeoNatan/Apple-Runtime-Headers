@@ -16,9 +16,9 @@
     NSString *_scenePersistenceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *scenePersistenceIdentifier; // @synthesize scenePersistenceIdentifier=_scenePersistenceIdentifier;
 @property(readonly, nonatomic) int targetProcessIdentifier; // @synthesize targetProcessIdentifier=_targetProcessIdentifier;
-- (void).cxx_destruct;
 - (double)targetFinalCornerRadiusForAnimator:(id)arg1;
 - (struct CGRect)targetFinalFrameForAnimator:(id)arg1;
 - (struct CGRect)sourceContentFrameForAnimator:(id)arg1;

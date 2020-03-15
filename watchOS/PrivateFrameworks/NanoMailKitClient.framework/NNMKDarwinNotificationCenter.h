@@ -15,8 +15,8 @@
 
 + (void)postNotification:(id)arg1;
 + (id)defaultCenter;
-@property(retain, nonatomic) NSMutableDictionary *observersByNotificationName; // @synthesize observersByNotificationName=_observersByNotificationName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *observersByNotificationName; // @synthesize observersByNotificationName=_observersByNotificationName;
 - (void)_handleDarwinNotification:(id)arg1;
 - (void)_unregisterForNotificationNameIfNeeded:(id)arg1;
 - (void)_registerForNotificationName:(id)arg1;

@@ -17,10 +17,10 @@
     NSString *_address;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *address; // @synthesize address=_address;
 @property(copy, nonatomic) NSString *participantID; // @synthesize participantID=_participantID;
 @property(retain, nonatomic) CKShareMetadata *shareMetadata; // @synthesize shareMetadata=_shareMetadata;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;

@@ -21,13 +21,13 @@
 
 + (void)setApplicationIdentifier:(id)arg1 observerID:(long long)arg2;
 + (id)applicationIdentifierForObserverID:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _registered; // @synthesize _registered=__registered;
 @property(retain, nonatomic) NSMutableDictionary *_observers; // @synthesize _observers=__observers;
 @property(retain, nonatomic) AXFUIElement *_application; // @synthesize _application=__application;
 @property(retain, nonatomic) AXFUIElement *_element; // @synthesize _element=__element;
 @property(copy, nonatomic) NSString *_name; // @synthesize _name=__name;
 @property(readonly, nonatomic) long long observerID; // @synthesize observerID=_observerID;
-- (void).cxx_destruct;
 - (void)fireWithElement:(id)arg1 userInfo:(id)arg2;
 - (id)copyForFiring;
 - (BOOL)isObserving;

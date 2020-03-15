@@ -18,10 +18,10 @@
     _TimelineSegment *_rightSegment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TimelineSegment *rightSegment; // @synthesize rightSegment=_rightSegment;
 @property(readonly, nonatomic) _TimelineSegment *leftSegment; // @synthesize leftSegment=_leftSegment;
 @property(readonly, nonatomic) _TimelineEntryNode *focalNode; // @synthesize focalNode=_focalNode;
-- (void).cxx_destruct;
 - (unsigned int)rightEntryCount;
 - (unsigned int)leftEntryCount;
 - (id)rightmostContiguousEntryDate;

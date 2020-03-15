@@ -17,12 +17,12 @@
     GCControllerButtonInput *_negative;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFlipped) BOOL flipped; // @synthesize flipped=_flipped;
 @property(retain, nonatomic) GCControllerButtonInput *negative; // @synthesize negative=_negative;
 @property(retain, nonatomic) GCControllerButtonInput *positive; // @synthesize positive=_positive;
 @property(nonatomic) float value; // @synthesize value=_value;
 @property(copy, nonatomic) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
-- (void).cxx_destruct;
 - (int)getAndResetTimesPressed;
 - (BOOL)_setValue:(float)arg1 queue:(id)arg2;
 - (BOOL)_setValue:(float)arg1;

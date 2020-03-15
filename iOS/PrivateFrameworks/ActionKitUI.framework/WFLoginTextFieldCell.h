@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WFLoginTextField *_textField;
 }
 
-@property(readonly, nonatomic) __weak WFLoginTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak WFLoginTextField *textField; // @synthesize textField=_textField;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

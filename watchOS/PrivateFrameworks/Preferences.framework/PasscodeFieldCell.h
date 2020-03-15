@@ -19,11 +19,11 @@
     id <KeychainSyncPasscodeFieldDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PSPasscodeField *passcodeField; // @synthesize passcodeField=_passcodeField;
 @property(nonatomic) _Bool denyFirstResponder; // @synthesize denyFirstResponder=_denyFirstResponder;
 @property(nonatomic) _Bool convertsNumeralsToASCII; // @synthesize convertsNumeralsToASCII=_convertsNumeralsToASCII;
 @property(nonatomic) __weak id <KeychainSyncPasscodeFieldDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (int)keyboardType;
 - (void)deleteBackward;

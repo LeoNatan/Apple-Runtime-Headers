@@ -30,6 +30,7 @@
 }
 
 + (id)sharedService;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *pollingTimer; // @synthesize pollingTimer=_pollingTimer;
 @property(nonatomic) _Bool shouldSynchronizeKeyValueStore; // @synthesize shouldSynchronizeKeyValueStore=_shouldSynchronizeKeyValueStore;
 @property(retain, nonatomic) TVCKRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) TVCKStoreFavoritesFactory *itemFactory; // @synthesize itemFactory=_itemFactory;
 @property(retain, nonatomic) TVCKStoreContentMetadataCache *metadataCache; // @synthesize metadataCache=_metadataCache;
 @property(retain) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (void)endMonitoringForChanges;
 - (void)beginMonitoringForChanges;
 - (void)removeAllItemsInCategory:(unsigned long long)arg1;

@@ -16,9 +16,9 @@
     double _upperBoundOnDuration;
 }
 
+- (void).cxx_destruct;
 @property double upperBoundOnDuration; // @synthesize upperBoundOnDuration=_upperBoundOnDuration;
 @property(readonly) XCSynthesizedEventRecord *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)initWithEvent:(id)arg1;
 

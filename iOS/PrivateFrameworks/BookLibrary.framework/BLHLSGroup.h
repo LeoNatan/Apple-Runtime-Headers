@@ -14,9 +14,9 @@
     NSArray *_media;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *media; // @synthesize media=_media;
 @property(readonly, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithGroupID:(id)arg1 media:(id)arg2;
 

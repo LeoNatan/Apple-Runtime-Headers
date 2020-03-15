@@ -19,9 +19,9 @@
 + (id)pipelineForVersion:(unsigned long long)arg1;
 + (id)pipelineForPlatform:(id)arg1 version:(unsigned long long)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (_Bool)isEqualToAdjustmentPipeline:(id)arg1;

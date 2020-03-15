@@ -22,11 +22,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
 @property(retain) NSUUID *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property _Bool shouldPersist; // @synthesize shouldPersist=_shouldPersist;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     VUISeparatorView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIView *bgColorView; // @synthesize bgColorView=_bgColorView;
 @property(retain, nonatomic) NSArray *textLabels; // @synthesize textLabels=_textLabels;
@@ -31,12 +32,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIAppleTVChannelLogoView *appleTVChannelLogoView; // @synthesize appleTVChannelLogoView=_appleTVChannelLogoView;
 @property(retain, nonatomic) VUIChannelBannerLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_layoutLabels:(id)arg1 withOrigin:(struct CGPoint)arg2 maxWidth:(double)arg3;
 - (struct CGSize)_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 @property(readonly, nonatomic) double topThreshold;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
+- (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

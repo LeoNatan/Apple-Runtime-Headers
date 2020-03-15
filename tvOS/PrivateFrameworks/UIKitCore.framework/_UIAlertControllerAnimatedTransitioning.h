@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIInteractionProgress *_interactionProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIInteractionProgress *interactionProgress; // @synthesize interactionProgress=_interactionProgress;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(getter=isPresentation) _Bool presentation; // @synthesize presentation=_presentation;
-- (void).cxx_destruct;
 - (void)_animateTransition:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

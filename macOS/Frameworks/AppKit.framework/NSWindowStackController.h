@@ -47,10 +47,10 @@ __attribute__((visibility("hidden")))
 + (void)setupStackControllerForWindow:(id)arg1 attemptToJoinExistingStack:(BOOL)arg2 makeIfNeeded:(BOOL)arg3;
 + (void)setupStackControllerIfTabBarShownForWindow:(id)arg1;
 + (BOOL)canJoinExistingStackForWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) __weak NSWindow *windowBeingDragged; // @synthesize windowBeingDragged=_windowBeingDragged;
 @property(copy) NSString *stateIdentifier; // @synthesize stateIdentifier=_stateIdentifier;
 @property __weak _NSFullScreenModalStackController *fullScreenModalStackController; // @synthesize fullScreenModalStackController=_fullScreenModalStackController;
-- (void).cxx_destruct;
 - (void)reattachFullScreenModalTabBar;
 - (id)detachedFullScreenModalTabBar;
 - (void)setOverviewVisible:(BOOL)arg1;

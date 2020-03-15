@@ -20,13 +20,13 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *internalResolvedEndpointArray; // @synthesize internalResolvedEndpointArray=_internalResolvedEndpointArray;
 @property(retain) NSSet *internalResolvedEndpoints; // @synthesize internalResolvedEndpoints=_internalResolvedEndpoints;
 @property long long internalStatus; // @synthesize internalStatus=_internalStatus;
 @property(readonly) NSObject<OS_nw_resolver> *internalResolver; // @synthesize internalResolver=_internalResolver;
 @property(readonly) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly) NWEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *resolvedEndpointArray;
 - (id)copyResolvedEndpointArray;
 @property(readonly, nonatomic) NSSet *resolvedEndpoints;

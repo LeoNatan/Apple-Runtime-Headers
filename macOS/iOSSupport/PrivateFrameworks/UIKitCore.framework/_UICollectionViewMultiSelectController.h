@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     UIMultiSelectInteractionState *_selectionState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIMultiSelectInteractionState *selectionState; // @synthesize selectionState=_selectionState;
 @property(retain, nonatomic) UIMultiSelectInteraction *multiSelectInteraction; // @synthesize multiSelectInteraction=_multiSelectInteraction;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)didCancelMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)multiSelectInteractionGestureShouldPreventDragLiftGesture:(id)arg1;
 - (void)multiSelectInteraction:(id)arg1 appendSelectionAtPoint:(struct CGPoint)arg2;

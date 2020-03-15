@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFTimeInterval *expectedTravelTime; // @synthesize expectedTravelTime=_expectedTravelTime;
 @property(readonly, nonatomic) NSMeasurement *distance; // @synthesize distance=_distance;
 @property(readonly, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *wfName;

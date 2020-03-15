@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) float rankingScore; // @synthesize rankingScore=_rankingScore;
 @property(copy, nonatomic) NSString *moreText; // @synthesize moreText=_moreText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned int maxInitiallyVisibleResults; // @synthesize maxInitiallyVisibleResults=_maxInitiallyVisibleResults;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

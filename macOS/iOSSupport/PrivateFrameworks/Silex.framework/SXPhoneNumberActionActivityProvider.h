@@ -19,11 +19,11 @@
     id <SXDeviceCapabilities> _deviceCapabilities;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXDeviceCapabilities> deviceCapabilities; // @synthesize deviceCapabilities=_deviceCapabilities;
 @property(readonly, nonatomic) id <SXMessagePresenter> messagePresenter; // @synthesize messagePresenter=_messagePresenter;
 @property(readonly, nonatomic) id <SXContactsPresenter> contactsPresenter; // @synthesize contactsPresenter=_contactsPresenter;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (void)copy:(id)arg1;
 - (void)addToContacts:(id)arg1;
 - (void)message:(id)arg1;

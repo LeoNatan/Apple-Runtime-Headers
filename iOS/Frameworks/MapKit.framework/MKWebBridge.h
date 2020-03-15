@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
 + (id)_operatingSystemVersion;
 + (id)_operatingSystemName;
 + (id)URLByAddingConfiguration:(id)arg1 toURL:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKWebBridgeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long connectionState; // @synthesize connectionState=_connectionState;
 @property(readonly, nonatomic) MKWebViewFactoryItem *webViewFactoryItem; // @synthesize webViewFactoryItem=_webViewFactoryItem;
 @property(readonly, copy, nonatomic) NSDictionary *callHandlers; // @synthesize callHandlers=_callHandlers;
-- (void).cxx_destruct;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
 - (void)_consumeCallbackHandlerWithNumber:(id)arg1 result:(id)arg2 errorMessage:(id)arg3;
 - (void)_dispatchCallback:(id)arg1;

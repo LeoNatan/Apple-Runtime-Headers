@@ -22,6 +22,7 @@
     struct CGRect _keyboardScreenFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType overrideScrollBlock; // @synthesize overrideScrollBlock=_overrideScrollBlock;
 @property(retain, nonatomic) IMScheduledUpdater *updater; // @synthesize updater=_updater;
 @property(nonatomic) _Bool keyboardInteractionCancelled; // @synthesize keyboardInteractionCancelled=_keyboardInteractionCancelled;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) float topInsetPadding; // @synthesize topInsetPadding=_topInsetPadding;
 @property(readonly, nonatomic) _Bool topInsetIncludesPalette; // @synthesize topInsetIncludesPalette=_topInsetIncludesPalette;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (float)_visibleKeyboardHeight;
 - (float)_bottomRotatingFooterHeight;
 - (void)_entryViewWillRotate:(id)arg1;

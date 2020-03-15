@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)themeIDIsTrailer:(id)arg1;
 + (id)themeWithID:(id)arg1;
 + (id)themeIDs;
-@property(readonly, nonatomic) NSString *themeID; // @synthesize themeID=m_themeID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *themeID; // @synthesize themeID=m_themeID;
 - (id)posterImage;
 - (id)displayNameForTransitionName:(id)arg1;
 - (id)micaFileNameForCutawayName:(id)arg1 cutawayDirection:(int)arg2;

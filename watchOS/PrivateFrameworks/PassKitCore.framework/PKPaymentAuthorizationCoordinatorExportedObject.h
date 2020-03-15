@@ -20,9 +20,9 @@
     id <PKPaymentAuthorizationServiceProtocol> _serviceProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PKPaymentAuthorizationServiceProtocol> serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(nonatomic) PKPaymentAuthorizationCoordinator *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentAuthorizationCoordinatorPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(nonatomic) __weak id <PKPaymentAuthorizationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
@@ -34,6 +34,7 @@
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
 - (void)authorizationDidAuthorizePurchase:(id)arg1;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
+- (void)authorizationDidAuthorizeContext;
 - (void)authorizationDidFinishWithError:(id)arg1;
 - (void)authorizationDidRequestMerchantSession;
 - (void)authorizationWillStart;

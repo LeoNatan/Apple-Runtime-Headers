@@ -17,10 +17,10 @@
     NSString *_syncID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SYErrorInfo *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *syncID; // @synthesize syncID=_syncID;
 @property(retain, nonatomic) SYMessageHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

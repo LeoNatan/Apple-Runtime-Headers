@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long badgeType; // @synthesize badgeType=_badgeType;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) double minimumSize; // @synthesize minimumSize=_minimumSize;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType serviceErrorHandler; // @synthesize serviceErrorHandler=_serviceErrorHandler;
 @property(retain, nonatomic) QLThumbnailHostContext *hostContext; // @synthesize hostContext=_hostContext;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)main;
 - (id)initWithThumbnailHostContext:(id)arg1 item:(id)arg2 size:(struct CGSize)arg3 minimumSize:(double)arg4 scale:(double)arg5 badgeType:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7 serviceErrorHandler:(CDUnknownBlockType)arg8;

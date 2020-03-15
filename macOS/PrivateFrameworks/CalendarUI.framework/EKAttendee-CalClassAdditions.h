@@ -16,6 +16,6 @@
 + (id)attendeeFromContact:(id)arg1 group:(id)arg2;
 + (id)attendeeFromContact:(id)arg1;
 - (id)dictionaryRepresentation;
-- (struct NSObject *)calUI_recentEvent;
+- (id)calUI_recentEvent;
 @end
 

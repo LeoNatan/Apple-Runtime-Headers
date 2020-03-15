@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)removeCacheForLookupInfos:(id)arg1 inCache:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDDiscoverUserIdentitiesURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSMutableArray *lookupInfosToFetch; // @synthesize lookupInfosToFetch=_lookupInfosToFetch;
 @property(retain, nonatomic) NSArray *originalLookupInfosToFetch; // @synthesize originalLookupInfosToFetch=_originalLookupInfosToFetch;
 @property(copy, nonatomic) CDUnknownBlockType lookupCompletionBlock; // @synthesize lookupCompletionBlock=_lookupCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType perLookupInfoProgressBlock; // @synthesize perLookupInfoProgressBlock=_perLookupInfoProgressBlock;
-- (void).cxx_destruct;
 - (id)ckShortDescription;
 - (id)description;
 - (id)CKPropertiesDescription;

@@ -25,9 +25,9 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_handleFinishRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_handleBasicConfigRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_handlePreAuthRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;

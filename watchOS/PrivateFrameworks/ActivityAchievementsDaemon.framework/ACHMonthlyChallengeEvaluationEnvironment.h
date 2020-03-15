@@ -15,10 +15,10 @@
     NSCalendar *_calendar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain, nonatomic) ACHDateComponentInterval *dateComponentInterval; // @synthesize dateComponentInterval=_dateComponentInterval;
 @property(nonatomic) __weak ACHMonthlyChallengeDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (double)_valueForMonthlyChallengeType:(unsigned int)arg1;
 @property(readonly, nonatomic) double numberOfDaysDoublingMoveGoalInCurrentMonth;
 @property(readonly, nonatomic) double totalWalkingRunningDistanceInCurrentMonth;

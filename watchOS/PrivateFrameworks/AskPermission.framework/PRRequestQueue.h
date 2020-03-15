@@ -17,9 +17,9 @@
 
 + (id)_requestQueueForIdentifier:(id)arg1;
 + (id)defaultRequestQueue;
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <PRRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_deleteTestValueFromTouchIDKeychain;
 - (void)_writeTestValueToTouchIDKeychain;
 - (void)_readTestValueFromTouchIDKeychain;

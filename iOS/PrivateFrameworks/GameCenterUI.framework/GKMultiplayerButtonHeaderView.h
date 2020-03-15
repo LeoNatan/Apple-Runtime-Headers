@@ -20,6 +20,7 @@
     NSLayoutConstraint *_nextImageViewTrailing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mayChangeCount; // @synthesize mayChangeCount=_mayChangeCount;
 @property(retain, nonatomic) NSLayoutConstraint *nextImageViewTrailing; // @synthesize nextImageViewTrailing=_nextImageViewTrailing;
 @property(retain, nonatomic) NSLayoutConstraint *iconImageViewLeading; // @synthesize iconImageViewLeading=_iconImageViewLeading;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)setInsets:(struct UIEdgeInsets)arg1;
 - (void)setButtonEnabled:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setGameIcon:(id)arg1;

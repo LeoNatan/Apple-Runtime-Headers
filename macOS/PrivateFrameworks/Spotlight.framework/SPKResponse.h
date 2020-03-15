@@ -31,6 +31,7 @@
     NSArray *_removed;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *removed; // @synthesize removed=_removed;
 @property(readonly) NSArray *changed; // @synthesize changed=_changed;
 @property(readonly) NSArray *added; // @synthesize added=_added;
@@ -50,7 +51,6 @@
 @property(readonly) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(readonly) int kind; // @synthesize kind=_kind;
 @property(retain) PRSRankingConfiguration *rankingConfiguration; // @synthesize rankingConfiguration=_rankingConfiguration;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithQueryID:(unsigned long long)arg1 error:(id)arg2;
 - (id)initWithQueryID:(unsigned long long)arg1 sections:(id)arg2;

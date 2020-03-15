@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDPListRange *_range;
 }
 
-@property(retain, nonatomic) CKDPListRange *range; // @synthesize range=_range;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPListRange *range; // @synthesize range=_range;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

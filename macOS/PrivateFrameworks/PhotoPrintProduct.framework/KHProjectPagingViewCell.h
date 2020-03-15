@@ -16,10 +16,10 @@
 }
 
 + (struct CGSize)contentViewSizeForLayouts:(id)arg1 layoutScale:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSButton *trailingAccessoryButton; // @synthesize trailingAccessoryButton=_trailingAccessoryButton;
 @property(readonly, nonatomic) NSButton *leadingAccessoryButton; // @synthesize leadingAccessoryButton=_leadingAccessoryButton;
 @property(retain, nonatomic) _KHCanvasViewController *canvasViewController; // @synthesize canvasViewController=_canvasViewController;
-- (void).cxx_destruct;
 - (id)canvasLayoutForProjectLayouts:(id)arg1;
 - (void)configureAccessoryButton:(id)arg1 forLayout:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)updateDecorationsForProjectLayouts:(id)arg1;

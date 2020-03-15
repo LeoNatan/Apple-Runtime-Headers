@@ -26,6 +26,7 @@
 }
 
 + (void)fetchContactsIfNeededForTableModel:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double cachedHeaderHeight; // @synthesize cachedHeaderHeight=_cachedHeaderHeight;
 @property(retain, nonatomic) NSArray *latestVisibleHeadersAccountedForInFeedback; // @synthesize latestVisibleHeadersAccountedForInFeedback=_latestVisibleHeadersAccountedForInFeedback;
 @property(retain, nonatomic) NSMutableOrderedSet *potentiallyVisibleHeaders; // @synthesize potentiallyVisibleHeaders=_potentiallyVisibleHeaders;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableSet *expandedSections; // @synthesize expandedSections=_expandedSections;
 @property(nonatomic) _Bool shortenTopFloatingHeader; // @synthesize shortenTopFloatingHeader=_shortenTopFloatingHeader;
 @property(retain, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (void).cxx_destruct;
 - (void)toggleShowMoreForSection:(unsigned long long)arg1;
 - (_Bool)view:(id)arg1 isVisibleInBounds:(struct CGRect)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;

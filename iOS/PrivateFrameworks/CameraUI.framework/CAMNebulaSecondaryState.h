@@ -21,12 +21,12 @@
 
 + (id)secondaryStateWithContentsOfFile:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long failedStateReadAttemptsCount; // @synthesize failedStateReadAttemptsCount=_failedStateReadAttemptsCount;
 @property(readonly, nonatomic) long long movieWriteAttemptsCount; // @synthesize movieWriteAttemptsCount=_movieWriteAttemptsCount;
 @property(readonly, nonatomic) NSDate *lastMovieWriteAttemptTime; // @synthesize lastMovieWriteAttemptTime=_lastMovieWriteAttemptTime;
 @property(nonatomic) long long stopReasons; // @synthesize stopReasons=_stopReasons;
 @property(retain, nonatomic) NSDate *stopTime; // @synthesize stopTime=_stopTime;
-- (void).cxx_destruct;
 - (_Bool)writeToFile:(id)arg1;
 - (void)notifyWillAttemptToWriteMovie;
 - (_Bool)addStopReasons:(long long)arg1 stopTime:(id)arg2;

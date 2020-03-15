@@ -15,10 +15,6 @@ struct CGSize {
     double height;
 };
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

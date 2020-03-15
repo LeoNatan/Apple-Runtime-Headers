@@ -30,6 +30,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *enableGoogle; // @synthesize enableGoogle=_enableGoogle;
 @property(retain, nonatomic) NSNumber *enablePublicNotebooks; // @synthesize enablePublicNotebooks=_enablePublicNotebooks;
 @property(retain, nonatomic) NSNumber *enableLinkedInSharing; // @synthesize enableLinkedInSharing=_enableLinkedInSharing;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSString *supportUrl; // @synthesize supportUrl=_supportUrl;
 @property(retain, nonatomic) NSString *marketingUrl; // @synthesize marketingUrl=_marketingUrl;
 @property(retain, nonatomic) NSString *serviceHost; // @synthesize serviceHost=_serviceHost;
-- (void).cxx_destruct;
 
 @end
 

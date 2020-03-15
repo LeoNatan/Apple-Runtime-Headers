@@ -18,9 +18,9 @@
     CDUnknownBlockType _translateBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType translateBlock; // @synthesize translateBlock=_translateBlock;
 @property double multiplier; // @synthesize multiplier=_multiplier;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform transform;
 - (void)setBounds:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect bounds;

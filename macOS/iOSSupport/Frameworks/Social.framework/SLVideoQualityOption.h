@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)videoQualityOptionForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *exportPreset; // @synthesize exportPreset=_exportPreset;
 @property(nonatomic) long long size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)sizeDescription;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 exportPreset:(id)arg3 size:(long long)arg4;
 

@@ -18,11 +18,11 @@
     NSString *_displayString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(readonly) PSIDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly) PSIDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) PSIDate *singleDate; // @synthesize singleDate=_singleDate;
-- (void).cxx_destruct;
 @property(readonly) long long int64RepresentationMask;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;

@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingAudioFunctionBarInputSourceItems;
 + (id)keyPathsForValuesAffectingSelectedVideoFunctionBarInputSourceItem;
 + (id)keyPathsForValuesAffectingVideoFunctionBarInputSourceItems;
+- (void).cxx_destruct;
 @property(retain) AVCaptureDeviceSelectionController *captureDeviceSelectionController; // @synthesize captureDeviceSelectionController=_captureDeviceSelectionController;
 @property BOOL canStartRecording; // @synthesize canStartRecording=_canStartRecording;
 @property(nonatomic) float audioPreviewVolume; // @synthesize audioPreviewVolume=_audioPreviewVolume;
@@ -81,7 +82,6 @@ __attribute__((visibility("hidden")))
 @property BOOL wantsDefaultConfiguration; // @synthesize wantsDefaultConfiguration=_wantsDefaultConfiguration;
 @property(getter=isAudioPreviewEnabled) BOOL audioPreviewEnabled; // @synthesize audioPreviewEnabled=_audioPreviewEnabled;
 @property(getter=isVideoPreviewEnabled) BOOL videoPreviewEnabled; // @synthesize videoPreviewEnabled=_videoPreviewEnabled;
-- (void).cxx_destruct;
 - (void)stopRecording;
 - (void)resumeRecording;
 - (void)pauseRecording;

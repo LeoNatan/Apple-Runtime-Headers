@@ -18,10 +18,10 @@
 }
 
 + (struct CGImage *)cgImageFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *likenessFingerprint; // @synthesize likenessFingerprint=_likenessFingerprint;
 @property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) NSData *originalPhotoData; // @synthesize originalPhotoData=_originalPhotoData;
-- (void).cxx_destruct;
 - (struct CGImage *)renderRoundedRectImageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (struct CGImage *)renderCircularImageForSize:(struct CGSize)arg1 scale:(double)arg2;
 - (struct CGImage *)_cnui_roundedRectImageForSize:(struct CGSize)arg1 scale:(double)arg2;

@@ -34,6 +34,7 @@
 + (id)secureUnarchiveWithData:(id)arg1;
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) DEDNotifierConfiguration *notifierConfiguration; // @synthesize notifierConfiguration=_notifierConfiguration;
 @property(retain) NSDictionary *cloudkitData; // @synthesize cloudkitData=_cloudkitData;
 @property _Bool cloudkitUseDevelopmentEnvironment; // @synthesize cloudkitUseDevelopmentEnvironment=_cloudkitUseDevelopmentEnvironment;
@@ -48,7 +49,6 @@
 @property _Bool allowsCellularUpload; // @synthesize allowsCellularUpload=_allowsCellularUpload;
 @property long long notifyingMove; // @synthesize notifyingMove=_notifyingMove;
 @property long long finishingMove; // @synthesize finishingMove=_finishingMove;
-- (void).cxx_destruct;
 - (id)secureArchive;
 - (_Bool)isEqualToConfiguration:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, PLEntry, PLEntryNotificationOperatorComposition, PLIOKitOperatorComposition, PLMonotonicTimer, PLSemaphore, PLTimer, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
+@class NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, PLCFNotificationOperatorComposition, PLEntry, PLEntryNotificationOperatorComposition, PLIOKitOperatorComposition, PLMonotonicTimer, PLSemaphore, PLTimer, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
 
 @interface PLBatteryAgent : PLAgent
 {
@@ -16,6 +16,7 @@
     BOOL _allowGasGaugeRead;
     _Bool _inPenaltyBox;
     BOOL _rejudgeBattery;
+    BOOL _forceSampleNextEntry;
     int _presentMaxRa;
     int _lifetimeMaxRa;
     int _previousCurrentAccumulator;
@@ -72,6 +73,10 @@
     NSNumber *_mitigatedUPOCount;
     long long _ppmEventLoggingCount;
     PLTimer *_ppmEventThresholdTimer;
+    NSString *_entryKeyBatterySample;
+    double _batterySampleInterval;
+    PLCFNotificationOperatorComposition *_fccCAFlush;
+    PLCFNotificationOperatorComposition *_forceSampleNextEntryNotification;
 }
 
 + (BOOL)hasChargingInfoLogging;
@@ -98,6 +103,7 @@
 + (id)entryEventForwardDefinitionEAPencil;
 + (id)entryEventForwardDefinitionEAPencilCharging;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventPointDefinitionBatterySample;
 + (id)entryEventPointDefinitionUPOStepper;
 + (id)entryEventPointDefinitionChargingInfo;
 + (id)entryEventPointDefinitionBatteryUILogging;
@@ -119,6 +125,12 @@
 + (BOOL)hasWirelessCharger;
 + (BOOL)hasLightning;
 + (BOOL)hasExternalAccessory;
+- (void).cxx_destruct;
+@property BOOL forceSampleNextEntry; // @synthesize forceSampleNextEntry=_forceSampleNextEntry;
+@property(retain) PLCFNotificationOperatorComposition *forceSampleNextEntryNotification; // @synthesize forceSampleNextEntryNotification=_forceSampleNextEntryNotification;
+@property(retain) PLCFNotificationOperatorComposition *fccCAFlush; // @synthesize fccCAFlush=_fccCAFlush;
+@property double batterySampleInterval; // @synthesize batterySampleInterval=_batterySampleInterval;
+@property(retain) NSString *entryKeyBatterySample; // @synthesize entryKeyBatterySample=_entryKeyBatterySample;
 @property(retain) PLTimer *ppmEventThresholdTimer; // @synthesize ppmEventThresholdTimer=_ppmEventThresholdTimer;
 @property long long ppmEventLoggingCount; // @synthesize ppmEventLoggingCount=_ppmEventLoggingCount;
 @property int lastUILevel; // @synthesize lastUILevel=_lastUILevel;
@@ -181,7 +193,6 @@
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
 @property(readonly) PLIOKitOperatorComposition *iokitPPM; // @synthesize iokitPPM=_iokitPPM;
 @property(readonly) PLIOKitOperatorComposition *iokitPowerSource; // @synthesize iokitPowerSource=_iokitPowerSource;
-- (void).cxx_destruct;
 - (int)deviceType;
 - (id)overrideBatteryData:(id)arg1 withPath:(id)arg2;
 - (_Bool)batterySerialChanged:(id)arg1;
@@ -191,6 +202,9 @@
 - (int)getMitigationDefaults;
 - (void)setMitigationStateDefault:(unsigned long long)arg1;
 - (void)handleMitigationStateCallback:(int)arg1;
+- (void)pushFCCDataToCoreAnalytics;
+- (void)sampleBatteryEntryWithRawData:(id)arg1 andProperties:(id)arg2;
+- (void)setupBatterySubsampling;
 - (long long)xFlags;
 - (BOOL)shouldWaitForLifetimeDataWithRawData:(id)arg1;
 - (void)accountGaugePowerFromCurrentAccumulatorEntry:(id)arg1;

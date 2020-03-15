@@ -41,12 +41,12 @@
     unsigned long long _atomicNumberOfAppLayoutsToCache;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long atomicNumberOfAppLayoutsToCache; // @synthesize atomicNumberOfAppLayoutsToCache=_atomicNumberOfAppLayoutsToCache;
 @property(copy, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
 @property(nonatomic) _Bool reloadsSnapshotsForActiveInterfaceOrientationChange; // @synthesize reloadsSnapshotsForActiveInterfaceOrientationChange=_reloadsSnapshotsForActiveInterfaceOrientationChange;
 @property(readonly, nonatomic) _Bool cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
 @property(nonatomic) __weak id <SBAppSwitcherSnapshotImageCacheDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_uiImageForCGImage:(struct CGImage *)arg1 forSnapshotRequest:(id)arg2;
 - (void)_asynchronouslyLoadSnapshotFromRequest:(id)arg1;
 - (_Bool)_keepGoingForRequest:(id)arg1;

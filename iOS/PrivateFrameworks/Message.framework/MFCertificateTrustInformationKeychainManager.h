@@ -18,10 +18,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CertUITrustManager *keychainManager; // @synthesize keychainManager=_keychainManager;
 @property(readonly, nonatomic) EMCertificateTrustInformation *trustInformation; // @synthesize trustInformation=_trustInformation;
 @property(readonly, copy, nonatomic) NSString *addressForSaving; // @synthesize addressForSaving=_addressForSaving;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long keychainStatus;
 - (void)removeCertificateFromKeychain;
 - (void)saveCertificateToKeychain;

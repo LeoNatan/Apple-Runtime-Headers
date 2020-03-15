@@ -18,12 +18,12 @@
 }
 
 + (id)newMessageInstanceOfType:(unsigned short)arg1 retryCount:(long long)arg2 retryInterval:(double)arg3 withAction:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType retryAction; // @synthesize retryAction=_retryAction;
 @property(nonatomic) double retryInterval; // @synthesize retryInterval=_retryInterval;
 @property(nonatomic) long long retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) unsigned short typeID; // @synthesize typeID=_typeID;
 @property(retain, nonatomic) NSNumber *sentAbsoluteTime; // @synthesize sentAbsoluteTime=_sentAbsoluteTime;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

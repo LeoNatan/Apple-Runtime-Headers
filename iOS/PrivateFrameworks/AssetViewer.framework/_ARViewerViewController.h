@@ -18,8 +18,8 @@
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
-@property(retain) id <ARViewerVendorProtocol> arviewerDelegate; // @synthesize arviewerDelegate=_arviewerDelegate;
 - (void).cxx_destruct;
+@property(retain) id <ARViewerVendorProtocol> arviewerDelegate; // @synthesize arviewerDelegate=_arviewerDelegate;
 - (oneway void)setStatusBarOrientation:(long long)arg1;
 - (oneway long long)statusBarOrientation;
 - (oneway _Bool)isIgnoringInteractionEvents;

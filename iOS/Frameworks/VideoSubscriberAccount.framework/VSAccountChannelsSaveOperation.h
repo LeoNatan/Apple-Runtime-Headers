@@ -15,10 +15,10 @@
     VSAccountChannelsCenter *_accountChannelsCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSAccountChannelsCenter *accountChannelsCenter; // @synthesize accountChannelsCenter=_accountChannelsCenter;
 @property(retain, nonatomic) VSAccountChannels *unsavedAccountChannels; // @synthesize unsavedAccountChannels=_unsavedAccountChannels;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithUnsavedAccountChannels:(id)arg1 accountChannelsCenter:(id)arg2;
 - (id)init;

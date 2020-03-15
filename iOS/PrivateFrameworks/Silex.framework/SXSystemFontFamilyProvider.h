@@ -15,8 +15,8 @@
     NSArray *_fonts;
 }
 
-@property(readonly, nonatomic) NSArray *fonts; // @synthesize fonts=_fonts;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *fonts; // @synthesize fonts=_fonts;
 @property(readonly, copy) NSString *description;
 - (id)fontsForMetadata:(id)arg1;
 - (id)fontFamilies;

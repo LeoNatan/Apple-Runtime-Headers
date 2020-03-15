@@ -15,8 +15,8 @@
     id <PUICRecentsViewDelegate> _recentsViewDelegate;
 }
 
-@property(nonatomic) __weak id <PUICRecentsViewDelegate> recentsViewDelegate; // @synthesize recentsViewDelegate=_recentsViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICRecentsViewDelegate> recentsViewDelegate; // @synthesize recentsViewDelegate=_recentsViewDelegate;
 - (void)viewDidLoad;
 - (id)initWithDelegate:(id)arg1;
 

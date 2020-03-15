@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UITargetedPreview *_targetedPreview;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
 @property(nonatomic) BOOL isSourceList; // @synthesize isSourceList=_isSourceList;
-- (void).cxx_destruct;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 - (id)initWithTargetedPreview:(id)arg1 isSourceList:(BOOL)arg2;
 

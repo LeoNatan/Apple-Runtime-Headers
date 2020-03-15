@@ -16,11 +16,11 @@
     NSMutableArray *_decisions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *decisions; // @synthesize decisions=_decisions;
 @property(readonly, nonatomic) unsigned long long decisionCapacity; // @synthesize decisionCapacity=_decisionCapacity;
 @property(readonly, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) unsigned long long resultCapacity; // @synthesize resultCapacity=_resultCapacity;
-- (void).cxx_destruct;
 - (void)reinitializeDecisionHistoryWithDecision:(id)arg1;
 - (void)clearHistory;
 - (id)recentDecisionsForCount:(unsigned long long)arg1;

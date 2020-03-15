@@ -15,9 +15,9 @@
     BKIdentity *_augmentedIdentity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKIdentity *augmentedIdentity; // @synthesize augmentedIdentity=_augmentedIdentity;
 @property(nonatomic) _Bool clientToComplete; // @synthesize clientToComplete=_clientToComplete;
-- (void).cxx_destruct;
 - (_Bool)resumeWithError:(id *)arg1;
 - (_Bool)suspendWithError:(id *)arg1;
 - (_Bool)completeWithError:(id *)arg1;

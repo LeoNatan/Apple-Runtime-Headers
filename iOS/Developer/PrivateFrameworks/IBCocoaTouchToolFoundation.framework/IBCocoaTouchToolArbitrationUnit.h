@@ -15,7 +15,6 @@
 - (_Bool)shouldAcceptFramesFromAutoresizingMaskedViews;
 - (id)computeStatusFromEngine:(id)arg1;
 - (id)computeViewToLayoutFramesFromEngine:(id)arg1;
-- (unsigned long long)engineOptionsForComputationStatus;
 - (id)runArbitrationWithOptions:(id)arg1;
 - (void)_ensureRootObjectIsInWindowDuring:(CDUnknownBlockType)arg1;
 - (id)layoutInfo;

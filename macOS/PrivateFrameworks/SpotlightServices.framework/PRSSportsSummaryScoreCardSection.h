@@ -19,6 +19,7 @@
     NSArray *_image_axLabels;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *image_axLabels; // @synthesize image_axLabels=_image_axLabels;
 @property(readonly, nonatomic) NSString *csType; // @synthesize csType=_csType;
 @property(readonly, nonatomic) NSArray *images_alignment; // @synthesize images_alignment=_images_alignment;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSArray *image_labels; // @synthesize image_labels=_image_labels;
 @property(readonly, nonatomic) NSArray *images; // @synthesize images=_images;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 

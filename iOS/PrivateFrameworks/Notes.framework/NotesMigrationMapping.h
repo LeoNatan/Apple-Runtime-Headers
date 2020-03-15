@@ -21,11 +21,11 @@
 + (id)mappings;
 + (id)modelForModelName:(id)arg1;
 + (id)descriptionStringFromSourceStoreNames:(id)arg1 destinationStoreName:(id)arg2;
+- (void).cxx_destruct;
 @property long long type; // @synthesize type=_type;
 @property(copy) NSString *descriptionString; // @synthesize descriptionString=_descriptionString;
 @property(copy) NSArray *sourceModels; // @synthesize sourceModels=_sourceModels;
 @property(retain) NSManagedObjectModel *destinationModel; // @synthesize destinationModel=_destinationModel;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)canMigrateStoreMetadata:(id)arg1;
 - (id)mappingModelForStoreMetadata:(id)arg1;

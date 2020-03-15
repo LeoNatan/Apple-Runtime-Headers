@@ -25,12 +25,12 @@
 + (id)encodedPeopleFetcherForForFetchRequest:(id)arg1 addressBook:(void *)arg2 managedConfiguration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 environment:(id)arg5;
 + (id)contactBuffersDecoderForFetchRequest:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNManagedAccountsCache *managedAccountsCache; // @synthesize managedAccountsCache=_managedAccountsCache;
 @property(readonly, nonatomic) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
 @property(readonly, nonatomic) id <CNContactsLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) CNContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) CNiOSAddressBook *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (_Bool)hasMultipleGroupsOrAccounts;
 - (_Bool)resetSortDataIfNeededWithError:(id *)arg1;
 - (_Bool)setDefaultAccountIdentifier:(id)arg1 error:(id *)arg2;

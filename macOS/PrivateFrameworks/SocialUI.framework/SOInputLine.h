@@ -47,6 +47,7 @@
 + (BOOL)isFileTransferObject:(id)arg1;
 + (id)_updateCharacterSet;
 + (double)minimumFontSize;
+- (void).cxx_destruct;
 @property(retain) NSURL *dropDirectoryURL; // @synthesize dropDirectoryURL=_dropDirectoryURL;
 @property(retain, nonatomic) NSUserDefaults *inputLineDefaults; // @synthesize inputLineDefaults=_inputLineDefaults;
 @property(nonatomic) BOOL useBigEmoji; // @synthesize useBigEmoji=_useBigEmoji;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
 @property(retain, nonatomic) NSFont *lastUsedSubstitutedFont; // @synthesize lastUsedSubstitutedFont=_lastUsedSubstitutedFont;
 @property(nonatomic) BOOL dirty; // @synthesize dirty=_dirty;
-- (void).cxx_destruct;
 - (void)_fixAttrsOnSelectionChange:(id)arg1;
 - (void)_setTypingAttributesForSelection:(struct _NSRange)arg1;
 - (void)makeTextStandardSize:(id)arg1;

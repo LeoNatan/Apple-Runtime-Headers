@@ -22,12 +22,12 @@
 }
 
 + (id)_newLabelWithText:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *additionalLabels; // @synthesize additionalLabels=_additionalLabels;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

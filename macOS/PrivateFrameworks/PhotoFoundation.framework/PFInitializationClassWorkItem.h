@@ -16,11 +16,11 @@
     id _singleton;
 }
 
+- (void).cxx_destruct;
 @property(retain) id singleton; // @synthesize singleton=_singleton;
 @property struct _opaque_pthread_t *assignSingletonThread; // @synthesize assignSingletonThread=_assignSingletonThread;
 @property(readonly) NSArray *configurationClasses; // @synthesize configurationClasses=_configurationClasses;
 @property(readonly) Class initializationClass; // @synthesize initializationClass=_initializationClass;
-- (void).cxx_destruct;
 - (void)performInitialization;
 - (void)addConfigurationClass:(Class)arg1;
 - (id)description;

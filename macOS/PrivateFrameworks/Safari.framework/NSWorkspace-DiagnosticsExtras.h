@@ -9,10 +9,9 @@
 @interface NSWorkspace (DiagnosticsExtras)
 + (id)safari_userDesktopDirectory;
 - (BOOL)safari_isSafariRunning;
+- (BOOL)safari_getLocalizedName:(id *)arg1 andMenuIcon:(id *)arg2 forApplicationAtURL:(id)arg3;
 - (BOOL)safari_haveQuicktimePlayer;
 - (BOOL)safari_haveiTunes;
-- (id)createZipArchive:(id)arg1;
-- (BOOL)isFilePackageOrAliasToFilePackageAtPath:(id)arg1;
 - (id)downloadAssessmentForPath:(id)arg1;
 - (void)sendNotificationsForFinishedDownloadAtPath:(id)arg1;
 - (BOOL)safari_createInternetLocationFileAtURL:(id)arg1 withURL:(id)arg2 title:(id)arg3 error:(id *)arg4;

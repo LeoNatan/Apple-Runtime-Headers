@@ -49,6 +49,7 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *_visualEffectView; // @synthesize _visualEffectView=__visualEffectView;
 @property(readonly, nonatomic) UIButton *_captionButton; // @synthesize _captionButton=__captionButton;
 @property(readonly, nonatomic) UILabel *_captionLabel; // @synthesize _captionLabel=__captionLabel;
@@ -73,7 +74,6 @@
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <PXUIWidgetHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateCaptionIfNeeded;
 - (void)_invalidateCaption;
 - (void)_updateSubtitleIfNeeded;

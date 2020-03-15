@@ -13,8 +13,8 @@
     id <AKCardViewDataSourceSupport> _cardView;
 }
 
-@property(nonatomic) __weak id <AKCardViewDataSourceSupport> cardView; // @synthesize cardView=_cardView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AKCardViewDataSourceSupport> cardView; // @synthesize cardView=_cardView;
 - (id)dataSourceWithContact:(id)arg1 contactStore:(id)arg2 delegate:(id)arg3;
 - (id)initWithCardView:(id)arg1;
 

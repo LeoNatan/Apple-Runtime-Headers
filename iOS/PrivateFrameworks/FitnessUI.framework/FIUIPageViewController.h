@@ -28,6 +28,7 @@
     NSCache *_viewControllerForIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldNotifyDelegateWhenScrollViewSettles; // @synthesize shouldNotifyDelegateWhenScrollViewSettles=_shouldNotifyDelegateWhenScrollViewSettles;
 @property(retain, nonatomic) NSCache *viewControllerForIndexPath; // @synthesize viewControllerForIndexPath=_viewControllerForIndexPath;
 @property(nonatomic) _Bool userDidTapPageControl; // @synthesize userDidTapPageControl=_userDidTapPageControl;
@@ -39,7 +40,6 @@
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(nonatomic) __weak id <FIUIPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <FIUIPageViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;

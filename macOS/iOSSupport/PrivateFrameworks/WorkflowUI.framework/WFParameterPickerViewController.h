@@ -19,11 +19,11 @@
     NSArray *_excludedParameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *excludedParameters; // @synthesize excludedParameters=_excludedParameters;
 @property(nonatomic) __weak WFWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
 @property(nonatomic) __weak id <WFParameterPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (id)createModelForAction:(id)arg1;
 - (void)component:(id)arg1 didSelectAction:(id)arg2 parameter:(id)arg3;
 - (void)cancelPressed;

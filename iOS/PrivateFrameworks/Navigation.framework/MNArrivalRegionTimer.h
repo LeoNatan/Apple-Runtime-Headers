@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <MNArrivalRegionTimerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MNArrivalRegionTimerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MNArrivalRegionTimerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateForLocation:(id)arg1;
 - (void)dealloc;
 - (id)initWithArrivalRegion:(id)arg1;

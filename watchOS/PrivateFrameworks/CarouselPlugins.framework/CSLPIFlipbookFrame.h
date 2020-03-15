@@ -27,13 +27,13 @@
 + (id)shortLoggingStringForAnimationMinute:(id)arg1;
 + (id)loggingStringForAnimationMinute:(id)arg1;
 + (id)loggingStringForPresentationTime:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double caMediaTimeStamp; // @synthesize caMediaTimeStamp=_caMediaTimeStamp;
 @property(nonatomic) unsigned long long machContinuousTimeStamp; // @synthesize machContinuousTimeStamp=_machContinuousTimeStamp;
 @property(readonly, nonatomic) id <CSLSFrameSpecifier> frameSpecifier; // @synthesize frameSpecifier=_frameSpecifier;
 @property(readonly, nonatomic) unsigned int index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSDate *animationEndDate; // @synthesize animationEndDate=_animationEndDate;
 @property(readonly, nonatomic) NSDate *animationStartDate; // @synthesize animationStartDate=_animationStartDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *presentationTime;
 @property(readonly, copy) NSString *description;
 - (id)initWithAnimationStartDate:(id)arg1 animationEndDate:(id)arg2 index:(unsigned int)arg3 frameSpecifier:(id)arg4;

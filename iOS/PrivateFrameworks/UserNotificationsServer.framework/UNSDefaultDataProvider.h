@@ -35,9 +35,9 @@
     BBSectionInfo *_sectionInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BBSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 @property(retain, nonatomic) BBDataProviderProxy *proxy; // @synthesize proxy=_proxy;
-- (void).cxx_destruct;
 - (id)_sectionIconForNotificationSourceDescription:(id)arg1;
 - (id)_sectionIconVariantForImageName:(id)arg1 bundlePath:(id)arg2 format:(long long)arg3 precomposed:(_Bool)arg4;
 - (id)primaryAttachmentDataForRecordID:(id)arg1;

@@ -19,9 +19,9 @@
 + (id)_sendSynchronousRequest:(id)arg1 catalogURL:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 + (void)_sendAsynchronousRequest:(id)arg1 catalogURL:(id)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *catalogs; // @synthesize catalogs=_catalogs;
 @property(retain) NSObject<OS_dispatch_queue> *productQueue; // @synthesize productQueue=_productQueue;
-- (void).cxx_destruct;
 - (void)evaluateProductsWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_evaluateProduct:(id)arg1 evaluationOptions:(id)arg2 catalog:(id)arg3 installable:(char *)arg4 error:(id *)arg5;
 - (void)registerCatalogAtURL:(id)arg1 options:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

@@ -20,8 +20,8 @@
     CSLSessionModel *_model;
 }
 
-@property(readonly, nonatomic) __weak CSLSessionModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak CSLSessionModel *model; // @synthesize model=_model;
 - (void)clientDisconnected:(id)arg1;
 - (void)clientConnected:(id)arg1 bundleID:(id)arg2;
 - (void)_callLaunchCompletionForSession:(id)arg1 error:(id)arg2;

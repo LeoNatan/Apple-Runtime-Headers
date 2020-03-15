@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)historyEntryForTargetPath:(const struct TFENodeVector *)arg1 windowState:(id)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *searchState; // @synthesize searchState=_searchState;
 @property(retain, nonatomic) NSDictionary *windowState; // @synthesize windowState=_windowState;
 @property(nonatomic) struct TFENodeVector targetPath; // @synthesize targetPath=_targetPath;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)isValid;
 - (void)dealloc;
 

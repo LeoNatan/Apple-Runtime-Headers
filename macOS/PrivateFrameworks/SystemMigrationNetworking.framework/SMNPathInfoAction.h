@@ -16,9 +16,9 @@
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
+- (void).cxx_destruct;
 @property(retain) NSSet *keys; // @synthesize keys=_keys;
 @property(retain) NSArray *paths; // @synthesize paths=_paths;
-- (void).cxx_destruct;
 - (id)setOfClassesToDecodeInTheResult;
 - (BOOL)success;
 - (BOOL)returnsData;

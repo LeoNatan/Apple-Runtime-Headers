@@ -15,10 +15,10 @@
     NSDate *_lastKernelTimeRecalibrated;
 }
 
+- (void).cxx_destruct;
 @property BOOL rebootOccurred; // @synthesize rebootOccurred=_rebootOccurred;
 @property(retain) NSDate *lastKernelTimeRecalibrated; // @synthesize lastKernelTimeRecalibrated=_lastKernelTimeRecalibrated;
 @property(retain) NSDate *lastSystemTimeRecalibrated; // @synthesize lastSystemTimeRecalibrated=_lastSystemTimeRecalibrated;
-- (void).cxx_destruct;
 - (unsigned long long)continuousTimeToAbsoluteNs:(unsigned long long)arg1;
 - (struct mach_timebase_info *)getTimebaseInfo;
 - (void)setSystemReboot:(BOOL)arg1;

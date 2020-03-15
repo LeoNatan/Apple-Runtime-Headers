@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     shared_ptr_f6ac7592 _graph;
 }
 
-@property(readonly, nonatomic) struct Box *box; // @synthesize box=_box;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct Box *box; // @synthesize box=_box;
 - (_Bool)setParameter:(float)arg1 forID:(unsigned long)arg2 scope:(unsigned long)arg3 element:(unsigned long)arg4 bufferOffset:(int)arg5;
 - (_Bool)hasParameter:(unsigned long)arg1 scope:(unsigned long)arg2 element:(unsigned long)arg3;
 - (_Bool)getParameter:(float *)arg1 forID:(unsigned long)arg2 scope:(unsigned long)arg3 element:(unsigned long)arg4;

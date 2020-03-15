@@ -18,8 +18,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)optionsDescription;
 + (struct CGSize)sizeForSwatchStyle:(long long)arg1;
-@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (_Bool)optionExistsInDevice:(id)arg1;
 - (_Bool)isValidOption;
 - (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;

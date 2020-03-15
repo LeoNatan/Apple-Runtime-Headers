@@ -18,13 +18,13 @@
     NEFlowDivertFileHandle *_flowDivertDataHandle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NEFlowDivertFileHandle *flowDivertDataHandle; // @synthesize flowDivertDataHandle=_flowDivertDataHandle;
 @property(retain) NEFlowDivertFileHandle *flowDivertControlHandle; // @synthesize flowDivertControlHandle=_flowDivertControlHandle;
 @property(retain) NEPolicySession *policySession; // @synthesize policySession=_policySession;
 @property _Bool started; // @synthesize started=_started;
 @property(retain) NSPConfiguration *configuration; // @synthesize configuration=_configuration;
 @property _Bool shouldResetPolicies; // @synthesize shouldResetPolicies=_shouldResetPolicies;
-- (void).cxx_destruct;
 - (void)didFailWithError:(id)arg1;
 - (void)didStartWithError:(id)arg1;
 - (void)teardown;

@@ -16,8 +16,8 @@
 + (id)buildRequiredOnlyWithCertificate:(id)arg1;
 + (id)buildWithCertificate:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(copy, nonatomic) NSData *payloadCertificate; // @synthesize payloadCertificate=_payloadCertificate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *payloadCertificate; // @synthesize payloadCertificate=_payloadCertificate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

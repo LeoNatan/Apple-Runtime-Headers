@@ -13,8 +13,8 @@
     NSString *_languageCode;
 }
 
-@property(copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 - (id)_encodeObject:(id)arg1 codableAttribute:(id)arg2;
 - (id)encodeObject:(id)arg1 withCodableAttribute:(id)arg2;
 - (id)encodeObject:(id)arg1;

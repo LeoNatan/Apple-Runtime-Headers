@@ -17,9 +17,9 @@
 }
 
 + (id)defaultGradient;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

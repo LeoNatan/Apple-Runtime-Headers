@@ -21,8 +21,8 @@
     id <FPDProcessMonitorDelegate> _delegate;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property __weak id <FPDProcessMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)invalidate;
 - (void)_updateMonitoredBundleIDs;

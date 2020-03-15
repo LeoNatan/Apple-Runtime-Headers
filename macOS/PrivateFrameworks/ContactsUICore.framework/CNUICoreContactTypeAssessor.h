@@ -14,8 +14,8 @@
 }
 
 + (id)keysToFetch;
-@property(readonly, nonatomic) CNFuture *familyInfoFuture; // @synthesize familyInfoFuture=_familyInfoFuture;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNFuture *familyInfoFuture; // @synthesize familyInfoFuture=_familyInfoFuture;
 - (long long)estiamtedTypeOfContact:(id)arg1;
 - (id)initWithFamilyInfoFuture:(id)arg1;
 - (id)initWithFamilyInfo:(id)arg1;

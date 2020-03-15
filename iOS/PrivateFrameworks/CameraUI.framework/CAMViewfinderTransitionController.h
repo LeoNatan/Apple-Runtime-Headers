@@ -16,10 +16,10 @@
     CAMViewfinderFlipTransition *__flipTransition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setFlipTransition:) CAMViewfinderFlipTransition *_flipTransition; // @synthesize _flipTransition=__flipTransition;
 @property(retain, nonatomic, setter=_setOpenAndCloseTransition:) CAMViewfinderOpenAndCloseTransition *_openAndCloseTransition; // @synthesize _openAndCloseTransition=__openAndCloseTransition;
 @property(nonatomic) __weak id <CAMViewfinderTransitionable> target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)handleApplicationDidEnterBackground;
 - (void)openForReason:(long long)arg1 animated:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)closeAndRotateWithDirection:(unsigned long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

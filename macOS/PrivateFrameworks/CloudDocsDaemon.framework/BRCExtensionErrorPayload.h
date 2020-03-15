@@ -16,9 +16,9 @@
     NSString *_recordId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *recordId; // @synthesize recordId=_recordId;
 @property(retain, nonatomic) NSString *minimumOSName; // @synthesize minimumOSName=_minimumOSName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

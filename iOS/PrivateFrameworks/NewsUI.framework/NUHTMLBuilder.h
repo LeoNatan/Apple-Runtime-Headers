@@ -13,8 +13,8 @@
     NSMutableString *_string;
 }
 
-@property(retain, nonatomic) NSMutableString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableString *string; // @synthesize string=_string;
 - (id)URLEncode:(id)arg1;
 - (id)encodeHTMLEntities:(id)arg1;
 - (id)appendHTML:(id)arg1;

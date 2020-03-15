@@ -23,8 +23,8 @@
 }
 
 + (void)parseFeedAsynchronouslyWithData:(id)arg1 url:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(nonatomic) __weak id <AMFFeedParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AMFFeedParserDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;

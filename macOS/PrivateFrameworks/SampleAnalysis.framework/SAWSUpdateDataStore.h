@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 - (void)stopGatheringWSUpdateInformation;
 - (void)startingGatheringWSUpdateInformation;
 - (void)populateReferencesUsingBuffer:(const void *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
-- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
+- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
+- (void)addSelfToSerializationDictionary:(id)arg1;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

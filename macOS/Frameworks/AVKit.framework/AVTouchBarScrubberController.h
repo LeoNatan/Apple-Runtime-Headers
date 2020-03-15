@@ -31,11 +31,11 @@ __attribute__((visibility("hidden")))
     AVPlayerControllerTimeResolver *_timeResolver;
 }
 
+- (void).cxx_destruct;
 @property(retain) AVPlayerControllerTimeResolver *timeResolver; // @synthesize timeResolver=_timeResolver;
 @property(retain, nonatomic) AVPlayerLayer *scrubPlayerLayer; // @synthesize scrubPlayerLayer=_scrubPlayerLayer;
 @property BOOL hasRoundedCorners; // @synthesize hasRoundedCorners=_hasRoundedCorners;
 @property(retain, nonatomic) id <AVTouchBarScrubberControlling><AVTouchBarTrackControlling><AVTimeControlling> playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)unbindAllObjects;
 - (void)unbindObject:(id)arg1;
 - (void)bindObject:(id)arg1 withBinding:(id)arg2 toObject:(id)arg3 withKeyPath:(id)arg4 options:(id)arg5;

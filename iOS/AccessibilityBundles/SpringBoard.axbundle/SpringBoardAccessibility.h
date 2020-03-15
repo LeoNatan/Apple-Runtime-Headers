@@ -31,8 +31,6 @@
 - (void)_accessibilityFocusOnAppWithPid:(int)arg1 bundleIdentifier:(id)arg2;
 - (void)_accessibilitySwitchNativeFocusedApplicationWithPID:(int)arg1;
 - (void)_axPerformDidFocusOnApplicationActionWithPid:(int)arg1;
-- (void)_accessibilitySwitchNativeFocusedApplicationInDirection:(long long)arg1;
-- (id)_axProcessesForNativeFocus;
 - (id)_axKeyboardFocusController;
 - (_Bool)_iosAccessibilityPerformAction:(int)arg1 withValue:(id)arg2 fencePort:(unsigned int)arg3;
 - (id)_iosAccessibilityAttributeValue:(long long)arg1;
@@ -46,6 +44,7 @@
 - (id)_accessibilityLaunchableApps;
 - (_Bool)_accessibilitySystemWideGestureInProgress;
 - (_Bool)_accessibilityIsSystemSleeping;
+- (_Bool)_accessibilityIsAlarmRinging;
 - (_Bool)_accessibilityIsSystemLocked;
 - (_Bool)_accessibilityIsBatteryLow;
 - (_Bool)_accessibilityIsVoiceControlRunning;

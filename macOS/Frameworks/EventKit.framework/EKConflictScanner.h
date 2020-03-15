@@ -13,8 +13,8 @@
     EKEventStore *_eventStore;
 }
 
-@property(retain) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 - (void).cxx_destruct;
+@property(retain) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 - (id)_conflictDetailsForJobs:(id)arg1;
 - (id)_conflictScanJobForEvent:(id)arg1;
 - (id)conflictsForEvents:(id)arg1;

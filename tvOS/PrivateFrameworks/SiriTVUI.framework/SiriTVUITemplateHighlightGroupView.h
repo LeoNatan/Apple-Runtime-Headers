@@ -17,9 +17,9 @@
     _Bool hasPriorityLayout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *groupedSubviews; // @synthesize groupedSubviews=_highlightableViews;
 @property(nonatomic) _Bool hasPriorityLayout; // @synthesize hasPriorityLayout;
-- (void).cxx_destruct;
 - (_Bool)shouldFitWithinContentMargins;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

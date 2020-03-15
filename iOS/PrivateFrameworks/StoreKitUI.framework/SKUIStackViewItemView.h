@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     _Bool _shouldFlipImageVertical;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldFlipImageVertical; // @synthesize shouldFlipImageVertical=_shouldFlipImageVertical;
 @property(nonatomic) _Bool shouldFlipImageHorizontal; // @synthesize shouldFlipImageHorizontal=_shouldFlipImageHorizontal;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

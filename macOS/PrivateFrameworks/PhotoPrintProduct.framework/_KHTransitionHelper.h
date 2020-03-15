@@ -19,12 +19,12 @@
 }
 
 + (id)transitionHelperWithContext:(id)arg1 isInteractive:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect finalTransitioningRect; // @synthesize finalTransitioningRect=_finalTransitioningRect;
 @property(readonly, nonatomic) struct CGRect initialTransitioningRect; // @synthesize initialTransitioningRect=_initialTransitioningRect;
 @property(readonly, nonatomic) CALayer *transitioningLayer; // @synthesize transitioningLayer=_transitioningLayer;
 @property(readonly, nonatomic) UXView *transitionView; // @synthesize transitionView=_transitionView;
 @property(readonly, nonatomic) id <UXViewControllerContextTransitioning> transitioningContext; // @synthesize transitioningContext=_transitioningContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UXView *toView;
 @property(readonly, nonatomic) UXView *fromView;
 @property(readonly, nonatomic) UXViewController<KHGridPageTransitionViewControllerProtocol> *toViewController;

@@ -18,12 +18,12 @@
     NSMutableDictionary *_columnViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *columnViews; // @synthesize columnViews=_columnViews;
 @property(retain, nonatomic) NSMutableDictionary *rowViews; // @synthesize rowViews=_rowViews;
 @property(retain, nonatomic) SXDataTableBlueprint *blueprint; // @synthesize blueprint=_blueprint;
 @property(nonatomic) __weak id <SXDataTableDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) __weak id <SXDataTableViewDataSource> viewDataSource; // @synthesize viewDataSource=_viewDataSource;
-- (void).cxx_destruct;
 - (id)viewForColumnAtIndex:(unsigned long long)arg1;
 - (id)viewForRowAtIndex:(unsigned long long)arg1;
 - (struct CGPoint)originOffset;

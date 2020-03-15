@@ -19,13 +19,13 @@
     NSMutableSet *_activeRequests;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *activeRequests; // @synthesize activeRequests=_activeRequests;
 @property(readonly, nonatomic) id <INCExtensionProxy> extensionProxy; // @synthesize extensionProxy=_extensionProxy;
 @property(readonly, nonatomic) INCExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
 @property(readonly, nonatomic) __weak id <WFIntentDynamicResolverDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *intentKeyPathToResolve; // @synthesize intentKeyPathToResolve=_intentKeyPathToResolve;
-- (void).cxx_destruct;
 - (void)failWithError:(id)arg1;
 - (void)populatedSkeletonIntentWithUserInput:(id)arg1 forKeyPath:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)intent;

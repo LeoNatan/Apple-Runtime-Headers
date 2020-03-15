@@ -19,13 +19,13 @@
     SBSHardwareButtonService *__cameraButtonRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBSHardwareButtonService *_cameraButtonRequest; // @synthesize _cameraButtonRequest=__cameraButtonRequest;
 @property(nonatomic, setter=_setVolumeDownButtonState:) long long _volumeDownButtonState; // @synthesize _volumeDownButtonState=__volumeDownButtonState;
 @property(nonatomic, setter=_setVolumeUpButtonState:) long long _volumeUpButtonState; // @synthesize _volumeUpButtonState=__volumeUpButtonState;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, setter=_setState:) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <CKCamPhysicalCaptureNotifierDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateStateAndNotifyDelegateIfNeeded;
 - (void)_handleVolumeDownButtonDownNotification:(id)arg1;
 - (void)_handleVolumeDownButtonUpNotification:(id)arg1;

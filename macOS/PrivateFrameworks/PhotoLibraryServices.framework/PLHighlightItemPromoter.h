@@ -13,8 +13,8 @@
     id <PLHighlightItemPromoterRule> _rule;
 }
 
-@property(readonly, nonatomic) id <PLHighlightItemPromoterRule> rule; // @synthesize rule=_rule;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PLHighlightItemPromoterRule> rule; // @synthesize rule=_rule;
 - (void)processHighlightItemsInHighlightItemList:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 - (id)initWithRule:(id)arg1;
 

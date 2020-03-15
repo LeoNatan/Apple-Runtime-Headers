@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *cdHash; // @synthesize cdHash=_cdHash;
 @property(copy, nonatomic) NSString *appVersion; // @synthesize appVersion=_appVersion;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (BOOL)isComplete;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;

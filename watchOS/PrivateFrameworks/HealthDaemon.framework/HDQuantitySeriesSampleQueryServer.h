@@ -25,8 +25,8 @@
 + (_Bool)_shouldDeliverQuantityWithStartTime:(double)arg1 UUID:(id)arg2 maximumDeliveredStartDate:(id)arg3 latestDeliveredUUID:(id)arg4 orderBySamples:(_Bool)arg5;
 + (id)requiredEntitlements;
 + (Class)queryClass;
-@property(copy, nonatomic) CDUnknownBlockType unitTest_batchWillDeliver; // @synthesize unitTest_batchWillDeliver=_unitTest_batchWillDeliver;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType unitTest_batchWillDeliver; // @synthesize unitTest_batchWillDeliver=_unitTest_batchWillDeliver;
 - (void)_deliverEnumerationResults:(id)arg1 isFinal:(_Bool)arg2;
 - (_Bool)_deliverEnumerationResults:(id)arg1 latestUUID:(id)arg2 latestSampleStartTime:(double)arg3 sampleIDsToLookup:(id)arg4 isFinal:(_Bool)arg5 error:(id *)arg6;
 - (id)_predicateForEnumerationWithError:(id *)arg1;

@@ -26,6 +26,7 @@
     NSLayoutConstraint *_editorWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *editorWidthConstraint; // @synthesize editorWidthConstraint=_editorWidthConstraint;
 @property BOOL isNewLikeness; // @synthesize isNewLikeness=_isNewLikeness;
 @property BOOL isMe; // @synthesize isMe=_isMe;
@@ -37,7 +38,6 @@
 @property(retain) NSView *editorAreaView; // @synthesize editorAreaView=_editorAreaView;
 @property(retain) CNRecentLikenessesViewController *recentsViewController; // @synthesize recentsViewController=_recentsViewController;
 @property(retain, nonatomic) id <CNLikenessEditorPresentationStrategy> presentationStrategy; // @synthesize presentationStrategy=_presentationStrategy;
-- (void).cxx_destruct;
 - (void)save;
 - (void)setReadyToSave;
 - (BOOL)isBackwardsNavigationEnabled;

@@ -19,12 +19,12 @@
     _CDMDCSContextualPredicate *_remotePredicate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _CDMDCSContextualPredicate *remotePredicate; // @synthesize remotePredicate=_remotePredicate;
 @property(readonly, nonatomic) _CDContextualPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSSet *devices; // @synthesize devices=_devices;
-- (void).cxx_destruct;
 - (id)valueFromUserContext:(id)arg1;
 - (id)_sortedKeyPaths:(id)arg1;
 - (id)_localKeyPaths;

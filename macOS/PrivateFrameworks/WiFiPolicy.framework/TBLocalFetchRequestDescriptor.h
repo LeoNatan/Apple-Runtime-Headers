@@ -14,9 +14,9 @@
     NSFetchRequest *_localFetchRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFetchRequest *localFetchRequest; // @synthesize localFetchRequest=_localFetchRequest;
 @property(readonly, nonatomic) NSFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
-- (void).cxx_destruct;
 - (id)initWithFetchRequest:(id)arg1;
 
 @end

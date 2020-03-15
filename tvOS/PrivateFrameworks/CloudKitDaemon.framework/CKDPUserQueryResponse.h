@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDPUser *_user;
 }
 
-@property(retain, nonatomic) CKDPUser *user; // @synthesize user=_user;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPUser *user; // @synthesize user=_user;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

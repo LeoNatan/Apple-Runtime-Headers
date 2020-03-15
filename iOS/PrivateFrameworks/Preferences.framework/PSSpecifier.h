@@ -47,6 +47,7 @@
 + (id)groupSpecifierWithName:(id)arg1;
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(long long)arg6 edit:(Class)arg7;
 + (id)deleteButtonSpecifierWithName:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showContentString; // @synthesize showContentString=_showContentString;
 @property(nonatomic) __weak id weakUserInfo; // @synthesize weakUserInfo=_weakUserInfo;
 @property(nonatomic) SEL controllerLoadAction; // @synthesize controllerLoadAction=_controllerLoadAction;
@@ -63,7 +64,6 @@
 @property(nonatomic) long long cellType; // @synthesize cellType;
 @property(nonatomic) Class detailControllerClass; // @synthesize detailControllerClass;
 @property(nonatomic) __weak id target; // @synthesize target;
-- (void).cxx_destruct;
 - (_Bool)isEqualToSpecifier:(id)arg1;
 - (long long)titleCompare:(id)arg1;
 - (void)setKeyboardType:(long long)arg1 autoCaps:(long long)arg2 autoCorrection:(long long)arg3;

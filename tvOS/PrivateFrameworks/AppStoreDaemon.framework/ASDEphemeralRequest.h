@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (long long)requestType;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy, nonatomic) ASDRequestOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_startWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_failCompletionHandlerWithError:(id)arg1;
 - (void)_callCompletionHandlerWithResponse:(id)arg1;

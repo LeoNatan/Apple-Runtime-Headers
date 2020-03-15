@@ -25,6 +25,7 @@
 
 + (void)_layoutGradientMaskLayer:(id)arg1 frame:(struct CGRect)arg2 isReversed:(BOOL)arg3;
 + (id)rgbaColorFromColorIfPossible:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PKSliderKnobView *sliderKnobView; // @synthesize sliderKnobView=_sliderKnobView;
 @property(retain, nonatomic) CAGradientLayer *alphaGridViewMaskLayer; // @synthesize alphaGridViewMaskLayer=_alphaGridViewMaskLayer;
 @property(retain, nonatomic) _PKCheckerGridView *alphaGridView; // @synthesize alphaGridView=_alphaGridView;
@@ -35,7 +36,6 @@
 @property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) __weak id <_PKColorAlphaSliderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_uiColorUserInterfaceStyle;
 - (struct CGRect)_knobViewFrameForColorAlpha:(double)arg1;
 - (void)didPanSliderKnob:(id)arg1;

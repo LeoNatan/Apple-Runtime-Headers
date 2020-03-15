@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)preferredHeightForAction:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIButton *inputSourceButton; // @synthesize inputSourceButton=_inputSourceButton;
 @property(nonatomic) __weak WFDictateTextActionStopButton *stopButton; // @synthesize stopButton=_stopButton;
 @property(nonatomic) __weak UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)action:(id)arg1 didReceiveTranscription:(id)arg2;
 - (void)actionDidBeginListening:(id)arg1;
 - (void)updateInputSourceButton;

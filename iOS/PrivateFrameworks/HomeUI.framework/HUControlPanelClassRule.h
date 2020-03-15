@@ -19,10 +19,10 @@
 
 + (id)ruleWithControlItemProtocol:(id)arg1;
 + (id)ruleWithControlItemClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
 @property(copy, nonatomic) Class class; // @synthesize class=_class;
 @property(nonatomic) double priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (_Bool)ruleMatchesItem:(id)arg1;
 - (id)initWithControlItemClass:(Class)arg1 protocol:(id)arg2;
 

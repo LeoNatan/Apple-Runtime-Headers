@@ -27,6 +27,7 @@
 }
 
 + (id)upgradeOfferPageSpecificationSampleForLevel:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bottomLinkVisibleKey; // @synthesize bottomLinkVisibleKey=_bottomLinkVisibleKey;
 @property(retain, nonatomic) NSString *purchase2LinkVisibleKey; // @synthesize purchase2LinkVisibleKey=_purchase2LinkVisibleKey;
 @property(retain, nonatomic) NSArray *fineprintLinks; // @synthesize fineprintLinks=_fineprintLinks;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *iconBundleIdentifier; // @synthesize iconBundleIdentifier=_iconBundleIdentifier;
 @property(readonly, nonatomic) NSDictionary *serverDict; // @synthesize serverDict=_serverDict;
-- (void).cxx_destruct;
 - (id)copyWithBindings:(id)arg1;
 - (id)copy;
 - (id)debugDescription;

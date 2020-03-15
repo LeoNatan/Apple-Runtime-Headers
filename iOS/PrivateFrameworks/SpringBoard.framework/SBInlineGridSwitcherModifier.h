@@ -26,11 +26,11 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isOverlay) _Bool overlay; // @synthesize overlay=_overlay;
 @property(readonly, nonatomic, getter=isFloating) _Bool floating; // @synthesize floating=_floating;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly, nonatomic) double cardScale;
 @property(readonly, nonatomic) struct CGSize fixedCardSize;

@@ -17,10 +17,10 @@
     CNFuture *_availabilityFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNFuture *availabilityFuture; // @synthesize availabilityFuture=_availabilityFuture;
 @property(retain, nonatomic) ABRTTServices *ttyServices; // @synthesize ttyServices=_ttyServices;
 @property(retain, nonatomic) ABCollectionItemMessagingAvailabilityHelper *messagingHelper; // @synthesize messagingHelper=_messagingHelper;
-- (void).cxx_destruct;
 - (void)messagingAvailabilityDidChangeHelper:(id)arg1;
 - (BOOL)shouldShowGlyphButton:(id)arg1;
 - (void)stopAvailabilityLookup;

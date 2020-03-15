@@ -14,8 +14,8 @@
 }
 
 + (void)updateAlbumMetadata:(id)arg1;
-@property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 - (id)_argumentsDictionaryFromXPCEvent:(id)arg1;
 - (id)_argumentsDictionaryAsData:(id)arg1;
 - (void)runDaemonSide;

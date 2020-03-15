@@ -18,11 +18,11 @@
 }
 
 + (id)templateForInPhoneCallHeuristicWithContactId:(id)arg1 handle:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CDInteractionCache *recencyCache; // @synthesize recencyCache=_recencyCache;
 @property(readonly, nonatomic) _PSContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 @property(readonly, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
-- (void).cxx_destruct;
 - (id)hourOfDayProbabilitiesToInteractWithContacts:(id)arg1;
 - (id)backFillProxiesByRecencyUsingMessagesCache:(id)arg1 startIndex:(unsigned int)arg2;
 - (id)inPhoneCallHeuristicSuggestionProxies;

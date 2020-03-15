@@ -20,11 +20,11 @@
     id <HDNanoAlertSuppressionService> alertSuppressionService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HDNanoAlertSuppressionService> alertSuppressionService; // @synthesize alertSuppressionService;
 @property(readonly) HDPluginManager *pluginManager; // @synthesize pluginManager;
 @property(readonly, nonatomic) HDMockPrimaryProfile *mockPrimaryProfile; // @synthesize mockPrimaryProfile;
 @property(readonly) HDBackgroundTaskScheduler *backgroundTaskScheduler; // @synthesize backgroundTaskScheduler;
-- (void).cxx_destruct;
 - (id)daemonExtensionsConformingToProtocol:(id)arg1;
 - (id)daemonExtensionWithIdentifier:(id)arg1;
 - (id)createXPCListenerWithMachServiceName:(id)arg1;

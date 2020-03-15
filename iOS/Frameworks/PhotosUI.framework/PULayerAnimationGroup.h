@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     CALayer *_referenceLayer;
 }
 
-@property(readonly, nonatomic) CALayer *referenceLayer; // @synthesize referenceLayer=_referenceLayer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CALayer *referenceLayer; // @synthesize referenceLayer=_referenceLayer;
 - (void)updateAnimations;
 - (double)currentTime;
 - (id)initWithReferenceLayer:(id)arg1;

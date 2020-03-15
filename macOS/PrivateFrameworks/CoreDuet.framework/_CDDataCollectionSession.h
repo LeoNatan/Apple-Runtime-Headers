@@ -22,12 +22,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)generateNewSession;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long batchNumber; // @synthesize batchNumber=_batchNumber;
 @property(readonly, copy, nonatomic) NSDate *lastCollectionDate; // @synthesize lastCollectionDate=_lastCollectionDate;
 @property(readonly, copy, nonatomic) NSDate *latestStartDate; // @synthesize latestStartDate=_latestStartDate;
 @property(readonly, copy, nonatomic) NSData *salt; // @synthesize salt=_salt;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

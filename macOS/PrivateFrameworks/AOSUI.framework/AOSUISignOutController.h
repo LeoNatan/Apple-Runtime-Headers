@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *signOutObservers; // @synthesize signOutObservers=_signOutObservers;
 @property(retain) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)_removeAccount:(id)arg1 withActions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_showDesktopAndDocumentsAlertForAccount:(id)arg1 window:(id)arg2 withActions:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_showWalletDialogForAccount:(id)arg1 window:(id)arg2 completion:(CDUnknownBlockType)arg3;

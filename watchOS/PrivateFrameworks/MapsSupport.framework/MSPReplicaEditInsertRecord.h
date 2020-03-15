@@ -13,8 +13,8 @@
     id <MSPReplicaRecord> _recordWithInformationToInsert;
 }
 
-@property(readonly, nonatomic) id <MSPReplicaRecord> recordWithInformationToInsert; // @synthesize recordWithInformationToInsert=_recordWithInformationToInsert;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MSPReplicaRecord> recordWithInformationToInsert; // @synthesize recordWithInformationToInsert=_recordWithInformationToInsert;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

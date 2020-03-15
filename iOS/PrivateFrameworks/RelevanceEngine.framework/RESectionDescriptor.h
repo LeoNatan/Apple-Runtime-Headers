@@ -21,10 +21,10 @@
 
 + (id)defaultSectionDescriptorForIdentifier:(id)arg1;
 + (id)defaultUpNextSectionDescriptorForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long maxElementCount; // @synthesize maxElementCount=_maxElementCount;
 @property(retain, nonatomic) REHistoricSectionDescriptor *historicSectionDescriptor; // @synthesize historicSectionDescriptor=_historicSectionDescriptor;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(copy, nonatomic) NSSet *rules;

@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     double _playheadEnd;
 }
 
-@property(readonly, nonatomic) UIView *barView; // @synthesize barView=_barView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *barView; // @synthesize barView=_barView;
 - (void)layoutSubviews;
 - (_Bool)canBecomeFocused;
 - (void)setPlayheadStart:(double)arg1 playheadEnd:(double)arg2;

@@ -17,10 +17,10 @@
 }
 
 + (Class)sectionAccessibilityClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *_sectionCache; // @synthesize _sectionCache=__sectionCache;
 @property(nonatomic) unsigned long long _sectionCacheOffset; // @synthesize _sectionCacheOffset=__sectionCacheOffset;
 @property(nonatomic) __weak UXCollectionViewLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (id)_dequeueSectionWithIndex:(unsigned long long)arg1;
 - (void)_trimSectionCacheToVisibleSections:(id)arg1;
 - (id)_visibleSections;

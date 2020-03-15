@@ -17,10 +17,10 @@
     REFeature *_rightFeature;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REFeature *rightFeature; // @synthesize rightFeature=_rightFeature;
 @property(readonly, nonatomic) int relation; // @synthesize relation=_relation;
 @property(readonly, nonatomic) REFeature *leftFeature; // @synthesize leftFeature=_leftFeature;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultManager;
-@property(retain, nonatomic, setter=_setApplicationExceptionsDBCacheTable:) NSMutableDictionary *_applicationExceptionsDBCacheTable; // @synthesize _applicationExceptionsDBCacheTable=__applicationExceptionsDBCacheTable;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setApplicationExceptionsDBCacheTable:) NSMutableDictionary *_applicationExceptionsDBCacheTable; // @synthesize _applicationExceptionsDBCacheTable=__applicationExceptionsDBCacheTable;
 - (id)_databaseForName:(struct __CFString *)arg1;
 - (struct __CFString *)_bestStringFromAlternatesTable:(struct __CFDictionary *)arg1 usingAlternateKeys:(struct __CFArray *)arg2;
 - (struct __CFString *)_copyBestAlternateStringFromTextSectionOfDatabase:(struct __CFDictionary *)arg1 valueKey:(struct __CFString *)arg2 alternateKeys:(struct __CFArray *)arg3;

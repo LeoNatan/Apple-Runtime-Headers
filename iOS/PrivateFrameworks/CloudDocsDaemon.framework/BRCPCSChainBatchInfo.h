@@ -20,11 +20,12 @@ __attribute__((visibility("hidden")))
     _Bool _should2PhasePCSChain;
 }
 
-@property(readonly, nonatomic) NSDictionary *halfChainedRecordMap; // @synthesize halfChainedRecordMap=_halfChainedRecordMap;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *halfChainedRecordMap; // @synthesize halfChainedRecordMap=_halfChainedRecordMap;
 @property(readonly, nonatomic) _Bool should2PhasePCSChain;
 @property(readonly, nonatomic) NSArray *recordsForSecondPhase;
 @property(readonly, nonatomic) NSArray *recordsForFirstPhase;
+@property(readonly, nonatomic) unsigned long long chainedRecordsCount;
 @property(readonly, nonatomic) unsigned long long batchCount;
 - (void)chainPreparedRecordBatch:(id)arg1;
 - (void)_chainPreppedRecordToParent:(id)arg1;

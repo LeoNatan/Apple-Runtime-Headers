@@ -24,9 +24,9 @@
 + (float)pickerWidth;
 + (float)pickerDiameter;
 + (float)colorWheelWidth;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICCrownInputSequencer *crownInputSequencer; // @synthesize crownInputSequencer=_crownInputSequencer;
 @property(readonly, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
-- (void).cxx_destruct;
 - (void)animatePickerToOriginalPosition;
 - (void)hideColorWheelPickingColor:(_Bool)arg1;
 - (void)doneButtonTapped:(id)arg1;

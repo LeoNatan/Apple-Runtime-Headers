@@ -20,11 +20,11 @@
     NSMutableArray *_blocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *blocks; // @synthesize blocks=_blocks;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <SWInteractionFactory> interactionFactory; // @synthesize interactionFactory=_interactionFactory;
 @property(readonly, nonatomic) id <SWInteraction> interaction; // @synthesize interaction=_interaction;
-- (void).cxx_destruct;
 - (void)didReceiveMessage:(id)arg1 securityOrigin:(id)arg2;
 - (void)onChange:(CDUnknownBlockType)arg1;
 - (id)initWithMessageHandlerManager:(id)arg1 documentStateProvider:(id)arg2 interactionFactory:(id)arg3 logger:(id)arg4;

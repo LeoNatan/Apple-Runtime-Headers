@@ -15,9 +15,9 @@
     PXPeopleStatusView *_statusView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXPeopleStatusView *statusView; // @synthesize statusView=_statusView;
 @property(nonatomic) __weak id <PXPeopleStatusViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_continuePressed:(id)arg1;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;

@@ -18,13 +18,13 @@
     unsigned long long _revertCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long revertCount; // @synthesize revertCount=_revertCount;
 @property(retain, nonatomic) NSMutableString *mutableConvertedCandidateText; // @synthesize mutableConvertedCandidateText=_mutableConvertedCandidateText;
 @property(retain, nonatomic) NSMutableArray *mutableConvertedCandidateRefs; // @synthesize mutableConvertedCandidateRefs=_mutableConvertedCandidateRefs;
 @property(retain, nonatomic) NSMutableArray *convertedCandidates; // @synthesize convertedCandidates=_convertedCandidates;
 @property(nonatomic) _Bool invalid; // @synthesize invalid=_invalid;
 @property(nonatomic) _Bool inputChangedSinceLastConversion; // @synthesize inputChangedSinceLastConversion=_inputChangedSinceLastConversion;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TIConvertedCandidate *lastConvertedCandidate;
 - (_Bool)shouldRevertConvertedCandidateOnDeletionFromMarkedText:(id)arg1;
 - (void)didRevertLastConvertedCandidate;

@@ -26,8 +26,8 @@
     NSString *_loginID;
 }
 
-@property(retain, nonatomic) NSString *loginID; // @synthesize loginID=_loginID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *loginID; // @synthesize loginID=_loginID;
 - (void)deactivateAndPurgeIdentify;
 - (void)_reregisterAndReidentify:(BOOL)arg1;
 - (void)unregisterAccount;

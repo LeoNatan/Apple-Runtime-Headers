@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool restrictSource; // @synthesize restrictSource=_restrictSource;
 @property(readonly, nonatomic) HKObject *dataObject; // @synthesize dataObject=_dataObject;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDataObject:(id)arg1 restrictSource:(_Bool)arg2;

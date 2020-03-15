@@ -17,9 +17,9 @@
     NSURL *_URL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) id <SXURLPreviewing> URLPreviewing; // @synthesize URLPreviewing=_URLPreviewing;
-- (void).cxx_destruct;
 - (void)commitViewController:(id)arg1 action:(id)arg2;
 - (id)previewViewControllerForAction:(id)arg1;
 - (id)initWithURLPreviewing:(id)arg1 URL:(id)arg2;

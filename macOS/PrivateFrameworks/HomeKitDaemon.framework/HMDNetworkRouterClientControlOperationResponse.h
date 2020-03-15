@@ -18,9 +18,9 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDNetworkRouterClientConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) HMDNetworkRouterControlOperationStatus *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

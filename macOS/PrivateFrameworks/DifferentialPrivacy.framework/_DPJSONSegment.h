@@ -16,11 +16,11 @@
     NSDictionary *_parameterDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *parameterDictionary; // @synthesize parameterDictionary=_parameterDictionary;
 @property(readonly, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(readonly, copy, nonatomic) NSString *serverAlgorithmString; // @synthesize serverAlgorithmString=_serverAlgorithmString;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)jsonSegmentString;
 - (id)parameterStringFrom:(id)arg1;
 - (id)initWithKey:(id)arg1 serverAlgorithmString:(id)arg2 parameterDictionary:(id)arg3 records:(id)arg4;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _order;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long order; // @synthesize order=_order;
 @property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
-- (void).cxx_destruct;
 
 @end
 

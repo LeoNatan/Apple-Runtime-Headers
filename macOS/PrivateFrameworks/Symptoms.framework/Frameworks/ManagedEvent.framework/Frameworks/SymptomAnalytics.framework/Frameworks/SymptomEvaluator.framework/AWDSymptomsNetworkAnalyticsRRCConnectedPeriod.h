@@ -129,6 +129,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)activeNameDuringPeriodType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int tcCountFlowDispositionStocks; // @synthesize tcCountFlowDispositionStocks=_tcCountFlowDispositionStocks;
 @property(nonatomic) unsigned int tcCountFlowDispositionSafari; // @synthesize tcCountFlowDispositionSafari=_tcCountFlowDispositionSafari;
 @property(nonatomic) unsigned int tcDampeningSuppressed; // @synthesize tcDampeningSuppressed=_tcDampeningSuppressed;
@@ -184,7 +185,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int backgroundListeners; // @synthesize backgroundListeners=_backgroundListeners;
 @property(nonatomic) unsigned int anyListener; // @synthesize anyListener=_anyListener;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

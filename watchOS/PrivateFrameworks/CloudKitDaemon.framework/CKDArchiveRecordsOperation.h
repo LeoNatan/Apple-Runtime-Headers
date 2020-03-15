@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_recordIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(copy, nonatomic) CDUnknownBlockType recordArchivedBlock; // @synthesize recordArchivedBlock=_recordArchivedBlock;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_handleRecordArchived:(id)arg1 responseCode:(id)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

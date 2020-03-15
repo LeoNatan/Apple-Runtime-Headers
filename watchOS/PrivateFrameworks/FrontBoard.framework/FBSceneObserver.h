@@ -33,8 +33,8 @@
     } _delegateFlags;
 }
 
-@property(readonly, nonatomic) __weak id <FBSceneObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <FBSceneObserver> observer; // @synthesize observer=_observer;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

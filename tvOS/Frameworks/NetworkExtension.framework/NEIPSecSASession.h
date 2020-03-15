@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_internalDelegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *internalDelegateQueue; // @synthesize internalDelegateQueue=_internalDelegateQueue;
 @property(nonatomic) unsigned long long uniqueIndex; // @synthesize uniqueIndex=_uniqueIndex;
 @property(retain) NSMutableArray *larvalSAs; // @synthesize larvalSAs=_larvalSAs;
 @property(retain) NSMutableArray *securityAssociations; // @synthesize securityAssociations=_securityAssociations;
 @property __weak NSObject<NEIPSecSASessionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)startBlackholeDetection:(unsigned int)arg1 incomingSA:(id)arg2 outgoingSA:(id)arg3;
 - (void)startIdleTimeout:(unsigned int)arg1 incomingSA:(id)arg2 outgoingSA:(id)arg3;
 - (_Bool)migrateSA:(id)arg1;

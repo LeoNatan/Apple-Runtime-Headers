@@ -24,6 +24,7 @@
     NSString *_footnoteButtonText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *footnoteButtonText; // @synthesize footnoteButtonText=_footnoteButtonText;
 @property(retain, nonatomic) TLKRichText *footnote; // @synthesize footnote=_footnote;
 @property(retain, nonatomic) NSArray *details; // @synthesize details=_details;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) TLKMultilineText *secondaryTitle; // @synthesize secondaryTitle=_secondaryTitle;
 @property(nonatomic) __weak id <TLKDetailsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TLKRichText *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)secondaryTitleLabelString;
 - (id)titleLabelString;
 - (id)footnoteLabelString;

@@ -8,9 +8,12 @@
 
 @interface PKPaymentProvisioningNonceRequest : PKPaymentWebServiceRequest
 {
+    unsigned long long _nonceType;
 }
 
+@property(nonatomic) unsigned long long nonceType; // @synthesize nonceType=_nonceType;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
+- (id)initWithNonceType:(unsigned long long)arg1;
 
 @end
 

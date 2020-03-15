@@ -16,11 +16,11 @@
     SignpostSupportExactProcessNameFilter *_processNameFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SignpostSupportExactProcessNameFilter *processNameFilter; // @synthesize processNameFilter=_processNameFilter;
 @property(retain, nonatomic) SignpostSupportUniquePIDFilter *uniquePidFilter; // @synthesize uniquePidFilter=_uniquePidFilter;
 @property(retain, nonatomic) SignpostSupportPIDFilter *pidFilter; // @synthesize pidFilter=_pidFilter;
 @property(retain, nonatomic) SignpostSupportSubsystemCategoryFilter *subsystemCategoryFilter; // @synthesize subsystemCategoryFilter=_subsystemCategoryFilter;
-- (void).cxx_destruct;
 
 @end
 

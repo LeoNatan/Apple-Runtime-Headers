@@ -20,11 +20,11 @@
     id <ASDPropertyChangedDelegate> _propertyChangedDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ASDPropertyChangedDelegate> propertyChangedDelegate; // @synthesize propertyChangedDelegate=_propertyChangedDelegate;
 @property(nonatomic) __weak ASDPlugin *plugin; // @synthesize plugin=_plugin;
 @property(nonatomic) __weak ASDObject *owner; // @synthesize owner=_owner;
 @property(nonatomic) unsigned int objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, nonatomic) __weak NSString *driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;

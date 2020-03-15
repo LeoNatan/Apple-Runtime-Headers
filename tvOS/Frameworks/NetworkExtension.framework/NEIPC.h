@@ -15,10 +15,10 @@
     NSObject<OS_xpc_object> *_listener;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_xpc_object> *listener; // @synthesize listener=_listener;
 @property(retain) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(copy) CDUnknownBlockType messageHandler; // @synthesize messageHandler=_messageHandler;
-- (void).cxx_destruct;
 @property(readonly) _Bool connected;
 - (void)logMessageType:(unsigned int)arg1 data:(id)arg2 actionString:(id)arg3;
 - (_Bool)sendMessageWithType:(unsigned int)arg1 data:(id)arg2 replyQueue:(id)arg3 replyHandler:(CDUnknownBlockType)arg4;

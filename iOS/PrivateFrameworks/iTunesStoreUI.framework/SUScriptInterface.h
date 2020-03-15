@@ -48,10 +48,10 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
 + (long long)purchaseAnimationStyleFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFSafariViewController *safariViewController; // @synthesize safariViewController=_safariViewController;
 @property(copy) NSNumber *safariDismissButtonStyle; // @synthesize safariDismissButtonStyle=_safariDismissButtonStyle;
 @property(retain, nonatomic) NSString *safariViewControllerIdentifier; // @synthesize safariViewControllerIdentifier=_safariViewControllerIdentifier;
-- (void).cxx_destruct;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 - (_Bool)scriptXMLHTTPStoreRequest:(id)arg1 requiresCellularForURL:(id)arg2;
@@ -242,6 +242,7 @@
 @property(retain) SUScriptAccount *primaryAccount;
 - (void)setAccounts:(id)arg1;
 - (id)primaryiCloudAccount;
+- (id)currentAccount;
 @property(readonly) NSArray *accounts;
 - (id)makeAccount;
 - (void)authenticateAppleIdWithUsername:(id)arg1 password:(id)arg2 callback:(id)arg3;
@@ -332,6 +333,7 @@
 - (id)makeCalloutView;
 @property(readonly) SUScriptFairPlayContext *accountCreationSecureContext;
 - (id)makeGiftViewController;
+- (id)makeAMSViewController;
 - (id)makeRedeemViewController;
 - (id)makeDonationViewControllerWithCharityIdentifier:(id)arg1;
 - (id)makeStoreSheetViewController;

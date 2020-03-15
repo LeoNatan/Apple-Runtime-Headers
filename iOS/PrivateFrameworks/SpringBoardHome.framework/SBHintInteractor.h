@@ -19,8 +19,8 @@
     UIInteractionProgress *_interactionProgress;
 }
 
-@property(readonly, nonatomic) UIInteractionProgress *interactionProgress; // @synthesize interactionProgress=_interactionProgress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIInteractionProgress *interactionProgress; // @synthesize interactionProgress=_interactionProgress;
 - (void)_updateInteractionPercentComplete:(double)arg1;
 - (void)interactionProgress:(id)arg1 didEnd:(_Bool)arg2;
 - (void)interactionProgressDidUpdate:(id)arg1;

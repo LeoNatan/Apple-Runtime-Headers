@@ -33,13 +33,13 @@
     MPCModelStorePlaybackItemsRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldLibraryPersonalize; // @synthesize shouldLibraryPersonalize=_shouldLibraryPersonalize;
 @property(readonly, copy, nonatomic) MPCModelStorePlaybackItemsRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) int storePersonalizationStyle; // @synthesize storePersonalizationStyle=_storePersonalizationStyle;
 @property(readonly, copy, nonatomic) NSDate *earliestExpirationDate; // @synthesize earliestExpirationDate=_earliestExpirationDate;
 @property(nonatomic) int batchSize; // @synthesize batchSize=_batchSize;
 @property(readonly, nonatomic) _Bool allowsExplicitContent; // @synthesize allowsExplicitContent=_allowsExplicitContent;
-- (void).cxx_destruct;
 - (id)_userIdentityWithRequest:(id)arg1;
 - (_Bool)_shouldUsePlaylistEntriesForSectionAtIndex:(int)arg1;
 - (void)_removeItemAtOriginalIndexPath:(id)arg1;

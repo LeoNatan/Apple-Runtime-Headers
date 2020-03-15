@@ -16,8 +16,8 @@
     id <CalLogFormatter> _formatter;
 }
 
-@property(retain, nonatomic) id <CalLogFormatter> formatter; // @synthesize formatter=_formatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CalLogFormatter> formatter; // @synthesize formatter=_formatter;
 - (_Bool)flush;
 - (void)write:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -35,11 +35,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBAlertItemPresenter> unlockedAlertItemPresenter; // @synthesize unlockedAlertItemPresenter=_unlockedAlertItemPresenter;
 @property(retain, nonatomic) id <SBAlertItemPresenter> lockScreenNotificationsAlertItemPresenter; // @synthesize lockScreenNotificationsAlertItemPresenter=_lockScreenNotificationsAlertItemPresenter;
 @property(retain, nonatomic) id <SBAlertItemPresenter><SBLockScreenActionProvider> lockScreenModalAlertItemPresenter; // @synthesize lockScreenModalAlertItemPresenter=_lockScreenModalAlertItemPresenter;
 @property(retain, nonatomic, getter=_systemModalAlertPresenter, setter=_setSystemModalAlertPresenter:) SBModalAlertPresenter *systemModalAlertPresenter; // @synthesize systemModalAlertPresenter=_systemModalAlertPresenter;
-- (void).cxx_destruct;
 - (void)captureSuppressionAssertion:(id)arg1 reason:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
@@ -68,6 +68,7 @@
 - (id)_presentationForAlertItem:(id)arg1;
 - (void)_reallyDeactivateAlertItem:(id)arg1 forReason:(int)arg2 deactivateBlock:(CDUnknownBlockType)arg3;
 - (void)_dismissAlertItem:(id)arg1 fromPresenter:(id)arg2 forReason:(int)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (_Bool)_hasActivePresentationsThatPresentModally;
 - (void)_deactivateAlertItem:(id)arg1 reason:(int)arg2 animated:(_Bool)arg3 alertDismissCompletion:(CDUnknownBlockType)arg4;
 - (void)_deactivateAlertItem:(id)arg1 reason:(int)arg2 animated:(_Bool)arg3;
 - (void)_presentAlertItem:(id)arg1 withPresenter:(id)arg2 animated:(_Bool)arg3;

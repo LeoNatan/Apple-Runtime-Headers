@@ -25,6 +25,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableData *catalogData; // @synthesize catalogData=_catalogData;
 @property BOOL requireEVValidation; // @synthesize requireEVValidation=_requireEVValidation;
 @property BOOL appleEVVerified; // @synthesize appleEVVerified=_appleEVVerified;
@@ -34,7 +35,6 @@
 @property(retain) NSDictionary *catalog; // @synthesize catalog=_catalog;
 @property(readonly) BOOL updateSuccessful; // @synthesize updateSuccessful=_updateSuccessful;
 @property(readonly) BOOL updateComplete; // @synthesize updateComplete=_updateComplete;
-- (void).cxx_destruct;
 - (void)installClientDidFinish:(id)arg1;
 - (void)installClient:(id)arg1 didFailWithError:(id)arg2;
 - (void)installClientDidBegin:(id)arg1;

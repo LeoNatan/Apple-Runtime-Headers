@@ -35,6 +35,7 @@
     double _efficiency;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *timeZoneName; // @synthesize timeZoneName=_timeZoneName;
 @property(readonly, copy, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(readonly, nonatomic, getter=isConsistent) _Bool consistent; // @synthesize consistent=_consistent;
@@ -58,7 +59,6 @@
 @property(readonly, copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)_firstBedtimeAlarmWithCalendar:(id)arg1;
 - (void)enumerateDateIntervalsForCategoryValue:(int)arg1 intersectedWithDateInterval:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (id)segmentDateIntervalsForCategoryValue:(int)arg1 intersectedWithDateInterval:(id)arg2;

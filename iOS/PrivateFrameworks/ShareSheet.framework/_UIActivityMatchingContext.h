@@ -37,6 +37,7 @@
     NSArray *_activityTypesGeneratedByDelegate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *activityTypesGeneratedByDelegate; // @synthesize activityTypesGeneratedByDelegate=_activityTypesGeneratedByDelegate;
 @property(retain, nonatomic) NSArray *externalMatchBuiltinOrderedActivities; // @synthesize externalMatchBuiltinOrderedActivities=_externalMatchBuiltinOrderedActivities;
 @property(nonatomic) _Bool allowMatchingExtensionActivities; // @synthesize allowMatchingExtensionActivities=_allowMatchingExtensionActivities;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSArray *activityItemValueClasses; // @synthesize activityItemValueClasses=_activityItemValueClasses;
 @property(readonly, nonatomic) NSArray *activityItemValues; // @synthesize activityItemValues=_activityItemValues;
 @property(readonly, nonatomic) NSArray *activityItems; // @synthesize activityItems=_activityItems;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sourceApplicationIdentifier;
 @property(nonatomic) const CDStruct_6ad76789 *hostAuditToken; // @dynamic hostAuditToken;
 - (id)activitiesByFilteringExcludedActivities:(id)arg1;

@@ -15,8 +15,8 @@
     CRKIdentityConfiguration *_configuration;
 }
 
-@property(readonly, copy, nonatomic) CRKIdentityConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CRKIdentityConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) long long keySizeInBits;
 @property(readonly, nonatomic) unsigned int hashingAlgorithm;
 @property(readonly, nonatomic, getter=isCertificateAuthority) BOOL certificateAuthority;

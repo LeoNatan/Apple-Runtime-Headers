@@ -19,11 +19,11 @@
 }
 
 + (Class)notificationEntityType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userStorefrontId; // @synthesize userStorefrontId=_userStorefrontId;
 @property(retain, nonatomic) NSMutableArray *notificationEntitys; // @synthesize notificationEntitys=_notificationEntitys;
 @property(retain, nonatomic) NTPBDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(retain, nonatomic) NSString *notificationUserId; // @synthesize notificationUserId=_notificationUserId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

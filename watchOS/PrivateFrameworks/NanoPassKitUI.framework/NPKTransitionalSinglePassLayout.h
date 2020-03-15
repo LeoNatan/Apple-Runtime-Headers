@@ -19,13 +19,13 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPassAvailable) _Bool passAvailable; // @synthesize passAvailable=_passAvailable;
 @property(nonatomic) float bottomOfScreenYOffset; // @synthesize bottomOfScreenYOffset=_bottomOfScreenYOffset;
 @property(nonatomic) _Bool useContentYOffset; // @synthesize useContentYOffset=_useContentYOffset;
 @property(nonatomic) float contentYOffset; // @synthesize contentYOffset=_contentYOffset;
 @property(nonatomic) float heightForDisplayedIndexPath; // @synthesize heightForDisplayedIndexPath=_heightForDisplayedIndexPath;
 @property(retain, nonatomic) NSIndexPath *displayedIndexPath; // @synthesize displayedIndexPath=_displayedIndexPath;
-- (void).cxx_destruct;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (struct CGSize)collectionViewContentSize;

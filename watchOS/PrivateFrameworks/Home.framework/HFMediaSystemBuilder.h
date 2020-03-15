@@ -25,6 +25,7 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCreatingMediaSystem; // @synthesize isCreatingMediaSystem=_isCreatingMediaSystem;
 @property(nonatomic) _Bool hasSetRoom; // @synthesize hasSetRoom=_hasSetRoom;
 @property(retain, nonatomic) HFRoomBuilder *roomBuilder; // @synthesize roomBuilder=_roomBuilder;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) HFAppleMusicAccountArbitrator *accountArbitrator; // @synthesize accountArbitrator=_accountArbitrator;
 @property(retain, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 @property(nonatomic) _Bool isFavorite; // @synthesize isFavorite=_isFavorite;
-- (void).cxx_destruct;
 - (id)_firstUnpopulatedRole;
 @property(retain, nonatomic) HFRoomBuilder *room;
 @property(readonly, nonatomic) _Bool supportsFavoriting;

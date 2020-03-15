@@ -18,13 +18,13 @@
     UIButton *_streamButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *streamButton; // @synthesize streamButton=_streamButton;
 @property(retain, nonatomic) UIButton *lastDayButton; // @synthesize lastDayButton=_lastDayButton;
 @property(retain, nonatomic) UIButton *hourButton; // @synthesize hourButton=_hourButton;
 @property(retain, nonatomic) UIButton *halfHourButton; // @synthesize halfHourButton=_halfHourButton;
 @property(retain, nonatomic) UIButton *tenMinutesLogButton; // @synthesize tenMinutesLogButton=_tenMinutesLogButton;
 @property(retain, nonatomic) UIStackView *buttonStackView; // @synthesize buttonStackView=_buttonStackView;
-- (void).cxx_destruct;
 - (id)_createButtonWithTitle:(id)arg1;
 - (id)_createButtonStackView;
 - (void)layoutSubviews;

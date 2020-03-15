@@ -18,11 +18,11 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(nonatomic) double bannerHeight; // @synthesize bannerHeight=_bannerHeight;
 @property(retain, nonatomic) CRSUIApplicationSceneSettingsDiffInspector *settingsDiffInspector; // @synthesize settingsDiffInspector=_settingsDiffInspector;
 @property(readonly, nonatomic) UILayoutGuide *notificationLayoutGuide; // @synthesize notificationLayoutGuide=_notificationLayoutGuide;
-- (void).cxx_destruct;
 - (void)notificationLayoutGuideDidChange;
 - (void)_performActionsForUIScene:(id)arg1 withUpdatedFBSScene:(id)arg2 settingsDiff:(id)arg3 fromSettings:(id)arg4 transitionContext:(id)arg5 lifecycleActionType:(unsigned int)arg6;
 - (id)_settings;

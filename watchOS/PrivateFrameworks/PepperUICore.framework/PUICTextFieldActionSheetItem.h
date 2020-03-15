@@ -18,12 +18,12 @@
 }
 
 + (id)actionWithTitle:(id)arg1 value:(id)arg2 secureTextEntry:(_Bool)arg3 keyboardType:(int)arg4 valueDidChangeBlock:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType valueDidChangeBlock; // @synthesize valueDidChangeBlock=_valueDidChangeBlock;
 @property(nonatomic) int keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

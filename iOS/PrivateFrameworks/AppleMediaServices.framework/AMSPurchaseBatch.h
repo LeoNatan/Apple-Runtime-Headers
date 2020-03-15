@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     AMSLazyPromise *_promise;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AMSLazyPromise *promise; // @synthesize promise=_promise;
 @property(readonly, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(readonly, nonatomic) NSMutableDictionary *contextMap; // @synthesize contextMap=_contextMap;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) NSMutableArray *contexts; // @synthesize contexts=_contexts;
-- (void).cxx_destruct;
 - (id)nextPurchaseContext;
 - (_Bool)finishContext:(id)arg1 withResult:(id)arg2;
 - (_Bool)finishContext:(id)arg1 withError:(id)arg2;

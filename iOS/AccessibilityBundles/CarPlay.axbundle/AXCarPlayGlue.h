@@ -14,8 +14,8 @@
 }
 
 + (void)accessibilityInitializeBundle;
-@property(retain, nonatomic) AXFrontBoardProcessWatcher *watcher; // @synthesize watcher=_watcher;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXFrontBoardProcessWatcher *watcher; // @synthesize watcher=_watcher;
 - (id)init;
 
 @end

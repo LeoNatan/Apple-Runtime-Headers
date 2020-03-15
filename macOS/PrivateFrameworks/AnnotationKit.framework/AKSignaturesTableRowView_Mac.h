@@ -13,8 +13,8 @@
     NSColor *_separatorColor;
 }
 
-@property(retain) NSColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 - (void).cxx_destruct;
+@property(retain) NSColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 - (BOOL)allowsVibrancy;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;
 

@@ -14,9 +14,9 @@
     NSDictionary *_processGroupToObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *processGroupToObjects; // @synthesize processGroupToObjects=_processGroupToObjects;
 @property(retain, nonatomic) NSDictionary *processToProcessGroups; // @synthesize processToProcessGroups=_processToProcessGroups;
-- (void).cxx_destruct;
 
 @end
 

@@ -31,10 +31,10 @@
 
 + (id)defaultStoresDirectory;
 + (id)defaultModelsDirectory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RTPersistenceMirroringDelegate> mirroringDelegate; // @synthesize mirroringDelegate=_mirroringDelegate;
 @property(nonatomic) __weak id <RTPersistenceDelegate> delegate; // @synthesize delegate=_delegate;
 @property unsigned long long availability; // @synthesize availability=_availability;
-- (void).cxx_destruct;
 - (unsigned long long)countOfPersistenceStores;
 - (id)persistenceStoreForType:(unsigned long long)arg1;
 - (id)historyTokenForStoreType:(unsigned long long)arg1;
@@ -68,7 +68,7 @@
 - (void)setContainer:(id)arg1;
 - (void)trackContext:(id)arg1;
 - (id)waitForPersistenceContext;
-- (id)persistenceContextWithOptions:(long long)arg1;
+- (id)persistenceContextWithOptions:(unsigned long long)arg1;
 - (id)managedObjectContext;
 - (void)createManagedObjectContext:(CDUnknownBlockType)arg1;
 - (_Bool)initializeContainer;

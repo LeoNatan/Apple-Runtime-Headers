@@ -16,9 +16,9 @@
 
 + (id)item:(id)arg1 withCount:(unsigned long long)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(retain, nonatomic) id item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

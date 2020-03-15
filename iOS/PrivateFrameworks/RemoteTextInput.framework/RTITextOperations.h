@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textCheckingAnnotationToRemove; // @synthesize textCheckingAnnotationToRemove=_textCheckingAnnotationToRemove;
 @property(nonatomic) struct _NSRange textCheckingAnnotationRemovalRange; // @synthesize textCheckingAnnotationRemovalRange=_textCheckingAnnotationRemovalRange;
 @property(nonatomic) struct _NSRange textCheckingReplacementRange; // @synthesize textCheckingReplacementRange=_textCheckingReplacementRange;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSDictionary *attributedPlaceholders; // @synthesize attributedPlaceholders=_attributedPlaceholders;
 @property(retain, nonatomic) RTIStyledIntermediateText *styledIntermediateText; // @synthesize styledIntermediateText=_styledIntermediateText;
 @property(retain, nonatomic) TIKeyboardIntermediateText *intermediateText; // @synthesize intermediateText=_intermediateText;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSAttributedString *attributedInsertionText;
 - (void)insertAttributedText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (void)insertAttributedText:(id)arg1;

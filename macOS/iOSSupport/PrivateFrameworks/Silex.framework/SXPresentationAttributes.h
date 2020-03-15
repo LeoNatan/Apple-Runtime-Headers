@@ -19,6 +19,7 @@
     struct CGSize _canvasSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL testingConditionEnabled; // @synthesize testingConditionEnabled=_testingConditionEnabled;
 @property(nonatomic) BOOL enableViewportDebugging; // @synthesize enableViewportDebugging=_enableViewportDebugging;
 @property(nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(retain, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

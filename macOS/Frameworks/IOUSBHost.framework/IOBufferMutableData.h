@@ -13,8 +13,8 @@
     CDUnknownBlockType _deallocator;
 }
 
-@property(copy) CDUnknownBlockType deallocator; // @synthesize deallocator=_deallocator;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType deallocator; // @synthesize deallocator=_deallocator;
 - (void *)mutableBytes;
 - (const void *)bytes;
 - (void)setLength:(unsigned long long)arg1;

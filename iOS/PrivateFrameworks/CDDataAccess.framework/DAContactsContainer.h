@@ -17,10 +17,10 @@
     CNMutableContainer *_mutableContainer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool markedAsDefault; // @synthesize markedAsDefault=_markedAsDefault;
 @property(nonatomic) _Bool markedForDeletion; // @synthesize markedForDeletion=_markedForDeletion;
 @property(readonly, nonatomic) CNMutableContainer *mutableContainer; // @synthesize mutableContainer=_mutableContainer;
-- (void).cxx_destruct;
 - (id)asContainer;
 - (void *)asSource;
 - (void)updateSaveRequest:(id)arg1;

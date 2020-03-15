@@ -16,11 +16,11 @@
     UILabel *_label3;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label3; // @synthesize label3=_label3;
 @property(retain, nonatomic) UILabel *label2; // @synthesize label2=_label2;
 @property(retain, nonatomic) UILabel *label1; // @synthesize label1=_label1;
 @property(retain, nonatomic) TVImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)imageDidLoad:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;

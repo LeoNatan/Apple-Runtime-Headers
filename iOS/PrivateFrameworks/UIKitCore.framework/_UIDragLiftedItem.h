@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _liftAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double liftAlpha; // @synthesize liftAlpha=_liftAlpha;
 @property(nonatomic) _Bool sourceViewWasAdded; // @synthesize sourceViewWasAdded=_sourceViewWasAdded;
 @property(retain, nonatomic) UITargetedDragPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
 @property(retain, nonatomic) _UIPlatterView *platterView; // @synthesize platterView=_platterView;
-- (void).cxx_destruct;
 
 @end
 

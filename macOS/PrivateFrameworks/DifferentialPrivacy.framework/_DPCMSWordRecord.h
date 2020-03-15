@@ -17,11 +17,11 @@
 }
 
 + (id)entityName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *plainFragment; // @synthesize plainFragment=_plainFragment;
 @property(nonatomic) short fragmentHashIndex; // @synthesize fragmentHashIndex=_fragmentHashIndex;
 @property(nonatomic) short fragmentPosition; // @synthesize fragmentPosition=_fragmentPosition;
 @property(retain, nonatomic) NSData *fragment; // @synthesize fragment=_fragment;
-- (void).cxx_destruct;
 - (id)jsonString;
 - (BOOL)copyFromManagedObject:(id)arg1;
 - (BOOL)copyToManagedObject:(id)arg1;

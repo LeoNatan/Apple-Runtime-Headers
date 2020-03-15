@@ -15,10 +15,10 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSArray *tagIds; // @synthesize tagIds=_tagIds;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 

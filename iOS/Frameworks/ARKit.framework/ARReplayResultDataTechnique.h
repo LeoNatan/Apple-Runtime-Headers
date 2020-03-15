@@ -14,9 +14,9 @@
     CDUnknownBlockType _retrieveResultsForTimestampBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType retrieveResultsForTimestampBlock; // @synthesize retrieveResultsForTimestampBlock=_retrieveResultsForTimestampBlock;
 @property(retain, nonatomic) NSSet *resultDataClasses; // @synthesize resultDataClasses=_resultDataClasses;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 

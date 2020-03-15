@@ -29,6 +29,7 @@
 
 + (id)defaultConfiguration;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requiresLegacyFormat; // @synthesize requiresLegacyFormat=_requiresLegacyFormat;
 @property(readonly, nonatomic) int defaultScale; // @synthesize defaultScale=_defaultScale;
 @property(copy, nonatomic) NSString *dataDirectory; // @synthesize dataDirectory=_dataDirectory;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(copy, nonatomic) NSString *os; // @synthesize os=_os;
 @property(nonatomic) unsigned int tileGroupIdentifier; // @synthesize tileGroupIdentifier=_tileGroupIdentifier;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tileSetOverrides;
 @property(readonly, nonatomic) NSString *directorySuffix;
 - (_Bool)isDefaultConfiguration;

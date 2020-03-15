@@ -18,9 +18,9 @@
     NSString *_bodyLabelText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bodyLabelText; // @synthesize bodyLabelText=_bodyLabelText;
 @property(retain, nonatomic) NSString *headerLabelText; // @synthesize headerLabelText=_headerLabelText;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initForDevice:(id)arg1;
 

@@ -16,9 +16,9 @@
     double _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSData *representation; // @synthesize representation=_representation;
-- (void).cxx_destruct;
 - (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
 
 // Remaining properties

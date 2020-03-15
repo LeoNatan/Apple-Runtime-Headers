@@ -7,8 +7,13 @@
 #import <PassKit/PKPassLogoImageSet.h>
 
 @interface PKPassLogoImageSet (NanoPassKitUI)
++ (id)_fallbackCarAccessLogoWithImage:(id)arg1;
++ (id)_defaultCarAccessLogoForPass:(id)arg1 inTintColor:(id)arg2;
 + (id)_fallbackNetworkLogoForPass:(id)arg1;
+- (id)npkCarAccessCardDrawResizedCardBackgroundFromImage:(id)arg1;
+- (id)npkCarAccessCardBackgroundWithPass:(id)arg1;
 - (id)npkCardBackgroundWithPass:(id)arg1;
+- (_Bool)npkGatherPiecemealCarAccessAssetsLogoAsset:(id *)arg1 paymentPass:(id)arg2;
 - (_Bool)npkGatherPiecemealAssetsTopLeftAsset:(id *)arg1 topRightAsset:(id *)arg2 lowerRightAsset:(id *)arg3 background:(id *)arg4 paymentPass:(id)arg5;
 @end
 

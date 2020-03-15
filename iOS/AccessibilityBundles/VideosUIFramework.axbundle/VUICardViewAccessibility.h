@@ -20,6 +20,7 @@
 - (unsigned long long)_accessibilityDownloadState;
 - (_Bool)_downloadButtonPressed:(id)arg1;
 - (id)accessibilityCustomActions;
+- (id)_accessibilityUserTestingChildren;
 - (_Bool)isAccessibilityElement;
 - (id)_accessibilityEnclosingVUICardCollectionViewCell;
 

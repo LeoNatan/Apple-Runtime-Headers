@@ -18,10 +18,10 @@
 + (id)applePayLogo;
 + (void)setShouldAppear:(_Bool)arg1;
 + (_Bool)shouldAppear;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *messageView; // @synthesize messageView=_messageView;
 @property(retain, nonatomic) UIImageView *applePayLogoView; // @synthesize applePayLogoView=_applePayLogoView;
 @property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;

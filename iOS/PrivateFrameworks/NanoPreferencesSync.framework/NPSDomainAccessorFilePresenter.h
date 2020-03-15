@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_presenterUnderlyingQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCurrent) _Bool current; // @synthesize current=_current;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *presenterUnderlyingQueue; // @synthesize presenterUnderlyingQueue=_presenterUnderlyingQueue;
 @property(retain, nonatomic) NSOperationQueue *presenterOperationQueue; // @synthesize presenterOperationQueue=_presenterOperationQueue;
 @property(readonly, nonatomic) __weak id <NPSDomainAccessorFilePresenterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *domainURL; // @synthesize domainURL=_domainURL;
-- (void).cxx_destruct;
 - (_Bool)presentedItemNeedsWatching;
 - (void)relinquishPresentedItemToWriter:(CDUnknownBlockType)arg1;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue;

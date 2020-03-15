@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)requestViewControllerWithCompletion:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <AVRoutePickerViewRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AVRoutePickerViewRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;

@@ -29,11 +29,11 @@
 + (double)maxTrimDurationForVideo;
 + (double)maxTrimDurationForAudio;
 + (_Bool)acceptsMIMEType:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool firstItemWasInserted; // @synthesize firstItemWasInserted=_firstItemWasInserted;
 @property(retain, nonatomic) CKSMSComposeQueuingRemoteViewControllerProxy *remoteViewControllerProxy; // @synthesize remoteViewControllerProxy=_remoteViewControllerProxy;
 @property(retain, nonatomic) CKSMSComposeRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
@@ -61,6 +61,7 @@
 - (void)forceMMS;
 - (void)forceCancelComposition;
 - (void)disableCameraAttachments;
+- (void)setShouldDisableEntryField:(_Bool)arg1;
 - (void)setCanEditRecipients:(_Bool)arg1;
 - (void)setPendingAddresses:(id)arg1;
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3 chatGUID:(id)arg4 groupName:(id)arg5;

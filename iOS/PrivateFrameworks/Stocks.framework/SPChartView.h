@@ -27,6 +27,7 @@
     StockChartDisplayMode *_currentDisplayMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) StockChartDisplayMode *currentDisplayMode; // @synthesize currentDisplayMode=_currentDisplayMode;
 @property(nonatomic) __weak id <SPChartViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) Stock *stock; // @synthesize stock=_stock;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool showsHorizontalLines; // @synthesize showsHorizontalLines=_showsHorizontalLines;
 @property(nonatomic, getter=isCompactGraph) _Bool compactGraph; // @synthesize compactGraph=_compactGraph;
 @property(nonatomic) unsigned long long chartViewType; // @synthesize chartViewType=_chartViewType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFont *labelFont;
 - (double)lineGraphBottomPadding;
 - (double)widestYLabelWidthForMode:(id)arg1;

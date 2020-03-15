@@ -24,6 +24,7 @@
     NSString *externalID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *externalID; // @synthesize externalID;
 @property(readonly, nonatomic) long long conversationHash; // @synthesize conversationHash;
 @property(readonly, nonatomic) unsigned int dateSentInterval; // @synthesize dateSentInterval=dateSent;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) long long mailboxID; // @synthesize mailboxID;
 @property(readonly, nonatomic) long long libraryID; // @synthesize libraryID;
 @property(readonly, nonatomic) unsigned int uid; // @synthesize uid;
-- (void).cxx_destruct;
 - (id)copyMessageInfo;
 @property(readonly, nonatomic) _Bool senderVIP;
 @property(readonly, nonatomic) _Bool flagged;

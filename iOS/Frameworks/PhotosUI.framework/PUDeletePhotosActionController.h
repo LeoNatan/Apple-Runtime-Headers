@@ -23,6 +23,7 @@
     UIAlertController *__oneTimeConfirmationAlertController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setOneTimeConfirmationAlertController:) UIAlertController *_oneTimeConfirmationAlertController; // @synthesize _oneTimeConfirmationAlertController=__oneTimeConfirmationAlertController;
 @property(retain, nonatomic, setter=_setMainAlertController:) UIAlertController *_mainAlertController; // @synthesize _mainAlertController=__mainAlertController;
 @property(readonly, copy, nonatomic) NSArray *_plAdditionalAssetsToDelete; // @synthesize _plAdditionalAssetsToDelete=__plAdditionalAssetsToDelete;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool shouldSkipDeleteConfirmation; // @synthesize shouldSkipDeleteConfirmation=_shouldSkipDeleteConfirmation;
 @property(readonly, nonatomic) __weak id <PUDeletePhotosActionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_getDeleteActionSheetTitle:(id *)arg1 destructiveButtonTitle:(id *)arg2 cancelButtonTitle:(id *)arg3 forAssets:(id)arg4 additionalPhotoStreamAssets:(id)arg5;
 - (void)_handleOneTimeAlertConfirmed;
 - (void)_handleMainAlertConfirmed:(_Bool)arg1;

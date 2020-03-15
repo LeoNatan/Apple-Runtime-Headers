@@ -35,6 +35,7 @@
     CDUnknownBlockType _hidePINHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType hidePINHandler; // @synthesize hidePINHandler=_hidePINHandler;
 @property(copy, nonatomic) CDUnknownBlockType showPINHandler; // @synthesize showPINHandler=_showPINHandler;
 @property(copy, nonatomic) CDUnknownBlockType sessionEndedHandler; // @synthesize sessionEndedHandler=_sessionEndedHandler;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned char deviceActionType; // @synthesize deviceActionType=_deviceActionType;
 @property(nonatomic) unsigned int advertiseRate; // @synthesize advertiseRate=_advertiseRate;
-- (void).cxx_destruct;
 - (int)_tcpStart;
 - (int)_bonjourUpdateTXT;
 - (int)_bonjourUpdateService;

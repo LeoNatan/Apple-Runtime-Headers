@@ -17,9 +17,9 @@
     REUIDonatedElementProperties *_properties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) REUIDonatedElementProperties *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) REUISiriActionsPerformer *performer; // @synthesize performer=_performer;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)siriActionsPerformerWantsToSuppressDismissal:(id)arg1;
 - (_Bool)siriActionsPerformer:(id)arg1 wantsToDismissViewController:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

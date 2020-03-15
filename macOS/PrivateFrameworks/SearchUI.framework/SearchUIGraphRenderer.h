@@ -25,6 +25,7 @@
     struct NSEdgeInsets _graphInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUIStockChartDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
 @property(nonatomic) BOOL roundLineCaps; // @synthesize roundLineCaps=_roundLineCaps;
 @property(nonatomic) struct NSEdgeInsets graphInsets; // @synthesize graphInsets=_graphInsets;
@@ -38,7 +39,6 @@
 @property(nonatomic) struct CGPoint *points; // @synthesize points=_points;
 @property(nonatomic) struct CGSize volumeGraphSize; // @synthesize volumeGraphSize=_volumeGraphSize;
 @property(nonatomic) struct CGSize graphSize; // @synthesize graphSize=_graphSize;
-- (void).cxx_destruct;
 - (void)renderVolumeGraphInContext:(struct CGContext *)arg1;
 - (void)renderLineGraphInContext:(struct CGContext *)arg1;
 - (void)renderGraphLineInContext:(struct CGContext *)arg1 withColor:(id)arg2 offset:(struct CGPoint)arg3;

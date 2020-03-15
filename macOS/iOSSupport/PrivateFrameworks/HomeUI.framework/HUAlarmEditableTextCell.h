@@ -15,8 +15,8 @@
     UITextField *_textField;
 }
 
-@property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)layoutSubviews;

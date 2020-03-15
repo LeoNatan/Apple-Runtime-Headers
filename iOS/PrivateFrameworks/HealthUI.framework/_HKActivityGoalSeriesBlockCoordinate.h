@@ -17,8 +17,8 @@
     struct CGPoint _coordinate;
 }
 
-@property(readonly, nonatomic) struct CGPoint coordinate; // @synthesize coordinate=_coordinate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGPoint coordinate; // @synthesize coordinate=_coordinate;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo;
 @property(readonly, nonatomic) double endXValue;

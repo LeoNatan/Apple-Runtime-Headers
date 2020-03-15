@@ -13,8 +13,8 @@
     SFCard *_card;
 }
 
-@property(retain, nonatomic) SFCard *card; // @synthesize card=_card;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFCard *card; // @synthesize card=_card;
 
 @end
 

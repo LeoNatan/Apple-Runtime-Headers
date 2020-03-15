@@ -39,6 +39,7 @@
     NSTextField *_playTextField;
 }
 
+- (void).cxx_destruct;
 @property NSTextField *playTextField; // @synthesize playTextField=_playTextField;
 @property NSTextField *subTitleTextField; // @synthesize subTitleTextField=_subTitleTextField;
 @property NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) NSImage *baseImage; // @synthesize baseImage=_baseImage;
 @property(retain, nonatomic) NSImage *playImage; // @synthesize playImage=_playImage;
 @property(retain, nonatomic) NSImage *primaryImage; // @synthesize primaryImage=_primaryImage;
-- (void).cxx_destruct;
 - (void)hideLineView;
 - (id)descriptionText;
 @property(retain, nonatomic) NSString *subtitleText;

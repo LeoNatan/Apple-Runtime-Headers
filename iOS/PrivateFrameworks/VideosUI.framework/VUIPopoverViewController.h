@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_cancelButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(copy, nonatomic) NSArray *popoverEntries; // @synthesize popoverEntries=_popoverEntries;
 @property(nonatomic) long long expandedRow; // @synthesize expandedRow=_expandedRow;
 @property(readonly, nonatomic) VUIPopoverDescriptor *popoverDescriptor; // @synthesize popoverDescriptor=_popoverDescriptor;
-- (void).cxx_destruct;
 - (void)_updatePreferredContentSize;
 - (double)_heightForOptionAtRow:(unsigned long long)arg1;
 - (void)_cancelButtonTouchUpInside:(id)arg1;

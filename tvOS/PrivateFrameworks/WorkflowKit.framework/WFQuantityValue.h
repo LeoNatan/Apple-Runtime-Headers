@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(readonly, nonatomic) NSDecimalNumber *magnitude; // @synthesize magnitude=_magnitude;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMagnitude:(id)arg1 unitString:(id)arg2;

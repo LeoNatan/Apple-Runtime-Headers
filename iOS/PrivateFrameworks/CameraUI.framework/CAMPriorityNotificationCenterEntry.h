@@ -13,10 +13,10 @@
     id _object;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) __weak id observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithObserver:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 

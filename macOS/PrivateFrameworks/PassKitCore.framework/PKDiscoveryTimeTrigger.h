@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 + (id)defaultAttributesToFetch;
 + (id)filterWithPredicate:(id)arg1 error:(id *)arg2;
 + (id)filterWithUserInput:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long resultType; // @synthesize resultType=_resultType;
 @property(copy) NSArray *attributesToFetch; // @synthesize attributesToFetch=_attributesToFetch;
 @property unsigned int fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(copy) NSArray *searchBases; // @synthesize searchBases=_searchBases;
 @property(copy) NSString *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)copy;
 - (id)init;
 

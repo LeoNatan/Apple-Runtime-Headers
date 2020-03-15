@@ -18,10 +18,10 @@
     KHFilterControl *_filterControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHFilterControl *filterControl; // @synthesize filterControl=_filterControl;
 @property(retain, nonatomic) KHProjectLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) id <KHLayoutFilterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)filterControl:(id)arg1 didSelectItemAtIndex:(long long)arg2;
 @property(nonatomic) unsigned long long selectedLayoutType;
 - (void)loadView;

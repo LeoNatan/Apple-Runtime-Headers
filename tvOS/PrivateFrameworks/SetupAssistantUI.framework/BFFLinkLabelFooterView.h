@@ -22,12 +22,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wantsFromBottomLayout; // @synthesize wantsFromBottomLayout=_wantsFromBottomLayout;
 @property(nonatomic) _Bool wantsSideBySideLayout; // @synthesize wantsSideBySideLayout=_wantsSideBySideLayout;
 @property(retain, nonatomic) NSAttributedString *attributedSubtitleText; // @synthesize attributedSubtitleText=_attributedSubtitleText;
 @property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
 @property(nonatomic) double flexibleHeight; // @synthesize flexibleHeight=_flexibleHeight;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 shouldSetSize:(_Bool)arg2;

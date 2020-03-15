@@ -28,6 +28,7 @@
     struct CGSize _dropTargetGapSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize dropTargetGapSize; // @synthesize dropTargetGapSize=_dropTargetGapSize;
 @property(nonatomic) BOOL estimatesSizes; // @synthesize estimatesSizes=_estimatesSizes;
 @property(nonatomic) __weak NSCollectionViewFlowLayout *layout; // @synthesize layout=_layout;
@@ -38,7 +39,6 @@
 @property(nonatomic) BOOL horizontal; // @synthesize horizontal=_horizontal;
 @property(nonatomic) double dimension; // @synthesize dimension=_dimension;
 @property(nonatomic) BOOL usesFloatingHeaderFooter; // @synthesize usesFloatingHeaderFooter=_usesFloatingHeaderFooter;
-- (void).cxx_destruct;
 - (BOOL)section:(id)arg1 shouldShowCollapseButton:(BOOL)arg2;
 @property(readonly) BOOL _collapsesSectionsToFirstItem;
 - (id)invalidatedIndexPaths;

@@ -14,9 +14,9 @@
     NWSSnapshotSource *_snapshotSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) NWSSnapshotSource *snapshotSource; // @synthesize snapshotSource=_snapshotSource;
 @property unsigned long long kernelSourceRef; // @synthesize kernelSourceRef=_kernelSourceRef;
-- (void).cxx_destruct;
 - (id)snapshot;
 
 @end

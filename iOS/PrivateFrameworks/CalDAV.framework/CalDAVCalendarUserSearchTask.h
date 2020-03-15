@@ -20,6 +20,7 @@
 }
 
 + (_Bool)tokensAreLegal:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *searchStrings; // @synthesize searchStrings=_searchStrings;
 @property(nonatomic) unsigned long long resultLimit; // @synthesize resultLimit=_resultLimit;
 @property _Bool findResources; // @synthesize findResources=_findResources;
@@ -27,7 +28,6 @@
 @property _Bool findUsers; // @synthesize findUsers=_findUsers;
 @property(nonatomic) _Bool findLocations; // @synthesize findLocations=_findLocations;
 @property(nonatomic) _Bool findAttendees; // @synthesize findAttendees=_findAttendees;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)requestBody;
 - (id)searchItems;

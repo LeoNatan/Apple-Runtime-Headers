@@ -50,9 +50,9 @@
 + (id)keyPathsForValuesAffectingVideoDevice;
 + (id)keyPathsForValuesAffectingSelectedCompressionOptionsIdentifier;
 + (id)keyPathsForValuesAffectingPrefersUnobscuredContent;
+- (void).cxx_destruct;
 @property(retain) AVCaptureController *captureController; // @synthesize captureController=_captureController;
 @property long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
-- (void).cxx_destruct;
 - (void)captureController:(id)arg1 startRecordingToFileOutput:(id)arg2;
 - (void)_showOrHideControls;
 @property(readonly) AVCaptureFileOutput *fileOutput;

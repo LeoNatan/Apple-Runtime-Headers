@@ -21,13 +21,13 @@
 + (id)ringedWellImageWithColor:(id)arg1 shadingFraction:(double)arg2 diameter:(double)arg3;
 + (id)ringedWellImageWithColor:(id)arg1 diameter:(double)arg2;
 + (id)wellImageWithColor:(id)arg1 diameter:(double)arg2 drawBorder:(BOOL)arg3;
+- (void).cxx_destruct;
 @property double wellDiamter; // @synthesize wellDiamter=_wellDiamter;
 @property(retain) NSImage *activatedImage; // @synthesize activatedImage=_activatedImage;
 @property(retain) NSImage *focusedImage; // @synthesize focusedImage=_focusedImage;
 @property(retain) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain) NSImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)mouseExited:(id)arg1;
 - (void)mouseDown:(id)arg1;

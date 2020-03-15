@@ -8,6 +8,7 @@
 
 @protocol ABGroupDropHelper <NSObject>
 - (void)setCompletionBlock:(void (^)(void))arg1;
+- (BOOL)acceptDropWithIgnoresGuardianRestrictions:(BOOL)arg1;
 - (BOOL)acceptDrop;
 - (unsigned long long)validateDrop;
 @end

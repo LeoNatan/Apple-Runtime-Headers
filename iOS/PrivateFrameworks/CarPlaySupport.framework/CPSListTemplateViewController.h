@@ -23,6 +23,7 @@
     CPSTableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSTimer *spinnerTimeoutTimer; // @synthesize spinnerTimeoutTimer=_spinnerTimeoutTimer;
 @property(retain, nonatomic) NSTimer *spinnerStartTimer; // @synthesize spinnerStartTimer=_spinnerStartTimer;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSIndexPath *nextSpinningIndexPath; // @synthesize nextSpinningIndexPath=_nextSpinningIndexPath;
 @property(copy, nonatomic) NSIndexPath *currentSpinningIndexPath; // @synthesize currentSpinningIndexPath=_currentSpinningIndexPath;
 @property(retain, nonatomic) CPSSectionedDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;

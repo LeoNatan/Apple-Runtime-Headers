@@ -16,9 +16,9 @@
 
 + (void)stopObservingObject:(id)arg1 forKeyPath:(id)arg2;
 + (void)startObservingObject:(id)arg1 forKeyPath:(id)arg2 action:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 

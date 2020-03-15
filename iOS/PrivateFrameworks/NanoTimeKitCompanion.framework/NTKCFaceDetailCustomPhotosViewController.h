@@ -18,9 +18,9 @@
     NTKCompanionCustomPhotosEditor *_editor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCompanionCustomPhotosEditor *editor; // @synthesize editor=_editor;
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
 - (void)customPhotosControllerDidFinish:(id)arg1;
 @property(readonly, nonatomic) _Bool inGallery;
 - (id)initWithPhotosEditor:(id)arg1 forFace:(id)arg2 inGallery:(_Bool)arg3 faceView:(id)arg4 externalImagesSet:(_Bool)arg5;

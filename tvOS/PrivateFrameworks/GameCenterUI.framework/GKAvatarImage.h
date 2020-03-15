@@ -14,9 +14,9 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (void)prepareForUsingUIImage:(_Bool)arg1;
 - (id)initWithData:(id)arg1 useUIImage:(_Bool)arg2;
 

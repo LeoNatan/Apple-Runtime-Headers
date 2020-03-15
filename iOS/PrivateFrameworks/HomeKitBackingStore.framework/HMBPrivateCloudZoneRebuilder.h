@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain, nonatomic) HMFTimer *uploadMonitorWatchdogTimer; // @synthesize uploadMonitorWatchdogTimer=_uploadMonitorWatchdogTimer;
 @property(retain, nonatomic) NSUUID *lastRebuildUUID; // @synthesize lastRebuildUUID=_lastRebuildUUID;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(retain, nonatomic) NAFuture *rebuildCompleteFuture; // @synthesize rebuildCompleteFuture=_rebuildCompleteFuture;
 @property(copy) HMBCloudZoneRebuilderStatus *rebuilderStatus; // @synthesize rebuilderStatus=_rebuilderStatus;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)timerDidFire:(id)arg1;
 - (void)handleZoneChanged;

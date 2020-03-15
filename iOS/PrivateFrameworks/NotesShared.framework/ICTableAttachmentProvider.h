@@ -25,11 +25,11 @@
 + (id)sharedProviderForAttachment:(id)arg1;
 + (id)mergeNotificationRegister;
 + (id)providerMapping;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsToUpdateTableFromBackgroundAttachment; // @synthesize needsToUpdateTableFromBackgroundAttachment=_needsToUpdateTableFromBackgroundAttachment;
 @property(retain, nonatomic) ICAttachment *backgroundAttachment; // @synthesize backgroundAttachment=_backgroundAttachment;
 @property(nonatomic) __weak id <ICTableAttachmentProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CRTTCompatibleDocument *tableDoc; // @synthesize tableDoc=_tableDoc;
-- (void).cxx_destruct;
 - (void)notifyDelegateTableAttachmentDidMerge;
 - (void)notifyDelegateTableAttachmentWillMerge;
 - (void)updateTableFromMOC;

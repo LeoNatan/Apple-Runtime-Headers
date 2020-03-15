@@ -21,10 +21,10 @@
 
 + (id)noteRefFromData:(id)arg1;
 + (id)objectWithWFSerializedRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENLinkedNotebookRef *linkedNotebook; // @synthesize linkedNotebook=_linkedNotebook;
 @property(copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

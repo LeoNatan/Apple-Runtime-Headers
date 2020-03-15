@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _continuation;
 }
 
+- (void).cxx_destruct;
 @property BOOL isUserStackTruncated; // @synthesize isUserStackTruncated=_isUserStackTruncated;
 @property unsigned long long continuation; // @synthesize continuation=_continuation;
 @property int numKernel32LRs; // @synthesize numKernel32LRs=_numKernel32LRs;
@@ -64,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property(retain) SASharedCache *sharedCache; // @synthesize sharedCache=_sharedCache;
 @property(retain) NSArray *kernelBinaryLoadInfos; // @synthesize kernelBinaryLoadInfos=_kernelBinaryLoadInfos;
 @property(retain) NSArray *userBinaryLoadInfos; // @synthesize userBinaryLoadInfos=_userBinaryLoadInfos;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)hasKernelStack;
 - (BOOL)hasUserStack;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSButton *_secondButton;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *secondButton; // @synthesize secondButton=_secondButton;
 @property __weak NSButton *firstButton; // @synthesize firstButton=_firstButton;
 @property __weak NSButton *aboutLinkButton; // @synthesize aboutLinkButton=_aboutLinkButton;
 @property __weak NSTextField *informativeText; // @synthesize informativeText=_informativeText;
 @property __weak NSTextField *messageText; // @synthesize messageText=_messageText;
-- (void).cxx_destruct;
 - (void)clickedAboutLink:(id)arg1;
 - (void)clickedSecondButton:(id)arg1;
 - (void)clickedFirstButton:(id)arg1;

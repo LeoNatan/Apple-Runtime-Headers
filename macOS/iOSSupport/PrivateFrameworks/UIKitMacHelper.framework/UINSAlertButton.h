@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long _identifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL destructive; // @synthesize destructive=_destructive;
 @property(nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

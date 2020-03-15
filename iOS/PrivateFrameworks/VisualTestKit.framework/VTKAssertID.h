@@ -16,9 +16,9 @@
     unsigned long long _vtkIDDecorationsMask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long vtkIDDecorationsMask; // @synthesize vtkIDDecorationsMask=_vtkIDDecorationsMask;
 @property(readonly, nonatomic) NSString *vtkAssertName; // @synthesize vtkAssertName=_vtkAssertName;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithName:(id)arg1 decorationMask:(unsigned long long)arg2;

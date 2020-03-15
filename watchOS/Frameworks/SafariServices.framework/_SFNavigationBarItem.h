@@ -16,6 +16,7 @@
     _Bool _stopReloadButtonShowsStop;
     _Bool _textHasEVCertificateTint;
     _Bool _lockIconHasEVCertificateTint;
+    _Bool _showsPageFormatButton;
     _Bool _readerButtonSelected;
     _Bool _showsReaderButton;
     _Bool _showsReaderAvailabilityText;
@@ -31,6 +32,7 @@
     _SFNavigationBar *_navigationBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNavigationBar:) __weak _SFNavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(nonatomic) _Bool hasFocusedSensitiveFieldOnCurrentPage; // @synthesize hasFocusedSensitiveFieldOnCurrentPage=_hasFocusedSensitiveFieldOnCurrentPage;
 @property(nonatomic) _Bool showsNotSecureAnnotation; // @synthesize showsNotSecureAnnotation=_showsNotSecureAnnotation;
@@ -40,6 +42,7 @@
 @property(readonly, nonatomic) _Bool showsReaderAvailabilityText; // @synthesize showsReaderAvailabilityText=_showsReaderAvailabilityText;
 @property(nonatomic) _Bool showsReaderButton; // @synthesize showsReaderButton=_showsReaderButton;
 @property(nonatomic) _Bool readerButtonSelected; // @synthesize readerButtonSelected=_readerButtonSelected;
+@property(nonatomic) _Bool showsPageFormatButton; // @synthesize showsPageFormatButton=_showsPageFormatButton;
 @property(nonatomic) _Bool lockIconHasEVCertificateTint; // @synthesize lockIconHasEVCertificateTint=_lockIconHasEVCertificateTint;
 @property(nonatomic) _Bool textHasEVCertificateTint; // @synthesize textHasEVCertificateTint=_textHasEVCertificateTint;
 @property(nonatomic) _Bool stopReloadButtonShowsStop; // @synthesize stopReloadButtonShowsStop=_stopReloadButtonShowsStop;
@@ -50,7 +53,6 @@
 @property(readonly, nonatomic) unsigned int startIndexOfTextInExpandedText; // @synthesize startIndexOfTextInExpandedText=_startIndexOfTextInExpandedText;
 @property(readonly, nonatomic) NSString *textWhenExpanded; // @synthesize textWhenExpanded=_textWhenExpanded;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)setShowsNotSecureAnnotation:(_Bool)arg1 hasFocusedSensitiveField:(_Bool)arg2;
 - (void)setShowsReaderButton:(_Bool)arg1 showsAvailabilityText:(_Bool)arg2;
 - (void)setText:(id)arg1 textWhenExpanded:(id)arg2 startIndex:(unsigned int)arg3;

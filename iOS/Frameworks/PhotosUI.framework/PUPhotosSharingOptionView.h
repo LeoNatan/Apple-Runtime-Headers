@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     _Bool _toggled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isToggled) _Bool toggled; // @synthesize toggled=_toggled;
 @property(nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
-- (void).cxx_destruct;
 - (void)assetBadgeView:(id)arg1 userDidSelectBadges:(unsigned long long)arg2;
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

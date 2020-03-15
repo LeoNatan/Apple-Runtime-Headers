@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_batchID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *batchID; // @synthesize batchID=_batchID;
 @property(readonly, copy, nonatomic) NSString *gatewayID; // @synthesize gatewayID=_gatewayID;
-- (void).cxx_destruct;
 - (id)initWithGatewayID:(id)arg1 batchID:(id)arg2;
 - (id)init;
 

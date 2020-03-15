@@ -15,10 +15,10 @@
     TVHSAsynchronousWorkToken *_asyncWorkToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHSAsynchronousWorkToken *asyncWorkToken; // @synthesize asyncWorkToken=_asyncWorkToken;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) TVHKMediaEntityServer *mediaEntityServer; // @synthesize mediaEntityServer=_mediaEntityServer;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithMediaEntityServer:(id)arg1;
 - (id)init;

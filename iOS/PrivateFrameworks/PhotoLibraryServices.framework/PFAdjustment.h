@@ -20,6 +20,7 @@
 }
 
 + (_Bool)isValidArchiveDictionary:(id)arg1 errors:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *maskUUID; // @synthesize maskUUID=_maskUUID;
 @property(readonly, nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) NSDictionary *autoSettings; // @synthesize autoSettings=_autoSettings;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSDictionary *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long formatVersion; // @synthesize formatVersion=_formatVersion;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 settings:(id)arg2 autoIdentifier:(id)arg3 autoSettings:(id)arg4 enabled:(_Bool)arg5 maskUUID:(id)arg6;

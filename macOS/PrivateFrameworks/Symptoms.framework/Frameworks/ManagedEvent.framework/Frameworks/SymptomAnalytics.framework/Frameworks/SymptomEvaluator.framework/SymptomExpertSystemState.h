@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createStateWithLabel:(id)arg1 rank:(unsigned long long)arg2 entryPreds:(id)arg3;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *strobe; // @synthesize strobe=_strobe;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *strobe; // @synthesize strobe=_strobe;
 
 @end
 

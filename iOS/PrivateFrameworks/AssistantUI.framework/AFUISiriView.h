@@ -53,6 +53,7 @@
 }
 
 + (void)_animateView:(id)arg1 fromYPosition:(double)arg2 toYPosition:(double)arg3 fade:(long long)arg4 completion:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<SiriUISiriStatusViewProtocol> *siriStatusView; // @synthesize siriStatusView=_siriStatusView;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) long long siriSessionState; // @synthesize siriSessionState=_siriSessionState;
@@ -67,7 +68,6 @@
 @property(readonly, nonatomic) UIView *foregroundContainerView; // @synthesize foregroundContainerView=_foregroundContainerView;
 @property(readonly, nonatomic) UIView *foregroundView; // @synthesize foregroundView=_foregroundView;
 @property(retain, nonatomic) UIView *remoteContentView; // @synthesize remoteContentView=_remoteContentView;
-- (void).cxx_destruct;
 - (void)siriDidActivateFromSource:(long long)arg1;
 - (_Bool)_isTextInputEnabled;
 - (struct UIEdgeInsets)safeAreaInsetsForSiriStatusView:(id)arg1;

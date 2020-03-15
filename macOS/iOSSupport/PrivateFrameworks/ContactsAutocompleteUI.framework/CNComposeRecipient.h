@@ -37,6 +37,7 @@
 + (id)composeRecipientWithAutocompleteResult:(id)arg1;
 + (id)descriptorsForRequiredKeysForContact;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) unsigned long long kind; // @synthesize kind=_kind;
 @property(copy, nonatomic) NSString *address; // @synthesize address=_address;
 @property(retain, nonatomic) CNComposeRecipientOriginContext *originContext; // @synthesize originContext=_originContext;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

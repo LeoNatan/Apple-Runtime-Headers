@@ -11,14 +11,14 @@
 @interface PPCoalescedScoredTopic : NSObject
 {
     unsigned short _occurrencesInSource;
-    struct PPScoredItem *_scoredTopic;
+    PPScoredItem *_scoredTopic;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short occurrencesInSource; // @synthesize occurrencesInSource=_occurrencesInSource;
 @property(readonly, nonatomic) PPScoredItem *scoredTopic; // @synthesize scoredTopic=_scoredTopic;
-- (void).cxx_destruct;
 - (id)init;
-- (id)initWithScoredTopic:(struct PPScoredItem *)arg1 occurrencesInSource:(unsigned short)arg2;
+- (id)initWithScoredTopic:(id)arg1 occurrencesInSource:(unsigned short)arg2;
 
 @end
 

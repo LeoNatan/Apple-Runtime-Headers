@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKClinicalRecord *clinicalRecord; // @synthesize clinicalRecord=_clinicalRecord;
 @property(readonly, copy, nonatomic) HKMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
 @property(readonly, copy, nonatomic) HKFHIRIdentifier *resourceIdentifier; // @synthesize resourceIdentifier=_resourceIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

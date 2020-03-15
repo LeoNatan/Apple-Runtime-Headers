@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSIndexSet *_indexesOfReplacedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexSet *indexesOfReplacedObjects; // @synthesize indexesOfReplacedObjects=_indexesOfReplacedObjects;
 @property(readonly, nonatomic) NSArray *replacementImmutableObjects; // @synthesize replacementImmutableObjects=_replacementImmutableObjects;
 @property(readonly, nonatomic) NSArray *replacementObjects; // @synthesize replacementObjects=_replacementObjects;
 @property(readonly, nonatomic) NSArray *originalImmutableObjects; // @synthesize originalImmutableObjects=_originalImmutableObjects;
 @property(readonly, nonatomic) NSArray *originalObjects; // @synthesize originalObjects=_originalObjects;
-- (void).cxx_destruct;
 - (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (id)initWithOriginalObjects:(id)arg1 replacementObjects:(id)arg2 indexes:(id)arg3;

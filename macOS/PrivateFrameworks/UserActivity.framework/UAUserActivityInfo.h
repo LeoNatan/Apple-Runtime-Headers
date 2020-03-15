@@ -53,6 +53,7 @@
 
 + (id)encodedInfoToOldEncodedInfo:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) _LSUserActivityWasContinuedInfo *wasContinuedInfo; // @synthesize wasContinuedInfo=_wasContinuedInfo;
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy) NSString *peerDeviceType; // @synthesize peerDeviceType=_peerDeviceType;
@@ -88,7 +89,6 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 @property unsigned long long type; // @synthesize type=_type;
 @property(copy) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)statusString;
 - (id)description;
 - (id)logString;

@@ -20,8 +20,8 @@
     NSMutableArray *_enqueuedItems;
 }
 
-@property(readonly, nonatomic) id <SBStarkNotificationsConfiguring> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SBStarkNotificationsConfiguring> configuration; // @synthesize configuration=_configuration;
 - (void)bannerTargetManager:(id)arg1 didRemoveTarget:(id)arg2;
 - (void)bannerTargetManager:(id)arg1 didAddTarget:(id)arg2;
 - (id)newBannerViewForContext:(id)arg1;

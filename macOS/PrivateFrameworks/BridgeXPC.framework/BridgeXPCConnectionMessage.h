@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSData *_msg_body;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *msg_body; // @synthesize msg_body=_msg_body;
 @property(retain) NSData *msg_hdr; // @synthesize msg_hdr=_msg_hdr;
 @property(copy) CDUnknownBlockType barrier_block; // @synthesize barrier_block=_barrier_block;
-- (void).cxx_destruct;
 
 @end
 

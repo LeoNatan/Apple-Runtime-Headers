@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property(retain) NSMutableDictionary *cache; // @synthesize cache=_cache;
 @property(retain) NSLock *cacheLock; // @synthesize cacheLock=_cacheLock;
-- (void).cxx_destruct;
 - (id)businessNameForUID:(id)arg1 updateHandler:(CDUnknownBlockType)arg2;
 - (id)init;
 

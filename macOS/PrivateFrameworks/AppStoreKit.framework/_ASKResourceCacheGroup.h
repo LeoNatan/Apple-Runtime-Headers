@@ -15,11 +15,11 @@
     BOOL _hasMultipleMembers;
 }
 
-@property BOOL hasMultipleMembers; // @synthesize hasMultipleMembers=_hasMultipleMembers;
 - (void).cxx_destruct;
-- (void)discardMemberContents:(struct NSCache *)arg1;
-- (struct NSCache *)makeMemberContents;
-- (struct NSCache *)onlyMemberContents;
+@property BOOL hasMultipleMembers; // @synthesize hasMultipleMembers=_hasMultipleMembers;
+- (void)discardMemberContents:(id)arg1;
+- (id)makeMemberContents;
+- (id)onlyMemberContents;
 - (id)snapshotMemberContents;
 - (id)init;
 

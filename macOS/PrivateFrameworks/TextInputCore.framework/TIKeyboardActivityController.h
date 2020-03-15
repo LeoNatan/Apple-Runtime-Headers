@@ -31,10 +31,10 @@
 + (id)sharedController;
 + (void)setKeyboardIdleTimeoutInterval:(double)arg1;
 + (void)setSharedController:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSTimer *inactivityTimer; // @synthesize inactivityTimer=_inactivityTimer;
 @property(nonatomic) BOOL isDirty; // @synthesize isDirty=_isDirty;
-- (void).cxx_destruct;
 - (BOOL)shouldBecomeClean;
 - (BOOL)canGoEarlyClean;
 - (void)setKeyboardCleanIfNecessary;

@@ -15,8 +15,8 @@
     _MRVirtualTouchDeviceDescriptorProtobuf *_deviceDescriptor;
 }
 
-@property(retain, nonatomic) _MRVirtualTouchDeviceDescriptorProtobuf *deviceDescriptor; // @synthesize deviceDescriptor=_deviceDescriptor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MRVirtualTouchDeviceDescriptorProtobuf *deviceDescriptor; // @synthesize deviceDescriptor=_deviceDescriptor;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

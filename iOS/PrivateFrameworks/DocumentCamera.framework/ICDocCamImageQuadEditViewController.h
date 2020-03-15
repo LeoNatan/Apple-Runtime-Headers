@@ -45,6 +45,7 @@
     NSNumber *_startOrientationIsPortrait;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didCallCompletion; // @synthesize didCallCompletion=_didCallCompletion;
 @property(nonatomic) _Bool didPressSave; // @synthesize didPressSave=_didPressSave;
 @property(nonatomic) _Bool invisibleButtonContainer; // @synthesize invisibleButtonContainer=_invisibleButtonContainer;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic) ICDocCamImageQuadEditImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) ICDocCamImageQuadEditImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)prepareForDismissal;
 - (void)callCompletionHandler:(_Bool)arg1 withImage:(id)arg2 quad:(id)arg3 preparingForDismissal:(_Bool)arg4;
 - (id)finalQuadFromOverlay;

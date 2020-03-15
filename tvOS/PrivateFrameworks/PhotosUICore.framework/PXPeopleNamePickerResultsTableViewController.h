@@ -15,10 +15,10 @@
     NSArray *_suggestedContacts;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *suggestedContacts; // @synthesize suggestedContacts=_suggestedContacts;
 @property(retain) NSMutableArray *items; // @synthesize items=_items;
 @property(retain) NSString *personLocalIdentifier; // @synthesize personLocalIdentifier=_personLocalIdentifier;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

@@ -17,10 +17,10 @@
 }
 
 + (id)addressForPerson:(id)arg1 searchType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long searchType; // @synthesize searchType=_searchType;
 @property(readonly, nonatomic) CLSDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(readonly, nonatomic) CNAutocompleteResultFactory *factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (void)visitClass:(id)arg1;
 - (void)visitPerson:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

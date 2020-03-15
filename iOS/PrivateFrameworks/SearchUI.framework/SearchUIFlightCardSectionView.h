@@ -17,9 +17,9 @@
     unsigned long long _lastSelectedLegIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastSelectedLegIndex; // @synthesize lastSelectedLegIndex=_lastSelectedLegIndex;
 @property(retain, nonatomic) FUFlightViewController *flightViewController; // @synthesize flightViewController=_flightViewController;
-- (void).cxx_destruct;
 - (void)flightController:(id)arg1 didSelectLeg:(long long)arg2 ofFlight:(long long)arg3;
 - (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
 - (id)setupContentView;

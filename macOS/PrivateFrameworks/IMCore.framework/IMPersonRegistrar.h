@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) NSMutableDictionary *_personMap; // @synthesize _personMap;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *_personMap; // @synthesize _personMap;
 - (void)_dumpAllPersons;
 - (id)personForUniqueID:(id)arg1;
 - (void)unregisterPerson:(id)arg1;

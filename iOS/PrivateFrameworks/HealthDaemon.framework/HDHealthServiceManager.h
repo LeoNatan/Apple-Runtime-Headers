@@ -32,6 +32,7 @@
 }
 
 + (long long)_isBTLESupportedWithCentral:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *bluetoothUpdateHandlers; // @synthesize bluetoothUpdateHandlers=_bluetoothUpdateHandlers;
 @property(retain, nonatomic) NSMutableDictionary *connectedPeripheralsByPeripheralUUID; // @synthesize connectedPeripheralsByPeripheralUUID=_connectedPeripheralsByPeripheralUUID;
 @property(retain, nonatomic) NSMutableDictionary *connectionInfosByPeripheralUUID; // @synthesize connectionInfosByPeripheralUUID=_connectionInfosByPeripheralUUID;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) HDDataCollectionManager *dataCollectionManager; // @synthesize dataCollectionManager=_dataCollectionManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CBCentralManager *central; // @synthesize central=_central;
-- (void).cxx_destruct;
 - (id)shortDescription;
 - (void)pairingAgent:(id)arg1 peerDidRequestPairing:(id)arg2 type:(long long)arg3 passkey:(id)arg4;
 - (void)pairingAgent:(id)arg1 peerDidUnpair:(id)arg2;

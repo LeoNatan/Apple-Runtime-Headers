@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)sceneActiveRequestForScene:(id)arg1 isForegroundApp:(BOOL)arg2 isActiveApp:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isActiveApp; // @synthesize isActiveApp=_isActiveApp;
 @property(nonatomic) BOOL isForegroundApp; // @synthesize isForegroundApp=_isForegroundApp;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initCommon;

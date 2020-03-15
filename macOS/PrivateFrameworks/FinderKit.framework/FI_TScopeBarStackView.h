@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSView *_viewToSwapOut;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *viewToSwapOut; // @synthesize viewToSwapOut=_viewToSwapOut;
 @property(retain) NSView *viewToSwapIn; // @synthesize viewToSwapIn=_viewToSwapIn;
-- (void).cxx_destruct;
 - (void)layout;
 
 @end

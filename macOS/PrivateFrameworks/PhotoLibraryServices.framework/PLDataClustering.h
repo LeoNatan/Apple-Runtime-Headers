@@ -17,9 +17,9 @@
 + (id)clusteringWithNumericValueKeypaths:(id)arg1;
 + (id)clusteringWithDistanceBlock:(CDUnknownBlockType)arg1;
 + (id)clustering;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *numericValueKeypaths; // @synthesize numericValueKeypaths=_numericValueKeypaths;
 @property(readonly, copy, nonatomic) CDUnknownBlockType distanceBlock; // @synthesize distanceBlock=_distanceBlock;
-- (void).cxx_destruct;
 - (id)performWithDataset:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (id)initWithNumericValueKeypaths:(id)arg1;
 - (id)initWithDistanceBlock:(CDUnknownBlockType)arg1;

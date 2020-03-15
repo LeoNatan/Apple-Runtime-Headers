@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 + (id)extractionSessionForTrack:(id)arg1 preferredChunkCount:(unsigned long long)arg2 requiresAllSamples:(BOOL)arg3;
 + (id)extractionSessionForTrack:(id)arg1 samplesPerChunk:(unsigned long long)arg2 requiresAllSamples:(BOOL)arg3;
 + (id)extractionSessionForTrack:(id)arg1 requiresAllSamples:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) unsigned long long status; // @synthesize status=_status;
 @property(readonly) BOOL requiresAllSamples; // @synthesize requiresAllSamples=_requiresAllSamples;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long samplesPerChunk; // @synthesize samplesPerChunk=_samplesPerChunk;
 @property(readonly) AVAssetTrack *track; // @synthesize track=_track;
 @property __weak id <AVAudioExtractionSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_verifySampleBufferCompatibility:(struct opaqueCMSampleBuffer *)arg1;
 - (void)_startSession;
 - (void)_setSamplesPerChunk:(unsigned long long)arg1;

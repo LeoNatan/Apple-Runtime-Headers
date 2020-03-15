@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)controller;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) _Bool deviceSupportsWAPI; // @synthesize deviceSupportsWAPI=_deviceSupportsWAPI;
 @property(nonatomic, getter=isWifiEnabled) _Bool wifiEnabled; // @synthesize wifiEnabled=_isWifiEnabled;
 @property(nonatomic, getter=isBluetoothEnabled) _Bool bluetoothEnabled; // @synthesize bluetoothEnabled=_isBluetoothEnabled;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)wirelessSettingsDidChange:(id)arg1;
 - (void)updateState;
 - (void)_setDeviceSupportsWAPIForUpdateState:(_Bool)arg1;

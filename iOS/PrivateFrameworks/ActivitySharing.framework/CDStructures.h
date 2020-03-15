@@ -8,20 +8,6 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct _HKFitnessFriendAchievement {
-    Class _field1;
-};
-
-struct _HKFitnessFriendActivitySnapshot {
-    Class _field1;
-};
-
-struct _HKFitnessFriendWorkout {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

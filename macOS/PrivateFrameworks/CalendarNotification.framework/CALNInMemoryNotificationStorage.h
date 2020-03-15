@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSMutableDictionary *recordMap; // @synthesize recordMap=_recordMap;
-- (void).cxx_destruct;
 - (void)_removeNotificationRecordsPassingTest:(CDUnknownBlockType)arg1;
 - (void)removeNotificationRecordsPassingTest:(CDUnknownBlockType)arg1;
 - (void)_addNotificationRecord:(id)arg1;

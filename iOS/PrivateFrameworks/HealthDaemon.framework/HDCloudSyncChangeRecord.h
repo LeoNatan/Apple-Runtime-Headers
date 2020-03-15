@@ -28,11 +28,11 @@
 + (_Bool)isChangeRecord:(id)arg1 inSequence:(id)arg2;
 + (_Bool)isChangeRecord:(id)arg1;
 + (id)recordWithCKRecord:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDSyncAnchorRangeMap *decodedSyncAnchorRangeMap; // @synthesize decodedSyncAnchorRangeMap=_decodedSyncAnchorRangeMap;
 @property(readonly, nonatomic) int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(readonly, nonatomic) unsigned long long changeIndex; // @synthesize changeIndex=_changeIndex;
 @property(readonly, copy, nonatomic) NSURL *changesetArchiveFileURL; // @synthesize changesetArchiveFileURL=_changesetArchiveFileURL;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)shouldFetchAssetContentInMemory;
 - (id)_decodedSyncAnchorRangeMapForAnchorRangeData:(id)arg1;

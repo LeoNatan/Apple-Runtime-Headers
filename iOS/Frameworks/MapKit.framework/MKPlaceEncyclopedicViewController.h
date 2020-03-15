@@ -22,11 +22,12 @@ __attribute__((visibility("hidden")))
     id <MKPlaceCardEncyclopedicControllerDelegate> _encyclopedicControllerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKPlaceCardEncyclopedicControllerDelegate> encyclopedicControllerDelegate; // @synthesize encyclopedicControllerDelegate=_encyclopedicControllerDelegate;
 @property(retain, nonatomic) id <GEOEncyclopedicInfo> encyclopedicInfo; // @synthesize encyclopedicInfo=_encyclopedicInfo;
-- (void).cxx_destruct;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
+- (id)draggableContent;
 - (id)_textBlockText;
 - (id)_textBlockTitle;
 - (id)_factoids;

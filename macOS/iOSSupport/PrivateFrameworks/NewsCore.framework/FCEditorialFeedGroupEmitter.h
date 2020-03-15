@@ -18,8 +18,8 @@
 
 + (id)groupEmitterIdentifier;
 + (id)editorialFeedTransformationWithContext:(id)arg1;
-@property(readonly, copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
 @property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 - (id)backingChannelTagIDWithConfiguration:(id)arg1;

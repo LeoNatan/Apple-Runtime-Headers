@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _referenceTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double imageInterval; // @synthesize imageInterval=_imageInterval;
 @property(nonatomic) double currentImageTime; // @synthesize currentImageTime=_currentImageTime;
 @property(retain, nonatomic) NSMutableArray *imageInfosBeingLoaded; // @synthesize imageInfosBeingLoaded=_imageInfosBeingLoaded;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *playbackDate; // @synthesize playbackDate=_playbackDate;
 @property(nonatomic) CDStruct_1b6d18a9 elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(nonatomic) double rate; // @synthesize rate=_rate;
-- (void).cxx_destruct;
 - (double)_timeAfterRemovingInterstitials:(double)arg1;
 - (void)_updateImageIntervalWithRate:(double)arg1;
 - (void)_cancelStaleImageLoadsForTime:(double)arg1;

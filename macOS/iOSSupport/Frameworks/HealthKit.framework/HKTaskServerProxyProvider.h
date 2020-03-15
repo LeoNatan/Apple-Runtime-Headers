@@ -15,10 +15,10 @@
     HKTaskConfiguration *_taskConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(copy) HKTaskConfiguration *taskConfiguration; // @synthesize taskConfiguration=_taskConfiguration;
 @property(copy, nonatomic) NSURL *pluginURL; // @synthesize pluginURL=_pluginURL;
 @property(readonly, copy, nonatomic) NSUUID *taskUUID; // @synthesize taskUUID=_taskUUID;
-- (void).cxx_destruct;
 - (void)fetchProxyServiceEndpointForIdentifier:(id)arg1 endpointHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
 @property(readonly, copy, nonatomic) NSString *taskIdentifier;
 - (id)initWithHealthStore:(id)arg1 taskIdentifier:(id)arg2 exportedObject:(id)arg3 taskUUID:(id)arg4;

@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) id <VCActionDonation> donation; // @synthesize donation=_donation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <VCActionDonation> donation; // @synthesize donation=_donation;
 - (void)shortcutViewController:(id)arg1 didCreateShortcut:(id)arg2;
 - (void)shortcutViewControllerDidCancel:(id)arg1;
 - (void)createVoiceShortcut;

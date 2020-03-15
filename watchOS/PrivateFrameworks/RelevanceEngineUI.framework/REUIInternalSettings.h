@@ -27,6 +27,7 @@
 + (id)internalSettingWithTitle:(id)arg1 description:(id)arg2 url:(id)arg3 applicationIdentifier:(id)arg4;
 + (id)internalSettingWithTitle:(id)arg1 description:(id)arg2 preference:(id)arg3 domain:(id)arg4;
 + (id)internalSettingWithTitle:(id)arg1 description:(id)arg2 preference:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) CDUnknownBlockType buttonBlock; // @synthesize buttonBlock=_buttonBlock;
 @property(readonly, nonatomic) NSArray *fields; // @synthesize fields=_fields;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSString *preferenceName; // @synthesize preferenceName=_preferenceName;
 @property(readonly, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

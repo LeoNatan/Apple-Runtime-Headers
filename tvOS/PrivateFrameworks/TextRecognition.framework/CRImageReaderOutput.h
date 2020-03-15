@@ -29,6 +29,7 @@
 + (_Bool)supportsSecureCoding;
 + (int)confidenceLevelForConfidenceScore:(double)arg1 options:(id)arg2;
 + (id)outputWithType:(id)arg1 textFeature:(id)arg2 options:(id)arg3;
+- (void).cxx_destruct;
 @property float baselineAngle; // @synthesize baselineAngle=_baselineAngle;
 @property(readonly) NSArray *components; // @synthesize components=_components;
 @property(readonly) NSArray *candidates; // @synthesize candidates=_candidates;
@@ -40,7 +41,6 @@
 @property int confidence; // @synthesize confidence=_confidence;
 @property(retain) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

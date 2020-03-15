@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)sessionStateForType:(long long)arg1;
 - (id)_emptyUserSessionState;
 - (id)stateForType:(long long)arg1;
+- (id)mapLaunch;
 - (id)mapRestore;
 - (id)suggestions;
 - (id)muninResourceLog;

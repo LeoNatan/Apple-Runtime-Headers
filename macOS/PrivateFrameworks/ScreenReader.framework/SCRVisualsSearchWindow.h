@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     AXVSearchWindow *__searchWindow;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSearchWindow:) AXVSearchWindow *_searchWindow; // @synthesize _searchWindow=__searchWindow;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setBaseFontSize:(double)arg1;
 @property(nonatomic) struct _NSRange selectionRange;
 @property(retain, nonatomic) NSString *searchText;

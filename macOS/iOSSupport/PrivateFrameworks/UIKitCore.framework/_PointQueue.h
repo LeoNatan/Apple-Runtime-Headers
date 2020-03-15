@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_nonSentinelPoints;
 }
 
-@property(readonly, nonatomic) NSMutableArray *nonSentinelPoints; // @synthesize nonSentinelPoints=_nonSentinelPoints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *nonSentinelPoints; // @synthesize nonSentinelPoints=_nonSentinelPoints;
 - (unsigned long long)effectiveStartIndexBasedOnLength;
 - (id)init;
 

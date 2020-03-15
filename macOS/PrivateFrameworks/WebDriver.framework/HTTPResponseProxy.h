@@ -16,8 +16,8 @@
     long long status;
 }
 
-@property(retain, nonatomic) NSObject<HTTPResponse> *response; // @synthesize response;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<HTTPResponse> *response; // @synthesize response;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)isDone;

@@ -12,8 +12,8 @@
     id _date;
 }
 
-@property(retain, nonatomic) id date; // @synthesize date=_date;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id date; // @synthesize date=_date;
 - (id)_accessibilityFormattedDate:(id)arg1;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;

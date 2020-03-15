@@ -22,11 +22,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdated; // @synthesize isUpdated=_isUpdated;
 @property(retain, nonatomic) NSString *uRL; // @synthesize uRL=_uRL;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

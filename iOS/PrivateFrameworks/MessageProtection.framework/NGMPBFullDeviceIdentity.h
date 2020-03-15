@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)prekeysType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *prekeys; // @synthesize prekeys=_prekeys;
 @property(retain, nonatomic) NGMPBP256Key *signingKey; // @synthesize signingKey=_signingKey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

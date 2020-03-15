@@ -8,12 +8,19 @@
 
 #import <AppStoreDaemon/NSCopying-Protocol.h>
 
+@class NSArray, NSString;
+
 @interface ASDGatherLogsRequestOptions : NSObject <NSCopying>
 {
     _Bool _verbose;
+    NSString *_fileName;
+    NSArray *_urlFilters;
 }
 
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *urlFilters; // @synthesize urlFilters=_urlFilters;
 @property(nonatomic) _Bool verbose; // @synthesize verbose=_verbose;
+@property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

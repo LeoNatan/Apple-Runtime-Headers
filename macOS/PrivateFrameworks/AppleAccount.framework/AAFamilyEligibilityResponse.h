@@ -18,13 +18,13 @@
     NSString *_underageEligibilityAlertMessage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *underageEligibilityAlertMessage; // @synthesize underageEligibilityAlertMessage=_underageEligibilityAlertMessage;
 @property(readonly, nonatomic) NSString *underageEligibilityAlertTitle; // @synthesize underageEligibilityAlertTitle=_underageEligibilityAlertTitle;
 @property(readonly, nonatomic) NSString *familyFeatureSecondaryTitle; // @synthesize familyFeatureSecondaryTitle=_familyFeatureSecondaryTitle;
 @property(readonly, nonatomic) NSArray *familyFeatureSecondaryDescriptions; // @synthesize familyFeatureSecondaryDescriptions=_familyFeatureSecondaryDescriptions;
 @property(readonly, nonatomic) NSArray *familyFeaturePrimaryDescriptions; // @synthesize familyFeaturePrimaryDescriptions=_familyFeaturePrimaryDescriptions;
 @property(readonly, nonatomic) BOOL hasPendingInvites; // @synthesize hasPendingInvites=_hasPendingInvites;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long eligibilityStatus;
 @property(readonly, nonatomic) BOOL eligible;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

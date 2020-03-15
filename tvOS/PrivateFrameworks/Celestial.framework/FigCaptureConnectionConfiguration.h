@@ -9,7 +9,7 @@
 #import <Celestial/FigXPCCoding-Protocol.h>
 #import <Celestial/NSCopying-Protocol.h>
 
-@class FigCaptureDepthDataSinkConfiguration, FigCaptureIrisSinkConfiguration, FigCaptureSinkConfiguration, FigCaptureSourceConfiguration, FigCaptureStillImageSinkConfiguration, FigCaptureVideoDataSinkConfiguration, FigCaptureVideoPreviewSinkConfiguration, FigCaptureVideoThumbnailSinkConfiguration, NSString;
+@class FigCaptureCameraCalibrationDataSinkConfiguration, FigCaptureDepthDataSinkConfiguration, FigCaptureIrisSinkConfiguration, FigCaptureSinkConfiguration, FigCaptureSourceConfiguration, FigCaptureStillImageSinkConfiguration, FigCaptureVideoDataSinkConfiguration, FigCaptureVideoPreviewSinkConfiguration, FigCaptureVideoThumbnailSinkConfiguration, NSString;
 
 @interface FigCaptureConnectionConfiguration : NSObject <FigXPCCoding, NSCopying>
 {
@@ -27,6 +27,7 @@
 @property(nonatomic) int underlyingDeviceType; // @synthesize underlyingDeviceType=_underlyingDeviceType;
 @property(nonatomic) unsigned int mediaType; // @synthesize mediaType=_mediaType;
 @property(copy, nonatomic) NSString *connectionID; // @synthesize connectionID=_connectionID;
+@property(readonly) FigCaptureCameraCalibrationDataSinkConfiguration *cameraCalibrationDataSinkConfiguration;
 @property(readonly) FigCaptureVideoThumbnailSinkConfiguration *thumbnailSinkConfiguration;
 @property(readonly) FigCaptureDepthDataSinkConfiguration *depthDataSinkConfiguration;
 @property(readonly) FigCaptureVideoPreviewSinkConfiguration *videoPreviewSinkConfiguration;

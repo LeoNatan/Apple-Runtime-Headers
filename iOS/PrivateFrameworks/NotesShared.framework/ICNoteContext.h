@@ -45,6 +45,7 @@
 + (_Bool)hasSharedContext;
 + (id)sharedContext;
 + (void)startSharedContextWithOptions:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *persistentStoresByAccountId; // @synthesize persistentStoresByAccountId=_persistentStoresByAccountId;
 @property(nonatomic) _Bool shouldEnsureLocalAccount; // @synthesize shouldEnsureLocalAccount=_shouldEnsureLocalAccount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundTaskQueue; // @synthesize backgroundTaskQueue=_backgroundTaskQueue;
@@ -60,7 +61,6 @@
 @property(retain) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(nonatomic) _Bool delaySaving; // @synthesize delaySaving=_delaySaving;
 @property(retain, nonatomic) ICNotesCrossProcessChangeCoordinator *crossProcessChangeCoordinator; // @synthesize crossProcessChangeCoordinator=_crossProcessChangeCoordinator;
-- (void).cxx_destruct;
 - (void)managedObjectContextUpdater:(id)arg1 objectDidChange:(id)arg2;
 - (void)postMoveUpdateChangeCountForNote:(id)arg1;
 - (void)cloudContextFetchRecordChangeOperationDidFinish:(id)arg1;

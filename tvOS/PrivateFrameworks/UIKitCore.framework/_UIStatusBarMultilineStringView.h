@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIStackView *_stackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
-- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (void)applyStyleAttributes:(id)arg1;

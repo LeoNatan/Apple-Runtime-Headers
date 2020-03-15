@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int actualDistance; // @synthesize actualDistance=_actualDistance;
 @property(nonatomic) __weak GEOComposedRoute *composedRoute; // @synthesize composedRoute=_composedRoute;
 @property(readonly, nonatomic) struct _NSRange maneuverPointRange; // @synthesize maneuverPointRange=_maneuverPointRange;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned int stepIndex; // @synthesize stepIndex=_stepIndex;
 @property(readonly, nonatomic) int drivingSide; // @synthesize drivingSide=_drivingSide;
 @property(readonly, nonatomic) GEOStep *geoStep; // @synthesize geoStep=_geoStep;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

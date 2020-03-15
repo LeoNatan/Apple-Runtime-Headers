@@ -29,6 +29,7 @@
 
 + (id)settingsControllerModule;
 + (id)_settingsModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toViewDimmingViewAlphaAnimationSettings; // @synthesize toViewDimmingViewAlphaAnimationSettings=_toViewDimmingViewAlphaAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toViewWallpaperScaleAnimationSettings; // @synthesize toViewWallpaperScaleAnimationSettings=_toViewWallpaperScaleAnimationSettings;
 @property(retain, nonatomic) SBFFluidBehaviorSettings *toViewScaleAndAlphaResetAnimationSettings; // @synthesize toViewScaleAndAlphaResetAnimationSettings=_toViewScaleAndAlphaResetAnimationSettings;
@@ -44,7 +45,6 @@
 @property(nonatomic) double fromViewFinalBlurRadius; // @synthesize fromViewFinalBlurRadius=_fromViewFinalBlurRadius;
 @property(nonatomic) double fromViewFinalAlpha; // @synthesize fromViewFinalAlpha=_fromViewFinalAlpha;
 @property(nonatomic) double fromViewFinalScale; // @synthesize fromViewFinalScale=_fromViewFinalScale;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

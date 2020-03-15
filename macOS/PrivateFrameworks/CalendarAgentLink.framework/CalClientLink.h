@@ -20,8 +20,8 @@
 + (id)sharedInstanceWithMachServiceName:(id)arg1;
 + (id)sharedInstances;
 + (void)initialize;
-@property(retain) CalXPCConnectionListenerProvider *connectionListenerProvider; // @synthesize connectionListenerProvider=_connectionListenerProvider;
 - (void).cxx_destruct;
+@property(retain) CalXPCConnectionListenerProvider *connectionListenerProvider; // @synthesize connectionListenerProvider=_connectionListenerProvider;
 - (void)_performBlockWithAllClients:(CDUnknownBlockType)arg1;
 - (void)tearDown;
 - (id)initWithMachServiceName:(id)arg1 exportedObject:(id)arg2;

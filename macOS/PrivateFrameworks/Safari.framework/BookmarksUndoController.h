@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)canPerformUserInitiatedBookmarkOperations;
 + (id)frontmostUndoController;
-@property(nonatomic) __weak NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 - (id)_insertBookmarksFromPasteboard:(id)arg1 inFolder:(id)arg2 startingIndex:(unsigned long long)arg3 undoTarget:(id)arg4 selector:(SEL)arg5 isCopy:(BOOL)arg6;
 - (id)_addNewFolderTo:(id)arg1 withTitle:(id)arg2 insertionIndex:(unsigned long long)arg3 undoTarget:(id)arg4 selector:(SEL)arg5;
 - (BOOL)_moveBookmarks:(id)arg1 to:(id)arg2 startingIndex:(unsigned long long)arg3 isCopy:(BOOL)arg4 undoTarget:(id)arg5 selector:(SEL)arg6 addedBookmarks:(id *)arg7;

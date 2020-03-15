@@ -14,9 +14,9 @@
     CDUnknownBlockType _creationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(retain, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithZoneName:(id)arg1 creationBlock:(CDUnknownBlockType)arg2;
 

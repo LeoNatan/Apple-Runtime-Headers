@@ -61,6 +61,7 @@
 + (Class)guiClassFromSystemClass:(Class)arg1;
 + (id)currentSystem;
 + (id)proxyFromDict:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *daemonPropertyQueue; // @synthesize daemonPropertyQueue=_daemonPropertyQueue;
 @property(retain) NSArray *allUsersCache; // @synthesize allUsersCache=_allUsersCache;
 @property(retain) NSArray *availableBackups; // @synthesize availableBackups;
@@ -98,7 +99,6 @@
 @property unsigned long long state; // @synthesize state;
 @property(retain) NSArray *childSystems; // @synthesize childSystems;
 @property BOOL selected; // @synthesize selected;
-- (void).cxx_destruct;
 - (void)pressedActionButton:(id)arg1;
 @property(readonly) __weak NSString *migrationServerVersion;
 @property(readonly) unsigned long long migrationServerType;

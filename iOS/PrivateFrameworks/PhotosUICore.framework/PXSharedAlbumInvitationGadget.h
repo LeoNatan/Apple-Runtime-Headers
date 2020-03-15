@@ -25,6 +25,7 @@
 }
 
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loadedContentData; // @synthesize loadedContentData=_loadedContentData;
 @property(retain, nonatomic) PXSharedAlbumInvitationView *invitationView; // @synthesize invitationView=_invitationView;
 @property(retain, nonatomic) PXSharedAlbumHeaderView *headerView; // @synthesize headerView=_headerView;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)sharedAlbumInvitationView:(id)arg1 presentViewController:(id)arg2;
 - (void)sharedAlbumInvitationViewDidReportAsJunk:(id)arg1;
@@ -43,8 +43,9 @@
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)uniqueGadgetIdentifier;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
@@ -61,9 +62,6 @@
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

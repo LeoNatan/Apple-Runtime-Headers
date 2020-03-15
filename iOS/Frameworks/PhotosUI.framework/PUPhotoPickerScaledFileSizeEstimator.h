@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)isAssetResizable:(id)arg1;
-@property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 - (unsigned long long)_estimatedSizeForResizeDescriptor:(id)arg1;
 - (struct FigPhotoDecompressionContainer *)_figContainer;
 - (struct CGSize)_targetSizeForResizeDescriptor:(id)arg1;

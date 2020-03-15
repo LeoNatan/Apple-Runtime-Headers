@@ -15,10 +15,10 @@
     NSArray *_devicePassSerialNumbers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *devicePassSerialNumbers; // @synthesize devicePassSerialNumbers=_devicePassSerialNumbers;
 @property(copy, nonatomic) NSString *lastUpdatedTag; // @synthesize lastUpdatedTag=_lastUpdatedTag;
 @property(copy, nonatomic) NSArray *passURLs; // @synthesize passURLs=_passURLs;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

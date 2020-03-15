@@ -35,10 +35,10 @@
 + (void)triggerSOSWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)triggerSOSWithCompletion:(CDUnknownBlockType)arg1;
 + (void)triggerSOS;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mostRecentSOSActivationReason; // @synthesize mostRecentSOSActivationReason=_mostRecentSOSActivationReason;
 @property(readonly, nonatomic) NSMapTable *observerToQueue; // @synthesize observerToQueue=_observerToQueue;
 @property(nonatomic) int connectionRequestNotificationToken; // @synthesize connectionRequestNotificationToken=_connectionRequestNotificationToken;
-- (void).cxx_destruct;
 - (void)_resetStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_waitForInitialState;
 - (void)didDismissClientSOSBeforeSOSCall:(long long)arg1;

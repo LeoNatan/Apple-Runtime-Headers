@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUIButtonLayout *buttonLayout; // @synthesize buttonLayout=_buttonLayout;
 @property(readonly, nonatomic) double verticalSpacing; // @synthesize verticalSpacing=_verticalSpacing;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

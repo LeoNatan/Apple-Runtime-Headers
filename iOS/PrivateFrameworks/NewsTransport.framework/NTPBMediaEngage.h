@@ -117,6 +117,7 @@
 
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
 @property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
 @property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
@@ -166,7 +167,6 @@
 @property(retain, nonatomic) NSString *articleId; // @synthesize articleId=_articleId;
 @property(nonatomic) long long mediaTimePlayed; // @synthesize mediaTimePlayed=_mediaTimePlayed;
 @property(retain, nonatomic) NSString *mediaId; // @synthesize mediaId=_mediaId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

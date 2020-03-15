@@ -14,8 +14,8 @@
     NSObject<OS_dispatch_semaphore> *_queryComplete;
 }
 
-@property(retain) NSObject<OS_dispatch_semaphore> *queryComplete; // @synthesize queryComplete=_queryComplete;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_semaphore> *queryComplete; // @synthesize queryComplete=_queryComplete;
 - (BOOL)_shouldPurge;
 - (void)cancel;
 - (id)description;

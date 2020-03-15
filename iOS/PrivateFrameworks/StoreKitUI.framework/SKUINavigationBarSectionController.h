@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     SKUIViewElementLayoutContext *_viewLayoutContext;
 }
 
-@property(retain, nonatomic) SKUINavigationBarContext *context; // @synthesize context=_navigationBarContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUINavigationBarContext *context; // @synthesize context=_navigationBarContext;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)willAppearInNavigationBar;
 @property(readonly, nonatomic) SKUIViewElementLayoutContext *viewLayoutContext;

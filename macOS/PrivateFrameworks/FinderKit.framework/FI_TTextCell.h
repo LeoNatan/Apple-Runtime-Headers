@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     _Bool _centerVertically;
 }
 
-@property(nonatomic) _Bool centerVertically; // @synthesize centerVertically=_centerVertically;
-@property(nonatomic) _Bool drawGrayTextWhenDisabled; // @synthesize drawGrayTextWhenDisabled=_drawGrayTextWhenDisabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool centerVertically; // @synthesize centerVertically=_centerVertically;
+@property(nonatomic) _Bool drawGrayTextWhenDisabled; // @synthesize drawGrayTextWhenDisabled=_drawGrayTextWhenDisabled;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (void)setEnabled:(BOOL)arg1;

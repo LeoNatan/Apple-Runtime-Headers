@@ -64,6 +64,8 @@
 - (id)initWithName:(id)arg1 title:(id)arg2 image:(id)arg3 alternateImage:(id)arg4 type:(long long)arg5 handler:(CDUnknownBlockType)arg6;
 - (id)init;
 - (void)_commonInit;
+- (void)_setInitialServiceState:(id)arg1;
+- (id)_savedServiceState;
 - (void)_setHeaderIcon:(id)arg1;
 - (void)_setFolderSubitemName:(id)arg1;
 - (void)_setRootFolderTitle:(id)arg1;

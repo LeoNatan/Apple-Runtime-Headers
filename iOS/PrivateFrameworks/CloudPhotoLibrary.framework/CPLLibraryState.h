@@ -15,10 +15,10 @@
     NSDate *_deleteDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *deleteDate; // @synthesize deleteDate=_deleteDate;
 @property(copy, nonatomic) NSDate *disabledDate; // @synthesize disabledDate=_disabledDate;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,8 +15,8 @@
     NAFuture *_completionFuture;
 }
 
-@property(readonly, nonatomic) NAFuture *completionFuture; // @synthesize completionFuture=_completionFuture;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NAFuture *completionFuture; // @synthesize completionFuture=_completionFuture;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)init;

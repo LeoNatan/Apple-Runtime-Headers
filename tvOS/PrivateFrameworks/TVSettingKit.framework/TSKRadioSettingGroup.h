@@ -15,8 +15,8 @@
 }
 
 + (id)radioGroupWithTitle:(id)arg1 representedObject:(id)arg2 keyPath:(id)arg3 availableValues:(id)arg4;
-@property(copy, nonatomic) CDUnknownBlockType itemUpdateBlock; // @synthesize itemUpdateBlock=_itemUpdateBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType itemUpdateBlock; // @synthesize itemUpdateBlock=_itemUpdateBlock;
 - (void)_updateCheckmarkForItem:(id)arg1 value:(id)arg2;
 - (id)_itemsFromInputValues:(id)arg1 currentValue:(id)arg2;
 - (void)_itemSelected:(id)arg1;

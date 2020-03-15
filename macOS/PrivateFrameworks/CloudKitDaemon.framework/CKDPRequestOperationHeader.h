@@ -58,6 +58,7 @@
 }
 
 + (Class)serviceIdentityKeyIDsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRequestOperationHeaderAssetAuthorizeGetRequestOptions *assetAuthorizeGetRequestOptions; // @synthesize assetAuthorizeGetRequestOptions=_assetAuthorizeGetRequestOptions;
 @property(nonatomic) BOOL deviceSoftwareIsAppleInternal; // @synthesize deviceSoftwareIsAppleInternal=_deviceSoftwareIsAppleInternal;
 @property(retain, nonatomic) NSMutableArray *serviceIdentityKeyIDs; // @synthesize serviceIdentityKeyIDs=_serviceIdentityKeyIDs;
@@ -85,7 +86,6 @@
 @property(retain, nonatomic) NSString *applicationBundle; // @synthesize applicationBundle=_applicationBundle;
 @property(retain, nonatomic) NSString *applicationContainer; // @synthesize applicationContainer=_applicationContainer;
 @property(retain, nonatomic) NSString *userToken; // @synthesize userToken=_userToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

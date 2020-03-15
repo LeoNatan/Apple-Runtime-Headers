@@ -19,8 +19,8 @@
 + (id)manifestForRegion:(id)arg1;
 + (void)removeManifestFileForRegion:(id)arg1;
 + (_Bool)manifestFileExistsForRegion:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *images; // @synthesize images=_images;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *images; // @synthesize images=_images;
 - (id)initWithDictionary:(id)arg1;
 
 @end

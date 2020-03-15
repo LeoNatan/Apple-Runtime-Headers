@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *log; // @synthesize log=_log;
 @property(readonly, nonatomic) unsigned int remindersMigrated; // @synthesize remindersMigrated=_remindersMigrated;
 @property(readonly, nonatomic) unsigned int listsMigrated; // @synthesize listsMigrated=_listsMigrated;
 @property(readonly, nonatomic) double timeElapsed; // @synthesize timeElapsed=_timeElapsed;
 @property(readonly, nonatomic) _Bool isObserver; // @synthesize isObserver=_isObserver;
 @property(readonly, nonatomic) NSString *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithState:(id)arg1 IsObserver:(_Bool)arg2 timeElapsed:(double)arg3 listsMigrated:(unsigned int)arg4 remindersMigrated:(unsigned int)arg5 log:(id)arg6;

@@ -17,10 +17,10 @@
     CSLClockAssertion *_clockAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLClockAssertion *clockAssertion; // @synthesize clockAssertion=_clockAssertion;
 @property(retain, nonatomic) CSLClockManager *clockManager; // @synthesize clockManager=_clockManager;
 @property(retain, nonatomic) CSLUILogoManager *logoManager; // @synthesize logoManager=_logoManager;
-- (void).cxx_destruct;
 - (void)logoManager:(id)arg1 didUpdateLogoVisibility:(_Bool)arg2;
 - (void)_updateAssertionForLogoVisibility:(_Bool)arg1;
 - (void)activate;

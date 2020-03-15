@@ -14,9 +14,9 @@
     unsigned int _colorLimitCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int colorLimitCount; // @synthesize colorLimitCount=_colorLimitCount;
 @property(copy, nonatomic) NSArray *pillColors; // @synthesize pillColors=_pillColors;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

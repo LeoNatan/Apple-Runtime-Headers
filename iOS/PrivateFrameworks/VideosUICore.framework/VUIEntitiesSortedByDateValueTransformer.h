@@ -17,10 +17,10 @@
 
 + (_Bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dateForEntityBlock; // @synthesize dateForEntityBlock=_dateForEntityBlock;
 @property(copy, nonatomic) NSDate *earliestDate; // @synthesize earliestDate=_earliestDate;
 @property(nonatomic) unsigned long long maxEntities; // @synthesize maxEntities=_maxEntities;
-- (void).cxx_destruct;
 - (id)transformedValue:(id)arg1;
 - (id)initWithDateForEntityBlock:(CDUnknownBlockType)arg1;
 - (id)init;

@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     UIColor *_nonTrackingBackgroundColor;
 }
 
-@property(copy, nonatomic) UIColor *nonTrackingBackgroundColor; // @synthesize nonTrackingBackgroundColor=_nonTrackingBackgroundColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIColor *nonTrackingBackgroundColor; // @synthesize nonTrackingBackgroundColor=_nonTrackingBackgroundColor;
 - (long long)_accessibility_indexForEntryAtPoint:(struct CGPoint)arg1;
 - (_Bool)updateSectionForTouch:(id)arg1 withEvent:(id)arg2;
 - (void)drawRect:(struct CGRect)arg1;

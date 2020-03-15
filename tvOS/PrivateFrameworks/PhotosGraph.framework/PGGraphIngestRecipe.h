@@ -18,9 +18,9 @@
     PGGraphIngestRecipeParameters *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PGGraphIngestRecipeParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) PGManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (id)defaultPostProcessors;
 - (id)defaultPreProcessors;
 - (id)_highlightsForLibraryAnalysisWithFetchOptions:(id)arg1;

@@ -14,7 +14,7 @@
 + (id)_fitnessFriendWorkoutWithCodableWorkout:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendWorkoutWithCodableWorkout:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendWorkoutWithCodableWorkout:(id)arg1;
-+ (struct _HKFitnessFriendWorkout *)fitnessFriendWorkoutWithRecord:(id)arg1 friendUUID:(id)arg2;
++ (id)fitnessFriendWorkoutWithRecord:(id)arg1 friendUUID:(id)arg2;
 - (id)recordWithZoneID:(id)arg1;
 @property(readonly, nonatomic) ASCodableCloudKitWorkout *codableWorkout;
 

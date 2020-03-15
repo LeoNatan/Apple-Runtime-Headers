@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UILabel *_textLabel;
 }
 
-@property(nonatomic) double elementSpacing; // @synthesize elementSpacing=_elementSpacing;
 - (void).cxx_destruct;
+@property(nonatomic) double elementSpacing; // @synthesize elementSpacing=_elementSpacing;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;

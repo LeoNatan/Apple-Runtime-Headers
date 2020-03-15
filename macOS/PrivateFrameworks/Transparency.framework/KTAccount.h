@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *devices; // @synthesize devices=_devices;
 @property(retain) NSData *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)addDevicesObject:(id)arg1;
 - (void)removeDevicesObject:(id)arg1;
 - (BOOL)updateWithMutation:(id)arg1 error:(id *)arg2;

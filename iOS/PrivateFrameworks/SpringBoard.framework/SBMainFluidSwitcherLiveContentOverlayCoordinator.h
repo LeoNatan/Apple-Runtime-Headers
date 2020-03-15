@@ -21,13 +21,13 @@
     SBSceneLayoutLiveContentOverlay *_sceneLayoutLiveContentOverlay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBSceneLayoutLiveContentOverlay *sceneLayoutLiveContentOverlay; // @synthesize sceneLayoutLiveContentOverlay=_sceneLayoutLiveContentOverlay;
 @property(readonly, nonatomic) __weak SBMainDisplaySceneLayoutViewController *sceneLayoutViewController; // @synthesize sceneLayoutViewController=_sceneLayoutViewController;
 @property(retain, nonatomic) NSMutableDictionary *animationWrapperViewOverlays; // @synthesize animationWrapperViewOverlays=_animationWrapperViewOverlays;
 @property(nonatomic) __weak id <SBSwitcherLiveContentOverlayCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 @property(nonatomic, getter=areLiveContentOverlayUpdatesSuspended) _Bool liveContentOverlayUpdatesSuspended; // @synthesize liveContentOverlayUpdatesSuspended=_liveContentOverlayUpdatesSuspended;
-- (void).cxx_destruct;
 - (_Bool)_layoutStateContainsElementBlockedForScreenTimeExpiration:(id)arg1;
 - (_Bool)_shouldAnimateAddingSceneLayoutLiveContentOverlayForTransitionContext:(id)arg1;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;

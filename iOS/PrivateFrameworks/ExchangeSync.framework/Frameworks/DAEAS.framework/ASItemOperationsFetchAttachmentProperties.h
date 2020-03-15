@@ -20,9 +20,9 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *attachmentContentType; // @synthesize attachmentContentType=_attachmentContentType;
-- (void).cxx_destruct;
 
 @end
 

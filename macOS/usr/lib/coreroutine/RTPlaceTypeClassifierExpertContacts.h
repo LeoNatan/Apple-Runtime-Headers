@@ -19,12 +19,12 @@
     RTMapsSupportManager *_mapsSupportManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
 @property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(retain, nonatomic) RTContactsManager *contactsManager; // @synthesize contactsManager=_contactsManager;
-- (void).cxx_destruct;
 - (id)classifyWithError:(id *)arg1;
 - (id)_postalAddressMapItemsOfContact:(id)arg1 error:(id *)arg2;
 - (id)_correctedMapItemsFromUserWithError:(id *)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_storage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)removeDataForKey:(id)arg1;
 - (unsigned long long)setData:(id)arg1 forKey:(id)arg2;

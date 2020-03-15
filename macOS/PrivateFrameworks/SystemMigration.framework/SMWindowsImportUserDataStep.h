@@ -13,8 +13,8 @@
     SMWindowsMacPathMapper *windowsMacPathMap;
 }
 
-@property(retain) SMWindowsMacPathMapper *windowsMacPathMap; // @synthesize windowsMacPathMap;
 - (void).cxx_destruct;
+@property(retain) SMWindowsMacPathMapper *windowsMacPathMap; // @synthesize windowsMacPathMap;
 - (BOOL)importDataForUsername:(id)arg1 userID:(long long)arg2 homeDirectory:(id)arg3 parameters:(id)arg4 error:(id *)arg5;
 - (double)estimatedTimeToCompletePhase:(unsigned long long)arg1;
 - (id)postProcess;

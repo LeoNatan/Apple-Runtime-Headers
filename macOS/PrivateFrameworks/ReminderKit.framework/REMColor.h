@@ -42,6 +42,7 @@
 + (id)colorWithHexString:(id)arg1;
 + (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4 targetRGBSpace:(unsigned long long)arg5;
 + (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *ckSymbolicColorName; // @synthesize ckSymbolicColorName=_ckSymbolicColorName;
 @property(readonly, nonatomic) NSString *daHexString; // @synthesize daHexString=_daHexString;
 @property(readonly, nonatomic) NSString *daSymbolicColorName; // @synthesize daSymbolicColorName=_daSymbolicColorName;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) double red; // @synthesize red=_red;
 @property(readonly, nonatomic) double blue; // @synthesize blue=_blue;
 @property(readonly, nonatomic) unsigned long long colorRGBSpace; // @synthesize colorRGBSpace=_colorRGBSpace;
-- (void).cxx_destruct;
 - (id)archivedDictionaryDataWithError:(id *)arg1;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

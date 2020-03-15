@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     PLPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLPhotoLibrary *_photoLibrary; // @synthesize _photoLibrary;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(retain, nonatomic) PLManagedAsset *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (void)_performBlockAndWait:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isDeletable) _Bool deletable;
 - (void)libraryDidChange;

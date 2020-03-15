@@ -36,6 +36,7 @@
     NSArray *_tabBarItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *tabBarItems; // @synthesize tabBarItems=_tabBarItems;
 @property(nonatomic) long long savedWindowTitleVisibility; // @synthesize savedWindowTitleVisibility=_savedWindowTitleVisibility;
 @property(retain, nonatomic) NSSearchField *searchField; // @synthesize searchField=_searchField;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) FRToolbarManager *toolbarManager; // @synthesize toolbarManager=_toolbarManager;
 @property(readonly, nonatomic) FRWindowBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) BOOL useMonobarStyle; // @synthesize useMonobarStyle=_useMonobarStyle;
-- (void).cxx_destruct;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)_updateStoreMenu;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;

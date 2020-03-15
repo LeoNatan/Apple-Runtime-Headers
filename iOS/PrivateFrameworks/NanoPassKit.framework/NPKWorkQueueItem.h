@@ -15,9 +15,9 @@
 }
 
 + (id)itemWithTransaction:(id)arg1 work:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType workBlock; // @synthesize workBlock=_workBlock;
 @property(readonly, nonatomic) NPKOSTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (id)initWithTransaction:(id)arg1 work:(CDUnknownBlockType)arg2;
 
 @end

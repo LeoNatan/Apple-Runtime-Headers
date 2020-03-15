@@ -26,6 +26,7 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long retryDelay; // @synthesize retryDelay=_retryDelay;
 @property(readonly, nonatomic) unsigned long long retries; // @synthesize retries=_retries;
 @property(readonly, retain, nonatomic) NSDictionary *subjectAltName; // @synthesize subjectAltName=_subjectAltName;
@@ -37,7 +38,6 @@
 @property(readonly, retain, nonatomic) NSString *challenge; // @synthesize challenge=_challenge;
 @property(readonly, retain, nonatomic) NSString *CAInstanceName; // @synthesize CAInstanceName=_CAInstanceName;
 @property(readonly, retain, nonatomic) NSString *URLString; // @synthesize URLString=_URLString;
-- (void).cxx_destruct;
 - (id)payloadDescriptionKeyValueSections;
 - (id)description;
 - (id)stubDictionary;

@@ -16,9 +16,9 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)mutableChangeObject;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (void)setTargetSize:(struct CGSize)arg1;

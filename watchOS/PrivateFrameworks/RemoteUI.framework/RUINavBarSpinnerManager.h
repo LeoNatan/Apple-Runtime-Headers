@@ -15,8 +15,8 @@
 }
 
 + (id)sharedSpinnerManager;
-@property(nonatomic) int activityIndicatorViewStyle; // @synthesize activityIndicatorViewStyle=_activityIndicatorViewStyle;
 - (void).cxx_destruct;
+@property(nonatomic) int activityIndicatorViewStyle; // @synthesize activityIndicatorViewStyle=_activityIndicatorViewStyle;
 - (void)stopAnimatingForIdentifier:(id)arg1;
 - (void)startAnimatingInNavItem:(id)arg1 forIdentifier:(id)arg2;
 - (void)startAnimatingInNavItem:(id)arg1 title:(id)arg2 forIdentifier:(id)arg3 hideBackButton:(_Bool)arg4;

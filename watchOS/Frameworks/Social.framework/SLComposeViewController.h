@@ -43,7 +43,6 @@
 + (_Bool)isAvailableForExtension:(id)arg1 inHostApplicationBundleID:(id)arg2;
 + (_Bool)isAvailableForServiceType:(id)arg1;
 + (_Bool)isAvailableForExtension:(id)arg1;
-+ (_Bool)_isAvailableForMediaShareExtension:(id)arg1;
 + (_Bool)_isMultiUserDevice;
 + (_Bool)_legacyBuiltInAvailabilityForService:(id)arg1 inHostApplicationBundleID:(id)arg2;
 + (id)_shareExtensionWithIdentifier:(id)arg1;
@@ -53,10 +52,10 @@
 + (id)_extensionIdentifierForServiceType:(id)arg1;
 + (id)_serviceTypeToExtensionIdentifierMap;
 + (id)_unsupportedServiceTypes;
+- (void).cxx_destruct;
 @property(retain) UIViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidUnload;

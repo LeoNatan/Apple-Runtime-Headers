@@ -58,6 +58,7 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setBottomBarExtensionView:) UIView *_bottomBarExtensionView; // @synthesize _bottomBarExtensionView=__bottomBarExtensionView;
 @property(retain, nonatomic, setter=_setTopBarExtensionView:) UIView *_topBarExtensionView; // @synthesize _topBarExtensionView=__topBarExtensionView;
 @property(retain, nonatomic, setter=_setFlipTransition:) CAMViewfinderFlipTransition *_flipTransition; // @synthesize _flipTransition=__flipTransition;
@@ -98,7 +99,6 @@
 @property(nonatomic) __weak id <CAMControlVisibilityDelegate> visibilityDelegate; // @synthesize visibilityDelegate=_visibilityDelegate;
 @property(nonatomic) _Bool useCreativeControls; // @synthesize useCreativeControls=_useCreativeControls;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)prepareForResumingUsingCrossfade;
 - (void)removeInflightBlurAnimations;
 - (void)_createPlaceholderSnapshotAndPerformDoubleSidedFadeForView:(id)arg1 fadeOutDuration:(double)arg2 fadeOutDelay:(double)arg3 fadeInDuration:(double)arg4 fadeInDelay:(double)arg5;

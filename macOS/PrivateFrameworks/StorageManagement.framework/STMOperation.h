@@ -19,9 +19,9 @@
 }
 
 + (id)operation;
+- (void).cxx_destruct;
 @property __weak NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)setIsFinished:(BOOL)arg1;
 - (void)setIsExecuting:(BOOL)arg1;
 - (void)start;

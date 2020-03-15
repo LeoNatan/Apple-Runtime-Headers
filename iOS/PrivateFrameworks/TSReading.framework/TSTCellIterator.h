@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 @class TSTCell, TSTCellRegion, TSTTableDataStore, TSTTableModel, TSTTableTile, TSTTableTileRowInfo;
+@protocol TSTCellRegionIterating;
 
 @interface TSTCellIterator : NSObject
 {
     TSTTableModel *mTableModel;
     TSTCellRegion *mModelRegion;
-    struct NSObject *mModelRegionIterator;
+    NSObject<TSTCellRegionIterating> *mModelRegionIterator;
     TSTTableDataStore *mTableDataStore;
     CDStruct_0441cfb5 mPreviousCellID;
     TSTTableTileRowInfo *mCurRow;

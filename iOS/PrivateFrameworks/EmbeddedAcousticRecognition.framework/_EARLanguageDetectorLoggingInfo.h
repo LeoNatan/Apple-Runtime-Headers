@@ -14,9 +14,9 @@
     _EARLanguageDetectorRequestContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) _EARLanguageDetectorRequestContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSDictionary *loggingDict; // @synthesize loggingDict=_loggingDict;
-- (void).cxx_destruct;
 
 @end
 

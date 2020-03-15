@@ -25,6 +25,7 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *loadQueue; // @synthesize loadQueue=_loadQueue;
 @property(readonly, nonatomic) NSMutableDictionary *boundSymbols; // @synthesize boundSymbols=_boundSymbols;
 @property(readonly, nonatomic) NSMutableDictionary *loadedFrameworks; // @synthesize loadedFrameworks=_loadedFrameworks;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) Class MPNetworkPlayabilityMonitor; // @synthesize MPNetworkPlayabilityMonitor=_MPNetworkPlayabilityMonitor;
 @property(readonly, nonatomic) Class MPMoviePlayerViewController; // @synthesize MPMoviePlayerViewController=_MPMoviePlayerViewController;
 @property(readonly, nonatomic) Class MPMoviePlayerController; // @synthesize MPMoviePlayerController=_MPMoviePlayerController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *kToneArtistKey;
 @property(readonly, nonatomic) NSString *kToneDurationKey;
 @property(readonly, nonatomic) NSString *kToneGenreKey;

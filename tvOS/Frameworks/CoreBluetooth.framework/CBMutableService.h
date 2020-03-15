@@ -13,8 +13,8 @@
     NSNumber *_ID;
 }
 
-@property(retain) NSNumber *ID; // @synthesize ID=_ID;
 - (void).cxx_destruct;
+@property(retain) NSNumber *ID; // @synthesize ID=_ID;
 - (id)description;
 - (void)handlePowerNotOn;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)configureEpisodeFrameView:(id)arg1 withMedia:(id)arg2 layout:(long long)arg3 imageSize:(struct CGSize)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *fullyPlayedImageView; // @synthesize fullyPlayedImageView=_fullyPlayedImageView;
 @property(nonatomic) long long layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) TVButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) _TVProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak id <VUILibraryEpisodeFrameViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_playButtonPressed;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

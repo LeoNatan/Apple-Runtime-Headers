@@ -23,11 +23,11 @@
     NSOperationQueue *_fetchCompletionOperationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *fetchCompletionOperationQueue; // @synthesize fetchCompletionOperationQueue=_fetchCompletionOperationQueue;
 @property(retain, nonatomic) NSOperationQueue *fetchOperationQueue; // @synthesize fetchOperationQueue=_fetchOperationQueue;
 @property(retain, nonatomic) VUIOrderedItemsMap *orderedItemsMap; // @synthesize orderedItemsMap=_orderedItemsMap;
 @property(retain, nonatomic) MPUQueryDataSource *queryDataSource; // @synthesize queryDataSource=_queryDataSource;
-- (void).cxx_destruct;
 - (id)_logObject;
 - (void)_mediaLibraryChanged:(id)arg1;
 - (id)_stringForNumber:(id)arg1;

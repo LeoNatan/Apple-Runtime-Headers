@@ -15,8 +15,8 @@
     SearchUITableViewController *_viewController;
 }
 
-@property(nonatomic) __weak SearchUITableViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SearchUITableViewController *viewController; // @synthesize viewController=_viewController;
 - (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
 - (void)contextMenuInteractionDidEnd:(id)arg1;
 - (void)contextMenuInteractionWillPresent:(id)arg1;

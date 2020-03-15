@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedConnection;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *progressBlocks; // @synthesize progressBlocks=_progressBlocks;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <MBAppConnectionProtocol> hostingApp; // @synthesize hostingApp=_hostingApp;
-- (void).cxx_destruct;
 - (void)progressUpdate:(float)arg1 status:(id)arg2 forUUID:(id)arg3;
 - (void)exitBuddyApp:(CDUnknownBlockType)arg1;
 - (void)getBuddyWindowRepresentationFromApp:(CDUnknownBlockType)arg1;

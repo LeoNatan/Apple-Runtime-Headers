@@ -20,13 +20,13 @@
     HFStaticItemProvider *_recordAudioItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItemProvider *recordAudioItemProvider; // @synthesize recordAudioItemProvider=_recordAudioItemProvider;
 @property(readonly, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
 @property(retain, nonatomic) HFStaticItem *recordAudioItem; // @synthesize recordAudioItem=_recordAudioItem;
 @property(readonly, nonatomic) HUCameraCloudStorageSettingsModule *cloudStorageModule; // @synthesize cloudStorageModule=_cloudStorageModule;
 @property(readonly, nonatomic) HUCameraSmartDetectionSettingsModule *smartDetectionModule; // @synthesize smartDetectionModule=_smartDetectionModule;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (void)updateRecordAudioValue:(BOOL)arg1;
 - (id)didSelectItem:(id)arg1;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;

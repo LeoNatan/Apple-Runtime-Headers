@@ -22,13 +22,13 @@
 
 + (id)MSStickerPreviewCacheKeyForSticker:(id)arg1;
 + (id)stickerWithContentsOfURL:(id)arg1 localizedDescription:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *_thumbnail; // @synthesize _thumbnail=__thumbnail;
 @property(retain, nonatomic) NSError *_stickerError; // @synthesize _stickerError=__stickerError;
 @property(retain, nonatomic) CKImageData *_imageData; // @synthesize _imageData=__imageData;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, nonatomic) NSURL *imageFileURL; // @synthesize imageFileURL=_imageFileURL;
-- (void).cxx_destruct;
 - (void)_generateThumbnail;
 - (void)_generateImageData;
 - (id)accessibilityLabel;

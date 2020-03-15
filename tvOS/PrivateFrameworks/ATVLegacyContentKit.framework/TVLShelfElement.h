@@ -16,11 +16,11 @@
     NSString *_onItemFocused;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *onItemFocused; // @synthesize onItemFocused=_onItemFocused;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(nonatomic) _Bool center; // @synthesize center=_center;
 @property(nonatomic) int columnCount; // @synthesize columnCount=_columnCount;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (id)overlay;
 + (void)prepareDebuggingOverlay;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint drawingOrigin; // @synthesize drawingOrigin=_drawingOrigin;
 @property(retain, nonatomic) UIEvent *lastTouch; // @synthesize lastTouch=_lastTouch;
 @property(retain, nonatomic) UIWindow *inspectedWindow; // @synthesize inspectedWindow=_inspectedWindow;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool touchCaptureEnabled; // @synthesize touchCaptureEnabled=_touchCaptureEnabled;
 @property(nonatomic) _Bool checkingTouches; // @synthesize checkingTouches=_checkingTouches;
 @property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIDebuggingInformationRootTableViewController *rootTableViewController;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

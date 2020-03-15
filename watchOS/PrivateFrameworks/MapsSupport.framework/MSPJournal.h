@@ -22,9 +22,9 @@
     id <MSPJournaling> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MSPJournaling> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)noteChangeWithState:(id)arg1 format:(id)arg2;
 - (void)noteChangeWithState:(id)arg1 error:(id)arg2;
 - (void)noteChangeWithState:(id)arg1 payload:(id)arg2;

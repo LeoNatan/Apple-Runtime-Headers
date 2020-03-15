@@ -20,8 +20,8 @@
     id <IKAppDeviceConfig> _deviceConfig;
 }
 
-@property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 - (void)_restrictionsDidChangeNotification:(id)arg1;
 - (id)_formatStringForVideoFormat:(unsigned long long)arg1;
 @property(readonly, nonatomic) IKJSRestrictions *restrictions;

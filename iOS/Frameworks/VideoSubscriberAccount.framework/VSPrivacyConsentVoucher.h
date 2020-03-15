@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
 @property(readonly, copy, nonatomic) NSString *appAdamID; // @synthesize appAdamID=_appAdamID;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -31,13 +31,13 @@
 }
 
 + (void)startLaunchListenerWithHandler:(CDUnknownBlockType)arg1 queue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSMutableDictionary *recentlySeenUUIDs; // @synthesize recentlySeenUUIDs=_recentlySeenUUIDs;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSMutableDictionary *pendingDiscoveries; // @synthesize pendingDiscoveries=_pendingDiscoveries;
 @property(retain, nonatomic) NSMutableArray *pendingCancellations; // @synthesize pendingCancellations=_pendingCancellations;
 @property(nonatomic) id <PKIDSManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_createThumbnailCacheDirectory;
 - (void)_populateDevicesIfNeeded;
 - (id)_remoteDevicesWithArchive;

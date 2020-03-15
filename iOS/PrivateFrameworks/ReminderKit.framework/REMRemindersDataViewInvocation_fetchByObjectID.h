@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showMarkedForDeleteObjects; // @synthesize showMarkedForDeleteObjects=_showMarkedForDeleteObjects;
 @property(readonly, nonatomic) NSArray *objectIDs; // @synthesize objectIDs=_objectIDs;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

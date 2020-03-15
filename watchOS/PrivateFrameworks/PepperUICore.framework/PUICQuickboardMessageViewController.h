@@ -21,13 +21,13 @@
     id <PUICQuickboardEmojiViewControllerDelegate> _emojiDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimatingSelection) _Bool animatingSelection; // @synthesize animatingSelection=_animatingSelection;
 @property(nonatomic) __weak id <PUICQuickboardEmojiViewControllerDelegate> emojiDelegate; // @synthesize emojiDelegate=_emojiDelegate;
 @property(nonatomic) unsigned int additionalContentFlags; // @synthesize additionalContentFlags=_additionalContentFlags;
 @property(nonatomic) _Bool allowsEmojiInput; // @synthesize allowsEmojiInput=_allowsEmojiInput;
 @property(copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 @property(nonatomic) _Bool supportsRecentItemPayloads; // @synthesize supportsRecentItemPayloads=_supportsRecentItemPayloads;
-- (void).cxx_destruct;
 - (void)languageControllerDidChangePrimaryLanguage:(id)arg1;
 - (id)actionController;
 - (_Bool)showCannedResponseLanguages;

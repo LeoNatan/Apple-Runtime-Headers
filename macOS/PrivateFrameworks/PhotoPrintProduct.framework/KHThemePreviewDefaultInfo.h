@@ -18,10 +18,10 @@
 }
 
 + (id)infoKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *defaultMasterIdentifiersByUsage; // @synthesize defaultMasterIdentifiersByUsage=_defaultMasterIdentifiersByUsage;
 @property(retain, nonatomic) NSArray *defaultPagesTreatments; // @synthesize defaultPagesTreatments=_defaultPagesTreatments;
 @property(retain, nonatomic) NSDictionary *defaultCoverLayout; // @synthesize defaultCoverLayout=_defaultCoverLayout;
-- (void).cxx_destruct;
 - (id)initFromDictionary:(id)arg1;
 
 // Remaining properties

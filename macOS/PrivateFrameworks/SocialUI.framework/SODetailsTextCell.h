@@ -13,8 +13,8 @@
     SODetailsTextView *_textView;
 }
 
-@property(retain) SODetailsTextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+@property(retain) SODetailsTextView *textView; // @synthesize textView=_textView;
 - (id)fieldEditorForView:(id)arg1;
 
 @end

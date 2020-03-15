@@ -6,12 +6,13 @@
 
 #import <NotesUI/WKUIDelegate-Protocol.h>
 
-@class NSData, NSDictionary, NSEvent, NSMenu, NSString, NSURL, WKFrameInfo, WKNavigationAction, WKSecurityOrigin, WKWebView, WKWebViewConfiguration, WKWindowFeatures, _WKAttachment, _WKContextMenuElementInfo, _WKFrameHandle, _WKHitTestResult, _WKWebAuthenticationPanel;
+@class NSData, NSDictionary, NSEvent, NSMenu, NSString, NSURL, WKFrameInfo, WKNavigationAction, WKSecurityOrigin, WKWebView, WKWebViewConfiguration, WKWindowFeatures, _WKAttachment, _WKContextMenuElementInfo, _WKFrameHandle, _WKHitTestResult, _WKInspector, _WKWebAuthenticationPanel;
 @protocol NSSecureCoding;
 
 @protocol WKUIDelegatePrivate <WKUIDelegate>
 
 @optional
+- (void)_webView:(WKWebView *)arg1 didAttachInspector:(_WKInspector *)arg2;
 - (void)_webView:(WKWebView *)arg1 didPerformDragOperation:(BOOL)arg2;
 - (void)_webView:(WKWebView *)arg1 getContextMenuFromProposedMenu:(NSMenu *)arg2 forElement:(_WKContextMenuElementInfo *)arg3 userInfo:(id <NSSecureCoding>)arg4 completionHandler:(void (^)(NSMenu *))arg5;
 - (NSMenu *)_webView:(WKWebView *)arg1 contextMenu:(NSMenu *)arg2 forElement:(_WKContextMenuElementInfo *)arg3 userInfo:(id <NSSecureCoding>)arg4;

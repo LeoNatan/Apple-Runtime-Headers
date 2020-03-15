@@ -22,13 +22,13 @@
     id <_MSMessageComposeHostImplProtocol> _hostContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_MSMessageComposeHostImplProtocol> hostContext; // @synthesize hostContext=_hostContext;
 @property(nonatomic) unsigned int presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) unsigned int presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(readonly, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
 @property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> containingContext; // @synthesize containingContext=_containingContext;
-- (void).cxx_destruct;
 - (void)contentDidLoad;
 - (void)requestResize;
 - (void)dismissAndPresentPhotosApp;

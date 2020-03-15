@@ -23,6 +23,7 @@
     double _efficiency;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double efficiency; // @synthesize efficiency=_efficiency;
 @property(readonly, nonatomic) double timeAwakeDuringIntendedSleepPeriod; // @synthesize timeAwakeDuringIntendedSleepPeriod=_timeAwakeDuringIntendedSleepPeriod;
 @property(readonly, nonatomic) int numberOfInterruptions; // @synthesize numberOfInterruptions=_numberOfInterruptions;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSArray *sleepPeriods; // @synthesize sleepPeriods=_sleepPeriods;
 @property(readonly, copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)primarySleepPeriod;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 sleepPeriods:(id)arg3;

@@ -16,18 +16,16 @@
     NSString *_url;
     NSData *_dailyVisitCounts;
     NSData *_weeklyVisitCounts;
-    NSData *_autocompleteTriggers;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSData *autocompleteTriggers; // @synthesize autocompleteTriggers=_autocompleteTriggers;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *weeklyVisitCounts; // @synthesize weeklyVisitCounts=_weeklyVisitCounts;
 @property(copy, nonatomic) NSData *dailyVisitCounts; // @synthesize dailyVisitCounts=_dailyVisitCounts;
 @property(readonly, nonatomic) NSString *url; // @synthesize url=_url;
 @property(nonatomic) BOOL shouldRecomputeDerivedVisitCountScores; // @synthesize shouldRecomputeDerivedVisitCountScores=_shouldRecomputeDerivedVisitCountScores;
 @property(nonatomic) long long visitCountScore; // @synthesize visitCountScore=_visitCountScore;
 @property(nonatomic) long long visitCount; // @synthesize visitCount=_visitCount;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1;

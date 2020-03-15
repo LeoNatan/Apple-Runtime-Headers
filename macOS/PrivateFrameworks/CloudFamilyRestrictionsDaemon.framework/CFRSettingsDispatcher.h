@@ -17,10 +17,10 @@
 }
 
 + (id)agePresetDescriptors;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *setterSelectorsForSettings; // @synthesize setterSelectorsForSettings=_setterSelectorsForSettings;
 @property(retain, nonatomic) NSDictionary *getterSelectorsForSettings; // @synthesize getterSelectorsForSettings=_getterSelectorsForSettings;
 @property(retain, nonatomic) ADMUser *user; // @synthesize user=_user;
-- (void).cxx_destruct;
 - (id)allowAddingFriendsInGCEnabled;
 - (void)setAllowAddingFriendsInGCEnabled:(id)arg1;
 - (id)allowMultiplayerGamesEnabled;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_listIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *listIdentifier; // @synthesize listIdentifier=_listIdentifier;
 @property(retain, nonatomic) AMSDoubleLinkedListNode *next; // @synthesize next=_next;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(retain, nonatomic) AMSDoubleLinkedListNode *previous; // @synthesize previous=_previous;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1;
 - (id)init;
 

@@ -28,6 +28,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cloudUniversalLibraryID; // @synthesize cloudUniversalLibraryID=_cloudUniversalLibraryID;
 @property(nonatomic) long long purchaseHistoryID; // @synthesize purchaseHistoryID=_purchaseHistoryID;
 @property(nonatomic) long long cloudID; // @synthesize cloudID=_cloudID;
@@ -35,7 +36,6 @@
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(retain, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
 @property(nonatomic) long long delegateInfoID; // @synthesize delegateInfoID=_delegateInfoID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

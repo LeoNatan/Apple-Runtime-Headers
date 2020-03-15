@@ -29,10 +29,10 @@
 + (id)trimStartImage;
 + (id)_stretchableImageNamed:(id)arg1 withCapInsets:(struct UIEdgeInsets)arg2;
 + (id)createSnappingControllerWithSnappingTarget:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *impactGenerator; // @synthesize impactGenerator=_impactGenerator;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)impactOccured;
 - (void)prepareForImpact;

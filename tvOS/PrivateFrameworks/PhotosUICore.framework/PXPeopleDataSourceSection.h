@@ -16,11 +16,11 @@
     NSString *_unDisclosedTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *unDisclosedTitle; // @synthesize unDisclosedTitle=_unDisclosedTitle;
 @property(copy, nonatomic) NSString *disclosedTitle; // @synthesize disclosedTitle=_disclosedTitle;
 @property(getter=isDisclosed) _Bool disclosed; // @synthesize disclosed=_disclosed;
 @property(readonly, nonatomic) unsigned long long personFetchType; // @synthesize personFetchType=_personFetchType;
-- (void).cxx_destruct;
 - (id)initWithPersonFetchType:(unsigned long long)arg1;
 
 @end

@@ -17,12 +17,12 @@
     unsigned long long _maximumInputLength;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maximumInputLength; // @synthesize maximumInputLength=_maximumInputLength;
 @property(readonly, nonatomic) unsigned long long minimumInputLength; // @synthesize minimumInputLength=_minimumInputLength;
 @property(readonly, nonatomic) _Bool isDigitsOnly; // @synthesize isDigitsOnly=_isDigitsOnly;
 @property(readonly, nonatomic) _Bool isSecure; // @synthesize isSecure=_isSecure;
 @property(readonly, copy, nonatomic) NSString *defaultText; // @synthesize defaultText=_defaultText;
-- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithText:(id)arg1;

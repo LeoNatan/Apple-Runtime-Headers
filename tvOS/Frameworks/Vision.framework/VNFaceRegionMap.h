@@ -24,8 +24,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy) NSArray *regionLabels; // @synthesize regionLabels=_regionLabels;
 - (void).cxx_destruct;
+@property(copy) NSArray *regionLabels; // @synthesize regionLabels=_regionLabels;
 - (id)regionNameAtNormalizedFaceCoordinate:(struct CGPoint)arg1;
 - (id)regionNameAtImageCoordinate:(struct CGPoint)arg1 imageSize:(struct CGSize)arg2;
 - (id)regionNameAtNormalizedAlignedFaceCoordinate:(struct CGPoint)arg1;

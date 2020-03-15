@@ -22,6 +22,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int updatePolicy; // @synthesize updatePolicy=_updatePolicy;
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, nonatomic) long long provenance; // @synthesize provenance=_provenance;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) id <NSSecureCoding> value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithValue:(id)arg1 key:(id)arg2 domain:(id)arg3 category:(int)arg4 provenance:(long long)arg5 updatePolicy:(int)arg6 modificationDate:(id)arg7;

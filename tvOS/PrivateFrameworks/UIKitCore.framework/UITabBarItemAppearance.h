@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setOwningAppearance:) __weak UITabBarAppearance *_owningAppearance; // @synthesize _owningAppearance;
 @property(retain, nonatomic, setter=_setData:) _UITabBarItemData *_data; // @synthesize _data;
-- (void).cxx_destruct;
 - (void)configureWithDefaultForStyle:(long long)arg1;
 @property(readonly, nonatomic) UITabBarItemStateAppearance *focused;
 @property(readonly, nonatomic) UITabBarItemStateAppearance *disabled;

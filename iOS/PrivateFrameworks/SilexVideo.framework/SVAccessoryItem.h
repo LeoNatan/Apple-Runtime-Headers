@@ -16,9 +16,9 @@
     unsigned long long _displayMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)initWithView:(id)arg1;
 
 // Remaining properties

@@ -48,9 +48,12 @@
     NSURL *_messageURL;
     NSString *_persistentID;
     int _mediaEntityType;
+    NSString *_universalLibraryID;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *universalLibraryID; // @synthesize universalLibraryID=_universalLibraryID;
 @property(nonatomic) int mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
 @property(copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSURL *messageURL; // @synthesize messageURL=_messageURL;
@@ -77,7 +80,6 @@
 @property(nonatomic) _Bool isOverlay; // @synthesize isOverlay=_isOverlay;
 @property(copy, nonatomic) NSString *labelForLocalMedia; // @synthesize labelForLocalMedia=_labelForLocalMedia;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

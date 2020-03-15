@@ -14,8 +14,8 @@
 }
 
 + (id)resultWithMailbox:(id)arg1;
-@property(retain, nonatomic) MFMailbox *predictedMailbox; // @synthesize predictedMailbox=_predictedMailbox;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MFMailbox *predictedMailbox; // @synthesize predictedMailbox=_predictedMailbox;
 
 @end
 

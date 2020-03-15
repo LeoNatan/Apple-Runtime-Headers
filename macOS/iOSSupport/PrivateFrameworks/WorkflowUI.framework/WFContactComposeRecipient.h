@@ -13,8 +13,8 @@
     WFContact *_wfContact;
 }
 
-@property(readonly, nonatomic) WFContact *wfContact; // @synthesize wfContact=_wfContact;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFContact *wfContact; // @synthesize wfContact=_wfContact;
 - (id)wf_contactFieldEntry;
 - (id)displayString;
 - (id)initWithWFContact:(id)arg1;

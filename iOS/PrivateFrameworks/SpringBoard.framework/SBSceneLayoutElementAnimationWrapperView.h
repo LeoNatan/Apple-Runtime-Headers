@@ -17,9 +17,9 @@
     SBOrientationTransformWrapperView *_orientedView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBApplicationSceneView *appView; // @synthesize appView=_appView;
 @property(readonly, nonatomic) SBLayoutElement *layoutElement; // @synthesize layoutElement=_layoutElement;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long layoutOrientation;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)addContentView:(id)arg1;

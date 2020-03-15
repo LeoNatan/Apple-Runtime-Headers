@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithResourceRef:(unsigned int)arg1 options:(unsigned int)arg2 device:(id)arg3 heap:(id)arg4;
 
 // Remaining properties
+@property(readonly) unsigned long long allocationID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

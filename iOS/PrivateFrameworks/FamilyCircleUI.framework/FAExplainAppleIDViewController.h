@@ -18,8 +18,8 @@
     _Bool _shouldShowInviteeInstructions;
 }
 
-@property(nonatomic) _Bool shouldShowInviteeInstructions; // @synthesize shouldShowInviteeInstructions=_shouldShowInviteeInstructions;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldShowInviteeInstructions; // @synthesize shouldShowInviteeInstructions=_shouldShowInviteeInstructions;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateFonts;
 - (double)_heightForText:(id)arg1 constrainedToWidth:(double)arg2;

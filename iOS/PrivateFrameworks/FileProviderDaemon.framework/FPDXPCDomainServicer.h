@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     NSString *_providerDomainID;
 }
 
-@property(readonly, nonatomic) NSString *providerDomainID; // @synthesize providerDomainID=_providerDomainID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *providerDomainID; // @synthesize providerDomainID=_providerDomainID;
 - (void)_t_setFilePresenterObserver:(id)arg1;
 - (id)description;
 - (void)fetchAndStartEnumeratingWithSettings:(id)arg1 observer:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

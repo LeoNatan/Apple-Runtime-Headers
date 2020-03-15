@@ -20,14 +20,16 @@
 
 + (id)_moduleC2AnimationParametersForTransitionState:(id)arg1 layoutRect:(struct CCUILayoutRect)arg2;
 + (id)_baseC2AnimationParametersForTransitionState:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CCUIOverlayMetricsProvider> metricsProvider; // @synthesize metricsProvider=_metricsProvider;
 @property(nonatomic) __weak id <CCUIOverlayViewProvider> viewProvider; // @synthesize viewProvider=_viewProvider;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)_transformForTransitionState:(id)arg1 rubberBandingHeight:(double)arg2;
 - (struct CGAffineTransform)_moduleViewScaleTransformForTransitionState:(id)arg1;
 - (struct CGAffineTransform)_moduleViewTransformForTransitionState:(id)arg1 layoutRect:(struct CCUILayoutRect)arg2;
 - (void)_addModuleTransformAnimationsToBatch:(id)arg1 transitionState:(id)arg2;
-- (void)_addHeaderContentAlphaAnimationToBatch:(id)arg1 transitionState:(id)arg2;
+- (void)_addHeaderStatusBarTranslationAnimationToBatch:(id)arg1 transitionState:(id)arg2;
+- (void)_addHeaderStatusBarAlphaAnimationToBatch:(id)arg1 transitionState:(id)arg2;
+- (void)_addHeaderChevronAlphaAnimationToBatch:(id)arg1 transitionState:(id)arg2;
 - (struct CGAffineTransform)_headerViewTransformForTransitionState:(id)arg1;
 - (void)_addHeaderContentTransformAnimationToBatch:(id)arg1 transitionState:(id)arg2;
 - (void)_addBackgroundViewWeightingAnimationToBatch:(id)arg1 transitionState:(id)arg2;

@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOptional *authenticationToken; // @synthesize authenticationToken=_authenticationToken;
 @property(copy, nonatomic) NSString *preferredAppID; // @synthesize preferredAppID=_preferredAppID;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
 @property(copy, nonatomic) NSString *accountTypeDescription; // @synthesize accountTypeDescription=_accountTypeDescription;
 @property(nonatomic) __weak VSAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

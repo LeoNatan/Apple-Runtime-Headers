@@ -15,9 +15,9 @@
     int _failedWakeSessionCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int failedWakeSessionCount; // @synthesize failedWakeSessionCount=_failedWakeSessionCount;
 @property(retain, nonatomic) NSDate *lastSessionStartDate; // @synthesize lastSessionStartDate=_lastSessionStartDate;
-- (void).cxx_destruct;
 - (int)totalTimeoutCount;
 - (int)timeoutCountForOperation:(id)arg1;
 - (void)incrementTimeoutCountForOperation:(id)arg1;

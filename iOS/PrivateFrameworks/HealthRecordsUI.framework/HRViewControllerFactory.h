@@ -18,7 +18,6 @@
 - (id)init;
 - (id)makeDetailViewControllerForRecord:(id)arg1;
 - (id)makeViewControllerForRecord:(id)arg1;
-- (id)makeViewControllerForConcept:(id)arg1 highlightedRecordId:(id)arg2;
 - (id)makeSettingsViewController;
 @property(nonatomic, readonly) HRProfile *profile; // @synthesize profile;
 

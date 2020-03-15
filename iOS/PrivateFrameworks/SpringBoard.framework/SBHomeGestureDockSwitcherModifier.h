@@ -28,8 +28,8 @@
     _Bool _requireVerticalSwipeToTrackDock;
 }
 
-@property(readonly, nonatomic, getter=isCurrentlyTrackingDock) _Bool currentlyTrackingDock; // @synthesize currentlyTrackingDock=_currentlyTrackingDock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isCurrentlyTrackingDock) _Bool currentlyTrackingDock; // @synthesize currentlyTrackingDock=_currentlyTrackingDock;
 - (void)_applyPrototypeSettings;
 - (_Bool)_hasTraveledSufficientDistanceForHomeOrAppSwitcher;
 - (_Bool)_rubberbandedOutOfDockHorizontally;

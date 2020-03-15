@@ -16,8 +16,8 @@
     id <SXIssueCoverLayoutAttributesFactory> _layoutOptionsFactory;
 }
 
-@property(readonly, nonatomic) id <SXIssueCoverLayoutAttributesFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXIssueCoverLayoutAttributesFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 - (void)presentIssueCover:(id)arg1 onView:(id)arg2 options:(id)arg3;
 - (id)viewForIssueCover:(id)arg1;
 - (id)initWithLayoutAttributesFactory:(id)arg1;

@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
 + (id)dateTimeItemWithMaximumDate:(id)arg1;
 + (id)timeItemWithMaximumDate:(id)arg1;
 + (id)dateItemWithMaximumDate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WDAddDataManualEntryItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)cellForItemTapped:(id)arg1;
 - (id)tableViewCells;
 - (void)beginEditing;

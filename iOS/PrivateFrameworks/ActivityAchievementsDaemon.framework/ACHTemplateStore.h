@@ -28,6 +28,7 @@
     NSObject<OS_dispatch_queue> *_synchronizationQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialFetchComplete; // @synthesize initialFetchComplete=_initialFetchComplete;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizationQueue; // @synthesize synchronizationQueue=_synchronizationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
@@ -38,8 +39,7 @@
 @property(retain, nonatomic) NSMutableSet *templates; // @synthesize templates=_templates;
 @property(nonatomic) unsigned char device; // @synthesize device=_device;
 @property(retain, nonatomic) ACHTemplateEntityWrapper *entityWrapper; // @synthesize entityWrapper=_entityWrapper;
-@property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
+@property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void)_notifyObserversOfRemovedTemplates:(id)arg1;
 - (void)_notifyObserversOfNewTemplates:(id)arg1;
 - (void)_notifyObserversOfInitialFetchCompletion;

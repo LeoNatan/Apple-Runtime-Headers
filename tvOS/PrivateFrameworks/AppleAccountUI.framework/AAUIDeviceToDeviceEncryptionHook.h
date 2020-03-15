@@ -18,10 +18,10 @@
     NSString *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)_performHSAUpgradeWithAttributes:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)shouldMatchModel:(id)arg1;
 - (_Bool)shouldMatchElement:(id)arg1;

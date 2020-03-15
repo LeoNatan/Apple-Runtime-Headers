@@ -23,11 +23,11 @@
 + (id)_distanceFormatter;
 + (id)_workoutDurationFormatter;
 + (id)_dateFormatter;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *activityGoalSummaryString; // @synthesize activityGoalSummaryString=_activityGoalSummaryString;
 @property(readonly, nonatomic) NSString *energyBurnSummaryString; // @synthesize energyBurnSummaryString=_energyBurnSummaryString;
 @property(readonly, nonatomic) NSString *workoutSummaryString; // @synthesize workoutSummaryString=_workoutSummaryString;
 @property(readonly, nonatomic) NSString *formattedDateString; // @synthesize formattedDateString=_formattedDateString;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_createWorkoutSummaryWithWorkouts:(id)arg1;
 - (id)initWithActivityCache:(id)arg1 workouts:(id)arg2;

@@ -16,11 +16,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *bagKey; // @synthesize bagKey=_bagKey;
 @property(retain, nonatomic) VSStoreURLBag *bag; // @synthesize bag=_bag;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 
 @end

@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) id <ENCypher> cypher; // @synthesize cypher=_cypher;
 @property(readonly, nonatomic) id <ENDevicePublicKey> devicePublicKey; // @synthesize devicePublicKey=_devicePublicKey;
-- (void).cxx_destruct;
 - (id)verifyAndRevealData:(id)arg1 withReceipient:(id)arg2 cypherIdentifier:(id)arg3 error:(id *)arg4;
 - (id)signAndConcealData:(id)arg1 withSender:(id)arg2 cypherIdentifier:(id *)arg3 error:(id *)arg4;
 - (void)encodeWithCoder:(id)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (Class)viewClass;
-@property(readonly, nonatomic) SBLockScreenPlugin *plugin; // @synthesize plugin=_plugin;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBLockScreenPlugin *plugin; // @synthesize plugin=_plugin;
 - (long long)_presentationPriority;
 - (void)_updateLegibility;
 - (_Bool)handleEvent:(id)arg1;

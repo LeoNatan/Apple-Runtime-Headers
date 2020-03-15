@@ -20,7 +20,7 @@
 - (BOOL)conformsToProtocol:(id)arg1 version:(unsigned int)arg2;
 - (BOOL)updateProgress:(float)arg1;
 - (BOOL)userHasCancelled;
--     // Error parsing type: v24@0:8r^{OZProcessControl=^^?{atomic<bool>=AB}^{PCSemaphore}^{PCMutex}q^?^{HGRenderer}}16, name: _setControl:
+-     // Error parsing type: v24@0:8r^{OZProcessControl=^^?{atomic<bool>={__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >=AB}}^{PCSemaphore}^{PCMutex}q^?^{HGRenderer}}16, name: _setControl:
 - (id)init;
 
 // Remaining properties

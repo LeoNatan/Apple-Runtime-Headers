@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_dragEventsByContextAndSessionIDPair;
     BOOL _isSystemApplication;
     double _commitTimeForTouchEvents;
+    double _beginTimeForTouchEvents;
+    double _deadlineTimeForTouchEvents;
     NSMutableSet *_windowsWithActiveTouchMaps;
     BOOL _hasSeenAnyPencilEvents;
     UIPressesEvent *_fallbackPressesEvent;
@@ -39,19 +41,21 @@ __attribute__((visibility("hidden")))
 
 + (void)_setKeyboardWindowSceneConnected:(BOOL)arg1;
 + (BOOL)_isKeyboardWindowSceneConnected;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_fallbackGenericGestureFocusWindowID, setter=_setFallbackGenericGestureFocusWindowID:) unsigned int fallbackGenericGestureFocusWindowContextID; // @synthesize fallbackGenericGestureFocusWindowContextID=_fallbackGenericGestureFocusWindowContextID;
 @property(nonatomic, getter=_genericGestureFocusWindowID, setter=_setGenericGestureFocusWindowID:) unsigned int genericGestureFocusWindowContextID; // @synthesize genericGestureFocusWindowContextID=_genericGestureFocusWindowContextID;
 @property(readonly, nonatomic) NSSet *windowsWithActiveTouchMaps; // @synthesize windowsWithActiveTouchMaps=_windowsWithActiveTouchMaps;
 @property(retain, nonatomic) NSMutableArray *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(nonatomic) UIApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)_sendRemoteControlEvent:(long long)arg1;
 - (void)_sendMotionCancelled:(long long)arg1;
 - (void)_sendMotionEnded:(long long)arg1;
 - (void)_sendMotionBegan:(long long)arg1;
-- (id)pencilEventForHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)_lookupEventForWindow:(id)arg1;
 - (id)_lookupEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_transformEventForWindow:(id)arg1;
+- (id)_transformEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)pencilEventForHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)_hoverEventForHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)_scrollEventForWindow:(id)arg1;
 - (id)_scrollEventForHIDEvent:(struct __IOHIDEvent *)arg1;

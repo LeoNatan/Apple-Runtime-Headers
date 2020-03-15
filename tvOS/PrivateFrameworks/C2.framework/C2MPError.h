@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) C2MPError *underlyingError; // @synthesize underlyingError=_underlyingError;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

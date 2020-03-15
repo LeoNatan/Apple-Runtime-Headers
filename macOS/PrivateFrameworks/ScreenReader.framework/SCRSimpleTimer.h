@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SEL __selector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL _selector; // @synthesize _selector=__selector;
 @property(nonatomic) __weak id _target; // @synthesize _target=__target;
 @property(retain, nonatomic) NSTimer *_timer; // @synthesize _timer=__timer;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_fire;
 - (void)dispatchAfterDelay:(double)arg1;

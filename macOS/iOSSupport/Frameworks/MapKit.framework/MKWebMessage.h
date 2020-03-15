@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_errorMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(copy, nonatomic) id <NSCopying> result; // @synthesize result=_result;
 @property(copy, nonatomic) id <NSCopying> arguments; // @synthesize arguments=_arguments;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *callee; // @synthesize callee=_callee;
 @property(copy, nonatomic) NSString *caller; // @synthesize caller=_caller;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(readonly, copy, nonatomic) NSDictionary *JSONObject;

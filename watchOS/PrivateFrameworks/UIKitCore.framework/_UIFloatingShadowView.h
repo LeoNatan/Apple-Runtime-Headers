@@ -25,6 +25,7 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _disableOutsetShadowPath; // @synthesize _disableOutsetShadowPath=__disableOutsetShadowPath;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) struct CGRect shadowContentsCenter; // @synthesize shadowContentsCenter=_shadowContentsCenter;
@@ -35,7 +36,6 @@
 @property(nonatomic) float shadowRadius; // @synthesize shadowRadius=_shadowRadius;
 @property(nonatomic) struct CGSize shadowSize; // @synthesize shadowSize=_shadowSize;
 @property(nonatomic, getter=isShadowEnabled) _Bool shadowEnabled; // @synthesize shadowEnabled=_shadowEnabled;
-- (void).cxx_destruct;
 - (struct CGPath *)_shadowPathForSize:(struct CGSize)arg1 radius:(float)arg2;
 - (void)_setShadowImageIfNeeded;
 - (void)_updateShadowLayer;

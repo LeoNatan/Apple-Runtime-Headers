@@ -15,9 +15,9 @@
 }
 
 + (id)itemPropertiesFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *jsonSerializableDictionary; // @synthesize jsonSerializableDictionary=_jsonSerializableDictionary;
 @property(nonatomic) long long bodyType; // @synthesize bodyType=_bodyType;
-- (void).cxx_destruct;
 - (id)description;
 @property(retain, nonatomic) NSDateComponents *lastModifiedDate;
 @property(retain, nonatomic) NSDateComponents *creationDate;

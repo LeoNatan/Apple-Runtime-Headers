@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     UIViewController *__hostViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setHostViewController:) __weak UIViewController *_hostViewController; // @synthesize _hostViewController=__hostViewController;
 @property(retain, nonatomic, setter=_setCurrentPlugin:) PUEditPlugin *currentPlugin; // @synthesize currentPlugin=_currentPlugin;
 @property(nonatomic, setter=_setAdjustmentType:) long long adjustmentType; // @synthesize adjustmentType=_adjustmentType;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setIsAvailable:) _Bool isAvailable; // @synthesize isAvailable=_isAvailable;
 @property(nonatomic) __weak id <PUEditPluginSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PUEditPluginSessionDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)editPluginHostViewController:(id)arg1 didFinishWithCompletionType:(unsigned long long)arg2;
 - (void)editPluginHostViewController:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)editPluginHostViewController:(id)arg1 loadItemProviderWithHandler:(CDUnknownBlockType)arg2;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NWConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain) NWConnection *connection; // @synthesize connection=_connection;
 @property(retain) NSUUID *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 
 @end
 

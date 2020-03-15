@@ -6,9 +6,12 @@
 
 #import <PassKitCore/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSArray, NSData, NSSet, NSString, PKDisplayProfile, PKMapsTransitRouteInfo, PKPaymentMarket;
+@class NSArray, NSData, NSSet, NSString, NSXPCListenerEndpoint, PKAccessPassProvisioningConfiguration, PKAddSecureElementPassConfiguration, PKDisplayProfile, PKMapsTransitRouteInfo, PKPaymentMarket;
 
 @protocol PDPassLibraryExportedInterface <PDXPCServiceExportedInterface>
+- (void)signData:(NSData *)arg1 forPassUniqueID:(NSString *)arg2 completion:(void (^)(NSData *, NSData *, NSError *))arg3;
+- (void)presentSubcredentialProvisioningInterfaceForEndpoint:(NSXPCListenerEndpoint *)arg1 withConfiguration:(PKAccessPassProvisioningConfiguration *)arg2 completion:(void (^)(_Bool))arg3;
+- (void)canAddSecureElementPassWithConfiguration:(PKAddSecureElementPassConfiguration *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)postUpgradedPassNotificationForMarket:(PKPaymentMarket *)arg1 passUniqueID:(NSString *)arg2;
 - (void)checkForTransitNotification;
 - (void)supportsDisbursements:(void (^)(_Bool, NSError *))arg1;

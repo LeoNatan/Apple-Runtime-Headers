@@ -14,8 +14,8 @@
     CDUnknownBlockType _sharingEtagCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType sharingEtagCompletionBlock; // @synthesize sharingEtagCompletionBlock=_sharingEtagCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType sharingEtagCompletionBlock; // @synthesize sharingEtagCompletionBlock=_sharingEtagCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithURL:(id)arg1;

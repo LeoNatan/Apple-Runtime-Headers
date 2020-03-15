@@ -17,12 +17,12 @@
     PHContentEditingInput *_contentEditingInput;
 }
 
+- (void).cxx_destruct;
 @property BOOL isExplicitVisibility; // @synthesize isExplicitVisibility=_isExplicitVisibility;
 @property unsigned short internalVideoComplementVisibility; // @synthesize internalVideoComplementVisibility=_internalVideoComplementVisibility;
 @property BOOL hideVideoComplement; // @synthesize hideVideoComplement=_hideVideoComplement;
 @property(retain) PHContentEditingInput *contentEditingInput; // @synthesize contentEditingInput=_contentEditingInput;
 @property(retain) DGDescription *renderDescription; // @synthesize renderDescription=_renderDescription;
-- (void).cxx_destruct;
 
 @end
 

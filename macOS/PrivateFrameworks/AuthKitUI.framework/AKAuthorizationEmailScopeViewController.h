@@ -24,6 +24,7 @@
     long long _lastSelectedEmailIndex;
 }
 
+- (void).cxx_destruct;
 @property long long lastSelectedEmailIndex; // @synthesize lastSelectedEmailIndex=_lastSelectedEmailIndex;
 @property(retain) NSMutableDictionary *radioButtonForTag; // @synthesize radioButtonForTag=_radioButtonForTag;
 @property(retain) NSLayoutConstraint *expandableEmailStackViewMaxHeightConstraint; // @synthesize expandableEmailStackViewMaxHeightConstraint=_expandableEmailStackViewMaxHeightConstraint;
@@ -35,7 +36,6 @@
 @property __weak id <AKAuthorizationEmailScopeViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSTextField *scopeLabel; // @synthesize scopeLabel=_scopeLabel;
 @property(copy) AKUserInformation *userInformation; // @synthesize userInformation=_userInformation;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_delegate_emailScopeViewController:(id)arg1 didSelectEmail:(id)arg2 protected:(BOOL)arg3;

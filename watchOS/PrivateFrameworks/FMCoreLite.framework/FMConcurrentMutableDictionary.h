@@ -14,9 +14,9 @@
     FMReadWriteLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMReadWriteLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableDictionary *underlyingDictionary; // @synthesize underlyingDictionary=_underlyingDictionary;
-- (void).cxx_destruct;
 - (id)popObjectforKey:(id)arg1;
 - (id)replaceObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1 withConstructor:(CDUnknownBlockType)arg2;

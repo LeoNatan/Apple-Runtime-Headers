@@ -23,12 +23,12 @@
 
 + (id)_fdResourceSemaphore;
 + (id)_fdIsolationQueue;
+- (void).cxx_destruct;
 @property(copy) NSString *changeScopesDescriptionSnapshot; // @synthesize changeScopesDescriptionSnapshot=_changeScopesDescriptionSnapshot;
 @property(nonatomic) __weak NSObject<OS_dispatch_semaphore> *fdResourceSemaphore; // @synthesize fdResourceSemaphore=_fdResourceSemaphore;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) id processAssertion; // @synthesize processAssertion=_processAssertion;
 @property(nonatomic) int fileDescriptor; // @synthesize fileDescriptor=_fileDescriptor;
-- (void).cxx_destruct;
 - (id)description;
 - (id)generateChangeScopesDescription;
 - (void)abortTransaction;

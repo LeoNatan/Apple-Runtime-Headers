@@ -27,9 +27,9 @@
 + (_Bool)requiresHighPriorityFirstSync;
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *membershipReferences; // @synthesize membershipReferences=_membershipReferences;
 @property(retain, nonatomic) NSDictionary *membershipsByChannelID; // @synthesize membershipsByChannelID=_membershipsByChannelID;
-- (void).cxx_destruct;
 - (void)_fetchPrivateChannelMembershipsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)activityObservingApplicationWindowDidBecomeForeground;
 - (void)changedMembershipsFrom:(id)arg1 toMemberships:(id)arg2;

@@ -69,6 +69,7 @@
 + (id)contextForManagedObjectLookupItemCache:(id)arg1 coordinator:(id)arg2;
 + (id)contextForRepairingSingletonObjects:(const char *)arg1 libraryURL:(id)arg2 error:(id *)arg3;
 + (id)contextForPhotoLibrary:(id)arg1 automaticallyMerges:(BOOL)arg2 name:(const char *)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isBackingALAssetsLibrary; // @synthesize isBackingALAssetsLibrary=_isBackingALAssetsLibrary;
 @property(nonatomic) BOOL isInitializingSingletons; // @synthesize isInitializingSingletons=_isInitializingSingletons;
 @property(nonatomic) int changeSource; // @synthesize changeSource=_changeSource;
@@ -77,7 +78,6 @@
 @property(retain, nonatomic) PLDelayedFiledSystemDeletions *delayedDeletions; // @synthesize delayedDeletions=_delayedDeletions;
 @property(readonly, nonatomic) BOOL savingDuringMerge; // @synthesize savingDuringMerge=_savingDuringMerge;
 @property(readonly, nonatomic) BOOL mergingChanges; // @synthesize mergingChanges=_mergingChanges;
-- (void).cxx_destruct;
 - (void)tearDownLocalChangeNotifications;
 - (void)setupLocalChangeNotifications;
 - (void)appendDelayedDeletionsToXPCMessage:(id)arg1;
@@ -111,9 +111,8 @@
 - (void)disconnectFromChangeHandling;
 - (void)connectToChangeHandling;
 - (BOOL)pl_performWithOptions:(unsigned long long)arg1 andBlock:(CDUnknownBlockType)arg2;
-- (void)performWithOptions:(unsigned long long)arg1 andBlock:(CDUnknownBlockType)arg2;
-- (void)performBlockAndWait:(CDUnknownBlockType)arg1;
-- (void)performBlock:(CDUnknownBlockType)arg1;
+- (void)setName:(id)arg1;
+- (void)breakRetainCycles;
 - (void)_simulateCrashIfNotAssetsd;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id *)arg2;
 - (BOOL)save:(id *)arg1;

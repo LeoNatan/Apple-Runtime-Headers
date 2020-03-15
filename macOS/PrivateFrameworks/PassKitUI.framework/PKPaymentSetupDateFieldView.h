@@ -15,8 +15,8 @@
     PKDatePicker *_datePicker;
 }
 
-@property(retain) PKDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (void).cxx_destruct;
+@property(retain) PKDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (id)label;
 - (void)setEnabled:(BOOL)arg1;
 - (void)datePicker:(id)arg1 didChangeDate:(id)arg2;

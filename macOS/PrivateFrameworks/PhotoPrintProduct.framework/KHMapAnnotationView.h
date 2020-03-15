@@ -23,6 +23,7 @@
     struct CGPoint _startPoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL editable; // @synthesize editable=_editable;
 @property unsigned long long keyFrame; // @synthesize keyFrame=_keyFrame;
 @property struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
@@ -31,7 +32,6 @@
 @property(retain) KHTextView *label; // @synthesize label=_label;
 @property(retain) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(nonatomic) unsigned long long dragState; // @synthesize dragState=_dragState;
-- (void).cxx_destruct;
 - (void)labelFrameChanged:(id)arg1;
 - (void)renderInContext:(struct CGContext *)arg1 environment:(id)arg2 withSnapshot:(id)arg3 scale:(double)arg4;
 - (void)setCenter:(struct CGPoint)arg1;

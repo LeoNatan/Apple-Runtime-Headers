@@ -24,13 +24,13 @@
     id _imageURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id imageURL; // @synthesize imageURL=_imageURL;
 @property(retain, nonatomic) TVLLongDescriptionPreviewElement *longDescriptionElement; // @synthesize longDescriptionElement=_longDescriptionElement;
 @property(retain, nonatomic) TVLKeyedPreviewElement *previewElement; // @synthesize previewElement=_previewElement;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(nonatomic, getter=isCenteringContent) _Bool centersContent; // @synthesize centersContent=_centersContent;
 @property(nonatomic) double topPadding; // @synthesize topPadding=_topPadding;
-- (void).cxx_destruct;
 - (id)_metadataItemsWithKeyedPreviewElement:(id)arg1;
 - (id)imageOutlineColor;
 - (id)italicSummaryFont;

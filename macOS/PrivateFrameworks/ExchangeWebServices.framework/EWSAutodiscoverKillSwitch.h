@@ -15,8 +15,8 @@
     NSURLSession *_autoDV2RedirectSession;
 }
 
-@property(retain, nonatomic) NSURLSession *autoDV2RedirectSession; // @synthesize autoDV2RedirectSession=_autoDV2RedirectSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURLSession *autoDV2RedirectSession; // @synthesize autoDV2RedirectSession=_autoDV2RedirectSession;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)sendRequestForRedirectWithCompletionHandler:(CDUnknownBlockType)arg1;
 

@@ -18,10 +18,10 @@
     id <IMKUICandidateAccessibilityTarget> _target;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMKUICandidateAccessibilityTarget> target; // @synthesize target=_target;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(retain, nonatomic) IMKCandidate *candidate; // @synthesize candidate=_candidate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

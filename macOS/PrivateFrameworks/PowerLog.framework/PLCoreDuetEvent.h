@@ -17,12 +17,12 @@
     NSArray *_eventIntervals;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *eventIntervals; // @synthesize eventIntervals=_eventIntervals;
 @property(retain) NSDictionary *childBundleIDToWeight; // @synthesize childBundleIDToWeight=_childBundleIDToWeight;
 @property(retain) NSString *processName; // @synthesize processName=_processName;
 @property unsigned char updateType; // @synthesize updateType=_updateType;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -18,10 +18,10 @@
     id <UIScreenshotServiceDelegate> _privateDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIScreenshotServiceDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(nonatomic) __weak id <UIScreenshotServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIWindowScene *windowScene;
 - (id)initWithScene:(id)arg1;
 

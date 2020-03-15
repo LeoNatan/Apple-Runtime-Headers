@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     unsigned char _reason;
 }
 
-@property(readonly, nonatomic) unsigned char reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned char reason; // @synthesize reason=_reason;
 - (id)dataForKey:(const struct _GEOTileKey *)arg1 ETag:(id *)arg2 originalLoadReason:(unsigned char *)arg3 isKnownNotToExist:(_Bool *)arg4;
 - (_Bool)isSupercededByOperation:(id)arg1;
 - (void)performWithDB:(id)arg1;

@@ -19,12 +19,12 @@
 }
 
 + (_Bool)tsp_isTransientObjectIdentifier:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TSPObjectDelegate> tsp_delegate; // @synthesize tsp_delegate=_delegate;
 @property(nonatomic) long long tsp_modifyObjectToken; // @synthesize tsp_modifyObjectToken=_modifyObjectToken;
 @property(readonly, nonatomic) TSPUnknownContent *tsp_unknownContent; // @synthesize tsp_unknownContent=_unknownContent;
 @property(readonly, nonatomic) long long tsp_unarchiverIdentifier; // @synthesize tsp_unarchiverIdentifier=_unarchiverIdentifier;
 @property(nonatomic) long long tsp_identifier; // @synthesize tsp_identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool needsArchiving;
 - (void)didFinishUnarchiving;
 - (_Bool)dirtiesDocumentPackage;

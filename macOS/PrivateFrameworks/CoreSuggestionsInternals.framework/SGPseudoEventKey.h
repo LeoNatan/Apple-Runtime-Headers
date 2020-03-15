@@ -18,9 +18,9 @@
 }
 
 + (BOOL)isSupportedEntityType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)alternativeKeysForEventKitQuery;
 - (BOOL)isDropoff;
 - (id)keyForEventKitQuery;

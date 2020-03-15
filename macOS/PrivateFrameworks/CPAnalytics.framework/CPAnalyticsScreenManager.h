@@ -29,6 +29,7 @@
 + (id)_viewNameFromCombined:(id)arg1;
 + (id)_combinedViewName:(id)arg1 withID:(id)arg2;
 + (BOOL)_isValidScreenViewEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long foregroundEventCount; // @synthesize foregroundEventCount=_foregroundEventCount;
 @property(retain, nonatomic) NSDate *currentScreenStartTime; // @synthesize currentScreenStartTime=_currentScreenStartTime;
 @property(retain, nonatomic) NSMutableArray *priorViews; // @synthesize priorViews=_priorViews;
@@ -40,8 +41,7 @@
 @property(nonatomic) long long appVisiblePeriodSignpostID; // @synthesize appVisiblePeriodSignpostID=_appVisiblePeriodSignpostID;
 @property(nonatomic) __weak CPAnalytics *cpAnalyticsInstance; // @synthesize cpAnalyticsInstance=_cpAnalyticsInstance;
 @property(nonatomic) long long screensViewCount; // @synthesize screensViewCount=_screensViewCount;
-- (void).cxx_destruct;
-- (struct NSObject *)getDynamicProperty:(id)arg1 forEventName:(id)arg2 withPayload:(id)arg3;
+- (id)getDynamicProperty:(id)arg1 forEventName:(id)arg2 payloadForSystemPropertyExtraction:(id)arg3;
 - (void)_sendCPAnalyticsScreenViewEventWithEndTime:(id)arg1;
 - (void)_updateCurrentScreenToViewName:(id)arg1 withEventTime:(id)arg2;
 - (void)_trackView:(id)arg1 withEventName:(id)arg2 viewID:(id)arg3 eventTime:(id)arg4;

@@ -32,10 +32,10 @@
     unsigned long long _historyType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long historyType; // @synthesize historyType=_historyType;
 @property(readonly, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)_showMapsDetailsViewController;
 - (void)_showContactDetailsViewController;
@@ -54,6 +54,7 @@
 - (void)_updateNavigationBarIconForNavigationBarAppeared:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)initWithInstallmentPlan:(id)arg1 paymentPass:(id)arg2 account:(id)arg3;
 - (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 transactionHistory:(id)arg4;
 - (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 account:(id)arg3 featuredTransaction:(id)arg4 selectedTransactions:(id)arg5 transactionHistory:(id)arg6;
 

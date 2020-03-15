@@ -30,8 +30,8 @@
     PLClientServerTransaction *_clientTransaction;
 }
 
-@property(readonly, nonatomic) PLClientServerTransaction *clientTransaction; // @synthesize clientTransaction=_clientTransaction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PLClientServerTransaction *clientTransaction; // @synthesize clientTransaction=_clientTransaction;
 - (void)_popDuetDeletedAssetsIntoDetail:(id)arg1;
 - (void)recordAssetForDuetDelete:(id)arg1;
 - (void)_popDelayedAssetsForAnalysis:(id *)arg1;

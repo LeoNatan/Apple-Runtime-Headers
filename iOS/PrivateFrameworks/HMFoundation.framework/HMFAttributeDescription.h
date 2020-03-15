@@ -20,11 +20,11 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSFormatter *formatter; // @synthesize formatter=_formatter;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) id <NSObject> value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *privateDescription;
 @property(readonly, copy) NSString *debugDescription;

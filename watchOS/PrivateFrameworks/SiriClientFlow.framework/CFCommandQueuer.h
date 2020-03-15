@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_queue> *_commandQueue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> *commandQueue; // @synthesize commandQueue=_commandQueue;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_queue> *commandQueue; // @synthesize commandQueue=_commandQueue;
 - (id)initWithCommandIdentifier:(id)arg1;
 - (void)initQueuesWithIdentifier:(id)arg1;
 - (void)dispatchCommand:(id)arg1 isOneWay:(_Bool)arg2 withServiceHelper:(id)arg3 reply:(CDUnknownBlockType)arg4;

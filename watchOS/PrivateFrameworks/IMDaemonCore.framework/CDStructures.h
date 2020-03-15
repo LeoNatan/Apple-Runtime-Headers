@@ -24,10 +24,6 @@ struct IMPreviewConstraints {
     _Bool _field4;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
 struct _FZChatRoomValidity {
     int _field1;
     unsigned short _field2;

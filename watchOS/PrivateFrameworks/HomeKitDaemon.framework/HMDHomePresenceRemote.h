@@ -15,8 +15,8 @@
     NSDictionary *_userPresenceMap;
 }
 
-@property(readonly, nonatomic) NSDictionary *userPresenceMap; // @synthesize userPresenceMap=_userPresenceMap;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *userPresenceMap; // @synthesize userPresenceMap=_userPresenceMap;
 - (_Bool)isAnyUserAtHome;
 - (_Bool)isNoUserAtHome;
 - (_Bool)areUsersNotAtHome:(id)arg1;

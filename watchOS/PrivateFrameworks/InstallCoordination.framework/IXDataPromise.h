@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)outstandingPromisesForCreator:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IXDataPromiseSeed *seed; // @synthesize seed=_seed;
 @property(nonatomic) unsigned int errorSourceIdentifier; // @synthesize errorSourceIdentifier=_errorSourceIdentifier;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (oneway void)_clientDelegate_didCancelWithError:(id)arg1 client:(unsigned int)arg2;
 - (oneway void)_clientDelegate_didComplete;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;

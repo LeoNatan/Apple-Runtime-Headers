@@ -10,17 +10,18 @@
 
 @interface CoreTelephonyClient : NSObject
 {
+    id fDelegateAddr;
     id _delegate;
     struct queue _userQueue;
     CoreTelephonyClientMux *_mux;
 }
 
 + (id)sharedMultiplexer;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreTelephonyClientMux *mux; // @synthesize mux=_mux;
 @property(nonatomic) struct queue userQueue; // @synthesize userQueue=_userQueue;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)ping:(CDUnknownBlockType)arg1;
 - (id)synchronousProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)proxyWithErrorHandler:(CDUnknownBlockType)arg1;
@@ -119,7 +120,11 @@
 - (id)context:(id)arg1 evaluateMobileSubscriberIdentity:(id)arg2;
 - (void)evaluateMobileSubscriberIdentity:(id)arg1 identity:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)context:(id)arg1 getEncryptedIdentity:(id)arg2 error:(id *)arg3;
+- (id)context:(id)arg1 getPseudoIdentityFor:(id)arg2 error:(id *)arg3;
+- (void)context:(id)arg1 getPseudoIdentityFor:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)createEncryptedIdentity:(id)arg1 identity:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (long long)context:(id)arg1 supportedIdentityProtectionFor:(id)arg2 error:(id *)arg3;
+- (void)context:(id)arg1 supportedIdentityProtectionFor:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)context:(id)arg1 isProtectedIdentitySupported:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)context:(id)arg1 isProtectedIdentitySupported:(id)arg2 error:(id *)arg3;
 - (id)copyMobileSubscriberIdentity:(id)arg1 error:(id *)arg2;
@@ -135,6 +140,7 @@
 - (void)getSIMTrayStatus:(CDUnknownBlockType)arg1;
 - (id)getSIMStatus:(id)arg1 error:(id *)arg2;
 - (void)getSIMStatus:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)wifiCallingCTFollowUpComplete:(id)arg1;
 - (id)context:(id)arg1 removePhoneServicesDevice:(id)arg2;
 - (void)context:(id)arg1 removePhoneServicesDevice:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)context:(id)arg1 addPhoneServicesDevice:(id)arg2;
@@ -174,6 +180,7 @@
 - (void)isEmergencyNumber:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getPublicSignalStrength:(id)arg1 error:(id *)arg2;
 - (id)getDataMode:(id)arg1 error:(id *)arg2;
+- (void)getSignalStrengthMeasurements:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getSignalStrengthMeasurements:(id)arg1 error:(id *)arg2;
 - (id)getEncryptionStatus:(id)arg1 error:(id *)arg2;
 - (void)isNetworkReselectionNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -308,6 +315,7 @@
 - (id)userEnteredMonthlyBudget:(id)arg1 error:(id *)arg2;
 - (void)userEnteredMonthlyBudget:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)billingCycleEndDatesForLastPeriods:(unsigned long long)arg1 error:(id *)arg2;
+- (void)dataUsageForLastPeriodsOnActivePairedDevice:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dataUsageForLastPeriods:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)setWiFiCallingSettingPreferences:(id)arg1 key:(id)arg2 value:(id)arg3;
 - (id)getWiFiCallingSettingPreferences:(id)arg1 key:(id)arg2 error:(id *)arg3;
@@ -357,8 +365,12 @@
 - (void)setSupportDynamicDataSimSwitch:(BOOL)arg1 forIccid:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setSupportDynamicDataSimSwitch:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setSupportDynamicDataSimSwitchOnBBCall:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)getInternationalDataAccessSync:(id)arg1 error:(id *)arg2;
+- (void)getInternationalDataAccess:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)getInternationalDataAccessStatusSync:(id *)arg1;
 - (void)getInternationalDataAccessStatus:(CDUnknownBlockType)arg1;
+- (id)setInternationalDataAccessSync:(id)arg1 status:(BOOL)arg2;
+- (void)setInternationalDataAccess:(id)arg1 status:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)setInternationalDataAccessStatus:(BOOL)arg1;
 - (void)setInternationalDataAccessStatus:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)resetAPNSettings;
@@ -378,6 +390,8 @@
 - (void)selectPhonebook:(id)arg1 forPhonebookName:(int)arg2 withPassword:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)setSaveDataMode:(id)arg1 enable:(BOOL)arg2;
 - (BOOL)saveDataMode:(id)arg1 error:(id *)arg2;
+- (id)setReliableNetworkFallback:(id)arg1 enable:(BOOL)arg2;
+- (CDStruct_7ddbbeae)reliableNetworkFallback:(id)arg1 error:(id *)arg2;
 
 @end
 

@@ -27,13 +27,13 @@ __attribute__((visibility("hidden")))
     _Bool _hosting;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVisibilityPropagationEnabled) _Bool visibilityPropagationEnabled; // @synthesize visibilityPropagationEnabled=_visibilityPropagationEnabled;
 @property(nonatomic, getter=isHosting) _Bool hosting; // @synthesize hosting=_hosting;
 @property(nonatomic, getter=isActive) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, copy, nonatomic) UIScenePresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(readonly, copy, nonatomic) id <NSCopying> sortContext; // @synthesize sortContext=_sortContext;
 @property(retain, nonatomic) BSMonotonicReferenceTime *_initializeTime; // @synthesize _initializeTime;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *footnoteTitleToValueHorizontalSpaceConstraint; // @synthesize footnoteTitleToValueHorizontalSpaceConstraint=_footnoteTitleToValueHorizontalSpaceConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *footnoteTitleToBottomVerticalConstraint; // @synthesize footnoteTitleToBottomVerticalConstraint=_footnoteTitleToBottomVerticalConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *footnoteTitleToTitleVerticalConstraint; // @synthesize footnoteTitleToTitleVerticalConstraint=_footnoteTitleToTitleVerticalConstraint;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CNContactFormatter *formatter; // @synthesize formatter=_formatter;
 @property(readonly, nonatomic) UIView *bottomSeparator; // @synthesize bottomSeparator=_bottomSeparator;
 @property(nonatomic) __weak id <CNContactListBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cellWasSingleTapped:(id)arg1;
 - (void)cellWasLongPressed:(id)arg1;
 - (void)showMenu;

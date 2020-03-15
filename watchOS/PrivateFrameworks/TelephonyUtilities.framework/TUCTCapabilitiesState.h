@@ -30,6 +30,7 @@
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEmergencyCurrentlyAvailable) _Bool emergencyCurrentlyAvailable; // @synthesize emergencyCurrentlyAvailable=_emergencyCurrentlyAvailable;
 @property(nonatomic, getter=isEmergencySupported) _Bool emergencySupported; // @synthesize emergencySupported=_emergencySupported;
 @property(nonatomic, getter=isRoamingEnabled) _Bool roamingEnabled; // @synthesize roamingEnabled=_roamingEnabled;
@@ -41,7 +42,6 @@
 @property(nonatomic, getter=isProvisioningURLInvalid) _Bool provisioningURLInvalid; // @synthesize provisioningURLInvalid=_provisioningURLInvalid;
 @property(copy, nonatomic) NSURL *provisioningURL; // @synthesize provisioningURL=_provisioningURL;
 @property(nonatomic) int provisioningStatus; // @synthesize provisioningStatus=_provisioningStatus;
-- (void).cxx_destruct;
 - (id)archivedDataWithError:(id *)arg1;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone *)arg1;
 - (id)publiclyAccessibleCopy;

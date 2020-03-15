@@ -13,8 +13,8 @@
     NSArray *_gadgets;
 }
 
-@property(readonly, copy, nonatomic) NSArray *gadgets; // @synthesize gadgets=_gadgets;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *gadgets; // @synthesize gadgets=_gadgets;
 @property(readonly) _Bool hasNoContentGadget;
 - (id)gadgetWithId:(id)arg1;
 - (id)gadgetsOfClass:(Class)arg1;

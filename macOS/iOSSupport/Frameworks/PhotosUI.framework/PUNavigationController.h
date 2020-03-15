@@ -25,6 +25,7 @@
 }
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCurrentToolbarViewController:) __weak UIViewController *_currentToolbarViewController; // @synthesize _currentToolbarViewController=__currentToolbarViewController;
 @property(nonatomic, setter=_setBarStyle:) long long _barStyle; // @synthesize _barStyle=__barStyle;
 @property(readonly, nonatomic) BOOL pu_preventsAutorotation; // @synthesize pu_preventsAutorotation=_pu_preventsAutorotation;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic, setter=_setPalette:) _UINavigationControllerPalette *_palette; // @synthesize _palette=__palette;
 @property(retain, nonatomic, setter=_setBanner:) PUAbstractNavigationBanner *_banner; // @synthesize _banner=__banner;
 @property(copy, nonatomic, setter=ppt_setOnDidShowViewControllerBlock:) CDUnknownBlockType ppt_onDidShowViewControllerBlock; // @synthesize ppt_onDidShowViewControllerBlock=_ppt_onDidShowViewControllerBlock;
-- (void).cxx_destruct;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (BOOL)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;

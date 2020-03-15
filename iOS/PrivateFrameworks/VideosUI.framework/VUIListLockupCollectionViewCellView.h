@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     VUISeparatorView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) VUIButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
 @property(retain, nonatomic) VUIButton *primaryButton; // @synthesize primaryButton=_primaryButton;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVMonogramView *monogramView; // @synthesize monogramView=_monogramView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) VUIListLockupCollectionViewCellLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)prepareForCellReuse;
 - (struct CGSize)_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

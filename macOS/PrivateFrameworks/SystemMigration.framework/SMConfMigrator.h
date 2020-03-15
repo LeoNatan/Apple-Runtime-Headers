@@ -23,13 +23,13 @@
 + (id)confMigratorDictionary;
 + (id)confMigratorDirectory;
 + (id)baseMigrationDataBundle;
+- (void).cxx_destruct;
 @property BOOL doNotModifyTarget; // @synthesize doNotModifyTarget=_doNotModifyTarget;
 @property(retain) NSArray *synthesizedLegacyServerRules; // @synthesize synthesizedLegacyServerRules=_synthesizedLegacyServerRules;
 @property double parentProgressPendingUnits; // @synthesize parentProgressPendingUnits=_parentProgressPendingUnits;
 @property(retain) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property __weak SMSystem_Daemon *destination; // @synthesize destination=_destination;
 @property __weak SMSystem_Daemon *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)executeToolAtPath:(id)arg1 withArguments:(id)arg2 andCopyPath:(id)arg3 usingDeferral:(BOOL)arg4 allowSIP:(BOOL)arg5;
 - (void)executeToolAtPath:(id)arg1 withArguments:(id)arg2 andCopyPath:(id)arg3;
 - (void)migrateAllSettingsWithGroupName:(id)arg1;

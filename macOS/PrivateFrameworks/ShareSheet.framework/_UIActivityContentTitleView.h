@@ -14,9 +14,9 @@
     NSLayoutConstraint *_linkTrailingAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *linkTrailingAnchor; // @synthesize linkTrailingAnchor=_linkTrailingAnchor;
 @property(retain, nonatomic) LPLinkView *linkView; // @synthesize linkView=_linkView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)contentDidChange;
 

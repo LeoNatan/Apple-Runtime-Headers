@@ -33,13 +33,13 @@
 + (void)takeOwnershipOfCoreSymbolicationCachingPolicies;
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(retain) NSString *dscSymDir; // @synthesize dscSymDir=_dscSymDir;
 @property(retain) PAImageInfo *kernelCache; // @synthesize kernelCache=_kernelCache;
 @property(retain) NSMutableSet *pidsUsingNonSystemSharedCache; // @synthesize pidsUsingNonSystemSharedCache=_pidsUsingNonSystemSharedCache;
 @property(retain) PAImageInfo *nonSystemSharedCache; // @synthesize nonSystemSharedCache=_nonSystemSharedCache;
 @property(retain) PAImageInfo *systemSharedCache; // @synthesize systemSharedCache=_systemSharedCache;
 @property BOOL shouldUseDsymForUUIDToFindBinaries; // @synthesize shouldUseDsymForUUIDToFindBinaries=_shouldUseDsymForUUIDToFindBinaries;
-- (void).cxx_destruct;
 - (id)symbolHandleForAddress:(unsigned long long)arg1 withSymbolicator:(struct _CSTypeRef)arg2;
 - (BOOL)_isLikelyToBeKernelAddress:(unsigned long long)arg1;
 - (id)copyImageInfosForLivingPid:(int)arg1;

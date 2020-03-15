@@ -16,11 +16,11 @@
     HMShortcutAction *_shortcutAction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMShortcutAction *shortcutAction; // @synthesize shortcutAction=_shortcutAction;
 @property(retain, nonatomic) HFMutableSetDiff *actionSetBuilders; // @synthesize actionSetBuilders=_actionSetBuilders;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFTriggerAnonymousActionSetBuilder *anonymousActionSetBuilder; // @synthesize anonymousActionSetBuilder=_anonymousActionSetBuilder;
-- (void).cxx_destruct;
 - (void)defaultActionsForShortcut;
 - (void)_removeAllNamedActionsSets;
 - (void)convertToHomeWorkflowActionSetIfNeeded;

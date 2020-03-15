@@ -22,11 +22,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *generalObservers; // @synthesize generalObservers=_generalObservers;
 @property(retain, nonatomic) NSMapTable *observersToTouchIdentifiers; // @synthesize observersToTouchIdentifiers=_observersToTouchIdentifiers;
 @property(retain, nonatomic) BSMutableIntegerMap *touchIdentifierToObserverLists; // @synthesize touchIdentifierToObserverLists=_touchIdentifierToObserverLists;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)observeTouchEventDeliveryDidOccur:(id)arg1;
 - (void)_connectToTouchDeliveryService;
 - (_Bool)_queue_removeObserver:(id)arg1 forTouchIdentifier:(unsigned int)arg2;

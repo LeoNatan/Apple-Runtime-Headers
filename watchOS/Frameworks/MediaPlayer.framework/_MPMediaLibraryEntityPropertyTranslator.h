@@ -14,12 +14,12 @@
     shared_ptr_217a6612 _propertiesToSortMap;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType valueTransformer; // @synthesize valueTransformer=_valueTransformer;
 @property(copy, nonatomic) CDUnknownBlockType sortTransformer; // @synthesize sortTransformer=_sortTransformer;
 @property(nonatomic) shared_ptr_217a6612 propertiesToSortMap; // @synthesize propertiesToSortMap=_propertiesToSortMap;
 @property(nonatomic) shared_ptr_217a6612 propertiesToFetchMap; // @synthesize propertiesToFetchMap=_propertiesToFetchMap;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

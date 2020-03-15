@@ -27,8 +27,8 @@
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
-@property(copy, nonatomic) CDUnknownBlockType unitTest_saveSamplesCompletion; // @synthesize unitTest_saveSamplesCompletion=_unitTest_saveSamplesCompletion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType unitTest_saveSamplesCompletion; // @synthesize unitTest_saveSamplesCompletion=_unitTest_saveSamplesCompletion;
 - (id)remoteInterface;
 - (id)exportedInterface;
 - (_Bool)_canSaveOrSanitizeMetadata:(id *)arg1 error:(id *)arg2;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_delayedFireTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setValid:) BOOL _isValid; // @synthesize _isValid=__isValid;
 @property(nonatomic, setter=_setRegistered:) BOOL _registered; // @synthesize _registered=__registered;
 @property(retain, nonatomic) NSTimer *delayedFireTimer; // @synthesize delayedFireTimer=_delayedFireTimer;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) __weak SCRApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (unsigned long long)observerCount;
 - (void)fireWithAXUIElement:(struct __AXUIElement *)arg1 userInfo:(id)arg2;
 - (void)_fireWithAXUIElement:(struct __AXUIElement *)arg1 userInfo:(id)arg2;

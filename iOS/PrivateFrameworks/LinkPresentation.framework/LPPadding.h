@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     LPPointUnit *_trailing;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPPointUnit *trailing; // @synthesize trailing=_trailing;
 @property(retain, nonatomic) LPPointUnit *bottom; // @synthesize bottom=_bottom;
 @property(retain, nonatomic) LPPointUnit *leading; // @synthesize leading=_leading;
 @property(retain, nonatomic) LPPointUnit *top; // @synthesize top=_top;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_lp_CSSText;
 - (struct UIEdgeInsets)asInsetsForLTR:(_Bool)arg1;

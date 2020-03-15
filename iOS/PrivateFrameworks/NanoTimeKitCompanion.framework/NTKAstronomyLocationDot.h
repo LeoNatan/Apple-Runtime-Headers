@@ -28,6 +28,7 @@
 + (double)_defaultOuterDotDiameterForSizeClass:(unsigned long long)arg1;
 + (id)_defaultColor;
 + (struct CGSize)_defaultSize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) double pulseAlphaDelay; // @synthesize pulseAlphaDelay=_pulseAlphaDelay;
 @property(nonatomic) double pulseDuration; // @synthesize pulseDuration=_pulseDuration;
@@ -36,7 +37,6 @@
 @property(nonatomic) double outerDotDiameter; // @synthesize outerDotDiameter=_outerDotDiameter;
 @property(retain, nonatomic) UIColor *outerDotColor; // @synthesize outerDotColor=_outerDotColor;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)stopAnimation;
 - (void)startAnimation;

@@ -13,10 +13,10 @@
     CDUnknownBlockType _scannedCodeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scannedCodeHandler; // @synthesize scannedCodeHandler=_scannedCodeHandler;
 @property(nonatomic) int focusMode; // @synthesize focusMode=_focusMode;
 @property(nonatomic) int autoFocusRangeRestriction; // @synthesize autoFocusRangeRestriction=_autoFocusRangeRestriction;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 

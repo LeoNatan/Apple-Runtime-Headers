@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSBundle *_bundle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSMutableArray *orderedIdentifiers; // @synthesize orderedIdentifiers=_orderedIdentifiers;
 @property(retain, nonatomic) NSMutableDictionary *commandDictionary; // @synthesize commandDictionary=_commandDictionary;
 @property(retain, nonatomic) NSString *driverIdentifier; // @synthesize driverIdentifier=_driverIdentifier;
 @property(nonatomic) int brailleInputMode; // @synthesize brailleInputMode=_brailleInputMode;
 @property(retain, nonatomic) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
-- (void).cxx_destruct;
 
 @end
 

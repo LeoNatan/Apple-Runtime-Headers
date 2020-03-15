@@ -40,10 +40,10 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
 + (struct CGSize)artworkBoundingSizeWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *compactAdCardHairlineLayer; // @synthesize compactAdCardHairlineLayer=_compactAdCardHairlineLayer;
 @property(retain, nonatomic) UIView *adCardBackgroundView; // @synthesize adCardBackgroundView=_adCardBackgroundView;
 @property(copy, nonatomic) SKUISizeValue *artworkBoundingSize; // @synthesize artworkBoundingSize=_artworkBoundingSize;
-- (void).cxx_destruct;
 - (void)_performDefaultActionForViewElement:(id)arg1;
 - (double)_dividerHeight:(id)arg1;
 @property(readonly, nonatomic) NSString *impressionIdentifier;

@@ -17,6 +17,7 @@
 - (void)publishMomentShareWithUUID:(NSString *)arg1 reply:(void (^)(BOOL, NSURL *, NSError *))arg2;
 - (void)overrideSystemBudgetsForSyncSession:(BOOL)arg1 systemBudgets:(unsigned long long)arg2 reply:(void (^)(BOOL, NSError *))arg3;
 - (void)getSystemBudgetsWithReply:(void (^)(BOOL, BOOL, NSError *))arg1;
+- (void)getNotUploadedCount:(void (^)(unsigned long long, unsigned long long, unsigned long long, NSError *))arg1;
 - (void)getCurrentTransferProgress:(void (^)(unsigned long long, unsigned long long, unsigned long long, unsigned long long))arg1;
 - (void)rampingRequestForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 reply:(void (^)(BOOL, unsigned long long, NSError *))arg3;
 - (void)setCloudPhotoLibraryPauseState:(BOOL)arg1 reason:(short)arg2;

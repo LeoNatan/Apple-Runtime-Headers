@@ -20,6 +20,7 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long statusCode; // @synthesize statusCode=_statusCode;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSDictionary *httpHeaders; // @synthesize httpHeaders=_httpHeaders;
 @property(copy, nonatomic) NSString *httpMethod; // @synthesize httpMethod=_httpMethod;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)handleCompletion:(id)arg1;
 - (void)loadRequest:(id)arg1;
 - (void)cancel;

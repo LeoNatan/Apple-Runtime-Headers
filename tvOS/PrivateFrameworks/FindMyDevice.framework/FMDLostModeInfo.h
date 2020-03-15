@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *footnoteText; // @synthesize footnoteText=_footnoteText;
 @property(nonatomic) _Bool facetimeCapable; // @synthesize facetimeCapable=_facetimeCapable;
 @property(nonatomic) _Bool disableSlideToUnlock; // @synthesize disableSlideToUnlock=_disableSlideToUnlock;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool lostModeEnabled; // @synthesize lostModeEnabled=_lostModeEnabled;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -24,6 +24,7 @@
     CDUnknownBlockType _tableViewCellHook;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int responseType; // @synthesize responseType=_responseType;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
 @property(copy, nonatomic) CDUnknownBlockType tableViewCellHook; // @synthesize tableViewCellHook=_tableViewCellHook;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) CDUnknownBlockType participantSetRole; // @synthesize participantSetRole=_participantSetRole;
 @property(copy, nonatomic) CDUnknownBlockType participantRemoved; // @synthesize participantRemoved=_participantRemoved;
 @property(copy, nonatomic) CDUnknownBlockType participantTapped; // @synthesize participantTapped=_participantTapped;
-- (void).cxx_destruct;
 - (_Bool)_isValidRow:(long long)arg1;
 - (void)updateWithEvent:(id)arg1 editable:(_Bool)arg2;
 - (id)actionsForRow:(id)arg1;

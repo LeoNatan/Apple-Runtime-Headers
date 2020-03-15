@@ -18,12 +18,12 @@
 }
 
 + (long long)subsampleFactorForScale:(CDStruct_912cb5d2)arg1 additionalScale:(CDStruct_912cb5d2 *)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *sourceOptions; // @synthesize sourceOptions=_sourceOptions;
 @property(readonly) NSDictionary *pipelineSettings; // @synthesize pipelineSettings=_pipelineSettings;
 @property(readonly) NUSourceContainerNode *sourceContainer; // @synthesize sourceContainer=_sourceContainer;
 @property(readonly) long long appliedSubsampleFactor; // @synthesize appliedSubsampleFactor=_appliedSubsampleFactor;
 @property(readonly) long long subsampleFactor; // @synthesize subsampleFactor=_subsampleFactor;
-- (void).cxx_destruct;
 - (id)_evaluateVideoComposition:(out id *)arg1;
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_evaluateImageProperties:(out id *)arg1;

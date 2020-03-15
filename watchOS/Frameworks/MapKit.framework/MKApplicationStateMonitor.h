@@ -18,10 +18,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceBackboardServicesMonitoring; // @synthesize forceBackboardServicesMonitoring=_forceBackboardServicesMonitoring;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic, getter=isInBackground) _Bool inBackground; // @synthesize inBackground=_inBackground;
-- (void).cxx_destruct;
 - (void)stopObserving;
 - (void)_performSynchronouslyOnMainQueue:(CDUnknownBlockType)arg1;
 - (void)_handleApplicationStateChange:(id)arg1 interestedPID:(int)arg2;

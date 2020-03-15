@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_layoutMapTables;
 }
 
-@property(readonly, nonatomic) SKUILayoutCache *layoutCache; // @synthesize layoutCache=_layoutCache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUILayoutCache *layoutCache; // @synthesize layoutCache=_layoutCache;
 - (id)_layoutIndexForViewElement:(id)arg1 width:(long long)arg2;
 - (id)_existingLayoutForViewElement:(id)arg1 width:(long long)arg2;
 - (id)_createLayoutRequestForViewElement:(id)arg1 attributedString:(id)arg2 width:(long long)arg3;

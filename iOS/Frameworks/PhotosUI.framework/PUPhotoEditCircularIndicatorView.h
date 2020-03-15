@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_progressLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *progressLayer; // @synthesize progressLayer=_progressLayer;
 @property(retain, nonatomic) CAShapeLayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(nonatomic) double maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) double minValue; // @synthesize minValue=_minValue;
 @property(nonatomic) double currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) double thickness; // @synthesize thickness=_thickness;
-- (void).cxx_destruct;
 - (void)resetToDefaults;
 - (void)_updateProgressLayer;
 @property(retain, nonatomic) UIColor *ringColor;

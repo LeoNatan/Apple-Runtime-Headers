@@ -13,8 +13,8 @@
     NSMutableDictionary *_colorPresets;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *colorPresets; // @synthesize colorPresets=_colorPresets;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *colorPresets; // @synthesize colorPresets=_colorPresets;
 - (void)resetValues;
 - (id)keyForColor:(id)arg1;
 - (void)saveColorPreset:(id)arg1 forColor:(id)arg2;

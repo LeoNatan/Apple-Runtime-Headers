@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     AVPlayerController *_playerController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(nonatomic) _Bool shouldResumePlayback; // @synthesize shouldResumePlayback=_shouldResumePlayback;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;

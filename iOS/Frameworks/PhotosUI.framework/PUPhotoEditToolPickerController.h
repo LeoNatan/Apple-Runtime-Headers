@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     PUPhotoEditToolPickerSpec *_toolPickerSpec;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUPhotoEditToolPickerSpec *toolPickerSpec; // @synthesize toolPickerSpec=_toolPickerSpec;
 @property(nonatomic) double interToolSpacing; // @synthesize interToolSpacing=_interToolSpacing;
 @property(retain, nonatomic) NSArray *selectionIndicatorConstraints; // @synthesize selectionIndicatorConstraints=_selectionIndicatorConstraints;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *toolButtons; // @synthesize toolButtons=_toolButtons;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
-- (void).cxx_destruct;
 - (void)updateSelectionIndicatorConstraints;
 - (void)createSelectionIndicatorView;
 - (void)viewDidLayoutSubviews;

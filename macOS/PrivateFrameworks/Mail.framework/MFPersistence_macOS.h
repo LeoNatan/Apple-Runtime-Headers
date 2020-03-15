@@ -23,6 +23,7 @@
     EDServerMessagePersistenceFactory *_serverMessagePersistenceFactory;
 }
 
+- (void).cxx_destruct;
 - (id)serverMessagePersistenceFactory;
 - (id)searchableIndexManager;
 - (id)messagePersistence;
@@ -34,7 +35,6 @@
 - (id)conversationPersistence;
 - (void)setAccountsProvider:(id)arg1;
 - (id)accountsProvider;
-- (void).cxx_destruct;
 - (void)_configureSearchableIndexManagerIfNecessary;
 - (id)threadPersistence;
 - (id)initWithPropertyMapper:(id)arg1;

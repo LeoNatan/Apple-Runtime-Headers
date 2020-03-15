@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)requestWithReason:(id)arg1 information:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *reasonInformation; // @synthesize reasonInformation=_reasonInformation;
 @property(retain, nonatomic) NSString *reasonString; // @synthesize reasonString=_reasonString;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithReason:(id)arg1 information:(id)arg2;

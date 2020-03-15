@@ -17,8 +17,8 @@
     PKLinkedApplication *_linkedApplication;
 }
 
-@property(readonly, nonatomic) PKLinkedApplication *linkedApplication; // @synthesize linkedApplication=_linkedApplication;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKLinkedApplication *linkedApplication; // @synthesize linkedApplication=_linkedApplication;
 - (void)linkedApplicationDidChangeState:(id)arg1;
 - (void)tapped:(id)arg1;
 - (void)_updateWithIconImage:(id)arg1 animated:(_Bool)arg2;

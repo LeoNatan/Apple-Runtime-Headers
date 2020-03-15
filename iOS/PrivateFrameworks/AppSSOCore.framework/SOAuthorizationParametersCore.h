@@ -19,6 +19,7 @@
     long long _responseCode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long responseCode; // @synthesize responseCode=_responseCode;
 @property(nonatomic) _Bool useInternalExtensions; // @synthesize useInternalExtensions=_useInternalExtensions;
 @property(retain, nonatomic) NSData *auditTokenData; // @synthesize auditTokenData=_auditTokenData;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSDictionary *httpHeaders; // @synthesize httpHeaders=_httpHeaders;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

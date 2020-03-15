@@ -19,11 +19,11 @@
 + (id)buildRequiredOnlyWithIPAddress:(id)arg1 withResourcePath:(id)arg2;
 + (id)buildWithIPAddress:(id)arg1 withResourcePath:(id)arg2 withPort:(id)arg3 withForceTLS:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadForceTLS; // @synthesize payloadForceTLS=_payloadForceTLS;
 @property(copy, nonatomic) NSNumber *payloadPort; // @synthesize payloadPort=_payloadPort;
 @property(copy, nonatomic) NSString *payloadResourcePath; // @synthesize payloadResourcePath=_payloadResourcePath;
 @property(copy, nonatomic) NSString *payloadIPAddress; // @synthesize payloadIPAddress=_payloadIPAddress;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

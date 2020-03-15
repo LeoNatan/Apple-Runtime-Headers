@@ -18,10 +18,10 @@
     id <AFSiriTaskServiceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AFSiriTaskServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak AFSiriTaskService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)deliverSiriTask:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties

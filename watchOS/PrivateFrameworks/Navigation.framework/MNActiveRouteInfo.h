@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int alternateRouteIndex; // @synthesize alternateRouteIndex=_alternateRouteIndex;
 @property(retain, nonatomic) GEOComposedRouteTraffic *traffic; // @synthesize traffic=_traffic;
 @property(nonatomic) unsigned int displayRemainingMinutes; // @synthesize displayRemainingMinutes=_displayRemainingMinutes;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) GEOETATrafficUpdateResponse *etaResponse; // @synthesize etaResponse=_etaResponse;
 @property(retain, nonatomic) GEOETARoute *etaRoute; // @synthesize etaRoute=_etaRoute;
 @property(retain, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

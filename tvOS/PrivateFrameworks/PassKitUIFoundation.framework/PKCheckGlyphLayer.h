@@ -21,9 +21,9 @@
     id <PKCheckGlyphLayerDelegate> _checkGlyphDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool revealed; // @synthesize revealed=_revealed;
 @property(nonatomic) __weak id <PKCheckGlyphLayerDelegate> checkGlyphDelegate; // @synthesize checkGlyphDelegate=_checkGlyphDelegate;
-- (void).cxx_destruct;
 - (double)_updateCovered:(_Bool)arg1;
 - (double)setCovered:(_Bool)arg1 animated:(_Bool)arg2;
 - (double)setRevealed:(_Bool)arg1 animated:(_Bool)arg2;

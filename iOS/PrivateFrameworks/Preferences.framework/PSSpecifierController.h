@@ -18,12 +18,12 @@
     NSMutableArray *_groups;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *groups; // @synthesize groups=_groups;
 @property(retain, nonatomic) NSMutableArray *bundleControllers; // @synthesize bundleControllers=_bundleControllers;
 @property(retain, nonatomic) NSMutableArray *specifiers; // @synthesize specifiers=_specifiers;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(nonatomic) __weak UIViewController<PSSpecifierControllerDelegate> *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)specifierForID:(id)arg1;
 - (_Bool)getGroup:(long long *)arg1 row:(long long *)arg2 ofSpecifierAtIndex:(long long)arg3;
 - (_Bool)_getGroup:(long long *)arg1 row:(long long *)arg2 ofSpecifierAtIndex:(long long)arg3 groups:(id)arg4;

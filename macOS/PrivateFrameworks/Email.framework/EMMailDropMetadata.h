@@ -27,6 +27,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)mailDropMetadata;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(copy, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
-- (void).cxx_destruct;
 - (void)merge:(id)arg1;
 - (BOOL)isBannerWithMultiple;
 - (BOOL)isExpired;

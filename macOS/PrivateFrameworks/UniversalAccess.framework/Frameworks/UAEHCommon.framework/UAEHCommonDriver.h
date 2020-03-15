@@ -18,10 +18,10 @@
     NSXPCConnection *__hudXPCConnection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _notificationsPaused; // @synthesize _notificationsPaused=__notificationsPaused;
 @property(nonatomic) BOOL _didRegisterForNotifications; // @synthesize _didRegisterForNotifications=__didRegisterForNotifications;
 @property(retain, nonatomic) NSXPCConnection *_hudXPCConnection; // @synthesize _hudXPCConnection=__hudXPCConnection;
-- (void).cxx_destruct;
 - (BOOL)isSafeToQuit;
 - (void)_showTransientHUDForCurrentStateOfFeature:(id)arg1 enabled:(BOOL)arg2;
 - (void)_informDaemonOfSafeToQuit;

@@ -33,6 +33,7 @@
     unsigned long long _currentPressCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentPressCount; // @synthesize currentPressCount=_currentPressCount;
 @property(nonatomic) unsigned long long configuredMaximumPressCount; // @synthesize configuredMaximumPressCount=_configuredMaximumPressCount;
 @property(nonatomic) long long homeButtonType; // @synthesize homeButtonType=_homeButtonType;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) SBPressGestureRecognizer *buttonDownGestureRecognizer; // @synthesize buttonDownGestureRecognizer=_buttonDownGestureRecognizer;
 @property(retain, nonatomic) SBHardwareButtonGestureParameters *buttonGestureParameters; // @synthesize buttonGestureParameters=_buttonGestureParameters;
 @property(retain, nonatomic) SBLockHardwareButtonActions *buttonActions; // @synthesize buttonActions=_buttonActions;
-- (void).cxx_destruct;
 - (id)hardwareButtonGestureParameters;
 - (void)provider:(id)arg1 didUpdateButtonGestureParameters:(id)arg2;
 - (void)_reportAggdLoggingForButtonEventIsDownEvent:(_Bool)arg1;

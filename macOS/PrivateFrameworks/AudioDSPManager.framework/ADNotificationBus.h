@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)busWithDynamicBus:(shared_ptr_59c89e86)arg1;
-@property(nonatomic) shared_ptr_59c89e86 bus; // @synthesize bus=_bus;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) shared_ptr_59c89e86 bus; // @synthesize bus=_bus;
 - (void)unregisterDelegate:(id)arg1;
 - (id)registerDelegate:(id)arg1;
 - (void)signal:(id)arg1;

@@ -15,10 +15,10 @@
     NSDictionary *_autoSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *autoSettings; // @synthesize autoSettings=_autoSettings;
 @property(retain, nonatomic) NSString *maskUUID; // @synthesize maskUUID=_maskUUID;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)_debugDescriptionSuffix;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

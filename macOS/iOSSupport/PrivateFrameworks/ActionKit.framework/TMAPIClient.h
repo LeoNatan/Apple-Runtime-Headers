@@ -20,6 +20,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain, nonatomic) NSOperationQueue *defaultCallbackQueue; // @synthesize defaultCallbackQueue=_defaultCallbackQueue;
 @property(retain, nonatomic) JXHTTPOperationQueue *queue; // @synthesize queue=_queue;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSDictionary *customHeaders; // @synthesize customHeaders=_customHeaders;
 @property(copy, nonatomic) NSString *OAuthTokenSecret; // @synthesize OAuthTokenSecret=_OAuthTokenSecret;
 @property(copy, nonatomic) NSString *OAuthToken; // @synthesize OAuthToken=_OAuthToken;
-- (void).cxx_destruct;
 - (id)init;
 - (id)URLWithPath:(id)arg1;
 - (void)sendRequest:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;

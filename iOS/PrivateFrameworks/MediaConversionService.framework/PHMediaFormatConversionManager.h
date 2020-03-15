@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_queue> *_preflightQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *preflightQueue; // @synthesize preflightQueue=_preflightQueue;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
@@ -30,7 +31,6 @@
 @property(retain) NSObject<PHMediaFormatConversionImplementation> *conversionImplementation; // @synthesize conversionImplementation=_conversionImplementation;
 @property unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSURL *directoryForTemporaryFiles; // @synthesize directoryForTemporaryFiles=_directoryForTemporaryFiles;
-- (void).cxx_destruct;
 - (id)ut_objectsToBeDeallocatedWithReceiver;
 - (void)invalidate;
 - (void)cancellationRequestedForJob:(id)arg1;

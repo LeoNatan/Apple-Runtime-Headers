@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *standaloneGlances; // @synthesize standaloneGlances=_standaloneGlances;
 @property(readonly, nonatomic) NSNumber *sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(readonly, nonatomic) NSArray *applications; // @synthesize applications=_applications;
-- (void).cxx_destruct;
 - (id)initWithApplications:(id)arg1 UUID:(id)arg2 sequenceNumber:(id)arg3 standaloneGlances:(id)arg4;
 - (id)initWithApplications:(id)arg1 UUID:(id)arg2 sequenceNumber:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;

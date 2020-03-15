@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_DAAPShows;
 }
 
-@property(copy, nonatomic) NSArray *DAAPShows; // @synthesize DAAPShows=_DAAPShows;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *DAAPShows; // @synthesize DAAPShows=_DAAPShows;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)clear;

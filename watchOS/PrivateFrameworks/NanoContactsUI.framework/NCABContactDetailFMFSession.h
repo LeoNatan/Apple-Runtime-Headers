@@ -28,9 +28,9 @@
 + (id)locationDot;
 + (id)sharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSData *gridImageData; // @synthesize gridImageData=_gridImageData;
-- (void).cxx_destruct;
 - (void)_contactStoreDidChange:(id)arg1;
 - (void)_handleMapImageRequestResultWithData:(id)arg1 forLocation:(id)arg2;
 - (void)_generateMapImageForLocation:(id)arg1;

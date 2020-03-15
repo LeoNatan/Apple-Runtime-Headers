@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *momentUUID; // @synthesize momentUUID=_momentUUID;
 @property(readonly, nonatomic) NSString *assetUUID; // @synthesize assetUUID=_assetUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAssetUUID:(id)arg1 momentUUID:(id)arg2;

@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
-@property(nonatomic) __weak id <SKUISignInViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUISignInViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_layoutTextFieldsOffsetX:(double)arg1;
 - (double)_layoutLabels;
 - (void)_clearFieldsAndLabels;

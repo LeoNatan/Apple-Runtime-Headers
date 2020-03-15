@@ -39,6 +39,7 @@
     double _minPercentageSigmoidAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minPercentageSigmoidAlpha; // @synthesize minPercentageSigmoidAlpha=_minPercentageSigmoidAlpha;
 @property(nonatomic) double minPercentageSigmoidPivot; // @synthesize minPercentageSigmoidPivot=_minPercentageSigmoidPivot;
 @property(nonatomic) double minPercentageSigmoidRange; // @synthesize minPercentageSigmoidRange=_minPercentageSigmoidRange;
@@ -53,7 +54,6 @@
 @property(nonatomic) _Bool cancelScrollingIfTooMuchDrag; // @synthesize cancelScrollingIfTooMuchDrag=_cancelScrollingIfTooMuchDrag;
 @property(nonatomic) double maxScrollDistance; // @synthesize maxScrollDistance=_maxScrollDistance;
 @property(readonly, nonatomic) _Bool recognized; // @synthesize recognized=_recognized;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_loadFromSettings:(id)arg1;
 - (void)_updateScrollParameters;

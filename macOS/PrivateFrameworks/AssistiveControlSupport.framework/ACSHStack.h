@@ -16,9 +16,9 @@
     NSMutableArray *__queue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *_queue; // @synthesize _queue=__queue;
 @property(nonatomic) BOOL pushMovesDuplicatesToTop; // @synthesize pushMovesDuplicatesToTop=_pushMovesDuplicatesToTop;
-- (void).cxx_destruct;
 - (void)clear;
 - (id)description;
 - (void)push:(id)arg1;

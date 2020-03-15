@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *__snapshotView;
 }
 
-@property(readonly, nonatomic) UIView *_snapshotView; // @synthesize _snapshotView=__snapshotView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *_snapshotView; // @synthesize _snapshotView=__snapshotView;
 - (void)loadView;
 - (id)initWithViewController:(id)arg1;
 

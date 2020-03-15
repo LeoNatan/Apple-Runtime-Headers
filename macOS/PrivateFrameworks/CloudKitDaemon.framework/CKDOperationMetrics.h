@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *ranges; // @synthesize ranges=_ranges;
 @property(retain, nonatomic) NSMutableDictionary *fileCountByChunkProfile; // @synthesize fileCountByChunkProfile=_fileCountByChunkProfile;
 @property(retain, nonatomic) NSMutableDictionary *chunkCountByChunkProfile; // @synthesize chunkCountByChunkProfile=_chunkCountByChunkProfile;
@@ -64,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property double queueing; // @synthesize queueing=_queueing;
 @property double duration; // @synthesize duration=_duration;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)addCKSpecificMetricsFromMetrics:(id)arg1;

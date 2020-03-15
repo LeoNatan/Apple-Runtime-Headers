@@ -15,9 +15,9 @@
     NSURL *_accessoryBagURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *accessoryBagURL; // @synthesize accessoryBagURL=_accessoryBagURL;
 @property __weak id <HAPRelayPairingClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)requestAccessTokenForAccessoryIdentifier:(id)arg1 pairingToken:(id)arg2;
 - (void)requestControllerIdentifier;
 - (void)close;

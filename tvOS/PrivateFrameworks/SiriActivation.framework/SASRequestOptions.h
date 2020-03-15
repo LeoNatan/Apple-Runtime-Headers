@@ -49,6 +49,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentLockState; // @synthesize currentLockState=_currentLockState;
 @property(retain, nonatomic) NSDictionary *testingContext; // @synthesize testingContext=_testingContext;
 @property(retain, nonatomic) NSArray *contextAppInfosForSiriViewController; // @synthesize contextAppInfosForSiriViewController=_contextAppInfosForSiriViewController;
@@ -81,7 +82,6 @@
 @property(copy, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(retain, nonatomic) AFBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(copy, nonatomic) NSString *activationDeviceIdentifier; // @synthesize activationDeviceIdentifier=_activationDeviceIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_isTypeToSiriPermittedAndEnabledForRequestOptions;
 - (_Bool)isHTTRequestSource;
 @property(readonly, nonatomic, getter=isMessagesDirectAction) _Bool messagesDirectAction;

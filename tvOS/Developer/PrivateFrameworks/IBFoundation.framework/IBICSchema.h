@@ -77,6 +77,7 @@
 + (id)sharedInstance;
 + (void)setSuppressSchemaValidationAsserts:(_Bool)arg1;
 + (void)setSchemaProvidersPromise:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly) IBICRole *unassignedRole; // @synthesize unassignedRole=_unassignedRole;
 @property(readonly) IBICRole *assignedRole; // @synthesize assignedRole=_assignedRole;
 @property(readonly) IBICRole *detailRole; // @synthesize detailRole=_detailRole;
@@ -85,7 +86,6 @@
 @property(readonly) IBICPlatform *OSXPlatform; // @synthesize OSXPlatform=_OSXPlatform;
 @property(readonly) IBICPlatform *iOSPlatform; // @synthesize iOSPlatform=_iOSPlatform;
 @property(readonly) IBICIdiom *universalIdiom; // @synthesize universalIdiom=_universalIdiom;
-- (void).cxx_destruct;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;
 - (id)fileTypeWithIdentifier:(id)arg1;
 - (id)sizeWithPointSize:(struct CGSize)arg1;

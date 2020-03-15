@@ -16,10 +16,10 @@
     UIButton *_deleteButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <LUILogFilterCurrentPredicateTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_deleteButtonTapped:(id)arg1;
 - (id)_createDeleteButton;
 - (id)_createTitleLabel;

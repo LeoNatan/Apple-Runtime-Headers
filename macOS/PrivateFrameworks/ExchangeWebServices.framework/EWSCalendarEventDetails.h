@@ -23,6 +23,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL IsPrivate; // @synthesize IsPrivate=_IsPrivate;
 @property(nonatomic) BOOL IsReminderSet; // @synthesize IsReminderSet=_IsReminderSet;
 @property(nonatomic) BOOL IsException; // @synthesize IsException=_IsException;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *Location; // @synthesize Location=_Location;
 @property(copy, nonatomic) NSString *Subject; // @synthesize Subject=_Subject;
 @property(copy, nonatomic) NSString *ID; // @synthesize ID=_ID;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

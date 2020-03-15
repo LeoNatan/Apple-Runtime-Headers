@@ -47,6 +47,8 @@
 + (struct CGRect)rectForSelection:(id)arg1 withColumns:(id)arg2 useParagraphModeRects:(_Bool)arg3;
 + (struct CGRect)rectForSelection:(id)arg1 withColumns:(id)arg2;
 + (struct CGRect)caretRectForInsertionPoint:(id)arg1 withColumns:(id)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool textIsVertical; // @synthesize textIsVertical=_textIsVertical;
 @property(retain, nonatomic) id <TSWPStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) unsigned long long scaleTextPercent; // @synthesize scaleTextPercent=_scaleTextPercent;
@@ -63,8 +65,6 @@
 @property(nonatomic) struct CGAffineTransform transformFromWP; // @synthesize transformFromWP=_transform;
 @property(nonatomic) struct CGRect wpBounds; // @synthesize wpBounds=_frameBounds;
 @property(readonly, nonatomic) TSWPStorage *storage; // @synthesize storage=_storage;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)onlyHasAnchoredDrawable;
 - (id)singleLinePartitionedInfoAtStart:(_Bool)arg1;
 - (id)partitionedLayoutForInfo:(id)arg1;

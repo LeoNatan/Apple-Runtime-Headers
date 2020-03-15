@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HKDisplayTypeContextView *_contextView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKDisplayTypeContextView *contextView; // @synthesize contextView=_contextView;
 @property(readonly, nonatomic) HKInteractiveChartViewController *interactiveChartViewController; // @synthesize interactiveChartViewController=_interactiveChartViewController;
-- (void).cxx_destruct;
 - (double)preferredHeight;
 - (void)viewDidLoad;
 - (id)initWithInteractiveChartViewController:(id)arg1;

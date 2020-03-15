@@ -18,11 +18,11 @@
 
 + (struct UIEdgeInsets)insetsToCenterFirstAndLastItemsGivenContainerSize:(struct CGSize)arg1 itemSize:(struct CGSize)arg2;
 + (double)minimumInterItemSpacingForVisibileBoundsSize:(struct CGSize)arg1 defaultCellSize:(struct CGSize)arg2 engagedCellSize:(struct CGSize)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType interItemSpacingProvider; // @synthesize interItemSpacingProvider=_interItemSpacingProvider;
 @property(nonatomic) struct UIEdgeInsets engagementBoundsInsets; // @synthesize engagementBoundsInsets=_engagementBoundsInsets;
 @property(readonly, nonatomic) struct CGSize engagedCellSize; // @synthesize engagedCellSize=_engagedCellSize;
 @property(readonly, nonatomic) struct CGSize defaultCellSize; // @synthesize defaultCellSize=_defaultCellSize;
-- (void).cxx_destruct;
 - (struct CGRect)finalFrameForDisappearingElementAtOriginForVisibleBounds:(struct CGRect)arg1;
 - (struct CGRect)initialFrameForAppearingElementAtOriginForVisibleBounds:(struct CGRect)arg1;
 - (struct CGRect)frameForElementBeforeOriginForVisibleBounds:(struct CGRect)arg1;

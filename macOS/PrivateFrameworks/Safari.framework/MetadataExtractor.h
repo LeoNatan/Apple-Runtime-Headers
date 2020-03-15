@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSMetadataExtractor.h>
+#import <SafariSharedUI/WBSMetadataExtractor.h>
 
 __attribute__((visibility("hidden")))
 @interface MetadataExtractor : WBSMetadataExtractor

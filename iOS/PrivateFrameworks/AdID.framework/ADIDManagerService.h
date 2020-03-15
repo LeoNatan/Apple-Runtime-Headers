@@ -20,9 +20,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reconcileArray; // @synthesize reconcileArray=_reconcileArray;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (unsigned long long)delayForNewForceReconcileRequest;
 - (void)forceReconcile:(CDUnknownBlockType)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

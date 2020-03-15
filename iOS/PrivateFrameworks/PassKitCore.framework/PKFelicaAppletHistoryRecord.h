@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *transactionID; // @synthesize transactionID=_transactionID;
 @property(copy, nonatomic) NSNumber *amountType; // @synthesize amountType=_amountType;
 @property(copy, nonatomic) NSNumber *sectorCombination; // @synthesize sectorCombination=_sectorCombination;
 @property(copy, nonatomic) NSNumber *transactionType; // @synthesize transactionType=_transactionType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -21,6 +21,7 @@
     UIView *_bottomRule;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requestPileSuppression; // @synthesize requestPileSuppression=_requestPileSuppression;
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) UIView *bottomRule; // @synthesize bottomRule=_bottomRule;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) id <PKPassFooterContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_buttonWithTitle:(id)arg1;
 - (void)_infoButtonPressed:(id)arg1;
 - (void)_setRequestPileSuppression:(_Bool)arg1;

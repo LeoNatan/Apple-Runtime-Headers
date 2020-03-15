@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int syncAttempts; // @synthesize syncAttempts;
 @property(nonatomic) int ear; // @synthesize ear=_ear;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(nonatomic) unsigned char index; // @synthesize index=_index;
 @property(nonatomic) long long category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isMixingStream;
 - (_Bool)isStream;

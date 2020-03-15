@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) STMediaChannel *channel; // @synthesize channel=_channel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) STMediaChannel *channel; // @synthesize channel=_channel;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_initWithChannel:(id)arg1;

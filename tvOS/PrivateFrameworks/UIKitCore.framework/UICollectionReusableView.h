@@ -26,9 +26,9 @@
     NSString *_reuseIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_arePreferredAttributesValid) _Bool preferredAttributesValid; // @synthesize preferredAttributesValid=_preferredAttributesValid;
 @property(copy, nonatomic, setter=_setReuseIdentifier:) NSString *reuseIdentifier; // @synthesize reuseIdentifier=_reuseIdentifier;
-- (void).cxx_destruct;
 @property(nonatomic, getter=_shouldConstrainHeight, setter=_setShouldConstrainHeight:) _Bool shouldConstrainHeight;
 @property(nonatomic, getter=_shouldConstrainWidth, setter=_setShouldConstrainWidth:) _Bool shouldConstrainWidth;
 - (void)setEditing:(_Bool)arg1;

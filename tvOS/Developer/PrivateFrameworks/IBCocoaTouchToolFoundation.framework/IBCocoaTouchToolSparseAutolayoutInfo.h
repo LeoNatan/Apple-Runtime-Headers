@@ -13,8 +13,8 @@
     IBCocoaTouchToolObjectPackage *_objectPackage;
 }
 
-@property(retain, nonatomic) IBCocoaTouchToolObjectPackage *objectPackage; // @synthesize objectPackage=_objectPackage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IBCocoaTouchToolObjectPackage *objectPackage; // @synthesize objectPackage=_objectPackage;
 - (void)addObject:(id)arg1 toParent:(id)arg2;
 - (Class)autolayoutEngineClass;
 - (Class)arbitrationUnitClass;

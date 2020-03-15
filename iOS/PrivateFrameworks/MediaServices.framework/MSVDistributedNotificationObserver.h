@@ -20,12 +20,12 @@
 }
 
 + (id)observerWithDistributedName:(id)arg1 localName:(id)arg2 queue:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfoForLocalNotification; // @synthesize userInfoForLocalNotification=_userInfoForLocalNotification;
 @property(nonatomic) __weak id <MSVDistributedNotificationObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSString *localName; // @synthesize localName=_localName;
 @property(readonly, nonatomic) NSString *distributedName; // @synthesize distributedName=_distributedName;
-- (void).cxx_destruct;
 - (void)_handleDistributedNotificationWithNotifyToken:(int)arg1;
 - (int)notifyToken;
 - (void)dealloc;

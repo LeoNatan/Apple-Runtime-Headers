@@ -14,8 +14,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) HMDRemoteLoginCompanionAuthenticationRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMDRemoteLoginCompanionAuthenticationRequest *request; // @synthesize request=_request;
 - (void)_authenticateAccount:(id)arg1 alreadyExists:(BOOL)arg2 withCompanionDevice:(id)arg3;
 - (void)_authenticate;
 - (void)authenticate;

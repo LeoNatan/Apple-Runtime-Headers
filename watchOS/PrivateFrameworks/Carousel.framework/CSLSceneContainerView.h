@@ -19,12 +19,12 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool displaysDebugFrames; // @synthesize displaysDebugFrames=_displaysDebugFrames;
 @property(nonatomic) unsigned int displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) CSLUIApplicationIconDownloadProgressView *downloadProgressView; // @synthesize downloadProgressView=_downloadProgressView;
 @property(retain, nonatomic) CSLActivateUIApplicationView *activationView; // @synthesize activationView=_activationView;
 @property(retain, nonatomic) UIView<FBSceneHostView> *contextHostView; // @synthesize contextHostView=_contextHostView;
-- (void).cxx_destruct;
 - (id)debugColorForDisplayMode:(unsigned int)arg1;
 - (void)updateDebugFramesWithDisplayMode:(unsigned int)arg1;
 - (void)_updateViewVisibilityForDisplayMode:(unsigned int)arg1;

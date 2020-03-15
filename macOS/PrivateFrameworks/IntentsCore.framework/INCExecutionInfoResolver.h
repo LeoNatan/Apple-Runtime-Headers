@@ -16,8 +16,8 @@
 
 + (id)defaultResolver;
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSDictionary *_counterpartMapping; // @synthesize _counterpartMapping=__counterpartMapping;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *_counterpartMapping; // @synthesize _counterpartMapping=__counterpartMapping;
 @property(readonly, nonatomic) INCExecutionCounterpartMapper *_counterpartMapper; // @synthesize _counterpartMapper;
 - (id)_resolveUserActivityExecutionInfoUsingCounterparts:(id)arg1;
 - (id)_resolveIntentExecutionInfoUsingCounterparts:(id)arg1;

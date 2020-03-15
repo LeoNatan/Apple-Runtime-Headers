@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _descriptionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType descriptionBlock; // @synthesize descriptionBlock=_descriptionBlock;
 @property(copy, nonatomic) CDUnknownBlockType decodingBlock; // @synthesize decodingBlock=_decodingBlock;
 @property(copy, nonatomic) CDUnknownBlockType encodingBlock; // @synthesize encodingBlock=_encodingBlock;
-- (void).cxx_destruct;
 - (void)applyTo:(id)arg1;
 - (id)initWithEncodingBlock:(CDUnknownBlockType)arg1 decodingBlock:(CDUnknownBlockType)arg2 descriptionBlock:(CDUnknownBlockType)arg3;
 

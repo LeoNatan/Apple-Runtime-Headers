@@ -16,11 +16,11 @@
     NSArray *_lowerItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lowerItems; // @synthesize lowerItems=_lowerItems;
 @property(retain, nonatomic) NSArray *upperItems; // @synthesize upperItems=_upperItems;
 @property(nonatomic) int lowerTemplateType; // @synthesize lowerTemplateType=_lowerTemplateType;
 @property(nonatomic) int upperTemplateType; // @synthesize upperTemplateType=_upperTemplateType;
-- (void).cxx_destruct;
 - (void)adjustVerticalPositionForUpperMediumLabel:(id)arg1;
 - (void)layoutUpperItemsWithLeftGroupAtGridLine:(int)arg1;
 - (void)layoutFullWidthGroupItem:(id)arg1 withCompactHeight:(float)arg2 regularHeight:(float)arg3;

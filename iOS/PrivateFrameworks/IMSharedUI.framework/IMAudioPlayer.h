@@ -23,13 +23,13 @@
 
 + (id)audioPlayerWithContentsOfURL:(id)arg1 shouldUseAVPlayer:(_Bool)arg2;
 + (id)audioPlayerWithContentsOfURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMDisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) double prevCurrentTime; // @synthesize prevCurrentTime=_prevCurrentTime;
 @property(retain, nonatomic) IMInternalAVAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(nonatomic) __weak id <IMAudioPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSURL *audioURL; // @synthesize audioURL=_audioURL;
-- (void).cxx_destruct;
 - (void)internalAVAudioPlayerDidPrepareAudioForPlaying:(id)arg1 successfully:(_Bool)arg2;
 - (void)internalAudioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
 @property(nonatomic) float volume;

@@ -14,8 +14,8 @@
     id <UITraitEnvironment> _traitEnvironment;
 }
 
-@property(readonly, nonatomic) __weak id <UITraitEnvironment> traitEnvironment; // @synthesize traitEnvironment=_traitEnvironment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <UITraitEnvironment> traitEnvironment; // @synthesize traitEnvironment=_traitEnvironment;
 @property(readonly, nonatomic) _Bool usesDarkTheme;
 @property(readonly, nonatomic) unsigned long long barTintStyle;
 @property(readonly, nonatomic) _Bool allowsReopeningClosedTabs;

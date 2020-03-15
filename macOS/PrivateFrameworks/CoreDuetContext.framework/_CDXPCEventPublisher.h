@@ -20,13 +20,13 @@
 }
 
 + (id)eventPublisherWithStreamName:(const char *)arg1 delegate:(id)arg2 queue:(id)arg3 log:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingSendEvents; // @synthesize pendingSendEvents=_pendingSendEvents;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <_CDXPCEventPublisherDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *streamName; // @synthesize streamName=_streamName;
 @property(retain, nonatomic) NSObject<OS_xpc_event_publisher> *publisher; // @synthesize publisher=_publisher;
-- (void).cxx_destruct;
 - (void)removeToken:(unsigned long long)arg1;
 - (void)addToken:(unsigned long long)arg1 descriptor:(id)arg2 userID:(unsigned int)arg3;
 - (void)sendEvent:(id)arg1 toSubscriber:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;

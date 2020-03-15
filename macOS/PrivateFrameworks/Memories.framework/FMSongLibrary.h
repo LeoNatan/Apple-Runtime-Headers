@@ -21,6 +21,7 @@
     long long _networkStatus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long networkStatus; // @synthesize networkStatus=_networkStatus;
 @property(retain, nonatomic) FlexReachability *flexReachability; // @synthesize flexReachability=_flexReachability;
 @property(retain, nonatomic) FlexCloudManager *cloudManager; // @synthesize cloudManager=_cloudManager;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableArray *songs; // @synthesize songs=_songs;
 @property(nonatomic) BOOL contactedCloud; // @synthesize contactedCloud=_contactedCloud;
 @property(readonly, nonatomic) BOOL networkingIsDisabled; // @synthesize networkingIsDisabled=_networkingIsDisabled;
-- (void).cxx_destruct;
 - (BOOL)supportForCloud;
 - (void)purgeAllLocalCachedAssetsWithIDs:(id)arg1;
 - (void)requestDownloadOfAllAssetsWithIDs:(id)arg1 withOptions:(id)arg2;

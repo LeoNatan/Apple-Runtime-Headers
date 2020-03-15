@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *attributesMap; // @synthesize attributesMap=_attributesMap;
 @property(retain) NSArray *cachedSamples; // @synthesize cachedSamples=_cachedSamples;
 @property(nonatomic) long long underlyingBufferLength; // @synthesize underlyingBufferLength=_underlyingBufferLength;
@@ -34,7 +35,6 @@
 @property(readonly, retain) MXMSampleTimeSeries *timeIndex; // @synthesize timeIndex=_timeIndex;
 @property(readonly) NSUnit *unit; // @synthesize unit=_unit;
 @property(readonly) MXMSampleTag *tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (void)_appendSample:(id)arg1;
 - (void)_appendSet:(id)arg1;
 - (void)_appendDoubleValue:(double)arg1 timestamp:(unsigned long long)arg2;

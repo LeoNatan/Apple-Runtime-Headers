@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     double _topInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
 @property(nonatomic) double topInset; // @synthesize topInset=_topInset;
-- (void).cxx_destruct;
 - (void)describeInto:(id)arg1;
 - (void)configureWithoutShadow;
 - (void)configureShadowForBarStyle:(long long)arg1;

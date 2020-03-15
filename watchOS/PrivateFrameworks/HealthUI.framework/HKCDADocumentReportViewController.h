@@ -25,6 +25,7 @@
 }
 
 + (id)xmlToHTMLTranslator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *javascriptOperationQueue; // @synthesize javascriptOperationQueue=_javascriptOperationQueue;
 @property(nonatomic) int currentHighlightedHit; // @synthesize currentHighlightedHit=_currentHighlightedHit;
 @property(nonatomic) int hitCount; // @synthesize hitCount=_hitCount;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(readonly, nonatomic) UIView *disclosureView; // @synthesize disclosureView=_disclosureView;
 @property(readonly) NSData *documentData; // @synthesize documentData=_documentData;
-- (void).cxx_destruct;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)searchBarChangeSearch:(id)arg1 searchString:(id)arg2;
 - (void)searchBarDoneAction:(id)arg1;

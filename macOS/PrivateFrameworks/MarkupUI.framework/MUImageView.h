@@ -14,9 +14,9 @@
     NSCursor *_annotationCursor;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCursor *annotationCursor; // @synthesize annotationCursor=_annotationCursor;
 @property __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
-- (void).cxx_destruct;
 - (void)cursorUpdate:(id)arg1;
 
 @end

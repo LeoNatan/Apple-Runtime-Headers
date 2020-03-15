@@ -14,9 +14,9 @@
     NSString *_key;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) CALayer *targetLayer; // @synthesize targetLayer=_targetLayer;
-- (void).cxx_destruct;
 - (id)initWithTargetLayer:(id)arg1 key:(id)arg2;
 
 @end

@@ -19,10 +19,10 @@
     SXDragManager *_dragManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXDragManager *dragManager; // @synthesize dragManager=_dragManager;
 @property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 @property(retain, nonatomic) NSArray *componentViews; // @synthesize componentViews=_componentViews;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)allowHierarchyRemoval;
 - (_Bool)userInteractable;

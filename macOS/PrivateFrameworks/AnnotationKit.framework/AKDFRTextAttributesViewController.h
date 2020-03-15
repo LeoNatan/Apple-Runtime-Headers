@@ -18,13 +18,13 @@
     NSStepperTouchBarItem *_textSizeStepperItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSStepperTouchBarItem *textSizeStepperItem; // @synthesize textSizeStepperItem=_textSizeStepperItem;
 @property(retain) NSButton *underlineButton; // @synthesize underlineButton=_underlineButton;
 @property(retain) NSButton *italicsButton; // @synthesize italicsButton=_italicsButton;
 @property(retain) NSButton *boldButton; // @synthesize boldButton=_boldButton;
 @property(retain) NSStackView *textStyleView; // @synthesize textStyleView=_textStyleView;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)textStyleAction:(id)arg1;
 - (void)_fontSizeDidChange:(id)arg1;
 - (void)syncFontsToUI:(id)arg1;

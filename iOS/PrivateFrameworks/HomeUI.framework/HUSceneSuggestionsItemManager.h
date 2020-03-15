@@ -14,9 +14,9 @@
     HFActionSetSuggestionItemProvider *_suggestionItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFActionSetSuggestionItemProvider *suggestionItemProvider; // @synthesize suggestionItemProvider=_suggestionItemProvider;
 @property(retain, nonatomic) HFItem *addCustomSceneItem; // @synthesize addCustomSceneItem=_addCustomSceneItem;
-- (void).cxx_destruct;
 - (id)_currentSectionIdentifiers;
 - (id)_sectionIdentifierForItem:(id)arg1;
 - (id)_titleForSectionWithIdentifier:(id)arg1;

@@ -18,8 +18,8 @@
 }
 
 + (id)observerWithScheduler:(id)arg1;
-@property(readonly) NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
+@property(readonly) NSArray *results; // @synthesize results=_results;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidReceiveResult:(id)arg1;

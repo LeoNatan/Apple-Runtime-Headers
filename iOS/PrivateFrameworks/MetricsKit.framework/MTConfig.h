@@ -16,10 +16,10 @@
     NSDictionary *_debugSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *debugSource; // @synthesize debugSource=_debugSource;
 @property(nonatomic) long long eventDataTimeout; // @synthesize eventDataTimeout=_eventDataTimeout;
 @property(nonatomic) __weak id <MTConfigDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)configValueForKeyPath:(id)arg1 default:(id)arg2;
 - (id)computeWithConfigSources:(CDUnknownBlockType)arg1;
 - (void)applyDeRes:(id)arg1 sources:(id)arg2;

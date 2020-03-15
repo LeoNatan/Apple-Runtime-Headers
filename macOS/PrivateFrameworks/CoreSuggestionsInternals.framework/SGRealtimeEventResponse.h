@@ -16,11 +16,11 @@
     NSString *_templateShortName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *templateShortName; // @synthesize templateShortName=_templateShortName;
 @property(readonly, nonatomic) SGCuratedEventKey *duplicateEventKey; // @synthesize duplicateEventKey=_duplicateEventKey;
 @property(readonly, nonatomic) SGEntity *entity; // @synthesize entity=_entity;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)initCancellationOfCuratedEvent:(id)arg1 templateShortName:(id)arg2 entity:(id)arg3;
 - (id)initUpdatedEventWithEntity:(id)arg1 curatedEventKey:(id)arg2;
 - (id)initDuplicateOfCuratedEvent:(id)arg1 withEntity:(id)arg2;

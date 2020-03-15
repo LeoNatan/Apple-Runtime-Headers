@@ -15,10 +15,10 @@
     ENAccountIdentity *_accountIdentity;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENAccountIdentity *accountIdentity; // @synthesize accountIdentity=_accountIdentity;
 @property(retain, nonatomic) ENGroupContext *groupContext; // @synthesize groupContext=_groupContext;
 @property(retain, nonatomic) IDSCloudKitContainer *cloudKitContainer; // @synthesize cloudKitContainer=_cloudKitContainer;
-- (void).cxx_destruct;
 
 @end
 

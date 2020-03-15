@@ -14,9 +14,9 @@
     NSArray *_properties;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) Class implementationClass; // @synthesize implementationClass=_implementationClass;
-- (void).cxx_destruct;
 - (_Bool)isSuperclassAlsoValueType;
 
 @end

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 + (float)continuousCornerRadiusForSize:(struct CGSize)arg1;
 + (id)circleShape;
 + (id)continuousRoundedRectShape;
+- (void).cxx_destruct;
 @property float lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain) ISColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(retain) ISColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 - (id)imageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (id)_init;
 

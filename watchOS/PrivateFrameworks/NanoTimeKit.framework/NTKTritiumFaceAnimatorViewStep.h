@@ -15,9 +15,9 @@
 }
 
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 view:(id)arg3 scale:(float)arg4 scaleType:(int)arg5 brightness:(float)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) float brightness; // @synthesize brightness=_brightness;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)setIsTritiumOn:(_Bool)arg1 progress:(float)arg2 faceView:(id)arg3;
 
 @end

@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     id <OCDReaderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <OCDReaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isThumbnail; // @synthesize isThumbnail=mIsThumbnail;
 @property(retain, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
 @property(retain, nonatomic) NSError *startError; // @synthesize startError=mStartError;
 @property(retain, nonatomic) NSData *data; // @synthesize data=mData;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=mFileName;
-- (void).cxx_destruct;
 - (void)setStartErrorMessageFromException:(id)arg1;
 - (id)initWithCancelDelegate:(id)arg1;
 - (_Bool)verifyFileFormat;

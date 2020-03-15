@@ -10,7 +10,7 @@
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CSLPIMinorDetentAssertion, NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@class CSLPIMinorDetentAssertion, NSDateFormatter, NSDictionary, NSMutableSet, NSNumber, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 
 @interface NTKSolarFaceView : NTKDigitalFaceView <NTKTimeView, PUICCrownInputSequencerDelegate, UIGestureRecognizerDelegate>
 {
@@ -53,8 +53,8 @@
     UITapGestureRecognizer *_viewModeTapGesture;
     int _previousViewMode;
     int _nextViewMode;
-    struct NSNumber *_clockTimerToken;
-    struct NSString *_locationManagerToken;
+    NSNumber *_clockTimerToken;
+    NSString *_locationManagerToken;
     PUICCrownInputSequencer *_crownSequencer;
     UILabel *_scrubLabel;
     UILabel *_overrideDateLabel;

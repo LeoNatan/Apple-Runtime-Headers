@@ -23,9 +23,9 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)_signaturesFolderPath;
 + (id)allSignaturesAccount;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFSyncedSignaturesFile *syncedFile; // @synthesize syncedFile=_syncedFile;
 @property(nonatomic) BOOL isDirty; // @synthesize isDirty=_isDirty;
-- (void).cxx_destruct;
 - (void)configurePopUpButton:(id)arg1 forAccount:(id)arg2 defaultSignature:(id)arg3 selectionMethod:(long long)arg4 showAccount:(BOOL)arg5;
 @property(nonatomic) BOOL placeSignatureAboveQuotedText;
 - (void)unsetShowsComposeAccessoryView;

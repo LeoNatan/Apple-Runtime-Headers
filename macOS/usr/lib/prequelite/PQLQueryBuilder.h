@@ -16,8 +16,8 @@
     NSError *lastError;
 }
 
-@property(retain, nonatomic) NSError *lastError; // @synthesize lastError;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *lastError; // @synthesize lastError;
 - (id)bindObjectParameter:(id)arg1;
 - (id)bindUnsignedLongParameter:(unsigned long long)arg1;
 - (id)bindLongParameter:(long long)arg1;

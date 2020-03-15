@@ -22,12 +22,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(retain, nonatomic) NSString *hostAppName; // @synthesize hostAppName=_hostAppName;
 @property(nonatomic) _Bool shouldPrompt; // @synthesize shouldPrompt=_shouldPrompt;
 @property(retain, nonatomic) NSData *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

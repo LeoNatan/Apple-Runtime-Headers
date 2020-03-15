@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <CNNSFileManager> _fileManager;
 }
 
-@property(readonly) id <CNNSFileManager> fileManager; // @synthesize fileManager=_fileManager;
 - (void).cxx_destruct;
+@property(readonly) id <CNNSFileManager> fileManager; // @synthesize fileManager=_fileManager;
 - (id)description;
 - (id)initWithFileManager:(id)arg1;
 - (id)init;

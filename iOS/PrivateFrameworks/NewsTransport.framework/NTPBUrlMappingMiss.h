@@ -18,10 +18,10 @@
 }
 
 + (Class)pathsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *paths; // @synthesize paths=_paths;
 @property(retain, nonatomic) NSString *host; // @synthesize host=_host;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

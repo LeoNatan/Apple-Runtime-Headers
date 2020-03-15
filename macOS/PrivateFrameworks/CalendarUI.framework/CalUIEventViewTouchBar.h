@@ -38,6 +38,7 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSTouchBar *invitationReponseTouchBar; // @synthesize invitationReponseTouchBar=_invitationReponseTouchBar;
 @property(retain) NSSegmentedControl *invitationResponseControl; // @synthesize invitationResponseControl=_invitationResponseControl;
 @property(retain) CalUIEventViewReportJunkControl *reportJunkControl; // @synthesize reportJunkControl=_reportJunkControl;
@@ -59,7 +60,6 @@
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CalUIEventViewTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (BOOL)allDayModificationsAllowed;
 - (void)datePickerAllDayChanged;
 - (void)datePickerTimeChanged;

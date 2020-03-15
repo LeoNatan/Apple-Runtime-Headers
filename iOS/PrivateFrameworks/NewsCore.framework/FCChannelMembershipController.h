@@ -13,8 +13,8 @@
     FCChannelMembershipRecordSource *_recordSource;
 }
 
-@property(readonly, nonatomic) FCChannelMembershipRecordSource *recordSource; // @synthesize recordSource=_recordSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCChannelMembershipRecordSource *recordSource; // @synthesize recordSource=_recordSource;
 - (id)cachedChannelMembershipsForIDs:(id)arg1;
 - (id)channelMembershipsFromHeldRecords:(id)arg1;
 - (void)fetchChannelMembershipsForIDs:(id)arg1 maximumCachedAge:(double)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -19,10 +19,10 @@
 + (id)configurationWithMinimumExpirationTimeout:(double)arg1 maximumExpirationTimeout:(double)arg2;
 + (id)configurationWithMaximumExpirationTimeout:(double)arg1;
 + (id)configurationWithMinimumExpirationTimeout:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long precedence; // @synthesize precedence=_precedence;
 @property(retain, nonatomic, getter=_boxed_maxExpirationTimeout, setter=_setBoxed_maxExpirationTimeout:) NSNumber *boxed_maxExpirationTimeout; // @synthesize boxed_maxExpirationTimeout=_boxed_maxExpirationTimeout;
 @property(retain, nonatomic, getter=_boxed_minExpirationTimeout, setter=_setBoxed_minExpirationTimeout:) NSNumber *boxed_minExpirationTimeout; // @synthesize boxed_minExpirationTimeout=_boxed_minExpirationTimeout;
-- (void).cxx_destruct;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

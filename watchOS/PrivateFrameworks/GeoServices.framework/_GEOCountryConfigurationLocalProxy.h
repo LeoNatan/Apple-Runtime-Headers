@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 - (void)didChangePairedDeviceReachability:(_Bool)arg1;
 - (void)updateCountryCodeWithCallbackQueue:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)_updateCountryCodeWithCallbackQueue:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (void)_determineGeoIPCountryCode:(CDUnknownBlockType)arg1;
+- (void)_determineCompanionCountryCode:(CDUnknownBlockType)arg1;
 - (void)_determineCurrentCountryCode:(CDUnknownBlockType)arg1;
 - (void)_scheduleUpdate;
 - (void)_reachabilityChanged:(id)arg1;

@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) unsigned long long machtime; // @synthesize machtime=_machtime;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
-- (void).cxx_destruct;
 - (id)_typeToString:(long long)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

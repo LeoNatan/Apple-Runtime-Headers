@@ -23,13 +23,13 @@
     AVTUIEnvironment *_environment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) _AVTAvatarRecordImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(readonly, nonatomic) AVTAvatarLibraryModel *model; // @synthesize model=_model;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <AVTAvatarLibraryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)insertItemsAtIndexes:(id)arg1 deleteItemsAtIndexes:(id)arg2 reloadItemsAtIndexes:(id)arg3;
 - (void)dismissController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentUIViewController:(id)arg1 forItem:(id)arg2;

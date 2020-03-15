@@ -26,8 +26,8 @@
     id <PFCoalescerDelegate> _delegate;
 }
 
-@property(readonly) __weak id <PFCoalescerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <PFCoalescerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long processingDelay;
 @property(nonatomic) unsigned long long coalescingInterval;
 @property(nonatomic) unsigned long long maxActivityDelay;

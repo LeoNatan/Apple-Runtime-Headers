@@ -32,6 +32,7 @@
 
 + (id)_genreNameForID:(long long)arg1;
 + (id)_localizedFolderNameForName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool fakingRequiresHighResolution; // @synthesize fakingRequiresHighResolution=_fakingRequiresHighResolution;
 @property(readonly, nonatomic) _Bool requiresHighResolution; // @synthesize requiresHighResolution=_requiresHighResolution;
 @property(readonly, nonatomic) long long whitePointAdaptivityStyle; // @synthesize whitePointAdaptivityStyle=_whitePointAdaptivityStyle;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(readonly, nonatomic) _Bool canChangeBackgroundStyle; // @synthesize canChangeBackgroundStyle=_canChangeBackgroundStyle;
 @property(readonly, nonatomic) long long requestedStatusBarStyle; // @synthesize requestedStatusBarStyle=_requestedStatusBarStyle;
-- (void).cxx_destruct;
 - (void)_lock_loadFolderNamesIfNecessary;
 - (_Bool)statusBarForcedHiddenForInterfaceOrientation:(long long)arg1 onDisplay:(id)arg2;
 - (_Bool)statusBarHiddenForInterfaceOrientation:(long long)arg1 onDisplay:(id)arg2;

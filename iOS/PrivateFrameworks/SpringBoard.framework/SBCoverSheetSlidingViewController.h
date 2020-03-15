@@ -39,6 +39,7 @@
     struct CGPoint _lastTouchLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *completionGroup; // @synthesize completionGroup=_completionGroup;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) long long groupCount; // @synthesize groupCount=_groupCount;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) SBScreenEdgePanGestureRecognizer *dismissGestureRecognizer; // @synthesize dismissGestureRecognizer=_dismissGestureRecognizer;
 @property(nonatomic) __weak id <SBCoverSheetSlidingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIViewController<SBCoverSheetSlidingViewControllerContentViewController> *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 - (void)_studyLogForCompletionOfTransitionToPresented:(_Bool)arg1;
 - (void)_studyLogForGestureRecognizerState:(long long)arg1 bounds:(struct CGRect)arg2 position:(double)arg3 velocity:(double)arg4;
 - (void)_updateCoverSheetDismissSettings:(id)arg1;
@@ -104,7 +104,7 @@
 - (void)_handleDismissGesture:(id)arg1;
 - (void)_handlePresentGesture:(id)arg1;
 - (void)_dismissCoverSheetAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_presentCoverSheetAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_presentCoverSheetAnimated:(_Bool)arg1 forUserGesture:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (_Bool)isTransitioning;
 - (long long)participantState;
 - (id)coverSheetIdentifier;
@@ -125,7 +125,7 @@
 - (_Bool)_isTransitioning;
 - (_Bool)isDismissGestureActive;
 - (_Bool)isPresentGestureActive;
-- (void)setPresented:(_Bool)arg1 animated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)setPresented:(_Bool)arg1 forUserGesture:(_Bool)arg2 animated:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithContentViewController:(id)arg1 canBePulledDown:(_Bool)arg2 canBePulledUp:(_Bool)arg3 dismissalPreemptingGestureRecognizer:(id)arg4;

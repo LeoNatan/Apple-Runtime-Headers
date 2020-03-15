@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UICollectionView *_collectionView;
 }
 
-@property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void)applyChangeDetails:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)transitionFromDataSource:(id)arg1 toDataSource:(id)arg2 changeHistory:(id)arg3 animated:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)initWithCollectionView:(id)arg1;

@@ -30,6 +30,7 @@
     _TVLTextEntryFooterView *_footerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TVLTextEntryFooterView *footerView; // @synthesize footerView=_footerView;
 @property(readonly, nonatomic) TVTextEntryHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(readonly, nonatomic) _TVLTextEntryContentView *contentView; // @synthesize contentView=_contentView;
@@ -45,7 +46,6 @@
 @property(copy, nonatomic) NSString *messageText; // @synthesize messageText=_messageText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(copy, nonatomic) NSString *initialTextFieldText; // @synthesize initialTextFieldText=_initialTextFieldText;
-- (void).cxx_destruct;
 - (void)textEntryControllerDidFinish:(id)arg1;
 - (void)_setFootnoteLabelText:(id)arg1;
 - (id)_messageStringAttributes;

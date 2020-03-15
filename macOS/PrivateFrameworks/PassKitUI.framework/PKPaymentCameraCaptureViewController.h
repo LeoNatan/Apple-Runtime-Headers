@@ -21,13 +21,13 @@
     NSArray *_outputObjects;
 }
 
+- (void).cxx_destruct;
 @property BOOL cameraReaderStarted; // @synthesize cameraReaderStarted=_cameraReaderStarted;
 @property(retain, nonatomic) NSArray *outputObjects; // @synthesize outputObjects=_outputObjects;
 @property(retain, nonatomic) NSBox *cameraReaderContainer; // @synthesize cameraReaderContainer=_cameraReaderContainer;
 @property(retain, nonatomic) CRCameraReader *cameraReader; // @synthesize cameraReader=_cameraReader;
 @property BOOL hidePlacementText; // @synthesize hidePlacementText=_hidePlacementText;
 @property(nonatomic) __weak id <PKPaymentCameraCaptureDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)nibBundle;
 - (void)cameraReader:(id)arg1 didRecognizeObjects:(id)arg2;
 - (void)cameraReaderDidEnd:(id)arg1;

@@ -15,10 +15,10 @@
     NSString *_url;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *listId; // @synthesize listId=_listId;
 @property(retain, nonatomic) NSString *reminderId; // @synthesize reminderId=_reminderId;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1;
 - (id)initWithReminderId:(id)arg1 inListId:(id)arg2;
 - (id)initWithReminder:(id)arg1 inList:(id)arg2;

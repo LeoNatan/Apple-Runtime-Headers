@@ -14,14 +14,15 @@
     _Bool _isSuperseded;
     _Bool _expectSingleItem;
     NRKReminderList *_scheduledList;
-    struct NSArray *_reminderListArray;
-    struct NSMutableDictionary *_reminderListsDict;
+    NSArray *_reminderListArray;
+    NSMutableDictionary *_reminderListsDict;
     NRKGateKeeperReferenceCounter *_globalActiveFetchCounter;
     NSLock *_lock;
     CDUnknownBlockType _completion;
     NSMutableSet *_readyItemsSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *readyItemsSet; // @synthesize readyItemsSet=_readyItemsSet;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMutableDictionary *reminderListsDict; // @synthesize reminderListsDict=_reminderListsDict;
 @property(retain, nonatomic) NSArray *reminderListArray; // @synthesize reminderListArray=_reminderListArray;
 @property(retain, nonatomic) NRKReminderList *scheduledList; // @synthesize scheduledList=_scheduledList;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isReloadCompleted;
 - (void)setItem:(id)arg1 onOldItem:(id)arg2 withItemID:(int)arg3 andSetterBlock:(CDUnknownBlockType)arg4;
 - (void)setLoadPrimacy;

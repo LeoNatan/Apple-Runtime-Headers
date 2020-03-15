@@ -16,10 +16,10 @@
 }
 
 + (id)listGroupWithTitle:(id)arg1 representedObject:(id)arg2 keyPath:(id)arg3 configurationBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *cachedValue; // @synthesize cachedValue=_cachedValue;
 @property(nonatomic) _Bool comparesArrayDeeply; // @synthesize comparesArrayDeeply=_comparesArrayDeeply;
 @property(copy, nonatomic) CDUnknownBlockType itemConfigurationBlock; // @synthesize itemConfigurationBlock=_itemConfigurationBlock;
-- (void).cxx_destruct;
 - (id)_itemsFromInputValues:(id)arg1;
 - (void)_updateSettingItemsWithValue:(id)arg1;
 - (void)_prepareSettingItems;

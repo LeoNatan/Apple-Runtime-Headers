@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     BOOL _fadingOut;
 }
 
-@property(nonatomic, getter=isFadingOut) BOOL fadingOut; // @synthesize fadingOut=_fadingOut;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isFadingOut) BOOL fadingOut; // @synthesize fadingOut=_fadingOut;
 - (BOOL)isFlipped;
 - (void)setAnimationProgress:(float)arg1;
 - (void)hideWithCompletionHandler:(CDUnknownBlockType)arg1;

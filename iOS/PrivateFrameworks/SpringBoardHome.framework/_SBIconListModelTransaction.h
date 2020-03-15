@@ -15,8 +15,8 @@
     NSString *_requestID;
 }
 
-@property(readonly, copy, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 - (void)commitChangesToObservers:(id)arg1 forNode:(id)arg2;
 - (void)removeNodeIdentifiers:(id)arg1;
 - (void)addNodeIdentifiers:(id)arg1;

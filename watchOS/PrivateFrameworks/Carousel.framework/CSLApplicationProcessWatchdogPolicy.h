@@ -17,8 +17,8 @@
 }
 
 + (id)defaultPolicy;
-@property(retain, nonatomic) id <FBProcessWatchdogProviding> sourcePolicyProvider; // @synthesize sourcePolicyProvider=_sourcePolicyProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FBProcessWatchdogProviding> sourcePolicyProvider; // @synthesize sourcePolicyProvider=_sourcePolicyProvider;
 - (id)systemAppSceneUpdateWatchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2 sourcePolicy:(id)arg3;
 - (id)overrideWatchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2 sourcePolicy:(id)arg3;
 - (id)watchdogTerminationRequestForProcess:(id)arg1 error:(id)arg2;

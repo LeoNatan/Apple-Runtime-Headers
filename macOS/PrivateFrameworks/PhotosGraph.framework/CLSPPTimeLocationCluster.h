@@ -20,13 +20,13 @@
     NSDate *_expandedStartDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expandedStartDate; // @synthesize expandedStartDate=_expandedStartDate;
 @property(readonly, nonatomic) NSDate *expandedEndDate; // @synthesize expandedEndDate=_expandedEndDate;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinates;
 @property(readonly, nonatomic) NSString *timeLocationIdentifier;
 - (id)initWithAssetCollection:(id)arg1 region:(id)arg2;

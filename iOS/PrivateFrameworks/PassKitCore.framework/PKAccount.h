@@ -9,7 +9,7 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSSet, NSString, NSURL, PKAccountAdditionalPushTopics, PKAccountDetails, PKCreditAccountDetails;
+@class NSArray, NSDate, NSSet, NSString, NSURL, PKAccountAdditionalPushTopics, PKAccountDetails, PKCreditAccountDetails;
 
 @interface PKAccount : NSObject <NSSecureCoding, NSCopying>
 {
@@ -26,9 +26,12 @@
     NSSet *_supportedFeatures;
     PKAccountAdditionalPushTopics *_additionalPushTopics;
     NSDate *_lastUpdated;
+    NSArray *_cloudStoreZoneNames;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *cloudStoreZoneNames; // @synthesize cloudStoreZoneNames=_cloudStoreZoneNames;
 @property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(nonatomic) _Bool accountStateDirty; // @synthesize accountStateDirty=_accountStateDirty;
 @property(retain, nonatomic) PKAccountAdditionalPushTopics *additionalPushTopics; // @synthesize additionalPushTopics=_additionalPushTopics;
@@ -42,7 +45,6 @@
 @property(nonatomic) unsigned long long feature; // @synthesize feature=_feature;
 @property(retain, nonatomic) NSURL *accountBaseURL; // @synthesize accountBaseURL=_accountBaseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (_Bool)supportsExtendedFetch;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

@@ -31,6 +31,7 @@
 + (id)receiverProtocol;
 + (id)helperDispatchQueue;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *controllerDefaults; // @synthesize controllerDefaults=_controllerDefaults;
 @property(retain) NSMutableDictionary *controllerProperties; // @synthesize controllerProperties=_controllerProperties;
 @property(retain) NSObject<OS_dispatch_queue> *helperDispatchQueue; // @synthesize helperDispatchQueue=_helperDispatchQueue;
@@ -42,7 +43,6 @@
 @property(retain) SOHelperReceiver *receiver; // @synthesize receiver=_receiver;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)suspendConnectionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)runBlockWhenDefaultsSynced:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
 - (void)runBlockOnConnection:(CDUnknownBlockType)arg1;

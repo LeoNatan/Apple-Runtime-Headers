@@ -20,9 +20,9 @@
     int _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) __weak PUICPickerView *pickerView; // @synthesize pickerView=_pickerView;
-- (void).cxx_destruct;
 - (void)detentService:(id)arg1 detentsDisabledChanged:(_Bool)arg2;
 - (void)_playEdgeDetentIfNecessary;
 - (void)_updateMinorDetentsEnabledStateForValue:(float)arg1;

@@ -42,6 +42,7 @@
 + (unsigned int)headerStyleForPresentationMode:(unsigned int)arg1;
 + (unsigned int)presentationModeForHeaderStyle:(unsigned int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISAlertPlatterView *headerCompatibilityPlatterView; // @synthesize headerCompatibilityPlatterView=_headerCompatibilityPlatterView;
 @property(nonatomic) struct CGSize contentFitSize; // @synthesize contentFitSize=_contentFitSize;
 @property(retain, nonatomic) UIView *topContainerView; // @synthesize topContainerView=_topContainerView;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) CUISBulletinActionMenu *menu; // @synthesize menu=_menu;
 @property(nonatomic) __weak id <CUISBulletinQuickLongLookViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDictionary *customInfo; // @synthesize customInfo=_customInfo;
-- (void).cxx_destruct;
 - (id)actionControllerViewForScaling;
 - (id)actionGroup;
 - (id)createSiriContext;

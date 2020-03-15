@@ -14,9 +14,9 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 

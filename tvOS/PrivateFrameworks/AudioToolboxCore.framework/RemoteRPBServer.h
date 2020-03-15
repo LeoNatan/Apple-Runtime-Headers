@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <RPBServing> _proxyInterface;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <RPBServing> proxyInterface; // @synthesize proxyInterface=_proxyInterface;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property unsigned int serverID; // @synthesize serverID=_serverID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithID:(unsigned int)arg1;
 

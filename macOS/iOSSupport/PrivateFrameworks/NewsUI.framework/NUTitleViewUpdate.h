@@ -18,13 +18,13 @@
     double _lingerTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=shouldSpeakAccessibilityTitleWhenDisplayed) BOOL speakAccessibilityTitleWhenDisplayed; // @synthesize speakAccessibilityTitleWhenDisplayed=_speakAccessibilityTitleWhenDisplayed;
 @property(nonatomic) double lingerTimeInterval; // @synthesize lingerTimeInterval=_lingerTimeInterval;
 @property(nonatomic, getter=shouldCancelPendingUpdates) BOOL cancelPendingUpdates; // @synthesize cancelPendingUpdates=_cancelPendingUpdates;
 @property(readonly, nonatomic) unsigned long long styleType; // @synthesize styleType=_styleType;
 @property(readonly, nonatomic) unsigned long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *accessibilityTitle;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithValue:(id)arg1 valueType:(unsigned long long)arg2 styleType:(unsigned long long)arg3;

@@ -21,6 +21,7 @@
     struct CGRect _drawingFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKMacLinedPaperView *linedPaperView; // @synthesize linedPaperView=_linedPaperView;
 @property(nonatomic, getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(nonatomic) struct CGRect drawingFrame; // @synthesize drawingFrame=_drawingFrame;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL scheduled; // @synthesize scheduled=_scheduled;
 @property(nonatomic) BOOL bottomTile; // @synthesize bottomTile=_bottomTile;
 @property(nonatomic) BOOL topTile; // @synthesize topTile=_topTile;
-- (void).cxx_destruct;
 - (void)setImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setTemporaryImage:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;

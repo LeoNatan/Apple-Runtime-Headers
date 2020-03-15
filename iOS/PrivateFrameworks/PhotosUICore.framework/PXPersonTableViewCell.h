@@ -17,12 +17,12 @@
     UIImage *__personMonogramImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPersonMonogramImage:) UIImage *_personMonogramImage; // @synthesize _personMonogramImage=__personMonogramImage;
 @property(retain, nonatomic, setter=_setPersonIconImageView:) UIImageView *_personIconImageView; // @synthesize _personIconImageView=__personIconImageView;
 @property(copy, nonatomic) NSString *personLastName; // @synthesize personLastName=_personLastName;
 @property(copy, nonatomic) NSString *personFirstName; // @synthesize personFirstName=_personFirstName;
 @property(retain, nonatomic) UIImage *personIcon; // @synthesize personIcon=_personIcon;
-- (void).cxx_destruct;
 - (void)_updatePersonIconImageView;
 - (void)layoutSubviews;
 

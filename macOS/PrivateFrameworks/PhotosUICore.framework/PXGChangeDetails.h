@@ -28,11 +28,11 @@
     long long _layoutVersionAfterChange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutVersionAfterChange; // @synthesize layoutVersionAfterChange=_layoutVersionAfterChange;
 @property(nonatomic) long long layoutVersionBeforeChange; // @synthesize layoutVersionBeforeChange=_layoutVersionBeforeChange;
 @property(readonly, nonatomic) unsigned int numberOfSpritesBeforeChange; // @synthesize numberOfSpritesBeforeChange=_numberOfSpritesBeforeChange;
 @property(readonly, nonatomic) unsigned int numberOfSpritesAfterChange; // @synthesize numberOfSpritesAfterChange=_numberOfSpritesAfterChange;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) PXArrayChangeDetails *arrayChangeDetails;

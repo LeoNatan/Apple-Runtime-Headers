@@ -20,9 +20,9 @@
     id <SVXClientSessionStateServiceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SVXClientSessionStateServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long currentState; // @synthesize currentState=_currentState;
-- (void).cxx_destruct;
 - (void)_setCurrentState:(long long)arg1;
 - (void)fetchStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)clientServiceDidChange;

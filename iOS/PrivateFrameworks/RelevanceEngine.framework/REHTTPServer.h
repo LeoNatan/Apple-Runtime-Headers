@@ -20,9 +20,9 @@
     id <REHTTPServerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <REHTTPServerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned short port; // @synthesize port=_port;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)didCloseConnection:(struct _CFHTTPServerConnection *)arg1;
 - (void)didOpenConnection:(struct _CFHTTPServerConnection *)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)messageTimeForMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long messageID; // @synthesize messageID=_messageID;
 @property(retain, nonatomic) NSDate *time; // @synthesize time=_time;
-- (void).cxx_destruct;
 
 @end
 

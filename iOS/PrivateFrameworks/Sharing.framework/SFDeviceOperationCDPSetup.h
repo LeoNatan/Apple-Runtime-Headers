@@ -27,12 +27,12 @@
     SFSession *_sfSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
 @property(retain, nonatomic) id presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly, nonatomic) double metricSeconds; // @synthesize metricSeconds=_metricSeconds;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)uiController:(id)arg1 didPresentRootViewController:(id)arg2;
 - (int)_runCDPSetupRequest;
 - (int)_runCDPApprovalServerStart;

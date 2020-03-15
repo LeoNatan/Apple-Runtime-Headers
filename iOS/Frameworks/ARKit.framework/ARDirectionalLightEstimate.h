@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double confidenceRating; // @synthesize confidenceRating=_confidenceRating;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) double primaryLightIntensity; // @synthesize primaryLightIntensity=_primaryLightIntensity;
 // Error parsing type for property primaryLightDirection:
 // Property attributes: T,R,N,V_primaryLightDirection
 
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

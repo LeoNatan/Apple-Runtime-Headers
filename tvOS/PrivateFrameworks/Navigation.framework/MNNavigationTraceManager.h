@@ -24,6 +24,7 @@
     id <GEOMotionContextProviderDelegate> _motionContextProviderDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int navigationType; // @synthesize navigationType=_navigationType;
 @property(readonly, nonatomic) MNTraceEventRecorder *traceEventRecorder; // @synthesize traceEventRecorder=_traceEventRecorder;
 @property(readonly, nonatomic) MNTraceRecorder *traceRecorder; // @synthesize traceRecorder=_traceRecorder;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <MNNavigationTraceManagerDelegate> traceManagerDelegate; // @synthesize traceManagerDelegate=_traceManagerDelegate;
 @property(nonatomic) __weak id <GEOMotionContextProviderDelegate> motionDelegate; // @synthesize motionDelegate=_motionContextProviderDelegate;
 @property(nonatomic) __weak id <MNLocationProviderDelegate> delegate; // @synthesize delegate=_locationProviderDelegate;
-- (void).cxx_destruct;
 - (void)stopMotionUpdates;
 - (void)startMotionUpdates;
 @property(readonly, nonatomic) double timeScale;

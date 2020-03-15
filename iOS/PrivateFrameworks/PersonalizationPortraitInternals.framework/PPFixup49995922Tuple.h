@@ -18,10 +18,10 @@
 }
 
 + (id)tupleWithRowid:(long long)arg1 record:(id)arg2 dkUUID:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *dkUUID; // @synthesize dkUUID=_dkUUID;
 @property(readonly, nonatomic) NSObject *record; // @synthesize record=_record;
 @property(readonly, nonatomic) long long rowid; // @synthesize rowid=_rowid;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

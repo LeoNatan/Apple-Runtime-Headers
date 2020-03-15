@@ -36,8 +36,8 @@
 + (id)futureWithError:(id)arg1;
 + (id)futureWithResult:(id)arg1;
 + (id)nullFuture;
-@property __weak id <EFFutureDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <EFFutureDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)onScheduler:(id)arg1 map:(CDUnknownBlockType)arg2;
 - (id)map:(CDUnknownBlockType)arg1;
 - (id)onScheduler:(id)arg1 recover:(CDUnknownBlockType)arg2;

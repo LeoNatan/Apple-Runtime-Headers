@@ -15,8 +15,8 @@
     NUComposition *_composition;
 }
 
-@property(retain) NUComposition *composition; // @synthesize composition=_composition;
 - (void).cxx_destruct;
+@property(retain) NUComposition *composition; // @synthesize composition=_composition;
 - (void)assetDidChange:(id)arg1;
 - (CDStruct_19170857)orientationForComposition:(id)arg1;
 - (void)_addImageAssetClient:(id)arg1;

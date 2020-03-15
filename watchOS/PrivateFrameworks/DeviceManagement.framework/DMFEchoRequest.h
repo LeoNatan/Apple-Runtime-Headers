@@ -19,9 +19,9 @@
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resultStatus; // @synthesize resultStatus=_resultStatus;
 @property(copy, nonatomic) NSString *echo; // @synthesize echo=_echo;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -21,6 +21,7 @@
     NSString *_nextETag;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *nextETag; // @synthesize nextETag=_nextETag;
 @property(readonly, nonatomic) NSDictionary *responseHeaders; // @synthesize responseHeaders=_responseHeaders;
 @property(retain, nonatomic) NSString *dataContentType; // @synthesize dataContentType=_dataContentType;
@@ -30,7 +31,6 @@
 @property(nonatomic) int overwrite; // @synthesize overwrite=_overwrite;
 @property(readonly, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(readonly, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 - (void)_completedPutTask:(id)arg1;
 - (void)_completedMoveTask:(id)arg1;
 - (void)startTaskGroup;

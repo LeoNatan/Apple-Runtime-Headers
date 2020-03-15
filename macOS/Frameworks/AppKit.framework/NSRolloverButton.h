@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSImage *_focusRingMask;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useRolloverAppearanceNow; // @synthesize useRolloverAppearanceNow=_useRolloverAppearanceNow;
 @property(retain, nonatomic) NSImage *focusRingMask; // @synthesize focusRingMask=_focusRingMask;
 @property(nonatomic) __weak id <NSRolloverButtonDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSImage *rolloverImage; // @synthesize rolloverImage=_rolloverImage;
 @property(nonatomic) BOOL usesRolloverAppearanceOnMouseDown; // @synthesize usesRolloverAppearanceOnMouseDown=_usesRolloverAppearanceOnMouseDown;
 @property(nonatomic) BOOL usesRolloverAppearanceInInactiveWindow; // @synthesize usesRolloverAppearanceInInactiveWindow=_usesRolloverAppearanceInInactiveWindow;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (void)drawFocusRingMask;
 - (void)drawRect:(struct CGRect)arg1;

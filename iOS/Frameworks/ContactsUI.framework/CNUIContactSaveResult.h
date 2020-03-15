@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_identifiersOfIssuedSaveRequests;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *identifiersOfIssuedSaveRequests; // @synthesize identifiersOfIssuedSaveRequests=_identifiersOfIssuedSaveRequests;
 @property(readonly, nonatomic) CNMutableContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (id)initWithSuccess:(_Bool)arg1 contact:(id)arg2 identifiersOfIssuedSaveRequests:(id)arg3;
 
 @end

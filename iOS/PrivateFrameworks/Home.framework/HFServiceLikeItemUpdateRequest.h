@@ -17,11 +17,11 @@
     NSSet *_characteristics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *characteristics; // @synthesize characteristics=_characteristics;
 @property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(retain, nonatomic) HMService *service; // @synthesize service=_service;
 @property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 - (id)_standardResultsForReadResponse:(id)arg1 displayMetadata:(id)arg2 batteryLevelResults:(id)arg3 updateOptions:(id)arg4;
 - (id)_displayMetadataForReadResponse:(id)arg1;
 - (id)updateWithOptions:(id)arg1;

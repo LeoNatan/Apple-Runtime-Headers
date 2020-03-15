@@ -44,6 +44,7 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_nw_endpoint> *currentTunnelEndpoint; // @synthesize currentTunnelEndpoint=_currentTunnelEndpoint;
 @property(nonatomic) unsigned int tunnelCount; // @synthesize tunnelCount=_tunnelCount;
 @property(nonatomic) unsigned int nextFlowID; // @synthesize nextFlowID=_nextFlowID;
@@ -70,7 +71,6 @@
 @property(copy, nonatomic) CDUnknownBlockType connectionInfoSetHandler; // @synthesize connectionInfoSetHandler=_connectionInfoSetHandler;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
 @property(readonly, nonatomic) NWPathEvaluator *pathEvaluator; // @synthesize pathEvaluator=_pathEvaluator;
-- (void).cxx_destruct;
 - (void)container:(id)arg1 didSetTunnelConfiguration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)container:(id)arg1 didRequestFlowDivertControlSocketWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)container:(id)arg1 didFailWithError:(id)arg2;

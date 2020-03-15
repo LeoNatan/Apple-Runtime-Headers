@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     AVAssetExportSession *_exportSession;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(retain, nonatomic) AVAssetExportSession *exportSession; // @synthesize exportSession=_exportSession;
 @property(retain, nonatomic) PUCompositeVideoGenerator *generator; // @synthesize generator=_generator;
 @property(retain, nonatomic) PXAlertController *progressController; // @synthesize progressController=_progressController;
 @property(retain, nonatomic) UIViewController *presenterViewController; // @synthesize presenterViewController=_presenterViewController;
-- (void).cxx_destruct;
 - (void)_finishWithSuccess:(_Bool)arg1 cancelled:(_Bool)arg2;
 - (void)_sucessfullyFinishedSaving:(_Bool)arg1 error:(id)arg2;
 - (void)_exportGeneratedVideo;

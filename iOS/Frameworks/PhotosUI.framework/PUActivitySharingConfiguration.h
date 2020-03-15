@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _sourceOrigin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long sourceOrigin; // @synthesize sourceOrigin=_sourceOrigin;
 @property(retain, nonatomic) id <PXDisplayAsset> keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
 @property(readonly, nonatomic) PUPhotoSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(readonly, nonatomic) PHFetchResult *collectionListFetchResult; // @synthesize collectionListFetchResult=_collectionListFetchResult;
-- (void).cxx_destruct;
 - (id)initWithCollectionsFetchResult:(id)arg1 selectionManager:(id)arg2;
 
 @end

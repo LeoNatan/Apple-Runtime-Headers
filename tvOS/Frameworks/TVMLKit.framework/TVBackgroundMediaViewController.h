@@ -34,6 +34,7 @@
 }
 
 + (id)_makePlayerViewControllerWithPlayer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long mediaControllerState; // @synthesize mediaControllerState=_mediaControllerState;
 @property(readonly, nonatomic) UIViewController *playbackViewController; // @synthesize playbackViewController=_playbackViewController;
 @property(readonly, nonatomic) _TVPlayer *player; // @synthesize player=_player;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) TVMediaInfo *mediaInfo; // @synthesize mediaInfo=_mediaInfo;
 @property(nonatomic) _Bool showsVideoControls; // @synthesize showsVideoControls=_showsVideoControls;
 @property(nonatomic, getter=isPlaybackEnabled) _Bool playbackEnabled; // @synthesize playbackEnabled=_playbackEnabled;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_mediaControllerStateDidChange;
 - (void)_resetTimers;

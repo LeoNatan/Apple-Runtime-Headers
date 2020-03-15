@@ -21,8 +21,8 @@
 + (_Bool)supportsSecureCoding;
 + (struct CGSize)imageSize;
 + (id)new;
-@property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)succinctDescriptionBuilder;

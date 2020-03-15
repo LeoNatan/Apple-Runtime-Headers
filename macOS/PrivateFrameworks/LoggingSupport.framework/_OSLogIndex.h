@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     struct _os_timesync_db_s *_tsdb;
 }
 
-@property(readonly, nonatomic) struct _os_timesync_db_s *timesync; // @synthesize timesync=_tsdb;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct _os_timesync_db_s *timesync; // @synthesize timesync=_tsdb;
 - (void)enumerateFilesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateEntriesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateEntriesInRange:(struct os_timesync_range_s *)arg1 options:(unsigned int)arg2 usingCatalogFilter:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;

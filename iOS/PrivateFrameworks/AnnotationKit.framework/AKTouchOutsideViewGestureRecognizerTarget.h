@@ -12,9 +12,9 @@
     id mTarget;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=mAction;
 @property(nonatomic) __weak id target; // @synthesize target=mTarget;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)behaviorContextClass;
-@property(nonatomic) __weak AVZoomingBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AVZoomingBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void)didRemoveFromContext:(id)arg1;
 - (void)willRemoveFromContext:(id)arg1;
 - (void)didMoveToContext:(id)arg1;

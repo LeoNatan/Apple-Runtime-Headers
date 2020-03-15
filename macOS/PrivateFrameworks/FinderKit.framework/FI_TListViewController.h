@@ -63,14 +63,16 @@ __attribute__((visibility("hidden")))
 + (void)updateProgressForSizeCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2 isVisible:(_Bool)arg3;
 + (void)updateProgressForICloudStatusCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2 isVisible:(_Bool)arg3;
 + (void)updateProgressForNameCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2 isVisible:(_Bool)arg3;
-+ (void)updateVendorBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 scaleFactor:(double)arg3 isInFileProvider:(_Bool)arg4 darkBackground:(_Bool)arg5;
++ (void)updateVendorBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 scaleFactor:(double)arg3 cloudMode:(_Bool)arg4 darkBackground:(_Bool)arg5;
 + (void)updateScreenTimeBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
 + (void)updateSyncBadgeForICloudStatusCellView:(id)arg1 node:(const struct TFENode *)arg2 font:(id)arg3;
 + (void)updateSyncBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 isVisible:(_Bool)arg3;
 + (void)updateEjectButtonForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
-+ (void)updateTitleForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 font:(id)arg3 isInFileProvider:(_Bool)arg4 showSize:(_Bool)arg5;
++ (void)updateTitleForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 font:(id)arg3 isInICloud:(_Bool)arg4 showSize:(_Bool)arg5;
 + (struct TString)firstAuthorOfNode:(const struct TFENode *)arg1;
 + (void)updateMasterLayoutGuide:(id)arg1 containerView:(id)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct TFENode nodeBeingReloaded; // @synthesize nodeBeingReloaded=_nodeBeingReloaded;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) _Bool nodesBeingDraggedAreAllAtTheRootLevel; // @synthesize nodesBeingDraggedAreAllAtTheRootLevel=_nodesBeingDraggedAreAllAtTheRootLevel;
@@ -87,8 +89,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showDateLastOpened; // @synthesize showDateLastOpened=_showDateLastOpened;
 @property(nonatomic) _Bool showDateCreated; // @synthesize showDateCreated=_showDateCreated;
 @property(nonatomic) _Bool showDateModified; // @synthesize showDateModified=_showDateModified;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
 - (id)outlineView:(id)arg1 objectValueForTableColumn:(id)arg2 byItem:(id)arg3;

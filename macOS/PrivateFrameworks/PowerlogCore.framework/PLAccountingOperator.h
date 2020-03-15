@@ -38,9 +38,9 @@
 + (id)entryEventNoneDefinitionNodes;
 + (id)entryEventNoneDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *ruleIDToPendingJobs; // @synthesize ruleIDToPendingJobs=_ruleIDToPendingJobs;
 @property(retain, nonatomic) NSSet *rules; // @synthesize rules=_rules;
-- (void).cxx_destruct;
 - (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
 - (void)stopAccounting;
 - (void)startAccounting;

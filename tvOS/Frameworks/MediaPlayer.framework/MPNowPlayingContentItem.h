@@ -18,8 +18,8 @@
 }
 
 + (_Bool)shouldPushArtworkData;
-@property(retain, nonatomic) id <MPNowPlayingContentItemArtworkDataSource> artworkDataSource; // @synthesize artworkDataSource=_artworkDataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MPNowPlayingContentItemArtworkDataSource> artworkDataSource; // @synthesize artworkDataSource=_artworkDataSource;
 @property(nonatomic, getter=isExplicitItem) _Bool explicitItem;
 - (void)_mergeContentItem:(id)arg1;
 - (void)invalidateArtwork;

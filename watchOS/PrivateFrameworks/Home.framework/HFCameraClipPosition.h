@@ -19,9 +19,9 @@
 
 + (id)na_identity;
 + (id)positionWithClip:(id)arg1 offset:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) HMCameraClip *clip; // @synthesize clip=_clip;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;

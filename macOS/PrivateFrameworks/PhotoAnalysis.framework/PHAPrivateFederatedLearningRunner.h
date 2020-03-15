@@ -39,6 +39,7 @@
 + (BOOL)_isInternalDevice;
 + (id)_firstAttachmentURLWithSuffixOfName:(id)arg1 attachments:(id)arg2 error:(id *)arg3;
 + (id)_prepareDatasetForTrainingTask:(id)arg1 fingerprintVersion:(id)arg2 datasetPolicy:(id)arg3 positivesDatasetName:(id)arg4 positivesSubsetName:(id)arg5 negativesDatasetName:(id)arg6 negativesSubsetName:(id)arg7 totalNumberOfSamples:(id)arg8 photoLibrary:(id)arg9 modelInputName:(id)arg10 labelName:(id)arg11 attachments:(id)arg12 error:(id *)arg13;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldEncrypt; // @synthesize shouldEncrypt=_shouldEncrypt;
 @property(nonatomic) BOOL shouldAddNoise; // @synthesize shouldAddNoise=_shouldAddNoise;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
@@ -61,7 +62,6 @@
 @property(nonatomic) unsigned long long numberOfEpochs; // @synthesize numberOfEpochs=_numberOfEpochs;
 @property(retain, nonatomic) NSArray *layersToTrain; // @synthesize layersToTrain=_layersToTrain;
 @property(retain, nonatomic) NSArray *attachmentURLs; // @synthesize attachmentURLs=_attachmentURLs;
-- (void).cxx_destruct;
 - (id)runWithError:(id *)arg1;
 - (id)initWithAttachmentURLs:(id)arg1 layersToTrain:(id)arg2 numberOfEpochs:(unsigned long long)arg3 learningRate:(id)arg4 modelInputName:(id)arg5 modelOutputName:(id)arg6 lossName:(id)arg7 optimizerName:(id)arg8 iCloudAggServiceKey:(id)arg9 clippingNorm:(id)arg10 normBinCount:(id)arg11 trainingTask:(id)arg12 fingerprintVersion:(id)arg13 datasetPolicy:(id)arg14 positivesDatasetName:(id)arg15 positivesSubsetName:(id)arg16 negativesDatasetName:(id)arg17 negativesSubsetName:(id)arg18 totalNumberOfSamples:(id)arg19 photoLibrary:(id)arg20 shouldAddNoise:(BOOL)arg21 shouldEncrypt:(BOOL)arg22;
 

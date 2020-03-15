@@ -20,12 +20,12 @@
     unsigned short _numberOfEffects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const int *effectShaderFlags; // @synthesize effectShaderFlags=_effectShaderFlags;
 @property(readonly, nonatomic) const CDStruct_ee569e91 *effectData; // @synthesize effectData=_effectData;
 @property(readonly, nonatomic) unsigned short numberOfEffects; // @synthesize numberOfEffects=_numberOfEffects;
 @property(readonly, nonatomic) const CDStruct_0054b44d *resizableCapInsets; // @synthesize resizableCapInsets=_resizableCapInsets;
 @property(readonly, nonatomic) unsigned short numberOfResizableCapInsets; // @synthesize numberOfResizableCapInsets=_numberOfResizableCapInsets;
-- (void).cxx_destruct;
 - (CDStruct_ee569e91 *)dataForEffectId:(unsigned short)arg1;
 - (void)removeEffectWithId:(unsigned short)arg1;
 - (unsigned short)addEffectWithShaderFlags:(int)arg1;

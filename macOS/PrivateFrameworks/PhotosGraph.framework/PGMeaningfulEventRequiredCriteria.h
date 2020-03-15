@@ -17,12 +17,12 @@
     NSDictionary *_additionalInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *additionalInfo; // @synthesize additionalInfo=_additionalInfo;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) BOOL mustBeInteresting; // @synthesize mustBeInteresting=_mustBeInteresting;
 @property(readonly, nonatomic) double minimumScore; // @synthesize minimumScore=_minimumScore;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 @property(readonly, nonatomic) NSString *meaningNodeLabel;

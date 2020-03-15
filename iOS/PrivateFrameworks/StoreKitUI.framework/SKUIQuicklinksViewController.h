@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     SKUIQuicklinksView *_quicklinksView;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *links; // @synthesize links=_links;
 @property(nonatomic) __weak id <SKUIQuicklinksViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_numberOfRows;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

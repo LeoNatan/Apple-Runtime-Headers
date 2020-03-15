@@ -32,6 +32,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property _Bool showFloats; // @synthesize showFloats=_showFloats;
 @property(retain) MTLumaDodgePillSettings *homeAffordanceSettings; // @synthesize homeAffordanceSettings=_homeAffordanceSettings;
 @property double overshootPullbackDelayOnscreen; // @synthesize overshootPullbackDelayOnscreen=_overshootPullbackDelayOnscreen;
@@ -51,7 +52,6 @@
 @property double dimmingAlpha; // @synthesize dimmingAlpha=_dimmingAlpha;
 @property double cardSpacing; // @synthesize cardSpacing=_cardSpacing;
 @property double switcherCardScale; // @synthesize switcherCardScale=_switcherCardScale;
-- (void).cxx_destruct;
 - (id)archiveValueForKey:(id)arg1;
 - (void)setDefaultValues;
 

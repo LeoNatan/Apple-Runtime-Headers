@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)setSafeBrowsingBackgroundColor:(struct UIColor *)arg1;
+- (void)setSafeBrowsingBackgroundColor:(id)arg1;
 
 @end
 

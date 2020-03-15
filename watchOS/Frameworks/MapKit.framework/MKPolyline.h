@@ -21,7 +21,7 @@
 - (_Bool)intersectsMapRect:(CDStruct_02837cd9)arg1;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;
 - (void)_calculateBounds;
-- (id)_initWithGeoJSONPoints:(struct NSArray *)arg1 error:(id *)arg2;
+- (id)_initWithGeoJSONPoints:(id)arg1 error:(id *)arg2;
 - (id)_initWithGeoJSONObject:(id)arg1 error:(id *)arg2;
 
 // Remaining properties

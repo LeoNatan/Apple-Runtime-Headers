@@ -41,12 +41,12 @@
 
 + (id)_jsLaunchOptionsWithApplicationOptions:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UITraitEnvironment> keyTraitEnvironment; // @synthesize keyTraitEnvironment=_keyTraitEnvironment;
 @property(readonly, nonatomic) _TVApplicationInspector *applicationInspector; // @synthesize applicationInspector=_applicationInspector;
 @property(readonly, nonatomic) __weak id <TVApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) TVApplicationControllerContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (id)_rootViewController;
 - (_Bool)_hasReloadOnResumeMinIntervalPassed;
 - (_Bool)_shouldReloadOnResume;

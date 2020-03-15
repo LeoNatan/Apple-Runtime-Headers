@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIView *_view;
 }
 
-@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;

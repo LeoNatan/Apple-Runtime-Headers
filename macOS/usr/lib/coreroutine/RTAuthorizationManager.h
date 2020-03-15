@@ -20,13 +20,13 @@
 
 + (BOOL)supportsNotificationName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(retain) RTUserSessionMonitor *userSessionMonitor; // @synthesize userSessionMonitor=_userSessionMonitor;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(nonatomic, getter=isReady) BOOL ready; // @synthesize ready=_ready;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, getter=isSupported) BOOL supported; // @synthesize supported=_supported;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
-- (void).cxx_destruct;
 - (void)onUserSessionChangeNotification:(id)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;

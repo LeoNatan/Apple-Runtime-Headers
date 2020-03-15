@@ -33,6 +33,7 @@
     ASVDeceleration *_pitchDeceleration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASVDeceleration *pitchDeceleration; // @synthesize pitchDeceleration=_pitchDeceleration;
 @property(retain, nonatomic) ASVDeceleration *yawDeceleration; // @synthesize yawDeceleration=_yawDeceleration;
 @property(retain, nonatomic) ASVVelocitySample2D *previousVelocitySample; // @synthesize previousVelocitySample=_previousVelocitySample;
@@ -58,7 +59,6 @@
 // Property attributes: T,N,V_initialPanLocation
 
 @property(nonatomic) __weak id <ASVTurntableGestureRecognizerDelegate> turntableDelegate; // @synthesize turntableDelegate=_turntableDelegate;
-- (void).cxx_destruct;
 - (void)gestureEndedPanning:(id)arg1;
 - (void)gesture:(id)arg1 pannedToScreenPoint: /* Error: Ran out of types for this method. */;
 - (void)gesture:(id)arg1 beganPanningAtScreenPoint: /* Error: Ran out of types for this method. */;

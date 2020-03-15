@@ -17,12 +17,12 @@
     NSDictionary *_payload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(readonly, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) NSString *protocol; // @synthesize protocol=_protocol;
 @property(readonly, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)matchesResponseHeader:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -15,10 +15,10 @@
     long long _currentTag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentTag; // @synthesize currentTag=_currentTag;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) UIStackView *stackview; // @synthesize stackview=_stackview;
-- (void).cxx_destruct;
 - (void)revalidateItems:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 controller:(id)arg2;
 

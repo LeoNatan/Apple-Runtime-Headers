@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)credentialSelected:(id)arg1;
+- (id)serviceViewControllerInterface;
 - (id)exportedInterface;
 
 @end

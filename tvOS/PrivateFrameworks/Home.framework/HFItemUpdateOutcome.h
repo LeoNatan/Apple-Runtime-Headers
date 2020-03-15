@@ -18,9 +18,9 @@
 }
 
 + (id)outcomeWithResults:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long outcomeType; // @synthesize outcomeType=_outcomeType;
 @property(readonly, nonatomic) NSDictionary *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSArray *allKeys;
 - (_Bool)isEqual:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UICompoundObjectMap *_capturedProperties;
 }
 
-@property(retain, nonatomic) _UICompoundObjectMap *capturedProperties; // @synthesize capturedProperties=_capturedProperties;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UICompoundObjectMap *capturedProperties; // @synthesize capturedProperties=_capturedProperties;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2 forView:(id)arg3;
 - (id)init;
 

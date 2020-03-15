@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     AVTouchBarPlaybackControlsProvider *_touchBarProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)makeTouchBar;
 @property(readonly, nonatomic) AVTouchBarPlaybackControlsProvider *touchBarProviderIfLoaded;

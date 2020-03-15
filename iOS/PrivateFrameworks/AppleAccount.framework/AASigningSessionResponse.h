@@ -13,8 +13,8 @@
     NSData *_sessionData;
 }
 
-@property(retain, nonatomic) NSData *sessionData; // @synthesize sessionData=_sessionData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *sessionData; // @synthesize sessionData=_sessionData;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

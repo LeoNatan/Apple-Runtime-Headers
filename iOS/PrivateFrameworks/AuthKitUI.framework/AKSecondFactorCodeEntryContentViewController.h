@@ -19,11 +19,11 @@
     NSArray *_activeConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(retain, nonatomic) AKAppleIDAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 @property(retain, nonatomic) AKBasicLoginContentViewController *titleHeaderViewController; // @synthesize titleHeaderViewController=_titleHeaderViewController;
 @property(retain, nonatomic) AKCodeEntryView *codeGeneratorView; // @synthesize codeGeneratorView=_codeGeneratorView;
-- (void).cxx_destruct;
 - (void)setPasscodeFieldDisabled:(_Bool)arg1;
 - (void)clearSecondFactorEntry;
 - (void)jiggleAView;

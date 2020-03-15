@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     FPXSpotlightIndexer *_spotlightIndexer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPXSpotlightIndexer *spotlightIndexer; // @synthesize spotlightIndexer=_spotlightIndexer;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(readonly, nonatomic) _Bool usesFPFS; // @synthesize usesFPFS=_usesFPFS;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSFileProviderExtension *vendorInstance; // @synthesize vendorInstance=_vendorInstance;
 @property(readonly, nonatomic) __weak FPXExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(readonly, nonatomic) unsigned long long extensionCapabilities; // @synthesize extensionCapabilities=_extensionCapabilities;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)itemIDsFromVendorItemIDs:(id)arg1;
 - (id)itemsFromVendorItems:(id)arg1;

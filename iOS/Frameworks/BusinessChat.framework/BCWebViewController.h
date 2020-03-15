@@ -23,6 +23,7 @@
     NSURL *_originURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wasCallbackCaptured; // @synthesize wasCallbackCaptured=_wasCallbackCaptured;
 @property(retain, nonatomic) NSURL *originURL; // @synthesize originURL=_originURL;
 @property(retain, nonatomic) BCServerErrorView *serverErrorView; // @synthesize serverErrorView=_serverErrorView;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *callbackURI; // @synthesize callbackURI=_callbackURI;
 @property(retain, nonatomic) WKWebView *webkitView; // @synthesize webkitView=_webkitView;
 @property(nonatomic) __weak id <BCWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isCertificatRelatedError:(id)arg1;
 - (void)webView:(id)arg1 didStartProvisionalNavigation:(id)arg2;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;

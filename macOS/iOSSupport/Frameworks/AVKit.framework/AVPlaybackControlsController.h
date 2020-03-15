@@ -110,6 +110,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingShowsProminentPlayButton;
 + (id)keyPathsForValuesAffectingShowsRoutePickerView;
 + (id)keyPathsForValuesAffectingFullScreen;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *windowSceneSessionIdentifier; // @synthesize windowSceneSessionIdentifier=_windowSceneSessionIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifer; // @synthesize uniqueIdentifer=_uniqueIdentifer;
 @property(nonatomic, getter=isVideoScaled) BOOL videoScaled; // @synthesize videoScaled=_videoScaled;
@@ -185,7 +186,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL playerViewControllerIsPresentingFullScreen; // @synthesize playerViewControllerIsPresentingFullScreen=_playerViewControllerIsPresentingFullScreen;
 @property(nonatomic) BOOL playerViewControllerIsBeingTransitionedWithResizing; // @synthesize playerViewControllerIsBeingTransitionedWithResizing=_playerViewControllerIsBeingTransitionedWithResizing;
 @property(nonatomic) __weak AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)_updateSecondScreenConnectionReadyToConnect;
 - (void)_updateEdgeInsetsForLetterboxedContentInContentView:(id)arg1;
 - (void)_updateNowPlayingInfoCenter;

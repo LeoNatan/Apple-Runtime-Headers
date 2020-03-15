@@ -34,6 +34,7 @@
     struct CGSize _maxSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSExtensionContext<NCRemoteViewExtensionContextProtocol> *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(readonly) _Bool outOfBundle; // @synthesize outOfBundle=_outOfBundle;
@@ -49,7 +50,6 @@
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(readonly) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)_serviceDied;
 - (void)_serviceAlive;
 - (void)_notifyDelegateOfActiveStateChange:(_Bool)arg1;

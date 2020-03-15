@@ -14,8 +14,8 @@
 }
 
 + (id)new;
-@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void)setProfileIconObserver:(id)arg1;
 
 @end

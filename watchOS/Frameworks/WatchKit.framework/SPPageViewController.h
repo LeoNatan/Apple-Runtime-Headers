@@ -35,6 +35,7 @@
     PUICPagedScrollViewNotchProvider *_notchProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICPagedScrollViewNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(nonatomic) float bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
 @property(nonatomic) float topContentInset; // @synthesize topContentInset=_topContentInset;
@@ -52,7 +53,6 @@
 @property(nonatomic) __weak id <SPInterfaceViewControllerDelegate> vcdelegate; // @synthesize vcdelegate=_vcdelegate;
 @property(copy, nonatomic) NSArray *pageContextIDs; // @synthesize pageContextIDs=_pageContextIDs;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)interfaceViewControllerDidLoad:(id)arg1;
 - (void)interfaceViewControllerDidActivate:(id)arg1;
 - (void)setTitle:(id)arg1;

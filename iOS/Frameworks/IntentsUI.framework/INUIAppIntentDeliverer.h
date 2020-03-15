@@ -23,8 +23,8 @@
 }
 
 + (id)alloc;
-@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void)_invalidateIntentBackgroundHandlingAssertion;
 - (void)_invalidateRequestTimer;
 - (void)_invalidateAssertionTimer;

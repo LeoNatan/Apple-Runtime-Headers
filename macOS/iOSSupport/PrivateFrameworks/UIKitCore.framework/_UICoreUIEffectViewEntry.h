@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CALayer *_materialLayer;
 }
 
-@property(retain, nonatomic) CALayer *materialLayer; // @synthesize materialLayer=_materialLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayer *materialLayer; // @synthesize materialLayer=_materialLayer;
 - (BOOL)isSameTypeOfEffect:(id)arg1;
 - (BOOL)canTransitionToEffect:(id)arg1;
 - (BOOL)shouldAnimateProperty:(id)arg1;

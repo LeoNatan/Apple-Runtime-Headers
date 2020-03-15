@@ -38,13 +38,13 @@
 + (_Bool)_validRectangle:(struct CGRect)arg1;
 + (id)viewControllerForConversation:(id)arg1;
 + (id)viewControllerForCall:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) RTTUtterance *currentUtterance; // @synthesize currentUtterance=_currentUtterance;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) DDParsecCollectionViewController *lookupController; // @synthesize lookupController=_lookupController;
 @property(retain, nonatomic) NSString *currentServiceMessage; // @synthesize currentServiceMessage=_currentServiceMessage;
 @property(retain, nonatomic) RTTConversation *conversation; // @synthesize conversation=_conversation;
-- (void).cxx_destruct;
 - (void)_define:(id)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)utteranceIsSelected;

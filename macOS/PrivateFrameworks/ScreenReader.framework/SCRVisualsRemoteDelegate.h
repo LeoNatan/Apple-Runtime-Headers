@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     SCRVisualsMenuWindow *_menuWindow;
 }
 
-@property(retain, nonatomic) SCRVisualsMenuWindow *menuWindow; // @synthesize menuWindow=_menuWindow;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCRVisualsMenuWindow *menuWindow; // @synthesize menuWindow=_menuWindow;
 - (void)mouseDownOnMenuItem:(id)arg1 atRowIndex:(long long)arg2;
 
 @end

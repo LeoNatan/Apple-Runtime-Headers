@@ -23,6 +23,7 @@
 }
 
 + (id)standardZoomSequencer;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fromSwitcher; // @synthesize fromSwitcher=_fromSwitcher;
 @property(readonly, nonatomic) float zoom; // @synthesize zoom=_zoom;
 @property(nonatomic) float initialSpringDelaySeconds; // @synthesize initialSpringDelaySeconds=_initialSpringDelaySeconds;
@@ -30,7 +31,6 @@
 @property(nonatomic) float start; // @synthesize start=_start;
 @property(nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
 @property(nonatomic) __weak id <CSLLauncherZoomSequencerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleCrownInputEvent:(id)arg1;
 - (void)completeWithSnap;
 - (void)begin;

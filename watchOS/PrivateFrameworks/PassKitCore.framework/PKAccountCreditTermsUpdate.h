@@ -24,13 +24,13 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKCreditAccountRates *rates; // @synthesize rates=_rates;
 @property(retain, nonatomic) PKCurrencyAmount *creditLimit; // @synthesize creditLimit=_creditLimit;
 @property(copy, nonatomic) NSString *adverseActionContentIdentifier; // @synthesize adverseActionContentIdentifier=_adverseActionContentIdentifier;
 @property(copy, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(nonatomic) int initiator; // @synthesize initiator=_initiator;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

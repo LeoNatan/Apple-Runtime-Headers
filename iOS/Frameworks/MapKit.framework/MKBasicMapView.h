@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _Bool _inBackground;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInBackground) _Bool inBackground; // @synthesize inBackground=_inBackground;
 @property(nonatomic) _Bool inactive; // @synthesize inactive=_inactive;
 @property(nonatomic) _Bool hasRenderedSomething; // @synthesize hasRenderedSomething=_hasRenderedSomething;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double trafficStartTime; // @synthesize trafficStartTime=_trafficStartTime;
 @property(nonatomic) double mapModeStartTime; // @synthesize mapModeStartTime=_mapModeStartTime;
 @property(readonly, nonatomic) VKMapView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)_updateStatsForTimeSpentInCurrentMapTypeIsShowingFlyover:(_Bool)arg1 ignoreIfViewInWindow:(_Bool)arg2;
 - (void)updateStatsForTimeSpentInCurrentMapTypeIsShowingFlyover:(_Bool)arg1;

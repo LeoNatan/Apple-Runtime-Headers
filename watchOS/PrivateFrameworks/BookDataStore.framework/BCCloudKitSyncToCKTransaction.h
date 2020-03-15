@@ -14,8 +14,8 @@
 }
 
 + (id)transactionNameForEntityName:(id)arg1;
-@property(retain, nonatomic) BCCloudDataSyncManager *syncManager; // @synthesize syncManager=_syncManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BCCloudDataSyncManager *syncManager; // @synthesize syncManager=_syncManager;
 - (double)transactionLifetimeTimout;
 - (double)coalescingDelay;
 - (void)performWorkWithCompletion:(CDUnknownBlockType)arg1;

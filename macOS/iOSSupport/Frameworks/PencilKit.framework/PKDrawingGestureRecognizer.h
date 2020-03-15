@@ -23,10 +23,10 @@
     UITouch *_drawingTouch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITouch *drawingTouch; // @synthesize drawingTouch=_drawingTouch;
 @property(nonatomic) double thresholdDistance; // @synthesize thresholdDistance=_thresholdDistance;
 @property(nonatomic) __weak id <PKDrawingGestureTarget> drawingTarget; // @synthesize drawingTarget;
-- (void).cxx_destruct;
 - (void)_drawingCancelled;
 - (void)_drawingEnded;
 - (void)_drawingMoved:(id)arg1;

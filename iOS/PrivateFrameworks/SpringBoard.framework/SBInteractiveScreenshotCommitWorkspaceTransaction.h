@@ -26,12 +26,12 @@
     id <SBInteractiveScreenshotCommitWorkspaceTransactionDelegate> _interactiveScreenshotCommitDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBInteractiveScreenshotCommitWorkspaceTransactionDelegate> interactiveScreenshotCommitDelegate; // @synthesize interactiveScreenshotCommitDelegate=_interactiveScreenshotCommitDelegate;
 @property(retain, nonatomic) SBTransientOverlayViewController *screenshotMarkupTransientOverlayViewController; // @synthesize screenshotMarkupTransientOverlayViewController=_screenshotMarkupTransientOverlayViewController;
 @property(nonatomic) _Bool hasFinishedSettlingAnimation; // @synthesize hasFinishedSettlingAnimation=_hasFinishedSettlingAnimation;
 @property(nonatomic) _Bool hasFinishedFlashAnimation; // @synthesize hasFinishedFlashAnimation=_hasFinishedFlashAnimation;
 @property(readonly, copy, nonatomic) NSUUID *gestureSessionID; // @synthesize gestureSessionID=_gestureSessionID;
-- (void).cxx_destruct;
 - (void)_updateState;
 - (void)_handleWatchdogTimeout;
 - (void)transientOverlayPresentWorkspaceTransactionDidPerformPresentation:(id)arg1;

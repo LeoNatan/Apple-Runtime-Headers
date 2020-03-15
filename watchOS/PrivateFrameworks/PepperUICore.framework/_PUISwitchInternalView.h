@@ -29,6 +29,7 @@
 }
 
 + (struct CGSize)preferredContentSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PUICSwitchControl> switchControl; // @synthesize switchControl=_switchControl;
 @property(retain, nonatomic) _PUISwitchThumbView *thumbView; // @synthesize thumbView=_thumbView;
 @property(retain, nonatomic) _PUISwitchWellView *wellView; // @synthesize wellView=_wellView;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *onTintColor; // @synthesize onTintColor=_onTintColor;
-- (void).cxx_destruct;
 - (void)setEnabled:(_Bool)arg1;
 - (void)_setPressed:(_Bool)arg1 on:(_Bool)arg2 animated:(_Bool)arg3 shouldAnimateLabels:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;

@@ -18,13 +18,13 @@
     NSPredicate *_predicate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSString *fragment; // @synthesize fragment=_fragment;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *outputKey; // @synthesize outputKey=_outputKey;
 @property(copy, nonatomic) CDUnknownBlockType contactFilter; // @synthesize contactFilter=_contactFilter;
 @property(retain, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_contactPropertyFilterForKey:(id)arg1 propertyName:(id)arg2;
 - (id)contactKeys;
 - (id)postalAddressKeys;

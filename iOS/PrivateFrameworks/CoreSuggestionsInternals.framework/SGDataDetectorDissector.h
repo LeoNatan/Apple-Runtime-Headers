@@ -15,6 +15,7 @@
 + (void)resetUnusedScannersForTesting;
 + (void)initialize;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
+- (id)detectionsInPlainText:(id)arg1 withEligibleRegions:(id)arg2 ddSignature:(struct __DDResult **)arg3 baseDate:(id)arg4;
 - (id)detectionsInPlainText:(id)arg1 withEligibleRegions:(id)arg2 ddSignature:(struct __DDResult **)arg3;
 - (id)init;
 - (id)initWithSigs:(_Bool)arg1;

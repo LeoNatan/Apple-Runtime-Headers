@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(retain) NSArray *buildVariants; // @synthesize buildVariants=_buildVariants;
 @property(retain) NSArray *supportedDevices; // @synthesize supportedDevices=_supportedDevices;
 @property(retain) PKBundleComponentVersion *bundleComponentVersion; // @synthesize bundleComponentVersion=_bundleComponentVersion;
 @property(retain) NSURL *restoreBundleURL; // @synthesize restoreBundleURL=_restoreBundleURL;
-- (void).cxx_destruct;
 - (BOOL)_populateDeviceTypesAndVariants;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -44,6 +44,7 @@
 }
 
 + (id)copyPropertyMappingsForParser;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL overrideSupportsFreebusy; // @synthesize overrideSupportsFreebusy=_overrideSupportsFreebusy;
 @property(nonatomic) long long maxAttendees; // @synthesize maxAttendees=_maxAttendees;
 @property(retain, nonatomic) NSString *alarms; // @synthesize alarms=_alarms;
@@ -75,7 +76,6 @@
 @property(retain, nonatomic) NSString *calendarColor; // @synthesize calendarColor=_calendarColor;
 @property(retain, nonatomic) NSString *ctag; // @synthesize ctag=_ctag;
 @property(retain, nonatomic) NSString *calendarDescription; // @synthesize calendarDescription=_calendarDescription;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsFreebusy;
 @property(readonly, nonatomic) BOOL isPollContainer;
 @property(readonly, nonatomic) BOOL isJournalContainer;

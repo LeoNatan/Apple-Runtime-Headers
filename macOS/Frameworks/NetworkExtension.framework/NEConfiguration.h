@@ -39,6 +39,7 @@
 + (BOOL)setConfiguration:(struct __CFDictionary *)arg1 forProtocol:(struct __CFString *)arg2 inService:(struct __SCNetworkService *)arg3;
 + (BOOL)removeSCServiceWithIdentifier:(id)arg1 fromPreferences:(struct __SCPreferences *)arg2;
 + (BOOL)SCServiceWithIdentifier:(id)arg1 existsInPreferences:(struct __SCPreferences *)arg2;
+- (void).cxx_destruct;
 @property(copy) NEDNSProxy *dnsProxy; // @synthesize dnsProxy=_dnsProxy;
 @property(copy) NEPathController *pathController; // @synthesize pathController=_pathController;
 @property(copy) NEProfileIngestionPayloadInfo *payloadInfo; // @synthesize payloadInfo=_payloadInfo;
@@ -53,7 +54,6 @@
 @property(copy) NSString *application; // @synthesize application=_application;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly) long long grade; // @synthesize grade=_grade;
-- (void).cxx_destruct;
 - (void)copyPasswordsFromSystemKeychain;
 @property(readonly) NSString *pluginType;
 - (void)clearUserKeychain;
@@ -85,9 +85,13 @@
 - (BOOL)hasSystemCertificatesToInstall;
 - (id)importSystemCertificatePayload:(id)arg1 outError:(id *)arg2;
 - (BOOL)setRestrictDomains:(BOOL)arg1;
+- (BOOL)setContactsDomains:(id)arg1 accountIdentifiers:(id)arg2;
 - (BOOL)setContactsDomains:(id)arg1;
+- (BOOL)setCalendarDomains:(id)arg1 accountIdentifiers:(id)arg2;
 - (BOOL)setCalendarDomains:(id)arg1;
+- (BOOL)setMailDomains:(id)arg1 accountIdentifiers:(id)arg2;
 - (BOOL)setMailDomains:(id)arg1;
+- (BOOL)validateStrings:(id)arg1;
 - (BOOL)setSMBDomains:(id)arg1;
 - (BOOL)setAppLayerVPNUUID:(id)arg1 andSafariDomains:(id)arg2;
 - (BOOL)setAppLayerVPNRuleSettings:(id)arg1 withAppIdentifier:(id)arg2;

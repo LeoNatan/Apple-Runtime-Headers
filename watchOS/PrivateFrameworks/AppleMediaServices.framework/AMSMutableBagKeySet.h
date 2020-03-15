@@ -13,8 +13,8 @@
     NSMutableSet *_mutableKeys;
 }
 
-@property(retain, nonatomic) NSMutableSet *mutableKeys; // @synthesize mutableKeys=_mutableKeys;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *mutableKeys; // @synthesize mutableKeys=_mutableKeys;
 - (void)unionBagKeySet:(id)arg1;
 - (void)addBagKey:(id)arg1 valueType:(unsigned int)arg2 defaultValue:(id)arg3;
 - (void)addBagKey:(id)arg1 valueType:(unsigned int)arg2;

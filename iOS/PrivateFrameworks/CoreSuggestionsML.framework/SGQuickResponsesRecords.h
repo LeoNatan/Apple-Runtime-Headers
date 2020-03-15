@@ -18,13 +18,13 @@
     double _totalUnmatched;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double totalUnmatched; // @synthesize totalUnmatched=_totalUnmatched;
 @property(readonly, nonatomic) double totalMatched; // @synthesize totalMatched=_totalMatched;
 @property(readonly, nonatomic) double totalSelected; // @synthesize totalSelected=_totalSelected;
 @property(readonly, nonatomic) double totalDisplayed; // @synthesize totalDisplayed=_totalDisplayed;
 @property(readonly, nonatomic) double totalOpportunities; // @synthesize totalOpportunities=_totalOpportunities;
 @property(readonly, nonatomic) NSArray *replyRecords; // @synthesize replyRecords=_replyRecords;
-- (void).cxx_destruct;
 - (id)initWithReplyRecords:(id)arg1 totalOpportunities:(double)arg2 totalDisplayed:(double)arg3 totalSelected:(double)arg4 totalMatched:(double)arg5 totalUnmatched:(double)arg6;
 
 @end

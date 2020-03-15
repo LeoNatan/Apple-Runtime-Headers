@@ -18,12 +18,12 @@
 }
 
 + (id)visibilityChangedNotificationName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalDarwinNotificationListener *notificationListener; // @synthesize notificationListener=_notificationListener;
 @property(copy, nonatomic) CDUnknownBlockType visibilityChangedCallback; // @synthesize visibilityChangedCallback=_visibilityChangedCallback;
 @property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(retain, nonatomic) EKSource *limitedToSource; // @synthesize limitedToSource=_limitedToSource;
 @property(retain, nonatomic) NSArray *invisibleCalendars; // @synthesize invisibleCalendars=_invisibleCalendars;
-- (void).cxx_destruct;
 - (id)_deselectedCalendarIdentifiers;
 - (id)_calendarsThatAreVisible:(_Bool)arg1 filteredByIdentity:(_Bool)arg2;
 @property(readonly, nonatomic) NSArray *invisibleCalendarsForAllIdentities;

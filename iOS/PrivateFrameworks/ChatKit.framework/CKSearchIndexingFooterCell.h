@@ -22,12 +22,12 @@
 + (double)desiredZPosition;
 + (id)reuseIdentifier;
 + (id)supplementaryViewType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *subtitleString; // @synthesize subtitleString=_subtitleString;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool titleLabelHidden;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)layoutSubviews;

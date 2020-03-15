@@ -26,6 +26,7 @@
     NSUUID *__uuid;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isTransitionInterrupted, setter=_setTransitionInterrupted:) _Bool _transitionInterrupted; // @synthesize _transitionInterrupted=__transitionInterrupted;
 @property(retain, nonatomic, setter=_setUuid:) NSUUID *_uuid; // @synthesize _uuid=__uuid;
 @property(retain, nonatomic, setter=_setOriginalFillMode:) NSString *_originalFillMode; // @synthesize _originalFillMode=__originalFillMode;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) id <UITimingCurveProvider> timingCurve; // @synthesize timingCurve=_timingCurve;
 @property(nonatomic) long long completionCurve; // @synthesize completionCurve=_completionCurve;
 @property(nonatomic) double completionSpeed; // @synthesize completionSpeed=_completionSpeed;
-- (void).cxx_destruct;
 - (void)finishInteractiveTransition;
 - (void)cancelInteractiveTransition;
 - (void)updateInteractiveTransition:(double)arg1;

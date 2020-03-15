@@ -17,10 +17,10 @@
     id <WFPropertyListObject> _definition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <WFPropertyListObject> definition; // @synthesize definition=_definition;
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSString *singleFormatString; // @synthesize singleFormatString=_singleFormatString;
-- (void).cxx_destruct;
 - (id)placeholderForKey:(id)arg1;
 - (id)parameterReplacedString:(id)arg1 withOverrides:(id)arg2;
 - (id)possibleValuesFromDictionary:(id)arg1;

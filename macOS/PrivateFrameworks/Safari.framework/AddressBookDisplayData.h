@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_addressBookMatches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *addressBookMatches; // @synthesize addressBookMatches=_addressBookMatches;
 @property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLabel:(id)arg1 values:(id)arg2;
 - (id)initWithLabel:(id)arg1 values:(id)arg2 identifier:(id)arg3 property:(id)arg4;

@@ -13,8 +13,8 @@
     PRMonogramColor *_monogramColor;
 }
 
-@property(readonly, nonatomic) PRMonogramColor *monogramColor; // @synthesize monogramColor=_monogramColor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PRMonogramColor *monogramColor; // @synthesize monogramColor=_monogramColor;
 - (id)initWithMonogramColor:(id)arg1;
 
 @end

@@ -12,9 +12,9 @@
     CSLLinkedListNode *_previous;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLLinkedListNode *previous; // @synthesize previous=_previous;
 @property(retain, nonatomic) CSLLinkedListNode *next; // @synthesize next=_next;
-- (void).cxx_destruct;
 - (void)unlink;
 
 @end

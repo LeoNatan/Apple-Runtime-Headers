@@ -19,10 +19,10 @@
     unsigned long long _binaryOperator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long binaryOperator; // @synthesize binaryOperator=_binaryOperator;
 @property(readonly, nonatomic) id <EFSQLExpressable> right; // @synthesize right=_right;
 @property(readonly, nonatomic) id <EFSQLExpressable> left; // @synthesize left=_left;
-- (void).cxx_destruct;
 - (void)setColumnExpression:(id)arg1;
 - (id)_stringForOperator:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;

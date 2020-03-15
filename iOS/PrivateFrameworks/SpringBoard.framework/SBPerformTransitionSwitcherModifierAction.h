@@ -14,9 +14,9 @@
     SBSwitcherTransitionRequest *_transitionRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isGestureInitiated) _Bool gestureInitiated; // @synthesize gestureInitiated=_gestureInitiated;
 @property(readonly, nonatomic) SBSwitcherTransitionRequest *transitionRequest; // @synthesize transitionRequest=_transitionRequest;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithTransitionRequest:(id)arg1 gestureInitiated:(_Bool)arg2;
 - (long long)type;

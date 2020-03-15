@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *advertisementData; // @synthesize advertisementData=_advertisementData;
 @property _Bool hasDuplicates; // @synthesize hasDuplicates=_hasDuplicates;
 @property(nonatomic) _Bool supportsCompanionLink; // @synthesize supportsCompanionLink=_supportsCompanionLink;
@@ -37,7 +38,6 @@
 @property(retain) NSNumber *batteryLife; // @synthesize batteryLife=_batteryLife;
 @property(copy) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(copy) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (unsigned char)networkTypeForIncomingType:(unsigned char)arg1;
 - (unsigned char)networkTypeFromInfo:(unsigned int)arg1;
 - (id)signalStrengthFromInfo:(unsigned int)arg1;

@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBConfig *config; // @synthesize config=_config;
 @property(nonatomic) long long bucketCeiling; // @synthesize bucketCeiling=_bucketCeiling;
 @property(nonatomic) long long bucketFloor; // @synthesize bucketFloor=_bucketFloor;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

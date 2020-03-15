@@ -82,7 +82,6 @@ __attribute__((visibility("hidden")))
     _Bool _frameAllGroupedManeuvers;
     unsigned char _maxManeuversToFrame;
     _Bool _ignorePointsBehind;
-    _Bool _insetsAnimating;
     Coordinate3D_bc242218 _routeFocusCoordinate;
     unsigned long long _lastTargetStyleIdentifier;
     double _desiredZoomScale;
@@ -97,12 +96,12 @@ __attribute__((visibility("hidden")))
     long long _baseDisplayRate;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) long long baseDisplayRate; // @synthesize baseDisplayRate=_baseDisplayRate;
 @property(nonatomic) struct VKEdgeInsets clientFramingInsets; // @synthesize clientFramingInsets=_clientFramingInsets;
 @property(nonatomic) VKSceneConfiguration *sceneConfiguration; // @synthesize sceneConfiguration=_sceneConfiguration;
 @property(nonatomic) VKScreenCanvas<VKInteractiveMap> *screenCanvas; // @synthesize screenCanvas=_screenCanvas;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned char)cameraHeadingType;
 - (void)canvasDidLayout;
 - (void)setCamera:(id)arg1;
@@ -111,9 +110,8 @@ __attribute__((visibility("hidden")))
 - (CameraFrame_406dbd31)cameraFrame;
 - (void)_snapHeading;
 - (void)_snapPitch;
-- (void)edgeInsetsDidEndAnimating;
 - (void)setEdgeInsets:(struct VKEdgeInsets)arg1;
-- (void)edgeInsetsWillBeginAnimating;
+- (void)setEdgeInsetsAnimating:(_Bool)arg1;
 - (Unit_3d259e8a)maxCameraPitch;
 - (Unit_3d259e8a)minCameraPitch;
 - (double)maxZoomHeight;

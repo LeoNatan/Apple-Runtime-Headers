@@ -20,12 +20,12 @@
 }
 
 + (id)defaultHost;
+- (void).cxx_destruct;
 @property(retain) PKDaemonClient *daemon; // @synthesize daemon=_daemon;
 @property(retain) NSObject<OS_dispatch_queue> *hostQueue; // @synthesize hostQueue=_hostQueue;
 @property(retain) NSMapTable *discoveryMap; // @synthesize discoveryMap=_discoveryMap;
 @property(retain) NSMutableDictionary *activeOneShots; // @synthesize activeOneShots=_activeOneShots;
 @property(retain) NSMutableDictionary *activePlugIns; // @synthesize activePlugIns=_activePlugIns;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *hostInfoPlist; // @synthesize hostInfoPlist=_hostInfoPlist;
 - (void)deactivatePlugIn:(id)arg1;
 - (id)activatePlugIn:(id)arg1;

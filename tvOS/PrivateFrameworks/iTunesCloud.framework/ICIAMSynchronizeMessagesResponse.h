@@ -16,8 +16,8 @@
 }
 
 + (Class)applicationMessageSyncResponsesType;
-@property(retain, nonatomic) NSMutableArray *applicationMessageSyncResponses; // @synthesize applicationMessageSyncResponses=_applicationMessageSyncResponses;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *applicationMessageSyncResponses; // @synthesize applicationMessageSyncResponses=_applicationMessageSyncResponses;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

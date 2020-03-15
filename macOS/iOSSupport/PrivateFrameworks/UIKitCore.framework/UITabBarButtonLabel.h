@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)_fontPointSizeForIdiom:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITabBarButton *tabBarButton; // @synthesize tabBarButton=_tabBarButton;
 @property(retain, nonatomic) UIColor *unselectedTintColor; // @synthesize unselectedTintColor=_unselectedTintColor;
 @property(retain, nonatomic, setter=_setAppearanceGuideClass:) Class _appearanceGuideClass; // @synthesize _appearanceGuideClass;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (long long)_idiomForFontGivenIdiom:(long long)arg1;

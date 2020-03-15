@@ -15,9 +15,9 @@
     UIKBBackdropView *_backdropView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKBBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (long long)backdropViewStyle;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;

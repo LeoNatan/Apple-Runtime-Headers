@@ -13,8 +13,8 @@
     PETScalarEventTracker *_tracker;
 }
 
-@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void)trackEventWithScalar:(unsigned int)arg1 reason:(struct PPMTopicDonationErrorReason_)arg2;
 - (id)init;
 

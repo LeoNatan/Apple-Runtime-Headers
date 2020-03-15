@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     double _weekdayWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double weekdayWidth; // @synthesize weekdayWidth=_weekdayWidth;
 @property(copy, nonatomic) NSString *formattedDateString; // @synthesize formattedDateString=_formattedDateString;
 @property(readonly, nonatomic) UILabel *weekdayLabel; // @synthesize weekdayLabel=_weekdayLabel;
 @property(readonly, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool weekdayLast;
 - (void)layoutSubviews;
 - (_Bool)_canBeReusedInPickerView;

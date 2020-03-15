@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
     _UIBackdropViewSettings *_outputSettingsB;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBackdropViewSettings *outputSettingsB; // @synthesize outputSettingsB=_outputSettingsB;
 @property(retain, nonatomic) _UIBackdropViewSettings *outputSettingsA; // @synthesize outputSettingsA=_outputSettingsA;
 @property(nonatomic) double weighting; // @synthesize weighting=_weighting;
 @property(retain, nonatomic) _UIBackdropViewSettings *inputSettingsB; // @synthesize inputSettingsB=_inputSettingsB;
 @property(retain, nonatomic) _UIBackdropViewSettings *inputSettingsA; // @synthesize inputSettingsA=_inputSettingsA;
-- (void).cxx_destruct;
 - (void)computeOutputSettingsUsingModel:(id)arg1;
 - (_Bool)isBackdropVisible;
 - (_Bool)requiresBackdropLayer;

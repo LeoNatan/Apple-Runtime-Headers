@@ -19,6 +19,7 @@
     NUColorSpace *_cachedColorSpace;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresVideoComposition; // @synthesize requiresVideoComposition=_requiresVideoComposition;
 @property(retain) NUColorSpace *cachedColorSpace; // @synthesize cachedColorSpace=_cachedColorSpace;
 @property(nonatomic) _Bool bypassOutputSettingsIfNoComposition; // @synthesize bypassOutputSettingsIfNoComposition=_bypassOutputSettingsIfNoComposition;
@@ -26,7 +27,6 @@
 @property(retain) NSProgress *progress; // @synthesize progress=_progress;
 @property(copy) NSArray *metadata; // @synthesize metadata=_metadata;
 @property(copy) NSDictionary *outputSettings; // @synthesize outputSettings=_outputSettings;
-- (void).cxx_destruct;
 - (void)submitWithProgress:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;

@@ -18,9 +18,9 @@
 + (void)didFinishLearningWithAgent:(id)arg1 task:(id)arg2;
 + (id)contactRecordsForRecipients:(id)arg1;
 + (id)sharedLearningAgent;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TILanguageModelOfflineLearningTask *currentLearningTask; // @synthesize currentLearningTask=_currentLearningTask;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)handleRemovalOfLearnedModels;
 - (void)performTaskInBackground:(CDUnknownBlockType)arg1;
 - (void)performLearningIfNecessaryWithStrategy:(id)arg1 lastAdaptationTime:(double)arg2;

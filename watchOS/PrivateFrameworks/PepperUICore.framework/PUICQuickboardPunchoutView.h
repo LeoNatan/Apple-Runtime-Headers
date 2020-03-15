@@ -11,8 +11,8 @@
     UIView *_punchoutView;
 }
 
-@property(nonatomic) __weak UIView *punchoutView; // @synthesize punchoutView=_punchoutView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *punchoutView; // @synthesize punchoutView=_punchoutView;
 - (void)dismissWithPunchoutDuration:(double)arg1 blackoutOutDuration:(double)arg2 delay:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)blackoutWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithSourceView:(id)arg1;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)binaryToSymbolicateWithBinary:(id)arg1;
+- (void).cxx_destruct;
 @property int livePid; // @synthesize livePid=_livePid;
 @property unsigned long long dataGatheringOptions; // @synthesize dataGatheringOptions=_dataGatheringOptions;
 @property(readonly) SABinary *binary; // @synthesize binary=_binary;
-- (void).cxx_destruct;
 
 @end
 

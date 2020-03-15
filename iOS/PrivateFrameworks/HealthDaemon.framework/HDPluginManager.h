@@ -17,10 +17,10 @@
     NSDictionary *_legacyPluginsByIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *legacyPluginsByIdentifier; // @synthesize legacyPluginsByIdentifier=_legacyPluginsByIdentifier;
 @property(copy, nonatomic) NSArray *allowablePluginDirectoryPaths; // @synthesize allowablePluginDirectoryPaths=_allowablePluginDirectoryPaths;
 @property(nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (Class)_loadPrincipalClassConformingToProtocols:(id)arg1 fromBundleAtPath:(id)arg2;
 - (id)_loadPrincipalClassesConformingToProtocols:(id)arg1 fromBundlesInDirectoryAtPath:(id)arg2 error:(id *)arg3;
 - (id)pluginsForProtocol:(id)arg1;

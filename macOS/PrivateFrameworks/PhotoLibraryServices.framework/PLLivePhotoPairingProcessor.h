@@ -10,7 +10,9 @@
 {
 }
 
+- (id)livePhotoFetchRequestWithPredicate:(id)arg1;
 - (id)fetchRequestForSortedGroupIDs:(id)arg1;
+- (id)fetchRequestForLibrary;
 - (id)combinePairs:(id)arg1 error:(id *)arg2;
 - (id)firstGroupFromAssets:(id)arg1;
 - (id)groupIDForAsset:(id)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)hoursType;
-@property(retain, nonatomic) NSMutableArray *hours; // @synthesize hours=_hours;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *hours; // @synthesize hours=_hours;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

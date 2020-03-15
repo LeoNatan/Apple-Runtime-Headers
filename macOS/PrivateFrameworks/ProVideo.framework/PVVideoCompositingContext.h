@@ -48,6 +48,7 @@
 + (id)createContextForCPU;
 + (id)createContextForGPU;
 + (id)dotGraphLoggingDirectory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PVColorSpace *workingColorSpace; // @synthesize workingColorSpace=_workingColorSpace;
 @property(nonatomic) int conformColorSpacesToDestinationBufferSpace; // @synthesize conformColorSpacesToDestinationBufferSpace;
 @property(nonatomic) int workingColorSpaceConformIntent; // @synthesize workingColorSpaceConformIntent;
@@ -76,7 +77,6 @@
 @property int gpuRenderAPI; // @synthesize gpuRenderAPI;
 @property _Bool concatenationFlag; // @synthesize concatenationFlag;
 @property(nonatomic) int renderDevice; // @synthesize renderDevice;
-- (void).cxx_destruct;
 - (void)setIntermediateBufferFormatForWorkingColorSpace;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -26,6 +26,7 @@
 - (id)fetchTransactionsSinceLastToken;
 - (void)distributeNewTransactionsSinceLastToken;
 - (void)_inq_stopObservingRemoteNotifications;
+- (void)invalidate;
 - (void)stopObservingRemoteNotifications;
 - (void)_inq_startObservingRemoteNotifications;
 - (void)startObservingRemoteNotifications;

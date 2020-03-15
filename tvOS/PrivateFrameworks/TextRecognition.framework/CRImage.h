@@ -28,6 +28,7 @@
 + (unsigned long long)bytesPerPixelForColorSpace:(int)arg1;
 + (struct vImage_Buffer)allocateVImageBufferWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 colorSpace:(int)arg3;
 + (struct vImage_Buffer)allocateVImageBufferWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 bytesPerPixel:(int)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool vImageDataIsCopy; // @synthesize vImageDataIsCopy=_vImageDataIsCopy;
 @property(nonatomic) struct CGImage *cgImage; // @synthesize cgImage=_cgImage;
 @property(nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
@@ -35,7 +36,6 @@
 @property(readonly) _Bool isFullRange; // @synthesize isFullRange=_isFullRange;
 @property(readonly) int colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) struct vImage_Buffer vImage; // @synthesize vImage=_vImage;
-- (void).cxx_destruct;
 - (id)initWithVImageBuffer:(struct vImage_Buffer)arg1;
 - (id)initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
 - (id)initWithContentsOfURL:(id)arg1;

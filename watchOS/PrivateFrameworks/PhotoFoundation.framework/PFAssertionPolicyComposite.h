@@ -15,8 +15,8 @@
     NSMutableArray *_policies;
 }
 
-@property(readonly) NSArray *policies; // @synthesize policies=_policies;
 - (void).cxx_destruct;
+@property(readonly) NSArray *policies; // @synthesize policies=_policies;
 - (void)notifyAssertion:(id)arg1;
 - (void)addPolicy:(id)arg1;
 - (id)init;

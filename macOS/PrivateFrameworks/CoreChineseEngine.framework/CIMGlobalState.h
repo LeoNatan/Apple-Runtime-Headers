@@ -20,6 +20,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int IOConnection; // @synthesize IOConnection=_IOConnection;
 @property(retain, nonatomic) CIMPreferences *mockPreferences; // @synthesize mockPreferences=_mockPreferences;
 @property(retain, nonatomic) id mockClient; // @synthesize mockClient=_mockClient;
@@ -27,7 +28,6 @@
 @property(nonatomic) unsigned long long inlineState; // @synthesize inlineState=_inlineState;
 @property(copy, nonatomic) NSString *inputSourceIdentifier; // @synthesize inputSourceIdentifier=_inputSourceIdentifier;
 @property(retain, nonatomic) IMKServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL capsLockIsOn;
 @property(readonly, nonatomic) CIMInputController *currentController;
 @property(readonly, nonatomic) id currentClient;

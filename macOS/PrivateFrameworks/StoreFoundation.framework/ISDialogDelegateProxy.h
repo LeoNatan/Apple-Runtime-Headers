@@ -15,8 +15,8 @@
     id <ISDialogDelegate> _delegate;
 }
 
-@property(retain) id <ISDialogDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <ISDialogDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dialog:(id)arg1 shouldDismissWithReturnCode:(long long)arg2 replyBlock:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *requestQueue;
 - (id)initWithDelegate:(id)arg1;

@@ -58,6 +58,7 @@
 + (void)saveSecurityState:(id)arg1;
 + (void)performSecurityOperation:(CDUnknownBlockType)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *stepProgress; // @synthesize stepProgress=_stepProgress;
 @property struct timeval bootTime; // @synthesize bootTime=_bootTime;
 @property(retain) NSMutableSet *completedPaths; // @synthesize completedPaths=_completedPaths;
@@ -94,7 +95,6 @@
 @property(retain) NSString *uuid; // @synthesize uuid=_uuid;
 @property unsigned long long type; // @synthesize type=_type;
 @property unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly) BOOL shouldPersistNetworkKeys;
 @property(readonly) BOOL currentlyBackgrounded;

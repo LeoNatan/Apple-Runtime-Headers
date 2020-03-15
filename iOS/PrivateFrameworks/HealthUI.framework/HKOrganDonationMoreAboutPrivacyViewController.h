@@ -13,8 +13,8 @@
     UITextView *_textView;
 }
 
-@property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)doneButtonTapped:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

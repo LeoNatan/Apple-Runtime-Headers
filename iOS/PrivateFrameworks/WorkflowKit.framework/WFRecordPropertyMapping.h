@@ -16,11 +16,11 @@
     WFRecordProperty *_destinationProperty;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFRecordProperty *destinationProperty; // @synthesize destinationProperty=_destinationProperty;
 @property(nonatomic) __weak id destinationObject; // @synthesize destinationObject=_destinationObject;
 @property(retain, nonatomic) WFRecordProperty *sourceProperty; // @synthesize sourceProperty=_sourceProperty;
 @property(nonatomic) __weak id sourceObject; // @synthesize sourceObject=_sourceObject;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)setterMethodSignature;

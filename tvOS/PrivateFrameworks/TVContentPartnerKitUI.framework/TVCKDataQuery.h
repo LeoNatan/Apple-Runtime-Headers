@@ -26,6 +26,7 @@
 
 + (id)stringFromQueryStatus:(long long)arg1;
 + (id)stringFromQueryType:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) id callbackContext; // @synthesize callbackContext=_callbackContext;
 @property(retain, nonatomic) NSMutableDictionary *metadataDict; // @synthesize metadataDict=_metadataDict;
 @property(retain, nonatomic) NSMutableArray *queryFilters; // @synthesize queryFilters=_queryFilters;
@@ -36,7 +37,6 @@
 @property(nonatomic) long long groupingDirection; // @synthesize groupingDirection=_groupingDirection;
 @property(copy, nonatomic) NSString *groupingProperty; // @synthesize groupingProperty=_groupingProperty;
 @property(nonatomic) long long queryType; // @synthesize queryType=_queryType;
-- (void).cxx_destruct;
 - (id)metadata;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

@@ -18,9 +18,9 @@
     id <NSObject> _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> context; // @synthesize context=_context;
 @property(nonatomic) __weak id <XPCNSServiceConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)shutDownCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)XPCServiceConnectionDidDisconnect:(id)arg1;
 - (void)XPCServiceConnection:(id)arg1 didReceiveRequest:(id)arg2 sequenceNumber:(unsigned long long)arg3;

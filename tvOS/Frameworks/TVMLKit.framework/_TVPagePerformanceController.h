@@ -34,6 +34,7 @@
 
 + (void)postNotificationForImageProxy:(id)arg1 withLoadingStatus:(_Bool)arg2;
 + (_Bool)isPerformanceUIEnabled;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long pageTransitionDuration; // @synthesize pageTransitionDuration=_pageTransitionDuration;
 @property(nonatomic) unsigned long long pageResourceDuration; // @synthesize pageResourceDuration=_pageResourceDuration;
 @property(nonatomic) unsigned long long pageRenderDuration; // @synthesize pageRenderDuration=_pageRenderDuration;
@@ -50,7 +51,6 @@
 @property(nonatomic) _Bool pageWasInterrupted; // @synthesize pageWasInterrupted=_pageWasInterrupted;
 @property(nonatomic) _Bool pageHasSubpages; // @synthesize pageHasSubpages=_pageHasSubpages;
 @property(nonatomic) __weak id <_TVPagePerformanceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_maybeDeliverMetrics;
 - (_Bool)_isMetricsReady;
 - (void)_calculatePageDurations;

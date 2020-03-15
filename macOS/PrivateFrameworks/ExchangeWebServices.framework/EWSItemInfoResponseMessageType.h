@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *Items; // @synthesize Items=_Items;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *Items; // @synthesize Items=_Items;
 
 @end
 

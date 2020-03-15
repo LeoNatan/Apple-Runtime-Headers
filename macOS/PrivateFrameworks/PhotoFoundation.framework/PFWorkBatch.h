@@ -23,6 +23,7 @@
     unsigned long long _lastJobIndex;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long lastJobIndex; // @synthesize lastJobIndex=_lastJobIndex;
 @property unsigned long long nextJobIndex; // @synthesize nextJobIndex=_nextJobIndex;
 @property unsigned long long currentJobIndex; // @synthesize currentJobIndex=_currentJobIndex;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSMutableArray *jobs; // @synthesize jobs=_jobs;
 @property(retain, nonatomic) NSError *beginResult; // @synthesize beginResult=_beginResult;
 @property(retain) id uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)initWithWorkContext:(id)arg1;
 - (id)init;
 - (id)valueForKey:(id)arg1;

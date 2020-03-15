@@ -17,8 +17,8 @@
 
 + (id)sharedReporter;
 + (id)log;
-@property(retain, nonatomic) SDRDiagnosticReporter *diagnosticReporter; // @synthesize diagnosticReporter=_diagnosticReporter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SDRDiagnosticReporter *diagnosticReporter; // @synthesize diagnosticReporter=_diagnosticReporter;
 - (void)reportIssueType:(id)arg1 description:(id)arg2;
 - (id)init;
 

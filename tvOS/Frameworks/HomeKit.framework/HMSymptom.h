@@ -16,15 +16,15 @@
     NSString *_localizedTitle;
 }
 
-+ (id)archiveSymptomDict:(struct NSDictionary *)arg1;
++ (id)archiveSymptomDict:(id)arg1;
 + (id)archive:(id)arg1;
-+ (struct NSDictionary *)unarchiveSymptomDict:(id)arg1;
++ (id)unarchiveSymptomDict:(id)arg1;
 + (id)unarchive:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)symptomWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -39,10 +39,10 @@
 + (Class)_textPasteItemClass;
 + (BOOL)_wantsFadedEdges;
 + (Class)_fieldEditorClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long _textInputSource; // @synthesize _textInputSource=__textInputSource;
 @property(nonatomic, setter=_setPreventSelectionViewActivation:) BOOL _preventSelectionViewActivation; // @synthesize _preventSelectionViewActivation=__preventSelectionViewActivation;
 @property(nonatomic, setter=_setSearchBar:) __weak UISearchBar *_searchBar; // @synthesize _searchBar;
-- (void).cxx_destruct;
 - (id)_customDraggableObjectsForRange:(id)arg1;
 - (id)_rangeOfCustomDraggableObjectsInRange:(id)arg1;
 - (BOOL)allowsDraggingAttachments;
@@ -142,6 +142,7 @@
 @property(retain, nonatomic, setter=_setSearchTextOffetValue:) NSValue *_searchTextOffsetValue;
 - (id)_offsetValueForIcon:(long long)arg1;
 - (void)_setOffsetValue:(id)arg1 forIcon:(long long)arg2;
+- (BOOL)_hasCustomClearButtonImage;
 - (id)_clearButtonImageForState:(unsigned long long)arg1;
 - (void)_setClearButtonImage:(id)arg1 forState:(unsigned long long)arg2;
 @property(nonatomic, setter=_setIgnoresDynamicType:) BOOL _ignoresDynamicType;

@@ -18,12 +18,12 @@
 }
 
 + (id)defaultWindow;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVLPlayerWindowRootViewController *blankViewController; // @synthesize blankViewController=_blankViewController;
 @property(nonatomic) __weak TVLNavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) UIWindow *previousKeyWindow; // @synthesize previousKeyWindow=_previousKeyWindow;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)dismiss;
 - (void)showWithPlaybackViewController:(id)arg1;
 @property(readonly, nonatomic) TVLPlaybackViewController *playbackViewController;

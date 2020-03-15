@@ -17,9 +17,9 @@
 
 + (id)defaultFileName;
 + (id)socialService;
+- (void).cxx_destruct;
 @property(copy) NSURL *proxyURL; // @synthesize proxyURL=_proxyURL;
 @property(readonly) unsigned long long intent; // @synthesize intent=_intent;
-- (void).cxx_destruct;
 - (_Bool)flushProxy;
 - (void)updateProxy;
 - (void)setProxiedValue:(id)arg1 forKey:(id)arg2;

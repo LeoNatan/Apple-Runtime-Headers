@@ -44,6 +44,7 @@
 + (id)applicablePayloadsForHomePod;
 + (id)minimumWatchVersionRequirementsForPayloads;
 + (id)unavailablePayloadsInEphemeralMultiUser;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mustInstallNonInteractively; // @synthesize mustInstallNonInteractively=_mustInstallNonInteractively;
 @property(retain, nonatomic) NSString *persistentResourceID; // @synthesize persistentResourceID=_persistentResourceID;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
@@ -54,7 +55,6 @@
 @property(readonly, retain, nonatomic) NSString *payloadDescription; // @synthesize payloadDescription=_payloadDescription;
 @property(readonly, retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, nonatomic) __weak MCProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool containsSensitiveUserInformation;
 - (id)payloadDescriptionKeyValueSections;
 - (id)subtitle2Description;

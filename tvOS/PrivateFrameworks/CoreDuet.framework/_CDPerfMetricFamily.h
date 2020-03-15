@@ -15,9 +15,9 @@
 }
 
 + (id)perfMetricFamilyWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *perfMetrics; // @synthesize perfMetrics=_perfMetrics;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)allPerfMetrics;
 - (id)perfMetricWithName:(id)arg1;

@@ -6,18 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class EMCollection;
-
 @interface EMMessageListChangeObserverHelper : NSObject
 {
-    EMCollection *_collection;
 }
 
-@property(nonatomic) __weak EMCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
-- (void)notifyChangeObserverAboutChangedItemIDs:(id)arg1 itemIDsWithCountChanges:(id)arg2;
-- (void)notifyChangeObserverAboutChangesByItemIDs:(id)arg1;
-- (id)initWithCollection:(id)arg1;
++ (void)collection:(id)arg1 notifyChangeObserverAboutChangedItemIDs:(id)arg2 itemIDsWithCountChanges:(id)arg3;
++ (void)collection:(id)arg1 notifyChangeObserverAboutChangesByItemIDs:(id)arg2;
 
 @end
 

@@ -14,9 +14,9 @@
     NSString *_sponsorAlias;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sponsorAlias; // @synthesize sponsorAlias=_sponsorAlias;
 @property(readonly, nonatomic) IDSMPConversationKey *conversationKey; // @synthesize conversationKey=_conversationKey;
-- (void).cxx_destruct;
 - (id)initWithConversationKey:(id)arg1 sponsorAlias:(id)arg2;
 
 @end

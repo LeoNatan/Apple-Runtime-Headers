@@ -18,12 +18,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) BOOL saveToSharedUserAccount; // @synthesize saveToSharedUserAccount=_saveToSharedUserAccount;
 @property(readonly, nonatomic) BOOL saveToAssistant; // @synthesize saveToAssistant=_saveToAssistant;
 @property(readonly, nonatomic) BOOL changed; // @synthesize changed=_changed;
 @property(readonly, nonatomic) BOOL local; // @synthesize local=_local;
-- (void).cxx_destruct;
 - (id)description;
 - (id)logIdentifier;
 - (void)markSaveToSharedUserAccount;

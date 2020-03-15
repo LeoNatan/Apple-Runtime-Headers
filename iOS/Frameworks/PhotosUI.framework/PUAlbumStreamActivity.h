@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 + (id)customExportsOutputDirectoryParent;
 + (void)_recordRecentInvitationRecipient:(id)arg1 displayName:(id)arg2 date:(id)arg3;
 + (long long)activityCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUAlbumStreamActivityDelegate> albumStreamDelegate; // @synthesize albumStreamDelegate=_albumStreamDelegate;
 @property(nonatomic) __weak UIViewController *referenceViewController; // @synthesize referenceViewController=_referenceViewController;
 @property _Bool destinationAlbumWasCreated; // @synthesize destinationAlbumWasCreated=_destinationAlbumWasCreated;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=setPresentedFromActivityViewController:) _Bool isPresentedFromActivityViewController; // @synthesize isPresentedFromActivityViewController=_isPresentedFromActivityViewController;
 - (void)setItemSourceController:(id)arg1;
 - (id)itemSourceController;
-- (void).cxx_destruct;
 - (void)photoStreamComposeServiceDidCancel:(id)arg1;
 - (void)photoStreamComposeService:(id)arg1 didPostComment:(id)arg2;
 - (void)controller:(id)arg1 didCancelTrimmingVideoSources:(id)arg2;
@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_performPresentationOnViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)_sharedAlbumAllowsAdding:(struct NSObject *)arg1;
+- (_Bool)_sharedAlbumAllowsAdding:(id)arg1;
 - (void)_handleDismissWithSuccess:(_Bool)arg1;
 - (void)_createStreamsPickerContainerWithExisting:(_Bool)arg1;
 - (id)activityViewController;

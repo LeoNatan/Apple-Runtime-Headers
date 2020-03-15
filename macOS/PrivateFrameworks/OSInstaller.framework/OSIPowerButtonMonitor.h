@@ -13,8 +13,8 @@
     id <OSIPowerButtonMonitorDelegate> _delegate;
 }
 
-@property __weak id <OSIPowerButtonMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <OSIPowerButtonMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_registerForPowerButtonHIDEvent;
 - (id)initWithDelegate:(id)arg1;
 

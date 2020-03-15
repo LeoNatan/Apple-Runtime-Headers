@@ -14,8 +14,8 @@
     id <PSITableDelegate> _delegate;
 }
 
-@property(readonly) __weak id <PSITableDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <PSITableDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)clear;
 - (void)finalizze;
 - (void)dealloc;

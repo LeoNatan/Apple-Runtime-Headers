@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *highLowText; // @synthesize highLowText=_highLowText;
 @property(nonatomic) long long currentConditionsEnum; // @synthesize currentConditionsEnum=_currentConditionsEnum;
 @property(retain, nonatomic) NSString *currentConditionsText; // @synthesize currentConditionsText=_currentConditionsText;
 @property(retain, nonatomic) NSString *locationText; // @synthesize locationText=_locationText;
 @property(retain, nonatomic) NSString *temperatureText; // @synthesize temperatureText=_temperatureText;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

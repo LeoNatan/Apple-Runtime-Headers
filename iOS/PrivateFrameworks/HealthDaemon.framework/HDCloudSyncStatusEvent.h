@@ -24,6 +24,7 @@
 + (id)_lastSuccessfulPullDateForConfiguration:(id)arg1;
 + (id)_persistedSyncStateForConfiguration:(id)arg1;
 + (id)statusEventWithConfiguration:(id)arg1 cloudKitIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *emptyZoneCount; // @synthesize emptyZoneCount=_emptyZoneCount;
 @property(readonly, copy, nonatomic) NSNumber *hasEncounteredGapInCurrentEpoch; // @synthesize hasEncounteredGapInCurrentEpoch=_hasEncounteredGapInCurrentEpoch;
 @property(readonly, copy, nonatomic) NSNumber *baseLineEpoch; // @synthesize baseLineEpoch=_baseLineEpoch;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSNumber *timeSinceLastUploadForwardProgress; // @synthesize timeSinceLastUploadForwardProgress=_timeSinceLastUploadForwardProgress;
 @property(readonly, copy, nonatomic) NSNumber *timeSinceDownloadSuccess; // @synthesize timeSinceDownloadSuccess=_timeSinceDownloadSuccess;
 @property(readonly, copy, nonatomic) NSNumber *timeSinceUploadSuccess; // @synthesize timeSinceUploadSuccess=_timeSinceUploadSuccess;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)codableRepresentationForAWDSubmission;
 - (unsigned int)AWDMetricID;

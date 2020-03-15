@@ -19,6 +19,7 @@
     NSDictionary *_outValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *outValues; // @synthesize outValues=_outValues;
 @property(retain, nonatomic) NSDictionary *values; // @synthesize values=_values;
 @property(nonatomic) _Bool supportsLocalization; // @synthesize supportsLocalization=_supportsLocalization;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *writeHAPCharacteristicName; // @synthesize writeHAPCharacteristicName=_writeHAPCharacteristicName;
 @property(retain, nonatomic) NSString *readHAPCharacteristicName; // @synthesize readHAPCharacteristicName=_readHAPCharacteristicName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 readHAPCharacteristic:(id)arg2 writeHAPCharacteristic:(id)arg3 format:(id)arg4;
 - (id)init;

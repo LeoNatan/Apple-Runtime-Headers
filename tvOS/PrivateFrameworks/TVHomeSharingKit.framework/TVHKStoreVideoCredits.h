@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSDictionary *_templateImageURLStringByContributorName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *templateImageURLStringByContributorName; // @synthesize templateImageURLStringByContributorName=_templateImageURLStringByContributorName;
 @property(copy, nonatomic) NSSet *allContributors; // @synthesize allContributors=_allContributors;
 @property(copy, nonatomic) NSSet *screenwriters; // @synthesize screenwriters=_screenwriters;
 @property(copy, nonatomic) NSSet *producers; // @synthesize producers=_producers;
 @property(copy, nonatomic) NSSet *directors; // @synthesize directors=_directors;
 @property(copy, nonatomic) NSSet *actors; // @synthesize actors=_actors;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

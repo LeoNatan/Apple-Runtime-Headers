@@ -26,9 +26,9 @@
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(readonly, nonatomic) _MROriginProtobuf *origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 - (void)restoreNowPlayingClientState;
 - (void)handleVolumeCapabilitiesRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleVolumeRequestWithCompletion:(CDUnknownBlockType)arg1;

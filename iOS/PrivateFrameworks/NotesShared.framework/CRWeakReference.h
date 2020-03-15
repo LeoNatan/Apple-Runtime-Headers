@@ -17,9 +17,9 @@
     CRDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CRDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)tombstone;
 - (void)realizeLocalChangesIn:(id)arg1;

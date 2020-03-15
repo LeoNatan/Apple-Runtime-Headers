@@ -16,8 +16,8 @@
     short _state;
 }
 
-@property(nonatomic) short state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(nonatomic) short state; // @synthesize state=_state;
 - (id)description;
 - (struct CGSize)imageDimensions;
 - (id)originatingFace;

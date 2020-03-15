@@ -17,10 +17,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSRootController *rootController; // @synthesize rootController=_rootController;
 @property(retain, nonatomic) PSSplitViewController *splitViewController; // @synthesize splitViewController=_splitViewController;
 @property(retain, nonatomic) PSListController<PSTopLevelController> *topLevelController; // @synthesize topLevelController=_topLevelController;
-- (void).cxx_destruct;
 - (id)urlForCurrentNavStack;
 - (void)popToRootAndSelectDefaultCategory:(_Bool)arg1 performWithoutDeferringTransitions:(_Bool)arg2;
 - (void)popToRootAndSelectDefaultCategory:(_Bool)arg1;

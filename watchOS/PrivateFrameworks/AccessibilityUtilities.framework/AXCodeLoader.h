@@ -34,13 +34,13 @@
 }
 
 + (id)defaultLoader;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType loadEventDidOccurBlock; // @synthesize loadEventDidOccurBlock=_loadEventDidOccurBlock;
 @property(copy, nonatomic) CDUnknownBlockType loadEventWillOccurBlock; // @synthesize loadEventWillOccurBlock=_loadEventWillOccurBlock;
 @property(copy, nonatomic) CDUnknownBlockType didLoadAccessibilityCodeItemBlock; // @synthesize didLoadAccessibilityCodeItemBlock=_didLoadAccessibilityCodeItemBlock;
 @property(copy, nonatomic) CDUnknownBlockType shouldLoadAccessibilityCodeItemBlock; // @synthesize shouldLoadAccessibilityCodeItemBlock=_shouldLoadAccessibilityCodeItemBlock;
 @property(nonatomic) _Bool shouldAutoloadAccessibilityCodeItems; // @synthesize shouldAutoloadAccessibilityCodeItems=_shouldAutoloadAccessibilityCodeItems;
 @property(nonatomic) int trackingMode; // @synthesize trackingMode=_trackingMode;
-- (void).cxx_destruct;
 - (void)iterateInitialImageListForImageMonitor:(id)arg1;
 - (void)imageMonitor:(id)arg1 didAddImage:(id)arg2;
 - (void)queryAccessibilityBundleIsLoadedWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;

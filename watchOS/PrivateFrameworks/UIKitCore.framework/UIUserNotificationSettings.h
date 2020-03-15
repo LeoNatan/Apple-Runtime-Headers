@@ -21,9 +21,9 @@
 + (id)settingsForRegisteredSettings:(id)arg1 requestedSettings:(id)arg2;
 + (id)settingsForTypes:(unsigned int)arg1 categories:(id)arg2;
 + (id)settingsForUserNotificationTypes:(unsigned int)arg1 userNotificationActionSettings:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *categories; // @synthesize categories=_categories;
 @property(readonly, nonatomic) unsigned int types; // @synthesize types=_types;
-- (void).cxx_destruct;
 - (id)userNotificationActionSettings;
 - (unsigned int)allowedUserNotificationTypes;
 - (id)validatedSettings;

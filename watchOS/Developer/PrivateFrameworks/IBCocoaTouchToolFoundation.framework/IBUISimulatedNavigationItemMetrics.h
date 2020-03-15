@@ -19,11 +19,11 @@
     long long _largeTitleDisplayMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long largeTitleDisplayMode; // @synthesize largeTitleDisplayMode=_largeTitleDisplayMode;
 @property(copy, nonatomic) id <IBBinaryArchivableColor> backButtonTintColor; // @synthesize backButtonTintColor=_backButtonTintColor;
 @property(copy, nonatomic) NSString *backButtonTitle; // @synthesize backButtonTitle=_backButtonTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqualToNavigationItemMetrics:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)encodeWithBinaryArchiver:(id)arg1;

@@ -17,11 +17,11 @@
     UILabel *_messageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *messageView; // @synthesize messageView=_messageView;
 @property(readonly, nonatomic) _TVImageView *chevronView; // @synthesize chevronView=_chevronView;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)_processSwipeUpMessageEvent:(int)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;

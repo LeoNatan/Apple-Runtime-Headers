@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (Class)_viewClassForSettingDescription:(id)arg1;
 + (id)_inputViewElementFromElement:(id)arg1;
 + (long long)_fieldTypeFromElement:(id)arg1;
-@property(nonatomic) __weak SKUISettingsGroupController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKUISettingsGroupController *controller; // @synthesize controller=_controller;
 - (void)_dispatchEventOfType:(unsigned long long)arg1 extraInfo:(id)arg2;
 - (void)handleSelectionOnCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)allowsSelection;

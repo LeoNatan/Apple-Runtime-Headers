@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSString *_backdropBarGroupName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesOpaqueColorForTopHairline; // @synthesize usesOpaqueColorForTopHairline=_usesOpaqueColorForTopHairline;
 @property(nonatomic) _Bool showsTopHairline; // @synthesize showsTopHairline=_showsTopHairline;
 @property(nonatomic) _Bool showsBottomHairline; // @synthesize showsBottomHairline=_showsBottomHairline;
 @property(nonatomic) _Bool showsBackdrop; // @synthesize showsBackdrop=_showsBackdrop;
 @property(copy, nonatomic) NSString *backdropBarGroupName; // @synthesize backdropBarGroupName=_backdropBarGroupName;
-- (void).cxx_destruct;
 - (void)_updateTopHairlineColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;

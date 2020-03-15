@@ -29,6 +29,7 @@
     struct NSEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double backgroundImageViewAlpha; // @synthesize backgroundImageViewAlpha=_backgroundImageViewAlpha;
 @property(nonatomic) struct CGSize stackingOffset; // @synthesize stackingOffset=_stackingOffset;
 @property(nonatomic) struct NSEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
@@ -38,7 +39,6 @@
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(nonatomic) long long stackDepth; // @synthesize stackDepth=_stackDepth;
 @property(copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateLayoutIfNeeded;
 - (void)_invalidateLayout;

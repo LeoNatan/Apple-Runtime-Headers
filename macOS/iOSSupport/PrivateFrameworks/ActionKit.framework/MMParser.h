@@ -15,10 +15,10 @@
     MMSpanParser *_spanParser;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MMSpanParser *spanParser; // @synthesize spanParser=_spanParser;
 @property(readonly, nonatomic) MMHTMLParser *htmlParser; // @synthesize htmlParser=_htmlParser;
 @property(readonly, nonatomic) unsigned long long extensions; // @synthesize extensions=_extensions;
-- (void).cxx_destruct;
 - (void)_updateLinksFromDefinitionsInDocument:(id)arg1;
 - (id)_parseTableWithScanner:(id)arg1;
 - (id)_parseTableRowWithScanner:(id)arg1 columns:(id)arg2;

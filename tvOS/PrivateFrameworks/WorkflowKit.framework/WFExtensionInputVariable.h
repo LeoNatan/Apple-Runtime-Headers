@@ -13,8 +13,8 @@
     id <WFVariableProvider> _variableProvider;
 }
 
-- (id)variableProvider;
 - (void).cxx_destruct;
+- (id)variableProvider;
 - (id)possibleContentClassesWithContext:(id)arg1;
 - (_Bool)isAvailable;
 - (id)icon;

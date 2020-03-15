@@ -17,12 +17,12 @@
     CAMViewfinderViewController *_viewfinderViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMViewfinderViewController *viewfinderViewController; // @synthesize viewfinderViewController=_viewfinderViewController;
 @property(readonly, nonatomic, getter=isTestingAnimation) _Bool testingAnimation; // @synthesize testingAnimation=_testingAnimation;
 @property(readonly, nonatomic) _Bool testingWarmPresentation; // @synthesize testingWarmPresentation=_testingWarmPresentation;
 @property(readonly, nonatomic) double settlingDelay; // @synthesize settlingDelay=_settlingDelay;
 @property(readonly, nonatomic) _Bool awaitPreload; // @synthesize awaitPreload=_awaitPreload;
-- (void).cxx_destruct;
 - (void)_dismissCameraRollImmediately;
 - (void)_presentCameraRollAnimated;
 - (void)_handlePUDisplayLinkStarted:(id)arg1;

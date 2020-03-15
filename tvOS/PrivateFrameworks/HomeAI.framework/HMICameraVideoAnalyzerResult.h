@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long lastSequenceNumber; // @synthesize lastSequenceNumber=_lastSequenceNumber;
 @property float analysisFPS; // @synthesize analysisFPS=_analysisFPS;
 @property(retain) HMICameraVideoFragment *videoFragment; // @synthesize videoFragment=_videoFragment;
@@ -39,7 +40,6 @@
 @property(readonly) NSArray *posterFrames; // @synthesize posterFrames=_posterFrames;
 @property(readonly) NSDictionary *annotationScores; // @synthesize annotationScores=_annotationScores;
 @property(readonly) long long events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1 excludeTime:(_Bool)arg2;
 - (long long)confidenceThatEventOccurred:(long long)arg1;
 - (id)initWithEvents:(long long)arg1 posterFrames:(id)arg2 frameResults:(id)arg3 annotationScores:(id)arg4 duration:(CDStruct_1b6d18a9)arg5 creationDate:(id)arg6 resultCode:(long long)arg7 lastSequenceNumber:(unsigned long long)arg8;

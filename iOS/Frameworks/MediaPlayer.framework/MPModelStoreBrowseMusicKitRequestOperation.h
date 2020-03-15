@@ -4,21 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MediaPlayer/MPStoreModelRequestOperation.h>
+#import <MediaPlayer/MPModelStoreGroupingsMusicKitRequestOperation.h>
 
-@class NSIndexSet;
-
-@interface MPModelStoreBrowseMusicKitRequestOperation : MPStoreModelRequestOperation
+@interface MPModelStoreBrowseMusicKitRequestOperation : MPModelStoreGroupingsMusicKitRequestOperation
 {
-    NSIndexSet *_carPlayWhitelistedFCKinds;
 }
 
-- (void).cxx_destruct;
-- (id)radioGenresURLWithStoreBagDictionary:(id)arg1;
-- (id)browseURLWithStoreBagDictionary:(id)arg1;
-- (id)_produceResponseWithParser:(id)arg1 results:(id)arg2 error:(id *)arg3;
-- (void)produceResponseWithLoadedOutput:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)configurationForLoadingModelDataWithStoreBagDictionary:(id)arg1 error:(id *)arg2;
+- (id)groupingNameBagKey;
 
 @end
 

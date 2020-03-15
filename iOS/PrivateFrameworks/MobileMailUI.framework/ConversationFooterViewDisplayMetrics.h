@@ -13,7 +13,7 @@
     double _topToBaseline;
 }
 
-+ (id)displayMetricsWithSafeAreaInsets:(struct UIEdgeInsets)arg1 interfaceOrientation:(long long)arg2;
++ (id)displayMetricsWithSafeAreaInsets:(struct UIEdgeInsets)arg1 interfaceOrientation:(long long)arg2 traitCollection:(id)arg3;
 @property(nonatomic) _Bool usePhoneLandscapeSymbolConfiguration; // @synthesize usePhoneLandscapeSymbolConfiguration=_usePhoneLandscapeSymbolConfiguration;
 @property(nonatomic) double topToBaseline; // @synthesize topToBaseline=_topToBaseline;
 @property(nonatomic) double toolbarHeight; // @synthesize toolbarHeight=_toolbarHeight;

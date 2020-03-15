@@ -21,6 +21,7 @@
     PXPeopleScalableAvatarView *_avatarView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXPeopleScalableAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) UXLabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) NSButton *denyButton; // @synthesize denyButton=_denyButton;
@@ -29,7 +30,6 @@
 @property(nonatomic) double sideInsets; // @synthesize sideInsets=_sideInsets;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(readonly, nonatomic) id <PXPeopleMeViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_rejectMe:(id)arg1;
 - (void)_confirmMe:(id)arg1;

@@ -17,9 +17,9 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithHandler:(CDUnknownBlockType)arg1 timeout:(double)arg2;
 

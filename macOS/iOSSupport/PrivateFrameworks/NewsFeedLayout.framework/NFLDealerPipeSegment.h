@@ -17,10 +17,10 @@
     CDUnknownBlockType _segmentTypeDescriptionProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType segmentTypeDescriptionProvider; // @synthesize segmentTypeDescriptionProvider=_segmentTypeDescriptionProvider;
 @property(retain, nonatomic) NFLSubBatchLayout *subBatchLayout; // @synthesize subBatchLayout=_subBatchLayout;
 @property(nonatomic) unsigned long long pipeSegmentType; // @synthesize pipeSegmentType=_pipeSegmentType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSegmentType:(unsigned long long)arg1 subBatchLayout:(id)arg2 segmentTypeDescriptionProvider:(CDUnknownBlockType)arg3;
 - (id)init;

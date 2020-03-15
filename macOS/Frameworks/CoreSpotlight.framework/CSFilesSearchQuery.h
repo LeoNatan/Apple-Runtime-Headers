@@ -18,12 +18,12 @@
     NSMutableSet *_processedItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) NSMutableSet *processedItems; // @synthesize processedItems=_processedItems;
 @property(retain, nonatomic) CSFilesSearchQueryContext *context; // @synthesize context=_context;
 @property(nonatomic) struct __MDQuery *mdQuery; // @synthesize mdQuery=_mdQuery;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (void)handleNotification:(id)arg1;

@@ -35,6 +35,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)nullEndpoint;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
 @property(nonatomic) int linkType; // @synthesize linkType=_linkType;
 @property(retain, nonatomic) IDSDevice *idsDevice; // @synthesize idsDevice=_idsDevice;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned int hotspotInfo; // @synthesize hotspotInfo=_hotspotInfo;
 @property(readonly, copy, nonatomic) NSString *homeKitUserIdentifier; // @synthesize homeKitUserIdentifier=_homeKitUserIdentifier;
-- (void).cxx_destruct;
 - (_Bool)removeSFDevice:(id)arg1;
 - (unsigned int)updateWithSFDevice:(id)arg1;
 - (unsigned int)removeIDSDevice;

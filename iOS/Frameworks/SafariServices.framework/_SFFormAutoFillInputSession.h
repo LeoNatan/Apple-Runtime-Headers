@@ -18,12 +18,12 @@
     WBSFormMetadata *_formMetadata;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSFormMetadata *formMetadata; // @synthesize formMetadata=_formMetadata;
 @property(readonly, nonatomic) SFFormAutoFillFrameHandle *frameHandle; // @synthesize frameHandle=_frameHandle;
 @property(readonly, nonatomic) id <_WKFormInputSession> formInputSession; // @synthesize formInputSession=_formInputSession;
 @property(readonly, nonatomic) NSDictionary *autoFillInputSessionUserObject; // @synthesize autoFillInputSessionUserObject=_autoFillInputSessionUserObject;
 @property(readonly, nonatomic) id <_WKFocusedElementInfo> focusedElementInfo; // @synthesize focusedElementInfo=_focusedElementInfo;
-- (void).cxx_destruct;
 - (id)autoFillInputSessionByReplacingInputSessionUserObject:(id)arg1;
 - (void)_updateAutoFillInputSessionUserObject:(id)arg1;
 - (id)_initWithFormInputSession:(id)arg1 focusedElement:(id)arg2;

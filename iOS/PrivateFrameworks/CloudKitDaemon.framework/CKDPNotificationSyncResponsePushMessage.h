@@ -35,6 +35,7 @@
 
 + (Class)subtitleLocalizedArgumentsType;
 + (Class)titleLocalizedArgumentsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *subtitleLocalizedArguments; // @synthesize subtitleLocalizedArguments=_subtitleLocalizedArguments;
 @property(retain, nonatomic) NSString *subtitleLocalizedKey; // @synthesize subtitleLocalizedKey=_subtitleLocalizedKey;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSString *dialog; // @synthesize dialog=_dialog;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) _Bool isRead; // @synthesize isRead=_isRead;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

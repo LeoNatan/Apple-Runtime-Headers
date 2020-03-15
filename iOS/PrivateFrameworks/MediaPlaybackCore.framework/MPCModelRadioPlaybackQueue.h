@@ -16,8 +16,8 @@
     _MPCModelRadioPlaybackQueueStationTracksCollection *_stationTracks;
 }
 
-@property(retain, nonatomic) MPModelRadioStation *radioStation; // @synthesize radioStation=_radioStation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelRadioStation *radioStation; // @synthesize radioStation=_radioStation;
 - (void)updateWithPersonalizedResponse:(id)arg1;
 - (id)tracksByApplyingTracksResponse:(id)arg1 currentIndex:(long long)arg2;
 @property(readonly, nonatomic) MPSectionedCollection *tracks;

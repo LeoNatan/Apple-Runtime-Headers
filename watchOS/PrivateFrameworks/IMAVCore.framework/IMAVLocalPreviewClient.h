@@ -22,8 +22,8 @@
 
 + (struct CGSize)localPortraitAspectRatio;
 + (id)sharedInstance;
-@property(retain, nonatomic) AVConferencePreview *conferencePreview; // @synthesize conferencePreview=_conferencePreview;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVConferencePreview *conferencePreview; // @synthesize conferencePreview=_conferencePreview;
 - (void)cameraDidBecomeAvailableForUniqueID:(id)arg1;
 - (void)didReceiveErrorFromCameraUniqueID:(id)arg1 error:(id)arg2;
 - (void)didChangeLocalScreenAttributes:(id)arg1;

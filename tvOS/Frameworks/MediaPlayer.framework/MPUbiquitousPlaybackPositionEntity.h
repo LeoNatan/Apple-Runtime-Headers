@@ -18,12 +18,12 @@
 }
 
 + (id)ubiquitousIdentifierWithStoreAdamID:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBeenPlayed; // @synthesize hasBeenPlayed=_hasBeenPlayed;
 @property(nonatomic) unsigned long long userPlayCount; // @synthesize userPlayCount=_userPlayCount;
 @property(nonatomic) double bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
 @property(nonatomic) double bookmarkTimestamp; // @synthesize bookmarkTimestamp=_bookmarkTimestamp;
 @property(readonly, copy, nonatomic) NSString *ubiquitousIdentifier; // @synthesize ubiquitousIdentifier=_ubiquitousIdentifier;
-- (void).cxx_destruct;
 - (_Bool)bookmarkTimestampModified;
 - (_Bool)bookmarkTimeModified;
 - (_Bool)userPlayCountModified;

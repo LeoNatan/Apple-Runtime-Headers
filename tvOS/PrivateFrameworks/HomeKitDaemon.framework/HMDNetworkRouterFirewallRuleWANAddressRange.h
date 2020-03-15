@@ -14,10 +14,10 @@
     HMFNetAddress *_addressEnd;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFNetAddress *addressEnd; // @synthesize addressEnd=_addressEnd;
 @property(readonly, nonatomic) HMFNetAddress *addressStart; // @synthesize addressStart=_addressStart;
-- (void).cxx_destruct;
-- (struct NSDictionary *)prettyJSONDictionary;
+- (id)prettyJSONDictionary;
 - (id)attributeDescriptions;
 - (id)initWithAddressStart:(id)arg1 addressEnd:(id)arg2;
 

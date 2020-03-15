@@ -16,6 +16,8 @@
 @property(copy, nonatomic) NSArray *autocompleteTokens; // @dynamic autocompleteTokens;
 @property(copy, nonatomic) NSDictionary *radioButtonInfo; // @dynamic radioButtonInfo;
 @property(copy, nonatomic) NSDictionary *annotations; // @dynamic annotations;
+@property(nonatomic) int lastAutoFillButtonType; // @dynamic lastAutoFillButtonType;
+@property(nonatomic) int autoFillButtonType; // @dynamic autoFillButtonType;
 @property(nonatomic) unsigned int selectionLength; // @dynamic selectionLength;
 @property(nonatomic) unsigned int selectionStart; // @dynamic selectionStart;
 @property(nonatomic) unsigned int minLength; // @dynamic minLength;

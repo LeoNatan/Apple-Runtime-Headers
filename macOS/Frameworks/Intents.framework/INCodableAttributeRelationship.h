@@ -21,16 +21,16 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 @property(retain, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(nonatomic) unsigned long long relation; // @synthesize relation=_relation;
 @property(nonatomic) __weak INCodableAttribute *parentCodableAttribute; // @synthesize parentCodableAttribute=_parentCodableAttribute;
 @property(retain, nonatomic, setter=_setOriginalDictionary:) NSDictionary *_originalDictionary; // @synthesize _originalDictionary;
-- (void).cxx_destruct;
 - (id)dictionaryKeyForKeyPath:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *keyPrefix;
 @property(readonly, copy, nonatomic) NSString *cacheGroup;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

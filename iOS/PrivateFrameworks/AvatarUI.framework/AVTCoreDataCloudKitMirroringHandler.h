@@ -22,6 +22,7 @@
     NSNotificationCenter *_notificationCenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool exportInFlight; // @synthesize exportInFlight=_exportInFlight;
 @property(retain, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) id <NSObject> didResetNotificationToken; // @synthesize didResetNotificationToken=_didResetNotificationToken;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) id <AVTBlockScheduler> blockScheduler; // @synthesize blockScheduler=_blockScheduler;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(nonatomic) __weak id <AVTCoreDataCloudKitMirroringHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)resetZoneWithManagedObjectContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)exportChangesWithManagedObjectContext:(id)arg1 workQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)importChangesWithManagedObjectContext:(id)arg1 workQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

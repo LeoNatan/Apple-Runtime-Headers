@@ -27,6 +27,7 @@
     // Error parsing type: , name: _offset
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char waitingForFootRaise; // @synthesize waitingForFootRaise=_waitingForFootRaise;
 @property(nonatomic) unsigned char state; // @synthesize state=_state;
 @property(nonatomic) BOOL frameDisplayTime60th; // @synthesize frameDisplayTime60th=_frameDisplayTime60th;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSArray *texs; // @synthesize texs=_texs;
 @property(nonatomic) float height; // @synthesize height=_height;
 @property(nonatomic) float width; // @synthesize width=_width;
-- (void).cxx_destruct;
 
 @end
 

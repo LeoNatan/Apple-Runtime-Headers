@@ -17,12 +17,12 @@
     NSMutableArray *_ticks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *ticks; // @synthesize ticks=_ticks;
 @property(retain, nonatomic) UIColor *tickColor; // @synthesize tickColor=_tickColor;
 @property(nonatomic) _Bool supportsVibrancy; // @synthesize supportsVibrancy=_supportsVibrancy;
 @property(nonatomic) _Bool restrictsValuesToTicks; // @synthesize restrictsValuesToTicks=_restrictsValuesToTicks;
 @property(nonatomic) unsigned long long segmentCount; // @synthesize segmentCount=_segmentCount;
-- (void).cxx_destruct;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 - (struct CGRect)trackRectForBounds:(struct CGRect)arg1;

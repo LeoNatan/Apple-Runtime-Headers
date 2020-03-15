@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     id <RVGestureDelegate> specializedController;
 }
 
+- (void).cxx_destruct;
 @property BOOL lookupFlavor; // @synthesize lookupFlavor=_lookupFlavor;
 @property(retain) id <RVGestureDelegate> specializedController; // @synthesize specializedController;
 @property(retain) RVItem *item; // @synthesize item=_item;
 @property(retain) RVPresentingContext *presenter; // @synthesize presenter=_presenter;
 @property(retain) id <NSImmediateActionAnimationController> actualGestureDelegate; // @synthesize actualGestureDelegate=_actualGestureDelegate;
-- (void).cxx_destruct;
 - (void)recognizerDidDismissAnimation:(id)arg1;
 - (void)recognizerDidCompleteAnimation:(id)arg1;
 - (void)recognizerDidCancelAnimation:(id)arg1;

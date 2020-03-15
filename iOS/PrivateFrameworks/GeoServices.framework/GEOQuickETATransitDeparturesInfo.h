@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSDate *_departureFrequencyValidUntil;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *departureFrequencyValidUntil; // @synthesize departureFrequencyValidUntil=_departureFrequencyValidUntil;
 @property(readonly, nonatomic) double departureFrequency; // @synthesize departureFrequency=_departureFrequency;
 @property(readonly, nonatomic) _Bool departuresHaveFrequency; // @synthesize departuresHaveFrequency=_departuresHaveFrequency;
 @property(readonly, nonatomic) NSString *headsign; // @synthesize headsign=_headsign;
 @property(readonly, nonatomic) NSString *direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
 - (id)_chooseMostImportantTransitLegInRoute:(id)arg1;
 - (id)description;
 - (id)initWithComposedRoute:(id)arg1;

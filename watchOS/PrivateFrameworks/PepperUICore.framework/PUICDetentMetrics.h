@@ -20,6 +20,7 @@
     double _crownRotations;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) _Bool minorDetentsEnabled; // @synthesize minorDetentsEnabled=_minorDetentsEnabled;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned int strongDetentCount; // @synthesize strongDetentCount=_strongDetentCount;
 @property(nonatomic) unsigned int standardDetentCount; // @synthesize standardDetentCount=_standardDetentCount;
 @property(nonatomic) unsigned int weakDetentCount; // @synthesize weakDetentCount=_weakDetentCount;
-- (void).cxx_destruct;
 - (void)crownRotated:(double)arg1;
 - (void)detentPlayed:(int)arg1;
 - (void)record;

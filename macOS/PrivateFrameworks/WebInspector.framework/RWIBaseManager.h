@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     NSString *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) __weak id <RWIBaseManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_rpc_reportAutomaticInspectionCandidate:(id)arg1;
 - (void)_rpc_requestDriverStateChange:(id)arg1;
 - (void)_rpc_reportSetup:(id)arg1;

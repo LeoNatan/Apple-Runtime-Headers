@@ -23,6 +23,7 @@
     id <FCCardStyleProviding> _spotlightItemDarkStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> spotlightItemDarkStyle; // @synthesize spotlightItemDarkStyle=_spotlightItemDarkStyle;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> spotlightItemStyle; // @synthesize spotlightItemStyle=_spotlightItemStyle;
 @property(readonly, copy, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *eyebrowTitle; // @synthesize eyebrowTitle=_eyebrowTitle;
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
-- (void).cxx_destruct;
 - (id)initWithSpotlightGroupConfig:(id)arg1 headline:(id)arg2;
 
 @end

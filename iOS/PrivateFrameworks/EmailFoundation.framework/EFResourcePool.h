@@ -16,10 +16,10 @@
     NSMutableSet *_inactiveResources;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *inactiveResources; // @synthesize inactiveResources=_inactiveResources;
 @property(readonly, nonatomic) EFQueue *activeResources; // @synthesize activeResources=_activeResources;
 @property(nonatomic) unsigned long long uncreatedResourcesCount; // @synthesize uncreatedResourcesCount=_uncreatedResourcesCount;
-- (void).cxx_destruct;
 - (void)releaseResource:(id)arg1;
 - (id)acquireResource;
 - (id)initWithCount:(unsigned long long)arg1;

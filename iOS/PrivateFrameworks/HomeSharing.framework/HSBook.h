@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *vppOrganizationDisplayName; // @synthesize vppOrganizationDisplayName=_vppOrganizationDisplayName;
 @property(copy, nonatomic) NSString *vppOrganizationID; // @synthesize vppOrganizationID=_vppOrganizationID;
 @property(nonatomic, getter=isVPPLicensed) _Bool vppLicensed; // @synthesize vppLicensed=_vppLicensed;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long storeID; // @synthesize storeID=_storeID;
 @property(nonatomic) unsigned long long purchaseHistoryID; // @synthesize purchaseHistoryID=_purchaseHistoryID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

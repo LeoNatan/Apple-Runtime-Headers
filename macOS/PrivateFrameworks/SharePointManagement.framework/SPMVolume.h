@@ -14,9 +14,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithURL:(id)arg1 name:(id)arg2;

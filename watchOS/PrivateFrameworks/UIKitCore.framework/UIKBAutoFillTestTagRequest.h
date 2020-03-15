@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) int requestType; // @synthesize requestType=_requestType;
-- (void).cxx_destruct;
 - (id)initWithRequestType:(int)arg1 view:(id)arg2;
 
 @end

@@ -19,8 +19,8 @@
     id <BLTSectionConfigurationDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTSectionConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTSectionConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)override:(id)arg1 appliesToConfigurationForSectionID:(id)arg2;
 - (_Bool)shouldSectionIDSettingsAlwaysSync:(id)arg1;
 - (void)watchKitAppList:(id)arg1 added:(id)arg2 removed:(id)arg3;

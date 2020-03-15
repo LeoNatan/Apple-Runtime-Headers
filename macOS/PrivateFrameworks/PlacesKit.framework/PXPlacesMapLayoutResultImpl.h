@@ -16,9 +16,9 @@
     NSMutableOrderedSet *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *items; // @synthesize items=_items;
 @property(retain, nonatomic) PXPlacesMapViewPort *viewPort; // @synthesize viewPort=_viewPort;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *layoutItems;
 - (void)removeItem:(id)arg1;
 - (void)addItems:(id)arg1;

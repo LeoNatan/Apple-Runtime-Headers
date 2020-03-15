@@ -14,9 +14,9 @@
     TVLInitialSelectionElement *_initialSelection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLInitialSelectionElement *initialSelection; // @synthesize initialSelection=_initialSelection;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

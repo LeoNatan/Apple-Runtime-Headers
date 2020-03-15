@@ -15,10 +15,10 @@
     double _lastAnimationStartMediaTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) double lastAnimationStartMediaTime; // @synthesize lastAnimationStartMediaTime=_lastAnimationStartMediaTime;
 @property(retain, nonatomic) NSHashTable *viewsToAnimate; // @synthesize viewsToAnimate=_viewsToAnimate;
-- (void).cxx_destruct;
 - (void)_setAnimating:(_Bool)arg1;
 - (void)stopAnimating;
 - (void)resumeAnimating;

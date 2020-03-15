@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *anotherDate; // @synthesize anotherDate=_anotherDate;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSNumber *byteCountUnit; // @synthesize byteCountUnit=_byteCountUnit;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) long long comparisonOperator; // @synthesize comparisonOperator=_comparisonOperator;
 @property(readonly, nonatomic) NSString *contentPropertyName; // @synthesize contentPropertyName=_contentPropertyName;
 @property(readonly, nonatomic) Class contentItemClass; // @synthesize contentItemClass=_contentItemClass;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentItemClass:(Class)arg1 contentPropertyName:(id)arg2 comparisonOperator:(long long)arg3 removable:(_Bool)arg4;

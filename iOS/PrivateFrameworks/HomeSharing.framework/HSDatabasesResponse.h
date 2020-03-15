@@ -13,8 +13,8 @@
     NSArray *_databases;
 }
 
-@property(copy, nonatomic) NSArray *databases; // @synthesize databases=_databases;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *databases; // @synthesize databases=_databases;
 
 @end
 

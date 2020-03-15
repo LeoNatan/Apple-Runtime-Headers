@@ -17,10 +17,10 @@
     CALayer *_pinningSourceLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *pinningSourceLayer; // @synthesize pinningSourceLayer=_pinningSourceLayer;
 @property(retain, nonatomic) UIView *pinningSourceView; // @synthesize pinningSourceView=_pinningSourceView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (_Bool)_updateEffectivePinningSourceView;
 - (void)_unregisterKVOObserversForLayer:(id)arg1;
 - (void)_registerKVOObserversForLayer:(id)arg1;

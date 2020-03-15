@@ -22,11 +22,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *testers; // @synthesize testers=_testers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *testQueue; // @synthesize testQueue=_testQueue;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) CSLClientConnections *clients; // @synthesize clients=_clients;
-- (void).cxx_destruct;
 - (void)tester:(id)arg1 cancelled:(id)arg2;
 - (void)tester:(id)arg1 completed:(id)arg2;
 - (void)startTest:(id)arg1;

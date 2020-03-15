@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIButton *_dismissButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesShortCompactVerticalLayout; // @synthesize usesShortCompactVerticalLayout=_usesShortCompactVerticalLayout;
 @property(retain, nonatomic) UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (double)_heightForTraitCollection:(id)arg1;
 @property(copy, nonatomic) NSString *title;

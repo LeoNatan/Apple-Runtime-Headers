@@ -43,6 +43,7 @@
 + (id)entryEventPointDefinitionAudioApp;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType defaultInputDeviceHandlerBlock; // @synthesize defaultInputDeviceHandlerBlock=_defaultInputDeviceHandlerBlock;
 @property(copy, nonatomic) CDUnknownBlockType defaultOutputDeviceHandlerBlock; // @synthesize defaultOutputDeviceHandlerBlock=_defaultOutputDeviceHandlerBlock;
 @property(retain, nonatomic) AudioDevice *defaultInputDevice; // @synthesize defaultInputDevice=_defaultInputDevice;
@@ -62,7 +63,6 @@
 @property(readonly) NSMutableArray *nsRoutingNotifications; // @synthesize nsRoutingNotifications=_nsRoutingNotifications;
 @property(readonly) NSMutableArray *nsOutputNotifications; // @synthesize nsOutputNotifications=_nsOutputNotifications;
 @property int accessoryPowerState; // @synthesize accessoryPowerState=_accessoryPowerState;
-- (void).cxx_destruct;
 - (void)createBluetoothAccountingEvents:(id)arg1;
 - (void)createCarPlayAccountingEvents:(id)arg1;
 - (void)createAirPlayAccountingEvents:(id)arg1;

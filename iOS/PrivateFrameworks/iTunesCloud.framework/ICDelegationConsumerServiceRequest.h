@@ -15,10 +15,10 @@
     NSDictionary *_userIdentityDelegationAccountUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *userIdentityDelegationAccountUUIDs; // @synthesize userIdentityDelegationAccountUUIDs=_userIdentityDelegationAccountUUIDs;
 @property(readonly, nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(readonly, copy, nonatomic) ICRequestContext *requestContext; // @synthesize requestContext=_requestContext;
-- (void).cxx_destruct;
 - (id)initWithUserIdentityDelegationAccountUUIDs:(id)arg1 requestContext:(id)arg2 timeoutInterval:(double)arg3;
 
 @end

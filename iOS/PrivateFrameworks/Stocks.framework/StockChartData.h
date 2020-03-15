@@ -32,6 +32,7 @@
     NSDictionary *_dataSeriesDict;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dataSeriesDict; // @synthesize dataSeriesDict=_dataSeriesDict;
 @property(nonatomic) int yAxisFractionDigits; // @synthesize yAxisFractionDigits=_yAxisFractionDigits;
 @property(nonatomic) _Bool hasVolume; // @synthesize hasVolume=_hasVolume;
@@ -48,7 +49,6 @@
 @property(readonly) CDStruct_d4d9707c *stockValues; // @synthesize stockValues=_stockValues;
 @property(nonatomic) long long chartInterval; // @synthesize chartInterval=_chartInterval;
 @property(nonatomic) __weak Stock *stock; // @synthesize stock=_stock;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)setLabelPlacement:(long long)arg1 forDisplayMode:(id)arg2;

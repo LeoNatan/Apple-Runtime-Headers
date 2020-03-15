@@ -17,10 +17,10 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(readonly, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)loadWithCompletionHandler:(CDUnknownBlockType)arg1;

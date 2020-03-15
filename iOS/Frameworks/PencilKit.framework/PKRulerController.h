@@ -34,6 +34,7 @@
 }
 
 + (id)sharedRulerView;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rulerSnappedToAngle; // @synthesize rulerSnappedToAngle=_rulerSnappedToAngle;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *snapImpactBehavior; // @synthesize snapImpactBehavior=_snapImpactBehavior;
 @property(nonatomic) _Bool lastTouchWasMaskedByRuler; // @synthesize lastTouchWasMaskedByRuler=_lastTouchWasMaskedByRuler;
@@ -50,7 +51,6 @@
 @property(nonatomic) __weak id <PKRulerHostingDelegate> rulerHostingDelegate; // @synthesize rulerHostingDelegate=_rulerHostingDelegate;
 @property(nonatomic) __weak id <PKRulerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKRulerGestureRecognizer *rulerGestureRecognizer; // @synthesize rulerGestureRecognizer=_rulerGestureRecognizer;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)_transformFromRulerViewToTiledView;
 - (struct CGAffineTransform)angleSnapRulerTransform:(struct CGAffineTransform)arg1 aroundOrigin:(struct CGPoint)arg2;
 - (struct CGAffineTransform)canvasTransform;

@@ -20,12 +20,12 @@
     AVAssetWriterInputPixelBufferAdaptor *_adaptor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAssetWriterInputPixelBufferAdaptor *adaptor; // @synthesize adaptor=_adaptor;
 @property(retain, nonatomic) AVAssetReaderOutput *assetReaderOutput; // @synthesize assetReaderOutput=_assetReaderOutput;
 @property(retain, nonatomic) AVAssetWriterInput *assetWriterInput; // @synthesize assetWriterInput=_assetWriterInput;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(nonatomic) _Bool useAdaptor; // @synthesize useAdaptor=_useAdaptor;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)startWithDelegate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)callCompletionHandlerIfNecessary;

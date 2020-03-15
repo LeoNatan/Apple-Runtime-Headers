@@ -26,6 +26,7 @@
 }
 
 + (id)serializationTypeNumber;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *number2Value; // @synthesize number2Value=_number2Value;
 @property(retain, nonatomic) NSString *number2Name; // @synthesize number2Name=_number2Name;
 @property(retain, nonatomic) NSNumber *number1Value; // @synthesize number1Value=_number1Value;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned int scope; // @synthesize scope=_scope;
 @property(nonatomic) unsigned long long signpostId; // @synthesize signpostId=_signpostId;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *scopeString;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 name:(id)arg3 signpostId:(unsigned long long)arg4 scope:(unsigned int)arg5 timebaseRatio:(double)arg6 attributes:(id)arg7;

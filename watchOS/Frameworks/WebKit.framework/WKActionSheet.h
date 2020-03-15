@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<id<UIPopoverPresentationControllerDelegate>> _popoverPresentationControllerDelegateWhileRotating;
 }
 
-@property(nonatomic) unsigned int arrowDirections; // @synthesize arrowDirections=_arrowDirections;
-@property(nonatomic) id <WKActionSheetDelegate> sheetDelegate; // @synthesize sheetDelegate=_sheetDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned int arrowDirections; // @synthesize arrowDirections=_arrowDirections;
+@property(nonatomic) id <WKActionSheetDelegate> sheetDelegate; // @synthesize sheetDelegate=_sheetDelegate;
 - (void)didRotate;
 - (void)_didRotateAndLayout;
 - (void)updateSheetPosition;

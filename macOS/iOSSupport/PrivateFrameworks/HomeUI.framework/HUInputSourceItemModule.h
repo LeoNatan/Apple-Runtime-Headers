@@ -15,8 +15,8 @@
 
 + (CDUnknownBlockType)_serviceItemComparatorForTelevisionProfile:(id)arg1;
 + (id)supportedServiceTypes;
-@property(readonly, nonatomic) HFItem *chooseInputsSelectionItem; // @synthesize chooseInputsSelectionItem=_chooseInputsSelectionItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFItem *chooseInputsSelectionItem; // @synthesize chooseInputsSelectionItem=_chooseInputsSelectionItem;
 - (BOOL)canToggleConfigurationStateForItem:(id)arg1;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 

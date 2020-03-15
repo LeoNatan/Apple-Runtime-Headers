@@ -16,8 +16,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) id <ASWebAuthenticationSessionWebBrowserSessionHandling> sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <ASWebAuthenticationSessionWebBrowserSessionHandling> sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 @property(readonly, nonatomic) BOOL wasLaunchedByAuthenticationServices;
 - (void)_fetchNextAvailableRequest;
 - (void)_handleAuthenticationSessionsAvailableEvent:(id)arg1 withReplyEvent:(id)arg2;

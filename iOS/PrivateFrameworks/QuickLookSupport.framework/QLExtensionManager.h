@@ -20,11 +20,11 @@
 + (void)_resetSharedManager;
 + (void)_setSharedManager:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) QLExtensionManagerCache *thumbnailHighMemoryExtensionCache; // @synthesize thumbnailHighMemoryExtensionCache=_thumbnailHighMemoryExtensionCache;
 @property(retain, nonatomic) QLExtensionManagerCache *previewHighMemoryExtensionCache; // @synthesize previewHighMemoryExtensionCache=_previewHighMemoryExtensionCache;
 @property(retain, nonatomic) QLExtensionManagerCache *previewExtensionCache; // @synthesize previewExtensionCache=_previewExtensionCache;
 @property(retain, nonatomic) QLExtensionManagerCache *thumbnailExtensionCache; // @synthesize thumbnailExtensionCache=_thumbnailExtensionCache;
-- (void).cxx_destruct;
 - (id)_applicationPathForBundleId:(id)arg1;
 - (void)_addQueryAttributesToExtensionQuery:(id)arg1 withContentType:(id)arg2 appBundleIdentifier:(id)arg3 extensionType:(unsigned long long)arg4 generationType:(unsigned long long)arg5;
 - (id)_extensionPointNameForExtensionType:(unsigned long long)arg1;

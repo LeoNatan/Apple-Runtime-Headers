@@ -4,21 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Safari/ImportedBrowserCredential.h>
+#import <SafariShared/WBSPasswordImportedCredential.h>
 
 @class NSData, NSString;
 
 __attribute__((visibility("hidden")))
-@interface ImportedFirefoxCredential : ImportedBrowserCredential
+@interface ImportedFirefoxCredential : WBSPasswordImportedCredential
 {
     NSString *_base64EncodedEncryptedUsername;
     NSString *_base64EncodedEncryptedPassword;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *base64EncodedEncryptedPassword; // @synthesize base64EncodedEncryptedPassword=_base64EncodedEncryptedPassword;
 @property(readonly, copy, nonatomic) NSString *base64EncodedEncryptedUsername; // @synthesize base64EncodedEncryptedUsername=_base64EncodedEncryptedUsername;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *encryptedPassword;
 @property(readonly, copy, nonatomic) NSData *encryptedUsername;
 - (id)debugDescription;

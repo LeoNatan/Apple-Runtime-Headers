@@ -24,6 +24,7 @@
     struct CGPoint _longPressStartLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXComponentView *currentComponentView; // @synthesize currentComponentView=_currentComponentView;
 @property(retain, nonatomic) SXComponentInteractionPreview *currentPreview; // @synthesize currentPreview=_currentPreview;
 @property(nonatomic) struct CGPoint longPressStartLocation; // @synthesize longPressStartLocation=_longPressStartLocation;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(readonly, nonatomic) id <SXComponentInteractionHandlerManager> interactionHandlerManager; // @synthesize interactionHandlerManager=_interactionHandlerManager;
-- (void).cxx_destruct;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

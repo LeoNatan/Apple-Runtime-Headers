@@ -20,12 +20,12 @@
     int __overlayDismissalID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setOverlayDismissalID:) int _overlayDismissalID; // @synthesize _overlayDismissalID=__overlayDismissalID;
 @property(readonly, nonatomic) UILabel *_overlayLabel; // @synthesize _overlayLabel=__overlayLabel;
 @property(nonatomic, setter=_setPlayingVitality:) _Bool _playingVitality; // @synthesize _playingVitality=__playingVitality;
 @property(retain, nonatomic, setter=_setPlaybackFilter:) ISTouchLivePhotoPlaybackFilter *_playbackFilter; // @synthesize _playbackFilter=__playbackFilter;
 @property(readonly, nonatomic) UIGestureRecognizer *playbackGestureRecognizer; // @synthesize playbackGestureRecognizer=_playbackGestureRecognizer;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void *)arg3;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_updateGestureRecognizerParameters;

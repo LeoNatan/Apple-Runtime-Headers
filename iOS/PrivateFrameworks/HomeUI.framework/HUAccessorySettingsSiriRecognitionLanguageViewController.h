@@ -16,9 +16,9 @@
     long long _selectedLanguageIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectedLanguageIndex; // @synthesize selectedLanguageIndex=_selectedLanguageIndex;
 @property(retain, nonatomic) NAFuture *changeLanguageFuture; // @synthesize changeLanguageFuture=_changeLanguageFuture;
-- (void).cxx_destruct;
 - (void)_turnOffVoiceIDAndChangeSiriLanguageForAllHomePods:(id)arg1;
 - (void)_clearSpinner;
 - (_Bool)_isAnyHomePodOnSupportedMultiUserLanguage;

@@ -16,8 +16,8 @@
     NSString *_label;
 }
 
-@property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 - (void)_performSynchronousBlockInSerialQueue:(CDUnknownBlockType)arg1;
 - (void)assertNotRunningInAccessQueue;
 - (void)performAsynchronousBlock:(CDUnknownBlockType)arg1;

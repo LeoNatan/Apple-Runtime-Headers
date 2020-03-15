@@ -17,11 +17,11 @@
     BOOL _resourceSizeChecked;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL resourceSizeChecked; // @synthesize resourceSizeChecked=_resourceSizeChecked;
 @property(nonatomic) BOOL resourceSizeIsKnown; // @synthesize resourceSizeIsKnown=_resourceSizeIsKnown;
 @property(nonatomic) unsigned long long resourceSize; // @synthesize resourceSize=_resourceSize;
 @property(retain, nonatomic) NSMutableData *mutableData; // @synthesize mutableData=_mutableData;
-- (void).cxx_destruct;
 - (void)readStream:(struct __CFReadStream *)arg1 receivedEventWithType:(unsigned long long)arg2;
 - (void)setProperties;
 - (void)cancel;

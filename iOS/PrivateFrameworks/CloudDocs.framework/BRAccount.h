@@ -19,8 +19,8 @@
 + (id)currentCachedLoggedInAccountWithError:(id *)arg1;
 + (_Bool)_refreshCurrentLoggedInAccountForcingRefresh:(_Bool)arg1 error:(id *)arg2;
 + (void)startAccountTokenChangeObserverIfNeeded;
-@property(copy, nonatomic) NSData *perAppAccountIdentifier; // @synthesize perAppAccountIdentifier=_perAppAccountIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *perAppAccountIdentifier; // @synthesize perAppAccountIdentifier=_perAppAccountIdentifier;
 - (_Bool)iCloudDesktopSettingsChangedWithAttributes:(id)arg1 error:(id *)arg2;
 - (id)containerWithPendingChanges;
 - (_Bool)logoutWithError:(id *)arg1;

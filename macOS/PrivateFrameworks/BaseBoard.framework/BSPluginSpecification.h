@@ -16,9 +16,9 @@
 }
 
 + (id)specificationsFromHostBundle:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *requiredClassOrProtocolName; // @synthesize requiredClassOrProtocolName=_classOrProtocolName;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKCDPCodeServiceRequestOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(nonatomic) unsigned long long dsid; // @synthesize dsid=_dsid;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(retain, nonatomic) NSString *containerName; // @synthesize containerName=_containerName;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

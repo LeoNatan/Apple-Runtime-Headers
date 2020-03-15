@@ -16,9 +16,9 @@
     NSDictionary *_desc;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *desc; // @synthesize desc=_desc;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)addHistogramFieldWithSegments:(id)arg1 segments:(struct _HIDAnalyticsHistogramSegmentConfig *)arg2 count:(long long)arg3;
 - (void)setValue:(id)arg1;
 - (id)value;

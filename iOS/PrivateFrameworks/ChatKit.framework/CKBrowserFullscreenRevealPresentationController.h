@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _presentingSnapshotFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect presentingSnapshotFrame; // @synthesize presentingSnapshotFrame=_presentingSnapshotFrame;
 @property(retain, nonatomic) UIView *presentingSnapshotView; // @synthesize presentingSnapshotView=_presentingSnapshotView;
 @property(nonatomic) unsigned long long statusBarResizeMask; // @synthesize statusBarResizeMask=_statusBarResizeMask;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 @property(retain, nonatomic) CKBrowserFullscreenRevealDimmingView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (void)_cleanupPresentation;
 - (void)_prepareViewHierarchyForPresentation;
 - (void)_configureViewsForDismissedState;

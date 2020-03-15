@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_transactions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *transactions; // @synthesize transactions=_transactions;
 @property(retain, nonatomic) NSMutableDictionary *model; // @synthesize model=_model;
 @property(retain, nonatomic) id <CNContactPropertyRemoteModelDelegate> remoteDelegate; // @synthesize remoteDelegate=_remoteDelegate;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *validProperties; // @synthesize validProperties=_validProperties;
 @property(retain, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) id source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)reloadModelFromSource;
 - (void)noteTransactionsUpdated;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

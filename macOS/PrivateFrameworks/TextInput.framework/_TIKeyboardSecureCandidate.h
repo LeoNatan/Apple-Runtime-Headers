@@ -19,12 +19,12 @@
     NSString *_truncationSentinel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *truncationSentinel; // @synthesize truncationSentinel=_truncationSentinel;
 @property(readonly, nonatomic) NSString *input; // @synthesize input=_input;
 @property(readonly, nonatomic) NSString *secureFormattedContent; // @synthesize secureFormattedContent=_secureFormattedContent;
 @property(readonly, nonatomic) NSString *secureContent; // @synthesize secureContent=_secureContent;
 @property(readonly, nonatomic) NSString *secureHeader; // @synthesize secureHeader=_secureHeader;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

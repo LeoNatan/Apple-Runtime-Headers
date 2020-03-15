@@ -19,10 +19,10 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) double windowLevel; // @synthesize windowLevel=_windowLevel;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

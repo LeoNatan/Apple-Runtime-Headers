@@ -14,8 +14,8 @@
 }
 
 + (id)paramWithError:(id)arg1;
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 - (id)description;
 
 @end

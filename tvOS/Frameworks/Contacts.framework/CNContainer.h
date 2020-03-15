@@ -48,6 +48,7 @@
 + (id)predicateForContainersInAccountWithExternalIdentifier:(id)arg1;
 + (id)predicateForContainersInAccountWithIdentifier:(id)arg1;
 + (id)predicateForContainersInAccountWithIdentifier:(id)arg1 includingDisabledContainers:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(readonly, nonatomic, getter=isGuardianRestricted) _Bool guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(readonly, copy, nonatomic) CNContainerPermissions *permissions; // @synthesize permissions=_permissions;
@@ -65,7 +66,6 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

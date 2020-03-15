@@ -14,8 +14,8 @@
 }
 
 + (struct CGSize)calculatePreferredContentSizeForDescriptors:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *descriptors; // @synthesize descriptors=_descriptors;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *descriptors; // @synthesize descriptors=_descriptors;
 - (void)_buttonHit:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

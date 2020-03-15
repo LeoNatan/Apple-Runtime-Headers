@@ -18,13 +18,13 @@
     _TVWiFiNetworkTableViewAcessoryView *_customAccessoryView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TVWiFiNetworkTableViewAcessoryView *customAccessoryView; // @synthesize customAccessoryView=_customAccessoryView;
 @property(nonatomic) float signalStrength; // @synthesize signalStrength=_signalStrength;
 @property(nonatomic) _Bool showsDisclosureIndicator; // @synthesize showsDisclosureIndicator=_showsDisclosureIndicator;
 @property(nonatomic) _Bool showsSpinner; // @synthesize showsSpinner=_showsSpinner;
 @property(nonatomic) _Bool showsPadlock; // @synthesize showsPadlock=_showsPadlock;
 @property(nonatomic) _Bool showsSignalStrength; // @synthesize showsSignalStrength=_showsSignalStrength;
-- (void).cxx_destruct;
 - (void)_updateAccessoryTintColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

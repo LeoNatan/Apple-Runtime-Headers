@@ -21,10 +21,10 @@
 }
 
 + (Class)languageOptionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *languageOptions; // @synthesize languageOptions=_languageOptions;
 @property(retain, nonatomic) _MRLanguageOptionProtobuf *defaultLanguageOption; // @synthesize defaultLanguageOption=_defaultLanguageOption;
 @property(nonatomic) _Bool allowEmptySelection; // @synthesize allowEmptySelection=_allowEmptySelection;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

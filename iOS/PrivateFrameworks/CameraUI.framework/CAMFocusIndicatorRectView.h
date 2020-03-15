@@ -14,9 +14,9 @@
     UIImageView *__imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isPulsing) _Bool pulsing;
 @property(nonatomic, getter=isInactive) _Bool inactive;
 - (void)layoutSubviews;

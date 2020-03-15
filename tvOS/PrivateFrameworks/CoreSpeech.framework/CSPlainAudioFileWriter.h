@@ -19,8 +19,8 @@
     NSURL *_fileURL;
 }
 
-@property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (_Bool)addSamples:(const void *)arg1 numSamples:(long long)arg2;
 - (_Bool)endAudio;
 - (void)dealloc;

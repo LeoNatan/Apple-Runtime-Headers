@@ -15,8 +15,8 @@
 
 + (id)tableFromAttributedString:(id)arg1 managedObjectContext:(id)arg2;
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
-@property(retain, nonatomic) ICTableVersionedDocument *tableDocument; // @synthesize tableDocument=_tableDocument;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICTableVersionedDocument *tableDocument; // @synthesize tableDocument=_tableDocument;
 - (id)localizedFallbackSubtitleMac;
 - (id)localizedFallbackSubtitleIOS;
 - (id)localizedFallbackTitle;

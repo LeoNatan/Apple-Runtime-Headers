@@ -24,9 +24,9 @@
     UIViewController *_footerViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_footerViewController, setter=_setFooterViewController:) UIViewController *footerViewController; // @synthesize footerViewController=_footerViewController;
 @property(retain, nonatomic, getter=_headerViewController, setter=_setHeaderViewController:) UIViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
-- (void).cxx_destruct;
 - (id)_templateItemViewControllerForCellItem:(id)arg1;
 - (id)_cellItemForCollectionView:(id)arg1 atIndexPath:(id)arg2;
 - (void)templateItemViewController:(id)arg1 performAceCommands:(id)arg2;

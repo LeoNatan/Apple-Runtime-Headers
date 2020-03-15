@@ -15,8 +15,8 @@
     NSString *_feedId;
 }
 
-@property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *feedId; // @synthesize feedId=_feedId;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

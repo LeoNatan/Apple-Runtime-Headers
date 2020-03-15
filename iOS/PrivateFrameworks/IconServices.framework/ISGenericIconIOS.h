@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     ISImageCache *_imageCache;
 }
 
-@property(retain) ISImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
+@property(retain) ISImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void)getCGImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGImage *)CGImageForImageDescriptor:(id)arg1;
 - (void)getImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;

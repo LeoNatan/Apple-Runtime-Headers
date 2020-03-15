@@ -20,11 +20,11 @@
     NSString *_appName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreLayoutRequests; // @synthesize ignoreLayoutRequests=_ignoreLayoutRequests;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) PUICStatusImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 @property(nonatomic) _Bool activityIndicatorEnabled; // @synthesize activityIndicatorEnabled=_activityIndicatorEnabled;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isActivateViewLoaded;
 @property(retain, nonatomic) UIView *activateView;
 @property(retain, nonatomic) UIImageView *activateImageView;

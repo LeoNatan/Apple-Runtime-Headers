@@ -40,8 +40,8 @@
     NTKCachedPhoto *_presentedPhoto;
 }
 
-@property(retain, nonatomic) NTKCachedPhoto *presentedPhoto; // @synthesize presentedPhoto=_presentedPhoto;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKCachedPhoto *presentedPhoto; // @synthesize presentedPhoto=_presentedPhoto;
 - (id)_synchronousAnalysisForCachedPhoto:(id)arg1;
 - (void)tritium_didTransitionToTritiumOff;
 - (void)_setTritiumOffProgress:(float)arg1;

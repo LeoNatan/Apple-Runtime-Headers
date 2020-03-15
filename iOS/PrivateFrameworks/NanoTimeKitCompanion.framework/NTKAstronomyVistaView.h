@@ -26,9 +26,9 @@
     id <NTKAstronomyVistaViewObserver> _observer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKAstronomyVistaViewObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)viewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (void)setZoomFraction:(float)arg1 targetDiameter:(float)arg2;
 - (void)universeAnimationFinished:(id)arg1;

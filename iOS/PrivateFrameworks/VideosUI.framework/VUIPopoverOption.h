@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIColor *_highlightColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) IKTextElement *titleElement; // @synthesize titleElement=_titleElement;
 @property(readonly, nonatomic) IKViewElement *optionElement; // @synthesize optionElement=_optionElement;
 @property(readonly, nonatomic) IKImageElement *imageElement; // @synthesize imageElement=_imageElement;
 @property(readonly, nonatomic) IKViewElement *cardElement; // @synthesize cardElement=_cardElement;
-- (void).cxx_destruct;
 - (void)_populateWithElement:(id)arg1;
 - (id)_init;
 @property(readonly, nonatomic) TVImageProxy *imageProxy;

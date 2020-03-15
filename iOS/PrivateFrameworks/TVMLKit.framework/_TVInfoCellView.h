@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)infoCellViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double normalizedHeaderWidth; // @synthesize normalizedHeaderWidth=_normalizedHeaderWidth;
 @property(nonatomic) struct UIEdgeInsets headerMargin; // @synthesize headerMargin=_headerMargin;
 @property(nonatomic) double headerMinWidth; // @synthesize headerMinWidth=_headerMinWidth;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool headerOnLeading; // @synthesize headerOnLeading=_headerOnLeading;
 @property(retain, nonatomic) NSArray *dataViews; // @synthesize dataViews=_dataViews;
 @property(retain, nonatomic) UIView *headerContentView; // @synthesize headerContentView=_headerContentView;
-- (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 withHeaderWidth:(double)arg2;

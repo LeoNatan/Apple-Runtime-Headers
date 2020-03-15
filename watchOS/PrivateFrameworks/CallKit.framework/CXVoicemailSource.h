@@ -19,10 +19,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic, getter=isConnected) _Bool connected; // @synthesize connected=_connected;
 @property(nonatomic) __weak id <CXVoicemailSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)handleActionTimeout:(id)arg1;
 - (oneway void)commitTransaction:(id)arg1;
 - (oneway void)actionCompleted:(id)arg1;

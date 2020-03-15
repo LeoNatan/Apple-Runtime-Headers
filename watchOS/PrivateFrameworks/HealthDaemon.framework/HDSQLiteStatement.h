@@ -14,8 +14,8 @@
     NSString *_sql;
 }
 
-@property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
 - (id)description;
 - (void)finish;
 - (_Bool)enumerateStatementWithError:(id *)arg1 bindingHandler:(CDUnknownBlockType)arg2 block:(CDUnknownBlockType)arg3;

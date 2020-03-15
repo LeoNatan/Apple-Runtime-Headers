@@ -18,13 +18,13 @@
     NSMutableIndexSet *_cursorBoundariesIndexSet;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableIndexSet *cursorBoundariesIndexSet; // @synthesize cursorBoundariesIndexSet=_cursorBoundariesIndexSet;
 @property(nonatomic) struct _NSRange inputBufferRange; // @synthesize inputBufferRange=_inputBufferRange;
 @property(nonatomic, getter=isPunctuationCandidate) BOOL punctuationCandidate; // @synthesize punctuationCandidate=_punctuationCandidate;
 @property(nonatomic, getter=isFacemarkCandidate) BOOL facemarkCandidate; // @synthesize facemarkCandidate=_facemarkCandidate;
 @property(nonatomic, getter=isDirectlyCommitCandidate) BOOL directlyCommitCandidate; // @synthesize directlyCommitCandidate=_directlyCommitCandidate;
 @property(nonatomic, getter=isWholeInputCandidate) BOOL wholeInputCandidate; // @synthesize wholeInputCandidate=_wholeInputCandidate;
-- (void).cxx_destruct;
 @property(readonly) BOOL hasUnsupportedReading;
 
 @end

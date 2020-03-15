@@ -19,10 +19,10 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *alarmIdentifier; // @synthesize alarmIdentifier=_alarmIdentifier;
 @property(readonly, copy, nonatomic) MTAlarm *alarm; // @synthesize alarm=_alarm;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (id)initWithMediaProfileContainer:(id)arg1 alarm:(id)arg2;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

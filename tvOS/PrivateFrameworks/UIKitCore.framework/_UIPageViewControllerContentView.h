@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIPageControl *_pageControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(readonly, nonatomic) _UIQueuingScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_setupPageControl:(id)arg1;
 - (struct CGRect)_scrollViewFrame;

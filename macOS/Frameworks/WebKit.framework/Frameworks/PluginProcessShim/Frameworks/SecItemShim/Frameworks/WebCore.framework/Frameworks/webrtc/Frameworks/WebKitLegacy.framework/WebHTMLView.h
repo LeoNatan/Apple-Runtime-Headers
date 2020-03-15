@@ -84,8 +84,8 @@
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)flagsChanged:(id)arg1;
-- (void)keyUp:(struct NSEvent *)arg1;
-- (void)keyDown:(struct NSEvent *)arg1;
+- (void)keyUp:(id)arg1;
+- (void)keyDown:(id)arg1;
 - (void)endDocument;
 - (void)beginDocument;
 - (void)drawPageBorderWithSize:(struct CGSize)arg1;
@@ -107,7 +107,7 @@
 - (BOOL)needsPanelToBecomeKey;
 - (void)pressureChangeWithEvent:(id)arg1;
 - (void)mouseMoved:(id)arg1;
-- (void)mouseUp:(struct NSEvent *)arg1;
+- (void)mouseUp:(id)arg1;
 - (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
@@ -115,12 +115,12 @@
 - (unsigned long long)draggingSourceOperationMaskForLocal:(BOOL)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)dragImage:(id)arg1 at:(struct CGPoint)arg2 offset:(struct CGSize)arg3 event:(id)arg4 pasteboard:(id)arg5 source:(id)arg6 slideBack:(BOOL)arg7;
-- (void)mouseDown:(struct NSEvent *)arg1;
+- (void)mouseDown:(id)arg1;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)_isScrollBarEvent:(id)arg1;
-- (BOOL)_isSelectionEvent:(struct NSEvent *)arg1;
-- (void)scrollWheel:(struct NSEvent *)arg1;
+- (BOOL)_isSelectionEvent:(id)arg1;
+- (void)scrollWheel:(id)arg1;
 - (void)windowWillClose:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (void)windowDidBecomeKey:(id)arg1;
@@ -267,7 +267,7 @@
 - (void)_web_setPrintingModeRecursive:(BOOL)arg1 adjustViewSize:(BOOL)arg2;
 - (BOOL)_isTopHTMLView;
 - (id)_topHTMLView;
-- (void)_setMouseDownEvent:(struct NSEvent *)arg1;
+- (void)_setMouseDownEvent:(id)arg1;
 - (void)_writeSelectionWithPasteboardTypes:(id)arg1 toPasteboard:(id)arg2 cachedAttributedString:(id)arg3;
 - (id)_selectedRange;
 - (BOOL)_shouldReplaceSelectionWithText:(id)arg1 givenAction:(long long)arg2;

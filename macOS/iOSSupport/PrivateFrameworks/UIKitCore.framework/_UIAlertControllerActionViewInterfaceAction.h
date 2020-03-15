@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionWithAlertControllerActionView:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) UIAlertAction *underlyingAlertAction; // @synthesize underlyingAlertAction=_underlyingAlertAction;
-- (void).cxx_destruct;
 - (void)_action:(id)arg1 updatedTitleTextColor:(id)arg2;
 - (void)_action:(id)arg1 updatedImageTintColor:(id)arg2;
 - (void)_action:(id)arg1 changedToBePreferred:(BOOL)arg2;

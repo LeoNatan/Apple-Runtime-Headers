@@ -13,8 +13,8 @@
     NSArray *_suggestedPersonLocalIdentifiers;
 }
 
-- (id)suggestedPersonLocalIdentifiers;
 - (void).cxx_destruct;
+- (id)suggestedPersonLocalIdentifiers;
 - (id)initWithPersonLocalIdentifiers:(id)arg1 asset:(id)arg2;
 - (id)initWithPersonLocalIdentifier:(id)arg1 asset:(id)arg2;
 

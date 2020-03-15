@@ -12,16 +12,16 @@
 {
     _Bool _showAsFileIcon;
     _Bool _isMovie;
-    struct UIImage *_image;
+    UIImage *_image;
     unsigned long long _imageScaling;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMovie; // @synthesize isMovie=_isMovie;
 @property(nonatomic) _Bool showAsFileIcon; // @synthesize showAsFileIcon=_showAsFileIcon;
 @property(nonatomic) unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
-- (id)initWithImage:(struct UIImage *)arg1 imageScaling:(unsigned long long)arg2 showAsFileIcon:(_Bool)arg3 isMovie:(_Bool)arg4;
+- (id)initWithImage:(id)arg1 imageScaling:(unsigned long long)arg2 showAsFileIcon:(_Bool)arg3 isMovie:(_Bool)arg4;
 
 @end
 

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     PopupWindowUnifiedField *_popupWindowUnifiedField;
 }
 
-@property(nonatomic) __weak PopupWindowUnifiedField *popupWindowUnifiedField; // @synthesize popupWindowUnifiedField=_popupWindowUnifiedField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PopupWindowUnifiedField *popupWindowUnifiedField; // @synthesize popupWindowUnifiedField=_popupWindowUnifiedField;
 - (void)viewDidAppear;
 - (void)loadView;
 - (id)nibName;

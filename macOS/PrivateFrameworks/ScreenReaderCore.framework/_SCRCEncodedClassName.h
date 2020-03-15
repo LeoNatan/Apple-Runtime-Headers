@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSString *scrClassName; // @synthesize scrClassName=_scrClassName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *scrClassName; // @synthesize scrClassName=_scrClassName;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

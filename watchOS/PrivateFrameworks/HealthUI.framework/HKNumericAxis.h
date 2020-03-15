@@ -20,11 +20,11 @@
 + (float)_roundUpByMultiple:(float)arg1 factor:(float)arg2;
 + (float)_roundDownByMultiple:(float)arg1 factor:(float)arg2;
 + (id)ticksAndLabelsForRangeInModelCoordinates:(id)arg1 maximumLabelCount:(int)arg2 endingOptions:(int)arg3 dimension:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKZoomScale> scalarZoomScaleEngine; // @synthesize scalarZoomScaleEngine=_scalarZoomScaleEngine;
 @property(nonatomic) float bottomVerticalLabelPadding; // @synthesize bottomVerticalLabelPadding=_bottomVerticalLabelPadding;
 @property(nonatomic) float topVerticalLabelPadding; // @synthesize topVerticalLabelPadding=_topVerticalLabelPadding;
 @property(retain, nonatomic) id <HKAxisLabelDimension> labelDimension; // @synthesize labelDimension=_labelDimension;
-- (void).cxx_destruct;
 - (id)adjustValueRangeForLabels:(id)arg1;
 - (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(float)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

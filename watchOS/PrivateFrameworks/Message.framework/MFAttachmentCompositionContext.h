@@ -16,10 +16,10 @@
     MFAttachmentManager *_attachmentsManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFAttachmentManager *attachmentsManager; // @synthesize attachmentsManager=_attachmentsManager;
 @property(retain, nonatomic) NSURL *attachmentsBaseURL; // @synthesize attachmentsBaseURL=_attachmentsBaseURL;
 @property(readonly, nonatomic) NSString *contextID; // @synthesize contextID=_contextID;
-- (void).cxx_destruct;
 - (id)attachmentForHostIdentifier:(id)arg1;
 - (void)setHostIdentifier:(id)arg1 forAttachment:(id)arg2;
 @property(readonly, nonatomic) NSArray *attachments;

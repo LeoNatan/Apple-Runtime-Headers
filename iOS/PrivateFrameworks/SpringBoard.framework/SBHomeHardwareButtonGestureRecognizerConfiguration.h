@@ -22,6 +22,7 @@
     UIHBClickGestureRecognizer *_doubleTapUpGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIHBClickGestureRecognizer *doubleTapUpGestureRecognizer; // @synthesize doubleTapUpGestureRecognizer=_doubleTapUpGestureRecognizer;
 @property(retain, nonatomic) UIHBClickGestureRecognizer *triplePressUpGestureRecognizer; // @synthesize triplePressUpGestureRecognizer=_triplePressUpGestureRecognizer;
 @property(retain, nonatomic) UIHBClickGestureRecognizer *doublePressUpGestureRecognizer; // @synthesize doublePressUpGestureRecognizer=_doublePressUpGestureRecognizer;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIHBClickGestureRecognizer *initialButtonUpGestureRecognizer; // @synthesize initialButtonUpGestureRecognizer=_initialButtonUpGestureRecognizer;
 @property(retain, nonatomic) UIHBClickGestureRecognizer *initialButtonDownGestureRecognizer; // @synthesize initialButtonDownGestureRecognizer=_initialButtonDownGestureRecognizer;
 @property(retain, nonatomic) SBSystemGestureManager *systemGestureManager; // @synthesize systemGestureManager=_systemGestureManager;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldConfigureDependencies;
 
 @end

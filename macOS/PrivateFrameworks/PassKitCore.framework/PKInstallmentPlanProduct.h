@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *splashImageURLs; // @synthesize splashImageURLs=_splashImageURLs;
 @property(copy, nonatomic) NSDictionary *iconURLs; // @synthesize iconURLs=_iconURLs;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *capacity; // @synthesize capacity=_capacity;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

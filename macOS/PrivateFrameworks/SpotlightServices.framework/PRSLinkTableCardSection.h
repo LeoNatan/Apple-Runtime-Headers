@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *links; // @synthesize links=_links;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *links; // @synthesize links=_links;
 - (long long)type;
 - (id)initWithTitle:(id)arg1 links:(id)arg2;
 

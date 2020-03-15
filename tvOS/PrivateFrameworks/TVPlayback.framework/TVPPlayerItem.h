@@ -19,6 +19,7 @@
     AVMediaSelectionOption *_savedManualAudioSelection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVMediaSelectionOption *savedManualAudioSelection; // @synthesize savedManualAudioSelection=_savedManualAudioSelection;
 @property(nonatomic) _Bool audioSelectionIsAutomatic; // @synthesize audioSelectionIsAutomatic=_audioSelectionIsAutomatic;
 @property(retain, nonatomic) id scrubImageLoader; // @synthesize scrubImageLoader=_scrubImageLoader;
@@ -26,7 +27,6 @@
 @property(nonatomic) long long previousStatus; // @synthesize previousStatus=_previousStatus;
 @property(nonatomic) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) __weak TVPMediaItemLoader *mediaItemLoader; // @synthesize mediaItemLoader=_mediaItemLoader;
-- (void).cxx_destruct;
 - (void)selectMediaOption:(id)arg1 inMediaSelectionGroup:(id)arg2;
 - (void)selectMediaOptionAutomaticallyInMediaSelectionGroup:(id)arg1;
 - (void)dealloc;

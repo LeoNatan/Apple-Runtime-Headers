@@ -42,9 +42,9 @@
 + (_Bool)dictationIsEnabled;
 + (_Bool)languageDetectorIsEnabled;
 + (void)getForcedOfflineDictationSupportedLanguagesWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <AFDictationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)reportIssueForError:(id)arg1 eventType:(int)arg2 context:(id)arg3;
 - (void)_cancelTimerClearBuffer;
 - (void)_cancelBufferFlushTimer;
@@ -56,6 +56,7 @@
 - (float)peakPower;
 - (float)averagePower;
 - (void)sendUserSelectedAlternativeDictationLanguageCode:(id)arg1;
+- (void)sendSpeechCorrection:(id)arg1 interactionIdentifier:(id)arg2;
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;
 - (void)updateSpeechOptions:(id)arg1;
 - (void)stopSpeech;
@@ -112,7 +113,7 @@
 - (void)_tellSpeechDelegateRecordingDidFail:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidCancel;
 - (void)_tellSpeechDelegateRecordingDidEnd;
-- (void)_tellSpeechDelegateRecordingDidBegin;
+- (void)_tellSpeechDelegateRecordingDidBeginWithOptions:(id)arg1;
 - (void)_tellSpeechDelegateRecordingWillBegin;
 - (void)_dispatchCallbackGroupBlock:(CDUnknownBlockType)arg1;
 - (void)_dispatchAsync:(CDUnknownBlockType)arg1;

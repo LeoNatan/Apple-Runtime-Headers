@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class SFSafariCredential;
+@class NSURL, SFSafariCredential;
 
 @protocol SPCompletionListRemoteViewControllerProtocol
-- (void)showOtherPasswordsSelected;
+- (void)showOtherPasswordsSelected:(NSURL *)arg1;
 - (void)credentialSelected:(SFSafariCredential *)arg1 requiresAuthentication:(BOOL)arg2;
 @end
 

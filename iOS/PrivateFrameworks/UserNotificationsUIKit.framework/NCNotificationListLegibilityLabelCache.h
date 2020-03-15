@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *sectionHeaderViewLegibilityLabelDictionary; // @synthesize sectionHeaderViewLegibilityLabelDictionary=_sectionHeaderViewLegibilityLabelDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *sectionHeaderViewLegibilityLabelDictionary; // @synthesize sectionHeaderViewLegibilityLabelDictionary=_sectionHeaderViewLegibilityLabelDictionary;
 - (id)_stringDescriptorForFont:(id)arg1;
 - (id)_createLegibilityLabelWithTitle:(id)arg1 font:(id)arg2;
 - (void)clearAll;

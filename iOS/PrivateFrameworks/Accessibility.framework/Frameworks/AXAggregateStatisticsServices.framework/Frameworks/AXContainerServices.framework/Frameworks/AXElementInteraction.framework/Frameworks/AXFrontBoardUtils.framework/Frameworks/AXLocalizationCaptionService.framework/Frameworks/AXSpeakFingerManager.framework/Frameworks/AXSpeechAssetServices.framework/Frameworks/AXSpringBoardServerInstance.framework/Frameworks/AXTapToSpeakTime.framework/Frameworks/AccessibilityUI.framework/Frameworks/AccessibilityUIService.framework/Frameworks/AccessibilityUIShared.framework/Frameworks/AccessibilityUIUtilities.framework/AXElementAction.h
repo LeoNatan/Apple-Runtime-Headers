@@ -19,6 +19,7 @@
     struct CGPoint _dropPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long medusaGesture; // @synthesize medusaGesture=_medusaGesture;
 @property(nonatomic) struct CGPoint dropPoint; // @synthesize dropPoint=_dropPoint;
 @property(retain, nonatomic) id dragActivationToken; // @synthesize dragActivationToken=_dragActivationToken;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) AXElement *element; // @synthesize element=_element;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

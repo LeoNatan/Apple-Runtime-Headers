@@ -18,13 +18,13 @@
     CDStruct_c534d91b _durationMapping;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double _inactiveTickMarkHeight; // @synthesize _inactiveTickMarkHeight=__inactiveTickMarkHeight;
 @property(retain, nonatomic, setter=_setValueLabelUpdateTimer:) NSTimer *_valueLabelUpdateTimer; // @synthesize _valueLabelUpdateTimer=__valueLabelUpdateTimer;
 @property(nonatomic, setter=_setRemainingCaptureAnimationTime:) double _remainingCaptureAnimationTime; // @synthesize _remainingCaptureAnimationTime=__remainingCaptureAnimationTime;
 @property(nonatomic, setter=_setSelectedIndexBeforeCaptureAnimation:) unsigned long long _selectedIndexBeforeCaptureAnimation; // @synthesize _selectedIndexBeforeCaptureAnimation=__selectedIndexBeforeCaptureAnimation;
 @property(nonatomic, getter=_isPerformingCaptureAnimation, setter=_setPerformingCaptureAnimation:) _Bool _performingCaptureAnimation; // @synthesize _performingCaptureAnimation=__performingCaptureAnimation;
 @property(nonatomic) CDStruct_c3b9c2ee durationMapping; // @synthesize durationMapping=_durationMapping;
-- (void).cxx_destruct;
 - (void)_handleValueLabelUpdateTimerWithStartTime:(double)arg1 duration:(double)arg2;
 - (void)_stopValueLabelUpdateTimer;
 - (void)_startValueLabelUpdateTimerWithDuration:(double)arg1;

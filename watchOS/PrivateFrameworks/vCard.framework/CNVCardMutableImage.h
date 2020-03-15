@@ -22,13 +22,13 @@
 + (struct CGRect)scaleRect:(struct CGRect)arg1 byFactor:(float)arg2;
 + (id)scaleCropRects:(id)arg1 factor:(float)arg2;
 + (struct CGImage *)CGImageCreateWithData:(id)arg1 maxSizeValue:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSValue *targetSizeValue; // @synthesize targetSizeValue=_targetSizeValue;
 @property(readonly, nonatomic) struct CGSize originalSize; // @synthesize originalSize=_originalSize;
 @property(readonly, nonatomic) NSDictionary *originalCropRects; // @synthesize originalCropRects=_originalCropRects;
 @property(readonly, nonatomic) _Bool attemptedCGImage; // @synthesize attemptedCGImage=_attemptedCGImage;
 @property(readonly, nonatomic) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;
 @property(readonly, copy, nonatomic) NSData *originalData; // @synthesize originalData=_originalData;
-- (void).cxx_destruct;
 - (id)JPEGRepresentationOfCGImage:(struct CGImage *)arg1 quality:(id)arg2;
 - (void)nts_updateRepresentation;
 - (id)cropRects;

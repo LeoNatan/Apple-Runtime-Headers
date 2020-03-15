@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
-@property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
-@property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
+@property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 - (void)setAlternateTitleStringSet:(const unordered_set_66d0470b *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
 - (void)setTitleStringSet:(const unordered_set_66d0470b *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
 - (unique_ptr_c12ab926)bestFitSelectorForStringSet:(const unordered_set_66d0470b *)arg1 attributes:(id)arg2 extraContentInsets:(const struct NSEdgeInsets *)arg3;

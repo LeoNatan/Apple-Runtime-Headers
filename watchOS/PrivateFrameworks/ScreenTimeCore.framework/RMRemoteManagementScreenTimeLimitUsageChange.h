@@ -18,9 +18,9 @@
 }
 
 + (Class)categoryLimitType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *categoryLimits; // @synthesize categoryLimits=_categoryLimits;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

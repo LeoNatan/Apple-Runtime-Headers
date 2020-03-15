@@ -17,10 +17,10 @@
     CAMLevelCrosshair *__userCrosshair;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMLevelCrosshair *_userCrosshair; // @synthesize _userCrosshair=__userCrosshair;
 @property(readonly, nonatomic) CAMLevelCrosshair *_goalCrosshair; // @synthesize _goalCrosshair=__goalCrosshair;
 @property(readonly, nonatomic) CAMLevelViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didPublishChange:(unsigned long long)arg2 withContext:(void *)arg3;
 - (void)_updateCrosshairAlphasWithAlpha:(double)arg1 indicatorMode:(long long)arg2;
 - (void)_updateCrosshairHighlightWithOffset:(struct UIOffset)arg1;

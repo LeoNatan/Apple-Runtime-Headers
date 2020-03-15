@@ -23,6 +23,7 @@
 
 - (void).cxx_destruct;
 - (void)_termsAccepted:(_Bool)arg1;
+- (void)_terminateApplyFlowWithoutDeclining;
 - (void)_openTermsAndConditions;
 - (void)_setupForBroadwayApplication:(id)arg1;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;

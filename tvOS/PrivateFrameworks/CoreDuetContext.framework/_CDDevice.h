@@ -24,13 +24,13 @@
 + (_Bool)supportsSecureCoding;
 + (id)localDevice;
 + (unsigned long long)identifierForDeviceID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCompanion) _Bool companion; // @synthesize companion=_companion;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 @property(nonatomic) long long deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

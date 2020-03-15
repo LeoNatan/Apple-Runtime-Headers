@@ -33,6 +33,7 @@
 
 + (BOOL)requiresConstraintBasedLayout;
 + (double)statusViewHeightForWidthSizeClass:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReduceMotionEnabled) BOOL reduceMotionEnabled; // @synthesize reduceMotionEnabled=_reduceMotionEnabled;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <SiriUISiriStatusViewAnimationDelegate> animationDelegate; // @synthesize animationDelegate=_animationDelegate;
@@ -40,7 +41,6 @@
 @property(nonatomic) double disabledMicOpacity; // @synthesize disabledMicOpacity=_disabledMicOpacity;
 @property(retain) NSView *orbView; // @synthesize orbView=_orbView;
 @property(retain) SiriUITextInputField *textInputField; // @synthesize textInputField=_textInputField;
-- (void).cxx_destruct;
 - (void)setInputVoiceOverJumpTarget:(id)arg1;
 @property(readonly, nonatomic) id voiceOverJumpTarget;
 - (void)_siriStatusViewHoldDidEnd;

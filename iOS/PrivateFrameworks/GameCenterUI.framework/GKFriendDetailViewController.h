@@ -17,12 +17,12 @@
     GKPlayer *_player;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKPlayer *player; // @synthesize player=_player;
 @property(nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(nonatomic) UILabel *nicknameLabel; // @synthesize nicknameLabel=_nicknameLabel;
 @property(nonatomic) GKDashboardPlayerPhotoView *playerView; // @synthesize playerView=_playerView;
-- (void).cxx_destruct;
 - (void)report:(id)arg1;
 - (void)configureView;
 - (void)viewDidLoad;

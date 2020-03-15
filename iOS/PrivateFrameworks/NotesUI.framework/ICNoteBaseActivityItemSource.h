@@ -15,8 +15,8 @@
     NSString *_title;
 }
 
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)activityViewController:(id)arg1 attachmentNameForActivityType:(id)arg2;
 - (id)initWithTitle:(id)arg1;
 

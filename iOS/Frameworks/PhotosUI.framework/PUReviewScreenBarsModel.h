@@ -24,6 +24,7 @@
     struct CGPoint _controlCenterAlignmentPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateAvailableControls:) _Bool _needsUpdateAvailableControls; // @synthesize _needsUpdateAvailableControls=__needsUpdateAvailableControls;
 @property(readonly, nonatomic) _Bool useVerticalControlLayout; // @synthesize useVerticalControlLayout=_useVerticalControlLayout;
 @property(readonly, nonatomic) _Bool lastControlAlignmentChangeForcedLayout; // @synthesize lastControlAlignmentChangeForcedLayout=_lastControlAlignmentChangeForcedLayout;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic, setter=_setEnabledControls:) NSSet *enabledControls; // @synthesize enabledControls=_enabledControls;
 @property(retain, nonatomic, setter=_setAvailableControls:) NSSet *availableControls; // @synthesize availableControls=_availableControls;
 @property(readonly, copy, nonatomic) NSDictionary *availableItemsByIdentifier; // @synthesize availableItemsByIdentifier=_availableItemsByIdentifier;
-- (void).cxx_destruct;
 - (void)setUseVerticalControlLayout:(_Bool)arg1;
 - (void)setControlCenterAlignmentPoint:(struct CGPoint)arg1 forceLayout:(_Bool)arg2;
 - (void)setControlCenterAlignmentPoint:(struct CGPoint)arg1;

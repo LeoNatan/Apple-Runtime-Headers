@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GCControllerButtonInput *buttonMenu; // @synthesize buttonMenu=_buttonMenu;
 @property(retain, nonatomic) GCControllerButtonInput *rightShoulder; // @synthesize rightShoulder=_rightShoulder;
 @property(retain, nonatomic) GCControllerButtonInput *leftShoulder; // @synthesize leftShoulder=_leftShoulder;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) GCControllerButtonInput *buttonA; // @synthesize buttonA=_button0;
 - (void)set_motion:(id)arg1;
 - (id)_motion;
-- (void).cxx_destruct;
 - (_Bool)isBluetoothAndUSBMirrored;
 - (id)productCategory;
 - (void)setAllowsRotation:(_Bool)arg1;

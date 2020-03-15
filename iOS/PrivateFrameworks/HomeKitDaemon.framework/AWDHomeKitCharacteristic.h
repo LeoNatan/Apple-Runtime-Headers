@@ -16,9 +16,9 @@
     NSString *_serviceType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

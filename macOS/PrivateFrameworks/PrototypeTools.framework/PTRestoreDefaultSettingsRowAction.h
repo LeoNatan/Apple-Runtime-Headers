@@ -13,10 +13,15 @@
     NSString *_settingsKeyPath;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)actionWithSettingsKeyPath:(id)arg1;
 + (id)action;
-@property(readonly, nonatomic) NSString *settingsKeyPath; // @synthesize settingsKeyPath=_settingsKeyPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *settingsKeyPath; // @synthesize settingsKeyPath=_settingsKeyPath;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (CDUnknownBlockType)defaultHandler;
 
 @end

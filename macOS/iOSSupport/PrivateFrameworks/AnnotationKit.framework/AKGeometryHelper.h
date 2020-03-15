@@ -91,8 +91,8 @@
 + (BOOL)isUnpresentableSize:(struct CGSize)arg1;
 + (BOOL)rectHasZeroSize:(struct CGRect)arg1;
 + (BOOL)isUnpresentableRect:(struct CGRect)arg1;
-@property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (void).cxx_destruct;
+@property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (BOOL)_shouldAlignToScreen;
 - (BOOL)_shouldAlignToContent;
 - (id)_rootLayer;

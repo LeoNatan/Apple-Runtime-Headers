@@ -14,9 +14,9 @@
     NSString *_deviceAddress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (id)initWithDeviceName:(id)arg1 andDeviceAddress:(id)arg2;
 
 @end

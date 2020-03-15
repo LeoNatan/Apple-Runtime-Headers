@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *debugInfo; // @synthesize debugInfo=_debugInfo;
 @property(nonatomic) unsigned int counter; // @synthesize counter=_counter;
 @property(retain, nonatomic) NSData *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

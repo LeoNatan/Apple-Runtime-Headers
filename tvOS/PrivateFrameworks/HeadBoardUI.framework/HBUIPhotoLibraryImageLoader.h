@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSOperationQueue *imageLoaderQueue; // @synthesize imageLoaderQueue=_imageLoaderQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOperationQueue *imageLoaderQueue; // @synthesize imageLoaderQueue=_imageLoaderQueue;
 - (void)_createMemoryFullScreenImageForIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelLoad:(id)arg1;
 - (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3 imageDirection:(long long)arg4 requestLoader:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;

@@ -27,12 +27,12 @@
 + (id)listWithAutocorrection:(id)arg1 predictions:(id)arg2;
 + (id)listWithAutocorrection:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL containsProactiveTriggers; // @synthesize containsProactiveTriggers=_containsProactiveTriggers;
 @property(readonly, nonatomic) NSArray *proactiveTriggers; // @synthesize proactiveTriggers=_proactiveTriggers;
 @property(readonly, nonatomic) NSArray *emojiList; // @synthesize emojiList=_emojiList;
 @property(readonly, nonatomic) NSArray *predictions; // @synthesize predictions=_predictions;
 @property(readonly, nonatomic) TIKeyboardCandidate *autocorrection; // @synthesize autocorrection=_autocorrection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldAcceptTopCandidate;
 @property(readonly, nonatomic) NSArray *candidates;
 - (id)description;

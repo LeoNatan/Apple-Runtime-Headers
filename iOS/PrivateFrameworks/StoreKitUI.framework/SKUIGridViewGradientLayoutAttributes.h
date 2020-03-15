@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     IKColor *_gradientColor;
 }
 
-@property(retain, nonatomic) IKColor *gradientColor; // @synthesize gradientColor=_gradientColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKColor *gradientColor; // @synthesize gradientColor=_gradientColor;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

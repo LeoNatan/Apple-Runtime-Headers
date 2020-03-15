@@ -20,12 +20,12 @@
 }
 
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *classLabels; // @synthesize classLabels=_classLabels;
 @property unsigned long long inputSize; // @synthesize inputSize=_inputSize;
 @property _Bool isInputSizeLowerBoundOnly; // @synthesize isInputSizeLowerBoundOnly=_isInputSizeLowerBoundOnly;
 @property _Bool freeModelOnDealloc; // @synthesize freeModelOnDealloc=_freeModelOnDealloc;
 @property struct svm_model *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)predictProbabilities:(id)arg1 probabilities:(double *)arg2;
 - (_Bool)hasProbabilityPredictionEnabled;
 - (id)predict:(id)arg1;

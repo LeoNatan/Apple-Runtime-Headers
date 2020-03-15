@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)requestInfoForPrinter:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) int requestState; // @synthesize requestState=_requestState;
-- (void).cxx_destruct;
 - (void)requestPrintInfo;
 
 @end

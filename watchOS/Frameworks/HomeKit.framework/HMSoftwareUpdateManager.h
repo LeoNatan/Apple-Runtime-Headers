@@ -22,11 +22,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isStarted) _Bool started; // @synthesize started=_started;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property __weak id <HMSoftwareUpdateManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (id)messageDestination;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;

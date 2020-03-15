@@ -23,8 +23,8 @@
     unsigned long long _compatibilityVersion;
 }
 
-@property(readonly, nonatomic) unsigned long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (void)callAssetUpdateHandlers;
 - (void)clearOverrides;
 - (void)addOverridePath:(id)arg1 forResourceWithRelativePath:(id)arg2;

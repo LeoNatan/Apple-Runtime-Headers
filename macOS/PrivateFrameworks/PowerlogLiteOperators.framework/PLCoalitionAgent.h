@@ -28,6 +28,7 @@
 + (id)entryEventPointDefinitions;
 + (id)entryEventIntervalDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *coalitionIDToCoalitionNameMapping; // @synthesize coalitionIDToCoalitionNameMapping=_coalitionIDToCoalitionNameMapping;
 @property(retain) NSMutableDictionary *reapedCoalitions; // @synthesize reapedCoalitions=_reapedCoalitions;
 @property(retain) PLXPCListenerOperatorComposition *coalitionReapNotification; // @synthesize coalitionReapNotification=_coalitionReapNotification;
@@ -37,7 +38,6 @@
 @property(retain) NSDictionary *lastCoalitionObjectDictionary; // @synthesize lastCoalitionObjectDictionary=_lastCoalitionObjectDictionary;
 @property(retain) NSDictionary *lastCoalitionDictionary; // @synthesize lastCoalitionDictionary=_lastCoalitionDictionary;
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
-- (void).cxx_destruct;
 - (void)logEventIntervalCoalitionInterval;
 - (void)log;
 - (id)buildPLCoalitionDataObjectFromReapedNotification:(id)arg1;

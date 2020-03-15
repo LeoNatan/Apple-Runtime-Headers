@@ -6,7 +6,7 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class CKBalloonView, CKBrowserItemPayload, CKChatItem, CKFullScreenEffect, CKMessageStatusChatItem, CKTranscriptCollectionViewController, IMSticker, NSArray, NSIndexPath, NSString, UIContextMenuConfiguration, UITargetedPreview, UITraitCollection, _UIContextMenuStyle;
+@class CKBalloonView, CKBrowserItemPayload, CKChatItem, CKFullScreenEffect, CKMessageStatusChatItem, CKTranscriptCollectionViewController, IMSticker, NSArray, NSIndexPath, NSString, UIContextMenuConfiguration, UIContextMenuInteraction, UITargetedPreview, UITraitCollection, _UIContextMenuStyle;
 @protocol CKSendAnimationContext, UIContextMenuInteractionAnimating, UIContextMenuInteractionCommitAnimating;
 
 @protocol CKTranscriptCollectionViewControllerDelegate <NSObject>
@@ -53,6 +53,6 @@
 - (NSArray *)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 accessoriesForContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2 layoutAnchor:(CDStruct_4bcfbbae)arg3;
 - (UITargetedPreview *)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 previewForDismissingContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2;
 - (UITargetedPreview *)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 previewForHighlightingContextMenuWithConfiguration:(UIContextMenuConfiguration *)arg2;
-- (UIContextMenuConfiguration *)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 contextMenuConfigurationForItemAtIndexPath:(NSIndexPath *)arg2 point:(struct CGPoint)arg3;
+- (UIContextMenuConfiguration *)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 contextMenuConfigurationForItemAtIndexPath:(NSIndexPath *)arg2 point:(struct CGPoint)arg3 interaction:(UIContextMenuInteraction *)arg4;
 @end
 

@@ -34,8 +34,8 @@
 + (id)_sensorDatumFromContext:(id)arg1;
 + (double)defaultCollectionInterval;
 + (id)_retrieveContextForKey:(id)arg1 domain:(id)arg2 profile:(id)arg3;
-@property(readonly) HDSourceEntity *sourceEntity; // @synthesize sourceEntity=_sourceEntity;
 - (void).cxx_destruct;
+@property(readonly) HDSourceEntity *sourceEntity; // @synthesize sourceEntity=_sourceEntity;
 - (void)_queue_retryFromFailure;
 - (_Bool)_queue_shouldRetryFromFailure;
 - (void)_queue_incrementFailureRetryCounter;

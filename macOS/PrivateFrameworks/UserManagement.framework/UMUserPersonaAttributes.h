@@ -36,6 +36,7 @@
 + (id)personaAttributesForIdentifier:(id)arg1;
 + (id)setUpPersonaAttributesWithDictionary:(id)arg1;
 + (id)personaAttributes;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *lastEnableDate; // @synthesize lastEnableDate=_lastEnableDate;
 @property(copy, nonatomic) NSDate *lastDisableDate; // @synthesize lastDisableDate=_lastDisableDate;
 @property(copy, nonatomic) NSDate *lastLoginDate; // @synthesize lastLoginDate=_lastLoginDate;
@@ -52,7 +53,6 @@
 @property(nonatomic) unsigned int userPersona_id; // @synthesize userPersona_id=_userPersona_id;
 @property(nonatomic) unsigned long long userPersonaType; // @synthesize userPersonaType=_userPersonaType;
 @property(copy, nonatomic) NSString *userPersonaUniqueString; // @synthesize userPersonaUniqueString=_userPersonaUniqueString;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setPropertiesFromUserPersona:(id)arg1;

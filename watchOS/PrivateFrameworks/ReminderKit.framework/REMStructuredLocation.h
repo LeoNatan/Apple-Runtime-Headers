@@ -27,6 +27,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (double)minimumRegionMonitoringDistance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *locationUID; // @synthesize locationUID=_locationUID;
 @property(copy, nonatomic) NSData *mapKitHandle; // @synthesize mapKitHandle=_mapKitHandle;
 @property(copy, nonatomic) NSString *contactLabel; // @synthesize contactLabel=_contactLabel;
@@ -37,7 +38,6 @@
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)displayName;

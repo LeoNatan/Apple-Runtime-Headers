@@ -13,8 +13,8 @@
     NSArray *_events;
 }
 
-@property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
 - (BOOL)isSequenceTerminated;
 - (id)allEvents;
 - (void)addEvent:(id)arg1;

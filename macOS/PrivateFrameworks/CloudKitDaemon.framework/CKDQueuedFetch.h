@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     CKDOperation *_initialOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDOperation *initialOperation; // @synthesize initialOperation=_initialOperation;
 @property(retain, nonatomic) NSMutableDictionary *dependentOperationIDsByItemID; // @synthesize dependentOperationIDsByItemID=_dependentOperationIDsByItemID;
 @property(retain, nonatomic) NSMutableSet *dependentOperationIDs; // @synthesize dependentOperationIDs=_dependentOperationIDs;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak CKDQueuedFetch *equivalentRunningFetch; // @synthesize equivalentRunningFetch=_equivalentRunningFetch;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSDate *queuedDate; // @synthesize queuedDate=_queuedDate;
-- (void).cxx_destruct;
 - (void)start;
 - (void)createFetchOperationForItemIDs:(id)arg1 operationQueue:(id)arg2 operationConfigurationBlock:(CDUnknownBlockType)arg3;
 - (BOOL)dependentOperationListContainsOperationID:(id)arg1;

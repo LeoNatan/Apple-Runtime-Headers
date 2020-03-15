@@ -16,9 +16,9 @@
     int _signatureState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int signatureState; // @synthesize signatureState=_signatureState;
 @property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

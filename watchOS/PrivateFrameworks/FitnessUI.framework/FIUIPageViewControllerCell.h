@@ -13,8 +13,8 @@
     UIViewController *_viewController;
 }
 
-@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 
 @end
 

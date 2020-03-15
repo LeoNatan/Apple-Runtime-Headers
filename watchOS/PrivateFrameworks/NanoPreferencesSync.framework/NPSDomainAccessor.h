@@ -15,8 +15,8 @@
 
 + (id)copyDomainList;
 + (void)initialize;
-@property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (id)copyKeyList;
 - (id)dictionaryRepresentation;
 - (void)setURL:(id)arg1 forKey:(id)arg2;

@@ -40,6 +40,7 @@
     struct CGAffineTransform preferredTransform;
 }
 
+- (void).cxx_destruct;
 @property struct opaqueCMSampleBuffer *lastFrame; // @synthesize lastFrame=_lastFrame;
 @property(retain) NSCondition *readaheadLock; // @synthesize readaheadLock=_readaheadLock;
 @property int readaheadState; // @synthesize readaheadState=_readaheadState;
@@ -66,7 +67,6 @@
 @property(readonly) CDStruct_1b6d18a9 trackStartT; // @synthesize trackStartT;
 @property(readonly) float trackLength; // @synthesize trackLength;
 @property(readonly) float trackStart; // @synthesize trackStart;
-- (void).cxx_destruct;
 - (int)skipFrames:(unsigned int)arg1;
 - (int)reset;
 @property(setter=setReadAheadEnable:) BOOL readAheadEnable;

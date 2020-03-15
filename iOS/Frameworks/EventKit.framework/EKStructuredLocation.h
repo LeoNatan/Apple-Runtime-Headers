@@ -21,9 +21,9 @@
 + (id)_stringByStrippingControlCharactersFromString:(id)arg1;
 + (id)locationWithTitle:(id)arg1;
 + (Class)frozenClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKPredictedLocationOfInterest *predictedLOI; // @synthesize predictedLOI=_predictedLOI;
 @property(nonatomic, getter=isImprecise) _Bool imprecise; // @synthesize imprecise=_imprecise;
-- (void).cxx_destruct;
 - (id)semanticIdentifier;
 @property(copy, nonatomic) NSString *derivedFrom;
 @property(readonly, nonatomic, getter=isPrediction) _Bool prediction;

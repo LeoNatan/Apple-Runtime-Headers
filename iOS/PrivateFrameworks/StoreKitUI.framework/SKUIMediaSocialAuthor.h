@@ -21,6 +21,7 @@
     NSURL *_thumbnailImageURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *thumbnailImageURL; // @synthesize thumbnailImageURL=_thumbnailImageURL;
 @property(copy, nonatomic) NSDictionary *storePlatformData; // @synthesize storePlatformData=_storePlatformData;
 @property(copy, nonatomic) NSArray *permissions; // @synthesize permissions=_permissions;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 @property(copy, nonatomic) NSString *authorType; // @synthesize authorType=_authorType;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

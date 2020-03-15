@@ -15,8 +15,8 @@
     SXDocumentController *_documentController;
 }
 
-@property(readonly, nonatomic) SXDocumentController *documentController; // @synthesize documentController=_documentController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXDocumentController *documentController; // @synthesize documentController=_documentController;
 - (void)registerDocumentController:(id)arg1;
 
 // Remaining properties

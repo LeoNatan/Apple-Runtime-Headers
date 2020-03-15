@@ -32,6 +32,7 @@
 + (id)keyPropertiesForName:(id)arg1;
 + (id)keyPropertiesFromDictionary:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long transport; // @synthesize transport=_transport;
 @property(readonly, nonatomic) unsigned long long privatizationAlgorithm; // @synthesize privatizationAlgorithm=_privatizationAlgorithm;
 @property(readonly, nonatomic) unsigned long long dataAlgorithm; // @synthesize dataAlgorithm=_dataAlgorithm;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSNumber *acceptableError; // @synthesize acceptableError=_acceptableError;
 @property(readonly, nonatomic) _DPValueRange *possibleRange; // @synthesize possibleRange=_possibleRange;
 @property(readonly, copy, nonatomic) NSString *propertiesName; // @synthesize propertiesName=_propertiesName;
-- (void).cxx_destruct;
 - (id)privatizationAlgorithmString;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;

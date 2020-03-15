@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contexts; // @synthesize contexts=_contexts;
 @property(retain, nonatomic) NSURL *fromURL; // @synthesize fromURL=_fromURL;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)done;
 - (void)_deletionDone;

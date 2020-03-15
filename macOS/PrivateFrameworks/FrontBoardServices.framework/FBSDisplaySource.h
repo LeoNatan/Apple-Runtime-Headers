@@ -35,8 +35,8 @@
     FBSDisplayConfiguration *_evlock_reportedConfiguration;
 }
 
-@property(readonly, nonatomic) unsigned int displayID; // @synthesize displayID=_displayID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int displayID; // @synthesize displayID=_displayID;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_lock_noteDisconnecting;
 - (void)_lock_noteUpdated;

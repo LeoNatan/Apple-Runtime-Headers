@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL scrollableHeaderViewHasRealContent; // @synthesize scrollableHeaderViewHasRealContent=_scrollableHeaderViewHasRealContent;
 @property(nonatomic) __weak UIAlertController *alertController; // @synthesize alertController=_alertController;
-- (void).cxx_destruct;
 - (void)_applyVisualStyle;
 - (void)_updateRoundedCornerPositionForSubviews;
 - (double)_selectionHighlightContinuousCornerRadius;

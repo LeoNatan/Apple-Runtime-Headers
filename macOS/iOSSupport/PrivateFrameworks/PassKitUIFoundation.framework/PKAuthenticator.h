@@ -25,9 +25,9 @@
 + (unsigned long long)currentStateForPolicy:(long long)arg1;
 + (void)resetSharedRootContextWithCompletion:(CDUnknownBlockType)arg1;
 + (void)preheatAuthenticator;
+- (void).cxx_destruct;
 @property(nonatomic) double fingerPresentTimeout; // @synthesize fingerPresentTimeout=_fingerPresentTimeout;
 @property(nonatomic) __weak id <PKAuthenticatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_delegateSupportsPassphrasePresentation;
 - (BOOL)_delegateSupportsPasscodePresentation;
 @property(readonly, nonatomic) BOOL fingerPresentTimeoutExpired;

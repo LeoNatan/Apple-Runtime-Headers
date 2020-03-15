@@ -29,6 +29,7 @@
 
 + (id)interpolationFromPalette:(id)arg1 toPalette:(id)arg2 fraction:(float)arg3;
 + (id)paletteForDevice:(id)arg1 withColor:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showsShadows; // @synthesize showsShadows=_showsShadows;
 @property(readonly, nonatomic) unsigned int paletteColor; // @synthesize paletteColor=_paletteColor;
 @property(readonly, nonatomic) float largeTickValue; // @synthesize largeTickValue=_largeTickValue;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (id)_initForDevice:(id)arg1 withColor:(unsigned int)arg2;
 - (id)initForDevice:(id)arg1;
 

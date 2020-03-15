@@ -32,6 +32,7 @@
     MMAlert *_alert;
 }
 
+- (void).cxx_destruct;
 @property BOOL isVisible; // @synthesize isVisible=_isVisible;
 @property(retain) MMAlert *alert; // @synthesize alert=_alert;
 @property NSImage *badge; // @synthesize badge=_badge;
@@ -49,7 +50,6 @@
 @property BOOL isModal; // @synthesize isModal=_isModal;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(nonatomic) id <MMModalDialogDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)endModalDialog:(id)arg1;
 @property(readonly) NSButton *otherButton;
 @property(readonly) NSButton *alternateButton;

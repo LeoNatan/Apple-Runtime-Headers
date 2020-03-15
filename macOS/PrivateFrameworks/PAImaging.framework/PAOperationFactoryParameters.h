@@ -15,8 +15,8 @@
     NSString *_autoIdentifier;
 }
 
-@property(copy, nonatomic) NSString *autoIdentifier; // @synthesize autoIdentifier=_autoIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *autoIdentifier; // @synthesize autoIdentifier=_autoIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

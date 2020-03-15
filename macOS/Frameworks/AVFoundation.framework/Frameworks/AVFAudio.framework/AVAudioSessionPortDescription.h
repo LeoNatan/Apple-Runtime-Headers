@@ -17,11 +17,11 @@
     NSArray *_channels;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *channels; // @synthesize channels=_channels;
 @property(readonly) NSString *UID; // @synthesize UID=_UID;
 @property(readonly) NSString *portName; // @synthesize portName=_portName;
 @property(readonly) NSString *portType; // @synthesize portType=_portType;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) AVAudioSessionDataSourceDescription *preferredDataSource;
 @property(readonly) AVAudioSessionDataSourceDescription *selectedDataSource;

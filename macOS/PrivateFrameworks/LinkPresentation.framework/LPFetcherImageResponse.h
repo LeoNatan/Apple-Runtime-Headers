@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (id)responseForFetcher:(id)arg1 withData:(id)arg2 MIMEType:(id)arg3;
 + (id)imagePropertiesForFetcher:(id)arg1;
 + (BOOL)isValidMIMEType:(id)arg1;
-@property(readonly, retain, nonatomic) LPImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) LPImage *image; // @synthesize image=_image;
 - (id)initWithImage:(id)arg1 fetcher:(id)arg2;
 
 // Remaining properties

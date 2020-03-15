@@ -19,10 +19,10 @@
 + (void)connectToUIServiceViewControllerWithServiceName:(id)arg1 serviceViewControllerClass:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)warmUpServiceName:(id)arg1 withViewControllerClassNamed:(id)arg2;
 + (BOOL)inhibitFirstResponder;
+- (void).cxx_destruct;
 @property __weak id <QLRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *serviceViewControllerClass; // @synthesize serviceViewControllerClass=_serviceViewControllerClass;
 @property(copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)updateFullScreenFromMagnification:(double)arg1;
 - (void)doubleClickOnPreviewContent;
 - (id)exportedInterface;

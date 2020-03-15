@@ -17,9 +17,9 @@
 }
 
 + (id)defaultStore;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) ICURLRequest *groupIDRequest; // @synthesize groupIDRequest=_groupIDRequest;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *groupID; // @dynamic groupID;
 - (void)clearGroupID;
 - (void)clearCaches;

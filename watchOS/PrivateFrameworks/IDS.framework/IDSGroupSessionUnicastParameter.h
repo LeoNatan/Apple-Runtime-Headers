@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int dataMode; // @synthesize dataMode=_dataMode;
 @property(readonly, nonatomic) unsigned int connectionIndex; // @synthesize connectionIndex=_connectionIndex;
 @property(readonly, nonatomic) unsigned int participantID; // @synthesize participantID=_participantID;
 @property(readonly, nonatomic) NSString *groupSessionID; // @synthesize groupSessionID=_groupSessionID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithGroupSessionID:(id)arg1 participantID:(unsigned int)arg2 dataMode:(int)arg3 connectionIndex:(unsigned int)arg4;

@@ -17,10 +17,10 @@
     int _topAlertWantsSimultaneousDismissalWithAppLaunch;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int topAlertWantsSimultaneousDismissalWithAppLaunch; // @synthesize topAlertWantsSimultaneousDismissalWithAppLaunch=_topAlertWantsSimultaneousDismissalWithAppLaunch;
 @property(nonatomic, getter=isVisible) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(retain, nonatomic) NSString *alertServiceName; // @synthesize alertServiceName=_alertServiceName;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

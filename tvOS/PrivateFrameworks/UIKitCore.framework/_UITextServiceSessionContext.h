@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
 + (id)sessionContextWithText:(id)arg1 withRect:(struct CGRect)arg2 withRange:(struct _NSRange)arg3 withView:(id)arg4;
 + (id)sessionContextWithText:(id)arg1 withRect:(struct CGRect)arg2 withView:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect presentationRect; // @synthesize presentationRect=_presentationRect;
 @property(readonly, nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
 @property(readonly, copy, nonatomic) NSString *textWithContext; // @synthesize textWithContext=_textWithContext;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) UIResponder<UITextInput> *textInput; // @synthesize textInput=_textInput;
-- (void).cxx_destruct;
 - (void)convertRectToView:(id)arg1;
 - (void)_gatherAdditionalContext;
 - (_Bool)_typeRequiresContext:(long long)arg1;

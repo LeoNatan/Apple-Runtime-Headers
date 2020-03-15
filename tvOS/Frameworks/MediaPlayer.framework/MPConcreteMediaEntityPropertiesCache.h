@@ -19,10 +19,10 @@
     id <MPMediaLibraryDataProvider> _dataProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) Class dataProviderEntityClass; // @synthesize dataProviderEntityClass=_dataProviderEntityClass;
 @property(readonly, nonatomic) __weak id <MPMediaLibraryDataProvider> dataProvider; // @synthesize dataProvider=_dataProvider;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 - (void)delete;

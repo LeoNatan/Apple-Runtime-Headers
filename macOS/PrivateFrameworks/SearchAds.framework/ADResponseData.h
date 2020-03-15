@@ -22,6 +22,7 @@
     ADOdmlResponse *_odmlResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ADOdmlResponse *odmlResponse; // @synthesize odmlResponse=_odmlResponse;
 @property(readonly, copy, nonatomic) ADInstallAttributionData *installAttribution; // @synthesize installAttribution=_installAttribution;
 @property(readonly, copy, nonatomic) NSDictionary *format; // @synthesize format=_format;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) NSString *lineItem; // @synthesize lineItem=_lineItem;
 @property(readonly, copy, nonatomic) NSString *metadata; // @synthesize metadata=_metadata;
 @property(readonly, copy, nonatomic) NSString *impressionID; // @synthesize impressionID=_impressionID;
-- (void).cxx_destruct;
 - (id)initWithDict:(id)arg1;
 
 @end

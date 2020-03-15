@@ -21,9 +21,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)_invalidateAndInvokeCompletion:(_Bool)arg1 error:(id)arg2;
 - (void)invalidateAndInvokeCompletionWithError:(id)arg1;
 - (void)invalidate;

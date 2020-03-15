@@ -24,6 +24,7 @@
 + (_Bool)validTileInfoType:(id)arg1;
 + (_Bool)tileInfosHaveValidType:(id)arg1;
 + (_Bool)mayTileInfosTileSubBatchLayout:(id)arg1 withLayoutSeed:(CDStruct_bfc4548b)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_bfc4548b layoutSeed; // @synthesize layoutSeed=_layoutSeed;
 @property(copy, nonatomic) NFLSubBatchLayout *result; // @synthesize result=_result;
 @property double tileProminenceScoreBalanceValue; // @synthesize tileProminenceScoreBalanceValue=_tileProminenceScoreBalanceValue;
@@ -32,7 +33,6 @@
 @property(copy) NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(nonatomic, getter=isShowingAccessoryText) _Bool showingAccessoryText; // @synthesize showingAccessoryText=_showingAccessoryText;
 @property(copy) CDUnknownBlockType tilingCompletionBlock; // @synthesize tilingCompletionBlock=_tilingCompletionBlock;
-- (void).cxx_destruct;
 - (_Bool)isReliable;
 - (id)tiledSubBatchLayoutWithRankedLayoutsByTileInfo:(id)arg1;
 - (id)rankedLayoutRequests;

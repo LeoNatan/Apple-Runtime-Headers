@@ -15,10 +15,10 @@
     NSDictionary *_localizedNotes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *localizedNotes; // @synthesize localizedNotes=_localizedNotes;
 @property(retain, nonatomic) DeliveryAccount *deliveryAccount; // @synthesize deliveryAccount=_deliveryAccount;
 @property(retain, nonatomic) MailAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 
 @end
 

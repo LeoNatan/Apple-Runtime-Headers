@@ -17,10 +17,10 @@
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSNumber *transactionToken; // @synthesize transactionToken=_transactionToken;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)setStocksAdEnabled:(BOOL)arg1;
 - (void)requestAttributionDetailsWithBlock:(CDUnknownBlockType)arg1;
 - (void)beginAttributionRequest:(id)arg1 reason:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

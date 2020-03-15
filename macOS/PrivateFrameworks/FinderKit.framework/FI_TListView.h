@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
-@property(nonatomic) struct TFENode currentDropNode; // @synthesize currentDropNode=_currentDropNode;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct TFENode currentDropNode; // @synthesize currentDropNode=_currentDropNode;
 - (void)_setUpImmediateActionGestureRecognizers;
 - (void)prepareDraggingDestinationView:(id)arg1 forRowIndexes:(id)arg2 draggingStyle:(long long)arg3;
 - (void)addDropFeedbackViews;

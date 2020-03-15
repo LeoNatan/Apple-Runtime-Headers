@@ -15,9 +15,9 @@
     BOOL _parentChatIsSpam;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL parentChatIsSpam; // @synthesize parentChatIsSpam=_parentChatIsSpam;
 @property(readonly, copy, nonatomic) NSString *transferGUID; // @synthesize transferGUID=_transferGUID;
-- (void).cxx_destruct;
 - (BOOL)_wantsAttachmentContiguousForType:(id)arg1;
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange)arg4 transferGUID:(id)arg5 parentChatIsSpam:(BOOL)arg6 visibleAssociatedMessageChatItems:(id)arg7;
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange)arg4 transferGUID:(id)arg5 parentChatIsSpam:(BOOL)arg6;

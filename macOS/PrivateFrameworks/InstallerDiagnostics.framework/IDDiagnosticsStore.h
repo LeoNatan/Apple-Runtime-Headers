@@ -15,9 +15,9 @@
 }
 
 + (id)defaultStore;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *messages; // @synthesize messages=_messages;
 @property(retain) NSMutableArray *installEvents; // @synthesize installEvents=_installEvents;
-- (void).cxx_destruct;
 - (BOOL)startNewInstall:(id *)arg1;
 - (BOOL)clearStoredMessages:(id *)arg1;
 - (BOOL)clearSingleDiagnosticMessage:(long long)arg1 error:(id *)arg2;

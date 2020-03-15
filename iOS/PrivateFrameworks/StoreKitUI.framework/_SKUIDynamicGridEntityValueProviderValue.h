@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _sectionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long sectionIndex; // @synthesize sectionIndex=_sectionIndex;
 @property(retain, nonatomic) id <IKEntityValueProviding> entityValueProvider; // @synthesize entityValueProvider=_entityValueProvider;
-- (void).cxx_destruct;
 
 @end
 

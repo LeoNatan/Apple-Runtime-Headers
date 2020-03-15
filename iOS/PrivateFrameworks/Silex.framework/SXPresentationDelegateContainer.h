@@ -16,8 +16,8 @@
     id <SXPresentationDelegate> _presentationDelegate;
 }
 
-@property(readonly, nonatomic) __weak id <SXPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <SXPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void)registerPresentationDelegate:(id)arg1;
 
 // Remaining properties

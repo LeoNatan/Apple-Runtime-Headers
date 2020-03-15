@@ -13,8 +13,8 @@
     NSArray *_textures;
 }
 
-@property(readonly, nonatomic) NSArray *textures; // @synthesize textures=_textures;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *textures; // @synthesize textures=_textures;
 - (id)initWithTextures:(id)arg1;
 
 @end

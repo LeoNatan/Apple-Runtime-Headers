@@ -23,6 +23,7 @@
 }
 
 + (id)createSourceForProvider:(unsigned int)arg1 srcRef:(unsigned long long)arg2 manager:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) unsigned int provider; // @synthesize provider=_provider;
 @property unsigned long long descriptorSeqno; // @synthesize descriptorSeqno=_descriptorSeqno;
 @property unsigned long long countsSeqno; // @synthesize countsSeqno=_countsSeqno;
@@ -30,7 +31,6 @@
 @property unsigned long long reference; // @synthesize reference=_reference;
 @property(readonly) NWStatisticsManager *manager; // @synthesize manager=_manager;
 @property(retain) id <NWStatisticsSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)currentSnapshot;
 - (id)_currentSnapshot;
 - (void)queryUpdate;

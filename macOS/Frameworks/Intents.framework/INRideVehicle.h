@@ -24,12 +24,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) INImage *mapAnnotationImage; // @synthesize mapAnnotationImage=_mapAnnotationImage;
 @property(copy) NSString *model; // @synthesize model=_model;
 @property(copy) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(copy) NSString *registrationPlate; // @synthesize registrationPlate=_registrationPlate;
 @property(copy) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

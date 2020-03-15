@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)attestationsType;
-@property(retain, nonatomic) NSMutableArray *attestations; // @synthesize attestations=_attestations;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *attestations; // @synthesize attestations=_attestations;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

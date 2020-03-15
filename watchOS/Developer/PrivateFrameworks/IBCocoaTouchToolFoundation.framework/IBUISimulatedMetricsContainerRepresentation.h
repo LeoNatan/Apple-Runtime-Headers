@@ -22,6 +22,7 @@
     IBUITraitCollection *_simulatedTraitCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IBUITraitCollection *simulatedTraitCollection; // @synthesize simulatedTraitCollection=_simulatedTraitCollection;
 @property(retain, nonatomic) NSArray *metricsModifiers; // @synthesize metricsModifiers=_metricsModifiers;
 @property(retain, nonatomic) NSNumber *statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) IBUISimulatedBarMetrics *simulatedTopBarMetrics; // @synthesize simulatedTopBarMetrics=_simulatedTopBarMetrics;
 @property(retain, nonatomic) NSValue *simulatedScreenSize; // @synthesize simulatedScreenSize=_simulatedScreenSize;
 @property(retain, nonatomic) IBUISimulatedMetricChain *metricChain; // @synthesize metricChain=_metricChain;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;

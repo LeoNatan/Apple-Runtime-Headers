@@ -9,21 +9,26 @@
 #import "UIFocusItem-Protocol.h"
 #import "UIFocusItemContainer-Protocol.h"
 #import "_UIFocusEnvironmentPrivate-Protocol.h"
+#import "_UIFocusRegionContainer-Protocol.h"
 
 @class NSArray, NSString, UIView;
 @protocol UICoordinateSpace, UIFocusEnvironment, UIFocusItemContainer;
 
-@interface AccessibilityNodeAccessibility : __AccessibilityNodeAccessibility_super <UIFocusItem, UIFocusItemContainer, _UIFocusEnvironmentPrivate>
+@interface AccessibilityNodeAccessibility : __AccessibilityNodeAccessibility_super <UIFocusItem, UIFocusItemContainer, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer>
 {
 }
 
++ (_Bool)_isSerializableAccessibilityElement;
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-@property(readonly, nonatomic) struct CGRect frame;
+- (void)dealloc;
 - (_Bool)conformsToProtocol:(id)arg1;
 @property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace;
 - (id)focusItemsInRect:(struct CGRect)arg1;
+- (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
+- (id)_preferredFocusRegionCoordinateSpace;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
 @property(readonly, nonatomic) _Bool canBecomeFocused;
 - (void)_updateFocusLayerFrame;
 - (void)_destroyFocusLayer;
@@ -32,11 +37,16 @@
 - (void)updateFocusIfNeeded;
 - (void)setNeedsFocusUpdate;
 @property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
+- (id)_focusGroupDescriptor;
+- (id)_axDefaultFocusGroupDescriptor;
+- (void)_axSetStoredDefaultFocusGroupDescriptor:(id)arg1;
+- (id)_axGetStoredDefaultFocusGroupDescriptor;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> parentFocusEnvironment;
 @property(readonly, copy, nonatomic) NSArray *preferredFocusEnvironments;
 @property(nonatomic) _Bool areChildrenFocused;
 - (void)_axSetAreChildrenFocused:(_Bool)arg1;
 - (_Bool)_axAreChildrenFocused;
+@property(readonly, nonatomic) struct CGRect frame; // @dynamic frame;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

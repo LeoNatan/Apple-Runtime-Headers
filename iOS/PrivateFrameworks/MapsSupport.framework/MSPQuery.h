@@ -20,10 +20,10 @@
     NSArray *_unmappedContents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *unmappedContents; // @synthesize unmappedContents=_unmappedContents;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *changeHandlerQueue; // @synthesize changeHandlerQueue=_changeHandlerQueue;
 @property(readonly, copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
-- (void).cxx_destruct;
 @property(readonly, getter=_visibleState) _MSPQueryState *visibleState;
 - (void)setChangeHandler:(CDUnknownBlockType)arg1 queue:(id)arg2;
 - (id)originalIdentifierForObjectAtIndex:(unsigned long long)arg1;

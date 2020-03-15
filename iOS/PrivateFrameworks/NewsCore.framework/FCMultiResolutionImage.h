@@ -17,10 +17,10 @@
     NSURL *_imageURL3x;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *imageURL3x; // @synthesize imageURL3x=_imageURL3x;
 @property(retain, nonatomic) NSURL *imageURL2x; // @synthesize imageURL2x=_imageURL2x;
 @property(retain, nonatomic) NSURL *imageURL1x; // @synthesize imageURL1x=_imageURL1x;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

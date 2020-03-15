@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UITextView *locationSharingTextView; // @synthesize locationSharingTextView=_locationSharingTextView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextView *locationSharingTextView; // @synthesize locationSharingTextView=_locationSharingTextView;
 - (void)layoutSubviews;
 
 // Remaining properties

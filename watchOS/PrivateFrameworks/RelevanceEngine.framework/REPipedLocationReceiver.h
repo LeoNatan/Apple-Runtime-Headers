@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)_queue_clearConnection;
 - (void)_queue_setupConnection;
 @property(copy, nonatomic) CLLocation *location;

@@ -16,14 +16,17 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *showCanonicalId;
 @property(readonly, nonatomic) NSNumber *ratingValue;
 @property(readonly, nonatomic) _Bool isAdultContent;
 @property(readonly, nonatomic) NSString *showTitle;
 @property(readonly, nonatomic) NSString *seasonTitle;
 @property(readonly, nonatomic) NSNumber *seasonNumber;
+@property(readonly, nonatomic) NSNumber *episodeIndexInSeries;
 @property(readonly, nonatomic) NSNumber *episodeNumber;
 @property(readonly, nonatomic) NSString *ratingDomain;
 @property(readonly, nonatomic) NSString *ratingSystem;
+@property(readonly, nonatomic) NSString *ratingAuxiliaryName;
 @property(readonly, nonatomic) NSString *ratingName;
 @property(readonly, nonatomic) NSNumber *hasDolbyAtmos;
 @property(readonly, nonatomic) NSNumber *hasSDHLocales;

@@ -14,9 +14,9 @@
     HMSettingValue *_settingValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) HMSettingValue *settingValue; // @synthesize settingValue=_settingValue;
 @property(readonly) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)initWithKeyPath:(id)arg1 settingValue:(id)arg2;
 
 @end

@@ -19,6 +19,7 @@
     struct VTDecompressionOutputCallbackRecord _callBackRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *bufAttr; // @synthesize bufAttr=_bufAttr;
 @property unsigned int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property BOOL decompInProgress; // @synthesize decompInProgress=_decompInProgress;
@@ -26,7 +27,6 @@
 @property(retain) NSCondition *condition; // @synthesize condition=_condition;
 @property struct VTDecompressionOutputCallbackRecord callBackRecord; // @synthesize callBackRecord=_callBackRecord;
 @property(nonatomic) struct OpaqueVTDecompressionSession *decompressionSession; // @synthesize decompressionSession=_decompressionSession;
-- (void).cxx_destruct;
 - (void)processDecodedFrame:(struct __CVBuffer *)arg1;
 - (struct __CVBuffer *)render:(struct opaqueCMSampleBuffer *)arg1;
 - (int)createDecompSession:(struct opaqueCMSampleBuffer *)arg1;

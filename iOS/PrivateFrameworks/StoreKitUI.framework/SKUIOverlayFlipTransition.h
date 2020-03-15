@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_flipSourceView;
 }
 
-@property(retain, nonatomic) UIView *flipSourceView; // @synthesize flipSourceView=_flipSourceView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *flipSourceView; // @synthesize flipSourceView=_flipSourceView;
 
 @end
 

@@ -26,6 +26,7 @@
 }
 
 + (id)homeSharingBrowserWithGroupID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNetServiceBrowser *serviceBrowser; // @synthesize serviceBrowser=_serviceBrowser;
 @property(readonly, copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serviceBrowserQueue; // @synthesize serviceBrowserQueue=_serviceBrowserQueue;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak id <HSBrowserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *homeSharingGroupID; // @synthesize homeSharingGroupID=_homeSharingGroupID;
 @property(readonly, nonatomic) long long browserType; // @synthesize browserType=_browserType;
-- (void).cxx_destruct;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (void)_removalTimerFired:(id)arg1;

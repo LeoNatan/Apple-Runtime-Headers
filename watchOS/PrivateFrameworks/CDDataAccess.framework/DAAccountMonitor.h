@@ -16,9 +16,9 @@
 }
 
 + (id)sharedMonitor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accountsQueue; // @synthesize accountsQueue=_accountsQueue;
 @property(retain, nonatomic) NSHashTable *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
 - (id)monitoredAccounts;
 - (void)unmonitorAccount:(id)arg1;
 - (void)monitorAccount:(id)arg1;

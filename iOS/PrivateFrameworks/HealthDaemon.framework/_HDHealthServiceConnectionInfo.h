@@ -27,6 +27,7 @@
     NSObject<OS_dispatch_source> *_timeoutTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pairingAttempted; // @synthesize pairingAttempted=_pairingAttempted;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timeoutTimer; // @synthesize timeoutTimer=_timeoutTimer;
 @property(readonly, nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
 @property(readonly, nonatomic) CDUnknownBlockType sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 @property(nonatomic) unsigned long long sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
-- (void).cxx_destruct;
 - (void)markMFAStatusComplete;
 - (id)initWithSessionHandler:(CDUnknownBlockType)arg1 dataHandler:(CDUnknownBlockType)arg2 characteristicsHandler:(CDUnknownBlockType)arg3 mfaSuccessHandler:(CDUnknownBlockType)arg4 autoPairData:(id)arg5 connectionOptions:(unsigned long long)arg6 timeoutInterval:(double)arg7 peripheralUUID:(id)arg8;
 

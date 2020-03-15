@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGRect)tightBoundsForMenuBarUIElement:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SCRTable *shortcutTable; // @synthesize shortcutTable=_shortcutTable;
 @property(readonly, nonatomic) SCRElement *shortcutSearchField; // @synthesize shortcutSearchField=_shortcutSearchField;
-- (void).cxx_destruct;
 - (BOOL)trackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (void)prepareGestureTrackingChildren;
 - (BOOL)isApplicationMenuBar;

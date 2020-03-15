@@ -25,6 +25,7 @@
     NSMutableArray *_remoteControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *remoteControllers; // @synthesize remoteControllers=_remoteControllers;
 @property(retain, nonatomic) NSNetServiceBrowser *browser; // @synthesize browser=_browser;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
@@ -32,7 +33,6 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) __weak id <AXIDCManagerSecurityDelegate> securityDelegate; // @synthesize securityDelegate=_securityDelegate;
 @property(nonatomic) __weak id <AXIDCControllerBrowserDelegateProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)controller:(id)arg1 didCloseConnectionWithError:(id)arg2;
 - (void)controllerDidFinishConnecting:(id)arg1;
 - (void)controller:(id)arg1 didFinishSendingData:(id)arg2;

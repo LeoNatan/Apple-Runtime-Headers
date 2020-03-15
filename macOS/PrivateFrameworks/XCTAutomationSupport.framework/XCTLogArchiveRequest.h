@@ -20,10 +20,10 @@
 
 + (id)logArchiveCollectorConnection;
 + (id)requestWithStartDate:(id)arg1 outputPath:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, copy) NSString *outputPath; // @synthesize outputPath=_outputPath;
 @property(readonly, copy) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)executeWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithStartDate:(id)arg1 outputPath:(id)arg2;
 - (id)initWithStartDate:(id)arg1 outputPath:(id)arg2 connection:(id)arg3;

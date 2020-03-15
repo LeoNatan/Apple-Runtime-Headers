@@ -22,6 +22,7 @@
     double _interSectionSpacing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double interSectionSpacing; // @synthesize interSectionSpacing=_interSectionSpacing;
 @property(nonatomic) double columnWidth; // @synthesize columnWidth=_columnWidth;
 @property(nonatomic) _Bool isPageFullColumnnWidth; // @synthesize isPageFullColumnnWidth=_isPageFullColumnnWidth;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool pagingEnabled; // @synthesize pagingEnabled=_pagingEnabled;
 @property(nonatomic) __weak id <PXGadgetCollectionViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXGadgetSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (unsigned long long)_sectionHeaderStyleForGadget:(id)arg1;
 - (_Bool)_shouldShowSectionHeaderForGadget:(id)arg1;
 - (_Bool)_hasButtonForGadget:(id)arg1;

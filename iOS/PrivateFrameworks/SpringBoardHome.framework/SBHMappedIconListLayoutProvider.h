@@ -17,8 +17,8 @@
     id <SBIconListLayoutProvider> _targetListLayoutProvider;
 }
 
-@property(readonly, nonatomic) id <SBIconListLayoutProvider> targetListLayoutProvider; // @synthesize targetListLayoutProvider=_targetListLayoutProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SBIconListLayoutProvider> targetListLayoutProvider; // @synthesize targetListLayoutProvider=_targetListLayoutProvider;
 - (id)layoutForIconLocation:(id)arg1;
 - (void)mapIconLocation:(id)arg1 toIconLocation:(id)arg2;
 - (id)initWithTargetListLayoutProvider:(id)arg1;

@@ -16,11 +16,11 @@
     CDUnknownBlockType _firstIdentificationEntriesForEnabledExtensions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType firstIdentificationEntriesForEnabledExtensions; // @synthesize firstIdentificationEntriesForEnabledExtensions=_firstIdentificationEntriesForEnabledExtensions;
 @property(copy, nonatomic) CDUnknownBlockType countryDialingCode; // @synthesize countryDialingCode=_countryDialingCode;
 @property(readonly, nonatomic) int identificationEntriesChangedNotifyToken; // @synthesize identificationEntriesChangedNotifyToken=_identificationEntriesChangedNotifyToken;
 @property(readonly, nonatomic) CXCallDirectoryManager *callDirectoryManager; // @synthesize callDirectoryManager=_callDirectoryManager;
-- (void).cxx_destruct;
 - (void)updateCacheWithDestinationIDs:(id)arg1 withGroup:(id)arg2;
 - (void)dealloc;
 - (id)init;

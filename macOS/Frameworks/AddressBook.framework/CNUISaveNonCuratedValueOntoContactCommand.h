@@ -11,12 +11,12 @@
     CNUIUndoableCommand *_command;
 }
 
-@property(retain, nonatomic) CNUIUndoableCommand *command; // @synthesize command=_command;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNUIUndoableCommand *command; // @synthesize command=_command;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
-- (id)initWithContactStore:(id)arg1 contact:(id)arg2 isContactMeContact:(BOOL)arg3 isContactReadOnly:(BOOL)arg4 isContactCurated:(BOOL)arg5 nonCuratedValueToSave:(id)arg6 forKey:(id)arg7 containerIdentifier:(id)arg8;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 contact:(id)arg2 isContactMeContact:(BOOL)arg3 isContactReadOnly:(BOOL)arg4 isContactCurated:(BOOL)arg5 nonCuratedValueToSave:(id)arg6 forKey:(id)arg7 containerIdentifier:(id)arg8 ignoresGuardianRestrictions:(BOOL)arg9;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

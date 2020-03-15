@@ -34,6 +34,7 @@
 + (id)sortDescriptorForDefaultPaymentInstrument:(id)arg1 supportedNetworks:(id)arg2 merchantCapabilities:(unsigned long long)arg3 webService:(id)arg4;
 + (id)remotePaymentInstrumentWithProtobuf:(id)arg1;
 + (id)thumbnailCachePathForManifestHash:(id)arg1 size:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *associatedWebDomains; // @synthesize associatedWebDomains=_associatedWebDomains;
 @property(nonatomic) unsigned long long peerPaymentAccountState; // @synthesize peerPaymentAccountState=_peerPaymentAccountState;
 @property(nonatomic) _Bool hasAssociatedPeerPaymentAccount; // @synthesize hasAssociatedPeerPaymentAccount=_hasAssociatedPeerPaymentAccount;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSData *manifestHash; // @synthesize manifestHash=_manifestHash;
 @property(copy, nonatomic) NSString *organizationName; // @synthesize organizationName=_organizationName;
 @property(copy, nonatomic) NSString *passIdentifier; // @synthesize passIdentifier=_passIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqualToRemotePaymentInstrument:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

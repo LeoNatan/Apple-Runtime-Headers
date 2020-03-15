@@ -15,8 +15,8 @@
     MFMailMessageLibrary *_library;
 }
 
-@property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;
 - (void)didFinishPersistenceDidAddMessages:(id)arg1;
 - (void)willStartPersistenceDidAddMessages:(id)arg1;
 - (_Bool)mailboxPartOfAllMail:(id)arg1;

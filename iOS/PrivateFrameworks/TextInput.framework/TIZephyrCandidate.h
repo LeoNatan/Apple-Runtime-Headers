@@ -30,6 +30,7 @@
 
 + (int)type;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=confidence) int confidence; // @synthesize confidence=_confidence;
 @property(nonatomic, getter=shouldInsertSpaceAfterSelection) _Bool shouldInsertSpaceAfterSelection; // @synthesize shouldInsertSpaceAfterSelection=_shouldInsertSpaceAfterSelection;
 @property(nonatomic, getter=shouldAccept) _Bool shouldAccept; // @synthesize shouldAccept=_shouldAccept;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool isFromTextChecker; // @synthesize isFromTextChecker=_isFromTextChecker;
 @property(nonatomic) _Bool isFromPhraseDictionary; // @synthesize isFromPhraseDictionary=_isFromPhraseDictionary;
 - (unsigned int)usageTrackingMask;
-- (void).cxx_destruct;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

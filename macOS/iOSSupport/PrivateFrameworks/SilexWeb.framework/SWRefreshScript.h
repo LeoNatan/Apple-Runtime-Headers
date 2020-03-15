@@ -15,8 +15,8 @@
     WKUserScript *userScript;
 }
 
-@property(readonly, nonatomic) WKUserScript *userScript; // @synthesize userScript;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WKUserScript *userScript; // @synthesize userScript;
 @property(readonly, nonatomic) NSString *executableScript;
 @property(readonly, nonatomic) BOOL queueable;
 @property(readonly, nonatomic) NSString *identifier;

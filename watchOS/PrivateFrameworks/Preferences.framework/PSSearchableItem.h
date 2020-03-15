@@ -23,6 +23,7 @@
     NSArray *_requiredCapabilitiesOr;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *requiredCapabilitiesOr; // @synthesize requiredCapabilitiesOr=_requiredCapabilitiesOr;
 @property(retain, nonatomic) NSArray *requiredCapabilities; // @synthesize requiredCapabilities=_requiredCapabilities;
 @property(retain, nonatomic) NSNumber *rankingHint; // @synthesize rankingHint=_rankingHint;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *classIdentifier; // @synthesize classIdentifier=_classIdentifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)toManifestDictionary;
 - (id)toCSSearchableItem;
 

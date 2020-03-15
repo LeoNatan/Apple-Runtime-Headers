@@ -17,11 +17,11 @@
     NSMutableDictionary *_userRecordIDsToUserInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *userRecordIDsToUserInfos; // @synthesize userRecordIDsToUserInfos=_userRecordIDsToUserInfos;
 @property(retain, nonatomic) NSMutableDictionary *emailsToUserInfos; // @synthesize emailsToUserInfos=_emailsToUserInfos;
 @property(copy, nonatomic) NSArray *userRecordIDs; // @synthesize userRecordIDs=_userRecordIDs;
 @property(copy, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;

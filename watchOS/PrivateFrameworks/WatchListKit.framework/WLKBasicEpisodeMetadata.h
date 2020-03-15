@@ -23,6 +23,7 @@
 }
 
 + (id)episodesWithDictionaries:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKPlayable *playable; // @synthesize playable=_playable;
 @property(readonly, nonatomic) WLKArtworkVariantListing *seasonImages; // @synthesize seasonImages=_seasonImages;
 @property(readonly, nonatomic) WLKArtworkVariantListing *showImages; // @synthesize showImages=_showImages;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *canonicalSeasonID; // @synthesize canonicalSeasonID=_canonicalSeasonID;
 @property(readonly, copy, nonatomic) NSString *canonicalShowID; // @synthesize canonicalShowID=_canonicalShowID;
 @property(readonly, copy, nonatomic) NSString *showTitle; // @synthesize showTitle=_showTitle;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 

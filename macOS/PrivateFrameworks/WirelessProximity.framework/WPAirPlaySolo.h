@@ -15,8 +15,8 @@
 
 + (id)puckTypeToString:(unsigned char)arg1;
 + (unsigned char)puckStringToType:(id)arg1;
-@property(nonatomic) __weak id <WPAirPlaySoloDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WPAirPlaySoloDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)peerTrackingAvailable;
 - (void)peerTrackingFull;
 - (void)lostPeer:(id)arg1 ofType:(unsigned char)arg2;

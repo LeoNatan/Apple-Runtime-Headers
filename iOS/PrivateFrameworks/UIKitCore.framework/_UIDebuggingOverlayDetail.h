@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)detailWithTitle:(id)arg1 detail:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long accessoryType; // @synthesize accessoryType=_accessoryType;
 @property(retain, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_updateForInspectedView:(id)arg1;
 @property(readonly, nonatomic) UIViewController *viewController;
 @property(readonly, nonatomic) UIView *view;

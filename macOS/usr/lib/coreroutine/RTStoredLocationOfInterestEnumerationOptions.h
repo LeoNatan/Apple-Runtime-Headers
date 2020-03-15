@@ -18,11 +18,11 @@
     NSDateInterval *_dateInterval;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL singleVisit; // @synthesize singleVisit=_singleVisit;
 @property(readonly, copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(readonly, nonatomic) BOOL ascendingVisitEntryDate; // @synthesize ascendingVisitEntryDate=_ascendingVisitEntryDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

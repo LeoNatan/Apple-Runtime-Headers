@@ -19,12 +19,12 @@
     double _prefetchedForYouExpiration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double prefetchedForYouExpiration; // @synthesize prefetchedForYouExpiration=_prefetchedForYouExpiration;
 @property(readonly, nonatomic) unsigned long long maximumFavoritesFeedsToPrefetch; // @synthesize maximumFavoritesFeedsToPrefetch=_maximumFavoritesFeedsToPrefetch;
 @property(readonly, nonatomic) BOOL shouldPrefetchForYouFeed; // @synthesize shouldPrefetchForYouFeed=_shouldPrefetchForYouFeed;
 @property(readonly, nonatomic) double minimumBackgroundFetchInterval; // @synthesize minimumBackgroundFetchInterval=_minimumBackgroundFetchInterval;
 @property(readonly, nonatomic, getter=isBackgroundFetchEnabled) BOOL backgroundFetchEnabled; // @synthesize backgroundFetchEnabled=_backgroundFetchEnabled;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithConfigDictionary:(id)arg1;

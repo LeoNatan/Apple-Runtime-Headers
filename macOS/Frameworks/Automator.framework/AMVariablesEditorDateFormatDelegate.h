@@ -17,10 +17,10 @@
     AMVariablesEditorView *_editorView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCharacterSet *charactersToQuote; // @synthesize charactersToQuote=_charactersToQuote;
 @property(retain) NSCharacterSet *charactersICU; // @synthesize charactersICU=_charactersICU;
 @property(retain) AMVariablesEditorView *editorView; // @synthesize editorView=_editorView;
-- (void).cxx_destruct;
 - (id)tokenField:(id)arg1 readFromPasteboard:(id)arg2;
 - (BOOL)tokenField:(id)arg1 writeRepresentedObjects:(id)arg2 toPasteboard:(id)arg3;
 - (void)formatDidChange:(id)arg1;

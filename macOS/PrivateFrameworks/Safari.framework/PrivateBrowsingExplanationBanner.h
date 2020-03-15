@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)bannerSortOrder;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(nonatomic) __weak NSTextField *titleText; // @synthesize titleText=_titleText;
 @property(nonatomic) __weak RolloverImageButton *closeButton; // @synthesize closeButton=_closeButton;
-- (void).cxx_destruct;
 - (id)bannerNibName;
 - (id)init;
 

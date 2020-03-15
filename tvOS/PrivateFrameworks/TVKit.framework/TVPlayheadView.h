@@ -13,8 +13,8 @@
     UIColor *_foregroundColor;
 }
 
-@property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct UIEdgeInsets)alignmentRectInsets;
 

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSString *_cdataElement;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cdataElement; // @synthesize cdataElement=_cdataElement;
 @property(copy, nonatomic) NSString *rawData; // @synthesize rawData=_rawData;
 @property(readonly, nonatomic) NSRegularExpression *endTagFindExpression; // @synthesize endTagFindExpression=_endTagFindExpression;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WFPythonHTMLParserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long currentOffset; // @synthesize currentOffset=_currentOffset;
 @property(nonatomic) long long currentLineNumber; // @synthesize currentLineNumber=_currentLineNumber;
-- (void).cxx_destruct;
 - (void)handleUnknownDeclaration:(id)arg1;
 - (void)handleProcessingInstruction:(id)arg1;
 - (void)handleDoctypeDeclaration:(id)arg1;

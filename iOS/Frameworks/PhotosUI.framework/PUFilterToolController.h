@@ -34,9 +34,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _didFinishLoadingFilterThumbnails;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didFinishLoadingFilterThumbnails; // @synthesize didFinishLoadingFilterThumbnails=_didFinishLoadingFilterThumbnails;
 @property(copy, nonatomic) CDUnknownBlockType willLoadFilterThumbnails; // @synthesize willLoadFilterThumbnails=_willLoadFilterThumbnails;
-- (void).cxx_destruct;
 - (void)sliderDidEndScrolling:(id)arg1;
 - (void)sliderWillEndScrolling:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)sliderDidScroll:(id)arg1;

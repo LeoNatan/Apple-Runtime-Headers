@@ -19,11 +19,11 @@
     CNStack *_delayedBlocks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CNStack *delayedBlocks; // @synthesize delayedBlocks=_delayedBlocks;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) double coalescingWindow; // @synthesize coalescingWindow=_coalescingWindow;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 @property(readonly) double timestamp;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2 qualityOfService:(unsigned long long)arg3;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2;

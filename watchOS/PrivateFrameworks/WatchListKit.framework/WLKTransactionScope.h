@@ -16,10 +16,10 @@
     double _delay;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double delay; // @synthesize delay=_delay;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 delay:(double)arg2;
 - (id)initWithIdentifier:(id)arg1;

@@ -12,8 +12,8 @@
 }
 
 + (id)blockOperationWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType operationBlock; // @synthesize operationBlock=_operationBlock;
 - (void)main;
 - (void)cancel;
 - (BOOL)isAsynchronous;

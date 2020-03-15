@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _SCRTextAreaChangeSimple *_right;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SCRTextAreaChangeSimple *right; // @synthesize right=_right;
 @property(retain, nonatomic) _SCRTextAreaChangeSimple *left; // @synthesize left=_left;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTruncated;
 - (unsigned long long)length;

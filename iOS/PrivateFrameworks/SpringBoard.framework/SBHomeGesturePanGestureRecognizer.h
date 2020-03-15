@@ -11,11 +11,13 @@
 #import <SpringBoard/SBGestureRecognizerTouchHistoryProviding-Protocol.h>
 
 @class NSString, SBFluidSwitcherGestureExclusionTrapezoid, SBHomeGestureSettings, SBTouchHistory, UIView;
+@protocol SBHomeGesturePanGestureRecognizerInterfaceDelegate;
 
 @interface SBHomeGesturePanGestureRecognizer : SBScreenEdgePanGestureRecognizer <PTSettingsKeyObserver, SBGestureRecognizerPanGestureProviding, SBGestureRecognizerTouchHistoryProviding>
 {
     _Bool _preventHorizontalSwipesOutsideTrapezoid;
     _Bool _installedAsSystemGesture;
+    id <SBHomeGesturePanGestureRecognizerInterfaceDelegate> _interfaceDelegate;
     SBHomeGestureSettings *_homeGestureSettings;
     SBFluidSwitcherGestureExclusionTrapezoid *_portraitExclusionTrapezoid;
     SBFluidSwitcherGestureExclusionTrapezoid *_landscapeExclusionTrapezoid;
@@ -23,13 +25,14 @@
 }
 
 + (id)homeGesturePanGestureRecognizerWithTarget:(id)arg1 action:(SEL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBTouchHistory *touchHistory; // @synthesize touchHistory=_touchHistory;
 @property(retain, nonatomic) SBFluidSwitcherGestureExclusionTrapezoid *landscapeExclusionTrapezoid; // @synthesize landscapeExclusionTrapezoid=_landscapeExclusionTrapezoid;
 @property(retain, nonatomic) SBFluidSwitcherGestureExclusionTrapezoid *portraitExclusionTrapezoid; // @synthesize portraitExclusionTrapezoid=_portraitExclusionTrapezoid;
 @property(retain, nonatomic) SBHomeGestureSettings *homeGestureSettings; // @synthesize homeGestureSettings=_homeGestureSettings;
 @property(nonatomic) _Bool installedAsSystemGesture; // @synthesize installedAsSystemGesture=_installedAsSystemGesture;
 @property(nonatomic) _Bool preventHorizontalSwipesOutsideTrapezoid; // @synthesize preventHorizontalSwipesOutsideTrapezoid=_preventHorizontalSwipesOutsideTrapezoid;
-- (void).cxx_destruct;
+@property(nonatomic) __weak id <SBHomeGesturePanGestureRecognizerInterfaceDelegate> interfaceDelegate; // @synthesize interfaceDelegate=_interfaceDelegate;
 - (void)_updateHomeGestureParameters;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (_Bool)_shouldBlockHomeGestureForKeyboardInputMode:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (long long)_touchInterfaceOrientation;
 @property(readonly, nonatomic) __weak UIView *viewForTouchHistory;
 - (void)sb_commonInitHomeGesturePanGestureRecognizer;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(long long)arg3 options:(unsigned long long)arg4;

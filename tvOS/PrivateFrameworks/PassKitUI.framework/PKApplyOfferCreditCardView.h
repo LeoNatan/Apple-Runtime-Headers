@@ -22,6 +22,7 @@
     UIButton *_termsLinkButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *termsLinkButton; // @synthesize termsLinkButton=_termsLinkButton;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *feeLabel; // @synthesize feeLabel=_feeLabel;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UILabel *feeTitleLabel; // @synthesize feeTitleLabel=_feeTitleLabel;
 @property(retain, nonatomic) UILabel *aprForPurchaseTitleLabel; // @synthesize aprForPurchaseTitleLabel=_aprForPurchaseTitleLabel;
 @property(retain, nonatomic) UILabel *creditLimitTitleLabel; // @synthesize creditLimitTitleLabel=_creditLimitTitleLabel;
-- (void).cxx_destruct;
 - (_Bool)showSchumerBox;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

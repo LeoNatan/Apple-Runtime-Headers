@@ -21,11 +21,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(readonly, getter=isExecuting) _Bool executing; // @synthesize executing=_executing;
 @property(readonly) CSLDuetMeteringRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

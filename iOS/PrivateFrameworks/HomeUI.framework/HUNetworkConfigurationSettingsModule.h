@@ -22,15 +22,16 @@
 + (id)_attributedCheckmarkIcon;
 + (id)_attributedIconNamed:(id)arg1;
 + (id)_allowedHostDescriptionForHostGroup:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *updateProtectionModeTimer; // @synthesize updateProtectionModeTimer=_updateProtectionModeTimer;
 @property(retain, nonatomic) HUNetworkProtectionModeOptionItemProvider *networkProtectionModeOptionItemProvider; // @synthesize networkProtectionModeOptionItemProvider=_networkProtectionModeOptionItemProvider;
 @property(nonatomic) _Bool isUpdatingProtectionMode; // @synthesize isUpdatingProtectionMode=_isUpdatingProtectionMode;
 @property(readonly, nonatomic) HMAccessoryNetworkProtectionGroup *group; // @synthesize group=_group;
 @property(nonatomic) __weak id <HUNetworkConfigurationSettingsModuleDelegate> networkConfigurationSettingsModuleDelegate; // @synthesize networkConfigurationSettingsModuleDelegate=_networkConfigurationSettingsModuleDelegate;
-- (void).cxx_destruct;
 - (id)_protectionModeOptionSectionFooter;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;
+- (id)description;
 - (id)updateProtectionMode:(long long)arg1;
 @property(readonly, nonatomic) HFNetworkConfigurationGroupItem *sourceItem;
 - (_Bool)isItemNetworkProtectionModeOptionItem:(id)arg1;

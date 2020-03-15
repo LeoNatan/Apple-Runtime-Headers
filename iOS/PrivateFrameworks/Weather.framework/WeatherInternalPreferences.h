@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInternalPreferences;
-@property(retain) id <WeatherPreferencesPersistence> persistence; // @synthesize persistence=_persistence;
 - (void).cxx_destruct;
+@property(retain) id <WeatherPreferencesPersistence> persistence; // @synthesize persistence=_persistence;
 @property(readonly) _Bool shouldShowUpdateTimestamp;
 @property(readonly) _Bool isV3Enabled;
 @property(readonly) _Bool isInternalInstall;

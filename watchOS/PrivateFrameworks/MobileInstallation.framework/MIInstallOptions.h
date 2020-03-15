@@ -34,6 +34,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool overrideLaunchDisabled; // @synthesize overrideLaunchDisabled=_overrideLaunchDisabled;
 @property(nonatomic) unsigned int autoInstallOverride; // @synthesize autoInstallOverride=_autoInstallOverride;
 @property(nonatomic) _Bool performAPFSClone; // @synthesize performAPFSClone=_performAPFSClone;
@@ -52,7 +53,6 @@
 @property(nonatomic, getter=isSystemAppInstall) _Bool systemAppInstall; // @synthesize systemAppInstall=_systemAppInstall;
 @property(nonatomic, getter=isDeveloperInstall) _Bool developerInstall; // @synthesize developerInstall=_developerInstall;
 @property(nonatomic) unsigned int installTargetType; // @synthesize installTargetType=_installTargetType;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *legacyOptionsDictionary;

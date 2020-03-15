@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSURL *destURL; // @synthesize destURL=_destURL;
 @property(nonatomic) int callbackType; // @synthesize callbackType=_callbackType;
-- (void).cxx_destruct;
 
 @end
 

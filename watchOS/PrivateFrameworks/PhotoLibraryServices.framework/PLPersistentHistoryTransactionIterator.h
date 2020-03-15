@@ -20,11 +20,11 @@
 
 + (id)iteratorSinceToken:(id)arg1 withBatchSize:(unsigned int)arg2 managedObjectObjectContext:(id)arg3 error:(id *)arg4;
 + (id)iteratorSinceToken:(id)arg1 withManagedObjectObjectContext:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSPersistentHistoryToken *lastIteratedToken; // @synthesize lastIteratedToken=_lastIteratedToken;
 @property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) unsigned int count; // @synthesize count=_count;
 @property(readonly, copy, nonatomic) NSPersistentHistoryToken *initialToken; // @synthesize initialToken=_initialToken;
-- (void).cxx_destruct;
 - (id)_safeTransactionAtIndex:(unsigned int)arg1;
 - (_Bool)_enumerateOneTransactionWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateRemainingTransactionsWithBlock:(CDUnknownBlockType)arg1;

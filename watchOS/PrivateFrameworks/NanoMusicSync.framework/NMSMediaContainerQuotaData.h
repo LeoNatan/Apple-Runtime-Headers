@@ -14,11 +14,11 @@
     unsigned int _numItemsRemoved;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int numItemsRemoved; // @synthesize numItemsRemoved=_numItemsRemoved;
 @property(nonatomic) unsigned int numItemsSkipped; // @synthesize numItemsSkipped=_numItemsSkipped;
 @property(nonatomic) unsigned int numItemsAdded; // @synthesize numItemsAdded=_numItemsAdded;
 @property(nonatomic) __weak id quotaRefObj; // @synthesize quotaRefObj=_quotaRefObj;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int numItemsAboveQuota;
 
 @end

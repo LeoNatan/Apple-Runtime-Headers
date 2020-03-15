@@ -15,9 +15,9 @@
 }
 
 + (id)allTypes;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned int activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (id)initWithActivityType:(unsigned int)arg1;
 
 @end

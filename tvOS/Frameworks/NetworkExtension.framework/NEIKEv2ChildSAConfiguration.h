@@ -20,12 +20,12 @@
     NSArray *_remoteTrafficSelectors;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *remoteTrafficSelectors; // @synthesize remoteTrafficSelectors=_remoteTrafficSelectors;
 @property(retain) NSArray *localTrafficSelectors; // @synthesize localTrafficSelectors=_localTrafficSelectors;
 @property _Bool sequencePerTrafficClass; // @synthesize sequencePerTrafficClass=_sequencePerTrafficClass;
 @property unsigned int replayWindowSize; // @synthesize replayWindowSize=_replayWindowSize;
 @property unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *proposals;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

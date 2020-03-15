@@ -36,9 +36,9 @@ __attribute__((visibility("hidden")))
 + (void)setHostAuditToken:(CDStruct_6ad76789)arg1;
 + (id)hostBundleID;
 + (void)setHostBundleID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic, getter=isNewlyAdded) _Bool newlyAdded; // @synthesize newlyAdded=_newlyAdded;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

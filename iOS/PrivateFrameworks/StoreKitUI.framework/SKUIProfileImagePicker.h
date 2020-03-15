@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_fixCropRect:(id)arg1 forOriginalImage:(id)arg2;
-@property(nonatomic) __weak id <SKUIProfileImagePickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIProfileImagePickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_showImageSourcePicker;
 - (void)_showImagePicker;
 - (void)_presentImagePickerWithSourceType:(long long)arg1;

@@ -20,13 +20,13 @@
     NSData *_body;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, retain, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)setupControllerInWebFrame:(id)arg1;
 - (void)uiWebView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;

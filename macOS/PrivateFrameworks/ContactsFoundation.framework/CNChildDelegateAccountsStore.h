@@ -19,9 +19,9 @@
 
 + (void)configureChildAccount:(id)arg1 withSettingsFromDelegateInfo:(id)arg2 parent:(id)arg3;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(readonly, nonatomic) ACAccount *parentAccount; // @synthesize parentAccount=_parentAccount;
-- (void).cxx_destruct;
 - (id)removeAccount:(id)arg1;
 - (id)updateAccount:(id)arg1;
 - (id)addChildWithDelegateInfo:(id)arg1;

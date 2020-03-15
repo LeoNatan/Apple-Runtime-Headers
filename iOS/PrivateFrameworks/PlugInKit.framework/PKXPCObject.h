@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)object:(id)arg1;
-@property(retain) NSObject<OS_xpc_object> *object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_xpc_object> *object; // @synthesize object=_object;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObject:(id)arg1;

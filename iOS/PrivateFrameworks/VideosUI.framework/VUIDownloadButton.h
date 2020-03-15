@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *deleteConfirmationAlertController; // @synthesize deleteConfirmationAlertController=_deleteConfirmationAlertController;
 @property(nonatomic) _Bool isForLibrary; // @synthesize isForLibrary=_isForLibrary;
 @property(nonatomic) _Bool wasCanceled; // @synthesize wasCanceled=_wasCanceled;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType downloadStateChangeHandler; // @synthesize downloadStateChangeHandler=_downloadStateChangeHandler;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) _Bool showsTextInDownloadedState; // @synthesize showsTextInDownloadedState=_showsTextInDownloadedState;
-- (void).cxx_destruct;
 - (void)_stopObservingDownloadProgress:(id)arg1;
 - (void)_startObservingDownloadProgress:(id)arg1;
 - (void)_stopObservingViewModel:(id)arg1;
@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (void)_askUserAndDeleteIfNeeded;
 - (void)_layoutProgressIndicator;
 - (void)_downloadButtonTapped:(id)arg1;
+- (id)_localize:(id)arg1 token:(id)arg2 value:(id)arg3;
 - (struct CGSize)_imageSizeThatFits:(struct CGSize)arg1;
 - (void)updateWithAssetController:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

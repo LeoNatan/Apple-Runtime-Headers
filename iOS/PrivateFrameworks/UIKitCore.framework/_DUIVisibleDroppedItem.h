@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double rotation; // @synthesize rotation=_rotation;
 @property(nonatomic) _Bool precisionMode; // @synthesize precisionMode=_precisionMode;
 @property(nonatomic) _Bool flipped; // @synthesize flipped=_flipped;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) _DUIPreview *preview; // @synthesize preview=_preview;
 @property(retain, nonatomic) _DUIImageComponent *imageComponent; // @synthesize imageComponent=_imageComponent;
 @property(nonatomic) unsigned long long itemIndex; // @synthesize itemIndex=_itemIndex;
-- (void).cxx_destruct;
 - (id)createSnapshotView;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

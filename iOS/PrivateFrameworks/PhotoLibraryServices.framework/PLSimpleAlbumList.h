@@ -15,8 +15,8 @@
     NSOrderedSet *_containers;
 }
 
-@property(retain, nonatomic) NSOrderedSet *containers; // @synthesize containers=_containers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOrderedSet *containers; // @synthesize containers=_containers;
 - (id)containersRelationshipName;
 - (id)photoLibrary;
 - (id)managedObjectContext;

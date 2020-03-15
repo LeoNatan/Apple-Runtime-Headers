@@ -15,9 +15,9 @@
 }
 
 + (id)labelTypeToString:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long labelType; // @synthesize labelType=_labelType;
 @property(readonly, copy, nonatomic) NSString *contactsIdentifier; // @synthesize contactsIdentifier=_contactsIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)geoDictionaryRepresentation;
 - (id)dictionaryRepresentation;

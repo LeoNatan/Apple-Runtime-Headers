@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     TFFeedbackSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TFFeedbackSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) TFFeedbackDataContainer *dataContainer; // @synthesize dataContainer=_dataContainer;
 @property(readonly, nonatomic) TFFeedbackForm *form; // @synthesize form=_form;
 @property(nonatomic) __weak id <TFFeedbackFormPresenterView> presenterView; // @synthesize presenterView=_presenterView;
-- (void).cxx_destruct;
 - (void)showSubmissionFailureWithMessage:(id)arg1;
 - (void)presenterViewDidInitiateFeedbackSubmission:(id)arg1;
 - (void)didUpdateEntry:(id)arg1 toString:(id)arg2 editInProgress:(_Bool)arg3;

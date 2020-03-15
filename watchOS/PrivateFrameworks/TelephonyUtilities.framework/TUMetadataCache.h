@@ -18,9 +18,9 @@
 }
 
 + (id)classIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, copy, nonatomic) NSArray *providers; // @synthesize providers=_providers;
-- (void).cxx_destruct;
 - (void)dataProvider:(id)arg1 requestedRefreshWithDestinationIDs:(id)arg2;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;

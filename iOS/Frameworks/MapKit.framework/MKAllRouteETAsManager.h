@@ -15,8 +15,8 @@
     id <MKAllRouteETAsManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MKAllRouteETAsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MKAllRouteETAsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)updateETA;
 - (id)routeETAForTransportType:(unsigned long long)arg1;
 @property(copy, nonatomic) GEOTransitOptions *transitOptions;

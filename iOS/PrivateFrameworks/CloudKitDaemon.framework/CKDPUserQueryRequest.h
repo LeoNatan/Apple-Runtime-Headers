@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 
 + (Class)sortedByType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *oBSOLETEPcsServiceType; // @synthesize oBSOLETEPcsServiceType=_oBSOLETEPcsServiceType;
 @property(retain, nonatomic) NSMutableArray *sortedBys; // @synthesize sortedBys=_sortedBys;
 @property(retain, nonatomic) CKDPUserAlias *alias; // @synthesize alias=_alias;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

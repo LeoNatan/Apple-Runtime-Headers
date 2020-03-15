@@ -20,10 +20,10 @@
     NSDate *_cachedPriorityDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *cachedPriorityDate; // @synthesize cachedPriorityDate=_cachedPriorityDate;
 @property(retain, nonatomic) PXInboxAggregateDataSourceManager *inboxDataSourceManager; // @synthesize inboxDataSourceManager=_inboxDataSourceManager;
 @property(retain, nonatomic) PXFeedSectionInfosManager *feedSectionInfosManager; // @synthesize feedSectionInfosManager=_feedSectionInfosManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)_currentGadgetOfType:(unsigned long long)arg1;
 - (void)_updateGadgets;

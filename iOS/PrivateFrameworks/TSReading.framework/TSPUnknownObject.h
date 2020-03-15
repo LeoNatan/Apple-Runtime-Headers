@@ -15,8 +15,8 @@
     NSObject<OS_dispatch_data> *_serializedData;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_data> *serializedData; // @synthesize serializedData=_serializedData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_data> *serializedData; // @synthesize serializedData=_serializedData;
 - (id)packageLocator;
 - (void)willModifyForUpgrade;
 - (void)willModify;

@@ -14,9 +14,9 @@
     unsigned long long _identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *syncedShortcuts; // @synthesize syncedShortcuts=_syncedShortcuts;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)saveToPath:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)initWithIdentifier:(unsigned long long)arg1 syncedShortcuts:(id)arg2;

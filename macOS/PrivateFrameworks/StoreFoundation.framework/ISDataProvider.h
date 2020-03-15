@@ -24,6 +24,7 @@
 
 + (id)provider;
 + (id)providerWithStoreClient:(id)arg1;
+- (void).cxx_destruct;
 @property int bagType; // @synthesize bagType=_bagType;
 @property(readonly) ISStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(retain) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
@@ -32,7 +33,6 @@
 @property long long contentLength; // @synthesize contentLength=_contentLength;
 @property(retain) NSNumber *authenticatedAccountDSID; // @synthesize authenticatedAccountDSID=_authenticatedAccountDSID;
 @property(retain) ISAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
-- (void).cxx_destruct;
 - (void)setup;
 - (BOOL)parseData:(id)arg1 returningError:(id *)arg2;
 @property(readonly) long long streamedBytes;

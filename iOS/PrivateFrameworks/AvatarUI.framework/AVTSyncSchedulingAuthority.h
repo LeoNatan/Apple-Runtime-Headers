@@ -15,8 +15,8 @@
     id <AVTUILogger> _logger;
 }
 
-@property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 - (void)madeLocalChanges;
 - (void)didResetSync;
 - (void)didReceivePushNotification;

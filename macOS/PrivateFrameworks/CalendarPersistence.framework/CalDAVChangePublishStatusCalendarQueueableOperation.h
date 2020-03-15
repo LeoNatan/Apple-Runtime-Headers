@@ -14,9 +14,9 @@
     NSURL *_calendarURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int action; // @synthesize action=_action;
 @property(readonly, retain) NSURL *calendarURL; // @synthesize calendarURL=_calendarURL;
-- (void).cxx_destruct;
 - (void)performOperation;
 - (id)initWithChangeRequest:(id)arg1 session:(id)arg2 action:(id)arg3;
 

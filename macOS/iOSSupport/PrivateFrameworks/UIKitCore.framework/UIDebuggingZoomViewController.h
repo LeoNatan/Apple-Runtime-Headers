@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     UIView *_lastViewSeen;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *lastViewSeen; // @synthesize lastViewSeen=_lastViewSeen;
 @property(nonatomic) BOOL useViewForEdges; // @synthesize useViewForEdges=_useViewForEdges;
 @property(retain, nonatomic) UISegmentedControl *directionSegmentedControl; // @synthesize directionSegmentedControl=_directionSegmentedControl;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIDebuggingZoomLineView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIDebuggingZoomLoupeView *loupe; // @synthesize loupe=_loupe;
 @property(nonatomic) unsigned long long currentDirection; // @synthesize currentDirection=_currentDirection;
-- (void).cxx_destruct;
 - (struct CGImage *)newCaptureSnapshotAtRect:(struct CGRect)arg1 window:(id)arg2;
 - (void)dealloc;
 - (id)drawViewLinesAtPoint:(struct CGPoint)arg1 forView:(id)arg2;

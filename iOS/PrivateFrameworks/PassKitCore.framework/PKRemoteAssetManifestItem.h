@@ -18,18 +18,30 @@
     NSString *_sha1Hex;
     NSNumber *_size;
     NSDictionary *_manifest;
+    NSURL *_encryptedContentsLocalURL;
+    NSString *_ephemeralPublicKey;
+    NSString *_publicKeyHash;
+    NSString *_seid;
+    NSString *_encryptionScheme;
+    long long _encryptionSource;
 }
 
 + (id)sharedURLSession;
 + (id)itemWithLocalURL:(id)arg1 passURL:(id)arg2 dictionary:(id)arg3 error:(id *)arg4;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) long long encryptionSource; // @synthesize encryptionSource=_encryptionSource;
+@property(copy, nonatomic) NSString *encryptionScheme; // @synthesize encryptionScheme=_encryptionScheme;
+@property(copy, nonatomic) NSString *seid; // @synthesize seid=_seid;
+@property(copy, nonatomic) NSString *publicKeyHash; // @synthesize publicKeyHash=_publicKeyHash;
+@property(copy, nonatomic) NSString *ephemeralPublicKey; // @synthesize ephemeralPublicKey=_ephemeralPublicKey;
+@property(copy, nonatomic) NSURL *encryptedContentsLocalURL; // @synthesize encryptedContentsLocalURL=_encryptedContentsLocalURL;
 @property(copy, nonatomic) NSDictionary *manifest; // @synthesize manifest=_manifest;
 @property(copy, nonatomic) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
 @property(copy, nonatomic) NSNumber *size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *sha1Hex; // @synthesize sha1Hex=_sha1Hex;
 @property(copy, nonatomic) NSURL *passURL; // @synthesize passURL=_passURL;
 @property(copy, nonatomic) NSURL *localURL; // @synthesize localURL=_localURL;
-- (void).cxx_destruct;
 - (void)downloadAssetWithCloudStoreCoordinatorDelegate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long itemType;
 - (_Bool)isZipFile;

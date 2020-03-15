@@ -18,11 +18,11 @@
     AREnvironmentProbeManager *_manager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AREnvironmentProbeManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) NSArray *removedProbeAnchors; // @synthesize removedProbeAnchors=_removedProbeAnchors;
 @property(retain, nonatomic) NSArray *updatedProbeAnchors; // @synthesize updatedProbeAnchors=_updatedProbeAnchors;
 @property(retain, nonatomic) NSArray *addedProbeAnchors; // @synthesize addedProbeAnchors=_addedProbeAnchors;
-- (void).cxx_destruct;
 -     // Error parsing type: @160@0:8{?=[4]}16{?=[4]}80@144@152, name: anchorsForCameraWithTransform:referenceOriginTransform:existingAnchors:anchorsToRemove:
 
 // Remaining properties

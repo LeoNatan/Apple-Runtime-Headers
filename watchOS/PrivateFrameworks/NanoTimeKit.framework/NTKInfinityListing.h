@@ -24,10 +24,10 @@
 
 + (id)listingForDevice:(id)arg1 withFilename:(id)arg2 type:(unsigned int)arg3 attributes:(id)arg4;
 + (id)listingForDevice:(id)arg1 withFilename:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKInfinityListingAttributes *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) unsigned int playback; // @synthesize playback=_playback;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)complicationColor;
 - (void)discardAssets;
 @property(readonly, copy) NSString *debugDescription;

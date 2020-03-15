@@ -65,7 +65,7 @@
 - (void)_encode:(id)arg1;
 - (id)dataRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (struct UIImage *)snapshotWithSize:(struct CGSize)arg1 scale:(double)arg2 options:(id)arg3;
+- (id)snapshotWithSize:(struct CGSize)arg1 scale:(double)arg2 options:(id)arg3;
 - (void)stopTransitionAnimation;
 - (void)transitionFromPose:(id)arg1 toPose:(id)arg2 duration:(double)arg3 delay:(double)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)animatePhysicsScaleFactor:(double)arg1 duration:(double)arg2;

@@ -41,10 +41,10 @@
 + (int)_errorCodeFromCode:(long long)arg1;
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _userConfirmationRequired; // @synthesize _userConfirmationRequired=__userConfirmationRequired;
 @property(nonatomic, setter=_setStage:) long long _stage; // @synthesize _stage=__stage;
 @property(copy, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
-- (void).cxx_destruct;
 - (_Bool)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
@@ -89,11 +89,13 @@
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)init;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)localizeValueOfSlotDescription:(id)arg1 forLanguage:(id)arg2;
+- (id)localizeValueOfSlotDescription:(id)arg1 withLocalizer:(id)arg2;
 - (id)intentSlotDescriptions;
 @property(readonly) long long _intents_toggleState;
 - (id)_renderedResponseForLanguage:(id)arg1 requiresSiriCompatibility:(_Bool)arg2;
+- (id)_propertiesByNameWithLocalizer:(id)arg1;
 - (id)_propertiesByNameForLanguage:(id)arg1;
+- (id)_responseTemplateWithLocalizer:(id)arg1 requiresSiriCompatibility:(_Bool)arg2;
 - (id)_responseTemplateForLanguage:(id)arg1 requiresSiriCompatibility:(_Bool)arg2;
 - (id)_responseTemplateForLanguage:(id)arg1;
 @property(readonly, nonatomic, getter=_isSuccess) _Bool _success;

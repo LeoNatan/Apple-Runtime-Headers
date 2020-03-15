@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool tornDown;
 }
 
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (void)draggingEnded:(id)arg1 dropTargetView:(id)arg2;
 - (void)draggingExited:(id)arg1 dropTargetView:(id)arg2;
 - (void)concludeDragOperation:(id)arg1 dropTargetView:(id)arg2;

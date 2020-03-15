@@ -44,6 +44,7 @@
     NSMutableDictionary *_recipientAvailabilities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *recipientAvailabilities; // @synthesize recipientAvailabilities=_recipientAvailabilities;
 @property(retain, nonatomic) NSMutableDictionary *recipientAvailibityTimers; // @synthesize recipientAvailibityTimers=_recipientAvailibityTimers;
 @property(readonly, nonatomic) _Bool shouldSuppressSearchResultsTable; // @synthesize shouldSuppressSearchResultsTable=_shouldSuppressSearchResultsTable;
@@ -67,7 +68,6 @@
 @property(retain, nonatomic) CKComposeRecipientView *toField; // @synthesize toField=_toField;
 @property(retain, nonatomic) CKPendingConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKRecipientSelectionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updateScreenTimePolicy;
 - (id)handlesForScreenTimePolicyCheck;

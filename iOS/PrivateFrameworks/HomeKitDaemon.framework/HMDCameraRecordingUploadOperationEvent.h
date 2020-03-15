@@ -24,6 +24,7 @@
 
 + (int)operationTypeFromOperation:(id)arg1;
 + (id)uuid;
+- (void).cxx_destruct;
 @property(readonly, copy) NSUUID *clipModelID; // @synthesize clipModelID=_clipModelID;
 @property(retain) NSDate *operationStartDate; // @synthesize operationStartDate=_operationStartDate;
 @property unsigned long long retryCount; // @synthesize retryCount=_retryCount;
@@ -32,7 +33,6 @@
 @property _Bool didCausePreviousClipToFinalizeDueToDurationLimit; // @synthesize didCausePreviousClipToFinalizeDueToDurationLimit=_didCausePreviousClipToFinalizeDueToDurationLimit;
 @property int operationType; // @synthesize operationType=_operationType;
 @property double runTime; // @synthesize runTime=_runTime;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long totalClipDurationMilliseconds;
 @property(readonly) unsigned long long runTimeInMilliseconds;
 @property(readonly) unsigned long long operationStartTime;

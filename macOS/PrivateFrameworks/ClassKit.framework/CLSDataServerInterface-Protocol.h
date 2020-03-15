@@ -6,12 +6,20 @@
 
 #import <ClassKit/NSObject-Protocol.h>
 
-@class CLSObject, CLSSearchSpecification, NSArray, NSDate, NSObject, NSPredicate, NSString;
+@class CLSObject, CLSSearchSpecification, NSArray, NSDate, NSDictionary, NSObject, NSPredicate, NSString;
 @protocol CLSChangeNotifiable, CLSQuery, CLSSaveResponse;
 
 @protocol CLSDataServerInterface <NSObject>
+- (oneway void)remote_setSettingsForUserNotificationType:(long long)arg1 settings:(NSDictionary *)arg2 completion:(void (^)(BOOL, NSError *))arg3;
+- (oneway void)remote_fetchSettingsForUserNotificationType:(long long)arg1 completion:(void (^)(id, NSError *))arg2;
+- (oneway void)remote_publishCollaborationStateChanges:(NSArray *)arg1 completion:(void (^)(NSArray *, NSArray *, NSError *))arg2;
+- (oneway void)remote_collaborationStatesForObjectWithID:(NSString *)arg1 ownerPersonID:(NSString *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
+- (oneway void)remote_deleteCollectionRelatedObjectsWithCompletion:(NSArray *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (oneway void)remote_fetchCollectionItemsWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (oneway void)remote_fetchCollectionsWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (oneway void)remote_publishClass:(CLSObject *)arg1 membersToInsert:(NSArray *)arg2 membersToDelete:(NSArray *)arg3 completion:(void (^)(BOOL, NSError *))arg4;
 - (oneway void)remote_publishHandoutGraph:(NSArray *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (oneway void)remote_studentActivityForAttachmentsWithIDs:(NSArray *)arg1 completion:(void (^)(id, NSError *))arg2;
 - (oneway void)remote_fetchAndCompleteActiveAssignedActivitiesForContextPath:(NSArray *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
 - (oneway void)remote_authTreeWithCompletion:(void (^)(id, NSError *))arg1;
 - (oneway void)remote_fetchDeletedObjectIDsNewerThanDate:(NSDate *)arg1 completion:(void (^)(NSArray *))arg2;
@@ -22,6 +30,9 @@
 - (oneway void)remote_registerDataObserver:(NSObject<CLSChangeNotifiable> *)arg1 withID:(NSString *)arg2 forClassNamed:(NSString *)arg3 predicate:(NSPredicate *)arg4 sortDescriptors:(NSArray *)arg5 oldChangeTag:(unsigned long long)arg6 completion:(void (^)(NSError *))arg7;
 - (oneway void)remote_currentUserWithCompletion:(void (^)(CLSCurrentUser *, NSError *))arg1;
 - (oneway void)remote_canSearchRostersWithCompletion:(void (^)(id, NSError *))arg1;
+- (oneway void)remote_fetchCountOfActivitiesForContextID:(NSString *)arg1 completion:(void (^)(id, NSError *))arg2;
+- (oneway void)remote_deleteThumbnailBlobForContextID:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (oneway void)remote_fetchThumbnailBlobForContextID:(NSString *)arg1 completion:(void (^)(id, NSError *))arg2;
 - (oneway void)remote_contextsMatchingIdentifierPath:(NSArray *)arg1 parentContextID:(NSString *)arg2 completion:(void (^)(id, NSError *))arg3;
 - (oneway void)remote_saveObjects:(NSArray *)arg1 saveResponse:(NSObject<CLSSaveResponse> *)arg2 completion:(void (^)(void))arg3;
 - (oneway void)remote_executeQuery:(NSObject<CLSQuery> *)arg1 forSpecification:(CLSSearchSpecification *)arg2 state:(unsigned long long)arg3 limit:(unsigned long long)arg4 completion:(void (^)(void))arg5;

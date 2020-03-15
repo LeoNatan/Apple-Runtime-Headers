@@ -15,10 +15,10 @@
     UIView *_bottomDivider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomDivider; // @synthesize bottomDivider=_bottomDivider;
 @property(retain, nonatomic) UIView *topDivider; // @synthesize topDivider=_topDivider;
 @property(retain) EKUIDividedGridViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
-- (void).cxx_destruct;
 - (_Bool)wantsDrawBackground;
 - (struct CGRect)_separatorFrame;
 @property(nonatomic) _Bool drawsTopDivider;

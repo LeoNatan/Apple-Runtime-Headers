@@ -19,11 +19,11 @@
 }
 
 + (Class)setupFieldsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKProtoStandalonePaymentSetupProduct *product; // @synthesize product=_product;
 @property(retain, nonatomic) NSMutableArray *setupFields; // @synthesize setupFields=_setupFields;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

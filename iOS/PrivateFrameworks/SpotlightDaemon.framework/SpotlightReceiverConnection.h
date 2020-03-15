@@ -30,6 +30,7 @@
 }
 
 + (void)setup;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *setupSemaphore; // @synthesize setupSemaphore=_setupSemaphore;
 @property(nonatomic) double minDate; // @synthesize minDate=_minDate;
 @property(nonatomic) _Bool skipFileProviderItems; // @synthesize skipFileProviderItems=_skipFileProviderItems;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) NSSet *INIntentClassNames; // @synthesize INIntentClassNames=_INIntentClassNames;
 @property(readonly, nonatomic) NSArray *contentTypes; // @synthesize contentTypes=_contentTypes;
 @property(readonly, nonatomic) NSSet *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
-- (void).cxx_destruct;
 - (void)donateRelevantActions:(id)arg1 bundleID:(id)arg2;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;

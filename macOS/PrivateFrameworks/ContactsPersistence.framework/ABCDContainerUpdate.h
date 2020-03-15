@@ -17,9 +17,9 @@
 }
 
 + (id)updateWithPropertyKey:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) id value; // @synthesize value=_value;
 @property(retain) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithPropertyKey:(id)arg1 value:(id)arg2;
 

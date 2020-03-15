@@ -23,9 +23,9 @@
 + (id)_serverInterface;
 + (id)_clientInterface;
 + (id)sessionWithConfiguration:(id)arg1 lifecycleDelegate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) _HKDeepBreathingSessionConfiguration *sessionConfiguration; // @synthesize sessionConfiguration=_sessionConfiguration;
 @property __weak id <_HKDeepBreathingSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_queue_alertDelegateDidEncounterError:(id)arg1;
 - (void)_queue_alertDelegateDidReceiveHeartRate:(double)arg1;
 - (void)sessionDidReceiveError:(id)arg1;

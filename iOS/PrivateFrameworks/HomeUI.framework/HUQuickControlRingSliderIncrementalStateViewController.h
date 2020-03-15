@@ -16,8 +16,8 @@
 }
 
 + (Class)controlItemClass;
-@property(retain, nonatomic) HUQuickControlRingSliderView *ringSliderView; // @synthesize ringSliderView=_ringSliderView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUQuickControlRingSliderView *ringSliderView; // @synthesize ringSliderView=_ringSliderView;
 - (id)createInteractionCoordinator;
 
 // Remaining properties

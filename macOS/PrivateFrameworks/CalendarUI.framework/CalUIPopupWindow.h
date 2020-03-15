@@ -15,9 +15,9 @@
 }
 
 + (id)popupWindowWithView:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL hasCloseBox; // @synthesize hasCloseBox=_hasCloseBox;
 @property(retain) NSView *controlView; // @synthesize controlView=_controlView;
-- (void).cxx_destruct;
 - (void)orderOut:(id)arg1;
 - (double)animationResizeTime:(struct CGRect)arg1;
 - (void)showControlView;

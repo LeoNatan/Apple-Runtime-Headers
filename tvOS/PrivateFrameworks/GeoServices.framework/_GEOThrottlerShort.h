@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     double _timeWindow;
 }
 
-+ (_Bool)stateIsExpired:(struct NSDictionary *)arg1;
-@property(readonly, nonatomic) double timeWindow; // @synthesize timeWindow=_timeWindow;
-@property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
++ (_Bool)stateIsExpired:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct NSDictionary *)captureState;
+@property(readonly, nonatomic) double timeWindow; // @synthesize timeWindow=_timeWindow;
+@property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
+- (id)captureState;
 @property(readonly, copy) NSString *description;
 - (_Bool)isExpired;
 - (id)userInfoForError;
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (double)timeUntilReset;
 - (unsigned long long)remainingEntries;
 - (_Bool)addRequestTimestamp;
-- (id)initWithKeyPath:(id)arg1 requestCount:(unsigned long long)arg2 interval:(double)arg3 savedState:(struct NSDictionary *)arg4;
+- (id)initWithKeyPath:(id)arg1 requestCount:(unsigned long long)arg2 interval:(double)arg3 savedState:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,9 +15,9 @@
     NSData *_applicationData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *applicationData; // @synthesize applicationData=_applicationData;
 @property(readonly, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
-- (void).cxx_destruct;
 - (id)encode;
 - (id)init;
 - (id)initWithMerchantIdentifier:(id)arg1 applicationData:(id)arg2;

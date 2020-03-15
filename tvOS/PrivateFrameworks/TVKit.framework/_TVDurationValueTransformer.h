@@ -13,8 +13,8 @@
     NSDateComponentsFormatter *_formatter;
 }
 
-@property(readonly, nonatomic) NSDateComponentsFormatter *formatter; // @synthesize formatter=_formatter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDateComponentsFormatter *formatter; // @synthesize formatter=_formatter;
 - (id)transformedValue:(id)arg1;
 - (id)initWithFormatter:(id)arg1;
 

@@ -44,12 +44,12 @@ __attribute__((visibility("hidden")))
     long long _keyboardAppearance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long keyboardAppearance; // @synthesize keyboardAppearance=_keyboardAppearance;
 @property(readonly, nonatomic) UIButton *useOtherPasswordButton; // @synthesize useOtherPasswordButton=_useOtherPasswordButton;
 @property(readonly, nonatomic) UIButton *useStrongPasswordButton; // @synthesize useStrongPasswordButton=_useStrongPasswordButton;
 @property(readonly, nonatomic) UILabel *passwordRetrievalExpalantionLabel; // @synthesize passwordRetrievalExpalantionLabel=_passwordRetrievalExpalantionLabel;
 @property(readonly, nonatomic) UILabel *explanationLabel; // @synthesize explanationLabel=_explanationLabel;
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)automaticPasswordScrollContentViewDidLayout:(id)arg1;
 - (void)_scrollViewDidLayoutSubviews:(id)arg1;

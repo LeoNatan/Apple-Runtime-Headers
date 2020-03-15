@@ -20,9 +20,9 @@
 }
 
 + (CDStruct_1ef3fb1f)maxMasterSizeFromSourceImageSize:(CDStruct_1ef3fb1f)arg1 format:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) PLImageFormat *format; // @synthesize format=_format;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)_debugDescription;
 - (_Bool)validateData:(id)arg1 withToken:(id)arg2;
 - (struct CGImage *)createImageWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 decodeSession:(void *)arg3;

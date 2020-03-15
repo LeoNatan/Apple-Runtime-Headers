@@ -18,11 +18,11 @@
     long long _defaultAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long defaultAlignment; // @synthesize defaultAlignment=_defaultAlignment;
 @property(retain, nonatomic) UIFont *defaultLabelFont; // @synthesize defaultLabelFont=_defaultLabelFont;
 @property(retain, nonatomic) UIFont *defaultHeaderFont; // @synthesize defaultHeaderFont=_defaultHeaderFont;
 @property(retain, nonatomic) TVLTableElement *tableElement; // @synthesize tableElement=_tableElement;
-- (void).cxx_destruct;
 - (long long)textAlignmentForColumnAtIndex:(long long)arg1;
 - (id)columnRowView:(id)arg1 headerForColumn:(long long)arg2;
 - (id)columnRowView:(id)arg1 itemForRow:(long long)arg2 inColumn:(long long)arg3;

@@ -22,6 +22,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBEntityRemovalDosidoSlideOutDownwardAnimationSettings *dosidoDeclineIntentAnimationSettings; // @synthesize dosidoDeclineIntentAnimationSettings=_dosidoDeclineIntentAnimationSettings;
 @property(retain, nonatomic) SBEntityRemovalDosidoSlideOutUpwardAnimationSettings *dosidoCommitIntentAnimationSettings; // @synthesize dosidoCommitIntentAnimationSettings=_dosidoCommitIntentAnimationSettings;
 @property(retain, nonatomic) SBEntityRemovalDosidoDefaultAnimationSettings *dosidoDeleteIntentAnimationSettings; // @synthesize dosidoDeleteIntentAnimationSettings=_dosidoDeleteIntentAnimationSettings;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) SBEntityRemovalMedusaSlideOutDownwardAnimationSettings *medusaDeclineIntentAnimationSettings; // @synthesize medusaDeclineIntentAnimationSettings=_medusaDeclineIntentAnimationSettings;
 @property(retain, nonatomic) SBEntityRemovalMedusaSlideOutUpwardAnimationSettings *medusaCommitIntentAnimationSettings; // @synthesize medusaCommitIntentAnimationSettings=_medusaCommitIntentAnimationSettings;
 @property(retain, nonatomic) SBEntityRemovalMedusaDefaultAnimationSettings *medusaDeleteIntentAnimationSettings; // @synthesize medusaDeleteIntentAnimationSettings=_medusaDeleteIntentAnimationSettings;
-- (void).cxx_destruct;
 
 @end
 

@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (const struct StateSpec *)stateForReading;
-- (struct __CFArray *)createSizeArrayFromPositionVector:(vector_7584168e *)arg1;
+- (struct __CFArray *)createSizeArrayFromPositionVector:(vector_f9ed6fc8 *)arg1;
 - (int)setColumnWidthsFromState:(id)arg1;
 - (int)setRowHeightsFromState:(id)arg1;
 - (int)readAttributesFromReader:(struct _xmlTextReader *)arg1;

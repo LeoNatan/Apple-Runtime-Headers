@@ -32,9 +32,9 @@
 + (id)defaultImageCreationOptions;
 + (id)analysisLog;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL analysisJobCancelled; // @synthesize analysisJobCancelled=_analysisJobCancelled;
 @property(nonatomic) unsigned int visionAlgorithmUmbrellaVersion; // @synthesize visionAlgorithmUmbrellaVersion=_visionAlgorithmUmbrellaVersion;
-- (void).cxx_destruct;
 - (void)performVisionForcedCleanup;
 - (void)performVisionForcedCleanupWithOptions:(id)arg1;
 - (void)configureRequest:(id)arg1 algorithmUmbrellaVersion:(unsigned int)arg2;

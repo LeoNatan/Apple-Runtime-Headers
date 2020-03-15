@@ -19,6 +19,7 @@
     long long _requestState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long requestState; // @synthesize requestState=_requestState;
 @property(retain, nonatomic) NSDictionary *analyticsContext; // @synthesize analyticsContext=_analyticsContext;
 @property(retain, nonatomic) AFPreferences *preferences; // @synthesize preferences=_preferences;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) SASSystemState *systemState; // @synthesize systemState=_systemState;
 @property(nonatomic) _Bool buttonTriggerStateActive; // @synthesize buttonTriggerStateActive=_buttonTriggerStateActive;
 @property(retain, nonatomic) SASActivationRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 
 @end
 

@@ -24,13 +24,13 @@
 
 + (_Bool)automaticallyNotifiesObserversOfMediaServerDiscoveryConfiguration;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowRestart; // @synthesize allowRestart=_allowRestart;
 @property(retain, nonatomic) NSMutableSet *mutableMediaEntityServers; // @synthesize mutableMediaEntityServers=_mutableMediaEntityServers;
 @property(retain, nonatomic) TVHSServiceConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 @property(retain, nonatomic) NSOperationQueue *serialProcessingOperationQueue; // @synthesize serialProcessingOperationQueue=_serialProcessingOperationQueue;
 @property(nonatomic) _Bool allowsCaching; // @synthesize allowsCaching=_allowsCaching;
 @property(nonatomic) __weak id <TVHKManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeAllMediaEntityServers;
 - (void)_removeMediaEntityServers:(id)arg1;
 - (void)_removeMediaEntityServer:(id)arg1;

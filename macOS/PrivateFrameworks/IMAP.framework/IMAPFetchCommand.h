@@ -18,10 +18,10 @@
 
 + (id)_fetchDataItemsForMessageSkeletons;
 + (id)_headersToFetch;
+- (void).cxx_destruct;
 @property(retain) id <IMAPFetchResponseHandler> responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain) NSMutableArray *dataItems; // @synthesize dataItems=_dataItems;
 @property(copy) NSIndexSet *messageNumbers; // @synthesize messageNumbers=_messageNumbers;
-- (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (id)_newMessageSetCommandString;

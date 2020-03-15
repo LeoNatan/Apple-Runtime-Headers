@@ -20,10 +20,10 @@
 
 + (id)resumedSchedulerWithScheduler:(id)arg1;
 + (id)suspendedSchedulerWithScheduler:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSConditionLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) CNQueue *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 @property(readonly) double timestamp;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2 qualityOfService:(unsigned long long)arg3;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2;

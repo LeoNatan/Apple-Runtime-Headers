@@ -15,10 +15,10 @@
     struct CGPoint _pausePoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPaused; // @synthesize hasPaused=_hasPaused;
 @property(nonatomic) struct CGPoint pausePoint; // @synthesize pausePoint=_pausePoint;
 @property(retain, nonatomic) NSTimer *pauseTimer; // @synthesize pauseTimer=_pauseTimer;
-- (void).cxx_destruct;
 
 @end
 

@@ -32,6 +32,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool areVolumeControlsVisible; // @synthesize areVolumeControlsVisible=_areVolumeControlsVisible;
 @property(nonatomic) _Bool areTransportControlsVisible; // @synthesize areTransportControlsVisible=_areTransportControlsVisible;
 @property(readonly, nonatomic) UIView *animatedUnobscuredCenterAreaLayoutGuideProvidingView; // @synthesize animatedUnobscuredCenterAreaLayoutGuideProvidingView=_animatedUnobscuredCenterAreaLayoutGuideProvidingView;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) UILayoutGuide *volumeControlsAreaLayoutGuide; // @synthesize volumeControlsAreaLayoutGuide=_volumeControlsAreaLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *displayModeControlsAreaLayoutGuide; // @synthesize displayModeControlsAreaLayoutGuide=_displayModeControlsAreaLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *transportControlsAreaLayoutGuide; // @synthesize transportControlsAreaLayoutGuide=_transportControlsAreaLayoutGuide;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

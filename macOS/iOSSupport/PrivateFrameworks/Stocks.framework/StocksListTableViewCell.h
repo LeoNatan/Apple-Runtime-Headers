@@ -22,10 +22,10 @@
 }
 
 + (double)cellHeightForStackStatus:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldStackView; // @synthesize shouldStackView=_shouldStackView;
 @property(nonatomic) long long rowDataType; // @synthesize rowDataType=_rowDataType;
 @property(retain, nonatomic) Stock *stock; // @synthesize stock=_stock;
-- (void).cxx_destruct;
 - (struct CGRect)changeButtonRect;
 - (void)layoutSubviews;
 - (void)setShowsRowSeparator:(BOOL)arg1;

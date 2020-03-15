@@ -15,10 +15,10 @@
     NSArray *_others;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *others; // @synthesize others=_others;
 @property(readonly, nonatomic) HMDAccessory *settingOwnerAccessory; // @synthesize settingOwnerAccessory=_settingOwnerAccessory;
 @property(readonly, nonatomic) HMDAccessory *systemOwnerAccessory; // @synthesize systemOwnerAccessory=_systemOwnerAccessory;
-- (void).cxx_destruct;
 - (id)initWithMediaSystem:(id)arg1;
 - (id)initWithMediaSystem:(id)arg1 accessory:(id)arg2;
 

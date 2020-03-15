@@ -23,11 +23,11 @@
 
 + (Class)achievementsType;
 + (Class)workoutsType;
+- (void).cxx_destruct;
 @property(nonatomic) double date; // @synthesize date=_date;
 @property(retain, nonatomic) NSMutableArray *achievements; // @synthesize achievements=_achievements;
 @property(retain, nonatomic) NSMutableArray *workouts; // @synthesize workouts=_workouts;
 @property(retain, nonatomic) ASCodableCloudKitActivitySnapshot *activitySnapshot; // @synthesize activitySnapshot=_activitySnapshot;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
     optional_b75ce017 initiationTrigger;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) vector_d1b3d51b streamDescriptions; // @synthesize streamDescriptions;
 @property(nonatomic) unsigned int session; // @synthesize session;
 @property(nonatomic) vector_66ffd461 portDescriptions; // @synthesize portDescriptions;
@@ -33,8 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) optional_b75ce017 initiationTrigger; // @synthesize initiationTrigger;
 @property(nonatomic) vector_123a35f9 deviceDescriptions; // @synthesize deviceDescriptions;
 @property(nonatomic) struct StringRef category; // @synthesize category;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)init:(unsigned int)arg1;
 
 // Remaining properties

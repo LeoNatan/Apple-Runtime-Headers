@@ -28,6 +28,7 @@
 + (id)keyPathsForValuesAffectingVersionHash;
 + (id)keyPathsForValuesAffectingSubscriptionInfo;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subscriberIdentifierHash; // @synthesize subscriberIdentifierHash=_subscriberIdentifierHash;
 @property(copy, nonatomic) VSSubscriptionSource *source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *providedSubscriptionInfo; // @synthesize providedSubscriptionInfo=_providedSubscriptionInfo;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSArray *tierIdentifiers; // @synthesize tierIdentifiers=_tierIdentifiers;
 @property(nonatomic) long long accessLevel; // @synthesize accessLevel=_accessLevel;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *versionHash;
 - (void)_updateHash:(id)arg1 withValueForProperty:(id)arg2;
 - (void)setNilValueForKey:(id)arg1;

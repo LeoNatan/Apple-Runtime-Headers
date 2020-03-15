@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _initBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType initBlock; // @synthesize initBlock=_initBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType initBlock; // @synthesize initBlock=_initBlock;
 - (id)initialize;
 
 @end

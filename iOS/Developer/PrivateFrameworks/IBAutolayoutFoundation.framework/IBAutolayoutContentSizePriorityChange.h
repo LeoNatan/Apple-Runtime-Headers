@@ -18,10 +18,10 @@
     double _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSObject<IBAutolayoutItem> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool affectsVerticalAxis;
 @property(readonly, nonatomic) _Bool affectsContentCompressionResistancePriority;
 @property(readonly, nonatomic) _Bool affectsContentHuggingPriority;

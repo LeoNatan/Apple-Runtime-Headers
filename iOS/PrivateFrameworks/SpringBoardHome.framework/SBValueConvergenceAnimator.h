@@ -21,6 +21,7 @@
     double _lastFireTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastFireTime; // @synthesize lastFireTime=_lastFireTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) long long frameInterval; // @synthesize frameInterval=_frameInterval;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool finishesOnValueConvergence; // @synthesize finishesOnValueConvergence=_finishesOnValueConvergence;
 @property(nonatomic) double targetValue; // @synthesize targetValue=_targetValue;
 @property(nonatomic) double currentValue; // @synthesize currentValue=_currentValue;
-- (void).cxx_destruct;
 - (void)_convergeValue;
 - (void)_reset;
 @property(readonly, nonatomic) double elapsedTime;

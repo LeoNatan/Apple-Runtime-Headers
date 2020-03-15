@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *pricingModelStart; // @synthesize pricingModelStart=_pricingModelStart;
 @property(retain, nonatomic) NSNumber *gnomeWarmingPeriod; // @synthesize gnomeWarmingPeriod=_gnomeWarmingPeriod;
 @property(retain, nonatomic) NSNumber *gnomeActive; // @synthesize gnomeActive=_gnomeActive;
-- (void).cxx_destruct;
 
 @end
 

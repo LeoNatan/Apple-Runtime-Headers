@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(retain, nonatomic) NSDictionary *systemPartitionPadding; // @synthesize systemPartitionPadding=_systemPartitionPadding;
 @property(nonatomic) _Bool rampEnabled; // @synthesize rampEnabled=_rampEnabled;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(retain, nonatomic) NSString *productSystemName; // @synthesize productSystemName=_productSystemName;
 @property(retain, nonatomic) NSString *publisher; // @synthesize publisher=_publisher;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

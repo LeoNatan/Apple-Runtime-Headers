@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
 
 + (Class)rootRecordDesiredKeysType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *rootRecordDesiredKeys; // @synthesize rootRecordDesiredKeys=_rootRecordDesiredKeys;
 @property(nonatomic) _Bool forceFetch; // @synthesize forceFetch=_forceFetch;
 @property(retain, nonatomic) NSData *shortTokenHash; // @synthesize shortTokenHash=_shortTokenHash;
 @property(retain, nonatomic) NSString *routingKey; // @synthesize routingKey=_routingKey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

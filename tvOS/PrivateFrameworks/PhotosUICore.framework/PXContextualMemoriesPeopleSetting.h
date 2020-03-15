@@ -15,8 +15,8 @@
     NSArray *_peopleNames;
 }
 
-@property(retain, nonatomic) NSArray *peopleNames; // @synthesize peopleNames=_peopleNames;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *peopleNames; // @synthesize peopleNames=_peopleNames;
 - (void)requestPeopleNamesUpdateSinceDate:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)resetToDefault;
 @property(readonly, nonatomic) NSString *title;

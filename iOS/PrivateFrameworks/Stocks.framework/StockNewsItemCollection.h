@@ -14,9 +14,9 @@
     double _expirationTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double expirationTime; // @synthesize expirationTime=_expirationTime;
 @property(retain, nonatomic) NSArray *newsItems; // @synthesize newsItems=_newsItems;
-- (void).cxx_destruct;
 - (id)archiveArray;
 - (id)initWithArchiveArray:(id)arg1;
 

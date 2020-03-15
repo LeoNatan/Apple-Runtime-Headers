@@ -16,8 +16,8 @@
     CDPContext *_cdpContext;
 }
 
-@property(readonly, nonatomic) CDPContext *cdpContext; // @synthesize cdpContext=_cdpContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDPContext *cdpContext; // @synthesize cdpContext=_cdpContext;
 - (id)_pairingChannelContext;
 - (id)pairingChannelAcceptor:(id *)arg1;
 - (id)pairingChannelInitiator:(id *)arg1;

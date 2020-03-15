@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <SLFacebookVideoOptionsDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SLFacebookVideoOptionsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SLFacebookVideoOptionsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

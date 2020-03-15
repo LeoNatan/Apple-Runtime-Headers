@@ -40,6 +40,7 @@
 + (id)descriptorsForRequiredKeysForPropertyKey:(id)arg1;
 + (id)contactFormatter;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dirty; // @synthesize dirty=_dirty;
 @property(nonatomic) int oldAbUid; // @synthesize oldAbUid=_oldAbUid;
 @property(retain, nonatomic) NSString *actionChannel; // @synthesize actionChannel=_actionChannel;
@@ -56,14 +57,13 @@
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (int)_entryTypeForActionType:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_convertFromEntryType:(long long)arg1 toActionType:(id *)arg2 bundleIdentifier:(id *)arg3;
 - (void)applyChangeRecord:(id)arg1;
 - (void)resetContactMatch;
 - (_Bool)rematchWithGeminiManager:(id)arg1;
 - (_Bool)rematchWithContacts;
-- (struct CNPair *)rematch;
+- (id)rematch;
 - (void)dictionaryRepresentation:(id *)arg1 isDirty:(_Bool *)arg2;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 store:(id)arg2;

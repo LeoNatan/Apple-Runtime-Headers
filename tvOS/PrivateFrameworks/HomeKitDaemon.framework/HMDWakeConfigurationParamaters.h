@@ -19,10 +19,10 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
 @property(retain, nonatomic) NSData *primaryIdentifier; // @synthesize primaryIdentifier=_primaryIdentifier;
 @property(retain, nonatomic) NSData *delimiter; // @synthesize delimiter=_delimiter;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

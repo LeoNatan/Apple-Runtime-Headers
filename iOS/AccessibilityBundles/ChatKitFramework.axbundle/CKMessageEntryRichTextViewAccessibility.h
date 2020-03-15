@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)accessibilityPath;
 - (void)paste:(id)arg1;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;

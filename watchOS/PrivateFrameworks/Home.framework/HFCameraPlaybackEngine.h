@@ -40,12 +40,15 @@
     NSDate *_lastRequestedClipPlaybackDate;
     unsigned int _scrubbingInProgressCount;
     NSObject<OS_dispatch_queue> *_clipQueue;
+    int _lastPlayerTimeControlStatus;
     id <HFCameraClipPlaying> _clipPlayer;
     unsigned int _timelineState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int timelineState; // @synthesize timelineState=_timelineState;
 @property(readonly, nonatomic) id <HFCameraClipPlaying> clipPlayer; // @synthesize clipPlayer=_clipPlayer;
+@property(nonatomic) int lastPlayerTimeControlStatus; // @synthesize lastPlayerTimeControlStatus=_lastPlayerTimeControlStatus;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clipQueue; // @synthesize clipQueue=_clipQueue;
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) unsigned int scrubbingInProgressCount; // @synthesize scrubbingInProgressCount=_scrubbingInProgressCount;
@@ -71,7 +74,6 @@
 @property(retain, nonatomic) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(retain, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(nonatomic) _Bool prefersAudioEnabled; // @synthesize prefersAudioEnabled=_prefersAudioEnabled;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)streamControllerStateDidUpdate:(id)arg1;
 - (void)clipPlayerDidPlayToEndTime:(id)arg1;

@@ -14,9 +14,9 @@
     SBSRemoteAlertPresentationTarget *_presentationTarget;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBSRemoteAlertPresentationTarget *presentationTarget; // @synthesize presentationTarget=_presentationTarget;
 @property(retain, nonatomic) SBRemoteTransientOverlayViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-- (void).cxx_destruct;
 
 @end
 

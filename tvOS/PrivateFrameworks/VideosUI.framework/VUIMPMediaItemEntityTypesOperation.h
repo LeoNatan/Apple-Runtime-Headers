@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     MPMediaLibrary *_mediaLibrary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) VUIMediaItemEntityTypesFetchResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (_Bool)_mediaLibraryHasMediaItemsWithQuery:(id)arg1;
 - (_Bool)_canUseCheapEntityCheckWithMediaEntityType:(id)arg1;
 - (_Bool)_mediaLibraryHasLocalMediaItems;

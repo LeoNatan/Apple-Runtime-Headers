@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSSearchProvider.h>
+#import <SafariSharedUI/WBSSearchProvider.h>
 
 @class NSMutableSet, NSString;
 
@@ -20,17 +20,17 @@ __attribute__((visibility("hidden")))
     unsigned long long _parsecSearchEndpointType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long parsecSearchEndpointType; // @synthesize parsecSearchEndpointType=_parsecSearchEndpointType;
 @property(copy, nonatomic) NSString *parsecSearchSuggestionIdentifier; // @synthesize parsecSearchSuggestionIdentifier=_parsecSearchSuggestionIdentifier;
 @property(copy, nonatomic) NSString *parsecSearchIdentifier; // @synthesize parsecSearchIdentifier=_parsecSearchIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName;
 - (BOOL)searchShouldUseSafeSearchTemplate;
 - (BOOL)urlIsHomepage:(id)arg1 shouldUseCanonicalRepresentation:(BOOL)arg2;
 - (BOOL)urlIsHomepage:(id)arg1;
 - (Class)classForCoder;
-- (id)initWithIdentifier:(id)arg1 shortName:(id)arg2 localizableName:(id)arg3 searchURLTemplate:(id)arg4 safeSearchURLTemplate:(id)arg5 safeSearchURLQueryParameters:(id)arg6 suggestionsURLTemplate:(id)arg7 homepageURLs:(id)arg8 hostSuffixes:(id)arg9 pathPrefixes:(id)arg10 usesSearchTermsFromFragment:(BOOL)arg11;
+- (id)initWithIdentifier:(id)arg1 shortName:(id)arg2 localizableName:(id)arg3 searchURLTemplate:(id)arg4 safeSearchURLTemplate:(id)arg5 safeSearchURLQueryParameters:(id)arg6 suggestionsURLTemplate:(id)arg7 homepageURLs:(id)arg8 hostSuffixes:(id)arg9 pathPrefixes:(id)arg10 usesSearchTermsFromFragment:(BOOL)arg11 groupIdentifierQueryStringKey:(id)arg12;
 
 @end
 

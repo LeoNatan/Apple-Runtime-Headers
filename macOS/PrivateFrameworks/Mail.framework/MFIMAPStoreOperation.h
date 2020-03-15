@@ -15,10 +15,10 @@
     NSArray *_objectsToClear;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *objectsToClear; // @synthesize objectsToClear=_objectsToClear;
 @property(copy, nonatomic) NSArray *objectsToSet; // @synthesize objectsToSet=_objectsToSet;
 @property(retain, nonatomic) NSPointerArray *uids; // @synthesize uids=_uids;
-- (void).cxx_destruct;
 - (void)serializeIntoData:(id)arg1;
 - (void)_deserializeOpSpecificValuesFromData:(id)arg1 cursor:(unsigned long long *)arg2;
 @property(readonly, copy, nonatomic) NSIndexSet *uidIndexSet;

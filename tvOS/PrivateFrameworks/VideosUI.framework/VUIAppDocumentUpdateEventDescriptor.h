@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _type;
 }
 
++ (id)iamMessageReceived;
 + (id)locationRetrieved;
 + (id)locationAuthorizationChanged;
 + (id)appRefresh;

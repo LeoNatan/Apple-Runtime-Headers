@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     _Bool _layoutNeedsLayout;
 }
 
-@property(nonatomic) struct CGSize expectedImageSize; // @synthesize expectedImageSize=_expectedImageSize;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize expectedImageSize; // @synthesize expectedImageSize=_expectedImageSize;
 - (void)layoutSubviews;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;

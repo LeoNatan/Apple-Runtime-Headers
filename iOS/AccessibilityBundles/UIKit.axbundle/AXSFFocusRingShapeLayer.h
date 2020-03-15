@@ -12,18 +12,14 @@
     CAShapeLayer *_outerBorder;
 }
 
-+ (id)selectedParentLayer;
-+ (id)selectedLayer;
-+ (id)parentLayer;
-+ (id)focusLayer;
 + (id)selectedParentLayerForUserInterfaceStyle:(long long)arg1;
 + (id)selectedLayerForUserInterfaceStyle:(long long)arg1;
 + (id)parentLayerForUserInterfaceStyle:(long long)arg1;
 + (id)focusLayerForUserInterfaceStyle:(long long)arg1;
 + (id)layer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *outerBorder; // @synthesize outerBorder=_outerBorder;
 @property(retain, nonatomic) CAShapeLayer *innerBorder; // @synthesize innerBorder=_innerBorder;
-- (void).cxx_destruct;
 - (void)setPath:(struct CGPath *)arg1;
 
 @end

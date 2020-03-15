@@ -17,12 +17,12 @@
     NSString *_hostIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *hostIdentifier; // @synthesize hostIdentifier=_hostIdentifier;
 @property(copy) NSArray *allowedFileTypes; // @synthesize allowedFileTypes=_allowedFileTypes;
 @property(copy) NSArray *excludedFileTypes; // @synthesize excludedFileTypes=_excludedFileTypes;
 @property(copy) NSArray *tagIdentifiers; // @synthesize tagIdentifiers=_tagIdentifiers;
 @property(copy) NSNumber *maximumNumberOfItems; // @synthesize maximumNumberOfItems=_maximumNumberOfItems;
-- (void).cxx_destruct;
 - (id)initWithHostIdentifier:(id)arg1 maximumNumberOfItems:(long long)arg2 allowedDocumentTypes:(id)arg3 excludedDocumentTypes:(id)arg4 tags:(id)arg5;
 - (id)initWithConfiguration:(id)arg1 tags:(id)arg2;
 

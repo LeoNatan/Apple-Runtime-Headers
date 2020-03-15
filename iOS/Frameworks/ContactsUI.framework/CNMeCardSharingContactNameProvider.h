@@ -16,8 +16,8 @@
 }
 
 + (id)descriptorForRequiredKeys;
-@property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (id)nickname;
 - (id)middleName;
 - (id)givenName;

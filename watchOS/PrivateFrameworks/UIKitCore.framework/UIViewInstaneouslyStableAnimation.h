@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <UIVectorOperatable> _targetValue;
 }
 
-@property(retain, nonatomic) id <UIVectorOperatable> targetValue; // @synthesize targetValue=_targetValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <UIVectorOperatable> targetValue; // @synthesize targetValue=_targetValue;
 - (_Bool)isStable;
 - (id)value;
 - (void)setVelocity:(id)arg1;

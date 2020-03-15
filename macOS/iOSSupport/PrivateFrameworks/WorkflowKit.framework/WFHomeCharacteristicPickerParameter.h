@@ -15,9 +15,9 @@
     NSString *_homeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
 @property(retain, nonatomic) HMService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)updatePossibleStates;
 - (BOOL)isHidden;
 - (id)defaultSerializedRepresentation;

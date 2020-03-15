@@ -45,13 +45,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)numberingSystemIsArabic;
+- (void).cxx_destruct;
 @property(getter=isDevVersion) BOOL devVersion; // @synthesize devVersion=_devVersion;
 @property unsigned long long nameIconVariant; // @synthesize nameIconVariant=_nameIconVariant;
 @property(readonly) NSPreferencePane *prefPaneObject; // @synthesize prefPaneObject=_prefPaneObject;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property BOOL overrideVisible; // @synthesize overrideVisible=_overrideVisible;
 @property BOOL favorite; // @synthesize favorite=_favorite;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)authorize:(id)arg1;

@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) long long totalFileCount; // @synthesize totalFileCount=_totalFileCount;
 @property(nonatomic) long long transferredFileCount; // @synthesize transferredFileCount=_transferredFileCount;
@@ -37,7 +38,6 @@
 @property(nonatomic) double compressionRate; // @synthesize compressionRate=_compressionRate;
 @property(nonatomic) double remainingSeconds; // @synthesize remainingSeconds=_remainingSeconds;
 @property(nonatomic) double bytesPerSecond; // @synthesize bytesPerSecond=_bytesPerSecond;
-- (void).cxx_destruct;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

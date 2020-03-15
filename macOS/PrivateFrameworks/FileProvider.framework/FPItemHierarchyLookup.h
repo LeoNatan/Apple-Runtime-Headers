@@ -16,9 +16,9 @@
     NSCache *_parentHierarchyItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *parentHierarchyItems; // @synthesize parentHierarchyItems=_parentHierarchyItems;
 @property __weak id <FPItemHierarchyLookingUp> hierarchyServicer; // @synthesize hierarchyServicer=_hierarchyServicer;
-- (void).cxx_destruct;
 - (id)valueForKeyPath:(id)arg1;
 - (id)_fetchItemWithID:(id)arg1;
 - (id)initWithItem:(id)arg1 parentHierarchyItems:(id)arg2 hierarchyServicer:(id)arg3;

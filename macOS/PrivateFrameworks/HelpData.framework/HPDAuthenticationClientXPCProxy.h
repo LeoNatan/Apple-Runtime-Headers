@@ -13,8 +13,8 @@
     HPDAuthenticationClient *_client;
 }
 
-@property(nonatomic) __weak HPDAuthenticationClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(nonatomic) __weak HPDAuthenticationClient *client; // @synthesize client=_client;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithAuthenticationClient:(id)arg1;
 

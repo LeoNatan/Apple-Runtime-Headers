@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <SafariShared/APSConnectionDelegate-Protocol.h>
 #import <SafariShared/NSXPCListenerDelegate-Protocol.h>
 #import <SafariShared/WBSCloudHistoryPushAgent-Protocol.h>
 
 @class APSConnection, NSString, NSXPCListener;
 @protocol OS_dispatch_queue;
 
-@interface WBSCloudHistoryPushAgent : NSObject <APSConnectionDelegate, NSXPCListenerDelegate, WBSCloudHistoryPushAgent>
+@interface WBSCloudHistoryPushAgent : NSObject <NSXPCListenerDelegate, WBSCloudHistoryPushAgent>
 {
     NSXPCListener *_xpcListener;
     APSConnection *_pushConnection;
@@ -21,8 +20,11 @@
 }
 
 - (void).cxx_destruct;
-@property(nonatomic, setter=_setHasAcknowlegedPushNotifications:) _Bool _hasAcknowledgedPushNotifications;
-@property(nonatomic, setter=_setHasUnacknowledgedPushNotifications:) _Bool _hasUnacknowledgedPushNotifications;
+- (void)_setHasAcknowlegedPushNotifications:(_Bool)arg1;
+- (_Bool)_hasAcknowledgedPushNotifications;
+- (void)_setHasUnacknowledgedPushNotifications:(_Bool)arg1;
+- (_Bool)_hasUnacknowledgedPushNotifications;
+- (id)_userDefaults;
 - (id)_pushTopic;
 - (void)clearAcknowledgedPushNotifications;
 - (void)acknowledgePendingPushNotifications;

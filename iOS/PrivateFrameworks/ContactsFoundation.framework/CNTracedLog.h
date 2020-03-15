@@ -31,6 +31,7 @@
 + (id)formatTimeIntervalByRoundingForPrivacy:(double)arg1;
 + (id)formatIntegerByRoundingForPrivacy:(long long)arg1;
 + (id)logWithDomain:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *customProperties; // @synthesize customProperties=_customProperties;
 @property long long result; // @synthesize result=_result;
 @property _Bool summarize; // @synthesize summarize=_summarize;
@@ -45,7 +46,6 @@
 @property(copy) NSString *domainVersion; // @synthesize domainVersion=_domainVersion;
 @property(readonly, copy) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, copy) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)resultString;
 - (void)sendValue:(id)arg1 forKey:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateCustomKeysAndValuesUsingBlock:(CDUnknownBlockType)arg1;

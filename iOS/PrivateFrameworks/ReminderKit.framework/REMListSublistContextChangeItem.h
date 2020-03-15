@@ -13,8 +13,8 @@
     REMListChangeItem *_listChangeItem;
 }
 
-@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (void)_insertListChangeItem:(id)arg1 adjacentToListChangeItem:(id)arg2 isAfter:(_Bool)arg3;
 - (void)insertListChangeItem:(id)arg1 afterListChangeItem:(id)arg2;
 - (void)insertListChangeItem:(id)arg1 beforeListChangeItem:(id)arg2;

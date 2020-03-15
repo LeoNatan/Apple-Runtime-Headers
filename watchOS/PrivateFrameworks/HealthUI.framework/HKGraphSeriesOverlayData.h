@@ -16,11 +16,11 @@
     struct CGAffineTransform _graphSeriesPointTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform graphSeriesPointTransform; // @synthesize graphSeriesPointTransform=_graphSeriesPointTransform;
 @property(readonly, nonatomic) HKGraphSeriesBlockCoordinateList *graphSeriesCoordinates; // @synthesize graphSeriesCoordinates=_graphSeriesCoordinates;
 @property(readonly, nonatomic) struct CGRect graphSeriesScreenRect; // @synthesize graphSeriesScreenRect=_graphSeriesScreenRect;
 @property(readonly, nonatomic) HKGraphSeries *graphSeries; // @synthesize graphSeries=_graphSeries;
-- (void).cxx_destruct;
 - (id)initWithGraphSeries:(id)arg1 graphSeriesScreenRect:(struct CGRect)arg2 graphSeriesCoordinates:(id)arg3 graphSeriesPointTransform:(struct CGAffineTransform)arg4;
 
 @end

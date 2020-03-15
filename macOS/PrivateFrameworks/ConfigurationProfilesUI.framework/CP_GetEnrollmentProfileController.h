@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)controller;
+- (void).cxx_destruct;
 @property(retain) NSError *exitError; // @synthesize exitError=_exitError;
 @property(retain) NSString *downloadDestination; // @synthesize downloadDestination=_downloadDestination;
 @property(retain) NSData *downloadedProfileData; // @synthesize downloadedProfileData=_downloadedProfileData;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property NSTextField *promptLabel; // @synthesize promptLabel=_promptLabel;
 @property NSBox *webViewBox; // @synthesize webViewBox=_webViewBox;
 @property NSView *webViewContainer; // @synthesize webViewContainer=_webViewContainer;
-- (void).cxx_destruct;
 - (void)_download:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_downloadProcessDidCrash:(id)arg1;
 - (void)_downloadDidFinish:(id)arg1;

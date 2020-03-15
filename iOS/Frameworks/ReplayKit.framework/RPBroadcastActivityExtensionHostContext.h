@@ -17,8 +17,8 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property(nonatomic) __weak RPBroadcastActivityHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak RPBroadcastActivityHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (id)extensionObjectProxy;
 - (oneway void)presentationInfoWithCompletion:(CDUnknownBlockType)arg1;
 - (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(_Bool)arg4;

@@ -14,9 +14,9 @@
     NSArray *_messages;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *messages; // @synthesize messages=_messages;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithString:(unsigned long long)arg1 messages:(id)arg2;
 
 @end

@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)heightForHeaderWithContainerSize:(struct CGSize)arg1 withTitle:(id)arg2 layoutAttributes:(id)arg3 hasAvatar:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(retain, nonatomic) CNMeCardSharingPickerLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) CNMeCardSharingOnboardingAvatarCarouselViewController *avatarCarouselController; // @synthesize avatarCarouselController=_avatarCarouselController;
 @property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
-- (void).cxx_destruct;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithAvatarCarouselViewController:(id)arg1 headerTitle:(id)arg2 layoutAttributes:(id)arg3;

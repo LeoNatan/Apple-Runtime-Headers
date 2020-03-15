@@ -16,11 +16,11 @@
     WFWorkflowRecord *_remoteWorkflowRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflowRecord *remoteWorkflowRecord; // @synthesize remoteWorkflowRecord=_remoteWorkflowRecord;
 @property(copy, nonatomic) NSString *remoteWorkflowID; // @synthesize remoteWorkflowID=_remoteWorkflowID;
 @property(retain, nonatomic) WFWorkflowRecord *localWorkflowRecord; // @synthesize localWorkflowRecord=_localWorkflowRecord;
 @property(copy, nonatomic) NSString *localWorkflowID; // @synthesize localWorkflowID=_localWorkflowID;
-- (void).cxx_destruct;
 - (id)resolutionKeepingLocal:(BOOL)arg1 keepingRemote:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

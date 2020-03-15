@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_cachedDidDisplayPhotoPickerSourceType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cachedDidDisplayPhotoPickerPreview; // @synthesize cachedDidDisplayPhotoPickerPreview=_cachedDidDisplayPhotoPickerPreview;
 @property(retain, nonatomic) NSNumber *cachedDidDisplayPhotoPickerSourceType; // @synthesize cachedDidDisplayPhotoPickerSourceType=_cachedDidDisplayPhotoPickerSourceType;
 @property(retain, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *photoPickerNavigationBarHidden; // @synthesize photoPickerNavigationBarHidden=_photoPickerNavigationBarHidden;
 @property(copy, nonatomic) NSString *photoPickerViewControllerPrompt; // @synthesize photoPickerViewControllerPrompt=_photoPickerViewControllerPrompt;
 @property(copy, nonatomic) NSString *photoPickerViewControllerTitle; // @synthesize photoPickerViewControllerTitle=_photoPickerViewControllerTitle;
-- (void).cxx_destruct;
 - (id)_pathExtensionFromData:(id)arg1 url:(id)arg2;
 - (id)_JPEGDataFromImage:(id)arg1;
 - (id)_JPEGDataFromImageData:(id)arg1;

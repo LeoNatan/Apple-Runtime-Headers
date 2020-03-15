@@ -17,13 +17,13 @@
 }
 
 + (void)_setupCrownIndicatorSpec;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize trackSize; // @synthesize trackSize=_trackSize;
 @property(nonatomic) _Bool usingCrown; // @synthesize usingCrown=_usingCrown;
 @property(nonatomic) float visibleLength; // @synthesize visibleLength=_visibleLength;
 @property(nonatomic) float offset; // @synthesize offset=_offset;
 @property(nonatomic) float length; // @synthesize length=_length;
 @property(retain, nonatomic) UIView *indicator; // @synthesize indicator=_indicator;
-- (void).cxx_destruct;
 - (void)_updateLayerRoundedCorners;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

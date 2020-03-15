@@ -27,13 +27,13 @@
     WFWorkflowSettingsViewDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflowSettingsViewDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UINavigationController *cardPresentationNavigationController; // @synthesize cardPresentationNavigationController=_cardPresentationNavigationController;
 @property(retain, nonatomic) WFAddToHomeScreenActivity *homeScreenActivity; // @synthesize homeScreenActivity=_homeScreenActivity;
 @property(retain, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFWorkflowSettingsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)workflowWizardNameCellDidSelectEditIcon:(id)arg1;
 - (void)workflowWizardNameCell:(id)arg1 didUpdateName:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

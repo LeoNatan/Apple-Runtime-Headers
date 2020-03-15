@@ -27,6 +27,7 @@
 }
 
 + (id)createDefaultHomeSettingAdapterCollectionForProfile:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMSettings *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSMutableDictionary *keyPathStringToFuture; // @synthesize keyPathStringToFuture=_keyPathStringToFuture;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSSet *keyPaths; // @synthesize keyPaths=_keyPaths;
 @property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)_endMonitoringSettingsKeyPath:(id)arg1;
 - (id)_beginMonitoringSettingsKeyPath:(id)arg1;
 - (void)_reportUpdatedValueForSetting:(id)arg1;

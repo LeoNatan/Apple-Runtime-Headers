@@ -9,7 +9,7 @@
 #import <ContentKit/NSCopying-Protocol.h>
 #import <ContentKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSLock, NSMutableArray, WFCoercionOptions;
+@class NSArray, NSLock, NSMutableArray, WFCoercionOptions, WFContentSource;
 
 @interface WFContentCollection : NSObject <NSCopying, NSSecureCoding>
 {
@@ -22,10 +22,10 @@
 + (id)collectionWithItems:(id)arg1;
 + (void)generateCollectionFromPasteboard:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)getContentItemsForPasteboardItems:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *itemWriteLock; // @synthesize itemWriteLock=_itemWriteLock;
 @property(retain, nonatomic) NSMutableArray *mutableItems; // @synthesize mutableItems=_mutableItems;
 @property(retain, nonatomic) WFCoercionOptions *defaultCoercionOptions; // @synthesize defaultCoercionOptions=_defaultCoercionOptions;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -49,16 +49,21 @@
 - (id)effectiveCoercionOptionsForRequest:(id)arg1;
 - (void)performCoercion:(id)arg1;
 - (_Bool)canPerformCoercion:(id)arg1;
+- (void)getFileRepresentationAndContentSource:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)getFileRepresentation:(CDUnknownBlockType)arg1 forType:(id)arg2;
+- (void)getObjectRepresentationAndContentSource:(CDUnknownBlockType)arg1 forClass:(Class)arg2;
 - (void)getObjectRepresentation:(CDUnknownBlockType)arg1 forClass:(Class)arg2;
 - (void)enumerateFileRepresentations:(CDUnknownBlockType)arg1 forType:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)enumerateObjectRepresentations:(CDUnknownBlockType)arg1 forClass:(Class)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)collectionByMergingContentSource:(id)arg1;
 - (void)addFile:(id)arg1;
 - (void)addObject:(id)arg1 named:(id)arg2;
 - (void)addObject:(id)arg1;
+@property(readonly, nonatomic) WFContentSource *contentSource;
 @property(readonly, nonatomic) NSArray *items;
 @property(readonly, nonatomic) int numberOfItems;
 - (void)removeItem:(id)arg1;
+- (void)addItems:(id)arg1;
 - (void)addItem:(id)arg1;
 - (id)initWithItems:(id)arg1 defaultCoercionOptions:(id)arg2;
 - (id)initWithDefaultCoercionOptions:(id)arg1;
@@ -66,6 +71,12 @@
 - (id)minimalExtensionItems;
 - (id)extensionItems;
 - (void)copyToPasteboard:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)transformFirstFileRepresentationForType:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)transformFirstObjectRepresentationForClass:(Class)arg1 usingBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)transformFileRepresentationsForType:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)transformObjectRepresentationsForClass:(Class)arg1 usingBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)transformItemsAndFlattenUsingBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)transformItemsUsingBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

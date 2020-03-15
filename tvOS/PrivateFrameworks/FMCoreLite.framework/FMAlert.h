@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType alternateButtonAction; // @synthesize alternateButtonAction=_alternateButtonAction;
 @property(copy, nonatomic) CDUnknownBlockType defaultButtonAction; // @synthesize defaultButtonAction=_defaultButtonAction;
 @property(retain, nonatomic) NSDictionary *additionalSettings; // @synthesize additionalSettings=_additionalSettings;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *msgTitle; // @synthesize msgTitle=_msgTitle;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(retain, nonatomic) NSUUID *alertId; // @synthesize alertId=_alertId;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

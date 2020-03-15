@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSData *_apsToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *apsToken; // @synthesize apsToken=_apsToken;
 @property(retain, nonatomic) NSString *apsEnvironmentString; // @synthesize apsEnvironmentString=_apsEnvironmentString;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

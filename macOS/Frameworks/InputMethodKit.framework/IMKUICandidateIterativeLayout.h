@@ -16,11 +16,11 @@
     NSMutableDictionary *_indexPathToCandidateItemMapping;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *indexPathToCandidateItemMapping; // @synthesize indexPathToCandidateItemMapping=_indexPathToCandidateItemMapping;
 @property(nonatomic) unsigned long long candidateGroupIndex; // @synthesize candidateGroupIndex=_candidateGroupIndex;
 @property(nonatomic) unsigned long long candidateIndex; // @synthesize candidateIndex=_candidateIndex;
 @property(nonatomic, getter=isComplete) BOOL complete; // @synthesize complete=_complete;
-- (void).cxx_destruct;
 - (id)itemForIndexPath:(id)arg1;
 - (void)prepareLayout;
 - (struct CGSize)contentSize;

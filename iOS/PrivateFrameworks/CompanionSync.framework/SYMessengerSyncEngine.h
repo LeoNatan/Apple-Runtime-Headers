@@ -8,7 +8,7 @@
 
 #import <CompanionSync/NMSMessageCenterDelegate-Protocol.h>
 
-@class NMSMessageCenter, NSDictionary, NSObject, NSString, SYDevice;
+@class NMSMessageCenter, NSDictionary, NSMapTable, NSObject, NSString, SYDevice;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 __attribute__((visibility("hidden")))
@@ -16,17 +16,17 @@ __attribute__((visibility("hidden")))
 {
     NMSMessageCenter *_messageCenter;
     NSObject<OS_dispatch_semaphore> *_lookupLock;
-    struct NSMapTable *_requestLookup;
-    struct NSMapTable *_callbackLookup;
+    NSMapTable *_requestLookup;
+    NSMapTable *_callbackLookup;
     SYDevice *_activeDevice;
     NSString *_sessionDeviceID;
     NSDictionary *_customIDSOptions;
     NSObject<OS_dispatch_queue> *_idsQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *idsQueue; // @synthesize idsQueue=_idsQueue;
 @property(copy, nonatomic) NSDictionary *customIDSOptions; // @synthesize customIDSOptions=_customIDSOptions;
-- (void).cxx_destruct;
 - (void)messageCenter:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)messageCenter:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)messageCenter:(id)arg1 activeDeviceChanged:(id)arg2 acknowledgement:(CDUnknownBlockType)arg3;

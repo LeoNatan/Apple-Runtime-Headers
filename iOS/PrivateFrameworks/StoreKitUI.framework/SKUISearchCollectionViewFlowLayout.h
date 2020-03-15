@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     _Bool _backfills;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool backfills; // @synthesize backfills=_backfills;
 @property(nonatomic) double verticalPadding; // @synthesize verticalPadding=_verticalPadding;
 @property(nonatomic) double horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;
-- (void).cxx_destruct;
 - (void)prepareLayout;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

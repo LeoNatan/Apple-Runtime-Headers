@@ -27,6 +27,7 @@
     NSDateFormatter *_dateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(nonatomic) _Bool usePrettyTimestamp; // @synthesize usePrettyTimestamp=_usePrettyTimestamp;
 @property(nonatomic) _Bool useCompactForm; // @synthesize useCompactForm=_useCompactForm;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool includeLogName; // @synthesize includeLogName=_includeLogName;
 @property(nonatomic) _Bool includeLevel; // @synthesize includeLevel=_includeLevel;
 @property(nonatomic) _Bool includeFunction; // @synthesize includeFunction=_includeFunction;
-- (void).cxx_destruct;
 - (id)newFormattedString:(id)arg1;
 - (id)init;
 

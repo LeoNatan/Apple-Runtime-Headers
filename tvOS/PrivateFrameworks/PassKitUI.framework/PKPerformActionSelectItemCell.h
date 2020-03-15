@@ -16,9 +16,9 @@
     NSString *_amountText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *amountText; // @synthesize amountText=_amountText;
 @property(copy, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
-- (void).cxx_destruct;
 - (void)_addSubviews;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

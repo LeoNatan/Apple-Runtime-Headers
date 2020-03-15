@@ -14,9 +14,9 @@
     NSArray *_standingsItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *standingsItems; // @synthesize standingsItems=_standingsItems;
 @property(retain, nonatomic) TVLHeaderElement *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

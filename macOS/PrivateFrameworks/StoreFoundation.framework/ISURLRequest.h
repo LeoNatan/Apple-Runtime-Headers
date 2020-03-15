@@ -29,6 +29,7 @@
 
 + (id)requestWithURL:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL alwaysSendGUID; // @synthesize alwaysSendGUID=_alwaysSendGUID;
 @property BOOL suppressADIHeaders; // @synthesize suppressADIHeaders=_suppressADIHeaders;
 @property BOOL preventsIdleSystemSleep; // @synthesize preventsIdleSystemSleep=_preventsIdleSystemSleep;
@@ -41,7 +42,6 @@
 @property(retain) NSDictionary *queryStringDictionary; // @synthesize queryStringDictionary=_queryStringDictionary;
 @property(retain) NSString *method; // @synthesize method=_method;
 @property(retain) NSData *body; // @synthesize body=_body;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setValue:(id)arg1 forQueryStringParameter:(id)arg2;
 - (void)setValue:(id)arg1 forHeaderField:(id)arg2;

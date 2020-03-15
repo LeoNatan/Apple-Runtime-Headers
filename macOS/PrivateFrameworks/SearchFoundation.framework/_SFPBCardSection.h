@@ -23,6 +23,7 @@
     _SFPBUserReportRequest *_userReportRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBUserReportRequest *userReportRequest; // @synthesize userReportRequest=_userReportRequest;
 @property(copy, nonatomic) NSString *resultIdentifier; // @synthesize resultIdentifier=_resultIdentifier;
 @property(copy, nonatomic) NSString *cardSectionId; // @synthesize cardSectionId=_cardSectionId;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) _SFPBCard *nextCard; // @synthesize nextCard=_nextCard;
 @property(retain, nonatomic) _SFPBCardSectionValue *value; // @synthesize value=_value;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

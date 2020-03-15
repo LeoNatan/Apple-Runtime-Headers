@@ -27,6 +27,7 @@
     NSSegmentedControl *_segmentedControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(readonly, nonatomic) NSButton *editButton; // @synthesize editButton=_editButton;
 @property(readonly, nonatomic) NSButton *doneButton; // @synthesize doneButton=_doneButton;
@@ -37,16 +38,15 @@
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(readonly, nonatomic) CNContactStore *localContactStore; // @synthesize localContactStore=_localContactStore;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
-- (void).cxx_destruct;
 - (void)dismissRequested:(BOOL)arg1;
 - (void)selectionChanged:(BOOL)arg1;
 - (void)didPressCancelFamilyMemberEditControlsViewController:(id)arg1;
 - (void)updateFamilyMemberContactsByRemovingContacts:(id)arg1;
 - (void)updateFamilyMemberContactsByAddingContacts:(id)arg1;
 - (void)didPressDoneFamilyMemberEditControlsViewController:(id)arg1;
+- (void)finishEdtiting;
+- (void)beginEditing;
 - (void)editButtonPressed:(id)arg1;
-- (void)endEdition;
-- (void)startEdition;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)doneButtonPressed:(id)arg1;
 - (void)addNewContact:(id)arg1;
@@ -62,6 +62,7 @@
 - (void)setupFamilyScopedContactPicker;
 - (void)setupButtons;
 - (void)setupUI;
+- (void)cancelOperation:(id)arg1;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)loadView;

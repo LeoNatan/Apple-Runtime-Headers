@@ -14,9 +14,9 @@
     long long _peerPaymentType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long peerPaymentType; // @synthesize peerPaymentType=_peerPaymentType;
 @property(readonly, nonatomic) PKPeerPaymentBubbleView *bubbleView; // @synthesize bubbleView=_bubbleView;
-- (void).cxx_destruct;
 - (id)initWithBubbleView:(id)arg1 peerPaymentType:(long long)arg2;
 
 @end

@@ -14,8 +14,8 @@
     NSDictionary *_propertyList;
 }
 
-@property(readonly, nonatomic) NSDictionary *propertyList; // @synthesize propertyList=_propertyList;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *propertyList; // @synthesize propertyList=_propertyList;
 @property(readonly, nonatomic) NSString *propertyListType;
 - (id)identifier;
 - (void)updateWithXMLDocument:(id)arg1;

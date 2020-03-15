@@ -17,10 +17,10 @@
     NSDecimalNumber *_subtotal;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDecimalNumber *subtotal; // @synthesize subtotal=_subtotal;
 @property(readonly, nonatomic) NSString *formattedSubtotal; // @synthesize formattedSubtotal=_formattedSubtotal;
 @property(readonly, nonatomic) long long maxLineItemsPerOrder; // @synthesize maxLineItemsPerOrder=_maxLineItemsPerOrder;
-- (void).cxx_destruct;
 - (id)init;
 
 // Remaining properties

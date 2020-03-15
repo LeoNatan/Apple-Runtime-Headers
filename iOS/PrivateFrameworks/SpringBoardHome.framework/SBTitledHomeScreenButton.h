@@ -11,6 +11,7 @@
 }
 
 + (id)contentImageWithTitle:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 backgroundView:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

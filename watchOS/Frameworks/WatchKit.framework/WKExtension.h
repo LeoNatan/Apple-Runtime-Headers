@@ -18,10 +18,10 @@
 }
 
 + (id)sharedExtension;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool runningTest; // @synthesize runningTest=_runningTest;
 @property(retain, nonatomic) NSString *pptTestName; // @synthesize pptTestName=_pptTestName;
 @property(nonatomic) int applicationState; // @synthesize applicationState=_applicationState;
-- (void).cxx_destruct;
 - (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
 - (void)failedTest:(id)arg1 withFailure:(id)arg2;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;

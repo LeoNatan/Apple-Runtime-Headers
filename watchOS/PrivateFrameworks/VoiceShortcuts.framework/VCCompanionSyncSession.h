@@ -22,13 +22,13 @@
 }
 
 + (int)direction;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
 @property(readonly, nonatomic) id <VCShortcutSyncService> service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) SYSession *session; // @synthesize session=_session;
 @property(nonatomic) __weak id <VCCompanionSyncSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)resetDataStoreForSyncSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)syncSession:(id)arg1 resetDataStoreWithError:(id *)arg2;
 - (void)syncSession:(id)arg1 didEndWithError:(id)arg2;

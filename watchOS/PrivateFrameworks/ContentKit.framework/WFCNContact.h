@@ -11,6 +11,7 @@
 @interface WFCNContact : WFContact
 {
     _Bool _fromVCard;
+    NSString *_accountIdentifier;
     int _propertyID;
     long _multivalueIndex;
     WFFileRepresentation *_vCardRepresentation;
@@ -31,14 +32,15 @@
 + (id)allContactsWithSortOrder:(int)arg1;
 + (id)allContactsWithSortOrder:(int)arg1 passingTest:(CDUnknownBlockType)arg2;
 + (id)requiredKeysToFetch;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool fromVCard; // @synthesize fromVCard=_fromVCard;
 @property(readonly, copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (long)multivalueIndex;
 - (int)propertyID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+@property(readonly, copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 - (id)instantMessageAddresses;
 - (id)socialProfiles;
 - (id)URLs;

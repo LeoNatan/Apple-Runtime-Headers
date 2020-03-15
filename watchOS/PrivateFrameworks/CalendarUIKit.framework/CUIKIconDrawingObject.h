@@ -24,6 +24,7 @@
 + (id)colorForDayOfWeek;
 + (_Bool)isBlackDayOfWeekRequiredForLocale:(id)arg1;
 + (id)countriesRequiringBlackDayOfWeek;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFont *dateNameFont; // @synthesize dateNameFont=_dateNameFont;
 @property int format; // @synthesize format=_format;
 @property struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
@@ -31,7 +32,6 @@
 @property(copy) CDUnknownBlockType dateNameBlock; // @synthesize dateNameBlock=_dateNameBlock;
 @property(copy) NSString *dayNumber; // @synthesize dayNumber=_dayNumber;
 @property(retain) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float minDateNameLetterSpacing;
 @property(readonly, nonatomic) float minDateNameFontScale;
 @property(readonly, nonatomic) float minFullDateNameFontScale;

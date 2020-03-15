@@ -96,6 +96,7 @@
 }
 
 + (id)characteristicsUUIDs;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rightPeripheralPaired; // @synthesize rightPeripheralPaired=_rightPeripheralPaired;
 @property(nonatomic) _Bool leftPeripheralPaired; // @synthesize leftPeripheralPaired=_leftPeripheralPaired;
 @property(nonatomic) int availableInputEars; // @synthesize availableInputEars=_availableInputEars;
@@ -166,7 +167,6 @@
 @property(retain, nonatomic) NSString *name; // @synthesize name;
 @property(retain, nonatomic) NSString *rightUUID; // @synthesize rightUUID;
 @property(retain, nonatomic) NSString *leftUUID; // @synthesize leftUUID;
-- (void).cxx_destruct;
 - (unsigned int)deviceType;
 - (unsigned long long)requiredProperties;
 - (id)serviceUUID;

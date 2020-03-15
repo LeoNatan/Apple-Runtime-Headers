@@ -14,9 +14,9 @@
     CDUnknownBlockType _creationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithGroup:(id)arg1 targetOwner:(id)arg2 rootRecord:(id)arg3 creationBlock:(CDUnknownBlockType)arg4;
 

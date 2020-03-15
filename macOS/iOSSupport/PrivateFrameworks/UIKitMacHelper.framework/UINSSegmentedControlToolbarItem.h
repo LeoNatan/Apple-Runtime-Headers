@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSArray *_accessibilityInfoSegments;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *accessibilityInfoSegments; // @synthesize accessibilityInfoSegments=_accessibilityInfoSegments;
 @property(nonatomic) __weak id <UINSToolbarItemSelectedIndexPropertyObserver> propertyObserver; // @synthesize propertyObserver=_propertyObserver;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *segmentImageNames; // @synthesize segmentImageNames=_segmentImageNames;
 @property(copy, nonatomic) NSArray *segmentHelperImages; // @synthesize segmentHelperImages=_segmentHelperImages;
 @property(copy, nonatomic) NSArray *segmentTitles; // @synthesize segmentTitles=_segmentTitles;
-- (void).cxx_destruct;
 - (void)action:(id)arg1;
 - (void)prepareItem;
 @property(nonatomic) long long trackingMode;

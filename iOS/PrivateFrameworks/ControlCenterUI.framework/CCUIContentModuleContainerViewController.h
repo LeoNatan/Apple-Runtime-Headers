@@ -34,9 +34,12 @@
     UIView *_maskView;
     UITapGestureRecognizer *_tapRecognizer;
     _UIClickPresentationInteraction *_clickPresentationInteraction;
+    UITapGestureRecognizer *_expandModuleOnTouchTapRecognizer;
     struct UIEdgeInsets _expandedContentEdgeInsets;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) UITapGestureRecognizer *expandModuleOnTouchTapRecognizer; // @synthesize expandModuleOnTouchTapRecognizer=_expandModuleOnTouchTapRecognizer;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(retain, nonatomic) _UIClickPresentationInteraction *clickPresentationInteraction; // @synthesize clickPresentationInteraction=_clickPresentationInteraction;
 @property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
@@ -56,7 +59,6 @@
 @property(retain, nonatomic) UIViewController<CCUIContentModuleContentViewController> *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) struct UIEdgeInsets expandedContentEdgeInsets; // @synthesize expandedContentEdgeInsets=_expandedContentEdgeInsets;
 @property(copy, nonatomic) NSString *moduleIdentifier; // @synthesize moduleIdentifier=_moduleIdentifier;
-- (void).cxx_destruct;
 - (void)_didEndTransitionWithContentModuleContainerTransition:(id)arg1 completed:(_Bool)arg2;
 - (void)_configureForContentModuleGroupRenderingIfNecessary;
 - (void)_configureMaskViewIfNecessary;
@@ -71,8 +73,10 @@
 - (struct CGRect)_contentBoundsForExpandedState;
 - (struct CGRect)_contentFrameForRestState;
 - (void)_setDidExpandModulePreference;
+- (void)_handleExpandModuleForTapGestureRecognizer:(id)arg1;
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (_Bool)_isForceTouchAvailable;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)willDismissViewController:(id)arg1;
 - (void)willPresentViewController:(id)arg1;
 - (_Bool)definesContentModuleContainer;
@@ -88,6 +92,7 @@
 - (_Bool)_canShowWhileLocked;
 - (void)loadView;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)willResignActive;
 - (void)willBecomeActive;

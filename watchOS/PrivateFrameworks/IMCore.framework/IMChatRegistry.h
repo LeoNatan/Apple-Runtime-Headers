@@ -60,6 +60,7 @@
 + (id)performanceLogHandle;
 + (void)setHasInitializedChatFiltering:(_Bool)arg1;
 + (_Bool)hasInitializedChatFiltering;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *chatIdToLastMessageItemMap; // @synthesize chatIdToLastMessageItemMap=_chatIdToLastMessageItemMap;
 @property(readonly, nonatomic) TUConversationManager *conversationManager; // @synthesize conversationManager=_conversationManager;
 @property(retain, nonatomic) NSArray *preExistingAllChats; // @synthesize preExistingAllChats=_preExistingAllChats;
@@ -72,7 +73,6 @@
 @property(nonatomic, setter=_setPostMessageSentNotifications:) _Bool _postMessageSentNotifications; // @synthesize _postMessageSentNotifications;
 @property(readonly, nonatomic) _Bool _isLoading; // @synthesize _isLoading=_loading;
 @property(nonatomic, setter=_setDefaultNumberOfMessagesToLoad:) unsigned int _defaultNumberOfMessagesToLoad; // @synthesize _defaultNumberOfMessagesToLoad;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBatchProcessing;
 - (void)_setMetaDictionary:(id)arg1 forChatIdentifier:(id)arg2;
 - (id)scrutinyInfo;

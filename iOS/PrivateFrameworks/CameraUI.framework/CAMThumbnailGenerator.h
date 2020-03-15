@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_queue> *__generationQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_generationQueue; // @synthesize _generationQueue=__generationQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_generationQueue; // @synthesize _generationQueue=__generationQueue;
 - (struct CGImage *)newBGRAImageOfFormat:(long long)arg1 inOrientation:(long long)arg2 usingPixelBuffer:(struct __CVBuffer *)arg3;
 - (struct CGImage *)newBGRAImageInOrientation:(long long)arg1 usingPixelBuffer:(struct __CVBuffer *)arg2;
 - (id)newJPEGDataInOrientation:(long long)arg1 usingPixelBuffer:(struct __CVBuffer *)arg2;

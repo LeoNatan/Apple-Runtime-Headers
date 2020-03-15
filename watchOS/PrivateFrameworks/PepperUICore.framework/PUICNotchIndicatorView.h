@@ -19,6 +19,7 @@
     float _settleOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float settleOffset; // @synthesize settleOffset=_settleOffset;
 @property(nonatomic) float notchTriggerOffset; // @synthesize notchTriggerOffset=_notchTriggerOffset;
 @property(nonatomic) float indicationWidth; // @synthesize indicationWidth=_indicationWidth;
@@ -26,7 +27,6 @@
 @property(nonatomic) float startOffset; // @synthesize startOffset=_startOffset;
 @property(nonatomic) float offset; // @synthesize offset=_offset;
 @property(nonatomic) __weak PUICNotchBelt *notchBelt; // @synthesize notchBelt=_notchBelt;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)_nextColor:(int)arg1;
 - (void)drawTriangle:(struct CGContext *)arg1 start:(struct CGPoint)arg2 width:(float)arg3 down:(_Bool)arg4;

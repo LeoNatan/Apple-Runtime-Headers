@@ -16,9 +16,9 @@
 
 + (id)appFolderDataFilePathWithIncompatibleAppFolder:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *filePath; // @synthesize filePath=_filePath;
 @property(retain) NSArray *appFolderData; // @synthesize appFolderData=_appFolderData;
-- (void).cxx_destruct;
 - (BOOL)removeDataFile;
 - (BOOL)flushToDisk;
 - (unsigned long long)itemCount;

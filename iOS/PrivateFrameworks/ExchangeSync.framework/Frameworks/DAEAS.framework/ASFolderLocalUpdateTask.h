@@ -19,8 +19,8 @@
 }
 
 + (id)taskWithFolder:(id)arg1 previousSyncKey:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-@property(nonatomic) long long dataclasses; // @synthesize dataclasses=_dataclasses;
 - (void).cxx_destruct;
+@property(nonatomic) long long dataclasses; // @synthesize dataclasses=_dataclasses;
 - (void)finishWithError:(id)arg1;
 - (_Bool)processContext:(id)arg1;
 - (_Bool)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;

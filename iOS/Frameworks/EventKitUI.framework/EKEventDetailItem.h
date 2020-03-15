@@ -26,13 +26,13 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewControllerToPresentFrom;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *viewControllerToPresentFrom; // @synthesize viewControllerToPresentFrom=_viewControllerToPresentFrom;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool shouldIndent; // @synthesize shouldIndent=_shouldIndent;
 @property(nonatomic) int cellPosition; // @synthesize cellPosition=_cellPosition;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) __weak id <EKEventDetailItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)eventViewController:(id)arg1 tableViewDidScroll:(id)arg2;
 @property(readonly, nonatomic) _Bool detailItemVisibilityChanged;
 @property(readonly, nonatomic) unsigned long long maximumNumberOfSubItems;

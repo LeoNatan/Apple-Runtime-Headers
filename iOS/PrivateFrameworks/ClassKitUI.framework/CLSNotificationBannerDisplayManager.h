@@ -14,8 +14,8 @@
 }
 
 + (id)shared;
-@property(retain, nonatomic) NSDate *lastBannerTime; // @synthesize lastBannerTime=_lastBannerTime;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *lastBannerTime; // @synthesize lastBannerTime=_lastBannerTime;
 - (void)showPrivacyModalView;
 - (void)showBannerWithTitle:(id)arg1 message:(id)arg2;
 

@@ -30,9 +30,9 @@
     TKVibrationRecorderViewController *_parentVibrationRecorderViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TKVibrationRecorderViewController *parentVibrationRecorderViewController; // @synthesize parentVibrationRecorderViewController=_parentVibrationRecorderViewController;
 @property(nonatomic) __weak id <TKVibrationRecorderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_accessibilityDidExitReplayMode;
 - (void)_accessibilityDidEnterReplayMode;
 - (void)_accessibilityDidExitRecordingMode;

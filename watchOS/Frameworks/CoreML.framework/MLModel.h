@@ -24,11 +24,11 @@
 + (id)predictionsFromSubbatchingBatch:(id)arg1 maxSubbatchLength:(int)arg2 predictionBlock:(CDUnknownBlockType)arg3 options:(id)arg4 error:(id *)arg5;
 + (id)predictionsFromLoopingOverBatch:(id)arg1 model:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (id)compileModelAtURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLModelConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) MLModelDescription *modelDescription; // @synthesize modelDescription=_modelDescription;
 @property(readonly) MLModelMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly) MLModelInterface *interface; // @synthesize interface=_interface;
-- (void).cxx_destruct;
 - (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionsFromBatch:(id)arg1 error:(id *)arg2;

@@ -27,6 +27,7 @@
     NSMapTable *_resultHeadlinesByFeedItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *resultHeadlinesByFeedItem; // @synthesize resultHeadlinesByFeedItem=_resultHeadlinesByFeedItem;
 @property(retain, nonatomic) NSArray *resultHeadlines; // @synthesize resultHeadlines=_resultHeadlines;
 @property(copy, nonatomic) CDUnknownBlockType headlinesMapCompletionHandler; // @synthesize headlinesMapCompletionHandler=_headlinesMapCompletionHandler;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSArray *feedItems; // @synthesize feedItems=_feedItems;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_fetchUnadornedHeadlinesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

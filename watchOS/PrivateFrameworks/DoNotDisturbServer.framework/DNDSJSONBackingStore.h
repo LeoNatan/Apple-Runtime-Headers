@@ -21,8 +21,8 @@
     id <DNDSBackingStoreDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DNDSBackingStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSBackingStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)sysdiagnoseDataForDate:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *sysdiagnoseDataIdentifier; // @dynamic sysdiagnoseDataIdentifier;
 - (unsigned int)writeRecord:(id)arg1 error:(id *)arg2;

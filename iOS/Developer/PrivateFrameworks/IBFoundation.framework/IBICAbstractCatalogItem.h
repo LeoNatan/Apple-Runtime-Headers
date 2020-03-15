@@ -63,6 +63,7 @@
 + (_Bool)canHostItems:(id)arg1;
 + (_Bool)canHostItemsOfClass:(Class)arg1;
 + (id)keysThatImpactDisplayOrder;
++ (id)manifestFileDataWithContent:(id)arg1 jsonWritingOptions:(unsigned long long)arg2 ensureTrailingNewline:(_Bool)arg3;
 + (_Bool)fileNameIsIdentifier;
 + (id)keysThatImpactIdentifier;
 + (id)displayNameForChildren;
@@ -75,6 +76,7 @@
 + (id)itemWithContentsOfPath:(id)arg1 results:(id)arg2;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)createDefaultInstancesForUnitTesting;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *compressionType; // @synthesize compressionType=_compressionType;
 @property(copy, nonatomic) NSSet *explicitTags; // @synthesize explicitTags=_explicitTags;
 @property(readonly, nonatomic) NSOrderedSet *intrinsicallyOrderedChildren; // @synthesize intrinsicallyOrderedChildren=_intrinsicallyOrderedChildren;
@@ -87,7 +89,6 @@
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property long long descendantChangeCount; // @synthesize descendantChangeCount=_descendantChangeCount;
 @property long long changeCount; // @synthesize changeCount=_changeCount;
-- (void).cxx_destruct;
 - (id)verifyExistenceInCompiledBundle:(id)arg1 forPlatform:(id)arg2;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (long long)effectiveCompressionType;
@@ -184,6 +185,8 @@
 - (long long)compareDisplayOrder:(id)arg1;
 @property(readonly) NSString *absoluteManifestFilePath;
 @property(readonly) NSDictionary *manifestContent;
+@property(readonly, nonatomic) unsigned long long jsonWritingOptions;
+@property(readonly, nonatomic) _Bool shouldAppendNewlineToManifestFile;
 @property(readonly) NSData *manifestFileData;
 @property(readonly) NSString *manifestFileName;
 @property(readonly, nonatomic) NSString *relativeFilePathFromRoot;
@@ -231,7 +234,7 @@
 - (void)manifestArchivist:(id)arg1 populateManifestEntry:(id)arg2 forChild:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 childHasDataToRecordInManifest:(id)arg2;
 - (void)manifestArchivist:(id)arg1 populateManifest:(id)arg2;
-- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2;
+- (void)manifestArchivist:(id)arg1 applyPropertiesFromManifest:(id)arg2 manifestFileData:(id)arg3;
 - (_Bool)manifestArchivist:(id)arg1 validateManifest:(id)arg2 results:(id)arg3;
 - (CDStruct_39925896)manifestArchivistCompatibilityVersionInfo:(id)arg1;
 - (void)manifestArchivist:(id)arg1 setConflictState:(unsigned long long)arg2 forChild:(id)arg3;

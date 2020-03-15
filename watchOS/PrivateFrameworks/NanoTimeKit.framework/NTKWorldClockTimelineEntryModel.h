@@ -15,9 +15,9 @@
 }
 
 + (id)_analogImageProvider;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showIdealizedTime; // @synthesize showIdealizedTime=_showIdealizedTime;
 @property(retain, nonatomic) WorldClockCity *city; // @synthesize city=_city;
-- (void).cxx_destruct;
 - (double)_timeZoneOffset;
 - (id)_timeZone;
 - (id)_timeAndDifferenceOffsetTextProvider;

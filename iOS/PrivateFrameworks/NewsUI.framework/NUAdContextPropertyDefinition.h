@@ -19,12 +19,12 @@
     NUAdContextDefinition *_nestedDefinition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUAdContextDefinition *nestedDefinition; // @synthesize nestedDefinition=_nestedDefinition;
 @property(readonly, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(readonly, nonatomic) unsigned long long requirement; // @synthesize requirement=_requirement;
 @property(readonly, nonatomic) Class valueClass; // @synthesize valueClass=_valueClass;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)validateValue:(id)arg1;

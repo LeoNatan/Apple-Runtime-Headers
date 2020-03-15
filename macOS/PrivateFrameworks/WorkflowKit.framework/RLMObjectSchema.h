@@ -28,6 +28,7 @@
 + (void)addSwiftProperties:(id)arg1 objectUtil:(Class)arg2 instance:(id)arg3 indexed:(id)arg4 nameMap:(id)arg5;
 + (id)propertiesForClass:(Class)arg1 isSwift:(_Bool)arg2;
 + (id)schemaForObjectClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *computedProperties; // @synthesize computedProperties=_computedProperties;
 @property(nonatomic) Class unmanagedClass; // @synthesize unmanagedClass=_unmanagedClass;
 @property(nonatomic) Class accessorClass; // @synthesize accessorClass=_accessorClass;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) RLMProperty *primaryKeyProperty; // @synthesize primaryKeyProperty=_primaryKeyProperty;
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
 @property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *swiftGenericProperties;
 - (struct ObjectSchema)objectStoreCopy:(id)arg1;
 @property(readonly, nonatomic) NSString *objectName;

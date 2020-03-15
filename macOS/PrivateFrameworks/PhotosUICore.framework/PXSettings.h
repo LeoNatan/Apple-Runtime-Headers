@@ -24,8 +24,8 @@
 + (void)setSuiteName:(id)arg1;
 + (id)suiteName;
 + (id)settingsControllerModule;
-@property(nonatomic) long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
+@property(nonatomic) long long version; // @synthesize version=_version;
 - (void)addDeferredKeyPathObserver:(id)arg1;
 - (void)addDeferredKeyObserver:(id)arg1;
 - (void)removeKeyPathObserver:(id)arg1;

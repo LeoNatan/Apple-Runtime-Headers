@@ -37,9 +37,9 @@ __attribute__((visibility("hidden")))
 
 + (id)_resourcesDirectory:(id)arg1;
 + (Class)_resourceLoaderClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOActiveTileGroupMigrationTaskOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) id <NSObject> transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (id)_staleResourceForResource:(id)arg1;
 - (void)_loadImmediateResources:(id)arg1 conditionalWifiResources:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)removeOldData:(id)arg1;

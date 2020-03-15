@@ -17,10 +17,10 @@
     id <NTKAddPageViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <NTKAddPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NTKPageScrollViewController *pageScrollViewController; // @synthesize pageScrollViewController=_pageScrollViewController;
-- (void).cxx_destruct;
 - (void)resetNotches;
 - (void)generateNotches;
 - (void)_setCrownIndicatorVisible:(_Bool)arg1 animated:(_Bool)arg2;

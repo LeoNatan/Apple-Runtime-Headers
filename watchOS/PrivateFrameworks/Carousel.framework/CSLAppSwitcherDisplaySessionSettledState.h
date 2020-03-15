@@ -18,11 +18,11 @@
 }
 
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) CSLPITimer *activateApplicationTimer; // @synthesize activateApplicationTimer=_activateApplicationTimer;
 @property(nonatomic) _Bool disableActivateOnSettle; // @synthesize disableActivateOnSettle=_disableActivateOnSettle;
 @property(copy, nonatomic) NSString *queuedBundleID; // @synthesize queuedBundleID=_queuedBundleID;
-- (void).cxx_destruct;
 - (void)activationTimerDidFire;
 - (void)quiescentTimerDidFire;
 - (void)cancelQuiescentTimer;

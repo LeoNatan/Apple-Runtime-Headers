@@ -15,10 +15,10 @@
     struct CGRect __frameBeforeSpanningAllScreens;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> _windowResizeObservation; // @synthesize _windowResizeObservation=__windowResizeObservation;
 @property(nonatomic) struct CGRect _frameBeforeSpanningAllScreens; // @synthesize _frameBeforeSpanningAllScreens=__frameBeforeSpanningAllScreens;
 @property(nonatomic) BOOL spansAllScreens; // @synthesize spansAllScreens=_spansAllScreens;
-- (void).cxx_destruct;
 - (void)_updateHighlightViewFramesSpanningAllScreens:(struct CGRect)arg1;
 - (void)handleScreenParametersChanged;
 - (void)dealloc;

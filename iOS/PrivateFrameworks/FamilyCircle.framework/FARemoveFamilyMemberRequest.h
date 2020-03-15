@@ -13,8 +13,8 @@
     NSNumber *_memberDSID;
 }
 
-@property(readonly, copy) NSNumber *memberDSID; // @synthesize memberDSID=_memberDSID;
 - (void).cxx_destruct;
+@property(readonly, copy) NSNumber *memberDSID; // @synthesize memberDSID=_memberDSID;
 - (void)startRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithFamilyMemberDSID:(id)arg1;
 

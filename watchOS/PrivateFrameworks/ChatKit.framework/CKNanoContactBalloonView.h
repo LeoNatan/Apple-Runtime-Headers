@@ -19,12 +19,12 @@
     UILabel *_surnameLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *surnameLabel; // @synthesize surnameLabel=_surnameLabel;
 @property(retain, nonatomic) UILabel *givenNameLabel; // @synthesize givenNameLabel=_givenNameLabel;
 @property(retain, nonatomic) UIImageView *contactImageView; // @synthesize contactImageView=_contactImageView;
 @property(retain, nonatomic) UIImageView *chevron; // @synthesize chevron=_chevron;
 @property(retain, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
-- (void).cxx_destruct;
 - (_Bool)_hasSurname;
 - (_Bool)_hasGivenName;
 - (float)_maxNameTextWidth;

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)getIconDataForBundleID:(id)arg1 forIconSize:(double)arg2 withReply:(CDUnknownBlockType)arg3;
 - (id)_init;
 - (id)init;

@@ -19,10 +19,10 @@
 
 + (id)routeRuleWithAction:(int)arg1 forType:(int)arg2;
 + (id)routeRuleWithAction:(int)arg1 forInterfaceName:(id)arg2;
+- (void).cxx_destruct;
 @property int type; // @synthesize type=_type;
 @property(copy) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (_Bool)addTLVsToMessage:(id)arg1;
 - (unsigned char)typeValue;
 - (id)typeString;

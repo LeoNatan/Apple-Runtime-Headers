@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <FPCollectionDataSourceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasMoreIncoming; // @synthesize hasMoreIncoming=_hasMoreIncoming;
 @property(nonatomic) __weak id <FPCollectionDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)start;
 - (void)handleItems:(id)arg1 nextPage:(id)arg2;
 - (void)invalidate;

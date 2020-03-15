@@ -14,9 +14,9 @@
     NSTextField *mediaSizeLabel;
 }
 
+- (void).cxx_destruct;
 @property __weak NSTextField *mediaSizeLabel; // @synthesize mediaSizeLabel;
 @property __weak NSTextField *mediaTypeLabel; // @synthesize mediaTypeLabel;
-- (void).cxx_destruct;
 
 @end
 

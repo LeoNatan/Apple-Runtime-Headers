@@ -15,6 +15,7 @@
     // Error parsing type: , name: dislikeButtonRenderer
     // Error parsing type: , name: feedPersonalizer
     // Error parsing type: , name: tagController
+    // Error parsing type: , name: privateDataDirectory
     // Error parsing type: , name: debugEnabled
 }
 

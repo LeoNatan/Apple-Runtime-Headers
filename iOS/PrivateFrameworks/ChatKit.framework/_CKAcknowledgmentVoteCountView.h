@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIImageView *_ackIconImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *ackIconImageView; // @synthesize ackIconImageView=_ackIconImageView;
 @property(retain, nonatomic) UILabel *voteCountLabel; // @synthesize voteCountLabel=_voteCountLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)configureWithAcknowledgmentTally:(id)arg1;

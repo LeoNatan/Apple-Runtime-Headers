@@ -35,6 +35,7 @@
 + (id)prelaunchApplicationIdentifiers;
 + (void)prewarmForDevice:(id)arg1;
 + (id)sharedRingsViewRenderer;
+- (void).cxx_destruct;
 @property(nonatomic) int dataMode; // @synthesize dataMode=_dataMode;
 @property(nonatomic) __weak id <NTKActivityFaceViewFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showsLockedContent; // @synthesize showsLockedContent=_showsLockedContent;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NTKUtilityComplicationFactory *complicationFactory; // @synthesize complicationFactory=_complicationFactory;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) _Bool analog; // @synthesize analog=_analog;
-- (void).cxx_destruct;
 - (id)debugStringForEntry:(id)arg1;
 - (id)_complicationSlots;
 - (id)_colorComplicationSlots;

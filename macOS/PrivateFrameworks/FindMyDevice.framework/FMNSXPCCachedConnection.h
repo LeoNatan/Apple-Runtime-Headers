@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType didInvalidate; // @synthesize didInvalidate=_didInvalidate;
 @property(retain, nonatomic) FMNSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_invalidate;
 - (void)invalidate;
 - (id)remoteObjectProxy;

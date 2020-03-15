@@ -38,6 +38,8 @@
 + (void)resetClientAndRecipientCache;
 + (void)setOfflineTrainingEnabled:(_Bool)arg1;
 + (void)setAsynchronousLoad:(_Bool)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TILanguageModelAdaptationContext *adaptationContext; // @synthesize adaptationContext=_adaptationContext;
 @property(retain, nonatomic) NSString *recipientIdentifier; // @synthesize recipientIdentifier=_recipientIdentifier;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
@@ -47,8 +49,6 @@
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
 @property(nonatomic) shared_ptr_e9f752ce model; // @synthesize model=_model;
 @property(nonatomic) id <_ICContactFetchingDelegate> contactFetchingDelegate; // @synthesize contactFetchingDelegate=_contactFetchingDelegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (shared_ptr_e9f752ce)languageModelForAdaptationContext:(id)arg1;
 - (shared_ptr_e9f752ce)lightweightLanguageModel;
 - (shared_ptr_e9f752ce)sharedLanguageModelForClient:(id)arg1 withRecipient:(id)arg2 completion:(CDUnknownBlockType)arg3;

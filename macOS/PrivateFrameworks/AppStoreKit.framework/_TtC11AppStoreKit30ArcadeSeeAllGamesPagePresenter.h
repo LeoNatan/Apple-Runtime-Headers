@@ -15,6 +15,8 @@
     // Error parsing type: , name: nextPageToken
     // Error parsing type: , name: sort
     // Error parsing type: , name: pageTitle
+    // Error parsing type: , name: displayStyles
+    // Error parsing type: , name: displayStyle
     // Error parsing type: , name: view
     // Error parsing type: , name: isPreparingNextPage
 }

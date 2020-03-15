@@ -54,6 +54,7 @@
 + (id)relationshipWithCodableRelationship:(id)arg1 version:(long long)arg2;
 + (void)_relationshipWithRecord:(id)arg1 relationshipEventRecords:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)relationshipWithCodableRelationshipContainer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sentInviteResponse; // @synthesize sentInviteResponse=_sentInviteResponse;
 @property(retain, nonatomic) NSDate *dateActivityDataInitiallyBecameVisible; // @synthesize dateActivityDataInitiallyBecameVisible=_dateActivityDataInitiallyBecameVisible;
 @property(retain, nonatomic) NSDate *dateForLatestRelationshipStart; // @synthesize dateForLatestRelationshipStart=_dateForLatestRelationshipStart;
@@ -89,7 +90,6 @@
 @property(retain, nonatomic) NSString *incomingHandshakeToken; // @synthesize incomingHandshakeToken=_incomingHandshakeToken;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)_updateCurrentRelationshipState;
 - (void)_updateDateFriendshipBeganWithDate:(id)arg1;
 - (void)_updateDateActivityDataBecameVisibleWithDate:(id)arg1;

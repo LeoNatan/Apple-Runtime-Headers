@@ -19,11 +19,11 @@
     id <WFNonViewResponderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WFNonViewResponderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
 @property(nonatomic) __weak UIResponder *nextResponder; // @synthesize nextResponder=_nextResponder;
-- (void).cxx_destruct;
 - (BOOL)resignFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 

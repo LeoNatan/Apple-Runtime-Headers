@@ -36,6 +36,7 @@
     TVPHardwareButtonEventManager *_buttonEventManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPHardwareButtonEventManager *buttonEventManager; // @synthesize buttonEventManager=_buttonEventManager;
 @property(nonatomic) _Bool hasBeenRemovedFromParentViewController; // @synthesize hasBeenRemovedFromParentViewController=_hasBeenRemovedFromParentViewController;
 @property(retain, nonatomic) NSTimer *playbackLimitTimer; // @synthesize playbackLimitTimer=_playbackLimitTimer;
@@ -56,11 +57,11 @@
 @property(nonatomic) long long resumeMenuOption; // @synthesize resumeMenuOption=_resumeMenuOption;
 @property(readonly, nonatomic) long long initialPlaybackType; // @synthesize initialPlaybackType=_initialPlaybackType;
 @property(retain, nonatomic) NSObject<TVPPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_playbackLimitTimerFired:(id)arg1;
 - (void)_startPlaybackLimitTimerWithLimit:(double)arg1;
 - (void)_clearPlaybackLimitTimer;
 - (void)_playerStateChanged:(id)arg1;
+- (_Bool)playbackViewController:(id)arg1 handleControlGesture:(long long)arg2;
 - (long long)currentEndpointDeviceTypeForPlaybackViewController:(id)arg1;
 - (void)playbackViewControllerUserWillInitiatePlayback:(id)arg1;
 - (void)playbackViewController:(id)arg1 willShowIdleViewController:(id)arg2 forMediaItem:(id)arg3 targetCoverFrame:(inout struct CGRect *)arg4;

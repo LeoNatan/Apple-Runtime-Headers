@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _width;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(copy, nonatomic) NSNumber *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(nonatomic) _Bool hasAlpha; // @synthesize hasAlpha=_hasAlpha;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUploadDictionary:(id)arg1;
 

@@ -20,6 +20,7 @@
     CARObserverHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CARObserverHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) CARInputDeviceManager *inputDeviceManager; // @synthesize inputDeviceManager=_inputDeviceManager;
 @property(readonly, nonatomic, getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
@@ -27,7 +28,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *APEndPointInfo; // @synthesize APEndPointInfo=_APEndPointInfo;
 @property(readonly, nonatomic) _Bool isPaired; // @synthesize isPaired=_isPaired;
 @property(readonly, nonatomic) CARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_newObserverAdded:(id)arg1;

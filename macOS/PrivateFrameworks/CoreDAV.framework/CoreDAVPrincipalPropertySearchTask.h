@@ -15,10 +15,10 @@
     NSDictionary *_extraAttributes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL applyToPrincipalCollectionSet; // @synthesize applyToPrincipalCollectionSet=_applyToPrincipalCollectionSet;
 @property(retain, nonatomic) NSDictionary *extraAttributes; // @synthesize extraAttributes=_extraAttributes;
 @property(retain, nonatomic) NSSet *searchItems; // @synthesize searchItems=_searchItems;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)requestBody;
 - (id)httpMethod;

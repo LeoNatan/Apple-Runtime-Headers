@@ -32,6 +32,7 @@
 }
 
 + (id)searchRequestWithCompletion:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
 @property(nonatomic) unsigned long long resultTypes; // @synthesize resultTypes=_resultTypes;
 @property(nonatomic) _Bool hasSentFeedbackForCompletion; // @synthesize hasSentFeedbackForCompletion=_hasSentFeedbackForCompletion;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) _Bool _hasRegion; // @synthesize _hasRegion;
 @property(nonatomic) CDStruct_b7cb895d region; // @synthesize region=_region;
 @property(copy, nonatomic) NSString *naturalLanguageQuery; // @synthesize naturalLanguageQuery=_naturalLanguageQuery;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;

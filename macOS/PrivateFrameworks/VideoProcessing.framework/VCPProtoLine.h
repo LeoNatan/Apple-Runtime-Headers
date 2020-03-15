@@ -17,9 +17,9 @@
 }
 
 + (id)lineFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCPProtoPoint *end; // @synthesize end=_end;
 @property(retain, nonatomic) VCPProtoPoint *start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

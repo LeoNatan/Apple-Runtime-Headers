@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)aloneRowBackgroundImageWithSize:(struct CGSize)arg1;
-@property(readonly, nonatomic) SKUIGiftConfiguration *giftConfiguration; // @synthesize giftConfiguration=_giftConfiguration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIGiftConfiguration *giftConfiguration; // @synthesize giftConfiguration=_giftConfiguration;
 - (id)initWithGiftConfiguration:(id)arg1;
 
 @end

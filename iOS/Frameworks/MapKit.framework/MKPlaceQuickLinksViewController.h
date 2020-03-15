@@ -8,12 +8,13 @@
 
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 #import <MapKit/MKQuickLinkItemViewDelegate-Protocol.h>
+#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, NSArray, NSString, UIView;
 @protocol MKPlaceQuickLinksViewControllerDelegate, _MKInfoCardAnalyticsDelegate;
 
 __attribute__((visibility("hidden")))
-@interface MKPlaceQuickLinksViewController : MKPlaceSectionViewController <MKQuickLinkItemViewDelegate, MKModuleViewControllerProtocol>
+@interface MKPlaceQuickLinksViewController : MKPlaceSectionViewController <MKQuickLinkItemViewDelegate, MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate>
 {
     NSArray *_quickLinks;
     NSArray *_quickLinkViews;
@@ -26,10 +27,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)placeQuickLinksViewControllerFor:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(nonatomic) __weak id <MKPlaceQuickLinksViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
+- (id)infoCardChildPossibleActions;
 - (void)_captureTapActionWithQuickLink:(id)arg1;
 - (void)quickLinkItemViewSelected:(id)arg1;
 - (void)infoCardThemeChanged;

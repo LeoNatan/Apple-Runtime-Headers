@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <PXGridPresentationNavigationItemDelegate> _navigationItemDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXGridPresentationNavigationItemDelegate> navigationItemDelegate; // @synthesize navigationItemDelegate=_navigationItemDelegate;
 @property(nonatomic) __weak UIViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (_Bool)isInPlaces:(id)arg1;
 - (void)pu_performBarsVisibilityUpdatesWithAnimationSettings:(struct PUBarAnimationSettings)arg1;

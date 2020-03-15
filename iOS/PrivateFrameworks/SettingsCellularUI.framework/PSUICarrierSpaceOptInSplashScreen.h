@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     OBBoldTrayButton *_continueButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OBBoldTrayButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 @property(copy, nonatomic) CDUnknownBlockType continueButtonAction; // @synthesize continueButtonAction=_continueButtonAction;
-- (void).cxx_destruct;
 - (void)continueButtonPressed;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

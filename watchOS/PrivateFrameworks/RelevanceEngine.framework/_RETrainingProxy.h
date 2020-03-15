@@ -18,9 +18,9 @@
     RETrainingSimulationServer *_server;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RETrainingSimulationServer *server; // @synthesize server=_server;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)relevanceEngine:(id)arg1 runActionOfElementWithDescription1:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)relevanceEngine:(id)arg1 performCommand:(id)arg2 withOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)relevanceEngine:(id)arg1 encodedObjectAtPath:(id)arg2 completion:(CDUnknownBlockType)arg3;

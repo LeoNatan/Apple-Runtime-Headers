@@ -15,8 +15,8 @@
     HKHealthStore *_healthStore;
 }
 
-@property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void)_disableAndDelete:(id)arg1;
 - (void)confirmDisable:(id)arg1;
 - (void)hideSpinner;

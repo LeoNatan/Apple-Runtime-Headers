@@ -21,11 +21,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int emergencyType; // @synthesize emergencyType=_emergencyType;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;

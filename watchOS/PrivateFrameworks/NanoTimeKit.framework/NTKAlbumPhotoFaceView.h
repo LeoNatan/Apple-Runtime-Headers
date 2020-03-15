@@ -32,12 +32,12 @@
     unsigned int _numberOfPhotos;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int numberOfPhotos; // @synthesize numberOfPhotos=_numberOfPhotos;
 @property(nonatomic) unsigned int preloadGeneration; // @synthesize preloadGeneration=_preloadGeneration;
 @property(retain, nonatomic) UIView *photoTransitionCornerView; // @synthesize photoTransitionCornerView=_photoTransitionCornerView;
 @property(retain, nonatomic) UIView *photoTransitionSnapshotView; // @synthesize photoTransitionSnapshotView=_photoTransitionSnapshotView;
 @property(retain, nonatomic) NTKAlbumAtom *currentAtom; // @synthesize currentAtom=_currentAtom;
-- (void).cxx_destruct;
 - (void)firstUnlockDidOccur;
 - (id)_analyzeAtom:(id)arg1;
 - (void)_handleOrdinaryScreenWake;

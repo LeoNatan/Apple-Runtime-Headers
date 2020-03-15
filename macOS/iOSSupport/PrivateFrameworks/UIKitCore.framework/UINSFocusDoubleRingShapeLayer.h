@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_topBorderLayer;
 }
 
-@property(retain, nonatomic) CAShapeLayer *topBorderLayer; // @synthesize topBorderLayer=_topBorderLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAShapeLayer *topBorderLayer; // @synthesize topBorderLayer=_topBorderLayer;
 - (void)_updateTopLayerPath;
 - (void)setPath:(struct CGPath *)arg1;
 - (id)init;

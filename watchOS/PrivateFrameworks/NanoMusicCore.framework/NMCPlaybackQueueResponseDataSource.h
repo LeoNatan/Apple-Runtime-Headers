@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MPCPlayerResponse *_playerResponse;
 }
 
-@property(readonly, nonatomic) MPCPlayerResponse *playerResponse; // @synthesize playerResponse=_playerResponse;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MPCPlayerResponse *playerResponse; // @synthesize playerResponse=_playerResponse;
 - (id)itemAtIndexPath:(id)arg1;
 - (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
 - (id)sectionAtIndex:(unsigned int)arg1;

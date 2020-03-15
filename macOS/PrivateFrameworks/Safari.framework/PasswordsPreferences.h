@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)registerDefaults;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak NSViewController<PreferencesViewController> *viewController; // @synthesize viewController=_viewController;
 @property __weak NSView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)controllerAuthorizationDidSucceed:(id)arg1;
 @property(readonly, nonatomic) NSWindow *windowToSecure;
 - (void)lockFromPolicyEnforcer:(id)arg1;

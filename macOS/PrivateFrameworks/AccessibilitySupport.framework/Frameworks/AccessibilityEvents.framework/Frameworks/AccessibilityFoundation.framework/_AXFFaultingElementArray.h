@@ -16,9 +16,9 @@
     _AXFUIElementDataProvider *__dataProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _AXFUIElementDataProvider *_dataProvider; // @synthesize _dataProvider=__dataProvider;
 @property(copy, nonatomic) NSString *_attribute; // @synthesize _attribute=___attribute;
-- (void).cxx_destruct;
 - (unsigned long long)elementsCount;
 - (id)copyElementsForRange:(struct _NSRange)arg1;
 - (id)nilSentinel;

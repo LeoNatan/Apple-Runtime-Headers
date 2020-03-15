@@ -20,6 +20,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) WALegibilityLabel *conditionsLabel; // @synthesize conditionsLabel=_conditionsLabel;
 @property(retain, nonatomic) WALegibilityLabel *locationLabel; // @synthesize locationLabel=_locationLabel;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) UIImageView *conditionsImageView; // @synthesize conditionsImageView=_conditionsImageView;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(copy, nonatomic) WATodayPadViewStyle *style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_setupConstraintsForViews;
 - (void)updateForChangedSettings:(id)arg1;
 @property(copy, nonatomic) UIImage *conditionsImage;

@@ -19,9 +19,9 @@
 + (id)acquireWallpaperProxyWithVariant:(long long)arg1 userInterfaceStyle:(long long)arg2;
 + (id)_wallpaperWithImage:(id)arg1 cacheKey:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, copy, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *earliestExpirationTimer; // @synthesize earliestExpirationTimer=_earliestExpirationTimer;
 @property(retain, nonatomic) NSDate *dateOfLastRentalExpirationHandling; // @synthesize dateOfLastRentalExpirationHandling=_dateOfLastRentalExpirationHandling;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_expirationTimerDidFire:(id)arg1;
 - (void)_libraryContentsDidChange:(id)arg1;

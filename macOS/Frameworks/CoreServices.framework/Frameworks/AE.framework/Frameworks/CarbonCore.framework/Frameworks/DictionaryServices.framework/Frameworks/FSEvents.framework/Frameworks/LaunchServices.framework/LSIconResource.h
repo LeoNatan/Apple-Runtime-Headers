@@ -34,6 +34,7 @@
 + (id)_resourceForKextBundleIdentifier:(id)arg1 iconName:(id)arg2;
 + (id)_resourceWithURL:(id)arg1 context:(struct LSContext *)arg2;
 + (id)_resourceWithType:(id)arg1 context:(struct LSContext *)arg2;
+- (void).cxx_destruct;
 @property(getter=isDocumentBadge) BOOL documentBadge; // @synthesize documentBadge=_documentBadge;
 @property(retain) NSString *resourceName; // @synthesize resourceName=_resourceName;
 @property(retain) NSString *resourceFileName; // @synthesize resourceFileName=_resourceFileName;
@@ -41,7 +42,6 @@
 @property(retain) NSData *resourceData; // @synthesize resourceData=_resourceData;
 @property(retain) NSURL *resourceURL; // @synthesize resourceURL=_resourceURL;
 @property(retain) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)init;
 - (void)updateFromUTType:(id)arg1;
 - (void)updateFromType:(id)arg1 binding:(struct LSBinding *)arg2 context:(struct LSContext *)arg3;

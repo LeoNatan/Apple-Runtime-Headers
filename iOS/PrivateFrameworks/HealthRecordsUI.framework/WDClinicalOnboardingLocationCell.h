@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     HKClinicalProvider *_provider;
 }
 
-@property(readonly, copy, nonatomic) HKClinicalProvider *provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) HKClinicalProvider *provider; // @synthesize provider=_provider;
 - (void)prepareForReuse;
 - (void)_updateForContentSizeCategory:(id)arg1;
 - (void)_updateContentWithBrandable:(id)arg1 dataProvider:(id)arg2;

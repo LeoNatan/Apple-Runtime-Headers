@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *callingLinePresentation; // @synthesize callingLinePresentation=_callingLinePresentation;
 @property(retain, nonatomic) NSNumber *connectedLinePresentation; // @synthesize connectedLinePresentation=_connectedLinePresentation;
 @property(retain, nonatomic) NSNumber *callingNamePresentation; // @synthesize callingNamePresentation=_callingNamePresentation;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSNumber *enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSNumber *callClass; // @synthesize callClass=_callClass;
 @property(retain, nonatomic) NSNumber *callForwardingReason; // @synthesize callForwardingReason=_callForwardingReason;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

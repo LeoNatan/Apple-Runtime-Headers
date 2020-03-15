@@ -36,6 +36,7 @@
 + (id)predicateForGroupsWithNameMatching:(id)arg1;
 + (id)_predicateForNonHiddenGroups;
 + (id)predicateForAllGroups;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, copy) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, copy) NSString *externalUUID; // @synthesize externalUUID=_externalUUID;
@@ -44,7 +45,7 @@
 @property(readonly, copy) NSString *externalIdentifier; // @synthesize externalIdentifier=_externalIdentifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
+@property(readonly, copy) NSString *externalURI;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -39,6 +39,7 @@
     NSGestureRecognizer *_resizeRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSGestureRecognizer *resizeRecognizer; // @synthesize resizeRecognizer=_resizeRecognizer;
 @property(retain, nonatomic) NSWindow *transientOverlayWindow; // @synthesize transientOverlayWindow=_transientOverlayWindow;
 @property(readonly, nonatomic) BOOL autoCollapsed; // @synthesize autoCollapsed=_autoCollapsed;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) BOOL transientlyUncollapsed; // @synthesize transientlyUncollapsed=_transientlyUncollapsed;
 @property(readonly, nonatomic) _UXContainerView *detailView; // @synthesize detailView=_detailView;
 @property(readonly, nonatomic) _UXContainerView *masterView; // @synthesize masterView=_masterView;
-- (void).cxx_destruct;
 - (id)accessibilityRole;
 - (id)accessibilityChildren;
 - (id)accessibilitySplitters;

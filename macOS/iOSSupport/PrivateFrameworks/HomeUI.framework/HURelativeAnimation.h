@@ -15,10 +15,10 @@
     double _relativeDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double relativeDuration; // @synthesize relativeDuration=_relativeDuration;
 @property(readonly, nonatomic) double relativeStart; // @synthesize relativeStart=_relativeStart;
 @property(readonly, nonatomic) HUAnimationApplier *applier; // @synthesize applier=_applier;
-- (void).cxx_destruct;
 - (id)initWithAnimationApplier:(id)arg1 relativeStart:(double)arg2 relativeDuration:(double)arg3;
 
 @end

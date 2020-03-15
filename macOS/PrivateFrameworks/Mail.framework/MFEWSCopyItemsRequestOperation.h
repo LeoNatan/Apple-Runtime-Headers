@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *offlineCreatedEWSItemIdStrings; // @synthesize offlineCreatedEWSItemIdStrings=_offlineCreatedEWSItemIdStrings;
 @property(readonly, copy, nonatomic) NSArray *EWSItemIds; // @synthesize EWSItemIds=_EWSItemIds;
 @property(readonly, copy, nonatomic) NSString *destinationEWSFolderIdString; // @synthesize destinationEWSFolderIdString=_destinationEWSFolderIdString;
 @property(readonly, copy, nonatomic) NSString *sourceEWSFolderIdString; // @synthesize sourceEWSFolderIdString=_sourceEWSFolderIdString;
-- (void).cxx_destruct;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSCopyItemsResponseOperation *responseOperation;
 - (void)_newEWSItemIdStringsDidChange:(id)arg1;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newServicerForConnection:(id)arg1 itemCollection:(id)arg2;
-@property(retain, nonatomic) PBItemCollection *itemCollection; // @synthesize itemCollection=_itemCollection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PBItemCollection *itemCollection; // @synthesize itemCollection=_itemCollection;
 - (void)waitForItemRequestsDeliveryCompletion:(CDUnknownBlockType)arg1;
 - (void)callCleanupBlockWithUUID:(id)arg1;
 - (void)loadRepresentationForItemAtIndex:(unsigned long long)arg1 type:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

@@ -22,13 +22,13 @@
 }
 
 + (id)dividerColor;
+- (void).cxx_destruct;
 @property(nonatomic) float preferredInset; // @synthesize preferredInset=_preferredInset;
 @property(nonatomic) float preferredWidth; // @synthesize preferredWidth=_preferredWidth;
 @property(retain) NSArray *weekViews; // @synthesize weekViews=_weekViews;
 @property __weak id <EKUIDividedGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *allCells; // @synthesize allCells=_allCells;
 @property(retain, nonatomic) NSArray *buttonTitles; // @synthesize buttonTitles=_buttonTitles;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (float)_rowHeightForWidth:(float)arg1;
 - (float)_neededHeight;

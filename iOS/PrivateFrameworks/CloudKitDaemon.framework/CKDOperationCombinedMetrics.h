@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDOperationMetrics *MMCSMetrics; // @synthesize MMCSMetrics=_MMCSMetrics;
 @property(retain, nonatomic) CKDOperationMetrics *cloudKitMetrics; // @synthesize cloudKitMetrics=_cloudKitMetrics;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;

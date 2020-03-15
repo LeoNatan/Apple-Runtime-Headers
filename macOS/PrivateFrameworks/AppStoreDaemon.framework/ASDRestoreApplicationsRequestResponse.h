@@ -14,9 +14,9 @@
     NSArray *_results;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
 @property BOOL success; // @synthesize success;
-- (void).cxx_destruct;
 - (id)initWithResults:(id)arg1;
 - (id)init;
 

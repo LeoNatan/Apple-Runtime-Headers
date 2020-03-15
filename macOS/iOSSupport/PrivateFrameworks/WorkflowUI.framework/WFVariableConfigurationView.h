@@ -16,9 +16,9 @@
     UINavigationController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(readonly, nonatomic) WFVariableConfigurationViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (double)preferredHeight;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

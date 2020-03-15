@@ -16,9 +16,9 @@
     NSDateComponents *_dateComponents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
 @property(readonly, nonatomic) unsigned int comparisonType; // @synthesize comparisonType=_comparisonType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (int)compare:(id)arg1;
 @property(readonly, nonatomic) _Bool isTimeOfDayCondition;

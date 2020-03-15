@@ -76,6 +76,7 @@
 }
 
 + (id)keyPathsForValuesAffectingShowSecondaryDeviceTypeField;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *exsistingProgressTextToButtonConstraint; // @synthesize exsistingProgressTextToButtonConstraint=_exsistingProgressTextToButtonConstraint;
 @property(nonatomic) BOOL didEncounterLoadError; // @synthesize didEncounterLoadError=_didEncounterLoadError;
 @property(copy) CDUnknownBlockType stopCompletionHandler; // @synthesize stopCompletionHandler=_stopCompletionHandler;
@@ -126,7 +127,6 @@
 @property __weak NSButton *mobileDocumentDoneButton; // @synthesize mobileDocumentDoneButton=_mobileDocumentDoneButton;
 @property __weak NSTextField *mobileDocumentsOptionsTitle; // @synthesize mobileDocumentsOptionsTitle=_mobileDocumentsOptionsTitle;
 @property(retain) NSWindow *mobileDocumentsOptionsSheet; // @synthesize mobileDocumentsOptionsSheet=_mobileDocumentsOptionsSheet;
-- (void).cxx_destruct;
 - (void)_closeWebViewWindow;
 - (void)callCompletionWithResult:(BOOL)arg1;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;

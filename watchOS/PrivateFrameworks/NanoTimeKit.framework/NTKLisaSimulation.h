@@ -19,6 +19,7 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) UIView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) UISwipeGestureRecognizer *rightSwipe; // @synthesize rightSwipe=_rightSwipe;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UITapGestureRecognizer *tap; // @synthesize tap=_tap;
 @property(nonatomic) _Bool swipeGesturesEnabled; // @synthesize swipeGesturesEnabled=_swipeGesturesEnabled;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)handleRightSwipe:(id)arg1;
 - (void)handleLeftSwipe:(id)arg1;
 - (void)handleTap:(id)arg1;

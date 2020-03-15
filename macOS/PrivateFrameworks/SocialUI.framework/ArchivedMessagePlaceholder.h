@@ -17,8 +17,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)allowedSecureArchivingClasses_so;
-@property(readonly) IMMessage *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(readonly) IMMessage *message; // @synthesize message=_message;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMessage:(id)arg1;

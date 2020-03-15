@@ -14,9 +14,9 @@
     XCElementSnapshot *_elementSnapshot;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int eventType; // @synthesize eventType=_eventType;
 @property(readonly) XCElementSnapshot *elementSnapshot; // @synthesize elementSnapshot=_elementSnapshot;
-- (void).cxx_destruct;
 @property(readonly) NSString *eventDescription;
 @property(readonly) BOOL opensMenuBarRootMenu;
 - (id)debugDescription;

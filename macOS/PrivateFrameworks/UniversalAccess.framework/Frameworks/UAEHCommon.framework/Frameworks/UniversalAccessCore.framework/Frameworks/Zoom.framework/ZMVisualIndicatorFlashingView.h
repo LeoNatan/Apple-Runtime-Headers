@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CAAnimationGroup *__animationGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAAnimationGroup *_animationGroup; // @synthesize _animationGroup=__animationGroup;
 @property(retain, nonatomic) CAKeyframeAnimation *_colorAnimation; // @synthesize _colorAnimation=__colorAnimation;
 @property(retain, nonatomic) CAKeyframeAnimation *_pulseAnimation; // @synthesize _pulseAnimation=__pulseAnimation;
-- (void).cxx_destruct;
 - (void)startAnimation;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

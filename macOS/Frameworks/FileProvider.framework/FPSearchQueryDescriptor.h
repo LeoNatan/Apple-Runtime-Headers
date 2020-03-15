@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_searchQueryString;
 }
 
-@property(copy) NSString *searchQueryString; // @synthesize searchQueryString=_searchQueryString;
 - (void).cxx_destruct;
+@property(copy) NSString *searchQueryString; // @synthesize searchQueryString=_searchQueryString;
 - (BOOL)keepCollectorsAlive;
 - (unsigned long long)hash;
 - (BOOL)isEqualToItemQueryDescriptor:(id)arg1;

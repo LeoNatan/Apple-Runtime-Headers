@@ -23,11 +23,11 @@
 + (void)configureStatefulView:(id)arg1 forComponent:(id)arg2;
 + (double)heightForComponent:(id)arg1 withWidth:(double)arg2;
 + (id)newStatefulView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool actionRunning; // @synthesize actionRunning=_actionRunning;
 @property(retain, nonatomic) NSDictionary *stagedParameterStates; // @synthesize stagedParameterStates=_stagedParameterStates;
 @property(nonatomic) _Bool shouldReflowWhenComponentRemounted; // @synthesize shouldReflowWhenComponentRemounted=_shouldReflowWhenComponentRemounted;
 @property(nonatomic) _Bool summaryIsEditing; // @synthesize summaryIsEditing=_summaryIsEditing;
-- (void).cxx_destruct;
 - (void)actionRunningStateDidChange:(id)arg1;
 - (void)updateColorsForRunningStateAnimated:(_Bool)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -21,12 +21,12 @@
     NSDate *_dateOfLastSearch;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *dateOfLastSearch; // @synthesize dateOfLastSearch=_dateOfLastSearch;
 @property(copy, nonatomic) NSString *openSearchDescriptionURLString; // @synthesize openSearchDescriptionURLString=_openSearchDescriptionURLString;
 @property(retain, nonatomic) WBSOpenSearchURLTemplate *searchURLTemplateFromForm; // @synthesize searchURLTemplateFromForm=_searchURLTemplateFromForm;
 @property(readonly, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(readonly, nonatomic) NSString *sourcePageURLString; // @synthesize sourcePageURLString=_sourcePageURLString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *hostname;
 @property(readonly, nonatomic) NSString *displayName;
 - (id)dictionaryRepresentation;

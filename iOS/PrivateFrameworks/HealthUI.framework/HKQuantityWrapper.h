@@ -14,9 +14,9 @@
     NSDateInterval *_dateInterval;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(retain) HKQuantity *quantity; // @synthesize quantity=_quantity;
-- (void).cxx_destruct;
 - (id)initWithQuantity:(id)arg1 dateInterval:(id)arg2;
 
 @end

@@ -18,8 +18,8 @@
 }
 
 + (struct OpaqueFigEndpointUIAgent *)copySharedEndpointUIAgent;
-@property __weak AVOutputContextManager *parentOutputContextManager; // @synthesize parentOutputContextManager=_parentManager;
 - (void).cxx_destruct;
+@property __weak AVOutputContextManager *parentOutputContextManager; // @synthesize parentOutputContextManager=_parentManager;
 - (void)_showErrorPromptForRouteDescriptor:(struct __CFDictionary *)arg1 reason:(struct __CFString *)arg2;
 - (void)dealloc;
 - (id)initWithEndpointUIAgent:(struct OpaqueFigEndpointUIAgent *)arg1;

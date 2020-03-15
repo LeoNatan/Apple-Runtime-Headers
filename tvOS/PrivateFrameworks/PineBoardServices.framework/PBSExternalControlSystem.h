@@ -43,6 +43,7 @@
 }
 
 + (id)sharedSystem;
+- (void).cxx_destruct;
 @property(nonatomic) long long internalVolumeButtonBehavior; // @synthesize internalVolumeButtonBehavior=_internalVolumeButtonBehavior;
 @property(nonatomic) long long pendingVolumeDownReleaseEvents; // @synthesize pendingVolumeDownReleaseEvents=_pendingVolumeDownReleaseEvents;
 @property(nonatomic) long long pendingVolumeUpReleaseEvents; // @synthesize pendingVolumeUpReleaseEvents=_pendingVolumeUpReleaseEvents;
@@ -72,7 +73,6 @@
 @property(copy, nonatomic) NSString *volumeDeviceName; // @synthesize volumeDeviceName=_volumeDeviceName;
 @property(copy, nonatomic) PBSIRVolumeButtonConfiguration *selectedVolumeButtonConfiguration; // @synthesize selectedVolumeButtonConfiguration=_selectedVolumeButtonConfiguration;
 @property(nonatomic) __weak id <PBSExternalControlSystemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_addAdditionalUsageReportingDataTo:(id)arg1;
 - (id)_stringFromVolumeButtonBehavior:(long long)arg1;
 - (id)_stringFromExternalControlSystemAction:(long long)arg1;

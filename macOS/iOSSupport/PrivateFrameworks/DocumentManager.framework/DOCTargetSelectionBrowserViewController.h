@@ -27,6 +27,7 @@
     DOCConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DOCConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) DOCAppearance *lastAppearance; // @synthesize lastAppearance=_lastAppearance;
 @property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) _UIResilientRemoteViewContainerViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(copy, nonatomic) NSURL *directoryURLToReveal; // @synthesize directoryURLToReveal=_directoryURLToReveal;
 @property(nonatomic) __weak id <DOCTargetSelectionBrowserViewControllerDelegate> targetSelectionDelegate; // @synthesize targetSelectionDelegate=_targetSelectionDelegate;
-- (void).cxx_destruct;
 - (void)remoteViewController:(id)arg1 didTerminateViewServiceWithError:(id)arg2;
 - (void)notifyDelegateOfCancellation;
 - (void)_dismissWithBlock:(CDUnknownBlockType)arg1;

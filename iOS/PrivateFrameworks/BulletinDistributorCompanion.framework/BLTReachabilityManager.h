@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(getter=isInternetReachable) _Bool internetReachable; // @synthesize internetReachable=_internetReachable;
 - (void).cxx_destruct;
+@property(getter=isInternetReachable) _Bool internetReachable; // @synthesize internetReachable=_internetReachable;
 - (void)interfaceRadioHotnessChanged:(id)arg1;
 - (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
 - (void)interfaceReachabilityChanged:(id)arg1;

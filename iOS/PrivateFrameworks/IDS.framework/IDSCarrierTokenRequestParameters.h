@@ -15,10 +15,10 @@
     NSString *_carrierNonce;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *carrierNonce; // @synthesize carrierNonce=_carrierNonce;
 @property(readonly, nonatomic) NSString *IMEI; // @synthesize IMEI=_IMEI;
 @property(readonly, nonatomic) long long subscriptionSource; // @synthesize subscriptionSource=_subscriptionSource;
-- (void).cxx_destruct;
 - (id)initWithSubscriptionSource:(long long)arg1 IMEI:(id)arg2 carrierNonce:(id)arg3;
 
 @end

@@ -18,12 +18,12 @@
     id <ABCardViewProperty> _property;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
 @property(nonatomic) BOOL shouldShowPrivateMeFields; // @synthesize shouldShowPrivateMeFields=_shouldShowPrivateMeFields;
 @property(retain, nonatomic) id <ABCardViewProperty> property; // @synthesize property=_property;
 @property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)privateFieldTransformer;
 - (id)accountNameTransformer;
 - (id)readOnlyTransformer;

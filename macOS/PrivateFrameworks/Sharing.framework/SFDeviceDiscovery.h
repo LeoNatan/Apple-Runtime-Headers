@@ -9,7 +9,7 @@
 #import <Sharing/NSSecureCoding-Protocol.h>
 #import <Sharing/SFXPCInterface-Protocol.h>
 
-@class NSSet, NSString, NSXPCConnection;
+@class NSMutableDictionary, NSSet, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFDeviceDiscovery : NSObject <NSSecureCoding, SFXPCInterface>
@@ -17,7 +17,7 @@
     BOOL _activateCalled;
     unsigned long long _activateTicks;
     NSObject<OS_dispatch_source> *_consoleUserTimer;
-    struct NSMutableDictionary *_devices;
+    NSMutableDictionary *_devices;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
     BOOL _legacy;
@@ -49,6 +49,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scanStateChangedHandler; // @synthesize scanStateChangedHandler=_scanStateChangedHandler;
 @property(nonatomic) long long scanRateOverride; // @synthesize scanRateOverride=_scanRateOverride;
 @property(nonatomic) BOOL trackPeers; // @synthesize trackPeers=_trackPeers;
@@ -71,7 +72,6 @@
 @property(copy, nonatomic) CDUnknownBlockType deviceFoundHandler; // @synthesize deviceFoundHandler=_deviceFoundHandler;
 @property(copy, nonatomic) NSSet *deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
-- (void).cxx_destruct;
 - (void)deviceDiscoveryScanStateChanged:(long long)arg1;
 - (void)deviceDiscoveryDeviceChanged:(id)arg1 changes:(unsigned int)arg2;
 - (void)deviceDiscoveryLostDevice:(id)arg1;

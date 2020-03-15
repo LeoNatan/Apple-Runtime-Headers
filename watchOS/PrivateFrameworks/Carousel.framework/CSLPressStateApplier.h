@@ -20,9 +20,9 @@
     id <CSLPressStateApplierDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLPressStateApplierDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLPressStateApplierDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_displayLinkFired:(id)arg1;
 - (void)_updateDisplayLink;
 - (_Bool)_needsDisplayLink;

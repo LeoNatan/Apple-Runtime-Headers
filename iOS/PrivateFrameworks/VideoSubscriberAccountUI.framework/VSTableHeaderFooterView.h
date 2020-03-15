@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     VSFontCenter *_fontCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIView *button; // @synthesize button=_button;
 @property(nonatomic) __weak id <VSTableHeaderFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)invalidateIntrinsicContentSize;
 - (void)setFrame:(struct CGRect)arg1;

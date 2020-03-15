@@ -14,9 +14,9 @@
     unsigned int _flags;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)showBlankingWindowForScreenOn:(_Bool)arg1 isBlanked:(_Bool)arg2;
 - (_Bool)bksBlankedForIsBlanked:(_Bool)arg1;
 - (float)backlightFactorForScreenOn:(_Bool)arg1;

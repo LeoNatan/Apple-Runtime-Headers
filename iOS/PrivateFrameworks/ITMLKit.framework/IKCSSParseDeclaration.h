@@ -16,11 +16,11 @@
     struct _NSRange _valueRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool important; // @synthesize important=_important;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) struct _NSRange valueRange; // @synthesize valueRange=_valueRange;
 @property(nonatomic) struct _NSRange nameRange; // @synthesize nameRange=_nameRange;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

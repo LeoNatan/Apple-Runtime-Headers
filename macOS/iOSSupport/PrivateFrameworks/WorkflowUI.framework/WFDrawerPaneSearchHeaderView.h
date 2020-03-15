@@ -19,11 +19,11 @@
     UIView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(readonly, nonatomic) __weak UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(readonly, nonatomic) __weak UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic) __weak id <WFDrawerPaneHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)layoutConstraints;
 - (id)initWithSearchBar:(id)arg1;
 

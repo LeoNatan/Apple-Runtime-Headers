@@ -28,6 +28,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)metadataWithFormat:(struct _MLModelMetadataSpecification *)arg1;
 + (id)metadataWithSpecification:(struct _MLModelSpecification *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *parameterDescriptionsByKey; // @synthesize parameterDescriptionsByKey=_parameterDescriptionsByKey;
 @property(retain, nonatomic) NSDictionary *trainingInputDescriptionsByName; // @synthesize trainingInputDescriptionsByName=_trainingInputDescriptionsByName;
 @property(nonatomic) _Bool isUpdatable; // @synthesize isUpdatable=_isUpdatable;
@@ -39,7 +40,6 @@
 @property(readonly, copy, nonatomic) NSString *predictedFeatureName; // @synthesize predictedFeatureName=_predictedFeatureName;
 @property(readonly, nonatomic) NSDictionary *outputDescriptionsByName; // @synthesize outputDescriptionsByName=_outputDescriptionsByName;
 @property(readonly, nonatomic) NSDictionary *inputDescriptionsByName; // @synthesize inputDescriptionsByName=_inputDescriptionsByName;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

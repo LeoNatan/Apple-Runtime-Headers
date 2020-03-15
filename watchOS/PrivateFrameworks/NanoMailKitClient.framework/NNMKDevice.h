@@ -19,12 +19,12 @@
 
 + (_Bool)isWebKitSupported;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isRunningInStoreDemoMode; // @synthesize isRunningInStoreDemoMode=_isRunningInStoreDemoMode;
 @property(readonly, nonatomic) NSString *databaseSubfolder; // @synthesize databaseSubfolder=_databaseSubfolder;
 @property(readonly, nonatomic) NSString *registryBasePath; // @synthesize registryBasePath=_registryBasePath;
 @property(readonly, nonatomic) _Bool isClassCDataAvailable; // @synthesize isClassCDataAvailable=_isClassCDataAvailable;
 @property(readonly, nonatomic) _Bool isDeviceUnlocked; // @synthesize isDeviceUnlocked=_isDeviceUnlocked;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float screenScale;
 @property(readonly, nonatomic) float screenWidth;
 @property(readonly, nonatomic) _Bool isRunningTest;

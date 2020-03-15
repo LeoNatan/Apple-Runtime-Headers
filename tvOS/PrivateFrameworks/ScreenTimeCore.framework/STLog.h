@@ -47,6 +47,7 @@
 + (id)apns;
 + (id)appMonitor;
 + (id)appInfo;
++ (id)accountState;
 + (id)logCategories;
 
 @end

@@ -17,12 +17,12 @@
     struct CGPoint _inputOffset;
 }
 
+- (void).cxx_destruct;
 @property BOOL inputRepairEdges; // @synthesize inputRepairEdges=_inputRepairEdges;
 @property struct CGPoint inputOffset; // @synthesize inputOffset=_inputOffset;
 @property double inputStrokeRadius; // @synthesize inputStrokeRadius=_inputStrokeRadius;
 @property(retain, nonatomic) CIImage *inputMaskImage; // @synthesize inputMaskImage=_inputMaskImage;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)_applyToImage:(id)arg1 maskImage:(id)arg2 strokeRadius:(double)arg3 inputOffset:(struct CGPoint)arg4 repairEdges:(BOOL)arg5;
 

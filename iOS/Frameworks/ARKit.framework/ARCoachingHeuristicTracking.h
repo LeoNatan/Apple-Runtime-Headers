@@ -11,7 +11,7 @@
     long long _requirements;
 }
 
-- (void)updateWithFrame:(id)arg1;
+- (void)updateWithFrame:(id)arg1 cache:(id)arg2;
 - (_Bool)satisfied;
 - (long long)requirements;
 

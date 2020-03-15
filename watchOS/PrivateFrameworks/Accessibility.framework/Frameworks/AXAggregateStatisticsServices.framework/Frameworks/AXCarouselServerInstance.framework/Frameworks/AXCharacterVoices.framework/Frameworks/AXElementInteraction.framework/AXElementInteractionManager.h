@@ -22,9 +22,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool displayCursor; // @synthesize displayCursor=_displayCursor;
 @property(nonatomic) __weak id <AXElementInteractionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendMessage:(id)arg1 withIdentifier:(unsigned int)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)_sendMessageWithIdentifier:(unsigned int)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)_client;

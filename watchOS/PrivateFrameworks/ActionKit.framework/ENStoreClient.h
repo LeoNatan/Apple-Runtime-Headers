@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)handleError:(id)arg1;
 - (void)invokeAsyncBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)invokeAsyncObjectBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

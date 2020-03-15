@@ -22,6 +22,7 @@
     NUImageDataRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUImageDataRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool shouldCoalesceUpdates; // @synthesize shouldCoalesceUpdates=_shouldCoalesceUpdates;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long sampleRadius; // @synthesize sampleRadius=_sampleRadius;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(copy, nonatomic) NUComposition *composition; // @synthesize composition=_composition;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)_pipelineFilters;
 - (void)configureRequest:(id)arg1 forSamplingAtPoint:(CDStruct_912cb5d2)arg2;

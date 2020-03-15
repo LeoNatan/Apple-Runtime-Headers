@@ -17,12 +17,12 @@
     MPTimeMarker *_closedCaptionMarker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPTimeMarker *closedCaptionMarker; // @synthesize closedCaptionMarker=_closedCaptionMarker;
 @property(retain, nonatomic) MPTimeMarker *URLMarker; // @synthesize URLMarker=_URLMarker;
 @property(retain, nonatomic) MPTimeMarker *artworkMarker; // @synthesize artworkMarker=_artworkMarker;
 @property(retain, nonatomic) MPTimeMarker *chapterMarker; // @synthesize chapterMarker=_chapterMarker;
 @property(retain, nonatomic) MPAVItem *AVItem; // @synthesize AVItem=_AVItem;
-- (void).cxx_destruct;
 - (id)crossedMarkerOfType:(int)arg1;
 - (id)initWithTimeMarkerNotificationUserInfo:(id)arg1;
 

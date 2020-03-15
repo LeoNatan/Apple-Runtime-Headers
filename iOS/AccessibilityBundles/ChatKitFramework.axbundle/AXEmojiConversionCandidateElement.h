@@ -18,13 +18,13 @@
     struct _NSRange _candidateRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(copy, nonatomic) NSString *conversionLanguage; // @synthesize conversionLanguage=_conversionLanguage;
 @property(copy, nonatomic) id candidateEmojiList; // @synthesize candidateEmojiList=_candidateEmojiList;
 @property(nonatomic) struct _NSRange candidateRange; // @synthesize candidateRange=_candidateRange;
 @property(copy, nonatomic) NSString *candidateString; // @synthesize candidateString=_candidateString;
 @property(retain, nonatomic) CKMessageEntryTextViewAccessibility *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (_Bool)selectEmoji:(id)arg1;
 @property(readonly, nonatomic) id currentEmoji;
 - (_Bool)accessibilityActivate;

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSOperationQueue *mediaRemoteSerialQueue; // @synthesize mediaRemoteSerialQueue=_mediaRemoteSerialQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperationQueue *mediaRemoteSerialQueue; // @synthesize mediaRemoteSerialQueue=_mediaRemoteSerialQueue;
 - (void)addOperation:(CDUnknownBlockType)arg1 cancelAllOperations:(_Bool)arg2;
 - (void)cancelAllOperations;
 - (id)init;

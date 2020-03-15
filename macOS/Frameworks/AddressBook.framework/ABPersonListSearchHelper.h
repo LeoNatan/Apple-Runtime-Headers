@@ -29,6 +29,7 @@
 + (void)removeAllRecordsFromAddressBook:(id)arg1;
 + (id)suggestedMeEntryInEntries:(id)arg1;
 + (BOOL)entriesContainMeEntry:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL includeSuggestions; // @synthesize includeSuggestions=_includeSuggestions;
 @property(retain, nonatomic) id <CNCancelable> suggestionSearchSubscription; // @synthesize suggestionSearchSubscription=_suggestionSearchSubscription;
 @property(retain, nonatomic) id <CNCancelable> localSearchSubscription; // @synthesize localSearchSubscription=_localSearchSubscription;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak ABPersonListController *personListController; // @synthesize personListController=_personListController;
 @property(retain, nonatomic) NSDictionary *cachedSuggestionEntriesByIdentifier; // @synthesize cachedSuggestionEntriesByIdentifier=_cachedSuggestionEntriesByIdentifier;
 @property(retain, nonatomic) NSDictionary *cachedPersonEntriesByIdentifier; // @synthesize cachedPersonEntriesByIdentifier=_cachedPersonEntriesByIdentifier;
-- (void).cxx_destruct;
 - (void)removeEntries:(id)arg1;
 - (void)cleaupPreviousSuggestions;
 - (id)fetchSuggestedEntriesByUID;

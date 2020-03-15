@@ -13,8 +13,8 @@
     NSString *_mediaRouteIdentifier;
 }
 
-@property(copy, nonatomic) NSString *mediaRouteIdentifier; // @synthesize mediaRouteIdentifier=_mediaRouteIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *mediaRouteIdentifier; // @synthesize mediaRouteIdentifier=_mediaRouteIdentifier;
 
 @end
 

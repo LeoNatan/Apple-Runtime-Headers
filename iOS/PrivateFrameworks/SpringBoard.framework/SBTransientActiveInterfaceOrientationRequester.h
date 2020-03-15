@@ -14,9 +14,9 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)initWithOrientation:(long long)arg1 andReason:(id)arg2;
 
 @end

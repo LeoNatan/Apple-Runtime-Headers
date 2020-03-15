@@ -8,24 +8,18 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSArray, NSString, PXCuratedLibraryStyleGuide, PXCuratedLibraryViewModel, PXUpdater, UIColor, UIVisualEffectView;
+@class NSArray, NSString, PXCuratedLibraryStyleGuide, PXCuratedLibraryViewModel, PXUpdater, UIVisualEffectView, _PXCuratedLibraryZoomLevelSegmentedControl;
 @protocol PXCuratedLibraryZoomLevelControlDelegate;
 
 @interface PXCuratedLibraryZoomLevelControl : UIView <PXChangeObserver>
 {
     PXUpdater *_updater;
     struct UIEdgeInsets _padding;
-    struct CGSize *_segmentSizes;
-    double _minimumInterSegmentSpacing;
+    struct CGSize *_textSizes;
+    double _minimumInterTextSpacing;
     struct CGSize _intrinsicSize;
     UIVisualEffectView *_backgroundEffectView;
-    UIView *_contentView;
-    UIView *_selectionView;
-    UIColor *_selectedButtonTextColor;
-    UIColor *_unselectedButtonTextColor;
-    NSArray *_selectedButtons;
-    NSArray *_unselectedButtons;
-    double _selectionPillMargin;
+    _PXCuratedLibraryZoomLevelSegmentedControl *_segmentedControl;
     PXCuratedLibraryViewModel *_viewModel;
     PXCuratedLibraryStyleGuide *_styleGuide;
     id <PXCuratedLibraryZoomLevelControlDelegate> _delegate;
@@ -37,7 +31,7 @@
 
 + (id)_enabledZoomLevelIdentifiersForViewModel:(id)arg1;
 + (id)_allZoomLevelIdentifiers;
-+ (id)_localizedTitleForZoomLevel:(long long)arg1 usingShortVariant:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long shrinkLevel; // @synthesize shrinkLevel=_shrinkLevel;
 @property(retain, nonatomic) NSArray *enabledZoomLevelIdentifiers; // @synthesize enabledZoomLevelIdentifiers=_enabledZoomLevelIdentifiers;
 @property(nonatomic) long long selectedZoomLevel; // @synthesize selectedZoomLevel=_selectedZoomLevel;
@@ -45,15 +39,11 @@
 @property(nonatomic) __weak id <PXCuratedLibraryZoomLevelControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXCuratedLibraryStyleGuide *styleGuide; // @synthesize styleGuide=_styleGuide;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_handleContentSizeCategoryDidChange:(id)arg1;
-- (void)_handleButton:(id)arg1;
-- (void)_updateButtonsStyle;
-- (void)_invalidateButtonsStyle;
-- (void)_updateSubviews;
-- (void)_invalidateSubviews;
-- (void)_updateSelection;
+- (void)_handleSegmentedControlAction:(id)arg1;
+- (void)_updateSegmentedControl;
+- (void)_invalidateSegmentedControl;
 - (long long)zoomLevelDisplayedBeforeZoomLevel:(long long)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

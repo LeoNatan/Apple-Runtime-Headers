@@ -23,13 +23,13 @@
     MSTimerGate *_stalenessTimerGate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isShuttingDown; // @synthesize isShuttingDown=_isShuttingDown;
 @property(retain, nonatomic) MSTimerGate *stalenessTimerGate; // @synthesize stalenessTimerGate=_stalenessTimerGate;
 @property(retain, nonatomic) MSTimerGate *idleTimerGate; // @synthesize idleTimerGate=_idleTimerGate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak MSASServerSideModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)workQueueDidEnqueueSubsequentItem;
 - (void)workQueueDidEnqueueFirstItem;
 - (void)workQueueClearStalenessTimer;

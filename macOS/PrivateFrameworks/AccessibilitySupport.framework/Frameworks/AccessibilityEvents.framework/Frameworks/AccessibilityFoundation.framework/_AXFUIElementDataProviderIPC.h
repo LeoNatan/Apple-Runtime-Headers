@@ -14,8 +14,8 @@
     NSMutableSet *__supportedAttributes;
 }
 
-@property(retain, nonatomic) NSMutableSet *_supportedAttributes; // @synthesize _supportedAttributes=__supportedAttributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *_supportedAttributes; // @synthesize _supportedAttributes=__supportedAttributes;
 - (id)_convertOutgoingValue:(id)arg1;
 - (id)convertOutgoingValueForAttribute:(id)arg1 value:(id)arg2;
 - (id)outgoingRepresentation;

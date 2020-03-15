@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     GEOSearchCategory *_category;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOPDAutocompleteEntry *entry; // @synthesize entry=_entry;
 @property(readonly, nonatomic) NSArray *displayLines; // @synthesize displayLines=_displayLines;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float disambiguationRadiusMeters;
 @property(readonly, nonatomic) BOOL hasDisambiguationRadiusMeters;
 @property(readonly, nonatomic) int placeType;

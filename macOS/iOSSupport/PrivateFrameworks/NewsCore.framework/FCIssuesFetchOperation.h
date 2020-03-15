@@ -18,12 +18,12 @@
     NSArray *_resultIssues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resultIssues; // @synthesize resultIssues=_resultIssues;
 @property(retain, nonatomic) NSArray *issueIDs; // @synthesize issueIDs=_issueIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property(copy, nonatomic) FCCachePolicy *cachePolicy; // @synthesize cachePolicy=_cachePolicy;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

@@ -8,20 +8,21 @@
 
 #import <Safari/WBSURLCompletionMatchData-Protocol.h>
 
-@class NSMutableArray, NSString, WBSHistoryItem, WebBookmark;
+@class NSMutableArray, NSString, WebBookmark;
+@protocol WBSURLCompletionMatchData;
 
 __attribute__((visibility("hidden")))
 @interface URLCompletionMatchBookmarkListData : NSObject <WBSURLCompletionMatchData>
 {
     NSMutableArray *_bookmarks;
-    WBSHistoryItem *_historyItem;
+    id <WBSURLCompletionMatchData> _historyMatchData;
 }
 
-@property(retain, nonatomic) WBSHistoryItem *historyItem; // @synthesize historyItem=_historyItem;
 - (void).cxx_destruct;
-- (id)_historyItemAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) id <WBSURLCompletionMatchData> historyMatchData; // @synthesize historyMatchData=_historyMatchData;
+@property(readonly, nonatomic) BOOL shouldPreload;
 - (BOOL)matchesAutocompleteTrigger:(id)arg1;
-- (float)topSitesScoreForPageTitleAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
+- (float)topSitesScoreForPageTitleAtTime:(double)arg1;
 - (float)topSitesScoreForURLStringAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
 @property(readonly, nonatomic) double lastVisitedTimeInterval;
 @property(readonly, nonatomic) BOOL lastVisitWasFailure;
@@ -35,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *originalURLString;
 - (id)matchDataByMergingWithMatchData:(id)arg1;
 @property(readonly, nonatomic) WebBookmark *bookmark;
-- (id)initWithBookmark:(id)arg1 andHistoryItem:(id)arg2;
+- (id)initWithBookmarks:(id)arg1 andHistoryMatchData:(id)arg2;
 - (id)initWithBookmarks:(id)arg1;
 
 // Remaining properties

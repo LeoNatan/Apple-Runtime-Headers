@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     TVImageProxy *_ratingImageProxy;
 }
 
-@property(retain, nonatomic) TVImageProxy *ratingImageProxy; // @synthesize ratingImageProxy=_ratingImageProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVImageProxy *ratingImageProxy; // @synthesize ratingImageProxy=_ratingImageProxy;
 - (void)downloadImageWithURL:(id)arg1 imageInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end

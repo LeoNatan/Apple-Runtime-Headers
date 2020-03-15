@@ -26,12 +26,12 @@
 + (_Bool)_isMutable;
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)settings;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *preferredSceneHostIdentifier; // @synthesize preferredSceneHostIdentifier=_preferredSceneHostIdentifier;
 @property(readonly, copy, nonatomic) NSSet *occlusions; // @synthesize occlusions=_occlusions;
 @property(readonly, nonatomic) long long preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(readonly, nonatomic) double preferredLevel; // @synthesize preferredLevel=_preferredLevel;
 @property(readonly, copy, nonatomic) NSOrderedSet *layers; // @synthesize layers=_layers;
-- (void).cxx_destruct;
 - (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 debug:(_Bool)arg2;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;

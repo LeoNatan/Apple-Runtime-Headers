@@ -17,9 +17,9 @@
     long long _mediaType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly, nonatomic) NUCompositionSchema *schema; // @synthesize schema=_schema;
-- (void).cxx_destruct;
 - (_Bool)isEqualToComposition:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

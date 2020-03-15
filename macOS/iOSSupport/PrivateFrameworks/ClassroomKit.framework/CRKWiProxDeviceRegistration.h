@@ -14,9 +14,9 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSDictionary *devices; // @synthesize devices=_devices;
-- (void).cxx_destruct;
 
 @end
 

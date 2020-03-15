@@ -8,12 +8,6 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct ATXScoredPrediction {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

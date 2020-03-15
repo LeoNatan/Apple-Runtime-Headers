@@ -15,8 +15,8 @@
     long long _slot;
 }
 
-@property(readonly, nonatomic) long long slot; // @synthesize slot=_slot;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long slot; // @synthesize slot=_slot;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 - (id)initWithTitle:(id)arg1 bodyText:(id)arg2 slot:(long long)arg3;
 

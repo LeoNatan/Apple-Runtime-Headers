@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _comparator;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 - (unsigned int)_indexForObject:(id)arg1 buffer:(id)arg2;
 - (unsigned int)_insertionIndexForObject:(id)arg1 buffer:(id)arg2;
 - (void)dequeueObject:(id)arg1 buffer:(id)arg2;

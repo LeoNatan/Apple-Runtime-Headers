@@ -27,13 +27,13 @@
 + (Class)experimentalGroupsType;
 + (Class)extractedDonationsType;
 + (Class)scoredItemsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *assetVersion; // @synthesize assetVersion=_assetVersion;
 @property(retain, nonatomic) NSString *homeLocationGeohash; // @synthesize homeLocationGeohash=_homeLocationGeohash;
 @property(retain, nonatomic) NSMutableArray *experimentalGroups; // @synthesize experimentalGroups=_experimentalGroups;
 @property(retain, nonatomic) NSMutableArray *extractedDonations; // @synthesize extractedDonations=_extractedDonations;
 @property(retain, nonatomic) NSMutableArray *scoredItems; // @synthesize scoredItems=_scoredItems;
 @property(retain, nonatomic) PPPBFeedbackMetadata *feedbackMetadata; // @synthesize feedbackMetadata=_feedbackMetadata;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

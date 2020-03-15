@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapRegion, GEOPDCategorySearchResultSection, GEOPDRelatedSearchSuggestion, GEOPDSearchClientBehavior, NSMutableArray, PBDataReader, PBUnknownFields;
+@class GEOMapRegion, GEOPDRelatedSearchSuggestion, GEOPDSCategorySearchResultSection, GEOPDSearchClientBehavior, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDCategorySearchResult : PBCodable <NSCopying>
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     PBDataReader *_reader;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_browseCategorys;
-    GEOPDCategorySearchResultSection *_categorySearchResultSection;
+    GEOPDSCategorySearchResultSection *_categorySearchResultSection;
     GEOPDRelatedSearchSuggestion *_defaultRelatedSearchSuggestion;
     GEOMapRegion *_displayMapRegion;
     NSMutableArray *_relatedSearchSuggestions;
@@ -68,7 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(retain, nonatomic) GEOPDCategorySearchResultSection *categorySearchResultSection;
+@property(retain, nonatomic) GEOPDSCategorySearchResultSection *categorySearchResultSection;
 @property(readonly, nonatomic) _Bool hasCategorySearchResultSection;
 - (void)_readCategorySearchResultSection;
 - (id)browseCategoryAtIndex:(unsigned long long)arg1;

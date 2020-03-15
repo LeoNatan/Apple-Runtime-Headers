@@ -22,6 +22,7 @@
     struct CGSize _viewSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsPointLabels; // @synthesize showsPointLabels=_showsPointLabels;
 @property(nonatomic) _Bool shouldSkipPlaceholder; // @synthesize shouldSkipPlaceholder=_shouldSkipPlaceholder;
 @property(nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <PXPlacesMapGeotaggableInfoDelegate> geotaggableInformationDelegate; // @synthesize geotaggableInformationDelegate=_geotaggableInformationDelegate;
 @property(retain, nonatomic) PKExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

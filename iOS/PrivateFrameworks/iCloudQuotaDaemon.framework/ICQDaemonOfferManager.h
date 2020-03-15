@@ -17,9 +17,9 @@
 
 + (id)ckBackupDeviceID;
 + (id)sharedDaemonOfferManager;
+- (void).cxx_destruct;
 @property(readonly) NSURLSession *sharedURLSession; // @synthesize sharedURLSession=_sharedURLSession;
 @property(readonly) _ICQAccountManager *accountManager; // @synthesize accountManager=_accountManager;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isLegacyDeviceStorageLevelNotificationEnabled) _Bool legacyDeviceStorageLevelNotificationEnabled;
 @property(retain, nonatomic) NSNumber *simulatedPhotosLibrarySize;
 @property(nonatomic, getter=isBuddyOfferEnabled) _Bool buddyOfferEnabled;
@@ -66,6 +66,8 @@
 - (id)_storageManagementFollowupItem;
 - (id)_storageManagementFollowupNotification;
 - (id)_storageManagementFollowupActions;
+- (void)renewCredentialsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)addCommonHeadersToRequest:(id)arg1;
 - (id)soonestOfferOrStubExpirationDate;
 - (void)teardownOffersForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)processPushNotificationDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;

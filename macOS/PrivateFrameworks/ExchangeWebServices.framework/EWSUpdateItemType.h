@@ -18,12 +18,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long SendMeetingInvitationsOrCancellations; // @synthesize SendMeetingInvitationsOrCancellations=_SendMeetingInvitationsOrCancellations;
 @property(nonatomic) long long MessageDisposition; // @synthesize MessageDisposition=_MessageDisposition;
 @property(nonatomic) long long ConflictResolution; // @synthesize ConflictResolution=_ConflictResolution;
 @property(copy, nonatomic) NSArray *ItemChanges; // @synthesize ItemChanges=_ItemChanges;
 @property(retain, nonatomic) EWSTargetFolderIdType *SavedItemFolderId; // @synthesize SavedItemFolderId=_SavedItemFolderId;
-- (void).cxx_destruct;
 
 @end
 

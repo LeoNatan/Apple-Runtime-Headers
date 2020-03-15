@@ -14,9 +14,9 @@
     REMList *_list;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMList *list; // @synthesize list=_list;
 @property(readonly, nonatomic) REMSharee *sharedOwner; // @synthesize sharedOwner=_sharedOwner;
-- (void).cxx_destruct;
 - (id)shareesExcludingOwner;
 @property(readonly, nonatomic) NSArray *sharees;
 - (id)initWithList:(id)arg1;

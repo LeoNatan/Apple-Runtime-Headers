@@ -15,9 +15,9 @@
     HUAccessoryDebugModuleController *_debugModuleController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUAccessoryDebugModuleController *debugModuleController; // @synthesize debugModuleController=_debugModuleController;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject; // @synthesize homeKitObject=_homeKitObject;
-- (void).cxx_destruct;
 - (id)buildItemModuleControllerForModule:(id)arg1;
 - (id)initWithHomeKitObject:(id)arg1;
 

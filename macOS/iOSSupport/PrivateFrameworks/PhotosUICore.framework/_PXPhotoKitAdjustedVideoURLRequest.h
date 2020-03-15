@@ -16,10 +16,10 @@
     CDUnknownBlockType _resultHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, copy, nonatomic) NSString *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(readonly, nonatomic) PHVideoRequestOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_handleExportFinished:(BOOL)arg1 error:(id)arg2 videoURL:(id)arg3;
 - (void)_renderIfNeeded;
 - (void)progressDidChange;

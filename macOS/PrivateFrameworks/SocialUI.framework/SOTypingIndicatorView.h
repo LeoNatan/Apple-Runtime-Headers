@@ -18,11 +18,11 @@
     NSString *_balloonPlugInBundleID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDarkAqua; // @synthesize isDarkAqua=_isDarkAqua;
 @property(copy, nonatomic) NSString *balloonPlugInBundleID; // @synthesize balloonPlugInBundleID=_balloonPlugInBundleID;
 @property(nonatomic) BOOL flipForRTLLayout; // @synthesize flipForRTLLayout=_flipForRTLLayout;
 @property(nonatomic) BOOL hasDarkBackground; // @synthesize hasDarkBackground=_hasDarkBackground;
-- (void).cxx_destruct;
 - (void)resetTypingLayer;
 - (void)updateLayer;
 - (void)viewDidChangeBackingProperties:(id)arg1;

@@ -13,8 +13,8 @@
     NSDictionary *_keysToSchemata;
 }
 
-@property(copy, nonatomic) NSDictionary *keysToSchemata; // @synthesize keysToSchemata=_keysToSchemata;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *keysToSchemata; // @synthesize keysToSchemata=_keysToSchemata;
 - (BOOL)_validateChild:(id)arg1 ofParent:(id)arg2 withParentAssociatedError:(id)arg3 errorHandler:(CDUnknownBlockType)arg4;
 - (id)initWithSchemaDictionary:(id)arg1 associatedError:(id)arg2 isOptional:(BOOL)arg3;
 

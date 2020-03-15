@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *providerList;
 - (id)providerFromIdentifier:(id)arg1;
+- (void)_sortProviders;
 - (void)_setDefaultProvider:(id)arg1;
 @property(retain, nonatomic) SearchProvider *defaultProvider;
 - (BOOL)urlIsValidSearch:(id)arg1;

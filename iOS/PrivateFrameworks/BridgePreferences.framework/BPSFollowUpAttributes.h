@@ -19,13 +19,13 @@
 }
 
 + (id)attributeWithOptions:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedNotificationDescription; // @synthesize localizedNotificationDescription=_localizedNotificationDescription;
 @property(copy, nonatomic) NSString *localizedNotificationTitle; // @synthesize localizedNotificationTitle=_localizedNotificationTitle;
 @property(retain, nonatomic) NSDictionary *followUpActions; // @synthesize followUpActions=_followUpActions;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(nonatomic) _Bool wantNotification; // @synthesize wantNotification=_wantNotification;
-- (void).cxx_destruct;
 
 @end
 

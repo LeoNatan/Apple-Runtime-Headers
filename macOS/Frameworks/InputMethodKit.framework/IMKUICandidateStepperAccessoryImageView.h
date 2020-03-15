@@ -14,8 +14,8 @@
     NSString *_arrowImageName;
 }
 
-@property(copy, nonatomic) NSString *arrowImageName; // @synthesize arrowImageName=_arrowImageName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *arrowImageName; // @synthesize arrowImageName=_arrowImageName;
 @property(readonly, retain, nonatomic) NSImage *arrowImage; // @synthesize arrowImage=_arrowImage;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)mouseUp:(id)arg1;

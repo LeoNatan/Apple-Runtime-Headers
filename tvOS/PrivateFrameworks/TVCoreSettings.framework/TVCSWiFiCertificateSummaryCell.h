@@ -24,6 +24,7 @@
 }
 
 + (id)dateFormatter;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(readonly, nonatomic) UILabel *expiryDateLabel; // @synthesize expiryDateLabel=_expiryDateLabel;
 @property(readonly, nonatomic) UILabel *expiresByLabel; // @synthesize expiresByLabel=_expiresByLabel;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *issuer; // @synthesize issuer=_issuer;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateCellBackground;
 - (id)_newTitleLabel;

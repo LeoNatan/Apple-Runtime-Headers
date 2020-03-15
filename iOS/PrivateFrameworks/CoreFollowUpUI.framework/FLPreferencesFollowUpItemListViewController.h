@@ -18,8 +18,8 @@
     UIViewController *_presentationContext;
 }
 
-@property(retain, nonatomic) UIViewController *presentationContext; // @synthesize presentationContext=_presentationContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *presentationContext; // @synthesize presentationContext=_presentationContext;
 - (void)_dismissFlowWithError:(id)arg1;
 - (void)_showRadarPromptForItem:(id)arg1 action:(id)arg2;
 - (void)preflightNetworkConnectivityForHandler:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

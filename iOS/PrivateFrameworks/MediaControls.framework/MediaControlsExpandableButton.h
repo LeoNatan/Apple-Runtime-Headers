@@ -33,6 +33,7 @@
     struct CGSize _maximumExpandedSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(nonatomic) _Bool resetTracking; // @synthesize resetTracking=_resetTracking;
 @property(nonatomic) _Bool displayMessage; // @synthesize displayMessage=_displayMessage;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long selectedOptionIndex; // @synthesize selectedOptionIndex=_selectedOptionIndex;
 @property(retain, nonatomic) NSArray *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (long long)_buttonLayoutAxis;
 - (void)_resetSelectionView;

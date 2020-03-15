@@ -30,6 +30,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *loggingProcessName; // @synthesize loggingProcessName=_loggingProcessName;
 @property(nonatomic) double eventDate; // @synthesize eventDate=_eventDate;
 @property(retain, nonatomic) NSString *displayDeviceSerialNumber; // @synthesize displayDeviceSerialNumber=_displayDeviceSerialNumber;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *documentationID; // @synthesize documentationID=_documentationID;
 @property(retain, nonatomic) NSData *termsText; // @synthesize termsText=_termsText;
 @property(nonatomic) int eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

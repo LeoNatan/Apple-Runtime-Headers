@@ -22,6 +22,7 @@
 }
 
 + (id)mediaTagWithDataHash:(id)arg1 mime:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldInlineResources; // @synthesize shouldInlineResources=_shouldInlineResources;
 @property(nonatomic) _Bool shouldIgnoreNextEndElement; // @synthesize shouldIgnoreNextEndElement=_shouldIgnoreNextEndElement;
 @property(retain, nonatomic) NSXMLParser *xmlParser; // @synthesize xmlParser=_xmlParser;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 @property(retain, nonatomic) KSHTMLWriter *htmlWriter; // @synthesize htmlWriter=_htmlWriter;
 @property(retain, nonatomic) NSMutableString *outputHTML; // @synthesize outputHTML=_outputHTML;
-- (void).cxx_destruct;
 - (void)convertENMLToHTML:(id)arg1 withReferencedResources:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)convertENMLToHTML:(id)arg1 withInlinedResources:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)convertENMLToHTML:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

@@ -19,8 +19,8 @@
 
 + (id)addressForHost:(const char *)arg1 port:(int)arg2;
 + (id)schemes;
-@property(readonly) int port; // @synthesize port=_port;
 - (void).cxx_destruct;
+@property(readonly) int port; // @synthesize port=_port;
 - (unsigned int)supportedDirections;
 - (id)localAddresses;
 - (void)disconnect;

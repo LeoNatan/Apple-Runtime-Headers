@@ -14,9 +14,9 @@
     HRElectrocardiogramSessionSimulationView *_screenView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HRElectrocardiogramSessionSimulationView *screenView; // @synthesize screenView=_screenView;
 @property(readonly, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
-- (void).cxx_destruct;
 - (void)setTimeRemaining:(double)arg1;
 - (void)setUpUI;
 - (void)setContentMode:(long long)arg1;

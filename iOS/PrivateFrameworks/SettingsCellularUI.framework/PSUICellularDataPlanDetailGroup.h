@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 + (void)configurePlanSpecifiers:(id)arg1 planItem:(id)arg2 target:(id)arg3;
 + (id)accountManageButtonForPlanItem:(id)arg1 target:(id)arg2;
 + (id)specifiersFromCellularPlanItem:(id)arg1 target:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
-- (void).cxx_destruct;
 - (void)managePlanPressed:(id)arg1;
 - (id)removeCellularPlanConfirmationTitle:(id)arg1;
 - (id)removeCellularPlanConfirmationMessage:(id)arg1;

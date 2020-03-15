@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _notifyOfTimeout; // @synthesize _notifyOfTimeout=__notifyOfTimeout;
 @property(retain, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
 @property(retain, nonatomic) NSString *heartbeatTokenValue; // @synthesize heartbeatTokenValue=_heartbeatTokenValue;
@@ -29,7 +30,6 @@
 @property(nonatomic) double waitForReplyTimeout; // @synthesize waitForReplyTimeout=_waitForReplyTimeout;
 @property(nonatomic) _Bool waitForReply; // @synthesize waitForReply=_waitForReply;
 @property(retain, nonatomic) AKCircleRequestPayload *payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

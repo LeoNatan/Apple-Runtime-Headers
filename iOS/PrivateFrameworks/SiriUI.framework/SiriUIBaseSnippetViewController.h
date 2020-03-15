@@ -19,10 +19,10 @@
     id <SiriUIBaseAceObjectViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriUIBaseAceObjectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isUtteranceUserInteractionEnabled) _Bool utteranceUserInteractionEnabled; // @synthesize utteranceUserInteractionEnabled=_utteranceUserInteractionEnabled;
 @property(retain, nonatomic) AceObject *aceObject; // @synthesize aceObject;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (double)desiredTopPaddingBelowController:(id)arg1;
 - (double)desiredHeight;

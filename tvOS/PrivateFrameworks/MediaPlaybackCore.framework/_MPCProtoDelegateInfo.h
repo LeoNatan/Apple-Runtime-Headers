@@ -30,6 +30,7 @@
 }
 
 + (id)currentDeviceDelegateInfo;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool privateListeningEnabled; // @synthesize privateListeningEnabled=_privateListeningEnabled;
 @property(retain, nonatomic) NSString *timeZoneName; // @synthesize timeZoneName=_timeZoneName;
 @property(retain, nonatomic) NSString *requestUserAgent; // @synthesize requestUserAgent=_requestUserAgent;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) unsigned long long accountID; // @synthesize accountID=_accountID;
 @property(nonatomic) long long delegateInfoID; // @synthesize delegateInfoID=_delegateInfoID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

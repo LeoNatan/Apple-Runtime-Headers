@@ -18,12 +18,12 @@
 }
 
 + (id)_cacheQueue;
+- (void).cxx_destruct;
 @property(retain) NSString *cachePath; // @synthesize cachePath=_cachePath;
 @property(retain) NSData *cacheImageData; // @synthesize cacheImageData=_cacheImageData;
 @property(retain) NSArray *cachePrefToHide; // @synthesize cachePrefToHide=_cachePrefToHide;
 @property BOOL cacheHideOverLay; // @synthesize cacheHideOverLay=_cacheHideOverLay;
 @property BOOL cacheIsValid; // @synthesize cacheIsValid=_cacheIsValid;
-- (void).cxx_destruct;
 - (id)_currentLanguage;
 - (BOOL)readCache;
 - (void)writeCacheWithCompletion:(CDUnknownBlockType)arg1;

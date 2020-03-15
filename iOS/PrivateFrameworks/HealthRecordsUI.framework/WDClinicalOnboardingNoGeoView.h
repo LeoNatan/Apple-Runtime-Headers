@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UILayoutGuide *_containerLayoutGuide;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILayoutGuide *containerLayoutGuide; // @synthesize containerLayoutGuide=_containerLayoutGuide;
 @property(retain, nonatomic) NSLayoutConstraint *containerCenterYConstraint; // @synthesize containerCenterYConstraint=_containerCenterYConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *locationServicesButtonBaselineConstraint; // @synthesize locationServicesButtonBaselineConstraint=_locationServicesButtonBaselineConstraint;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIButton *locationServicesButton; // @synthesize locationServicesButton=_locationServicesButton;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateForCurrentSizeCategory;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_tappedLocationServices:(id)arg1;

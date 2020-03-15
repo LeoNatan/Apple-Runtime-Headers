@@ -17,9 +17,9 @@
     id <FCFeedTransforming> _privateLimitTransformation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCFeedTransforming> privateLimitTransformation; // @synthesize privateLimitTransformation=_privateLimitTransformation;
 @property(copy, nonatomic) NSArray *priorFeedItems; // @synthesize priorFeedItems=_priorFeedItems;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 - (id)initWithPersonalizer:(id)arg1 limit:(unsigned long long)arg2 priorFeedItems:(id)arg3;
 - (id)init;

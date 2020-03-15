@@ -19,9 +19,9 @@
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
 + (id)configurationFromFirewallRuleConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDNetworkRouterWANFirewallRuleList *ruleList; // @synthesize ruleList=_ruleList;
 @property(retain, nonatomic) HMDNetworkRouterWANFirewall *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

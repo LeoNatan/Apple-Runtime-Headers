@@ -16,9 +16,9 @@
 }
 
 + (id)keysForValuesToObserveForView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACSHHoverTextModel *hoverTextModel; // @synthesize hoverTextModel=_hoverTextModel;
 @property(retain, nonatomic) NSColor *fontColor; // @synthesize fontColor=_fontColor;
-- (void).cxx_destruct;
 - (void)updateWithHoverTextModel:(id)arg1;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 - (id)dictionaryForSaving;

@@ -17,10 +17,10 @@
     MPSectionedCollection *_modelObjects;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldLibraryAdd; // @synthesize shouldLibraryAdd=_shouldLibraryAdd;
 @property(copy, nonatomic) MPSectionedCollection *modelObjects; // @synthesize modelObjects=_modelObjects;
 @property(copy, nonatomic) MPModelObject *referralObject; // @synthesize referralObject=_referralObject;
-- (void).cxx_destruct;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

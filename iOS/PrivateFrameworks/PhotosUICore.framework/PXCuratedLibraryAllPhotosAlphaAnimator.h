@@ -33,6 +33,7 @@
     double _autoFadeColumnIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double autoFadeColumnIndex; // @synthesize autoFadeColumnIndex=_autoFadeColumnIndex;
 @property(nonatomic) double presentationAutoFadeAmount; // @synthesize presentationAutoFadeAmount=_presentationAutoFadeAmount;
 @property(readonly, nonatomic) _Bool isBeingMutated; // @synthesize isBeingMutated=_isBeingMutated;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) double targetColumnIndex; // @synthesize targetColumnIndex=_targetColumnIndex;
 @property(readonly, nonatomic) double columnIndex; // @synthesize columnIndex=_columnIndex;
 @property(readonly, nonatomic) NSArray *allowedColumns; // @synthesize allowedColumns=_allowedColumns;
-- (void).cxx_destruct;
 - (void)_updatePresentationValue;
 - (void)_invalidatePresentationValue;
 - (void)_updateTransitionInfo;

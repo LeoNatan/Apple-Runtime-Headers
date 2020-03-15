@@ -22,13 +22,13 @@
 }
 
 + (id)newViewForField:(id)arg1 fieldTemplate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
 @property(retain, nonatomic) PKDiffView *diffView; // @synthesize diffView=_diffView;
 @property(retain, nonatomic) PKPassColorProfile *colorProfile; // @synthesize colorProfile=_colorProfile;
 @property(retain, nonatomic) PKPassFieldTemplate *fieldTemplate; // @synthesize fieldTemplate=_fieldTemplate;
 @property(retain, nonatomic) PKPassField *field; // @synthesize field=_field;
-- (void).cxx_destruct;
 - (id)_valueAttributedStringForColorProfile:(id)arg1;
 - (id)_labelAttributedStringForColorProfile:(id)arg1;
 - (struct CGSize)_resizeMultiLineValueFontForAvailableSize:(struct CGSize)arg1;

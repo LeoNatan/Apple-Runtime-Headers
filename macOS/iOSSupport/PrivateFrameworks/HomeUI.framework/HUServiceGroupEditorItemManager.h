@@ -17,12 +17,12 @@
     HFStaticItem *_serviceGridItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItem *serviceGridItem; // @synthesize serviceGridItem=_serviceGridItem;
 @property(retain, nonatomic) HFItem *instructionsItem; // @synthesize instructionsItem=_instructionsItem;
 @property(retain, nonatomic) HFStaticItem *nameAndIconItem; // @synthesize nameAndIconItem=_nameAndIconItem;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) HFServiceGroupBuilder *serviceGroupBuilder; // @synthesize serviceGroupBuilder=_serviceGroupBuilder;
-- (void).cxx_destruct;
 - (id)currentSectionIdentifiers;
 - (id)_sectionIdentifierForItem:(id)arg1;
 - (id)_titleForSectionWithIdentifier:(id)arg1;

@@ -30,13 +30,13 @@
 + (unsigned int)freePasswordSettingFromServerValue:(unsigned int)arg1;
 + (id)serverValueForPaidPasswordSetting:(unsigned int)arg1;
 + (id)serverValueForFreePasswordSetting:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int paidSetting; // @synthesize paidSetting=_paidSetting;
 @property(readonly, nonatomic) unsigned int freeSetting; // @synthesize freeSetting=_freeSetting;
 @property(readonly, nonatomic) __weak id <NSURLSessionDelegate><AMSURLProtocolDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)performSync;
 - (id)initWithAccount:(id)arg1 freeSetting:(unsigned int)arg2 paidSetting:(unsigned int)arg3 delegate:(id)arg4 bag:(id)arg5;
 

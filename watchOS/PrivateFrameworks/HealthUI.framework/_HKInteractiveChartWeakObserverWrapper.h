@@ -13,8 +13,8 @@
     id <HKInteractiveChartViewObserver> _observer;
 }
 
-@property(readonly, nonatomic) __weak id <HKInteractiveChartViewObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <HKInteractiveChartViewObserver> observer; // @synthesize observer=_observer;
 - (id)initWithObserver:(id)arg1;
 
 @end

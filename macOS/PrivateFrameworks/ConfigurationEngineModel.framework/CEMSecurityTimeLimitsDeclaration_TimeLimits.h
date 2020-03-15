@@ -19,11 +19,11 @@
 + (id)buildRequiredOnly;
 + (id)buildWithWeekdayAllowance:(id)arg1 withWeekdayCurfew:(id)arg2 withWeekendAllowance:(id)arg3 withWeekendCurfew:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMSecurityTimeLimitsDeclaration_Allowance *payloadWeekendCurfew; // @synthesize payloadWeekendCurfew=_payloadWeekendCurfew;
 @property(copy, nonatomic) CEMSecurityTimeLimitsDeclaration_Allowance *payloadWeekendAllowance; // @synthesize payloadWeekendAllowance=_payloadWeekendAllowance;
 @property(copy, nonatomic) CEMSecurityTimeLimitsDeclaration_Allowance *payloadWeekdayCurfew; // @synthesize payloadWeekdayCurfew=_payloadWeekdayCurfew;
 @property(copy, nonatomic) CEMSecurityTimeLimitsDeclaration_Allowance *payloadWeekdayAllowance; // @synthesize payloadWeekdayAllowance=_payloadWeekdayAllowance;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long profileSource; // @synthesize profileSource=_profileSource;
 @property _Bool applicationCreated; // @synthesize applicationCreated=_applicationCreated;
 @property _Bool isSetAside; // @synthesize isSetAside=_isSetAside;
@@ -40,7 +41,6 @@
 @property(copy) NSString *payloadOrganization; // @synthesize payloadOrganization=_payloadOrganization;
 @property(copy) NSString *payloadUUID; // @synthesize payloadUUID=_payloadUUID;
 @property(copy) NSString *payloadProtocolType; // @synthesize payloadProtocolType=_payloadProtocolType;
-- (void).cxx_destruct;
 - (id)copyLegacyDictionary;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;

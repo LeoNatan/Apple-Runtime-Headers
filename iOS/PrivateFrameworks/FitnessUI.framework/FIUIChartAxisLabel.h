@@ -19,6 +19,7 @@
     struct CGSize _shadowOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double shadowBlur; // @synthesize shadowBlur=_shadowBlur;
 @property(nonatomic) struct CGSize shadowOffset; // @synthesize shadowOffset=_shadowOffset;
 @property(nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool useReversePlacement; // @synthesize useReversePlacement=_useReversePlacement;
 @property(retain, nonatomic) id location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

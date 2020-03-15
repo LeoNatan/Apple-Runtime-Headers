@@ -12,31 +12,33 @@ __attribute__((visibility("hidden")))
 @interface CNCDChangeHistoryResultQuery : CNTask
 {
     BOOL _shouldUnifyResults;
+    BOOL _includeGroupChanges;
     CNCDChangeHistoryClient *_client;
     CNChangeHistoryAnchor *_startingAnchor;
     NSManagedObjectContext *_context;
 }
 
 + (id)currentHistoryAnchorInContext:(id)arg1 error:(id *)arg2;
-+ (id)deltaSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
-+ (id)fullSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
++ (id)deltaSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 includeGroupChanges:(BOOL)arg3 startingAnchor:(id)arg4 context:(id)arg5;
++ (id)fullSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 includeGroupChanges:(BOOL)arg3 startingAnchor:(id)arg4 context:(id)arg5;
 + (BOOL)isAnchorValid:(id)arg1 context:(id)arg2;
 + (id)deltaSyncValidationTaskWithClient:(id)arg1 anchor:(id)arg2 context:(id)arg3;
-+ (id)taskForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
-+ (id)changeHistoryResultForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 sinceAnchor:(id)arg3 context:(id)arg4 error:(id *)arg5;
++ (id)taskForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 includeGroupChanges:(BOOL)arg3 startingAnchor:(id)arg4 context:(id)arg5;
++ (id)changeHistoryResultForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 includeGroupChanges:(BOOL)arg3 sinceAnchor:(id)arg4 context:(id)arg5 error:(id *)arg6;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) CNChangeHistoryAnchor *startingAnchor; // @synthesize startingAnchor=_startingAnchor;
+@property(readonly, nonatomic) BOOL includeGroupChanges; // @synthesize includeGroupChanges=_includeGroupChanges;
 @property(readonly, nonatomic) BOOL shouldUnifyResults; // @synthesize shouldUnifyResults=_shouldUnifyResults;
 @property(readonly, nonatomic) CNCDChangeHistoryClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)didRun;
 - (void)configureResult:(id)arg1 forTransactions:(id)arg2;
 - (id)requestForToken:(id)arg1;
 - (id)lastTokenForClient;
 - (id)transactions:(id *)arg1;
 - (id)run:(id *)arg1;
-- (id)initWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
+- (id)initWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 includeGroupChanges:(BOOL)arg3 startingAnchor:(id)arg4 context:(id)arg5;
 
 @end
 

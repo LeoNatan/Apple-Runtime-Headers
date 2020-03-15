@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak CKRecord *record; // @synthesize record=_record;
 @property(nonatomic) _Bool trackChanges; // @synthesize trackChanges=_trackChanges;
 @property(retain, nonatomic) NSMutableSet *changedKeysSet; // @synthesize changedKeysSet=_changedKeysSet;
 @property(retain, nonatomic) NSMutableDictionary *originalValues; // @synthesize originalValues=_originalValues;
 @property(retain, nonatomic) NSMutableDictionary *values; // @synthesize values=_values;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

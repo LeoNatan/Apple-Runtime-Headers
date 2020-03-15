@@ -38,6 +38,7 @@
     double _queryRetryDelay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s modelLock; // @synthesize modelLock=_modelLock;
 @property(nonatomic) int queryRetryCount; // @synthesize queryRetryCount=_queryRetryCount;
 @property(nonatomic) double queryRetryDelay; // @synthesize queryRetryDelay=_queryRetryDelay;
@@ -63,7 +64,6 @@
 @property(nonatomic) __weak id <AAUIAchievementsDataProviderInitialLoadListener> initialLoadListener; // @synthesize initialLoadListener=_initialLoadListener;
 @property(nonatomic) __weak id <AAUIAchievementsDataProviderDelegate> mainSectionDelegate; // @synthesize mainSectionDelegate=_mainSectionDelegate;
 @property(nonatomic) __weak id <AAUIAchievementsDataProviderDelegate> recentAndRelevantSectionDelegate; // @synthesize recentAndRelevantSectionDelegate=_recentAndRelevantSectionDelegate;
-- (void).cxx_destruct;
 - (id)_mainSectionIndexPathForAchievement:(id)arg1;
 - (id)_recentAndRelevantSectionIndexPathForAchievement:(id)arg1;
 - (int)_deleteAchievement:(id)arg1 fromUnfiltered:(_Bool)arg2;

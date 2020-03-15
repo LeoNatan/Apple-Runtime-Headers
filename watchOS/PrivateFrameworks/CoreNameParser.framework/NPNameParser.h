@@ -15,8 +15,8 @@
     NPHMMClassifier *_classifier;
 }
 
-@property(retain) NPHMMClassifier *classifier; // @synthesize classifier=_classifier;
 - (void).cxx_destruct;
+@property(retain) NPHMMClassifier *classifier; // @synthesize classifier=_classifier;
 - (unsigned int)genderMajorityForGivenName:(id)arg1;
 - (unsigned int)frequencyOfLatinGivenName:(id)arg1;
 - (unsigned int)frequencyOfLatinFamilyName:(id)arg1;

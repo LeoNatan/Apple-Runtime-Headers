@@ -17,12 +17,12 @@
     SGStorageReminder *_reminder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGStorageReminder *reminder; // @synthesize reminder=_reminder;
 @property(readonly, nonatomic) SGStorageContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) NSArray *eventBatch; // @synthesize eventBatch=_eventBatch;
 @property(readonly, nonatomic) SGStorageEvent *event; // @synthesize event=_event;
 @property(readonly, nonatomic) unsigned long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToJournalEntry:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

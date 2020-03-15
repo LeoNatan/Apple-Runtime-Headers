@@ -13,8 +13,8 @@
     UIColor *_pillColor;
 }
 
-@property(retain, nonatomic) UIColor *pillColor; // @synthesize pillColor=_pillColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *pillColor; // @synthesize pillColor=_pillColor;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 settings:(id)arg2;

@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _deserializationBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType deserializationBlock; // @synthesize deserializationBlock=_deserializationBlock;
 @property(readonly, nonatomic) CDUnknownBlockType serializationBlock; // @synthesize serializationBlock=_serializationBlock;
-- (void).cxx_destruct;
 - (id)initWithSerializedRepresentationBlock:(CDUnknownBlockType)arg1 deserializationBlock:(CDUnknownBlockType)arg2;
 
 @end

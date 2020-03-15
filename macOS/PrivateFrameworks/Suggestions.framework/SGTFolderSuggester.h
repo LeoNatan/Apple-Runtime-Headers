@@ -15,8 +15,8 @@
     NSURL *_rootPath;
 }
 
-@property(copy) NSURL *rootPath; // @synthesize rootPath=_rootPath;
 - (void).cxx_destruct;
+@property(copy) NSURL *rootPath; // @synthesize rootPath=_rootPath;
 - (void)setInput:(id)arg1;
 - (void)dealloc;
 - (void)cleanup;

@@ -21,8 +21,8 @@
 + (id)limitValues;
 + (BOOL)validLimitValue:(long long)arg1;
 + (long long)defaultLimitValue;
-@property(readonly) FRManagedUser *user; // @synthesize user=_user;
 - (void).cxx_destruct;
+@property(readonly) FRManagedUser *user; // @synthesize user=_user;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

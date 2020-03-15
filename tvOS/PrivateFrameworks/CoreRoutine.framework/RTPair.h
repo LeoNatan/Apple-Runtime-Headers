@@ -17,9 +17,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)getClusterClassOfObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id secondObject; // @synthesize secondObject=_secondObject;
 @property(readonly, nonatomic) id firstObject; // @synthesize firstObject=_firstObject;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

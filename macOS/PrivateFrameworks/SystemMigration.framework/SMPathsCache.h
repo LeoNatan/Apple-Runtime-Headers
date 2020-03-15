@@ -15,10 +15,10 @@
     NSMutableDictionary *_cache;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *cache; // @synthesize cache=_cache;
 @property(retain) NSMutableDictionary *persistentCache; // @synthesize persistentCache=_persistentCache;
 @property(retain) NSURL *cacheLocation; // @synthesize cacheLocation=_cacheLocation;
-- (void).cxx_destruct;
 - (void)setCacheData:(id)arg1 forKey:(id)arg2 persistent:(BOOL)arg3;
 - (void)setCacheData:(id)arg1 forKey:(id)arg2;
 - (id)cacheDataForKey:(id)arg1;

@@ -25,11 +25,11 @@
 + (id)resultWithRestrictedActivity:(long long)arg1 bundleID:(id)arg2;
 + (id)resultWithInvalidActivity:(long long)arg1 bundleID:(id)arg2;
 + (id)resultWithExistingActivity:(long long)arg1 bundleID:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

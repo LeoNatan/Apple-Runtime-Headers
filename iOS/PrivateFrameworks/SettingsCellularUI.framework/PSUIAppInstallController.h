@@ -26,13 +26,13 @@ __attribute__((visibility("hidden")))
 + (id)loadIconFromURL:(id)arg1 session:(id)arg2;
 + (void)lookupAppFromStore:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)lookupAppDescriptionForInstalledApp:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *moreAppsURL; // @synthesize moreAppsURL=_moreAppsURL;
 @property(retain) NSURL *installURL; // @synthesize installURL=_installURL;
 @property(retain) PSUIAppDescription *appDescription; // @synthesize appDescription=_appDescription;
 @property(readonly) int installState; // @synthesize installState=_installState;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) NSString *appID; // @synthesize appID=_appID;
-- (void).cxx_destruct;
 - (id)specifier;
 - (void)moreAppsButtonTapped:(id)arg1;
 - (_Bool)moreAppsAvailable;

@@ -51,6 +51,8 @@
 + (void)loadDefaults;
 + (void)setupDefaults;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct ICDrawingEstimatedAltitudeAndAzimuthFilter *estimatedAltitudeAndAzimuthFilter; // @synthesize estimatedAltitudeAndAzimuthFilter=_estimatedAltitudeAndAzimuthFilter;
 @property(nonatomic) struct ICDrawingRulerExtremaFilter *rulerExtremaFilter; // @synthesize rulerExtremaFilter=_rulerExtremaFilter;
 @property(nonatomic) struct ICDrawingEndCapsFilter *endCapFilter; // @synthesize endCapFilter=_endCapFilter;
@@ -73,8 +75,6 @@
 @property(nonatomic) struct CGAffineTransform rulerTransform; // @synthesize rulerTransform=_rulerTransform;
 @property(nonatomic) double eraserIndicatorAlpha; // @synthesize eraserIndicatorAlpha=_eraserIndicatorAlpha;
 @property _Bool isSnappedToRuler; // @synthesize isSnappedToRuler=_isSnappedToRuler;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)drawingCancelledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)drawingEndedWithPreCompletion:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_drawingAddPoint:(CDStruct_f17e9403)arg1;

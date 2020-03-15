@@ -22,10 +22,10 @@
 }
 
 + (id)actionFromActionsArray:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PFAction *currentAction; // @synthesize currentAction=_currentAction;
 @property(readonly) BOOL interruptSupported; // @synthesize interruptSupported=_interruptSupported;
 @property(readonly) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (int)performRedo;
 - (int)performUndo;
 - (BOOL)canUndo;

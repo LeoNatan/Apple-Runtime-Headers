@@ -11,8 +11,8 @@
     CDUnknownBlockType _block;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)_loadClassesUsingBlock:(CDUnknownBlockType)arg1;

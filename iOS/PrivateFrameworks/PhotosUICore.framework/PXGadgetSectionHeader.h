@@ -27,6 +27,7 @@
 + (id)buttonImageForButtonType:(unsigned long long)arg1;
 + (id)buttonFontForButtonType:(unsigned long long)arg1;
 + (id)titleFontForHeaderStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType accessoryButtonPressed; // @synthesize accessoryButtonPressed=_accessoryButtonPressed;
 @property(nonatomic) _Bool shouldShowDividerOnFirstSection; // @synthesize shouldShowDividerOnFirstSection=_shouldShowDividerOnFirstSection;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *customButtonTitle; // @synthesize customButtonTitle=_customButtonTitle;
 @property(readonly, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(nonatomic) unsigned long long headerStyle; // @synthesize headerStyle=_headerStyle;
-- (void).cxx_destruct;
 - (void)_configureWithGadget:(id)arg1;
 - (void)performChangesWithGadget:(id)arg1 additionalChanges:(CDUnknownBlockType)arg2;
 - (void)performChanges:(CDUnknownBlockType)arg1;

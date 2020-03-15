@@ -16,11 +16,11 @@
     NSDictionary *_containerByContactIdentifier;
 }
 
-@property(retain, nonatomic) NSDictionary *containerByContactIdentifier; // @synthesize containerByContactIdentifier=_containerByContactIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNMultiDictionary *linkedIdentifierMap; // @synthesize linkedIdentifierMap=_linkedIdentifierMap;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *containerByContactIdentifier; // @synthesize containerByContactIdentifier=_containerByContactIdentifier;
 - (id)containerForContactWithIdentifier:(id)arg1;
 - (BOOL)isDirectoryContainerForContactWithIdentifier:(id)arg1;
 - (BOOL)isExchangeContainerForContactWithIdentifier:(id)arg1;
@@ -35,7 +35,6 @@
 - (id)identifiersOfContactsUnifiedUnderMultiValueWithIdentifier:(id)arg1 forDisplayedKey:(id)arg2;
 - (id)identifiersOfValuesUnifiedUnderMultiValueWithIdentifier:(id)arg1 forDisplayedKey:(id)arg2;
 - (id)contacts;
-- (void)buildPersonToContainerMap;
 - (id)initWithContact:(id)arg1 contactStore:(id)arg2;
 
 @end

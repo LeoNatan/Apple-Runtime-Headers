@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     unsigned int _calendarUnit;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int calendarUnit; // @synthesize calendarUnit=_calendarUnit;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

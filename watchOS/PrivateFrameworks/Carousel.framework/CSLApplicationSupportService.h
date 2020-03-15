@@ -29,11 +29,11 @@
 
 + (void)startDefaultService;
 + (id)defaultService;
+- (void).cxx_destruct;
 @property(getter=isStarted) _Bool started; // @synthesize started=_started;
 @property(readonly, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
 @property(readonly, nonatomic) CSLDeviceLockManager *deviceLockManager; // @synthesize deviceLockManager=_deviceLockManager;
 @property(readonly, nonatomic) IOSSHLApplicationsManager *applicationsManager; // @synthesize applicationsManager=_applicationsManager;
-- (void).cxx_destruct;
 - (void)requestPasscodeUnlockUIForClient:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)applicationInitializationContextForClient:(id)arg1;
 - (id)initialDisplayContextForAppInfo:(id)arg1;

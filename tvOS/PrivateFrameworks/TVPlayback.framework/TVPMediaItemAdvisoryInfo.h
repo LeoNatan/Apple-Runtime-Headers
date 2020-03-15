@@ -14,9 +14,9 @@
     NSString *_ratingDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *ratingDescription; // @synthesize ratingDescription=_ratingDescription;
 @property(retain, nonatomic) NSString *ratingName; // @synthesize ratingName=_ratingName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRatingDescription:(id)arg1;
 

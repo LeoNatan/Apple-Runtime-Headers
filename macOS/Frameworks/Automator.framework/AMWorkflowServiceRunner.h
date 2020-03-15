@@ -18,11 +18,11 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) AMWorkflowController *controller; // @synthesize controller=_controller;
 @property(retain) NSPasteboard *pasteboard; // @synthesize pasteboard=_pasteboard;
 @property(retain) NSURL *workflowURL; // @synthesize workflowURL=_workflowURL;
-- (void).cxx_destruct;
 - (void)workflowControllerDidRun:(id)arg1;
 - (void)workflowControllerDidStop:(id)arg1;
 - (void)workflowController:(id)arg1 didError:(id)arg2;

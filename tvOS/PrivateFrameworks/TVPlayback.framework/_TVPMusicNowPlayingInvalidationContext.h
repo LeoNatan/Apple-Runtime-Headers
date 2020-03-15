@@ -15,10 +15,10 @@
     NSString *_playingItemChangeReason;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *playingItemChangeReason; // @synthesize playingItemChangeReason=_playingItemChangeReason;
 @property(nonatomic) _Bool playingItem; // @synthesize playingItem=_playingItem;
 @property(nonatomic) _Bool queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

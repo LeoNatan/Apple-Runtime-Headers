@@ -18,11 +18,11 @@
     NSString *_encoding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool certifiedText; // @synthesize certifiedText=_certifiedText;
 @property(retain, nonatomic) NSString *encoding; // @synthesize encoding=_encoding;
 @property(retain, nonatomic) NSString *stringData; // @synthesize stringData=_stringData;
 @property(retain, nonatomic) id byteStream; // @synthesize byteStream=_byteStream;
-- (void).cxx_destruct;
 
 @end
 

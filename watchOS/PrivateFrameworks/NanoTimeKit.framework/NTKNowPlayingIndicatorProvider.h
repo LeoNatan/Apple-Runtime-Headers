@@ -15,8 +15,8 @@
 }
 
 + (id)nowPlayingIndicatorProviderWithTintColor:(id)arg1 family:(int)arg2 state:(int)arg3;
-@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

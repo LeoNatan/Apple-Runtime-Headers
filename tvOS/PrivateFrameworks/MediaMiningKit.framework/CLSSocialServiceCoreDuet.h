@@ -13,8 +13,8 @@
     CLSSocialServiceContacts *_contactSocialService;
 }
 
-@property(retain) CLSSocialServiceContacts *contactSocialService; // @synthesize contactSocialService=_contactSocialService;
 - (void).cxx_destruct;
+@property(retain) CLSSocialServiceContacts *contactSocialService; // @synthesize contactSocialService=_contactSocialService;
 - (id)coreDuetPersonSuggestionsOnDate:(id)arg1;
 - (id)init;
 

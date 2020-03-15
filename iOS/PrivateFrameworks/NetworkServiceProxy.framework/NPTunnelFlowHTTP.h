@@ -18,13 +18,13 @@
     NSNumber *_responseContentLength;
 }
 
+- (void).cxx_destruct;
 @property _Bool responseSuccess; // @synthesize responseSuccess=_responseSuccess;
 @property(retain) NSNumber *responseContentLength; // @synthesize responseContentLength=_responseContentLength;
 @property _Bool receivedHeaders; // @synthesize receivedHeaders=_receivedHeaders;
 @property(copy) CDUnknownBlockType postCompletionHandler; // @synthesize postCompletionHandler=_postCompletionHandler;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(retain) NSMutableData *responseData; // @synthesize responseData=_responseData;
-- (void).cxx_destruct;
 - (_Bool)isClientFlowClosed;
 - (void)closeClientFlowWithError:(int)arg1;
 - (void)sendDataToClient:(id)arg1 fromTunnel:(_Bool)arg2;

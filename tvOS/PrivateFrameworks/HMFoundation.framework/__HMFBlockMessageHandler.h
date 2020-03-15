@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
-@property(readonly, copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(readonly, copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (_Bool)invokeWithMessage:(id)arg1;
 
 @end

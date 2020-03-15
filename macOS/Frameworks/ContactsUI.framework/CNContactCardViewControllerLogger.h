@@ -15,8 +15,8 @@
     NSObject<OS_os_log> *_log;
 }
 
-@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void)logCommitedEditingResults:(id)arg1;
 - (void)logReceivedRequestToSaveContact:(id)arg1;
 - (void)logDidSaveContact:(id)arg1;

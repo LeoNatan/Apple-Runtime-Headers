@@ -15,9 +15,9 @@
 }
 
 + (id)pointTransformationRequestWithPoint:(struct CGPoint)arg1 parameters:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) XCUITransformParameters *transformParameters; // @synthesize transformParameters=_transformParameters;
 @property(readonly) struct CGPoint point; // @synthesize point=_point;
-- (void).cxx_destruct;
 @property(readonly) NSArray *axParameterRepresentation;
 
 @end

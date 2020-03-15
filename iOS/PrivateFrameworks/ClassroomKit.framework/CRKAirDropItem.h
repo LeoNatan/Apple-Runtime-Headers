@@ -13,8 +13,8 @@
     NSURL *_fileURL;
 }
 
-@property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (id)copyToFolder:(id)arg1 error:(id *)arg2;
 - (id)moveToFolder:(id)arg1 error:(id *)arg2;
 - (_Bool)isValidWithError:(id *)arg1;

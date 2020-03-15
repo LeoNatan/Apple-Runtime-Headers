@@ -15,9 +15,9 @@
 }
 
 + (id)emptyDataSource;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *variations; // @synthesize variations=_variations;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
 - (long long)numberOfItemsInSection:(long long)arg1;

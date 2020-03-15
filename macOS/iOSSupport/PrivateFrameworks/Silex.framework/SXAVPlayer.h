@@ -29,6 +29,7 @@
     CDStruct_1b6d18a9 _cumulativeTimePlayed;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SVKeyValueObserver *loadedTimeRangesObserver; // @synthesize loadedTimeRangesObserver=_loadedTimeRangesObserver;
 @property(retain, nonatomic) SVKeyValueObserver *durationObserver; // @synthesize durationObserver=_durationObserver;
 @property(retain, nonatomic) SVKeyValueObserver *statusObserver; // @synthesize statusObserver=_statusObserver;
@@ -44,7 +45,6 @@
 @property(nonatomic) int playbackStatus; // @synthesize playbackStatus=_playbackStatus;
 @property(nonatomic) int playbackPosition; // @synthesize playbackPosition=_playbackPosition;
 @property(readonly, nonatomic) int audioMode; // @synthesize audioMode=_audioMode;
-- (void).cxx_destruct;
 - (void)durationChanged;
 - (void)loadedTimeRangesChanged;
 - (void)timeControlStatusChanged;

@@ -17,9 +17,9 @@
     NSMutableDictionary *_imageViewStyling;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageViewStyling; // @synthesize imageViewStyling=_imageViewStyling;
 @property(retain, nonatomic) NSMutableDictionary *styling; // @synthesize styling=_styling;
-- (void).cxx_destruct;
 - (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 @property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
 - (id)visualStylingProviderForCategory:(long long)arg1;

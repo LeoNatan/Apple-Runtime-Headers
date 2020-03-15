@@ -19,9 +19,9 @@
     id <UNSNotificationRepositorySettingsProvider> _settingsProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UNSNotificationRepositorySettingsProvider> settingsProvider; // @synthesize settingsProvider=_settingsProvider;
 @property(nonatomic) id <UNSNotificationRepositoryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_shouldPersistNotificationRecord:(id)arg1 forBundleSettings:(id)arg2 perTopicSettings:(id)arg3;
 - (void)_queue_performValidation;
 - (void)_queue_performMigrationForBundleIdentifier:(id)arg1;

@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool planPurchasable; // @synthesize planPurchasable=_planPurchasable;
 @property(nonatomic) unsigned char planSubscriptionStatus; // @synthesize planSubscriptionStatus=_planSubscriptionStatus;
 @property(nonatomic) long long planType; // @synthesize planType=_planType;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *planValue; // @synthesize planValue=_planValue;
 @property(retain, nonatomic) NSString *planLabel; // @synthesize planLabel=_planLabel;
 @property(retain, nonatomic) NSString *planId; // @synthesize planId=_planId;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -18,11 +18,11 @@
     double _sampleIntervalLimit;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double sampleIntervalLimit; // @synthesize sampleIntervalLimit=_sampleIntervalLimit;
 @property(retain) NSMutableSet *tasks; // @synthesize tasks=_tasks;
 @property(readonly) PASampleTimeSeriesDataStore *sampleStore; // @synthesize sampleStore=_sampleStore;
 @property(copy) PASampleAggregatorOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)setSamples:(id)arg1;
 - (void)addSampleTask:(id)arg1 atTimestampIndex:(unsigned long long)arg2;
 - (id)newAggregatedTaskForIdentificationPurposesWithSampleTask:(id)arg1;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <FavoritesPickerVisibilityManagerDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesPickerVisibilityManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <FavoritesPickerVisibilityController> pickerVisibilityController; // @synthesize pickerVisibilityController=_pickerVisibilityController;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)_isInputMethodsBarVisible;

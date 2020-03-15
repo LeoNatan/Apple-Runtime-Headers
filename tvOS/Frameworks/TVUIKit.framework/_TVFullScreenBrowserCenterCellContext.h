@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDidCenterSent) _Bool didCenterSent; // @synthesize didCenterSent=_didCenterSent;
 @property(nonatomic, getter=isWillCenterSent) _Bool willCenterSent; // @synthesize willCenterSent=_willCenterSent;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (id)initWithIndexPath:(id)arg1;
 
 @end

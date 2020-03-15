@@ -17,12 +17,12 @@
     NSUUID *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAppendingSectionInsert; // @synthesize isAppendingSectionInsert=_isAppendingSectionInsert;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly) long long action; // @synthesize action=_action;
 @property(readonly) NSIndexPath *indexPathAfterUpdate; // @synthesize indexPathAfterUpdate=_finalIndexPath;
 @property(readonly) NSIndexPath *indexPathBeforeUpdate; // @synthesize indexPathBeforeUpdate=_initialIndexPath;
-- (void).cxx_destruct;
 - (BOOL)isEqualToUpdate:(id)arg1;
 - (id)revertedUpdate;
 - (long long)inverseCompareIndexPaths:(id)arg1;

@@ -13,15 +13,14 @@
 @interface VUIRentalManager : NSObject <MPStoreDownloadManagerObserver>
 {
     _Bool _needToSendPlaybackStartDatesToServer;
-    NSMutableSet *_rentalContextsNeedingCheckin;
+    NSMutableSet *_deferredRentalCheckinContexts;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableSet *rentalContextsNeedingCheckin; // @synthesize rentalContextsNeedingCheckin=_rentalContextsNeedingCheckin;
-@property(nonatomic) _Bool needToSendPlaybackStartDatesToServer; // @synthesize needToSendPlaybackStartDatesToServer=_needToSendPlaybackStartDatesToServer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *deferredRentalCheckinContexts; // @synthesize deferredRentalCheckinContexts=_deferredRentalCheckinContexts;
+@property(nonatomic) _Bool needToSendPlaybackStartDatesToServer; // @synthesize needToSendPlaybackStartDatesToServer=_needToSendPlaybackStartDatesToServer;
 - (void)_didFetchInitialDownloads:(id)arg1;
-- (void)_checkInRentalsNeedingCheckInAtAppLaunch;
 - (void)_checkInRentalsNeedingCheckIn;
 - (void)_sendPlaybackStartDatesToServerIfNecessary;
 - (void)_activeAccountDidChange:(id)arg1;

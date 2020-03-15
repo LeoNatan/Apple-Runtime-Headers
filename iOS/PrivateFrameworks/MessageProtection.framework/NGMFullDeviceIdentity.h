@@ -17,9 +17,9 @@
 + (id)identityWithDataRepresentation:(id)arg1 error:(id *)arg2;
 + (id)identityWithAccess:(id)arg1 error:(id *)arg2;
 + (id)identityWithAccess:(id)arg1 usageIdentifier:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *devicePrekeys; // @synthesize devicePrekeys=_devicePrekeys;
 @property(retain, nonatomic) SigningKey *deviceSigningKey; // @synthesize deviceSigningKey=_deviceSigningKey;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)updateWithRegisteredTicket:(id)arg1 error:(id *)arg2;
 - (id)keyRollingTicketWithError:(id *)arg1;

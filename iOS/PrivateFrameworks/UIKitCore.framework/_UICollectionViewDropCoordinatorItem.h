@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _previewParametersProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType previewParametersProvider; // @synthesize previewParametersProvider=_previewParametersProvider;
 @property(retain, nonatomic) _UIDropAnimationHandlers *animationHandlers; // @synthesize animationHandlers=_animationHandlers;
 @property(copy, nonatomic) UIDragPreviewTarget *target; // @synthesize target=_target;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIDragItem *dragItem; // @synthesize dragItem=_dragItem;
 @property(nonatomic) _Bool shouldRemainInHierarchy; // @synthesize shouldRemainInHierarchy=_shouldRemainInHierarchy;
 @property(retain, nonatomic) NSIndexPath *destinationIndexPath; // @synthesize destinationIndexPath=_destinationIndexPath;
-- (void).cxx_destruct;
 - (void)addCompletion:(CDUnknownBlockType)arg1;
 - (void)addAnimations:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;

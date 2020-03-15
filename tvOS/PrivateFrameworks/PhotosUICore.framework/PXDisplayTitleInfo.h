@@ -20,12 +20,12 @@
 }
 
 + (id)displayTitleInfoForDetailsOfAssetCollection:(id)arg1 withTitleCategory:(long long)arg2 defaultTitle:(id)arg3 defaultTitleCategory:(long long)arg4 titleKey:(id)arg5 titleCategoryKey:(id)arg6 defaultSubtitle:(id)arg7 subtitleKey:(id)arg8 simulatedLoadingDelay:(double)arg9 preferredAttributesPromise:(CDUnknownBlockType)arg10;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useVerboseSmartDescription; // @synthesize useVerboseSmartDescription=_useVerboseSmartDescription;
 @property(retain, nonatomic, setter=_setAssetCollection:) PHAssetCollection *_assetCollection; // @synthesize _assetCollection=__assetCollection;
 @property(readonly, copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)setFontName:(id)arg1;

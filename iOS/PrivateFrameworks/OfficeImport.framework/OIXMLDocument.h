@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_encoding;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *version; // @synthesize version=_version;
 @property(copy) NSString *characterEncoding; // @synthesize characterEncoding=_encoding;
 @property(retain) OIXMLElement *rootElement; // @synthesize rootElement=_rootElement;
-- (void).cxx_destruct;
 - (id)closingTagString;
 - (id)contentString;
 - (id)openingTagString;

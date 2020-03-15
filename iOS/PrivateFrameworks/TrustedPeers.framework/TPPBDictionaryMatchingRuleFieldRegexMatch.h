@@ -16,9 +16,9 @@
     NSString *_regex;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *regex; // @synthesize regex=_regex;
 @property(retain, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

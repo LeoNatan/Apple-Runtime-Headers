@@ -36,6 +36,7 @@
 }
 
 + (id)portFromURL:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_cleanupRetainCycle; // @synthesize testBehavior_cleanupRetainCycle=_testBehavior_cleanupRetainCycle;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_sessionInvalidated_shouldInvalidate; // @synthesize testBehavior_sessionInvalidated_shouldInvalidate=_testBehavior_sessionInvalidated_shouldInvalidate;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_sessionInvalidated_cfnetwork; // @synthesize testBehavior_sessionInvalidated_cfnetwork=_testBehavior_sessionInvalidated_cfnetwork;
@@ -50,7 +51,6 @@
 @property(readonly, copy, nonatomic) C2RequestOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NSString *sessionConfigurationName; // @synthesize sessionConfigurationName=_sessionConfigurationName;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

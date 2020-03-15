@@ -13,6 +13,7 @@
 - (id)npkAccessoryDescription;
 @property(readonly) PKImage *npkUIPassholderImage;
 @property(readonly) PKImage *npkUICroppedFooterImage;
+@property(readonly) PKImage *npkUICarAccessCardBackgroundImage;
 @property(readonly) PKImage *npkUIPaymentCardBackgroundImage;
 - (void)npkClearNonEmptyFrontFieldBuckets;
 @property(readonly) NSArray *nonEmptyFrontFieldBuckets;

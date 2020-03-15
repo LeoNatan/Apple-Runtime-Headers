@@ -14,9 +14,9 @@
     unsigned long long _schedulingPolicy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long schedulingPolicy; // @synthesize schedulingPolicy=_schedulingPolicy;
 @property(readonly, nonatomic) BSTransaction *childTransaction; // @synthesize childTransaction=_childTransaction;
-- (void).cxx_destruct;
 - (id)initWithChildTransaction:(id)arg1 schedulingPolicy:(unsigned long long)arg2;
 
 @end

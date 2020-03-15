@@ -39,9 +39,9 @@
     CSLPIBacklightAssertion *_backlightAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPIBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 @property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
-- (void).cxx_destruct;
 - (_Bool)shouldWatchdog:(id *)arg1;
 - (double)watchdogTimeout;
 - (void)handleBacklightOff;

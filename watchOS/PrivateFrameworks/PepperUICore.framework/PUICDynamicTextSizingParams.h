@@ -14,9 +14,9 @@
     float _minTypographicTracking;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float minTypographicTracking; // @synthesize minTypographicTracking=_minTypographicTracking;
 @property(retain, nonatomic) NSArray *fonts; // @synthesize fonts=_fonts;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFonts:(id)arg1 minTypographicTracking:(float)arg2;
 

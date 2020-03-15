@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)defaultPaddingAfterImage;
-@property(nonatomic) double bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 - (void).cxx_destruct;
+@property(nonatomic) double bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 - (void)_getImageFrame:(struct CGRect *)arg1 andTextFrame:(struct CGRect *)arg2 fromCellFrame:(struct CGRect)arg3;
 - (void)setPaddingAfterImage:(double)arg1;
 - (double)paddingAfterImage;

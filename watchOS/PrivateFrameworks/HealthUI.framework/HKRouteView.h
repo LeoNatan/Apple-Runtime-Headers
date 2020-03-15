@@ -17,8 +17,8 @@
     UIButton *_toggleMapTypeButton;
 }
 
-@property(retain, nonatomic) UIButton *toggleMapTypeButton; // @synthesize toggleMapTypeButton=_toggleMapTypeButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *toggleMapTypeButton; // @synthesize toggleMapTypeButton=_toggleMapTypeButton;
 - (id)mapView:(id)arg1 rendererForOverlay:(id)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)layoutSubviews;

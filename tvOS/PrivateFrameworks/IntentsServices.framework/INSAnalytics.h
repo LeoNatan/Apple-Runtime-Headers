@@ -17,9 +17,9 @@
 }
 
 + (id)sharedAnalytics;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(nonatomic) __weak id <INSAnalyticsDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)contextDictionaryForError:(id)arg1;
 - (id)contextDictionaryForCommand:(id)arg1;
 - (void)logEventWithType:(long long)arg1 context:(id)arg2 contextNoCopy:(_Bool)arg3;

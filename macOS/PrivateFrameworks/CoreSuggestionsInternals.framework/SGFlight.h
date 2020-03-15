@@ -16,11 +16,11 @@
     NSString *_arrivalAirportDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *arrivalAirportDescription; // @synthesize arrivalAirportDescription=_arrivalAirportDescription;
 @property(readonly, nonatomic) NSString *departureAirportDescription; // @synthesize departureAirportDescription=_departureAirportDescription;
 @property(readonly, nonatomic) NSString *airline; // @synthesize airline=_airline;
 @property(readonly, nonatomic) NSString *flightno; // @synthesize flightno=_flightno;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCarrier:(id)arg1 flightNo:(id)arg2 depDesc:(id)arg3 arrDesc:(id)arg4;
 

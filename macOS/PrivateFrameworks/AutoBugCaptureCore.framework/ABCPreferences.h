@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
     NSUserDefaults *_automatedDeviceGroupDefaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *automatedDeviceGroupDefaults; // @synthesize automatedDeviceGroupDefaults=_automatedDeviceGroupDefaults;
 @property(nonatomic) char *enable_cloudkit; // @synthesize enable_cloudkit=_enable_cloudkit;
 @property(nonatomic) BOOL cloudkit_prefers_anonymous; // @synthesize cloudkit_prefers_anonymous=_cloudkit_prefers_anonymous;
@@ -77,7 +78,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL disable_internal_build; // @synthesize disable_internal_build=_disable_internal_build;
 @property(nonatomic) BOOL autoFeedbackAssistantEnable; // @synthesize autoFeedbackAssistantEnable=_autoFeedbackAssistantEnable;
 @property(nonatomic) BOOL diagnosticsAndUsageEnabled; // @synthesize diagnosticsAndUsageEnabled=_diagnosticsAndUsageEnabled;
-- (void).cxx_destruct;
 - (void)setABCUIUserConsent:(BOOL)arg1;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

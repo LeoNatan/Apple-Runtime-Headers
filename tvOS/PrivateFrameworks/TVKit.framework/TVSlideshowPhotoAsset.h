@@ -14,9 +14,9 @@
     PHAsset *_photoAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAsset *photoAsset; // @synthesize photoAsset=_photoAsset;
 @property(retain, nonatomic) TVImageProxy *assetProxy; // @synthesize assetProxy=_assetProxy;
-- (void).cxx_destruct;
 
 @end
 

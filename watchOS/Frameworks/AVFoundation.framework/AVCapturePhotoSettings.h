@@ -57,6 +57,8 @@
 - (id)adjustedPhotoFilters;
 - (void)setPhotoFilters:(id)arg1;
 - (id)photoFilters;
+- (void)setAutoDeferredProcessingEnabled:(_Bool)arg1;
+- (_Bool)isAutoDeferredProcessingEnabled;
 - (void)setUserInitiatedPhotoRequestTime:(unsigned long long)arg1;
 - (unsigned long long)userInitiatedPhotoRequestTime;
 - (struct CGSize)embeddedThumbnailCGSize;

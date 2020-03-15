@@ -29,11 +29,11 @@
 
 + (void)findPluginWithPath:(id)arg1 ofType:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (Class)_pluginClassForType:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requiredEntitlement; // @synthesize requiredEntitlement=_requiredEntitlement;
 @property(readonly, nonatomic) NSError *lastSearchError; // @synthesize lastSearchError=_lastSearchError;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *extensionType; // @synthesize extensionType=_extensionType;
-- (void).cxx_destruct;
 - (BOOL)_valideExtension:(id)arg1;
 - (void)_updateContainerToIdentifierTable:(id)arg1;
 - (void)_processPluginChanges:(id)arg1 currentContainerToIdentifier:(id)arg2;

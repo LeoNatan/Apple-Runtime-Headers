@@ -29,6 +29,7 @@
 + (id)copyNSStringArrayFromXPCArray:(id)arg1;
 + (id)copyNSDataForKey:(const char *)arg1 fromXPCDictionary:(id)arg2;
 + (id)copyNSStringForKey:(const char *)arg1 fromXPCDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int user; // @synthesize user=_user;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(nonatomic) _Bool nonLaunching; // @synthesize nonLaunching=_nonLaunching;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, nonatomic) _Bool machService; // @synthesize machService=_machService;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)sendMessageAsync:(id)arg1;
 - (void)sendMessageAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleReply:(id)arg1;

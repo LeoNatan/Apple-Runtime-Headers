@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) NSDateComponents *Start; // @synthesize Start=_Start;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDateComponents *Start; // @synthesize Start=_Start;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

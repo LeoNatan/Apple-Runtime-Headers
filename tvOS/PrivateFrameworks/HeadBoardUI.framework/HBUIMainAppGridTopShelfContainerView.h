@@ -17,12 +17,12 @@
     UIVisualEffectView *_visualEffectView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) UIImageView *contentSnapshotOverlayView; // @synthesize contentSnapshotOverlayView=_contentSnapshotOverlayView;
 @property(nonatomic) unsigned long long snapshotRequestToken; // @synthesize snapshotRequestToken=_snapshotRequestToken;
 @property(retain, nonatomic) UIView *topShelfContentView; // @synthesize topShelfContentView=_topShelfContentView;
 @property(nonatomic) double blurFractionComplete; // @synthesize blurFractionComplete=_blurFractionComplete;
-- (void).cxx_destruct;
 - (void)_updateBlurState;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willRemoveSubview:(id)arg1;

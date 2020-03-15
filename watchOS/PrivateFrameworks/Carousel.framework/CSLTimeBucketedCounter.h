@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLTimeBucketedCounterBucket *previousTimeBucket; // @synthesize previousTimeBucket=_previousTimeBucket;
 @property(retain, nonatomic) CSLTimeBucketedCounterBucket *currentTimeBucket; // @synthesize currentTimeBucket=_currentTimeBucket;
 @property(nonatomic) double timeBucketInterval; // @synthesize timeBucketInterval=_timeBucketInterval;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)bannerSortOrder;
-@property(nonatomic) __weak NSTextField *descriptionTextField; // @synthesize descriptionTextField=_descriptionTextField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *descriptionTextField; // @synthesize descriptionTextField=_descriptionTextField;
 - (void)_showDefaultDescriptionText;
 - (void)displayBannerType:(long long)arg1;
 - (id)bannerNibName;

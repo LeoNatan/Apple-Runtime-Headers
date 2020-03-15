@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)allowsReverseTransformation;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType reverseTransformation; // @synthesize reverseTransformation=_reverseTransformation;
 @property(readonly, copy, nonatomic) CDUnknownBlockType forwardTransformation; // @synthesize forwardTransformation=_forwardTransformation;
-- (void).cxx_destruct;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 - (id)initWithForwardTransformation:(CDUnknownBlockType)arg1 reverseTransformation:(CDUnknownBlockType)arg2;

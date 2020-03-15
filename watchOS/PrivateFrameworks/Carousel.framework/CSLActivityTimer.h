@@ -21,6 +21,7 @@
     NSLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSLock *lock; // @synthesize lock=_lock;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly) unsigned int leewayPolicy; // @synthesize leewayPolicy=_leewayPolicy;
@@ -29,7 +30,6 @@
 @property(retain) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
-- (void).cxx_destruct;
 - (void)_invalidate;
 - (void)invalidate;
 - (void)fire;

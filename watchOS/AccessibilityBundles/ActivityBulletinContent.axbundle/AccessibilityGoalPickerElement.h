@@ -13,10 +13,10 @@
     id _calorieLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) id calorieLabel; // @synthesize calorieLabel=_calorieLabel;
 @property(retain) id minusButton; // @synthesize minusButton=_minusButton;
 @property(retain) id plusButton; // @synthesize plusButton=_plusButton;
-- (void).cxx_destruct;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;

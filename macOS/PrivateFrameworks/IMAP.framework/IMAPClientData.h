@@ -17,12 +17,12 @@
     struct _NSRange _dontLogRange;
 }
 
+- (void).cxx_destruct;
 @property BOOL isFrozen; // @synthesize isFrozen=_isFrozen;
 @property struct _NSRange dontLogRange; // @synthesize dontLogRange=_dontLogRange;
 @property(retain) IMAPClientData *nextData; // @synthesize nextData=_nextData;
 @property(retain) NSMutableString *commandString; // @synthesize commandString=_commandString;
 @property(retain) NSMutableData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)freeze;
 - (void)addDataArgument:(id)arg1 literalPlus:(BOOL)arg2;
 - (void)addStringArgument:(id)arg1;

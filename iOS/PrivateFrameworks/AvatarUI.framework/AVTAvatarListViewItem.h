@@ -15,8 +15,8 @@
     UIView *_view;
 }
 
-@property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)downcastWithRecordHandler:(CDUnknownBlockType)arg1 imageHandler:(CDUnknownBlockType)arg2 viewHandler:(CDUnknownBlockType)arg3;

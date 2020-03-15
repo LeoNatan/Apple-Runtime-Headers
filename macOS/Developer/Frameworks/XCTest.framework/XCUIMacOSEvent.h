@@ -16,11 +16,11 @@
     NSString *_eventDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *eventDescription; // @synthesize eventDescription=_eventDescription;
 @property(readonly) BOOL requiresConfirmation; // @synthesize requiresConfirmation=_requiresConfirmation;
 @property(readonly) double postTime; // @synthesize postTime=_postTime;
 @property(readonly) struct __CGEvent *cgEvent; // @synthesize cgEvent=_cgEvent;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCGEvent:(struct __CGEvent *)arg1 postTime:(double)arg2 requiresConfirmation:(BOOL)arg3 description:(id)arg4;
 - (void)dealloc;

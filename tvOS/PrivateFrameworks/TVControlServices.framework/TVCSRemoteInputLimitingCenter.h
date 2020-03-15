@@ -19,11 +19,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isViewServiceActive) _Bool viewServiceActive; // @synthesize viewServiceActive=_viewServiceActive;
 @property(nonatomic, getter=isApplicationActive) _Bool applicationActive; // @synthesize applicationActive=_applicationActive;
 @property(nonatomic) long long limitCount; // @synthesize limitCount=_limitCount;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)endLimitingRemoteInput;
 - (void)beginLimitingRemoteInput;
 - (void)_applicationWillResignActive:(id)arg1;

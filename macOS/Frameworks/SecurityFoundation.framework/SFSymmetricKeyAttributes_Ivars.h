@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     NSString *localizedLabel;
     NSString *localizedDescription;
     _SFKeySpecifier *keySpecifier;
-    struct NSString *keyDomain;
+    NSString *keyDomain;
 }
 
 - (void).cxx_destruct;

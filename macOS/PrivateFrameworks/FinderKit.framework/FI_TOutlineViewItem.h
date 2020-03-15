@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _Bool _isLeaf;
 }
 
-@property _Bool isLeaf; // @synthesize isLeaf=_isLeaf;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property _Bool isLeaf; // @synthesize isLeaf=_isLeaf;
 - (id)flattenedChildren;
 @property(readonly, retain, nonatomic) NSArray *children; // @dynamic children;
 - (id)copyWithZone:(struct _NSZone *)arg1;

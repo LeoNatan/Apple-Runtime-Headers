@@ -14,6 +14,7 @@
 @interface AFMutableConversationItem : NSObject <AFConversationStorable, NSCopying>
 {
     _Bool _virgin;
+    _Bool _transient;
     NSUUID *_identifier;
     NSUUID *_revisionIdentifier;
     int _type;
@@ -24,7 +25,9 @@
     AFDataStore *_associatedDataStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AFDataStore *associatedDataStore; // @synthesize associatedDataStore=_associatedDataStore;
+@property(nonatomic, getter=isTransient) _Bool transient; // @synthesize transient=_transient;
 @property(nonatomic, getter=isVirgin) _Bool virgin; // @synthesize virgin=_virgin;
 @property(nonatomic) int presentationState; // @synthesize presentationState=_presentationState;
 @property(copy, nonatomic) NSString *aceCommandIdentifier; // @synthesize aceCommandIdentifier=_aceCommandIdentifier;
@@ -33,7 +36,6 @@
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSUUID *revisionIdentifier; // @synthesize revisionIdentifier=_revisionIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithPropertyListRepresentation:(id)arg1;
 - (id)propertyListRepresentation;
 - (int)_presentationStateForPropertyListString:(id)arg1;
@@ -43,9 +45,9 @@
 - (void)_didMutate;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithType:(int)arg1 aceObject:(id)arg2 dialogPhase:(id)arg3 presentationState:(int)arg4 aceCommandIdentifier:(id)arg5 virgin:(_Bool)arg6 associatedDataStore:(id)arg7;
-- (id)initWithIdentifier:(id)arg1 type:(int)arg2 aceObject:(id)arg3 dialogPhase:(id)arg4 presentationState:(int)arg5 aceCommandIdentifier:(id)arg6 virgin:(_Bool)arg7 associatedDataStore:(id)arg8;
-- (id)initWithIdentifier:(id)arg1 revisionIdentifier:(id)arg2 type:(int)arg3 aceObject:(id)arg4 dialogPhase:(id)arg5 presentationState:(int)arg6 aceCommandIdentifier:(id)arg7 virgin:(_Bool)arg8 associatedDataStore:(id)arg9;
+- (id)initWithType:(int)arg1 aceObject:(id)arg2 dialogPhase:(id)arg3 presentationState:(int)arg4 aceCommandIdentifier:(id)arg5 virgin:(_Bool)arg6 transient:(_Bool)arg7 associatedDataStore:(id)arg8;
+- (id)initWithIdentifier:(id)arg1 type:(int)arg2 aceObject:(id)arg3 dialogPhase:(id)arg4 presentationState:(int)arg5 aceCommandIdentifier:(id)arg6 virgin:(_Bool)arg7 transient:(_Bool)arg8 associatedDataStore:(id)arg9;
+- (id)initWithIdentifier:(id)arg1 revisionIdentifier:(id)arg2 type:(int)arg3 aceObject:(id)arg4 dialogPhase:(id)arg5 presentationState:(int)arg6 aceCommandIdentifier:(id)arg7 virgin:(_Bool)arg8 transient:(_Bool)arg9 associatedDataStore:(id)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

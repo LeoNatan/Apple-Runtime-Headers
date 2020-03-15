@@ -26,12 +26,12 @@
 + (void)didDismissUINotification:(unsigned long long)arg1 forPlannedDestination:(id)arg2 dismissalType:(unsigned long long)arg3;
 + (_Bool)transitTTLSupportedInCurrentCountry;
 + (id)hypothesizerForPlannedDestination:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool unableToFindRouteForOriginalTransportType; // @synthesize unableToFindRouteForOriginalTransportType=_unableToFindRouteForOriginalTransportType;
 @property(readonly, nonatomic) NSError *currentError; // @synthesize currentError=_currentError;
 @property(readonly, nonatomic) GEOPlannedDestination *plannedDestination; // @synthesize plannedDestination=_plannedDestination;
 @property(readonly, nonatomic) GEORouteHypothesis *currentHypothesis; // @synthesize currentHypothesis=_currentHypothesis;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (void)didPostUINotification:(unsigned long long)arg1;

@@ -16,16 +16,16 @@
     _Bool _blockRemoteImagesEnabled;
     NNMKMessage *_message;
     id <NNMKMessageContentWebViewDelegate> _delegate;
-    struct NSMutableDictionary *_urlLoadingTasks;
+    NSMutableDictionary *_urlLoadingTasks;
     NSMutableSet *_locallyIntroducedSubviews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *locallyIntroducedSubviews; // @synthesize locallyIntroducedSubviews=_locallyIntroducedSubviews;
 @property(retain, nonatomic) NSMutableDictionary *urlLoadingTasks; // @synthesize urlLoadingTasks=_urlLoadingTasks;
 @property(nonatomic) _Bool blockRemoteImagesEnabled; // @synthesize blockRemoteImagesEnabled=_blockRemoteImagesEnabled;
 @property(nonatomic) __weak id <NNMKMessageContentWebViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NNMKMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)_retrieveContentIdFromURL:(id)arg1;
 - (id)_tryToLoadImageForAttachment:(id)arg1;
 - (id)_loadImageWithContentId:(id)arg1;

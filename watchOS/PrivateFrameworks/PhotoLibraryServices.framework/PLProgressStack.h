@@ -19,13 +19,13 @@
 }
 
 + (id)unarchiveFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mediaPathString; // @synthesize mediaPathString;
 @property(nonatomic) _Bool notifyUsingAssetsdNotificationCenter; // @synthesize notifyUsingAssetsdNotificationCenter;
 @property(nonatomic) float currentTotal; // @synthesize currentTotal;
 @property(retain, nonatomic) NSMutableArray *multipliers; // @synthesize multipliers;
 @property(nonatomic) float currentMultiplier; // @synthesize currentMultiplier;
 @property(nonatomic) __weak id delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (id)archiveToDictionary;
 - (void)setCurrentMediaPath:(id)arg1;
 - (void)popAndUpdate;

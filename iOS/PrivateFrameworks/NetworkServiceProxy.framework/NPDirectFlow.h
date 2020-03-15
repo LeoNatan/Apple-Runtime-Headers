@@ -19,12 +19,12 @@
 }
 
 + (void)initializeProtocol;
+- (void).cxx_destruct;
 @property(retain) NSDate *firstTxByteTimestamp; // @synthesize firstTxByteTimestamp=_firstTxByteTimestamp;
 @property(retain) NSDate *connectionStartDate; // @synthesize connectionStartDate=_connectionStartDate;
 @property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain) NSPConnectionInfo *connectionInfo; // @synthesize connectionInfo=_connectionInfo;
 @property(readonly) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)createConnectionInfo;
 - (void)handleDetachedFromProtocol;
 @property(readonly) struct nw_protocol *protocol;

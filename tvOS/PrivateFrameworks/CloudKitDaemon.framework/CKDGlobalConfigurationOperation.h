@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_configurationFetchedGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *configurationFetchedGroup; // @synthesize configurationFetchedGroup=_configurationFetchedGroup;
 @property(retain, nonatomic) CKDServerConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)main;
 - (_Bool)shouldCheckAppVersion;
 - (id)activityCreate;

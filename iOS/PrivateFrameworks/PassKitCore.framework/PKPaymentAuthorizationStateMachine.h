@@ -40,6 +40,7 @@
     NSArray *_remoteDevicesToUpdate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *remoteDevicesToUpdate; // @synthesize remoteDevicesToUpdate=_remoteDevicesToUpdate;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *delayAuthorizedStateGroup; // @synthesize delayAuthorizedStateGroup=_delayAuthorizedStateGroup;
 @property(nonatomic) _Bool detectedBluetoothOn; // @synthesize detectedBluetoothOn=_detectedBluetoothOn;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) PKPaymentAuthorizationDataModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
 @property(retain, nonatomic) PKPaymentService *paymentService; // @synthesize paymentService=_paymentService;
-- (void).cxx_destruct;
 - (void)_simulatePayment;
 - (id)_transactionWithPurchase:(id)arg1 paymentHash:(id)arg2;
 - (id)_transactionWithPaymentToken:(id)arg1;
@@ -88,6 +88,7 @@
 - (void)_enqueueDidAuthorizePeerPaymentQuoteWithAuthorizedQuote:(id)arg1;
 - (void)_enqeueDidAuthorizePurchaseWithParam:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithPayment:(id)arg1;
+- (void)_enqueueDidAuthorizeContext;
 - (void)_enqueueDidAuthorizePaymentWithRemotePayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithByPassPayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithToken:(id)arg1;

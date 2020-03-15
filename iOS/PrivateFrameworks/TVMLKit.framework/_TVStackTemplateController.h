@@ -34,8 +34,8 @@
     double _showcaseInset;
 }
 
-@property(nonatomic) double showcaseInset; // @synthesize showcaseInset=_showcaseInset;
 - (void).cxx_destruct;
+@property(nonatomic) double showcaseInset; // @synthesize showcaseInset=_showcaseInset;
 - (struct CGSize)_maxContentSize;
 - (void)_updateBackgroundTintViewEffects;
 - (void)_updateBackgroundTintView;

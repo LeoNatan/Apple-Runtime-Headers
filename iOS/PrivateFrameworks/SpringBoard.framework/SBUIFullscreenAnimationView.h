@@ -14,9 +14,9 @@
     _Bool _animating;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) __weak id <SBUIFullscreenAnimationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegateThatAnimationIsDone;
 - (void)_notifyDelegateAnimationBeganWithDuration:(double)arg1 delay:(double)arg2;
 - (void)_animationEnded;

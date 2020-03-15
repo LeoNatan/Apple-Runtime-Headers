@@ -45,6 +45,7 @@
 + (id)hostingViewControllerForIdentifier:(id)arg1;
 + (id)interfaceViewControllerForIdentifier:(id)arg1;
 + (id)viewControllerForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SPCrownSequencer *crownSequencer; // @synthesize crownSequencer=_crownSequencer;
 @property(nonatomic) _Bool reportDidAppearAfterModalDismissal; // @synthesize reportDidAppearAfterModalDismissal=_reportDidAppearAfterModalDismissal;
 @property(copy, nonatomic) CDUnknownBlockType didAppearBlock; // @synthesize didAppearBlock=_didAppearBlock;
@@ -71,7 +72,6 @@
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(copy, nonatomic) NSDictionary *interfaceDescription; // @synthesize interfaceDescription=_interfaceDescription;
 @property(nonatomic) __weak id <SPViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)associatedWKInterfaceController;
 - (void)actionContentControllerCancel:(id)arg1;
 - (void)_actionTapped:(id)arg1;
@@ -93,7 +93,9 @@
 - (_Bool)canBecomeFirstResponder;
 - (void)_replaceInterfaceDescriptionWithInterfaceDescription:(id)arg1;
 - (void)setInterfaceValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;
+- (void)_deactivateControllerIfAppropriate;
 - (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidFinishLaunchingInDock;

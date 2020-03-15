@@ -70,6 +70,7 @@
     struct CGPoint __visibleOriginScrollTarget;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIDragSession> dragSession; // @synthesize dragSession=_dragSession;
 @property(nonatomic, setter=_setNeedsAggdLoggingForUncuratedAssetsCount:) _Bool _needsAggdLoggingForUncuratedAssetsCount; // @synthesize _needsAggdLoggingForUncuratedAssetsCount=__needsAggdLoggingForUncuratedAssetsCount;
 @property(nonatomic, setter=_setNeedsAggdLoggingForCuratedAssetsCount:) _Bool _needsAggdLoggingForCuratedAssetsCount; // @synthesize _needsAggdLoggingForCuratedAssetsCount=__needsAggdLoggingForCuratedAssetsCount;
@@ -108,9 +109,8 @@
 @property(retain, nonatomic) PXWidgetSpec *spec; // @synthesize spec=_spec;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
 @property(retain, nonatomic) PXOneUpPresentation *oneUpPresentation; // @synthesize oneUpPresentation=_oneUpPresentation;
-- (void).cxx_destruct;
-- (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
+- (_Bool)actionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)dragInteraction:(id)arg1 sessionForAddingItems:(id)arg2 withTouchAtPoint:(struct CGPoint)arg3;
 - (void)dragInteraction:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
 - (void)dragInteraction:(id)arg1 willAnimateLiftWithAnimator:(id)arg2 session:(id)arg3;
@@ -173,7 +173,7 @@
 - (double)engineDrivenLayout:(id)arg1 aspectRatioForItemAtIndexPath:(struct PXSimpleIndexPath)arg2;
 - (void)commitPreviewViewController:(id)arg1;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(_Bool)arg2;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
+- (id)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(id)arg2;
 - (_Bool)containsPoint:(struct CGPoint)arg1 forCoordinateSpace:(id)arg2;
 - (id)imageViewBasicTileForPreviewingAtPoint:(struct CGPoint)arg1;
 - (void)contentViewDidDisappear;

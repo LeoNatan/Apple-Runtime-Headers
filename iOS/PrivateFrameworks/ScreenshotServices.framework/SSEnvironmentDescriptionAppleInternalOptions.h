@@ -16,9 +16,9 @@
     RCPMovie *_recapMovie;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RCPMovie *recapMovie; // @synthesize recapMovie=_recapMovie;
 @property(retain, nonatomic) SSUIRunPPTServiceRequest *runPPTServiceRequest; // @synthesize runPPTServiceRequest=_runPPTServiceRequest;
-- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 

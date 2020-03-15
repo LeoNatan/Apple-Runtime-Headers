@@ -30,12 +30,12 @@
 
 + (id)recognizedResultFromPackage:(id)arg1;
 + (id)transcriptionsWithTokens:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly, nonatomic, getter=isFinishing) _Bool finishing; // @synthesize finishing=_finishing;
 @property(readonly, nonatomic) long long _taskHint; // @synthesize _taskHint;
-- (void).cxx_destruct;
 - (void)stopSpeech;
 - (void)addRecordedSpeechSampleData:(id)arg1;
 - (void)dictationConnectionSpeechRecognitionDidSucceed:(id)arg1;

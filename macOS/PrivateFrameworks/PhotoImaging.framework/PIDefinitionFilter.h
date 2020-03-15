@@ -16,10 +16,10 @@
 }
 
 + (id)definitionKernel;
+- (void).cxx_destruct;
 @property(retain) NSNumber *inputIntensity; // @synthesize inputIntensity=_inputIntensity;
 @property(retain) CIImage *inputBlurImage; // @synthesize inputBlurImage=_inputBlurImage;
 @property(retain) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 
 @end

@@ -17,10 +17,10 @@
     double _tintAlpha;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double tintAlpha; // @synthesize tintAlpha=_tintAlpha;
 @property(readonly, nonatomic) struct CGColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, copy, nonatomic) NSDictionary *tintColorDescription; // @synthesize tintColorDescription=_tintColorDescription;
-- (void).cxx_destruct;
 - (void)_processTintingDescription:(id)arg1 defaultingToIdentity:(_Bool)arg2;
 - (void)dealloc;
 - (id)initWithTintingDescription:(id)arg1 andDescendantDescriptions:(id)arg2;

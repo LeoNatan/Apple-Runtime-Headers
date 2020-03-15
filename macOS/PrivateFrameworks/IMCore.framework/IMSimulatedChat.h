@@ -22,13 +22,13 @@
     NSString *_simulatedDisplayName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *simulatedDisplayName; // @synthesize simulatedDisplayName=_simulatedDisplayName;
 @property(readonly, nonatomic) NSMutableArray *simulatedAttachments; // @synthesize simulatedAttachments=_simulatedAttachments;
 @property(copy, nonatomic) NSString *simulatedChatIdentifier; // @synthesize simulatedChatIdentifier=_simulatedChatIdentifier;
 @property(readonly, nonatomic) unsigned long long currentMessageID; // @synthesize currentMessageID=_currentMessageID;
 @property(readonly, nonatomic) IMSimulatedAccount *simulatedAccount; // @synthesize simulatedAccount=_simulatedAccount;
 @property(nonatomic) __weak id <IMSimulatedChatDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_messageWithGUID:(id)arg1;
 - (void)simulatedDaemon:(id)arg1 willSendBalloonPayload:(id)arg2 attachments:(id)arg3 messageGUID:(id)arg4 bundleID:(id)arg5;
 - (void)chat:(id)arg1 didSendMessage:(id)arg2;

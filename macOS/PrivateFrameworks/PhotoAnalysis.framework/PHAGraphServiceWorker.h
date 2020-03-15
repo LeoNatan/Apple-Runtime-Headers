@@ -34,9 +34,11 @@
 
 + (void)initialize;
 + (id)stringFromGraphServiceState:(unsigned long long)arg1;
++ (id)facesAndScenesProcessingProgressPercentageDataForPhotoLibrary:(id)arg1;
 + (long long)applicationDataFolderIdentifier;
 + (short)workerType;
 + (void)configureXPCConnection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *graphWorkerWarmedUpTransaction; // @synthesize graphWorkerWarmedUpTransaction=_graphWorkerWarmedUpTransaction;
 @property(nonatomic) long long pendingRequestReferenceCount; // @synthesize pendingRequestReferenceCount=_pendingRequestReferenceCount;
 @property(retain, nonatomic) NSHashTable *pendingRequestReferences; // @synthesize pendingRequestReferences=_pendingRequestReferences;
@@ -46,7 +48,6 @@
 @property(retain, nonatomic) NSMutableDictionary *pendingGraphReadyCallbacks; // @synthesize pendingGraphReadyCallbacks=_pendingGraphReadyCallbacks;
 @property(retain, nonatomic) PGManager *graphManager; // @synthesize graphManager=_graphManager;
 @property(retain, nonatomic) NSProgress *currentGraphRebuildProgress; // @synthesize currentGraphRebuildProgress=_currentGraphRebuildProgress;
-- (void).cxx_destruct;
 - (void)graphUpdateMadeProgress:(double)arg1;
 - (void)graphUpdateIsConsistent;
 - (void)graphUpdateDidStop;
@@ -176,6 +177,10 @@
 - (id)pendingRequestReferenceForLabel:(id)arg1;
 @property(nonatomic) unsigned long long state;
 - (unsigned long long)synchronousOffQueueState;
+- (void)requestGenerateQuestionsWithOptions:(id)arg1 context:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)requestLastQuestionGenerationJobDateWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)requestGenerateQuestionsWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (id)questionGenerationJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reportMetricsWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)reportMetricsWithOptions:(id)arg1 context:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)metricReportingJobWithScenario:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -204,9 +209,11 @@
 - (void)markLastBackgroundGraphConsistencyUpdateJobDate;
 - (void)markLastBackgroundGraphRebuildJobDate;
 - (id)nextAdditionalJobWithScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
-- (BOOL)didExceedtimeInterval:(double)arg1 forBackgroundJobUserDefaultsKey:(id)arg2;
+- (BOOL)didExceedTimeInterval:(double)arg1 forBackgroundJobUserDefaultsKey:(id)arg2;
 - (BOOL)hasAdditionalJobForDataModelEnrichmentInScenario:(unsigned long long)arg1;
 - (BOOL)hasAdditionalJobForGraphRebuildInScenario:(unsigned long long)arg1;
+- (BOOL)photosChallengeIsEnabled;
+- (BOOL)hasAdditionalJobForQuestionGenerationInScenario:(unsigned long long)arg1;
 - (BOOL)hasAdditionalJobForMetricsReportingInScenario:(unsigned long long)arg1;
 - (BOOL)hasAdditionalJobForBackgroundMemoryGenerationInScenario:(unsigned long long)arg1;
 - (BOOL)hasAdditionalJobsForScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;

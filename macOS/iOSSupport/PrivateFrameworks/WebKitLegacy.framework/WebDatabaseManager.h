@@ -13,7 +13,6 @@
 + (void)scheduleEmptyDatabaseRemoval;
 + (void)removeEmptyDatabaseFiles;
 + (id)sharedWebDatabaseManager;
-- (void)setIDBPerOriginQuota:(unsigned long long)arg1;
 - (void)deleteAllIndexedDatabases;
 - (BOOL)deleteDatabase:(id)arg1 withOrigin:(id)arg2;
 - (BOOL)deleteOrigin:(id)arg1;

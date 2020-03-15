@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSIndexSet *_filteredChildIndexes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexSet *filteredChildIndexes; // @synthesize filteredChildIndexes=_filteredChildIndexes;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)enumerateFilteredChildrenUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeFilteredChildItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfFilteredChildItem:(id)arg1;

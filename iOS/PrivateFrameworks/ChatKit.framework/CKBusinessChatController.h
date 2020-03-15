@@ -8,14 +8,13 @@
 
 @class CKNavbarCanvasViewController;
 
-__attribute__((visibility("hidden")))
 @interface CKBusinessChatController : CKChatController
 {
     CKNavbarCanvasViewController *_navbarCanvasViewController;
 }
 
-@property(retain, nonatomic) CKNavbarCanvasViewController *navbarCanvasViewController; // @synthesize navbarCanvasViewController=_navbarCanvasViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKNavbarCanvasViewController *navbarCanvasViewController; // @synthesize navbarCanvasViewController=_navbarCanvasViewController;
 - (void)cleanUpBizNavBarIfNecessary;
 - (void)setupBizNavBarIfNecessary;
 - (void)_addressBookChanged:(id)arg1;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSOrderedSet *_migratedFavoriteIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOrderedSet *migratedFavoriteIdentifiers; // @synthesize migratedFavoriteIdentifiers=_migratedFavoriteIdentifiers;
 @property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
 @property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
-- (void).cxx_destruct;
 - (void)cloudContainer:(id)arg1 didFetchChanges:(id)arg2;
 - (void)cloudContainerDidChange:(id)arg1;
 - (void)_performMigrationsForPinnedPlacesContainerWithCompletion:(CDUnknownBlockType)arg1;

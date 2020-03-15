@@ -18,11 +18,11 @@
     int _targetHeatingCoolingMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int targetHeatingCoolingMode; // @synthesize targetHeatingCoolingMode=_targetHeatingCoolingMode;
 @property(readonly, nonatomic) int heatingCoolingMode; // @synthesize heatingCoolingMode=_heatingCoolingMode;
 @property(readonly, nonatomic) NSString *formattedTemperature; // @synthesize formattedTemperature=_formattedTemperature;
 @property(readonly, nonatomic) _Bool shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_artistID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *artistID; // @synthesize artistID=_artistID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

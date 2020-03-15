@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)dockViewDidResignVisible;
 - (void)dismissPresentedFolderAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_axSetIsClosingFolder:(_Bool)arg1;
 - (_Bool)_axIsClosingFolder;

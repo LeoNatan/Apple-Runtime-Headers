@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _reportSiteSuggestionIssueHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reportSiteSuggestionIssueHandler; // @synthesize reportSiteSuggestionIssueHandler=_reportSiteSuggestionIssueHandler;
 @property(copy, nonatomic) CDUnknownBlockType createFolderHandler; // @synthesize createFolderHandler=_createFolderHandler;
 @property(copy, nonatomic) CDUnknownBlockType deleteHandler; // @synthesize deleteHandler=_deleteHandler;
@@ -73,7 +74,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldAutomaticallyOpenInTabs; // @synthesize shouldAutomaticallyOpenInTabs=_shouldAutomaticallyOpenInTabs;
 @property(nonatomic) BOOL usesPrivateBrowsing; // @synthesize usesPrivateBrowsing=_usesPrivateBrowsing;
 @property(nonatomic) BOOL isFolder; // @synthesize isFolder=_isFolder;
-- (void).cxx_destruct;
 - (id)buildBookmarkMenu;
 - (id)_addToReadingListMenuItem;
 - (id)_addToFavoritesMenuItem;

@@ -36,6 +36,7 @@
 + (_Bool)hasMessageReceiverChildren;
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *mostRecentFireDate; // @synthesize mostRecentFireDate=_mostRecentFireDate;
 @property(nonatomic) unsigned int triggerType; // @synthesize triggerType=_triggerType;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
@@ -48,7 +49,6 @@
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_addActionSet:(id)arg1;
 - (_Bool)supportsDeviceWithCapabilities:(id)arg1;
 - (void)confirmResident;

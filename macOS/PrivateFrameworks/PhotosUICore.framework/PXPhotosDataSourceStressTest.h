@@ -22,12 +22,12 @@
     unsigned long long _dataSourceIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDataSourceIndex:) unsigned long long dataSourceIndex; // @synthesize dataSourceIndex=_dataSourceIndex;
 @property(retain, nonatomic, setter=_setDataSource:) PXPhotosDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(nonatomic) unsigned long long maximumAssetCount; // @synthesize maximumAssetCount=_maximumAssetCount;
-- (void).cxx_destruct;
 - (id)mutableChangeObject;
 - (void)_updateDataSource;
 - (id)_categoryForAsset:(id)arg1;

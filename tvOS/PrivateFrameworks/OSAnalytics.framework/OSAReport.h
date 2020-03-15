@@ -22,9 +22,9 @@
 + (id)kernelVersionDescription;
 + (id)systemIDWithDescription:(_Bool)arg1;
 + (unsigned char)executeWithTimeout:(unsigned int)arg1 Code:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *logfile; // @synthesize logfile=_logfile;
 @property(readonly, nonatomic) NSArray *notes; // @synthesize notes=_notes;
-- (void).cxx_destruct;
 - (int)streamContentAtLevel:(_Bool)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (_Bool)saveWithOptions:(id)arg1;
 - (_Bool)secondChanceToSylog;
@@ -34,10 +34,12 @@
 - (_Bool)isActionable;
 - (id)reportNamePrefix;
 - (id)appleCareDetails;
+- (double)captureTime;
 - (id)incidentID;
 - (_Bool)isAppleTV;
 - (id)getSyslogForPid:(int)arg1 andOptionalSenders:(id)arg2;
 - (id)problemType;
+- (void)alignIncident:(id)arg1 at:(double)arg2;
 - (id)init;
 
 @end

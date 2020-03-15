@@ -51,11 +51,11 @@
 
 + (id)defaultAnimationForKey:(id)arg1;
 + (void)_performWithoutAnimation:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *currentIdentifier; // @synthesize currentIdentifier=_currentIdentifier;
 @property(retain) NSViewController *selectedViewController; // @synthesize selectedViewController=_selectedViewController;
 @property NSView *contentView; // @synthesize contentView=_contentView;
 @property long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
-- (void).cxx_destruct;
 - (id)animationForKey:(id)arg1;
 @property(copy) NSDictionary *animations;
 - (id)animator;

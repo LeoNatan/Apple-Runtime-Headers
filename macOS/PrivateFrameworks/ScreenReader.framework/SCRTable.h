@@ -46,8 +46,8 @@ __attribute__((visibility("hidden")))
     BOOL _isXcodeCodeCompletionTable;
 }
 
-@property(readonly, nonatomic) BOOL isXcodeCodeCompletionTable; // @synthesize isXcodeCodeCompletionTable=_isXcodeCodeCompletionTable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isXcodeCodeCompletionTable; // @synthesize isXcodeCodeCompletionTable=_isXcodeCodeCompletionTable;
 - (BOOL)trackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (void)prepareGestureTrackingChildren;
 - (id)gestureContainerOverviewDescription;

@@ -26,12 +26,12 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadUseDLC; // @synthesize payloadUseDLC=_payloadUseDLC;
 @property(copy, nonatomic) NSArray *payloadPreferDLC; // @synthesize payloadPreferDLC=_payloadPreferDLC;
 @property(copy, nonatomic) NSArray *payloadDenyDLC; // @synthesize payloadDenyDLC=_payloadDenyDLC;
 @property(copy, nonatomic) NSArray *payloadDenyMount; // @synthesize payloadDenyMount=_payloadDenyMount;
 @property(copy, nonatomic) NSArray *payloadOnlyMount; // @synthesize payloadOnlyMount=_payloadOnlyMount;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

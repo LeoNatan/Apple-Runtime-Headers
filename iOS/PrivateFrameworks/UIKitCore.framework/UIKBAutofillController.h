@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)translateToTextInputAutofillMode:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSaveAutofill; // @synthesize shouldSaveAutofill=_shouldSaveAutofill;
 @property(copy, nonatomic) UIColor *textFieldOrigColor; // @synthesize textFieldOrigColor=_textFieldOrigColor;
 @property(copy, nonatomic) NSMutableDictionary *fallbackAutofillGroup; // @synthesize fallbackAutofillGroup=_fallbackAutofillGroup;
 @property(readonly, retain, nonatomic) NSMutableDictionary *autofillGroup; // @synthesize autofillGroup=_autofillGroup;
 @property(nonatomic) long long delegateNeedsAutofillMode; // @synthesize delegateNeedsAutofillMode=_delegateNeedsAutofillMode;
-- (void).cxx_destruct;
 - (void)removeTemporaryTextColorFromTextField:(id)arg1;
 - (void)addTemporaryTextColorToTextField:(id)arg1;
 - (void)enumeratePasswordFieldsUsingBlock:(CDUnknownBlockType)arg1;

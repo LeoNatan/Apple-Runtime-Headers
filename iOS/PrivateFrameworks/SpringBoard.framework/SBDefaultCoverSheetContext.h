@@ -47,6 +47,7 @@
     id <CSApplicationInforming> _applicationInformer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CSApplicationInforming> applicationInformer; // @synthesize applicationInformer=_applicationInformer;
 @property(readonly, nonatomic) id <SBFActionProviding> contentActionProvider; // @synthesize contentActionProvider=_contentActionProvider;
 @property(readonly, nonatomic) id <CSWallpaperViewProviding> wallpaperViewProvider; // @synthesize wallpaperViewProvider=_wallpaperViewProvider;
@@ -65,7 +66,6 @@
 @property(readonly, nonatomic) id <SBFPasscodeFieldChangeObserver> passcodeFieldChangeObserver; // @synthesize passcodeFieldChangeObserver=_passcodeFieldChangeObserver;
 @property(readonly, nonatomic) id <SBFAuthenticationStatusProvider> authenticationStatusProvider; // @synthesize authenticationStatusProvider=_authenticationStatusProvider;
 @property(readonly, nonatomic) id <SBFAuthenticationAssertionProviding> authenticationAssertionProvider; // @synthesize authenticationAssertionProvider=_authenticationAssertionProvider;
-- (void).cxx_destruct;
 - (id)newTodayOverlayController;
 @property(readonly, nonatomic) _Bool wantsTodayOverlay;
 - (void)incrementIrisPlayCount;

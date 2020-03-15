@@ -54,6 +54,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) long long embedsLimit; // @synthesize embedsLimit=_embedsLimit;
@@ -75,7 +76,6 @@
 @property(nonatomic) BOOL preferCompactSectionName; // @synthesize preferCompactSectionName=_preferCompactSectionName;
 @property(nonatomic) BOOL respectsWidgetSlotsLimit; // @synthesize respectsWidgetSlotsLimit=_respectsWidgetSlotsLimit;
 @property(nonatomic) double slotsLimit; // @synthesize slotsLimit=_slotsLimit;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

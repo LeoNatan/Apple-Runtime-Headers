@@ -13,8 +13,8 @@
     NSString *_previousStringSuggestion;
 }
 
-@property(copy, nonatomic) NSString *previousStringSuggestion; // @synthesize previousStringSuggestion=_previousStringSuggestion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *previousStringSuggestion; // @synthesize previousStringSuggestion=_previousStringSuggestion;
 - (CDStruct_421913e2)suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (void)setPreferenceSpecifier:(id)arg1;
 

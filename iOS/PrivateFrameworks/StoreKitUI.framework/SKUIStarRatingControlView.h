@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
-@property(retain, nonatomic) SKUIStarRatingControl *control; // @synthesize control=_control;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIStarRatingControl *control; // @synthesize control=_control;
 - (void)didRating:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

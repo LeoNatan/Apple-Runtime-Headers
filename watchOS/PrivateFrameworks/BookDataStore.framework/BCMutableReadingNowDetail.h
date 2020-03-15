@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *lastEngagedDate; // @synthesize lastEngagedDate=_lastEngagedDate;
 @property(nonatomic) _Bool isTrackedAsRecent; // @synthesize isTrackedAsRecent=_isTrackedAsRecent;
 @property(copy, nonatomic) NSString *assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)configuredRecordFromAttributes;

@@ -13,8 +13,8 @@
     NSString *_interfaceAction;
 }
 
-@property(copy, nonatomic) NSString *interfaceAction; // @synthesize interfaceAction=_interfaceAction;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *interfaceAction; // @synthesize interfaceAction=_interfaceAction;
 
 @end
 

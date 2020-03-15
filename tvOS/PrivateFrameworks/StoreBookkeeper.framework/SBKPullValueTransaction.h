@@ -20,6 +20,7 @@
     NSString *_resultDomainVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *resultDomainVersion; // @synthesize resultDomainVersion=_resultDomainVersion;
 @property(readonly) NSString *resultItemVersionAnchor; // @synthesize resultItemVersionAnchor=_resultItemVersionAnchor;
 @property(readonly) id <SBKKeyValuePayloadPair> resultItemPayloadPair; // @synthesize resultItemPayloadPair=_resultItemPayloadPair;
@@ -27,7 +28,6 @@
 @property(readonly) NSString *clientItemVersionAnchor; // @synthesize clientItemVersionAnchor=_clientItemVersionAnchor;
 @property(readonly) id <SBKKeyValuePayloadPair> clientItemPayloadPair; // @synthesize clientItemPayloadPair=_clientItemPayloadPair;
 @property(readonly, copy) NSString *requestedKey; // @synthesize requestedKey=_requestedKey;
-- (void).cxx_destruct;
 - (void)processDataInResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)newRequest;
 - (id)clampsKey;

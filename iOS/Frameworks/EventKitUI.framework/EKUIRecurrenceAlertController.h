@@ -27,9 +27,9 @@
 + (id)presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4 forEvent:(id)arg5 stringForDeleteButton:(id)arg6 withCompletionHandler:(CDUnknownBlockType)arg7;
 + (id)presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 barButtonItem:(id)arg3 forEvent:(id)arg4 stringForDeleteButton:(id)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
 + (id)newAlertControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain) UIAlertController *alertController; // @synthesize alertController=_alertController;
-- (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_completeWithSelection:(int)arg1;
 - (void)cancelAnimated:(_Bool)arg1;

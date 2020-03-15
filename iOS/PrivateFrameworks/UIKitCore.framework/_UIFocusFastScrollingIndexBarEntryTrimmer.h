@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <_UIFocusFastScrollingIndexBarEntryTrimmerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIFocusFastScrollingIndexBarEntryTrimmerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *allEntries; // @synthesize allEntries=_allEntries;
-- (void).cxx_destruct;
 - (id)_trimEntries:(id)arg1 toFitCount:(long long)arg2;
 - (id)entriesTrimmedToFitCount:(unsigned long long)arg1;
 

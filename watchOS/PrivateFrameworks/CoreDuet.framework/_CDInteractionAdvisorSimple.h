@@ -16,8 +16,8 @@
 + (id)advisorSettingsForMatchingDisplayName:(id)arg1 mechanism:(int)arg2 date:(id)arg3 count:(int)arg4;
 + (id)advisorSettingsForMatchingPersonID:(id)arg1 mechanism:(int)arg2 date:(id)arg3 count:(int)arg4;
 + (id)advisorSettingsForMatchingHandles:(id)arg1 mechanism:(int)arg2 date:(id)arg3 count:(int)arg4;
-@property(retain) id <_CDInteractionAdvising> interactionAdvisor; // @synthesize interactionAdvisor=_interactionAdvisor;
 - (void).cxx_destruct;
+@property(retain) id <_CDInteractionAdvising> interactionAdvisor; // @synthesize interactionAdvisor=_interactionAdvisor;
 - (id)rankedInteractionsForDisplayName:(id)arg1 mechanism:(int)arg2 count:(int)arg3 date:(id)arg4;
 - (id)rankedInteractionsForDisplayName:(id)arg1 mechanism:(int)arg2 count:(int)arg3;
 - (id)rankedInteractionsForPersonId:(id)arg1 mechanism:(int)arg2 count:(int)arg3 date:(id)arg4;

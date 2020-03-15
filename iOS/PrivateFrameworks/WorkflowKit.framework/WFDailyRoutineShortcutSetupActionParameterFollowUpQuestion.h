@@ -15,10 +15,10 @@
     NSString *_parameterKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *parameterKey; // @synthesize parameterKey=_parameterKey;
 @property(readonly, copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 - (id)initWithPrompt:(id)arg1 actionIdentifier:(id)arg2 parameterKey:(id)arg3;
 
 @end

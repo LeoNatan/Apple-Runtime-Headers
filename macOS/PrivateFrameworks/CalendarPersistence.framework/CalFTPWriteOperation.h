@@ -15,10 +15,10 @@
     struct __CFWriteStream *_writeStream;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFWriteStream *writeStream; // @synthesize writeStream=_writeStream;
 @property(nonatomic) long long numberOfBytesWritten; // @synthesize numberOfBytesWritten=_numberOfBytesWritten;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)writeStream:(struct __CFWriteStream *)arg1 receivedEventWithType:(unsigned long long)arg2;
 - (void)setProperties;
 - (void)cancel;

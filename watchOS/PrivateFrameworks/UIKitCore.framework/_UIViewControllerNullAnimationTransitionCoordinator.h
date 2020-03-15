@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     UIView *_containerView;
 }
 
-@property(nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(CDUnknownBlockType)arg2;
 - (void)_runAlongsideCompletionsAfterCommit;
 - (void)_runAlongsideCompletionsAndClearAlongsideAnimations;

@@ -23,11 +23,11 @@
 }
 
 + (void)run;
+- (void).cxx_destruct;
 @property(nonatomic) float displayScale; // @synthesize displayScale=_displayScale;
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
 @property(retain, nonatomic) CSLStatusOverlayAssertion *activeAssertion; // @synthesize activeAssertion=_activeAssertion;
 @property(readonly, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)assertionDidInvalidate:(id)arg1;
 - (void)assertion:(id)arg1 didUpdateStatusString:(id)arg2;
 - (void)assertionDidActivate:(id)arg1;

@@ -16,8 +16,8 @@
 + (id)mainQueue;
 + (id)currentQueue;
 + (id)backgroundQueue;
-@property(nonatomic) __weak id <CATOperationQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CATOperationQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)stopObserving:(id)arg1;
 - (void)startObserving:(id)arg1;
 - (void)delegateWillAddOperation:(id)arg1;

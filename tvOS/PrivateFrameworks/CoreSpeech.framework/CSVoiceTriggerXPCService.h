@@ -22,12 +22,12 @@
 
 + (id)sharedServiceForCoreSpeechDaemon;
 + (id)sharedService;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSVoiceTriggerXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(nonatomic) _Bool isPhraseSpotterBypassed; // @synthesize isPhraseSpotterBypassed=_isPhraseSpotterBypassed;
 @property(retain, nonatomic) NSMutableSet *activationAssertions; // @synthesize activationAssertions=_activationAssertions;
 @property(nonatomic) __weak id <CSVoiceTriggerXPCServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_teardownXPCClientIfNeeded;
 - (void)voiceTriggerXPCClient:(id)arg1 didDisconnect:(_Bool)arg2;
 - (id)_createXPCClientConnectionIfNeeded;

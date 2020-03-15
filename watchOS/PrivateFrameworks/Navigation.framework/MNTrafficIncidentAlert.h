@@ -32,6 +32,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)trafficIncidentAlertForDetails:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAutomaticReroute; // @synthesize isAutomaticReroute=_isAutomaticReroute;
 @property(readonly, nonatomic) NSDate *alertDate; // @synthesize alertDate=_alertDate;
 @property(readonly, nonatomic) CDStruct_3f2a7a20 alternateEndValidCoordinateRange; // @synthesize alternateEndValidCoordinateRange=_alternateEndValidCoordinateRange;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) unsigned int alertType; // @synthesize alertType=_alertType;
 @property(readonly, nonatomic) NSData *etaResponseID; // @synthesize etaResponseID=_etaResponseID;
 @property(readonly, nonatomic) NSData *alertID; // @synthesize alertID=_alertID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_dynamicStringValues;

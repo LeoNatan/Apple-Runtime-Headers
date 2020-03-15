@@ -36,6 +36,7 @@
     NSArray *_constraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) PXContextualNotificationChevronView *chevronView; // @synthesize chevronView=_chevronView;
 @property(retain, nonatomic) PXCapsuleButton *actionButton; // @synthesize actionButton=_actionButton;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak PXContextualNotification *contextualNotification; // @synthesize contextualNotification=_contextualNotification;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_handleActionButton:(id)arg1;
 - (_Bool)isPointInsidePassthroughArea:(struct CGPoint)arg1;

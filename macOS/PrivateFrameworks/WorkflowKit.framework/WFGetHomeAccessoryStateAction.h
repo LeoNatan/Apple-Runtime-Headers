@@ -6,7 +6,11 @@
 
 #import <WorkflowKit/WFAction.h>
 
-@interface WFGetHomeAccessoryStateAction : WFAction
+#import <WorkflowKit/WFHomeManagerEventObserver-Protocol.h>
+
+@class NSString;
+
+@interface WFGetHomeAccessoryStateAction : WFAction <WFHomeManagerEventObserver>
 {
 }
 
@@ -15,6 +19,7 @@
 - (id)characteristic;
 - (id)homeName;
 - (id)home;
+- (void)homeManagerDidUpdateHomes:(id)arg1;
 - (id)localizedDefaultOutputName;
 - (id)outputMeasurementUnitType;
 - (id)outputContentClasses;
@@ -23,7 +28,14 @@
 - (id)localizedDescriptionSummary;
 - (id)localizedName;
 - (void)runAsynchronouslyWithInput:(id)arg1;
+- (void)dealloc;
 - (void)initializeParameters;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

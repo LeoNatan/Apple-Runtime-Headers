@@ -16,9 +16,9 @@
     NSString *_specVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *specVersion; // @synthesize specVersion=_specVersion;
 @property(readonly, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
-- (void).cxx_destruct;
 - (id)initWithLayoutOptions:(id)arg1 specVersion:(id)arg2;
 
 // Remaining properties

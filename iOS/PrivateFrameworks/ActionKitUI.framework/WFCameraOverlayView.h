@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     WFVolumeButtonManager *_volumeButtonManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVolumeButtonManager *volumeButtonManager; // @synthesize volumeButtonManager=_volumeButtonManager;
 @property(nonatomic) __weak UILabel *photosLabel; // @synthesize photosLabel=_photosLabel;
 @property(nonatomic) __weak UIButton *flipButton; // @synthesize flipButton=_flipButton;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long takenPhotos; // @synthesize takenPhotos=_takenPhotos;
 @property(nonatomic) __weak WFCameraShutterButton *shutterButton; // @synthesize shutterButton=_shutterButton;
 @property(nonatomic) __weak UIImagePickerController *pickerController; // @synthesize pickerController=_pickerController;
-- (void).cxx_destruct;
 - (void)updateButtons;
 - (void)updateFlipButton;
 - (void)flashValueChanged;

@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     BOOL __biometricAuthenticationStillInUse;
 }
 
-@property(nonatomic) BOOL _biometricAuthenticationStillInUse; // @synthesize _biometricAuthenticationStillInUse=__biometricAuthenticationStillInUse;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL _biometricAuthenticationStillInUse; // @synthesize _biometricAuthenticationStillInUse=__biometricAuthenticationStillInUse;
 - (void)_updateTouchIDAvailabilityIfNecessary:(id)arg1;
 - (void)_didToggleTouchIDToAutoFill:(id)arg1;
 - (void)_updateCellAtIndex:(long long)arg1 inTableView:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
 - (void)_selectFirstCompletionItem;
 - (void)updateBiometricAvailabilityInCompletionList:(BOOL)arg1;
 - (void)_showBiometricMatchFailureFeedback;
-- (void)_presentAuthenticationSheetWithCompletionListItem:(const struct CompletionListItem *)arg1;
-- (id)_itemNameForAutoFillAuthorizationSheetWithItem:(const struct CompletionListItem *)arg1;
+-     // Error parsing type: v24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _presentAuthenticationSheetWithCompletionListItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _itemNameForAutoFillAuthorizationSheetWithItem:
 - (id)currentExternalizedContext;
 - (void)_cancelCurrentLAOperation;
 - (void)_cancelBiometricAuthentication;
@@ -42,19 +42,19 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAskingForBiometricAuthentication;
 - (void)completionWindowDidHide;
 - (void)completionWindowDidShow;
-- (BOOL)shouldShowAuthenticationSheetForCompletionListItem:(const struct CompletionListItem *)arg1;
-- (BOOL)performActionForListItem:(const struct CompletionListItem *)arg1 result:(char *)arg2 shouldAbortCompletion:(char *)arg3;
-- (double)widthOfCellForItem:(struct CompletionListItem *)arg1;
+-     // Error parsing type: c24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: shouldShowAuthenticationSheetForCompletionListItem:
+-     // Error parsing type: c40@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16^c24^c32, name: performActionForListItem:result:shouldAbortCompletion:
+-     // Error parsing type: d24@0:8^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: widthOfCellForItem:
 - (void)consumeCode:(id)arg1;
 - (void)codesUpdatedForOneTimeCodeMonitor:(id)arg1;
 - (id)_oneTimeCodeMonitor;
 - (void)_registerTableViewCellClasses;
--     // Error parsing type: ^{FormCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@}16@0:8, name: _formCompletionController
+-     // Error parsing type: ^{FormCompletionController=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@}16@0:8, name: _formCompletionController
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (void)_updateBiometricPromptForTableViewIfNecessary:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
--     // Error parsing type: @24@0:8^{FormCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@}16, name: initWithFormCompletionController:
+-     // Error parsing type: @24@0:8^{FormCompletionController=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@}16, name: initWithFormCompletionController:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

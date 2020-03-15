@@ -16,8 +16,8 @@
     _SFPBURL *_urlValue;
 }
 
-@property(retain, nonatomic) _SFPBURL *urlValue; // @synthesize urlValue=_urlValue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _SFPBURL *urlValue; // @synthesize urlValue=_urlValue;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

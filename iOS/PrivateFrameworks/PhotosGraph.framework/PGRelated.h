@@ -30,6 +30,7 @@
     PGGraphNode<PGGraphRelatableEvent> *_eventNode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PGGraphNode<PGGraphRelatableEvent> *eventNode; // @synthesize eventNode=_eventNode;
 @property(nonatomic) _Bool shouldGenerateTitle; // @synthesize shouldGenerateTitle=_shouldGenerateTitle;
 @property(nonatomic, getter=isGeneratingTitleBasedOnKeyAsset) _Bool generateTitleBasedOnKeyAsset; // @synthesize generateTitleBasedOnKeyAsset=_generateTitleBasedOnKeyAsset;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSArray *moments; // @synthesize moments=_moments;
 @property(retain, nonatomic) PHPhotosHighlight *highlight; // @synthesize highlight=_highlight;
 @property(retain, nonatomic) NSString *debugDescription; // @synthesize debugDescription=_debugDescription;
-- (void).cxx_destruct;
 - (void)_addKeywords:(id)arg1 forRelatedType:(unsigned long long)arg2;
 - (void)_addKeywordsFromKeywords:(id)arg1;
 @property(nonatomic) unsigned short relatedAlgorithmsVersion;

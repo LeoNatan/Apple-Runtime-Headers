@@ -15,9 +15,9 @@
 }
 
 + (double)heightForTraitCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateHeightForCurrentTraits;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

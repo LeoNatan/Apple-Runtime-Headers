@@ -15,8 +15,8 @@
     CDUnknownBlockType _configurationHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType configurationHandler; // @synthesize configurationHandler=_configurationHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType configurationHandler; // @synthesize configurationHandler=_configurationHandler;
 - (void)_handleConfigurationRequest:(id)arg1 withResponseHandler:(CDUnknownBlockType)arg2;
 - (void)registerMessageHandlersForSession:(id)arg1;
 - (id)initWithConfigurationHandler:(CDUnknownBlockType)arg1;

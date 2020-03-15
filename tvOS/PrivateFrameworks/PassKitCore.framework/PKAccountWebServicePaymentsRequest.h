@@ -17,12 +17,12 @@
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSDate *beginDate; // @synthesize beginDate=_beginDate;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

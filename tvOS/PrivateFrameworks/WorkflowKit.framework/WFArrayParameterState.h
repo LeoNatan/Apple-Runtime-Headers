@@ -16,10 +16,10 @@
 }
 
 + (Class)processingValueClass;
-@property(readonly, copy, nonatomic) NSArray *values; // @synthesize values=_values;
 - (void).cxx_destruct;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4 processSingleVariableStringsAsContentItems:(_Bool)arg5;
+@property(readonly, copy, nonatomic) NSArray *values; // @synthesize values=_values;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3 processSingleVariableStringsAsContentItems:(_Bool)arg4;
 - (id)containedVariables;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

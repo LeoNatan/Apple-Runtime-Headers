@@ -16,8 +16,8 @@
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
 + (id)agentDomain;
-@property(retain) NSData *agentData; // @synthesize agentData=_agentData;
 - (void).cxx_destruct;
+@property(retain) NSData *agentData; // @synthesize agentData=_agentData;
 - (id)copyAgentData;
 - (id)initWithProxyConfiguration:(id)arg1;
 - (id)agentDescription;

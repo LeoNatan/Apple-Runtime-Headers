@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)filesForUnarchivedFileAtPath:(id)arg1;
-@property(copy, nonatomic) NSData *bookmarkData; // @synthesize bookmarkData=_bookmarkData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *bookmarkData; // @synthesize bookmarkData=_bookmarkData;
 - (id)securityAssessment;
 - (id)description;
 - (BOOL)isMovableOrRemovable;

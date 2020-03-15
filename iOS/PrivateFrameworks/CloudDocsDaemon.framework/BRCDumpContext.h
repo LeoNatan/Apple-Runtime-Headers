@@ -38,6 +38,7 @@
 + (id)nowDateFromContext:(id)arg1;
 + (id)stringFromItemAsString:(id)arg1 context:(id)arg2;
 + (id)stringFromThrottleState:(int)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) brc_task_tracker *taskTracker; // @synthesize taskTracker=_taskTracker;
 @property(nonatomic) _Bool dumpTrackedPendingDownloads; // @synthesize dumpTrackedPendingDownloads=_dumpTrackedPendingDownloads;
 @property(nonatomic) _Bool onlyActiveStuff; // @synthesize onlyActiveStuff=_onlyActiveStuff;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSString *indentationBaseString; // @synthesize indentationBaseString=_indentationBaseString;
 @property(readonly, nonatomic) PQLConnection *db; // @synthesize db=_db;
 @property(readonly, nonatomic) struct __sFILE *fp; // @synthesize fp=_fp;
-- (void).cxx_destruct;
 - (void)popIndentation;
 - (void)pushIndentation;
 - (id)highlightedString:(id)arg1 type:(long long)arg2;

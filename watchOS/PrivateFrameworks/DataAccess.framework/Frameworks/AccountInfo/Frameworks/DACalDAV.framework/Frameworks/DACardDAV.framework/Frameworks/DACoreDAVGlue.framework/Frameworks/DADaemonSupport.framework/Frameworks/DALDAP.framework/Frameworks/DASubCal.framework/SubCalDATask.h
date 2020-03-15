@@ -17,10 +17,10 @@
     DAStatusReport *_statusReport;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DAStatusReport *statusReport; // @synthesize statusReport=_statusReport;
 @property(nonatomic) __weak DATaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (void)didFinish;
 - (void)performDelegateCallbackWithError:(id)arg1;
 - (void)willFinish;

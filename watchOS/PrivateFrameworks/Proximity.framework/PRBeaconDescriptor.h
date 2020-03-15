@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long macAddress; // @synthesize macAddress=_macAddress;
 @property(readonly) NSNumber *minor; // @synthesize minor=_minor;
 @property(readonly) NSNumber *major; // @synthesize major=_major;
 @property(readonly, copy) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

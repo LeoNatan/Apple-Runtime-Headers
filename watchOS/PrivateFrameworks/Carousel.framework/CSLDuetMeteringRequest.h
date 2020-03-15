@@ -15,9 +15,9 @@
 }
 
 + (id)requestWithBundleID:(id)arg1 meteringBudget:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int meteringBudget; // @synthesize meteringBudget=_meteringBudget;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)description;
 

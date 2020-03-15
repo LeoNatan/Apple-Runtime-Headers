@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <BackgroundLoadControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BackgroundLoadControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BackgroundLoadControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_kickOffBackgroundLoad:(id)arg1;
 - (void)_restartBackgroundLoadSoon:(id)arg1;
 - (void)_commitBackgroundLoadNow:(id)arg1 wasDeferred:(BOOL)arg2 usingTabViewItemSetUpBlock:(CDUnknownBlockType)arg3;

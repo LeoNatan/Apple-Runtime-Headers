@@ -19,6 +19,7 @@
     CDUnknownBlockType _contactUpdateBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType contactUpdateBlock; // @synthesize contactUpdateBlock=_contactUpdateBlock;
 @property(copy, nonatomic) CDUnknownBlockType stringRepresentationBlock; // @synthesize stringRepresentationBlock=_stringRepresentationBlock;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -26,7 +27,6 @@
 @property(nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(nonatomic) double minimumTextLabelWidth; // @synthesize minimumTextLabelWidth=_minimumTextLabelWidth;
-- (void).cxx_destruct;
 
 @end
 

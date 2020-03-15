@@ -20,10 +20,10 @@
 
 + (id)sharedCleanupQueue;
 + (id)destinationForConversionReturningUnchangedSource:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long singlePassVideoConversionTargetLength; // @synthesize singlePassVideoConversionTargetLength=_singlePassVideoConversionTargetLength;
 @property(retain) NSString *outputPathExtension; // @synthesize outputPathExtension=_outputPathExtension;
 @property(retain) PFVideoExportRangeCoordinator *singlePassVideoExportRangeCoordinator; // @synthesize singlePassVideoExportRangeCoordinator=_singlePassVideoExportRangeCoordinator;
-- (void).cxx_destruct;
 - (id)errorForSinglePassVideoConversionError:(id)arg1;
 - (BOOL)waitForAvailabilityOfRange:(struct _NSRange)arg1 timeout:(unsigned long long)arg2 error:(id *)arg3;
 - (void)addAvailableRange:(struct _NSRange)arg1;

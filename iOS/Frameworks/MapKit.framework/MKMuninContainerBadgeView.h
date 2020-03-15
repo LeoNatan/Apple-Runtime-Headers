@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 @property(nonatomic) __weak UIImageView *glyphView; // @synthesize glyphView=_glyphView;
 @property(nonatomic) __weak UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)setHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHidden:(_Bool)arg1;
 - (_Bool)isHidden;

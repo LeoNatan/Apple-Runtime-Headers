@@ -16,10 +16,10 @@
     BOOL _wasInvalidSyncToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL wasInvalidSyncToken; // @synthesize wasInvalidSyncToken=_wasInvalidSyncToken;
 @property(readonly, nonatomic) BOOL moreToSync; // @synthesize moreToSync=_moreToSync;
 @property(readonly, nonatomic) NSString *nextSyncToken; // @synthesize nextSyncToken=_nextSyncToken;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)notFoundHREFs;

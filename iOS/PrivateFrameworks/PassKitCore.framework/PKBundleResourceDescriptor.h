@@ -19,9 +19,9 @@
 
 + (id)withName:(id)arg1 extension:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *extension; // @synthesize extension=_extension;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqualToBundleResourceDescriptor:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

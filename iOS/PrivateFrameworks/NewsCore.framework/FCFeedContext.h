@@ -34,6 +34,7 @@
 + (id)feedContextForEditorialTag:(id)arg1;
 + (id)feedContextForTopStoriesTag:(id)arg1;
 + (id)feedContextForTag:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCoverArticles; // @synthesize isCoverArticles=_isCoverArticles;
 @property(nonatomic) _Bool isEditorialGems; // @synthesize isEditorialGems=_isEditorialGems;
 @property(nonatomic) _Bool isEditorial; // @synthesize isEditorial=_isEditorial;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSString *topicID; // @synthesize topicID=_topicID;
 @property(copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

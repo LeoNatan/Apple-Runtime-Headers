@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     double _computationalDutyCycle;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldThrowException; // @synthesize shouldThrowException=_shouldThrowException;
 @property(nonatomic) BOOL graphIsDeadEnded; // @synthesize graphIsDeadEnded=_graphIsDeadEnded;
 @property(nonatomic) double computationalDutyCycle; // @synthesize computationalDutyCycle=_computationalDutyCycle;
 @property(nonatomic) unsigned int blockSize; // @synthesize blockSize=_blockSize;
 @property(nonatomic) double sampleRate; // @synthesize sampleRate=_sampleRate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct Box *resultsBox;
 - (BOOL)adaptToSystemConfiguration:(id)arg1 error:(id *)arg2;
 - (id)sharedProcessorConfiguration;

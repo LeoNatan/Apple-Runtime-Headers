@@ -43,6 +43,7 @@
 + (id)_textFont;
 + (id)_accessibilityContentSizeCategory;
 + (float)estimatedHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
 @property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *largeTextChevronCenterYConstraint; // @synthesize largeTextChevronCenterYConstraint=_largeTextChevronCenterYConstraint;
@@ -67,7 +68,6 @@
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) HKGradient *gradient; // @synthesize gradient=_gradient;
-- (void).cxx_destruct;
 - (_Bool)_isLayingOutForAccessibility;
 - (void)_updateForCurrentSizeCategory;
 - (void)_updateTextConstraints;

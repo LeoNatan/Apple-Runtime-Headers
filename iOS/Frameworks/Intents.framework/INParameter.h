@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)parameterForClass:(Class)arg1 keyPath:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *parameterKeyPath; // @synthesize parameterKeyPath=_parameterKeyPath;
 @property(retain, nonatomic) Class parameterClass; // @synthesize parameterClass=_parameterClass;
 @property(retain, nonatomic) NSMutableDictionary *_indexesForSubKeyPaths; // @synthesize _indexesForSubKeyPaths;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_dictionaryRepresentation;

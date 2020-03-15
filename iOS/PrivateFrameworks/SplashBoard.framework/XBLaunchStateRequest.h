@@ -25,6 +25,7 @@
     struct CGSize _naturalSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *launchInterfaceIdentifier; // @synthesize launchInterfaceIdentifier=_launchInterfaceIdentifier;
 @property(copy, nonatomic) NSString *urlSchemeName; // @synthesize urlSchemeName=_urlSchemeName;
 @property(nonatomic) unsigned long long statusBarState; // @synthesize statusBarState=_statusBarState;
@@ -35,7 +36,6 @@
 @property(nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;
 @property(copy, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(retain, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

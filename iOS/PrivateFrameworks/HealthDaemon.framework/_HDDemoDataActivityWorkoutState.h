@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long swimmingStrokeStyle; // @synthesize swimmingStrokeStyle=_swimmingStrokeStyle;
 @property(nonatomic) double totalSwimmingStrokes; // @synthesize totalSwimmingStrokes=_totalSwimmingStrokes;
 @property(nonatomic) double totalDistanceSwimmingInYards; // @synthesize totalDistanceSwimmingInYards=_totalDistanceSwimmingInYards;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned long long workoutActivityType; // @synthesize workoutActivityType=_workoutActivityType;
 @property(retain, nonatomic) NSMutableArray *workoutEvents; // @synthesize workoutEvents=_workoutEvents;
 @property(retain, nonatomic) NSMutableData *associatedObjectUUIDs; // @synthesize associatedObjectUUIDs=_associatedObjectUUIDs;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (long long)lapCount;

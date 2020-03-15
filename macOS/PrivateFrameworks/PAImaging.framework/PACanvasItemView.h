@@ -23,6 +23,7 @@
 + (BOOL)automaticallyNotifiesObserversOfZoomToFitFactor;
 + (BOOL)automaticallyNotifiesObserversOfZoomToFit;
 + (BOOL)automaticallyNotifiesObserversOfZoomFactor;
+- (void).cxx_destruct;
 @property(retain) PAItemView *itemViewImpl; // @synthesize itemViewImpl=_itemViewImpl;
 @property(nonatomic) BOOL shouldPerformLayout; // @synthesize shouldPerformLayout=_shouldPerformLayout;
 @property(readonly, nonatomic) NSView *contentOverlayView; // @synthesize contentOverlayView=_contentOverlayView;
@@ -30,7 +31,6 @@
 @property(nonatomic) BOOL zoomToFit; // @synthesize zoomToFit=_zoomToFit;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(nonatomic) BOOL allowScaleUpInZoomToFit; // @synthesize allowScaleUpInZoomToFit=_allowScaleUpInZoomToFit;
-- (void).cxx_destruct;
 - (void)addMouseTracker:(id)arg1;
 @property(readonly, nonatomic) double zoomToFitFactor; // @synthesize zoomToFitFactor=_zoomToFitFactor;
 - (void)_updateZoomToFitFactor:(double)arg1;

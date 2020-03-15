@@ -26,10 +26,10 @@
 + (id)writePropertyList:(id)arg1 withFilename:(id)arg2;
 + (id)accessibilityConfigInfo;
 + (id)writeToFileWithTypologyLog:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TITypologyStatistic *typologyStatistic; // @synthesize typologyStatistic=_typologyStatistic;
 @property(retain, nonatomic) TITypologyLog *typologyLog; // @synthesize typologyLog=_typologyLog;
 @property(retain, nonatomic) NSString *inputModeIdentifier; // @synthesize inputModeIdentifier=_inputModeIdentifier;
-- (void).cxx_destruct;
 - (void)logKeyboardLayout:(id)arg1 name:(id)arg2;
 - (void)logReceivedLastAcceptedCandidateCorrected;
 - (void)logReceivedCandidateRejected:(id)arg1;

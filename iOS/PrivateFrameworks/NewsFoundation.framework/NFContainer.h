@@ -20,11 +20,11 @@
     NSMutableDictionary *_privateContainers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *privateContainers; // @synthesize privateContainers=_privateContainers;
 @property(retain, nonatomic) NFCallbackStore *callbackStore; // @synthesize callbackStore=_callbackStore;
 @property(retain, nonatomic) NFContainerPool *pool; // @synthesize pool=_pool;
 @property(retain, nonatomic) NSMutableDictionary *definitions; // @synthesize definitions=_definitions;
-- (void).cxx_destruct;
 - (void)validateDefinitionsWithProxyResolver:(id)arg1;
 - (id)register:(id)arg1 createDefinitionBlock:(CDUnknownBlockType)arg2;
 - (id)definitionForKey:(id)arg1;

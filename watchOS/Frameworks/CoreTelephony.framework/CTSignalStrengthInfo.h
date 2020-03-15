@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *maxDisplayBars; // @synthesize maxDisplayBars=_maxDisplayBars;
 @property(retain, nonatomic) NSNumber *displayBars; // @synthesize displayBars=_displayBars;
 @property(retain, nonatomic) NSNumber *bars; // @synthesize bars=_bars;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

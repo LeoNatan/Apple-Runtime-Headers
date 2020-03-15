@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSMutableArray *remoteAlertActions; // @synthesize remoteAlertActions=_remoteAlertActions;
 @property(retain, nonatomic) NSMutableDictionary *secureAppActions; // @synthesize secureAppActions=_secureAppActions;
-- (void).cxx_destruct;
 - (void)_enumerateSecureAppActionsOfType:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_enumerateSecureAppActionsByPriorityUsingBlock:(CDUnknownBlockType)arg1;
 - (id)_applicationForAction:(id)arg1;

@@ -36,6 +36,7 @@
     _UIStackedImageConfiguration *_singleCoverImageConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIStackedImageConfiguration *singleCoverImageConfiguration; // @synthesize singleCoverImageConfiguration=_singleCoverImageConfiguration;
 @property(readonly, nonatomic) _UIStackedImageConfiguration *defaultImageConfiguration; // @synthesize defaultImageConfiguration=_defaultImageConfiguration;
 @property(nonatomic, getter=areFocusEffectsDisabled) _Bool focusEffectsDisabled; // @synthesize focusEffectsDisabled=_focusEffectsDisabled;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *songTitle; // @synthesize songTitle=_songTitle;
 @property(retain, nonatomic) UIView *videoView; // @synthesize videoView=_videoView;
 @property(nonatomic) long long placeholderType; // @synthesize placeholderType=_placeholderType;
-- (void).cxx_destruct;
 - (id)_addSubheadLabelWithFont:(id)arg1;
 - (void)_updateImageViewStateFocused:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (_Bool)_shouldShowFocusEffects;

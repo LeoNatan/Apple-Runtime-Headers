@@ -24,6 +24,7 @@
     NSString *_pin;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pin; // @synthesize pin=_pin;
 @property(copy, nonatomic) NSString *sharedSecret; // @synthesize sharedSecret=_sharedSecret;
 @property(copy, nonatomic) NSString *proxyPassword; // @synthesize proxyPassword=_proxyPassword;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL proxyUserNameRequired; // @synthesize proxyUserNameRequired=_proxyUserNameRequired;
 @property(nonatomic) BOOL passwordRequired; // @synthesize passwordRequired=_passwordRequired;
 @property(nonatomic) BOOL userNameRequired; // @synthesize userNameRequired=_userNameRequired;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)setPostprocessedPayloadContents:(id)arg1;
 - (id)getPreprocessedPayloadContents;

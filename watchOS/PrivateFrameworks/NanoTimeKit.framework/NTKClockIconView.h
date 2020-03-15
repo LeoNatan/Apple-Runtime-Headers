@@ -19,9 +19,9 @@
     _Bool _paused;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) float fullDiameter; // @synthesize fullDiameter=_fullDiameter;
-- (void).cxx_destruct;
 - (void)_configureTimeView;
 - (void)_configureCircleView;
 - (void)layoutSubviews;

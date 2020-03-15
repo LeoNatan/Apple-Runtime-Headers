@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     id <_NSQuickActionTouchBarCollectionViewControllerDelegate> _delegate;
 }
 
-@property __weak id <_NSQuickActionTouchBarCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <_NSQuickActionTouchBarCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)loadView;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

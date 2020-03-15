@@ -40,6 +40,7 @@
 + (id)purchasesGroupedByAccountIdentifierWithPurchases:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)purchaseWithBuyParameters:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *dsidLessOptions; // @synthesize dsidLessOptions=_dsidLessOptions;
 @property BOOL isDSIDLessPurchase; // @synthesize isDSIDLessPurchase=_isDSIDLessPurchase;
 @property(copy) NSDictionary *responseDialog; // @synthesize responseDialog=_responseDialog;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) SSDownloadMetadata *downloadMetadata; // @synthesize downloadMetadata=_downloadMetadata;
 @property(copy, nonatomic) NSString *buyParameters; // @synthesize buyParameters=_buyParameters;
 @property(retain, nonatomic) NSNumber *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (BOOL)purchaseDSIDMatchesPrimaryAccount;
 @property(readonly) BOOL needsAuthentication; // @dynamic needsAuthentication;
 @property BOOL isRecoveryPurchase; // @dynamic isRecoveryPurchase;

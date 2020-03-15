@@ -23,9 +23,9 @@
     id <CSLSystemLockAnimatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFrozen) _Bool freezeAnimation; // @synthesize freezeAnimation=_freezeAnimation;
 @property(nonatomic) __weak id <CSLSystemLockAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_decay:(double)arg1;
 - (void)_animateLinear:(double)arg1;
 - (void)_tick:(id)arg1;

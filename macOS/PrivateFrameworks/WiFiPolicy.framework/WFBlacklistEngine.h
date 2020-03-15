@@ -23,12 +23,12 @@
 
 + (id)stringRepresentationWithState:(unsigned long long)arg1;
 + (id)stringRepresentationWithReason:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property double autojoinBlacklistExpiry; // @synthesize autojoinBlacklistExpiry=_autojoinBlacklistExpiry;
 @property double wowBlacklistExpiry; // @synthesize wowBlacklistExpiry=_wowBlacklistExpiry;
 @property(retain) NSMutableArray *bssidThresholds; // @synthesize bssidThresholds=_bssidThresholds;
 @property(retain) NSMutableArray *ssidThresholds; // @synthesize ssidThresholds=_ssidThresholds;
 @property(nonatomic) id <WFBlacklistDelegate> blacklistDelegate; // @synthesize blacklistDelegate=_blacklistDelegate;
-- (void).cxx_destruct;
 - (id)getNodeFromBlacklist:(id)arg1;
 - (id)getBlacklist;
 - (void)_printBlacklist;

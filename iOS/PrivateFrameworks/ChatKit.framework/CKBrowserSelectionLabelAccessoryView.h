@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIImageView *_plusDView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *plusDView; // @synthesize plusDView=_plusDView;
 @property(retain, nonatomic) UIImageView *plusLView; // @synthesize plusLView=_plusLView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

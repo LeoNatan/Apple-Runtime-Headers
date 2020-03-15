@@ -18,9 +18,9 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HFOverrideCharacteristicValueProvider> overrideValueProvider; // @synthesize overrideValueProvider=_overrideValueProvider;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> originalValueSource; // @synthesize originalValueSource=_originalValueSource;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)commitTransactionWithReason:(id)arg1;

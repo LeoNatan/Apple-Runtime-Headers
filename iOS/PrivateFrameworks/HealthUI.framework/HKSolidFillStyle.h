@@ -13,8 +13,8 @@
     UIColor *_color;
 }
 
-@property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_renderInContext:(struct CGContext *)arg1 size:(struct CGSize)arg2;
 

@@ -15,9 +15,9 @@
 }
 
 + (id)_imageForTransitType:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *tripSummaryLabel; // @synthesize tripSummaryLabel=_tripSummaryLabel;
 @property(retain, nonatomic) UIImageView *transitIconImageView; // @synthesize transitIconImageView=_transitIconImageView;
-- (void).cxx_destruct;
 - (float)_configureTripSummaryLabelWithMaxSize:(struct CGSize)arg1;
 - (id)_fieldLabelAttributes;
 - (void)layoutSubviews;

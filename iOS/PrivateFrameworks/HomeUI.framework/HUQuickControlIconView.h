@@ -24,6 +24,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
 @property(retain, nonatomic) id viewValue; // @synthesize viewValue=_viewValue;
 @property(retain, nonatomic) UILabel *supplementaryLabel; // @synthesize supplementaryLabel=_supplementaryLabel;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlIconViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)_updateLabelFramesOrigins;
 - (struct CGRect)_getLabelsContainingRect;
 - (void)_updateLabelSizes;

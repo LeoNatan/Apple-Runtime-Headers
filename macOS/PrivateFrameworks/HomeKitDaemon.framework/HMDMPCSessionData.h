@@ -16,11 +16,11 @@
     MPPlaybackArchive *_playbackArchive;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(readonly, nonatomic) NSNumber *playbackVolumeNumber; // @synthesize playbackVolumeNumber=_playbackVolumeNumber;
 @property(readonly, nonatomic) NSNumber *playbackStateNumber; // @synthesize playbackStateNumber=_playbackStateNumber;
 @property(readonly, copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation:(BOOL)arg1;
 - (id)initWithMediaAction:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1 profileSource:(id)arg2;

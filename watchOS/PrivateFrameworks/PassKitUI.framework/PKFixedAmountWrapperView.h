@@ -14,9 +14,9 @@
     UIPickerView *_pickerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 
 @end

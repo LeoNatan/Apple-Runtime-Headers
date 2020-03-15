@@ -18,9 +18,9 @@
     HFHomePodAlarmItemProvider *_alarmItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFHomePodAlarmItemProvider *alarmItemProvider; // @synthesize alarmItemProvider=_alarmItemProvider;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (void)unregisterForExternalUpdates;
 - (void)registerForExternalUpdates;
 - (void)mobileTimerAdapter:(id)arg1 didUpdateAlarms:(id)arg2;

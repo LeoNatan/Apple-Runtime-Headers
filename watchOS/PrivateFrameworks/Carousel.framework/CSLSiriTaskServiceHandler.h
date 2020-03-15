@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) AFSiriTaskService *siriTaskService; // @synthesize siriTaskService=_siriTaskService;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AFSiriTaskService *siriTaskService; // @synthesize siriTaskService=_siriTaskService;
 - (void)siriTaskService:(id)arg1 handleSiriTask:(id)arg2;
 - (id)init;
 

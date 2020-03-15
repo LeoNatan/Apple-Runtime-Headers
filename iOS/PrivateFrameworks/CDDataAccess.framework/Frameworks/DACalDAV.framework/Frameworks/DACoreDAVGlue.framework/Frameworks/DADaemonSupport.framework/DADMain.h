@@ -20,8 +20,8 @@
 }
 
 + (id)sharedMain;
-@property(retain, nonatomic) NSArray *userSwitchTasks; // @synthesize userSwitchTasks=_userSwitchTasks;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *userSwitchTasks; // @synthesize userSwitchTasks=_userSwitchTasks;
 - (void)dealloc;
 - (id)init;
 - (void)_configureAggdLogging;

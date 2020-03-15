@@ -17,10 +17,10 @@
     id _providedItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id providedItem; // @synthesize providedItem=_providedItem;
 @property(copy, nonatomic, setter=_setActivityType:) NSString *activityType; // @synthesize activityType=_activityType;
 @property(retain, nonatomic) id placeholderItem; // @synthesize placeholderItem=_placeholderItem;
-- (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (_Bool)_shouldExecuteItemOperationForActivity:(id)arg1;

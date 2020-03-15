@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_filteredComponents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *filteredComponents; // @synthesize filteredComponents=_filteredComponents;
 @property(nonatomic) long long contentVerticalAlignment; // @synthesize contentVerticalAlignment=_contentVerticalAlignment;
 @property(copy, nonatomic) NSArray *components; // @synthesize components=_components;
-- (void).cxx_destruct;
 - (void)_resetSubviews;
 - (long long)_alignmentFromView:(id)arg1;
 - (void)_updateView:(id)arg1 maxViewWidth:(double)arg2;

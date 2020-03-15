@@ -16,11 +16,11 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool invalidateWhenBackgrounded; // @synthesize invalidateWhenBackgrounded=_invalidateWhenBackgrounded;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(unsigned long long)arg1 identifier:(id)arg2 reason:(id)arg3;
 

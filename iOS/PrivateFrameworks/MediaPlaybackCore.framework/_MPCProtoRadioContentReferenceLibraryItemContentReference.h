@@ -45,6 +45,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int year; // @synthesize year=_year;
 @property(nonatomic) int trackNumber; // @synthesize trackNumber=_trackNumber;
 @property(nonatomic) int albumTrackCount; // @synthesize albumTrackCount=_albumTrackCount;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(retain, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 @property(retain, nonatomic) NSString *albumArtistName; // @synthesize albumArtistName=_albumArtistName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

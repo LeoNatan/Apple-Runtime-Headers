@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <MCInstallationConsentDelegate> _consentDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showInstall; // @synthesize showInstall=_showInstall;
 @property(nonatomic) __weak id <MCInstallationConsentDelegate> consentDelegate; // @synthesize consentDelegate=_consentDelegate;
 @property(retain, nonatomic) MCProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;

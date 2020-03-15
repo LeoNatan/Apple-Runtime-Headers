@@ -15,9 +15,10 @@
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewCell *cell; // @synthesize cell=_cell;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
+- (unsigned long long)_accessibilityAutomationType;
 - (_Bool)_accessibilityViewHierarchyHasNativeFocus;
 - (_Bool)_accessibilitySetNativeFocus;
 - (_Bool)_accessibilityHasNativeFocus;

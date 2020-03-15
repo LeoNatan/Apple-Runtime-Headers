@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)recordType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *archiveContinuationToken; // @synthesize archiveContinuationToken=_archiveContinuationToken;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

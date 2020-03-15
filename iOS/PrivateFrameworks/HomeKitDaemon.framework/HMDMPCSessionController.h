@@ -13,8 +13,8 @@
     NSOperationQueue *_speakerGroupCommandOperationQueue;
 }
 
-@property(readonly, nonatomic) NSOperationQueue *speakerGroupCommandOperationQueue; // @synthesize speakerGroupCommandOperationQueue=_speakerGroupCommandOperationQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOperationQueue *speakerGroupCommandOperationQueue; // @synthesize speakerGroupCommandOperationQueue=_speakerGroupCommandOperationQueue;
 - (void)executeSessionWithSessionData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
 

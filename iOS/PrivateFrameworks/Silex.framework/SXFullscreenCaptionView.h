@@ -39,6 +39,7 @@
 
 + (void)_applyStyle:(id)arg1 toStorage:(id)arg2;
 + (id)_overridePropertiesWithComponentStyle:(id)arg1 storage:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXTextTangierStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(retain, nonatomic) SXTextSource *textSource; // @synthesize textSource=_textSource;
 @property(retain, nonatomic) UISwipeGestureRecognizer *swipeGestureRecognizer; // @synthesize swipeGestureRecognizer=_swipeGestureRecognizer;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic) unsigned long long viewIndex; // @synthesize viewIndex=_viewIndex;
 @property(readonly, nonatomic) SXFullscreenCaption *caption; // @synthesize caption=_caption;
 @property(nonatomic) __weak id <SXFullscreenCaptionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)forceFullExpandsionMode;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

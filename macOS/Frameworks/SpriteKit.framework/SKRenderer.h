@@ -25,8 +25,8 @@
 }
 
 + (id)rendererWithDevice:(id)arg1;
-@property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
 @property(nonatomic) BOOL showsDrawCount;
 @property(nonatomic) BOOL showsNodeCount;
 @property(nonatomic) BOOL showsQuadCount;

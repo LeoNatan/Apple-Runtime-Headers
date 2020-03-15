@@ -15,10 +15,10 @@
     struct CGRect _availableContentFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *layoutDetailsArray; // @synthesize layoutDetailsArray=_layoutDetailsArray;
 @property(nonatomic) struct CGSize collectionViewContentSize; // @synthesize collectionViewContentSize=_collectionViewContentSize;
 @property(nonatomic) struct CGRect availableContentFrame; // @synthesize availableContentFrame=_availableContentFrame;
-- (void).cxx_destruct;
 
 @end
 

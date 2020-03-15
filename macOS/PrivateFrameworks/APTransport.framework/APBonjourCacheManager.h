@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class CUCoalescer, CUSystemMonitor, NSMutableSet, NSString;
+@class CUCoalescer, CUSystemMonitor, NSMutableDictionary, NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface APBonjourCacheManager : NSObject
 {
     BOOL _cacheChanged;
-    struct NSMutableDictionary *_cachedItems;
+    NSMutableDictionary *_cachedItems;
     NSMutableSet *_removedItems;
-    struct NSMutableDictionary *_deviceMap;
+    NSMutableDictionary *_deviceMap;
     int _pairedPeersChangedToken;
     BOOL _pairedPeersGetting;
-    struct NSMutableDictionary *_pairedPeersMap;
+    NSMutableDictionary *_pairedPeersMap;
     NSObject<OS_dispatch_source> *_retryTimer;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
@@ -34,13 +34,13 @@
     NSString *_serviceType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) CDUnknownBlockType reportDeviceLostHandler; // @synthesize reportDeviceLostHandler=_reportDeviceLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType reportDeviceFoundHandler; // @synthesize reportDeviceFoundHandler=_reportDeviceFoundHandler;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (BOOL)_writeCachedItems:(id)arg1;
 - (id)_readCachedItems;
 - (void)_flushCachedItems;

@@ -16,10 +16,10 @@
     NSObject<OS_ldap_operation> *_operation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_ldap_operation> *operation; // @synthesize operation=_operation;
 @property(retain, nonatomic) NSMutableArray *foundContacts; // @synthesize foundContacts=_foundContacts;
 @property(readonly, nonatomic) DAContactsSearchQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)daLevelErrorForLDAPError:(int)arg1;
 - (int)numDownloadedElements;
 - (void)finishWithError:(id)arg1;

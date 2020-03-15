@@ -22,12 +22,12 @@
 }
 
 + (id)sharedSource;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *iVarQueue; // @synthesize iVarQueue=_iVarQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(retain) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(retain) NSObject<OS_os_log> *MXSourceLogHandle; // @synthesize MXSourceLogHandle=_MXSourceLogHandle;
-- (void).cxx_destruct;
 - (id)bundleIDFromPid:(int)arg1;
 - (id)bundleIDFromURL:(id)arg1;
 - (BOOL)validatePowerlogData:(id)arg1;

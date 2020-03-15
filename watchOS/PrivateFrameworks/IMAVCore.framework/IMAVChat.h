@@ -115,6 +115,7 @@
 + (id)chatList;
 + (id)_proxyRepresentationForIMHandle:(id)arg1;
 + (id)_imHandleFromProxyRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setMetadataFinalized:) _Bool metadataFinalized; // @synthesize metadataFinalized=_metadataFinalized;
 @property(nonatomic, setter=_setAirplaneModeEnabled:) _Bool airplaneModeEnabled; // @synthesize airplaneModeEnabled=_airplaneModeEnabled;
 @property(nonatomic, setter=_setDidRemotePause:) _Bool didRemotePause; // @synthesize didRemotePause=_didRemotePause;
@@ -164,7 +165,6 @@
 @property(retain, nonatomic, setter=_setCallStatisticsGUID:) NSString *_callStatisticsGUID; // @synthesize _callStatisticsGUID;
 @property(nonatomic, setter=_setConnectionType:) int _connectionType; // @synthesize _connectionType;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_conferenceQueue; // @synthesize _conferenceQueue;
-- (void).cxx_destruct;
 - (_Bool)_cachedBoolForKey:(id)arg1;
 - (_Bool)_hasCachedBoolForKey:(id)arg1;
 - (void)_cacheBool:(_Bool)arg1 forKey:(id)arg2;

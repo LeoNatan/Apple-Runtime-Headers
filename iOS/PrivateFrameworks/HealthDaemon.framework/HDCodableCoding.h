@@ -17,10 +17,10 @@
     NSString *_version;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *code; // @synthesize code=_code;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *system; // @synthesize system=_system;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

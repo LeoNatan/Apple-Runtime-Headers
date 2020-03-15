@@ -21,11 +21,11 @@
 + (id)saveRequestToDeleteImageForIdentifier:(id)arg1;
 + (id)saveRequestToDeleteImagesForContactIdentifiers:(id)arg1;
 + (id)saveRequestToCreateImage:(id)arg1 forContactIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *attributeName; // @synthesize attributeName=_attributeName;
 @property(readonly, nonatomic) long long operationType; // @synthesize operationType=_operationType;
 @property(readonly, nonatomic) CNContactImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSArray *contactIdentifiers; // @synthesize contactIdentifiers=_contactIdentifiers;
-- (void).cxx_destruct;
 - (id)createStoreRequest;
 - (id)deleteStoreRequest;
 @property(readonly, nonatomic) NSPersistentStoreRequest *persistentStoreRequest;

@@ -21,6 +21,7 @@
     NSTimeZone *_systemTimeZone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *systemTimeZone; // @synthesize systemTimeZone=_systemTimeZone;
 @property(nonatomic) BOOL wantsToStop; // @synthesize wantsToStop=_wantsToStop;
 @property(retain, nonatomic) OSActivityStream *activityStream; // @synthesize activityStream=_activityStream;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL includesDebugEntities; // @synthesize includesDebugEntities=_includesDebugEntities;
 @property(readonly, nonatomic) long long PID; // @synthesize PID=_PID;
 @property(readonly, nonatomic) CSKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)streamDidStop:(id)arg1;
 - (void)streamDidFail:(id)arg1 error:(id)arg2;
 - (void)streamDidStart:(id)arg1;

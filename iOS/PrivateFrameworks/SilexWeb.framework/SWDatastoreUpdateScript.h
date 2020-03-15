@@ -19,10 +19,10 @@
 }
 
 + (id)source;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWSession> originatingSession; // @synthesize originatingSession=_originatingSession;
 @property(readonly, nonatomic) SWDatastore *oldDatastore; // @synthesize oldDatastore=_oldDatastore;
 @property(readonly, nonatomic) SWDatastore *datastore; // @synthesize datastore=_datastore;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *executableScript;
 @property(readonly, nonatomic) _Bool queueable;
 @property(readonly, nonatomic) NSString *identifier;

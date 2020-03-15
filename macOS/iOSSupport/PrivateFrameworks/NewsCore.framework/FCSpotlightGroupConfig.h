@@ -15,9 +15,9 @@
     NSDate *_publishDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
 @property(readonly, copy, nonatomic) NSString *spotlightArticleID; // @synthesize spotlightArticleID=_spotlightArticleID;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> spotlightItemDarkStyle;
 @property(readonly, copy, nonatomic) id <FCCardStyleProviding> spotlightItemStyle;
 @property(readonly, copy, nonatomic) NSString *spotlightEyebrowTitle;

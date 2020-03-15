@@ -21,12 +21,12 @@
 }
 
 + (id)identifierWithBookmarkableIdentifier:(id)arg1 groupIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *namespacedIdentifier; // @synthesize namespacedIdentifier=_namespacedIdentifier;
 @property(readonly, copy, nonatomic) NSString *bookmarkableIdentifier; // @synthesize bookmarkableIdentifier=_bookmarkableIdentifier;
 @property(copy, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic, getter=isAggregated) _Bool aggregated; // @synthesize aggregated=_aggregated;
-- (void).cxx_destruct;
 - (id)updatedTileInfoWithNewHeadline:(id)arg1;
 @property(readonly, nonatomic) unsigned long long tileInfoType;
 @property(readonly, copy, nonatomic) NSString *identifier;

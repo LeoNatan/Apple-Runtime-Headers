@@ -13,8 +13,8 @@
     CLKTextProvider *_clockKitTextProvider;
 }
 
-@property(readonly, nonatomic) CLKTextProvider *clockKitTextProvider; // @synthesize clockKitTextProvider=_clockKitTextProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLKTextProvider *clockKitTextProvider; // @synthesize clockKitTextProvider=_clockKitTextProvider;
 - (id)clockKitTextProviderRepresentation;
 - (id)attributedStringRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;

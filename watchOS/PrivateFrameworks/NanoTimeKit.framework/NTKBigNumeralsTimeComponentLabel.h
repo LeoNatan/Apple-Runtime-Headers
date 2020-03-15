@@ -29,11 +29,11 @@
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) unsigned int typeface; // @synthesize typeface=_typeface;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)applyToTritiumTransitionFraction:(float)arg1;
 - (void)tritium_transitionToFrameSpecifier:(id)arg1;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;

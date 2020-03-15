@@ -14,9 +14,9 @@
     NSArray *_vertices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *vertices; // @synthesize vertices=_vertices;
 @property(retain, nonatomic) VKRoadFeatureAccessibilityElement *road; // @synthesize road=_road;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRoad:(id)arg1 betweenFirstVertex:(id)arg2 andSecondVertex:(id)arg3;
 

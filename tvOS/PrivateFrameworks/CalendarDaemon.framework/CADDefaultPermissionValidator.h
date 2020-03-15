@@ -15,8 +15,8 @@
     ClientConnection *_connection;
 }
 
-@property(readonly, nonatomic) __weak ClientConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak ClientConnection *connection; // @synthesize connection=_connection;
 - (_Bool)_valueForBooleanEntitlement:(id)arg1 defaultValue:(_Bool)arg2;
 @property(readonly) _Bool hasNotificationCountEntitlement;
 @property(readonly) _Bool shouldTrustClientEnforcedManagedConfigurationAccess;

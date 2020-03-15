@@ -16,11 +16,11 @@
     NSString *_imageSeparatorText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageSeparatorText; // @synthesize imageSeparatorText=_imageSeparatorText;
 @property(retain, nonatomic) TVLImageElement *rightImage; // @synthesize rightImage=_rightImage;
 @property(retain, nonatomic) TVLImageElement *leftImage; // @synthesize leftImage=_leftImage;
 @property(retain, nonatomic) TVLImageElement *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

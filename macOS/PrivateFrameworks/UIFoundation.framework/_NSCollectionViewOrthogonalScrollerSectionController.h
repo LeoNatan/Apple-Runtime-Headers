@@ -19,12 +19,12 @@
     NSIndexSet *_currentOrthogonalSectionIndexes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *currentOrthogonalSectionIndexes; // @synthesize currentOrthogonalSectionIndexes=_currentOrthogonalSectionIndexes;
 @property(retain, nonatomic) NSHashTable *frontMostElements; // @synthesize frontMostElements=_frontMostElements;
 @property(retain, nonatomic) NSMapTable *scrollViewToSectionMap; // @synthesize scrollViewToSectionMap=_scrollViewToSectionMap;
 @property(retain, nonatomic) NSMapTable *scrollViewFromSectionMap; // @synthesize scrollViewFromSectionMap=_scrollViewFromSectionMap;
 @property(nonatomic) __weak _NSCollectionViewCore *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)_forceElementsOnTopAsNeeded;
 - (struct CGSize)_contentSizeForSection:(long long)arg1 layout:(id)arg2;
 - (void)_configureScrollView:(id)arg1 forSection:(long long)arg2 baseContentInsets:(struct NSEdgeInsets)arg3;

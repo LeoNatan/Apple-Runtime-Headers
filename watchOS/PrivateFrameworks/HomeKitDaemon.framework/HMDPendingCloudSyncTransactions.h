@@ -17,11 +17,11 @@
 }
 
 + (id)convertSaveReasonToTransationReason:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) NSMutableArray *deltaReasonsSaved; // @synthesize deltaReasonsSaved=_deltaReasonsSaved;
 @property(retain, nonatomic) NSMutableArray *pendingReasonsSaved; // @synthesize pendingReasonsSaved=_pendingReasonsSaved;
 @property(nonatomic) _Bool uploadInProgress; // @synthesize uploadInProgress=_uploadInProgress;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *allReasonsSaved;
 @property(readonly, nonatomic) NSArray *reasonsSaved;
 - (void)loadReasonsSaved:(id)arg1;

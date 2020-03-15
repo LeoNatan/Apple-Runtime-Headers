@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedShareSheetController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UINSActivityItemsConfigurationReading> activityItemsConfiguration; // @synthesize activityItemsConfiguration=_activityItemsConfiguration;
 @property(copy, nonatomic) NSDictionary *shareKitInfo; // @synthesize shareKitInfo;
 @property(nonatomic) long long sharingStyle; // @synthesize sharingStyle;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType completionWithItemsHandler; // @synthesize completionWithItemsHandler;
 @property(retain, nonatomic) NSArray *applicationActivities; // @synthesize applicationActivities;
 @property(copy, nonatomic) CDUnknownBlockType activitySelectedHandler; // @synthesize activitySelectedHandler;
-- (void).cxx_destruct;
 - (id)itemsForSharingServicePickerToolbarItem:(id)arg1;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;
 - (void)sharingService:(id)arg1 didShareItems:(id)arg2;

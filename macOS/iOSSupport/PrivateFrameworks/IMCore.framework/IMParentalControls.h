@@ -19,12 +19,12 @@
 
 + (id)standardControls;
 + (id)objectForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL _forceChatLogging; // @synthesize _forceChatLogging;
 @property(readonly, nonatomic) BOOL _disableAV; // @synthesize _disableAV;
 @property(readonly, nonatomic) NSMutableDictionary *_parentalControls; // @synthesize _parentalControls;
 @property(readonly, nonatomic) BOOL active; // @synthesize active=_active;
 @property(nonatomic) BOOL shouldPostNotifications; // @synthesize shouldPostNotifications=_shouldPostNotifications;
-- (void).cxx_destruct;
 - (BOOL)accountHasWhitelist:(id)arg1;
 - (BOOL)accountIsEnabled:(id)arg1;
 - (BOOL)okToConnectAccount:(id)arg1;

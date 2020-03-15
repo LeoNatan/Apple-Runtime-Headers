@@ -17,10 +17,10 @@
     CDUnknownBlockType _observerBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
 @property(nonatomic) __weak id keepAliveObject; // @synthesize keepAliveObject=_keepAliveObject;
 @property(nonatomic) unsigned long long token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)dispose;
 - (void)disposeOn:(id)arg1;
 @property(readonly) unsigned long long hash;

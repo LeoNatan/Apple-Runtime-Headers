@@ -16,10 +16,10 @@
     CAMSnapshotView *__snapshotView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSnapshotView:) CAMSnapshotView *_snapshotView; // @synthesize _snapshotView=__snapshotView;
 @property(readonly, nonatomic) __weak id <CAMViewfinderTransitionable> _transitionableViewfinder; // @synthesize _transitionableViewfinder=__transitionableViewfinder;
 @property(nonatomic) _Bool didEnterBackground; // @synthesize didEnterBackground=_didEnterBackground;
-- (void).cxx_destruct;
 - (void)closeWithoutBlurring;
 - (void)closeAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)openAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

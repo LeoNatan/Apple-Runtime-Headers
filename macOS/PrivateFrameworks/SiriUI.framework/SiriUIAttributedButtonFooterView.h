@@ -17,11 +17,11 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain) NSImageView *attributionIcon; // @synthesize attributionIcon=_attributionIcon;
 @property(retain) NSTextField *label; // @synthesize label=_label;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain) NSButton *containingButton; // @synthesize containingButton=_containingButton;
-- (void).cxx_destruct;
 - (id)accessibilityIdentifier;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;

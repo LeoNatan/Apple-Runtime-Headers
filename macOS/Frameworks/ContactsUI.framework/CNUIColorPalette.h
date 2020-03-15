@@ -21,6 +21,7 @@
     double _swatchSpacing;
 }
 
+- (void).cxx_destruct;
 @property double swatchSpacing; // @synthesize swatchSpacing=_swatchSpacing;
 @property double swatchSize; // @synthesize swatchSize=_swatchSize;
 @property(retain) NSArray *colorButtons; // @synthesize colorButtons=_colorButtons;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long indexForSelectedColor; // @synthesize indexForSelectedColor=_indexForSelectedColor;
 @property(copy, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property __weak id <CNUIColorPaletteDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)selectColor:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)_commonInitWithSwatchSize:(double)arg1 swatchSpacing:(double)arg2 colors:(id)arg3;

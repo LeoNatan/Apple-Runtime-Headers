@@ -91,6 +91,7 @@
 + (id)trimStartImage;
 + (id)createSnappingControllerWithSnappingTarget:(double)arg1;
 + (id)_createSnappingControllersForKeytimes:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 minimumTrimLength; // @synthesize minimumTrimLength=_minimumTrimLength;
 @property(nonatomic) BOOL showVideoScrubberDebugOverlay; // @synthesize showVideoScrubberDebugOverlay=_showVideoScrubberDebugOverlay;
 @property(readonly, nonatomic) UXImageView *playhead; // @synthesize playhead=_playhead;
@@ -126,7 +127,6 @@
 @property(readonly, nonatomic) UXView *_postTrimOverlayView; // @synthesize _postTrimOverlayView;
 @property(readonly, nonatomic) UXView *_preTrimOverlayView; // @synthesize _preTrimOverlayView;
 @property(readonly, nonatomic) UXView *photoLoupe; // @synthesize photoLoupe=_photoLoupe;
-- (void).cxx_destruct;
 - (void)impactOccured;
 - (void)prepareForImpact;
 - (struct CGRect)backingAlignedRectForRect:(struct CGRect)arg1;

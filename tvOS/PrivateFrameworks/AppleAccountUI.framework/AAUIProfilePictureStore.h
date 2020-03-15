@@ -23,9 +23,9 @@
     long long _monogramType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long monogramType; // @synthesize monogramType=_monogramType;
 @property(nonatomic) double pictureDiameter; // @synthesize pictureDiameter=_pictureDiameter;
-- (void).cxx_destruct;
 - (id)_profilePictureForPicture:(id)arg1 crop:(_Bool)arg2 cropRect:(struct CGRect)arg3 cacheable:(_Bool)arg4;
 - (id)cacheablePictureForPicture:(id)arg1 cropRect:(struct CGRect)arg2;
 - (id)profilePictureForPicture:(id)arg1 cropRect:(struct CGRect)arg2;

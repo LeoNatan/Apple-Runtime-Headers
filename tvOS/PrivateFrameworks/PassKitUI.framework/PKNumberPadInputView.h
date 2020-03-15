@@ -16,9 +16,9 @@
 }
 
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *numberPadColor; // @synthesize numberPadColor=_numberPadColor;
 @property(nonatomic) _Bool showsDecimalPointButton; // @synthesize showsDecimalPointButton=_showsDecimalPointButton;
-- (void).cxx_destruct;
 - (void)_reloadSubviews;
 - (void)_performInsertion:(id)arg1;
 - (void)_performDelete;

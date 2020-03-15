@@ -14,9 +14,9 @@
     NSArray *_bundleIDs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property(copy) NSArray *filterQueries; // @synthesize filterQueries=_filterQueries;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 @property(readonly) NSString *keyboardLanguage;

@@ -17,8 +17,8 @@
     id <XPCNSServiceListenerDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) id <XPCNSServiceListenerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <XPCNSServiceListenerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)XPCServiceListener:(id)arg1 didReceiveNewConnection:(id)arg2;
 - (_Bool)XPCServiceListener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 @property(readonly, retain, nonatomic) NSString *serviceName;

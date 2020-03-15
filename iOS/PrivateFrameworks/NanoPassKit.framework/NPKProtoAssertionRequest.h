@@ -21,9 +21,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
 @property(retain, nonatomic) NSString *requestUUIDString; // @synthesize requestUUIDString=_requestUUIDString;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

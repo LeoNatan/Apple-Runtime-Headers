@@ -23,6 +23,7 @@
     struct CGSize _extensionPreferredPreviewSize;
 }
 
+- (void).cxx_destruct;
 @property(retain) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 @property(copy) NSString *extensionContentTitle; // @synthesize extensionContentTitle=_extensionContentTitle;
@@ -30,7 +31,6 @@
 @property(retain) QLPreviewHostExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(retain) id extensionRequestId; // @synthesize extensionRequestId=_extensionRequestId;
 @property(retain) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)previewStatusDidChange;
 - (id)bundleIDForScreentime;
 - (void)modeDidChange;

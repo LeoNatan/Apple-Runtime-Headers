@@ -8,7 +8,7 @@
 
 #import <Network/NSCopying-Protocol.h>
 
-@class NWAWDNWActivity, NWAWDNWL2Report;
+@class NWAWDNWActivity, NWAWDNWDeviceReport, NWAWDNWL2Report;
 
 __attribute__((visibility("hidden")))
 @interface NWAWDNWActivityEpilogue : PBCodable <NSCopying>
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _timestamp;
     NWAWDNWActivity *_activity;
     int _completionReason;
+    NWAWDNWDeviceReport *_deviceReport;
     NWAWDNWL2Report *_l2Report;
     struct {
         unsigned int durationMsecs:1;
@@ -27,12 +28,13 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NWAWDNWDeviceReport *deviceReport; // @synthesize deviceReport=_deviceReport;
 @property(retain, nonatomic) NWAWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
 @property(nonatomic) unsigned long long fragmentsQuenched; // @synthesize fragmentsQuenched=_fragmentsQuenched;
 @property(nonatomic) unsigned long long durationMsecs; // @synthesize durationMsecs=_durationMsecs;
 @property(retain, nonatomic) NWAWDNWActivity *activity; // @synthesize activity=_activity;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -42,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasDeviceReport;
 @property(readonly, nonatomic) BOOL hasL2Report;
 - (int)StringAsCompletionReason:(id)arg1;
 - (id)completionReasonAsString:(int)arg1;

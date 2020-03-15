@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
+- (void).cxx_destruct;
 @property BOOL userAccepted; // @synthesize userAccepted=_userAccepted;
 @property(retain) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) struct __SecTrust *trust; // @synthesize trust=_trust;
-- (void).cxx_destruct;
 - (void)_certificatePanelDidEnd:(id)arg1 returnCode:(int)arg2 contextInfo:(void *)arg3;
 - (void)_showCertificatePanelInWindow:(id)arg1 withAccount:(id)arg2 canContinue:(BOOL)arg3 saveHandler:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)showCertificatePanelInWindow:(id)arg1 isSetup:(BOOL)arg2 withAccount:(id)arg3 saveHandler:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;

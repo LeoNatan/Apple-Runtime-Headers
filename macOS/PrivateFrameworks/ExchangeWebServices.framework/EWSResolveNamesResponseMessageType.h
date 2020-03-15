@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *ResolutionSet; // @synthesize ResolutionSet=_ResolutionSet;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *ResolutionSet; // @synthesize ResolutionSet=_ResolutionSet;
 
 @end
 

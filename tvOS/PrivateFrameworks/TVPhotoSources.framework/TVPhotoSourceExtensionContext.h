@@ -17,8 +17,8 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property(nonatomic) __weak id <TVPhotoSourceExtensionProtocol> protocolHandler; // @synthesize protocolHandler=_protocolHandler;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVPhotoSourceExtensionProtocol> protocolHandler; // @synthesize protocolHandler=_protocolHandler;
 - (void)fetchAssetsForCollectionWithIdentifier:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchCollectionsWithCompletion:(CDUnknownBlockType)arg1;
 

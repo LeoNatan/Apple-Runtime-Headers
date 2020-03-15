@@ -26,6 +26,7 @@
 }
 
 + (id)actionWithTitle:(id)arg1 style:(int)arg2 actionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -39,7 +40,6 @@
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(nonatomic) int titleAlignment; // @synthesize titleAlignment=_titleAlignment;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

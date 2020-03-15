@@ -17,12 +17,12 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain) NSString *currentQueryString; // @synthesize currentQueryString=_currentQueryString;
 @property(retain) NSString *queryString; // @synthesize queryString=_queryString;
 @property(retain) SPUISearchViewController *searchViewController; // @synthesize searchViewController=_searchViewController;
 @property double timeSinceLastFire; // @synthesize timeSinceLastFire=_timeSinceLastFire;
-- (void).cxx_destruct;
 - (void)fire:(id)arg1;
 - (id)initWithString:(id)arg1 viewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 

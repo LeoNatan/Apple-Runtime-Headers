@@ -47,6 +47,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType bytesAvailableHandler; // @synthesize bytesAvailableHandler=_bytesAvailableHandler;
 @property(nonatomic) _Bool usesOpportunisticSockets; // @synthesize usesOpportunisticSockets=_usesOpportunisticSockets;
 @property(nonatomic) unsigned int timeout; // @synthesize timeout=_timeout;
@@ -62,8 +63,8 @@
 @property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;
 @property(nonatomic) _Bool allowsTrustPrompt; // @synthesize allowsTrustPrompt=_allowsTrustPrompt;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool isConstrained;
 @property(readonly, nonatomic) _Bool isCellularConnection;
 @property(readonly, nonatomic) _Bool isValid;
 @property(readonly, nonatomic) _Bool isWritable;

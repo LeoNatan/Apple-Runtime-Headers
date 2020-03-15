@@ -23,13 +23,13 @@
 }
 
 + (struct CGRect)_imageRectInImageView:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UXLabel *pageCountLabel; // @synthesize pageCountLabel=_pageCountLabel;
 @property(readonly, nonatomic) UXLabel *productLabel; // @synthesize productLabel=_productLabel;
 @property(readonly, nonatomic) UXLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UXImageView *decorationMaskImageView; // @synthesize decorationMaskImageView=_decorationMaskImageView;
 @property(readonly, nonatomic) UXImageView *decorationImageView; // @synthesize decorationImageView=_decorationImageView;
 @property(readonly, nonatomic) UXImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)_setupShadow;
 - (void)_updatePageCountLabelForProject:(id)arg1;
 - (void)_requestPreviewWithProjectBundle:(id)arg1 size:(struct CGSize)arg2;

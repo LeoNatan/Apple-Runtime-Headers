@@ -24,13 +24,13 @@
 + (id)updateTaskForModelAtURL:(id)arg1 trainingData:(id)arg2 configuration:(id)arg3 progressHandlers:(id)arg4 error:(id *)arg5;
 + (id)updateTaskForModelAtURL:(id)arg1 trainingData:(id)arg2 configuration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 error:(id *)arg5;
 + (_Bool)updateModelAtURL:(id)arg1 trainingData:(id)arg2 configuration:(id)arg3 writeToURL:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *updatableModelURL; // @synthesize updatableModelURL=_updatableModelURL;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(nonatomic) _Bool updateHasStarted; // @synthesize updateHasStarted=_updateHasStarted;
 @property(readonly, nonatomic) MLUpdateProgressHandlers *progressHandlers; // @synthesize progressHandlers=_progressHandlers;
 @property(readonly, nonatomic) id <MLBatchProvider> trainingData; // @synthesize trainingData=_trainingData;
 @property(readonly, nonatomic) MLModel<MLUpdatable> *updatableModel; // @synthesize updatableModel=_updatableModel;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (CDUnknownBlockType)_completionHandlerBlock;
 - (CDUnknownBlockType)_progressHandlerBlock;

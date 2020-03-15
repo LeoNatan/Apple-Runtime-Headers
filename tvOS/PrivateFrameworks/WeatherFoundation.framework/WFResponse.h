@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)responseWithIdentifier:(id)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double executionTime; // @synthesize executionTime=_executionTime;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 error:(id)arg2;

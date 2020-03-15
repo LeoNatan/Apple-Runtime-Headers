@@ -22,10 +22,10 @@
 }
 
 + (Class)itemType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) _MPCProtoContainerIdentifierSet *identifierSet; // @synthesize identifierSet=_identifierSet;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

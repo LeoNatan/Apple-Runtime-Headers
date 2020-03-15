@@ -18,13 +18,13 @@
     unsigned long long _extent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wasDropped; // @synthesize wasDropped=_wasDropped;
 @property(nonatomic) unsigned long long extent; // @synthesize extent=_extent;
 @property(nonatomic) BOOL reachedMinOrder; // @synthesize reachedMinOrder=_reachedMinOrder;
 @property(nonatomic) BOOL reachedEnd; // @synthesize reachedEnd=_reachedEnd;
 @property(copy, nonatomic) NSArray *feedItemAndArticleRecords; // @synthesize feedItemAndArticleRecords=_feedItemAndArticleRecords;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

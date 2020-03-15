@@ -16,9 +16,9 @@
     AKAuthorizationWindowController *_authorizationWindowController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKAuthorizationWindowController *authorizationWindowController; // @synthesize authorizationWindowController=_authorizationWindowController;
 @property __weak NSWindow *presentingWindow; // @synthesize presentingWindow=_presentingWindow;
-- (void).cxx_destruct;
 - (void)presentSheetOverWindow:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)init;
 

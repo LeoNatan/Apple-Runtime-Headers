@@ -11,8 +11,8 @@
     CDUnknownBlockType _dismissHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 - (void)setFileTransferSession:(id)arg1;
 - (id)initialViewController;
 - (id)initWithFileTransferSession:(id)arg1;

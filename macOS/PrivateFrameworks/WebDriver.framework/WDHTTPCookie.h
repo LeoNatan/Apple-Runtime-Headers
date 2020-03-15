@@ -23,6 +23,7 @@
 }
 
 + (id)defaultCookieWithName:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSession) BOOL session; // @synthesize session=_session;
 @property(nonatomic, getter=isHTTPOnly) BOOL httpOnly; // @synthesize httpOnly=_httpOnly;
 @property(nonatomic, getter=isSecure) BOOL secure; // @synthesize secure=_secure;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)toJSONPayload;
 - (unsigned long long)hash;
 - (BOOL)isEqualToCookie:(id)arg1;

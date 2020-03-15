@@ -17,11 +17,11 @@
     const void *_bytes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const void *bytes; // @synthesize bytes=_bytes;
 @property(readonly, nonatomic) long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
 @property(readonly, nonatomic) id <PAPixelFormat> pixelFormat; // @synthesize pixelFormat=_format;
 @property(readonly, nonatomic) struct PFIntSize_st size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)debugDump:(id)arg1;
 - (struct CGImage *)_newCGImageWithColorSpace:(struct CGColorSpace *)arg1;
 - (const void *)bytesAtPoint:(struct PFIntPoint_st)arg1;

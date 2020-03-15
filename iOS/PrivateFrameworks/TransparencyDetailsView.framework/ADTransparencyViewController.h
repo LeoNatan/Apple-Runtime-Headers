@@ -26,6 +26,7 @@
     UINavigationBar *_transparencyNavBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isiPad; // @synthesize isiPad=_isiPad;
 @property(retain, nonatomic) UINavigationBar *transparencyNavBar; // @synthesize transparencyNavBar=_transparencyNavBar;
 @property(retain, nonatomic) WKWebView *myWebView; // @synthesize myWebView=_myWebView;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *transparencyRendererPayload; // @synthesize transparencyRendererPayload=_transparencyRendererPayload;
 @property(readonly, nonatomic) NSString *transparencyDetailsUnavailableMessage; // @synthesize transparencyDetailsUnavailableMessage=_transparencyDetailsUnavailableMessage;
 @property(retain, nonatomic) id <ADTransparencyViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reportTransparencyViewControllerEventWithType:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_hideErrorMessage;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;

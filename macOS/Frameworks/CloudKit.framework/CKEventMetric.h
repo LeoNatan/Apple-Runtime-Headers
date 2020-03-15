@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isPushTriggerFired; // @synthesize isPushTriggerFired=_isPushTriggerFired;
 @property(nonatomic) BOOL isCKInternalMetric; // @synthesize isCKInternalMetric=_isCKInternalMetric;
 @property(readonly, nonatomic) NSMutableDictionary *associatedOperationGroups; // @synthesize associatedOperationGroups=_associatedOperationGroups;
@@ -43,7 +44,6 @@
 @property(retain) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)generateEventMetricInfo;

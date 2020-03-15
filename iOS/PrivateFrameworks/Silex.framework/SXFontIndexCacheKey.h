@@ -16,9 +16,9 @@
     long long _fontSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long fontSize; // @synthesize fontSize=_fontSize;
 @property(readonly, nonatomic) id <SXFontAttributes> fontAttributes; // @synthesize fontAttributes=_fontAttributes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

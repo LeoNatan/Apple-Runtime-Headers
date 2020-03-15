@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)videoPropertiesForFetcher:(id)arg1;
-@property(readonly, retain, nonatomic) LPVideo *video; // @synthesize video=_video;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) LPVideo *video; // @synthesize video=_video;
 - (id)initWithVideo:(id)arg1 fetcher:(id)arg2;
 
 @end

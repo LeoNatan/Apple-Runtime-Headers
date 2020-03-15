@@ -13,8 +13,8 @@
     EKBackingStore *_backingStore;
 }
 
-@property(readonly, nonatomic) __weak EKBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak EKBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 - (void)undoThisAndFutureDeleteOnEvent:(id)arg1 originalMaster:(id)arg2;
 - (id)_validExceptionDateInNewSeries:(id)arg1 originalDate:(id)arg2;
 - (void)_moveExceptions:(id)arg1 fromSeries:(id)arg2 toSeries:(id)arg3 sliceDate:(id)arg4 copy:(BOOL)arg5;

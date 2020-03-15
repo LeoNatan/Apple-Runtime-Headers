@@ -37,6 +37,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *customPlaceholderValues; // @synthesize customPlaceholderValues=_customPlaceholderValues;
 @property(retain) HKQuantity *goal; // @synthesize goal=_goal;
 @property(retain) HKQuantity *progress; // @synthesize progress=_progress;
@@ -59,7 +60,6 @@
 @property(copy) NSString *section; // @synthesize section=_section;
 @property(readonly) NSArray *earnedInstances; // @synthesize earnedInstances=_earnedInstances;
 @property(readonly) ACHTemplate *template; // @synthesize template=_template;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

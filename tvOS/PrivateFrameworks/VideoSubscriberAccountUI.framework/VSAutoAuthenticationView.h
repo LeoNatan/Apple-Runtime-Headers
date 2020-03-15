@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (id)_footnoteTextColor;
 + (id)_textColor;
 + (id)_buttonBackgroundColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *footerLabel; // @synthesize footerLabel=_footerLabel;
 @property(retain, nonatomic) UIButton *manualSignInButton; // @synthesize manualSignInButton=_manualSignInButton;
 @property(retain, nonatomic) UIButton *signInButton; // @synthesize signInButton=_signInButton;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImage *logo; // @synthesize logo=_logo;
 @property(nonatomic) __weak id <VSAutoAuthenticationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) struct CGSize preferredImageSize;
 - (void)_updateButtonWithKeyPath:(id)arg1 text:(id)arg2 action:(SEL)arg3;

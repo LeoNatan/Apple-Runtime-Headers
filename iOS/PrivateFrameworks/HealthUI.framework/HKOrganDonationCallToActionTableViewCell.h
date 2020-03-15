@@ -19,11 +19,11 @@
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *spacerView; // @synthesize spacerView=_spacerView;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UITextView *callToActionTextView; // @synthesize callToActionTextView=_callToActionTextView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 @property(readonly, nonatomic) NSAttributedString *callToActionTextViewString;
 - (void)setupConstraints;

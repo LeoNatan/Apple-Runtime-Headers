@@ -17,8 +17,8 @@
     id <HUTriggerTimeConditionDetailEditorDelegate> _delegate;
 }
 
-@property(readonly, nonatomic) __weak id <HUTriggerTimeConditionDetailEditorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <HUTriggerTimeConditionDetailEditorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)datePickerCell:(id)arg1 didSelectDate:(id)arg2;
 - (void)significantEventOffsetPicker:(id)arg1 didSelectOffset:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;

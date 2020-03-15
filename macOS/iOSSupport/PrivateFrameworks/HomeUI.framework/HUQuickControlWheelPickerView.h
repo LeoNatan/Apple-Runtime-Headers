@@ -29,6 +29,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) double maxTextWidth; // @synthesize maxTextWidth=_maxTextWidth;
 @property(retain, nonatomic) NSNumber *selectedRow; // @synthesize selectedRow=_selectedRow;
 @property(retain, nonatomic) UIView *selectedRowSurroundingView; // @synthesize selectedRowSurroundingView=_selectedRowSurroundingView;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) HUQuickControlWheelPickerViewProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
-- (void).cxx_destruct;
 - (void)_actuateSelectionTapticFeedback;
 - (void)_prepareForTapticFeedback;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;

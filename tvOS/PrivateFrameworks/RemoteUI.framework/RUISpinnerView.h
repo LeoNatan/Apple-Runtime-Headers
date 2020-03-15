@@ -21,11 +21,11 @@
     RUIFooterElement *_footer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RUIFooterElement *footer; // @synthesize footer=_footer;
 @property(retain, nonatomic) RUIHeaderElement *header; // @synthesize header=_header;
 @property(retain, nonatomic) UIColor *spinnerColor; // @synthesize spinnerColor=_spinnerColor;
 @property(nonatomic) __weak RUIObjectModel *objectModel; // @synthesize objectModel=_objectModel;
-- (void).cxx_destruct;
 - (void)viewDidLayout;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

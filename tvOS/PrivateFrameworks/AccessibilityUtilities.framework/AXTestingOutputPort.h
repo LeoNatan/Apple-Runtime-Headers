@@ -16,11 +16,11 @@
     NSArray *_ttsChannels;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *ttsChannels; // @synthesize ttsChannels=_ttsChannels;
 @property(retain) NSString *UID; // @synthesize UID;
 @property(retain) NSString *portName; // @synthesize portName;
 @property(retain) NSString *portType; // @synthesize portType;
-- (void).cxx_destruct;
 - (id)channels;
 
 @end

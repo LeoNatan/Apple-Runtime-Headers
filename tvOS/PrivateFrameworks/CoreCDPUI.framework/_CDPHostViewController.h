@@ -15,8 +15,8 @@
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-@property(copy, nonatomic) CDUnknownBlockType viewServiceTerminationBlock; // @synthesize viewServiceTerminationBlock=_viewServiceTerminationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType viewServiceTerminationBlock; // @synthesize viewServiceTerminationBlock=_viewServiceTerminationBlock;
 - (double)_keyboardHeightOffset;
 - (void)hostKeyboardOffset:(CDUnknownBlockType)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

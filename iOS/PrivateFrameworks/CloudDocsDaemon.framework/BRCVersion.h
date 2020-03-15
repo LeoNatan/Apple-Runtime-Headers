@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *quarantineInfo; // @synthesize quarantineInfo=_quarantineInfo;
 @property(retain, nonatomic) NSString *lastEditorDeviceName; // @synthesize lastEditorDeviceName=_lastEditorDeviceName;
 @property(retain, nonatomic) NSNumber *lastEditorDeviceOrUserRowID; // @synthesize lastEditorDeviceOrUserRowID=_lastEditorDeviceOrUserRowID;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSString *originalPOSIXName; // @synthesize originalPOSIXName=_originalPOSIXName;
 @property(nonatomic) long long mtime; // @synthesize mtime=_mtime;
 @property(retain, nonatomic) BRFieldCKInfo *ckInfo; // @synthesize ckInfo=_ckInfo;
-- (void).cxx_destruct;
 - (_Bool)isSmallAndMostRecentClientsGenerateThumbnails;
 - (id)uti;
 - (id)additionNameForItemID:(id)arg1 zoneID:(id)arg2;

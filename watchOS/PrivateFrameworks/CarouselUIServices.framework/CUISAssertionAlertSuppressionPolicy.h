@@ -13,8 +13,8 @@
     NSDictionary *_rules;
 }
 
-@property(retain, nonatomic) NSDictionary *rules; // @synthesize rules=_rules;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *rules; // @synthesize rules=_rules;
 - (id)description;
 - (_Bool)hasSuppressionRuleForAlertItem:(id)arg1;
 - (unsigned int)suppressionRuleForAlertItem:(id)arg1;

@@ -27,6 +27,7 @@
 
 + (id)descriptorForRequiredKeys;
 + (id)supportedActionTypes;
+- (void).cxx_destruct;
 @property(nonatomic) long long actionsOrder; // @synthesize actionsOrder=_actionsOrder;
 @property(nonatomic) __weak id <CNUINavigationListStyle> navigationListStyle; // @synthesize navigationListStyle=_navigationListStyle;
 @property(nonatomic) __weak id <CNContactActionsControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSDictionary *modelsByActionTypes; // @synthesize modelsByActionTypes=_modelsByActionTypes;
 @property(retain, nonatomic) id <CNUIUserActionListDataSource> actionsDataSource; // @synthesize actionsDataSource=_actionsDataSource;
 @property(copy, nonatomic) NSArray *actionTypes; // @synthesize actionTypes=_actionTypes;
-- (void).cxx_destruct;
 - (void)prepareNavigationListItems;
 - (id)navigationListItemForUserActionType:(id)arg1;
 - (void)navigationListController:(id)arg1 didSelectItem:(id)arg2;

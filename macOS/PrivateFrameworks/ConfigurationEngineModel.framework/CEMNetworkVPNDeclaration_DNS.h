@@ -20,12 +20,12 @@
 + (id)buildRequiredOnlyWithServerAddresses:(id)arg1;
 + (id)buildWithServerAddresses:(id)arg1 withSearchDomains:(id)arg2 withDomainName:(id)arg3 withSupplementalMatchDomains:(id)arg4 withSupplementalMatchDomainsNoSearch:(id)arg5;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadSupplementalMatchDomainsNoSearch; // @synthesize payloadSupplementalMatchDomainsNoSearch=_payloadSupplementalMatchDomainsNoSearch;
 @property(copy, nonatomic) NSArray *payloadSupplementalMatchDomains; // @synthesize payloadSupplementalMatchDomains=_payloadSupplementalMatchDomains;
 @property(copy, nonatomic) NSString *payloadDomainName; // @synthesize payloadDomainName=_payloadDomainName;
 @property(copy, nonatomic) NSArray *payloadSearchDomains; // @synthesize payloadSearchDomains=_payloadSearchDomains;
 @property(copy, nonatomic) NSArray *payloadServerAddresses; // @synthesize payloadServerAddresses=_payloadServerAddresses;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

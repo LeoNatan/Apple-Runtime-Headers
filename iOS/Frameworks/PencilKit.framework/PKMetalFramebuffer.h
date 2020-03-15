@@ -21,6 +21,7 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __IOSurface *ioSurface; // @synthesize ioSurface=_ioSurface;
 @property(readonly, nonatomic) unsigned long long sampleCount; // @synthesize sampleCount=_sampleCount;
 @property(readonly, nonatomic) _Bool backedByIOSurface; // @synthesize backedByIOSurface=_backedByIOSurface;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) id <MTLTexture> colorTexture; // @synthesize colorTexture=_colorTexture;
-- (void).cxx_destruct;
 - (void)makePurgeable;
 - (_Bool)makeNonPurgeable;
 - (struct __IOSurface *)createIOSurface;

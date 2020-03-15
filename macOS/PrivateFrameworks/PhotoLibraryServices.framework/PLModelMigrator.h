@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSFileManager, PLLibraryServicesManager, PLMigrationPostProcessingToken, PLPhotoLibrary, PLPhotoLibraryPathManager, PLRelationshipOrderKeyManager, PLThumbnailManager, PLXPCTransaction;
+@class NSDictionary, NSFileManager, PLCoreAnalyticsEventManager, PLLazyObject, PLLibraryServicesManager, PLMigrationPostProcessingToken, PLPhotoLibrary, PLPhotoLibraryPathManager, PLRelationshipOrderKeyManager, PLXPCTransaction;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface PLModelMigrator : NSObject
@@ -16,8 +16,9 @@
     NSDictionary *_syncedPropertiesByUUID;
     PLPhotoLibraryPathManager *_pathManager;
     PLPhotoLibrary *_photoLibrary;
-    PLThumbnailManager *_thumbnailManager;
     PLRelationshipOrderKeyManager *_relationshipOrderKeyManager;
+    PLLazyObject *_lazyThumbnailManager;
+    PLLazyObject *_lazyCoreAnalysticsEventManager;
     PLLibraryServicesManager *_libraryServicesManager;
     BOOL _didImportFileSystemAssets;
     BOOL _rebuildRequired;
@@ -51,13 +52,13 @@
 + (int)currentModelVersion;
 + (BOOL)enumerateObjectsWithIncrementalSaveDefaultBatchSizeFetchRequest:(id)arg1 managedObjectContext:(id)arg2 count:(unsigned long long *)arg3 error:(id *)arg4 block:(CDUnknownBlockType)arg5;
 + (BOOL)executeBatchDeleteWithEntityName:(id)arg1 predicate:(id)arg2 managedObjectContext:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s lightweightMigrationLock; // @synthesize lightweightMigrationLock=_lightweightMigrationLock;
 @property(nonatomic) struct os_unfair_lock_s storeMetadataLock; // @synthesize storeMetadataLock=_storeMetadataLock;
 @property(nonatomic) struct os_unfair_lock_s containedObjectsLock; // @synthesize containedObjectsLock=_containedObjectsLock;
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(readonly, nonatomic) PLMigrationPostProcessingToken *postProcessingToken; // @synthesize postProcessingToken=_postProcessingToken;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
-- (void).cxx_destruct;
 - (BOOL)_repairLegacyMigrationDuplicateVersionCloudResources:(id)arg1;
 - (BOOL)_repairTableThumbFragmentation;
 - (BOOL)_repushAllUserSmartAlbum:(id)arg1;
@@ -349,7 +350,7 @@
 - (void)_importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)collectContentsOfDirectoryURL:(id)arg1 urlsToSkip:(id)arg2 forAddingToAlbum:(id)arg3 intoAssetsArray:(id)arg4 assetsKind:(int)arg5;
 - (void)_collectFileURLs:(id)arg1 urlsToSkip:(id)arg2 forAddingToAlbum:(id)arg3 intoAssetsArray:(id)arg4 assetsKind:(int)arg5 testCreationDates:(BOOL)arg6;
-- (void)_importAllDCIMAssets:(id)arg1 pendingFraction:(float)arg2;
+- (void)_importAllDCIMAssets:(id)arg1 legacyRecoveryEnabled:(BOOL)arg2 pendingFraction:(float)arg3;
 - (void)_rebuildAssetsFromJournal:(id)arg1 pendingFraction:(float)arg2;
 - (BOOL)_createManualIndexesDropBeforeCreate:(BOOL)arg1;
 - (id)_orderedAssetsToImport;
@@ -411,6 +412,7 @@
 - (BOOL)_fixIncorrectThumbnailTables;
 - (BOOL)_resetThumbnailsAndInitiateRebuildRequestIfNeeded;
 - (BOOL)postProcessThumbnailsOnlyIfVersionMismatchOrMissing:(char *)arg1;
+- (unsigned long long)_assetCountForStore:(id)arg1;
 - (void)validateCurrentModelVersion;
 - (void)_validateCurrentModelVersionAttempt:(long long)arg1;
 - (void)_validateCurrentModelVersionFailedWithMismatchedVersion:(long long)arg1;
@@ -418,7 +420,9 @@
 @property(readonly, getter=isCloudPhotoLibraryEnabled) BOOL cloudPhotoLibraryEnabled;
 @property(readonly, nonatomic) __weak PLPhotoLibrary *photoLibrary;
 - (id)thumbnailManager;
+@property(readonly) PLCoreAnalyticsEventManager *analyticsEventManager;
 - (id)initWithPathManager:(id)arg1 relationshipOrderKeyManager:(id)arg2;
+- (BOOL)reconsiderAllowedForAnalysisOnAssetsMarkedNotAllowedInStore:(id)arg1;
 - (BOOL)resetAnalysisStateForVideosWithMoc:(id)arg1;
 - (BOOL)markUserConfirmedFacesAndCorrespondingFaceAnalysisStatesDirtyInStore:(id)arg1;
 - (BOOL)markAllDirtyFaceAnalysisStatesWithFaceDetectionWorkerFlagsInStore:(id)arg1;
@@ -442,6 +446,7 @@
 - (long long)faceMigrationResetLevelRequiredForPreviousStoreVersion:(unsigned long long)arg1;
 - (BOOL)graphPersonResetRequiredForPreviousStoreVersion:(unsigned long long)arg1;
 - (BOOL)sceneStepRequiredForPreviousStoreVersion:(unsigned long long)arg1;
+- (void)filesystemImportResultsUpdateKeywordWithImportedAssets:(id)arg1;
 
 @end
 

@@ -15,10 +15,10 @@
     CDStruct_996ac03c _cropRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool resetCleanAperture; // @synthesize resetCleanAperture=_resetCleanAperture;
 @property(retain) NUImageTransformAffine *transform; // @synthesize transform=_transform;
 @property CDStruct_996ac03c cropRect; // @synthesize cropRect=_cropRect;
-- (void).cxx_destruct;
 - (_Bool)canPropagateOriginalAuxiliaryData;
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
@@ -28,8 +28,8 @@
 - (struct CGPoint)scaleCropOriginForOriginalVideoSize:(struct CGSize)arg1 originalCleanAperture:(struct CGRect)arg2 renderScale:(double)arg3 inputExtent:(CDStruct_996ac03c)arg4;
 - (id)_transformWithError:(out id *)arg1;
 - (id)transformAffine;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 - (id)initWithRect:(CDStruct_996ac03c)arg1 input:(id)arg2;
 - (id)initWithRect:(CDStruct_996ac03c)arg1 input:(id)arg2 resetCleanAperture:(_Bool)arg3 settings:(id)arg4;
 

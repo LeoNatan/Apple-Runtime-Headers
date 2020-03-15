@@ -17,10 +17,10 @@
     NSOperationQueue *_presentedItemOperationQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 @property(readonly, copy) NSURL *primaryPresentedItemURL; // @synthesize primaryPresentedItemURL=_primaryPresentedItemURL;
 @property(readonly, copy) NSURL *presentedItemURL; // @synthesize presentedItemURL=_presentedItemURL;
-- (void).cxx_destruct;
 - (id)initWithPrimaryURL:(id)arg1 presentedURL:(id)arg2;
 
 // Remaining properties

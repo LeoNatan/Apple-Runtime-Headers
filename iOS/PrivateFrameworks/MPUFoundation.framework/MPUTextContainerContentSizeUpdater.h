@@ -15,9 +15,9 @@
     NSString *_lastSeenPreferredContentSizeCategory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastSeenPreferredContentSizeCategory; // @synthesize lastSeenPreferredContentSizeCategory=_lastSeenPreferredContentSizeCategory;
 @property(nonatomic) __weak id <MPUTextContainer> textContainer; // @synthesize textContainer=_textContainer;
-- (void).cxx_destruct;
 - (void)_updateTextStyleFonts;
 - (void)_preferredContentSizeCategoryDidChange:(id)arg1;
 - (void)ensureTextStyleFontsMatchPreferredTextStyleFonts;

@@ -17,8 +17,8 @@
     id _callbackDelegate;
 }
 
-@property(nonatomic) __weak id callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 - (int)handlePerformActionForKey:(int)arg1 trusted:(_Bool)arg2;
 - (int)handleGetValue:(id *)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(_Bool)arg4;
 - (int)handleGetValue:(id *)arg1 forKey:(int)arg2 trusted:(_Bool)arg3;

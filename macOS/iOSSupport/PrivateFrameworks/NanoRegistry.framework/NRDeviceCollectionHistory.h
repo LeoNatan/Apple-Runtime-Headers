@@ -30,6 +30,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *historyStateCacheIndex; // @synthesize historyStateCacheIndex=_historyStateCacheIndex;
 @property(retain, nonatomic) NSMutableArray *historyStateCacheMRU; // @synthesize historyStateCacheMRU=_historyStateCacheMRU;
 @property(retain, nonatomic) NSMutableDictionary *historyStateCache; // @synthesize historyStateCache=_historyStateCache;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSMutableArray *history; // @synthesize history=_history;
 @property(nonatomic) unsigned long long startIndex; // @synthesize startIndex=_startIndex;
 @property(readonly, nonatomic) NRMutableDeviceCollection *deviceCollection; // @synthesize deviceCollection=_deviceCollection;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqualToHistory:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

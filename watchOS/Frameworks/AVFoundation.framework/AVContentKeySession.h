@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVContentKeySessionInternal, NSData, NSString, NSURL;
+@class AVContentKeyReportGroup, AVContentKeySessionInternal, NSData, NSString, NSURL;
 @protocol AVContentKeySessionDelegate, OS_dispatch_queue;
 
 @interface AVContentKeySession : NSObject
@@ -26,8 +26,6 @@
 - (void)makeSecureTokenForExpirationDateOfPersistableContentKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)renewExpiringResponseDataForContentKeyRequest:(id)arg1;
 - (void)processContentKeyRequestWithIdentifier:(id)arg1 initializationData:(id)arg2 options:(id)arg3;
-- (void)_processContentKeyRequestWithIdentifier:(id)arg1 initializationData:(id)arg2 options:(id)arg3;
-- (id)_extractCryptKeyIdentifiersFromInitializationData:(id)arg1;
 @property(readonly) NSData *contentProtectionSessionIdentifier;
 - (void)expire;
 @property(readonly) NSString *keySystem;
@@ -46,7 +44,10 @@
 - (id)initWithStorageDirectoryAtURL:(id)arg1;
 - (id)init;
 - (void)_handleSecureStopDidFinalizeRecordCallback;
-- (_Bool)_setAuthorizationToken:(id)arg1 forIdentifier:(id)arg2 error:(id *)arg3;
+- (void)_handleContentProtectionSessionIdentifierDidChange:(id)arg1;
+- (void)_handleUpdateToPersistentKey:(id)arg1 forKeyIdentifier:(id)arg2;
+- (void)_handleKeyResponseSuccessfullyProcessedForCryptorUUID:(id)arg1 andCryptorKeyRequestID:(unsigned long long)arg2;
+- (void)_handleKeyResponseError:(id)arg1 forCryptorUUID:(id)arg2 andCryptorKeyRequestID:(unsigned long long)arg3;
 - (void)_invokeDelegateCallbackWithBlock:(CDUnknownBlockType)arg1 synchronouslyWhenDelegateQueueIsNULL:(_Bool)arg2;
 - (void)_removeContentKeyRequestForCryptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
 - (id)_contentKeyRequestForCryptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
@@ -54,26 +55,27 @@
 - (id)_internalQueue;
 - (void)issueContentKeyRequestWithPreloadingRequestOptions:(id)arg1 identifier:(id)arg2 initializationData:(id)arg3 providesPersistableKey:(_Bool)arg4;
 - (void)issueContentKeyRequestWithCustomURLHandler:(struct OpaqueFigCustomURLHandler *)arg1 identifier:(id)arg2 requestInfo:(struct __CFDictionary *)arg3 requestID:(unsigned long long)arg4 providesPersistableKey:(_Bool)arg5;
-- (void)failProcessingContentKeyRequestWithIdentifier:(id)arg1 initializationData:(id)arg2 error:(id)arg3;
-- (void)issueContentKeyRequest:(id)arg1 forKeyRenewal:(_Bool)arg2;
+- (void)issueRenewableContentKeyRequest:(id)arg1;
+- (void)issuePersistableContentKeyRequest:(id)arg1;
+- (void)issueContentKeyRequest:(id)arg1;
+- (void)issueContentKeyRequest:(id)arg1 toDelegateWithCallbackSelector:(SEL)arg2;
+- (void)issueContentKeyRequests:(id)arg1 forInitializationData:(id)arg2;
 - (_Bool)clientCanReceivePersistableContentKeyRequest;
-- (void)createProtectorSessionIdentifierIfNecessary;
 - (long)setAppIdentifier:(id)arg1;
-- (void)_handleKeyResponseSuccessfullyProcessedForCryptorUUID:(id)arg1 andCryptorKeyRequestID:(unsigned long long)arg2;
-- (void)_handleKeyResponseError:(id)arg1 forCryptorUUID:(id)arg2 andCryptorKeyRequestID:(unsigned long long)arg3;
-- (void)_handleUpdateToPersistentKey:(id)arg1 forKeyIdentifier:(id)arg2;
 - (long)createAndInstallCustomURLHandlerForAsset:(id)arg1 outHandler:(struct OpaqueFigCustomURLHandler **)arg2;
 - (void)_handleRequest:(struct __CFDictionary *)arg1 withRequestID:(unsigned long long)arg2 fromHandler:(struct OpaqueFigCustomURLHandler *)arg3 willHandleRequest:(_Bool *)arg4;
+- (struct OpaqueFigCPECryptor *)copyCryptorForCryptKeyAttributes:(id)arg1;
+- (struct OpaqueFigCPECryptor *)createCryptorIfNecessaryForInitializationData:(id)arg1 formatDescription:(struct opaqueCMFormatDescription *)arg2 error:(id *)arg3;
+- (const struct OpaqueFigCPECryptor *)copyCryptorForInitializationData:(id)arg1;
 - (void)_sendFinishLoadingForPreloadedKeyRequest:(struct __CFDictionary *)arg1 withRequestID:(unsigned long long)arg2 fromHandler:(struct OpaqueFigCustomURLHandler *)arg3;
-- (const struct OpaqueFigContentKeySession *)_figContentKeySession;
+- (id)_contentKeyGroups;
 - (id)_weakReference;
-- (const struct OpaqueFigCPECryptor *)copyDecryptorForIdentifier:(id)arg1 initializationData:(id)arg2;
-- (const struct OpaqueFigCPECryptor *)createDecryptorIfNecessaryForIdentifier:(id)arg1 initializationData:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 hlsMethod:(id)arg4 error:(id *)arg5;
-- (id)createCryptorOptionsForIdentifier:(id)arg1 initializationData:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 hlsMethod:(id)arg4;
 - (id)issueContentKeyRequestForInitializationData:(id)arg1;
 - (_Bool)hasProtector;
 - (void)setDelegate:(id)arg1;
 - (id)initWithKeySystem:(id)arg1 storageDirectoryAtURL:(id)arg2 internal:(_Bool)arg3;
+- (id)makeContentKeyGroup;
+@property(readonly) AVContentKeyReportGroup *defaultContentKeyGroup;
 
 @end
 

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     SCRCUserDefaults *__userDefaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain, nonatomic) SCRLineNavigator *textNavigator; // @synthesize textNavigator=_textNavigator;
 @property(retain, nonatomic) NSArray *lastBrailleLineElements; // @synthesize lastBrailleLineElements=_lastBrailleLineElements;
 @property(nonatomic) BOOL singleElementMode; // @synthesize singleElementMode=_singleElementMode;
-- (void).cxx_destruct;
 - (BOOL)brailleLineContainsUIElement:(id)arg1;
 - (id)brailleLineElementMatchingUIElement:(id)arg1;
 - (BOOL)brailleTextLineMatchesUIElement:(id)arg1;

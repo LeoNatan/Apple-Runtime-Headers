@@ -16,9 +16,9 @@
     struct UIEdgeInsets suggestedContentInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings;
 @property(nonatomic) struct UIEdgeInsets suggestedContentInsets; // @synthesize suggestedContentInsets;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

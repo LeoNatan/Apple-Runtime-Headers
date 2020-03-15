@@ -37,11 +37,11 @@
     NSArray *_filteredPassUniqueIDs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldSeparatePaymentPasses; // @synthesize shouldSeparatePaymentPasses=_shouldSeparatePaymentPasses;
 @property(readonly, nonatomic) NSArray *filteredPassUniqueIDs; // @synthesize filteredPassUniqueIDs=_filteredPassUniqueIDs;
 @property(nonatomic) BOOL reorderingEnabled; // @synthesize reorderingEnabled=_reorderingEnabled;
 @property(nonatomic) __weak id <PKGroupsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_insertLocalGroupsIntoCatalog:(id)arg1 withPassesByUniqueID:(id)arg2;
 - (id)_copyRemoteCatalog;
 - (void)_removeGroup:(id)arg1 notify:(BOOL)arg2;

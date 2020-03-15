@@ -34,10 +34,6 @@ struct NSEdgeInsets {
     double right;
 };
 
-struct NSViewController {
-    Class _field1;
-};
-
 struct PKAutocompleteRowInfo {
     long long _field1;
     long long _field2;

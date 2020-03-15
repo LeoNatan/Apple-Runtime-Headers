@@ -15,10 +15,10 @@
     KHCardProjectLayoutsDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) KHCardProjectLayoutsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) KHInspectorTileViewController *settingsTileController; // @synthesize settingsTileController=_settingsTileController;
 @property(readonly, nonatomic) KHProjectSettingsPickerController *projectSettingsController; // @synthesize projectSettingsController=_projectSettingsController;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)initWithProjectDatasource:(id)arg1;
 

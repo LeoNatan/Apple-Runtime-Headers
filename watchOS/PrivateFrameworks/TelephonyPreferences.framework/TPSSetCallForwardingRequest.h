@@ -14,8 +14,8 @@
 }
 
 + (id)unarchivedObjectClasses;
-@property(readonly, nonatomic) CTCallForwardingValue *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CTCallForwardingValue *value; // @synthesize value=_value;
 - (_Bool)isEqualToRequest:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

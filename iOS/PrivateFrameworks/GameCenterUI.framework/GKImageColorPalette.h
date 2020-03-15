@@ -23,8 +23,8 @@
     NSArray *_bubbleColors;
 }
 
-@property(retain) NSArray *bubbleColors; // @synthesize bubbleColors=_bubbleColors;
 - (void).cxx_destruct;
+@property(retain) NSArray *bubbleColors; // @synthesize bubbleColors=_bubbleColors;
 - (id)initWithImage:(id)arg1;
 - (_Bool)analyzeImage:(struct CGImage *)arg1;
 - (void)findBrightColors;

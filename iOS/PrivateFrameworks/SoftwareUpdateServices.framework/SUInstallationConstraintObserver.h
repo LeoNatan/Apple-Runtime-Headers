@@ -20,8 +20,8 @@
     unsigned long long _queue_tokenCount;
 }
 
-@property(readonly, retain, nonatomic) SUDownload *download; // @synthesize download=_download;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) SUDownload *download; // @synthesize download=_download;
 - (_Bool)_hasAnyBlockObservers;
 - (void)_removeToken:(id)arg1;
 - (void)_queue_noteInstallationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;

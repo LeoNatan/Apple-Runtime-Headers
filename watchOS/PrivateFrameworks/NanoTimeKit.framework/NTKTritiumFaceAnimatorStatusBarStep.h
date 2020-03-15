@@ -19,6 +19,7 @@
     _Bool _wantsActiveStatusBarHidden;
 }
 
++ (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 scale:(float)arg3;
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2;
 - (void).cxx_destruct;
 - (void)statusBarDidChange;

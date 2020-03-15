@@ -13,8 +13,8 @@
     NSDate *_entryDate;
 }
 
-@property(retain, nonatomic) NSDate *entryDate; // @synthesize entryDate=_entryDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *entryDate; // @synthesize entryDate=_entryDate;
 - (id)entryForComplicationFamily:(long long)arg1;
 - (id)templateForComplicationFamily:(long long)arg1;
 

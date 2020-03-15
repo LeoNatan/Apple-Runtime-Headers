@@ -21,6 +21,7 @@
     unsigned long long _status;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(nonatomic) unsigned long long delivered; // @synthesize delivered=_delivered;
 @property(nonatomic) unsigned long long currentPart; // @synthesize currentPart=_currentPart;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *boundary; // @synthesize boundary=_boundary;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void).cxx_destruct;
 - (_Bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;

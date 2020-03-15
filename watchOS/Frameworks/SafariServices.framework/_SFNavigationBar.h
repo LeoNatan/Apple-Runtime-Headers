@@ -12,7 +12,7 @@
 #import <SafariServices/_SFNavigationBarURLButtonDelegate-Protocol.h>
 #import <SafariServices/_UIBasicAnimationFactory-Protocol.h>
 
-@class NSArray, NSAttributedString, NSString, NSTimer, SFCrossfadingImageView, SFDismissButton, SFNavigationBarAccessoryButtonArrangement, SFNavigationBarMetrics, SFNavigationBarToggleButton, SFToolbarContainer, UIButton, UIImageView, UILabel, UILongPressGestureRecognizer, UITextField, _SFBarTheme, _SFDimmingButton, _SFFluidProgressView, _SFNavigationBarBackdrop, _SFNavigationBarItem, _SFNavigationBarLabelsContainer, _SFNavigationBarTheme, _SFNavigationBarURLButton, _SFToolbar, _UIBackdropViewSettings;
+@class NSArray, NSAttributedString, NSString, NSTimer, SFDismissButton, SFNavigationBarAccessoryButtonArrangement, SFNavigationBarMetrics, SFNavigationBarToggleButton, SFToolbarContainer, UIBlurEffect, UIButton, UIImageView, UILabel, UITextField, UIVisualEffectView, _SFBarTheme, _SFDimmingButton, _SFFluidProgressView, _SFNavigationBarItem, _SFNavigationBarLabelsContainer, _SFNavigationBarTheme, _SFNavigationBarURLButton, _SFToolbar;
 @protocol _SFNavigationBarDelegate, _SFPopoverSourceInfo;
 
 @interface _SFNavigationBar : UIView <UIGestureRecognizerDelegate, _SFFluidProgressViewDelegate, _SFNavigationBarURLButtonDelegate, _UIBasicAnimationFactory, _SFBarCommon>
@@ -23,6 +23,10 @@
     UIView *_labelScalingContainer;
     UILabel *_URLLabel;
     UILabel *_expandedURLLabel;
+    UILabel *_privateBrowsingLabel;
+    UIVisualEffectView *_URLLabelEffectView;
+    UIVisualEffectView *_lockEffectView;
+    UIVisualEffectView *_squishedLockEffectView;
     UILabel *_readerAvailabilityLabel;
     UILabel *_notSecureAnnotationLabel;
     float _URLWidth;
@@ -46,12 +50,15 @@
     UIView *_notSecureAnnotationContainer;
     _Bool _shouldAnimateURLMovement;
     SFNavigationBarMetrics *_barMetrics;
-    SFCrossfadingImageView *_searchIndicator;
-    SFCrossfadingImageView *_lockView;
+    UIImageView *_searchIndicator;
+    UIImageView *_lockView;
+    UIImageView *_squishedSearchIndicator;
+    UIImageView *_squishedLockView;
+    UIView *_squishedURLAccessoryItemsContainer;
     NSArray *_URLAccessoryItems;
     _SFNavigationBarURLButton *_URLOutline;
     _SFFluidProgressView *_progressView;
-    _SFNavigationBarBackdrop *_backdrop;
+    UIVisualEffectView *_backdrop;
     UIView *_separator;
     _Bool _lockViewNeedsUpdate;
     NSAttributedString *_attributedTextWhenExpanded;
@@ -59,12 +66,9 @@
     SFNavigationBarToggleButton *_formatToggleButton;
     _SFDimmingButton *_stopButton;
     _SFDimmingButton *_reloadButton;
-    UILongPressGestureRecognizer *_toggleLongPressGestureRecognizer;
     UIButton *_mediaCaptureMuteButton;
     int _visibleTrailingButtonType;
-    _SFDimmingButton *_readerAppearanceButton;
-    UILongPressGestureRecognizer *_reloadLongPressGestureRecognizer;
-    UILongPressGestureRecognizer *_stopLongPressGestureRecognizer;
+    _Bool _formatToggleButtonTapTogglesReader;
     UIButton *_cancelButton;
     float _cancelButtonIntrinsicWidth;
     NSTimer *_readerAvailabilityLabelHideTimer;
@@ -77,17 +81,18 @@
     _Bool _expanded;
     _Bool _backdropGroupDisabled;
     _Bool _suppressesBlur;
+    _Bool _sendingBarMetricsChangeNotification;
     _SFNavigationBarItem *_item;
     _SFBarTheme *_theme;
     _SFNavigationBarTheme *_effectiveTheme;
     UITextField *_textField;
-    _UIBackdropViewSettings *_customBackdropSettings;
     NSString *_backdropGroupName;
     id <_SFNavigationBarDelegate> _delegate;
     float _contentUnderStatusBarHeight;
     float _maximumHeight;
     float _minimumBackdropHeight;
     UIView *_inputAccessoryView;
+    UIBlurEffect *_backdropEffect;
 }
 
 + (float)separatorHeight;
@@ -95,6 +100,9 @@
 + (float)estimatedDefaultHeightForStatusBarHeight:(float)arg1;
 + (int)_metricsCategory;
 + (void)initialize;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) UIBlurEffect *backdropEffect; // @synthesize backdropEffect=_backdropEffect;
+@property(readonly, nonatomic, getter=isSendingBarMetricsChangeNotification) _Bool sendingBarMetricsChangeNotification; // @synthesize sendingBarMetricsChangeNotification=_sendingBarMetricsChangeNotification;
 @property(retain, nonatomic) UIView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(nonatomic) float minimumBackdropHeight; // @synthesize minimumBackdropHeight=_minimumBackdropHeight;
 @property(nonatomic) float maximumHeight; // @synthesize maximumHeight=_maximumHeight;
@@ -103,7 +111,6 @@
 @property(nonatomic) __weak id <_SFNavigationBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(nonatomic, getter=isBackdropGroupDisabled) _Bool backdropGroupDisabled; // @synthesize backdropGroupDisabled=_backdropGroupDisabled;
-@property(retain, nonatomic) _UIBackdropViewSettings *customBackdropSettings; // @synthesize customBackdropSettings=_customBackdropSettings;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic, getter=areControlsHidden) _Bool controlsHidden; // @synthesize controlsHidden=_controlsHidden;
@@ -112,7 +119,6 @@
 @property(nonatomic) _Bool unifiedFieldShowsProgressView; // @synthesize unifiedFieldShowsProgressView=_unifiedFieldShowsProgressView;
 @property(nonatomic) _Bool usesNarrowLayout; // @synthesize usesNarrowLayout=_usesNarrowLayout;
 @property(retain, nonatomic) _SFNavigationBarItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (_Bool)containsBarItem:(int)arg1;
 - (id)_toolbarForBarItem:(int)arg1;
 - (id)popoverSourceInfoForBarItem:(int)arg1;
@@ -121,8 +127,7 @@
 @property(readonly, copy, nonatomic) NSArray *popoverPassthroughViews;
 @property(readonly, nonatomic) id <_SFPopoverSourceInfo> URLOutlinePopoverSourceInfo;
 @property(readonly, nonatomic) id <_SFPopoverSourceInfo> reloadButtonPopoverSourceInfo;
-@property(readonly, nonatomic) id <_SFPopoverSourceInfo> readerButtonPopoverSourceInfo;
-@property(readonly, nonatomic) id <_SFPopoverSourceInfo> readerAppearanceButtonPopoverSourceInfo;
+@property(readonly, nonatomic) id <_SFPopoverSourceInfo> formatMenuButtonPopoverSourceInfo;
 - (void)setTextFieldPlaceHolderColor:(id)arg1;
 - (float)placeholderHorizontalInset;
 - (id)newTextField;
@@ -139,19 +144,13 @@
 - (id)_placeholderText;
 - (void)_configureNavigationBarTrailingButtonTintedImages;
 - (void)_updateControlTints;
-- (void)backdropDidApplySettings:(id)arg1;
-@property(nonatomic) _Bool updatesBackdrop;
 - (id)_tintForWarningImage;
-- (id)_lockImageUsingMiniatureVersion:(_Bool)arg1;
-- (id)_lockImageTintColorForMiniature:(_Bool)arg1;
 - (id)_lockImageTintColorForSquishTransformFactor:(float)arg1;
 - (float)_backgroundAlphaFactorForSquishTransformFactor:(float)arg1;
 - (id)_EVCertLockAndTextColor:(float)arg1;
 - (id)_notSecureWarningColor;
 - (id)_notSecureGrayColor;
 - (id)_notSecureAnnotationColor;
-- (int)_URLButtonBackgroundStyle;
-- (void)_updateURLOutlineColor;
 - (void)_updateSeparatorAlpha;
 - (void)_updateBackdropGroupName;
 - (void)_updateNotSecureWarningsVisibility;
@@ -211,12 +210,7 @@
 - (void)_formatToggleButtonTapped:(id)arg1;
 - (void)_URLTapped:(id)arg1;
 - (void)_compressedBarTapped;
-- (void)_readerAppearanceButtonPressed;
 - (void)_stopButtonPressed;
-- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
-- (void)_formatToggleButtonLongPressed:(id)arg1;
-- (void)_stopButtonLongPressed:(id)arg1;
-- (void)_reloadButtonLongPressed:(id)arg1;
 - (void)_reloadButtonPressed;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
@@ -239,11 +233,9 @@
 @property(readonly, nonatomic) float visualHeight;
 @property(readonly, nonatomic) float minimumHeight;
 @property(readonly, nonatomic) float defaultHeight;
-- (void)_updateBackdropStyle;
 - (void)_didUpdateEffectiveTheme;
 - (void)_updateEffectiveTheme;
 - (_Bool)_shouldUpdateBackdropStyleForTransitionFromItem:(id)arg1 toItem:(id)arg2;
-- (id)_backdropInputSettings;
 @property(readonly, nonatomic) float dismissButtonPadding;
 @property(readonly, nonatomic) struct CGSize dismissButtonSize;
 - (void)setDismissButtonHidden:(_Bool)arg1;

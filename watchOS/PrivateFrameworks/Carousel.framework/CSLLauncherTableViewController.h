@@ -26,8 +26,8 @@
     PUICListCollectionView *_collectionView;
 }
 
-@property(retain, nonatomic) PUICListCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICListCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void)_presentDeleteApplicationConfirmationControllerForBundleInfo:(id)arg1;
 - (id)deleteApplicationWarningStringForBundleInfo:(id)arg1;
 - (void)_deleteItemAtIndexPath:(id)arg1;

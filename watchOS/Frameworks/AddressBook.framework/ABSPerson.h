@@ -34,12 +34,12 @@
 + (unsigned int)typeForProperty:(int)arg1;
 + (id)defaultKeysToFetch;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *nonNilSetProperties; // @synthesize nonNilSetProperties=_nonNilSetProperties;
 @property(retain, nonatomic) NSString *revertedRecordIdentifier; // @synthesize revertedRecordIdentifier=_revertedRecordIdentifier;
 @property(retain, nonatomic) CNMutableContact *cnImpl; // @synthesize cnImpl=_cnImpl;
 @property(nonatomic) __weak ABSSource *source; // @synthesize source=_source;
 @property(nonatomic) __weak ABSAddressBook *addressBook; // @synthesize addressBook=_addressBook;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 forSoundIdentifier:(int)arg2;
 - (id)soundIdentifierForMultivalueIdentifier:(int)arg1;
 - (_Bool)getIdentifier:(int *)arg1 label:(id *)arg2 forMultiValueMatchingValue:(id)arg3 property:(int)arg4;

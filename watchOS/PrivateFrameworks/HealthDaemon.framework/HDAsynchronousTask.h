@@ -17,12 +17,12 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType checkpointHandler; // @synthesize checkpointHandler=_checkpointHandler;
 @property(nonatomic) _Bool hasTimeout; // @synthesize hasTimeout=_hasTimeout;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 
 @end
 

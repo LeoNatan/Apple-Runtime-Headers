@@ -40,6 +40,7 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ppt_scrollComposeRecipientsView; // @synthesize ppt_scrollComposeRecipientsView=_ppt_scrollComposeRecipientsView;
 @property(nonatomic) BOOL ppt_presentComposeRecipientView; // @synthesize ppt_presentComposeRecipientView=_ppt_presentComposeRecipientView;
 @property(nonatomic) double ppt_delay; // @synthesize ppt_delay=_ppt_delay;
@@ -66,7 +67,6 @@
 @property(readonly, nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) PXUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCMMActionManager *actionManager;
 - (id)createSession;
 - (id)initWithAssetsDataSourceManager:(id)arg1 mediaProvider:(id)arg2 activityType:(unsigned long long)arg3;

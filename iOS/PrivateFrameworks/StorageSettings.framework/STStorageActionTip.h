@@ -13,8 +13,8 @@
     NSArray *_significantItems;
 }
 
-@property(copy, nonatomic) NSArray *significantItems; // @synthesize significantItems=_significantItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *significantItems; // @synthesize significantItems=_significantItems;
 @property(nonatomic) Class detailControllerClass;
 - (id)init;
 

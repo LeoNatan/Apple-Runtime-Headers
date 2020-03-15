@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long nonLocalPickedAssetCount; // @synthesize nonLocalPickedAssetCount=_nonLocalPickedAssetCount;
 @property(retain, nonatomic) VEKExportController *exportController; // @synthesize exportController=_exportController;
 @property(retain) VEKProgressWatcher *watcherProperty; // @synthesize watcherProperty=_watcherProperty;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *songID; // @synthesize songID=_songID;
 @property(retain, nonatomic) NSSet *suggestions; // @synthesize suggestions=_suggestions;
 @property(retain, nonatomic) VEKBlueprint *blueprint; // @synthesize blueprint=_blueprint;
-- (void).cxx_destruct;
 - (void)exportController:(id)arg1 progressedTo:(float)arg2 preventBackslide:(BOOL)arg3;
 - (void)didFinishExport;
 - (void)setVolume:(long long)arg1 forClip:(id)arg2;

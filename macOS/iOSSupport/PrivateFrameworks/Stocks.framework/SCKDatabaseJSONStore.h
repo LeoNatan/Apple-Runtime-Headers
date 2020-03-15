@@ -40,6 +40,7 @@
 }
 
 + (id)preferredFileURLForSchema:(id)arg1 parentDirectoryURL:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long diskWriteCount; // @synthesize diskWriteCount=_diskWriteCount;
 @property(readonly, nonatomic) unsigned long long diskReadCount; // @synthesize diskReadCount=_diskReadCount;
 @property(readonly, copy, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) CKServerChangeToken *serverChangeToken; // @synthesize serverChangeToken=_serverChangeToken;
 @property(copy, nonatomic) NSDate *lastDirtyDate; // @synthesize lastDirtyDate=_lastDirtyDate;
 @property(copy, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
-- (void).cxx_destruct;
 - (id)_decodeDate:(id)arg1;
 - (id)_encodeDate:(id)arg1;
 - (id)_decodeCodableObjectOfClasses:(id)arg1 from:(id)arg2 error:(id *)arg3;

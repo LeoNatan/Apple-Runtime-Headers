@@ -25,6 +25,7 @@
     double _elapsedTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isLive; // @synthesize isLive=_isLive;
 @property(readonly, nonatomic) _Bool isLibraryEmpty; // @synthesize isLibraryEmpty=_isLibraryEmpty;
 @property(readonly, nonatomic) _Bool isNewUser; // @synthesize isNewUser=_isNewUser;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSString *contentItemID; // @synthesize contentItemID=_contentItemID;
 @property(readonly, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_fullColorNowPlayingProviderForFamily:(int)arg1;
 - (id)_nowPlayingProviderForFamily:(int)arg1;
 - (id)_signatureSongSummaryTextProvider;

@@ -22,13 +22,13 @@
     CDUnknownBlockType _updateHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(nonatomic) int wheelchairUse; // @synthesize wheelchairUse=_wheelchairUse;
 @property(nonatomic) int biologicalSex; // @synthesize biologicalSex=_biologicalSex;
 @property(retain, nonatomic) HKQuantity *weight; // @synthesize weight=_weight;
 @property(retain, nonatomic) HKQuantity *height; // @synthesize height=_height;
 @property(retain, nonatomic) NSDate *dateOfBirth; // @synthesize dateOfBirth=_dateOfBirth;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) HKQuantity *leanBodyMass;
 - (_Bool)commmitWithError:(id *)arg1;

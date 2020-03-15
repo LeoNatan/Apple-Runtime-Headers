@@ -32,8 +32,8 @@
     NSArray *_arrangedObjects;
 }
 
-@property(retain) NSArray *arrangedObjects; // @synthesize arrangedObjects=_arrangedObjects;
 - (void).cxx_destruct;
+@property(retain) NSArray *arrangedObjects; // @synthesize arrangedObjects=_arrangedObjects;
 - (void)changeObject:(id)arg1 atIndex:(unsigned long long)arg2 forChangeType:(unsigned long long)arg3 newIndex:(unsigned long long)arg4;
 - (void)notifyArrangedObjectsDidChangeWithPreviousArrangedObjects:(id)arg1;
 - (void)notifyArrangedObjectsWillChange;

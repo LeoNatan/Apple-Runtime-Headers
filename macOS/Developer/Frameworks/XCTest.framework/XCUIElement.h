@@ -29,11 +29,11 @@
 + (BOOL)_isInvalidEventDuration:(double)arg1;
 + (void)performWithKeyModifiers:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 + (unsigned long long)_setModifiers:(unsigned long long)arg1 merge:(BOOL)arg2 description:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property BOOL safeQueryResolutionEnabled; // @synthesize safeQueryResolutionEnabled=_safeQueryResolutionEnabled;
 @property(retain) XCElementSnapshot *lastSnapshot; // @synthesize lastSnapshot=_lastSnapshot;
 @property(readonly) XCUIElementQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 @property(readonly, copy) XCUIElementQuery *statusItems;
 @property(readonly, copy) XCUIElementQuery *otherElements;
 @property(readonly, copy) XCUIElementQuery *handles;
@@ -138,7 +138,7 @@
 @property(readonly) id value;
 - (BOOL)resolveOrRaiseTestFailure:(BOOL)arg1 error:(id *)arg2;
 - (void)resolveOrRaiseTestFailure;
-- (BOOL)waitForNonExistenceWithTimeout:(double)arg1;
+- (BOOL)_waitForNonExistenceWithTimeout:(double)arg1;
 - (id)makeNonExistenceExpectation;
 - (BOOL)waitForExistenceWithTimeout:(double)arg1;
 - (BOOL)_waitForExistenceWithTimeout:(double)arg1;
@@ -168,13 +168,18 @@
 - (void)typeKey:(id)arg1 modifierFlags:(unsigned long long)arg2;
 - (void)typeText:(id)arg1;
 - (BOOL)_focusValidForElementSnapshot:(id)arg1 error:(id *)arg2;
+- (void)_swipe:(unsigned long long)arg1 withVelocity:(double)arg2;
+- (void)swipeRightWithVelocity:(double)arg1;
+- (void)swipeLeftWithVelocity:(double)arg1;
+- (void)swipeDownWithVelocity:(double)arg1;
+- (void)swipeUpWithVelocity:(double)arg1;
+- (void)pressForDuration:(double)arg1 thenDragToElement:(id)arg2 withVelocity:(double)arg3 thenHoldForDuration:(double)arg4;
 - (void)rotate:(double)arg1 withVelocity:(double)arg2;
 - (void)pinchWithScale:(double)arg1 velocity:(double)arg2;
 - (void)swipeRight;
 - (void)swipeLeft;
 - (void)swipeDown;
 - (void)swipeUp;
-- (void)_swipe:(unsigned long long)arg1;
 - (void)_pressWithPressure:(double)arg1 pressDuration:(double)arg2 holdDuration:(double)arg3 releaseDuration:(double)arg4 activityTitle:(id)arg5;
 - (void)pressForDuration:(double)arg1 thenDragToElement:(id)arg2;
 - (void)pressForDuration:(double)arg1;
@@ -192,7 +197,7 @@
 - (void)_performMenuTraversalPath:(id)arg1;
 - (id)_traversalPathForMenuItem:(id)arg1 eventType:(unsigned int)arg2;
 - (void)_hoverMenuItem:(id)arg1;
-- (id)_clickElementSnapshot:(id)arg1 forDuration:(double)arg2 thenDragToElement:(id)arg3;
+- (id)_clickElementSnapshot:(id)arg1 forDuration:(double)arg2 thenDragToElement:(id)arg3 withVelocity:(double)arg4 thenHoldFor:(double)arg5;
 - (id)_clickElementSnapshot:(id)arg1 forDuration:(double)arg2;
 - (id)_doubleClickElementSnapshot:(id)arg1;
 - (id)_clickElementSnapshot:(id)arg1;
@@ -213,6 +218,7 @@
 - (id)_normalizedUISliderPositionForSnapshot:(id)arg1 isVertical:(char *)arg2 error:(id *)arg3;
 - (void)adjustToPickerWheelValue:(id)arg1;
 - (void)tapOrClick;
+- (void)clickForDuration:(double)arg1 thenDragToElement:(id)arg2 withVelocity:(double)arg3 thenHoldForDuration:(double)arg4;
 - (void)tripleClick;
 - (void)forceClick;
 

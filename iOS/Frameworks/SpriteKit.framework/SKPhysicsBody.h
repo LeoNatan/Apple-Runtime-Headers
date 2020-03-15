@@ -53,6 +53,7 @@
 + (id)copyWithZone:(struct _NSZone *)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double angularVelocity; // @synthesize angularVelocity=_angularVelocity;
 @property(nonatomic) struct CGVector velocity; // @synthesize velocity=_velocity;
 @property(readonly, nonatomic) __weak SKNode *node; // @synthesize node=_node;
@@ -75,7 +76,6 @@
 @property(nonatomic) _Bool allowsRotation; // @synthesize allowsRotation=_allowsRotation;
 @property(nonatomic) _Bool usesPreciseCollisionDetection; // @synthesize usesPreciseCollisionDetection=_usesPreciseCollisionDetection;
 @property(nonatomic, getter=isDynamic) _Bool dynamic; // @synthesize dynamic=_dynamic;
-- (void).cxx_destruct;
 - (id)allContactedBodies;
 - (void)applyAngularImpulse:(double)arg1;
 - (void)applyImpulse:(struct CGVector)arg1 atPoint:(struct CGPoint)arg2;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_currentConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *albumImageView; // @synthesize albumImageView=_albumImageView;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;

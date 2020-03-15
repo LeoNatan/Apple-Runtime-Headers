@@ -22,6 +22,7 @@
 - (void)_loadContentViewControllerIfNecessary;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)_axNotifyNeedsFocusUpdateWhenEnabled:(unsigned long long)arg1;
 - (void)switcherContentController:(id)arg1 deletedAppLayout:(id)arg2 forReason:(long long)arg3;
 
 @end

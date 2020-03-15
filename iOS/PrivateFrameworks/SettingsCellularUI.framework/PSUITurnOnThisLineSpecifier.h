@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     PSListController *_hostController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
 @property(retain, nonatomic) PSUICellularPlanManagerCache *planManagerCache; // @synthesize planManagerCache=_planManagerCache;
 @property(retain, nonatomic) CTCellularPlanManager *cellularPlanManager; // @synthesize cellularPlanManager=_cellularPlanManager;
 @property(retain, nonatomic) PSUICellularPlanUniversalReference *planReference; // @synthesize planReference=_planReference;
-- (void).cxx_destruct;
 - (void)setPlanEnabled:(id)arg1 specifier:(id)arg2;
 - (id)isPlanEnabled:(id)arg1;
 - (id)initWithPlanUniversalReference:(id)arg1 cellularPlanManager:(id)arg2 planManagerCache:(id)arg3 hostController:(id)arg4;

@@ -15,10 +15,10 @@
     struct FCEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct FCEdgeInsets insets; // @synthesize insets=_insets;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) FCAssetHandle *assetHandle; // @synthesize assetHandle=_assetHandle;
-- (void).cxx_destruct;
 - (id)initWithAssetHandle:(id)arg1 size:(struct CGSize)arg2 insets:(struct FCEdgeInsets)arg3;
 
 @end

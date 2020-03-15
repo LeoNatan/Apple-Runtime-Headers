@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)baseImage;
-@property(nonatomic, getter=isMasked) _Bool masked; // @synthesize masked=_masked;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isMasked) _Bool masked; // @synthesize masked=_masked;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 grayscale:(_Bool)arg2;
 

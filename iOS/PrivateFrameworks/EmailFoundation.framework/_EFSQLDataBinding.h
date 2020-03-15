@@ -13,8 +13,8 @@
     NSData *_dataValue;
 }
 
-@property(readonly, copy, nonatomic) NSData *dataValue; // @synthesize dataValue=_dataValue;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *dataValue; // @synthesize dataValue=_dataValue;
 - (void)bindTo:(struct sqlite3_stmt *)arg1 withSQLIndex:(int)arg2;
 - (id)initWithData:(id)arg1;
 

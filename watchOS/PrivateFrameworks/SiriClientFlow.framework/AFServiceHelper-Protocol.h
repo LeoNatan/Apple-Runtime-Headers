@@ -14,6 +14,8 @@
 - (AFPeerInfo *)peerInfoForCurrentCommand;
 - (_Bool)isTimeoutSuspended;
 - (void)handleCommand:(SABaseCommand *)arg1 completion:(void (^)(SABaseCommand *, NSError *))arg2;
+- (_Bool)isDeviceInCarDND;
+- (_Bool)isDeviceInStarkMode;
 - (_Bool)isDeviceLockedWithPasscode;
 - (NSString *)assistantLocalizedStringForKey:(NSString *)arg1 table:(NSString *)arg2 bundle:(NSBundle *)arg3;
 - (void)dismissAssistant;

@@ -21,12 +21,12 @@
 + (id)lookForCharacteristicByAccessoryUUID:(id)arg1 serviceID:(id)arg2 characteristicID:(id)arg3 inHome:(id)arg4 checkForSupport:(_Bool)arg5 outError:(id *)arg6;
 + (id)compareValueOfCharacteristic:(id)arg1 againstValue:(id)arg2 operatorType:(id)arg3;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id previousValue; // @synthesize previousValue=_previousValue;
 @property(readonly, nonatomic) NSNumber *characteristicInstanceID; // @synthesize characteristicInstanceID=_characteristicInstanceID;
 @property(readonly, nonatomic) NSNumber *serviceID; // @synthesize serviceID=_serviceID;
 @property(readonly, nonatomic) NSUUID *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
 @property(retain, nonatomic) HMDCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 - (_Bool)_activate:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

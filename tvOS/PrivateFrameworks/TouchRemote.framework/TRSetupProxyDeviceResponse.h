@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) AKDevice *proxyDevice; // @synthesize proxyDevice=_proxyDevice;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AKDevice *proxyDevice; // @synthesize proxyDevice=_proxyDevice;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)irisMovieClipWithURL:(id)arg1 asset:(id)arg2 front:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFront) BOOL front; // @synthesize front=_front;
 @property(retain, nonatomic) PVEffect *kenBurnsEffect; // @synthesize kenBurnsEffect=_kenBurnsEffect;
 @property(retain, nonatomic) KenBurnsInfo *kenBurnsInfo; // @synthesize kenBurnsInfo=_kenBurnsInfo;
 @property(retain, nonatomic) PVEffect *frameBlendEffect; // @synthesize frameBlendEffect=_frameBlendEffect;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (struct CGAffineTransform)transform:(struct CGSize)arg1 fillDest:(BOOL)arg2;
 - (int)maxDuration;

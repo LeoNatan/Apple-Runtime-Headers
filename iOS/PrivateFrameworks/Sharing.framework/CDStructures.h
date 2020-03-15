@@ -33,22 +33,6 @@ struct LogCategoryPrivate;
 
 struct LogOutput;
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableArray {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSSet {
-    Class _field1;
-};
-
 struct PairingSubstate {
     int contacts;
     int homeKit;

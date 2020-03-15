@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <TeaUI/TSImageDownloaderType-Protocol.h>
-
-@interface _TtC5TeaUI15ImageDownloader : _TtCs12_SwiftObject <TSImageDownloaderType>
+@interface _TtC5TeaUI15ImageDownloader : _TtCs12_SwiftObject
 {
 }
 

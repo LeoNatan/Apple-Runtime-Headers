@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     float _keyboardAdjustment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float keyboardAdjustment; // @synthesize keyboardAdjustment=_keyboardAdjustment;
 @property(nonatomic) int collapsedState; // @synthesize collapsedState=_collapsedState;
 @property(retain, nonatomic) _UIPanelAnimationState *animationState; // @synthesize animationState=_animationState;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *trailingViewController; // @synthesize trailingViewController=_trailingViewController;
 @property(retain, nonatomic) UIViewController *leadingViewController; // @synthesize leadingViewController=_leadingViewController;
 @property(retain, nonatomic) UIViewController *mainViewController; // @synthesize mainViewController=_mainViewController;
-- (void).cxx_destruct;
 - (id)_stateForInteractiveRequest:(id)arg1 withAffectedSides:(int)arg2 inPossibleStates:(id)arg3;
 - (id)computePossibleStatesGivenParentView:(id)arg1 withSize:(struct CGSize)arg2;
 - (id)_allowedTrailingWidthsForParentWidth:(float)arg1;

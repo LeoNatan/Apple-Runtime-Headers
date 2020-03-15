@@ -13,8 +13,8 @@
     PSICollectionResult *_collectionResult;
 }
 
-@property(readonly, nonatomic) PSICollectionResult *collectionResult; // @synthesize collectionResult=_collectionResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PSICollectionResult *collectionResult; // @synthesize collectionResult=_collectionResult;
 @property(readonly, nonatomic) unsigned int collectionType;
 @property(readonly, nonatomic) PSIDate *endDate;
 @property(readonly, nonatomic) PSIDate *startDate;

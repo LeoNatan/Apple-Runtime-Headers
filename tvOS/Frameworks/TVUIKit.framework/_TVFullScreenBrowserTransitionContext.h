@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _animator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType animator; // @synthesize animator=_animator;
 @property(copy, nonatomic) NSArray *transitionLayoutAttributes; // @synthesize transitionLayoutAttributes=_transitionLayoutAttributes;
-- (void).cxx_destruct;
 
 @end
 

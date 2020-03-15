@@ -19,11 +19,11 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) UIView *toView; // @synthesize toView=_toView;
 @property(retain, nonatomic) id <SVFullscreenTransitionContext> context; // @synthesize context=_context;
 @property(retain, nonatomic) UIViewPropertyAnimator *animator; // @synthesize animator=_animator;
-- (void).cxx_destruct;
 - (void)completeTransition:(_Bool)arg1;
 - (void)animateWithContext:(id)arg1;
 - (id)initWithCompletionBlock:(CDUnknownBlockType)arg1;

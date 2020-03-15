@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHProjectTextElement *textElement; // @synthesize textElement=_textElement;
 @property(readonly, nonatomic) PHProjectAssetElement *assetElement; // @synthesize assetElement=_assetElement;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description:(BOOL)arg1;

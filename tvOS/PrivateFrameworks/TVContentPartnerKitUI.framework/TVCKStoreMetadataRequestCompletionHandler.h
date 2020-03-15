@@ -11,8 +11,8 @@
     CDUnknownBlockType _block;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)invokeWithResponse:(id)arg1 error:(id)arg2;
 - (void)dealloc;
 - (id)init;

@@ -33,6 +33,9 @@
     NSObject<OS_dispatch_source> *_locationTimer;
     CDUnknownBlockType _locationCompletion;
     PKPaymentService *_paymentService;
+    unsigned int _backgroundTaskIdentifier;
+    int _provisioningStatusCount;
+    _Bool _expressModeSetupOptional;
     NSString *_productIdentifier;
     NSString *_referrerIdentifier;
     PKPaymentWebService *_webService;
@@ -52,10 +55,12 @@
     NSSet *_allowedFeatureIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *allowedFeatureIdentifiers; // @synthesize allowedFeatureIdentifiers=_allowedFeatureIdentifiers;
 @property(retain, nonatomic) NSSet *requiredTransitNetworkIdentifiers; // @synthesize requiredTransitNetworkIdentifiers=_requiredTransitNetworkIdentifiers;
 @property(retain, nonatomic) NSArray *allowedPaymentNetworks; // @synthesize allowedPaymentNetworks=_allowedPaymentNetworks;
 @property(readonly, nonatomic) NSSet *automaticExpressModes; // @synthesize automaticExpressModes=_automaticExpressModes;
+@property(readonly, nonatomic, getter=isExpressModeSetupOptional) _Bool expressModeSetupOptional; // @synthesize expressModeSetupOptional=_expressModeSetupOptional;
 @property(readonly, nonatomic) NSArray *moreInfoItems; // @synthesize moreInfoItems=_moreInfoItems;
 @property(readonly, nonatomic) PKPaymentPass *provisionedPass; // @synthesize provisionedPass=_provisionedPass;
 @property(readonly, nonatomic) PKPaymentProvisioningResponse *provisioningResponse; // @synthesize provisioningResponse=_provisioningResponse;
@@ -69,7 +74,6 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
-- (void).cxx_destruct;
 - (void)_addAssociatedCredential:(id)arg1;
 - (void)_updateLocalizedProgressAndInvalidateTimer;
 - (void)paymentWebService:(id)arg1 didCompleteTSMConnectionForTaskID:(unsigned int)arg2;
@@ -85,6 +89,9 @@
 - (_Bool)hasDebitPaymentPass;
 - (_Bool)hasCreditPaymentPass;
 - (_Bool)hasPaymentPass;
+- (id)provisioningTracker;
+- (void)handleOptionalExpressModeSetupDidFinishForPass:(id)arg1 withExpressModes:(id)arg2 provisioningTracker:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)finishOptionalExpressModeSetupForPass:(id)arg1 withProvisioningTracker:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)makePaymentPassDefault:(id)arg1;
 - (_Bool)willPassWithUniqueIdentifierAutomaticallyBecomeDefault:(id)arg1;
 - (void)_endRequiringUpgradedPasscodeIfNecessary;
@@ -113,8 +120,9 @@
 - (void)_ingestPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)ingestPaymentPassForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_noteProvisioningDidEndWithTaskIdentifier:(unsigned int)arg1;
-- (unsigned int)_noteProvisioningDidBegin;
+- (void)_noteProvisioningDidEnd;
+- (void)_noteProvisioningDidBegin;
+- (void)requestProvisioning:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveProvisioningForCredential:(id)arg1;
 - (void)declineTerms;

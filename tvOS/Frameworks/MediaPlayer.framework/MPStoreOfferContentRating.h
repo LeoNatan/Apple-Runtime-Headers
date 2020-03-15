@@ -21,11 +21,11 @@
 
 + (unsigned long long)ratingSystemFromString:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long ratingSystem; // @synthesize ratingSystem=_ratingSystem;
 @property(copy, nonatomic) NSString *ratingLabel; // @synthesize ratingLabel=_ratingLabel;
 @property(copy, nonatomic) NSString *ratingDescription; // @synthesize ratingDescription=_ratingDescription;
 @property(nonatomic) long long ratingLevel; // @synthesize ratingLevel=_ratingLevel;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id mediaPropertyContentRatingValue;
 - (_Bool)_isRatingSystemForTV:(unsigned long long)arg1;
 - (_Bool)_isRatingSystemForMusic:(unsigned long long)arg1;

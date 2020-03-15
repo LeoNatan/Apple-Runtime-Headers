@@ -15,9 +15,9 @@
     id <DNDSStateProviderDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DNDSStateProviderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(copy) DNDState *lastCalculatedState; // @synthesize lastCalculatedState=_lastCalculatedState;
-- (void).cxx_destruct;
 - (void)recalculateState;
 
 @end

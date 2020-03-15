@@ -25,11 +25,11 @@
     TVSUIViewServiceProxy *_proxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSUIViewServiceProxy *proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) NSArray *launchInputItems; // @synthesize launchInputItems=_launchInputItems;
 @property(nonatomic) long long lastAnimationState; // @synthesize lastAnimationState=_lastAnimationState;
 @property(nonatomic) __weak id <TVSUIViewServiceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)proxy:(id)arg1 didEncounterError:(id)arg2;
 - (void)proxy:(id)arg1 didChangeState:(long long)arg2;

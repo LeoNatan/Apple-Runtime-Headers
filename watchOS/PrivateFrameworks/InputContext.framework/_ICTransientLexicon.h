@@ -17,10 +17,10 @@
     unsigned int _entryCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int entryCount; // @synthesize entryCount=_entryCount;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned char typeFlags; // @synthesize typeFlags=_typeFlags;
-- (void).cxx_destruct;
 - (struct _LXLexicon *)getLexiconImplementation;
 - (struct _LXEntry *)copyEntryForString:(id)arg1;
 - (id)getSortKeyEquivalents:(id)arg1;

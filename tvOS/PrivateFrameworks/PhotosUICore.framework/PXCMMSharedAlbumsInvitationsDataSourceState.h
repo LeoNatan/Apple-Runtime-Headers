@@ -16,9 +16,9 @@
     NSDictionary *_invitationsBySharedAlbumObjectID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *invitationsBySharedAlbumObjectID; // @synthesize invitationsBySharedAlbumObjectID=_invitationsBySharedAlbumObjectID;
 @property(readonly, nonatomic) PHFetchResult *sharedAlbums; // @synthesize sharedAlbums=_sharedAlbums;
-- (void).cxx_destruct;
 - (id)stateUpdatedWithChange:(id)arg1 changeDetails:(id *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSharedAlbums:(id)arg1 invitationsBySharedAlbumObjectID:(id)arg2;

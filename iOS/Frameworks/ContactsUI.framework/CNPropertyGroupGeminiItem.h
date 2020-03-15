@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     CNMutableContact *_editingContact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNMutableContact *editingContact; // @synthesize editingContact=_editingContact;
 @property(nonatomic) __weak id <CNUIGeminiDataSourceDelegate> geminiUpdateDelegate; // @synthesize geminiUpdateDelegate=_geminiUpdateDelegate;
 @property(retain, nonatomic) CNGeminiResult *geminiResult; // @synthesize geminiResult=_geminiResult;
-- (void).cxx_destruct;
 - (void)geminiDataSourceDidUpdate:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (_Bool)canRemove;

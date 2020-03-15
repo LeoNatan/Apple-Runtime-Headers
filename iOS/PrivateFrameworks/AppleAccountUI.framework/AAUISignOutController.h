@@ -19,28 +19,28 @@
     ACAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic, setter=_setDataclassOptions:) NSDictionary *_dataclassOptions; // @synthesize _dataclassOptions;
 @property(retain, nonatomic, setter=_setAccountStore:) ACAccountStore *_accountStore; // @synthesize _accountStore;
-- (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
-- (void)dataclassPickerViewController:(id)arg1 didCompleteWithDataclassActions:(struct NSDictionary *)arg2;
+- (void)dataclassPickerViewController:(id)arg1 didCompleteWithDataclassActions:(id)arg2;
 - (void)dataclassPickerViewControllerDidCancel:(id)arg1;
 - (id)footerTextForDataclassPickerViewController:(id)arg1;
 - (void)_delegate_signOutControllerDidCompleteWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_delegate_signOutControllerDidCancel;
-- (void)_mainQueue_presentSpinnerPageWithDataclassActions:(struct NSDictionary *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_mainQueue_continueSignOutWithDataclassActions:(struct NSDictionary *)arg1;
+- (void)_mainQueue_presentSpinnerPageWithDataclassActions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_mainQueue_continueSignOutWithDataclassActions:(id)arg1;
 - (void)_mainQueue_promptForConfirmationInViewController:(id)arg1 simplified:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)prepareInViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (struct NSDictionary *)_actionableDataclassOptions;
+- (id)_actionableDataclassOptions;
 - (_Bool)_hasPaymentPasses;
 - (_Bool)_hasiCloudPhotosData;
 - (_Bool)_hasiCloudDriveData;
 - (_Bool)_hasHealthData;
 - (id)_appendToSignoutMessage:(id)arg1 appendedString:(id)arg2;
 - (id)_signOutMessageSimplified:(_Bool)arg1 withConfirmation:(_Bool)arg2;
-- (id)_spinnerViewControllerForActions:(struct NSDictionary *)arg1;
+- (id)_spinnerViewControllerForActions:(id)arg1;
 - (id)_dataclassViewController;
 - (void)_updateStyleIfNeeded;
 - (void)viewWillLayoutSubviews;

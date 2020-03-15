@@ -14,9 +14,9 @@
     CDUnknownBlockType _observerBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
 @property long long downloadTypesMask; // @synthesize downloadTypesMask=_downloadTypesMask;
-- (void).cxx_destruct;
 - (void)downloadQueueDidCheckServerDownloadQueueForAccount:(id)arg1 withDownloadCount:(long long)arg2 newDownloads:(id)arg3;
 - (void)download:(id)arg1 didUpdateStatus:(id)arg2;
 - (void)downloadQueueDidRemoveDownload:(id)arg1 queueIsIdle:(BOOL)arg2;

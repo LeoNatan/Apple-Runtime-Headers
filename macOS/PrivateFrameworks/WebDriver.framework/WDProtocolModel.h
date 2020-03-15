@@ -15,10 +15,10 @@
     NSDictionary *_types;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *types; // @synthesize types=_types;
 @property(readonly, copy, nonatomic) NSDictionary *events; // @synthesize events=_events;
 @property(readonly, copy, nonatomic) NSDictionary *commands; // @synthesize commands=_commands;
-- (void).cxx_destruct;
 - (id)decodedResultsFromPayload:(id)arg1 forEvent:(id)arg2;
 - (id)decodedResultsFromPayload:(id)arg1 forCommand:(id)arg2;
 - (Ref_54ade189)encodedMessageForCommand:(id)arg1 withParameters:(id)arg2;

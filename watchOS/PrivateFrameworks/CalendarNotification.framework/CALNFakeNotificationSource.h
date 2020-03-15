@@ -19,9 +19,9 @@
 
 + (id)_activeSourcesQueue;
 + (id)_activeSources;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CALNNotificationManager> notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 - (void)refreshNotifications:(id)arg1;
 - (id)contentForNotificationWithSourceClientIdentifier:(id)arg1;
 - (void)didReceiveResponse:(id)arg1;

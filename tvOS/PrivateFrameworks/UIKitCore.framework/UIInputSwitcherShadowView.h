@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct CGRect _keyRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBackdropView *blurView; // @synthesize blurView=_blurView;
 @property(nonatomic) UIKeyboardMenuView *menu; // @synthesize menu=_menu;
 @property(nonatomic) struct CGRect keyRect; // @synthesize keyRect=_keyRect;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=m_gradientColors;
 @property(nonatomic) double pointerOffset; // @synthesize pointerOffset=m_pointerOffset;
 @property(nonatomic) int mode; // @synthesize mode=m_mode;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)setFrame:(struct CGRect)arg1;

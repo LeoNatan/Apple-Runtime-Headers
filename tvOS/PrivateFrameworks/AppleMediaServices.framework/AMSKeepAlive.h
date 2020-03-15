@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 + (id)keepAliveWithName:(id)arg1 style:(long long)arg2;
 + (id)keepAliveWithName:(id)arg1;
 + (id)keepAliveWithFormat:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_takeProcessAssertion;
 - (void)_takeOSTransaction;
 - (void)_startLogTimer;

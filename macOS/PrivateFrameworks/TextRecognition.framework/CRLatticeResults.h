@@ -13,8 +13,8 @@
     NSMutableArray *_mutableResults;
 }
 
-@property(retain, nonatomic) NSMutableArray *mutableResults; // @synthesize mutableResults=_mutableResults;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *mutableResults; // @synthesize mutableResults=_mutableResults;
 @property(readonly, nonatomic) NSArray *results;
 - (void)addResult:(id)arg1;
 - (id)init;

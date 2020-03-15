@@ -13,8 +13,8 @@
     ALCity *_city;
 }
 
-@property(retain, nonatomic) ALCity *city; // @synthesize city=_city;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ALCity *city; // @synthesize city=_city;
 - (id)_contentString;
 - (void)prepareForReuse;
 

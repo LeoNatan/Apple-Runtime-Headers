@@ -19,11 +19,11 @@
     _SFPBGraphicalFloat *_alphaComponent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBGraphicalFloat *alphaComponent; // @synthesize alphaComponent=_alphaComponent;
 @property(retain, nonatomic) _SFPBGraphicalFloat *blueComponent; // @synthesize blueComponent=_blueComponent;
 @property(retain, nonatomic) _SFPBGraphicalFloat *greenComponent; // @synthesize greenComponent=_greenComponent;
 @property(retain, nonatomic) _SFPBGraphicalFloat *redComponent; // @synthesize redComponent=_redComponent;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

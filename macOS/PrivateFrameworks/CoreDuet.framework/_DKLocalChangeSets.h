@@ -15,10 +15,10 @@
     NSDate *_queryStartDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *queryStartDate; // @synthesize queryStartDate=_queryStartDate;
 @property(retain, nonatomic) _DKChangeSet *deletionChangeSet; // @synthesize deletionChangeSet=_deletionChangeSet;
 @property(retain, nonatomic) _DKChangeSet *additionChangeSet; // @synthesize additionChangeSet=_additionChangeSet;
-- (void).cxx_destruct;
 - (id)initWithAdditionChangeSet:(id)arg1 deletionChangeSet:(id)arg2 queryStartDate:(id)arg3;
 
 @end

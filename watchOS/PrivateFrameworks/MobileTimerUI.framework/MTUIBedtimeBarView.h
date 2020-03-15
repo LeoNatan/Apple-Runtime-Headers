@@ -17,9 +17,9 @@
     MTAlarm *_sleepAlarm;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) HKSleepDay *lastNightSleepData; // @synthesize lastNightSleepData=_lastNightSleepData;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_processSleepData;
 - (id)initWithBarHeight:(float)arg1;

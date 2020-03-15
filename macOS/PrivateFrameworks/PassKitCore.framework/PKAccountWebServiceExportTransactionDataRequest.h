@@ -18,13 +18,13 @@
     NSTimeZone *_productTimeZone;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSTimeZone *productTimeZone; // @synthesize productTimeZone=_productTimeZone;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSDate *beginDate; // @synthesize beginDate=_beginDate;
 @property(copy, nonatomic) NSString *fileFormat; // @synthesize fileFormat=_fileFormat;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

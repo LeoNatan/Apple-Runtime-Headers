@@ -95,6 +95,7 @@
 + (double)cellHeightForWidth:(double)arg1;
 + (void)_clearCaches;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffect *secondaryVisualEffect; // @synthesize secondaryVisualEffect=_secondaryVisualEffect;
 @property(retain, nonatomic) UIVisualEffect *primaryVisualEffect; // @synthesize primaryVisualEffect=_primaryVisualEffect;
 @property(nonatomic) _Bool isFakeInvitation; // @synthesize isFakeInvitation=_isFakeInvitation;
@@ -103,7 +104,6 @@
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UIView *selectedBackgroundView; // @synthesize selectedBackgroundView=_selectedBackgroundView;
 @property(retain, nonatomic) UIColor *selectionTintColor; // @synthesize selectionTintColor=_selectionTintColor;
-- (void).cxx_destruct;
 - (id)_textForDepartureTimeLabel;
 - (id)_textForBottomTimeLabel;
 - (id)_textForTopTimeLabel;

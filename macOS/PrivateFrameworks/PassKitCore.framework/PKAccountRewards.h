@@ -26,6 +26,7 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *rewardsAddedIdentifiers; // @synthesize rewardsAddedIdentifiers=_rewardsAddedIdentifiers;
 @property(copy, nonatomic) NSSet *transactionIdentifiers; // @synthesize transactionIdentifiers=_transactionIdentifiers;
 @property(nonatomic) long long type; // @synthesize type=_type;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) PKCurrencyAmount *currencyAmount; // @synthesize currencyAmount=_currencyAmount;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqualToAccountEvent:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

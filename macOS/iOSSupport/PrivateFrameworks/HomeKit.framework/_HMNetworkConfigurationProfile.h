@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id <_HMNetworkConfigurationProfileDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_HMNetworkConfigurationProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_HMNetworkConfigurationProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleWiFiReconfigurationUpdated:(id)arg1;
 - (void)_handleAccessViolationUpdated:(id)arg1;
 - (void)_handleHostsUpdated:(id)arg1;

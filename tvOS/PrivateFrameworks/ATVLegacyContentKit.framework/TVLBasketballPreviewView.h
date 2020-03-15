@@ -14,9 +14,9 @@
     TVLBasketballCourtView *_courtView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLBasketballCourtView *courtView; // @synthesize courtView=_courtView;
 @property(retain, nonatomic) TVLBasketballScoreboardView *scoreboardView; // @synthesize scoreboardView=_scoreboardView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithDictionary:(id)arg1;
 

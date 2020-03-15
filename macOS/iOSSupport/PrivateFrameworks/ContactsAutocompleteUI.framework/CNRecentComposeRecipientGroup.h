@@ -13,8 +13,8 @@
     CRRecentContact *_recentContact;
 }
 
-@property(readonly, retain, nonatomic) CRRecentContact *recentContact; // @synthesize recentContact=_recentContact;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) CRRecentContact *recentContact; // @synthesize recentContact=_recentContact;
 - (id)unlocalizedLabel;
 - (id)placeholderName;
 - (id)label;

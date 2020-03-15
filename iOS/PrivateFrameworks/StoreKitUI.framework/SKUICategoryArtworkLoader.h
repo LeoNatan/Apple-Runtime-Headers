@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     UIImage *_placeholderImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIImageDataConsumer *imageDataConsumer; // @synthesize imageDataConsumer=_imageDataConsumer;
 @property(readonly, nonatomic) SKUIResourceLoader *artworkLoader; // @synthesize artworkLoader=_loader;
-- (void).cxx_destruct;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)removeObserver:(id)arg1;
 @property(readonly, nonatomic) struct CGSize imageSize;

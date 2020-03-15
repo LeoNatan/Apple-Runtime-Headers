@@ -17,11 +17,11 @@
 }
 
 + (id)itemPropertiesFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL distinguishedFolderTypeSpecified; // @synthesize distinguishedFolderTypeSpecified=_distinguishedFolderTypeSpecified;
 @property(nonatomic) long long distinguishedFolderType; // @synthesize distinguishedFolderType=_distinguishedFolderType;
 @property(readonly, nonatomic) BOOL displayNameSpecified; // @synthesize displayNameSpecified=_displayNameSpecified;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)populateFromPropertiesDictionary:(id)arg1;
 - (id)buildPropertiesDictionary;

@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
 
 + (id)mapsLinkWithURL:(id)arg1;
 + (_Bool)isMapsURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool parsed; // @synthesize parsed=_parsed;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSArray *mapsURLComponents; // @synthesize mapsURLComponents=_mapsURLComponents;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)parseMapsData;
 - (id)dataString;
 - (void)parse;

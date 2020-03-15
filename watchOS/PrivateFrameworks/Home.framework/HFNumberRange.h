@@ -22,11 +22,11 @@
 + (id)rangeWithFloatRange:(CDStruct_b2fbf00d)arg1;
 + (id)valueWithValue:(id)arg1;
 + (id)rangeWithMaxValue:(id)arg1 minValue:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *minValue; // @synthesize minValue=_minValue;
 @property(copy, nonatomic) NSNumber *midValue; // @synthesize midValue=_midValue;
 @property(copy, nonatomic) NSNumber *maxValue; // @synthesize maxValue=_maxValue;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

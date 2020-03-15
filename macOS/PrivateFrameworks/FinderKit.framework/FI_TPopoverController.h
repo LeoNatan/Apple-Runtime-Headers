@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     _Bool tornDown;
 }
 
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
-@property(readonly, retain, nonatomic) FI_TPopover *popover; // @synthesize popover=_popover;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
+@property(readonly, retain, nonatomic) FI_TPopover *popover; // @synthesize popover=_popover;
 @property(nonatomic) double width; // @dynamic width;
 @property(retain, nonatomic) NSAppearance *appearance;
 @property(nonatomic) _Bool releasedWhenClosed; // @dynamic releasedWhenClosed;

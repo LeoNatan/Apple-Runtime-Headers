@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     _Bool _usesMessagesAppIcon;
 }
 
-@property(nonatomic) _Bool usesMessagesAppIcon; // @synthesize usesMessagesAppIcon=_usesMessagesAppIcon;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool usesMessagesAppIcon; // @synthesize usesMessagesAppIcon=_usesMessagesAppIcon;
 - (void)layoutSubviews;
 - (id)initWithIconImage:(id)arg1 title:(id)arg2 subtitle:(id)arg3;
 

@@ -14,9 +14,9 @@
     HKWorkoutEvent *_event;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKWorkoutEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;

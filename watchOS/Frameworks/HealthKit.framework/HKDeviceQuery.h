@@ -18,8 +18,8 @@
 
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
-@property(readonly, copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_deliverError:(id)arg1;
 - (void)clientRemote_deliverDevices:(id)arg1 done:(_Bool)arg2 reset:(_Bool)arg3 query:(id)arg4;

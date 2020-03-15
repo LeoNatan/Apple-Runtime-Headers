@@ -40,13 +40,13 @@
     PVLivePlayerThermalThrottlingPolicy *_thermalThrottlingPolicy;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL bypassRenderLink; // @synthesize bypassRenderLink=_bypassRenderLink;
 @property(nonatomic) BOOL lowerGPUPriority; // @synthesize lowerGPUPriority=_lowerGPUPriority;
 @property(nonatomic) BOOL lowerGCDPriority; // @synthesize lowerGCDPriority=_lowerGCDPriority;
 @property(retain, nonatomic) PVLivePlayerThermalThrottlingPolicy *thermalThrottlingPolicy; // @synthesize thermalThrottlingPolicy=_thermalThrottlingPolicy;
 @property(retain, nonatomic) PVLivePlayerRenderLink *renderLink; // @synthesize renderLink=_renderLink;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_statsLogCheck;
 - (void)printAndClearStats:(BOOL)arg1;
 - (void)addStats:(struct FrameStats *)arg1;

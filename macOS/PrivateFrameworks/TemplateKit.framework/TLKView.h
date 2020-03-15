@@ -26,12 +26,12 @@
 + (void)enableLightKeylineStroke:(BOOL)arg1 forView:(id)arg2;
 + (Class)layerClass;
 + (struct NSEdgeInsets)defaultInsets;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKAppearance *tlkAppearance; // @synthesize tlkAppearance=_tlkAppearance;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct NSEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property BOOL inBatchUpdate; // @synthesize inBatchUpdate;
 @property __weak id <TLKObserver> observer; // @synthesize observer;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (struct CGSize)containerSizeForSize:(struct CGSize)arg1;

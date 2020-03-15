@@ -33,6 +33,7 @@
 + (unsigned long long)defaultLifespan;
 + (id)policyFromDictionary:(id)arg1;
 + (id)policyWithRateLimiter:(id)arg1 lifespanInSeconds:(unsigned long long)arg2 maxNumberStored:(unsigned long long)arg3 timeResolutionInSeconds:(unsigned long long)arg4 maxNumberOfRecipients:(unsigned long long)arg5 maxNumberOfKeywords:(unsigned long long)arg6 maxNumberOfAttachments:(unsigned long long)arg7;
+- (void).cxx_destruct;
 @property unsigned long long maxNumberOfAttachments; // @synthesize maxNumberOfAttachments=_maxNumberOfAttachments;
 @property unsigned long long maxNumberOfKeywords; // @synthesize maxNumberOfKeywords=_maxNumberOfKeywords;
 @property unsigned long long maxNumberOfRecipients; // @synthesize maxNumberOfRecipients=_maxNumberOfRecipients;
@@ -40,7 +41,6 @@
 @property unsigned long long maxNumberStored; // @synthesize maxNumberStored=_maxNumberStored;
 @property unsigned long long lifespanInSeconds; // @synthesize lifespanInSeconds=_lifespanInSeconds;
 @property(retain) _CDRateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRateLimiter:(id)arg1 lifespanInSeconds:(unsigned long long)arg2 maxNumberStored:(unsigned long long)arg3 timeResolutionInSeconds:(unsigned long long)arg4 maxNumberOfRecipients:(unsigned long long)arg5 maxNumberOfKeywords:(unsigned long long)arg6 maxNumberOfAttachments:(unsigned long long)arg7;
 

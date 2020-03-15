@@ -21,13 +21,13 @@
 }
 
 + (id)sharedChatDetailsPopoverController;
+- (void).cxx_destruct;
 @property __weak NSView *positioningView; // @synthesize positioningView=_positioningView;
 @property(retain) SOChatDetailsViewController *detailsViewController; // @synthesize detailsViewController=_detailsViewController;
 @property(retain, nonatomic) SOChatDisplayController *chatDisplayController; // @synthesize chatDisplayController=_chatDisplayController;
 @property BOOL clearsOnClose; // @synthesize clearsOnClose=_clearsOnClose;
 @property(getter=isDetachable) BOOL detachable; // @synthesize detachable=_detachable;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (BOOL)popoverShouldDetach:(id)arg1;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillClose:(id)arg1;

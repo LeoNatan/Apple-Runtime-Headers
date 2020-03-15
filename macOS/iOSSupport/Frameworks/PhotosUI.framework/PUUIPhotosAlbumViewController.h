@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _lastKnownSafeAreaInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUPhotoPickerResizeTaskDescriptor *resizeTaskDescriptor; // @synthesize resizeTaskDescriptor=_resizeTaskDescriptor;
 @property(nonatomic) struct UIEdgeInsets lastKnownSafeAreaInsets; // @synthesize lastKnownSafeAreaInsets=_lastKnownSafeAreaInsets;
 @property(nonatomic) double lastKnownWidth; // @synthesize lastKnownWidth=_lastKnownWidth;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setAlbumFilter:) int _albumFilter; // @synthesize _albumFilter=__albumFilter;
 @property(copy, nonatomic, setter=_setImagePickerMediaTypes:) NSArray *_imagePickerMediaTypes; // @synthesize _imagePickerMediaTypes=__imagePickerMediaTypes;
 @property(nonatomic) __weak id <PUPhotoPicker> photoPicker; // @synthesize photoPicker=_photoPicker;
-- (void).cxx_destruct;
 - (double)topMarginForPhotosGlobalFooterView:(id)arg1;
 - (BOOL)canDragIn;
 - (BOOL)canDragOut;
@@ -69,7 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleImagePickerMultipleSelectionDone;
 - (void)_handleImagePickerSelectionDone:(id)arg1;
 - (void)_handleImagePickerCancel:(id)arg1;
-- (id)filterPredicateForAlbum:(struct NSObject *)arg1;
+- (id)filterPredicateForAlbum:(id)arg1;
 - (BOOL)allowsPeeking;
 - (id)init;
 - (id)initWithSpec:(id)arg1;

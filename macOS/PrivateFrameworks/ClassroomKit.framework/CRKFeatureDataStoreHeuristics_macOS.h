@@ -15,8 +15,8 @@
 
 + (id)overrideFeaturesByFeature;
 + (id)overrideIsForcedByFeature;
-@property(nonatomic) __weak id <CRKFeatureDataStoreProtocol> dataStore; // @synthesize dataStore=_dataStore;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CRKFeatureDataStoreProtocol> dataStore; // @synthesize dataStore=_dataStore;
 - (unsigned long long)applyHeuristicsToFeature:(id)arg1 boolType:(unsigned long long)arg2;
 - (BOOL)applyIsForcedHeuristicsToFeature:(id)arg1 isForced:(BOOL)arg2;
 - (id)initWithDataStore:(id)arg1;

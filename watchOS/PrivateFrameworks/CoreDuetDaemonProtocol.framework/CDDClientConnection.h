@@ -15,10 +15,10 @@
     unsigned long long _clientId;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long clientId; // @synthesize clientId=_clientId;
 @property(readonly) CDDebug *debug; // @synthesize debug=_debug;
 @property(readonly) CDDXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (_Bool)getLocalAppBundleId:(id *)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (_Bool)requestAdmissionLogFromDevice:(unsigned int)arg1 error:(id *)arg2 replyHandler:(CDUnknownBlockType)arg3;
 - (_Bool)setActiveBundles:(id)arg1 startTimestamps:(id)arg2 endTimestamps:(id)arg3 event:(unsigned long long)arg4 error:(id *)arg5 replyHandler:(CDUnknownBlockType)arg6;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _snapshotFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clipToSnapshotRect; // @synthesize clipToSnapshotRect=_clipToSnapshotRect;
 @property(nonatomic) struct CGRect snapshotFrame; // @synthesize snapshotFrame=_snapshotFrame;
 @property(retain, nonatomic) _UIFocusSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 @property(readonly, nonatomic) __weak id <_UIFocusRegionContainer> rootContainer; // @synthesize rootContainer=_rootContainer;
 @property(readonly, nonatomic) __weak UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
-- (void).cxx_destruct;
 - (id)captureSnapshot;
 - (id)_searchAreaForContainerSearchRect:(struct CGRect)arg1;
 - (id)initWithFocusSystem:(id)arg1 rootContainer:(id)arg2 coordinateSpace:(id)arg3 searchInfo:(id)arg4;

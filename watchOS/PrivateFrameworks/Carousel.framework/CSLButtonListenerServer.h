@@ -30,12 +30,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *handlerSemaphore; // @synthesize handlerSemaphore=_handlerSemaphore;
 @property unsigned int status; // @synthesize status=_status;
 @property(retain, nonatomic) CSLSButtonListenerCache *handlerTokenCache; // @synthesize handlerTokenCache=_handlerTokenCache;
 @property(retain, nonatomic) CSLSButtonListenerCache *pidCache; // @synthesize pidCache=_pidCache;
 @property(nonatomic) __weak id <CSLSButtonHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)checkIn;
 - (void)handledButtonEventWithStatus:(unsigned int)arg1;
 - (void)_signalHandlerComplete;

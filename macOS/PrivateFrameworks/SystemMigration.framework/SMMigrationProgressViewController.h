@@ -54,6 +54,7 @@
 + (id)keyPathsForValuesAffectingShowNetworkRecommendation;
 + (id)keyPathsForValuesAffectingSourceIcon;
 + (id)keyPathsForValuesAffectingSourceName;
+- (void).cxx_destruct;
 @property BOOL isPeerToPeer; // @synthesize isPeerToPeer=_isPeerToPeer;
 @property(retain) NSString *previousConnectionType; // @synthesize previousConnectionType=_previousConnectionType;
 @property(retain) NSString *currentWirelessNetworkName; // @synthesize currentWirelessNetworkName=_currentWirelessNetworkName;
@@ -86,7 +87,6 @@
 @property(retain) NSString *progressString; // @synthesize progressString=_progressString;
 @property(readonly) NSString *fasterInterfaceRecommendation; // @synthesize fasterInterfaceRecommendation=_fasterInterfaceRecommendation;
 @property NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dismissManualSoftAPAlert;
 - (void)showManualSoftAPAlert:(id)arg1 password:(id)arg2;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) SSVPlaybackLease *lease; // @synthesize lease=_lease;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SSVPlaybackLease *lease; // @synthesize lease=_lease;
 - (void)playbackLeaseDidEnd:(id)arg1;
 - (void)playbackLease:(id)arg1 automaticRefreshDidFinishWithResponse:(id)arg2 error:(id)arg3;
 - (void)_endLease;

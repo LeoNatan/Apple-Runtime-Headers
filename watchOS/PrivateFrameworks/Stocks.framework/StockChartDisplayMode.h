@@ -36,6 +36,7 @@
 }
 
 + (id)defaultDisplayMode;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets chartRenderingInsets; // @synthesize chartRenderingInsets=_chartRenderingInsets;
 @property(nonatomic) struct CGGradient *backgroundGradient; // @synthesize backgroundGradient=_backgroundGradient;
 @property(retain, nonatomic) UIColor *axisLabelsColor; // @synthesize axisLabelsColor=_axisLabelsColor;
@@ -56,7 +57,6 @@
 @property(nonatomic) int maxInterval; // @synthesize maxInterval=_maxInterval;
 @property(nonatomic) _Bool showsVolume; // @synthesize showsVolume=_showsVolume;
 @property(nonatomic) struct CGSize chartSize; // @synthesize chartSize=_chartSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float lineGraphBottomPadding;
 @property(readonly, nonatomic) float gutterHeight;
 - (id)description;

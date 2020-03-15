@@ -6,7 +6,7 @@
 
 #import <UIKitMacHelper/NSObject-Protocol.h>
 
-@class NSArray, NSISEngine, NSObject, NSString, NSToolbar, NSURL, UIWindow;
+@class NSArray, NSISEngine, NSObject, NSString, NSToolbar, NSURL, UINSEvent, UIWindow;
 @protocol OS_dispatch_queue, UINSAlert, UINSCursor, UINSDocumentBrowserViewController, UINSDocumentPickerViewController, UINSDragSessionHandler, UINSToolbar, UINSTouchBarCoordinator;
 
 @protocol UINSWindow <NSObject>
@@ -44,6 +44,7 @@
 - (void)makeKeyAndOrderFront:(id)arg1;
 - (void)endHostModalSession;
 - (void)beginHostModalSession;
+- (void)forwardUINSEventToAppKit:(UINSEvent *)arg1;
 - (void)beginDragWithItems:(NSArray *)arg1 handler:(id <UINSDragSessionHandler>)arg2;
 - (void)setCursor:(id <UINSCursor>)arg1;
 - (void)takeCursor:(id <UINSCursor>)arg1;

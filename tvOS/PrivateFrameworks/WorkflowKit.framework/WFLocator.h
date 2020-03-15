@@ -22,12 +22,12 @@
 + (void)determineLocationWithWorkflowEnvironment:(long long)arg1 desiredAccuracy:(double)arg2 timeout:(double)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)determineLocationWithWorkflowEnvironment:(long long)arg1 desiredAccuracy:(double)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)determineLocationWithWorkflowEnvironment:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) CLLocation *bestEffortLocation; // @synthesize bestEffortLocation=_bestEffortLocation;
 @property(retain, nonatomic) CLInUseAssertion *inUseAssertion; // @synthesize inUseAssertion=_inUseAssertion;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)finishUpdatingLocation;

@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     CTCarrierSpaceClient *_carrierSpaceClient;
 }
 
-@property(retain, nonatomic) CTCarrierSpaceClient *carrierSpaceClient; // @synthesize carrierSpaceClient=_carrierSpaceClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CTCarrierSpaceClient *carrierSpaceClient; // @synthesize carrierSpaceClient=_carrierSpaceClient;
 - (void)remoteUIController:(id)arg1 willPresentModalNavigationController:(id)arg2;
 - (void)dismissPlanDetail;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

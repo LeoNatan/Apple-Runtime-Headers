@@ -16,10 +16,10 @@
 }
 
 + (struct CGSize)imageSize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int highlightMode; // @synthesize highlightMode=_highlightMode;
 @property(copy, nonatomic) CLKTextProvider *line2TextProvider; // @synthesize line2TextProvider=_line2TextProvider;
 @property(copy, nonatomic) CLKImageProvider *line1ImageProvider; // @synthesize line1ImageProvider=_line1ImageProvider;
-- (void).cxx_destruct;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
 - (id)_initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 @property(nonatomic) _Bool highlightLine2;

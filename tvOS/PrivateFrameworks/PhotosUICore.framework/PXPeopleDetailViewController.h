@@ -19,12 +19,12 @@
     NSArray *_overlayConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *overlayConstraints; // @synthesize overlayConstraints=_overlayConstraints;
 @property(retain, nonatomic) UIScrollView *overlayScrollView; // @synthesize overlayScrollView=_overlayScrollView;
 @property(retain, nonatomic) PXPeopleDetailStatusOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) NSArray *people; // @synthesize people=_people;
 @property(nonatomic, getter=isProcessingFaces) _Bool processingFaces; // @synthesize processingFaces=_processingFaces;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (void)_applicationBecameActive:(id)arg1;
 - (void)_updateDataSourceWithCollectionForPerson:(id)arg1;

@@ -23,12 +23,12 @@
     CDUnknownBlockType _topUpAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool topUpEnabled; // @synthesize topUpEnabled=_topUpEnabled;
 @property(copy, nonatomic) CDUnknownBlockType topUpAction; // @synthesize topUpAction=_topUpAction;
 @property(copy, nonatomic) NSString *topUpTitle; // @synthesize topUpTitle=_topUpTitle;
 @property(copy, nonatomic) NSString *availableCredit; // @synthesize availableCredit=_availableCredit;
 @property(copy, nonatomic) NSString *balance; // @synthesize balance=_balance;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_buttonPressed:(id)arg1;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;

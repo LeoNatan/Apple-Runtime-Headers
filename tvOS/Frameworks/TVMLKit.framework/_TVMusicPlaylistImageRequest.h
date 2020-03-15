@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _scaleToSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize scaleToSize; // @synthesize scaleToSize=_scaleToSize;
 @property(readonly, copy, nonatomic) NSString *playlistStyle; // @synthesize playlistStyle=_playlistStyle;
 @property(readonly, copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (void)loadImagesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)identifier;
 - (id)initWithImageProxies:(id)arg1 playlistStyle:(id)arg2;

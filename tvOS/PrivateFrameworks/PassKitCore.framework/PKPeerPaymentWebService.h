@@ -25,12 +25,12 @@
 }
 
 + (id)sharedService;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSharedService) _Bool sharedService; // @synthesize sharedService=_sharedService;
 @property(retain, nonatomic) PKPeerPaymentService *peerPaymentService; // @synthesize peerPaymentService=_peerPaymentService;
 @property(readonly, nonatomic) id <PKPeerPaymentWebServiceTargetDeviceProtocol> targetDevice; // @synthesize targetDevice=_targetDevice;
 @property(readonly, nonatomic) id <PKPeerPaymentWebServiceArchiver> archiver; // @synthesize archiver=_archiver;
 @property(retain, nonatomic) PKPeerPaymentWebServiceContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_updateRequestWithCurrentTargetDevice:(id)arg1;
 - (_Bool)_isValidResponse:(id)arg1 error:(id)arg2;
 - (void)_archiveContext;
@@ -72,7 +72,7 @@
 @property(readonly, nonatomic) _Bool needsRegistration;
 - (void)sharedPeerPaymentServiceChanged:(id)arg1;
 - (id)logFacility;
-- (void)handleWillPerformHTTPRedirectionWithResponse:(id)arg1 redirectHandler:(CDUnknownBlockType)arg2;
+- (void)handleWillPerformHTTPRedirectionWithResponse:(id)arg1 originalRequest:(id)arg2 redirectHandler:(CDUnknownBlockType)arg3;
 - (id)forbiddenErrorWithResponse:(id)arg1;
 - (id)badRequestErrorWithResponse:(id)arg1;
 - (void)handleAuthenticationFailureWithCompletionHandler:(CDUnknownBlockType)arg1;

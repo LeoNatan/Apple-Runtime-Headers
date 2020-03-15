@@ -17,12 +17,12 @@
     WFDailyRoutineShortcutSetupActionParameterFollowUpQuestion *_followUpQuestion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFDailyRoutineShortcutSetupActionParameterFollowUpQuestion *followUpQuestion; // @synthesize followUpQuestion=_followUpQuestion;
 @property(retain, nonatomic) WFImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *skipButtonTitle; // @synthesize skipButtonTitle=_skipButtonTitle;
 @property(copy, nonatomic) NSString *addButtonTitle; // @synthesize addButtonTitle=_addButtonTitle;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)initWithPrompt:(id)arg1 subtitle:(id)arg2 actions:(id)arg3;
 
 @end

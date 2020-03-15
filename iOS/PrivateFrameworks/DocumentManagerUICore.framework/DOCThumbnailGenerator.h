@@ -16,8 +16,8 @@
 
 + (void)setMaximumCachedThumbnailCount:(unsigned long long)arg1;
 + (id)sharedGenerator;
-@property(readonly, nonatomic) QLThumbnailGenerator *thumbnailGenerator; // @synthesize thumbnailGenerator=_thumbnailGenerator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) QLThumbnailGenerator *thumbnailGenerator; // @synthesize thumbnailGenerator=_thumbnailGenerator;
 - (void)endBatching:(id)arg1;
 - (id)startBatching;
 - (void)performInBatch:(CDUnknownBlockType)arg1;

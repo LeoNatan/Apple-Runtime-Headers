@@ -20,11 +20,11 @@
 }
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
 @property(readonly, nonatomic, getter=isReadonly) _Bool readonly; // @synthesize readonly=_readonly;
 @property(readonly, nonatomic) NSString *propertyName; // @synthesize propertyName=_propertyName;
-- (void).cxx_destruct;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (_Bool)canMergeFromPropertyDescriptor:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

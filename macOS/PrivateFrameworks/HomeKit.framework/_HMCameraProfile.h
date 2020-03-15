@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(retain) HMCameraUserSettings *userSettings; // @synthesize userSettings=_userSettings;
 @property(readonly) _HMCameraAudioControl *microphoneControl; // @synthesize microphoneControl=_microphoneControl;
@@ -27,7 +28,6 @@
 @property(readonly) _HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
 @property(readonly) _HMCameraSnapshotControl *snapshotControlInternal; // @synthesize snapshotControlInternal=_snapshotControlInternal;
 @property(readonly) _HMCameraStreamControl *streamControlInternal; // @synthesize streamControlInternal=_streamControlInternal;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)deleteAllClipsWithCompletionHandler:(CDUnknownBlockType)arg1;

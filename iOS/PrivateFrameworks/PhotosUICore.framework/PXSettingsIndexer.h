@@ -17,12 +17,12 @@
     NSProgress *_indexingProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *indexingProgress; // @synthesize indexingProgress=_indexingProgress;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(retain, nonatomic) PXSettingsIndex *index; // @synthesize index=_index;
 @property(readonly, nonatomic) PXSettings *rootSettings; // @synthesize rootSettings=_rootSettings;
-- (void).cxx_destruct;
 - (void)_callCompletionHandlersIfNecessary;
 - (void)_handleResultIndex:(id)arg1;
 - (void)_startIndexingIfNecessary;

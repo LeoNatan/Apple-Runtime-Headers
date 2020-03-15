@@ -13,8 +13,8 @@
     EKChangeTracker *_originalChangeTracker;
 }
 
-@property(retain) EKChangeTracker *originalChangeTracker; // @synthesize originalChangeTracker=_originalChangeTracker;
 - (void).cxx_destruct;
+@property(retain) EKChangeTracker *originalChangeTracker; // @synthesize originalChangeTracker=_originalChangeTracker;
 
 @end
 

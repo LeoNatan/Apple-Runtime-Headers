@@ -28,6 +28,7 @@
     NSMutableDictionary *_redirectedURLs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *redirectedURLs; // @synthesize redirectedURLs=_redirectedURLs;
 @property(retain, nonatomic) NSMutableDictionary *pageState; // @synthesize pageState=_pageState;
 @property(retain, nonatomic) NSArray *pendingBagTabs; // @synthesize pendingBagTabs=_pendingBagTabs;
@@ -41,7 +42,6 @@
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(readonly) FRWindowBackgroundView *splashView; // @synthesize splashView=_splashView;
 @property(readonly) FRWKView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (id)_comparisonDictionaryFromURL:(id)arg1;
 - (id)_tabBarIdentifierForURL:(id)arg1;
 - (void)webViewFinishedLoadingURL:(id)arg1 withError:(id)arg2;

@@ -14,9 +14,9 @@
     IOSSHLApplication *_application;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool launchApp; // @synthesize launchApp=_launchApp;
 @property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)didDismiss;
 - (void)configureAlert;
 - (id)initWithApplication:(id)arg1;

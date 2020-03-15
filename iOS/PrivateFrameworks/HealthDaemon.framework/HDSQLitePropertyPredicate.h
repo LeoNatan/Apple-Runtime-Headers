@@ -15,8 +15,8 @@
     NSString *_property;
 }
 
-@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (_Bool)isCompatibleWithPredicate:(id)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_serializedKey;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *serializedKey; // @synthesize serializedKey=_serializedKey;
 @property struct __SecKey *publicKeyRef; // @synthesize publicKeyRef=_publicKeyRef;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)verifySignature:(id)arg1 data:(id)arg2;
 - (id)initWithData:(id)arg1 error:(id *)arg2;

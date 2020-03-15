@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)unarchivingObjectsSet;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasMadeFinalPush; // @synthesize hasMadeFinalPush=_hasMadeFinalPush;
 @property(retain, nonatomic) NSDate *currentETADate; // @synthesize currentETADate=_currentETADate;
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double minimumETADifference; // @synthesize minimumETADifference=_minimumETADifference;
 @property(nonatomic) unsigned long long postedNotifcations; // @synthesize postedNotifcations=_postedNotifcations;
 @property(nonatomic) unsigned long long maxPostedNotifications; // @synthesize maxPostedNotifications=_maxPostedNotifications;
-- (void).cxx_destruct;
 - (double)minimumETADifferenceIncrement;
 - (void)incrementMinimumETADiffernce;
 - (void)didReceiveUpdateWithETA:(double)arg1 lastUpdated:(double)arg2;

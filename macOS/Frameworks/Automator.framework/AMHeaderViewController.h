@@ -16,9 +16,9 @@
 }
 
 + (BOOL)hasHeaderViewForPersonality:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) AMWorkflowHeaderView *workflowHeaderView; // @synthesize workflowHeaderView=_workflowHeaderView;
 @property(retain) AMPluginHeaderViewController *pluginHeaderViewController; // @synthesize pluginHeaderViewController=_pluginHeaderViewController;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)loadView;
 - (void)updateHeaderConnectionDrawing;

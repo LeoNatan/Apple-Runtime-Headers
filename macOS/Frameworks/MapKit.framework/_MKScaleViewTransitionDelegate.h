@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 

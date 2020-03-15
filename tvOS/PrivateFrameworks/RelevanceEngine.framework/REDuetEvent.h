@@ -16,10 +16,10 @@
 }
 
 + (id)eventWithInterval:(id)arg1 value:(id)arg2 confidence:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) REFeatureValue *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

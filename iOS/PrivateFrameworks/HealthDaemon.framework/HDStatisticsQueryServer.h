@@ -19,9 +19,9 @@
 + (_Bool)supportsAnchorBasedAuthorization;
 + (id)requiredEntitlements;
 + (Class)queryClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long mergeStrategy; // @synthesize mergeStrategy=_mergeStrategy;
 @property(readonly, nonatomic) unsigned long long statisticsOptions; // @synthesize statisticsOptions=_statisticsOptions;
-- (void).cxx_destruct;
 - (id)_queue_fetchStatisticsWithError:(id *)arg1;
 - (id)quantityType;
 - (void)_queue_start;

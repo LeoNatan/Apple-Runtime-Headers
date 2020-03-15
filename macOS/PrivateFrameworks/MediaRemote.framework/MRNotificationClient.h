@@ -33,6 +33,7 @@
 }
 
 + (id)nowPlayingNotifications;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL receivesVoiceInputRecordingStateNotifications; // @synthesize receivesVoiceInputRecordingStateNotifications=_receivesVoiceInputRecordingStateNotifications;
 @property(nonatomic) BOOL receivesPlaybackErrorNotifications; // @synthesize receivesPlaybackErrorNotifications=_receivesPlaybackErrorNotifications;
 @property(nonatomic) BOOL receivesOriginChangedNotifications; // @synthesize receivesOriginChangedNotifications=_receivesOriginChangedNotifications;
@@ -40,7 +41,6 @@
 @property(nonatomic) BOOL receivesRoutesChangedNotifications; // @synthesize receivesRoutesChangedNotifications=_receivesRoutesChangedNotifications;
 @property(nonatomic) BOOL receivesSupportedCommandsNotifications; // @synthesize receivesSupportedCommandsNotifications=_receivesSupportedCommandsNotifications;
 @property(nonatomic) BOOL receivesExternalScreenTypeChangedNotifications; // @synthesize receivesExternalScreenTypeChangedNotifications=_receivesExternalScreenTypeChangedNotifications;
-- (void).cxx_destruct;
 - (BOOL)_postNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (BOOL)postNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3;
 - (void)dispatchNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3;

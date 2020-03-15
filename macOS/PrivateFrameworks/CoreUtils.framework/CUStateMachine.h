@@ -20,9 +20,9 @@
     NSArray *_states;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *states; // @synthesize states=_states;
 @property(retain, nonatomic) CUState *initialState; // @synthesize initialState=_initialState;
-- (void).cxx_destruct;
 - (void)_firstTimeInit;
 - (void)transitionToState:(id)arg1;
 - (void)dispatchEvent:(id)arg1;

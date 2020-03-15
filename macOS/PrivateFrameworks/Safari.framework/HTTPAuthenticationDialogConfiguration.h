@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)authenticationDialogConfigurationWithChallenge:(id)arg1 currentURL:(id)arg2 shouldOfferToRemember:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldOfferToRemember; // @synthesize shouldOfferToRemember=_shouldOfferToRemember;
 @property(readonly, copy, nonatomic) NSString *host; // @synthesize host=_host;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CDUnknownBlockType presentationBlock; // @synthesize presentationBlock=_presentationBlock;
 @property(readonly, nonatomic) BOOL shouldHideTabContent; // @synthesize shouldHideTabContent=_shouldHideTabContent;
 @property(readonly, nonatomic) long long dialogType; // @synthesize dialogType=_dialogType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithHost:(id)arg1 title:(id)arg2 securityLabel:(id)arg3 shouldHideTabContent:(BOOL)arg4 shouldOfferToRemember:(BOOL)arg5 proposedUserName:(id)arg6;
 - (id)init;

@@ -18,8 +18,8 @@
     id <SBStarkNotificationsAgentDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBStarkNotificationsAgentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBStarkNotificationsAgentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)noteComponentDidDeactivate:(id)arg1;
 - (void)noteComponentDidActivate:(id)arg1;
 - (id)activeConfigurationForScreen:(id)arg1;

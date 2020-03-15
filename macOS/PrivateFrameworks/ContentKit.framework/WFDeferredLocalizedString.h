@@ -12,9 +12,9 @@
     NSString *_backingStore;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *backingStore; // @synthesize backingStore=_backingStore;
 @property(copy, nonatomic) NSString *localizedValue; // @synthesize localizedValue=_localizedValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;

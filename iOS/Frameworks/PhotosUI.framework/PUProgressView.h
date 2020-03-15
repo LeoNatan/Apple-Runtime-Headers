@@ -14,8 +14,8 @@
     long long _style;
 }
 
-@property(readonly) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly) long long style; // @synthesize style=_style;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;

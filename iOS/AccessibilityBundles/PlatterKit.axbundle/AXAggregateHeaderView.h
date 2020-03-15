@@ -15,10 +15,10 @@
     id _titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) id dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(readonly, nonatomic) NSArray *iconButtons; // @synthesize iconButtons=_iconButtons;
-- (void).cxx_destruct;
 - (_Bool)_axIsHeaderViewActionable;
 - (id)_accessibilitySupplementaryFooterViews;
 - (unsigned long long)accessibilityTraits;

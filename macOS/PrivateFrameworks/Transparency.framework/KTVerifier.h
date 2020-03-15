@@ -15,10 +15,10 @@
     TransparencyApplication *_application;
 }
 
+- (void).cxx_destruct;
 @property(retain) TransparencyApplication *application; // @synthesize application=_application;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-- (void).cxx_destruct;
 - (void)copyApplicationTranscript:(CDUnknownBlockType)arg1;
 - (void)copyDaemonState:(CDUnknownBlockType)arg1;
 - (void)clearPublicKeyStoreState:(CDUnknownBlockType)arg1;
@@ -30,8 +30,8 @@
 - (void)copyDataStoreStatistics:(CDUnknownBlockType)arg1;
 - (void)copyApplicationState:(CDUnknownBlockType)arg1;
 - (void)forceApplicationConfig:(CDUnknownBlockType)arg1;
-- (void)forceApplicationKeysFetch:(CDUnknownBlockType)arg1;
 - (void)forceApplicationKeysDownload:(CDUnknownBlockType)arg1;
+- (void)forceApplicationKeysFetch:(CDUnknownBlockType)arg1;
 - (void)forceConfigUpdate:(CDUnknownBlockType)arg1;
 - (void)clearState:(CDUnknownBlockType)arg1;
 - (void)forceValidateUUID:(id)arg1 uri:(id)arg2 block:(CDUnknownBlockType)arg3;

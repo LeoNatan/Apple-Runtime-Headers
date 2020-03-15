@@ -18,11 +18,11 @@
     NSData *_url;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
 @property(retain, nonatomic) NSString *command; // @synthesize command=_command;
 @property(retain, nonatomic) NSString *seid; // @synthesize seid=_seid;
 @property(retain, nonatomic) NSData *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

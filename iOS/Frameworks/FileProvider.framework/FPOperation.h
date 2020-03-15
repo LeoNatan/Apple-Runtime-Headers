@@ -21,11 +21,11 @@
     CDUnknownBlockType _finishedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType finishedBlock; // @synthesize finishedBlock=_finishedBlock;
 @property(retain, nonatomic) id <FPCancellable> remoteOperation; // @synthesize remoteOperation=_remoteOperation;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_queue;
 @property(readonly, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (void)operationDidProgressWithInfo:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)invalidate;
 - (void)setCancellationHandler:(id)arg1;

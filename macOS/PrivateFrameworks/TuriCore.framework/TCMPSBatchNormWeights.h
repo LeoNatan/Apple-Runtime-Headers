@@ -57,6 +57,8 @@ __attribute__((visibility("hidden")))
     MPSVector *_movingVarianceVector;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPSVector *movingVarianceVector; // @synthesize movingVarianceVector=_movingVarianceVector;
 @property(readonly, nonatomic) MPSVector *movingMeanVector; // @synthesize movingMeanVector=_movingMeanVector;
 @property(readonly, nonatomic) MPSVector *betaVelocityVector; // @synthesize betaVelocityVector=_betaVelocityVector;
@@ -67,8 +69,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) MPSCNNNormalizationMeanAndVarianceState *meanVarianceState; // @synthesize meanVarianceState=_meanVarianceState;
 @property(readonly, nonatomic) MPSCNNNormalizationGammaAndBetaState *gammaBetaState; // @synthesize gammaBetaState=_gammaBetaState;
 @property(retain, nonatomic) NSString *internalLabel; // @synthesize internalLabel=_label;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)loadMovingVar:(float *)arg1;
 - (void)loadMovingAvg:(float *)arg1;
 - (void)loadGamma:(float *)arg1;

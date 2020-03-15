@@ -33,12 +33,12 @@
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *pendingChangedProperties; // @synthesize pendingChangedProperties=_pendingChangedProperties;
 @property(nonatomic) int deferPropertyChangeNotifications; // @synthesize deferPropertyChangeNotifications=_deferPropertyChangeNotifications;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyObserverQueue; // @synthesize propertyObserverQueue=_propertyObserverQueue;
 @property(nonatomic) AUAudioUnitViewService *viewService; // @synthesize viewService=_viewService;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)startUserPresetFolderMonitoring;
 - (void)presetStateFor:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)deleteUserPreset:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -76,7 +76,7 @@
 - (void)getBusses:(unsigned int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)open:(CDUnknownBlockType)arg1;
 - (void)requestViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (struct UIViewController *)iOSViewController;
+- (id)iOSViewController;
 - (void)dealloc;
 - (void)close:(CDUnknownBlockType)arg1;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;

@@ -27,8 +27,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <ICUserIdentityStoreBackendDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ICUserIdentityStoreBackendDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_synchronize;
 - (void)_storeAccountTypeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_storeAccountForDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -33,6 +33,7 @@
     id <NUArticleContentSizeManager> _contentSizeManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUArticleContentSizeManager> contentSizeManager; // @synthesize contentSizeManager=_contentSizeManager;
 @property(readonly, nonatomic) id <NUAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 @property(readonly, nonatomic) id <NUErrorMessageFactory> errorMessageFactory; // @synthesize errorMessageFactory=_errorMessageFactory;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) FCObservable *articleViewStyler; // @synthesize articleViewStyler=_articleViewStyler;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 @property(readonly, copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
-- (void).cxx_destruct;
 - (id)loadingTextForArticle:(id)arg1;
 - (void)loadArticleAndEmbedArticleViewController;
 - (void)reportEvent:(id)arg1;

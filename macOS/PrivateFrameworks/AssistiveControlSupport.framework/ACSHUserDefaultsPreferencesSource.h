@@ -15,10 +15,10 @@
     NSString *__migrationDomain;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *_migrationDomain; // @synthesize _migrationDomain=__migrationDomain;
 @property(retain, nonatomic) NSUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(copy, nonatomic) NSString *defaultsDomain; // @synthesize defaultsDomain=_defaultsDomain;
-- (void).cxx_destruct;
 - (void)_migrateIfNeeded;
 - (void)setPreferenceValue:(id)arg1 forKey:(id)arg2;
 - (id)copyPreferenceValueForKey:(id)arg1;

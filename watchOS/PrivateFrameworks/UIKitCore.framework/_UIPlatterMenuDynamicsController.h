@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _initialTouchPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int didPresentCount; // @synthesize didPresentCount=_didPresentCount;
 @property(retain, nonatomic) _UIDynamicItemObservingBehavior *observingBehavior; // @synthesize observingBehavior=_observingBehavior;
 @property(retain, nonatomic) UICollisionBehavior *platterMenuCollisionBounds; // @synthesize platterMenuCollisionBounds=_platterMenuCollisionBounds;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_UIPlatterMenuDynamicsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool trailingSwipeActionViewSelected; // @synthesize trailingSwipeActionViewSelected=_trailingSwipeActionViewSelected;
 @property(nonatomic) _Bool leadingSwipeActionViewSelected; // @synthesize leadingSwipeActionViewSelected=_leadingSwipeActionViewSelected;
-- (void).cxx_destruct;
 - (_Bool)_isPlatterInYLockedPosition;
 - (void)_updateSwipeEdgeMultipliersIfNeededForTouchPosition:(struct CGPoint)arg1;
 - (void)_positionSwipeActionViewsForCurrentPlatterViewPosition;
@@ -81,7 +81,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)platterCenter;
 - (struct CGPoint)centerForCurrentPlatterPosition;
 - (struct CGPoint)centerForMenuPresentedRelativeToCurrentPlatter;
-- (struct CGVector)modifiedOffsetForPosition:(struct CGPoint)arg1 offset:(struct CGVector)arg2 touchPosition:(struct CGPoint)arg3 axisLock:(int)arg4;
+- (struct CGVector)modifiedOffsetForPosition:(struct CGPoint)arg1 offset:(struct CGVector)arg2 touchPosition:(struct CGPoint)arg3 axisLock:(unsigned int)arg4;
 - (void)beginTransitionWithAnimatorUsingBehaviors:(id)arg1 observedItems:(id)arg2 stateIfCompleted:(int)arg3;
 - (void)performActionsAndEnterState:(int)arg1 velocity:(struct CGVector)arg2 underDirectManipulation:(_Bool)arg3;
 - (void)performActionsAndEnterState:(int)arg1;
@@ -90,7 +90,7 @@ __attribute__((visibility("hidden")))
 - (void)_configureAnimator;
 - (void)panningTransformer:(id)arg1 didEnterTransitionNotchForTransformedPosition:(struct CGPoint)arg2;
 - (void)panningTransformer:(id)arg1 didEndPanToTransformedPosition:(struct CGPoint)arg2 offsetFromPrevious:(struct CGVector)arg3 velocity:(struct CGVector)arg4;
-- (void)panningTransformer:(id)arg1 didPanToTransformedPosition:(struct CGPoint)arg2 offsetFromPrevious:(struct CGVector)arg3 touchPosition:(struct CGPoint)arg4 velocity:(struct CGVector)arg5 didChangeAxis:(_Bool)arg6 axisLock:(int)arg7;
+- (void)panningTransformer:(id)arg1 didPanToTransformedPosition:(struct CGPoint)arg2 offsetFromPrevious:(struct CGVector)arg3 touchPosition:(struct CGPoint)arg4 velocity:(struct CGVector)arg5 didChangeAxis:(_Bool)arg6 axisLock:(unsigned int)arg7;
 - (void)panningTransformer:(id)arg1 didBeginPanToTransformedPosition:(struct CGPoint)arg2;
 - (_Bool)hasBeenPresented;
 - (void)_animateToPlatterDismissedWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;

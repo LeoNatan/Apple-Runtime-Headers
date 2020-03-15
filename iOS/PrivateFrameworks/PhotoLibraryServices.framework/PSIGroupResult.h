@@ -28,6 +28,7 @@
     const struct __CFArray *_collectionIds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PSIGroupResultDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) short dedupingSkippedCategory; // @synthesize dedupingSkippedCategory=_dedupingSkippedCategory;
 @property(retain, nonatomic) const struct __CFArray *collectionIds; // @synthesize collectionIds=_collectionIds;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *transientToken; // @synthesize transientToken=_transientToken;
-- (void).cxx_destruct;
 - (void)resolveObjectsWithAssetCache:(id)arg1 collectionCache:(id)arg2;
 - (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 assetCountLimit:(unsigned long long)arg3 collectionCountLimit:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 count:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;

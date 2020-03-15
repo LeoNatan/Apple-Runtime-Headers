@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     MPMediaItemCollection *_mediaItemCollection;
 }
 
-@property(retain, nonatomic) MPMediaItemCollection *mediaItemCollection; // @synthesize mediaItemCollection=_mediaItemCollection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPMediaItemCollection *mediaItemCollection; // @synthesize mediaItemCollection=_mediaItemCollection;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)_valueForPropertyDescriptor:(id)arg1;
 - (id)assetController;

@@ -24,10 +24,10 @@
     NSObject<OS_dispatch_queue> *inProcessDelegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *inProcessDelegateQueue; // @synthesize inProcessDelegateQueue;
 @property(nonatomic) __weak id <StreamingUnzipDelegateProtocol> inProcessExtractorDelegate; // @synthesize inProcessExtractorDelegate;
 @property(nonatomic) __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection;
-- (void).cxx_destruct;
 - (void)terminateStreamWithReply:(CDUnknownBlockType)arg1;
 - (void)finishStreamWithReply:(CDUnknownBlockType)arg1;
 - (void)suspendStreamWithReply:(CDUnknownBlockType)arg1;

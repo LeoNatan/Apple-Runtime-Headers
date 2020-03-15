@@ -6,9 +6,7 @@
 
 #import <NewsUI2/TSFollowingNotificationsAssembly.h>
 
-#import <NewsUI2/NFAssembly-Protocol.h>
-
-@interface TSFollowingNotificationsAssembly (NewsUI2) <NFAssembly>
+@interface TSFollowingNotificationsAssembly (NewsUI2)
 - (void)loadInRegistry:(id)arg1;
 @end
 

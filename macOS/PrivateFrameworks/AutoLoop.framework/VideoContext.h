@@ -18,13 +18,13 @@
     NSDictionary *pixelAttrs;
 }
 
+- (void).cxx_destruct;
 @property _Bool colorManagement; // @synthesize colorManagement=_colorManagement;
 @property(readonly) unsigned int pixelFormat; // @synthesize pixelFormat;
 @property(readonly) NSDictionary *pixelAttrs; // @synthesize pixelAttrs;
 @property(readonly) unsigned int pixelFormatFlags; // @synthesize pixelFormatFlags;
 @property(readonly) VideoWriter *writer; // @synthesize writer;
 @property(readonly) CIContext *ciCtx; // @synthesize ciCtx;
-- (void).cxx_destruct;
 - (int)appendFrame:(id)arg1 frameTime:(CDStruct_1b6d18a9)arg2 srcPixBuf:(struct __CVBuffer *)arg3;
 - (_Bool)pixelBuffer:(struct __CVBuffer *)arg1 conformsToImage:(id)arg2;
 - (struct __CVBuffer *)pixelBufferFromImage:(id)arg1;

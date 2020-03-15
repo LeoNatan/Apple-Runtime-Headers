@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     TFFeedbackEntry *_groupToggleEntry;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TFFeedbackEntry *groupToggleEntry; // @synthesize groupToggleEntry=_groupToggleEntry;
 @property(readonly, nonatomic, getter=isToggleable) _Bool toggleable; // @synthesize toggleable=_toggleable;
 @property(readonly, nonatomic) unsigned long long election; // @synthesize election=_election;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 entries:(id)arg2 title:(id)arg3 election:(unsigned long long)arg4 headerText:(id)arg5 headerTextLinkMap:(id)arg6 footerText:(id)arg7 footerTextLinkMap:(id)arg8;
 - (id)visibleEntryForIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfVisibleItemsForIncludeState:(_Bool)arg1;

@@ -18,11 +18,11 @@
     _MPCProtoRadioContentReferenceStoreContentReference *_storeContentReference;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MPCProtoRadioContentReferenceStoreContentReference *storeContentReference; // @synthesize storeContentReference=_storeContentReference;
 @property(retain, nonatomic) _MPCProtoRadioContentReferenceLibraryItemContentReference *libraryItemContentReference; // @synthesize libraryItemContentReference=_libraryItemContentReference;
 @property(retain, nonatomic) _MPCProtoRadioContentReferenceLibraryArtistContentReference *libraryArtistContentReference; // @synthesize libraryArtistContentReference=_libraryArtistContentReference;
 @property(retain, nonatomic) _MPCProtoRadioContentReferenceLibraryAlbumContentReference *libraryAlbumContentReference; // @synthesize libraryAlbumContentReference=_libraryAlbumContentReference;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

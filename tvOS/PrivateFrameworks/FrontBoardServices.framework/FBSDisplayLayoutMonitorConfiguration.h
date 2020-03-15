@@ -17,10 +17,10 @@
 
 + (id)configurationWithEndpoint:(id)arg1;
 + (id)configurationForDefaultMainDisplayMonitor;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BSServiceConnectionEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(copy, nonatomic) CDUnknownBlockType transitionHandler; // @synthesize transitionHandler=_transitionHandler;
 @property(nonatomic) _Bool needsUserInteractivePriority; // @synthesize needsUserInteractivePriority=_needsUserInteractivePriority;
-- (void).cxx_destruct;
 - (id)_initWithEndpoint:(id)arg1;
 - (id)init;
 

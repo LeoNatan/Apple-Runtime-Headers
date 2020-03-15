@@ -21,13 +21,13 @@
     long long __rowCountToShow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRowCountToShow:) long long _rowCountToShow; // @synthesize _rowCountToShow=__rowCountToShow;
 @property(copy, nonatomic, setter=_setMenuItems:) NSArray *_menuItems; // @synthesize _menuItems=__menuItems;
 @property(copy, nonatomic, setter=_setMenuTitle:) NSString *_menuTitle; // @synthesize _menuTitle=__menuTitle;
 @property(retain, nonatomic, setter=_setTableView:) AXVMenuTableView *_menuTableView; // @synthesize _menuTableView=__menuTableView;
 @property(retain, nonatomic, setter=_setMenuTitleTextField:) AXVTextField *_menuTitleTextField; // @synthesize _menuTitleTextField=__menuTitleTextField;
 @property(nonatomic) __weak id <AXVMenuWindowMouseEventDelegate> mouseEventDelegate; // @synthesize mouseEventDelegate=_mouseEventDelegate;
-- (void).cxx_destruct;
 - (double)_heightForMenuTableWithMenuItemCount:(long long)arg1 availableSpace:(double)arg2;
 - (double)_heightForMenuTitle;
 - (double)_heightForWindowToFitContent:(long long)arg1;

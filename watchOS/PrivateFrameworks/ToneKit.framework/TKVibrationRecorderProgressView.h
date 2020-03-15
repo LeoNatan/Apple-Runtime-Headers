@@ -25,9 +25,9 @@
     double _currentTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int roundedCornersCompensationDelayMode; // @synthesize roundedCornersCompensationDelayMode=_roundedCornersCompensationDelayMode;
 @property(nonatomic) double currentTimeInterval; // @synthesize currentTimeInterval=_currentTimeInterval;
-- (void).cxx_destruct;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;

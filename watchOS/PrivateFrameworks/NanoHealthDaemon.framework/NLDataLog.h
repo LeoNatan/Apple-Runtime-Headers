@@ -20,10 +20,10 @@
 + (_Bool)enumerateLogFileEntries:(id)arg1 handler:(CDUnknownBlockType)arg2 error:(id *)arg3;
 + (_Bool)_enumerateLogFromMapping:(void *)arg1 size:(unsigned long)arg2 headerLength:(unsigned long)arg3 handler:(CDUnknownBlockType)arg4 error:(id *)arg5;
 + (_Bool)_enumerateLogWithFileHandle:(id)arg1 handler:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(retain, nonatomic) NSLock *logLock; // @synthesize logLock=_logLock;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)_sortedListOfLogFiles;
 - (id)_nameOfNextLogFile;
 - (_Bool)_appendData:(id)arg1 error:(id *)arg2;

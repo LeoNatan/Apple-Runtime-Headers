@@ -27,10 +27,10 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) unsigned long long problemFlags; // @synthesize problemFlags=_problemFlags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_saveRemoteVerifiedAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_saveAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)_nextTRServiceTypeForTRAccountServices:(id)arg1;

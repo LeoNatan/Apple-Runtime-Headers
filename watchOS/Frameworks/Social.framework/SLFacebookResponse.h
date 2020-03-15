@@ -18,8 +18,8 @@
     int _httpErrorCode;
 }
 
-@property(readonly) int httpErrorCode; // @synthesize httpErrorCode=_httpErrorCode;
 - (void).cxx_destruct;
+@property(readonly) int httpErrorCode; // @synthesize httpErrorCode=_httpErrorCode;
 - (id)failedRequestIDs;
 @property(readonly) NSDictionary *responseParameters;
 - (id)untypedResponseParameters;

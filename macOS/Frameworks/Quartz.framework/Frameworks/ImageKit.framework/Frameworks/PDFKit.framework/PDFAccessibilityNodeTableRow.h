@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     BOOL _hasTaggedRepresentation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasTaggedRepresentation; // @synthesize hasTaggedRepresentation=_hasTaggedRepresentation;
 @property(nonatomic) BOOL isHeader; // @synthesize isHeader=_isHeader;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)addChildNodeRef:(struct CGPDFTaggedNode *)arg1;
 - (void)buildAccessibilityHierarchy;

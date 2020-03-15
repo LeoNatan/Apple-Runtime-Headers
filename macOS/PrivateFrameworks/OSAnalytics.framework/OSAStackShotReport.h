@@ -32,6 +32,7 @@
     unsigned long long _capture_absoluteTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int ss_sequence; // @synthesize ss_sequence=_ss_sequence;
 @property(nonatomic) _Bool dead_snapshot; // @synthesize dead_snapshot=_dead_snapshot;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) unsigned long long capture_absoluteTime; // @synthesize capture_absoluteTime=_capture_absoluteTime;
 @property(readonly, nonatomic) NSArray *frontmostPids; // @synthesize frontmostPids=_frontmostPids;
 @property(nonatomic) BOOL includeSyslog; // @synthesize includeSyslog=_includeSyslog;
-- (void).cxx_destruct;
 - (void)decodeKCDataWithBlock:(CDUnknownBlockType)arg1 withTuning:(id)arg2 usingCatalog:(id)arg3;
 - (void)addCustomField:(const char *)arg1 value:(id)arg2 into:(id)arg3;
 - (id)resampleUUIDsForTask:(int)arg1 usingCatalog:(id)arg2;

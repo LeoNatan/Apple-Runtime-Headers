@@ -6,9 +6,9 @@
 
 #import <PhotosUICore/PXGLayoutContentSource-Protocol.h>
 
-@class PXGLayout;
+@class NSColor, PXGLayout;
 
 @protocol PXGSolidColorSource <PXGLayoutContentSource>
-- (struct NSColor *)colorAtIndex:(unsigned int)arg1 inLayout:(PXGLayout *)arg2;
+- (NSColor *)colorAtIndex:(unsigned int)arg1 inLayout:(PXGLayout *)arg2;
 @end
 

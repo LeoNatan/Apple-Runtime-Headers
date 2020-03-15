@@ -55,6 +55,7 @@
         unsigned int hidNavBar:1;
     } _tabBarControllerFlags;
     _Bool __shouldFocusViewControllerAfterTransition;
+    _Bool __allowLateralFocusMovementOutOfTabBar;
     NSMutableArray *_moreChildViewControllers;
     UIView *_accessoryView;
     NSMapTable *_rememberedFocusedItemsByViewController;
@@ -68,6 +69,8 @@
 + (Class)_moreNavigationControllerClass;
 + (_Bool)_directlySetsContentOverlayInsetsForChildren;
 + (_Bool)doesOverridePreferredInterfaceOrientationForPresentation;
+- (void).cxx_destruct;
+@property(nonatomic, setter=_setAllowLateralFocusMovementOutOfTabBar:) _Bool _allowLateralFocusMovementOutOfTabBar; // @synthesize _allowLateralFocusMovementOutOfTabBar=__allowLateralFocusMovementOutOfTabBar;
 @property(nonatomic) _Bool _shouldFocusViewControllerAfterTransition; // @synthesize _shouldFocusViewControllerAfterTransition=__shouldFocusViewControllerAfterTransition;
 @property(retain, nonatomic, setter=_setInteractor:) id <UIViewControllerInteractiveTransitioning> _interactor; // @synthesize _interactor=__interactor;
 @property(retain, nonatomic, setter=_setAnimator:) id <UIViewControllerAnimatedTransitioning> _animator; // @synthesize _animator=__animator;
@@ -75,7 +78,6 @@
 @property(nonatomic) __weak id <UITabBarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, setter=_setAccessoryView:) UIView *_accessoryView; // @synthesize _accessoryView;
 @property(retain, nonatomic) NSMutableArray *moreChildViewControllers; // @synthesize moreChildViewControllers=_moreChildViewControllers;
-- (void).cxx_destruct;
 - (void)_setBadgeValue:(id)arg1 forTabBarItem:(id)arg2;
 - (id)rotatingSnapshotViewForWindow:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;

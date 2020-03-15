@@ -20,11 +20,11 @@
 + (id)pepperRowActionWithStyle:(int)arg1 title:(id)arg2 handlerWithCompletion:(CDUnknownBlockType)arg3;
 + (id)pepperRowActionWithStyle:(int)arg1 title:(id)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)rowActionWithStyle:(int)arg1 title:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType puicHandlerWithCompletion; // @synthesize puicHandlerWithCompletion=_puicHandlerWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType puicHandler; // @synthesize puicHandler=_puicHandler;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

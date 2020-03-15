@@ -15,9 +15,9 @@
 }
 
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3 contacts:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKParticipantToContactMatcher *matcher; // @synthesize matcher=_matcher;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicateFormat;
 - (BOOL)evaluateWithObject:(id)arg1;

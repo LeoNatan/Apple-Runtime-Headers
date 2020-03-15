@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSData *phoneNumberData; // @synthesize phoneNumberData=_phoneNumberData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *phoneNumberData; // @synthesize phoneNumberData=_phoneNumberData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) const long long *phoneNumbers;

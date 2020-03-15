@@ -14,8 +14,8 @@
 }
 
 + (id)sharedAppGroupStorage;
-@property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSOrderedSet *discoveredTags;
 @property(retain, nonatomic) NSOrderedSet *userTags;
 - (id)_unarchivedTagsFromData:(id)arg1;

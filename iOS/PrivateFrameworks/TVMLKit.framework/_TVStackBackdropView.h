@@ -16,9 +16,9 @@
     long long _blurEffectStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long blurEffectStyle; // @synthesize blurEffectStyle=_blurEffectStyle;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithBlurEffectStyle:(long long)arg1;
 

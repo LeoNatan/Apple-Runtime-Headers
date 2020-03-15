@@ -38,6 +38,7 @@
 + (id)entryEventPointDefinitionTest;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) PLEntryNotificationOperatorComposition *wakeNotification; // @synthesize wakeNotification=_wakeNotification;
 @property(retain) PLEntryNotificationOperatorComposition *sleepNotification; // @synthesize sleepNotification=_sleepNotification;
 @property(retain) PLSemaphore *canSleepSemaphore; // @synthesize canSleepSemaphore=_canSleepSemaphore;
@@ -51,7 +52,6 @@
 @property(retain) PLXPCResponderOperatorComposition *xpcResponderPLAPITest; // @synthesize xpcResponderPLAPITest=_xpcResponderPLAPITest;
 @property(retain) PLXPCResponderOperatorComposition *xpcResponderPLLog; // @synthesize xpcResponderPLLog=_xpcResponderPLLog;
 @property(retain) PLXPCListenerOperatorComposition *xpcListenerPLLog; // @synthesize xpcListenerPLLog=_xpcListenerPLLog;
-- (void).cxx_destruct;
 - (void)testProportionateAggregateEntries;
 - (void)testMonotonicAggregateEntriesExtendedTime;
 - (void)testMonotonicAggregateEntries;

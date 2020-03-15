@@ -24,10 +24,10 @@
 + (id)OIDWithData:(id)arg1;
 + (id)OIDWithString:(id)arg1 error:(id *)arg2;
 + (id)OIDWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) struct heim_oid Asn1OID; // @synthesize Asn1OID=_Asn1OID;
 @property(readonly) NSString *OIDString; // @synthesize OIDString=_OIDString;
 @property(readonly) NSData *OIDBytes; // @synthesize OIDBytes=_OIDBytes;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isEqualToString:(id)arg1;
 - (unsigned long long)hash;

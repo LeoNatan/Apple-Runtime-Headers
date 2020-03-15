@@ -13,8 +13,8 @@
     NSTextView *_fieldEditor;
 }
 
-@property(retain) NSTextView *fieldEditor; // @synthesize fieldEditor=_fieldEditor;
 - (void).cxx_destruct;
+@property(retain) NSTextView *fieldEditor; // @synthesize fieldEditor=_fieldEditor;
 - (BOOL)_characterAtIndex:(unsigned long long)arg1 shouldTerminateString:(id)arg2;
 - (id)_representedObjectsForString:(id)arg1 andAttributedString:(id)arg2 range:(struct _NSRange)arg3;
 - (BOOL)calUITextFieldEditor:(id)arg1 writeSelectionToPasteboard:(id)arg2 type:(id)arg3;

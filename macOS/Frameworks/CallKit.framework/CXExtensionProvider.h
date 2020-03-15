@@ -16,8 +16,8 @@
     CXProviderExtensionVendorContext *_extensionContext;
 }
 
-@property(retain, nonatomic) CXProviderExtensionVendorContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CXProviderExtensionVendorContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)providerExtensionVendorContext:(id)arg1 handledAudioSessionActivationStateChangedTo:(BOOL)arg2;
 - (void)providerExtensionVendorContext:(id)arg1 handledActionTimeout:(id)arg2;
 - (void)providerExtensionVendorContext:(id)arg1 receivedCommittedTransaction:(id)arg2;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_fullName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)initWithContact:(id)arg1 fullName:(id)arg2;
 
 @end

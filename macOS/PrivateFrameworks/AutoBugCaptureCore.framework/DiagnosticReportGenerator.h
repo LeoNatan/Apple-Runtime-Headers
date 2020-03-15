@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) DiagnosticCase *diagCase; // @synthesize diagCase=_diagCase;
 @property(retain, nonatomic) id <DiagnosticReportGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL reportGenerated; // @synthesize reportGenerated=_reportGenerated;
 @property(nonatomic) double timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (BOOL)startReportGeneration;
 - (BOOL)generateReportForCase:(id)arg1 reportName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)generateReportForCase:(id)arg1 reportName:(id)arg2;

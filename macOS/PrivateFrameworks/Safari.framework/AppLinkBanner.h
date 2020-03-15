@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)bannerSortOrder;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(nonatomic) __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak NSImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_openButtonWasClicked:(id)arg1;
 - (void)awakeFromNib;
 - (id)bannerNibName;

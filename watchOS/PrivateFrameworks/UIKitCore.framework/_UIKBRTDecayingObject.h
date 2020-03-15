@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     double _timeoutDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isHolding; // @synthesize isHolding=_isHolding;
 @property(readonly, nonatomic) _Bool isDecaying; // @synthesize isDecaying=_isDecaying;
 @property(nonatomic) double timeoutDuration; // @synthesize timeoutDuration=_timeoutDuration;
 @property(readonly, nonatomic) double lastUpdate; // @synthesize lastUpdate=_lastUpdate;
-- (void).cxx_destruct;
 - (void)onResetDo:(CDUnknownBlockType)arg1;
 - (void)resetActiveDecayTo:(double)arg1;
 - (void)startOrUpdateDecay;

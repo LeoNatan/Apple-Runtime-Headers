@@ -18,13 +18,13 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) double volume; // @synthesize volume=_volume;
 @property(nonatomic) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double timePlayed; // @synthesize timePlayed=_timePlayed;
 @property(nonatomic) double playbackPosition; // @synthesize playbackPosition=_playbackPosition;
-- (void).cxx_destruct;
 
 @end
 

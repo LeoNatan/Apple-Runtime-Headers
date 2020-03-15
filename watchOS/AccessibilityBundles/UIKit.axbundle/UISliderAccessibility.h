@@ -14,10 +14,8 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (id)_viewToAddFocusLayer;
+- (void)layoutSubviews;
 - (id)accessibilityPath;
-- (void)_axFKADecrement;
-- (void)_axFKAIncrement;
-- (id)_accessibilityKeyCommands;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 - (double)_accessibilityMaxValue;

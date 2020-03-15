@@ -20,9 +20,9 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)onqueue_connectionInvalidated;
 - (void)onqueue_connectionInterrupted;
 - (void)onqueue_connectionEstablished;

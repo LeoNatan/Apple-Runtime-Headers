@@ -19,6 +19,7 @@
     // Error parsing type: , name: physicsLinearCoefficient
     // Error parsing type: , name: animationStyle
     // Error parsing type: , name: buildOutAnimationType
+    // Error parsing type: , name: finishedSubscription
     // Error parsing type: , name: updateSubscription
     // Error parsing type: , name: fadeSubscription
     // Error parsing type: , name: deadline

@@ -43,10 +43,10 @@
 + (id)beginClientTransactionWithChangeScopes:(id)arg1 pathManager:(id)arg2;
 + (id)_serverTransactionForPathManager:(id)arg1 isNew:(char *)arg2;
 + (id)serverTransactionQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 @property(readonly, nonatomic) NSSet *changeScopes; // @synthesize changeScopes=_changeScopes;
 @property(copy, nonatomic) NSString *transactionToken; // @synthesize transactionToken=_transactionToken;
-- (void).cxx_destruct;
 - (void)addChangeScopes:(id)arg1;
 - (BOOL)isClientTransaction;
 - (void)popChangeScopesBatch;

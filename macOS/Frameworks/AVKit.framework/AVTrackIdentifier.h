@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (id)invalidTrackIdentifier;
 + (id)trackIdentifierForTrack:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 @property(readonly, nonatomic) unsigned long long assetID; // @synthesize assetID=_assetID;
 @property(readonly, nonatomic) int trackID; // @synthesize trackID=_trackID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

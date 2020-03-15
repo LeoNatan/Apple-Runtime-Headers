@@ -28,9 +28,9 @@
 }
 
 + (void)cleanUpFilesForAccountWithId:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=setASAccountVersion:) int asAccountVersion; // @synthesize asAccountVersion=_asAccountVersion;
 @property(nonatomic) _Bool reminderAccountMissing; // @synthesize reminderAccountMissing=_reminderAccountMissing;
-- (void).cxx_destruct;
 - (id)protocolVersion;
 - (id)onBehalfOfBundleIdentifier;
 - (id)localizedInvalidPasswordMessage;
@@ -87,6 +87,7 @@
 - (void)_explodeEmailAddress:(id)arg1 outUsername:(id *)arg2 outEmailAddress:(id *)arg3;
 - (void)settingsTask:(id)arg1 completedWithStatus:(long long)arg2 error:(id)arg3 response:(id)arg4;
 - (void)cancelCalendarDirectorySearchWithID:(id)arg1;
+- (_Bool)isUnicodeGeneralCategoryLetterOther:(unsigned short)arg1;
 - (void)performSearchQuery:(id)arg1;
 - (id)performCalendarDirectorySearchForTerms:(id)arg1 recordTypes:(id)arg2 resultLimit:(unsigned long long)arg3 consumer:(id)arg4;
 - (void)searchTask:(id)arg1 finishedWithError:(id)arg2;

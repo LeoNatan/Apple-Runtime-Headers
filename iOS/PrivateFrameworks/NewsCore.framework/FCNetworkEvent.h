@@ -28,6 +28,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSString *containerName; // @synthesize containerName=_containerName;
 @property(copy, nonatomic) NSDictionary *HTTPResponseHeaders; // @synthesize HTTPResponseHeaders=_HTTPResponseHeaders;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *requestUUID; // @synthesize requestUUID=_requestUUID;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 @property(readonly, nonatomic) double responseEndTime;

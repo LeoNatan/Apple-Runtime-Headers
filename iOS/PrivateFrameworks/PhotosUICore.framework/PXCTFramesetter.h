@@ -17,11 +17,11 @@
     NSShadow *_shadow;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(readonly, nonatomic) const struct __CTFramesetter *framesetter; // @synthesize framesetter=_framesetter;
 @property(readonly, nonatomic) struct CGContext *context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 - (void)prepare;
 - (id)frameWithRect:(struct CGRect)arg1 maximumLineCount:(unsigned long long)arg2 allowTruncation:(_Bool)arg3;
 - (void)dealloc;

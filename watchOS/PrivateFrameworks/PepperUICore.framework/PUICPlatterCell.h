@@ -19,12 +19,12 @@
 }
 
 + (Class)_contentViewClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct CATransform3D layoutTransform; // @synthesize layoutTransform=_layoutTransform;
 @property(nonatomic) float darkeningFactor; // @synthesize darkeningFactor=_darkeningFactor;
 @property(nonatomic) unsigned int backgroundCornerMask; // @synthesize backgroundCornerMask=_backgroundCornerMask;
 @property(nonatomic) int platterStyle; // @synthesize platterStyle=_platterStyle;
 @property(retain, nonatomic) UIColor *platterColor; // @synthesize platterColor=_platterColor;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_applyDarkeningFactor:(float)arg1;
 - (void)_applyLayoutTransform:(struct CATransform3D)arg1;

@@ -18,8 +18,8 @@
     NSMutableArray *_pendingTransitions;
 }
 
-@property(nonatomic) __weak id <SBModalViewControllerStackDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBModalViewControllerStackDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_noteDidDismissViewController:(id)arg1;
 - (void)_noteWillDismissViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_noteDidPresentViewController:(id)arg1;

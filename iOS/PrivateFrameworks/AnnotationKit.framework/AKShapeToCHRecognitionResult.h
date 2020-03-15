@@ -19,6 +19,7 @@
     struct CGRect _doodlePathBoundsInInputView;
 }
 
+- (void).cxx_destruct;
 @property _Bool doodlePathIsPrestroked; // @synthesize doodlePathIsPrestroked=_doodlePathIsPrestroked;
 @property struct CGRect doodlePathBoundsInInputView; // @synthesize doodlePathBoundsInInputView=_doodlePathBoundsInInputView;
 @property(retain) AKAnnotation *annotation; // @synthesize annotation=_annotation;
@@ -26,7 +27,6 @@
 @property(retain) UIBezierPath *doodlePath; // @synthesize doodlePath=_doodlePath;
 @property(retain) CHRecognitionResult *result; // @synthesize result=_result;
 @property long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (id)initWith:(long long)arg1 result:(id)arg2;
 
 @end

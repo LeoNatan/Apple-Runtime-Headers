@@ -20,6 +20,7 @@
 }
 
 + (void)enumerateAllChatsWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *handles; // @synthesize handles=_handles;
 @property(readonly) BOOL isBlackholed; // @synthesize isBlackholed=_isBlackholed;
 @property BOOL isGroup; // @synthesize isGroup=_isGroup;
@@ -27,7 +28,6 @@
 @property(retain) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain) NSString *chatIdentifier; // @synthesize chatIdentifier=_chatIdentifier;
 @property(retain) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithChatRecord:(struct _IMDChatRecordStruct *)arg1;
 - (void)enumerateAllMessagesWithBlock:(CDUnknownBlockType)arg1;

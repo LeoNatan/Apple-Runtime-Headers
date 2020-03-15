@@ -24,6 +24,7 @@
     double _renderingTime;
 }
 
+- (void).cxx_destruct;
 @property BOOL generatorCanceled; // @synthesize generatorCanceled=_generatorCanceled;
 @property BOOL generatorRunning; // @synthesize generatorRunning=_generatorRunning;
 @property BOOL generatorStarted; // @synthesize generatorStarted=_generatorStarted;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) UXBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(readonly, nonatomic) KHExportConfiguration *exportConfiguration; // @synthesize exportConfiguration=_exportConfiguration;
 @property(readonly, nonatomic) NSArray *projects; // @synthesize projects=_projects;
-- (void).cxx_destruct;
 - (void)keepModalResponsive;
 - (BOOL)pdfShouldAbort;
 - (void)pdfProgress:(double)arg1 page:(long long)arg2 maxPage:(long long)arg3 project:(id)arg4;

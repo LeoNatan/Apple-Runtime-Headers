@@ -15,16 +15,16 @@
     NSMutableArray *_loadingNodes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *loadingNodes; // @synthesize loadingNodes=_loadingNodes;
 @property(readonly, nonatomic) NSURL *movieURL; // @synthesize movieURL=_movieURL;
 @property(retain, nonatomic) AVPlayerItem *moviePlayerItem; // @synthesize moviePlayerItem=_moviePlayerItem;
-- (void).cxx_destruct;
 - (void)stickerGenerationDidEnd;
 - (void)updateNode:(id)arg1 withContentAtTime:(CDStruct_1b6d18a9)arg2;
 - (void)stickerGenerationWillBegin;
 - (void)buildNodeForAvatar:(id)arg1 withCamera:(id)arg2 forExport:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithMovieURL:(id)arg1 size:(struct CGSize)arg2 scale:(struct SCNVector3)arg3 position:(struct SCNVector3)arg4 renderLast:(_Bool)arg5 orientToCamera:(_Bool)arg6 rotation:(struct SCNVector3)arg7 palettesDescriptions:(id)arg8 modifiers:(id)arg9;
+- (id)initWithMovieURL:(id)arg1 size:(struct CGSize)arg2 scale:(struct SCNVector3)arg3 position:(struct SCNVector3)arg4 renderLast:(_Bool)arg5 orientToCamera:(_Bool)arg6 rotation:(struct SCNVector3)arg7 palettesDescriptions:(id)arg8 modifiers:(id)arg9 adjustments:(id)arg10;
 
 @end
 

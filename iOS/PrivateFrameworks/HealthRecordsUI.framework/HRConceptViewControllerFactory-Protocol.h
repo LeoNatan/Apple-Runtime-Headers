@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class HKConcept, NSUUID, UIViewController;
+@class HKConcept, NSUUID, UIViewController, WDMedicalRecordCategory;
 
 @protocol HRConceptViewControllerFactory
-- (UIViewController *)makeViewControllerForConcept:(HKConcept *)arg1 highlightedRecordId:(NSUUID *)arg2;
+- (UIViewController *)makeViewControllerForConcept:(HKConcept *)arg1 fromCategory:(WDMedicalRecordCategory *)arg2 highlightedRecordId:(NSUUID *)arg3;
 @end
 

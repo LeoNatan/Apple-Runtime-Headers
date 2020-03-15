@@ -21,6 +21,7 @@
 
 + (id)lower:(float)arg1 forDevice:(id)arg2;
 + (id)upper:(float)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize smallInner; // @synthesize smallInner=_smallInner;
 @property(readonly, nonatomic) struct CGSize smallOuter; // @synthesize smallOuter=_smallOuter;
 @property(readonly, nonatomic) float radius; // @synthesize radius=_radius;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) float labelsFontSize; // @synthesize labelsFontSize=_labelsFontSize;
 @property(readonly, nonatomic) float labelsRadius; // @synthesize labelsRadius=_labelsRadius;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)colorize:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromTimeScale:(unsigned int)arg2 toTimeScale:(unsigned int)arg3;
 - (void)updateTimeScale:(unsigned int)arg1;

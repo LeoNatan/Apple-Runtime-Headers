@@ -29,13 +29,13 @@
 + (id)entityName;
 + (id)sourceForSearchableItem:(id)arg1 bundleID:(id)arg2;
 + (id)spotlightSourceID;
+- (void).cxx_destruct;
 @property(retain) NSNumber *userID; // @synthesize userID=_userID;
 @property(retain) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(readonly) NSString *groupID; // @synthesize groupID=_groupID;
 @property(readonly) NSString *itemID; // @synthesize itemID=_itemID;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly) NSString *sourceID; // @synthesize sourceID=_sourceID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

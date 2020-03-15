@@ -19,11 +19,11 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *spotlightPredicateCache; // @synthesize spotlightPredicateCache=_spotlightPredicateCache;
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(readonly, nonatomic) EFQuery *messageQuery; // @synthesize messageQuery=_messageQuery;
-- (void).cxx_destruct;
 - (id)filterMessages:(id)arg1 unmatchedMessages:(id *)arg2;
 - (id)transformMessages:(id)arg1 includeDeleted:(_Bool)arg2;
 - (id)transformMessages:(id)arg1;

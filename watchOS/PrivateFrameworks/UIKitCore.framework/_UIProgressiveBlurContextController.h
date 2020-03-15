@@ -16,8 +16,8 @@
     int _blurStyle;
 }
 
-@property(nonatomic) int blurStyle; // @synthesize blurStyle=_blurStyle;
 - (void).cxx_destruct;
+@property(nonatomic) int blurStyle; // @synthesize blurStyle=_blurStyle;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;

@@ -23,10 +23,10 @@
 + (id)_gatherMethodMetadataForProtocol:(id)arg1;
 + (id)_gatherAdoptedProtocolsForProtocol:(id)arg1;
 + (id)protocolForProtocol:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *methods; // @synthesize methods=_methods;
 @property(readonly, retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

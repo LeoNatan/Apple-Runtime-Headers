@@ -12,8 +12,8 @@
 {
     _Bool _allowDynamicView;
     _Bool _shrink;
-    _Bool _useDemoArt;
     _Bool _useRasterizedPass;
+    _Bool _useDemoArt;
     _Bool _canUseDynamicView;
     UILabel *_cardNameLabel;
     UIView *_cardView;
@@ -29,16 +29,16 @@
 + (struct CGSize)_sizePreservingAspectRatioForCardArt:(id)arg1 givenMaxConstraints:(struct CGSize)arg2;
 + (float)shrunkenCardHeight;
 + (float)cardHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKTransactionDataOverlayCardFaceView *dynamicFaceView; // @synthesize dynamicFaceView=_dynamicFaceView;
 @property(nonatomic) _Bool canUseDynamicView; // @synthesize canUseDynamicView=_canUseDynamicView;
 @property(retain, nonatomic) UILabel *fpanLabel; // @synthesize fpanLabel=_fpanLabel;
 @property(retain, nonatomic) UIImageView *backgroundCardArtView; // @synthesize backgroundCardArtView=_backgroundCardArtView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) UILabel *cardNameLabel; // @synthesize cardNameLabel=_cardNameLabel;
-@property(nonatomic) _Bool useRasterizedPass; // @synthesize useRasterizedPass=_useRasterizedPass;
 @property(nonatomic) _Bool useDemoArt; // @synthesize useDemoArt=_useDemoArt;
+@property(nonatomic) _Bool useRasterizedPass; // @synthesize useRasterizedPass=_useRasterizedPass;
 @property(nonatomic) _Bool shrink; // @synthesize shrink=_shrink;
-- (void).cxx_destruct;
 - (void)_recycleDynamicViewIfNecessary;
 - (void)_refreshAppleCardOnAppForeground:(id)arg1;
 - (void)_setupDynamicViewForPassIfNecessary:(id)arg1;

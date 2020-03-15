@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _modelFileBackingStore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long modelFileBackingStore; // @synthesize modelFileBackingStore=_modelFileBackingStore;
 @property(nonatomic) _Bool preferBackgroundProcessing; // @synthesize preferBackgroundProcessing=_preferBackgroundProcessing;
 @property(nonatomic) unsigned long long metalContextPriority; // @synthesize metalContextPriority=_metalContextPriority;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long detectionLevel; // @synthesize detectionLevel=_detectionLevel;
 @property(nonatomic) unsigned long long resolvedRevision; // @synthesize resolvedRevision=_resolvedRevision;
 @property(readonly, nonatomic) Class requestClass; // @synthesize requestClass=_requestClass;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)_allPropertyNames;

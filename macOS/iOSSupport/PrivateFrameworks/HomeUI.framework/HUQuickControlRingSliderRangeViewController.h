@@ -17,8 +17,8 @@
 
 + (Class)controlItemClass;
 + (id)controlItemPredicate;
-@property(retain, nonatomic) HUQuickControlRingSliderView *ringSliderView; // @synthesize ringSliderView=_ringSliderView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUQuickControlRingSliderView *ringSliderView; // @synthesize ringSliderView=_ringSliderView;
 - (void)_getHeaterCoolerThresholdControlItemStateString:(out id *)arg1 temperatureString:(out id *)arg2 withRangeControlItemValue:(id)arg3;
 - (void)_getTemperatureThresholdControlItemStateString:(out id *)arg1 temperatureString:(out id *)arg2 withRangeControlItemValue:(id)arg3;
 - (void)updateSupplementaryValue;

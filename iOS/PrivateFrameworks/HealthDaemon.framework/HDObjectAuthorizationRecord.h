@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(copy, nonatomic) NSUUID *sourceID; // @synthesize sourceID=_sourceID;
 @property(copy, nonatomic) NSUUID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)validatePredicate:(id)arg1 error:(id *)arg2;
 + (id)fetchRequestFromCNFetchRequest:(id)arg1 managedConfiguration:(id)arg2 error:(id *)arg3;
 + (long long)resolvedSortOrderFromContactSortOrder:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
 @property(readonly) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(readonly) _Bool unifiedFetch; // @synthesize unifiedFetch=_unifiedFetch;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly) _Bool shouldSort; // @synthesize shouldSort=_shouldSort;
 @property(readonly) id <CNiOSContactPredicate> predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 @property(readonly) unsigned int sortOrderIncludingNone;
 - (id)initWithPredicate:(id)arg1 keysToFetch:(id)arg2 shouldSort:(_Bool)arg3 sortOrder:(unsigned int)arg4 unifiedFetch:(_Bool)arg5 batchSize:(unsigned long long)arg6 managedConfiguration:(id)arg7 options:(unsigned long long)arg8;
 

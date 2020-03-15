@@ -15,10 +15,10 @@
     _Bool _hidesPageIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidesPageIndicator; // @synthesize hidesPageIndicator=_hidesPageIndicator;
 @property(nonatomic) double cycleInterval; // @synthesize cycleInterval=_cycleInterval;
 @property(readonly, nonatomic) NSArray *childComponents; // @synthesize childComponents=_childComponents;
-- (void).cxx_destruct;
 - (id)metricsElementName;
 - (long long)componentType;
 - (id)initWithCustomPageContext:(id)arg1;

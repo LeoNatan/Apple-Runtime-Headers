@@ -14,9 +14,9 @@
     NSDateComponents *_endDateComponents;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateComponents *endDateComponents; // @synthesize endDateComponents=_endDateComponents;
 @property(readonly, nonatomic) NSDateComponents *startDateComponents; // @synthesize startDateComponents=_startDateComponents;
-- (void).cxx_destruct;
 - (unsigned long long)countOfDaysContainedInIntervalInCalendar:(id)arg1;
 - (_Bool)containsDateComponents:(id)arg1 inCalendar:(id)arg2;
 - (id)initWithStartDateComponents:(id)arg1 endDateComponents:(id)arg2;

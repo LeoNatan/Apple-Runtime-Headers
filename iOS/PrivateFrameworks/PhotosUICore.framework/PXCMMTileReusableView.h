@@ -16,8 +16,8 @@
     UIView *_underlyingView;
 }
 
-@property(readonly, nonatomic) UIView *underlyingView; // @synthesize underlyingView=_underlyingView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *underlyingView; // @synthesize underlyingView=_underlyingView;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;

@@ -28,6 +28,7 @@
     struct CGSize _cellSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *effectsQueue; // @synthesize effectsQueue=_effectsQueue;
 @property(readonly) NSArray *effects; // @synthesize effects=_effects;
 @property(readonly) KHImage *squareImage; // @synthesize squareImage=_squareImage;
@@ -39,7 +40,6 @@
 @property(retain) UXCollectionViewFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
 @property(retain) UXCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) KHFrame *frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)imageForEffectIndex:(unsigned long long)arg1;
 - (void)syncCollectionViewSelection;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;

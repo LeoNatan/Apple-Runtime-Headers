@@ -54,9 +54,9 @@
     NSNumber *_previousError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id boostContext; // @synthesize boostContext=_boostContext;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 - (void)session:(id)arg1 didReceiveActiveParticipants:(id)arg2 success:(BOOL)arg3;
 - (void)session:(id)arg1 participantDidLeaveGroupWithInfo:(id)arg2;

@@ -19,9 +19,9 @@
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useDelay; // @synthesize useDelay=_useDelay;
 @property(copy, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

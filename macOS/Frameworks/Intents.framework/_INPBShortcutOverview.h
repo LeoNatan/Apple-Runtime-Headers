@@ -25,13 +25,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)stepsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *voiceCommand; // @synthesize voiceCommand=_voiceCommand;
 @property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(retain, nonatomic) _INPBDataString *name; // @synthesize name=_name;
 @property(retain, nonatomic) _INPBImageValue *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) _INPBDataString *descriptiveText; // @synthesize descriptiveText=_descriptiveText;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

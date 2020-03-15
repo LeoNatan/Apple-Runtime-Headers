@@ -21,12 +21,12 @@
     unsigned int _lastUpdateToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int lastUpdateToken; // @synthesize lastUpdateToken=_lastUpdateToken;
 @property(retain, nonatomic) NWKXPCConnectionWrapper *connectionWrapper; // @synthesize connectionWrapper=_connectionWrapper;
 @property(nonatomic) __weak id <NWKForecastConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType onResumeBlock; // @synthesize onResumeBlock=_onResumeBlock;
 @property(copy, nonatomic) WFLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (void)location:(id)arg1 isUpdating:(_Bool)arg2 error:(id)arg3;
 - (void)location:(id)arg1 token:(unsigned int)arg2 updatedAt:(id)arg3 current:(id)arg4 hourly:(id)arg5 daily:(id)arg6 airQuality:(id)arg7;
 - (void)connectionAcknowledgedForBulkUpdateOfLocations:(id)arg1;

@@ -29,12 +29,12 @@
 + (id)layoutRuleForState:(long long)arg1 faceBounds:(struct CGRect)arg2 dialDiameter:(double)arg3 forDevice:(id)arg4;
 + (id)keylineViewForDevice:(id)arg1;
 + (id)keylineImageWithFilled:(_Bool)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKRichComplicationBezelViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool interactive; // @synthesize interactive=_interactive;
 @property(nonatomic) double bezelTextAlpha; // @synthesize bezelTextAlpha=_bezelTextAlpha;
 @property(nonatomic) double bezelTextWidthInRadius; // @synthesize bezelTextWidthInRadius=_bezelTextWidthInRadius;
 @property(retain, nonatomic) UIColor *bezelTextColor; // @synthesize bezelTextColor=_bezelTextColor;
-- (void).cxx_destruct;
 - (void)_setLayoutTransformToView:(id)arg1 origin:(struct CGPoint)arg2 rotationInDegree:(double)arg3 centerScale:(double)arg4;
 - (void)_updateHitTestShape:(long long)arg1 frame:(struct CGRect)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

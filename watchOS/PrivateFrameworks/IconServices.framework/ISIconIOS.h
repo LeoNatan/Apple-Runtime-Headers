@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)backgroundQueue;
+- (void).cxx_destruct;
 @property(retain) LSResourceProxy *resourceProxy; // @synthesize resourceProxy=_resourceProxy;
 @property(copy, nonatomic) NSArray *decorations; // @synthesize decorations=_decorations;
-- (void).cxx_destruct;
 - (void)getCGImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGImage *)CGImageForImageDescriptor:(id)arg1;
 - (float)_aspectRatio;

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) STAlarm *alarm; // @synthesize alarm=_alarm;
 - (void).cxx_destruct;
+@property(retain, nonatomic) STAlarm *alarm; // @synthesize alarm=_alarm;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)createResponse;

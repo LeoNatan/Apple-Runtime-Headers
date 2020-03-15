@@ -23,6 +23,7 @@
     UIColor *_userInterfaceTintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *userInterfaceTintColor; // @synthesize userInterfaceTintColor=_userInterfaceTintColor;
 @property(retain, nonatomic) UITabBarItem *underlyingTabBarItem; // @synthesize underlyingTabBarItem=_underlyingTabBarItem;
 @property(readonly, nonatomic) NSString *tabIdentifier; // @synthesize tabIdentifier=_tabIdentifier;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIViewController *customRootViewController; // @synthesize customRootViewController=_customRootViewController;
 @property(nonatomic) long long barTintStyle; // @synthesize barTintStyle=_barTintStyle;
 @property(nonatomic) _Bool alwaysCreatesRootViewController; // @synthesize alwaysCreatesRootViewController=_alwaysCreatesRootViewController;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

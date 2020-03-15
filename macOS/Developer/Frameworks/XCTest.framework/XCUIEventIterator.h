@@ -20,10 +20,10 @@
     id <XCUIEventConverting> _eventConverter;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <XCUIEventConverting> eventConverter; // @synthesize eventConverter=_eventConverter;
 @property(readonly) struct __CGEventSource *eventSource; // @synthesize eventSource=_eventSource;
 @property(readonly) XCPointerEventPath *eventPath; // @synthesize eventPath=_eventPath;
-- (void).cxx_destruct;
 - (id)nextEventWithError:(id *)arg1;
 - (id)initWithEventPath:(id)arg1 eventSource:(struct __CGEventSource *)arg2;
 - (id)initWithEventPath:(id)arg1 eventSource:(struct __CGEventSource *)arg2 eventConverter:(id)arg3;

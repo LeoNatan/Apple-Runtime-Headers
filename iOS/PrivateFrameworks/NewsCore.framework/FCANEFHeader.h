@@ -16,11 +16,11 @@
     NSData *_headerData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *headerData; // @synthesize headerData=_headerData;
 @property(readonly, copy, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(readonly, copy, nonatomic) NSData *wrappedKey; // @synthesize wrappedKey=_wrappedKey;
 @property(readonly, copy, nonatomic) NSData *wrappingKeyID; // @synthesize wrappingKeyID=_wrappingKeyID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long totalLength;
 - (id)init;
 - (id)initWithFileHandle:(id)arg1;

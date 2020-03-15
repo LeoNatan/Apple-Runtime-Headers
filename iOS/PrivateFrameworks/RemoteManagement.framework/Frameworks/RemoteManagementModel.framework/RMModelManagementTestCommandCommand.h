@@ -21,12 +21,12 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadReturnStatus; // @synthesize payloadReturnStatus=_payloadReturnStatus;
 @property(copy, nonatomic) NSString *payloadEcho; // @synthesize payloadEcho=_payloadEcho;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (_Bool)loadPayloadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

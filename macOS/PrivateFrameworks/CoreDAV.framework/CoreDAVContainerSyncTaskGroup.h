@@ -42,6 +42,7 @@
     BOOL _actionsOnly;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL actionsOnly; // @synthesize actionsOnly=_actionsOnly;
 @property(retain, nonatomic) NSString *bulkChangeCheckCTag; // @synthesize bulkChangeCheckCTag=_bulkChangeCheckCTag;
 @property(retain, nonatomic) NSDictionary *bulkRequests; // @synthesize bulkRequests=_bulkRequests;
@@ -56,7 +57,6 @@
 @property(nonatomic) unsigned long long maxIndependentTasks; // @synthesize maxIndependentTasks=_maxIndependentTasks;
 @property(nonatomic) unsigned long long multiGetBatchSize; // @synthesize multiGetBatchSize=_multiGetBatchSize;
 @property(retain, nonatomic) NSURL *addMemberURL; // @synthesize addMemberURL=_addMemberURL;
-- (void).cxx_destruct;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 deletedItems:(id)arg3 error:(id)arg4;
 - (void)getTask:(id)arg1 data:(id)arg2 error:(id)arg3;

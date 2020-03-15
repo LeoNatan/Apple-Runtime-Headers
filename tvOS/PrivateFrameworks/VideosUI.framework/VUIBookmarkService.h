@@ -27,10 +27,10 @@
 + (id)_bookmarkFromKey:(id)arg1 kvsDictionary:(id)arg2;
 + (id)sharedInstance;
 + (void)setupBookmarkService:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numSyncsInProgress; // @synthesize numSyncsInProgress=_numSyncsInProgress;
 @property(retain, nonatomic) NSDate *dateOfLastSyncCompletion; // @synthesize dateOfLastSyncCompletion=_dateOfLastSyncCompletion;
 @property(nonatomic) _Bool syncInProgress; // @synthesize syncInProgress=_syncInProgress;
-- (void).cxx_destruct;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_batchUpdate;
 - (void)_writePendingToAppleTVKeyValueStore:(id)arg1;

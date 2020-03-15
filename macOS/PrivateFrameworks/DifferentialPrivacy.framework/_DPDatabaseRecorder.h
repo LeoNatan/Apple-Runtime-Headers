@@ -15,10 +15,10 @@
     unsigned long long _puzzlePieceCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long puzzlePieceCount; // @synthesize puzzlePieceCount=_puzzlePieceCount;
 @property(readonly, nonatomic) NSSet *blacklistSet; // @synthesize blacklistSet=_blacklistSet;
 @property(readonly, nonatomic) _DPStorage *db; // @synthesize db=_db;
-- (void).cxx_destruct;
 - (id)description;
 - (void)recordWords:(id)arg1;
 - (void)recordStrings:(id)arg1;

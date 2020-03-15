@@ -23,6 +23,7 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSDateComponents *statisticsInterval; // @synthesize statisticsInterval=_statisticsInterval;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) HKQuantity *maxQuantity; // @synthesize maxQuantity=_maxQuantity;
 @property(retain, nonatomic) HKQuantity *minQuantity; // @synthesize minQuantity=_minQuantity;
 @property(retain, nonatomic) HKQuantity *sumQuantity; // @synthesize sumQuantity=_sumQuantity;
-- (void).cxx_destruct;
 
 @end
 

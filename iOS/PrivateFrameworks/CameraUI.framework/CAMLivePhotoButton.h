@@ -18,10 +18,10 @@
 }
 
 + (double)enablingAnimationDuration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMLivePhotoAnimationCache *_animationCache; // @synthesize _animationCache=__animationCache;
 @property(readonly, nonatomic) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(nonatomic) _Bool allowsAutomaticMode; // @synthesize allowsAutomaticMode=_allowsAutomaticMode;
-- (void).cxx_destruct;
 - (id)imageForAccessibilityHUD;
 - (void)interruptEnablingAnimation;
 - (void)performEnablingAnimation;

@@ -21,10 +21,10 @@
     SKUIGiftComposeViewController *_rootViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIGiftViewControllerDelegate> giftDelegate; // @synthesize giftDelegate=_giftDelegate;
 @property(readonly, copy, nonatomic) SKUIGift *gift; // @synthesize gift=_gift;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (id)_localizedString:(id)arg1;
 - (void)_loadGiftConfiguration;
 - (void)_finishGiftingWithResult:(_Bool)arg1;

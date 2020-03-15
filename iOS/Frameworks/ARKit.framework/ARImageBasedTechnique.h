@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)_fullDescription;
 - (_Bool)context:(id)arg1 matchesFrameReference:(id)arg2;
 - (void)prepareResultData:(id)arg1 forContext:(id)arg2;
 - (void)pushResultData:(id)arg1 forTimestamp:(double)arg2;

@@ -20,13 +20,13 @@
     MontrealNNModelOptimizerParam *_optimizerParams;
 }
 
+- (void).cxx_destruct;
 @property(readonly) MontrealNNModelOptimizerParam *optimizerParams; // @synthesize optimizerParams=_optimizerParams;
 @property(readonly) NSString *jsonDir; // @synthesize jsonDir=_jsonDir;
 @property(readonly) MontrealNNModelQuantization *quantization; // @synthesize quantization=_quantization;
 @property(retain) NSArray *outputs; // @synthesize outputs=_outputs;
 @property(retain) NSArray *inputs; // @synthesize inputs=_inputs;
 @property(retain) NSArray *nodes; // @synthesize nodes=_nodes;
-- (void).cxx_destruct;
 - (void *)generateModelContainer;
 - (id)createDataContainer;
 - (void)generateJSONAtPath:(id)arg1;

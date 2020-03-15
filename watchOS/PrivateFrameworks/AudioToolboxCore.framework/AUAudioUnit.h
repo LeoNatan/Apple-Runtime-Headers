@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AUAudioUnitBusArray, AUAudioUnitPreset, AUParameterTree, NSArray, NSDictionary, NSMutableArray, NSString;
+@class AUAudioUnitBusArray, AUAudioUnitPreset, AUParameterTree, NSArray, NSDictionary, NSMutableArray, NSString, UIViewController;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface AUAudioUnit : NSObject
@@ -14,7 +14,7 @@
     struct OpaqueAudioComponent *_component;
     NSString *_componentName;
     unsigned int _componentVersion;
-    struct UIViewController *_cachedViewController;
+    UIViewController *_cachedViewController;
     unsigned int _maximumFramesToRender;
     int _MIDIOutputBufferSizeHint;
     struct RealtimeState _realtimeState;
@@ -59,6 +59,8 @@
 + (id)__sanitizeFileName:(id)arg1;
 + (id)__presetFromPath:(id)arg1;
 + (void)registerSubclass:(Class)arg1 asComponentDescription:(struct AudioComponentDescription)arg2 name:(id)arg3 version:(unsigned long)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType profileChangedBlock; // @synthesize profileChangedBlock=_profileChangedBlock;
 @property(copy, nonatomic) NSArray *channelMap; // @synthesize channelMap=_channelMap;
 @property(readonly, nonatomic) _Bool supportsMPE; // @synthesize supportsMPE=_supportsMPE;
@@ -80,8 +82,6 @@
 @property(readonly, nonatomic) _Bool renderResourcesAllocated; // @synthesize renderResourcesAllocated=_renderResourcesAllocated;
 @property(readonly, copy, nonatomic) NSString *audioUnitShortName; // @synthesize audioUnitShortName=_audioUnitShortName;
 @property(readonly, nonatomic) struct AudioComponentDescription componentDescription; // @synthesize componentDescription=_componentDescription;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isLoadedInProcess;
 @property(readonly, copy, nonatomic) NSArray *userPresets;
 - (void)startUserPresetFolderMonitoring;
@@ -100,8 +100,8 @@
 @property(nonatomic) unsigned int maximumFramesToRender;
 @property(readonly, nonatomic) _Bool providesUserInterface;
 - (void)requestViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)setCachedViewController:(struct UIViewController *)arg1;
-- (struct UIViewController *)cachedViewController;
+- (void)setCachedViewController:(id)arg1;
+- (id)cachedViewController;
 @property(copy, nonatomic) NSDictionary *fullStateForDocument;
 @property(copy, nonatomic) NSDictionary *fullState;
 @property(readonly, nonatomic) AUAudioUnitBusArray *outputBusses;

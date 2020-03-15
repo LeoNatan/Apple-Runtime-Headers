@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     MKTransitItemReferenceDateUpdater *_itemUpdater;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MKTransitItemReferenceDateUpdater *itemUpdater; // @synthesize itemUpdater=_itemUpdater;
 @property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
 @property(nonatomic) __weak id <MKTransitLineIncidentsViewControllerDelegate> incidentsDelegate; // @synthesize incidentsDelegate=_incidentsDelegate;
-- (void).cxx_destruct;
 - (void)transitItemReferenceDateUpdater:(id)arg1 didUpdateToReferenceDate:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

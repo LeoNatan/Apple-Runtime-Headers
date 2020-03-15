@@ -17,9 +17,9 @@
     NSMutableArray *_orderedArray;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *orderedArray; // @synthesize orderedArray=_orderedArray;
 @property(retain, nonatomic) CRSet *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;

@@ -18,13 +18,13 @@
     double _topMedian;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double topMedian; // @synthesize topMedian=_topMedian;
 @property(copy, nonatomic) NSUUID *stateUUID; // @synthesize stateUUID=_stateUUID;
 @property(nonatomic) double daysPerWeek; // @synthesize daysPerWeek=_daysPerWeek;
 @property(nonatomic) double stdAggTime_s; // @synthesize stdAggTime_s=_stdAggTime_s;
 @property(nonatomic) double avgAggTime_s; // @synthesize avgAggTime_s=_avgAggTime_s;
 @property(nonatomic) double numOfClustEntPerWeek; // @synthesize numOfClustEntPerWeek=_numOfClustEntPerWeek;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

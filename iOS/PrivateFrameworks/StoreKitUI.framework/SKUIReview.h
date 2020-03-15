@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *reviewer; // @synthesize reviewer=_reviewer;
 @property(readonly, nonatomic) float rating; // @synthesize rating=_rating;
 @property(readonly, nonatomic) NSString *dateString; // @synthesize dateString=_dateString;
 @property(readonly, nonatomic) NSString *body; // @synthesize body=_body;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
 - (id)formattedBylineWithClientContext:(id)arg1;

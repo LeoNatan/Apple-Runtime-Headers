@@ -27,6 +27,7 @@
 
 + (_Bool)supportsBSXPCSecureCoding;
 + (id)defaultContext;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool preventIfBeingDebugged; // @synthesize preventIfBeingDebugged=_preventIfBeingDebugged;
 @property(retain, nonatomic) NSSet *preventingEndowmentNamespaces; // @synthesize preventingEndowmentNamespaces=_preventingEndowmentNamespaces;
 @property(nonatomic) unsigned char maximumRole; // @synthesize maximumRole=_maximumRole;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned int exceptionDomain; // @synthesize exceptionDomain=_exceptionDomain;
 @property(nonatomic) unsigned long long reportType; // @synthesize reportType=_reportType;
 @property(copy, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;

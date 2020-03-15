@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     double _trackedValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double trackedValue; // @synthesize trackedValue=_trackedValue;
 @property(nonatomic) _Bool isAccumulating; // @synthesize isAccumulating=_isAccumulating;
-- (void).cxx_destruct;
 - (double)speed;
 - (void)addValue:(double)arg1;
 - (id)init;

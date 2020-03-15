@@ -22,11 +22,11 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSNumber *maxFolders; // @synthesize maxFolders=_maxFolders;
 @property(retain, nonatomic) NSNumber *heartBeatInterval; // @synthesize heartBeatInterval=_heartBeatInterval;
 @property(retain, nonatomic) NSArray *folders; // @synthesize folders=_folders;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

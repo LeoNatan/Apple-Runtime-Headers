@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 + (double)animationDuration;
 + (id)undimmedBackgroundColor;
 + (id)dimmedBackgroundColor;
-@property(copy, nonatomic) CDUnknownBlockType accessibilityFrameProviderCallback; // @synthesize accessibilityFrameProviderCallback=_accessibilityFrameProviderCallback;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType accessibilityFrameProviderCallback; // @synthesize accessibilityFrameProviderCallback=_accessibilityFrameProviderCallback;
 - (id)accessibilityIdentifier;
 - (BOOL)accessibilityPerformPress;
 - (struct CGRect)accessibilityFrame;

@@ -22,13 +22,13 @@
 
 + (id)methodWithSelector:(SEL)arg1 typeEncoding:(const char *)arg2;
 + (id)methodWithMethod:(struct objc_method *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long required; // @synthesize required=_required;
 @property(readonly, retain, nonatomic) BSObjCArgument *returnValue; // @synthesize returnValue=_returnValue;
 @property(readonly, retain, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, copy, nonatomic) NSString *encoding; // @synthesize encoding=_encoding;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

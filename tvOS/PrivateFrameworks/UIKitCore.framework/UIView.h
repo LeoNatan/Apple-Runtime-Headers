@@ -33,7 +33,7 @@
 #import <UIKitCore/_UITraitEnvironmentInternal-Protocol.h>
 #import <UIKitCore/_UIViewSubtreeMonitor-Protocol.h>
 
-@class CALayer, NSArray, NSISEngine, NSISVariable, NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMapTable, NSMutableArray, NSMutableSet, NSString, UIBezierPath, UIColor, UIInputResponderController, UIKBRenderConfig, UILayoutGuide, UIPresentationController, UIStoryboardPreviewingSegueTemplateStorage, UITraitCollection, UIViewAnimationInfo, UIViewController, UIWindow, _UIBoundingPath, _UITouchForceObservable, _UIViewLayoutEngineRelativeAlignmentRectOriginCache;
+@class CALayer, NSArray, NSISEngine, NSISVariable, NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMapTable, NSMutableArray, NSMutableSet, NSString, UIBezierPath, UIColor, UIInputResponderController, UIKBRenderConfig, UILayoutGuide, UIPresentationController, UIStoryboardPreviewingSegueTemplateStorage, UITraitCollection, UIViewAnimationInfo, UIViewController, UIWindow, _UIBoundingPath, _UIFocusGroupDescriptor, _UITouchForceObservable, _UIViewLayoutEngineRelativeAlignmentRectOriginCache;
 @protocol UICoordinateSpace, UIFocusEnvironment, UIFocusItemContainer, _UIFocusRegionContainer;
 
 @interface UIView : UIResponder <_UIFallbackEnvironment, UILayoutItem_Internal, UITextEffectsOrdering, NSISVariableDelegate, _UILayoutItem, _UIMultilineTextContentSizing, NSISEngineDelegate, _UIScrollViewScrollObserver_Internal, _UIViewSubtreeMonitor, _UITraitEnvironmentInternal, _UIFocusItemInternal, _UIFocusItemDebuggable, _UIFocusRegionContainerInternal, _UILegacyFocusRegion, _UIGeometryChangeObserver, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate>
@@ -187,6 +187,7 @@
         unsigned int hasLocalOverrideTraitCollection:1;
         unsigned int hasPendingTraitStorageConstraints:1;
         unsigned int hasEverBeenInAWindow:1;
+        unsigned int hasFocusGroupDescriptor:2;
     } _viewFlags;
     unsigned short _unsatisfiableConstraintsLoggingSuspensionCount;
     unsigned int _pseudo_id;
@@ -196,6 +197,7 @@
     unsigned short _imminentLayoutSubviewsCount;
     unsigned short _countOfMotionEffectsInSubtree;
     unsigned short _countOfFocusedAncestorTrackingViewsInSubtree;
+    _Bool __ignoreRemoveAllAnimations;
     UILayoutGuide *_layoutMarginsGuide;
     NSISVariable *_minXVariable;
     NSISVariable *_minYVariable;
@@ -391,7 +393,9 @@
 + (_Bool)_legacyRTLPreferenceEnabled;
 + (_Bool)_enableLegacyRTL;
 + (_Bool)_enableRTL;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAlignmentRectOriginCache:) _UIViewLayoutEngineRelativeAlignmentRectOriginCache *_alignmentRectOriginCache; // @synthesize _alignmentRectOriginCache=__alignmentRectOriginCache;
+@property(readonly, nonatomic) _Bool _ignoreRemoveAllAnimations; // @synthesize _ignoreRemoveAllAnimations=__ignoreRemoveAllAnimations;
 @property(retain, nonatomic, setter=_setLastNotifiedTraitCollection:) UITraitCollection *_lastNotifiedTraitCollection; // @synthesize _lastNotifiedTraitCollection=__lastNotifiedTraitCollection;
 @property(nonatomic, setter=_setPreferedContentsFormat:) long long _preferedContentsFormat; // @synthesize _preferedContentsFormat=__preferedContentsFormat;
 @property(retain, nonatomic, setter=_setReadableContentGuide:) UILayoutGuide *readableContentGuide; // @synthesize readableContentGuide=_readableContentGuide;
@@ -407,7 +411,6 @@
 @property(retain, nonatomic, setter=_setLayoutMarginsGuide:) UILayoutGuide *layoutMarginsGuide; // @synthesize layoutMarginsGuide=_layoutMarginsGuide;
 @property(nonatomic, setter=_setInferredLayoutMargins:) struct UIEdgeInsets _inferredLayoutMargins; // @synthesize _inferredLayoutMargins;
 @property(nonatomic, setter=_setRawLayoutMargins:) struct UIEdgeInsets _rawLayoutMargins; // @synthesize _rawLayoutMargins;
-- (void).cxx_destruct;
 - (id)_previewingSegueTemplateStorageForLocation:(struct CGPoint)arg1 inView:(id)arg2;
 @property(retain, nonatomic, getter=_previewingSegueTemplateStorage, setter=_setPreviewingSegueTemplateStorage:) UIStoryboardPreviewingSegueTemplateStorage *previewingSegueTemplateStorage;
 - (id)_idleModeLayoutAttributes;
@@ -422,7 +425,7 @@
 - (id)_whyIsThisViewNotFocusable;
 - (id)_attributesForFocusRegionContentInCoordinateSpace:(id)arg1;
 - (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
-- (id)_accessibilityFocusRegionsInRect:(struct CGRect)arg1 inCoordinateSpace:(id)arg2 context:(id)arg3;
+- (void)_addAccessibilityFocusContainersInRect:(struct CGRect)arg1 inCoordinateSpace:(id)arg2 context:(id)arg3;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
 - (struct CGRect)_focusRegionFrameInCoordinateSpace:(id)arg1;
 - (struct CGRect)_defaultFocusRegionFrame;
@@ -439,6 +442,8 @@
 - (struct CGRect)_focusRegionFrame;
 - (_Bool)_legacy_isEligibleForFocusInteraction;
 - (id)_focusRegionFocusSystem;
+- (id)_systemDefaultFocusGroupDescriptor;
+@property(retain, nonatomic, setter=_setFocusGroupDescriptor:) _UIFocusGroupDescriptor *_focusGroupDescriptor;
 @property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
 @property(readonly, nonatomic, getter=_focusMapContainer) __weak id <_UIFocusRegionContainer> focusMapContainer;
 @property(readonly, nonatomic, getter=_isEligibleForFocusInteraction) _Bool eligibleForFocusInteraction;
@@ -1260,6 +1265,7 @@
 - (void)movedToSuperview:(id)arg1;
 - (void)movedFromSuperview:(id)arg1;
 - (void)_postMovedFromSuperview:(id)arg1;
+- (void)_becomeFirstResponder;
 - (void)_promoteSelfOrDescendantToFirstResponderIfNecessary;
 - (void)deferredBecomeFirstResponder;
 - (_Bool)becomeFirstResponder;
@@ -1296,6 +1302,7 @@
 - (id)window;
 - (id)subviews;
 - (_Bool)containsView:(id)arg1;
+- (id)_imageFromRect:(struct CGRect)arg1 gamut:(long long)arg2;
 - (id)_imageFromRect:(struct CGRect)arg1;
 - (void *)_createIOSurfaceWithPadding:(struct UIEdgeInsets)arg1;
 - (void)_enableLayerKitPatternDrawing:(_Bool)arg1;
@@ -1425,7 +1432,7 @@
 @property(nonatomic, getter=_viewDelegate, setter=_setViewDelegate:) UIViewController *viewDelegate;
 @property(nonatomic) _Bool viewTraversalMark;
 @property(nonatomic) _Bool skipsSubviewEnumeration;
-- (struct __IOSurface *)_createRenderingBufferFromRect:(struct CGRect)arg1 padding:(struct UIEdgeInsets)arg2;
+- (struct __IOSurface *)_createRenderingBufferFromRect:(struct CGRect)arg1 padding:(struct UIEdgeInsets)arg2 gamut:(long long)arg3;
 - (void)_renderSnapshotWithRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
 - (void)_setContentsTransform:(struct CGAffineTransform)arg1;
 - (void)_setContentImage:(id)arg1;

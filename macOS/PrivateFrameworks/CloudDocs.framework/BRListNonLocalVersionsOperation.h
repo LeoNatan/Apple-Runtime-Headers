@@ -25,12 +25,12 @@
     CDUnknownBlockType _fetchingVersionsDoneBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fetchingVersionsDoneBlock; // @synthesize fetchingVersionsDoneBlock=_fetchingVersionsDoneBlock;
 @property(nonatomic) BOOL includeCachedVersions; // @synthesize includeCachedVersions=_includeCachedVersions;
 @property(readonly, nonatomic) NSMutableArray *versions; // @synthesize versions=_versions;
 @property(nonatomic, getter=isExecuting) BOOL executing; // @synthesize executing=_executing;
 @property(nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
-- (void).cxx_destruct;
 - (oneway void)newThumbnailForVersionWithEtag:(id)arg1;
 - (oneway void)versionsDone;
 - (oneway void)newCachedVersionAtURL:(id)arg1 size:(id)arg2 etag:(id)arg3 hasThumbnail:(BOOL)arg4 displayName:(id)arg5 lastEditorDeviceName:(id)arg6 lastEditorNameComponents:(id)arg7 modificationDate:(id)arg8;

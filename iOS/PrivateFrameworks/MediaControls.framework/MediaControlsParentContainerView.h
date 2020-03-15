@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     long long _routingViewControllerAnimationCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long routingViewControllerAnimationCount; // @synthesize routingViewControllerAnimationCount=_routingViewControllerAnimationCount;
 @property(retain, nonatomic) UIView *mediaControlsRoutingPickerView; // @synthesize mediaControlsRoutingPickerView=_mediaControlsRoutingPickerView;
 @property(retain, nonatomic) MediaControlsSeparatorView *bottomDividerView; // @synthesize bottomDividerView=_bottomDividerView;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MediaControlsContainerView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_setInitialFrameForRoutingView:(id)arg1;
 - (void)_toggleRoutingPickerAnimated:(_Bool)arg1;
 - (void)_updateTimeControlVisibility:(id)arg1;

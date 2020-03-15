@@ -9,6 +9,8 @@
 @class NSString, NSURL;
 
 @interface NSXPCConnection (SafariCoreExtras)
++ (id)safari_displayNameForConnectedProcessWithAuditToken:(CDStruct_6ad76789)arg1;
++ (id)safari_fileOrBundleURLForConnectedProcessWithAuditToken:(CDStruct_6ad76789)arg1;
 @property(readonly, nonatomic) NSString *safari_displayNameForConnectedProcess;
 @property(readonly, nonatomic) NSURL *safari_fileOrBundleURLForConnectedProcess;
 @end

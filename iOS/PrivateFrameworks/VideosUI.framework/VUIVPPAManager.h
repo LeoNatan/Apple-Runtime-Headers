@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)channelAlreadyExists:(id)arg1 channelID:(id)arg2;
 + (_Bool)_isReminderDue:(id)arg1 reminderInterval:(double)arg2;
 + (id)sharedInstance;
-@property(retain, nonatomic) VUIAccessViewController *accessViewController; // @synthesize accessViewController=_accessViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIAccessViewController *accessViewController; // @synthesize accessViewController=_accessViewController;
 - (id)_rootViewController;
 - (id)_getEligibleBulkChannels;
 - (id)_getVPPABulkChannels:(long long)arg1;

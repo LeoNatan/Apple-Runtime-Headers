@@ -19,11 +19,11 @@
 }
 
 + (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain) MLUpdateProgressHandlers *progressHandlers; // @synthesize progressHandlers=_progressHandlers;
 @property(readonly) vector_7984f87c updatableModelIndicies; // @synthesize updatableModelIndicies=_updatableModelIndicies;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 - (void)cancelUpdate;

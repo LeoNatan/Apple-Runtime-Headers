@@ -16,11 +16,11 @@
     NSString *_currentStatus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsInApp; // @synthesize supportsInApp=_supportsInApp;
 @property(copy, nonatomic) NSString *currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(copy, nonatomic) NSNumber *cardTypeCode; // @synthesize cardTypeCode=_cardTypeCode;
 @property(copy, nonatomic) NSString *cardType; // @synthesize cardType=_cardType;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

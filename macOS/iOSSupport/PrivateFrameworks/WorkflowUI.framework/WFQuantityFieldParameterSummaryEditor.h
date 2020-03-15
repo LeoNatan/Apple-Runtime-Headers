@@ -13,8 +13,8 @@
     WFAlert *_unitAlert;
 }
 
-@property(retain, nonatomic) WFAlert *unitAlert; // @synthesize unitAlert=_unitAlert;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFAlert *unitAlert; // @synthesize unitAlert=_unitAlert;
 - (id)stateForVariable:(id)arg1;
 - (id)stateForEnteredText:(id)arg1;
 - (id)variableMenuInitialStateForSlotWithIdentifier:(id)arg1;

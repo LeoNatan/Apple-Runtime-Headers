@@ -13,8 +13,8 @@
     HMBModel *_previousModel;
 }
 
-@property(readonly) HMBModel *previousModel; // @synthesize previousModel=_previousModel;
 - (void).cxx_destruct;
+@property(readonly) HMBModel *previousModel; // @synthesize previousModel=_previousModel;
 - (id)attributeDescriptions;
 - (id)initWithModel:(id)arg1 previousModel:(id)arg2 options:(id)arg3 mirrorOutputFuture:(id)arg4;
 

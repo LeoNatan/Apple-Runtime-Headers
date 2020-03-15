@@ -29,6 +29,7 @@
 + (void)setEventStoreForTesting:(id)arg1;
 + (_Bool)isNaturalLanguageEventDetectionEnabled;
 + (void)resetSharedCachesAndModels;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *extractedNotesStrings; // @synthesize extractedNotesStrings=_extractedNotesStrings;
 @property long long resultType; // @synthesize resultType=_resultType;
 @property(retain) NSArray *filteredDetectedEvents; // @synthesize filteredDetectedEvents=_filteredDetectedEvents;
@@ -39,7 +40,6 @@
 @property(retain) NSMutableArray *bodyDataDetectorsFeatures; // @synthesize bodyDataDetectorsFeatures=_bodyDataDetectorsFeatures;
 @property(retain) NSMutableArray *bodyAllFeatures; // @synthesize bodyAllFeatures=_bodyAllFeatures;
 @property(retain) NSArray *bodyMessageUnits; // @synthesize bodyMessageUnits=_bodyMessageUnits;
-- (void).cxx_destruct;
 - (id)decoratedTitleFromEventType:(id)arg1 title:(id)arg2 sender:(id)arg3 recipients:(id)arg4 isSent:(_Bool)arg5;
 - (unsigned long long)eventStatusFromPolarity:(unsigned long long)arg1;
 - (id)analyzeFeatures:(id)arg1 messageUnit:(id)arg2 checkPolarity:(_Bool)arg3 polarity:(unsigned long long)arg4;

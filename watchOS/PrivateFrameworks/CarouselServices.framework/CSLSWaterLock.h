@@ -21,8 +21,8 @@
     NSString *_identifier;
 }
 
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)_notifyDelegate;
 - (void)_setLocked:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isLocked) _Bool locked;

@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)egressTriggerSignatureType;
 + (Class)ingressTriggerSignatureType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
 @property(nonatomic) unsigned int cellularDataUsage; // @synthesize cellularDataUsage=_cellularDataUsage;
 @property(nonatomic) unsigned int transitionsSuppressedByMobility; // @synthesize transitionsSuppressedByMobility=_transitionsSuppressedByMobility;
@@ -80,7 +81,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL kernelProbingActivated; // @synthesize kernelProbingActivated=_kernelProbingActivated;
 @property(nonatomic) unsigned long long adviceHeldForSecs; // @synthesize adviceHeldForSecs=_adviceHeldForSecs;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

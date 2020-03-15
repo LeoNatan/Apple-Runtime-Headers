@@ -21,6 +21,7 @@
     long long _toInterfaceOrientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long toInterfaceOrientation; // @synthesize toInterfaceOrientation=_toInterfaceOrientation;
 @property(nonatomic) long long fromInterfaceOrientation; // @synthesize fromInterfaceOrientation=_fromInterfaceOrientation;
 @property(nonatomic) long long toEnvironmentMode; // @synthesize toEnvironmentMode=_toEnvironmentMode;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(readonly, nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 @property(readonly, nonatomic) NSUUID *transitionID; // @synthesize transitionID=_transitionID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (_Bool)isTransitionEvent;
 - (long long)type;

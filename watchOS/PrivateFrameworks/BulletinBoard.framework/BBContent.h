@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)contentWithTitle:(id)arg1 subtitle:(id)arg2 message:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

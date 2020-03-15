@@ -12,9 +12,9 @@
     Class _responseClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class responseClass; // @synthesize responseClass=_responseClass;
 @property(retain, nonatomic) Class requestClass; // @synthesize requestClass=_requestClass;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -43,6 +43,7 @@
 @property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 - (id)_groupHashForHandles:(id)arg1 lastAddressedHandle:(id)arg2;
 - (void)_setContactInMessageDictionary:(struct _IMDHandleRecordStruct *)arg1 messageDictionary:(id)arg2;
+- (BOOL)_chatHasDNDSetBasedOnChatGUID:(id)arg1 chatIdentifier:(id)arg2 groupID:(id)arg3 handles:(id)arg4 lastAddressedHandleString:(id)arg5 style:(long long)arg6;
 - (BOOL)_chatHasDNDSetBasedOnDNDIdentifier:(id)arg1;
 - (BOOL)_messageShouldBeSilentlyDeliveredForBusinessChat:(id)arg1;
 -     // Error parsing type: @24@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _chatDictionaryForMessageRecord:

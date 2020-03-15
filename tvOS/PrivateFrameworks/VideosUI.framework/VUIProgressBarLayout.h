@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProgressBarLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *materialView; // @synthesize materialView=_materialView;
 @property(nonatomic) _Bool useMaterial; // @synthesize useMaterial=_useMaterial;
 @property(nonatomic) _Bool shouldProgressBarUseRoundCorner; // @synthesize shouldProgressBarUseRoundCorner=_shouldProgressBarUseRoundCorner;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *gradientStartColor; // @synthesize gradientStartColor=_gradientStartColor;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 
 @end
 

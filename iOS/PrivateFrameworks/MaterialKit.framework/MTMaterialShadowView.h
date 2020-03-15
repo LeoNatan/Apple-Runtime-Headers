@@ -23,9 +23,9 @@
 + (id)materialShadowViewWithRecipe:(long long)arg1 configuration:(long long)arg2 initialWeighting:(double)arg3 scaleAdjustment:(CDUnknownBlockType)arg4;
 + (id)materialShadowViewWithRecipe:(long long)arg1 configuration:(long long)arg2 initialWeighting:(double)arg3;
 + (id)materialShadowViewWithRecipe:(long long)arg1 configuration:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCaptureOnlyMaterialViewSuppliedByClient) _Bool captureOnlyMaterialViewSuppliedByClient; // @synthesize captureOnlyMaterialViewSuppliedByClient=_captureOnlyMaterialViewSuppliedByClient;
 @property(readonly, nonatomic) MTMaterialView *materialView; // @synthesize materialView=_materialView;
-- (void).cxx_destruct;
 - (void)_configureCaptureOnlyMaterialViewIfNecessary;
 - (void)_configureShadowViewIfNecessary;
 - (void)groupNameDidChangeForMaterialView:(id)arg1;

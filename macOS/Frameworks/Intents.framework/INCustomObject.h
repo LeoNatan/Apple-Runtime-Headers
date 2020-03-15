@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic, setter=_setBackingStore:) INCodable *_backingStore; // @synthesize _backingStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setBackingStore:) INCodable *_backingStore; // @synthesize _backingStore;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

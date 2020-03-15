@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     _Bool mUseXmlBlobs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useXmlBlobs; // @synthesize useXmlBlobs=mUseXmlBlobs;
 @property(nonatomic) unsigned int xmlMainMasterId; // @synthesize xmlMainMasterId=mXmlMainMasterId;
-- (void).cxx_destruct;
 - (id)uniqueXmlSlideLayout;
 - (id)slideLayoutForXmlLayoutId:(unsigned short)arg1;
 - (void)setSlideLayout:(id)arg1 forXmlLayoutId:(unsigned short)arg2;

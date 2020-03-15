@@ -21,6 +21,7 @@
     unsigned long long _workPendingMergedData;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s workPendingLock; // @synthesize workPendingLock=_workPendingLock;
 @property(nonatomic) unsigned long long workPendingMergedData; // @synthesize workPendingMergedData=_workPendingMergedData;
 @property(nonatomic) long long workPendingQualityOfService; // @synthesize workPendingQualityOfService=_workPendingQualityOfService;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialWorkQueue; // @synthesize serialWorkQueue=_serialWorkQueue;
 @property(nonatomic) __weak id <FCBoostableOperationThrottlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long mergedData; // @synthesize mergedData=_mergedData;
-- (void).cxx_destruct;
 @property _Bool suspended;
 - (void)tickleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)tickle;

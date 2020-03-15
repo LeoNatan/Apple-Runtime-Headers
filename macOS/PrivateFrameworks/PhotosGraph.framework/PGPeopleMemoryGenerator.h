@@ -17,12 +17,12 @@
     NSSet *_extraFeatures;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSSet *extraFeatures; // @synthesize extraFeatures=_extraFeatures;
 @property(nonatomic) long long year; // @synthesize year=_year;
 @property(retain, nonatomic) NSSet *birthdayPersonUUIDs; // @synthesize birthdayPersonUUIDs=_birthdayPersonUUIDs;
 @property(retain, nonatomic) NSSet *peopleNodes; // @synthesize peopleNodes=_peopleNodes;
 @property(retain, nonatomic) NSString *peopleUUID; // @synthesize peopleUUID=_peopleUUID;
-- (void).cxx_destruct;
 - (BOOL)canFallbackToDejunkAndDedupeForShowMore;
 - (BOOL)_upcomingBirthdayWillCollideWithPotentialMemory:(id)arg1;
 - (id)_potentialMemoriesForDryTesting;

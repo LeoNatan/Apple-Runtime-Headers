@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_groupingValues;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *groupingValues; // @synthesize groupingValues=_groupingValues;
 @property(readonly, copy, nonatomic) NSString *selector; // @synthesize selector=_selector;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

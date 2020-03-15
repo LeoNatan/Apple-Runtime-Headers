@@ -35,8 +35,8 @@
 + (void)_doneWithLocations;
 + (id)windowControllerWithContentViewController:(id)arg1;
 + (void)initialize;
-@property(copy, setter=_setFrameAutosaveName:) NSString *_frameAutosaveName; // @synthesize _frameAutosaveName;
 - (void).cxx_destruct;
+@property(copy, setter=_setFrameAutosaveName:) NSString *_frameAutosaveName; // @synthesize _frameAutosaveName;
 - (void)performSegueWithIdentifier:(id)arg1 sender:(id)arg2;
 - (void)prepareForSegue:(id)arg1 sender:(id)arg2;
 - (BOOL)shouldPerformSegueWithIdentifier:(id)arg1 sender:(id)arg2;

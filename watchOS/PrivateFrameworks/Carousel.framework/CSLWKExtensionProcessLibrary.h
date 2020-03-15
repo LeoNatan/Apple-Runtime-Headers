@@ -20,11 +20,11 @@
 }
 
 + (id)sharedExtensionProcessLibrary;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *observersByBundleID; // @synthesize observersByBundleID=_observersByBundleID;
 @property(retain, nonatomic) NSMutableDictionary *extensionProcesses; // @synthesize extensionProcesses=_extensionProcesses;
-- (void).cxx_destruct;
 - (void)_callObserversForBundleID:(id)arg1 extensionProcess:(id)arg2;
 - (void)_queue_updateFromExtensionInfo:(id)arg1 bundleID:(id)arg2;
 - (void)_queue_updateFromExtensionInfos:(id)arg1;

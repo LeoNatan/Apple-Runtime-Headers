@@ -22,11 +22,11 @@
 
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_enumerateAsynchronousFields:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

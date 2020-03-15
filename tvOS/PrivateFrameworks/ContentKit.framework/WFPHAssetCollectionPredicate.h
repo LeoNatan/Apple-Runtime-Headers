@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PHAssetCollection *_assetCollection;
 }
 
-@property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 - (id)wf_photoLibraryFilteringPredicate;
 - (id)initForAssetsInCollection:(id)arg1;
 

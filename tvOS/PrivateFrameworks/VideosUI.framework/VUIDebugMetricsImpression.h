@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_otherValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *otherValues; // @synthesize otherValues=_otherValues;
 @property(retain, nonatomic) NSDictionary *mainValues; // @synthesize mainValues=_mainValues;
 @property(retain, nonatomic) NSArray *orderedOtherKeys; // @synthesize orderedOtherKeys=_orderedOtherKeys;
-- (void).cxx_destruct;
 - (id)objectForKeyedSubscript:(id)arg1;
 @property(readonly, nonatomic) NSString *parentId;
 @property(readonly, nonatomic) NSString *impressionIndex;

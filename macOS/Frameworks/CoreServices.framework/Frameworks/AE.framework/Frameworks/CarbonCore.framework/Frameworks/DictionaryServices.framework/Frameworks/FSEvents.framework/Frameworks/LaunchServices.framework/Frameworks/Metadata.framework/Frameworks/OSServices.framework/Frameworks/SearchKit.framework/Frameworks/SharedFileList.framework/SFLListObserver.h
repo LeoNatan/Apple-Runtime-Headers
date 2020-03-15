@@ -27,13 +27,13 @@ __attribute__((visibility("hidden")))
 + (BOOL)addObserver:(id)arg1 forList:(id)arg2;
 + (id)observersByList;
 + (id)observersSerialQueue;
+- (void).cxx_destruct;
 @property void *context; // @synthesize context=_context;
 @property CDUnknownFunctionPointerType callback; // @synthesize callback=_callback;
 @property(nonatomic) __weak id <SFLList> list; // @synthesize list=_list;
 @property(readonly) struct __CFString *runloopMode; // @synthesize runloopMode=_runloopMode;
 @property(readonly) struct __CFRunLoop *runloop; // @synthesize runloop=_runloop;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)notify;
 - (void)itemsDidChangeInSet:(id)arg1;
 - (void)listDidChange:(id)arg1;

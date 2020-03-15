@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (BOOL)cancel;
+- (_Bool)cancel;
 - (_Bool)matchesFlow:(id)arg1 parameters:(id)arg2;
 - (id)initWithPath:(id)arg1 flow:(id)arg2 parameters:(id)arg3 delegate:(id)arg4;
 

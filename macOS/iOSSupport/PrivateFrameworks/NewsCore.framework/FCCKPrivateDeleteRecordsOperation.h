@@ -16,11 +16,11 @@
     NSArray *_resultDeletedRecordIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resultDeletedRecordIDs; // @synthesize resultDeletedRecordIDs=_resultDeletedRecordIDs;
 @property(retain, nonatomic) NSArray *resultSavedRecords; // @synthesize resultSavedRecords=_resultSavedRecords;
 @property(copy, nonatomic) CDUnknownBlockType deleteRecordsCompletionBlock; // @synthesize deleteRecordsCompletionBlock=_deleteRecordsCompletionBlock;
 @property(copy, nonatomic) NSArray *recordIDsToDelete; // @synthesize recordIDsToDelete=_recordIDsToDelete;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

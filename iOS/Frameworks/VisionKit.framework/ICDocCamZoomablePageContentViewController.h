@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _prevScrollViewSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize prevScrollViewSize; // @synthesize prevScrollViewSize=_prevScrollViewSize;
 @property(nonatomic) _Bool shouldSetupScalesInViewDidLayoutSubviews; // @synthesize shouldSetupScalesInViewDidLayoutSubviews=_shouldSetupScalesInViewDidLayoutSubviews;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) __weak id <ICDocCamZoomablePageContentDelegate> pageContentDelegate; // @synthesize pageContentDelegate=_pageContentDelegate;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)pageContentViewDidPencilDown;
 - (_Bool)accessibilityPerformEscape;

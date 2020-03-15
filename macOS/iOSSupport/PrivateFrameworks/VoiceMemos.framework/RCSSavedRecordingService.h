@@ -9,7 +9,7 @@
 #import <VoiceMemos/RCSSavedRecordingServiceClientProtocol-Protocol.h>
 #import <VoiceMemos/RCSSavedRecordingServiceProtocol-Protocol.h>
 
-@class NSMutableDictionary, NSSet, NSString, NSXPCConnection;
+@class NSHashTable, NSMutableDictionary, NSSet, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue, RCSSavedRecordingServiceProtocol;
 
 @interface RCSSavedRecordingService : NSObject <RCSSavedRecordingServiceClientProtocol, RCSSavedRecordingServiceProtocol>
@@ -21,6 +21,7 @@
     NSXPCConnection *_xpcConnection;
     id <RCSSavedRecordingServiceProtocol> _serviceProxy;
     id <RCSSavedRecordingServiceProtocol> _synchronousServiceProxy;
+    NSHashTable *_interruptionObservers;
     NSMutableDictionary *_pendingServiceCompletionHandlers;
     NSMutableDictionary *_pendingSynchronousServiceCompletionHandlers;
     NSSet *_compositionAVURLsBeingExported;
@@ -31,17 +32,17 @@
 + (void)setChangeToken:(id)arg1;
 + (id)changeToken;
 + (id)sharedService;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) NSSet *compositionAVURLsBeingModified; // @synthesize compositionAVURLsBeingModified=_compositionAVURLsBeingModified;
 @property(retain, nonatomic) NSSet *compositionAVURLsBeingExported; // @synthesize compositionAVURLsBeingExported=_compositionAVURLsBeingExported;
-- (void).cxx_destruct;
 - (void)_handleCompositionAVURLsBeingModifiedDidChange;
 - (void)_handleCompositionAVURLsBeingExportedDidChange;
 - (void)_invalidatePendingSynchronousCompletionHandlersWithError:(id)arg1;
 - (void)_onQueueInvalidatePendingCompletionHandlerWithToken:(id)arg1 withError:(id)arg2;
 - (void)_onQueueInvalidatePendingCompletionHandlersWithError:(id)arg1;
-- (void)_onQueueRemovePendingServiceMessageReplyBlockInvalidationHandlerForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)_onQueueAddPendingServiceMessageReplyBlockInvalidationHandler:(CDUnknownBlockType)arg1;
+- (void)_onQueueRemovePendingServiceMessageReplyBlockInvalidationHandlerForToken:(id)arg1;
+- (id)_onQueueAddPendingServiceMessageReplyBlockInvalidationHandler:(CDUnknownBlockType)arg1;
 - (void)_sendSynchronousServiceMessage:(SEL)arg1 withBasicReplyBlock:(CDUnknownBlockType)arg2 messagingBlock:(CDUnknownBlockType)arg3;
 - (void)_sendServiceMessage:(SEL)arg1 withBasicReplyBlock:(CDUnknownBlockType)arg2 messagingBlock:(CDUnknownBlockType)arg3;
 - (void)_sendServiceMessage:(SEL)arg1 withBasicReplyBlock:(CDUnknownBlockType)arg2 withServiceProxy:(id)arg3 messagingBlock:(CDUnknownBlockType)arg4;
@@ -95,6 +96,8 @@
 @property(readonly, nonatomic) BOOL isDatabaseAvailable;
 - (void)dealloc;
 - (id)init;
+- (void)removeInterruptionObserver:(id)arg1;
+- (void)addInterruptionObserver:(id)arg1;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 
 // Remaining properties

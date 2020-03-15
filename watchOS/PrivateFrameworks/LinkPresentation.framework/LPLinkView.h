@@ -75,6 +75,7 @@
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(nonatomic) __weak id <LPLinkViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -92,7 +93,6 @@
 @property(nonatomic, setter=_setDisableTapGesture:) _Bool _disableTapGesture; // @synthesize _disableTapGesture;
 @property(nonatomic, setter=_setNeedsMessagesTranscriptPushCounterAnimation:) _Bool _needsMessagesTranscriptPushCounterAnimation; // @synthesize _needsMessagesTranscriptPushCounterAnimation;
 @property(nonatomic, setter=_setDisableAnimations:) _Bool _disableAnimations; // @synthesize _disableAnimations;
-- (void).cxx_destruct;
 - (void)_uninstallPreviewGestureRecognizer;
 - (void)_installPreviewGestureRecognizer;
 - (void)tapToLoadViewWasTapped:(id)arg1;

@@ -26,6 +26,7 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *country; // @synthesize country=_country;
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) _SFPBLatLng *location; // @synthesize location=_location;
 @property(retain, nonatomic) _SFPBTimeZone *timezone; // @synthesize timezone=_timezone;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

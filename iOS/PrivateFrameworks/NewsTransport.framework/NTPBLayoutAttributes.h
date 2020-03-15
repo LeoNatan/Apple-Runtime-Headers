@@ -187,6 +187,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float accessoryRightPadding; // @synthesize accessoryRightPadding=_accessoryRightPadding;
 @property(nonatomic) float accessoryLeftPadding; // @synthesize accessoryLeftPadding=_accessoryLeftPadding;
 @property(nonatomic) float accessoryTopPadding; // @synthesize accessoryTopPadding=_accessoryTopPadding;
@@ -280,7 +281,6 @@
 @property(nonatomic) float frameWidth; // @synthesize frameWidth=_frameWidth;
 @property(nonatomic) float frameY; // @synthesize frameY=_frameY;
 @property(nonatomic) float frameX; // @synthesize frameX=_frameX;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

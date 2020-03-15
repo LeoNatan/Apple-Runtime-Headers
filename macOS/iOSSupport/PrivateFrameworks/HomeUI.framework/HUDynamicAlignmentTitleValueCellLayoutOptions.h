@@ -14,9 +14,9 @@
     NSString *_longestPossibleTitleText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *longestPossibleTitleText; // @synthesize longestPossibleTitleText=_longestPossibleTitleText;
 @property(retain, nonatomic) NSString *longestPossibleValueText; // @synthesize longestPossibleValueText=_longestPossibleValueText;
-- (void).cxx_destruct;
 - (id)initWithCellSizeSubclass:(long long)arg1 longestPossibleValueText:(id)arg2 longestPossibleTitleText:(id)arg3;
 
 @end

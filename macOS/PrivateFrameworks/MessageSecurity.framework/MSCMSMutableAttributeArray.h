@@ -13,10 +13,10 @@
     NSMutableArray *_genericAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *genericAttributes; // @synthesize genericAttributes=_genericAttributes;
 @property struct Attribute *encodedAttributes; // @synthesize encodedAttributes=_encodedAttributes;
 @property(retain) NSMutableArray *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)getAttributesWithType:(id)arg1;
 - (id)calculateAttributesWithDigest:(id)arg1 error:(id *)arg2;
 - (struct Attribute *)encodeAttributesWithError:(id *)arg1;

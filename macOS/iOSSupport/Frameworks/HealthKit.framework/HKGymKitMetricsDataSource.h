@@ -23,10 +23,10 @@
 
 + (id)serverInterface;
 + (id)clientInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKTaskServerProxyProvider *proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <HKGymKitMetricsDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_startTaskServerIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)connectionInterrupted;
 - (void)connectionInvalidated;

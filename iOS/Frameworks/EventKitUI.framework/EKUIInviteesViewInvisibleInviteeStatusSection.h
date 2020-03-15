@@ -22,6 +22,7 @@
     CDUnknownBlockType _tableViewCellHook;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
 @property(copy, nonatomic) CDUnknownBlockType tableViewCellHook; // @synthesize tableViewCellHook=_tableViewCellHook;
 @property(nonatomic) unsigned long long reuseIdentifierVersion; // @synthesize reuseIdentifierVersion=_reuseIdentifierVersion;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableArray *participants; // @synthesize participants=_participants;
 @property(copy, nonatomic) CDUnknownBlockType participantRemoved; // @synthesize participantRemoved=_participantRemoved;
 @property(copy, nonatomic) CDUnknownBlockType participantTapped; // @synthesize participantTapped=_participantTapped;
-- (void).cxx_destruct;
 - (_Bool)_isValidRow:(long long)arg1;
 - (void)updateWithEvent:(id)arg1 editable:(_Bool)arg2 fromDetail:(_Bool)arg3;
 - (id)actionsForRow:(id)arg1;

@@ -22,9 +22,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastOffWristDate; // @synthesize lastOffWristDate=_lastOffWristDate;
 @property(retain) NSDate *lastOnWristDate; // @synthesize lastOnWristDate=_lastOnWristDate;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)onWristMonitor:(id)arg1 didUpdateOnWristState:(id)arg2 fromState:(id)arg3;

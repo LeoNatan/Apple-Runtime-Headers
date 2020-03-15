@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     _Bool _hasPreferredAppLink;
 }
 
-@property(readonly, nonatomic) _Bool hasPreferredAppLink; // @synthesize hasPreferredAppLink=_hasPreferredAppLink;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasPreferredAppLink; // @synthesize hasPreferredAppLink=_hasPreferredAppLink;
 - (_Bool)_isCodeFromQRScanner;
 - (_Bool)_shouldBlockHandlingURL:(id)arg1;
 - (_Bool)_shouldOpenInAppForAppLink:(id)arg1;

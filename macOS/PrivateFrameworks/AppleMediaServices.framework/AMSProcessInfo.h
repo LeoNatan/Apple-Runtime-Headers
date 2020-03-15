@@ -43,6 +43,7 @@
 + (BOOL)boolForEntitlement:(id)arg1;
 + (BOOL)isBuddyRunning;
 + (id)currentProcess;
+- (void).cxx_destruct;
 @property(readonly) AMSMappedBundleInfo *mappedBundleInfo; // @synthesize mappedBundleInfo=_mappedBundleInfo;
 @property(retain) NSString *proxyAppBundleID; // @synthesize proxyAppBundleID=_proxyAppBundleID;
 @property(retain) NSString *localizedName; // @synthesize localizedName=_localizedName;
@@ -52,7 +53,6 @@
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSData *auditTokenData; // @synthesize auditTokenData=_auditTokenData;
 @property(retain) NSString *accountMediaType; // @synthesize accountMediaType=_accountMediaType;
-- (void).cxx_destruct;
 - (id)generateConfigurationFromBagContract:(id)arg1;
 - (id)generateConfigurationFromBag:(id)arg1;
 - (id)generateConfiguration;

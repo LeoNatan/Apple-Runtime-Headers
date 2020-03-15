@@ -12,9 +12,9 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) BOOL blockCompleted; // @synthesize blockCompleted=_blockCompleted;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithDataSource:(id)arg1 block:(CDUnknownBlockType)arg2;

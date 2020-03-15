@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 + (id)urlsForBookmarks:(id)arg1 withTitles:(id *)arg2;
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *syncData; // @synthesize syncData=_syncData;
 @property(copy, nonatomic) NSString *syncKey; // @synthesize syncKey=_syncKey;
 @property(copy, nonatomic) NSDictionary *syncExtraAttributes; // @synthesize syncExtraAttributes=_syncExtraAttributes;
@@ -64,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(setter=_setParent:) __weak WebBookmarkList *parent; // @synthesize parent=_parent;
 @property(nonatomic) __weak WebBookmarkGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (void)_updateStateHash:(struct SHA256 *)arg1;
 - (BOOL)_looksLikeTopLevelBookmarkFolderWithTitle:(id)arg1;
 - (BOOL)_canLookLikeTopLevelBookmarkFolder;

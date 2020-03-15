@@ -15,10 +15,10 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool closed; // @synthesize closed=_closed;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) CKSQLiteStatement *statement; // @synthesize statement=_statement;
-- (void).cxx_destruct;
 - (void)close;
 - (id)nextObject;
 - (void)dealloc;

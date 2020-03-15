@@ -22,6 +22,7 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *durationGradientImage; // @synthesize durationGradientImage=_durationGradientImage;
 @property(retain, nonatomic) UILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
-- (void).cxx_destruct;
 - (void)_configureDurationLabelForResult:(id)arg1;
 - (void)_videoDurationUpdated:(id)arg1;
 - (void)_livePhotoUpdated:(id)arg1;

@@ -17,8 +17,8 @@
 
 + (void)_updateEventStatsWithFetchTombstonesTotal:(unsigned int)arg1 streamNameCounts:(id)arg2;
 + (void)_updateEventStatsWithFetchEventsTotal:(unsigned int)arg1 streamNameCounts:(id)arg2;
-@property(retain, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (_Bool)deleteEventsWithEventIDs:(id)arg1 error:(id *)arg2;
 - (_Bool)saveEvents:(id)arg1 error:(id *)arg2;
 - (id)deletionsSyncHistoryForPeer:(id)arg1 transportName:(id)arg2 error:(id *)arg3;

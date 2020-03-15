@@ -35,6 +35,7 @@
     struct CGRect _unionDrawingRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AKSignatureViewLiveDelegate> liveDelegate; // @synthesize liveDelegate=_liveDelegate;
 @property(nonatomic) struct CGRect unionDrawingRect; // @synthesize unionDrawingRect=_unionDrawingRect;
 @property(nonatomic) struct CGRect aggregateInvalid; // @synthesize aggregateInvalid=_aggregateInvalid;
@@ -53,7 +54,6 @@
 @property(nonatomic) double maxPressure; // @synthesize maxPressure=_maxPressure;
 @property(nonatomic) double minPressure; // @synthesize minPressure=_minPressure;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
-- (void).cxx_destruct;
 - (void)handleCoalescedTouches:(id)arg1 forTouch:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

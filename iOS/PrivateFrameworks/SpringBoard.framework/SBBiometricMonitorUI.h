@@ -21,8 +21,8 @@
     id <SBBiometricMonitorDataSource> _dataSource;
 }
 
-@property(retain, nonatomic) id <SBBiometricMonitorDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SBBiometricMonitorDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)biometricMonitorDataSourcePoseUpdated:(id)arg1;
 - (void)biometricMonitorDataSourcePresenceDetectionEnded:(id)arg1;
 - (void)biometricMonitorDataSourcePresenceDetectionSucceeded:(id)arg1;

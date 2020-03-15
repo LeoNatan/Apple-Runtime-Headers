@@ -18,8 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <_CRKSendMessageCardFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_CRKSendMessageCardFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *serviceIdentifier;

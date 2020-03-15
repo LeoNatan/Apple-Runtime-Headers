@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setConstraints:) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImage *videoThumbnail; // @synthesize videoThumbnail=_videoThumbnail;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_updateConstraintsIfNeeded;
 - (void)_invalidateConstraints;

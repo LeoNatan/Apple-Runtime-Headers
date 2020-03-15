@@ -19,6 +19,7 @@
     HUDynamicStateAnimationApplier *_speedRampApplier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUDynamicStateAnimationApplier *speedRampApplier; // @synthesize speedRampApplier=_speedRampApplier;
 @property(nonatomic) double rotationSpeed; // @synthesize rotationSpeed=_rotationSpeed;
 @property(nonatomic) unsigned long long rotationState; // @synthesize rotationState=_rotationState;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UIVisualEffectView *baseVisualEffectView; // @synthesize baseVisualEffectView=_baseVisualEffectView;
 @property(retain, nonatomic) HUNonAnimatingTintImageView *bladesView; // @synthesize bladesView=_bladesView;
 @property(retain, nonatomic) UIImageView *baseView; // @synthesize baseView=_baseView;
-- (void).cxx_destruct;
 - (void)_setBladesLayerSpeed:(float)arg1;
 - (void)_rampBladesLayerToRotationSpeedAnimated:(BOOL)arg1;
 - (void)_updateImages;

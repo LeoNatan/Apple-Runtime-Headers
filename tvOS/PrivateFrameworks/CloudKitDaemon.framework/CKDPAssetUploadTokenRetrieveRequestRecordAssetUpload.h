@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)assetFieldsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *assetFields; // @synthesize assetFields=_assetFields;
 @property(retain, nonatomic) CKDPRecordType *type; // @synthesize type=_type;
 @property(retain, nonatomic) CKDPRecordIdentifier *recordId; // @synthesize recordId=_recordId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

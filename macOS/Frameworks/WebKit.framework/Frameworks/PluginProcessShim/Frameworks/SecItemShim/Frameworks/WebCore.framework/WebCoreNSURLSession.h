@@ -17,7 +17,7 @@
     struct RetainPtr<NSString> _sessionDescription;
     struct HashSet<WTF::RetainPtr<const void *>, WTF::PtrHash<WTF::RetainPtr<const void *>>, WTF::HashTraits<WTF::RetainPtr<const void *>>> _dataTasks;
     struct HashSet<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>> _origins;
-    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: _dataTasksLock
+    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"{__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >="__a_value"AC}}}}, name: _dataTasksLock
     BOOL _invalidated;
     unsigned long long _nextTaskIdentifier;
     struct OSObjectPtr<NSObject<OS_dispatch_queue>*> _internalQueue;
@@ -43,10 +43,10 @@
 - (void)resetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)invalidateAndCancel;
 - (void)finishTasksAndInvalidate;
--     // Error parsing type: c24@0:8r^{SecurityOrigin={atomic<unsigned int>=AI}{SecurityOriginData={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{Optional<unsigned short>=B(constexpr_storage_t<unsigned short>=CS)}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}BBBBiBBBB}16, name: wouldTaintOrigin:
+-     // Error parsing type: c24@0:8r^{SecurityOrigin={atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}{SecurityOriginData={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{Optional<unsigned short>=B(constexpr_storage_t<unsigned short>=CS)}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}BBBBiBBBB}16, name: wouldTaintOrigin:
 @property(readonly) BOOL didPassCORSAccessChecks; // @dynamic didPassCORSAccessChecks;
 // Error parsing type for property loader:
-// Property attributes: T^{PlatformMediaResourceLoader=^^?{atomic<unsigned int>=AI}},R,D
+// Property attributes: T^{PlatformMediaResourceLoader=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}},R,D
 
 @property(copy) NSString *sessionDescription;
 @property(readonly, copy) NSURLSessionConfiguration *configuration; // @dynamic configuration;
@@ -58,7 +58,7 @@
 - (void)taskCompleted:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
--     // Error parsing type: @40@0:8^{PlatformMediaResourceLoader=^^?{atomic<unsigned int>=AI}}16@24@32, name: initWithResourceLoader:delegate:delegateQueue:
+-     // Error parsing type: @40@0:8^{PlatformMediaResourceLoader=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}16@24@32, name: initWithResourceLoader:delegate:delegateQueue:
 
 @end
 

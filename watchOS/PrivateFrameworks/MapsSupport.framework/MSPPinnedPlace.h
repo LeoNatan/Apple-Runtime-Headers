@@ -21,8 +21,8 @@
 + (Class)mutableObjectClass;
 + (id)immutableObjectProtocol;
 + (Class)immutableObjectClass;
-- (id)storageIdentifier;
 - (void).cxx_destruct;
+- (id)storageIdentifier;
 @property(readonly, copy) NSString *description;
 - (id)copyIfValidWithError:(out id *)arg1;
 - (id)transferToImmutableIfValidWithError:(out id *)arg1;

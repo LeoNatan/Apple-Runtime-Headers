@@ -21,13 +21,13 @@
 
 + (id)descriptorWithTitle:(id)arg1 style:(unsigned long long)arg2 userInfo:(id)arg3 block:(CDUnknownBlockType)arg4;
 + (id)descriptorWithTitle:(id)arg1 style:(unsigned long long)arg2 target:(id)arg3 action:(SEL)arg4 userInfo:(id)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(copy, nonatomic) id <NSCopying> userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)execute;
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) UIColor *textColor;

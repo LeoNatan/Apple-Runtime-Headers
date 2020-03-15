@@ -58,6 +58,7 @@
     NSString *_role;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *role; // @synthesize role=_role;
 @property BOOL apfsConvertible; // @synthesize apfsConvertible=_apfsConvertible;
 @property BOOL partitionMapIsIncorrectlySized; // @synthesize partitionMapIsIncorrectlySized=_partitionMapIsIncorrectlySized;
@@ -102,7 +103,6 @@
 @property BOOL isValid; // @synthesize isValid=_isValid;
 @property(retain) NSString *filesystemType; // @synthesize filesystemType=_filesystemType;
 @property(retain) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_DAVolumeUUIDForDisk:(id)arg1;
 - (id)_DAVolumeUUIDForDiskIdentifier:(id)arg1;
 - (id)description;

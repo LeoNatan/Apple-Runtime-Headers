@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
     double _rotationHysteresisDegrees;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double rotationHysteresisDegrees; // @synthesize rotationHysteresisDegrees=_rotationHysteresisDegrees;
 @property(nonatomic) _Bool allowTrackingOutside; // @synthesize allowTrackingOutside=_allowTrackingOutside;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
-- (void).cxx_destruct;
 - (void)_transformPinchLocation1:(struct CGPoint)arg1 location2:(struct CGPoint)arg2 intoCenter:(struct CGPoint *)arg3 distance:(double *)arg4 angle:(double *)arg5;
 - (void)setPinchLocation1:(struct CGPoint)arg1 location2:(struct CGPoint)arg2;
 - (id)initWithInitialCenter:(struct CGPoint)arg1 initialSize:(struct CGSize)arg2 initialTransform:(struct CGAffineTransform)arg3;

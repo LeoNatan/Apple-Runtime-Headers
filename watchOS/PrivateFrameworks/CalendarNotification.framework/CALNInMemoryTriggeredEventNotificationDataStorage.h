@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSMutableDictionary *notificationDataMap; // @synthesize notificationDataMap=_notificationDataMap;
-- (void).cxx_destruct;
 - (void)removeNotificationData;
 - (void)removeNotificationDataWithIdentifier:(id)arg1;
 - (id)notificationDataWithIdentifier:(id)arg1;

@@ -18,12 +18,14 @@
     id <ASWebAuthenticationPresentationContextProviding> _presentationContextProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prefersEphemeralWebBrowserSession; // @synthesize prefersEphemeralWebBrowserSession=_prefersEphemeralWebBrowserSession;
 @property(nonatomic) __weak id <ASWebAuthenticationPresentationContextProviding> presentationContextProvider; // @synthesize presentationContextProvider=_presentationContextProvider;
-- (void).cxx_destruct;
 - (void)_invalidate;
 - (void)cancel;
+- (_Bool)_startDryRun:(_Bool)arg1;
 - (_Bool)start;
+@property(readonly, nonatomic) _Bool canStart;
 - (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 usingEphemeralSession:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

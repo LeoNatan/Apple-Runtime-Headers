@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSURL *_keyServerURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSURL *keyServerURL; // @synthesize keyServerURL=_keyServerURL;
 @property(readonly, retain, nonatomic) NSURL *keyCertificateURL; // @synthesize keyCertificateURL=_keyCertificateURL;
 @property(readonly, nonatomic, getter=isITunesStream) _Bool ITunesStream; // @synthesize ITunesStream=_ITunesStream;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double playbackDuration; // @synthesize playbackDuration=_playbackDuration;
 @property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(nonatomic) double initialPlaybackTime; // @synthesize initialPlaybackTime=_initialPlaybackTime;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

@@ -17,12 +17,12 @@
     NSStepper *_copiesStepper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSStepper *copiesStepper; // @synthesize copiesStepper=_copiesStepper;
 @property(readonly, nonatomic) NSTextField *copiesField; // @synthesize copiesField=_copiesField;
 @property(readonly, nonatomic) NSTextField *copiesLabel; // @synthesize copiesLabel=_copiesLabel;
 @property(readonly, nonatomic) NSArrayController *layoutsController; // @synthesize layoutsController=_layoutsController;
 @property(retain, nonatomic) NSArray *frames; // @synthesize frames=_frames;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

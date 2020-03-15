@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     RadiosPreferences *_radioPreferences;
 }
 
-@property(retain, nonatomic) RadiosPreferences *radioPreferences; // @synthesize radioPreferences=_radioPreferences;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RadiosPreferences *radioPreferences; // @synthesize radioPreferences=_radioPreferences;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)specifiers;
 - (void)reloadCache;

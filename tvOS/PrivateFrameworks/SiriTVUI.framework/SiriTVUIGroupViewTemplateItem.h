@@ -15,10 +15,10 @@
     unsigned long long _alignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(copy, nonatomic) NSArray *templateItems; // @synthesize templateItems=_templateItems;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithTemplateItems:(id)arg1;
 - (id)initWithTemplateItems:(id)arg1 layoutStyle:(unsigned long long)arg2;

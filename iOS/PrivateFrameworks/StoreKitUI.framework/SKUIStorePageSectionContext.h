@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     long long _layoutStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUILayoutCache *textLayoutCache; // @synthesize textLayoutCache=_textLayoutCache;
 @property(readonly, nonatomic) SKUIResourceLoader *resourceLoader; // @synthesize resourceLoader=_resourceLoader;
 @property(readonly, nonatomic) double portraitPageWidth; // @synthesize portraitPageWidth=_portraitPageWidth;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(readonly, nonatomic) double activePageWidth; // @synthesize activePageWidth=_activePageWidth;
 @property(readonly, nonatomic) SKUIMetricsImpressionSession *activeMetricsImpressionSession; // @synthesize activeMetricsImpressionSession=_activeMetricsImpressionSession;
-- (void).cxx_destruct;
 - (void)_setTextLayoutCache:(id)arg1;
 - (void)_setResourceLoader:(id)arg1;
 - (void)_setPortraitPageWidth:(double)arg1;

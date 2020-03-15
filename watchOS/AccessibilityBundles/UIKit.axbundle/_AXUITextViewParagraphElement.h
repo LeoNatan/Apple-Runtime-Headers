@@ -16,12 +16,13 @@
     struct _NSRange _textRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *links; // @synthesize links=_links;
 @property(readonly, nonatomic) struct _NSRange textRange; // @synthesize textRange=_textRange;
-- (void).cxx_destruct;
 - (_Bool)accessibilityActivate;
 - (struct CGRect)accessibilityFrame;
 - (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (id)accessibilityElements;
 - (id)_accessibilityUserTestingChildren;
 - (id)accessibilityHint;
 - (id)accessibilityLabel:(id)arg1;

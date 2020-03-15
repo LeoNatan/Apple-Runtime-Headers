@@ -16,10 +16,10 @@
 }
 
 + (_Bool)prefersNonBlockingReloads;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *linkedApplicationItems; // @synthesize linkedApplicationItems=_linkedApplicationItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)_generateItemsFromSoftwareLookupResult:(id)arg1;
 - (id)reloadItems;
 - (id)invalidationReasons;

@@ -9,7 +9,7 @@
 #import <HealthDaemon/NSCopying-Protocol.h>
 #import <HealthDaemon/NSMutableCopying-Protocol.h>
 
-@class NSMutableSet, NSSet;
+@class HDDatabaseTransactionContextStatistics, NSMutableSet, NSSet;
 
 @interface HDDatabaseTransactionContext : NSObject <NSCopying, NSMutableCopying>
 {
@@ -17,6 +17,7 @@
     int _cacheScope;
     unsigned int _options;
     NSMutableSet *_accessibilityAssertions;
+    HDDatabaseTransactionContextStatistics *_statistics;
 }
 
 + (id)highPriorityContext;
@@ -25,9 +26,10 @@
 + (id)contextForWritingProtectedData;
 + (id)contextForWriting;
 + (id)_cachedContextForOptions:(unsigned int)arg1;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) HDDatabaseTransactionContextStatistics *statistics; // @synthesize statistics=_statistics;
 @property(readonly, nonatomic) int cacheScope; // @synthesize cacheScope=_cacheScope;
 @property(readonly, nonatomic) int journalType; // @synthesize journalType=_journalType;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
@@ -46,7 +48,7 @@
 - (id)copyForReadingProtectedData;
 - (id)copyForWritingProtectedData;
 - (id)copyForWriting;
-- (id)_initWithOptions:(unsigned int)arg1 journalType:(int)arg2 cacheScope:(int)arg3 assertions:(id)arg4;
+- (id)_initWithOptions:(unsigned int)arg1 journalType:(int)arg2 cacheScope:(int)arg3 assertions:(id)arg4 statistics:(id)arg5;
 - (id)_initWithOptions:(unsigned int)arg1;
 - (id)init;
 

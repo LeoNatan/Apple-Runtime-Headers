@@ -17,6 +17,7 @@
     NSString *_clientZoneIdentifier;
 }
 
++ (int)rampNumber;
 + (void)saveServerConfigToDB:(id)arg1;
 + (void)loadCachedServerConfigFromDB:(id)arg1;
 + (void)reset;
@@ -27,19 +28,14 @@
 + (id)defaultsForMangledID:(id)arg1;
 + (id)_userDefaultsManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool changeItemIDOnUnknownItem;
+@property(readonly, nonatomic) _Bool forceFailIfExistOnRevival;
+@property(readonly, nonatomic) long long delayForStuckThrottle;
+@property(readonly, nonatomic) _Bool pcsChainShareAliases;
+@property(readonly, nonatomic) unsigned long long maxBackoffToRetryUserInitiated;
 @property(readonly, nonatomic) NSArray *carryPartitions;
-- (int)aggressiveChainInternalCarryRampPercentage;
-- (int)aggressiveChainInternalRampPercentage;
-- (int)aggressiveChainCarryRampPercentage;
-- (int)aggressiveChainRampPercentage;
-- (int)optimisticChainInternalCarryRampPercentage;
-- (int)optimisticChainInternalRampPercentage;
-- (int)optimisticChainCarryRampPercentage;
-- (int)optimisticChainRampPercentage;
-- (int)folderSharingInternalCarryRampPercentage;
-- (int)folderSharingInternalRampPercentage;
-- (int)folderSharingCarryRampPercentage;
-- (int)folderSharingRampPercentage;
+@property(readonly, nonatomic) _Bool shouldMigrateFetchShareAliases;
+@property(readonly, nonatomic) _Bool useShareReferenceOnSideCar;
 @property(readonly, nonatomic) NSString *fakeEtagForFailIfOutdated;
 @property(readonly, nonatomic) _Bool useFailIfOutdatedForResets;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *analyticsReportXPCActivity;
@@ -69,6 +65,7 @@
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *aggressivePCSChainActivity;
 @property(readonly, nonatomic) _Bool aggressivelyPCSChain;
 @property(readonly, nonatomic) _Bool optimisticallyPCSChain;
+- (_Bool)_shouldRampForKey:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldAutoMigrateToCloudDocs;
 @property(readonly, nonatomic) unsigned int ignoredQuarantineMask;
 @property(readonly, nonatomic) NSSet *excludedExtensionsWorthPreserving;
@@ -150,6 +147,7 @@
 @property(readonly, nonatomic) unsigned long long fseventQueueBufferSize;
 @property(readonly, nonatomic) double fseventsResetBackoff;
 @property(readonly, nonatomic) double fseventsLatency;
+@property(readonly, nonatomic) double markChildLostBackoff;
 @property(readonly, nonatomic) double readerLostItemBackoff;
 @property(readonly, nonatomic) int writerApplyBatchSize;
 @property(readonly, nonatomic) double readerPackageProcessingDelay;

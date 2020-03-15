@@ -19,8 +19,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic, setter=_setImage:) INImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setImage:) INImage *image; // @synthesize image=_image;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -29,7 +29,7 @@
 @property(readonly) unsigned long long hash;
 - (id)initWithImage:(id)arg1;
 - (id)_initWithImage:(id)arg1;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

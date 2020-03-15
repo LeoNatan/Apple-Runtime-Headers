@@ -29,6 +29,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) ACAccount *loggedInAccount; // @synthesize loggedInAccount=_loggedInAccount;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) HMDRemoteLoginReceiver *receiver; // @synthesize receiver=_receiver;
 @property(readonly, nonatomic) HMDRemoteLoginInitiator *initiator; // @synthesize initiator=_initiator;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSSet *messageReceiverChildren;

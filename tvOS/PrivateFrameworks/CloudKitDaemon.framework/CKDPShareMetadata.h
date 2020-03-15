@@ -27,12 +27,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRecordType *rootRecordType; // @synthesize rootRecordType=_rootRecordType;
 @property(retain, nonatomic) CKDPParticipant *callerParticipant; // @synthesize callerParticipant=_callerParticipant;
 @property(retain, nonatomic) CKDPParticipant *ownerParticipant; // @synthesize ownerParticipant=_ownerParticipant;
 @property(retain, nonatomic) NSData *protectedFullToken; // @synthesize protectedFullToken=_protectedFullToken;
 @property(retain, nonatomic) NSString *routingKey; // @synthesize routingKey=_routingKey;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

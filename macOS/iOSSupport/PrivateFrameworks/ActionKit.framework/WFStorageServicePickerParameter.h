@@ -15,8 +15,8 @@
 }
 
 + (id)referencedActionResourceClasses;
-@property(retain, nonatomic) WFiCloudDriveAccessResource *iCloudDriveAccessResource; // @synthesize iCloudDriveAccessResource=_iCloudDriveAccessResource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFiCloudDriveAccessResource *iCloudDriveAccessResource; // @synthesize iCloudDriveAccessResource=_iCloudDriveAccessResource;
 - (id)defaultSerializedRepresentation;
 - (id)localizedLabelForPossibleState:(id)arg1;
 - (id)defaultSupportedVariableTypes;

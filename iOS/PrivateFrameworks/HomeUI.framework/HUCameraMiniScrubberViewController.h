@@ -26,6 +26,7 @@
     HUBlendedSeparatorView *_rightBlendedSeparator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUBlendedSeparatorView *rightBlendedSeparator; // @synthesize rightBlendedSeparator=_rightBlendedSeparator;
 @property(retain, nonatomic) NSDate *clipStartDate; // @synthesize clipStartDate=_clipStartDate;
 @property(nonatomic) _Bool isScrubbing; // @synthesize isScrubbing=_isScrubbing;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) AVBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) HUMiniScrubber *playbackPositionSlider; // @synthesize playbackPositionSlider=_playbackPositionSlider;
 @property(retain, nonatomic) UIButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
-- (void).cxx_destruct;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateClipManager:(id)arg2;

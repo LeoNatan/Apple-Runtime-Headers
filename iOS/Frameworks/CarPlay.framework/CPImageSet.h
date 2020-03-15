@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *darkContentImage; // @synthesize darkContentImage=_darkContentImage;
 @property(retain, nonatomic) UIImage *lightContentImage; // @synthesize lightContentImage=_lightContentImage;
-- (void).cxx_destruct;
 - (void)swapStyles;
 - (id)image;
 - (id)initWithImage:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
-- (void).cxx_destruct;
 
 @end
 

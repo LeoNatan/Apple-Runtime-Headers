@@ -21,13 +21,13 @@
     UIView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool shouldUsePadLayout; // @synthesize shouldUsePadLayout=_shouldUsePadLayout;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) _Bool shouldPresentFullscreen; // @synthesize shouldPresentFullscreen=_shouldPresentFullscreen;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerWillDismissBlock; // @synthesize viewControllerWillDismissBlock=_viewControllerWillDismissBlock;
 @property(nonatomic) __weak id <IAMViewControllerMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

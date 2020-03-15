@@ -18,12 +18,12 @@
 }
 
 + (id)descriptionForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(readonly) UIImage *badgeImage; // @synthesize badgeImage=_badgeImage;
 @property(readonly) unsigned long long badgeSizeClass; // @synthesize badgeSizeClass=_badgeSizeClass;
 @property(readonly) struct CGPoint badgeOffset; // @synthesize badgeOffset=_badgeOffset;
 @property(readonly) double shadowSize; // @synthesize shadowSize=_shadowSize;
 @property(readonly) struct CGSize badgeSize; // @synthesize badgeSize=_badgeSize;
-- (void).cxx_destruct;
 - (id)initWithSizeClass:(unsigned long long)arg1;
 
 @end

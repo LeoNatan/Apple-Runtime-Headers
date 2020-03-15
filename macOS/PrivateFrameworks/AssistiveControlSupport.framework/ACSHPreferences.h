@@ -16,8 +16,8 @@
 + (id)inMemoryPeferenceSourceWithOverrides:(id)arg1;
 + (id)userDefaultsPreferencesSource;
 + (id)preferenceDefaults;
-@property(retain, nonatomic) ACSHPreferencesSource *preferencesSource; // @synthesize preferencesSource=_preferencesSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACSHPreferencesSource *preferencesSource; // @synthesize preferencesSource=_preferencesSource;
 - (id)initWithPreferencesSource:(id)arg1;
 
 @end

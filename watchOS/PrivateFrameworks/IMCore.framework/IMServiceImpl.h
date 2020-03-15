@@ -75,6 +75,7 @@
 + (id)allServices;
 + (void)setServiceClass:(Class)arg1;
 + (Class)serviceClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *shortName; // @synthesize shortName=_localizedShortName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *emailDomains; // @synthesize emailDomains=_emailDomains;
@@ -99,7 +100,6 @@
 @property(readonly, nonatomic) _Bool supportsIDStatusLookup; // @synthesize supportsIDStatusLookup=_supportsIDStatusLookup;
 @property(retain, nonatomic) NSDictionary *defaultAccountSettings; // @synthesize defaultAccountSettings=_defaultSettings;
 @property(retain, nonatomic) NSDictionary *serviceDefaults; // @synthesize serviceDefaults=_serviceDefaults;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) Class accountClass;
 - (void)activeAccountsChanged:(id)arg1;
 - (void)defaultsChanged:(id)arg1;

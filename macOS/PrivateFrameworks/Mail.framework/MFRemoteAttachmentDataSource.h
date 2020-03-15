@@ -20,10 +20,10 @@
 }
 
 + (id)remoteAttachmentDataSourceForMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *attachmentFetchCompletionQueue; // @synthesize attachmentFetchCompletionQueue=_attachmentFetchCompletionQueue;
 @property(readonly, nonatomic) MFLibraryMessage *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
-- (void).cxx_destruct;
 - (void)fetchAttachmentForAccessLevel:(long long)arg1 mimePartNumber:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)_attachmentBecameAvailable:(id)arg1;
 @property(readonly, copy) NSString *description;

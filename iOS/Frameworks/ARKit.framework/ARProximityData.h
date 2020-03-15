@@ -20,13 +20,13 @@
     unsigned long long _vioSessionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long vioSessionID; // @synthesize vioSessionID=_vioSessionID;
 @property(readonly, nonatomic) PRPeer *peer; // @synthesize peer=_peer;
 @property(readonly, nonatomic) PRRelativePosition *measurement; // @synthesize measurement=_measurement;
 @property(nonatomic) double timestampGlobalSync; // @synthesize timestampGlobalSync=_timestampGlobalSync;
 @property(nonatomic) double timestampLocalSync; // @synthesize timestampLocalSync=_timestampLocalSync;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)initWithMeasurement:(id)arg1 peer:(id)arg2 vioSessionID:(unsigned long long)arg3;
 
 // Remaining properties

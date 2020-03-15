@@ -36,6 +36,7 @@
 }
 
 + (id)newContactFormatter;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresMapsData; // @synthesize ignoresMapsData=_ignoresMapsData;
 @property(nonatomic) __weak CNContactViewController *presentedContactViewController; // @synthesize presentedContactViewController=_presentedContactViewController;
 @property(retain, nonatomic) CNContactStoreDataSource *nonServerDataSource; // @synthesize nonServerDataSource=_nonServerDataSource;
@@ -50,7 +51,6 @@
 @property(nonatomic) _Bool allowsCardDeletion; // @synthesize allowsCardDeletion=_allowsCardDeletion;
 @property(nonatomic) _Bool allowsCardEditing; // @synthesize allowsCardEditing=_allowsCardEditing;
 @property(retain, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
-- (void).cxx_destruct;
 - (void)selectPreviousContact:(id)arg1;
 - (void)selectNextContact:(id)arg1;
 - (void)addContact:(id)arg1;

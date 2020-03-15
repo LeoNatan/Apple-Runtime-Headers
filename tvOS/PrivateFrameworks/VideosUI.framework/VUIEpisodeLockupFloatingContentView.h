@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     struct CGSize _shadowCardSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIImage *shadowCardImage; // @synthesize shadowCardImage=_shadowCardImage;
 @property(nonatomic) struct CGSize shadowCardSize; // @synthesize shadowCardSize=_shadowCardSize;
 @property(nonatomic) double shadowAlpha; // @synthesize shadowAlpha=_shadowAlpha;
-- (void).cxx_destruct;
 - (void)floatingContentView:(id)arg1 didFinishTransitioningToState:(unsigned long long)arg2;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)setControlState:(unsigned long long)arg1 animated:(_Bool)arg2;

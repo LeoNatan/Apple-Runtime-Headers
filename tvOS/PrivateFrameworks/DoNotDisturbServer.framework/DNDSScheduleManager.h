@@ -16,8 +16,8 @@
     id <DNDSScheduleManagerDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <DNDSScheduleManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSScheduleManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)_refreshWithScheduleSettings:(id)arg1 context:(id)arg2;
 - (void)refresh;
 - (id)initWithModeAssertionManager:(id)arg1;

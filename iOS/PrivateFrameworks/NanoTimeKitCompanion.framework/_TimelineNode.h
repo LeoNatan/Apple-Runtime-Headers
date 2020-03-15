@@ -14,9 +14,9 @@
     _TimelineNode *_leftNode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TimelineNode *leftNode; // @synthesize leftNode=_leftNode;
 @property(retain, nonatomic) _TimelineNode *rightNode; // @synthesize rightNode=_rightNode;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _TimelineEntryNode *leftEntryNode;
 @property(readonly, nonatomic) _TimelineEntryNode *rightEntryNode;
 

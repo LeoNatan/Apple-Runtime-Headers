@@ -18,11 +18,11 @@
 }
 
 + (unsigned long long)convertLimitableUserInterfaces:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CARSessionStatus *currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(nonatomic) __weak id <CPSessionConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long contentStyle; // @synthesize contentStyle=_contentStyle;
 @property(nonatomic) unsigned long long limitedUserInterfaces; // @synthesize limitedUserInterfaces=_limitedUserInterfaces;
-- (void).cxx_destruct;
 - (void)_nightModeDidChange:(id)arg1;
 - (void)_updateNightMode;
 - (void)_limitedUIDidChange:(id)arg1;

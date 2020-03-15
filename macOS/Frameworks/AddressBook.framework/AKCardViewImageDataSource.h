@@ -14,10 +14,10 @@
     CNContactStore *_contactStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) ABCardViewImage *updatedImage; // @synthesize updatedImage=_updatedImage;
-- (void).cxx_destruct;
-- (id)makeSetImageCommandWithPeople:(id)arg1 image:(id)arg2 shouldSave:(BOOL)arg3;
+- (id)makeSetImageCommandWithPeople:(id)arg1 image:(id)arg2 shouldSave:(BOOL)arg3 ignoresGuardianRestrictions:(BOOL)arg4;
 - (id)initWithContactStore:(id)arg1;
 
 @end

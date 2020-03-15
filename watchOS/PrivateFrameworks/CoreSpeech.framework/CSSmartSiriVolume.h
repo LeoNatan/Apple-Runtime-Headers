@@ -72,12 +72,12 @@
     int _listenPollingTimerCount;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) int listenPollingTimerCount; // @synthesize listenPollingTimerCount=_listenPollingTimerCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *listenPollingTimer; // @synthesize listenPollingTimer=_listenPollingTimer;
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(nonatomic) __weak id <CSSmartSiriVolumeDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (float)_getMusicVolumeDB:(float)arg1;
 - (float)_convertDB2Mag:(float)arg1;
 - (void)_setDefaultParameters;

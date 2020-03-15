@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long FieldURI; // @synthesize FieldURI=_FieldURI;
 @property(copy, nonatomic) NSString *FieldIndex; // @synthesize FieldIndex=_FieldIndex;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

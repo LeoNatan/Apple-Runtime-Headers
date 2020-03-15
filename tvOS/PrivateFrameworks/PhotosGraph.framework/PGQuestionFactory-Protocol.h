@@ -6,10 +6,13 @@
 
 #import <PhotosGraph/NSObject-Protocol.h>
 
-@class NSArray, PGManager, PHFetchResult;
+@class NSArray, PGManager;
 
 @protocol PGQuestionFactory <NSObject>
-- (NSArray *)generateQuestionsWithPersons:(PHFetchResult *)arg1;
+@property(readonly, nonatomic) unsigned short questionType;
+@property(readonly, nonatomic) long long questionOptions;
+- (NSArray *)generateQuestionsWithLimit:(unsigned long long)arg1 progressBlock:(void (^)(double, _Bool *))arg2;
 - (id)initWithManager:(PGManager *)arg1;
+- (id)init;
 @end
 

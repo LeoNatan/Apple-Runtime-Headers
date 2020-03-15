@@ -13,8 +13,8 @@
     MTVisualStyling *_visualStyling;
 }
 
-@property(readonly, nonatomic, getter=_visualStyling) MTVisualStyling *visualStyling; // @synthesize visualStyling=_visualStyling;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_visualStyling) MTVisualStyling *visualStyling; // @synthesize visualStyling=_visualStyling;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

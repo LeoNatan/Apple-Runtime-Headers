@@ -13,8 +13,8 @@
     id <_ASCredentialProviderExtensionConfigurationViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_ASCredentialProviderExtensionConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_ASCredentialProviderExtensionConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)prepareToCompleteExtensionConfigurationRequestWithHost:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_finishWithSuccess:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestDidFailWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;

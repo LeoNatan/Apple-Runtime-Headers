@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSString *timeZoneCityName; // @synthesize timeZoneCityName=_timeZoneCityName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *timeZoneCityName; // @synthesize timeZoneCityName=_timeZoneCityName;
 - (id)cityNameForCityID:(id)arg1;
 @property(copy, nonatomic) NSString *timeZoneCityID;
 @property(nonatomic, getter=isAutomaticTimeZoneSelectionEnabled) _Bool automaticTimeZoneSelectionEnabled;

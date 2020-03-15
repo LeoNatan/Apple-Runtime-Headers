@@ -14,9 +14,9 @@
     UILabel *_subtitleTextLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleTextLabel; // @synthesize subtitleTextLabel=_subtitleTextLabel;
 @property(retain, nonatomic) UILabel *titleTextLabel; // @synthesize titleTextLabel=_titleTextLabel;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setupConstraints;
 - (void)layoutSubviews;

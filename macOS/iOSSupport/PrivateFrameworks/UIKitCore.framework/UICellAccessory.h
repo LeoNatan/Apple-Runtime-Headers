@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)accessoryWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL alwaysNeedsLayout; // @synthesize alwaysNeedsLayout=_alwaysNeedsLayout;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL requestsHuggingLayoutWidth;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)description;

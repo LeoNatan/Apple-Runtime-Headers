@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (id)analysisInfoWithFlags:(unsigned long long)arg1 analysisVersion:(long long)arg2 performedAnalysisTypes:(unsigned long long)arg3 performedAnalysisDate:(id)arg4 qualityScore:(double)arg5 junkScore:(double)arg6 ranges:(id)arg7;
 + (id)descriptionForAnalysisTypes:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray<MiroVPMetadataRangeMergeable> *ranges; // @synthesize ranges=_ranges;
 @property(readonly, nonatomic) double junkScore; // @synthesize junkScore=_junkScore;
 @property(readonly, nonatomic) double qualityScore; // @synthesize qualityScore=_qualityScore;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long analysisVersion; // @synthesize analysisVersion=_analysisVersion;
 @property(readonly, nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) id context; // @synthesize context;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 

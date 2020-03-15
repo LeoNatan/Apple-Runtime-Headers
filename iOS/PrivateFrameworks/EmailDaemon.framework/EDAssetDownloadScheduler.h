@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue;
 @property(nonatomic) long long _backOffFactor; // @synthesize _backOffFactor;
 @property(nonatomic) long long _failureInterval; // @synthesize _failureInterval;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) CDUnknownBlockType _handler; // @synthesize _handler;
 @property(copy, nonatomic) NSString *_lastFailureIntervalKey; // @synthesize _lastFailureIntervalKey;
 @property(copy, nonatomic) NSString *_identifier; // @synthesize _identifier;
-- (void).cxx_destruct;
 - (long long)_nextFailureInterval;
 @property(readonly, nonatomic) CDUnknownBlockType activityHandlerBlock;
 - (id)_xpcCriteriaForInterval:(long long)arg1;

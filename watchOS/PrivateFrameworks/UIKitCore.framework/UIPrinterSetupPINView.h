@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     int _failedAttemptCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int failedAttemptCount; // @synthesize failedAttemptCount=_failedAttemptCount;
 @property(retain, nonatomic) UIImageView *failedBackground; // @synthesize failedBackground=_failedBackground;
 @property(retain, nonatomic) UILabel *failedLabel; // @synthesize failedLabel=_failedLabel;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIPasscodeField *passcodeField; // @synthesize passcodeField=_passcodeField;
 @property(retain, nonatomic) UILabel *enterLabel; // @synthesize enterLabel=_enterLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)textDidChange:(id)arg1;
 - (void)showSuccess:(_Bool)arg1;
 - (id)PIN;

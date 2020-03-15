@@ -15,8 +15,8 @@
     SVPlayer *_player;
 }
 
-@property(readonly, nonatomic) SVPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SVPlayer *player; // @synthesize player=_player;
 - (void)seekToStart;
 - (id)initWithPlayer:(id)arg1;
 

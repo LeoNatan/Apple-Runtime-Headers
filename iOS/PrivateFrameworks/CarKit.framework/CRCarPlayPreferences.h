@@ -17,9 +17,9 @@
     id <CRCarPlayPreferencesDelegate> _preferencesDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cachedCarPlayAllowed; // @synthesize cachedCarPlayAllowed=_cachedCarPlayAllowed;
 @property(nonatomic) __weak id <CRCarPlayPreferencesDelegate> preferencesDelegate; // @synthesize preferencesDelegate=_preferencesDelegate;
-- (void).cxx_destruct;
 - (_Bool)isWirelessCarPlayEnabled;
 - (_Bool)isCarPlayAllowed;
 - (_Bool)_isCarPlayAllowed;

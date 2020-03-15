@@ -14,8 +14,8 @@
 }
 
 + (id)feedbackType;
-@property(readonly, nonatomic) NSDictionary *info; // @synthesize info=_info;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *info; // @synthesize info=_info;
 - (id)serverMessage;
 - (id)initWithInfo:(id)arg1;
 

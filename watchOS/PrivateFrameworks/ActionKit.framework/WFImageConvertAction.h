@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 - (_Bool)preserveMetadataWithPreserveMetadata:(_Bool)arg1 imageFormat:(id)arg2;
 - (id)imageQualityWithQuality:(id)arg1 imageFormat:(id)arg2;

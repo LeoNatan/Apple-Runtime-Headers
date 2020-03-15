@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

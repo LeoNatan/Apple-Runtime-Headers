@@ -17,9 +17,9 @@
     NSString *_currentFrameIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentFrameIdentifier; // @synthesize currentFrameIdentifier=_currentFrameIdentifier;
 @property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)setForcedAppearanceWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 appearance:(long long)arg3;
 - (void)overrideUserAgentWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 value:(id *)arg3;
 - (void)overrideSettingWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 setting:(long long)arg3 value:(_Bool *)arg4;

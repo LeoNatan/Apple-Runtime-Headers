@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_mediaEntityTypePredicateForRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool doGeniusMixItemsRequest; // @synthesize doGeniusMixItemsRequest=_doGeniusMixItemsRequest;
 @property(retain, nonatomic) TVHKDMAPPlaylistIdentifier *sourcePlaylistIdentifier; // @synthesize sourcePlaylistIdentifier=_sourcePlaylistIdentifier;
-- (void).cxx_destruct;
 - (id)_mediaEntitiesFromDMAPEntities:(id)arg1 mediaEntityServer:(id)arg2;
 - (id)_mediaServerRequest;
 - (id)_mediaEntityKind;

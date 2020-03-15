@@ -14,8 +14,8 @@
 }
 
 + (long long)maximumContactImagesPerContact;
-@property(retain, nonatomic) CNContactMetadataPersistentStoreManager *storeManager; // @synthesize storeManager=_storeManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContactMetadataPersistentStoreManager *storeManager; // @synthesize storeManager=_storeManager;
 - (id)managedObjectsToContactImages:(id)arg1;
 - (void)insertContactImage:(id)arg1 withContactIdentifier:(id)arg2 inContext:(id)arg3;
 - (void)ensureImageQuotasForImages:(id)arg1 inContext:(id)arg2;

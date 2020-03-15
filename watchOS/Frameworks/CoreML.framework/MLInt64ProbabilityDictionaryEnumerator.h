@@ -13,9 +13,9 @@
 }
 
 + (id)enumeratorFromMap:(map_1300020a *)arg1;
+- (id).cxx_construct;
 @property(nonatomic) __map_iterator_9eb77425 iterEnd; // @synthesize iterEnd=_iterEnd;
 @property(nonatomic) __map_iterator_9eb77425 iter; // @synthesize iter=_iter;
-- (id).cxx_construct;
 - (id)nextObject;
 - (id)initWithIntMap:(map_1300020a *)arg1;
 

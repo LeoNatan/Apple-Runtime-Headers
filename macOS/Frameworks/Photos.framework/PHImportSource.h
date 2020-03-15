@@ -55,8 +55,11 @@
     NSProgress *_progress;
     long long _assetLoadOrder;
     NSString *_prefix;
+    NSMutableDictionary *_pairedSidecarsByImportIdentifier;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *pairedSidecarsByImportIdentifier; // @synthesize pairedSidecarsByImportIdentifier=_pairedSidecarsByImportIdentifier;
 @property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(nonatomic) long long assetLoadOrder; // @synthesize assetLoadOrder=_assetLoadOrder;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
@@ -94,7 +97,6 @@
 @property(readonly, nonatomic) BOOL canAutolaunch; // @synthesize canAutolaunch=_canAutolaunch;
 @property(readonly, nonatomic, getter=isEjecting) BOOL ejecting; // @synthesize ejecting=_ejecting;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)assetsDescription;
 - (id)generatePPTData;
 - (void)dispatchAssetDataRequestAsync:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -118,6 +120,8 @@
 - (BOOL)processPotentialJpegAsset:(id)arg1 plusRawAsset:(id)arg2;
 - (BOOL)date:(id)arg1 matchesDate:(id)arg2;
 - (id)deleteImportAssets:(id)arg1 isConfirmed:(BOOL)arg2 isCancelable:(BOOL)arg3 atEnd:(CDUnknownBlockType)arg4;
+- (BOOL)isPairedSidecar:(id)arg1;
+- (void)addPairedSidecar:(id)arg1;
 - (void)removeAssets:(id)arg1;
 - (void)addSourceFileIdentifiersForRemovedFiles:(id)arg1;
 - (void)addItems:(id)arg1;

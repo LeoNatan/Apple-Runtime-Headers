@@ -21,9 +21,9 @@
     NSArray *_information;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *information; // @synthesize information=_information;
 @property(retain, nonatomic) QLDetailItemViewControllerState *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect fileThumbnailFrame;
 - (void)_setActionButtonView:(id)arg1 animated:(_Bool)arg2 actionButtonLabel:(id)arg3 informationVisible:(_Bool)arg4;
 - (void)performAction;

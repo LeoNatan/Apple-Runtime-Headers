@@ -8,10 +8,12 @@
 #import <UIKitCore/_UITextContent-Protocol.h>
 
 @class _UITextInteractableItem;
+@protocol UITextItem;
 
 @protocol _UITextItemInteracting <UITextInput, _UITextContent>
 - (_Bool)_allowInteraction:(int)arg1 forTextInteractableItem:(_UITextInteractableItem *)arg2;
-- (_UITextInteractableItem *)_textInteractableItemAtPoint:(struct CGPoint)arg1;
+- (_UITextInteractableItem *)_textInteractableItemAtPoint:(struct CGPoint)arg1 precision:(unsigned int)arg2;
+- (id <UITextItem>)_anyTextItemConstrainedToLineAtPoint:(struct CGPoint)arg1;
 - (_Bool)_mightHaveInteractableItems;
 
 @optional

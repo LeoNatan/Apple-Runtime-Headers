@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)preferredSizeWithSegmentCount:(unsigned int)arg1;
-@property(readonly, nonatomic) UIInputSwitcherSegmentControl *segmentControl; // @synthesize segmentControl=_segmentControl;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIInputSwitcherSegmentControl *segmentControl; // @synthesize segmentControl=_segmentControl;
 - (void)setUsesDarkTheme:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)updateSelectionWithPoint:(struct CGPoint)arg1;

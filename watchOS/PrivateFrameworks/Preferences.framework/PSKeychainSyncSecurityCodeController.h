@@ -20,11 +20,11 @@
     NSString *_firstPasscodeEntry;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *firstPasscodeEntry; // @synthesize firstPasscodeEntry=_firstPasscodeEntry;
 @property(nonatomic) _Bool showsAdvancedSettings; // @synthesize showsAdvancedSettings=_showsAdvancedSettings;
 @property(nonatomic) int securityCodeType; // @synthesize securityCodeType=_securityCodeType;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)dismissAlerts;
 - (void)forgotSecurityCode;
 - (void)showAdvancedOptions;

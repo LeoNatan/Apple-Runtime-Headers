@@ -26,6 +26,7 @@
     NSNumber *_averageRSSI;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *averageRSSI; // @synthesize averageRSSI=_averageRSSI;
 @property(nonatomic) double lastSeen; // @synthesize lastSeen=_lastSeen;
 @property(copy, nonatomic) NSData *encryptedPayload; // @synthesize encryptedPayload=_encryptedPayload;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSNumber *hkType; // @synthesize hkType=_hkType;
 @property(retain, nonatomic) NSUUID *peripheralUUID; // @synthesize peripheralUUID=_peripheralUUID;
 @property(retain, nonatomic) NSString *accessoryName; // @synthesize accessoryName=_accessoryName;
-- (void).cxx_destruct;
 - (void)_resetAverageRSSI;
 - (BOOL)updateWithPeripheral:(id)arg1;
 - (void)updateStateNumber:(id)arg1;

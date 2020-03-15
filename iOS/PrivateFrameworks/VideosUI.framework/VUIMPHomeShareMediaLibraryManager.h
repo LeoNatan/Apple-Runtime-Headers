@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_sharedMPMediaLibraries;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(retain, nonatomic) NSMutableArray *mutableHomeShareMediaLibraries; // @synthesize mutableHomeShareMediaLibraries=_mutableHomeShareMediaLibraries;
 @property(nonatomic) __weak VUIMediaLibraryManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) __weak id <VUIHomeShareMediaLibraryManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegateHomeShareMediaLibrariesDidUpdate:(id)arg1 withChangeSet:(id)arg2;
 - (void)_updateMediaLibrariesWithSharedMPMediaLibraries:(id)arg1;
 - (id)_homeShareMediaLibraries;

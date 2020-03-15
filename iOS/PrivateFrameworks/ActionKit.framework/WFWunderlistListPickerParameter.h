@@ -15,10 +15,10 @@
     WFAccountAccessResource *_accessResource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoadedLists; // @synthesize hasLoadedLists=_hasLoadedLists;
 @property(nonatomic) __weak WFAccountAccessResource *accessResource; // @synthesize accessResource=_accessResource;
 - (id)possibleStates;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)listNamed:(id)arg1;
 - (id)lists;

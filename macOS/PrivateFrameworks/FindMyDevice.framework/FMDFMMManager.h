@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) FMDFMMAccountInfo *cachedAccountInfo; // @synthesize cachedAccountInfo=_cachedAccountInfo;
 @property(retain, nonatomic) FMNSXPCConnection *disableFMMConnection; // @synthesize disableFMMConnection=_disableFMMConnection;
 @property(nonatomic) struct AuthorizationOpaqueRef *authRef; // @synthesize authRef=_authRef;
-- (void).cxx_destruct;
 - (void)didReceiveLostModeExitAuthToken:(id)arg1;
 - (BOOL)needsLostModeExitAuth;
 - (void)initiateLostModeExitAuthWithCompletion:(CDUnknownBlockType)arg1;

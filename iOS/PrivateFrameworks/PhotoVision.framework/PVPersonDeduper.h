@@ -18,9 +18,9 @@
     PVPersonPromoter *_personPromoter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PVPersonPromoter *personPromoter; // @synthesize personPromoter=_personPromoter;
 @property(nonatomic) __weak id <PVPersonPromoterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)dedupeNewVerifiedPersons:(id)arg1 withExistingVerifiedPersons:(id)arg2 updateBlock:(CDUnknownBlockType)arg3;
 - (id)dedupeUnverifiedPersons:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
 - (id)dedupeUnverifiedPersons:(id)arg1 withVerifiedPersons:(id)arg2 updateBlock:(CDUnknownBlockType)arg3;

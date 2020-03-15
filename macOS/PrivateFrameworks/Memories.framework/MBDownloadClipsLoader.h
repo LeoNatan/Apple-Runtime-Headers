@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSRecursiveLock *_updateLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *updateLock; // @synthesize updateLock=_updateLock;
 @property(retain) NSMutableDictionary *identifierURLsToClipsMap; // @synthesize identifierURLsToClipsMap=_identifierURLsToClipsMap;
 @property(retain, nonatomic) NSSet *insertedAssetURLs; // @synthesize insertedAssetURLs=_insertedAssetURLs;
 @property(retain, nonatomic) NSSet *assetURLs; // @synthesize assetURLs=_assetURLs;
-- (void).cxx_destruct;
 - (void)loadClipsFromURLs:(id)arg1;
 - (void)load;
 - (id)fetchAssetURLs;

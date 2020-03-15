@@ -43,6 +43,7 @@
 + (double)outerCircleDiameter;
 + (struct CGRect)circleBounds;
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TPRevealingRingView *revealingRingView; // @synthesize revealingRingView=_revealingRingView;
 @property(readonly, nonatomic) UIColor *buttonColor; // @synthesize buttonColor=_buttonColor;
 @property(retain) UIView *circleView; // @synthesize circleView=_circleView;
@@ -50,7 +51,6 @@
 @property(retain) CALayer *glyphLayer; // @synthesize glyphLayer=_glyphLayer;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property unsigned int character; // @synthesize character;
-- (void).cxx_destruct;
 - (void)touchCancelled;
 - (void)touchUp;
 - (void)touchDown;

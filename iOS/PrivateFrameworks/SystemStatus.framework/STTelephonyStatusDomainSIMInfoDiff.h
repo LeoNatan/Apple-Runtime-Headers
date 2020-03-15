@@ -18,8 +18,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)diffFromInfo:(id)arg1 toInfo:(id)arg2;
-@property(readonly, copy, nonatomic) BSSettings *changes; // @synthesize changes=_changes;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) BSSettings *changes; // @synthesize changes=_changes;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

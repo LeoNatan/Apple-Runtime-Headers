@@ -18,11 +18,11 @@
     CDStruct_e83c9415 timeRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *spatialSpectrum; // @synthesize spatialSpectrum=_spatialSpectrum;
 @property(nonatomic) float azimuth; // @synthesize azimuth=_azimuth;
 - (void)setTimeRange:(CDStruct_e83c9415)arg1;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRange;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

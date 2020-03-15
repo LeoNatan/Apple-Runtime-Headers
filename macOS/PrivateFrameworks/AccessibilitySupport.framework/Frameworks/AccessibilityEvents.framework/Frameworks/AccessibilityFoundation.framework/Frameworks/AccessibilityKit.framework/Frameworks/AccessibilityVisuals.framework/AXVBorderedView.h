@@ -15,10 +15,10 @@
     AXVBorderedLayer *__borderedLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXVBorderedLayer *_borderedLayer; // @synthesize _borderedLayer=__borderedLayer;
 @property(retain, nonatomic) CATextLayer *_labelTextLayer; // @synthesize _labelTextLayer=__labelTextLayer;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (struct CGSize)_idealFrameSizeToFitLabelOnOneLine;
 - (void)_updateBorderShapeLayers;
 - (void)setFrame:(struct CGRect)arg1;

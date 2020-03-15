@@ -15,10 +15,10 @@
     CalDefaultDictionary *_spawnedObjectIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain) CalDefaultDictionary *spawnedObjectIdentifiers; // @synthesize spawnedObjectIdentifiers=_spawnedObjectIdentifiers;
 @property(retain) NSMutableDictionary *objectMap; // @synthesize objectMap=_objectMap;
 @property(retain) NSDictionary *originalObjectMap; // @synthesize originalObjectMap=_originalObjectMap;
-- (void).cxx_destruct;
 
 @end
 

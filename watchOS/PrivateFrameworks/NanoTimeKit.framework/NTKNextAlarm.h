@@ -14,9 +14,9 @@
     MTTrigger *_trigger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTTrigger *trigger; // @synthesize trigger=_trigger;
 @property(retain, nonatomic) MTAlarm *alarm; // @synthesize alarm=_alarm;
-- (void).cxx_destruct;
 
 @end
 

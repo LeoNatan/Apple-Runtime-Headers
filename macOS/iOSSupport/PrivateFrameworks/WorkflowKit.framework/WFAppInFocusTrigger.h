@@ -17,8 +17,8 @@
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
 + (BOOL)isAllowedToRunAutomatically;
-@property(copy, nonatomic) NSArray *selectedApps; // @synthesize selectedApps=_selectedApps;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *selectedApps; // @synthesize selectedApps=_selectedApps;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

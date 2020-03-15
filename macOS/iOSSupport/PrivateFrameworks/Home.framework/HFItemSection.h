@@ -27,13 +27,13 @@
 + (id)na_identity;
 + (CDUnknownBlockType)itemResultManualSortComparator;
 + (CDUnknownBlockType)defaultItemComparator;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSAttributedString *attributedFooterTitle; // @synthesize attributedFooterTitle=_attributedFooterTitle;
 @property(copy, nonatomic) NSString *footerTitle; // @synthesize footerTitle=_footerTitle;
 @property(copy, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *diffableItems;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier;
 @property(readonly) unsigned long long hash;

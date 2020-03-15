@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _finished;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(copy, nonatomic) CDUnknownBlockType finished; // @synthesize finished=_finished;
 @property(copy, nonatomic) CDUnknownBlockType error; // @synthesize error=_error;
 @property(copy, nonatomic) CDUnknownBlockType progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)failure:(const struct _GEOTileKey *)arg1 error:(id)arg2 info:(id)arg3;
 - (void)success:(const struct _GEOTileKey *)arg1 tile:(id)arg2 info:(id)arg3;
 - (void)breakCycle;

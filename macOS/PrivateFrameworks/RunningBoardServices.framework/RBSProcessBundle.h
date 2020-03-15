@@ -24,13 +24,13 @@
 
 + (BOOL)supportsBSXPCSecureCoding;
 + (id)bundleWithDataSource:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RBSProcessInstance *instance; // @synthesize instance=_instance;
 @property(readonly, nonatomic) __weak id <RBSProcessBundleDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, copy, nonatomic) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
 @property(readonly, copy, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

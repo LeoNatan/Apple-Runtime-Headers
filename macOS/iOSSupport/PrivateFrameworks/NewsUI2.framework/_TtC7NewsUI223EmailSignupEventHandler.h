@@ -6,11 +6,9 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <NewsUI2/TSEmailSignupEventHandlerType-Protocol.h>
-
 @protocol TSEmailSignupEventHandlerTypeDelegate;
 
-@interface _TtC7NewsUI223EmailSignupEventHandler : _TtCs12_SwiftObject <TSEmailSignupEventHandlerType>
+@interface _TtC7NewsUI223EmailSignupEventHandler : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: interactor

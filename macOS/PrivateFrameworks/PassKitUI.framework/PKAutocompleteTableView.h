@@ -16,9 +16,9 @@
     PKAutocompleteViewController *_autocompleteViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PKAutocompleteViewController *autocompleteViewController; // @synthesize autocompleteViewController=_autocompleteViewController;
 @property(nonatomic) __weak id <PKAutocompleteTableViewDelegate> autocompleteDelegate; // @synthesize autocompleteDelegate=_autocompleteDelegate;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseDown:(id)arg1;

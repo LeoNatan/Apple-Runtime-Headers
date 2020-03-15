@@ -28,6 +28,7 @@
 + (BOOL)contactHasMonogram:(id)arg1;
 + (BOOL)contactHasPhoto:(id)arg1;
 + (BOOL)contactHasDerivedLikeness:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CNContactIconAppearance *selectedAppearance; // @synthesize selectedAppearance=_selectedAppearance;
 @property(retain) CNContactIconAppearance *appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) long long type; // @synthesize type=_type;
@@ -37,7 +38,6 @@
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) PRLikeness *likeness; // @synthesize likeness=_likeness;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)silhouetteImage;
 - (id)image;
 - (double)fontWeightForDiameter:(double)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UIView *_editorialContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
-- (void).cxx_destruct;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;
 - (void)setColoringWithColorScheme:(id)arg1;

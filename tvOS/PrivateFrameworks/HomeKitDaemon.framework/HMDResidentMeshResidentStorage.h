@@ -22,6 +22,7 @@
     NSMutableDictionary *_accessoryListWithLinkQuality;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *accessoryListWithLinkQuality; // @synthesize accessoryListWithLinkQuality=_accessoryListWithLinkQuality;
 @property(retain, nonatomic) HMFTimer *transmitTimer; // @synthesize transmitTimer=_transmitTimer;
 @property(retain, nonatomic) NSDictionary *lastSentMetrics; // @synthesize lastSentMetrics=_lastSentMetrics;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableSet *accessoryUUIDs; // @synthesize accessoryUUIDs=_accessoryUUIDs;
 @property(nonatomic) __weak HMDDevice *resident; // @synthesize resident=_resident;
 @property(nonatomic) __weak HMDResidentMesh *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)_transmitStatus:(_Bool)arg1;
 - (id)_buildPayload;
 - (void)_transmitAfter:(double)arg1;

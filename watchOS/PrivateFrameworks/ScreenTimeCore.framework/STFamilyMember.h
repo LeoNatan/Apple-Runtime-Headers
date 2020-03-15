@@ -21,6 +21,7 @@
     NSString *_lastName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isOrganizer; // @synthesize isOrganizer=_isOrganizer;
 @property(nonatomic) _Bool isParent; // @synthesize isParent=_isParent;
 @property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
@@ -30,7 +31,6 @@
 @property(readonly, copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(readonly, copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(readonly, copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDSID:(id)arg1 altDSID:(id)arg2 appleID:(id)arg3 memberType:(id)arg4 firstName:(id)arg5 lastName:(id)arg6 isMe:(_Bool)arg7 isParent:(_Bool)arg8 isOrganizer:(_Bool)arg9;
 

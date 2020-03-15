@@ -19,6 +19,7 @@
     NSString *_translationKey;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *translationKey; // @synthesize translationKey=_translationKey;
 @property(retain, nonatomic) NSArray *words; // @synthesize words=_words;
 @property(retain, nonatomic) MSVLyricsLine *nextLine; // @synthesize nextLine=_nextLine;
@@ -26,7 +27,6 @@
 @property(nonatomic) long long originalLineIndex; // @synthesize originalLineIndex=_originalLineIndex;
 @property(nonatomic) long long lineIndex; // @synthesize lineIndex=_lineIndex;
 @property(nonatomic, getter=isInstrumentalBreak) _Bool instrumentalBreak; // @synthesize instrumentalBreak=_instrumentalBreak;
-- (void).cxx_destruct;
 - (_Bool)containsTimeOffset:(double)arg1 withErrorMargin:(double)arg2;
 - (id)description;
 - (id)init;

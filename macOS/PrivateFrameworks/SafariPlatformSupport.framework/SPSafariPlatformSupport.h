@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_dismissCurrentSheetWindow;
 - (void)showAutoFillAuthorizationControllerForCredential:(id)arg1;
-- (void)showOtherPasswordsSelected;
+- (void)showOtherPasswordsSelected:(id)arg1;
 - (void)credentialSelected:(id)arg1;
 - (void)_dismissCompletionListWindowIfNecessary;
 - (void)_observeNotificationsForTextField:(id)arg1 keyWindow:(id)arg2;

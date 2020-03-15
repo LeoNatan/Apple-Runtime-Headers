@@ -26,6 +26,7 @@
 }
 
 + (_Bool)cameraSupported;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *toggleCameraBarButton; // @synthesize toggleCameraBarButton=_toggleCameraBarButton;
 @property(retain, nonatomic) SURedeemCodeTextField *codeTextField; // @synthesize codeTextField=_codeTextField;
 @property(retain, nonatomic) UIBarButtonItem *redeemBarButton; // @synthesize redeemBarButton=_redeemBarButton;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) SUCodeRedeemerController *cameraController; // @synthesize cameraController=_cameraController;
 @property(copy, nonatomic) CDUnknownBlockType codeHandler; // @synthesize codeHandler=_codeHandler;
 @property(nonatomic) _Bool ignoreDefaultKeyboardNotifications; // @synthesize ignoreDefaultKeyboardNotifications=_ignoreDefaultKeyboardNotifications;
-- (void).cxx_destruct;
 - (void)_updateNavigationItemAnimated;
 - (void)_updateState;
 - (void)_presentCameraErrorAlert;

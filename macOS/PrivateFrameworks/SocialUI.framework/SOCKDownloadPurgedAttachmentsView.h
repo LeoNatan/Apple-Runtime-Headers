@@ -22,6 +22,7 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didScheduleTextUpdate; // @synthesize didScheduleTextUpdate=_didScheduleTextUpdate;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) NSView *imageView; // @synthesize imageView=_imageView;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long countOfAttachments; // @synthesize countOfAttachments=_countOfAttachments;
 @property(nonatomic) BOOL iCloudLogoHidden; // @synthesize iCloudLogoHidden=_iCloudLogoHidden;
 @property(nonatomic) unsigned long long buttonState; // @synthesize buttonState=_buttonState;
-- (void).cxx_destruct;
 - (void)_updateUI;
 - (void)_updateStackViewConstraint;
 - (void)initiateDownload:(id)arg1;

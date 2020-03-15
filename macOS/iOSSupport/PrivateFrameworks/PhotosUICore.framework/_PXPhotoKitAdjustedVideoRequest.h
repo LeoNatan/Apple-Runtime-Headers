@@ -15,9 +15,9 @@
     CDUnknownBlockType _resultHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) PHVideoRequestOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_handlePlayerItem:(id)arg1 error:(id)arg2;
 - (void)_renderIfNeeded;
 - (void)progressDidChange;

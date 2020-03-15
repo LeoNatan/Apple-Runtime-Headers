@@ -24,13 +24,13 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) int activityMonitorType; // @synthesize activityMonitorType=_activityMonitorType;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_queue_invalidate;
 - (void)invalidate;

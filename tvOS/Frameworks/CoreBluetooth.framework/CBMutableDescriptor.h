@@ -13,8 +13,8 @@
     NSNumber *_ID;
 }
 
-@property(retain) NSNumber *ID; // @synthesize ID=_ID;
 - (void).cxx_destruct;
+@property(retain) NSNumber *ID; // @synthesize ID=_ID;
 - (id)description;
 - (id)initWithCharacteristic:(id)arg1 dictionary:(id)arg2;
 - (id)initWithType:(id)arg1 value:(id)arg2;

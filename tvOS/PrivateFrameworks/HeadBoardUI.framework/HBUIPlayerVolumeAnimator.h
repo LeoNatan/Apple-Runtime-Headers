@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) float endVolume; // @synthesize endVolume=_endVolume;
 @property(readonly, nonatomic) float startVolume; // @synthesize startVolume=_startVolume;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_handleDisplayLink:(id)arg1;
 - (void)invalidate;
 - (void)setVolume:(float)arg1;

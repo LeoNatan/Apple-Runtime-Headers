@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)enumerateContent;
 - (void)unregisterDevice:(id)arg1 forImageCaptureEventNotificationsImp:(id)arg2;
 - (void)registerDevice:(id)arg1 forImageCaptureEventNotificationsImp:(id)arg2;
-- (void)sendDevice:(id)arg1 ptpCommandImp:(id)arg2;
+- (void)sendDevicePTPCommandImp:(id)arg1;
 - (void)ejectImp:(id)arg1;
 - (void)downloadFileImp:(id)arg1;
 - (void)deleteFileImp:(id)arg1;

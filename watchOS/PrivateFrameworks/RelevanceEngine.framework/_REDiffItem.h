@@ -15,11 +15,11 @@
 }
 
 + (id)itemWithObject:(id)arg1 index:(unsigned int)arg2 comparator:(CDUnknownBlockType)arg3 hashGenerator:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType hashGenerator; // @synthesize hashGenerator=_hashGenerator;
 @property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(readonly, nonatomic) unsigned int index; // @synthesize index=_index;
 @property(readonly, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 

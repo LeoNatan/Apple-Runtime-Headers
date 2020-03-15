@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIPopoverPresentationController *_popoverPresentationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPopoverPresentationController *popoverPresentationController; // @synthesize popoverPresentationController=_popoverPresentationController;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool usesNavigationControllerForModalPresentation; // @synthesize usesNavigationControllerForModalPresentation=_usesNavigationControllerForModalPresentation;
 @property(readonly, nonatomic) NSDictionary *presentationOptions; // @synthesize presentationOptions=_presentationOptions;
 @property(retain, nonatomic) SKUINavigationDocumentController *navigationDocumentController; // @synthesize navigationDocumentController=_navigationDocumentController;
 @property(readonly, nonatomic) IKAppDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sourceElementIdentifier;
 @property(readonly, nonatomic) NSString *overlayType;
 @property(readonly, nonatomic) NSString *sheetType;

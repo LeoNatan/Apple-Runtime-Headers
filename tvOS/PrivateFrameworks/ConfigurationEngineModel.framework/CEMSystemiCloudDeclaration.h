@@ -35,6 +35,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowCloudKeychainSync; // @synthesize payloadAllowCloudKeychainSync=_payloadAllowCloudKeychainSync;
 @property(copy, nonatomic) NSNumber *payloadAllowCloudDesktopAndDocuments; // @synthesize payloadAllowCloudDesktopAndDocuments=_payloadAllowCloudDesktopAndDocuments;
 @property(copy, nonatomic) NSNumber *payloadAllowCloudNotes; // @synthesize payloadAllowCloudNotes=_payloadAllowCloudNotes;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSNumber *payloadAllowFindMyFriendsModification; // @synthesize payloadAllowFindMyFriendsModification=_payloadAllowFindMyFriendsModification;
 @property(copy, nonatomic) NSNumber *payloadAllowCloudDocumentSync; // @synthesize payloadAllowCloudDocumentSync=_payloadAllowCloudDocumentSync;
 @property(copy, nonatomic) NSNumber *payloadAllowCloudBackup; // @synthesize payloadAllowCloudBackup=_payloadAllowCloudBackup;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

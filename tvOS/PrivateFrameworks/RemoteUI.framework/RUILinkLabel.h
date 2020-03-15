@@ -17,10 +17,10 @@
     UILabel *_textLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_linkPressed;
 - (void)layoutSubviews;
 @property(nonatomic) long long textAlignment;

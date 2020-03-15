@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
 @property(nonatomic) _Bool didCompleteLoad; // @synthesize didCompleteLoad=_didCompleteLoad;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) PXPlacesStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(retain, nonatomic) NSArray *fetchResults; // @synthesize fetchResults=_fetchResults;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChange:(id)arg1;
 @property(readonly) id <PXPlacesGeotaggedItemDataSource> dataSource;
 - (void)_addItems:(id)arg1 intoStore:(id)arg2;

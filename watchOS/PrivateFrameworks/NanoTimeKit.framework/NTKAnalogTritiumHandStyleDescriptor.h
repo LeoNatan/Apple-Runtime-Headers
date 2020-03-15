@@ -21,12 +21,12 @@
 + (id)defaultTritiumStyleDescriptorFromStyleDescriptor:(id)arg1 insetInlays:(_Bool)arg2;
 + (id)styleDescriptorFromHandView:(id)arg1;
 + (id)interpolateFrom:(id)arg1 to:(id)arg2 fraction:(float)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets inlayInsets; // @synthesize inlayInsets=_inlayInsets;
 @property(retain, nonatomic) UIColor *minuteHandDotColor; // @synthesize minuteHandDotColor=_minuteHandDotColor;
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 - (void)setTritiumInsetsFromHandView:(id)arg1;
 - (void)applyToHandView:(id)arg1;
 - (id)initWithFillColor:(id)arg1 strokeColor:(id)arg2 inlayInsets:(struct UIEdgeInsets)arg3 alpha:(float)arg4 minuteHandDotColor:(id)arg5;

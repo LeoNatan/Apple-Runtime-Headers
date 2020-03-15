@@ -13,7 +13,7 @@
 + (void)performPDFGenerationWithGenerator:(id)arg1 galleryModel:(id)arg2 progress:(id)arg3;
 + (id)blockingGeneratePDFDataForAttachment:(id)arg1 withProgress:(id)arg2 queue:(id)arg3 error:(id *)arg4;
 + (id)blockingGeneratePDFURLForAttachment:(id)arg1 withProgress:(id)arg2 error:(id *)arg3;
-+ (void)generatePDFsIfNecessaryForGalleryAttachments:(id)arg1 displayWindow:(struct UIWindow *)arg2 presentingViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)generatePDFsIfNecessaryForGalleryAttachments:(id)arg1 displayWindow:(id)arg2 presentingViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)pdfURLForAttachment:(id)arg1;
 + (void)deleteAllDocCamPasswordProtectedPDFs;
 + (void)deleteAllDocCamPDFs;

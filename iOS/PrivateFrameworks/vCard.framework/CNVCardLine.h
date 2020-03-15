@@ -24,13 +24,13 @@
 + (id)lineWithLiteralValue:(id)arg1;
 + (id)lineWithName:(id)arg1 value:(id)arg2 itemSeparator:(id)arg3;
 + (id)lineWithName:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *itemSeparator; // @synthesize itemSeparator=_itemSeparator;
 @property(readonly) NSArray *groupedLines; // @synthesize groupedLines=_groupedLines;
 @property(readonly) NSString *groupingName; // @synthesize groupingName=_grouping;
 @property(readonly) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)serializeValueWithStrategy:(id)arg1;
 - (void)serializeWithStrategy:(id)arg1;
 - (_Bool)canSerializeWithStrategy:(id)arg1;

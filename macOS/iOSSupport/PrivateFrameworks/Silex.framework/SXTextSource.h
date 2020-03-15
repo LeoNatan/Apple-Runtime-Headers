@@ -23,6 +23,7 @@
     id <SXDocumentLanguageProviding> _documentLanguageProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXDocumentLanguageProviding> documentLanguageProvider; // @synthesize documentLanguageProvider=_documentLanguageProvider;
 @property(readonly, nonatomic) id <SXTextStyleFontDescribing> defaultFontDescribing; // @synthesize defaultFontDescribing=_defaultFontDescribing;
 @property(readonly, nonatomic) id <SXFontAttributesConstructor> fontAttributeConstructor; // @synthesize fontAttributeConstructor=_fontAttributeConstructor;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) SXTextSourceDefaults *defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, nonatomic) __weak id <SXTextSourceDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)randomColorWithAlpha:(double)arg1;
 - (id)description;
 - (long long)fontSizeForTextStyle:(id)arg1;

@@ -40,10 +40,10 @@
 
 + (id)serverInterface;
 + (id)clientInterface;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy) HKDevice *device; // @synthesize device=_device;
 @property(readonly, copy) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
-- (void).cxx_destruct;
 - (id)unitTest_unpersistedBatches;
 - (id)unitTest_unconfirmedBatches;
 - (id)unitTest_pendingBatches;

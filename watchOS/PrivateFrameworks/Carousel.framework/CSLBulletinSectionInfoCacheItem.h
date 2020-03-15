@@ -17,9 +17,9 @@
     BBSettingsGateway *_settingsGateway;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
 @property(readonly, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 @property(retain, nonatomic) BBSectionInfo *sectionInfo;
 - (id)initWithSectionInfo:(id)arg1 settingsGateway:(id)arg2;
 

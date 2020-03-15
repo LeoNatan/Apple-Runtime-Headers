@@ -29,6 +29,7 @@
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
 + (id)agentDomain;
+- (void).cxx_destruct;
 @property int lastStatus; // @synthesize lastStatus=_lastStatus;
 @property(copy) NSString *configurationName; // @synthesize configurationName=_configurationName;
 @property(copy) CDUnknownBlockType internalStartHandler; // @synthesize internalStartHandler=_internalStartHandler;
@@ -41,7 +42,6 @@
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active;
 @property(copy, nonatomic) NSString *agentDescription; // @synthesize agentDescription;
 @property(copy, nonatomic) NSUUID *agentUUID; // @synthesize agentUUID;
-- (void).cxx_destruct;
 - (BOOL)startAgentWithOptions:(id)arg1;
 - (void)setStartHandler:(CDUnknownBlockType)arg1;
 @property(readonly) int sessionType;

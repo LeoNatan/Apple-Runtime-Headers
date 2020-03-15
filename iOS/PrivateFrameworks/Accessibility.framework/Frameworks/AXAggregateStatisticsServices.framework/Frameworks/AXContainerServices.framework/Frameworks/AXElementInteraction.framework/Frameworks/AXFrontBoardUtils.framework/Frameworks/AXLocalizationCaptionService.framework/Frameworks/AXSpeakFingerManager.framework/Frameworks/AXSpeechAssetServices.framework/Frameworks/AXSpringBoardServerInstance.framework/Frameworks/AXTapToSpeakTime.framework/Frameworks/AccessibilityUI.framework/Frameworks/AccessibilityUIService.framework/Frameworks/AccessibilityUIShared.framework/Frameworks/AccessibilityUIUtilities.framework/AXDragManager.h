@@ -28,13 +28,13 @@
     AXDragSession *_dragSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXDragSession *dragSession; // @synthesize dragSession=_dragSession;
 @property(retain, nonatomic) AXDispatchTimer *dragStartTimer; // @synthesize dragStartTimer=_dragStartTimer;
 @property(copy, nonatomic) CDUnknownBlockType dragStartCompletionHandler; // @synthesize dragStartCompletionHandler=_dragStartCompletionHandler;
 @property(nonatomic) int pidForDrag; // @synthesize pidForDrag=_pidForDrag;
 @property(readonly, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(nonatomic) __weak id <AXDragManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dragSessionWasTerminated:(id)arg1;
 - (void)dragSessionEnded:(id)arg1 withOperation:(unsigned long long)arg2;
 - (void)dragSessionChanged:(id)arg1 toStatus:(id)arg2;

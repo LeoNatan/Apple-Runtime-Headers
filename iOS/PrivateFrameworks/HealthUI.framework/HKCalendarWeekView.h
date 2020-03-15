@@ -28,6 +28,7 @@
     HKCalendarDayCell *_pressedDayCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKCalendarDayCell *pressedDayCell; // @synthesize pressedDayCell=_pressedDayCell;
 @property(nonatomic) long long pressedDayOfWeek; // @synthesize pressedDayOfWeek=_pressedDayOfWeek;
 @property(nonatomic) long long firstDayOfMonthCellIndex; // @synthesize firstDayOfMonthCellIndex=_firstDayOfMonthCellIndex;
@@ -43,7 +44,6 @@
 @property(nonatomic) double dateBottomMargin; // @synthesize dateBottomMargin=_dateBottomMargin;
 @property(nonatomic) double dateTopMargin; // @synthesize dateTopMargin=_dateTopMargin;
 @property(retain, nonatomic) UIView<HKCalendarMonthTitleFormatting> *monthTitleView; // @synthesize monthTitleView=_monthTitleView;
-- (void).cxx_destruct;
 - (_Bool)supportsRTL;
 - (Class)monthTitleClass;
 - (Class)cellClass;

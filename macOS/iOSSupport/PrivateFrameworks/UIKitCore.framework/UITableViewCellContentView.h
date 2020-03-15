@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)classFallbacksForKeyedArchiver;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_overriddenDefaultLayoutMargins, setter=_setOverriddenDefaultLayoutMargins:) struct NSDirectionalEdgeInsets overriddenDefaultLayoutMargins; // @synthesize overriddenDefaultLayoutMargins=_overriddenDefaultLayoutMargins;
 @property(retain, nonatomic) CALayer *mask; // @synthesize mask=_mask;
 @property(nonatomic, getter=_isLayoutEngineSuspended, setter=_setLayoutEngineSuspended:) BOOL _layoutEngineSuspended; // @synthesize _layoutEngineSuspended=_isLayoutEngineSuspended;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_concreteDefaultLayoutMargins;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;

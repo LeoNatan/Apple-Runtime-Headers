@@ -51,6 +51,7 @@
 }
 
 + (unsigned int)_spacingIntervalFromAxisSpacing:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float subAxisVerticalPadding; // @synthesize subAxisVerticalPadding=_subAxisVerticalPadding;
 @property(nonatomic) _Bool subAxisCapitalize; // @synthesize subAxisCapitalize=_subAxisCapitalize;
 @property(nonatomic) _Bool generateSubAxisDescriptorOnlyForNoonMidnight; // @synthesize generateSubAxisDescriptorOnlyForNoonMidnight=_generateSubAxisDescriptorOnlyForNoonMidnight;
@@ -78,7 +79,6 @@
 @property(nonatomic) unsigned int labelAlignment; // @synthesize labelAlignment=_labelAlignment;
 @property(retain, nonatomic) id maxValue; // @synthesize maxValue=_maxValue;
 @property(retain, nonatomic) id minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 - (Class)expectedDataType;
 - (id)textForSubLabelAtIndex:(unsigned int)arg1;
 - (id)positionForSubLabelAtIndex:(unsigned int)arg1;

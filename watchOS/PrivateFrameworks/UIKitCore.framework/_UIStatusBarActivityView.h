@@ -21,6 +21,7 @@
     _UIStatusBarCycleAnimation *_cycleAnimation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarCycleAnimation *cycleAnimation; // @synthesize cycleAnimation=_cycleAnimation;
 @property(nonatomic) float thickness; // @synthesize thickness=_thickness;
 @property(retain, nonatomic) CALayer *pointLayer; // @synthesize pointLayer=_pointLayer;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) CALayer *mainLayer; // @synthesize mainLayer=_mainLayer;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) _Bool isSlow; // @synthesize isSlow=_isSlow;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)traitCollectionDidChange:(id)arg1;
 - (float)_thicknessForTraitCollection:(id)arg1;

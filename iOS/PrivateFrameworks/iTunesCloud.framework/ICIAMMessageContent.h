@@ -27,6 +27,7 @@
 + (Class)contentParametersType;
 + (Class)messageActionsType;
 + (Class)imagesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICIAMMetricEvent *cardClickEvent; // @synthesize cardClickEvent=_cardClickEvent;
 @property(retain, nonatomic) ICIAMMetricEvent *closeClickEvent; // @synthesize closeClickEvent=_closeClickEvent;
 @property(retain, nonatomic) ICIAMMetricEvent *pageEvent; // @synthesize pageEvent=_pageEvent;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_nameForPreventIdleSleepIdentifiers:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSDate *acquisitionDate; // @synthesize acquisitionDate=_acquisitionDate;
 @property(readonly, nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

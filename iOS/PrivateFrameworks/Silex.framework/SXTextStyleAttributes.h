@@ -17,9 +17,9 @@
 }
 
 + (id)attributesWithRange:(struct _NSRange)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *mutableAttributes; // @synthesize mutableAttributes=_mutableAttributes;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSDictionary *attributes;

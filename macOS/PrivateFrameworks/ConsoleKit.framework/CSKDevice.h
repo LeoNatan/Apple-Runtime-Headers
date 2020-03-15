@@ -30,6 +30,7 @@
 + (id)_hostMachineModel;
 + (id)iconForDeviceType:(unsigned long long)arg1;
 + (id)hostDevice;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _isHostDevice; // @synthesize _isHostDevice=__isHostDevice;
 @property(retain, nonatomic) OSLogDevice *_deviceRef; // @synthesize _deviceRef=__deviceRef;
 @property(retain, nonatomic) OSActivityStream *_defaultStream; // @synthesize _defaultStream=__defaultStream;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *build; // @synthesize build=_build;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *UDID; // @synthesize UDID=_UDID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)establishTrustWithFailingHandler:(CDUnknownBlockType)arg1;

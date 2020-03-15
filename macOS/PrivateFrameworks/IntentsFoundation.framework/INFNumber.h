@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)numberWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *value; // @synthesize value=_value;
 - (id)identifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)stringForContext:(id)arg1;
 - (id)contributingSentenceContext;

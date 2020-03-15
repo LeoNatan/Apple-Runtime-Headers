@@ -20,6 +20,7 @@
     CDUnknownBlockType _catchUpCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType catchUpCompletionHandler; // @synthesize catchUpCompletionHandler=_catchUpCompletionHandler;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) FCForYouConfig *forYouConfig; // @synthesize forYouConfig=_forYouConfig;
@@ -27,7 +28,6 @@
 @property(copy) id <FCChannelProviding> topStoriesChannel; // @synthesize topStoriesChannel=_topStoriesChannel;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_checkShouldShowTopStoriesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

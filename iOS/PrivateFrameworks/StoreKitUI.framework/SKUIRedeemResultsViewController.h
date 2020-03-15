@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)redeemResultsControllerForRedeem:(id)arg1;
 + (_Bool)canShowResultsForRedeem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long redeemCategory; // @synthesize redeemCategory=_redeemCategory;
 @property(retain, nonatomic) SKUIRedeem *redeem; // @synthesize redeem=_redeem;
-- (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;

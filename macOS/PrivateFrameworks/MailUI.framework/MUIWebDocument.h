@@ -34,6 +34,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long originalEncoding; // @synthesize originalEncoding=_originalEncoding;
 @property(retain, nonatomic) MUIRemoteImageCollector *remoteImageCollector; // @synthesize remoteImageCollector=_remoteImageCollector;
 @property(nonatomic) long long messageContentTypeToBlock; // @synthesize messageContentTypeToBlock=_messageContentTypeToBlock;
@@ -51,7 +52,6 @@
 @property(nonatomic) long long imageScale; // @synthesize imageScale=_imageScale;
 @property(copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(copy, nonatomic) NSString *html; // @synthesize html=_html;
-- (void).cxx_destruct;
 - (id)attachmentForContentID:(id)arg1;
 - (id)description;
 - (id)_defaultDocumentHTML;

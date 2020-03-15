@@ -32,9 +32,9 @@
     id <PKAddBankAccountInformationViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKAddBankAccountInformationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool offerKeychainPreFill; // @synthesize offerKeychainPreFill=_offerKeychainPreFill;
-- (void).cxx_destruct;
 - (id)_countrySpecificLocalizedStringKeyForKey:(id)arg1 minDigits:(unsigned long long)arg2 maxDigits:(unsigned long long)arg3;
 - (id)_countrySpecificLocalizedStringKeyForKey:(id)arg1 numberOfDigits:(unsigned long long)arg2;
 - (id)_countrySpecificLocalizedStringKeyForKey:(id)arg1;

@@ -21,13 +21,13 @@
 }
 
 + (long long)requestSourceForButtonIdentifier:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long requestSource; // @synthesize requestSource=_requestSource;
 @property(nonatomic) double buttonDownTime; // @synthesize buttonDownTime=_buttonDownTime;
 @property(nonatomic) double activationTime; // @synthesize activationTime=_activationTime;
 @property(retain, nonatomic) SiriContext *context; // @synthesize context=_context;
 @property(nonatomic) long long activationEvent; // @synthesize activationEvent=_activationEvent;
 @property(nonatomic) long long activationType; // @synthesize activationType=_activationType;
-- (void).cxx_destruct;
 - (_Bool)isSpotlightRequest;
 - (_Bool)isBluetoothRequest;
 - (_Bool)isContinuityRequest;

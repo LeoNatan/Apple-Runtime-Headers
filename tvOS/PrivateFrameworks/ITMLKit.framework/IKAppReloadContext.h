@@ -11,8 +11,8 @@
     id _reloadData;
 }
 
-@property(retain, nonatomic) id reloadData; // @synthesize reloadData=_reloadData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id reloadData; // @synthesize reloadData=_reloadData;
 
 @end
 

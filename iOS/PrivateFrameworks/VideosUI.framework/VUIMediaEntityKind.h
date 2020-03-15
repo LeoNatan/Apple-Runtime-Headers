@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_propertyDescriptorsByName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *propertyDescriptorsByName; // @synthesize propertyDescriptorsByName=_propertyDescriptorsByName;
 @property(copy, nonatomic) NSArray *propertyDescriptors; // @synthesize propertyDescriptors=_propertyDescriptors;
 @property(readonly, copy, nonatomic) NSString *mediaEntityClassName; // @synthesize mediaEntityClassName=_mediaEntityClassName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)sortingPropertyDescriptorForName:(id)arg1;

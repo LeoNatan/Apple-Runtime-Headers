@@ -38,6 +38,7 @@
 + (id)conversationIdForMobileMailInteractionRecipients:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)shareSheetInteractionFromINInteraction:(id)arg1 bundleID:(id)arg2 knowledgeStore:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forcePersistInteraction; // @synthesize forcePersistInteraction=_forcePersistInteraction;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain) NSArray *keywords; // @synthesize keywords=_keywords;
@@ -57,7 +58,6 @@
 @property(retain) NSString *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 @property(readonly, copy) NSString *description;

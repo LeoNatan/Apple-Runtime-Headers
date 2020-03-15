@@ -14,9 +14,9 @@
     CAMLivePhotoAnimationCache *__animationCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMLivePhotoAnimationCache *_animationCache; // @synthesize _animationCache=__animationCache;
 @property(nonatomic) long long livePhotoMode; // @synthesize livePhotoMode=_livePhotoMode;
-- (void).cxx_destruct;
 - (_Bool)canAnimate;
 - (_Bool)shouldUseOutline;
 - (_Bool)shouldUseActiveTintForCurrentState;

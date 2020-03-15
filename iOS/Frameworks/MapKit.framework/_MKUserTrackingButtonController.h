@@ -8,7 +8,7 @@
 
 #import <MapKit/CAAnimationDelegate-Protocol.h>
 
-@class NSString, UIActivityIndicatorView, UIButton, UIImageView;
+@class NSString, UIActivityIndicatorView, UIImageView, _MKUserTrackingButton;
 @protocol MKUserTrackingButtonTarget, MKUserTrackingView;
 
 __attribute__((visibility("hidden")))
@@ -18,16 +18,16 @@ __attribute__((visibility("hidden")))
     id <MKUserTrackingView> _userTrackingView;
     long long _state;
     UIImageView *_imageView;
-    UIButton *_button;
+    _MKUserTrackingButton *_button;
     UIActivityIndicatorView *_activityIndicatorView;
     unsigned long long _buttonBehavior;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long buttonBehavior; // @synthesize buttonBehavior=_buttonBehavior;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <MKUserTrackingView> userTrackingView; // @synthesize userTrackingView=_userTrackingView;
-- (void).cxx_destruct;
 - (void)_updateLoading;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (id)_contentAnimation;
@@ -41,8 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)_authorizationStatusChanged:(id)arg1;
 - (id)_activityIndicatorView;
 - (void)dealloc;
-- (id)_symbolConfiguration;
-- (void)_setupPreferredSymbolConfiguration;
+- (void)_updatePreferredSymbolConfiguration;
 - (id)initWithTarget:(id)arg1 userTrackingView:(id)arg2 imageView:(id)arg3 button:(id)arg4;
 
 // Remaining properties

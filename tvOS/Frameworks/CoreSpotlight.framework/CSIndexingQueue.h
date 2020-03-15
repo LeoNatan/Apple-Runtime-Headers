@@ -21,6 +21,7 @@
     CDUnknownBlockType _notifyBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType notifyBlock; // @synthesize notifyBlock=_notifyBlock;
 @property(retain) NSObject<OS_dispatch_source> *coalescingTimer; // @synthesize coalescingTimer=_coalescingTimer;
 @property(retain) NSObject<OS_dispatch_queue> *coalescingQueue; // @synthesize coalescingQueue=_coalescingQueue;
@@ -29,7 +30,6 @@
 @property double idleTimeLeeway; // @synthesize idleTimeLeeway=_idleTimeLeeway;
 @property double idleTime; // @synthesize idleTime=_idleTime;
 @property long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)flush;
 - (void)_flushWithAppResigned:(_Bool)arg1 forced:(_Bool)arg2;
 - (void)queueItem:(id)arg1;

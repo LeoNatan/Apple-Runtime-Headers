@@ -18,11 +18,11 @@
     NSString *_masterFingerprint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *masterFingerprint; // @synthesize masterFingerprint=_masterFingerprint;
 @property(retain, nonatomic) NSData *actionData; // @synthesize actionData=_actionData;
 @property(retain, nonatomic) CPLSuggestionAssetFlag *assetFlag; // @synthesize assetFlag=_assetFlag;
 @property(retain, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

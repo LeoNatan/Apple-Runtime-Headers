@@ -18,11 +18,11 @@
     UIColor *_glyphColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *glyphColor; // @synthesize glyphColor=_glyphColor;
 @property(retain, nonatomic) UIFont *glyphFont; // @synthesize glyphFont=_glyphFont;
 @property(retain, nonatomic) NSString *glyph; // @synthesize glyph=_glyph;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

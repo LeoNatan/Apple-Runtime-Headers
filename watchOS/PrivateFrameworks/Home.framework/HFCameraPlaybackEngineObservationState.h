@@ -14,9 +14,9 @@
     id _timeObservationToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id timeObservationToken; // @synthesize timeObservationToken=_timeObservationToken;
 @property(retain, nonatomic) HFCameraPlaybackEngineObservationOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 
 @end
 

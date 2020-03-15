@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)productBannerViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *heroImageView; // @synthesize heroImageView=_heroImageView;
 @property(retain, nonatomic) UIView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIView *infoListView; // @synthesize infoListView=_infoListView;
 @property(retain, nonatomic) UIView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
-- (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

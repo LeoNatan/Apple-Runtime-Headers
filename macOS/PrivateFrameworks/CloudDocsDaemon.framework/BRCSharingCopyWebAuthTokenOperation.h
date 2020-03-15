@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_ckContainerID;
 }
 
-@property(retain, nonatomic) NSString *ckContainerID; // @synthesize ckContainerID=_ckContainerID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *ckContainerID; // @synthesize ckContainerID=_ckContainerID;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)createActivity;

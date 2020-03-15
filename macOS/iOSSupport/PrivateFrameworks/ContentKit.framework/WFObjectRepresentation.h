@@ -19,8 +19,8 @@
 + (id)objects:(id)arg1;
 + (id)object:(id)arg1 named:(id)arg2;
 + (id)object:(id)arg1;
-@property(readonly, nonatomic) id object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id object; // @synthesize object=_object;
 - (BOOL)isEncodable;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

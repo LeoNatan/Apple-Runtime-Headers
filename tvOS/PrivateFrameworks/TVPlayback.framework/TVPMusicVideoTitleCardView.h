@@ -17,10 +17,10 @@
 }
 
 + (void)_limitMaxX:(double)arg1 forView:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showAddButton; // @synthesize showAddButton=_showAddButton;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)canBecomeFocused;
 - (id)preferredFocusEnvironments;

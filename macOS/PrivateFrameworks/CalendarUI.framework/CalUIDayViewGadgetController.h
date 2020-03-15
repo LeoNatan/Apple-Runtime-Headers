@@ -31,6 +31,7 @@
 }
 
 + (id)controllerWithAppearanceDelegate:(id)arg1 mouseDownBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <CalUIDayViewGadgetAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
 @property(retain) NSArray *dedupedPreviewEvents; // @synthesize dedupedPreviewEvents=_dedupedPreviewEvents;
 @property(retain) CalUIDayViewGadget *dayViewGadget; // @synthesize dayViewGadget=_dayViewGadget;
@@ -41,7 +42,6 @@
 @property(nonatomic) __weak CDUnknownBlockType mouseDownBlock; // @synthesize mouseDownBlock=_mouseDownBlock;
 @property(retain) NSDate *lastRefresh; // @synthesize lastRefresh=_lastRefresh;
 @property(retain, nonatomic) NSDate *dayOfInterest; // @synthesize dayOfInterest=_dayOfInterest;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *timedEvents;
 - (void)setTimedEvents:(id)arg1;
 @property(readonly, nonatomic) NSArray *allDayEvents;

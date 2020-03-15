@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_completions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
 @property(readonly, nonatomic) NSMutableArray *animations; // @synthesize animations=_animations;
-- (void).cxx_destruct;
 - (void)didFinishAnimations:(_Bool)arg1;
 - (void)performCoordinatedAnimations;
 - (void)addCoordinatedAnimations:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

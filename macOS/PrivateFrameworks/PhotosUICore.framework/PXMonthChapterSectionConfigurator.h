@@ -14,9 +14,9 @@
     PXMonthCardSectionBodyLayoutSpec *_cardBodySpec;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXMonthCardSectionBodyLayoutSpec *cardBodySpec; // @synthesize cardBodySpec=_cardBodySpec;
 @property(readonly, nonatomic) PXCuratedLibraryChapterHeaderLayoutSpec *chapterHeaderSpec; // @synthesize chapterHeaderSpec=_chapterHeaderSpec;
-- (void).cxx_destruct;
 - (id)updatedHeaderLayout:(id)arg1 withHeaderStyle:(long long)arg2 forAssetSectionLayout:(id)arg3;
 - (void)configureAssetSectionLayout:(id)arg1;
 - (id)headerSpecForHeaderStyle:(long long)arg1 assetSectionLayout:(id)arg2;

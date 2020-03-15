@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     double _delay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDelay:) double delay; // @synthesize delay=_delay;
 @property(retain, nonatomic, setter=_setLastEchoedTextMarkerRange:) SCRTextMarkerRange *_lastEchoedTextMarkerRange; // @synthesize _lastEchoedTextMarkerRange=__lastEchoedTextMarkerRange;
 @property(retain, nonatomic, setter=_setPunctuationMarkerRange:) SCRTextMarkerRange *_punctuationMarkerRange; // @synthesize _punctuationMarkerRange=__punctuationMarkerRange;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setTimer:) SCRSimpleTimer *_timer; // @synthesize _timer=__timer;
 @property(nonatomic) __weak id <SCRTextDelayedWordEchoHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SCRTextDelayedWordEchoHelperDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)cancel;
 - (BOOL)_echoWithAdditionalContent:(id)arg1;

@@ -29,6 +29,7 @@
     NSDate *_currentDateOverride;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *currentDateOverride; // @synthesize currentDateOverride=_currentDateOverride;
 @property(nonatomic) _Bool shouldScheduleAfterInitialFetch; // @synthesize shouldScheduleAfterInitialFetch=_shouldScheduleAfterInitialFetch;
 @property(nonatomic) _Bool achievementStoreDidFinishInitialFetch; // @synthesize achievementStoreDidFinishInitialFetch=_achievementStoreDidFinishInitialFetch;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) ACHAchievementStore *achievementStore; // @synthesize achievementStore=_achievementStore;
 @property(retain, nonatomic) ACHTemplateStore *templateStore; // @synthesize templateStore=_templateStore;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (_Bool)_runSynchronouslyWithError:(id *)arg1;
 - (id)_currentDate;
 @property(readonly, nonatomic) unsigned long long _sourceCount;

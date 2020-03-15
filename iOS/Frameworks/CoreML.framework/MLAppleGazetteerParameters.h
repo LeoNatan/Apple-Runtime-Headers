@@ -19,6 +19,7 @@
     NSDictionary *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain) NSArray *labelNames; // @synthesize labelNames=_labelNames;
 @property(retain) NSData *modelParameterData; // @synthesize modelParameterData=_modelParameterData;
@@ -26,7 +27,6 @@
 @property(retain) NSString *inputFeatureName; // @synthesize inputFeatureName=_inputFeatureName;
 @property(retain) NSString *language; // @synthesize language=_language;
 @property unsigned long long revision; // @synthesize revision=_revision;
-- (void).cxx_destruct;
 - (id)initWithData:(unsigned long long)arg1 language:(id)arg2 inputFeatureName:(id)arg3 outputFeatureName:(id)arg4 modelData:(id)arg5 labelNames:(id)arg6 metadata:(id)arg7 error:(id *)arg8;
 
 @end

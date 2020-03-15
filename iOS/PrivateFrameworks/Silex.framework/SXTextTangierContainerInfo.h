@@ -20,12 +20,12 @@
     id <TSDRepDirectLayerHosting> _directLayerHost;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TSDRepDirectLayerHosting> directLayerHost; // @synthesize directLayerHost=_directLayerHost;
 @property(nonatomic) _Bool shouldHyphenate; // @synthesize shouldHyphenate=_shouldHyphenate;
 @property(nonatomic) _Bool isSelectable; // @synthesize isSelectable=_isSelectable;
 @property(retain, nonatomic) NSSet *fixedExclusionPaths; // @synthesize fixedExclusionPaths=_fixedExclusionPaths;
 @property(readonly, nonatomic) SXTextTangierStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *rangedExclusionPaths;
 - (Class)repClass;
 - (Class)layoutClass;

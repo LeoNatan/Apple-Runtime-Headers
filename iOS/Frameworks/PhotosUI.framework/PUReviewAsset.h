@@ -60,6 +60,7 @@
 + (_Bool)_shouldShowConfidentialityWarningForAdjustments:(id)arg1;
 + (unsigned long long)_confidentialityWarningsVersionForAdjustments:(id)arg1;
 + (_Bool)_shouldCheckConfidentiality;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PFAssetAdjustments *assetAdjustments; // @synthesize assetAdjustments=_assetAdjustments;
 @property(readonly, nonatomic) NSURL *providedFullsizeRenderVideoURL; // @synthesize providedFullsizeRenderVideoURL=_providedFullsizeRenderVideoURL;
 @property(readonly, nonatomic) NSURL *providedVideoURL; // @synthesize providedVideoURL=_providedVideoURL;
@@ -92,7 +93,6 @@
 @property(readonly, nonatomic) PHLivePhoto *providedLivePhoto; // @synthesize providedLivePhoto;
 @property(readonly, nonatomic) AVAudioMix *providedAudioMix; // @synthesize providedAudioMix;
 @property(readonly, nonatomic) AVAsset *providedAVAsset; // @synthesize providedAVAsset;
-- (void).cxx_destruct;
 - (void)_removeFileAtURL:(id)arg1;
 - (void)removeAllFilesAtReferencedURLs;
 - (_Bool)_linkFileAtURL:(id)arg1 toURL:(id)arg2;
@@ -126,6 +126,7 @@
 @property(readonly, nonatomic) CDStruct_1b6d18a9 photoIrisVideoDuration;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 photoIrisStillDisplayTime;
 @property(readonly, nonatomic) _Bool isPhotoIrisPlaceholder;
+@property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic) unsigned long long originalFilesize;
 @property(readonly, nonatomic) _Bool isTemporaryPlaceholder;
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier;

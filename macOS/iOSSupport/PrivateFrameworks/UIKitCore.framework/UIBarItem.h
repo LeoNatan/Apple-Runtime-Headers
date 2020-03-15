@@ -28,12 +28,12 @@
 + (id)_appearanceWhenContainedIn:(id)arg1;
 + (id)appearance;
 + (id)_appearanceBlindViewClasses;
+- (void).cxx_destruct;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(nonatomic) struct UIEdgeInsets largeContentSizeImageInsets; // @synthesize largeContentSizeImageInsets=_largeContentSizeImageInsets;
 @property(retain, nonatomic) UIImage *largeContentSizeImage; // @synthesize largeContentSizeImage=_largeContentSizeImage;
 @property(nonatomic, setter=_setShouldArchiveUIAppearanceTags:) BOOL _shouldArchiveUIAppearanceTags; // @synthesize _shouldArchiveUIAppearanceTags;
 @property(nonatomic, setter=_setHasCustomizableInstanceAppearanceModifications:) BOOL _hasCustomizableInstanceAppearanceModifications; // @synthesize _hasCustomizableInstanceAppearanceModifications;
-- (void).cxx_destruct;
 - (id)_attributedTitleForState:(unsigned long long)arg1 withDefaultAttributes:(id)arg2;
 @property(readonly, nonatomic) BOOL hasImage;
 @property(readonly, nonatomic) BOOL hasTitle;

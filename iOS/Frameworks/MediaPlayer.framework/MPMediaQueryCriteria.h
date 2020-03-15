@@ -27,6 +27,7 @@
     NSDictionary *_orderingDirectionMappings;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long entityOrder; // @synthesize entityOrder=_entityOrder;
 @property(copy, nonatomic) NSDictionary *orderingDirectionMappings; // @synthesize orderingDirectionMappings=_orderingDirectionMappings;
 @property(nonatomic) _Bool includeEntitiesWithBlankNames; // @synthesize includeEntitiesWithBlankNames=_includeEntitiesWithBlankNames;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned long long entityLimit; // @synthesize entityLimit=_entityLimit;
 @property(nonatomic) long long groupingType; // @synthesize groupingType=_groupingType;
 @property(copy, nonatomic) NSSet *collectionPropertiesToFetch; // @synthesize collectionPropertiesToFetch=_collectionPropertiesToFetch;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool specifiesPlaylistItems;
 - (void)removePredicatesForProperty:(id)arg1;
 - (id)predicateForProperty:(id)arg1;

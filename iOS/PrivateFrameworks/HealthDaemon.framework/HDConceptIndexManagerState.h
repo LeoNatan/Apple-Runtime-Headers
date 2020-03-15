@@ -20,10 +20,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)stateWithGeneration:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *deletionAnchors; // @synthesize deletionAnchors=_deletionAnchors;
 @property(readonly, copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(readonly, nonatomic) long long generation; // @synthesize generation=_generation;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

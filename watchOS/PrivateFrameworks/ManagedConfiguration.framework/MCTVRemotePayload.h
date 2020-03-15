@@ -17,9 +17,9 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allowedRemotes; // @synthesize allowedRemotes=_allowedRemotes;
 @property(retain, nonatomic) NSArray *allowedTVs; // @synthesize allowedTVs=_allowedTVs;
-- (void).cxx_destruct;
 - (id)restrictions;
 - (id)payloadDescriptionKeyValueSections;
 - (id)description;

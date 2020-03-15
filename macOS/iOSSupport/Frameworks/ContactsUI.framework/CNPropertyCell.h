@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)labelStringFromAppName:(id)arg1 andPropertyLabel:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CNPresenterDelegate> presentingDelegate; // @synthesize presentingDelegate=_presentingDelegate;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double labelWidth; // @synthesize labelWidth=_labelWidth;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(readonly, nonatomic) UIResponder *firstResponderItem; // @synthesize firstResponderItem=_firstResponderItem;
 @property(nonatomic) __weak id property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (void)updateValueWithPropertyItem:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
 - (void)tintColorDidChange;

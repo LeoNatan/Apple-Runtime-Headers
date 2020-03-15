@@ -15,10 +15,10 @@
     NSArray *customProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customProperties; // @synthesize customProperties;
 @property(retain, nonatomic) NSArray *namedProperties; // @synthesize namedProperties;
 @property(retain, nonatomic) AVAudioHardwareObject *changedObject; // @synthesize changedObject;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (double)preferredHeight;
 + (id)reuseIdentifier;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *addIcon; // @synthesize addIcon=_addIcon;
 @property(retain, nonatomic) UILabel *addLabel; // @synthesize addLabel=_addLabel;
-- (void).cxx_destruct;
 - (void)setEnabled:(_Bool)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

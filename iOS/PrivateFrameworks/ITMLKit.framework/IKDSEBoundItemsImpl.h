@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_canProxiedItemElementsBeUpdatedWithLoadedElements;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *proxiedItemElementsByItemID; // @synthesize proxiedItemElementsByItemID=_proxiedItemElementsByItemID;
 @property(retain, nonatomic) NSMutableIndexSet *visibleIndexSet; // @synthesize visibleIndexSet=_visibleIndexSet;
 @property(copy, nonatomic) NSDictionary *childrenByItemID; // @synthesize childrenByItemID=_childrenByItemID;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKAppDataSet *dataSet; // @synthesize dataSet=_dataSet;
 @property(retain, nonatomic) IKChangeSet *itemsChangeSet; // @synthesize itemsChangeSet=_itemsChangeSet;
 @property(readonly, nonatomic) __weak IKDataSourceElement *dataSourceElement; // @synthesize dataSourceElement=_dataSourceElement;
-- (void).cxx_destruct;
 - (void)_appendVisibleIndexSetWithIndex:(long long)arg1;
 - (id)_elementForItemAtIndex:(long long)arg1;
 - (id)_prototypeMappingForItemAtIndex:(long long)arg1;

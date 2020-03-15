@@ -18,7 +18,7 @@
 - (void)fetchItemID:(FPItemID *)arg1 reply:(void (^)(FPItem *, NSError *))arg2;
 - (void)fetchDefaultContainerForBundleIdentifier:(NSString *)arg1 defaultName:(NSString *)arg2 inDomainIdentifier:(NSString *)arg3 reply:(void (^)(FPItem *, NSError *))arg4;
 - (void)fetchHierarchyForItemID:(FPItemID *)arg1 recursively:(BOOL)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
-- (void)createItemBasedOnTemplate:(FPItem *)arg1 fields:(unsigned long long)arg2 contents:(FPSandboxingURLWrapper *)arg3 options:(unsigned long long)arg4 bounce:(BOOL)arg5 completionHandler:(void (^)(FPItem *, NSError *))arg6;
+- (void)createItemBasedOnTemplate:(FPItem *)arg1 fields:(unsigned long long)arg2 contents:(FPSandboxingURLWrapper *)arg3 options:(unsigned long long)arg4 bounce:(BOOL)arg5 completionHandler:(void (^)(FPItem *, unsigned long long, BOOL, NSError *))arg6;
 - (void)bulkItemChanges:(NSArray *)arg1 changedFields:(unsigned long long)arg2 completionHandler:(void (^)(NSDictionary *, NSDictionary *))arg3;
 - (void)singleItemChange:(FPItem *)arg1 changedFields:(unsigned long long)arg2 bounce:(BOOL)arg3 completionHandler:(void (^)(FPItem *, NSError *))arg4;
 - (void)deleteItemsWithIDs:(NSArray *)arg1 baseVersions:(NSArray *)arg2 options:(unsigned long long)arg3 reply:(void (^)(NSError *))arg4;

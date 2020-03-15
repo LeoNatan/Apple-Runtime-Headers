@@ -16,10 +16,10 @@
 }
 
 + (double)screenScale;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(readonly, copy, nonatomic) NSString *stickerName; // @synthesize stickerName=_stickerName;
 @property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (id)initWithFileURL:(id)arg1 stickerName:(id)arg2 accessibilityLabel:(id)arg3;
 
 @end

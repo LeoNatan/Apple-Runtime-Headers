@@ -67,22 +67,6 @@ struct DataSet {
 
 struct Histogram<long, double>;
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NUResponse {
-    Class _field1;
-};
-
 struct Region {
     struct unordered_set<NU::RegionRect, NU::RectHash, NU::RectEqualTo, std::__1::allocator<NU::RegionRect>> _field1;
 };

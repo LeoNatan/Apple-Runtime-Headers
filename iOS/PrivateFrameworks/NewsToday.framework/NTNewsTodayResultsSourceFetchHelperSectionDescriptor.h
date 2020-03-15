@@ -17,9 +17,9 @@
     id <NTSectionQueueDescriptor> _parentSectionQueueDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <NTSectionQueueDescriptor> parentSectionQueueDescriptor; // @synthesize parentSectionQueueDescriptor=_parentSectionQueueDescriptor;
 @property(readonly, copy, nonatomic) id <NTSectionDescriptor> sectionDescriptor; // @synthesize sectionDescriptor=_sectionDescriptor;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *actionURL;
 @property(readonly, copy, nonatomic) NSString *actionTitle;
 @property(readonly, nonatomic) _Bool videoPlaysMutedByDefault;

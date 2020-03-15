@@ -19,8 +19,8 @@
     BOOL _secureTransport106Compatibility;
 }
 
-@property BOOL secureTransport106Compatibility; // @synthesize secureTransport106Compatibility=_secureTransport106Compatibility;
 - (void).cxx_destruct;
+@property BOOL secureTransport106Compatibility; // @synthesize secureTransport106Compatibility=_secureTransport106Compatibility;
 - (long long)writeData:(void *)arg1 length:(unsigned long long)arg2;
 - (long long)readData:(void *)arg1 length:(unsigned long long)arg2;
 - (BOOL)setupClientSSLOnSocket:(int)arg1;

@@ -18,10 +18,10 @@
 + (BOOL)requiresConstraintBasedLayout;
 + (double)estimatedHeight;
 + (id)_titleFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *labelConstraints; // @synthesize labelConstraints=_labelConstraints;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)prepareForReuse;
 - (void)drawRect:(struct CGRect)arg1;

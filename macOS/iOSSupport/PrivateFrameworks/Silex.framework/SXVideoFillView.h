@@ -19,12 +19,12 @@
     SXImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) SXImageResource *imageResource; // @synthesize imageResource=_imageResource;
 @property(retain, nonatomic) SXVideoFillPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) SXClippingView *clippingView; // @synthesize clippingView=_clippingView;
 @property(readonly, nonatomic) SXVideoFill *videoFill; // @synthesize videoFill=_videoFill;
-- (void).cxx_destruct;
 - (void)setContentFrame:(struct CGRect)arg1;
 - (struct CGRect)contentFrame;
 - (void)reset;

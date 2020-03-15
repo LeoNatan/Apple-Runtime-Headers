@@ -14,9 +14,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isCarouselEntity;
 - (_Bool)isClockOrLauncherEntity;

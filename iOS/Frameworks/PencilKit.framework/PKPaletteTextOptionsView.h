@@ -14,9 +14,9 @@
     UIButton *_signatureButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *signatureButton; // @synthesize signatureButton=_signatureButton;
 @property(readonly, nonatomic) UIButton *textButton; // @synthesize textButton=_textButton;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

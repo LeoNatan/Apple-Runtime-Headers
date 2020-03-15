@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) NSDictionary *persistentHistoryChangeTombstone; // @synthesize persistentHistoryChangeTombstone=_persistentHistoryChangeTombstone;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *persistentHistoryChangeTombstone; // @synthesize persistentHistoryChangeTombstone=_persistentHistoryChangeTombstone;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

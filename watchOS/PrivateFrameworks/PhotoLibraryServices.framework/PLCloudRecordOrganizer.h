@@ -27,6 +27,7 @@
 }
 
 + (_Bool)records:(id)arg1 containsScopedIdentifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *suggestionRecords; // @synthesize suggestionRecords=_suggestionRecords;
 @property(readonly) NSMutableArray *expungedRecords; // @synthesize expungedRecords=_expungedRecords;
 @property(readonly) NSMutableArray *deletePersonRecords; // @synthesize deletePersonRecords=_deletePersonRecords;
@@ -40,7 +41,6 @@
 @property(readonly) NSMutableArray *personRecords; // @synthesize personRecords=_personRecords;
 @property(readonly) NSMutableArray *albumRecordsWithContainerChange; // @synthesize albumRecordsWithContainerChange=_albumRecordsWithContainerChange;
 @property(readonly) NSMutableArray *assetRecordsWithContainerChange; // @synthesize assetRecordsWithContainerChange=_assetRecordsWithContainerChange;
-- (void).cxx_destruct;
 - (void)organizeRecords:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 

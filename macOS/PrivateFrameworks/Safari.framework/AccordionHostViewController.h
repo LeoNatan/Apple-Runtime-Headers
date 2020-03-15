@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
 
 + (double)appearanceAnimationDuration;
 + (double)expansionAnimationDuration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSViewController<AccordionHostable> *rightViewController; // @synthesize rightViewController=_rightViewController;
 @property(retain, nonatomic) NSViewController<AccordionHostable> *leftViewController; // @synthesize leftViewController=_leftViewController;
-- (void).cxx_destruct;
 - (BOOL)containsViewController:(id)arg1;
 - (void)_decrementPendingAnimationCountAndRunDeferredActionsIfNeeded;
 - (void)_incrementPendingAnimationCount;

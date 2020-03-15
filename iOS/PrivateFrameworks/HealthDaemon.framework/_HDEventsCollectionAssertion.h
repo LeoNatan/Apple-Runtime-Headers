@@ -13,8 +13,8 @@
     NSSet *_eventCollectors;
 }
 
-@property(retain, nonatomic) NSSet *eventCollectors; // @synthesize eventCollectors=_eventCollectors;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *eventCollectors; // @synthesize eventCollectors=_eventCollectors;
 - (id)initWithOwnerIdentifier:(id)arg1;
 
 @end

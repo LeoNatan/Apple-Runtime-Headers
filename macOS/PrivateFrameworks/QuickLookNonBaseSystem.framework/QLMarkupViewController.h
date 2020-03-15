@@ -16,10 +16,10 @@
     NSURL *_originalURL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *originalURL; // @synthesize originalURL=_originalURL;
 @property BOOL isDirty; // @synthesize isDirty=_isDirty;
 @property __weak id <QLMarkupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)saveEditingToURL:(id)arg1;
 - (void)applyCropIfNecessary;

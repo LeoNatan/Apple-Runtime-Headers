@@ -16,23 +16,28 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)getInstance;
+- (void)setTimer:(id)arg1 history:(id)arg2 error:(id *)arg3;
 - (void)cleanup;
 - (id)processEndOfTransaction:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 - (id)parseEndEvent:(id)arg1 withApplet:(id)arg2 withError:(id *)arg3;
 - (id)parseStartEvent:(id)arg1 withApplet:(id)arg2 withError:(id *)arg3;
 - (id)parseHCIEvent:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withTransceiver:(id)arg5 withError:(id *)arg6;
-- (id)resolveTypeDetailApollo:(unsigned char)arg1;
-- (void)parseTransitApolloBus:(id)arg1 transactionType:(unsigned char)arg2 file1E:(id)arg3 into:(id)arg4;
-- (void)parseTransitApolloMetro:(id)arg1 transactionType:(unsigned char)arg2 file1E:(id)arg3 into:(id)arg4;
-- (void)parseTransitApollo:(id)arg1 transactionType:(unsigned char)arg2 file1E:(id)arg3 into:(id)arg4;
-- (id)resolveTypeDetailKepler:(unsigned char)arg1;
-- (void)parseTransitKeplerMetro:(id)arg1 transactionType:(unsigned char)arg2 file1E:(id)arg3 into:(id)arg4;
-- (void)parseTransitKeplerBus:(id)arg1 transactionType:(unsigned char)arg2 file1E:(id)arg3 into:(id)arg4;
-- (void)parseTransitKepler:(id)arg1 transactionType:(unsigned char)arg2 file1E:(id)arg3 into:(id)arg4;
-- (void)parseTransit:(id)arg1 file1E:(id)arg2 into:(id)arg3;
+- (void)parseTransitGalileo:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
+- (void)parseTransitPioneer:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
+- (void)parseTransitApollo:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
+- (void)parseTransitKepler:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
+- (id)resolveTransitModality:(unsigned char)arg1;
+- (void)parseTransit:(id)arg1 file1E:(id)arg2 file1A:(id)arg3 into:(id)arg4;
 - (id)parseFile18:(id)arg1;
 - (id)getHistory:(id)arg1 error:(id *)arg2;
 - (id)getState:(id)arg1;
+- (unsigned int)convertAppletSNtoWalletSN:(unsigned short)arg1 txnTypeIdentifier:(unsigned int)arg2;
+- (unsigned short)convertWalletSNtoAppletSN:(id)arg1;
+- (void)addFakeBusTxnGuangdong:(id)arg1 history:(id)arg2 cityCode:(id)arg3;
+- (void)removeDoubleMetroTapGuangdong:(id)arg1 history:(id)arg2 cityCode:(id)arg3;
+- (id)adjustHistory:(id)arg1;
+- (void)removeEnRouteForSingleTapBusGuangdong:(id)arg1 history:(id)arg2 cityCode:(id)arg3;
+- (void)adjustState:(id)arg1 latestTransaction:(id)arg2;
 - (id)getAppletStateAndHistory:(id)arg1 withError:(id *)arg2;
 - (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 - (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;

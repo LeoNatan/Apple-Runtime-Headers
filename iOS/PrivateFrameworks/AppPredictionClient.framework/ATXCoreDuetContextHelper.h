@@ -13,8 +13,8 @@
     id <_CDLocalContext> _context;
 }
 
-@property(retain, nonatomic) id <_CDLocalContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_CDLocalContext> context; // @synthesize context=_context;
 - (id)fetchDataDictionaryForKeyPath:(id)arg1;
 - (id)init;
 

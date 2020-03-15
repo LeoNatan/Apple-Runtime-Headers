@@ -23,9 +23,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enableLogging; // @synthesize enableLogging=_enableLogging;
 @property(readonly, copy, nonatomic) NSDictionary *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)debugQuickLookObject;
 - (id)debugDescription;
 @property(readonly, copy, nonatomic) NSString *runLog;

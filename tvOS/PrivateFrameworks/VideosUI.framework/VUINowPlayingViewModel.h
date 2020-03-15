@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, UIImage, VUIMediaController, VUIVideoAdvisoryLogoImageDownloader;
+@class NSDate, NSDictionary, NSString, UIImage, VUIMediaController, VUIVideoAdvisoryLogoImageDownloader;
 
 __attribute__((visibility("hidden")))
 @interface VUINowPlayingViewModel : NSObject
@@ -15,25 +15,29 @@ __attribute__((visibility("hidden")))
     _Bool _livePlayback;
     _Bool _currentMediaATVShow;
     NSDictionary *_metadata;
+    NSString *_currentMediaType;
     NSString *_canonicalID;
     NSString *_showCanonicalID;
     unsigned long long _autoPlayedEpisodesCount;
+    NSDate *_initialPlaybackStartDate;
     VUIMediaController *_mediaController;
     VUIVideoAdvisoryLogoImageDownloader *_logoImageDownloader;
     UIImage *_ratingImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCurrentMediaATVShow) _Bool currentMediaATVShow; // @synthesize currentMediaATVShow=_currentMediaATVShow;
 @property(retain, nonatomic) UIImage *ratingImage; // @synthesize ratingImage=_ratingImage;
 @property(retain, nonatomic) VUIVideoAdvisoryLogoImageDownloader *logoImageDownloader; // @synthesize logoImageDownloader=_logoImageDownloader;
 @property(retain, nonatomic) VUIMediaController *mediaController; // @synthesize mediaController=_mediaController;
 @property(nonatomic, getter=isLivePlayback) _Bool livePlayback; // @synthesize livePlayback=_livePlayback;
+@property(retain, nonatomic) NSDate *initialPlaybackStartDate; // @synthesize initialPlaybackStartDate=_initialPlaybackStartDate;
 @property(nonatomic) unsigned long long autoPlayedEpisodesCount; // @synthesize autoPlayedEpisodesCount=_autoPlayedEpisodesCount;
 @property(nonatomic) _Bool includesProductPageButton; // @synthesize includesProductPageButton=_includesProductPageButton;
 @property(copy, nonatomic) NSString *showCanonicalID; // @synthesize showCanonicalID=_showCanonicalID;
 @property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
+@property(copy, nonatomic) NSString *currentMediaType; // @synthesize currentMediaType=_currentMediaType;
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (id)_metaDataInfoFromMediaItem:(id)arg1;
 - (void)_updateMetadataForCurrentMediaItem;
 - (void)_handleMetadataDidChangeNotification:(id)arg1;

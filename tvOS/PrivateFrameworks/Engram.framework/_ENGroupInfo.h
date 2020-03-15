@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sharedApplicationData; // @synthesize sharedApplicationData=_sharedApplicationData;
 @property(retain, nonatomic) NSArray *participants; // @synthesize participants=_participants;
 @property(retain) ENAccountIdentity *accountIdentity; // @synthesize accountIdentity=_accountIdentity;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAccountIdentity:(id)arg1 paricipants:(id)arg2 sharedApplicationData:(id)arg3;

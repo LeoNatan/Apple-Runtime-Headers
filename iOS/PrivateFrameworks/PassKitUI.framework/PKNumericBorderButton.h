@@ -18,9 +18,9 @@
     UIColor *_highlightedBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *highlightedBackgroundColor; // @synthesize highlightedBackgroundColor=_highlightedBackgroundColor;
 @property(copy, nonatomic) UIColor *normalBackgroundColor; // @synthesize normalBackgroundColor=_normalBackgroundColor;
-- (void).cxx_destruct;
 - (void)setBorder:(unsigned long long)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;

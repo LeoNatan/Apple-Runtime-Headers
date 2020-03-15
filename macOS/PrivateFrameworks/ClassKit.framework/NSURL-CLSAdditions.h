@@ -9,9 +9,12 @@
 @interface NSURL (CLSAdditions)
 + (id)cls_documentsURL;
 + (id)cls_draftsURL;
++ (void)cls_getUbiquitousContainerURLWithCompletion:(CDUnknownBlockType)arg1;
 + (id)cls_ubiquitousContainerURL;
 + (id)cls_configURL;
 + (id)cls_libraryURL;
++ (id)cls_ubiquitousContainerURL_Imp:(id *)arg1;
+- (void)cls_removeCachedResourceValueForKeys:(id)arg1;
 - (id)cls_createDirectoryIfNeeded:(id *)arg1;
 - (BOOL)cls_isParentOfURL:(id)arg1;
 @property(readonly, nonatomic) BOOL cls_fileExists;

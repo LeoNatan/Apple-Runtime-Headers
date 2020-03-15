@@ -18,10 +18,10 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) WFImportQuestionViewController *importQuestionViewController; // @synthesize importQuestionViewController=_importQuestionViewController;
 @property(nonatomic) __weak id <WFGalleryImportQuestionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)importQuestionViewController:(id)arg1 didChangeContentSize:(struct CGSize)arg2;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithImportQuestion:(id)arg1 presenter:(id)arg2;

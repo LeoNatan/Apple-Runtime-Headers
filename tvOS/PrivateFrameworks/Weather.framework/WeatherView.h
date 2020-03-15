@@ -19,8 +19,8 @@
     NSLocale *_lastLocale;
 }
 
-@property(retain, nonatomic, setter=showCity:) City *city; // @synthesize city=_city;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=showCity:) City *city; // @synthesize city=_city;
 - (void)cleanupWindView;
 - (id)bundle;
 - (void)refreshLocalization;

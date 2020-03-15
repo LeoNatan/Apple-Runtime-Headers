@@ -26,6 +26,7 @@
 + (id)dateRangeToScanForConflictsForEvent:(id)arg1;
 + (id)infoWithConflicts:(long long)arg1 needsAction:(long long)arg2 event:(id)arg3;
 + (id)infoWithConflictsInSeries:(long long)arg1 outOf:(long long)arg2 withPeriod:(id)arg3 conflictingDates:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) CalDateRange *conflictPeriodForSeries; // @synthesize conflictPeriodForSeries=_conflictPeriodForSeries;
 @property unsigned long long totalNeedsActionEvents; // @synthesize totalNeedsActionEvents=_totalNeedsActionEvents;
 @property unsigned long long totalConflictingEvents; // @synthesize totalConflictingEvents=_totalConflictingEvents;
@@ -34,7 +35,6 @@
 @property(retain) NSArray *needsActionEvents; // @synthesize needsActionEvents=_needsActionEvents;
 @property(retain) NSArray *conflictingEvents; // @synthesize conflictingEvents=_conflictingEvents;
 @property(retain) NSArray *conflictingDates; // @synthesize conflictingDates=_conflictingDates;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithConflictingDates:(id)arg1 conflictingEvents:(id)arg2 needsActionEvents:(id)arg3 totalOccurrencesInSeries:(unsigned long long)arg4 conflictPeriodForSeries:(id)arg5;
 

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSObject<BROperationClient> *_remoteClientProxy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreMissingRemoteClientProxy; // @synthesize ignoreMissingRemoteClientProxy=_ignoreMissingRemoteClientProxy;
 @property(retain, nonatomic) NSObject<BROperationClient> *remoteClientProxy; // @synthesize remoteClientProxy=_remoteClientProxy;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)start;
 - (oneway void)invalidate;

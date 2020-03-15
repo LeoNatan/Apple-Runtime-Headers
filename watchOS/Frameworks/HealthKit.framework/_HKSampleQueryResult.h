@@ -16,11 +16,11 @@
     NSArray *_samples;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *samples; // @synthesize samples=_samples;
 @property(readonly, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 samples:(id)arg3;
 
 @end

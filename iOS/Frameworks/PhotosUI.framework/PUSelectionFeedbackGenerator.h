@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UISelectionFeedbackGenerator *_feedbackGenerator;
 }
 
-@property(readonly, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 - (void)performFeedback;
 - (void)prepareFeedback;
 - (id)init;

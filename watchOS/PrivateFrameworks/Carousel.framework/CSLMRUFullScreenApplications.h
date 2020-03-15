@@ -24,8 +24,8 @@
 }
 
 + (id)sharedMRUFullScreenApplications;
-@property(readonly, nonatomic) int maximumMRU; // @synthesize maximumMRU=_maximumMRU;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int maximumMRU; // @synthesize maximumMRU=_maximumMRU;
 - (void)backlight:(id)arg1 didTurnOn:(_Bool)arg2 atContinuousTime:(unsigned long long)arg3 forReason:(unsigned int)arg4;
 - (void)_writeIfDirty;
 - (void)_lock_markDirty;

@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) REMListPredicateDescriptor *predicateDescriptor; // @synthesize predicateDescriptor=_predicateDescriptor;
-- (void).cxx_destruct;
 - (id)resultsFromFetchResult:(id)arg1 inParentList:(id)arg2 error:(id *)arg3;
 - (id)resultsFromFetchResult:(id)arg1 inAccount:(id)arg2 error:(id *)arg3;
 - (id)resultsFromFetchResult:(id)arg1 inStore:(id)arg2 error:(id *)arg3;

@@ -20,9 +20,14 @@
     NSNumber *_changeID;
     NSString *_externalID;
     NSNumber *_imagesChanged;
+    NSString *_externalURI;
+    NSString *_externalModificationTag;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag=_externalModificationTag;
+@property(retain, nonatomic) NSString *externalURI; // @synthesize externalURI=_externalURI;
 @property(retain, nonatomic) NSNumber *imagesChanged; // @synthesize imagesChanged=_imagesChanged;
 @property(retain, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(retain, nonatomic) NSNumber *changeID; // @synthesize changeID=_changeID;
@@ -31,7 +36,6 @@
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

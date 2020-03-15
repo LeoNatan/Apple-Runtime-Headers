@@ -18,11 +18,11 @@
     CNRecentLikenessesDataSourceDelayedEditDecorator *_recentLikenessesDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNRecentLikenessesDataSourceDelayedEditDecorator *recentLikenessesDataSource; // @synthesize recentLikenessesDataSource=_recentLikenessesDataSource;
 @property(retain, nonatomic) CNUIMeContactMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
-- (void).cxx_destruct;
 - (void)setCardViewDataSource:(id)arg1;
 - (id)init;
 

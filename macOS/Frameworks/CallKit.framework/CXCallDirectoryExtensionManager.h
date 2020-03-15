@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int storeExtensionsChangedNotifyToken; // @synthesize storeExtensionsChangedNotifyToken=_storeExtensionsChangedNotifyToken;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXCallDirectoryExtensionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) CXCallDirectoryManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (void)setEnabled:(BOOL)arg1 forExtension:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_extensionsChanged;

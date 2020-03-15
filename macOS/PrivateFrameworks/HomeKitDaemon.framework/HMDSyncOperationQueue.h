@@ -20,6 +20,7 @@
     double _initialBackoff;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasExponentialBackoff; // @synthesize hasExponentialBackoff=_hasExponentialBackoff;
 @property(nonatomic) double initialBackoff; // @synthesize initialBackoff=_initialBackoff;
 @property(nonatomic) double initialDelay; // @synthesize initialDelay=_initialDelay;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak HMDSyncOperationManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) HMFExponentialBackoffTimer *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)operationsToCancel;
 - (id)allOperations;
 - (id)nextOperation;

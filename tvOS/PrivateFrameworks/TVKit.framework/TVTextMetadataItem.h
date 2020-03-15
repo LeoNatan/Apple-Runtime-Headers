@@ -14,9 +14,9 @@
     NSString *_value;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 value:(id)arg2;
 
 @end

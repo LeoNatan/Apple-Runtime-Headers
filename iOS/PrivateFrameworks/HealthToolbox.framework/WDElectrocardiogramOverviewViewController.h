@@ -29,6 +29,7 @@
     UITapGestureRecognizer *_tripleTapToSettingsRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool previousElectrocardiogramDisabledCacheValue; // @synthesize previousElectrocardiogramDisabledCacheValue=_previousElectrocardiogramDisabledCacheValue;
 @property(retain, nonatomic) UITapGestureRecognizer *tripleTapToSettingsRecognizer; // @synthesize tripleTapToSettingsRecognizer=_tripleTapToSettingsRecognizer;
 @property(retain, nonatomic) id <HKDataMetadataSectionProtocol> educationSection; // @synthesize educationSection=_educationSection;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(nonatomic) long long placeholderCellCount; // @synthesize placeholderCellCount=_placeholderCellCount;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)_showDataSourcesAndAccessController;

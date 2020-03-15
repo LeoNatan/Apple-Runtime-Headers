@@ -6,10 +6,11 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PXCloudQuotaController, UIView;
+@class NSObject, PXCloudQuotaController, UIView;
+@protocol PXAnonymousViewController;
 
 @protocol PXCloudQuotaControllerDelegate <NSObject>
-- (struct NSObject *)presentingViewControllerForCloudQuotaController:(PXCloudQuotaController *)arg1;
+- (NSObject<PXAnonymousViewController> *)presentingViewControllerForCloudQuotaController:(PXCloudQuotaController *)arg1;
 - (void)cloudQuotaController:(PXCloudQuotaController *)arg1 presentInformationBanner:(UIView *)arg2;
 @end
 

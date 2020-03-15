@@ -22,13 +22,13 @@
     NSCalendar *_currentCalendar;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCalendar *currentCalendar; // @synthesize currentCalendar=_currentCalendar;
 @property(retain, nonatomic) id <HKDateRangeDataUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
 @property(readonly, nonatomic) HKUnitPreferenceController *unitPreferenceController; // @synthesize unitPreferenceController=_unitPreferenceController;
 @property(readonly, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(readonly, nonatomic) int activityValue; // @synthesize activityValue=_activityValue;
 @property(readonly, nonatomic) HKActivitySummaryDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
-- (void).cxx_destruct;
 - (id)_healthChartPointForQuantity:(id)arg1 quantityType:(id)arg2 activityValue:(int)arg3 referenceDisplayType:(id)arg4 activitySummaryData:(id)arg5 preferredUnit:(id)arg6 date:(id)arg7 createBarValue:(_Bool)arg8;
 - (id)_quantityForActivityValue:(int)arg1 summary:(id)arg2;
 - (id)_chartPointForActivityValue:(int)arg1 summary:(id)arg2 timeScope:(int)arg3;

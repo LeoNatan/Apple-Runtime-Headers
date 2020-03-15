@@ -44,6 +44,7 @@
 
 + (_Bool)isEmulatingImagePicker;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CAMCameraViewControllerCameraSessionDelegate> cameraSessionDelegate; // @synthesize cameraSessionDelegate=_cameraSessionDelegate;
 @property(nonatomic) _Bool automaticallyManagesCameraSession; // @synthesize automaticallyManagesCameraSession=_automaticallyManagesCameraSession;
 @property(nonatomic) __weak id <CAMCameraViewControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
@@ -64,7 +65,6 @@
 @property(readonly, nonatomic) CAMTimelapseController *timelapseController; // @synthesize timelapseController=_timelapseController;
 @property(readonly, nonatomic) CUCaptureController *captureController; // @synthesize captureController=_captureController;
 @property(nonatomic) __weak id <CAMCameraCaptureDelegate> captureDelegate; // @synthesize captureDelegate=_captureDelegate;
-- (void).cxx_destruct;
 @property(nonatomic, getter=creativeCameraDelegate) __weak id <CAMCreativeCameraDelegate> creativeCameraDelegate;
 - (id)reviewButton;
 - (void)handleReviewButtonReleased:(id)arg1;

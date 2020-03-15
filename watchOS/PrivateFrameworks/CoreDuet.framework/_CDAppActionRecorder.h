@@ -21,11 +21,11 @@
 }
 
 + (id)appActionRecorder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSString *previousTitle; // @synthesize previousTitle=_previousTitle;
 @property(retain, nonatomic) NSString *previousActivityType; // @synthesize previousActivityType=_previousActivityType;
-- (void).cxx_destruct;
 - (void)recordUserActivityEvents:(id)arg1;
 - (void)recordUserActivityEvent:(id)arg1;
 - (void)recordUserActivityEventForCollection:(id)arg1;

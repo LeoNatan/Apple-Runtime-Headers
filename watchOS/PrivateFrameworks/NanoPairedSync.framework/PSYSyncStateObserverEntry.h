@@ -13,8 +13,8 @@
     id <PSYSyncStateObserver> _observer;
 }
 
-@property(nonatomic) __weak id <PSYSyncStateObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PSYSyncStateObserver> observer; // @synthesize observer=_observer;
 - (void)syncClientStateDidChange:(id)arg1;
 - (id)initWithObserver:(id)arg1;
 

@@ -15,17 +15,19 @@
     id <NSSharingExtensionContextSessionCompletionDelegate> _sessionCompletionDelegate;
     NSProgress *_progress;
     unsigned long long _status;
-    NSDictionary *_options;
     id <SHKHostExtensionContextProtocol> _host;
+    NSDictionary *_options;
+    NSDictionary *_sandboxExtensionTokens;
 }
 
 + (void)assertBundleInformationIsComplete;
 + (void)load;
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-@property(retain) id <SHKHostExtensionContextProtocol> host; // @synthesize host=_host;
-@property(retain) NSDictionary *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *sandboxExtensionTokens; // @synthesize sandboxExtensionTokens=_sandboxExtensionTokens;
+@property(retain) NSDictionary *options; // @synthesize options=_options;
+@property(retain) id <SHKHostExtensionContextProtocol> host; // @synthesize host=_host;
 - (void)setDisplayState:(id)arg1;
 - (id)displayState;
 - (id)extensionItem;

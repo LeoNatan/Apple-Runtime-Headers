@@ -18,10 +18,10 @@
     id <SWLogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) SWDatastore *datastore; // @synthesize datastore=_datastore;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)updateDatastore:(id)arg1 originatingSession:(id)arg2;

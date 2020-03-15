@@ -24,12 +24,12 @@
 + (id)audioRoutesFromBuffers:(id)arg1;
 + (id)audioRouteFromBuffer:(id)arg1;
 + (id)audioRouteWithMPAVRoute:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPicked) _Bool picked; // @synthesize picked=_picked;
 @property(readonly, nonatomic) _Bool supportsVolumeControl; // @synthesize supportsVolumeControl=_supportsVolumeControl;
 @property(readonly, nonatomic) int routeType; // @synthesize routeType=_routeType;
 @property(readonly, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (id)buffer;
 - (void)setSupportsVolumeControl:(_Bool)arg1;
 - (id)initWithMPAVRoute:(id)arg1;

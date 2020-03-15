@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     struct UIOffset _textOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBadgeVisualStyle *style; // @synthesize style=_style;
 @property(nonatomic) struct UIOffset textOffset; // @synthesize textOffset=_textOffset;
 @property(copy, nonatomic) UIColor *badgeColor; // @synthesize badgeColor=_badgeColor;
 @property(copy, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_applyTextToLabel;
 - (void)_setUpLabelIfNecessary;

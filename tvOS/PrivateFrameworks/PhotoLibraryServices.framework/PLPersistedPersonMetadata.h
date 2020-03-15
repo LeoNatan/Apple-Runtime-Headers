@@ -43,6 +43,7 @@
 + (id)_metadataFileURLForPersonUUID:(id)arg1 pathManager:(id)arg2;
 + (_Bool)isValidPath:(id)arg1 outPersonUUID:(id *)arg2;
 + (_Bool)isValidPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) PLPerson *person; // @synthesize person=_person;
 @property(nonatomic) long long fromVersion; // @synthesize fromVersion=_fromVersion;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) NSString *mergeTargetPersonUUID; // @synthesize mergeTargetPersonUUID=_mergeTargetPersonUUID;
 @property(retain, nonatomic) NSString *personUUID; // @synthesize personUUID=_personUUID;
-- (void).cxx_destruct;
 - (id)jsonDictionary;
 - (_Bool)matchesEntityInLibraryBackedByManagedObjectContext:(id)arg1 diff:(id *)arg2;
 - (void)_saveMetadata;

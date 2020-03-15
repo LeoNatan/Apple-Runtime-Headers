@@ -17,11 +17,12 @@
     id <HFMediaProfileContainer> _mediaProfile;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfile; // @synthesize mediaProfile=_mediaProfile;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) id <HFMediaValueSource> mediaValueSource; // @synthesize mediaValueSource=_mediaValueSource;
-- (void).cxx_destruct;
+- (void)_appendRestartStatusMessageForAccessory:(id)arg1 toResults:(id)arg2;
 - (void)_appendSplitMediaAccountErrorForAccessory:(id)arg1 toResults:(id)arg2;
 - (void)_appendSplitMediaAccountErrorIfNeededForAccessory:(id)arg1 toResults:(id)arg2;
 - (id)_parentMediaSystem;

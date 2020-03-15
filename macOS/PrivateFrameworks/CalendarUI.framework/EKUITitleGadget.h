@@ -20,12 +20,12 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) CUIKEventSuggestionGenerator *eventSuggestionGenerator; // @synthesize eventSuggestionGenerator=_eventSuggestionGenerator;
 @property(retain) NSDictionary *placeholderAttributes; // @synthesize placeholderAttributes=_placeholderAttributes;
 @property double cachedMaxHeight; // @synthesize cachedMaxHeight=_cachedMaxHeight;
 @property BOOL emptyTitleWasShownIfNeeded; // @synthesize emptyTitleWasShownIfNeeded=_emptyTitleWasShownIfNeeded;
 @property(retain) CalUISuggestionsField *titleField; // @synthesize titleField=_titleField;
-- (void).cxx_destruct;
 - (void)insertNewline;
 - (void)suggestionSelected:(id)arg1;
 - (id)titleForSuggestion:(id)arg1;

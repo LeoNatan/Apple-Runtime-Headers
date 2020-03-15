@@ -21,11 +21,11 @@
 
 + (int)serviceForProvider:(id)arg1 video:(BOOL)arg2;
 + (id)defaultProviders;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) id <TUCallProviderManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)providersChangedForDataSource:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *providersByIdentifier;
 - (void)launchAppForDialRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

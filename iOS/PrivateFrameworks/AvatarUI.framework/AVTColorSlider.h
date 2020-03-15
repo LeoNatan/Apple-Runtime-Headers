@@ -23,6 +23,7 @@
     long long _layoutDirection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(nonatomic) _Bool shouldTriggerFeedback; // @synthesize shouldTriggerFeedback=_shouldTriggerFeedback;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *selectionFeedbackGenerator; // @synthesize selectionFeedbackGenerator=_selectionFeedbackGenerator;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) CAShapeLayer *thumbClippingLayer; // @synthesize thumbClippingLayer=_thumbClippingLayer;
 @property(retain, nonatomic) CALayer *trackLayer; // @synthesize trackLayer=_trackLayer;
 @property(nonatomic) __weak id <AVTColorSliderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)valueDidChange:(id)arg1 forEvent:(id)arg2;
 - (id)currentMaximumTrackImage;
 - (id)currentMinimumTrackImage;

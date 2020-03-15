@@ -6,29 +6,37 @@
 
 #import <objc/NSObject.h>
 
+#import <Email/EMContentRequestOptionsBuilder-Protocol.h>
+#import <Email/NSCopying-Protocol.h>
 #import <Email/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
-@interface EMContentRequestOptions : NSObject <NSSecureCoding>
+@interface EMContentRequestOptions : NSObject <NSSecureCoding, NSCopying, EMContentRequestOptionsBuilder>
 {
     _Bool _includeSuggestionItems;
+    _Bool _requestAllHeaders;
     NSString *_requestedRepresentation;
     int _networkUsage;
+    NSArray *_requestedHeaderKeys;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)optionsWithRequestedRepresentationType:(id)arg1 networkUsage:(int)arg2 includeSuggestionItems:(_Bool)arg3;
 + (id)optionsWithRequestedRepresentationType:(id)arg1 networkUsage:(int)arg2;
-@property(readonly, nonatomic) _Bool includeSuggestionItems; // @synthesize includeSuggestionItems=_includeSuggestionItems;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *requestedHeaderKeys; // @synthesize requestedHeaderKeys=_requestedHeaderKeys;
+@property(nonatomic) _Bool requestAllHeaders; // @synthesize requestAllHeaders=_requestAllHeaders;
+@property(nonatomic) _Bool includeSuggestionItems; // @synthesize includeSuggestionItems=_includeSuggestionItems;
 @property(nonatomic) int networkUsage; // @synthesize networkUsage=_networkUsage;
 @property(copy, nonatomic) NSString *requestedRepresentation; // @synthesize requestedRepresentation=_requestedRepresentation;
-- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)debugDescription;
-- (id)initWithRequestedRepresentationType:(id)arg1 networkUsage:(int)arg2 includeSuggestionItems:(_Bool)arg3;
+- (id)copyWithBuilder:(CDUnknownBlockType)arg1;
 - (id)init;
+- (id)initWithBuilder:(CDUnknownBlockType)arg1;
 
 @end
 

@@ -18,8 +18,8 @@
     id <CSLEclipseTimerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLEclipseTimerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLEclipseTimerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_cancelScreenFadeTimerIfNecessary;
 - (void)_scheduleScreenFadeTimer;
 - (void)_cancelScreenBlankTimerIfNecessary;

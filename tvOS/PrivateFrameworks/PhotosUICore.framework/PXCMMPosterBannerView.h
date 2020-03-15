@@ -28,12 +28,12 @@
 + (id)_subheadlineLabelFont;
 + (id)_headlineLabelBoldFont;
 + (id)_headlineLabelFont;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLoadingPeopleSuggestions) _Bool loadingPeopleSuggestions; // @synthesize loadingPeopleSuggestions=_loadingPeopleSuggestions;
 @property(nonatomic) _Bool containsUnverifiedPersons; // @synthesize containsUnverifiedPersons=_containsUnverifiedPersons;
 @property(copy, nonatomic) NSArray *localizedNamesForHeadline; // @synthesize localizedNamesForHeadline=_localizedNamesForHeadline;
 @property(copy, nonatomic) NSString *subheadline; // @synthesize subheadline=_subheadline;
 @property(copy, nonatomic) NSString *headline; // @synthesize headline=_headline;
-- (void).cxx_destruct;
 - (id)_attributedStringWithString:(id)arg1 boldRange:(struct _NSRange)arg2;
 - (id)_headlineStringAttributes;
 - (id)_actionButtonWithTitle:(id)arg1 action:(SEL)arg2 enabled:(_Bool)arg3;

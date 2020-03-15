@@ -24,6 +24,7 @@
 }
 
 + (id)graphWithGraphObjects:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *layerChildMap; // @synthesize layerChildMap=_layerChildMap;
 @property(retain, nonatomic) NSMutableDictionary *layerParentMap; // @synthesize layerParentMap=_layerParentMap;
 @property(retain, nonatomic) NSMutableArray *rootLevelTensorNodes; // @synthesize rootLevelTensorNodes=_rootLevelTensorNodes;
@@ -33,7 +34,6 @@
 @property(readonly, retain, nonatomic) NSArray *graphObjects; // @synthesize graphObjects=_graphObjects;
 @property(nonatomic) BOOL allocateIntermediateTensors; // @synthesize allocateIntermediateTensors=_allocateIntermediateTensors;
 @property(nonatomic) BOOL readyForExecution; // @synthesize readyForExecution=_readyForExecution;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)enumerateOutputsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateInputsUsingBlock:(CDUnknownBlockType)arg1;

@@ -17,10 +17,10 @@
     ACHAchievementStore *_achievementStore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak ACHAchievementStore *achievementStore; // @synthesize achievementStore=_achievementStore;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel=_typicalDayModel;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (double)projectedDayDuration;
 - (id)workoutsCompletedDuringInterval:(id)arg1;
 - (id)allActivitySharingFriends;

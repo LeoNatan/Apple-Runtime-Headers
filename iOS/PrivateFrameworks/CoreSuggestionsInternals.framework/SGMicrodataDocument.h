@@ -14,9 +14,9 @@
     NSMutableArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) NSDictionary *htmlIds; // @synthesize htmlIds=_htmlIds;
-- (void).cxx_destruct;
 - (id)init;
 - (void)addItem:(id)arg1;
 - (void)setHtmlIdItemScope:(id)arg1 forHtmlId:(id)arg2;

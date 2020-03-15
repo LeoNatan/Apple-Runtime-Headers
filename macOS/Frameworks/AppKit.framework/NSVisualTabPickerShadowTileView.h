@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)headerHeight;
-@property(readonly) NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(readonly) NSView *containerView; // @synthesize containerView=_containerView;
 - (BOOL)accessibilityIsIgnored;
 - (void)startTitleOpacityAnimation:(long long)arg1;
 - (void)selectedTabDidChange;

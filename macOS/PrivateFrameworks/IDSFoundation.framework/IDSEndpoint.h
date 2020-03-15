@@ -34,6 +34,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double queryTimeInterval; // @synthesize queryTimeInterval=_queryTimeInterval;
 @property(readonly, nonatomic) NSString *senderCorrelationIdentifier; // @synthesize senderCorrelationIdentifier=_senderCorrelationIdentifier;
 @property(readonly, nonatomic) BOOL verifiedBusiness; // @synthesize verifiedBusiness=_verifiedBusiness;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) IDSEndpointCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 @property(retain, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
 @property(retain, nonatomic) IDSURI *URI; // @synthesize URI=_URI;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

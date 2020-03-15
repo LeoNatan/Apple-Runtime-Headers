@@ -16,8 +16,8 @@
     NSObject<OS_nw_protocol_transform> *_internalTransform;
 }
 
-@property(retain) NSObject<OS_nw_protocol_transform> *internalTransform; // @synthesize internalTransform=_internalTransform;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_nw_protocol_transform> *internalTransform; // @synthesize internalTransform=_internalTransform;
 @property(nonatomic) BOOL disablePathFallback;
 @property(nonatomic) int dataMode;
 - (void)setFastOpenForceEnable:(BOOL)arg1;

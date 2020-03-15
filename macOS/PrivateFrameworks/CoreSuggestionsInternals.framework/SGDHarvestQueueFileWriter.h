@@ -16,8 +16,8 @@
     int _fileId;
 }
 
-@property(readonly, nonatomic) int fileId; // @synthesize fileId=_fileId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int fileId; // @synthesize fileId=_fileId;
 @property(readonly, nonatomic) unsigned long long bytesWritten;
 - (void)write:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)dealloc;

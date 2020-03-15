@@ -16,8 +16,8 @@
     id _mailboxUid;
 }
 
-@property(retain, nonatomic) id mailboxUid; // @synthesize mailboxUid=_mailboxUid;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id mailboxUid; // @synthesize mailboxUid=_mailboxUid;
 - (_Bool)messageCanBeTriaged:(id)arg1;
 - (void)deleteBodyDataForMessage:(id)arg1;
 - (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(_Bool)arg3;

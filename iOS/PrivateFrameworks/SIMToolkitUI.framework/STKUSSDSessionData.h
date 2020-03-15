@@ -16,9 +16,9 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allowsResponse; // @synthesize allowsResponse=_allowsResponse;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)initWithText:(id)arg1 allowsResponse:(_Bool)arg2;

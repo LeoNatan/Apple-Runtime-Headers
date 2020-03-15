@@ -29,8 +29,8 @@
     id <SBRecentAppLayoutsDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBRecentAppLayoutsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBRecentAppLayoutsDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_migrateDisplayItemIfNeeded:(id)arg1;
 - (_Bool)_isApplicationSupported:(id)arg1;
 - (void)_installedApplicationsDidChange:(id)arg1;

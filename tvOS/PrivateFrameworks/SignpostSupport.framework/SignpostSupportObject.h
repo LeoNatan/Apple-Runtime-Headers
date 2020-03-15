@@ -20,10 +20,10 @@
 
 + (id)headerWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
 + (id)serializationTypeNumber;
+- (void).cxx_destruct;
 @property(nonatomic) double timebaseRatio; // @synthesize timebaseRatio=_timebaseRatio;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
-- (void).cxx_destruct;
 - (id)_containedObjectsFromArray:(id)arg1;
 - (_Bool)_containsTimeObject:(id)arg1;
 - (_Bool)_containsMCT:(unsigned long long)arg1;

@@ -18,10 +18,10 @@
     NSMutableArray *_updateDeviceBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updateDeviceBlocks; // @synthesize updateDeviceBlocks=_updateDeviceBlocks;
 @property(retain, nonatomic) NSMutableDictionary *deviceUpdatesDescription; // @synthesize deviceUpdatesDescription=_deviceUpdatesDescription;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *deviceUpdatesQueue; // @synthesize deviceUpdatesQueue=_deviceUpdatesQueue;
-- (void).cxx_destruct;
 - (_Bool)representsLocalDevices;
 - (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 andDeviceID:(id)arg3;
 - (void)updateProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;

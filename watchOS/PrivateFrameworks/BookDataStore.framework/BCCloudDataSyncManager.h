@@ -23,6 +23,7 @@
     double _backOffInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool serverPushPostponed; // @synthesize serverPushPostponed=_serverPushPostponed;
 @property(nonatomic) unsigned int tooBigBatch; // @synthesize tooBigBatch=_tooBigBatch;
 @property(nonatomic) double backOffInterval; // @synthesize backOffInterval=_backOffInterval;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) id <BCCloudDataMapper> dataMapper; // @synthesize dataMapper=_dataMapper;
 @property(retain, nonatomic) BCCloudKitController *cloudKitController; // @synthesize cloudKitController=_cloudKitController;
 @property(nonatomic) __weak id <BCCloudDataSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_syncQueueSyncForCloudData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)_modifyRecordsCompletionBlockWithDispatchGroup:(id)arg1 cloudDataMap:(id)arg2 recordCount:(unsigned int)arg3;
 - (void)_updateRetryParametersFromModifyRecordsOperationError:(id)arg1 batchSize:(unsigned int)arg2;

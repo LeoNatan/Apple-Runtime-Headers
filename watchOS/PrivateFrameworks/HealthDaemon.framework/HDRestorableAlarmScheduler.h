@@ -31,11 +31,11 @@
     NSDate *__unitTest_currentDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isRegisteredForLockStateUpdates; // @synthesize isRegisteredForLockStateUpdates=_isRegisteredForLockStateUpdates;
 @property(readonly, nonatomic) _Bool isRegisteredForOnWristUpdates; // @synthesize isRegisteredForOnWristUpdates=_isRegisteredForOnWristUpdates;
 @property(copy, nonatomic) NSDate *_unitTest_currentDate; // @synthesize _unitTest_currentDate=__unitTest_currentDate;
 @property(readonly, nonatomic) HDXPCAlarm *systemScheduler; // @synthesize systemScheduler=_systemScheduler;
-- (void).cxx_destruct;
 - (void)onWristMonitor:(id)arg1 didUpdateOnWristState:(id)arg2 fromState:(id)arg3;
 - (id)diagnosticDescription;
 @property(readonly, copy) NSString *description;

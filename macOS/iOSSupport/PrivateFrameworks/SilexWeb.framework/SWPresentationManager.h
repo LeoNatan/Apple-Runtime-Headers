@@ -22,13 +22,13 @@
     id <SWLogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <SWScriptsManager> scriptsManager; // @synthesize scriptsManager=_scriptsManager;
 @property(copy, nonatomic, setter=onPresentable:) CDUnknownBlockType presentableBlock; // @synthesize presentableBlock;
 @property(copy, nonatomic, setter=onLoad:) CDUnknownBlockType loadBlock; // @synthesize loadBlock;
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long presentationState; // @synthesize presentationState=_presentationState;
-- (void).cxx_destruct;
 - (id)descriptionForPresentationState:(unsigned long long)arg1;
 - (void)didReceiveMessage:(id)arg1 securityOrigin:(id)arg2;
 - (void)refresh;

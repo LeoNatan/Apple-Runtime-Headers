@@ -38,6 +38,7 @@
 
 + (id)_daysInWeekXValueRange;
 + (id)_hoursInDayXValueRange;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *quantityValueRanges; // @synthesize quantityValueRanges=_quantityValueRanges;
 @property(retain, nonatomic) HKQuantitySample *maximumSample; // @synthesize maximumSample=_maximumSample;
 @property(retain, nonatomic) HKQuantitySample *minimumSample; // @synthesize minimumSample=_minimumSample;
@@ -59,7 +60,6 @@
 @property(nonatomic) unsigned long long binCalculation; // @synthesize binCalculation=_binCalculation;
 @property(nonatomic) unsigned long long binningMode; // @synthesize binningMode=_binningMode;
 @property(nonatomic) __weak id <HKHistogramChartDataSourceDataFetchObserver> fetchObserver; // @synthesize fetchObserver=_fetchObserver;
-- (void).cxx_destruct;
 - (id)_hourNameFromHourIndex:(unsigned long long)arg1;
 - (id)_hourOfTheDayFormatter;
 - (id)_hourXAxisStringForLocation:(id)arg1;

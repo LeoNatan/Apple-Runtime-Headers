@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIColor *_tintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
-- (void).cxx_destruct;
 - (void)_removeAllAnimations;
 - (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
 - (void)didTransitionFromState:(int)arg1 toState:(int)arg2;

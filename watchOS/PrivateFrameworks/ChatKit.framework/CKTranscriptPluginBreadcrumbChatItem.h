@@ -13,8 +13,8 @@
     CKTranscriptPluginChatItem *_previousPluginChatItem;
 }
 
-@property(retain, nonatomic) CKTranscriptPluginChatItem *previousPluginChatItem; // @synthesize previousPluginChatItem=_previousPluginChatItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKTranscriptPluginChatItem *previousPluginChatItem; // @synthesize previousPluginChatItem=_previousPluginChatItem;
 - (unsigned int)_breadcrumbOptionFlags;
 - (_Bool)_wantsIconImage;
 - (_Bool)_wantsCenteredOrientation;

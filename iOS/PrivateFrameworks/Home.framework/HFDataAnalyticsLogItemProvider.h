@@ -20,11 +20,11 @@
 }
 
 + (_Bool)prefersNonBlockingReloads;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *logFetchFuture; // @synthesize logFetchFuture=_logFetchFuture;
 @property(readonly, nonatomic) NSMapTable *logEntryUniqueIdentifierToLogItemMap; // @synthesize logEntryUniqueIdentifierToLogItemMap=_logEntryUniqueIdentifierToLogItemMap;
 @property(readonly, nonatomic) NSMutableSet *logItems; // @synthesize logItems=_logItems;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

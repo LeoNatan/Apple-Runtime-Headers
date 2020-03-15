@@ -41,6 +41,7 @@
     PKPaymentSetupFieldsModel *_fieldsModel;
 }
 
+- (void).cxx_destruct;
 @property BOOL nextButtonEnabled; // @synthesize nextButtonEnabled=_nextButtonEnabled;
 @property(retain, nonatomic) PKPaymentSetupFieldsModel *fieldsModel; // @synthesize fieldsModel=_fieldsModel;
 @property(retain) NSStackView *verificationFieldsStackView; // @synthesize verificationFieldsStackView=_verificationFieldsStackView;
@@ -65,7 +66,6 @@
 @property(retain) PKVerificationRequestRecord *verificationRecord; // @synthesize verificationRecord=_verificationRecord;
 @property __weak id <PKPaymentVerificationMethodsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak PKPaymentSetupViewController *setupVC; // @synthesize setupVC=_setupVC;
-- (void).cxx_destruct;
 - (void)_showError:(id)arg1 title:(id)arg2 message:(id)arg3;
 - (void)_showActivationError:(id)arg1;
 - (void)_showSendCodeError:(id)arg1;

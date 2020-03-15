@@ -15,10 +15,10 @@
     double _expectedDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double expectedDuration; // @synthesize expectedDuration=_expectedDuration;
 @property(readonly, nonatomic) unsigned long long layoutType; // @synthesize layoutType=_layoutType;
 @property(readonly, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithLayoutOptions:(id)arg1 layoutType:(unsigned long long)arg2 expectedDuration:(double)arg3;
 

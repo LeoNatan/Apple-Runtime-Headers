@@ -17,11 +17,11 @@
 }
 
 + (BOOL)writeImage:(struct CGImage *)arg1 toPath:(id)arg2 option:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize thumbnailEnclosingSize; // @synthesize thumbnailEnclosingSize=_thumbnailEnclosingSize;
 @property(retain, nonatomic) NSString *thumbnailDirectoryName; // @synthesize thumbnailDirectoryName=_thumbnailDirectoryName;
 @property(nonatomic) BOOL generateThumbnails; // @synthesize generateThumbnails=_generateThumbnails;
 @property(readonly, nonatomic) KHProject *project; // @synthesize project=_project;
-- (void).cxx_destruct;
 - (void)generateLayoutBitmapsInDirectoryAtPath:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSNumber *compressionQuality;
 @property(readonly, nonatomic) NSNumber *resolution;

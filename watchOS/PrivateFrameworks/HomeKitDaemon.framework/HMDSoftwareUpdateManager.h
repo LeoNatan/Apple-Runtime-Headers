@@ -20,11 +20,11 @@
 }
 
 + (_Bool)isSupported;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *activeClients; // @synthesize activeClients=_activeClients;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak HMDAppleMediaAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (id)messageDestination;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;

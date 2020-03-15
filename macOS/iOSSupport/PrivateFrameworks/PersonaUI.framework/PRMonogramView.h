@@ -22,13 +22,13 @@
     PRMonogram *_monogram;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCircular) BOOL circular; // @synthesize circular=_circular;
 @property(nonatomic) BOOL allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) BOOL bordered; // @synthesize bordered=_bordered;
 @property(retain, nonatomic) PRMonogram *monogram; // @synthesize monogram=_monogram;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)textFieldDidEndEditing:(id)arg1;

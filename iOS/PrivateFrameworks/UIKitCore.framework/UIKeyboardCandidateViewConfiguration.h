@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool shouldUsePredictionViewSecureRenderTraits; // @synthesize shouldUsePredictionViewSecureRenderTraits=_shouldUsePredictionViewSecureRenderTraits;
 @property(readonly, nonatomic) _Bool shouldAlwaysShowSortControl; // @synthesize shouldAlwaysShowSortControl=_shouldAlwaysShowSortControl;
 @property(nonatomic) _Bool darkKeyboard; // @synthesize darkKeyboard=_darkKeyboard;
+@property(readonly, nonatomic) int inlineFloatingViewAdjustMode;
 @property(readonly, nonatomic) UIColor *highlightedBackgroundColor;
 @property(readonly, nonatomic) struct CGSize preferredInlineFloatingViewSize;
 @property(readonly, nonatomic) _Bool allowsPullDownGesture;

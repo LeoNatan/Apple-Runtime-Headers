@@ -13,8 +13,8 @@
     Protocol *_sourcePublicProtocol;
 }
 
-@property(readonly, nonatomic) Protocol *sourcePublicProtocol; // @synthesize sourcePublicProtocol=_sourcePublicProtocol;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Protocol *sourcePublicProtocol; // @synthesize sourcePublicProtocol=_sourcePublicProtocol;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 container:(id)arg2;

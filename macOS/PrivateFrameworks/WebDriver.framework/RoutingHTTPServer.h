@@ -17,8 +17,8 @@
     NSObject<OS_dispatch_queue> *routeQueue;
 }
 
-@property(readonly, nonatomic) NSDictionary *defaultHeaders; // @synthesize defaultHeaders;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *defaultHeaders; // @synthesize defaultHeaders;
 - (void)setupMIMETypes;
 - (id)routeMethod:(id)arg1 withPath:(id)arg2 parameters:(id)arg3 request:(id)arg4 connection:(id)arg5;
 - (void)handleRoute:(id)arg1 withRequest:(id)arg2 response:(id)arg3;

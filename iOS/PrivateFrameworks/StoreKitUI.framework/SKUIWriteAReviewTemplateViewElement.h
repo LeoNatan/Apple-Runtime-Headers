@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_reviewMetadataURLString;
 }
 
-@property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 - (id)applyUpdatesWithElement:(id)arg1;
 @property(readonly, nonatomic) NSString *reviewMetadataURLString; // @synthesize reviewMetadataURLString=_reviewMetadataURLString;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

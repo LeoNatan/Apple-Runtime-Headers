@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _initialLocationForPreviewActionsPanning;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIViewControllerPreviewing_Internal> currentPreviewingContext; // @synthesize currentPreviewingContext=_currentPreviewingContext;
 @property(nonatomic) struct CGPoint initialLocationForPreviewActionsPanning; // @synthesize initialLocationForPreviewActionsPanning=_initialLocationForPreviewActionsPanning;
 @property(retain, nonatomic) _UIPreviewActionsController *previewActionsController; // @synthesize previewActionsController=_previewActionsController;
@@ -71,7 +72,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) struct CGPoint location; // @synthesize location=_location;
 @property(nonatomic) __weak id <_UIPreviewInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)previewActionsController:(id)arg1 didUpdatePlatterTranslation:(struct CGVector)arg2 withVelocity:(struct CGVector)arg3;
 - (void)didDismissPreviewActionsController:(id)arg1;
 - (void)previewActionsController:(id)arg1 didCompleteWithSelectedAction:(id)arg2;

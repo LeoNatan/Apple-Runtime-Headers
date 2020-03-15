@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *ResponseMessages; // @synthesize ResponseMessages=_ResponseMessages;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *ResponseMessages; // @synthesize ResponseMessages=_ResponseMessages;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

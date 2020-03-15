@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     _Bool _layoutRTL;
     id <NSCollectionLayoutContainer> _container;
     UITraitCollection *_traitCollection;
-    int _layoutAxis;
+    unsigned int _layoutAxis;
     _UIDataSourceSnapshotter *_dataSourceSnapshot;
     float _interSectionSpacing;
     NSIndexSet *_orthogonalScrollingSectionIndexes;
@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _actualContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int numberOfSectionsWithTransformVisibleItemsHandler; // @synthesize numberOfSectionsWithTransformVisibleItemsHandler=_numberOfSectionsWithTransformVisibleItemsHandler;
 @property(retain, nonatomic) _UICollectionPreferredSizes *globalSupplementaryPreferredSizes; // @synthesize globalSupplementaryPreferredSizes=_globalSupplementaryPreferredSizes;
 @property(retain, nonatomic) _UICollectionLayoutAuxillaryItemSolver *globalSupplementarySolver; // @synthesize globalSupplementarySolver=_globalSupplementarySolver;
@@ -78,16 +79,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool estimatesSizes; // @synthesize estimatesSizes=_estimatesSizes;
 @property(readonly, nonatomic) float interSectionSpacing; // @synthesize interSectionSpacing=_interSectionSpacing;
 @property(retain, nonatomic) _UIDataSourceSnapshotter *dataSourceSnapshot; // @synthesize dataSourceSnapshot=_dataSourceSnapshot;
-@property(nonatomic) int layoutAxis; // @synthesize layoutAxis=_layoutAxis;
+@property(nonatomic) unsigned int layoutAxis; // @synthesize layoutAxis=_layoutAxis;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(retain, nonatomic) id <NSCollectionLayoutContainer> container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (struct CGRect)bounds;
 - (struct CGRect)_dynamicReferenceBounds;
 - (id)auxillaryHostPreferredSizes;
 - (id)auxillaryHostSupplementaryEnroller;
 - (int)auxillaryHostAuxillaryKind;
-- (int)auxillaryHostLayoutAxis;
+- (unsigned int)auxillaryHostLayoutAxis;
 - (_Bool)auxillaryHostShouldLayoutRTL;
 - (id)auxillaryHostAuxillaryItems;
 - (id)auxillaryHostContainer;
@@ -112,7 +112,7 @@ __attribute__((visibility("hidden")))
 - (id)_rebasedSectionLayoutsWithDataSourceTranslator:(id)arg1;
 - (id)_rebasedPreferredSizesWithDataSourceTranslator:(id)arg1;
 - (struct CGSize)_adjustedContentSizeIncludingContainerInsetsForSize:(struct CGSize)arg1;
-- (struct CGSize)_clampedSolutionSizeForSolution:(id)arg1 layoutAxis:(int)arg2 scrollsOrthogonally:(_Bool)arg3;
+- (struct CGSize)_clampedSolutionSizeForSolution:(id)arg1 layoutAxis:(unsigned int)arg2 scrollsOrthogonally:(_Bool)arg3;
 - (struct CGRect)_globalFrameForSolutionFrame:(struct CGRect)arg1 bookmark:(id)arg2;
 - (void)_recomputeSolutionBookmarksAndContentSize;
 - (void)_invalidateAllAttributes;
@@ -176,7 +176,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidateCachedSupplementaryAttributesForElementKind:(id)arg1 atIndexPaths:(id)arg2;
 - (_Bool)updateVisibleBoundsForDynamicAnimator:(struct CGRect)arg1 previousVisibleBounds:(struct CGRect)arg2;
 - (id)updatePinnedSectionSupplementaryItemsForVisibleBounds:(struct CGRect)arg1;
-- (id)initWithContainer:(id)arg1 traitCollection:(id)arg2 layoutAxis:(int)arg3 dataSourceSnapshot:(id)arg4 options:(id)arg5 sectionProvider:(CDUnknownBlockType)arg6;
+- (id)initWithContainer:(id)arg1 traitCollection:(id)arg2 layoutAxis:(unsigned int)arg3 dataSourceSnapshot:(id)arg4 options:(id)arg5 sectionProvider:(CDUnknownBlockType)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

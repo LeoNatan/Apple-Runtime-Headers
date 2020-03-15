@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)trendlineLabelWithResources:(id)arg1;
-@property(retain, nonatomic) EDString *lastCachedName; // @synthesize lastCachedName=mLastCachedName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EDString *lastCachedName; // @synthesize lastCachedName=mLastCachedName;
 - (id)description;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;

@@ -51,12 +51,12 @@
 + (id)_savedCompositionForGUID:(id)arg1 readUsingBlock:(CDUnknownBlockType)arg2;
 + (id)savedCompositionForGUID:(id)arg1;
 + (void)deleteCompositionWithGUID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFromExternalSource; // @synthesize isFromExternalSource=_isFromExternalSource;
 @property(copy, nonatomic) NSString *expressiveSendStyleID; // @synthesize expressiveSendStyleID=_expressiveSendStyleID;
 @property(copy, nonatomic) IMPluginPayload *shelfPluginPayload; // @synthesize shelfPluginPayload=_shelfPluginPayload;
 @property(copy, nonatomic) NSAttributedString *subject; // @synthesize subject=_subject;
 @property(copy, nonatomic) NSAttributedString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (Class)balloonViewClass;
 @property(readonly, nonatomic, getter=isSaveable) _Bool saveable;
 @property(readonly, nonatomic, getter=isSendAnimated) _Bool sendAnimated;

@@ -6,27 +6,22 @@
 
 #import <objc/NSObject.h>
 
-#import <Safari/TabSnapshotVendingInformationProvider-Protocol.h>
 #import <Safari/VisualScrubberContentViewProvider-Protocol.h>
 
-@class BrowserTabViewItem, NSString, NSView;
-@protocol TabSnapshotVending;
+@class BrowserTabViewItem, NSString, NSView, TabSnapshotCacheWithPersistence;
 
 __attribute__((visibility("hidden")))
-@interface FunctionBarTabThumbnailProvider : NSObject <TabSnapshotVendingInformationProvider, VisualScrubberContentViewProvider>
+@interface FunctionBarTabThumbnailProvider : NSObject <VisualScrubberContentViewProvider>
 {
-    id <TabSnapshotVending> _tabSnapshotVendor;
+    TabSnapshotCacheWithPersistence *_tabSnapshotCacheWithPersistence;
     long long _currentThumbnailMode;
     NSView *_currentContentView;
     BrowserTabViewItem *_tabViewItem;
 }
 
-@property(nonatomic) __weak BrowserTabViewItem *tabViewItem; // @synthesize tabViewItem=_tabViewItem;
 - (void).cxx_destruct;
-- (BOOL)shouldPersistSnapshot;
-- (id)uniqueTabSnapshotKey;
-- (long long)decideSnapshotSource;
-- (void)generateTabSnapshotWithSize:(struct CGSize)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(nonatomic) __weak BrowserTabViewItem *tabViewItem; // @synthesize tabViewItem=_tabViewItem;
+- (void)_requestTabSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_generateWebViewThumbnail;
 - (void)_refreshWebViewThumbnail;
 - (id)_generateThumbnailImageViewWithImageNamed:(id)arg1;
@@ -36,13 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSView *contentView;
 @property(readonly, copy, nonatomic) NSString *thumbnailSizeObservationKey;
 @property(readonly, nonatomic) BOOL wantsContentHugging;
-- (id)initWithTabViewItem:(id)arg1 tabSnapshotVendor:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithTabViewItem:(id)arg1 tabSnapshotCacheWithPersistence:(id)arg2;
 
 @end
 

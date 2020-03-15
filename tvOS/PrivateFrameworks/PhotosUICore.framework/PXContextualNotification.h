@@ -42,6 +42,7 @@
     struct PXContextualNotificationVisualState _appliedState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double panInitialVerticalOffset; // @synthesize panInitialVerticalOffset=_panInitialVerticalOffset;
 @property(retain, nonatomic) NSValue *releaseVelocity; // @synthesize releaseVelocity=_releaseVelocity;
 @property(nonatomic) long long animationCount; // @synthesize animationCount=_animationCount;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <PXContextualNotificationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleDiscard;
 - (void)handleTap:(id)arg1;
 - (_Bool)shouldPassthroughPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;

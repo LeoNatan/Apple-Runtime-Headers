@@ -36,6 +36,7 @@
 }
 
 + (id)createPlaceholderResultForTimelapseState:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMNebulaDaemonProxyManager *_nebulaDaemonProxyManager; // @synthesize _nebulaDaemonProxyManager=__nebulaDaemonProxyManager;
 @property(readonly, nonatomic) CAMStorageController *_storageController; // @synthesize _storageController=__storageController;
 @property(readonly, nonatomic) CAMPersistenceController *_persistenceController; // @synthesize _persistenceController=__persistenceController;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) CAMTimelapseState *_state; // @synthesize _state=__state;
 @property(nonatomic) CAMFocusResult *lastFocusResult; // @synthesize lastFocusResult=_lastFocusResult;
 @property(nonatomic) __weak id <CAMTimelapseControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyAGGDForDidStopCapturingWithState:(id)arg1;
 - (void)forceStopTimelapseCaptureWithReasons:(long long)arg1;
 - (void)_updateLocationIfNecessary;

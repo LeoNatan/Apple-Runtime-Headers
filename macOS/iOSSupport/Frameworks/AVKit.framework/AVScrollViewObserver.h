@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSTimer *_scrollingDidEndTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *scrollingDidEndTimer; // @synthesize scrollingDidEndTimer=_scrollingDidEndTimer;
 @property(copy, nonatomic) NSHashTable *observedScrollViews; // @synthesize observedScrollViews=_observedScrollViews;
 @property(nonatomic) __weak UIView<AVScrollViewObserverContentView> *observer; // @synthesize observer=_observer;
 @property(nonatomic, getter=isScrollingQuickly) BOOL scrollingQuickly; // @synthesize scrollingQuickly=_scrollingQuickly;
 @property(nonatomic, getter=isScrolling) BOOL scrolling; // @synthesize scrolling=_scrolling;
-- (void).cxx_destruct;
 - (void)_updateScrollingStatus;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)updateObservedScrollViews;

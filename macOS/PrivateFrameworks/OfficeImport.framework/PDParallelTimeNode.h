@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PDParallelTimeNodeBuildInfo *mBuildInfo;
 }
 
-@property(retain) PDParallelTimeNodeBuildInfo *buildInfo; // @synthesize buildInfo=mBuildInfo;
 - (void).cxx_destruct;
+@property(retain) PDParallelTimeNodeBuildInfo *buildInfo; // @synthesize buildInfo=mBuildInfo;
 
 @end
 

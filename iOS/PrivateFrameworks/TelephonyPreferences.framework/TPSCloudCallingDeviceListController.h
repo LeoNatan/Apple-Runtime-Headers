@@ -19,9 +19,9 @@
     NSArray *_deviceSwitchSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *deviceSwitchSpecifiers; // @synthesize deviceSwitchSpecifiers=_deviceSwitchSpecifiers;
 @property(readonly, nonatomic) TPSCloudCallingDeviceController *deviceController; // @synthesize deviceController=_deviceController;
-- (void).cxx_destruct;
 - (void)cloudCallingDeviceController:(id)arg1 didChangeDevices:(id)arg2;
 - (void)setMainSwitchOn:(id)arg1 specifier:(id)arg2;
 - (id)isMainSwitchOn:(id)arg1;

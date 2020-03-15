@@ -16,9 +16,9 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)shared;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(readonly, copy, nonatomic) NSArray *allCalendars; // @synthesize allCalendars=_allCalendars;
-- (void).cxx_destruct;
 - (id)eventsFromCalendars:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)ensureCalendarStoreInitializationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;

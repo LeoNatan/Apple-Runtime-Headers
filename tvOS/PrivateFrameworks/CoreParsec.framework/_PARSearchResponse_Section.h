@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _whichMore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long whichMore; // @synthesize whichMore=_whichMore;
 @property(copy, nonatomic) NSArray *resultIdentifiers; // @synthesize resultIdentifiers=_resultIdentifiers;
 @property(nonatomic) _Bool doNotFold; // @synthesize doNotFold=_doNotFold;
 @property(nonatomic) int blockId; // @synthesize blockId=_blockId;
 @property(copy, nonatomic) NSString *moreLabel; // @synthesize moreLabel=_moreLabel;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

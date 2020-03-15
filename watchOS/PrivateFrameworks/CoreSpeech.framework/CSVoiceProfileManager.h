@@ -17,10 +17,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSVoiceIdXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(nonatomic) unsigned int currentDeviceCategory; // @synthesize currentDeviceCategory=_currentDeviceCategory;
-- (void).cxx_destruct;
 - (void)_createAndSendImplicitUtterenceXPCMessage:(id)arg1 withRecordDeviceInfo:(id)arg2 withRecordCtxt:(id)arg3 withVoiceTriggerCtxt:(id)arg4 withOtherCtxt:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (id)_CSSATUploadStagingPathForSiriProfileId:(id)arg1;
 - (id)_CSSATUploadPathForSiriProfileId:(id)arg1;

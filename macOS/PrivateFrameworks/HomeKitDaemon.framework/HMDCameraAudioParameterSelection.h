@@ -27,6 +27,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *comfortNoiseSupported; // @synthesize comfortNoiseSupported=_comfortNoiseSupported;
 @property(retain, nonatomic) HMDCameraAudioParameterCombination *selectedAudioParameterCombination; // @synthesize selectedAudioParameterCombination=_selectedAudioParameterCombination;
 @property(retain, nonatomic) NSNumber *selectedAudioChannelCount; // @synthesize selectedAudioChannelCount=_selectedAudioChannelCount;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) HMDSelectedAudioParameters *selectedAudioParameters; // @synthesize selectedAudioParameters=_selectedAudioParameters;
 @property(readonly, nonatomic) HMDSupportedRTPConfiguration *rtpConfiguration; // @synthesize rtpConfiguration=_rtpConfiguration;
 @property(readonly, nonatomic) HMDSupportedAudioStreamConfiguration *supportedAudioStreamConfiguration; // @synthesize supportedAudioStreamConfiguration=_supportedAudioStreamConfiguration;
-- (void).cxx_destruct;
 - (void)_generateAllCombinations:(id)arg1;
 - (id)createSelectedAudioParameters;
 - (id)createSRTPParamters;

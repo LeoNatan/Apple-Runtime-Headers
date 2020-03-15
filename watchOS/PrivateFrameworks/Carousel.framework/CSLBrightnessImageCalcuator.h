@@ -17,10 +17,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSMutableArray *cgRectValues; // @synthesize cgRectValues=_cgRectValues;
 @property(nonatomic) unsigned int step; // @synthesize step=_step;
-- (void).cxx_destruct;
 - (unsigned long long)elapsedMillisSince:(unsigned long long)arg1;
 - (void)_calculateForMainScreen;
 - (struct CGRect)_enclosingRect;

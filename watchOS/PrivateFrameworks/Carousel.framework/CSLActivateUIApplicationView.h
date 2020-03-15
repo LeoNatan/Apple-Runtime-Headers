@@ -26,11 +26,11 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISApplicationPlaceholderItem *placeholderItem; // @synthesize placeholderItem=_placeholderItem;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) _Bool displayLoadingTextEnabled; // @synthesize displayLoadingTextEnabled=_displayLoadingTextEnabled;
 @property(readonly, nonatomic) UILabel *loadingView; // @synthesize loadingView=_loadingView;
-- (void).cxx_destruct;
 - (void)backlight:(id)arg1 didTurnOn:(_Bool)arg2 atContinuousTime:(unsigned long long)arg3 forReason:(unsigned int)arg4;
 - (void)backlight:(id)arg1 willBeOn:(_Bool)arg2 forReason:(unsigned int)arg3;
 - (void)_observeBacklightIfNeeded:(_Bool)arg1;

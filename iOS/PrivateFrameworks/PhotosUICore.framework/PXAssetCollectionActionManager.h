@@ -16,10 +16,10 @@
     PHFetchResult *_people;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *people; // @synthesize people=_people;
 @property(readonly, nonatomic) PXDisplayTitleInfo *displayTitleInfo; // @synthesize displayTitleInfo=_displayTitleInfo;
 @property(readonly, nonatomic) id <PXDisplayAssetCollection> assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 - (id)initWithAssetCollection:(id)arg1 displayTitleInfo:(id)arg2;
 - (id)init;
 

@@ -24,6 +24,7 @@
 + (long long)importBehaviorForBatteryState:(long long)arg1 batteryLevel:(float)arg2;
 + (void)retrieveBatteryState:(long long *)arg1 batteryLevel:(float *)arg2;
 + (float)lowBatteryLevelThresholdForDevice;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ppt_alwaysPreferSelected; // @synthesize ppt_alwaysPreferSelected=_ppt_alwaysPreferSelected;
 @property(nonatomic) _Bool ppt_alwaysImportDuplicatesNoPrompt; // @synthesize ppt_alwaysImportDuplicatesNoPrompt=_ppt_alwaysImportDuplicatesNoPrompt;
 @property(retain, nonatomic) NSNumberFormatter *percentageNumberFormatter; // @synthesize percentageNumberFormatter=_percentageNumberFormatter;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool presentsAdditionalDeleteAllConfirmation; // @synthesize presentsAdditionalDeleteAllConfirmation=_presentsAdditionalDeleteAllConfirmation;
 @property(nonatomic) __weak id <PUImportActionCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_deleteItems:(id)arg1;
 - (void)deleteItemsWithoutConfirmation:(id)arg1;
 - (void)deleteItemsFromBarButtonItem:(id)arg1 withOneUpHintItems:(id)arg2;

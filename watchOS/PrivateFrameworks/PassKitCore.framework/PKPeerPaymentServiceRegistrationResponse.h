@@ -15,10 +15,10 @@
     NSURL *_peerPaymentServiceURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *peerPaymentServiceURL; // @synthesize peerPaymentServiceURL=_peerPaymentServiceURL;
 @property(readonly, copy, nonatomic) NSString *peerPaymentServicesPushTopic; // @synthesize peerPaymentServicesPushTopic=_peerPaymentServicesPushTopic;
 @property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

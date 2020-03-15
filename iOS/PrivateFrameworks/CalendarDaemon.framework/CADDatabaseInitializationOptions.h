@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowDelegateSources; // @synthesize allowDelegateSources=_allowDelegateSources;
 @property(nonatomic) _Bool unitTesting; // @synthesize unitTesting=_unitTesting;
 @property(retain, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool enablePropertyModificationLogging; // @synthesize enablePropertyModificationLogging=_enablePropertyModificationLogging;
 @property(retain, nonatomic) CADChangeTrackingClientId *changeTrackingClientId; // @synthesize changeTrackingClientId=_changeTrackingClientId;
 @property(nonatomic) int databaseInitOptions; // @synthesize databaseInitOptions=_databaseInitOptions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

@@ -17,10 +17,10 @@
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXViewControllerSwipeDownTransitionSettings *swipeDownTransitionSettings; // @synthesize swipeDownTransitionSettings=_swipeDownTransitionSettings;
 @property(retain, nonatomic) PXViewControllerPinchTransitionSettings *pinchTransitionSettings; // @synthesize pinchTransitionSettings=_pinchTransitionSettings;
 @property(retain, nonatomic) PXViewControllerZoomTransitionSettings *zoomTransitionSettings; // @synthesize zoomTransitionSettings=_zoomTransitionSettings;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 - (id)parentSettings;
 

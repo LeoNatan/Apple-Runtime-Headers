@@ -18,9 +18,9 @@
     MKAutocompleteAnalyticsState *_currentState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKAutocompleteAnalyticsState *currentState; // @synthesize currentState=_currentState;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *isolationQueue; // @synthesize isolationQueue=_isolationQueue;
-- (void).cxx_destruct;
 - (id)captureNewMetrics;
 - (void)updateStateWithQuery:(id)arg1 queryTokens:(id)arg2 visibleSuggestionEntries:(id)arg3;
 - (id)init;

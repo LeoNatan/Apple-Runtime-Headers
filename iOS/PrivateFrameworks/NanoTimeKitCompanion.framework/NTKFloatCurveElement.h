@@ -16,11 +16,11 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(nonatomic) long long curve; // @synthesize curve=_curve;
 @property(nonatomic) double fraction; // @synthesize fraction=_fraction;
 @property(nonatomic) double floatValue; // @synthesize floatValue=_floatValue;
-- (void).cxx_destruct;
 - (id)initWithFloatValue:(double)arg1 fraction:(double)arg2;
 
 @end

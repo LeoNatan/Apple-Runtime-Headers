@@ -68,6 +68,7 @@
 }
 
 + (void)_uiibSetRequiresSearchDisplayControllerSupport;
+- (void).cxx_destruct;
 @property(nonatomic) float _additionalNonCollapsingHeightAboveSearchBar; // @synthesize _additionalNonCollapsingHeightAboveSearchBar=__additionalNonCollapsingHeightAboveSearchBar;
 @property(nonatomic) float _activationGapHeight; // @synthesize _activationGapHeight=__activationGapHeight;
 @property(nonatomic) unsigned int navigationBarSearchFieldSizing; // @synthesize navigationBarSearchFieldSizing=_navigationBarSearchFieldSizing;
@@ -78,7 +79,6 @@
 @property(readonly, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(readonly, nonatomic) __weak UIViewController *searchContentsController; // @synthesize searchContentsController=_viewController;
 @property(nonatomic) id <UISearchDisplayDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_containedInPopover;
 - (float)_statusBarHeight;
 - (_Bool)_shouldAccountForStatusBarHeight;

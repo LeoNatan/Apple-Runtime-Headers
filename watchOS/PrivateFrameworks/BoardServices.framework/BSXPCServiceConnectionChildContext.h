@@ -15,9 +15,9 @@
     _Bool _remote;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRemote) _Bool remote; // @synthesize remote=_remote;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

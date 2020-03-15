@@ -9,12 +9,15 @@
 @class VCRateControlMediaController;
 
 @protocol VCRateControlAlgorithm <NSObject>
+@property(readonly, nonatomic) BOOL isSendBitrateLimited;
 @property(nonatomic) BOOL didMBLRampDown;
 @property(readonly, nonatomic) unsigned int actualBitrate;
 @property(nonatomic, getter=isPaused) BOOL paused;
 @property(nonatomic) unsigned int localBandwidthEstimation;
 @property(readonly, nonatomic) BOOL isNewRateSentOut;
 @property(readonly, nonatomic) double owrd;
+@property(readonly, nonatomic) unsigned int worstRecentBurstLoss;
+@property(readonly, nonatomic) double worstRecentRoundTripTime;
 @property(readonly, nonatomic) double roundTripTime;
 @property(readonly, nonatomic) unsigned int totalPacketReceived;
 @property(readonly, nonatomic) double packetLossRateVideo;

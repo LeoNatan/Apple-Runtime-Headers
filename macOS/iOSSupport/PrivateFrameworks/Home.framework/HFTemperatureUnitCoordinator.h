@@ -15,9 +15,9 @@
 }
 
 + (id)sharedCoordinator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) BOOL isCelsius; // @synthesize isCelsius=_isCelsius;
-- (void).cxx_destruct;
 - (void)_temperatureUnitDidChange;
 - (void)_updateIsCelsiusNotifyingObservers:(BOOL)arg1;
 - (void)setIsCelsius:(BOOL)arg1;

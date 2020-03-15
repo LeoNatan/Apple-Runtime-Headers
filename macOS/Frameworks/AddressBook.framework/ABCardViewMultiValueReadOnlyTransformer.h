@@ -15,8 +15,8 @@
     ABCardViewPersonMapper *_personMapper;
 }
 
-@property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
 - (id)readOnlyPersonIdentifiers:(id)arg1;
 - (id)writablePersonIdentifiers:(id)arg1;
 - (unsigned long long)accountPermissionsMultiValue:(id)arg1 index:(unsigned long long)arg2;

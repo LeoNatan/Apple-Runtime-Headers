@@ -18,10 +18,10 @@
     NSString *_dataSourceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dataSourceIdentifier; // @synthesize dataSourceIdentifier=_dataSourceIdentifier;
 @property(readonly, nonatomic) NSString *tileKind; // @synthesize tileKind=_tileKind;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

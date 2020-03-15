@@ -4,34 +4,41 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <VideosUI/VUILibraryFetchControllerViewController.h>
+#import <UIKit/UIViewController.h>
 
-#import <VideosUI/VUILibraryCategoryMenuViewModelDelegate-Protocol.h>
+#import <VideosUI/VUIFamilyMembersViewControllerDelegate-Protocol.h>
+#import <VideosUI/VUIFamilySharingContentProtocol-Protocol.h>
+#import <VideosUI/VUILibraryDataSourceDelegate-Protocol.h>
 #import <VideosUI/VUIMenuCollectionViewControllerDelegate-Protocol.h>
 
-@class NSIndexPath, NSSet, NSString, UIViewController, VUILibraryCategoryMenuViewModel, VUIMenuCollectionViewController, VUITVLibraryView;
+@class NSIndexPath, NSMutableDictionary, NSSet, NSString, VUIFamilyMember, VUILibraryMenuDataSource, VUIMenuCollectionViewController, VUITVLibraryView, VUIViewControllerContentPresenter;
 
 __attribute__((visibility("hidden")))
-@interface VUITVLibraryViewController : VUILibraryFetchControllerViewController <VUIMenuCollectionViewControllerDelegate, VUILibraryCategoryMenuViewModelDelegate>
+@interface VUITVLibraryViewController : UIViewController <VUIMenuCollectionViewControllerDelegate, VUILibraryDataSourceDelegate, VUIFamilyMembersViewControllerDelegate, VUIFamilySharingContentProtocol>
 {
+    VUIFamilyMember *_familyMember;
     VUIMenuCollectionViewController *_menuCollectionViewController;
     VUITVLibraryView *_tvLibraryView;
-    UIViewController *_gridCollectionViewController;
-    VUILibraryCategoryMenuViewModel *_categoryMenuViewModel;
+    UIViewController *_detailViewController;
+    VUILibraryMenuDataSource *_menuDataSource;
     NSIndexPath *_currentlySelectedIndexPath;
     NSSet *_validCategories;
+    VUIViewControllerContentPresenter *_contentPresenter;
+    NSMutableDictionary *_entitiesDataSourceForMenuItem;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *entitiesDataSourceForMenuItem; // @synthesize entitiesDataSourceForMenuItem=_entitiesDataSourceForMenuItem;
+@property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
 @property(retain, nonatomic) NSSet *validCategories; // @synthesize validCategories=_validCategories;
 @property(retain, nonatomic) NSIndexPath *currentlySelectedIndexPath; // @synthesize currentlySelectedIndexPath=_currentlySelectedIndexPath;
-@property(retain, nonatomic) VUILibraryCategoryMenuViewModel *categoryMenuViewModel; // @synthesize categoryMenuViewModel=_categoryMenuViewModel;
-@property(retain, nonatomic) UIViewController *gridCollectionViewController; // @synthesize gridCollectionViewController=_gridCollectionViewController;
+@property(retain, nonatomic) VUILibraryMenuDataSource *menuDataSource; // @synthesize menuDataSource=_menuDataSource;
+@property(retain, nonatomic) UIViewController *detailViewController; // @synthesize detailViewController=_detailViewController;
 @property(retain, nonatomic) VUITVLibraryView *tvLibraryView; // @synthesize tvLibraryView=_tvLibraryView;
 @property(retain, nonatomic) VUIMenuCollectionViewController *menuCollectionViewController; // @synthesize menuCollectionViewController=_menuCollectionViewController;
-- (void).cxx_destruct;
+@property(retain, nonatomic) VUIFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (id)_metricsPageTypeForMenuItemAtIndexPath:(id)arg1;
-- (void)_initializeLibraryViewControllersWithViewModel:(id)arg1;
-- (void)_updateRentals;
+- (void)_initializeLibraryViewControllersWithMenuItems:(id)arg1;
 - (void)_accountsChanged:(id)arg1;
 - (void)_deviceMediaLibraryUpdateStateDidChange:(id)arg1;
 - (void)_stopMonitoringDeviceMediaLibraryInitialUpdate;
@@ -40,19 +47,19 @@ __attribute__((visibility("hidden")))
 - (id)_deviceMediaLibrary;
 - (_Bool)_shouldShowContentView;
 - (void)_showContentOrNoContentView;
-- (id)_getMediaEntitiesForIndexPath:(id)arg1;
 - (void)_delayedGridUpdate;
+- (void)familyMemberViewController:(id)arg1 didSelectFamilyMember:(id)arg2;
 - (void)didSelectMenuItemAtIndexPath:(id)arg1;
 - (void)didUpdateFocusToIndexPath:(id)arg1;
-- (void)categoryViewModel:(id)arg1 categoriesDidChange:(id)arg2;
-- (void)categoryViewModel:(id)arg1 fetchDidCompleteWithCategories:(id)arg2 error:(id)arg3;
+- (void)dataSourceDidFinishFetching:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (id)contentScrollView;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
-- (id)initWithMediaLibrary:(id)arg1;
+- (id)initWithMenuDataSource:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -30,10 +30,10 @@
     UIView *_containerView;
 }
 
-@property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-@property(nonatomic) __weak id <CKComponentHostingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
+@property(nonatomic) __weak id <CKComponentHostingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_synchronouslyUpdateComponentIfNeeded;
 - (void)_applyResult:(const struct CKBuildComponentResult *)arg1;
 - (void)_scheduleAsynchronousUpdate;

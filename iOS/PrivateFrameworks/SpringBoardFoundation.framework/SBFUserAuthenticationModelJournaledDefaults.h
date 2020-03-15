@@ -26,8 +26,8 @@
 }
 
 + (id)_journaledDefaultsAndTypes;
-@property(nonatomic) id <SBFUserAuthenticationModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <SBFUserAuthenticationModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_loadLockControllerDefaultsJournalIfNecessary;
 - (void)_loadLockControllerDefaults:(id)arg1;
 - (void)_updateLockControllerDefaultsJournal;

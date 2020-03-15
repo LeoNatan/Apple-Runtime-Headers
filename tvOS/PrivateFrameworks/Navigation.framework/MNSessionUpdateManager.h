@@ -28,6 +28,7 @@
     GEOETATrafficUpdateRequest *_pendingETARequest;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxAlternateRoutesCount; // @synthesize maxAlternateRoutesCount=_maxAlternateRoutesCount;
 @property(nonatomic) double opportunisticRequestTimeWindow; // @synthesize opportunisticRequestTimeWindow=_opportunisticRequestTimeWindow;
 @property(nonatomic) double initialRequestDelay; // @synthesize initialRequestDelay=_initialRequestDelay;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(copy, nonatomic) NSString *requestingAppIdentifier; // @synthesize requestingAppIdentifier=_requestingAppIdentifier;
 @property(nonatomic) __weak id <MNSessionUpdateManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_hasAtLeastOneActiveSubscriber;
 - (void)transitRouteUpdater:(id)arg1 didFailUpdateForRouteIDs:(id)arg2 withError:(id)arg3;
 - (void)transitRouteUpdater:(id)arg1 didUpdateTransitRoutes:(id)arg2;

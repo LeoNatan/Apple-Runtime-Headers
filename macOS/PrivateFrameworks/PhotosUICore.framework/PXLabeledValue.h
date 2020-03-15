@@ -19,10 +19,10 @@
 }
 
 + (id)separatorLabeledValue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSeparator) BOOL separator; // @synthesize separator=_separator;
 @property(readonly, nonatomic) NSString *localizedLabel; // @synthesize localizedLabel=_localizedLabel;
 @property(readonly, nonatomic) id <PXLabeledValueType> value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

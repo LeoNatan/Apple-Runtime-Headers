@@ -13,8 +13,8 @@
     ABSAddressBook *_addressBook;
 }
 
-@property(readonly, nonatomic) ABSAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ABSAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 - (id)newSAPersonFromABPerson:(void *)arg1;
 - (id)initWithAddressBook:(id)arg1;
 - (id)init;

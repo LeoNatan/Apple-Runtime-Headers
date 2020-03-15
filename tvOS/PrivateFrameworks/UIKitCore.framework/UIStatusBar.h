@@ -55,9 +55,9 @@
 + (double)_roundedPadBaselineOffset;
 + (struct NSDirectionalEdgeInsets)_regularPadEdgeInsets;
 + (struct NSDirectionalEdgeInsets)_roundedPadEdgeInsets;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTimeHidden) _Bool timeHidden; // @synthesize timeHidden=_timeHidden;
 - (_Bool)disablesRasterization;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_dateTimePreferencesUpdated;
 - (_Bool)_rectIntersectsTimeItem:(struct CGRect)arg1;

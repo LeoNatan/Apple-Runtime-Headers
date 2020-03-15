@@ -17,12 +17,12 @@
     NSDate *_availableActionsFetchDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *availableActionsFetchDate; // @synthesize availableActionsFetchDate=_availableActionsFetchDate;
 @property(retain, nonatomic) NSArray *availableActions; // @synthesize availableActions=_availableActions;
 @property(nonatomic) unsigned long long paymentStatus; // @synthesize paymentStatus=_paymentStatus;
 @property(retain, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

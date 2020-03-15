@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDate *_timeout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSDate *timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property __weak FPXPCAutomaticErrorProxy *proxy; // @synthesize proxy=_proxy;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

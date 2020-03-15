@@ -17,12 +17,12 @@
     NSNumber *_userInteractionEnabled;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(retain, nonatomic) NSNumber *singleNotificationPerAlert; // @synthesize singleNotificationPerAlert=_singleNotificationPerAlert;
 @property(copy, nonatomic) NSString *appBundleIdentifierOverride; // @synthesize appBundleIdentifierOverride=_appBundleIdentifierOverride;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) Class vcClass; // @synthesize vcClass=_vcClass;
-- (void).cxx_destruct;
 
 @end
 

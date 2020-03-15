@@ -14,7 +14,7 @@
 #import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class CEKBadgeTextView, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSTimer, NUComposition, NUCropModel, PFCoalescer, PFSerialQueue, PLImageGeometry, PLPhotoEditRenderer, PUAdjustmentsViewController, PUCropAspect, PUCropAspectFlipperView, PUCropAspectViewController, PUCropHandleView, PUCropOverlayView, PUCropPerspectiveAdjustmentsDataSource, PUCropPerspectiveView, PUCropToolControllerSpec, PUCropVideoScrubberView, PUEditActionActivity, UIButton, UIImage, UILongPressGestureRecognizer, UIView;
+@class CEKBadgeTextView, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSTimer, NUComposition, NUCropModel, PFCoalescer, PFSerialQueue, PLImageGeometry, PLPhotoEditRenderer, PUAdjustmentsViewController, PUCropAspect, PUCropAspectFlipperView, PUCropAspectViewController, PUCropHandleView, PUCropOverlayView, PUCropPerspectiveAdjustmentsDataSource, PUCropPerspectiveView, PUCropToolControllerSpec, PUCropVideoScrubberView, PUEditActionActivity, PXUIButton, UIButton, UIImage, UILongPressGestureRecognizer, UIView;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -49,11 +49,11 @@ __attribute__((visibility("hidden")))
     PUAdjustmentsViewController *_adjustmentsViewController;
     UIView *_containerView;
     UIView *_adjustmentPickerView;
-    UIButton *__autoButton;
+    PXUIButton *__autoButton;
     long long _autoButtonMode;
-    UIButton *__rotateButton;
-    UIButton *__flipButton;
-    UIButton *__aspectButton;
+    PXUIButton *__rotateButton;
+    PXUIButton *__flipButton;
+    PXUIButton *__aspectButton;
     UIButton *__perspectiveButton;
     PUEditActionActivity *_overcaptureSourceToggleActivity;
     PUCropPerspectiveView *__cropView;
@@ -103,6 +103,7 @@ __attribute__((visibility("hidden")))
     struct CGRect __suggestedCrop;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableSourceSwitch; // @synthesize disableSourceSwitch=_disableSourceSwitch;
 @property(nonatomic) _Bool autoButtonInReframeMode; // @synthesize autoButtonInReframeMode=_autoButtonInReframeMode;
 @property(nonatomic) _Bool imageIsUsingReframe; // @synthesize imageIsUsingReframe=_imageIsUsingReframe;
@@ -175,16 +176,15 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setCropView:) PUCropPerspectiveView *_cropView; // @synthesize _cropView=__cropView;
 @property(retain, nonatomic) PUEditActionActivity *overcaptureSourceToggleActivity; // @synthesize overcaptureSourceToggleActivity=_overcaptureSourceToggleActivity;
 @property(retain, nonatomic, setter=_setPerspectiveButton:) UIButton *_perspectiveButton; // @synthesize _perspectiveButton=__perspectiveButton;
-@property(retain, nonatomic, setter=_setAspectButton:) UIButton *_aspectButton; // @synthesize _aspectButton=__aspectButton;
-@property(retain, nonatomic, setter=_setFlipButton:) UIButton *_flipButton; // @synthesize _flipButton=__flipButton;
-@property(retain, nonatomic, setter=_setRotateButton:) UIButton *_rotateButton; // @synthesize _rotateButton=__rotateButton;
+@property(retain, nonatomic, setter=_setAspectButton:) PXUIButton *_aspectButton; // @synthesize _aspectButton=__aspectButton;
+@property(retain, nonatomic, setter=_setFlipButton:) PXUIButton *_flipButton; // @synthesize _flipButton=__flipButton;
+@property(retain, nonatomic, setter=_setRotateButton:) PXUIButton *_rotateButton; // @synthesize _rotateButton=__rotateButton;
 @property(nonatomic) long long autoButtonMode; // @synthesize autoButtonMode=_autoButtonMode;
-@property(retain, nonatomic, setter=_setAutoButton:) UIButton *_autoButton; // @synthesize _autoButton=__autoButton;
+@property(retain, nonatomic, setter=_setAutoButton:) PXUIButton *_autoButton; // @synthesize _autoButton=__autoButton;
 @property(retain, nonatomic) UIView *adjustmentPickerView; // @synthesize adjustmentPickerView=_adjustmentPickerView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) PUAdjustmentsViewController *adjustmentsViewController; // @synthesize adjustmentsViewController=_adjustmentsViewController;
 @property(nonatomic) _Bool imageLoadingInProgress; // @synthesize imageLoadingInProgress=_imageLoadingInProgress;
-- (void).cxx_destruct;
 - (void)_accessibilityLongPressChanged:(id)arg1;
 - (void)_preferredContentSizeCategoryChanged;
 - (id)adjustmentsRenderer:(id)arg1;

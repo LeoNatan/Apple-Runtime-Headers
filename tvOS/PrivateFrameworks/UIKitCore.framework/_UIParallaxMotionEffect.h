@@ -17,8 +17,8 @@
     _UITiltMotionEffect *_tiltEffect;
 }
 
-@property(nonatomic) struct UIOffset slideMagnitude; // @synthesize slideMagnitude=_slideMagnitude;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIOffset slideMagnitude; // @synthesize slideMagnitude=_slideMagnitude;
 @property(nonatomic) double rotatingSphereRadius;
 @property(nonatomic) double maximumVerticalTiltAngle;
 @property(nonatomic) double maximumHorizontalTiltAngle;

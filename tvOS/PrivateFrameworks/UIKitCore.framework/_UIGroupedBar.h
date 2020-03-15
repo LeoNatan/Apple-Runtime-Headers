@@ -29,6 +29,7 @@
     UIBlurEffect *_backgroundEffect;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIBlurEffect *backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
 @property(copy, nonatomic) _UIButtonBarButtonVisualProvider *visualProvider; // @synthesize visualProvider=_visualProvider;
 @property(nonatomic) double trailingBarSizeLimit; // @synthesize trailingBarSizeLimit=_trailingBarSizeLimit;
@@ -37,7 +38,6 @@
 @property(nonatomic) double minimumInterItemSpace; // @synthesize minimumInterItemSpace=_minimumInterItemSpace;
 @property(nonatomic) double margin; // @synthesize margin=_margin;
 @property(nonatomic) _Bool independentGroupSizes; // @synthesize independentGroupSizes=_independentGroupSizes;
-- (void).cxx_destruct;
 - (id)_debug;
 - (void)buttonBarWillUpdateLayout:(id)arg1;
 - (void)_setButtonAlpha:(double)arg1;

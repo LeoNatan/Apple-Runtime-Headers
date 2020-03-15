@@ -15,8 +15,8 @@
     IKMutableArray *_selectors;
 }
 
-@property(readonly, nonatomic) IKMutableArray *selectors; // @synthesize selectors=_selectors;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKMutableArray *selectors; // @synthesize selectors=_selectors;
 - (id)description;
 - (unsigned long long)count;
 - (id)lastSelector;

@@ -32,6 +32,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFAnalyticsActivityTracker *tracker; // @synthesize tracker=_tracker;
 @property(retain, nonatomic) SFSignInAnalytics *root; // @synthesize root=_root;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -48,7 +49,6 @@
 @property(nonatomic) BOOL stopped; // @synthesize stopped=_stopped;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (void)signInCompleted;
 - (void)processEventChainForUUID:(id)arg1 dependencyChain:(id)arg2;
 - (BOOL)writeResultsToTmp;

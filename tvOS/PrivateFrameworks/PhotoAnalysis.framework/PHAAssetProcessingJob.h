@@ -15,10 +15,10 @@
     NSMutableDictionary *_resultsByAssetLocalIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *resultsByAssetLocalIdentifier; // @synthesize resultsByAssetLocalIdentifier=_resultsByAssetLocalIdentifier;
 @property(readonly) NSRecursiveLock *resultsLock; // @synthesize resultsLock=_resultsLock;
 @property(readonly, nonatomic) NSArray *assetLocalIdentifiers; // @synthesize assetLocalIdentifiers=_assetLocalIdentifiers;
-- (void).cxx_destruct;
 - (void)reportResult:(unsigned long long)arg1 forAssetLocalIdentifier:(id)arg2;
 - (unsigned long long)resultForAssetLocalIdentifier:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *incompleteAssetLocalIdentifiers;

@@ -23,9 +23,9 @@
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(_Bool)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;
 + (id)createDefaultInstancesForUnitTesting;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_c519178c alignmentInsets; // @synthesize alignmentInsets=_alignmentInsets;
 @property(copy, nonatomic) IBICImageResizingBehavior *resizingBehavior; // @synthesize resizingBehavior=_resizingBehavior;
-- (void).cxx_destruct;
 - (void)populateIssues:(id)arg1 context:(id)arg2;
 - (id)languageComponentsRepresentedByConflictFreeSiblings;
 - (_Bool)isEqualForUnitTests:(id)arg1;

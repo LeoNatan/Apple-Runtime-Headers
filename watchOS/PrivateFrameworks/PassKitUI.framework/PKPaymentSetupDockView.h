@@ -19,10 +19,10 @@
     NSString *_buttonExplanationText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *buttonExplanationText; // @synthesize buttonExplanationText=_buttonExplanationText;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 @property(nonatomic) _Bool requiresAdditionalContinuousButtonPadding; // @synthesize requiresAdditionalContinuousButtonPadding=_requiresAdditionalContinuousButtonPadding;
-- (void).cxx_destruct;
 - (struct CGSize)_sizeForButton:(id)arg1 constrainedToSize:(struct CGSize)arg2;
 - (void)setButtonsEnabled:(_Bool)arg1;
 - (void)layoutSubviews;

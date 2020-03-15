@@ -38,6 +38,7 @@
     PUVideoListContentUnavailableView *__contentUnavailableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setContentUnavailableView:) PUVideoListContentUnavailableView *_contentUnavailableView; // @synthesize _contentUnavailableView=__contentUnavailableView;
 @property(retain, nonatomic, setter=_setLastNavigatedAssetIndexPath:) NSIndexPath *_lastNavigatedAssetIndexPath; // @synthesize _lastNavigatedAssetIndexPath=__lastNavigatedAssetIndexPath;
 @property(nonatomic, setter=_setAssetsFetchResultIsValid:) _Bool _assetsFetchResultIsValid; // @synthesize _assetsFetchResultIsValid=__assetsFetchResultIsValid;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic, setter=_setDataSourceManagerConfiguration:) PXPhotosDataSourceConfiguration *_dataSourceManagerConfiguration; // @synthesize _dataSourceManagerConfiguration=__dataSourceManagerConfiguration;
 @property(retain, nonatomic, setter=_setDataSource:) PXPhotosDataSource *_dataSource; // @synthesize _dataSource=__dataSource;
 @property(retain, nonatomic, setter=_setOneUpPresentationHelper:) PUOneUpPresentationHelper *_oneUpPresentationHelper; // @synthesize _oneUpPresentationHelper=__oneUpPresentationHelper;
-- (void).cxx_destruct;
 - (void)actionPerformer:(id)arg1 stopExcludingAssetsFromDataSource:(id)arg2;
 - (void)actionPerformer:(id)arg1 excludeAssetsFromDataSource:(id)arg2;
 - (void)updateVideoListCellContentView:(id)arg1 forItemAtIndexPath:(id)arg2 animated:(_Bool)arg3;

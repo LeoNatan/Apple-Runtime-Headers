@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 + (id)_modernThumbImageWithColor:(id)arg1 mask:(unsigned int)arg2 traitCollection:(id)arg3;
 + (id)_modernGradientImageWithOnColor:(id)arg1 traitCollection:(id)arg2;
 + (struct CGSize)preferredContentSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIPanGestureRecognizer *pan; // @synthesize pan=_pan;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPress; // @synthesize longPress=_longPress;
 @property(retain, nonatomic) UISwitchMVEGestureTrackingSession *gestureTrackingSession; // @synthesize gestureTrackingSession=_gestureTrackingSession;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *offImage; // @synthesize offImage=_offImage;
 @property(retain, nonatomic) UIImage *onImage; // @synthesize onImage=_onImage;
 @property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
-- (void).cxx_destruct;
 - (id)_settings;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (void)_setPressed:(_Bool)arg1 on:(_Bool)arg2 animated:(_Bool)arg3 shouldAnimateLabels:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;

@@ -23,11 +23,11 @@
 + (id)trafficForNewAlternateRoute:(id)arg1 existingAlternateRoute:(id)arg2 incidents:(id)arg3;
 + (id)trafficForGEORoute:(id)arg1 routeInitializerData:(id)arg2 route:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *enrouteNotices; // @synthesize enrouteNotices=_enrouteNotices;
 @property(retain, nonatomic) NSArray *trafficIncidentOffsets; // @synthesize trafficIncidentOffsets=_trafficIncidentOffsets;
 @property(retain, nonatomic) NSArray *trafficIncidents; // @synthesize trafficIncidents=_trafficIncidents;
 @property(readonly, nonatomic) NSUUID *routeID; // @synthesize routeID=_routeID;
-- (void).cxx_destruct;
 - (id)_colorStringForIndex:(unsigned int)arg1;
 - (id)description;
 - (id)enrouteNoticeWithIdentifier:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (Class)productsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *products; // @synthesize products=_products;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

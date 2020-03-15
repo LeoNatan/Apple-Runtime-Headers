@@ -15,10 +15,10 @@
     NSArray *_locationNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *locationNames; // @synthesize locationNames=_locationNames;
 @property(readonly, nonatomic) PGTitle *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) PGTitle *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithWithTitle:(id)arg1 subtitle:(id)arg2;

@@ -20,11 +20,11 @@
 
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 @property(readonly) BOOL includeDocumentData; // @synthesize includeDocumentData=_includeDocumentData;
 @property(readonly, copy) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly) unsigned long long limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_validate;

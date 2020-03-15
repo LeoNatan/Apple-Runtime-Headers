@@ -16,9 +16,9 @@
     int _leeway;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int leeway; // @synthesize leeway=_leeway;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_cancelWake;
 - (void)cancelWake;
 - (void)scheduleWake:(double)arg1;

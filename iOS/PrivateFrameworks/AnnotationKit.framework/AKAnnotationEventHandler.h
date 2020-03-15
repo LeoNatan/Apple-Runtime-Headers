@@ -27,6 +27,7 @@
 + (_Bool)allowsDraggingOfAnnotation:(id)arg1;
 + (_Bool)allowsDragging;
 + (id)newAnnotationEventHandlerForCurrentPlatformForAnnotation:(id)arg1 withPageController:(id)arg2;
+- (void).cxx_destruct;
 @property struct CGPoint lastPositionInWindow; // @synthesize lastPositionInWindow=_lastPositionInWindow;
 @property struct CGPoint lastPositionInModel; // @synthesize lastPositionInModel=_lastPositionInModel;
 @property _Bool draggingVerticalOnly; // @synthesize draggingVerticalOnly=_draggingVerticalOnly;
@@ -37,7 +38,6 @@
 @property unsigned long long initiallyDraggedArea; // @synthesize initiallyDraggedArea=_initiallyDraggedArea;
 @property(retain) AKAnnotation *annotation; // @synthesize annotation=_annotation;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
-- (void).cxx_destruct;
 - (struct CGPoint)modelPointFromPointInWindow:(struct CGPoint)arg1;
 - (struct CGPoint)windowPointFromEvent:(id)arg1 orRecognizer:(id)arg2;
 - (void)updateModelWithCurrentPoint:(struct CGPoint)arg1;

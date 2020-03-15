@@ -17,10 +17,10 @@
 
 + (id)indentWithLevel:(id)arg1 step:(id)arg2 factor:(unsigned long long)arg3;
 + (id)indentWithLevel:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *level; // @synthesize level=_level;
 @property(readonly) unsigned long long factor; // @synthesize factor=_factor;
 @property(readonly) NSString *step; // @synthesize step=_step;
-- (void).cxx_destruct;
 - (id)indentByFactor:(unsigned long long)arg1;
 - (id)description;
 - (id)initWithLevel:(id)arg1 step:(id)arg2 factor:(unsigned long long)arg3;

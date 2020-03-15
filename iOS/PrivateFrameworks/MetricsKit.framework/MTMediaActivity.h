@@ -19,12 +19,12 @@
 }
 
 + (unsigned long long)startOverallPositionForItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak MTVPAFKit *vpafKit; // @synthesize vpafKit=_vpafKit;
 @property(retain, nonatomic) MTMetricsData *stopMetricsData; // @synthesize stopMetricsData=_stopMetricsData;
 @property(retain, nonatomic) MTMetricsData *startMetricsData; // @synthesize startMetricsData=_startMetricsData;
 @property(retain, nonatomic) id <MTMediaPlaylistItem> playlistItem; // @synthesize playlistItem=_playlistItem;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)stopEventHandler;
 - (id)startEventHandler;
 - (id)eventDataForTransitioningEvents;

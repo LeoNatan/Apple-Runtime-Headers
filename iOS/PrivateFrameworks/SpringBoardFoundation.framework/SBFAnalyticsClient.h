@@ -15,8 +15,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSString *significantTimeChangedNotificationName; // @synthesize significantTimeChangedNotificationName=_significantTimeChangedNotificationName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *significantTimeChangedNotificationName; // @synthesize significantTimeChangedNotificationName=_significantTimeChangedNotificationName;
 - (void)_noteSignificantTimeChanged:(id)arg1;
 - (void)registerForQueryName:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)emitEvent:(unsigned long long)arg1 withPayload:(id)arg2;

@@ -16,9 +16,9 @@
     unsigned long long _numVertices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numVertices; // @synthesize numVertices=_numVertices;
 @property(readonly, nonatomic) unsigned long long offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 - (_Bool)lockPurgeableResourcesAddToSet:(id)arg1;
 @property(readonly, nonatomic) id <MTLBuffer> vertexBuffer; // @dynamic vertexBuffer;
 - (id)initWithBuffer:(id)arg1 offset:(unsigned long long)arg2 numVertices:(unsigned long long)arg3;

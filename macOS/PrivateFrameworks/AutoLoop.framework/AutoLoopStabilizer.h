@@ -54,6 +54,7 @@
     struct CGRect cropRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly) float lastTripodQuality; // @synthesize lastTripodQuality=_lastTripodQuality;
 @property(nonatomic) CDStruct_1b6d18a9 lastFrameTimeAfterDrop; // @synthesize lastFrameTimeAfterDrop=_lastFrameTimeAfterDrop;
 @property(nonatomic) CDStruct_1b6d18a9 firstFrameTimeAfterDrop; // @synthesize firstFrameTimeAfterDrop=_firstFrameTimeAfterDrop;
@@ -94,7 +95,6 @@
 @property(nonatomic) unsigned long long frameSearchLength; // @synthesize frameSearchLength;
 @property(retain, nonatomic) NSURL *statsFileOutURL; // @synthesize statsFileOutURL;
 @property(retain, nonatomic) AVAsset *movieAssetIn; // @synthesize movieAssetIn;
-- (void).cxx_destruct;
 - (int)processStabilizationAnalysisForCinematicL1:(void *)arg1;
 - (int)processStabilizationAnalysis:(void *)arg1 forcePassThru:(_Bool)arg2 forceSmoothing:(_Bool)arg3 forceSequentialTripod:(_Bool)arg4;
 - (int)FindAcceptableTripodSegmentForInput:(const void *)arg1 frameTimes:(const vector_0821a7d5 *)arg2;

@@ -24,6 +24,7 @@
 }
 
 + (id)sharedLogMaster;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL autoFlush; // @synthesize autoFlush=_autoFlush;
 @property(nonatomic) BOOL hasValidNotificationRegistrationToken; // @synthesize hasValidNotificationRegistrationToken=_hasValidNotificationRegistrationToken;
 @property(nonatomic) int notificationRegistrationToken; // @synthesize notificationRegistrationToken=_notificationRegistrationToken;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) CalLogNode *standardOutNode; // @synthesize standardOutNode=_standardOutNode;
 @property(retain, nonatomic) CalLogNode *oslogNode; // @synthesize oslogNode=_oslogNode;
 @property(retain, nonatomic) NSArray *topLevelNodes; // @synthesize topLevelNodes=_topLevelNodes;
-- (void).cxx_destruct;
 - (void)processEnvelope:(id)arg1;
 - (BOOL)flush;
 - (id)findWhiteList;

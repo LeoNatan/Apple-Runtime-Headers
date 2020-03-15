@@ -16,11 +16,11 @@
     NSURLSessionTask *_resetStateTask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSessionTask *resetStateTask; // @synthesize resetStateTask=_resetStateTask;
 @property(retain, nonatomic) VSStoreURLBag *bag; // @synthesize bag=_bag;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)init;

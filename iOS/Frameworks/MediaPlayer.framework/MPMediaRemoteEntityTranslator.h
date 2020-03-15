@@ -18,8 +18,8 @@
 + (id)translatorForMPModelClass:(Class)arg1;
 + (id)_translatorForMPModelClass:(Class)arg1;
 + (id)_translatorForMPModelClass:(Class)arg1 create:(_Bool)arg2;
-@property(readonly, nonatomic) Class MPModelClass; // @synthesize MPModelClass=_MPModelClass;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Class MPModelClass; // @synthesize MPModelClass=_MPModelClass;
 - (id)_propertyTranslatorForKeyPath:(id)arg1;
 - (id)_valueForKeyPath:(id)arg1 forContentItem:(id)arg2 artworkGenerator:(id)arg3;
 - (id)_sectionGenericObjectPropertySetForContentItem:(id)arg1 propertySet:(id)arg2;

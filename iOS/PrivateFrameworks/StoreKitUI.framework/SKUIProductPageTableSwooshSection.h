@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     SKUILockupSwooshViewController *_swooshViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIResourceLoader *resourceLoader; // @synthesize resourceLoader=_resourceLoader;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
-- (void).cxx_destruct;
 - (id)_swooshViewController;
 - (id)_missingItemLoader;
 - (id)_artworkLoader;

@@ -19,9 +19,9 @@
 }
 
 + (unsigned long long)_xpcAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICreatePDFActivityItem *previewURLItem; // @synthesize previewURLItem=_previewURLItem;
 @property(retain, nonatomic) QLPreviewController *previewController; // @synthesize previewController=_previewController;
-- (void).cxx_destruct;
 - (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (id)dismissActionsForPreviewController:(id)arg1;

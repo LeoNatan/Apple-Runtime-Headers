@@ -18,8 +18,8 @@
 }
 
 + (id)sharedContextPool;
-@property(readonly, nonatomic) __weak PAOpenGLDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PAOpenGLDevice *device; // @synthesize device=_device;
 - (id)description;
 - (void)executeBlockWithContext:(CDUnknownBlockType)arg1;
 - (void)_executeBlock:(CDUnknownBlockType)arg1 withContext:(id)arg2;

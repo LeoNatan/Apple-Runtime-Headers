@@ -31,8 +31,8 @@
 + (double)anglePerpendicularToLineBetweenLocation1:(id)arg1 location2:(id)arg2;
 + (double)perpendicularAngleForAngle:(double)arg1;
 + (double)minSpeedToFilterHyperParameter;
-@property(retain) NSMutableArray *generatedLocations; // @synthesize generatedLocations=_generatedLocations;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *generatedLocations; // @synthesize generatedLocations=_generatedLocations;
 - (id)generateLocations;
 - (id)locationsForVisit:(id)arg1;
 - (id)transitionLocationsBetweenStartLocation:(id)arg1 endLocation:(id)arg2 coordinateCalculationBlock:(CDUnknownBlockType)arg3;

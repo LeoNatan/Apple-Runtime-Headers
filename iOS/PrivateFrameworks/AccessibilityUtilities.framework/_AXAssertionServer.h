@@ -15,10 +15,10 @@
     NSMutableDictionary *_heldAssertionMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *heldAssertionMap; // @synthesize heldAssertionMap=_heldAssertionMap;
 @property(copy, nonatomic) CDUnknownBlockType assertionWasReleasedHandler; // @synthesize assertionWasReleasedHandler=_assertionWasReleasedHandler;
 @property(copy, nonatomic) CDUnknownBlockType assertionWasAcquiredHandler; // @synthesize assertionWasAcquiredHandler=_assertionWasAcquiredHandler;
-- (void).cxx_destruct;
 - (id)clientsHoldingAssertionOfType:(id)arg1;
 - (void)removeHeldAssertionOfType:(id)arg1 byClient:(id)arg2;
 - (void)addHeldAssertionOfType:(id)arg1 byClient:(id)arg2;

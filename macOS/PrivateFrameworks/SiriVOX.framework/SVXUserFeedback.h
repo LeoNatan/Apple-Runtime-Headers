@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SVXUserFeedbackVoiceContent *voiceContent; // @synthesize voiceContent=_voiceContent;
 @property(readonly, copy, nonatomic) SVXUserFeedbackAudioContent *audioContent; // @synthesize audioContent=_audioContent;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

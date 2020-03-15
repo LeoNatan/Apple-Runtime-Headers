@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)vignetteImageForType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long vignetteType; // @synthesize vignetteType=_vignetteType;
 @property(readonly, nonatomic) NSArray *backgroundElements; // @synthesize backgroundElements=_backgroundElements;
-- (void).cxx_destruct;
 - (void)_initVignette;
 - (void)_invalidateTimer;
 - (void)_scheduleTimerIfNeeded;

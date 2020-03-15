@@ -12,9 +12,9 @@
     SEL _selector;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)handleDisplayLink:(id)arg1;
 - (id)initWithObject:(id)arg1 selector:(SEL)arg2;
 

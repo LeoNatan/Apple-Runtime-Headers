@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     id <VisualScrubberItemViewAccessibilityDelegate> _accessibilityDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <VisualScrubberItemViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(copy, nonatomic) NSString *contentSizeObservationKey; // @synthesize contentSizeObservationKey=_contentSizeObservationKey;
 @property(nonatomic) BOOL hugsContent; // @synthesize hugsContent=_hugsContent;
 @property(retain, nonatomic) NSView *innerView; // @synthesize innerView=_innerView;
-- (void).cxx_destruct;
 - (void)_updateAspectRatioConstraints;
 - (void)_updateContentHuggingConstraints;
 - (void)_updateTint;

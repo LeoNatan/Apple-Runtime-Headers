@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _menuExtraMenuBarBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDelayForNothingSoundObserver:) id _delayForNothingSoundObserver; // @synthesize _delayForNothingSoundObserver=__delayForNothingSoundObserver;
 @property(nonatomic) double movedOntoNothingTime; // @synthesize movedOntoNothingTime=_movedOntoNothingTime;
 @property(readonly, nonatomic) AXFDispatchQueue *_gestureManagerDispatchQueue; // @synthesize _gestureManagerDispatchQueue=__gestureManagerDispatchQueue;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL trackingFirstTouch; // @synthesize trackingFirstTouch=_trackingFirstTouch;
 @property(readonly, nonatomic) struct CGRect menuExtraMenuBarBounds; // @synthesize menuExtraMenuBarBounds=_menuExtraMenuBarBounds;
 @property(readonly, nonatomic) BOOL menuBarBoundsNeedsUpdate; // @synthesize menuBarBoundsNeedsUpdate=_menuBarBoundsNeedsUpdate;
-- (void).cxx_destruct;
 - (void)setMenuBarBoundsNeedsUpdate;
 - (void)updateMenuBarBounds:(id)arg1;
 - (struct CGRect)menuExtraBounds;

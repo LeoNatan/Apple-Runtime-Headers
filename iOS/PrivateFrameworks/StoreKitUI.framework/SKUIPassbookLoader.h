@@ -19,9 +19,9 @@
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) __weak id <SKUIPassbookLoaderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendDidFinishIfFinished;
 - (void)_loadPassWithURL:(id)arg1;
 - (void)_didLoadWithPass:(id)arg1 error:(id)arg2;

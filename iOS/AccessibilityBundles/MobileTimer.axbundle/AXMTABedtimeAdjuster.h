@@ -16,11 +16,11 @@
     NSDateComponents *_currentComponents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *currentComponents; // @synthesize currentComponents=_currentComponents;
 @property(retain, nonatomic) NSDate *baseDate; // @synthesize baseDate=_baseDate;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(nonatomic) unsigned long long adjusterType; // @synthesize adjusterType=_adjusterType;
-- (void).cxx_destruct;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 - (void)adjustComponentsIncrement:(_Bool)arg1;

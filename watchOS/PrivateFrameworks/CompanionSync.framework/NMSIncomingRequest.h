@@ -29,6 +29,7 @@
 
 + (void)setAllowsUnrepliedRequestsForUnitTesting:(_Bool)arg1;
 + (_Bool)allowsUnrepliedRequestsForUnitTesting;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSMessageContext *idsContext; // @synthesize idsContext=_idsContext;
 @property(retain, nonatomic) id pbRequest; // @synthesize pbRequest=_pbRequest;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned short messageID; // @synthesize messageID=_messageID;
 @property(nonatomic) __weak NMSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(retain, nonatomic) NSString *sourceDeviceID; // @synthesize sourceDeviceID;
-- (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
 @property(readonly, copy) NSString *description;
 - (void)configureResponse;

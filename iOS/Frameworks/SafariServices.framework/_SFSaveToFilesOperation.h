@@ -23,8 +23,8 @@
     id <_SFSaveToFilesOperationDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_SFSaveToFilesOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFSaveToFilesOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)importPlaceholderForDownload:(id)arg1 fromURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)documentPickerWasCancelled:(id)arg1;
 - (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;

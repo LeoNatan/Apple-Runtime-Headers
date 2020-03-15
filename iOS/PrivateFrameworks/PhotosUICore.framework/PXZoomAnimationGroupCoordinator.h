@@ -13,9 +13,9 @@
     NSArray *_zoomAnimationCoordinators;
 }
 
-@property(readonly, copy, nonatomic) NSArray *zoomAnimationCoordinators; // @synthesize zoomAnimationCoordinators=_zoomAnimationCoordinators;
 - (void).cxx_destruct;
-- (void)animateContentForEndPointType:(long long)arg1 inView:(struct NSObject *)arg2 withLayerType:(long long)arg3 zoomAnimationContext:(id)arg4;
+@property(readonly, copy, nonatomic) NSArray *zoomAnimationCoordinators; // @synthesize zoomAnimationCoordinators=_zoomAnimationCoordinators;
+- (void)animateContentForEndPointType:(long long)arg1 inView:(id)arg2 withLayerType:(long long)arg3 zoomAnimationContext:(id)arg4;
 - (void)animateContentForEndPointType:(long long)arg1 withZoomAnimationContext:(id)arg2;
 - (id)initWithZoomAnimationCoordinators:(id)arg1;
 - (id)init;

@@ -25,6 +25,7 @@
     NSData *_queryHash;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *queryHash; // @synthesize queryHash=_queryHash;
 @property(readonly, nonatomic) NSString *remoteURI; // @synthesize remoteURI=_remoteURI;
 @property(readonly, nonatomic) NSString *localURI; // @synthesize localURI=_localURI;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) int certifiedDeliveryVersion; // @synthesize certifiedDeliveryVersion=_certifiedDeliveryVersion;
 @property(readonly, nonatomic) NSString *service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSString *originalGUID; // @synthesize originalGUID=_originalGUID;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (id)initWithGUID:(id)arg1 service:(id)arg2 certifiedDeliveryVersion:(int)arg3 certifiedDeliveryRTS:(id)arg4 senderToken:(id)arg5 failureReason:(id)arg6 failureReasonMessage:(id)arg7 replayKey:(id)arg8 generateDeliveryReceipt:(_Bool)arg9 deliveryStatusContext:(id)arg10 localURI:(id)arg11 remoteURI:(id)arg12 queryHash:(id)arg13;

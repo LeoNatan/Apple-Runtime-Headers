@@ -15,10 +15,10 @@
     NSMutableDictionary *_hiddenSearchResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *hiddenSearchResults; // @synthesize hiddenSearchResults=_hiddenSearchResults;
 @property(retain, nonatomic) NSMutableDictionary *identifierToSearchResult; // @synthesize identifierToSearchResult=_identifierToSearchResult;
 @property(retain, nonatomic) NSMutableOrderedSet *searchResults; // @synthesize searchResults=_searchResults;
-- (void).cxx_destruct;
 - (void)resetToSearchResults:(id)arg1;
 - (void)addSearchResults:(id)arg1;
 - (BOOL)removeSearchResultForIdentifier:(id)arg1 forHiding:(BOOL)arg2;

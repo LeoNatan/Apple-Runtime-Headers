@@ -15,9 +15,9 @@
     id <NUScalePolicy> _scalePolicy;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
-- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;
 - (id)newRenderJob;

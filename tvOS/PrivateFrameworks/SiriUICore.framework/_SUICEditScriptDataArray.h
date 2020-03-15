@@ -18,9 +18,9 @@
 
 + (id)EditScriptDataWithArray:(id)arg1;
 + (id)EditScriptDataWithString:(id)arg1 chunkSize:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cachedStringValue; // @synthesize cachedStringValue=_cachedStringValue;
 @property(retain, nonatomic) NSArray *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (long long)indexOfFirstDifferenceWithOtherData:(id)arg1 shouldReverseIterate:(_Bool)arg2 fallsOnWordBoundary:(_Bool *)arg3;
 - (long long)characterIndexForItem:(long long)arg1;
 - (long long)lengthOfItem:(long long)arg1;

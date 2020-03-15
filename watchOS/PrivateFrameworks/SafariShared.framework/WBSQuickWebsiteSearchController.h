@@ -24,8 +24,8 @@
 }
 
 + (id)sharedController;
-@property _Bool quickWebsiteSearchProvidersLoadedFromDisk; // @synthesize quickWebsiteSearchProvidersLoadedFromDisk=_quickWebsiteSearchProvidersLoadedFromDisk;
 - (void).cxx_destruct;
+@property _Bool quickWebsiteSearchProvidersLoadedFromDisk; // @synthesize quickWebsiteSearchProvidersLoadedFromDisk=_quickWebsiteSearchProvidersLoadedFromDisk;
 - (void)_resetCachedDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_didCollectOpenSearchDescription:(id)arg1;
 - (void)_didFinishLoadingFromDisk;

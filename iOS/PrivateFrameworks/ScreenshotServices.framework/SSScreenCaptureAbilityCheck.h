@@ -15,9 +15,9 @@
 }
 
 + (id)abilityCheck;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reasonForNotBeingAbleToTakeScreenshots; // @synthesize reasonForNotBeingAbleToTakeScreenshots=_reasonForNotBeingAbleToTakeScreenshots;
 @property(nonatomic) _Bool isAbleToTakeScreenshots; // @synthesize isAbleToTakeScreenshots=_isAbleToTakeScreenshots;
-- (void).cxx_destruct;
 
 @end
 

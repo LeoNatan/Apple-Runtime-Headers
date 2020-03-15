@@ -13,8 +13,8 @@
     NSImage *_placeholderImage;
 }
 
-@property(retain) NSImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 - (void).cxx_destruct;
+@property(retain) NSImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setImages:(id)arg1;
 - (void)updateLayer;

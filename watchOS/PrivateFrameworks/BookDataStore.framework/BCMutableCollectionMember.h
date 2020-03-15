@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(copy, nonatomic) NSString *collectionMemberID; // @synthesize collectionMemberID=_collectionMemberID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)configuredRecordFromAttributes;

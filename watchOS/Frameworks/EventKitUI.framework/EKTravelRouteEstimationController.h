@@ -25,6 +25,7 @@
 }
 
 + (id)_basedOnLocationLocalizedString;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *travelTimeLookupErrors; // @synthesize travelTimeLookupErrors=_travelTimeLookupErrors;
 @property(retain) NSDictionary *travelTimeEstimatedValues; // @synthesize travelTimeEstimatedValues=_travelTimeEstimatedValues;
 @property(retain) EKStructuredLocation *evaluatedOriginLocation; // @synthesize evaluatedOriginLocation=_evaluatedOriginLocation;
@@ -32,7 +33,6 @@
 @property(retain) EKStructuredLocation *destinationStructuredLocation; // @synthesize destinationStructuredLocation=_destinationStructuredLocation;
 @property(retain) NSDate *arrivalDate; // @synthesize arrivalDate=_arrivalDate;
 @property(nonatomic) __weak id <EKTravelRouteEstimationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)estimatedTravelTimeTableViewCellWithRowIndex:(unsigned int)arg1;
 - (id)_imageForCellAtIndex:(unsigned int)arg1;
 - (int)_estimatedTravelTimeRoutingModeAtRowIndex:(unsigned int)arg1;

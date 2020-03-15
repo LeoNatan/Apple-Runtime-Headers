@@ -13,8 +13,8 @@
     id <PKPaletteTextOptionsViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKPaletteTextOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKPaletteTextOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_signatureButtonTouchUpInsideHandler:(id)arg1;
 - (void)_textButtonTouchUpInsideHandler:(id)arg1;
 - (struct CGSize)preferredContentSize;

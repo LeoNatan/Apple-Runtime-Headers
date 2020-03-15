@@ -12,7 +12,7 @@
 #import <ReminderKit/REMObjectIDProviding-Protocol.h>
 #import <ReminderKit/_REMDAChangeTrackableModel-Protocol.h>
 
-@class NSArray, NSAttributedString, NSData, NSDate, NSDateComponents, NSSet, NSString, REMAccount, REMCRMergeableStringDocument, REMContactRepresentation, REMDisplayDate, REMList, REMObjectID, REMReminderAttachmentContext, REMReminderFlaggedContext, REMReminderStorage, REMReminderSubtaskContext, REMResolutionTokenMap, REMStore, REMUserActivity;
+@class NSArray, NSAttributedString, NSData, NSDate, NSDateComponents, NSSet, NSString, NSURL, REMAccount, REMCRMergeableStringDocument, REMContactRepresentation, REMDisplayDate, REMList, REMObjectID, REMReminderAttachmentContext, REMReminderFlaggedContext, REMReminderStorage, REMReminderSubtaskContext, REMResolutionTokenMap, REMStore, REMUserActivity;
 
 @interface REMReminder : NSObject <REMDAChangeTrackableFetchableModel, REMDAChangedModelObjectResult, _REMDAChangeTrackableModel, REMObjectIDProviding, REMExternalSyncMetadataProviding>
 {
@@ -36,12 +36,12 @@
 + (CDUnknownBlockType)rem_DA_fetchByObjectIDBlock;
 + (_Bool)rem_DA_supportsLazyDelete;
 + (_Bool)rem_DA_supportsFetching;
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMReminder *parentReminder; // @synthesize parentReminder=_parentReminder;
 @property(readonly, nonatomic) REMReminderStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) REMList *list; // @synthesize list=_list;
 @property(readonly, nonatomic) REMAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *externalIdentifierForMarkedForDeletionObject;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 - (_Bool)respondsToSelector:(SEL)arg1;
@@ -82,6 +82,7 @@
 @property(readonly, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;
 @property(readonly, nonatomic) int flagged; // @dynamic flagged;
 @property(readonly, nonatomic) unsigned int icsDisplayOrder; // @dynamic icsDisplayOrder;
+@property(readonly, nonatomic) NSURL *icsUrl; // @dynamic icsUrl;
 @property(readonly, nonatomic) NSData *importedICSData; // @dynamic importedICSData;
 @property(readonly, nonatomic) _Bool isOverdue; // @dynamic isOverdue;
 @property(readonly, nonatomic) _Bool isRecurrent; // @dynamic isRecurrent;

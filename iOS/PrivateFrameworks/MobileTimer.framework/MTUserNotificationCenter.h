@@ -40,9 +40,9 @@
 + (id)_allIdentifiersForAlarm:(id)arg1 includeMainIdentifier:(_Bool)arg2 includeSnooze:(_Bool)arg3;
 + (id)_allIdentifiersForAlarm:(id)arg1 includeMainIdentifier:(_Bool)arg2;
 + (id)_allIdentifiersForAlarm:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTUserNotificationActionDispatcher *actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(retain, nonatomic) NSDictionary *notificationCenters; // @synthesize notificationCenters=_notificationCenters;
-- (void).cxx_destruct;
 - (void)postBedtimeNotificationForAlarm:(id)arg1 date:(id)arg2;
 - (void)removeAllDeliveredNotifications;
 - (void)dismissNotificationsForTimer:(id)arg1;

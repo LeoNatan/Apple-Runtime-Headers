@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) IDSTransactionLogTask *task; // @synthesize task=_task;
-- (void).cxx_destruct;
 - (void)perform;
 - (id)initWithTask:(id)arg1 delegate:(id)arg2 queue:(id)arg3;
 

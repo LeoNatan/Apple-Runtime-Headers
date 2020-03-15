@@ -30,8 +30,8 @@
 + (id)predicateMatchingIdentity:(id)arg1;
 + (id)predicateMatchingServiceName:(id)arg1;
 + (id)predicateMatchingJobLabel:(id)arg1;
-@property(readonly, nonatomic) RBSProcessPredicateImpl *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RBSProcessPredicateImpl *predicate; // @synthesize predicate=_predicate;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

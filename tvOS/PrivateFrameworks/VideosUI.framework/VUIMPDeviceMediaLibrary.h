@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)_isInitialUpdateInProgress;
 + (_Bool)_isUpdateInProgress;
-@property(retain, nonatomic) VUIMPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIMPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 - (void)_storeMediaItemRentalExpirationUpdated:(id)arg1;
 - (void)_handleApplicationWillResignActiveNotification:(id)arg1;
 - (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;

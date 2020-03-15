@@ -57,6 +57,7 @@
     unsigned long long _maxNumOfBins;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maxNumOfBins; // @synthesize maxNumOfBins=_maxNumOfBins;
 @property(readonly, nonatomic) unsigned long long binSize; // @synthesize binSize=_binSize;
 @property(readonly, nonatomic) unsigned long long windowSize; // @synthesize windowSize=_windowSize;
@@ -102,7 +103,6 @@
 @property(readonly, nonatomic) unsigned long long maxBurstNoiseLength; // @synthesize maxBurstNoiseLength=_maxBurstNoiseLength;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
-- (void).cxx_destruct;
 
 @end
 

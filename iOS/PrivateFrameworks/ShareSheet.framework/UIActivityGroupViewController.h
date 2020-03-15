@@ -34,6 +34,7 @@
     struct UIEdgeInsets _externalSafeInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIActivityGroupViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) struct UIEdgeInsets externalSafeInset; // @synthesize externalSafeInset=_externalSafeInset;
 @property(nonatomic, getter=isPicker) _Bool picker; // @synthesize picker=_picker;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSArray *activities; // @synthesize activities=_activities;
 @property(nonatomic) long long activityCategory; // @synthesize activityCategory=_activityCategory;
 @property(nonatomic) __weak id <UIActivityGroupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)registerClassForContentSizeCategoryChanges;
 - (void)activityUserDefaultsDidChange:(id)arg1;
 - (void)ignoreUserDefaultsChangesWhileUsingBlock:(CDUnknownBlockType)arg1;

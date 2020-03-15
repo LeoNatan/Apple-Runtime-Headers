@@ -22,13 +22,13 @@
     HUColoredButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUColoredButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UIColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;
 @property(nonatomic) BOOL buttonColorFollowsTintColor; // @synthesize buttonColorFollowsTintColor=_buttonColorFollowsTintColor;
 @property(nonatomic) __weak id <HUColoredButtonCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)updateButtonColor;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 - (void)prepareForReuse;

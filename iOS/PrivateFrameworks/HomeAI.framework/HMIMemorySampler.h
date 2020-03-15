@@ -20,10 +20,10 @@
 
 + (id)logCategory;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) MovingAverage *average; // @synthesize average=_average;
 @property(readonly) HMFTimer *tick; // @synthesize tick=_tick;
 @property long long highWaterMark; // @synthesize highWaterMark=_highWaterMark;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)stop;
 - (void)start;

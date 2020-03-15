@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *promptLabel; // @synthesize promptLabel=_promptLabel;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(nonatomic) int barMetrics; // @synthesize barMetrics=_barMetrics;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)useMini;

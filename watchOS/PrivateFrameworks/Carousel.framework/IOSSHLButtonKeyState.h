@@ -26,6 +26,7 @@
     unsigned long long _lastUpTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=areGesturesDisabled) _Bool gesturesDisabled; // @synthesize gesturesDisabled=_gesturesDisabled;
 @property(nonatomic) _Bool gestureStoppedUntilUp; // @synthesize gestureStoppedUntilUp=_gestureStoppedUntilUp;
 @property(nonatomic) int heldState; // @synthesize heldState=_heldState;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned long long firstDownTime; // @synthesize firstDownTime=_firstDownTime;
 @property(readonly, nonatomic, getter=isDown) _Bool down; // @synthesize down=_down;
 @property(nonatomic) id <IOSSHLButtonKeyStateDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)downDescription;
 - (id)heldStateDescription;

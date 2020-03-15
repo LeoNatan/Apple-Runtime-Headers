@@ -14,8 +14,8 @@
     PHPerson *_person;
 }
 
-@property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 - (id)localizedName;
 - (id)initWithPerson:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 phoneNumber:(id)arg2 localizedName:(id)arg3;

@@ -16,8 +16,8 @@
     CADDatabaseInitializationOptions *_initializationOptions;
 }
 
-@property(retain) CADDatabaseInitializationOptions *initializationOptions; // @synthesize initializationOptions=_initializationOptions;
 - (void).cxx_destruct;
+@property(retain) CADDatabaseInitializationOptions *initializationOptions; // @synthesize initializationOptions=_initializationOptions;
 - (void)_callReplyHandler:(id)arg1 ofInvocation:(id)arg2 withErrorCode:(long long)arg3;
 - (long long)replyBlockArgumentIndex:(id)arg1;
 - (id)_getReplyBlockFromInvocation:(id)arg1;

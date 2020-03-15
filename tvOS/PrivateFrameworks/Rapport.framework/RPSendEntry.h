@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_xidObj;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int xpcID; // @synthesize xpcID=_xpcID;
 @property(retain, nonatomic) NSNumber *xidObj; // @synthesize xidObj=_xidObj;
 @property(nonatomic) unsigned int xid; // @synthesize xid=_xid;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *eventID; // @synthesize eventID=_eventID;
 @property(copy, nonatomic) NSData *eventData; // @synthesize eventData=_eventData;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 
 @end
 

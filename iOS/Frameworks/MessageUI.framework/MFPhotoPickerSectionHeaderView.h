@@ -17,9 +17,9 @@
 }
 
 + (id)reusableIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)addAllPhotosTarget:(id)arg1 action:(SEL)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 

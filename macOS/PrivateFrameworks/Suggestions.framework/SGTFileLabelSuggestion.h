@@ -18,8 +18,8 @@
 
 + (id)_colorForLabel:(long long)arg1;
 + (id)labelsCategory;
-@property(readonly) NSColor *labelColor; // @synthesize labelColor;
 - (void).cxx_destruct;
+@property(readonly) NSColor *labelColor; // @synthesize labelColor;
 - (id)_propertyListRepresentation;
 - (BOOL)_shouldNotBeIncludedInRecents;
 - (id)_identifier;

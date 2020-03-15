@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(nonatomic) unsigned long long indentLevel; // @synthesize indentLevel=_indentLevel;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

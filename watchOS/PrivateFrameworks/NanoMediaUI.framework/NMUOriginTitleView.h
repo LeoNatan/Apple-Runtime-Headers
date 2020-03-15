@@ -16,8 +16,8 @@
     NMROrigin *_origin;
 }
 
-@property(retain, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void)_handleOriginDeviceInfoDidChangeNotification:(id)arg1;
 - (void)tintColorDidChange;
 - (void)layoutSubviews;

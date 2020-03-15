@@ -15,10 +15,10 @@
     struct CAMShutterButtonSpec _spec;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) _Bool showContrastBorder; // @synthesize showContrastBorder=_showContrastBorder;
 @property(nonatomic) struct CAMShutterButtonSpec spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (id)initWithCoder:(id)arg1;

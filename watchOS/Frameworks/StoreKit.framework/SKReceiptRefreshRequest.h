@@ -13,11 +13,12 @@
     NSDictionary *_properties;
 }
 
-@property(readonly, nonatomic) NSDictionary *receiptProperties; // @synthesize receiptProperties=_properties;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *receiptProperties; // @synthesize receiptProperties=_properties;
 - (_Bool)_wantsVPP;
 - (_Bool)_wantsRevoked;
 - (_Bool)_wantsExpired;
+- (void)_requestCompletedWithError:(id)arg1;
 - (void)_handleReply:(id)arg1;
 - (void)_start;
 - (id)initWithReceiptProperties:(id)arg1;

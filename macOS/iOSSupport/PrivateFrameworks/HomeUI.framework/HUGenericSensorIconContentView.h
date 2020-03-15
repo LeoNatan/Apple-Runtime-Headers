@@ -18,13 +18,13 @@
     HUAnimationApplier *_animationApplier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUAnimationApplier *animationApplier; // @synthesize animationApplier=_animationApplier;
 @property(retain, nonatomic) UIView *indicatorClippingView; // @synthesize indicatorClippingView=_indicatorClippingView;
 @property(retain, nonatomic) NSArray *indicatorContainerViews; // @synthesize indicatorContainerViews=_indicatorContainerViews;
 @property(retain, nonatomic) NSArray *indicatorViews; // @synthesize indicatorViews=_indicatorViews;
 @property(retain, nonatomic) HUVisualEffectContainerView *bodyContainerView; // @synthesize bodyContainerView=_bodyContainerView;
 @property(retain, nonatomic) HUShapeLayerView *bodyView; // @synthesize bodyView=_bodyView;
-- (void).cxx_destruct;
 - (struct CGRect)_frameForIndicatorContainerViewInPosition:(unsigned long long)arg1;
 - (struct CGRect)_frameForIndicatorViewInPosition:(unsigned long long)arg1 showIndicators:(BOOL)arg2;
 - (struct CGAffineTransform)_transformForIndicatorContainerViewInPosition:(unsigned long long)arg1;

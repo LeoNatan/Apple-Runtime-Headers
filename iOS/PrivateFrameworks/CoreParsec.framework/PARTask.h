@@ -16,11 +16,11 @@
     PARRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PARRequest *request; // @synthesize request=_request;
 @property unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(nonatomic) __weak PARSession *session; // @synthesize session=_session;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)resume;
 
 @end

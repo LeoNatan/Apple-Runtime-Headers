@@ -22,6 +22,7 @@
     struct UIEdgeInsets _layoutMargins;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long sizeSubclass; // @synthesize sizeSubclass=_sizeSubclass;
 @property(readonly, nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) _Bool canDisplaySlideshowButton; // @synthesize canDisplaySlideshowButton=_canDisplaySlideshowButton;
 @property(readonly, nonatomic) _Bool canDisplayOptionsInPopover; // @synthesize canDisplayOptionsInPopover=_canDisplayOptionsInPopover;
 @property(readonly, nonatomic) struct CGSize baseInterItemSpacing; // @synthesize baseInterItemSpacing=_baseInterItemSpacing;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets gridContentInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets sectionHeaderInsets;
 @property(readonly, nonatomic) long long sectionHeaderStyle;
@@ -45,6 +45,7 @@
 @property(readonly, nonatomic) _Bool shouldPlaceDeleteInCenterToolbarPosition;
 @property(readonly, nonatomic) _Bool shouldPlaceSelectAllButtonInRightNavigationBar;
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;
+- (_Bool)shouldUseAspectItems;
 @property(readonly, nonatomic) long long cellBannerTextAlignment;
 @property(readonly, nonatomic) long long cellFillMode;
 @property(readonly, nonatomic) unsigned short thumbnailImageFormat;

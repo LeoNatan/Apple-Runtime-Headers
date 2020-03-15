@@ -13,8 +13,8 @@
     NSArray *_flagsArray;
 }
 
-@property(copy, nonatomic) NSArray *flagsArray; // @synthesize flagsArray=_flagsArray;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *flagsArray; // @synthesize flagsArray=_flagsArray;
 - (id)description;
 @property(readonly, nonatomic) long long messageFlags;
 

@@ -6,26 +6,21 @@
 
 #import <MediaPlayer/MPMusicPlayerControllerQueue.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
+@class MPMusicPlayerControllerApplicationQueueModifications, NSMutableArray, NSMutableDictionary;
 
 @interface MPMusicPlayerControllerMutableQueue : MPMusicPlayerControllerQueue
 {
-    NSMutableDictionary *_insertions;
-    NSMutableArray *_queueDescriptorsToPrepend;
-    NSMutableArray *_itemsToRemove;
+    NSMutableDictionary *_insertedDescriptors;
+    NSMutableArray *_removedItems;
 }
 
-+ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) _Bool hasModifications;
-@property(readonly, copy, nonatomic) NSArray *removals;
-@property(readonly, copy, nonatomic) NSDictionary *queueInsertions;
-@property(readonly, copy, nonatomic) NSArray *queueDescriptorsToPrepend;
+@property(retain, nonatomic) NSMutableArray *removedItems; // @synthesize removedItems=_removedItems;
+@property(retain, nonatomic) NSMutableDictionary *insertedDescriptors; // @synthesize insertedDescriptors=_insertedDescriptors;
+@property(readonly, nonatomic) MPMusicPlayerControllerApplicationQueueModifications *modifications;
 - (void)removeItem:(id)arg1;
 - (void)insertQueueDescriptor:(id)arg1 afterItem:(id)arg2;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithController:(id)arg1;
 
 @end
 

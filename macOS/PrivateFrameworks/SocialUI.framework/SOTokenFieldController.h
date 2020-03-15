@@ -24,10 +24,10 @@
     SOHandleMenuController *_handleMenuController;
 }
 
+- (void).cxx_destruct;
 @property(retain) SOHandleMenuController *handleMenuController; // @synthesize handleMenuController=_handleMenuController;
 @property BOOL suppressErrorDisplay; // @synthesize suppressErrorDisplay=_suppressErrorDisplay;
 @property(getter=isChangingFirstResponder) BOOL changingFirstResponder; // @synthesize changingFirstResponder=_changingFirstResponder;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)viewDidLoad;
 - (void)selectedResult:(id)arg1;

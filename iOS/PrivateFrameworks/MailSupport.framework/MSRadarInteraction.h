@@ -23,6 +23,7 @@
 
 + (id)interactionWithTitle:(id)arg1 message:(id)arg2 builder:(CDUnknownBlockType)arg3;
 + (id)interactionWithTitle:(id)arg1 message:(id)arg2 radarURL:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType maybeLaterHandler; // @synthesize maybeLaterHandler=_maybeLaterHandler;
 @property(copy, nonatomic) NSString *maybeLaterButtonTitle; // @synthesize maybeLaterButtonTitle=_maybeLaterButtonTitle;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSURL *radarURL; // @synthesize radarURL=_radarURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIAlertController *interactionViewController;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 radarURL:(id)arg3;
 

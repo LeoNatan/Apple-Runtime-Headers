@@ -15,10 +15,10 @@
     PLOperator *_operator;
 }
 
+- (void).cxx_destruct;
 @property(retain) PLOperator *operator; // @synthesize operator=_operator;
 @property(copy, nonatomic) CDUnknownBlockType operatorBlock; // @synthesize operatorBlock=_operatorBlock;
 @property struct __IOHIDEventSystemClient *eventSystemClient; // @synthesize eventSystemClient=_eventSystemClient;
-- (void).cxx_destruct;
 - (void)handleEvent:(struct __IOHIDEvent *)arg1;
 - (id)initWithOperator:(id)arg1 forUsagePage:(unsigned long long)arg2 andUsage:(unsigned long long)arg3 withBlock:(CDUnknownBlockType)arg4;
 

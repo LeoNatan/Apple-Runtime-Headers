@@ -20,9 +20,9 @@
 + (id)getFolderResponseShape;
 + (id)findFolderRestriction;
 + (id)findFolderResponseShape;
+- (void).cxx_destruct;
 @property BOOL refreshDelegatePrivileges; // @synthesize refreshDelegatePrivileges=_refreshDelegatePrivileges;
 @property BOOL fetchMailbox; // @synthesize fetchMailbox=_fetchMailbox;
-- (void).cxx_destruct;
 - (id)messageTracerUUID;
 - (id)messageTracerName;
 - (id)debugTitle;

@@ -19,12 +19,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *currActiveDataSourceTypes; // @synthesize currActiveDataSourceTypes=_currActiveDataSourceTypes;
 @property(retain, nonatomic) NSHashTable *currActiveSigProvTypes; // @synthesize currActiveSigProvTypes=_currActiveSigProvTypes;
 @property(retain, nonatomic) NSMapTable *sigProvidersMap; // @synthesize sigProvidersMap=_sigProvidersMap;
 @property(retain, nonatomic) NSDictionary *dataSrcMap; // @synthesize dataSrcMap=_dataSrcMap;
 @property(retain, nonatomic) id <NviAssetsProvider> assetsProvider; // @synthesize assetsProvider=_assetsProvider;
-- (void).cxx_destruct;
 - (void)unregisterSignalProviderDelegateForAllSignalTypes:(id)arg1;
 - (void)registerSignalProviderDelegateForAllSignalTypes:(id)arg1;
 - (void)unregisterSignalProviderDelegate:(id)arg1 forSignalType:(unsigned long long)arg2;

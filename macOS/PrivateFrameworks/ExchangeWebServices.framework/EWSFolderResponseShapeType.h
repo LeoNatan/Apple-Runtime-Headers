@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *AdditionalProperties; // @synthesize AdditionalProperties=_AdditionalProperties;
 @property(nonatomic) long long BaseShape; // @synthesize BaseShape=_BaseShape;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

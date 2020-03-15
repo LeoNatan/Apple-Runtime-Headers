@@ -16,11 +16,11 @@
     double _factor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double factor; // @synthesize factor=_factor;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) SXComponentAnimation *animation; // @synthesize animation=_animation;
 @property(readonly, nonatomic) SXComponentView *component; // @synthesize component=_component;
-- (void).cxx_destruct;
 - (_Bool)shouldFinishAtEndOfScrollView;
 - (id)componentViewToAnimate;
 - (_Bool)animationShouldRepeat;

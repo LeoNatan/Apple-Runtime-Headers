@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long hostedViewContext; // @synthesize hostedViewContext=_hostedViewContext;
 @property(readonly, nonatomic) unsigned long long interactiveBehavior; // @synthesize interactiveBehavior=_interactiveBehavior;
 @property(readonly, copy, nonatomic) NSSet *parameters; // @synthesize parameters=_parameters;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

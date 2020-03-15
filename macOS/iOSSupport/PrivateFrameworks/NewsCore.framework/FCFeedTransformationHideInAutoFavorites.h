@@ -17,9 +17,9 @@
 }
 
 + (id)transformationWithFeedContextByFeedID:(id)arg1 autoFavoriteTagIDs:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *autoFavoriteTagIDs; // @synthesize autoFavoriteTagIDs=_autoFavoriteTagIDs;
 @property(copy, nonatomic) NSDictionary *feedContextByFeedID; // @synthesize feedContextByFeedID=_feedContextByFeedID;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

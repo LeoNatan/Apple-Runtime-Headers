@@ -22,13 +22,13 @@
 }
 
 + (BOOL)isDebug;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *commConnectionQueueSema; // @synthesize commConnectionQueueSema=_commConnectionQueueSema;
 @property(retain) NSObject<OS_dispatch_queue> *commConnectionQueue; // @synthesize commConnectionQueue=_commConnectionQueue;
 @property(retain) NSXPCConnection *connection; // @synthesize connection;
 @property(retain) NSPrefPaneBundle *ppBundle; // @synthesize ppBundle;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier;
 @property(retain) NSString *path; // @synthesize path;
-- (void).cxx_destruct;
 - (void)toggleTouchBarControlStripCustomizationPalette;
 - (void)switchToPanel:(id)arg1 anchor:(id)arg2;
 - (void)switchToPanel:(id)arg1;

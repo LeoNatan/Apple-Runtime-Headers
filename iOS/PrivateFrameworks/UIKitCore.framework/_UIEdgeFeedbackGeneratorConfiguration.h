@@ -32,9 +32,9 @@
 + (id)verticalScrollConfiguration;
 + (id)defaultConfiguration;
 + (id)_scrollConfigurationWithAxis:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double minDistanceFromEdge; // @synthesize minDistanceFromEdge=_minDistanceFromEdge;
 @property(nonatomic, getter=_defaultAxis, setter=_setDefaultAxis:) long long defaultAxis; // @synthesize defaultAxis=_defaultAxis;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType animatingMaximumExtentFeedbackUpdateBlock; // @synthesize animatingMaximumExtentFeedbackUpdateBlock=_animatingMaximumExtentFeedbackUpdateBlock;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *animatingMaximumExtentFeedback; // @synthesize animatingMaximumExtentFeedback=_animatingMaximumExtentFeedback;
 @property(copy, nonatomic) CDUnknownBlockType animatingThresholdFeedbackUpdateBlock; // @synthesize animatingThresholdFeedbackUpdateBlock=_animatingThresholdFeedbackUpdateBlock;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL has_internal_diagnostics; // @synthesize has_internal_diagnostics=_has_internal_diagnostics;
 @property(readonly, nonatomic) BOOL is_internal_build; // @synthesize is_internal_build=_is_internal_build;
 @property(readonly, nonatomic) BOOL should_hactivate; // @synthesize should_hactivate=_should_hactivate;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *hardware_model; // @synthesize hardware_model=_hardware_model;
 @property(readonly, copy, nonatomic) NSString *device_class; // @synthesize device_class=_device_class;
 @property(readonly, copy, nonatomic) NSString *product_type; // @synthesize product_type=_product_type;
-- (void).cxx_destruct;
 - (id)copyDeviceTreeInt:(id)arg1 key:(id)arg2 defaultValue:(int)arg3;
 - (id)copyBootArgs;
 - (id)copyDeviceTreeProperty:(id)arg1 key:(id)arg2;

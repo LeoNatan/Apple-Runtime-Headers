@@ -82,6 +82,7 @@
 }
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL transitionedToSameDay; // @synthesize transitionedToSameDay=_transitionedToSameDay;
 @property(retain, nonatomic) NSTimer *showNowTimer; // @synthesize showNowTimer=_showNowTimer;
 @property(copy, nonatomic) NSDateComponents *pendingPreviousDate; // @synthesize pendingPreviousDate=_pendingPreviousDate;
@@ -105,7 +106,6 @@
 @property(copy, nonatomic) NSDateComponents *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) __weak id <EKDayViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <EKDayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)__cutLongTailCallbackForScrollAnimationFromExternalSource;
 - (void)__cutLongCallbackTailForDecelerationFromUserInput;
 - (void)_cancelAllLongTailCuttingCallbacks;

@@ -17,11 +17,11 @@
     NSPersistentHistoryToken *_historyToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersistentHistoryToken *historyToken; // @synthesize historyToken=_historyToken;
 @property(retain, nonatomic) PLJournalEntryHeader *header; // @synthesize header=_header;
 @property(retain, nonatomic) id <PLJournalEntryPayload> payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) id <PLJournalEntryPayloadID> payloadID; // @synthesize payloadID=_payloadID;
-- (void).cxx_destruct;
 - (id)descriptionWithBuilder:(id)arg1;
 - (id)debugDescription;
 - (id)description;

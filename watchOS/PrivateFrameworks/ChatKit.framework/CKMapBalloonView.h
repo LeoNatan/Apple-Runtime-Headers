@@ -13,8 +13,8 @@
     MKMarkerAnnotationView *_annotationView;
 }
 
-@property(retain, nonatomic) MKMarkerAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKMarkerAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

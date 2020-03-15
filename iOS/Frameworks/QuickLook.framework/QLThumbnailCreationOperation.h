@@ -23,6 +23,7 @@
     struct CGRect _contentRect;
 }
 
+- (void).cxx_destruct;
 @property _Bool generateIfNeeded; // @synthesize generateIfNeeded=_generateIfNeeded;
 @property unsigned long long useMode; // @synthesize useMode=_useMode;
 @property double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
@@ -33,7 +34,6 @@
 @property struct CGRect contentRect; // @synthesize contentRect=_contentRect;
 - (_Bool)isExecuting;
 - (_Bool)isFinished;
-- (void).cxx_destruct;
 - (void)retrieveThumbnailForTaggedLogicalURL:(id)arg1;
 - (void)updateLastHitDateOfAddition:(id)arg1 onPhysicalURL:(id)arg2;
 - (void)main;

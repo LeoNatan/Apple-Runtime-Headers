@@ -19,12 +19,12 @@
     _EARAudioAnalytics *_audioAnalytics;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) _EARAudioAnalytics *audioAnalytics; // @synthesize audioAnalytics=_audioAnalytics;
 @property(readonly, nonatomic) _Bool isFinal; // @synthesize isFinal=_isFinal;
 @property(readonly, nonatomic) _Bool recognitionIsFormatted; // @synthesize recognitionIsFormatted=_recognitionIsFormatted;
 @property(readonly, copy, nonatomic) _EARSpeechRecognition *preITNRecognition; // @synthesize preITNRecognition=_preITNRecognition;
 @property(readonly, copy, nonatomic) _EARSpeechRecognition *recognition; // @synthesize recognition=_recognition;
-- (void).cxx_destruct;
 - (id)nBestResults;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithRecognition:(id)arg1 preITNRecognition:(id)arg2 recognitionIsFormatted:(_Bool)arg3 isFinal:(_Bool)arg4 audioAnalytics:(id)arg5;

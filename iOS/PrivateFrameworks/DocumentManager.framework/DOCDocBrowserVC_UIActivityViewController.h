@@ -15,9 +15,9 @@
     UIBarButtonItem *_barButtonItem;
 }
 
+- (void).cxx_destruct;
 @property __weak UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 @property(retain) id <DOCServicePopoverTrackerProtocol> popoverTracker; // @synthesize popoverTracker=_popoverTracker;
-- (void).cxx_destruct;
 
 @end
 

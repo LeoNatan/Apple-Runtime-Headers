@@ -24,6 +24,7 @@
 }
 
 + (unsigned long long)maximumBatchSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *geoQueue; // @synthesize geoQueue=_geoQueue;
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(retain, nonatomic) NSDictionary *invalidationTokens; // @synthesize invalidationTokens=_invalidationTokens;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSDictionary *parametersByTimeLocationTupleIdentifier; // @synthesize parametersByTimeLocationTupleIdentifier=_parametersByTimeLocationTupleIdentifier;
 @property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) NSArray *timeLocationTuples; // @synthesize timeLocationTuples=_timeLocationTuples;
-- (void).cxx_destruct;
 - (id)_parametersByTimeLocationTupleIdentifierForTimeLocationTuples:(id)arg1;
 - (id)_publicEventsForGeoEvent:(id)arg1 matchingParameters:(id)arg2;
 - (void)prepareForRetry;

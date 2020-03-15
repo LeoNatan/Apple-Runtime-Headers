@@ -34,6 +34,8 @@
 }
 
 + (unsigned long long)_nextOffsetForOffset:(unsigned long long)arg1 totalLength:(unsigned long long)arg2 requestedAmount:(unsigned long long)arg3;
++ (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(retain, nonatomic) MFMimePart *loadedPart; // @synthesize loadedPart=_loadedPart;
 @property(readonly, nonatomic) EFObservable *contentObservable; // @synthesize contentObservable=_contentObservable;
@@ -46,7 +48,6 @@
 @property(retain, nonatomic, setter=_setAttachmentManager:) MFAttachmentManager *attachmentManager; // @synthesize attachmentManager=_attachmentManager;
 @property(retain, nonatomic, setter=_setMessageBody:) MFMimeBody *messageBody; // @synthesize messageBody=_messageBody;
 @property(retain, nonatomic, setter=_setMessage:) MFMailMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)processMeetingInvitations:(id)arg1;
 - (void)assignAttachmentManagerToContent:(id)arg1;
 - (id)_reallyLoad:(long long)arg1 shouldDownload:(_Bool)arg2;

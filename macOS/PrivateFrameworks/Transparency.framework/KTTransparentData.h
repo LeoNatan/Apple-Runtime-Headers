@@ -20,10 +20,10 @@
 + (id)filterLoggableDatas:(id)arg1 clientDataVRFOutput:(id)arg2;
 + (id)filterLoggableDatas:(id)arg1 deviceIdVRFOutput:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSData *uriVRFOutput; // @synthesize uriVRFOutput=_uriVRFOutput;
 @property(retain) NSData *inclusionProof; // @synthesize inclusionProof=_inclusionProof;
 @property(retain) NSMutableArray *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
 - (BOOL)validateAndUpdateWithServerLoggableDatas:(id)arg1 accountId:(id)arg2 error:(id *)arg3;
 - (BOOL)validateActiveClientDatasForAccountId:(id)arg1 error:(id *)arg2;
 - (BOOL)validateOtherAccountIDsInactiveForAccountId:(id)arg1 error:(id *)arg2;

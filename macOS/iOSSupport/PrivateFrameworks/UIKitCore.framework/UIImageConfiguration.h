@@ -21,8 +21,8 @@
 
 + (id)_completeConfiguration:(id)arg1 fromConfiguration:(id)arg2;
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 - (id)_configurationIgnoringDynamicType;
 - (void)_applyConfigurationValuesTo:(id)arg1;
 - (BOOL)_shouldApplyConfiguration:(id)arg1;

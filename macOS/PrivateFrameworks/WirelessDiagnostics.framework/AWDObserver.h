@@ -14,9 +14,9 @@
     id <AWDObserverDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AWDObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AWDObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setConfiguration:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)setDelegate:(id)arg1 queue:(struct dispatch_queue_s *)arg2;
 - (id)init;

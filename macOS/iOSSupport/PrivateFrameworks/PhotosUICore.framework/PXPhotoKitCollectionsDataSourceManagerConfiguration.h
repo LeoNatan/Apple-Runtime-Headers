@@ -22,6 +22,7 @@
     unsigned long long _collectionTypesToInclude;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldIgnoreLibraryChanges; // @synthesize shouldIgnoreLibraryChanges=_shouldIgnoreLibraryChanges;
 @property(nonatomic) unsigned long long collectionTypesToInclude; // @synthesize collectionTypesToInclude=_collectionTypesToInclude;
 @property(nonatomic) unsigned long long assetTypesToInclude; // @synthesize assetTypesToInclude=_assetTypesToInclude;
@@ -31,7 +32,6 @@
 @property(nonatomic) BOOL includePeopleAlbum; // @synthesize includePeopleAlbum=_includePeopleAlbum;
 @property(nonatomic) BOOL separateSectionsForSmartAndUserCollections; // @synthesize separateSectionsForSmartAndUserCollections=_separateSectionsForSmartAndUserCollections;
 @property(readonly) PHCollectionList *collectionList; // @synthesize collectionList=_collectionList;
-- (void).cxx_destruct;
 - (id)_generatePredicateForAssetTypesToInclude;
 - (id)_newConfigurationWithCollectionList:(id)arg1 collectionsFetchResult:(id)arg2;
 - (BOOL)isRootFolder;

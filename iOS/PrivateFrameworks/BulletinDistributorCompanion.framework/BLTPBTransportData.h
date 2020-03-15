@@ -25,12 +25,12 @@
 }
 
 + (id)transportDataWithSequenceNumberManager:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *md5; // @synthesize md5=_md5;
 @property(nonatomic) unsigned int sessionState; // @synthesize sessionState=_sessionState;
 @property(retain, nonatomic) NSData *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(nonatomic) _Bool isInitialSequenceNumber; // @synthesize isInitialSequenceNumber=_isInitialSequenceNumber;
 @property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

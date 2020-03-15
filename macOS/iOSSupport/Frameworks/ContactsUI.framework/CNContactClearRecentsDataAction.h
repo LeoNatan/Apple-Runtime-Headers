@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CNUICoreRecentsManager *_coreRecentsManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUICoreRecentsManager *coreRecentsManager; // @synthesize coreRecentsManager=_coreRecentsManager;
 @property(readonly, nonatomic) CNContactRecentsReference *recentsData; // @synthesize recentsData=_recentsData;
-- (void).cxx_destruct;
 - (void)performActionWithSender:(id)arg1;
 - (BOOL)canPerformAction;
 - (BOOL)isDestructive;

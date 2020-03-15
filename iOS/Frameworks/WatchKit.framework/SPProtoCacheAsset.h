@@ -18,11 +18,11 @@
     unsigned int _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double accessDate; // @synthesize accessDate=_accessDate;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

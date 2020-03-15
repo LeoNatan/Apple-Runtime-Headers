@@ -13,8 +13,8 @@
     NSString *__persistenceUUID;
 }
 
-@property(readonly, nonatomic) NSString *_persistenceUUID; // @synthesize _persistenceUUID=__persistenceUUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *_persistenceUUID; // @synthesize _persistenceUUID=__persistenceUUID;
 - (void)executeWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

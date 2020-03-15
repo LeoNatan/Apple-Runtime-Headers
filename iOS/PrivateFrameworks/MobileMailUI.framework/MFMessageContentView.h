@@ -97,6 +97,7 @@
 
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EFCancelable> loadingSpinnerTailspinToken; // @synthesize loadingSpinnerTailspinToken=_loadingSpinnerTailspinToken;
 @property(nonatomic) _Bool showingError; // @synthesize showingError=_showingError;
 @property(retain, nonatomic) NSError *contentRepresentationError; // @synthesize contentRepresentationError=_contentRepresentationError;
@@ -132,7 +133,6 @@
 @property(retain, nonatomic) MessageContentRepresentationRequest *contentRequest; // @synthesize contentRequest=_contentRequest;
 @property(nonatomic) __weak id <MFMessageContentViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <MFMessageContentViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleBlockSenderListChanged:(id)arg1;
 - (void)_observeBlockedSenderListChangedNotification;
 - (void)didDismissBlockedSenderBannerView:(id)arg1;
@@ -257,6 +257,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (double)_viewportWidth;
 - (void)_layoutLoadingView;
+- (_Bool)_shouldHideStickyFooter;
 - (void)_layoutFooterView;
 - (void)layoutSubviews;
 - (void)_setupWebProcessLocalizedStrings;

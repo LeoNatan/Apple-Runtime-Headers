@@ -13,8 +13,8 @@
     NSMutableArray *_notificationLayoutsInProgress;
 }
 
-@property(retain) NSMutableArray *notificationLayoutsInProgress; // @synthesize notificationLayoutsInProgress=_notificationLayoutsInProgress;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *notificationLayoutsInProgress; // @synthesize notificationLayoutsInProgress=_notificationLayoutsInProgress;
 - (void)_saveNotificationLayoutsInProgress;
 - (id)_savedNotificationLayoutsInProgress;
 - (void)removeNotificationRequestFromLayoutsInProgress:(id)arg1;

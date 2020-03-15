@@ -18,10 +18,10 @@
 }
 
 + (id)shaderWithTickWidth:(float)arg1 filterWidth:(float)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) double filterWidth; // @synthesize filterWidth=_filterWidth;
 @property(readonly, nonatomic) double tickWidth; // @synthesize tickWidth=_tickWidth;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithTickWidth:(float)arg1 filterWidth:(float)arg2;
 

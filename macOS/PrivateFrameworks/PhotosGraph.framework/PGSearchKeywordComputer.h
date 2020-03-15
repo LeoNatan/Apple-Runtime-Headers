@@ -15,8 +15,8 @@
     NSDictionary *_personLocalIdentifiersBySocialGroupUUID;
 }
 
-@property(readonly, nonatomic) PGSearchComputationCache *searchComputationCache; // @synthesize searchComputationCache=_searchComputationCache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PGSearchComputationCache *searchComputationCache; // @synthesize searchComputationCache=_searchComputationCache;
 - (id)_personUUIDsInSocialGroupNode:(id)arg1;
 - (void)_enumerateBusinessAndPublicEventKeywordsForEvent:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSDictionary *personLocalIdentifiersBySocialGroupUUID; // @synthesize personLocalIdentifiersBySocialGroupUUID=_personLocalIdentifiersBySocialGroupUUID;

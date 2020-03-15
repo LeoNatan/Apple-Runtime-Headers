@@ -26,6 +26,7 @@
 
 + (id)properties;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *hasDeferredProcessStateChanges; // @synthesize hasDeferredProcessStateChanges=_hasDeferredProcessStateChanges;
 @property(retain, nonatomic) NSNumber *hasDeferredSync; // @synthesize hasDeferredSync=_hasDeferredSync;
 @property(retain, nonatomic) NSString *primaryICloudCalendarAccount; // @synthesize primaryICloudCalendarAccount=_primaryICloudCalendarAccount;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) CKRecordID *saltAtomicReferenceId; // @synthesize saltAtomicReferenceId=_saltAtomicReferenceId;
 @property(retain, nonatomic) NSData *salt; // @synthesize salt=_salt;
 @property(copy, nonatomic) CDUnknownBlockType changeCallback; // @synthesize changeCallback=_changeCallback;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

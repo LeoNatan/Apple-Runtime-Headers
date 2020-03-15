@@ -17,10 +17,10 @@
     float _rightHairlineInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float rightHairlineInset; // @synthesize rightHairlineInset=_rightHairlineInset;
 @property(nonatomic) float leftHairlineInset; // @synthesize leftHairlineInset=_leftHairlineInset;
 @property(retain, nonatomic) UIColor *hairlineColor; // @synthesize hairlineColor=_hairlineColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(nonatomic, getter=isBottomHairlineHidden) _Bool bottomHairlineHidden;
 @property(nonatomic, getter=isTopHairlineHidden) _Bool topHairlineHidden;

@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *OID; // @synthesize OID=_OID;
 @property(retain, nonatomic) NSString *matchingId; // @synthesize matchingId=_matchingId;
 @property(retain, nonatomic) NSString *smdpAddress; // @synthesize smdpAddress=_smdpAddress;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

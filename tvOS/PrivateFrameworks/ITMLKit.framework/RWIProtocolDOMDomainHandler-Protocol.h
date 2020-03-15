@@ -9,6 +9,9 @@
 @class NSArray, NSString, RWIProtocolDOMHighlightConfig;
 
 @protocol RWIProtocolDOMDomainHandler <NSObject>
+
+@optional
+- (void)setAllowEditingUserAgentShadowTreesWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 allow:(_Bool)arg3;
 - (void)setInspectedNodeWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 nodeId:(int)arg3;
 - (void)focusWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 nodeId:(int)arg3;
 - (void)markUndoableStateWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2;

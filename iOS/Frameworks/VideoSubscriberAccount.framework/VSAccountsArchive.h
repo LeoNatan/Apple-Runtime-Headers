@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) VSAccountChannels *channels; // @synthesize channels=_channels;
 @property(copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

@@ -31,12 +31,12 @@
 + (id)ARGB8;
 + (id)pixelFormatForCVPixelFormat:(unsigned int)arg1;
 + (id)pixelFormatForCIFormat:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) BOOL extendedRange; // @synthesize extendedRange=_extendedRange;
 @property(readonly, nonatomic) unsigned int CVPixelFormat; // @synthesize CVPixelFormat=_CVPixelFormat;
 @property(readonly, nonatomic) int CIFormat; // @synthesize CIFormat=_CIFormat;
 @property(readonly, nonatomic) long long bytesPerPixel; // @synthesize bytesPerPixel=_bytesPerPixel;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPixelFormat:(id)arg1;

@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int testCondition; // @synthesize testCondition=_testCondition;
 @property(readonly, nonatomic) NSString *experimentIdentifier; // @synthesize experimentIdentifier=_experimentIdentifier;
-- (void).cxx_destruct;
 - (id)generateDailyProgressAlertExperimentInstance;
 - (id)generateSedentaryAlertExperimentInstance;
 - (_Bool)shouldDelayNotificationsUntilSettled;

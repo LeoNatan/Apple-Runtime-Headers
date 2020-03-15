@@ -31,6 +31,7 @@
     NSTimer *_xpcTransactionTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *xpcTransactionTimer; // @synthesize xpcTransactionTimer=_xpcTransactionTimer;
 @property(retain, nonatomic) NSTimer *userInitiatedSyncTimer; // @synthesize userInitiatedSyncTimer=_userInitiatedSyncTimer;
 @property(retain, nonatomic) NSTimer *managerIdleTimer; // @synthesize managerIdleTimer=_managerIdleTimer;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) id <DATask> activeQueuedTask; // @synthesize activeQueuedTask=_activeQueuedTask;
 @property(retain, nonatomic) id <DATask> activeModalTask; // @synthesize activeModalTask=_activeModalTask;
 @property(nonatomic) __weak DAAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)taskManagerWillRemoveTask:(id)arg1;
 - (void)taskManagerDidAddTask:(id)arg1;
 - (void)_releasePowerAssertionForTask:(id)arg1;

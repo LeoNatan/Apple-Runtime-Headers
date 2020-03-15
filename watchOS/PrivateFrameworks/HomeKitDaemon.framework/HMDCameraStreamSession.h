@@ -20,12 +20,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDCameraVideoTierParameters *videoTierParameters; // @synthesize videoTierParameters=_videoTierParameters;
 @property(retain, nonatomic) HMDCameraProtocolParameters *protocolParameters; // @synthesize protocolParameters=_protocolParameters;
 @property(readonly, nonatomic) HMDStreamingCapabilities *streamingCapabilities; // @synthesize streamingCapabilities=_streamingCapabilities;
 @property(retain, nonatomic) HMDStreamingManager *streamingManager; // @synthesize streamingManager=_streamingManager;
 @property(readonly, nonatomic) HMDCameraStreamSessionID *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (id)negotiatedParameters;
 - (id)logIdentifier;
 - (id)initWithSessionID:(id)arg1 streamingTierType:(unsigned int)arg2 remoteCapabilities:(id)arg3 streamPreference:(id)arg4;

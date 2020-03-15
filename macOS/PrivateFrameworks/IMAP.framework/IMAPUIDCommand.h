@@ -15,10 +15,10 @@
     CDStruct_f792af56 _range;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 @property CDStruct_f792af56 range; // @synthesize range=_range;
 @property(copy) NSIndexSet *UIDs; // @synthesize UIDs=_UIDs;
-- (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;

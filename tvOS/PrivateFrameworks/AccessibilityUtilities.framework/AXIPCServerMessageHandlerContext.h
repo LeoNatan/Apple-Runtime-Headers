@@ -14,11 +14,11 @@
     SEL _selector;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool async; // @synthesize async=_async;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 async:(_Bool)arg3;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
 

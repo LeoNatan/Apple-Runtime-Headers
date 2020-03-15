@@ -15,9 +15,10 @@
 }
 
 + (void)_accessibilityPerformValidations:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id ax_contentInfo; // @synthesize ax_contentInfo=_ax_contentInfo;
 @property(nonatomic) __weak PXGView *ax_PXGView; // @synthesize ax_PXGView=_ax_PXGView;
-- (void).cxx_destruct;
+- (_Bool)canBecomeFocused;
 - (struct CGRect)accessibilityFrame;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;

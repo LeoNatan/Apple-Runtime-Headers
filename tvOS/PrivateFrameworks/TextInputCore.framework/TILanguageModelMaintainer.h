@@ -17,9 +17,9 @@
 }
 
 + (id)sharedLanguageModelMaintainer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *dynamicLearningCacheTimer; // @synthesize dynamicLearningCacheTimer=_dynamicLearningCacheTimer;
 @property(retain, nonatomic) NSDate *nextEligibleMaintenanceDate; // @synthesize nextEligibleMaintenanceDate=_nextEligibleMaintenanceDate;
-- (void).cxx_destruct;
 - (void)dynamicLearningCacheTimerFired:(id)arg1;
 - (void)performMaintenanceIfNecessary;
 - (_Bool)isMaintenanceDue;

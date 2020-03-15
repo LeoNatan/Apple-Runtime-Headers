@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     long long _userAffinityCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long userAffinityCount; // @synthesize userAffinityCount=_userAffinityCount;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

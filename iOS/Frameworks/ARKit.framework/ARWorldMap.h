@@ -27,6 +27,7 @@
 + (CDStruct_183601bc)boundsForTrackingData:(id)arg1;
 +     // Error parsing type: @88@0:8@16{?=[4]}24, name: featurePointsForTrackingData:referenceOriginTransform:
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 // Error parsing type for property referenceOriginTransform:
 // Property attributes: T{?=[4]},R,N,V_referenceOriginTransform
 
@@ -41,7 +42,6 @@
 // Error parsing type for property center:
 // Property attributes: T,R,N,V_center
 
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
@@ -49,7 +49,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 -     // Error parsing type: @120@0:8{?=[4]}168096^@112, name: extractReferenceObjectWithTransform:center:extent:error:
--     // Error parsing type: @128@0:8@16{?=[4]}24@88{?=}96, name: initWithTrackingData:referenceOriginTransform:featurePoints:bounds:
 -     // Error parsing type: @88@0:8@16{?=[4]}24, name: initWithTrackingData:referenceOriginTransform:
 
 @end

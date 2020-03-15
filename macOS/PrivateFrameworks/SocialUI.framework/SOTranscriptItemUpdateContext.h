@@ -17,12 +17,12 @@
     NSArray *_oldItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *oldItems; // @synthesize oldItems=_oldItems;
 @property(copy, nonatomic) NSIndexSet *removedIndexes; // @synthesize removedIndexes=_removedIndexes;
 @property(copy, nonatomic) NSIndexSet *updatedIndexes; // @synthesize updatedIndexes=_updatedIndexes;
 @property(copy, nonatomic) NSIndexSet *addedIndexes; // @synthesize addedIndexes=_addedIndexes;
 @property(readonly, nonatomic) IMChat *chat; // @synthesize chat=_chat;
-- (void).cxx_destruct;
 - (id)initWithChat:(id)arg1;
 
 @end

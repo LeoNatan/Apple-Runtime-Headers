@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUINowPlayingHudButtonsLayout *buttonsLayout; // @synthesize buttonsLayout=_buttonsLayout;
 @property(readonly, nonatomic) VUINowPlayingHudMetaDataViewLayout *metaDataViewLayout; // @synthesize metaDataViewLayout=_metaDataViewLayout;
 @property(readonly, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

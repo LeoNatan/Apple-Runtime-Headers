@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_replacedItemsByFormerID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *replacedItemsByFormerID; // @synthesize replacedItemsByFormerID=_replacedItemsByFormerID;
 @property(retain) NSMutableArray *updatedItems; // @synthesize updatedItems=_updatedItems;
 @property(retain) NSMutableArray *deletedItemIDs; // @synthesize deletedItemIDs=_deletedItemIDs;
-- (void).cxx_destruct;
 - (_Bool)containsChanges;
 
 @end

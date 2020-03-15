@@ -16,11 +16,11 @@
     PRSTableRowCardSection *_section;
 }
 
+- (void).cxx_destruct;
 @property(retain) PRSTableRowCardSection *section; // @synthesize section=_section;
 @property BOOL isCompactTable; // @synthesize isCompactTable=_isCompactTable;
 @property long long centerIndex; // @synthesize centerIndex=_centerIndex;
 @property long long firstTrailingIndex; // @synthesize firstTrailingIndex=_firstTrailingIndex;
-- (void).cxx_destruct;
 - (BOOL)labelsAreVibrant;
 - (double)labelTopBaselineSpacing;
 - (double)labelBottomBaselineSpacing;

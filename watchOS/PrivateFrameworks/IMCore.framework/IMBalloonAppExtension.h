@@ -18,12 +18,12 @@
     NSUUID *_requestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldBalloonHideAppIcon; // @synthesize shouldBalloonHideAppIcon=_shouldBalloonHideAppIcon;
 @property(nonatomic) _Bool canSendDataPayloads; // @synthesize canSendDataPayloads=_canSendDataPayloads;
 @property NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) LSPlugInKitProxy *proxy; // @synthesize proxy=_proxy;
 @property(readonly, retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSNumber *itemID;
 @property(readonly, nonatomic) _Bool isLaunchProhibited;
 @property(readonly, retain, nonatomic) id <PKPlugIn> plugin;

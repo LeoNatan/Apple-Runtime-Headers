@@ -23,6 +23,7 @@
     CKShareMetadata *_shareMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKShareMetadata *shareMetadata; // @synthesize shareMetadata=_shareMetadata;
 @property(copy, nonatomic) NSURL *reconstructedShareURL; // @synthesize reconstructedShareURL=_reconstructedShareURL;
 @property(copy, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *vettingEmail; // @synthesize vettingEmail=_vettingEmail;
 @property(copy, nonatomic) NSString *vettingToken; // @synthesize vettingToken=_vettingToken;
 @property(retain, nonatomic) NSError *verificationError; // @synthesize verificationError=_verificationError;
-- (void).cxx_destruct;
 - (id)activityCreate;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;

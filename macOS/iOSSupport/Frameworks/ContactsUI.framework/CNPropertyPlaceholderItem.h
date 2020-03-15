@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_property;
 }
 
-@property(retain, nonatomic) NSString *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *property; // @synthesize property=_property;
 @property(readonly, nonatomic) NSString *title;
 - (id)initWithProperty:(id)arg1;
 

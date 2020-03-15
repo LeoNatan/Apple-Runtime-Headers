@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cloudConfigSkipKey;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *choices; // @synthesize choices=_choices;
 @property(nonatomic) __weak id <BFFFlowItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didSelectChoice:(id)arg1;
 - (void)_tappedChoice:(id)arg1;
 

@@ -29,6 +29,7 @@
     NSUndoManager *_textViewUndoManager;
 }
 
+- (void).cxx_destruct;
 @property BOOL isInAdjustAnnotationFrameToFitText; // @synthesize isInAdjustAnnotationFrameToFitText=_isInAdjustAnnotationFrameToFitText;
 @property BOOL isInEndEditing; // @synthesize isInEndEditing=_isInEndEditing;
 @property(retain) NSUndoManager *textViewUndoManager; // @synthesize textViewUndoManager=_textViewUndoManager;
@@ -42,7 +43,6 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property __weak AKAnnotation<AKTextAnnotationProtocol> *annotation; // @synthesize annotation=_annotation;
 @property(retain) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_unregisterForKeyboardNotifications;
 - (void)_registerForKeyboardNotifications;

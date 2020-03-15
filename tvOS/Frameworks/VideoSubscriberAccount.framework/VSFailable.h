@@ -21,10 +21,10 @@
 + (id)failableWithError:(id)arg1;
 + (id)failableWithObject:(id)arg1;
 + (id)decodableClasses;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

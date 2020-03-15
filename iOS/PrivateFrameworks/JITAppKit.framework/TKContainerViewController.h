@@ -16,8 +16,8 @@
     UIViewController *_childViewController;
 }
 
-@property(retain, nonatomic) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
 - (void)updateInternals:(id)arg1;
 - (void)observeChild;
 - (_Bool)automaticallyAdjustsScrollViewInsets;

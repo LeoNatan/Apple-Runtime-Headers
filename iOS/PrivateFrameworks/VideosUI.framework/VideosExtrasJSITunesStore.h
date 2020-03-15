@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_formPresentationViewController;
 }
 
-@property(nonatomic) __weak UIViewController *formPresentationViewController; // @synthesize formPresentationViewController=_formPresentationViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *formPresentationViewController; // @synthesize formPresentationViewController=_formPresentationViewController;
 - (void)loadStoreURL:(id)arg1 playOnLaunch:(id)arg2;
 
 // Remaining properties

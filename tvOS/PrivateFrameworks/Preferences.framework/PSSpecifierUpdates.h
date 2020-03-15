@@ -25,9 +25,9 @@
 + (_Bool)_wantsDebugCallbacks;
 + (Class)_groupIndexClass;
 + (id)updatesWithSpecifiers:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) PSSpecifierUpdateContext *context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) NSArray *originalSpecifiers; // @synthesize originalSpecifiers=_originalSpecifiers;
-- (void).cxx_destruct;
 - (id)specifiersAfterApplyingUpdatesToIndex:(unsigned long long)arg1;
 - (id)stepByStepDescription;
 - (id)description;

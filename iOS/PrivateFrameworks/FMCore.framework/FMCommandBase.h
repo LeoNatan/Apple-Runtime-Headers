@@ -29,6 +29,7 @@
     NSURLConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool commandTaskComplete; // @synthesize commandTaskComplete=_commandTaskComplete;
 @property(retain, nonatomic) NSURLConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) NSString *redirectedHostname; // @synthesize redirectedHostname=_redirectedHostname;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;
 @property(copy) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)authHeaders;
 - (_Bool)isTransactionCompleteWithError:(id)arg1;
 - (id)valueForResponseHTTPHeader:(id)arg1;

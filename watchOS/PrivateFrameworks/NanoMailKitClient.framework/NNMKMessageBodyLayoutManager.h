@@ -17,10 +17,10 @@
     NSMutableDictionary *_imageAttachmentsNotLoaded;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *imageAttachmentsNotLoaded; // @synthesize imageAttachmentsNotLoaded=_imageAttachmentsNotLoaded;
 @property(retain, nonatomic) NSMutableDictionary *imageAttachmentsImageViews; // @synthesize imageAttachmentsImageViews=_imageAttachmentsImageViews;
 @property(nonatomic) __weak UIView *viewForAddingImageViews; // @synthesize viewForAddingImageViews=_viewForAddingImageViews;
-- (void).cxx_destruct;
 - (void)drawGlyphsForGlyphRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;
 - (void)replaceImageAttachmentImage:(id)arg1 forContentId:(id)arg2;
 - (void)renderImageAttachmentImage:(id)arg1 inFrame:(struct CGRect)arg2 forContentId:(id)arg3;

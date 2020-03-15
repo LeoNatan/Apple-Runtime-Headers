@@ -13,8 +13,8 @@
     NSUUID *_uuid;
 }
 
-@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (id)initWithUUID:(id)arg1;
 
 @end

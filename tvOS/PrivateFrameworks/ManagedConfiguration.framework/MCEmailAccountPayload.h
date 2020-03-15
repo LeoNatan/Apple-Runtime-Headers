@@ -37,6 +37,7 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *outgoingMailServerUseSSLNum; // @synthesize outgoingMailServerUseSSLNum=_outgoingMailServerUseSSLNum;
 @property(readonly, nonatomic) NSNumber *outgoingPasswordSameAsIncomingPasswordNum; // @synthesize outgoingPasswordSameAsIncomingPasswordNum=_outgoingPasswordSameAsIncomingPasswordNum;
 @property(readonly, nonatomic) NSNumber *incomingMailServerUseSSLNum; // @synthesize incomingMailServerUseSSLNum=_incomingMailServerUseSSLNum;
@@ -58,7 +59,6 @@
 @property(readonly, retain, nonatomic) NSString *emailAccountType; // @synthesize emailAccountType=_emailAccountType;
 @property(readonly, retain, nonatomic) NSString *emailAccountName; // @synthesize emailAccountName=_emailAccountName;
 @property(readonly, retain, nonatomic) NSString *emailAccountDescription; // @synthesize emailAccountDescription=_emailAccountDescription;
-- (void).cxx_destruct;
 - (_Bool)containsSensitiveUserInformation;
 - (id)payloadDescriptionKeyValueSections;
 - (id)_authenticationTypeLocalizedString:(id)arg1;

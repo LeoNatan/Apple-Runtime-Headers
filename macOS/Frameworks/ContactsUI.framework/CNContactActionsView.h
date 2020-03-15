@@ -25,6 +25,7 @@
     CNUserDefaults *_userDefaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(nonatomic) double cachedHeight; // @synthesize cachedHeight=_cachedHeight;
 @property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(nonatomic) __weak id <CNUIUserActionListConsumerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CNUIUserActionListDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (double)desiredHeight;
 - (void)updateCachedHeight;
 - (void)layout;

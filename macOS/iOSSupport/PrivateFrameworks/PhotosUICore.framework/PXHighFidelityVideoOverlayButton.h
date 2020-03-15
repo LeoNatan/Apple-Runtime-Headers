@@ -22,9 +22,9 @@
     BOOL __didConfigureForPause;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDidConfigureForPause:) BOOL _didConfigureForPause; // @synthesize _didConfigureForPause=__didConfigureForPause;
 @property(nonatomic) BOOL showAsPause; // @synthesize showAsPause=_showAsPause;
-- (void).cxx_destruct;
 - (void)_playButtonTapped:(id)arg1;
 - (void)_playButtonDeactivate:(id)arg1;
 - (void)_playButtonActivate:(id)arg1;

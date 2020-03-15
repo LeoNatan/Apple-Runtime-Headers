@@ -14,9 +14,9 @@
     NSString *_rawAddress;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *rawAddress; // @synthesize rawAddress=_rawAddress;
 @property(readonly, nonatomic) MCDisplayNameInfo *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithInfo:(id)arg1 address:(id)arg2;
 

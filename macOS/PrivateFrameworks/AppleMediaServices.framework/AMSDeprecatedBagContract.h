@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <AMSBagProtocol> _bag;
 }
 
-@property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(readonly) AMSBagValue *trustedDomains;
 @property(readonly) AMSBagValue *TFOSamplingSessionDuration;
 @property(readonly) AMSBagValue *TFOSamplingPercentage;

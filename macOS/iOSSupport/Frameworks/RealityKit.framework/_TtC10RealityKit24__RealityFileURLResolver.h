@@ -8,8 +8,7 @@
 
 @interface _TtC10RealityKit24__RealityFileURLResolver : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: assetPathPrefix
-    // Error parsing type: , name: $__lazy_storage_$_schemePrefix
+    // Error parsing type: , name: resolvedURLByAssetPathPrefixQueue
     // Error parsing type: , name: resolvedURLByAssetPathPrefix
 }
 

@@ -17,10 +17,10 @@
     CDUnknownBlockType _animationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType animationBlock; // @synthesize animationBlock=_animationBlock;
 @property(nonatomic) __weak SBMainSwitcherViewController *switcherViewController; // @synthesize switcherViewController=_switcherViewController;
 @property(nonatomic, getter=_isInterruptible, setter=_setInterruptible:) _Bool _interruptible; // @synthesize _interruptible;
-- (void).cxx_destruct;
 - (id)_layoutState;
 - (id)_previousLayoutState;
 - (void)_addSignpostsForAnimationEnd;

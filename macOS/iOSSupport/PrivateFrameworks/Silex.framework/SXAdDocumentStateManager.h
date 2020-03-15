@@ -17,9 +17,9 @@
     NSPointerArray *_observers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPointerArray *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
-- (void).cxx_destruct;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (void)addObserver:(id)arg1;
 - (id)initWithViewport:(id)arg1;

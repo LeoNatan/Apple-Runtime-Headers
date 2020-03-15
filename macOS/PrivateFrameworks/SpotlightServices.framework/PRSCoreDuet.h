@@ -14,9 +14,9 @@
     _DKEventStream *_spotlightStream;
 }
 
+- (void).cxx_destruct;
 @property(retain) _DKEventStream *spotlightStream; // @synthesize spotlightStream=_spotlightStream;
 @property(retain) _DKKnowledgeStore *knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
-- (void).cxx_destruct;
 - (void)addResultCategoryAndGroupToHistory:(id)arg1 groupName:(id)arg2 error:(id)arg3;
 - (id)getRankedCategoriesDictionaryWithPredictionWindow:(double)arg1 predictionInterval:(double)arg2;
 - (id)initWithStreamName:(id)arg1;

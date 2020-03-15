@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UNNotification *notification; // @synthesize notification=_notification;
 @property(readonly, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)bundleId;

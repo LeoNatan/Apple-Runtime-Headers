@@ -18,8 +18,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)codedValueCollectionWithCodedValues:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *codedValues; // @synthesize codedValues=_codedValues;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *codedValues; // @synthesize codedValues=_codedValues;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

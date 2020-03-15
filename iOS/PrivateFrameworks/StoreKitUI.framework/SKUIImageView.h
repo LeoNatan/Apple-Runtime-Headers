@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cornerPathBlock; // @synthesize cornerPathBlock=_cornerPathBlock;
 @property(retain, nonatomic) SKUIImagePlaceholder *placeholder; // @synthesize placeholder=_placeholder;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)setContents:(id)arg1;

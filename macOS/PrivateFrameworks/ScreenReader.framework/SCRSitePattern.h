@@ -21,12 +21,12 @@
 + (id)patternWithSitePatternString:(id)arg1;
 + (id)displayFormattedSitePatternString:(id)arg1;
 + (id)sitePatternStringFromURLString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setHostComponents:) NSArray *_pathComponents; // @synthesize _pathComponents=__pathComponents;
 @property(copy, nonatomic, setter=_setPath:) NSString *_path; // @synthesize _path=__path;
 @property(nonatomic, setter=_setPort:) long long _port; // @synthesize _port=__port;
 @property(copy, nonatomic, setter=_setHost:) NSString *_host; // @synthesize _host=__host;
 @property(nonatomic, setter=_setScheme:) long long _scheme; // @synthesize _scheme=__scheme;
-- (void).cxx_destruct;
 - (BOOL)patternMatchesURL:(id)arg1;
 @property(retain, nonatomic, setter=_setHostComponents:) NSArray *_hostComponents; // @synthesize _hostComponents=__hostComponents;
 - (id)initWithSitePatternString:(id)arg1;

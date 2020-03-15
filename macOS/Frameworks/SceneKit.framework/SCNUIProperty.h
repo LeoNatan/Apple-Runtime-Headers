@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     Class objectClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class objectClass; // @synthesize objectClass;
 @property(nonatomic) BOOL readonly; // @synthesize readonly;
 @property(nonatomic) int type; // @synthesize type;
 @property(retain, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 
 @end
 

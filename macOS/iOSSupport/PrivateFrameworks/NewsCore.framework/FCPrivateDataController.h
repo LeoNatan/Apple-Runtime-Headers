@@ -48,6 +48,7 @@
 + (BOOL)requiresBatchedSync;
 + (BOOL)requiresPushNotificationSupport;
 + (void)configureKeyValueStoreForJSONHandling:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) FCCloudContext *context; // @synthesize context=_context;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSString *storeDirectory; // @synthesize storeDirectory=_storeDirectory;
 @property(retain, nonatomic) FCPushNotificationCenter *pushNotificationCenter; // @synthesize pushNotificationCenter=_pushNotificationCenter;
 @property(getter=isWaitingForFirstSync) BOOL waitingForFirstSync; // @synthesize waitingForFirstSync=_waitingForFirstSync;
-- (void).cxx_destruct;
 - (id)_newSyncState;
 - (void)_handleSyncDidResetLocalDataForSyncManager:(id)arg1;
 - (id)_allKnownRecordIDsForSyncManager:(id)arg1;

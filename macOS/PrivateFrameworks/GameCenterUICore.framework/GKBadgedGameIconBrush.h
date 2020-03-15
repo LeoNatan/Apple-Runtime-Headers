@@ -11,8 +11,8 @@
     GKThemeBrush *_badgeBrush;
 }
 
-@property(retain, nonatomic) GKThemeBrush *badgeBrush; // @synthesize badgeBrush=_badgeBrush;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GKThemeBrush *badgeBrush; // @synthesize badgeBrush=_badgeBrush;
 - (void)drawInRect:(struct CGRect)arg1 withContext:(struct CGContext *)arg2 input:(id)arg3;
 - (double)scaleForInput:(id)arg1;
 - (struct CGSize)sizeForInput:(id)arg1;

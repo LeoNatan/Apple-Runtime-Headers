@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pasteboardWriterForItem:(id)arg1 index:(long long)arg2 handler:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *mappedTypes; // @synthesize mappedTypes=_mappedTypes;
 @property(retain) id <UINSDragSessionHandler> handler; // @synthesize handler=_handler;
 @property long long index; // @synthesize index=_index;
 @property(retain) UINSDragItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)pasteboardFinishedWithDataProvider:(id)arg1;
 - (void)pasteboard:(id)arg1 item:(id)arg2 provideDataForType:(id)arg3;
 - (id)operationQueueForFilePromiseProvider:(id)arg1;

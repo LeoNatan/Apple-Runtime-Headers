@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)isEmail:(id)arg1;
 + (id)completeNumberForPhoneNumber:(id)arg1 formatted:(_Bool)arg2;
 + (_Bool)updateTextField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
++ (_Bool)updateTextView:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 + (id)unformatPhoneNumber:(id)arg1;
 + (id)formatFullyQualifiedPhoneNumber:(id)arg1;
 + (id)normalizedPhoneNumber:(id)arg1;

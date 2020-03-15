@@ -42,6 +42,7 @@
     VTUIPagedLabel *_instructionPagedLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) VTUIPagedLabel *instructionPagedLabel; // @synthesize instructionPagedLabel=_instructionPagedLabel;
 @property(retain) NSTimer *voiceOverCompletionTimer; // @synthesize voiceOverCompletionTimer=_voiceOverCompletionTimer;
 @property(copy) CDUnknownBlockType voiceOverCompletionBlock; // @synthesize voiceOverCompletionBlock=_voiceOverCompletionBlock;
@@ -50,7 +51,6 @@
 @property(nonatomic) long long currentTrainingState; // @synthesize currentTrainingState=_currentTrainingState;
 @property __weak id <VTUITrainingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *siriLanguageCode; // @synthesize siriLanguageCode=_siriLanguageCode;
-- (void).cxx_destruct;
 - (void)_postAccessibilityNotificationWithMessage:(id)arg1;
 - (id)_getWindowOrView;
 - (void)voiceOverFinishedSpeaking;

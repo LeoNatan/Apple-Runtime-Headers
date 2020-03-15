@@ -18,8 +18,8 @@
 }
 
 + (id)serializedParametersForHome:(id)arg1;
-@property(nonatomic) __weak id <WFVariableProvider> parentVariableProvider; // @synthesize parentVariableProvider=_parentVariableProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WFVariableProvider> parentVariableProvider; // @synthesize parentVariableProvider=_parentVariableProvider;
 - (void)variableDidChange:(id)arg1;
 - (void)clearLegacyComparisonBehaviorFlag;
 - (BOOL)useLegacyComparisonBehavior;

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     long long _seasonNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool compilation; // @synthesize compilation=_compilation;
 @property(readonly, nonatomic) long long seasonNumber; // @synthesize seasonNumber=_seasonNumber;
 @property(readonly, nonatomic) NSString *feedURL; // @synthesize feedURL=_feedURL;
 @property(readonly, nonatomic) NSData *groupingKey; // @synthesize groupingKey=_groupingKey;
 @property(readonly, nonatomic) long long albumArtistPersistentID; // @synthesize albumArtistPersistentID=_albumArtistPersistentID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *keyValue;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

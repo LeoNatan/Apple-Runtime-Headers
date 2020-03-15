@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)showOtherPasswordsSelected;
+- (void)showOtherPasswordsSelected:(id)arg1;
 - (void)credentialSelected:(id)arg1 requiresAuthentication:(BOOL)arg2;
 - (id)serviceViewControllerInterface;
 - (id)exportedInterface;

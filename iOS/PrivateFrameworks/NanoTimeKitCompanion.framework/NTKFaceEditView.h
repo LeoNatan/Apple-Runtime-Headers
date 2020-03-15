@@ -18,10 +18,10 @@
     long long _editMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long editMode; // @synthesize editMode=_editMode;
 @property(nonatomic) __weak id <NTKFaceEditViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIViewController<NTKFaceViewCustomEditing> *editingContentViewController; // @synthesize editingContentViewController=_editingContentViewController;
-- (void).cxx_destruct;
 - (_Bool)_handlePhysicalButton:(unsigned long long)arg1 event:(unsigned long long)arg2;
 - (_Bool)_wheelChangedWithEvent:(id)arg1;
 - (_Bool)isTransitioningBetweenEditPages;

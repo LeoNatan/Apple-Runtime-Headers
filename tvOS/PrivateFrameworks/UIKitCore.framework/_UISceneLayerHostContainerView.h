@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     UIScenePresentationContext *_presentationContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak FBScene *scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic) __weak id <_UISceneLayerHostContainerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_presentationContextForLayer:(id)arg1;
 - (void)_updateRenderingMode;
 - (void)_rebuildLayersForReason:(id)arg1;

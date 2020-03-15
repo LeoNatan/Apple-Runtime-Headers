@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(readonly) unsigned long long typeMask; // @synthesize typeMask=_typeMask;
 @property(retain) NSSet *internalItems; // @synthesize internalItems=_internalItems;
 @property(readonly) __weak id <BTMLoginItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDidChangeItems;
 - (void)_setLoginItems:(id)arg1;
 - (void)fetchLoginItems;

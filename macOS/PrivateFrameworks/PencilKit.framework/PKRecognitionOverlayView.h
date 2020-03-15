@@ -16,9 +16,9 @@
     struct CGAffineTransform _drawingTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CHVisualizationManager *visualizationManager; // @synthesize visualizationManager=_visualizationManager;
 @property(nonatomic) struct CGAffineTransform drawingTransform; // @synthesize drawingTransform=_drawingTransform;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)visualizationManagerNeedsDisplay:(id)arg1;

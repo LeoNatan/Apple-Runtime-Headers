@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     long long _endOfLastEntry;
 }
 
-@property(readonly, nonatomic) long long endOfLastEntry; // @synthesize endOfLastEntry=_endOfLastEntry;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long endOfLastEntry; // @synthesize endOfLastEntry=_endOfLastEntry;
 - (id)debugDescription;
 @property(readonly, nonatomic) _Bool isValid;
 - (id)newArchiveReadChannel;

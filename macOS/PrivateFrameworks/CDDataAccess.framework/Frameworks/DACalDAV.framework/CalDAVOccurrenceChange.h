@@ -17,10 +17,10 @@
 
 + (id)changeWithItem:(id)arg1;
 + (id)changeWithOccurrenceID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *changes; // @synthesize changes=_changes;
 @property(retain, nonatomic) ICSDate *recurrenceID; // @synthesize recurrenceID=_recurrenceID;
 @property(nonatomic) BOOL isMaster; // @synthesize isMaster=_isMaster;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL proposedStartDateChanged;
 @property(readonly, nonatomic) BOOL privateCommentChanged;
 @property(readonly, nonatomic) BOOL participationChanged;

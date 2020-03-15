@@ -18,9 +18,9 @@
     HFServiceItem *_serviceItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFServiceItem *serviceItem; // @synthesize serviceItem=_serviceItem;
 @property(readonly, nonatomic) HFServiceBuilder *serviceBuilder; // @synthesize serviceBuilder=_serviceBuilder;
-- (void).cxx_destruct;
 - (id)namingComponentForHomeKitObject;
 - (id)accessories;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource;

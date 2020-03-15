@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _lastDownEvent;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sendEventBlock; // @synthesize sendEventBlock=_sendEventBlock;
 @property(nonatomic) unsigned long long lastDownEvent; // @synthesize lastDownEvent=_lastDownEvent;
-- (void).cxx_destruct;
 - (void)send;
 
 @end

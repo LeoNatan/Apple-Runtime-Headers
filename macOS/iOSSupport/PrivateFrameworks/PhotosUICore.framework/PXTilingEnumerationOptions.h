@@ -13,8 +13,8 @@
     NSIndexSet *_tileGroups;
 }
 
-@property(retain, nonatomic) NSIndexSet *tileGroups; // @synthesize tileGroups=_tileGroups;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSIndexSet *tileGroups; // @synthesize tileGroups=_tileGroups;
 
 @end
 

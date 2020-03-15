@@ -30,12 +30,12 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *effectiveName; // @synthesize effectiveName=_effectiveName;
 @property(retain, nonatomic) NSString *detectedName; // @synthesize detectedName=_detectedName;
 @property(nonatomic) unsigned long long value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

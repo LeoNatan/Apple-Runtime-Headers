@@ -15,10 +15,10 @@
     NSMutableSet *_moduleControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *moduleControllers; // @synthesize moduleControllers=_moduleControllers;
 @property(retain, nonatomic) HUNameItemModuleController *nameModuleController; // @synthesize nameModuleController=_nameModuleController;
 @property(retain, nonatomic) HUValveEditorItemManager *valveEditorItemManager; // @synthesize valveEditorItemManager=_valveEditorItemManager;
-- (void).cxx_destruct;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (void)textFieldDidEndEditing:(id)arg1 item:(id)arg2;
 - (_Bool)shouldManageTextFieldForItem:(id)arg1;

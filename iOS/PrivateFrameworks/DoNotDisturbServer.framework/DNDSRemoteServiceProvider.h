@@ -20,8 +20,8 @@
     id <DNDSRemoteServiceProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <DNDSRemoteServiceProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DNDSRemoteServiceProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_clientDetailsForClientIdentifier:(id)arg1 clientConnection:(id)arg2;
 - (void)_iterateClientConnectionsToSendWithHandler:(CDUnknownBlockType)arg1;
 - (void)_unregisterConnectionDetailsForClientConnection:(id)arg1;

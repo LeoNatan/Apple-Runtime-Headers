@@ -17,8 +17,8 @@
 }
 
 + (_Bool)isDocTypeXHTML:(id)arg1;
-@property(copy, nonatomic) NSString *docType; // @synthesize docType=_docType;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *docType; // @synthesize docType=_docType;
 - (void)closeEmptyElementTag;
 - (void)startElement:(id)arg1 writeInline:(_Bool)arg2;
 - (id)validateAttribute:(id)arg1 value:(id)arg2 ofElement:(id)arg3;

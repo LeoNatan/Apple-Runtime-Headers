@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)interpolatedValueBetweenInitialValue:(double)arg1 andFinalValue:(double)arg2 atProgress:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double targetPhotoViewAlpha; // @synthesize targetPhotoViewAlpha=_targetPhotoViewAlpha;
 @property(nonatomic) double initialPhotoViewAlpha; // @synthesize initialPhotoViewAlpha=_initialPhotoViewAlpha;
 @property(nonatomic) struct CGRect targetFrame; // @synthesize targetFrame=_targetFrame;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PUImportOneUpCellBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) PXImportMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) UIImage *startingImage; // @synthesize startingImage=_startingImage;
-- (void).cxx_destruct;
 - (void)importOneUpCell:(id)arg1 didRequestCancellationOfThumbnailRequestWithID:(long long)arg2;
 - (long long)importOneUpCell:(id)arg1 requestedThumbnailForImportItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)importOneUpCell:(id)arg1 requestedBadgeUpdateForImportItem:(id)arg2;

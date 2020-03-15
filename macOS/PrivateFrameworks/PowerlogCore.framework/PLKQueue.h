@@ -21,6 +21,7 @@
     CDUnknownBlockType _kQueueBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType kQueueBlock; // @synthesize kQueueBlock=_kQueueBlock;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy) NSString *path; // @synthesize path=_path;
@@ -29,7 +30,6 @@
 @property int fileDescriptor; // @synthesize fileDescriptor=_fileDescriptor;
 @property int kQueue; // @synthesize kQueue=_kQueue;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)initWithPath:(id)arg1 withDispatchQueue:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 
 @end

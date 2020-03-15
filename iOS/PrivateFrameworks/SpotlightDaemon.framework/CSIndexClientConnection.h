@@ -15,10 +15,10 @@
     MDSearchableIndexService *_service;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MDSearchableIndexService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) _Bool quotaDisabled; // @synthesize quotaDisabled=_quotaDisabled;
 @property(readonly, nonatomic) SDConnectionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)initWithConnection:(id)arg1 indexer:(id)arg2;
 - (id)initWithConfiguration:(id)arg1 indexer:(id)arg2;
 

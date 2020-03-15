@@ -13,8 +13,8 @@
     NSDate *_modificationDate;
 }
 
-@property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -21,13 +21,13 @@
 + (int)todaysWeekday:(int)arg1 yesterdaysWeekday:(int)arg2 containsTimeFromMidnight:(double)arg3 inNormalizedHours:(id)arg4;
 + (int)getWeekdayForDate:(id)arg1 inNormalizedHours:(id)arg2 timeZone:(id)arg3;
 + (id)dailyNormalizedHoursForWeekday:(int)arg1 timeIntervals:(id)arg2 closingThreshold:(double)arg3 openingThreshold:(double)arg4 openToMidnight:(_Bool)arg5 openFromMidnight:(_Bool)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool openFromMidnight; // @synthesize openFromMidnight=_openFromMidnight;
 @property(readonly, nonatomic) _Bool openToMidnight; // @synthesize openToMidnight=_openToMidnight;
 @property(nonatomic) double openingSoonThresholdSeconds; // @synthesize openingSoonThresholdSeconds=_openingSoonThresholdSeconds;
 @property(nonatomic) double closingSoonThresholdSeconds; // @synthesize closingSoonThresholdSeconds=_closingSoonThresholdSeconds;
 @property(readonly, nonatomic) NSArray *localTimeIntervals; // @synthesize localTimeIntervals=_localTimeIntervals;
 @property(readonly, nonatomic) int weekday; // @synthesize weekday=_weekday;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

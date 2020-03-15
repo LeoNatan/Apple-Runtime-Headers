@@ -19,10 +19,10 @@
 }
 
 + (Class)actualExpressPassInformationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actualExpressPassInformations; // @synthesize actualExpressPassInformations=_actualExpressPassInformations;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

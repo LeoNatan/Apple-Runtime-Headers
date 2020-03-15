@@ -14,6 +14,7 @@
 @interface CNUICoreFamilyMemberContactItem : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _isUnreachable;
+    BOOL _isProposed;
     BOOL _hasBeenPersisted;
     NSString *_contactIdentifier;
     NSString *_formattedName;
@@ -23,21 +24,22 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasBeenPersisted; // @synthesize hasBeenPersisted=_hasBeenPersisted;
 @property(readonly, nonatomic) long long whitelistStatus; // @synthesize whitelistStatus=_whitelistStatus;
 @property(readonly, nonatomic) long long contactType; // @synthesize contactType=_contactType;
+@property(readonly, nonatomic) BOOL isProposed; // @synthesize isProposed=_isProposed;
 @property(readonly, nonatomic) BOOL isUnreachable; // @synthesize isUnreachable=_isUnreachable;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, nonatomic) NSString *formattedName; // @synthesize formattedName=_formattedName;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContactIdentifier:(id)arg1 formattedName:(id)arg2 imageData:(id)arg3 isUnreachable:(BOOL)arg4 contactType:(long long)arg5 whitelistStatus:(long long)arg6 hasBeenPersisted:(BOOL)arg7;
+- (id)initWithContactIdentifier:(id)arg1 formattedName:(id)arg2 imageData:(id)arg3 isUnreachable:(BOOL)arg4 isProposed:(BOOL)arg5 contactType:(long long)arg6 whitelistStatus:(long long)arg7 hasBeenPersisted:(BOOL)arg8;
 - (id)initWithContactIdentifier:(id)arg1;
 - (id)init;
 

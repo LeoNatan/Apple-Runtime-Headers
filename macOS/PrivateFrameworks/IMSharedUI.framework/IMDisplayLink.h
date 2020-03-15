@@ -17,10 +17,10 @@
 
 + (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 + (Class)_displayLinkClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *displays; // @synthesize displays=_displays;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)_displayLinkCallback;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 - (void)invalidate;

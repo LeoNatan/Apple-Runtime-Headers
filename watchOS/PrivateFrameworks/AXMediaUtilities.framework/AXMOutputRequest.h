@@ -19,10 +19,10 @@
 }
 
 + (id)speechItemSeparator;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AXMOutputRequestHandle *handle; // @synthesize handle=_handle;
 @property(nonatomic) _Bool interruptsAndClearsQueue; // @synthesize interruptsAndClearsQueue=_interruptsAndClearsQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)addActiveSoundItemWithURL:(id)arg1;
 - (void)addActiveSoundItemWithID:(id)arg1;
 - (void)addSoundItemWithURL:(id)arg1;

@@ -19,6 +19,7 @@
     NSString *_accountTypeGUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accountTypeGUID; // @synthesize accountTypeGUID=_accountTypeGUID;
 @property(retain, nonatomic) NSString *accountGUID; // @synthesize accountGUID=_accountGUID;
 @property(retain, nonatomic) NSArray *appIdentifierMatches; // @synthesize appIdentifierMatches=_appIdentifierMatches;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *certificateUUID; // @synthesize certificateUUID=_certificateUUID;
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;
 @property(retain, nonatomic) NSString *principalName; // @synthesize principalName=_principalName;
-- (void).cxx_destruct;
 - (id)stubDictionary;
 - (_Bool)validateURLPrefixMatch:(id)arg1 outNormalizedString:(id *)arg2 outError:(id *)arg3;
 - (id)description;

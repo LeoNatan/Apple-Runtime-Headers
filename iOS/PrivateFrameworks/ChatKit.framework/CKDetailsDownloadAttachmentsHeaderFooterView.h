@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *titleTextTopToViewConstraint; // @synthesize titleTextTopToViewConstraint=_titleTextTopToViewConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleTextTopToLogoConstraint; // @synthesize titleTextTopToLogoConstraint=_titleTextTopToLogoConstraint;
 @property(retain, nonatomic) UITextView *buttonTextView; // @synthesize buttonTextView=_buttonTextView;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <CKDetailsDownloadAttachmentsHeaderFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *buttonText; // @synthesize buttonText=_buttonText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)handleUserTap:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;

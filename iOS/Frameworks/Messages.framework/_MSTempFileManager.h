@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSHashTable *registry; // @synthesize registry=_registry;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSHashTable *registry; // @synthesize registry=_registry;
 - (id)writeTemporaryFileWithData:(id)arg1 type:(id)arg2;
 - (id)init;
 

@@ -27,11 +27,11 @@
 }
 
 + (unsigned long long)updateTypeForChangeInAttribute:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IKDataSourceElementImplementing> impl; // @synthesize impl=_impl;
 @property(nonatomic) long long autoHighlightIndex; // @synthesize autoHighlightIndex=_autoHighlightIndex;
 @property(copy, nonatomic) NSArray *autoHighlightedChildElements; // @synthesize autoHighlightedChildElements=_autoHighlightedChildElements;
 @property(copy, nonatomic) NSDictionary *indexTitles; // @synthesize indexTitles=_indexTitles;
-- (void).cxx_destruct;
 - (id)_parsedIndexTitlesFromString:(id)arg1;
 @property(readonly, nonatomic, getter=areItemsBound) _Bool itemsBound;
 - (_Bool)canProxyUnloadedChildElement:(id)arg1;

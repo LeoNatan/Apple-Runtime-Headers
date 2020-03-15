@@ -22,11 +22,11 @@
 }
 
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(retain) NSButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 @property(retain, nonatomic) KHGridView *gridView; // @synthesize gridView=_gridView;
 @property(retain, nonatomic) KHLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 @property(nonatomic) __weak id <KHLayoutViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateOverlayButtonsForSelection:(id)arg1;
 - (void)selectionViewController:(id)arg1 willApplyRotation:(double)arg2 toSelection:(id)arg3;
 - (struct CGRect)selectionViewController:(id)arg1 willApplyResize:(struct CGRect)arg2 toSelection:(id)arg3;

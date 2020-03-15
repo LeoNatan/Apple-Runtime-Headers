@@ -45,6 +45,7 @@
 + (_Bool)canShowPhotoPickerForView:(id)arg1 withTraitCollection:(id)arg2;
 + (id)descriptorForRequiredKeys;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *assignActionTitleOverride; // @synthesize assignActionTitleOverride=_assignActionTitleOverride;
 @property(nonatomic) _Bool allowRotation; // @synthesize allowRotation=_allowRotation;
 @property(retain, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) CNMutableContact *pendingEditContact; // @synthesize pendingEditContact=_pendingEditContact;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <CNPhotoPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)saveItemToRecentsImageStore:(id)arg1;
 - (void)deleteItemFromRecentsImageStore:(id)arg1;
 - (void)presentDismissConfirmation;

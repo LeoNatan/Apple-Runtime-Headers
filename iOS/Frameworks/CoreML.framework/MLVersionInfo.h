@@ -18,11 +18,11 @@
 
 + (id)versionInfoWithString:(id)arg1;
 + (id)versionInfoWithMajor:(long long)arg1 minor:(long long)arg2 patch:(long long)arg3 variant:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSString *variantString; // @synthesize variantString=_variantString;
 @property(readonly) long long patchVersion; // @synthesize patchVersion=_patchVersion;
 @property(readonly) long long minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(readonly) long long majorVersion; // @synthesize majorVersion=_majorVersion;
-- (void).cxx_destruct;
 - (_Bool)olderThan:(id)arg1;
 @property(readonly, nonatomic) NSString *versionString;
 @property(readonly, nonatomic) NSString *versionNumberString;

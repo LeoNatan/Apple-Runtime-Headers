@@ -24,10 +24,10 @@
 
 + (id)logCategory;
 + (id)localizationKeyForKeyPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly) HMAccessorySettingGroup *rootGroup; // @synthesize rootGroup=_rootGroup;
 @property __weak id <HMAccessorySettingsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier;
 - (void)__notifyDelegateSettingsDidUpdate;

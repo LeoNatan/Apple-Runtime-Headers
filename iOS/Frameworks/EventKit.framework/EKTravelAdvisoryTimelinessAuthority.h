@@ -25,6 +25,7 @@
 }
 
 + (id)stringForPeriod:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CalDateProvider> dateProvider; // @synthesize dateProvider=_dateProvider;
 @property(copy, nonatomic) CDUnknownBlockType internalPeriodChangedCallback; // @synthesize internalPeriodChangedCallback=_internalPeriodChangedCallback;
 @property(nonatomic) unsigned long long internalPeriod; // @synthesize internalPeriod=_internalPeriod;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)_uninstallTimer;
 - (void)_refreshOnDate:(id)arg1;
 - (void)_refreshTimer;

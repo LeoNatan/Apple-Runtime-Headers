@@ -30,6 +30,8 @@
 - (_Bool)_isTouchingLollipopAtLocationOfFirstTouch:(struct CGPoint)arg1;
 - (unsigned long long)_typeForGestureRecognizer:(id)arg1;
 - (void)handleGesture:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_gestureInit;
 - (void)didLongPressPageIndex:(long long)arg1 atLocation:(struct CGPoint)arg2 withAnnotationRect:(struct CGRect)arg3;
@@ -62,7 +64,6 @@
 - (void)recievedSnapshotViewRect:(id)arg1;
 - (void)snapshotViewRect:(struct CGRect)arg1 snapshotWidth:(id)arg2 afterScreenUpdates:(BOOL)arg3 withResult:(CDUnknownBlockType)arg4;
 - (id)pageNumberIndicator;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updatePDFViewLayout;
 - (double)_hostScrollViewZoomScale;

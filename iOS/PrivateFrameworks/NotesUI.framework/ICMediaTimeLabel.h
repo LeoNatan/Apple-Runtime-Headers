@@ -14,9 +14,9 @@
     ICMediaTimeFormatter *_formatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICMediaTimeFormatter *formatter; // @synthesize formatter=_formatter;
 @property(copy, nonatomic) ICMediaTime *mediaTimeValue; // @synthesize mediaTimeValue=_mediaTimeValue;
-- (void).cxx_destruct;
 - (void)commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

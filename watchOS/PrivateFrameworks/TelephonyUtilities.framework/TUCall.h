@@ -60,6 +60,7 @@
 + (id)supplementalDialTelephonyCallString;
 + (id)supplementalDialTelephonyCallStringForDestination:(id)arg1 isPhoneNumber:(_Bool)arg2;
 + (id)_supplementalDialTelephonyCallStringForLocString:(id)arg1 destination:(id)arg2 isPhoneNumber:(_Bool)arg3 includeFaceTimeAudio:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) int ttyType; // @synthesize ttyType=_ttyType;
 @property(copy, nonatomic) NSString *hardPauseDigits; // @synthesize hardPauseDigits=_hardPauseDigits;
 @property(nonatomic) int hardPauseDigitsState; // @synthesize hardPauseDigitsState=_hardPauseDigitsState;
@@ -100,7 +101,6 @@
 @property(nonatomic, getter=isEndpointOnCurrentDevice) _Bool endpointOnCurrentDevice; // @synthesize endpointOnCurrentDevice=_endpointOnCurrentDevice;
 @property(nonatomic) int faceTimeIDStatus; // @synthesize faceTimeIDStatus=_faceTimeIDStatus;
 @property(nonatomic) int disconnectedReason; // @synthesize disconnectedReason=_disconnectedReason;
-- (void).cxx_destruct;
 - (_Bool)isDialRequestVideoUpgrade:(id)arg1;
 - (_Bool)isVideoUpgradeFromCall:(id)arg1;
 - (void)setRemoteVideoPresentationState:(int)arg1;

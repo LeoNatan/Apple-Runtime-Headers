@@ -20,11 +20,11 @@
 + (id)defaultRegistry;
 + (id)objectFromArchivedData:(id)arg1 URL:(id)arg2 requestedClass:(Class)arg3 typeIdentifier:(id)arg4 outError:(id *)arg5;
 + (id)archivedDataFromObject:(id)arg1 requestedType:(id)arg2 outError:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *member_classCoercionByClass; // @synthesize member_classCoercionByClass=_member_classCoercionByClass;
 @property(retain, nonatomic) NSMutableDictionary *member_importerByClass; // @synthesize member_importerByClass=_member_importerByClass;
 @property(retain, nonatomic) NSMutableDictionary *member_exporterByClass; // @synthesize member_exporterByClass=_member_exporterByClass;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (id)_member_availableClassesToCoerceToFromClass:(Class)arg1;
 - (void)loadRepresentationOfObject:(id)arg1 asType:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)_member_exporterFromClass:(Class)arg1 toType:(id)arg2;

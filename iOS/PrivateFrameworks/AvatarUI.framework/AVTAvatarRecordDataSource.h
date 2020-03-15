@@ -31,6 +31,7 @@
 + (unsigned long long)indexForInsertingRecord:(id)arg1 inRecords:(id)arg2;
 + (id)sortedRecordsEditableFirstReverseOrder:(id)arg1;
 + (id)defaultUIDataSourceWithDomainIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> nts_changeNotificationObserver; // @synthesize nts_changeNotificationObserver=_nts_changeNotificationObserver;
 @property(readonly, nonatomic) NSPointerArray *nts_observers; // @synthesize nts_observers=_nts_observers;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) AVTObservableAvatarStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) AVTAvatarStore *underlyingStore; // @synthesize underlyingStore=_underlyingStore;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
-- (void).cxx_destruct;
 - (void)store:(id)arg1 didCreateDuplicateAvatar:(id)arg2 forOriginal:(id)arg3 postCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)store:(id)arg1 didDeleteAvatarWithIdentifier:(id)arg2 postCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)store:(id)arg1 didSaveAvatar:(id)arg2 postCompletionHandler:(CDUnknownBlockType)arg3;

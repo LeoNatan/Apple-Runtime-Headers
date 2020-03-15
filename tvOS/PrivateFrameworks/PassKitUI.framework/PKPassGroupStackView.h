@@ -131,6 +131,7 @@
 + (id)backdropEndBackgroundColor;
 + (id)backdropStartBackgroundColor;
 + (id)backgroundColor;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) _Bool staggerPileAnimations; // @synthesize staggerPileAnimations=_staggerPileAnimations;
 @property(nonatomic) double topContentSeparatorHeight; // @synthesize topContentSeparatorHeight=_topContentSeparatorHeight;
@@ -142,7 +143,6 @@
 @property(nonatomic) unsigned long long modalGroupIndex; // @synthesize modalGroupIndex=_modalGroupIndex;
 @property(nonatomic) long long presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) id <PKPassGroupStackViewDatasource> datasource; // @synthesize datasource=_datasource;
-- (void).cxx_destruct;
 - (void)_updateBackdropViewFilters;
 - (void)_resetBackdropViewToStart:(_Bool)arg1;
 - (void)_hideBackdropViewAnimated:(_Bool)arg1 delay:(double)arg2;

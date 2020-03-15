@@ -13,8 +13,8 @@
     UIButton *_submitButton;
 }
 
-@property(retain, nonatomic) UIButton *submitButton; // @synthesize submitButton=_submitButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *submitButton; // @synthesize submitButton=_submitButton;
 - (struct CGRect)_buttonFrameWithBounds:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

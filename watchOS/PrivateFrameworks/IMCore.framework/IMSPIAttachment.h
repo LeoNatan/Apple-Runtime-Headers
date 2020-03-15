@@ -20,6 +20,7 @@
     NSDate *_creationDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
 @property _Bool isOutgoing; // @synthesize isOutgoing=_isOutgoing;
@@ -28,7 +29,6 @@
 @property(retain) NSString *guid; // @synthesize guid=_guid;
 @property int fileTransferState; // @synthesize fileTransferState=_fileTransferState;
 @property(retain) NSURL *fileUrl; // @synthesize fileUrl=_fileUrl;
-- (void).cxx_destruct;
 - (id)description;
 - (id)bundleID;
 - (id)initWithGuid:(id)arg1 fileUrl:(id)arg2 transferState:(int)arg3 uti:(id)arg4 isSticker:(_Bool)arg5 isOutgoing:(_Bool)arg6 attributionInfo:(id)arg7 creationDate:(id)arg8;

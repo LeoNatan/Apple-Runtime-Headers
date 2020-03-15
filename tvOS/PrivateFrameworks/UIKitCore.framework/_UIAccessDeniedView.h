@@ -17,9 +17,9 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)_textColor;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -19,10 +19,10 @@
 + (id)errorWithCode:(long long)arg1 data:(id)arg2;
 + (id)errorWithCode:(long long)arg1 message:(id)arg2;
 + (id)errorWithCode:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *errorData; // @synthesize errorData=_errorData;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *errorName;
 @property(readonly, nonatomic) long long httpStatusCode;
 - (id)initWithErrorCode:(long long)arg1 message:(id)arg2 data:(id)arg3;

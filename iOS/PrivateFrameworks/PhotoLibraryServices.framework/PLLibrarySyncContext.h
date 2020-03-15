@@ -18,10 +18,10 @@
     PLCloudRecordOrganizer *_recordOrganizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly) PLCloudRecordOrganizer *recordOrganizer; // @synthesize recordOrganizer=_recordOrganizer;
 @property(readonly) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(copy, nonatomic) NSArray *personUUIDsToDedupe; // @synthesize personUUIDsToDedupe=_personUUIDsToDedupe;
-- (void).cxx_destruct;
 - (void)setAssetAdjustmentState:(id)arg1 forCloudIdentifer:(id)arg2;
 - (id)assetAdjustmentStateForCloudIdentifier:(id)arg1;
 - (_Bool)personUUIDIsDeleted:(id)arg1;

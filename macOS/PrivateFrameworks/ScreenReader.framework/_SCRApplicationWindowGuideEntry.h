@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *__titleForGuide;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_titleForGuide; // @synthesize _titleForGuide=__titleForGuide;
 @property(retain, nonatomic) SCRElement *_windowElement; // @synthesize _windowElement=__windowElement;
-- (void).cxx_destruct;
 
 @end
 

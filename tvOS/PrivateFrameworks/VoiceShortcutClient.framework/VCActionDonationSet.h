@@ -15,10 +15,10 @@
     NSMutableArray *_appSuggestedActions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *appSuggestedActions; // @synthesize appSuggestedActions=_appSuggestedActions;
 @property(readonly, nonatomic) NSMutableArray *recentActions; // @synthesize recentActions=_recentActions;
 @property(readonly, nonatomic) NSMutableArray *predictedActions; // @synthesize predictedActions=_predictedActions;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

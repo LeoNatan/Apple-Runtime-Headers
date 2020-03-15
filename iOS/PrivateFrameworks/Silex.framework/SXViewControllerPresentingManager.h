@@ -16,8 +16,8 @@
     UIViewController *_presentingViewController;
 }
 
-@property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void)popOrDismissViewControllerAnimated:(_Bool)arg1;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2;

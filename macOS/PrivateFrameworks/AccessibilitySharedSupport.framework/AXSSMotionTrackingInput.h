@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) BOOL supportsLookAtPoint;
 @property(readonly, nonatomic) BOOL supportsExpressions;
 @property(readonly, nonatomic) BOOL isHIDDevice;
+@property(readonly, nonatomic) BOOL isVideoFile;
 @property(readonly, nonatomic) BOOL isCamera;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

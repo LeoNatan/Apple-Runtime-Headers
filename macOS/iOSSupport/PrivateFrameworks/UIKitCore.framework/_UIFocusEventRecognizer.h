@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIFocusEnginePanGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIFocusFastScrollingRecognizerDelegate-Protocol.h>
 
-@class CADisplayLink, NSArray, NSObservation, NSString, NSTimer, NSUserDefaults, UIMoveEvent, UIScrollView, UITapGestureRecognizer, UIView, _UIFocusEngineJoystickGestureRecognizer, _UIFocusEnginePanGestureRecognizer, _UIFocusFastScrollingRecognizer, _UIFocusMovementInfo, _UIFocusPressGestureRecognizer;
+@class CADisplayLink, NSArray, NSObservation, NSString, NSTimer, NSUserDefaults, UIMoveEvent, UIScrollView, UITapGestureRecognizer, UIView, _UIFocusEffectsController, _UIFocusEngineJoystickGestureRecognizer, _UIFocusEnginePanGestureRecognizer, _UIFocusFastScrollingRecognizer, _UIFocusMovementInfo, _UIFocusPressGestureRecognizer;
 @protocol _UIFocusEventRecognizerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _previousPoints[5];
     int _numFrames;
     struct CGVector _progressAccumulator;
+    struct CGVector _unlockedAccumulator;
     _UIFocusFastScrollingRecognizer *_fastScrollingRecognizer;
     struct CGPoint _firstMomentumTouchPoint;
     struct CGPoint _lastMomentumTouchPoint;
@@ -62,15 +63,18 @@ __attribute__((visibility("hidden")))
     id <_UIFocusEventRecognizerDelegate> _delegate;
     UIView *_viewForTouchDeferredFocus;
     UIMoveEvent *_moveEvent;
+    _UIFocusEffectsController *_motionEffectsController;
 }
 
++ (BOOL)_canSupportFastScrolling;
+- (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_motionEffectsController) _UIFocusEffectsController *motionEffectsController; // @synthesize motionEffectsController=_motionEffectsController;
 @property(retain, nonatomic, getter=_moveEvent, setter=_setMoveEvent:) UIMoveEvent *moveEvent; // @synthesize moveEvent=_moveEvent;
 @property(nonatomic) __weak UIView *viewForTouchDeferredFocus; // @synthesize viewForTouchDeferredFocus=_viewForTouchDeferredFocus;
 @property(nonatomic) __weak id <_UIFocusEventRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL supportsFastScrolling; // @synthesize supportsFastScrolling=_supportsFastScrolling;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) __weak UIView *owningView; // @synthesize owningView=_owningView;
-- (void).cxx_destruct;
 - (void)_uiktest_handlePanGesture:(id)arg1;
 - (id)_uiktest_panGestureRecognizer;
 - (void)_uiktest_setPanGestureRecognizer:(id)arg1;

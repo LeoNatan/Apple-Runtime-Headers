@@ -17,8 +17,8 @@
     id <PXCMMFooterViewModelActionDelegate> _actionDelegate;
 }
 
-@property(nonatomic) __weak id <PXCMMFooterViewModelActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXCMMFooterViewModelActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateAllProperties;
 - (id)initWithMomentShareStatusPresentation:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)continuityAppDisplayItemWithBundleIdentifier:(id)arg1 appSuggestion:(id)arg2;
-@property(readonly, nonatomic) SBBestAppSuggestion *appSuggestion; // @synthesize appSuggestion=_appSuggestion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBBestAppSuggestion *appSuggestion; // @synthesize appSuggestion=_appSuggestion;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithType:(long long)arg1 displayIdentifier:(id)arg2 appSuggestion:(id)arg3;

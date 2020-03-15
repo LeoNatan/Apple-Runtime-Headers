@@ -7,17 +7,15 @@
 #import <SceneKit/SCNView.h>
 
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
-#import <ARKit/ARPresentationDelegate-Protocol.h>
 #import <ARKit/ARSessionProviding-Protocol.h>
 #import <ARKit/_SCNSceneRendererDelegate-Protocol.h>
 
-@class ARFrame, ARPointCloud, ARPresentation, ARPresentationFrame, ARSCNCompositor, ARSession, ARSinglePassRenderer, CIWarpKernel, NSMutableArray, NSMutableDictionary, NSObject, NSString, SCNNode, SCNScene, UIView;
+@class ARFrame, ARPointCloud, ARSCNCompositor, ARSession, CIWarpKernel, NSMutableArray, NSMutableDictionary, NSObject, NSString, SCNNode, SCNScene, UIView;
 @protocol ARSCNViewDelegate, OS_dispatch_semaphore, SCNCaptureDeviceOutputConsumer;
 
-@interface ARSCNView : SCNView <ARInternalSessionObserver, _SCNSceneRendererDelegate, ARPresentationDelegate, ARSessionProviding>
+@interface ARSCNView : SCNView <ARInternalSessionObserver, _SCNSceneRendererDelegate, ARSessionProviding>
 {
     ARSession *_session;
-    double _lastFrameTimestamp;
     double _lastFrameInterval;
     id <SCNCaptureDeviceOutputConsumer> _captureDeviceOutputConsumer;
     SCNNode *_lightNode;
@@ -48,9 +46,6 @@
     _Bool _attemptRenderSynchronisationARFrame;
     ARSCNCompositor *_compositor;
     struct os_unfair_lock_s _occlusionLock;
-    ARPresentation *_presentation;
-    ARPresentationFrame *_currentPresentationFrame;
-    ARSinglePassRenderer *_arSinglePassRenderer;
     // Error parsing type: {?="columns"[4]}, name: _currentReferenceTransform
     _Bool _runningWithSegmentation;
     _Bool _automaticallyOccludesVirtualContent;
@@ -63,25 +58,27 @@
     _Bool _drawsCameraImage;
     unsigned long long _occlusionExcludedBitMask;
     long long _compositorAlgorithm;
+    double _lastFrameTimestamp;
     long long _targetFramesPerSecond;
     long long _developerPreferredFramesPerSecond;
     long long _frameToRemoveRotationSnapshotOn;
     long long _rotationSnapshotState;
 }
 
+- (void).cxx_destruct;
 @property long long rotationSnapshotState; // @synthesize rotationSnapshotState=_rotationSnapshotState;
 @property long long frameToRemoveRotationSnapshotOn; // @synthesize frameToRemoveRotationSnapshotOn=_frameToRemoveRotationSnapshotOn;
 @property _Bool drawsCameraImage; // @synthesize drawsCameraImage=_drawsCameraImage;
 @property long long developerPreferredFramesPerSecond; // @synthesize developerPreferredFramesPerSecond=_developerPreferredFramesPerSecond;
 @property long long targetFramesPerSecond; // @synthesize targetFramesPerSecond=_targetFramesPerSecond;
 @property _Bool shouldRestrictFrameRate; // @synthesize shouldRestrictFrameRate=_shouldRestrictFrameRate;
+@property(nonatomic) double lastFrameTimestamp; // @synthesize lastFrameTimestamp=_lastFrameTimestamp;
 @property(nonatomic) _Bool segmentationUseEstimatedDepthData; // @synthesize segmentationUseEstimatedDepthData=_segmentationUseEstimatedDepthData;
 @property(nonatomic) _Bool providesOcclusionGeometry; // @synthesize providesOcclusionGeometry=_providesOcclusionGeometry;
 @property(nonatomic) _Bool rendersMotionBlur; // @synthesize rendersMotionBlur=_rendersMotionBlur;
 @property(nonatomic) _Bool rendersCameraGrain; // @synthesize rendersCameraGrain=_rendersCameraGrain;
 @property(nonatomic) _Bool automaticallyUpdatesLighting; // @synthesize automaticallyUpdatesLighting=_automaticallyUpdatesLighting;
 @property(nonatomic) long long compositorAlgorithm; // @synthesize compositorAlgorithm=_compositorAlgorithm;
-- (void).cxx_destruct;
 - (id)sceneRenderer;
 - (struct __CVBuffer *)_warpPixelBuffer:(struct __CVBuffer *)arg1 withCamera:(id)arg2;
 - (void)_loadWarpKernalForLensType:(unsigned long long)arg1;
@@ -121,7 +118,6 @@
 - (void)session:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (void)_renderer:(id)arg1 updateAtTime:(double)arg2;
-- (void)presentationIsReadyForNextRender:(id)arg1;
 - (void)_drawAtTime:(double)arg1;
 @property(nonatomic) __weak id <ARSCNViewDelegate> delegate; // @dynamic delegate;
 - (long long)preferredFramesPerSecond;
@@ -145,7 +141,6 @@
 @property(readonly, copy) NSString *description;
 - (void)layoutSubviews;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setupCompositor;
 - (void)_commonInit;
 @property(readonly, nonatomic) ARFrame *currentRenderFrame;
 - (id)compositor;

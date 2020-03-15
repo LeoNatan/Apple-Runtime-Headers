@@ -15,8 +15,8 @@
     TVCKSearchSiriContext *_siriContext;
 }
 
-@property(retain, nonatomic) TVCKSearchSiriContext *siriContext; // @synthesize siriContext=_siriContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVCKSearchSiriContext *siriContext; // @synthesize siriContext=_siriContext;
 - (void)sendMetricsWithCategory:(id)arg1 info:(id)arg2;
 - (void)fetchNextBatch:(id)arg1;
 - (void)didPlayContentItemInPartialScreenPluginMode:(id)arg1;

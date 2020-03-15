@@ -14,8 +14,8 @@
     NSArray *_trackedStats;
 }
 
-@property(readonly) NSArray *trackedStats; // @synthesize trackedStats=_trackedStats;
 - (void).cxx_destruct;
+@property(readonly) NSArray *trackedStats; // @synthesize trackedStats=_trackedStats;
 - (void)clearTrackedMessages;
 - (void)postMetricId:(unsigned int)arg1 message:(id)arg2;
 - (void)triggerAWDMetricRequest;

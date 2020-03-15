@@ -11,8 +11,8 @@
     CDUnknownBlockType _sendingWiFiInfoHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType sendingWiFiInfoHandler; // @synthesize sendingWiFiInfoHandler=_sendingWiFiInfoHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType sendingWiFiInfoHandler; // @synthesize sendingWiFiInfoHandler=_sendingWiFiInfoHandler;
 - (void)_handleResponse:(id)arg1;
 - (void)_sendRequestWithSSID:(id)arg1 password:(id)arg2;
 - (void)execute;

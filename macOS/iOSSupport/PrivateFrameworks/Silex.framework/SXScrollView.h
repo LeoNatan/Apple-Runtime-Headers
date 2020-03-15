@@ -17,9 +17,9 @@
     SXAXCustomRotorProvider *_customRotorProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXAXCustomRotorProvider *customRotorProvider; // @synthesize customRotorProvider=_customRotorProvider;
 @property(nonatomic) __weak id <SXScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
-- (void).cxx_destruct;
 - (BOOL)_accessibilityScrollingEnabled;
 - (BOOL)shouldOccludeAccessibilityElement:(id)arg1;
 - (id)accessibilityCustomRotors;

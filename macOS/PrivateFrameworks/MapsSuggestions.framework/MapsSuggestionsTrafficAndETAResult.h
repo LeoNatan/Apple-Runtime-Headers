@@ -16,11 +16,11 @@
     NSString *_longTrafficString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *longTrafficString; // @synthesize longTrafficString=_longTrafficString;
 @property(copy, nonatomic) NSString *shortTrafficString; // @synthesize shortTrafficString=_shortTrafficString;
 @property(nonatomic) double seconds; // @synthesize seconds=_seconds;
 @property(nonatomic) BOOL isSuccess; // @synthesize isSuccess=_isSuccess;
-- (void).cxx_destruct;
 - (id)initWithGEOTrafficAndETAResult:(id)arg1;
 
 @end

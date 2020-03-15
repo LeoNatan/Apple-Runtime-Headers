@@ -252,14 +252,6 @@ struct LSVersionNumber {
     unsigned char _opaque[32];
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct Point {
     short _field1;
     short _field2;

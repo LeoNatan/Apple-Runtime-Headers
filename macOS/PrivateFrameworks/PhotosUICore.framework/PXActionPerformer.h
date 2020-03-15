@@ -18,7 +18,7 @@
     id _sender;
     unsigned long long _state;
     id <PXActionPerformerDelegate> _delegate;
-    struct NSObject *_presentedViewController;
+    NSObject<PXAnonymousViewController> *_presentedViewController;
     CDUnknownBlockType _viewControllerPresenter;
     CDUnknownBlockType _viewControllerDismisser;
     CDUnknownBlockType _alertPresenter;
@@ -26,6 +26,7 @@
 }
 
 + (BOOL)canPerformBlacklistingOnAssetCollection:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType alertDismisser; // @synthesize alertDismisser=_alertDismisser;
 @property(copy, nonatomic) CDUnknownBlockType alertPresenter; // @synthesize alertPresenter=_alertPresenter;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerDismisser; // @synthesize viewControllerDismisser=_viewControllerDismisser;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak id sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) BOOL success; // @synthesize success=_success;
 @property(readonly, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (BOOL)presentMenu:(id)arg1;
 @property(readonly, nonatomic) BOOL presentsMenu;
 - (BOOL)dismissAlert:(id)arg1;
@@ -48,8 +48,8 @@
 - (void)completeBackgroundTaskWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)performBackgroundTask;
 - (void)completeUserInteractionTaskWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (BOOL)dismissViewController:(struct NSObject *)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)presentViewController:(struct NSObject *)arg1;
+- (BOOL)dismissViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)presentViewController:(id)arg1;
 - (void)performUserInteractionTask;
 - (void)_completeUnlockTaskWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)_performUnlockIfNeeded;

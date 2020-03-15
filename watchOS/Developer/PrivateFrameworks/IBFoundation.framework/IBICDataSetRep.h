@@ -22,8 +22,8 @@
 + (id)assetRepWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(_Bool)arg3;
 + (id)assetRepWithRepIdentifier:(id)arg1;
 + (id)createDefaultInstancesForUnitTesting;
-@property(copy, nonatomic) NSString *universalTypeIdentifier; // @synthesize universalTypeIdentifier=_universalTypeIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *universalTypeIdentifier; // @synthesize universalTypeIdentifier=_universalTypeIdentifier;
 - (_Bool)isEqualForUnitTests:(id)arg1;
 - (id)fullyQualifiedRelativePathForFileWriter;
 - (_Bool)requiresKnownFileTypeToBeMinimallyFitForCompiling;

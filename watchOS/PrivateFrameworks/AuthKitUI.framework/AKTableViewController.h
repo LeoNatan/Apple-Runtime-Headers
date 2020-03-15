@@ -21,6 +21,7 @@
     NSAttributedString *_footer;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSAttributedString *attributedMessage; // @synthesize attributedMessage=_attributedMessage;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSLayoutConstraint *headerWidthConstraint; // @synthesize headerWidthConstraint=_headerWidthConstraint;
 @property(readonly, nonatomic) UIStackView *paneFooterStackView; // @synthesize paneFooterStackView=_paneFooterStackView;
 @property(readonly, nonatomic) UIStackView *paneHeaderStackView; // @synthesize paneHeaderStackView=_paneHeaderStackView;
-- (void).cxx_destruct;
 - (id)_newStackView;
 - (id)_newContainerView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

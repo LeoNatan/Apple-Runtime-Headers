@@ -35,6 +35,7 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL userNotInContacts; // @synthesize userNotInContacts=_userNotInContacts;
 @property(readonly, nonatomic) BOOL softwareVolume; // @synthesize softwareVolume=_softwareVolume;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
@@ -48,7 +49,6 @@
 @property(nonatomic) BOOL connectOnly; // @synthesize connectOnly=_connectOnly;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) BOOL aggregate; // @synthesize aggregate=_aggregate;
-- (void).cxx_destruct;
 - (void)_completed:(int)arg1;
 - (void)_invalidate;
 - (void)invalidate;

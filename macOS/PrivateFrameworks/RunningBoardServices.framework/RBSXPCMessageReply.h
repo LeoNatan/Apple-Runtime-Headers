@@ -16,9 +16,9 @@
     BOOL _sent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RBSXPCMessageContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id <BSXPCEncoding><BSXPCDecoding> payload; // @synthesize payload=_payload;
-- (void).cxx_destruct;
 - (void)send;
 - (void)encode:(CDUnknownBlockType)arg1;
 - (void)prepareForHandoff;

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSData *_stableInfoSig;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *stableInfoSig; // @synthesize stableInfoSig=_stableInfoSig;
 @property(retain, nonatomic) NSData *stableInfo; // @synthesize stableInfo=_stableInfo;
 @property(retain, nonatomic) NSData *permanentInfoSig; // @synthesize permanentInfoSig=_permanentInfoSig;
 @property(retain, nonatomic) NSData *permanentInfo; // @synthesize permanentInfo=_permanentInfo;
 @property(retain, nonatomic) NSString *peerID; // @synthesize peerID=_peerID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

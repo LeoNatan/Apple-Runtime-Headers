@@ -37,6 +37,7 @@
 + (BOOL)isCJK;
 + (void)clearState;
 + (id)sortedUniqueBundleFeatureValuesFromBundleFeatures:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL exact; // @synthesize exact=_exact;
 @property(nonatomic) BOOL hasParsecPolicyPhraseMatch; // @synthesize hasParsecPolicyPhraseMatch=_hasParsecPolicyPhraseMatch;
 @property(nonatomic) BOOL hasPolicyPhraseMatch; // @synthesize hasPolicyPhraseMatch=_hasPolicyPhraseMatch;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSString *userQueryString; // @synthesize userQueryString=_userQueryString;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
-- (void).cxx_destruct;
 - (void)prepareParsecResults:(id)arg1 inBundle:(id)arg2;
 - (void)prepareItems:(id)arg1 inRealSectionBundle:(id)arg2;
 - (void)prepareItems:(id)arg1 inBundle:(id)arg2;

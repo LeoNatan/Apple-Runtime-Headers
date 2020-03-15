@@ -16,9 +16,9 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly) NSArray *headers; // @synthesize headers=_headers;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <TeaUI/TSAppMonitorType-Protocol.h>
-
-@interface TSAppMonitor : NSObject <TSAppMonitorType>
+@interface TSAppMonitor : NSObject
 {
     // Error parsing type: , name: isActive
     // Error parsing type: , name: onWindowDidBecomeBackgroundBlock

@@ -17,11 +17,11 @@
 }
 
 + (id)layerWithSelection:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHRelatedPhotosButtonLayer *relatedPhotosButtonLayer; // @synthesize relatedPhotosButtonLayer=_relatedPhotosButtonLayer;
 @property(retain, nonatomic) KHSimilarPhotosButtonLayer *similarPhotosButtonLayer; // @synthesize similarPhotosButtonLayer=_similarPhotosButtonLayer;
 @property(retain, nonatomic) NSMutableArray *resizeDotLayers; // @synthesize resizeDotLayers=_resizeDotLayers;
 @property(retain, nonatomic) KHSelection *selection; // @synthesize selection=_selection;
-- (void).cxx_destruct;
 - (unsigned long long)selectionResizeTypeForPoint:(struct CGPoint)arg1;
 - (void)layoutSublayers;
 - (void)drawInContext:(struct CGContext *)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)weakProxyWithObject:(id)arg1 protocol:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
 @property(nonatomic) __weak id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

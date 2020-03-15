@@ -28,6 +28,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowShowingUndownloadedMovies; // @synthesize payloadAllowShowingUndownloadedMovies=_payloadAllowShowingUndownloadedMovies;
 @property(copy, nonatomic) NSNumber *payloadAllowShowingUndownloadedTV; // @synthesize payloadAllowShowingUndownloadedTV=_payloadAllowShowingUndownloadedTV;
 @property(copy, nonatomic) NSNumber *payloadAllowExplicitContent; // @synthesize payloadAllowExplicitContent=_payloadAllowExplicitContent;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSNumber *payloadRatingMovies; // @synthesize payloadRatingMovies=_payloadRatingMovies;
 @property(copy, nonatomic) NSNumber *payloadRatingApps; // @synthesize payloadRatingApps=_payloadRatingApps;
 @property(copy, nonatomic) NSString *payloadRatingRegion; // @synthesize payloadRatingRegion=_payloadRatingRegion;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

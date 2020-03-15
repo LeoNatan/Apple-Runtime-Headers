@@ -46,6 +46,7 @@
     struct SBDragPreviewShadowParameters _rimShadowParameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFView *rimShadowView; // @synthesize rimShadowView=_rimShadowView;
 @property(retain, nonatomic) SBFView *diffuseShadowView; // @synthesize diffuseShadowView=_diffuseShadowView;
 @property(retain, nonatomic) UIView *unclippedSourceContainerView; // @synthesize unclippedSourceContainerView=_unclippedSourceContainerView;
@@ -74,7 +75,6 @@
 @property(nonatomic) _Bool iconAllowsLabelArea; // @synthesize iconAllowsLabelArea=_iconAllowsLabelArea;
 @property(nonatomic, getter=isFlocked) _Bool flocked; // @synthesize flocked=_flocked;
 @property(nonatomic) unsigned long long dragState; // @synthesize dragState=_dragState;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

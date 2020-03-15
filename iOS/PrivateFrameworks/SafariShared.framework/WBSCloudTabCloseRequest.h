@@ -23,12 +23,12 @@
 + (id)destinationDeviceUUIDInDictionary:(id)arg1;
 + (_Bool)isCloudTabCloseRequestDictionary:(id)arg1;
 + (id)_dictionaryWithURL:(id)arg1 tabUUID:(id)arg2 lastModified:(id)arg3 sourceDeviceUUID:(id)arg4 destinationDeviceUUID:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *lastModified; // @synthesize lastModified=_lastModified;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSUUID *tabUUID; // @synthesize tabUUID=_tabUUID;
 @property(readonly, nonatomic) NSUUID *destinationDeviceUUID; // @synthesize destinationDeviceUUID=_destinationDeviceUUID;
 @property(readonly, nonatomic) NSUUID *requestUUID; // @synthesize requestUUID=_requestUUID;
-- (void).cxx_destruct;
 - (_Bool)matchesCloudTab:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

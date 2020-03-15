@@ -16,8 +16,8 @@
 }
 
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
-@property(readonly) MLNonMaximumSuppressionParameters *parameters; // @synthesize parameters=_parameters;
 - (void).cxx_destruct;
+@property(readonly) MLNonMaximumSuppressionParameters *parameters; // @synthesize parameters=_parameters;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithParameters:(id)arg1 modelDescription:(id)arg2 configuration:(id)arg3 error:(id *)arg4;
 

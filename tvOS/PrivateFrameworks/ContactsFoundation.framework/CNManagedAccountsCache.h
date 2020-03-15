@@ -15,9 +15,9 @@
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) CNCache *accountsCache; // @synthesize accountsCache=_accountsCache;
-- (void).cxx_destruct;
 - (void)clearCache;
 - (id)accountsForIdentifiers:(id)arg1;
 - (id)accountForIdentifier:(id)arg1;

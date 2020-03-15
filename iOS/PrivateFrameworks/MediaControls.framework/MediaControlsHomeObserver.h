@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     id <MediaControlsHomeObserverDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MediaControlsHomeObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MediaControlsHomeObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;
 - (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;

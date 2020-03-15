@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     NSArray *_debugViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *debugViews; // @synthesize debugViews=_debugViews;
 @property(retain, nonatomic) UIFocusContainerGuide *focusContainerGuide; // @synthesize focusContainerGuide=_focusContainerGuide;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -61,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) _Bool havePrepared; // @synthesize havePrepared=_havePrepared;
 @property(readonly, nonatomic) _Bool compactMetrics; // @synthesize compactMetrics=_compactMetrics;
-- (void).cxx_destruct;
 - (void)_installGradientLayerMaskForClippingView:(id)arg1;
 - (void)_configureBackground;
 - (void)changeAppearance;
@@ -117,6 +117,7 @@ __attribute__((visibility("hidden")))
 - (void)prepare;
 
 // Remaining properties
+@property(readonly, nonatomic) struct CGRect bounds;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

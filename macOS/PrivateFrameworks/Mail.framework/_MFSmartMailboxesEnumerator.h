@@ -15,10 +15,10 @@
     NSEnumerator *_currentMailboxEnumerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSEnumerator *currentMailboxEnumerator; // @synthesize currentMailboxEnumerator=_currentMailboxEnumerator;
 @property(nonatomic) unsigned long long nextMailboxIndex; // @synthesize nextMailboxIndex=_nextMailboxIndex;
 @property(readonly, copy, nonatomic) NSArray *smartMailboxes; // @synthesize smartMailboxes=_smartMailboxes;
-- (void).cxx_destruct;
 - (id)nextObject;
 - (id)init;
 - (id)initWithSmartMailboxes:(id)arg1;

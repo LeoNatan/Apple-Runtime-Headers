@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDate *_expirationDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) SSLookupItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 
 @end
 

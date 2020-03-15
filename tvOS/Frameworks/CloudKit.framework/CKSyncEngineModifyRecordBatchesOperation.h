@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(nonatomic) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType populateNextBatchBlock; // @synthesize populateNextBatchBlock=_populateNextBatchBlock;
 @property(retain, nonatomic) CKOperationGroup *group; // @synthesize group=_group;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)operationToModifyBatch:(id)arg1;
 - (void)addNextModifyOperationOrFinishIfNoRemainingWork;
 - (id)cancelledError;

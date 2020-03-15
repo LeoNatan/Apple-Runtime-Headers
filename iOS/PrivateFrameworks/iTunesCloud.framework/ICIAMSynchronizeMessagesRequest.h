@@ -23,11 +23,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool activeCommandsOnly; // @synthesize activeCommandsOnly=_activeCommandsOnly;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(nonatomic) long long dSID; // @synthesize dSID=_dSID;
 @property(nonatomic) long long commandSerialNumber; // @synthesize commandSerialNumber=_commandSerialNumber;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,8 +16,8 @@
 
 + (id)dbFileName;
 + (id)sharedCache;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 - (void)removeContainerID:(id)arg1;
 - (void)setContainerInfo:(id)arg1 forContainerID:(id)arg2 accountID:(id)arg3;
 - (id)containerInfoForContainerID:(id)arg1 accountID:(id)arg2;

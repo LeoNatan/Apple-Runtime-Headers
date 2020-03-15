@@ -88,9 +88,9 @@
 + (id)anyInLibrary:(id)arg1 predicate:(id)arg2;
 + (id)aggregateQueryWithUnitQuery:(id)arg1 foreignPersistentIDProperty:(id)arg2;
 + (id)replacerWithProperties:(id)arg1 library:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) long long persistentID; // @synthesize persistentID=_persistentID;
 @property __weak ML3MusicLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (void)incrementRevision;
 - (BOOL)deleteFromLibrary;
 - (void)didChangeValueForProperties:(id)arg1;

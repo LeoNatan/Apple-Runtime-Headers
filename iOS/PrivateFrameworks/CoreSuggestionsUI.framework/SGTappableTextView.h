@@ -22,8 +22,8 @@
     id <SGTappableTextViewDelegate> _tappableDelegate;
 }
 
-@property(nonatomic) __weak id <SGTappableTextViewDelegate> tappableDelegate; // @synthesize tappableDelegate=_tappableDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SGTappableTextViewDelegate> tappableDelegate; // @synthesize tappableDelegate=_tappableDelegate;
 - (void)_updateCurrentAppearance;
 - (id)_textColor;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

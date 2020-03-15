@@ -22,10 +22,10 @@
 + (id)predicateWithServiceType:(id)arg1;
 + (id)anyServiceTypePredicateIncludingChildServices;
 + (id)anyServiceTypePredicate;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL includeChildServices; // @synthesize includeChildServices=_includeChildServices;
 @property(readonly, copy, nonatomic) NSSet *serviceSubtypes; // @synthesize serviceSubtypes=_serviceSubtypes;
 @property(readonly, copy, nonatomic) NSSet *serviceTypes; // @synthesize serviceTypes=_serviceTypes;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

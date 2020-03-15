@@ -15,10 +15,10 @@
     NSArray *_resultSavedRecordZones;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resultSavedRecordZones; // @synthesize resultSavedRecordZones=_resultSavedRecordZones;
 @property(copy, nonatomic) CDUnknownBlockType saveRecordZonesCompletionBlock; // @synthesize saveRecordZonesCompletionBlock=_saveRecordZonesCompletionBlock;
 @property(copy, nonatomic) NSArray *recordZonesToSave; // @synthesize recordZonesToSave=_recordZonesToSave;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

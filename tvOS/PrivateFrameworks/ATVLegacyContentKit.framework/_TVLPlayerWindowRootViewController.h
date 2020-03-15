@@ -14,8 +14,8 @@
     TVLPlayerWindow *_playerWindow;
 }
 
-@property(nonatomic) __weak TVLPlayerWindow *playerWindow; // @synthesize playerWindow=_playerWindow;
 - (void).cxx_destruct;
+@property(nonatomic) __weak TVLPlayerWindow *playerWindow; // @synthesize playerWindow=_playerWindow;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 

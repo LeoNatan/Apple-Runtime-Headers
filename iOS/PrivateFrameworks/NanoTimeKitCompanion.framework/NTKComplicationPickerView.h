@@ -25,6 +25,7 @@
     struct CGPoint _curvedCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *complicationSlot; // @synthesize complicationSlot=_complicationSlot;
 @property(readonly, nonatomic) struct CGPoint curvedCenter; // @synthesize curvedCenter=_curvedCenter;
 @property(readonly, nonatomic) _Bool curvedInterior; // @synthesize curvedInterior=_curvedInterior;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) double curvedRadius; // @synthesize curvedRadius=_curvedRadius;
 @property(nonatomic) __weak id <NTKComplicationPickerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_detachComplicationDisplays;
 - (void)_reloadLayoutForComplication:(id)arg1;
 - (void)_loadComplication:(id)arg1;

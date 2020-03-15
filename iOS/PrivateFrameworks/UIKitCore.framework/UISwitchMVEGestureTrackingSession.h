@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)gestureIsInEndState:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool lastCommitedOnValue; // @synthesize lastCommitedOnValue=_lastCommitedOnValue;
 @property(readonly, nonatomic) _Bool pendingDisplayedOnValue; // @synthesize pendingDisplayedOnValue=_pendingDisplayedOnValue;
 @property(readonly, nonatomic) UIGestureRecognizer *pendingDisplayedOnValueInitiatingGesture; // @synthesize pendingDisplayedOnValueInitiatingGesture=_pendingDisplayedOnValueInitiatingGesture;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double naturalLayoutDirection; // @synthesize naturalLayoutDirection=_naturalLayoutDirection;
 @property(nonatomic) _Bool displayedOnValue; // @synthesize displayedOnValue=_displayedOnValue;
 @property(nonatomic) __weak UIView<UISwitchMVEGestureTrackingSessionElement> *visualElement; // @synthesize visualElement=_visualElement;
-- (void).cxx_destruct;
 - (void)_updateMovementVectorForPanInitiatedChanges;
 - (_Bool)_isMovementDirectionAndMagnitudeEnoughToPerformOnOffChange:(double)arg1;
 - (_Bool)_isMovementDirectionTrackableForPossibleOnOffChange:(double)arg1;

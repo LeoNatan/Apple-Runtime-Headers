@@ -32,6 +32,7 @@
     UXViewController *_transientViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXViewController *transientViewController; // @synthesize transientViewController=_transientViewController;
 @property(retain, nonatomic) UXTabBarItemSegment *selectedItemSegment; // @synthesize selectedItemSegment=_selectedItemSegment;
 @property(nonatomic) BOOL viewControllerTransitionInProgress; // @synthesize viewControllerTransitionInProgress=_viewControllerTransitionInProgress;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(nonatomic) __weak UXViewController *selectedViewController; // @synthesize selectedViewController=_selectedViewController;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)populateShortcutMenuItemsStartingAtIndex:(unsigned long long)arg1 ofMenu:(id)arg2 useSeparators:(BOOL)arg3;
 - (id)contentRepresentingViewController;
 - (id)_childViewControllerAbleToNavigateToDestination:(id)arg1;

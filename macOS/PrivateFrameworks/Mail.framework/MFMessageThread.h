@@ -38,8 +38,8 @@
 + (id)findNewestReceivedMessageInMessages:(id)arg1;
 + (id)findNewestMessageInMessages:(id)arg1;
 + (id)messagesByExpandingThreads:(id)arg1;
-@property BOOL isThreadOpen; // @synthesize isThreadOpen=_isThreadOpen;
 - (void).cxx_destruct;
+@property BOOL isThreadOpen; // @synthesize isThreadOpen=_isThreadOpen;
 - (CDUnknownBlockType)_threadComparator;
 @property(readonly, copy, nonatomic) NSSet *allContainingLabelsAndMailboxes;
 - (id)gmailLabels;

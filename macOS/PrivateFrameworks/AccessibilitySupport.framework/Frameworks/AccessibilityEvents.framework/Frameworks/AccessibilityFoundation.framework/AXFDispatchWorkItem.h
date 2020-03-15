@@ -12,9 +12,9 @@
     unsigned long long __attributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long _attributes; // @synthesize _attributes=__attributes;
 @property(readonly, nonatomic) CDUnknownBlockType _block; // @synthesize _block=___block;
-- (void).cxx_destruct;
 - (void)notifyWithQueue:(id)arg1 workItem:(id)arg2;
 - (void)notifyWithQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)waitWithTimeout:(long long)arg1;

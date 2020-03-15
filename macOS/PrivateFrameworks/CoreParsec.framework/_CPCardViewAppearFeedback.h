@@ -20,11 +20,11 @@
     NSString *_fbr;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(nonatomic) unsigned int level; // @synthesize level=_level;
 @property(retain, nonatomic) _CPCardForFeedback *card; // @synthesize card=_card;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

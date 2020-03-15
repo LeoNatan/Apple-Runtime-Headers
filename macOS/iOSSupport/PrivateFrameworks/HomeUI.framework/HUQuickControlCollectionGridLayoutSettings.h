@@ -25,6 +25,7 @@
     unsigned long long _titlePosition;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long titlePosition; // @synthesize titlePosition=_titlePosition;
 @property(nonatomic) double sectionTopPadding; // @synthesize sectionTopPadding=_sectionTopPadding;
 @property(nonatomic) unsigned long long preferredLayoutStyle; // @synthesize preferredLayoutStyle=_preferredLayoutStyle;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *sectionHeader; // @synthesize sectionHeader=_sectionHeader;
 @property(retain, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(nonatomic) unsigned long long sectionNumber; // @synthesize sectionNumber=_sectionNumber;
-- (void).cxx_destruct;
 
 @end
 

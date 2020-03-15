@@ -24,11 +24,11 @@
     id <SiriTVUICollectionViewCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SiriTVUICollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_updateTextForFocus:(_Bool)arg1;
 - (void)setImage:(id)arg1 animated:(_Bool)arg2;
 @property(retain, nonatomic) UIImage *image;

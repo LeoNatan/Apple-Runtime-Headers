@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *page; // @synthesize page=_page;
 @property(retain, nonatomic) NSNumber *hashIdentifier; // @synthesize hashIdentifier=_hashIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithHashIdentifier:(id)arg1 page:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

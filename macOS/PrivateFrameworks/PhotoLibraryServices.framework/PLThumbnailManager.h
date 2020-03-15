@@ -24,9 +24,9 @@
 + (BOOL)cameraPreviewWellSupportedOnCurrentDevice;
 + (id)cameraPreviewWellImageQueue;
 + (id)supportedThumbnailFormats;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *slowPersistenceManagers; // @synthesize slowPersistenceManagers=_slowPersistenceManagers;
 @property(retain, nonatomic) id observerToken; // @synthesize observerToken=_observerToken;
-- (void).cxx_destruct;
 - (id)thumbManagerForFormatID:(unsigned short)arg1;
 - (unsigned short)_supportedThumbnailFormatIDFromGeneralFormatID:(unsigned short)arg1;
 - (id)_dataForAsset:(id)arg1 format:(unsigned short)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 imageDataOffset:(int *)arg8 imageDataFormat:(unsigned short *)arg9;

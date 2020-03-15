@@ -19,10 +19,10 @@
     SBWallpaperEffectView *_wallpaperEffectView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fakeWallpaperVisible; // @synthesize fakeWallpaperVisible=_fakeWallpaperVisible;
 @property(retain, nonatomic) SBWallpaperEffectView *wallpaperEffectView; // @synthesize wallpaperEffectView=_wallpaperEffectView;
 @property(retain, nonatomic) CSVibrantWallpaperButton *logoutButtonView; // @synthesize logoutButtonView=_logoutButtonView;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_logoutButtonInsets;
 - (void)_updateLogoutButtonForLegibilitySettings;
 - (void)_layoutLogoutButtonView;

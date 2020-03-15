@@ -14,9 +14,9 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 
 @end

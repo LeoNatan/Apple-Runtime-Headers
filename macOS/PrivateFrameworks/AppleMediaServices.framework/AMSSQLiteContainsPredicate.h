@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 + (id)doesNotContainPredicateWithProperty:(id)arg1 values:(id)arg2;
 + (id)containsPredicateWithProperty:(id)arg1 query:(id)arg2 queryProperty:(id)arg3;
 + (id)containsPredicateWithProperty:(id)arg1 values:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) NSString *queryProperty; // @synthesize queryProperty=_queryProperty;
 @property(readonly, nonatomic) AMSSQLiteQuery *query; // @synthesize query=_query;
 @property(readonly, nonatomic, getter=isNegative) BOOL negative; // @synthesize negative=_negative;
-- (void).cxx_destruct;
 - (id)SQLForEntityClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)applyBinding:(id)arg1 atIndex:(inout int *)arg2;

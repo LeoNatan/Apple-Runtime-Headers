@@ -15,8 +15,8 @@
     NSCountedSet *_retainedObjects;
 }
 
-@property(nonatomic) id <MSMediaStreamDaemonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <MSMediaStreamDaemonDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)mayDownloadPersonID:(id)arg1;
 - (void)didReceivePushNotificationForPersonID:(id)arg1;
 - (void)didReceiveGlobalResetSyncForPersonID:(id)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (Class)authorizationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *authorizations; // @synthesize authorizations=_authorizations;
 @property(retain, nonatomic) NSData *objectUUID; // @synthesize objectUUID=_objectUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

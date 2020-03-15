@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSUUID *_currentDropInsertionShadowUpdateIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int sessionKind; // @synthesize sessionKind=_sessionKind;
 @property(retain, nonatomic) NSUUID *currentDropInsertionShadowUpdateIdentifier; // @synthesize currentDropInsertionShadowUpdateIdentifier=_currentDropInsertionShadowUpdateIdentifier;
 @property(retain, nonatomic) NSMutableArray *_reorderedItems; // @synthesize _reorderedItems=__reorderedItems;
-- (void).cxx_destruct;
 - (_Bool)_deleteShadowUpdateWithIdentifier:(id)arg1;
 - (void)_updateCellIfNeeded:(id)arg1 atIndexPath:(id)arg2;
 - (id)_shadowUpdateReuseIdentifierForItemItemAtIndexPath:(id)arg1;

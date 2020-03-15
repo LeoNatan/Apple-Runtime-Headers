@@ -31,9 +31,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSpeakerRouteEnabled) _Bool speakerRouteEnabled; // @synthesize speakerRouteEnabled=_speakerRouteEnabled;
 @property(nonatomic, getter=isBluetoothAvailableAndEnabled) _Bool bluetoothAvailableAndEnabled; // @synthesize bluetoothAvailableAndEnabled=_bluetoothAvailableAndEnabled;
-- (void).cxx_destruct;
 - (void)_updateSpeakerRouteEnabled;
 - (void)_postPairedBluetoothAudioDevicesChangedNotification;
 - (void)_refreshBluetoothDevices;

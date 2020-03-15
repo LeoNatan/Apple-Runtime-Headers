@@ -13,8 +13,8 @@
     NSMutableSet *_addedChildren;
 }
 
-@property(retain, nonatomic) NSMutableSet *addedChildren; // @synthesize addedChildren=_addedChildren;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableSet *addedChildren; // @synthesize addedChildren=_addedChildren;
 - (struct CGSize)maxSize;
 - (BOOL)drawableAttachment:(id)arg1 withLayout:(id)arg2 shouldPositionIterativelyInColumn:(id)arg3;
 - (void)drawableAttachment:(id)arg1 didFinalizePosition:(struct CGPoint)arg2;

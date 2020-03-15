@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     WebBookmark *_bookmark;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(readonly, nonatomic) WebBookmarkCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2;
 

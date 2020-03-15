@@ -36,6 +36,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadFilterSockets; // @synthesize payloadFilterSockets=_payloadFilterSockets;
 @property(copy, nonatomic) NSNumber *payloadFilterBrowsers; // @synthesize payloadFilterBrowsers=_payloadFilterBrowsers;
 @property(copy, nonatomic) CEMAnyPayload *payloadVendorConfig; // @synthesize payloadVendorConfig=_payloadVendorConfig;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSArray *payloadPermittedURLs; // @synthesize payloadPermittedURLs=_payloadPermittedURLs;
 @property(copy, nonatomic) NSNumber *payloadAutoFilterEnabled; // @synthesize payloadAutoFilterEnabled=_payloadAutoFilterEnabled;
 @property(copy, nonatomic) NSString *payloadFilterType; // @synthesize payloadFilterType=_payloadFilterType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

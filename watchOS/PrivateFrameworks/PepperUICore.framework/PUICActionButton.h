@@ -16,10 +16,10 @@
 }
 
 + (void)_setup;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *leftAccessoryView; // @synthesize leftAccessoryView=_leftAccessoryView;
 @property(nonatomic) int actionItemType; // @synthesize actionItemType=_actionItemType;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)_updateBackgroundImage;
 - (void)_updateButtonTintColor;
 - (void)setEnabled:(_Bool)arg1;

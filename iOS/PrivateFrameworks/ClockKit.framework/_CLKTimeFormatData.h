@@ -24,6 +24,7 @@
 + (id)_timeFormatDataAccessLock;
 + (id)instanceForCurrentLocale;
 + (void)resetTimeFormatData;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumberFormatter *doubleWidthNumberFormatter; // @synthesize doubleWidthNumberFormatter=_doubleWidthNumberFormatter;
 @property(readonly, nonatomic) NSNumberFormatter *singleWidthNumberFormatter; // @synthesize singleWidthNumberFormatter=_singleWidthNumberFormatter;
 @property(readonly, nonatomic) NSString *formatMin; // @synthesize formatMin=_formatMin;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSString *formatHourMin; // @synthesize formatHourMin=_formatHourMin;
 @property(readonly, nonatomic) NSString *formatHourMinSec; // @synthesize formatHourMinSec=_formatHourMinSec;
 @property(readonly, nonatomic) NSString *formatHourMinSecSubsec; // @synthesize formatHourMinSecSubsec=_formatHourMinSecSubsec;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -47,6 +47,7 @@
 
 + (Class)_defaultTransitionControllerClass;
 + (id)_widthDefaultsKeyForAutosaveName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSWindow *observedWindow; // @synthesize observedWindow=_observedWindow;
 @property(readonly, nonatomic) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 @property(readonly, nonatomic) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) UXViewController<UXSourceList> *sourceListViewController; // @synthesize sourceListViewController=_sourceListViewController;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) long long preferredStyle; // @synthesize preferredStyle=_preferredStyle;
-- (void).cxx_destruct;
 - (id)fallbackNavigationDestination;
 - (void)_setupDelegateForNavigationController:(id)arg1 operation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (BOOL)navigationController:(id)arg1 shouldBeginInteractivePopFromViewController:(id)arg2 toViewController:(id)arg3;

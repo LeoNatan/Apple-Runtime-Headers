@@ -32,8 +32,8 @@
 + (id)keychainEntryForUserName:(id)arg1;
 + (id)googleTokenForEmailAddress:(id)arg1 shouldCreateToken:(BOOL)arg2;
 + (id)shared;
-@property(retain) NSString *currentToken; // @synthesize currentToken=_currentToken;
 - (void).cxx_destruct;
+@property(retain) NSString *currentToken; // @synthesize currentToken=_currentToken;
 - (void)setGooglePlugin:(id)arg1;
 - (void)closeSheet;
 - (void)dropSheet:(id)arg1;

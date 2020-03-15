@@ -44,6 +44,7 @@
 + (BOOL)isEditableTextElement:(id)arg1;
 + (id)sharedMultipleLinesTracker;
 + (id)sharedSingleLineTracker;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXFThrottler *_textThrotter; // @synthesize _textThrotter=__textThrotter;
 @property(nonatomic) BOOL _singleLineMode; // @synthesize _singleLineMode=__singleLineMode;
 @property(retain, nonatomic) AXKElementController *_lastTrackedElement; // @synthesize _lastTrackedElement=__lastTrackedElement;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSMutableArray *_listeners; // @synthesize _listeners=__listeners;
 @property(retain, nonatomic) AXKKeyboardFocusTracker *_keyFocusTracker; // @synthesize _keyFocusTracker=__keyFocusTracker;
 @property(retain) AXKTextElementEditListenerElementInfo *_elementInfo; // @synthesize _elementInfo=__elementInfo;
-- (void).cxx_destruct;
 - (void)keyboardFocusTracker:(id)arg1 keyboardFocusedElementChanged:(id)arg2;
 - (void)keyboardFocusTracker:(id)arg1 keyboardFocusedApplicationChanged:(id)arg2;
 - (void)_performAsyncOnTrackerQueue:(CDUnknownBlockType)arg1;

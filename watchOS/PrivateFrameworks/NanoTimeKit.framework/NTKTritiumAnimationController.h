@@ -24,9 +24,9 @@
     id <NTKTritiumAnimationControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKTritiumAnimationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_timeAnimationForFaceView:(id)arg1 fromFrame:(id)arg2;
 - (id)_createTritiumAnimationWithViewProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_startAnimationWithTritiumVisible:(_Bool)arg1 animation:(unsigned int)arg2 viewProvider:(id)arg3 completion:(CDUnknownBlockType)arg4;

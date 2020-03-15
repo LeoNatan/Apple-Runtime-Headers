@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 
 + (int)isPredominatelyDownload;
 + (id)_globalOperationCallbackQueueForQOS:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didAttemptDugongKeyRoll; // @synthesize didAttemptDugongKeyRoll=_didAttemptDugongKeyRoll;
 // Error parsing type for property pcsWaitCount:
 // Property attributes: TAi,N,V_pcsWaitCount
@@ -77,7 +78,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
-- (void).cxx_destruct;
 - (id)analyticsPayload;
 - (id)dugongKeyRollAnalyticsPayloadWithError:(id)arg1;
 - (id)baseOperationAndErrorInfoCoreAnalyticsPayloadWithError:(id)arg1;

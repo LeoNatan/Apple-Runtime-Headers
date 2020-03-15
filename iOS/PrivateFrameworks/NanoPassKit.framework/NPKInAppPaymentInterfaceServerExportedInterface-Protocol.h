@@ -9,6 +9,8 @@
 @class NSError, NSNumber, NSString, PKPaymentRequest, PKPeerPaymentQuote, PKRemotePaymentRequest;
 
 @protocol NPKInAppPaymentInterfaceServerExportedInterface <NSObject>
+- (void)tearDownPasscodeUpgradeRequestWithPasscodeChanged:(_Bool)arg1 error:(NSError *)arg2;
+- (void)presentPasscodeUpgradeRequestWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)clearInAppInterfaceForSkeletonPeerPaymentQuote:(PKPeerPaymentQuote *)arg1 withError:(NSError *)arg2;
 - (void)showInAppInterfaceWithSkeletonPeerPaymentQuote:(PKPeerPaymentQuote *)arg1 activationHandler:(void (^)(_Bool))arg2;
 - (void)showInAppInterfaceWithRemotePaymentRequest:(PKRemotePaymentRequest *)arg1 activationHandler:(void (^)(_Bool))arg2;

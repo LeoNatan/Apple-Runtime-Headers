@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UIHostedWindow *_window;
 }
 
-@property(nonatomic) __weak _UIHostedWindow *_window; // @synthesize _window;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _UIHostedWindow *_window; // @synthesize _window;
 - (void)_updateActiveFocusLayers;
 - (void)_causeTintColorToUpdate;
 - (id)initWithWindow:(id)arg1;

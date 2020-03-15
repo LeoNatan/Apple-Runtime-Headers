@@ -15,10 +15,10 @@
     NSArray *_keyValueSectionTitles;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keyValueSectionTitles; // @synthesize keyValueSectionTitles=_keyValueSectionTitles;
 @property(retain, nonatomic) NSArray *keyValueSections; // @synthesize keyValueSections=_keyValueSections;
 @property(retain, nonatomic) id certificateTrust; // @synthesize certificateTrust=_certificateTrust;
-- (void).cxx_destruct;
 - (void)preferredContentSizeChanged:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

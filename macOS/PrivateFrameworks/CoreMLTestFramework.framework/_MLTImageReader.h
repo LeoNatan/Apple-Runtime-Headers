@@ -14,9 +14,9 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 error:(id *)arg2;
 - (id)initWithImageAtPath:(id)arg1 error:(id *)arg2;
 - (struct __CVBuffer *)createGrayscalePixelBuffer:(id *)arg1;

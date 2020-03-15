@@ -21,6 +21,7 @@
     NSString *_stringType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *stringType; // @synthesize stringType=_stringType;
 @property(readonly, nonatomic) FCColor *dark_style_background_color; // @synthesize dark_style_background_color=_dark_style_background_color;
 @property(readonly, nonatomic) FCColor *background_color; // @synthesize background_color=_background_color;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) FCColor *foreground_color; // @synthesize foreground_color=_foreground_color;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) unsigned long long storyType; // @synthesize storyType=_storyType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithConfigDictionary:(id)arg1;

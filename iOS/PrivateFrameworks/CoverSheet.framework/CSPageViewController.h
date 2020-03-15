@@ -22,11 +22,11 @@
 + (unsigned long long)requiredCapabilities;
 + (_Bool)isAvailableForConfiguration;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic) __weak id <CSCoverSheetViewControllerProtocol> coverSheetViewController; // @synthesize coverSheetViewController=_coverSheetViewController;
 @property(retain, nonatomic) CSLayoutStrategy *layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
-- (void).cxx_destruct;
 - (void)handleAction:(id)arg1 fromSender:(id)arg2;
 @property(readonly, nonatomic) long long presentationAltitude;
 @property(readonly, nonatomic) long long participantState;

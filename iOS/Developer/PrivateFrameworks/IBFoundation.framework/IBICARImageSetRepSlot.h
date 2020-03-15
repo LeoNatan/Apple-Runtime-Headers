@@ -20,8 +20,8 @@
 + (id)slotFilter;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
-@property(readonly, nonatomic) IBICIdiom *idiom; // @synthesize idiom=_idiom;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBICIdiom *idiom; // @synthesize idiom=_idiom;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (id)detailAreaPath;
 - (long long)compareDisplayOrder:(id)arg1;

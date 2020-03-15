@@ -16,31 +16,31 @@
 {
     NSUUID *_uuid;
     HMDMediaSystem *_mediaSystem;
-    struct NSDictionary *_currentSymptoms;
+    NSDictionary *_currentSymptoms;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMFMessageDispatcher *_msgDispatcher;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(copy, nonatomic) NSDictionary *currentSymptoms; // @synthesize currentSymptoms=_currentSymptoms;
 @property(readonly, nonatomic) __weak HMDMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSSet *mergedSymptoms;
-- (void)_updateBackingStoreModelWithNewSymptoms:(struct NSDictionary *)arg1;
-- (void)handleMediaSystemSymptoms:(struct NSDictionary *)arg1 message:(id)arg2;
+- (void)_updateBackingStoreModelWithNewSymptoms:(id)arg1;
+- (void)handleMediaSystemSymptoms:(id)arg1 message:(id)arg2;
 - (void)_handleNewDiscoveredSymptoms:(id)arg1 forAccessory:(id)arg2;
 - (void)handleNewDiscoveredSymptoms:(id)arg1 forAccessory:(id)arg2;
 - (void)_refreshCurrentDeviceSymptoms;
 - (void)refreshCurrentDeviceSymptoms;
 - (void)configureWithWorkQueue:(id)arg1 messageDispatcher:(id)arg2;
 - (id)logIdentifier;
-- (struct NSDictionary *)_initializePlaceholderSymptomsDict:(id)arg1;
+- (id)_initializePlaceholderSymptomsDict:(id)arg1;
 - (id)initWithMediaSystem:(id)arg1 symptoms:(id)arg2;
 
 // Remaining properties

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSArray *_dataModels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dataModels; // @synthesize dataModels=_dataModels;
 @property(retain, nonatomic) VUIFeedbackTableLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (struct CGSize)_calculateMaxHeaderThatFits:(struct CGSize)arg1;
 - (struct CGSize)_calculateMaxDescriptionThatFit:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

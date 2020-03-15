@@ -17,9 +17,10 @@
 }
 
 + (id)sharedLogger;
-@property(readonly, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void)_sendEvent:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)didReceiveWebKitAnalyticsEventWithName:(id)arg1 payload:(id)arg2;
 - (void)didRetrieveNumberOfFrequentlyVisitedSites:(unsigned long long)arg1;
 - (void)didRetrieveNumberOfFavorites:(unsigned long long)arg1;
 - (void)didToggleShowLessButtonForSection:(long long)arg1;

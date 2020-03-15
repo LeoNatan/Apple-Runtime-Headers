@@ -16,6 +16,7 @@
     struct _NSRange _titleNextToImageRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange titleNextToImageRange; // @synthesize titleNextToImageRange=_titleNextToImageRange;
 - (void)setExcerptLineHeight:(double)arg1;
 - (double)excerptLineHeight;
@@ -23,7 +24,6 @@
 - (double)excerptFontSize;
 - (void)setExcerptFontName:(id)arg1;
 - (id)excerptFontName;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect titleBellowImageFrame;
 @property(nonatomic) struct CGRect titleNextToImageFrame;
 - (_Bool)isEqual:(id)arg1;

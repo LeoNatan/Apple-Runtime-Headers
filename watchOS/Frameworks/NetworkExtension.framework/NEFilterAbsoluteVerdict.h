@@ -11,6 +11,7 @@
 
 @interface NEFilterAbsoluteVerdict : NEFilterVerdict <NSSecureCoding, NSCopying>
 {
+    int _statisticsReportFrequency;
     unsigned long long _inboundPassOffset;
     unsigned long long _inboundPeekOffset;
     unsigned long long _outboundPassOffset;
@@ -18,11 +19,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property int statisticsReportFrequency; // @synthesize statisticsReportFrequency=_statisticsReportFrequency;
 @property unsigned long long outboundPeekOffset; // @synthesize outboundPeekOffset=_outboundPeekOffset;
 @property unsigned long long outboundPassOffset; // @synthesize outboundPassOffset=_outboundPassOffset;
 @property unsigned long long inboundPeekOffset; // @synthesize inboundPeekOffset=_inboundPeekOffset;
 @property unsigned long long inboundPassOffset; // @synthesize inboundPassOffset=_inboundPassOffset;
-- (id)description;
+- (int)filterAction;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (id)initWithDrop:(_Bool)arg1 inboundPassOffset:(unsigned long long)arg2 inboundPeekOffset:(unsigned long long)arg3 outboundPassOffset:(unsigned long long)arg4 outboundPeekOffset:(unsigned long long)arg5;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

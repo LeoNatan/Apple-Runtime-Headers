@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
     id <CWFXPCRequestProxyDelegate> _delegate;
 }
 
-@property(retain) id <CWFXPCRequestProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <CWFXPCRequestProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)__getBSSIDHash:(id)arg1 XPCConnection:(id)arg2;
 - (void)__getBSSID:(id)arg1 XPCConnection:(id)arg2;
 - (void)__getSSIDHash:(id)arg1 XPCConnection:(id)arg2;

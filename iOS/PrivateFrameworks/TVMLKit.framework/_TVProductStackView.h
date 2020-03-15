@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)productStackViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *stackElement; // @synthesize stackElement=_stackElement;
 @property(retain, nonatomic) UIView *initialFocusView; // @synthesize initialFocusView=_initialFocusView;
 @property(retain, nonatomic) UIView *buttonsRowView; // @synthesize buttonsRowView=_buttonsRowView;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *descriptionView; // @synthesize descriptionView=_descriptionView;
 @property(retain, nonatomic) NSArray *viewsAboveDescription; // @synthesize viewsAboveDescription=_viewsAboveDescription;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)layoutSubviews;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

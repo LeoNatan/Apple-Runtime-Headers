@@ -16,9 +16,9 @@
     long long _dataclass;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long dataclass; // @synthesize dataclass=_dataclass;
 @property(readonly, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

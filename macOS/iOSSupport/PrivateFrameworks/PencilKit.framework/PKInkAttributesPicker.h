@@ -18,9 +18,9 @@
     _PKInkAttributesPickerView *_pickerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PKInkAttributesPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain, nonatomic) id <PKInkAttributesPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_inkAttributesPickerViewUserDidEndDraggingSlider:(id)arg1;
 - (void)_inkAttributesPickerViewUserDidStartDraggingSlider:(id)arg1;
 - (void)inkAttributesPickerViewDidChangeInkOpacity:(id)arg1;

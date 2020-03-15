@@ -16,8 +16,8 @@
 + (void)preloadMiroFrameworkIfNeeded;
 + (void *)_loadMiroFrameworkIfNeeded;
 + (void)initialize;
-@property(readonly, nonatomic) NSSet *defaultAssets; // @synthesize defaultAssets=_defaultAssets;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *defaultAssets; // @synthesize defaultAssets=_defaultAssets;
 - (id)diagnosticsItemProvider;
 - (_Bool)canPlayMovie;
 - (id)movieViewController;

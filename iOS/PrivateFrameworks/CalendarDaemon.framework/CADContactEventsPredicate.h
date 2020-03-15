@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSSet *contactNameComponents; // @synthesize contactNameComponents=_contactNameComponents;
 @property(retain) NSSet *contactEmailAddresses; // @synthesize contactEmailAddresses=_contactEmailAddresses;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)predicateFormat;
 - (id)defaultPropertiesToLoad;

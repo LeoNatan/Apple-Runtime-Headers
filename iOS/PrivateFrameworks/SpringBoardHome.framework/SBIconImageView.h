@@ -29,6 +29,7 @@
     double _overlayAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double overlayAlpha; // @synthesize overlayAlpha=_overlayAlpha;
 @property(nonatomic, getter=isJittering) _Bool jittering; // @synthesize jittering=_jittering;
 @property(nonatomic) _Bool showsSquareCorners; // @synthesize showsSquareCorners=_showsSquareCorners;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak SBIconView *iconView; // @synthesize iconView=_iconView;
 @property(copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, nonatomic) SBIcon *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

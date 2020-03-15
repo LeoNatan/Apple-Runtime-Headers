@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <SpringBoard/SBSystemGestureRecognizerDelegate-Protocol.h>
+#import <SpringBoard/SBTouchTemplateGestureRecognizerDelegate-Protocol.h>
 
 @class CSCoverSheetDismissGestureSettings, NSString, UIGestureRecognizer, UIPanGestureRecognizer, UIViewController;
 @protocol SBCoverSheetSystemGestureDelegatePositionProviding;
 
-@interface SBCoverSheetSystemGesturesDelegate : NSObject <SBSystemGestureRecognizerDelegate>
+@interface SBCoverSheetSystemGesturesDelegate : NSObject <SBSystemGestureRecognizerDelegate, SBTouchTemplateGestureRecognizerDelegate>
 {
     int _syntheticAppearState;
     id <SBCoverSheetSystemGestureDelegatePositionProviding> _positionProvider;
@@ -23,6 +24,7 @@
     CSCoverSheetDismissGestureSettings *_dismissGestureSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSCoverSheetDismissGestureSettings *dismissGestureSettings; // @synthesize dismissGestureSettings=_dismissGestureSettings;
 @property(nonatomic) __weak UIGestureRecognizer *preemptingGestureRecognizer; // @synthesize preemptingGestureRecognizer=_preemptingGestureRecognizer;
 @property(nonatomic) __weak UIGestureRecognizer *dismissAddendumGestureRecognizer; // @synthesize dismissAddendumGestureRecognizer=_dismissAddendumGestureRecognizer;
@@ -31,7 +33,6 @@
 @property(nonatomic) int syntheticAppearState; // @synthesize syntheticAppearState=_syntheticAppearState;
 @property(retain, nonatomic) UIPanGestureRecognizer *presentGestureRecognizer; // @synthesize presentGestureRecognizer=_presentGestureRecognizer;
 @property(nonatomic) __weak id <SBCoverSheetSystemGestureDelegatePositionProviding> positionProvider; // @synthesize positionProvider=_positionProvider;
-- (void).cxx_destruct;
 - (_Bool)isAnyGestureActivelyRecognized;
 - (_Bool)_isGestureActivelyRecognized:(id)arg1;
 - (_Bool)_canPresentGestureBegin;
@@ -42,8 +43,12 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
-- (_Bool)isPresentGestureActive;
+- (void)setPresentGestureFailureRequirements:(id)arg1;
+- (_Bool)_areAnyGesturesRecognizedInSet:(id)arg1;
+- (id)dismissGestures;
 - (_Bool)isDismissGestureActive;
+- (id)presentGestures;
+- (_Bool)isPresentGestureActive;
 - (id)initWithViewController:(id)arg1 dismissGestureRecognizer:(id)arg2 dismissAddendumGestureRecognizer:(id)arg3 dismissalPreemptingGestureRecognizer:(id)arg4;
 
 // Remaining properties

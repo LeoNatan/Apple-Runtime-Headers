@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)lastDocumentCouldShowUnifiedField;
+- (void).cxx_destruct;
 @property(retain) NSData *pdfDataForExport; // @synthesize pdfDataForExport=_pdfDataForExport;
 @property(retain) NSConditionLock *waitingForPDFLock; // @synthesize waitingForPDFLock=_waitingForPDFLock;
 @property BOOL isSavingAsPDF; // @synthesize isSavingAsPDF=_isSavingAsPDF;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int restorationState; // @synthesize restorationState=_restorationState;
 @property(readonly, nonatomic) unsigned long long browsingMode; // @synthesize browsingMode=_browsingMode;
 @property(readonly, nonatomic, getter=isPopupWindow) BOOL popupWindow; // @synthesize popupWindow=_popupWindow;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL wasRestored;
 - (void)restoreDocumentWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) unsigned long long numberOfBrowserViewControllers;

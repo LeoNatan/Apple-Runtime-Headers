@@ -13,7 +13,7 @@
     PMLTrackerMockAdapter *_adapter;
 }
 
-+ (id)mockTrackerForPlanId:(struct NSString *)arg1;
++ (id)mockTrackerForPlanId:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly) NSArray *trackedFeatureMatrices; // @dynamic trackedFeatureMatrices;
 @property(readonly) NSArray *trackedObjectiveFeatures; // @dynamic trackedObjectiveFeatures;

@@ -21,6 +21,7 @@
 
 + (id)configurationWithViewControllerClass:(Class)arg1 cellConfigurationClass:(Class)arg2;
 + (id)configurationWithViewControllerClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class navigationControllerClass; // @synthesize navigationControllerClass=_navigationControllerClass;
 @property(nonatomic) _Bool wantsNavigationController; // @synthesize wantsNavigationController=_wantsNavigationController;
 @property(nonatomic) _Bool wantsModalPresentation; // @synthesize wantsModalPresentation=_wantsModalPresentation;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) MPUDataSourceConfiguration *dataSourceConfiguration; // @synthesize dataSourceConfiguration=_dataSourceConfiguration;
 @property(readonly, nonatomic) Class viewControllerClass; // @synthesize viewControllerClass=_viewControllerClass;
 @property(readonly, nonatomic) Class cellConfigurationClass; // @synthesize cellConfigurationClass=_cellConfigurationClass;
-- (void).cxx_destruct;
 - (id)initWithViewControllerClass:(Class)arg1 cellConfigurationClass:(Class)arg2;
 - (id)initWithViewControllerClass:(Class)arg1;
 

@@ -28,6 +28,7 @@
 
 + (Class)ccType;
 + (Class)toType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includeAttachments; // @synthesize includeAttachments=_includeAttachments;
 @property(retain, nonatomic) NSString *referenceMessageId; // @synthesize referenceMessageId=_referenceMessageId;
 @property(nonatomic) unsigned int sendingType; // @synthesize sendingType=_sendingType;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(retain, nonatomic) NSMutableArray *ccs; // @synthesize ccs=_ccs;
 @property(retain, nonatomic) NSMutableArray *tos; // @synthesize tos=_tos;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

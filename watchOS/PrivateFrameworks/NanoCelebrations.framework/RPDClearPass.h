@@ -22,11 +22,11 @@
     struct CGSize _drawableSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize drawableSize; // @synthesize drawableSize=_drawableSize;
 @property(retain, nonatomic) RPDClearProgram *renderProgram; // @synthesize renderProgram=_renderProgram;
 @property(nonatomic) double systemTime; // @synthesize systemTime=_systemTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (void)readBack;
 - (void)drawWithSize:(struct CGSize)arg1 animationTime:(double)arg2 context:(id)arg3;
 - (void)dealloc;

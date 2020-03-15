@@ -18,12 +18,12 @@
     NSMutableArray *_nextEmittableEnumerationResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nextEmittableEnumerationResults; // @synthesize nextEmittableEnumerationResults=_nextEmittableEnumerationResults;
 @property(retain, nonatomic) NSMutableArray *entriesToEmit; // @synthesize entriesToEmit=_entriesToEmit;
 @property(retain, nonatomic) NSMutableArray *contexts; // @synthesize contexts=_contexts;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) MPSectionedIdentifierList *sectionedIdentifierList; // @synthesize sectionedIdentifierList=_sectionedIdentifierList;
-- (void).cxx_destruct;
 - (id)_startEntryProxy;
 - (id)nextObject;
 - (id)nextObjectWithExclusiveAccessToken:(id)arg1;

@@ -23,11 +23,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int shutdownOptions; // @synthesize shutdownOptions=_shutdownOptions;
 @property(nonatomic) float batteryLevel; // @synthesize batteryLevel=_batteryLevel;
 @property(retain, nonatomic) NSString *bootUUID; // @synthesize bootUUID=_bootUUID;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

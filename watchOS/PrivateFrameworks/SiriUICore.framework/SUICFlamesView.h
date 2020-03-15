@@ -18,8 +18,8 @@
 }
 
 + (_Bool)_isMetalAvailable;
-@property(nonatomic) __weak id <SUICFlamesViewDelegate> flamesDelegate; // @synthesize flamesDelegate=_flamesDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SUICFlamesViewDelegate> flamesDelegate; // @synthesize flamesDelegate=_flamesDelegate;
 - (void)flamesViewAuraDidDisplay:(id)arg1;
 - (float)audioLevelForFlamesView:(id)arg1;
 @property(nonatomic) _Bool accelerateTransitions;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSSet *_intentsRestrictedWhileLocked;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *intentsRestrictedWhileLocked; // @synthesize intentsRestrictedWhileLocked=_intentsRestrictedWhileLocked;
 @property(readonly, copy, nonatomic) NSSet *intentsSupported; // @synthesize intentsSupported=_intentsSupported;
 @property(readonly, nonatomic) Class principalClass; // @synthesize principalClass=_principalClass;
-- (void).cxx_destruct;
 - (id)initWithPrincipalClass:(Class)arg1 intentsSupported:(id)arg2 intentsRestrictedWhileLocked:(id)arg3;
 
 @end

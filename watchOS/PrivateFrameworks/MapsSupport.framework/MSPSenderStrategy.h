@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_trafficSentStates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *trafficSentStates; // @synthesize trafficSentStates=_trafficSentStates;
 @property(retain, nonatomic) NSMutableDictionary *routeSentStates; // @synthesize routeSentStates=_routeSentStates;
 @property(retain, nonatomic) NSMutableDictionary *lastEtaUpdateDates; // @synthesize lastEtaUpdateDates=_lastEtaUpdateDates;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *destinationSentStates; // @synthesize destinationSentStates=_destinationSentStates;
 @property(copy, nonatomic) GEOSharedNavState *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSMutableSet *participants; // @synthesize participants=_participants;
-- (void).cxx_destruct;
 - (void)sessionStopped:(id)arg1;
 - (void)destinationReached:(id)arg1;
 - (void)stateUpdated:(id)arg1;

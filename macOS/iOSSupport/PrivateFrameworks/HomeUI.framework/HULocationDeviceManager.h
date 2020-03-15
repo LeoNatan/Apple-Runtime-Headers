@@ -19,11 +19,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NAFuture *availableFMFDevicesFuture; // @synthesize availableFMFDevicesFuture=_availableFMFDevicesFuture;
 @property(retain, nonatomic) NAFuture *activeFMFDeviceFuture; // @synthesize activeFMFDeviceFuture=_activeFMFDeviceFuture;
 @property(readonly, nonatomic) FMFSession *fmfSession; // @synthesize fmfSession=_fmfSession;
-- (void).cxx_destruct;
 - (void)didChangeActiveLocationSharingDevice:(id)arg1;
 - (void)didUpdateActiveDeviceList:(id)arg1;
 - (void)_updateActiveFMFDevice:(id)arg1;

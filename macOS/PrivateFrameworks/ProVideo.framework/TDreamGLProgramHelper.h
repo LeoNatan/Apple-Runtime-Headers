@@ -18,8 +18,8 @@
     BOOL _initialized;
 }
 
-@property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 - (void)dealloc;
 - (id)programLog;
 - (id)fragmentShaderLog;

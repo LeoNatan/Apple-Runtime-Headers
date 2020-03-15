@@ -10,6 +10,8 @@
 {
 }
 
++ (id)redactedDescriptionForPath:(id)arg1;
++ (id)redactedDescriptionForFileURL:(id)arg1;
 + (BOOL)URLIsInTrash:(id)arg1;
 + (BOOL)filePath:(id)arg1 isEqualToFilePath:(id)arg2;
 + (BOOL)filePath:(id)arg1 hasPrefix:(id)arg2;

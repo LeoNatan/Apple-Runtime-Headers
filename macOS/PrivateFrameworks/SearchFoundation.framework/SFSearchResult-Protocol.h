@@ -40,10 +40,7 @@
 @property(copy, nonatomic) NSString *resultTemplate;
 @property(copy, nonatomic) NSString *resultType;
 @property(retain, nonatomic) SFCustom *customProperties;
-@property(nonatomic) unsigned long long origRank;
 @property(nonatomic) double personalizationScore;
-@property(copy, nonatomic) NSDictionary *featureScaling;
-@property(copy, nonatomic) NSDictionary *topicDistribution;
 @property(nonatomic) double serverScore;
 @property(copy, nonatomic) NSString *mediaType;
 @property(nonatomic) unsigned long long minimumRankOfTopHitToSuppressResult;

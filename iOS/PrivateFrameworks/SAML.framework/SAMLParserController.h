@@ -15,8 +15,8 @@
 
 + (void)initialize;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSData *schemaData; // @synthesize schemaData=_schemaData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *schemaData; // @synthesize schemaData=_schemaData;
 - (id)dataFromString:(id)arg1 error:(id *)arg2;
 - (id)parseCachedResponse:(id)arg1 error:(id *)arg2;
 - (id)parseResponse:(id)arg1 error:(id *)arg2;

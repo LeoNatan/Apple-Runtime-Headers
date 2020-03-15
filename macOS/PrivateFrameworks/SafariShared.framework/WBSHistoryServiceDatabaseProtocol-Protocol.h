@@ -47,8 +47,7 @@
 - (void)clearHistoryItems:(NSSet *)arg1 afterDate:(NSDate *)arg2 beforeDate:(NSDate *)arg3 tombstoneMode:(unsigned long long)arg4 completionHandler:(void (^)(NSError *))arg5;
 - (void)clearHistoryVisitsAddedAfterDate:(NSDate *)arg1 beforeDate:(NSDate *)arg2 tombstoneMode:(unsigned long long)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)clearAllHistoryInsertingTombstoneUpToDate:(NSDate *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)clearAllTestDriveVisitsWithCompletionHandler:(void (^)(NSError *))arg1;
-- (void)updateWithType:(unsigned long long)arg1 addOrModifyObjects:(NSArray *)arg2 updateCurrentGeneration:(NSNumber *)arg3 updateLastSyncGeneration:(NSNumber *)arg4 updateLastMaintenance:(NSDate *)arg5 makeTestDriveVisitsPermanent:(BOOL)arg6 completionHandler:(void (^)(NSError *))arg7;
+- (void)updateWithType:(unsigned long long)arg1 addOrModifyObjects:(NSArray *)arg2 updateCurrentGeneration:(NSNumber *)arg3 updateLastSyncGeneration:(NSNumber *)arg4 updateLastMaintenance:(NSDate *)arg5 completionHandler:(void (^)(NSError *))arg6;
 - (void)fetchDomainExpansions:(void (^)(NSFileHandle *, NSError *))arg1;
 - (void)fetchWithOptions:(unsigned long long)arg1 predicate:(id <WBSHistoryPredicate>)arg2 completionHandler:(void (^)(unsigned long long, NSFileHandle *, NSError *))arg3;
 @end

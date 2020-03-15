@@ -19,8 +19,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 - (void)_setIdentifier:(id)arg1 forIdentifierType:(unsigned long long)arg2;
 - (id)_copyWithZone:(struct _NSZone *)arg1 class:(Class)arg2;
 - (id)identifierForIdentifierType:(unsigned long long)arg1;

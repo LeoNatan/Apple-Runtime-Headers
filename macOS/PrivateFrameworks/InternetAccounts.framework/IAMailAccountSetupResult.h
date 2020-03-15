@@ -34,6 +34,7 @@
     long long _deleteOnServerInterval;
 }
 
+- (void).cxx_destruct;
 @property long long deleteOnServerInterval; // @synthesize deleteOnServerInterval=_deleteOnServerInterval;
 @property long long deletionPolicy; // @synthesize deletionPolicy=_deletionPolicy;
 @property(retain) NSData *outgoingTLSCertificate; // @synthesize outgoingTLSCertificate=_outgoingTLSCertificate;
@@ -56,7 +57,6 @@
 @property(retain) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(retain) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

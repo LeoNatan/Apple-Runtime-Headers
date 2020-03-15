@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CNContact *_existingContact;
 }
 
-@property(retain, nonatomic) CNContact *existingContact; // @synthesize existingContact=_existingContact;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContact *existingContact; // @synthesize existingContact=_existingContact;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)performActionWithSender:(id)arg1;
 

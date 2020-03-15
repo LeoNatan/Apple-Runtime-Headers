@@ -20,9 +20,9 @@
     double _additionalVerticalSafeAreaMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double additionalVerticalSafeAreaMargin; // @synthesize additionalVerticalSafeAreaMargin=_additionalVerticalSafeAreaMargin;
 @property(nonatomic) __weak id <_SFDigitalHealthViewControllerDelegate> digitalHealthViewControllerDelegate; // @synthesize digitalHealthViewControllerDelegate=_digitalHealthViewControllerDelegate;
-- (void).cxx_destruct;
 - (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (id)_urlStringForLockOutGivenURL:(id)arg1;
 - (void)hideLockOutForURL:(id)arg1;

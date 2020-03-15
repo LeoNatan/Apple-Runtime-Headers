@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _refreshTimerFiredBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType refreshTimerFiredBlock; // @synthesize refreshTimerFiredBlock=_refreshTimerFiredBlock;
 @property(retain, nonatomic) NSMutableDictionary *refreshTimerByEventDescriptor; // @synthesize refreshTimerByEventDescriptor=_refreshTimerByEventDescriptor;
 @property(copy, nonatomic) NSSet *eventDescriptors; // @synthesize eventDescriptors=_eventDescriptors;
-- (void).cxx_destruct;
 - (void)_cancelAllRefreshTimers;
 - (void)_cancelRefreshTimers:(id)arg1;
 - (void)_cancelRefreshTimer:(id)arg1;

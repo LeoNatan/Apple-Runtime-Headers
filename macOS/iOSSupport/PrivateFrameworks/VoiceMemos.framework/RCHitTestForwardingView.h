@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     UIView *_targetView;
 }
 
-@property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end

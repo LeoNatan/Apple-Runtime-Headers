@@ -16,9 +16,9 @@
 }
 
 + (id)sharedResourceManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) ML3LanguageResources *cachedResources; // @synthesize cachedResources=_cachedResources;
-- (void).cxx_destruct;
 - (id)_buildLanguageResources;
 - (void)invalidateCachedResources;
 @property(readonly, nonatomic) ML3LanguageResources *resources;

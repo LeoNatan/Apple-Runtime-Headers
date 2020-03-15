@@ -15,10 +15,10 @@
     NSArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ACAccount *affectedAccount; // @synthesize affectedAccount=_affectedAccount;
 @property(copy, nonatomic) NSArray *affectedDataclasses; // @synthesize affectedDataclasses=_affectedDataclasses;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)descriptionForDataclassAction:(id)arg1;
 - (id)_stringForMessage:(id)arg1 withAccountType:(id)arg2 dataclassDescription:(id)arg3;
 - (id)message;

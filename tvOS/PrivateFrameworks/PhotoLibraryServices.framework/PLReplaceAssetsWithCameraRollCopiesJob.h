@@ -16,10 +16,10 @@
 }
 
 + (void)replaceAssets:(id)arg1 withCameraRollCopiesInAlbum:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(retain, nonatomic) PLManagedAlbum *album; // @synthesize album=_album;
 @property(copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (id)_cameraRollAssetDerivedFromAsset:(id)arg1;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;

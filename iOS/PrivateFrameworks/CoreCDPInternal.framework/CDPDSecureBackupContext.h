@@ -22,6 +22,7 @@
     NSString *_preRecordUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *preRecordUUID; // @synthesize preRecordUUID=_preRecordUUID;
 @property(retain, nonatomic) CDPDCircleJoinResult *circleJoinResult; // @synthesize circleJoinResult=_circleJoinResult;
 @property(nonatomic) _Bool usePreviouslyCachedSecret; // @synthesize usePreviouslyCachedSecret=_usePreviouslyCachedSecret;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) CDPDevice *device; // @synthesize device=_device;
 @property(nonatomic) unsigned long long localSecretType; // @synthesize localSecretType=_localSecretType;
 @property(copy, nonatomic) NSString *localSecret; // @synthesize localSecret=_localSecret;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

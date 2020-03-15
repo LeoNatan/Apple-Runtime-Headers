@@ -13,8 +13,8 @@
     UIButton *_unlockScreenButton;
 }
 
-@property(retain) UIButton *unlockScreenButton; // @synthesize unlockScreenButton=_unlockScreenButton;
 - (void).cxx_destruct;
+@property(retain) UIButton *unlockScreenButton; // @synthesize unlockScreenButton=_unlockScreenButton;
 - (void)unlockButtonPressed:(id)arg1;
 - (id)init;
 

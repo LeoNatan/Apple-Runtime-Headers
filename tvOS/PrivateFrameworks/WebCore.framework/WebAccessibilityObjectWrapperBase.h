@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface WebAccessibilityObjectWrapperBase : NSObject
 {
-    struct AccessibilityObject *m_object;
+    // Error parsing type: ^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}, name: m_object
     unsigned int _identifier;
 }
 
@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
 - (id)baseAccessibilityHelpText;
 - (id)baseAccessibilitySpeechHint;
 - (id)baseAccessibilityDescription;
-- (struct AccessibilityObjectInterface *)axBackingObject;
+-     // Error parsing type: ^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}16@0:8, name: axBackingObject
 - (id)baseAccessibilityTitle;
-- (struct AccessibilityObject *)accessibilityObject;
+-     // Error parsing type: ^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}16@0:8, name: accessibilityObject
 - (id)attachmentView;
 - (_Bool)updateObjectBackingStore;
 - (void)detach;
-- (id)initWithAccessibilityObject:(struct AccessibilityObject *)arg1;
+-     // Error parsing type: @24@0:8^{AXCoreObject=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}}16, name: initWithAccessibilityObject:
 
 @end
 

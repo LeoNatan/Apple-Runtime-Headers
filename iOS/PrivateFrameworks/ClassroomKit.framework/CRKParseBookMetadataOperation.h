@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "CATOperation.h"
+#import <DeviceManagement/CATOperation.h>
 
 @class CRKBook;
 
@@ -14,8 +14,8 @@
     CRKBook *_book;
 }
 
-@property(readonly, nonatomic) CRKBook *book; // @synthesize book=_book;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CRKBook *book; // @synthesize book=_book;
 - (void)parseBookContentsOperationDidFinish:(id)arg1;
 - (void)parseContentsFilePathOperationDidFinish:(id)arg1;
 - (void)main;

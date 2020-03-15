@@ -37,8 +37,8 @@
 - (void)_handleCSLPIBacklightDidTurnOn;
 - (void)_handleCSLPIBacklightWillTurnOn;
 - (void)cancelAllTasks;
-- (void)cancelTaskForToken:(struct NSString *)arg1;
-- (struct NSString *)scheduleTask:(CDUnknownBlockType)arg1 identifier:(id)arg2;
+- (void)cancelTaskForToken:(id)arg1;
+- (id)scheduleTask:(CDUnknownBlockType)arg1 identifier:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

@@ -29,6 +29,7 @@
 
 + (id)filteredGPUListIncludingNonLowPoweredBuiltin:(BOOL)arg1;
 + (unsigned long long)calculateImageSizeForTensor:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *gpuWriteTensorKernelList; // @synthesize gpuWriteTensorKernelList=_gpuWriteTensorKernelList;
 @property(readonly, nonatomic) NSMutableArray *gpuMPSCommandBufferList; // @synthesize gpuMPSCommandBufferList=_gpuMPSCommandBufferList;
 @property(readonly, nonatomic) NSMutableArray *gpuCommandBufferList; // @synthesize gpuCommandBufferList=_gpuCommandBufferList;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) MLFoundationDeviceGPUHeapAllocator *gpuHeapAllocator; // @synthesize gpuHeapAllocator=_gpuHeapAllocator;
 @property(readonly, nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSArray *deviceList; // @synthesize deviceList=_deviceList;
-- (void).cxx_destruct;
 - (void)partitionTensor:(id)arg1;
 - (id)allocateDeviceMemoryForTensor:(id)arg1 device:(id)arg2 count:(unsigned long long)arg3;
 - (unsigned long long)deviceMemorySizeForTensor:(id)arg1;

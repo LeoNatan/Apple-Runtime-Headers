@@ -20,6 +20,7 @@
     NSObject<OS_xpc_object> *_executionCriteria;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *executionCriteria; // @synthesize executionCriteria=_executionCriteria;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) double checkInTime; // @synthesize checkInTime=_checkInTime;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long periodSeconds; // @synthesize periodSeconds=_periodSeconds;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 delay:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)initWithName:(id)arg1 isPeriodic:(_Bool)arg2 period:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)init;

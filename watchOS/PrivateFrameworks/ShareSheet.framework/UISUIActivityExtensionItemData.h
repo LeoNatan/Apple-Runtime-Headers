@@ -25,6 +25,7 @@
 + (id)_extensionItemsByPreparingToSendExtensionItems:(id)arg1 toDestinationExtension:(id)arg2;
 + (id)_onBackgroundQueue_extensionItemsByPreparingToSendExtensionItems:(id)arg1 toDestinationExtension:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *dataTypesByItemUUID; // @synthesize dataTypesByItemUUID=_dataTypesByItemUUID;
 @property(readonly, nonatomic) NSMutableDictionary *previewImageDataByItemUUID; // @synthesize previewImageDataByItemUUID=_previewImageDataByItemUUID;
 @property(readonly, nonatomic) NSMutableDictionary *previewImagesByItemUUID; // @synthesize previewImagesByItemUUID=_previewImagesByItemUUID;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) struct __CFDictionary *itemProviderOrExtensionItemWithMetadataToUUID; // @synthesize itemProviderOrExtensionItemWithMetadataToUUID=_itemProviderOrExtensionItemWithMetadataToUUID;
 @property(retain, nonatomic) NSDictionary *openURLAnnotationsByURL; // @synthesize openURLAnnotationsByURL=_openURLAnnotationsByURL;
 @property(retain, nonatomic) NSArray *extensionItems; // @synthesize extensionItems=_extensionItems;
-- (void).cxx_destruct;
 - (id)_getItemUUIDForItem:(id)arg1 createIfNeeded:(_Bool)arg2;
 - (void)_setItemUUID:(id)arg1 forItem:(id)arg2;
 - (void)_changeUUIDMappingFromExtensionItems:(id)arg1 toClonedExtensionItems:(id)arg2;

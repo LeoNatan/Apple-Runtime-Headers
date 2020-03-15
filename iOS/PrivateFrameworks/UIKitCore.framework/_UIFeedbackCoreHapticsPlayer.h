@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     id <CHHapticPatternPlayer> _coreHapticsPlayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CHHapticPatternPlayer> coreHapticsPlayer; // @synthesize coreHapticsPlayer=_coreHapticsPlayer;
 @property(nonatomic) __weak _UIFeedbackCoreHapticsEngine *hapticEngine; // @synthesize hapticEngine=_hapticEngine;
 @property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
-- (void).cxx_destruct;
 - (void)_internal_stopFeedbackData:(id)arg1 forFeedback:(id)arg2;
 - (void)_stopFeedback:(id)arg1;
 - (_Bool)_internal_playFeedbackData:(id)arg1 forFeedback:(id)arg2 atTime:(double)arg3;

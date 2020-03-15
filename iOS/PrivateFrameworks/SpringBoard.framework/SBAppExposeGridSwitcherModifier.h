@@ -24,11 +24,11 @@
     NSString *_appExposeBundleID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *appExposeBundleID; // @synthesize appExposeBundleID=_appExposeBundleID;
 @property(readonly, nonatomic) SBSwitcherModifier<SBFluidSwitcherScrollProviding> *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
 @property(readonly, nonatomic) _Bool isTethered; // @synthesize isTethered=_isTethered;
 @property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
-- (void).cxx_destruct;
 - (_Bool)_isGridified;
 - (double)_gridLayoutScale;
 - (unsigned long long)_gridLayoutNumberOfRows;

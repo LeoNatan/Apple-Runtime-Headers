@@ -19,10 +19,10 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDWakeConfigurationParamaters *custom2; // @synthesize custom2=_custom2;
 @property(retain, nonatomic) HMDWakeConfigurationParamaters *custom1; // @synthesize custom1=_custom1;
 @property(retain, nonatomic) NSData *reserved; // @synthesize reserved=_reserved;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

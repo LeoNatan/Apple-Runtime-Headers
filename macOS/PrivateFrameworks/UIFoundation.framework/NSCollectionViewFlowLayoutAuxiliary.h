@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_cachedItemFrames;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *cachedItemFrames; // @synthesize cachedItemFrames=_cachedItemFrames;
 @property(retain) NSMutableDictionary *cachedItemAttributes; // @synthesize cachedItemAttributes=_cachedItemAttributes;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)removeImageMonitorObserver:(id)arg1;
 - (void)addImageMonitorObserver:(id)arg1;
 - (id)loadedImagePaths;

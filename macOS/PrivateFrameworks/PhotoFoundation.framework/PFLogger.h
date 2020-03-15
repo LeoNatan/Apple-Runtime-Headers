@@ -40,6 +40,7 @@
 + (id)defaultLogger;
 + (id)loggerWithBackend:(id)arg1 logLevel:(int)arg2 options:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSSet *recordedSubsystems; // @synthesize recordedSubsystems=_recordedSubsystems;
 @property(retain) NSObject<OS_dispatch_queue> *recordedSubsystemsQueue; // @synthesize recordedSubsystemsQueue=_recordedSubsystemsQueue;
 @property BOOL backendAllowsConcurrentAccess; // @synthesize backendAllowsConcurrentAccess=_backendAllowsConcurrentAccess;
@@ -51,7 +52,6 @@
 @property(retain) NSObject<PFLoggerBackend> *backend; // @synthesize backend=_backend;
 @property BOOL shouldLogToCrashReporter; // @synthesize shouldLogToCrashReporter=_shouldLogToCrashReporter;
 @property int logLevel; // @synthesize logLevel=_logLevel;
-- (void).cxx_destruct;
 - (void)_recordSubsystem:(id)arg1;
 - (id)description;
 - (void)flush;

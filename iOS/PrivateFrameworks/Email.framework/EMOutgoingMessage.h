@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldEncrypt; // @synthesize shouldEncrypt=_shouldEncrypt;
 @property(nonatomic) _Bool shouldSign; // @synthesize shouldSign=_shouldSign;
 @property(retain, nonatomic) EMMessageObjectID *originalMessageID; // @synthesize originalMessageID=_originalMessageID;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMessageData:(id)arg1 action:(long long)arg2 originalMessageID:(id)arg3 shouldSign:(_Bool)arg4 shouldEncrypt:(_Bool)arg5;

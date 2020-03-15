@@ -11,8 +11,8 @@
     UIView *_lineView;
 }
 
-@property(readonly, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

@@ -91,6 +91,7 @@
 + (BOOL)logMailboxUUIDErrors;
 + (void)initialize;
 + (id)flagNameSyncLog;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL displayCountHasEverBeenSet; // @synthesize displayCountHasEverBeenSet=_displayCountHasEverBeenSet;
 @property(retain, nonatomic) MFMessageCounts *savedDatabaseMessageCounts; // @synthesize savedDatabaseMessageCounts=_savedDatabaseMessageCounts;
 @property(retain) NSOperationQueue *statusCountsQueue; // @synthesize statusCountsQueue=_statusCountsQueue;
@@ -106,7 +107,6 @@
 @property BOOL allCriteriaMustBeSatisfied; // @synthesize allCriteriaMustBeSatisfied=_allCriteriaMustBeSatisfied;
 @property(copy) NSString *syncId; // @synthesize syncId=_syncId;
 @property BOOL respectsMailboxExclusions; // @synthesize respectsMailboxExclusions=_respectsMailboxExclusions;
-- (void).cxx_destruct;
 - (void)enumerateDescendantsInOrder:(long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_VIPSendersChanged:(id)arg1;
 - (void)_addressBookDidChange:(id)arg1;
@@ -213,6 +213,8 @@
 - (BOOL)isGmailWhiteMailboxOrDescendant:(BOOL)arg1;
 - (id)_gmailWhiteMailboxChild;
 - (id)sortedChildAtIndex:(unsigned long long)arg1 hidingGmail:(BOOL)arg2;
+- (id)selfOrOnlyVisibleChildHidingGmail:(BOOL)arg1;
+- (void)enumerateVisibleChildrenHidingGmail:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)visibleChildAtIndex:(unsigned long long)arg1;
 - (id)childAtIndex:(unsigned long long)arg1;
 @property(readonly) unsigned long long numberOfChildren;

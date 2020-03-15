@@ -7,16 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <Speech/AFDictationDelegate-Protocol.h>
-#import <Speech/CXCallObserverDelegate-Protocol.h>
 
-@class AFDictationConnection, CXCallObserver, NSLocale, NSOperationQueue, NSString;
+@class AFDictationConnection, NSLocale, NSOperationQueue, NSString;
 @protocol NSObject, SFSpeechRecognizerDelegate;
 
-@interface SFSpeechRecognizer : NSObject <CXCallObserverDelegate, AFDictationDelegate>
+@interface SFSpeechRecognizer : NSObject <AFDictationDelegate>
 {
     AFDictationConnection *_dictationConnection;
     NSString *_languageCode;
-    CXCallObserver *_callObserver;
     id <NSObject> _facetimeObserver;
     id <NSObject> _foregroundObserver;
     id <NSObject> _preferencesObserver;
@@ -32,15 +30,14 @@
 + (long long)authorizationStatus;
 + (id)supportedLocales;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) long long defaultTaskHint; // @synthesize defaultTaskHint=_defaultTaskHint;
 @property(nonatomic) __weak id <SFSpeechRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL supportsOnDeviceRecognition; // @synthesize supportsOnDeviceRecognition=_supportsOnDeviceRecognition;
 @property(readonly, copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (void)_informDelegateOfPreferencesChange;
 - (void)_informDelegateOfAvailabilityChange;
-- (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (void)dictationConnnectionDidChangeAvailability:(id)arg1;
 - (id)recognitionTaskWithRequest:(id)arg1 delegate:(id)arg2;
 - (id)recognitionTaskWithRequest:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;

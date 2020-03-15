@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (CLSAdditions)
+- (id)_cls_AppendUniqueElementsFrom:(id)arg1;
 - (id)_cls_filter:(CDUnknownBlockType)arg1;
 @end
 

@@ -28,6 +28,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadForceITunesStorePasswordEntry; // @synthesize payloadForceITunesStorePasswordEntry=_payloadForceITunesStorePasswordEntry;
 @property(copy, nonatomic) NSNumber *payloadAllowInAppPurchases; // @synthesize payloadAllowInAppPurchases=_payloadAllowInAppPurchases;
 @property(copy, nonatomic) NSNumber *payloadAllowAppRemoval; // @synthesize payloadAllowAppRemoval=_payloadAllowAppRemoval;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSNumber *payloadAllowAutomaticAppDownloads; // @synthesize payloadAllowAutomaticAppDownloads=_payloadAllowAutomaticAppDownloads;
 @property(copy, nonatomic) NSNumber *payloadAllowUIAppInstallation; // @synthesize payloadAllowUIAppInstallation=_payloadAllowUIAppInstallation;
 @property(copy, nonatomic) NSNumber *payloadAllowAppInstallation; // @synthesize payloadAllowAppInstallation=_payloadAllowAppInstallation;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

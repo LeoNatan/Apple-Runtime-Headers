@@ -14,9 +14,9 @@
     NSArray *inputs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *inputs; // @synthesize inputs;
 @property(retain, nonatomic) NSArray *outputs; // @synthesize outputs;
-- (void).cxx_destruct;
 
 @end
 

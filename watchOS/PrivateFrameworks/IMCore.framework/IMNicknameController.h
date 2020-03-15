@@ -24,6 +24,7 @@
 + (_Bool)multiplePhoneNumbersTiedToAppleID;
 + (_Bool)accountsMatchUpToUseNicknames;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(retain, nonatomic) NSMutableSet *scrutinyNicknameHandles; // @synthesize scrutinyNicknameHandles=_scrutinyNicknameHandles;
 @property(retain, nonatomic) NSSet *blacklistedHandlesForSharing; // @synthesize blacklistedHandlesForSharing=_blacklistedHandlesForSharing;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSMutableArray *fetchPersonalNicknameCompletionBlocks; // @synthesize fetchPersonalNicknameCompletionBlocks=_fetchPersonalNicknameCompletionBlocks;
 @property(retain, nonatomic) IMNickname *personalNickname; // @synthesize personalNickname=_personalNickname;
 @property(retain, nonatomic) NSMutableDictionary *responseHandlers; // @synthesize responseHandlers=_responseHandlers;
-- (void).cxx_destruct;
 - (_Bool)meCardSyncEnabled;
 - (id)contactStore;
 - (id)meCardSharingState;

@@ -18,17 +18,19 @@
     int _shuffleState;
     int _repeatState;
     NSNumber *_volume;
+    NSNumber *_muted;
     NSString *_mediaUniqueIdentifier;
     NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
-- (void).cxx_destruct;
 - (id)dumpState;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 @property(copy) NSString *mediaUniqueIdentifier; // @synthesize mediaUniqueIdentifier=_mediaUniqueIdentifier;
+@property(copy) NSNumber *muted; // @synthesize muted=_muted;
 @property(copy) NSNumber *volume; // @synthesize volume=_volume;
 @property(nonatomic) int repeatState; // @synthesize repeatState=_repeatState;
 @property(nonatomic) int shuffleState; // @synthesize shuffleState=_shuffleState;

@@ -14,9 +14,9 @@
     NSArray *_customScheduleItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *customScheduleItems; // @synthesize customScheduleItems=_customScheduleItems;
 @property(retain, nonatomic) STBlueprintUsageLimitScheduleSimpleItem *simpleSchedule; // @synthesize simpleSchedule=_simpleSchedule;
-- (void).cxx_destruct;
 
 @end
 

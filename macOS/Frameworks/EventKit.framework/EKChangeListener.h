@@ -16,8 +16,8 @@
 + (id)changedIdentifiersForNotification:(id)arg1;
 + (id)relatedItemFor:(id)arg1 changeNotification:(id)arg2;
 + (id)updatedObjectFor:(id)arg1 changeNotification:(id)arg2;
-@property(retain) NSPointerArray *delegates; // @synthesize delegates=_delegates;
 - (void).cxx_destruct;
+@property(retain) NSPointerArray *delegates; // @synthesize delegates=_delegates;
 - (void)objectsChangedNotification:(id)arg1;
 - (id)_orderedDelegates;
 - (void)registerDelegate:(id)arg1;

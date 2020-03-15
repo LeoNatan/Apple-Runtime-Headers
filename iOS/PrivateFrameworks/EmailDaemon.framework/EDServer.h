@@ -19,10 +19,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDDaemonInterfaceFactory *daemonInterfaceFactory; // @synthesize daemonInterfaceFactory=_daemonInterfaceFactory;
 @property(retain, nonatomic) NSMutableArray *connectedClients; // @synthesize connectedClients=_connectedClients;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *serverXPCEndpoint;
 - (void)removeRemoteClient:(id)arg1;
 - (void)addRemoteClient:(id)arg1;

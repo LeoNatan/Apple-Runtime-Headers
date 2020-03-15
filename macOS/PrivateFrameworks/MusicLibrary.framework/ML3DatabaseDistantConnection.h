@@ -17,8 +17,8 @@
     id <ML3DatabaseDistantConnectionDelegate> _distantDelegate;
 }
 
-@property(nonatomic) __weak id <ML3DatabaseDistantConnectionDelegate> distantDelegate; // @synthesize distantDelegate=_distantDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ML3DatabaseDistantConnectionDelegate> distantDelegate; // @synthesize distantDelegate=_distantDelegate;
 - (void)_serviceTerminatedTransactionNotification:(id)arg1;
 - (BOOL)_internalExecuteUpdate:(id)arg1 withParameters:(id)arg2 error:(id *)arg3;
 - (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;

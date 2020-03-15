@@ -17,10 +17,10 @@
     unsigned long long _minimumNumberOfMatchedPredicates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long minimumNumberOfMatchedPredicates; // @synthesize minimumNumberOfMatchedPredicates=_minimumNumberOfMatchedPredicates;
 @property(readonly, copy, nonatomic) NSArray *optionalSubpredicates; // @synthesize optionalSubpredicates=_optionalSubpredicates;
 @property(readonly, copy, nonatomic) NSArray *requiredSubpredicates; // @synthesize requiredSubpredicates=_requiredSubpredicates;
-- (void).cxx_destruct;
 - (id)matchingControlItemsForControlItems:(id)arg1;
 @property(readonly, nonatomic) unsigned long long maximumNumberOfMatches;
 - (id)allSubpredicates;

@@ -28,6 +28,7 @@
 + (id)stringFromRadarReproducibility:(long long)arg1;
 + (id)stringFromRadarClassification:(long long)arg1;
 + (BOOL)canOpenRadar;
+- (void).cxx_destruct;
 @property(nonatomic) long long classification; // @synthesize classification=_classification;
 @property(nonatomic) long long reproducibility; // @synthesize reproducibility=_reproducibility;
 @property(nonatomic) long long component; // @synthesize component=_component;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *radarDescription; // @synthesize radarDescription=_radarDescription;
 @property(nonatomic) BOOL prependSystemVersionToTitle; // @synthesize prependSystemVersionToTitle=_prependSystemVersionToTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

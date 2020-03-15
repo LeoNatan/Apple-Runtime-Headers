@@ -20,10 +20,10 @@
 }
 
 + (void)enumerateFetchResult:(id)arg1 withBatchSize:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL personBuilderMergeCandidatesDisabled; // @synthesize personBuilderMergeCandidatesDisabled=_personBuilderMergeCandidatesDisabled;
 @property(nonatomic) unsigned int sceneAlgorithmUmbrellaVersion; // @synthesize sceneAlgorithmUmbrellaVersion=_sceneAlgorithmUmbrellaVersion;
 @property(nonatomic) unsigned int faceAlgorithmUmbrellaVersion; // @synthesize faceAlgorithmUmbrellaVersion=_faceAlgorithmUmbrellaVersion;
-- (void).cxx_destruct;
 - (void)logPVDebugMessage:(id)arg1;
 - (void)logPVInfoMessage:(id)arg1;
 - (void)logPVWarningMessage:(id)arg1;

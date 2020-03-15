@@ -62,6 +62,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL isContentSizeObservable; // @synthesize isContentSizeObservable=_isContentSizeObservable;
 @property BOOL allowsImmediateEditing; // @synthesize allowsImmediateEditing=_allowsImmediateEditing;
 @property BOOL allowsPhotoEditing; // @synthesize allowsPhotoEditing=_allowsPhotoEditing;
@@ -108,7 +109,6 @@
 @property(retain) NSColor *nameViewHeadlineTextColor; // @synthesize nameViewHeadlineTextColor=_nameViewHeadlineTextColor;
 @property double nameViewHeadlineFontSize; // @synthesize nameViewHeadlineFontSize=_nameViewHeadlineFontSize;
 @property(retain) NSString *nameViewHeadlineFontName; // @synthesize nameViewHeadlineFontName=_nameViewHeadlineFontName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)styleProvider;

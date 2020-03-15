@@ -42,11 +42,11 @@
 + (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 input:(id)arg4 modifierFlags:(long long)arg5 propertyList:(id)arg6 alternates:(id)arg7;
 + (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 input:(id)arg4 modifierFlags:(long long)arg5 propertyList:(id)arg6;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long _layoutAwareModifierFlags; // @synthesize _layoutAwareModifierFlags;
 @property(readonly, nonatomic) NSString *_layoutAwareInput; // @synthesize _layoutAwareInput;
 @property(readonly, nonatomic) long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
 @property(readonly, nonatomic) NSString *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_immutableCopy;
 - (void)_setViewControllerForSegue:(id)arg1;

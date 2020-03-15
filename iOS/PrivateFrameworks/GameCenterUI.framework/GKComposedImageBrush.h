@@ -16,11 +16,11 @@
     struct UIEdgeInsets _maskInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets maskInsets; // @synthesize maskInsets=_maskInsets;
 @property(retain, nonatomic) UIImage *overlayImage; // @synthesize overlayImage=_overlayImage;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) UIImage *maskImage; // @synthesize maskImage=_maskImage;
-- (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1 withContext:(struct CGContext *)arg2 input:(id)arg3;
 - (double)scaleForInput:(id)arg1;
 - (struct CGSize)sizeForInput:(id)arg1;

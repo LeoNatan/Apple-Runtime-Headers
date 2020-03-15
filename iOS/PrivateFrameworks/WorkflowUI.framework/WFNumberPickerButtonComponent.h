@@ -17,11 +17,11 @@
 }
 
 + (id)newWithAttributes:(const struct WFNumberPickerAttributes *)arg1 identifier:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 variableBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool becomeFirstResponder; // @synthesize becomeFirstResponder=_becomeFirstResponder;
 @property(readonly, nonatomic) __weak WFCustomButtonComponent *buttonComponent; // @synthesize buttonComponent=_buttonComponent;
 @property(readonly, nonatomic) CDUnknownBlockType variableBlock; // @synthesize variableBlock=_variableBlock;
 @property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
-- (void).cxx_destruct;
 
 @end
 

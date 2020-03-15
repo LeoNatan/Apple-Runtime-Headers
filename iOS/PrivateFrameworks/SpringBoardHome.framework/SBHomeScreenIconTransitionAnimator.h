@@ -27,12 +27,12 @@
     id <SBHomeScreenIconTransitionAnimatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBHomeScreenIconTransitionAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double initialDelay; // @synthesize initialDelay=_initialDelay;
 @property(readonly, nonatomic) unsigned long long operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) SBNestingViewController *childViewController; // @synthesize childViewController=_childViewController;
 @property(readonly, nonatomic) SBIconAnimator *iconAnimator; // @synthesize iconAnimator=_iconAnimator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SBHIconAnimationSettings *currentSettings;
 - (_Bool)iconAnimator:(id)arg1 canAlterViewHierarchyDuringCleanupUsingBlock:(CDUnknownBlockType)arg2;
 - (void)iconAnimatorWasInvalidated:(id)arg1;

@@ -24,12 +24,14 @@
 - (MPModelGenericObject *)playerModelObject:(MPModelGenericObject *)arg1 propertySet:(MPPropertySet *)arg2 atIndexPath:(NSIndexPath *)arg3 chain:(MPMiddlewareChain *)arg4;
 - (BOOL)playerItemIsPlaceholder:(BOOL)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (long long)playerItemEditingStyleFlags:(long long)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
+- (NSString *)playerItemExplicitBadge:(NSString *)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (NSString *)playerItemLocalizedDurationString:(NSString *)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (CDStruct_22c87751)playerItemDuration:(CDStruct_22c87751)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (unsigned long long)playerNumberOfItems:(unsigned long long)arg1 inSection:(unsigned long long)arg2 chain:(MPMiddlewareChain *)arg3;
 - (unsigned long long)playerNumberOfSections:(unsigned long long)arg1 chain:(MPMiddlewareChain *)arg2;
 - (long long)playerUpNextItemCount:(long long)arg1 chain:(MPMiddlewareChain *)arg2;
 - (long long)playerLastChangeDirection:(long long)arg1 chain:(MPMiddlewareChain *)arg2;
+- (long long)playerQueueEndAction:(long long)arg1 chain:(MPMiddlewareChain *)arg2;
 - (long long)playerShuffleType:(long long)arg1 chain:(MPMiddlewareChain *)arg2;
 - (long long)playerRepeatType:(long long)arg1 chain:(MPMiddlewareChain *)arg2;
 - (NSString *)tracklistUniqueIdentifier:(NSString *)arg1 chain:(MPMiddlewareChain *)arg2;

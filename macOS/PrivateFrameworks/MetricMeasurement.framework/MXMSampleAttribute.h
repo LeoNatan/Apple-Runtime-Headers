@@ -24,10 +24,10 @@
 + (id)attributeWithName:(id)arg1 numericValue:(id)arg2;
 + (id)attributeWithName:(id)arg1 stringValue:(id)arg2;
 + (id)attributeWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToAttribute:(id)arg1;
 - (BOOL)isEqualTo:(id)arg1;

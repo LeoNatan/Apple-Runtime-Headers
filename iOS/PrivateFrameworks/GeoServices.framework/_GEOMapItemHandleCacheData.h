@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cost;
 - (id)initWithTimestamp:(id)arg1 data:(id)arg2;
 

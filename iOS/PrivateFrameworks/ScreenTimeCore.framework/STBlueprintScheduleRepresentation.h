@@ -16,9 +16,9 @@
     NSArray *_customScheduleItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *customScheduleItems; // @synthesize customScheduleItems=_customScheduleItems;
 @property(retain, nonatomic) STBlueprintScheduleSimpleItem *simpleSchedule; // @synthesize simpleSchedule=_simpleSchedule;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

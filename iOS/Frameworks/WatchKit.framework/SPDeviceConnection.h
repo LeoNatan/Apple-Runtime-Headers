@@ -21,11 +21,11 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedDeviceConnection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
 @property(nonatomic) __weak id <SPDeviceConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)receiveData:(id)arg1;
 - (long long)appInstallStateForAppConduitInstallState:(long long)arg1;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 forPairedDevice:(id)arg3 completion:(CDUnknownBlockType)arg4;

@@ -13,8 +13,8 @@
     CLKTextProvider *_textProvider;
 }
 
-@property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isCompatibleWithFamily:(long long)arg1;
 

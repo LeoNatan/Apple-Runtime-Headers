@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)didMoveToWindow;
-- (void)setTintColor:(id)arg1;
 
 @end
 

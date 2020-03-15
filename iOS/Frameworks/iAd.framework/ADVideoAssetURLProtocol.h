@@ -25,12 +25,12 @@
 + (void)unregister;
 + (void)registerProtocol;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) ADNSURLSessionDemultiplexer *sessionDemux; // @synthesize sessionDemux=_sessionDemux;
 @property(retain) NSURLSessionDataTask *task; // @synthesize task=_task;
 @property double startTime; // @synthesize startTime=_startTime;
 @property(copy) NSArray *modes; // @synthesize modes=_modes;
 @property(retain) NSThread *clientThread; // @synthesize clientThread=_clientThread;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

@@ -25,11 +25,11 @@
 + (id)transformationWithPersonalizer:(id)arg1 feedItemScores:(id)arg2;
 + (id)transformationWithPersonalizer:(id)arg1 feedItemScores:(id)arg2 sortOptions:(long long)arg3;
 + (id)transformationWithPersonalizer:(id)arg1 feedItemScores:(id)arg2 sortOptions:(long long)arg3 configurationSet:(long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) long long configurationSet; // @synthesize configurationSet=_configurationSet;
 @property(nonatomic) long long sortOptions; // @synthesize sortOptions=_sortOptions;
 @property(retain, nonatomic) NSMapTable *feedItemScores; // @synthesize feedItemScores=_feedItemScores;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
-- (void).cxx_destruct;
 - (id)transformHeadlines:(id)arg1;
 - (id)transformFeedItems:(id)arg1;
 

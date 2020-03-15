@@ -21,6 +21,7 @@
 
 + (id)_inactiveCloseBoxImage;
 + (id)_closeBoxImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *outlineProgressLayer; // @synthesize outlineProgressLayer=_outlineProgressLayer;
 @property(retain, nonatomic) UIView *outlineView; // @synthesize outlineView=_outlineView;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UIImage *dimmedIconImage; // @synthesize dimmedIconImage=_dimmedIconImage;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) _Bool dimmed; // @synthesize dimmed=_dimmed;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;

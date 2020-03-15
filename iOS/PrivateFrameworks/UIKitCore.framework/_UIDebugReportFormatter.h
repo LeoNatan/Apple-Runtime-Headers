@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultFormatter;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long extraBodyIndentLevel; // @synthesize extraBodyIndentLevel=_extraBodyIndentLevel;
 @property(copy, nonatomic) NSString *indentString; // @synthesize indentString=_indentString;
 @property(nonatomic) unsigned long long indentLevel; // @synthesize indentLevel=_indentLevel;
-- (void).cxx_destruct;
 - (id)stringFromReportComponents:(id)arg1;
 - (id)init;
 

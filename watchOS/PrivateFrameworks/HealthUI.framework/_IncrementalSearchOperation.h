@@ -16,11 +16,11 @@
     CDUnknownBlockType _searchFinishedBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType searchFinishedBlock; // @synthesize searchFinishedBlock=_searchFinishedBlock;
 @property(readonly) CDUnknownBlockType searchResultsBlock; // @synthesize searchResultsBlock=_searchResultsBlock;
 @property(readonly) NSString *searchBody; // @synthesize searchBody=_searchBody;
 @property(readonly) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithSearchString:(id)arg1 searchBody:(id)arg2 resultsBlock:(CDUnknownBlockType)arg3 finishedBlock:(CDUnknownBlockType)arg4;
 

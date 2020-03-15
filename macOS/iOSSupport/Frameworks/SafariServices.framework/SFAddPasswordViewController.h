@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <SFAddPasswordViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SFAddPasswordViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SFAddPasswordViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

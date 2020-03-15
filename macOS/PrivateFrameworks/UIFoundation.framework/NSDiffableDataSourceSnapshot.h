@@ -15,8 +15,8 @@
     __NSDiffableDataSourceSnapshot *_impl;
 }
 
-@property(readonly, nonatomic) __NSDiffableDataSourceSnapshot *impl; // @synthesize impl=_impl;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __NSDiffableDataSourceSnapshot *impl; // @synthesize impl=_impl;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)reloadSectionsWithIdentifiers:(id)arg1;

@@ -17,9 +17,9 @@
     id <SVVideoProviderProviding> _videoProviderProviding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoProviderProviding> videoProviderProviding; // @synthesize videoProviderProviding=_videoProviderProviding;
 @property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
-- (void).cxx_destruct;
 - (id)createInteractionHandlerForVideo:(id)arg1;
 - (id)initWithVideoProviderProviding:(id)arg1 playbackController:(id)arg2;
 

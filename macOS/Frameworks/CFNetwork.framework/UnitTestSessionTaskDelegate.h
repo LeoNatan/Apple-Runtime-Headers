@@ -15,9 +15,9 @@
     SmartBlockWithArgs_02d865d6 _didFinishCollectingMetricsCompletionBlock;
 }
 
-@property(nonatomic) SmartBlockWithArgs_02d865d6 didFinishCollectingMetricsCompletionBlock; // @synthesize didFinishCollectingMetricsCompletionBlock=_didFinishCollectingMetricsCompletionBlock;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) SmartBlockWithArgs_02d865d6 didFinishCollectingMetricsCompletionBlock; // @synthesize didFinishCollectingMetricsCompletionBlock=_didFinishCollectingMetricsCompletionBlock;
 - (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;
 
 // Remaining properties

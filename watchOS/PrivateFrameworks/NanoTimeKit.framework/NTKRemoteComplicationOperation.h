@@ -16,11 +16,11 @@
     int _meteringType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int meteringType; // @synthesize meteringType=_meteringType;
 @property(nonatomic) _Bool discretionary; // @synthesize discretionary=_discretionary;
 @property(readonly, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (int)blacklistPolicy;
 - (id)description;
 - (_Bool)prolongsWakeSession;

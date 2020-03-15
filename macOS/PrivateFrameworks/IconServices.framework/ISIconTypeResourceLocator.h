@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly) NSString *type; // @synthesize type=_type;
 - (BOOL)allowLocalizedIcon;
 - (id)preferedResourceName;
 - (id)bundleIdentifier;

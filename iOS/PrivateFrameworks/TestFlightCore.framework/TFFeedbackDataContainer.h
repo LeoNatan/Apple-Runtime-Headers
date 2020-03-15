@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) NSMutableArray *dirtyEntryIdentifiers; // @synthesize dirtyEntryIdentifiers=_dirtyEntryIdentifiers;
 @property(readonly, nonatomic) NSMutableArray *dirtyGroupIdentifiers; // @synthesize dirtyGroupIdentifiers=_dirtyGroupIdentifiers;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableSet *includedGroupIdentifiers; // @synthesize includedGroupIdentifiers=_includedGroupIdentifiers;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak id <TFFeedbackDataContainerObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_notifyObserverOfUpdates;
 - (void)_clearDirtyIdentifiers;

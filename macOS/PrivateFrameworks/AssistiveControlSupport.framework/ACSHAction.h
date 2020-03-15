@@ -27,6 +27,7 @@
 + (id)titleForPlaceholderActionType:(unsigned long long)arg1;
 + (Class)classForActionType:(unsigned long long)arg1;
 + (Class)classForDict:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int actionStage; // @synthesize actionStage=_actionStage;
 @property(nonatomic) double repeatFrequencyInSeconds; // @synthesize repeatFrequencyInSeconds=_repeatFrequencyInSeconds;
 @property(nonatomic) BOOL stickyKeyRepeatActivated; // @synthesize stickyKeyRepeatActivated=_stickyKeyRepeatActivated;
@@ -36,7 +37,6 @@
 @property(nonatomic) double recordedOffset; // @synthesize recordedOffset=_recordedOffset;
 @property(retain, nonatomic) NSObject<ACSHOutputEventPerformer> *eventPerformer; // @synthesize eventPerformer=_eventPerformer;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (void)repeatEndedWithEventSourceData:(id)arg1;
 - (void)performDeactivateWithEventSourceData:(id)arg1;
 - (void)performWithEventSourceData:(id)arg1;

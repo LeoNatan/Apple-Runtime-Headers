@@ -16,12 +16,11 @@
 }
 
 + (id)sharedClient;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcConnectionSyncQueue; // @synthesize xpcConnectionSyncQueue=_xpcConnectionSyncQueue;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (void)getAssertionDescriptionsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)processDeviceRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)processDeviceRequest:(id)arg1 outError:(id *)arg2;
+- (void)processDeviceRequest:(id)arg1 encodeResponse:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)accessRights;
 - (_Bool)isActivationLockAllowedWhileSupervised;
 - (_Bool)isManagedByMDM;
@@ -33,10 +32,10 @@
 - (void)scheduleTokenUpdateIfNecessary;
 - (void)scheduleTokenUpdate;
 - (void)notifyNewConfiguration;
-- (_Bool)checkOutCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 topic:(id)arg3 signMessage:(_Bool)arg4 isUserEnrollment:(_Bool)arg5 enrollmentID:(id)arg6 outError:(id *)arg7;
+- (_Bool)checkOutCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 pinnedSecCertificateRefs:(id)arg3 pinningRevocationCheckRequired:(_Bool)arg4 topic:(id)arg5 signMessage:(_Bool)arg6 isUserEnrollment:(_Bool)arg7 enrollmentID:(id)arg8 outError:(id *)arg9;
 - (id)deviceEnrollmentAuthenticationDict;
 - (id)userEnrollmentAuthenticationDictWithEnrollmentID:(id)arg1;
-- (_Bool)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 topic:(id)arg3 useDevelopmentAPNS:(_Bool)arg4 signMessage:(_Bool)arg5 isUserEnrollment:(_Bool)arg6 enrollmentID:(id)arg7 outError:(id *)arg8;
+- (_Bool)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 pinnedSecCertificateRefs:(id)arg3 pinningRevocationCheckRequired:(_Bool)arg4 topic:(id)arg5 useDevelopmentAPNS:(_Bool)arg6 signMessage:(_Bool)arg7 isUserEnrollment:(_Bool)arg8 enrollmentID:(id)arg9 outError:(id *)arg10;
 - (void)_queue_createAndStartMDMXPCConnection;
 - (void)_destroyXPCConnectionAndInvalidate:(_Bool)arg1;
 - (void)dealloc;

@@ -16,14 +16,14 @@ __attribute__((visibility("hidden")))
 {
     int _systemLanguageChangeNotificationToken;
     NSObject<OS_dispatch_queue> *_resourceAccessQueue;
-    struct NSMutableDictionary *_allBundlesCache;
+    NSMutableDictionary *_allBundlesCache;
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int systemLanguageChangeNotificationToken; // @synthesize systemLanguageChangeNotificationToken=_systemLanguageChangeNotificationToken;
 @property(readonly, nonatomic) NSMutableDictionary *allBundlesCache; // @synthesize allBundlesCache=_allBundlesCache;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resourceAccessQueue; // @synthesize resourceAccessQueue=_resourceAccessQueue;
-- (void).cxx_destruct;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)invalidateCacheForBundleId:(id)arg1;
 - (void)invalidateCache;
@@ -38,8 +38,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)getSubtitle:(id *)arg1 forIntent:(id)arg2 languageCode:(id)arg3;
 - (_Bool)getTitle:(id *)arg1 forIntent:(id)arg2 languageCode:(id)arg3;
 - (id)cachedSummaryForIntent:(id)arg1 languageCode:(id)arg2 creatingIfNeeded:(_Bool)arg3;
-- (void)setBundleCache:(struct NSCache *)arg1 forBundleId:(id)arg2;
-- (struct NSCache *)bundleCacheForBundleId:(id)arg1;
+- (void)setBundleCache:(id)arg1 forBundleId:(id)arg2;
+- (id)bundleCacheForBundleId:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

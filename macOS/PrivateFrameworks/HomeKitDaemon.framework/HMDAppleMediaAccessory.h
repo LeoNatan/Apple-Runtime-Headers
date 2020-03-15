@@ -36,6 +36,7 @@
 + (BOOL)hasMessageReceiverChildren;
 + (id)__deviceMediaRouteIdentifier;
 + (BOOL)shouldAcceptMessage:(id)arg1 home:(id)arg2 privilege:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType settingsConnectionFactory; // @synthesize settingsConnectionFactory=_settingsConnectionFactory;
 @property(retain, nonatomic) HMFPairingIdentity *lastCreatedPairingIdentity; // @synthesize lastCreatedPairingIdentity=_lastCreatedPairingIdentity;
 @property(nonatomic) BOOL fixedPairingIdentityInCloud; // @synthesize fixedPairingIdentityInCloud=_fixedPairingIdentityInCloud;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) HMDTargetControlManager *targetControlManager; // @synthesize targetControlManager=_targetControlManager;
 @property(readonly) HMDAccessorySymptomHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
 @property(readonly) HMDRemoteLoginHandler *remoteLoginHandler; // @synthesize remoteLoginHandler=_remoteLoginHandler;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)dumpSimpleState;
 - (id)dumpState;
@@ -113,7 +113,9 @@
 - (void)autoConfigureTargetControllers;
 - (void)_fixCloudKeyIfNeeded;
 - (void)_fetchMultiUserLanguages;
+- (id)_createMediaProfile;
 - (void)configureWithHome:(id)arg1 msgDispatcher:(id)arg2 configurationTracker:(id)arg3;
+- (BOOL)_shouldFilterAccessoryProfile:(id)arg1;
 - (void)_registerForMessages;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

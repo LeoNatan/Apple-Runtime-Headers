@@ -25,6 +25,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool idsSessionStarted; // @synthesize idsSessionStarted=_idsSessionStarted;
 @property(readonly, nonatomic) __weak id <HMDCameraSnapshotIDSRelayInitiatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSMutableData *fileLengthAndData; // @synthesize fileLengthAndData=_fileLengthAndData;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) HMDSnapshotFile *snapshotFile; // @synthesize snapshotFile=_snapshotFile;
-- (void).cxx_destruct;
 - (void)_callFileTransferFailed:(id)arg1;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (void)sessionStarted:(id)arg1;

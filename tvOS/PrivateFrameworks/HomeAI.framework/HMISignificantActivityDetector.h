@@ -26,6 +26,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) MLPredictionOptions *predictionOptions; // @synthesize predictionOptions=_predictionOptions;
 @property(readonly) _Bool useSoftmax; // @synthesize useSoftmax=_useSoftmax;
 @property(readonly) double nmsThreshold; // @synthesize nmsThreshold=_nmsThreshold;
@@ -34,7 +35,6 @@
 @property(readonly) NSString *inputFeatureValueName; // @synthesize inputFeatureValueName=_inputFeatureValueName;
 @property(readonly) MLModel *mlModel; // @synthesize mlModel=_mlModel;
 @property(readonly) struct CGSize inputDimensions; // @synthesize inputDimensions=_inputDimensions;
-- (void).cxx_destruct;
 - (void)_postProcessOffsets:(id)arg1 scores:(id)arg2 outputPredictions:(id)arg3;
 - (_Bool)_runNeuralNetworkOnPixelBuffer:(struct __CVBuffer *)arg1 offsets:(id)arg2 scores:(id)arg3 error:(id *)arg4;
 - (_Bool)predict:(struct __CVBuffer *)arg1 detectedObjects:(id)arg2 error:(id *)arg3;

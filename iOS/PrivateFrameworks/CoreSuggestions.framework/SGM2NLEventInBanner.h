@@ -51,6 +51,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *calendarAppUsageLevel; // @synthesize calendarAppUsageLevel=_calendarAppUsageLevel;
 @property(retain, nonatomic) NSString *addedAttendeesCount; // @synthesize addedAttendeesCount=_addedAttendeesCount;
 @property(nonatomic) unsigned int usedBubblesCount; // @synthesize usedBubblesCount=_usedBubblesCount;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSString *languageID; // @synthesize languageID=_languageID;
 @property(retain, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

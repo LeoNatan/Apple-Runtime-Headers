@@ -32,6 +32,7 @@
     NSString *_networkName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *networkName; // @synthesize networkName=_networkName;
 @property(nonatomic) _Bool supportsPasswordSharing; // @synthesize supportsPasswordSharing=_supportsPasswordSharing;
 @property(nonatomic) _Bool allowsEmptyInput; // @synthesize allowsEmptyInput=_allowsEmptyInput;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(nonatomic) __weak id <TSKSettingItemEditingControllerDelegate> editingDelegate; // @synthesize editingDelegate=_editingDelegate;
 @property(retain, nonatomic) TSKSettingItem *editingItem; // @synthesize editingItem=_editingItem;
-- (void).cxx_destruct;
 - (_Bool)service:(id)arg1 shouldPromptForNetwork:(id)arg2;
 - (void)service:(id)arg1 receivedNetworkInfo:(id)arg2;
 - (void)_passwordSharingEnsureStopped;

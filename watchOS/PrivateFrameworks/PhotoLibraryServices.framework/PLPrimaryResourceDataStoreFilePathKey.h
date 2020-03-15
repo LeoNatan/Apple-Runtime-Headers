@@ -16,9 +16,9 @@
 
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
 + (id)fileURLForPayloadKeyData:(unsigned long long)arg1 assetID:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *filePathSuffix; // @synthesize filePathSuffix=_filePathSuffix;
 @property(nonatomic) struct PLPrimaryDataStoreKeyStrategy_FilePath_KeyStruct_V1 keyStruct; // @synthesize keyStruct=_keyStruct;
-- (void).cxx_destruct;
 - (id)descriptionForAssetID:(id)arg1;
 - (id)extension;
 - (id)initWithFilePath:(id)arg1 andLibraryID:(id)arg2;

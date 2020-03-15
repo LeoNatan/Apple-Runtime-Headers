@@ -19,11 +19,11 @@
 + (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 shouldAllowImageDrops:(BOOL)arg3 monogramOnly:(BOOL)arg4;
 + (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 showingNavBar:(BOOL)arg3 monogramOnly:(BOOL)arg4 delegate:(id)arg5;
 + (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(BOOL)arg2 monogramOnly:(BOOL)arg3 delegate:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *editButtonHeightConstraint; // @synthesize editButtonHeightConstraint=_editButtonHeightConstraint;
 @property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 @property(nonatomic) struct CGSize maxButtonSize; // @synthesize maxButtonSize=_maxButtonSize;
 @property(nonatomic) BOOL allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
-- (void).cxx_destruct;
 - (void)updateContactWithEditedPropertyItem:(id)arg1;
 - (void)editButtonPressed;
 - (void)saveContactPhoto;

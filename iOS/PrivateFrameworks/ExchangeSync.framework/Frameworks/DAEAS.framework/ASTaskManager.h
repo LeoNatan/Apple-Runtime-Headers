@@ -21,6 +21,7 @@
     ASTask *_modalPolicyKeyUpdateTask;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak ASTask *modalPolicyKeyUpdateTask; // @synthesize modalPolicyKeyUpdateTask=_modalPolicyKeyUpdateTask;
 @property(retain, nonatomic) ASGetOptionsTask *getOptionsTask; // @synthesize getOptionsTask=_getOptionsTask;
 @property(nonatomic) __weak ASTask *modalGetOptionsTask; // @synthesize modalGetOptionsTask=_modalGetOptionsTask;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSError *versionError; // @synthesize versionError=_versionError;
 @property(retain, nonatomic) NSString *easProtocolVersion; // @synthesize easProtocolVersion=_easProtocolVersion;
 @property(retain, nonatomic) ASPolicyManager *policyManager; // @synthesize policyManager=_policyManager;
-- (void).cxx_destruct;
 - (_Bool)shouldCancelTaskDueToOnPowerFetchMode;
 - (_Bool)_hasTasksIndicatingARunningSync;
 - (void)taskEndModal:(id)arg1;

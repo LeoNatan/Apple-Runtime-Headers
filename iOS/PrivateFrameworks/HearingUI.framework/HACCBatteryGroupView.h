@@ -14,9 +14,9 @@
     HACCBatteryView *_bottomBatteryView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HACCBatteryView *bottomBatteryView; // @synthesize bottomBatteryView=_bottomBatteryView;
 @property(retain, nonatomic) HACCBatteryView *topBatteryView; // @synthesize topBatteryView=_topBatteryView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)updateValueForLeft:(double)arg1 right:(double)arg2 andAvailableEars:(int)arg3;
 - (void)updateValueForDevice:(id)arg1;

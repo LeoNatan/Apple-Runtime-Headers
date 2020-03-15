@@ -23,6 +23,7 @@
     NSMutableDictionary *_bundleInformation;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *bundleInformation; // @synthesize bundleInformation=_bundleInformation;
 @property(getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(getter=isDisconnected) BOOL disconnected; // @synthesize disconnected=_disconnected;
@@ -30,7 +31,6 @@
 @property(retain) SMNNetworkSession *session; // @synthesize session=_session;
 @property(copy) CDUnknownBlockType groupnameConversionBlock; // @synthesize groupnameConversionBlock=_groupnameConversionBlock;
 @property(copy) CDUnknownBlockType usernameConversionBlock; // @synthesize usernameConversionBlock=_usernameConversionBlock;
-- (void).cxx_destruct;
 - (void)sourceMacInterfaceTypeChanged:(id)arg1 type:(unsigned long long)arg2 appropriateIcon:(unsigned long long)arg3;
 - (void)migrationRequestCompletedState:(unsigned long long)arg1 advancingTo:(unsigned long long)arg2 withErrorsAndWarnings:(id)arg3;
 - (void)engineMinutesRemaining:(id)arg1 transferRate:(id)arg2;

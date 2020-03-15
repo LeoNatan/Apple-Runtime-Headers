@@ -19,8 +19,8 @@
 + (void)enumerateRepresentationsForAnimation:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)animationFromRepresentation:(id)arg1 keyPath:(id)arg2;
 + (void)removeAllPoseAnimationsOnAvatar:(id)arg1;
-@property(readonly, nonatomic) AVTAvatarPose *staticPose; // @synthesize staticPose=_staticPose;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVTAvatarPose *staticPose; // @synthesize staticPose=_staticPose;
 - (void)applyOnAvatar:(id)arg1;
 @property(readonly, nonatomic) double duration;
 - (id)animationForAvatar:(id)arg1;

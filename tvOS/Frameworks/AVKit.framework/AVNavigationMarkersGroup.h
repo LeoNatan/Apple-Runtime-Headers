@@ -20,11 +20,11 @@
 
 + (id)navigationMarkerGroups:(id)arg1 inTimeRange:(id)arg2;
 + (id)navigationMarkerGroups:(id)arg1 filteredWithBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfImagesRemainingToLoad; // @synthesize numberOfImagesRemainingToLoad=_numberOfImagesRemainingToLoad;
 @property(readonly, nonatomic) NSArray *dateRangeNavigationMarkers; // @synthesize dateRangeNavigationMarkers=_dateRangeNavigationMarkers;
 @property(readonly, nonatomic) NSArray *timedNavigationMarkers; // @synthesize timedNavigationMarkers=_timedNavigationMarkers;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyArrayOfFractionsForDuration:(double)arg1;
 - (id)copyArrayOfFractionsForStartDate:(id)arg1 endDate:(id)arg2;
 - (void)enumerateStartDates:(CDUnknownBlockType)arg1;

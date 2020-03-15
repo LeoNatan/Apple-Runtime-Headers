@@ -28,10 +28,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_notificationTapBlock, setter=_setNotificationTapBlock:) CDUnknownBlockType notificationTapBlock; // @synthesize notificationTapBlock=_notificationTapBlock;
 @property(nonatomic) __weak id <PLExpandedPlatterDismissing> dismisser; // @synthesize dismisser=_dismisser;
 @property(nonatomic) __weak id <PLClickPresentationInteractionPresenting> presenter; // @synthesize presenter=_presenter;
-- (void).cxx_destruct;
 - (id)_longLookViewLoadingIfNecessary;
 - (id)_longLookViewIfLoaded;
 - (id)_expandedPlatterPresentationViewLoadingIfNecessary:(_Bool)arg1;
@@ -92,7 +92,7 @@
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)playMedia;
-- (void)_updateLookView:(struct UIView *)arg1 withTitleFromProvidedStaticContent:(id)arg2;
+- (void)_updateLookView:(id)arg1 withTitleFromProvidedStaticContent:(id)arg2;
 - (void)setCustomContentHomeAffordanceGestureRecognizer:(id)arg1;
 - (void)setCustomContentHomeAffordanceVisible:(_Bool)arg1;
 - (_Bool)restoreInputViews;

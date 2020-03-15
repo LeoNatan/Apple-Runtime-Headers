@@ -29,9 +29,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMMutableArray *currentActionSets; // @synthesize currentActionSets=_currentActionSets;
 @property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (BOOL)compatibleWithApp;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

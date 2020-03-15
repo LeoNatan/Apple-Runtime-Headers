@@ -24,10 +24,10 @@
 }
 
 + (id)viewControllerWithContext:(id)arg1 forAppController:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TVDocumentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak TVApplicationController *appController; // @synthesize appController=_appController;
 @property(retain, nonatomic) NSDictionary *documentContext; // @synthesize documentContext=_documentContext;
-- (void).cxx_destruct;
 - (_Bool)handleEvent:(id)arg1 withElement:(id)arg2 targetResponder:(id)arg3;
 - (void)didFailUpdateWithError:(id)arg1;
 - (void)didUpdateWithContext:(id)arg1;

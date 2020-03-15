@@ -16,11 +16,11 @@
     NSDictionary *_categoriesBySubsystem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *categoriesBySubsystem; // @synthesize categoriesBySubsystem=_categoriesBySubsystem;
 @property(nonatomic) BOOL simulatorMessagesOnly; // @synthesize simulatorMessagesOnly=_simulatorMessagesOnly;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(nonatomic) unsigned long long logTypes; // @synthesize logTypes=_logTypes;
-- (void).cxx_destruct;
 - (BOOL)matchesEvent:(id)arg1;
 - (id)initWithLogTypes:(unsigned long long)arg1;
 - (void)_initFilterDict;

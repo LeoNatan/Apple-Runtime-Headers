@@ -14,8 +14,8 @@
 }
 
 + (id)relevanceSimulatorID;
-@property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (id)description;
 - (unsigned int)_hash;
 - (_Bool)isEqual:(id)arg1;

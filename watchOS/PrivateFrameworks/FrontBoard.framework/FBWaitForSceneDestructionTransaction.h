@@ -16,8 +16,8 @@
     FBScene *_sceneToWaitForDeath;
 }
 
-@property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_sceneToWaitForDeath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_sceneToWaitForDeath;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;

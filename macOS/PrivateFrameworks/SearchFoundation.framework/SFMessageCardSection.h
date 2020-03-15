@@ -37,6 +37,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int messageServiceType; // @synthesize messageServiceType=_messageServiceType;
 @property(nonatomic) int messageStatus; // @synthesize messageStatus=_messageStatus;
 @property(copy, nonatomic) NSString *messageText; // @synthesize messageText=_messageText;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

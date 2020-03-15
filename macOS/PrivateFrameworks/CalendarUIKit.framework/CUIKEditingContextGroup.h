@@ -20,13 +20,13 @@
     NSNumber *_earlyCommitDecisionAsNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *earlyCommitDecisionAsNumber; // @synthesize earlyCommitDecisionAsNumber=_earlyCommitDecisionAsNumber;
 @property(retain) NSNumber *spanDecisionAsNumber; // @synthesize spanDecisionAsNumber=_spanDecisionAsNumber;
 @property(retain) NSMutableArray *additionalObjectGroups; // @synthesize additionalObjectGroups=_additionalObjectGroups;
 @property __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(retain) NSSet *openContexts; // @synthesize openContexts=_openContexts;
 @property(retain) CUIKObjectGroup *objectGroup; // @synthesize objectGroup=_objectGroup;
-- (void).cxx_destruct;
 - (BOOL)isTestObserver;
 - (id)oldObject:(id)arg1 didUpdateTo:(id)arg2;
 - (id)newIdentifierForIdentifier:(id)arg1;

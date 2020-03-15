@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SCROutputRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL handled; // @synthesize handled=_handled;
 @property(retain, nonatomic) SCROutputRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) SCREvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)initWithEvent:(id)arg1 outputRequest:(id)arg2;
 - (id)init;
 

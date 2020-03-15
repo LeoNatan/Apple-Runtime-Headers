@@ -21,12 +21,12 @@
     NFContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NFCallbackStore *callbackStore; // @synthesize callbackStore=_callbackStore;
 @property(retain, nonatomic) NFContainerPool *pool; // @synthesize pool=_pool;
 @property(retain, nonatomic) id <NFDefinitionContainer> privateContainer; // @synthesize privateContainer=_privateContainer;
 @property(retain, nonatomic) id <NFDefinitionContainer> publicContainer; // @synthesize publicContainer=_publicContainer;
-- (void).cxx_destruct;
 - (id)contextWithContextBlock:(CDUnknownBlockType)arg1;
 - (void)ensure:(id)arg1;
 - (id)resolveForKey:(id)arg1 context:(id)arg2 validateBlock:(CDUnknownBlockType)arg3;

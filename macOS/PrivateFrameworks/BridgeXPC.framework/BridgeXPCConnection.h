@@ -30,9 +30,9 @@
 
 + (void)connectedPair:(id *)arg1:(id *)arg2;
 + (id)HELOMessage;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *targetQueue; // @synthesize targetQueue;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancel;
 - (void)writeBarrier:(CDUnknownBlockType)arg1;

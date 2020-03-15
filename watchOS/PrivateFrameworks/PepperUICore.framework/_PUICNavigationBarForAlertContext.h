@@ -19,10 +19,10 @@
     PUICNavigationController *_navController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PUICNavigationController *navController; // @synthesize navController=_navController;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(retain, nonatomic) PUICStatusBar *alertcontextStatusBar; // @synthesize alertcontextStatusBar=_alertcontextStatusBar;
-- (void).cxx_destruct;
 - (_Bool)navPressedForStatusBarAppContext:(id)arg1;
 - (id)statusBarAppContextRightSideAdditionalImagesInteractive;
 - (id)statusBarAppContextRightSideAdditionalImages;

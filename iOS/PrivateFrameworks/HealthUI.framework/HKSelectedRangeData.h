@@ -16,11 +16,11 @@
     NSNumber *_valueAsNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *valueAsNumber; // @synthesize valueAsNumber=_valueAsNumber;
 @property(retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(nonatomic) long long dataType; // @synthesize dataType=_dataType;
 @property(nonatomic) long long statisticsType; // @synthesize statisticsType=_statisticsType;
-- (void).cxx_destruct;
 - (id)initWithStatisticsType:(long long)arg1;
 
 @end

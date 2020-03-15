@@ -19,12 +19,12 @@
 
 + (id)displayStringsForFillMatches:(id)arg1 skipMatches:(id)arg2 matchesForForm:(id)arg3 label:(id)arg4 formDataController:(id)arg5;
 + (id)displayStringsForSkipMatches:(id)arg1 matchesForForm:(id)arg2 formDataController:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *propertiesToFillOrSkip; // @synthesize propertiesToFillOrSkip=_propertiesToFillOrSkip;
 @property(readonly, copy, nonatomic) NSArray *skipDisplayProperties; // @synthesize skipDisplayProperties=_skipDisplayProperties;
 @property(readonly, copy, nonatomic) NSArray *fillDisplayProperties; // @synthesize fillDisplayProperties=_fillDisplayProperties;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSDictionary *controlIDToValueMap; // @synthesize controlIDToValueMap=_controlIDToValueMap;
-- (void).cxx_destruct;
 - (id)initWithControlIDToValueMap:(id)arg1 label:(id)arg2 fillDisplayProperties:(id)arg3 skipDisplayProperties:(id)arg4 propertiesToFillOrSkip:(id)arg5;
 
 @end

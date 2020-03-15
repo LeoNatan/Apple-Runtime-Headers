@@ -18,8 +18,8 @@
     unsigned long long _personFetchType;
 }
 
-@property(nonatomic) unsigned long long personFetchType; // @synthesize personFetchType=_personFetchType;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long personFetchType; // @synthesize personFetchType=_personFetchType;
 - (id)_assetForFace:(id)arg1;
 - (id)_faceForPerson:(id)arg1;
 - (id)faceTileAtIndex:(long long)arg1;

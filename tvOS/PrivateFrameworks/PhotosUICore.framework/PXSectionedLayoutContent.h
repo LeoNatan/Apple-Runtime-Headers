@@ -16,10 +16,10 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize internalContentSize; // @synthesize internalContentSize=_internalContentSize;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
-- (void).cxx_destruct;
 - (void)_adjustSectionsFromIndex:(long long)arg1;
 - (void)_exchangeSectionAtIndex:(unsigned long long)arg1 withSectionAtIndex:(unsigned long long)arg2;
 - (void)_insertSection:(id)arg1 atIndex:(unsigned long long)arg2;

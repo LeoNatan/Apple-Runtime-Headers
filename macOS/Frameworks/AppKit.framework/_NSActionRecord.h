@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     BOOL _fromMainMenu;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL fromMainMenu; // @synthesize fromMainMenu=_fromMainMenu;
 @property(readonly) BOOL canUseResponderChain; // @synthesize canUseResponderChain=_canUseResponderChain;
 @property(readonly, copy) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(readonly) long long tag; // @synthesize tag=_tag;
 @property(readonly) SEL action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithAction:(SEL)arg1 target:(id)arg2 sender:(id)arg3;
 

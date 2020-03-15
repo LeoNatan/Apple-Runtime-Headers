@@ -26,6 +26,7 @@
 
 + (double)rowHeight;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *selectionIndicator; // @synthesize selectionIndicator=_selectionIndicator;
 @property(retain, nonatomic) UIPickerView *picker; // @synthesize picker=_picker;
 @property(nonatomic) __weak id <NTKCFaceDetailComplicationPickerCellDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) _Bool dateSlot; // @synthesize dateSlot=_dateSlot;
 @property(readonly, nonatomic) NSString *slot; // @synthesize slot=_slot;
 @property(readonly, nonatomic) NSArray *complications; // @synthesize complications=_complications;
-- (void).cxx_destruct;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (id)_nameForRow:(long long)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <ISVariantResourceProviderProtocol> _resourceProvider;
 }
 
+- (void).cxx_destruct;
 @property __weak id <ISVariantResourceProviderProtocol> resourceProvider; // @synthesize resourceProvider=_resourceProvider;
 @property(retain) NSDictionary *layerInfo; // @synthesize layerInfo=_layerInfo;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)applyToContext:(struct CGContext *)arg1 size:(unsigned long long)arg2 scale:(unsigned long long)arg3;
 - (BOOL)isActiveAtSize:(long long)arg1;

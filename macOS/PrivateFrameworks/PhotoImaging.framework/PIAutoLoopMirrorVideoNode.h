@@ -18,7 +18,7 @@
 - (id)_evaluateVideo:(out id *)arg1;
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
 - (CDStruct_1b6d18a9)_conformTime:(CDStruct_1b6d18a9)arg1;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 
 @end
 

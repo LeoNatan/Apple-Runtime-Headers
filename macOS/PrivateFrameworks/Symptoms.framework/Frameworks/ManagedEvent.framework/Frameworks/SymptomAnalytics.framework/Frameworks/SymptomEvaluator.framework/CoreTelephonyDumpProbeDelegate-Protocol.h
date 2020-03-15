@@ -12,5 +12,6 @@
 
 @optional
 - (void)coreTelephonyDumpProbeCompleted:(CoreTelephonyDumpProbe *)arg1 success:(BOOL)arg2;
+- (void)coreTelephonyDumpProbeStarted:(CoreTelephonyDumpProbe *)arg1;
 @end
 

@@ -36,6 +36,7 @@
     id <SVVideoViewControllerSizeObserving> _sizeObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoViewControllerSizeObserving> sizeObserver; // @synthesize sizeObserver=_sizeObserver;
 @property(retain, nonatomic) NSMutableArray *alwaysActiveConstraints; // @synthesize alwaysActiveConstraints=_alwaysActiveConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *privacyAboveAccessoryBarConstraint; // @synthesize privacyAboveAccessoryBarConstraint=_privacyAboveAccessoryBarConstraint;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserverFactory> loadingStateObserverFactory; // @synthesize loadingStateObserverFactory=_loadingStateObserverFactory;
 @property(nonatomic, getter=areTransportControlsHidden) _Bool transportControlsHidden; // @synthesize transportControlsHidden=_transportControlsHidden;
 @property(readonly, nonatomic) id <SVCustomControlsViewProviding> customControlsViewProvider; // @synthesize customControlsViewProvider=_customControlsViewProvider;
-- (void).cxx_destruct;
 - (void)videoPlayerSizeDidChange;
 - (void)contentSizeCategoryDidChange;
 - (void)hide:(_Bool)arg1 withAnimationCoordinator:(id)arg2;

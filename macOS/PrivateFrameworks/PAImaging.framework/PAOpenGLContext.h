@@ -22,12 +22,12 @@
 
 + (id)contextWithCGLContext:(struct _CGLContextObject *)arg1;
 + (id)currentContext;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PAGLFramebuffer *drawBuffer; // @synthesize drawBuffer=_drawFBO;
 @property(readonly, nonatomic) PAGLFramebuffer *readBuffer; // @synthesize readBuffer=_readFBO;
 @property(readonly, nonatomic) PAGLFramebuffer *framebuffer; // @synthesize framebuffer=_fbo;
 @property(readonly, nonatomic) struct _CGLContextObject *CGLContext; // @synthesize CGLContext=_context;
 @property(readonly, nonatomic) __weak PAOpenGLDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (BOOL)isFragmentProcessingAccelerated;
 - (BOOL)isGeometryProcessingAccelerated;
 - (BOOL)isVertexProcessingAccelerated;

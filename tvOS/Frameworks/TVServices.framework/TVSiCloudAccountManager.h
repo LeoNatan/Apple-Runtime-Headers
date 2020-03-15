@@ -16,11 +16,11 @@
     NSOperationQueue *_networkingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *networkingQueue; // @synthesize networkingQueue=_networkingQueue;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(nonatomic) _Bool shouldFailSilently; // @synthesize shouldFailSilently=_shouldFailSilently;
 @property(retain, nonatomic) ACAccount *activeAccount; // @synthesize activeAccount=_activeAccount;
-- (void).cxx_destruct;
 - (void)_handleTOCAgreedForAccount:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_loadTOCForAccount:(id)arg1 WithCompletion:(CDUnknownBlockType)arg2;
 - (void)_performTermsAndConditionsUpdateForAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

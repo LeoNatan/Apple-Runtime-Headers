@@ -14,9 +14,9 @@
     NSArray *_appGridViews;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *appGridViews; // @synthesize appGridViews=_appGridViews;
 @property(readonly, nonatomic) UIView *topShelfView; // @synthesize topShelfView=_topShelfView;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithAppGridViews:(id)arg1;
 - (id)initWithTopShelfView:(id)arg1;

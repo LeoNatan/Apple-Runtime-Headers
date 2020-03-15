@@ -18,12 +18,12 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic, getter=isEmphasized) BOOL emphasized; // @synthesize emphasized=_emphasized;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)_updateCell;
 - (void)_invalidateCell;
 - (void)setCell:(id)arg1;

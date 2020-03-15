@@ -16,11 +16,11 @@
     unsigned long long _batchCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long batchCount; // @synthesize batchCount=_batchCount;
 @property(nonatomic) unsigned long long bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (_Bool)_verifyLibraryConnectionAndAttributesProperties:(id *)arg1;
 - (id)_queryForPlaylistsContainingMusicShowsMissedByQuery:(id)arg1 inContainerPIDs:(id)arg2;
 - (id)_createSearchableItemsForPlaylistsWithQuery:(id)arg1 error:(id *)arg2;

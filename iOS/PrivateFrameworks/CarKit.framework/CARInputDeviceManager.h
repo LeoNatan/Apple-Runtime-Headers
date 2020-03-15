@@ -16,9 +16,9 @@
     CARSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak CARSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NSArray *inputDevices; // @synthesize inputDevices=_inputDevices;
-- (void).cxx_destruct;
 - (id)_initWithInputDevices:(id)arg1 session:(id)arg2;
 - (id)_touchpadSettingsFromVehicleInformation:(id)arg1;
 - (void)_updateTouchpadSettings:(id)arg1;

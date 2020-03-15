@@ -16,9 +16,9 @@
 
 + (id)flexibleSpaceSpecifier;
 + (id)autoresizingFlexibleSpaceSpecifier;
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *constraint; // @synthesize constraint=_constraint;
 @property BOOL autoresizing; // @synthesize autoresizing=_autoresizing;
-- (void).cxx_destruct;
 @property double height; // @dynamic height;
 
 @end

@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
     double _minimumDifference;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumDifference; // @synthesize minimumDifference=_minimumDifference;
 @property(nonatomic) double convergenceRate; // @synthesize convergenceRate=_convergenceRate;
 @property(nonatomic) double targetValue; // @synthesize targetValue=_targetValue;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)runWithValueApplier:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithValue:(double)arg1 targetValue:(double)arg2 convergenceRate:(double)arg3 minimumDifference:(double)arg4;

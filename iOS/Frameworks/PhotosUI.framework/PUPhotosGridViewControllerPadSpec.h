@@ -17,6 +17,7 @@
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;
 - (id)albumPickerViewControllerSpec;
 - (id)photosPickerViewControllerSpec;
+- (_Bool)shouldUseAspectItems;
 - (_Bool)shouldPlaceSelectAllButtonInRightNavigationBar;
 - (_Bool)canDisplaySlideshowButton;
 - (_Bool)usesStackPopTransition;

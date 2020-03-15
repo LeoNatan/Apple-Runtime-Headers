@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     SKUIViewElementText *_text;
 }
 
-@property(readonly, nonatomic) SKUIViewElementText *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIViewElementText *text; // @synthesize text=_text;
 @property(readonly, nonatomic) long long dividerType;
 @property(readonly, nonatomic) SKUIButtonViewElement *button;
 - (long long)pageComponentType;

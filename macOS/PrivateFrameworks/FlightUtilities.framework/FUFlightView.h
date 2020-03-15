@@ -50,6 +50,7 @@
     struct NSEdgeInsets _mapInsets;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *mapHeight; // @synthesize mapHeight=_mapHeight;
 @property __weak NSLayoutConstraint *mapWidth; // @synthesize mapWidth=_mapWidth;
 @property __weak NSLayoutConstraint *rightMapMargin; // @synthesize rightMapMargin=_rightMapMargin;
@@ -77,7 +78,6 @@
 @property(nonatomic) struct NSEdgeInsets mapInsets; // @synthesize mapInsets=_mapInsets;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)infoViewControllerCreate;
 - (void)saveRawResponse:(id)arg1;

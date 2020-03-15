@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) CSLSPrivilegedBackgroundServiceConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLSPrivilegedBackgroundServiceConnection *connection; // @synthesize connection=_connection;
 - (void)registerPrivilegedBackgroundClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)cancelBackgroundTaskRequestForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelBackgroundTaskRequestForBundleID:(id)arg1;

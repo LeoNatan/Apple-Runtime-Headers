@@ -20,6 +20,7 @@
     NSDictionary *allMetadata;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *allMetadata; // @synthesize allMetadata;
 @property _Bool saveAllMetadata; // @synthesize saveAllMetadata;
 @property(readonly) NSMutableArray *facesArray; // @synthesize facesArray;
@@ -27,7 +28,6 @@
 @property(retain) NSMutableArray *desiredExifKeysArray; // @synthesize desiredExifKeysArray;
 @property(readonly) NSMutableDictionary *metadataDictionary; // @synthesize metadataDictionary;
 @property(retain) NSURL *inFileURL; // @synthesize inFileURL;
-- (void).cxx_destruct;
 - (short)processFile;
 - (_Bool)copyKeysFromDictionary:(id)arg1;
 - (void)CopyFacesDataFromAuxDictionary:(id)arg1 toArray:(id)arg2;

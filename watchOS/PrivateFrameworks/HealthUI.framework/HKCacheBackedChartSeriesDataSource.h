@@ -17,8 +17,8 @@
     HKChartCache *_chartCache;
 }
 
-@property(retain, nonatomic) HKChartCache *chartCache; // @synthesize chartCache=_chartCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKChartCache *chartCache; // @synthesize chartCache=_chartCache;
 - (void)_resetCachedPaths;
 - (void)chartCacheDidUpdate:(id)arg1;
 - (void)invalidateCache;

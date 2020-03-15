@@ -17,9 +17,9 @@
     PXImageUIView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXImageUIView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) PXImageViewSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 @property(readonly, nonatomic) UIView *view;

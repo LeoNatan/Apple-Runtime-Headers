@@ -15,23 +15,24 @@ __attribute__((visibility("hidden")))
     NSTrackingArea *_trackingArea;
     id _flagsChangedEventMonitor;
     BOOL _mouseOver;
-    BOOL _trackingMouseDown;
     BOOL _trackingRectUpdatePending;
     BOOL _usesRolloverAppearanceInInactiveWindow;
     BOOL _usesRolloverAppearanceOnMouseDown;
     BOOL _usesRolloverAppearanceWhenFirstResponder;
     BOOL _redrawOnMouseEnteredAndExited;
     BOOL _useRolloverAppearanceNow;
+    BOOL _trackingMouseDown;
     id <RolloverTrackingButtonDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isTrackingMouseDown) BOOL trackingMouseDown; // @synthesize trackingMouseDown=_trackingMouseDown;
 @property(nonatomic) BOOL useRolloverAppearanceNow; // @synthesize useRolloverAppearanceNow=_useRolloverAppearanceNow;
 @property(nonatomic) BOOL redrawOnMouseEnteredAndExited; // @synthesize redrawOnMouseEnteredAndExited=_redrawOnMouseEnteredAndExited;
 @property(nonatomic) BOOL usesRolloverAppearanceWhenFirstResponder; // @synthesize usesRolloverAppearanceWhenFirstResponder=_usesRolloverAppearanceWhenFirstResponder;
 @property(nonatomic) BOOL usesRolloverAppearanceOnMouseDown; // @synthesize usesRolloverAppearanceOnMouseDown=_usesRolloverAppearanceOnMouseDown;
 @property(nonatomic) BOOL usesRolloverAppearanceInInactiveWindow; // @synthesize usesRolloverAppearanceInInactiveWindow=_usesRolloverAppearanceInInactiveWindow;
 @property(nonatomic) __weak id <RolloverTrackingButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didResignActiveFirstResponder;
 - (void)didBecomeActiveFirstResponder;
 - (void)_removeFlagsChangedEventMonitorIfNecessary;

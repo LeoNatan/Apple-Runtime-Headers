@@ -16,10 +16,10 @@
     CertificateViewController *_certificateViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CertificateViewController *certificateViewController; // @synthesize certificateViewController=_certificateViewController;
 @property(nonatomic) _Bool allowCertificateTrust; // @synthesize allowCertificateTrust=_allowCertificateTrust;
 @property(nonatomic) __weak id <TrustCertificateViewControllerDelegate> trustCertificateDelegate; // @synthesize trustCertificateDelegate=_trustCertificateDelegate;
-- (void).cxx_destruct;
 - (void)setShowCertificateButton:(_Bool)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)setCertificateInfo:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 isRoot:(_Bool)arg5 properties:(id)arg6 action:(int)arg7;
 - (void)_accept;

@@ -17,8 +17,8 @@
 
 + (id)eventWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
 + (id)eventWithType:(int)arg1 data:(id)arg2;
-@property(nonatomic) _Bool shouldDisplay; // @synthesize shouldDisplay=_shouldDisplay;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldDisplay; // @synthesize shouldDisplay=_shouldDisplay;
 - (id)description;
 - (id)data3;
 - (id)data2;

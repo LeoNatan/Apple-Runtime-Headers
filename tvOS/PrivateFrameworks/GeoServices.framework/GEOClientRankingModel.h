@@ -13,8 +13,8 @@
     NSArray *_features;
 }
 
-@property(readonly, nonatomic) NSArray *features; // @synthesize features=_features;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *features; // @synthesize features=_features;
 - (id)initWithGEOPDClientRankingFeatureMetadata:(id)arg1;
 - (id)initWithFeatures:(id)arg1;
 - (id)init;

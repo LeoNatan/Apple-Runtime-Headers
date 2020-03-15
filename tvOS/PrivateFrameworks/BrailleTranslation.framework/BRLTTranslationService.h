@@ -24,13 +24,13 @@
 + (id)connectionForServiceIdentifier:(id)arg1;
 + (id)serviceForIdentifier:(id)arg1 loopback:(_Bool)arg2;
 + (id)serviceForIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSXPCConnection *queue_connection; // @synthesize queue_connection=_queue_connection;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(nonatomic, getter=isInvalid) _Bool invalid; // @synthesize invalid=_invalid;
 @property(readonly, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)textForBraille:(id)arg1 parameters:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)brailleForText:(id)arg1 parameters:(id)arg2 withReply:(CDUnknownBlockType)arg3;

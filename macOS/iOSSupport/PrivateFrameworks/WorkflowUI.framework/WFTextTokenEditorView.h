@@ -41,6 +41,7 @@
     WFTextScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFTextScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) WFTextTokenTextField *textField; // @synthesize textField=_textField;
 @property(copy, nonatomic) CDUnknownBlockType revealBlock; // @synthesize revealBlock=_revealBlock;
@@ -64,7 +65,6 @@
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) __weak id <WFTextTokenEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;

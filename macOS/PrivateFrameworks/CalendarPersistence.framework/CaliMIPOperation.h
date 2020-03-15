@@ -22,8 +22,8 @@
 + (BOOL)managedAttendeeWillCauseiMIPScheduling:(id)arg1;
 + (id)operationsWithManagedAttendees:(id)arg1;
 + (BOOL)supportsSecureCoding;
-@property(readonly, retain) NSArray *attendeeObjectIDs; // @synthesize attendeeObjectIDs=_attendeeObjectIDs;
 - (void).cxx_destruct;
+@property(readonly, retain) NSArray *attendeeObjectIDs; // @synthesize attendeeObjectIDs=_attendeeObjectIDs;
 - (id)emailSubjectInContext:(id)arg1;
 - (id)emailRecipientsInContext:(id)arg1;
 - (id)emailBodyInContext:(id)arg1;

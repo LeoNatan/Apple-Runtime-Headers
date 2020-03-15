@@ -24,6 +24,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isExtendedRuntimeSession; // @synthesize isExtendedRuntimeSession=_isExtendedRuntimeSession;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
@@ -32,7 +33,6 @@
 @property(nonatomic) double cpuPercentage; // @synthesize cpuPercentage=_cpuPercentage;
 @property(readonly, copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)assertion:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)setTestAssertion:(id)arg1;
 - (void)_queue_invalidateWithError:(id)arg1;

@@ -15,8 +15,8 @@
     BOOL _userInitiated;
 }
 
-@property BOOL userInitiated; // @synthesize userInitiated=_userInitiated;
 - (void).cxx_destruct;
+@property BOOL userInitiated; // @synthesize userInitiated=_userInitiated;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id *)arg2;
 - (id)initWithArchivedFiles:(id)arg1;
 

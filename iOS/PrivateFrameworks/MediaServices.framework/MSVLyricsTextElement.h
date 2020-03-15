@@ -13,8 +13,8 @@
     NSAttributedString *_lyricsText;
 }
 
-@property(copy, nonatomic) NSAttributedString *lyricsText; // @synthesize lyricsText=_lyricsText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSAttributedString *lyricsText; // @synthesize lyricsText=_lyricsText;
 - (id)description;
 - (id)init;
 

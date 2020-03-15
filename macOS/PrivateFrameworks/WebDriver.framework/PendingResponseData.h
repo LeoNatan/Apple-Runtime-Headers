@@ -15,10 +15,10 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) WDProtocolCommand *originatingCommand; // @synthesize originatingCommand=_originatingCommand;
 @property(nonatomic) long long sequenceId; // @synthesize sequenceId=_sequenceId;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,9 +14,9 @@
     float _dimming;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float dimming; // @synthesize dimming=_dimming;
 @property(readonly, nonatomic) NSArray *toContents; // @synthesize toContents=_toContents;
-- (void).cxx_destruct;
 - (void)finalizeWithToContents:(id)arg1 dimming:(float)arg2;
 
 @end

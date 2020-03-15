@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)initialAlignmentRectInsets;
 + (struct CGSize)initialIntrinsicSize;
 + (struct CGSize)initialSize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wraps; // @synthesize wraps=_wraps;
 @property(nonatomic) double stepValue; // @synthesize stepValue=_stepValue;
 @property(nonatomic) __weak id <UIStepperControl> stepperControl; // @synthesize stepperControl=_stepperControl;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic) double maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)setTintColor:(id)arg1;
 - (id)decrementImageForState:(unsigned long long)arg1;
 - (void)setDecrementImage:(id)arg1 forState:(unsigned long long)arg2;

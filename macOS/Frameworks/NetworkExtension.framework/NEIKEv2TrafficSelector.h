@@ -22,12 +22,12 @@
 + (id)copyAllIPv4;
 + (id)copyAllIPv6;
 + (id)copyConstrainedTrafficSelectorsForRequest:(id)arg1 reply:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned char ipProtocol; // @synthesize ipProtocol=_ipProtocol;
 @property unsigned short endPort; // @synthesize endPort=_endPort;
 @property unsigned short startPort; // @synthesize startPort=_startPort;
 @property(retain) NWAddressEndpoint *endAddress; // @synthesize endAddress=_endAddress;
 @property(retain) NWAddressEndpoint *startAddress; // @synthesize startAddress=_startAddress;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long type;
 - (id)description;

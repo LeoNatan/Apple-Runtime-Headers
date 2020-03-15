@@ -23,11 +23,11 @@
 + (id)poorCableWarningRequest;
 + (id)cableCheckRequestFromSource:(long long)arg1;
 + (id)upgradeAttemptRequestFromSource:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long source; // @synthesize source=_source;
 @property(readonly, nonatomic) long long kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) PBSDisplayMode *destinationDisplayMode; // @synthesize destinationDisplayMode=_destinationDisplayMode;
 @property(readonly, nonatomic) PBSDisplayMode *sourceDisplayMode; // @synthesize sourceDisplayMode=_sourceDisplayMode;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

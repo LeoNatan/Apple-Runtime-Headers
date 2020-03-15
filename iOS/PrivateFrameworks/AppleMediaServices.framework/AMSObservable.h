@@ -20,6 +20,7 @@
     NSConditionLock *_stateLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSConditionLock *stateLock; // @synthesize stateLock=_stateLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sendMessageQueue; // @synthesize sendMessageQueue=_sendMessageQueue;
 @property(retain, nonatomic) NSMutableArray *queuedResults; // @synthesize queuedResults=_queuedResults;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain, nonatomic) NSError *failureError; // @synthesize failureError=_failureError;
 @property(readonly, nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
-- (void).cxx_destruct;
 - (_Bool)_isComplete;
 - (void)unsubscribeAll;
 - (void)unsubscribe:(id)arg1;

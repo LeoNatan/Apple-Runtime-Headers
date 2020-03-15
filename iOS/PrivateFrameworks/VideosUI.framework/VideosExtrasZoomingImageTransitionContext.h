@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _appearState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
 @property(nonatomic) unsigned long long appearState; // @synthesize appearState=_appearState;
 @property(nonatomic) unsigned long long itemIndex; // @synthesize itemIndex=_itemIndex;
 @property(retain, nonatomic) VideosExtrasBorderedImageView *zoomingImageView; // @synthesize zoomingImageView=_zoomingImageView;
-- (void).cxx_destruct;
 - (id)initWithZoomingImageView:(id)arg1 itemIndex:(unsigned long long)arg2 appearState:(unsigned long long)arg3 isInteractive:(_Bool)arg4;
 
 @end

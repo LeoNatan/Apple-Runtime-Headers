@@ -171,7 +171,7 @@
 - (void)delegate_didReceiveChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)can_delegate_didReceiveChallenge;
 - (void)addDelegateBlock:(CDUnknownBlockType)arg1;
-- (shared_ptr_9ad247fa)_nwContext;
+- (shared_ptr_22b0e4cc)_nwContext;
 @property(readonly, copy) NSURLSessionConfiguration *configuration; // @dynamic configuration;
 @property(readonly) __weak NSURLSessionConfiguration *_local_immutable_configuration; // @dynamic _local_immutable_configuration;
 - (id)_update_local_configuration:(CDUnknownBlockType)arg1;

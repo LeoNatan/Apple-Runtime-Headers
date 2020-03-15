@@ -65,9 +65,9 @@ __attribute__((visibility("hidden")))
 + (double)fadeBackAlphaForSnapshotIndex:(unsigned long long)arg1 numberShown:(unsigned long long)arg2;
 + (id)createBackupViewWithFrame:(struct CGRect)arg1 inWindow:(id)arg2;
 + (void)initInterpolators;
-@property unsigned long long isAnimating; // @synthesize isAnimating=fAnimating;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property unsigned long long isAnimating; // @synthesize isAnimating=fAnimating;
 - (void)setShadowInfo:(struct CGImage *)arg1 shadowImageBounds:(struct CGRect)arg2 contentImageBounds:(struct CGRect)arg3;
 - (void)calculateLayerBounds:(unsigned long long)arg1 baseBounds:(struct CGRect)arg2 withSunRaised:(_Bool)arg3;
 - (struct CGRect)calculateLayerBoundsAtNormalizedZ:(double)arg1 withBaseBounds:(struct CGRect)arg2 withTargetY:(double)arg3;

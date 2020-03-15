@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSData *_irkData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *irkData; // @synthesize irkData=_irkData;
 @property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 
 @end
 

@@ -23,6 +23,7 @@
     NSArray *_horizontalLabelConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *horizontalLabelConstraints; // @synthesize horizontalLabelConstraints=_horizontalLabelConstraints;
 @property(retain, nonatomic) NSArray *verticalLabelConstraints; // @synthesize verticalLabelConstraints=_verticalLabelConstraints;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(retain, nonatomic) id <HFStringGenerator> titleText; // @synthesize titleText=_titleText;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateLabel:(id)arg1 withContent:(id)arg2;
 - (void)_setupDescriptionLabel;
 - (void)_setupTitleLabel;

@@ -16,10 +16,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) HMDCharacteristicWriteRequest *writeRequest; // @synthesize writeRequest=_writeRequest;
-- (void).cxx_destruct;
 - (id)initWithCharacteristic:(id)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 
 @end

@@ -30,11 +30,11 @@
     double _shadowOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double shadowOffset; // @synthesize shadowOffset=_shadowOffset;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) double switcherCardScale; // @synthesize switcherCardScale=_switcherCardScale;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_updateShadowParameters;
 - (void)_applyPrototypeSettingsToConstants;

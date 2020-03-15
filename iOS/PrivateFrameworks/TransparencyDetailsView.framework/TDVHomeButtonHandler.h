@@ -18,9 +18,9 @@
 }
 
 + (id)handlerWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> homeButtonAssertion; // @synthesize homeButtonAssertion=_homeButtonAssertion;
 @property(copy, nonatomic) CDUnknownBlockType homeButtonHandlerCallback; // @synthesize homeButtonHandlerCallback=_homeButtonHandlerCallback;
-- (void).cxx_destruct;
 - (void)consumeSinglePressUpForButtonKind:(long long)arg1;
 - (void)stopConsumingHardwarePresses;
 - (void)startConsumingHardwarePresses:(CDUnknownBlockType)arg1;

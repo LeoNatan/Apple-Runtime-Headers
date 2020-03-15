@@ -19,10 +19,10 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) VCPProtoBounds *bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) float confidence; // @synthesize confidence=_confidence;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

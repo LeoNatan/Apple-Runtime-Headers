@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedIRManager;
-@property(retain) NSMutableDictionary *lookupTable; // @synthesize lookupTable=_lookupTable;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *lookupTable; // @synthesize lookupTable=_lookupTable;
 - (id)converterForType:(id)arg1;
 - (void)registerIRHandlerClass:(Class)arg1 forType:(id)arg2;
 - (id)registeredConverters;

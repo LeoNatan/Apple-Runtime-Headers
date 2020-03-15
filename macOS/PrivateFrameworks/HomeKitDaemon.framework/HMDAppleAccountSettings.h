@@ -27,11 +27,11 @@
 + (BOOL)supportsCloudSettings;
 + (id)sharedSettings;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) int viewMembershipChangedNotificationToken; // @synthesize viewMembershipChangedNotificationToken=_viewMembershipChangedNotificationToken;
 @property(nonatomic) int circleChangedNotificationToken; // @synthesize circleChangedNotificationToken=_circleChangedNotificationToken;
 @property(nonatomic) BOOL migrated; // @synthesize migrated=_migrated;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)__updateHomeEnabled:(BOOL)arg1 userInitiated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateHomeEnabled:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)__migrateHomePreferences;

@@ -17,11 +17,11 @@
     NSString *_confirmationButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *confirmationButtonTitle; // @synthesize confirmationButtonTitle=_confirmationButtonTitle;
 @property(retain) NSString *confirmationText; // @synthesize confirmationText=_confirmationText;
 @property _Bool mayCauseDataLoss; // @synthesize mayCauseDataLoss=_mayCauseDataLoss;
 @property __weak NSObject<STStorageOptionTipDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) long long eventualGain;
 @property(nonatomic) long long immediateGain;
 @property(retain, nonatomic) NSString *activatingString;

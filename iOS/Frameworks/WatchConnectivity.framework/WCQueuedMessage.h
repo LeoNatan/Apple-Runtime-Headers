@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     long long _retryCount;
 }
 
+- (void).cxx_destruct;
 @property long long retryCount; // @synthesize retryCount=_retryCount;
 @property(readonly) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain) WCMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (id)initWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

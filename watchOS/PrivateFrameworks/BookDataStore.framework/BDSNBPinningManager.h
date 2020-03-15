@@ -13,8 +13,8 @@
     BDSServiceProxy *_serviceProxy;
 }
 
-@property(retain, nonatomic) BDSServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BDSServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 - (void)performInitialUpdateOfAutomaticPinningListsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)audiobookStoreEnabledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateBitrateForItemWithAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -18,8 +18,8 @@
 }
 
 + (long long)_defaultInterfaceOrientation;
-@property(readonly, nonatomic) NSSet *elements; // @synthesize elements=_elements;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *elements; // @synthesize elements=_elements;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

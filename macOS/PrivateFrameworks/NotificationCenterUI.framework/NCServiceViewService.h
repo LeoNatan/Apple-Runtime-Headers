@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) NCServiceWindow *serviceWindow; // @synthesize serviceWindow=_ncServiceWindow;
-- (void).cxx_destruct;
 - (void)remoteViewServiceContainerView:(id)arg1 requestSizeChange:(struct CGSize)arg2 fenceRight:(id)arg3;
 - (void)serviceRegisterSessionUUID:(id)arg1 forHost:(_Bool)arg2;
 - (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;

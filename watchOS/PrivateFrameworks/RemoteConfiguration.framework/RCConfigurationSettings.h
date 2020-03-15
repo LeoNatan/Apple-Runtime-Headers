@@ -21,6 +21,7 @@
     RCDebugOverrides *_debugOverrides;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool useBackgroundRefreshRate; // @synthesize useBackgroundRefreshRate=_useBackgroundRefreshRate;
 @property(readonly, nonatomic) RCDebugOverrides *debugOverrides; // @synthesize debugOverrides=_debugOverrides;
 @property(readonly, nonatomic) RCDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(readonly, copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
 @property(readonly, nonatomic) NSArray *requestInfos; // @synthesize requestInfos=_requestInfos;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *loggingKey;
 @property(readonly, nonatomic) NSURL *fallbackURL;
 - (_Bool)isValid;

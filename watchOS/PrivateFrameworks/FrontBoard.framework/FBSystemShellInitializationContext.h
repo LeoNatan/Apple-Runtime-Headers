@@ -16,8 +16,8 @@
     _Bool _bootedDark;
 }
 
-@property(readonly, nonatomic) FBSystemShellInitializationOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FBSystemShellInitializationOptions *options; // @synthesize options=_options;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)_disablesUIKitWindowImplicitScenes;
 - (_Bool)_optsIntoUIKitWindowHosting;

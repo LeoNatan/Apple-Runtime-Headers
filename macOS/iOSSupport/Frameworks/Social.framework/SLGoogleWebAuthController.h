@@ -11,8 +11,8 @@
     CDUnknownBlockType _completion;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithYouTubeUsername:(id)arg1 accountDescription:(id)arg2 presentationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithAccount:(id)arg1 accountStore:(id)arg2 presentationBlock:(CDUnknownBlockType)arg3;

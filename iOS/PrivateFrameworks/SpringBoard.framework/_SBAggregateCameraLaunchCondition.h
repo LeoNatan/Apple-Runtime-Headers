@@ -13,8 +13,8 @@
     NSArray *_conditions;
 }
 
-@property(retain, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 - (_Bool)isMet;
 
 @end

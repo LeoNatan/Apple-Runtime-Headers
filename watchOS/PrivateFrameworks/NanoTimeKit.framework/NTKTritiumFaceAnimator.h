@@ -25,8 +25,8 @@
 }
 
 + (id)animatorWithSteps:(id)arg1 faceView:(id)arg2;
-@property(nonatomic) __weak id <NTKTritiumFaceAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKTritiumFaceAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)copyPropertiesFromAniamtor:(id)arg1;
 @property(readonly, nonatomic) double tritiumOffDuration;
 @property(readonly, nonatomic) double tritiumOnDuration;

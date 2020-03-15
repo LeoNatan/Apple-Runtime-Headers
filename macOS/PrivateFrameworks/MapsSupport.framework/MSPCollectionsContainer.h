@@ -13,8 +13,8 @@
 
 + (id)sharedRemoteContainer;
 + (id)sharedLocalContainer;
-@property(retain, nonatomic) MSPContainer *itemContainer; // @synthesize itemContainer=_itemContainer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MSPContainer *itemContainer; // @synthesize itemContainer=_itemContainer;
 - (id)queryWithDelegate:(id)arg1;
 - (id)initWithPersister:(id)arg1 itemContainer:(id)arg2;
 

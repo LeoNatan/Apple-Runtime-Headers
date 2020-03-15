@@ -6,36 +6,42 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class NSButton, NSView;
+@class BrowserDataDirectories, NSButton, NSImageView, NSStackView, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface BrowserDataImportPanelController : NSWindowController
 {
-    long long _source;
+    BOOL _isBrowserProcessRunning;
+    BrowserDataDirectories *_browserDataDirectories;
     NSButton *_importButton;
-    NSView *_checkboxContainer;
+    NSStackView *_checkboxContainer;
+    NSImageView *_icon;
+    NSTextField *_additionalInfo;
     NSButton *_bookmarksCheckbox;
     NSButton *_historyCheckbox;
     NSButton *_passwordsCheckbox;
 }
 
-+ (void)_importDataTypes:(unsigned long long)arg1 fromSource:(long long)arg2;
-+ (unsigned long long)_supportedPreconfiguredDataTypesForSource:(long long)arg1;
-+ (unsigned long long)_supportedImportDataTypesForSource:(long long)arg1;
-+ (void)runModalPanelForSource:(long long)arg1;
++ (void)runModalPanelForBrowserDataDirectories:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *passwordsCheckbox; // @synthesize passwordsCheckbox=_passwordsCheckbox;
 @property(retain, nonatomic) NSButton *historyCheckbox; // @synthesize historyCheckbox=_historyCheckbox;
 @property(retain, nonatomic) NSButton *bookmarksCheckbox; // @synthesize bookmarksCheckbox=_bookmarksCheckbox;
-@property(nonatomic) __weak NSView *checkboxContainer; // @synthesize checkboxContainer=_checkboxContainer;
+@property(nonatomic) __weak NSTextField *additionalInfo; // @synthesize additionalInfo=_additionalInfo;
+@property(nonatomic) __weak NSImageView *icon; // @synthesize icon=_icon;
+@property(nonatomic) __weak NSStackView *checkboxContainer; // @synthesize checkboxContainer=_checkboxContainer;
 @property(nonatomic) __weak NSButton *importButton; // @synthesize importButton=_importButton;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) BrowserDataDirectories *browserDataDirectories; // @synthesize browserDataDirectories=_browserDataDirectories;
 - (id)_windowTitle;
 - (void)_updateWindowTitle;
 - (BOOL)_checkboxIsAvailableAndChecked:(id)arg1;
 - (BOOL)_isAnyCheckboxChecked;
+- (void)_setImportingBrowserIcon;
+- (void)_updateShowCloseBrowserSupportText;
+- (BOOL)_isBrowserProcessInApplicationList:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_importFromBrowser;
 - (unsigned long long)_selectedDataTypes;
-- (void)_addConstraintsForCheckboxes:(id)arg1;
 - (void)_updateCheckboxVisibility;
 - (void)_updateImportButtonEnabled;
 - (id)_defaultSelectedCheckboxes;
@@ -47,10 +53,12 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)_supportedImportDataTypes;
 - (void)importClicked:(id)arg1;
 - (void)checkboxToggled:(id)arg1;
-- (id)_initWithImportSource:(long long)arg1;
 - (void)awakeFromNib;
+- (void)windowDidLoad;
 - (void)close:(id)arg1;
 - (id)windowNibName;
+- (void)dealloc;
+- (id)_initWithBrowserDataDirectories:(id)arg1;
 
 @end
 

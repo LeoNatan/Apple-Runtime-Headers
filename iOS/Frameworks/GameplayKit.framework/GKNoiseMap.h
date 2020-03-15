@@ -20,6 +20,7 @@
 
 + (id)noiseMapWithNoise:(id)arg1 size:(_Bool)arg2 origin:sampleCount:seamless: /* Error: Ran out of types for this method. */;
 + (id)noiseMapWithNoise:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(readonly, nonatomic, getter=isSeamless) _Bool seamless; // @synthesize seamless=_seamless;
 // Error parsing type for property sampleCount:
@@ -31,7 +32,6 @@
 // Error parsing type for property size:
 // Property attributes: T,R,N,V_size
 
-- (void).cxx_destruct;
 - (void)setValue:(float)arg1 atPosition: /* Error: Ran out of types for this method. */;
 - (float)interpolatedValueAtPosition: /* Error: Ran out of types for this method. */;
 - (float)valueAtPosition: /* Error: Ran out of types for this method. */;

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     id <DownloadViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *downloadEntries; // @synthesize downloadEntries=_downloadEntries;
 @property(nonatomic) __weak id <DownloadViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DownloadViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformShowMenuForTableView:(id)arg1;
 - (id)tableView:(id)arg1 menuForEvent:(id)arg2;
 - (BOOL)validateUserInterfaceItem:(id)arg1;

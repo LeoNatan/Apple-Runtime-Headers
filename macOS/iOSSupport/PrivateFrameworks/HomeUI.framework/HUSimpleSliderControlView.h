@@ -19,10 +19,10 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISlider *slider; // @synthesize slider=_slider;
 @property(nonatomic) __weak id <HUControlViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_sliderValueChanged:(id)arg1;
 - (void)_sliderTouchUp:(id)arg1;
 - (void)_sliderTouchDown:(id)arg1;

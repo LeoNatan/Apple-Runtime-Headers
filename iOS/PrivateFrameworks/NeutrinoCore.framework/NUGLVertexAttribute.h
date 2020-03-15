@@ -18,11 +18,11 @@
 
 + (id)vec4Attribute:(id)arg1;
 + (id)vec2Attribute:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool normalized; // @synthesize normalized=_normalized;
 @property(readonly) int size; // @synthesize size=_size;
 @property(readonly) unsigned int type; // @synthesize type=_type;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (long long)_typeSize;
 @property(readonly) long long sizeInBytes;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 size:(int)arg3 normalized:(_Bool)arg4;

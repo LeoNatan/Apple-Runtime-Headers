@@ -42,6 +42,7 @@
 + (id)contactWithIdentifier:(id)arg1 identifierType:(id)arg2 displayName:(id)arg3 personId:(id)arg4 personIdType:(unsigned int)arg5;
 + (id)contactWithIdentifier:(id)arg1 identifierType:(id)arg2 personId:(id)arg3 personIdType:(unsigned int)arg4;
 + (id)contactWithIdentifier:(id)arg1 identifierType:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) _CDContactStatistics *statistics; // @synthesize statistics=_statistics;
 @property unsigned int displayType; // @synthesize displayType=_displayType;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
@@ -50,7 +51,6 @@
 @property(retain) NSString *customIdentifier; // @synthesize customIdentifier=_customIdentifier;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)mayContainPrefix:(id)arg1;
 - (void)mergeWithContact:(id)arg1;
 - (int)compare:(id)arg1;

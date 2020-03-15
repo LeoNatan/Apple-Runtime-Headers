@@ -26,6 +26,7 @@
 }
 
 + (id)identifierForPID:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long debuggerAvailability; // @synthesize debuggerAvailability=_debuggerAvailability;
 @property(readonly, nonatomic, getter=isReady) BOOL ready; // @synthesize ready=_ready;
 @property(copy, nonatomic) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <RWIApplicationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)createDrivableForSession:(id)arg1;
 - (id)drivableWithTargetIdentifier:(id)arg1;
 - (void)removeDrivable:(id)arg1;
@@ -50,7 +50,8 @@
 - (void)_notifyClientsThatApplicationStateChanged;
 - (void)setDebuggerAvailability:(unsigned long long)arg1;
 @property(readonly, nonatomic, getter=isActive) BOOL active;
-@property(readonly, nonatomic, getter=isCurrentApplication) BOOL currentApplication; // @dynamic currentApplication;
+@property(readonly, nonatomic) BOOL isCurrentApplication;
+@property(readonly, nonatomic) BOOL isCurrentTarget;
 @property(readonly, nonatomic) NSArray *drivables;
 @property(readonly, nonatomic) NSArray *debuggables;
 - (id)initWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2 name:(id)arg3 isProxy:(BOOL)arg4 debuggerAvailability:(unsigned long long)arg5 isReady:(BOOL)arg6 target:(id)arg7;

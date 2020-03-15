@@ -24,12 +24,12 @@
 + (BOOL)supportsSecureCoding;
 + (id)title;
 + (BOOL)isSupported;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *nodeQueue; // @synthesize nodeQueue=_nodeQueue;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <AXMVisionEngineNodeConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isConnected) BOOL connected; // @synthesize connected=_connected;
-- (void).cxx_destruct;
 - (void)axmAppendRecursiveDescription:(id)arg1 withIndentation:(long long)arg2;
 - (id)axmDescription;
 - (void)disconnect;

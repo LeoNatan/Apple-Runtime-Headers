@@ -18,8 +18,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)canFilterByProperty:(id)arg1;
-@property(readonly, nonatomic) MIPMultiverseIdentifier *multiverseIdentifier; // @synthesize multiverseIdentifier=_multiverseIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MIPMultiverseIdentifier *multiverseIdentifier; // @synthesize multiverseIdentifier=_multiverseIdentifier;
 @property(readonly, nonatomic) MPMediaLibrary *mediaLibrary;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

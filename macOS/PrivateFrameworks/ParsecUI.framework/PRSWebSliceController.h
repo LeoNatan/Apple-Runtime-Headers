@@ -20,6 +20,7 @@
     NSLayoutConstraint *_siteNameBaseToBottom;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *siteNameBaseToBottom; // @synthesize siteNameBaseToBottom=_siteNameBaseToBottom;
 @property(retain) NSArray *siteIconConstraints; // @synthesize siteIconConstraints=_siteIconConstraints;
 @property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
@@ -28,7 +29,6 @@
 @property __weak NSTextField *siteDomain; // @synthesize siteDomain=_siteDomain;
 @property __weak NSTextField *siteName; // @synthesize siteName=_siteName;
 @property __weak NSImageView *siteIcon; // @synthesize siteIcon=_siteIcon;
-- (void).cxx_destruct;
 - (BOOL)handleMouseUp:(id)arg1 alternatePunchout:(id)arg2;
 - (double)height;
 - (void)setViewWidth:(double)arg1;

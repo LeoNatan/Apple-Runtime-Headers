@@ -15,8 +15,8 @@
     NSString *_identifier;
 }
 
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 @property(readonly, nonatomic) _Bool isPlayableVideo;

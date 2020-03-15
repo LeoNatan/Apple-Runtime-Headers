@@ -43,13 +43,13 @@
 }
 
 + (id)makeMetricCollector:(id)arg1 separator:(id)arg2 wordsThreshold:(unsigned long long)arg3 isTesting:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isLoaded; // @synthesize isLoaded=_isLoaded;
 @property(retain, nonatomic) TITypingSession *typingSession; // @synthesize typingSession=_typingSession;
 @property(retain, nonatomic) NSMutableArray *currentSessionSamplesArray; // @synthesize currentSessionSamplesArray=_currentSessionSamplesArray;
 @property(retain, nonatomic) NSMutableArray *savedSessionSamplesArray; // @synthesize savedSessionSamplesArray=_savedSessionSamplesArray;
 @property(retain, nonatomic) id <TISensorWriterWrapper> dataWriter; // @synthesize dataWriter=_dataWriter;
 @property(nonatomic) unsigned long long wordAccumulationThreshold; // @synthesize wordAccumulationThreshold=_wordAccumulationThreshold;
-- (void).cxx_destruct;
 - (void)_persistSavedSessionSampleArray;
 - (id)_retrieveSavedSessionSampleArray;
 - (void)_loadStatsFromDataStore;

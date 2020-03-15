@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_normalizedLanguageStringForLanguageCode:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) MAAsset *assetToUpgrade; // @synthesize assetToUpgrade=_assetToUpgrade;
 @property _Bool activated; // @synthesize activated=_activated;
 @property(readonly) NSString *definitionLanguage; // @synthesize definitionLanguage=_definitionLanguage;
 @property(readonly) MAAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_isTTYDictionary;
 - (id)_definitionValueForTerm:(id)arg1;

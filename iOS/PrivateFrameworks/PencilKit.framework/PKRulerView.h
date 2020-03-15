@@ -14,9 +14,9 @@
     PKRulerLayer *_rulerLayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool rulerHidden; // @synthesize rulerHidden=_rulerHidden;
 @property(retain, nonatomic) PKRulerLayer *rulerLayer; // @synthesize rulerLayer=_rulerLayer;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end

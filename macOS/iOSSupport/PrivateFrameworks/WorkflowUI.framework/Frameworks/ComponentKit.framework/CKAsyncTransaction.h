@@ -18,10 +18,10 @@
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
-- (void).cxx_destruct;
 - (void)_ensureTransactionData;
 - (void)commit;
 - (void)cancel;

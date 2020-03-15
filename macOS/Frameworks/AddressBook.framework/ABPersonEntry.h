@@ -32,6 +32,7 @@
     NSArray *_linkedRecordIdentifiers;
     NSURL *_metadataFileUrl;
     BOOL _isMe;
+    BOOL _isRestricted;
 }
 
 + (id)sortingCompanyNameFromRecord:(id)arg1;
@@ -40,10 +41,13 @@
 + (id)personEntryForLinkedContacts:(id)arg1;
 + (id)personEntryForRecord:(id)arg1;
 + (id)personEntryForPerson:(id)arg1;
++ (BOOL)isContactRestricted:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *pickerPropertyObjects; // @synthesize pickerPropertyObjects=_pickerPropertyObjects;
 @property(readonly, copy) NSString *sectionKey; // @synthesize sectionKey=_sectionKey;
 @property(readonly) struct _NSRange nameEmphasisRange; // @synthesize nameEmphasisRange=_nameEmphasisRange;
 @property(readonly) BOOL isSuggested; // @synthesize isSuggested=_isSuggested;
+@property(readonly) BOOL isRestricted; // @synthesize isRestricted=_isRestricted;
 @property(readonly) BOOL isMe; // @synthesize isMe=_isMe;
 @property(readonly, copy) NSURL *metadataFileUrl; // @synthesize metadataFileUrl=_metadataFileUrl;
 @property(readonly, copy) SGRecordId *suggestionIdentifier; // @synthesize suggestionIdentifier=_suggestionIdentifier;
@@ -61,7 +65,6 @@
 @property(readonly) unsigned long long resultType; // @synthesize resultType=_resultType;
 @property(readonly) unsigned long long nameOrder; // @synthesize nameOrder=_nameOrder;
 @property(readonly) unsigned long long iconType; // @synthesize iconType=_iconType;
-- (void).cxx_destruct;
 - (long long)subrowIndexForIdentifier:(id)arg1;
 - (id)identifierForRecordOwningValueIdentifier:(id)arg1;
 @property(readonly, copy) NSArray *backingRecordIdentifiers;

@@ -11,8 +11,8 @@
     CDUnknownBlockType _deleteAllZoneSubscriptionsCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType deleteAllZoneSubscriptionsCompletionBlock; // @synthesize deleteAllZoneSubscriptionsCompletionBlock=_deleteAllZoneSubscriptionsCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType deleteAllZoneSubscriptionsCompletionBlock; // @synthesize deleteAllZoneSubscriptionsCompletionBlock=_deleteAllZoneSubscriptionsCompletionBlock;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 

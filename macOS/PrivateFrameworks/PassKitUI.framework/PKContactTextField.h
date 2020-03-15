@@ -16,10 +16,10 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *errorImage; // @synthesize errorImage=_errorImage;
 @property(nonatomic) BOOL hasError; // @synthesize hasError=_hasError;
 @property(readonly, nonatomic) BOOL needsPlaceholder; // @synthesize needsPlaceholder=_needsPlaceholder;
-- (void).cxx_destruct;
 - (void)textDidChange:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

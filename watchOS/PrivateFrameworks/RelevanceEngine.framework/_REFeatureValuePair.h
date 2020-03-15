@@ -16,11 +16,11 @@
     NSArray *_rootFeatures;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *rootFeatures; // @synthesize rootFeatures=_rootFeatures;
 @property(readonly, nonatomic) unsigned int index; // @synthesize index=_index;
 @property(readonly, nonatomic) unsigned long value; // @synthesize value=_value;
 @property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

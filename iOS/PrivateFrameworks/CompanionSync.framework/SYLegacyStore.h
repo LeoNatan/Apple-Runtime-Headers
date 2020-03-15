@@ -40,6 +40,7 @@
 }
 
 + (id)fullSyncActivityDictionary;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType nextBatchStep; // @synthesize nextBatchStep=_nextBatchStep;
 @property(nonatomic) _Bool fullSyncWasRequestedBySlave; // @synthesize fullSyncWasRequestedBySlave=_fullSyncWasRequestedBySlave;
 @property(retain, nonatomic) SYVectorClock *vectorClock; // @synthesize vectorClock=_vectorClock;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSString *service; // @synthesize service=_service;
 @property(retain, nonatomic) SYPersistentStore *persistentStore; // @synthesize persistentStore=_persistentStore;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (_Bool)objectChanged:(id)arg1 sinceVersion:(unsigned long long)arg2;
 - (void)performFullSync;
 - (void)performFullSyncToCurrentDBVersion;

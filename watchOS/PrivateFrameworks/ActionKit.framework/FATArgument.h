@@ -15,9 +15,9 @@
 }
 
 + (id)argumentWithField:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) FATField *field; // @synthesize field=_field;
-- (void).cxx_destruct;
 
 @end
 

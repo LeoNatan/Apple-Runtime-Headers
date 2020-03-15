@@ -15,10 +15,10 @@
     NSArray *_users;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *users; // @synthesize users=_users;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithShareGroup:(id)arg1 share:(id)arg2 users:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;
 

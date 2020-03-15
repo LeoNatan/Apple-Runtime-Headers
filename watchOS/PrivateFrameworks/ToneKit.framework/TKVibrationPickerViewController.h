@@ -50,6 +50,7 @@
     id <TKVibrationPickerViewControllerDismissalDelegate> __dismissalDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDismissalDelegate:) __weak id <TKVibrationPickerViewControllerDismissalDelegate> _dismissalDelegate; // @synthesize _dismissalDelegate=__dismissalDelegate;
 @property(nonatomic, setter=_setAdditionalDelegate:) __weak id <TKVibrationPickerViewControllerDelegate> _additionalDelegate; // @synthesize _additionalDelegate=__additionalDelegate;
 @property(retain, nonatomic) id <TKVibrationPickerStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
@@ -66,7 +67,6 @@
 @property(nonatomic) __weak id <TKVibrationPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) int alertType; // @synthesize alertType=_alertType;
-- (void).cxx_destruct;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_presentVibrationRecorderViewController;
 - (void)vibrationPickerTableViewCell:(id)arg1 endedEditingWithText:(id)arg2;
@@ -87,6 +87,7 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)_numberOfRowsInVibrationPickerSection:(int)arg1;
 - (int)_sectionForNoneGroup;
 - (int)_sectionForUserGeneratedGroup;
 - (int)_sectionForSystemGroup;

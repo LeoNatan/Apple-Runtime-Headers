@@ -22,11 +22,11 @@
 }
 
 + (id)_fontForAppearance:(long long)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *outlineBackgroundColor; // @synthesize outlineBackgroundColor=_outlineBackgroundColor;
 @property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)_createLabel;
 - (void)_updateFonts;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

@@ -13,8 +13,8 @@
     SBFluidSwitcherGestureExclusionTrapezoid *_exclusionTrapezoid;
 }
 
-@property(retain, nonatomic) SBFluidSwitcherGestureExclusionTrapezoid *exclusionTrapezoid; // @synthesize exclusionTrapezoid=_exclusionTrapezoid;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBFluidSwitcherGestureExclusionTrapezoid *exclusionTrapezoid; // @synthesize exclusionTrapezoid=_exclusionTrapezoid;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

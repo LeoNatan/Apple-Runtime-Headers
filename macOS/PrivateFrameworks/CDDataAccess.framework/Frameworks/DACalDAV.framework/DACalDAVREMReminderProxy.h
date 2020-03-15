@@ -18,10 +18,10 @@
     NSString *externalModificationTag;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag;
 @property(copy, nonatomic) NSString *daCalendarItemUniqueIdentifier; // @synthesize daCalendarItemUniqueIdentifier;
 @property(retain, nonatomic) REMObjectID *objectID; // @synthesize objectID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)updatePropertiesWithReminder:(id)arg1;
 - (id)updatableBackingModel;

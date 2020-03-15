@@ -29,11 +29,11 @@
 + (_Bool)forcesBackgroundIconGeneration;
 + (_Bool)canGenerateIconsInBackground;
 + (id)iconImageFromUnmaskedImage:(id)arg1 info:(struct SBIconImageInfo)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isUninstalled) _Bool uninstalled; // @synthesize uninstalled=_uninstalled;
 @property(readonly, nonatomic) NSString *iconFileSizeDescription; // @synthesize iconFileSizeDescription=_iconFileSizeDescription;
 @property(nonatomic) __weak id <SBIconDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SBTreeNode> parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (void)_notifyLaunchEnabledDidChange;
 - (void)_notifyAccessoriesDidUpdate;
 - (void)_notifyImageDidUpdate;

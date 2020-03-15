@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)send;
 - (id)description;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *replyDictionary;

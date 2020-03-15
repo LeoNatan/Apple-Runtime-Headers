@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     BRCItemGlobalID *_gatheredChildrenItemGlobalID;
 }
 
-@property(retain, nonatomic) BRCItemGlobalID *gatheredChildrenItemGlobalID; // @synthesize gatheredChildrenItemGlobalID=_gatheredChildrenItemGlobalID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BRCItemGlobalID *gatheredChildrenItemGlobalID; // @synthesize gatheredChildrenItemGlobalID=_gatheredChildrenItemGlobalID;
 - (void)invalidate;
 - (void)done;
 - (CDUnknownBlockType)_popGatherReply;

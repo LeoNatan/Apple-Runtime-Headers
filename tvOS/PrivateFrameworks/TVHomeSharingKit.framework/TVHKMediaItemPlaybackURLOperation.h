@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_format;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *format; // @synthesize format=_format;
 @property(retain, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
 @property(nonatomic) unsigned long long nonPersistentID; // @synthesize nonPersistentID=_nonPersistentID;
 @property(nonatomic) unsigned long long protocol; // @synthesize protocol=_protocol;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSURL *playbackURL; // @synthesize playbackURL=_playbackURL;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithMediaItem:(id)arg1;
 - (id)init;

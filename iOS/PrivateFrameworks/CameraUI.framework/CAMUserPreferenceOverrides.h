@@ -19,6 +19,7 @@
     NSNumber *_aspectRatioCrop;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *aspectRatioCrop; // @synthesize aspectRatioCrop=_aspectRatioCrop;
 @property(retain, nonatomic) NSNumber *torchMode; // @synthesize torchMode=_torchMode;
 @property(retain, nonatomic) NSNumber *flashMode; // @synthesize flashMode=_flashMode;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSNumber *videoConfiguration; // @synthesize videoConfiguration=_videoConfiguration;
 @property(retain, nonatomic) NSNumber *captureDevice; // @synthesize captureDevice=_captureDevice;
 @property(retain, nonatomic) NSNumber *captureMode; // @synthesize captureMode=_captureMode;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasOverrides;
 - (id)initWithOverrides:(id)arg1;
 - (id)initWithLaunchOptions:(id)arg1;

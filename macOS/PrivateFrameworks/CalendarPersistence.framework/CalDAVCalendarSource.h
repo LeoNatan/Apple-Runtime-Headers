@@ -17,12 +17,12 @@
     CalDAVSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak CalDAVSession *session; // @synthesize session=_session;
 @property(readonly, retain) NSString *uid; // @synthesize uid=_uid;
 @property(readonly, retain) NSSet *capabilities; // @synthesize capabilities=_capabilities;
 @property(readonly, retain) NSString *path; // @synthesize path=_path;
 @property(readonly, retain) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (BOOL)hasCapability:(id)arg1;
 - (void)processGetData:(id)arg1 inManagedObjectContext:(id)arg2;
 - (void)operation:(id)arg1 deleteResourcesWithFilenames:(id)arg2;

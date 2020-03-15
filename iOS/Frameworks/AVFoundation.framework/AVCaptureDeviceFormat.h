@@ -26,6 +26,7 @@
 - (float)maxSimulatedAperture;
 - (float)minSimulatedAperture;
 - (float)defaultSimulatedAperture;
+- (_Bool)isCameraCalibrationDataDeliverySupported;
 - (_Bool)isVisionDataDeliverySupported;
 - (_Bool)isLowLightVideoCaptureSupported;
 - (unsigned int)supportedRawPixelFormat;
@@ -91,6 +92,8 @@
 @property(readonly, nonatomic, getter=isVideoHDRSupported) _Bool videoHDRSupported;
 @property(readonly, nonatomic, getter=isGlobalToneMappingSupported) _Bool globalToneMappingSupported;
 @property(readonly, nonatomic, getter=isVideoStabilizationSupported) _Bool videoStabilizationSupported;
+- (double)videoMaxZoomFactorForCameraCalibrationDataDelivery;
+- (double)videoMinZoomFactorForCameraCalibrationDataDelivery;
 @property(readonly, nonatomic) double videoMaxZoomFactorForDepthDataDelivery;
 @property(readonly, nonatomic) double videoMinZoomFactorForDepthDataDelivery;
 @property(readonly, nonatomic) double videoZoomFactorUpscaleThreshold;

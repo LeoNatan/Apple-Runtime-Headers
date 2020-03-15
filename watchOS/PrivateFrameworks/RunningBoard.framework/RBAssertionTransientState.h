@@ -17,8 +17,8 @@
     NSMutableSet *_tags;
 }
 
-@property(readonly, nonatomic) NSSet *tags; // @synthesize tags=_tags;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *tags; // @synthesize tags=_tags;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

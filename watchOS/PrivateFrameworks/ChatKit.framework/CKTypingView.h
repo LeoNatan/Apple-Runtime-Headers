@@ -15,9 +15,9 @@
     CKBaseLayer *_baseLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKBaseLayer *baseLayer; // @synthesize baseLayer=_baseLayer;
 @property(retain, nonatomic) CALayer<IMTypingIndicatorLayerProtocol> *indicatorLayer; // @synthesize indicatorLayer=_indicatorLayer;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

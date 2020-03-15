@@ -20,11 +20,11 @@
     NSArray *_attachmentPresentations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attachmentPresentations; // @synthesize attachmentPresentations=_attachmentPresentations;
 @property(retain, nonatomic) ICSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(retain, nonatomic) NoteObject *note; // @synthesize note=_note;
 @property(retain, nonatomic) NoteContentLayer *contentLayer; // @synthesize contentLayer=_contentLayer;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateForceLightContentIfNecessary;
 - (void)applicationDidBecomeActive:(id)arg1;

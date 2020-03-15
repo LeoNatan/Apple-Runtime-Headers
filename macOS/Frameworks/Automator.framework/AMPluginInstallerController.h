@@ -34,6 +34,7 @@
 }
 
 + (id)urlForExistingPluginNamed:(id)arg1 atLibrarySubPath:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSURL *installedURL; // @synthesize installedURL=_installedURL;
 @property long long mode; // @synthesize mode=_mode;
 @property(retain) NSTimer *installTimer; // @synthesize installTimer=_installTimer;
@@ -52,7 +53,6 @@
 @property __weak NSButton *thirdButton; // @synthesize thirdButton=_thirdButton;
 @property __weak NSButton *firstButton; // @synthesize firstButton=_firstButton;
 @property __weak NSButton *secondButton; // @synthesize secondButton=_secondButton;
-- (void).cxx_destruct;
 - (void)animationDidEnd:(id)arg1;
 - (void)_queueAnimations:(id)arg1;
 - (id)_animationWithAnimations:(id)arg1;

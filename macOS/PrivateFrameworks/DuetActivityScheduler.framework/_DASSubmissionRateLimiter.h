@@ -22,6 +22,7 @@
 
 + (id)groupNameForActivity:(id)arg1;
 + (id)pluginGroupNameForGroupName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int dastoolToken; // @synthesize dastoolToken=_dastoolToken;
 @property(retain, nonatomic) NSMutableDictionary *activityGroups; // @synthesize activityGroups=_activityGroups;
 @property(retain, nonatomic) NSMutableDictionary *submittedActivities; // @synthesize submittedActivities=_submittedActivities;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delayedSubmissionQueue; // @synthesize delayedSubmissionQueue=_delayedSubmissionQueue;
 @property(retain, nonatomic) NSMutableDictionary *penaltyBox; // @synthesize penaltyBox=_penaltyBox;
-- (void).cxx_destruct;
 - (void)activityCompleted:(id)arg1 withScheduler:(id)arg2;
 - (void)activityCanceled:(id)arg1 withScheduler:(id)arg2;
 - (void)submitActivity:(id)arg1 inGroup:(id)arg2 withScheduler:(id)arg3;

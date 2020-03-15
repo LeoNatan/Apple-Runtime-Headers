@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)arrayEditor;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id delegate; // @synthesize delegate;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject;
 @property(retain, nonatomic) NSButton *remove; // @synthesize remove;
 @property(retain, nonatomic) NSButton *add; // @synthesize add;
 @property(retain, nonatomic) NSTableView *table; // @synthesize table;
-- (void).cxx_destruct;
 - (void)doubleClick:(id)arg1;
 - (void)remove:(id)arg1;
 - (void)add:(id)arg1;

@@ -16,9 +16,9 @@
     NSNumber *_weightStorageRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSNumber *weightStorageRange; // @synthesize weightStorageRange=_weightStorageRange;
 @property(readonly) NSString *weightStorage; // @synthesize weightStorage=_weightStorage;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 // Remaining properties

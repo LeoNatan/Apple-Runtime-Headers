@@ -21,12 +21,12 @@
     unsigned int _contentsIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int contentsIndex; // @synthesize contentsIndex=_contentsIndex;
 @property(readonly, nonatomic) _Bool isPhotoIris; // @synthesize isPhotoIris=_isPhotoIris;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) NSArray *thumbnailFacesRegions; // @synthesize thumbnailFacesRegions=_thumbnailFacesRegions;
 @property(readonly, nonatomic) NSArray *faceRegions; // @synthesize faceRegions=_faceRegions;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double irisDuration;
 @property(readonly, nonatomic) double irisStillDisplayTime;
 @property(readonly, nonatomic) NSURL *irisURL;

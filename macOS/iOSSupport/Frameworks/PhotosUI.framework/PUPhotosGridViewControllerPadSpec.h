@@ -16,6 +16,7 @@
 - (BOOL)shouldPlaceDeleteInCenterToolbarPosition;
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;
 - (id)albumPickerViewControllerSpec;
+- (BOOL)shouldUseAspectItems;
 - (BOOL)shouldPlaceSelectAllButtonInRightNavigationBar;
 - (BOOL)canDisplaySlideshowButton;
 - (BOOL)usesStackPopTransition;

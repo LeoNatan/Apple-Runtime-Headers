@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_languageID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *languageID; // @synthesize languageID=_languageID;
 @property(readonly, copy, nonatomic) NSString *voiceID; // @synthesize voiceID=_voiceID;
-- (void).cxx_destruct;
 - (void)addDisplayTitleToRequest:(id)arg1;
 - (BOOL)matchesVoiceID:(id)arg1 languageID:(id)arg2;
 @property(readonly, nonatomic) BOOL representsAutoSelectedVoice;

@@ -20,10 +20,10 @@
 
 + (id)normalizedExpungeableResourceStatesFromExpungeableResourceStates:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *expungedDate; // @synthesize expungedDate=_expungedDate;
 @property(nonatomic) unsigned long long expungedState; // @synthesize expungedState=_expungedState;
 @property(nonatomic) unsigned long long resourceType; // @synthesize resourceType=_resourceType;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

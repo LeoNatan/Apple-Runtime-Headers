@@ -17,9 +17,9 @@
     CDStruct_85c94b2d _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

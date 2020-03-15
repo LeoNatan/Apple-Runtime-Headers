@@ -14,11 +14,11 @@
     CDUnknownBlockType _predicate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, getter=isFulfilled) _Bool fulfilled; // @synthesize fulfilled=_fulfilled;
 @property(readonly, copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic, getter=isRemovedOnceEnabled) _Bool removedOnceEnabled; // @synthesize removedOnceEnabled=_removedOnceEnabled;
-- (void).cxx_destruct;
 - (void)fulfillWithChange:(id)arg1;
 - (_Bool)shouldBeFulfilledByChange:(id)arg1;
 - (void)teardownObservanceForBuffer:(id)arg1;

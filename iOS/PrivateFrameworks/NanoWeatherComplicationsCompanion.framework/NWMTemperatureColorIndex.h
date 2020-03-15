@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)allIndices;
 + (id)indexWithTemperature:(id)arg1 color:(id)arg2;
-@property(readonly, nonatomic) WFTemperature *temperature; // @synthesize temperature=_temperature;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFTemperature *temperature; // @synthesize temperature=_temperature;
 - (id)initWithTemperature:(id)arg1 color:(id)arg2;
 
 // Remaining properties

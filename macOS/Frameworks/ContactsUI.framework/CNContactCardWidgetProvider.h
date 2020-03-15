@@ -16,9 +16,9 @@
 
 + (id)listOfWidgetClassesFromModeIdentifier;
 + (id)modeIdentifierForMode:(unsigned long long)arg1 tabState:(unsigned long long)arg2 allowsLikenessEditing:(BOOL)arg3 isMe:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNCache *viewControllerCache; // @synthesize viewControllerCache=_viewControllerCache;
 @property(retain, nonatomic) CNContactCardWidgetProviderDelegateWrapper *safeDelegate; // @synthesize safeDelegate=_safeDelegate;
-- (void).cxx_destruct;
 - (void)prepareTabControllerWithCardMode:(unsigned long long)arg1 isMe:(BOOL)arg2;
 - (id)widgetsForContactCardViewMode:(unsigned long long)arg1 isMe:(BOOL)arg2;
 - (id)cardWidgetsFromWidgetClasses:(id)arg1;
@@ -26,7 +26,7 @@
 - (void)tellDelegateWillCreateViewController:(id)arg1;
 - (id)controllerOfClass:(Class)arg1;
 - (id)avatarViewController;
-- (id)editAutorizationViewController;
+- (id)editAuthorizationViewController;
 - (id)sharingEnabledWarningViewController;
 - (id)detailsViewController;
 - (id)nameViewController;

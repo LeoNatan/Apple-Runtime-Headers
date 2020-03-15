@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (_Bool)shouldRetryForError:(id)arg1;
 - (void)main;
 - (void)performAfterPreparingSharingIdentityIfNecessary:(CDUnknownBlockType)arg1;
 - (void)_performAfterPreparingSharingIdentityIfNecessaryWhenWantRoutingKey:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

@@ -19,9 +19,9 @@
 }
 
 + (id)proximitySourceClientInterface;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <BYBuddyDaemonProximitySourceProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)syncCompletedWithErrors:(id)arg1;
 - (void)syncProgress:(double)arg1;
 - (void)backupCompletedWithError:(id)arg1;

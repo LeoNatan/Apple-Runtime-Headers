@@ -17,12 +17,12 @@
     NSArray *_resultHeadlines;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *resultHeadlines; // @synthesize resultHeadlines=_resultHeadlines;
 @property(copy) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property(nonatomic) unsigned long long maxHeadlinesCount; // @synthesize maxHeadlinesCount=_maxHeadlinesCount;
 @property(copy, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

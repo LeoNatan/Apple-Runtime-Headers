@@ -24,13 +24,13 @@
 }
 
 + (id)requestForRemovingFocusInFocusSystem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowsFocusingCurrentItem; // @synthesize allowsFocusingCurrentItem=_allowsFocusingCurrentItem;
 @property(nonatomic) BOOL shouldPlayFocusSound; // @synthesize shouldPlayFocusSound=_shouldPlayFocusSound;
 @property(readonly, nonatomic) BOOL isFocusRemovalRequest; // @synthesize isFocusRemovalRequest=_isFocusRemovalRequest;
 @property(nonatomic) BOOL allowsDeferral; // @synthesize allowsDeferral=_allowsDeferral;
 @property(readonly, nonatomic) __weak id <UIFocusEnvironment> environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) UIFocusAnimationCoordinator *animationCoordinator; // @synthesize animationCoordinator=_animationCoordinator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIFocusInputDeviceInfo *inputDeviceInfo;
 @property(readonly, nonatomic) BOOL shouldPerformHapticFeedback;
 @property(readonly, nonatomic) BOOL allowsFocusRestoration;

@@ -18,12 +18,12 @@
 }
 
 + (id)defaultPropertyValues;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *lastOrderingData; // @synthesize lastOrderingData=_lastOrderingData;
 @property(copy, nonatomic) NSData *serverChangeTokenData; // @synthesize serverChangeTokenData=_serverChangeTokenData;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *account; // @synthesize account=_account;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *lastOrdering;
 @property(retain, nonatomic) CKServerChangeToken *serverChangeToken;
 

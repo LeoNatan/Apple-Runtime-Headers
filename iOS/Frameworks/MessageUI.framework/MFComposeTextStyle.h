@@ -21,11 +21,11 @@
 + (id)accessibilityIdenitifierForTextStyleType:(long long)arg1;
 + (id)imageNameForTextStyleType:(long long)arg1;
 + (id)composeTextStyleForTextStyleType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long styleType; // @synthesize styleType=_styleType;
 @property(readonly, nonatomic) SEL editSelector; // @synthesize editSelector=_editSelector;
 @property(readonly, copy, nonatomic) NSString *accessibilityIdenitifier; // @synthesize accessibilityIdenitifier=_accessibilityIdenitifier;
 @property(readonly, copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 - (id)initWithTextStyleType:(long long)arg1;
 
 @end

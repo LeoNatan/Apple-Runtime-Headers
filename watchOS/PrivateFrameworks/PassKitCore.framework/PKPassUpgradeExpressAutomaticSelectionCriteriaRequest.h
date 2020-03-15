@@ -14,10 +14,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *technologyTypes; // @synthesize technologyTypes=_technologyTypes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *technologyTypes; // @synthesize technologyTypes=_technologyTypes;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)asDictionary;
 - (id)initWithDictionary:(id)arg1;
 
 @end

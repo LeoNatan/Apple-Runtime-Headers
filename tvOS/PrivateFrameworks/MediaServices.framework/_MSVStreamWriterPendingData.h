@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _bytesWritten;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long bytesWritten; // @synthesize bytesWritten=_bytesWritten;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 
 @end
 

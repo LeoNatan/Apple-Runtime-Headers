@@ -17,9 +17,9 @@
     PXCMMInvitationsDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXCMMInvitationsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) PXCMMInvitationsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

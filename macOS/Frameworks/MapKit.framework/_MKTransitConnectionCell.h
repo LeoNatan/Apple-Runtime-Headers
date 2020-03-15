@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     id <_MKTransitConnectionCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_MKTransitConnectionCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <GEOTransitConnectionInfo> connectionInfo; // @synthesize connectionInfo=_connectionInfo;
-- (void).cxx_destruct;
 - (void)_buttonSelected;
 - (id)multilineTextFieldsWithinContainer;
 - (id)initWithReuseIdentifier:(id)arg1;

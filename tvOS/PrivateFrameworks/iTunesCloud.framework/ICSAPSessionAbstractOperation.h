@@ -13,8 +13,8 @@
     ICSAPSession *_sapSession;
 }
 
-@property(retain, nonatomic) ICSAPSession *sapSession; // @synthesize sapSession=_sapSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICSAPSession *sapSession; // @synthesize sapSession=_sapSession;
 - (void)finishWithError:(id)arg1;
 - (void)finishWithSAPContextPreparationError:(id)arg1;
 - (void)executeWithSAPContext:(id)arg1;

@@ -21,9 +21,9 @@
     NSURL *_fileURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int numberOfChannels; // @synthesize numberOfChannels=_numberOfChannels;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (_Bool)addSamples:(const void *)arg1 numSamples:(long long)arg2;
 - (_Bool)endAudio;
 - (void)dealloc;

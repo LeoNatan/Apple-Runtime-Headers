@@ -17,8 +17,8 @@
 + (id)ciFilterAttributes;
 + (id)kernelArray;
 + (id)filterName;
-@property(retain) NSArray *kernels; // @synthesize kernels;
 - (void).cxx_destruct;
+@property(retain) NSArray *kernels; // @synthesize kernels;
 - (id)init;
 
 @end

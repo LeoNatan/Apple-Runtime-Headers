@@ -30,11 +30,11 @@
 }
 
 + (_Bool)doesOverrideMethod:(SEL)arg1 inBaseClass:(Class)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfPages; // @synthesize numberOfPages=_numberOfPages;
 @property(retain, nonatomic, getter=_legibilitySettings, setter=_setLegibilitySettings:) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) UIColor *pageIndicatorTintColor; // @synthesize pageIndicatorTintColor=_pageIndicatorTintColor;
 @property(retain, nonatomic) UIColor *currentPageIndicatorTintColor; // @synthesize currentPageIndicatorTintColor=_currentPageIndicatorTintColor;
-- (void).cxx_destruct;
 - (id)_effectiveContentView;
 - (_Bool)canBecomeFocused;
 - (id)_createModernIndicatorImageFromView:(id)arg1;

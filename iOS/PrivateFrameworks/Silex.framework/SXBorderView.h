@@ -14,8 +14,8 @@
 }
 
 + (Class)layerClass;
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)init;
 

@@ -26,12 +26,12 @@
 + (Class)deferredLaunchStrategyClass;
 + (Class)launchStrategyClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL localConnection; // @synthesize localConnection=_localConnection;
 @property(retain, nonatomic) NSString *connectionAddress; // @synthesize connectionAddress=_connectionAddress;
 @property(readonly, nonatomic) __weak NSNetService *service; // @synthesize service=_service;
 - (id)gputoolsServiceAvailabilityError;
 - (BOOL)gputoolsServiceAvailable;
-- (void).cxx_destruct;
 - (id)streamArchiveAtURL:(id)arg1 destinationName:(id)arg2;
 - (id)iconDataForApplicationIdentifiers:(id)arg1;
 - (id)refreshDeviceProperties;

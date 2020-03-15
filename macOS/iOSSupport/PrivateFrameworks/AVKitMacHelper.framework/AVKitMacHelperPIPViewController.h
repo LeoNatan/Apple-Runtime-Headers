@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AVKitMacHelperPIPLayerViewController *_pipLayerViewController;
 }
 
-@property(retain, nonatomic) AVKitMacHelperPIPLayerViewController *pipLayerViewController; // @synthesize pipLayerViewController=_pipLayerViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVKitMacHelperPIPLayerViewController *pipLayerViewController; // @synthesize pipLayerViewController=_pipLayerViewController;
 - (void)viewDidLayout;
 - (id)initWithPipLayer:(id)arg1;
 - (id)init;

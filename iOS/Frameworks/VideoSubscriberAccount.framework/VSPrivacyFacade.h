@@ -17,10 +17,10 @@
     NSOperationQueue *_privateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(copy, nonatomic) NSString *service; // @synthesize service=_service;
 @property(retain, nonatomic) VSPrivacyVoucherLockbox *voucherLockbox; // @synthesize voucherLockbox=_voucherLockbox;
-- (void).cxx_destruct;
 - (_Bool)reset;
 @property(readonly, copy, nonatomic) NSArray *knownAppBundles;
 - (_Bool)setAccessGranted:(_Bool)arg1 forBundle:(struct __CFBundle *)arg2;

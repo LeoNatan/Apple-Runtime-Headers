@@ -33,6 +33,7 @@
 + (id)subtitleFont;
 + (id)titleFont;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSLayoutConstraint *bottomMarginConstraint; // @synthesize bottomMarginConstraint=_bottomMarginConstraint;
 @property(readonly, retain, nonatomic) NSLayoutConstraint *interLabelPaddingConstraint; // @synthesize interLabelPaddingConstraint=_interLabelPaddingConstraint;
 @property(readonly, retain, nonatomic) NSLayoutConstraint *topMarginConstraint; // @synthesize topMarginConstraint=_topMarginConstraint;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *iconStack; // @synthesize iconStack=_iconStack;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)setSubtitleAttributedText:(id)arg1;
 - (void)setSubtitleText:(id)arg1;

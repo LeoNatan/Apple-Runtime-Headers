@@ -15,8 +15,8 @@
     MPCPlaybackRequestEnvironment *_playbackRequestEnvironment;
 }
 
-@property(readonly, copy, nonatomic) MPCPlaybackRequestEnvironment *playbackRequestEnvironment; // @synthesize playbackRequestEnvironment=_playbackRequestEnvironment;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) MPCPlaybackRequestEnvironment *playbackRequestEnvironment; // @synthesize playbackRequestEnvironment=_playbackRequestEnvironment;
 - (void)_getHasSubscriptionPlaybackCapabilityForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadReportingIdentityPropertiesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithPlaybackRequestEnvironment:(id)arg1;

@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     SKUILayoutCache *_textLayoutCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUILayoutCache *layoutCache; // @synthesize layoutCache=_textLayoutCache;
 @property(readonly, nonatomic) SKUIEditorialComponent *editorialComponent; // @synthesize editorialComponent=_editorial;
-- (void).cxx_destruct;
 - (id)_titleTextLayoutRequestWithTotalWidth:(double)arg1;
 - (id)_linkLayoutRequestWithTotalWidth:(double)arg1;
 - (id)_bodyTextLayoutRequestWithTotalWidth:(double)arg1;

@@ -29,6 +29,7 @@
 }
 
 + (id)sparseInfoByTransformingObjectsInSparseInfo:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool generatesPrototypingConstraints; // @synthesize generatesPrototypingConstraints=_generatesPrototypingConstraints;
 @property(readonly, nonatomic) Class arbitrationUnitClass; // @synthesize arbitrationUnitClass=_arbitrationUnitClass;
 @property(readonly, nonatomic) Class autolayoutEngineClass; // @synthesize autolayoutEngineClass=_autolayoutEngineClass;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) Class symbolicLayoutConstantClass; // @synthesize symbolicLayoutConstantClass=_symbolicLayoutConstantClass;
 @property(readonly, nonatomic) long long userInterfaceLayoutDirection; // @synthesize userInterfaceLayoutDirection=_userInterfaceLayoutDirection;
 @property(readonly, nonatomic) Class autolayoutFrameDecisionDriverClass; // @synthesize autolayoutFrameDecisionDriverClass=_autolayoutFrameDecisionDriverClass;
-- (void).cxx_destruct;
 - (id)sparseAutolayoutInfoForArbitrationUnit:(id)arg1 objectTransformationBlock:(CDUnknownBlockType)arg2;
 - (id)arbitrationUnitRootForObject:(id)arg1;
 - (id)arbitrationUnitForObject:(id)arg1;

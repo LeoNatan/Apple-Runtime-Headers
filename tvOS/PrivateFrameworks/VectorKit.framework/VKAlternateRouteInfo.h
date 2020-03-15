@@ -13,10 +13,10 @@
     unsigned char _etaComparisonToMain;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) unsigned char etaComparisionToMain; // @synthesize etaComparisionToMain=_etaComparisonToMain;
 @property(readonly, nonatomic) struct PolylineCoordinate convergenceCoordinate; // @synthesize convergenceCoordinate=_convergenceCoordinate;
 @property(readonly, nonatomic) struct PolylineCoordinate divergenceCoordinate; // @synthesize divergenceCoordinate=_divergenceCoordinate;
-- (id).cxx_construct;
 - (id)initWithComposedRoute:(id)arg1 etaDescription:(id)arg2 divergenceRouteCoordinate:(struct PolylineCoordinate)arg3 convergenceRouteCoordinate:(struct PolylineCoordinate)arg4;
 - (id)initWithComposedRoute:(id)arg1 etaText:(id)arg2 divergenceRouteCoordinate:(struct PolylineCoordinate)arg3 convergenceRouteCoordinate:(struct PolylineCoordinate)arg4;
 

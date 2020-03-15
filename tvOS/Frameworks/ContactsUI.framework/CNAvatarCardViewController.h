@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     NSArray *_verticalConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *verticalConstraints; // @synthesize verticalConstraints=_verticalConstraints;
 @property(retain, nonatomic) UIView *effectView; // @synthesize effectView=_effectView;
 @property(retain, nonatomic) NSLayoutConstraint *actionsViewControllerHeightConstraint; // @synthesize actionsViewControllerHeightConstraint=_actionsViewControllerHeightConstraint;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) __weak id <CNAvatarCardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CNAvatarCardController *cardController; // @synthesize cardController=_cardController;
-- (void).cxx_destruct;
 - (void)contactActionsViewController:(id)arg1 didSelectAction:(id)arg2;
 @property _Bool transitioningImageVisible;
 @property(readonly, nonatomic) struct CGRect transitioningImageFrame;

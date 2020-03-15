@@ -11,8 +11,8 @@
     UIView *_pill;
 }
 
-@property(retain, nonatomic) UIView *pill; // @synthesize pill=_pill;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *pill; // @synthesize pill=_pill;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

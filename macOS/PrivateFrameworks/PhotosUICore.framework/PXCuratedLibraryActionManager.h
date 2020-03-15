@@ -18,11 +18,11 @@
 }
 
 + (id)actionsWithActionPerformers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(readonly, nonatomic) NSDictionary *constructorSpecificActionPerformersByType; // @synthesize constructorSpecificActionPerformersByType=_constructorSpecificActionPerformersByType;
 @property(readonly, nonatomic) NSDictionary *assetCollectionActionPerformersByType; // @synthesize assetCollectionActionPerformersByType=_assetCollectionActionPerformersByType;
 @property(readonly, nonatomic) NSDictionary *actionPerformersByType; // @synthesize actionPerformersByType=_actionPerformersByType;
-- (void).cxx_destruct;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)actionPerformerForHitTestResult:(id)arg1;
 - (id)tapToRadarPerformerAssetCollectionReference:(id)arg1 diagnosticLayout:(id)arg2;

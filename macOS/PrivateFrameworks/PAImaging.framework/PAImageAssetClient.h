@@ -37,6 +37,7 @@
 
 + (double)defaultTargetFrameRate;
 + (id)assetClientWithName:(id)arg1 assetType:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) PAImageAsset *asset; // @synthesize asset=_asset;
 @property(readonly) BOOL isImageValidInCurrentROI; // @synthesize isImageValidInCurrentROI=_isImageValidInCurrentROI;
 @property double targetFrameRate; // @synthesize targetFrameRate=_targetFrameRate;
@@ -52,7 +53,6 @@
 @property BOOL wantsBackFillImage; // @synthesize wantsBackFillImage=_wantsBackFillImage;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property __weak id <PAImageAssetClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setCompositionReplacedFilter:(CDUnknownBlockType)arg1;
 - (void)setCompositionOnAsset:(id)arg1;
 - (void)_notifyDidUpdateImage:(id)arg1 type:(id)arg2 region:(id)arg3 updateNumber:(unsigned long long)arg4 isCurrent:(BOOL)arg5;

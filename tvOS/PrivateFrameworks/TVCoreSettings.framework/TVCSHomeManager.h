@@ -29,6 +29,7 @@
 + (void)_applyCurrentAirPlaySettingsToHome:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)keyPathsForValuesAffectingLocalAccessory;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_cachedOwnedHomes, setter=_setCachedOwnedHomes:) NSArray *cachedOwnedHomes; // @synthesize cachedOwnedHomes=_cachedOwnedHomes;
 @property(readonly, getter=_homeManagerQueue) NSObject<OS_dispatch_queue> *homeManagerQueue; // @synthesize homeManagerQueue=_homeManagerQueue;
 @property(retain) HMAccessoryBrowser *accessoryBrowser; // @synthesize accessoryBrowser=_accessoryBrowser;
@@ -39,7 +40,6 @@
 @property(nonatomic, getter=isConfigurationInProgress) _Bool configurationInProgress; // @synthesize configurationInProgress=_configurationInProgress;
 @property(nonatomic, getter=isAdvertising) _Bool advertising; // @synthesize advertising=_advertising;
 @property(nonatomic) long long homeConfigurationState; // @synthesize homeConfigurationState=_homeConfigurationState;
-- (void).cxx_destruct;
 - (void)createDefaultHomeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)createRoomNamed:(id)arg1 inHome:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)moveOrAddLocalAccessoryToRoom:(id)arg1 inHome:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

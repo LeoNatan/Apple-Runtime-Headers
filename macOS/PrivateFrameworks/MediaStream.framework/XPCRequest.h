@@ -16,10 +16,10 @@
     NSObject<OS_xpc_object> *_reply;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *reply; // @synthesize reply=_reply;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *message; // @synthesize message=_message;
 @property(readonly, nonatomic) unsigned long long sequence; // @synthesize sequence=_sequence;
-- (void).cxx_destruct;
 - (id)initWithMessage:(id)arg1 sequence:(unsigned long long)arg2 connection:(id)arg3;
 - (void)sendReply;
 

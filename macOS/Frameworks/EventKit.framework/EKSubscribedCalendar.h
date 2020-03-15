@@ -24,8 +24,8 @@
 + (Class)frozenClass;
 + (id)knownImmutableKeys;
 + (id)knownSingleValueKeys;
-@property(readonly, nonatomic) NSDate *refreshDate; // @synthesize refreshDate=_refreshDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *refreshDate; // @synthesize refreshDate=_refreshDate;
 - (void)_cleanUpCompletedDownload;
 - (void)_failDownloadWithError:(id)arg1;
 - (void)_takeValuesFromICS:(id)arg1;

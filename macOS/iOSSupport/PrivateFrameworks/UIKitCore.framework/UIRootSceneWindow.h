@@ -20,10 +20,10 @@
 }
 
 + (BOOL)_isSecure;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *_sceneContainerView; // @synthesize _sceneContainerView;
 @property(readonly, nonatomic) UIMutableTransformer *sceneTransformer; // @synthesize sceneTransformer=_sceneTransformer;
 @property(readonly, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
-- (void).cxx_destruct;
 - (void)_updateTransforms;
 - (void)transformsDidChange:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;

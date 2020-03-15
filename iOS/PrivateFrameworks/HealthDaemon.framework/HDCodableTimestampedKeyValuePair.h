@@ -25,13 +25,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bytesValue; // @synthesize bytesValue=_bytesValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(nonatomic) double numberDoubleValue; // @synthesize numberDoubleValue=_numberDoubleValue;
 @property(nonatomic) long long numberIntValue; // @synthesize numberIntValue=_numberIntValue;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

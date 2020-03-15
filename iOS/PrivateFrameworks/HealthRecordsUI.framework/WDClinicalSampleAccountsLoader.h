@@ -18,15 +18,15 @@ __attribute__((visibility("hidden")))
 
 + (id)knownAccountFiles;
 + (id)appleProviderBrand;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *cachedAccounts; // @synthesize cachedAccounts=_cachedAccounts;
 @property(copy, nonatomic) NSArray *accountDataBatches; // @synthesize accountDataBatches=_accountDataBatches;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)_parseAccounts;
 - (id)sampleAccountsAsSearchResults;
 - (id)_gatewayForAccount:(id)arg1;
 - (id)_providerForAccount:(id)arg1;
-- (id)providerForSearchResultWithExternalID:(id)arg1 error:(id *)arg2;
+- (id)providerForSampleDataSearchResultWithExternalID:(id)arg1 error:(id *)arg2;
 - (_Bool)_triggerIngestOfDataBatch:(id)arg1 accountIdentifier:(id)arg2 error:(id *)arg3;
 - (id)_createTemporaryFileForDataBatch:(id)arg1 error:(id *)arg2;
 - (void)_createAccountAndTriggerIngestForDataBatch:(id)arg1 account:(id)arg2 completion:(CDUnknownBlockType)arg3;

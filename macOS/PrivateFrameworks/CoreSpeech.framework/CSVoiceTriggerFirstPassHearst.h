@@ -26,6 +26,7 @@
     unsigned long long _secondChanceHotTillMachTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(retain, nonatomic) CSAudioProvider *triggeredAudioProvider; // @synthesize triggeredAudioProvider=_triggeredAudioProvider;
 @property(retain, nonatomic) CSAudioStreamHolding *triggeredAudioStreamHolding; // @synthesize triggeredAudioStreamHolding=_triggeredAudioStreamHolding;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableDictionary *hearstSecondPassRequests; // @synthesize hearstSecondPassRequests=_hearstSecondPassRequests;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_cancelAllAudioStreamHoldings;
 - (void)_requestStartAudioStreamWitContext:(id)arg1 secondPassRequest:(id)arg2 startStreamOption:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleSecondPassResult:(unsigned long long)arg1 secondPassRequest:(id)arg2 voiceTriggerInfo:(id)arg3 deviceId:(id)arg4 secondChanceCandidate:(BOOL)arg5 error:(id)arg6 completion:(CDUnknownBlockType)arg7;

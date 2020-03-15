@@ -19,10 +19,10 @@
     BOOL _isOwnerMe;
 }
 
+- (void).cxx_destruct;
 @property BOOL isOwnerMe; // @synthesize isOwnerMe=_isOwnerMe;
 @property(retain) CALAddress *ownerAddress; // @synthesize ownerAddress=_ownerAddress;
 @property(retain) NSManagedObjectID *principalID; // @synthesize principalID=_principalID;
-- (void).cxx_destruct;
 - (BOOL)allowsSchedulingByMe;
 - (BOOL)isSourceInSameAccount:(id)arg1 ignoringOwner:(BOOL)arg2;
 - (BOOL)isSourceInSameAccount:(id)arg1;

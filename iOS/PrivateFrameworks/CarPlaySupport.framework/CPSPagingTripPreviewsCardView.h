@@ -27,6 +27,7 @@
     NSLayoutConstraint *_toggleRoutesButtonHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *toggleRoutesButtonHeightConstraint; // @synthesize toggleRoutesButtonHeightConstraint=_toggleRoutesButtonHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *alternateRoutesHeightConstraint; // @synthesize alternateRoutesHeightConstraint=_alternateRoutesHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *contentBottomConstraint; // @synthesize contentBottomConstraint=_contentBottomConstraint;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) CPSRouteOverviewView *overviewView; // @synthesize overviewView=_overviewView;
 @property(readonly, nonatomic) CPSPagingControlView *pageControl; // @synthesize pageControl=_pageControl;
 @property(readonly, nonatomic) NSMutableDictionary *estimatesForTripIdentifiers; // @synthesize estimatesForTripIdentifiers=_estimatesForTripIdentifiers;
-- (void).cxx_destruct;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)_linearFocusItems;
 - (id)preferredFocusEnvironments;

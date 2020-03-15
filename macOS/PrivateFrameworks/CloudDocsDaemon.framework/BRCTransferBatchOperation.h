@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_pendingGroup;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *pendingGroup; // @synthesize pendingGroup=_pendingGroup;
 @property(copy) CDUnknownBlockType didProgressBlock; // @synthesize didProgressBlock=_didProgressBlock;
 @property unsigned long long totalSize; // @synthesize totalSize=_totalSize;
 @property unsigned long long doneSize; // @synthesize doneSize=_doneSize;
-- (void).cxx_destruct;
 - (id)transferredObjectsPrettyName;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)actionPrettyName;

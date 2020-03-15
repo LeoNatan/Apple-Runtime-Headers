@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSString *stringValue; // @synthesize stringValue=_stringValue;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *stringValue; // @synthesize stringValue=_stringValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

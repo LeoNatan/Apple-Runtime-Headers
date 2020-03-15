@@ -20,11 +20,11 @@
 
 + (id)recordsByApplyingEdits:(id)arg1 toArbitraryRecords:(id)arg2;
 + (id)recordWithContentsOfRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSPVectorTimestamp *positionTimestamp; // @synthesize positionTimestamp=_positionTimestamp;
 @property(readonly, nonatomic) MSPPosition *position; // @synthesize position=_position;
 @property(readonly, copy, nonatomic) MSPVectorTimestamp *contentsTimestamp; // @synthesize contentsTimestamp=_contentsTimestamp;
 @property(readonly, copy, nonatomic) NSData *contents; // @synthesize contents=_contents;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)derivedRecordWithPosition:(id)arg1 positionTimestamp:(id)arg2;
 - (id)derivedRecordWithContents:(id)arg1 contentsTimestamp:(id)arg2;

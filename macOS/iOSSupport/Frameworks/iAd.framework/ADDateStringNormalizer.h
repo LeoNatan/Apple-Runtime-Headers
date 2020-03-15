@@ -17,8 +17,8 @@
 + (id)dateFromString:(id)arg1;
 + (id)normalizers;
 + (id)formatter;
-@property(retain, nonatomic) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSRegularExpression *regularExpression; // @synthesize regularExpression=_regularExpression;
 - (id)normalize:(id)arg1;
 
 @end

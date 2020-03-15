@@ -35,10 +35,10 @@
     NSString *_continuationData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *continuationData; // @synthesize continuationData=_continuationData;
 @property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak id <FAChildAccountCreationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendUserToiTunesSettings;
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (id)parentViewControllerForObjectModel:(id)arg1;

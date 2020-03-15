@@ -39,6 +39,7 @@
 + (id)loginUser;
 + (id)currentUser;
 + (unsigned int)lastLoggedInUID;
++ (unsigned long long)userQuotaSize;
 + (unsigned long long)maxNumberOfUsers;
 + (unsigned long long)userType;
 + (_Bool)inSyncBubble;

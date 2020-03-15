@@ -24,9 +24,9 @@
     CPLEngineFileStorage *_fileStorage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldCheckFilesForUpload; // @synthesize shouldCheckFilesForUpload=_shouldCheckFilesForUpload;
 @property(readonly, nonatomic) CPLEngineFileStorage *fileStorage; // @synthesize fileStorage=_fileStorage;
-- (void).cxx_destruct;
 - (void)notePruningRequestForResource:(id)arg1 realPrune:(_Bool)arg2 successful:(_Bool)arg3;
 - (void)notePruningRequestForResource:(id)arg1 realPrune:(_Bool)arg2 successful:(_Bool)arg3 prunedSize:(unsigned long long)arg4;
 - (id)statusDictionary;

@@ -15,9 +15,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *overlayWindow; // @synthesize overlayWindow=_overlayWindow;
 @property(readonly, nonatomic) __weak UIWindowScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (void)_handlePresentationDismissalNotification:(id)arg1;
 - (void)_teardownOverlayWindow;
 - (void)_setupOverlayWindowWithScene:(id)arg1;

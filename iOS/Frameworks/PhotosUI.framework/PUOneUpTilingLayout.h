@@ -66,6 +66,7 @@
 + (struct CGRect)untransformedRectForItemWithAspectRatio:(double)arg1 pageRect:(struct CGRect)arg2 safeInsets:(struct UIEdgeInsets)arg3;
 + (id)centerTileKinds;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldHideMainContent; // @synthesize shouldHideMainContent=_shouldHideMainContent;
 @property(retain, nonatomic) PUParallaxComputer *parallaxComputer; // @synthesize parallaxComputer=_parallaxComputer;
 @property(nonatomic) _Bool shouldPinContentToTop; // @synthesize shouldPinContentToTop=_shouldPinContentToTop;
@@ -91,7 +92,6 @@
 @property(readonly, nonatomic) double transitionProgress; // @synthesize transitionProgress=_transitionProgress;
 @property(nonatomic) struct CGSize interpageSpacing; // @synthesize interpageSpacing=_interpageSpacing;
 @property(nonatomic) __weak id <PUOneUpTilingLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_normalizedTransitionProgressFrom:(id)arg1 withAbscissa:(double)arg2 outNeighbor:(out id *)arg3;
 - (id)_indexPathOfItemClosestToAbscissa:(double)arg1;
 - (void)_getLayoutRect:(out struct CGRect *)arg1 transform:(out struct CGAffineTransform *)arg2 parallaxOffset:(out struct CGPoint *)arg3 forContentOfItemAtIndexPath:(id)arg4 options:(unsigned long long)arg5;

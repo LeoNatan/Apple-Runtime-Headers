@@ -17,6 +17,7 @@
 - (void)didFinishLoadingDataWithError:(NSError *)arg1;
 - (void)didFinishLoadingData;
 - (void)didStartLoadingData;
+- (void)venueCreated:(const struct Venue *)arg1 building:(const struct VenueBuilding *)arg2;
 - (void)nearestVenueDidChange:(const struct Venue *)arg1 building:(const struct VenueBuilding *)arg2;
 - (_Bool)wantsTimerTick;
 - (void)didPresent;

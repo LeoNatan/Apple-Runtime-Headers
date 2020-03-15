@@ -19,11 +19,11 @@
     NSArray *_blueprintNames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *blueprintNames; // @synthesize blueprintNames=_blueprintNames;
 @property(retain, nonatomic) NSMutableArray *blueprints; // @synthesize blueprints=_blueprints;
 @property(nonatomic) __weak id <PMEditProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
-- (void).cxx_destruct;
 - (void)willBeginScrolling;
 - (id)displayNameForIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;

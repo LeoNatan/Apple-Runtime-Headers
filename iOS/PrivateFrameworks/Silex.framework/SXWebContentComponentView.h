@@ -33,6 +33,7 @@
     id <SXWebContentDataSourceProviding> _dataSourceProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXWebContentDataSourceProviding> dataSourceProvider; // @synthesize dataSourceProvider=_dataSourceProvider;
 @property(retain, nonatomic) SXWebContentComponentExposureEvent *componentExposureEvent; // @synthesize componentExposureEvent=_componentExposureEvent;
 @property(readonly, nonatomic) SXComponentExposureMonitor *componentExposureMonitor; // @synthesize componentExposureMonitor=_componentExposureMonitor;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) id <SXWebContentConfigurationProvider> configurationProvider; // @synthesize configurationProvider=_configurationProvider;
 @property(readonly, nonatomic) SWContainerViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 @property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
-- (void).cxx_destruct;
 - (_Bool)useLightForegroundColor;
 - (void)reachabilityChanged:(_Bool)arg1;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;

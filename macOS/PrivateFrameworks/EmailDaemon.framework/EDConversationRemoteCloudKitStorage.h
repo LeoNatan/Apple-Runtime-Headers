@@ -26,6 +26,7 @@
 
 + (id)cloudKitAPSTopics;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDTransactionService *importTransaction; // @synthesize importTransaction=_importTransaction;
 @property(retain, nonatomic) EDTransactionService *exportTransaction; // @synthesize exportTransaction=_exportTransaction;
 @property(retain, nonatomic) NSPersistentHistoryToken *historyToken; // @synthesize historyToken=_historyToken;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSFetchedResultsController *fetchedResultsController; // @synthesize fetchedResultsController=_fetchedResultsController;
 @property(nonatomic) __weak id <EDConversationRemoteStorageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) EDCloudMirroringPersistentStore *mirroringPersistentStore; // @synthesize mirroringPersistentStore=_mirroringPersistentStore;
-- (void).cxx_destruct;
 - (id)_conversationInfoWithObjectId:(id)arg1 managedObjectContext:(id)arg2;
 - (id)_transactionHistorySinceToken:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
 - (id)enumerateChangeHistorySinceToken:(id)arg1 managedObjectContext:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

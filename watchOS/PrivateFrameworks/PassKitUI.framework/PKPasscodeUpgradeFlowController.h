@@ -23,10 +23,10 @@
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool upgradeRequiredToAddNewPass; // @synthesize upgradeRequiredToAddNewPass=_upgradeRequiredToAddNewPass;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 @property(readonly, nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
-- (void).cxx_destruct;
 - (_Bool)_isWatchTarget;
 - (void)_showNewDevicePasscodeViewControllerWithCurrentPasscode:(id)arg1;
 - (void)_showCurrentDevicePasscodeViewController;

@@ -17,8 +17,8 @@
     NSDate *_assetExpirationDate;
 }
 
-@property(copy, nonatomic) NSDate *assetExpirationDate; // @synthesize assetExpirationDate=_assetExpirationDate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDate *assetExpirationDate; // @synthesize assetExpirationDate=_assetExpirationDate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)downloadableAssetMatchingFlavorType:(long long)arg1;
 - (id)downloadableAsset;

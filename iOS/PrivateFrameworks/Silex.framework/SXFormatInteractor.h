@@ -27,6 +27,7 @@
     id <SXDebugLayoutOptionsProviding> _debugLayoutOptionsProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requestedContentHiding; // @synthesize requestedContentHiding=_requestedContentHiding;
 @property(readonly, nonatomic) id <SXDebugLayoutOptionsProviding> debugLayoutOptionsProvider; // @synthesize debugLayoutOptionsProvider=_debugLayoutOptionsProvider;
 @property(nonatomic) __weak id <SXPresentationEnvironment> presentationEnvironment; // @synthesize presentationEnvironment=_presentationEnvironment;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) id <SXLayoutOptionsFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 @property(readonly, nonatomic) id <SXLayoutCoordinator> layoutCoordinator; // @synthesize layoutCoordinator=_layoutCoordinator;
 @property(nonatomic) __weak id <SXFormatInteractorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)debugLayoutOptionsDidChange:(id)arg1;
 - (void)channelSubscriptionStatusDidChangeFromStatus:(long long)arg1;
 - (void)bundleSubscriptionStatusDidChangeFromStatus:(long long)arg1;

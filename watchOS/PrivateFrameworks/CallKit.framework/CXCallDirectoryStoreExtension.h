@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *stateLastModified; // @synthesize stateLastModified=_stateLastModified;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) long long primaryKey; // @synthesize primaryKey=_primaryKey;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

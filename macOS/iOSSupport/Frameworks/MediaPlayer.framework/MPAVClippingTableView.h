@@ -15,10 +15,10 @@
     NSMutableDictionary *_sectionBackgroundViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *sectionBackgroundViews; // @synthesize sectionBackgroundViews=_sectionBackgroundViews;
 @property(retain, nonatomic) UIView *footerBackgroundView; // @synthesize footerBackgroundView=_footerBackgroundView;
 @property(retain, nonatomic) UIView *headerBackgroundView; // @synthesize headerBackgroundView=_headerBackgroundView;
-- (void).cxx_destruct;
 - (id)_createBackgroundView;
 - (id)backgroundViewForSection:(unsigned long long)arg1;
 - (void)layoutSubviews;

@@ -24,6 +24,7 @@
     NSDictionary *_requestedDocumentAuths;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUpdatingAllTypes; // @synthesize isUpdatingAllTypes=_isUpdatingAllTypes;
 @property(retain, nonatomic) NSDictionary *requestedDocumentAuths; // @synthesize requestedDocumentAuths=_requestedDocumentAuths;
 @property(retain, nonatomic) NSSet *requestedTypesForReading; // @synthesize requestedTypesForReading=_requestedTypesForReading;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak id <HKSourceAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HKSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (id)_enabledTypesInSection:(long long)arg1;
 - (void)_setAuthorizationStatuses:(id)arg1;
 - (void)_updateAuthorizationStatusWithTypes:(id)arg1;

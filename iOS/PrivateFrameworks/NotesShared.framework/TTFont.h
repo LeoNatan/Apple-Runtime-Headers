@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id nativeFont; // @synthesize nativeFont=_nativeFont;
 @property(readonly, nonatomic) unsigned int fontHints; // @synthesize fontHints=_fontHints;
 @property(readonly, nonatomic) double pointSize; // @synthesize pointSize=_pointSize;
 @property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

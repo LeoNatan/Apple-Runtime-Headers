@@ -49,6 +49,7 @@
     NSNumber *_requestsRejectedForNoSpace;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *requestsRejectedForNoSpace; // @synthesize requestsRejectedForNoSpace=_requestsRejectedForNoSpace;
 @property(retain) NSNumber *requestsFromPeer; // @synthesize requestsFromPeer=_requestsFromPeer;
 @property(retain) NSNumber *requestsFromClient; // @synthesize requestsFromClient=_requestsFromClient;
@@ -86,7 +87,6 @@
 @property(retain) NSNumber *bytesFromCacheToClient; // @synthesize bytesFromCacheToClient=_bytesFromCacheToClient;
 @property(retain) NSNumber *bytesFromCacheToChild; // @synthesize bytesFromCacheToChild=_bytesFromCacheToChild;
 @property(retain) NSNumber *bytesDropped; // @synthesize bytesDropped=_bytesDropped;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long sumOfBytesUploaded;
 @property(readonly) unsigned long long sumOfBytesServedToPeer;
 @property(readonly) unsigned long long sumOfBytesServedToClient;

@@ -22,8 +22,8 @@
     _Bool _executeOnDealloc;
 }
 
-@property _Bool executeOnDealloc; // @synthesize executeOnDealloc=_executeOnDealloc;
 - (void).cxx_destruct;
+@property _Bool executeOnDealloc; // @synthesize executeOnDealloc=_executeOnDealloc;
 @property(readonly, copy) NSString *description;
 - (_Bool)executeBlock;
 - (_Bool)groupNotify:(id)arg1;

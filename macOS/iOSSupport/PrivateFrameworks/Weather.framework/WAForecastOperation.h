@@ -36,6 +36,7 @@
     WFServiceConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFServiceConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSData *rawAPIData; // @synthesize rawAPIData=_rawAPIData;
 @property(nonatomic) BOOL shouldAttachRawAPIData; // @synthesize shouldAttachRawAPIData=_shouldAttachRawAPIData;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) WACurrentForecast *currentConditions; // @synthesize currentConditions=_currentConditions;
 @property(retain, nonatomic) WFLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) City *city; // @synthesize city=_city;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) WAForecastModel *forecastModel;
 - (void)_mapReferralLinks;
 - (void)_determineSunriseAndSunset;

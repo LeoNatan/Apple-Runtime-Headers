@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned int connectionsCreated; // @synthesize connectionsCreated=_connectionsCreated;
 @property unsigned int connections; // @synthesize connections=_connections;
 @property unsigned int bytesDownloaded; // @synthesize bytesDownloaded=_bytesDownloaded;
@@ -32,7 +33,6 @@
 @property double queueing; // @synthesize queueing=_queueing;
 @property double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)unionMetric:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

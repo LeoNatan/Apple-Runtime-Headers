@@ -24,6 +24,7 @@
     CDUnknownBlockType __unitTesting_reminderRegistryCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_unitTesting_setReminderRegistryCompletion:) CDUnknownBlockType _unitTesting_reminderRegistryCompletion; // @synthesize _unitTesting_reminderRegistryCompletion=__unitTesting_reminderRegistryCompletion;
 @property(readonly, nonatomic) NSMutableSet *typesEnabledForReading; // @synthesize typesEnabledForReading=_typesEnabledForReading;
 @property(readonly, copy, nonatomic) NSSet *typesRequestedForReading; // @synthesize typesRequestedForReading=_typesRequestedForReading;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSError *fetchError; // @synthesize fetchError=_fetchError;
 @property(readonly, copy, nonatomic) NSArray *orderedTypesForReading; // @synthesize orderedTypesForReading=_orderedTypesForReading;
 @property(readonly, copy, nonatomic) HKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)_setAuthorizationStatuses:(id)arg1 modes:(id)arg2 shouldUpdateAnchor:(_Bool)arg3;
 - (id)_authorizationStatusesWithTypes:(id)arg1;
 - (id)_authorizationModesWithMode:(long long)arg1 types:(id)arg2;

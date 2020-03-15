@@ -26,6 +26,7 @@
 }
 
 + (id)queryContextWithSearchString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) unsigned long long queryIdent; // @synthesize queryIdent=_queryIdent;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 @property(retain, nonatomic) NSArray *markedTextArray; // @synthesize markedTextArray=_markedTextArray;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasMarkedText;
 - (id)initWithSearchString:(id)arg1;
 

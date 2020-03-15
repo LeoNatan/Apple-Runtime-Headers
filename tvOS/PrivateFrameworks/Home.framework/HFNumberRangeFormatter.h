@@ -11,8 +11,8 @@
     NSFormatter *_numberFormatter;
 }
 
-@property(retain, nonatomic) NSFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 - (id)stringForNumberRange:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithNumberFormatter:(id)arg1;

@@ -102,12 +102,12 @@
 + (void)tombstoneLabel:(id)arg1;
 + (void)rememberLabel:(id)arg1 stored:(_Bool)arg2 indexed:(_Bool)arg3 tracked:(_Bool)arg4;
 + (id)remember:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool tracked; // @synthesize tracked=_tracked;
 @property(readonly, nonatomic) _Bool stored; // @synthesize stored=_stored;
 @property(readonly, nonatomic) _Bool indexed; // @synthesize indexed=_indexed;
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)reservationContainerReference;
 - (id)reservationItemReferences;
 - (id)reminderMetadata;

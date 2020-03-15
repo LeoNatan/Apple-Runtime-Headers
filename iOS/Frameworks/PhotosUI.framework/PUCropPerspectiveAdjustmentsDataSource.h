@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     PUPhotoEditValuesCalculator *_valuesCalculator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUPhotoEditValuesCalculator *valuesCalculator; // @synthesize valuesCalculator=_valuesCalculator;
 @property(retain, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(nonatomic) __weak id <PUCropPerspectiveAdjustmentsDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *adjustmentInfoSections; // @synthesize adjustmentInfoSections=_adjustmentInfoSections;
-- (void).cxx_destruct;
 - (void)compositionControllerDidChange;
 - (void)resetInfoAtIndexPath:(id)arg1;
 - (void)modifyValue:(double)arg1 atIndexPath:(id)arg2;

@@ -15,10 +15,10 @@
     ML3Client *_client;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ML3Client *client; // @synthesize client=_client;
 @property(readonly, nonatomic) ML3MediaLibraryWriter *writer; // @synthesize writer=_writer;
 @property(readonly, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (id)initWithDatabaseImport:(id)arg1 library:(id)arg2 writer:(id)arg3 client:(id)arg4;
 
 @end

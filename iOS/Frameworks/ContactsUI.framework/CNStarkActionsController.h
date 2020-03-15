@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(nonatomic) double willTransitionToBoundsWidth; // @synthesize willTransitionToBoundsWidth=_willTransitionToBoundsWidth;
 @property(readonly, nonatomic) CNStarkActionView *directionsActionView; // @synthesize directionsActionView=_directionsActionView;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIViewController *disambiguationViewController; // @synthesize disambiguationViewController=_disambiguationViewController;
 @property(readonly, nonatomic) CNContactQuickActionsController *quickActionsController; // @synthesize quickActionsController=_quickActionsController;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)removeForwardingDelegate;
 - (void)forwardDelegateForNavigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)addForwardingDelegate;

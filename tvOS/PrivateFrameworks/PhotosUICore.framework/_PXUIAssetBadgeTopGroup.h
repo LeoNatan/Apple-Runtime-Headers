@@ -21,6 +21,7 @@
     struct CGRect _buttonFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect buttonFrame; // @synthesize buttonFrame=_buttonFrame;
 @property(nonatomic) struct CGRect labelFrame; // @synthesize labelFrame=_labelFrame;
 @property(nonatomic) struct CGRect imageFrame; // @synthesize imageFrame=_imageFrame;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 
 @end
 

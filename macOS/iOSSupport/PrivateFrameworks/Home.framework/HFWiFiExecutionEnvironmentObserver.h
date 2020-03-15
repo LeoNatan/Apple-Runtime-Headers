@@ -19,11 +19,11 @@
     unsigned long long _lastKnownRunningState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastKnownRunningState; // @synthesize lastKnownRunningState=_lastKnownRunningState;
 @property(retain, nonatomic) HMHome *lastKnownHome; // @synthesize lastKnownHome=_lastKnownHome;
 @property(readonly, nonatomic) __weak HFHomeKitDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(readonly, nonatomic) __weak HFExecutionEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (void)_updateState;
 - (void)homeKitDispatcher:(id)arg1 manager:(id)arg2 didChangeHome:(id)arg3;
 - (void)homeManagerDidFinishInitialDatabaseLoad:(id)arg1;

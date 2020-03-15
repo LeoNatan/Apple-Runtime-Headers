@@ -19,10 +19,10 @@
     RESectionDescriptor *_parentDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak RESectionDescriptor *parentDescriptor; // @synthesize parentDescriptor=_parentDescriptor;
 @property(nonatomic) long long maxElementCount; // @synthesize maxElementCount=_maxElementCount;
 @property(nonatomic) _Bool invertsRanking; // @synthesize invertsRanking=_invertsRanking;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSSet *rules;

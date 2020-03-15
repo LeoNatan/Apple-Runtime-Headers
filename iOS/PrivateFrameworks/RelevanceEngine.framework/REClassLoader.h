@@ -23,8 +23,8 @@
 + (id)loaderWithDirectories:(id)arg1 dataSourceKey:(id)arg2 configuration:(id)arg3;
 + (id)loaderWithBlock:(CDUnknownBlockType)arg1 configuration:(id)arg2;
 + (id)loaderWithObjects:(id)arg1 configuration:(id)arg2;
-@property(readonly, nonatomic) id <REClassLoaderConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <REClassLoaderConfiguration> configuration; // @synthesize configuration=_configuration;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_enumerateBundleConfigurations:(CDUnknownBlockType)arg1;

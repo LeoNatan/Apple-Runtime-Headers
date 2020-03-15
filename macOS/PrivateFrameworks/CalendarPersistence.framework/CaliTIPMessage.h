@@ -21,8 +21,8 @@
     BOOL _localImport;
 }
 
-@property BOOL localImport; // @synthesize localImport=_localImport;
 - (void).cxx_destruct;
+@property BOOL localImport; // @synthesize localImport=_localImport;
 - (id)eTag;
 - (id)serverFilename;
 @property(readonly, copy) NSString *description;

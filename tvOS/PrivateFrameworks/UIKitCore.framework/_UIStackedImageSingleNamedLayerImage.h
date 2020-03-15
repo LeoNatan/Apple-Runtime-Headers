@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIImage *_imageObj;
 }
 
-@property(retain, nonatomic) UIImage *imageObj; // @synthesize imageObj=_imageObj;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *imageObj; // @synthesize imageObj=_imageObj;
 @property(readonly, nonatomic) int blendMode;
 @property(readonly, nonatomic) double opacity;
 @property(readonly, nonatomic) struct CGRect frame;

@@ -14,8 +14,8 @@
 }
 
 + (void)initialize;
-- (id)snippet;
 - (void).cxx_destruct;
+- (id)snippet;
 - (void)cardViewControllerDidLoad:(id)arg1;
 - (_Bool)cardViewController:(id)arg1 shouldLoadIdentifiedCardSectionViewProvidersWithProviderManager:(id)arg2;
 - (Class)transparentHeaderViewClass;

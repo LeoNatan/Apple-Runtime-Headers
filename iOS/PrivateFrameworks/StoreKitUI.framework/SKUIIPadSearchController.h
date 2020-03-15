@@ -19,9 +19,9 @@
 
 + (id)lastSearchTerm;
 + (void)setLastSearchTerm:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(readonly, nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
-- (void).cxx_destruct;
 - (id)_searchFieldController;
 - (void)_termDidChangeNotification:(id)arg1;
 - (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;

@@ -15,18 +15,18 @@ __attribute__((visibility("hidden")))
 {
     IKViewElement *_viewElement;
     VUIOfferView *_offerView;
-    VUILabel *_focusedTextLabel;
+    VUILabel *_belowCardTextLabel;
     VUIImageView *_secondChinImageView;
     struct CGSize _cardSize;
 }
 
 + (id)configureViewWithElement:(id)arg1 existingCell:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIImageView *secondChinImageView; // @synthesize secondChinImageView=_secondChinImageView;
-@property(retain, nonatomic) VUILabel *focusedTextLabel; // @synthesize focusedTextLabel=_focusedTextLabel;
+@property(retain, nonatomic) VUILabel *belowCardTextLabel; // @synthesize belowCardTextLabel=_belowCardTextLabel;
 @property(nonatomic) struct CGSize cardSize; // @synthesize cardSize=_cardSize;
 @property(retain, nonatomic) VUIOfferView *offerView; // @synthesize offerView=_offerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_updateBackgroundAndHighlightColor;
 - (void)rentalExpirationLabelNeedsRelayout:(id)arg1;

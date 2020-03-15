@@ -16,8 +16,8 @@
     id <NUAdSettings> _settings;
 }
 
-@property(readonly, nonatomic) id <NUAdSettings> settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NUAdSettings> settings; // @synthesize settings=_settings;
 - (id)createAdControllerForProvider:(id)arg1 document:(id)arg2 viewport:(id)arg3;
 - (id)initWithSettings:(id)arg1;
 

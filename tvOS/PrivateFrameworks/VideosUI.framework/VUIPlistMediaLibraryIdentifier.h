@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSURL *_libraryFileURL;
 }
 
-@property(copy, nonatomic) NSURL *libraryFileURL; // @synthesize libraryFileURL=_libraryFileURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *libraryFileURL; // @synthesize libraryFileURL=_libraryFileURL;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)init;

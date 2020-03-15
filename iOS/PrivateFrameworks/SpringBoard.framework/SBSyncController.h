@@ -30,8 +30,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic, getter=_idleTimerCoordinator, setter=_setIdleTimerCoordinator:) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_idleTimerCoordinator, setter=_setIdleTimerCoordinator:) __weak id <SBIdleTimerCoordinating> idleTimerCoordinator; // @synthesize idleTimerCoordinator=_idleTimerCoordinator;
 - (id)_idleTimerBehavior;
 - (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;
 - (void)_appInstallationNotification;

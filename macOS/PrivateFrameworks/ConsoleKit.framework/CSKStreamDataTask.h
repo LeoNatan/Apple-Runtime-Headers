@@ -17,10 +17,10 @@
 
 + (id)name;
 + (id)batchesWithEntities:(id)arg1 limit:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) unsigned long long batchItemsLimit; // @synthesize batchItemsLimit=_batchItemsLimit;
 @property(readonly, nonatomic) __weak CSKStreamData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)handler;
 - (id)retrieveEntitiesFromData;
 - (id)initWithData:(id)arg1 batchItemsLimit:(unsigned long long)arg2;

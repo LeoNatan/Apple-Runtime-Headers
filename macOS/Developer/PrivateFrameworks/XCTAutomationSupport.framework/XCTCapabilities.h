@@ -17,8 +17,8 @@
 
 + (id)emptyCapabilities;
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSDictionary *capabilitiesDictionary; // @synthesize capabilitiesDictionary=_capabilitiesDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy) NSDictionary *capabilitiesDictionary; // @synthesize capabilitiesDictionary=_capabilitiesDictionary;
 - (BOOL)hasCapability:(id)arg1;
 - (unsigned long long)versionForCapability:(id)arg1;
 - (id)description;

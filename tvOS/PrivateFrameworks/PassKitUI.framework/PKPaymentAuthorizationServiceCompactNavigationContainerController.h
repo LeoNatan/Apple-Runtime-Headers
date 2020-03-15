@@ -13,6 +13,7 @@
 
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

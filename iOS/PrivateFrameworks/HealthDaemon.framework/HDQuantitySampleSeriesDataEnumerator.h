@@ -34,6 +34,8 @@
     struct ObjectIdentifier _objectIdentifier;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFetchedAllData; // @synthesize hasFetchedAllData=_hasFetchedAllData;
 @property(nonatomic) double lastDatumTime; // @synthesize lastDatumTime=_lastDatumTime;
 @property(nonatomic) double lastFetchedDatumTime; // @synthesize lastFetchedDatumTime=_lastFetchedDatumTime;
@@ -46,8 +48,6 @@
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) long long dataTypeCode; // @synthesize dataTypeCode=_dataTypeCode;
 @property(readonly, nonatomic) long long persistentID; // @synthesize persistentID=_persistentID;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_unitTesting_addToBufferTimestamp:(double)arg1 value:(double)arg2 duration:(float)arg3 isLastDatum:(_Bool)arg4;
 - (_Bool)_addToBufferTimestamp:(double)arg1 value:(double)arg2 duration:(float)arg3;
 - (_Bool)_fillValueBufferWithError:(id *)arg1;

@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)_dataDictionaryObjectFromObject:(id)arg1 forAccessorSequence:(id)arg2;
 + (id)_dataDictionaryObjectFromValueRef:(struct OpaqueJSValue *)arg1 inContextRef:(struct OpaqueJSContext *)arg2;
 + (id)_dataDictionaryObjectFromValue:(id)arg1 inContext:(id)arg2;
-@property(readonly, nonatomic) __weak IKJSDataObservable *dataObservable; // @synthesize dataObservable=_dataObservable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKJSDataObservable *dataObservable; // @synthesize dataObservable=_dataObservable;
 - (void)touchPropertyPath:(id)arg1;
 - (id)dataDictionaryObject;
 - (id)initWithAppContext:(id)arg1 dataObservable:(id)arg2;

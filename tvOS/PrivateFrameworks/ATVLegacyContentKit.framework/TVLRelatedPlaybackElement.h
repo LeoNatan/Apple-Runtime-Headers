@@ -15,10 +15,10 @@
     TVLMenuElement *_optionsMenu;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLMenuElement *optionsMenu; // @synthesize optionsMenu=_optionsMenu;
 @property(retain, nonatomic) NSString *endTitle; // @synthesize endTitle=_endTitle;
 @property(retain, nonatomic) TVLUpNextItemElement *upNextItem; // @synthesize upNextItem=_upNextItem;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

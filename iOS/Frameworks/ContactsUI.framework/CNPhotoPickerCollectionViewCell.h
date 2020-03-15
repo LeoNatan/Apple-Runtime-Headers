@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (struct CGPath *)containerClippingPathForBounds:(struct CGRect)arg1 forCellStyle:(unsigned long long)arg2;
 + (double)cornerRadiusForBounds:(struct CGRect)arg1 forCellStyle:(unsigned long long)arg2;
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
 @property(retain, nonatomic) UIView *containerContentView; // @synthesize containerContentView=_containerContentView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
 @property(nonatomic) unsigned long long cellStyle; // @synthesize cellStyle=_cellStyle;
 @property(nonatomic) _Bool displaySelection; // @synthesize displaySelection=_displaySelection;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)clearContainerViewAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setSelected:(_Bool)arg1;

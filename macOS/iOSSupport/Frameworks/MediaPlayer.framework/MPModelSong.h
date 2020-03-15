@@ -40,6 +40,8 @@
 + (id)__hasVideo_KEY;
 + (id)__artistUploadedContent_KEY;
 + (id)__explicitSong_KEY;
++ (id)__skipCount_KEY;
++ (id)__playCount_KEY;
 + (id)__discNumber_KEY;
 + (id)__trackNumber_KEY;
 + (id)__trackCount_KEY;
@@ -100,8 +102,10 @@
 @property(copy, nonatomic) NSDate *libraryAddedDate; // @dynamic libraryAddedDate;
 @property(retain, nonatomic) MPModelFileAsset *localFileAsset; // @dynamic localFileAsset;
 @property(retain, nonatomic) MPModelLyrics *lyrics; // @dynamic lyrics;
+@property(nonatomic) long long playCount; // @dynamic playCount;
 @property(retain, nonatomic) MPModelPlaybackPosition *playbackPosition; // @dynamic playbackPosition;
 @property(nonatomic) BOOL shouldShowComposer; // @dynamic shouldShowComposer;
+@property(nonatomic) long long skipCount; // @dynamic skipCount;
 @property(retain, nonatomic) MPModelStoreAsset *storeAsset; // @dynamic storeAsset;
 @property(copy, nonatomic) NSString *title; // @dynamic title;
 @property(nonatomic) long long trackCount; // @dynamic trackCount;

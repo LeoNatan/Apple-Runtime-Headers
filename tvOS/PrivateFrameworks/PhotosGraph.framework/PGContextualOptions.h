@@ -15,9 +15,9 @@
     NSDateComponents *_localTodayComponents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *localTodayComponents; // @synthesize localTodayComponents=_localTodayComponents;
 @property(retain, nonatomic) NSDate *localToday; // @synthesize localToday=_localToday;
-- (void).cxx_destruct;
 - (id)availableContextualRules;
 - (id)initWithManager:(id)arg1 options:(id)arg2;
 

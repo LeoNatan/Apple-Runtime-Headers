@@ -14,9 +14,9 @@
     id <MCDErrorViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldEnableNetwork; // @synthesize shouldEnableNetwork=_shouldEnableNetwork;
 @property(nonatomic) __weak id <MCDErrorViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)retryButtonPressed:(id)arg1;
 - (id)initWithTitle:(id)arg1 buttonText:(id)arg2;
 

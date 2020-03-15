@@ -18,8 +18,8 @@
 
 + (id)_badURLError;
 + (id)establishedSessionWithCertURL:(id)arg1 sessionURL:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) int error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int error; // @synthesize error=_error;
 - (void)dealloc;
 - (id)signatureForData:(id)arg1;
 - (void)establishSession;

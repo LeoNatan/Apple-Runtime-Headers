@@ -21,6 +21,7 @@
     NSTrackingArea *_mouseTrackingArea;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTrackingArea *mouseTrackingArea; // @synthesize mouseTrackingArea=_mouseTrackingArea;
 @property BOOL clickPossible; // @synthesize clickPossible=_clickPossible;
 @property BOOL mouseInView; // @synthesize mouseInView=_mouseInView;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSColor *themeColor; // @synthesize themeColor=_themeColor;
 @property(nonatomic) BOOL isNoteMarker; // @synthesize isNoteMarker=_isNoteMarker;
 @property(retain, nonatomic) AKAnnotationTheme *theme; // @synthesize theme=_theme;
-- (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)mouseExited:(id)arg1;

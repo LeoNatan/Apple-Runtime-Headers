@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *remainingNodes; // @synthesize remainingNodes=_remainingNodes;
 - (id)nextObject;
 - (id)initWithNode:(id)arg1;
 

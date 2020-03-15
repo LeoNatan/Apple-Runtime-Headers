@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIDragInteraction *_interaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDragInteraction *interaction; // @synthesize interaction=_interaction;
 @property(retain, nonatomic) NSSet *items; // @synthesize items=_items;
 @property(retain, nonatomic) id <UIDragInteractionContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
 
 @end

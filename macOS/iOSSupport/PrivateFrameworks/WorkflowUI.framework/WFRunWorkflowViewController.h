@@ -45,6 +45,7 @@
     WFWorkflowViewController *_workflowViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
 @property(retain, nonatomic) WFAction *currentlyRunningAction; // @synthesize currentlyRunningAction=_currentlyRunningAction;
 @property(retain, nonatomic) WFWorkflowRunEvent *runEvent; // @synthesize runEvent=_runEvent;
@@ -65,7 +66,6 @@
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFRunWorkflowViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)runWorkflowFooterViewDidSelectAddButton:(id)arg1;
 - (void)dropInteraction:(id)arg1 sessionDidEnd:(id)arg2;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;

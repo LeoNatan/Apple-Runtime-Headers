@@ -20,10 +20,10 @@
 
 + (unsigned long long)maximumNumberOfFetchableAvatars;
 + (unsigned long long)maximumNumberOfSavableAvatars;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) id <AVTAvatarStoreInternal> store; // @synthesize store=_store;
 @property(nonatomic) __weak id <AVTAvatarStoreDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)deleteRecentStickersForChangeTracker:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)recentStickersForFetchRequest:(id)arg1 error:(id *)arg2;
 - (void)didUseStickerWithAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

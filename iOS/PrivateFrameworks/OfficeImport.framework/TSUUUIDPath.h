@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)lastUUIDFromUUIDPathString:(id)arg1;
-@property(readonly, nonatomic) NSArray *uuids; // @synthesize uuids=_uuids;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *uuids; // @synthesize uuids=_uuids;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

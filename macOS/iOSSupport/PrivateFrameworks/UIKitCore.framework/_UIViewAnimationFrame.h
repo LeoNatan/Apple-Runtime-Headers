@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compareStartTimes:(id)arg1;
 

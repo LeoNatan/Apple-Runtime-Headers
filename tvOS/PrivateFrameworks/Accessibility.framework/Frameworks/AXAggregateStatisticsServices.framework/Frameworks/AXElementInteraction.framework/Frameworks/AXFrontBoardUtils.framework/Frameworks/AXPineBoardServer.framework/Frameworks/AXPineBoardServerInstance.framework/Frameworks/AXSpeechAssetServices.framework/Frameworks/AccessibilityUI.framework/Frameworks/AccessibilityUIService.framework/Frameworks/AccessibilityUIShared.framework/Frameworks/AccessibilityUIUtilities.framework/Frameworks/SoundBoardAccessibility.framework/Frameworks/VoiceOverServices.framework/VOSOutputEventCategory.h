@@ -21,9 +21,9 @@
 + (id)appFeedback;
 + (id)voiceOverFeedback;
 + (id)interaction;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedCategoryName; // @synthesize localizedCategoryName=_localizedCategoryName;
 @property(retain, nonatomic) NSArray *outputEvents; // @synthesize outputEvents=_outputEvents;
-- (void).cxx_destruct;
 - (_Bool)containsOutputEvent:(id)arg1;
 - (id)init;
 - (id)initWithOutputEvents:(id)arg1 localizedCategoryName:(id)arg2;

@@ -16,10 +16,10 @@
 }
 
 + (id)itemWithText:(id)arg1 andHeader:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long lines; // @synthesize lines=_lines;
 @property(retain, nonatomic) NSString *header; // @synthesize header=_header;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;

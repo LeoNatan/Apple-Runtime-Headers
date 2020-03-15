@@ -28,6 +28,7 @@
 + (id)currentTraitCollection:(id)arg1;
 + (id)traitEnvironment:(id)arg1 willTransitionToTraitCollection:(id)arg2 fromPreviousTraitCollection:(id)arg3;
 + (id)defaultCollection;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *constraints; // @synthesize constraints=_constraintsValue;
 @property(copy, nonatomic) NSArray *subviews; // @synthesize subviews=_subviewsValue;
 @property(retain, nonatomic) NSArray *preferredContentSizeCategories; // @synthesize preferredContentSizeCategories=_preferredContentSizeCategories;
@@ -38,7 +39,6 @@
 @property(nonatomic) long long horizontalSizeClass; // @synthesize horizontalSizeClass=_horizontalSizeClass;
 @property(nonatomic) double displayScale; // @synthesize displayScale=_displayScale;
 @property(nonatomic) long long userInterfaceIdiom; // @synthesize userInterfaceIdiom=_userInterfaceIdiom;
-- (void).cxx_destruct;
 - (void)applyToTraitEnvironment:(id)arg1;
 @property(readonly, nonatomic) UITraitCollection *traitCollection;
 - (void)setTMLValue:(id)arg1 forKeyPath:(id)arg2;

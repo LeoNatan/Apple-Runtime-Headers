@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     id <DiagnosticCaseManagerStorageDelegate> _storageDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DiagnosticCaseManagerStorageDelegate> storageDelegate; // @synthesize storageDelegate=_storageDelegate;
 @property(readonly, copy, nonatomic) NSMutableArray *totalCases; // @synthesize totalCases=_totalCases;
 @property(readonly, copy, nonatomic) NSMutableArray *activeCases; // @synthesize activeCases=_activeCases;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) DiagnosticStatisticsManager *statsManager; // @synthesize statsManager=_statsManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) DiagnosticLiaison *liaison; // @synthesize liaison=_liaison;
-- (void).cxx_destruct;
 - (void)removeAllCases;
 - (void)removeCaseStorageWithID:(id)arg1;
 - (BOOL)isAllowedTransientException:(id)arg1;

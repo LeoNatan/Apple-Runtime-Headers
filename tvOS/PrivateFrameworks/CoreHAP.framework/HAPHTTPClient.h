@@ -27,6 +27,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool invalidateRequested; // @synthesize invalidateRequested=_invalidateRequested;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *debugDelegateQueue; // @synthesize debugDelegateQueue=_debugDelegateQueue;
 @property(nonatomic) __weak id <HAPHTTPClientDebugDelegate> debugDelegate; // @synthesize debugDelegate=_debugDelegate;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) long long port; // @synthesize port=_port;
 @property(copy, nonatomic) NSString *dnsName; // @synthesize dnsName=_dnsName;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)httpClient:(id)arg1 willSendHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
 - (void)httpClient:(id)arg1 didReceiveHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
@@ -57,6 +57,7 @@
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 @property(readonly, nonatomic) NSString *peerEndpointDescription;
 @property(readonly, nonatomic) HMFNetAddress *peerAddress;
+- (void)dealloc;
 - (id)initWithDNSName:(id)arg1 port:(long long)arg2 eventsEnabled:(_Bool)arg3 queue:(id)arg4;
 - (id)initWithDNSName:(id)arg1 queue:(id)arg2;
 

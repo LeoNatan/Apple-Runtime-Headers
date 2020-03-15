@@ -11,8 +11,8 @@
     UIView *_contentView;
 }
 
-@property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @end

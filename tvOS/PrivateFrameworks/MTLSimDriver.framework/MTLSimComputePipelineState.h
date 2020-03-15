@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned long long maxTotalThreadsPerThreadgroup;
     unsigned long long threadExecutionWidth;
     unsigned long long staticThreadgroupMemoryLength;
+    unsigned long long _uniqueIdentifier;
 }
 
 @property(nonatomic) _Bool supportIndirectCommandBuffers; // @synthesize supportIndirectCommandBuffers;
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long maxTotalThreadsPerThreadgroup; // @synthesize maxTotalThreadsPerThreadgroup;
 - (unsigned int)pipelineRef;
 - (void)dealloc;
+- (unsigned long long)uniqueIdentifier;
 - (id)initWithDevice:(id)arg1 pipelineRef:(unsigned int)arg2 descriptor:(id)arg3;
 
 // Remaining properties

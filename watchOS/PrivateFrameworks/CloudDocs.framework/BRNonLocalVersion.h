@@ -25,6 +25,7 @@
 }
 
 + (id)listVersionsOfDocumentAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasThumbnail; // @synthesize hasThumbnail=_hasThumbnail;
 @property(readonly, nonatomic) NSPersonNameComponents *lastEditorNameComponents; // @synthesize lastEditorNameComponents=_lastEditorNameComponents;
 @property(readonly, nonatomic) NSString *lastEditorDeviceName; // @synthesize lastEditorDeviceName=_lastEditorDeviceName;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSString *etag; // @synthesize etag=_etag;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) id <NSCopying><NSSecureCoding> persistentIdentifier;
 - (void)dealloc;

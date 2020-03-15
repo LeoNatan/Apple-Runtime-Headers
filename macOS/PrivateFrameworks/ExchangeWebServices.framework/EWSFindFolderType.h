@@ -18,12 +18,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long Traversal; // @synthesize Traversal=_Traversal;
 @property(copy, nonatomic) NSArray *ParentFolderIds; // @synthesize ParentFolderIds=_ParentFolderIds;
 @property(retain, nonatomic) EWSRestrictionType *Restriction; // @synthesize Restriction=_Restriction;
 @property(retain, nonatomic) EWSBasePagingType *Paging; // @synthesize Paging=_Paging;
 @property(retain, nonatomic) EWSFolderResponseShapeType *FolderShape; // @synthesize FolderShape=_FolderShape;
-- (void).cxx_destruct;
 
 @end
 

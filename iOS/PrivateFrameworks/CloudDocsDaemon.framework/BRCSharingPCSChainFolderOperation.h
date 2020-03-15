@@ -15,13 +15,13 @@ __attribute__((visibility("hidden")))
 {
     BRCServerItem *_serverItem;
     BRCAppLibrary *_appLibrary;
+    unsigned long long _chainedRecordsCount;
 }
 
 - (void).cxx_destruct;
 - (void)main;
 - (void)_performPCSChainBatch;
 - (id)createActivity;
-- (_Bool)shouldRetryForError:(id)arg1;
 - (id)initWithItem:(id)arg1;
 @property(readonly, nonatomic) BRCItemID *rootItemID;
 

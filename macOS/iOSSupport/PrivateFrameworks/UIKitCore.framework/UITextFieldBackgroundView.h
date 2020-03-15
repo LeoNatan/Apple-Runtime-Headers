@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIColor *_fillColor;
 }
 
-@property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void)setProgress:(float)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setBounds:(struct CGRect)arg1;

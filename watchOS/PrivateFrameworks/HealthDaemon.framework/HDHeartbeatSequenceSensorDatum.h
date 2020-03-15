@@ -19,12 +19,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)_dataFromHeartbeatArray:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *heartRateVariabilityUUID; // @synthesize heartRateVariabilityUUID=_heartRateVariabilityUUID;
 @property(readonly, nonatomic) double longestSubsequenceDuration; // @synthesize longestSubsequenceDuration=_longestSubsequenceDuration;
 @property(readonly, nonatomic) double longestSubsequenceStart; // @synthesize longestSubsequenceStart=_longestSubsequenceStart;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSData *heartbeatSequenceData; // @synthesize heartbeatSequenceData=_heartbeatSequenceData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 heartbeats:(id)arg3 context:(int)arg4 longestSubsequenceStart:(double)arg5 longestSubsequenceDuration:(double)arg6 medianHeartRate:(id)arg7 heartRateVariabilityUUID:(id)arg8 resumeContext:(id)arg9;

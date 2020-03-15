@@ -18,8 +18,8 @@
 }
 
 + (Class)collectionViewClass;
-@property(retain, nonatomic) UXCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UXCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (double)scrollView:(id)arg1 pageAlignedOriginOnAxis:(long long)arg2 forProposedDestination:(double)arg3 currentOrigin:(double)arg4 initialOrigin:(double)arg5 velocity:(double)arg6;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

@@ -17,11 +17,11 @@
     CADisplayLink *__displayLink;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplayLink *_displayLink; // @synthesize _displayLink=__displayLink;
 @property(readonly, nonatomic) NSMutableDictionary *_animations; // @synthesize _animations=__animations;
 @property(readonly, nonatomic) NSMutableDictionary *_values; // @synthesize _values=__values;
 @property(nonatomic) __weak id <CAMAdditiveAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleDisplayLinkFired:(id)arg1;
 - (void)_updateDisplayLink;
 - (void)setValue:(double)arg1 forKey:(id)arg2 duration:(double)arg3 timingCurve:(id)arg4;

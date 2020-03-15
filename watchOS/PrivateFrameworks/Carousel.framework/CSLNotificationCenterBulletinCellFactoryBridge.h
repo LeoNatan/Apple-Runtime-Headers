@@ -19,9 +19,9 @@
 }
 
 + (id)notificationCenterCellFactoryWithFactory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CUISNotificationNCCellFactory> factory; // @synthesize factory=_factory;
 @property(nonatomic) __weak id <CUISNotificationCenterCellFactoryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cellDidEndDisplaying:(id)arg1;
 - (void)cellFactory:(id)arg1 requestReloadCellsForNotifications:(CDUnknownBlockType)arg2;
 - (void)cellFactory:(id)arg1 requestDismissNotification:(id)arg2;

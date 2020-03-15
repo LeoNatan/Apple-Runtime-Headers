@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     long long _axis;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInLayoutArrangementUpdateSection) _Bool inLayoutArrangementUpdateSection; // @synthesize inLayoutArrangementUpdateSection=_inLayoutArrangementUpdateSection;
 @property(nonatomic) _Bool hasEstablishedBaseValues; // @synthesize hasEstablishedBaseValues=_hasEstablishedBaseValues;
 @property(readonly, nonatomic) NSSet *invalidBaselineConstraints; // @synthesize invalidBaselineConstraints=_invalidBaselineConstraints;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool layoutUsesCanvasMarginsWhenFilling; // @synthesize layoutUsesCanvasMarginsWhenFilling=_layoutUsesCanvasMarginsWhenFilling;
 @property(nonatomic) _Bool layoutFillsCanvas; // @synthesize layoutFillsCanvas=_layoutFillsCanvas;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
-- (void).cxx_destruct;
 - (void)_invalidateBaselineConstraint:(id)arg1;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;

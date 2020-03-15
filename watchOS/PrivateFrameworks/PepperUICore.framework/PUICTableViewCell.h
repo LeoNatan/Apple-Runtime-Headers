@@ -37,11 +37,11 @@
 + (float)gapSeparatorHeight;
 + (id)_transparentBackgroundPillColor;
 + (id)_backgroundPillColor;
+- (void).cxx_destruct;
 @property(nonatomic) int sectionID; // @synthesize sectionID=_sectionID;
 @property(retain, nonatomic) PUICTableViewCellActionBar *actionBar; // @synthesize actionBar=_actionBar;
 @property(readonly, nonatomic) UIView *swipingContentWrapperView; // @synthesize swipingContentWrapperView=_swipingContentWrapperView;
 @property(nonatomic, getter=isRadioSectionCell) _Bool radioSectionCell; // @synthesize radioSectionCell=_radioSectionCell;
-- (void).cxx_destruct;
 - (id)_contentBackgroundColor;
 - (void)_updateSeparatorContent;
 - (float)_marginWidth;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_filePath;
 }
 
-@property(readonly, copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (_Bool)setUp;
 - (id)initWithFilePath:(id)arg1;
 

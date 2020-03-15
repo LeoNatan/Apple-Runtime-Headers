@@ -19,9 +19,9 @@
     long long _statusCode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
 @property(retain, nonatomic) MFError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)resultsForMessageMove:(id)arg1;
 - (void)taskFailed:(id)arg1 statusCode:(long long)arg2 error:(id)arg3;
 - (id)initWithSourceRemoteIDs:(id)arg1 destinationRemoteIDsBySourceRemoteIDs:(id)arg2 failures:(id)arg3;

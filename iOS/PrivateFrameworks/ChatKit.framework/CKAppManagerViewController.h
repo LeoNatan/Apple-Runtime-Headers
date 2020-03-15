@@ -26,12 +26,12 @@
     CKAppSearchResultsTableViewController *_searchResultsController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAppSearchResultsTableViewController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain, nonatomic) NSArray *plugins; // @synthesize plugins=_plugins;
 @property(retain, nonatomic) NSArray *favoritePlugins; // @synthesize favoritePlugins=_favoritePlugins;
 @property(nonatomic) __weak id <CKAppManagerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)togglePluginAtIndex:(unsigned long long)arg1 enabled:(_Bool)arg2;
 - (_Bool)allowEnablingDisabledApps;
 - (void)appCell:(id)arg1 wasToggledOn:(_Bool)arg2;

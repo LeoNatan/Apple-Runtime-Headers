@@ -17,11 +17,11 @@
 }
 
 + (id)makeActionLabel;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didCreateConstraints; // @synthesize didCreateConstraints=_didCreateConstraints;
 @property(retain, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
 @property(retain, nonatomic) NSTextField *actionLabel; // @synthesize actionLabel=_actionLabel;
 @property(retain, nonatomic) CNQuickActionButton *actionButton; // @synthesize actionButton=_actionButton;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 - (void)updateConstraintsIfNecessary;
 - (void)updateLayer;

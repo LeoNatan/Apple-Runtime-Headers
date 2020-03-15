@@ -15,8 +15,8 @@
     NSSpeechSynthesizer *_synthesizer;
 }
 
-@property(retain, nonatomic) NSSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
 - (void)cleanupSpeechSynthesizer;
 - (void)speechSynthesizer:(id)arg1 willSpeakWord:(struct _NSRange)arg2 ofString:(id)arg3;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeaking:(BOOL)arg2;

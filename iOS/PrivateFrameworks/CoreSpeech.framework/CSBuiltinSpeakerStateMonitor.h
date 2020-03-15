@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) AVVoiceTriggerClient *alwaysOnProcessorController; // @synthesize alwaysOnProcessorController=_alwaysOnProcessorController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVVoiceTriggerClient *alwaysOnProcessorController; // @synthesize alwaysOnProcessorController=_alwaysOnProcessorController;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)_notifyObserver:(id)arg1 withBuiltinSpeakerState:(unsigned long long)arg2;
 - (void)_didReceiveBuiltinSpeakerStateChangeNotification:(unsigned long long)arg1;

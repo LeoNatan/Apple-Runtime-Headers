@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *activeBrowserContentViewController; // @synthesize activeBrowserContentViewController=_activeBrowserContentViewController;
 @property(nonatomic) _Bool shouldIgnoreDidBecomeResponsive; // @synthesize shouldIgnoreDidBecomeResponsive=_shouldIgnoreDidBecomeResponsive;
-- (void).cxx_destruct;
 - (void)_promptTapToRadar:(CDUnknownBlockType)arg1;
 - (void)_tapToRadar;
 @property(readonly, nonatomic) _Bool supportsTapToRadar;

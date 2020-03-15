@@ -17,9 +17,9 @@
     TVTopShelfContentExtensionDelegateFlags *_delegateFlags;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVTopShelfContentExtensionDelegateFlags *delegateFlags; // @synthesize delegateFlags=_delegateFlags;
 @property(nonatomic) __weak id <TVTopShelfContentProviding> topShelfContentProvider; // @synthesize topShelfContentProvider=_topShelfContentProvider;
-- (void).cxx_destruct;
 - (id)_topShelfCustomActionPerformingDelegate;
 - (id)_topShelfMetricsReporterDelegate;
 - (void)shutdown;

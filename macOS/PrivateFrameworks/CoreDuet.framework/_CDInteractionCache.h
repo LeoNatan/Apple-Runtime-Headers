@@ -18,12 +18,12 @@
     NSMutableOrderedSet *_mutableInteractions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableOrderedSet *mutableInteractions; // @synthesize mutableInteractions=_mutableInteractions;
 @property(readonly, nonatomic) CDUnknownBlockType filterBlock; // @synthesize filterBlock=_filterBlock;
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *interactions;
 - (void)_cacheInteractions:(id)arg1;
 - (void)interactionsRecorded:(id)arg1;

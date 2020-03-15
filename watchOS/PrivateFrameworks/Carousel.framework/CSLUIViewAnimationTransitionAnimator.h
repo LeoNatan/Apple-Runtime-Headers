@@ -18,9 +18,9 @@
     NSObject<OS_os_activity> *_animationActivity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *animationActivity; // @synthesize animationActivity=_animationActivity;
 @property(readonly, nonatomic) CSLNavigationTransactionAnimatorHelper *helper; // @synthesize helper=_helper;
-- (void).cxx_destruct;
 - (void)_didComplete;
 - (void)_begin;
 - (id)initWithAnimationOptions:(unsigned int)arg1 duration:(double)arg2 helper:(id)arg3;

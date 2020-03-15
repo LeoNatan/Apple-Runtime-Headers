@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 + (id)serviceForContext:(id)arg1;
 + (id)anyService;
 + (id)initForPlugInKit;
+- (void).cxx_destruct;
 @property _Bool active; // @synthesize active=_active;
 @property __weak NCRemoteViewService *viewService; // @synthesize viewService=_viewService;
 @property __weak NSExtensionContext *currentExtensionContext; // @synthesize currentExtensionContext=_currentExtensionContext;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(readonly) struct NSEdgeInsets marginInsets; // @synthesize marginInsets=_marginInsets;
 @property(readonly) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
-- (void).cxx_destruct;
 - (void)_getSnapshotResult:(unsigned long long)arg1;
 - (void)_sendSnapshotResult:(id)arg1 scale:(double)arg2 result:(unsigned long long)arg3;
 - (void)_exitOnTimeout;

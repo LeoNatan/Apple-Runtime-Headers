@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)implementationForOneUpPresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak PXOneUpPresentation *_oneUpPresentation; // @synthesize _oneUpPresentation=__oneUpPresentation;
 @property(readonly, nonatomic) PUOneUpPresentationHelper *_helper; // @synthesize _helper=__helper;
-- (void).cxx_destruct;
 - (void)oneUpPresentationHelper:(id)arg1 shouldHideAssetReferences:(id)arg2;
 - (void)oneUpPresentationHelper:(id)arg1 scrollAssetReferenceToVisible:(id)arg2;
 - (id)oneUpPresentationHelper:(id)arg1 currentImageForAssetReference:(id)arg2;

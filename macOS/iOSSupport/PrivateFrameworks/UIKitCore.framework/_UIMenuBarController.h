@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIMenuBarMenu *_mainMenu; // @synthesize _mainMenu=__mainMenu;
 @property(copy, nonatomic) NSDictionary *keyEquivalentForKeyInput; // @synthesize keyEquivalentForKeyInput=_keyEquivalentForKeyInput;
 @property(copy, nonatomic) CDUnknownBlockType contextMenuDidClose; // @synthesize contextMenuDidClose=_contextMenuDidClose;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint contextMenuLocation; // @synthesize contextMenuLocation=_contextMenuLocation;
 @property(retain, nonatomic) UIView *contextMenuView; // @synthesize contextMenuView=_contextMenuView;
 @property(retain, nonatomic, setter=_setActivityItemsConfiguration:) id <UIActivityItemsConfigurationReading> _activityItemsConfiguration; // @synthesize _activityItemsConfiguration=__activityItemsConfiguration;
-- (void).cxx_destruct;
 - (id)_newSpeechMenuItem;
 - (void)_notifyContextMenuClosed;
 - (void)_makeContextMenuMoreMacLike:(id)arg1 isTextContextMenu:(BOOL)arg2 textIsEditable:(BOOL)arg3 textIsSecure:(BOOL)arg4 hasItemsToShare:(BOOL)arg5;

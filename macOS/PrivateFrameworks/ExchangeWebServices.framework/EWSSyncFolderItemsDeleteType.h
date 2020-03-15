@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSItemIdType *ItemId; // @synthesize ItemId=_ItemId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSItemIdType *ItemId; // @synthesize ItemId=_ItemId;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

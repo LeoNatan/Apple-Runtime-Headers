@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _block;
 }
 
-@property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)start;
 
 @end

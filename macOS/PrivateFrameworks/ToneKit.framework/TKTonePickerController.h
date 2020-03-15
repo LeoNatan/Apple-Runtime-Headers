@@ -61,6 +61,7 @@
 
 + (void)_updateLatestRedownloadAllTonesDate;
 + (id)_latestRedownloadAllTonesDate;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setBehavesAsRingtonePicker:) BOOL _behavesAsRingtonePicker; // @synthesize _behavesAsRingtonePicker=__behavesAsRingtonePicker;
 @property(retain, nonatomic, setter=_setSelectedToneIndexPath:) NSIndexPath *_selectedToneIndexPath; // @synthesize _selectedToneIndexPath=__selectedToneIndexPath;
 @property(nonatomic, setter=_setSelectedClassicAlertToneIndex:) unsigned long long _selectedClassicAlertToneIndex; // @synthesize _selectedClassicAlertToneIndex=__selectedClassicAlertToneIndex;
@@ -83,7 +84,6 @@
 @property(copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) long long alertType; // @synthesize alertType=_alertType;
 @property(nonatomic) __weak id <TKTonePickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_toneManagerContentsChanged:(id)arg1;
 - (void)_resetSelectedClassicAlertToneIndex;
 - (void)_resetSelectedClassicRingtoneIndex;

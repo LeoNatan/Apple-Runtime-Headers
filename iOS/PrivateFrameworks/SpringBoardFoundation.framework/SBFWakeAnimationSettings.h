@@ -24,6 +24,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFAnimationSettings *sleepWallpaperFilterSettings; // @synthesize sleepWallpaperFilterSettings=_sleepWallpaperFilterSettings;
 @property(nonatomic) double sleepColorBrightness; // @synthesize sleepColorBrightness=_sleepColorBrightness;
 @property(retain, nonatomic) SBFAnimationSettings *dateSleepSettings; // @synthesize dateSleepSettings=_dateSleepSettings;
@@ -35,7 +36,6 @@
 @property(nonatomic) double speedMultiplierForLiftToWake; // @synthesize speedMultiplierForLiftToWake=_speedMultiplierForLiftToWake;
 @property(nonatomic) double speedMultiplierForWake; // @synthesize speedMultiplierForWake=_speedMultiplierForWake;
 @property(nonatomic) double backlightFadeDuration; // @synthesize backlightFadeDuration=_backlightFadeDuration;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

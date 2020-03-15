@@ -22,11 +22,11 @@
 + (id)JSONKeyPathsByPropertyKey;
 + (_Bool)supportsSecureCoding;
 + (id)playbackArchiveDataJSONTransformer;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSData *playbackArchiveData; // @synthesize playbackArchiveData=_playbackArchiveData;
 @property(readonly, copy, nonatomic) NSNumber *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(readonly, copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -37,6 +37,7 @@
 
 + (id)block:(CDUnknownBlockType)arg1 name:(id)arg2 class:(Class)arg3;
 + (id)keyPath:(id)arg1 name:(id)arg2 class:(Class)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *measurementUnitType; // @synthesize measurementUnitType=_measurementUnitType;
 @property(copy, nonatomic) NSNumber *comparableUnits; // @synthesize comparableUnits=_comparableUnits;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(copy, nonatomic) id <WFPropertyListObject> userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (id)build;
 - (id)displayName:(id)arg1;
 - (id)measurementUnitType:(id)arg1;

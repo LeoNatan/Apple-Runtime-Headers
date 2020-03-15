@@ -17,8 +17,8 @@
     id <PKPaletteInkingTool> _inkTool;
 }
 
-@property(retain, nonatomic) id <PKPaletteInkingTool> inkTool; // @synthesize inkTool=_inkTool;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PKPaletteInkingTool> inkTool; // @synthesize inkTool=_inkTool;
 - (id)attributeViewController;
 - (void)setInkWeight:(double)arg1;
 - (void)setInkColor:(id)arg1;

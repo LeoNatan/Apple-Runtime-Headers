@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *extraLargeImage; // @synthesize extraLargeImage=_extraLargeImage;
 @property(retain, nonatomic) UIImage *circularSmallImage; // @synthesize circularSmallImage=_circularSmallImage;
 @property(retain, nonatomic) UIImage *utilitarianSmallImage; // @synthesize utilitarianSmallImage=_utilitarianSmallImage;
 @property(retain, nonatomic) UIImage *modularSmallImage; // @synthesize modularSmallImage=_modularSmallImage;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

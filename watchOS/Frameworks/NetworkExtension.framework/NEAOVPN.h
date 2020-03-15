@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *allowedCaptiveNetworkPlugins; // @synthesize allowedCaptiveNetworkPlugins=_allowedCaptiveNetworkPlugins;
 @property(copy) NSDictionary *serviceExceptions; // @synthesize serviceExceptions=_serviceExceptions;
 @property(copy) NSString *activeInterfaceProtocolKey; // @synthesize activeInterfaceProtocolKey=_activeInterfaceProtocolKey;
@@ -34,7 +35,6 @@
 @property(getter=isAllowCaptiveWebSheet) _Bool allowCaptiveWebSheet; // @synthesize allowCaptiveWebSheet=_allowCaptiveWebSheet;
 @property(getter=isToggleEnabled) _Bool toggleEnabled; // @synthesize toggleEnabled=_toggleEnabled;
 @property(getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (_Bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

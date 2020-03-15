@@ -16,10 +16,10 @@
     struct CGRect _contentsRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool videoLayerReadyForDisplay; // @synthesize videoLayerReadyForDisplay=_videoLayerReadyForDisplay;
 @property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
 @property(retain, nonatomic) ISWrappedAVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
-- (void).cxx_destruct;
 - (id)playerLayer;
 - (void)_updateVideoGravity;
 - (void)setContentMode:(long long)arg1;

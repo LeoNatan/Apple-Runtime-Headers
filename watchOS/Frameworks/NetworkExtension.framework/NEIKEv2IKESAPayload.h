@@ -15,9 +15,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NEIKEv2IKESPI *rekeyIKESPI; // @synthesize rekeyIKESPI=_rekeyIKESPI;
 @property(retain) NSArray *proposals; // @synthesize proposals=_proposals;
-- (void).cxx_destruct;
 - (_Bool)parsePayloadData;
 - (_Bool)generatePayloadData;
 - (_Bool)hasRequiredFields;

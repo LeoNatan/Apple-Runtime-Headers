@@ -67,6 +67,7 @@
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(nonatomic) struct CGSize drawableSize; // @synthesize drawableSize=_drawableSize;
 @property(nonatomic) BOOL autoResizeDrawable; // @synthesize autoResizeDrawable=_autoResizeDrawable;
@@ -79,7 +80,6 @@
 @property(nonatomic) unsigned long long depthStencilPixelFormat; // @synthesize depthStencilPixelFormat=_depthStencilPixelFormat;
 @property(retain, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(nonatomic) __weak id <MTKViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (struct CGSize)convertSizeToBacking:(struct CGSize)arg1;
 - (struct CGSize)convertSizeFromBacking:(struct CGSize)arg1;

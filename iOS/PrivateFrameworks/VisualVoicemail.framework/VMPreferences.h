@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1 defaultValue:(id)arg2;
 - (void)setUnsignedInteger:(unsigned long long)arg1 forKey:(id)arg2;

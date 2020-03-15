@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) MXMProxyMetric *proxyMetric; // @synthesize proxyMetric=_proxyMetric;
 - (void).cxx_destruct;
+@property(readonly) MXMProxyMetric *proxyMetric; // @synthesize proxyMetric=_proxyMetric;
 - (id)sampleWithTimeout:(double)arg1 stopReason:(unsigned int *)arg2;
 - (void)updateNowUntilStoppedWithUpdateHandler:(CDUnknownBlockType)arg1 stopHandler:(CDUnknownBlockType)arg2;
 - (void)encodeWithCoder:(id)arg1;

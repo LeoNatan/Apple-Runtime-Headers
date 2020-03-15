@@ -17,10 +17,10 @@
     unsigned int _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;
 - (id)description;

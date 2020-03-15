@@ -17,12 +17,12 @@
     NSFont *_valueFont;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsExclusionStyle; // @synthesize showsExclusionStyle=_showsExclusionStyle;
 @property(retain, nonatomic) NSFont *valueFont; // @synthesize valueFont=_valueFont;
 @property(retain, nonatomic) NSFont *keyFont; // @synthesize keyFont=_keyFont;
 @property(copy, nonatomic) NSString *valueString; // @synthesize valueString=_valueString;
 @property(copy, nonatomic) NSString *keyString; // @synthesize keyString=_keyString;
-- (void).cxx_destruct;
 - (struct CGRect)_valueLabelRectFromContainerRect:(struct CGRect)arg1 labelSize:(struct CGSize)arg2;
 - (struct CGRect)_valueContainerRectFromKeyContainerRect:(struct CGRect)arg1 parentRect:(struct CGRect)arg2 labelSize:(struct CGSize)arg3;
 - (struct CGRect)_pullDownImageRectFromKeyLabelRect:(struct CGRect)arg1 containerRect:(struct CGRect)arg2;

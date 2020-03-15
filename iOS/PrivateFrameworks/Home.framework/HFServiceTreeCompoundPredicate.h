@@ -18,9 +18,9 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *childServicePredicates; // @synthesize childServicePredicates=_childServicePredicates;
 @property(readonly, nonatomic) id <HFServiceTreeMatching> rootServicePredicate; // @synthesize rootServicePredicate=_rootServicePredicate;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

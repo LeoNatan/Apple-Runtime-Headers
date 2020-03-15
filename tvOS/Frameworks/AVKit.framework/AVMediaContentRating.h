@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 + (id)maximumEffectiveTVShowRanking;
 + (id)maximumEffectiveMovieRanking;
 + (id)contentRestrictionsCountryCode;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRestricted, setter=_setRestricted:) _Bool restricted; // @synthesize restricted=_restricted;
 @property(readonly, nonatomic) long long domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(readonly, nonatomic) long long rank; // @synthesize rank=_rank;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (_Bool)_isCurrentlyRestricted;
 - (_Bool)isExplicitContentRestricted;
 - (id)description;

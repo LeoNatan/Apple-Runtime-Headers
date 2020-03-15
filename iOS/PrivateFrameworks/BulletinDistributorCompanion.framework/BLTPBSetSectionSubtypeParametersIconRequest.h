@@ -22,11 +22,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLTPBSectionIcon *icon; // @synthesize icon=_icon;
 @property(nonatomic) _Bool defaultSubtype; // @synthesize defaultSubtype=_defaultSubtype;
 @property(nonatomic) unsigned long long subtypeID; // @synthesize subtypeID=_subtypeID;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

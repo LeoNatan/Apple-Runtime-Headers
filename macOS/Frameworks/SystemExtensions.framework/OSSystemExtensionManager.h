@@ -15,8 +15,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSMutableArray *requests; // @synthesize requests=_requests;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *requests; // @synthesize requests=_requests;
 - (void)finishRequest:(id)arg1;
 - (void)submitRequest:(id)arg1;
 - (id)init;

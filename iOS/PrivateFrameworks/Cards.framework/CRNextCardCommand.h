@@ -16,8 +16,8 @@
     id <CRCard> _nextCard;
 }
 
-@property(retain, nonatomic) id <CRCard> nextCard; // @synthesize nextCard=_nextCard;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CRCard> nextCard; // @synthesize nextCard=_nextCard;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain, nonatomic) id <NSSecureCoding><NSCopying> payload;
 

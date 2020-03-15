@@ -15,8 +15,8 @@
     SGSqlEntityStore *_store;
 }
 
-@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void)removeAllStoredPseudoContacts;
 - (void)rejectContact:(id)arg1;
 - (void)confirmContact:(id)arg1;

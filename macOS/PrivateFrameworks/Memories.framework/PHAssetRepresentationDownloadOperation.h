@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSURL *_identifierURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *identifierURL; // @synthesize identifierURL=_identifierURL;
 @property(nonatomic) int imageRequestID; // @synthesize imageRequestID=_imageRequestID;
 @property double progress; // @synthesize progress=_progress;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(getter=isUserInitiated) BOOL userInitiated; // @synthesize userInitiated=_userInitiated;
 @property(getter=isExecuting) BOOL executing; // @synthesize executing;
 @property(getter=isFinished) BOOL finished; // @synthesize finished;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)cancel;
 - (void)start;

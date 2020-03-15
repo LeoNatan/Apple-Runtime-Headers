@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Updates; // @synthesize Updates=_Updates;
 @property(retain, nonatomic) EWSBaseItemIdType *ItemId; // @synthesize ItemId=_ItemId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

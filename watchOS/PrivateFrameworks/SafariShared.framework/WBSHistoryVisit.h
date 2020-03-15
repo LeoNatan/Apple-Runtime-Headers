@@ -19,7 +19,7 @@
     WBSHistoryItem *_item;
     int _origin;
     NSString *_title;
-    unsigned int _score;
+    int _score;
     unsigned int _attributes;
     WBSHistoryVisit *_redirectSource;
     WBSHistoryVisit *_redirectDestination;
@@ -28,15 +28,16 @@
 }
 
 + (id)synthesizedVisitWithHistoryItem:(id)arg1 visitTime:(double)arg2;
-+ (float)weightedVisitCountFromScore:(unsigned int)arg1;
-+ (unsigned int)scoreForWeightedVisitCount:(float)arg1;
++ (float)weightedVisitCountFromScore:(int)arg1;
++ (int)scoreForWeightedVisitCount:(float)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WBSHistoryVisit *redirectDestination; // @synthesize redirectDestination=_redirectDestination;
 @property(retain, nonatomic) WBSHistoryVisit *redirectSource; // @synthesize redirectSource=_redirectSource;
 @property(readonly, nonatomic, getter=isSynthesized) _Bool synthesized; // @synthesize synthesized=_synthesized;
 @property(readonly, nonatomic, getter=wasHTTPNonGet) _Bool httpNonGet; // @synthesize httpNonGet=_httpNonGet;
 @property(nonatomic, getter=loadWasSuccessful) _Bool loadSuccessful; // @synthesize loadSuccessful=_loadSuccessful;
 @property(nonatomic) unsigned int attributes; // @synthesize attributes=_attributes;
-@property(nonatomic) unsigned int score; // @synthesize score=_score;
+@property(nonatomic) int score; // @synthesize score=_score;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) double visitTime; // @synthesize visitTime=_visitTime;
 @property(nonatomic) int origin; // @synthesize origin=_origin;
@@ -45,7 +46,6 @@
 @property(nonatomic) int redirectDestinationDatabaseID; // @synthesize redirectDestinationDatabaseID=_redirectDestinationDatabaseID;
 @property(nonatomic) int redirectSourceDatabaseID; // @synthesize redirectSourceDatabaseID=_redirectSourceDatabaseID;
 @property(nonatomic) int databaseID; // @synthesize databaseID=_databaseID;
-- (void).cxx_destruct;
 - (double)_weight;
 - (void)recomputeScore;
 - (_Bool)hasAttributes:(unsigned int)arg1;

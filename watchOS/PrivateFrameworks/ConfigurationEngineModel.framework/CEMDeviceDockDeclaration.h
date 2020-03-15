@@ -48,6 +48,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadShowRecents; // @synthesize payloadShowRecents=_payloadShowRecents;
 @property(copy, nonatomic) NSNumber *payloadShowindicatorsImmutable; // @synthesize payloadShowindicatorsImmutable=_payloadShowindicatorsImmutable;
 @property(copy, nonatomic) NSNumber *payloadDblclickbehaviorImmutable; // @synthesize payloadDblclickbehaviorImmutable=_payloadDblclickbehaviorImmutable;
@@ -75,7 +76,6 @@
 @property(copy, nonatomic) NSNumber *payloadAutohide; // @synthesize payloadAutohide=_payloadAutohide;
 @property(copy, nonatomic) NSNumber *payloadPositionImmutable; // @synthesize payloadPositionImmutable=_payloadPositionImmutable;
 @property(copy, nonatomic) NSString *payloadOrientation; // @synthesize payloadOrientation=_payloadOrientation;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

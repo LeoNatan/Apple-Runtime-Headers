@@ -32,11 +32,11 @@
 + (id)genericImageWithInfo:(struct SBIconImageInfo)arg1;
 + (_Bool)supportsMemoryPooling;
 + (id)_backgroundQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPMemoryPool *iconImagesMemoryPool; // @synthesize iconImagesMemoryPool=_iconImagesMemoryPool;
 @property(nonatomic) unsigned long long poolingBypassCount; // @synthesize poolingBypassCount=_poolingBypassCount;
 @property(readonly, nonatomic) struct SBIconImageInfo iconImageInfo; // @synthesize iconImageInfo=_iconImageInfo;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

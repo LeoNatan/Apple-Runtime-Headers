@@ -18,9 +18,9 @@
 
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool observeUnfrozenSeries; // @synthesize observeUnfrozenSeries=_observeUnfrozenSeries;
 @property(readonly, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
-- (void).cxx_destruct;
 - (void)queue_deliverError:(id)arg1;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;

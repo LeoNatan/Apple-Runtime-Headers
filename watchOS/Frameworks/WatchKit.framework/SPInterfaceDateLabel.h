@@ -22,13 +22,13 @@
 + (id)monospaceFontFeatureSetting;
 + (id)smallCapsFontWithFont:(id)arg1;
 + (id)monospacedFontWithFont:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange smallCapsRange; // @synthesize smallCapsRange=_smallCapsRange;
 @property(retain, nonatomic) UIFont *smallCapsFont; // @synthesize smallCapsFont=_smallCapsFont;
 @property(copy, nonatomic) NSDate *forcedDate; // @synthesize forcedDate=_forcedDate;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(retain, nonatomic) NSDateFormatter *formatter; // @synthesize formatter=_formatter;
-- (void).cxx_destruct;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (void)didMoveToWindow;
 - (void)updateTimer;

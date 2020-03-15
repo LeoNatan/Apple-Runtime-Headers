@@ -21,6 +21,7 @@
 }
 
 + (id)headerString;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *azDistribution; // @synthesize azDistribution=_azDistribution;
 @property(retain, nonatomic) NSArray *spatialSpectrumData; // @synthesize spatialSpectrumData=_spatialSpectrumData;
 @property(nonatomic) double processedAudioDurMs; // @synthesize processedAudioDurMs=_processedAudioDurMs;
@@ -29,7 +30,6 @@
 @property(nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(nonatomic) unsigned long long endSample; // @synthesize endSample=_endSample;
 @property(nonatomic) unsigned long long startSample; // @synthesize startSample=_startSample;
-- (void).cxx_destruct;
 - (id)_spatialSpectrumLogStr;
 - (id)description;
 - (id)stringForLogging;

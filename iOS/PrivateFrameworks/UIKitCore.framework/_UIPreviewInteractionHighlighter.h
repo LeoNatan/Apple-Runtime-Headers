@@ -41,6 +41,7 @@
     CDUnknownBlockType _backgroundEffectApplyBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType backgroundEffectApplyBlock; // @synthesize backgroundEffectApplyBlock=_backgroundEffectApplyBlock;
 @property(nonatomic) _Bool cancelsInteractionWhenScrolling; // @synthesize cancelsInteractionWhenScrolling=_cancelsInteractionWhenScrolling;
 @property(nonatomic) _Bool shouldTransferViewOwnership; // @synthesize shouldTransferViewOwnership=_shouldTransferViewOwnership;
@@ -54,7 +55,6 @@
 @property(nonatomic) _Bool shouldApplyBackgroundEffects; // @synthesize shouldApplyBackgroundEffects=_shouldApplyBackgroundEffects;
 @property(nonatomic) _Bool shouldApplyContentEffects; // @synthesize shouldApplyContentEffects=_shouldApplyContentEffects;
 @property(nonatomic) _Bool shouldApplyEffectsOnProxyView; // @synthesize shouldApplyEffectsOnProxyView=_shouldApplyEffectsOnProxyView;
-- (void).cxx_destruct;
 - (void)_setHighlighted:(_Bool)arg1 forViewIfNeeded:(id)arg2;
 - (void)_prepareAccessoryViewsForScrollView:(id)arg1 environment:(id)arg2;
 - (void)_prepareContentEffectsForInteraction:(id)arg1;

@@ -17,9 +17,9 @@
     double _contentWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(nonatomic) __weak UIViewController<CSPageViewControllerProtocol> *pageViewController; // @synthesize pageViewController=_pageViewController;
-- (void).cxx_destruct;
 
 @end
 

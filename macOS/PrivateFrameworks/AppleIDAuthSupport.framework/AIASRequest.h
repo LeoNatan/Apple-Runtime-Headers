@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     NSString *_networkTaskDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *networkTaskDescription; // @synthesize networkTaskDescription=_networkTaskDescription;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSURLSessionDataTask *task; // @synthesize task=_task;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property _Bool done; // @synthesize done=_done;
 @property(retain) NSMutableData *data; // @synthesize data=_data;
 @property(retain) NSMutableURLRequest *URLRequest; // @synthesize URLRequest=_URLRequest;
-- (void).cxx_destruct;
 - (void)resume;
 - (id)initWithURL:(id)arg1 data:(struct __CFDictionary *)arg2 clientInfo:(id)arg3 proxiedClientInfo:(id)arg4 companionClientInfo:(id)arg5 appleITeamId:(id)arg6 appleIClientId:(id)arg7;
 

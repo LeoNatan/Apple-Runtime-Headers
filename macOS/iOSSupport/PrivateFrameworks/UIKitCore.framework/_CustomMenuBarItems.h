@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)initWithItems:(id)arg1 afterStandardItem:(id)arg2;
 
 @end

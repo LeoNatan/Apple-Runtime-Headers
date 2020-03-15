@@ -27,6 +27,7 @@
 }
 
 + (_Bool)redeemRequiresNationalId:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldPerformInitialOperationOnAppear; // @synthesize shouldPerformInitialOperationOnAppear=_shouldPerformInitialOperationOnAppear;
 @property(retain, nonatomic) SKUIRedeemConfiguration *redeemConfiguration; // @synthesize redeemConfiguration=_redeemConfiguration;
 @property(nonatomic) _Bool finishedLoading; // @synthesize finishedLoading=_finishedLoading;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak id <SKUIRedeemViewCameraOverrideDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
 @property(nonatomic) _Bool attempsAutomaticRedeem; // @synthesize attempsAutomaticRedeem=_attempsAutomaticRedeem;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)_stopActivityIndicator;
 - (void)_startActivityIndicator;
 - (void)_setChildViewController:(id)arg1;

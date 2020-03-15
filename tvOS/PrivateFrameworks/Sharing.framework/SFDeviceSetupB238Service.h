@@ -57,9 +57,9 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_setSystemName:(id)arg1 hostname:(id)arg2;
 - (void)_setSiriInfo;
 - (void)_speakLocalizedKey:(id)arg1 event:(unsigned int)arg2;

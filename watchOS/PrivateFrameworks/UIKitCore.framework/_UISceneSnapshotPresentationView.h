@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     FBSceneSnapshot *_snapshot;
 }
 
-@property(retain, nonatomic) FBSceneSnapshot *sceneSnapshot; // @synthesize sceneSnapshot=_snapshot;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FBSceneSnapshot *sceneSnapshot; // @synthesize sceneSnapshot=_snapshot;
 - (id)initWithSnapshot:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

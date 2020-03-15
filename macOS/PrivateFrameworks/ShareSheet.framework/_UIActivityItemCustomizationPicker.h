@@ -18,9 +18,9 @@
     CDUnknownBlockType __handler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setHandler:) CDUnknownBlockType _handler; // @synthesize _handler=__handler;
 @property(readonly, nonatomic) NSArray *_optionTitles; // @synthesize _optionTitles;
-- (void).cxx_destruct;
 - (void)_setSelectedOptionIndex:(long long)arg1;
 @property(readonly, nonatomic) long long previousSelectedOptionIndex;
 @property(readonly, nonatomic) long long selectedOptionIndex;

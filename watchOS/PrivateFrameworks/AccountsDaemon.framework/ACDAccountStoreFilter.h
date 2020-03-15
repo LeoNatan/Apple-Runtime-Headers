@@ -18,8 +18,9 @@ __attribute__((visibility("hidden")))
 
 + (id)_whiteList;
 + (id)new;
-@property(readonly, nonatomic) ACDAccountStore *backingAccountStore; // @synthesize backingAccountStore=_backingAccountStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ACDAccountStore *backingAccountStore; // @synthesize backingAccountStore=_backingAccountStore;
+- (void)resetDatabaseToVersion:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)scheduleBackupIfNonexistent:(CDUnknownBlockType)arg1;
 - (void)reportTelemetryForLandmarkEvent:(CDUnknownBlockType)arg1;
 - (void)triggerKeychainMigrationIfNecessary:(CDUnknownBlockType)arg1;
@@ -97,6 +98,7 @@ __attribute__((visibility("hidden")))
 - (id)_appPermissionsForAccountTypeIdentifier:(id)arg1;
 - (_Bool)_wildCardAuthorizationMatchingForAccountTypeIdentifier:(id)arg1;
 - (_Bool)_isClientPermittedToAccessAccountTypeWithIdentifier:(id)arg1;
+- (_Bool)isClientEntitledToAccessAccountTypeWithIdentifier:(id)arg1;
 - (_Bool)_accessGrantedForBundleID:(id)arg1 onAccountTypeID:(id)arg2;
 - (_Bool)_accessGrantedForClient:(id)arg1 onAccountTypeID:(id)arg2;
 - (id)initWithBackingAccountStore:(id)arg1;

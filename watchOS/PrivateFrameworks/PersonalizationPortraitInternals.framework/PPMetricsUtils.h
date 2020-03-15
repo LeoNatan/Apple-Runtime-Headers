@@ -13,15 +13,20 @@
 + (id)truncatedClientBundleIdOrCurrentBundleId:(id)arg1;
 + (id)truncatedClientBundleId:(id)arg1;
 + (struct PPMTypeSafeBool_)typeSafeBoolOfCond:(_Bool)arg1;
-+ (id)osBuild;
 + (int)feedbackTypeForPET2:(unsigned int)arg1;
 + (struct PPMPortraitFeedbackType_)feedbackTypeForPET:(unsigned int)arg1;
 + (struct PPMObjectDonationSource_)donationSourceForBundleId:(id)arg1;
 + (struct PPMLocationDonationSource_)locationSourceForBundleId:(id)arg1;
++ (int)namedEntitySourceForPET2WithBundleId:(id)arg1;
 + (struct PPMNamedEntityDonationSource_)namedEntitySourceForBundleId:(id)arg1;
++ (int)mapTopicDonationErrorForPET2:(int)arg1;
++ (struct PPMTopicDonationErrorReason_)mapTopicDonationErrorForPET1:(int)arg1;
++ (int)topicSourceForPET2WithBundleId:(id)arg1;
 + (struct PPMTopicDonationSource_)topicSourceForBundleId:(id)arg1;
++ (int)mapTopicAlgorithmForPET2:(unsigned int)arg1;
 + (struct PPMTopicAlgorithm_)mapTopicAlgorithm:(unsigned int)arg1;
 + (struct PPMLocationAlgorithm_)mapLocationAlgorithm:(unsigned short)arg1;
++ (int)mapNamedEntityAlgorithmForPET2:(unsigned int)arg1;
 + (struct PPMNamedEntityAlgorithm_)mapNamedEntityAlgorithm:(unsigned int)arg1;
 + (id)loggingQueue;
 

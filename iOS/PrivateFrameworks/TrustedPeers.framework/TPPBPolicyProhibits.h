@@ -20,12 +20,12 @@
     CDStruct_0e29c504 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
 @property(retain, nonatomic) NSString *candidateCategory; // @synthesize candidateCategory=_candidateCategory;
 @property(retain, nonatomic) NSString *sponsorCategory; // @synthesize sponsorCategory=_sponsorCategory;
 @property(retain, nonatomic) NSString *sponsorId; // @synthesize sponsorId=_sponsorId;
 @property(nonatomic) unsigned long long policyVersion; // @synthesize policyVersion=_policyVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

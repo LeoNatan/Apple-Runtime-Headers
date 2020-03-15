@@ -34,6 +34,7 @@
 
 + (id)keyPathsForValuesAffectingNumberOfCells;
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL adjustScrollForPinning; // @synthesize adjustScrollForPinning=_adjustScrollForPinning;
 @property(nonatomic) BOOL adjustHeightForPinning; // @synthesize adjustHeightForPinning=_adjustHeightForPinning;
 @property(nonatomic) double pinnedHeightAdjustment; // @synthesize pinnedHeightAdjustment=_pinnedHeightAdjustment;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) MUICollectionHeightStorage *heightStorage; // @synthesize heightStorage=_heightStorage;
 @property(nonatomic) BOOL inScroll; // @synthesize inScroll=_inScroll;
 @property(nonatomic) __weak id <MUICollectionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_scrollToNextCell:(id)arg1 contiguously:(BOOL)arg2;
 - (BOOL)_scrollToPreviousCell:(id)arg1 contiguously:(BOOL)arg2;
 - (void)scrollPageDown:(id)arg1;

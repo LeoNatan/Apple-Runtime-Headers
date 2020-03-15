@@ -37,6 +37,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCNetworkReachabilityRequirement> supportedCountryNetworkReachabilityRequirement; // @synthesize supportedCountryNetworkReachabilityRequirement=_supportedCountryNetworkReachabilityRequirement;
 @property(retain, nonatomic) id <FCAssetKeyManagerType> assetKeyManager; // @synthesize assetKeyManager=_assetKeyManager;
 @property(retain, nonatomic) id <FCAssetKeyCacheType> assetKeyCache; // @synthesize assetKeyCache=_assetKeyCache;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
 @property(readonly, nonatomic) id <FCPPTContext> pptContext; // @synthesize pptContext=_pptContext;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
-- (void).cxx_destruct;
 - (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (void)ppt_overrideFeedEndpoint:(long long)arg1;

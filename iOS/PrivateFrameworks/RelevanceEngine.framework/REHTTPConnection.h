@@ -20,9 +20,9 @@
     struct _CFHTTPServerConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _CFHTTPServerConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak id <REHTTPConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didCompleteResponse:(struct _CFHTTPServerResponse *)arg1 error:(id)arg2;
 - (void)didRecieveRequest:(struct _CFHTTPServerRequest *)arg1;
 - (void)didRecieveError:(id)arg1;

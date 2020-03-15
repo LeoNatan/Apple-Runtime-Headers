@@ -115,7 +115,7 @@
 @property(readonly, copy) NSString *description;
 - (_Bool)runTest:(id)arg1 options:(id)arg2;
 - (_Bool)canOpenURL:(id)arg1;
-- (_Bool)openURL:(id)arg1;
+- (_Bool)openURL:(id)arg1 sourceApplication:(id)arg2;
 - (_Bool)continueUserActivity:(id)arg1;
 - (_Bool)canContinueUserActivity:(id)arg1;
 

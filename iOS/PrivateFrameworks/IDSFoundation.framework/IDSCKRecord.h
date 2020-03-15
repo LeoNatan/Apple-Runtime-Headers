@@ -17,9 +17,9 @@
 
 + (id)alloc;
 + (Class)__class;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <IDSCKRecordKeyValueSetting> encryptedValuesByKey; // @synthesize encryptedValuesByKey=_encryptedValuesByKey;
 @property(readonly, copy, nonatomic) IDSCKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 
 @end
 

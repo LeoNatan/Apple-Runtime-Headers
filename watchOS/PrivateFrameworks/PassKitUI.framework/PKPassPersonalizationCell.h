@@ -22,10 +22,10 @@
 + (id)_textLabelFont;
 + (float)textLabelWidthForText:(id)arg1;
 + (float)minimumCellHeight;
+- (void).cxx_destruct;
 @property(nonatomic) id <PKPassPersonalizationCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PKPassPersonalizationCellContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) PKContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)_editableTextFieldChanged:(id)arg1;
 - (void)setContext:(id)arg1 andContact:(id)arg2;
 - (_Bool)textFieldShouldReturn:(id)arg1;

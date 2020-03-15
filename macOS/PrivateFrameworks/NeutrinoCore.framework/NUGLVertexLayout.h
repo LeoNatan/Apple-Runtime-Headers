@@ -14,9 +14,9 @@
     long long _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long size; // @synthesize size=_size;
 @property(readonly) NSArray *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (unsigned long long)indexOfAttribute:(id)arg1;
 - (id)attributeWithName:(id)arg1;
 - (int)offsetAtIndex:(unsigned long long)arg1;

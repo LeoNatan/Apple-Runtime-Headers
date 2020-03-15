@@ -24,6 +24,7 @@
     DOMHTMLElement *_containerElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DOMHTMLElement *containerElement; // @synthesize containerElement=_containerElement;
 @property BOOL didTrimEmotePrefix; // @synthesize didTrimEmotePrefix=_didTrimEmotePrefix;
 @property BOOL willFillBubble; // @synthesize willFillBubble=_willFillBubble;
@@ -36,7 +37,6 @@
 @property(nonatomic) TranscriptDOMController *controller; // @synthesize controller=_controller;
 @property(nonatomic) IMMessage *message; // @synthesize message=_message;
 @property(nonatomic) IMMessageChatItem *chatItem; // @synthesize chatItem=_chatItem;
-- (void).cxx_destruct;
 - (id)parser:(id)arg1 preprocessedAttributesForAttributes:(id)arg2 range:(struct _NSRange)arg3;
 - (BOOL)shouldPreprocess;
 - (void)parserDidEnd:(id)arg1;

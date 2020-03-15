@@ -40,10 +40,6 @@ struct AttributeRun {
     unsigned long long _field16;
 };
 
-struct CRDocument {
-    Class _field1;
-};
-
 struct Color;
 
 struct Dictionary {
@@ -100,10 +96,6 @@ struct Font {
 };
 
 struct Index;
-
-struct NSMutableDictionary {
-    Class _field1;
-};
 
 struct ObjectID {
     CDUnknownFunctionPointerType *_field1;

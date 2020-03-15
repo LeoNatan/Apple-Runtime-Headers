@@ -25,6 +25,7 @@
     NSMutableDictionary *_preallocatedServices;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *preallocatedServices; // @synthesize preallocatedServices=_preallocatedServices;
 @property BOOL allowCompoundAdvertisements; // @synthesize allowCompoundAdvertisements=_allowCompoundAdvertisements;
 @property(retain, nonatomic) WPDAdvertisingData *currentNonConnectableAdvertisingData; // @synthesize currentNonConnectableAdvertisingData=_currentNonConnectableAdvertisingData;
@@ -36,7 +37,6 @@
 @property(retain) NSMutableIndexSet *currentAdvertisers; // @synthesize currentAdvertisers=_currentAdvertisers;
 @property(retain) NSMutableDictionary *clientAdvertisingRequests; // @synthesize clientAdvertisingRequests=_clientAdvertisingRequests;
 @property(retain) WPAdvertisingRequestsQueue *advertisingRequests; // @synthesize advertisingRequests=_advertisingRequests;
-- (void).cxx_destruct;
 - (id)getCharacteristicForClient:(id)arg1;
 - (id)getClientUUIDsForCharacteristic:(id)arg1;
 - (BOOL)platformSupportsMultipleAdvertising;

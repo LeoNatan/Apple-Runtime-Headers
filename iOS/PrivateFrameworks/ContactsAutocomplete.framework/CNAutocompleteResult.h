@@ -41,6 +41,7 @@
 + (id)messagesResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3 resultType:(long long)arg4 groupMembersProvider:(CDUnknownBlockType)arg5 userInfo:(id)arg6;
 + (id)calDAVResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3 resultType:(long long)arg4 groupMembersProvider:(CDUnknownBlockType)arg5;
 + (id)calDAVResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *recentsIdentifier; // @synthesize recentsIdentifier=_recentsIdentifier;
 @property long long resultType; // @synthesize resultType=_resultType;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
@@ -55,7 +56,6 @@
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property _Bool hasPreferredDomain; // @synthesize hasPreferredDomain=_hasPreferredDomain;
-- (void).cxx_destruct;
 - (id)diagnosticLog;
 - (void)addDiagnosticLogFuture:(id)arg1;
 - (void)addDiagnosticLog:(CDUnknownBlockType)arg1;

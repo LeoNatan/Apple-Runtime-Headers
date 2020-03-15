@@ -13,8 +13,8 @@
     NSArray *_filters;
 }
 
-@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (double)outputValue;
 - (void)setInputValue:(double)arg1;
 

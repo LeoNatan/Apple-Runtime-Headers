@@ -16,9 +16,9 @@
 }
 
 + (id)sharedRecordingSessionManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *recordingSessionsByPID; // @synthesize recordingSessionsByPID=_recordingSessionsByPID;
-- (void).cxx_destruct;
 - (void)_queue_startRecordingSessionWithPID:(int)arg1;
 - (void)_queue_endRecordingSessionWithPID:(int)arg1 session:(id)arg2;
 - (void)_queue_changeRecordingWithPIDs:(id)arg1;

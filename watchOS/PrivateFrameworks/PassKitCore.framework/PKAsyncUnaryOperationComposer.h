@@ -14,9 +14,9 @@
     NSMutableArray *_operations;
 }
 
-+ (id)_evaluateOperations:(id)arg1 withInput:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void).cxx_destruct;
 - (id)evaluateWithInput:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)evaluatorWithInput:(id)arg1;
 - (void)addOperation:(CDUnknownBlockType)arg1;
 - (id)init;
 

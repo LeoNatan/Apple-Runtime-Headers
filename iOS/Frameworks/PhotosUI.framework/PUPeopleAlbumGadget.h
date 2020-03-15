@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PXPeopleAlbumProvider *_albumProvider;
 }
 
-@property(retain, nonatomic) PXPeopleAlbumProvider *albumProvider; // @synthesize albumProvider=_albumProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXPeopleAlbumProvider *albumProvider; // @synthesize albumProvider=_albumProvider;
 - (void)_setSubtitleForPeopleCount:(long long)arg1 onAlbumListCellContentView:(id)arg2;
 - (void)_configureSubtitleForAlbumListCellContentView:(id)arg1;
 - (void)_peopleAlbumChanged:(id)arg1;

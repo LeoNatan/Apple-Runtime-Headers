@@ -20,12 +20,12 @@
     NTPBPrivateZoneSyncState *_currentState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NTPBPrivateZoneSyncState *currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) _Bool requiresBatchedSync; // @synthesize requiresBatchedSync=_requiresBatchedSync;
 @property(readonly, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(nonatomic) __weak id <FCPrivateZoneSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) CKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;
-- (void).cxx_destruct;
 - (void)_stateDidChange;
 - (void)fetchChangesWithContext:(id)arg1 qualityOfService:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)isAwaitingFirstSync;

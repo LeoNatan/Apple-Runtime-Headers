@@ -17,12 +17,12 @@
     NSMutableDictionary *__wallpaperLookup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_wallpaperLookup; // @synthesize _wallpaperLookup=__wallpaperLookup;
 @property(retain, nonatomic) NSMutableArray *_wallpaperBundles; // @synthesize _wallpaperBundles=__wallpaperBundles;
 @property(retain, nonatomic) WKWallpaperBundle *previewBundle; // @synthesize previewBundle=_previewBundle;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned long long wallpaperType; // @synthesize wallpaperType=_wallpaperType;
-- (void).cxx_destruct;
 - (void)appendWallpaperBundle:(id)arg1;
 @property(readonly, nonatomic) long long numberOfItems;
 - (id)wallpaperBundleWithIdentifier:(unsigned long long)arg1;

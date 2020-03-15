@@ -23,13 +23,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)friendshipRequestToHandles:(id)arg1 fromHandle:(id)arg2 withType:(long long)arg3 groupId:(id)arg4 withEndDate:(id)arg5;
+- (void).cxx_destruct;
 @property(retain) NSString *requestId; // @synthesize requestId=_requestId;
 @property(retain) NSString *groupId; // @synthesize groupId=_groupId;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSSet *toHandles; // @synthesize toHandles=_toHandles;
 @property(retain) FMFHandle *fromHandle; // @synthesize fromHandle=_fromHandle;
 @property long long requestType; // @synthesize requestType=_requestType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

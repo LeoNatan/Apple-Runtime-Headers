@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _lineCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long lineCount; // @synthesize lineCount=_lineCount;
 @property(retain, nonatomic) UIColor *endColor; // @synthesize endColor=_endColor;
 @property(retain, nonatomic) UIColor *startColor; // @synthesize startColor=_startColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *gradientColors;
 - (void)layoutSubviews;
 - (void)_updateGradients;

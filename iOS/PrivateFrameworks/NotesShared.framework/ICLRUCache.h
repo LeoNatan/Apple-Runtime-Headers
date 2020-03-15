@@ -19,9 +19,9 @@
 
 + (void)purgeAllCaches;
 + (id)cacheCollection;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ICLRUCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long maxSize; // @synthesize maxSize=mMax;
-- (void).cxx_destruct;
 - (void)p_removeOldestObject;
 @property(readonly, nonatomic) NSArray *allKeys;
 - (id)objectForKey:(id)arg1;

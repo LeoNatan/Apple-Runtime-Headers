@@ -17,9 +17,9 @@
 }
 
 + (Class)moreInfoItemsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKProtoStandalonePaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(retain, nonatomic) NSMutableArray *moreInfoItems; // @synthesize moreInfoItems=_moreInfoItems;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

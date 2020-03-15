@@ -21,9 +21,9 @@
     NSSet *_supportedRequestTypes;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSSet *supportedRequestTypes; // @synthesize supportedRequestTypes=_supportedRequestTypes;
 @property(retain) id <CWFXPCManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)XPCRequestProxy:(id)arg1 sendXPCEvent:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)XPCRequestProxy:(id)arg1 XPCConnection:(id)arg2 receivedXPCRequest:(id)arg3;
 - (void)XPCListener:(id)arg1 invalidatedXPCConnection:(id)arg2;

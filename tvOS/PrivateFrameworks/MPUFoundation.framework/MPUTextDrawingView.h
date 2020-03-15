@@ -14,8 +14,8 @@
     MPUTextDrawingContext *_textDrawingContext;
 }
 
-@property(retain, nonatomic) MPUTextDrawingContext *textDrawingContext; // @synthesize textDrawingContext=_textDrawingContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPUTextDrawingContext *textDrawingContext; // @synthesize textDrawingContext=_textDrawingContext;
 - (double)_cachedDisplayScale;
 @property(readonly, nonatomic) NSString *text;
 - (void)traitCollectionDidChange:(id)arg1;

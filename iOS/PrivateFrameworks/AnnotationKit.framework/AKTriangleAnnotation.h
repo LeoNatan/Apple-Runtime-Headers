@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
+- (void).cxx_destruct;
 @property _Bool horizontallyFlipped; // @synthesize horizontallyFlipped=_horizontallyFlipped;
 @property _Bool verticallyFlipped; // @synthesize verticallyFlipped=_verticallyFlipped;
 @property(retain) UIBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (struct CGRect)hitTestBounds;

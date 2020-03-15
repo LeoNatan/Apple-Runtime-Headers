@@ -26,11 +26,11 @@
     CRKShareTargetCollector *_shareTargetCollector;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CRKShareTargetCollector *shareTargetCollector; // @synthesize shareTargetCollector=_shareTargetCollector;
 @property(readonly, nonatomic) CRKShareTargetBrowserTransportFactory *transportFactory; // @synthesize transportFactory=_transportFactory;
 @property(retain, nonatomic) CATTaskClient *instructorClient; // @synthesize instructorClient=_instructorClient;
 @property(retain, nonatomic) CATTaskClient *studentClient; // @synthesize studentClient=_studentClient;
-- (void).cxx_destruct;
 - (void)delegateDidRemoveTargets:(id)arg1;
 - (void)delegateDidFindTargets:(id)arg1;
 - (void)delegateDidInterruptWithError:(id)arg1;

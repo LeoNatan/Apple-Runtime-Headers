@@ -18,13 +18,13 @@
     unsigned long long _resultLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long resultLimit; // @synthesize resultLimit=_resultLimit;
 @property(nonatomic) _Bool findUsers; // @synthesize findUsers=_findUsers;
 @property(nonatomic) _Bool findResources; // @synthesize findResources=_findResources;
 @property(nonatomic) _Bool findLocations; // @synthesize findLocations=_findLocations;
 @property(nonatomic) _Bool findGroups; // @synthesize findGroups=_findGroups;
 @property(retain, nonatomic) NSSet *terms; // @synthesize terms=_terms;
-- (void).cxx_destruct;
 
 @end
 

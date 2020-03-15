@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)verificationRequestRecordForPass:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *requiredFieldData; // @synthesize requiredFieldData=_requiredFieldData;
 @property(copy, nonatomic) NSArray *allChannels; // @synthesize allChannels=_allChannels;
 @property(copy, nonatomic) PKVerificationChannel *channel; // @synthesize channel=_channel;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long verificationStatus; // @synthesize verificationStatus=_verificationStatus;
 @property(copy, nonatomic) NSString *previousStepIdentifier; // @synthesize previousStepIdentifier=_previousStepIdentifier;
 @property(copy, nonatomic) NSString *currentStepIdentifier; // @synthesize currentStepIdentifier=_currentStepIdentifier;
-- (void).cxx_destruct;
 - (id)requiredVerificationFields;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

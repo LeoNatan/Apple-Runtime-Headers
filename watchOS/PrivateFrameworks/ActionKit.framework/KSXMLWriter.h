@@ -22,9 +22,9 @@
 + (void)initialize;
 + (id)stringFromAttributeValue:(id)arg1;
 + (id)stringFromCharacters:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int encoding; // @synthesize encoding=_encoding;
 @property(nonatomic) int indentationLevel; // @synthesize indentationLevel=_indentation;
-- (void).cxx_destruct;
 - (void)writeString:(id)arg1;
 - (void)writeStringByEscapingXMLEntities:(id)arg1 escapeQuot:(_Bool)arg2;
 - (void)stopWritingInline;

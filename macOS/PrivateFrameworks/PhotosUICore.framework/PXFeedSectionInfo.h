@@ -32,6 +32,7 @@
 + (void)endCachingSharedAlbumsByGUIDs;
 + (void)beginCachingSharedAlbumsByGUIDs;
 + (id)sectionInfoWithCloudFeedEntry:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *excludedAssetIndexes; // @synthesize excludedAssetIndexes=_excludedAssetIndexes;
 @property(nonatomic) BOOL shouldBeVisibleWhenEmpty; // @synthesize shouldBeVisibleWhenEmpty=_shouldBeVisibleWhenEmpty;
 @property(nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset; // @synthesize tertiaryKeyAsset=_tertiaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset; // @synthesize secondaryKeyAsset=_secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 - (id)sharedAlbumWithGUID:(id)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(long long)arg3;
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToLongLong:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long comparisonType; // @synthesize comparisonType=_comparisonType;
-- (void).cxx_destruct;
 - (id)_comparisonTypeString;
 - (id)SQLForEntityClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;

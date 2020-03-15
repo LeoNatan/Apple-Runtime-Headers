@@ -23,6 +23,7 @@
     NSMutableArray *_statistics;
 }
 
+- (void).cxx_destruct;
 @property _Bool outputReady; // @synthesize outputReady=_outputReady;
 @property(retain) NSMutableArray *statistics; // @synthesize statistics=_statistics;
 @property long long outputMax; // @synthesize outputMax=_outputMax;
@@ -34,7 +35,6 @@
 @property long long integralErrorMin; // @synthesize integralErrorMin=_integralErrorMin;
 @property long long integralError; // @synthesize integralError=_integralError;
 @property long long setPoint; // @synthesize setPoint=_setPoint;
-- (void).cxx_destruct;
 - (id)statisticsDescription;
 - (void)enumerateStatisticsMeasurementsWithHandler:(CDUnknownBlockType)arg1;
 - (void)addStatisticsSampleForTimestamp:(double)arg1 error:(long long)arg2 feedback:(long long)arg3;

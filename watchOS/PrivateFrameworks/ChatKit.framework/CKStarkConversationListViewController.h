@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKConversation *_selectedConversation;
 }
 
-@property(retain, nonatomic) CKConversation *selectedConversation; // @synthesize selectedConversation=_selectedConversation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKConversation *selectedConversation; // @synthesize selectedConversation=_selectedConversation;
 - (void)_handleNewComposePressed:(id)arg1;
 - (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;

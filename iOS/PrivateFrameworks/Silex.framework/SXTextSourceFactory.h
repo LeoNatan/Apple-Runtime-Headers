@@ -18,10 +18,10 @@
     id <SXFontAttributesConstructor> _fontAttributesConstructor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXFontAttributesConstructor> fontAttributesConstructor; // @synthesize fontAttributesConstructor=_fontAttributesConstructor;
 @property(readonly, nonatomic) id <SXDocumentLanguageProviding> documentLanguageProvider; // @synthesize documentLanguageProvider=_documentLanguageProvider;
 @property(readonly, nonatomic) id <SXSmartFieldFactory> smartFieldFactory; // @synthesize smartFieldFactory=_smartFieldFactory;
-- (void).cxx_destruct;
 - (id)createTextSourceWithString:(id)arg1 dataSource:(id)arg2;
 - (id)initWithSmartFieldFactory:(id)arg1 documentLanguageProvider:(id)arg2 fontAttributesConstructor:(id)arg3;
 

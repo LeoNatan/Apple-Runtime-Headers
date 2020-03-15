@@ -24,11 +24,11 @@
 + (id)reportJunkActionIdentifier;
 + (id)declineActionIdentifier;
 + (id)joinActionIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CALNSourceEventRepresentationProvider> sourceEventRepresentationProvider; // @synthesize sourceEventRepresentationProvider=_sourceEventRepresentationProvider;
 @property(readonly, nonatomic) id <CALNCalendarIconIdentifierProvider> iconIdentifierProvider; // @synthesize iconIdentifierProvider=_iconIdentifierProvider;
 @property(readonly, nonatomic) __weak id <CALNNotificationManager> notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) id <CALNSharedCalendarInvitationNotificationDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)didReceiveResponse:(id)arg1;
 - (id)contentForNotificationWithInfo:(id)arg1;
 - (id)contentForNotificationWithSourceClientIdentifier:(id)arg1;

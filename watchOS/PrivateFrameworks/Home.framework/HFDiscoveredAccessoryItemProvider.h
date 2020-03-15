@@ -15,10 +15,10 @@
     NSMutableSet *_discoveredAccessoryItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *discoveredAccessoryItems; // @synthesize discoveredAccessoryItems=_discoveredAccessoryItems;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) HFAccessoryBrowsingManager *accessoryBrowsingManager; // @synthesize accessoryBrowsingManager=_accessoryBrowsingManager;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

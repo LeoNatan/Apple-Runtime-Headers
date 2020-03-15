@@ -18,10 +18,10 @@
     TRDeviceSetupPeripheral *_peripheral;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TRDeviceSetupPeripheral *peripheral; // @synthesize peripheral=_peripheral;
 @property(retain, nonatomic) TRTransferBrowser *transferBrowser; // @synthesize transferBrowser=_transferBrowser;
 @property(nonatomic) __weak id <TRDeviceSetupBrowserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)defer;
 @property(readonly, nonatomic) long long state;

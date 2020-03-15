@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     LPFetcherResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStarted; // @synthesize hasStarted=_hasStarted;
 @property(retain, nonatomic) LPFetcherResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) LPFetcher *fetcher; // @synthesize fetcher=_fetcher;
-- (void).cxx_destruct;
 
 @end
 

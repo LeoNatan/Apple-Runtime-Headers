@@ -22,6 +22,7 @@
     CALayer *__contentLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setContentLayer:) CALayer *_contentLayer; // @synthesize _contentLayer=__contentLayer;
 @property(retain, nonatomic, setter=_setLayerPromise:) PXTitleSubtitleCALayerPromise *_layerPromise; // @synthesize _layerPromise=__layerPromise;
 @property(nonatomic) BOOL rendersTextAsynchronously; // @synthesize rendersTextAsynchronously=_rendersTextAsynchronously;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) PXTitleSubtitleLabelSpec *spec; // @synthesize spec=_spec;
 @property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateContentLayer;
 - (void)_updateLayerPromiseIfNeeded;

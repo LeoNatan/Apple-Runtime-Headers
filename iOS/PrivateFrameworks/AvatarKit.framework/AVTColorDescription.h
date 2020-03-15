@@ -16,8 +16,8 @@
     NSDictionary *_color;
 }
 
-@property(readonly) NSDictionary *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *color; // @synthesize color=_color;
 @property(readonly) NSDictionary *variationsMax;
 @property(readonly) NSDictionary *variationsMin;
 - (id)colors;

@@ -25,6 +25,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLPBundleId *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain, nonatomic) CLPIndoorWifiScan *wifiScan; // @synthesize wifiScan=_wifiScan;
 @property(retain, nonatomic) CLPIndoorPressure *pressure; // @synthesize pressure=_pressure;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) CLPLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) CLPIndoorCMPedometer *cmPedometer; // @synthesize cmPedometer=_cmPedometer;
 @property(retain, nonatomic) CLPIndoorCMAttitude *cmAttitude; // @synthesize cmAttitude=_cmAttitude;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

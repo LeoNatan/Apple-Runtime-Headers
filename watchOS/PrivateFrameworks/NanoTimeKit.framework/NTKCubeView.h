@@ -16,9 +16,9 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int cubeLayout; // @synthesize cubeLayout=_cubeLayout;
 @property(nonatomic) float depth; // @synthesize depth=_depth;
-- (void).cxx_destruct;
 - (struct CGRect)_boundsForFace:(unsigned int)arg1;
 - (struct CATransform3D)_transformForFace:(unsigned int)arg1;
 - (void)layoutSubviews;

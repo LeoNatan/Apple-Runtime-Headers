@@ -15,10 +15,10 @@
     CDStruct_2fea82da _indexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long defaultTextAlignment; // @synthesize defaultTextAlignment=_defaultTextAlignment;
 @property(readonly, nonatomic) CDStruct_2fea82da indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) SXFormattedText *formattedText; // @synthesize formattedText=_formattedText;
-- (void).cxx_destruct;
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
 - (id)initWithFormattedText:(id)arg1 indexPath:(CDStruct_2fea82da)arg2 smartFieldFactory:(id)arg3 dataSource:(id)arg4 documentLangaugeProvider:(id)arg5 fontAttributesConstructor:(id)arg6;
 

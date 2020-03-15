@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool reachable; // @synthesize reachable=_reachable;
 @property long long linkType; // @synthesize linkType=_linkType;
 @property(retain, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
 @property(retain, nonatomic) NSString *protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(retain, nonatomic) NSString *serverIdentifier; // @synthesize serverIdentifier=_serverIdentifier;
 @property(retain, nonatomic) HAPAccessory *hapAccessory; // @synthesize hapAccessory=_hapAccessory;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

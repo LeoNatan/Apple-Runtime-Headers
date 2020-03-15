@@ -25,8 +25,8 @@
 }
 
 + (id)dateIntervalsAroundSortedDates:(id)arg1 minimumIntervalDuration:(double)arg2;
-@property(readonly, nonatomic) __weak id <PLMomentGenerationDataManagement><PLHighlightItemModelReader> momentGenerationDataManager; // @synthesize momentGenerationDataManager=_momentGenerationDataManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <PLMomentGenerationDataManagement><PLHighlightItemModelReader> momentGenerationDataManager; // @synthesize momentGenerationDataManager=_momentGenerationDataManager;
 - (void)validateLibraryWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)allMomentsMetadataWriteToFile:(id)arg1;
 - (id)_detailsForMoment:(id)arg1;

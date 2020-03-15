@@ -26,6 +26,7 @@
 }
 
 + (id)contextFromLDContext:(const struct LDContext *)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *recentMessages; // @synthesize recentMessages=_recentMessages;
 @property(copy, nonatomic) NSDictionary *dictationLanguagePriors; // @synthesize dictationLanguagePriors=_dictationLanguagePriors;
 @property(copy, nonatomic) NSString *globalLastKeyboardUsed; // @synthesize globalLastKeyboardUsed=_globalLastKeyboardUsed;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *currentDictationLanguage; // @synthesize currentDictationLanguage=_currentDictationLanguage;
 @property(copy, nonatomic) NSSet *dictationLanguages; // @synthesize dictationLanguages=_dictationLanguages;
 @property(copy, nonatomic) NSDictionary *languagePriors; // @synthesize languagePriors=_languagePriors;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) struct LDContext LDContext;
 

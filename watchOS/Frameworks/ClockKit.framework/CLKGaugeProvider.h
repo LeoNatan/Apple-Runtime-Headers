@@ -25,6 +25,7 @@
 
 + (id)gaugeProviderWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finalized; // @synthesize finalized=_finalized;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSArray *gaugeColors; // @synthesize gaugeColors=_gaugeColors;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
-- (void).cxx_destruct;
 - (void)finalize;
 - (void)validate;
 - (id)JSONObjectRepresentation;
@@ -42,8 +42,8 @@
 - (id)tritium_inactiveCopy;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)stopUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopUpdatesForToken:(id)arg1;
+- (id)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (float)progressFractionForNow:(id)arg1;
 - (_Bool)needsTimerUpdates;
 - (id)initWithCoder:(id)arg1;

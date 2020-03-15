@@ -15,10 +15,10 @@
     NSMutableArray *_nullCategory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nullCategory; // @synthesize nullCategory=_nullCategory;
 @property(retain, nonatomic) NSMutableDictionary *categories; // @synthesize categories=_categories;
 @property(retain, nonatomic) NSString *threadID; // @synthesize threadID=_threadID;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

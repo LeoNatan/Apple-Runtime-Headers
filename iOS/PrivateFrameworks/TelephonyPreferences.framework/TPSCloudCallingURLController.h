@@ -22,6 +22,7 @@
     TPSCloudCallingWebViewController *_webViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TPSCloudCallingWebViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(retain, nonatomic) TPSCarrierBundleController *carrierBundleController; // @synthesize carrierBundleController=_carrierBundleController;
 @property(readonly, copy, nonatomic) NSData *capabilityProvisioningPostData; // @synthesize capabilityProvisioningPostData=_capabilityProvisioningPostData;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic, getter=isCapabilityEnabled) _Bool capabilityEnabled; // @synthesize capabilityEnabled=_capabilityEnabled;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 @property(nonatomic) __weak id <TPSCloudCallingURLControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webSheetCompletion;
 @property(readonly, nonatomic) _Bool shouldEnableCapability;
 - (void)enableCapability;

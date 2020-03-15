@@ -18,13 +18,13 @@
     struct CGRect _seriesSelectionRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKGraphSeries *closestSeriesToSelection; // @synthesize closestSeriesToSelection=_closestSeriesToSelection;
 @property(retain, nonatomic) NSArray *selectedRangeBoundariesXValue; // @synthesize selectedRangeBoundariesXValue=_selectedRangeBoundariesXValue;
 @property(retain, nonatomic) NSArray *selectionAreaMapping; // @synthesize selectionAreaMapping=_selectionAreaMapping;
 @property(retain, nonatomic) NSArray *touchPoints; // @synthesize touchPoints=_touchPoints;
 @property(nonatomic) struct CGRect seriesSelectionRect; // @synthesize seriesSelectionRect=_seriesSelectionRect;
 @property(nonatomic) long long selectionState; // @synthesize selectionState=_selectionState;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double minimumSelectionDistance;
 
 @end

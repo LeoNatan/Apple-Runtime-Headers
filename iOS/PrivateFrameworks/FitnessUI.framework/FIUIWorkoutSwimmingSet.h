@@ -19,13 +19,13 @@
 }
 
 + (id)_decimalNumberFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKQuantity *distance; // @synthesize distance=_distance;
 @property(nonatomic) long long strokeCount; // @synthesize strokeCount=_strokeCount;
 @property(nonatomic) long long dominantStrokeStyle; // @synthesize dominantStrokeStyle=_dominantStrokeStyle;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *movementEndDate; // @synthesize movementEndDate=_movementEndDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)formattedDominantStrokeStyle;
 - (id)formattedStrokeCountUsingFormatType:(long long)arg1 formattingManager:(id)arg2;

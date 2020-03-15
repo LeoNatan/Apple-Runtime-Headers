@@ -15,8 +15,8 @@
 
 + (id)actionGroupItemWithActions:(id)arg1;
 + (id)actionGroupItemWithAction:(id)arg1;
-@property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void)addAction:(id)arg1;
 - (Class)cellClass;
 - (id)initWithAction:(id)arg1;

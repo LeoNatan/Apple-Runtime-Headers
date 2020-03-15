@@ -13,8 +13,8 @@
     UIColor *__color;
 }
 
-@property(copy, nonatomic) UIColor *_color; // @synthesize _color=__color;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIColor *_color; // @synthesize _color=__color;
 - (void)_setColor:(id)arg1;
 - (void)_setLocation:(struct CGPoint)arg1 atIndex:(unsigned long long)arg2;
 - (void)_applyTransform:(struct CGAffineTransform)arg1;

@@ -15,8 +15,8 @@
 
 + (id)objectWithWFSerializedRepresentation:(id)arg1;
 + (id)contactWithPerson:(id)arg1;
-@property(retain, nonatomic) INPerson *person; // @synthesize person=_person;
 - (void).cxx_destruct;
+@property(retain, nonatomic) INPerson *person; // @synthesize person=_person;
 - (id)wfSerializedRepresentation;
 - (id)inPerson;
 - (id)wfName;

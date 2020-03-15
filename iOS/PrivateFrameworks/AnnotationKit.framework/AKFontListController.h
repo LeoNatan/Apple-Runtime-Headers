@@ -15,9 +15,9 @@
 }
 
 + (id)attributedStringForFont:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) UIFont *defaultFont; // @synthesize defaultFont=_defaultFont;
 @property(retain) NSArray *fonts; // @synthesize fonts=_fonts;
-- (void).cxx_destruct;
 - (id)_createFontsList;
 - (id)initWithController:(id)arg1;
 

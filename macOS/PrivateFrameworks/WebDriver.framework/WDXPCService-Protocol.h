@@ -10,6 +10,5 @@
 - (void)stopServerWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)startServerWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)configureServerWithOptions:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)getServerStatusWithCompletionHandler:(void (^)(BOOL, NSDictionary *))arg1;
 @end
 

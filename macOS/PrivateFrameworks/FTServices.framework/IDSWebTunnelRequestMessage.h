@@ -25,6 +25,7 @@
     NSString *_userAgentOverride;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableIDSTranslation; // @synthesize disableIDSTranslation=_disableIDSTranslation;
 @property(copy, nonatomic) NSNumber *responseStatus; // @synthesize responseStatus=_responseStatus;
 @property(copy, nonatomic) NSNumber *responseCode; // @synthesize responseCode=_responseCode;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSData *messageRequestBodyData; // @synthesize messageRequestBodyData=_messageRequestBodyData;
 @property(copy, nonatomic) NSString *messageURL; // @synthesize messageURL=_messageURL;
 @property(copy, nonatomic) NSString *messageRequestUUID; // @synthesize messageRequestUUID=_messageRequestUUID;
-- (void).cxx_destruct;
 - (void)handleResponseHeaders:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)messageBody;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property BOOL setToNilWhenUnbinding; // @synthesize setToNilWhenUnbinding=_setToNilWhenUnbinding;
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property __weak id observable; // @synthesize observable=_observable;
 @property(copy) NSString *binding; // @synthesize binding=_binding;
 @property(retain) id observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithObserver:(id)arg1 binding:(id)arg2 observable:(id)arg3 keyPath:(id)arg4 options:(id)arg5 setToNilWhenUnbinding:(BOOL)arg6;
 

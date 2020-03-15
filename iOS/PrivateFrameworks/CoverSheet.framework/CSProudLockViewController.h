@@ -24,11 +24,11 @@
     id <SBFAuthenticationStatusProvider> _authenticationStatusProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suspendLockUpdates; // @synthesize suspendLockUpdates=_suspendLockUpdates;
 @property(retain, nonatomic) id <SBFAuthenticationStatusProvider> authenticationStatusProvider; // @synthesize authenticationStatusProvider=_authenticationStatusProvider;
 @property(retain, nonatomic) id <SBUIBiometricResource> biometricResource; // @synthesize biometricResource=_biometricResource;
 @property(retain, nonatomic) SBUIProudLockContainerViewController *proudLockContainerViewController; // @synthesize proudLockContainerViewController=_proudLockContainerViewController;
-- (void).cxx_destruct;
 - (void)_updateProudLockViewControllerConfiguration;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_clearFaceDetectAssertion;

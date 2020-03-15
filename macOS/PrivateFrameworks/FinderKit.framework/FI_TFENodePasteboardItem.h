@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
-@property(readonly, nonatomic) const struct TFENode *node; // @synthesize node=_node;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) const struct TFENode *node; // @synthesize node=_node;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (unsigned long long)writingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 - (id)writableTypesForPasteboard:(id)arg1;

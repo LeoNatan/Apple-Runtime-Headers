@@ -29,6 +29,7 @@
 + (id)sharedRunShellScriptAction;
 + (BOOL)checkVariablesDirectoryOnDisk;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property(getter=isCached, setter=setCached:) BOOL cached; // @synthesize cached=_isCached;
@@ -37,7 +38,6 @@
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)eventDidFail:(const struct AEDesc *)arg1 withError:(id)arg2;
 - (id)menuWithRepresentedObject:(id)arg1 target:(id)arg2;
 - (long long)localizedCaseInsensitiveCompare:(id)arg1;

@@ -17,11 +17,11 @@
 }
 
 + (id)_buttonImageNamed:(id)arg1 size:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTMaterialView *backgroundCircle; // @synthesize backgroundCircle=_backgroundCircle;
 @property(retain, nonatomic) UIButton *invisibleButton; // @synthesize invisibleButton=_invisibleButton;
 @property(retain, nonatomic) NCMaterialButton *button; // @synthesize button=_button;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_buttonTouchUpInside:(id)arg1;
 - (void)tintColorDidChange;
 - (void)setSelected:(_Bool)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)autoupdatingCurrentLocale;
 + (id)currentLocale;
-@property(readonly, nonatomic) NSLocale *_locale; // @synthesize _locale=__locale;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSLocale *_locale; // @synthesize _locale=__locale;
 - (id)initWithAutoUpdate:(BOOL)arg1;
 - (id)preferredLanguage;
 - (id)preferredLanguages;

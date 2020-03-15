@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     EKEvent *_eventToModify;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKEvent *eventToModify; // @synthesize eventToModify=_eventToModify;
 @property _Bool attachmentsModified; // @synthesize attachmentsModified=_attachmentsModified;
-- (void).cxx_destruct;
 - (id)footerTitle;
 - (void)_addAttachment:(id)arg1;
 - (void)documentPickerWasCancelled:(id)arg1;

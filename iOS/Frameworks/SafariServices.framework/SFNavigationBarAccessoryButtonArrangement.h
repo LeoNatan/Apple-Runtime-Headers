@@ -16,9 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_leadingButtonTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *leadingButtonTypes; // @synthesize leadingButtonTypes=_leadingButtonTypes;
 @property(readonly, nonatomic) NSArray *trailingButtonTypes; // @synthesize trailingButtonTypes=_trailingButtonTypes;
-- (void).cxx_destruct;
+- (id)description;
 - (void)enumerateButtonTypesFromEdge:(unsigned long long)arg1 withLayoutDirection:(long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (_Bool)containsButtonType:(long long)arg1;
 - (id)initWithLeadingButtonTypes:(id)arg1 trailingButtonTypes:(id)arg2;

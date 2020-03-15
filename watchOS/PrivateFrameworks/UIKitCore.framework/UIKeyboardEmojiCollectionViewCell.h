@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     UIKeyboardEmoji *_emoji;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool unreleasedHighlight; // @synthesize unreleasedHighlight=_unreleasedHighlight;
 @property(copy, nonatomic) UIKeyboardEmoji *emoji; // @synthesize emoji=_emoji;
 @property(retain, nonatomic) UILabel *unreleasedBanner; // @synthesize unreleasedBanner=_unreleasedBanner;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(nonatomic) int emojiFontSize;
 - (id)initWithFrame:(struct CGRect)arg1;

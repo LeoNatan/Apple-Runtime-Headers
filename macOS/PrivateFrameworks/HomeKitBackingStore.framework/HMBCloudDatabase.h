@@ -35,6 +35,7 @@
 + (id)logCategory;
 + (id)extantDatabasesLock;
 + (id)extantDatabases;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *manateeAvailabilityFuture; // @synthesize manateeAvailabilityFuture=_manateeAvailabilityFuture;
 @property(retain, nonatomic) NAFuture *initialCloudSyncFuture; // @synthesize initialCloudSyncFuture=_initialCloudSyncFuture;
 @property(retain, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
 @property(readonly, copy, nonatomic) HMBCloudDatabaseConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <HMBCloudDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)logIdentifier;
 - (id)operationConfigurationWithProcessingOptions:(id)arg1;

@@ -25,6 +25,7 @@
     NSMutableArray *_extensionRequestHandlers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRequestingExtension; // @synthesize isRequestingExtension=_isRequestingExtension;
 @property(retain, nonatomic) NSMutableArray *extensionRequestHandlers; // @synthesize extensionRequestHandlers=_extensionRequestHandlers;
 @property(retain, nonatomic) QLGracePeriodTimer *gracePeriodTimer; // @synthesize gracePeriodTimer=_gracePeriodTimer;
@@ -37,7 +38,6 @@
 @property unsigned long long externalResourcesPermission; // @synthesize externalResourcesPermission=_externalResourcesPermission;
 @property long long extensionScore; // @synthesize extensionScore=_extensionScore;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (void)invalidateAndCancelExtensionRequest;
 - (void)extensionContextWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)unregisterClient:(id)arg1;

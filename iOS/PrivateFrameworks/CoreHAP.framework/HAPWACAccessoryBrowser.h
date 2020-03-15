@@ -29,6 +29,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFTimer *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) CUWiFiScanner *cuWiFiScanner; // @synthesize cuWiFiScanner=_cuWiFiScanner;
@@ -41,7 +42,6 @@
 @property(nonatomic) __weak id <HAPAirPlayAccessoryBrowserDelegate> airplayDelegate; // @synthesize airplayDelegate=_airplayDelegate;
 @property(retain, nonatomic) NSDate *browsingStartTime; // @synthesize browsingStartTime=_browsingStartTime;
 @property(retain, nonatomic) NSString *browsingIdentifier; // @synthesize browsingIdentifier=_browsingIdentifier;
-- (void).cxx_destruct;
 - (void)_reportFound2Pt4Network:(id)arg1;
 - (void)scan2Pt4APWithSSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)visible2Pt4Networks;

@@ -32,6 +32,7 @@
 
 + (id)queryResultCollectorWithExpression:(id)arg1 processor:(id)arg2 builder:(CDUnknownBlockType)arg3;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFPromise *gatheredPromise; // @synthesize gatheredPromise=_gatheredPromise;
 @property(retain, nonatomic) EMSearchableIndexQuery *query; // @synthesize query=_query;
 @property(copy, nonatomic) CDUnknownBlockType recoveryBlock; // @synthesize recoveryBlock=_recoveryBlock;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) id <MFMessageConsumer> target; // @synthesize target=_target;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(retain, nonatomic) MFMessageCriterion *criterion; // @synthesize criterion=_criterion;
-- (void).cxx_destruct;
 - (void)_processRemovedIdentifiers:(id)arg1;
 - (void)_processSearchableItems:(id)arg1;
 - (id)_persistentIDIfValidFromItemIdentifier:(id)arg1;

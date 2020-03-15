@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     UIWebDocumentView *_webDocumentView;
 }
 
-@property(retain, nonatomic) UIWebDocumentView *webDocumentView; // @synthesize webDocumentView=_webDocumentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIWebDocumentView *webDocumentView; // @synthesize webDocumentView=_webDocumentView;
 - (id)documentView;
 - (id)pageRects;
 - (struct CGSize)layoutSize;

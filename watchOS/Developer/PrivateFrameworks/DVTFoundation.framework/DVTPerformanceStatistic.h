@@ -19,10 +19,10 @@
 + (id)allStatistics;
 + (id)registerStatisticWithName:(id)arg1 checkpointBlock:(CDUnknownBlockType)arg2 logBlock:(CDUnknownBlockType)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType logBlock; // @synthesize logBlock=_logBlock;
 @property(readonly, copy) CDUnknownBlockType checkpointBlock; // @synthesize checkpointBlock=_checkpointBlock;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 checkpointBlock:(CDUnknownBlockType)arg2 logBlock:(CDUnknownBlockType)arg3;
 
 @end

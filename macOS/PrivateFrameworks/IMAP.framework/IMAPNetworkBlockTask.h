@@ -17,12 +17,12 @@
     NSString *_blockDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *blockDescription; // @synthesize blockDescription=_blockDescription;
 @property(readonly, nonatomic) long long taskPriority; // @synthesize taskPriority=_taskPriority;
 @property(readonly, nonatomic) IMAPTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) IMAPNetworkBlockOperation *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (void)operationFinished:(id)arg1;
 - (void)cancel;
 - (void)recalculatePriorities;

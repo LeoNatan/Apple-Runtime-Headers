@@ -40,6 +40,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)internalIDForBBBulletinID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *internalID; // @synthesize internalID=_internalID;
 @property(readonly, copy, nonatomic) NSString *threadID; // @synthesize threadID=_threadID;
 @property(readonly, nonatomic) BOOL previewRestricted; // @synthesize previewRestricted=_previewRestricted;
@@ -63,7 +64,6 @@
 @property(nonatomic) BOOL supportsSpokenNotification; // @synthesize supportsSpokenNotification=_supportsSpokenNotification;
 @property(nonatomic) BOOL availableOnLockScreen; // @synthesize availableOnLockScreen=_availableOnLockScreen;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

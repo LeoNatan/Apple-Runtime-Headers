@@ -35,6 +35,7 @@
 + (id)_stringForResultType:(unsigned long long)arg1;
 + (id)_stringForActionType:(unsigned long long)arg1;
 + (id)_stringForSessionBeginType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool successful; // @synthesize successful=_successful;
 @property(retain, nonatomic) PXSearchActiveSearch *lastSearch; // @synthesize lastSearch=_lastSearch;
 @property(nonatomic) unsigned long long firstEnteredCollectionResultType; // @synthesize firstEnteredCollectionResultType=_firstEnteredCollectionResultType;
@@ -53,7 +54,6 @@
 @property(nonatomic) unsigned long long beginType; // @synthesize beginType=_beginType;
 @property(nonatomic) _Bool userInteractedWithCurrentSearch; // @synthesize userInteractedWithCurrentSearch=_userInteractedWithCurrentSearch;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
-- (void).cxx_destruct;
 - (void)_logSuccess;
 - (void)logEnteredCollectionResult:(unsigned long long)arg1;
 - (void)logOneUpInTopAssets;

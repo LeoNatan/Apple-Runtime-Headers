@@ -15,10 +15,10 @@
     struct _NSRange __endRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEndRange:) struct _NSRange _endRange; // @synthesize _endRange=__endRange;
 @property(retain, nonatomic) IKCSSParseBlock *block; // @synthesize block=_block;
 @property(retain, nonatomic) IKArray *prelude; // @synthesize prelude=_prelude;
-- (void).cxx_destruct;
 - (id)description;
 - (struct _NSRange)range;
 - (id)init;

@@ -19,12 +19,12 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unshares; // @synthesize unshares=_unshares;
 @property(retain, nonatomic) NSArray *invitationsToCreateOrUpdate; // @synthesize invitationsToCreateOrUpdate=_invitationsToCreateOrUpdate;
 @property(retain, nonatomic) NSArray *membershipsToUpdate; // @synthesize membershipsToUpdate=_membershipsToUpdate;
 @property(retain, nonatomic) NSString *inviteMessage; // @synthesize inviteMessage=_inviteMessage;
 @property(retain, nonatomic) NSString *notebookGuid; // @synthesize notebookGuid=_notebookGuid;
-- (void).cxx_destruct;
 
 @end
 

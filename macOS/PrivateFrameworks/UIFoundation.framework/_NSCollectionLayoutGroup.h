@@ -36,8 +36,8 @@
 + (id)verticalGroupWithSize:(id)arg1 subitem:(id)arg2 count:(long long)arg3;
 + (id)horizontalGroupWithSize:(id)arg1 subitems:(id)arg2;
 + (id)horizontalGroupWithSize:(id)arg1 subitem:(id)arg2 count:(long long)arg3;
-@property(nonatomic) long long groupOptions; // @synthesize groupOptions=_groupOptions;
 - (void).cxx_destruct;
+@property(nonatomic) long long groupOptions; // @synthesize groupOptions=_groupOptions;
 - (id)_apiRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)visualDescription;

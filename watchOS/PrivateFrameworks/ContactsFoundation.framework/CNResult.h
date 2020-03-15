@@ -18,8 +18,8 @@
 + (id)resultWithFuture:(id)arg1;
 + (id)resultWithBlock:(CDUnknownBlockType)arg1;
 + (id)resultWithValue:(id)arg1 orError:(id)arg2;
-@property(readonly) CNEither *either; // @synthesize either=_either;
 - (void).cxx_destruct;
+@property(readonly) CNEither *either; // @synthesize either=_either;
 - (id)recover:(CDUnknownBlockType)arg1;
 - (id)flatMap:(CDUnknownBlockType)arg1;
 - (id)valueWithError:(id *)arg1;

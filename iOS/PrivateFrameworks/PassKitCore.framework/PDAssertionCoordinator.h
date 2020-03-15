@@ -25,10 +25,10 @@
 }
 
 + (id)suppressionApplicationRegistry;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isForegroundApplication; // @synthesize isForegroundApplication=_isForegroundApplication;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <PDAssertionCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancelPendingAssertionRequests;
 - (void)processPendingAssertionRequests;
 - (id)assertionsOfType:(unsigned long long)arg1;

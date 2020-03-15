@@ -15,9 +15,9 @@
 }
 
 + (id)payloadClass:(Class)arg1 name:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *nameSuffix; // @synthesize nameSuffix=_nameSuffix;
 @property(nonatomic) __weak Class payloadClass; // @synthesize payloadClass=_payloadClass;
-- (void).cxx_destruct;
 - (unsigned long long)value;
 - (id)name;
 

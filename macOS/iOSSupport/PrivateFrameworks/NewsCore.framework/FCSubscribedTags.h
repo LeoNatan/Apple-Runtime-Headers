@@ -16,11 +16,11 @@
     NSArray *_groupableTags;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *groupableTags; // @synthesize groupableTags=_groupableTags;
 @property(copy, nonatomic) NSArray *autoFavoriteTags; // @synthesize autoFavoriteTags=_autoFavoriteTags;
 @property(copy, nonatomic) NSArray *mutedTags; // @synthesize mutedTags=_mutedTags;
 @property(copy, nonatomic) NSArray *subscribedTags; // @synthesize subscribedTags=_subscribedTags;
-- (void).cxx_destruct;
 - (id)initWithSubscribedTags:(id)arg1 mutedTags:(id)arg2 autoFavoriteTags:(id)arg3 groupableTags:(id)arg4;
 
 @end

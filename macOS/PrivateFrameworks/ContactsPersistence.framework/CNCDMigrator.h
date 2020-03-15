@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly) NSPersistentStore *store; // @synthesize store=_store;
+@property(readonly) NSManagedObjectContext *moc; // @synthesize moc=_moc;
 - (void)migrate;
-- (id)_initWithStore:(id)arg1 context:(id)arg2;
+- (id)initWithContext:(id)arg1 store:(id)arg2;
 - (id)initWithStore:(id)arg1;
 - (id)initWithContext:(id)arg1;
 

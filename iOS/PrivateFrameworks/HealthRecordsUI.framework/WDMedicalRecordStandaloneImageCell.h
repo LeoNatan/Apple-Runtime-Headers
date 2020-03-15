@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIImageView *_titleImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *titleImageView; // @synthesize titleImageView=_titleImageView;
 @property(retain, nonatomic) UIImageView *disclosureChevronView; // @synthesize disclosureChevronView=_disclosureChevronView;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateForCurrentSizeCategory;
 @property(copy, nonatomic) UIImage *titleImage;
 @property(copy, nonatomic) NSString *detail;

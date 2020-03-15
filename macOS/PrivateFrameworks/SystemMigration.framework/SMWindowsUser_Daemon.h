@@ -27,13 +27,13 @@
 + (id)keyPathsForValuesAffectingWindowsSID;
 + (id)keyPathsForValuesAffectingIsAdminUser;
 + (id)keyPathsForValuesAffectingCanTransfer;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *componentDictionary; // @synthesize componentDictionary=_componentDictionary;
 @property(retain) NSArray *components; // @synthesize components;
 @property(retain) NSDictionary *attributes; // @synthesize attributes;
 @property(retain) NSData *randomPictureData; // @synthesize randomPictureData;
 @property(retain) NSNumber *cachedHomeDirSize; // @synthesize cachedHomeDirSize;
 @property(retain) SMSystem_Daemon *sourceSystem; // @synthesize sourceSystem;
-- (void).cxx_destruct;
 - (id)windowsHomeDirectoryPath;
 @property(readonly, retain) NSData *accountPictureData;
 - (id)accountPicture;

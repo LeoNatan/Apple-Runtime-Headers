@@ -13,7 +13,6 @@
 
 @interface NTKComplicationLocationManager : NSObject <CLKComplicationObserver>
 {
-    int _deviceLockStateChangeNotifyToken;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _isActive;
     NSMutableSet *_pendingBundleIds;

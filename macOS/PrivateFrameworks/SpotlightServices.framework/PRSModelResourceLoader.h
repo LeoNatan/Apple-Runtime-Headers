@@ -17,9 +17,9 @@
 
 + (id)resourceDirectoryPathForType:(unsigned long long)arg1 forUpdate:(BOOL)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *pendingUpdates; // @synthesize pendingUpdates=_pendingUpdates;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)moveNewlyPackagedResources:(id)arg1;
 - (void)markResourcesAsRemovable:(unsigned long long)arg1;
 - (void)markResourcesAsRemovable:(unsigned long long)arg1 group:(id)arg2;

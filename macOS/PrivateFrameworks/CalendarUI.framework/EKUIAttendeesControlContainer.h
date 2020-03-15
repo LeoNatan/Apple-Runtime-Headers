@@ -15,8 +15,8 @@
     EKUIAttendeesGadget *_gadget;
 }
 
-@property __weak EKUIAttendeesGadget *gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
+@property __weak EKUIAttendeesGadget *gadget; // @synthesize gadget=_gadget;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;

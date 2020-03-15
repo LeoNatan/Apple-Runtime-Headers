@@ -14,8 +14,8 @@
 }
 
 + (id)requestWithMarshallableObjectPackage:(id)arg1 arbitrationUnit:(id)arg2 arbitrationOptions:(id)arg3;
-@property(readonly, nonatomic) NSDictionary *arbitrationOptions; // @synthesize arbitrationOptions=_arbitrationOptions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *arbitrationOptions; // @synthesize arbitrationOptions=_arbitrationOptions;
 - (id)debugDescription;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

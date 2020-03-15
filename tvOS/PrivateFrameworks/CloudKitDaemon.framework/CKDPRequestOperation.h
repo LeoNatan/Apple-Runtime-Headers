@@ -53,9 +53,9 @@
     CKDPZoneSaveRequest *_zoneSaveRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPOperation *request; // @synthesize request=_request;
 @property(retain, nonatomic) CKDPRequestOperationHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

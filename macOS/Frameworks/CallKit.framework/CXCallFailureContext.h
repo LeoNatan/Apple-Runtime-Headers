@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasLocationSettingsRemediation; // @synthesize hasLocationSettingsRemediation=_hasLocationSettingsRemediation;
 @property(nonatomic) BOOL hasDateAndTimeSettingsRemediation; // @synthesize hasDateAndTimeSettingsRemediation=_hasDateAndTimeSettingsRemediation;
 @property(nonatomic) BOOL hasCellularSettingsRemediation; // @synthesize hasCellularSettingsRemediation=_hasCellularSettingsRemediation;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long failureReason; // @synthesize failureReason=_failureReason;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

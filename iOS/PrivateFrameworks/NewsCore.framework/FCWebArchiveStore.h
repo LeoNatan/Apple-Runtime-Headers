@@ -13,8 +13,8 @@
     FCAssetStore *_assetStore;
 }
 
-@property(retain, nonatomic) FCAssetStore *assetStore; // @synthesize assetStore=_assetStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCAssetStore *assetStore; // @synthesize assetStore=_assetStore;
 - (id)allWebArchiveKeys;
 - (unsigned long long)totalSizeOfAllWebArchives;
 - (_Bool)deleteWebArchiveForKey:(id)arg1;

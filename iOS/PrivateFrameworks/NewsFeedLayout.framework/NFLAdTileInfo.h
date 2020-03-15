@@ -24,6 +24,7 @@
 + (id)identifierForAdType:(long long)arg1;
 + (long long)adTypeForIdentifier:(id)arg1;
 + (id)identifierPrefix;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appearedWithAd; // @synthesize appearedWithAd=_appearedWithAd;
 @property(nonatomic) _Bool appearedOnScreen; // @synthesize appearedOnScreen=_appearedOnScreen;
 @property(nonatomic) _Bool isOnScreen; // @synthesize isOnScreen=_isOnScreen;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *adUnitIdentifier; // @synthesize adUnitIdentifier=_adUnitIdentifier;
 @property(nonatomic) long long adType; // @synthesize adType=_adType;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 - (id)updatedTileInfoWithNewHeadline:(id)arg1;
 @property(readonly, nonatomic) NSArray *underlyingFeedElements;
 @property(readonly, nonatomic) unsigned long long tileInfoType;

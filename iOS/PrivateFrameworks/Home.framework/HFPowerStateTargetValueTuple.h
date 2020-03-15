@@ -16,10 +16,10 @@
 }
 
 + (id)fanStateTargetValueTuple;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *offTargetValue; // @synthesize offTargetValue=_offTargetValue;
 @property(readonly, nonatomic) NSNumber *onTargetValue; // @synthesize onTargetValue=_onTargetValue;
 @property(readonly, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
-- (void).cxx_destruct;
 - (long long)primaryStateForTargetValue:(id)arg1;
 - (id)targetValueForPrimaryState:(long long)arg1;
 - (id)initWithCharacteristicType:(id)arg1 onTargetValue:(id)arg2 offTargetValue:(id)arg3;

@@ -17,8 +17,8 @@
     NSMutableArray *_errors;
 }
 
-@property(readonly) NSMutableArray *errors; // @synthesize errors=_errors;
 - (void).cxx_destruct;
+@property(readonly) NSMutableArray *errors; // @synthesize errors=_errors;
 - (void)cancel;
 - (void)endOperation;
 - (void)_shutdownOperation;

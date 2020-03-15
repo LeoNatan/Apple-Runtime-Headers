@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <webrtc/WK_RTCVideoFrameBuffer-Protocol.h>
+#import <webrtc/RTCVideoFrameBuffer-Protocol.h>
 
-@protocol RTCYUVPlanarBuffer <WK_RTCVideoFrameBuffer>
+@protocol RTCYUVPlanarBuffer <RTCVideoFrameBuffer>
 @property(readonly, nonatomic) int strideV;
 @property(readonly, nonatomic) int strideU;
 @property(readonly, nonatomic) int strideY;

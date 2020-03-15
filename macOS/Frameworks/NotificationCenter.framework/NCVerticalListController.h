@@ -20,9 +20,9 @@
     struct CGSize _rowMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double topMargin; // @synthesize topMargin=_topMargin;
 @property(nonatomic) struct CGSize rowMargin; // @synthesize rowMargin=_rowMargin;
-- (void).cxx_destruct;
 - (void)_performUpdates;
 - (void)_performDeleteUpdates;
 - (void)_performAddUpdates;

@@ -16,11 +16,11 @@
     NSString *_destination;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreConfigCompare; // @synthesize ignoreConfigCompare=_ignoreConfigCompare;
 @property(readonly, nonatomic) NSString *destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) HMDUser *user; // @synthesize user=_user;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *pushDestination;
 - (id)description;
 - (id)initWithUser:(id)arg1 destination:(id)arg2;

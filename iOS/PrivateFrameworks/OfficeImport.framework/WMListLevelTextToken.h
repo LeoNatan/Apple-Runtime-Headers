@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tokenWithString:(id)arg1 level:(int)arg2 formatter:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) int level; // @synthesize level=_level;
 @property(readonly) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)stringForIndex:(unsigned long long)arg1;
 - (id)initWithString:(id)arg1 level:(int)arg2 formatter:(id)arg3;
 

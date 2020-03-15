@@ -19,11 +19,11 @@
     WFDatabaseResult *_shareSheetWorkflows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFDatabaseResult *shareSheetWorkflows; // @synthesize shareSheetWorkflows=_shareSheetWorkflows;
 @property(readonly, nonatomic) id <VCDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)databaseResult:(id)arg1 didUpdateObjects:(id)arg2 inserted:(id)arg3 removed:(id)arg4;
 - (void)updateWithResult:(id)arg1;
 - (void)queue_startIfPossible;

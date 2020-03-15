@@ -20,6 +20,7 @@
 }
 
 + (id)eventWithCharacteristic:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *stateNumber; // @synthesize stateNumber=_stateNumber;
 @property(readonly, nonatomic) NSDate *updateTime; // @synthesize updateTime=_updateTime;
 @property(readonly, copy, nonatomic) id value; // @synthesize value=_value;
@@ -27,7 +28,6 @@
 @property(readonly, copy, nonatomic) NSNumber *serviceInstanceID; // @synthesize serviceInstanceID=_serviceInstanceID;
 @property(readonly, copy, nonatomic) NSNumber *accessoryInstanceID; // @synthesize accessoryInstanceID=_accessoryInstanceID;
 @property(readonly, copy, nonatomic) NSString *serverIdentifier; // @synthesize serverIdentifier=_serverIdentifier;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithCharacteristic:(id)arg1;
 

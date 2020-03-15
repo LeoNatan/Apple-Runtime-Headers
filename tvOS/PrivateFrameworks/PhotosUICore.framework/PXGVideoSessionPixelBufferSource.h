@@ -21,10 +21,10 @@
     id <PXGVideoSessionPixelBufferSourceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXGVideoSessionPixelBufferSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long desiredPlayState; // @synthesize desiredPlayState=_desiredPlayState;
 @property(copy, nonatomic) CDUnknownBlockType pixelBufferDidChangeHandler; // @synthesize pixelBufferDidChangeHandler=_pixelBufferDidChangeHandler;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGAffineTransform videoRotationTransform;
 @property(readonly, nonatomic) struct __CVBuffer *currentPixelBuffer;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

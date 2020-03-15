@@ -14,9 +14,9 @@
     unsigned long long _actionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)_hash;
 - (_Bool)isEqual:(id)arg1;

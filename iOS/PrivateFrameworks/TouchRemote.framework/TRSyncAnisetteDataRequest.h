@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSData *simData; // @synthesize simData=_simData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *simData; // @synthesize simData=_simData;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

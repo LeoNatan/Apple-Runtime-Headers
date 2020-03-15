@@ -16,9 +16,9 @@
     NSURL *_itemURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *itemURL; // @synthesize itemURL=_itemURL;
 @property(nonatomic) unsigned long long purgeOrder; // @synthesize purgeOrder;
-- (void).cxx_destruct;
 - (BOOL)purgeAndGetSize:(unsigned long long *)arg1;
 @property(readonly, nonatomic) unsigned long long size;
 - (id)initWithURL:(id)arg1 purgeOrder:(unsigned long long)arg2;

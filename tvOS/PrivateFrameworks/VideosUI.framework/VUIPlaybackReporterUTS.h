@@ -15,15 +15,16 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIPostPlayConfig *postPlayConfig; // @synthesize postPlayConfig=_postPlayConfig;
 @property(retain, nonatomic) WLKPlaybackReporter *reporter; // @synthesize reporter=_reporter;
-- (void).cxx_destruct;
 - (id)_wlkPlaybackRateForState:(id)arg1 player:(id)arg2;
 - (long long)_wlkPlaybackStateForState:(id)arg1;
 - (void)_reportSummary:(id)arg1 sessionID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_reportLinearForPlayer:(id)arg1 playerState:(id)arg2 completionState:(unsigned long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_reportVODForPlayer:(id)arg1 playerState:(id)arg2 completionState:(unsigned long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_reportForPlayer:(id)arg1 playerState:(id)arg2 completionState:(unsigned long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (_Bool)_watchedTimeEnabled;
 - (double)_completionFudgeFactor;
 - (void)_endSession:(id)arg1;
 - (_Bool)_isTransitionValidForPlayer:(id)arg1 fromState:(id)arg2 toState:(id)arg3;

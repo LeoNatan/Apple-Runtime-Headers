@@ -31,6 +31,7 @@
 + (id)sessionWithConfiguration:(id)arg1 canUseCachingServer:(_Bool)arg2 locateOptions:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
 + (id)sessionWithConfiguration:(id)arg1 canUseCachingServer:(_Bool)arg2 locateOptions:(id)arg3;
 + (id)sharedSession;
+- (void).cxx_destruct;
 @property int _phase; // @synthesize _phase=__phase;
 @property(retain) NSMutableDictionary *_tasks; // @synthesize _tasks=__tasks;
 @property(retain) NSOperationQueue *_clientDelegateOpQueue; // @synthesize _clientDelegateOpQueue=__clientDelegateOpQueue;
@@ -40,7 +41,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue=__queue;
 @property(retain) NSObject<OS_os_log> *_logHandle; // @synthesize _logHandle=__logHandle;
 @property _Bool canUseCachingServer; // @synthesize canUseCachingServer=_canUseCachingServer;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 streamTask:(id)arg2 didBecomeInputStream:(id)arg3 outputStream:(id)arg4;
 - (void)URLSession:(id)arg1 betterRouteDiscoveredForStreamTask:(id)arg2;
 - (void)URLSession:(id)arg1 writeClosedForStreamTask:(id)arg2;

@@ -19,10 +19,10 @@
     long long _orientationForClassicLayout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long orientationForClassicLayout; // @synthesize orientationForClassicLayout=_orientationForClassicLayout;
 @property(nonatomic) _Bool hasOpaqueContents; // @synthesize hasOpaqueContents=_hasOpaqueContents;
 @property(nonatomic) _Bool usesNonuniformScaling; // @synthesize usesNonuniformScaling=_usesNonuniformScaling;
-- (void).cxx_destruct;
 - (void)_updateCornerRadius;
 - (_Bool)_isUsingExternalClassicLayout;
 - (double)_transformScale;

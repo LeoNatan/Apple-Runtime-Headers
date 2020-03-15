@@ -14,9 +14,9 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
 @property(readonly) NSArray *motionVectors; // @synthesize motionVectors=_motionVectors;
-- (void).cxx_destruct;
 - (id)classPaddingMap;
 - (id)classMotionScoreMap;
 - (_Bool)applyEventTypeAndCheckIfSubBoundingIsStatic:(struct CGRect)arg1 forMetric:(long long)arg2 eventType:(long long)arg3 confidence:(float)arg4;

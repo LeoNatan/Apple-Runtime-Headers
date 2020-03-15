@@ -11,8 +11,8 @@
     CDUnknownBlockType _replyHandler;
 }
 
-@property(copy) CDUnknownBlockType replyHandler; // @synthesize replyHandler=_replyHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType replyHandler; // @synthesize replyHandler=_replyHandler;
 - (id)description;
 - (void)setRequestType:(unsigned long long)arg1;
 @property(readonly) unsigned long long requestType;

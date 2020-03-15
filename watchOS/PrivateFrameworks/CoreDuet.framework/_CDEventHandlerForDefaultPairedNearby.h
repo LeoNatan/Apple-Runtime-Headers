@@ -16,9 +16,9 @@
     _CDFileUtility *_utility;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _CDFileUtility *utility; // @synthesize utility=_utility;
 @property(retain, nonatomic) _CDDataCollectionAnonymizer *anonymizer; // @synthesize anonymizer=_anonymizer;
-- (void).cxx_destruct;
 - (void)eventHandler:(id)arg1 withFileHandle:(id)arg2;
 - (id)init;
 

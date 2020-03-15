@@ -24,10 +24,10 @@
     unsigned int _txRetransmittedBytes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int txRetransmittedBytes; // @synthesize txRetransmittedBytes=_txRetransmittedBytes;
 @property(readonly) unsigned int rxOutOfOrderBytes; // @synthesize rxOutOfOrderBytes=_rxOutOfOrderBytes;
 @property(readonly) unsigned int rxDuplicateBytes; // @synthesize rxDuplicateBytes=_rxDuplicateBytes;
-- (void).cxx_destruct;
 - (id)initWithUpdate:(const struct nstat_msg_src_update_convenient *)arg1 startTime:(double)arg2 flowFlags:(unsigned int)arg3 previously:(struct update_subset_for_deltas *)arg4;
 @property(readonly) double rttVariation;
 @property(readonly) double rttAverage;

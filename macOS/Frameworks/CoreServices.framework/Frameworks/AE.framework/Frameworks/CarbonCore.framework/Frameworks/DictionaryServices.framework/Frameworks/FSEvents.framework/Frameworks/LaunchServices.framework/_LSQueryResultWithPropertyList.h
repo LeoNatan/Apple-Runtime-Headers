@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, retain, nonatomic) id propertyList; // @synthesize propertyList=_propertyList;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) id propertyList; // @synthesize propertyList=_propertyList;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)propertyListWithClass:(Class)arg1 valuesOfClass:(Class)arg2;

@@ -23,6 +23,7 @@
 + (id)countriesRequiringBlackDayOfWeek;
 + (id)systemG2FromFont:(id)arg1;
 + (id)defaultDayNumberFontWithSize:(double)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CUIKIconSizeMetrics *sizeMetrics; // @synthesize sizeMetrics=_sizeMetrics;
 @property(readonly, nonatomic) double canvasScale; // @synthesize canvasScale=_canvasScale;
 @property(readonly, nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) CDUnknownBlockType dateNameBlock; // @synthesize dateNameBlock=_dateNameBlock;
 @property(readonly, copy, nonatomic) NSString *dayNumber; // @synthesize dayNumber=_dayNumber;
 @property(readonly, copy, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 - (id)dateNameFont:(id)arg1;
 - (id)colorForDayOfWeek;
 - (id)dayNumberFont;

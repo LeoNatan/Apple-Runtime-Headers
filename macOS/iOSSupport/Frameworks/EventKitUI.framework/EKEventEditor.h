@@ -49,10 +49,10 @@
 + (id)_now;
 + (id)defaultTitleForCalendarItem;
 + (Class)_SGSuggestionsServiceClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *suggestionKey; // @synthesize suggestionKey=_suggestionKey;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) BOOL showAttachments; // @synthesize showAttachments=_showAttachments;
-- (void).cxx_destruct;
 - (void)_setAutocompleteResultsVisible:(BOOL)arg1;
 - (void)autocompleteResultsEditItemDidHideResults:(id)arg1;
 - (void)autocompleteResultsEditItemDidShowResults:(id)arg1;

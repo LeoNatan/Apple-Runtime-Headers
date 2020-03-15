@@ -25,13 +25,13 @@
     FBSProcessWatchdog *_watchdog;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
 @property(copy, nonatomic) FBSProcessExecutionPolicy *executionPolicy; // @synthesize executionPolicy=_executionPolicy;
 @property(nonatomic) __weak id <FBSSceneHandle> scene; // @synthesize scene=_scene;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -34,6 +34,7 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSharingManagement; // @synthesize showSharingManagement=_showSharingManagement;
 @property(nonatomic) __weak UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(nonatomic) __weak UIBarButtonItem *rightButtonItem; // @synthesize rightButtonItem=_rightButtonItem;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) WFSharedShortcut *sharedShortcut; // @synthesize sharedShortcut=_sharedShortcut;
 @property(readonly, nonatomic) WFGalleryWorkflow *galleryWorkflow; // @synthesize galleryWorkflow=_galleryWorkflow;
 @property(nonatomic) __weak id <WFGalleryImportViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (int)eventSourceForShortcut;
 - (void)trackAddEvent;
 - (_Bool)presentationControllerShouldDismiss:(id)arg1;

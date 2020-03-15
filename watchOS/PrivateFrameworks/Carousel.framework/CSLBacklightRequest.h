@@ -28,6 +28,7 @@
     unsigned long long _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didLogTelemetry; // @synthesize didLogTelemetry=_didLogTelemetry;
 @property(retain, nonatomic) id providerContext; // @synthesize providerContext=_providerContext;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) unsigned int reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned int operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

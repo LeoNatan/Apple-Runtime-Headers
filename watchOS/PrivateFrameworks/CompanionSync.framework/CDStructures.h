@@ -10,30 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSInputStream {
-    Class _field1;
-};
-
-struct NSMapTable {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSOutputStream {
-    Class _field1;
-};
-
 struct gzFile_s {
     unsigned int _field1;
     char *_field2;

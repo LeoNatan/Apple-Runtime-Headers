@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AKActionController, AKAttributeController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPeripheralAvailabilityManager_iOS, AKSidecarController, AKSignatureModelController, AKSparseMutableControllerArray, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSString, UIView;
+@class AKActionController, AKAttributeController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPeripheralAvailabilityManager_iOS, AKSidecarController, AKSignatureModelController, AKSparseMutableControllerArray, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSArray, NSMapTable, NSString, UIView;
 @protocol AKControllerDelegateProtocol, PKRulerHostingDelegate;
 
 @interface AKController : NSObject
@@ -51,6 +51,7 @@
     long long _lastPasteboardChangeCount;
     unsigned long long _creationCascadingMultiplier;
     AKPageController *_lastCreationCascadingPageController;
+    NSArray *_cachedKeyCommands;
     double _akModelToCanvasFixedPixelScaleOfFirstEncounteredPage;
     double _screenPixelsToCanvasPixelsDownscale;
     AKToolbarView *_modernToolbarView;
@@ -66,6 +67,7 @@
 + (id)akBundleIdentifier;
 + (id)akBundle;
 + (id)controllerWithDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) _Bool _isInDFRAction; // @synthesize _isInDFRAction=__isInDFRAction;
 @property(nonatomic) _Bool useHighVisibilityDefaultInks; // @synthesize useHighVisibilityDefaultInks=_useHighVisibilityDefaultInks;
 @property(nonatomic) __weak AKToolbarView *modernToolbarView; // @synthesize modernToolbarView=_modernToolbarView;
@@ -74,6 +76,7 @@
 @property(nonatomic) _Bool isLogging; // @synthesize isLogging=_isLogging;
 @property double screenPixelsToCanvasPixelsDownscale; // @synthesize screenPixelsToCanvasPixelsDownscale=_screenPixelsToCanvasPixelsDownscale;
 @property double akModelToCanvasFixedPixelScaleOfFirstEncounteredPage; // @synthesize akModelToCanvasFixedPixelScaleOfFirstEncounteredPage=_akModelToCanvasFixedPixelScaleOfFirstEncounteredPage;
+@property(readonly, nonatomic) NSArray *cachedKeyCommands; // @synthesize cachedKeyCommands=_cachedKeyCommands;
 @property(nonatomic) _Bool hideAllAdornments; // @synthesize hideAllAdornments=_hideAllAdornments;
 @property __weak AKPageController *lastCreationCascadingPageController; // @synthesize lastCreationCascadingPageController=_lastCreationCascadingPageController;
 @property unsigned long long creationCascadingMultiplier; // @synthesize creationCascadingMultiplier=_creationCascadingMultiplier;
@@ -109,7 +112,6 @@
 @property _Bool isTornDown; // @synthesize isTornDown=_isTornDown;
 @property(nonatomic) _Bool overlayShouldPixelate; // @synthesize overlayShouldPixelate;
 @property(nonatomic) _Bool isUsedOnDarkBackground; // @synthesize isUsedOnDarkBackground=_isUsedOnDarkBackground;
-- (void).cxx_destruct;
 - (void)endLogging;
 - (void)beginLogging:(id)arg1 documentType:(id)arg2;
 - (void)strokeAddedNotification:(id)arg1;
@@ -164,6 +166,8 @@
 - (void)resetToDefaultToolMode;
 - (void)setToolMode:(unsigned long long)arg1;
 - (unsigned long long)toolMode;
+- (_Bool)canPerformKeyCommandAction:(SEL)arg1 withSender:(id)arg2 handled:(_Bool *)arg3;
+- (id)keyCommandsForAnnotations;
 - (id)imageForToolbarButtonItemOfType:(unsigned long long)arg1;
 - (id)toolbarButtonItemOfType:(unsigned long long)arg1;
 - (void)_updateGestureDependencyPriority;

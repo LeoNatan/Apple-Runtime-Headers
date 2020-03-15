@@ -10,7 +10,7 @@
 {
 }
 
-- (void)eraseDeviceWithCompletion:(CDUnknownBlockType)arg1;
+- (void)eraseDeviceWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
 

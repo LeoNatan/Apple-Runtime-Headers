@@ -19,9 +19,9 @@
     id <CTCarrierSpaceClientDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CTCarrierSpaceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CTCarrierSpaceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)fetchDataPlanMetrics:(CDUnknownBlockType)arg1;
 - (void)purchasePlan:(id)arg1 authInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)purchasePlan:(id)arg1 completion:(CDUnknownBlockType)arg2;

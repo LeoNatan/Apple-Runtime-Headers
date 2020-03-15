@@ -17,9 +17,9 @@
     NSDictionary *_attributedTexts;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *attributedTexts; // @synthesize attributedTexts=_attributedTexts;
 @property(nonatomic) _Bool hasPriorityLayout; // @synthesize hasPriorityLayout;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic) _Bool marqueeRunning;
 @property(nonatomic) _Bool marqueeEnabled;

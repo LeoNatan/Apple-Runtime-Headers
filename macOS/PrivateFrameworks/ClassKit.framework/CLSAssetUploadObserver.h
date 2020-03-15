@@ -6,36 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class CLSAsset, NSError, NSMetadataQuery, NSOperationQueue;
+@class CLSAsset, NSError, NSMetadataQuery;
 
 @interface CLSAssetUploadObserver : NSObject
 {
+    double uploadProgress;
+    NSError *uploadError;
     CLSAsset *_asset;
-    double _uploadProgress;
-    NSError *_uploadError;
     CDUnknownBlockType _onUploadProgress;
     CDUnknownBlockType _onUploadComplete;
     NSMetadataQuery *_query;
-    NSOperationQueue *_uploadObserverQueue;
-    CDUnknownBlockType _preCompleteHook;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType preCompleteHook; // @synthesize preCompleteHook=_preCompleteHook;
-@property(retain, nonatomic) NSOperationQueue *uploadObserverQueue; // @synthesize uploadObserverQueue=_uploadObserverQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMetadataQuery *query; // @synthesize query=_query;
 @property(copy, nonatomic) CDUnknownBlockType onUploadComplete; // @synthesize onUploadComplete=_onUploadComplete;
 @property(copy, nonatomic) CDUnknownBlockType onUploadProgress; // @synthesize onUploadProgress=_onUploadProgress;
-@property(retain) NSError *uploadError; // @synthesize uploadError=_uploadError;
-@property double uploadProgress; // @synthesize uploadProgress=_uploadProgress;
 @property(retain, nonatomic) CLSAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
-- (void)_notifyOfCompletion;
-- (void)_notifyOfChange;
-- (void)_processItems:(id)arg1;
-- (void)queryUpdated:(id)arg1;
-- (void)queryGatheredData:(id)arg1;
 - (void)stopObserving;
 - (void)startObserving;
+@property(readonly) NSError *uploadError; // @synthesize uploadError;
+@property(readonly) double uploadProgress; // @synthesize uploadProgress;
 @property(nonatomic, getter=isUploaded) BOOL uploaded;
 - (id)initWithAsset:(id)arg1;
 - (id)init;

@@ -33,6 +33,7 @@
 }
 
 + (Class)playerClass;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setChangeObserver:) __weak id <ISBasePlayerUIViewChangeObserver> _changeObserver; // @synthesize _changeObserver=__changeObserver;
 @property(retain, nonatomic, setter=_setWrappedAudioSession:) ISWrappedAVAudioSession *wrappedAudioSession; // @synthesize wrappedAudioSession=_wrappedAudioSession;
 @property(readonly, nonatomic) UIView *_containerView; // @synthesize _containerView=__containerView;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) UIView *customPhotoView; // @synthesize customPhotoView=_customPhotoView;
 @property(nonatomic) struct CGPoint scaleAnchorOffset; // @synthesize scaleAnchorOffset=_scaleAnchorOffset;
 @property(retain, nonatomic) ISBasePlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updatePhotoView;
 - (void)contentDidChange;

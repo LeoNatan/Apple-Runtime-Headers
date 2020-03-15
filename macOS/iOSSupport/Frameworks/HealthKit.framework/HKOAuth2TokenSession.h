@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(readonly, copy, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -17,12 +17,12 @@
     CDStruct_b7fac349 _obj;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_b7fac349 obj; // @synthesize obj=_obj;
 @property(retain, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) CSDecoder *itemsContent; // @synthesize itemsContent=_itemsContent;
 @property(readonly, nonatomic) CSDecoder *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (id)initWithItems:(id)arg1 itemsContent:(id)arg2;

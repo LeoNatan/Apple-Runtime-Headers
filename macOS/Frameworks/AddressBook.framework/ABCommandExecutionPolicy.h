@@ -8,8 +8,10 @@
 
 @interface ABCommandExecutionPolicy : NSObject
 {
+    BOOL ignoresGuardianRestrictions;
 }
 
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions;
 - (void)runWithBlock:(CDUnknownBlockType)arg1;
 
 @end

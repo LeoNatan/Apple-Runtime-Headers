@@ -14,9 +14,9 @@
     struct csl_bar_termination_payload _payload;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct csl_bar_termination_payload payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) FBSProcessTerminationRequest *terminationRequest; // @synthesize terminationRequest=_terminationRequest;
-- (void).cxx_destruct;
 
 @end
 

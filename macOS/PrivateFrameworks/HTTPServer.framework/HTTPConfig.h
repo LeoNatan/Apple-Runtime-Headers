@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue;
 @property(readonly, nonatomic) NSString *documentRoot; // @synthesize documentRoot;
 @property(readonly, nonatomic) HTTPServer *server; // @synthesize server;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithServer:(id)arg1 documentRoot:(id)arg2 queue:(id)arg3;
 - (id)initWithServer:(id)arg1 documentRoot:(id)arg2;

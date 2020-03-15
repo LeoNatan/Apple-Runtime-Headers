@@ -20,10 +20,10 @@
 }
 
 + (id)dspItemsInConfiguration:(id)arg1 notInConfiguration:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ASDAudioDeviceDSPDatabase *dspDatabase; // @synthesize dspDatabase=_dspDatabase;
 @property(retain, nonatomic) ASDAudioDeviceDSPConfiguration *currentDSPConfiguration; // @synthesize currentDSPConfiguration=_currentDSPConfiguration;
 @property(readonly, nonatomic) ASDAudioDevice *underlyingDevice; // @synthesize underlyingDevice=_underlyingDevice;
-- (void).cxx_destruct;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 - (void)changedProperty:(const struct AudioObjectPropertyAddress *)arg1 forObject:(id)arg2;

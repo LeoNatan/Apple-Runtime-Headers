@@ -15,8 +15,8 @@
     IOSSHLTransactionWatchdog *_watchdog;
 }
 
-@property(nonatomic) __weak IOSSHLTransactionWatchdog *watchdog; // @synthesize watchdog=_watchdog;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IOSSHLTransactionWatchdog *watchdog; // @synthesize watchdog=_watchdog;
 @property(readonly, copy) NSString *description;
 - (void)powerMonitorSystemWillWakeFromSleep:(id)arg1;
 

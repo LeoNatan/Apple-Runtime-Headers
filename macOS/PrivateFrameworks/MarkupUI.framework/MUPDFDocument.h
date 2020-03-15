@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_unlockedWithPassword;
 }
 
-@property(copy) NSString *unlockedWithPassword; // @synthesize unlockedWithPassword=_unlockedWithPassword;
 - (void).cxx_destruct;
+@property(copy) NSString *unlockedWithPassword; // @synthesize unlockedWithPassword=_unlockedWithPassword;
 - (BOOL)unlockWithPassword:(id)arg1;
 
 @end

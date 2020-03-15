@@ -45,6 +45,7 @@
 + (id)predicateForMailboxAccount:(id)arg1;
 + (id)predicateForMailboxType:(long long)arg1;
 + (id)predicateForMailboxName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canArchive; // @synthesize canArchive=_canArchive;
 @property(nonatomic) BOOL canContainMessages; // @synthesize canContainMessages=_canContainMessages;
 @property long long type; // @synthesize type=_type;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) EMMailboxCollection *children; // @synthesize children=_children;
 @property(nonatomic) __weak EMMailbox *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) EMObjectID *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (BOOL)_shouldArchiveByDefault;
 @property(readonly, nonatomic) BOOL shouldArchiveByDefault;
 - (BOOL)_canArchiveForMailboxType:(long long)arg1;

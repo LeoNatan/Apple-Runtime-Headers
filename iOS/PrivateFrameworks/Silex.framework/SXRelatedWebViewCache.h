@@ -13,8 +13,8 @@
     NSMapTable *_cache;
 }
 
-@property(readonly, nonatomic) NSMapTable *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMapTable *cache; // @synthesize cache=_cache;
 - (void)storeRelatedWebView:(id)arg1 baseURL:(id)arg2;
 - (id)relatedWebViewForBaseURL:(id)arg1;
 - (id)init;

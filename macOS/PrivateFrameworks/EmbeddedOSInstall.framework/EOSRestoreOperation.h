@@ -14,9 +14,9 @@
     EOSDeviceMonitor *_deviceMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain) EOSDeviceMonitor *deviceMonitor; // @synthesize deviceMonitor=_deviceMonitor;
 @property(retain) EOSDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)deviceConnected:(id)arg1;
 - (BOOL)deviceConnectionTimeoutIsFatal;
 - (id)deviceConnectionTimeoutErrorDescription;

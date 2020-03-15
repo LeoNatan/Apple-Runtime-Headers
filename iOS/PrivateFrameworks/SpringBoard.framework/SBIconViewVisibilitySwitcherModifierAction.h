@@ -16,11 +16,11 @@
     NSSet *_excludedIconLocations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(readonly, nonatomic) NSSet *excludedIconLocations; // @synthesize excludedIconLocations=_excludedIconLocations;
 @property(readonly, nonatomic) SBFFluidBehaviorSettings *animationSettings; // @synthesize animationSettings=_animationSettings;
 @property(readonly, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithAppLayout:(id)arg1 visible:(_Bool)arg2 animationSettings:(id)arg3 excludedIconLocations:(id)arg4;
 - (long long)type;

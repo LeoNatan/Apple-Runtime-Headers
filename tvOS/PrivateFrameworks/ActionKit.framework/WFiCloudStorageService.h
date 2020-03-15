@@ -8,7 +8,7 @@
 
 #import <ActionKit/WFFileStorageService-Protocol.h>
 
-@class NSProgress, NSString;
+@class NSProgress, NSString, WFContentSource;
 
 @interface WFiCloudStorageService : NSObject <WFFileStorageService>
 {
@@ -21,8 +21,10 @@
 + (void)createDocumentsDirectoryIfNecessary;
 + (id)containerName;
 + (id)containerIdentifier;
-@property(nonatomic) __weak NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSProgress *progress; // @synthesize progress=_progress;
+@property(readonly, nonatomic) WFContentSource *contentSource;
+@property(readonly, nonatomic) NSString *associatedAppBundleIdentifier;
 @property(readonly, nonatomic) _Bool supportsJumpingToSubdirectoryInUI;
 @property(readonly, nonatomic) NSString *storageLocationPrefix;
 @property(readonly, nonatomic) Class accessResourceClass;

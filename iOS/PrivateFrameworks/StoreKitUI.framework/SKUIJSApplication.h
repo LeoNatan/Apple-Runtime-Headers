@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     SKUIApplicationController *_applicationController;
 }
 
-@property(readonly, nonatomic) __weak SKUIApplicationController *applicationController; // @synthesize applicationController=_applicationController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak SKUIApplicationController *applicationController; // @synthesize applicationController=_applicationController;
 @property(readonly) _Bool isRunningTests;
 - (void)sendDocumentMessage:(id)arg1:(id)arg2:(id)arg3;
 - (void)launchComplete:(id)arg1;

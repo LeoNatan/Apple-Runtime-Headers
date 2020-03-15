@@ -31,6 +31,7 @@
     UIScrollView *__scrollView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
 @property(retain, nonatomic, setter=_setExpandedControl:) CAMControlDrawerButton<CAMControlDrawerExpandableButton> *_expandedControl; // @synthesize _expandedControl=__expandedControl;
 @property(readonly, nonatomic) NSMutableDictionary *_controlMap; // @synthesize _controlMap=__controlMap;
@@ -44,7 +45,6 @@
 @property(nonatomic) __weak id <CAMControlDrawerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(nonatomic) __weak id <CAMControlDrawerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (_Bool)shouldAccessibilityGestureBeginForHUDManager:(id)arg1;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;

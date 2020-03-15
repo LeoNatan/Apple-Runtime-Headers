@@ -19,8 +19,8 @@
     NSString *_nameOnCard;
 }
 
-@property(copy, nonatomic) NSString *nameOnCard; // @synthesize nameOnCard=_nameOnCard;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *nameOnCard; // @synthesize nameOnCard=_nameOnCard;
 - (void)_removePlayerItem;
 - (void)_didFinishPlaying;
 - (void)_invalidate;

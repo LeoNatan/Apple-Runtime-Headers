@@ -13,8 +13,8 @@
     id <CSLStickyAlertPolicyDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLStickyAlertPolicyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLStickyAlertPolicyDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)canRemoveAlertItem:(id)arg1;
 
 @end

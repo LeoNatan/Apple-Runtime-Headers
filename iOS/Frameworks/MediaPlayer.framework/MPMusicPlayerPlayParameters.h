@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic, getter=isLibraryContent) _Bool libraryContent; // @synthesize libraryContent=_libraryContent;
 @property(readonly, copy, nonatomic) NSString *itemKind; // @synthesize itemKind=_itemKind;
 @property(readonly, copy, nonatomic) MPIdentifierSet *identifiers; // @synthesize identifiers=_identifiers;
 @property(readonly, copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

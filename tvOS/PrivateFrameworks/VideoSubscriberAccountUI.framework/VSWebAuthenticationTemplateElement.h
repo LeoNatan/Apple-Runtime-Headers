@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)supportedFeatures;
-@property(readonly, nonatomic) VSMessagePortFeature *messagePort; // @synthesize messagePort=_messagePort;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VSMessagePortFeature *messagePort; // @synthesize messagePort=_messagePort;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

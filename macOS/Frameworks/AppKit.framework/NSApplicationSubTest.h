@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSNumber *startTime;
 }
 
-@property(readonly) NSNumber *startTime; // @synthesize startTime;
 - (void).cxx_destruct;
+@property(readonly) NSNumber *startTime; // @synthesize startTime;
 - (id)getObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)outputData;

@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HAPAccessoryServerBrowserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSMutableArray *discoveredAccessoryServers; // @synthesize discoveredAccessoryServers=_discoveredAccessoryServers;
-- (void).cxx_destruct;
 - (void)removeAccessoryServerWithStream:(id)arg1;
 - (void)addAccessoryServerWithStream:(id)arg1 name:(id)arg2 identifier:(id)arg3;
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;

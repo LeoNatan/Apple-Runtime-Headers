@@ -22,6 +22,7 @@
     CDUnknownBlockType _didFinishDismissingSpotlightHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didFinishDismissingSpotlightHandler; // @synthesize didFinishDismissingSpotlightHandler=_didFinishDismissingSpotlightHandler;
 @property(copy, nonatomic) CDUnknownBlockType willBeginDismissingSpotlightHandler; // @synthesize willBeginDismissingSpotlightHandler=_willBeginDismissingSpotlightHandler;
 @property(copy, nonatomic) CDUnknownBlockType finishedPresentingSpotlightHandler; // @synthesize finishedPresentingSpotlightHandler=_finishedPresentingSpotlightHandler;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <SPUIRemoteSearchViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(nonatomic) double revealProgress; // @synthesize revealProgress=_revealProgress;
-- (void).cxx_destruct;
 - (void)updateSceneSettingsWithBlock:(CDUnknownBlockType)arg1;
 - (void)beginTodayViewAnimationWithSourceLayerRenderId:(unsigned long long)arg1 sourceContextId:(unsigned int)arg2;
 - (void)updateIntent:(unsigned long long)arg1;

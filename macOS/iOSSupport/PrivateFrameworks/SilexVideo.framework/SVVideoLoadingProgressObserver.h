@@ -20,12 +20,12 @@
     SVKeyValueObserver *_loadedTimeRangesObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVKeyValueObserver *loadedTimeRangesObserver; // @synthesize loadedTimeRangesObserver=_loadedTimeRangesObserver;
 @property(readonly, nonatomic) id <SVVideoDurationObserving> durationObserver; // @synthesize durationObserver=_durationObserver;
 @property(readonly, nonatomic) id <SVPlayerItemObserving> playerItemObserver; // @synthesize playerItemObserver=_playerItemObserver;
 @property(copy, nonatomic, setter=onProgressChanged:) CDUnknownBlockType progressChangedBlock; // @synthesize progressChangedBlock=_progressChangedBlock;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)updateProgressWithLoadedTimeRanges:(id)arg1 duration:(double)arg2;
 - (id)initWithPlayerItemObserver:(id)arg1 durationObserver:(id)arg2;
 

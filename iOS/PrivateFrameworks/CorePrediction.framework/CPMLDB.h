@@ -40,10 +40,10 @@
 }
 
 + (id)getConfigurationFromPlist:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *dbFileName; // @synthesize dbFileName=_dbFileName;
 @property(readonly, nonatomic) struct sqlite3 *db; // @synthesize db;
 @property(readonly) CPMLSchema *cpSchema; // @synthesize cpSchema;
-- (void).cxx_destruct;
 - (id)getDispatchQueue;
 - (void)setDispatchQueue:(id)arg1;
 - (id)getDelegate;

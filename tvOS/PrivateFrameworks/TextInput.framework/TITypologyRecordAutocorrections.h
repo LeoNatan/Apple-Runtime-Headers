@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool listUIDisplayed; // @synthesize listUIDisplayed=_listUIDisplayed;
 @property(retain, nonatomic) TIAutocorrectionList *autocorrections; // @synthesize autocorrections=_autocorrections;
 @property(retain, nonatomic) TICandidateRequestToken *requestToken; // @synthesize requestToken=_requestToken;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
-- (void).cxx_destruct;
 - (void)replaceDocumentState:(id)arg1;
 - (id)shortDescription;
 - (void)removeContextFromKeyboardState;

@@ -13,8 +13,8 @@
     HRSimulatedAtrialFibrillationQuickLookView *_simView;
 }
 
-@property(retain, nonatomic) HRSimulatedAtrialFibrillationQuickLookView *simView; // @synthesize simView=_simView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HRSimulatedAtrialFibrillationQuickLookView *simView; // @synthesize simView=_simView;
 - (void)layoutSubviews;
 - (id)init;
 

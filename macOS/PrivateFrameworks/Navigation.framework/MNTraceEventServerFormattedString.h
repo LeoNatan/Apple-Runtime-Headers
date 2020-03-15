@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     id <GEOServerConditionalString> _alternativeString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <GEOServerConditionalString> alternativeString; // @synthesize alternativeString=_alternativeString;
 @property(readonly, nonatomic) NSArray *formatStyles; // @synthesize formatStyles=_formatStyles;
 @property(readonly, nonatomic) NSArray *separators; // @synthesize separators=_separators;
 @property(readonly, nonatomic) NSArray *formatTokens; // @synthesize formatTokens=_formatTokens;
 @property(readonly, nonatomic) NSArray *formatStrings; // @synthesize formatStrings=_formatStrings;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFormatStrings:(id)arg1 formatTokens:(id)arg2 separators:(id)arg3;

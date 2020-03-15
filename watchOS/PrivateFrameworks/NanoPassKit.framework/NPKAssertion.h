@@ -15,10 +15,10 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_errorWithUnderlyingError:(id)arg1;
 - (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)acquireWithCompletion:(CDUnknownBlockType)arg1;

@@ -18,8 +18,8 @@
     CDUnknownBlockType _messageSendBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType messageSendBlock; // @synthesize messageSendBlock=_messageSendBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType messageSendBlock; // @synthesize messageSendBlock=_messageSendBlock;
 - (void)_lockQueue_processPendingMessages;
 - (_Bool)containsMessageWithIdentifier:(id)arg1;
 - (void)enqueueIdentifier:(id)arg1 message:(id)arg2;

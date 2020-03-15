@@ -22,6 +22,7 @@
 }
 
 + (id)queryTaskProperties;
+- (void).cxx_destruct;
 @property unsigned long long queryAndMoveIteration; // @synthesize queryAndMoveIteration=_queryAndMoveIteration;
 @property(retain) NSSet *sourceCalendarRemoteTodoHrefs; // @synthesize sourceCalendarRemoteTodoHrefs=_sourceCalendarRemoteTodoHrefs;
 @property(retain) NSSet *sourceCalendarRemoteEventHrefs; // @synthesize sourceCalendarRemoteEventHrefs=_sourceCalendarRemoteEventHrefs;
@@ -30,7 +31,6 @@
 @property(retain) CalManagedCalDAVCalendar *sourceCalendar; // @synthesize sourceCalendar=_sourceCalendar;
 @property int state; // @synthesize state=_state;
 @property(retain) CalManagedObjectContext *opManagedObjectContext; // @synthesize opManagedObjectContext=_context;
-- (void).cxx_destruct;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
 - (void)deleteTask:(id)arg1 completedWithError:(id)arg2;
 - (void)multiMoveTaskCompletedWithTaskGroup:(id)arg1 didUseFallback:(BOOL)arg2;

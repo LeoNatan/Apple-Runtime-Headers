@@ -4,53 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PepperUICore/ArouetIDGLView.h>
+#import <PepperUICore/ArouetIDMTLView.h>
 
-@class ArouetLanguageSpec, ArouetRecognitionManager, CHDrawing, UIPointFIFO, UIQuadCurvePointFIFO;
-@protocol ArouetInputDelegate, PUICQuickboardViewControllerDelegate, UITextInput;
+@class ArouetLanguageSpec, ArouetRecognitionManager, CHDrawing, MTLRenderPassDescriptor, UIPointFIFO, UIQuadCurvePointFIFO;
+@protocol ArouetInputDelegate, MTLBuffer, MTLTexture, PUICQuickboardViewControllerDelegate, UITextInput;
 
-@interface ArouetInputView : ArouetIDGLView
+@interface ArouetInputView : ArouetIDMTLView
 {
-    CDStruct_869f9c67 *_particleData;
-    struct {
-        float _field1;
-    } *_pointData;
     double _startTime;
     _Bool _animationDone;
-    unsigned int _mUpdateProg;
-    unsigned int _mInputProg;
+    MTLRenderPassDescriptor *_inputRenderPassDescriptor;
+    MTLRenderPassDescriptor *_updateRenderPassDescriptor;
     // Error parsing type: , name: _mPDim
     // Error parsing type: , name: _mGridDim
     // Error parsing type: , name: _mGridDivisor
-    // Error parsing type: , name: _mActivatedColor
-    float _mAddedPointSize;
-    float _mLineThreshold;
-    float _mLineGlowThreshold;
-    float _mLineMix;
-    float _mRedFadeAmount;
     _Bool _mIsSteppedGrid;
-    unsigned int _mPDisplayBuffer;
-    unsigned int _mPInputBuffer;
-    unsigned int _mFbo;
-    unsigned int _renderedTexture;
-    unsigned int _depth_rb;
-    unsigned int _mInputAttributes;
-    unsigned int _mDisplayAttributes;
+    id <MTLBuffer> _mPDisplayBuffer;
+    id <MTLBuffer> _mPInputBuffer;
+    id <MTLTexture> _renderedTexture;
     int _mNumInputTexels;
     int _mNumParticles;
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _mTouches;
-    // Error parsing type: {?="columns"[4]}, name: _scaleMatrix
-    // Error parsing type: {?="columns"[4]}, name: _translateMatrix
-    // Error parsing type: {?="columns"[4]}, name: _projectionMatrix
-    unsigned int _uPointSize;
-    unsigned int _uTouch;
-    unsigned int _uDenseGrid;
-    unsigned int _uTouchBegan;
-    unsigned int _uTouchIsDown;
-    unsigned int _uGto0;
-    unsigned int _uRtoG;
-    unsigned int _uMove;
-    unsigned int _uMoveCoordX;
+    // Error parsing type: {?="modelViewProjection"{?="columns"[4]}"pointSize""lineThreshold"f"lineGlowThreshold"f"lineMix"f"RFadeAmt"f"touch"[6]"move"f"moveCoordX"f"touchBegan"s"touchIsDown"s"RtoG"s"Gto0"s"denseGrid"s}, name: _inputUniforms
+    // Error parsing type: {?="modelViewProjection"{?="columns"[4]}"activatedColor""addedPointSize"f"brightness"f}, name: _updateUniforms
     _Bool _isDrawing;
     _Bool _lastRecognitionCanBeSuperseded;
     _Bool _textFieldRespondsToShouldChange;
@@ -70,7 +46,8 @@
     double _maxStrokeCoallescingRecognitionDelay;
 }
 
-+ (unsigned int)compileShader:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIQuadCurvePointFIFO *interpolatingFIFO; // @synthesize interpolatingFIFO=_interpolatingFIFO;
 @property(retain, nonatomic) UIPointFIFO *pointFIFO; // @synthesize pointFIFO=_pointFIFO;
 @property(nonatomic) unsigned int pendingRecognitionRequests; // @synthesize pendingRecognitionRequests=_pendingRecognitionRequests;
@@ -88,8 +65,6 @@
 @property(retain, nonatomic) ArouetRecognitionManager *recognitionManager; // @synthesize recognitionManager=_recognitionManager;
 @property(retain, nonatomic) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
 @property(nonatomic) __weak id <ArouetInputDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
@@ -103,13 +78,13 @@
 - (void)enqueuePostCommitRecognitionOperation:(CDUnknownBlockType)arg1;
 - (void)recognizeDrawing;
 - (void)_drawView;
-- (void)updateInput;
+- (void)updateInputWithEncoder:(id)arg1;
 - (void)animateRecognition;
-- (void)tearDownView;
-- (void)deallocGridData;
 - (void)setupViewDrawingSupport;
-- (CDStruct_869f9c67 *)_importParticleDataForDeviceVariant:(int)arg1 gridRenderStyle:(int)arg2;
-- (void)_writeParticleData:(CDStruct_869f9c67 *)arg1 count:(int)arg2 deviceVariant:(int)arg3 gridRenderStyle:(int)arg4;
+- (void)setMetalDevice:(id)arg1 queue:(id)arg2 updatePipeline:(id)arg3 inputPipeline:(id)arg4;
+- (_Bool)_isSteppedGridForGridRenderStyle:(int)arg1;
+-     // Error parsing type: 12@0:4i8, name: _gridDiviserForGridRenderStyle:
+-     // Error parsing type: ^{?=  f}16@0:4i8i12, name: _importParticleDataForDeviceVariant:gridRenderStyle:
 - (id)_particleDataFileNameForDeviceVariant:(int)arg1 gridRenderStyle:(int)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 prewarmer:(id)arg2;

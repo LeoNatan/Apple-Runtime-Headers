@@ -17,8 +17,8 @@
     UITapGestureRecognizer *_tapRecognizer;
 }
 
-@property(nonatomic) __weak UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)commitChanges:(_Bool)arg1 duration:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)stageNewImage:(id)arg1;

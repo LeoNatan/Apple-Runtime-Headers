@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
-- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithMessage:(id)arg1;

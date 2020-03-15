@@ -26,6 +26,7 @@
 }
 
 + (BOOL)canMostRecentClientsGenerateThumbnailsForUTI:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(retain) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(retain) id <QLThumbnailGenerationRequest><NSXPCProxyCreating> thumbnailRequest; // @synthesize thumbnailRequest=_thumbnailRequest;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isExecuting) BOOL executing; // @synthesize executing=_executing;
 @property(nonatomic, getter=isFinished) BOOL finished; // @synthesize finished=_finished;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 @property(readonly) BOOL thumbnailWasAutomaticallyGenerated;
 @property(readonly) GSAddition *genStoreAddition;
 @property(readonly) NSData *serializedQuickLookMetadataDictionary;

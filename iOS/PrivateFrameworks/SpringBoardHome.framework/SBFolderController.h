@@ -62,6 +62,7 @@
 + (Class)listViewClass;
 + (Class)_contentViewClass;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBIconListPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) SBFolderControllerAnimationContext *animationContext; // @synthesize animationContext=_animationContext;
 @property(copy, nonatomic) SBFolderControllerConfiguration *configuration; // @synthesize configuration=_configuration;
@@ -88,7 +89,6 @@
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_isAnimating;
 @property(readonly, nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_isEditing;
 @property(nonatomic, getter=isOpen) _Bool open; // @synthesize open=_isOpen;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

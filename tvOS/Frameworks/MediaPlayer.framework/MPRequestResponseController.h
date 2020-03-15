@@ -28,10 +28,10 @@
     NSObject<OS_dispatch_queue> *_calloutQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <MPRequestResponseControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_onQueue_reloadIfNeeded;
 - (void)_onQueue_scheduleRetryAfterInterval:(double)arg1;
 - (void)_responseDidInvalidate:(id)arg1;

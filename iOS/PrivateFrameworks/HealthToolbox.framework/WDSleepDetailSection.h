@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)sectionWithHeaderText:(id)arg1 attributedDetailText:(id)arg2;
 + (id)sectionWithHeaderText:(id)arg1 detailText:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSAttributedString *attributedDetailText; // @synthesize attributedDetailText=_attributedDetailText;
 @property(readonly, copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (id)initWithHeaderText:(id)arg1 attributedDetailText:(id)arg2;
 - (id)init;
 

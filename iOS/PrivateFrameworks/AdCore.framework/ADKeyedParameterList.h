@@ -18,9 +18,9 @@
 
 + (Class)parameterListType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *parameterLists; // @synthesize parameterLists=_parameterLists;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

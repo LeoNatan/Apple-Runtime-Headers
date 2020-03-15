@@ -22,11 +22,11 @@
 + (Class)cdmaNeighborsType;
 + (Class)scdmaNeighborsType;
 + (Class)gsmNeighborsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *lteNeighbors; // @synthesize lteNeighbors=_lteNeighbors;
 @property(retain, nonatomic) NSMutableArray *cdmaNeighbors; // @synthesize cdmaNeighbors=_cdmaNeighbors;
 @property(retain, nonatomic) NSMutableArray *scdmaNeighbors; // @synthesize scdmaNeighbors=_scdmaNeighbors;
 @property(retain, nonatomic) NSMutableArray *gsmNeighbors; // @synthesize gsmNeighbors=_gsmNeighbors;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

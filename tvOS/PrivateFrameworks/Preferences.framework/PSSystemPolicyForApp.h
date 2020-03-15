@@ -17,8 +17,8 @@
 }
 
 + (_Bool)isServiceRestricted:(id)arg1;
-@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (id)preferredLanguage:(id)arg1;
 - (id)preferredLanguageSpecifier;
 - (id)documentsSpecifier;

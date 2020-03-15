@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     _UINavigationBarTransitionAssistant *_transitionAssistant;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UINavigationBarTransitionAssistant *transitionAssistant; // @synthesize transitionAssistant=_transitionAssistant;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) __weak id <_UINavigationItemChangeObserver> changeObserver; // @synthesize changeObserver=_changeObserver;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)effectiveDisplayModeForItemInPreviousStack:(id)arg1;
 - (long long)effectiveDisplayModeForItemInCurrentStack:(id)arg1;

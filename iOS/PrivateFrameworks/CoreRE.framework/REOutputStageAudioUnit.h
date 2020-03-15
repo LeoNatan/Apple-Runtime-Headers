@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     AUAudioUnitBusArray *_inputBusArray;
     AUAudioUnitBus *_outputBus;
     AUAudioUnitBusArray *_outputBusArray;
-    // Error parsing type: {atomic<int>="__a_"Ai}, name: _clipCount
+    // Error parsing type: {atomic<int>="__a_"{__cxx_atomic_impl<int, std::__1::__cxx_atomic_base_impl<int> >="__a_value"Ai}}, name: _clipCount
 }
 
 - (void).cxx_destruct;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_stack;
 }
 
-@property(retain) NSArray *stack; // @synthesize stack=_stack;
 - (void).cxx_destruct;
+@property(retain) NSArray *stack; // @synthesize stack=_stack;
 - (void)iterateFrames:(CDUnknownBlockType)arg1;
 - (void)exposeUserFramesOnly;
 - (void)exposeKernelFramesOnly;

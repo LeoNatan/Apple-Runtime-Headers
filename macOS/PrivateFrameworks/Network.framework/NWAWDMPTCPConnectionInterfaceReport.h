@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL postConnectTcpFallbackCount; // @synthesize postConnectTcpFallbackCount=_postConnectTcpFallbackCount;
 @property(nonatomic) int secondaryFlowFailureCount; // @synthesize secondaryFlowFailureCount=_secondaryFlowFailureCount;
 @property(nonatomic) int secondaryFlowSuccessCount; // @synthesize secondaryFlowSuccessCount=_secondaryFlowSuccessCount;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long dataInKB; // @synthesize dataInKB=_dataInKB;
 @property(retain, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

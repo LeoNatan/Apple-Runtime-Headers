@@ -20,11 +20,11 @@
 
 + (id)responseWithResultsByBSSID:(id)arg1;
 + (id)responseWithResults:(id)arg1 entityDescription:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *resultsByBSSID; // @synthesize resultsByBSSID=_resultsByBSSID;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) NSSet *tiles; // @synthesize tiles=_tiles;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error;
-- (void).cxx_destruct;
 - (id)initWithResults:(id)arg1 entityDescription:(id)arg2;
 - (id)initWithResultsByBSSID:(id)arg1;
 

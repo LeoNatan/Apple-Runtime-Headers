@@ -18,9 +18,9 @@
     SBWallpaperController *_wallpaperController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBWallpaperController *wallpaperController; // @synthesize wallpaperController=_wallpaperController;
 @property(nonatomic) __weak id <CSLegibilityProviderDelegate> legibilityProviderDelegate; // @synthesize legibilityProviderDelegate=_legibilityProviderDelegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegate;
 - (id)_wallpaperLegibilitySettings;
 - (void)wallpaperDidChangeForVariant:(long long)arg1;

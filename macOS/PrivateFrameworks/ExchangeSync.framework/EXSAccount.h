@@ -14,9 +14,9 @@
     ACAccount *_acAccount;
 }
 
+- (void).cxx_destruct;
 @property(retain) ACAccount *acAccount; // @synthesize acAccount=_acAccount;
 @property(retain) EXSAccountMetadata *accountMetadata; // @synthesize accountMetadata=_accountMetadata;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)compareACAccount:(id)arg1 withACAccount:(id)arg2 forKey:(id)arg3;
 - (id)externalHostURL;

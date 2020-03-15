@@ -15,8 +15,8 @@
 }
 
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
-@property(copy) NSSortDescriptor *codingSortDescriptor; // @synthesize codingSortDescriptor=_codingSortDescriptor;
 - (void).cxx_destruct;
+@property(copy) NSSortDescriptor *codingSortDescriptor; // @synthesize codingSortDescriptor=_codingSortDescriptor;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

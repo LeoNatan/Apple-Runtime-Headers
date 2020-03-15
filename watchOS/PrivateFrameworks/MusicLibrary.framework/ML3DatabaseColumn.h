@@ -17,11 +17,11 @@
 }
 
 + (id)columnWithName:(id)arg1 datatype:(unsigned int)arg2 constraints:(unsigned int)arg3 defaultValue:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(readonly, nonatomic) unsigned int columnConstraints; // @synthesize columnConstraints=_columnConstraints;
 @property(readonly, nonatomic) unsigned int datatype; // @synthesize datatype=_datatype;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)_columnDefinitionSQL;
 - (id)description;
 - (id)initWithName:(id)arg1 datatype:(unsigned int)arg2 constraints:(unsigned int)arg3 defaultValue:(id)arg4;

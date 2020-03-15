@@ -13,8 +13,8 @@
     REUIInternalSettings *_settings;
 }
 
-@property(retain, nonatomic) REUIInternalSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REUIInternalSettings *settings; // @synthesize settings=_settings;
 
 @end
 

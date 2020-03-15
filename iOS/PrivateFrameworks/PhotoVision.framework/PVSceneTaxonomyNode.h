@@ -22,6 +22,7 @@
 }
 
 + (id)localizedStringForKey:(id)arg1 localizationBundle:(id)arg2 tableName:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *childNodes; // @synthesize childNodes=_childNodes;
 @property(retain) NSMutableSet *parentNodes; // @synthesize parentNodes=_parentNodes;
 @property(readonly) double highPrecisionThreshold; // @synthesize highPrecisionThreshold=_highPrecisionThreshold;
@@ -31,7 +32,6 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) unsigned int sceneClassId; // @synthesize sceneClassId=_sceneClassId;
 @property(readonly) PVSceneTaxonomy *taxonomy; // @synthesize taxonomy=_taxonomy;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

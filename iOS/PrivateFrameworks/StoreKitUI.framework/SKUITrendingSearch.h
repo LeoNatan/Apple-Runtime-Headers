@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_URLString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *URLString; // @synthesize URLString=_URLString;
 @property(retain, nonatomic) NSString *term; // @synthesize term=_term;
-- (void).cxx_destruct;
 
 @end
 

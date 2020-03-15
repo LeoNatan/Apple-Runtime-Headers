@@ -17,8 +17,8 @@
     NSArray *_collectedSessions;
 }
 
-@property(readonly) NSArray *collectedSessions; // @synthesize collectedSessions=_collectedSessions;
 - (void).cxx_destruct;
+@property(readonly) NSArray *collectedSessions; // @synthesize collectedSessions=_collectedSessions;
 - (void)clearCollectedSessions;
 - (void)setSourceRecoverer:(CDUnknownBlockType)arg1;
 - (void)updateLastTrainingFeaturizationForModel:(id)arg1 andData:(id)arg2;

@@ -17,11 +17,11 @@
     SVPlaybackTransitionContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SVPlaybackTransitionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) id <SVInteractivePlaybackTransitioning> transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
 @property(readonly, nonatomic) id <SVVideo> toVideo; // @synthesize toVideo=_toVideo;
 @property(readonly, nonatomic) id <SVVideo> fromVideo; // @synthesize fromVideo=_fromVideo;
-- (void).cxx_destruct;
 - (void)performTransitionWithVisibilityMonitor:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)cancel;
 - (id)initWithFromVideo:(id)arg1 toVideo:(id)arg2 transitionCoordinator:(id)arg3;

@@ -19,9 +19,9 @@
     id <CSLAlertEngineDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CUISAlertPolicy *policy; // @synthesize policy=_policy;
 @property(nonatomic) __weak id <CSLAlertEngineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setItems:(id)arg1;
 - (void)_setCurrentAlertStack:(id)arg1;
 - (id)currentAlertStack;

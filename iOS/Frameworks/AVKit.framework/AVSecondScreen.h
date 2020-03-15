@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     CADisplay *_debugInfoDisplay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CADisplay *debugInfoDisplay; // @synthesize debugInfoDisplay=_debugInfoDisplay;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) AVSecondScreenConnection *secondScreenConnection; // @synthesize secondScreenConnection=_secondScreenConnection;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(readonly, nonatomic, getter=isTVOutScreen) _Bool TVOutScreen; // @synthesize TVOutScreen=_TVOutScreen;
-- (void).cxx_destruct;
 - (_Bool)_isWindowSceneAvailable;
 - (void)_updatePreferredDisplayCriteria;
 @property(readonly, nonatomic) struct CGRect sceneBounds;

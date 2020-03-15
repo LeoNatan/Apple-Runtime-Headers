@@ -17,8 +17,8 @@
     _Bool _shouldShowIndicatorView;
 }
 
-@property(nonatomic) _Bool shouldShowIndicatorView; // @synthesize shouldShowIndicatorView=_shouldShowIndicatorView;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldShowIndicatorView; // @synthesize shouldShowIndicatorView=_shouldShowIndicatorView;
 - (void)_updateSubviews;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;
 @property(readonly, nonatomic) UIView *view;

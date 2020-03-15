@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)sizeWithPasswordSuggestion:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *passwordSuggestionLabel; // @synthesize passwordSuggestionLabel=_passwordSuggestionLabel;
 @property(copy, nonatomic) NSString *passwordSuggestion; // @synthesize passwordSuggestion=_passwordSuggestion;
-- (void).cxx_destruct;
 - (void)awakeFromNib;
 
 @end

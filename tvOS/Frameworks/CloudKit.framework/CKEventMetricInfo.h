@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *associatedOperationGroups; // @synthesize associatedOperationGroups=_associatedOperationGroups;
 @property(readonly, nonatomic) NSMutableDictionary *associatedOperations; // @synthesize associatedOperations=_associatedOperations;
 @property(readonly, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isPushTriggerFired; // @synthesize isPushTriggerFired=_isPushTriggerFired;
 @property(readonly, nonatomic) _Bool isCKInternalMetric; // @synthesize isCKInternalMetric=_isCKInternalMetric;
 @property(readonly, nonatomic) NSUUID *metricUUID; // @synthesize metricUUID=_metricUUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithEventMetric:(id)arg1;

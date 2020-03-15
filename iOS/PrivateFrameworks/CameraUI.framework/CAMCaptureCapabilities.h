@@ -66,6 +66,8 @@
     _Bool _useCTMTransientImageWell;
     _Bool _useCTMModeSelector;
     _Bool _allowControlDrawer;
+    _Bool _sfCameraFontSupported;
+    _Bool _overContentFlipButtonSupported;
     _Bool _backSpatialOverCaptureSupported;
     _Bool _frontSpatialOverCaptureSupported;
     _Bool _backLowLightSupported;
@@ -75,6 +77,8 @@
     _Bool _backTorchPatternSupported;
     _Bool _frontTorchPatternSupported;
     _Bool _pipelinedStillImageProcessingSupported;
+    _Bool _deepFusionSupported;
+    _Bool _deferredProcessingSupported;
     _Bool _hasSystemTelephonyOfAnyKind;
     _Bool _forceTouchSupported;
     _Bool _splitScreenSupported;
@@ -98,6 +102,8 @@
     _Bool _lowEndHardware;
     _Bool _allowHaptics;
     _Bool _allowHapticsOnConfigurationTaps;
+    _Bool __backStageLightPortaitEffectsSupported;
+    _Bool __frontStageLightPortaitEffectsSupported;
     _Bool _topBarInvertedForModernPhone;
     _Bool __forceAllowTripleCamera;
     _Bool _hasFilteringEntitlement;
@@ -111,6 +117,7 @@
     long long _front720pMaxFPS;
     long long _back1080pMaxFPS;
     long long _front1080pMaxFPS;
+    long long _zoomDialStyle;
     long long _hostProcess;
     double __backPhotoModeMaximumZoomFactor;
     double __frontPhotoModeMaximumZoomFactor;
@@ -141,6 +148,8 @@
 @property(readonly, nonatomic) _Bool _forceAllowTripleCamera; // @synthesize _forceAllowTripleCamera=__forceAllowTripleCamera;
 @property(readonly, nonatomic) long long _forcedBackCamera; // @synthesize _forcedBackCamera=__forcedBackCamera;
 @property(readonly, nonatomic, getter=isTopBarInvertedForModernPhone) _Bool topBarInvertedForModernPhone; // @synthesize topBarInvertedForModernPhone=_topBarInvertedForModernPhone;
+@property(readonly, nonatomic) _Bool _frontStageLightPortaitEffectsSupported; // @synthesize _frontStageLightPortaitEffectsSupported=__frontStageLightPortaitEffectsSupported;
+@property(readonly, nonatomic) _Bool _backStageLightPortaitEffectsSupported; // @synthesize _backStageLightPortaitEffectsSupported=__backStageLightPortaitEffectsSupported;
 @property(readonly, nonatomic) double _frontCaptureInterval; // @synthesize _frontCaptureInterval=__frontCaptureInterval;
 @property(readonly, nonatomic) double _backCaptureInterval; // @synthesize _backCaptureInterval=__backCaptureInterval;
 @property(readonly, nonatomic) double _frontWideDualCameraSwitchOverZoomFactor; // @synthesize _frontWideDualCameraSwitchOverZoomFactor=__frontWideDualCameraSwitchOverZoomFactor;
@@ -183,7 +192,10 @@
 @property(readonly, nonatomic, getter=isSplitScreenSupported) _Bool splitScreenSupported; // @synthesize splitScreenSupported=_splitScreenSupported;
 @property(readonly, nonatomic, getter=isForceTouchSupported) _Bool forceTouchSupported; // @synthesize forceTouchSupported=_forceTouchSupported;
 @property(readonly, nonatomic) _Bool hasSystemTelephonyOfAnyKind; // @synthesize hasSystemTelephonyOfAnyKind=_hasSystemTelephonyOfAnyKind;
+@property(readonly, nonatomic, getter=isDeferredProcessingSupported) _Bool deferredProcessingSupported; // @synthesize deferredProcessingSupported=_deferredProcessingSupported;
+@property(readonly, nonatomic, getter=isDeepFusionSupported) _Bool deepFusionSupported; // @synthesize deepFusionSupported=_deepFusionSupported;
 @property(readonly, nonatomic, getter=isPipelinedStillImageProcessingSupported) _Bool pipelinedStillImageProcessingSupported; // @synthesize pipelinedStillImageProcessingSupported=_pipelinedStillImageProcessingSupported;
+@property(readonly, nonatomic) long long zoomDialStyle; // @synthesize zoomDialStyle=_zoomDialStyle;
 @property(readonly, nonatomic, getter=isFrontTorchPatternSupported) _Bool frontTorchPatternSupported; // @synthesize frontTorchPatternSupported=_frontTorchPatternSupported;
 @property(readonly, nonatomic, getter=isBackTorchPatternSupported) _Bool backTorchPatternSupported; // @synthesize backTorchPatternSupported=_backTorchPatternSupported;
 @property(readonly, nonatomic, getter=isFrontSingleCameraPortraitModeSupported) _Bool frontSingleCameraPortraitModeSupported; // @synthesize frontSingleCameraPortraitModeSupported=_frontSingleCameraPortraitModeSupported;
@@ -192,6 +204,8 @@
 @property(readonly, nonatomic, getter=isBackLowLightSupported) _Bool backLowLightSupported; // @synthesize backLowLightSupported=_backLowLightSupported;
 @property(readonly, nonatomic, getter=isFrontSpatialOverCaptureSupported) _Bool frontSpatialOverCaptureSupported; // @synthesize frontSpatialOverCaptureSupported=_frontSpatialOverCaptureSupported;
 @property(readonly, nonatomic, getter=isBackSpatialOverCaptureSupported) _Bool backSpatialOverCaptureSupported; // @synthesize backSpatialOverCaptureSupported=_backSpatialOverCaptureSupported;
+@property(readonly, nonatomic) _Bool overContentFlipButtonSupported; // @synthesize overContentFlipButtonSupported=_overContentFlipButtonSupported;
+@property(readonly, nonatomic) _Bool sfCameraFontSupported; // @synthesize sfCameraFontSupported=_sfCameraFontSupported;
 @property(readonly, nonatomic) _Bool allowControlDrawer; // @synthesize allowControlDrawer=_allowControlDrawer;
 @property(readonly, nonatomic) _Bool useCTMModeSelector; // @synthesize useCTMModeSelector=_useCTMModeSelector;
 @property(readonly, nonatomic) _Bool useCTMTransientImageWell; // @synthesize useCTMTransientImageWell=_useCTMTransientImageWell;
@@ -259,6 +273,7 @@
 @property(readonly, nonatomic, getter=isBackCameraSupported) _Bool backCameraSupported; // @synthesize backCameraSupported=_backCameraSupported;
 - (long long)resolvedDeviceForDesiredDevice:(long long)arg1 mode:(long long)arg2 videoConfiguration:(long long)arg3;
 - (long long)preferredDeviceForPosition:(long long)arg1 mode:(long long)arg2 videoConfiguration:(long long)arg3;
+@property(readonly, nonatomic) _Bool zoomControlSupported;
 - (double)defaultZoomFactorForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3 captureOrientation:(long long)arg4;
 - (double)maximumZoomFactorForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
 - (_Bool)isZoomAllowedForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
@@ -306,7 +321,9 @@
 - (_Bool)_isSpatialOverCaptureSupportedForMode:(long long)arg1;
 - (_Bool)isSpatialOverCaptureSupportedForDevice:(long long)arg1;
 @property(readonly, nonatomic, getter=isSpatialOverCaptureSupported) _Bool spatialOverCaptureSupported;
+- (_Bool)isCTMVideoCaptureSupportedForMode:(long long)arg1;
 - (_Bool)isAspectRatioCropSupportedForMode:(long long)arg1;
+@property(readonly, nonatomic, getter=isAspectRatioCropSupported) _Bool aspectRatioCropSupported;
 - (_Bool)isPortraitModeSupportedForDevice:(long long)arg1;
 - (_Bool)isPortraitModeSupportedForDevicePosition:(long long)arg1;
 @property(readonly, nonatomic, getter=isPortraitModeSupported) _Bool portraitModeSupported;

@@ -14,9 +14,9 @@
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 
 @end
 

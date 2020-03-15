@@ -15,9 +15,9 @@
 }
 
 + (id)operationWithVerificationRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(readonly, copy, nonatomic) ICUserVerificationRequest *verificationRequest; // @synthesize verificationRequest=_verificationRequest;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

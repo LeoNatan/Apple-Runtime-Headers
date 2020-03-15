@@ -14,12 +14,15 @@
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordDisplayItemProvider : NSObject <WDMedicalRecordDaySummaryDelegate>
 {
+    _Bool _shouldCancelDataCollection;
     long long _displayItemOptions;
     NSDictionary *_additionalPredicates;
     NSPredicate *_filter;
     CDUnknownBlockType _errorHandler;
+    long long _numOfRemovedRecords;
     HRProfile *_profile;
     HKConcept *_concept;
+    NSArray *_preloadedRecords;
     NSMutableArray *_medicalRecordGroups;
     NSMutableArray *_dateLessGroups;
     NSArray *_pendingMedicalRecordGroups;
@@ -39,6 +42,8 @@ __attribute__((visibility("hidden")))
 + (id)allSupportedRecordCategoryTypes;
 + (id)supportedRecordCategoriesByCategoryType;
 + (id)allSupportedRecordCategories;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool shouldCancelDataCollection; // @synthesize shouldCancelDataCollection=_shouldCancelDataCollection;
 @property(retain, nonatomic) HKMultiTypeSampleIterator *iterator; // @synthesize iterator=_iterator;
 @property(retain, nonatomic) WDMedicalRecordPagingContext *pagingContext; // @synthesize pagingContext=_pagingContext;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataQueryQueue; // @synthesize dataQueryQueue=_dataQueryQueue;
@@ -51,16 +56,17 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *pendingMedicalRecordGroups; // @synthesize pendingMedicalRecordGroups=_pendingMedicalRecordGroups;
 @property(retain, nonatomic) NSMutableArray *dateLessGroups; // @synthesize dateLessGroups=_dateLessGroups;
 @property(retain, nonatomic) NSMutableArray *medicalRecordGroups; // @synthesize medicalRecordGroups=_medicalRecordGroups;
+@property(copy, nonatomic) NSArray *preloadedRecords; // @synthesize preloadedRecords=_preloadedRecords;
 @property(retain, nonatomic) HKConcept *concept; // @synthesize concept=_concept;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
+@property(nonatomic) long long numOfRemovedRecords; // @synthesize numOfRemovedRecords=_numOfRemovedRecords;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSPredicate *filter; // @synthesize filter=_filter;
 @property(readonly, copy, nonatomic) NSDictionary *additionalPredicates; // @synthesize additionalPredicates=_additionalPredicates;
 @property(nonatomic) long long displayItemOptions; // @synthesize displayItemOptions=_displayItemOptions;
-- (void).cxx_destruct;
 - (void)daySummaryHasDisplayItemUpdate:(id)arg1;
 - (id)_sortedDisplayItemGroupWithDateDisplay:(id)arg1 sourceDaySummaryMapping:(id)arg2;
-- (void)_displayItemGroupsForSummaryOfRecords:(id)arg1 style:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_displayItemGroupsForSummaryOfRecords:(id)arg1 displayRemovedRecords:(_Bool)arg2 style:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_processAccumulatedRecordsForPage:(id)arg1;
 - (void)_queue_queryForNextBatchOfData;
 - (void)_commitPendingGroupsAndCallUpdateHandlerBypassGroupChangeDetermination:(_Bool)arg1;
@@ -68,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)_queue_synthesizedPredicatesForMedicalType:(id)arg1;
 - (void)_queue_resetPagingInformation;
 - (void)_queue_setupIterator;
+- (id)removedRecords;
 - (id)subtitleForGroupAtIndex:(long long)arg1;
 - (id)titleForGroupAtIndex:(long long)arg1;
 - (id)indexPathForRecordId:(id)arg1;
@@ -80,7 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)setSampleTypes:(id)arg1 predicatesPerType:(id)arg2 accountsPredicate:(id)arg3;
 - (void)reload;
 - (id)initWithProfile:(id)arg1 displayItemOptions:(long long)arg2 sampleTypes:(id)arg3 filter:(id)arg4 additionalPredicates:(id)arg5 sortDescriptors:(id)arg6;
-- (id)initWithProfile:(id)arg1 concept:(id)arg2 displayItemOptions:(long long)arg3 sampleTypes:(id)arg4 filter:(id)arg5 additionalPredicates:(id)arg6 sortDescriptors:(id)arg7;
+- (id)initWithProfile:(id)arg1 concept:(id)arg2 preloadedRecords:(id)arg3 displayItemOptions:(long long)arg4 sampleTypes:(id)arg5 filter:(id)arg6 additionalPredicates:(id)arg7 sortDescriptors:(id)arg8;
 
 @end
 

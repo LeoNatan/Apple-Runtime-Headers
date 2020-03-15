@@ -13,8 +13,8 @@
     SXComponentView *_componentView;
 }
 
-@property(readonly, nonatomic) __weak SXComponentView *componentView; // @synthesize componentView=_componentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak SXComponentView *componentView; // @synthesize componentView=_componentView;
 - (id)cropImage:(id)arg1 withRect:(struct CGRect)arg2;
 - (double)dashLengthForWidth:(double)arg1 andStyle:(int)arg2;
 - (id)imageFromContext:(struct CGContext *)arg1;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     long long _widgetMode;
 }
 
-@property(nonatomic) long long widgetMode; // @synthesize widgetMode=_widgetMode;
 - (void).cxx_destruct;
+@property(nonatomic) long long widgetMode; // @synthesize widgetMode=_widgetMode;
 - (void)_stopEditMode;
 - (BOOL)_startEditMode;
 @property(readonly, nonatomic) NSViewController<NCWidgetProviding> *_clientController;

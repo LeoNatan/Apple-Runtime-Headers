@@ -17,10 +17,10 @@
     SPProtoAudioFileQueuePlayer *_queuePlayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoAudioFileQueuePlayer *queuePlayer; // @synthesize queuePlayer=_queuePlayer;
 @property(retain, nonatomic) SPProtoAudioFilePlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 @property(retain, nonatomic) SPProtoAudioFilePlayerAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

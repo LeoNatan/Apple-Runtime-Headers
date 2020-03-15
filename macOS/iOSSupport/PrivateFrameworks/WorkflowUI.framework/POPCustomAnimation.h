@@ -14,10 +14,10 @@
 }
 
 + (id)animationWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType animate; // @synthesize animate=_animate;
 @property(readonly, nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(readonly, nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
-- (void).cxx_destruct;
 - (void)_appendDescription:(id)arg1 debug:(BOOL)arg2;
 - (BOOL)_advance:(id)arg1 currentTime:(double)arg2 elapsedTime:(double)arg3;
 - (double)beginTime;

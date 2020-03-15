@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIImage *_thumbnailImage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(nonatomic) _Bool useImageCopy; // @synthesize useImageCopy=_useImageCopy;
 @property(nonatomic) _Bool isMySelf; // @synthesize isMySelf=_isMySelf;
 @property(nonatomic) _Bool isAttributed; // @synthesize isAttributed=_isAttributed;
 @property(retain, nonatomic) NSString *attributedName; // @synthesize attributedName=_attributedName;
-- (void).cxx_destruct;
 - (id)initWithAuthor:(id)arg1;
 
 @end

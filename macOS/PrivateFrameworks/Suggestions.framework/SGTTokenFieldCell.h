@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SGTSearchFieldCell *_searchFieldCell;
 }
 
-@property __weak SGTSearchFieldCell *searchFieldCell; // @synthesize searchFieldCell=_searchFieldCell;
 - (void).cxx_destruct;
+@property __weak SGTSearchFieldCell *searchFieldCell; // @synthesize searchFieldCell=_searchFieldCell;
 - (BOOL)tokenAttachment:(id)arg1 doubleClickedInRect:(struct CGRect)arg2 ofView:(id)arg3 atCharacterIndex:(unsigned long long)arg4;
 - (BOOL)tokenTextView:(id)arg1 writeSelectionToPasteboard:(id)arg2 type:(id)arg3;
 - (id)_stringForRepresentedObjects:(id)arg1;

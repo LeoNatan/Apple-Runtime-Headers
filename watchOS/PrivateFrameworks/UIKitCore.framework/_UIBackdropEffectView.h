@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) float zoom; // @synthesize zoom=_zoom;
 @property(retain, nonatomic) CABackdropLayer *backdropLayer; // @synthesize backdropLayer=_backdropLayer;
-- (void).cxx_destruct;
 - (void)setContentScaleFactor:(float)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;

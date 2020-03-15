@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *_variableDelegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *variableDelegate; // @synthesize variableDelegate=_variableDelegate;
 @property(readonly, nonatomic) double value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSISVariable *variable; // @synthesize variable=_variable;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithVariable:(id)arg1 inLayoutEngine:(id)arg2;
 

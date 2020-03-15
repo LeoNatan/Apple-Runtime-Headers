@@ -14,9 +14,9 @@
     NSArray *_fillMatches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *fillMatches; // @synthesize fillMatches=_fillMatches;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *property;
 @property(readonly, nonatomic) NSString *valueString;
 - (id)addressStringForLabel:(id)arg1;

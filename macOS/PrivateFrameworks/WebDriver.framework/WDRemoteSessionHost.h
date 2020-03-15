@@ -32,13 +32,14 @@
 + (id)hostForDevice:(id)arg1;
 + (id)hostForSimulator:(id)arg1;
 + (id)hostForMachine:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SimDevice *hostSimulator; // @synthesize hostSimulator=_hostSimulator;
 @property(readonly, nonatomic) RWITarget *hostTarget; // @synthesize hostTarget=_hostTarget;
-- (void).cxx_destruct;
 - (void)_bootstrapFailedWithError:(id)arg1;
 - (void)_bootstrapEncounteredTimeout:(id)arg1;
 - (void)_remoteSessionWasTerminated;
 - (void)_matchingDrivableDidBecomePaired;
+- (id)_automationProtocolURL;
 - (void)_startPairingWithDrivable:(id)arg1;
 - (void)_createDrivableForApplicationIfNeeded;
 - (void)drivableDidChange:(id)arg1;
@@ -50,6 +51,8 @@
 - (BOOL)_bootstrapWithApplicationIfMatching:(id)arg1;
 - (void)_waitForApplicationWithIdentifier:(id)arg1;
 - (void)_bootSimulatorIfNeeded;
+- (void)_bootSimulatorInstanceIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_bootSimulatorAppIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_transitionStateTo:(long long)arg1;
 - (void)_clearBootstrapTimeout;
 - (void)_startBootstrapTimeoutForAsyncOperation:(id)arg1;

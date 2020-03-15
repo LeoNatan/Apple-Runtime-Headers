@@ -15,9 +15,9 @@
     NSDictionary *_labelChangesByServerMessages;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *labelChangesByServerMessages; // @synthesize labelChangesByServerMessages=_labelChangesByServerMessages;
 @property(readonly, nonatomic) __weak id <IMAPPersistLabelChangesOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithDataSource:(id)arg1;

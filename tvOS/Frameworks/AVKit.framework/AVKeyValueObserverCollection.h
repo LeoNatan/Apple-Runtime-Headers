@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id _rootObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id rootObject; // @synthesize rootObject=_rootObject;
 @property(readonly) NSMutableDictionary *keyObserverMap; // @synthesize keyObserverMap=_keyObserverMap;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)bindKeyPath:(id)arg1 toBoolKeyPath:(id)arg2;
 - (void)bindKeyPath:(id)arg1 toKeyPath:(id)arg2;

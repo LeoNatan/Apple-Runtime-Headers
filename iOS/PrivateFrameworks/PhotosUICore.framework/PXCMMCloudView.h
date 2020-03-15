@@ -25,6 +25,7 @@
     unsigned long long _style;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) UIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(readonly, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) PXGradientView *graphicGradientView; // @synthesize graphicGradientView=_graphicGradientView;
 @property(readonly, nonatomic) UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(nonatomic) __weak id <PXCMMCloudViewViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didTapDismissButton:(id)arg1;
 - (void)_learnMoreTapped:(id)arg1;
 - (struct CGSize)_performLayoutInRect:(struct CGRect)arg1 updateSubviewFrames:(_Bool)arg2;

@@ -48,6 +48,7 @@
 + (id)eventWithType:(unsigned long long)arg1 buttonType:(unsigned long long)arg2 coordinate:(struct CGPoint)arg3 offset:(double)arg4 duration:(double)arg5 clickCount:(unsigned long long)arg6;
 + (id)eventWithType:(unsigned long long)arg1 buttonType:(unsigned long long)arg2 coordinate:(struct CGPoint)arg3 offset:(double)arg4 clickCount:(unsigned long long)arg5;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long deviceID; // @synthesize deviceID=_deviceID;
 @property unsigned long long gesturePhase; // @synthesize gesturePhase=_gesturePhase;
 @property unsigned long long keyPhase; // @synthesize keyPhase=_keyPhase;
@@ -68,8 +69,9 @@
 @property struct CGPoint coordinate; // @synthesize coordinate=_coordinate;
 @property unsigned long long buttonType; // @synthesize buttonType=_buttonType;
 @property unsigned long long eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

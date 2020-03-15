@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     WFTextFieldTableItem *_commentItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFTextFieldTableItem *commentItem; // @synthesize commentItem=_commentItem;
 @property(retain, nonatomic) NSNumber *currentKeySize; // @synthesize currentKeySize=_currentKeySize;
 @property(nonatomic) Class currentFormat; // @synthesize currentFormat=_currentFormat;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) WFTableSection *keyTypeSection; // @synthesize keyTypeSection=_keyTypeSection;
 @property(readonly, nonatomic) WFTableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <WFSSHKeyGenerationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateVisibleItems;
 - (void)generateKeyPairAndFinish;
 - (void)keySizeDidChange:(id)arg1;

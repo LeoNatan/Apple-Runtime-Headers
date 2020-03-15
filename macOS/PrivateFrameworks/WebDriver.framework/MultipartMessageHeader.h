@@ -15,9 +15,9 @@
     NSString *contentDispositionName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int encoding; // @synthesize encoding;
 @property(readonly) NSDictionary *fields; // @synthesize fields;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithData:(id)arg1 formEncoding:(unsigned long long)arg2;
 

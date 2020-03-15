@@ -18,11 +18,11 @@
 
 + (id)alloc;
 + (Class)__class;
+- (void).cxx_destruct;
 @property int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(copy, nonatomic) CDUnknownBlockType modifyRecordZonesCompletionBlock; // @synthesize modifyRecordZonesCompletionBlock=_modifyRecordZonesCompletionBlock;
 @property(copy, nonatomic) NSArray *recordZoneIDsToDelete; // @synthesize recordZoneIDsToDelete=_recordZoneIDsToDelete;
 @property(copy, nonatomic) NSArray *recordZonesToSave; // @synthesize recordZonesToSave=_recordZonesToSave;
-- (void).cxx_destruct;
 
 @end
 

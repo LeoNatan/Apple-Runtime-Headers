@@ -28,6 +28,7 @@
     _Bool _shouldReturnTimingData;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSURLRequest *request; // @synthesize request=_request;
 @property _Bool shouldReturnTimingData; // @synthesize shouldReturnTimingData=_shouldReturnTimingData;
@@ -39,7 +40,6 @@
 @property _Bool requireIDSHost; // @synthesize requireIDSHost=_requireIDSHost;
 @property(retain) NSString *bundleIdentifierForDataUsage; // @synthesize bundleIdentifierForDataUsage=_bundleIdentifierForDataUsage;
 @property _Bool forceCellularIfPossible; // @synthesize forceCellularIfPossible=_forceCellularIfPossible;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)load;
 - (void)dealloc;

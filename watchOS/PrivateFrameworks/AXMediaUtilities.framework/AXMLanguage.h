@@ -25,11 +25,11 @@
 + (id)currentSystemLanguage;
 + (void)_updateDefaultLanguages;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(retain, nonatomic) NSString *secondaryComponent; // @synthesize secondaryComponent=_secondaryComponent;
 @property(retain, nonatomic) NSString *primaryComponent; // @synthesize primaryComponent=_primaryComponent;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)hash;

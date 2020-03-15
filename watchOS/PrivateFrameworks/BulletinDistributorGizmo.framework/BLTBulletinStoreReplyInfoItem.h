@@ -19,6 +19,7 @@
     int _subType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool singleNotificationExpected; // @synthesize singleNotificationExpected=_singleNotificationExpected;
 @property(nonatomic) int subType; // @synthesize subType=_subType;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSDate *transmissionDate; // @synthesize transmissionDate=_transmissionDate;
 @property(copy, nonatomic) NSString *sectionMatchID; // @synthesize sectionMatchID=_sectionMatchID;
 @property(copy, nonatomic) NSString *publisherMatchID; // @synthesize publisherMatchID=_publisherMatchID;
-- (void).cxx_destruct;
 - (id)initWithPublisherMatchID:(id)arg1 sectionMatchID:(id)arg2 transmissionDate:(id)arg3 expiration:(id)arg4 state:(unsigned int)arg5;
 - (id)initWithPublisherMatchID:(id)arg1 sectionMatchID:(id)arg2 expiration:(id)arg3;
 

@@ -20,12 +20,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSReplyBodyType *ExternalReply; // @synthesize ExternalReply=_ExternalReply;
 @property(retain, nonatomic) EWSReplyBodyType *InternalReply; // @synthesize InternalReply=_InternalReply;
 @property(retain, nonatomic) EWSDuration *Duration; // @synthesize Duration=_Duration;
 @property(nonatomic) long long ExternalAudience; // @synthesize ExternalAudience=_ExternalAudience;
 @property(nonatomic) long long OofState; // @synthesize OofState=_OofState;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

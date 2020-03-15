@@ -18,8 +18,8 @@
     id <XCTMetric> _metric;
 }
 
-@property(retain, nonatomic) id <XCTMetric> metric; // @synthesize metric=_metric;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <XCTMetric> metric; // @synthesize metric=_metric;
 - (BOOL)harvestData:(id *)arg1 error:(id *)arg2;
 - (void)didStopAtTime:(unsigned long long)arg1 stopDate:(id)arg2;
 - (void)didStartAtTime:(unsigned long long)arg1 startDate:(id)arg2;

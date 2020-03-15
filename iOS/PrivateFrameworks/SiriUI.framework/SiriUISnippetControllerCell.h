@@ -34,9 +34,9 @@
 + (double)defaultHeight;
 + (id)reuseIdentifier;
 + (struct CGRect)contentBoundsForCollectionViewCellBounds:(struct CGRect)arg1 snippetViewController:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_snippetEdgeInsets, setter=_setSnippetEdgeInsets:) struct UIEdgeInsets snippetEdgeInsets; // @synthesize snippetEdgeInsets=_snippetEdgeInsets;
 @property(nonatomic) __weak SiriUISnippetViewController *snippetViewController; // @synthesize snippetViewController=_snippetViewController;
-- (void).cxx_destruct;
 - (void)setTopPadding:(double)arg1;
 - (void)setShowBackgroundView:(_Bool)arg1;
 - (void)_snippetPunchOutButtonTapped:(id)arg1;

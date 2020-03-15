@@ -19,11 +19,11 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDAudioStreamPacketTime *packetTime; // @synthesize packetTime=_packetTime;
 @property(retain, nonatomic) HMDAudioStreamSampleRate *sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(retain, nonatomic) HMDAudioStreamBitRate *bitRate; // @synthesize bitRate=_bitRate;
 @property(retain, nonatomic) HMDAudioStreamNumAudioChannels *numAudioChannels; // @synthesize numAudioChannels=_numAudioChannels;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

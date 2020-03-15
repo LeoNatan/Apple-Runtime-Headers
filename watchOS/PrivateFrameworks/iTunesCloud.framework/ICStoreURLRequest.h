@@ -13,6 +13,7 @@
     _Bool _shouldUseMescalSigning;
     _Bool _shouldParseBodyData;
     _Bool _shouldRequireURLBag;
+    _Bool _shouldApplyAuthKitHeaders;
     int _anisetteVersion;
     NSString *_machineDataSyncState;
     NSDictionary *_additionalHTTPCookies;
@@ -21,14 +22,15 @@
 
 + (id)currentConnectionTypeHeader;
 + (unsigned int)_defaultMaxRetryCountForReason:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) ICJSSignConfiguration *JSSignConfiguration; // @synthesize JSSignConfiguration=_JSSignConfiguration;
 @property(copy, nonatomic) NSDictionary *additionalHTTPCookies; // @synthesize additionalHTTPCookies=_additionalHTTPCookies;
 @property(copy, nonatomic) NSString *machineDataSyncState; // @synthesize machineDataSyncState=_machineDataSyncState;
+@property(nonatomic) _Bool shouldApplyAuthKitHeaders; // @synthesize shouldApplyAuthKitHeaders=_shouldApplyAuthKitHeaders;
 @property(nonatomic) _Bool shouldRequireURLBag; // @synthesize shouldRequireURLBag=_shouldRequireURLBag;
 @property(nonatomic) _Bool shouldParseBodyData; // @synthesize shouldParseBodyData=_shouldParseBodyData;
 @property(nonatomic) _Bool shouldUseMescalSigning; // @synthesize shouldUseMescalSigning=_shouldUseMescalSigning;
 @property(nonatomic) int anisetteVersion; // @synthesize anisetteVersion=_anisetteVersion;
-- (void).cxx_destruct;
 - (_Bool)_shouldPersonalizeRequest;
 - (id)_stringForCachePolicy:(unsigned int)arg1;
 - (void)_getSignatureDataForRequest:(id)arg1 urlBag:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

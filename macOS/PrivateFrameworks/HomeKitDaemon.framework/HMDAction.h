@@ -22,9 +22,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)logCategory;
 + (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMDActionSet *actionSet; // @synthesize actionSet=_actionSet;
 @property(readonly, copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;

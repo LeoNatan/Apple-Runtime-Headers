@@ -13,8 +13,8 @@
     id <AIDAServiceOwnerProtocol> _serviceOwnersManager;
 }
 
-@property(retain) id <AIDAServiceOwnerProtocol> serviceOwnersManager; // @synthesize serviceOwnersManager=_serviceOwnersManager;
 - (void).cxx_destruct;
+@property(retain) id <AIDAServiceOwnerProtocol> serviceOwnersManager; // @synthesize serviceOwnersManager=_serviceOwnersManager;
 - (id)_serviceTypeForAccount:(id)arg1;
 - (BOOL)didAccountPropertiesChange:(id)arg1 newAccount:(id)arg2;
 - (BOOL)didActiveAccountChange:(id)arg1 newAccount:(id)arg2;

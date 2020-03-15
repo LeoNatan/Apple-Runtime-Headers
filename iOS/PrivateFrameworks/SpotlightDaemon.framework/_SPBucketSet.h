@@ -15,9 +15,9 @@
     long long _count;
 }
 
+- (void).cxx_destruct;
 @property long long count; // @synthesize count=_count;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)decay:(long long)arg1;
 - (void)addValue:(long long)arg1 forKey:(id)arg2;
 - (void)removeValueForKey:(id)arg1;

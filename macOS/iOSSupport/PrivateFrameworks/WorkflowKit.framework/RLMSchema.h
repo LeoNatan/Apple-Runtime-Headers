@@ -24,9 +24,9 @@
 + (id)partialSharedSchema;
 + (id)sharedSchemaForClass:(Class)arg1;
 + (id)schemaWithObjectClasses:(id)arg1;
-@property(retain, nonatomic) NSMutableDictionary *objectSchemaByName; // @synthesize objectSchemaByName=_objectSchemaByName;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *objectSchemaByName; // @synthesize objectSchemaByName=_objectSchemaByName;
 - (struct Schema)objectStoreCopy;
 - (id)description;
 - (BOOL)isEqualToSchema:(id)arg1;

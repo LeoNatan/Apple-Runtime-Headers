@@ -16,9 +16,9 @@
     UIViewController *_hostViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSplitScreen) _Bool splitScreen;
 - (id)initWithScreen:(id)arg1 hostViewController:(id)arg2;
 

@@ -19,10 +19,10 @@
 + (_Bool)isCancelable;
 + (_Bool)validateRequest:(id)arg1 error:(id *)arg2;
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *remoteUUID; // @synthesize remoteUUID=_remoteUUID;
 @property(nonatomic) __weak id <CATTaskOperationNotificationDelegate> notificationDelegate; // @synthesize notificationDelegate=_notificationDelegate;
 @property(readonly, nonatomic) CATTaskRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)processMessage:(id)arg1;
 - (void)postNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (_Bool)canSendNotificationWithName:(id)arg1 userInfo:(id)arg2;

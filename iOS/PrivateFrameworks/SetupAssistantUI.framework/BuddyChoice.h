@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _confirmationCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType confirmationCompletion; // @synthesize confirmationCompletion=_confirmationCompletion;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(copy, nonatomic) CDUnknownBlockType condition; // @synthesize condition=_condition;
 @property(nonatomic) __weak UIViewController *choiceController; // @synthesize choiceController=_choiceController;
 @property(retain, nonatomic) Class nextControllerClass; // @synthesize nextControllerClass=_nextControllerClass;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_choiceConfirmed:(_Bool)arg1;
 - (void)runConfirmationIfNeededCompletion:(CDUnknownBlockType)arg1;
 - (void)setConfirmationAlert:(id)arg1 condition:(CDUnknownBlockType)arg2;

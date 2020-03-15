@@ -15,10 +15,10 @@
     unsigned long long _batchCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long batchCount; // @synthesize batchCount=_batchCount;
 @property(nonatomic) unsigned long long bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_execute:(id *)arg1;
 - (unsigned long long)type;
 

@@ -13,8 +13,10 @@
 @interface ABAddressBookLinkingInfoDataSource : NSObject <ABLinkingInfoDataSource>
 {
     ABAddressBook *_addressBook;
+    BOOL _ignoresGuardianRestrictions;
 }
 
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 - (void)_performWithUnscopedAdapter:(CDUnknownBlockType)arg1;
 - (id)nameCollisionMapForRecords:(id)arg1;
 - (id)nameCollisionMapForExistingRecords;

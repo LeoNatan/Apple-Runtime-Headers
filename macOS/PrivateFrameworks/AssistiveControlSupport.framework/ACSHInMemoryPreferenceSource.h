@@ -13,8 +13,8 @@
     NSMutableDictionary *__preferenceOverrides;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *_preferenceOverrides; // @synthesize _preferenceOverrides=__preferenceOverrides;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *_preferenceOverrides; // @synthesize _preferenceOverrides=__preferenceOverrides;
 - (void)setPreferenceValue:(id)arg1 forKey:(id)arg2;
 - (id)copyPreferenceValueForKey:(id)arg1;
 - (id)initWithPreferenceOverrides:(id)arg1 preferenceDefaults:(id)arg2;

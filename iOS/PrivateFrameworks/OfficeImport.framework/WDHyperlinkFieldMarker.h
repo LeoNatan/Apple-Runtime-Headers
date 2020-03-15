@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned int mInternalLink:1;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fragment; // @synthesize fragment=mFragment;
 @property(retain, nonatomic) NSString *link; // @synthesize link=mLink;
 @property(nonatomic) _Bool internalLink; // @synthesize internalLink=mInternalLink;
-- (void).cxx_destruct;
 - (id)description;
 - (int)runType;
 

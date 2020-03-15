@@ -20,10 +20,10 @@
     SKUISwooshViewController *_swooshViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUISwooshViewController *swooshViewController; // @synthesize swooshViewController=_swooshViewController;
 @property(retain, nonatomic) SKUIImageDataConsumer *imageDataConsumer; // @synthesize imageDataConsumer=_imageDataConsumer;
 @property(readonly, nonatomic) SKUIResourceLoader *artworkLoader; // @synthesize artworkLoader=_artworkLoader;
-- (void).cxx_destruct;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)setPlaceholderColorWithColorScheme:(id)arg1;
 - (void)setImage:(id)arg1 forRequest:(id)arg2;

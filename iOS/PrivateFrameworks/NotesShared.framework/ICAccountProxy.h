@@ -17,8 +17,8 @@
 
 + (id)keyPathsForValuesAffectingVisibleNotesCount;
 + (id)accountProxyWithAccount:(id)arg1;
-@property(retain) ICAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain) ICAccount *account; // @synthesize account=_account;
 - (id)customNoteSortTypeValue;
 - (_Bool)mergeWithSubFolderMergeableData:(id)arg1;
 - (void)updateSubFolderMergeableDataChangeCount;

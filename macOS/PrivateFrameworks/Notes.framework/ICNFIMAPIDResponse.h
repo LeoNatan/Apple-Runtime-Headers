@@ -14,8 +14,8 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
-@property(copy, nonatomic) NSDictionary *serverID; // @synthesize serverID=_serverID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *serverID; // @synthesize serverID=_serverID;
 - (id)description;
 
 @end

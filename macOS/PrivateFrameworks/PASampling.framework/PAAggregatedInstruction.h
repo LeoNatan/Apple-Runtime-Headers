@@ -15,10 +15,10 @@
     unsigned long long _offsetInBinary;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long offsetInBinary; // @synthesize offsetInBinary=_offsetInBinary;
 @property(readonly) NSUUID *binaryUuid; // @synthesize binaryUuid=_binaryUuid;
 @property(retain) NSMutableSet *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

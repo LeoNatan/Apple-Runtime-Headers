@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     BOOL _hasBackground;
 }
 
-@property __weak QLPreviewOverlayController *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak QLPreviewOverlayController *delegate; // @synthesize delegate=_delegate;
 - (id)accessibilityChildren;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (unsigned int)_CAViewFlags;

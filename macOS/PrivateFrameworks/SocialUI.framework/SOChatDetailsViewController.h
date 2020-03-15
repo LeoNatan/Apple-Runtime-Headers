@@ -48,6 +48,7 @@
     SOCKDownloadPurgedAttachmentsView *_downloadAttachmentsView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SOCKDownloadPurgedAttachmentsView *downloadAttachmentsView; // @synthesize downloadAttachmentsView=_downloadAttachmentsView;
 @property(nonatomic) unsigned long long cachedValueForAttachmentCount; // @synthesize cachedValueForAttachmentCount=_cachedValueForAttachmentCount;
 @property(nonatomic) BOOL didCacheAttachmentCount; // @synthesize didCacheAttachmentCount=_didCacheAttachmentCount;
@@ -80,7 +81,6 @@
 @property(retain) NSLayoutConstraint *maximumScrollViewHeightConstraint; // @synthesize maximumScrollViewHeightConstraint=_maximumScrollViewHeightConstraint;
 @property(retain) NSLayoutConstraint *preferredScrollViewHeightConstraint; // @synthesize preferredScrollViewHeightConstraint=_preferredScrollViewHeightConstraint;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (unsigned long long)_uncachedAttachmentCount;
 - (BOOL)_isCurrentlyDownloading;
 - (BOOL)validateMenuItem:(id)arg1;
@@ -109,6 +109,7 @@
 - (void)_updateFMFMapVisibility;
 - (void)_updateSeparatorLayout;
 - (void)_chatPurgedAttachmentsDownloadBatchDidComplete:(id)arg1;
+- (void)_chatAllowedByScreenTimeChanged:(id)arg1;
 - (void)_chatPurgedAttachmentsDownloadFinished:(id)arg1;
 - (void)_chatJoinStateDidChange:(id)arg1;
 - (void)_chatPropertiesDidChange:(id)arg1;

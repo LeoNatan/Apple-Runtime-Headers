@@ -11,8 +11,8 @@
     CLIntersiloProxy *_peer;
 }
 
-@property(readonly, nonatomic) CLIntersiloProxy *peer; // @synthesize peer=_peer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLIntersiloProxy *peer; // @synthesize peer=_peer;
 - (id)initWithUninitializedPeer:(id)arg1;
 
 @end

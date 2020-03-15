@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     WFGiphyObject *_object;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WFGiphyObject *object; // @synthesize object=_object;
 @property(nonatomic) __weak NSURLSessionDataTask *dataTask; // @synthesize dataTask=_dataTask;
 @property(nonatomic) __weak UIImageView *selectedImageView; // @synthesize selectedImageView=_selectedImageView;
 @property(nonatomic) __weak UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) __weak UIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

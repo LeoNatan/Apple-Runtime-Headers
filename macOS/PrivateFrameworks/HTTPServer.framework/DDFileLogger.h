@@ -22,8 +22,8 @@
     unsigned long long droppedMessageCount;
 }
 
-@property(readonly, nonatomic) id <DDLogFileManager> logFileManager; // @synthesize logFileManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <DDLogFileManager> logFileManager; // @synthesize logFileManager;
 - (id)loggerName;
 - (void)willRemoveLogger;
 - (void)logMessage:(id)arg1;

@@ -13,8 +13,8 @@
     id <PUICWheelHandlerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUICWheelHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICWheelHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)handleWheelChangeEvent:(id)arg1;
 
 @end

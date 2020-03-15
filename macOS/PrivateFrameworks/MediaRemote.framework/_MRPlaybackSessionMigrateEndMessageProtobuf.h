@@ -19,11 +19,11 @@
     CDStruct_70a7dc3e _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) _MRPlaybackSessionRequestProtobuf *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

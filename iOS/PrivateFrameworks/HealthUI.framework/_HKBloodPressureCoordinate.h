@@ -18,9 +18,9 @@
     HKMinMaxCoordinate *_diastolicCoordinate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKMinMaxCoordinate *diastolicCoordinate; // @synthesize diastolicCoordinate=_diastolicCoordinate;
 @property(readonly, nonatomic) HKMinMaxCoordinate *systolicCoordinate; // @synthesize systolicCoordinate=_systolicCoordinate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo;
 @property(readonly, nonatomic) double endXValue;

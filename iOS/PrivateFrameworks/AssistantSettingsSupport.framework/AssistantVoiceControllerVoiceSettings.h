@@ -15,9 +15,9 @@
 }
 
 + (id)settingsWithInProgressVoice:(id)arg1 currentVoice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AFVoiceInfo *currentVoice; // @synthesize currentVoice=_currentVoice;
 @property(retain, nonatomic) AFVoiceInfo *inProgressVoice; // @synthesize inProgressVoice=_inProgressVoice;
-- (void).cxx_destruct;
 
 @end
 

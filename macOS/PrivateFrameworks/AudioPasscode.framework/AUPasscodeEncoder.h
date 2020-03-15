@@ -42,6 +42,8 @@ __attribute__((visibility("hidden")))
 + (void)registerAU;
 + (struct AudioComponentDescription)getAUDesc;
 + (id)supportedEncoders;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *passcodeEmbedInfo; // @synthesize passcodeEmbedInfo=_passcodeEmbedInfo;
 @property(copy, nonatomic) CDUnknownBlockType assetEndedAndSilencedHandler; // @synthesize assetEndedAndSilencedHandler=_assetEndedAndSilencedHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -53,8 +55,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long assetLength; // @synthesize assetLength=_assetLength;
 @property(retain, nonatomic) AUPasscodeCodecConfiguration *codecConfig; // @synthesize codecConfig=_codecConfig;
 @property(copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)canProcessInPlace;
 - (CDUnknownBlockType)internalRenderBlock;
 - (void)reset;

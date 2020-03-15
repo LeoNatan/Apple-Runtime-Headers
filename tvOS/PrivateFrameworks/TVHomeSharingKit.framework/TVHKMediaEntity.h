@@ -25,6 +25,7 @@
 + (id)_metadataHashValueForObject:(id)arg1;
 + (id)_metadataHashWithKeys:(id)arg1 metadataValueBlock:(CDUnknownBlockType)arg2;
 + (id)metadataHashFromStrings:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *requestedProperties; // @synthesize requestedProperties=_requestedProperties;
 @property(readonly, nonatomic) TVHKMediaEntityKind *kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) id <TVHSDMAPEntity> entity; // @synthesize entity=_entity;
@@ -33,7 +34,6 @@
 @property(nonatomic, getter=hasLocalChanges) _Bool localChanges; // @synthesize localChanges=_localChanges;
 @property(readonly, copy, nonatomic) TVHKMediaEntityType *type; // @synthesize type=_type;
 @property(readonly, nonatomic) TVHKMediaEntityServer *mediaEntityServer; // @synthesize mediaEntityServer=_mediaEntityServer;
-- (void).cxx_destruct;
 - (id)_metadataHashFromMetadataKeyPaths:(id)arg1;
 - (id)_DMAPCodeForKeyPath:(id)arg1;
 - (id)_DMAPIdentifier;

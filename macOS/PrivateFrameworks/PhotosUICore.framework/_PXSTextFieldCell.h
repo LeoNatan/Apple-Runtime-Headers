@@ -17,12 +17,12 @@
     struct NSEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic, getter=isEmphasized) BOOL emphasized; // @synthesize emphasized=_emphasized;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;

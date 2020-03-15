@@ -15,8 +15,8 @@
     ARLightEstimate *_lightEstimate;
 }
 
-@property(retain, nonatomic) ARLightEstimate *lightEstimate; // @synthesize lightEstimate=_lightEstimate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ARLightEstimate *lightEstimate; // @synthesize lightEstimate=_lightEstimate;
 - (double)timestamp;
 
 // Remaining properties

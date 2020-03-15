@@ -18,11 +18,11 @@
     CDStruct_b7fac349 _obj;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const struct __CFAllocator *contentDeallocator; // @synthesize contentDeallocator=_contentDeallocator;
 @property(readonly, nonatomic) CDStruct_b7fac349 obj; // @synthesize obj=_obj;
 @property(retain, nonatomic) id backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;

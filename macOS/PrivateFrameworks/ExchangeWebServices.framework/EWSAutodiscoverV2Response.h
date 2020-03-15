@@ -16,11 +16,11 @@
     NSString *_user;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *user; // @synthesize user=_user;
 @property(copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly, copy, nonatomic) NSString *authorizationURI; // @synthesize authorizationURI=_authorizationURI;
 @property(readonly, copy, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithHost:(id)arg1 authorizationURI:(id)arg2;
 

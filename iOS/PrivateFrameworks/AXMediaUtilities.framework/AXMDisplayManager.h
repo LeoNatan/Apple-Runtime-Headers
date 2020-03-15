@@ -21,9 +21,9 @@
     double _mobileGestaltOrientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double mobileGestaltOrientation; // @synthesize mobileGestaltOrientation=_mobileGestaltOrientation;
 @property(retain, nonatomic) FBSDisplayMonitor *displayMonitor; // @synthesize displayMonitor=_displayMonitor;
-- (void).cxx_destruct;
 - (void)displayMonitor:(id)arg1 willDisconnectIdentity:(id)arg2;
 - (void)displayMonitor:(id)arg1 didUpdateIdentity:(id)arg2 withConfiguration:(id)arg3;
 - (void)displayMonitor:(id)arg1 didConnectIdentity:(id)arg2 withConfiguration:(id)arg3;

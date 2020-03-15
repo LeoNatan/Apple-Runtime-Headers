@@ -18,8 +18,8 @@
 + (id)gkServiceViewControllerInterface;
 + (id)gkHostViewControllerInterface;
 + (void)requestRemoteViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak GKRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak GKRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void)serviceRequestsDismiss;
 - (void)messageFromService:(id)arg1;
 

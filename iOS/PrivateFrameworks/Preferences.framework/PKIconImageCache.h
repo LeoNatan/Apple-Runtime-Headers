@@ -17,9 +17,9 @@
 
 + (id)settingsIconCacheWithScale:(double)arg1;
 + (id)settingsIconCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *iconCache; // @synthesize iconCache=_iconCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheAccessQueue; // @synthesize cacheAccessQueue=_cacheAccessQueue;
-- (void).cxx_destruct;
 - (id)allImageIconKeys;
 - (id)imageForKey:(id)arg1;
 - (id)initWithPath:(id)arg1 scale:(double)arg2;

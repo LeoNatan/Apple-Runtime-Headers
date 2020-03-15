@@ -12,6 +12,8 @@
 }
 
 + (id)emptyTestSuiteForTestCaseClass:(Class)arg1;
+- (void).cxx_destruct;
+@property(readonly) Class testCaseClass; // @synthesize testCaseClass=_testCaseClass;
 - (void)tearDown;
 - (void)setUp;
 - (id)initWithTestCaseClass:(Class)arg1;

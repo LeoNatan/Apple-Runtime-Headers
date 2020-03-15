@@ -17,7 +17,7 @@
 {
     Class _historyItemClass;
     unsigned long long _itemCountLimit;
-    // Error parsing type: {atomic<WBSHistoryServiceStoreState>="__a_"Aq}, name: _state
+    // Error parsing type: {atomic<WBSHistoryServiceStoreState>="__a_"{__cxx_atomic_impl<WBSHistoryServiceStoreState, std::__1::__cxx_atomic_base_impl<WBSHistoryServiceStoreState> >="__a_value"Aq}}, name: _state
     id <WBSHistoryConnectionProxy> _connection;
     NSObject<OS_dispatch_queue> *_databaseQueue;
     NSURL *_databaseURL;
@@ -35,18 +35,17 @@
     WBSPeriodicActivityScheduler *_maintenanceScheduler;
     NSObject<OS_dispatch_source> *_sendDeltaToServiceTimer;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _suddenTerminationDisabler;
-    BOOL _makeTestDriveVisitsPermanentOnNextWrite;
     NSMutableSet *_pendingAddsOrUpdates;
     id <WBSHistoryStoreDelegate> _delegate;
     double _historyAgeLimit;
     WBSHistoryCrypto *_crypto;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryCrypto *crypto; // @synthesize crypto=_crypto;
 @property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
 @property(nonatomic) __weak id <WBSHistoryStoreDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)releaseCloudHistory:(CDUnknownBlockType)arg1;
 - (void)initializeCloudHistoryWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connectionProxyConnectionWasInterrupted:(id)arg1;
@@ -64,8 +63,6 @@
 - (long long)_generateTemporaryDatabaseID;
 - (void)_scheduleImmediateDeltaToService;
 - (void)_scheduleSendDeltaToService;
-- (void)removeAllTestDriveVisitsWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)makePermanentAllTestDriveVisits;
 - (void)_setMetadataValue:(id)arg1 forKey:(id)arg2 group:(id)arg3;
 @property(readonly, nonatomic) BOOL isUsingInMemoryDatabase;
 - (void)updateHistoryAfterSuccessfulPersistedLongLivedSaveOperationWithGeneration:(long long)arg1 completion:(CDUnknownBlockType)arg2;

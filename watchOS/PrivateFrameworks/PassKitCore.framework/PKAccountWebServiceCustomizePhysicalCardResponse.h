@@ -15,10 +15,10 @@
     NSArray *_priceOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *priceOptions; // @synthesize priceOptions=_priceOptions;
 @property(readonly, copy, nonatomic) NSArray *nameOptions; // @synthesize nameOptions=_nameOptions;
 @property(readonly, copy, nonatomic) NSArray *artworkOptions; // @synthesize artworkOptions=_artworkOptions;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

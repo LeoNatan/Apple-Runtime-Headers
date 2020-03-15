@@ -17,9 +17,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDismissView *dismissView; // @synthesize dismissView=_dismissView;
 @property(retain, nonatomic) CKActionMenuView *actionMenuView; // @synthesize actionMenuView=_actionMenuView;
-- (void).cxx_destruct;
 - (_Bool)_canAffectStatusBarAppearance;
 - (void)dismissViewWasTapped:(id)arg1;
 - (void)actionMenuGestureRecognized:(id)arg1;

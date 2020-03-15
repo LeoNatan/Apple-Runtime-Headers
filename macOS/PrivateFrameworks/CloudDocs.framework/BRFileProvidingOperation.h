@@ -16,9 +16,9 @@
     BOOL _wantsCurrentVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsCurrentVersion; // @synthesize wantsCurrentVersion=_wantsCurrentVersion;
 @property(copy, nonatomic) CDUnknownBlockType fileProvidingCompletion; // @synthesize fileProvidingCompletion=_fileProvidingCompletion;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithURL:(id)arg1 readingOptions:(unsigned long long)arg2;

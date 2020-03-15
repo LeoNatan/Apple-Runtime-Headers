@@ -22,10 +22,10 @@
     id <CDPUIDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPRemoteDeviceSecretValidator *remoteSecretValidator; // @synthesize remoteSecretValidator=_remoteSecretValidator;
 @property(nonatomic) _Bool forceInlinePresentation; // @synthesize forceInlinePresentation=_forceInlinePresentation;
 @property(nonatomic) __weak id <CDPUIDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)devicePicker:(id)arg1 didSelectDevice:(id)arg2;
 - (void)finishValidation:(id)arg1 withError:(id)arg2;
 - (void)performAccountReset:(id)arg1;
@@ -45,7 +45,7 @@
 - (void)cdpContext:(id)arg1 promptForAdoptionOfMultipleICSC:(CDUnknownBlockType)arg2;
 - (void)cdpContext:(id)arg1 promptForICSCWithIsNumeric:(_Bool)arg2 numericLength:(id)arg3 isRandom:(_Bool)arg4 validator:(id)arg5;
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(_Bool)arg3 validator:(id)arg4;
-- (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
+- (void)cdpContext:(id)arg1 promptForLocalSecretWithCompletion:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end

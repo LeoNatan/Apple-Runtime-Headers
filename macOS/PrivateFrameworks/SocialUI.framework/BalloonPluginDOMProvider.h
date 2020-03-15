@@ -17,8 +17,8 @@
 }
 
 + (id)blurredImagePath:(id)arg1 andRect:(struct CGRect)arg2;
-@property(nonatomic) __weak id <SOBalloonPluginCache> balloonPluginCache; // @synthesize balloonPluginCache=_balloonPluginCache;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SOBalloonPluginCache> balloonPluginCache; // @synthesize balloonPluginCache=_balloonPluginCache;
 - (void)handleEvent:(id)arg1;
 - (BOOL)setupGeneralInvisibleInk:(id)arg1;
 - (BOOL)setupHandwritingInvisibleInk:(id)arg1;

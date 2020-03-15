@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     MSVLRUDictionaryNode *_prev;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MSVLRUDictionaryNode *prev; // @synthesize prev=_prev;
 @property(nonatomic) __weak MSVLRUDictionaryNode *next; // @synthesize next=_next;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(readonly, nonatomic) id key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithKey:(id)arg1 object:(id)arg2;
 

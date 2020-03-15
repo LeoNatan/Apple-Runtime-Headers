@@ -24,6 +24,7 @@
     NSMutableSet *_windowBackgroundObserverBlocks;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isBecomingActive) _Bool becomingActive; // @synthesize becomingActive=_becomingActive;
 @property(nonatomic, getter=isWindowForeground) _Bool windowIsForeground; // @synthesize windowIsForeground=_windowIsForeground;
 @property(readonly, nonatomic) NSMutableSet *windowBackgroundObserverBlocks; // @synthesize windowBackgroundObserverBlocks=_windowBackgroundObserverBlocks;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSString *windowBecameFrontmostNotificationName; // @synthesize windowBecameFrontmostNotificationName=_windowBecameFrontmostNotificationName;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
-- (void).cxx_destruct;
 - (void)_markWindowAsBackground;
 - (void)_markWindowAsForeground;
 - (void)activityObservingApplicationWillEnterForegroundNotification:(id)arg1;

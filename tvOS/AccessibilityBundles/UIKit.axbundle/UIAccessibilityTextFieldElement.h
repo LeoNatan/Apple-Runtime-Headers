@@ -13,8 +13,9 @@
     UITextField *_textField;
 }
 
-@property(nonatomic) __weak UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UITextField *textField; // @synthesize textField=_textField;
+- (_Bool)canBecomeFocused;
 - (_Bool)_accessibilityHandlesTabKey;
 - (id)_accessibilityHandwritingAttributes;
 - (void)_accessibilitySetValue:(id)arg1;

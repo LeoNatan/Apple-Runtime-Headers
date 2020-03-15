@@ -15,8 +15,8 @@
 }
 
 + (id)sharedInstance;
-@property(getter=_statusBarOrientation, setter=_setStatusBarOrientation:) long long statusBarOrientation; // @synthesize statusBarOrientation=_statusBarOrientation;
 - (void).cxx_destruct;
+@property(getter=_statusBarOrientation, setter=_setStatusBarOrientation:) long long statusBarOrientation; // @synthesize statusBarOrientation=_statusBarOrientation;
 - (void)_updateStatusBarOrientation;
 - (id)launchRequestsForApplication:(id)arg1 withCompatibilityInfo:(id)arg2;
 - (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;

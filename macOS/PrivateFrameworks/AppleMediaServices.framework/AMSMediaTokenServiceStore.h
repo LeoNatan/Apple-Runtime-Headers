@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     AMSMediaToken *_memoryMediaToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) AMSMediaToken *memoryMediaToken; // @synthesize memoryMediaToken=_memoryMediaToken;
 @property(retain) NSString *keychainAccessGroup; // @synthesize keychainAccessGroup=_keychainAccessGroup;
 @property(readonly) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (void)_teardownKeychainNotifications;
 - (void)_setupKeychainNotifications;
 - (void)_postMediaTokenChangedNotification;

@@ -18,11 +18,11 @@
     unsigned int _bytesWritten;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int bytesWritten; // @synthesize bytesWritten=_bytesWritten;
 @property(readonly, nonatomic) unsigned int bytesRead; // @synthesize bytesRead=_bytesRead;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) MFError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)messageDidSendWithContext:(id)arg1 sentBytesCount:(unsigned int)arg2 receivedBytesCount:(unsigned int)arg3;
 

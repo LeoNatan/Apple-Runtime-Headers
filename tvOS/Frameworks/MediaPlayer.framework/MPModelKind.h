@@ -20,8 +20,8 @@
 + (id)kindWithModelClass:(Class)arg1 cacheKey:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (id)kindWithModelClass:(Class)arg1;
 + (id)identityKind;
-@property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSString *humanDescription;

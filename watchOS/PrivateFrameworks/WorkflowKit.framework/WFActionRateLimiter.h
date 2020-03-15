@@ -17,9 +17,9 @@
 
 + (void)performAction:(id)arg1 onQueue:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)modify:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSDictionary *attempts;
 - (id)initWithUserDefaults:(id)arg1;

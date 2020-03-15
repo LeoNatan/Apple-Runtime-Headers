@@ -10,11 +10,11 @@
 
 @interface ICCollapsibleContainerView : ICCollapsibleBaseView
 {
-    struct NSView *_containedView;
+    NSView *_containedView;
 }
 
-@property(retain, nonatomic) NSView *containedView; // @synthesize containedView=_containedView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSView *containedView; // @synthesize containedView=_containedView;
 - (void)performSetup;
 
 @end

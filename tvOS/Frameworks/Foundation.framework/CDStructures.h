@@ -41,10 +41,6 @@ struct NSEdgeInsets {
     double _field4;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 struct NSSlice {
     void **items;
     _Bool wantsStrong;

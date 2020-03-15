@@ -36,8 +36,8 @@
 }
 
 + (id)mergeNewSearchResults:(id)arg1 intoExistingResults:(id)arg2;
-@property(nonatomic) _Bool shouldDebounce; // @synthesize shouldDebounce=_shouldDebounce;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldDebounce; // @synthesize shouldDebounce=_shouldDebounce;
 - (void)didEngageCardSection:(id)arg1;
 - (void)cardViewDidDisappear:(id)arg1;
 - (void)didEngageResult:(id)arg1;

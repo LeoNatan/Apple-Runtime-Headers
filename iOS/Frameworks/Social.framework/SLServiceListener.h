@@ -22,11 +22,11 @@
     NSString *_serviceName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *managedObjectModelPath; // @synthesize managedObjectModelPath=_managedObjectModelPath;
 @property(retain) NSString *persistentStoreName; // @synthesize persistentStoreName=_persistentStoreName;
 @property(retain) NSXPCInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
 @property(retain) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (_Bool)_verifyAuthorizationForConnection:(id)arg1;
 - (void)beginAcceptingConnections;

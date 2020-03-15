@@ -15,15 +15,15 @@
     CNLabeledValue *_labeledValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNUIUndoableCommand *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
 - (id)copyOfContactWithNameValuesAndChangesOnly:(id)arg1 containingNonCuratedValueToSave:(id)arg2 forKey:(id)arg3;
-- (id)initWithContactStore:(id)arg1 contact:(id)arg2 nonCuratedValueToSave:(id)arg3 forKey:(id)arg4;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 contact:(id)arg2 nonCuratedValueToSave:(id)arg3 forKey:(id)arg4 ignoresGuardianRestrictions:(BOOL)arg5;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

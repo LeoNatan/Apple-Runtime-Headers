@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _actionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)action:(id)arg1;
 - (void)prepareItem;
 - (void)_updateText:(id)arg1;

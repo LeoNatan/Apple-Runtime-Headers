@@ -40,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPPlaybackContext *supplementalPlaybackContext; // @synthesize supplementalPlaybackContext=_supplementalPlaybackContext;
 @property(readonly, nonatomic) long long supplementalPlaybackContextBehavior; // @synthesize supplementalPlaybackContextBehavior=_supplementalPlaybackContextBehavior;
 @property(readonly, nonatomic) struct os_unfair_lock_s stateLock; // @synthesize stateLock=_stateLock;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) MPPlaybackContext *originalPlaybackContext; // @synthesize originalPlaybackContext=_originalPlaybackContext;
 @property(readonly, nonatomic) MPPlaybackContext *playbackContext; // @synthesize playbackContext=_playbackContext;
 @property(readonly, nonatomic) id <MPCQueueControllerDataSource><MPCQueueControllerDataSourceStateRestoring> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_inLock_buildPlaceholder;
 - (void)_buildPlaceholder;
 - (_Bool)section:(id)arg1 shouldShuffleExcludeItem:(id)arg2;

@@ -32,12 +32,12 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
 + (id)shortDescription;
-@property(retain, nonatomic) HMAccessorySettings *accessorySettings; // @synthesize accessorySettings=_accessorySettings;
+- (void).cxx_destruct;
+@property(nonatomic) __weak HMAccessorySettings *accessorySettings; // @synthesize accessorySettings=_accessorySettings;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <_HMAccesorySettingGroupDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;

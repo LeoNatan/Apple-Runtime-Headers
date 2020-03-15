@@ -16,9 +16,9 @@
     UIViewPropertyAnimator *_fadeOutAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *fadeOutAnimator; // @synthesize fadeOutAnimator=_fadeOutAnimator;
 @property(retain, nonatomic) UIViewPropertyAnimator *fadeInAnimator; // @synthesize fadeInAnimator=_fadeInAnimator;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool animated;
 - (void)cancelTransition;
 - (void)animateWithContext:(id)arg1;

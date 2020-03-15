@@ -8,7 +8,7 @@
 
 #import <HMFoundation/NSCopying-Protocol.h>
 
-@class HMFActivity, HMFMessageDestination, HMFMessageTransport, NSDictionary, NSString, NSUUID;
+@class HMFActivity, HMFLogEventSession, HMFMessageDestination, HMFMessageTransport, NSDictionary, NSString, NSUUID;
 
 @interface HMFMessageInternal : HMFObject <NSCopying>
 {
@@ -21,11 +21,14 @@
     NSDictionary *_userInfo;
     NSDictionary *_headers;
     NSDictionary *_messagePayload;
+    HMFLogEventSession *_logEventSession;
     CDUnknownBlockType _responseHandler;
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
+@property(retain, nonatomic) HMFLogEventSession *logEventSession; // @synthesize logEventSession=_logEventSession;
 @property(copy, nonatomic) NSDictionary *messagePayload; // @synthesize messagePayload=_messagePayload;
 @property(copy, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
@@ -36,7 +39,6 @@
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

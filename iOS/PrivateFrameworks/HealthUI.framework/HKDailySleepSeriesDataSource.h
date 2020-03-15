@@ -11,8 +11,8 @@
     CDUnknownBlockType _userInfoCreationBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 - (id)_chartPointFromQueryResult:(id)arg1;
 - (id)_dailyChartPointsFromQueryResults:(id)arg1;
 - (id)_monthlyChartPointsFromQueryResults:(id)arg1 intervalComponents:(id)arg2 startDate:(id)arg3;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     _MKLineHeaderModel *_secondaryNameLine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MKLineHeaderModel *secondaryNameLine; // @synthesize secondaryNameLine=_secondaryNameLine;
 @property(retain, nonatomic) MKTransitInfoLabelView *transitLabel; // @synthesize transitLabel=_transitLabel;
 @property(retain, nonatomic) _MKLineHeaderModel *forthLine; // @synthesize forthLine=_forthLine;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _MKLineHeaderModel *secondLine; // @synthesize secondLine=_secondLine;
 @property(retain, nonatomic) _MKLineHeaderModel *firstLine; // @synthesize firstLine=_firstLine;
 @property(nonatomic) __weak UIView *ownerView; // @synthesize ownerView=_ownerView;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

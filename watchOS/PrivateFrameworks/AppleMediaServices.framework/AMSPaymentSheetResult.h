@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     AMSBiometricsSignatureResult *_signatureResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMSBiometricsSignatureResult *signatureResult; // @synthesize signatureResult=_signatureResult;
 @property(retain, nonatomic) NSString *paymentToken; // @synthesize paymentToken=_paymentToken;
 @property(retain, nonatomic) NSString *passwordEquivalentToken; // @synthesize passwordEquivalentToken=_passwordEquivalentToken;
-- (void).cxx_destruct;
 
 @end
 

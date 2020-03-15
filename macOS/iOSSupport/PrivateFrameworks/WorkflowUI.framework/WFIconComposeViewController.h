@@ -22,13 +22,13 @@
     UIView *_bottomSeparator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *bottomSeparator; // @synthesize bottomSeparator=_bottomSeparator;
 @property(nonatomic) __weak UIView *topSeperator; // @synthesize topSeperator=_topSeperator;
 @property(nonatomic) __weak WFGlyphPicker *glyphPicker; // @synthesize glyphPicker=_glyphPicker;
 @property(nonatomic) __weak WFColorPicker *colorPicker; // @synthesize colorPicker=_colorPicker;
 @property(nonatomic) __weak WFIconComposePreviewView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (void)colorPicker:(id)arg1 didSelectColor:(id)arg2;
 - (void)glyphPicker:(id)arg1 didSelectGlyphWithCharacter:(unsigned short)arg2;
 - (void)updateAccessibilityValue;

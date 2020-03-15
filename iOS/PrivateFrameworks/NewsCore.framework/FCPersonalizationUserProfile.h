@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCBundleSubscription *bundleSubscription; // @synthesize bundleSubscription=_bundleSubscription;
 @property(readonly, nonatomic) NSSet *seenArticleIDs; // @synthesize seenArticleIDs=_seenArticleIDs;
 @property(readonly, nonatomic) NSSet *readArticleIDs; // @synthesize readArticleIDs=_readArticleIDs;
@@ -30,7 +31,6 @@
 @property(readonly, copy, nonatomic) NSSet *autofavoritedTagIDs; // @synthesize autofavoritedTagIDs=_autofavoritedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *mutedTagIDs; // @synthesize mutedTagIDs=_mutedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

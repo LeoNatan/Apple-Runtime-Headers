@@ -54,13 +54,13 @@
     CUWiFiDevice *_wacDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUWiFiDevice *wacDevice; // @synthesize wacDevice=_wacDevice;
 @property(copy, nonatomic) CDUnknownBlockType promptForSetupCodeHandler; // @synthesize promptForSetupCodeHandler=_promptForSetupCodeHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_runFinishRestored:(int)arg1;
 - (int)_runFinish;
 - (int)_runEasyConfigPostConfig;

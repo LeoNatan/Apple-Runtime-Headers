@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_findFirstKeyViewInDirection:(unsigned long long)arg1 forKeyLoopGroupingView:(id)arg2;
-@property __weak NSTitlebarAccessoryViewController *accessoryViewController; // @synthesize accessoryViewController=_accessoryViewController;
 - (void).cxx_destruct;
+@property __weak NSTitlebarAccessoryViewController *accessoryViewController; // @synthesize accessoryViewController=_accessoryViewController;
 - (BOOL)_isKeyLoopGroup;
 - (BOOL)_shouldFixupChildAutoresizingMaskOnResizeSubviewsOverride;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;

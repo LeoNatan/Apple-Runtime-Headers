@@ -29,13 +29,13 @@
     id <PXNumberAnimatorDisplayLinkTarget> _displayLinkTarget;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXNumberAnimatorDisplayLinkTarget> displayLinkTarget; // @synthesize displayLinkTarget=_displayLinkTarget;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) _Bool isBeingMutated; // @synthesize isBeingMutated=_isBeingMutated;
 @property(readonly, nonatomic) double epsilon; // @synthesize epsilon=_epsilon;
 @property(nonatomic, setter=_setPresentationValue:) double presentationValue; // @synthesize presentationValue=_presentationValue;
 @property(readonly, nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)_updatePresentationValueIfNeeded;
 - (void)_invalidatePresentationValue;
 - (void)_updateIfNeeded;

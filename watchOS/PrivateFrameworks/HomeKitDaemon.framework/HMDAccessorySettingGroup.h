@@ -34,6 +34,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDAccessorySettingContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
@@ -41,7 +42,6 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property __weak HMDAccessorySettingGroup *group; // @synthesize group=_group;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)shouldEncodeForCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

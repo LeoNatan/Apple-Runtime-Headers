@@ -17,8 +17,8 @@
     id _delegate;
 }
 
-@property(nonatomic) id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id delegate; // @synthesize delegate=_delegate;
 - (_Bool)resetDataForKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)watchpointOn:(int)arg1 forIdentifier:(id)arg2 andKey:(id)arg3 onThreshold:(double)arg4 withOptions:(id)arg5 uponHit:(CDUnknownBlockType)arg6;
 - (id)_formatWatchpointHit:(id)arg1;

@@ -25,13 +25,13 @@
 }
 
 + (id)_securityScopedURLWithTokenPair:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long libraryVersion; // @synthesize libraryVersion=_libraryVersion;
 @property(readonly, nonatomic) BOOL libraryOnline; // @synthesize libraryOnline=_libraryOnline;
 @property(readonly, nonatomic) NSURL *currentLibraryDirectory; // @synthesize currentLibraryDirectory=_currentLibraryDirectory;
 @property(retain, nonatomic) NSXPCConnection *agentServiceConnection; // @synthesize agentServiceConnection=_agentServiceConnection;
 @property(retain, nonatomic) id <BKAgentService> agentService; // @synthesize agentService=_agentService;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *replyQueue; // @synthesize replyQueue=_replyQueue;
-- (void).cxx_destruct;
 - (void)simulateUploadFailure:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)simulateUploadEnd:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)simulateUploadProgress:(id)arg1 withReply:(CDUnknownBlockType)arg2;

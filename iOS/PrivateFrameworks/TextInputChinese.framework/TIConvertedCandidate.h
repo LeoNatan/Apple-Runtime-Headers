@@ -18,13 +18,13 @@
     NSArray *_touchData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *touchData; // @synthesize touchData=_touchData;
 @property(copy, nonatomic) NSArray *geometryData; // @synthesize geometryData=_geometryData;
 @property(copy, nonatomic) NSString *replacementUnambiguousPinyinSyllable; // @synthesize replacementUnambiguousPinyinSyllable=_replacementUnambiguousPinyinSyllable;
 @property(copy, nonatomic) NSString *replacedAmbiguousPinyinSyllable; // @synthesize replacedAmbiguousPinyinSyllable=_replacedAmbiguousPinyinSyllable;
 @property(copy, nonatomic) NSString *convertedInput; // @synthesize convertedInput=_convertedInput;
 @property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *revertedInput;
 - (id)initWithCandidate:(id)arg1 replacedAmbiguousPinyinSyllable:(id)arg2 replacementUnambiguousPinyinSyllable:(id)arg3 convertedInput:(id)arg4;
 - (id)initWithCandidate:(id)arg1;

@@ -15,9 +15,9 @@
     double _timeIntervalBeforeNowForFetchingTags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeIntervalBeforeNowForFetchingTags; // @synthesize timeIntervalBeforeNowForFetchingTags=_timeIntervalBeforeNowForFetchingTags;
 @property(nonatomic) unsigned long long maximumNumberOfTopics; // @synthesize maximumNumberOfTopics=_maximumNumberOfTopics;
-- (void).cxx_destruct;
 - (void)loadTopicsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithHistory:(id)arg1;
 

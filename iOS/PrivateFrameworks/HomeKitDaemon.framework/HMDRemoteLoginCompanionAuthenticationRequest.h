@@ -21,9 +21,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)objWithMessage:(id)arg1;
 + (id)objWithDict:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKDevice *companionDevice; // @synthesize companionDevice=_companionDevice;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -14,9 +14,9 @@
     BOSDevice *_deviceForUnitTesting;
 }
 
+- (void).cxx_destruct;
 @property(retain) BOSDevice *deviceForUnitTesting; // @synthesize deviceForUnitTesting=_deviceForUnitTesting;
 @property(retain) BOSPredicateUpdateProductManager *productManager; // @synthesize productManager=_productManager;
-- (void).cxx_destruct;
 - (unsigned long long)compareProductBridgeVersionToRunningBridgeVersion;
 - (unsigned long long)requirementSatisfiedForMinimumBridgeVersion:(id)arg1;
 - (void)downloadProductToDirectory:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;

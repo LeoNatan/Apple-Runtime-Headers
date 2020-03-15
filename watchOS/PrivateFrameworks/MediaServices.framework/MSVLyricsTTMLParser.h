@@ -26,6 +26,7 @@
     double _currentStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool linesAreSortedByStartTime; // @synthesize linesAreSortedByStartTime=_linesAreSortedByStartTime;
 @property(nonatomic) double currentStartTime; // @synthesize currentStartTime=_currentStartTime;
 @property(retain, nonatomic) NSMutableDictionary *translationsMap; // @synthesize translationsMap=_translationsMap;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *parseQueue; // @synthesize parseQueue=_parseQueue;
 @property(retain, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(retain, nonatomic) NSData *ttmlData; // @synthesize ttmlData=_ttmlData;
-- (void).cxx_destruct;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;

@@ -22,11 +22,11 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, copy, nonatomic) NSString *ownerIdentifier; // @synthesize ownerIdentifier=_ownerIdentifier;
 @property(readonly, copy, nonatomic) NSString *assertionIdentifier; // @synthesize assertionIdentifier=_assertionIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (long long)_takeWithManager:(id)arg1;
 @property(readonly) long long rawState;
 @property(readonly) double remainingTime;

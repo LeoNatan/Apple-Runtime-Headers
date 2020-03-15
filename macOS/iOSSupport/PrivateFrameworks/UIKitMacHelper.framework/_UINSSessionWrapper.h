@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     id <UINSDragOperationMasks> _operationMasks;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <UINSDragOperationMasks> operationMasks; // @synthesize operationMasks=_operationMasks;
 @property(retain) id <UINSDragSessionHandler> sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 @property(retain) UINSDragSession *externalDragSession; // @synthesize externalDragSession=_externalDragSession;
 @property(retain) NSDraggingSession *internalDragSession; // @synthesize internalDragSession=_internalDragSession;
-- (void).cxx_destruct;
 
 @end
 

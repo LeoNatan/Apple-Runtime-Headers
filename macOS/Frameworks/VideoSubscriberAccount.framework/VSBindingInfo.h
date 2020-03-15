@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSValueTransformer *_valueTransformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSValueTransformer *valueTransformer; // @synthesize valueTransformer=_valueTransformer;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) __weak id weakObservedObject; // @synthesize weakObservedObject=_weakObservedObject;
 @property(readonly, nonatomic) id unsafeObservedObject; // @synthesize unsafeObservedObject=_unsafeObservedObject;
-- (void).cxx_destruct;
 - (void)requireExpectedConcurrency;
 @property(retain, nonatomic) id value;
 - (id)initWithObservedObject:(id)arg1 keyPath:(id)arg2 options:(id)arg3;

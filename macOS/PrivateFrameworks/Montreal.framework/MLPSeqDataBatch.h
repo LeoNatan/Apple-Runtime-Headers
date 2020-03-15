@@ -15,10 +15,10 @@
     unsigned long long _labelsCount;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long labelsCount; // @synthesize labelsCount=_labelsCount;
 @property(retain) MLPNDArrayLossLabels *combinedLossLabels; // @synthesize combinedLossLabels=_combinedLossLabels;
 @property(retain) NSArray *matrix; // @synthesize matrix=_matrix;
-- (void).cxx_destruct;
 - (id)initWithDataBatch:(id)arg1 batchSize:(unsigned long long)arg2 network:(id)arg3;
 
 @end

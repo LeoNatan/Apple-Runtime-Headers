@@ -58,6 +58,7 @@
     struct CGRect _currentDestinationFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXDragManager *dragManager; // @synthesize dragManager=_dragManager;
 @property(nonatomic) BOOL isSupressingColorSettings; // @synthesize isSupressingColorSettings=_isSupressingColorSettings;
 @property(nonatomic) int previousExpansionMode; // @synthesize previousExpansionMode=_previousExpansionMode;
@@ -93,7 +94,6 @@
 @property(readonly, nonatomic) BOOL isTransitioning; // @synthesize isTransitioning=_isTransitioning;
 @property(nonatomic) BOOL isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(readonly, nonatomic) __weak id <SXFullscreenCanvasShowable> showable; // @synthesize showable=_showable;
-- (void).cxx_destruct;
 - (void)fullscreenCanvasViewController:(id)arg1 willTransitionToSize:(struct CGSize)arg2 withTransitionCoordinator:(id)arg3;
 - (void)fullScreenCanvasViewControllerWantsToDismiss:(id)arg1;
 - (void)setupKeyCommandsForCanvasViewController:(id)arg1;

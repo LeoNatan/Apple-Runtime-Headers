@@ -23,9 +23,9 @@
 
 + (id)protocolVersion;
 + (Class)responseClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *customHeaders; // @synthesize customHeaders=_customHeaders;
 @property(nonatomic) _Bool flushCache; // @synthesize flushCache=_flushCache;
-- (void).cxx_destruct;
 - (id)_redactedHeadersFromHTTPHeaders:(id)arg1;
 - (id)redactedBodyStringWithPropertyList:(id)arg1;
 - (void)dealloc;

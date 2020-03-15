@@ -27,7 +27,9 @@
     unsigned long long _identifier;
 }
 
++ (void)deleteFromCloudStoreRecord:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *businessChatURL; // @synthesize businessChatURL=_businessChatURL;
 @property(copy, nonatomic) NSString *heroImageAttributionName; // @synthesize heroImageAttributionName=_heroImageAttributionName;
 @property(retain, nonatomic) NSURL *heroImageURL; // @synthesize heroImageURL=_heroImageURL;
@@ -40,7 +42,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int resultProviderIdentifier; // @synthesize resultProviderIdentifier=_resultProviderIdentifier;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (_Bool)hasCloudArchivableDeviceData;
 - (_Bool)isCloudArchivableDeviceDataEqual:(id)arg1;
@@ -50,7 +51,7 @@
 - (_Bool)isEqualToMapsBrand:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)itemType;
-- (id)recordTypesAndNames;
+- (id)recordTypesAndNamesIncludingServerData:(_Bool)arg1;
 - (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDStruct_3f2a7a20 _divergenceCoordinate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_3f2a7a20 divergenceCoordinate; // @synthesize divergenceCoordinate=_divergenceCoordinate;
 @property(retain, nonatomic) MNActiveRouteInfo *mainRoute; // @synthesize mainRoute=_mainRoute;
 @property(retain, nonatomic) MNActiveRouteInfo *alternateRoute; // @synthesize alternateRoute=_alternateRoute;
-- (void).cxx_destruct;
 
 @end
 

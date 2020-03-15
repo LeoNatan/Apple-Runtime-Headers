@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_prevPoints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *prevPoints; // @synthesize prevPoints=_prevPoints;
 @property(copy) CDUnknownBlockType emissionHandler; // @synthesize emissionHandler=_emissionHandler;
 @property(retain, nonatomic) UIBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)flush;
 - (void)addPoint:(CDStruct_86c70518)arg1;

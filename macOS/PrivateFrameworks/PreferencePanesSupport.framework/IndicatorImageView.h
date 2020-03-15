@@ -14,8 +14,8 @@
     NSTextField *mParent;
 }
 
-@property __weak NSTextField *parent; // @synthesize parent=mParent;
 - (void).cxx_destruct;
+@property __weak NSTextField *parent; // @synthesize parent=mParent;
 - (void)setSavedFrameOrigin:(struct CGPoint)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 

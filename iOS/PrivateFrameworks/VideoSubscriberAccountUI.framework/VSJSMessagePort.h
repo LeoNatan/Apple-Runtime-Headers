@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <VSJSMessagePortDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <VSJSMessagePortDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <VSJSMessagePortDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)postMessage:(id)arg1;
 
 @end

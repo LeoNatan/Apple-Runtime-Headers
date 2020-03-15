@@ -45,6 +45,7 @@
 - (void)replaceValue:(id)arg1;
 - (id)promoteUUID:(id)arg1 length:(unsigned char)arg2;
 - (BOOL)encodeDataElement:(char *)arg1;
+- (BOOL)encodeDataElement:(char *)arg1 length:(unsigned int)arg2 offset:(unsigned short)arg3;
 - (unsigned int)getEncodedSize;
 - (unsigned char)getHeaderSize;
 - (void)updateVariableSizeDescriptor;

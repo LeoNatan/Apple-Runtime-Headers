@@ -17,8 +17,8 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
-@property(retain, nonatomic) NSMutableArray *operations; // @synthesize operations=_operations;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *operations; // @synthesize operations=_operations;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

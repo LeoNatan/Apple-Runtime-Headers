@@ -15,9 +15,9 @@
 }
 
 + (id)wrapperForMachService:(id)arg1 exportedProtocol:(id)arg2 exportedObject:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) FAXPCDelegate *delegate; // @synthesize delegate=_delegate;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)suspend;
 - (void)resume;

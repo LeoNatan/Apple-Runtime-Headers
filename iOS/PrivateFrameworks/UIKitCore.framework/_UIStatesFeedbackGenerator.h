@@ -17,10 +17,10 @@
 }
 
 + (Class)_configurationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackContinuousPlayable> *playingContinuousFeedback; // @synthesize playingContinuousFeedback=_playingContinuousFeedback;
 @property(nonatomic, getter=_approachActivated, setter=_setApproachActivated:) _Bool approachActivated; // @synthesize approachActivated=_approachActivated;
 @property(retain, nonatomic) NSString *currentState; // @synthesize currentState=_currentState;
-- (void).cxx_destruct;
 - (id)_stats_key;
 - (void)_stopPlayingContinuousFeedback;
 - (void)transitionToState:(id)arg1 ended:(_Bool)arg2;

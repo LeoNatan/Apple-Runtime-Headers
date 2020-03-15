@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSSingleCreditCardData.h>
+#import <SafariSharedUI/WBSSingleCreditCardData.h>
 
 @class NSString;
 
@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_displayText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(readonly, copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (id)initWithHeaderText:(id)arg1 displayText:(id)arg2 type:(long long)arg3 value:(id)arg4;
 
 @end

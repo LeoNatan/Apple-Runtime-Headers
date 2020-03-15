@@ -13,8 +13,8 @@
     id <PRSTableViewDelegate> _prsTableViewDelegate;
 }
 
-@property(retain, nonatomic) id <PRSTableViewDelegate> prsTableViewDelegate; // @synthesize prsTableViewDelegate=_prsTableViewDelegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PRSTableViewDelegate> prsTableViewDelegate; // @synthesize prsTableViewDelegate=_prsTableViewDelegate;
 - (void)viewDidMoveToSuperview;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

@@ -17,8 +17,8 @@
 }
 
 + (double)test_suspiciousClassificationExpirationDuration;
-@property(nonatomic) __weak id <_SFDialogPresenting> dialogPresenter; // @synthesize dialogPresenter=_dialogPresenter;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFDialogPresenting> dialogPresenter; // @synthesize dialogPresenter=_dialogPresenter;
 - (void)_handleInput:(long long)arg1;
 - (void)_checkIfSuspiciousClassificationHasExpiredAndTransitionIfNeeded;
 - (void)userDeclinedCallPrompt;

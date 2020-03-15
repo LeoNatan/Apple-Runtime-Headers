@@ -16,11 +16,11 @@
     int _reason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSError *errorPayload; // @synthesize errorPayload=_errorPayload;
 @property(copy, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 @property(copy, nonatomic) NSString *procName; // @synthesize procName=_procName;
-- (void).cxx_destruct;
 
 @end
 

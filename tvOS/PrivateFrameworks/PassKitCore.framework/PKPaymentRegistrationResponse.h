@@ -22,6 +22,7 @@
     NSArray *_certificates;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
 @property(copy, nonatomic) NSURL *paymentServicesURL; // @synthesize paymentServicesURL=_paymentServicesURL;
 @property(copy, nonatomic) NSURL *trustedServiceManagerURL; // @synthesize trustedServiceManagerURL=_trustedServiceManagerURL;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSNumber *maxCards; // @synthesize maxCards=_maxCards;
 @property(copy, nonatomic) NSNumber *cardsOnFile; // @synthesize cardsOnFile=_cardsOnFile;
 @property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

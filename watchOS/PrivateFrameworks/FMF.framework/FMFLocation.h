@@ -40,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *age; // @synthesize age=_age;
 @property(retain, nonatomic) NSString *distanceDescription; // @synthesize distanceDescription=_distanceDescription;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) UIImage *smallAnnotationIcon; // @synthesize smallAnnotationIcon=_smallAnnotationIcon;
 @property(nonatomic) double horizontalAccuracy; // @synthesize horizontalAccuracy=_horizontalAccuracy;
 @property(retain, nonatomic) FMAccuracyOverlay *overlay; // @synthesize overlay=_overlay;
-- (void).cxx_destruct;
 - (_Bool)isValid;
 - (void)updateHandle:(id)arg1;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;

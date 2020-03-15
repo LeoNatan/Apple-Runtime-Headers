@@ -23,12 +23,12 @@
 + (id)moodIDForVEKMood:(long long)arg1;
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MiroBlueprint *data; // @synthesize data=_data;
 @property(nonatomic) long long editStyle; // @synthesize editStyle=_editStyle;
 @property(nonatomic) long long titleStyle; // @synthesize titleStyle=_titleStyle;
 @property(copy, nonatomic) VEKSong *song; // @synthesize song=_song;
 @property(readonly, nonatomic) long long mood; // @synthesize mood=_mood;
-- (void).cxx_destruct;
 - (long long)moodForMoodID:(id)arg1;
 - (id)moodIDForMood:(long long)arg1;
 - (id)moodIDmap;

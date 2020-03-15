@@ -6,8 +6,10 @@
 
 #import <CarPlaySupport/NSObject-Protocol.h>
 
+@class UIViewController;
+
 @protocol CPSSafeAreaDelegate <NSObject>
 - (void)updateInterestingInsets:(struct UIEdgeInsets)arg1;
-- (void)updateSafeAreaInsets:(struct UIEdgeInsets)arg1;
+- (void)viewController:(UIViewController *)arg1 didUpdateSafeAreaInsets:(struct UIEdgeInsets)arg2;
 @end
 

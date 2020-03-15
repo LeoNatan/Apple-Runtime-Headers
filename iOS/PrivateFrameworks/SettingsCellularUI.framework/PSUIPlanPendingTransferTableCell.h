@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CTCellularPlanPendingTransfer *_planPendingTransfer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CTCellularPlanPendingTransfer *planPendingTransfer; // @synthesize planPendingTransfer=_planPendingTransfer;
 @property(retain, nonatomic) UIImageView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)_setView;
 

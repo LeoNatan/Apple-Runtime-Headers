@@ -17,9 +17,9 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SiriUIContentButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(readonly, nonatomic) SiriUIContentButton *leftButton; // @synthesize leftButton=_leftButton;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;

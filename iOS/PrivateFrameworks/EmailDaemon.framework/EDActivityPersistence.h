@@ -16,8 +16,8 @@
     id <EDActivityHookResponder> _activityHookResponder;
 }
 
-@property(retain, nonatomic) id <EDActivityHookResponder> activityHookResponder; // @synthesize activityHookResponder=_activityHookResponder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <EDActivityHookResponder> activityHookResponder; // @synthesize activityHookResponder=_activityHookResponder;
 - (void)activityWithID:(id)arg1 setCompletedCount:(long long)arg2 totalCount:(long long)arg3;
 - (void)activityWithID:(id)arg1 setUserInfoObject:(id)arg2 forKey:(id)arg3;
 - (void)activityWithID:(id)arg1 finishedWithError:(id)arg2;

@@ -23,13 +23,13 @@
     NSMutableArray *_setupStepEvents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *setupStepEvents; // @synthesize setupStepEvents=_setupStepEvents;
 @property(retain, nonatomic) CLCircularRegion *selectedRegion; // @synthesize selectedRegion=_selectedRegion;
 @property(retain, nonatomic) NSMutableDictionary *actionsPerQuestionIndex; // @synthesize actionsPerQuestionIndex=_actionsPerQuestionIndex;
 @property(retain, nonatomic) UINavigationController *setupNavigationController; // @synthesize setupNavigationController=_setupNavigationController;
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupFlow *flow; // @synthesize flow=_flow;
 @property(nonatomic) __weak id <WFDailyRoutineShortcutSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)submitMetrics:(BOOL)arg1;
 - (id)currentStepEvent;
 - (void)dailyRoutineShortcutSetupTriggerViewControllerDidSkip:(id)arg1;

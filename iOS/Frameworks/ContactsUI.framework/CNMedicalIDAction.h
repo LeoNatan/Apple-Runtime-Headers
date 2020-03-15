@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CNHealthStoreManager *_healthStoreManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNHealthStoreManager *healthStoreManager; // @synthesize healthStoreManager=_healthStoreManager;
 @property(nonatomic) long long medicalIDActionType; // @synthesize medicalIDActionType=_medicalIDActionType;
-- (void).cxx_destruct;
 - (void)medicalIDViewControllerDidFinish:(id)arg1;
 - (void)medicalIDViewControllerDidDelete:(id)arg1;
 - (void)medicalIDViewControllerDidSave:(id)arg1;

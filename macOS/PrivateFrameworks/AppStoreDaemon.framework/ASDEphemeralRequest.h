@@ -13,8 +13,8 @@
     ASDRequestOptions *_options;
 }
 
-@property(readonly, copy, nonatomic) ASDRequestOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) ASDRequestOptions *options; // @synthesize options=_options;
 - (id)init;
 
 @end

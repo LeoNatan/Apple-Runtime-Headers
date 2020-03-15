@@ -26,6 +26,7 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSData *data; // @synthesize data=_data;
 @property(readonly) NSArray *additionalRecords; // @synthesize additionalRecords=_additionalRecords;
 @property(readonly) NSArray *authorities; // @synthesize authorities=_authorities;
@@ -40,7 +41,6 @@
 @property(readonly) long long messageType; // @synthesize messageType=_messageType;
 @property(readonly) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *responseCodeString;
 - (id)initFromData:(id)arg1;
 

@@ -16,6 +16,7 @@
     unsigned int _connectingServiceMask;
 }
 
+- (int)getBehaviorForHIDDevice;
 - (int)getLowSecurityStatus;
 - (unsigned int)getConnectingServiceMask;
 - (void)setConnectingServicemask:(unsigned int)arg1;

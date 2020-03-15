@@ -24,10 +24,10 @@
     id <DNDSLifetimeMonitorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DNDSLifetimeMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSLifetimeMonitorDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, copy, nonatomic) NSArray *activeLifetimeAssertionUUIDs; // @synthesize activeLifetimeAssertionUUIDs=_activeLifetimeAssertionUUIDs;
-- (void).cxx_destruct;
 - (void)_queue_sendExpiryEventForAllLocationAssertions;
 - (void)_queue_geofenceLocation:(id)arg1;
 - (void)_queue_stopMonitoringCurrentLocation;

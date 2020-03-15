@@ -13,8 +13,8 @@
     NSArray *_urls;
 }
 
-@property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)_loadClassesUsingBlock:(CDUnknownBlockType)arg1;

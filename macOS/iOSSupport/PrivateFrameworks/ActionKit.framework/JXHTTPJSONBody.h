@@ -18,8 +18,8 @@
 + (id)withJSONObject:(id)arg1;
 + (id)withString:(id)arg1;
 + (id)withData:(id)arg1;
-@property(retain, nonatomic) NSData *requestData; // @synthesize requestData=_requestData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *requestData; // @synthesize requestData=_requestData;
 - (void)httpOperationDidFinishLoading:(id)arg1;
 - (long long)httpContentLength;
 - (id)httpContentType;

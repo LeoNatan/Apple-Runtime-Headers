@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNCancelable> telephonyAvailaibilityChangedToken; // @synthesize telephonyAvailaibilityChangedToken=_telephonyAvailaibilityChangedToken;
 @property(retain, nonatomic) id <CNCancelable> faceTimeAvailabilityChangedToken; // @synthesize faceTimeAvailabilityChangedToken=_faceTimeAvailabilityChangedToken;
 @property(retain, nonatomic) id <CNCancelable> messagingAvailabilityChangedToken; // @synthesize messagingAvailabilityChangedToken=_messagingAvailabilityChangedToken;
 @property(nonatomic) __weak id <ABFaceTimeCommunicationsBridgeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isTelephonySupported) BOOL telephonySupported; // @synthesize telephonySupported=_telephonySupported;
-- (void).cxx_destruct;
 - (id)supplementalDialTelephonyCallString;
 - (void)makeFaceTimeCallWithEndpoint:(id)arg1 isAudio:(BOOL)arg2;
 - (void)makeFaceTimeCallWithContactIdentifier:(id)arg1 isAudio:(BOOL)arg2;

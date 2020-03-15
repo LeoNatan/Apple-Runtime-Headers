@@ -22,11 +22,11 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUndoManager *undoManagerForBarButtons; // @synthesize undoManagerForBarButtons=_undoManagerForBarButtons;
 @property(nonatomic) BOOL attemptUndoManagerAutoSetup; // @synthesize attemptUndoManagerAutoSetup=_attemptUndoManagerAutoSetup;
 @property(retain, nonatomic) PUEditingExtensionUndoAdapter *undoAdapter; // @synthesize undoAdapter=_undoAdapter;
 @property(readonly) PUEditingInitialPayload *_initialPayload; // @synthesize _initialPayload=__initialPayload;
-- (void).cxx_destruct;
 - (void)querySDKVersionWithResponseHandler:(CDUnknownBlockType)arg1;
 - (void)cancelContentEditingWithResponseHandler:(CDUnknownBlockType)arg1;
 - (void)finishContentEditing;

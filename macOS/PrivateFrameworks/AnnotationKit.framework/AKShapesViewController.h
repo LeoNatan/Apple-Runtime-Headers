@@ -18,13 +18,13 @@
     NSButton *_loupeButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *loupeButton; // @synthesize loupeButton=_loupeButton;
 @property(retain, nonatomic) NSButton *maskButton; // @synthesize maskButton=_maskButton;
 @property(retain) AKShapesGridViewController *shapesPicker; // @synthesize shapesPicker=_shapesPicker;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(copy) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_validateItems;
 - (id)_separatorView;
 - (void)_performAction:(id)arg1;

@@ -16,11 +16,11 @@
     unsigned long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disabled; // @synthesize disabled=_disabled;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) double offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToIndicatorInfo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

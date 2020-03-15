@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_styleInfoAttributes;
 }
 
-@property(retain, nonatomic) NSArray *styleInfoAttributes; // @synthesize styleInfoAttributes=_styleInfoAttributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *styleInfoAttributes; // @synthesize styleInfoAttributes=_styleInfoAttributes;
 - (id)_translateColor:(id)arg1;
 - (id)_translateColors:(id)arg1;
 - (id)_parseAXStyleInfoTextAttributes:(id)arg1;

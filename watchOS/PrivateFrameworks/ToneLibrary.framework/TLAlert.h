@@ -28,13 +28,13 @@
 + (id)alertWithConfiguration:(id)arg1;
 + (void)playAlertForType:(int)arg1;
 + (void)playToneAndVibrationForType:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *vibrationIdentifier; // @synthesize vibrationIdentifier=_vibrationIdentifier;
 @property(readonly, nonatomic) NSString *toneIdentifier; // @synthesize toneIdentifier=_toneIdentifier;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) TLAlertConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <TLAlertPlaybackObserver> playbackObserver; // @synthesize playbackObserver=_playbackObserver;
 @property(readonly, nonatomic) _Bool _hasSynchronizedVibrationUnmatchedWithTone; // @synthesize _hasSynchronizedVibrationUnmatchedWithTone;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)_descriptionForDebugging:(_Bool)arg1;

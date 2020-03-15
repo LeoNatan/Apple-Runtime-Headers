@@ -29,6 +29,7 @@
 + (id)_configurationWithKey:(id)arg1 requiredSupportLevel:(long long)arg2 preparationBlock:(CDUnknownBlockType)arg3;
 + (id)_disabledConfiguration;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_stats_key; // @synthesize _stats_key=__stats_key;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, getter=isSetup) _Bool setup; // @synthesize setup=_setup;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *usage; // @synthesize usage=_usage;
 @property(copy, nonatomic) Class clientClass; // @synthesize clientClass=_clientClass;
 @property(copy, nonatomic) CDUnknownBlockType preparationBlock; // @synthesize preparationBlock=_preparationBlock;
-- (void).cxx_destruct;
 - (void)_preferencesUpdated:(id)arg1;
 - (void)_updateEnabled;
 - (_Bool)_setupIfNecessary;

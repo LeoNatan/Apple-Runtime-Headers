@@ -34,10 +34,11 @@ __attribute__((visibility("hidden")))
 + (BOOL)_isElementValidForFocusChain:(id)arg1;
 + (BOOL)_isElementVisible:(id)arg1;
 + (BOOL)_shouldIgnoreVisibilityStateForElement:(id)arg1;
++ (BOOL)_isGroupElement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SCRLayoutChangedNotificationInfo *_aggregatedLayoutChangedNotificationInfo; // @synthesize _aggregatedLayoutChangedNotificationInfo=__aggregatedLayoutChangedNotificationInfo;
 @property(retain, nonatomic) SCRCTargetSelectorTimer *_focusChainValidationTimer; // @synthesize _focusChainValidationTimer=__focusChainValidationTimer;
 @property(retain, nonatomic) SCRCThread *_focusManagerThread; // @synthesize _focusManagerThread=__focusManagerThread;
-- (void).cxx_destruct;
 - (void)_aggregateLayoutChangedNotificationInfo:(id)arg1;
 - (void)_cancelPendingSelectorsOnFocusManagerThread;
 - (void)_app_validateFocusChainInApplicationWithNotificationInfo:(id)arg1;

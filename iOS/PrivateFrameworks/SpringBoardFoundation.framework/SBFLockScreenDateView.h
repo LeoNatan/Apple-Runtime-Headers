@@ -31,6 +31,7 @@
 + (CDStruct_91d2e2b9)timeFontMetrics;
 + (id)timeFont;
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFLockScreenDateSubtitleView *customSubtitleView; // @synthesize customSubtitleView=_customSubtitleView;
 @property(nonatomic) struct CGRect restingFrame; // @synthesize restingFrame=_restingFrame;
 @property(nonatomic) double maximumSubtitleWidth; // @synthesize maximumSubtitleWidth=_maximumSubtitleWidth;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_overrideTextColor;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) double subtitleBaselineOffsetFromOrigin;
 @property(readonly, nonatomic) double timeBaselineOffsetFromOrigin;

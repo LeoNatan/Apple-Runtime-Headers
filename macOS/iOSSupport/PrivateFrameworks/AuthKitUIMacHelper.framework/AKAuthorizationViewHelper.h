@@ -14,8 +14,8 @@
 }
 
 + (void)requestAuthorizationViewControllerWithCompletion:(CDUnknownBlockType)arg1;
-@property(retain) NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void).cxx_destruct;
+@property(retain) NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void)setupWithRequestContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)serviceProxy;
 @property(readonly) NSViewController *viewController;

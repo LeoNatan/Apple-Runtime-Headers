@@ -39,13 +39,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)styleWithResources:(id)arg1;
+- (void).cxx_destruct;
 @property(getter=isProtectionApplied) _Bool protectionApplied; // @synthesize protectionApplied=mProtectionApplied;
 @property(getter=isBordersApplied) _Bool bordersApplied; // @synthesize bordersApplied=mBordersApplied;
 @property(getter=isAlignmentInfoApplied) _Bool alignmentInfoApplied; // @synthesize alignmentInfoApplied=mAlignmentInfoApplied;
 @property(getter=isFillApplied) _Bool fillApplied; // @synthesize fillApplied=mFillApplied;
 @property(getter=isFontApplied) _Bool fontApplied; // @synthesize fontApplied=mFontApplied;
 @property(getter=isContentFormatApplied) _Bool contentFormatApplied; // @synthesize contentFormatApplied=mContentFormatApplied;
-- (void).cxx_destruct;
 - (void)setDoNotModify:(_Bool)arg1;
 - (unsigned long long)index;
 - (void)setParent:(id)arg1;

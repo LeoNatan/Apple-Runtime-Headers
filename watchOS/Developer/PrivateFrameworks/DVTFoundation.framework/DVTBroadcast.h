@@ -16,10 +16,10 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) id <DVTBroadcastName> name; // @synthesize name=_name;
 @property(readonly) id source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)initWithSource:(id)arg1 name:(id)arg2 userInfo:(id)arg3;
 
 @end

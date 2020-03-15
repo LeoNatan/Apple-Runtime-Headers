@@ -23,12 +23,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL datapathSupported; // @synthesize datapathSupported=_datapathSupported;
 @property(readonly, nonatomic) WiFiMACAddress *publisherAddress; // @synthesize publisherAddress=_publisherAddress;
 @property(readonly, nonatomic) unsigned char publishID; // @synthesize publishID=_publishID;
 @property(readonly, nonatomic) WiFiAwarePublishServiceSpecificInfo *serviceSpecificInfo; // @synthesize serviceSpecificInfo=_serviceSpecificInfo;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (id)description;
 - (const char *)fsdFunctionString;
 - (BOOL)isEqual:(id)arg1;

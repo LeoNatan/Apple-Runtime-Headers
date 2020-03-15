@@ -17,15 +17,15 @@
 }
 
 + (BOOL)dictionaryIsSerializedVariableString:(id)arg1;
-@property(readonly, nonatomic) NSArray *stringsAndVariables; // @synthesize stringsAndVariables=_stringsAndVariables;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *stringsAndVariables; // @synthesize stringsAndVariables=_stringsAndVariables;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSArray *variables;
 @property(readonly, nonatomic) NSString *stringByReplacingVariablesWithNames;
 @property(readonly, nonatomic) NSString *stringByRemovingVariables;
-- (void)processIntoStringsAndAttachmentsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)processIntoContentItemsWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)processWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)processIntoStringsAndAttachmentsWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)processIntoContentItemsWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)processWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)serializedRepresentation;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 - (id)initWithAttachmentCharacterString:(id)arg1 variableGetter:(CDUnknownBlockType)arg2;

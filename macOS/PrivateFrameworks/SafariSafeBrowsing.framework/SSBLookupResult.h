@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL URLContainsUserInfo; // @synthesize URLContainsUserInfo=_URLContainsUserInfo;
 @property(readonly, nonatomic) NSArray *serviceLookupResults; // @synthesize serviceLookupResults=_serviceLookupResults;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isKnownToBeUnsafe) BOOL knownToBeUnsafe;
 @property(readonly, nonatomic, getter=isUnwantedSoftware) BOOL unwantedSoftware;
 @property(readonly, nonatomic, getter=isPhishing) BOOL phishing;

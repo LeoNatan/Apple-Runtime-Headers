@@ -20,9 +20,9 @@
 + (id)wrapperForResult:(id)arg1 orError:(id)arg2;
 + (id)wrapperForError:(id)arg1;
 + (id)wrapperForResult:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) id <IBBinaryArchiving> result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_dismissButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dismissButtonTitle; // @synthesize dismissButtonTitle=_dismissButtonTitle;
 @property(retain, nonatomic) NSString *descriptionString; // @synthesize descriptionString=_descriptionString;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1;
 

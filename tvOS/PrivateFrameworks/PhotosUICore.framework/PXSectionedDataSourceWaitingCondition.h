@@ -12,9 +12,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType condition; // @synthesize condition=_condition;
-- (void).cxx_destruct;
 
 @end
 

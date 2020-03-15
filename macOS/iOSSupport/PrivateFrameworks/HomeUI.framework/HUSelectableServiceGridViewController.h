@@ -21,11 +21,11 @@
 + (CDUnknownBlockType)defaultItemProviderCreatorWithOptions:(unsigned long long)arg1;
 + (CDUnknownBlockType)transformationBlockWithOptions:(unsigned long long)arg1;
 + (id)itemServiceTypesToHide;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFMutableSetDiff *mutableSelectedItems; // @synthesize mutableSelectedItems=_mutableSelectedItems;
 @property(nonatomic) __weak HUServiceGridItemManager *serviceGridItemManager; // @synthesize serviceGridItemManager=_serviceGridItemManager;
 @property(nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property(nonatomic) BOOL allowsEmptySelection; // @synthesize allowsEmptySelection=_allowsEmptySelection;
-- (void).cxx_destruct;
 - (void)_deleteItemFromSelection:(id)arg1;
 - (void)_addItemToSelection:(id)arg1;
 - (BOOL)_wantsToggleButtonForSection:(unsigned long long)arg1;

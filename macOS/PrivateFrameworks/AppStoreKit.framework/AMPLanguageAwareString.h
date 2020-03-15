@@ -41,7 +41,7 @@
 @property(nonatomic) long long thresholdBaseWritingDirection;
 - (long long)baseWritingDirectionForCharacterAtLocation:(long long)arg1;
 - (id)initWithLanguageAwareString:(id)arg1 attributes:(id)arg2;
-- (id)initWithString:(id)arg1 baseParagraphStyle:(id)arg2;
+- (id)initWithString:(id)arg1 baseParagraphStyle:(id)arg2 generateAttributedString:(BOOL)arg3;
 - (id)initWithString:(id)arg1 attributes:(id)arg2 baseParagraphStyle:(id)arg3;
 - (id)initWithAttributedString:(id)arg1 baseParagraphStyle:(id)arg2;
 @property(nonatomic) long long utf32Length;

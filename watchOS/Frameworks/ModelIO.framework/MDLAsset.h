@@ -39,6 +39,7 @@
 + (void)convertToUSDZ:(id)arg1 writeToURL:(id)arg2;
 + (_Bool)isValidUSDZResource:(id)arg1;
 + (void)convertToUSDZWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float metersPerUnit; // @synthesize metersPerUnit=_metersPerUnit;
 @property(retain, nonatomic) NSUnitLength *unitLength; // @synthesize unitLength=_unitLength;
 @property(nonatomic) double _timeCodesPerSecond; // @synthesize _timeCodesPerSecond=__timeCodesPerSecond;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSURL *_temporaryFolderURL; // @synthesize _temporaryFolderURL;
 @property(retain, nonatomic) id <MDLObjectContainerComponent> animations; // @synthesize animations=_animations;
 @property(retain, nonatomic) id <MDLObjectContainerComponent> masters; // @synthesize masters=_masters;
-- (void).cxx_destruct;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;

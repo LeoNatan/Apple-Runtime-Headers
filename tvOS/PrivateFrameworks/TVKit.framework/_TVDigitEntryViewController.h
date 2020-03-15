@@ -28,10 +28,10 @@
     id <_TVDigitEntryViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_TVDigitEntryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isEditable) _Bool editable; // @synthesize editable=_editable;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
-- (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)_removeSystemInputController;
 - (void)_addSystemInputController;

@@ -33,6 +33,7 @@
     NSString *_externalServiceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *externalServiceIdentifier; // @synthesize externalServiceIdentifier=_externalServiceIdentifier;
 @property(copy, nonatomic) NSString *externalProfileIdentifier; // @synthesize externalProfileIdentifier=_externalProfileIdentifier;
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier=_externalIdentifier;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) _TVSecureKeyLoader *secureKeyLoader; // @synthesize secureKeyLoader;
-- (void).cxx_destruct;
 
 @end
 

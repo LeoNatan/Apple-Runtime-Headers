@@ -18,9 +18,9 @@
 }
 
 + (id)internalEFISystemPartition;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *skInitialPopulateSemaphore; // @synthesize skInitialPopulateSemaphore=_skInitialPopulateSemaphore;
 @property(retain) SKDisk *disk; // @synthesize disk=_disk;
-- (void).cxx_destruct;
 - (void)initialPopulateComplete;
 - (id)_urlForRelativePath:(id)arg1;
 - (id)restoreBundleSpecifier;

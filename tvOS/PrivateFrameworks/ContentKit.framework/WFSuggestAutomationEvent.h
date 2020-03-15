@@ -17,11 +17,11 @@
 }
 
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(nonatomic) _Bool interacted; // @synthesize interacted=_interacted;
 @property(copy, nonatomic) NSString *suggestedAutomationIdentifier; // @synthesize suggestedAutomationIdentifier=_suggestedAutomationIdentifier;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

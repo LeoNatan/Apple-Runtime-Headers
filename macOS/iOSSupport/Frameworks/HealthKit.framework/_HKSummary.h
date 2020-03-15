@@ -21,12 +21,12 @@
 
 + (id)valuesByTypeFromSummaries:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *summaryEndDate; // @synthesize summaryEndDate=_summaryEndDate;
 @property(retain, nonatomic) NSDate *summaryStartDate; // @synthesize summaryStartDate=_summaryStartDate;
 @property(retain, nonatomic) NSDate *latestSampleDate; // @synthesize latestSampleDate=_latestSampleDate;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) long long typeCode; // @synthesize typeCode=_typeCode;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setSummaryDatesUsingCalendar:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

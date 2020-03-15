@@ -19,6 +19,7 @@
     NSTimer *_spinnerTimer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimer *spinnerTimer; // @synthesize spinnerTimer=_spinnerTimer;
 @property(readonly, nonatomic) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
@@ -26,7 +27,6 @@
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) _Bool beginLoadWithViewAppearance; // @synthesize beginLoadWithViewAppearance=_beginLoadWithViewAppearance;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_showSpinnerAction:(id)arg1;
 - (void)_invalidateSpinnerTimer;
 - (void)viewWillLayoutSubviews;

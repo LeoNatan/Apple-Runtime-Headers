@@ -26,10 +26,10 @@
 + (id)entryEventPointBacklightEvent;
 + (id)entryEventPointDefinitions;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) FBSDisplayLayoutMonitor *carPlayDisplayMonitor; // @synthesize carPlayDisplayMonitor=_carPlayDisplayMonitor;
 @property(retain) FBSDisplayLayoutMonitor *airPlayDisplayMonitor; // @synthesize airPlayDisplayMonitor=_airPlayDisplayMonitor;
 @property(retain) FBSDisplayLayoutMonitor *mainDisplayMonitor; // @synthesize mainDisplayMonitor=_mainDisplayMonitor;
-- (void).cxx_destruct;
 - (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (void)accountWithLayoutEntries:(id)arg1;
 - (void)createAirPlayWiFiAccountingEvent:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     MCProfileWarning *_warning;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCProfileWarning *warning; // @synthesize warning=_warning;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (double)heightForHeader;
 - (double)heightForRowAtIndex:(unsigned long long)arg1;
 - (id)titleForHeader;

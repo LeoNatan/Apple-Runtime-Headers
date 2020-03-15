@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)diffFromData:(id)arg1 toData:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BSSettings *changes; // @synthesize changes=_changes;
 @property(readonly, copy, nonatomic) STTelephonyStatusDomainSIMInfoDiff *SIMTwoInfoDiff; // @synthesize SIMTwoInfoDiff=_SIMTwoInfoDiff;
 @property(readonly, copy, nonatomic) STTelephonyStatusDomainSIMInfoDiff *SIMOneInfoDiff; // @synthesize SIMOneInfoDiff=_SIMOneInfoDiff;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

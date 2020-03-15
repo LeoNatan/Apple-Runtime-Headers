@@ -14,9 +14,9 @@
     PKPassViewController *_accessibilityPass;
 }
 
+- (void).cxx_destruct;
 @property(retain) PKPassViewController *accessibilityPass; // @synthesize accessibilityPass=_accessibilityPass;
 @property BOOL gestureInProgress; // @synthesize gestureInProgress=_gestureInProgress;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)endGestureWithEvent:(id)arg1;
 - (void)beginGestureWithEvent:(id)arg1;

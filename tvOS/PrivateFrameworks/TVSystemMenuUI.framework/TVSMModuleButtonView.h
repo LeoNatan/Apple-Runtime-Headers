@@ -18,13 +18,13 @@
     UIView *_moduleContentView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *moduleContentView; // @synthesize moduleContentView=_moduleContentView;
 @property(retain, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) NSString *imageSymbolName; // @synthesize imageSymbolName=_imageSymbolName;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

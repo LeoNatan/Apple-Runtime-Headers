@@ -9,6 +9,7 @@
 @class NSDictionary, NSNumber, UITableView;
 
 @interface UITableViewCell (IBCocoaTouchToolAutolayoutEngineAdditions)
+- (_Bool)ibRequiresSuperviewDuringLayoutForRepresentedView:(id)arg1;
 - (id)ibCopyObjectHierarchyForLayoutEngine:(id)arg1;
 - (id)ibEffectiveViewForRendering;
 - (_Bool)ibWantsWindowForRenderingAndPrimitiveAutolayoutQuestions;
@@ -32,7 +33,7 @@
 - (void)ibDidIncrementallyUpdateValueForKeyPath:(id)arg1;
 @property(copy) NSNumber *ibRowHeight;
 @property __weak UITableView *ibAssociatedTableView;
-- (void)createAndWrapCellWithTableViewWithFrame:(struct CGRect)arg1 tableViewStyle:(long long)arg2 defaultRowHeight:(double)arg3 separatorStyle:(id)arg4 positionInSection:(id)arg5 globalMarshallingContext:(id)arg6;
+- (void)ibCreateAndWrapCellWithTableViewWithFrame:(struct CGRect)arg1 tableViewStyle:(long long)arg2 defaultRowHeight:(double)arg3 separatorStyle:(id)arg4 positionInSection:(id)arg5 globalMarshallingContext:(id)arg6;
 - (id)initWithMarshalledValues:(id)arg1 orderedKeys:(id)arg2 ignoredKeys:(id)arg3 globalMarshallingContext:(id)arg4;
 @end
 

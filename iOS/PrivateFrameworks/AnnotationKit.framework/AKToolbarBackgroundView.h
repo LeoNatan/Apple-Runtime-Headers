@@ -17,11 +17,11 @@
     long long _blurStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long blurStyle; // @synthesize blurStyle=_blurStyle;
 @property(nonatomic, getter=isTranslucent) _Bool translucent; // @synthesize translucent=_translucent;
 @property(retain, nonatomic) UIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
-- (void).cxx_destruct;
 - (void)_hostSeparatorInView:(id)arg1;
 - (void)setShadowImage:(id)arg1 forToolbarPosition:(long long)arg2;
 - (void)setBackgroundImage:(id)arg1 forToolbarPosition:(long long)arg2 barMetrics:(long long)arg3;
